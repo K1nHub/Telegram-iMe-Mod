@@ -24,18 +24,16 @@
             "(Z)",
             "Lio/reactivex/Observable<",
             "Lcom/iMe/storage/domain/model/Result<",
-            "Lcom/iMe/storage/domain/model/crypto/CryptoWalletInfo;",
+            "Lcom/iMe/storage/domain/model/crypto/CryptoWalletsInfo;",
             ">;>;"
         }
     .end annotation
 .end method
 
-.method public abstract managePermissionSettings(Lcom/iMe/storage/domain/model/wallet/token/TokenCode;ZLjava/util/List;)Lio/reactivex/Observable;
+.method public abstract managePermissionSettings(ZLjava/util/List;)Lio/reactivex/Observable;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "(",
-            "Lcom/iMe/storage/domain/model/wallet/token/TokenCode;",
-            "Z",
+            "(Z",
             "Ljava/util/List<",
             "Ljava/lang/Long;",
             ">;)",

@@ -49,7 +49,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 13
+    .line 15
     check-cast p1, Lcom/iMe/ui/topics/TopicView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/adapter/FiltersRecycleAdapter$convert$1;->invoke(Lcom/iMe/ui/topics/TopicView;)V
@@ -60,13 +60,24 @@
 .end method
 
 .method public final invoke(Lcom/iMe/ui/topics/TopicView;)V
-    .locals 1
+    .locals 2
 
     const-string v0, "$this$applyForView"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 14
+    const/16 v0, 0x8
+
+    .line 16
+    invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v0
+
+    const/4 v1, 0x0
+
+    invoke-virtual {p1, v1, v0}, Lcom/iMe/ui/topics/TopicView;->setHorizontalMargins(II)V
+
+    .line 17
     iget-object v0, p0, Lcom/iMe/ui/adapter/FiltersRecycleAdapter$convert$1;->$item:Lcom/iMe/model/common/FilterItem;
 
     invoke-virtual {p1, v0}, Lcom/iMe/ui/topics/TopicView;->setFilterItem(Lcom/iMe/model/common/FilterItem;)V

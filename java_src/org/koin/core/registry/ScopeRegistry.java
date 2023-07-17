@@ -11,7 +11,7 @@ import org.koin.core.qualifier.Qualifier;
 import org.koin.core.qualifier.QualifierKt;
 import org.koin.core.qualifier.StringQualifier;
 import org.koin.core.scope.Scope;
-import org.koin.p043mp.KoinPlatformTools;
+import org.koin.p042mp.KoinPlatformTools;
 /* compiled from: ScopeRegistry.kt */
 /* loaded from: classes4.dex */
 public final class ScopeRegistry {

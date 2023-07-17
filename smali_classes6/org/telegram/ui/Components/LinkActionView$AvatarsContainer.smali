@@ -26,13 +26,13 @@
 .method public constructor <init>(Lorg/telegram/ui/Components/LinkActionView;Landroid/content/Context;)V
     .locals 5
 
-    .line 736
+    .line 738
     iput-object p1, p0, Lorg/telegram/ui/Components/LinkActionView$AvatarsContainer;->this$0:Lorg/telegram/ui/Components/LinkActionView;
 
-    .line 737
+    .line 739
     invoke-direct {p0, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    .line 738
+    .line 740
     new-instance v0, Lorg/telegram/ui/Components/LinkActionView$AvatarsContainer$1;
 
     const/4 v1, 0x0
@@ -41,12 +41,12 @@
 
     iput-object v0, p0, Lorg/telegram/ui/Components/LinkActionView$AvatarsContainer;->avatarsImageView:Lorg/telegram/ui/Components/AvatarsImageView;
 
-    .line 747
+    .line 749
     new-instance p1, Landroid/widget/LinearLayout;
 
     invoke-direct {p1, p2}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
 
-    .line 748
+    .line 750
     invoke-virtual {p1, v1}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
     const/4 v0, -0x2
@@ -55,14 +55,14 @@
 
     const/4 v3, 0x1
 
-    .line 750
+    .line 752
     invoke-static {v0, v2, v3}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(III)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object v4
 
     invoke-virtual {p0, p1, v4}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 752
+    .line 754
     new-instance v4, Landroid/widget/TextView;
 
     invoke-direct {v4, p2}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
@@ -71,10 +71,10 @@
 
     const/high16 p2, 0x41600000    # 14.0f
 
-    .line 753
+    .line 755
     invoke-virtual {v4, v3, p2}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 754
+    .line 756
     iget-object p2, p0, Lorg/telegram/ui/Components/LinkActionView$AvatarsContainer;->countTextView:Landroid/widget/TextView;
 
     const-string v3, "fonts/rmedium.ttf"
@@ -85,7 +85,7 @@
 
     invoke-virtual {p2, v3}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
-    .line 756
+    .line 758
     iget-object p2, p0, Lorg/telegram/ui/Components/LinkActionView$AvatarsContainer;->avatarsImageView:Lorg/telegram/ui/Components/AvatarsImageView;
 
     invoke-static {v0, v2}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(II)Landroid/widget/LinearLayout$LayoutParams;
@@ -94,7 +94,7 @@
 
     invoke-virtual {p1, p2, v2}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 757
+    .line 759
     iget-object p2, p0, Lorg/telegram/ui/Components/LinkActionView$AvatarsContainer;->countTextView:Landroid/widget/TextView;
 
     const/16 v2, 0x10
@@ -107,7 +107,7 @@
 
     const/16 p1, 0x8
 
-    .line 759
+    .line 761
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p2
@@ -118,7 +118,7 @@
 
     invoke-virtual {p0, v1, p2, v1, p1}, Landroid/widget/FrameLayout;->setPadding(IIII)V
 
-    .line 760
+    .line 762
     iget-object p1, p0, Lorg/telegram/ui/Components/LinkActionView$AvatarsContainer;->avatarsImageView:Lorg/telegram/ui/Components/AvatarsImageView;
 
     invoke-virtual {p1, v1}, Lorg/telegram/ui/Components/AvatarsImageView;->commitTransition(Z)V

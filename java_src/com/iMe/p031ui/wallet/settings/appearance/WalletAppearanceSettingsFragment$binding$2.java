@@ -4,11 +4,10 @@ import com.iMe.utils.extentions.common.BaseFragmentExtKt;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Lambda;
 import org.telegram.messenger.databinding.ForkFragmentWalletInterfaceSettingsBinding;
-/* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: WalletAppearanceSettingsFragment.kt */
 /* renamed from: com.iMe.ui.wallet.settings.appearance.WalletAppearanceSettingsFragment$binding$2 */
 /* loaded from: classes4.dex */
-public final class WalletAppearanceSettingsFragment$binding$2 extends Lambda implements Function0<ForkFragmentWalletInterfaceSettingsBinding> {
+final class WalletAppearanceSettingsFragment$binding$2 extends Lambda implements Function0<ForkFragmentWalletInterfaceSettingsBinding> {
     final /* synthetic */ WalletAppearanceSettingsFragment this$0;
 
     /* JADX INFO: Access modifiers changed from: package-private */

@@ -8,7 +8,7 @@ import kotlin.jvm.internal.Lambda;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: CatalogRootFragment.kt */
 /* renamed from: com.iMe.ui.catalog.CatalogRootFragment$tabs$2 */
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public final class CatalogRootFragment$tabs$2 extends Lambda implements Function0<List<NavigationTab<CatalogFragment>>> {
     final /* synthetic */ CatalogRootFragment this$0;
 

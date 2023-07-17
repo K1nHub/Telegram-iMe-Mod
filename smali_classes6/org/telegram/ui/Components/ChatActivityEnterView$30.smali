@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/ChatActivityEnterView;)V
     .locals 0
 
-    .line 4180
+    .line 4182
     iput-object p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$30;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,14 +38,14 @@
 .method public onItemClick(Landroid/view/View;I)Z
     .locals 2
 
-    .line 4184
+    .line 4186
     instance-of p2, p1, Lcom/iMe/fork/ui/view/TemplateCell;
 
     const/4 v0, 0x1
 
     if-eqz p2, :cond_0
 
-    .line 4185
+    .line 4187
     iget-object p2, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$30;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
     invoke-static {p2}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$9700(Lorg/telegram/ui/Components/ChatActivityEnterView;)Lorg/telegram/ui/Components/BotCommandsMenuView$BotCommandsAdapter$TemplatesDelegate;
@@ -62,20 +62,20 @@
 
     return v0
 
-    .line 4189
+    .line 4191
     :cond_0
     instance-of p2, p1, Lorg/telegram/ui/Components/BotCommandsMenuView$BotCommandView;
 
     if-eqz p2, :cond_1
 
-    .line 4190
+    .line 4192
     check-cast p1, Lorg/telegram/ui/Components/BotCommandsMenuView$BotCommandView;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/BotCommandsMenuView$BotCommandView;->getCommand()Ljava/lang/String;
 
     move-result-object p1
 
-    .line 4191
+    .line 4193
     iget-object p2, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$30;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -94,7 +94,7 @@
 
     invoke-virtual {p2, p1}, Lorg/telegram/ui/Components/ChatActivityEnterView;->setFieldText(Ljava/lang/CharSequence;)V
 
-    .line 4192
+    .line 4194
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$30;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
     iget-object p1, p1, Lorg/telegram/ui/Components/ChatActivityEnterView;->botCommandsMenuContainer:Lorg/telegram/ui/Components/BotCommandsMenuContainer;

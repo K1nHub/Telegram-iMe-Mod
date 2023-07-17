@@ -4,7 +4,7 @@ import android.view.LayoutInflater;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Lambda;
 import org.telegram.messenger.databinding.ForkChatCopyContentLayoutBinding;
-import org.telegram.p044ui.ActionBar.BaseFragment;
+import org.telegram.p043ui.ActionBar.BaseFragment;
 /* compiled from: ChatCopyPartBottomSheetDialog.kt */
 /* renamed from: com.iMe.ui.chat.copy.ChatCopyPartBottomSheetDialog$binding$2 */
 /* loaded from: classes3.dex */

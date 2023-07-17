@@ -490,6 +490,7 @@
     <attr name="counterTextAppearance" format="reference" />
     <attr name="counterTextColor" format="reference" />
     <attr name="crossfade" format="float" />
+    <attr name="css" format="string" />
     <attr name="currentState" format="reference" />
     <attr name="curveFit">
         <enum name="spline" value="0" />
@@ -1712,6 +1713,7 @@
     <attr name="suffixTextAppearance" format="reference" />
     <attr name="suffixTextColor" format="color" />
     <attr name="suggestionRowLayout" format="reference" />
+    <attr name="svg" format="reference|string" />
     <attr name="swipeRefreshLayoutProgressSpinnerBackgroundColor" format="color" />
     <attr name="switchMinWidth" format="dimension" />
     <attr name="switchPadding" format="dimension" />

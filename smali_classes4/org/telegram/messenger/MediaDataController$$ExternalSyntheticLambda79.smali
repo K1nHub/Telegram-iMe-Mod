@@ -16,17 +16,13 @@
 
 .field public final synthetic f$4:Ljava/util/ArrayList;
 
-.field public final synthetic f$5:Ljava/util/ArrayList;
+.field public final synthetic f$5:Landroidx/collection/LongSparseArray;
 
-.field public final synthetic f$6:Landroidx/collection/LongSparseArray;
-
-.field public final synthetic f$7:Landroidx/collection/LongSparseArray;
-
-.field public final synthetic f$8:Z
+.field public final synthetic f$6:J
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/messenger/MediaDataController;Ljava/util/ArrayList;ZLjava/util/ArrayList;Ljava/util/ArrayList;Ljava/util/ArrayList;Landroidx/collection/LongSparseArray;Landroidx/collection/LongSparseArray;Z)V
+.method public synthetic constructor <init>(Lorg/telegram/messenger/MediaDataController;Ljava/util/ArrayList;ZLjava/util/ArrayList;Ljava/util/ArrayList;Landroidx/collection/LongSparseArray;J)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,13 +37,9 @@
 
     iput-object p5, p0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda79;->f$4:Ljava/util/ArrayList;
 
-    iput-object p6, p0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda79;->f$5:Ljava/util/ArrayList;
+    iput-object p6, p0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda79;->f$5:Landroidx/collection/LongSparseArray;
 
-    iput-object p7, p0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda79;->f$6:Landroidx/collection/LongSparseArray;
-
-    iput-object p8, p0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda79;->f$7:Landroidx/collection/LongSparseArray;
-
-    iput-boolean p9, p0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda79;->f$8:Z
+    iput-wide p7, p0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda79;->f$6:J
 
     return-void
 .end method
@@ -55,7 +47,7 @@
 
 # virtual methods
 .method public final run()V
-    .locals 9
+    .locals 8
 
     iget-object v0, p0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda79;->f$0:Lorg/telegram/messenger/MediaDataController;
 
@@ -67,15 +59,11 @@
 
     iget-object v4, p0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda79;->f$4:Ljava/util/ArrayList;
 
-    iget-object v5, p0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda79;->f$5:Ljava/util/ArrayList;
+    iget-object v5, p0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda79;->f$5:Landroidx/collection/LongSparseArray;
 
-    iget-object v6, p0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda79;->f$6:Landroidx/collection/LongSparseArray;
+    iget-wide v6, p0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda79;->f$6:J
 
-    iget-object v7, p0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda79;->f$7:Landroidx/collection/LongSparseArray;
-
-    iget-boolean v8, p0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda79;->f$8:Z
-
-    invoke-static/range {v0 .. v8}, Lorg/telegram/messenger/MediaDataController;->$r8$lambda$wT9i_RUK-heU0VLAf8uZP3dwg8Q(Lorg/telegram/messenger/MediaDataController;Ljava/util/ArrayList;ZLjava/util/ArrayList;Ljava/util/ArrayList;Ljava/util/ArrayList;Landroidx/collection/LongSparseArray;Landroidx/collection/LongSparseArray;Z)V
+    invoke-static/range {v0 .. v7}, Lorg/telegram/messenger/MediaDataController;->$r8$lambda$A0nM4smdutCF1r9K1v4Mjb6R3Mg(Lorg/telegram/messenger/MediaDataController;Ljava/util/ArrayList;ZLjava/util/ArrayList;Ljava/util/ArrayList;Landroidx/collection/LongSparseArray;J)V
 
     return-void
 .end method

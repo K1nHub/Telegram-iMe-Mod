@@ -15,6 +15,11 @@ public class WalletSwapFeeView$$State extends MvpViewState<WalletSwapFeeView> im
         BaseView.CC.$default$finishScreen(this);
     }
 
+    @Override // com.iMe.p031ui.base.mvp.base.BaseView
+    public /* synthetic */ void removeSelfFromStackImmediately() {
+        BaseView.CC.$default$removeSelfFromStackImmediately(this);
+    }
+
     @Override // com.iMe.p031ui.wallet.swap.fee.WalletSwapFeeView
     public void onFeeReselected() {
         OnFeeReselectedCommand onFeeReselectedCommand = new OnFeeReselectedCommand(this);

@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/Components/LinkActionView$$ExternalSyntheticLambda2;->f$0:Lcom/iMe/fork/utils/Callbacks$Callback;
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/Components/LinkActionView;->$r8$lambda$D72T89fzE8jsci3mh7S9-5xtOlk(Lcom/iMe/fork/utils/Callbacks$Callback;Landroid/view/View;)V
+    invoke-static {v0, p1}, Lorg/telegram/ui/Components/LinkActionView;->$r8$lambda$_hI94C3GCjQhT4Y_i0h9EfrKjuQ(Lcom/iMe/fork/utils/Callbacks$Callback;Landroid/view/View;)V
 
     return-void
 .end method

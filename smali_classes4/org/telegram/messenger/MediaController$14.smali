@@ -33,7 +33,7 @@
 .method constructor <init>(Lorg/telegram/messenger/MediaController;Lorg/telegram/messenger/VideoEditedInfo;Ljava/io/File;Lorg/telegram/messenger/MediaController$VideoConvertMessage;)V
     .locals 0
 
-    .line 5162
+    .line 5176
     iput-object p1, p0, Lorg/telegram/messenger/MediaController$14;->this$0:Lorg/telegram/messenger/MediaController;
 
     iput-object p2, p0, Lorg/telegram/messenger/MediaController$14;->val$info:Lorg/telegram/messenger/VideoEditedInfo;
@@ -46,7 +46,7 @@
 
     const-wide/16 p1, 0x0
 
-    .line 5164
+    .line 5178
     iput-wide p1, p0, Lorg/telegram/messenger/MediaController$14;->lastAvailableSize:J
 
     return-void
@@ -57,7 +57,7 @@
 .method public checkConversionCanceled()Z
     .locals 1
 
-    .line 5168
+    .line 5182
     iget-object v0, p0, Lorg/telegram/messenger/MediaController$14;->val$info:Lorg/telegram/messenger/VideoEditedInfo;
 
     iget-boolean v0, v0, Lorg/telegram/messenger/VideoEditedInfo;->canceled:Z
@@ -68,7 +68,7 @@
 .method public didWriteData(JF)V
     .locals 10
 
-    .line 5173
+    .line 5187
     iget-object v0, p0, Lorg/telegram/messenger/MediaController$14;->val$info:Lorg/telegram/messenger/VideoEditedInfo;
 
     iget-boolean v0, v0, Lorg/telegram/messenger/VideoEditedInfo;->canceled:Z
@@ -84,7 +84,7 @@
 
     if-gez v0, :cond_1
 
-    .line 5177
+    .line 5191
     iget-object p1, p0, Lorg/telegram/messenger/MediaController$14;->val$cacheFile:Ljava/io/File;
 
     invoke-virtual {p1}, Ljava/io/File;->length()J
@@ -94,7 +94,7 @@
     :cond_1
     move-wide v6, p1
 
-    .line 5180
+    .line 5194
     iget-object p1, p0, Lorg/telegram/messenger/MediaController$14;->val$info:Lorg/telegram/messenger/VideoEditedInfo;
 
     iget-boolean p1, p1, Lorg/telegram/messenger/VideoEditedInfo;->needUpdateProgress:Z
@@ -109,11 +109,11 @@
 
     return-void
 
-    .line 5184
+    .line 5198
     :cond_2
     iput-wide v6, p0, Lorg/telegram/messenger/MediaController$14;->lastAvailableSize:J
 
-    .line 5185
+    .line 5199
     iget-object v0, p0, Lorg/telegram/messenger/MediaController$14;->this$0:Lorg/telegram/messenger/MediaController;
 
     iget-object v1, p0, Lorg/telegram/messenger/MediaController$14;->val$convertMessage:Lorg/telegram/messenger/MediaController$VideoConvertMessage;

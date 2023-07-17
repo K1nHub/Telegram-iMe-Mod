@@ -2,7 +2,7 @@ package com.iMe.p031ui.topics;
 
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Lambda;
-import org.telegram.p044ui.ActionBar.SimpleTextView;
+import org.telegram.p043ui.ActionBar.SimpleTextView;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: TopicProfileCell.kt */
 /* renamed from: com.iMe.ui.topics.TopicProfileCell$selectTopicTextView$2 */

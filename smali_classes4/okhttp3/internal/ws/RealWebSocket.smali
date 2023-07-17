@@ -140,7 +140,7 @@
 
     invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "random"
+    const-string/jumbo v0, "random"
 
     invoke-static {p4, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -549,7 +549,7 @@
         }
     .end annotation
 
-    const-string v0, "response"
+    const-string/jumbo v0, "response"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -856,7 +856,7 @@
 
     invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string p3, "reason.size() > 123: "
+    const-string/jumbo p3, "reason.size() > 123: "
 
     invoke-virtual {p1, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1430,7 +1430,7 @@
 .method public onReadClose(ILjava/lang/String;)V
     .locals 4
 
-    const-string v0, "reason"
+    const-string/jumbo v0, "reason"
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -2460,7 +2460,7 @@
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v5, "sent ping but didn\'t receive pong within "
+    const-string/jumbo v5, "sent ping but didn\'t receive pong within "
 
     invoke-virtual {v2, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

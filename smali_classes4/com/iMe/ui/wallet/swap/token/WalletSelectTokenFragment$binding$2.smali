@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment;-><init>(Lcom/iMe/model/wallet/select/SelectableType;Lcom/iMe/model/wallet/select/SelectableToken;Ljava/util/List;Lcom/iMe/storage/domain/model/crypto/NetworkType;ZLcom/iMe/fork/utils/Callbacks$Callback1;)V
+    value = Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment;-><init>(Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;Ljava/lang/String;Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment$ScreenType;ZLcom/iMe/fork/utils/Callbacks$Callback1;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -48,7 +48,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 40
+    .line 50
     invoke-virtual {p0}, Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment$binding$2;->invoke()Lorg/telegram/messenger/databinding/ForkFragmentWalletSelectTokenBinding;
 
     move-result-object v0
@@ -59,7 +59,7 @@
 .method public final invoke()Lorg/telegram/messenger/databinding/ForkFragmentWalletSelectTokenBinding;
     .locals 1
 
-    .line 40
+    .line 50
     iget-object v0, p0, Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment$binding$2;->this$0:Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;

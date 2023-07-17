@@ -24,17 +24,17 @@
 .method public constructor <init>(Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;Landroid/view/View;)V
     .locals 0
 
-    .line 2079
+    .line 2081
     iput-object p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle$VirtualViewHelper;->this$1:Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;
 
-    .line 2080
+    .line 2082
     invoke-direct {p0, p2}, Landroidx/customview/widget/ExploreByTouchHelper;-><init>(Landroid/view/View;)V
 
     const/4 p1, 0x2
 
     new-array p1, p1, [I
 
-    .line 2083
+    .line 2085
     iput-object p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle$VirtualViewHelper;->coords:[I
 
     return-void
@@ -45,7 +45,7 @@
 .method protected getVirtualViewAt(FF)I
     .locals 5
 
-    .line 2087
+    .line 2089
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle$VirtualViewHelper;->this$1:Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->isSendButtonVisible()Z
@@ -64,7 +64,7 @@
 
     if-eqz v0, :cond_2
 
-    .line 2088
+    .line 2090
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle$VirtualViewHelper;->this$1:Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
@@ -87,7 +87,7 @@
 
     return v1
 
-    .line 2090
+    .line 2092
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle$VirtualViewHelper;->this$1:Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;
 
@@ -107,7 +107,7 @@
 
     return p1
 
-    .line 2092
+    .line 2094
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle$VirtualViewHelper;->this$1:Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;
 
@@ -131,7 +131,7 @@
 
     if-eqz v0, :cond_2
 
-    .line 2093
+    .line 2095
     sget-object v0, Lorg/telegram/messenger/AndroidUtilities;->rectTmp:Landroid/graphics/RectF;
 
     iget-object v2, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle$VirtualViewHelper;->this$1:Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;
@@ -146,7 +146,7 @@
 
     invoke-virtual {v0, v2}, Landroid/graphics/RectF;->set(Landroid/graphics/Rect;)V
 
-    .line 2094
+    .line 2096
     iget-object v2, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle$VirtualViewHelper;->this$1:Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;
 
     iget-object v2, v2, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
@@ -159,7 +159,7 @@
 
     invoke-virtual {v2, v3}, Landroid/view/View;->getLocationOnScreen([I)V
 
-    .line 2095
+    .line 2097
     iget-object v2, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle$VirtualViewHelper;->coords:[I
 
     const/4 v3, 0x0
@@ -174,7 +174,7 @@
 
     invoke-virtual {v0, v4, v2}, Landroid/graphics/RectF;->offset(FF)V
 
-    .line 2096
+    .line 2098
     iget-object v2, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle$VirtualViewHelper;->this$1:Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;
 
     iget-object v2, v2, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
@@ -187,7 +187,7 @@
 
     invoke-virtual {v2, v4}, Landroid/view/View;->getLocationOnScreen([I)V
 
-    .line 2097
+    .line 2099
     iget-object v2, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle$VirtualViewHelper;->coords:[I
 
     aget v3, v2, v3
@@ -204,7 +204,7 @@
 
     invoke-virtual {v0, v3, v1}, Landroid/graphics/RectF;->offset(FF)V
 
-    .line 2098
+    .line 2100
     invoke-virtual {v0, p1, p2}, Landroid/graphics/RectF;->contains(FF)Z
 
     move-result p1
@@ -232,7 +232,7 @@
         }
     .end annotation
 
-    .line 2108
+    .line 2110
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle$VirtualViewHelper;->this$1:Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->isSendButtonVisible()Z
@@ -243,7 +243,7 @@
 
     const/4 v0, 0x1
 
-    .line 2109
+    .line 2111
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v0
@@ -252,7 +252,7 @@
 
     const/4 v0, 0x2
 
-    .line 2110
+    .line 2112
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v0
@@ -261,7 +261,7 @@
 
     const/4 v0, 0x3
 
-    .line 2111
+    .line 2113
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v0
@@ -287,7 +287,7 @@
 
     if-ne p1, v0, :cond_0
 
-    .line 2118
+    .line 2120
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle$VirtualViewHelper;->this$1:Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;
 
     iget-object p1, p1, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
@@ -298,7 +298,7 @@
 
     invoke-virtual {p2, p1}, Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat;->setBoundsInParent(Landroid/graphics/Rect;)V
 
-    .line 2119
+    .line 2121
     sget p1, Lorg/telegram/messenger/R$string;->Send:I
 
     const-string v0, "Send"
@@ -316,7 +316,7 @@
 
     if-ne p1, v1, :cond_1
 
-    .line 2121
+    .line 2123
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle$VirtualViewHelper;->this$1:Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;
 
     iget-object p1, p1, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
@@ -375,7 +375,7 @@
 
     invoke-virtual {p1, v0, v1, v2, v3}, Landroid/graphics/Rect;->set(IIII)V
 
-    .line 2122
+    .line 2124
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle$VirtualViewHelper;->this$1:Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;
 
     iget-object p1, p1, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
@@ -386,7 +386,7 @@
 
     invoke-virtual {p2, p1}, Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat;->setBoundsInParent(Landroid/graphics/Rect;)V
 
-    .line 2123
+    .line 2125
     sget p1, Lorg/telegram/messenger/R$string;->Stop:I
 
     const-string v0, "Stop"
@@ -404,7 +404,7 @@
 
     if-ne p1, v1, :cond_3
 
-    .line 2124
+    .line 2126
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle$VirtualViewHelper;->this$1:Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;
 
     iget-object p1, p1, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
@@ -415,7 +415,7 @@
 
     if-eqz p1, :cond_3
 
-    .line 2125
+    .line 2127
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle$VirtualViewHelper;->this$1:Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;
 
     iget-object p1, p1, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
@@ -438,7 +438,7 @@
 
     if-eqz p1, :cond_2
 
-    .line 2126
+    .line 2128
     sget-object p1, Lorg/telegram/messenger/AndroidUtilities;->rectTmp2:Landroid/graphics/Rect;
 
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle$VirtualViewHelper;->this$1:Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;
@@ -453,7 +453,7 @@
 
     invoke-virtual {p1, v1}, Landroid/graphics/Rect;->set(Landroid/graphics/Rect;)V
 
-    .line 2127
+    .line 2129
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle$VirtualViewHelper;->this$1:Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;
 
     iget-object v1, v1, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
@@ -466,7 +466,7 @@
 
     invoke-virtual {v1, v2}, Landroid/view/View;->getLocationOnScreen([I)V
 
-    .line 2128
+    .line 2130
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle$VirtualViewHelper;->coords:[I
 
     const/4 v2, 0x0
@@ -477,7 +477,7 @@
 
     invoke-virtual {p1, v3, v1}, Landroid/graphics/Rect;->offset(II)V
 
-    .line 2129
+    .line 2131
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle$VirtualViewHelper;->this$1:Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;
 
     iget-object v1, v1, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
@@ -490,7 +490,7 @@
 
     invoke-virtual {v1, v3}, Landroid/view/View;->getLocationOnScreen([I)V
 
-    .line 2130
+    .line 2132
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle$VirtualViewHelper;->coords:[I
 
     aget v2, v1, v2
@@ -503,10 +503,10 @@
 
     invoke-virtual {p1, v2, v0}, Landroid/graphics/Rect;->offset(II)V
 
-    .line 2131
+    .line 2133
     invoke-virtual {p2, p1}, Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat;->setBoundsInParent(Landroid/graphics/Rect;)V
 
-    .line 2133
+    .line 2135
     :cond_2
     sget p1, Lorg/telegram/messenger/R$string;->Cancel:I
 

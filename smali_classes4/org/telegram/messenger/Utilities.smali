@@ -119,7 +119,7 @@
     .line 59
     new-instance v0, Lorg/telegram/messenger/DispatchQueue;
 
-    const-string v1, "searchQueue"
+    const-string/jumbo v1, "searchQueue"
 
     invoke-direct {v0, v1}, Lorg/telegram/messenger/DispatchQueue;-><init>(Ljava/lang/String;)V
 

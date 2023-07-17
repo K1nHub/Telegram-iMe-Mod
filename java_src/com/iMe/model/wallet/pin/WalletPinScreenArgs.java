@@ -1,45 +1,34 @@
 package com.iMe.model.wallet.pin;
 
-import android.os.Parcel;
-import android.os.Parcelable;
+import com.iMe.model.wallet.crypto.create.WalletCreationType;
+import com.iMe.model.wallet.pin.CreatePinCodeScreenType;
+import com.iMe.storage.domain.model.crypto.Wallet;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: WalletPinScreenArgs.kt */
 /* loaded from: classes3.dex */
-public final class WalletPinScreenArgs implements Parcelable {
-    public static final Parcelable.Creator<WalletPinScreenArgs> CREATOR = new Creator();
-    private final String guid;
+public final class WalletPinScreenArgs {
     private final String password;
+    private final CreatePinCodeScreenType screenType;
     private final String seed;
 
-    /* compiled from: WalletPinScreenArgs.kt */
-    /* loaded from: classes3.dex */
-    public static final class Creator implements Parcelable.Creator<WalletPinScreenArgs> {
-        /* JADX WARN: Can't rename method to resolve collision */
-        @Override // android.os.Parcelable.Creator
-        public final WalletPinScreenArgs createFromParcel(Parcel parcel) {
-            Intrinsics.checkNotNullParameter(parcel, "parcel");
-            return new WalletPinScreenArgs(parcel.readString(), parcel.readString(), parcel.readString());
-        }
+    /* renamed from: wallet  reason: collision with root package name */
+    private final Wallet f1926wallet;
 
-        /* JADX WARN: Can't rename method to resolve collision */
-        @Override // android.os.Parcelable.Creator
-        public final WalletPinScreenArgs[] newArray(int i) {
-            return new WalletPinScreenArgs[i];
-        }
-    }
-
-    public static /* synthetic */ WalletPinScreenArgs copy$default(WalletPinScreenArgs walletPinScreenArgs, String str, String str2, String str3, int i, Object obj) {
+    public static /* synthetic */ WalletPinScreenArgs copy$default(WalletPinScreenArgs walletPinScreenArgs, String str, String str2, Wallet wallet2, CreatePinCodeScreenType createPinCodeScreenType, int i, Object obj) {
         if ((i & 1) != 0) {
             str = walletPinScreenArgs.password;
         }
         if ((i & 2) != 0) {
-            str2 = walletPinScreenArgs.guid;
+            str2 = walletPinScreenArgs.seed;
         }
         if ((i & 4) != 0) {
-            str3 = walletPinScreenArgs.seed;
+            wallet2 = walletPinScreenArgs.f1926wallet;
         }
-        return walletPinScreenArgs.copy(str, str2, str3);
+        if ((i & 8) != 0) {
+            createPinCodeScreenType = walletPinScreenArgs.screenType;
+        }
+        return walletPinScreenArgs.copy(str, str2, wallet2, createPinCodeScreenType);
     }
 
     public final String component1() {
@@ -47,23 +36,22 @@ public final class WalletPinScreenArgs implements Parcelable {
     }
 
     public final String component2() {
-        return this.guid;
-    }
-
-    public final String component3() {
         return this.seed;
     }
 
-    public final WalletPinScreenArgs copy(String password, String guid, String seed) {
-        Intrinsics.checkNotNullParameter(password, "password");
-        Intrinsics.checkNotNullParameter(guid, "guid");
-        Intrinsics.checkNotNullParameter(seed, "seed");
-        return new WalletPinScreenArgs(password, guid, seed);
+    public final Wallet component3() {
+        return this.f1926wallet;
     }
 
-    @Override // android.os.Parcelable
-    public int describeContents() {
-        return 0;
+    public final CreatePinCodeScreenType component4() {
+        return this.screenType;
+    }
+
+    public final WalletPinScreenArgs copy(String password, String seed, Wallet wallet2, CreatePinCodeScreenType screenType) {
+        Intrinsics.checkNotNullParameter(password, "password");
+        Intrinsics.checkNotNullParameter(seed, "seed");
+        Intrinsics.checkNotNullParameter(screenType, "screenType");
+        return new WalletPinScreenArgs(password, seed, wallet2, screenType);
     }
 
     public boolean equals(Object obj) {
@@ -72,53 +60,52 @@ public final class WalletPinScreenArgs implements Parcelable {
         }
         if (obj instanceof WalletPinScreenArgs) {
             WalletPinScreenArgs walletPinScreenArgs = (WalletPinScreenArgs) obj;
-            return Intrinsics.areEqual(this.password, walletPinScreenArgs.password) && Intrinsics.areEqual(this.guid, walletPinScreenArgs.guid) && Intrinsics.areEqual(this.seed, walletPinScreenArgs.seed);
+            return Intrinsics.areEqual(this.password, walletPinScreenArgs.password) && Intrinsics.areEqual(this.seed, walletPinScreenArgs.seed) && Intrinsics.areEqual(this.f1926wallet, walletPinScreenArgs.f1926wallet) && Intrinsics.areEqual(this.screenType, walletPinScreenArgs.screenType);
         }
         return false;
     }
 
     public int hashCode() {
-        return (((this.password.hashCode() * 31) + this.guid.hashCode()) * 31) + this.seed.hashCode();
+        int hashCode = ((this.password.hashCode() * 31) + this.seed.hashCode()) * 31;
+        Wallet wallet2 = this.f1926wallet;
+        return ((hashCode + (wallet2 == null ? 0 : wallet2.hashCode())) * 31) + this.screenType.hashCode();
     }
 
     public String toString() {
-        return "WalletPinScreenArgs(password=" + this.password + ", guid=" + this.guid + ", seed=" + this.seed + ')';
+        return "WalletPinScreenArgs(password=" + this.password + ", seed=" + this.seed + ", wallet=" + this.f1926wallet + ", screenType=" + this.screenType + ')';
     }
 
-    @Override // android.os.Parcelable
-    public void writeToParcel(Parcel out, int i) {
-        Intrinsics.checkNotNullParameter(out, "out");
-        out.writeString(this.password);
-        out.writeString(this.guid);
-        out.writeString(this.seed);
-    }
-
-    public WalletPinScreenArgs(String password, String guid, String seed) {
+    public WalletPinScreenArgs(String password, String seed, Wallet wallet2, CreatePinCodeScreenType screenType) {
         Intrinsics.checkNotNullParameter(password, "password");
-        Intrinsics.checkNotNullParameter(guid, "guid");
         Intrinsics.checkNotNullParameter(seed, "seed");
+        Intrinsics.checkNotNullParameter(screenType, "screenType");
         this.password = password;
-        this.guid = guid;
         this.seed = seed;
+        this.f1926wallet = wallet2;
+        this.screenType = screenType;
     }
 
-    public /* synthetic */ WalletPinScreenArgs(String str, String str2, String str3, int i, DefaultConstructorMarker defaultConstructorMarker) {
-        this(str, (i & 2) != 0 ? "" : str2, (i & 4) != 0 ? "" : str3);
+    public /* synthetic */ WalletPinScreenArgs(String str, String str2, Wallet wallet2, CreatePinCodeScreenType createPinCodeScreenType, int i, DefaultConstructorMarker defaultConstructorMarker) {
+        this(str, (i & 2) != 0 ? "" : str2, (i & 4) != 0 ? null : wallet2, createPinCodeScreenType);
     }
 
     public final String getPassword() {
         return this.password;
     }
 
-    public final String getGuid() {
-        return this.guid;
-    }
-
     public final String getSeed() {
         return this.seed;
     }
 
+    public final Wallet getWallet() {
+        return this.f1926wallet;
+    }
+
+    public final CreatePinCodeScreenType getScreenType() {
+        return this.screenType;
+    }
+
     public WalletPinScreenArgs() {
-        this("", "", "");
+        this("", "", null, new CreatePinCodeScreenType.Creation(WalletCreationType.Initial.Create.INSTANCE));
     }
 }

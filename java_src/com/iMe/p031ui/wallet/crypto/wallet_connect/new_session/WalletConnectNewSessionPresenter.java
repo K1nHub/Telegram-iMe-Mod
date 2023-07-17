@@ -8,6 +8,7 @@ import com.iMe.storage.domain.storage.CryptoPreferenceHelper;
 import com.iMe.storage.domain.utils.system.ResourceManager;
 import com.iMe.utils.extentions.common.StringExtKt;
 import com.trustwallet.walletconnect.WCSessionStoreItem;
+import java.util.List;
 import kotlin.collections.CollectionsKt;
 import kotlin.jvm.internal.Intrinsics;
 import moxy.InjectViewState;
@@ -53,7 +54,7 @@ public final class WalletConnectNewSessionPresenter extends BasePresenter<Wallet
     public void onFirstViewAttach() {
         WCSessionStoreItem wCSessionStoreItem = this.sessionItem;
         WalletConnectNewSessionView walletConnectNewSessionView = (WalletConnectNewSessionView) getViewState();
-        String str = (String) CollectionsKt.lastOrNull(wCSessionStoreItem.getRemotePeerMeta().getIcons());
+        String str = (String) CollectionsKt.lastOrNull((List<? extends Object>) wCSessionStoreItem.getRemotePeerMeta().getIcons());
         if (str == null) {
             str = "";
         }
@@ -61,6 +62,6 @@ public final class WalletConnectNewSessionPresenter extends BasePresenter<Wallet
         String url = wCSessionStoreItem.getRemotePeerMeta().getUrl();
         Wallet.EVM eVMWallet = this.cryptoAccessManager.getEVMWallet();
         String address = eVMWallet != null ? eVMWallet.getAddress() : null;
-        walletConnectNewSessionView.setupScreenWithData(str, name, url, StringExtKt.shortened$default(address != null ? address : "", 0, 1, null), this.resourceManager.getString(this.cryptoPreferenceHelper.getNetworkType().getTitleResId()));
+        walletConnectNewSessionView.setupScreenWithData(str, name, url, StringExtKt.shortened$default(address != null ? address : "", 0, 1, null), this.cryptoPreferenceHelper.getNetwork().getFullName());
     }
 }

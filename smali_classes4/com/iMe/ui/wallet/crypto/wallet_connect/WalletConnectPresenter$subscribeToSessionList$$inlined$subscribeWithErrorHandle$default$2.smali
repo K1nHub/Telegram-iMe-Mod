@@ -27,7 +27,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nRxExt.kt\nKotlin\n*S Kotlin\n*F\n+ 1 RxExt.kt\ncom/iMe/utils/extentions/rx/RxExtKt$subscribeWithErrorHandle$12\n+ 2 RxExt.kt\ncom/iMe/utils/extentions/rx/RxExtKt$subscribeWithErrorHandle$10\n*L\n1#1,111:1\n101#2:112\n*E\n"
+    value = "SMAP\nRxExt.kt\nKotlin\n*S Kotlin\n*F\n+ 1 RxExt.kt\ncom/iMe/utils/extentions/rx/RxExtKt$subscribeWithErrorHandle$12\n+ 2 RxExt.kt\ncom/iMe/utils/extentions/rx/RxExtKt$subscribeWithErrorHandle$10\n*L\n1#1,111:1\n102#2:112\n*E\n"
 .end annotation
 
 
@@ -53,7 +53,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 104
+    .line 105
     check-cast p1, Ljava/lang/Throwable;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/wallet/crypto/wallet_connect/WalletConnectPresenter$subscribeToSessionList$$inlined$subscribeWithErrorHandle$default$2;->invoke(Ljava/lang/Throwable;)V
@@ -66,10 +66,10 @@
 .method public final invoke(Ljava/lang/Throwable;)V
     .locals 1
 
-    .line 107
+    .line 108
     invoke-static {p1}, Ltimber/log/Timber;->e(Ljava/lang/Throwable;)V
 
-    .line 108
+    .line 109
     iget-object v0, p0, Lcom/iMe/ui/wallet/crypto/wallet_connect/WalletConnectPresenter$subscribeToSessionList$$inlined$subscribeWithErrorHandle$default$2;->$viewState:Lcom/iMe/ui/base/mvp/base/BaseView;
 
     if-eqz v0, :cond_1

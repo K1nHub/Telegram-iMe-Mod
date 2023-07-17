@@ -17,8 +17,8 @@ import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.UserConfig;
-import org.telegram.p044ui.Components.URLSpanReplacement;
-import org.telegram.p044ui.Components.URLSpanUserMention;
+import org.telegram.p043ui.Components.URLSpanReplacement;
+import org.telegram.p043ui.Components.URLSpanUserMention;
 import org.telegram.tgnet.TLRPC$Chat;
 import org.telegram.tgnet.TLRPC$User;
 import timber.log.Timber;
@@ -105,7 +105,7 @@ public final class MultiReplyInteractor {
 
     private final SpannableString buildSpannableStringUser(TLRPC$User tLRPC$User) {
         SpannableString spannableString = new SpannableString(UserExtKt.getPrivacySafeName(tLRPC$User) + ':');
-        addUserNameSpan(spannableString, String.valueOf(tLRPC$User.f1574id));
+        addUserNameSpan(spannableString, String.valueOf(tLRPC$User.f1656id));
         return spannableString;
     }
 

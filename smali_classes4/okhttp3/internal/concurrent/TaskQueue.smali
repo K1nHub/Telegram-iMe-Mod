@@ -372,7 +372,7 @@
 
     if-eqz p2, :cond_0
 
-    const-string p2, "schedule canceled (queue is shutdown)"
+    const-string/jumbo p2, "schedule canceled (queue is shutdown)"
 
     .line 65
     invoke-static {p1, p0, p2}, Lokhttp3/internal/concurrent/TaskLoggerKt;->access$log(Lokhttp3/internal/concurrent/Task;Lokhttp3/internal/concurrent/TaskQueue;Ljava/lang/String;)V
@@ -402,7 +402,7 @@
 
     if-eqz p2, :cond_2
 
-    const-string p2, "schedule failed (queue is shutdown)"
+    const-string/jumbo p2, "schedule failed (queue is shutdown)"
 
     .line 68
     invoke-static {p1, p0, p2}, Lokhttp3/internal/concurrent/TaskLoggerKt;->access$log(Lokhttp3/internal/concurrent/Task;Lokhttp3/internal/concurrent/TaskQueue;Ljava/lang/String;)V
@@ -549,7 +549,7 @@
 
     invoke-direct {p4}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v4, "run again after "
+    const-string/jumbo v4, "run again after "
 
     invoke-virtual {p4, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -573,7 +573,7 @@
 
     invoke-direct {p4}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v4, "scheduled after "
+    const-string/jumbo v4, "scheduled after "
 
     invoke-virtual {p4, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

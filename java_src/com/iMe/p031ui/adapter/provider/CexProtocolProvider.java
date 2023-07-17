@@ -7,8 +7,8 @@ import com.iMe.model.wallet.swap.CexProtocolItem;
 import com.iMe.storage.domain.utils.system.ResourceManager;
 import com.iMe.utils.extentions.common.BaseQuickAdapterExtKt;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3295R;
-import org.telegram.p044ui.ActionBar.Theme;
+import org.telegram.messenger.C3417R;
+import org.telegram.p043ui.ActionBar.Theme;
 /* compiled from: CexProtocolProvider.kt */
 /* renamed from: com.iMe.ui.adapter.provider.CexProtocolProvider */
 /* loaded from: classes.dex */
@@ -21,7 +21,7 @@ public final class CexProtocolProvider extends BaseNodeProvider<CexProtocolItem>
         Intrinsics.checkNotNullParameter(resourceManager, "resourceManager");
         this.resourceManager = resourceManager;
         this.itemViewType = IdFabric$ViewTypes.CENTRALIZED_EXCHANGES;
-        this.layoutId = C3295R.layout.fork_recycle_item_wallet_card_icon_title_subtitle;
+        this.layoutId = C3417R.layout.fork_recycle_item_wallet_card_icon_title_subtitle;
     }
 
     @Override // com.chad.library.adapter.base.provider.BaseItemProvider
@@ -38,10 +38,10 @@ public final class CexProtocolProvider extends BaseNodeProvider<CexProtocolItem>
     public void convert(BaseViewHolder helper, CexProtocolItem item) {
         Intrinsics.checkNotNullParameter(helper, "helper");
         Intrinsics.checkNotNullParameter(item, "item");
-        BaseViewHolder themedCardBackground = BaseQuickAdapterExtKt.setThemedCardBackground(helper, C3295R.C3298id.card_root, Theme.key_windowBackgroundWhite);
-        int i = C3295R.C3298id.text_title;
+        BaseViewHolder themedCardBackground = BaseQuickAdapterExtKt.setThemedCardBackground(helper, C3417R.C3420id.card_root, Theme.key_windowBackgroundWhite);
+        int i = C3417R.C3420id.text_title;
         BaseViewHolder themedTextColor = BaseQuickAdapterExtKt.setThemedTextColor(themedCardBackground, i, Theme.key_chat_messagePanelText);
-        int i2 = C3295R.C3298id.text_subtitle;
-        BaseQuickAdapterExtKt.setMediumTypeface(BaseQuickAdapterExtKt.setThemedTextColor(themedTextColor, i2, Theme.key_windowBackgroundWhiteGrayText2).setImageResource(C3295R.C3298id.image_icon, item.getInfo().getLogo()), i).setText(i, this.resourceManager.getString(item.getInfo().getName())).setText(i2, this.resourceManager.getString(item.getInfo().getDescription()));
+        int i2 = C3417R.C3420id.text_subtitle;
+        BaseQuickAdapterExtKt.setMediumTypeface(BaseQuickAdapterExtKt.setThemedTextColor(themedTextColor, i2, Theme.key_windowBackgroundWhiteGrayText2).setImageResource(C3417R.C3420id.image_icon, item.getInfo().getLogo()), i).setText(i, this.resourceManager.getString(item.getInfo().getName())).setText(i2, this.resourceManager.getString(item.getInfo().getDescription()));
     }
 }

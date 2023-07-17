@@ -48,7 +48,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 69
+    .line 110
     invoke-virtual {p0}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$presenter$2$1;->invoke()Lorg/koin/core/parameter/ParametersHolder;
 
     move-result-object v0
@@ -63,7 +63,7 @@
 
     new-array v0, v0, [Ljava/lang/Object;
 
-    .line 69
+    .line 110
     iget-object v1, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$presenter$2$1;->this$0:Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;
 
     invoke-static {v1}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->access$getCurrentType$p(Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;)Lcom/iMe/model/wallet/crypto/create/CreateWalletScreenType;

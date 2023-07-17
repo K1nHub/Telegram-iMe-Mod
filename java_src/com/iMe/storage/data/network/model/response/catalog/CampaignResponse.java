@@ -12,7 +12,7 @@ public final class CampaignResponse {
     private final String createdAt;
 
     /* renamed from: id */
-    private final long f299id;
+    private final long f377id;
     private final String invalidReason;
     private final CatalogLanguageResponse language;
     private final String status;
@@ -35,7 +35,7 @@ public final class CampaignResponse {
     }
 
     public final long component5() {
-        return this.f299id;
+        return this.f377id;
     }
 
     public final String component6() {
@@ -71,19 +71,19 @@ public final class CampaignResponse {
         }
         if (obj instanceof CampaignResponse) {
             CampaignResponse campaignResponse = (CampaignResponse) obj;
-            return Intrinsics.areEqual(this.category, campaignResponse.category) && Intrinsics.areEqual(this.channel, campaignResponse.channel) && Intrinsics.areEqual(this.countries, campaignResponse.countries) && Intrinsics.areEqual(this.createdAt, campaignResponse.createdAt) && this.f299id == campaignResponse.f299id && Intrinsics.areEqual(this.invalidReason, campaignResponse.invalidReason) && Intrinsics.areEqual(this.language, campaignResponse.language) && Intrinsics.areEqual(this.status, campaignResponse.status) && Intrinsics.areEqual(this.tags, campaignResponse.tags);
+            return Intrinsics.areEqual(this.category, campaignResponse.category) && Intrinsics.areEqual(this.channel, campaignResponse.channel) && Intrinsics.areEqual(this.countries, campaignResponse.countries) && Intrinsics.areEqual(this.createdAt, campaignResponse.createdAt) && this.f377id == campaignResponse.f377id && Intrinsics.areEqual(this.invalidReason, campaignResponse.invalidReason) && Intrinsics.areEqual(this.language, campaignResponse.language) && Intrinsics.areEqual(this.status, campaignResponse.status) && Intrinsics.areEqual(this.tags, campaignResponse.tags);
         }
         return false;
     }
 
     public int hashCode() {
-        int hashCode = ((((((((this.category.hashCode() * 31) + this.channel.hashCode()) * 31) + this.countries.hashCode()) * 31) + this.createdAt.hashCode()) * 31) + BotsDbModel$$ExternalSyntheticBackport0.m706m(this.f299id)) * 31;
+        int hashCode = ((((((((this.category.hashCode() * 31) + this.channel.hashCode()) * 31) + this.countries.hashCode()) * 31) + this.createdAt.hashCode()) * 31) + BotsDbModel$$ExternalSyntheticBackport0.m706m(this.f377id)) * 31;
         String str = this.invalidReason;
         return ((((((hashCode + (str == null ? 0 : str.hashCode())) * 31) + this.language.hashCode()) * 31) + this.status.hashCode()) * 31) + this.tags.hashCode();
     }
 
     public String toString() {
-        return "CampaignResponse(category=" + this.category + ", channel=" + this.channel + ", countries=" + this.countries + ", createdAt=" + this.createdAt + ", id=" + this.f299id + ", invalidReason=" + this.invalidReason + ", language=" + this.language + ", status=" + this.status + ", tags=" + this.tags + ')';
+        return "CampaignResponse(category=" + this.category + ", channel=" + this.channel + ", countries=" + this.countries + ", createdAt=" + this.createdAt + ", id=" + this.f377id + ", invalidReason=" + this.invalidReason + ", language=" + this.language + ", status=" + this.status + ", tags=" + this.tags + ')';
     }
 
     public CampaignResponse(CatalogCategoryResponse category, ChannelResponse channel, List<ChannelCountryResponse> countries, String createdAt, long j, String str, CatalogLanguageResponse language, String status, List<ChannelTagResponse> tags) {
@@ -98,7 +98,7 @@ public final class CampaignResponse {
         this.channel = channel;
         this.countries = countries;
         this.createdAt = createdAt;
-        this.f299id = j;
+        this.f377id = j;
         this.invalidReason = str;
         this.language = language;
         this.status = status;
@@ -122,7 +122,7 @@ public final class CampaignResponse {
     }
 
     public final long getId() {
-        return this.f299id;
+        return this.f377id;
     }
 
     public final String getInvalidReason() {

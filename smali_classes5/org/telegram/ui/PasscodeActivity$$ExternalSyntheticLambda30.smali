@@ -2,42 +2,38 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/ui/Components/NumberPicker$Formatter;
+.implements Ljava/lang/Runnable;
 
 
-# static fields
-.field public static final synthetic INSTANCE:Lorg/telegram/ui/PasscodeActivity$$ExternalSyntheticLambda30;
+# instance fields
+.field public final synthetic f$0:Lorg/telegram/ui/PasscodeActivity;
+
+.field public final synthetic f$1:Z
 
 
 # direct methods
-.method static synthetic constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Lorg/telegram/ui/PasscodeActivity$$ExternalSyntheticLambda30;
-
-    invoke-direct {v0}, Lorg/telegram/ui/PasscodeActivity$$ExternalSyntheticLambda30;-><init>()V
-
-    sput-object v0, Lorg/telegram/ui/PasscodeActivity$$ExternalSyntheticLambda30;->INSTANCE:Lorg/telegram/ui/PasscodeActivity$$ExternalSyntheticLambda30;
-
-    return-void
-.end method
-
-.method private synthetic constructor <init>()V
+.method public synthetic constructor <init>(Lorg/telegram/ui/PasscodeActivity;Z)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lorg/telegram/ui/PasscodeActivity$$ExternalSyntheticLambda30;->f$0:Lorg/telegram/ui/PasscodeActivity;
+
+    iput-boolean p2, p0, Lorg/telegram/ui/PasscodeActivity$$ExternalSyntheticLambda30;->f$1:Z
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final format(I)Ljava/lang/String;
-    .locals 0
+.method public final run()V
+    .locals 2
 
-    invoke-static {p1}, Lorg/telegram/ui/PasscodeActivity;->$r8$lambda$AiwrRXTxmMJawrMAell0tmo4Uo8(I)Ljava/lang/String;
+    iget-object v0, p0, Lorg/telegram/ui/PasscodeActivity$$ExternalSyntheticLambda30;->f$0:Lorg/telegram/ui/PasscodeActivity;
 
-    move-result-object p1
+    iget-boolean v1, p0, Lorg/telegram/ui/PasscodeActivity$$ExternalSyntheticLambda30;->f$1:Z
 
-    return-object p1
+    invoke-static {v0, v1}, Lorg/telegram/ui/PasscodeActivity;->$r8$lambda$9UBvSKNqzoWYuC78BJSGaoq2oP0(Lorg/telegram/ui/PasscodeActivity;Z)V
+
+    return-void
 .end method

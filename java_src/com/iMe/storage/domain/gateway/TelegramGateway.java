@@ -1,6 +1,5 @@
 package com.iMe.storage.domain.gateway;
 
-import com.iMe.storage.domain.model.telegram.TelegramLocaleInformation;
 import java.io.File;
 import java.util.ArrayList;
 /* compiled from: TelegramGateway.kt */
@@ -10,7 +9,7 @@ public interface TelegramGateway {
 
     String getAppVersion();
 
-    TelegramLocaleInformation getCurrentLocaleInformation();
+    String getCurrentLanguage();
 
     String getDeviceId();
 

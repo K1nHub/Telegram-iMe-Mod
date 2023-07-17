@@ -80,7 +80,7 @@
 
     const/4 v0, 0x6
 
-    .line 1839
+    .line 1838
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
@@ -89,7 +89,7 @@
 
     const/high16 v0, 0x3fc00000    # 1.5f
 
-    .line 1840
+    .line 1839
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
 
     move-result v0
@@ -110,15 +110,15 @@
 
     move/from16 v3, p5
 
-    .line 1854
+    .line 1853
     invoke-direct/range {p0 .. p1}, Landroid/view/ViewGroup;-><init>(Landroid/content/Context;)V
 
     const/4 v4, 0x1
 
-    .line 1842
+    .line 1841
     iput-boolean v4, v0, Lcom/iMe/fork/ui/dialog/TranslateAlert$LoadingTextView2;->showLoadingText:Z
 
-    .line 1850
+    .line 1849
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v5
@@ -127,42 +127,42 @@
 
     const/high16 v5, 0x3f800000    # 1.0f
 
-    .line 1851
+    .line 1850
     iput v5, v0, Lcom/iMe/fork/ui/dialog/TranslateAlert$LoadingTextView2;->scaleT:F
 
     const/4 v5, 0x0
 
-    .line 1948
+    .line 1947
     iput-boolean v5, v0, Lcom/iMe/fork/ui/dialog/TranslateAlert$LoadingTextView2;->loaded:Z
 
     const/4 v6, 0x0
 
-    .line 1949
+    .line 1948
     iput v6, v0, Lcom/iMe/fork/ui/dialog/TranslateAlert$LoadingTextView2;->loadingT:F
 
     const/4 v7, 0x0
 
-    .line 1950
+    .line 1949
     iput-object v7, v0, Lcom/iMe/fork/ui/dialog/TranslateAlert$LoadingTextView2;->loadedAnimator:Landroid/animation/ValueAnimator;
 
-    .line 1998
+    .line 1997
     iput v5, v0, Lcom/iMe/fork/ui/dialog/TranslateAlert$LoadingTextView2;->lastWidth:I
 
-    .line 2032
+    .line 2031
     new-instance v8, Landroid/graphics/RectF;
 
     invoke-direct {v8}, Landroid/graphics/RectF;-><init>()V
 
     iput-object v8, v0, Lcom/iMe/fork/ui/dialog/TranslateAlert$LoadingTextView2;->fetchedPathRect:Landroid/graphics/RectF;
 
-    .line 2070
+    .line 2069
     new-instance v8, Landroid/graphics/RectF;
 
     invoke-direct {v8}, Landroid/graphics/RectF;-><init>()V
 
     iput-object v8, v0, Lcom/iMe/fork/ui/dialog/TranslateAlert$LoadingTextView2;->rect:Landroid/graphics/RectF;
 
-    .line 2071
+    .line 2070
     new-instance v8, Landroid/graphics/Path;
 
     invoke-direct {v8}, Landroid/graphics/Path;-><init>()V
@@ -187,7 +187,7 @@
 
     iput-object v8, v0, Lcom/iMe/fork/ui/dialog/TranslateAlert$LoadingTextView2;->shadePath:Landroid/graphics/Path;
 
-    .line 2075
+    .line 2074
     new-instance v8, Landroid/graphics/Paint;
 
     invoke-direct {v8}, Landroid/graphics/Paint;-><init>()V
@@ -196,7 +196,7 @@
 
     const/high16 v9, 0x43af0000    # 350.0f
 
-    .line 2076
+    .line 2075
     invoke-static {v9}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
 
     move-result v9
@@ -205,23 +205,23 @@
 
     iput v13, v0, Lcom/iMe/fork/ui/dialog/TranslateAlert$LoadingTextView2;->gradientWidth:F
 
-    .line 1856
+    .line 1855
     sget v9, Lcom/iMe/fork/ui/dialog/TranslateAlert$LoadingTextView2;->paddingHorizontal:I
 
     sget v10, Lcom/iMe/fork/ui/dialog/TranslateAlert$LoadingTextView2;->paddingVertical:I
 
     invoke-virtual {v0, v9, v10, v9, v10}, Landroid/view/ViewGroup;->setPadding(IIII)V
 
-    .line 1857
+    .line 1856
     invoke-virtual {v0, v5}, Landroid/view/ViewGroup;->setClipChildren(Z)V
 
-    .line 1858
+    .line 1857
     invoke-virtual {v0, v5}, Landroid/view/ViewGroup;->setWillNotDraw(Z)V
 
-    .line 1859
+    .line 1858
     invoke-virtual {v0, v5}, Landroid/view/ViewGroup;->setFocusable(Z)V
 
-    .line 1861
+    .line 1860
     new-instance v9, Lcom/iMe/fork/ui/dialog/TranslateAlert$LoadingTextView2$1;
 
     invoke-direct {v9, v0, v1}, Lcom/iMe/fork/ui/dialog/TranslateAlert$LoadingTextView2$1;-><init>(Lcom/iMe/fork/ui/dialog/TranslateAlert$LoadingTextView2;Landroid/content/Context;)V
@@ -232,89 +232,89 @@
 
     int-to-float v10, v10
 
-    .line 1867
+    .line 1866
     invoke-virtual {v9, v5, v10}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 1868
+    .line 1867
     invoke-virtual {v9, v3}, Landroid/widget/TextView;->setTextColor(I)V
 
     move-object/from16 v11, p2
 
-    .line 1869
+    .line 1868
     invoke-virtual {v9, v11}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1870
+    .line 1869
     invoke-virtual {v9, v5}, Landroid/widget/TextView;->setLines(I)V
 
-    .line 1871
+    .line 1870
     invoke-virtual {v9, v5}, Landroid/widget/TextView;->setMaxLines(I)V
 
-    .line 1872
+    .line 1871
     invoke-virtual {v9, v5}, Landroid/widget/TextView;->setSingleLine(Z)V
 
-    .line 1873
+    .line 1872
     invoke-virtual {v9, v7}, Landroid/widget/TextView;->setEllipsize(Landroid/text/TextUtils$TruncateAt;)V
 
-    .line 1874
+    .line 1873
     invoke-virtual {v9, v5}, Landroid/widget/TextView;->setFocusable(Z)V
 
     const/4 v15, 0x2
 
-    .line 1875
+    .line 1874
     invoke-virtual {v9, v15}, Landroid/widget/TextView;->setImportantForAccessibility(I)V
 
-    .line 1876
+    .line 1875
     invoke-virtual {v0, v9}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
 
-    .line 1878
+    .line 1877
     new-instance v9, Lcom/iMe/fork/ui/dialog/TranslateAlert$LoadingTextView2$2;
 
     invoke-direct {v9, v0, v1}, Lcom/iMe/fork/ui/dialog/TranslateAlert$LoadingTextView2$2;-><init>(Lcom/iMe/fork/ui/dialog/TranslateAlert$LoadingTextView2;Landroid/content/Context;)V
 
     iput-object v9, v0, Lcom/iMe/fork/ui/dialog/TranslateAlert$LoadingTextView2;->toTextView:Landroid/widget/TextView;
 
-    .line 1884
+    .line 1883
     invoke-virtual {v9, v5, v10}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 1885
+    .line 1884
     invoke-virtual {v9, v3}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 1886
+    .line 1885
     invoke-virtual {v9, v5}, Landroid/widget/TextView;->setLines(I)V
 
-    .line 1887
+    .line 1886
     invoke-virtual {v9, v5}, Landroid/widget/TextView;->setMaxLines(I)V
 
-    .line 1888
+    .line 1887
     invoke-virtual {v9, v5}, Landroid/widget/TextView;->setSingleLine(Z)V
 
-    .line 1889
+    .line 1888
     invoke-virtual {v9, v7}, Landroid/widget/TextView;->setEllipsize(Landroid/text/TextUtils$TruncateAt;)V
 
-    .line 1890
+    .line 1889
     invoke-virtual {v9, v5}, Landroid/widget/TextView;->setFocusable(Z)V
 
-    .line 1891
+    .line 1890
     invoke-virtual {v9, v15}, Landroid/widget/TextView;->setImportantForAccessibility(I)V
 
-    .line 1892
+    .line 1891
     invoke-virtual {v0, v9}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
 
-    .line 1894
+    .line 1893
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_dialogBackground:I
 
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
-    .line 1895
+    .line 1894
     sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_dialogBackgroundGray:I
 
     invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v3
 
-    .line 1896
+    .line 1895
     new-instance v7, Landroid/graphics/LinearGradient;
 
     const/4 v9, 0x3
@@ -353,12 +353,12 @@
 
     invoke-direct/range {v10 .. v17}, Landroid/graphics/LinearGradient;-><init>(FFFF[I[FLandroid/graphics/Shader$TileMode;)V
 
-    .line 1897
+    .line 1896
     invoke-virtual {v8, v7}, Landroid/graphics/Paint;->setShader(Landroid/graphics/Shader;)Landroid/graphics/Shader;
 
     new-array v1, v3, [F
 
-    .line 1900
+    .line 1899
     fill-array-data v1, :array_1
 
     invoke-static {v1}, Landroid/animation/ValueAnimator;->ofFloat([F)Landroid/animation/ValueAnimator;
@@ -369,10 +369,10 @@
 
     if-eqz v2, :cond_0
 
-    .line 1902
+    .line 1901
     iput v6, v0, Lcom/iMe/fork/ui/dialog/TranslateAlert$LoadingTextView2;->scaleT:F
 
-    .line 1903
+    .line 1902
     :cond_0
     new-instance v3, Lcom/iMe/fork/ui/dialog/TranslateAlert$LoadingTextView2$$ExternalSyntheticLambda1;
 
@@ -382,10 +382,10 @@
 
     const-wide v2, 0x7fffffffffffffffL
 
-    .line 1913
+    .line 1912
     invoke-virtual {v1, v2, v3}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    .line 1914
+    .line 1913
     invoke-virtual {v1}, Landroid/animation/ValueAnimator;->start()V
 
     return-void
@@ -409,7 +409,7 @@
 .method static synthetic access$2600(Lcom/iMe/fork/ui/dialog/TranslateAlert$LoadingTextView2;)Landroid/widget/TextView;
     .locals 0
 
-    .line 1821
+    .line 1820
     iget-object p0, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert$LoadingTextView2;->toTextView:Landroid/widget/TextView;
 
     return-object p0
@@ -418,7 +418,7 @@
 .method private synthetic lambda$loaded$1(Landroid/animation/ValueAnimator;)V
     .locals 0
 
-    .line 1963
+    .line 1962
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object p1
@@ -431,10 +431,10 @@
 
     iput p1, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert$LoadingTextView2;->loadingT:F
 
-    .line 1964
+    .line 1963
     invoke-direct {p0}, Lcom/iMe/fork/ui/dialog/TranslateAlert$LoadingTextView2;->updateHeight()V
 
-    .line 1965
+    .line 1964
     invoke-virtual {p0}, Landroid/view/ViewGroup;->invalidate()V
 
     return-void
@@ -443,12 +443,12 @@
 .method private synthetic lambda$new$0(ZLandroid/animation/ValueAnimator;)V
     .locals 4
 
-    .line 1904
+    .line 1903
     invoke-virtual {p0}, Landroid/view/ViewGroup;->invalidate()V
 
     if-eqz p1, :cond_1
 
-    .line 1906
+    .line 1905
     iget p1, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert$LoadingTextView2;->scaleT:F
 
     const/high16 p2, 0x3f800000    # 1.0f
@@ -464,7 +464,7 @@
     :cond_0
     const/4 p1, 0x0
 
-    .line 1907
+    .line 1906
     :goto_0
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
@@ -488,7 +488,7 @@
 
     if-eqz p1, :cond_1
 
-    .line 1909
+    .line 1908
     invoke-direct {p0}, Lcom/iMe/fork/ui/dialog/TranslateAlert$LoadingTextView2;->updateHeight()V
 
     :cond_1
@@ -498,7 +498,7 @@
 .method private layout()V
     .locals 1
 
-    .line 2021
+    .line 2020
     iget v0, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert$LoadingTextView2;->lastWidth:I
 
     invoke-direct {p0, v0}, Lcom/iMe/fork/ui/dialog/TranslateAlert$LoadingTextView2;->layout(I)V
@@ -509,30 +509,30 @@
 .method private layout(I)V
     .locals 1
 
-    .line 2012
+    .line 2011
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert$LoadingTextView2;->fromTextView:Landroid/widget/TextView;
 
     invoke-direct {p0, v0, p1}, Lcom/iMe/fork/ui/dialog/TranslateAlert$LoadingTextView2;->measureChild(Landroid/view/View;I)V
 
-    .line 2013
+    .line 2012
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert$LoadingTextView2;->fromTextView:Landroid/widget/TextView;
 
     invoke-direct {p0, v0, p1}, Lcom/iMe/fork/ui/dialog/TranslateAlert$LoadingTextView2;->layoutChild(Landroid/view/View;I)V
 
-    .line 2014
+    .line 2013
     invoke-direct {p0}, Lcom/iMe/fork/ui/dialog/TranslateAlert$LoadingTextView2;->updateLoadingPath()V
+
+    .line 2014
+    iget-object v0, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert$LoadingTextView2;->toTextView:Landroid/widget/TextView;
+
+    invoke-direct {p0, v0, p1}, Lcom/iMe/fork/ui/dialog/TranslateAlert$LoadingTextView2;->measureChild(Landroid/view/View;I)V
 
     .line 2015
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert$LoadingTextView2;->toTextView:Landroid/widget/TextView;
 
-    invoke-direct {p0, v0, p1}, Lcom/iMe/fork/ui/dialog/TranslateAlert$LoadingTextView2;->measureChild(Landroid/view/View;I)V
-
-    .line 2016
-    iget-object v0, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert$LoadingTextView2;->toTextView:Landroid/widget/TextView;
-
     invoke-direct {p0, v0, p1}, Lcom/iMe/fork/ui/dialog/TranslateAlert$LoadingTextView2;->layoutChild(Landroid/view/View;I)V
 
-    .line 2017
+    .line 2016
     invoke-direct {p0}, Lcom/iMe/fork/ui/dialog/TranslateAlert$LoadingTextView2;->updateHeight()V
 
     return-void
@@ -541,14 +541,14 @@
 .method private layout(IZ)V
     .locals 1
 
-    .line 2006
+    .line 2005
     iget v0, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert$LoadingTextView2;->lastWidth:I
 
     if-ne v0, p1, :cond_0
 
     if-eqz p2, :cond_1
 
-    .line 2007
+    .line 2006
     :cond_0
     iput p1, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert$LoadingTextView2;->lastWidth:I
 
@@ -561,7 +561,7 @@
 .method private layoutChild(Landroid/view/View;I)V
     .locals 4
 
-    .line 2029
+    .line 2028
     invoke-virtual {p0}, Landroid/view/ViewGroup;->getPaddingLeft()I
 
     move-result v0
@@ -596,7 +596,7 @@
 
     const/high16 v0, 0x40000000    # 2.0f
 
-    .line 2025
+    .line 2024
     invoke-static {p2, v0}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
     move-result p2
@@ -613,22 +613,22 @@
 .method private updateHeight()V
     .locals 4
 
-    .line 1926
+    .line 1925
     invoke-virtual {p0}, Landroid/view/ViewGroup;->getParent()Landroid/view/ViewParent;
 
     move-result-object v0
 
-    .line 1928
+    .line 1927
     instance-of v1, v0, Lcom/iMe/fork/ui/dialog/TranslateAlert$TextBlocksLayout;
 
     if-nez v1, :cond_2
 
-    .line 1930
+    .line 1929
     invoke-virtual {p0}, Lcom/iMe/fork/ui/dialog/TranslateAlert$LoadingTextView2;->height()I
 
     move-result v0
 
-    .line 1931
+    .line 1930
     invoke-virtual {p0}, Landroid/view/ViewGroup;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v1
@@ -637,7 +637,7 @@
 
     if-nez v1, :cond_0
 
-    .line 1933
+    .line 1932
     new-instance v1, Landroid/widget/FrameLayout$LayoutParams;
 
     const/4 v3, -0x1
@@ -646,7 +646,7 @@
 
     goto :goto_1
 
-    .line 1936
+    .line 1935
     :cond_0
     iget v3, v1, Landroid/view/ViewGroup$LayoutParams;->height:I
 
@@ -657,14 +657,14 @@
     :cond_1
     const/4 v2, 0x0
 
-    .line 1937
+    .line 1936
     :goto_0
     iput v0, v1, Landroid/view/ViewGroup$LayoutParams;->height:I
 
     :goto_1
     if-eqz v2, :cond_3
 
-    .line 1941
+    .line 1940
     invoke-virtual {p0, v1}, Landroid/view/ViewGroup;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
     goto :goto_2
@@ -672,7 +672,7 @@
     :cond_2
     if-eqz v1, :cond_3
 
-    .line 1944
+    .line 1943
     check-cast v0, Lcom/iMe/fork/ui/dialog/TranslateAlert$TextBlocksLayout;
 
     invoke-virtual {v0}, Lcom/iMe/fork/ui/dialog/TranslateAlert$TextBlocksLayout;->updateHeight()V
@@ -685,7 +685,7 @@
 .method private updateLoadingPath()V
     .locals 11
 
-    .line 2035
+    .line 2034
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert$LoadingTextView2;->fromTextView:Landroid/widget/TextView;
 
     if-eqz v0, :cond_3
@@ -696,12 +696,12 @@
 
     if-lez v0, :cond_3
 
-    .line 2036
+    .line 2035
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert$LoadingTextView2;->loadingPath:Landroid/graphics/Path;
 
     invoke-virtual {v0}, Landroid/graphics/Path;->reset()V
 
-    .line 2037
+    .line 2036
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert$LoadingTextView2;->fromTextView:Landroid/widget/TextView;
 
     invoke-virtual {v0}, Landroid/widget/TextView;->getLayout()Landroid/text/Layout;
@@ -710,12 +710,12 @@
 
     if-eqz v0, :cond_3
 
-    .line 2039
+    .line 2038
     invoke-virtual {v0}, Landroid/text/Layout;->getText()Ljava/lang/CharSequence;
 
     move-result-object v1
 
-    .line 2040
+    .line 2039
     invoke-virtual {v0}, Landroid/text/Layout;->getLineCount()I
 
     move-result v2
@@ -727,32 +727,32 @@
     :goto_0
     if-ge v4, v2, :cond_3
 
-    .line 2042
+    .line 2041
     invoke-virtual {v0, v4}, Landroid/text/Layout;->getLineLeft(I)F
 
     move-result v5
 
-    .line 2043
+    .line 2042
     invoke-virtual {v0, v4}, Landroid/text/Layout;->getLineRight(I)F
 
     move-result v6
 
-    .line 2044
+    .line 2043
     invoke-static {v5, v6}, Ljava/lang/Math;->min(FF)F
 
     move-result v7
 
-    .line 2045
+    .line 2044
     invoke-static {v5, v6}, Ljava/lang/Math;->max(FF)F
 
     move-result v5
 
-    .line 2046
+    .line 2045
     invoke-virtual {v0, v4}, Landroid/text/Layout;->getLineStart(I)I
 
     move-result v6
 
-    .line 2047
+    .line 2046
     invoke-virtual {v0, v4}, Landroid/text/Layout;->getLineEnd(I)I
 
     move-result v8
@@ -760,7 +760,7 @@
     :goto_1
     if-ge v6, v8, :cond_1
 
-    .line 2050
+    .line 2049
     invoke-interface {v1, v6}, Ljava/lang/CharSequence;->charAt(I)C
 
     move-result v9
@@ -794,7 +794,7 @@
 
     goto :goto_3
 
-    .line 2058
+    .line 2057
     :cond_2
     iget-object v6, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert$LoadingTextView2;->fetchedPathRect:Landroid/graphics/RectF;
 
@@ -804,7 +804,7 @@
 
     sub-float/2addr v7, v9
 
-    .line 2060
+    .line 2059
     invoke-virtual {v0, v4}, Landroid/text/Layout;->getLineTop(I)I
 
     move-result v9
@@ -819,7 +819,7 @@
 
     add-float/2addr v5, v8
 
-    .line 2062
+    .line 2061
     invoke-virtual {v0, v4}, Landroid/text/Layout;->getLineBottom(I)I
 
     move-result v8
@@ -828,10 +828,10 @@
 
     int-to-float v8, v8
 
-    .line 2058
+    .line 2057
     invoke-virtual {v6, v7, v9, v5, v8}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 2064
+    .line 2063
     iget-object v5, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert$LoadingTextView2;->loadingPath:Landroid/graphics/Path;
 
     iget-object v6, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert$LoadingTextView2;->fetchedPathRect:Landroid/graphics/RectF;
@@ -876,7 +876,7 @@
 .method public getFromTextView()Landroid/widget/TextView;
     .locals 1
 
-    .line 1828
+    .line 1827
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert$LoadingTextView2;->fromTextView:Landroid/widget/TextView;
 
     return-object v0
@@ -885,7 +885,7 @@
 .method public getToTextView()Landroid/widget/TextView;
     .locals 1
 
-    .line 1832
+    .line 1831
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert$LoadingTextView2;->toTextView:Landroid/widget/TextView;
 
     return-object v0
@@ -894,7 +894,7 @@
 .method public height()I
     .locals 2
 
-    .line 1922
+    .line 1921
     invoke-virtual {p0}, Landroid/view/ViewGroup;->getPaddingTop()I
 
     move-result v0
@@ -917,7 +917,7 @@
 .method public innerHeight()I
     .locals 3
 
-    .line 1918
+    .line 1917
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert$LoadingTextView2;->fromTextView:Landroid/widget/TextView;
 
     invoke-virtual {v0}, Landroid/widget/TextView;->getMeasuredHeight()I
@@ -952,18 +952,18 @@
 
     const/4 v0, 0x1
 
-    .line 1953
+    .line 1952
     iput-boolean v0, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert$LoadingTextView2;->loaded:Z
 
-    .line 1954
+    .line 1953
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert$LoadingTextView2;->toTextView:Landroid/widget/TextView;
 
     invoke-virtual {v0, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1955
+    .line 1954
     invoke-direct {p0}, Lcom/iMe/fork/ui/dialog/TranslateAlert$LoadingTextView2;->layout()V
 
-    .line 1957
+    .line 1956
     iget-object p1, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert$LoadingTextView2;->loadingAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->isRunning()Z
@@ -972,12 +972,12 @@
 
     if-eqz p1, :cond_0
 
-    .line 1958
+    .line 1957
     iget-object p1, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert$LoadingTextView2;->loadingAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->cancel()V
 
-    .line 1960
+    .line 1959
     :cond_0
     iget-object p1, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert$LoadingTextView2;->loadedAnimator:Landroid/animation/ValueAnimator;
 
@@ -987,7 +987,7 @@
 
     new-array p1, p1, [F
 
-    .line 1961
+    .line 1960
     fill-array-data p1, :array_0
 
     invoke-static {p1}, Landroid/animation/ValueAnimator;->ofFloat([F)Landroid/animation/ValueAnimator;
@@ -996,14 +996,14 @@
 
     iput-object p1, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert$LoadingTextView2;->loadedAnimator:Landroid/animation/ValueAnimator;
 
-    .line 1962
+    .line 1961
     new-instance v0, Lcom/iMe/fork/ui/dialog/TranslateAlert$LoadingTextView2$$ExternalSyntheticLambda0;
 
     invoke-direct {v0, p0}, Lcom/iMe/fork/ui/dialog/TranslateAlert$LoadingTextView2$$ExternalSyntheticLambda0;-><init>(Lcom/iMe/fork/ui/dialog/TranslateAlert$LoadingTextView2;)V
 
     invoke-virtual {p1, v0}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 1967
+    .line 1966
     iget-object p1, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert$LoadingTextView2;->loadedAnimator:Landroid/animation/ValueAnimator;
 
     new-instance v0, Lcom/iMe/fork/ui/dialog/TranslateAlert$LoadingTextView2$3;
@@ -1012,21 +1012,21 @@
 
     invoke-virtual {p1, v0}, Landroid/animation/ValueAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 1974
+    .line 1973
     iget-object p1, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert$LoadingTextView2;->loadedAnimator:Landroid/animation/ValueAnimator;
 
     const-wide/16 v0, 0x15e
 
     invoke-virtual {p1, v0, v1}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    .line 1975
+    .line 1974
     iget-object p1, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert$LoadingTextView2;->loadedAnimator:Landroid/animation/ValueAnimator;
 
     sget-object p2, Lorg/telegram/ui/Components/CubicBezierInterpolator;->EASE_BOTH:Lorg/telegram/ui/Components/CubicBezierInterpolator;
 
     invoke-virtual {p1, p2}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 1976
+    .line 1975
     iget-object p1, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert$LoadingTextView2;->loadedAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->start()V
@@ -1044,7 +1044,7 @@
 .method protected onDraw(Landroid/graphics/Canvas;)V
     .locals 11
 
-    .line 2080
+    .line 2079
     invoke-virtual {p0}, Landroid/view/ViewGroup;->getWidth()I
 
     move-result v0
@@ -1057,7 +1057,7 @@
 
     int-to-float v7, v1
 
-    .line 2082
+    .line 2081
     sget-boolean v1, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     const/high16 v2, 0x41000000    # 8.0f
@@ -1086,7 +1086,7 @@
     :goto_0
     div-float v3, v7, v3
 
-    .line 2083
+    .line 2082
     invoke-static {v3, v2}, Ljava/lang/Math;->min(FF)F
 
     move-result v2
@@ -1103,7 +1103,7 @@
 
     add-float/2addr v4, v6
 
-    .line 2085
+    .line 2084
     invoke-static {v5, v4}, Ljava/lang/Math;->max(FF)F
 
     move-result v4
@@ -1116,12 +1116,12 @@
 
     add-float/2addr v6, v5
 
-    .line 2086
+    .line 2085
     invoke-static {v3, v6}, Ljava/lang/Math;->max(FF)F
 
     move-result v3
 
-    .line 2084
+    .line 2083
     invoke-static {v4, v3}, Ljava/lang/Math;->max(FF)F
 
     move-result v3
@@ -1134,34 +1134,34 @@
 
     double-to-float v3, v3
 
-    .line 2088
+    .line 2087
     iget v4, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert$LoadingTextView2;->loadingT:F
 
     mul-float/2addr v4, v3
 
-    .line 2089
+    .line 2088
     iget-object v3, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert$LoadingTextView2;->inPath:Landroid/graphics/Path;
 
     invoke-virtual {v3}, Landroid/graphics/Path;->reset()V
 
-    .line 2090
+    .line 2089
     iget-object v3, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert$LoadingTextView2;->inPath:Landroid/graphics/Path;
 
     sget-object v5, Landroid/graphics/Path$Direction;->CW:Landroid/graphics/Path$Direction;
 
     invoke-virtual {v3, v1, v2, v4, v5}, Landroid/graphics/Path;->addCircle(FFFLandroid/graphics/Path$Direction;)V
 
-    .line 2092
+    .line 2091
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 2093
+    .line 2092
     iget-object v1, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert$LoadingTextView2;->inPath:Landroid/graphics/Path;
 
     sget-object v2, Landroid/graphics/Region$Op;->DIFFERENCE:Landroid/graphics/Region$Op;
 
     invoke-virtual {p1, v1, v2}, Landroid/graphics/Canvas;->clipPath(Landroid/graphics/Path;Landroid/graphics/Region$Op;)Z
 
-    .line 2095
+    .line 2094
     iget-object v1, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert$LoadingTextView2;->loadingPaint:Landroid/graphics/Paint;
 
     iget v2, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert$LoadingTextView2;->loadingT:F
@@ -1178,7 +1178,7 @@
 
     invoke-virtual {v1, v2}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    .line 2096
+    .line 2095
     iget v1, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert$LoadingTextView2;->gradientWidth:F
 
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
@@ -1203,12 +1203,12 @@
 
     sub-float v10, v1, v2
 
-    .line 2097
+    .line 2096
     iget-object v1, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert$LoadingTextView2;->shadePath:Landroid/graphics/Path;
 
     invoke-virtual {v1}, Landroid/graphics/Path;->reset()V
 
-    .line 2098
+    .line 2097
     iget-object v1, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert$LoadingTextView2;->shadePath:Landroid/graphics/Path;
 
     const/4 v2, 0x0
@@ -1223,7 +1223,7 @@
 
     invoke-virtual/range {v1 .. v6}, Landroid/graphics/Path;->addRect(FFFFLandroid/graphics/Path$Direction;)V
 
-    .line 2100
+    .line 2099
     sget v1, Lcom/iMe/fork/ui/dialog/TranslateAlert$LoadingTextView2;->paddingHorizontal:I
 
     int-to-float v2, v1
@@ -1234,7 +1234,7 @@
 
     invoke-virtual {p1, v2, v4}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 2101
+    .line 2100
     iget-object v2, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert$LoadingTextView2;->loadingPath:Landroid/graphics/Path;
 
     invoke-virtual {p1, v2}, Landroid/graphics/Canvas;->clipPath(Landroid/graphics/Path;)Z
@@ -1247,37 +1247,37 @@
 
     int-to-float v4, v4
 
-    .line 2102
+    .line 2101
     invoke-virtual {p1, v2, v4}, Landroid/graphics/Canvas;->translate(FF)V
 
     neg-float v2, v10
 
     const/4 v4, 0x0
 
-    .line 2103
+    .line 2102
     invoke-virtual {p1, v2, v4}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 2104
+    .line 2103
     iget-object v2, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert$LoadingTextView2;->shadePath:Landroid/graphics/Path;
 
     iget-object v5, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert$LoadingTextView2;->tempPath:Landroid/graphics/Path;
 
     invoke-virtual {v2, v10, v4, v5}, Landroid/graphics/Path;->offset(FFLandroid/graphics/Path;)V
 
-    .line 2105
+    .line 2104
     iget-object v2, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert$LoadingTextView2;->tempPath:Landroid/graphics/Path;
 
     iget-object v5, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert$LoadingTextView2;->loadingPaint:Landroid/graphics/Paint;
 
     invoke-virtual {p1, v2, v5}, Landroid/graphics/Canvas;->drawPath(Landroid/graphics/Path;Landroid/graphics/Paint;)V
 
-    .line 2106
+    .line 2105
     invoke-virtual {p1, v10, v4}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 2107
+    .line 2106
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 2109
+    .line 2108
     iget-boolean v2, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert$LoadingTextView2;->showLoadingText:Z
 
     const/16 v5, 0x1f
@@ -1288,15 +1288,15 @@
 
     if-eqz v2, :cond_1
 
-    .line 2110
+    .line 2109
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 2111
+    .line 2110
     iget-object v2, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert$LoadingTextView2;->rect:Landroid/graphics/RectF;
 
     invoke-virtual {v2, v4, v4, v0, v7}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 2112
+    .line 2111
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert$LoadingTextView2;->inPath:Landroid/graphics/Path;
 
     sget-object v2, Landroid/graphics/Region$Op;->DIFFERENCE:Landroid/graphics/Region$Op;
@@ -1307,37 +1307,37 @@
 
     int-to-float v2, v3
 
-    .line 2113
+    .line 2112
     invoke-virtual {p1, v0, v2}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 2114
+    .line 2113
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert$LoadingTextView2;->rect:Landroid/graphics/RectF;
 
     const/16 v2, 0x14
 
     invoke-virtual {p1, v0, v2, v5}, Landroid/graphics/Canvas;->saveLayerAlpha(Landroid/graphics/RectF;II)I
 
-    .line 2115
+    .line 2114
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert$LoadingTextView2;->fromTextView:Landroid/widget/TextView;
 
     invoke-virtual {v0, p1}, Landroid/widget/TextView;->draw(Landroid/graphics/Canvas;)V
 
+    .line 2115
+    invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
+
     .line 2116
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 2117
-    invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
-
-    .line 2120
+    .line 2119
     :cond_1
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert$LoadingTextView2;->toTextView:Landroid/widget/TextView;
 
     if-eqz v0, :cond_3
 
-    .line 2121
+    .line 2120
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 2122
+    .line 2121
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert$LoadingTextView2;->inPath:Landroid/graphics/Path;
 
     invoke-virtual {p1, v0}, Landroid/graphics/Canvas;->clipPath(Landroid/graphics/Path;)Z
@@ -1346,10 +1346,10 @@
 
     int-to-float v1, v3
 
-    .line 2123
+    .line 2122
     invoke-virtual {p1, v0, v1}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 2124
+    .line 2123
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert$LoadingTextView2;->rect:Landroid/graphics/RectF;
 
     iget v1, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert$LoadingTextView2;->loadingT:F
@@ -1360,22 +1360,22 @@
 
     invoke-virtual {p1, v0, v1, v5}, Landroid/graphics/Canvas;->saveLayerAlpha(Landroid/graphics/RectF;II)I
 
-    .line 2125
+    .line 2124
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert$LoadingTextView2;->toTextView:Landroid/widget/TextView;
 
     invoke-virtual {v0, p1}, Landroid/widget/TextView;->draw(Landroid/graphics/Canvas;)V
 
-    .line 2126
+    .line 2125
     iget v0, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert$LoadingTextView2;->loadingT:F
 
     cmpg-float v0, v0, v8
 
     if-gez v0, :cond_2
 
-    .line 2127
+    .line 2126
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 2129
+    .line 2128
     :cond_2
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
@@ -1388,7 +1388,7 @@
 
     sub-int/2addr p4, p2
 
-    .line 2002
+    .line 2001
     invoke-virtual {p0}, Landroid/view/ViewGroup;->getPaddingLeft()I
 
     move-result p1
@@ -1411,12 +1411,12 @@
 .method protected onMeasure(II)V
     .locals 1
 
-    .line 1982
+    .line 1981
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result p1
 
-    .line 1983
+    .line 1982
     invoke-virtual {p0}, Landroid/view/ViewGroup;->getPaddingLeft()I
 
     move-result p2
@@ -1429,7 +1429,7 @@
 
     sub-int/2addr p2, v0
 
-    .line 1984
+    .line 1983
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert$LoadingTextView2;->fromTextView:Landroid/widget/TextView;
 
     invoke-virtual {v0}, Landroid/widget/TextView;->getMeasuredWidth()I
@@ -1442,16 +1442,16 @@
 
     if-eq v0, p2, :cond_1
 
-    .line 1985
+    .line 1984
     :cond_0
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert$LoadingTextView2;->fromTextView:Landroid/widget/TextView;
 
     invoke-direct {p0, v0, p2}, Lcom/iMe/fork/ui/dialog/TranslateAlert$LoadingTextView2;->measureChild(Landroid/view/View;I)V
 
-    .line 1986
+    .line 1985
     invoke-direct {p0}, Lcom/iMe/fork/ui/dialog/TranslateAlert$LoadingTextView2;->updateLoadingPath()V
 
-    .line 1988
+    .line 1987
     :cond_1
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert$LoadingTextView2;->toTextView:Landroid/widget/TextView;
 
@@ -1465,24 +1465,24 @@
 
     if-eq v0, p2, :cond_3
 
-    .line 1989
+    .line 1988
     :cond_2
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert$LoadingTextView2;->toTextView:Landroid/widget/TextView;
 
     invoke-direct {p0, v0, p2}, Lcom/iMe/fork/ui/dialog/TranslateAlert$LoadingTextView2;->measureChild(Landroid/view/View;I)V
 
-    .line 1991
+    .line 1990
     :cond_3
     iput p2, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert$LoadingTextView2;->lastWidth:I
 
     const/high16 p2, 0x40000000    # 2.0f
 
-    .line 1993
+    .line 1992
     invoke-static {p1, p2}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
     move-result p1
 
-    .line 1994
+    .line 1993
     invoke-virtual {p0}, Lcom/iMe/fork/ui/dialog/TranslateAlert$LoadingTextView2;->height()I
 
     move-result v0
@@ -1491,7 +1491,7 @@
 
     move-result p2
 
-    .line 1992
+    .line 1991
     invoke-super {p0, p1, p2}, Landroid/view/ViewGroup;->onMeasure(II)V
 
     return-void

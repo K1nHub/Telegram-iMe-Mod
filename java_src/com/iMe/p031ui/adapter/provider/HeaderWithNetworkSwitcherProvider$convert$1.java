@@ -52,6 +52,6 @@ final class HeaderWithNetworkSwitcherProvider$convert$1 extends Lambda implement
                 }
             });
         }
-        applyForView.setNetworkType(this.$item.getNetworkType());
+        applyForView.setNetwork(this.$item.getNetworkType());
     }
 }

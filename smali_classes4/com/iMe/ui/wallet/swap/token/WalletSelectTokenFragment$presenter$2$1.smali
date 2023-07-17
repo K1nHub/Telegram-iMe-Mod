@@ -27,14 +27,22 @@
 
 
 # instance fields
+.field final synthetic $networkId:Ljava/lang/String;
+
+.field final synthetic $selectedToken:Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
+
 .field final synthetic this$0:Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment;
 
 
 # direct methods
-.method constructor <init>(Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment;)V
+.method constructor <init>(Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment;Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;Ljava/lang/String;)V
     .locals 0
 
     iput-object p1, p0, Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment$presenter$2$1;->this$0:Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment;
+
+    iput-object p2, p0, Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment$presenter$2$1;->$selectedToken:Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
+
+    iput-object p3, p0, Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment$presenter$2$1;->$networkId:Ljava/lang/String;
 
     const/4 p1, 0x0
 
@@ -48,7 +56,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 36
+    .line 43
     invoke-virtual {p0}, Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment$presenter$2$1;->invoke()Lorg/koin/core/parameter/ParametersHolder;
 
     move-result-object v0
@@ -59,14 +67,14 @@
 .method public final invoke()Lorg/koin/core/parameter/ParametersHolder;
     .locals 3
 
-    const/4 v0, 0x5
+    const/4 v0, 0x4
 
     new-array v0, v0, [Ljava/lang/Object;
 
-    .line 36
+    .line 44
     iget-object v1, p0, Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment$presenter$2$1;->this$0:Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment;
 
-    invoke-static {v1}, Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment;->access$getType$p(Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment;)Lcom/iMe/model/wallet/select/SelectableType;
+    invoke-static {v1}, Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment;->access$getScreenType$p(Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment;)Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment$ScreenType;
 
     move-result-object v1
 
@@ -74,33 +82,15 @@
 
     aput-object v1, v0, v2
 
-    iget-object v1, p0, Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment$presenter$2$1;->this$0:Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment;
-
-    invoke-static {v1}, Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment;->access$getSelectedToken$p(Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment;)Lcom/iMe/model/wallet/select/SelectableToken;
-
-    move-result-object v1
+    iget-object v1, p0, Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment$presenter$2$1;->$selectedToken:Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
 
     const/4 v2, 0x1
 
     aput-object v1, v0, v2
 
-    iget-object v1, p0, Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment$presenter$2$1;->this$0:Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment;
-
-    invoke-static {v1}, Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment;->access$getAllTokens$p(Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment;)Ljava/util/List;
-
-    move-result-object v1
+    iget-object v1, p0, Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment$presenter$2$1;->$networkId:Ljava/lang/String;
 
     const/4 v2, 0x2
-
-    aput-object v1, v0, v2
-
-    iget-object v1, p0, Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment$presenter$2$1;->this$0:Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment;
-
-    invoke-static {v1}, Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment;->access$getNetworkType$p(Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment;)Lcom/iMe/storage/domain/model/crypto/NetworkType;
-
-    move-result-object v1
-
-    const/4 v2, 0x3
 
     aput-object v1, v0, v2
 
@@ -114,7 +104,7 @@
 
     move-result-object v1
 
-    const/4 v2, 0x4
+    const/4 v2, 0x3
 
     aput-object v1, v0, v2
 

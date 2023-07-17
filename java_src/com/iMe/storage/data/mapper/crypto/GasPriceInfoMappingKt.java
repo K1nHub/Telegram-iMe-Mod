@@ -1,5 +1,6 @@
 package com.iMe.storage.data.mapper.crypto;
 
+import com.iMe.storage.data.mapper.wallet.FiatValueMappingKt;
 import com.iMe.storage.data.network.model.response.crypto.wallet.BitcoinGasPriceResponse;
 import com.iMe.storage.data.network.model.response.crypto.wallet.GasPriceResponse;
 import com.iMe.storage.data.utils.extentions.NumberExtKt;
@@ -11,7 +12,7 @@ import kotlin.jvm.internal.Intrinsics;
 public final class GasPriceInfoMappingKt {
     public static final GasPriceInfo mapToDomain(GasPriceResponse gasPriceResponse) {
         Intrinsics.checkNotNullParameter(gasPriceResponse, "<this>");
-        return new GasPriceInfo(NumberExtKt.orZero(gasPriceResponse.getPrice()), NumberExtKt.orZero(gasPriceResponse.getLimit()), (int) gasPriceResponse.getDuration(), gasPriceResponse.getFee(), gasPriceResponse.getFeeInDollars());
+        return new GasPriceInfo(NumberExtKt.orZero(gasPriceResponse.getPrice()), NumberExtKt.orZero(gasPriceResponse.getLimit()), (int) gasPriceResponse.getDuration(), gasPriceResponse.getFee(), FiatValueMappingKt.mapToDomain(gasPriceResponse.getFeeInFiat()));
     }
 
     public static final GasPriceInfo mapToDomain(BitcoinGasPriceResponse bitcoinGasPriceResponse) {
@@ -19,6 +20,6 @@ public final class GasPriceInfoMappingKt {
         BigInteger byteFee = bitcoinGasPriceResponse.getByteFee();
         BigInteger ZERO = BigInteger.ZERO;
         Intrinsics.checkNotNullExpressionValue(ZERO, "ZERO");
-        return new GasPriceInfo(byteFee, ZERO, (int) bitcoinGasPriceResponse.getDuration(), bitcoinGasPriceResponse.getFee(), bitcoinGasPriceResponse.getFeeInDollars());
+        return new GasPriceInfo(byteFee, ZERO, (int) bitcoinGasPriceResponse.getDuration(), bitcoinGasPriceResponse.getFee(), FiatValueMappingKt.mapToDomain(bitcoinGasPriceResponse.getFeeInFiat()));
     }
 }

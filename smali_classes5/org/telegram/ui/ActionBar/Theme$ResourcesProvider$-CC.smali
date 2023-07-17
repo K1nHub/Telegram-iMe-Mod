@@ -8,7 +8,7 @@
     .locals 0
     .param p0, "_this"    # Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
-    .line 3014
+    .line 3005
     invoke-static {p1, p2, p3, p4}, Lorg/telegram/ui/ActionBar/Theme;->applyServiceShaderMatrix(IIFF)V
 
     return-void
@@ -18,21 +18,21 @@
     .locals 1
     .param p0, "_this"    # Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
-    .line 2989
+    .line 2980
     invoke-interface {p0, p1}, Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;->contains(I)Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 2990
+    .line 2981
     invoke-interface {p0, p1}, Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;->getColor(I)I
 
     move-result p1
 
     return p1
 
-    .line 2992
+    .line 2983
     :cond_0
     invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
@@ -45,7 +45,7 @@
     .locals 0
     .param p0, "_this"    # Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
-    .line 2996
+    .line 2987
     invoke-interface {p0, p1}, Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;->getColor(I)I
 
     move-result p1

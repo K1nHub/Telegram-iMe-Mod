@@ -230,7 +230,7 @@
     invoke-direct {v0, p1, v1}, Lcom/iMe/storage/domain/model/crypto/Wallet$TRON;-><init>(Ljava/lang/String;Lwallet/core/jni/HDWallet;)V
 
     .line 35
-    invoke-virtual {v0}, Lcom/iMe/storage/domain/model/crypto/Wallet$TRON;->getAddress()Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/iMe/storage/domain/model/crypto/Wallet$MultiCoinWallet;->getAddress()Ljava/lang/String;
 
     move-result-object v5
 
@@ -370,7 +370,7 @@
 
     if-nez v1, :cond_0
 
-    invoke-virtual {v0}, Lcom/iMe/storage/domain/model/crypto/Wallet$TRON;->getAddress()Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/iMe/storage/domain/model/crypto/Wallet$MultiCoinWallet;->getAddress()Ljava/lang/String;
 
     move-result-object v7
 

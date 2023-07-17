@@ -80,6 +80,8 @@
 
 .field public static final enum ERR_TG_CHAT_HAS_NO_ETHER_WALLET_LINKED:Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;
 
+.field public static final enum ERR_TOKEN_NOT_FOUND:Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;
+
 .field public static final enum ERR_USER_HAS_NOT_ETHER_WALLET_LINKED:Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;
 
 .field public static final enum ERR_USER_NOT_AUTH:Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;
@@ -91,6 +93,8 @@
 .field public static final enum INVALID_BINANCE_PAY_REFRESH_TOKEN:Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;
 
 .field public static final enum JWT_EXPIRED:Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;
+
+.field public static final enum JWT_VALIDATION_FAILED:Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;
 
 .field public static final enum NO_OAUTH_ACCESS_GRANTED_ERROR:Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;
 
@@ -109,7 +113,7 @@
 .method private static final synthetic $values()[Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;
     .locals 3
 
-    const/16 v0, 0x28
+    const/16 v0, 0x2a
 
     new-array v0, v0, [Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;
 
@@ -281,75 +285,87 @@
 
     aput-object v1, v0, v2
 
-    sget-object v1, Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;->ERR_BEARER_AUTH_REQUIRED:Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;
+    sget-object v1, Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;->JWT_VALIDATION_FAILED:Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;
 
     const/16 v2, 0x1c
 
     aput-object v1, v0, v2
 
-    sget-object v1, Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;->ERR_BEARER_AUTH_MALFORMED:Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;
+    sget-object v1, Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;->ERR_BEARER_AUTH_REQUIRED:Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;
 
     const/16 v2, 0x1d
 
     aput-object v1, v0, v2
 
-    sget-object v1, Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;->REFRESH_TOKEN_ABSENT:Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;
+    sget-object v1, Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;->ERR_BEARER_AUTH_MALFORMED:Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;
 
     const/16 v2, 0x1e
 
     aput-object v1, v0, v2
 
-    sget-object v1, Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;->ERR_STAKING_DEPOSIT_LOW_BALANCE:Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;
+    sget-object v1, Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;->REFRESH_TOKEN_ABSENT:Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;
 
     const/16 v2, 0x1f
 
     aput-object v1, v0, v2
 
-    sget-object v1, Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;->ERR_STAKING_DEPOSIT_TOO_LATE:Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;
+    sget-object v1, Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;->ERR_STAKING_DEPOSIT_LOW_BALANCE:Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;
 
     const/16 v2, 0x20
 
     aput-object v1, v0, v2
 
-    sget-object v1, Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;->ERR_STAKING_WITHDRAWAL_OVER_LIMIT:Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;
+    sget-object v1, Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;->ERR_STAKING_DEPOSIT_TOO_LATE:Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;
 
     const/16 v2, 0x21
 
     aput-object v1, v0, v2
 
-    sget-object v1, Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;->ERR_STAKING_CLAIM_OVERLAP:Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;
+    sget-object v1, Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;->ERR_STAKING_WITHDRAWAL_OVER_LIMIT:Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;
 
     const/16 v2, 0x22
 
     aput-object v1, v0, v2
 
-    sget-object v1, Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;->WRONG_TWITTER_ACCESS_TOKEN_ERROR:Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;
+    sget-object v1, Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;->ERR_STAKING_CLAIM_OVERLAP:Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;
 
     const/16 v2, 0x23
 
     aput-object v1, v0, v2
 
-    sget-object v1, Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;->WRONG_TWITTER_REFRESH_TOKEN_ERROR:Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;
+    sget-object v1, Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;->WRONG_TWITTER_ACCESS_TOKEN_ERROR:Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;
 
     const/16 v2, 0x24
 
     aput-object v1, v0, v2
 
-    sget-object v1, Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;->TWITTER_USER_DISABLED_DIRECT_MESSAGES:Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;
+    sget-object v1, Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;->WRONG_TWITTER_REFRESH_TOKEN_ERROR:Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;
 
     const/16 v2, 0x25
 
     aput-object v1, v0, v2
 
-    sget-object v1, Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;->NO_OAUTH_ACCESS_GRANTED_ERROR:Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;
+    sget-object v1, Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;->TWITTER_USER_DISABLED_DIRECT_MESSAGES:Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;
 
     const/16 v2, 0x26
 
     aput-object v1, v0, v2
 
-    sget-object v1, Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;->UNKNOWN:Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;
+    sget-object v1, Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;->NO_OAUTH_ACCESS_GRANTED_ERROR:Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;
 
     const/16 v2, 0x27
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;->ERR_TOKEN_NOT_FOUND:Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;
+
+    const/16 v2, 0x28
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;->UNKNOWN:Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;
+
+    const/16 v2, 0x29
 
     aput-object v1, v0, v2
 
@@ -670,130 +686,152 @@
     .line 32
     new-instance v0, Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;
 
-    const-string v1, "ERR_BEARER_AUTH_REQUIRED"
+    const-string v1, "JWT_VALIDATION_FAILED"
 
     const/16 v2, 0x1c
 
     invoke-direct {v0, v1, v2}, Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;->ERR_BEARER_AUTH_REQUIRED:Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;
+    sput-object v0, Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;->JWT_VALIDATION_FAILED:Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;
 
     .line 33
     new-instance v0, Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;
 
-    const-string v1, "ERR_BEARER_AUTH_MALFORMED"
+    const-string v1, "ERR_BEARER_AUTH_REQUIRED"
 
     const/16 v2, 0x1d
 
     invoke-direct {v0, v1, v2}, Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;->ERR_BEARER_AUTH_MALFORMED:Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;
+    sput-object v0, Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;->ERR_BEARER_AUTH_REQUIRED:Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;
 
     .line 34
     new-instance v0, Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;
 
-    const-string v1, "REFRESH_TOKEN_ABSENT"
+    const-string v1, "ERR_BEARER_AUTH_MALFORMED"
 
     const/16 v2, 0x1e
 
     invoke-direct {v0, v1, v2}, Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;->REFRESH_TOKEN_ABSENT:Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;
+    sput-object v0, Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;->ERR_BEARER_AUTH_MALFORMED:Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;
 
     .line 35
     new-instance v0, Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;
 
-    const-string v1, "ERR_STAKING_DEPOSIT_LOW_BALANCE"
+    const-string v1, "REFRESH_TOKEN_ABSENT"
 
     const/16 v2, 0x1f
 
     invoke-direct {v0, v1, v2}, Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;->ERR_STAKING_DEPOSIT_LOW_BALANCE:Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;
+    sput-object v0, Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;->REFRESH_TOKEN_ABSENT:Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;
 
     .line 36
     new-instance v0, Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;
 
-    const-string v1, "ERR_STAKING_DEPOSIT_TOO_LATE"
+    const-string v1, "ERR_STAKING_DEPOSIT_LOW_BALANCE"
 
     const/16 v2, 0x20
 
     invoke-direct {v0, v1, v2}, Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;->ERR_STAKING_DEPOSIT_TOO_LATE:Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;
+    sput-object v0, Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;->ERR_STAKING_DEPOSIT_LOW_BALANCE:Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;
 
     .line 37
     new-instance v0, Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;
 
-    const-string v1, "ERR_STAKING_WITHDRAWAL_OVER_LIMIT"
+    const-string v1, "ERR_STAKING_DEPOSIT_TOO_LATE"
 
     const/16 v2, 0x21
 
     invoke-direct {v0, v1, v2}, Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;->ERR_STAKING_WITHDRAWAL_OVER_LIMIT:Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;
+    sput-object v0, Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;->ERR_STAKING_DEPOSIT_TOO_LATE:Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;
 
     .line 38
     new-instance v0, Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;
 
-    const-string v1, "ERR_STAKING_CLAIM_OVERLAP"
+    const-string v1, "ERR_STAKING_WITHDRAWAL_OVER_LIMIT"
 
     const/16 v2, 0x22
 
     invoke-direct {v0, v1, v2}, Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;->ERR_STAKING_CLAIM_OVERLAP:Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;
+    sput-object v0, Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;->ERR_STAKING_WITHDRAWAL_OVER_LIMIT:Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;
 
     .line 39
     new-instance v0, Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;
 
-    const-string v1, "WRONG_TWITTER_ACCESS_TOKEN_ERROR"
+    const-string v1, "ERR_STAKING_CLAIM_OVERLAP"
 
     const/16 v2, 0x23
 
     invoke-direct {v0, v1, v2}, Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;->WRONG_TWITTER_ACCESS_TOKEN_ERROR:Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;
+    sput-object v0, Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;->ERR_STAKING_CLAIM_OVERLAP:Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;
 
     .line 40
     new-instance v0, Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;
 
-    const-string v1, "WRONG_TWITTER_REFRESH_TOKEN_ERROR"
+    const-string v1, "WRONG_TWITTER_ACCESS_TOKEN_ERROR"
 
     const/16 v2, 0x24
 
     invoke-direct {v0, v1, v2}, Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;->WRONG_TWITTER_REFRESH_TOKEN_ERROR:Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;
+    sput-object v0, Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;->WRONG_TWITTER_ACCESS_TOKEN_ERROR:Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;
 
     .line 41
     new-instance v0, Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;
 
-    const-string v1, "TWITTER_USER_DISABLED_DIRECT_MESSAGES"
+    const-string v1, "WRONG_TWITTER_REFRESH_TOKEN_ERROR"
 
     const/16 v2, 0x25
 
     invoke-direct {v0, v1, v2}, Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;->TWITTER_USER_DISABLED_DIRECT_MESSAGES:Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;
+    sput-object v0, Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;->WRONG_TWITTER_REFRESH_TOKEN_ERROR:Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;
 
     .line 42
     new-instance v0, Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;
 
-    const-string v1, "NO_OAUTH_ACCESS_GRANTED_ERROR"
+    const-string v1, "TWITTER_USER_DISABLED_DIRECT_MESSAGES"
 
     const/16 v2, 0x26
 
     invoke-direct {v0, v1, v2}, Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;->NO_OAUTH_ACCESS_GRANTED_ERROR:Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;
+    sput-object v0, Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;->TWITTER_USER_DISABLED_DIRECT_MESSAGES:Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;
 
     .line 43
     new-instance v0, Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;
 
-    const-string v1, "UNKNOWN"
+    const-string v1, "NO_OAUTH_ACCESS_GRANTED_ERROR"
 
     const/16 v2, 0x27
+
+    invoke-direct {v0, v1, v2}, Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;->NO_OAUTH_ACCESS_GRANTED_ERROR:Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;
+
+    .line 44
+    new-instance v0, Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;
+
+    const-string v1, "ERR_TOKEN_NOT_FOUND"
+
+    const/16 v2, 0x28
+
+    invoke-direct {v0, v1, v2}, Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;->ERR_TOKEN_NOT_FOUND:Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;
+
+    .line 45
+    new-instance v0, Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;
+
+    const-string v1, "UNKNOWN"
+
+    const/16 v2, 0x29
 
     invoke-direct {v0, v1, v2}, Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;-><init>(Ljava/lang/String;I)V
 

@@ -10,7 +10,7 @@ import android.text.TextUtils;
 import android.util.Base64;
 import android.webkit.WebView;
 import androidx.core.content.p009pm.ShortcutManagerCompat;
-import com.google.android.exoplayer2.C0475C;
+import com.google.android.exoplayer2.C0480C;
 import com.google.android.exoplayer2.audio.SilenceSkippingAudioProcessor;
 import com.iMe.common.TelegramPreferenceKeys;
 import com.iMe.fork.controller.FiltersController;
@@ -45,9 +45,9 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Set;
 import org.json.JSONObject;
-import org.telegram.p044ui.ActionBar.AlertDialog;
-import org.telegram.p044ui.ActionBar.BaseFragment;
-import org.telegram.p044ui.LaunchActivity;
+import org.telegram.p043ui.ActionBar.AlertDialog;
+import org.telegram.p043ui.ActionBar.BaseFragment;
+import org.telegram.p043ui.LaunchActivity;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.SerializedData;
 import org.telegram.tgnet.TLRPC$TL_help_appUpdate;
@@ -589,9 +589,9 @@ public class SharedConfig {
         ImageLoader.getInstance().checkMediaPaths(SharedConfig$$ExternalSyntheticLambda2.INSTANCE);
         readOnlyStorageDirAlertShowed = true;
         AlertDialog.Builder builder = new AlertDialog.Builder(lastFragment.getParentActivity());
-        builder.setTitle(LocaleController.getString("SdCardError", C3295R.string.SdCardError));
-        builder.setSubtitle(LocaleController.getString("SdCardErrorDescription", C3295R.string.SdCardErrorDescription));
-        builder.setPositiveButton(LocaleController.getString("DoNotUseSDCard", C3295R.string.DoNotUseSDCard), SharedConfig$$ExternalSyntheticLambda0.INSTANCE);
+        builder.setTitle(LocaleController.getString("SdCardError", C3417R.string.SdCardError));
+        builder.setSubtitle(LocaleController.getString("SdCardErrorDescription", C3417R.string.SdCardErrorDescription));
+        builder.setPositiveButton(LocaleController.getString("DoNotUseSDCard", C3417R.string.DoNotUseSDCard), SharedConfig$$ExternalSyntheticLambda0.INSTANCE);
         AlertDialog create = builder.create();
         create.setCanceledOnTouchOutside(false);
         create.show();
@@ -755,19 +755,19 @@ public class SharedConfig {
         return i;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:38:0x017d A[Catch: Exception -> 0x019f, all -> 0x07a9, TryCatch #0 {Exception -> 0x019f, blocks: (B:22:0x012e, B:24:0x0136, B:26:0x0146, B:27:0x015a, B:38:0x017d, B:40:0x0181, B:41:0x0183, B:43:0x0187, B:45:0x018d, B:47:0x0193, B:49:0x0197, B:36:0x0177), top: B:83:0x012e, outer: #1 }] */
-    /* JADX WARN: Removed duplicated region for block: B:40:0x0181 A[Catch: Exception -> 0x019f, all -> 0x07a9, TryCatch #0 {Exception -> 0x019f, blocks: (B:22:0x012e, B:24:0x0136, B:26:0x0146, B:27:0x015a, B:38:0x017d, B:40:0x0181, B:41:0x0183, B:43:0x0187, B:45:0x018d, B:47:0x0193, B:49:0x0197, B:36:0x0177), top: B:83:0x012e, outer: #1 }] */
-    /* JADX WARN: Removed duplicated region for block: B:61:0x05db  */
-    /* JADX WARN: Removed duplicated region for block: B:62:0x05de  */
-    /* JADX WARN: Removed duplicated region for block: B:65:0x05ee  */
-    /* JADX WARN: Removed duplicated region for block: B:66:0x05f0  */
+    /* JADX WARN: Removed duplicated region for block: B:38:0x017e A[Catch: Exception -> 0x019a, all -> 0x07ac, TryCatch #0 {Exception -> 0x019a, blocks: (B:22:0x012f, B:24:0x0137, B:26:0x0147, B:27:0x015b, B:38:0x017e, B:40:0x0182, B:41:0x0184, B:43:0x0188, B:45:0x018e, B:47:0x0192, B:36:0x0178), top: B:81:0x012f, outer: #4 }] */
+    /* JADX WARN: Removed duplicated region for block: B:40:0x0182 A[Catch: Exception -> 0x019a, all -> 0x07ac, TryCatch #0 {Exception -> 0x019a, blocks: (B:22:0x012f, B:24:0x0137, B:26:0x0147, B:27:0x015b, B:38:0x017e, B:40:0x0182, B:41:0x0184, B:43:0x0188, B:45:0x018e, B:47:0x0192, B:36:0x0178), top: B:81:0x012f, outer: #4 }] */
+    /* JADX WARN: Removed duplicated region for block: B:59:0x05da  */
+    /* JADX WARN: Removed duplicated region for block: B:60:0x05dd  */
+    /* JADX WARN: Removed duplicated region for block: B:63:0x05ed  */
+    /* JADX WARN: Removed duplicated region for block: B:64:0x05ef  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
     public static void loadConfig() {
         /*
-            Method dump skipped, instructions count: 1964
+            Method dump skipped, instructions count: 1967
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.messenger.SharedConfig.loadConfig():void");
@@ -795,7 +795,7 @@ public class SharedConfig {
         }
         int badPasscodeTries2 = (sectionPasscodeData != null ? sectionPasscodeData.getBadPasscodeTries() : badPasscodeTries) + 1;
         if (badPasscodeTries2 >= 3) {
-            long j = badPasscodeTries2 != 3 ? badPasscodeTries2 != 4 ? badPasscodeTries2 != 5 ? badPasscodeTries2 != 6 ? badPasscodeTries2 != 7 ? 30000L : 25000L : SilenceSkippingAudioProcessor.DEFAULT_PADDING_SILENCE_US : C0475C.DEFAULT_SEEK_FORWARD_INCREMENT_MS : 10000L : 5000L;
+            long j = badPasscodeTries2 != 3 ? badPasscodeTries2 != 4 ? badPasscodeTries2 != 5 ? badPasscodeTries2 != 6 ? badPasscodeTries2 != 7 ? 30000L : 25000L : SilenceSkippingAudioProcessor.DEFAULT_PADDING_SILENCE_US : C0480C.DEFAULT_SEEK_FORWARD_INCREMENT_MS : 10000L : 5000L;
             if (sectionPasscodeData != null) {
                 sectionPasscodeData.setLastUptimeMillis(SystemClock.elapsedRealtime());
             } else {
@@ -873,11 +873,13 @@ public class SharedConfig {
 
     /* JADX WARN: Removed duplicated region for block: B:12:0x0020  */
     /* JADX WARN: Removed duplicated region for block: B:14:0x0024  */
+    /* JADX WARN: Removed duplicated region for block: B:17:0x002a A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:18:0x002b  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
-    public static boolean setNewAppVersionAvailable(org.telegram.tgnet.TLRPC$TL_help_appUpdate r4) {
+    public static boolean setNewAppVersionAvailable(org.telegram.tgnet.TLRPC$TL_help_appUpdate r3) {
         /*
             r0 = 0
             android.content.Context r1 = org.telegram.messenger.ApplicationLoader.applicationContext     // Catch: java.lang.Exception -> L18
@@ -904,19 +906,15 @@ public class SharedConfig {
             if (r1 != 0) goto L26
             java.lang.String r1 = org.telegram.messenger.BuildVars.BUILD_VERSION_STRING
         L26:
-            java.lang.String r3 = r4.version
-            if (r3 == 0) goto L3a
-            int r1 = r1.compareTo(r3)
-            if (r1 < 0) goto L31
-            goto L3a
-        L31:
-            org.telegram.messenger.SharedConfig.pendingAppUpdate = r4
+            java.lang.String r1 = r3.version
+            if (r1 != 0) goto L2b
+            return r0
+        L2b:
+            org.telegram.messenger.SharedConfig.pendingAppUpdate = r3
             org.telegram.messenger.SharedConfig.pendingAppUpdateBuildVersion = r2
             saveConfig()
-            r4 = 1
-            return r4
-        L3a:
-            return r0
+            r3 = 1
+            return r3
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.messenger.SharedConfig.setNewAppVersionAvailable(org.telegram.tgnet.TLRPC$TL_help_appUpdate):boolean");
     }

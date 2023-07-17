@@ -493,7 +493,7 @@
     :catch_0
     move-exception v0
 
-    const-string v1, "read byte error"
+    const-string/jumbo v1, "read byte error"
 
     if-nez p1, :cond_1
 
@@ -637,7 +637,7 @@
     :catch_0
     move-exception v0
 
-    const-string v1, "read byte array error"
+    const-string/jumbo v1, "read byte array error"
 
     if-nez p1, :cond_3
 
@@ -699,7 +699,7 @@
     :catch_0
     move-exception p1
 
-    const-string v0, "read bytes error"
+    const-string/jumbo v0, "read bytes error"
 
     if-nez p2, :cond_1
 
@@ -759,7 +759,7 @@
     :catch_0
     move-exception v0
 
-    const-string v1, "read double error"
+    const-string/jumbo v1, "read double error"
 
     if-nez p1, :cond_1
 
@@ -808,7 +808,7 @@
     :catch_0
     move-exception v0
 
-    const-string v1, "read float error"
+    const-string/jumbo v1, "read float error"
 
     if-nez p1, :cond_1
 
@@ -881,7 +881,7 @@
     :catch_0
     move-exception v1
 
-    const-string v2, "read int32 error"
+    const-string/jumbo v2, "read int32 error"
 
     if-nez p1, :cond_1
 
@@ -957,7 +957,7 @@
     :catch_0
     move-exception v0
 
-    const-string v3, "read int64 error"
+    const-string/jumbo v3, "read int64 error"
 
     if-nez p1, :cond_1
 
@@ -1109,7 +1109,7 @@
     :catch_0
     move-exception v0
 
-    const-string v1, "read string error"
+    const-string/jumbo v1, "read string error"
 
     if-nez p1, :cond_3
 

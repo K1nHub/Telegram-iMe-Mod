@@ -137,3 +137,18 @@
 
     return-object v0
 .end method
+
+.method public final getWordsCount()I
+    .locals 1
+
+    .line 23
+    invoke-virtual {p0}, Lcom/iMe/model/wallet/crypto/create/CreateWalletScreenType$SecretWords;->getSecretWords()Ljava/util/List;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/util/List;->size()I
+
+    move-result v0
+
+    return v0
+.end method

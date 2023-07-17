@@ -16,14 +16,28 @@
     .end annotation
 .end method
 
-.method public abstract getCryptoTransferMetadata(Lcom/iMe/storage/domain/model/wallet/token/TokenCode;Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/domain/model/crypto/NetworkType;)Lio/reactivex/Observable;
+.method public abstract detachCustomToken(Lcom/iMe/storage/domain/model/wallet/token/Token;)Lio/reactivex/Observable;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lcom/iMe/storage/domain/model/wallet/token/TokenCode;",
+            "Lcom/iMe/storage/domain/model/wallet/token/Token;",
+            ")",
+            "Lio/reactivex/Observable<",
+            "Lcom/iMe/storage/domain/model/Result<",
+            "Ljava/lang/Boolean;",
+            ">;>;"
+        }
+    .end annotation
+.end method
+
+.method public abstract getCryptoTransferMetadata(Lcom/iMe/storage/domain/model/wallet/token/Token;Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/domain/model/crypto/Network;)Lio/reactivex/Observable;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lcom/iMe/storage/domain/model/wallet/token/Token;",
             "Ljava/lang/String;",
             "Ljava/lang/String;",
-            "Lcom/iMe/storage/domain/model/crypto/NetworkType;",
+            "Lcom/iMe/storage/domain/model/crypto/Network;",
             ")",
             "Lio/reactivex/Observable<",
             "Lcom/iMe/storage/domain/model/Result<",
@@ -33,15 +47,88 @@
     .end annotation
 .end method
 
-.method public abstract getTokensBalance(Ljava/util/List;ZLcom/iMe/storage/domain/model/crypto/NetworkType;)Lio/reactivex/Observable;
+.method public abstract getCustomTokens(Ljava/lang/String;)Lio/reactivex/Observable;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/lang/String;",
+            ")",
+            "Lio/reactivex/Observable<",
+            "Lcom/iMe/storage/domain/model/Result<",
+            "Lcom/iMe/storage/domain/model/common/CursoredData<",
+            "Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;",
+            ">;>;>;"
+        }
+    .end annotation
+.end method
+
+.method public abstract getDisplayedTokens(Ljava/lang/String;)Lio/reactivex/Observable;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/lang/String;",
+            ")",
+            "Lio/reactivex/Observable<",
+            "Lcom/iMe/storage/domain/model/Result<",
+            "Ljava/util/Map<",
+            "Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;",
+            "Ljava/lang/Boolean;",
+            ">;>;>;"
+        }
+    .end annotation
+.end method
+
+.method public abstract getSupportedNetworks()Lio/reactivex/Observable;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Lio/reactivex/Observable<",
+            "Lcom/iMe/storage/domain/model/Result<",
+            "Ljava/util/List<",
+            "Lcom/iMe/storage/domain/model/crypto/Network;",
+            ">;>;>;"
+        }
+    .end annotation
+.end method
+
+.method public abstract getTokenInfo(Lcom/iMe/storage/domain/model/wallet/token/Token;)Lio/reactivex/Observable;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lcom/iMe/storage/domain/model/wallet/token/Token;",
+            ")",
+            "Lio/reactivex/Observable<",
+            "Lcom/iMe/storage/domain/model/Result<",
+            "Lkotlin/Pair<",
+            "Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;",
+            "Ljava/lang/Boolean;",
+            ">;>;>;"
+        }
+    .end annotation
+.end method
+
+.method public abstract getTokenListsData(Lcom/iMe/storage/domain/model/wallet/token/Token;)Lio/reactivex/Observable;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lcom/iMe/storage/domain/model/wallet/token/Token;",
+            ")",
+            "Lio/reactivex/Observable<",
+            "Lcom/iMe/storage/domain/model/Result<",
+            "Lcom/iMe/storage/domain/model/wallet/token/TokenListsData;",
+            ">;>;"
+        }
+    .end annotation
+.end method
+
+.method public abstract getTokensBalance(Ljava/util/List;ZLjava/lang/String;)Lio/reactivex/Observable;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Ljava/util/List<",
-            "+",
-            "Lcom/iMe/storage/domain/model/wallet/token/TokenCode;",
+            "Lcom/iMe/storage/domain/model/wallet/token/Token;",
             ">;Z",
-            "Lcom/iMe/storage/domain/model/crypto/NetworkType;",
+            "Ljava/lang/String;",
             ")",
             "Lio/reactivex/Observable<",
             "Lcom/iMe/storage/domain/model/Result<",
@@ -52,29 +139,44 @@
     .end annotation
 .end method
 
-.method public abstract getWalletBalance(ZLcom/iMe/storage/domain/model/crypto/NetworkType;)Lio/reactivex/Observable;
+.method public abstract getTokensSettings(Ljava/lang/String;)Lio/reactivex/Observable;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "(Z",
-            "Lcom/iMe/storage/domain/model/crypto/NetworkType;",
+            "(",
+            "Ljava/lang/String;",
             ")",
             "Lio/reactivex/Observable<",
             "Lcom/iMe/storage/domain/model/Result<",
             "Ljava/util/List<",
-            "Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;",
+            "Lcom/iMe/storage/data/locale/prefs/model/TokenDisplaySettings$Crypto;",
             ">;>;>;"
         }
     .end annotation
 .end method
 
-.method public abstract getWalletTransactionHistory(ZLjava/lang/String;Lcom/iMe/storage/domain/model/wallet/token/TokenCode;ILcom/iMe/storage/domain/model/crypto/NetworkType;)Lio/reactivex/Observable;
+.method public abstract getWalletBalance(ZLjava/lang/String;)Lio/reactivex/Observable;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(Z",
             "Ljava/lang/String;",
-            "Lcom/iMe/storage/domain/model/wallet/token/TokenCode;",
+            ")",
+            "Lio/reactivex/Observable<",
+            "Lcom/iMe/storage/domain/model/Result<",
+            "Ljava/util/List<",
+            "Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;",
+            ">;>;>;"
+        }
+    .end annotation
+.end method
+
+.method public abstract getWalletTransactionHistory(ZLjava/lang/String;Lcom/iMe/storage/domain/model/wallet/token/Token;ILjava/lang/String;)Lio/reactivex/Observable;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(Z",
+            "Ljava/lang/String;",
+            "Lcom/iMe/storage/domain/model/wallet/token/Token;",
             "I",
-            "Lcom/iMe/storage/domain/model/crypto/NetworkType;",
+            "Ljava/lang/String;",
             ")",
             "Lio/reactivex/Observable<",
             "Lcom/iMe/storage/domain/model/Result<",
@@ -85,14 +187,44 @@
     .end annotation
 .end method
 
-.method public abstract sendTokens(Lcom/iMe/storage/domain/model/wallet/token/TokenCode;Lcom/iMe/storage/domain/model/crypto/send/TransferArgs;Lcom/iMe/storage/domain/model/crypto/BlockchainType;)Lio/reactivex/Observable;
+.method public abstract searchTokens(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lio/reactivex/Observable;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lcom/iMe/storage/domain/model/wallet/token/TokenCode;",
+            "Ljava/lang/String;",
+            "Ljava/lang/String;",
+            "Ljava/lang/String;",
+            ")",
+            "Lio/reactivex/Observable<",
+            "Lcom/iMe/storage/domain/model/Result<",
+            "Lcom/iMe/storage/domain/model/common/CursoredData<",
+            "Lcom/iMe/storage/domain/model/wallet/token/FoundTokenWithFamily;",
+            ">;>;>;"
+        }
+    .end annotation
+.end method
+
+.method public abstract sendTokens(Lcom/iMe/storage/domain/model/crypto/send/TransferArgs;Lcom/iMe/storage/domain/model/crypto/BlockchainType;)Lio/reactivex/Observable;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
             "Lcom/iMe/storage/domain/model/crypto/send/TransferArgs;",
             "Lcom/iMe/storage/domain/model/crypto/BlockchainType;",
             ")",
+            "Lio/reactivex/Observable<",
+            "Lcom/iMe/storage/domain/model/Result<",
+            "Ljava/lang/Boolean;",
+            ">;>;"
+        }
+    .end annotation
+.end method
+
+.method public abstract setTokenVisibility(Lcom/iMe/storage/domain/model/wallet/token/Token;Z)Lio/reactivex/Observable;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lcom/iMe/storage/domain/model/wallet/token/Token;",
+            "Z)",
             "Lio/reactivex/Observable<",
             "Lcom/iMe/storage/domain/model/Result<",
             "Ljava/lang/Boolean;",

@@ -23,6 +23,6 @@ final class TelegramViewPagerFragment$floatingActionButton$2 extends Lambda impl
     public final FloatingActionButton invoke() {
         Activity parentActivity = this.this$0.getParentActivity();
         Intrinsics.checkNotNullExpressionValue(parentActivity, "parentActivity");
-        return new FloatingActionButton(parentActivity);
+        return new FloatingActionButton(parentActivity, null, 0, 6, null);
     }
 }

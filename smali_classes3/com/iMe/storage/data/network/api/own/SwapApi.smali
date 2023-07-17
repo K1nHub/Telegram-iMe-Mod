@@ -4,37 +4,15 @@
 
 
 # virtual methods
-.method public abstract getApproveTokensInfo(Lcom/iMe/storage/data/network/model/request/crypto/swap/NetworkAndProtocolSwapRequest;)Lio/reactivex/Observable;
-    .param p1    # Lcom/iMe/storage/data/network/model/request/crypto/swap/NetworkAndProtocolSwapRequest;
+.method public abstract getAvailableTokensToSwap(Lcom/iMe/storage/data/network/model/request/crypto/swap/AvailableTokensToSwapRequest;)Lio/reactivex/Observable;
+    .param p1    # Lcom/iMe/storage/data/network/model/request/crypto/swap/AvailableTokensToSwapRequest;
         .annotation runtime Lretrofit2/http/Body;
         .end annotation
     .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lcom/iMe/storage/data/network/model/request/crypto/swap/NetworkAndProtocolSwapRequest;",
-            ")",
-            "Lio/reactivex/Observable<",
-            "Lcom/iMe/storage/data/network/model/response/base/ApiBaseResponse<",
-            "Lcom/iMe/storage/data/network/model/response/crypto/swap/GetApproveTokensInfoResponse;",
-            ">;>;"
-        }
-    .end annotation
-
-    .annotation runtime Lretrofit2/http/POST;
-        value = "getApproveTokensInfo"
-    .end annotation
-.end method
-
-.method public abstract getAvailableTokensToSwap(Lcom/iMe/storage/data/network/model/request/crypto/swap/NetworkAndProtocolSwapRequest;)Lio/reactivex/Observable;
-    .param p1    # Lcom/iMe/storage/data/network/model/request/crypto/swap/NetworkAndProtocolSwapRequest;
-        .annotation runtime Lretrofit2/http/Body;
-        .end annotation
-    .end param
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lcom/iMe/storage/data/network/model/request/crypto/swap/NetworkAndProtocolSwapRequest;",
+            "Lcom/iMe/storage/data/network/model/request/crypto/swap/AvailableTokensToSwapRequest;",
             ")",
             "Lio/reactivex/Observable<",
             "Lcom/iMe/storage/data/network/model/response/base/ApiBaseResponse<",
@@ -44,7 +22,7 @@
     .end annotation
 
     .annotation runtime Lretrofit2/http/POST;
-        value = "getAvailableTokensToSwap"
+        value = "v2/getAvailableTokensToSwap"
     .end annotation
 .end method
 
@@ -66,7 +44,29 @@
     .end annotation
 
     .annotation runtime Lretrofit2/http/POST;
-        value = "getQuoteToSwap"
+        value = "prepareSwapTx"
+    .end annotation
+.end method
+
+.method public abstract getTokensApprovalInfo(Lcom/iMe/storage/data/network/model/request/crypto/swap/TokensApprovalInfoRequest;)Lio/reactivex/Observable;
+    .param p1    # Lcom/iMe/storage/data/network/model/request/crypto/swap/TokensApprovalInfoRequest;
+        .annotation runtime Lretrofit2/http/Body;
+        .end annotation
+    .end param
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lcom/iMe/storage/data/network/model/request/crypto/swap/TokensApprovalInfoRequest;",
+            ")",
+            "Lio/reactivex/Observable<",
+            "Lcom/iMe/storage/data/network/model/response/base/ApiBaseResponse<",
+            "Lcom/iMe/storage/data/network/model/response/crypto/swap/TokensApprovalInfoResponse;",
+            ">;>;"
+        }
+    .end annotation
+
+    .annotation runtime Lretrofit2/http/POST;
+        value = "v2/getApproveTokensInfo"
     .end annotation
 .end method
 
@@ -88,7 +88,7 @@
     .end annotation
 
     .annotation runtime Lretrofit2/http/POST;
-        value = "sendCryptoApproveTransaction"
+        value = "sendApproveTx"
     .end annotation
 .end method
 
@@ -110,6 +110,6 @@
     .end annotation
 
     .annotation runtime Lretrofit2/http/POST;
-        value = "sendCryptoSwapTransaction"
+        value = "sendSwapTx"
     .end annotation
 .end method

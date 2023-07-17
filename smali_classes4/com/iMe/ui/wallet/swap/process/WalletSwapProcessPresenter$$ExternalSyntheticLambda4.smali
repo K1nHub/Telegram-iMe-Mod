@@ -5,21 +5,27 @@
 .implements Lcom/iMe/fork/utils/Callbacks$Callback;
 
 
-# instance fields
-.field public final synthetic f$0:Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessPresenter;
-
-.field public final synthetic f$1:Lcom/iMe/model/wallet/swap/SwapSide;
+# static fields
+.field public static final synthetic INSTANCE:Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessPresenter$$ExternalSyntheticLambda4;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessPresenter;Lcom/iMe/model/wallet/swap/SwapSide;)V
+.method static synthetic constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessPresenter$$ExternalSyntheticLambda4;
+
+    invoke-direct {v0}, Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessPresenter$$ExternalSyntheticLambda4;-><init>()V
+
+    sput-object v0, Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessPresenter$$ExternalSyntheticLambda4;->INSTANCE:Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessPresenter$$ExternalSyntheticLambda4;
+
+    return-void
+.end method
+
+.method private synthetic constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessPresenter$$ExternalSyntheticLambda4;->f$0:Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessPresenter;
-
-    iput-object p2, p0, Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessPresenter$$ExternalSyntheticLambda4;->f$1:Lcom/iMe/model/wallet/swap/SwapSide;
 
     return-void
 .end method
@@ -27,13 +33,9 @@
 
 # virtual methods
 .method public final invoke()V
-    .locals 2
+    .locals 0
 
-    iget-object v0, p0, Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessPresenter$$ExternalSyntheticLambda4;->f$0:Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessPresenter;
-
-    iget-object v1, p0, Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessPresenter$$ExternalSyntheticLambda4;->f$1:Lcom/iMe/model/wallet/swap/SwapSide;
-
-    invoke-static {v0, v1}, Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessPresenter;->$r8$lambda$MJJakihtUUaMpRf9wkHmoOy5RAc(Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessPresenter;Lcom/iMe/model/wallet/swap/SwapSide;)V
+    invoke-static {}, Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessPresenter;->$r8$lambda$i0eMlZ70dqMWwfJHdbJsG1aQkJU()V
 
     return-void
 .end method

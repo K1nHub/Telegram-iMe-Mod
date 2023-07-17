@@ -1,7 +1,5 @@
 package com.iMe.p031ui.wallet.notifications.details;
 
-import com.iMe.storage.domain.model.crypto.NetworkType;
-import com.iMe.storage.domain.model.wallet.token.TokenCode;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
@@ -49,19 +47,6 @@ public class WalletNotificationDetailsView$$State extends MvpViewState<WalletNot
             view.actionOpenProfileScreen(j);
         }
         this.viewCommands.afterApply(actionOpenProfileScreenCommand);
-    }
-
-    @Override // com.iMe.manager.wallet.WalletLinkClickableView
-    public void actionMakeTransfer(TokenCode tokenCode, String str, boolean z, String str2, NetworkType networkType) {
-        ActionMakeTransferCommand actionMakeTransferCommand = new ActionMakeTransferCommand(this, tokenCode, str, z, str2, networkType);
-        this.viewCommands.beforeApply(actionMakeTransferCommand);
-        if (hasNotView().booleanValue()) {
-            return;
-        }
-        for (View view : this.views) {
-            view.actionMakeTransfer(tokenCode, str, z, str2, networkType);
-        }
-        this.viewCommands.afterApply(actionMakeTransferCommand);
     }
 
     @Override // com.iMe.manager.wallet.WalletLinkClickableView
@@ -140,31 +125,6 @@ public class WalletNotificationDetailsView$$State extends MvpViewState<WalletNot
         @Override // moxy.viewstate.ViewCommand
         public void apply(WalletNotificationDetailsView walletNotificationDetailsView) {
             walletNotificationDetailsView.actionOpenProfileScreen(this.userId);
-        }
-    }
-
-    /* compiled from: WalletNotificationDetailsView$$State.java */
-    /* renamed from: com.iMe.ui.wallet.notifications.details.WalletNotificationDetailsView$$State$ActionMakeTransferCommand */
-    /* loaded from: classes4.dex */
-    public class ActionMakeTransferCommand extends ViewCommand<WalletNotificationDetailsView> {
-        public final String address;
-        public final TokenCode code;
-        public final boolean isContactSelected;
-        public final NetworkType networkType;
-        public final String userId;
-
-        ActionMakeTransferCommand(WalletNotificationDetailsView$$State walletNotificationDetailsView$$State, TokenCode tokenCode, String str, boolean z, String str2, NetworkType networkType) {
-            super("actionMakeTransfer", OneExecutionStateStrategy.class);
-            this.code = tokenCode;
-            this.userId = str;
-            this.isContactSelected = z;
-            this.address = str2;
-            this.networkType = networkType;
-        }
-
-        @Override // moxy.viewstate.ViewCommand
-        public void apply(WalletNotificationDetailsView walletNotificationDetailsView) {
-            walletNotificationDetailsView.actionMakeTransfer(this.code, this.userId, this.isContactSelected, this.address, this.networkType);
         }
     }
 

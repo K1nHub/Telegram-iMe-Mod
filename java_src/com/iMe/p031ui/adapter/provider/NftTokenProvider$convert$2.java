@@ -5,7 +5,7 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Lambda;
-import org.telegram.p044ui.Components.BackupImageView;
+import org.telegram.p043ui.Components.BackupImageView;
 /* compiled from: NftTokenProvider.kt */
 /* renamed from: com.iMe.ui.adapter.provider.NftTokenProvider$convert$2 */
 /* loaded from: classes.dex */

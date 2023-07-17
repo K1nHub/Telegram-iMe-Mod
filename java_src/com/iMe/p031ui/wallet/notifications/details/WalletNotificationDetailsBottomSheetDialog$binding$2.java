@@ -4,7 +4,7 @@ import android.view.LayoutInflater;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Lambda;
 import org.telegram.messenger.databinding.ForkContentWalletNotificationDetailsLayoutBinding;
-import org.telegram.p044ui.ActionBar.BaseFragment;
+import org.telegram.p043ui.ActionBar.BaseFragment;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: WalletNotificationDetailsBottomSheetDialog.kt */
 /* renamed from: com.iMe.ui.wallet.notifications.details.WalletNotificationDetailsBottomSheetDialog$binding$2 */

@@ -262,7 +262,7 @@ public class GooglePlayServicesUtilLight {
     public static int isGooglePlayServicesAvailable(Context context, int i) {
         PackageInfo packageInfo;
         try {
-            context.getResources().getString(C0700R.string.common_google_play_services_unknown_issue);
+            context.getResources().getString(C0705R.string.common_google_play_services_unknown_issue);
         } catch (Throwable unused) {
             Log.e("GooglePlayServicesUtil", "The Google Play services resources were not found. Check your project configuration to ensure that the resources are included.");
         }

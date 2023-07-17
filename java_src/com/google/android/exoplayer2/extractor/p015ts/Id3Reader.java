@@ -1,6 +1,6 @@
 package com.google.android.exoplayer2.extractor.p015ts;
 
-import com.google.android.exoplayer2.C0475C;
+import com.google.android.exoplayer2.C0480C;
 import com.google.android.exoplayer2.Format;
 import com.google.android.exoplayer2.extractor.ExtractorOutput;
 import com.google.android.exoplayer2.extractor.TrackOutput;
@@ -18,12 +18,12 @@ public final class Id3Reader implements ElementaryStreamReader {
     private int sampleSize;
     private boolean writingSample;
     private final ParsableByteArray id3Header = new ParsableByteArray(10);
-    private long sampleTimeUs = C0475C.TIME_UNSET;
+    private long sampleTimeUs = C0480C.TIME_UNSET;
 
     @Override // com.google.android.exoplayer2.extractor.p015ts.ElementaryStreamReader
     public void seek() {
         this.writingSample = false;
-        this.sampleTimeUs = C0475C.TIME_UNSET;
+        this.sampleTimeUs = C0480C.TIME_UNSET;
     }
 
     @Override // com.google.android.exoplayer2.extractor.p015ts.ElementaryStreamReader
@@ -40,7 +40,7 @@ public final class Id3Reader implements ElementaryStreamReader {
             return;
         }
         this.writingSample = true;
-        if (j != C0475C.TIME_UNSET) {
+        if (j != C0480C.TIME_UNSET) {
             this.sampleTimeUs = j;
         }
         this.sampleSize = 0;
@@ -79,7 +79,7 @@ public final class Id3Reader implements ElementaryStreamReader {
         Assertions.checkStateNotNull(this.output);
         if (this.writingSample && (i = this.sampleSize) != 0 && this.sampleBytesRead == i) {
             long j = this.sampleTimeUs;
-            if (j != C0475C.TIME_UNSET) {
+            if (j != C0480C.TIME_UNSET) {
                 this.output.sampleMetadata(j, 1, i, 0, null);
             }
             this.writingSample = false;

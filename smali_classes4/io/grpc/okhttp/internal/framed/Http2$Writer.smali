@@ -567,7 +567,7 @@
 
     aput-object p1, p2, v1
 
-    const-string p1, "reserved bit set: %s"
+    const-string/jumbo p1, "reserved bit set: %s"
 
     invoke-static {p1, p2}, Lio/grpc/okhttp/internal/framed/Http2;->access$500(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/IllegalArgumentException;
 

@@ -1,17 +1,19 @@
 package com.iMe.storage.data.network.model.request.wallet;
 
 import com.google.gson.annotations.SerializedName;
+import java.util.List;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: GetWalletTransactionsRequest.kt */
 /* loaded from: classes3.dex */
 public final class GetWalletTransactionsRequest {
     @SerializedName("filter")
-    private final String filterByToken;
+    private final List<TokenRequest> filterByTokens;
     private final String lastItemId;
     private final int limit;
     private final String networkType;
 
-    public static /* synthetic */ GetWalletTransactionsRequest copy$default(GetWalletTransactionsRequest getWalletTransactionsRequest, String str, int i, String str2, String str3, int i2, Object obj) {
+    /* JADX WARN: Multi-variable type inference failed */
+    public static /* synthetic */ GetWalletTransactionsRequest copy$default(GetWalletTransactionsRequest getWalletTransactionsRequest, String str, int i, String str2, List list, int i2, Object obj) {
         if ((i2 & 1) != 0) {
             str = getWalletTransactionsRequest.lastItemId;
         }
@@ -22,9 +24,9 @@ public final class GetWalletTransactionsRequest {
             str2 = getWalletTransactionsRequest.networkType;
         }
         if ((i2 & 8) != 0) {
-            str3 = getWalletTransactionsRequest.filterByToken;
+            list = getWalletTransactionsRequest.filterByTokens;
         }
-        return getWalletTransactionsRequest.copy(str, i, str2, str3);
+        return getWalletTransactionsRequest.copy(str, i, str2, list);
     }
 
     public final String component1() {
@@ -39,13 +41,13 @@ public final class GetWalletTransactionsRequest {
         return this.networkType;
     }
 
-    public final String component4() {
-        return this.filterByToken;
+    public final List<TokenRequest> component4() {
+        return this.filterByTokens;
     }
 
-    public final GetWalletTransactionsRequest copy(String str, int i, String networkType, String str2) {
+    public final GetWalletTransactionsRequest copy(String str, int i, String networkType, List<TokenRequest> list) {
         Intrinsics.checkNotNullParameter(networkType, "networkType");
-        return new GetWalletTransactionsRequest(str, i, networkType, str2);
+        return new GetWalletTransactionsRequest(str, i, networkType, list);
     }
 
     public boolean equals(Object obj) {
@@ -54,7 +56,7 @@ public final class GetWalletTransactionsRequest {
         }
         if (obj instanceof GetWalletTransactionsRequest) {
             GetWalletTransactionsRequest getWalletTransactionsRequest = (GetWalletTransactionsRequest) obj;
-            return Intrinsics.areEqual(this.lastItemId, getWalletTransactionsRequest.lastItemId) && this.limit == getWalletTransactionsRequest.limit && Intrinsics.areEqual(this.networkType, getWalletTransactionsRequest.networkType) && Intrinsics.areEqual(this.filterByToken, getWalletTransactionsRequest.filterByToken);
+            return Intrinsics.areEqual(this.lastItemId, getWalletTransactionsRequest.lastItemId) && this.limit == getWalletTransactionsRequest.limit && Intrinsics.areEqual(this.networkType, getWalletTransactionsRequest.networkType) && Intrinsics.areEqual(this.filterByTokens, getWalletTransactionsRequest.filterByTokens);
         }
         return false;
     }
@@ -62,20 +64,20 @@ public final class GetWalletTransactionsRequest {
     public int hashCode() {
         String str = this.lastItemId;
         int hashCode = (((((str == null ? 0 : str.hashCode()) * 31) + this.limit) * 31) + this.networkType.hashCode()) * 31;
-        String str2 = this.filterByToken;
-        return hashCode + (str2 != null ? str2.hashCode() : 0);
+        List<TokenRequest> list = this.filterByTokens;
+        return hashCode + (list != null ? list.hashCode() : 0);
     }
 
     public String toString() {
-        return "GetWalletTransactionsRequest(lastItemId=" + this.lastItemId + ", limit=" + this.limit + ", networkType=" + this.networkType + ", filterByToken=" + this.filterByToken + ')';
+        return "GetWalletTransactionsRequest(lastItemId=" + this.lastItemId + ", limit=" + this.limit + ", networkType=" + this.networkType + ", filterByTokens=" + this.filterByTokens + ')';
     }
 
-    public GetWalletTransactionsRequest(String str, int i, String networkType, String str2) {
+    public GetWalletTransactionsRequest(String str, int i, String networkType, List<TokenRequest> list) {
         Intrinsics.checkNotNullParameter(networkType, "networkType");
         this.lastItemId = str;
         this.limit = i;
         this.networkType = networkType;
-        this.filterByToken = str2;
+        this.filterByTokens = list;
     }
 
     public final String getLastItemId() {
@@ -90,7 +92,7 @@ public final class GetWalletTransactionsRequest {
         return this.networkType;
     }
 
-    public final String getFilterByToken() {
-        return this.filterByToken;
+    public final List<TokenRequest> getFilterByTokens() {
+        return this.filterByTokens;
     }
 }

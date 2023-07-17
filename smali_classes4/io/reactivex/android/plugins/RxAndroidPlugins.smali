@@ -157,7 +157,7 @@
         }
     .end annotation
 
-    const-string v0, "scheduler == null"
+    const-string/jumbo v0, "scheduler == null"
 
     .line 36
     invoke-static {p0, v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
@@ -186,7 +186,7 @@
 .method public static onMainThreadScheduler(Lio/reactivex/Scheduler;)Lio/reactivex/Scheduler;
     .locals 1
 
-    const-string v0, "scheduler == null"
+    const-string/jumbo v0, "scheduler == null"
 
     .line 51
     invoke-static {p0, v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;

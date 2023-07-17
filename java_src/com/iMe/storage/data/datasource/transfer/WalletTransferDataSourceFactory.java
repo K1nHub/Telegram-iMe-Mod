@@ -2,13 +2,11 @@ package com.iMe.storage.data.datasource.transfer;
 
 import com.iMe.storage.data.datasource.base.DataSourceFactory;
 import com.iMe.storage.domain.model.crypto.BlockchainType;
-import com.iMe.storage.domain.model.wallet.token.TokenCode;
 import kotlin.NoWhenBranchMatchedException;
-import kotlin.Pair;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: WalletTransferDataSourceFactory.kt */
 /* loaded from: classes3.dex */
-public final class WalletTransferDataSourceFactory implements DataSourceFactory<Pair<? extends TokenCode, ? extends BlockchainType>, WalletTransferDataSource> {
+public final class WalletTransferDataSourceFactory implements DataSourceFactory<BlockchainType, WalletTransferDataSource> {
     private final WalletTransferDataSource btcWalletTransferDataSource;
     private final WalletTransferDataSource evmWalletTransferDataSource;
     private final WalletTransferDataSource tonWalletTransferDataSource;
@@ -52,25 +50,21 @@ public final class WalletTransferDataSourceFactory implements DataSourceFactory<
         this.btcWalletTransferDataSource = btcWalletTransferDataSource;
     }
 
-    public WalletTransferDataSource getDataSource(Pair<? extends TokenCode, ? extends BlockchainType> arg) {
+    public WalletTransferDataSource getDataSource(BlockchainType arg) {
         Intrinsics.checkNotNullParameter(arg, "arg");
-        TokenCode first = arg.getFirst();
-        if (first.isCryptoTokens()) {
-            int i = WhenMappings.$EnumSwitchMapping$0[arg.getSecond().ordinal()];
-            if (i != 1) {
-                if (i != 2) {
-                    if (i != 3) {
-                        if (i == 4) {
-                            return this.btcWalletTransferDataSource;
-                        }
-                        throw new NoWhenBranchMatchedException();
+        int i = WhenMappings.$EnumSwitchMapping$0[arg.ordinal()];
+        if (i != 1) {
+            if (i != 2) {
+                if (i != 3) {
+                    if (i == 4) {
+                        return this.btcWalletTransferDataSource;
                     }
-                    return this.tronWalletTransferDataSource;
+                    throw new NoWhenBranchMatchedException();
                 }
-                return this.tonWalletTransferDataSource;
+                return this.tronWalletTransferDataSource;
             }
-            return this.evmWalletTransferDataSource;
+            return this.tonWalletTransferDataSource;
         }
-        throw new IllegalStateException(DataSourceFactory.Companion.unsupportedDataSource(first.name()).toString());
+        return this.evmWalletTransferDataSource;
     }
 }

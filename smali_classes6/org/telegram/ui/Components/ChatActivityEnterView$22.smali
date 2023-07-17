@@ -35,7 +35,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/ChatActivityEnterView;Lorg/telegram/ui/Components/SimpleAvatarView;Lorg/telegram/ui/Components/SenderSelectPopup$SenderView;)V
     .locals 0
 
-    .line 3525
+    .line 3527
     iput-object p2, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$22;->val$avatar:Lorg/telegram/ui/Components/SimpleAvatarView;
 
     iput-object p3, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$22;->val$senderView:Lorg/telegram/ui/Components/SenderSelectPopup$SenderView;
@@ -48,14 +48,14 @@
 .method private synthetic lambda$onDraw$0(Lorg/telegram/ui/Components/SimpleAvatarView;Lorg/telegram/ui/Components/SenderSelectPopup$SenderView;)V
     .locals 0
 
-    .line 3529
+    .line 3531
     invoke-virtual {p1}, Landroid/view/View;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
 
     move-result-object p1
 
     invoke-virtual {p1, p0}, Landroid/view/ViewTreeObserver;->removeOnDrawListener(Landroid/view/ViewTreeObserver$OnDrawListener;)V
 
-    .line 3530
+    .line 3532
     iget-object p1, p2, Lorg/telegram/ui/Components/SenderSelectPopup$SenderView;->avatar:Lorg/telegram/ui/Components/SimpleAvatarView;
 
     const/4 p2, 0x1
@@ -70,7 +70,7 @@
 .method public onDraw()V
     .locals 3
 
-    .line 3528
+    .line 3530
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$22;->val$avatar:Lorg/telegram/ui/Components/SimpleAvatarView;
 
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$22;->val$senderView:Lorg/telegram/ui/Components/SenderSelectPopup$SenderView;

@@ -50,20 +50,20 @@
 .method public constructor <init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
     .locals 7
 
-    .line 2068
+    .line 2075
     invoke-direct {p0, p1}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    .line 2056
+    .line 2063
     new-instance v0, Lorg/telegram/ui/ActionBar/ActionBarMenuItem$SearchFilterView$1;
 
     invoke-direct {v0, p0}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem$SearchFilterView$1;-><init>(Lorg/telegram/ui/ActionBar/ActionBarMenuItem$SearchFilterView;)V
 
     iput-object v0, p0, Lorg/telegram/ui/ActionBar/ActionBarMenuItem$SearchFilterView;->removeSelectionRunnable:Ljava/lang/Runnable;
 
-    .line 2069
+    .line 2076
     iput-object p2, p0, Lorg/telegram/ui/ActionBar/ActionBarMenuItem$SearchFilterView;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
-    .line 2070
+    .line 2077
     new-instance p2, Lorg/telegram/ui/Components/BackupImageView;
 
     invoke-direct {p2, p1}, Lorg/telegram/ui/Components/BackupImageView;-><init>(Landroid/content/Context;)V
@@ -72,26 +72,26 @@
 
     const/16 v0, 0x20
 
-    .line 2071
+    .line 2078
     invoke-static {v0, v0}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(II)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object v0
 
     invoke-virtual {p0, p2, v0}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 2073
+    .line 2080
     new-instance p2, Landroid/widget/ImageView;
 
     invoke-direct {p2, p1}, Landroid/widget/ImageView;-><init>(Landroid/content/Context;)V
 
     iput-object p2, p0, Lorg/telegram/ui/ActionBar/ActionBarMenuItem$SearchFilterView;->closeIconView:Landroid/widget/ImageView;
 
-    .line 2074
+    .line 2081
     sget v0, Lorg/telegram/messenger/R$drawable;->ic_close_white:I
 
     invoke-virtual {p2, v0}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 2075
+    .line 2082
     iget-object p2, p0, Lorg/telegram/ui/ActionBar/ActionBarMenuItem$SearchFilterView;->closeIconView:Landroid/widget/ImageView;
 
     const/16 v0, 0x18
@@ -114,7 +114,7 @@
 
     invoke-virtual {p0, p2, v0}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 2077
+    .line 2084
     new-instance p2, Landroid/widget/TextView;
 
     invoke-direct {p2, p1}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
@@ -125,10 +125,10 @@
 
     const/high16 v0, 0x41600000    # 14.0f
 
-    .line 2078
+    .line 2085
     invoke-virtual {p2, p1, v0}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 2079
+    .line 2086
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/ActionBarMenuItem$SearchFilterView;->titleView:Landroid/widget/TextView;
 
     const/4 v0, -0x2
@@ -147,7 +147,7 @@
 
     const/16 p1, 0x1c
 
-    .line 2080
+    .line 2087
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p1
@@ -162,10 +162,10 @@
 
     iput-object p1, p0, Lorg/telegram/ui/ActionBar/ActionBarMenuItem$SearchFilterView;->shapeDrawable:Landroid/graphics/drawable/ShapeDrawable;
 
-    .line 2081
+    .line 2088
     invoke-virtual {p0, p1}, Landroid/widget/FrameLayout;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 2082
+    .line 2089
     invoke-direct {p0}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem$SearchFilterView;->updateColors()V
 
     return-void
@@ -174,7 +174,7 @@
 .method static synthetic access$1800(Lorg/telegram/ui/ActionBar/ActionBarMenuItem$SearchFilterView;)V
     .locals 0
 
-    .line 2043
+    .line 2050
     invoke-direct {p0}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem$SearchFilterView;->updateColors()V
 
     return-void
@@ -183,7 +183,7 @@
 .method static synthetic access$1900(Lorg/telegram/ui/ActionBar/ActionBarMenuItem$SearchFilterView;)Z
     .locals 0
 
-    .line 2043
+    .line 2050
     iget-boolean p0, p0, Lorg/telegram/ui/ActionBar/ActionBarMenuItem$SearchFilterView;->selectedForDelete:Z
 
     return p0
@@ -192,7 +192,7 @@
 .method static synthetic access$2002(Lorg/telegram/ui/ActionBar/ActionBarMenuItem$SearchFilterView;F)F
     .locals 0
 
-    .line 2043
+    .line 2050
     iput p1, p0, Lorg/telegram/ui/ActionBar/ActionBarMenuItem$SearchFilterView;->selectedProgress:F
 
     return p1
@@ -201,7 +201,7 @@
 .method private synthetic lambda$setSelectedForDelete$0(Landroid/animation/ValueAnimator;)V
     .locals 0
 
-    .line 2166
+    .line 2173
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object p1
@@ -214,7 +214,7 @@
 
     iput p1, p0, Lorg/telegram/ui/ActionBar/ActionBarMenuItem$SearchFilterView;->selectedProgress:F
 
-    .line 2167
+    .line 2174
     invoke-direct {p0}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem$SearchFilterView;->updateColors()V
 
     return-void
@@ -223,35 +223,35 @@
 .method private updateColors()V
     .locals 8
 
-    .line 2086
+    .line 2093
     sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_groupcreate_spanBackground:I
 
     invoke-virtual {p0, v0}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem$SearchFilterView;->getThemedColor(I)I
 
     move-result v0
 
-    .line 2087
+    .line 2094
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_avatar_backgroundBlue:I
 
     invoke-virtual {p0, v1}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem$SearchFilterView;->getThemedColor(I)I
 
     move-result v2
 
-    .line 2088
+    .line 2095
     sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
 
     invoke-virtual {p0, v3}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem$SearchFilterView;->getThemedColor(I)I
 
     move-result v3
 
-    .line 2089
+    .line 2096
     sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_avatar_actionBarIconBlue:I
 
     invoke-virtual {p0, v4}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem$SearchFilterView;->getThemedColor(I)I
 
     move-result v5
 
-    .line 2090
+    .line 2097
     iget-object v6, p0, Lorg/telegram/ui/ActionBar/ActionBarMenuItem$SearchFilterView;->shapeDrawable:Landroid/graphics/drawable/ShapeDrawable;
 
     invoke-virtual {v6}, Landroid/graphics/drawable/ShapeDrawable;->getPaint()Landroid/graphics/Paint;
@@ -266,7 +266,7 @@
 
     invoke-virtual {v6, v0}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 2091
+    .line 2098
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/ActionBarMenuItem$SearchFilterView;->titleView:Landroid/widget/TextView;
 
     iget v2, p0, Lorg/telegram/ui/ActionBar/ActionBarMenuItem$SearchFilterView;->selectedProgress:F
@@ -277,19 +277,19 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 2092
+    .line 2099
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/ActionBarMenuItem$SearchFilterView;->closeIconView:Landroid/widget/ImageView;
 
     invoke-virtual {v0, v5}, Landroid/widget/ImageView;->setColorFilter(I)V
 
-    .line 2094
+    .line 2101
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/ActionBarMenuItem$SearchFilterView;->closeIconView:Landroid/widget/ImageView;
 
     iget v2, p0, Lorg/telegram/ui/ActionBar/ActionBarMenuItem$SearchFilterView;->selectedProgress:F
 
     invoke-virtual {v0, v2}, Landroid/widget/ImageView;->setAlpha(F)V
 
-    .line 2095
+    .line 2102
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/ActionBarMenuItem$SearchFilterView;->closeIconView:Landroid/widget/ImageView;
 
     iget v2, p0, Lorg/telegram/ui/ActionBar/ActionBarMenuItem$SearchFilterView;->selectedProgress:F
@@ -300,7 +300,7 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/ImageView;->setScaleX(F)V
 
-    .line 2096
+    .line 2103
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/ActionBarMenuItem$SearchFilterView;->closeIconView:Landroid/widget/ImageView;
 
     iget v2, p0, Lorg/telegram/ui/ActionBar/ActionBarMenuItem$SearchFilterView;->selectedProgress:F
@@ -309,12 +309,12 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/ImageView;->setScaleY(F)V
 
-    .line 2098
+    .line 2105
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/ActionBarMenuItem$SearchFilterView;->thumbDrawable:Landroid/graphics/drawable/Drawable;
 
     if-eqz v0, :cond_0
 
-    .line 2099
+    .line 2106
     invoke-virtual {p0, v1}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem$SearchFilterView;->getThemedColor(I)I
 
     move-result v1
@@ -323,7 +323,7 @@
 
     invoke-static {v0, v1, v2}, Lorg/telegram/ui/ActionBar/Theme;->setCombinedDrawableColor(Landroid/graphics/drawable/Drawable;IZ)V
 
-    .line 2100
+    .line 2107
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/ActionBarMenuItem$SearchFilterView;->thumbDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {p0, v4}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem$SearchFilterView;->getThemedColor(I)I
@@ -334,7 +334,7 @@
 
     invoke-static {v0, v1, v2}, Lorg/telegram/ui/ActionBar/Theme;->setCombinedDrawableColor(Landroid/graphics/drawable/Drawable;IZ)V
 
-    .line 2102
+    .line 2109
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/ActionBarMenuItem$SearchFilterView;->avatarImageView:Lorg/telegram/ui/Components/BackupImageView;
 
@@ -346,7 +346,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setAlpha(F)V
 
-    .line 2104
+    .line 2111
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/ActionBarMenuItem$SearchFilterView;->data:Lorg/telegram/ui/Adapters/FiltersView$MediaFilterData;
 
     if-eqz v0, :cond_1
@@ -357,10 +357,10 @@
 
     if-ne v1, v2, :cond_1
 
-    .line 2105
+    .line 2112
     invoke-virtual {p0, v0}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem$SearchFilterView;->setData(Lorg/telegram/ui/Adapters/FiltersView$MediaFilterData;)V
 
-    .line 2107
+    .line 2114
     :cond_1
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->invalidate()V
 
@@ -372,7 +372,7 @@
 .method public getFilter()Lorg/telegram/ui/Adapters/FiltersView$MediaFilterData;
     .locals 1
 
-    .line 2183
+    .line 2190
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/ActionBarMenuItem$SearchFilterView;->data:Lorg/telegram/ui/Adapters/FiltersView$MediaFilterData;
 
     return-object v0
@@ -381,7 +381,7 @@
 .method protected getThemedColor(I)I
     .locals 1
 
-    .line 2187
+    .line 2194
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/ActionBarMenuItem$SearchFilterView;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
     invoke-static {p1, v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
@@ -394,10 +394,10 @@
 .method public setData(Lorg/telegram/ui/Adapters/FiltersView$MediaFilterData;)V
     .locals 10
 
-    .line 2111
+    .line 2118
     iput-object p1, p0, Lorg/telegram/ui/ActionBar/ActionBarMenuItem$SearchFilterView;->data:Lorg/telegram/ui/Adapters/FiltersView$MediaFilterData;
 
-    .line 2112
+    .line 2119
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/ActionBarMenuItem$SearchFilterView;->titleView:Landroid/widget/TextView;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Adapters/FiltersView$MediaFilterData;->getTitle()Ljava/lang/String;
@@ -408,7 +408,7 @@
 
     const/16 v0, 0x20
 
-    .line 2113
+    .line 2120
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
@@ -421,7 +421,7 @@
 
     iput-object v1, p0, Lorg/telegram/ui/ActionBar/ActionBarMenuItem$SearchFilterView;->thumbDrawable:Landroid/graphics/drawable/Drawable;
 
-    .line 2114
+    .line 2121
     sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_avatar_backgroundBlue:I
 
     invoke-virtual {p0, v2}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem$SearchFilterView;->getThemedColor(I)I
@@ -432,7 +432,7 @@
 
     invoke-static {v1, v2, v3}, Lorg/telegram/ui/ActionBar/Theme;->setCombinedDrawableColor(Landroid/graphics/drawable/Drawable;IZ)V
 
-    .line 2115
+    .line 2122
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/ActionBarMenuItem$SearchFilterView;->thumbDrawable:Landroid/graphics/drawable/Drawable;
 
     sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_avatar_actionBarIconBlue:I
@@ -445,7 +445,7 @@
 
     invoke-static {v1, v4, v5}, Lorg/telegram/ui/ActionBar/Theme;->setCombinedDrawableColor(Landroid/graphics/drawable/Drawable;IZ)V
 
-    .line 2116
+    .line 2123
     iget v1, p1, Lorg/telegram/ui/Adapters/FiltersView$MediaFilterData;->filterType:I
 
     const/16 v4, 0x10
@@ -454,17 +454,17 @@
 
     if-ne v1, v6, :cond_2
 
-    .line 2117
+    .line 2124
     iget-object p1, p1, Lorg/telegram/ui/Adapters/FiltersView$MediaFilterData;->chat:Lorg/telegram/tgnet/TLObject;
 
     instance-of v1, p1, Lorg/telegram/tgnet/TLRPC$User;
 
     if-eqz v1, :cond_1
 
-    .line 2118
+    .line 2125
     check-cast p1, Lorg/telegram/tgnet/TLRPC$User;
 
-    .line 2119
+    .line 2126
     sget v1, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
     invoke-static {v1}, Lorg/telegram/messenger/UserConfig;->getInstance(I)Lorg/telegram/messenger/UserConfig;
@@ -483,7 +483,7 @@
 
     if-nez v1, :cond_0
 
-    .line 2120
+    .line 2127
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p1
@@ -494,7 +494,7 @@
 
     move-result-object p1
 
-    .line 2121
+    .line 2128
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
@@ -505,7 +505,7 @@
 
     invoke-virtual {p1, v0, v1}, Lorg/telegram/ui/Components/CombinedDrawable;->setIconSize(II)V
 
-    .line 2122
+    .line 2129
     sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_avatar_backgroundSaved:I
 
     invoke-virtual {p0, v0}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem$SearchFilterView;->getThemedColor(I)I
@@ -514,21 +514,21 @@
 
     invoke-static {p1, v0, v3}, Lorg/telegram/ui/ActionBar/Theme;->setCombinedDrawableColor(Landroid/graphics/drawable/Drawable;IZ)V
 
-    .line 2123
+    .line 2130
     invoke-virtual {p0, v2}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem$SearchFilterView;->getThemedColor(I)I
 
     move-result v0
 
     invoke-static {p1, v0, v5}, Lorg/telegram/ui/ActionBar/Theme;->setCombinedDrawableColor(Landroid/graphics/drawable/Drawable;IZ)V
 
-    .line 2124
+    .line 2131
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/ActionBarMenuItem$SearchFilterView;->avatarImageView:Lorg/telegram/ui/Components/BackupImageView;
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/BackupImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
     goto :goto_0
 
-    .line 2126
+    .line 2133
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/ActionBarMenuItem$SearchFilterView;->avatarImageView:Lorg/telegram/ui/Components/BackupImageView;
 
@@ -542,7 +542,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/messenger/ImageReceiver;->setRoundRadius(I)V
 
-    .line 2127
+    .line 2134
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/ActionBarMenuItem$SearchFilterView;->avatarImageView:Lorg/telegram/ui/Components/BackupImageView;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/BackupImageView;->getImageReceiver()Lorg/telegram/messenger/ImageReceiver;
@@ -555,16 +555,16 @@
 
     goto :goto_0
 
-    .line 2129
+    .line 2136
     :cond_1
     instance-of v0, p1, Lorg/telegram/tgnet/TLRPC$Chat;
 
     if-eqz v0, :cond_4
 
-    .line 2130
+    .line 2137
     check-cast p1, Lorg/telegram/tgnet/TLRPC$Chat;
 
-    .line 2131
+    .line 2138
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/ActionBarMenuItem$SearchFilterView;->avatarImageView:Lorg/telegram/ui/Components/BackupImageView;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/BackupImageView;->getImageReceiver()Lorg/telegram/messenger/ImageReceiver;
@@ -577,7 +577,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/messenger/ImageReceiver;->setRoundRadius(I)V
 
-    .line 2132
+    .line 2139
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/ActionBarMenuItem$SearchFilterView;->avatarImageView:Lorg/telegram/ui/Components/BackupImageView;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/BackupImageView;->getImageReceiver()Lorg/telegram/messenger/ImageReceiver;
@@ -595,7 +595,7 @@
 
     if-ne v1, p1, :cond_3
 
-    .line 2135
+    .line 2142
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p1
@@ -606,7 +606,7 @@
 
     move-result-object p1
 
-    .line 2136
+    .line 2143
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
@@ -617,7 +617,7 @@
 
     invoke-virtual {p1, v0, v1}, Lorg/telegram/ui/Components/CombinedDrawable;->setIconSize(II)V
 
-    .line 2137
+    .line 2144
     sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_avatar_backgroundArchived:I
 
     invoke-virtual {p0, v0}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem$SearchFilterView;->getThemedColor(I)I
@@ -626,21 +626,21 @@
 
     invoke-static {p1, v0, v3}, Lorg/telegram/ui/ActionBar/Theme;->setCombinedDrawableColor(Landroid/graphics/drawable/Drawable;IZ)V
 
-    .line 2138
+    .line 2145
     invoke-virtual {p0, v2}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem$SearchFilterView;->getThemedColor(I)I
 
     move-result v0
 
     invoke-static {p1, v0, v5}, Lorg/telegram/ui/ActionBar/Theme;->setCombinedDrawableColor(Landroid/graphics/drawable/Drawable;IZ)V
 
-    .line 2139
+    .line 2146
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/ActionBarMenuItem$SearchFilterView;->avatarImageView:Lorg/telegram/ui/Components/BackupImageView;
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/BackupImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
     goto :goto_0
 
-    .line 2141
+    .line 2148
     :cond_3
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/ActionBarMenuItem$SearchFilterView;->avatarImageView:Lorg/telegram/ui/Components/BackupImageView;
 
@@ -660,14 +660,14 @@
 
     if-eqz p1, :cond_0
 
-    .line 2147
+    .line 2154
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/ActionBarMenuItem$SearchFilterView;->titleView:Landroid/widget/TextView;
 
     invoke-virtual {p1, v0}, Landroid/widget/TextView;->setVisibility(I)V
 
     goto :goto_0
 
-    .line 2149
+    .line 2156
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/ActionBarMenuItem$SearchFilterView;->titleView:Landroid/widget/TextView;
 
@@ -675,7 +675,7 @@
 
     invoke-virtual {p1, v1}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 2150
+    .line 2157
     invoke-virtual {p0, v0}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem$SearchFilterView;->setSelectedForDelete(Z)V
 
     :goto_0
@@ -685,31 +685,31 @@
 .method public setSelectedForDelete(Z)V
     .locals 3
 
-    .line 2155
+    .line 2162
     iget-boolean v0, p0, Lorg/telegram/ui/ActionBar/ActionBarMenuItem$SearchFilterView;->selectedForDelete:Z
 
     if-ne v0, p1, :cond_0
 
     return-void
 
-    .line 2158
+    .line 2165
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/ActionBarMenuItem$SearchFilterView;->removeSelectionRunnable:Ljava/lang/Runnable;
 
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->cancelRunOnUIThread(Ljava/lang/Runnable;)V
 
-    .line 2159
+    .line 2166
     iput-boolean p1, p0, Lorg/telegram/ui/ActionBar/ActionBarMenuItem$SearchFilterView;->selectedForDelete:Z
 
-    .line 2160
+    .line 2167
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/ActionBarMenuItem$SearchFilterView;->selectAnimator:Landroid/animation/ValueAnimator;
 
     if-eqz v0, :cond_1
 
-    .line 2161
+    .line 2168
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->removeAllListeners()V
 
-    .line 2162
+    .line 2169
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/ActionBarMenuItem$SearchFilterView;->selectAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->cancel()V
@@ -721,7 +721,7 @@
 
     const/4 v1, 0x0
 
-    .line 2164
+    .line 2171
     iget v2, p0, Lorg/telegram/ui/ActionBar/ActionBarMenuItem$SearchFilterView;->selectedProgress:F
 
     aput v2, v0, v1
@@ -746,14 +746,14 @@
 
     iput-object v0, p0, Lorg/telegram/ui/ActionBar/ActionBarMenuItem$SearchFilterView;->selectAnimator:Landroid/animation/ValueAnimator;
 
-    .line 2165
+    .line 2172
     new-instance v1, Lorg/telegram/ui/ActionBar/ActionBarMenuItem$SearchFilterView$$ExternalSyntheticLambda0;
 
     invoke-direct {v1, p0}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem$SearchFilterView$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/ActionBar/ActionBarMenuItem$SearchFilterView;)V
 
     invoke-virtual {v0, v1}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 2169
+    .line 2176
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/ActionBarMenuItem$SearchFilterView;->selectAnimator:Landroid/animation/ValueAnimator;
 
     new-instance v1, Lorg/telegram/ui/ActionBar/ActionBarMenuItem$SearchFilterView$2;
@@ -762,7 +762,7 @@
 
     invoke-virtual {v0, v1}, Landroid/animation/ValueAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 2176
+    .line 2183
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/ActionBarMenuItem$SearchFilterView;->selectAnimator:Landroid/animation/ValueAnimator;
 
     const-wide/16 v0, 0x96
@@ -773,12 +773,12 @@
 
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->start()V
 
-    .line 2177
+    .line 2184
     iget-boolean p1, p0, Lorg/telegram/ui/ActionBar/ActionBarMenuItem$SearchFilterView;->selectedForDelete:Z
 
     if-eqz p1, :cond_3
 
-    .line 2178
+    .line 2185
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/ActionBarMenuItem$SearchFilterView;->removeSelectionRunnable:Ljava/lang/Runnable;
 
     const-wide/16 v0, 0x7d0

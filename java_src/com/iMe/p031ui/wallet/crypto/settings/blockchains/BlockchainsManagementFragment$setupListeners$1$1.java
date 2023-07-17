@@ -8,7 +8,7 @@ import kotlin.jvm.internal.Lambda;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: BlockchainsManagementFragment.kt */
 /* renamed from: com.iMe.ui.wallet.crypto.settings.blockchains.BlockchainsManagementFragment$setupListeners$1$1 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class BlockchainsManagementFragment$setupListeners$1$1 extends Lambda implements Function1<View, Unit> {
     final /* synthetic */ BlockchainsManagementFragment this$0;
 

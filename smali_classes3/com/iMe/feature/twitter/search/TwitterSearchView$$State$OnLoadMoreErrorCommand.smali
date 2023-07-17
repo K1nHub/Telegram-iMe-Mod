@@ -26,7 +26,7 @@
 .method constructor <init>(Lcom/iMe/feature/twitter/search/TwitterSearchView$$State;)V
     .locals 1
 
-    .line 525
+    .line 552
     const-class p1, Lmoxy/viewstate/strategy/AddToEndSingleStrategy;
 
     const-string v0, "onLoadMoreError"
@@ -41,7 +41,7 @@
 .method public apply(Lcom/iMe/feature/twitter/search/TwitterSearchView;)V
     .locals 0
 
-    .line 530
+    .line 557
     invoke-interface {p1}, Lcom/iMe/ui/base/mvp/LoadMoreView;->onLoadMoreError()V
 
     return-void
@@ -50,7 +50,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 523
+    .line 550
     check-cast p1, Lcom/iMe/feature/twitter/search/TwitterSearchView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/feature/twitter/search/TwitterSearchView$$State$OnLoadMoreErrorCommand;->apply(Lcom/iMe/feature/twitter/search/TwitterSearchView;)V

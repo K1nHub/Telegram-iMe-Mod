@@ -600,7 +600,7 @@ public final class DownloadManager {
         }
 
         private void addDownload(DownloadRequest downloadRequest, int i) {
-            Download download = getDownload(downloadRequest.f121id, true);
+            Download download = getDownload(downloadRequest.f203id, true);
             long currentTimeMillis = System.currentTimeMillis();
             if (download != null) {
                 putDownload(DownloadManager.mergeRequest(download, downloadRequest, i, currentTimeMillis));
@@ -672,7 +672,7 @@ public final class DownloadManager {
             int i = 0;
             for (int i2 = 0; i2 < this.downloads.size(); i2++) {
                 Download download = this.downloads.get(i2);
-                Task task = this.activeTasks.get(download.request.f121id);
+                Task task = this.activeTasks.get(download.request.f203id);
                 int i3 = download.state;
                 if (i3 == 0) {
                     task = syncQueuedDownload(task, download);
@@ -706,7 +706,7 @@ public final class DownloadManager {
                 }
                 Download putDownloadWithState = putDownloadWithState(download, 2, 0);
                 Task task2 = new Task(putDownloadWithState.request, this.downloaderFactory.createDownloader(putDownloadWithState.request), putDownloadWithState.progress, false, this.minRetryCount, this);
-                this.activeTasks.put(putDownloadWithState.request.f121id, task2);
+                this.activeTasks.put(putDownloadWithState.request.f203id, task2);
                 int i = this.activeDownloadTaskCount;
                 this.activeDownloadTaskCount = i + 1;
                 if (i == 0) {
@@ -734,7 +734,7 @@ public final class DownloadManager {
                     return;
                 }
                 Task task2 = new Task(download.request, this.downloaderFactory.createDownloader(download.request), download.progress, true, this.minRetryCount, this);
-                this.activeTasks.put(download.request.f121id, task2);
+                this.activeTasks.put(download.request.f203id, task2);
                 this.hasActiveRemoveTask = true;
                 task2.start();
             } else if (task.isRemove) {
@@ -744,7 +744,7 @@ public final class DownloadManager {
         }
 
         private void onContentLengthChanged(Task task, long j) {
-            Download download = (Download) Assertions.checkNotNull(getDownload(task.request.f121id, false));
+            Download download = (Download) Assertions.checkNotNull(getDownload(task.request.f203id, false));
             if (j == download.contentLength || j == -1) {
                 return;
             }
@@ -752,7 +752,7 @@ public final class DownloadManager {
         }
 
         private void onTaskStopped(Task task) {
-            String str = task.request.f121id;
+            String str = task.request.f203id;
             this.activeTasks.remove(str);
             boolean z = task.isRemove;
             if (z) {
@@ -788,7 +788,7 @@ public final class DownloadManager {
 
         private void onDownloadTaskStopped(Download download, Exception exc) {
             Download download2 = new Download(download.request, exc == null ? 3 : 4, download.startTimeMs, System.currentTimeMillis(), download.contentLength, download.stopReason, exc == null ? 0 : 1, download.progress);
-            this.downloads.remove(getDownloadIndex(download2.request.f121id));
+            this.downloads.remove(getDownloadIndex(download2.request.f203id));
             try {
                 this.downloadIndex.putDownload(download2);
             } catch (IOException e) {
@@ -804,9 +804,9 @@ public final class DownloadManager {
                 syncTasks();
                 return;
             }
-            this.downloads.remove(getDownloadIndex(download.request.f121id));
+            this.downloads.remove(getDownloadIndex(download.request.f203id));
             try {
-                this.downloadIndex.removeDownload(download.request.f121id);
+                this.downloadIndex.removeDownload(download.request.f203id);
             } catch (IOException unused) {
                 Log.m800e(DownloadManager.TAG, "Failed to remove from database");
             }
@@ -839,7 +839,7 @@ public final class DownloadManager {
         private Download putDownload(Download download) {
             int i = download.state;
             Assertions.checkState((i == 3 || i == 4) ? false : true);
-            int downloadIndex = getDownloadIndex(download.request.f121id);
+            int downloadIndex = getDownloadIndex(download.request.f203id);
             if (downloadIndex == -1) {
                 this.downloads.add(download);
                 Collections.sort(this.downloads, DownloadManager$InternalHandler$$ExternalSyntheticLambda0.INSTANCE);
@@ -877,7 +877,7 @@ public final class DownloadManager {
 
         private int getDownloadIndex(String str) {
             for (int i = 0; i < this.downloads.size(); i++) {
-                if (this.downloads.get(i).request.f121id.equals(str)) {
+                if (this.downloads.get(i).request.f203id.equals(str)) {
                     return i;
                 }
             }

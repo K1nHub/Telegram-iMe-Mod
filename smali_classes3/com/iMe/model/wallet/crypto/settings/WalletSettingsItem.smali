@@ -6,16 +6,14 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/iMe/model/wallet/crypto/settings/WalletSettingsItem$Blockchains;,
-        Lcom/iMe/model/wallet/crypto/settings/WalletSettingsItem$PinCode;,
-        Lcom/iMe/model/wallet/crypto/settings/WalletSettingsItem$Privacy;,
-        Lcom/iMe/model/wallet/crypto/settings/WalletSettingsItem$WalletConnect;
+        Lcom/iMe/model/wallet/crypto/settings/WalletSettingsItem$CryptoAccount;,
+        Lcom/iMe/model/wallet/crypto/settings/WalletSettingsItem$Main;
     }
 .end annotation
 
 
 # instance fields
-.field private final description:I
+.field private final description:Ljava/lang/Integer;
 
 .field private final icon:I
 
@@ -23,7 +21,7 @@
 
 
 # direct methods
-.method private constructor <init>(III)V
+.method private constructor <init>(IILjava/lang/Integer;)V
     .locals 0
 
     .line 7
@@ -36,28 +34,28 @@
     iput p2, p0, Lcom/iMe/model/wallet/crypto/settings/WalletSettingsItem;->title:I
 
     .line 10
-    iput p3, p0, Lcom/iMe/model/wallet/crypto/settings/WalletSettingsItem;->description:I
+    iput-object p3, p0, Lcom/iMe/model/wallet/crypto/settings/WalletSettingsItem;->description:Ljava/lang/Integer;
 
     return-void
 .end method
 
-.method public synthetic constructor <init>(IIILkotlin/jvm/internal/DefaultConstructorMarker;)V
+.method public synthetic constructor <init>(IILjava/lang/Integer;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
     .locals 0
 
-    invoke-direct {p0, p1, p2, p3}, Lcom/iMe/model/wallet/crypto/settings/WalletSettingsItem;-><init>(III)V
+    invoke-direct {p0, p1, p2, p3}, Lcom/iMe/model/wallet/crypto/settings/WalletSettingsItem;-><init>(IILjava/lang/Integer;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final getDescription()I
+.method public final getDescription()Ljava/lang/Integer;
     .locals 1
 
     .line 10
-    iget v0, p0, Lcom/iMe/model/wallet/crypto/settings/WalletSettingsItem;->description:I
+    iget-object v0, p0, Lcom/iMe/model/wallet/crypto/settings/WalletSettingsItem;->description:Ljava/lang/Integer;
 
-    return v0
+    return-object v0
 .end method
 
 .method public final getIcon()I

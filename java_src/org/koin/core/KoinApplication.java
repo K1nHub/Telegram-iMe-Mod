@@ -8,7 +8,7 @@ import kotlin.jvm.internal.Intrinsics;
 import org.koin.core.logger.Level;
 import org.koin.core.logger.Logger;
 import org.koin.core.module.Module;
-import org.koin.p043mp.KoinPlatformTimeTools;
+import org.koin.p042mp.KoinPlatformTimeTools;
 /* compiled from: KoinApplication.kt */
 /* loaded from: classes4.dex */
 public final class KoinApplication {

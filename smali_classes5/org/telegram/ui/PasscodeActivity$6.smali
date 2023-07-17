@@ -27,7 +27,7 @@
 .method constructor <init>(Lorg/telegram/ui/PasscodeActivity;Ljava/util/concurrent/atomic/AtomicBoolean;)V
     .locals 0
 
-    .line 889
+    .line 868
     iput-object p1, p0, Lorg/telegram/ui/PasscodeActivity$6;->this$0:Lorg/telegram/ui/PasscodeActivity;
 
     iput-object p2, p0, Lorg/telegram/ui/PasscodeActivity$6;->val$isPasswordShown:Ljava/util/concurrent/atomic/AtomicBoolean;
@@ -40,20 +40,18 @@
 
 # virtual methods
 .method public afterTextChanged(Landroid/text/Editable;)V
-    .locals 5
+    .locals 4
 
-    .line 898
+    .line 877
     iget-object v0, p0, Lorg/telegram/ui/PasscodeActivity$6;->this$0:Lorg/telegram/ui/PasscodeActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/PasscodeActivity;->access$1100(Lorg/telegram/ui/PasscodeActivity;)I
 
     move-result v0
 
-    const/4 v1, 0x0
+    const/4 v1, 0x1
 
-    const/4 v2, 0x1
-
-    if-ne v0, v2, :cond_2
+    if-ne v0, v1, :cond_2
 
     iget-object v0, p0, Lorg/telegram/ui/PasscodeActivity$6;->this$0:Lorg/telegram/ui/PasscodeActivity;
 
@@ -63,12 +61,12 @@
 
     if-nez v0, :cond_2
 
-    .line 899
+    .line 878
     invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v0
 
-    const v3, 0x3dcccccd    # 0.1f
+    const v2, 0x3dcccccd    # 0.1f
 
     if-eqz v0, :cond_1
 
@@ -82,11 +80,11 @@
 
     move-result v0
 
-    const/16 v4, 0x8
+    const/16 v3, 0x8
 
-    if-eq v0, v4, :cond_1
+    if-eq v0, v3, :cond_1
 
-    .line 900
+    .line 879
     iget-object p1, p0, Lorg/telegram/ui/PasscodeActivity$6;->val$isPasswordShown:Ljava/util/concurrent/atomic/AtomicBoolean;
 
     invoke-virtual {p1}, Ljava/util/concurrent/atomic/AtomicBoolean;->get()Z
@@ -95,7 +93,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 901
+    .line 880
     iget-object p1, p0, Lorg/telegram/ui/PasscodeActivity$6;->this$0:Lorg/telegram/ui/PasscodeActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/PasscodeActivity;->access$1000(Lorg/telegram/ui/PasscodeActivity;)Landroid/widget/ImageView;
@@ -104,7 +102,7 @@
 
     invoke-virtual {p1}, Landroid/widget/ImageView;->callOnClick()Z
 
-    .line 903
+    .line 882
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/PasscodeActivity$6;->this$0:Lorg/telegram/ui/PasscodeActivity;
 
@@ -112,11 +110,13 @@
 
     move-result-object p1
 
-    invoke-static {p1, v1, v3, v2}, Lorg/telegram/messenger/AndroidUtilities;->updateViewVisibilityAnimated(Landroid/view/View;ZFZ)V
+    const/4 v0, 0x0
+
+    invoke-static {p1, v0, v2, v1}, Lorg/telegram/messenger/AndroidUtilities;->updateViewVisibilityAnimated(Landroid/view/View;ZFZ)V
 
     goto :goto_0
 
-    .line 904
+    .line 883
     :cond_1
     invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -136,71 +136,17 @@
 
     if-eqz p1, :cond_2
 
-    .line 905
+    .line 884
     iget-object p1, p0, Lorg/telegram/ui/PasscodeActivity$6;->this$0:Lorg/telegram/ui/PasscodeActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/PasscodeActivity;->access$1000(Lorg/telegram/ui/PasscodeActivity;)Landroid/widget/ImageView;
 
     move-result-object p1
 
-    invoke-static {p1, v2, v3, v2}, Lorg/telegram/messenger/AndroidUtilities;->updateViewVisibilityAnimated(Landroid/view/View;ZFZ)V
+    invoke-static {p1, v1, v2, v1}, Lorg/telegram/messenger/AndroidUtilities;->updateViewVisibilityAnimated(Landroid/view/View;ZFZ)V
 
-    .line 909
     :cond_2
     :goto_0
-    iget-object p1, p0, Lorg/telegram/ui/PasscodeActivity$6;->this$0:Lorg/telegram/ui/PasscodeActivity;
-
-    invoke-static {p1}, Lorg/telegram/ui/PasscodeActivity;->access$1300(Lorg/telegram/ui/PasscodeActivity;)I
-
-    move-result p1
-
-    if-ne p1, v2, :cond_4
-
-    .line 910
-    iget-object p1, p0, Lorg/telegram/ui/PasscodeActivity$6;->this$0:Lorg/telegram/ui/PasscodeActivity;
-
-    iget-object v0, p1, Lorg/telegram/ui/PasscodeActivity;->walletCreatePasscodePresenter:Lcom/iMe/ui/wallet/crypto/create/password/CreateWalletPasswordPresenter;
-
-    invoke-static {p1}, Lorg/telegram/ui/PasscodeActivity;->access$500(Lorg/telegram/ui/PasscodeActivity;)Lorg/telegram/ui/Components/EditTextBoldCursor;
-
-    move-result-object p1
-
-    invoke-virtual {p1}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
-
-    move-result-object p1
-
-    invoke-virtual {p1}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-virtual {v0, p1}, Lcom/iMe/ui/wallet/crypto/create/password/CreateWalletPasswordPresenter;->isValidPasswordLength(Ljava/lang/String;)Z
-
-    move-result p1
-
-    .line 911
-    iget-object v0, p0, Lorg/telegram/ui/PasscodeActivity$6;->this$0:Lorg/telegram/ui/PasscodeActivity;
-
-    invoke-static {v0}, Lorg/telegram/ui/PasscodeActivity;->access$1400(Lorg/telegram/ui/PasscodeActivity;)Landroid/widget/FrameLayout;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/widget/FrameLayout;->getVisibility()I
-
-    move-result v0
-
-    if-nez v0, :cond_3
-
-    move v1, v2
-
-    :cond_3
-    if-eq p1, v1, :cond_4
-
-    .line 912
-    iget-object v0, p0, Lorg/telegram/ui/PasscodeActivity$6;->this$0:Lorg/telegram/ui/PasscodeActivity;
-
-    invoke-static {v0, p1, v2}, Lorg/telegram/ui/PasscodeActivity;->access$1500(Lorg/telegram/ui/PasscodeActivity;ZZ)V
-
-    :cond_4
     return-void
 .end method
 

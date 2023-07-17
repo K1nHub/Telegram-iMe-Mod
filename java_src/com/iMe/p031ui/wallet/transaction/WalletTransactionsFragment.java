@@ -12,20 +12,21 @@ import com.chad.library.adapter.base.listener.OnItemClickListener;
 import com.chad.library.adapter.base.listener.OnLoadMoreListener;
 import com.chad.library.adapter.base.module.BaseLoadMoreModule;
 import com.iMe.common.IdFabric$Menu;
+import com.iMe.fork.p024ui.dialog.SelectNetworkBottomSheet;
 import com.iMe.fork.utils.Callbacks$Callback1;
 import com.iMe.model.staking.StakingDetailsItem;
 import com.iMe.model.wallet.details.TransactionsGroup;
 import com.iMe.model.wallet.transaction.StakingOperationItem;
 import com.iMe.model.wallet.transaction.TransactionItem;
+import com.iMe.p031ui.adapter.provider.GlobalStateProvider;
 import com.iMe.p031ui.custom.NetworkTypeView;
 import com.iMe.p031ui.wallet.common.WalletTabFragment;
 import com.iMe.p031ui.wallet.transaction.adapter.WalletTransactionsRecycleAdapter;
 import com.iMe.p031ui.wallet.transaction.adapter.diff.TransactionDiffCallback;
 import com.iMe.p031ui.wallet.transaction.details.WalletTransactionDetailsBottomSheetDialog;
-import com.iMe.storage.domain.model.crypto.NetworkType;
+import com.iMe.storage.domain.model.crypto.Network;
 import com.iMe.storage.domain.model.staking.StakingOperationType;
-import com.iMe.storage.domain.model.wallet.token.TokenCode;
-import com.iMe.utils.dialogs.DialogsFactoryKt;
+import com.iMe.storage.domain.model.wallet.token.Token;
 import com.iMe.utils.extentions.delegate.ResettableLazy;
 import com.iMe.utils.extentions.delegate.ResettableLazyDelegateKt;
 import com.iMe.utils.extentions.delegate.ResettableLazyManager;
@@ -46,17 +47,16 @@ import kotlin.jvm.internal.Reflection;
 import kotlin.reflect.KProperty;
 import moxy.MvpDelegate;
 import moxy.ktx.MoxyKtxDelegate;
-import org.koin.p043mp.KoinPlatformTools;
+import org.koin.p042mp.KoinPlatformTools;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3295R;
+import org.telegram.messenger.C3417R;
 import org.telegram.messenger.databinding.ForkFragmentWalletTransactionsBinding;
-import org.telegram.p044ui.ActionBar.ActionBarMenu;
-import org.telegram.p044ui.ActionBar.ActionBarMenuItem;
-import org.telegram.p044ui.ActionBar.C3361ActionBar;
-import org.telegram.p044ui.ActionBar.INavigationLayout;
-import org.telegram.p044ui.ActionBar.Theme;
-import org.telegram.p044ui.ActionBar.ThemeDescription;
-import org.telegram.p044ui.Components.LayoutHelper;
+import org.telegram.p043ui.ActionBar.ActionBarMenuItem;
+import org.telegram.p043ui.ActionBar.C3484ActionBar;
+import org.telegram.p043ui.ActionBar.INavigationLayout;
+import org.telegram.p043ui.ActionBar.Theme;
+import org.telegram.p043ui.ActionBar.ThemeDescription;
+import org.telegram.p043ui.Components.LayoutHelper;
 /* compiled from: WalletTransactionsFragment.kt */
 /* renamed from: com.iMe.ui.wallet.transaction.WalletTransactionsFragment */
 /* loaded from: classes4.dex */
@@ -68,15 +68,14 @@ public final class WalletTransactionsFragment extends WalletTabFragment implemen
     private NetworkTypeView networkTypeView;
     private final MoxyKtxDelegate presenter$delegate;
     private final ScreenType screenType;
-    private final TokenCode tokenCode;
+    private final Token token;
     private final Lazy transactionAdapter$delegate;
 
-    public WalletTransactionsFragment(ScreenType screenType, TokenCode tokenCode) {
+    public WalletTransactionsFragment(ScreenType screenType, Token token) {
         Lazy lazy;
         Intrinsics.checkNotNullParameter(screenType, "screenType");
-        Intrinsics.checkNotNullParameter(tokenCode, "tokenCode");
         this.screenType = screenType;
-        this.tokenCode = tokenCode;
+        this.token = token;
         WalletTransactionsFragment$presenter$2 walletTransactionsFragment$presenter$2 = new WalletTransactionsFragment$presenter$2(this);
         MvpDelegate mvpDelegate = getMvpDelegate();
         Intrinsics.checkExpressionValueIsNotNull(mvpDelegate, "mvpDelegate");
@@ -98,8 +97,8 @@ public final class WalletTransactionsFragment extends WalletTabFragment implemen
         return (ForkFragmentWalletTransactionsBinding) this.binding$delegate.getValue(this, $$delegatedProperties[1]);
     }
 
-    @Override // com.iMe.p031ui.wallet.common.BottomNavigationTabFragment, com.iMe.p031ui.base.WalletAuthFragment
-    public boolean shouldAskPinCode() {
+    @Override // com.iMe.p031ui.wallet.common.BottomNavigationTabFragment, com.iMe.p031ui.base.wallet_auth.WalletAuthBaseFragment
+    protected boolean shouldAskPinCode() {
         return Intrinsics.areEqual(this.screenType, ScreenType.Fullscreen.INSTANCE);
     }
 
@@ -118,41 +117,43 @@ public final class WalletTransactionsFragment extends WalletTabFragment implemen
         return root;
     }
 
-    @Override // com.iMe.p031ui.base.mvp.MvpFragment, org.telegram.p044ui.ActionBar.BaseFragment
+    @Override // com.iMe.p031ui.base.mvp.MvpFragment, org.telegram.p043ui.ActionBar.BaseFragment
     public void onViewCreated() {
         super.onViewCreated();
         setupColors();
     }
 
     @Override // com.iMe.p031ui.base.mvp.SwitchNetworkView
-    public void showChooseNetworkDialog(NetworkType networkType, List<? extends NetworkType> availableNetworks, final Function1<? super NetworkType, Unit> action) {
-        Intrinsics.checkNotNullParameter(networkType, "networkType");
+    public void showChooseNetworkDialog(Network network, List<Network> availableNetworks, final Function1<? super Network, Unit> action) {
+        Intrinsics.checkNotNullParameter(network, "network");
         Intrinsics.checkNotNullParameter(availableNetworks, "availableNetworks");
         Intrinsics.checkNotNullParameter(action, "action");
+        SelectNetworkBottomSheet.Companion companion = SelectNetworkBottomSheet.Companion;
         Activity parentActivity = getParentActivity();
-        Intrinsics.checkNotNullExpressionValue(parentActivity, "parentActivity");
-        showDialog(DialogsFactoryKt.createSelectNetworkTypeDialog(parentActivity, availableNetworks, networkType, new Callbacks$Callback1() { // from class: com.iMe.ui.wallet.transaction.WalletTransactionsFragment$$ExternalSyntheticLambda3
+        Callbacks$Callback1<Network> callbacks$Callback1 = new Callbacks$Callback1() { // from class: com.iMe.ui.wallet.transaction.WalletTransactionsFragment$$ExternalSyntheticLambda3
             @Override // com.iMe.fork.utils.Callbacks$Callback1
             public final void invoke(Object obj) {
-                WalletTransactionsFragment.showChooseNetworkDialog$lambda$0(Function1.this, (NetworkType) obj);
+                WalletTransactionsFragment.showChooseNetworkDialog$lambda$0(Function1.this, (Network) obj);
             }
-        }));
+        };
+        Intrinsics.checkNotNullExpressionValue(parentActivity, "parentActivity");
+        showDialog(companion.newInstance(parentActivity, network, availableNetworks, callbacks$Callback1));
     }
 
-    public static final void showChooseNetworkDialog$lambda$0(Function1 action, NetworkType selectedNetworkType) {
+    public static final void showChooseNetworkDialog$lambda$0(Function1 action, Network selectedNetworkType) {
         Intrinsics.checkNotNullParameter(action, "$action");
         Intrinsics.checkNotNullExpressionValue(selectedNetworkType, "selectedNetworkType");
         action.invoke(selectedNetworkType);
     }
 
     @Override // com.iMe.p031ui.base.mvp.SwitchNetworkView
-    public void setupNetworkType(NetworkType networkType) {
-        Intrinsics.checkNotNullParameter(networkType, "networkType");
+    public void setupNetwork(Network network) {
+        Intrinsics.checkNotNullParameter(network, "network");
         NetworkTypeView networkTypeView = this.networkTypeView;
         if (networkTypeView == null) {
             return;
         }
-        networkTypeView.setNetworkType(networkType);
+        networkTypeView.setNetwork(network);
     }
 
     @Override // com.iMe.p031ui.wallet.transaction.WalletTransactionsView
@@ -163,7 +164,7 @@ public final class WalletTransactionsFragment extends WalletTabFragment implemen
         hintUtils.showChangeNetworkHint(parentLayout);
     }
 
-    @Override // org.telegram.p044ui.ActionBar.BaseFragment
+    @Override // org.telegram.p043ui.ActionBar.BaseFragment
     public void onTransitionAnimationEnd(boolean z, boolean z2) {
         if (z && !z2) {
             getPresenter().showChangeNetworkHintIfNeeded();
@@ -208,7 +209,7 @@ public final class WalletTransactionsFragment extends WalletTabFragment implemen
 
     @Override // com.iMe.p031ui.base.mvp.LoadMoreView
     public void resetLoadMore() {
-        getTransactionAdapter().getLoadMoreModule().reset$TMessagesProj_release();
+        getTransactionAdapter().getLoadMoreModule().reset$TMessagesProj_HA_public();
     }
 
     @Override // com.iMe.p031ui.wallet.common.BottomNavigationTabFragment
@@ -219,22 +220,22 @@ public final class WalletTransactionsFragment extends WalletTabFragment implemen
     }
 
     @Override // com.iMe.p031ui.wallet.transaction.WalletTransactionsView
-    public void openStakingOperationDetails(StakingOperationItem item, NetworkType networkType) {
+    public void openStakingOperationDetails(StakingOperationItem item, Network network) {
         Intrinsics.checkNotNullParameter(item, "item");
-        Intrinsics.checkNotNullParameter(networkType, "networkType");
-        showDialog(WalletTransactionDetailsBottomSheetDialog.Companion.newInstance$default(WalletTransactionDetailsBottomSheetDialog.Companion, this, new WalletTransactionDetailsBottomSheetDialog.ScreenType.StakingOperationDetails(item, networkType), null, 4, null));
+        Intrinsics.checkNotNullParameter(network, "network");
+        showDialog(WalletTransactionDetailsBottomSheetDialog.Companion.newInstance$default(WalletTransactionDetailsBottomSheetDialog.Companion, this, new WalletTransactionDetailsBottomSheetDialog.ScreenType.StakingOperationDetails(item, network), null, 4, null));
     }
 
-    @Override // org.telegram.p044ui.ActionBar.BaseFragment
+    @Override // org.telegram.p043ui.ActionBar.BaseFragment
     public ArrayList<ThemeDescription> getThemeDescriptions() {
         ArrayList<ThemeDescription> arrayListOf;
         arrayListOf = CollectionsKt__CollectionsKt.arrayListOf(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, Theme.key_actionBarDefault), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_ITEMSCOLOR, null, null, null, null, Theme.key_actionBarDefaultIcon), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_TITLECOLOR, null, null, null, null, Theme.key_actionBarDefaultTitle), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SELECTORCOLOR, null, null, null, null, Theme.key_actionBarDefaultSelector), new ThemeDescription(getBinding().getRoot(), ThemeDescription.FLAG_BACKGROUND, null, null, null, new ThemeDescription.ThemeDescriptionDelegate() { // from class: com.iMe.ui.wallet.transaction.WalletTransactionsFragment$$ExternalSyntheticLambda4
-            @Override // org.telegram.p044ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
+            @Override // org.telegram.p043ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
             public final void didSetColor() {
                 WalletTransactionsFragment.getThemeDescriptions$lambda$2(WalletTransactionsFragment.this);
             }
 
-            @Override // org.telegram.p044ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
+            @Override // org.telegram.p043ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
             public /* synthetic */ void onAnimationProgress(float f) {
                 ThemeDescription.ThemeDescriptionDelegate.CC.$default$onAnimationProgress(this, f);
             }
@@ -248,12 +249,12 @@ public final class WalletTransactionsFragment extends WalletTabFragment implemen
     }
 
     private final void setupActionBar() {
-        C3361ActionBar c3361ActionBar = this.actionBar;
-        c3361ActionBar.setBackButtonImage(C3295R.C3297drawable.ic_ab_back);
-        c3361ActionBar.setTitle(getResourceManager().getString(C3295R.string.wallet_transactions_toolbar_title));
-        c3361ActionBar.setAllowOverlayTitle(true);
-        c3361ActionBar.setActionBarMenuOnItemClick(new C3361ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.ui.wallet.transaction.WalletTransactionsFragment$setupActionBar$1$1
-            @Override // org.telegram.p044ui.ActionBar.C3361ActionBar.ActionBarMenuOnItemClick
+        C3484ActionBar c3484ActionBar = this.actionBar;
+        c3484ActionBar.setBackButtonImage(C3417R.C3419drawable.ic_ab_back);
+        c3484ActionBar.setTitle(getResourceManager().getString(C3417R.string.wallet_transactions_toolbar_title));
+        c3484ActionBar.setAllowOverlayTitle(true);
+        c3484ActionBar.setActionBarMenuOnItemClick(new C3484ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.ui.wallet.transaction.WalletTransactionsFragment$setupActionBar$1$1
+            @Override // org.telegram.p043ui.ActionBar.C3484ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 WalletTransactionsPresenter presenter;
                 if (i == -1) {
@@ -264,14 +265,14 @@ public final class WalletTransactionsFragment extends WalletTabFragment implemen
                 }
             }
         });
-        ActionBarMenu createMenu = c3361ActionBar.createMenu();
         Activity parentActivity = getParentActivity();
         Intrinsics.checkNotNullExpressionValue(parentActivity, "parentActivity");
         this.networkTypeView = new NetworkTypeView(parentActivity, null, 0, 6, null);
-        ActionBarMenuItem setupActionBar$lambda$5$lambda$4$lambda$3 = createMenu.addItemWithWidth(IdFabric$Menu.NETWORK_SWITCH, 0, -2);
-        Intrinsics.checkNotNullExpressionValue(setupActionBar$lambda$5$lambda$4$lambda$3, "setupActionBar$lambda$5$lambda$4$lambda$3");
-        ViewExtKt.setPaddingHorizontal(setupActionBar$lambda$5$lambda$4$lambda$3, AndroidUtilities.m54dp(14));
-        setupActionBar$lambda$5$lambda$4$lambda$3.addView(this.networkTypeView, LayoutHelper.createFrame(-2, -2, 8388629));
+        ActionBarMenuItem setupActionBar$lambda$4$lambda$3 = c3484ActionBar.createMenu().addItemWithWidth(IdFabric$Menu.NETWORK_SWITCH, 0, -2);
+        setupActionBar$lambda$4$lambda$3.disableRipple();
+        Intrinsics.checkNotNullExpressionValue(setupActionBar$lambda$4$lambda$3, "setupActionBar$lambda$4$lambda$3");
+        ViewExtKt.setPaddingHorizontal(setupActionBar$lambda$4$lambda$3, AndroidUtilities.m54dp(14));
+        setupActionBar$lambda$4$lambda$3.addView(this.networkTypeView, LayoutHelper.createFrame(-2, -2, 8388629));
     }
 
     private final void setupRecycleView() {
@@ -297,16 +298,16 @@ public final class WalletTransactionsFragment extends WalletTabFragment implemen
         loadMoreModule.setOnLoadMoreListener(new OnLoadMoreListener() { // from class: com.iMe.ui.wallet.transaction.WalletTransactionsFragment$$ExternalSyntheticLambda2
             @Override // com.chad.library.adapter.base.listener.OnLoadMoreListener
             public final void onLoadMore() {
-                WalletTransactionsFragment.setupLoadMore$lambda$10$lambda$9$lambda$8(WalletTransactionsRecycleAdapter.this, this, loadMoreModule);
+                WalletTransactionsFragment.setupLoadMore$lambda$9$lambda$8$lambda$7(WalletTransactionsRecycleAdapter.this, this, loadMoreModule);
             }
         });
     }
 
-    public static final void setupLoadMore$lambda$10$lambda$9$lambda$8(WalletTransactionsRecycleAdapter this_with, WalletTransactionsFragment this$0, BaseLoadMoreModule this_with$1) {
+    public static final void setupLoadMore$lambda$9$lambda$8$lambda$7(WalletTransactionsRecycleAdapter this_with, WalletTransactionsFragment this$0, BaseLoadMoreModule this_with$1) {
         Intrinsics.checkNotNullParameter(this_with, "$this_with");
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         Intrinsics.checkNotNullParameter(this_with$1, "$this_with$1");
-        BaseNode baseNode = (BaseNode) CollectionsKt.lastOrNull(this_with.getData());
+        BaseNode baseNode = (BaseNode) CollectionsKt.lastOrNull((List<? extends Object>) this_with.getData());
         if (baseNode == null) {
             return;
         }
@@ -329,11 +330,13 @@ public final class WalletTransactionsFragment extends WalletTabFragment implemen
         getBinding().getRoot().setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() { // from class: com.iMe.ui.wallet.transaction.WalletTransactionsFragment$$ExternalSyntheticLambda0
             @Override // androidx.swiperefreshlayout.widget.SwipeRefreshLayout.OnRefreshListener
             public final void onRefresh() {
-                WalletTransactionsFragment.setupListeners$lambda$13$lambda$12(WalletTransactionsFragment.this);
+                WalletTransactionsFragment.setupListeners$lambda$12$lambda$11(WalletTransactionsFragment.this);
             }
         });
         WalletTransactionsRecycleAdapter transactionAdapter = getTransactionAdapter();
-        transactionAdapter.getGlobalStateProvider().setOnRetryButtonClickAction(new WalletTransactionsFragment$setupListeners$2$1(this));
+        GlobalStateProvider globalStateProvider = transactionAdapter.getGlobalStateProvider();
+        globalStateProvider.setMatchParentHeight(this.screenType instanceof ScreenType.Fullscreen);
+        globalStateProvider.setOnRetryButtonClickAction(new WalletTransactionsFragment$setupListeners$2$1$1(this));
         transactionAdapter.setOnItemClickListener(new OnItemClickListener() { // from class: com.iMe.ui.wallet.transaction.WalletTransactionsFragment$$ExternalSyntheticLambda1
             @Override // com.chad.library.adapter.base.listener.OnItemClickListener
             public final void onItemClick(BaseQuickAdapter baseQuickAdapter, View view, int i) {
@@ -342,7 +345,7 @@ public final class WalletTransactionsFragment extends WalletTabFragment implemen
         });
     }
 
-    public static final void setupListeners$lambda$13$lambda$12(WalletTransactionsFragment this$0) {
+    public static final void setupListeners$lambda$12$lambda$11(WalletTransactionsFragment this$0) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         WalletTransactionsPresenter.load$default(this$0.getPresenter(), true, false, null, 6, null);
     }
@@ -514,17 +517,16 @@ public final class WalletTransactionsFragment extends WalletTabFragment implemen
         private Companion() {
         }
 
-        public static /* synthetic */ WalletTransactionsFragment newInstance$default(Companion companion, ScreenType screenType, TokenCode tokenCode, int i, Object obj) {
+        public static /* synthetic */ WalletTransactionsFragment newInstance$default(Companion companion, ScreenType screenType, Token token, int i, Object obj) {
             if ((i & 2) != 0) {
-                tokenCode = TokenCode.UNKNOWN;
+                token = null;
             }
-            return companion.newInstance(screenType, tokenCode);
+            return companion.newInstance(screenType, token);
         }
 
-        public final WalletTransactionsFragment newInstance(ScreenType screenType, TokenCode tokenCode) {
+        public final WalletTransactionsFragment newInstance(ScreenType screenType, Token token) {
             Intrinsics.checkNotNullParameter(screenType, "screenType");
-            Intrinsics.checkNotNullParameter(tokenCode, "tokenCode");
-            return new WalletTransactionsFragment(screenType, tokenCode);
+            return new WalletTransactionsFragment(screenType, token);
         }
     }
 }

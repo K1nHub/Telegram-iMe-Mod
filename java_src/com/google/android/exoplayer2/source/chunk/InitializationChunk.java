@@ -1,6 +1,6 @@
 package com.google.android.exoplayer2.source.chunk;
 
-import com.google.android.exoplayer2.C0475C;
+import com.google.android.exoplayer2.C0480C;
 import com.google.android.exoplayer2.Format;
 import com.google.android.exoplayer2.extractor.DefaultExtractorInput;
 import com.google.android.exoplayer2.source.chunk.ChunkExtractor;
@@ -17,7 +17,7 @@ public final class InitializationChunk extends Chunk {
     private ChunkExtractor.TrackOutputProvider trackOutputProvider;
 
     public InitializationChunk(DataSource dataSource, DataSpec dataSpec, Format format, int i, Object obj, ChunkExtractor chunkExtractor) {
-        super(dataSource, dataSpec, 2, format, i, obj, C0475C.TIME_UNSET, C0475C.TIME_UNSET);
+        super(dataSource, dataSpec, 2, format, i, obj, C0480C.TIME_UNSET, C0480C.TIME_UNSET);
         this.chunkExtractor = chunkExtractor;
     }
 
@@ -33,7 +33,7 @@ public final class InitializationChunk extends Chunk {
     @Override // com.google.android.exoplayer2.upstream.Loader.Loadable
     public void load() throws IOException {
         if (this.nextLoadPosition == 0) {
-            this.chunkExtractor.init(this.trackOutputProvider, C0475C.TIME_UNSET, C0475C.TIME_UNSET);
+            this.chunkExtractor.init(this.trackOutputProvider, C0480C.TIME_UNSET, C0480C.TIME_UNSET);
         }
         try {
             DataSpec subrange = this.dataSpec.subrange(this.nextLoadPosition);

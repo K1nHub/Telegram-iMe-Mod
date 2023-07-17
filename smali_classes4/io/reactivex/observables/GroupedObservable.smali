@@ -44,3 +44,19 @@
 
     return-void
 .end method
+
+
+# virtual methods
+.method public getKey()Ljava/lang/Object;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()TK;"
+        }
+    .end annotation
+
+    .line 52
+    iget-object v0, p0, Lio/reactivex/observables/GroupedObservable;->key:Ljava/lang/Object;
+
+    return-object v0
+.end method

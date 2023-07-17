@@ -38,9 +38,9 @@ public final class PushNotificationRepositoryImpl implements PushNotificationRep
 
     @Override // com.iMe.storage.domain.repository.notification.PushNotificationRepository
     public Observable<Result<String>> issuePushAllowanceToken() {
-        Observable<R> map = this.pushNotificationApi.issuePushAllowanceToken().map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new C1916x8c10a2ec(this.firebaseErrorHandler, this)));
+        Observable<R> map = this.pushNotificationApi.issuePushAllowanceToken().map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new C1923x8c10a2ec(this.firebaseErrorHandler, this)));
         Intrinsics.checkNotNullExpressionValue(map, "errorHandler: FirebaseFu…response).toError()\n    }");
-        Observable<Result<String>> onErrorReturn = map.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new C1915xd90b7335(this.errorHandler)));
+        Observable<Result<String>> onErrorReturn = map.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new C1922xd90b7335(this.errorHandler)));
         Intrinsics.checkNotNullExpressionValue(onErrorReturn, "errorHandler: ErrorHandl…ndleError(it).toError() }");
         return onErrorReturn;
     }
@@ -53,27 +53,27 @@ public final class PushNotificationRepositoryImpl implements PushNotificationRep
             Intrinsics.checkNotNullExpressionValue(just, "just(this)");
             return just;
         }
-        Observable<R> map = this.pushNotificationApi.savePushToken(new SaveTokenRequest(this.preferenceHelper.getPushToken(), accounts, null, 4, null)).map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new C1918xaad9f4fa(this.firebaseErrorHandler)));
+        Observable<R> map = this.pushNotificationApi.savePushToken(new SaveTokenRequest(this.preferenceHelper.getPushToken(), accounts, null, 4, null)).map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new C1925xaad9f4fa(this.firebaseErrorHandler)));
         Intrinsics.checkNotNullExpressionValue(map, "errorHandler: FirebaseFu…response).toError()\n    }");
-        Observable<Result<Boolean>> onErrorReturn = map.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new C1917x936c62e7(this.errorHandler)));
+        Observable<Result<Boolean>> onErrorReturn = map.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new C1924x936c62e7(this.errorHandler)));
         Intrinsics.checkNotNullExpressionValue(onErrorReturn, "errorHandler: ErrorHandl…ndleError(it).toError() }");
         return onErrorReturn;
     }
 
     @Override // com.iMe.storage.domain.repository.notification.PushNotificationRepository
     public Observable<Result<Boolean>> deletePushToken() {
-        Observable<R> map = this.pushNotificationApi.deletePushToken(new DeleteTokenRequest(this.preferenceHelper.getPushToken(), null, 2, null)).map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new C1912x5e5e944c(this.firebaseErrorHandler)));
+        Observable<R> map = this.pushNotificationApi.deletePushToken(new DeleteTokenRequest(this.preferenceHelper.getPushToken(), null, 2, null)).map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new C1919x5e5e944c(this.firebaseErrorHandler)));
         Intrinsics.checkNotNullExpressionValue(map, "errorHandler: FirebaseFu…response).toError()\n    }");
-        Observable<Result<Boolean>> onErrorReturn = map.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new C1911x507badd5(this.errorHandler)));
+        Observable<Result<Boolean>> onErrorReturn = map.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new C1918x507badd5(this.errorHandler)));
         Intrinsics.checkNotNullExpressionValue(onErrorReturn, "errorHandler: ErrorHandl…ndleError(it).toError() }");
         return onErrorReturn;
     }
 
     @Override // com.iMe.storage.domain.repository.notification.PushNotificationRepository
     public Observable<Result<List<Notification>>> getNotifications(String str) {
-        Observable<R> map = this.pushNotificationApi.getNotifications(new GetNotificationsRequest(str, 0, 2, null)).map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new C1914xd49e5e34(this.firebaseErrorHandler)));
+        Observable<R> map = this.pushNotificationApi.getNotifications(new GetNotificationsRequest(str, 0, 2, null)).map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new C1921xd49e5e34(this.firebaseErrorHandler)));
         Intrinsics.checkNotNullExpressionValue(map, "errorHandler: FirebaseFu…response).toError()\n    }");
-        Observable<Result<List<Notification>>> onErrorReturn = map.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new C1913xa23520ed(this.errorHandler)));
+        Observable<Result<List<Notification>>> onErrorReturn = map.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new C1920xa23520ed(this.errorHandler)));
         Intrinsics.checkNotNullExpressionValue(onErrorReturn, "errorHandler: ErrorHandl…ndleError(it).toError() }");
         return onErrorReturn;
     }
@@ -84,18 +84,18 @@ public final class PushNotificationRepositoryImpl implements PushNotificationRep
         Intrinsics.checkNotNullParameter(id, "id");
         PushNotificationApi pushNotificationApi = this.pushNotificationApi;
         mutableListOf = CollectionsKt__CollectionsKt.mutableListOf(id);
-        Observable<R> map = pushNotificationApi.setNotificationsRead(new SetNotificationReadRequest(mutableListOf)).map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new C1922xc597215e(this.firebaseErrorHandler)));
+        Observable<R> map = pushNotificationApi.setNotificationsRead(new SetNotificationReadRequest(mutableListOf)).map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new C1929xc597215e(this.firebaseErrorHandler)));
         Intrinsics.checkNotNullExpressionValue(map, "errorHandler: FirebaseFu…response).toError()\n    }");
-        Observable<Result<Boolean>> onErrorReturn = map.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new C1921xd054c303(this.errorHandler)));
+        Observable<Result<Boolean>> onErrorReturn = map.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new C1928xd054c303(this.errorHandler)));
         Intrinsics.checkNotNullExpressionValue(onErrorReturn, "errorHandler: ErrorHandl…ndleError(it).toError() }");
         return onErrorReturn;
     }
 
     @Override // com.iMe.storage.domain.repository.notification.PushNotificationRepository
     public Observable<Result<Boolean>> setAllNotificationsRead() {
-        Observable<R> map = this.pushNotificationApi.setAllNotificationsRead().map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new C1920xa57737f7(this.firebaseErrorHandler)));
+        Observable<R> map = this.pushNotificationApi.setAllNotificationsRead().map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new C1927xa57737f7(this.firebaseErrorHandler)));
         Intrinsics.checkNotNullExpressionValue(map, "errorHandler: FirebaseFu…response).toError()\n    }");
-        Observable<Result<Boolean>> onErrorReturn = map.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new C1919xec777f8a(this.errorHandler)));
+        Observable<Result<Boolean>> onErrorReturn = map.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new C1926xec777f8a(this.errorHandler)));
         Intrinsics.checkNotNullExpressionValue(onErrorReturn, "errorHandler: ErrorHandl…ndleError(it).toError() }");
         return onErrorReturn;
     }

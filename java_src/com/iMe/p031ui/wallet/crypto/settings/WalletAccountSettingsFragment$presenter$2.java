@@ -4,11 +4,11 @@ import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Lambda;
-import org.koin.p043mp.KoinPlatformTools;
+import org.koin.p042mp.KoinPlatformTools;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: WalletAccountSettingsFragment.kt */
 /* renamed from: com.iMe.ui.wallet.crypto.settings.WalletAccountSettingsFragment$presenter$2 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class WalletAccountSettingsFragment$presenter$2 extends Lambda implements Function0<WalletAccountSettingsPresenter> {
     final /* synthetic */ WalletAccountSettingsFragment this$0;
 
@@ -23,7 +23,7 @@ public final class WalletAccountSettingsFragment$presenter$2 extends Lambda impl
     @Override // kotlin.jvm.functions.Function0
     public final WalletAccountSettingsPresenter invoke() {
         Lazy lazy;
-        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new C2175x9695a877(this.this$0, null, null));
+        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new C2171x9695a877(this.this$0, null, null));
         return (WalletAccountSettingsPresenter) lazy.getValue();
     }
 }

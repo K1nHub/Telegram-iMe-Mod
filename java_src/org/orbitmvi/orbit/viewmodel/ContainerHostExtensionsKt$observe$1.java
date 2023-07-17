@@ -56,9 +56,9 @@ public final class ContainerHostExtensionsKt$observe$1 extends SuspendLambda imp
             Lifecycle lifecycle = this.$lifecycleOwner.getLifecycle();
             Intrinsics.checkNotNullExpressionValue(lifecycle, "lifecycleOwner.lifecycle");
             Lifecycle.State state = Lifecycle.State.STARTED;
-            C31881 c31881 = new C31881(this.$state, this.$sideEffect, this.$this_observe, null);
+            C33091 c33091 = new C33091(this.$state, this.$sideEffect, this.$this_observe, null);
             this.label = 1;
-            if (RepeatOnLifecycleKt.repeatOnLifecycle(lifecycle, state, c31881, this) == coroutine_suspended) {
+            if (RepeatOnLifecycleKt.repeatOnLifecycle(lifecycle, state, c33091, this) == coroutine_suspended) {
                 return coroutine_suspended;
             }
         } else if (i != 1) {
@@ -74,7 +74,7 @@ public final class ContainerHostExtensionsKt$observe$1 extends SuspendLambda imp
     @DebugMetadata(m84c = "org.orbitmvi.orbit.viewmodel.ContainerHostExtensionsKt$observe$1$1", m83f = "ContainerHostExtensions.kt", m82l = {}, m81m = "invokeSuspend")
     /* renamed from: org.orbitmvi.orbit.viewmodel.ContainerHostExtensionsKt$observe$1$1 */
     /* loaded from: classes4.dex */
-    public static final class C31881 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
+    public static final class C33091 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
         final /* synthetic */ Function2<SIDE_EFFECT, Continuation<? super Unit>, Object> $sideEffect;
         final /* synthetic */ Function2<STATE, Continuation<? super Unit>, Object> $state;
         final /* synthetic */ ContainerHost<STATE, SIDE_EFFECT> $this_observe;
@@ -83,7 +83,7 @@ public final class ContainerHostExtensionsKt$observe$1 extends SuspendLambda imp
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         /* JADX WARN: Multi-variable type inference failed */
-        C31881(Function2<? super STATE, ? super Continuation<? super Unit>, ? extends Object> function2, Function2<? super SIDE_EFFECT, ? super Continuation<? super Unit>, ? extends Object> function22, ContainerHost<STATE, SIDE_EFFECT> containerHost, Continuation<? super C31881> continuation) {
+        C33091(Function2<? super STATE, ? super Continuation<? super Unit>, ? extends Object> function2, Function2<? super SIDE_EFFECT, ? super Continuation<? super Unit>, ? extends Object> function22, ContainerHost<STATE, SIDE_EFFECT> containerHost, Continuation<? super C33091> continuation) {
             super(2, continuation);
             this.$state = function2;
             this.$sideEffect = function22;
@@ -92,14 +92,14 @@ public final class ContainerHostExtensionsKt$observe$1 extends SuspendLambda imp
 
         @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            C31881 c31881 = new C31881(this.$state, this.$sideEffect, this.$this_observe, continuation);
-            c31881.L$0 = obj;
-            return c31881;
+            C33091 c33091 = new C33091(this.$state, this.$sideEffect, this.$this_observe, continuation);
+            c33091.L$0 = obj;
+            return c33091;
         }
 
         @Override // kotlin.jvm.functions.Function2
         public final Object invoke(CoroutineScope coroutineScope, Continuation<? super Unit> continuation) {
-            return ((C31881) create(coroutineScope, continuation)).invokeSuspend(Unit.INSTANCE);
+            return ((C33091) create(coroutineScope, continuation)).invokeSuspend(Unit.INSTANCE);
         }
 
         @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl

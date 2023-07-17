@@ -88,7 +88,7 @@
 .method public static load(Landroid/content/SharedPreferences;)V
     .locals 11
 
-    const-string v0, "save_gallery"
+    const-string/jumbo v0, "save_gallery"
 
     const/4 v1, 0x0
 
@@ -99,7 +99,7 @@
 
     const/4 v3, -0x1
 
-    const-string v4, "save_gallery_flags"
+    const-string/jumbo v4, "save_gallery_flags"
 
     if-eqz v2, :cond_0
 

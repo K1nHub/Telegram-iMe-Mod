@@ -93,10 +93,6 @@
     <string name="archive_empty_subtitle">यहां आपके द्वारा संग्रह में भेजी गई चैट संग्रहीत की जाती हैं</string>
     <string name="archive_empty_title">संग्रह खाली है</string>
     <string name="attach_menu_select_all">सभी का चयन करे</string>
-    <string name="auth_dialog_description">"iMe प्लेटफ़ॉर्म द्वारा प्रदान की जाने वाली सभी सुविधाओं तक निःशुल्क पहुंच प्राप्त करें! हमारी सेवा की शर्तों से सहमत होने वाले उपयोगकर्ताओं के लिए पूर्ण कार्यात्मकता उपलब्ध है.
-
-जारी रखकर, आप सहमत हैं
-*सेवा की शर्तों* के लिए"</string>
     <string name="auth_dialog_title">iMe पारिस्थितिकी तंत्र</string>
     <string name="auth_login_terms_of_service">"लॉगिन करके, आप सहमत हैं
 *सेवा की शर्तों* के लिए"</string>
@@ -195,9 +191,6 @@
     <string name="chat_attach_alert_bot_buttons">बॉट बटन</string>
     <string name="chat_avatar_previewer_mention_by_name">नाम से उल्लेख करें</string>
     <string name="chat_avatar_previewer_user_messages">उपयोगकर्ता के संदेश</string>
-    <string name="chat_bookmarks">बुकमार्क</string>
-    <string name="chat_bookmarks_empty">कोई बुकमार्क नहीं</string>
-    <string name="chat_bookmarks_empty_subtitle">आपके पास चैट में बुकमार्क नहीं हैं</string>
     <string name="chat_drafts_empty">कोई ड्राफ्ट नहीं</string>
     <string name="chat_drafts_empty_subtitle">चैट में आपके पास ड्राफ़्ट संदेश नहीं हैं</string>
     <string name="chat_long_action_translate">अनुवादित करे</string>
@@ -209,7 +202,6 @@
     <string name="chat_menu_quote">क्वोट</string>
     <string name="chat_message_forward_media">मीडिया अग्रेषित करें</string>
     <string name="chat_message_forward_text">टेक्स्ट अग्रेषित करें</string>
-    <string name="chat_message_popup_option_add_to_bookmarks">बुकमार्क में सहेजें</string>
     <string name="chat_message_popup_option_copy_image">इमेज कॉपी करें</string>
     <string name="chat_message_popup_option_copy_part">भाग कॉपी करें</string>
     <string name="chat_message_popup_option_copy_text">टेक्स्ट कॉपी करें</string>
@@ -217,8 +209,6 @@
     <string name="chat_message_popup_option_forward_viber">Viber पर फॉरवर्ड करें</string>
     <string name="chat_message_popup_option_forward_whatsapp">व्हाट्सएप पर फॉरवर्ड करें</string>
     <string name="chat_message_popup_option_forward_whatsapp_business">WA Business पर फॉरवर्ड करें</string>
-    <string name="chat_message_popup_option_remove_all_bookmarks">सभी बुकमार्क हटाएं</string>
-    <string name="chat_message_popup_option_remove_from_bookmarks">बुकमार्क्स से निकालें</string>
     <string name="chat_message_spoiler_less">कम</string>
     <string name="chat_message_spoiler_more">ज़्यादा</string>
     <string name="chat_multi_panel_empty_cache_toast">इस चैट में cache नहीं है</string>
@@ -595,11 +585,6 @@
     <string name="login_token_help">लॉग इन करने के लिए किसी अन्य डिवाइस से QR कोड स्कैन करें</string>
     <string name="main_camera_popup_text">पीछे वाला कैमरा</string>
     <string name="main_list">मुख्य सूची</string>
-    <string name="management">मैनेजमेंट</string>
-    <string name="management_bookmarks_delete_all_alert_message">क्या आप वाकई सभी चैट से सभी बुकमार्क हटाना चाहते हैं? आपकी चैट नहीं हटाई जाएंगी.</string>
-    <string name="management_bookmarks_delete_selected_alert_message">क्या आप वाकई चुने गए से सभी बुकमार्क हटाना चाहते हैं? आपकी चैट नहीं हटाई जाएंगी.</string>
-    <string name="management_drafts">प्रारूप</string>
-    <string name="management_drafts_delete_selected_alert_message">क्या आप वाकई चुने गए चैट से सभी ड्राफ़्ट हटाना चाहते हैं? आपकी चैट नहीं हटाई जाएंगी.</string>
     <string name="material_clock_toggle_content_description">AM या PM चुनें</string>
     <string name="material_hour_selection">घंटा चुनें</string>
     <string name="material_hour_suffix">%1$s बजे</string>
@@ -1028,6 +1013,7 @@
     <string name="sorting_settings_tab_bots_item_title">बोट्स</string>
     <string name="sorting_settings_tab_channels_item_title">चैनल्स</string>
     <string name="sorting_settings_tab_deleted_users">हटाए गए एकाउंट्स</string>
+    <string name="sorting_settings_tab_drafts">प्रारूप</string>
     <string name="sorting_settings_tab_groups_item_title">ग्रुप चैट</string>
     <string name="sorting_settings_tab_live_chats">लाइव चैट्स</string>
     <string name="sorting_settings_tab_mentioned_chats">उल्लिखित चैट</string>
@@ -1434,7 +1420,7 @@ iMe की ओर से कोई अतिरिक्त शुल्क न�
     <string name="wallet_banner_slide_gate_description">क्रिप्टोकरेन्सी की दुनिया में जाने के लिए आपका प्रवेश द्वार</string>
     <string name="wallet_banner_slide_gate_long_description">कम विनिमय शुल्क के साथ LIME और अन्य क्रिप्टोकरेंसी का व्यापार करें.</string>
     <string name="wallet_banner_slide_gate_title">Gate.io</string>
-    <string name="wallet_banner_slide_multi_networks_description">Ethereum, BNB Chain, Polygon, Fantom, TON, NFT</string>
+    <string name="wallet_banner_slide_multi_networks_description">Bitcoin, Ethereum, BNB Chain, Polygon, Fantom, Tron, TON, NFT</string>
     <string name="wallet_banner_slide_multi_networks_long_description">एक वॉलेट में विभिन्न प्लेटफार्मों के टोकन के सुविधाजनक उपयोग के लिए एथेरियम, बीएनबी चेन, पॉलीगॉन, फैंटम, टॉन और एनएफटी नेटवर्क स्विच करने हेतु.</string>
     <string name="wallet_banner_slide_multi_networks_title">मल्टी-नेटवर्किंग</string>
     <string name="wallet_banner_slide_non_custodial_description">केवल आप ही अपना वॉलेट ऑपरेट कर सकते हैं</string>
@@ -1446,7 +1432,7 @@ iMe की ओर से कोई अतिरिक्त शुल्क न�
     <string name="wallet_banner_slide_staking_description">जमा बनाएँ</string>
     <string name="wallet_banner_slide_staking_long_description">अपनी संपत्ति को अधिक बढ़ाने हेतु LIME और पार्टनर टोकन में जमा करें.</string>
     <string name="wallet_banner_slide_staking_title">स्टैकिंग</string>
-    <string name="wallet_banner_slide_swap_description">Uniswap, PancakeSwap, 1inch</string>
+    <string name="wallet_banner_slide_swap_description">1inch, Symbiosis</string>
     <string name="wallet_banner_slide_swap_long_description">स्मार्ट कॉन्ट्रैक्ट्स द्वारा संचालित विकेन्द्रीकृत एक्सचेंज प्रोटोकॉल का उपयोग करके क्रिप्टोकोर्रेंसी एवं टोकन स्वैप करें.</string>
     <string name="wallet_banner_slide_swap_title">एक्सचेंज</string>
     <string name="wallet_binance_logout_confirm_dialog_description">क्या आप लॉग आउट करना चाहते हैं?</string>
@@ -1653,7 +1639,7 @@ iMe की ओर से कोई अतिरिक्त शुल्क न�
 आपके पास iMe वॉलेट में केवल एक सक्रिय क्रिप्टो वॉलेट खाता हो सकता है। इसलिए, जब अन्य उपयोगकर्ता आपके टेलीग्राम आईडी पर धनराशि स्थानांतरित करते हैं, तो सभी धनराशि स्वचालित रूप से अंतिम लिंक किए गए पते पर जमा हो जाएगी।"</string>
     <string name="wallet_dashboard_create_start_dialog_description">"क्रिप्टोकरेंसी और टोकन के लिए नॉन-कस्टोडियल वॉलेट।
 
-एथेरियम, बीएनबी चेन, टॉन और पॉलीगॉन नेटवर्क पर स्टोर करें, खरीदें, स्वैप करें और ट्रांसफर करें।
+एथेरियम, बिटकॉइन, बीएनबी चेन, पॉलीगॉन, फैंटम, ट्रॉन और टॉन नेटवर्क पर स्टोर करें, खरीदें, स्वैप करें और ट्रांसफर करें।
 
 अगला (नेक्स्ट बटन) दबाकर, आप %s 
 iMe Wallet से सहमत होते हैं"</string>

@@ -26,9 +26,9 @@ import kotlin.collections.CollectionsKt;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.UserConfig;
-import org.telegram.p044ui.ActionBar.Theme;
-import org.telegram.p044ui.Components.LayoutHelper;
-import org.telegram.p044ui.Components.RecyclerListView;
+import org.telegram.p043ui.ActionBar.Theme;
+import org.telegram.p043ui.Components.LayoutHelper;
+import org.telegram.p043ui.Components.RecyclerListView;
 /* compiled from: TopicsBar.kt */
 /* renamed from: com.iMe.ui.topics.TopicsBar */
 /* loaded from: classes3.dex */
@@ -345,13 +345,13 @@ public final class TopicsBar extends FrameLayout {
 
     private final void setupListeners() {
         getListView().setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: com.iMe.ui.topics.TopicsBar$$ExternalSyntheticLambda0
-            @Override // org.telegram.p044ui.Components.RecyclerListView.OnItemClickListener
+            @Override // org.telegram.p043ui.Components.RecyclerListView.OnItemClickListener
             public final void onItemClick(View view, int i) {
                 TopicsBar.setupListeners$lambda$3(TopicsBar.this, view, i);
             }
         });
         getListView().setOnItemLongClickListener(new RecyclerListView.OnItemLongClickListener() { // from class: com.iMe.ui.topics.TopicsBar$$ExternalSyntheticLambda1
-            @Override // org.telegram.p044ui.Components.RecyclerListView.OnItemLongClickListener
+            @Override // org.telegram.p043ui.Components.RecyclerListView.OnItemLongClickListener
             public final boolean onItemClick(View view, int i) {
                 boolean z;
                 z = TopicsBar.setupListeners$lambda$4(TopicsBar.this, view, i);
@@ -443,7 +443,7 @@ public final class TopicsBar extends FrameLayout {
     /* renamed from: com.iMe.ui.topics.TopicsBar$ListAdapter */
     /* loaded from: classes3.dex */
     public final class ListAdapter extends RecyclerListView.SelectionAdapter {
-        @Override // org.telegram.p044ui.Components.RecyclerListView.SelectionAdapter
+        @Override // org.telegram.p043ui.Components.RecyclerListView.SelectionAdapter
         public boolean isEnabled(RecyclerView.ViewHolder holder) {
             Intrinsics.checkNotNullParameter(holder, "holder");
             return false;

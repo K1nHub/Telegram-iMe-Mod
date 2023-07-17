@@ -22,13 +22,13 @@
         "Lkotlin/jvm/functions/Function2<",
         "Lorg/koin/core/scope/Scope;",
         "Lorg/koin/core/parameter/ParametersHolder;",
-        "Lcom/iMe/ui/wallet/transaction/details/WalletTransactionDetailsPresenter;",
+        "Lcom/iMe/ui/wallet/transaction/WalletTransactionsPresenter;",
         ">;"
     }
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nPresenterModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$18\n+ 2 ParametersHolder.kt\norg/koin/core/parameter/ParametersHolder\n+ 3 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,432:1\n44#2:433\n129#3,5:434\n129#3,5:439\n129#3,5:444\n*S KotlinDebug\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$18\n*L\n190#1:433\n192#1:434,5\n193#1:439,5\n194#1:444,5\n*E\n"
+    value = "SMAP\nPresenterModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$18\n+ 2 ParametersHolder.kt\norg/koin/core/parameter/ParametersHolder\n+ 3 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,552:1\n44#2,2:553\n129#3,5:555\n129#3,5:560\n129#3,5:565\n129#3,5:570\n*S KotlinDebug\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$18\n*L\n210#1:553,2\n212#1:555,5\n213#1:560,5\n214#1:565,5\n215#1:570,5\n*E\n"
 .end annotation
 
 
@@ -61,8 +61,8 @@
 
 
 # virtual methods
-.method public final invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/iMe/ui/wallet/transaction/details/WalletTransactionDetailsPresenter;
-    .locals 8
+.method public final invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/iMe/ui/wallet/transaction/WalletTransactionsPresenter;
+    .locals 12
 
     const-string v0, "$this$factory"
 
@@ -73,7 +73,7 @@
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 44
-    const-class v0, Lcom/iMe/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$ScreenType;
+    const-class v0, Lcom/iMe/ui/wallet/transaction/WalletTransactionsFragment$ScreenType;
 
     invoke-static {v0}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
 
@@ -83,11 +83,28 @@
 
     invoke-virtual {p2, v1, v0}, Lorg/koin/core/parameter/ParametersHolder;->elementAt(ILkotlin/reflect/KClass;)Ljava/lang/Object;
 
+    move-result-object v0
+
+    move-object v3, v0
+
+    check-cast v3, Lcom/iMe/ui/wallet/transaction/WalletTransactionsFragment$ScreenType;
+
+    .line 45
+    const-class v0, Lcom/iMe/storage/domain/model/wallet/token/Token;
+
+    invoke-static {v0}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
+
+    move-result-object v0
+
+    const/4 v1, 0x1
+
+    invoke-virtual {p2, v1, v0}, Lorg/koin/core/parameter/ParametersHolder;->elementAt(ILkotlin/reflect/KClass;)Ljava/lang/Object;
+
     move-result-object p2
 
-    move-object v1, p2
+    move-object v2, p2
 
-    check-cast v1, Lcom/iMe/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$ScreenType;
+    check-cast v2, Lcom/iMe/storage/domain/model/wallet/token/Token;
 
     .line 133
     const-class p2, Lcom/iMe/storage/domain/utils/system/ResourceManager;
@@ -102,58 +119,10 @@
 
     move-result-object p2
 
-    .line 192
-    move-object v4, p2
-
-    check-cast v4, Lcom/iMe/storage/domain/utils/system/ResourceManager;
-
-    .line 133
-    const-class p2, Lcom/iMe/storage/domain/interactor/crypto/boost/BoostInteractor;
-
-    invoke-static {p2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
-
-    move-result-object p2
-
-    invoke-virtual {p1, p2, v0, v0}, Lorg/koin/core/scope/Scope;->get(Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
-
-    move-result-object p2
-
-    .line 192
-    move-object v3, p2
-
-    check-cast v3, Lcom/iMe/storage/domain/interactor/crypto/boost/BoostInteractor;
-
-    .line 133
-    const-class p2, Lcom/iMe/storage/domain/gateway/TelegramGateway;
-
-    invoke-static {p2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
-
-    move-result-object p2
-
-    invoke-virtual {p1, p2, v0, v0}, Lorg/koin/core/scope/Scope;->get(Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
-
-    move-result-object p2
-
-    .line 193
+    .line 212
     move-object v7, p2
 
-    check-cast v7, Lcom/iMe/storage/domain/gateway/TelegramGateway;
-
-    .line 133
-    const-class p2, Lcom/iMe/storage/domain/interactor/crypto/cancel/CancelInteractor;
-
-    invoke-static {p2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
-
-    move-result-object p2
-
-    invoke-virtual {p1, p2, v0, v0}, Lorg/koin/core/scope/Scope;->get(Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
-
-    move-result-object p2
-
-    .line 193
-    move-object v2, p2
-
-    check-cast v2, Lcom/iMe/storage/domain/interactor/crypto/cancel/CancelInteractor;
+    check-cast v7, Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     .line 133
     const-class p2, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
@@ -166,10 +135,42 @@
 
     move-result-object p2
 
-    .line 193
-    move-object v6, p2
+    .line 213
+    move-object v9, p2
 
-    check-cast v6, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
+    check-cast v9, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
+
+    .line 133
+    const-class p2, Lcom/iMe/storage/domain/utils/rx/RxEventBus;
+
+    invoke-static {p2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
+
+    move-result-object p2
+
+    invoke-virtual {p1, p2, v0, v0}, Lorg/koin/core/scope/Scope;->get(Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
+
+    move-result-object p2
+
+    .line 213
+    move-object v8, p2
+
+    check-cast v8, Lcom/iMe/storage/domain/utils/rx/RxEventBus;
+
+    .line 133
+    const-class p2, Lcom/iMe/storage/domain/interactor/wallet/WalletInteractor;
+
+    invoke-static {p2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
+
+    move-result-object p2
+
+    invoke-virtual {p1, p2, v0, v0}, Lorg/koin/core/scope/Scope;->get(Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
+
+    move-result-object p2
+
+    .line 213
+    move-object v11, p2
+
+    check-cast v11, Lcom/iMe/storage/domain/interactor/wallet/WalletInteractor;
 
     .line 133
     const-class p2, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
@@ -180,19 +181,67 @@
 
     invoke-virtual {p1, p2, v0, v0}, Lorg/koin/core/scope/Scope;->get(Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
 
-    move-result-object p1
+    move-result-object p2
 
-    .line 194
-    move-object v5, p1
+    .line 214
+    move-object v5, p2
 
     check-cast v5, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
 
-    .line 191
-    new-instance p1, Lcom/iMe/ui/wallet/transaction/details/WalletTransactionDetailsPresenter;
+    .line 133
+    const-class p2, Lcom/iMe/storage/domain/storage/HintsPreferenceHelper;
 
-    move-object v0, p1
+    invoke-static {p2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
 
-    invoke-direct/range {v0 .. v7}, Lcom/iMe/ui/wallet/transaction/details/WalletTransactionDetailsPresenter;-><init>(Lcom/iMe/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$ScreenType;Lcom/iMe/storage/domain/interactor/crypto/cancel/CancelInteractor;Lcom/iMe/storage/domain/interactor/crypto/boost/BoostInteractor;Lcom/iMe/storage/domain/utils/system/ResourceManager;Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;Lcom/iMe/storage/domain/gateway/TelegramGateway;)V
+    move-result-object p2
+
+    invoke-virtual {p1, p2, v0, v0}, Lorg/koin/core/scope/Scope;->get(Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
+
+    move-result-object p2
+
+    .line 214
+    move-object v6, p2
+
+    check-cast v6, Lcom/iMe/storage/domain/storage/HintsPreferenceHelper;
+
+    .line 133
+    const-class p2, Lcom/iMe/i_staking/StakingInteractor;
+
+    invoke-static {p2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
+
+    move-result-object p2
+
+    invoke-virtual {p1, p2, v0, v0}, Lorg/koin/core/scope/Scope;->get(Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
+
+    move-result-object p2
+
+    .line 214
+    move-object v10, p2
+
+    check-cast v10, Lcom/iMe/i_staking/StakingInteractor;
+
+    .line 133
+    const-class p2, Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;
+
+    invoke-static {p2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
+
+    move-result-object p2
+
+    invoke-virtual {p1, p2, v0, v0}, Lorg/koin/core/scope/Scope;->get(Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    .line 215
+    move-object v4, p1
+
+    check-cast v4, Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;
+
+    .line 211
+    new-instance p1, Lcom/iMe/ui/wallet/transaction/WalletTransactionsPresenter;
+
+    move-object v1, p1
+
+    invoke-direct/range {v1 .. v11}, Lcom/iMe/ui/wallet/transaction/WalletTransactionsPresenter;-><init>(Lcom/iMe/storage/domain/model/wallet/token/Token;Lcom/iMe/ui/wallet/transaction/WalletTransactionsFragment$ScreenType;Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;Lcom/iMe/storage/domain/storage/HintsPreferenceHelper;Lcom/iMe/storage/domain/utils/system/ResourceManager;Lcom/iMe/storage/domain/utils/rx/RxEventBus;Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;Lcom/iMe/i_staking/StakingInteractor;Lcom/iMe/storage/domain/interactor/wallet/WalletInteractor;)V
 
     return-object p1
 .end method
@@ -200,12 +249,12 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 190
+    .line 210
     check-cast p1, Lorg/koin/core/scope/Scope;
 
     check-cast p2, Lorg/koin/core/parameter/ParametersHolder;
 
-    invoke-virtual {p0, p1, p2}, Lcom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$18;->invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/iMe/ui/wallet/transaction/details/WalletTransactionDetailsPresenter;
+    invoke-virtual {p0, p1, p2}, Lcom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$18;->invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/iMe/ui/wallet/transaction/WalletTransactionsPresenter;
 
     move-result-object p1
 

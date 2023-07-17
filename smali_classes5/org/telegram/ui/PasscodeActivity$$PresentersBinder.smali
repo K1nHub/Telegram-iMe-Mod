@@ -7,8 +7,7 @@
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
         Lorg/telegram/ui/PasscodeActivity$$PresentersBinder$WalletEnterPasswordPresenterBinder;,
-        Lorg/telegram/ui/PasscodeActivity$$PresentersBinder$WalletCreatePinPresenterBinder;,
-        Lorg/telegram/ui/PasscodeActivity$$PresentersBinder$WalletCreatePasscodePresenterBinder;
+        Lorg/telegram/ui/PasscodeActivity$$PresentersBinder$WalletCreatePinPresenterBinder;
     }
 .end annotation
 
@@ -25,7 +24,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 13
+    .line 12
     invoke-direct {p0}, Lmoxy/PresenterBinder;-><init>()V
 
     return-void
@@ -46,28 +45,21 @@
         }
     .end annotation
 
-    .line 16
+    .line 15
     new-instance v0, Ljava/util/ArrayList;
 
-    const/4 v1, 0x3
+    const/4 v1, 0x2
 
     invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 17
-    new-instance v1, Lorg/telegram/ui/PasscodeActivity$$PresentersBinder$WalletCreatePasscodePresenterBinder;
-
-    invoke-direct {v1, p0}, Lorg/telegram/ui/PasscodeActivity$$PresentersBinder$WalletCreatePasscodePresenterBinder;-><init>(Lorg/telegram/ui/PasscodeActivity$$PresentersBinder;)V
-
-    invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    .line 18
+    .line 16
     new-instance v1, Lorg/telegram/ui/PasscodeActivity$$PresentersBinder$WalletCreatePinPresenterBinder;
 
     invoke-direct {v1, p0}, Lorg/telegram/ui/PasscodeActivity$$PresentersBinder$WalletCreatePinPresenterBinder;-><init>(Lorg/telegram/ui/PasscodeActivity$$PresentersBinder;)V
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 19
+    .line 17
     new-instance v1, Lorg/telegram/ui/PasscodeActivity$$PresentersBinder$WalletEnterPasswordPresenterBinder;
 
     invoke-direct {v1, p0}, Lorg/telegram/ui/PasscodeActivity$$PresentersBinder$WalletEnterPasswordPresenterBinder;-><init>(Lorg/telegram/ui/PasscodeActivity$$PresentersBinder;)V

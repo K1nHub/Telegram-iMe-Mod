@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessPresenter;->loadApproveTokensInfo(ZZ)V
+    value = Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessPresenter;->loadApproveTokensInfo(ZZLcom/iMe/storage/domain/model/wallet/token/Token;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -34,18 +34,40 @@
 
 
 # instance fields
-.field final synthetic $selectedNetwork:Lcom/iMe/storage/domain/model/crypto/NetworkType;
+.field final synthetic $selectedNetworkId:Ljava/lang/String;
+
+.field final synthetic $tokens:Ljava/util/List;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/List<",
+            "Lcom/iMe/storage/domain/model/wallet/token/Token;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 .field final synthetic this$0:Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessPresenter;
 
 
 # direct methods
-.method constructor <init>(Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessPresenter;Lcom/iMe/storage/domain/model/crypto/NetworkType;)V
+.method constructor <init>(Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessPresenter;Ljava/lang/String;Ljava/util/List;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessPresenter;",
+            "Ljava/lang/String;",
+            "Ljava/util/List<",
+            "Lcom/iMe/storage/domain/model/wallet/token/Token;",
+            ">;)V"
+        }
+    .end annotation
 
     iput-object p1, p0, Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessPresenter$loadApproveTokensInfo$1;->this$0:Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessPresenter;
 
-    iput-object p2, p0, Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessPresenter$loadApproveTokensInfo$1;->$selectedNetwork:Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    iput-object p2, p0, Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessPresenter$loadApproveTokensInfo$1;->$selectedNetworkId:Ljava/lang/String;
+
+    iput-object p3, p0, Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessPresenter$loadApproveTokensInfo$1;->$tokens:Ljava/util/List;
 
     const/4 p1, 0x1
 
@@ -57,7 +79,7 @@
 
 # virtual methods
 .method public final invoke(Ljava/lang/Object;)Lio/reactivex/ObservableSource;
-    .locals 2
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -72,25 +94,28 @@
         }
     .end annotation
 
-    .line 663
+    .line 696
     iget-object p1, p0, Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessPresenter$loadApproveTokensInfo$1;->this$0:Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessPresenter;
 
     invoke-static {p1}, Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessPresenter;->access$getSwapInteractor$p(Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessPresenter;)Lcom/iMe/storage/domain/interactor/crypto/swap/SwapInteractor;
 
     move-result-object p1
 
-    .line 664
-    iget-object v0, p0, Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessPresenter$loadApproveTokensInfo$1;->$selectedNetwork:Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    .line 697
+    iget-object v0, p0, Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessPresenter$loadApproveTokensInfo$1;->$selectedNetworkId:Ljava/lang/String;
 
-    .line 665
+    .line 698
     iget-object v1, p0, Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessPresenter$loadApproveTokensInfo$1;->this$0:Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessPresenter;
 
     invoke-static {v1}, Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessPresenter;->access$getSwapProtocol$p(Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessPresenter;)Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocol;
 
     move-result-object v1
 
-    .line 663
-    invoke-virtual {p1, v0, v1}, Lcom/iMe/storage/domain/interactor/crypto/swap/SwapInteractor;->getApproveTokensInfo(Lcom/iMe/storage/domain/model/crypto/NetworkType;Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocol;)Lio/reactivex/Observable;
+    .line 699
+    iget-object v2, p0, Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessPresenter$loadApproveTokensInfo$1;->$tokens:Ljava/util/List;
+
+    .line 696
+    invoke-virtual {p1, v0, v1, v2}, Lcom/iMe/storage/domain/interactor/crypto/swap/SwapInteractor;->getApproveTokensInfo(Ljava/lang/String;Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocol;Ljava/util/List;)Lio/reactivex/Observable;
 
     move-result-object p1
 
@@ -100,7 +125,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 662
+    .line 695
     invoke-virtual {p0, p1}, Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessPresenter$loadApproveTokensInfo$1;->invoke(Ljava/lang/Object;)Lio/reactivex/ObservableSource;
 
     move-result-object p1

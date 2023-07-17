@@ -28,10 +28,10 @@ public abstract class AppRxEvents implements RxEvent {
 
     /* compiled from: AppRxEvents.kt */
     /* loaded from: classes3.dex */
-    public static final class HiddenBalanceSettingChanged extends AppRxEvents {
-        public static final HiddenBalanceSettingChanged INSTANCE = new HiddenBalanceSettingChanged();
+    public static final class UpdateTransactionScreen extends AppRxEvents {
+        public static final UpdateTransactionScreen INSTANCE = new UpdateTransactionScreen();
 
-        private HiddenBalanceSettingChanged() {
+        private UpdateTransactionScreen() {
             super(null);
         }
     }

@@ -6,7 +6,7 @@ import com.iMe.p031ui.base.mvp.LoadMoreView;
 import com.iMe.p031ui.base.mvp.SwipeRefreshView;
 import com.iMe.p031ui.base.mvp.SwitchNetworkView;
 import com.iMe.p031ui.base.mvp.base.BaseView;
-import com.iMe.storage.domain.model.crypto.NetworkType;
+import com.iMe.storage.domain.model.crypto.Network;
 import java.util.List;
 import moxy.viewstate.strategy.alias.AddToEndSingle;
 import moxy.viewstate.strategy.alias.OneExecution;
@@ -16,7 +16,7 @@ import moxy.viewstate.strategy.alias.OneExecution;
 /* loaded from: classes4.dex */
 public interface WalletTransactionsView extends BaseView, LoadMoreView<BaseNode>, SwipeRefreshView, SwitchNetworkView {
     @OneExecution
-    void openStakingOperationDetails(StakingOperationItem stakingOperationItem, NetworkType networkType);
+    void openStakingOperationDetails(StakingOperationItem stakingOperationItem, Network network);
 
     void renderInitialItems(List<BaseNode> list);
 

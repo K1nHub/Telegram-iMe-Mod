@@ -2,40 +2,44 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/messenger/FileLoader$FileResolver;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/ui/PhotoViewer;
 
-.field public final synthetic f$1:Lorg/telegram/tgnet/TLObject;
+.field public final synthetic f$1:Z
+
+.field public final synthetic f$2:Landroid/view/View;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/PhotoViewer;Lorg/telegram/tgnet/TLObject;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/PhotoViewer;ZLandroid/view/View;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda85;->f$0:Lorg/telegram/ui/PhotoViewer;
 
-    iput-object p2, p0, Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda85;->f$1:Lorg/telegram/tgnet/TLObject;
+    iput-boolean p2, p0, Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda85;->f$1:Z
+
+    iput-object p3, p0, Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda85;->f$2:Landroid/view/View;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final getFile()Ljava/io/File;
-    .locals 2
+.method public final run()V
+    .locals 3
 
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda85;->f$0:Lorg/telegram/ui/PhotoViewer;
 
-    iget-object v1, p0, Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda85;->f$1:Lorg/telegram/tgnet/TLObject;
+    iget-boolean v1, p0, Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda85;->f$1:Z
 
-    invoke-static {v0, v1}, Lorg/telegram/ui/PhotoViewer;->$r8$lambda$hF6oTpisg_3i9bmoMHye1RI1rlM(Lorg/telegram/ui/PhotoViewer;Lorg/telegram/tgnet/TLObject;)Ljava/io/File;
+    iget-object v2, p0, Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda85;->f$2:Landroid/view/View;
 
-    move-result-object v0
+    invoke-static {v0, v1, v2}, Lorg/telegram/ui/PhotoViewer;->$r8$lambda$p_0HDALHG0-YAnuOZSxlsveVzrY(Lorg/telegram/ui/PhotoViewer;ZLandroid/view/View;)V
 
-    return-object v0
+    return-void
 .end method

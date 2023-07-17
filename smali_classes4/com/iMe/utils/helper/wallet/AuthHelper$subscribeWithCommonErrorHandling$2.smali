@@ -59,7 +59,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 233
+    .line 250
     check-cast p1, Ljava/lang/Throwable;
 
     invoke-virtual {p0, p1}, Lcom/iMe/utils/helper/wallet/AuthHelper$subscribeWithCommonErrorHandling$2;->invoke(Ljava/lang/Throwable;)V
@@ -72,10 +72,10 @@
 .method public final invoke(Ljava/lang/Throwable;)V
     .locals 2
 
-    .line 236
+    .line 253
     invoke-static {p1}, Ltimber/log/Timber;->e(Ljava/lang/Throwable;)V
 
-    .line 237
+    .line 254
     instance-of v0, p1, Ljava/util/concurrent/TimeoutException;
 
     if-eqz v0, :cond_0
@@ -90,7 +90,7 @@
 
     goto :goto_0
 
-    .line 238
+    .line 255
     :cond_0
     sget-object v0, Lcom/iMe/utils/helper/wallet/AuthHelper;->INSTANCE:Lcom/iMe/utils/helper/wallet/AuthHelper;
 

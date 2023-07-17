@@ -970,7 +970,7 @@
     :cond_6
     new-instance v1, Ljava/lang/IllegalStateException;
 
-    const-string v2, "scheme == null"
+    const-string/jumbo v2, "scheme == null"
 
     invoke-direct {v1, v2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
@@ -2268,7 +2268,7 @@
 .method public final scheme(Ljava/lang/String;)Lokhttp3/HttpUrl$Builder;
     .locals 3
 
-    const-string v0, "scheme"
+    const-string/jumbo v0, "scheme"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 

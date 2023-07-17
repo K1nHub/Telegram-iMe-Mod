@@ -15,6 +15,8 @@
 
 
 # instance fields
+.field private final blockchainType:Lcom/iMe/storage/domain/model/crypto/BlockchainType;
+
 .field private final chainId:J
 
 .field private final exchangeContractAddress:Ljava/lang/String;
@@ -23,7 +25,7 @@
 
 .field private final gasPrice:Ljava/math/BigInteger;
 
-.field private final networkType:Lcom/iMe/storage/domain/model/crypto/NetworkType;
+.field private final networkId:Ljava/lang/String;
 
 .field private final nonce:Ljava/math/BigInteger;
 
@@ -31,18 +33,16 @@
 
 .field private final recipientAddress:Ljava/lang/String;
 
-.field private final token:Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Crypto$Ethereum;
-
 .field private final tokenContractAddress:Ljava/lang/String;
 
 .field private final value:Ljava/math/BigInteger;
 
 
 # direct methods
-.method public constructor <init>(Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Crypto$Ethereum;Ljava/math/BigInteger;Ljava/lang/String;JLjava/math/BigInteger;Ljava/math/BigInteger;Ljava/math/BigInteger;Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/domain/model/crypto/NetworkType;Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocol;)V
+.method public constructor <init>(Lcom/iMe/storage/domain/model/crypto/BlockchainType;Ljava/math/BigInteger;Ljava/lang/String;JLjava/math/BigInteger;Ljava/math/BigInteger;Ljava/math/BigInteger;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocol;)V
     .locals 1
 
-    const-string v0, "token"
+    const-string v0, "blockchainType"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -74,7 +74,7 @@
 
     invoke-static {p10, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "networkType"
+    const-string v0, "networkId"
 
     invoke-static {p11, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -84,46 +84,46 @@
 
     const/4 v0, 0x0
 
-    .line 26
-    invoke-direct {p0, p1, p2, v0}, Lcom/iMe/storage/domain/model/crypto/swap/ApproveArgs;-><init>(Lcom/iMe/storage/domain/model/wallet/token/TokenInfo;Ljava/lang/Number;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
+    .line 25
+    invoke-direct {p0, p1, p2, v0}, Lcom/iMe/storage/domain/model/crypto/swap/ApproveArgs;-><init>(Lcom/iMe/storage/domain/model/crypto/BlockchainType;Ljava/lang/Number;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
+
+    .line 14
+    iput-object p1, p0, Lcom/iMe/storage/domain/model/crypto/swap/ApproveArgs$Dex;->blockchainType:Lcom/iMe/storage/domain/model/crypto/BlockchainType;
 
     .line 15
-    iput-object p1, p0, Lcom/iMe/storage/domain/model/crypto/swap/ApproveArgs$Dex;->token:Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Crypto$Ethereum;
-
-    .line 16
     iput-object p2, p0, Lcom/iMe/storage/domain/model/crypto/swap/ApproveArgs$Dex;->value:Ljava/math/BigInteger;
 
-    .line 17
+    .line 16
     iput-object p3, p0, Lcom/iMe/storage/domain/model/crypto/swap/ApproveArgs$Dex;->recipientAddress:Ljava/lang/String;
 
-    .line 18
+    .line 17
     iput-wide p4, p0, Lcom/iMe/storage/domain/model/crypto/swap/ApproveArgs$Dex;->chainId:J
 
-    .line 19
+    .line 18
     iput-object p6, p0, Lcom/iMe/storage/domain/model/crypto/swap/ApproveArgs$Dex;->nonce:Ljava/math/BigInteger;
 
-    .line 20
+    .line 19
     iput-object p7, p0, Lcom/iMe/storage/domain/model/crypto/swap/ApproveArgs$Dex;->gasPrice:Ljava/math/BigInteger;
 
-    .line 21
+    .line 20
     iput-object p8, p0, Lcom/iMe/storage/domain/model/crypto/swap/ApproveArgs$Dex;->gasLimit:Ljava/math/BigInteger;
 
-    .line 22
+    .line 21
     iput-object p9, p0, Lcom/iMe/storage/domain/model/crypto/swap/ApproveArgs$Dex;->tokenContractAddress:Ljava/lang/String;
 
-    .line 23
+    .line 22
     iput-object p10, p0, Lcom/iMe/storage/domain/model/crypto/swap/ApproveArgs$Dex;->exchangeContractAddress:Ljava/lang/String;
 
-    .line 24
-    iput-object p11, p0, Lcom/iMe/storage/domain/model/crypto/swap/ApproveArgs$Dex;->networkType:Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    .line 23
+    iput-object p11, p0, Lcom/iMe/storage/domain/model/crypto/swap/ApproveArgs$Dex;->networkId:Ljava/lang/String;
 
-    .line 25
+    .line 24
     iput-object p12, p0, Lcom/iMe/storage/domain/model/crypto/swap/ApproveArgs$Dex;->protocol:Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocol;
 
     return-void
 .end method
 
-.method public static synthetic copy$default(Lcom/iMe/storage/domain/model/crypto/swap/ApproveArgs$Dex;Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Crypto$Ethereum;Ljava/math/BigInteger;Ljava/lang/String;JLjava/math/BigInteger;Ljava/math/BigInteger;Ljava/math/BigInteger;Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/domain/model/crypto/NetworkType;Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocol;ILjava/lang/Object;)Lcom/iMe/storage/domain/model/crypto/swap/ApproveArgs$Dex;
+.method public static synthetic copy$default(Lcom/iMe/storage/domain/model/crypto/swap/ApproveArgs$Dex;Lcom/iMe/storage/domain/model/crypto/BlockchainType;Ljava/math/BigInteger;Ljava/lang/String;JLjava/math/BigInteger;Ljava/math/BigInteger;Ljava/math/BigInteger;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocol;ILjava/lang/Object;)Lcom/iMe/storage/domain/model/crypto/swap/ApproveArgs$Dex;
     .locals 13
 
     move-object v0, p0
@@ -134,7 +134,7 @@
 
     if-eqz v2, :cond_0
 
-    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/crypto/swap/ApproveArgs$Dex;->getToken()Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Crypto$Ethereum;
+    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/crypto/swap/ApproveArgs$Dex;->getBlockchainType()Lcom/iMe/storage/domain/model/crypto/BlockchainType;
 
     move-result-object v2
 
@@ -246,7 +246,7 @@
 
     if-eqz v12, :cond_9
 
-    iget-object v12, v0, Lcom/iMe/storage/domain/model/crypto/swap/ApproveArgs$Dex;->networkType:Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    iget-object v12, v0, Lcom/iMe/storage/domain/model/crypto/swap/ApproveArgs$Dex;->networkId:Ljava/lang/String;
 
     goto :goto_9
 
@@ -288,7 +288,7 @@
 
     move-object/from16 p12, v1
 
-    invoke-virtual/range {p0 .. p12}, Lcom/iMe/storage/domain/model/crypto/swap/ApproveArgs$Dex;->copy(Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Crypto$Ethereum;Ljava/math/BigInteger;Ljava/lang/String;JLjava/math/BigInteger;Ljava/math/BigInteger;Ljava/math/BigInteger;Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/domain/model/crypto/NetworkType;Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocol;)Lcom/iMe/storage/domain/model/crypto/swap/ApproveArgs$Dex;
+    invoke-virtual/range {p0 .. p12}, Lcom/iMe/storage/domain/model/crypto/swap/ApproveArgs$Dex;->copy(Lcom/iMe/storage/domain/model/crypto/BlockchainType;Ljava/math/BigInteger;Ljava/lang/String;JLjava/math/BigInteger;Ljava/math/BigInteger;Ljava/math/BigInteger;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocol;)Lcom/iMe/storage/domain/model/crypto/swap/ApproveArgs$Dex;
 
     move-result-object v0
 
@@ -297,20 +297,20 @@
 
 
 # virtual methods
-.method public final component1()Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Crypto$Ethereum;
+.method public final component1()Lcom/iMe/storage/domain/model/crypto/BlockchainType;
     .locals 1
 
-    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/crypto/swap/ApproveArgs$Dex;->getToken()Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Crypto$Ethereum;
+    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/crypto/swap/ApproveArgs$Dex;->getBlockchainType()Lcom/iMe/storage/domain/model/crypto/BlockchainType;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public final component10()Lcom/iMe/storage/domain/model/crypto/NetworkType;
+.method public final component10()Ljava/lang/String;
     .locals 1
 
-    iget-object v0, p0, Lcom/iMe/storage/domain/model/crypto/swap/ApproveArgs$Dex;->networkType:Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    iget-object v0, p0, Lcom/iMe/storage/domain/model/crypto/swap/ApproveArgs$Dex;->networkId:Ljava/lang/String;
 
     return-object v0
 .end method
@@ -389,10 +389,10 @@
     return-object v0
 .end method
 
-.method public final copy(Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Crypto$Ethereum;Ljava/math/BigInteger;Ljava/lang/String;JLjava/math/BigInteger;Ljava/math/BigInteger;Ljava/math/BigInteger;Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/domain/model/crypto/NetworkType;Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocol;)Lcom/iMe/storage/domain/model/crypto/swap/ApproveArgs$Dex;
+.method public final copy(Lcom/iMe/storage/domain/model/crypto/BlockchainType;Ljava/math/BigInteger;Ljava/lang/String;JLjava/math/BigInteger;Ljava/math/BigInteger;Ljava/math/BigInteger;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocol;)Lcom/iMe/storage/domain/model/crypto/swap/ApproveArgs$Dex;
     .locals 14
 
-    const-string v0, "token"
+    const-string v0, "blockchainType"
 
     move-object v2, p1
 
@@ -440,7 +440,7 @@
 
     invoke-static {v11, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "networkType"
+    const-string v0, "networkId"
 
     move-object/from16 v12, p11
 
@@ -458,7 +458,7 @@
 
     move-wide/from16 v5, p4
 
-    invoke-direct/range {v1 .. v13}, Lcom/iMe/storage/domain/model/crypto/swap/ApproveArgs$Dex;-><init>(Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Crypto$Ethereum;Ljava/math/BigInteger;Ljava/lang/String;JLjava/math/BigInteger;Ljava/math/BigInteger;Ljava/math/BigInteger;Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/domain/model/crypto/NetworkType;Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocol;)V
+    invoke-direct/range {v1 .. v13}, Lcom/iMe/storage/domain/model/crypto/swap/ApproveArgs$Dex;-><init>(Lcom/iMe/storage/domain/model/crypto/BlockchainType;Ljava/math/BigInteger;Ljava/lang/String;JLjava/math/BigInteger;Ljava/math/BigInteger;Ljava/math/BigInteger;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocol;)V
 
     return-object v0
 .end method
@@ -484,19 +484,15 @@
     :cond_1
     check-cast p1, Lcom/iMe/storage/domain/model/crypto/swap/ApproveArgs$Dex;
 
-    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/crypto/swap/ApproveArgs$Dex;->getToken()Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Crypto$Ethereum;
+    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/crypto/swap/ApproveArgs$Dex;->getBlockchainType()Lcom/iMe/storage/domain/model/crypto/BlockchainType;
 
     move-result-object v1
 
-    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/crypto/swap/ApproveArgs$Dex;->getToken()Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Crypto$Ethereum;
+    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/crypto/swap/ApproveArgs$Dex;->getBlockchainType()Lcom/iMe/storage/domain/model/crypto/BlockchainType;
 
     move-result-object v3
 
-    invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_2
+    if-eq v1, v3, :cond_2
 
     return v2
 
@@ -607,11 +603,15 @@
     return v2
 
     :cond_a
-    iget-object v1, p0, Lcom/iMe/storage/domain/model/crypto/swap/ApproveArgs$Dex;->networkType:Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    iget-object v1, p0, Lcom/iMe/storage/domain/model/crypto/swap/ApproveArgs$Dex;->networkId:Ljava/lang/String;
 
-    iget-object v3, p1, Lcom/iMe/storage/domain/model/crypto/swap/ApproveArgs$Dex;->networkType:Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    iget-object v3, p1, Lcom/iMe/storage/domain/model/crypto/swap/ApproveArgs$Dex;->networkId:Ljava/lang/String;
 
-    if-eq v1, v3, :cond_b
+    invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_b
 
     return v2
 
@@ -628,10 +628,19 @@
     return v0
 .end method
 
+.method public getBlockchainType()Lcom/iMe/storage/domain/model/crypto/BlockchainType;
+    .locals 1
+
+    .line 14
+    iget-object v0, p0, Lcom/iMe/storage/domain/model/crypto/swap/ApproveArgs$Dex;->blockchainType:Lcom/iMe/storage/domain/model/crypto/BlockchainType;
+
+    return-object v0
+.end method
+
 .method public final getChainId()J
     .locals 2
 
-    .line 18
+    .line 17
     iget-wide v0, p0, Lcom/iMe/storage/domain/model/crypto/swap/ApproveArgs$Dex;->chainId:J
 
     return-wide v0
@@ -640,7 +649,7 @@
 .method public final getExchangeContractAddress()Ljava/lang/String;
     .locals 1
 
-    .line 23
+    .line 22
     iget-object v0, p0, Lcom/iMe/storage/domain/model/crypto/swap/ApproveArgs$Dex;->exchangeContractAddress:Ljava/lang/String;
 
     return-object v0
@@ -649,7 +658,7 @@
 .method public final getGasLimit()Ljava/math/BigInteger;
     .locals 1
 
-    .line 21
+    .line 20
     iget-object v0, p0, Lcom/iMe/storage/domain/model/crypto/swap/ApproveArgs$Dex;->gasLimit:Ljava/math/BigInteger;
 
     return-object v0
@@ -658,17 +667,17 @@
 .method public final getGasPrice()Ljava/math/BigInteger;
     .locals 1
 
-    .line 20
+    .line 19
     iget-object v0, p0, Lcom/iMe/storage/domain/model/crypto/swap/ApproveArgs$Dex;->gasPrice:Ljava/math/BigInteger;
 
     return-object v0
 .end method
 
-.method public final getNetworkType()Lcom/iMe/storage/domain/model/crypto/NetworkType;
+.method public final getNetworkId()Ljava/lang/String;
     .locals 1
 
-    .line 24
-    iget-object v0, p0, Lcom/iMe/storage/domain/model/crypto/swap/ApproveArgs$Dex;->networkType:Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    .line 23
+    iget-object v0, p0, Lcom/iMe/storage/domain/model/crypto/swap/ApproveArgs$Dex;->networkId:Ljava/lang/String;
 
     return-object v0
 .end method
@@ -676,7 +685,7 @@
 .method public final getNonce()Ljava/math/BigInteger;
     .locals 1
 
-    .line 19
+    .line 18
     iget-object v0, p0, Lcom/iMe/storage/domain/model/crypto/swap/ApproveArgs$Dex;->nonce:Ljava/math/BigInteger;
 
     return-object v0
@@ -685,7 +694,7 @@
 .method public final getProtocol()Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocol;
     .locals 1
 
-    .line 25
+    .line 24
     iget-object v0, p0, Lcom/iMe/storage/domain/model/crypto/swap/ApproveArgs$Dex;->protocol:Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocol;
 
     return-object v0
@@ -694,28 +703,8 @@
 .method public final getRecipientAddress()Ljava/lang/String;
     .locals 1
 
-    .line 17
+    .line 16
     iget-object v0, p0, Lcom/iMe/storage/domain/model/crypto/swap/ApproveArgs$Dex;->recipientAddress:Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method public getToken()Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Crypto$Ethereum;
-    .locals 1
-
-    .line 15
-    iget-object v0, p0, Lcom/iMe/storage/domain/model/crypto/swap/ApproveArgs$Dex;->token:Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Crypto$Ethereum;
-
-    return-object v0
-.end method
-
-.method public bridge synthetic getToken()Lcom/iMe/storage/domain/model/wallet/token/TokenInfo;
-    .locals 1
-
-    .line 14
-    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/crypto/swap/ApproveArgs$Dex;->getToken()Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Crypto$Ethereum;
-
-    move-result-object v0
 
     return-object v0
 .end method
@@ -723,7 +712,7 @@
 .method public final getTokenContractAddress()Ljava/lang/String;
     .locals 1
 
-    .line 22
+    .line 21
     iget-object v0, p0, Lcom/iMe/storage/domain/model/crypto/swap/ApproveArgs$Dex;->tokenContractAddress:Ljava/lang/String;
 
     return-object v0
@@ -732,7 +721,7 @@
 .method public bridge synthetic getValue()Ljava/lang/Number;
     .locals 1
 
-    .line 14
+    .line 13
     invoke-virtual {p0}, Lcom/iMe/storage/domain/model/crypto/swap/ApproveArgs$Dex;->getValue()Ljava/math/BigInteger;
 
     move-result-object v0
@@ -743,7 +732,7 @@
 .method public getValue()Ljava/math/BigInteger;
     .locals 1
 
-    .line 16
+    .line 15
     iget-object v0, p0, Lcom/iMe/storage/domain/model/crypto/swap/ApproveArgs$Dex;->value:Ljava/math/BigInteger;
 
     return-object v0
@@ -752,11 +741,11 @@
 .method public hashCode()I
     .locals 3
 
-    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/crypto/swap/ApproveArgs$Dex;->getToken()Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Crypto$Ethereum;
+    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/crypto/swap/ApproveArgs$Dex;->getBlockchainType()Lcom/iMe/storage/domain/model/crypto/BlockchainType;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
+    invoke-virtual {v0}, Ljava/lang/Enum;->hashCode()I
 
     move-result v0
 
@@ -844,9 +833,9 @@
 
     mul-int/lit8 v0, v0, 0x1f
 
-    iget-object v1, p0, Lcom/iMe/storage/domain/model/crypto/swap/ApproveArgs$Dex;->networkType:Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    iget-object v1, p0, Lcom/iMe/storage/domain/model/crypto/swap/ApproveArgs$Dex;->networkId:Ljava/lang/String;
 
-    invoke-virtual {v1}, Ljava/lang/Enum;->hashCode()I
+    invoke-virtual {v1}, Ljava/lang/String;->hashCode()I
 
     move-result v1
 
@@ -872,11 +861,11 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v1, "Dex(token="
+    const-string v1, "Dex(blockchainType="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/crypto/swap/ApproveArgs$Dex;->getToken()Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Crypto$Ethereum;
+    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/crypto/swap/ApproveArgs$Dex;->getBlockchainType()Lcom/iMe/storage/domain/model/crypto/BlockchainType;
 
     move-result-object v1
 
@@ -948,13 +937,13 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v1, ", networkType="
+    const-string v1, ", networkId="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v1, p0, Lcom/iMe/storage/domain/model/crypto/swap/ApproveArgs$Dex;->networkType:Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    iget-object v1, p0, Lcom/iMe/storage/domain/model/crypto/swap/ApproveArgs$Dex;->networkId:Ljava/lang/String;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     const-string v1, ", protocol="
 

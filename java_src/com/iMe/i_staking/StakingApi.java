@@ -25,40 +25,40 @@ public interface StakingApi {
     @POST("staking/approval/info")
     Observable<ApiBaseResponse<StakingApprovalInfoResponse>> getApprovalInfo(@Body StakingIdRequest stakingIdRequest);
 
-    @POST("staking/programmes/find")
+    @POST("staking/programmes/v2/find")
     Observable<ApiBaseResponse<StakingDetailedMetadataResponse>> getStakingDetails(@Body StakingIdRequest stakingIdRequest);
 
-    @POST("staking/operations/list")
+    @POST("staking/operations/v2/list")
     Observable<ApiBaseResponse<StakingOperationsPagedResponse>> getStakingOperations(@Body StakingOperationsRequest stakingOperationsRequest);
 
-    @POST("staking/programmes/listOwn")
+    @POST("staking/programmes/v2/listOwn")
     Observable<ApiBaseResponse<StakingProgrammesResponse>> getStakingOwnProgrammesList(@Body StakingOwnProgrammesRequest stakingOwnProgrammesRequest);
 
-    @POST("staking/programmes/list")
+    @POST("staking/programmes/v2/list")
     Observable<ApiBaseResponse<StakingProgrammesResponse>> getStakingProgrammesList(@Body StakingProgrammesRequest stakingProgrammesRequest);
 
     @POST("staking/getMyTotals")
     Observable<ApiBaseResponse<StakingTotalStatsResponse>> getStakingTotalStats();
 
-    @POST("staking/approval/execute")
+    @POST("staking/approval/v2/execute")
     Observable<ApiBaseResponse<StakingOperationResponse>> sendApprovalExecute(@Body StakingTokenActionExecuteRequest stakingTokenActionExecuteRequest);
 
     @POST("staking/approval/prepare")
     Observable<ApiBaseResponse<StakingWrappedActionResponse>> sendApprovalPrepare(@Body StakingApprovalPrepareRequest stakingApprovalPrepareRequest);
 
-    @POST("staking/claim/execute")
+    @POST("staking/claim/v2/execute")
     Observable<ApiBaseResponse<StakingOperationResponse>> sendClaimExecute(@Body StakingTokenActionExecuteRequest stakingTokenActionExecuteRequest);
 
     @POST("staking/claim/prepare")
     Observable<ApiBaseResponse<StakingWrappedActionResponse>> sendClaimPrepare(@Body StakingIdRequest stakingIdRequest);
 
-    @POST("staking/deposit/execute")
+    @POST("staking/deposit/v2/execute")
     Observable<ApiBaseResponse<StakingOperationResponse>> sendDepositExecute(@Body StakingTokenActionExecuteRequest stakingTokenActionExecuteRequest);
 
     @POST("staking/deposit/prepare")
     Observable<ApiBaseResponse<StakingWrappedActionResponse>> sendDepositPrepare(@Body StakingDepositPrepareRequest stakingDepositPrepareRequest);
 
-    @POST("staking/withdrawal/execute")
+    @POST("staking/withdrawal/v2/execute")
     Observable<ApiBaseResponse<StakingOperationResponse>> sendWithdrawExecute(@Body StakingTokenActionExecuteRequest stakingTokenActionExecuteRequest);
 
     @POST("staking/withdrawal/prepare")

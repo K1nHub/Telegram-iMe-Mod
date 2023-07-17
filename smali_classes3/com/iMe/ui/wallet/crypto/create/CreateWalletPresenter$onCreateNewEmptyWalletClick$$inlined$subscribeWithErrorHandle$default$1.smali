@@ -30,7 +30,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nRxExt.kt\nKotlin\n*S Kotlin\n*F\n+ 1 RxExt.kt\ncom/iMe/utils/extentions/rx/RxExtKt$subscribeWithErrorHandle$2\n+ 2 CreateWalletPresenter.kt\ncom/iMe/ui/wallet/crypto/create/CreateWalletPresenter\n*L\n1#1,111:1\n112#2,9:112\n*E\n"
+    value = "SMAP\nRxExt.kt\nKotlin\n*S Kotlin\n*F\n+ 1 RxExt.kt\ncom/iMe/utils/extentions/rx/RxExtKt$subscribeWithErrorHandle$2\n+ 2 CreateWalletPresenter.kt\ncom/iMe/ui/wallet/crypto/create/CreateWalletPresenter\n*L\n1#1,111:1\n101#2,13:112\n*E\n"
 .end annotation
 
 
@@ -41,12 +41,12 @@
 
 
 # direct methods
-.method public constructor <init>(Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter;Ljava/lang/String;)V
+.method public constructor <init>(Ljava/lang/String;Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter;)V
     .locals 0
 
-    iput-object p1, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter$onCreateNewEmptyWalletClick$$inlined$subscribeWithErrorHandle$default$1;->this$0:Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter;
+    iput-object p1, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter$onCreateNewEmptyWalletClick$$inlined$subscribeWithErrorHandle$default$1;->$password$inlined:Ljava/lang/String;
 
-    iput-object p2, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter$onCreateNewEmptyWalletClick$$inlined$subscribeWithErrorHandle$default$1;->$password$inlined:Ljava/lang/String;
+    iput-object p2, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter$onCreateNewEmptyWalletClick$$inlined$subscribeWithErrorHandle$default$1;->this$0:Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter;
 
     const/4 p1, 0x1
 
@@ -60,7 +60,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 44
+    .line 47
     invoke-virtual {p0, p1}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter$onCreateNewEmptyWalletClick$$inlined$subscribeWithErrorHandle$default$1;->invoke(Ljava/lang/Object;)V
 
     sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
@@ -82,7 +82,7 @@
 
     const-string v0, "it"
 
-    .line 45
+    .line 48
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     check-cast p1, Lcom/iMe/storage/domain/model/Result;
@@ -90,8 +90,28 @@
     .line 113
     instance-of v0, p1, Lcom/iMe/storage/domain/model/Result$Success;
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_2
 
+    .line 114
+    iget-object v0, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter$onCreateNewEmptyWalletClick$$inlined$subscribeWithErrorHandle$default$1;->$password$inlined:Ljava/lang/String;
+
+    invoke-interface {v0}, Ljava/lang/CharSequence;->length()I
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    const/4 v0, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    :goto_0
+    if-eqz v0, :cond_1
+
+    .line 115
     iget-object v0, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter$onCreateNewEmptyWalletClick$$inlined$subscribeWithErrorHandle$default$1;->this$0:Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter;
 
     invoke-virtual {v0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
@@ -100,7 +120,6 @@
 
     check-cast v0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletView;
 
-    .line 114
     check-cast p1, Lcom/iMe/storage/domain/model/Result$Success;
 
     invoke-virtual {p1}, Lcom/iMe/storage/domain/model/Result$Success;->getData()Ljava/lang/Object;
@@ -109,19 +128,43 @@
 
     check-cast p1, Lcom/iMe/storage/domain/model/crypto/Wallet;
 
-    .line 115
-    iget-object v1, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter$onCreateNewEmptyWalletClick$$inlined$subscribeWithErrorHandle$default$1;->$password$inlined:Ljava/lang/String;
+    invoke-static {}, Lcom/iMe/storage/data/utils/extentions/CryptoExtKt;->randomString()Ljava/lang/String;
 
-    .line 113
-    invoke-interface {v0, p1, v1}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletView;->createNewWalletWithPassword(Lcom/iMe/storage/domain/model/crypto/Wallet;Ljava/lang/String;)V
+    move-result-object v1
 
-    goto :goto_0
+    invoke-interface {v0, p1, v1}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletView;->createNewWallet(Lcom/iMe/storage/domain/model/crypto/Wallet;Ljava/lang/String;)V
+
+    goto :goto_1
 
     .line 117
-    :cond_0
+    :cond_1
+    iget-object v0, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter$onCreateNewEmptyWalletClick$$inlined$subscribeWithErrorHandle$default$1;->this$0:Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter;
+
+    invoke-virtual {v0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletView;
+
+    check-cast p1, Lcom/iMe/storage/domain/model/Result$Success;
+
+    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/Result$Success;->getData()Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Lcom/iMe/storage/domain/model/crypto/Wallet;
+
+    iget-object v1, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter$onCreateNewEmptyWalletClick$$inlined$subscribeWithErrorHandle$default$1;->$password$inlined:Ljava/lang/String;
+
+    invoke-interface {v0, p1, v1}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletView;->addNewWallet(Lcom/iMe/storage/domain/model/crypto/Wallet;Ljava/lang/String;)V
+
+    goto :goto_1
+
+    .line 121
+    :cond_2
     instance-of v0, p1, Lcom/iMe/storage/domain/model/Result$Error;
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_3
 
     iget-object v0, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter$onCreateNewEmptyWalletClick$$inlined$subscribeWithErrorHandle$default$1;->this$0:Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter;
 
@@ -141,7 +184,7 @@
 
     invoke-interface {v0, p1, v1}, Lcom/iMe/ui/base/mvp/base/BaseView;->showErrorToast(Lcom/iMe/storage/domain/model/Result$Error;Lcom/iMe/storage/domain/utils/system/ResourceManager;)V
 
-    :cond_1
-    :goto_0
+    :cond_3
+    :goto_1
     return-void
 .end method

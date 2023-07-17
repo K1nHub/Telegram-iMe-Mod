@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/ContactsActivity;Landroid/content/Context;)V
     .locals 0
 
-    .line 811
+    .line 810
     iput-object p1, p0, Lorg/telegram/ui/ContactsActivity$6;->this$0:Lorg/telegram/ui/ContactsActivity;
 
     invoke-direct {p0, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
@@ -35,10 +35,10 @@
 .method protected onLayout(ZIIII)V
     .locals 0
 
-    .line 814
+    .line 813
     invoke-super/range {p0 .. p5}, Landroid/widget/FrameLayout;->onLayout(ZIIII)V
 
-    .line 815
+    .line 814
     iget-object p1, p0, Lorg/telegram/ui/ContactsActivity$6;->this$0:Lorg/telegram/ui/ContactsActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ContactsActivity;->access$1200(Lorg/telegram/ui/ContactsActivity;)Lorg/telegram/ui/Components/RecyclerListView;
@@ -57,7 +57,7 @@
 
     if-ne p1, p2, :cond_0
 
-    .line 816
+    .line 815
     iget-object p1, p0, Lorg/telegram/ui/ContactsActivity$6;->this$0:Lorg/telegram/ui/ContactsActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ContactsActivity;->access$1500(Lorg/telegram/ui/ContactsActivity;)Lorg/telegram/ui/Components/StickerEmptyView;
@@ -70,7 +70,7 @@
 
     if-nez p1, :cond_1
 
-    .line 817
+    .line 816
     iget-object p1, p0, Lorg/telegram/ui/ContactsActivity$6;->this$0:Lorg/telegram/ui/ContactsActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ContactsActivity;->access$1500(Lorg/telegram/ui/ContactsActivity;)Lorg/telegram/ui/Components/StickerEmptyView;
@@ -89,7 +89,7 @@
 
     goto :goto_0
 
-    .line 820
+    .line 819
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/ContactsActivity$6;->this$0:Lorg/telegram/ui/ContactsActivity;
 

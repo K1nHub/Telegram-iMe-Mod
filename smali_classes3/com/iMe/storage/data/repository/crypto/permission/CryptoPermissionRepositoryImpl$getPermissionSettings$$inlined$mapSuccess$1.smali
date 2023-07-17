@@ -21,17 +21,17 @@
         "Lkotlin/jvm/internal/Lambda;",
         "Lkotlin/jvm/functions/Function1<",
         "Lcom/iMe/storage/data/network/model/response/base/ApiBaseResponse<",
-        "Lcom/iMe/storage/data/network/model/response/crypto/wallet/CryptoWalletInfoResponse;",
+        "Lcom/iMe/storage/data/network/model/response/crypto/wallet/CryptoWalletsInfoResponse;",
         ">;",
         "Lcom/iMe/storage/domain/model/Result<",
         "+",
-        "Lcom/iMe/storage/domain/model/crypto/CryptoWalletInfo;",
+        "Lcom/iMe/storage/domain/model/crypto/CryptoWalletsInfo;",
         ">;>;"
     }
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nFirebaseExt.kt\nKotlin\n*S Kotlin\n*F\n+ 1 FirebaseExt.kt\ncom/iMe/storage/data/utils/extentions/FirebaseExtKt$mapSuccess$1\n+ 2 CryptoPermissionRepositoryImpl.kt\ncom/iMe/storage/data/repository/crypto/permission/CryptoPermissionRepositoryImpl\n+ 3 ResultExt.kt\ncom/iMe/storage/domain/utils/extentions/ResultExtKt\n*L\n1#1,86:1\n70#2,3:87\n9#3:90\n7#3:91\n*S KotlinDebug\n*F\n+ 1 FirebaseExt.kt\ncom/iMe/storage/data/utils/extentions/FirebaseExtKt$mapSuccess$1\n*L\n71#1:90\n72#1:91\n*E\n"
+    value = "SMAP\nFirebaseExt.kt\nKotlin\n*S Kotlin\n*F\n+ 1 FirebaseExt.kt\ncom/iMe/storage/data/utils/extentions/FirebaseExtKt$mapSuccess$1\n+ 2 CryptoPermissionRepositoryImpl.kt\ncom/iMe/storage/data/repository/crypto/permission/CryptoPermissionRepositoryImpl\n+ 3 ResultExt.kt\ncom/iMe/storage/domain/utils/extentions/ResultExtKt\n*L\n1#1,86:1\n69#2,3:87\n9#3:90\n7#3:91\n*S KotlinDebug\n*F\n+ 1 FirebaseExt.kt\ncom/iMe/storage/data/utils/extentions/FirebaseExtKt$mapSuccess$1\n*L\n71#1:90\n72#1:91\n*E\n"
 .end annotation
 
 
@@ -64,10 +64,10 @@
         value = {
             "(",
             "Lcom/iMe/storage/data/network/model/response/base/ApiBaseResponse<",
-            "Lcom/iMe/storage/data/network/model/response/crypto/wallet/CryptoWalletInfoResponse;",
+            "Lcom/iMe/storage/data/network/model/response/crypto/wallet/CryptoWalletsInfoResponse;",
             ">;)",
             "Lcom/iMe/storage/domain/model/Result<",
-            "Lcom/iMe/storage/domain/model/crypto/CryptoWalletInfo;",
+            "Lcom/iMe/storage/domain/model/crypto/CryptoWalletsInfo;",
             ">;"
         }
     .end annotation
@@ -88,9 +88,9 @@
 
     move-result-object p1
 
-    check-cast p1, Lcom/iMe/storage/data/network/model/response/crypto/wallet/CryptoWalletInfoResponse;
+    check-cast p1, Lcom/iMe/storage/data/network/model/response/crypto/wallet/CryptoWalletsInfoResponse;
 
-    invoke-static {p1}, Lcom/iMe/storage/data/mapper/crypto/WalletInformationMappingKt;->mapToDomain(Lcom/iMe/storage/data/network/model/response/crypto/wallet/CryptoWalletInfoResponse;)Lcom/iMe/storage/domain/model/crypto/CryptoWalletInfo;
+    invoke-static {p1}, Lcom/iMe/storage/data/mapper/crypto/WalletInformationMappingKt;->mapToDomain(Lcom/iMe/storage/data/network/model/response/crypto/wallet/CryptoWalletsInfoResponse;)Lcom/iMe/storage/domain/model/crypto/CryptoWalletsInfo;
 
     move-result-object p1
 
@@ -107,7 +107,7 @@
 
     move-result-wide v2
 
-    invoke-direct {v1, v2, v3, p1}, Lcom/iMe/storage/data/locale/prefs/model/CryptoWalletInformationMetadata;-><init>(JLcom/iMe/storage/domain/model/crypto/CryptoWalletInfo;)V
+    invoke-direct {v1, v2, v3, p1}, Lcom/iMe/storage/data/locale/prefs/model/CryptoWalletInformationMetadata;-><init>(JLcom/iMe/storage/domain/model/crypto/CryptoWalletsInfo;)V
 
     invoke-interface {v0, v1}, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;->setWalletInfoMetadata(Lcom/iMe/storage/data/locale/prefs/model/CryptoWalletInformationMetadata;)V
 

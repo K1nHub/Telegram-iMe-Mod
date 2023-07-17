@@ -17,8 +17,8 @@ import kotlin.LazyKt__LazyJVMKt;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.p044ui.Components.LayoutHelper;
-import org.telegram.p044ui.Components.RecyclerListView;
+import org.telegram.p043ui.Components.LayoutHelper;
+import org.telegram.p043ui.Components.RecyclerListView;
 /* compiled from: DialogTypeTopicsBar.kt */
 /* renamed from: com.iMe.fork.ui.view.DialogTypeTopicsBar */
 /* loaded from: classes3.dex */
@@ -103,17 +103,17 @@ public final class DialogTypeTopicsBar extends FrameLayout {
 
     private final void setupListeners() {
         getListView().setOnItemClickListener(new RecyclerListView.OnItemClickListenerExtended() { // from class: com.iMe.fork.ui.view.DialogTypeTopicsBar$$ExternalSyntheticLambda0
-            @Override // org.telegram.p044ui.Components.RecyclerListView.OnItemClickListenerExtended
+            @Override // org.telegram.p043ui.Components.RecyclerListView.OnItemClickListenerExtended
             public /* synthetic */ boolean hasDoubleTap(View view, int i) {
                 return RecyclerListView.OnItemClickListenerExtended.CC.$default$hasDoubleTap(this, view, i);
             }
 
-            @Override // org.telegram.p044ui.Components.RecyclerListView.OnItemClickListenerExtended
+            @Override // org.telegram.p043ui.Components.RecyclerListView.OnItemClickListenerExtended
             public /* synthetic */ void onDoubleTap(View view, int i, float f, float f2) {
                 RecyclerListView.OnItemClickListenerExtended.CC.$default$onDoubleTap(this, view, i, f, f2);
             }
 
-            @Override // org.telegram.p044ui.Components.RecyclerListView.OnItemClickListenerExtended
+            @Override // org.telegram.p043ui.Components.RecyclerListView.OnItemClickListenerExtended
             public final void onItemClick(View view, int i, float f, float f2) {
                 DialogTypeTopicsBar.setupListeners$lambda$1(DialogTypeTopicsBar.this, view, i, f, f2);
             }
@@ -137,7 +137,7 @@ public final class DialogTypeTopicsBar extends FrameLayout {
     /* renamed from: com.iMe.fork.ui.view.DialogTypeTopicsBar$ListAdapter */
     /* loaded from: classes3.dex */
     public final class ListAdapter extends RecyclerListView.SelectionAdapter {
-        @Override // org.telegram.p044ui.Components.RecyclerListView.SelectionAdapter
+        @Override // org.telegram.p043ui.Components.RecyclerListView.SelectionAdapter
         public boolean isEnabled(RecyclerView.ViewHolder holder) {
             Intrinsics.checkNotNullParameter(holder, "holder");
             return false;

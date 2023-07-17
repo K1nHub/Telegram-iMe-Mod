@@ -45,7 +45,7 @@
 
     iget-object v4, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda159;->f$3:Ljava/lang/Runnable;
 
-    invoke-static {v0, v1, v2, v3, v4}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$45cYoz4HHCF9s9bvi2aTi2RZ5fE(Lorg/telegram/messenger/MessagesController;Lorg/telegram/tgnet/TLObject;JLjava/lang/Runnable;)V
+    invoke-static {v0, v1, v2, v3, v4}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$PucRjiHaVjfD3EKu4nO-niLC2q4(Lorg/telegram/messenger/MessagesController;Lorg/telegram/tgnet/TLObject;JLjava/lang/Runnable;)V
 
     return-void
 .end method

@@ -3,15 +3,15 @@ package androidx.core.view;
 import android.view.View;
 import android.view.ViewGroup;
 import java.util.Iterator;
-import p034j$.util.Iterator;
-import p034j$.util.function.Consumer;
+import p033j$.util.Iterator;
+import p033j$.util.function.Consumer;
 /* compiled from: ViewGroup.kt */
 /* loaded from: classes.dex */
-public final class ViewGroupKt$iterator$1 implements Iterator<View>, p034j$.util.Iterator, p034j$.util.Iterator {
+public final class ViewGroupKt$iterator$1 implements Iterator<View>, p033j$.util.Iterator, p033j$.util.Iterator {
     final /* synthetic */ ViewGroup $this_iterator;
     private int index;
 
-    @Override // p034j$.util.Iterator
+    @Override // p033j$.util.Iterator
     public /* synthetic */ void forEachRemaining(Consumer consumer) {
         Iterator.CC.$default$forEachRemaining(this, consumer);
     }
@@ -21,12 +21,12 @@ public final class ViewGroupKt$iterator$1 implements Iterator<View>, p034j$.util
         this.$this_iterator = viewGroup;
     }
 
-    @Override // java.util.Iterator, p034j$.util.Iterator
+    @Override // java.util.Iterator, p033j$.util.Iterator
     public boolean hasNext() {
         return this.index < this.$this_iterator.getChildCount();
     }
 
-    @Override // java.util.Iterator, p034j$.util.Iterator
+    @Override // java.util.Iterator, p033j$.util.Iterator
     public View next() {
         ViewGroup viewGroup = this.$this_iterator;
         int i = this.index;
@@ -38,7 +38,7 @@ public final class ViewGroupKt$iterator$1 implements Iterator<View>, p034j$.util
         throw new IndexOutOfBoundsException();
     }
 
-    @Override // java.util.Iterator, p034j$.util.Iterator
+    @Override // java.util.Iterator, p033j$.util.Iterator
     public void remove() {
         ViewGroup viewGroup = this.$this_iterator;
         int i = this.index - 1;

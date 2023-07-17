@@ -1,6 +1,6 @@
 package com.google.android.exoplayer2.extractor.p015ts;
 
-import com.google.android.exoplayer2.C0475C;
+import com.google.android.exoplayer2.C0480C;
 import com.google.android.exoplayer2.Format;
 import com.google.android.exoplayer2.extractor.ExtractorOutput;
 import com.google.android.exoplayer2.extractor.TrackOutput;
@@ -57,7 +57,7 @@ public final class H263Reader implements ElementaryStreamReader {
         this.userDataReader = userDataReader;
         this.prefixFlags = new boolean[4];
         this.csdBuffer = new CsdBuffer(128);
-        this.pesTimeUs = C0475C.TIME_UNSET;
+        this.pesTimeUs = C0480C.TIME_UNSET;
         if (userDataReader != null) {
             this.userData = new NalUnitTargetBuffer(START_CODE_VALUE_USER_DATA, 128);
             this.userDataParsable = new ParsableByteArray();
@@ -80,7 +80,7 @@ public final class H263Reader implements ElementaryStreamReader {
             nalUnitTargetBuffer.reset();
         }
         this.totalBytesWritten = 0L;
-        this.pesTimeUs = C0475C.TIME_UNSET;
+        this.pesTimeUs = C0480C.TIME_UNSET;
     }
 
     @Override // com.google.android.exoplayer2.extractor.p015ts.ElementaryStreamReader
@@ -98,7 +98,7 @@ public final class H263Reader implements ElementaryStreamReader {
 
     @Override // com.google.android.exoplayer2.extractor.p015ts.ElementaryStreamReader
     public void packetStarted(long j, int i) {
-        if (j != C0475C.TIME_UNSET) {
+        if (j != C0480C.TIME_UNSET) {
             this.pesTimeUs = j;
         }
     }
@@ -377,7 +377,7 @@ public final class H263Reader implements ElementaryStreamReader {
         public void onDataEnd(long j, int i, boolean z) {
             if (this.startCodeValue == H263Reader.START_CODE_VALUE_VOP && z && this.readingSample) {
                 long j2 = this.sampleTimeUs;
-                if (j2 != C0475C.TIME_UNSET) {
+                if (j2 != C0480C.TIME_UNSET) {
                     this.output.sampleMetadata(j2, this.sampleIsKeyframe ? 1 : 0, (int) (j - this.samplePosition), i, null);
                 }
             }

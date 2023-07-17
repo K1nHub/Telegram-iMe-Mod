@@ -6,7 +6,7 @@ import android.view.View;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.p044ui.ActionBar.Theme;
+import org.telegram.p043ui.ActionBar.Theme;
 /* compiled from: DividerView.kt */
 /* renamed from: com.iMe.ui.custom.DividerView */
 /* loaded from: classes3.dex */

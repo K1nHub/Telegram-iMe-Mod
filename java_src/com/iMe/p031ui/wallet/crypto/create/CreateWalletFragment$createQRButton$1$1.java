@@ -1,13 +1,14 @@
 package com.iMe.p031ui.wallet.crypto.create;
 
 import android.view.View;
+import com.iMe.storage.domain.utils.system.ResourceManager;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Lambda;
-import org.telegram.messenger.C3295R;
+import org.telegram.messenger.C3417R;
 import org.telegram.messenger.LocaleController;
-import org.telegram.p044ui.Components.QRCodeBottomSheet;
+import org.telegram.p043ui.Components.QRCodeBottomSheet;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: CreateWalletFragment.kt */
 /* renamed from: com.iMe.ui.wallet.crypto.create.CreateWalletFragment$createQRButton$1$1 */
@@ -31,10 +32,12 @@ public final class CreateWalletFragment$createQRButton$1$1 extends Lambda implem
     /* renamed from: invoke  reason: avoid collision after fix types in other method */
     public final void invoke2(View it) {
         QRCodeBottomSheet qrCodeBottomSheet;
+        ResourceManager resourceManager;
         Intrinsics.checkNotNullParameter(it, "it");
         CreateWalletFragment createWalletFragment = this.this$0;
         qrCodeBottomSheet = createWalletFragment.getQrCodeBottomSheet();
-        qrCodeBottomSheet.setupWalletTypeBackup(LocaleController.getInternalString(C3295R.string.wallet_backup_secret_words_qr_title), LocaleController.getString("Close", C3295R.string.Close));
+        resourceManager = this.this$0.getResourceManager();
+        qrCodeBottomSheet.setupWalletTypeBackup(resourceManager.getString(C3417R.string.wallet_backup_secret_words_qr_title), LocaleController.getString("Close", C3417R.string.Close));
         createWalletFragment.showDialog(qrCodeBottomSheet);
     }
 }

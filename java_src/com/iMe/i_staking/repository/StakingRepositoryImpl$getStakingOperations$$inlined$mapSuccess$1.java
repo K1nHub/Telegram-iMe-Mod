@@ -23,9 +23,9 @@ public final class StakingRepositoryImpl$getStakingOperations$$inlined$mapSucces
     @Override // kotlin.jvm.functions.Function1
     public final Result<StakingOperationsPaged> invoke(ApiBaseResponse<StakingOperationsPagedResponse> response) {
         Intrinsics.checkNotNullParameter(response, "response");
-        if (!response.isSuccess()) {
-            return Result.Companion.error$default(Result.Companion, this.$errorHandler.handleError((ApiBaseResponse<?>) response), null, 2, null);
+        if (response.isSuccess()) {
+            return Result.Companion.success(StakingOperationsMapperKt.mapToDomain(response.getPayload()));
         }
-        return Result.Companion.success(StakingOperationsMapperKt.mapToDomain(response.getPayload()));
+        return Result.Companion.error$default(Result.Companion, this.$errorHandler.handleError((ApiBaseResponse<?>) response), null, 2, null);
     }
 }

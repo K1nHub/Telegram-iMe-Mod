@@ -7,8 +7,8 @@ import androidx.appcompat.widget.AppCompatTextView;
 import com.iMe.common.IdFabric$Menu;
 import com.iMe.fork.utils.Callbacks$Callback;
 import com.iMe.navigation.wallet.coordinator.WalletFlowCoordinator;
-import com.iMe.p031ui.base.WalletAuthFragment;
 import com.iMe.p031ui.base.mvp.MvpAlertDialog;
+import com.iMe.p031ui.base.wallet_auth.WalletAuthBaseFragment;
 import com.iMe.p031ui.custom.ActionButton;
 import com.iMe.p031ui.wallet.common.WalletRootFragment;
 import com.iMe.storage.domain.model.crypto.airdrop.AirdropStep;
@@ -26,18 +26,18 @@ import kotlin.jvm.internal.PropertyReference1Impl;
 import kotlin.jvm.internal.Reflection;
 import kotlin.reflect.KProperty;
 import moxy.ktx.MoxyKtxDelegate;
-import org.telegram.messenger.C3295R;
+import org.telegram.messenger.C3417R;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.browser.Browser;
 import org.telegram.messenger.databinding.ForkAirdropContentAlertBinding;
-import org.telegram.p044ui.ActionBar.ActionBarMenuItem;
-import org.telegram.p044ui.ActionBar.AlertDialog;
-import org.telegram.p044ui.ActionBar.BaseFragment;
-import org.telegram.p044ui.ActionBar.INavigationLayout;
-import org.telegram.p044ui.ActionBar.Theme;
-import org.telegram.p044ui.Cells.CheckBoxCell;
-import org.telegram.p044ui.Components.RLottieImageView;
+import org.telegram.p043ui.ActionBar.ActionBarMenuItem;
+import org.telegram.p043ui.ActionBar.AlertDialog;
+import org.telegram.p043ui.ActionBar.BaseFragment;
+import org.telegram.p043ui.ActionBar.INavigationLayout;
+import org.telegram.p043ui.ActionBar.Theme;
+import org.telegram.p043ui.Cells.CheckBoxCell;
+import org.telegram.p043ui.Components.RLottieImageView;
 /* compiled from: WalletAirdropDialog.kt */
 /* renamed from: com.iMe.ui.wallet.airdrop.dialog.WalletAirdropDialog */
 /* loaded from: classes3.dex */
@@ -83,7 +83,7 @@ public final class WalletAirdropDialog extends MvpAlertDialog implements WalletA
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
-    public WalletAirdropDialog(org.telegram.p044ui.ActionBar.BaseFragment r5) {
+    public WalletAirdropDialog(org.telegram.p043ui.ActionBar.BaseFragment r5) {
         /*
             r4 = this;
             java.lang.String r0 = "fragment"
@@ -111,7 +111,7 @@ public final class WalletAirdropDialog extends MvpAlertDialog implements WalletA
             java.lang.String r2 = r2.toString()
             r0.<init>(r1, r2, r5)
             r4.presenter$delegate = r0
-            org.koin.mp.KoinPlatformTools r5 = org.koin.p043mp.KoinPlatformTools.INSTANCE
+            org.koin.mp.KoinPlatformTools r5 = org.koin.p042mp.KoinPlatformTools.INSTANCE
             kotlin.LazyThreadSafetyMode r0 = r5.defaultLazyMode()
             com.iMe.ui.wallet.airdrop.dialog.WalletAirdropDialog$special$$inlined$inject$default$1 r1 = new com.iMe.ui.wallet.airdrop.dialog.WalletAirdropDialog$special$$inlined$inject$default$1
             r2 = 0
@@ -179,26 +179,26 @@ public final class WalletAirdropDialog extends MvpAlertDialog implements WalletA
         int i2 = WhenMappings.$EnumSwitchMapping$0[step.ordinal()];
         if (i2 == 1) {
             ActionButton configureDialogState$lambda$5$lambda$0 = binding.buttonAction;
-            configureDialogState$lambda$5$lambda$0.setText(getResourceManager().getString(C3295R.string.airdrop_dialog_action_start));
+            configureDialogState$lambda$5$lambda$0.setText(getResourceManager().getString(C3417R.string.airdrop_dialog_action_start));
             Intrinsics.checkNotNullExpressionValue(configureDialogState$lambda$5$lambda$0, "configureDialogState$lambda$5$lambda$0");
             ViewExtKt.safeThrottledClick$default(configureDialogState$lambda$5$lambda$0, 0L, new WalletAirdropDialog$configureDialogState$1$1$1(this), 1, null);
             AppCompatTextView configureDialogState$lambda$5$lambda$1 = binding.textAdditionalAction;
-            configureDialogState$lambda$5$lambda$1.setText(getResourceManager().getString(C3295R.string.airdrop_dialog_action_reject));
+            configureDialogState$lambda$5$lambda$1.setText(getResourceManager().getString(C3417R.string.airdrop_dialog_action_reject));
             Intrinsics.checkNotNullExpressionValue(configureDialogState$lambda$5$lambda$1, "configureDialogState$lambda$5$lambda$1");
             ViewExtKt.safeThrottledClick$default(configureDialogState$lambda$5$lambda$1, 0L, new WalletAirdropDialog$configureDialogState$1$2$1(this), 1, null);
         } else if (i2 == 2) {
             ActionButton configureDialogState$lambda$5$lambda$2 = binding.buttonAction;
-            configureDialogState$lambda$5$lambda$2.setText(getResourceManager().getString(C3295R.string.wallet_dashboard_create_eth_wallet));
+            configureDialogState$lambda$5$lambda$2.setText(getResourceManager().getString(C3417R.string.wallet_dashboard_create_eth_wallet));
             Intrinsics.checkNotNullExpressionValue(configureDialogState$lambda$5$lambda$2, "configureDialogState$lambda$5$lambda$2");
             ViewExtKt.safeThrottledClick$default(configureDialogState$lambda$5$lambda$2, 0L, new WalletAirdropDialog$configureDialogState$1$3$1(this), 1, null);
             AppCompatTextView configureDialogState$lambda$5$lambda$3 = binding.textAdditionalAction;
-            configureDialogState$lambda$5$lambda$3.setText(getResourceManager().getString(C3295R.string.wallet_dashboard_import_eth_wallet));
+            configureDialogState$lambda$5$lambda$3.setText(getResourceManager().getString(C3417R.string.wallet_dashboard_import_eth_wallet));
             Intrinsics.checkNotNullExpressionValue(configureDialogState$lambda$5$lambda$3, "configureDialogState$lambda$5$lambda$3");
             ViewExtKt.safeThrottledClick$default(configureDialogState$lambda$5$lambda$3, 0L, new WalletAirdropDialog$configureDialogState$1$4$1(this), 1, null);
         } else if (i2 != 3) {
         } else {
             ActionButton configureDialogState$lambda$5$lambda$4 = binding.buttonAction;
-            configureDialogState$lambda$5$lambda$4.setText(getResourceManager().getString(C3295R.string.airdrop_dialog_action_take));
+            configureDialogState$lambda$5$lambda$4.setText(getResourceManager().getString(C3417R.string.airdrop_dialog_action_take));
             Intrinsics.checkNotNullExpressionValue(configureDialogState$lambda$5$lambda$4, "configureDialogState$lambda$5$lambda$4");
             ViewExtKt.safeThrottledClick$default(configureDialogState$lambda$5$lambda$4, 0L, new WalletAirdropDialog$configureDialogState$1$5$1(this), 1, null);
             AppCompatTextView textAdditionalAction = binding.textAdditionalAction;
@@ -231,7 +231,7 @@ public final class WalletAirdropDialog extends MvpAlertDialog implements WalletA
     }
 
     private final void checkAndOpenWalletFragment() {
-        if (this.fragment.getParentLayout().getLastFragment() instanceof WalletAuthFragment) {
+        if (this.fragment.getParentLayout().getLastFragment() instanceof WalletAuthBaseFragment) {
             return;
         }
         WalletFlowCoordinator walletFlowCoordinator = getWalletFlowCoordinator();
@@ -254,9 +254,9 @@ public final class WalletAirdropDialog extends MvpAlertDialog implements WalletA
     private final List<CheckBoxCell> setupCheckBoxViews() {
         List<CheckBoxCell> listOf;
         ForkAirdropContentAlertBinding binding = getBinding();
-        binding.checkboxAuth.setText(getResourceManager().getString(C3295R.string.airdrop_dialog_auth_description), "", true, false);
-        binding.checkboxCreateWallet.setText(getResourceManager().getString(C3295R.string.airdrop_dialog_create_wallet_description), "", true, false);
-        binding.checkboxTakeBonus.setText(getResourceManager().getString(C3295R.string.airdrop_dialog_claim_bonus_description), "", true, false);
+        binding.checkboxAuth.setText(getResourceManager().getString(C3417R.string.airdrop_dialog_auth_description), "", true, false);
+        binding.checkboxCreateWallet.setText(getResourceManager().getString(C3417R.string.airdrop_dialog_create_wallet_description), "", true, false);
+        binding.checkboxTakeBonus.setText(getResourceManager().getString(C3417R.string.airdrop_dialog_claim_bonus_description), "", true, false);
         listOf = CollectionsKt__CollectionsKt.listOf((Object[]) new CheckBoxCell[]{binding.checkboxAuth, binding.checkboxTakeBonus, binding.checkboxCreateWallet});
         for (CheckBoxCell checkBoxCell : listOf) {
             checkBoxCell.getTextView().setTextSize(1, 14.0f);
@@ -271,7 +271,7 @@ public final class WalletAirdropDialog extends MvpAlertDialog implements WalletA
     private final void setupImageView() {
         RLottieImageView rLottieImageView = getBinding().imageAlertPicture;
         rLottieImageView.setAutoRepeat(true);
-        rLottieImageView.setAnimation(C3295R.raw.fork_lime_airdrop, ImageReceiver.DEFAULT_CROSSFADE_DURATION, ImageReceiver.DEFAULT_CROSSFADE_DURATION);
+        rLottieImageView.setAnimation(C3417R.raw.fork_lime_airdrop, ImageReceiver.DEFAULT_CROSSFADE_DURATION, ImageReceiver.DEFAULT_CROSSFADE_DURATION);
         rLottieImageView.playAnimation();
     }
 
@@ -281,7 +281,7 @@ public final class WalletAirdropDialog extends MvpAlertDialog implements WalletA
 
     private final void setupTitleView() {
         AppCompatTextView setupTitleView$lambda$12 = getBinding().textAlertTitle;
-        setupTitleView$lambda$12.setText(getResourceManager().getString(C3295R.string.airdrop_dialog_title));
+        setupTitleView$lambda$12.setText(getResourceManager().getString(C3417R.string.airdrop_dialog_title));
         setupTitleView$lambda$12.setTextColor(Theme.getColor(Theme.key_chat_messagePanelText));
         Intrinsics.checkNotNullExpressionValue(setupTitleView$lambda$12, "setupTitleView$lambda$12");
         ViewExtKt.withMediumTypeface(setupTitleView$lambda$12);
@@ -289,14 +289,14 @@ public final class WalletAirdropDialog extends MvpAlertDialog implements WalletA
 
     private final void setupDescriptionView(int i) {
         AppCompatTextView appCompatTextView = getBinding().textAlertDescription;
-        appCompatTextView.setText(getResourceManager().getString(C3295R.string.airdrop_dialog_description, String.valueOf(i)));
+        appCompatTextView.setText(getResourceManager().getString(C3417R.string.airdrop_dialog_description, String.valueOf(i)));
         appCompatTextView.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteGrayText2));
     }
 
     private final void setupMenuItem(AirdropStep airdropStep) {
         final ActionBarMenuItem actionBarMenuItem = getBinding().itemMenu;
         actionBarMenuItem.setSubMenuOpenSide(2);
-        actionBarMenuItem.setIcon(C3295R.C3297drawable.ic_ab_other);
+        actionBarMenuItem.setIcon(C3417R.C3419drawable.ic_ab_other);
         actionBarMenuItem.setBackground(Theme.createSelectorDrawable(Theme.getColor(Theme.key_player_actionBarSelector)));
         actionBarMenuItem.setOnClickListener(new View.OnClickListener() { // from class: com.iMe.ui.wallet.airdrop.dialog.WalletAirdropDialog$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
@@ -304,13 +304,13 @@ public final class WalletAirdropDialog extends MvpAlertDialog implements WalletA
                 WalletAirdropDialog.setupMenuItem$lambda$16$lambda$14(ActionBarMenuItem.this, view);
             }
         });
-        actionBarMenuItem.setContentDescription(LocaleController.getString("AccDescrMoreOptions", C3295R.string.AccDescrMoreOptions));
-        actionBarMenuItem.addSubItem(IdFabric$Menu.TOKEN_SITE, C3295R.C3297drawable.fork_ic_settings_help, getResourceManager().getString(C3295R.string.airdrop_dialog_lime_beginner_menu_title));
+        actionBarMenuItem.setContentDescription(LocaleController.getString("AccDescrMoreOptions", C3417R.string.AccDescrMoreOptions));
+        actionBarMenuItem.addSubItem(IdFabric$Menu.TOKEN_SITE, C3417R.C3419drawable.fork_ic_settings_help, getResourceManager().getString(C3417R.string.airdrop_dialog_lime_beginner_menu_title));
         if (airdropStep != AirdropStep.INTRO) {
-            actionBarMenuItem.addSubItem(IdFabric$Menu.REJECT, C3295R.C3297drawable.ic_close_white, getResourceManager().getString(C3295R.string.airdrop_dialog_action_reject));
+            actionBarMenuItem.addSubItem(IdFabric$Menu.REJECT, C3417R.C3419drawable.ic_close_white, getResourceManager().getString(C3417R.string.airdrop_dialog_action_reject));
         }
         actionBarMenuItem.setDelegate(new ActionBarMenuItem.ActionBarMenuItemDelegate() { // from class: com.iMe.ui.wallet.airdrop.dialog.WalletAirdropDialog$$ExternalSyntheticLambda2
-            @Override // org.telegram.p044ui.ActionBar.ActionBarMenuItem.ActionBarMenuItemDelegate
+            @Override // org.telegram.p043ui.ActionBar.ActionBarMenuItem.ActionBarMenuItemDelegate
             public final void onItemClick(int i) {
                 WalletAirdropDialog.setupMenuItem$lambda$16$lambda$15(ActionBarMenuItem.this, this, i);
             }
@@ -328,7 +328,7 @@ public final class WalletAirdropDialog extends MvpAlertDialog implements WalletA
         Intrinsics.checkNotNullParameter(this_with, "$this_with");
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         if (i == IdFabric$Menu.TOKEN_SITE) {
-            Browser.openUrl(this_with.getContext(), this$0.getResourceManager().getString(C3295R.string.airdrop_dialog_lime_beginner_site));
+            Browser.openUrl(this_with.getContext(), this$0.getResourceManager().getString(C3417R.string.airdrop_dialog_lime_beginner_site));
         } else if (i == IdFabric$Menu.REJECT) {
             this$0.getPresenter().rejectAirdrop();
         }

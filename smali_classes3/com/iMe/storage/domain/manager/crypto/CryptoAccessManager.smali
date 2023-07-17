@@ -47,6 +47,17 @@
 .method public abstract getLastLoggedInGuid()Ljava/lang/String;
 .end method
 
+.method public abstract getLoggedIndWalletsBlockchains()Ljava/util/List;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/List<",
+            "Lcom/iMe/storage/domain/model/crypto/BlockchainType;",
+            ">;"
+        }
+    .end annotation
+.end method
+
 .method public abstract getTRONWallet()Lcom/iMe/storage/domain/model/crypto/Wallet$TRON;
 .end method
 
@@ -83,9 +94,6 @@
 .end method
 
 .method public abstract logoutAllWallets()V
-.end method
-
-.method public abstract onUserChanged()V
 .end method
 
 .method public abstract setWallet(Lcom/iMe/storage/domain/model/crypto/Wallet;Ljava/lang/String;)V

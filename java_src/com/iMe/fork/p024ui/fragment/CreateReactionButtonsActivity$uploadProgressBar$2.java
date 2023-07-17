@@ -2,7 +2,7 @@ package com.iMe.fork.p024ui.fragment;
 
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Lambda;
-import org.telegram.p044ui.Components.RadialProgress;
+import org.telegram.p043ui.Components.RadialProgress;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: CreateReactionButtonsActivity.kt */
 /* renamed from: com.iMe.fork.ui.fragment.CreateReactionButtonsActivity$uploadProgressBar$2 */

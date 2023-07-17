@@ -24,7 +24,7 @@
     .line 99
     sget-object v0, Ljava/util/concurrent/TimeUnit;->MINUTES:Ljava/util/concurrent/TimeUnit;
 
-    const-string v1, "rx2.scheduler.drift-tolerance"
+    const-string/jumbo v1, "rx2.scheduler.drift-tolerance"
 
     const-wide/16 v2, 0xf
 

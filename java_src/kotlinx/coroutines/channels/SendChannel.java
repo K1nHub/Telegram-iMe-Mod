@@ -15,7 +15,7 @@ public interface SendChannel<E> {
     Object send(E e, Continuation<? super Unit> continuation);
 
     /* renamed from: trySend-JP2dKIU */
-    Object mo1589trySendJP2dKIU(E e);
+    Object mo1614trySendJP2dKIU(E e);
 
     /* compiled from: Channel.kt */
     /* loaded from: classes4.dex */

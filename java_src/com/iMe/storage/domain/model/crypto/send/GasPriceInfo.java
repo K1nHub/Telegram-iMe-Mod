@@ -1,5 +1,6 @@
 package com.iMe.storage.domain.model.crypto.send;
 
+import com.iMe.storage.domain.model.wallet.token.FiatValue;
 import java.math.BigInteger;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: GasPriceInfo.kt */
@@ -7,11 +8,11 @@ import kotlin.jvm.internal.Intrinsics;
 public final class GasPriceInfo {
     private final int duration;
     private final double fee;
-    private final float feeInDollars;
+    private final FiatValue feeInFiat;
     private final BigInteger limit;
     private final BigInteger price;
 
-    public static /* synthetic */ GasPriceInfo copy$default(GasPriceInfo gasPriceInfo, BigInteger bigInteger, BigInteger bigInteger2, int i, double d, float f, int i2, Object obj) {
+    public static /* synthetic */ GasPriceInfo copy$default(GasPriceInfo gasPriceInfo, BigInteger bigInteger, BigInteger bigInteger2, int i, double d, FiatValue fiatValue, int i2, Object obj) {
         if ((i2 & 1) != 0) {
             bigInteger = gasPriceInfo.price;
         }
@@ -28,9 +29,9 @@ public final class GasPriceInfo {
         }
         double d2 = d;
         if ((i2 & 16) != 0) {
-            f = gasPriceInfo.feeInDollars;
+            fiatValue = gasPriceInfo.feeInFiat;
         }
-        return gasPriceInfo.copy(bigInteger, bigInteger3, i3, d2, f);
+        return gasPriceInfo.copy(bigInteger, bigInteger3, i3, d2, fiatValue);
     }
 
     public final BigInteger component1() {
@@ -49,14 +50,15 @@ public final class GasPriceInfo {
         return this.fee;
     }
 
-    public final float component5() {
-        return this.feeInDollars;
+    public final FiatValue component5() {
+        return this.feeInFiat;
     }
 
-    public final GasPriceInfo copy(BigInteger price, BigInteger limit, int i, double d, float f) {
+    public final GasPriceInfo copy(BigInteger price, BigInteger limit, int i, double d, FiatValue feeInFiat) {
         Intrinsics.checkNotNullParameter(price, "price");
         Intrinsics.checkNotNullParameter(limit, "limit");
-        return new GasPriceInfo(price, limit, i, d, f);
+        Intrinsics.checkNotNullParameter(feeInFiat, "feeInFiat");
+        return new GasPriceInfo(price, limit, i, d, feeInFiat);
     }
 
     public boolean equals(Object obj) {
@@ -65,27 +67,28 @@ public final class GasPriceInfo {
         }
         if (obj instanceof GasPriceInfo) {
             GasPriceInfo gasPriceInfo = (GasPriceInfo) obj;
-            return Intrinsics.areEqual(this.price, gasPriceInfo.price) && Intrinsics.areEqual(this.limit, gasPriceInfo.limit) && this.duration == gasPriceInfo.duration && Double.compare(this.fee, gasPriceInfo.fee) == 0 && Float.compare(this.feeInDollars, gasPriceInfo.feeInDollars) == 0;
+            return Intrinsics.areEqual(this.price, gasPriceInfo.price) && Intrinsics.areEqual(this.limit, gasPriceInfo.limit) && this.duration == gasPriceInfo.duration && Double.compare(this.fee, gasPriceInfo.fee) == 0 && Intrinsics.areEqual(this.feeInFiat, gasPriceInfo.feeInFiat);
         }
         return false;
     }
 
     public int hashCode() {
-        return (((((((this.price.hashCode() * 31) + this.limit.hashCode()) * 31) + this.duration) * 31) + Double.doubleToLongBits(this.fee)) * 31) + Float.floatToIntBits(this.feeInDollars);
+        return (((((((this.price.hashCode() * 31) + this.limit.hashCode()) * 31) + this.duration) * 31) + Double.doubleToLongBits(this.fee)) * 31) + this.feeInFiat.hashCode();
     }
 
     public String toString() {
-        return "GasPriceInfo(price=" + this.price + ", limit=" + this.limit + ", duration=" + this.duration + ", fee=" + this.fee + ", feeInDollars=" + this.feeInDollars + ')';
+        return "GasPriceInfo(price=" + this.price + ", limit=" + this.limit + ", duration=" + this.duration + ", fee=" + this.fee + ", feeInFiat=" + this.feeInFiat + ')';
     }
 
-    public GasPriceInfo(BigInteger price, BigInteger limit, int i, double d, float f) {
+    public GasPriceInfo(BigInteger price, BigInteger limit, int i, double d, FiatValue feeInFiat) {
         Intrinsics.checkNotNullParameter(price, "price");
         Intrinsics.checkNotNullParameter(limit, "limit");
+        Intrinsics.checkNotNullParameter(feeInFiat, "feeInFiat");
         this.price = price;
         this.limit = limit;
         this.duration = i;
         this.fee = d;
-        this.feeInDollars = f;
+        this.feeInFiat = feeInFiat;
     }
 
     public final BigInteger getPrice() {
@@ -104,7 +107,7 @@ public final class GasPriceInfo {
         return this.fee;
     }
 
-    public final float getFeeInDollars() {
-        return this.feeInDollars;
+    public final FiatValue getFeeInFiat() {
+        return this.feeInFiat;
     }
 }

@@ -167,7 +167,7 @@
 
     const/4 v2, 0x4
 
-    const-string v3, "sender"
+    const-string/jumbo v3, "sender"
 
     invoke-direct {v0, v1, v2, v3}, Lcom/trustwallet/walletconnect/models/binance/WCBinanceTradeOrder$MessageKey;-><init>(Ljava/lang/String;ILjava/lang/String;)V
 

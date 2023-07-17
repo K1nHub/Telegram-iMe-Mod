@@ -101,7 +101,7 @@ public final class DialogFragmentNavigator extends Navigator<Destination> {
             }
             if (navBackStackEntry != null) {
                 NavBackStackEntry navBackStackEntry2 = navBackStackEntry;
-                if (!Intrinsics.areEqual(CollectionsKt.lastOrNull(value2), navBackStackEntry2)) {
+                if (!Intrinsics.areEqual(CollectionsKt.lastOrNull((List<? extends Object>) value2), navBackStackEntry2)) {
                     Log.i("DialogFragmentNavigator", "Dialog " + dialogFragment2 + " was dismissed while it was not the top of the back stack, popping all dialogs above this dismissed dialog");
                 }
                 this$0.popBackStack(navBackStackEntry2, false);

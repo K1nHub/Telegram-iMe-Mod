@@ -18,7 +18,7 @@ public abstract class TLRPC$UserFull extends TLObject {
     public boolean has_scheduled;
 
     /* renamed from: id */
-    public long f1575id;
+    public long f1657id;
     public TLRPC$TL_contacts_link_layer101 link;
     public TLRPC$PeerNotifySettings notify_settings;
     public TLRPC$Photo personal_photo;
@@ -54,7 +54,7 @@ public abstract class TLRPC$UserFull extends TLObject {
                         this.can_pin_message = (readInt32 & 128) != 0;
                         this.has_scheduled = (readInt32 & 4096) != 0;
                         this.video_calls_available = (readInt32 & 8192) != 0;
-                        this.f1575id = abstractSerializedData2.readInt64(z2);
+                        this.f1657id = abstractSerializedData2.readInt64(z2);
                         if ((this.flags & 2) != 0) {
                             this.about = abstractSerializedData2.readString(z2);
                         }
@@ -106,7 +106,7 @@ public abstract class TLRPC$UserFull extends TLObject {
                         int i7 = this.video_calls_available ? i6 | 8192 : i6 & (-8193);
                         this.flags = i7;
                         abstractSerializedData2.writeInt32(i7);
-                        abstractSerializedData2.writeInt64(this.f1575id);
+                        abstractSerializedData2.writeInt64(this.f1657id);
                         if ((this.flags & 2) != 0) {
                             abstractSerializedData2.writeString(this.about);
                         }
@@ -222,7 +222,7 @@ public abstract class TLRPC$UserFull extends TLObject {
                         this.has_scheduled = (readInt32 & 4096) != 0;
                         this.video_calls_available = (readInt32 & 8192) != 0;
                         this.voice_messages_forbidden = (readInt32 & ProgressiveMediaSource.DEFAULT_LOADING_CHECK_INTERVAL_BYTES) != 0;
-                        this.f1575id = abstractSerializedData2.readInt64(z2);
+                        this.f1657id = abstractSerializedData2.readInt64(z2);
                         if ((this.flags & 2) != 0) {
                             this.about = abstractSerializedData2.readString(z2);
                         }
@@ -293,7 +293,7 @@ public abstract class TLRPC$UserFull extends TLObject {
                         int i8 = this.voice_messages_forbidden ? i7 | ProgressiveMediaSource.DEFAULT_LOADING_CHECK_INTERVAL_BYTES : i7 & (-1048577);
                         this.flags = i8;
                         abstractSerializedData2.writeInt32(i8);
-                        abstractSerializedData2.writeInt64(this.f1575id);
+                        abstractSerializedData2.writeInt64(this.f1657id);
                         if ((this.flags & 2) != 0) {
                             abstractSerializedData2.writeString(this.about);
                         }
@@ -352,7 +352,7 @@ public abstract class TLRPC$UserFull extends TLObject {
                         this.can_pin_message = (readInt32 & 128) != 0;
                         this.has_scheduled = (readInt32 & 4096) != 0;
                         this.video_calls_available = (readInt32 & 8192) != 0;
-                        this.f1575id = abstractSerializedData2.readInt64(z2);
+                        this.f1657id = abstractSerializedData2.readInt64(z2);
                         if ((this.flags & 2) != 0) {
                             this.about = abstractSerializedData2.readString(z2);
                         }
@@ -398,7 +398,7 @@ public abstract class TLRPC$UserFull extends TLObject {
                         int i7 = this.video_calls_available ? i6 | 8192 : i6 & (-8193);
                         this.flags = i7;
                         abstractSerializedData2.writeInt32(i7);
-                        abstractSerializedData2.writeInt64(this.f1575id);
+                        abstractSerializedData2.writeInt64(this.f1657id);
                         if ((this.flags & 2) != 0) {
                             abstractSerializedData2.writeString(this.about);
                         }
@@ -529,7 +529,7 @@ public abstract class TLRPC$UserFull extends TLObject {
                         this.has_scheduled = (readInt32 & 4096) != 0;
                         this.video_calls_available = (readInt32 & 8192) != 0;
                         this.voice_messages_forbidden = (readInt32 & ProgressiveMediaSource.DEFAULT_LOADING_CHECK_INTERVAL_BYTES) != 0;
-                        this.f1575id = abstractSerializedData2.readInt64(z2);
+                        this.f1657id = abstractSerializedData2.readInt64(z2);
                         if ((this.flags & 2) != 0) {
                             this.about = abstractSerializedData2.readString(z2);
                         }
@@ -603,7 +603,7 @@ public abstract class TLRPC$UserFull extends TLObject {
                         int i8 = this.voice_messages_forbidden ? i7 | ProgressiveMediaSource.DEFAULT_LOADING_CHECK_INTERVAL_BYTES : i7 & (-1048577);
                         this.flags = i8;
                         abstractSerializedData2.writeInt32(i8);
-                        abstractSerializedData2.writeInt64(this.f1575id);
+                        abstractSerializedData2.writeInt64(this.f1657id);
                         if ((this.flags & 2) != 0) {
                             abstractSerializedData2.writeString(this.about);
                         }
@@ -738,7 +738,7 @@ public abstract class TLRPC$UserFull extends TLObject {
                         this.video_calls_available = (readInt32 & 8192) != 0;
                         this.voice_messages_forbidden = (1048576 & readInt32) != 0;
                         this.translations_disabled = (readInt32 & 8388608) != 0;
-                        this.f1575id = abstractSerializedData2.readInt64(z2);
+                        this.f1657id = abstractSerializedData2.readInt64(z2);
                         if ((this.flags & 2) != 0) {
                             this.about = abstractSerializedData2.readString(z2);
                         }
@@ -817,7 +817,7 @@ public abstract class TLRPC$UserFull extends TLObject {
                         int i9 = this.translations_disabled ? i8 | 8388608 : i8 & (-8388609);
                         this.flags = i9;
                         abstractSerializedData2.writeInt32(i9);
-                        abstractSerializedData2.writeInt64(this.f1575id);
+                        abstractSerializedData2.writeInt64(this.f1657id);
                         if ((this.flags & 2) != 0) {
                             abstractSerializedData2.writeString(this.about);
                         }

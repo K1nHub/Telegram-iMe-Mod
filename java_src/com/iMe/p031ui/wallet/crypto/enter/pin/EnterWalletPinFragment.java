@@ -1,23 +1,33 @@
 package com.iMe.p031ui.wallet.crypto.enter.pin;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import androidx.appcompat.widget.AppCompatImageView;
 import com.iMe.common.AppRxEvents;
+import com.iMe.fork.utils.Callbacks$Callback;
+import com.iMe.model.dialog.DialogModel;
+import com.iMe.model.wallet.crypto.create.CreateWalletScreenType;
 import com.iMe.model.wallet.crypto.pin.EnterPinCodeResult;
 import com.iMe.model.wallet.crypto.pin.EnterPinCodeScreenType;
-import com.iMe.p031ui.base.WalletAuthFragment;
 import com.iMe.p031ui.base.mvp.MvpFragment;
+import com.iMe.p031ui.base.wallet_auth.WalletAuthBaseFragment;
+import com.iMe.p031ui.wallet.common.WalletRootFragment;
+import com.iMe.p031ui.wallet.crypto.create.CreateWalletFragment;
 import com.iMe.storage.domain.utils.p030rx.RxEventBus;
 import com.iMe.storage.domain.utils.p030rx.event.DomainRxEvents;
+import com.iMe.utils.dialogs.DialogExtKt;
+import com.iMe.utils.dialogs.DialogUtils;
+import com.iMe.utils.dialogs.DialogsFactoryKt;
 import com.iMe.utils.extentions.common.ViewExtKt;
 import com.iMe.utils.extentions.delegate.ResettableLazy;
 import com.iMe.utils.extentions.delegate.ResettableLazyDelegateKt;
 import com.iMe.utils.extentions.delegate.ResettableLazyManager;
-import com.iMe.utils.extentions.p033rx.RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
+import com.iMe.utils.extentions.p032rx.RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
 import io.reactivex.Observable;
 import io.reactivex.disposables.Disposable;
 import java.util.ArrayList;
@@ -36,17 +46,18 @@ import kotlin.reflect.KProperty;
 import moxy.MvpDelegate;
 import moxy.ktx.MoxyKtxDelegate;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3295R;
+import org.telegram.messenger.C3417R;
 import org.telegram.messenger.databinding.ForkFragmentWalletEthEnterPinBinding;
-import org.telegram.p044ui.ActionBar.BaseFragment;
-import org.telegram.p044ui.ActionBar.INavigationLayout;
-import org.telegram.p044ui.ActionBar.Theme;
-import org.telegram.p044ui.Components.PasscodeView;
-import org.telegram.p044ui.PasscodeActivity;
+import org.telegram.p043ui.ActionBar.AlertDialog;
+import org.telegram.p043ui.ActionBar.BaseFragment;
+import org.telegram.p043ui.ActionBar.INavigationLayout;
+import org.telegram.p043ui.ActionBar.Theme;
+import org.telegram.p043ui.Components.PasscodeView;
+import org.telegram.p043ui.PasscodeActivity;
 /* compiled from: EnterWalletPinFragment.kt */
 /* renamed from: com.iMe.ui.wallet.crypto.enter.pin.EnterWalletPinFragment */
-/* loaded from: classes3.dex */
-public final class EnterWalletPinFragment extends WalletAuthFragment implements EnterWalletPinView {
+/* loaded from: classes4.dex */
+public final class EnterWalletPinFragment extends WalletAuthBaseFragment implements EnterWalletPinView {
     static final /* synthetic */ KProperty<Object>[] $$delegatedProperties = {Reflection.property1(new PropertyReference1Impl(EnterWalletPinFragment.class, "presenter", "getPresenter()Lcom/iMe/ui/wallet/crypto/enter/pin/EnterWalletPinPresenter;", 0)), Reflection.property1(new PropertyReference1Impl(EnterWalletPinFragment.class, "binding", "getBinding()Lorg/telegram/messenger/databinding/ForkFragmentWalletEthEnterPinBinding;", 0))};
     public static final Companion Companion = new Companion(null);
     private final ResettableLazy binding$delegate;
@@ -56,7 +67,7 @@ public final class EnterWalletPinFragment extends WalletAuthFragment implements 
 
     /* compiled from: EnterWalletPinFragment.kt */
     /* renamed from: com.iMe.ui.wallet.crypto.enter.pin.EnterWalletPinFragment$WhenMappings */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
 
@@ -74,8 +85,8 @@ public final class EnterWalletPinFragment extends WalletAuthFragment implements 
         }
     }
 
-    @Override // com.iMe.p031ui.base.WalletAuthFragment
-    public boolean shouldAskPinCode() {
+    @Override // com.iMe.p031ui.base.wallet_auth.WalletAuthBaseFragment
+    protected boolean shouldAskPinCode() {
         return false;
     }
 
@@ -101,13 +112,13 @@ public final class EnterWalletPinFragment extends WalletAuthFragment implements 
         return (ForkFragmentWalletEthEnterPinBinding) this.binding$delegate.getValue(this, $$delegatedProperties[1]);
     }
 
-    @Override // org.telegram.p044ui.ActionBar.BaseFragment
+    @Override // org.telegram.p043ui.ActionBar.BaseFragment
     public boolean onBackPressed() {
         handleBackPress();
         return false;
     }
 
-    @Override // org.telegram.p044ui.ActionBar.BaseFragment
+    @Override // org.telegram.p043ui.ActionBar.BaseFragment
     public boolean isSwipeBackEnabled(MotionEvent motionEvent) {
         return !this.screenType.isTotalLock() || isLastWalletScreen();
     }
@@ -121,6 +132,29 @@ public final class EnterWalletPinFragment extends WalletAuthFragment implements 
         FrameLayout root = getBinding().getRoot();
         Intrinsics.checkNotNullExpressionValue(root, "binding.root");
         return root;
+    }
+
+    @Override // com.iMe.p031ui.base.wallet_auth.WalletAuthBaseFragment, com.iMe.p031ui.base.mvp.MvpFragment, org.telegram.p043ui.ActionBar.BaseFragment
+    public void onResume() {
+        super.onResume();
+        getBinding().passcodeView.onResume();
+    }
+
+    @Override // com.iMe.p031ui.base.mvp.MvpFragment, org.telegram.p043ui.ActionBar.BaseFragment
+    public void onPause() {
+        getBinding().passcodeView.onPause();
+        super.onPause();
+    }
+
+    @Override // com.iMe.p031ui.base.mvp.MvpFragment, org.telegram.p043ui.ActionBar.BaseFragment
+    public void onFragmentDestroy() {
+        getBinding().passcodeView.resetWalletLoadingAnimation();
+        super.onFragmentDestroy();
+    }
+
+    @Override // com.iMe.p031ui.wallet.crypto.enter.pin.EnterWalletPinView
+    public void updateLoadingState(boolean z, boolean z2) {
+        getBinding().passcodeView.updateLoadingState(z, z2);
     }
 
     @Override // com.iMe.p031ui.wallet.crypto.enter.pin.EnterWalletPinView
@@ -137,20 +171,80 @@ public final class EnterWalletPinFragment extends WalletAuthFragment implements 
     }
 
     @Override // com.iMe.p031ui.wallet.crypto.enter.pin.EnterWalletPinView
-    public void redirectScreenToPasswordEnter() {
-        onForgotPinClick();
+    public void onDeleteWalletSuccess() {
+        postViewActionDelayed(150L, new Callbacks$Callback() { // from class: com.iMe.ui.wallet.crypto.enter.pin.EnterWalletPinFragment$$ExternalSyntheticLambda2
+            @Override // com.iMe.fork.utils.Callbacks$Callback
+            public final void invoke() {
+                EnterWalletPinFragment.onDeleteWalletSuccess$lambda$1(EnterWalletPinFragment.this);
+            }
+        });
     }
 
-    @Override // com.iMe.p031ui.base.WalletAuthFragment, com.iMe.p031ui.base.mvp.MvpFragment, org.telegram.p044ui.ActionBar.BaseFragment
-    public void onResume() {
-        super.onResume();
-        getBinding().passcodeView.onResume();
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final void onDeleteWalletSuccess$lambda$1(EnterWalletPinFragment this$0) {
+        Intrinsics.checkNotNullParameter(this$0, "this$0");
+        int i = 0;
+        for (BaseFragment baseFragment : this$0.parentLayout.getFragmentStack()) {
+            if (baseFragment instanceof WalletAuthBaseFragment) {
+                i++;
+            }
+        }
+        if (i == 1) {
+            this$0.presentFragment(WalletRootFragment.Companion.newInstance(), true);
+            return;
+        }
+        this$0.parentLayout.finishWalletScreens();
+        RxEventBus rxEventBus = this$0.getRxEventBus();
+        rxEventBus.publish(DomainRxEvents.AllWalletsReset.INSTANCE);
+        rxEventBus.publish(DomainRxEvents.SelectWalletCryptoTab.INSTANCE);
     }
 
-    @Override // com.iMe.p031ui.base.mvp.MvpFragment, org.telegram.p044ui.ActionBar.BaseFragment
-    public void onPause() {
-        getBinding().passcodeView.onPause();
-        super.onPause();
+    @Override // com.iMe.p031ui.wallet.crypto.enter.pin.EnterWalletPinView
+    public void openPasswordEnterScreen() {
+        presentFragment(PasscodeActivity.newInstanceForWalletPinRestore());
+    }
+
+    @Override // com.iMe.p031ui.wallet.crypto.enter.pin.EnterWalletPinView
+    public void openRestoreWalletScreen(String walletAddress) {
+        Intrinsics.checkNotNullParameter(walletAddress, "walletAddress");
+        presentFragment(CreateWalletFragment.Companion.newInstance(new CreateWalletScreenType.Import(walletAddress, "")));
+    }
+
+    @Override // com.iMe.p031ui.wallet.crypto.enter.pin.EnterWalletPinView
+    public void showDeleteWalletDialog(DialogModel dialogModel) {
+        Intrinsics.checkNotNullParameter(dialogModel, "dialogModel");
+        Activity parentActivity = getParentActivity();
+        Intrinsics.checkNotNullExpressionValue(parentActivity, "parentActivity");
+        AlertDialog createDialog = DialogUtils.createDialog(parentActivity, dialogModel, new Callbacks$Callback() { // from class: com.iMe.ui.wallet.crypto.enter.pin.EnterWalletPinFragment$$ExternalSyntheticLambda1
+            @Override // com.iMe.fork.utils.Callbacks$Callback
+            public final void invoke() {
+                EnterWalletPinFragment.showDeleteWalletDialog$lambda$2(EnterWalletPinFragment.this);
+            }
+        }, null);
+        showDialog(createDialog);
+        DialogExtKt.makeRedPositiveButton(createDialog);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final void showDeleteWalletDialog$lambda$2(EnterWalletPinFragment this$0) {
+        Intrinsics.checkNotNullParameter(this$0, "this$0");
+        this$0.getPresenter().deleteWallets();
+    }
+
+    @Override // com.iMe.p031ui.wallet.crypto.enter.pin.EnterWalletPinView
+    public void showForgotPasswordOptionsDialog() {
+        showDialog(DialogsFactoryKt.createForgotPinOptionsBottomSheetDialog(this, new DialogInterface.OnClickListener() { // from class: com.iMe.ui.wallet.crypto.enter.pin.EnterWalletPinFragment$$ExternalSyntheticLambda0
+            @Override // android.content.DialogInterface.OnClickListener
+            public final void onClick(DialogInterface dialogInterface, int i) {
+                EnterWalletPinFragment.showForgotPasswordOptionsDialog$lambda$4(EnterWalletPinFragment.this, dialogInterface, i);
+            }
+        }));
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final void showForgotPasswordOptionsDialog$lambda$4(EnterWalletPinFragment this$0, DialogInterface dialogInterface, int i) {
+        Intrinsics.checkNotNullParameter(this$0, "this$0");
+        this$0.getPresenter().onForgotPasscodeOptionSelected(i);
     }
 
     private final boolean isLastWalletScreen() {
@@ -164,7 +258,7 @@ public final class EnterWalletPinFragment extends WalletAuthFragment implements 
         } else {
             i = 0;
             for (BaseFragment baseFragment : fragmentStack) {
-                if ((baseFragment instanceof WalletAuthFragment) && (i = i + 1) < 0) {
+                if ((baseFragment instanceof WalletAuthBaseFragment) && (i = i + 1) < 0) {
                     CollectionsKt__CollectionsKt.throwCountOverflow();
                 }
             }
@@ -189,7 +283,7 @@ public final class EnterWalletPinFragment extends WalletAuthFragment implements 
         Intrinsics.checkNotNullExpressionValue(fragmentStack, "fragmentStack");
         ArrayList arrayList = new ArrayList();
         for (Object obj : fragmentStack) {
-            if (obj instanceof WalletAuthFragment) {
+            if (obj instanceof WalletAuthBaseFragment) {
                 arrayList.add(obj);
             }
         }
@@ -212,40 +306,42 @@ public final class EnterWalletPinFragment extends WalletAuthFragment implements 
 
     private final void setupActionBar() {
         this.actionBar.setAddToContainer(false);
-        AppCompatImageView setupActionBar$lambda$1 = getBinding().imageBack;
-        Intrinsics.checkNotNullExpressionValue(setupActionBar$lambda$1, "setupActionBar$lambda$1");
-        ViewGroup.LayoutParams layoutParams = setupActionBar$lambda$1.getLayoutParams();
+        AppCompatImageView setupActionBar$lambda$6 = getBinding().imageBack;
+        Intrinsics.checkNotNullExpressionValue(setupActionBar$lambda$6, "setupActionBar$lambda$6");
+        ViewGroup.LayoutParams layoutParams = setupActionBar$lambda$6.getLayoutParams();
         Objects.requireNonNull(layoutParams, "null cannot be cast to non-null type android.widget.FrameLayout.LayoutParams");
         FrameLayout.LayoutParams layoutParams2 = (FrameLayout.LayoutParams) layoutParams;
-        ViewGroup.LayoutParams layoutParams3 = setupActionBar$lambda$1.getLayoutParams();
+        ViewGroup.LayoutParams layoutParams3 = setupActionBar$lambda$6.getLayoutParams();
         ViewGroup.MarginLayoutParams marginLayoutParams = layoutParams3 instanceof ViewGroup.MarginLayoutParams ? (ViewGroup.MarginLayoutParams) layoutParams3 : null;
         layoutParams2.setMargins(((ViewGroup.MarginLayoutParams) layoutParams2).leftMargin, (marginLayoutParams != null ? marginLayoutParams.topMargin : 0) + AndroidUtilities.statusBarHeight, ((ViewGroup.MarginLayoutParams) layoutParams2).rightMargin, ((ViewGroup.MarginLayoutParams) layoutParams2).bottomMargin);
-        setupActionBar$lambda$1.setLayoutParams(layoutParams2);
-        setupActionBar$lambda$1.setImageResource(C3295R.C3297drawable.ic_ab_back);
-        ViewExtKt.setCircleRippleBackground(setupActionBar$lambda$1);
-        ViewExtKt.setImageColor(setupActionBar$lambda$1, Theme.getColor(Theme.key_actionBarDefaultTitle));
-        ViewExtKt.safeThrottledClick$default(setupActionBar$lambda$1, 0L, new EnterWalletPinFragment$setupActionBar$1$2(this), 1, null);
+        setupActionBar$lambda$6.setLayoutParams(layoutParams2);
+        setupActionBar$lambda$6.setImageResource(C3417R.C3419drawable.ic_ab_back);
+        ViewExtKt.setCircleRippleBackground(setupActionBar$lambda$6);
+        ViewExtKt.setImageColor(setupActionBar$lambda$6, Theme.getColor(Theme.key_actionBarDefaultTitle));
+        ViewExtKt.safeThrottledClick$default(setupActionBar$lambda$6, 0L, new EnterWalletPinFragment$setupActionBar$1$2(this), 1, null);
     }
 
     private final void setupPasscodeView() {
         PasscodeView passcodeView = getBinding().passcodeView;
         passcodeView.setWalletDelegate(new PasscodeView.WalletDelegate() { // from class: com.iMe.ui.wallet.crypto.enter.pin.EnterWalletPinFragment$setupPasscodeView$1$1
-            @Override // org.telegram.p044ui.Components.PasscodeView.WalletDelegate
+            @Override // org.telegram.p043ui.Components.PasscodeView.WalletDelegate
             public void onForgotPinCodeClicked() {
-                EnterWalletPinFragment.this.onForgotPinClick();
+                EnterWalletPinPresenter presenter;
+                presenter = EnterWalletPinFragment.this.getPresenter();
+                presenter.onForgotPinClick();
             }
 
-            @Override // org.telegram.p044ui.Components.PasscodeView.WalletDelegate
+            @Override // org.telegram.p043ui.Components.PasscodeView.WalletDelegate
             public void onPinCodeEntered(String str) {
                 EnterWalletPinPresenter presenter;
                 presenter = EnterWalletPinFragment.this.getPresenter();
                 if (str == null) {
                     str = "";
                 }
-                presenter.validatePin(str);
+                presenter.validatePin(str, false);
             }
 
-            @Override // org.telegram.p044ui.Components.PasscodeView.WalletDelegate
+            @Override // org.telegram.p043ui.Components.PasscodeView.WalletDelegate
             public void onFingerPrintConfirmed(Cipher cipher) {
                 EnterWalletPinPresenter presenter;
                 presenter = EnterWalletPinFragment.this.getPresenter();
@@ -259,19 +355,14 @@ public final class EnterWalletPinFragment extends WalletAuthFragment implements 
         RxEventBus rxEventBus = getRxEventBus();
         Observable observeOn = rxEventBus.getPublisher().ofType(DomainRxEvents.CryptoEvent.class).observeOn(rxEventBus.getSchedulersProvider().mo698ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "publisher\n              …(schedulersProvider.ui())");
-        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2170x64e4ff35(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2171x64e4ff36(null)));
-        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
+        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2164x64e4ff35(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2165x64e4ff36(null)));
+        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…Error.invoke()\n        })");
         autoDispose(subscribe);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public final void onForgotPinClick() {
-        presentFragment(PasscodeActivity.newInstanceForWalletPinRestore());
     }
 
     /* compiled from: EnterWalletPinFragment.kt */
     /* renamed from: com.iMe.ui.wallet.crypto.enter.pin.EnterWalletPinFragment$Companion */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

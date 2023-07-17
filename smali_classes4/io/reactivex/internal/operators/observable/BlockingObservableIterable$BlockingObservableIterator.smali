@@ -336,7 +336,7 @@
     .line 143
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
-    const-string v1, "remove"
+    const-string/jumbo v1, "remove"
 
     invoke-direct {v0, v1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
 

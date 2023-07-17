@@ -24,13 +24,13 @@
 .method public constructor <init>(Lorg/telegram/tgnet/TLRPC$TL_groupCallParticipant;I)V
     .locals 0
 
-    .line 1994
+    .line 2010
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1995
+    .line 2011
     iput-object p1, p0, Lorg/telegram/messenger/voip/VoIPService$RequestedParticipant;->participant:Lorg/telegram/tgnet/TLRPC$TL_groupCallParticipant;
 
-    .line 1996
+    .line 2012
     iput p2, p0, Lorg/telegram/messenger/voip/VoIPService$RequestedParticipant;->audioSsrc:I
 
     return-void

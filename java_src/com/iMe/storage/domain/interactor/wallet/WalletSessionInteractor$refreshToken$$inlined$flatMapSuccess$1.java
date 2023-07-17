@@ -31,7 +31,7 @@ public final class WalletSessionInteractor$refreshToken$$inlined$flatMapSuccess$
             preferenceHelper = this.this$0.preferenceHelper;
             if (preferenceHelper.getPushAllowanceToken().length() == 0) {
                 pushNotificationRepository = this.this$0.notificationRepository;
-                Observable<R> flatMap = pushNotificationRepository.issuePushAllowanceToken().flatMap(new ObservableExtKt$sam$i$io_reactivex_functions_Function$0(new C1978x36b1d932(this.this$0)));
+                Observable<R> flatMap = pushNotificationRepository.issuePushAllowanceToken().flatMap(new ObservableExtKt$sam$i$io_reactivex_functions_Function$0(new C1983x36b1d932(this.this$0)));
                 Intrinsics.checkNotNullExpressionValue(flatMap, "crossinline body: (T) ->…e.empty()\n        }\n    }");
                 Observable subscribeOn = flatMap.map(new WalletSessionInteractor$sam$io_reactivex_functions_Function$0(new WalletSessionInteractor$refreshToken$1$2(result))).subscribeOn(Schedulers.m679io());
                 Intrinsics.checkNotNullExpressionValue(subscribeOn, "result ->\n              …                        }");

@@ -2,22 +2,21 @@ package com.iMe.storage.data.datasource.transfer.impl;
 
 import com.google.protobuf.ByteString;
 import com.iMe.storage.data.datasource.transfer.WalletTransferDataSource;
+import com.iMe.storage.data.mapper.wallet.TokenMappingKt;
 import com.iMe.storage.data.network.api.own.CryptoWalletApi;
-import com.iMe.storage.data.network.api.own.WalletApi;
 import com.iMe.storage.data.network.handlers.impl.FirebaseFunctionsErrorHandler;
 import com.iMe.storage.data.network.model.error.ErrorModel;
 import com.iMe.storage.data.network.model.error.IErrorStatus;
-import com.iMe.storage.data.network.model.request.crypto.wallet.GetDataForCryptoTransferRequest;
+import com.iMe.storage.data.network.model.request.crypto.wallet.PrepareTransferRequest;
 import com.iMe.storage.data.utils.extentions.FirebaseExtKt$sam$i$io_reactivex_functions_Function$0;
 import com.iMe.storage.domain.manager.crypto.CryptoAccessManager;
 import com.iMe.storage.domain.model.Result;
-import com.iMe.storage.domain.model.crypto.NetworkType;
 import com.iMe.storage.domain.model.crypto.Wallet;
 import com.iMe.storage.domain.model.crypto.send.BitcoinUnspentOutput;
 import com.iMe.storage.domain.model.crypto.send.CryptoTransferMetadata;
 import com.iMe.storage.domain.model.crypto.send.TransactionArgs;
 import com.iMe.storage.domain.model.crypto.send.TransferArgs;
-import com.iMe.storage.domain.model.wallet.token.TokenCode;
+import com.iMe.storage.domain.model.wallet.token.Token;
 import com.iMe.storage.domain.utils.extentions.CryptoExtKt;
 import com.iMe.storage.domain.utils.extentions.ObservableExtKt$sam$i$io_reactivex_functions_Function$0;
 import com.trustwallet.walletconnect.extensions.ByteArrayKt;
@@ -39,24 +38,20 @@ public final class BTCWalletTransferDataSourceImpl implements WalletTransferData
     private final CryptoAccessManager cryptoAccessManager;
     private final CryptoWalletApi cryptoWalletApi;
     private final FirebaseFunctionsErrorHandler firebaseErrorHandler;
-    private final WalletApi walletApi;
 
-    public BTCWalletTransferDataSourceImpl(FirebaseFunctionsErrorHandler firebaseErrorHandler, CryptoWalletApi cryptoWalletApi, CryptoAccessManager cryptoAccessManager, WalletApi walletApi) {
+    public BTCWalletTransferDataSourceImpl(FirebaseFunctionsErrorHandler firebaseErrorHandler, CryptoWalletApi cryptoWalletApi, CryptoAccessManager cryptoAccessManager) {
         Intrinsics.checkNotNullParameter(firebaseErrorHandler, "firebaseErrorHandler");
         Intrinsics.checkNotNullParameter(cryptoWalletApi, "cryptoWalletApi");
         Intrinsics.checkNotNullParameter(cryptoAccessManager, "cryptoAccessManager");
-        Intrinsics.checkNotNullParameter(walletApi, "walletApi");
         this.firebaseErrorHandler = firebaseErrorHandler;
         this.cryptoWalletApi = cryptoWalletApi;
         this.cryptoAccessManager = cryptoAccessManager;
-        this.walletApi = walletApi;
     }
 
     @Override // com.iMe.storage.data.datasource.transfer.WalletTransferDataSource
-    public Observable<Result<CryptoTransferMetadata>> getTransferMetadata(TokenCode tokenCode, String str, String str2, NetworkType networkType) {
-        Intrinsics.checkNotNullParameter(tokenCode, "tokenCode");
-        Intrinsics.checkNotNullParameter(networkType, "networkType");
-        Observable map = this.walletApi.getBTCCryptoTransferData(new GetDataForCryptoTransferRequest(tokenCode.getName(), str, str2, networkType.name())).map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new C1612xbae10413(this.firebaseErrorHandler)));
+    public Observable<Result<CryptoTransferMetadata>> getTransferMetadata(Token token, String str, String str2) {
+        Intrinsics.checkNotNullParameter(token, "token");
+        Observable map = this.cryptoWalletApi.getBTCCryptoTransferData(new PrepareTransferRequest(TokenMappingKt.mapToRequest(token), str, str2)).map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new C1623xbae10413(this.firebaseErrorHandler)));
         Intrinsics.checkNotNullExpressionValue(map, "errorHandler: FirebaseFu…response).toError()\n    }");
         return map;
     }
@@ -64,7 +59,7 @@ public final class BTCWalletTransferDataSourceImpl implements WalletTransferData
     @Override // com.iMe.storage.data.datasource.transfer.WalletTransferDataSource
     public Observable<Result<Boolean>> transfer(TransactionArgs args) {
         Intrinsics.checkNotNullParameter(args, "args");
-        Observable flatMap = sign(args).flatMap(new ObservableExtKt$sam$i$io_reactivex_functions_Function$0(new C1613xe4158fb(this)));
+        Observable flatMap = sign(args).flatMap(new ObservableExtKt$sam$i$io_reactivex_functions_Function$0(new C1624xe4158fb(this)));
         Intrinsics.checkNotNullExpressionValue(flatMap, "crossinline body: (T) ->…e.empty()\n        }\n    }");
         return flatMap;
     }

@@ -48,7 +48,7 @@
 .method public final invoke()Landroid/widget/TextView;
     .locals 1
 
-    .line 76
+    .line 121
     iget-object v0, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$descriptionText$2;->this$0:Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;
 
     invoke-static {v0}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->access$createDescriptionTextView(Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;)Landroid/widget/TextView;
@@ -61,7 +61,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 76
+    .line 121
     invoke-virtual {p0}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$descriptionText$2;->invoke()Landroid/widget/TextView;
 
     move-result-object v0

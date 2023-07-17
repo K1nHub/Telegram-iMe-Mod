@@ -4,8 +4,8 @@ import java.util.AbstractList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.NoSuchElementException;
-import p034j$.util.Iterator;
-import p034j$.util.function.Consumer;
+import p033j$.util.Iterator;
+import p033j$.util.function.Consumer;
 /* loaded from: classes3.dex */
 public class LazyList<E> extends AbstractList<E> {
     private static final Logger LOG = Logger.getLogger(LazyList.class);
@@ -38,28 +38,28 @@ public class LazyList<E> extends AbstractList<E> {
 
     @Override // java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.List
     public Iterator<E> iterator() {
-        return new C12321();
+        return new C12371();
     }
 
     /* renamed from: com.googlecode.mp4parser.util.LazyList$1 */
     /* loaded from: classes3.dex */
-    class C12321 implements Iterator<E>, p034j$.util.Iterator {
+    class C12371 implements Iterator<E>, p033j$.util.Iterator {
         int pos = 0;
 
-        C12321() {
+        C12371() {
         }
 
-        @Override // p034j$.util.Iterator
+        @Override // p033j$.util.Iterator
         public /* synthetic */ void forEachRemaining(Consumer consumer) {
             Iterator.CC.$default$forEachRemaining(this, consumer);
         }
 
-        @Override // java.util.Iterator, p034j$.util.Iterator
+        @Override // java.util.Iterator, p033j$.util.Iterator
         public boolean hasNext() {
             return this.pos < LazyList.this.underlying.size() || LazyList.this.elementSource.hasNext();
         }
 
-        @Override // java.util.Iterator, p034j$.util.Iterator
+        @Override // java.util.Iterator, p033j$.util.Iterator
         public E next() {
             if (this.pos < LazyList.this.underlying.size()) {
                 List<E> list = LazyList.this.underlying;
@@ -72,7 +72,7 @@ public class LazyList<E> extends AbstractList<E> {
             return (E) next();
         }
 
-        @Override // java.util.Iterator, p034j$.util.Iterator
+        @Override // java.util.Iterator, p033j$.util.Iterator
         public void remove() {
             throw new UnsupportedOperationException();
         }

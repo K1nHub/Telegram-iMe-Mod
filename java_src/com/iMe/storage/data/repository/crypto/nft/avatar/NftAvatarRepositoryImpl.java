@@ -20,21 +20,6 @@ public final class NftAvatarRepositoryImpl implements NftAvatarRepository {
     private final FirebaseFunctionsErrorHandler firebaseErrorHandler;
     private final NftAvatarApi nftAvatarApi;
 
-    /* compiled from: NftAvatarRepositoryImpl.kt */
-    /* loaded from: classes3.dex */
-    public /* synthetic */ class WhenMappings {
-        public static final /* synthetic */ int[] $EnumSwitchMapping$0;
-
-        static {
-            int[] iArr = new int[NetworkType.values().length];
-            try {
-                iArr[NetworkType.POLYGON.ordinal()] = 1;
-            } catch (NoSuchFieldError unused) {
-            }
-            $EnumSwitchMapping$0 = iArr;
-        }
-    }
-
     public NftAvatarRepositoryImpl(NftAvatarApi nftAvatarApi, FirebaseFunctionsErrorHandler firebaseErrorHandler, ApiErrorHandler errorHandler) {
         Intrinsics.checkNotNullParameter(nftAvatarApi, "nftAvatarApi");
         Intrinsics.checkNotNullParameter(firebaseErrorHandler, "firebaseErrorHandler");
@@ -45,10 +30,10 @@ public final class NftAvatarRepositoryImpl implements NftAvatarRepository {
     }
 
     @Override // com.iMe.storage.domain.repository.crypto.nft.avatar.NftAvatarRepository
-    public Observable<Result<List<NftToken>>> getNftAvatars(NetworkType networkType) {
+    public Observable<Result<List<NftToken>>> getNftAvatars(String networkId) {
         List emptyList;
-        Intrinsics.checkNotNullParameter(networkType, "networkType");
-        if (WhenMappings.$EnumSwitchMapping$0[networkType.ordinal()] != 1) {
+        Intrinsics.checkNotNullParameter(networkId, "networkId");
+        if (!Intrinsics.areEqual(networkId, NetworkType.POLY)) {
             emptyList = CollectionsKt__CollectionsKt.emptyList();
             Observable<Result<List<NftToken>>> just = Observable.just(Result.Companion.success(emptyList));
             Intrinsics.checkNotNullExpressionValue(just, "just(this)");

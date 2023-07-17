@@ -15,8 +15,8 @@ import com.iMe.storage.domain.model.crypto.airdrop.AirdropStep;
 import com.iMe.storage.domain.storage.CryptoPreferenceHelper;
 import com.iMe.storage.domain.utils.p030rx.SchedulersProvider;
 import com.iMe.storage.domain.utils.system.ResourceManager;
-import com.iMe.utils.extentions.p033rx.RxExtKt;
-import com.iMe.utils.extentions.p033rx.RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
+import com.iMe.utils.extentions.p032rx.RxExtKt;
+import com.iMe.utils.extentions.p032rx.RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
 import com.iMe.utils.helper.wallet.WalletHelper;
 import io.reactivex.Observable;
 import io.reactivex.disposables.Disposable;
@@ -76,13 +76,13 @@ public final class WalletAirdropDialogPresenter extends BasePresenter<WalletAird
     public final void getTokensByAirdrop(String requestId) {
         Intrinsics.checkNotNullParameter(requestId, "requestId");
         Observable checkAirdropStart$default = AirdropInteractor.checkAirdropStart$default(this.airdropInteractor, requestId, null, 2, null);
-        final C2111x61f5919c c2111x61f5919c = new C2111x61f5919c(this);
-        Observable flatMap = checkAirdropStart$default.flatMap(new Function(c2111x61f5919c) { // from class: com.iMe.ui.wallet.airdrop.dialog.WalletAirdropDialogPresenter$inlined$sam$i$io_reactivex_functions_Function$0
+        final C2115x61f5919c c2115x61f5919c = new C2115x61f5919c(this);
+        Observable flatMap = checkAirdropStart$default.flatMap(new Function(c2115x61f5919c) { // from class: com.iMe.ui.wallet.airdrop.dialog.WalletAirdropDialogPresenter$inlined$sam$i$io_reactivex_functions_Function$0
             private final /* synthetic */ Function1 function;
 
             {
-                Intrinsics.checkNotNullParameter(c2111x61f5919c, "function");
-                this.function = c2111x61f5919c;
+                Intrinsics.checkNotNullParameter(c2115x61f5919c, "function");
+                this.function = c2115x61f5919c;
             }
 
             @Override // io.reactivex.functions.Function
@@ -95,8 +95,8 @@ public final class WalletAirdropDialogPresenter extends BasePresenter<WalletAird
         Intrinsics.checkNotNullExpressionValue(observeOn, "airdropInteractor\n      …(schedulersProvider.ui())");
         T viewState = getViewState();
         Intrinsics.checkNotNullExpressionValue(viewState, "viewState");
-        Disposable subscribe = RxExtKt.withLoadingDialog$default(observeOn, (BaseView) viewState, false, 2, (Object) null).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2112x9d8065d9(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2113x9d8065da((BaseView) getViewState())));
-        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
+        Disposable subscribe = RxExtKt.withLoadingDialog$default(observeOn, (BaseView) viewState, false, 2, (Object) null).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2116x9d8065d9(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2117x9d8065da((BaseView) getViewState())));
+        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…Error.invoke()\n        })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
 

@@ -22,7 +22,7 @@
 .method constructor <init>(Landroid/content/Context;Landroidx/core/util/Supplier;)V
     .locals 0
 
-    .line 103
+    .line 107
     iput-object p2, p0, Lorg/telegram/ui/ActionBar/INavigationLayout$1;->val$supplier:Landroidx/core/util/Supplier;
 
     invoke-direct {p0, p1}, Lorg/telegram/ui/ActionBar/ActionBarLayout;-><init>(Landroid/content/Context;)V
@@ -35,7 +35,7 @@
 .method public getBottomSheet()Lorg/telegram/ui/ActionBar/BottomSheet;
     .locals 1
 
-    .line 106
+    .line 110
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/INavigationLayout$1;->val$supplier:Landroidx/core/util/Supplier;
 
     invoke-interface {v0}, Landroidx/core/util/Supplier;->get()Ljava/lang/Object;

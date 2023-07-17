@@ -18,7 +18,7 @@ import org.koin.core.qualifier.Qualifier;
 import org.koin.core.registry.InstanceRegistry;
 import org.koin.core.registry.PropertyRegistry;
 import org.koin.core.registry.ScopeRegistry;
-import org.koin.p043mp.KoinPlatformTimeTools;
+import org.koin.p042mp.KoinPlatformTimeTools;
 /* compiled from: Koin.kt */
 /* loaded from: classes4.dex */
 public final class Koin {

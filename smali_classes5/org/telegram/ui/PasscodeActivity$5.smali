@@ -32,7 +32,7 @@
 .method constructor <init>(Lorg/telegram/ui/PasscodeActivity;Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;)V
     .locals 0
 
-    .line 740
+    .line 725
     iput-object p1, p0, Lorg/telegram/ui/PasscodeActivity$5;->this$0:Lorg/telegram/ui/PasscodeActivity;
 
     iput-object p2, p0, Lorg/telegram/ui/PasscodeActivity$5;->val$switchItem:Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
@@ -45,7 +45,7 @@
 .method private synthetic lambda$onItemClick$0(Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;)V
     .locals 3
 
-    .line 748
+    .line 733
     iget-object v0, p0, Lorg/telegram/ui/PasscodeActivity$5;->this$0:Lorg/telegram/ui/PasscodeActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/PasscodeActivity;->access$400(Lorg/telegram/ui/PasscodeActivity;)I
@@ -68,7 +68,7 @@
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->setText(Ljava/lang/CharSequence;)V
 
-    .line 749
+    .line 734
     iget-object v0, p0, Lorg/telegram/ui/PasscodeActivity$5;->this$0:Lorg/telegram/ui/PasscodeActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/PasscodeActivity;->access$400(Lorg/telegram/ui/PasscodeActivity;)I
@@ -87,12 +87,12 @@
     :goto_1
     invoke-virtual {p1, v0}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->setIcon(I)V
 
-    .line 750
+    .line 735
     iget-object p1, p0, Lorg/telegram/ui/PasscodeActivity$5;->this$0:Lorg/telegram/ui/PasscodeActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/PasscodeActivity;->access$800(Lorg/telegram/ui/PasscodeActivity;)V
 
-    .line 751
+    .line 736
     iget-object p1, p0, Lorg/telegram/ui/PasscodeActivity$5;->this$0:Lorg/telegram/ui/PasscodeActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/PasscodeActivity;->access$900(Lorg/telegram/ui/PasscodeActivity;)Z
@@ -101,7 +101,7 @@
 
     if-eqz p1, :cond_2
 
-    .line 752
+    .line 737
     iget-object p1, p0, Lorg/telegram/ui/PasscodeActivity$5;->this$0:Lorg/telegram/ui/PasscodeActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/PasscodeActivity;->access$500(Lorg/telegram/ui/PasscodeActivity;)Lorg/telegram/ui/Components/EditTextBoldCursor;
@@ -112,7 +112,7 @@
 
     invoke-virtual {p1, v0}, Landroid/widget/EditText;->setInputType(I)V
 
-    .line 753
+    .line 738
     iget-object p1, p0, Lorg/telegram/ui/PasscodeActivity$5;->this$0:Lorg/telegram/ui/PasscodeActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/PasscodeActivity;->access$1000(Lorg/telegram/ui/PasscodeActivity;)Landroid/widget/ImageView;
@@ -140,7 +140,7 @@
 
     if-ne p1, v0, :cond_0
 
-    .line 744
+    .line 729
     iget-object p1, p0, Lorg/telegram/ui/PasscodeActivity$5;->this$0:Lorg/telegram/ui/PasscodeActivity;
 
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->finishFragment()V
@@ -152,7 +152,7 @@
 
     if-ne p1, v0, :cond_3
 
-    .line 746
+    .line 731
     iget-object p1, p0, Lorg/telegram/ui/PasscodeActivity$5;->this$0:Lorg/telegram/ui/PasscodeActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/PasscodeActivity;->access$400(Lorg/telegram/ui/PasscodeActivity;)I
@@ -171,7 +171,7 @@
     :goto_0
     invoke-static {p1, v0}, Lorg/telegram/ui/PasscodeActivity;->access$402(Lorg/telegram/ui/PasscodeActivity;I)I
 
-    .line 747
+    .line 732
     iget-object p1, p0, Lorg/telegram/ui/PasscodeActivity$5;->val$switchItem:Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
     new-instance v0, Lorg/telegram/ui/PasscodeActivity$5$$ExternalSyntheticLambda0;
@@ -182,7 +182,7 @@
 
     invoke-static {v0, v3, v4}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;J)V
 
-    .line 756
+    .line 741
     iget-object p1, p0, Lorg/telegram/ui/PasscodeActivity$5;->this$0:Lorg/telegram/ui/PasscodeActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/PasscodeActivity;->access$500(Lorg/telegram/ui/PasscodeActivity;)Lorg/telegram/ui/Components/EditTextBoldCursor;
@@ -193,7 +193,7 @@
 
     invoke-virtual {p1, v0}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
-    .line 757
+    .line 742
     iget-object p1, p0, Lorg/telegram/ui/PasscodeActivity$5;->this$0:Lorg/telegram/ui/PasscodeActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/PasscodeActivity;->access$600(Lorg/telegram/ui/PasscodeActivity;)Lorg/telegram/ui/CodeFieldContainer;
@@ -209,14 +209,14 @@
 
     aget-object v3, p1, v2
 
-    .line 758
+    .line 743
     invoke-virtual {v3, v0}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_1
 
-    .line 760
+    .line 745
     :cond_2
     iget-object p1, p0, Lorg/telegram/ui/PasscodeActivity$5;->this$0:Lorg/telegram/ui/PasscodeActivity;
 

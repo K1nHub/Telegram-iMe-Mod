@@ -6,7 +6,7 @@
 # instance fields
 .field private final lastUpdateMillis:J
 
-.field private final walletInfo:Lcom/iMe/storage/domain/model/crypto/CryptoWalletInfo;
+.field private final walletInfo:Lcom/iMe/storage/domain/model/crypto/CryptoWalletsInfo;
 
 
 # direct methods
@@ -23,12 +23,12 @@
 
     move-object v0, p0
 
-    invoke-direct/range {v0 .. v5}, Lcom/iMe/storage/data/locale/prefs/model/CryptoWalletInformationMetadata;-><init>(JLcom/iMe/storage/domain/model/crypto/CryptoWalletInfo;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+    invoke-direct/range {v0 .. v5}, Lcom/iMe/storage/data/locale/prefs/model/CryptoWalletInformationMetadata;-><init>(JLcom/iMe/storage/domain/model/crypto/CryptoWalletsInfo;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
 
     return-void
 .end method
 
-.method public constructor <init>(JLcom/iMe/storage/domain/model/crypto/CryptoWalletInfo;)V
+.method public constructor <init>(JLcom/iMe/storage/domain/model/crypto/CryptoWalletsInfo;)V
     .locals 0
 
     .line 5
@@ -38,12 +38,12 @@
     iput-wide p1, p0, Lcom/iMe/storage/data/locale/prefs/model/CryptoWalletInformationMetadata;->lastUpdateMillis:J
 
     .line 7
-    iput-object p3, p0, Lcom/iMe/storage/data/locale/prefs/model/CryptoWalletInformationMetadata;->walletInfo:Lcom/iMe/storage/domain/model/crypto/CryptoWalletInfo;
+    iput-object p3, p0, Lcom/iMe/storage/data/locale/prefs/model/CryptoWalletInformationMetadata;->walletInfo:Lcom/iMe/storage/domain/model/crypto/CryptoWalletsInfo;
 
     return-void
 .end method
 
-.method public synthetic constructor <init>(JLcom/iMe/storage/domain/model/crypto/CryptoWalletInfo;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+.method public synthetic constructor <init>(JLcom/iMe/storage/domain/model/crypto/CryptoWalletsInfo;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
     .locals 0
 
     and-int/lit8 p5, p4, 0x1
@@ -61,7 +61,7 @@
 
     .line 5
     :cond_1
-    invoke-direct {p0, p1, p2, p3}, Lcom/iMe/storage/data/locale/prefs/model/CryptoWalletInformationMetadata;-><init>(JLcom/iMe/storage/domain/model/crypto/CryptoWalletInfo;)V
+    invoke-direct {p0, p1, p2, p3}, Lcom/iMe/storage/data/locale/prefs/model/CryptoWalletInformationMetadata;-><init>(JLcom/iMe/storage/domain/model/crypto/CryptoWalletsInfo;)V
 
     return-void
 .end method
@@ -100,9 +100,9 @@
     return v2
 
     :cond_2
-    iget-object v1, p0, Lcom/iMe/storage/data/locale/prefs/model/CryptoWalletInformationMetadata;->walletInfo:Lcom/iMe/storage/domain/model/crypto/CryptoWalletInfo;
+    iget-object v1, p0, Lcom/iMe/storage/data/locale/prefs/model/CryptoWalletInformationMetadata;->walletInfo:Lcom/iMe/storage/domain/model/crypto/CryptoWalletsInfo;
 
-    iget-object p1, p1, Lcom/iMe/storage/data/locale/prefs/model/CryptoWalletInformationMetadata;->walletInfo:Lcom/iMe/storage/domain/model/crypto/CryptoWalletInfo;
+    iget-object p1, p1, Lcom/iMe/storage/data/locale/prefs/model/CryptoWalletInformationMetadata;->walletInfo:Lcom/iMe/storage/domain/model/crypto/CryptoWalletsInfo;
 
     invoke-static {v1, p1}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
@@ -116,11 +116,11 @@
     return v0
 .end method
 
-.method public final getWalletInfo()Lcom/iMe/storage/domain/model/crypto/CryptoWalletInfo;
+.method public final getWalletInfo()Lcom/iMe/storage/domain/model/crypto/CryptoWalletsInfo;
     .locals 1
 
     .line 7
-    iget-object v0, p0, Lcom/iMe/storage/data/locale/prefs/model/CryptoWalletInformationMetadata;->walletInfo:Lcom/iMe/storage/domain/model/crypto/CryptoWalletInfo;
+    iget-object v0, p0, Lcom/iMe/storage/data/locale/prefs/model/CryptoWalletInformationMetadata;->walletInfo:Lcom/iMe/storage/domain/model/crypto/CryptoWalletsInfo;
 
     return-object v0
 .end method
@@ -136,7 +136,7 @@
 
     mul-int/lit8 v0, v0, 0x1f
 
-    iget-object v1, p0, Lcom/iMe/storage/data/locale/prefs/model/CryptoWalletInformationMetadata;->walletInfo:Lcom/iMe/storage/domain/model/crypto/CryptoWalletInfo;
+    iget-object v1, p0, Lcom/iMe/storage/data/locale/prefs/model/CryptoWalletInformationMetadata;->walletInfo:Lcom/iMe/storage/domain/model/crypto/CryptoWalletsInfo;
 
     if-nez v1, :cond_0
 
@@ -145,7 +145,7 @@
     goto :goto_0
 
     :cond_0
-    invoke-virtual {v1}, Lcom/iMe/storage/domain/model/crypto/CryptoWalletInfo;->hashCode()I
+    invoke-virtual {v1}, Lcom/iMe/storage/domain/model/crypto/CryptoWalletsInfo;->hashCode()I
 
     move-result v1
 
@@ -174,7 +174,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v1, p0, Lcom/iMe/storage/data/locale/prefs/model/CryptoWalletInformationMetadata;->walletInfo:Lcom/iMe/storage/domain/model/crypto/CryptoWalletInfo;
+    iget-object v1, p0, Lcom/iMe/storage/data/locale/prefs/model/CryptoWalletInformationMetadata;->walletInfo:Lcom/iMe/storage/domain/model/crypto/CryptoWalletsInfo;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 

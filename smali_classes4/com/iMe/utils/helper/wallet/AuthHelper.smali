@@ -15,7 +15,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nAuthHelper.kt\nKotlin\n*S Kotlin\n*F\n+ 1 AuthHelper.kt\ncom/iMe/utils/helper/wallet/AuthHelper\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 RxExt.kt\ncom/iMe/utils/extentions/rx/RxExtKt\n+ 4 ObservableExt.kt\ncom/iMe/storage/domain/utils/extentions/ObservableExtKt\n+ 5 ResultExt.kt\ncom/iMe/storage/domain/utils/extentions/ResultExtKt\n+ 6 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n*L\n1#1,251:1\n800#2,11:252\n766#2:263\n857#2,2:264\n288#2,2:266\n83#3,8:268\n14#4:276\n9#5:277\n56#6,6:278\n56#6,6:284\n56#6,6:290\n56#6,6:296\n56#6,6:302\n56#6,6:308\n*S KotlinDebug\n*F\n+ 1 AuthHelper.kt\ncom/iMe/utils/helper/wallet/AuthHelper\n*L\n83#1:252,11\n86#1:263\n86#1:264,2\n89#1:266,2\n114#1:268,8\n175#1:276\n99#1:277\n34#1:278,6\n35#1:284,6\n36#1:290,6\n37#1:296,6\n38#1:302,6\n39#1:308,6\n*E\n"
+    value = "SMAP\nAuthHelper.kt\nKotlin\n*S Kotlin\n*F\n+ 1 AuthHelper.kt\ncom/iMe/utils/helper/wallet/AuthHelper\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 RxExt.kt\ncom/iMe/utils/extentions/rx/RxExtKt\n+ 4 ObservableExt.kt\ncom/iMe/storage/domain/utils/extentions/ObservableExtKt\n+ 5 ResultExt.kt\ncom/iMe/storage/domain/utils/extentions/ResultExtKt\n+ 6 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n*L\n1#1,268:1\n800#2,11:269\n766#2:280\n857#2,2:281\n288#2,2:283\n85#3,12:285\n14#4:297\n9#5:298\n56#6,6:299\n56#6,6:305\n56#6,6:311\n56#6,6:317\n56#6,6:323\n56#6,6:329\n*S KotlinDebug\n*F\n+ 1 AuthHelper.kt\ncom/iMe/utils/helper/wallet/AuthHelper\n*L\n98#1:269,11\n101#1:280\n101#1:281,2\n104#1:283,2\n129#1:285,12\n191#1:297\n114#1:298\n39#1:299,6\n40#1:305,6\n41#1:311,6\n42#1:317,6\n43#1:323,6\n44#1:329,6\n*E\n"
 .end annotation
 
 
@@ -35,25 +35,19 @@
     .end annotation
 .end field
 
+.field private static currentAccountIndex:I
+
 .field private static delegate:Lcom/iMe/utils/helper/wallet/AuthHelper$Delegate;
 
 .field private static isAuthVisible:Z
 
 .field private static isBotMutedByOriginal:Z
 
-.field private static final messagesController:Lorg/telegram/messenger/MessagesController;
-
-.field private static final notificationCenter:Lorg/telegram/messenger/NotificationCenter;
-
-.field private static final notificationsController:Lorg/telegram/messenger/NotificationsController;
-
 .field private static final remoteConfigInteractor$delegate:Lkotlin/Lazy;
 
 .field private static final resourceManager$delegate:Lkotlin/Lazy;
 
 .field private static final schedulersProvider$delegate:Lkotlin/Lazy;
-
-.field private static final sendMessagesHelper:Lorg/telegram/messenger/SendMessagesHelper;
 
 .field private static final subscriptions:Lio/reactivex/disposables/CompositeDisposable;
 
@@ -158,7 +152,7 @@
 
     move-result-object v2
 
-    .line 34
+    .line 39
     sput-object v2, Lcom/iMe/utils/helper/wallet/AuthHelper;->remoteConfigInteractor$delegate:Lkotlin/Lazy;
 
     .line 58
@@ -175,7 +169,7 @@
 
     move-result-object v2
 
-    .line 35
+    .line 40
     sput-object v2, Lcom/iMe/utils/helper/wallet/AuthHelper;->resourceManager$delegate:Lkotlin/Lazy;
 
     .line 58
@@ -192,7 +186,7 @@
 
     move-result-object v2
 
-    .line 36
+    .line 41
     sput-object v2, Lcom/iMe/utils/helper/wallet/AuthHelper;->schedulersProvider$delegate:Lkotlin/Lazy;
 
     .line 58
@@ -209,7 +203,7 @@
 
     move-result-object v2
 
-    .line 37
+    .line 42
     sput-object v2, Lcom/iMe/utils/helper/wallet/AuthHelper;->telegramApi$delegate:Lkotlin/Lazy;
 
     .line 58
@@ -226,7 +220,7 @@
 
     move-result-object v2
 
-    .line 38
+    .line 43
     sput-object v2, Lcom/iMe/utils/helper/wallet/AuthHelper;->telegramControllersGateway$delegate:Lkotlin/Lazy;
 
     .line 58
@@ -241,83 +235,40 @@
 
     invoke-static {v1, v2}, Lkotlin/LazyKt;->lazy(Lkotlin/LazyThreadSafetyMode;Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
 
-    move-result-object v1
-
-    .line 39
-    sput-object v1, Lcom/iMe/utils/helper/wallet/AuthHelper;->walletSessionInteractor$delegate:Lkotlin/Lazy;
-
-    .line 42
-    invoke-static {}, Lio/reactivex/subjects/PublishSubject;->create()Lio/reactivex/subjects/PublishSubject;
-
-    move-result-object v1
-
-    const-string v2, "create()"
-
-    invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    sput-object v1, Lcom/iMe/utils/helper/wallet/AuthHelper;->authSubject:Lio/reactivex/subjects/PublishSubject;
-
-    .line 43
-    invoke-static {}, Lcom/iMe/storage/common/AppConfiguration$Wallet;->getWalletBotId()J
-
-    move-result-wide v1
-
-    sput-wide v1, Lcom/iMe/utils/helper/wallet/AuthHelper;->walletBotId:J
+    move-result-object v0
 
     .line 44
-    invoke-direct {v0}, Lcom/iMe/utils/helper/wallet/AuthHelper;->getTelegramControllersGateway()Lcom/iMe/gateway/TelegramControllersGateway;
-
-    move-result-object v1
-
-    const/4 v2, 0x0
-
-    const/4 v3, 0x1
-
-    invoke-static {v1, v2, v3, v4}, Lcom/iMe/gateway/TelegramControllersGateway$-CC;->getMessagesController$default(Lcom/iMe/gateway/TelegramControllersGateway;IILjava/lang/Object;)Lorg/telegram/messenger/MessagesController;
-
-    move-result-object v1
-
-    sput-object v1, Lcom/iMe/utils/helper/wallet/AuthHelper;->messagesController:Lorg/telegram/messenger/MessagesController;
-
-    .line 45
-    invoke-direct {v0}, Lcom/iMe/utils/helper/wallet/AuthHelper;->getTelegramControllersGateway()Lcom/iMe/gateway/TelegramControllersGateway;
-
-    move-result-object v1
-
-    invoke-static {v1, v2, v3, v4}, Lcom/iMe/gateway/TelegramControllersGateway$-CC;->getNotificationCenterInstance$default(Lcom/iMe/gateway/TelegramControllersGateway;IILjava/lang/Object;)Lorg/telegram/messenger/NotificationCenter;
-
-    move-result-object v1
-
-    sput-object v1, Lcom/iMe/utils/helper/wallet/AuthHelper;->notificationCenter:Lorg/telegram/messenger/NotificationCenter;
-
-    .line 46
-    invoke-direct {v0}, Lcom/iMe/utils/helper/wallet/AuthHelper;->getTelegramControllersGateway()Lcom/iMe/gateway/TelegramControllersGateway;
-
-    move-result-object v1
-
-    invoke-static {v1, v2, v3, v4}, Lcom/iMe/gateway/TelegramControllersGateway$-CC;->getNotificationsController$default(Lcom/iMe/gateway/TelegramControllersGateway;IILjava/lang/Object;)Lorg/telegram/messenger/NotificationsController;
-
-    move-result-object v1
-
-    sput-object v1, Lcom/iMe/utils/helper/wallet/AuthHelper;->notificationsController:Lorg/telegram/messenger/NotificationsController;
+    sput-object v0, Lcom/iMe/utils/helper/wallet/AuthHelper;->walletSessionInteractor$delegate:Lkotlin/Lazy;
 
     .line 47
-    invoke-direct {v0}, Lcom/iMe/utils/helper/wallet/AuthHelper;->getTelegramControllersGateway()Lcom/iMe/gateway/TelegramControllersGateway;
+    invoke-static {}, Lio/reactivex/subjects/PublishSubject;->create()Lio/reactivex/subjects/PublishSubject;
 
     move-result-object v0
 
-    invoke-static {v0, v2, v3, v4}, Lcom/iMe/gateway/TelegramControllersGateway$-CC;->getSendMessagesHelper$default(Lcom/iMe/gateway/TelegramControllersGateway;IILjava/lang/Object;)Lorg/telegram/messenger/SendMessagesHelper;
+    const-string v1, "create()"
 
-    move-result-object v0
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    sput-object v0, Lcom/iMe/utils/helper/wallet/AuthHelper;->sendMessagesHelper:Lorg/telegram/messenger/SendMessagesHelper;
+    sput-object v0, Lcom/iMe/utils/helper/wallet/AuthHelper;->authSubject:Lio/reactivex/subjects/PublishSubject;
 
     .line 48
+    invoke-static {}, Lcom/iMe/storage/common/AppConfiguration$Wallet;->getWalletBotId()J
+
+    move-result-wide v0
+
+    sput-wide v0, Lcom/iMe/utils/helper/wallet/AuthHelper;->walletBotId:J
+
+    .line 49
     new-instance v0, Lio/reactivex/disposables/CompositeDisposable;
 
     invoke-direct {v0}, Lio/reactivex/disposables/CompositeDisposable;-><init>()V
 
     sput-object v0, Lcom/iMe/utils/helper/wallet/AuthHelper;->subscriptions:Lio/reactivex/disposables/CompositeDisposable;
+
+    const/4 v0, -0x1
+
+    .line 63
+    sput v0, Lcom/iMe/utils/helper/wallet/AuthHelper;->currentAccountIndex:I
 
     return-void
 .end method
@@ -325,7 +276,7 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 31
+    .line 36
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -334,7 +285,7 @@
 .method public static final synthetic access$getDelegate$p()Lcom/iMe/utils/helper/wallet/AuthHelper$Delegate;
     .locals 1
 
-    .line 31
+    .line 36
     sget-object v0, Lcom/iMe/utils/helper/wallet/AuthHelper;->delegate:Lcom/iMe/utils/helper/wallet/AuthHelper$Delegate;
 
     return-object v0
@@ -343,7 +294,7 @@
 .method public static final synthetic access$getTelegramApi(Lcom/iMe/utils/helper/wallet/AuthHelper;)Lcom/iMe/manager/TelegramApi;
     .locals 0
 
-    .line 31
+    .line 36
     invoke-direct {p0}, Lcom/iMe/utils/helper/wallet/AuthHelper;->getTelegramApi()Lcom/iMe/manager/TelegramApi;
 
     move-result-object p0
@@ -354,7 +305,7 @@
 .method public static final synthetic access$getWalletSessionInteractor(Lcom/iMe/utils/helper/wallet/AuthHelper;)Lcom/iMe/storage/domain/interactor/wallet/WalletSessionInteractor;
     .locals 0
 
-    .line 31
+    .line 36
     invoke-direct {p0}, Lcom/iMe/utils/helper/wallet/AuthHelper;->getWalletSessionInteractor()Lcom/iMe/storage/domain/interactor/wallet/WalletSessionInteractor;
 
     move-result-object p0
@@ -365,7 +316,7 @@
 .method public static final synthetic access$onAuthFlowFinished(Lcom/iMe/utils/helper/wallet/AuthHelper;)V
     .locals 0
 
-    .line 31
+    .line 36
     invoke-direct {p0}, Lcom/iMe/utils/helper/wallet/AuthHelper;->onAuthFlowFinished()V
 
     return-void
@@ -374,7 +325,7 @@
 .method public static final synthetic access$onError(Lcom/iMe/utils/helper/wallet/AuthHelper;Ljava/lang/String;)V
     .locals 0
 
-    .line 31
+    .line 36
     invoke-direct {p0, p1}, Lcom/iMe/utils/helper/wallet/AuthHelper;->onError(Ljava/lang/String;)V
 
     return-void
@@ -383,38 +334,41 @@
 .method public static final synthetic access$prepareAndStartAuthFlow(Lcom/iMe/utils/helper/wallet/AuthHelper;)V
     .locals 0
 
-    .line 31
+    .line 36
     invoke-direct {p0}, Lcom/iMe/utils/helper/wallet/AuthHelper;->prepareAndStartAuthFlow()V
 
     return-void
 .end method
 
-.method public static final auth(Lcom/iMe/utils/helper/wallet/AuthHelper$Delegate;Z)V
+.method public static final auth(Lcom/iMe/utils/helper/wallet/AuthHelper$Delegate;ZI)V
     .locals 1
 
     const-string v0, "delegate"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 59
+    .line 73
     sget-object v0, Lcom/iMe/utils/helper/wallet/AuthHelper;->INSTANCE:Lcom/iMe/utils/helper/wallet/AuthHelper;
 
     sput-object p0, Lcom/iMe/utils/helper/wallet/AuthHelper;->delegate:Lcom/iMe/utils/helper/wallet/AuthHelper$Delegate;
 
-    .line 60
+    .line 74
     sput-boolean p1, Lcom/iMe/utils/helper/wallet/AuthHelper;->isAuthVisible:Z
 
-    .line 62
+    .line 75
+    sput p2, Lcom/iMe/utils/helper/wallet/AuthHelper;->currentAccountIndex:I
+
+    .line 77
     invoke-direct {v0}, Lcom/iMe/utils/helper/wallet/AuthHelper;->subscribeToAuthSubject()V
 
     if-eqz p1, :cond_0
 
-    .line 64
+    .line 79
     invoke-direct {v0}, Lcom/iMe/utils/helper/wallet/AuthHelper;->prepareAndStartAuthFlow()V
 
     goto :goto_0
 
-    .line 66
+    .line 81
     :cond_0
     invoke-direct {v0}, Lcom/iMe/utils/helper/wallet/AuthHelper;->runHiddenAuthWithRemoteConfigCheck()V
 
@@ -422,10 +376,26 @@
     return-void
 .end method
 
+.method public static synthetic auth$default(Lcom/iMe/utils/helper/wallet/AuthHelper$Delegate;ZIILjava/lang/Object;)V
+    .locals 0
+
+    and-int/lit8 p3, p3, 0x4
+
+    if-eqz p3, :cond_0
+
+    const/4 p2, -0x1
+
+    .line 68
+    :cond_0
+    invoke-static {p0, p1, p2}, Lcom/iMe/utils/helper/wallet/AuthHelper;->auth(Lcom/iMe/utils/helper/wallet/AuthHelper$Delegate;ZI)V
+
+    return-void
+.end method
+
 .method private static final didReceivedNotification$lambda$2(Ljava/lang/String;Lorg/telegram/tgnet/TLRPC$TL_messages_requestUrlAuth;)V
     .locals 1
 
-    .line 99
+    .line 114
     sget-object v0, Lcom/iMe/utils/helper/wallet/AuthHelper;->authSubject:Lio/reactivex/subjects/PublishSubject;
 
     invoke-static {p0, p1}, Lkotlin/TuplesKt;->to(Ljava/lang/Object;Ljava/lang/Object;)Lkotlin/Pair;
@@ -439,7 +409,7 @@
 
     move-result-object p0
 
-    .line 99
+    .line 114
     invoke-virtual {v0, p0}, Lio/reactivex/subjects/PublishSubject;->onNext(Ljava/lang/Object;)V
 
     return-void
@@ -450,7 +420,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 128
+    .line 144
     iget-object p1, p1, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
 
     if-eqz p1, :cond_0
@@ -490,10 +460,61 @@
     return-object p1
 .end method
 
+.method private final getMessagesController()Lorg/telegram/messenger/MessagesController;
+    .locals 2
+
+    .line 51
+    invoke-direct {p0}, Lcom/iMe/utils/helper/wallet/AuthHelper;->getTelegramControllersGateway()Lcom/iMe/gateway/TelegramControllersGateway;
+
+    move-result-object v0
+
+    sget v1, Lcom/iMe/utils/helper/wallet/AuthHelper;->currentAccountIndex:I
+
+    invoke-interface {v0, v1}, Lcom/iMe/gateway/TelegramControllersGateway;->getMessagesController(I)Lorg/telegram/messenger/MessagesController;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method private final getNotificationCenter()Lorg/telegram/messenger/NotificationCenter;
+    .locals 2
+
+    .line 53
+    invoke-direct {p0}, Lcom/iMe/utils/helper/wallet/AuthHelper;->getTelegramControllersGateway()Lcom/iMe/gateway/TelegramControllersGateway;
+
+    move-result-object v0
+
+    sget v1, Lcom/iMe/utils/helper/wallet/AuthHelper;->currentAccountIndex:I
+
+    invoke-interface {v0, v1}, Lcom/iMe/gateway/TelegramControllersGateway;->getNotificationCenterInstance(I)Lorg/telegram/messenger/NotificationCenter;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method private final getNotificationsController()Lorg/telegram/messenger/NotificationsController;
+    .locals 2
+
+    .line 55
+    invoke-direct {p0}, Lcom/iMe/utils/helper/wallet/AuthHelper;->getTelegramControllersGateway()Lcom/iMe/gateway/TelegramControllersGateway;
+
+    move-result-object v0
+
+    sget v1, Lcom/iMe/utils/helper/wallet/AuthHelper;->currentAccountIndex:I
+
+    invoke-interface {v0, v1}, Lcom/iMe/gateway/TelegramControllersGateway;->getNotificationsController(I)Lorg/telegram/messenger/NotificationsController;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
 .method private final getRemoteConfigInteractor()Lcom/iMe/storage/domain/interactor/firebase/RemoteConfigInteractor;
     .locals 1
 
-    .line 34
+    .line 39
     sget-object v0, Lcom/iMe/utils/helper/wallet/AuthHelper;->remoteConfigInteractor$delegate:Lkotlin/Lazy;
 
     invoke-interface {v0}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
@@ -508,7 +529,7 @@
 .method private final getResourceManager()Lcom/iMe/storage/domain/utils/system/ResourceManager;
     .locals 1
 
-    .line 35
+    .line 40
     sget-object v0, Lcom/iMe/utils/helper/wallet/AuthHelper;->resourceManager$delegate:Lkotlin/Lazy;
 
     invoke-interface {v0}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
@@ -523,7 +544,7 @@
 .method private final getSchedulersProvider()Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
     .locals 1
 
-    .line 36
+    .line 41
     sget-object v0, Lcom/iMe/utils/helper/wallet/AuthHelper;->schedulersProvider$delegate:Lkotlin/Lazy;
 
     invoke-interface {v0}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
@@ -535,10 +556,27 @@
     return-object v0
 .end method
 
+.method private final getSendMessagesHelper()Lorg/telegram/messenger/SendMessagesHelper;
+    .locals 2
+
+    .line 57
+    invoke-direct {p0}, Lcom/iMe/utils/helper/wallet/AuthHelper;->getTelegramControllersGateway()Lcom/iMe/gateway/TelegramControllersGateway;
+
+    move-result-object v0
+
+    sget v1, Lcom/iMe/utils/helper/wallet/AuthHelper;->currentAccountIndex:I
+
+    invoke-interface {v0, v1}, Lcom/iMe/gateway/TelegramControllersGateway;->getSendMessagesHelper(I)Lorg/telegram/messenger/SendMessagesHelper;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
 .method private final getTelegramApi()Lcom/iMe/manager/TelegramApi;
     .locals 1
 
-    .line 37
+    .line 42
     sget-object v0, Lcom/iMe/utils/helper/wallet/AuthHelper;->telegramApi$delegate:Lkotlin/Lazy;
 
     invoke-interface {v0}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
@@ -553,7 +591,7 @@
 .method private final getTelegramControllersGateway()Lcom/iMe/gateway/TelegramControllersGateway;
     .locals 1
 
-    .line 38
+    .line 43
     sget-object v0, Lcom/iMe/utils/helper/wallet/AuthHelper;->telegramControllersGateway$delegate:Lkotlin/Lazy;
 
     invoke-interface {v0}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
@@ -568,7 +606,7 @@
 .method private final getWalletSessionInteractor()Lcom/iMe/storage/domain/interactor/wallet/WalletSessionInteractor;
     .locals 1
 
-    .line 39
+    .line 44
     sget-object v0, Lcom/iMe/utils/helper/wallet/AuthHelper;->walletSessionInteractor$delegate:Lkotlin/Lazy;
 
     invoke-interface {v0}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
@@ -583,8 +621,10 @@
 .method private final isAuthBotBlocked()Z
     .locals 3
 
-    .line 50
-    sget-object v0, Lcom/iMe/utils/helper/wallet/AuthHelper;->messagesController:Lorg/telegram/messenger/MessagesController;
+    .line 59
+    invoke-direct {p0}, Lcom/iMe/utils/helper/wallet/AuthHelper;->getMessagesController()Lorg/telegram/messenger/MessagesController;
+
+    move-result-object v0
 
     iget-object v0, v0, Lorg/telegram/messenger/MessagesController;->blockePeers:Lorg/telegram/messenger/support/LongSparseIntArray;
 
@@ -610,43 +650,49 @@
 .method private final onAuthFlowFinished()V
     .locals 5
 
-    .line 209
+    .line 226
     sget-boolean v0, Lcom/iMe/utils/helper/wallet/AuthHelper;->isBotMutedByOriginal:Z
 
     const/4 v1, 0x0
 
     if-nez v0, :cond_0
 
-    .line 210
-    sget-object v0, Lcom/iMe/utils/helper/wallet/AuthHelper;->notificationsController:Lorg/telegram/messenger/NotificationsController;
+    .line 227
+    invoke-direct {p0}, Lcom/iMe/utils/helper/wallet/AuthHelper;->getNotificationsController()Lorg/telegram/messenger/NotificationsController;
+
+    move-result-object v0
 
     sget-wide v2, Lcom/iMe/utils/helper/wallet/AuthHelper;->walletBotId:J
 
     invoke-virtual {v0, v2, v3, v1, v1}, Lorg/telegram/messenger/NotificationsController;->muteDialog(JIZ)V
 
-    .line 212
+    .line 229
     :cond_0
-    sget-object v0, Lcom/iMe/utils/helper/wallet/AuthHelper;->messagesController:Lorg/telegram/messenger/MessagesController;
+    invoke-direct {p0}, Lcom/iMe/utils/helper/wallet/AuthHelper;->getMessagesController()Lorg/telegram/messenger/MessagesController;
+
+    move-result-object v0
 
     sget-wide v2, Lcom/iMe/utils/helper/wallet/AuthHelper;->walletBotId:J
 
     invoke-virtual {v0, v2, v3, v1}, Lorg/telegram/messenger/MessagesController;->deleteDialog(JI)V
 
-    .line 214
+    .line 231
     sget-object v0, Lcom/iMe/utils/helper/wallet/AuthHelper;->delegate:Lcom/iMe/utils/helper/wallet/AuthHelper$Delegate;
 
     if-eqz v0, :cond_1
 
     invoke-interface {v0}, Lcom/iMe/utils/helper/wallet/AuthHelper$Delegate;->hideLoadingDialog()V
 
-    .line 215
+    .line 232
     :cond_1
     sget-object v0, Lcom/iMe/utils/helper/wallet/AuthHelper;->subscriptions:Lio/reactivex/disposables/CompositeDisposable;
 
     invoke-virtual {v0}, Lio/reactivex/disposables/CompositeDisposable;->clear()V
 
-    .line 216
-    sget-object v0, Lcom/iMe/utils/helper/wallet/AuthHelper;->notificationCenter:Lorg/telegram/messenger/NotificationCenter;
+    .line 233
+    invoke-direct {p0}, Lcom/iMe/utils/helper/wallet/AuthHelper;->getNotificationCenter()Lorg/telegram/messenger/NotificationCenter;
+
+    move-result-object v0
 
     sget v2, Lorg/telegram/messenger/NotificationCenter;->updateWalletDialogVisibility:I
 
@@ -666,14 +712,14 @@
 .method public static final onDestroy()V
     .locals 1
 
-    .line 72
+    .line 87
     sget-object v0, Lcom/iMe/utils/helper/wallet/AuthHelper;->subscriptions:Lio/reactivex/disposables/CompositeDisposable;
 
     invoke-virtual {v0}, Lio/reactivex/disposables/CompositeDisposable;->clear()V
 
     const/4 v0, 0x0
 
-    .line 73
+    .line 88
     sput-object v0, Lcom/iMe/utils/helper/wallet/AuthHelper;->delegate:Lcom/iMe/utils/helper/wallet/AuthHelper$Delegate;
 
     return-void
@@ -682,15 +728,15 @@
 .method private final onError(Ljava/lang/String;)V
     .locals 1
 
-    .line 202
+    .line 219
     invoke-direct {p0}, Lcom/iMe/utils/helper/wallet/AuthHelper;->onAuthFlowFinished()V
 
-    .line 203
+    .line 220
     sget-boolean v0, Lcom/iMe/utils/helper/wallet/AuthHelper;->isAuthVisible:Z
 
     if-eqz v0, :cond_0
 
-    .line 204
+    .line 221
     sget-object v0, Lcom/iMe/utils/helper/wallet/AuthHelper;->delegate:Lcom/iMe/utils/helper/wallet/AuthHelper$Delegate;
 
     if-eqz v0, :cond_0
@@ -708,7 +754,7 @@
 
     if-eqz p2, :cond_0
 
-    .line 201
+    .line 218
     invoke-direct {p0}, Lcom/iMe/utils/helper/wallet/AuthHelper;->getResourceManager()Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     move-result-object p1
@@ -728,12 +774,12 @@
 .method private final prepareAndStartAuthFlow()V
     .locals 2
 
-    .line 131
+    .line 147
     invoke-direct {p0}, Lcom/iMe/utils/helper/wallet/AuthHelper;->getTelegramApi()Lcom/iMe/manager/TelegramApi;
 
     move-result-object v0
 
-    .line 132
+    .line 148
     invoke-static {}, Lcom/iMe/storage/common/AppConfiguration$Wallet;->getWalletBotUsernameLowerCase()Ljava/lang/String;
 
     move-result-object v1
@@ -742,7 +788,7 @@
 
     move-result-object v0
 
-    .line 133
+    .line 149
     invoke-direct {p0}, Lcom/iMe/utils/helper/wallet/AuthHelper;->getSchedulersProvider()Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
     move-result-object v1
@@ -761,12 +807,12 @@
 
     sget-object v1, Lcom/iMe/utils/helper/wallet/AuthHelper$$ExternalSyntheticLambda1;->INSTANCE:Lcom/iMe/utils/helper/wallet/AuthHelper$$ExternalSyntheticLambda1;
 
-    .line 134
+    .line 150
     invoke-direct {p0, v0, v1}, Lcom/iMe/utils/helper/wallet/AuthHelper;->subscribeWithCommonErrorHandling(Lio/reactivex/Observable;Lcom/iMe/fork/utils/Callbacks$Callback1;)Lio/reactivex/disposables/Disposable;
 
     move-result-object v0
 
-    .line 151
+    .line 167
     sget-object v1, Lcom/iMe/utils/helper/wallet/AuthHelper;->subscriptions:Lio/reactivex/disposables/CompositeDisposable;
 
     invoke-static {v0, v1}, Lcom/iMe/storage/data/utils/extentions/RxExtKt;->autoDispose(Lio/reactivex/disposables/Disposable;Lio/reactivex/disposables/CompositeDisposable;)V
@@ -779,7 +825,7 @@
 
     if-eqz p0, :cond_1
 
-    .line 136
+    .line 152
     sget-object p0, Lcom/iMe/utils/helper/wallet/AuthHelper;->INSTANCE:Lcom/iMe/utils/helper/wallet/AuthHelper;
 
     invoke-direct {p0}, Lcom/iMe/utils/helper/wallet/AuthHelper;->isAuthBotBlocked()Z
@@ -788,8 +834,10 @@
 
     if-eqz v0, :cond_0
 
-    .line 137
-    sget-object p0, Lcom/iMe/utils/helper/wallet/AuthHelper;->messagesController:Lorg/telegram/messenger/MessagesController;
+    .line 153
+    invoke-direct {p0}, Lcom/iMe/utils/helper/wallet/AuthHelper;->getMessagesController()Lorg/telegram/messenger/MessagesController;
+
+    move-result-object p0
 
     sget-wide v0, Lcom/iMe/utils/helper/wallet/AuthHelper;->walletBotId:J
 
@@ -799,13 +847,13 @@
 
     goto :goto_0
 
-    .line 145
+    .line 161
     :cond_0
     invoke-direct {p0}, Lcom/iMe/utils/helper/wallet/AuthHelper;->startAuthFlow()V
 
     goto :goto_0
 
-    .line 148
+    .line 164
     :cond_1
     sget-object p0, Lcom/iMe/utils/helper/wallet/AuthHelper;->INSTANCE:Lcom/iMe/utils/helper/wallet/AuthHelper;
 
@@ -822,7 +870,7 @@
 .method private static final prepareAndStartAuthFlow$lambda$5$lambda$4()V
     .locals 3
 
-    .line 138
+    .line 154
     sget-object v0, Lcom/iMe/utils/helper/wallet/AuthHelper;->INSTANCE:Lcom/iMe/utils/helper/wallet/AuthHelper;
 
     invoke-direct {v0}, Lcom/iMe/utils/helper/wallet/AuthHelper;->isAuthBotBlocked()Z
@@ -835,12 +883,12 @@
 
     const/4 v2, 0x0
 
-    .line 139
+    .line 155
     invoke-static {v0, v2, v1, v2}, Lcom/iMe/utils/helper/wallet/AuthHelper;->onError$default(Lcom/iMe/utils/helper/wallet/AuthHelper;Ljava/lang/String;ILjava/lang/Object;)V
 
     goto :goto_0
 
-    .line 141
+    .line 157
     :cond_0
     invoke-direct {v0}, Lcom/iMe/utils/helper/wallet/AuthHelper;->startAuthFlow()V
 
@@ -851,19 +899,19 @@
 .method private final runHiddenAuthWithRemoteConfigCheck()V
     .locals 4
 
-    .line 111
+    .line 126
     invoke-direct {p0}, Lcom/iMe/utils/helper/wallet/AuthHelper;->getRemoteConfigInteractor()Lcom/iMe/storage/domain/interactor/firebase/RemoteConfigInteractor;
 
     move-result-object v0
 
     const-string v1, "auto_auth_enabled"
 
-    .line 112
+    .line 127
     invoke-virtual {v0, v1}, Lcom/iMe/storage/domain/interactor/firebase/RemoteConfigInteractor;->getBoolean(Ljava/lang/String;)Lio/reactivex/Single;
 
     move-result-object v0
 
-    .line 113
+    .line 128
     invoke-direct {p0}, Lcom/iMe/utils/helper/wallet/AuthHelper;->getSchedulersProvider()Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
     move-result-object v1
@@ -876,11 +924,11 @@
 
     move-result-object v0
 
-    const-string v1, "remoteConfigInteractor\n \u2026(schedulersProvider.ui())"
+    const-string/jumbo v1, "remoteConfigInteractor\n \u2026(schedulersProvider.ui())"
 
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 88
+    .line 90
     new-instance v1, Lcom/iMe/utils/helper/wallet/AuthHelper$runHiddenAuthWithRemoteConfigCheck$$inlined$subscribeWithErrorHandle$default$1;
 
     invoke-direct {v1}, Lcom/iMe/utils/helper/wallet/AuthHelper$runHiddenAuthWithRemoteConfigCheck$$inlined$subscribeWithErrorHandle$default$1;-><init>()V
@@ -895,22 +943,22 @@
 
     invoke-direct {v1, v3}, Lcom/iMe/utils/helper/wallet/AuthHelper$runHiddenAuthWithRemoteConfigCheck$$inlined$subscribeWithErrorHandle$default$2;-><init>(Lcom/iMe/ui/base/mvp/base/BaseView;)V
 
-    .line 90
+    .line 92
     new-instance v3, Lcom/iMe/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
 
     invoke-direct {v3, v1}, Lcom/iMe/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;-><init>(Lkotlin/jvm/functions/Function1;)V
 
-    .line 88
+    .line 90
     invoke-virtual {v0, v2, v3}, Lio/reactivex/Single;->subscribe(Lio/reactivex/functions/Consumer;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
 
     move-result-object v0
 
-    const-string/jumbo v1, "viewState: BaseView? = n\u2026  onError.invoke()\n    })"
+    const-string/jumbo v1, "viewState: BaseView? = n\u2026Error.invoke()\n        })"
 
-    .line 90
+    .line 92
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 124
+    .line 140
     sget-object v1, Lcom/iMe/utils/helper/wallet/AuthHelper;->subscriptions:Lio/reactivex/disposables/CompositeDisposable;
 
     invoke-static {v0, v1}, Lcom/iMe/storage/data/utils/extentions/RxExtKt;->autoDispose(Lio/reactivex/disposables/Disposable;Lio/reactivex/disposables/CompositeDisposable;)V
@@ -921,8 +969,10 @@
 .method private final startAuthFlow()V
     .locals 17
 
-    .line 155
-    sget-object v0, Lcom/iMe/utils/helper/wallet/AuthHelper;->messagesController:Lorg/telegram/messenger/MessagesController;
+    .line 171
+    invoke-direct/range {p0 .. p0}, Lcom/iMe/utils/helper/wallet/AuthHelper;->getMessagesController()Lorg/telegram/messenger/MessagesController;
+
+    move-result-object v0
 
     sget-wide v3, Lcom/iMe/utils/helper/wallet/AuthHelper;->walletBotId:J
 
@@ -934,15 +984,19 @@
 
     sput-boolean v0, Lcom/iMe/utils/helper/wallet/AuthHelper;->isBotMutedByOriginal:Z
 
-    .line 156
-    sget-object v0, Lcom/iMe/utils/helper/wallet/AuthHelper;->notificationsController:Lorg/telegram/messenger/NotificationsController;
+    .line 172
+    invoke-direct/range {p0 .. p0}, Lcom/iMe/utils/helper/wallet/AuthHelper;->getNotificationsController()Lorg/telegram/messenger/NotificationsController;
+
+    move-result-object v0
 
     const/4 v2, 0x1
 
     invoke-virtual {v0, v3, v4, v1, v2}, Lorg/telegram/messenger/NotificationsController;->muteDialog(JIZ)V
 
-    .line 157
-    sget-object v0, Lcom/iMe/utils/helper/wallet/AuthHelper;->notificationCenter:Lorg/telegram/messenger/NotificationCenter;
+    .line 173
+    invoke-direct/range {p0 .. p0}, Lcom/iMe/utils/helper/wallet/AuthHelper;->getNotificationCenter()Lorg/telegram/messenger/NotificationCenter;
+
+    move-result-object v0
 
     sget v5, Lorg/telegram/messenger/NotificationCenter;->updateWalletDialogVisibility:I
 
@@ -954,15 +1008,21 @@
 
     invoke-virtual {v0, v5, v2}, Lorg/telegram/messenger/NotificationCenter;->postNotificationName(I[Ljava/lang/Object;)V
 
-    .line 158
+    .line 174
+    invoke-direct/range {p0 .. p0}, Lcom/iMe/utils/helper/wallet/AuthHelper;->getNotificationCenter()Lorg/telegram/messenger/NotificationCenter;
+
+    move-result-object v0
+
     sget v1, Lorg/telegram/messenger/NotificationCenter;->didReceiveNewMessages:I
 
     move-object/from16 v15, p0
 
     invoke-virtual {v0, v15, v1}, Lorg/telegram/messenger/NotificationCenter;->addObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
 
-    .line 160
-    sget-object v1, Lcom/iMe/utils/helper/wallet/AuthHelper;->sendMessagesHelper:Lorg/telegram/messenger/SendMessagesHelper;
+    .line 176
+    invoke-direct/range {p0 .. p0}, Lcom/iMe/utils/helper/wallet/AuthHelper;->getSendMessagesHelper()Lorg/telegram/messenger/SendMessagesHelper;
+
+    move-result-object v1
 
     const-string v2, "/start"
 
@@ -1000,23 +1060,23 @@
 .method private final subscribeToAuthSubject()V
     .locals 5
 
-    .line 170
+    .line 186
     sget-object v0, Lcom/iMe/utils/helper/wallet/AuthHelper;->subscriptions:Lio/reactivex/disposables/CompositeDisposable;
 
     invoke-virtual {v0}, Lio/reactivex/disposables/CompositeDisposable;->clear()V
 
-    .line 171
+    .line 187
     sget-object v1, Lcom/iMe/utils/helper/wallet/AuthHelper;->authSubject:Lio/reactivex/subjects/PublishSubject;
 
-    .line 172
+    .line 188
     invoke-virtual {v1}, Lio/reactivex/Observable;->hide()Lio/reactivex/Observable;
 
     move-result-object v1
 
-    .line 173
+    .line 189
     sget-object v2, Ljava/util/concurrent/TimeUnit;->SECONDS:Ljava/util/concurrent/TimeUnit;
 
-    const-wide/16 v3, 0x1e
+    const-wide/16 v3, 0x3c
 
     invoke-virtual {v1, v3, v4, v2}, Lio/reactivex/Observable;->timeout(JLjava/util/concurrent/TimeUnit;)Lio/reactivex/Observable;
 
@@ -1024,7 +1084,7 @@
 
     const-wide/16 v2, 0x1
 
-    .line 174
+    .line 190
     invoke-virtual {v1, v2, v3}, Lio/reactivex/Observable;->take(J)Lio/reactivex/Observable;
 
     move-result-object v1
@@ -1050,7 +1110,7 @@
 
     invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 186
+    .line 202
     invoke-direct {p0}, Lcom/iMe/utils/helper/wallet/AuthHelper;->getSchedulersProvider()Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
     move-result-object v2
@@ -1065,22 +1125,22 @@
 
     const-string v2, "authSubject\n            \u2026(schedulersProvider.ui())"
 
-    .line 174
+    .line 190
     invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 187
+    .line 203
     invoke-direct {p0, v1}, Lcom/iMe/utils/helper/wallet/AuthHelper;->withLoadingDialog(Lio/reactivex/Observable;)Lio/reactivex/Observable;
 
     move-result-object v1
 
     sget-object v2, Lcom/iMe/utils/helper/wallet/AuthHelper$$ExternalSyntheticLambda0;->INSTANCE:Lcom/iMe/utils/helper/wallet/AuthHelper$$ExternalSyntheticLambda0;
 
-    .line 188
+    .line 204
     invoke-direct {p0, v1, v2}, Lcom/iMe/utils/helper/wallet/AuthHelper;->subscribeWithCommonErrorHandling(Lio/reactivex/Observable;Lcom/iMe/fork/utils/Callbacks$Callback1;)Lio/reactivex/disposables/Disposable;
 
     move-result-object v1
 
-    .line 198
+    .line 215
     invoke-static {v1, v0}, Lcom/iMe/storage/data/utils/extentions/RxExtKt;->autoDispose(Lio/reactivex/disposables/Disposable;Lio/reactivex/disposables/CompositeDisposable;)V
 
     return-void
@@ -1089,17 +1149,17 @@
 .method private static final subscribeToAuthSubject$lambda$7(Lcom/iMe/storage/domain/model/Result;)V
     .locals 2
 
-    .line 190
+    .line 206
     instance-of v0, p0, Lcom/iMe/storage/domain/model/Result$Success;
 
     if-eqz v0, :cond_0
 
-    .line 191
+    .line 207
     sget-object p0, Lcom/iMe/utils/helper/wallet/AuthHelper;->INSTANCE:Lcom/iMe/utils/helper/wallet/AuthHelper;
 
     invoke-direct {p0}, Lcom/iMe/utils/helper/wallet/AuthHelper;->onAuthFlowFinished()V
 
-    .line 192
+    .line 208
     sget-object p0, Lcom/iMe/utils/helper/wallet/AuthHelper;->delegate:Lcom/iMe/utils/helper/wallet/AuthHelper$Delegate;
 
     if-eqz p0, :cond_1
@@ -1108,7 +1168,7 @@
 
     goto :goto_0
 
-    .line 194
+    .line 211
     :cond_0
     instance-of v0, p0, Lcom/iMe/storage/domain/model/Result$Error;
 
@@ -1152,32 +1212,32 @@
         }
     .end annotation
 
-    .line 233
+    .line 250
     new-instance v0, Lcom/iMe/utils/helper/wallet/AuthHelper$subscribeWithCommonErrorHandling$1;
 
     invoke-direct {v0, p2}, Lcom/iMe/utils/helper/wallet/AuthHelper$subscribeWithCommonErrorHandling$1;-><init>(Lcom/iMe/fork/utils/Callbacks$Callback1;)V
 
-    .line 234
+    .line 251
     new-instance p2, Lcom/iMe/utils/helper/wallet/AuthHelper$$ExternalSyntheticLambda5;
 
     invoke-direct {p2, v0}, Lcom/iMe/utils/helper/wallet/AuthHelper$$ExternalSyntheticLambda5;-><init>(Lkotlin/jvm/functions/Function1;)V
 
-    .line 233
+    .line 250
     sget-object v0, Lcom/iMe/utils/helper/wallet/AuthHelper$subscribeWithCommonErrorHandling$2;->INSTANCE:Lcom/iMe/utils/helper/wallet/AuthHelper$subscribeWithCommonErrorHandling$2;
 
-    .line 235
+    .line 252
     new-instance v1, Lcom/iMe/utils/helper/wallet/AuthHelper$$ExternalSyntheticLambda6;
 
     invoke-direct {v1, v0}, Lcom/iMe/utils/helper/wallet/AuthHelper$$ExternalSyntheticLambda6;-><init>(Lkotlin/jvm/functions/Function1;)V
 
-    .line 233
+    .line 250
     invoke-virtual {p1, p2, v1}, Lio/reactivex/Observable;->subscribe(Lio/reactivex/functions/Consumer;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
 
     move-result-object p1
 
     const-string p2, "onSuccess: Callbacks.Cal\u2026          }\n            )"
 
-    .line 235
+    .line 252
     invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     return-object p1
@@ -1190,7 +1250,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 234
+    .line 251
     invoke-interface {p0, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     return-void
@@ -1203,7 +1263,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 235
+    .line 252
     invoke-interface {p0, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     return-void
@@ -1223,12 +1283,12 @@
         }
     .end annotation
 
-    .line 220
+    .line 237
     sget-boolean v0, Lcom/iMe/utils/helper/wallet/AuthHelper;->isAuthVisible:Z
 
     if-eqz v0, :cond_0
 
-    .line 221
+    .line 238
     sget-object v0, Lcom/iMe/utils/helper/wallet/AuthHelper$withLoadingDialog$1;->INSTANCE:Lcom/iMe/utils/helper/wallet/AuthHelper$withLoadingDialog$1;
 
     new-instance v1, Lcom/iMe/utils/helper/wallet/AuthHelper$$ExternalSyntheticLambda4;
@@ -1241,14 +1301,14 @@
 
     sget-object v0, Lcom/iMe/utils/helper/wallet/AuthHelper$$ExternalSyntheticLambda3;->INSTANCE:Lcom/iMe/utils/helper/wallet/AuthHelper$$ExternalSyntheticLambda3;
 
-    .line 227
+    .line 244
     invoke-virtual {p1, v0}, Lio/reactivex/Observable;->doFinally(Lio/reactivex/functions/Action;)Lio/reactivex/Observable;
 
     move-result-object p1
 
     const-string/jumbo v0, "{\n                doOnSu\u2026gDialog() }\n            }"
 
-    .line 221
+    .line 238
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     :cond_0
@@ -1262,7 +1322,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 221
+    .line 238
     invoke-interface {p0, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     return-void
@@ -1271,7 +1331,7 @@
 .method private static final withLoadingDialog$lambda$9()V
     .locals 1
 
-    .line 227
+    .line 244
     sget-object v0, Lcom/iMe/utils/helper/wallet/AuthHelper;->delegate:Lcom/iMe/utils/helper/wallet/AuthHelper$Delegate;
 
     if-eqz v0, :cond_0
@@ -1291,7 +1351,7 @@
 
     invoke-static {p3, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 82
+    .line 97
     sget p2, Lorg/telegram/messenger/NotificationCenter;->didReceiveNewMessages:I
 
     if-ne p1, p2, :cond_c
@@ -1319,7 +1379,7 @@
 
     const/4 p2, 0x1
 
-    .line 83
+    .line 98
     aget-object p3, p3, p2
 
     instance-of v0, p3, Ljava/util/ArrayList;
@@ -1374,7 +1434,7 @@
     :cond_4
     if-nez v0, :cond_5
 
-    .line 83
+    .line 98
     invoke-static {}, Lkotlin/collections/CollectionsKt;->emptyList()Ljava/util/List;
 
     move-result-object v0
@@ -1406,7 +1466,7 @@
 
     check-cast v3, Lorg/telegram/messenger/MessageObject;
 
-    .line 87
+    .line 102
     iget-object v3, v3, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
 
     iget-object v3, v3, Lorg/telegram/tgnet/TLRPC$Message;->from_id:Lorg/telegram/tgnet/TLRPC$Peer;
@@ -1455,7 +1515,7 @@
 
     check-cast v2, Lorg/telegram/messenger/MessageObject;
 
-    .line 90
+    .line 105
     iget-object v2, v2, Lorg/telegram/messenger/MessageObject;->botButtonsLayout:Ljava/lang/StringBuilder;
 
     const-string v3, "messageObject.botButtonsLayout"
@@ -1480,28 +1540,32 @@
 
     move-object v1, v0
 
-    .line 89
+    .line 104
     :cond_b
     move-object v4, v1
 
     check-cast v4, Lorg/telegram/messenger/MessageObject;
 
-    .line 92
+    .line 107
     invoke-direct {p0, v4}, Lcom/iMe/utils/helper/wallet/AuthHelper;->getMessageObjectButton(Lorg/telegram/messenger/MessageObject;)Lorg/telegram/tgnet/TLRPC$KeyboardButton;
 
     move-result-object v5
 
     if-eqz v5, :cond_c
 
-    .line 94
-    sget-object p1, Lcom/iMe/utils/helper/wallet/AuthHelper;->notificationCenter:Lorg/telegram/messenger/NotificationCenter;
+    .line 109
+    invoke-direct {p0}, Lcom/iMe/utils/helper/wallet/AuthHelper;->getNotificationCenter()Lorg/telegram/messenger/NotificationCenter;
+
+    move-result-object p1
 
     sget p2, Lorg/telegram/messenger/NotificationCenter;->didReceiveNewMessages:I
 
     invoke-virtual {p1, p0, p2}, Lorg/telegram/messenger/NotificationCenter;->removeObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
 
-    .line 95
-    sget-object v2, Lcom/iMe/utils/helper/wallet/AuthHelper;->sendMessagesHelper:Lorg/telegram/messenger/SendMessagesHelper;
+    .line 110
+    invoke-direct {p0}, Lcom/iMe/utils/helper/wallet/AuthHelper;->getSendMessagesHelper()Lorg/telegram/messenger/SendMessagesHelper;
+
+    move-result-object v2
 
     const/4 v3, 0x1
 
@@ -1511,10 +1575,10 @@
 
     const/4 v8, 0x0
 
-    .line 97
+    .line 112
     sget-object v9, Lcom/iMe/utils/helper/wallet/AuthHelper$$ExternalSyntheticLambda2;->INSTANCE:Lcom/iMe/utils/helper/wallet/AuthHelper$$ExternalSyntheticLambda2;
 
-    .line 95
+    .line 110
     invoke-virtual/range {v2 .. v9}, Lorg/telegram/messenger/SendMessagesHelper;->sendCallback(ZLorg/telegram/messenger/MessageObject;Lorg/telegram/tgnet/TLRPC$KeyboardButton;Lorg/telegram/tgnet/TLRPC$InputCheckPasswordSRP;Lorg/telegram/ui/TwoStepVerificationActivity;Lorg/telegram/ui/ChatActivity;Lcom/iMe/fork/utils/Callbacks$Callback2;)V
 
     :cond_c
@@ -1525,7 +1589,7 @@
 .method public getKoin()Lorg/koin/core/Koin;
     .locals 1
 
-    .line 31
+    .line 36
     invoke-static {p0}, Lorg/koin/core/component/KoinComponent$DefaultImpls;->getKoin(Lorg/koin/core/component/KoinComponent;)Lorg/koin/core/Koin;
 
     move-result-object v0

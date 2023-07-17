@@ -66,21 +66,21 @@ import org.koin.core.parameter.ParametersHolderKt;
 import org.koin.java.KoinJavaComponent;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.C3295R;
+import org.telegram.messenger.C3417R;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.DialogObject;
 import org.telegram.messenger.DispatchQueue;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.XiaomiUtilities;
-import org.telegram.p044ui.ActionBar.BaseFragment;
-import org.telegram.p044ui.ActionBar.Theme;
-import org.telegram.p044ui.Components.BulletinFactory;
-import org.telegram.p044ui.Components.CubicBezierInterpolator;
-import org.telegram.p044ui.Components.EditTextBoldCursor;
-import org.telegram.p044ui.Components.LayoutHelper;
-import org.telegram.p044ui.Components.LinkPath;
-import org.telegram.p044ui.Components.LinkSpanDrawable;
+import org.telegram.p043ui.ActionBar.BaseFragment;
+import org.telegram.p043ui.ActionBar.Theme;
+import org.telegram.p043ui.Components.BulletinFactory;
+import org.telegram.p043ui.Components.CubicBezierInterpolator;
+import org.telegram.p043ui.Components.EditTextBoldCursor;
+import org.telegram.p043ui.Components.LayoutHelper;
+import org.telegram.p043ui.Components.LinkPath;
+import org.telegram.p043ui.Components.LinkSpanDrawable;
 import org.telegram.tgnet.TLRPC$InputPeer;
 /* renamed from: com.iMe.fork.ui.dialog.TranslateAlert */
 /* loaded from: classes3.dex */
@@ -205,7 +205,7 @@ public class TranslateAlert extends JavaMvpBottomSheet implements TranslationVie
     }
 
     public TranslateAlert(BaseFragment baseFragment, boolean z, TranslationArgs translationArgs, TranslatorActionsDelegate translatorActionsDelegate) {
-        this(baseFragment, baseFragment.getContext(), -1, null, -1, "", "", "", z, null, null, translationArgs, translatorActionsDelegate);
+        this(baseFragment, baseFragment.getParentActivity(), -1, null, -1, "", "", "", z, null, null, translationArgs, translatorActionsDelegate);
     }
 
     public static TranslateAlert createInstanceForForkTranslation(BaseFragment baseFragment, TranslationArgs translationArgs, TranslatorActionsDelegate translatorActionsDelegate, boolean z) {
@@ -248,7 +248,7 @@ public class TranslateAlert extends JavaMvpBottomSheet implements TranslationVie
     public void configureScreenWith(String str, String str2) {
         if (this.translationArgs.getType() == TranslationDialogType.REPLY) {
             this.subtitleFromView.loaded(str);
-            this.buttonTextView.setText(LocaleController.formatStringInternal(C3295R.string.translation_dialog_translate_to, str2));
+            this.buttonTextView.setText(LocaleController.formatStringInternal(C3417R.string.translation_dialog_translate_to, str2));
             this.buttonImageView.setVisibility(8);
         } else {
             this.subtitleFromView.setFromLanguageText(str);
@@ -263,7 +263,7 @@ public class TranslateAlert extends JavaMvpBottomSheet implements TranslationVie
             this.isTranslated = true;
             this.editText.setText(str);
             this.editText.setSelection(str.length());
-            this.buttonTextView.setText(LocaleController.getString("Send", C3295R.string.Send));
+            this.buttonTextView.setText(LocaleController.getString("Send", C3417R.string.Send));
             return;
         }
         this.subtitleToView.setText(str3);
@@ -340,7 +340,7 @@ public class TranslateAlert extends JavaMvpBottomSheet implements TranslationVie
         int i = Theme.key_windowBackgroundWhiteHintText;
         editTextBoldCursor2.setHintColor(Theme.getColor(i));
         this.editText.setHintTextColor(Theme.getColor(i));
-        this.editText.setHintText(LocaleController.getString("Message", C3295R.string.Message));
+        this.editText.setHintText(LocaleController.getString("Message", C3417R.string.Message));
         this.editText.setTextSize(1, 16.0f);
         this.editText.setLines(1);
         this.editText.setMaxLines(3);
@@ -361,8 +361,8 @@ public class TranslateAlert extends JavaMvpBottomSheet implements TranslationVie
             }
             long dialogId = this.translationArgs.getTranslationSettings().getDialogId();
             if (!DialogObject.isChatDialog(dialogId) || (DialogObject.isChatDialog(dialogId) && ChatObject.canSendMessages(this.fragment.getMessagesController().getChat(Long.valueOf(-dialogId))))) {
-                this.buttonTextView.setText(LocaleController.getString("Reply", C3295R.string.Reply));
-                this.buttonImageView.setImageResource(C3295R.C3297drawable.msg_reply);
+                this.buttonTextView.setText(LocaleController.getString("Reply", C3417R.string.Reply));
+                this.buttonImageView.setImageResource(C3417R.C3419drawable.msg_reply);
                 this.buttonLinear.setOnClickListener(new View.OnClickListener() { // from class: com.iMe.fork.ui.dialog.TranslateAlert$$ExternalSyntheticLambda2
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
@@ -396,7 +396,7 @@ public class TranslateAlert extends JavaMvpBottomSheet implements TranslationVie
     private void initSettingsButton() {
         ImageView imageView = new ImageView(getContext());
         this.settingsButton = imageView;
-        imageView.setImageResource(C3295R.C3297drawable.notifications_settings);
+        imageView.setImageResource(C3417R.C3419drawable.notifications_settings);
         this.settingsButton.setScaleType(ImageView.ScaleType.FIT_CENTER);
         this.settingsButton.setBackground(Theme.createSelectorDrawable(Theme.getColor(Theme.key_dialogButtonSelector)));
         this.settingsButton.setVisibility(this.translatorActionsDelegate != null ? 0 : 8);
@@ -429,7 +429,7 @@ public class TranslateAlert extends JavaMvpBottomSheet implements TranslationVie
     private void initChangeLanguageButton() {
         ImageView imageView = new ImageView(getContext());
         this.changeLanguageButton = imageView;
-        imageView.setImageResource(C3295R.C3297drawable.msg_retry);
+        imageView.setImageResource(C3417R.C3419drawable.msg_retry);
         this.changeLanguageButton.setScaleType(ImageView.ScaleType.FIT_CENTER);
         this.changeLanguageButton.setBackground(Theme.createSelectorDrawable(Theme.getColor(Theme.key_dialogButtonSelector)));
         this.changeLanguageButton.setOnClickListener(new View.OnClickListener() { // from class: com.iMe.fork.ui.dialog.TranslateAlert$$ExternalSyntheticLambda5
@@ -468,7 +468,7 @@ public class TranslateAlert extends JavaMvpBottomSheet implements TranslationVie
         LinearLayout linearLayout = new LinearLayout(getContext());
         linearLayout.setLayoutParams(LayoutHelper.createLinear(-1, 48));
         ImageView imageView = new ImageView(getContext());
-        imageView.setImageResource(C3295R.C3297drawable.msg_copy);
+        imageView.setImageResource(C3417R.C3419drawable.msg_copy);
         TextView textView = new TextView(getContext());
         textView.setLines(1);
         textView.setSingleLine(true);
@@ -477,7 +477,7 @@ public class TranslateAlert extends JavaMvpBottomSheet implements TranslationVie
         textView.setTextColor(Theme.getColor(Theme.key_featuredStickers_buttonText));
         textView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
         textView.setTextSize(1, 14.0f);
-        textView.setText(LocaleController.getString("Copy", C3295R.string.Copy));
+        textView.setText(LocaleController.getString("Copy", C3417R.string.Copy));
         LinearLayout linearLayout2 = new LinearLayout(getContext());
         linearLayout2.setGravity(17);
         linearLayout2.setBackground(Theme.AdaptiveRipple.filledRect(Theme.getColor(Theme.key_featuredStickers_addButton), 4.0f));
@@ -496,20 +496,20 @@ public class TranslateAlert extends JavaMvpBottomSheet implements TranslationVie
     }
 
     public /* synthetic */ void lambda$initContainerButton$6(View view) {
-        Toast.makeText(getContext(), LocaleController.getString("TextCopied", C3295R.string.TextCopied), 0).show();
+        Toast.makeText(getContext(), LocaleController.getString("TextCopied", C3417R.string.TextCopied), 0).show();
         AndroidUtilities.addToClipboard(this.allTextsView.getText());
         dismiss();
     }
 
     private void initOutgoingButtons() {
         LinearLayout linearLayout = new LinearLayout(getContext());
-        linearLayout.addView(createOutgoingButton(C3295R.C3297drawable.msg_language, LocaleController.getString("Language", C3295R.string.Language), new Callbacks$Callback() { // from class: com.iMe.fork.ui.dialog.TranslateAlert$$ExternalSyntheticLambda14
+        linearLayout.addView(createOutgoingButton(C3417R.C3419drawable.msg_language, LocaleController.getString("Language", C3417R.string.Language), new Callbacks$Callback() { // from class: com.iMe.fork.ui.dialog.TranslateAlert$$ExternalSyntheticLambda14
             @Override // com.iMe.fork.utils.Callbacks$Callback
             public final void invoke() {
                 TranslateAlert.this.lambda$initOutgoingButtons$7();
             }
         }), LayoutHelper.createLinear(0, -1, 1.0f));
-        linearLayout.addView(createOutgoingButton(C3295R.C3297drawable.msg_send, LocaleController.getString("Send", C3295R.string.Send), new Callbacks$Callback() { // from class: com.iMe.fork.ui.dialog.TranslateAlert$$ExternalSyntheticLambda15
+        linearLayout.addView(createOutgoingButton(C3417R.C3419drawable.msg_send, LocaleController.getString("Send", C3417R.string.Send), new Callbacks$Callback() { // from class: com.iMe.fork.ui.dialog.TranslateAlert$$ExternalSyntheticLambda15
             @Override // com.iMe.fork.utils.Callbacks$Callback
             public final void invoke() {
                 TranslateAlert.this.lambda$initOutgoingButtons$8();
@@ -538,7 +538,7 @@ public class TranslateAlert extends JavaMvpBottomSheet implements TranslationVie
         textView.setTextSize(1, 14.0f);
         textView.setText(str);
         textView.setCompoundDrawablesWithIntrinsicBounds(ContextCompat.getDrawable(getContext(), i), (Drawable) null, (Drawable) null, (Drawable) null);
-        textView.setCompoundDrawablePadding(getContext().getResources().getDimensionPixelOffset(C3295R.dimen.margin_half_small));
+        textView.setCompoundDrawablePadding(getContext().getResources().getDimensionPixelOffset(C3417R.dimen.margin_half_small));
         FrameLayout frameLayout = new FrameLayout(getContext());
         frameLayout.setBackground(Theme.AdaptiveRipple.filledRect(Theme.getColor(Theme.key_featuredStickers_addButton), 4.0f));
         frameLayout.addView(textView, LayoutHelper.createFrame(-2, -2, 17));
@@ -697,7 +697,7 @@ public class TranslateAlert extends JavaMvpBottomSheet implements TranslationVie
     }
 
     public TranslateAlert(BaseFragment baseFragment, Context context, int i, TLRPC$InputPeer tLRPC$InputPeer, int i2, String str, String str2, CharSequence charSequence, boolean z, OnLinkPress onLinkPress, Runnable runnable, TranslationArgs translationArgs, TranslatorActionsDelegate translatorActionsDelegate) {
-        super(context, C3295R.style.TransparentDialog);
+        super(context, C3417R.style.TransparentDialog);
         int i3;
         this.editText = null;
         this.translateText = "";
@@ -841,7 +841,7 @@ public class TranslateAlert extends JavaMvpBottomSheet implements TranslationVie
         textView.setPivotX(LocaleController.isRTL ? textView.getWidth() : 0.0f);
         this.titleView.setPivotY(BitmapDescriptorFactory.HUE_RED);
         this.titleView.setLines(1);
-        this.titleView.setText(LocaleController.getString("AutomaticTranslation", C3295R.string.AutomaticTranslation));
+        this.titleView.setText(LocaleController.getString("AutomaticTranslation", C3417R.string.AutomaticTranslation));
         this.titleView.setGravity(LocaleController.isRTL ? 5 : 3);
         this.titleView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
         TextView textView2 = this.titleView;
@@ -900,7 +900,7 @@ public class TranslateAlert extends JavaMvpBottomSheet implements TranslationVie
         this.subtitleFromView.showLoadingText = false;
         ImageView imageView = new ImageView(context);
         this.subtitleArrowView = imageView;
-        imageView.setImageResource(C3295R.C3297drawable.search_arrow);
+        imageView.setImageResource(C3417R.C3419drawable.search_arrow);
         this.subtitleArrowView.setColorFilter(new PorterDuffColorFilter(Theme.getColor(i6), PorterDuff.Mode.MULTIPLY));
         if (LocaleController.isRTL) {
             this.subtitleArrowView.setScaleX(-1.0f);
@@ -944,7 +944,7 @@ public class TranslateAlert extends JavaMvpBottomSheet implements TranslationVie
         frameLayout4.addView(view2, createFrame2);
         ImageView imageView2 = new ImageView(context);
         this.backButton = imageView2;
-        imageView2.setImageResource(C3295R.C3297drawable.ic_ab_back);
+        imageView2.setImageResource(C3417R.C3419drawable.ic_ab_back);
         this.backButton.setColorFilter(new PorterDuffColorFilter(Theme.getColor(i5), PorterDuff.Mode.MULTIPLY));
         this.backButton.setScaleType(ImageView.ScaleType.FIT_CENTER);
         this.backButton.setPadding(AndroidUtilities.m54dp(16), 0, AndroidUtilities.m54dp(16), 0);
@@ -1018,7 +1018,7 @@ public class TranslateAlert extends JavaMvpBottomSheet implements TranslationVie
             public boolean onTextContextMenuItem(int i9) {
                 if (i9 == 16908321 && isFocused()) {
                     ((ClipboardManager) ApplicationLoader.applicationContext.getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText("label", getText().subSequence(Math.max(0, Math.min(getSelectionStart(), getSelectionEnd())), Math.max(0, Math.max(getSelectionStart(), getSelectionEnd())))));
-                    BulletinFactory.m30of(TranslateAlert.this.bulletinContainer, null).createCopyBulletin(LocaleController.getString("TextCopied", C3295R.string.TextCopied)).show();
+                    BulletinFactory.m30of(TranslateAlert.this.bulletinContainer, null).createCopyBulletin(LocaleController.getString("TextCopied", C3417R.string.TextCopied)).show();
                     clearFocus();
                     return true;
                 }
@@ -1088,11 +1088,11 @@ public class TranslateAlert extends JavaMvpBottomSheet implements TranslationVie
         this.buttonTextView.setTextColor(Theme.getColor(Theme.key_featuredStickers_buttonText));
         this.buttonTextView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
         this.buttonTextView.setTextSize(1, 14.0f);
-        this.buttonTextView.setText(LocaleController.getString("CloseTranslation", C3295R.string.CloseTranslation));
-        this.buttonTextView.setText(LocaleController.getString("Close", C3295R.string.Close));
+        this.buttonTextView.setText(LocaleController.getString("CloseTranslation", C3417R.string.CloseTranslation));
+        this.buttonTextView.setText(LocaleController.getString("Close", C3417R.string.Close));
         ImageView imageView3 = new ImageView(getContext());
         this.buttonImageView = imageView3;
-        imageView3.setImageResource(C3295R.C3297drawable.msg_close);
+        imageView3.setImageResource(C3417R.C3419drawable.msg_close);
         this.buttonView = new FrameLayout(context);
         if (translationArgs != null && translationArgs.getType() == TranslationDialogType.INCOMING) {
             LinearLayout linearLayout2 = new LinearLayout(getContext());
@@ -1195,7 +1195,7 @@ public class TranslateAlert extends JavaMvpBottomSheet implements TranslationVie
         return this.allTextsView.hasSelection();
     }
 
-    @Override // org.telegram.p044ui.ActionBar.BottomSheet, android.app.Dialog, android.view.Window.Callback
+    @Override // org.telegram.p043ui.ActionBar.BottomSheet, android.app.Dialog, android.view.Window.Callback
     public boolean dispatchTouchEvent(MotionEvent motionEvent) {
         float round;
         float f;
@@ -1347,12 +1347,12 @@ public class TranslateAlert extends JavaMvpBottomSheet implements TranslationVie
         });
     }
 
-    @Override // com.iMe.p031ui.base.mvp.MvpBottomSheet, org.telegram.p044ui.ActionBar.BottomSheet, android.app.Dialog
+    @Override // com.iMe.p031ui.base.mvp.MvpBottomSheet, org.telegram.p043ui.ActionBar.BottomSheet, android.app.Dialog
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         this.contentView.setPadding(0, 0, 0, 0);
         Window window = getWindow();
-        window.setWindowAnimations(C3295R.style.DialogNoAnimation);
+        window.setWindowAnimations(C3417R.style.DialogNoAnimation);
         WindowManager.LayoutParams attributes = window.getAttributes();
         attributes.width = -1;
         attributes.gravity = 51;
@@ -1377,7 +1377,7 @@ public class TranslateAlert extends JavaMvpBottomSheet implements TranslationVie
         this.container.forceLayout();
     }
 
-    @Override // org.telegram.p044ui.ActionBar.BottomSheet, android.app.Dialog
+    @Override // org.telegram.p043ui.ActionBar.BottomSheet, android.app.Dialog
     public void show() {
         super.show();
         openAnimation(BitmapDescriptorFactory.HUE_RED);
@@ -1389,7 +1389,7 @@ public class TranslateAlert extends JavaMvpBottomSheet implements TranslationVie
         this.contentView.setBackgroundColor(0);
     }
 
-    @Override // org.telegram.p044ui.ActionBar.BottomSheet, android.app.Dialog, android.content.DialogInterface
+    @Override // org.telegram.p043ui.ActionBar.BottomSheet, android.app.Dialog, android.content.DialogInterface
     public void dismiss() {
         EditTextBoldCursor editTextBoldCursor = this.editText;
         if (editTextBoldCursor != null) {
@@ -1468,7 +1468,7 @@ public class TranslateAlert extends JavaMvpBottomSheet implements TranslationVie
         this.bulletinContainer.setTranslationY((1.0f - this.openingT) * Math.min(minHeight(), AndroidUtilities.displayMetrics.heightPixels * this.heightMaxPercent));
     }
 
-    @Override // org.telegram.p044ui.ActionBar.BottomSheet
+    @Override // org.telegram.p043ui.ActionBar.BottomSheet
     public void dismissInternal() {
         try {
             super.dismissInternal();

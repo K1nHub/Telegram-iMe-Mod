@@ -16,9 +16,9 @@ import com.iMe.storage.domain.interactor.twitter.TwitterInteractor;
 import com.iMe.storage.domain.model.Result;
 import com.iMe.storage.domain.utils.system.ResourceManager;
 import com.iMe.utils.extentions.common.ContextExtKt;
-import com.iMe.utils.extentions.p033rx.RxExtKt;
-import com.iMe.utils.extentions.p033rx.RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
-import com.iMe.utils.extentions.p033rx.SchedulersExtKt;
+import com.iMe.utils.extentions.p032rx.RxExtKt;
+import com.iMe.utils.extentions.p032rx.RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
+import com.iMe.utils.extentions.p032rx.SchedulersExtKt;
 import com.iMe.utils.helper.wallet.WalletHelper;
 import io.reactivex.Observable;
 import io.reactivex.disposables.Disposable;
@@ -30,7 +30,7 @@ import kotlin.NoWhenBranchMatchedException;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import moxy.InjectViewState;
-import org.telegram.messenger.C3295R;
+import org.telegram.messenger.C3417R;
 import org.telegram.tgnet.TLRPC$ChatParticipant;
 import timber.log.Timber;
 /* compiled from: ProfilePresenter.kt */
@@ -105,8 +105,8 @@ public final class ProfilePresenter extends BasePresenter<ProfileView> {
     }
 
     public final void changeRankVisibility(boolean z) {
-        Disposable subscribe = SchedulersExtKt.scheduleIO(this.accountLevelInteractor.changeLevelVisibility(z)).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1437x21fa58d6(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1438x21fa58d7((BaseView) getViewState())));
-        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
+        Disposable subscribe = SchedulersExtKt.scheduleIO(this.accountLevelInteractor.changeLevelVisibility(z)).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1448x21fa58d6(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1449x21fa58d7((BaseView) getViewState())));
+        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…Error.invoke()\n        })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
 
@@ -177,8 +177,8 @@ public final class ProfilePresenter extends BasePresenter<ProfileView> {
         Observable<Result<Boolean>> acceptConnection = this.twitterInteractor.acceptConnection(j, this.profileUiState.getCurrentProfile().getProfileId());
         T viewState = getViewState();
         Intrinsics.checkNotNullExpressionValue(viewState, "viewState");
-        Disposable subscribe = SchedulersExtKt.scheduleIO(RxExtKt.withLoadingDialog$default((Observable) acceptConnection, (BaseView) viewState, false, 2, (Object) null)).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1447x43d01ab9(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1448x43d01aba((BaseView) getViewState())));
-        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
+        Disposable subscribe = SchedulersExtKt.scheduleIO(RxExtKt.withLoadingDialog$default((Observable) acceptConnection, (BaseView) viewState, false, 2, (Object) null)).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1458x43d01ab9(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1459x43d01aba((BaseView) getViewState())));
+        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…Error.invoke()\n        })");
         singleDispose(subscribe);
     }
 
@@ -192,14 +192,14 @@ public final class ProfilePresenter extends BasePresenter<ProfileView> {
         if (this.profileData.getUserId() == 0 || !WalletHelper.isAuthorized()) {
             return;
         }
-        Disposable subscribe = SchedulersExtKt.scheduleIO(this.accountLevelInteractor.getAccountLevelInformation(this.profileData.getUserId())).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1441xe14e28d3(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1442xe14e28d4((BaseView) getViewState())));
-        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
+        Disposable subscribe = SchedulersExtKt.scheduleIO(this.accountLevelInteractor.getAccountLevelInformation(this.profileData.getUserId())).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1452xe14e28d3(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1453xe14e28d4((BaseView) getViewState())));
+        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…Error.invoke()\n        })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
 
     private final void loadSocials() {
-        Disposable subscribe = SchedulersExtKt.scheduleIO(this.socialUseCase.getAllSocials(this.profileUiState.getCurrentProfile())).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1443x6d91f91e(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1444x6d91f91f((BaseView) getViewState())));
-        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
+        Disposable subscribe = SchedulersExtKt.scheduleIO(this.socialUseCase.getAllSocials(this.profileUiState.getCurrentProfile())).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1454x6d91f91e(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1455x6d91f91f((BaseView) getViewState())));
+        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…Error.invoke()\n        })");
         singleDispose(subscribe);
     }
 
@@ -248,8 +248,8 @@ public final class ProfilePresenter extends BasePresenter<ProfileView> {
         Observable scheduleIO = SchedulersExtKt.scheduleIO(delay);
         T viewState = getViewState();
         Intrinsics.checkNotNullExpressionValue(viewState, "viewState");
-        Disposable subscribe = RxExtKt.withLoadingDialog$default(scheduleIO, (BaseView) viewState, false, 2, (Object) null).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1445xc4e15d55(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1446xc4e15d56((BaseView) getViewState())));
-        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
+        Disposable subscribe = RxExtKt.withLoadingDialog$default(scheduleIO, (BaseView) viewState, false, 2, (Object) null).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1456xc4e15d55(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1457xc4e15d56((BaseView) getViewState())));
+        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…Error.invoke()\n        })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
 
@@ -267,8 +267,8 @@ public final class ProfilePresenter extends BasePresenter<ProfileView> {
     private final void listenSocialAuthResult() {
         Observable<SocialAuthResult> delay = this.socialUseCase.listenSocialChanges().delay(1500L, TimeUnit.MILLISECONDS);
         Intrinsics.checkNotNullExpressionValue(delay, "socialUseCase\n          …Y, TimeUnit.MILLISECONDS)");
-        Disposable subscribe = SchedulersExtKt.scheduleIO(delay).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1439xaa523601(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1440xaa523602((BaseView) getViewState())));
-        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
+        Disposable subscribe = SchedulersExtKt.scheduleIO(delay).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1450xaa523601(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1451xaa523602((BaseView) getViewState())));
+        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…Error.invoke()\n        })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
 
@@ -287,35 +287,35 @@ public final class ProfilePresenter extends BasePresenter<ProfileView> {
     }
 
     private final void showResetConfirmationDialog(SocialNetwork socialNetwork) {
-        ((ProfileView) getViewState()).showResetConfirmationDialog(new DialogModel(this.resourceManager.getString(C3295R.string.social_reset_account_title, socialNetwork.getSocialName()), this.resourceManager.getString(C3295R.string.social_reset_account_message, socialNetwork.getSocialName()), this.resourceManager.getString(C3295R.string.social_reset_account_negative_button), this.resourceManager.getString(C3295R.string.social_reset_account_positive_button)), socialNetwork);
+        ((ProfileView) getViewState()).showResetConfirmationDialog(new DialogModel(this.resourceManager.getString(C3417R.string.social_reset_account_title, socialNetwork.getSocialName()), this.resourceManager.getString(C3417R.string.social_reset_account_message, socialNetwork.getSocialName()), this.resourceManager.getString(C3417R.string.social_reset_account_negative_button), this.resourceManager.getString(C3417R.string.social_reset_account_positive_button)), socialNetwork);
     }
 
     private final void showNeedAuthorizeDialog() {
-        ((ProfileView) getViewState()).showNeedAuthorizeDialog(new DialogModel(this.resourceManager.getString(C3295R.string.wallet_crypto_wallet_not_created_dialog_title), this.resourceManager.getString(C3295R.string.wallet_crypto_wallet_not_created_dialog_description), this.resourceManager.getString(C3295R.string.common_cancel), this.resourceManager.getString(C3295R.string.common_ok)));
+        ((ProfileView) getViewState()).showNeedAuthorizeDialog(new DialogModel(this.resourceManager.getString(C3417R.string.wallet_crypto_wallet_not_created_dialog_title), this.resourceManager.getString(C3417R.string.wallet_crypto_wallet_not_created_dialog_description), this.resourceManager.getString(C3417R.string.common_cancel), this.resourceManager.getString(C3417R.string.common_ok)));
     }
 
     private final void showBeforeDialog(SocialNetwork socialNetwork) {
         String socialName = socialNetwork.getSocialName();
         String beforeConnectMessage = socialNetwork.getBeforeConnectMessage();
-        String string = this.resourceManager.getString(C3295R.string.common_ok);
+        String string = this.resourceManager.getString(C3417R.string.common_ok);
         Locale locale = Locale.ROOT;
         String upperCase = string.toUpperCase(locale);
         Intrinsics.checkNotNullExpressionValue(upperCase, "this as java.lang.String).toUpperCase(Locale.ROOT)");
-        String upperCase2 = this.resourceManager.getString(C3295R.string.common_cancel).toUpperCase(locale);
+        String upperCase2 = this.resourceManager.getString(C3417R.string.common_cancel).toUpperCase(locale);
         Intrinsics.checkNotNullExpressionValue(upperCase2, "this as java.lang.String).toUpperCase(Locale.ROOT)");
         ((ProfileView) getViewState()).showBeforeConnectMessage(socialNetwork, new DialogModel(socialName, beforeConnectMessage, upperCase2, upperCase));
     }
 
     private final void showLinkConfirmationDialog(long j) {
-        ((ProfileView) getViewState()).showLinkConfirmationDialog(new DialogModel(this.resourceManager.getString(C3295R.string.profile_twitter_link_confirmation_alert_title), this.resourceManager.getString(C3295R.string.profile_twitter_link_confirmation_alert_description), this.resourceManager.getString(C3295R.string.Cancel), this.resourceManager.getString(C3295R.string.common_confirm)), j);
+        ((ProfileView) getViewState()).showLinkConfirmationDialog(new DialogModel(this.resourceManager.getString(C3417R.string.profile_twitter_link_confirmation_alert_title), this.resourceManager.getString(C3417R.string.profile_twitter_link_confirmation_alert_description), this.resourceManager.getString(C3417R.string.Cancel), this.resourceManager.getString(C3417R.string.common_confirm)), j);
     }
 
     private final void startSocialAuth(SocialType socialType) {
         Observable scheduleIO = SchedulersExtKt.scheduleIO(this.socialUseCase.startSocialAuth(socialType, this.profileUiState.getCurrentProfile().getProfileId()));
         T viewState = getViewState();
         Intrinsics.checkNotNullExpressionValue(viewState, "viewState");
-        Disposable subscribe = RxExtKt.withLoadingDialog$default(scheduleIO, (BaseView) viewState, false, 2, (Object) null).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1449xd1f41af5(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1450xd1f41af6((BaseView) getViewState())));
-        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
+        Disposable subscribe = RxExtKt.withLoadingDialog$default(scheduleIO, (BaseView) viewState, false, 2, (Object) null).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1460xd1f41af5(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1461xd1f41af6((BaseView) getViewState())));
+        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…Error.invoke()\n        })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
 

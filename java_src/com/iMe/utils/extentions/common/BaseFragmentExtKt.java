@@ -1,14 +1,11 @@
 package com.iMe.utils.extentions.common;
 
 import android.view.LayoutInflater;
-import androidx.core.p010os.BundleKt;
-import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
-import kotlin.Pair;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.p044ui.ActionBar.BaseFragment;
-import org.telegram.p044ui.ActionBar.INavigationLayout;
+import org.telegram.p043ui.ActionBar.BaseFragment;
+import org.telegram.p043ui.ActionBar.INavigationLayout;
 import timber.log.Timber;
 /* compiled from: BaseFragmentExt.kt */
 /* loaded from: classes4.dex */
@@ -25,7 +22,7 @@ public final class BaseFragmentExtKt {
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
-    public static final <T> void removeFragmentFromStack(org.telegram.p044ui.ActionBar.BaseFragment r3, java.lang.Class<T> r4, kotlin.jvm.functions.Function1<? super T, java.lang.Boolean> r5) {
+    public static final <T> void removeFragmentFromStack(org.telegram.p043ui.ActionBar.BaseFragment r3, java.lang.Class<T> r4, kotlin.jvm.functions.Function1<? super T, java.lang.Boolean> r5) {
         /*
             java.lang.String r0 = "<this>"
             kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r3, r0)
@@ -43,7 +40,7 @@ public final class BaseFragmentExtKt {
             if (r0 == 0) goto L4b
             java.lang.Object r0 = r3.next()
             r1 = r0
-            org.telegram.ui.ActionBar.BaseFragment r1 = (org.telegram.p044ui.ActionBar.BaseFragment) r1
+            org.telegram.ui.ActionBar.BaseFragment r1 = (org.telegram.p043ui.ActionBar.BaseFragment) r1
             boolean r2 = r4.isInstance(r1)
             if (r2 == 0) goto L47
             java.lang.Object r1 = r4.cast(r1)
@@ -62,7 +59,7 @@ public final class BaseFragmentExtKt {
         L4b:
             r0 = 0
         L4c:
-            org.telegram.ui.ActionBar.BaseFragment r0 = (org.telegram.p044ui.ActionBar.BaseFragment) r0
+            org.telegram.ui.ActionBar.BaseFragment r0 = (org.telegram.p043ui.ActionBar.BaseFragment) r0
             if (r0 == 0) goto L53
             r0.removeSelfFromStack()
         L53:
@@ -92,13 +89,6 @@ public final class BaseFragmentExtKt {
             obj = (BaseFragment) obj;
         }
         return obj != null;
-    }
-
-    public static final <T extends BaseFragment> T withArgs(T t, Pair<String, ? extends Object>... params) {
-        Intrinsics.checkNotNullParameter(t, "<this>");
-        Intrinsics.checkNotNullParameter(params, "params");
-        t.setArguments(BundleKt.bundleOf((Pair[]) Arrays.copyOf(params, params.length)));
-        return t;
     }
 
     public static final void setEnableSecureWindow(BaseFragment baseFragment, boolean z) {

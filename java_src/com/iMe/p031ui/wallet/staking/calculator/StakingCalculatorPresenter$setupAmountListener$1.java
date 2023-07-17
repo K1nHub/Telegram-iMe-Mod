@@ -3,7 +3,7 @@ package com.iMe.p031ui.wallet.staking.calculator;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Lambda;
-import org.telegram.p044ui.StatisticActivity;
+import org.telegram.p043ui.StatisticActivity;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: StakingCalculatorPresenter.kt */
 /* renamed from: com.iMe.ui.wallet.staking.calculator.StakingCalculatorPresenter$setupAmountListener$1 */

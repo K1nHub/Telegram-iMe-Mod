@@ -29,10 +29,11 @@
     return-void
 .end method
 
+.method public static final withDefaults()Lcom/facebook/flipper/plugins/inspector/DescriptorMapping;
+    .locals 1
 
-# virtual methods
-.method public final withDefaults()Lcom/facebook/flipper/plugins/inspector/DescriptorMapping;
-    .locals 0
+    .line 5
+    sget-object v0, Lcom/facebook/flipper/plugins/inspector/DescriptorMapping;->INSTANCE:Lcom/facebook/flipper/plugins/inspector/DescriptorMapping;
 
-    return-object p0
+    return-object v0
 .end method

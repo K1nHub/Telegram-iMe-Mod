@@ -34,7 +34,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nRxExt.kt\nKotlin\n*S Kotlin\n*F\n+ 1 RxExt.kt\ncom/iMe/utils/extentions/rx/RxExtKt$subscribeWithErrorHandle$2\n+ 2 StakingTransactionPresenter.kt\ncom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter\n*L\n1#1,111:1\n245#2,15:112\n*E\n"
+    value = "SMAP\nRxExt.kt\nKotlin\n*S Kotlin\n*F\n+ 1 RxExt.kt\ncom/iMe/utils/extentions/rx/RxExtKt$subscribeWithErrorHandle$2\n+ 2 StakingTransactionPresenter.kt\ncom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter\n*L\n1#1,111:1\n255#2,16:112\n*E\n"
 .end annotation
 
 
@@ -68,7 +68,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 44
+    .line 47
     invoke-virtual {p0, p1}, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter$prepareTokenApproval$$inlined$subscribeWithErrorHandle$default$1;->invoke(Ljava/lang/Object;)V
 
     sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
@@ -94,7 +94,7 @@
 
     const-string v0, "it"
 
-    .line 45
+    .line 48
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     check-cast p1, Lcom/iMe/storage/domain/model/Result;
@@ -137,7 +137,11 @@
 
     iget-object v4, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter$prepareTokenApproval$$inlined$subscribeWithErrorHandle$default$1;->$data$inlined:Lcom/iMe/model/staking/StakingDetailsItem;
 
-    invoke-virtual {v4}, Lcom/iMe/model/staking/StakingDetailsItem;->getTokenTicker()Ljava/lang/String;
+    invoke-virtual {v4}, Lcom/iMe/model/staking/StakingDetailsItem;->getTokenItem()Lcom/iMe/model/wallet/crypto/TokenItem;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Lcom/iMe/model/wallet/crypto/TokenItem;->getTicker()Ljava/lang/String;
 
     move-result-object v4
 
@@ -151,7 +155,11 @@
 
     iget-object v4, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter$prepareTokenApproval$$inlined$subscribeWithErrorHandle$default$1;->$data$inlined:Lcom/iMe/model/staking/StakingDetailsItem;
 
-    invoke-virtual {v4}, Lcom/iMe/model/staking/StakingDetailsItem;->getFeeTokenTicker()Ljava/lang/String;
+    invoke-virtual {v4}, Lcom/iMe/model/staking/StakingDetailsItem;->getFeeTokenItem()Lcom/iMe/model/wallet/crypto/TokenItem;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Lcom/iMe/model/wallet/crypto/TokenItem;->getTicker()Ljava/lang/String;
 
     move-result-object v4
 
@@ -190,7 +198,7 @@
 
     goto :goto_2
 
-    .line 123
+    .line 124
     :cond_2
     instance-of v0, p1, Lcom/iMe/storage/domain/model/Result$Error;
 

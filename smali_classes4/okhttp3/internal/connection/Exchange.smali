@@ -182,7 +182,7 @@
         }
     .end annotation
 
-    const-string v0, "request"
+    const-string/jumbo v0, "request"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -469,7 +469,7 @@
         }
     .end annotation
 
-    const-string v0, "response"
+    const-string/jumbo v0, "response"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -580,7 +580,7 @@
 .method public final responseHeadersEnd(Lokhttp3/Response;)V
     .locals 2
 
-    const-string v0, "response"
+    const-string/jumbo v0, "response"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -634,7 +634,7 @@
         }
     .end annotation
 
-    const-string v0, "request"
+    const-string/jumbo v0, "request"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 

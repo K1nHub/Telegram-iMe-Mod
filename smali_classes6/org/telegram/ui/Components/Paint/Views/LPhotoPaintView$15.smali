@@ -28,7 +28,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;Landroid/view/View;Landroid/view/View;I)V
     .locals 0
 
-    .line 1283
+    .line 1282
     iput-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$15;->this$0:Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;
 
     iput-object p2, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$15;->val$view:Landroid/view/View;
@@ -47,7 +47,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 2
 
-    .line 1303
+    .line 1302
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$15;->this$0:Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->access$1700(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;)I
@@ -56,14 +56,14 @@
 
     invoke-static {v0, v1}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->access$3002(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;I)I
 
-    .line 1304
+    .line 1303
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$15;->this$0:Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;
 
     const/4 v1, -0x1
 
     invoke-static {v0, v1}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->access$1702(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;I)I
 
-    .line 1305
+    .line 1304
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$15;->this$0:Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->access$3100(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;)Landroid/widget/LinearLayout;
@@ -72,7 +72,7 @@
 
     invoke-virtual {v0}, Landroid/widget/LinearLayout;->invalidate()V
 
-    .line 1307
+    .line 1306
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$15;->val$view:Landroid/view/View;
 
     if-eqz v0, :cond_0
@@ -83,10 +83,10 @@
 
     const/16 v1, 0x8
 
-    .line 1308
+    .line 1307
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 1311
+    .line 1310
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$15;->this$0:Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;
 
@@ -96,7 +96,7 @@
 
     if-ne p1, v0, :cond_1
 
-    .line 1312
+    .line 1311
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$15;->this$0:Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;
 
     const/4 v0, 0x0
@@ -110,7 +110,7 @@
 .method public onAnimationStart(Landroid/animation/Animator;)V
     .locals 2
 
-    .line 1286
+    .line 1285
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$15;->val$view:Landroid/view/View;
 
     if-eqz p1, :cond_0
@@ -121,10 +121,10 @@
 
     const/4 v0, 0x0
 
-    .line 1287
+    .line 1286
     invoke-virtual {p1, v0}, Landroid/view/View;->setVisibility(I)V
 
-    .line 1289
+    .line 1288
     :cond_0
     iget p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$15;->val$index:I
 
@@ -132,7 +132,7 @@
 
     if-ne p1, v0, :cond_1
 
-    .line 1290
+    .line 1289
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$15;->this$0:Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->access$700(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;)Lorg/telegram/ui/Components/Paint/Views/PaintWeightChooserView;
@@ -147,7 +147,7 @@
 
     goto :goto_1
 
-    .line 1292
+    .line 1291
     :cond_1
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$15;->this$0:Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;
 
@@ -159,7 +159,7 @@
 
     move-result-object p1
 
-    .line 1293
+    .line 1292
     instance-of v0, p1, Lorg/telegram/ui/Components/Paint/Brush$Blurer;
 
     if-nez v0, :cond_3
@@ -170,7 +170,7 @@
 
     goto :goto_0
 
-    .line 1296
+    .line 1295
     :cond_2
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$15;->this$0:Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;
 
@@ -186,7 +186,7 @@
 
     goto :goto_1
 
-    .line 1294
+    .line 1293
     :cond_3
     :goto_0
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$15;->this$0:Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;

@@ -339,7 +339,7 @@
 .method static constructor <clinit>()V
     .locals 3
 
-    .line 450
+    .line 449
     new-instance v0, Lorg/telegram/messenger/DispatchQueue;
 
     const-string v1, "translateQueue"
@@ -352,7 +352,7 @@
 
     const/high16 v1, -0x80000000
 
-    .line 1437
+    .line 1436
     invoke-static {v0, v1}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
     move-result v0
@@ -377,7 +377,7 @@
 
     move-object/from16 v10, p12
 
-    .line 641
+    .line 640
     sget v1, Lorg/telegram/messenger/R$style;->TransparentDialog:I
 
     invoke-direct {v6, v7, v1}, Lcom/iMe/ui/base/mvp/JavaMvpBottomSheet;-><init>(Landroid/content/Context;I)V
@@ -397,98 +397,98 @@
     .line 123
     iput-boolean v11, v6, Lcom/iMe/fork/ui/dialog/TranslateAlert;->isTranslated:Z
 
-    .line 476
+    .line 475
     iput v11, v6, Lcom/iMe/fork/ui/dialog/TranslateAlert;->blockIndex:I
 
     const/4 v12, 0x0
 
-    .line 479
+    .line 478
     iput v12, v6, Lcom/iMe/fork/ui/dialog/TranslateAlert;->containerOpenAnimationT:F
 
-    .line 544
+    .line 543
     iput-boolean v11, v6, Lcom/iMe/fork/ui/dialog/TranslateAlert;->openAnimationToAnimatorPriority:Z
 
-    .line 545
+    .line 544
     iput-object v1, v6, Lcom/iMe/fork/ui/dialog/TranslateAlert;->openAnimationToAnimator:Landroid/animation/ValueAnimator;
 
     const/4 v13, -0x1
 
-    .line 580
+    .line 579
     iput v13, v6, Lcom/iMe/fork/ui/dialog/TranslateAlert;->firstMinHeight:I
 
     const/4 v14, 0x1
 
-    .line 628
+    .line 627
     iput-boolean v14, v6, Lcom/iMe/fork/ui/dialog/TranslateAlert;->allowScroll:Z
 
-    .line 1062
+    .line 1061
     iput v12, v6, Lcom/iMe/fork/ui/dialog/TranslateAlert;->fromScrollY:F
 
-    .line 1072
+    .line 1071
     new-instance v2, Landroid/graphics/Rect;
 
     invoke-direct {v2}, Landroid/graphics/Rect;-><init>()V
 
     iput-object v2, v6, Lcom/iMe/fork/ui/dialog/TranslateAlert;->containerRect:Landroid/graphics/Rect;
 
-    .line 1073
+    .line 1072
     new-instance v2, Landroid/graphics/Rect;
 
     invoke-direct {v2}, Landroid/graphics/Rect;-><init>()V
 
     iput-object v2, v6, Lcom/iMe/fork/ui/dialog/TranslateAlert;->textRect:Landroid/graphics/Rect;
 
-    .line 1074
+    .line 1073
     new-instance v2, Landroid/graphics/Rect;
 
     invoke-direct {v2}, Landroid/graphics/Rect;-><init>()V
 
-    .line 1075
+    .line 1074
     new-instance v2, Landroid/graphics/Rect;
 
     invoke-direct {v2}, Landroid/graphics/Rect;-><init>()V
 
     iput-object v2, v6, Lcom/iMe/fork/ui/dialog/TranslateAlert;->buttonRect:Landroid/graphics/Rect;
 
-    .line 1076
+    .line 1075
     new-instance v2, Landroid/graphics/Rect;
 
     invoke-direct {v2}, Landroid/graphics/Rect;-><init>()V
 
     iput-object v2, v6, Lcom/iMe/fork/ui/dialog/TranslateAlert;->backRect:Landroid/graphics/Rect;
 
-    .line 1077
+    .line 1076
     new-instance v2, Landroid/graphics/Rect;
 
     invoke-direct {v2}, Landroid/graphics/Rect;-><init>()V
 
     iput-object v2, v6, Lcom/iMe/fork/ui/dialog/TranslateAlert;->scrollRect:Landroid/graphics/Rect;
 
-    .line 1078
+    .line 1077
     iput v12, v6, Lcom/iMe/fork/ui/dialog/TranslateAlert;->fromY:F
 
-    .line 1079
+    .line 1078
     iput-boolean v11, v6, Lcom/iMe/fork/ui/dialog/TranslateAlert;->pressedOutside:Z
 
-    .line 1080
+    .line 1079
     iput-boolean v11, v6, Lcom/iMe/fork/ui/dialog/TranslateAlert;->maybeScrolling:Z
 
-    .line 1081
+    .line 1080
     iput-boolean v11, v6, Lcom/iMe/fork/ui/dialog/TranslateAlert;->scrolling:Z
 
-    .line 1082
+    .line 1081
     iput-boolean v11, v6, Lcom/iMe/fork/ui/dialog/TranslateAlert;->fromScrollRect:Z
 
-    .line 1084
+    .line 1083
     iput v12, v6, Lcom/iMe/fork/ui/dialog/TranslateAlert;->fromScrollViewY:F
 
-    .line 1085
+    .line 1084
     iput-object v1, v6, Lcom/iMe/fork/ui/dialog/TranslateAlert;->allTexts:Landroid/text/Spannable;
 
-    .line 1228
+    .line 1227
     iput v12, v6, Lcom/iMe/fork/ui/dialog/TranslateAlert;->openingT:F
 
-    .line 1269
+    .line 1268
     new-instance v1, Lcom/iMe/fork/ui/dialog/TranslateAlert$6;
 
     const/high16 v2, -0x1000000
@@ -497,31 +497,31 @@
 
     iput-object v1, v6, Lcom/iMe/fork/ui/dialog/TranslateAlert;->backDrawable:Landroid/graphics/drawable/ColorDrawable;
 
-    .line 1292
+    .line 1291
     iput-boolean v11, v6, Lcom/iMe/fork/ui/dialog/TranslateAlert;->dismissed:Z
 
     const v1, 0x3f59999a    # 0.85f
 
-    .line 1316
+    .line 1315
     iput v1, v6, Lcom/iMe/fork/ui/dialog/TranslateAlert;->heightMaxPercent:F
 
-    .line 1318
+    .line 1317
     iput-boolean v11, v6, Lcom/iMe/fork/ui/dialog/TranslateAlert;->fastHide:Z
 
-    .line 1319
+    .line 1318
     iput-boolean v11, v6, Lcom/iMe/fork/ui/dialog/TranslateAlert;->openingAnimatorPriority:Z
 
     move-object/from16 v1, p13
 
-    .line 643
+    .line 642
     iput-object v1, v6, Lcom/iMe/fork/ui/dialog/TranslateAlert;->translatorActionsDelegate:Lcom/iMe/fork/ui/dialog/TranslateAlert$TranslatorActionsDelegate;
 
-    .line 644
+    .line 643
     iput-object v10, v6, Lcom/iMe/fork/ui/dialog/TranslateAlert;->translationArgs:Lcom/iMe/model/translation/TranslationArgs;
 
     if-eqz v10, :cond_0
 
-    .line 645
+    .line 644
     invoke-virtual/range {p12 .. p12}, Lcom/iMe/model/translation/TranslationArgs;->getType()Lcom/iMe/fork/enums/TranslationDialogType;
 
     move-result-object v1
@@ -542,46 +542,46 @@
 
     if-eqz v1, :cond_1
 
-    .line 647
+    .line 646
     invoke-virtual {v6, v11}, Lorg/telegram/ui/ActionBar/BottomSheet;->setApplyTopPadding(Z)V
 
     goto :goto_1
 
-    .line 649
+    .line 648
     :cond_1
     invoke-virtual {v6, v11}, Lorg/telegram/ui/ActionBar/BottomSheet;->setBackgroundColor(I)V
 
-    .line 651
+    .line 650
     :goto_1
     invoke-virtual {v6, v11}, Lorg/telegram/ui/ActionBar/BottomSheet;->setApplyBottomPadding(Z)V
 
-    .line 652
+    .line 651
     invoke-virtual {v6, v11}, Lorg/telegram/ui/ActionBar/BottomSheet;->setCanDismissWithSwipe(Z)V
 
-    .line 653
+    .line 652
     invoke-virtual {v6, v11}, Landroid/app/Dialog;->setCancelable(Z)V
 
-    .line 654
+    .line 653
     invoke-virtual {v6, v11}, Landroid/app/Dialog;->setCanceledOnTouchOutside(Z)V
 
-    .line 658
+    .line 657
     iput-boolean v9, v6, Lcom/iMe/fork/ui/dialog/TranslateAlert;->noforwards:Z
 
     move-object/from16 v1, p1
 
-    .line 659
+    .line 658
     iput-object v1, v6, Lcom/iMe/fork/ui/dialog/TranslateAlert;->fragment:Lorg/telegram/ui/ActionBar/BaseFragment;
 
     if-eqz v0, :cond_2
 
     const-string v1, "und"
 
-    .line 660
+    .line 659
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
-    .line 663
+    .line 662
     :cond_2
     new-instance v1, Ljava/util/ArrayList;
 
@@ -591,15 +591,15 @@
 
     move-object/from16 v2, p8
 
-    .line 664
+    .line 663
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     move-object/from16 v1, p11
 
-    .line 666
+    .line 665
     iput-object v1, v6, Lcom/iMe/fork/ui/dialog/TranslateAlert;->onDismiss:Ljava/lang/Runnable;
 
-    .line 672
+    .line 671
     sget v15, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x15
@@ -608,7 +608,7 @@
 
     if-lt v15, v2, :cond_3
 
-    .line 673
+    .line 672
     invoke-virtual/range {p0 .. p0}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
 
     move-result-object v3
@@ -622,7 +622,7 @@
     :cond_3
     if-lt v15, v1, :cond_4
 
-    .line 675
+    .line 674
     invoke-virtual/range {p0 .. p0}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
 
     move-result-object v3
@@ -635,7 +635,7 @@
     :goto_2
     if-eqz v9, :cond_5
 
-    .line 679
+    .line 678
     invoke-virtual/range {p0 .. p0}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
 
     move-result-object v3
@@ -644,7 +644,7 @@
 
     invoke-virtual {v3, v4}, Landroid/view/Window;->addFlags(I)V
 
-    .line 682
+    .line 681
     :cond_5
     new-instance v3, Landroid/widget/FrameLayout;
 
@@ -652,31 +652,31 @@
 
     iput-object v3, v6, Lcom/iMe/fork/ui/dialog/TranslateAlert;->contentView:Landroid/widget/FrameLayout;
 
-    .line 683
+    .line 682
     iget-object v4, v6, Lcom/iMe/fork/ui/dialog/TranslateAlert;->backDrawable:Landroid/graphics/drawable/ColorDrawable;
 
     invoke-virtual {v3, v4}, Landroid/widget/FrameLayout;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 684
+    .line 683
     iget-object v3, v6, Lcom/iMe/fork/ui/dialog/TranslateAlert;->contentView:Landroid/widget/FrameLayout;
 
     invoke-virtual {v3, v11}, Landroid/widget/FrameLayout;->setClipChildren(Z)V
 
-    .line 685
+    .line 684
     iget-object v3, v6, Lcom/iMe/fork/ui/dialog/TranslateAlert;->contentView:Landroid/widget/FrameLayout;
 
     invoke-virtual {v3, v11}, Landroid/widget/FrameLayout;->setClipToPadding(Z)V
 
     if-lt v15, v1, :cond_7
 
-    .line 687
+    .line 686
     iget-object v1, v6, Lcom/iMe/fork/ui/dialog/TranslateAlert;->contentView:Landroid/widget/FrameLayout;
 
     invoke-virtual {v1, v14}, Landroid/widget/FrameLayout;->setFitsSystemWindows(Z)V
 
     if-lt v15, v2, :cond_6
 
-    .line 689
+    .line 688
     iget-object v1, v6, Lcom/iMe/fork/ui/dialog/TranslateAlert;->contentView:Landroid/widget/FrameLayout;
 
     const/16 v2, 0x700
@@ -685,7 +685,7 @@
 
     goto :goto_3
 
-    .line 691
+    .line 690
     :cond_6
     iget-object v1, v6, Lcom/iMe/fork/ui/dialog/TranslateAlert;->contentView:Landroid/widget/FrameLayout;
 
@@ -693,14 +693,14 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/FrameLayout;->setSystemUiVisibility(I)V
 
-    .line 695
+    .line 694
     :cond_7
     :goto_3
     new-instance v1, Landroid/graphics/Paint;
 
     invoke-direct {v1}, Landroid/graphics/Paint;-><init>()V
 
-    .line 696
+    .line 695
     sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_dialogBackground:I
 
     invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -711,7 +711,7 @@
 
     const/4 v2, 0x2
 
-    .line 697
+    .line 696
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
@@ -730,31 +730,31 @@
 
     invoke-virtual {v1, v2, v12, v3, v4}, Landroid/graphics/Paint;->setShadowLayer(FFFI)V
 
-    .line 698
+    .line 697
     new-instance v2, Lcom/iMe/fork/ui/dialog/TranslateAlert$2;
 
     invoke-direct {v2, v6, v7, v1}, Lcom/iMe/fork/ui/dialog/TranslateAlert$2;-><init>(Lcom/iMe/fork/ui/dialog/TranslateAlert;Landroid/content/Context;Landroid/graphics/Paint;)V
 
     iput-object v2, v6, Lcom/iMe/fork/ui/dialog/TranslateAlert;->container:Landroid/widget/FrameLayout;
 
-    .line 753
+    .line 752
     invoke-virtual {v2, v11}, Landroid/widget/FrameLayout;->setWillNotDraw(Z)V
 
-    .line 755
+    .line 754
     new-instance v1, Landroid/widget/FrameLayout;
 
     invoke-direct {v1, v7}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
     iput-object v1, v6, Lcom/iMe/fork/ui/dialog/TranslateAlert;->header:Landroid/widget/FrameLayout;
 
-    .line 757
+    .line 756
     new-instance v1, Landroid/widget/TextView;
 
     invoke-direct {v1, v7}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
     iput-object v1, v6, Lcom/iMe/fork/ui/dialog/TranslateAlert;->titleView:Landroid/widget/TextView;
 
-    .line 758
+    .line 757
     sget-boolean v2, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     if-eqz v2, :cond_8
@@ -773,17 +773,17 @@
     :goto_4
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setPivotX(F)V
 
-    .line 759
+    .line 758
     iget-object v1, v6, Lcom/iMe/fork/ui/dialog/TranslateAlert;->titleView:Landroid/widget/TextView;
 
     invoke-virtual {v1, v12}, Landroid/widget/TextView;->setPivotY(F)V
 
-    .line 760
+    .line 759
     iget-object v1, v6, Lcom/iMe/fork/ui/dialog/TranslateAlert;->titleView:Landroid/widget/TextView;
 
     invoke-virtual {v1, v14}, Landroid/widget/TextView;->setLines(I)V
 
-    .line 761
+    .line 760
     iget-object v1, v6, Lcom/iMe/fork/ui/dialog/TranslateAlert;->titleView:Landroid/widget/TextView;
 
     sget v2, Lorg/telegram/messenger/R$string;->AutomaticTranslation:I
@@ -796,7 +796,7 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 762
+    .line 761
     iget-object v1, v6, Lcom/iMe/fork/ui/dialog/TranslateAlert;->titleView:Landroid/widget/TextView;
 
     sget-boolean v2, Lorg/telegram/messenger/LocaleController;->isRTL:Z
@@ -817,7 +817,7 @@
     :goto_5
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 763
+    .line 762
     iget-object v1, v6, Lcom/iMe/fork/ui/dialog/TranslateAlert;->titleView:Landroid/widget/TextView;
 
     const-string v17, "fonts/rmedium.ttf"
@@ -828,7 +828,7 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
-    .line 764
+    .line 763
     iget-object v1, v6, Lcom/iMe/fork/ui/dialog/TranslateAlert;->titleView:Landroid/widget/TextView;
 
     sget v18, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextBlack:I
@@ -839,7 +839,7 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 765
+    .line 764
     iget-object v1, v6, Lcom/iMe/fork/ui/dialog/TranslateAlert;->titleView:Landroid/widget/TextView;
 
     const/16 v4, 0x13
@@ -852,7 +852,7 @@
 
     invoke-virtual {v1, v11, v2}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 766
+    .line 765
     iget-object v1, v6, Lcom/iMe/fork/ui/dialog/TranslateAlert;->header:Landroid/widget/FrameLayout;
 
     iget-object v2, v6, Lcom/iMe/fork/ui/dialog/TranslateAlert;->titleView:Landroid/widget/TextView;
@@ -879,7 +879,7 @@
 
     invoke-virtual {v1, v2, v3}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 772
+    .line 771
     iget-object v1, v6, Lcom/iMe/fork/ui/dialog/TranslateAlert;->titleView:Landroid/widget/TextView;
 
     new-instance v2, Lcom/iMe/fork/ui/dialog/TranslateAlert$$ExternalSyntheticLambda17;
@@ -888,28 +888,28 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->post(Ljava/lang/Runnable;)Z
 
-    .line 776
+    .line 775
     new-instance v1, Landroid/widget/LinearLayout;
 
     invoke-direct {v1, v7}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
 
     iput-object v1, v6, Lcom/iMe/fork/ui/dialog/TranslateAlert;->subtitleView:Landroid/widget/LinearLayout;
 
-    .line 777
+    .line 776
     invoke-virtual {v1, v11}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
     const/16 v3, 0x11
 
     if-lt v15, v3, :cond_a
 
-    .line 779
+    .line 778
     iget-object v1, v6, Lcom/iMe/fork/ui/dialog/TranslateAlert;->subtitleView:Landroid/widget/LinearLayout;
 
     sget-boolean v2, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     invoke-virtual {v1, v2}, Landroid/widget/LinearLayout;->setLayoutDirection(I)V
 
-    .line 781
+    .line 780
     :cond_a
     iget-object v1, v6, Lcom/iMe/fork/ui/dialog/TranslateAlert;->subtitleView:Landroid/widget/LinearLayout;
 
@@ -927,12 +927,12 @@
     :goto_6
     invoke-virtual {v1, v2}, Landroid/widget/LinearLayout;->setGravity(I)V
 
-    .line 783
+    .line 782
     invoke-virtual {v6, v0}, Lcom/iMe/fork/ui/dialog/TranslateAlert;->languageName(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v2
 
-    .line 784
+    .line 783
     new-instance v1, Lcom/iMe/fork/ui/dialog/TranslateAlert$3;
 
     if-nez v2, :cond_c
@@ -985,7 +985,7 @@
 
     if-eqz v10, :cond_d
 
-    .line 799
+    .line 798
     invoke-virtual/range {p12 .. p12}, Lcom/iMe/model/translation/TranslationArgs;->getType()Lcom/iMe/fork/enums/TranslationDialogType;
 
     move-result-object v1
@@ -994,7 +994,7 @@
 
     if-eq v1, v2, :cond_d
 
-    .line 800
+    .line 799
     iget-object v1, v6, Lcom/iMe/fork/ui/dialog/TranslateAlert;->subtitleFromView:Lcom/iMe/fork/ui/dialog/TranslateAlert$InlineLoadingTextView;
 
     invoke-static {v1}, Lcom/iMe/fork/ui/dialog/TranslateAlert$InlineLoadingTextView;->access$1000(Lcom/iMe/fork/ui/dialog/TranslateAlert$InlineLoadingTextView;)Landroid/widget/TextView;
@@ -1003,7 +1003,7 @@
 
     invoke-virtual {v1, v0}, Landroid/widget/TextView;->setPaintFlags(I)V
 
-    .line 801
+    .line 800
     iget-object v1, v6, Lcom/iMe/fork/ui/dialog/TranslateAlert;->subtitleFromView:Lcom/iMe/fork/ui/dialog/TranslateAlert$InlineLoadingTextView;
 
     invoke-static {v1}, Lcom/iMe/fork/ui/dialog/TranslateAlert$InlineLoadingTextView;->access$1000(Lcom/iMe/fork/ui/dialog/TranslateAlert$InlineLoadingTextView;)Landroid/widget/TextView;
@@ -1016,25 +1016,25 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 807
+    .line 806
     :cond_d
     iget-object v1, v6, Lcom/iMe/fork/ui/dialog/TranslateAlert;->subtitleFromView:Lcom/iMe/fork/ui/dialog/TranslateAlert$InlineLoadingTextView;
 
     iput-boolean v11, v1, Lcom/iMe/fork/ui/dialog/TranslateAlert$InlineLoadingTextView;->showLoadingText:Z
 
-    .line 808
+    .line 807
     new-instance v1, Landroid/widget/ImageView;
 
     invoke-direct {v1, v7}, Landroid/widget/ImageView;-><init>(Landroid/content/Context;)V
 
     iput-object v1, v6, Lcom/iMe/fork/ui/dialog/TranslateAlert;->subtitleArrowView:Landroid/widget/ImageView;
 
-    .line 809
+    .line 808
     sget v2, Lorg/telegram/messenger/R$drawable;->search_arrow:I
 
     invoke-virtual {v1, v2}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 810
+    .line 809
     iget-object v1, v6, Lcom/iMe/fork/ui/dialog/TranslateAlert;->subtitleArrowView:Landroid/widget/ImageView;
 
     new-instance v2, Landroid/graphics/PorterDuffColorFilter;
@@ -1049,19 +1049,19 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/ImageView;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    .line 811
+    .line 810
     sget-boolean v1, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     if-eqz v1, :cond_e
 
-    .line 812
+    .line 811
     iget-object v1, v6, Lcom/iMe/fork/ui/dialog/TranslateAlert;->subtitleArrowView:Landroid/widget/ImageView;
 
     const/high16 v2, -0x40800000    # -1.0f
 
     invoke-virtual {v1, v2}, Landroid/widget/ImageView;->setScaleX(F)V
 
-    .line 815
+    .line 814
     :cond_e
     new-instance v1, Landroid/widget/TextView;
 
@@ -1069,10 +1069,10 @@
 
     iput-object v1, v6, Lcom/iMe/fork/ui/dialog/TranslateAlert;->subtitleToView:Landroid/widget/TextView;
 
-    .line 816
+    .line 815
     invoke-virtual {v1, v14}, Landroid/widget/TextView;->setLines(I)V
 
-    .line 817
+    .line 816
     iget-object v1, v6, Lcom/iMe/fork/ui/dialog/TranslateAlert;->subtitleToView:Landroid/widget/TextView;
 
     invoke-static/range {v22 .. v22}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -1081,7 +1081,7 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 818
+    .line 817
     iget-object v1, v6, Lcom/iMe/fork/ui/dialog/TranslateAlert;->subtitleToView:Landroid/widget/TextView;
 
     invoke-static/range {v20 .. v20}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -1092,7 +1092,7 @@
 
     invoke-virtual {v1, v11, v2}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 819
+    .line 818
     iget-object v1, v6, Lcom/iMe/fork/ui/dialog/TranslateAlert;->subtitleToView:Landroid/widget/TextView;
 
     invoke-virtual {v6, v8}, Lcom/iMe/fork/ui/dialog/TranslateAlert;->languageName(Ljava/lang/String;)Ljava/lang/String;
@@ -1103,7 +1103,7 @@
 
     if-eqz v10, :cond_f
 
-    .line 821
+    .line 820
     invoke-virtual/range {p12 .. p12}, Lcom/iMe/model/translation/TranslationArgs;->getType()Lcom/iMe/fork/enums/TranslationDialogType;
 
     move-result-object v1
@@ -1112,12 +1112,12 @@
 
     if-eq v1, v2, :cond_f
 
-    .line 822
+    .line 821
     iget-object v1, v6, Lcom/iMe/fork/ui/dialog/TranslateAlert;->subtitleToView:Landroid/widget/TextView;
 
     invoke-virtual {v1, v0}, Landroid/widget/TextView;->setPaintFlags(I)V
 
-    .line 823
+    .line 822
     iget-object v0, v6, Lcom/iMe/fork/ui/dialog/TranslateAlert;->subtitleToView:Landroid/widget/TextView;
 
     new-instance v1, Lcom/iMe/fork/ui/dialog/TranslateAlert$$ExternalSyntheticLambda10;
@@ -1126,7 +1126,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 830
+    .line 829
     :cond_f
     sget-boolean v0, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
@@ -1136,14 +1136,14 @@
 
     if-eqz v0, :cond_10
 
-    .line 831
+    .line 830
     iget-object v0, v6, Lcom/iMe/fork/ui/dialog/TranslateAlert;->subtitleView:Landroid/widget/LinearLayout;
 
     sget v3, Lcom/iMe/fork/ui/dialog/TranslateAlert$InlineLoadingTextView;->paddingHorizontal:I
 
     invoke-virtual {v0, v3, v11, v11, v11}, Landroid/widget/LinearLayout;->setPadding(IIII)V
 
-    .line 832
+    .line 831
     iget-object v0, v6, Lcom/iMe/fork/ui/dialog/TranslateAlert;->subtitleView:Landroid/widget/LinearLayout;
 
     iget-object v3, v6, Lcom/iMe/fork/ui/dialog/TranslateAlert;->subtitleToView:Landroid/widget/TextView;
@@ -1154,7 +1154,7 @@
 
     invoke-virtual {v0, v3, v4}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 833
+    .line 832
     iget-object v0, v6, Lcom/iMe/fork/ui/dialog/TranslateAlert;->subtitleView:Landroid/widget/LinearLayout;
 
     iget-object v3, v6, Lcom/iMe/fork/ui/dialog/TranslateAlert;->subtitleArrowView:Landroid/widget/ImageView;
@@ -1179,7 +1179,7 @@
 
     invoke-virtual {v0, v3, v4}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 834
+    .line 833
     iget-object v0, v6, Lcom/iMe/fork/ui/dialog/TranslateAlert;->subtitleView:Landroid/widget/LinearLayout;
 
     iget-object v3, v6, Lcom/iMe/fork/ui/dialog/TranslateAlert;->subtitleFromView:Lcom/iMe/fork/ui/dialog/TranslateAlert$InlineLoadingTextView;
@@ -1196,7 +1196,7 @@
 
     goto :goto_8
 
-    .line 836
+    .line 835
     :cond_10
     iget-object v0, v6, Lcom/iMe/fork/ui/dialog/TranslateAlert;->subtitleView:Landroid/widget/LinearLayout;
 
@@ -1204,7 +1204,7 @@
 
     invoke-virtual {v0, v11, v11, v3, v11}, Landroid/widget/LinearLayout;->setPadding(IIII)V
 
-    .line 837
+    .line 836
     iget-object v0, v6, Lcom/iMe/fork/ui/dialog/TranslateAlert;->subtitleView:Landroid/widget/LinearLayout;
 
     iget-object v3, v6, Lcom/iMe/fork/ui/dialog/TranslateAlert;->subtitleFromView:Lcom/iMe/fork/ui/dialog/TranslateAlert$InlineLoadingTextView;
@@ -1229,7 +1229,7 @@
 
     invoke-virtual {v0, v3, v4}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 838
+    .line 837
     iget-object v0, v6, Lcom/iMe/fork/ui/dialog/TranslateAlert;->subtitleView:Landroid/widget/LinearLayout;
 
     iget-object v3, v6, Lcom/iMe/fork/ui/dialog/TranslateAlert;->subtitleArrowView:Landroid/widget/ImageView;
@@ -1244,7 +1244,7 @@
 
     invoke-virtual {v0, v3, v4}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 839
+    .line 838
     iget-object v0, v6, Lcom/iMe/fork/ui/dialog/TranslateAlert;->subtitleView:Landroid/widget/LinearLayout;
 
     iget-object v3, v6, Lcom/iMe/fork/ui/dialog/TranslateAlert;->subtitleToView:Landroid/widget/TextView;
@@ -1258,12 +1258,12 @@
     :goto_8
     if-eqz v12, :cond_11
 
-    .line 842
+    .line 841
     iget-object v0, v6, Lcom/iMe/fork/ui/dialog/TranslateAlert;->subtitleFromView:Lcom/iMe/fork/ui/dialog/TranslateAlert$InlineLoadingTextView;
 
     invoke-virtual {v0, v12}, Lcom/iMe/fork/ui/dialog/TranslateAlert$InlineLoadingTextView;->set(Ljava/lang/CharSequence;)V
 
-    .line 845
+    .line 844
     :cond_11
     iget-object v0, v6, Lcom/iMe/fork/ui/dialog/TranslateAlert;->header:Landroid/widget/FrameLayout;
 
@@ -1273,7 +1273,7 @@
 
     const/high16 v20, -0x40000000    # -2.0f
 
-    .line 848
+    .line 847
     sget-boolean v4, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     if-eqz v4, :cond_12
@@ -1318,7 +1318,7 @@
 
     const/16 v25, 0x0
 
-    .line 845
+    .line 844
     invoke-static/range {v19 .. v25}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IFIFFFF)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object v4
@@ -1327,19 +1327,19 @@
 
     invoke-virtual {v0, v3, v4}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 855
+    .line 854
     new-instance v0, Landroid/widget/ImageView;
 
     invoke-direct {v0, v7}, Landroid/widget/ImageView;-><init>(Landroid/content/Context;)V
 
     iput-object v0, v6, Lcom/iMe/fork/ui/dialog/TranslateAlert;->backButton:Landroid/widget/ImageView;
 
-    .line 856
+    .line 855
     sget v3, Lorg/telegram/messenger/R$drawable;->ic_ab_back:I
 
     invoke-virtual {v0, v3}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 857
+    .line 856
     iget-object v0, v6, Lcom/iMe/fork/ui/dialog/TranslateAlert;->backButton:Landroid/widget/ImageView;
 
     new-instance v3, Landroid/graphics/PorterDuffColorFilter;
@@ -1354,14 +1354,14 @@
 
     invoke-virtual {v0, v3}, Landroid/widget/ImageView;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    .line 858
+    .line 857
     iget-object v0, v6, Lcom/iMe/fork/ui/dialog/TranslateAlert;->backButton:Landroid/widget/ImageView;
 
     sget-object v3, Landroid/widget/ImageView$ScaleType;->FIT_CENTER:Landroid/widget/ImageView$ScaleType;
 
     invoke-virtual {v0, v3}, Landroid/widget/ImageView;->setScaleType(Landroid/widget/ImageView$ScaleType;)V
 
-    .line 859
+    .line 858
     iget-object v0, v6, Lcom/iMe/fork/ui/dialog/TranslateAlert;->backButton:Landroid/widget/ImageView;
 
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -1374,7 +1374,7 @@
 
     invoke-virtual {v0, v3, v11, v4, v11}, Landroid/widget/ImageView;->setPadding(IIII)V
 
-    .line 860
+    .line 859
     iget-object v0, v6, Lcom/iMe/fork/ui/dialog/TranslateAlert;->backButton:Landroid/widget/ImageView;
 
     sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_dialogButtonSelector:I
@@ -1389,19 +1389,19 @@
 
     invoke-virtual {v0, v3}, Landroid/widget/ImageView;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 861
+    .line 860
     iget-object v0, v6, Lcom/iMe/fork/ui/dialog/TranslateAlert;->backButton:Landroid/widget/ImageView;
 
     invoke-virtual {v0, v11}, Landroid/widget/ImageView;->setClickable(Z)V
 
-    .line 862
+    .line 861
     iget-object v0, v6, Lcom/iMe/fork/ui/dialog/TranslateAlert;->backButton:Landroid/widget/ImageView;
 
     const/4 v3, 0x0
 
     invoke-virtual {v0, v3}, Landroid/widget/ImageView;->setAlpha(F)V
 
-    .line 863
+    .line 862
     iget-object v0, v6, Lcom/iMe/fork/ui/dialog/TranslateAlert;->backButton:Landroid/widget/ImageView;
 
     new-instance v3, Lcom/iMe/fork/ui/dialog/TranslateAlert$$ExternalSyntheticLambda8;
@@ -1410,7 +1410,7 @@
 
     invoke-virtual {v0, v3}, Landroid/widget/ImageView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 864
+    .line 863
     iget-object v0, v6, Lcom/iMe/fork/ui/dialog/TranslateAlert;->header:Landroid/widget/FrameLayout;
 
     iget-object v3, v6, Lcom/iMe/fork/ui/dialog/TranslateAlert;->backButton:Landroid/widget/ImageView;
@@ -1425,14 +1425,14 @@
 
     invoke-virtual {v0, v3, v4}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 866
+    .line 865
     new-instance v0, Landroid/widget/FrameLayout;
 
     invoke-direct {v0, v7}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
     iput-object v0, v6, Lcom/iMe/fork/ui/dialog/TranslateAlert;->headerShadowView:Landroid/widget/FrameLayout;
 
-    .line 867
+    .line 866
     sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_dialogShadowLine:I
 
     invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -1441,14 +1441,14 @@
 
     invoke-virtual {v0, v3}, Landroid/widget/FrameLayout;->setBackgroundColor(I)V
 
-    .line 868
+    .line 867
     iget-object v0, v6, Lcom/iMe/fork/ui/dialog/TranslateAlert;->headerShadowView:Landroid/widget/FrameLayout;
 
     const/4 v3, 0x0
 
     invoke-virtual {v0, v3}, Landroid/widget/FrameLayout;->setAlpha(F)V
 
-    .line 869
+    .line 868
     iget-object v0, v6, Lcom/iMe/fork/ui/dialog/TranslateAlert;->header:Landroid/widget/FrameLayout;
 
     iget-object v3, v6, Lcom/iMe/fork/ui/dialog/TranslateAlert;->headerShadowView:Landroid/widget/FrameLayout;
@@ -1463,12 +1463,12 @@
 
     invoke-virtual {v0, v3, v4}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 871
+    .line 870
     iget-object v0, v6, Lcom/iMe/fork/ui/dialog/TranslateAlert;->header:Landroid/widget/FrameLayout;
 
     invoke-virtual {v0, v11}, Landroid/widget/FrameLayout;->setClipChildren(Z)V
 
-    .line 872
+    .line 871
     iget-object v0, v6, Lcom/iMe/fork/ui/dialog/TranslateAlert;->container:Landroid/widget/FrameLayout;
 
     iget-object v3, v6, Lcom/iMe/fork/ui/dialog/TranslateAlert;->header:Landroid/widget/FrameLayout;
@@ -1485,50 +1485,50 @@
 
     invoke-virtual {v0, v3, v4}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 874
+    .line 873
     new-instance v0, Lcom/iMe/fork/ui/dialog/TranslateAlert$4;
 
     invoke-direct {v0, v6, v7}, Lcom/iMe/fork/ui/dialog/TranslateAlert$4;-><init>(Lcom/iMe/fork/ui/dialog/TranslateAlert;Landroid/content/Context;)V
 
     iput-object v0, v6, Lcom/iMe/fork/ui/dialog/TranslateAlert;->scrollView:Landroidx/core/widget/NestedScrollView;
 
-    .line 893
+    .line 892
     invoke-virtual {v0, v14}, Landroid/widget/FrameLayout;->setClipChildren(Z)V
 
-    .line 895
+    .line 894
     new-instance v0, Lcom/iMe/fork/ui/dialog/TranslateAlert$5;
 
     invoke-direct {v0, v6, v7}, Lcom/iMe/fork/ui/dialog/TranslateAlert$5;-><init>(Lcom/iMe/fork/ui/dialog/TranslateAlert;Landroid/content/Context;)V
 
     iput-object v0, v6, Lcom/iMe/fork/ui/dialog/TranslateAlert;->allTextsView:Landroid/widget/TextView;
 
-    .line 930
+    .line 929
     new-instance v3, Lorg/telegram/ui/Components/LinkSpanDrawable$LinkCollector;
 
     invoke-direct {v3, v0}, Lorg/telegram/ui/Components/LinkSpanDrawable$LinkCollector;-><init>(Landroid/view/View;)V
 
     iput-object v3, v6, Lcom/iMe/fork/ui/dialog/TranslateAlert;->links:Lorg/telegram/ui/Components/LinkSpanDrawable$LinkCollector;
 
-    .line 931
+    .line 930
     iget-object v0, v6, Lcom/iMe/fork/ui/dialog/TranslateAlert;->allTextsView:Landroid/widget/TextView;
 
     invoke-virtual {v0, v11}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 932
+    .line 931
     iget-object v0, v6, Lcom/iMe/fork/ui/dialog/TranslateAlert;->allTextsView:Landroid/widget/TextView;
 
     const/high16 v3, 0x41800000    # 16.0f
 
     invoke-virtual {v0, v14, v3}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 933
+    .line 932
     iget-object v0, v6, Lcom/iMe/fork/ui/dialog/TranslateAlert;->allTextsView:Landroid/widget/TextView;
 
     xor-int/lit8 v3, v9, 0x1
 
     invoke-virtual {v0, v3}, Landroid/widget/TextView;->setTextIsSelectable(Z)V
 
-    .line 934
+    .line 933
     iget-object v0, v6, Lcom/iMe/fork/ui/dialog/TranslateAlert;->allTextsView:Landroid/widget/TextView;
 
     sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_chat_inTextSelectionHighlight:I
@@ -1539,7 +1539,7 @@
 
     invoke-virtual {v0, v3}, Landroid/widget/TextView;->setHighlightColor(I)V
 
-    .line 935
+    .line 934
     sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_chat_TextSelectionCursor:I
 
     invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -1550,7 +1550,7 @@
 
     if-lt v15, v3, :cond_13
 
-    .line 937
+    .line 936
     :try_start_0
     invoke-static {}, Lorg/telegram/messenger/XiaomiUtilities;->isMIUI()Z
 
@@ -1558,50 +1558,50 @@
 
     if-nez v3, :cond_13
 
-    .line 938
+    .line 937
     iget-object v3, v6, Lcom/iMe/fork/ui/dialog/TranslateAlert;->allTextsView:Landroid/widget/TextView;
 
     invoke-virtual {v3}, Landroid/widget/TextView;->getTextSelectHandleLeft()Landroid/graphics/drawable/Drawable;
 
     move-result-object v3
 
-    .line 939
+    .line 938
     sget-object v4, Landroid/graphics/PorterDuff$Mode;->SRC_IN:Landroid/graphics/PorterDuff$Mode;
 
     invoke-virtual {v3, v0, v4}, Landroid/graphics/drawable/Drawable;->setColorFilter(ILandroid/graphics/PorterDuff$Mode;)V
 
-    .line 940
+    .line 939
     iget-object v4, v6, Lcom/iMe/fork/ui/dialog/TranslateAlert;->allTextsView:Landroid/widget/TextView;
 
     invoke-virtual {v4, v3}, Landroid/widget/TextView;->setTextSelectHandleLeft(Landroid/graphics/drawable/Drawable;)V
 
-    .line 942
+    .line 941
     iget-object v3, v6, Lcom/iMe/fork/ui/dialog/TranslateAlert;->allTextsView:Landroid/widget/TextView;
 
     invoke-virtual {v3}, Landroid/widget/TextView;->getTextSelectHandleRight()Landroid/graphics/drawable/Drawable;
 
     move-result-object v3
 
-    .line 943
+    .line 942
     sget-object v4, Landroid/graphics/PorterDuff$Mode;->SRC_IN:Landroid/graphics/PorterDuff$Mode;
 
     invoke-virtual {v3, v0, v4}, Landroid/graphics/drawable/Drawable;->setColorFilter(ILandroid/graphics/PorterDuff$Mode;)V
 
-    .line 944
+    .line 943
     iget-object v0, v6, Lcom/iMe/fork/ui/dialog/TranslateAlert;->allTextsView:Landroid/widget/TextView;
 
     invoke-virtual {v0, v3}, Landroid/widget/TextView;->setTextSelectHandleRight(Landroid/graphics/drawable/Drawable;)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 948
+    .line 947
     :catch_0
     :cond_13
     iget-object v0, v6, Lcom/iMe/fork/ui/dialog/TranslateAlert;->allTextsView:Landroid/widget/TextView;
 
     invoke-virtual {v0, v14}, Landroid/widget/TextView;->setFocusable(Z)V
 
-    .line 949
+    .line 948
     iget-object v0, v6, Lcom/iMe/fork/ui/dialog/TranslateAlert;->allTextsView:Landroid/widget/TextView;
 
     new-instance v3, Landroid/text/method/LinkMovementMethod;
@@ -1610,7 +1610,7 @@
 
     invoke-virtual {v0, v3}, Landroid/widget/TextView;->setMovementMethod(Landroid/text/method/MovementMethod;)V
 
-    .line 951
+    .line 950
     new-instance v0, Lcom/iMe/fork/ui/dialog/TranslateAlert$TextBlocksLayout;
 
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -1631,7 +1631,7 @@
 
     const/16 v1, 0x16
 
-    .line 953
+    .line 952
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v3
@@ -1642,7 +1642,7 @@
 
     const/16 v5, 0xc
 
-    .line 954
+    .line 953
     invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v8
@@ -1651,26 +1651,26 @@
 
     sub-int/2addr v8, v9
 
-    .line 955
+    .line 954
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
 
     sub-int/2addr v1, v4
 
-    .line 956
+    .line 955
     invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v4
 
     sub-int/2addr v4, v9
 
-    .line 952
+    .line 951
     invoke-virtual {v0, v3, v8, v1, v4}, Landroid/view/ViewGroup;->setPadding(IIII)V
 
     if-nez v10, :cond_14
 
-    .line 960
+    .line 959
     iget-object v0, v6, Lcom/iMe/fork/ui/dialog/TranslateAlert;->textBlocks:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
@@ -1690,14 +1690,14 @@
 
     check-cast v1, Ljava/lang/CharSequence;
 
-    .line 961
+    .line 960
     iget-object v3, v6, Lcom/iMe/fork/ui/dialog/TranslateAlert;->textsView:Lcom/iMe/fork/ui/dialog/TranslateAlert$TextBlocksLayout;
 
     invoke-virtual {v3, v1}, Lcom/iMe/fork/ui/dialog/TranslateAlert$TextBlocksLayout;->addBlock(Ljava/lang/CharSequence;)Lcom/iMe/fork/ui/dialog/TranslateAlert$LoadingTextView2;
 
     goto :goto_a
 
-    .line 963
+    .line 962
     :cond_14
     new-instance v0, Landroid/widget/FrameLayout;
 
@@ -1707,7 +1707,7 @@
 
     if-eqz v10, :cond_15
 
-    .line 966
+    .line 965
     invoke-virtual/range {p12 .. p12}, Lcom/iMe/model/translation/TranslationArgs;->getType()Lcom/iMe/fork/enums/TranslationDialogType;
 
     move-result-object v0
@@ -1716,14 +1716,14 @@
 
     if-ne v0, v1, :cond_15
 
-    .line 967
+    .line 966
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/dialog/TranslateAlert;->initEditText()V
 
     const/4 v3, -0x1
 
     goto :goto_b
 
-    .line 969
+    .line 968
     :cond_15
     iget-object v0, v6, Lcom/iMe/fork/ui/dialog/TranslateAlert;->textsContainerView:Landroid/widget/FrameLayout;
 
@@ -1737,7 +1737,7 @@
 
     invoke-virtual {v0, v1, v4}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 971
+    .line 970
     :goto_b
     iget-object v0, v6, Lcom/iMe/fork/ui/dialog/TranslateAlert;->scrollView:Landroidx/core/widget/NestedScrollView;
 
@@ -1751,7 +1751,7 @@
 
     invoke-virtual {v0, v1, v4}, Landroidx/core/widget/NestedScrollView;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 973
+    .line 972
     iget-object v0, v6, Lcom/iMe/fork/ui/dialog/TranslateAlert;->container:Landroid/widget/FrameLayout;
 
     iget-object v1, v6, Lcom/iMe/fork/ui/dialog/TranslateAlert;->scrollView:Landroidx/core/widget/NestedScrollView;
@@ -1792,14 +1792,14 @@
 
     invoke-virtual {v0, v1, v3}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 975
+    .line 974
     new-instance v0, Landroid/widget/FrameLayout;
 
     invoke-direct {v0, v7}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
     iput-object v0, v6, Lcom/iMe/fork/ui/dialog/TranslateAlert;->buttonShadowView:Landroid/widget/FrameLayout;
 
-    .line 976
+    .line 975
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_dialogShadowLine:I
 
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -1808,7 +1808,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setBackgroundColor(I)V
 
-    .line 977
+    .line 976
     iget-object v0, v6, Lcom/iMe/fork/ui/dialog/TranslateAlert;->container:Landroid/widget/FrameLayout;
 
     iget-object v1, v6, Lcom/iMe/fork/ui/dialog/TranslateAlert;->buttonShadowView:Landroid/widget/FrameLayout;
@@ -1839,41 +1839,41 @@
 
     invoke-virtual {v0, v1, v3}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 979
+    .line 978
     new-instance v0, Landroid/widget/TextView;
 
     invoke-direct {v0, v7}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
     iput-object v0, v6, Lcom/iMe/fork/ui/dialog/TranslateAlert;->buttonTextView:Landroid/widget/TextView;
 
-    .line 980
+    .line 979
     invoke-virtual {v0, v14}, Landroid/widget/TextView;->setLines(I)V
 
-    .line 981
+    .line 980
     iget-object v0, v6, Lcom/iMe/fork/ui/dialog/TranslateAlert;->buttonTextView:Landroid/widget/TextView;
 
     invoke-virtual {v0, v14}, Landroid/widget/TextView;->setSingleLine(Z)V
 
-    .line 982
+    .line 981
     iget-object v0, v6, Lcom/iMe/fork/ui/dialog/TranslateAlert;->buttonTextView:Landroid/widget/TextView;
 
     invoke-virtual {v0, v14}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 983
+    .line 982
     iget-object v0, v6, Lcom/iMe/fork/ui/dialog/TranslateAlert;->buttonTextView:Landroid/widget/TextView;
 
     sget-object v1, Landroid/text/TextUtils$TruncateAt;->END:Landroid/text/TextUtils$TruncateAt;
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setEllipsize(Landroid/text/TextUtils$TruncateAt;)V
 
-    .line 984
+    .line 983
     iget-object v0, v6, Lcom/iMe/fork/ui/dialog/TranslateAlert;->buttonTextView:Landroid/widget/TextView;
 
     const/16 v1, 0x11
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 985
+    .line 984
     iget-object v0, v6, Lcom/iMe/fork/ui/dialog/TranslateAlert;->buttonTextView:Landroid/widget/TextView;
 
     sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_featuredStickers_buttonText:I
@@ -1884,7 +1884,7 @@
 
     invoke-virtual {v0, v3}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 986
+    .line 985
     iget-object v0, v6, Lcom/iMe/fork/ui/dialog/TranslateAlert;->buttonTextView:Landroid/widget/TextView;
 
     invoke-static/range {v17 .. v17}, Lorg/telegram/messenger/AndroidUtilities;->getTypeface(Ljava/lang/String;)Landroid/graphics/Typeface;
@@ -1893,14 +1893,14 @@
 
     invoke-virtual {v0, v3}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
-    .line 987
+    .line 986
     iget-object v0, v6, Lcom/iMe/fork/ui/dialog/TranslateAlert;->buttonTextView:Landroid/widget/TextView;
 
     const/high16 v3, 0x41600000    # 14.0f
 
     invoke-virtual {v0, v14, v3}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 988
+    .line 987
     iget-object v0, v6, Lcom/iMe/fork/ui/dialog/TranslateAlert;->buttonTextView:Landroid/widget/TextView;
 
     sget v3, Lorg/telegram/messenger/R$string;->CloseTranslation:I
@@ -1913,7 +1913,7 @@
 
     invoke-virtual {v0, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 990
+    .line 989
     iget-object v0, v6, Lcom/iMe/fork/ui/dialog/TranslateAlert;->buttonTextView:Landroid/widget/TextView;
 
     sget v3, Lorg/telegram/messenger/R$string;->Close:I
@@ -1926,7 +1926,7 @@
 
     invoke-virtual {v0, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 991
+    .line 990
     new-instance v0, Landroid/widget/ImageView;
 
     invoke-virtual/range {p0 .. p0}, Landroid/app/Dialog;->getContext()Landroid/content/Context;
@@ -1937,12 +1937,12 @@
 
     iput-object v0, v6, Lcom/iMe/fork/ui/dialog/TranslateAlert;->buttonImageView:Landroid/widget/ImageView;
 
-    .line 992
+    .line 991
     sget v3, Lorg/telegram/messenger/R$drawable;->msg_close:I
 
     invoke-virtual {v0, v3}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 994
+    .line 993
     new-instance v3, Landroid/widget/FrameLayout;
 
     invoke-direct {v3, v7}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
@@ -1953,7 +1953,7 @@
 
     if-eqz v10, :cond_16
 
-    .line 1005
+    .line 1004
     invoke-virtual/range {p12 .. p12}, Lcom/iMe/model/translation/TranslationArgs;->getType()Lcom/iMe/fork/enums/TranslationDialogType;
 
     move-result-object v4
@@ -1962,7 +1962,7 @@
 
     if-ne v4, v5, :cond_16
 
-    .line 1006
+    .line 1005
     new-instance v2, Landroid/widget/LinearLayout;
 
     invoke-virtual/range {p0 .. p0}, Landroid/app/Dialog;->getContext()Landroid/content/Context;
@@ -1973,10 +1973,10 @@
 
     iput-object v2, v6, Lcom/iMe/fork/ui/dialog/TranslateAlert;->buttonLinear:Landroid/widget/LinearLayout;
 
-    .line 1007
+    .line 1006
     invoke-virtual {v2, v1}, Landroid/widget/LinearLayout;->setGravity(I)V
 
-    .line 1008
+    .line 1007
     iget-object v1, v6, Lcom/iMe/fork/ui/dialog/TranslateAlert;->buttonLinear:Landroid/widget/LinearLayout;
 
     sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_featuredStickers_addButton:I
@@ -1995,7 +1995,7 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/LinearLayout;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 1009
+    .line 1008
     iget-object v1, v6, Lcom/iMe/fork/ui/dialog/TranslateAlert;->buttonLinear:Landroid/widget/LinearLayout;
 
     const/4 v2, -0x2
@@ -2032,14 +2032,14 @@
 
     invoke-virtual {v1, v0, v2}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1010
+    .line 1009
     iget-object v0, v6, Lcom/iMe/fork/ui/dialog/TranslateAlert;->buttonLinear:Landroid/widget/LinearLayout;
 
     iget-object v1, v6, Lcom/iMe/fork/ui/dialog/TranslateAlert;->buttonTextView:Landroid/widget/TextView;
 
     invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
-    .line 1011
+    .line 1010
     iget-object v0, v6, Lcom/iMe/fork/ui/dialog/TranslateAlert;->buttonLinear:Landroid/widget/LinearLayout;
 
     new-instance v1, Lcom/iMe/fork/ui/dialog/TranslateAlert$$ExternalSyntheticLambda9;
@@ -2048,12 +2048,12 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 1012
+    .line 1011
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/dialog/TranslateAlert;->initContainerButton()V
 
     goto :goto_c
 
-    .line 1014
+    .line 1013
     :cond_16
     iget-object v1, v6, Lcom/iMe/fork/ui/dialog/TranslateAlert;->buttonView:Landroid/widget/FrameLayout;
 
@@ -2069,7 +2069,7 @@
 
     invoke-virtual {v1, v5}, Landroid/widget/FrameLayout;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 1015
+    .line 1014
     iget-object v1, v6, Lcom/iMe/fork/ui/dialog/TranslateAlert;->buttonView:Landroid/widget/FrameLayout;
 
     invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -2086,7 +2086,7 @@
 
     invoke-virtual {v1, v3}, Landroid/widget/FrameLayout;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 1016
+    .line 1015
     iget-object v1, v6, Lcom/iMe/fork/ui/dialog/TranslateAlert;->buttonView:Landroid/widget/FrameLayout;
 
     const/16 v3, 0x13
@@ -2097,14 +2097,14 @@
 
     invoke-virtual {v1, v0, v3}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1017
+    .line 1016
     iget-object v0, v6, Lcom/iMe/fork/ui/dialog/TranslateAlert;->buttonView:Landroid/widget/FrameLayout;
 
     iget-object v1, v6, Lcom/iMe/fork/ui/dialog/TranslateAlert;->buttonTextView:Landroid/widget/TextView;
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;)V
 
-    .line 1018
+    .line 1017
     iget-object v0, v6, Lcom/iMe/fork/ui/dialog/TranslateAlert;->buttonView:Landroid/widget/FrameLayout;
 
     new-instance v1, Lcom/iMe/fork/ui/dialog/TranslateAlert$$ExternalSyntheticLambda4;
@@ -2113,7 +2113,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 1019
+    .line 1018
     iget-object v0, v6, Lcom/iMe/fork/ui/dialog/TranslateAlert;->container:Landroid/widget/FrameLayout;
 
     iget-object v1, v6, Lcom/iMe/fork/ui/dialog/TranslateAlert;->buttonView:Landroid/widget/FrameLayout;
@@ -2152,7 +2152,7 @@
 
     invoke-virtual {v0, v1, v3}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1020
+    .line 1019
     iget-object v0, v6, Lcom/iMe/fork/ui/dialog/TranslateAlert;->contentView:Landroid/widget/FrameLayout;
 
     iget-object v1, v6, Lcom/iMe/fork/ui/dialog/TranslateAlert;->container:Landroid/widget/FrameLayout;
@@ -2170,10 +2170,10 @@
     :goto_c
     if-eqz v10, :cond_17
 
-    .line 1023
+    .line 1022
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/dialog/TranslateAlert;->initButtonsByType()V
 
-    .line 1026
+    .line 1025
     :cond_17
     new-instance v0, Landroid/widget/FrameLayout;
 
@@ -2181,7 +2181,7 @@
 
     iput-object v0, v6, Lcom/iMe/fork/ui/dialog/TranslateAlert;->bulletinContainer:Landroid/widget/FrameLayout;
 
-    .line 1027
+    .line 1026
     iget-object v1, v6, Lcom/iMe/fork/ui/dialog/TranslateAlert;->contentView:Landroid/widget/FrameLayout;
 
     const/4 v2, -0x1
@@ -2224,8 +2224,8 @@
 .method public constructor <init>(Lorg/telegram/ui/ActionBar/BaseFragment;ZLcom/iMe/model/translation/TranslationArgs;Lcom/iMe/fork/ui/dialog/TranslateAlert$TranslatorActionsDelegate;)V
     .locals 14
 
-    .line 128
-    invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getContext()Landroid/content/Context;
+    .line 132
+    invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object v2
 
@@ -2503,10 +2503,10 @@
 .method private canExpand()Z
     .locals 4
 
-    .line 606
+    .line 605
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->textsView:Lcom/iMe/fork/ui/dialog/TranslateAlert$TextBlocksLayout;
 
-    .line 607
+    .line 606
     invoke-virtual {v0}, Lcom/iMe/fork/ui/dialog/TranslateAlert$TextBlocksLayout;->getBlocksCount()I
 
     move-result v0
@@ -2521,7 +2521,7 @@
 
     if-lt v0, v1, :cond_1
 
-    .line 608
+    .line 607
     invoke-direct {p0, v2}, Lcom/iMe/fork/ui/dialog/TranslateAlert;->minHeight(Z)I
 
     move-result v0
@@ -2555,7 +2555,7 @@
 .method private checkForNextLoading()Z
     .locals 1
 
-    .line 1423
+    .line 1422
     invoke-direct {p0}, Lcom/iMe/fork/ui/dialog/TranslateAlert;->scrollAtBottom()Z
 
     move-result v0
@@ -2575,7 +2575,7 @@
 .method public static createInstanceForForkTranslation(Lorg/telegram/ui/ActionBar/BaseFragment;Lcom/iMe/model/translation/TranslationArgs;Lcom/iMe/fork/ui/dialog/TranslateAlert$TranslatorActionsDelegate;Z)Lcom/iMe/fork/ui/dialog/TranslateAlert;
     .locals 1
 
-    .line 144
+    .line 143
     new-instance v0, Lcom/iMe/fork/ui/dialog/TranslateAlert;
 
     invoke-direct {v0, p0, p3, p1, p2}, Lcom/iMe/fork/ui/dialog/TranslateAlert;-><init>(Lorg/telegram/ui/ActionBar/BaseFragment;ZLcom/iMe/model/translation/TranslationArgs;Lcom/iMe/fork/ui/dialog/TranslateAlert$TranslatorActionsDelegate;)V
@@ -2586,7 +2586,7 @@
 .method private createOutgoingButton(ILjava/lang/String;Lcom/iMe/fork/utils/Callbacks$Callback;)Landroid/widget/FrameLayout;
     .locals 5
 
-    .line 406
+    .line 405
     new-instance v0, Landroid/widget/TextView;
 
     invoke-virtual {p0}, Landroid/app/Dialog;->getContext()Landroid/content/Context;
@@ -2595,23 +2595,23 @@
 
     invoke-direct {v0, v1}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
-    .line 407
+    .line 406
     invoke-static {v0}, Lcom/iMe/utils/extentions/common/ViewExtKt;->singleLine(Landroid/widget/TextView;)V
 
-    .line 408
+    .line 407
     invoke-static {v0}, Lcom/iMe/utils/extentions/common/ViewExtKt;->withMediumTypeface(Landroid/widget/TextView;)V
 
-    .line 409
+    .line 408
     sget-object v1, Landroid/text/TextUtils$TruncateAt;->END:Landroid/text/TextUtils$TruncateAt;
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setEllipsize(Landroid/text/TextUtils$TruncateAt;)V
 
     const/16 v1, 0x11
 
-    .line 410
+    .line 409
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 411
+    .line 410
     sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_featuredStickers_buttonText:I
 
     invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -2624,13 +2624,13 @@
 
     const/high16 v3, 0x41600000    # 14.0f
 
-    .line 412
+    .line 411
     invoke-virtual {v0, v2, v3}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 413
+    .line 412
     invoke-virtual {v0, p2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 415
+    .line 414
     invoke-virtual {p0}, Landroid/app/Dialog;->getContext()Landroid/content/Context;
 
     move-result-object p2
@@ -2641,10 +2641,10 @@
 
     const/4 p2, 0x0
 
-    .line 414
+    .line 413
     invoke-virtual {v0, p1, p2, p2, p2}, Landroid/widget/TextView;->setCompoundDrawablesWithIntrinsicBounds(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
 
-    .line 418
+    .line 417
     invoke-virtual {p0}, Landroid/app/Dialog;->getContext()Landroid/content/Context;
 
     move-result-object p1
@@ -2661,7 +2661,7 @@
 
     invoke-virtual {v0, p1}, Landroid/widget/TextView;->setCompoundDrawablePadding(I)V
 
-    .line 420
+    .line 419
     new-instance p1, Landroid/widget/FrameLayout;
 
     invoke-virtual {p0}, Landroid/app/Dialog;->getContext()Landroid/content/Context;
@@ -2670,7 +2670,7 @@
 
     invoke-direct {p1, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    .line 421
+    .line 420
     sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_featuredStickers_addButton:I
 
     invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -2693,14 +2693,14 @@
 
     const/4 p2, -0x2
 
-    .line 422
+    .line 421
     invoke-static {p2, p2, v1}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(III)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object p2
 
     invoke-virtual {p1, v0, p2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 423
+    .line 422
     new-instance p2, Lcom/iMe/fork/ui/dialog/TranslateAlert$$ExternalSyntheticLambda12;
 
     invoke-direct {p2, p3}, Lcom/iMe/fork/ui/dialog/TranslateAlert$$ExternalSyntheticLambda12;-><init>(Lcom/iMe/fork/utils/Callbacks$Callback;)V
@@ -2723,7 +2723,7 @@
         }
     .end annotation
 
-    .line 153
+    .line 152
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
@@ -2732,7 +2732,7 @@
 
     return-object v0
 
-    .line 157
+    .line 156
     :cond_0
     :goto_0
     invoke-interface {p0}, Ljava/lang/CharSequence;->length()I
@@ -2743,7 +2743,7 @@
 
     const/4 v1, 0x0
 
-    .line 158
+    .line 157
     invoke-interface {p0, v1, p1}, Ljava/lang/CharSequence;->subSequence(II)Ljava/lang/CharSequence;
 
     move-result-object v2
@@ -2754,7 +2754,7 @@
 
     const-string v3, "\n\n"
 
-    .line 159
+    .line 158
     invoke-virtual {v2, v3}, Ljava/lang/String;->lastIndexOf(Ljava/lang/String;)I
 
     move-result v3
@@ -2765,7 +2765,7 @@
 
     const-string v3, "\n"
 
-    .line 161
+    .line 160
     invoke-virtual {v2, v3}, Ljava/lang/String;->lastIndexOf(Ljava/lang/String;)I
 
     move-result v3
@@ -2775,7 +2775,7 @@
 
     const-string v3, ". "
 
-    .line 164
+    .line 163
     invoke-virtual {v2, v3}, Ljava/lang/String;->lastIndexOf(Ljava/lang/String;)I
 
     move-result v3
@@ -2783,7 +2783,7 @@
     :cond_2
     if-ne v3, v4, :cond_3
 
-    .line 167
+    .line 166
     invoke-virtual {v2}, Ljava/lang/String;->length()I
 
     move-result v2
@@ -2795,14 +2795,14 @@
     :cond_3
     add-int/lit8 v3, v3, 0x1
 
-    .line 169
+    .line 168
     invoke-interface {p0, v1, v3}, Ljava/lang/CharSequence;->subSequence(II)Ljava/lang/CharSequence;
 
     move-result-object v1
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 170
+    .line 169
     invoke-interface {p0}, Ljava/lang/CharSequence;->length()I
 
     move-result v1
@@ -2813,7 +2813,7 @@
 
     goto :goto_0
 
-    .line 172
+    .line 171
     :cond_4
     invoke-interface {p0}, Ljava/lang/CharSequence;->length()I
 
@@ -2821,7 +2821,7 @@
 
     if-lez p1, :cond_5
 
-    .line 173
+    .line 172
     invoke-virtual {v0, p0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     :cond_5
@@ -2831,7 +2831,7 @@
 .method private getScrollY()F
     .locals 3
 
-    .line 1065
+    .line 1064
     iget v0, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->containerOpenAnimationT:F
 
     iget v1, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->openingT:F
@@ -2858,7 +2858,7 @@
 .method private hasSelection()Z
     .locals 1
 
-    .line 1069
+    .line 1068
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->allTextsView:Landroid/widget/TextView;
 
     invoke-virtual {v0}, Landroid/widget/TextView;->hasSelection()Z
@@ -2871,36 +2871,36 @@
 .method private initButtonsByType()V
     .locals 3
 
-    .line 292
+    .line 291
     invoke-direct {p0}, Lcom/iMe/fork/ui/dialog/TranslateAlert;->initSettingsButton()V
 
-    .line 293
+    .line 292
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->translationArgs:Lcom/iMe/model/translation/TranslationArgs;
 
     invoke-virtual {v0}, Lcom/iMe/model/translation/TranslationArgs;->getType()Lcom/iMe/fork/enums/TranslationDialogType;
 
     move-result-object v0
 
-    .line 294
+    .line 293
     sget-object v1, Lcom/iMe/fork/enums/TranslationDialogType;->OUTGOING:Lcom/iMe/fork/enums/TranslationDialogType;
 
     if-ne v0, v1, :cond_0
 
-    .line 295
+    .line 294
     invoke-direct {p0}, Lcom/iMe/fork/ui/dialog/TranslateAlert;->initOutgoingButtons()V
 
     goto :goto_0
 
-    .line 296
+    .line 295
     :cond_0
     sget-object v1, Lcom/iMe/fork/enums/TranslationDialogType;->INCOMING:Lcom/iMe/fork/enums/TranslationDialogType;
 
     if-ne v0, v1, :cond_2
 
-    .line 297
+    .line 296
     invoke-direct {p0}, Lcom/iMe/fork/ui/dialog/TranslateAlert;->initChangeLanguageButton()V
 
-    .line 298
+    .line 297
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->translationArgs:Lcom/iMe/model/translation/TranslationArgs;
 
     invoke-virtual {v0}, Lcom/iMe/model/translation/TranslationArgs;->getTranslationSettings()Lcom/iMe/storage/domain/model/dialogs/DialogTranslationSettings;
@@ -2917,7 +2917,7 @@
 
     if-eqz v0, :cond_3
 
-    .line 299
+    .line 298
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->translationArgs:Lcom/iMe/model/translation/TranslationArgs;
 
     invoke-virtual {v0}, Lcom/iMe/model/translation/TranslationArgs;->getTranslationSettings()Lcom/iMe/storage/domain/model/dialogs/DialogTranslationSettings;
@@ -2928,7 +2928,7 @@
 
     move-result-wide v0
 
-    .line 300
+    .line 299
     invoke-static {v0, v1}, Lorg/telegram/messenger/DialogObject;->isChatDialog(J)Z
 
     move-result v2
@@ -2963,7 +2963,7 @@
 
     if-eqz v0, :cond_3
 
-    .line 301
+    .line 300
     :cond_1
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->buttonTextView:Landroid/widget/TextView;
 
@@ -2977,14 +2977,14 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 302
+    .line 301
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->buttonImageView:Landroid/widget/ImageView;
 
     sget v1, Lorg/telegram/messenger/R$drawable;->msg_reply:I
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 303
+    .line 302
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->buttonLinear:Landroid/widget/LinearLayout;
 
     new-instance v1, Lcom/iMe/fork/ui/dialog/TranslateAlert$$ExternalSyntheticLambda2;
@@ -2995,13 +2995,13 @@
 
     goto :goto_0
 
-    .line 306
+    .line 305
     :cond_2
     sget-object v1, Lcom/iMe/fork/enums/TranslationDialogType;->REPLY:Lcom/iMe/fork/enums/TranslationDialogType;
 
     if-ne v0, v1, :cond_3
 
-    .line 307
+    .line 306
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->buttonView:Landroid/widget/FrameLayout;
 
     new-instance v1, Lcom/iMe/fork/ui/dialog/TranslateAlert$$ExternalSyntheticLambda3;
@@ -3018,7 +3018,7 @@
 .method private initChangeLanguageButton()V
     .locals 9
 
-    .line 339
+    .line 338
     new-instance v0, Landroid/widget/ImageView;
 
     invoke-virtual {p0}, Landroid/app/Dialog;->getContext()Landroid/content/Context;
@@ -3029,19 +3029,19 @@
 
     iput-object v0, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->changeLanguageButton:Landroid/widget/ImageView;
 
-    .line 340
+    .line 339
     sget v1, Lorg/telegram/messenger/R$drawable;->msg_retry:I
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 341
+    .line 340
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->changeLanguageButton:Landroid/widget/ImageView;
 
     sget-object v1, Landroid/widget/ImageView$ScaleType;->FIT_CENTER:Landroid/widget/ImageView$ScaleType;
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setScaleType(Landroid/widget/ImageView$ScaleType;)V
 
-    .line 342
+    .line 341
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->changeLanguageButton:Landroid/widget/ImageView;
 
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_dialogButtonSelector:I
@@ -3056,7 +3056,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 343
+    .line 342
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->changeLanguageButton:Landroid/widget/ImageView;
 
     new-instance v1, Lcom/iMe/fork/ui/dialog/TranslateAlert$$ExternalSyntheticLambda5;
@@ -3065,7 +3065,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 357
+    .line 356
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->changeLanguageButton:Landroid/widget/ImageView;
 
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextBlack:I
@@ -3076,7 +3076,7 @@
 
     invoke-static {v0, v1}, Lcom/iMe/utils/extentions/common/ViewExtKt;->setImageColor(Landroid/widget/ImageView;I)V
 
-    .line 358
+    .line 357
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->changeLanguageButton:Landroid/widget/ImageView;
 
     const/16 v1, 0x10
@@ -3087,7 +3087,7 @@
 
     invoke-static {v0, v1}, Lcom/iMe/utils/extentions/common/ViewExtKt;->setHorizontalPadding(Landroid/view/View;Ljava/lang/Number;)V
 
-    .line 359
+    .line 358
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->translationArgs:Lcom/iMe/model/translation/TranslationArgs;
 
     invoke-virtual {v0}, Lcom/iMe/model/translation/TranslationArgs;->getTranslationSettings()Lcom/iMe/storage/domain/model/dialogs/DialogTranslationSettings;
@@ -3106,7 +3106,7 @@
     :goto_0
     move v6, v0
 
-    .line 360
+    .line 359
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->header:Landroid/widget/FrameLayout;
 
     iget-object v8, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->changeLanguageButton:Landroid/widget/ImageView;
@@ -3137,7 +3137,7 @@
 .method private initContainerButton()V
     .locals 14
 
-    .line 364
+    .line 363
     new-instance v0, Landroid/widget/LinearLayout;
 
     invoke-virtual {p0}, Landroid/app/Dialog;->getContext()Landroid/content/Context;
@@ -3150,14 +3150,14 @@
 
     const/16 v2, 0x30
 
-    .line 365
+    .line 364
     invoke-static {v1, v2}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(II)Landroid/widget/LinearLayout$LayoutParams;
 
     move-result-object v2
 
     invoke-virtual {v0, v2}, Landroid/widget/LinearLayout;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 366
+    .line 365
     new-instance v2, Landroid/widget/ImageView;
 
     invoke-virtual {p0}, Landroid/app/Dialog;->getContext()Landroid/content/Context;
@@ -3166,12 +3166,12 @@
 
     invoke-direct {v2, v3}, Landroid/widget/ImageView;-><init>(Landroid/content/Context;)V
 
-    .line 367
+    .line 366
     sget v3, Lorg/telegram/messenger/R$drawable;->msg_copy:I
 
     invoke-virtual {v2, v3}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 368
+    .line 367
     new-instance v3, Landroid/widget/TextView;
 
     invoke-virtual {p0}, Landroid/app/Dialog;->getContext()Landroid/content/Context;
@@ -3182,23 +3182,23 @@
 
     const/4 v4, 0x1
 
-    .line 369
+    .line 368
     invoke-virtual {v3, v4}, Landroid/widget/TextView;->setLines(I)V
 
-    .line 370
+    .line 369
     invoke-virtual {v3, v4}, Landroid/widget/TextView;->setSingleLine(Z)V
 
-    .line 371
+    .line 370
     sget-object v5, Landroid/text/TextUtils$TruncateAt;->END:Landroid/text/TextUtils$TruncateAt;
 
     invoke-virtual {v3, v5}, Landroid/widget/TextView;->setEllipsize(Landroid/text/TextUtils$TruncateAt;)V
 
     const/16 v5, 0x10
 
-    .line 372
+    .line 371
     invoke-virtual {v3, v5}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 373
+    .line 372
     sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_featuredStickers_buttonText:I
 
     invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -3209,7 +3209,7 @@
 
     const-string v5, "fonts/rmedium.ttf"
 
-    .line 374
+    .line 373
     invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->getTypeface(Ljava/lang/String;)Landroid/graphics/Typeface;
 
     move-result-object v5
@@ -3218,10 +3218,10 @@
 
     const/high16 v5, 0x41600000    # 14.0f
 
-    .line 375
+    .line 374
     invoke-virtual {v3, v4, v5}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 376
+    .line 375
     sget v5, Lorg/telegram/messenger/R$string;->Copy:I
 
     const-string v6, "Copy"
@@ -3232,7 +3232,7 @@
 
     invoke-virtual {v3, v5}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 377
+    .line 376
     new-instance v5, Landroid/widget/LinearLayout;
 
     invoke-virtual {p0}, Landroid/app/Dialog;->getContext()Landroid/content/Context;
@@ -3243,10 +3243,10 @@
 
     const/16 v6, 0x11
 
-    .line 378
+    .line 377
     invoke-virtual {v5, v6}, Landroid/widget/LinearLayout;->setGravity(I)V
 
-    .line 379
+    .line 378
     sget v6, Lorg/telegram/ui/ActionBar/Theme;->key_featuredStickers_addButton:I
 
     invoke-static {v6}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -3281,24 +3281,24 @@
 
     const/4 v12, 0x0
 
-    .line 380
+    .line 379
     invoke-static/range {v6 .. v12}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(IIIIIII)Landroid/widget/LinearLayout$LayoutParams;
 
     move-result-object v4
 
     invoke-virtual {v5, v2, v4}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 381
+    .line 380
     invoke-virtual {v5, v3}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
-    .line 382
+    .line 381
     new-instance v2, Lcom/iMe/fork/ui/dialog/TranslateAlert$$ExternalSyntheticLambda6;
 
     invoke-direct {v2, p0}, Lcom/iMe/fork/ui/dialog/TranslateAlert$$ExternalSyntheticLambda6;-><init>(Lcom/iMe/fork/ui/dialog/TranslateAlert;)V
 
     invoke-virtual {v5, v2}, Landroid/widget/LinearLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 387
+    .line 386
     iget-object v2, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->buttonLinear:Landroid/widget/LinearLayout;
 
     const/4 v6, -0x1
@@ -3327,14 +3327,14 @@
 
     const/4 v12, 0x0
 
-    .line 388
+    .line 387
     invoke-static/range {v6 .. v13}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(IIFIIIII)Landroid/widget/LinearLayout$LayoutParams;
 
     move-result-object v2
 
     invoke-virtual {v0, v5, v2}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 389
+    .line 388
     iget-object v2, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->container:Landroid/widget/FrameLayout;
 
     const/4 v3, -0x1
@@ -3357,7 +3357,7 @@
 
     invoke-virtual {v2, v0, v3}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 390
+    .line 389
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->contentView:Landroid/widget/FrameLayout;
 
     iget-object v2, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->container:Landroid/widget/FrameLayout;
@@ -3378,7 +3378,7 @@
 .method private initEditText()V
     .locals 9
 
-    .line 277
+    .line 276
     new-instance v0, Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     invoke-virtual {p0}, Landroid/app/Dialog;->getContext()Landroid/content/Context;
@@ -3391,10 +3391,10 @@
 
     const/4 v1, 0x0
 
-    .line 278
+    .line 277
     invoke-virtual {v0, v1}, Landroid/widget/EditText;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 279
+    .line 278
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
@@ -3405,7 +3405,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/EditText;->setTextColor(I)V
 
-    .line 280
+    .line 279
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteHintText:I
@@ -3416,7 +3416,7 @@
 
     invoke-virtual {v0, v2}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setHintColor(I)V
 
-    .line 281
+    .line 280
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -3425,7 +3425,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/EditText;->setHintTextColor(I)V
 
-    .line 282
+    .line 281
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     sget v1, Lorg/telegram/messenger/R$string;->Message:I
@@ -3438,7 +3438,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setHintText(Ljava/lang/CharSequence;)V
 
-    .line 283
+    .line 282
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     const/4 v1, 0x1
@@ -3447,19 +3447,19 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/widget/EditText;->setTextSize(IF)V
 
-    .line 284
+    .line 283
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     invoke-virtual {v0, v1}, Landroid/widget/EditText;->setLines(I)V
 
-    .line 285
+    .line 284
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     const/4 v1, 0x3
 
     invoke-virtual {v0, v1}, Landroid/widget/EditText;->setMaxLines(I)V
 
-    .line 286
+    .line 285
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     sget-boolean v2, Lorg/telegram/messenger/LocaleController;->isRTL:Z
@@ -3473,14 +3473,14 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/EditText;->setGravity(I)V
 
-    .line 287
+    .line 286
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1, v1, v1, v1}, Landroid/widget/EditText;->setPadding(IIII)V
 
-    .line 288
+    .line 287
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->textsContainerView:Landroid/widget/FrameLayout;
 
     iget-object v1, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
@@ -3511,7 +3511,7 @@
 .method private initOutgoingButtons()V
     .locals 9
 
-    .line 394
+    .line 393
     new-instance v0, Landroid/widget/LinearLayout;
 
     invoke-virtual {p0}, Landroid/app/Dialog;->getContext()Landroid/content/Context;
@@ -3520,7 +3520,7 @@
 
     invoke-direct {v0, v1}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
 
-    .line 395
+    .line 394
     sget v1, Lorg/telegram/messenger/R$drawable;->msg_language:I
 
     sget v2, Lorg/telegram/messenger/R$string;->Language:I
@@ -3551,7 +3551,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 396
+    .line 395
     sget v1, Lorg/telegram/messenger/R$drawable;->msg_send:I
 
     sget v2, Lorg/telegram/messenger/R$string;->Send:I
@@ -3582,22 +3582,22 @@
 
     const/4 v8, 0x0
 
-    .line 400
+    .line 399
     invoke-static/range {v2 .. v8}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(IIFIIII)Landroid/widget/LinearLayout$LayoutParams;
 
     move-result-object v2
 
-    .line 396
+    .line 395
     invoke-virtual {v0, v1, v2}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 401
+    .line 400
     iget-object v1, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->container:Landroid/widget/FrameLayout;
 
     iget-object v2, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->buttonView:Landroid/widget/FrameLayout;
 
     invoke-virtual {v1, v2}, Landroid/widget/FrameLayout;->removeView(Landroid/view/View;)V
 
-    .line 402
+    .line 401
     iget-object v1, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->container:Landroid/widget/FrameLayout;
 
     const/4 v2, -0x1
@@ -3624,7 +3624,7 @@
 .method private initSettingsButton()V
     .locals 10
 
-    .line 319
+    .line 318
     new-instance v0, Landroid/widget/ImageView;
 
     invoke-virtual {p0}, Landroid/app/Dialog;->getContext()Landroid/content/Context;
@@ -3635,19 +3635,19 @@
 
     iput-object v0, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->settingsButton:Landroid/widget/ImageView;
 
-    .line 320
+    .line 319
     sget v1, Lorg/telegram/messenger/R$drawable;->notifications_settings:I
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 321
+    .line 320
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->settingsButton:Landroid/widget/ImageView;
 
     sget-object v1, Landroid/widget/ImageView$ScaleType;->FIT_CENTER:Landroid/widget/ImageView$ScaleType;
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setScaleType(Landroid/widget/ImageView$ScaleType;)V
 
-    .line 322
+    .line 321
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->settingsButton:Landroid/widget/ImageView;
 
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_dialogButtonSelector:I
@@ -3662,7 +3662,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 323
+    .line 322
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->settingsButton:Landroid/widget/ImageView;
 
     iget-object v1, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->translatorActionsDelegate:Lcom/iMe/fork/ui/dialog/TranslateAlert$TranslatorActionsDelegate;
@@ -3681,7 +3681,7 @@
     :goto_0
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 324
+    .line 323
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->settingsButton:Landroid/widget/ImageView;
 
     new-instance v1, Lcom/iMe/fork/ui/dialog/TranslateAlert$$ExternalSyntheticLambda11;
@@ -3690,7 +3690,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 330
+    .line 329
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->settingsButton:Landroid/widget/ImageView;
 
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextBlack:I
@@ -3701,7 +3701,7 @@
 
     invoke-static {v0, v1}, Lcom/iMe/utils/extentions/common/ViewExtKt;->setImageColor(Landroid/widget/ImageView;I)V
 
-    .line 331
+    .line 330
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->settingsButton:Landroid/widget/ImageView;
 
     const/16 v1, 0x10
@@ -3712,7 +3712,7 @@
 
     invoke-static {v0, v1}, Lcom/iMe/utils/extentions/common/ViewExtKt;->setHorizontalPadding(Landroid/view/View;Ljava/lang/Number;)V
 
-    .line 332
+    .line 331
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->header:Landroid/widget/FrameLayout;
 
     iget-object v1, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->settingsButton:Landroid/widget/ImageView;
@@ -3739,7 +3739,7 @@
 
     invoke-virtual {v0, v1, v3}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 333
+    .line 332
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->translationArgs:Lcom/iMe/model/translation/TranslationArgs;
 
     invoke-virtual {v0}, Lcom/iMe/model/translation/TranslationArgs;->getTranslationSettings()Lcom/iMe/storage/domain/model/dialogs/DialogTranslationSettings;
@@ -3748,7 +3748,7 @@
 
     if-nez v0, :cond_1
 
-    .line 334
+    .line 333
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->settingsButton:Landroid/widget/ImageView;
 
     invoke-virtual {v0, v2}, Landroid/widget/ImageView;->setVisibility(I)V
@@ -3760,7 +3760,7 @@
 .method private static synthetic lambda$createOutgoingButton$9(Lcom/iMe/fork/utils/Callbacks$Callback;Landroid/view/View;)V
     .locals 0
 
-    .line 423
+    .line 422
     invoke-interface {p0}, Lcom/iMe/fork/utils/Callbacks$Callback;->invoke()V
 
     return-void
@@ -3769,7 +3769,7 @@
 .method private synthetic lambda$dispatchTouchEvent$17()V
     .locals 2
 
-    .line 1206
+    .line 1205
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->contentView:Landroid/widget/FrameLayout;
 
     new-instance v1, Lcom/iMe/fork/ui/dialog/TranslateAlert$$ExternalSyntheticLambda16;
@@ -3784,7 +3784,7 @@
 .method private synthetic lambda$initButtonsByType$2(Landroid/view/View;)V
     .locals 0
 
-    .line 303
+    .line 302
     iget-object p1, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->translationPresenter:Lcom/iMe/ui/translate/TranslationPresenter;
 
     invoke-virtual {p1}, Lcom/iMe/ui/translate/TranslationPresenter;->prepareReplyDialog()V
@@ -3795,15 +3795,15 @@
 .method private synthetic lambda$initButtonsByType$3(Landroid/view/View;)V
     .locals 2
 
-    .line 308
+    .line 307
     iget-boolean p1, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->isTranslated:Z
 
     if-eqz p1, :cond_0
 
-    .line 309
+    .line 308
     invoke-virtual {p0}, Lcom/iMe/fork/ui/dialog/TranslateAlert;->dismiss()V
 
-    .line 310
+    .line 309
     iget-object p1, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->translatorActionsDelegate:Lcom/iMe/fork/ui/dialog/TranslateAlert$TranslatorActionsDelegate;
 
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
@@ -3820,7 +3820,7 @@
 
     goto :goto_0
 
-    .line 312
+    .line 311
     :cond_0
     iget-object p1, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->translationPresenter:Lcom/iMe/ui/translate/TranslationPresenter;
 
@@ -3845,7 +3845,7 @@
 .method private synthetic lambda$initChangeLanguageButton$5(Landroid/view/View;)V
     .locals 2
 
-    .line 344
+    .line 343
     iget-object p1, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->translateText:Ljava/lang/String;
 
     invoke-virtual {p1}, Ljava/lang/String;->isEmpty()Z
@@ -3856,7 +3856,7 @@
 
     if-eqz p1, :cond_1
 
-    .line 345
+    .line 344
     iget-object p1, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->textsView:Lcom/iMe/fork/ui/dialog/TranslateAlert$TextBlocksLayout;
 
     const/4 v1, 0x0
@@ -3869,7 +3869,7 @@
 
     return-void
 
-    .line 348
+    .line 347
     :cond_0
     iget-object p1, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->textsView:Lcom/iMe/fork/ui/dialog/TranslateAlert$TextBlocksLayout;
 
@@ -3891,12 +3891,12 @@
 
     iput-object p1, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->translateText:Ljava/lang/String;
 
-    .line 349
+    .line 348
     sget-object p1, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
 
     iput-object p1, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->isTranslateText:Ljava/lang/Boolean;
 
-    .line 350
+    .line 349
     iget-object p1, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->translationPresenter:Lcom/iMe/ui/translate/TranslationPresenter;
 
     iget-object v1, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->translationArgs:Lcom/iMe/model/translation/TranslationArgs;
@@ -3909,7 +3909,7 @@
 
     goto :goto_1
 
-    .line 352
+    .line 351
     :cond_1
     iget-object p1, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->isTranslateText:Ljava/lang/Boolean;
 
@@ -3930,7 +3930,7 @@
 
     move-result-object p1
 
-    .line 353
+    .line 352
     :goto_0
     iget-object v1, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->isTranslateText:Ljava/lang/Boolean;
 
@@ -3946,7 +3946,7 @@
 
     iput-object v0, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->isTranslateText:Ljava/lang/Boolean;
 
-    .line 354
+    .line 353
     iget-object v1, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->translationPresenter:Lcom/iMe/ui/translate/TranslationPresenter;
 
     invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
@@ -3962,7 +3962,7 @@
 .method private synthetic lambda$initContainerButton$6(Landroid/view/View;)V
     .locals 2
 
-    .line 383
+    .line 382
     invoke-virtual {p0}, Landroid/app/Dialog;->getContext()Landroid/content/Context;
 
     move-result-object p1
@@ -3983,7 +3983,7 @@
 
     invoke-virtual {p1}, Landroid/widget/Toast;->show()V
 
-    .line 384
+    .line 383
     iget-object p1, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->allTextsView:Landroid/widget/TextView;
 
     invoke-virtual {p1}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
@@ -3992,7 +3992,7 @@
 
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->addToClipboard(Ljava/lang/CharSequence;)Z
 
-    .line 385
+    .line 384
     invoke-virtual {p0}, Lcom/iMe/fork/ui/dialog/TranslateAlert;->dismiss()V
 
     return-void
@@ -4001,7 +4001,7 @@
 .method private synthetic lambda$initOutgoingButtons$7()V
     .locals 2
 
-    .line 395
+    .line 394
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->translationPresenter:Lcom/iMe/ui/translate/TranslationPresenter;
 
     const/4 v1, 0x0
@@ -4014,10 +4014,10 @@
 .method private synthetic lambda$initOutgoingButtons$8()V
     .locals 3
 
-    .line 397
+    .line 396
     invoke-virtual {p0}, Lcom/iMe/fork/ui/dialog/TranslateAlert;->dismiss()V
 
-    .line 398
+    .line 397
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->translatorActionsDelegate:Lcom/iMe/fork/ui/dialog/TranslateAlert$TranslatorActionsDelegate;
 
     iget-object v1, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->textsView:Lcom/iMe/fork/ui/dialog/TranslateAlert$TextBlocksLayout;
@@ -4048,15 +4048,15 @@
 .method private synthetic lambda$initSettingsButton$4(Landroid/view/View;)V
     .locals 0
 
-    .line 325
+    .line 324
     iget-object p1, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->translatorActionsDelegate:Lcom/iMe/fork/ui/dialog/TranslateAlert$TranslatorActionsDelegate;
 
     if-eqz p1, :cond_0
 
-    .line 326
+    .line 325
     invoke-interface {p1}, Lcom/iMe/fork/ui/dialog/TranslateAlert$TranslatorActionsDelegate;->openSettings()V
 
-    .line 328
+    .line 327
     :cond_0
     invoke-virtual {p0}, Lcom/iMe/fork/ui/dialog/TranslateAlert;->dismiss()V
 
@@ -4066,7 +4066,7 @@
 .method private synthetic lambda$new$11()V
     .locals 2
 
-    .line 773
+    .line 772
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->titleView:Landroid/widget/TextView;
 
     sget-boolean v1, Lorg/telegram/messenger/LocaleController;->isRTL:Z
@@ -4095,10 +4095,10 @@
 
     const-string p1, ""
 
-    .line 802
+    .line 801
     iput-object p1, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->translateText:Ljava/lang/String;
 
-    .line 803
+    .line 802
     iget-object p1, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->translationPresenter:Lcom/iMe/ui/translate/TranslationPresenter;
 
     const/4 v0, 0x1
@@ -4113,10 +4113,10 @@
 
     const-string p1, ""
 
-    .line 824
+    .line 823
     iput-object p1, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->translateText:Ljava/lang/String;
 
-    .line 825
+    .line 824
     iget-object p1, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->translationPresenter:Lcom/iMe/ui/translate/TranslationPresenter;
 
     const/4 v0, 0x0
@@ -4129,7 +4129,7 @@
 .method private synthetic lambda$new$14(Landroid/view/View;)V
     .locals 0
 
-    .line 863
+    .line 862
     invoke-virtual {p0}, Lcom/iMe/fork/ui/dialog/TranslateAlert;->dismiss()V
 
     return-void
@@ -4138,7 +4138,7 @@
 .method private synthetic lambda$new$15(Landroid/view/View;)V
     .locals 0
 
-    .line 1011
+    .line 1010
     invoke-virtual {p0}, Lcom/iMe/fork/ui/dialog/TranslateAlert;->dismiss()V
 
     return-void
@@ -4147,7 +4147,7 @@
 .method private synthetic lambda$new$16(Landroid/view/View;)V
     .locals 0
 
-    .line 1018
+    .line 1017
     invoke-virtual {p0}, Lcom/iMe/fork/ui/dialog/TranslateAlert;->dismiss()V
 
     return-void
@@ -4156,7 +4156,7 @@
 .method private synthetic lambda$openAnimationTo$10(Landroid/animation/ValueAnimator;)V
     .locals 0
 
-    .line 561
+    .line 560
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object p1
@@ -4175,7 +4175,7 @@
 .method private synthetic lambda$openTo$18(Landroid/animation/ValueAnimator;)V
     .locals 4
 
-    .line 1333
+    .line 1332
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object p1
@@ -4188,12 +4188,12 @@
 
     iput p1, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->openingT:F
 
-    .line 1334
+    .line 1333
     iget-object p1, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->container:Landroid/widget/FrameLayout;
 
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->invalidate()V
 
-    .line 1335
+    .line 1334
     iget-object p1, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->backDrawable:Landroid/graphics/drawable/ColorDrawable;
 
     iget v0, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->openingT:F
@@ -4206,7 +4206,7 @@
 
     invoke-virtual {p1, v0}, Landroid/graphics/drawable/ColorDrawable;->setAlpha(I)V
 
-    .line 1336
+    .line 1335
     iget-object p1, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->bulletinContainer:Landroid/widget/FrameLayout;
 
     iget v0, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->openingT:F
@@ -4266,7 +4266,7 @@
 .method private synthetic lambda$showLanguages$1(Ljava/lang/String;)V
     .locals 1
 
-    .line 234
+    .line 233
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->translationPresenter:Lcom/iMe/ui/translate/TranslationPresenter;
 
     invoke-virtual {v0, p1}, Lcom/iMe/ui/translate/TranslationPresenter;->selectLanguage(Ljava/lang/String;)V
@@ -4279,7 +4279,7 @@
 
     const/4 v0, 0x0
 
-    .line 583
+    .line 582
     invoke-direct {p0, v0}, Lcom/iMe/fork/ui/dialog/TranslateAlert;->minHeight(Z)I
 
     move-result v0
@@ -4290,7 +4290,7 @@
 .method private minHeight(Z)I
     .locals 3
 
-    .line 587
+    .line 586
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->textsView:Lcom/iMe/fork/ui/dialog/TranslateAlert$TextBlocksLayout;
 
     if-nez v0, :cond_0
@@ -4304,7 +4304,7 @@
 
     move-result v0
 
-    .line 588
+    .line 587
     :goto_0
     sget v1, Lorg/telegram/messenger/AndroidUtilities;->statusBarHeight:I
 
@@ -4325,24 +4325,24 @@
 
     const/16 v0, 0x93
 
-    .line 591
+    .line 590
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
 
     add-int/2addr v0, v1
 
-    .line 598
+    .line 597
     iget v2, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->firstMinHeight:I
 
     if-gez v2, :cond_2
 
     if-lez v1, :cond_2
 
-    .line 599
+    .line 598
     iput v0, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->firstMinHeight:I
 
-    .line 600
+    .line 599
     :cond_2
     iget v1, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->firstMinHeight:I
 
@@ -4360,7 +4360,7 @@
 
     if-nez p1, :cond_3
 
-    .line 601
+    .line 600
     iget p1, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->firstMinHeight:I
 
     return p1
@@ -4374,7 +4374,7 @@
 
     const/4 v0, 0x0
 
-    .line 482
+    .line 481
     invoke-static {p1, v0}, Ljava/lang/Math;->max(FF)F
 
     move-result p1
@@ -4385,7 +4385,7 @@
 
     move-result p1
 
-    .line 483
+    .line 482
     iget v1, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->containerOpenAnimationT:F
 
     cmpl-float v1, v1, p1
@@ -4394,11 +4394,11 @@
 
     return-void
 
-    .line 486
+    .line 485
     :cond_0
     iput p1, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->containerOpenAnimationT:F
 
-    .line 488
+    .line 487
     iget-object v1, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->settingsButton:Landroid/widget/ImageView;
 
     const/16 v2, 0x10
@@ -4407,12 +4407,12 @@
 
     if-eqz v1, :cond_1
 
-    .line 489
+    .line 488
     iget-object v1, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->settingsViewLayout:Landroid/widget/FrameLayout$LayoutParams;
 
     iget v4, v1, Landroid/widget/FrameLayout$LayoutParams;->leftMargin:I
 
-    .line 491
+    .line 490
     invoke-static {v2, v3, p1}, Lorg/telegram/messenger/AndroidUtilities;->lerp(IIF)I
 
     move-result v5
@@ -4427,30 +4427,30 @@
 
     iget v6, v6, Landroid/widget/FrameLayout$LayoutParams;->bottomMargin:I
 
-    .line 489
+    .line 488
     invoke-virtual {v1, v4, v5, v7, v6}, Landroid/widget/FrameLayout$LayoutParams;->setMargins(IIII)V
 
-    .line 495
+    .line 494
     iget-object v1, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->settingsButton:Landroid/widget/ImageView;
 
     iget-object v4, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->settingsViewLayout:Landroid/widget/FrameLayout$LayoutParams;
 
     invoke-virtual {v1, v4}, Landroid/widget/ImageView;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 497
+    .line 496
     :cond_1
     iget-object v1, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->changeLanguageButton:Landroid/widget/ImageView;
 
     if-eqz v1, :cond_2
 
-    .line 498
+    .line 497
     iget-object v1, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->changeLanguageViewLayout:Landroid/widget/FrameLayout$LayoutParams;
 
     iget-object v4, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->settingsViewLayout:Landroid/widget/FrameLayout$LayoutParams;
 
     iget v4, v4, Landroid/widget/FrameLayout$LayoutParams;->leftMargin:I
 
-    .line 500
+    .line 499
     invoke-static {v2, v3, p1}, Lorg/telegram/messenger/AndroidUtilities;->lerp(IIF)I
 
     move-result v2
@@ -4465,17 +4465,17 @@
 
     iget v5, v5, Landroid/widget/FrameLayout$LayoutParams;->bottomMargin:I
 
-    .line 498
+    .line 497
     invoke-virtual {v1, v4, v2, v6, v5}, Landroid/widget/FrameLayout$LayoutParams;->setMargins(IIII)V
 
-    .line 504
+    .line 503
     iget-object v1, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->changeLanguageButton:Landroid/widget/ImageView;
 
     iget-object v2, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->changeLanguageViewLayout:Landroid/widget/FrameLayout$LayoutParams;
 
     invoke-virtual {v1, v2}, Landroid/widget/ImageView;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 508
+    .line 507
     :cond_2
     iget-object v1, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->titleView:Landroid/widget/TextView;
 
@@ -4487,7 +4487,7 @@
 
     invoke-virtual {v1, v4}, Landroid/widget/TextView;->setScaleX(F)V
 
-    .line 509
+    .line 508
     iget-object v1, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->titleView:Landroid/widget/TextView;
 
     invoke-static {v0, v2, p1}, Lorg/telegram/messenger/AndroidUtilities;->lerp(FFF)F
@@ -4496,14 +4496,14 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setScaleY(F)V
 
-    .line 510
+    .line 509
     iget-object v1, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->titleLayout:Landroid/widget/FrameLayout$LayoutParams;
 
     const/16 v2, 0x16
 
     const/16 v4, 0x48
 
-    .line 511
+    .line 510
     invoke-static {v2, v4, p1}, Lorg/telegram/messenger/AndroidUtilities;->lerp(IIF)I
 
     move-result v5
@@ -4514,7 +4514,7 @@
 
     const/16 v6, 0x8
 
-    .line 512
+    .line 511
     invoke-static {v2, v6, p1}, Lorg/telegram/messenger/AndroidUtilities;->lerp(IIF)I
 
     move-result v6
@@ -4529,20 +4529,20 @@
 
     iget v7, v7, Landroid/widget/FrameLayout$LayoutParams;->bottomMargin:I
 
-    .line 510
+    .line 509
     invoke-virtual {v1, v5, v6, v8, v7}, Landroid/widget/FrameLayout$LayoutParams;->setMargins(IIII)V
 
-    .line 516
+    .line 515
     iget-object v1, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->titleView:Landroid/widget/TextView;
 
     iget-object v5, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->titleLayout:Landroid/widget/FrameLayout$LayoutParams;
 
     invoke-virtual {v1, v5}, Landroid/widget/TextView;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 517
+    .line 516
     iget-object v1, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->subtitleLayout:Landroid/widget/FrameLayout$LayoutParams;
 
-    .line 518
+    .line 517
     invoke-static {v2, v4, p1}, Lorg/telegram/messenger/AndroidUtilities;->lerp(IIF)I
 
     move-result v2
@@ -4559,7 +4559,7 @@
 
     const/16 v5, 0x1e
 
-    .line 519
+    .line 518
     invoke-static {v4, v5, p1}, Lorg/telegram/messenger/AndroidUtilities;->lerp(IIF)I
 
     move-result v4
@@ -4578,22 +4578,22 @@
 
     iget v5, v5, Landroid/widget/FrameLayout$LayoutParams;->bottomMargin:I
 
-    .line 517
+    .line 516
     invoke-virtual {v1, v2, v4, v6, v5}, Landroid/widget/FrameLayout$LayoutParams;->setMargins(IIII)V
 
-    .line 523
+    .line 522
     iget-object v1, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->subtitleView:Landroid/widget/LinearLayout;
 
     iget-object v2, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->subtitleLayout:Landroid/widget/FrameLayout$LayoutParams;
 
     invoke-virtual {v1, v2}, Landroid/widget/LinearLayout;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 525
+    .line 524
     iget-object v1, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->backButton:Landroid/widget/ImageView;
 
     invoke-virtual {v1, p1}, Landroid/widget/ImageView;->setAlpha(F)V
 
-    .line 526
+    .line 525
     iget-object v1, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->backButton:Landroid/widget/ImageView;
 
     const/high16 v2, 0x3f400000    # 0.75f
@@ -4606,12 +4606,12 @@
 
     invoke-virtual {v1, v4}, Landroid/widget/ImageView;->setScaleX(F)V
 
-    .line 527
+    .line 526
     iget-object v1, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->backButton:Landroid/widget/ImageView;
 
     invoke-virtual {v1, v4}, Landroid/widget/ImageView;->setScaleY(F)V
 
-    .line 528
+    .line 527
     iget-object v1, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->backButton:Landroid/widget/ImageView;
 
     const/high16 v2, 0x3f000000    # 0.5f
@@ -4625,7 +4625,7 @@
     :cond_3
     invoke-virtual {v1, v3}, Landroid/widget/ImageView;->setClickable(Z)V
 
-    .line 529
+    .line 528
     iget-object v1, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->headerShadowView:Landroid/widget/FrameLayout;
 
     iget-object v2, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->scrollView:Landroidx/core/widget/NestedScrollView;
@@ -4644,7 +4644,7 @@
     :goto_0
     invoke-virtual {v1, v0}, Landroid/widget/FrameLayout;->setAlpha(F)V
 
-    .line 531
+    .line 530
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->headerLayout:Landroid/widget/FrameLayout$LayoutParams;
 
     const/16 v1, 0x46
@@ -4665,19 +4665,19 @@
 
     iput v2, v0, Landroid/widget/FrameLayout$LayoutParams;->height:I
 
-    .line 532
+    .line 531
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->header:Landroid/widget/FrameLayout;
 
     iget-object v2, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->headerLayout:Landroid/widget/FrameLayout$LayoutParams;
 
     invoke-virtual {v0, v2}, Landroid/widget/FrameLayout;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 534
+    .line 533
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->scrollViewLayout:Landroid/widget/FrameLayout$LayoutParams;
 
     iget v2, v0, Landroid/widget/FrameLayout$LayoutParams;->leftMargin:I
 
-    .line 536
+    .line 535
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
@@ -4696,10 +4696,10 @@
 
     iget v1, v1, Landroid/widget/FrameLayout$LayoutParams;->bottomMargin:I
 
-    .line 534
+    .line 533
     invoke-virtual {v0, v2, p1, v3, v1}, Landroid/widget/FrameLayout$LayoutParams;->setMargins(IIII)V
 
-    .line 540
+    .line 539
     iget-object p1, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->scrollView:Landroidx/core/widget/NestedScrollView;
 
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->scrollViewLayout:Landroid/widget/FrameLayout$LayoutParams;
@@ -4714,7 +4714,7 @@
 
     const/4 v0, 0x0
 
-    .line 548
+    .line 547
     invoke-direct {p0, p1, p2, v0}, Lcom/iMe/fork/ui/dialog/TranslateAlert;->openAnimationTo(FZLjava/lang/Runnable;)V
 
     return-void
@@ -4723,7 +4723,7 @@
 .method private openAnimationTo(FZLjava/lang/Runnable;)V
     .locals 2
 
-    .line 552
+    .line 551
     iget-boolean v0, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->openAnimationToAnimatorPriority:Z
 
     if-eqz v0, :cond_0
@@ -4732,13 +4732,13 @@
 
     return-void
 
-    .line 555
+    .line 554
     :cond_0
     iput-boolean p2, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->openAnimationToAnimatorPriority:Z
 
     const/4 p2, 0x0
 
-    .line 556
+    .line 555
     invoke-static {p1, p2}, Ljava/lang/Math;->max(FF)F
 
     move-result p1
@@ -4749,12 +4749,12 @@
 
     move-result p1
 
-    .line 557
+    .line 556
     iget-object p2, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->openAnimationToAnimator:Landroid/animation/ValueAnimator;
 
     if-eqz p2, :cond_1
 
-    .line 558
+    .line 557
     invoke-virtual {p2}, Landroid/animation/ValueAnimator;->cancel()V
 
     :cond_1
@@ -4764,7 +4764,7 @@
 
     const/4 v0, 0x0
 
-    .line 560
+    .line 559
     iget v1, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->containerOpenAnimationT:F
 
     aput v1, p2, v0
@@ -4779,14 +4779,14 @@
 
     iput-object p1, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->openAnimationToAnimator:Landroid/animation/ValueAnimator;
 
-    .line 561
+    .line 560
     new-instance p2, Lcom/iMe/fork/ui/dialog/TranslateAlert$$ExternalSyntheticLambda0;
 
     invoke-direct {p2, p0}, Lcom/iMe/fork/ui/dialog/TranslateAlert$$ExternalSyntheticLambda0;-><init>(Lcom/iMe/fork/ui/dialog/TranslateAlert;)V
 
     invoke-virtual {p1, p2}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 562
+    .line 561
     iget-object p1, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->openAnimationToAnimator:Landroid/animation/ValueAnimator;
 
     new-instance p2, Lcom/iMe/fork/ui/dialog/TranslateAlert$1;
@@ -4795,21 +4795,21 @@
 
     invoke-virtual {p1, p2}, Landroid/animation/ValueAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 575
+    .line 574
     iget-object p1, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->openAnimationToAnimator:Landroid/animation/ValueAnimator;
 
     sget-object p2, Lorg/telegram/ui/Components/CubicBezierInterpolator;->EASE_OUT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
 
     invoke-virtual {p1, p2}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 576
+    .line 575
     iget-object p1, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->openAnimationToAnimator:Landroid/animation/ValueAnimator;
 
     const-wide/16 p2, 0xdc
 
     invoke-virtual {p1, p2, p3}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    .line 577
+    .line 576
     iget-object p1, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->openAnimationToAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->start()V
@@ -4822,7 +4822,7 @@
 
     const/4 v0, 0x0
 
-    .line 1309
+    .line 1308
     invoke-direct {p0, p1, p2, v0}, Lcom/iMe/fork/ui/dialog/TranslateAlert;->openTo(FZZ)V
 
     return-void
@@ -4833,7 +4833,7 @@
 
     const/4 v0, 0x0
 
-    .line 1322
+    .line 1321
     invoke-static {p1, v0}, Ljava/lang/Math;->max(FF)F
 
     move-result p1
@@ -4844,7 +4844,7 @@
 
     move-result p1
 
-    .line 1323
+    .line 1322
     iget-boolean v1, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->openingAnimatorPriority:Z
 
     if-eqz v1, :cond_0
@@ -4853,16 +4853,16 @@
 
     return-void
 
-    .line 1326
+    .line 1325
     :cond_0
     iput-boolean p2, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->openingAnimatorPriority:Z
 
-    .line 1327
+    .line 1326
     iget-object p2, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->openingAnimator:Landroid/animation/ValueAnimator;
 
     if-eqz p2, :cond_1
 
-    .line 1328
+    .line 1327
     invoke-virtual {p2}, Landroid/animation/ValueAnimator;->cancel()V
 
     :cond_1
@@ -4872,7 +4872,7 @@
 
     const/4 v1, 0x0
 
-    .line 1330
+    .line 1329
     iget v2, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->openingT:F
 
     aput v2, p2, v1
@@ -4887,7 +4887,7 @@
 
     iput-object p2, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->openingAnimator:Landroid/animation/ValueAnimator;
 
-    .line 1331
+    .line 1330
     iget-object p2, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->backDrawable:Landroid/graphics/drawable/ColorDrawable;
 
     iget v1, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->openingT:F
@@ -4900,7 +4900,7 @@
 
     invoke-virtual {p2, v1}, Landroid/graphics/drawable/ColorDrawable;->setAlpha(I)V
 
-    .line 1332
+    .line 1331
     iget-object p2, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->openingAnimator:Landroid/animation/ValueAnimator;
 
     new-instance v1, Lcom/iMe/fork/ui/dialog/TranslateAlert$$ExternalSyntheticLambda1;
@@ -4913,15 +4913,15 @@
 
     if-gtz p2, :cond_2
 
-    .line 1339
+    .line 1338
     iget-object p2, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->onDismiss:Ljava/lang/Runnable;
 
     if-eqz p2, :cond_2
 
-    .line 1340
+    .line 1339
     invoke-interface {p2}, Ljava/lang/Runnable;->run()V
 
-    .line 1343
+    .line 1342
     :cond_2
     iget-object p2, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->openingAnimator:Landroid/animation/ValueAnimator;
 
@@ -4931,14 +4931,14 @@
 
     invoke-virtual {p2, v0}, Landroid/animation/ValueAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 1374
+    .line 1373
     iget-object p2, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->openingAnimator:Landroid/animation/ValueAnimator;
 
     sget-object v0, Lorg/telegram/ui/Components/CubicBezierInterpolator;->EASE_OUT_QUINT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
 
     invoke-virtual {p2, v0}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 1375
+    .line 1374
     iget-object p2, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->openingAnimator:Landroid/animation/ValueAnimator;
 
     iget v0, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->openingT:F
@@ -4969,7 +4969,7 @@
 
     invoke-virtual {p2, v0, v1}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    .line 1376
+    .line 1375
     iget-object p1, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->openingAnimator:Landroid/animation/ValueAnimator;
 
     if-eqz p3, :cond_4
@@ -4984,7 +4984,7 @@
     :goto_1
     invoke-virtual {p1, p2, p3}, Landroid/animation/ValueAnimator;->setStartDelay(J)V
 
-    .line 1377
+    .line 1376
     iget-object p1, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->openingAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->start()V
@@ -4995,7 +4995,7 @@
 .method private scrollAtBottom()Z
     .locals 4
 
-    .line 1035
+    .line 1034
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->scrollView:Landroidx/core/widget/NestedScrollView;
 
     invoke-virtual {v0}, Landroid/widget/FrameLayout;->getChildCount()I
@@ -5010,12 +5010,12 @@
 
     move-result-object v0
 
-    .line 1036
+    .line 1035
     invoke-virtual {v0}, Landroid/view/View;->getBottom()I
 
     move-result v0
 
-    .line 1037
+    .line 1036
     iget-object v1, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->textsView:Lcom/iMe/fork/ui/dialog/TranslateAlert$TextBlocksLayout;
 
     invoke-virtual {v1}, Lcom/iMe/fork/ui/dialog/TranslateAlert$TextBlocksLayout;->getFirstUnloadedBlock()Lcom/iMe/fork/ui/dialog/TranslateAlert$LoadingTextView2;
@@ -5024,12 +5024,12 @@
 
     if-eqz v1, :cond_0
 
-    .line 1039
+    .line 1038
     invoke-virtual {v1}, Landroid/view/ViewGroup;->getTop()I
 
     move-result v0
 
-    .line 1041
+    .line 1040
     :cond_0
     iget-object v1, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->scrollView:Landroidx/core/widget/NestedScrollView;
 
@@ -5047,7 +5047,7 @@
 
     sub-int/2addr v0, v1
 
-    .line 1042
+    .line 1041
     iget-object v1, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->textsContainerView:Landroid/widget/FrameLayout;
 
     invoke-virtual {v1}, Landroid/widget/FrameLayout;->getPaddingBottom()I
@@ -5070,7 +5070,7 @@
 
     const/4 v0, 0x0
 
-    .line 1054
+    .line 1053
     invoke-direct {p0, p1, v0}, Lcom/iMe/fork/ui/dialog/TranslateAlert;->scrollYTo(FLjava/lang/Runnable;)V
 
     return-void
@@ -5081,14 +5081,14 @@
 
     const/4 v0, 0x0
 
-    .line 1058
+    .line 1057
     invoke-direct {p0, p1, v0, p2}, Lcom/iMe/fork/ui/dialog/TranslateAlert;->openAnimationTo(FZLjava/lang/Runnable;)V
 
     const/high16 p2, 0x3f800000    # 1.0f
 
     add-float/2addr p1, p2
 
-    .line 1059
+    .line 1058
     invoke-direct {p0, p1, v0}, Lcom/iMe/fork/ui/dialog/TranslateAlert;->openTo(FZ)V
 
     return-void
@@ -5097,14 +5097,14 @@
 .method private setScrollY(F)V
     .locals 4
 
-    .line 1046
+    .line 1045
     invoke-direct {p0, p1}, Lcom/iMe/fork/ui/dialog/TranslateAlert;->openAnimation(F)V
 
     const/high16 v0, 0x3f800000    # 1.0f
 
     add-float/2addr p1, v0
 
-    .line 1047
+    .line 1046
     invoke-static {p1, v0}, Ljava/lang/Math;->min(FF)F
 
     move-result p1
@@ -5117,7 +5117,7 @@
 
     iput p1, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->openingT:F
 
-    .line 1048
+    .line 1047
     iget-object v1, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->backDrawable:Landroid/graphics/drawable/ColorDrawable;
 
     const/high16 v2, 0x424c0000    # 51.0f
@@ -5128,12 +5128,12 @@
 
     invoke-virtual {v1, p1}, Landroid/graphics/drawable/ColorDrawable;->setAlpha(I)V
 
-    .line 1049
+    .line 1048
     iget-object p1, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->container:Landroid/widget/FrameLayout;
 
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->invalidate()V
 
-    .line 1050
+    .line 1049
     iget-object p1, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->bulletinContainer:Landroid/widget/FrameLayout;
 
     iget v1, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->openingT:F
@@ -5170,12 +5170,12 @@
 .method private updateCanExpand()V
     .locals 5
 
-    .line 613
+    .line 612
     invoke-direct {p0}, Lcom/iMe/fork/ui/dialog/TranslateAlert;->canExpand()Z
 
     move-result v0
 
-    .line 614
+    .line 613
     iget v1, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->containerOpenAnimationT:F
 
     const/4 v2, 0x0
@@ -5188,10 +5188,10 @@
 
     const/4 v1, 0x0
 
-    .line 615
+    .line 614
     invoke-direct {p0, v2, v1}, Lcom/iMe/fork/ui/dialog/TranslateAlert;->openAnimationTo(FZ)V
 
-    .line 618
+    .line 617
     :cond_0
     iget-object v1, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->buttonShadowView:Landroid/widget/FrameLayout;
 
@@ -5252,7 +5252,7 @@
 .method public configureScreenWith(Ljava/lang/String;Ljava/lang/String;)V
     .locals 3
 
-    .line 195
+    .line 194
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->translationArgs:Lcom/iMe/model/translation/TranslationArgs;
 
     invoke-virtual {v0}, Lcom/iMe/model/translation/TranslationArgs;->getType()Lcom/iMe/fork/enums/TranslationDialogType;
@@ -5263,12 +5263,12 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 196
+    .line 195
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->subtitleFromView:Lcom/iMe/fork/ui/dialog/TranslateAlert$InlineLoadingTextView;
 
     invoke-virtual {v0, p1}, Lcom/iMe/fork/ui/dialog/TranslateAlert$InlineLoadingTextView;->loaded(Ljava/lang/CharSequence;)V
 
-    .line 197
+    .line 196
     iget-object p1, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->buttonTextView:Landroid/widget/TextView;
 
     sget v0, Lorg/telegram/messenger/R$string;->translation_dialog_translate_to:I
@@ -5287,7 +5287,7 @@
 
     invoke-virtual {p1, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 198
+    .line 197
     iget-object p1, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->buttonImageView:Landroid/widget/ImageView;
 
     const/16 v0, 0x8
@@ -5296,13 +5296,13 @@
 
     goto :goto_0
 
-    .line 200
+    .line 199
     :cond_0
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->subtitleFromView:Lcom/iMe/fork/ui/dialog/TranslateAlert$InlineLoadingTextView;
 
     invoke-virtual {v0, p1}, Lcom/iMe/fork/ui/dialog/TranslateAlert$InlineLoadingTextView;->setFromLanguageText(Ljava/lang/String;)V
 
-    .line 202
+    .line 201
     :goto_0
     iget-object p1, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->subtitleToView:Landroid/widget/TextView;
 
@@ -5314,15 +5314,15 @@
 .method public dismiss()V
     .locals 1
 
-    .line 1297
+    .line 1296
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     if-eqz v0, :cond_0
 
-    .line 1298
+    .line 1297
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->hideKeyboard(Landroid/view/View;)V
 
-    .line 1301
+    .line 1300
     :cond_0
     iget-boolean v0, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->dismissed:Z
 
@@ -5333,10 +5333,10 @@
     :cond_1
     const/4 v0, 0x1
 
-    .line 1303
+    .line 1302
     iput-boolean v0, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->dismissed:Z
 
-    .line 1304
+    .line 1303
     invoke-super {p0}, Lorg/telegram/ui/ActionBar/BottomSheet;->dismiss()V
 
     return-void
@@ -5345,7 +5345,7 @@
 .method public dismissInternal()V
     .locals 1
 
-    .line 1382
+    .line 1381
     :try_start_0
     invoke-super {p0}, Lorg/telegram/ui/ActionBar/BottomSheet;->dismissInternal()V
     :try_end_0
@@ -5356,7 +5356,7 @@
     :catch_0
     move-exception v0
 
-    .line 1385
+    .line 1384
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :goto_0
@@ -5368,25 +5368,25 @@
 
     move-object/from16 v1, p0
 
-    .line 1092
+    .line 1091
     :try_start_0
     invoke-virtual/range {p1 .. p1}, Landroid/view/MotionEvent;->getX()F
 
     move-result v0
 
-    .line 1093
+    .line 1092
     invoke-virtual/range {p1 .. p1}, Landroid/view/MotionEvent;->getY()F
 
     move-result v2
 
-    .line 1095
+    .line 1094
     iget-object v3, v1, Lcom/iMe/fork/ui/dialog/TranslateAlert;->container:Landroid/widget/FrameLayout;
 
     iget-object v4, v1, Lcom/iMe/fork/ui/dialog/TranslateAlert;->containerRect:Landroid/graphics/Rect;
 
     invoke-virtual {v3, v4}, Landroid/widget/FrameLayout;->getGlobalVisibleRect(Landroid/graphics/Rect;)Z
 
-    .line 1096
+    .line 1095
     iget-object v3, v1, Lcom/iMe/fork/ui/dialog/TranslateAlert;->containerRect:Landroid/graphics/Rect;
 
     float-to-int v4, v0
@@ -5403,19 +5403,19 @@
 
     if-nez v3, :cond_1
 
-    .line 1097
+    .line 1096
     invoke-virtual/range {p1 .. p1}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v3
 
     if-nez v3, :cond_0
 
-    .line 1098
+    .line 1097
     iput-boolean v7, v1, Lcom/iMe/fork/ui/dialog/TranslateAlert;->pressedOutside:Z
 
     return v7
 
-    .line 1100
+    .line 1099
     :cond_0
     invoke-virtual/range {p1 .. p1}, Landroid/view/MotionEvent;->getAction()I
 
@@ -5423,15 +5423,15 @@
 
     if-ne v3, v7, :cond_1
 
-    .line 1101
+    .line 1100
     iget-boolean v3, v1, Lcom/iMe/fork/ui/dialog/TranslateAlert;->pressedOutside:Z
 
     if-eqz v3, :cond_1
 
-    .line 1102
+    .line 1101
     iput-boolean v6, v1, Lcom/iMe/fork/ui/dialog/TranslateAlert;->pressedOutside:Z
 
-    .line 1103
+    .line 1102
     invoke-virtual/range {p0 .. p0}, Lcom/iMe/fork/ui/dialog/TranslateAlert;->dismiss()V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_1
@@ -5441,7 +5441,7 @@
     :cond_1
     const/4 v3, 0x0
 
-    .line 1110
+    .line 1109
     :try_start_1
     iget-object v8, v1, Lcom/iMe/fork/ui/dialog/TranslateAlert;->allTextsView:Landroid/widget/TextView;
 
@@ -5449,7 +5449,7 @@
 
     invoke-virtual {v8, v9}, Landroid/widget/TextView;->getGlobalVisibleRect(Landroid/graphics/Rect;)Z
 
-    .line 1111
+    .line 1110
     iget-object v8, v1, Lcom/iMe/fork/ui/dialog/TranslateAlert;->textRect:Landroid/graphics/Rect;
 
     invoke-virtual {v8, v4, v5}, Landroid/graphics/Rect;->contains(II)Z
@@ -5464,14 +5464,14 @@
 
     if-nez v8, :cond_7
 
-    .line 1112
+    .line 1111
     iget-object v8, v1, Lcom/iMe/fork/ui/dialog/TranslateAlert;->allTextsView:Landroid/widget/TextView;
 
     invoke-virtual {v8}, Landroid/widget/TextView;->getLayout()Landroid/text/Layout;
 
     move-result-object v8
 
-    .line 1113
+    .line 1112
     iget-object v10, v1, Lcom/iMe/fork/ui/dialog/TranslateAlert;->allTextsView:Landroid/widget/TextView;
 
     invoke-virtual {v10}, Landroid/widget/TextView;->getLeft()I
@@ -5494,7 +5494,7 @@
 
     float-to-int v0, v0
 
-    .line 1114
+    .line 1113
     iget-object v10, v1, Lcom/iMe/fork/ui/dialog/TranslateAlert;->allTextsView:Landroid/widget/TextView;
 
     invoke-virtual {v10}, Landroid/widget/TextView;->getTop()I
@@ -5537,24 +5537,24 @@
 
     float-to-int v10, v10
 
-    .line 1115
+    .line 1114
     invoke-virtual {v8, v10}, Landroid/text/Layout;->getLineForVertical(I)I
 
     move-result v11
 
     int-to-float v15, v0
 
-    .line 1116
+    .line 1115
     invoke-virtual {v8, v11, v15}, Landroid/text/Layout;->getOffsetForHorizontal(IF)I
 
     move-result v0
 
-    .line 1118
+    .line 1117
     invoke-virtual {v8, v11}, Landroid/text/Layout;->getLineLeft(I)F
 
     move-result v12
 
-    .line 1119
+    .line 1118
     iget-object v13, v1, Lcom/iMe/fork/ui/dialog/TranslateAlert;->allTexts:Landroid/text/Spannable;
 
     instance-of v13, v13, Landroid/text/Spannable;
@@ -5575,7 +5575,7 @@
 
     if-ltz v11, :cond_7
 
-    .line 1120
+    .line 1119
     iget-object v11, v1, Lcom/iMe/fork/ui/dialog/TranslateAlert;->allTexts:Landroid/text/Spannable;
 
     const-class v12, Landroid/text/style/ClickableSpan;
@@ -5588,12 +5588,12 @@
 
     if-eqz v0, :cond_7
 
-    .line 1121
+    .line 1120
     array-length v11, v0
 
     if-lt v11, v7, :cond_7
 
-    .line 1122
+    .line 1121
     invoke-virtual/range {p1 .. p1}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v11
@@ -5610,7 +5610,7 @@
 
     if-ne v11, v12, :cond_4
 
-    .line 1123
+    .line 1122
     iget-object v0, v1, Lcom/iMe/fork/ui/dialog/TranslateAlert;->pressedLink:Lorg/telegram/ui/Components/LinkSpanDrawable;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/LinkSpanDrawable;->getSpan()Landroid/text/style/CharacterStyle;
@@ -5623,21 +5623,21 @@
 
     invoke-virtual {v0, v8}, Landroid/text/style/ClickableSpan;->onClick(Landroid/view/View;)V
 
-    .line 1124
+    .line 1123
     iget-object v0, v1, Lcom/iMe/fork/ui/dialog/TranslateAlert;->links:Lorg/telegram/ui/Components/LinkSpanDrawable$LinkCollector;
 
     if-eqz v0, :cond_2
 
-    .line 1125
+    .line 1124
     iget-object v8, v1, Lcom/iMe/fork/ui/dialog/TranslateAlert;->pressedLink:Lorg/telegram/ui/Components/LinkSpanDrawable;
 
     invoke-virtual {v0, v8}, Lorg/telegram/ui/Components/LinkSpanDrawable$LinkCollector;->removeLink(Lorg/telegram/ui/Components/LinkSpanDrawable;)V
 
-    .line 1127
+    .line 1126
     :cond_2
     iput-object v9, v1, Lcom/iMe/fork/ui/dialog/TranslateAlert;->pressedLink:Lorg/telegram/ui/Components/LinkSpanDrawable;
 
-    .line 1128
+    .line 1127
     iget-object v0, v1, Lcom/iMe/fork/ui/dialog/TranslateAlert;->allTextsView:Landroid/widget/TextView;
 
     iget-boolean v8, v1, Lcom/iMe/fork/ui/dialog/TranslateAlert;->noforwards:Z
@@ -5656,7 +5656,7 @@
 
     goto :goto_1
 
-    .line 1129
+    .line 1128
     :cond_4
     invoke-virtual/range {p1 .. p1}, Landroid/view/MotionEvent;->getAction()I
 
@@ -5664,7 +5664,7 @@
 
     if-nez v9, :cond_6
 
-    .line 1130
+    .line 1129
     new-instance v9, Lorg/telegram/ui/Components/LinkSpanDrawable;
 
     aget-object v13, v0, v6
@@ -5687,15 +5687,15 @@
 
     iput-object v9, v1, Lcom/iMe/fork/ui/dialog/TranslateAlert;->pressedLink:Lorg/telegram/ui/Components/LinkSpanDrawable;
 
-    .line 1131
+    .line 1130
     iget-object v0, v1, Lcom/iMe/fork/ui/dialog/TranslateAlert;->links:Lorg/telegram/ui/Components/LinkSpanDrawable$LinkCollector;
 
     if-eqz v0, :cond_5
 
-    .line 1132
+    .line 1131
     invoke-virtual {v0, v9}, Lorg/telegram/ui/Components/LinkSpanDrawable$LinkCollector;->addLink(Lorg/telegram/ui/Components/LinkSpanDrawable;)V
 
-    .line 1134
+    .line 1133
     :cond_5
     iget-object v0, v1, Lcom/iMe/fork/ui/dialog/TranslateAlert;->pressedLink:Lorg/telegram/ui/Components/LinkSpanDrawable;
 
@@ -5703,7 +5703,7 @@
 
     move-result-object v0
 
-    .line 1135
+    .line 1134
     iget-object v9, v1, Lcom/iMe/fork/ui/dialog/TranslateAlert;->allTexts:Landroid/text/Spannable;
 
     iget-object v10, v1, Lcom/iMe/fork/ui/dialog/TranslateAlert;->pressedLink:Lorg/telegram/ui/Components/LinkSpanDrawable;
@@ -5716,7 +5716,7 @@
 
     move-result v9
 
-    .line 1136
+    .line 1135
     iget-object v10, v1, Lcom/iMe/fork/ui/dialog/TranslateAlert;->allTexts:Landroid/text/Spannable;
 
     iget-object v11, v1, Lcom/iMe/fork/ui/dialog/TranslateAlert;->pressedLink:Lorg/telegram/ui/Components/LinkSpanDrawable;
@@ -5729,13 +5729,13 @@
 
     move-result v10
 
-    .line 1137
+    .line 1136
     invoke-virtual {v0, v8, v9, v3}, Lorg/telegram/ui/Components/LinkPath;->setCurrentLayout(Landroid/text/Layout;IF)V
 
-    .line 1138
+    .line 1137
     invoke-virtual {v8, v9, v10, v0}, Landroid/text/Layout;->getSelectionPath(IILandroid/graphics/Path;)V
 
-    .line 1140
+    .line 1139
     :cond_6
     :goto_1
     iget-object v0, v1, Lcom/iMe/fork/ui/dialog/TranslateAlert;->allTextsView:Landroid/widget/TextView;
@@ -5744,21 +5744,21 @@
 
     return v7
 
-    .line 1145
+    .line 1144
     :cond_7
     iget-object v0, v1, Lcom/iMe/fork/ui/dialog/TranslateAlert;->pressedLink:Lorg/telegram/ui/Components/LinkSpanDrawable;
 
     if-eqz v0, :cond_9
 
-    .line 1146
+    .line 1145
     iget-object v0, v1, Lcom/iMe/fork/ui/dialog/TranslateAlert;->links:Lorg/telegram/ui/Components/LinkSpanDrawable$LinkCollector;
 
     if-eqz v0, :cond_8
 
-    .line 1147
+    .line 1146
     invoke-virtual {v0}, Lorg/telegram/ui/Components/LinkSpanDrawable$LinkCollector;->clear()V
 
-    .line 1149
+    .line 1148
     :cond_8
     iput-object v9, v1, Lcom/iMe/fork/ui/dialog/TranslateAlert;->pressedLink:Lorg/telegram/ui/Components/LinkSpanDrawable;
     :try_end_1
@@ -5769,11 +5769,11 @@
     :catch_0
     move-exception v0
 
-    .line 1152
+    .line 1151
     :try_start_2
     invoke-virtual {v0}, Ljava/lang/Exception;->printStackTrace()V
 
-    .line 1155
+    .line 1154
     :cond_9
     :goto_2
     iget-object v0, v1, Lcom/iMe/fork/ui/dialog/TranslateAlert;->scrollView:Landroidx/core/widget/NestedScrollView;
@@ -5782,21 +5782,21 @@
 
     invoke-virtual {v0, v8}, Landroid/widget/FrameLayout;->getGlobalVisibleRect(Landroid/graphics/Rect;)Z
 
-    .line 1156
+    .line 1155
     iget-object v0, v1, Lcom/iMe/fork/ui/dialog/TranslateAlert;->backButton:Landroid/widget/ImageView;
 
     iget-object v8, v1, Lcom/iMe/fork/ui/dialog/TranslateAlert;->backRect:Landroid/graphics/Rect;
 
     invoke-virtual {v0, v8}, Landroid/widget/ImageView;->getGlobalVisibleRect(Landroid/graphics/Rect;)Z
 
-    .line 1157
+    .line 1156
     iget-object v0, v1, Lcom/iMe/fork/ui/dialog/TranslateAlert;->buttonView:Landroid/widget/FrameLayout;
 
     iget-object v8, v1, Lcom/iMe/fork/ui/dialog/TranslateAlert;->buttonRect:Landroid/graphics/Rect;
 
     invoke-virtual {v0, v8}, Landroid/widget/FrameLayout;->getGlobalVisibleRect(Landroid/graphics/Rect;)Z
 
-    .line 1158
+    .line 1157
     iget-object v0, v1, Lcom/iMe/fork/ui/dialog/TranslateAlert;->pressedLink:Lorg/telegram/ui/Components/LinkSpanDrawable;
 
     if-nez v0, :cond_17
@@ -5807,24 +5807,24 @@
 
     if-nez v0, :cond_17
 
-    .line 1159
+    .line 1158
     iget-object v0, v1, Lcom/iMe/fork/ui/dialog/TranslateAlert;->backRect:Landroid/graphics/Rect;
 
-    .line 1160
+    .line 1159
     invoke-virtual {v0, v4, v5}, Landroid/graphics/Rect;->contains(II)Z
 
     move-result v0
 
     if-nez v0, :cond_d
 
-    .line 1162
+    .line 1161
     invoke-virtual/range {p1 .. p1}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v0
 
     if-nez v0, :cond_d
 
-    .line 1164
+    .line 1163
     iget-object v0, v1, Lcom/iMe/fork/ui/dialog/TranslateAlert;->scrollRect:Landroid/graphics/Rect;
 
     invoke-virtual {v0, v4, v5}, Landroid/graphics/Rect;->contains(II)Z
@@ -5856,10 +5856,10 @@
     :goto_3
     iput-boolean v0, v1, Lcom/iMe/fork/ui/dialog/TranslateAlert;->fromScrollRect:Z
 
-    .line 1165
+    .line 1164
     iput-boolean v7, v1, Lcom/iMe/fork/ui/dialog/TranslateAlert;->maybeScrolling:Z
 
-    .line 1166
+    .line 1165
     iget-object v0, v1, Lcom/iMe/fork/ui/dialog/TranslateAlert;->scrollRect:Landroid/graphics/Rect;
 
     invoke-virtual {v0, v4, v5}, Landroid/graphics/Rect;->contains(II)Z
@@ -5891,17 +5891,17 @@
     :cond_c
     iput-boolean v6, v1, Lcom/iMe/fork/ui/dialog/TranslateAlert;->scrolling:Z
 
-    .line 1167
+    .line 1166
     iput v2, v1, Lcom/iMe/fork/ui/dialog/TranslateAlert;->fromY:F
 
-    .line 1168
+    .line 1167
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/dialog/TranslateAlert;->getScrollY()F
 
     move-result v0
 
     iput v0, v1, Lcom/iMe/fork/ui/dialog/TranslateAlert;->fromScrollY:F
 
-    .line 1169
+    .line 1168
     iget-object v0, v1, Lcom/iMe/fork/ui/dialog/TranslateAlert;->scrollView:Landroidx/core/widget/NestedScrollView;
 
     invoke-virtual {v0}, Landroid/widget/FrameLayout;->getScrollY()I
@@ -5912,12 +5912,12 @@
 
     iput v0, v1, Lcom/iMe/fork/ui/dialog/TranslateAlert;->fromScrollViewY:F
 
-    .line 1170
+    .line 1169
     invoke-super/range {p0 .. p1}, Lorg/telegram/ui/ActionBar/BottomSheet;->dispatchTouchEvent(Landroid/view/MotionEvent;)Z
 
     return v7
 
-    .line 1171
+    .line 1170
     :cond_d
     iget-boolean v0, v1, Lcom/iMe/fork/ui/dialog/TranslateAlert;->maybeScrolling:Z
 
@@ -5937,18 +5937,18 @@
 
     if-ne v0, v7, :cond_17
 
-    .line 1172
+    .line 1171
     :cond_e
     iget v0, v1, Lcom/iMe/fork/ui/dialog/TranslateAlert;->fromY:F
 
     sub-float/2addr v0, v2
 
-    .line 1173
+    .line 1172
     iget-boolean v2, v1, Lcom/iMe/fork/ui/dialog/TranslateAlert;->fromScrollRect:Z
 
     if-eqz v2, :cond_f
 
-    .line 1174
+    .line 1173
     iget v2, v1, Lcom/iMe/fork/ui/dialog/TranslateAlert;->fromScrollViewY:F
 
     const/16 v4, 0x30
@@ -5975,17 +5975,17 @@
 
     if-gez v2, :cond_10
 
-    .line 1176
+    .line 1175
     iput-boolean v7, v1, Lcom/iMe/fork/ui/dialog/TranslateAlert;->scrolling:Z
 
-    .line 1177
+    .line 1176
     iget-object v2, v1, Lcom/iMe/fork/ui/dialog/TranslateAlert;->allTextsView:Landroid/widget/TextView;
 
     invoke-virtual {v2, v6}, Landroid/widget/TextView;->setTextIsSelectable(Z)V
 
     goto :goto_4
 
-    .line 1179
+    .line 1178
     :cond_f
     invoke-static {v0}, Ljava/lang/Math;->abs(F)F
 
@@ -6007,23 +6007,23 @@
 
     if-nez v2, :cond_10
 
-    .line 1180
+    .line 1179
     iput-boolean v7, v1, Lcom/iMe/fork/ui/dialog/TranslateAlert;->scrolling:Z
 
-    .line 1181
+    .line 1180
     iget-object v2, v1, Lcom/iMe/fork/ui/dialog/TranslateAlert;->allTextsView:Landroid/widget/TextView;
 
     invoke-virtual {v2, v6}, Landroid/widget/TextView;->setTextIsSelectable(Z)V
 
-    .line 1182
+    .line 1181
     iget-object v2, v1, Lcom/iMe/fork/ui/dialog/TranslateAlert;->scrollView:Landroidx/core/widget/NestedScrollView;
 
     invoke-virtual {v2}, Landroidx/core/widget/NestedScrollView;->stopNestedScroll()V
 
-    .line 1183
+    .line 1182
     iput-boolean v6, v1, Lcom/iMe/fork/ui/dialog/TranslateAlert;->allowScroll:Z
 
-    .line 1185
+    .line 1184
     :cond_10
     :goto_4
     sget-object v2, Lorg/telegram/messenger/AndroidUtilities;->displayMetrics:Landroid/util/DisplayMetrics;
@@ -6032,7 +6032,7 @@
 
     int-to-float v2, v2
 
-    .line 1186
+    .line 1185
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/dialog/TranslateAlert;->minHeight()I
 
     move-result v4
@@ -6047,7 +6047,7 @@
 
     move-result v4
 
-    .line 1187
+    .line 1186
     iget v5, v1, Lcom/iMe/fork/ui/dialog/TranslateAlert;->fromScrollY:F
 
     const/high16 v8, -0x40800000    # -1.0f
@@ -6103,7 +6103,7 @@
 
     neg-float v5, v2
 
-    .line 1189
+    .line 1188
     :goto_5
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/dialog/TranslateAlert;->canExpand()Z
 
@@ -6111,34 +6111,34 @@
 
     if-nez v2, :cond_12
 
-    .line 1190
+    .line 1189
     invoke-static {v5, v3}, Ljava/lang/Math;->min(FF)F
 
     move-result v5
 
-    .line 1192
+    .line 1191
     :cond_12
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/dialog/TranslateAlert;->updateCanExpand()V
 
-    .line 1194
+    .line 1193
     iget-boolean v2, v1, Lcom/iMe/fork/ui/dialog/TranslateAlert;->scrolling:Z
 
     if-eqz v2, :cond_17
 
-    .line 1195
+    .line 1194
     invoke-direct {v1, v5}, Lcom/iMe/fork/ui/dialog/TranslateAlert;->setScrollY(F)V
 
-    .line 1196
+    .line 1195
     invoke-virtual/range {p1 .. p1}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v2
 
     if-ne v2, v7, :cond_16
 
-    .line 1197
+    .line 1196
     iput-boolean v6, v1, Lcom/iMe/fork/ui/dialog/TranslateAlert;->scrolling:Z
 
-    .line 1198
+    .line 1197
     iget-object v2, v1, Lcom/iMe/fork/ui/dialog/TranslateAlert;->allTextsView:Landroid/widget/TextView;
 
     iget-boolean v3, v1, Lcom/iMe/fork/ui/dialog/TranslateAlert;->noforwards:Z
@@ -6155,13 +6155,13 @@
     :goto_6
     invoke-virtual {v2, v3}, Landroid/widget/TextView;->setTextIsSelectable(Z)V
 
-    .line 1199
+    .line 1198
     iput-boolean v6, v1, Lcom/iMe/fork/ui/dialog/TranslateAlert;->maybeScrolling:Z
 
-    .line 1200
+    .line 1199
     iput-boolean v7, v1, Lcom/iMe/fork/ui/dialog/TranslateAlert;->allowScroll:Z
 
-    .line 1202
+    .line 1201
     invoke-static {v0}, Ljava/lang/Math;->abs(F)F
 
     move-result v0
@@ -6178,7 +6178,7 @@
 
     if-lez v0, :cond_15
 
-    .line 1203
+    .line 1202
     iget v0, v1, Lcom/iMe/fork/ui/dialog/TranslateAlert;->fromScrollY:F
 
     invoke-static {v0}, Ljava/lang/Math;->round(F)I
@@ -6216,7 +6216,7 @@
 
     goto :goto_7
 
-    .line 1204
+    .line 1203
     :cond_15
     iget v0, v1, Lcom/iMe/fork/ui/dialog/TranslateAlert;->fromScrollY:F
 
@@ -6231,13 +6231,13 @@
 
     invoke-direct {v2, v1}, Lcom/iMe/fork/ui/dialog/TranslateAlert$$ExternalSyntheticLambda18;-><init>(Lcom/iMe/fork/ui/dialog/TranslateAlert;)V
 
-    .line 1201
+    .line 1200
     invoke-direct {v1, v0, v2}, Lcom/iMe/fork/ui/dialog/TranslateAlert;->scrollYTo(FLjava/lang/Runnable;)V
 
     :cond_16
     return v7
 
-    .line 1214
+    .line 1213
     :cond_17
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/dialog/TranslateAlert;->hasSelection()Z
 
@@ -6249,10 +6249,10 @@
 
     if-eqz v0, :cond_19
 
-    .line 1215
+    .line 1214
     iput-boolean v6, v1, Lcom/iMe/fork/ui/dialog/TranslateAlert;->scrolling:Z
 
-    .line 1216
+    .line 1215
     iget-object v0, v1, Lcom/iMe/fork/ui/dialog/TranslateAlert;->allTextsView:Landroid/widget/TextView;
 
     iget-boolean v2, v1, Lcom/iMe/fork/ui/dialog/TranslateAlert;->noforwards:Z
@@ -6269,13 +6269,13 @@
     :goto_8
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setTextIsSelectable(Z)V
 
-    .line 1217
+    .line 1216
     iput-boolean v6, v1, Lcom/iMe/fork/ui/dialog/TranslateAlert;->maybeScrolling:Z
 
-    .line 1218
+    .line 1217
     iput-boolean v7, v1, Lcom/iMe/fork/ui/dialog/TranslateAlert;->allowScroll:Z
 
-    .line 1219
+    .line 1218
     iget v0, v1, Lcom/iMe/fork/ui/dialog/TranslateAlert;->fromScrollY:F
 
     invoke-static {v0}, Ljava/lang/Math;->round(F)I
@@ -6286,7 +6286,7 @@
 
     invoke-direct {v1, v0}, Lcom/iMe/fork/ui/dialog/TranslateAlert;->scrollYTo(F)V
 
-    .line 1221
+    .line 1220
     :cond_19
     invoke-super/range {p0 .. p1}, Lorg/telegram/ui/ActionBar/BottomSheet;->dispatchTouchEvent(Landroid/view/MotionEvent;)Z
 
@@ -6299,10 +6299,10 @@
     :catch_1
     move-exception v0
 
-    .line 1223
+    .line 1222
     invoke-virtual {v0}, Ljava/lang/Exception;->printStackTrace()V
 
-    .line 1224
+    .line 1223
     invoke-super/range {p0 .. p1}, Lorg/telegram/ui/ActionBar/BottomSheet;->dispatchTouchEvent(Landroid/view/MotionEvent;)Z
 
     move-result v0
@@ -6319,7 +6319,7 @@
 
     const-string v1, "und"
 
-    .line 1391
+    .line 1390
     invoke-virtual {p1, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
@@ -6336,7 +6336,7 @@
 
     goto :goto_1
 
-    .line 1394
+    .line 1393
     :cond_0
     invoke-static {}, Lorg/telegram/messenger/LocaleController;->getInstance()Lorg/telegram/messenger/LocaleController;
 
@@ -6346,7 +6346,7 @@
 
     move-result-object p1
 
-    .line 1395
+    .line 1394
     invoke-static {}, Lorg/telegram/messenger/LocaleController;->getInstance()Lorg/telegram/messenger/LocaleController;
 
     move-result-object v1
@@ -6362,7 +6362,7 @@
     :cond_1
     if-eqz v1, :cond_2
 
-    .line 1399
+    .line 1398
     iget-object v0, v1, Lorg/telegram/messenger/LocaleController$LocaleInfo;->pluralLangCode:Ljava/lang/String;
 
     const-string v1, "en"
@@ -6383,12 +6383,12 @@
     :goto_0
     if-eqz v0, :cond_3
 
-    .line 1402
+    .line 1401
     iget-object p1, p1, Lorg/telegram/messenger/LocaleController$LocaleInfo;->nameEnglish:Ljava/lang/String;
 
     return-object p1
 
-    .line 1404
+    .line 1403
     :cond_3
     iget-object p1, p1, Lorg/telegram/messenger/LocaleController$LocaleInfo;->name:Ljava/lang/String;
 
@@ -6402,54 +6402,54 @@
 .method protected onCreate(Landroid/os/Bundle;)V
     .locals 5
 
-    .line 1233
+    .line 1232
     invoke-super {p0, p1}, Lcom/iMe/ui/base/mvp/MvpBottomSheet;->onCreate(Landroid/os/Bundle;)V
 
-    .line 1235
+    .line 1234
     iget-object p1, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->contentView:Landroid/widget/FrameLayout;
 
     const/4 v0, 0x0
 
     invoke-virtual {p1, v0, v0, v0, v0}, Landroid/widget/FrameLayout;->setPadding(IIII)V
 
-    .line 1238
+    .line 1237
     invoke-virtual {p0}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
 
     move-result-object p1
 
-    .line 1240
+    .line 1239
     sget v1, Lorg/telegram/messenger/R$style;->DialogNoAnimation:I
 
     invoke-virtual {p1, v1}, Landroid/view/Window;->setWindowAnimations(I)V
 
-    .line 1241
+    .line 1240
     invoke-virtual {p1}, Landroid/view/Window;->getAttributes()Landroid/view/WindowManager$LayoutParams;
 
     move-result-object v1
 
     const/4 v2, -0x1
 
-    .line 1242
+    .line 1241
     iput v2, v1, Landroid/view/WindowManager$LayoutParams;->width:I
 
     const/16 v3, 0x33
 
-    .line 1243
+    .line 1242
     iput v3, v1, Landroid/view/WindowManager$LayoutParams;->gravity:I
 
     const/4 v3, 0x0
 
-    .line 1244
+    .line 1243
     iput v3, v1, Landroid/view/WindowManager$LayoutParams;->dimAmount:F
 
-    .line 1245
+    .line 1244
     iget v3, v1, Landroid/view/WindowManager$LayoutParams;->flags:I
 
     and-int/lit8 v3, v3, -0x3
 
     iput v3, v1, Landroid/view/WindowManager$LayoutParams;->flags:I
 
-    .line 1247
+    .line 1246
     iget-object v3, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->translationArgs:Lcom/iMe/model/translation/TranslationArgs;
 
     if-eqz v3, :cond_0
@@ -6464,10 +6464,10 @@
 
     const/16 v3, 0x10
 
-    .line 1248
+    .line 1247
     iput v3, v1, Landroid/view/WindowManager$LayoutParams;->softInputMode:I
 
-    .line 1249
+    .line 1248
     iget v3, v1, Landroid/view/WindowManager$LayoutParams;->flags:I
 
     const v4, -0x20001
@@ -6478,7 +6478,7 @@
 
     goto :goto_0
 
-    .line 1251
+    .line 1250
     :cond_0
     iget v3, v1, Landroid/view/WindowManager$LayoutParams;->flags:I
 
@@ -6488,7 +6488,7 @@
 
     iput v3, v1, Landroid/view/WindowManager$LayoutParams;->flags:I
 
-    .line 1252
+    .line 1251
     :goto_0
     sget v3, Landroid/os/Build$VERSION;->SDK_INT:I
 
@@ -6496,7 +6496,7 @@
 
     if-lt v3, v4, :cond_1
 
-    .line 1253
+    .line 1252
     iget v3, v1, Landroid/view/WindowManager$LayoutParams;->flags:I
 
     const v4, -0x7ffeff00
@@ -6505,7 +6505,7 @@
 
     iput v3, v1, Landroid/view/WindowManager$LayoutParams;->flags:I
 
-    .line 1258
+    .line 1257
     :cond_1
     iget v3, v1, Landroid/view/WindowManager$LayoutParams;->flags:I
 
@@ -6513,23 +6513,23 @@
 
     iput v3, v1, Landroid/view/WindowManager$LayoutParams;->flags:I
 
-    .line 1259
+    .line 1258
     iput v2, v1, Landroid/view/WindowManager$LayoutParams;->height:I
 
-    .line 1260
+    .line 1259
     invoke-virtual {p1, v1}, Landroid/view/Window;->setAttributes(Landroid/view/WindowManager$LayoutParams;)V
 
-    .line 1262
+    .line 1261
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
-    .line 1263
+    .line 1262
     invoke-static {p1, v1}, Lorg/telegram/messenger/AndroidUtilities;->setNavigationBarColor(Landroid/view/Window;I)V
 
-    .line 1264
+    .line 1263
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->computePerceivedBrightness(I)F
 
     move-result v1
@@ -6547,7 +6547,7 @@
     :cond_2
     invoke-static {p1, v0}, Lorg/telegram/messenger/AndroidUtilities;->setLightNavigationBar(Landroid/view/Window;Z)V
 
-    .line 1266
+    .line 1265
     iget-object p1, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->container:Landroid/widget/FrameLayout;
 
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->forceLayout()V
@@ -6558,7 +6558,7 @@
 .method public onCreateView(Landroid/os/Bundle;)Landroid/view/View;
     .locals 0
 
-    .line 185
+    .line 184
     iget-object p1, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->contentView:Landroid/widget/FrameLayout;
 
     return-object p1
@@ -6567,7 +6567,7 @@
 .method public onLoadingState(Ljava/lang/String;Z)V
     .locals 2
 
-    .line 240
+    .line 239
     iget-object p2, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->translationArgs:Lcom/iMe/model/translation/TranslationArgs;
 
     invoke-virtual {p2}, Lcom/iMe/model/translation/TranslationArgs;->getType()Lcom/iMe/fork/enums/TranslationDialogType;
@@ -6582,12 +6582,12 @@
 
     const/4 p1, 0x0
 
-    .line 241
+    .line 240
     invoke-virtual {p0, v1, v1, p1}, Lcom/iMe/ui/base/mvp/MvpBottomSheet;->showLoadingDialog(ZZLio/reactivex/disposables/Disposable;)V
 
     return-void
 
-    .line 244
+    .line 243
     :cond_0
     iget-object p2, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->textsView:Lcom/iMe/fork/ui/dialog/TranslateAlert$TextBlocksLayout;
 
@@ -6599,12 +6599,12 @@
 
     if-eqz p2, :cond_1
 
-    .line 246
+    .line 245
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->textsView:Lcom/iMe/fork/ui/dialog/TranslateAlert$TextBlocksLayout;
 
     invoke-virtual {v0, p2}, Landroid/view/ViewGroup;->removeView(Landroid/view/View;)V
 
-    .line 248
+    .line 247
     :cond_1
     new-instance p2, Ljava/util/ArrayList;
 
@@ -6612,24 +6612,24 @@
 
     iput-object p2, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->textBlocks:Ljava/util/ArrayList;
 
-    .line 249
+    .line 248
     invoke-virtual {p2, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 250
+    .line 249
     iget p2, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->blockIndex:I
 
     add-int/2addr p2, v1
 
     iput p2, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->blockIndex:I
 
-    .line 251
+    .line 250
     iget-object p2, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->textsView:Lcom/iMe/fork/ui/dialog/TranslateAlert$TextBlocksLayout;
 
     invoke-virtual {p2, p1}, Lcom/iMe/fork/ui/dialog/TranslateAlert$TextBlocksLayout;->addBlock(Ljava/lang/CharSequence;)Lcom/iMe/fork/ui/dialog/TranslateAlert$LoadingTextView2;
 
     const/high16 p1, 0x30000000
 
-    .line 252
+    .line 251
     invoke-direct {p0, p1, v1}, Lcom/iMe/fork/ui/dialog/TranslateAlert;->openAnimationTo(FZ)V
 
     return-void
@@ -6638,7 +6638,7 @@
 .method public openReplyDialog(Lcom/iMe/storage/domain/model/dialogs/DialogTranslationSettings;)V
     .locals 6
 
-    .line 262
+    .line 261
     new-instance v0, Lcom/iMe/fork/ui/dialog/TranslateAlert;
 
     iget-object v1, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->fragment:Lorg/telegram/ui/ActionBar/BaseFragment;
@@ -6657,26 +6657,26 @@
 
     invoke-direct {v0, v1, v2, v3, p1}, Lcom/iMe/fork/ui/dialog/TranslateAlert;-><init>(Lorg/telegram/ui/ActionBar/BaseFragment;ZLcom/iMe/model/translation/TranslationArgs;Lcom/iMe/fork/ui/dialog/TranslateAlert$TranslatorActionsDelegate;)V
 
-    .line 263
+    .line 262
     iget-object p1, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->fragment:Lorg/telegram/ui/ActionBar/BaseFragment;
 
     if-eqz p1, :cond_0
 
-    .line 264
+    .line 263
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object p1
 
     if-eqz p1, :cond_1
 
-    .line 265
+    .line 264
     iget-object p1, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->fragment:Lorg/telegram/ui/ActionBar/BaseFragment;
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->showDialog(Landroid/app/Dialog;)Landroid/app/Dialog;
 
     goto :goto_0
 
-    .line 268
+    .line 267
     :cond_0
     invoke-virtual {v0}, Lcom/iMe/fork/ui/dialog/TranslateAlert;->show()V
 
@@ -6711,22 +6711,22 @@
 .method public show()V
     .locals 2
 
-    .line 1279
+    .line 1278
     invoke-super {p0}, Lorg/telegram/ui/ActionBar/BottomSheet;->show()V
 
     const/4 v0, 0x0
 
-    .line 1281
+    .line 1280
     invoke-direct {p0, v0}, Lcom/iMe/fork/ui/dialog/TranslateAlert;->openAnimation(F)V
 
     const/high16 v0, 0x3f800000    # 1.0f
 
     const/4 v1, 0x1
 
-    .line 1282
+    .line 1281
     invoke-direct {p0, v0, v1, v1}, Lcom/iMe/fork/ui/dialog/TranslateAlert;->openTo(FZZ)V
 
-    .line 1284
+    .line 1283
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->fragment:Lorg/telegram/ui/ActionBar/BaseFragment;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -6735,21 +6735,21 @@
 
     if-eqz v0, :cond_0
 
-    .line 1285
+    .line 1284
     invoke-virtual {v0}, Landroid/app/Activity;->getCurrentFocus()Landroid/view/View;
 
     move-result-object v1
 
     if-eqz v1, :cond_0
 
-    .line 1286
+    .line 1285
     invoke-virtual {v0}, Landroid/app/Activity;->getCurrentFocus()Landroid/view/View;
 
     move-result-object v0
 
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->hideKeyboard(Landroid/view/View;)V
 
-    .line 1288
+    .line 1287
     :cond_0
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->contentView:Landroid/widget/FrameLayout;
 
@@ -6763,7 +6763,7 @@
 .method public showAppUpdateDialog()V
     .locals 2
 
-    .line 257
+    .line 256
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->fragment:Lorg/telegram/ui/ActionBar/BaseFragment;
 
     invoke-static {v0}, Lcom/iMe/utils/dialogs/DialogsFactoryKt;->createUpdateAppDialog(Lorg/telegram/ui/ActionBar/BaseFragment;)Lorg/telegram/ui/ActionBar/AlertDialog;
@@ -6788,10 +6788,10 @@
         }
     .end annotation
 
-    .line 230
+    .line 229
     new-instance v0, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;
 
-    .line 231
+    .line 230
     invoke-virtual {p0}, Landroid/app/Dialog;->getContext()Landroid/content/Context;
 
     move-result-object v1
@@ -6802,7 +6802,7 @@
 
     invoke-direct {v0, v1, p1, p2, v2}, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;-><init>(Landroid/content/Context;Ljava/util/List;Ljava/lang/String;Lcom/iMe/fork/utils/Callbacks$Callback1;)V
 
-    .line 230
+    .line 229
     invoke-virtual {p0, v0}, Lcom/iMe/ui/base/mvp/MvpBottomSheet;->showDialog(Landroid/app/Dialog;)Landroid/app/Dialog;
 
     return-void
@@ -6811,12 +6811,12 @@
 .method public showSubtitleLanguage(Ljava/lang/String;Ljava/lang/String;)V
     .locals 1
 
-    .line 224
+    .line 223
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->subtitleToView:Landroid/widget/TextView;
 
     invoke-virtual {v0, p2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 225
+    .line 224
     iget-object p2, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->subtitleFromView:Lcom/iMe/fork/ui/dialog/TranslateAlert$InlineLoadingTextView;
 
     invoke-virtual {p2, p1}, Lcom/iMe/fork/ui/dialog/TranslateAlert$InlineLoadingTextView;->loaded(Ljava/lang/CharSequence;)V
@@ -6827,7 +6827,7 @@
 .method public showTranslation(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
     .locals 4
 
-    .line 207
+    .line 206
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->translationArgs:Lcom/iMe/model/translation/TranslationArgs;
 
     invoke-virtual {v0}, Lcom/iMe/model/translation/TranslationArgs;->getType()Lcom/iMe/fork/enums/TranslationDialogType;
@@ -6844,18 +6844,18 @@
 
     const/4 p2, 0x1
 
-    .line 208
+    .line 207
     invoke-virtual {p0, v3, p2, v2}, Lcom/iMe/ui/base/mvp/MvpBottomSheet;->showLoadingDialog(ZZLio/reactivex/disposables/Disposable;)V
 
-    .line 209
+    .line 208
     iput-boolean p2, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->isTranslated:Z
 
-    .line 210
+    .line 209
     iget-object p2, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     invoke-virtual {p2, p1}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
-    .line 211
+    .line 210
     iget-object p2, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     invoke-virtual {p1}, Ljava/lang/String;->length()I
@@ -6864,7 +6864,7 @@
 
     invoke-virtual {p2, p1}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setSelection(I)V
 
-    .line 212
+    .line 211
     iget-object p1, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->buttonTextView:Landroid/widget/TextView;
 
     sget p2, Lorg/telegram/messenger/R$string;->Send:I
@@ -6879,18 +6879,18 @@
 
     goto :goto_0
 
-    .line 214
+    .line 213
     :cond_0
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->subtitleToView:Landroid/widget/TextView;
 
     invoke-virtual {v0, p3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 215
+    .line 214
     iget-object p3, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->subtitleFromView:Lcom/iMe/fork/ui/dialog/TranslateAlert$InlineLoadingTextView;
 
     invoke-virtual {p3, p2}, Lcom/iMe/fork/ui/dialog/TranslateAlert$InlineLoadingTextView;->loaded(Ljava/lang/CharSequence;)V
 
-    .line 216
+    .line 215
     iget-object p2, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->textsView:Lcom/iMe/fork/ui/dialog/TranslateAlert$TextBlocksLayout;
 
     invoke-virtual {p2, v3}, Lcom/iMe/fork/ui/dialog/TranslateAlert$TextBlocksLayout;->getBlockAt(I)Lcom/iMe/fork/ui/dialog/TranslateAlert$LoadingTextView2;
@@ -6899,12 +6899,12 @@
 
     invoke-virtual {p2, p1, v2}, Lcom/iMe/fork/ui/dialog/TranslateAlert$LoadingTextView2;->loaded(Ljava/lang/CharSequence;Ljava/lang/Runnable;)V
 
-    .line 217
+    .line 216
     iget-object p2, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->textsView:Lcom/iMe/fork/ui/dialog/TranslateAlert$TextBlocksLayout;
 
     invoke-virtual {p2, p1}, Lcom/iMe/fork/ui/dialog/TranslateAlert$TextBlocksLayout;->setWholeText(Ljava/lang/CharSequence;)V
 
-    .line 218
+    .line 217
     iget-object p1, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert;->allTextsView:Landroid/widget/TextView;
 
     invoke-virtual {p1}, Landroid/widget/TextView;->requestFocus()Z

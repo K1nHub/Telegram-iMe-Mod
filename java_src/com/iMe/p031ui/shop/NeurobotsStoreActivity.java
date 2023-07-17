@@ -53,19 +53,19 @@ import kotlin.text.StringsKt__StringsKt;
 import org.solovyev.android.checkout.Purchase;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.C3295R;
+import org.telegram.messenger.C3417R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.UserConfig;
-import org.telegram.p044ui.ActionBar.ActionBarMenu;
-import org.telegram.p044ui.ActionBar.ActionBarMenuItem;
-import org.telegram.p044ui.ActionBar.BaseFragment;
-import org.telegram.p044ui.ActionBar.C3361ActionBar;
-import org.telegram.p044ui.ActionBar.Theme;
-import org.telegram.p044ui.Components.LayoutHelper;
-import org.telegram.p044ui.Components.RecyclerListView;
-import org.telegram.p044ui.Components.SizeNotifierFrameLayout;
+import org.telegram.p043ui.ActionBar.ActionBarMenu;
+import org.telegram.p043ui.ActionBar.ActionBarMenuItem;
+import org.telegram.p043ui.ActionBar.BaseFragment;
+import org.telegram.p043ui.ActionBar.C3484ActionBar;
+import org.telegram.p043ui.ActionBar.Theme;
+import org.telegram.p043ui.Components.LayoutHelper;
+import org.telegram.p043ui.Components.RecyclerListView;
+import org.telegram.p043ui.Components.SizeNotifierFrameLayout;
 import org.telegram.tgnet.TLRPC$User;
 /* compiled from: NeurobotsStoreActivity.kt */
 /* renamed from: com.iMe.ui.shop.NeurobotsStoreActivity */
@@ -90,7 +90,7 @@ public final class NeurobotsStoreActivity extends BaseFragment implements Notifi
     private NonSwipeableViewPager viewPager;
 
     /* renamed from: me */
-    private TLRPC$User f378me = MessagesController.getInstance(UserConfig.selectedAccount).getUser(Long.valueOf(UserConfig.getInstance(UserConfig.selectedAccount).getClientUserId()));
+    private TLRPC$User f451me = MessagesController.getInstance(UserConfig.selectedAccount).getUser(Long.valueOf(UserConfig.getInstance(UserConfig.selectedAccount).getClientUserId()));
     private final Map<Integer, View> tabViews = new LinkedHashMap();
     private final CompositeDisposable disposable = new CompositeDisposable();
 
@@ -152,10 +152,10 @@ public final class NeurobotsStoreActivity extends BaseFragment implements Notifi
     /* renamed from: com.iMe.ui.shop.NeurobotsStoreActivity$StoreTab */
     /* loaded from: classes3.dex */
     public enum StoreTab {
-        ALL(C3295R.string.neurobots_store_tab_all),
-        POPULAR(C3295R.string.neurobots_store_tab_popular),
-        FREE(C3295R.string.neurobots_store_tab_free),
-        MY(C3295R.string.neurobots_store_tab_my);
+        ALL(C3417R.string.neurobots_store_tab_all),
+        POPULAR(C3417R.string.neurobots_store_tab_popular),
+        FREE(C3417R.string.neurobots_store_tab_free),
+        MY(C3417R.string.neurobots_store_tab_my);
         
         private final int resId;
 
@@ -209,12 +209,12 @@ public final class NeurobotsStoreActivity extends BaseFragment implements Notifi
         }
     }
 
-    @Override // org.telegram.p044ui.ActionBar.BaseFragment
+    @Override // org.telegram.p043ui.ActionBar.BaseFragment
     public View createView(final Context context) {
         Intrinsics.checkNotNullParameter(context, "context");
         BotLanguage.Companion companion = BotLanguage.Companion;
         CountriesRepository companion2 = CountriesRepository.Companion.getInstance(context);
-        String str = this.f378me.phone;
+        String str = this.f451me.phone;
         Intrinsics.checkNotNullExpressionValue(str, "me.phone");
         String langCode = LocaleController.getInstance().getCurrentLocaleInfo().getLangCode();
         Intrinsics.checkNotNullExpressionValue(langCode, "getInstance().currentLocaleInfo.langCode");
@@ -360,25 +360,25 @@ public final class NeurobotsStoreActivity extends BaseFragment implements Notifi
         }
         this.fragmentView = sizeNotifierFrameLayout2;
         ActionBarMenu createMenu = this.actionBar.createMenu();
-        int i4 = C3295R.C3297drawable.ic_ab_search;
+        int i4 = C3417R.C3419drawable.ic_ab_search;
         this.searchMenuItem = createMenu.addItem(104, i4);
-        this.changeCountryItem = createMenu.addItem(105, C3295R.C3297drawable.fork_ic_language);
+        this.changeCountryItem = createMenu.addItem(105, C3417R.C3419drawable.fork_ic_language);
         ActionBarMenuItem actionBarMenuItemSearchListener = createMenu.addItem(0, i4).setIsSearchField(true).setActionBarMenuItemSearchListener(new NeurobotsStoreActivity$createView$2(this));
         this.searchItem = actionBarMenuItemSearchListener;
         if (actionBarMenuItemSearchListener != null) {
-            actionBarMenuItemSearchListener.setSearchFieldHint(LocaleController.getString("Search", C3295R.string.Search));
+            actionBarMenuItemSearchListener.setSearchFieldHint(LocaleController.getString("Search", C3417R.string.Search));
         }
         ActionBarMenuItem actionBarMenuItem = this.searchItem;
         if (actionBarMenuItem != null) {
             actionBarMenuItem.setVisibility(8);
         }
-        this.actionBar.setBackButtonImage(C3295R.C3297drawable.ic_ab_back);
-        this.actionBar.setTitle(LocaleController.getInternalString(C3295R.string.neurobots_store_screen_title));
+        this.actionBar.setBackButtonImage(C3417R.C3419drawable.ic_ab_back);
+        this.actionBar.setTitle(LocaleController.getInternalString(C3417R.string.neurobots_store_screen_title));
         this.actionBar.setAllowOverlayTitle(true);
-        this.actionBar.setActionBarMenuOnItemClick(new C3361ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.ui.shop.NeurobotsStoreActivity$createView$3
-            @Override // org.telegram.p044ui.ActionBar.C3361ActionBar.ActionBarMenuOnItemClick
+        this.actionBar.setActionBarMenuOnItemClick(new C3484ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.ui.shop.NeurobotsStoreActivity$createView$3
+            @Override // org.telegram.p043ui.ActionBar.C3484ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i5) {
-                C3361ActionBar c3361ActionBar;
+                C3484ActionBar c3484ActionBar;
                 SizeNotifierFrameLayout sizeNotifierFrameLayout3;
                 if (i5 == -1) {
                     NeurobotsStoreActivity.this.finishFragment();
@@ -388,8 +388,8 @@ public final class NeurobotsStoreActivity extends BaseFragment implements Notifi
                     }
                     NeurobotsStoreActivity.this.presentFragment(new LanguagesActivity());
                 } else {
-                    c3361ActionBar = ((BaseFragment) NeurobotsStoreActivity.this).actionBar;
-                    c3361ActionBar.openSearchField("", false);
+                    c3484ActionBar = ((BaseFragment) NeurobotsStoreActivity.this).actionBar;
+                    c3484ActionBar.openSearchField("", false);
                     sizeNotifierFrameLayout3 = NeurobotsStoreActivity.this.rootContainer;
                     if (sizeNotifierFrameLayout3 == null) {
                         Intrinsics.throwUninitializedPropertyAccessException("rootContainer");
@@ -461,7 +461,7 @@ public final class NeurobotsStoreActivity extends BaseFragment implements Notifi
         sizeNotifierFrameLayout3.addView(recyclerListView4, LayoutHelper.createLinear(-1, -1));
         TextView textView2 = new TextView(context);
         this.nothingFoundPlaceholder = textView2;
-        textView2.setText(LocaleController.getInternalString(C3295R.string.neurobots_store_search_empty));
+        textView2.setText(LocaleController.getInternalString(C3417R.string.neurobots_store_search_empty));
         TextView textView3 = this.nothingFoundPlaceholder;
         if (textView3 == null) {
             Intrinsics.throwUninitializedPropertyAccessException("nothingFoundPlaceholder");
@@ -503,14 +503,14 @@ public final class NeurobotsStoreActivity extends BaseFragment implements Notifi
         return fragmentView;
     }
 
-    @Override // org.telegram.p044ui.ActionBar.BaseFragment
+    @Override // org.telegram.p043ui.ActionBar.BaseFragment
     public void onActivityResultFragment(int i, int i2, Intent intent) {
         if (intent != null) {
             ApplicationLoader.purchaseHelper.onActivityResult(i, i2, intent);
         }
     }
 
-    @Override // org.telegram.p044ui.ActionBar.BaseFragment
+    @Override // org.telegram.p043ui.ActionBar.BaseFragment
     public boolean onFragmentCreate() {
         super.onFragmentCreate();
         NotificationCenter.getInstance(this.currentAccount).addObserver(this, NotificationCenter.botButtonClicked);
@@ -525,12 +525,12 @@ public final class NeurobotsStoreActivity extends BaseFragment implements Notifi
         return true;
     }
 
-    @Override // org.telegram.p044ui.ActionBar.BaseFragment
+    @Override // org.telegram.p043ui.ActionBar.BaseFragment
     public boolean isSwipeBackEnabled(MotionEvent motionEvent) {
         return this.swipeBackEnabled;
     }
 
-    @Override // org.telegram.p044ui.ActionBar.BaseFragment
+    @Override // org.telegram.p043ui.ActionBar.BaseFragment
     public void onFragmentDestroy() {
         super.onFragmentDestroy();
         this.disposable.clear();
@@ -576,7 +576,7 @@ public final class NeurobotsStoreActivity extends BaseFragment implements Notifi
             Activity parentActivity = getParentActivity();
             Intrinsics.checkNotNullExpressionValue(parentActivity, "parentActivity");
             CountriesRepository companion3 = companion2.getInstance(parentActivity);
-            String str = this.f378me.phone;
+            String str = this.f451me.phone;
             Intrinsics.checkNotNullExpressionValue(str, "me.phone");
             String langCode = LocaleController.getInstance().getCurrentLocaleInfo().getLangCode();
             Intrinsics.checkNotNullExpressionValue(langCode, "getInstance().currentLocaleInfo.langCode");
@@ -617,7 +617,7 @@ public final class NeurobotsStoreActivity extends BaseFragment implements Notifi
         Activity parentActivity = getParentActivity();
         Intrinsics.checkNotNullExpressionValue(parentActivity, "parentActivity");
         CountriesRepository companion3 = companion2.getInstance(parentActivity);
-        String str = this.f378me.phone;
+        String str = this.f451me.phone;
         Intrinsics.checkNotNullExpressionValue(str, "me.phone");
         String langCode = LocaleController.getInstance().getCurrentLocaleInfo().getLangCode();
         Intrinsics.checkNotNullExpressionValue(langCode, "getInstance().currentLocaleInfo.langCode");

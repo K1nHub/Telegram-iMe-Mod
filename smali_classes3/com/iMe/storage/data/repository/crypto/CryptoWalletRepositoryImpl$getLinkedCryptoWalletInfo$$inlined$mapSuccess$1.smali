@@ -21,11 +21,11 @@
         "Lkotlin/jvm/internal/Lambda;",
         "Lkotlin/jvm/functions/Function1<",
         "Lcom/iMe/storage/data/network/model/response/base/ApiBaseResponse<",
-        "Lcom/iMe/storage/data/network/model/response/crypto/wallet/CryptoWalletInfoResponse;",
+        "Lcom/iMe/storage/data/network/model/response/crypto/wallet/CryptoWalletsInfoResponse;",
         ">;",
         "Lcom/iMe/storage/domain/model/Result<",
         "+",
-        "Lcom/iMe/storage/domain/model/crypto/CryptoWalletInfo;",
+        "Lcom/iMe/storage/domain/model/crypto/CryptoWalletsInfo;",
         ">;>;"
     }
 .end annotation
@@ -60,10 +60,10 @@
         value = {
             "(",
             "Lcom/iMe/storage/data/network/model/response/base/ApiBaseResponse<",
-            "Lcom/iMe/storage/data/network/model/response/crypto/wallet/CryptoWalletInfoResponse;",
+            "Lcom/iMe/storage/data/network/model/response/crypto/wallet/CryptoWalletsInfoResponse;",
             ">;)",
             "Lcom/iMe/storage/domain/model/Result<",
-            "Lcom/iMe/storage/domain/model/crypto/CryptoWalletInfo;",
+            "Lcom/iMe/storage/domain/model/crypto/CryptoWalletsInfo;",
             ">;"
         }
     .end annotation
@@ -84,9 +84,9 @@
 
     move-result-object p1
 
-    check-cast p1, Lcom/iMe/storage/data/network/model/response/crypto/wallet/CryptoWalletInfoResponse;
+    check-cast p1, Lcom/iMe/storage/data/network/model/response/crypto/wallet/CryptoWalletsInfoResponse;
 
-    invoke-static {p1}, Lcom/iMe/storage/data/mapper/crypto/WalletInformationMappingKt;->mapToDomain(Lcom/iMe/storage/data/network/model/response/crypto/wallet/CryptoWalletInfoResponse;)Lcom/iMe/storage/domain/model/crypto/CryptoWalletInfo;
+    invoke-static {p1}, Lcom/iMe/storage/data/mapper/crypto/WalletInformationMappingKt;->mapToDomain(Lcom/iMe/storage/data/network/model/response/crypto/wallet/CryptoWalletsInfoResponse;)Lcom/iMe/storage/domain/model/crypto/CryptoWalletsInfo;
 
     move-result-object p1
 

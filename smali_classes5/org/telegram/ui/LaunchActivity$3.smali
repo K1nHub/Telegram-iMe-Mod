@@ -30,7 +30,7 @@
 .method constructor <init>(Lorg/telegram/ui/LaunchActivity;)V
     .locals 0
 
-    .line 676
+    .line 716
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -41,7 +41,7 @@
 .method public accept(Ljava/lang/Boolean;)V
     .locals 0
 
-    .line 679
+    .line 719
     invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
 
     move-result p1
@@ -54,7 +54,7 @@
 .method public bridge synthetic accept(Ljava/lang/Object;)V
     .locals 0
 
-    .line 676
+    .line 716
     check-cast p1, Ljava/lang/Boolean;
 
     invoke-virtual {p0, p1}, Lorg/telegram/ui/LaunchActivity$3;->accept(Ljava/lang/Boolean;)V

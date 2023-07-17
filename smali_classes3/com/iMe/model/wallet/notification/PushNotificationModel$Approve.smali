@@ -56,22 +56,22 @@
 
     invoke-static {p5, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 196
+    .line 195
     invoke-direct {p0, p1, p2}, Lcom/iMe/model/wallet/notification/PushNotificationModel$CryptoTransfer;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 191
+    .line 190
     iput-object p1, p0, Lcom/iMe/model/wallet/notification/PushNotificationModel$Approve;->userId:Ljava/lang/String;
 
-    .line 192
+    .line 191
     iput-object p2, p0, Lcom/iMe/model/wallet/notification/PushNotificationModel$Approve;->type:Ljava/lang/String;
 
-    .line 193
+    .line 192
     iput-object p3, p0, Lcom/iMe/model/wallet/notification/PushNotificationModel$Approve;->cryptoCode:Ljava/lang/String;
 
-    .line 194
+    .line 193
     iput-object p4, p0, Lcom/iMe/model/wallet/notification/PushNotificationModel$Approve;->status:Ljava/lang/String;
 
-    .line 195
+    .line 194
     iput-object p5, p0, Lcom/iMe/model/wallet/notification/PushNotificationModel$Approve;->txHash:Ljava/lang/String;
 
     return-void
@@ -334,16 +334,16 @@
 .method public final getCryptoCode()Ljava/lang/String;
     .locals 1
 
-    .line 193
+    .line 192
     iget-object v0, p0, Lcom/iMe/model/wallet/notification/PushNotificationModel$Approve;->cryptoCode:Ljava/lang/String;
 
     return-object v0
 .end method
 
 .method public getMessage()Ljava/lang/String;
-    .locals 5
+    .locals 4
 
-    .line 198
+    .line 197
     sget-object v0, Lcom/iMe/storage/data/network/model/response/base/Status;->Companion:Lcom/iMe/storage/data/network/model/response/base/Status$Companion;
 
     iget-object v1, p0, Lcom/iMe/model/wallet/notification/PushNotificationModel$Approve;->status:Ljava/lang/String;
@@ -360,11 +360,11 @@
 
     aget v0, v1, v0
 
-    const/4 v1, 0x1
+    const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    const/4 v2, 0x1
 
-    if-eq v0, v1, :cond_1
+    if-eq v0, v2, :cond_1
 
     const/4 v3, 0x2
 
@@ -374,65 +374,33 @@
 
     goto :goto_0
 
-    .line 200
+    .line 199
     :cond_0
     sget v0, Lorg/telegram/messenger/R$string;->push_notification_wallet_approve_failed_description:I
 
-    new-array v1, v1, [Ljava/lang/Object;
+    new-array v2, v2, [Ljava/lang/Object;
 
-    sget-object v3, Lcom/iMe/storage/domain/model/wallet/token/TokenInfo;->Companion:Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Companion;
+    iget-object v3, p0, Lcom/iMe/model/wallet/notification/PushNotificationModel$Approve;->cryptoCode:Ljava/lang/String;
 
-    iget-object v4, p0, Lcom/iMe/model/wallet/notification/PushNotificationModel$Approve;->cryptoCode:Ljava/lang/String;
+    aput-object v3, v2, v1
 
-    invoke-virtual {v3, v4}, Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Companion;->map(Ljava/lang/String;)Lcom/iMe/storage/domain/model/wallet/token/TokenInfo;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Lcom/iMe/storage/domain/model/wallet/token/TokenInfo;->getShortName()I
-
-    move-result v3
-
-    new-array v4, v2, [Ljava/lang/Object;
-
-    invoke-virtual {p0, v3, v4}, Lcom/iMe/model/wallet/notification/PushNotificationModel;->getString$TMessagesProj_release(I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v3
-
-    aput-object v3, v1, v2
-
-    invoke-virtual {p0, v0, v1}, Lcom/iMe/model/wallet/notification/PushNotificationModel;->getString$TMessagesProj_release(I[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual {p0, v0, v2}, Lcom/iMe/model/wallet/notification/PushNotificationModel;->getString$TMessagesProj_HA_public(I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
     goto :goto_0
 
-    .line 199
+    .line 198
     :cond_1
     sget v0, Lorg/telegram/messenger/R$string;->push_notification_wallet_approve_success_description:I
 
-    new-array v1, v1, [Ljava/lang/Object;
+    new-array v2, v2, [Ljava/lang/Object;
 
-    sget-object v3, Lcom/iMe/storage/domain/model/wallet/token/TokenInfo;->Companion:Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Companion;
+    iget-object v3, p0, Lcom/iMe/model/wallet/notification/PushNotificationModel$Approve;->cryptoCode:Ljava/lang/String;
 
-    iget-object v4, p0, Lcom/iMe/model/wallet/notification/PushNotificationModel$Approve;->cryptoCode:Ljava/lang/String;
+    aput-object v3, v2, v1
 
-    invoke-virtual {v3, v4}, Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Companion;->map(Ljava/lang/String;)Lcom/iMe/storage/domain/model/wallet/token/TokenInfo;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Lcom/iMe/storage/domain/model/wallet/token/TokenInfo;->getShortName()I
-
-    move-result v3
-
-    new-array v4, v2, [Ljava/lang/Object;
-
-    invoke-virtual {p0, v3, v4}, Lcom/iMe/model/wallet/notification/PushNotificationModel;->getString$TMessagesProj_release(I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v3
-
-    aput-object v3, v1, v2
-
-    invoke-virtual {p0, v0, v1}, Lcom/iMe/model/wallet/notification/PushNotificationModel;->getString$TMessagesProj_release(I[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual {p0, v0, v2}, Lcom/iMe/model/wallet/notification/PushNotificationModel;->getString$TMessagesProj_HA_public(I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -443,7 +411,7 @@
 .method public final getStatus()Ljava/lang/String;
     .locals 1
 
-    .line 194
+    .line 193
     iget-object v0, p0, Lcom/iMe/model/wallet/notification/PushNotificationModel$Approve;->status:Ljava/lang/String;
 
     return-object v0
@@ -452,7 +420,7 @@
 .method public final getTxHash()Ljava/lang/String;
     .locals 1
 
-    .line 195
+    .line 194
     iget-object v0, p0, Lcom/iMe/model/wallet/notification/PushNotificationModel$Approve;->txHash:Ljava/lang/String;
 
     return-object v0
@@ -461,7 +429,7 @@
 .method public getType()Ljava/lang/String;
     .locals 1
 
-    .line 192
+    .line 191
     iget-object v0, p0, Lcom/iMe/model/wallet/notification/PushNotificationModel$Approve;->type:Ljava/lang/String;
 
     return-object v0
@@ -470,7 +438,7 @@
 .method public getUserId()Ljava/lang/String;
     .locals 1
 
-    .line 191
+    .line 190
     iget-object v0, p0, Lcom/iMe/model/wallet/notification/PushNotificationModel$Approve;->userId:Ljava/lang/String;
 
     return-object v0

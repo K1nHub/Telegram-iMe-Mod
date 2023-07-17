@@ -21,7 +21,7 @@
         "Lkotlin/jvm/internal/Lambda;",
         "Lkotlin/jvm/functions/Function1<",
         "Lcom/iMe/storage/data/network/model/response/base/ApiBaseResponse<",
-        "Lcom/iMe/storage/data/network/model/response/crypto/cancel/GetCancelTransactionDataResponse;",
+        "Lcom/iMe/storage/data/network/model/response/crypto/cancel/CancelTransactionDataResponse;",
         ">;",
         "Lcom/iMe/storage/domain/model/Result<",
         "+",
@@ -60,7 +60,7 @@
         value = {
             "(",
             "Lcom/iMe/storage/data/network/model/response/base/ApiBaseResponse<",
-            "Lcom/iMe/storage/data/network/model/response/crypto/cancel/GetCancelTransactionDataResponse;",
+            "Lcom/iMe/storage/data/network/model/response/crypto/cancel/CancelTransactionDataResponse;",
             ">;)",
             "Lcom/iMe/storage/domain/model/Result<",
             "Lcom/iMe/storage/domain/model/crypto/cancel/CryptoCancelMetadata;",
@@ -84,9 +84,9 @@
 
     move-result-object p1
 
-    check-cast p1, Lcom/iMe/storage/data/network/model/response/crypto/cancel/GetCancelTransactionDataResponse;
+    check-cast p1, Lcom/iMe/storage/data/network/model/response/crypto/cancel/CancelTransactionDataResponse;
 
-    invoke-static {p1}, Lcom/iMe/storage/data/mapper/crypto/CancelMappingKt;->mapToDomain(Lcom/iMe/storage/data/network/model/response/crypto/cancel/GetCancelTransactionDataResponse;)Lcom/iMe/storage/domain/model/crypto/cancel/CryptoCancelMetadata;
+    invoke-static {p1}, Lcom/iMe/storage/data/mapper/crypto/CancelMappingKt;->mapToDomain(Lcom/iMe/storage/data/network/model/response/crypto/cancel/CancelTransactionDataResponse;)Lcom/iMe/storage/domain/model/crypto/cancel/CryptoCancelMetadata;
 
     move-result-object p1
 

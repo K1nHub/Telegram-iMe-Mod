@@ -12,7 +12,7 @@
 
 
 # direct methods
-.method public static final colorKey(Lcom/iMe/storage/data/network/model/response/base/Status;)I
+.method public static final getColorKey(Lcom/iMe/storage/data/network/model/response/base/Status;)I
     .locals 1
 
     const-string v0, "<this>"

@@ -81,9 +81,9 @@ final class RxConvertKt$asFlow$1 extends SuspendLambda implements Function2<Prod
                     producerScope.close(th);
                 }
             });
-            C31501 c31501 = new C31501(atomicReference);
+            C32711 c32711 = new C32711(atomicReference);
             this.label = 1;
-            if (ProduceKt.awaitClose(producerScope, c31501, this) == coroutine_suspended) {
+            if (ProduceKt.awaitClose(producerScope, c32711, this) == coroutine_suspended) {
                 return coroutine_suspended;
             }
         } else if (i != 1) {
@@ -98,11 +98,11 @@ final class RxConvertKt$asFlow$1 extends SuspendLambda implements Function2<Prod
     /* compiled from: RxConvert.kt */
     /* renamed from: kotlinx.coroutines.rx2.RxConvertKt$asFlow$1$1 */
     /* loaded from: classes4.dex */
-    public static final class C31501 extends Lambda implements Function0<Unit> {
+    public static final class C32711 extends Lambda implements Function0<Unit> {
         final /* synthetic */ AtomicReference<Disposable> $disposableRef;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C31501(AtomicReference<Disposable> atomicReference) {
+        C32711(AtomicReference<Disposable> atomicReference) {
             super(0);
             this.$disposableRef = atomicReference;
         }

@@ -1204,7 +1204,7 @@
 
     iget-object v0, v11, Lorg/telegram/messenger/utils/BitmapsCache;->file:Ljava/io/File;
 
-    const-string v2, "rw"
+    const-string/jumbo v2, "rw"
 
     invoke-direct {v9, v0, v2}, Ljava/io/RandomAccessFile;-><init>(Ljava/io/File;Ljava/lang/String;)V
 

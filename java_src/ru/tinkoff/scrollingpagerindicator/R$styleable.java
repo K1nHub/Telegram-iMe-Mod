@@ -1,6 +1,6 @@
 package ru.tinkoff.scrollingpagerindicator;
 
-import com.iMe.android.R;
+import com.iMe.android.web.R;
 /* loaded from: classes6.dex */
 public final class R$styleable {
     public static final int[] ScrollingPagerIndicator = {R.attr.spi_dotColor, R.attr.spi_dotMinimumSize, R.attr.spi_dotSelectedColor, R.attr.spi_dotSelectedSize, R.attr.spi_dotSize, R.attr.spi_dotSpacing, R.attr.spi_looped, R.attr.spi_orientation, R.attr.spi_visibleDotCount, R.attr.spi_visibleDotThreshold};

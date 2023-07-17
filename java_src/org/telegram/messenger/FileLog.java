@@ -16,7 +16,7 @@ import java.util.HashSet;
 import java.util.Locale;
 import org.telegram.messenger.time.FastDateFormat;
 import org.telegram.messenger.video.MediaCodecVideoConvertor;
-import org.telegram.p044ui.LaunchActivity;
+import org.telegram.p043ui.LaunchActivity;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC$TL_error;
 /* loaded from: classes4.dex */

@@ -800,7 +800,7 @@
     goto :goto_1
 
     :cond_6
-    const-string v1, "rtmp"
+    const-string/jumbo v1, "rtmp"
 
     .line 232
     invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -838,7 +838,7 @@
     goto :goto_1
 
     :cond_8
-    const-string v1, "rawresource"
+    const-string/jumbo v1, "rawresource"
 
     .line 236
     invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z

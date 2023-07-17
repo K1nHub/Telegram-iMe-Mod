@@ -32,7 +32,7 @@ import kotlin.collections.IntIterator;
 import kotlin.collections.MapsKt__MapsKt;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.StringCompanionObject;
-import kotlin.p035io.CloseableKt;
+import kotlin.p034io.CloseableKt;
 import kotlin.ranges.IntRange;
 import kotlin.ranges.RangesKt___RangesKt;
 import kotlin.text.Charsets;
@@ -49,7 +49,7 @@ import okhttp3.RequestBody;
 import okhttp3.Response;
 import okhttp3.ResponseBody;
 import okhttp3.internal.http2.Header;
-import okhttp3.internal.p037io.FileSystem;
+import okhttp3.internal.p036io.FileSystem;
 import okio.Buffer;
 import okio.BufferedSink;
 import okio.BufferedSource;
@@ -57,7 +57,7 @@ import okio.ByteString;
 import okio.Options;
 import okio.Sink;
 import okio.Source;
-import p034j$.util.DesugarTimeZone;
+import p033j$.util.DesugarTimeZone;
 /* compiled from: Util.kt */
 /* loaded from: classes4.dex */
 public final class Util {

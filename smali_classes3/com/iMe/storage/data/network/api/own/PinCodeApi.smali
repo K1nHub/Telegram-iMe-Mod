@@ -4,46 +4,24 @@
 
 
 # virtual methods
-.method public abstract getCryptoWalletPassword(Lcom/iMe/storage/data/network/model/request/crypto/pin/ReadPasswordByPinCodeRequest;)Lio/reactivex/Observable;
-    .param p1    # Lcom/iMe/storage/data/network/model/request/crypto/pin/ReadPasswordByPinCodeRequest;
+.method public abstract getCryptoWalletPassword(Lcom/iMe/storage/data/network/model/request/crypto/pin/PasswordByPinCodeRequest;)Lio/reactivex/Observable;
+    .param p1    # Lcom/iMe/storage/data/network/model/request/crypto/pin/PasswordByPinCodeRequest;
         .annotation runtime Lretrofit2/http/Body;
         .end annotation
     .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lcom/iMe/storage/data/network/model/request/crypto/pin/ReadPasswordByPinCodeRequest;",
+            "Lcom/iMe/storage/data/network/model/request/crypto/pin/PasswordByPinCodeRequest;",
             ")",
             "Lio/reactivex/Observable<",
             "Lcom/iMe/storage/data/network/model/response/base/ApiBaseResponse<",
-            "Lcom/iMe/storage/data/network/model/response/crypto/pin/PasswordByPinCodeRequest;",
+            "Lcom/iMe/storage/data/network/model/response/crypto/pin/PasswordByPinCodeResponse;",
             ">;>;"
         }
     .end annotation
 
     .annotation runtime Lretrofit2/http/POST;
-        value = "getCryptoWalletPassword"
-    .end annotation
-.end method
-
-.method public abstract saveCryptoWalletPinCode(Lcom/iMe/storage/data/network/model/request/crypto/pin/CreatePinCodeRequest;)Lio/reactivex/Observable;
-    .param p1    # Lcom/iMe/storage/data/network/model/request/crypto/pin/CreatePinCodeRequest;
-        .annotation runtime Lretrofit2/http/Body;
-        .end annotation
-    .end param
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lcom/iMe/storage/data/network/model/request/crypto/pin/CreatePinCodeRequest;",
-            ")",
-            "Lio/reactivex/Observable<",
-            "Lcom/iMe/storage/data/network/model/response/base/ApiBaseResponse<",
-            "Ljava/lang/Object;",
-            ">;>;"
-        }
-    .end annotation
-
-    .annotation runtime Lretrofit2/http/POST;
-        value = "saveCryptoWalletPinCode"
+        value = "getWalletPassword"
     .end annotation
 .end method

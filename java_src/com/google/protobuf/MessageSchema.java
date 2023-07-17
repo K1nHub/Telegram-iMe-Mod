@@ -2021,7 +2021,7 @@ public final class MessageSchema<T> implements Schema<T> {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.google.protobuf.MessageSchema$1 */
     /* loaded from: classes3.dex */
-    public static /* synthetic */ class C12021 {
+    public static /* synthetic */ class C12071 {
         static final /* synthetic */ int[] $SwitchMap$com$google$protobuf$WireFormat$FieldType;
 
         static {
@@ -2099,7 +2099,7 @@ public final class MessageSchema<T> implements Schema<T> {
     }
 
     private int decodeMapEntryValue(byte[] bArr, int i, int i2, WireFormat.FieldType fieldType, Class<?> cls, ArrayDecoders.Registers registers) throws IOException {
-        switch (C12021.$SwitchMap$com$google$protobuf$WireFormat$FieldType[fieldType.ordinal()]) {
+        switch (C12071.$SwitchMap$com$google$protobuf$WireFormat$FieldType[fieldType.ordinal()]) {
             case 1:
                 int decodeVarint64 = ArrayDecoders.decodeVarint64(bArr, i, registers);
                 registers.object1 = Boolean.valueOf(registers.long1 != 0);

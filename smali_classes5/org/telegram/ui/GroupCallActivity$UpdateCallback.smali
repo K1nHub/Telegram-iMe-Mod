@@ -25,10 +25,10 @@
 .method private constructor <init>(Landroidx/recyclerview/widget/RecyclerView$Adapter;)V
     .locals 0
 
-    .line 8310
+    .line 8321
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 8311
+    .line 8322
     iput-object p1, p0, Lorg/telegram/ui/GroupCallActivity$UpdateCallback;->adapter:Landroidx/recyclerview/widget/RecyclerView$Adapter;
 
     return-void
@@ -37,7 +37,7 @@
 .method synthetic constructor <init>(Landroidx/recyclerview/widget/RecyclerView$Adapter;Lorg/telegram/ui/GroupCallActivity$1;)V
     .locals 0
 
-    .line 8306
+    .line 8317
     invoke-direct {p0, p1}, Lorg/telegram/ui/GroupCallActivity$UpdateCallback;-><init>(Landroidx/recyclerview/widget/RecyclerView$Adapter;)V
 
     return-void
@@ -48,7 +48,7 @@
 .method public onChanged(IILjava/lang/Object;)V
     .locals 1
 
-    .line 8331
+    .line 8342
     iget-object v0, p0, Lorg/telegram/ui/GroupCallActivity$UpdateCallback;->adapter:Landroidx/recyclerview/widget/RecyclerView$Adapter;
 
     invoke-virtual {v0, p1, p2, p3}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyItemRangeChanged(IILjava/lang/Object;)V
@@ -59,7 +59,7 @@
 .method public onInserted(II)V
     .locals 1
 
-    .line 8316
+    .line 8327
     iget-object v0, p0, Lorg/telegram/ui/GroupCallActivity$UpdateCallback;->adapter:Landroidx/recyclerview/widget/RecyclerView$Adapter;
 
     invoke-virtual {v0, p1, p2}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyItemRangeInserted(II)V
@@ -70,7 +70,7 @@
 .method public onMoved(II)V
     .locals 1
 
-    .line 8326
+    .line 8337
     iget-object v0, p0, Lorg/telegram/ui/GroupCallActivity$UpdateCallback;->adapter:Landroidx/recyclerview/widget/RecyclerView$Adapter;
 
     invoke-virtual {v0, p1, p2}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyItemMoved(II)V
@@ -81,7 +81,7 @@
 .method public onRemoved(II)V
     .locals 1
 
-    .line 8321
+    .line 8332
     iget-object v0, p0, Lorg/telegram/ui/GroupCallActivity$UpdateCallback;->adapter:Landroidx/recyclerview/widget/RecyclerView$Adapter;
 
     invoke-virtual {v0, p1, p2}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyItemRangeRemoved(II)V

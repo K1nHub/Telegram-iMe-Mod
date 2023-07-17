@@ -17,8 +17,7 @@
     value = {
         Lcom/iMe/model/wallet/crypto/create/WalletCreationType$Initial$Companion;,
         Lcom/iMe/model/wallet/crypto/create/WalletCreationType$Initial$Create;,
-        Lcom/iMe/model/wallet/crypto/create/WalletCreationType$Initial$Import;,
-        Lcom/iMe/model/wallet/crypto/create/WalletCreationType$Initial$Restore;
+        Lcom/iMe/model/wallet/crypto/create/WalletCreationType$Initial$Import;
     }
 .end annotation
 
@@ -28,11 +27,13 @@
 
 
 # instance fields
+.field private final buttonTextResId:I
+
 .field private final iconResId:I
 
 .field private final ordinal:I
 
-.field private final stringResId:I
+.field private final titleTextResId:I
 
 
 # direct methods
@@ -50,30 +51,33 @@
     return-void
 .end method
 
-.method private constructor <init>(III)V
+.method private constructor <init>(IIII)V
     .locals 1
 
     const/4 v0, 0x0
 
-    .line 20
+    .line 21
     invoke-direct {p0, p1, p2, v0}, Lcom/iMe/model/wallet/crypto/create/WalletCreationType;-><init>(IILkotlin/jvm/internal/DefaultConstructorMarker;)V
 
     .line 17
     iput p1, p0, Lcom/iMe/model/wallet/crypto/create/WalletCreationType$Initial;->iconResId:I
 
     .line 18
-    iput p2, p0, Lcom/iMe/model/wallet/crypto/create/WalletCreationType$Initial;->stringResId:I
+    iput p2, p0, Lcom/iMe/model/wallet/crypto/create/WalletCreationType$Initial;->buttonTextResId:I
 
     .line 19
-    iput p3, p0, Lcom/iMe/model/wallet/crypto/create/WalletCreationType$Initial;->ordinal:I
+    iput p3, p0, Lcom/iMe/model/wallet/crypto/create/WalletCreationType$Initial;->titleTextResId:I
+
+    .line 20
+    iput p4, p0, Lcom/iMe/model/wallet/crypto/create/WalletCreationType$Initial;->ordinal:I
 
     return-void
 .end method
 
-.method public synthetic constructor <init>(IIILkotlin/jvm/internal/DefaultConstructorMarker;)V
+.method public synthetic constructor <init>(IIIILkotlin/jvm/internal/DefaultConstructorMarker;)V
     .locals 0
 
-    invoke-direct {p0, p1, p2, p3}, Lcom/iMe/model/wallet/crypto/create/WalletCreationType$Initial;-><init>(III)V
+    invoke-direct {p0, p1, p2, p3, p4}, Lcom/iMe/model/wallet/crypto/create/WalletCreationType$Initial;-><init>(IIII)V
 
     return-void
 .end method
@@ -87,8 +91,8 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 23
-    invoke-virtual {p0}, Lcom/iMe/model/wallet/crypto/create/WalletCreationType$Initial;->getStringResId()I
+    .line 24
+    invoke-virtual {p0}, Lcom/iMe/model/wallet/crypto/create/WalletCreationType$Initial;->getButtonTextResId()I
 
     move-result v0
 
@@ -97,6 +101,15 @@
     move-result-object p1
 
     return-object p1
+.end method
+
+.method public getButtonTextResId()I
+    .locals 1
+
+    .line 18
+    iget v0, p0, Lcom/iMe/model/wallet/crypto/create/WalletCreationType$Initial;->buttonTextResId:I
+
+    return v0
 .end method
 
 .method public getIconResId()I
@@ -111,17 +124,17 @@
 .method public final getOrdinal()I
     .locals 1
 
-    .line 19
+    .line 20
     iget v0, p0, Lcom/iMe/model/wallet/crypto/create/WalletCreationType$Initial;->ordinal:I
 
     return v0
 .end method
 
-.method public getStringResId()I
+.method public final getTitleTextResId()I
     .locals 1
 
-    .line 18
-    iget v0, p0, Lcom/iMe/model/wallet/crypto/create/WalletCreationType$Initial;->stringResId:I
+    .line 19
+    iget v0, p0, Lcom/iMe/model/wallet/crypto/create/WalletCreationType$Initial;->titleTextResId:I
 
     return v0
 .end method

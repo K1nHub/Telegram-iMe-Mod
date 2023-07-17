@@ -31,12 +31,10 @@
 
 .field public static final enum MAIN:Lorg/telegram/ui/Components/FilterTabsView$TabMode;
 
-.field public static final enum MANAGEMENT:Lorg/telegram/ui/Components/FilterTabsView$TabMode;
-
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 9
+    .locals 7
 
     .line 224
     new-instance v0, Lorg/telegram/ui/Components/FilterTabsView$TabMode;
@@ -69,30 +67,18 @@
 
     sput-object v3, Lorg/telegram/ui/Components/FilterTabsView$TabMode;->FORWARD:Lorg/telegram/ui/Components/FilterTabsView$TabMode;
 
-    new-instance v5, Lorg/telegram/ui/Components/FilterTabsView$TabMode;
+    const/4 v5, 0x3
 
-    const-string v7, "MANAGEMENT"
+    new-array v5, v5, [Lorg/telegram/ui/Components/FilterTabsView$TabMode;
 
-    const/4 v8, 0x3
+    aput-object v0, v5, v2
 
-    invoke-direct {v5, v7, v8}, Lorg/telegram/ui/Components/FilterTabsView$TabMode;-><init>(Ljava/lang/String;I)V
+    aput-object v1, v5, v4
 
-    sput-object v5, Lorg/telegram/ui/Components/FilterTabsView$TabMode;->MANAGEMENT:Lorg/telegram/ui/Components/FilterTabsView$TabMode;
-
-    const/4 v7, 0x4
-
-    new-array v7, v7, [Lorg/telegram/ui/Components/FilterTabsView$TabMode;
-
-    aput-object v0, v7, v2
-
-    aput-object v1, v7, v4
-
-    aput-object v3, v7, v6
-
-    aput-object v5, v7, v8
+    aput-object v3, v5, v6
 
     .line 223
-    sput-object v7, Lorg/telegram/ui/Components/FilterTabsView$TabMode;->$VALUES:[Lorg/telegram/ui/Components/FilterTabsView$TabMode;
+    sput-object v5, Lorg/telegram/ui/Components/FilterTabsView$TabMode;->$VALUES:[Lorg/telegram/ui/Components/FilterTabsView$TabMode;
 
     return-void
 .end method

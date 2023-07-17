@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/DialogsActivity;Z)V
     .locals 0
 
-    .line 7882
+    .line 7885
     iput-object p1, p0, Lorg/telegram/ui/DialogsActivity$48;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     iput-boolean p2, p0, Lorg/telegram/ui/DialogsActivity$48;->val$visible:Z
@@ -39,17 +39,17 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 5
 
-    .line 7885
+    .line 7888
     sget p1, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v0, 0x15
 
     if-lt p1, v0, :cond_4
 
-    .line 7886
+    .line 7889
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$48;->this$0:Lorg/telegram/ui/DialogsActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/DialogsActivity;->access$22800(Lorg/telegram/ui/DialogsActivity;)Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
+    invoke-static {v0}, Lorg/telegram/ui/DialogsActivity;->access$22500(Lorg/telegram/ui/DialogsActivity;)Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
     move-result-object v0
 
@@ -63,27 +63,27 @@
 
     check-cast v0, Landroid/graphics/drawable/AnimatedVectorDrawable;
 
-    .line 7887
+    .line 7890
     iget-boolean v1, p0, Lorg/telegram/ui/DialogsActivity$48;->val$visible:Z
 
     const/4 v2, 0x0
 
     if-eqz v1, :cond_2
 
-    .line 7888
+    .line 7891
     invoke-virtual {v0}, Landroid/graphics/drawable/AnimatedVectorDrawable;->start()V
 
-    .line 7890
+    .line 7893
     invoke-static {}, Lorg/telegram/messenger/SharedConfig;->getDevicePerformanceClass()I
 
     move-result p1
 
     if-eqz p1, :cond_4
 
-    .line 7891
+    .line 7894
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$48;->this$0:Lorg/telegram/ui/DialogsActivity;
 
-    invoke-static {p1}, Lorg/telegram/ui/DialogsActivity;->access$34600(Lorg/telegram/ui/DialogsActivity;)I
+    invoke-static {p1}, Lorg/telegram/ui/DialogsActivity;->access$34100(Lorg/telegram/ui/DialogsActivity;)I
 
     move-result p1
 
@@ -97,7 +97,7 @@
 
     const/4 v0, 0x2
 
-    .line 7892
+    .line 7895
     invoke-static {v0}, Lorg/telegram/ui/PremiumPreviewFragment;->featureTypeToServerString(I)Ljava/lang/String;
 
     move-result-object v0
@@ -106,7 +106,7 @@
 
     move v1, v2
 
-    .line 7895
+    .line 7898
     :goto_0
     iget-object v3, p1, Lorg/telegram/tgnet/TLRPC$TL_help_premiumPromo;->video_sections:Ljava/util/ArrayList;
 
@@ -118,7 +118,7 @@
 
     if-ge v1, v3, :cond_1
 
-    .line 7896
+    .line 7899
     iget-object v3, p1, Lorg/telegram/tgnet/TLRPC$TL_help_premiumPromo;->video_sections:Ljava/util/ArrayList;
 
     invoke-virtual {v3, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -146,10 +146,10 @@
     :goto_1
     if-eq v1, v4, :cond_4
 
-    .line 7902
+    .line 7905
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$48;->this$0:Lorg/telegram/ui/DialogsActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/DialogsActivity;->access$34700(Lorg/telegram/ui/DialogsActivity;)I
+    invoke-static {v0}, Lorg/telegram/ui/DialogsActivity;->access$34200(Lorg/telegram/ui/DialogsActivity;)I
 
     move-result v0
 
@@ -176,7 +176,7 @@
 
     if-lt p1, v1, :cond_3
 
-    .line 7908
+    .line 7911
     invoke-virtual {v0}, Landroid/graphics/drawable/AnimatedVectorDrawable;->reset()V
 
     goto :goto_2
@@ -184,7 +184,7 @@
     :cond_3
     const/4 p1, 0x1
 
-    .line 7910
+    .line 7913
     invoke-virtual {v0, v2, p1}, Landroid/graphics/drawable/AnimatedVectorDrawable;->setVisible(ZZ)Z
 
     :cond_4

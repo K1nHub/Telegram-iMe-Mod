@@ -3,9 +3,10 @@ package com.iMe.fork.controller;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Lambda;
+/* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: DialogTranslationController.kt */
 /* loaded from: classes3.dex */
-final class DialogTranslationController$Companion$getInstance$1 extends Lambda implements Function1<Integer, DialogTranslationController> {
+public final class DialogTranslationController$Companion$getInstance$1 extends Lambda implements Function1<Integer, DialogTranslationController> {
     final /* synthetic */ int $accountIndex;
 
     /* JADX INFO: Access modifiers changed from: package-private */

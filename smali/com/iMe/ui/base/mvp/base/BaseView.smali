@@ -15,6 +15,9 @@
 .method public abstract finishScreen()V
 .end method
 
+.method public abstract removeSelfFromStackImmediately()V
+.end method
+
 .method public abstract showErrorToast(Lcom/iMe/storage/domain/model/Result$Error;Lcom/iMe/storage/domain/utils/system/ResourceManager;)V
     .annotation system Ldalvik/annotation/Signature;
         value = {

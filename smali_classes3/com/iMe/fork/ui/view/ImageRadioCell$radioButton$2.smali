@@ -48,7 +48,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 32
+    .line 34
     invoke-virtual {p0}, Lcom/iMe/fork/ui/view/ImageRadioCell$radioButton$2;->invoke()Lorg/telegram/ui/Components/RadioButton;
 
     move-result-object v0
@@ -59,7 +59,7 @@
 .method public final invoke()Lorg/telegram/ui/Components/RadioButton;
     .locals 1
 
-    .line 32
+    .line 34
     iget-object v0, p0, Lcom/iMe/fork/ui/view/ImageRadioCell$radioButton$2;->this$0:Lcom/iMe/fork/ui/view/ImageRadioCell;
 
     invoke-static {v0}, Lcom/iMe/fork/ui/view/ImageRadioCell;->access$initRadioButton(Lcom/iMe/fork/ui/view/ImageRadioCell;)Lorg/telegram/ui/Components/RadioButton;

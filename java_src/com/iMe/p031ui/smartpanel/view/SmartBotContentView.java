@@ -19,15 +19,15 @@ import java.util.List;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3295R;
+import org.telegram.messenger.C3417R;
 import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.VideoEditedInfo;
-import org.telegram.p044ui.Components.ExtendedGridLayoutManager;
-import org.telegram.p044ui.Components.LayoutHelper;
-import org.telegram.p044ui.Components.RecyclerListView;
-import org.telegram.p044ui.Components.Size;
-import org.telegram.p044ui.PhotoViewer;
+import org.telegram.p043ui.Components.ExtendedGridLayoutManager;
+import org.telegram.p043ui.Components.LayoutHelper;
+import org.telegram.p043ui.Components.RecyclerListView;
+import org.telegram.p043ui.Components.Size;
+import org.telegram.p043ui.PhotoViewer;
 import org.telegram.tgnet.TLRPC$BotInlineResult;
 import org.telegram.tgnet.TLRPC$Document;
 import org.telegram.tgnet.TLRPC$DocumentAttribute;
@@ -78,7 +78,7 @@ public final class SmartBotContentView extends FrameLayout implements SmartBotCo
         ExtendedGridLayoutManager extendedGridLayoutManager = new ExtendedGridLayoutManager(context) { // from class: com.iMe.ui.smartpanel.view.SmartBotContentView$listViewLayoutManager$1
             private final Size size = new Size();
 
-            @Override // org.telegram.p044ui.Components.ExtendedGridLayoutManager
+            @Override // org.telegram.p043ui.Components.ExtendedGridLayoutManager
             protected Size getSizeForItem(int i) {
                 RecyclerListView recyclerListView2;
                 RecyclerListView recyclerListView3;
@@ -96,15 +96,15 @@ public final class SmartBotContentView extends FrameLayout implements SmartBotCo
                     if (tLRPC$Document != null) {
                         TLRPC$PhotoSize closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(tLRPC$Document.thumbs, 90);
                         Size size3 = this.size;
-                        size3.width = closestPhotoSizeWithSize != null ? closestPhotoSizeWithSize.f1464w : 100;
-                        size3.height = closestPhotoSizeWithSize != null ? closestPhotoSizeWithSize.f1463h : 100;
+                        size3.width = closestPhotoSizeWithSize != null ? closestPhotoSizeWithSize.f1546w : 100;
+                        size3.height = closestPhotoSizeWithSize != null ? closestPhotoSizeWithSize.f1545h : 100;
                         int size4 = media.document.attributes.size();
                         while (i2 < size4) {
                             TLRPC$DocumentAttribute tLRPC$DocumentAttribute = media.document.attributes.get(i2);
                             if ((tLRPC$DocumentAttribute instanceof TLRPC$TL_documentAttributeImageSize) || (tLRPC$DocumentAttribute instanceof TLRPC$TL_documentAttributeVideo)) {
                                 Size size5 = this.size;
-                                size5.width = tLRPC$DocumentAttribute.f1444w;
-                                size5.height = tLRPC$DocumentAttribute.f1443h;
+                                size5.width = tLRPC$DocumentAttribute.f1526w;
+                                size5.height = tLRPC$DocumentAttribute.f1525h;
                                 break;
                             }
                             i2++;
@@ -117,8 +117,8 @@ public final class SmartBotContentView extends FrameLayout implements SmartBotCo
                                 TLRPC$DocumentAttribute tLRPC$DocumentAttribute2 = media.content.attributes.get(i2);
                                 if ((tLRPC$DocumentAttribute2 instanceof TLRPC$TL_documentAttributeImageSize) || (tLRPC$DocumentAttribute2 instanceof TLRPC$TL_documentAttributeVideo)) {
                                     Size size7 = this.size;
-                                    size7.width = tLRPC$DocumentAttribute2.f1444w;
-                                    size7.height = tLRPC$DocumentAttribute2.f1443h;
+                                    size7.width = tLRPC$DocumentAttribute2.f1526w;
+                                    size7.height = tLRPC$DocumentAttribute2.f1525h;
                                     break;
                                 }
                                 i2++;
@@ -131,8 +131,8 @@ public final class SmartBotContentView extends FrameLayout implements SmartBotCo
                                     TLRPC$DocumentAttribute tLRPC$DocumentAttribute3 = media.thumb.attributes.get(i2);
                                     if ((tLRPC$DocumentAttribute3 instanceof TLRPC$TL_documentAttributeImageSize) || (tLRPC$DocumentAttribute3 instanceof TLRPC$TL_documentAttributeVideo)) {
                                         Size size9 = this.size;
-                                        size9.width = tLRPC$DocumentAttribute3.f1444w;
-                                        size9.height = tLRPC$DocumentAttribute3.f1443h;
+                                        size9.width = tLRPC$DocumentAttribute3.f1526w;
+                                        size9.height = tLRPC$DocumentAttribute3.f1525h;
                                         break;
                                     }
                                     i2++;
@@ -146,8 +146,8 @@ public final class SmartBotContentView extends FrameLayout implements SmartBotCo
                                     TLRPC$PhotoSize closestPhotoSizeWithSize2 = FileLoader.getClosestPhotoSizeWithSize(arrayList, photoSize.intValue());
                                     if (closestPhotoSizeWithSize2 != null) {
                                         Size size10 = this.size;
-                                        size10.width = closestPhotoSizeWithSize2.f1464w;
-                                        size10.height = closestPhotoSizeWithSize2.f1463h;
+                                        size10.width = closestPhotoSizeWithSize2.f1546w;
+                                        size10.height = closestPhotoSizeWithSize2.f1545h;
                                     }
                                 }
                             }
@@ -161,12 +161,12 @@ public final class SmartBotContentView extends FrameLayout implements SmartBotCo
         this.gifContextProvider = new PhotoViewer.EmptyPhotoViewerProvider() { // from class: com.iMe.ui.smartpanel.view.SmartBotContentView$gifContextProvider$1
             /* JADX WARN: Removed duplicated region for block: B:18:0x0080 A[LOOP:0: B:8:0x0030->B:18:0x0080, LOOP_END] */
             /* JADX WARN: Removed duplicated region for block: B:21:0x0055 A[SYNTHETIC] */
-            @Override // org.telegram.p044ui.PhotoViewer.EmptyPhotoViewerProvider, org.telegram.p044ui.PhotoViewer.PhotoViewerProvider
+            @Override // org.telegram.p043ui.PhotoViewer.EmptyPhotoViewerProvider, org.telegram.p043ui.PhotoViewer.PhotoViewerProvider
             /*
                 Code decompiled incorrectly, please refer to instructions dump.
                 To view partially-correct add '--show-bad-code' argument
             */
-            public org.telegram.p044ui.PhotoViewer.PlaceProviderObject getPlaceForPhoto(org.telegram.messenger.MessageObject r5, org.telegram.tgnet.TLRPC$FileLocation r6, int r7, boolean r8) {
+            public org.telegram.p043ui.PhotoViewer.PlaceProviderObject getPlaceForPhoto(org.telegram.messenger.MessageObject r5, org.telegram.tgnet.TLRPC$FileLocation r6, int r7, boolean r8) {
                 /*
                     r4 = this;
                     r5 = 0
@@ -193,10 +193,10 @@ public final class SmartBotContentView extends FrameLayout implements SmartBotCo
                     com.iMe.ui.smartpanel.view.SmartBotContentView r1 = com.iMe.p031ui.smartpanel.view.SmartBotContentView.this
                     org.telegram.ui.Components.RecyclerListView r1 = com.iMe.p031ui.smartpanel.view.SmartBotContentView.access$getListView$p(r1)
                     android.view.View r1 = r1.getChildAt(r0)
-                    boolean r2 = r1 instanceof org.telegram.p044ui.Cells.ContextLinkCell
+                    boolean r2 = r1 instanceof org.telegram.p043ui.Cells.ContextLinkCell
                     if (r2 == 0) goto L52
                     r2 = r1
-                    org.telegram.ui.Cells.ContextLinkCell r2 = (org.telegram.p044ui.Cells.ContextLinkCell) r2
+                    org.telegram.ui.Cells.ContextLinkCell r2 = (org.telegram.p043ui.Cells.ContextLinkCell) r2
                     org.telegram.tgnet.TLRPC$BotInlineResult r3 = r2.getResult()
                     boolean r3 = kotlin.jvm.internal.Intrinsics.areEqual(r3, r7)
                     if (r3 == 0) goto L52
@@ -234,7 +234,7 @@ public final class SmartBotContentView extends FrameLayout implements SmartBotCo
                 throw new UnsupportedOperationException("Method not decompiled: com.iMe.p031ui.smartpanel.view.SmartBotContentView$gifContextProvider$1.getPlaceForPhoto(org.telegram.messenger.MessageObject, org.telegram.tgnet.TLRPC$FileLocation, int, boolean):org.telegram.ui.PhotoViewer$PlaceProviderObject");
             }
 
-            @Override // org.telegram.p044ui.PhotoViewer.EmptyPhotoViewerProvider, org.telegram.p044ui.PhotoViewer.PhotoViewerProvider
+            @Override // org.telegram.p043ui.PhotoViewer.EmptyPhotoViewerProvider, org.telegram.p043ui.PhotoViewer.PhotoViewerProvider
             public void sendButtonPressed(int i, VideoEditedInfo videoEditedInfo, boolean z, int i2, boolean z2, String str, boolean z3) {
                 SmartBotsView.Listener listener2 = listener;
                 if (listener2 != null) {
@@ -244,8 +244,8 @@ public final class SmartBotContentView extends FrameLayout implements SmartBotCo
         };
         smartBotContentAdapter.setHasStableIds(true);
         smartBotContentAdapter.setTextData(content, this.currentBotResponseType);
-        textView.setText(LocaleController.getInternalString(C3295R.string.chat_send_panel_neurobot_not_have_gifs));
-        textView.setTextColor(ContextCompat.getColor(context, C3295R.C3296color.gray_message));
+        textView.setText(LocaleController.getInternalString(C3417R.string.chat_send_panel_neurobot_not_have_gifs));
+        textView.setTextColor(ContextCompat.getColor(context, C3417R.C3418color.gray_message));
         textView.setTextSize(14.0f);
         textView.setVisibility(8);
         recyclerListView.setAdapter(smartBotContentAdapter);
@@ -271,7 +271,7 @@ public final class SmartBotContentView extends FrameLayout implements SmartBotCo
             }
         });
         recyclerListView.setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: com.iMe.ui.smartpanel.view.SmartBotContentView$$ExternalSyntheticLambda0
-            @Override // org.telegram.p044ui.Components.RecyclerListView.OnItemClickListener
+            @Override // org.telegram.p043ui.Components.RecyclerListView.OnItemClickListener
             public final void onItemClick(View view, int i) {
                 SmartBotContentView._init_$lambda$1(SmartBotContentView.this, listener, view, i);
             }

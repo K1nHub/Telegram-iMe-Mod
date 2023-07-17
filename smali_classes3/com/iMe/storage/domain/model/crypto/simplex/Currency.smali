@@ -4,7 +4,7 @@
 
 
 # virtual methods
-.method public abstract getSymbol()I
+.method public abstract getSymbolResId()I
 .end method
 
 .method public abstract getValue()Ljava/lang/String;

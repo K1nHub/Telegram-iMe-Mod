@@ -191,6 +191,17 @@
     iput-object v0, p0, Lorg/telegram/ui/ThemeActivity$ThemeAccentsListAdapter;->currentTheme:Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;
 
     .line 1731
+    iget-object v0, v0, Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;->themeAccents:Ljava/util/ArrayList;
+
+    if-nez v0, :cond_1
+
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    goto :goto_1
+
+    :cond_1
     new-instance v0, Ljava/util/ArrayList;
 
     iget-object v1, p0, Lorg/telegram/ui/ThemeActivity$ThemeAccentsListAdapter;->currentTheme:Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;
@@ -199,6 +210,7 @@
 
     invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
 
+    :goto_1
     iput-object v0, p0, Lorg/telegram/ui/ThemeActivity$ThemeAccentsListAdapter;->themeAccents:Ljava/util/ArrayList;
 
     .line 1732

@@ -11,8 +11,8 @@ import java.util.List;
 import kotlin.collections.CollectionsKt__CollectionsKt;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.databinding.ForkCountryItemListBinding;
-import org.telegram.p044ui.ActionBar.Theme;
-import org.telegram.p044ui.Components.RecyclerListView;
+import org.telegram.p043ui.ActionBar.Theme;
+import org.telegram.p043ui.Components.RecyclerListView;
 /* compiled from: LanguagesAdapter.kt */
 /* renamed from: com.iMe.ui.languages.LanguagesAdapter */
 /* loaded from: classes3.dex */

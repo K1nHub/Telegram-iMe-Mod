@@ -9,11 +9,16 @@ import moxy.viewstate.ViewCommand;
 import moxy.viewstate.strategy.AddToEndSingleStrategy;
 import moxy.viewstate.strategy.OneExecutionStateStrategy;
 /* renamed from: com.iMe.ui.catalog.tabs.CatalogView$$State */
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public class CatalogView$$State extends MvpViewState<CatalogView> implements CatalogView {
     @Override // com.iMe.p031ui.base.mvp.base.BaseView
     public /* synthetic */ void finishScreen() {
         BaseView.CC.$default$finishScreen(this);
+    }
+
+    @Override // com.iMe.p031ui.base.mvp.base.BaseView
+    public /* synthetic */ void removeSelfFromStackImmediately() {
+        BaseView.CC.$default$removeSelfFromStackImmediately(this);
     }
 
     @Override // com.iMe.p031ui.catalog.tabs.CatalogView
@@ -83,7 +88,7 @@ public class CatalogView$$State extends MvpViewState<CatalogView> implements Cat
 
     /* compiled from: CatalogView$$State.java */
     /* renamed from: com.iMe.ui.catalog.tabs.CatalogView$$State$OnTabSelectedCommand */
-    /* loaded from: classes.dex */
+    /* loaded from: classes3.dex */
     public class OnTabSelectedCommand extends ViewCommand<CatalogView> {
         public final int position;
 
@@ -100,7 +105,7 @@ public class CatalogView$$State extends MvpViewState<CatalogView> implements Cat
 
     /* compiled from: CatalogView$$State.java */
     /* renamed from: com.iMe.ui.catalog.tabs.CatalogView$$State$OnSetupNavigationRouterCommand */
-    /* loaded from: classes.dex */
+    /* loaded from: classes3.dex */
     public class OnSetupNavigationRouterCommand extends ViewCommand<CatalogView> {
         OnSetupNavigationRouterCommand(CatalogView$$State catalogView$$State) {
             super("onSetupNavigationRouter", AddToEndSingleStrategy.class);
@@ -114,7 +119,7 @@ public class CatalogView$$State extends MvpViewState<CatalogView> implements Cat
 
     /* compiled from: CatalogView$$State.java */
     /* renamed from: com.iMe.ui.catalog.tabs.CatalogView$$State$ShowToastCommand */
-    /* loaded from: classes.dex */
+    /* loaded from: classes3.dex */
     public class ShowToastCommand extends ViewCommand<CatalogView> {
         public final String text;
 
@@ -131,7 +136,7 @@ public class CatalogView$$State extends MvpViewState<CatalogView> implements Cat
 
     /* compiled from: CatalogView$$State.java */
     /* renamed from: com.iMe.ui.catalog.tabs.CatalogView$$State$ShowLoadingDialogCommand */
-    /* loaded from: classes.dex */
+    /* loaded from: classes3.dex */
     public class ShowLoadingDialogCommand extends ViewCommand<CatalogView> {
         public final Disposable actionToCancel;
         public final boolean cancellable;
@@ -152,7 +157,7 @@ public class CatalogView$$State extends MvpViewState<CatalogView> implements Cat
 
     /* compiled from: CatalogView$$State.java */
     /* renamed from: com.iMe.ui.catalog.tabs.CatalogView$$State$ShowErrorToastCommand */
-    /* loaded from: classes.dex */
+    /* loaded from: classes3.dex */
     public class ShowErrorToastCommand<T> extends ViewCommand<CatalogView> {
         public final ResourceManager resourceManager;
         public final Result.Error<? extends T> result;

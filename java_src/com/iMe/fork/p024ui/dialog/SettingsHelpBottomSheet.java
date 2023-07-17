@@ -19,13 +19,13 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3295R;
+import org.telegram.messenger.C3417R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.browser.Browser;
-import org.telegram.p044ui.ActionBar.AlertDialog;
-import org.telegram.p044ui.ActionBar.BaseFragment;
-import org.telegram.p044ui.ActionBar.BottomSheet;
-import org.telegram.p044ui.Components.LayoutHelper;
+import org.telegram.p043ui.ActionBar.AlertDialog;
+import org.telegram.p043ui.ActionBar.BaseFragment;
+import org.telegram.p043ui.ActionBar.BottomSheet;
+import org.telegram.p043ui.Components.LayoutHelper;
 /* compiled from: SettingsHelpBottomSheet.kt */
 /* renamed from: com.iMe.fork.ui.dialog.SettingsHelpBottomSheet */
 /* loaded from: classes3.dex */
@@ -57,27 +57,27 @@ public final class SettingsHelpBottomSheet extends BottomSheet {
         lazy = LazyKt__LazyJVMKt.lazy(new SettingsHelpBottomSheet$rootView$2(this));
         this.rootView$delegate = lazy;
         Pair[] pairArr = new Pair[8];
-        pairArr[0] = TuplesKt.m85to(LocaleController.getInternalString(C3295R.string.settings_help_alert_support_item_title), new SettingsHelpBottomSheet$items$1(this));
-        pairArr[1] = TuplesKt.m85to(LocaleController.getInternalString(C3295R.string.settings_help_alert_group_item_title), new SettingsHelpBottomSheet$items$2(this));
-        pairArr[2] = TuplesKt.m85to(LocaleController.getInternalString(C3295R.string.settings_help_alert_lime_group_item_title), new SettingsHelpBottomSheet$items$3(this));
-        pairArr[3] = TuplesKt.m85to(LocaleController.getInternalString(C3295R.string.settings_help_alert_channel_item_title), new SettingsHelpBottomSheet$items$4(this));
-        pairArr[4] = TuplesKt.m85to(LocaleController.getInternalString(C3295R.string.settings_help_alert_faq_item_title), new SettingsHelpBottomSheet$items$5(this));
-        pairArr[5] = TuplesKt.m85to(LocaleController.getString("PrivacyPolicy", C3295R.string.PrivacyPolicy), new SettingsHelpBottomSheet$items$6(this));
+        pairArr[0] = TuplesKt.m85to(LocaleController.getInternalString(C3417R.string.settings_help_alert_support_item_title), new SettingsHelpBottomSheet$items$1(this));
+        pairArr[1] = TuplesKt.m85to(LocaleController.getInternalString(C3417R.string.settings_help_alert_group_item_title), new SettingsHelpBottomSheet$items$2(this));
+        pairArr[2] = TuplesKt.m85to(LocaleController.getInternalString(C3417R.string.settings_help_alert_lime_group_item_title), new SettingsHelpBottomSheet$items$3(this));
+        pairArr[3] = TuplesKt.m85to(LocaleController.getInternalString(C3417R.string.settings_help_alert_channel_item_title), new SettingsHelpBottomSheet$items$4(this));
+        pairArr[4] = TuplesKt.m85to(LocaleController.getInternalString(C3417R.string.settings_help_alert_faq_item_title), new SettingsHelpBottomSheet$items$5(this));
+        pairArr[5] = TuplesKt.m85to(LocaleController.getString("PrivacyPolicy", C3417R.string.PrivacyPolicy), new SettingsHelpBottomSheet$items$6(this));
         ScreenType screenType2 = ScreenType.COMMON_SETTINGS;
-        pairArr[6] = screenType == screenType2 ? TuplesKt.m85to(LocaleController.getString("AskAQuestion", C3295R.string.AskAQuestion), new SettingsHelpBottomSheet$items$7(this)) : null;
-        pairArr[7] = screenType == screenType2 ? TuplesKt.m85to(LocaleController.getString("TelegramFeatures", C3295R.string.TelegramFeatures), new SettingsHelpBottomSheet$items$8(this)) : null;
-        listOfNotNull = CollectionsKt__CollectionsKt.listOfNotNull(pairArr);
+        pairArr[6] = screenType == screenType2 ? TuplesKt.m85to(LocaleController.getString("AskAQuestion", C3417R.string.AskAQuestion), new SettingsHelpBottomSheet$items$7(this)) : null;
+        pairArr[7] = screenType == screenType2 ? TuplesKt.m85to(LocaleController.getString("TelegramFeatures", C3417R.string.TelegramFeatures), new SettingsHelpBottomSheet$items$8(this)) : null;
+        listOfNotNull = CollectionsKt__CollectionsKt.listOfNotNull((Object[]) pairArr);
         this.items = listOfNotNull;
         setApplyBottomPadding(false);
         setCustomView(getRootView());
-        setTitle(LocaleController.getString("SettingsHelp", C3295R.string.SettingsHelp), true);
+        setTitle(LocaleController.getString("SettingsHelp", C3417R.string.SettingsHelp), true);
     }
 
     private final ScrollView getRootView() {
         return (ScrollView) this.rootView$delegate.getValue();
     }
 
-    @Override // org.telegram.p044ui.ActionBar.BottomSheet
+    @Override // org.telegram.p043ui.ActionBar.BottomSheet
     protected boolean canDismissWithSwipe() {
         return getRootView().canScrollVertically(-1);
     }
@@ -156,9 +156,9 @@ public final class SettingsHelpBottomSheet extends BottomSheet {
     public final AlertDialog createSocialNetworkAlert(final DrawerSocialNetwork drawerSocialNetwork) {
         final AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
         builder.setTitle(LocaleController.getInternalString(drawerSocialNetwork.getTitleResId()));
-        String string = LocaleController.getString("Open", C3295R.string.Open);
+        String string = LocaleController.getString("Open", C3417R.string.Open);
         Intrinsics.checkNotNullExpressionValue(string, "getString(\"Open\", R.string.Open)");
-        String string2 = LocaleController.getString("CopyLink", C3295R.string.CopyLink);
+        String string2 = LocaleController.getString("CopyLink", C3417R.string.CopyLink);
         Intrinsics.checkNotNullExpressionValue(string2, "getString(\"CopyLink\", R.string.CopyLink)");
         builder.setItems(new CharSequence[]{string, string2}, new DialogInterface.OnClickListener() { // from class: com.iMe.fork.ui.dialog.SettingsHelpBottomSheet$$ExternalSyntheticLambda0
             @Override // android.content.DialogInterface.OnClickListener
@@ -178,7 +178,7 @@ public final class SettingsHelpBottomSheet extends BottomSheet {
         } else if (i != 1) {
         } else {
             AndroidUtilities.addToClipboard(socialNetwork.url());
-            String string = LocaleController.getString("LinkCopied", C3295R.string.LinkCopied);
+            String string = LocaleController.getString("LinkCopied", C3417R.string.LinkCopied);
             Intrinsics.checkNotNullExpressionValue(string, "getString(\"LinkCopied\", R.string.LinkCopied)");
             ContextExtKt.toast(string);
         }

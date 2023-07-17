@@ -2,7 +2,7 @@ package com.iMe.fork.p024ui.view;
 
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Lambda;
-import org.telegram.p044ui.Components.RadioButton;
+import org.telegram.p043ui.Components.RadioButton;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: ImageRadioCell.kt */
 /* renamed from: com.iMe.fork.ui.view.ImageRadioCell$radioButton$2 */

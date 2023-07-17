@@ -1,6 +1,7 @@
 package com.iMe.mapper.staking;
 
 import com.chad.library.adapter.base.entity.node.BaseNode;
+import com.iMe.mapper.wallet.TokenUiMappingKt;
 import com.iMe.model.wallet.transaction.StakingOperationItem;
 import com.iMe.storage.data.utils.extentions.NumberExtKt;
 import com.iMe.storage.domain.model.staking.StakingOperation;
@@ -8,8 +9,6 @@ import com.iMe.storage.domain.model.staking.StakingOperationCost;
 import com.iMe.storage.domain.model.staking.StakingOperationStatus;
 import com.iMe.storage.domain.model.staking.StakingOperationType;
 import com.iMe.storage.domain.model.staking.StakingValues;
-import com.iMe.storage.domain.model.wallet.token.TokenInfo;
-import com.iMe.storage.domain.utils.extentions.model.TokenInfoExtKt;
 import java.math.BigDecimal;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: StackingOperationUiMapping.kt */
@@ -28,6 +27,6 @@ public final class StackingOperationUiMappingKt {
         String transaction = stakingOperation.getTransaction();
         StakingOperationCost fee = stakingOperation.getFee();
         Boolean safe = stakingOperation.getSafe();
-        return new StakingOperationItem(id, orZero, tokenTicker, type, status, createdAt, transaction, fee, safe != null ? safe.booleanValue() : false, z, TokenInfoExtKt.getLogo(TokenInfo.Companion.map(stakingOperation.getToken()), stakingOperation.getNetworkType()));
+        return new StakingOperationItem(id, orZero, tokenTicker, type, status, createdAt, transaction, fee, safe != null ? safe.booleanValue() : false, z, TokenUiMappingKt.mapToUI(stakingOperation.getToken()));
     }
 }

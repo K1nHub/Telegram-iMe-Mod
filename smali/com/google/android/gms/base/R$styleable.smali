@@ -54,15 +54,15 @@
     :array_0
     .array-data 4
         0x7f0400d2
-        0x7f040206
         0x7f040207
+        0x7f040208
     .end array-data
 
     :array_1
     .array-data 4
         0x7f04008e
         0x7f040105
-        0x7f040380
+        0x7f040381
     .end array-data
 .end method
 

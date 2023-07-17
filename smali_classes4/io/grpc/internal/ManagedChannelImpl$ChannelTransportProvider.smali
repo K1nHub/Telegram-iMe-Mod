@@ -158,7 +158,7 @@
 
     move-result v0
 
-    const-string v1, "retry should be enabled"
+    const-string/jumbo v1, "retry should be enabled"
 
     invoke-static {v0, v1}, Lcom/google/common/base/Preconditions;->checkState(ZLjava/lang/Object;)V
 

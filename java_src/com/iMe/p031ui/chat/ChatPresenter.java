@@ -22,8 +22,8 @@ import com.iMe.storage.domain.utils.p030rx.RxEventBus;
 import com.iMe.storage.domain.utils.p030rx.SchedulersProvider;
 import com.iMe.storage.domain.utils.p030rx.event.DomainRxEvents;
 import com.iMe.storage.domain.utils.system.ResourceManager;
-import com.iMe.utils.extentions.p033rx.RxExtKt;
-import com.iMe.utils.extentions.p033rx.RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
+import com.iMe.utils.extentions.p032rx.RxExtKt;
+import com.iMe.utils.extentions.p032rx.RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
 import com.iMe.utils.helper.reaction.ReactionHelper;
 import io.reactivex.Observable;
 import io.reactivex.Single;
@@ -107,8 +107,8 @@ public final class ChatPresenter extends BasePresenter<ChatView> {
         MultiReplyInteractor multiReplyInteractor = this.multiReplyInteractor;
         Single<Result<CharSequence>> observeOn = multiReplyInteractor.buildMultiReplyMessage(multiReplyInteractor.prepareSelectedMessages(selectedMessages), chat).observeOn(this.schedulersProvider.mo698ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "multiReplyInteractor\n   …(schedulersProvider.ui())");
-        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2029xb0a521b7(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2030xb0a521b8((BaseView) getViewState())));
-        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
+        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2033xb0a521b7(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2034xb0a521b8((BaseView) getViewState())));
+        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…Error.invoke()\n        })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
 
@@ -117,8 +117,8 @@ public final class ChatPresenter extends BasePresenter<ChatView> {
         Intrinsics.checkNotNullParameter(file, "file");
         Observable<Result<String>> observeOn = this.googleServicesInteractor.getVoiceText(file, DialogTranslationController.Companion.getCurrentLocale()).timeout(1L, TimeUnit.MINUTES).observeOn(this.schedulersProvider.mo698ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "googleServicesInteractor…(schedulersProvider.ui())");
-        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2036x79efd582(this, messageObject)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2037x79efd583((BaseView) getViewState())));
-        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
+        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2040x79efd582(this, messageObject)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2041x79efd583((BaseView) getViewState())));
+        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…Error.invoke()\n        })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
 
@@ -134,8 +134,8 @@ public final class ChatPresenter extends BasePresenter<ChatView> {
         this.uuidReaction = uuid;
         String formatUuid = ReactionHelper.INSTANCE.formatUuid(uuid);
         if (ReactionHelper.checkBlacklistReaction(selectedAccountIndex)) {
-            Disposable subscribe = this.telegramApi.unblockPeer(AppConfiguration$Reaction.getBotId()).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2025xf214bff7(this, data, str, formatUuid, messageObject)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2026xf214bff8((BaseView) getViewState())));
-            Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
+            Disposable subscribe = this.telegramApi.unblockPeer(AppConfiguration$Reaction.getBotId()).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2029xf214bff7(this, data, str, formatUuid, messageObject)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2030xf214bff8((BaseView) getViewState())));
+            Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…Error.invoke()\n        })");
             BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
             return;
         }
@@ -146,13 +146,13 @@ public final class ChatPresenter extends BasePresenter<ChatView> {
     }
 
     public final void loadTextTranslateLanguages() {
-        String supportedLanguage = this.telegramGateway.getCurrentLocaleInformation().getSupportedLanguage();
+        String currentLanguage = this.telegramGateway.getCurrentLanguage();
         Observable<Result<List<TranslationLanguage>>> observeOn = this.translationInteractor.languages().observeOn(this.schedulersProvider.mo698ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "translationInteractor\n  …(schedulersProvider.ui())");
         T viewState = getViewState();
         Intrinsics.checkNotNullExpressionValue(viewState, "viewState");
-        Disposable subscribe = RxExtKt.withLoadingDialog$default((Observable) observeOn, (BaseView) viewState, false, 2, (Object) null).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2033x7ed9d4d7(this, supportedLanguage)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2034x7ed9d4d8((BaseView) getViewState())));
-        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
+        Disposable subscribe = RxExtKt.withLoadingDialog$default((Observable) observeOn, (BaseView) viewState, false, 2, (Object) null).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2037x7ed9d4d7(this, currentLanguage)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2038x7ed9d4d8((BaseView) getViewState())));
+        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…Error.invoke()\n        })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
 
@@ -167,7 +167,7 @@ public final class ChatPresenter extends BasePresenter<ChatView> {
             TelegramConstants telegramConstants = TelegramConstants.INSTANCE;
             TLRPC$Chat tLRPC$Chat = this.chat;
             Intrinsics.checkNotNull(tLRPC$Chat);
-            checkIsDonationEnabled(telegramConstants.prepareChatIdForBotAPI(tLRPC$Chat.f1433id));
+            checkIsDonationEnabled(telegramConstants.prepareChatIdForBotAPI(tLRPC$Chat.f1515id));
             listenEvents();
         }
     }
@@ -187,8 +187,8 @@ public final class ChatPresenter extends BasePresenter<ChatView> {
     public final void checkIsDonationEnabled(long j) {
         Observable<Result<Boolean>> observeOn = this.donationsInteractor.isDonationsEnabled(j).observeOn(this.schedulersProvider.mo698ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "donationsInteractor\n    …(schedulersProvider.ui())");
-        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2027xfa8e68f4(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2028xfa8e68f5((BaseView) getViewState())));
-        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
+        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2031xfa8e68f4(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2032xfa8e68f5((BaseView) getViewState())));
+        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…Error.invoke()\n        })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
 
@@ -196,8 +196,8 @@ public final class ChatPresenter extends BasePresenter<ChatView> {
         RxEventBus rxEventBus = this.rxEventBus;
         Observable observeOn = rxEventBus.getPublisher().ofType(DomainRxEvents.DonationAddressUpdated.class).observeOn(rxEventBus.getSchedulersProvider().mo698ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "publisher\n              …(schedulersProvider.ui())");
-        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2031xb2bce297(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2032xb2bce298(null)));
-        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
+        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2035xb2bce297(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2036xb2bce298(null)));
+        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…Error.invoke()\n        })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
 

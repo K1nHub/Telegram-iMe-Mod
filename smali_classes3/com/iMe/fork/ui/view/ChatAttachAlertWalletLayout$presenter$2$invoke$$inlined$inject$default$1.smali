@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/iMe/fork/ui/view/ChatAttachAlertWalletLayout$presenter$2;->invoke()Lcom/iMe/ui/wallet/home/old/WalletAttachAlertPresenter;
+    value = Lcom/iMe/fork/ui/view/ChatAttachAlertWalletLayout$presenter$2;->invoke()Lcom/iMe/ui/wallet/home/attach/WalletAttachAlertPresenter;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,7 +20,7 @@
     value = {
         "Lkotlin/jvm/internal/Lambda;",
         "Lkotlin/jvm/functions/Function0<",
-        "Lcom/iMe/ui/wallet/home/old/WalletAttachAlertPresenter;",
+        "Lcom/iMe/ui/wallet/home/attach/WalletAttachAlertPresenter;",
         ">;"
     }
 .end annotation
@@ -62,12 +62,12 @@
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
-            "Lcom/iMe/ui/wallet/home/old/WalletAttachAlertPresenter;"
+            "Lcom/iMe/ui/wallet/home/attach/WalletAttachAlertPresenter;"
         }
     .end annotation
 
     .line 61
-    const-class v0, Lcom/iMe/ui/wallet/home/old/WalletAttachAlertPresenter;
+    const-class v0, Lcom/iMe/ui/wallet/home/attach/WalletAttachAlertPresenter;
 
     iget-object v1, p0, Lcom/iMe/fork/ui/view/ChatAttachAlertWalletLayout$presenter$2$invoke$$inlined$inject$default$1;->$this_inject:Lorg/koin/core/component/KoinComponent;
 

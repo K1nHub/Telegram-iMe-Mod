@@ -121,7 +121,7 @@ public class CompositeReadableBuffer extends AbstractReadableBuffer {
     public static abstract class ReadOperation {
 
         /* renamed from: ex */
-        IOException f433ex;
+        IOException f515ex;
         int value;
 
         abstract int readInternal(ReadableBuffer readableBuffer, int i) throws IOException;
@@ -133,12 +133,12 @@ public class CompositeReadableBuffer extends AbstractReadableBuffer {
             try {
                 this.value = readInternal(readableBuffer, i);
             } catch (IOException e) {
-                this.f433ex = e;
+                this.f515ex = e;
             }
         }
 
         final boolean isError() {
-            return this.f433ex != null;
+            return this.f515ex != null;
         }
     }
 }

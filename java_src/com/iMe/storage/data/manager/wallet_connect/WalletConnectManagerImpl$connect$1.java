@@ -1,6 +1,7 @@
 package com.iMe.storage.data.manager.wallet_connect;
 
 import com.google.gson.GsonBuilder;
+import com.iMe.storage.data.utils.extentions.NumberExtKt;
 import com.iMe.storage.domain.storage.CryptoPreferenceHelper;
 import com.trustwallet.walletconnect.WCClient;
 import com.trustwallet.walletconnect.WCSessionStoreItem;
@@ -44,7 +45,7 @@ final class WalletConnectManagerImpl$connect$1 extends Lambda implements Functio
         WCSession from = companion.from(this.$uri);
         if (from != null) {
             cryptoPreferenceHelper = this.this$0.cryptoPreferenceHelper;
-            WCSessionStoreItem wCSessionStoreItem = new WCSessionStoreItem(from, (int) cryptoPreferenceHelper.getNetworkType().getChainId(), "", "", wCPeerMeta, false, null, 96, null);
+            WCSessionStoreItem wCSessionStoreItem = new WCSessionStoreItem(from, (int) NumberExtKt.orZero(cryptoPreferenceHelper.getNetwork().getChainId()), "", "", wCPeerMeta, false, null, 96, null);
             WalletConnectManagerImpl walletConnectManagerImpl2 = this.this$0;
             String str = this.$uri;
             gsonBuilder = walletConnectManagerImpl2.getGsonBuilder();

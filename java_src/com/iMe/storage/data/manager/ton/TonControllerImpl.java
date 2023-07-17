@@ -221,7 +221,7 @@ public final class TonControllerImpl implements TonController {
             Intrinsics.checkNotNullExpressionValue(just, "just(this)");
             return just;
         }
-        return this$0.sendRequest(new TonApi.QuerySend(((TonApi.QueryInfo) signResult).f421id)).subscribeOn(this$0.schedulersProvider.mo699io()).map(new Function() { // from class: com.iMe.storage.data.manager.ton.TonControllerImpl$$ExternalSyntheticLambda3
+        return this$0.sendRequest(new TonApi.QuerySend(((TonApi.QueryInfo) signResult).f503id)).subscribeOn(this$0.schedulersProvider.mo699io()).map(new Function() { // from class: com.iMe.storage.data.manager.ton.TonControllerImpl$$ExternalSyntheticLambda3
             @Override // io.reactivex.functions.Function
             public final Object apply(Object obj) {
                 Result sendTransaction$lambda$5$lambda$4;
@@ -236,7 +236,7 @@ public final class TonControllerImpl implements TonController {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         Intrinsics.checkNotNullParameter(signResult, "$signResult");
         Intrinsics.checkNotNullParameter(sendResult, "sendResult");
-        if (sendResult instanceof TonApi.C2463Ok) {
+        if (sendResult instanceof TonApi.C2584Ok) {
             return Result.Companion.success(Boolean.TRUE);
         }
         return this$0.getTonApiErrorResult(signResult);

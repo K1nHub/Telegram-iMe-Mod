@@ -9,13 +9,12 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/iMe/ui/wallet/settings/WalletSettingsFragment$Companion;,
-        Lcom/iMe/ui/wallet/settings/WalletSettingsFragment$WhenMappings;
+        Lcom/iMe/ui/wallet/settings/WalletSettingsFragment$Companion;
     }
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nWalletSettingsFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WalletSettingsFragment.kt\ncom/iMe/ui/wallet/settings/WalletSettingsFragment\n+ 2 Delegates.kt\nmoxy/ktx/DelegatesKt\n+ 3 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n+ 4 RxEventBus.kt\ncom/iMe/storage/domain/utils/rx/RxEventBus\n+ 5 RxExt.kt\ncom/iMe/utils/extentions/rx/RxExtKt\n*L\n1#1,117:1\n13#2,4:118\n56#3,6:122\n16#4,3:128\n39#5,8:131\n*S KotlinDebug\n*F\n+ 1 WalletSettingsFragment.kt\ncom/iMe/ui/wallet/settings/WalletSettingsFragment\n*L\n27#1:118,4\n28#1:122,6\n87#1:128,3\n88#1:131,8\n*E\n"
+    value = "SMAP\nWalletSettingsFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WalletSettingsFragment.kt\ncom/iMe/ui/wallet/settings/WalletSettingsFragment\n+ 2 Delegates.kt\nmoxy/ktx/DelegatesKt\n+ 3 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n+ 4 View.kt\nandroidx/core/view/ViewKt\n*L\n1#1,100:1\n13#2,4:101\n56#3,6:105\n162#4,8:111\n*S KotlinDebug\n*F\n+ 1 WalletSettingsFragment.kt\ncom/iMe/ui/wallet/settings/WalletSettingsFragment\n*L\n25#1:101,4\n26#1:105,6\n36#1:111,8\n*E\n"
 .end annotation
 
 
@@ -37,24 +36,22 @@
 # instance fields
 .field private final binding$delegate:Lcom/iMe/utils/extentions/delegate/ResettableLazy;
 
-.field private final presenter$delegate:Lmoxy/ktx/MoxyKtxDelegate;
-
 .field private final settingsRecycleAdapter$delegate:Lkotlin/Lazy;
 
 
 # direct methods
-.method public static synthetic $r8$lambda$RTsM55PWJIzBlezvJEAhibqblus(Lcom/iMe/ui/wallet/settings/WalletSettingsFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
+.method public static synthetic $r8$lambda$0zirOMUSjqe5__50-He1zgVsfuA(Lcom/iMe/ui/wallet/settings/WalletSettingsFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
     .locals 0
 
-    invoke-static {p0, p1, p2, p3}, Lcom/iMe/ui/wallet/settings/WalletSettingsFragment;->setupListeners$lambda$4(Lcom/iMe/ui/wallet/settings/WalletSettingsFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
+    invoke-static {p0, p1, p2, p3}, Lcom/iMe/ui/wallet/settings/WalletSettingsFragment;->setupListeners$lambda$2(Lcom/iMe/ui/wallet/settings/WalletSettingsFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$g3_X-susmaQGssGHk35p3VpZtLA(Lcom/iMe/ui/wallet/settings/WalletSettingsFragment;)V
+.method public static synthetic $r8$lambda$8-s832S04d9nV_75UwQ2gEOGcK4(Lcom/iMe/ui/wallet/settings/WalletSettingsFragment;)V
     .locals 0
 
-    invoke-static {p0}, Lcom/iMe/ui/wallet/settings/WalletSettingsFragment;->getThemeDescriptions$lambda$1(Lcom/iMe/ui/wallet/settings/WalletSettingsFragment;)V
+    invoke-static {p0}, Lcom/iMe/ui/wallet/settings/WalletSettingsFragment;->getThemeDescriptions$lambda$0(Lcom/iMe/ui/wallet/settings/WalletSettingsFragment;)V
 
     return-void
 .end method
@@ -68,7 +65,7 @@
 
     new-array v1, v1, [Lkotlin/reflect/KProperty;
 
-    .line 27
+    .line 25
     new-instance v2, Lkotlin/jvm/internal/PropertyReference1Impl;
 
     const-string v3, "presenter"
@@ -85,7 +82,7 @@
 
     aput-object v2, v1, v5
 
-    .line 31
+    .line 29
     new-instance v2, Lkotlin/jvm/internal/PropertyReference1Impl;
 
     const-string v3, "binding"
@@ -118,10 +115,10 @@
 .method public constructor <init>()V
     .locals 5
 
-    .line 24
+    .line 22
     invoke-direct {p0}, Lcom/iMe/ui/wallet/common/WalletTabFragment;-><init>()V
 
-    .line 27
+    .line 25
     new-instance v0, Lcom/iMe/ui/wallet/settings/WalletSettingsFragment$presenter$2;
 
     invoke-direct {v0, p0}, Lcom/iMe/ui/wallet/settings/WalletSettingsFragment$presenter$2;-><init>(Lcom/iMe/ui/wallet/settings/WalletSettingsFragment;)V
@@ -163,9 +160,6 @@
 
     invoke-direct {v1, v2, v3, v0}, Lmoxy/ktx/MoxyKtxDelegate;-><init>(Lmoxy/MvpDelegate;Ljava/lang/String;Lkotlin/jvm/functions/Function0;)V
 
-    .line 27
-    iput-object v1, p0, Lcom/iMe/ui/wallet/settings/WalletSettingsFragment;->presenter$delegate:Lmoxy/ktx/MoxyKtxDelegate;
-
     .line 58
     sget-object v0, Lorg/koin/mp/KoinPlatformTools;->INSTANCE:Lorg/koin/mp/KoinPlatformTools;
 
@@ -184,10 +178,10 @@
 
     move-result-object v0
 
-    .line 28
+    .line 26
     iput-object v0, p0, Lcom/iMe/ui/wallet/settings/WalletSettingsFragment;->settingsRecycleAdapter$delegate:Lkotlin/Lazy;
 
-    .line 31
+    .line 29
     new-instance v0, Lcom/iMe/ui/wallet/settings/WalletSettingsFragment$binding$2;
 
     invoke-direct {v0, p0}, Lcom/iMe/ui/wallet/settings/WalletSettingsFragment$binding$2;-><init>(Lcom/iMe/ui/wallet/settings/WalletSettingsFragment;)V
@@ -203,21 +197,10 @@
     return-void
 .end method
 
-.method public static final synthetic access$getPresenter(Lcom/iMe/ui/wallet/settings/WalletSettingsFragment;)Lcom/iMe/ui/wallet/settings/WalletSettingsPresenter;
-    .locals 0
-
-    .line 24
-    invoke-direct {p0}, Lcom/iMe/ui/wallet/settings/WalletSettingsFragment;->getPresenter()Lcom/iMe/ui/wallet/settings/WalletSettingsPresenter;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
 .method private final getBinding()Lorg/telegram/messenger/databinding/ForkFragmentWalletSettingsBinding;
     .locals 3
 
-    .line 31
+    .line 29
     iget-object v0, p0, Lcom/iMe/ui/wallet/settings/WalletSettingsFragment;->binding$delegate:Lcom/iMe/utils/extentions/delegate/ResettableLazy;
 
     sget-object v1, Lcom/iMe/ui/wallet/settings/WalletSettingsFragment;->$$delegatedProperties:[Lkotlin/reflect/KProperty;
@@ -235,31 +218,10 @@
     return-object v0
 .end method
 
-.method private final getPresenter()Lcom/iMe/ui/wallet/settings/WalletSettingsPresenter;
-    .locals 3
-
-    .line 27
-    iget-object v0, p0, Lcom/iMe/ui/wallet/settings/WalletSettingsFragment;->presenter$delegate:Lmoxy/ktx/MoxyKtxDelegate;
-
-    sget-object v1, Lcom/iMe/ui/wallet/settings/WalletSettingsFragment;->$$delegatedProperties:[Lkotlin/reflect/KProperty;
-
-    const/4 v2, 0x0
-
-    aget-object v1, v1, v2
-
-    invoke-virtual {v0, p0, v1}, Lmoxy/ktx/MoxyKtxDelegate;->getValue(Ljava/lang/Object;Lkotlin/reflect/KProperty;)Lmoxy/MvpPresenter;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/iMe/ui/wallet/settings/WalletSettingsPresenter;
-
-    return-object v0
-.end method
-
 .method private final getSettingsRecycleAdapter()Lcom/iMe/ui/wallet/settings/adapter/WalletSettingsRecycleAdapter;
     .locals 1
 
-    .line 28
+    .line 26
     iget-object v0, p0, Lcom/iMe/ui/wallet/settings/WalletSettingsFragment;->settingsRecycleAdapter$delegate:Lkotlin/Lazy;
 
     invoke-interface {v0}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
@@ -271,14 +233,14 @@
     return-object v0
 .end method
 
-.method private static final getThemeDescriptions$lambda$1(Lcom/iMe/ui/wallet/settings/WalletSettingsFragment;)V
+.method private static final getThemeDescriptions$lambda$0(Lcom/iMe/ui/wallet/settings/WalletSettingsFragment;)V
     .locals 1
 
     const-string/jumbo v0, "this$0"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 56
+    .line 52
     invoke-direct {p0}, Lcom/iMe/ui/wallet/settings/WalletSettingsFragment;->getSettingsRecycleAdapter()Lcom/iMe/ui/wallet/settings/adapter/WalletSettingsRecycleAdapter;
 
     move-result-object p0
@@ -291,7 +253,7 @@
 .method private final openFAQ()V
     .locals 2
 
-    .line 107
+    .line 90
     new-instance v0, Lcom/iMe/fork/ui/dialog/SettingsHelpBottomSheet;
 
     sget-object v1, Lcom/iMe/fork/ui/dialog/SettingsHelpBottomSheet$ScreenType;->WALLET_SETTINGS:Lcom/iMe/fork/ui/dialog/SettingsHelpBottomSheet$ScreenType;
@@ -306,7 +268,7 @@
 .method private final openInterfaceSettings()V
     .locals 1
 
-    .line 103
+    .line 86
     sget-object v0, Lcom/iMe/ui/wallet/settings/appearance/WalletAppearanceSettingsFragment;->Companion:Lcom/iMe/ui/wallet/settings/appearance/WalletAppearanceSettingsFragment$Companion;
 
     invoke-virtual {v0}, Lcom/iMe/ui/wallet/settings/appearance/WalletAppearanceSettingsFragment$Companion;->newInstance()Lcom/iMe/ui/wallet/settings/appearance/WalletAppearanceSettingsFragment;
@@ -321,7 +283,7 @@
 .method private final openWalletAccountSettings()V
     .locals 1
 
-    .line 99
+    .line 82
     sget-object v0, Lcom/iMe/ui/wallet/crypto/settings/WalletAccountSettingsFragment;->Companion:Lcom/iMe/ui/wallet/crypto/settings/WalletAccountSettingsFragment$Companion;
 
     invoke-virtual {v0}, Lcom/iMe/ui/wallet/crypto/settings/WalletAccountSettingsFragment$Companion;->newInstance()Lcom/iMe/ui/wallet/crypto/settings/WalletAccountSettingsFragment;
@@ -336,19 +298,18 @@
 .method private final setupColors()V
     .locals 2
 
-    .line 71
+    .line 67
     invoke-direct {p0}, Lcom/iMe/ui/wallet/settings/WalletSettingsFragment;->getBinding()Lorg/telegram/messenger/databinding/ForkFragmentWalletSettingsBinding;
 
     move-result-object v0
 
-    .line 72
     invoke-virtual {v0}, Lorg/telegram/messenger/databinding/ForkFragmentWalletSettingsBinding;->getRoot()Landroid/widget/FrameLayout;
 
     move-result-object v0
 
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundGray:I
 
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
+    invoke-virtual {p0, v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(I)I
 
     move-result v1
 
@@ -358,9 +319,9 @@
 .end method
 
 .method private final setupListeners()V
-    .locals 4
+    .locals 2
 
-    .line 77
+    .line 71
     invoke-direct {p0}, Lcom/iMe/ui/wallet/settings/WalletSettingsFragment;->getSettingsRecycleAdapter()Lcom/iMe/ui/wallet/settings/adapter/WalletSettingsRecycleAdapter;
 
     move-result-object v0
@@ -371,77 +332,10 @@
 
     invoke-virtual {v0, v1}, Lcom/chad/library/adapter/base/BaseQuickAdapter;->setOnItemClickListener(Lcom/chad/library/adapter/base/listener/OnItemClickListener;)V
 
-    .line 86
-    invoke-virtual {p0}, Lcom/iMe/ui/base/WalletAuthFragment;->getRxEventBus()Lcom/iMe/storage/domain/utils/rx/RxEventBus;
-
-    move-result-object v0
-
-    .line 16
-    invoke-virtual {v0}, Lcom/iMe/storage/domain/utils/rx/RxEventBus;->getPublisher()Lio/reactivex/subjects/PublishSubject;
-
-    move-result-object v1
-
-    const-class v2, Lcom/iMe/storage/domain/utils/rx/event/DomainRxEvents$CryptoEvent;
-
-    .line 17
-    invoke-virtual {v1, v2}, Lio/reactivex/Observable;->ofType(Ljava/lang/Class;)Lio/reactivex/Observable;
-
-    move-result-object v1
-
-    .line 18
-    invoke-virtual {v0}, Lcom/iMe/storage/domain/utils/rx/RxEventBus;->getSchedulersProvider()Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;->ui()Lio/reactivex/Scheduler;
-
-    move-result-object v0
-
-    invoke-virtual {v1, v0}, Lio/reactivex/Observable;->observeOn(Lio/reactivex/Scheduler;)Lio/reactivex/Observable;
-
-    move-result-object v0
-
-    const-string v1, "publisher\n              \u2026(schedulersProvider.ui())"
-
-    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    .line 44
-    new-instance v1, Lcom/iMe/ui/wallet/settings/WalletSettingsFragment$setupListeners$$inlined$subscribeWithErrorHandle$default$1;
-
-    invoke-direct {v1, p0}, Lcom/iMe/ui/wallet/settings/WalletSettingsFragment$setupListeners$$inlined$subscribeWithErrorHandle$default$1;-><init>(Lcom/iMe/ui/wallet/settings/WalletSettingsFragment;)V
-
-    new-instance v2, Lcom/iMe/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
-
-    invoke-direct {v2, v1}, Lcom/iMe/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;-><init>(Lkotlin/jvm/functions/Function1;)V
-
-    new-instance v1, Lcom/iMe/ui/wallet/settings/WalletSettingsFragment$setupListeners$$inlined$subscribeWithErrorHandle$default$2;
-
-    const/4 v3, 0x0
-
-    invoke-direct {v1, v3}, Lcom/iMe/ui/wallet/settings/WalletSettingsFragment$setupListeners$$inlined$subscribeWithErrorHandle$default$2;-><init>(Lcom/iMe/ui/base/mvp/base/BaseView;)V
-
-    .line 46
-    new-instance v3, Lcom/iMe/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
-
-    invoke-direct {v3, v1}, Lcom/iMe/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;-><init>(Lkotlin/jvm/functions/Function1;)V
-
-    .line 44
-    invoke-virtual {v0, v2, v3}, Lio/reactivex/Observable;->subscribe(Lio/reactivex/functions/Consumer;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
-
-    move-result-object v0
-
-    const-string/jumbo v1, "viewState: BaseView? = n\u2026  onError.invoke()\n    })"
-
-    .line 46
-    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    .line 95
-    invoke-virtual {p0, v0}, Lcom/iMe/ui/base/mvp/MvpFragment;->autoDispose(Lio/reactivex/disposables/Disposable;)V
-
     return-void
 .end method
 
-.method private static final setupListeners$lambda$4(Lcom/iMe/ui/wallet/settings/WalletSettingsFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
+.method private static final setupListeners$lambda$2(Lcom/iMe/ui/wallet/settings/WalletSettingsFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
     .locals 1
 
     const-string/jumbo v0, "this$0"
@@ -456,7 +350,7 @@
 
     invoke-static {p2, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 78
+    .line 72
     invoke-direct {p0}, Lcom/iMe/ui/wallet/settings/WalletSettingsFragment;->getSettingsRecycleAdapter()Lcom/iMe/ui/wallet/settings/adapter/WalletSettingsRecycleAdapter;
 
     move-result-object p1
@@ -465,51 +359,48 @@
 
     move-result-object p1
 
-    check-cast p1, Lcom/iMe/model/wallet/settings/SettingUiItem;
+    check-cast p1, Lcom/iMe/model/wallet/crypto/settings/WalletSettingsItem;
 
-    .line 79
-    invoke-virtual {p1}, Lcom/iMe/model/wallet/settings/SettingUiItem;->getItem()Lcom/iMe/model/wallet/settings/SettingMenuItem;
+    .line 73
+    sget-object p2, Lcom/iMe/model/wallet/crypto/settings/WalletSettingsItem$Main$Help;->INSTANCE:Lcom/iMe/model/wallet/crypto/settings/WalletSettingsItem$Main$Help;
 
-    move-result-object p1
+    invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    sget-object p2, Lcom/iMe/ui/wallet/settings/WalletSettingsFragment$WhenMappings;->$EnumSwitchMapping$0:[I
+    move-result p2
 
-    invoke-virtual {p1}, Ljava/lang/Enum;->ordinal()I
+    if-eqz p2, :cond_0
 
-    move-result p1
-
-    aget p1, p2, p1
-
-    const/4 p2, 0x1
-
-    if-eq p1, p2, :cond_2
-
-    const/4 p2, 0x2
-
-    if-eq p1, p2, :cond_1
-
-    const/4 p2, 0x3
-
-    if-eq p1, p2, :cond_0
+    invoke-direct {p0}, Lcom/iMe/ui/wallet/settings/WalletSettingsFragment;->openFAQ()V
 
     goto :goto_0
 
-    .line 82
+    .line 74
     :cond_0
-    invoke-direct {p0}, Lcom/iMe/ui/wallet/settings/WalletSettingsFragment;->openInterfaceSettings()V
+    sget-object p2, Lcom/iMe/model/wallet/crypto/settings/WalletSettingsItem$Main$CryptoAccount;->INSTANCE:Lcom/iMe/model/wallet/crypto/settings/WalletSettingsItem$Main$CryptoAccount;
 
-    goto :goto_0
+    invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    .line 81
-    :cond_1
+    move-result p2
+
+    if-eqz p2, :cond_1
+
     invoke-direct {p0}, Lcom/iMe/ui/wallet/settings/WalletSettingsFragment;->openWalletAccountSettings()V
 
     goto :goto_0
 
-    .line 80
-    :cond_2
-    invoke-direct {p0}, Lcom/iMe/ui/wallet/settings/WalletSettingsFragment;->openFAQ()V
+    .line 75
+    :cond_1
+    sget-object p2, Lcom/iMe/model/wallet/crypto/settings/WalletSettingsItem$Main$Interface;->INSTANCE:Lcom/iMe/model/wallet/crypto/settings/WalletSettingsItem$Main$Interface;
 
+    invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_2
+
+    invoke-direct {p0}, Lcom/iMe/ui/wallet/settings/WalletSettingsFragment;->openInterfaceSettings()V
+
+    :cond_2
     :goto_0
     return-void
 .end method
@@ -517,21 +408,21 @@
 .method private final setupRecycleView()V
     .locals 3
 
-    .line 64
+    .line 60
     invoke-direct {p0}, Lcom/iMe/ui/wallet/settings/WalletSettingsFragment;->getBinding()Lorg/telegram/messenger/databinding/ForkFragmentWalletSettingsBinding;
 
     move-result-object v0
 
     iget-object v0, v0, Lorg/telegram/messenger/databinding/ForkFragmentWalletSettingsBinding;->recycleSettings:Landroidx/recyclerview/widget/RecyclerView;
 
-    .line 65
+    .line 61
     invoke-direct {p0}, Lcom/iMe/ui/wallet/settings/WalletSettingsFragment;->getSettingsRecycleAdapter()Lcom/iMe/ui/wallet/settings/adapter/WalletSettingsRecycleAdapter;
 
     move-result-object v1
 
     invoke-virtual {v0, v1}, Landroidx/recyclerview/widget/RecyclerView;->setAdapter(Landroidx/recyclerview/widget/RecyclerView$Adapter;)V
 
-    .line 66
+    .line 62
     new-instance v1, Landroidx/recyclerview/widget/LinearLayoutManager;
 
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -562,7 +453,7 @@
 
     new-array v0, v0, [Lorg/telegram/ui/ActionBar/ThemeDescription;
 
-    .line 56
+    .line 52
     new-instance v9, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct {p0}, Lcom/iMe/ui/wallet/settings/WalletSettingsFragment;->getBinding()Lorg/telegram/messenger/databinding/ForkFragmentWalletSettingsBinding;
@@ -575,12 +466,12 @@
 
     sget v3, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_BACKGROUND:I
 
-    .line 55
+    .line 51
     new-instance v7, Lcom/iMe/ui/wallet/settings/WalletSettingsFragment$$ExternalSyntheticLambda1;
 
     invoke-direct {v7, p0}, Lcom/iMe/ui/wallet/settings/WalletSettingsFragment$$ExternalSyntheticLambda1;-><init>(Lcom/iMe/ui/wallet/settings/WalletSettingsFragment;)V
 
-    .line 56
+    .line 52
     sget v8, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundGray:I
 
     const/4 v4, 0x0
@@ -597,7 +488,7 @@
 
     aput-object v9, v0, v1
 
-    .line 55
+    .line 51
     invoke-static {v0}, Lkotlin/collections/CollectionsKt;->arrayListOf([Ljava/lang/Object;)Ljava/util/ArrayList;
 
     move-result-object v0
@@ -608,27 +499,34 @@
 .method public handleBottomPadding(I)V
     .locals 4
 
-    .line 38
+    .line 36
     invoke-direct {p0}, Lcom/iMe/ui/wallet/settings/WalletSettingsFragment;->getBinding()Lorg/telegram/messenger/databinding/ForkFragmentWalletSettingsBinding;
 
     move-result-object v0
 
     iget-object v0, v0, Lorg/telegram/messenger/databinding/ForkFragmentWalletSettingsBinding;->recycleSettings:Landroidx/recyclerview/widget/RecyclerView;
 
-    .line 39
-    invoke-virtual {v0}, Landroid/view/ViewGroup;->getPaddingLeft()I
+    const-string v1, "binding.recycleSettings"
+
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 163
+    invoke-virtual {v0}, Landroid/view/View;->getPaddingLeft()I
 
     move-result v1
 
-    invoke-virtual {v0}, Landroid/view/ViewGroup;->getPaddingTop()I
+    .line 164
+    invoke-virtual {v0}, Landroid/view/View;->getPaddingTop()I
 
     move-result v2
 
-    invoke-virtual {v0}, Landroid/view/ViewGroup;->getPaddingRight()I
+    .line 165
+    invoke-virtual {v0}, Landroid/view/View;->getPaddingRight()I
 
     move-result v3
 
-    invoke-virtual {v0, v1, v2, v3, p1}, Landroid/view/ViewGroup;->setPadding(IIII)V
+    .line 168
+    invoke-virtual {v0, v1, v2, v3, p1}, Landroid/view/View;->setPadding(IIII)V
 
     return-void
 .end method
@@ -648,16 +546,16 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 44
+    .line 40
     invoke-direct {p0}, Lcom/iMe/ui/wallet/settings/WalletSettingsFragment;->setupColors()V
 
-    .line 45
+    .line 41
     invoke-direct {p0}, Lcom/iMe/ui/wallet/settings/WalletSettingsFragment;->setupListeners()V
 
-    .line 46
+    .line 42
     invoke-direct {p0}, Lcom/iMe/ui/wallet/settings/WalletSettingsFragment;->setupRecycleView()V
 
-    .line 48
+    .line 44
     invoke-direct {p0}, Lcom/iMe/ui/wallet/settings/WalletSettingsFragment;->getBinding()Lorg/telegram/messenger/databinding/ForkFragmentWalletSettingsBinding;
 
     move-result-object p1
@@ -673,13 +571,13 @@
     return-object p1
 .end method
 
-.method public setupSettingsItems(Ljava/util/List;)V
+.method public renderSettingsItems(Ljava/util/List;)V
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Ljava/util/List<",
-            "Lcom/iMe/model/wallet/settings/SettingUiItem;",
+            "Lcom/iMe/model/wallet/crypto/settings/WalletSettingsItem;",
             ">;)V"
         }
     .end annotation
@@ -688,7 +586,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 52
+    .line 48
     invoke-direct {p0}, Lcom/iMe/ui/wallet/settings/WalletSettingsFragment;->getSettingsRecycleAdapter()Lcom/iMe/ui/wallet/settings/adapter/WalletSettingsRecycleAdapter;
 
     move-result-object v0

@@ -99,7 +99,7 @@ public final class DispatchedContinuation<T> extends DispatchedTask<T> implement
         if (this.dispatcher.isDispatchNeeded(context)) {
             this._state = state$default;
             this.resumeMode = 0;
-            this.dispatcher.mo1606dispatch(context, this);
+            this.dispatcher.mo1631dispatch(context, this);
             return;
         }
         DebugKt.getASSERTIONS_ENABLED();

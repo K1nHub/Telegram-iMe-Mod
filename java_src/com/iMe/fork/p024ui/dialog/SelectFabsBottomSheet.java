@@ -21,12 +21,12 @@ import kotlin.LazyKt__LazyJVMKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3295R;
+import org.telegram.messenger.C3417R;
 import org.telegram.messenger.LocaleController;
-import org.telegram.p044ui.ActionBar.BottomSheet;
-import org.telegram.p044ui.ActionBar.Theme;
-import org.telegram.p044ui.Components.LayoutHelper;
-import org.telegram.p044ui.Components.RecyclerListView;
+import org.telegram.p043ui.ActionBar.BottomSheet;
+import org.telegram.p043ui.ActionBar.Theme;
+import org.telegram.p043ui.Components.LayoutHelper;
+import org.telegram.p043ui.Components.RecyclerListView;
 /* compiled from: SelectFabsBottomSheet.kt */
 /* renamed from: com.iMe.fork.ui.dialog.SelectFabsBottomSheet */
 /* loaded from: classes3.dex */
@@ -71,7 +71,7 @@ public final class SelectFabsBottomSheet extends BottomSheet {
         this.bottomShadow$delegate = lazy4;
         lazy5 = LazyKt__LazyJVMKt.lazy(new SelectFabsBottomSheet$saveButton$2(this));
         this.saveButton$delegate = lazy5;
-        setTitle(LocaleController.getInternalString(C3295R.string.create_folder_change_fab_title), true);
+        setTitle(LocaleController.getInternalString(C3417R.string.create_folder_change_fab_title), true);
         setApplyBottomPadding(false);
         FrameLayout frameLayout = new FrameLayout(context) { // from class: com.iMe.fork.ui.dialog.SelectFabsBottomSheet.1
             @Override // android.widget.FrameLayout, android.view.View
@@ -162,7 +162,7 @@ public final class SelectFabsBottomSheet extends BottomSheet {
         textView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
         textView.setGravity(17);
         textView.setBackground(Theme.createSelectorWithBackgroundDrawable(Theme.getColor(Theme.key_dialogBackground), Theme.getColor(Theme.key_listSelector)));
-        textView.setText(LocaleController.getString("Save", C3295R.string.Save));
+        textView.setText(LocaleController.getString("Save", C3417R.string.Save));
         textView.setTextSize(1, 14.0f);
         textView.setTextColor(Theme.getColor(Theme.key_dialogTextBlue2));
         return textView;
@@ -170,7 +170,7 @@ public final class SelectFabsBottomSheet extends BottomSheet {
 
     private final void setupListeners() {
         getListView().setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: com.iMe.fork.ui.dialog.SelectFabsBottomSheet$$ExternalSyntheticLambda2
-            @Override // org.telegram.p044ui.Components.RecyclerListView.OnItemClickListener
+            @Override // org.telegram.p043ui.Components.RecyclerListView.OnItemClickListener
             public final void onItemClick(View view, int i) {
                 SelectFabsBottomSheet.setupListeners$lambda$7(SelectFabsBottomSheet.this, view, i);
             }
@@ -240,7 +240,7 @@ public final class SelectFabsBottomSheet extends BottomSheet {
     /* renamed from: com.iMe.fork.ui.dialog.SelectFabsBottomSheet$ListAdapter */
     /* loaded from: classes3.dex */
     public final class ListAdapter extends RecyclerListView.SelectionAdapter {
-        @Override // org.telegram.p044ui.Components.RecyclerListView.SelectionAdapter
+        @Override // org.telegram.p043ui.Components.RecyclerListView.SelectionAdapter
         public boolean isEnabled(RecyclerView.ViewHolder holder) {
             Intrinsics.checkNotNullParameter(holder, "holder");
             return false;

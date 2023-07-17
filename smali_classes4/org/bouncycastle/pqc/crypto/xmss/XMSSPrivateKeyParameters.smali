@@ -157,7 +157,7 @@
     :cond_0
     new-instance p1, Ljava/lang/IllegalStateException;
 
-    const-string v0, "serialized BDS has wrong index"
+    const-string/jumbo v0, "serialized BDS has wrong index"
 
     invoke-direct {p1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 

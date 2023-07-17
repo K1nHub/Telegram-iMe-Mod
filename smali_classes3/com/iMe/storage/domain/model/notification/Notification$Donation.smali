@@ -32,11 +32,11 @@
 
 .field private isRead:Z
 
-.field private final networkType:Lcom/iMe/storage/domain/model/crypto/NetworkType;
+.field private final networkId:Ljava/lang/String;
 
 .field private final toAddress:Ljava/lang/String;
 
-.field private final tokenCode:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
+.field private final tokenCode:Ljava/lang/String;
 
 .field private final type:Lcom/iMe/storage/domain/model/notification/NotificationType;
 
@@ -44,7 +44,7 @@
 
 
 # direct methods
-.method private constructor <init>(Ljava/lang/String;ZLcom/iMe/storage/domain/model/notification/NotificationType;Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/domain/model/crypto/NetworkType;Lcom/iMe/storage/domain/model/wallet/token/TokenCode;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+.method private constructor <init>(Ljava/lang/String;ZLcom/iMe/storage/domain/model/notification/NotificationType;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
     .locals 13
 
     move-object v12, p0
@@ -73,66 +73,66 @@
 
     move-object/from16 v10, p10
 
-    .line 210
-    invoke-direct/range {v0 .. v11}, Lcom/iMe/storage/domain/model/notification/Notification$CryptoTransfer;-><init>(Ljava/lang/String;ZLcom/iMe/storage/domain/model/notification/NotificationType;Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/domain/model/crypto/NetworkType;Lcom/iMe/storage/domain/model/wallet/token/TokenCode;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
+    .line 208
+    invoke-direct/range {v0 .. v11}, Lcom/iMe/storage/domain/model/notification/Notification$CryptoTransfer;-><init>(Ljava/lang/String;ZLcom/iMe/storage/domain/model/notification/NotificationType;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
 
     move-object v0, p1
 
-    .line 200
+    .line 198
     iput-object v0, v12, Lcom/iMe/storage/domain/model/notification/Notification$Donation;->id:Ljava/lang/String;
 
     move v0, p2
 
-    .line 201
+    .line 199
     iput-boolean v0, v12, Lcom/iMe/storage/domain/model/notification/Notification$Donation;->isRead:Z
 
     move-object/from16 v0, p3
 
-    .line 202
+    .line 200
     iput-object v0, v12, Lcom/iMe/storage/domain/model/notification/Notification$Donation;->type:Lcom/iMe/storage/domain/model/notification/NotificationType;
 
     move-object/from16 v0, p4
 
-    .line 203
+    .line 201
     iput-object v0, v12, Lcom/iMe/storage/domain/model/notification/Notification$Donation;->date:Ljava/lang/String;
 
     move-object/from16 v0, p5
 
-    .line 204
+    .line 202
     iput-object v0, v12, Lcom/iMe/storage/domain/model/notification/Notification$Donation;->userId:Ljava/lang/String;
 
     move-object/from16 v0, p6
 
-    .line 205
-    iput-object v0, v12, Lcom/iMe/storage/domain/model/notification/Notification$Donation;->networkType:Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    .line 203
+    iput-object v0, v12, Lcom/iMe/storage/domain/model/notification/Notification$Donation;->networkId:Ljava/lang/String;
 
     move-object/from16 v0, p7
 
-    .line 206
-    iput-object v0, v12, Lcom/iMe/storage/domain/model/notification/Notification$Donation;->tokenCode:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
+    .line 204
+    iput-object v0, v12, Lcom/iMe/storage/domain/model/notification/Notification$Donation;->tokenCode:Ljava/lang/String;
 
     move-object/from16 v0, p8
 
-    .line 207
+    .line 205
     iput-object v0, v12, Lcom/iMe/storage/domain/model/notification/Notification$Donation;->fromAddress:Ljava/lang/String;
 
     move-object/from16 v0, p9
 
-    .line 208
+    .line 206
     iput-object v0, v12, Lcom/iMe/storage/domain/model/notification/Notification$Donation;->toAddress:Ljava/lang/String;
 
     move-object/from16 v0, p10
 
-    .line 209
+    .line 207
     iput-object v0, v12, Lcom/iMe/storage/domain/model/notification/Notification$Donation;->amount:Ljava/lang/String;
 
     return-void
 .end method
 
-.method public synthetic constructor <init>(Ljava/lang/String;ZLcom/iMe/storage/domain/model/notification/NotificationType;Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/domain/model/crypto/NetworkType;Lcom/iMe/storage/domain/model/wallet/token/TokenCode;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
+.method public synthetic constructor <init>(Ljava/lang/String;ZLcom/iMe/storage/domain/model/notification/NotificationType;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
     .locals 0
 
-    invoke-direct/range {p0 .. p10}, Lcom/iMe/storage/domain/model/notification/Notification$Donation;-><init>(Ljava/lang/String;ZLcom/iMe/storage/domain/model/notification/NotificationType;Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/domain/model/crypto/NetworkType;Lcom/iMe/storage/domain/model/wallet/token/TokenCode;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct/range {p0 .. p10}, Lcom/iMe/storage/domain/model/notification/Notification$Donation;-><init>(Ljava/lang/String;ZLcom/iMe/storage/domain/model/notification/NotificationType;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
     return-void
 .end method
@@ -142,7 +142,7 @@
 .method public getAmount()Ljava/lang/String;
     .locals 1
 
-    .line 209
+    .line 207
     iget-object v0, p0, Lcom/iMe/storage/domain/model/notification/Notification$Donation;->amount:Ljava/lang/String;
 
     return-object v0
@@ -151,7 +151,7 @@
 .method public getDate()Ljava/lang/String;
     .locals 1
 
-    .line 203
+    .line 201
     iget-object v0, p0, Lcom/iMe/storage/domain/model/notification/Notification$Donation;->date:Ljava/lang/String;
 
     return-object v0
@@ -160,7 +160,7 @@
 .method public getFromAddress()Ljava/lang/String;
     .locals 1
 
-    .line 207
+    .line 205
     iget-object v0, p0, Lcom/iMe/storage/domain/model/notification/Notification$Donation;->fromAddress:Ljava/lang/String;
 
     return-object v0
@@ -169,17 +169,17 @@
 .method public getId()Ljava/lang/String;
     .locals 1
 
-    .line 200
+    .line 198
     iget-object v0, p0, Lcom/iMe/storage/domain/model/notification/Notification$Donation;->id:Ljava/lang/String;
 
     return-object v0
 .end method
 
-.method public getNetworkType()Lcom/iMe/storage/domain/model/crypto/NetworkType;
+.method public getNetworkId()Ljava/lang/String;
     .locals 1
 
-    .line 205
-    iget-object v0, p0, Lcom/iMe/storage/domain/model/notification/Notification$Donation;->networkType:Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    .line 203
+    iget-object v0, p0, Lcom/iMe/storage/domain/model/notification/Notification$Donation;->networkId:Ljava/lang/String;
 
     return-object v0
 .end method
@@ -187,17 +187,17 @@
 .method public getToAddress()Ljava/lang/String;
     .locals 1
 
-    .line 208
+    .line 206
     iget-object v0, p0, Lcom/iMe/storage/domain/model/notification/Notification$Donation;->toAddress:Ljava/lang/String;
 
     return-object v0
 .end method
 
-.method public getTokenCode()Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
+.method public getTokenCode()Ljava/lang/String;
     .locals 1
 
-    .line 206
-    iget-object v0, p0, Lcom/iMe/storage/domain/model/notification/Notification$Donation;->tokenCode:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
+    .line 204
+    iget-object v0, p0, Lcom/iMe/storage/domain/model/notification/Notification$Donation;->tokenCode:Ljava/lang/String;
 
     return-object v0
 .end method
@@ -205,7 +205,7 @@
 .method public getType()Lcom/iMe/storage/domain/model/notification/NotificationType;
     .locals 1
 
-    .line 202
+    .line 200
     iget-object v0, p0, Lcom/iMe/storage/domain/model/notification/Notification$Donation;->type:Lcom/iMe/storage/domain/model/notification/NotificationType;
 
     return-object v0
@@ -214,7 +214,7 @@
 .method public getUserId()Ljava/lang/String;
     .locals 1
 
-    .line 204
+    .line 202
     iget-object v0, p0, Lcom/iMe/storage/domain/model/notification/Notification$Donation;->userId:Ljava/lang/String;
 
     return-object v0
@@ -223,7 +223,7 @@
 .method public isRead()Z
     .locals 1
 
-    .line 201
+    .line 199
     iget-boolean v0, p0, Lcom/iMe/storage/domain/model/notification/Notification$Donation;->isRead:Z
 
     return v0
@@ -232,7 +232,7 @@
 .method public setRead(Z)V
     .locals 0
 
-    .line 201
+    .line 199
     iput-boolean p1, p0, Lcom/iMe/storage/domain/model/notification/Notification$Donation;->isRead:Z
 
     return-void

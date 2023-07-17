@@ -21,6 +21,11 @@ public class StakingTransactionView$$State extends MvpViewState<StakingTransacti
         BaseView.CC.$default$finishScreen(this);
     }
 
+    @Override // com.iMe.p031ui.base.mvp.base.BaseView
+    public /* synthetic */ void removeSelfFromStackImmediately() {
+        BaseView.CC.$default$removeSelfFromStackImmediately(this);
+    }
+
     @Override // com.iMe.p031ui.wallet.staking.transaction.StakingTransactionView
     public void showStakingConditionsDialog(StakingDetailsItem stakingDetailsItem) {
         ShowStakingConditionsDialogCommand showStakingConditionsDialogCommand = new ShowStakingConditionsDialogCommand(this, stakingDetailsItem);

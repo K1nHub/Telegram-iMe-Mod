@@ -411,7 +411,7 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v2, "secret length exceeded "
+    const-string/jumbo v2, "secret length exceeded "
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -432,7 +432,7 @@
     :cond_2
     new-instance p0, Ljava/lang/IllegalStateException;
 
-    const-string v0, "secret length less than zero"
+    const-string/jumbo v0, "secret length less than zero"
 
     invoke-direct {p0, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 

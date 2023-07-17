@@ -1,5 +1,6 @@
 package com.iMe.p031ui.wallet.crypto.enter.pin;
 
+import com.iMe.model.dialog.DialogModel;
 import com.iMe.p031ui.base.mvp.base.BaseView;
 import com.iMe.storage.domain.model.Result;
 import com.iMe.storage.domain.utils.system.ResourceManager;
@@ -8,11 +9,29 @@ import moxy.viewstate.MvpViewState;
 import moxy.viewstate.ViewCommand;
 import moxy.viewstate.strategy.OneExecutionStateStrategy;
 /* renamed from: com.iMe.ui.wallet.crypto.enter.pin.EnterWalletPinView$$State */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class EnterWalletPinView$$State extends MvpViewState<EnterWalletPinView> implements EnterWalletPinView {
     @Override // com.iMe.p031ui.base.mvp.base.BaseView
     public /* synthetic */ void finishScreen() {
         BaseView.CC.$default$finishScreen(this);
+    }
+
+    @Override // com.iMe.p031ui.base.mvp.base.BaseView
+    public /* synthetic */ void removeSelfFromStackImmediately() {
+        BaseView.CC.$default$removeSelfFromStackImmediately(this);
+    }
+
+    @Override // com.iMe.p031ui.wallet.crypto.enter.pin.EnterWalletPinView
+    public void updateLoadingState(boolean z, boolean z2) {
+        UpdateLoadingStateCommand updateLoadingStateCommand = new UpdateLoadingStateCommand(this, z, z2);
+        this.viewCommands.beforeApply(updateLoadingStateCommand);
+        if (hasNotView().booleanValue()) {
+            return;
+        }
+        for (View view : this.views) {
+            view.updateLoadingState(z, z2);
+        }
+        this.viewCommands.afterApply(updateLoadingStateCommand);
     }
 
     @Override // com.iMe.p031ui.wallet.crypto.enter.pin.EnterWalletPinView
@@ -42,16 +61,68 @@ public class EnterWalletPinView$$State extends MvpViewState<EnterWalletPinView> 
     }
 
     @Override // com.iMe.p031ui.wallet.crypto.enter.pin.EnterWalletPinView
-    public void redirectScreenToPasswordEnter() {
-        RedirectScreenToPasswordEnterCommand redirectScreenToPasswordEnterCommand = new RedirectScreenToPasswordEnterCommand(this);
-        this.viewCommands.beforeApply(redirectScreenToPasswordEnterCommand);
+    public void onDeleteWalletSuccess() {
+        OnDeleteWalletSuccessCommand onDeleteWalletSuccessCommand = new OnDeleteWalletSuccessCommand(this);
+        this.viewCommands.beforeApply(onDeleteWalletSuccessCommand);
         if (hasNotView().booleanValue()) {
             return;
         }
         for (View view : this.views) {
-            view.redirectScreenToPasswordEnter();
+            view.onDeleteWalletSuccess();
         }
-        this.viewCommands.afterApply(redirectScreenToPasswordEnterCommand);
+        this.viewCommands.afterApply(onDeleteWalletSuccessCommand);
+    }
+
+    @Override // com.iMe.p031ui.wallet.crypto.enter.pin.EnterWalletPinView
+    public void openPasswordEnterScreen() {
+        OpenPasswordEnterScreenCommand openPasswordEnterScreenCommand = new OpenPasswordEnterScreenCommand(this);
+        this.viewCommands.beforeApply(openPasswordEnterScreenCommand);
+        if (hasNotView().booleanValue()) {
+            return;
+        }
+        for (View view : this.views) {
+            view.openPasswordEnterScreen();
+        }
+        this.viewCommands.afterApply(openPasswordEnterScreenCommand);
+    }
+
+    @Override // com.iMe.p031ui.wallet.crypto.enter.pin.EnterWalletPinView
+    public void openRestoreWalletScreen(String str) {
+        OpenRestoreWalletScreenCommand openRestoreWalletScreenCommand = new OpenRestoreWalletScreenCommand(this, str);
+        this.viewCommands.beforeApply(openRestoreWalletScreenCommand);
+        if (hasNotView().booleanValue()) {
+            return;
+        }
+        for (View view : this.views) {
+            view.openRestoreWalletScreen(str);
+        }
+        this.viewCommands.afterApply(openRestoreWalletScreenCommand);
+    }
+
+    @Override // com.iMe.p031ui.wallet.crypto.enter.pin.EnterWalletPinView
+    public void showForgotPasswordOptionsDialog() {
+        ShowForgotPasswordOptionsDialogCommand showForgotPasswordOptionsDialogCommand = new ShowForgotPasswordOptionsDialogCommand(this);
+        this.viewCommands.beforeApply(showForgotPasswordOptionsDialogCommand);
+        if (hasNotView().booleanValue()) {
+            return;
+        }
+        for (View view : this.views) {
+            view.showForgotPasswordOptionsDialog();
+        }
+        this.viewCommands.afterApply(showForgotPasswordOptionsDialogCommand);
+    }
+
+    @Override // com.iMe.p031ui.wallet.crypto.enter.pin.EnterWalletPinView
+    public void showDeleteWalletDialog(DialogModel dialogModel) {
+        ShowDeleteWalletDialogCommand showDeleteWalletDialogCommand = new ShowDeleteWalletDialogCommand(this, dialogModel);
+        this.viewCommands.beforeApply(showDeleteWalletDialogCommand);
+        if (hasNotView().booleanValue()) {
+            return;
+        }
+        for (View view : this.views) {
+            view.showDeleteWalletDialog(dialogModel);
+        }
+        this.viewCommands.afterApply(showDeleteWalletDialogCommand);
     }
 
     @Override // com.iMe.p031ui.base.mvp.base.BaseView
@@ -94,8 +165,27 @@ public class EnterWalletPinView$$State extends MvpViewState<EnterWalletPinView> 
     }
 
     /* compiled from: EnterWalletPinView$$State.java */
+    /* renamed from: com.iMe.ui.wallet.crypto.enter.pin.EnterWalletPinView$$State$UpdateLoadingStateCommand */
+    /* loaded from: classes4.dex */
+    public class UpdateLoadingStateCommand extends ViewCommand<EnterWalletPinView> {
+        public final boolean isFingerprint;
+        public final boolean isLoading;
+
+        UpdateLoadingStateCommand(EnterWalletPinView$$State enterWalletPinView$$State, boolean z, boolean z2) {
+            super("updateLoadingState", OneExecutionStateStrategy.class);
+            this.isLoading = z;
+            this.isFingerprint = z2;
+        }
+
+        @Override // moxy.viewstate.ViewCommand
+        public void apply(EnterWalletPinView enterWalletPinView) {
+            enterWalletPinView.updateLoadingState(this.isLoading, this.isFingerprint);
+        }
+    }
+
+    /* compiled from: EnterWalletPinView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.enter.pin.EnterWalletPinView$$State$OnSuccessEnterPinCodeCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class OnSuccessEnterPinCodeCommand extends ViewCommand<EnterWalletPinView> {
         public final String password;
         public final String pin;
@@ -114,7 +204,7 @@ public class EnterWalletPinView$$State extends MvpViewState<EnterWalletPinView> 
 
     /* compiled from: EnterWalletPinView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.enter.pin.EnterWalletPinView$$State$OnPinCodeErrorShakeCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class OnPinCodeErrorShakeCommand extends ViewCommand<EnterWalletPinView> {
         OnPinCodeErrorShakeCommand(EnterWalletPinView$$State enterWalletPinView$$State) {
             super("onPinCodeErrorShake", OneExecutionStateStrategy.class);
@@ -127,22 +217,84 @@ public class EnterWalletPinView$$State extends MvpViewState<EnterWalletPinView> 
     }
 
     /* compiled from: EnterWalletPinView$$State.java */
-    /* renamed from: com.iMe.ui.wallet.crypto.enter.pin.EnterWalletPinView$$State$RedirectScreenToPasswordEnterCommand */
-    /* loaded from: classes3.dex */
-    public class RedirectScreenToPasswordEnterCommand extends ViewCommand<EnterWalletPinView> {
-        RedirectScreenToPasswordEnterCommand(EnterWalletPinView$$State enterWalletPinView$$State) {
-            super("redirectScreenToPasswordEnter", OneExecutionStateStrategy.class);
+    /* renamed from: com.iMe.ui.wallet.crypto.enter.pin.EnterWalletPinView$$State$OnDeleteWalletSuccessCommand */
+    /* loaded from: classes4.dex */
+    public class OnDeleteWalletSuccessCommand extends ViewCommand<EnterWalletPinView> {
+        OnDeleteWalletSuccessCommand(EnterWalletPinView$$State enterWalletPinView$$State) {
+            super("onDeleteWalletSuccess", OneExecutionStateStrategy.class);
         }
 
         @Override // moxy.viewstate.ViewCommand
         public void apply(EnterWalletPinView enterWalletPinView) {
-            enterWalletPinView.redirectScreenToPasswordEnter();
+            enterWalletPinView.onDeleteWalletSuccess();
+        }
+    }
+
+    /* compiled from: EnterWalletPinView$$State.java */
+    /* renamed from: com.iMe.ui.wallet.crypto.enter.pin.EnterWalletPinView$$State$OpenPasswordEnterScreenCommand */
+    /* loaded from: classes4.dex */
+    public class OpenPasswordEnterScreenCommand extends ViewCommand<EnterWalletPinView> {
+        OpenPasswordEnterScreenCommand(EnterWalletPinView$$State enterWalletPinView$$State) {
+            super("openPasswordEnterScreen", OneExecutionStateStrategy.class);
+        }
+
+        @Override // moxy.viewstate.ViewCommand
+        public void apply(EnterWalletPinView enterWalletPinView) {
+            enterWalletPinView.openPasswordEnterScreen();
+        }
+    }
+
+    /* compiled from: EnterWalletPinView$$State.java */
+    /* renamed from: com.iMe.ui.wallet.crypto.enter.pin.EnterWalletPinView$$State$OpenRestoreWalletScreenCommand */
+    /* loaded from: classes4.dex */
+    public class OpenRestoreWalletScreenCommand extends ViewCommand<EnterWalletPinView> {
+        public final String walletAddress;
+
+        OpenRestoreWalletScreenCommand(EnterWalletPinView$$State enterWalletPinView$$State, String str) {
+            super("openRestoreWalletScreen", OneExecutionStateStrategy.class);
+            this.walletAddress = str;
+        }
+
+        @Override // moxy.viewstate.ViewCommand
+        public void apply(EnterWalletPinView enterWalletPinView) {
+            enterWalletPinView.openRestoreWalletScreen(this.walletAddress);
+        }
+    }
+
+    /* compiled from: EnterWalletPinView$$State.java */
+    /* renamed from: com.iMe.ui.wallet.crypto.enter.pin.EnterWalletPinView$$State$ShowForgotPasswordOptionsDialogCommand */
+    /* loaded from: classes4.dex */
+    public class ShowForgotPasswordOptionsDialogCommand extends ViewCommand<EnterWalletPinView> {
+        ShowForgotPasswordOptionsDialogCommand(EnterWalletPinView$$State enterWalletPinView$$State) {
+            super("showForgotPasswordOptionsDialog", OneExecutionStateStrategy.class);
+        }
+
+        @Override // moxy.viewstate.ViewCommand
+        public void apply(EnterWalletPinView enterWalletPinView) {
+            enterWalletPinView.showForgotPasswordOptionsDialog();
+        }
+    }
+
+    /* compiled from: EnterWalletPinView$$State.java */
+    /* renamed from: com.iMe.ui.wallet.crypto.enter.pin.EnterWalletPinView$$State$ShowDeleteWalletDialogCommand */
+    /* loaded from: classes4.dex */
+    public class ShowDeleteWalletDialogCommand extends ViewCommand<EnterWalletPinView> {
+        public final DialogModel dialogModel;
+
+        ShowDeleteWalletDialogCommand(EnterWalletPinView$$State enterWalletPinView$$State, DialogModel dialogModel) {
+            super("showDeleteWalletDialog", OneExecutionStateStrategy.class);
+            this.dialogModel = dialogModel;
+        }
+
+        @Override // moxy.viewstate.ViewCommand
+        public void apply(EnterWalletPinView enterWalletPinView) {
+            enterWalletPinView.showDeleteWalletDialog(this.dialogModel);
         }
     }
 
     /* compiled from: EnterWalletPinView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.enter.pin.EnterWalletPinView$$State$ShowToastCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class ShowToastCommand extends ViewCommand<EnterWalletPinView> {
         public final String text;
 
@@ -159,7 +311,7 @@ public class EnterWalletPinView$$State extends MvpViewState<EnterWalletPinView> 
 
     /* compiled from: EnterWalletPinView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.enter.pin.EnterWalletPinView$$State$ShowLoadingDialogCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class ShowLoadingDialogCommand extends ViewCommand<EnterWalletPinView> {
         public final Disposable actionToCancel;
         public final boolean cancellable;
@@ -180,7 +332,7 @@ public class EnterWalletPinView$$State extends MvpViewState<EnterWalletPinView> 
 
     /* compiled from: EnterWalletPinView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.enter.pin.EnterWalletPinView$$State$ShowErrorToastCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class ShowErrorToastCommand<T> extends ViewCommand<EnterWalletPinView> {
         public final ResourceManager resourceManager;
         public final Result.Error<? extends T> result;

@@ -2,7 +2,7 @@ package com.google.android.gms.common;
 
 import android.os.RemoteException;
 import android.util.Log;
-import com.google.android.exoplayer2.C0475C;
+import com.google.android.exoplayer2.C0480C;
 import com.google.android.gms.common.internal.Preconditions;
 import com.google.android.gms.dynamic.IObjectWrapper;
 import com.google.android.gms.dynamic.ObjectWrapper;
@@ -23,7 +23,7 @@ public abstract class zzj extends com.google.android.gms.common.internal.zzy {
     /* JADX INFO: Access modifiers changed from: protected */
     public static byte[] zze(String str) {
         try {
-            return str.getBytes(C0475C.ISO88591_NAME);
+            return str.getBytes(C0480C.ISO88591_NAME);
         } catch (UnsupportedEncodingException e) {
             throw new AssertionError(e);
         }

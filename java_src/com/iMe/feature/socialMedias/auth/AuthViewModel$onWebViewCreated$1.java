@@ -127,11 +127,11 @@ public final class AuthViewModel$onWebViewCreated$1 extends SuspendLambda implem
     /* compiled from: AuthViewModel.kt */
     /* renamed from: com.iMe.feature.socialMedias.auth.AuthViewModel$onWebViewCreated$1$1 */
     /* loaded from: classes3.dex */
-    public static final class C14591 extends Lambda implements Function1<SimpleContext<AuthState>, AuthState> {
+    public static final class C14701 extends Lambda implements Function1<SimpleContext<AuthState>, AuthState> {
         final /* synthetic */ String $title;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C14591(String str) {
+        C14701(String str) {
             super(1);
             this.$title = str;
         }

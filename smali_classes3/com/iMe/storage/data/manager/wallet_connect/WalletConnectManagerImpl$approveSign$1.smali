@@ -66,7 +66,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 172
+    .line 171
     invoke-virtual {p0}, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl$approveSign$1;->invoke()V
 
     sget-object v0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
@@ -77,7 +77,7 @@
 .method public final invoke()V
     .locals 5
 
-    .line 173
+    .line 172
     iget-object v0, p0, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl$approveSign$1;->this$0:Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;
 
     invoke-static {v0}, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;->access$getCryptoAccessManager$p(Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;)Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;
@@ -92,7 +92,7 @@
 
     if-eqz v0, :cond_3
 
-    .line 174
+    .line 173
     iget-object v0, p0, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl$approveSign$1;->this$0:Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;
 
     invoke-static {v0}, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;->access$getWallet(Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;)Lcom/iMe/storage/domain/model/crypto/Wallet$EVM;
@@ -117,7 +117,7 @@
 
     goto :goto_1
 
-    .line 176
+    .line 175
     :cond_0
     iget-object v1, p0, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl$approveSign$1;->$message:Lcom/trustwallet/walletconnect/models/ethereum/WCEthereumSignMessage;
 
@@ -145,7 +145,7 @@
 
     if-ne v1, v2, :cond_1
 
-    .line 181
+    .line 180
     iget-object v1, p0, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl$approveSign$1;->$message:Lcom/trustwallet/walletconnect/models/ethereum/WCEthereumSignMessage;
 
     invoke-virtual {v1}, Lcom/trustwallet/walletconnect/models/ethereum/WCEthereumSignMessage;->getData()Ljava/lang/String;
@@ -165,7 +165,7 @@
 
     throw v0
 
-    .line 179
+    .line 178
     :cond_2
     iget-object v1, p0, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl$approveSign$1;->$message:Lcom/trustwallet/walletconnect/models/ethereum/WCEthereumSignMessage;
 
@@ -177,7 +177,7 @@
 
     move-result-object v0
 
-    .line 183
+    .line 182
     :goto_0
     iget-object v1, p0, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl$approveSign$1;->this$0:Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;
 

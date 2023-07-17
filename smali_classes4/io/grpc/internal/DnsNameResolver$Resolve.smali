@@ -32,7 +32,7 @@
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const-string p1, "savedListener"
+    const-string/jumbo p1, "savedListener"
 
     .line 219
     invoke-static {p2, p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;

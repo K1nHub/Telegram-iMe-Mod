@@ -574,7 +574,7 @@
     move/from16 v20, v2
 
     :try_start_a
-    const-string v2, "selected encoder "
+    const-string/jumbo v2, "selected encoder "
 
     invoke-virtual {v15, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -3590,7 +3590,7 @@
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v4, "selected encoder "
+    const-string/jumbo v4, "selected encoder "
 
     invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

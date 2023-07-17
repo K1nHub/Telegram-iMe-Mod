@@ -18,6 +18,21 @@
     .end annotation
 .end method
 
+.method public abstract getPasswordByPinCodeWithValidation(Ljava/lang/String;Lcom/iMe/storage/domain/model/crypto/BlockchainType;)Lio/reactivex/Observable;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/lang/String;",
+            "Lcom/iMe/storage/domain/model/crypto/BlockchainType;",
+            ")",
+            "Lio/reactivex/Observable<",
+            "Lcom/iMe/storage/domain/model/Result<",
+            "Ljava/lang/String;",
+            ">;>;"
+        }
+    .end annotation
+.end method
+
 .method public abstract importWallet(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/domain/model/crypto/BlockchainType;)Lio/reactivex/Observable;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -54,22 +69,6 @@
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Ljava/lang/String;",
-            "Lcom/iMe/storage/domain/model/crypto/BlockchainType;",
-            ")",
-            "Lio/reactivex/Observable<",
-            "Lcom/iMe/storage/domain/model/Result<",
-            "Ljava/lang/Boolean;",
-            ">;>;"
-        }
-    .end annotation
-.end method
-
-.method public abstract isValidRestoredAddress(Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/domain/model/crypto/BlockchainType;)Lio/reactivex/Observable;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/lang/String;",
             "Ljava/lang/String;",
             "Lcom/iMe/storage/domain/model/crypto/BlockchainType;",
             ")",

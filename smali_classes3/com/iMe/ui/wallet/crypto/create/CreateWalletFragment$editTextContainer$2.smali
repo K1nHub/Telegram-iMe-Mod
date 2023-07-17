@@ -48,7 +48,7 @@
 .method public final invoke()Landroid/widget/LinearLayout;
     .locals 1
 
-    .line 84
+    .line 129
     iget-object v0, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$editTextContainer$2;->this$0:Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;
 
     invoke-static {v0}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->access$createVerticalLinearLayout(Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;)Landroid/widget/LinearLayout;
@@ -61,7 +61,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 84
+    .line 129
     invoke-virtual {p0}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$editTextContainer$2;->invoke()Landroid/widget/LinearLayout;
 
     move-result-object v0

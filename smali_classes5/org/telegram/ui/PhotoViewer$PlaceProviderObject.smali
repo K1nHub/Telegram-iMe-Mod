@@ -54,17 +54,17 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 2540
+    .line 2541
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     const/high16 v0, 0x3f800000    # 1.0f
 
-    .line 2553
+    .line 2554
     iput v0, p0, Lorg/telegram/ui/PhotoViewer$PlaceProviderObject;->scale:F
 
     const/4 v0, 0x1
 
-    .line 2557
+    .line 2558
     iput-boolean v0, p0, Lorg/telegram/ui/PhotoViewer$PlaceProviderObject;->allowTakeAnimation:Z
 
     return-void

@@ -4,37 +4,37 @@
 
 
 # instance fields
-.field private final networkType:Lcom/iMe/storage/domain/model/crypto/NetworkType;
+.field private final platform:Ljava/lang/String;
 
 
 # direct methods
-.method public constructor <init>(Lcom/iMe/storage/domain/model/crypto/NetworkType;)V
+.method public constructor <init>(Ljava/lang/String;)V
     .locals 1
 
-    const-string v0, "networkType"
+    const-string v0, "platform"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 5
+    .line 3
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 6
-    iput-object p1, p0, Lcom/iMe/storage/data/network/model/request/crypto/wallet/UnlinkWalletAddressRequest;->networkType:Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    .line 4
+    iput-object p1, p0, Lcom/iMe/storage/data/network/model/request/crypto/wallet/UnlinkWalletAddressRequest;->platform:Ljava/lang/String;
 
     return-void
 .end method
 
-.method public static synthetic copy$default(Lcom/iMe/storage/data/network/model/request/crypto/wallet/UnlinkWalletAddressRequest;Lcom/iMe/storage/domain/model/crypto/NetworkType;ILjava/lang/Object;)Lcom/iMe/storage/data/network/model/request/crypto/wallet/UnlinkWalletAddressRequest;
+.method public static synthetic copy$default(Lcom/iMe/storage/data/network/model/request/crypto/wallet/UnlinkWalletAddressRequest;Ljava/lang/String;ILjava/lang/Object;)Lcom/iMe/storage/data/network/model/request/crypto/wallet/UnlinkWalletAddressRequest;
     .locals 0
 
     and-int/lit8 p2, p2, 0x1
 
     if-eqz p2, :cond_0
 
-    iget-object p1, p0, Lcom/iMe/storage/data/network/model/request/crypto/wallet/UnlinkWalletAddressRequest;->networkType:Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    iget-object p1, p0, Lcom/iMe/storage/data/network/model/request/crypto/wallet/UnlinkWalletAddressRequest;->platform:Ljava/lang/String;
 
     :cond_0
-    invoke-virtual {p0, p1}, Lcom/iMe/storage/data/network/model/request/crypto/wallet/UnlinkWalletAddressRequest;->copy(Lcom/iMe/storage/domain/model/crypto/NetworkType;)Lcom/iMe/storage/data/network/model/request/crypto/wallet/UnlinkWalletAddressRequest;
+    invoke-virtual {p0, p1}, Lcom/iMe/storage/data/network/model/request/crypto/wallet/UnlinkWalletAddressRequest;->copy(Ljava/lang/String;)Lcom/iMe/storage/data/network/model/request/crypto/wallet/UnlinkWalletAddressRequest;
 
     move-result-object p0
 
@@ -43,24 +43,24 @@
 
 
 # virtual methods
-.method public final component1()Lcom/iMe/storage/domain/model/crypto/NetworkType;
+.method public final component1()Ljava/lang/String;
     .locals 1
 
-    iget-object v0, p0, Lcom/iMe/storage/data/network/model/request/crypto/wallet/UnlinkWalletAddressRequest;->networkType:Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    iget-object v0, p0, Lcom/iMe/storage/data/network/model/request/crypto/wallet/UnlinkWalletAddressRequest;->platform:Ljava/lang/String;
 
     return-object v0
 .end method
 
-.method public final copy(Lcom/iMe/storage/domain/model/crypto/NetworkType;)Lcom/iMe/storage/data/network/model/request/crypto/wallet/UnlinkWalletAddressRequest;
+.method public final copy(Ljava/lang/String;)Lcom/iMe/storage/data/network/model/request/crypto/wallet/UnlinkWalletAddressRequest;
     .locals 1
 
-    const-string v0, "networkType"
+    const-string v0, "platform"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     new-instance v0, Lcom/iMe/storage/data/network/model/request/crypto/wallet/UnlinkWalletAddressRequest;
 
-    invoke-direct {v0, p1}, Lcom/iMe/storage/data/network/model/request/crypto/wallet/UnlinkWalletAddressRequest;-><init>(Lcom/iMe/storage/domain/model/crypto/NetworkType;)V
+    invoke-direct {v0, p1}, Lcom/iMe/storage/data/network/model/request/crypto/wallet/UnlinkWalletAddressRequest;-><init>(Ljava/lang/String;)V
 
     return-object v0
 .end method
@@ -86,11 +86,15 @@
     :cond_1
     check-cast p1, Lcom/iMe/storage/data/network/model/request/crypto/wallet/UnlinkWalletAddressRequest;
 
-    iget-object v1, p0, Lcom/iMe/storage/data/network/model/request/crypto/wallet/UnlinkWalletAddressRequest;->networkType:Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    iget-object v1, p0, Lcom/iMe/storage/data/network/model/request/crypto/wallet/UnlinkWalletAddressRequest;->platform:Ljava/lang/String;
 
-    iget-object p1, p1, Lcom/iMe/storage/data/network/model/request/crypto/wallet/UnlinkWalletAddressRequest;->networkType:Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    iget-object p1, p1, Lcom/iMe/storage/data/network/model/request/crypto/wallet/UnlinkWalletAddressRequest;->platform:Ljava/lang/String;
 
-    if-eq v1, p1, :cond_2
+    invoke-static {v1, p1}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result p1
+
+    if-nez p1, :cond_2
 
     return v2
 
@@ -98,11 +102,11 @@
     return v0
 .end method
 
-.method public final getNetworkType()Lcom/iMe/storage/domain/model/crypto/NetworkType;
+.method public final getPlatform()Ljava/lang/String;
     .locals 1
 
-    .line 6
-    iget-object v0, p0, Lcom/iMe/storage/data/network/model/request/crypto/wallet/UnlinkWalletAddressRequest;->networkType:Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    .line 4
+    iget-object v0, p0, Lcom/iMe/storage/data/network/model/request/crypto/wallet/UnlinkWalletAddressRequest;->platform:Ljava/lang/String;
 
     return-object v0
 .end method
@@ -110,9 +114,9 @@
 .method public hashCode()I
     .locals 1
 
-    iget-object v0, p0, Lcom/iMe/storage/data/network/model/request/crypto/wallet/UnlinkWalletAddressRequest;->networkType:Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    iget-object v0, p0, Lcom/iMe/storage/data/network/model/request/crypto/wallet/UnlinkWalletAddressRequest;->platform:Ljava/lang/String;
 
-    invoke-virtual {v0}, Ljava/lang/Enum;->hashCode()I
+    invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
 
     move-result v0
 
@@ -126,13 +130,13 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v1, "UnlinkWalletAddressRequest(networkType="
+    const-string v1, "UnlinkWalletAddressRequest(platform="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v1, p0, Lcom/iMe/storage/data/network/model/request/crypto/wallet/UnlinkWalletAddressRequest;->networkType:Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    iget-object v1, p0, Lcom/iMe/storage/data/network/model/request/crypto/wallet/UnlinkWalletAddressRequest;->platform:Ljava/lang/String;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     const/16 v1, 0x29
 

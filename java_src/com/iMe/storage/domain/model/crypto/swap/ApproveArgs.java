@@ -1,30 +1,29 @@
 package com.iMe.storage.domain.model.crypto.swap;
 
 import com.iMe.bots.data.model.database.BotsDbModel$$ExternalSyntheticBackport0;
-import com.iMe.storage.domain.model.crypto.NetworkType;
+import com.iMe.storage.domain.model.crypto.BlockchainType;
 import com.iMe.storage.domain.model.crypto.send.TransactionArgs;
 import com.iMe.storage.domain.model.wallet.swap.SwapProtocol;
-import com.iMe.storage.domain.model.wallet.token.TokenInfo;
 import java.math.BigInteger;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: ApproveArgs.kt */
 /* loaded from: classes3.dex */
 public abstract class ApproveArgs implements TransactionArgs {
-    private final TokenInfo token;
+    private final BlockchainType blockchainType;
     private final Number value;
 
-    public /* synthetic */ ApproveArgs(TokenInfo tokenInfo, Number number, DefaultConstructorMarker defaultConstructorMarker) {
-        this(tokenInfo, number);
+    public /* synthetic */ ApproveArgs(BlockchainType blockchainType, Number number, DefaultConstructorMarker defaultConstructorMarker) {
+        this(blockchainType, number);
     }
 
-    private ApproveArgs(TokenInfo tokenInfo, Number number) {
-        this.token = tokenInfo;
+    private ApproveArgs(BlockchainType blockchainType, Number number) {
+        this.blockchainType = blockchainType;
         this.value = number;
     }
 
-    public TokenInfo getToken() {
-        return this.token;
+    public BlockchainType getBlockchainType() {
+        return this.blockchainType;
     }
 
     public Number getValue() {
@@ -34,24 +33,24 @@ public abstract class ApproveArgs implements TransactionArgs {
     /* compiled from: ApproveArgs.kt */
     /* loaded from: classes3.dex */
     public static final class Dex extends ApproveArgs {
+        private final BlockchainType blockchainType;
         private final long chainId;
         private final String exchangeContractAddress;
         private final BigInteger gasLimit;
         private final BigInteger gasPrice;
-        private final NetworkType networkType;
+        private final String networkId;
         private final BigInteger nonce;
         private final SwapProtocol protocol;
         private final String recipientAddress;
-        private final TokenInfo.Crypto.Ethereum token;
         private final String tokenContractAddress;
         private final BigInteger value;
 
-        public final TokenInfo.Crypto.Ethereum component1() {
-            return getToken();
+        public final BlockchainType component1() {
+            return getBlockchainType();
         }
 
-        public final NetworkType component10() {
-            return this.networkType;
+        public final String component10() {
+            return this.networkId;
         }
 
         public final SwapProtocol component11() {
@@ -90,8 +89,8 @@ public abstract class ApproveArgs implements TransactionArgs {
             return this.exchangeContractAddress;
         }
 
-        public final Dex copy(TokenInfo.Crypto.Ethereum token, BigInteger value, String recipientAddress, long j, BigInteger nonce, BigInteger gasPrice, BigInteger gasLimit, String tokenContractAddress, String exchangeContractAddress, NetworkType networkType, SwapProtocol protocol) {
-            Intrinsics.checkNotNullParameter(token, "token");
+        public final Dex copy(BlockchainType blockchainType, BigInteger value, String recipientAddress, long j, BigInteger nonce, BigInteger gasPrice, BigInteger gasLimit, String tokenContractAddress, String exchangeContractAddress, String networkId, SwapProtocol protocol) {
+            Intrinsics.checkNotNullParameter(blockchainType, "blockchainType");
             Intrinsics.checkNotNullParameter(value, "value");
             Intrinsics.checkNotNullParameter(recipientAddress, "recipientAddress");
             Intrinsics.checkNotNullParameter(nonce, "nonce");
@@ -99,9 +98,9 @@ public abstract class ApproveArgs implements TransactionArgs {
             Intrinsics.checkNotNullParameter(gasLimit, "gasLimit");
             Intrinsics.checkNotNullParameter(tokenContractAddress, "tokenContractAddress");
             Intrinsics.checkNotNullParameter(exchangeContractAddress, "exchangeContractAddress");
-            Intrinsics.checkNotNullParameter(networkType, "networkType");
+            Intrinsics.checkNotNullParameter(networkId, "networkId");
             Intrinsics.checkNotNullParameter(protocol, "protocol");
-            return new Dex(token, value, recipientAddress, j, nonce, gasPrice, gasLimit, tokenContractAddress, exchangeContractAddress, networkType, protocol);
+            return new Dex(blockchainType, value, recipientAddress, j, nonce, gasPrice, gasLimit, tokenContractAddress, exchangeContractAddress, networkId, protocol);
         }
 
         public boolean equals(Object obj) {
@@ -110,22 +109,22 @@ public abstract class ApproveArgs implements TransactionArgs {
             }
             if (obj instanceof Dex) {
                 Dex dex = (Dex) obj;
-                return Intrinsics.areEqual(getToken(), dex.getToken()) && Intrinsics.areEqual(getValue(), dex.getValue()) && Intrinsics.areEqual(this.recipientAddress, dex.recipientAddress) && this.chainId == dex.chainId && Intrinsics.areEqual(this.nonce, dex.nonce) && Intrinsics.areEqual(this.gasPrice, dex.gasPrice) && Intrinsics.areEqual(this.gasLimit, dex.gasLimit) && Intrinsics.areEqual(this.tokenContractAddress, dex.tokenContractAddress) && Intrinsics.areEqual(this.exchangeContractAddress, dex.exchangeContractAddress) && this.networkType == dex.networkType && this.protocol == dex.protocol;
+                return getBlockchainType() == dex.getBlockchainType() && Intrinsics.areEqual(getValue(), dex.getValue()) && Intrinsics.areEqual(this.recipientAddress, dex.recipientAddress) && this.chainId == dex.chainId && Intrinsics.areEqual(this.nonce, dex.nonce) && Intrinsics.areEqual(this.gasPrice, dex.gasPrice) && Intrinsics.areEqual(this.gasLimit, dex.gasLimit) && Intrinsics.areEqual(this.tokenContractAddress, dex.tokenContractAddress) && Intrinsics.areEqual(this.exchangeContractAddress, dex.exchangeContractAddress) && Intrinsics.areEqual(this.networkId, dex.networkId) && this.protocol == dex.protocol;
             }
             return false;
         }
 
         public int hashCode() {
-            return (((((((((((((((((((getToken().hashCode() * 31) + getValue().hashCode()) * 31) + this.recipientAddress.hashCode()) * 31) + BotsDbModel$$ExternalSyntheticBackport0.m706m(this.chainId)) * 31) + this.nonce.hashCode()) * 31) + this.gasPrice.hashCode()) * 31) + this.gasLimit.hashCode()) * 31) + this.tokenContractAddress.hashCode()) * 31) + this.exchangeContractAddress.hashCode()) * 31) + this.networkType.hashCode()) * 31) + this.protocol.hashCode();
+            return (((((((((((((((((((getBlockchainType().hashCode() * 31) + getValue().hashCode()) * 31) + this.recipientAddress.hashCode()) * 31) + BotsDbModel$$ExternalSyntheticBackport0.m706m(this.chainId)) * 31) + this.nonce.hashCode()) * 31) + this.gasPrice.hashCode()) * 31) + this.gasLimit.hashCode()) * 31) + this.tokenContractAddress.hashCode()) * 31) + this.exchangeContractAddress.hashCode()) * 31) + this.networkId.hashCode()) * 31) + this.protocol.hashCode();
         }
 
         public String toString() {
-            return "Dex(token=" + getToken() + ", value=" + getValue() + ", recipientAddress=" + this.recipientAddress + ", chainId=" + this.chainId + ", nonce=" + this.nonce + ", gasPrice=" + this.gasPrice + ", gasLimit=" + this.gasLimit + ", tokenContractAddress=" + this.tokenContractAddress + ", exchangeContractAddress=" + this.exchangeContractAddress + ", networkType=" + this.networkType + ", protocol=" + this.protocol + ')';
+            return "Dex(blockchainType=" + getBlockchainType() + ", value=" + getValue() + ", recipientAddress=" + this.recipientAddress + ", chainId=" + this.chainId + ", nonce=" + this.nonce + ", gasPrice=" + this.gasPrice + ", gasLimit=" + this.gasLimit + ", tokenContractAddress=" + this.tokenContractAddress + ", exchangeContractAddress=" + this.exchangeContractAddress + ", networkId=" + this.networkId + ", protocol=" + this.protocol + ')';
         }
 
         @Override // com.iMe.storage.domain.model.crypto.swap.ApproveArgs
-        public TokenInfo.Crypto.Ethereum getToken() {
-            return this.token;
+        public BlockchainType getBlockchainType() {
+            return this.blockchainType;
         }
 
         @Override // com.iMe.storage.domain.model.crypto.swap.ApproveArgs
@@ -161,8 +160,8 @@ public abstract class ApproveArgs implements TransactionArgs {
             return this.exchangeContractAddress;
         }
 
-        public final NetworkType getNetworkType() {
-            return this.networkType;
+        public final String getNetworkId() {
+            return this.networkId;
         }
 
         public final SwapProtocol getProtocol() {
@@ -170,9 +169,9 @@ public abstract class ApproveArgs implements TransactionArgs {
         }
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public Dex(TokenInfo.Crypto.Ethereum token, BigInteger value, String recipientAddress, long j, BigInteger nonce, BigInteger gasPrice, BigInteger gasLimit, String tokenContractAddress, String exchangeContractAddress, NetworkType networkType, SwapProtocol protocol) {
-            super(token, value, null);
-            Intrinsics.checkNotNullParameter(token, "token");
+        public Dex(BlockchainType blockchainType, BigInteger value, String recipientAddress, long j, BigInteger nonce, BigInteger gasPrice, BigInteger gasLimit, String tokenContractAddress, String exchangeContractAddress, String networkId, SwapProtocol protocol) {
+            super(blockchainType, value, null);
+            Intrinsics.checkNotNullParameter(blockchainType, "blockchainType");
             Intrinsics.checkNotNullParameter(value, "value");
             Intrinsics.checkNotNullParameter(recipientAddress, "recipientAddress");
             Intrinsics.checkNotNullParameter(nonce, "nonce");
@@ -180,9 +179,9 @@ public abstract class ApproveArgs implements TransactionArgs {
             Intrinsics.checkNotNullParameter(gasLimit, "gasLimit");
             Intrinsics.checkNotNullParameter(tokenContractAddress, "tokenContractAddress");
             Intrinsics.checkNotNullParameter(exchangeContractAddress, "exchangeContractAddress");
-            Intrinsics.checkNotNullParameter(networkType, "networkType");
+            Intrinsics.checkNotNullParameter(networkId, "networkId");
             Intrinsics.checkNotNullParameter(protocol, "protocol");
-            this.token = token;
+            this.blockchainType = blockchainType;
             this.value = value;
             this.recipientAddress = recipientAddress;
             this.chainId = j;
@@ -191,7 +190,7 @@ public abstract class ApproveArgs implements TransactionArgs {
             this.gasLimit = gasLimit;
             this.tokenContractAddress = tokenContractAddress;
             this.exchangeContractAddress = exchangeContractAddress;
-            this.networkType = networkType;
+            this.networkId = networkId;
             this.protocol = protocol;
         }
     }

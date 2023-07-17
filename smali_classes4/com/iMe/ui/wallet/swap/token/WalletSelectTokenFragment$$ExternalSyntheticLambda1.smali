@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;
+.implements Lcom/chad/library/adapter/base/listener/OnLoadMoreListener;
 
 
 # instance fields
@@ -22,20 +22,12 @@
 
 
 # virtual methods
-.method public final didSetColor()V
+.method public final onLoadMore()V
     .locals 1
 
     iget-object v0, p0, Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment$$ExternalSyntheticLambda1;->f$0:Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment;
 
-    invoke-static {v0}, Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment;->$r8$lambda$LppRhgUfpQ9mG95B6YOIcvWxarE(Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment;)V
-
-    return-void
-.end method
-
-.method public synthetic onAnimationProgress(F)V
-    .locals 0
-
-    invoke-static {p0, p1}, Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate$-CC;->$default$onAnimationProgress(Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;F)V
+    invoke-static {v0}, Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment;->$r8$lambda$Je9nAsXuBc7VI4d1D7t_UTnVFF8(Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment;)V
 
     return-void
 .end method

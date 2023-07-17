@@ -1,7 +1,6 @@
 package com.iMe.i_staking.repository;
 
 import com.iMe.storage.domain.model.Result;
-import com.iMe.storage.domain.model.crypto.NetworkType;
 import com.iMe.storage.domain.model.staking.StakingApprovalInfo;
 import com.iMe.storage.domain.model.staking.StakingApprovalTokenType;
 import com.iMe.storage.domain.model.staking.StakingDetailedMetadata;
@@ -24,7 +23,7 @@ public interface StakingRepository {
 
     Observable<Result<StakingDetailedMetadata>> getStakingDetails(long j);
 
-    Observable<Result<StakingOperationsPaged>> getStakingOperations(Long l, StakingOperationType stakingOperationType, NetworkType networkType, String str);
+    Observable<Result<StakingOperationsPaged>> getStakingOperations(Long l, StakingOperationType stakingOperationType, String str, String str2);
 
     Observable<Result<StakingProgrammes>> getStakingOwnProgrammesList(StakingOrderType stakingOrderType, Long l, StakingProgrammesFilterType stakingProgrammesFilterType);
 

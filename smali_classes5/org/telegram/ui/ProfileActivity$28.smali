@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/ProfileActivity;Landroid/content/Context;)V
     .locals 0
 
-    .line 4805
+    .line 4831
     iput-object p1, p0, Lorg/telegram/ui/ProfileActivity$28;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-direct {p0, p2}, Lorg/telegram/ui/Components/RLottieImageView;-><init>(Landroid/content/Context;)V
@@ -35,10 +35,10 @@
 .method public setAlpha(F)V
     .locals 1
 
-    .line 4826
+    .line 4852
     invoke-super {p0, p1}, Landroid/widget/ImageView;->setAlpha(F)V
 
-    .line 4827
+    .line 4853
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$28;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ProfileActivity;->access$13100(Lorg/telegram/ui/ProfileActivity;)Landroid/widget/ImageView;
@@ -53,10 +53,10 @@
 .method public setScaleX(F)V
     .locals 1
 
-    .line 4814
+    .line 4840
     invoke-super {p0, p1}, Landroid/widget/ImageView;->setScaleX(F)V
 
-    .line 4815
+    .line 4841
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$28;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ProfileActivity;->access$13100(Lorg/telegram/ui/ProfileActivity;)Landroid/widget/ImageView;
@@ -71,10 +71,10 @@
 .method public setScaleY(F)V
     .locals 1
 
-    .line 4820
+    .line 4846
     invoke-super {p0, p1}, Landroid/widget/ImageView;->setScaleY(F)V
 
-    .line 4821
+    .line 4847
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$28;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ProfileActivity;->access$13100(Lorg/telegram/ui/ProfileActivity;)Landroid/widget/ImageView;
@@ -89,10 +89,10 @@
 .method public setTranslationY(F)V
     .locals 1
 
-    .line 4808
+    .line 4834
     invoke-super {p0, p1}, Landroid/widget/ImageView;->setTranslationY(F)V
 
-    .line 4809
+    .line 4835
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$28;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ProfileActivity;->access$13100(Lorg/telegram/ui/ProfileActivity;)Landroid/widget/ImageView;

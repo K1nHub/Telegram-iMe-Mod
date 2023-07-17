@@ -42,9 +42,9 @@ public final class AccountLevelRepositoryImpl implements AccountLevelRepository 
 
     @Override // com.iMe.storage.domain.repository.crypto.level.AccountLevelRepository
     public Observable<Result<Boolean>> changeLevelVisibility(boolean z) {
-        Observable<R> map = this.accountLevelApi.changeLevelVisibility(new ChangeRankVisibilityRequest(z)).map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new C1883xafaa2290(this.firebaseErrorHandler, this)));
+        Observable<R> map = this.accountLevelApi.changeLevelVisibility(new ChangeRankVisibilityRequest(z)).map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new C1891xafaa2290(this.firebaseErrorHandler, this)));
         Intrinsics.checkNotNullExpressionValue(map, "errorHandler: FirebaseFu…response).toError()\n    }");
-        Observable<Result<Boolean>> onErrorReturn = map.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new C1882x28a1e811(this.errorHandler)));
+        Observable<Result<Boolean>> onErrorReturn = map.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new C1890x28a1e811(this.errorHandler)));
         Intrinsics.checkNotNullExpressionValue(onErrorReturn, "errorHandler: ErrorHandl…ndleError(it).toError() }");
         return onErrorReturn;
     }
@@ -60,9 +60,9 @@ public final class AccountLevelRepositoryImpl implements AccountLevelRepository 
         } else {
             empty = Observable.empty();
         }
-        Observable<R> map = this.accountLevelApi.getLevelVisibility().map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new C1887x717ec450(this.firebaseErrorHandler, this)));
+        Observable<R> map = this.accountLevelApi.getLevelVisibility().map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new C1895x717ec450(this.firebaseErrorHandler, this)));
         Intrinsics.checkNotNullExpressionValue(map, "errorHandler: FirebaseFu…response).toError()\n    }");
-        Observable onErrorReturn = map.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new C1886xa1617e51(this.errorHandler)));
+        Observable onErrorReturn = map.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new C1894xa1617e51(this.errorHandler)));
         Intrinsics.checkNotNullExpressionValue(onErrorReturn, "errorHandler: ErrorHandl…ndleError(it).toError() }");
         Observable<Result<Boolean>> concat = Observable.concat(empty, onErrorReturn);
         Intrinsics.checkNotNullExpressionValue(concat, "concat(\n                …rorHandler)\n            )");
@@ -87,9 +87,9 @@ public final class AccountLevelRepositoryImpl implements AccountLevelRepository 
 
     @Override // com.iMe.storage.domain.repository.crypto.level.AccountLevelRepository
     public Observable<Result<AccountLevel>> getAccountLevelRemote(long j) {
-        Observable<R> map = this.accountLevelApi.getAccountLevel(String.valueOf(j)).map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new C1885xd866155d(this.firebaseErrorHandler, this, j)));
+        Observable<R> map = this.accountLevelApi.getAccountLevel(String.valueOf(j)).map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new C1893xd866155d(this.firebaseErrorHandler, this, j)));
         Intrinsics.checkNotNullExpressionValue(map, "errorHandler: FirebaseFu…response).toError()\n    }");
-        Observable<Result<AccountLevel>> onErrorReturn = map.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new C1884x17644ee4(this.errorHandler)));
+        Observable<Result<AccountLevel>> onErrorReturn = map.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new C1892x17644ee4(this.errorHandler)));
         Intrinsics.checkNotNullExpressionValue(onErrorReturn, "errorHandler: ErrorHandl…ndleError(it).toError() }");
         return onErrorReturn;
     }

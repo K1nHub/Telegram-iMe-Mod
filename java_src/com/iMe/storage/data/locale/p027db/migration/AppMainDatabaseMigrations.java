@@ -14,7 +14,7 @@ import java.util.Set;
 import kotlin.Unit;
 import kotlin.collections.CollectionsKt;
 import kotlin.jvm.internal.Intrinsics;
-import kotlin.p035io.CloseableKt;
+import kotlin.p034io.CloseableKt;
 /* compiled from: AppMainDatabaseMigrations.kt */
 /* renamed from: com.iMe.storage.data.locale.db.migration.AppMainDatabaseMigrations */
 /* loaded from: classes3.dex */
@@ -26,6 +26,7 @@ public final class AppMainDatabaseMigrations {
     private static final AppMainDatabaseMigrations$MIGRATION_13_14$1 MIGRATION_13_14;
     private static final AppMainDatabaseMigrations$MIGRATION_14_15$1 MIGRATION_14_15;
     private static final AppMainDatabaseMigrations$MIGRATION_15_16$1 MIGRATION_15_16;
+    private static final AppMainDatabaseMigrations$MIGRATION_16_17$1 MIGRATION_16_17;
     private static final AppMainDatabaseMigrations$MIGRATION_1_2$1 MIGRATION_1_2;
     private static final AppMainDatabaseMigrations$MIGRATION_2_3$1 MIGRATION_2_3;
     private static final AppMainDatabaseMigrations$MIGRATION_3_4$1 MIGRATION_3_4;
@@ -47,6 +48,7 @@ public final class AppMainDatabaseMigrations {
     /* JADX WARN: Type inference failed for: r12v0, types: [com.iMe.storage.data.locale.db.migration.AppMainDatabaseMigrations$MIGRATION_13_14$1] */
     /* JADX WARN: Type inference failed for: r13v0, types: [com.iMe.storage.data.locale.db.migration.AppMainDatabaseMigrations$MIGRATION_14_15$1] */
     /* JADX WARN: Type inference failed for: r14v0, types: [com.iMe.storage.data.locale.db.migration.AppMainDatabaseMigrations$MIGRATION_15_16$1] */
+    /* JADX WARN: Type inference failed for: r15v0, types: [com.iMe.storage.data.locale.db.migration.AppMainDatabaseMigrations$MIGRATION_16_17$1] */
     /* JADX WARN: Type inference failed for: r1v0, types: [com.iMe.storage.data.locale.db.migration.AppMainDatabaseMigrations$MIGRATION_2_3$1] */
     /* JADX WARN: Type inference failed for: r2v0, types: [com.iMe.storage.data.locale.db.migration.AppMainDatabaseMigrations$MIGRATION_3_4$1] */
     /* JADX WARN: Type inference failed for: r3v0, types: [com.iMe.storage.data.locale.db.migration.AppMainDatabaseMigrations$MIGRATION_4_5$1] */
@@ -152,7 +154,6 @@ public final class AppMainDatabaseMigrations {
                 database.execSQL("CREATE TABLE TopicDb_copy (topicId INTEGER NOT NULL, name TEXT, icon TEXT, `order` INTEGER NOT NULL, presets TEXT NOT NULL DEFAULT \"[]\", dialogs TEXT NOT NULL, userId INTEGER NOT NULL, PRIMARY KEY(userId, topicId))");
                 Cursor query = database.query("SELECT * FROM TopicDb");
                 if (query != null) {
-                    Intrinsics.checkNotNullExpressionValue(query, "query(\"SELECT * FROM TopicDb\")");
                     while (query.moveToNext()) {
                         try {
                             String name = query.getString(query.getColumnIndexOrThrow(AppMeasurementSdk.ConditionalUserProperty.NAME));
@@ -266,7 +267,6 @@ public final class AppMainDatabaseMigrations {
                 database.execSQL("CREATE TABLE FilterSettingsDb_copy (filterId INTEGER NOT NULL, fabs TEXT NOT NULL, icon TEXT, userId INTEGER NOT NULL, PRIMARY KEY(filterId, userId))");
                 Cursor query = database.query("SELECT * FROM FilterSettingsDb");
                 if (query != null) {
-                    Intrinsics.checkNotNullExpressionValue(query, "query(\"SELECT * FROM FilterSettingsDb\")");
                     while (true) {
                         try {
                             String str = null;
@@ -325,7 +325,15 @@ public final class AppMainDatabaseMigrations {
             }
         };
         MIGRATION_15_16 = r14;
-        migrations = new Migration[]{r0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, r13, r14};
+        ?? r15 = new Migration() { // from class: com.iMe.storage.data.locale.db.migration.AppMainDatabaseMigrations$MIGRATION_16_17$1
+            @Override // androidx.room.migration.Migration
+            public void migrate(SupportSQLiteDatabase database) {
+                Intrinsics.checkNotNullParameter(database, "database");
+                database.execSQL("DROP TABLE BookmarksDb");
+            }
+        };
+        MIGRATION_16_17 = r15;
+        migrations = new Migration[]{r0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, r13, r14, r15};
     }
 
     public final Migration[] getMigrations() {

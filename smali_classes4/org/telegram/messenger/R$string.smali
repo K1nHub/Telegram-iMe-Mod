@@ -13122,4445 +13122,4551 @@
 
 .field public static final app_update_dialog_description:I = 0x7f111a35
 
-.field public static final appbar_scrolling_view_behavior:I = 0x7f111a36
+.field public static final app_update_not_found:I = 0x7f111a36
 
-.field public static final archive_content_is_hidden:I = 0x7f111a37
+.field public static final appbar_scrolling_view_behavior:I = 0x7f111a37
 
-.field public static final archive_empty_subtitle:I = 0x7f111a38
+.field public static final archive_content_is_hidden:I = 0x7f111a51
 
-.field public static final archive_empty_title:I = 0x7f111a39
+.field public static final archive_empty_subtitle:I = 0x7f111a52
 
-.field public static final attach_menu_select_all:I = 0x7f111a3a
+.field public static final archive_empty_title:I = 0x7f111a53
 
-.field public static final auth_dialog_description:I = 0x7f111a3b
+.field public static final attach_menu_select_all:I = 0x7f111a54
 
-.field public static final auth_dialog_title:I = 0x7f111a3c
+.field public static final auth_dialog_description:I = 0x7f111a55
 
-.field public static final auth_login_terms_of_service:I = 0x7f111a3d
+.field public static final auth_dialog_title:I = 0x7f111a56
 
-.field public static final auth_signup_terms_of_service_postfix:I = 0x7f111a3e
+.field public static final auth_login_terms_of_service:I = 0x7f111a57
 
-.field public static final auto_open_forwarding_options:I = 0x7f111a3f
+.field public static final auth_signup_terms_of_service_postfix:I = 0x7f111a58
 
-.field public static final auto_open_forwarding_options_alert_message:I = 0x7f111a40
+.field public static final auto_open_forwarding_options:I = 0x7f111a59
 
-.field public static final auto_open_forwarding_options_hint:I = 0x7f111a41
+.field public static final auto_open_forwarding_options_alert_message:I = 0x7f111a5a
 
-.field public static final backup_auto_settings_delete_old_files:I = 0x7f111a42
+.field public static final auto_open_forwarding_options_hint:I = 0x7f111a5b
 
-.field public static final backup_auto_settings_delete_old_files_hint:I = 0x7f111a43
+.field public static final backup_auto_settings_delete_old_files:I = 0x7f111a5c
 
-.field public static final backup_auto_settings_enable_item_hint:I = 0x7f111a44
+.field public static final backup_auto_settings_delete_old_files_hint:I = 0x7f111a5d
 
-.field public static final backup_auto_settings_interval_chooser_header:I = 0x7f111a45
+.field public static final backup_auto_settings_enable_item_hint:I = 0x7f111a5e
 
-.field public static final backup_component_albums:I = 0x7f111a46
+.field public static final backup_auto_settings_interval_chooser_header:I = 0x7f111a5f
 
-.field public static final backup_component_filters:I = 0x7f111a47
+.field public static final backup_component_albums:I = 0x7f111a60
 
-.field public static final backup_component_multi_panel:I = 0x7f111a48
+.field public static final backup_component_filters:I = 0x7f111a61
 
-.field public static final backup_component_playlists:I = 0x7f111a49
+.field public static final backup_component_multi_panel:I = 0x7f111a62
 
-.field public static final backup_component_sorting:I = 0x7f111a4a
+.field public static final backup_component_playlists:I = 0x7f111a63
 
-.field public static final backup_component_topics:I = 0x7f111a4b
+.field public static final backup_component_sorting:I = 0x7f111a64
 
-.field public static final backup_component_translation:I = 0x7f111a4c
+.field public static final backup_component_topics:I = 0x7f111a65
 
-.field public static final backup_in_process_toolbar:I = 0x7f111a4d
+.field public static final backup_component_translation:I = 0x7f111a66
 
-.field public static final backup_message_popup_restore:I = 0x7f111a4e
+.field public static final backup_in_process_toolbar:I = 0x7f111a67
 
-.field public static final backup_restore:I = 0x7f111a4f
+.field public static final backup_message_popup_restore:I = 0x7f111a68
 
-.field public static final backup_settings_disabled:I = 0x7f111a50
+.field public static final backup_restore:I = 0x7f111a69
 
-.field public static final backup_settings_header:I = 0x7f111a51
+.field public static final backup_settings_disabled:I = 0x7f111a6a
 
-.field public static final backup_settings_interval_every_day:I = 0x7f111a52
+.field public static final backup_settings_header:I = 0x7f111a6b
 
-.field public static final backup_settings_interval_every_month:I = 0x7f111a53
+.field public static final backup_settings_interval_every_day:I = 0x7f111a6c
 
-.field public static final backup_settings_interval_every_week:I = 0x7f111a54
+.field public static final backup_settings_interval_every_month:I = 0x7f111a6d
 
-.field public static final backup_settings_save_auto:I = 0x7f111a55
+.field public static final backup_settings_interval_every_week:I = 0x7f111a6e
 
-.field public static final backup_settings_save_manually:I = 0x7f111a56
+.field public static final backup_settings_save_auto:I = 0x7f111a6f
 
-.field public static final backup_settings_save_manually_alert:I = 0x7f111a57
+.field public static final backup_settings_save_manually:I = 0x7f111a70
 
-.field public static final binance_convert_balance:I = 0x7f111a58
+.field public static final backup_settings_save_manually_alert:I = 0x7f111a71
 
-.field public static final binance_convert_button_calculate:I = 0x7f111a59
+.field public static final binance_convert_balance:I = 0x7f111a72
 
-.field public static final binance_convert_description:I = 0x7f111a5a
+.field public static final binance_convert_button_calculate:I = 0x7f111a73
 
-.field public static final binance_convert_min_max_convert_value:I = 0x7f111a5b
+.field public static final binance_convert_description:I = 0x7f111a74
 
-.field public static final binance_convert_not_enough_money_error_description:I = 0x7f111a5c
+.field public static final binance_convert_min_max_convert_value:I = 0x7f111a75
 
-.field public static final binance_convert_toolbar_title:I = 0x7f111a5d
+.field public static final binance_convert_not_enough_money_error_description:I = 0x7f111a76
 
-.field public static final binance_not_verified_dialog_description:I = 0x7f111a5e
+.field public static final binance_convert_toolbar_title:I = 0x7f111a77
 
-.field public static final binance_not_verified_dialog_positive_btn:I = 0x7f111a5f
+.field public static final binance_not_verified_dialog_description:I = 0x7f111a78
 
-.field public static final binance_not_verified_dialog_title:I = 0x7f111a60
+.field public static final binance_not_verified_dialog_positive_btn:I = 0x7f111a79
 
-.field public static final binance_opensdk_download:I = 0x7f111a61
+.field public static final binance_not_verified_dialog_title:I = 0x7f111a7a
 
-.field public static final binance_opensdk_login_failed_tips:I = 0x7f111a62
+.field public static final binance_opensdk_download:I = 0x7f111a7b
 
-.field public static final binance_opensdk_login_to_connect:I = 0x7f111a63
+.field public static final binance_opensdk_login_failed_tips:I = 0x7f111a7c
 
-.field public static final binance_opensdk_login_with_mail_or_phone:I = 0x7f111a64
+.field public static final binance_opensdk_login_to_connect:I = 0x7f111a7d
 
-.field public static final binance_opensdk_upgrade:I = 0x7f111a65
+.field public static final binance_opensdk_login_with_mail_or_phone:I = 0x7f111a7e
 
-.field public static final binance_pay_cancel:I = 0x7f111a66
+.field public static final binance_opensdk_upgrade:I = 0x7f111a7f
 
-.field public static final binance_pay_install:I = 0x7f111a67
+.field public static final binance_pay_cancel:I = 0x7f111a80
 
-.field public static final binance_pay_not_install_tip:I = 0x7f111a68
+.field public static final binance_pay_install:I = 0x7f111a81
 
-.field public static final binance_pay_update:I = 0x7f111a69
+.field public static final binance_pay_not_install_tip:I = 0x7f111a82
 
-.field public static final binance_pay_version_not_support:I = 0x7f111a6a
+.field public static final binance_pay_update:I = 0x7f111a83
 
-.field public static final binance_replenish_token_choose_token_cant_change_error:I = 0x7f111a6b
+.field public static final binance_pay_version_not_support:I = 0x7f111a84
 
-.field public static final binance_replenish_token_choose_token_first_error:I = 0x7f111a6c
+.field public static final binance_replenish_token_choose_token_cant_change_error:I = 0x7f111a85
 
-.field public static final binance_replenish_token_description:I = 0x7f111a6d
+.field public static final binance_replenish_token_choose_token_first_error:I = 0x7f111a86
 
-.field public static final binance_replenish_token_toolbar_title:I = 0x7f111a6e
+.field public static final binance_replenish_token_description:I = 0x7f111a87
 
-.field public static final binance_token_details_distribution_margin:I = 0x7f111a6f
+.field public static final binance_replenish_token_toolbar_title:I = 0x7f111a88
 
-.field public static final binance_token_details_distribution_spot:I = 0x7f111a70
+.field public static final binance_token_details_distribution_margin:I = 0x7f111a89
 
-.field public static final bot_description_adage:I = 0x7f111a71
+.field public static final binance_token_details_distribution_spot:I = 0x7f111a8a
 
-.field public static final bot_description_assistant:I = 0x7f111a72
+.field public static final bot_description_adage:I = 0x7f111a8b
 
-.field public static final bot_description_celentano:I = 0x7f111a73
+.field public static final bot_description_assistant:I = 0x7f111a8c
 
-.field public static final bot_description_chanel:I = 0x7f111a74
+.field public static final bot_description_celentano:I = 0x7f111a8d
 
-.field public static final bot_description_churchill:I = 0x7f111a75
+.field public static final bot_description_chanel:I = 0x7f111a8e
 
-.field public static final bot_description_confucius:I = 0x7f111a76
+.field public static final bot_description_churchill:I = 0x7f111a8f
 
-.field public static final bot_description_corleone:I = 0x7f111a77
+.field public static final bot_description_confucius:I = 0x7f111a90
 
-.field public static final bot_description_daenerys:I = 0x7f111a78
+.field public static final bot_description_corleone:I = 0x7f111a91
 
-.field public static final bot_description_darth_vader:I = 0x7f111a79
+.field public static final bot_description_daenerys:I = 0x7f111a92
 
-.field public static final bot_description_deadpool:I = 0x7f111a7a
+.field public static final bot_description_darth_vader:I = 0x7f111a93
 
-.field public static final bot_description_einstein:I = 0x7f111a7b
+.field public static final bot_description_deadpool:I = 0x7f111a94
 
-.field public static final bot_description_garfield:I = 0x7f111a7c
+.field public static final bot_description_einstein:I = 0x7f111a95
 
-.field public static final bot_description_holidays:I = 0x7f111a7d
+.field public static final bot_description_garfield:I = 0x7f111a96
 
-.field public static final bot_description_jon_snow:I = 0x7f111a7e
+.field public static final bot_description_holidays:I = 0x7f111a97
 
-.field public static final bot_description_karlson:I = 0x7f111a7f
+.field public static final bot_description_jon_snow:I = 0x7f111a98
 
-.field public static final bot_description_lenin:I = 0x7f111a80
+.field public static final bot_description_karlson:I = 0x7f111a99
 
-.field public static final bot_description_lotr:I = 0x7f111a81
+.field public static final bot_description_lenin:I = 0x7f111a9a
 
-.field public static final bot_description_memes:I = 0x7f111a82
+.field public static final bot_description_lotr:I = 0x7f111a9b
 
-.field public static final bot_description_minions:I = 0x7f111a83
+.field public static final bot_description_memes:I = 0x7f111a9c
 
-.field public static final bot_description_monroe:I = 0x7f111a84
+.field public static final bot_description_minions:I = 0x7f111a9d
 
-.field public static final bot_description_napoleon:I = 0x7f111a85
+.field public static final bot_description_monroe:I = 0x7f111a9e
 
-.field public static final bot_description_nu_pogodi:I = 0x7f111a86
+.field public static final bot_description_napoleon:I = 0x7f111a9f
 
-.field public static final bot_description_panda:I = 0x7f111a87
+.field public static final bot_description_nu_pogodi:I = 0x7f111aa0
 
-.field public static final bot_description_pushkin:I = 0x7f111a88
+.field public static final bot_description_panda:I = 0x7f111aa1
 
-.field public static final bot_description_scooby_doo:I = 0x7f111a89
+.field public static final bot_description_pushkin:I = 0x7f111aa2
 
-.field public static final bot_description_shrek:I = 0x7f111a8a
+.field public static final bot_description_scooby_doo:I = 0x7f111aa3
 
-.field public static final bot_description_simpsons:I = 0x7f111a8b
+.field public static final bot_description_shrek:I = 0x7f111aa4
 
-.field public static final bot_description_south_park:I = 0x7f111a8c
+.field public static final bot_description_simpsons:I = 0x7f111aa5
 
-.field public static final bot_description_soviet_films:I = 0x7f111a8d
+.field public static final bot_description_south_park:I = 0x7f111aa6
 
-.field public static final bot_description_sponge_bob:I = 0x7f111a8e
+.field public static final bot_description_soviet_films:I = 0x7f111aa7
 
-.field public static final bot_description_teresa:I = 0x7f111a8f
+.field public static final bot_description_sponge_bob:I = 0x7f111aa8
 
-.field public static final bot_description_terminator:I = 0x7f111a90
+.field public static final bot_description_teresa:I = 0x7f111aa9
 
-.field public static final bot_description_trade_binbank:I = 0x7f111a91
+.field public static final bot_description_terminator:I = 0x7f111aaa
 
-.field public static final bot_description_tsoy:I = 0x7f111a92
+.field public static final bot_description_trade_binbank:I = 0x7f111aab
 
-.field public static final bot_description_tyrion:I = 0x7f111a93
+.field public static final bot_description_tsoy:I = 0x7f111aac
 
-.field public static final bot_description_yoda:I = 0x7f111a94
+.field public static final bot_description_tyrion:I = 0x7f111aad
 
-.field public static final bot_label_advert:I = 0x7f111a95
+.field public static final bot_description_yoda:I = 0x7f111aae
 
-.field public static final bot_label_most_used:I = 0x7f111a96
+.field public static final bot_label_advert:I = 0x7f111aaf
 
-.field public static final bot_label_neuro:I = 0x7f111a97
+.field public static final bot_label_most_used:I = 0x7f111ab0
 
-.field public static final bot_label_normal:I = 0x7f111a98
+.field public static final bot_label_neuro:I = 0x7f111ab1
 
-.field public static final bot_tag_famous:I = 0x7f111a99
+.field public static final bot_label_normal:I = 0x7f111ab2
 
-.field public static final bot_tag_free:I = 0x7f111a9a
+.field public static final bot_tag_famous:I = 0x7f111ab3
 
-.field public static final bot_tag_gif:I = 0x7f111a9b
+.field public static final bot_tag_free:I = 0x7f111ab4
 
-.field public static final bot_tag_great:I = 0x7f111a9c
+.field public static final bot_tag_gif:I = 0x7f111ab5
 
-.field public static final bot_tag_hero_cartoon:I = 0x7f111a9d
+.field public static final bot_tag_great:I = 0x7f111ab6
 
-.field public static final bot_tag_hero_movie:I = 0x7f111a9e
+.field public static final bot_tag_hero_cartoon:I = 0x7f111ab7
 
-.field public static final bot_tag_man:I = 0x7f111a9f
+.field public static final bot_tag_hero_movie:I = 0x7f111ab8
 
-.field public static final bot_tag_pack:I = 0x7f111aa0
+.field public static final bot_tag_man:I = 0x7f111ab9
 
-.field public static final bot_tag_paid:I = 0x7f111aa1
+.field public static final bot_tag_pack:I = 0x7f111aba
 
-.field public static final bot_tag_woman:I = 0x7f111aa2
+.field public static final bot_tag_paid:I = 0x7f111abb
 
-.field public static final bot_title_adage:I = 0x7f111aa3
+.field public static final bot_tag_woman:I = 0x7f111abc
 
-.field public static final bot_title_assistant:I = 0x7f111aa4
+.field public static final bot_title_adage:I = 0x7f111abd
 
-.field public static final bot_title_celentano:I = 0x7f111aa5
+.field public static final bot_title_assistant:I = 0x7f111abe
 
-.field public static final bot_title_chanel:I = 0x7f111aa6
+.field public static final bot_title_celentano:I = 0x7f111abf
 
-.field public static final bot_title_churchill:I = 0x7f111aa7
+.field public static final bot_title_chanel:I = 0x7f111ac0
 
-.field public static final bot_title_confucius:I = 0x7f111aa8
+.field public static final bot_title_churchill:I = 0x7f111ac1
 
-.field public static final bot_title_corleone:I = 0x7f111aa9
+.field public static final bot_title_confucius:I = 0x7f111ac2
 
-.field public static final bot_title_daenerys:I = 0x7f111aaa
+.field public static final bot_title_corleone:I = 0x7f111ac3
 
-.field public static final bot_title_darth_vader:I = 0x7f111aab
+.field public static final bot_title_daenerys:I = 0x7f111ac4
 
-.field public static final bot_title_deadpool:I = 0x7f111aac
+.field public static final bot_title_darth_vader:I = 0x7f111ac5
 
-.field public static final bot_title_einstein:I = 0x7f111aad
+.field public static final bot_title_deadpool:I = 0x7f111ac6
 
-.field public static final bot_title_garfield:I = 0x7f111aae
+.field public static final bot_title_einstein:I = 0x7f111ac7
 
-.field public static final bot_title_holiday_12th_apr:I = 0x7f111aaf
+.field public static final bot_title_garfield:I = 0x7f111ac8
 
-.field public static final bot_title_holiday_1st_apr:I = 0x7f111ab0
+.field public static final bot_title_holiday_12th_apr:I = 0x7f111ac9
 
-.field public static final bot_title_holiday_1st_may:I = 0x7f111ab1
+.field public static final bot_title_holiday_1st_apr:I = 0x7f111aca
 
-.field public static final bot_title_holiday_23rd_feb:I = 0x7f111ab2
+.field public static final bot_title_holiday_1st_may:I = 0x7f111acb
 
-.field public static final bot_title_holiday_28th_apr:I = 0x7f111ab3
+.field public static final bot_title_holiday_23rd_feb:I = 0x7f111acc
 
-.field public static final bot_title_holiday_8th_mar:I = 0x7f111ab4
+.field public static final bot_title_holiday_28th_apr:I = 0x7f111acd
 
-.field public static final bot_title_holiday_9th_may:I = 0x7f111ab5
+.field public static final bot_title_holiday_8th_mar:I = 0x7f111ace
 
-.field public static final bot_title_holidays:I = 0x7f111ab6
+.field public static final bot_title_holiday_9th_may:I = 0x7f111acf
 
-.field public static final bot_title_jon_snow:I = 0x7f111ab7
+.field public static final bot_title_holidays:I = 0x7f111ad0
 
-.field public static final bot_title_karlson:I = 0x7f111ab8
+.field public static final bot_title_jon_snow:I = 0x7f111ad1
 
-.field public static final bot_title_lenin:I = 0x7f111ab9
+.field public static final bot_title_karlson:I = 0x7f111ad2
 
-.field public static final bot_title_lotr:I = 0x7f111aba
+.field public static final bot_title_lenin:I = 0x7f111ad3
 
-.field public static final bot_title_memes:I = 0x7f111abb
+.field public static final bot_title_lotr:I = 0x7f111ad4
 
-.field public static final bot_title_minions:I = 0x7f111abc
+.field public static final bot_title_memes:I = 0x7f111ad5
 
-.field public static final bot_title_monroe:I = 0x7f111abd
+.field public static final bot_title_minions:I = 0x7f111ad6
 
-.field public static final bot_title_napoleon:I = 0x7f111abe
+.field public static final bot_title_monroe:I = 0x7f111ad7
 
-.field public static final bot_title_nu_pogodi:I = 0x7f111abf
+.field public static final bot_title_napoleon:I = 0x7f111ad8
 
-.field public static final bot_title_panda:I = 0x7f111ac0
+.field public static final bot_title_nu_pogodi:I = 0x7f111ad9
 
-.field public static final bot_title_pushkin:I = 0x7f111ac1
+.field public static final bot_title_panda:I = 0x7f111ada
 
-.field public static final bot_title_recent:I = 0x7f111ac2
+.field public static final bot_title_pushkin:I = 0x7f111adb
 
-.field public static final bot_title_scooby_doo:I = 0x7f111ac3
+.field public static final bot_title_recent:I = 0x7f111adc
 
-.field public static final bot_title_shrek:I = 0x7f111ac4
+.field public static final bot_title_scooby_doo:I = 0x7f111add
 
-.field public static final bot_title_simpsons:I = 0x7f111ac5
+.field public static final bot_title_shrek:I = 0x7f111ade
 
-.field public static final bot_title_south_park:I = 0x7f111ac6
+.field public static final bot_title_simpsons:I = 0x7f111adf
 
-.field public static final bot_title_soviet_films:I = 0x7f111ac7
+.field public static final bot_title_south_park:I = 0x7f111ae0
 
-.field public static final bot_title_sponge_bob:I = 0x7f111ac8
+.field public static final bot_title_soviet_films:I = 0x7f111ae1
 
-.field public static final bot_title_teresa:I = 0x7f111ac9
+.field public static final bot_title_sponge_bob:I = 0x7f111ae2
 
-.field public static final bot_title_terminator:I = 0x7f111aca
+.field public static final bot_title_teresa:I = 0x7f111ae3
 
-.field public static final bot_title_trade_binbank:I = 0x7f111acb
+.field public static final bot_title_terminator:I = 0x7f111ae4
 
-.field public static final bot_title_tsoy:I = 0x7f111acc
+.field public static final bot_title_trade_binbank:I = 0x7f111ae5
 
-.field public static final bot_title_tyrion:I = 0x7f111acd
+.field public static final bot_title_tsoy:I = 0x7f111ae6
 
-.field public static final bot_title_yoda:I = 0x7f111ace
+.field public static final bot_title_tyrion:I = 0x7f111ae7
 
-.field public static final bottom_sheet_behavior:I = 0x7f111acf
+.field public static final bot_title_yoda:I = 0x7f111ae8
 
-.field public static final bottomsheet_action_expand_halfway:I = 0x7f111ad0
+.field public static final bottom_sheet_behavior:I = 0x7f111ae9
 
-.field public static final bottomsheet_multibutton_choose_fab:I = 0x7f111ad1
+.field public static final bottomsheet_action_expand_halfway:I = 0x7f111aea
 
-.field public static final bottomsheet_selected_multibuttons_limit:I = 0x7f111ad2
+.field public static final bottomsheet_multibutton_choose_fab:I = 0x7f111aeb
 
-.field public static final brvah_load_complete:I = 0x7f111ad3
+.field public static final bottomsheet_selected_multibuttons_limit:I = 0x7f111aec
 
-.field public static final brvah_load_end:I = 0x7f111ad4
+.field public static final brvah_load_complete:I = 0x7f111aed
 
-.field public static final brvah_load_failed:I = 0x7f111ad5
+.field public static final brvah_load_end:I = 0x7f111aee
 
-.field public static final catalog_all:I = 0x7f111ad6
+.field public static final brvah_load_failed:I = 0x7f111aef
 
-.field public static final catalog_all_languages:I = 0x7f111ad7
+.field public static final catalog_all:I = 0x7f111af0
 
-.field public static final catalog_categories:I = 0x7f111ad8
+.field public static final catalog_all_languages:I = 0x7f111af1
 
-.field public static final catalog_channel_details_join:I = 0x7f111ad9
+.field public static final catalog_categories:I = 0x7f111af2
 
-.field public static final catalog_channel_details_language:I = 0x7f111ada
+.field public static final catalog_channel_details_join:I = 0x7f111af3
 
-.field public static final catalog_channel_details_leave:I = 0x7f111adb
+.field public static final catalog_channel_details_language:I = 0x7f111af4
 
-.field public static final catalog_channel_details_tags:I = 0x7f111adc
+.field public static final catalog_channel_details_leave:I = 0x7f111af5
 
-.field public static final catalog_navigation_channels:I = 0x7f111add
+.field public static final catalog_channel_details_tags:I = 0x7f111af6
 
-.field public static final catalog_navigation_groups:I = 0x7f111ade
+.field public static final catalog_navigation_channels:I = 0x7f111af7
 
-.field public static final catalog_title:I = 0x7f111adf
+.field public static final catalog_navigation_groups:I = 0x7f111af8
 
-.field public static final catalog_user_channels:I = 0x7f111ae0
+.field public static final catalog_title:I = 0x7f111af9
 
-.field public static final catalog_user_channels_create:I = 0x7f111ae1
+.field public static final catalog_user_channels:I = 0x7f111afa
 
-.field public static final catalog_user_channels_empty_create:I = 0x7f111ae2
+.field public static final catalog_user_channels_create:I = 0x7f111afb
 
-.field public static final catalog_user_channels_empty_description:I = 0x7f111ae3
+.field public static final catalog_user_channels_empty_create:I = 0x7f111afc
 
-.field public static final catalog_user_channels_empty_title:I = 0x7f111ae4
+.field public static final catalog_user_channels_empty_description:I = 0x7f111afd
 
-.field public static final catalog_user_groups_empty_create:I = 0x7f111ae5
+.field public static final catalog_user_channels_empty_title:I = 0x7f111afe
 
-.field public static final catalog_user_groups_empty_description:I = 0x7f111ae6
+.field public static final catalog_user_groups_empty_create:I = 0x7f111aff
 
-.field public static final catalog_user_groups_empty_title:I = 0x7f111ae7
+.field public static final catalog_user_groups_empty_description:I = 0x7f111b00
 
-.field public static final channel_donations_address_field_hint:I = 0x7f111ae8
+.field public static final catalog_user_groups_empty_title:I = 0x7f111b01
 
-.field public static final channel_donations_address_field_title:I = 0x7f111ae9
+.field public static final channel_donations_address_field_hint:I = 0x7f111b02
 
-.field public static final channel_donations_admin_bot_information:I = 0x7f111aea
+.field public static final channel_donations_address_field_title:I = 0x7f111b03
 
-.field public static final channel_donations_admin_bot_link_key:I = 0x7f111aeb
+.field public static final channel_donations_admin_bot_information:I = 0x7f111b04
 
-.field public static final channel_donations_description:I = 0x7f111aec
+.field public static final channel_donations_admin_bot_link_key:I = 0x7f111b05
 
-.field public static final channel_donations_incorrect_address_error:I = 0x7f111aed
+.field public static final channel_donations_description:I = 0x7f111b06
 
-.field public static final channel_donations_latest_donations_title:I = 0x7f111aee
+.field public static final channel_donations_incorrect_address_error:I = 0x7f111b07
 
-.field public static final channel_donations_link_address_dialog_description:I = 0x7f111aef
+.field public static final channel_donations_latest_donations_title:I = 0x7f111b08
 
-.field public static final channel_donations_link_address_dialog_positive_button:I = 0x7f111af0
+.field public static final channel_donations_link_address_dialog_description:I = 0x7f111b09
 
-.field public static final channel_donations_link_address_dialog_title:I = 0x7f111af1
+.field public static final channel_donations_link_address_dialog_positive_button:I = 0x7f111b0a
 
-.field public static final channel_donations_link_non_castodial_wallet_address_dialog_title:I = 0x7f111af2
+.field public static final channel_donations_link_address_dialog_title:I = 0x7f111b0b
 
-.field public static final channel_donations_the_same_address_error:I = 0x7f111af3
+.field public static final channel_donations_link_non_castodial_wallet_address_dialog_title:I = 0x7f111b0c
 
-.field public static final channel_donations_toolbar_title:I = 0x7f111af4
+.field public static final channel_donations_the_same_address_error:I = 0x7f111b0d
 
-.field public static final channel_donations_unlink_address_dialog_description:I = 0x7f111af5
+.field public static final channel_donations_toolbar_title:I = 0x7f111b0e
 
-.field public static final channel_donations_unlink_address_dialog_positive_button:I = 0x7f111af6
+.field public static final channel_donations_unlink_address_dialog_description:I = 0x7f111b0f
 
-.field public static final channel_donations_unlink_address_dialog_title:I = 0x7f111af7
+.field public static final channel_donations_unlink_address_dialog_positive_button:I = 0x7f111b10
 
-.field public static final character_counter_content_description:I = 0x7f111af8
+.field public static final channel_donations_unlink_address_dialog_title:I = 0x7f111b11
 
-.field public static final character_counter_overflowed_content_description:I = 0x7f111af9
+.field public static final character_counter_content_description:I = 0x7f111b12
 
-.field public static final character_counter_pattern:I = 0x7f111afa
+.field public static final character_counter_overflowed_content_description:I = 0x7f111b13
 
-.field public static final chatDate:I = 0x7f111afb
+.field public static final character_counter_pattern:I = 0x7f111b14
 
-.field public static final chatFullDate:I = 0x7f111afc
+.field public static final chatDate:I = 0x7f111b15
 
-.field public static final chat_attach_alert_bot_buttons:I = 0x7f111afd
+.field public static final chatFullDate:I = 0x7f111b16
 
-.field public static final chat_avatar_previewer_mention_by_name:I = 0x7f111afe
+.field public static final chat_attach_alert_bot_buttons:I = 0x7f111b17
 
-.field public static final chat_avatar_previewer_user_messages:I = 0x7f111aff
+.field public static final chat_avatar_previewer_mention_by_name:I = 0x7f111b18
 
-.field public static final chat_bookmarks:I = 0x7f111b00
+.field public static final chat_avatar_previewer_user_messages:I = 0x7f111b19
 
-.field public static final chat_bookmarks_empty:I = 0x7f111b01
+.field public static final chat_drafts_empty:I = 0x7f111b1a
 
-.field public static final chat_bookmarks_empty_subtitle:I = 0x7f111b02
+.field public static final chat_drafts_empty_subtitle:I = 0x7f111b1b
 
-.field public static final chat_drafts_empty:I = 0x7f111b03
+.field public static final chat_long_action_translate:I = 0x7f111b1c
 
-.field public static final chat_drafts_empty_subtitle:I = 0x7f111b04
+.field public static final chat_menu_auto_translate_settings_item:I = 0x7f111b1d
 
-.field public static final chat_long_action_translate:I = 0x7f111b05
+.field public static final chat_menu_convert_to_album:I = 0x7f111b1e
 
-.field public static final chat_menu_auto_translate_settings_item:I = 0x7f111b06
+.field public static final chat_menu_convert_to_channel:I = 0x7f111b1f
 
-.field public static final chat_menu_convert_to_album:I = 0x7f111b07
+.field public static final chat_menu_jump_to_start_item:I = 0x7f111b20
 
-.field public static final chat_menu_convert_to_channel:I = 0x7f111b08
+.field public static final chat_menu_language_settings:I = 0x7f111b21
 
-.field public static final chat_menu_jump_to_start_item:I = 0x7f111b09
+.field public static final chat_menu_quote:I = 0x7f111b22
 
-.field public static final chat_menu_language_settings:I = 0x7f111b0a
+.field public static final chat_message_forward_media:I = 0x7f111b23
 
-.field public static final chat_menu_quote:I = 0x7f111b0b
+.field public static final chat_message_forward_text:I = 0x7f111b24
 
-.field public static final chat_message_forward_media:I = 0x7f111b0c
+.field public static final chat_message_popup_option_copy_image:I = 0x7f111b25
 
-.field public static final chat_message_forward_text:I = 0x7f111b0d
+.field public static final chat_message_popup_option_copy_part:I = 0x7f111b26
 
-.field public static final chat_message_popup_option_add_to_bookmarks:I = 0x7f111b0e
+.field public static final chat_message_popup_option_copy_text:I = 0x7f111b27
 
-.field public static final chat_message_popup_option_copy_image:I = 0x7f111b0f
+.field public static final chat_message_popup_option_forward_cloud:I = 0x7f111b28
 
-.field public static final chat_message_popup_option_copy_part:I = 0x7f111b10
+.field public static final chat_message_popup_option_forward_viber:I = 0x7f111b29
 
-.field public static final chat_message_popup_option_copy_text:I = 0x7f111b11
+.field public static final chat_message_popup_option_forward_whatsapp:I = 0x7f111b2a
 
-.field public static final chat_message_popup_option_forward_cloud:I = 0x7f111b12
+.field public static final chat_message_popup_option_forward_whatsapp_business:I = 0x7f111b2b
 
-.field public static final chat_message_popup_option_forward_viber:I = 0x7f111b13
+.field public static final chat_message_spoiler_less:I = 0x7f111b2c
 
-.field public static final chat_message_popup_option_forward_whatsapp:I = 0x7f111b14
+.field public static final chat_message_spoiler_more:I = 0x7f111b2d
 
-.field public static final chat_message_popup_option_forward_whatsapp_business:I = 0x7f111b15
+.field public static final chat_multi_panel_empty_cache_toast:I = 0x7f111b2e
 
-.field public static final chat_message_popup_option_remove_all_bookmarks:I = 0x7f111b16
+.field public static final chat_multi_reply:I = 0x7f111b2f
 
-.field public static final chat_message_popup_option_remove_from_bookmarks:I = 0x7f111b17
+.field public static final chat_reaction_button_position:I = 0x7f111b30
 
-.field public static final chat_message_spoiler_less:I = 0x7f111b18
+.field public static final chat_reaction_create:I = 0x7f111b31
 
-.field public static final chat_message_spoiler_more:I = 0x7f111b19
+.field public static final chat_reaction_create_a_reaction:I = 0x7f111b32
 
-.field public static final chat_multi_panel_empty_cache_toast:I = 0x7f111b1a
+.field public static final chat_reaction_create_button:I = 0x7f111b33
 
-.field public static final chat_multi_reply:I = 0x7f111b1b
+.field public static final chat_reaction_dialog_text:I = 0x7f111b34
 
-.field public static final chat_reaction_button_position:I = 0x7f111b1c
+.field public static final chat_reaction_dialog_title:I = 0x7f111b35
 
-.field public static final chat_reaction_create:I = 0x7f111b1d
+.field public static final chat_reaction_empty_field_warning:I = 0x7f111b36
 
-.field public static final chat_reaction_create_a_reaction:I = 0x7f111b1e
+.field public static final chat_reaction_enter_the_title:I = 0x7f111b37
 
-.field public static final chat_reaction_create_button:I = 0x7f111b1f
+.field public static final chat_reaction_link_not_added:I = 0x7f111b38
 
-.field public static final chat_reaction_dialog_text:I = 0x7f111b20
+.field public static final chat_reaction_max_button_value_info:I = 0x7f111b39
 
-.field public static final chat_reaction_dialog_title:I = 0x7f111b21
+.field public static final chat_reaction_max_button_value_info_single:I = 0x7f111b3a
 
-.field public static final chat_reaction_empty_field_warning:I = 0x7f111b22
+.field public static final chat_reaction_max_reaction_value_info:I = 0x7f111b3b
 
-.field public static final chat_reaction_enter_the_title:I = 0x7f111b23
+.field public static final chat_reaction_max_reaction_value_info_single:I = 0x7f111b3c
 
-.field public static final chat_reaction_link_not_added:I = 0x7f111b24
+.field public static final chat_reaction_one_line:I = 0x7f111b3d
 
-.field public static final chat_reaction_max_button_value_info:I = 0x7f111b25
+.field public static final chat_reaction_select_emoji:I = 0x7f111b3e
 
-.field public static final chat_reaction_max_button_value_info_single:I = 0x7f111b26
+.field public static final chat_reaction_settings:I = 0x7f111b3f
 
-.field public static final chat_reaction_max_reaction_value_info:I = 0x7f111b27
+.field public static final chat_reaction_start:I = 0x7f111b40
 
-.field public static final chat_reaction_max_reaction_value_info_single:I = 0x7f111b28
+.field public static final chat_reaction_text_loader:I = 0x7f111b41
 
-.field public static final chat_reaction_one_line:I = 0x7f111b29
+.field public static final chat_reaction_three_lines:I = 0x7f111b42
 
-.field public static final chat_reaction_select_emoji:I = 0x7f111b2a
+.field public static final chat_reaction_title:I = 0x7f111b43
 
-.field public static final chat_reaction_settings:I = 0x7f111b2b
+.field public static final chat_reaction_two_lines:I = 0x7f111b44
 
-.field public static final chat_reaction_start:I = 0x7f111b2c
+.field public static final chat_reaction_url_validation_error:I = 0x7f111b45
 
-.field public static final chat_reaction_text_loader:I = 0x7f111b2d
+.field public static final chat_send_panel_neurobot_not_have_gifs:I = 0x7f111b46
 
-.field public static final chat_reaction_three_lines:I = 0x7f111b2e
+.field public static final chat_send_panel_neurobot_popup_disable:I = 0x7f111b47
 
-.field public static final chat_reaction_title:I = 0x7f111b2f
+.field public static final chat_send_panel_neurobot_popup_info:I = 0x7f111b48
 
-.field public static final chat_reaction_two_lines:I = 0x7f111b30
+.field public static final chat_send_panel_neurobot_popup_share:I = 0x7f111b49
 
-.field public static final chat_reaction_url_validation_error:I = 0x7f111b31
+.field public static final chat_send_panel_neurobots_responses_empty:I = 0x7f111b4a
 
-.field public static final chat_send_panel_neurobot_not_have_gifs:I = 0x7f111b32
+.field public static final chat_settings_alert_channel_view_bottom_cell:I = 0x7f111b4b
 
-.field public static final chat_send_panel_neurobot_popup_disable:I = 0x7f111b33
+.field public static final chat_settings_app_icon_alert_message:I = 0x7f111b4c
 
-.field public static final chat_send_panel_neurobot_popup_info:I = 0x7f111b34
+.field public static final chat_settings_app_icon_alert_title:I = 0x7f111b4d
 
-.field public static final chat_send_panel_neurobot_popup_share:I = 0x7f111b35
+.field public static final chat_settings_app_icon_autumn:I = 0x7f111b4e
 
-.field public static final chat_send_panel_neurobots_responses_empty:I = 0x7f111b36
+.field public static final chat_settings_app_icon_black:I = 0x7f111b4f
 
-.field public static final chat_settings_alert_channel_view_bottom_cell:I = 0x7f111b37
+.field public static final chat_settings_app_icon_blue:I = 0x7f111b50
 
-.field public static final chat_settings_app_icon_alert_message:I = 0x7f111b38
+.field public static final chat_settings_app_icon_brown:I = 0x7f111b51
 
-.field public static final chat_settings_app_icon_alert_title:I = 0x7f111b39
+.field public static final chat_settings_app_icon_coffee:I = 0x7f111b52
 
-.field public static final chat_settings_app_icon_autumn:I = 0x7f111b3a
+.field public static final chat_settings_app_icon_error_toast:I = 0x7f111b53
 
-.field public static final chat_settings_app_icon_black:I = 0x7f111b3b
+.field public static final chat_settings_app_icon_gray:I = 0x7f111b54
 
-.field public static final chat_settings_app_icon_blue:I = 0x7f111b3c
+.field public static final chat_settings_app_icon_green:I = 0x7f111b55
 
-.field public static final chat_settings_app_icon_brown:I = 0x7f111b3d
+.field public static final chat_settings_app_icon_header:I = 0x7f111b56
 
-.field public static final chat_settings_app_icon_coffee:I = 0x7f111b3e
+.field public static final chat_settings_app_icon_indigo:I = 0x7f111b57
 
-.field public static final chat_settings_app_icon_error_toast:I = 0x7f111b3f
+.field public static final chat_settings_app_icon_melon:I = 0x7f111b58
 
-.field public static final chat_settings_app_icon_gray:I = 0x7f111b40
+.field public static final chat_settings_app_icon_mint:I = 0x7f111b59
 
-.field public static final chat_settings_app_icon_green:I = 0x7f111b41
+.field public static final chat_settings_app_icon_peach:I = 0x7f111b5a
 
-.field public static final chat_settings_app_icon_header:I = 0x7f111b42
+.field public static final chat_settings_app_icon_pink:I = 0x7f111b5b
 
-.field public static final chat_settings_app_icon_indigo:I = 0x7f111b43
+.field public static final chat_settings_app_icon_purple:I = 0x7f111b5c
 
-.field public static final chat_settings_app_icon_melon:I = 0x7f111b44
+.field public static final chat_settings_app_icon_red:I = 0x7f111b5d
 
-.field public static final chat_settings_app_icon_mint:I = 0x7f111b45
+.field public static final chat_settings_app_icon_spring:I = 0x7f111b5e
 
-.field public static final chat_settings_app_icon_peach:I = 0x7f111b46
+.field public static final chat_settings_app_icon_summer:I = 0x7f111b5f
 
-.field public static final chat_settings_app_icon_pink:I = 0x7f111b47
+.field public static final chat_settings_app_icon_white:I = 0x7f111b60
 
-.field public static final chat_settings_app_icon_purple:I = 0x7f111b48
+.field public static final chat_settings_app_icon_winter:I = 0x7f111b61
 
-.field public static final chat_settings_app_icon_red:I = 0x7f111b49
+.field public static final chat_settings_app_icon_yellow:I = 0x7f111b62
 
-.field public static final chat_settings_app_icon_spring:I = 0x7f111b4a
+.field public static final chat_settings_chat_list_compact_mode:I = 0x7f111b63
 
-.field public static final chat_settings_app_icon_summer:I = 0x7f111b4b
+.field public static final chat_settings_files_sending_preview_description:I = 0x7f111b64
 
-.field public static final chat_settings_app_icon_white:I = 0x7f111b4c
+.field public static final chat_settings_files_sending_preview_title:I = 0x7f111b65
 
-.field public static final chat_settings_app_icon_winter:I = 0x7f111b4d
+.field public static final chat_settings_raise_to_switch_speaker:I = 0x7f111b66
 
-.field public static final chat_settings_app_icon_yellow:I = 0x7f111b4e
+.field public static final chat_settings_round_user_counter_item_subtitle:I = 0x7f111b67
 
-.field public static final chat_settings_chat_list_compact_mode:I = 0x7f111b4f
+.field public static final chat_settings_round_user_counter_item_title:I = 0x7f111b68
 
-.field public static final chat_settings_files_sending_preview_description:I = 0x7f111b50
+.field public static final chat_settings_sending_item_title:I = 0x7f111b69
 
-.field public static final chat_settings_files_sending_preview_title:I = 0x7f111b51
+.field public static final chat_settings_vibration:I = 0x7f111b6a
 
-.field public static final chat_settings_raise_to_switch_speaker:I = 0x7f111b52
+.field public static final chat_settings_wide_posts_in_chanel:I = 0x7f111b6b
 
-.field public static final chat_settings_round_user_counter_item_subtitle:I = 0x7f111b53
+.field public static final chat_template:I = 0x7f111b6c
 
-.field public static final chat_settings_round_user_counter_item_title:I = 0x7f111b54
+.field public static final chat_template_name_hint:I = 0x7f111b6d
 
-.field public static final chat_settings_sending_item_title:I = 0x7f111b55
+.field public static final chat_template_name_info:I = 0x7f111b6e
 
-.field public static final chat_settings_vibration:I = 0x7f111b56
+.field public static final chat_template_subtitle_created_at:I = 0x7f111b6f
 
-.field public static final chat_settings_wide_posts_in_chanel:I = 0x7f111b57
+.field public static final chat_template_subtitle_sent:I = 0x7f111b70
 
-.field public static final chat_template:I = 0x7f111b58
+.field public static final chat_templates:I = 0x7f111b71
 
-.field public static final chat_template_name_hint:I = 0x7f111b59
+.field public static final chat_templates_info:I = 0x7f111b72
 
-.field public static final chat_template_name_info:I = 0x7f111b5a
+.field public static final chat_templates_list_header:I = 0x7f111b73
 
-.field public static final chat_template_subtitle_created_at:I = 0x7f111b5b
+.field public static final chat_templates_mode_attach:I = 0x7f111b74
 
-.field public static final chat_template_subtitle_sent:I = 0x7f111b5c
+.field public static final chat_templates_mode_hint:I = 0x7f111b75
 
-.field public static final chat_templates:I = 0x7f111b5d
+.field public static final chat_templates_mode_oval:I = 0x7f111b76
 
-.field public static final chat_templates_info:I = 0x7f111b5e
+.field public static final chip_text:I = 0x7f111b77
 
-.field public static final chat_templates_list_header:I = 0x7f111b5f
+.field public static final choose_staking_order_interest_rate:I = 0x7f111b78
 
-.field public static final chat_templates_mode_attach:I = 0x7f111b60
+.field public static final choose_tokens_order_alphabet:I = 0x7f111b79
 
-.field public static final chat_templates_mode_hint:I = 0x7f111b61
+.field public static final choose_tokens_order_balance:I = 0x7f111b7a
 
-.field public static final chat_templates_mode_oval:I = 0x7f111b62
+.field public static final choose_tokens_order_default:I = 0x7f111b7b
 
-.field public static final chip_text:I = 0x7f111b63
+.field public static final choose_tokens_order_type_dialog_title:I = 0x7f111b7c
 
-.field public static final choose_staking_order_interest_rate:I = 0x7f111b64
+.field public static final clear_text_end_icon_content_description:I = 0x7f111b7d
 
-.field public static final choose_tokens_order_alphabet:I = 0x7f111b65
+.field public static final cloud_album:I = 0x7f111b7e
 
-.field public static final choose_tokens_order_balance:I = 0x7f111b66
+.field public static final cloud_album_created:I = 0x7f111b7f
 
-.field public static final choose_tokens_order_default:I = 0x7f111b67
+.field public static final cloud_albums_bottom_sheet_create_new_album:I = 0x7f111b80
 
-.field public static final choose_tokens_order_type_dialog_title:I = 0x7f111b68
+.field public static final cloud_albums_bottom_sheet_title:I = 0x7f111b81
 
-.field public static final clear_text_end_icon_content_description:I = 0x7f111b69
+.field public static final cloud_albums_delete_alert_message:I = 0x7f111b82
 
-.field public static final cloud_album:I = 0x7f111b6a
+.field public static final cloud_albums_delete_alert_title:I = 0x7f111b83
 
-.field public static final cloud_album_created:I = 0x7f111b6b
+.field public static final cloud_albums_empty_subtitle:I = 0x7f111b84
 
-.field public static final cloud_albums_bottom_sheet_create_new_album:I = 0x7f111b6c
+.field public static final cloud_albums_empty_subtitle_archibe:I = 0x7f111b85
 
-.field public static final cloud_albums_bottom_sheet_title:I = 0x7f111b6d
+.field public static final cloud_albums_empty_title:I = 0x7f111b86
 
-.field public static final cloud_albums_delete_alert_message:I = 0x7f111b6e
+.field public static final cloud_albums_intro_button:I = 0x7f111b87
 
-.field public static final cloud_albums_delete_alert_title:I = 0x7f111b6f
+.field public static final cloud_albums_intro_subtitle:I = 0x7f111b88
 
-.field public static final cloud_albums_empty_subtitle:I = 0x7f111b70
+.field public static final cloud_albums_intro_title:I = 0x7f111b89
 
-.field public static final cloud_albums_empty_subtitle_archibe:I = 0x7f111b71
+.field public static final cloud_albums_name_hint:I = 0x7f111b8a
 
-.field public static final cloud_albums_empty_title:I = 0x7f111b72
+.field public static final cloud_albums_toolbar_title:I = 0x7f111b8b
 
-.field public static final cloud_albums_intro_button:I = 0x7f111b73
+.field public static final cloud_albums_undo_forward_album:I = 0x7f111b8c
 
-.field public static final cloud_albums_intro_subtitle:I = 0x7f111b74
+.field public static final cloud_albums_undo_forward_cloud:I = 0x7f111b8d
 
-.field public static final cloud_albums_intro_title:I = 0x7f111b75
+.field public static final cloud_clear_or_delete_captcha_alert_message:I = 0x7f111b8e
 
-.field public static final cloud_albums_name_hint:I = 0x7f111b76
+.field public static final cloud_clear_or_delete_captcha_alert_positive_button:I = 0x7f111b8f
 
-.field public static final cloud_albums_toolbar_title:I = 0x7f111b77
+.field public static final cloud_filter_contact:I = 0x7f111b90
 
-.field public static final cloud_albums_undo_forward_album:I = 0x7f111b78
+.field public static final cloud_filter_file_placeholder:I = 0x7f111b91
 
-.field public static final cloud_albums_undo_forward_cloud:I = 0x7f111b79
+.field public static final cloud_filter_geo:I = 0x7f111b92
 
-.field public static final cloud_clear_or_delete_captcha_alert_message:I = 0x7f111b7a
+.field public static final cloud_filter_gif:I = 0x7f111b93
 
-.field public static final cloud_clear_or_delete_captcha_alert_positive_button:I = 0x7f111b7b
+.field public static final cloud_filter_gif_placeholder:I = 0x7f111b94
 
-.field public static final cloud_filter_contact:I = 0x7f111b7c
+.field public static final cloud_filter_image_placeholder:I = 0x7f111b95
 
-.field public static final cloud_filter_file_placeholder:I = 0x7f111b7d
+.field public static final cloud_filter_link_placeholder:I = 0x7f111b96
 
-.field public static final cloud_filter_geo:I = 0x7f111b7e
+.field public static final cloud_filter_music:I = 0x7f111b97
 
-.field public static final cloud_filter_gif:I = 0x7f111b7f
+.field public static final cloud_filter_music_placeholder:I = 0x7f111b98
 
-.field public static final cloud_filter_gif_placeholder:I = 0x7f111b80
+.field public static final cloud_filter_my:I = 0x7f111b99
 
-.field public static final cloud_filter_image_placeholder:I = 0x7f111b81
+.field public static final cloud_filter_poll:I = 0x7f111b9a
 
-.field public static final cloud_filter_link_placeholder:I = 0x7f111b82
+.field public static final cloud_filter_sticker_placeholder:I = 0x7f111b9b
 
-.field public static final cloud_filter_music:I = 0x7f111b83
+.field public static final cloud_filter_text_placeholder:I = 0x7f111b9c
 
-.field public static final cloud_filter_music_placeholder:I = 0x7f111b84
+.field public static final cloud_filter_video_placeholder:I = 0x7f111b9d
 
-.field public static final cloud_filter_my:I = 0x7f111b85
+.field public static final cloud_filter_voice_placeholder:I = 0x7f111b9e
 
-.field public static final cloud_filter_poll:I = 0x7f111b86
+.field public static final collection_bottom_tab_channels:I = 0x7f111b9f
 
-.field public static final cloud_filter_sticker_placeholder:I = 0x7f111b87
+.field public static final collection_category_empty:I = 0x7f111ba0
 
-.field public static final cloud_filter_text_placeholder:I = 0x7f111b88
+.field public static final collection_channel_info_rate:I = 0x7f111ba1
 
-.field public static final cloud_filter_video_placeholder:I = 0x7f111b89
+.field public static final collection_channel_info_screen_title:I = 0x7f111ba2
 
-.field public static final cloud_filter_voice_placeholder:I = 0x7f111b8a
+.field public static final collection_countries_screen_title:I = 0x7f111ba3
 
-.field public static final collection_bottom_tab_channels:I = 0x7f111b8b
+.field public static final collection_info_join:I = 0x7f111ba4
 
-.field public static final collection_category_empty:I = 0x7f111b8c
+.field public static final collection_info_leave:I = 0x7f111ba5
 
-.field public static final collection_channel_info_rate:I = 0x7f111b8d
+.field public static final collection_info_members:I = 0x7f111ba6
 
-.field public static final collection_channel_info_screen_title:I = 0x7f111b8e
+.field public static final collection_my_channels_empty_subtitle:I = 0x7f111ba7
 
-.field public static final collection_countries_screen_title:I = 0x7f111b8f
+.field public static final collection_my_channels_empty_title:I = 0x7f111ba8
 
-.field public static final collection_info_join:I = 0x7f111b90
+.field public static final collection_search_empty:I = 0x7f111ba9
 
-.field public static final collection_info_leave:I = 0x7f111b91
+.field public static final collection_tab_all:I = 0x7f111baa
 
-.field public static final collection_info_members:I = 0x7f111b92
+.field public static final collection_tab_categories:I = 0x7f111bab
 
-.field public static final collection_my_channels_empty_subtitle:I = 0x7f111b93
+.field public static final collection_tab_my:I = 0x7f111bac
 
-.field public static final collection_my_channels_empty_title:I = 0x7f111b94
+.field public static final combine_messages_disable:I = 0x7f111bae
 
-.field public static final collection_search_empty:I = 0x7f111b95
+.field public static final combine_messages_enable:I = 0x7f111baf
 
-.field public static final collection_tab_all:I = 0x7f111b96
+.field public static final combine_messages_send_without_combine:I = 0x7f111bb0
 
-.field public static final collection_tab_categories:I = 0x7f111b97
+.field public static final common_ascendeex_url:I = 0x7f111bb1
 
-.field public static final collection_tab_my:I = 0x7f111b98
+.field public static final common_cancel:I = 0x7f111bb2
 
-.field public static final combine_messages_disable:I = 0x7f111b9a
+.field public static final common_close:I = 0x7f111bb3
 
-.field public static final combine_messages_enable:I = 0x7f111b9b
+.field public static final common_confirm:I = 0x7f111bb4
 
-.field public static final combine_messages_send_without_combine:I = 0x7f111b9c
+.field public static final common_create:I = 0x7f111bb5
 
-.field public static final common_ascendeex_url:I = 0x7f111b9d
+.field public static final common_dash:I = 0x7f111bb6
 
-.field public static final common_cancel:I = 0x7f111b9e
+.field public static final common_done:I = 0x7f111bb7
 
-.field public static final common_close:I = 0x7f111b9f
+.field public static final common_empty_balance_state_description:I = 0x7f111bb8
 
-.field public static final common_confirm:I = 0x7f111ba0
+.field public static final common_empty_state_description:I = 0x7f111bb9
 
-.field public static final common_create:I = 0x7f111ba1
+.field public static final common_empty_state_title:I = 0x7f111bba
 
-.field public static final common_dash:I = 0x7f111ba2
+.field public static final common_error_no_internet:I = 0x7f111bbb
 
-.field public static final common_empty_balance_state_description:I = 0x7f111ba3
+.field public static final common_error_unauthorized:I = 0x7f111bbc
 
-.field public static final common_empty_state_description:I = 0x7f111ba4
+.field public static final common_error_unexpected:I = 0x7f111bbd
 
-.field public static final common_empty_state_title:I = 0x7f111ba5
+.field public static final common_google_play_services_enable_button:I = 0x7f111bbe
 
-.field public static final common_error_no_internet:I = 0x7f111ba6
+.field public static final common_google_play_services_enable_text:I = 0x7f111bbf
 
-.field public static final common_error_unauthorized:I = 0x7f111ba7
+.field public static final common_google_play_services_enable_title:I = 0x7f111bc0
 
-.field public static final common_error_unexpected:I = 0x7f111ba8
+.field public static final common_google_play_services_install_button:I = 0x7f111bc1
 
-.field public static final common_google_play_services_enable_button:I = 0x7f111ba9
+.field public static final common_google_play_services_install_text:I = 0x7f111bc2
 
-.field public static final common_google_play_services_enable_text:I = 0x7f111baa
+.field public static final common_google_play_services_install_title:I = 0x7f111bc3
 
-.field public static final common_google_play_services_enable_title:I = 0x7f111bab
+.field public static final common_google_play_services_notification_channel_name:I = 0x7f111bc4
 
-.field public static final common_google_play_services_install_button:I = 0x7f111bac
+.field public static final common_google_play_services_notification_ticker:I = 0x7f111bc5
 
-.field public static final common_google_play_services_install_text:I = 0x7f111bad
+.field public static final common_google_play_services_unknown_issue:I = 0x7f111bc6
 
-.field public static final common_google_play_services_install_title:I = 0x7f111bae
+.field public static final common_google_play_services_unsupported_text:I = 0x7f111bc7
 
-.field public static final common_google_play_services_notification_channel_name:I = 0x7f111baf
+.field public static final common_google_play_services_update_button:I = 0x7f111bc8
 
-.field public static final common_google_play_services_notification_ticker:I = 0x7f111bb0
+.field public static final common_google_play_services_update_text:I = 0x7f111bc9
 
-.field public static final common_google_play_services_unknown_issue:I = 0x7f111bb1
+.field public static final common_google_play_services_update_title:I = 0x7f111bca
 
-.field public static final common_google_play_services_unsupported_text:I = 0x7f111bb2
+.field public static final common_google_play_services_updating_text:I = 0x7f111bcb
 
-.field public static final common_google_play_services_update_button:I = 0x7f111bb3
+.field public static final common_google_play_services_wear_update_text:I = 0x7f111bcc
 
-.field public static final common_google_play_services_update_text:I = 0x7f111bb4
+.field public static final common_id:I = 0x7f111bcd
 
-.field public static final common_google_play_services_update_title:I = 0x7f111bb5
+.field public static final common_max:I = 0x7f111bce
 
-.field public static final common_google_play_services_updating_text:I = 0x7f111bb6
+.field public static final common_next:I = 0x7f111bcf
 
-.field public static final common_google_play_services_wear_update_text:I = 0x7f111bb7
+.field public static final common_no_network_state_description:I = 0x7f111bd0
 
-.field public static final common_id:I = 0x7f111bb8
+.field public static final common_no_network_state_title:I = 0x7f111bd1
 
-.field public static final common_max:I = 0x7f111bb9
+.field public static final common_not_show_again:I = 0x7f111bd2
 
-.field public static final common_next:I = 0x7f111bba
+.field public static final common_off:I = 0x7f111bd3
 
-.field public static final common_no_network_state_description:I = 0x7f111bbb
+.field public static final common_ok:I = 0x7f111bd4
 
-.field public static final common_no_network_state_title:I = 0x7f111bbc
+.field public static final common_on:I = 0x7f111bd5
 
-.field public static final common_not_show_again:I = 0x7f111bbd
+.field public static final common_open_on_phone:I = 0x7f111bd6
 
-.field public static final common_off:I = 0x7f111bbe
+.field public static final common_progress_state_description:I = 0x7f111bd7
 
-.field public static final common_ok:I = 0x7f111bbf
+.field public static final common_progress_state_title:I = 0x7f111bd8
 
-.field public static final common_on:I = 0x7f111bc0
+.field public static final common_retry:I = 0x7f111bd9
 
-.field public static final common_open_on_phone:I = 0x7f111bc1
+.field public static final common_save:I = 0x7f111bda
 
-.field public static final common_progress_state_description:I = 0x7f111bc2
+.field public static final common_share:I = 0x7f111bdb
 
-.field public static final common_progress_state_title:I = 0x7f111bc3
+.field public static final common_signin_button_text:I = 0x7f111bdc
 
-.field public static final common_retry:I = 0x7f111bc4
+.field public static final common_signin_button_text_long:I = 0x7f111bdd
 
-.field public static final common_save:I = 0x7f111bc5
+.field public static final common_skip:I = 0x7f111bde
 
-.field public static final common_share:I = 0x7f111bc6
+.field public static final common_translate:I = 0x7f111bdf
 
-.field public static final common_signin_button_text:I = 0x7f111bc7
+.field public static final common_unexpected_error_title:I = 0x7f111be0
 
-.field public static final common_signin_button_text_long:I = 0x7f111bc8
+.field public static final common_unexpected_state_description:I = 0x7f111be1
 
-.field public static final common_skip:I = 0x7f111bc9
+.field public static final common_unexpected_state_title:I = 0x7f111be2
 
-.field public static final common_translate:I = 0x7f111bca
+.field public static final common_username:I = 0x7f111be3
 
-.field public static final common_unexpected_error_title:I = 0x7f111bcb
+.field public static final common_wallet_faq_url:I = 0x7f111be4
 
-.field public static final common_unexpected_state_description:I = 0x7f111bcc
+.field public static final configure_chat_themes_option_alert:I = 0x7f111be5
 
-.field public static final common_unexpected_state_title:I = 0x7f111bcd
+.field public static final configure_chat_themes_option_toast:I = 0x7f111be6
 
-.field public static final common_username:I = 0x7f111bce
+.field public static final contacts_filter_all:I = 0x7f111be7
 
-.field public static final common_wallet_faq_url:I = 0x7f111bcf
+.field public static final contacts_filter_apply_button:I = 0x7f111be8
 
-.field public static final configure_chat_themes_option_alert:I = 0x7f111bd0
+.field public static final contacts_filter_blocked:I = 0x7f111be9
 
-.field public static final configure_chat_themes_option_toast:I = 0x7f111bd1
+.field public static final contacts_filter_confirm_unblock:I = 0x7f111bea
 
-.field public static final contacts_filter_all:I = 0x7f111bd2
+.field public static final contacts_filter_header:I = 0x7f111beb
 
-.field public static final contacts_filter_apply_button:I = 0x7f111bd3
+.field public static final contacts_filter_mutual:I = 0x7f111bec
 
-.field public static final contacts_filter_blocked:I = 0x7f111bd4
+.field public static final contacts_filter_not_mutual:I = 0x7f111bed
 
-.field public static final contacts_filter_confirm_unblock:I = 0x7f111bd5
+.field public static final contacts_filter_online:I = 0x7f111bee
 
-.field public static final contacts_filter_header:I = 0x7f111bd6
+.field public static final contacts_processing:I = 0x7f111bef
 
-.field public static final contacts_filter_mutual:I = 0x7f111bd7
+.field public static final contacts_processing_already_started:I = 0x7f111bf0
 
-.field public static final contacts_filter_not_mutual:I = 0x7f111bd8
+.field public static final contacts_processing_error:I = 0x7f111bf1
 
-.field public static final contacts_filter_online:I = 0x7f111bd9
+.field public static final contacts_processing_success:I = 0x7f111bf2
 
-.field public static final contacts_processing:I = 0x7f111bda
+.field public static final content_preview_disable_preview:I = 0x7f111bf3
 
-.field public static final contacts_processing_already_started:I = 0x7f111bdb
+.field public static final content_preview_enable_preview:I = 0x7f111bf4
 
-.field public static final contacts_processing_error:I = 0x7f111bdc
+.field public static final content_preview_make_an_avatar:I = 0x7f111bf5
 
-.field public static final contacts_processing_success:I = 0x7f111bdd
+.field public static final create_chat_template:I = 0x7f111bf6
 
-.field public static final content_preview_disable_preview:I = 0x7f111bde
+.field public static final create_folder_change_fab_section_description:I = 0x7f111bf7
 
-.field public static final content_preview_enable_preview:I = 0x7f111bdf
+.field public static final create_folder_change_fab_title:I = 0x7f111bf8
 
-.field public static final content_preview_make_an_avatar:I = 0x7f111be0
+.field public static final currency_aave:I = 0x7f111bf9
 
-.field public static final create_chat_template:I = 0x7f111be1
+.field public static final currency_aave_site:I = 0x7f111bfa
 
-.field public static final create_folder_change_fab_section_description:I = 0x7f111be2
+.field public static final currency_atd:I = 0x7f111bfb
 
-.field public static final create_folder_change_fab_title:I = 0x7f111be3
+.field public static final currency_atd_site:I = 0x7f111bfc
 
-.field public static final currency_aave:I = 0x7f111be4
+.field public static final currency_bcug:I = 0x7f111bfd
 
-.field public static final currency_aave_site:I = 0x7f111be5
+.field public static final currency_bcug_site:I = 0x7f111bfe
 
-.field public static final currency_atd:I = 0x7f111be6
+.field public static final currency_bitcoin:I = 0x7f111bff
 
-.field public static final currency_atd_site:I = 0x7f111be7
+.field public static final currency_bitcoin_site:I = 0x7f111c00
 
-.field public static final currency_bcug:I = 0x7f111be8
+.field public static final currency_bnb:I = 0x7f111c01
 
-.field public static final currency_bcug_site:I = 0x7f111be9
+.field public static final currency_bnb_site:I = 0x7f111c02
 
-.field public static final currency_bitcoin:I = 0x7f111bea
+.field public static final currency_boson:I = 0x7f111c03
 
-.field public static final currency_bitcoin_site:I = 0x7f111beb
+.field public static final currency_boson_site:I = 0x7f111c04
 
-.field public static final currency_bnb:I = 0x7f111bec
+.field public static final currency_btc:I = 0x7f111c05
 
-.field public static final currency_bnb_site:I = 0x7f111bed
+.field public static final currency_busd:I = 0x7f111c06
 
-.field public static final currency_boson:I = 0x7f111bee
+.field public static final currency_busd_site:I = 0x7f111c07
 
-.field public static final currency_boson_site:I = 0x7f111bef
+.field public static final currency_ceek:I = 0x7f111c08
 
-.field public static final currency_btc:I = 0x7f111bf0
+.field public static final currency_ceek_site:I = 0x7f111c09
 
-.field public static final currency_busd:I = 0x7f111bf1
+.field public static final currency_ctsi:I = 0x7f111c0a
 
-.field public static final currency_busd_site:I = 0x7f111bf2
+.field public static final currency_ctsi_site:I = 0x7f111c0b
 
-.field public static final currency_ceek:I = 0x7f111bf3
+.field public static final currency_cvr:I = 0x7f111c0c
 
-.field public static final currency_ceek_site:I = 0x7f111bf4
+.field public static final currency_cvr_site:I = 0x7f111c0d
 
-.field public static final currency_ctsi:I = 0x7f111bf5
+.field public static final currency_d_11:I = 0x7f111c0e
 
-.field public static final currency_ctsi_site:I = 0x7f111bf6
+.field public static final currency_d_11_site:I = 0x7f111c0f
 
-.field public static final currency_cvr:I = 0x7f111bf7
+.field public static final currency_dai:I = 0x7f111c10
 
-.field public static final currency_cvr_site:I = 0x7f111bf8
+.field public static final currency_dai_site:I = 0x7f111c11
 
-.field public static final currency_d_11:I = 0x7f111bf9
+.field public static final currency_dego:I = 0x7f111c12
 
-.field public static final currency_d_11_site:I = 0x7f111bfa
+.field public static final currency_dego_site:I = 0x7f111c13
 
-.field public static final currency_dai:I = 0x7f111bfb
+.field public static final currency_dext:I = 0x7f111c14
 
-.field public static final currency_dai_site:I = 0x7f111bfc
+.field public static final currency_dext_site:I = 0x7f111c15
 
-.field public static final currency_dego:I = 0x7f111bfd
+.field public static final currency_dhv:I = 0x7f111c16
 
-.field public static final currency_dego_site:I = 0x7f111bfe
+.field public static final currency_dhv_site:I = 0x7f111c17
 
-.field public static final currency_dext:I = 0x7f111bff
+.field public static final currency_dollar:I = 0x7f111c18
 
-.field public static final currency_dext_site:I = 0x7f111c00
+.field public static final currency_dop:I = 0x7f111c19
 
-.field public static final currency_dhv:I = 0x7f111c01
+.field public static final currency_dop_site:I = 0x7f111c1a
 
-.field public static final currency_dhv_site:I = 0x7f111c02
+.field public static final currency_dvd:I = 0x7f111c1b
 
-.field public static final currency_dollar:I = 0x7f111c03
+.field public static final currency_dvd_site:I = 0x7f111c1c
 
-.field public static final currency_dop:I = 0x7f111c04
+.field public static final currency_eqx:I = 0x7f111c1d
 
-.field public static final currency_dop_site:I = 0x7f111c05
+.field public static final currency_eqx_site:I = 0x7f111c1e
 
-.field public static final currency_dvd:I = 0x7f111c06
+.field public static final currency_eth:I = 0x7f111c1f
 
-.field public static final currency_dvd_site:I = 0x7f111c07
+.field public static final currency_eth_site:I = 0x7f111c20
 
-.field public static final currency_eqx:I = 0x7f111c08
+.field public static final currency_fantom:I = 0x7f111c21
 
-.field public static final currency_eqx_site:I = 0x7f111c09
+.field public static final currency_fantom_site:I = 0x7f111c22
 
-.field public static final currency_eth:I = 0x7f111c0a
+.field public static final currency_fil:I = 0x7f111c23
 
-.field public static final currency_eth_site:I = 0x7f111c0b
+.field public static final currency_fil_site:I = 0x7f111c24
 
-.field public static final currency_fantom:I = 0x7f111c0c
+.field public static final currency_flurry:I = 0x7f111c25
 
-.field public static final currency_fantom_site:I = 0x7f111c0d
+.field public static final currency_flurry_site:I = 0x7f111c26
 
-.field public static final currency_fil:I = 0x7f111c0e
+.field public static final currency_frm:I = 0x7f111c27
 
-.field public static final currency_fil_site:I = 0x7f111c0f
+.field public static final currency_frm_site:I = 0x7f111c28
 
-.field public static final currency_flurry:I = 0x7f111c10
+.field public static final currency_fuse:I = 0x7f111c29
 
-.field public static final currency_flurry_site:I = 0x7f111c11
+.field public static final currency_fuse_site:I = 0x7f111c2a
 
-.field public static final currency_frm:I = 0x7f111c12
+.field public static final currency_gains:I = 0x7f111c2b
 
-.field public static final currency_frm_site:I = 0x7f111c13
+.field public static final currency_gains_site:I = 0x7f111c2c
 
-.field public static final currency_fuse:I = 0x7f111c14
+.field public static final currency_gfx:I = 0x7f111c2d
 
-.field public static final currency_fuse_site:I = 0x7f111c15
+.field public static final currency_gfx_site:I = 0x7f111c2e
 
-.field public static final currency_gains:I = 0x7f111c16
+.field public static final currency_ghst:I = 0x7f111c2f
 
-.field public static final currency_gains_site:I = 0x7f111c17
+.field public static final currency_ghst_site:I = 0x7f111c30
 
-.field public static final currency_gfx:I = 0x7f111c18
+.field public static final currency_gns:I = 0x7f111c31
 
-.field public static final currency_gfx_site:I = 0x7f111c19
+.field public static final currency_gns_site:I = 0x7f111c32
 
-.field public static final currency_ghst:I = 0x7f111c1a
+.field public static final currency_gt:I = 0x7f111c33
 
-.field public static final currency_ghst_site:I = 0x7f111c1b
+.field public static final currency_gt_site:I = 0x7f111c34
 
-.field public static final currency_gns:I = 0x7f111c1c
+.field public static final currency_hapi:I = 0x7f111c35
 
-.field public static final currency_gns_site:I = 0x7f111c1d
+.field public static final currency_hapi_site:I = 0x7f111c36
 
-.field public static final currency_gt:I = 0x7f111c1e
+.field public static final currency_huobitoken:I = 0x7f111c37
 
-.field public static final currency_gt_site:I = 0x7f111c1f
+.field public static final currency_huobitoken_site:I = 0x7f111c38
 
-.field public static final currency_hapi:I = 0x7f111c20
+.field public static final currency_infam:I = 0x7f111c39
 
-.field public static final currency_hapi_site:I = 0x7f111c21
+.field public static final currency_infam_site:I = 0x7f111c3a
 
-.field public static final currency_huobitoken:I = 0x7f111c22
+.field public static final currency_internal_site:I = 0x7f111c3b
 
-.field public static final currency_huobitoken_site:I = 0x7f111c23
+.field public static final currency_kaby:I = 0x7f111c3c
 
-.field public static final currency_infam:I = 0x7f111c24
+.field public static final currency_kaby_site:I = 0x7f111c3d
 
-.field public static final currency_infam_site:I = 0x7f111c25
+.field public static final currency_kft:I = 0x7f111c3e
 
-.field public static final currency_internal_site:I = 0x7f111c26
+.field public static final currency_kft_site:I = 0x7f111c3f
 
-.field public static final currency_kaby:I = 0x7f111c27
+.field public static final currency_kommunitas:I = 0x7f111c40
 
-.field public static final currency_kaby_site:I = 0x7f111c28
+.field public static final currency_kommunitas_site:I = 0x7f111c41
 
-.field public static final currency_kft:I = 0x7f111c29
+.field public static final currency_kono:I = 0x7f111c42
 
-.field public static final currency_kft_site:I = 0x7f111c2a
+.field public static final currency_kono_site:I = 0x7f111c43
 
-.field public static final currency_kommunitas:I = 0x7f111c2b
+.field public static final currency_lank:I = 0x7f111c44
 
-.field public static final currency_kommunitas_site:I = 0x7f111c2c
+.field public static final currency_lank_site:I = 0x7f111c45
 
-.field public static final currency_kono:I = 0x7f111c2d
+.field public static final currency_lime:I = 0x7f111c46
 
-.field public static final currency_kono_site:I = 0x7f111c2e
+.field public static final currency_lime_site:I = 0x7f111c47
 
-.field public static final currency_lank:I = 0x7f111c2f
+.field public static final currency_link:I = 0x7f111c48
 
-.field public static final currency_lank_site:I = 0x7f111c30
+.field public static final currency_link_site:I = 0x7f111c49
 
-.field public static final currency_lime:I = 0x7f111c31
+.field public static final currency_lit:I = 0x7f111c4a
 
-.field public static final currency_lime_site:I = 0x7f111c32
+.field public static final currency_lit_site:I = 0x7f111c4b
 
-.field public static final currency_link:I = 0x7f111c33
+.field public static final currency_lss:I = 0x7f111c4c
 
-.field public static final currency_link_site:I = 0x7f111c34
+.field public static final currency_lss_site:I = 0x7f111c4d
 
-.field public static final currency_lit:I = 0x7f111c35
+.field public static final currency_mana:I = 0x7f111c4e
 
-.field public static final currency_lit_site:I = 0x7f111c36
+.field public static final currency_mana_site:I = 0x7f111c4f
 
-.field public static final currency_lss:I = 0x7f111c37
+.field public static final currency_matic:I = 0x7f111c50
 
-.field public static final currency_lss_site:I = 0x7f111c38
+.field public static final currency_matic_site:I = 0x7f111c51
 
-.field public static final currency_mana:I = 0x7f111c39
+.field public static final currency_metis:I = 0x7f111c52
 
-.field public static final currency_mana_site:I = 0x7f111c3a
+.field public static final currency_metis_site:I = 0x7f111c53
 
-.field public static final currency_matic:I = 0x7f111c3b
+.field public static final currency_minto:I = 0x7f111c54
 
-.field public static final currency_matic_site:I = 0x7f111c3c
+.field public static final currency_minto_site:I = 0x7f111c55
 
-.field public static final currency_metis:I = 0x7f111c3d
+.field public static final currency_okb:I = 0x7f111c56
 
-.field public static final currency_metis_site:I = 0x7f111c3e
+.field public static final currency_okb_site:I = 0x7f111c57
 
-.field public static final currency_minto:I = 0x7f111c3f
+.field public static final currency_olcf:I = 0x7f111c58
 
-.field public static final currency_minto_site:I = 0x7f111c40
+.field public static final currency_olcf_site:I = 0x7f111c59
 
-.field public static final currency_okb:I = 0x7f111c41
+.field public static final currency_om:I = 0x7f111c5a
 
-.field public static final currency_okb_site:I = 0x7f111c42
+.field public static final currency_om_site:I = 0x7f111c5b
 
-.field public static final currency_olcf:I = 0x7f111c43
+.field public static final currency_pcnt:I = 0x7f111c5c
 
-.field public static final currency_olcf_site:I = 0x7f111c44
+.field public static final currency_pcnt_site:I = 0x7f111c5d
 
-.field public static final currency_om:I = 0x7f111c45
+.field public static final currency_pre:I = 0x7f111c5e
 
-.field public static final currency_om_site:I = 0x7f111c46
+.field public static final currency_pre_site:I = 0x7f111c5f
 
-.field public static final currency_pcnt:I = 0x7f111c47
+.field public static final currency_prq:I = 0x7f111c60
 
-.field public static final currency_pcnt_site:I = 0x7f111c48
+.field public static final currency_prq_site:I = 0x7f111c61
 
-.field public static final currency_pre:I = 0x7f111c49
+.field public static final currency_punkpanda:I = 0x7f111c62
 
-.field public static final currency_pre_site:I = 0x7f111c4a
+.field public static final currency_punkpanda_site:I = 0x7f111c63
 
-.field public static final currency_prq:I = 0x7f111c4b
+.field public static final currency_quick:I = 0x7f111c64
 
-.field public static final currency_prq_site:I = 0x7f111c4c
+.field public static final currency_quick_site:I = 0x7f111c65
 
-.field public static final currency_punkpanda:I = 0x7f111c4d
+.field public static final currency_roya:I = 0x7f111c66
 
-.field public static final currency_punkpanda_site:I = 0x7f111c4e
+.field public static final currency_roya_site:I = 0x7f111c67
 
-.field public static final currency_quick:I = 0x7f111c4f
+.field public static final currency_saito:I = 0x7f111c68
 
-.field public static final currency_quick_site:I = 0x7f111c50
+.field public static final currency_saito_site:I = 0x7f111c69
 
-.field public static final currency_roya:I = 0x7f111c51
+.field public static final currency_sand:I = 0x7f111c6a
 
-.field public static final currency_roya_site:I = 0x7f111c52
+.field public static final currency_sand_site:I = 0x7f111c6b
 
-.field public static final currency_saito:I = 0x7f111c53
+.field public static final currency_shiba:I = 0x7f111c6c
 
-.field public static final currency_saito_site:I = 0x7f111c54
+.field public static final currency_shiba_site:I = 0x7f111c6d
 
-.field public static final currency_sand:I = 0x7f111c55
+.field public static final currency_short_D11:I = 0x7f111c6e
 
-.field public static final currency_sand_site:I = 0x7f111c56
+.field public static final currency_short_aave:I = 0x7f111c6f
 
-.field public static final currency_shiba:I = 0x7f111c57
+.field public static final currency_short_atd:I = 0x7f111c70
 
-.field public static final currency_shiba_site:I = 0x7f111c58
+.field public static final currency_short_bcug:I = 0x7f111c71
 
-.field public static final currency_short_D11:I = 0x7f111c59
+.field public static final currency_short_bitcoin:I = 0x7f111c72
 
-.field public static final currency_short_aave:I = 0x7f111c5a
+.field public static final currency_short_bnb:I = 0x7f111c73
 
-.field public static final currency_short_atd:I = 0x7f111c5b
+.field public static final currency_short_boson:I = 0x7f111c74
 
-.field public static final currency_short_bcug:I = 0x7f111c5c
+.field public static final currency_short_btc:I = 0x7f111c75
 
-.field public static final currency_short_bitcoin:I = 0x7f111c5d
+.field public static final currency_short_busd:I = 0x7f111c76
 
-.field public static final currency_short_bnb:I = 0x7f111c5e
+.field public static final currency_short_ceek:I = 0x7f111c77
 
-.field public static final currency_short_boson:I = 0x7f111c5f
+.field public static final currency_short_ctsi:I = 0x7f111c78
 
-.field public static final currency_short_btc:I = 0x7f111c60
+.field public static final currency_short_cvr:I = 0x7f111c79
 
-.field public static final currency_short_busd:I = 0x7f111c61
+.field public static final currency_short_dai:I = 0x7f111c7a
 
-.field public static final currency_short_ceek:I = 0x7f111c62
+.field public static final currency_short_dego:I = 0x7f111c7b
 
-.field public static final currency_short_ctsi:I = 0x7f111c63
+.field public static final currency_short_dext:I = 0x7f111c7c
 
-.field public static final currency_short_cvr:I = 0x7f111c64
+.field public static final currency_short_dhv:I = 0x7f111c7d
 
-.field public static final currency_short_dai:I = 0x7f111c65
+.field public static final currency_short_dollar:I = 0x7f111c7e
 
-.field public static final currency_short_dego:I = 0x7f111c66
+.field public static final currency_short_dop:I = 0x7f111c7f
 
-.field public static final currency_short_dext:I = 0x7f111c67
+.field public static final currency_short_dvd:I = 0x7f111c80
 
-.field public static final currency_short_dhv:I = 0x7f111c68
+.field public static final currency_short_eqx:I = 0x7f111c81
 
-.field public static final currency_short_dollar:I = 0x7f111c69
+.field public static final currency_short_eth:I = 0x7f111c82
 
-.field public static final currency_short_dop:I = 0x7f111c6a
+.field public static final currency_short_fantom:I = 0x7f111c83
 
-.field public static final currency_short_dvd:I = 0x7f111c6b
+.field public static final currency_short_fil:I = 0x7f111c84
 
-.field public static final currency_short_eqx:I = 0x7f111c6c
+.field public static final currency_short_flurry:I = 0x7f111c85
 
-.field public static final currency_short_eth:I = 0x7f111c6d
+.field public static final currency_short_frm:I = 0x7f111c86
 
-.field public static final currency_short_fantom:I = 0x7f111c6e
+.field public static final currency_short_fuse:I = 0x7f111c87
 
-.field public static final currency_short_fil:I = 0x7f111c6f
+.field public static final currency_short_gains:I = 0x7f111c88
 
-.field public static final currency_short_flurry:I = 0x7f111c70
+.field public static final currency_short_gfx:I = 0x7f111c89
 
-.field public static final currency_short_frm:I = 0x7f111c71
+.field public static final currency_short_ghst:I = 0x7f111c8a
 
-.field public static final currency_short_fuse:I = 0x7f111c72
+.field public static final currency_short_gns:I = 0x7f111c8b
 
-.field public static final currency_short_gains:I = 0x7f111c73
+.field public static final currency_short_gt:I = 0x7f111c8c
 
-.field public static final currency_short_gfx:I = 0x7f111c74
+.field public static final currency_short_hapi:I = 0x7f111c8d
 
-.field public static final currency_short_ghst:I = 0x7f111c75
+.field public static final currency_short_huobitoken:I = 0x7f111c8e
 
-.field public static final currency_short_gns:I = 0x7f111c76
+.field public static final currency_short_infam:I = 0x7f111c8f
 
-.field public static final currency_short_gt:I = 0x7f111c77
+.field public static final currency_short_kaby:I = 0x7f111c90
 
-.field public static final currency_short_hapi:I = 0x7f111c78
+.field public static final currency_short_kft:I = 0x7f111c91
 
-.field public static final currency_short_huobitoken:I = 0x7f111c79
+.field public static final currency_short_kommunitas:I = 0x7f111c92
 
-.field public static final currency_short_infam:I = 0x7f111c7a
+.field public static final currency_short_kono:I = 0x7f111c93
 
-.field public static final currency_short_kaby:I = 0x7f111c7b
+.field public static final currency_short_lank:I = 0x7f111c94
 
-.field public static final currency_short_kft:I = 0x7f111c7c
+.field public static final currency_short_lime:I = 0x7f111c95
 
-.field public static final currency_short_kommunitas:I = 0x7f111c7d
+.field public static final currency_short_link:I = 0x7f111c96
 
-.field public static final currency_short_kono:I = 0x7f111c7e
+.field public static final currency_short_lit:I = 0x7f111c97
 
-.field public static final currency_short_lank:I = 0x7f111c7f
+.field public static final currency_short_lss:I = 0x7f111c98
 
-.field public static final currency_short_lime:I = 0x7f111c80
+.field public static final currency_short_mana:I = 0x7f111c99
 
-.field public static final currency_short_link:I = 0x7f111c81
+.field public static final currency_short_matic:I = 0x7f111c9a
 
-.field public static final currency_short_lit:I = 0x7f111c82
+.field public static final currency_short_metis:I = 0x7f111c9b
 
-.field public static final currency_short_lss:I = 0x7f111c83
+.field public static final currency_short_minto:I = 0x7f111c9c
 
-.field public static final currency_short_mana:I = 0x7f111c84
+.field public static final currency_short_okb:I = 0x7f111c9d
 
-.field public static final currency_short_matic:I = 0x7f111c85
+.field public static final currency_short_olcf:I = 0x7f111c9e
 
-.field public static final currency_short_metis:I = 0x7f111c86
+.field public static final currency_short_om:I = 0x7f111c9f
 
-.field public static final currency_short_minto:I = 0x7f111c87
+.field public static final currency_short_pcnt:I = 0x7f111ca0
 
-.field public static final currency_short_okb:I = 0x7f111c88
+.field public static final currency_short_pre:I = 0x7f111ca1
 
-.field public static final currency_short_olcf:I = 0x7f111c89
+.field public static final currency_short_prq:I = 0x7f111ca2
 
-.field public static final currency_short_om:I = 0x7f111c8a
+.field public static final currency_short_punkpanda:I = 0x7f111ca3
 
-.field public static final currency_short_pcnt:I = 0x7f111c8b
+.field public static final currency_short_quick:I = 0x7f111ca4
 
-.field public static final currency_short_pre:I = 0x7f111c8c
+.field public static final currency_short_roya:I = 0x7f111ca5
 
-.field public static final currency_short_prq:I = 0x7f111c8d
+.field public static final currency_short_saito:I = 0x7f111ca6
 
-.field public static final currency_short_punkpanda:I = 0x7f111c8e
+.field public static final currency_short_sand:I = 0x7f111ca7
 
-.field public static final currency_short_quick:I = 0x7f111c8f
+.field public static final currency_short_shiba:I = 0x7f111ca8
 
-.field public static final currency_short_roya:I = 0x7f111c90
+.field public static final currency_short_shr:I = 0x7f111ca9
 
-.field public static final currency_short_saito:I = 0x7f111c91
+.field public static final currency_short_sig:I = 0x7f111caa
 
-.field public static final currency_short_sand:I = 0x7f111c92
+.field public static final currency_short_sinverse:I = 0x7f111cab
 
-.field public static final currency_short_shiba:I = 0x7f111c93
+.field public static final currency_short_skill:I = 0x7f111cac
 
-.field public static final currency_short_shr:I = 0x7f111c94
+.field public static final currency_short_tara:I = 0x7f111cad
 
-.field public static final currency_short_sig:I = 0x7f111c95
+.field public static final currency_short_tomoe:I = 0x7f111cae
 
-.field public static final currency_short_sinverse:I = 0x7f111c96
+.field public static final currency_short_ton:I = 0x7f111caf
 
-.field public static final currency_short_skill:I = 0x7f111c97
+.field public static final currency_short_tron:I = 0x7f111cb0
 
-.field public static final currency_short_tara:I = 0x7f111c98
+.field public static final currency_short_tru:I = 0x7f111cb1
 
-.field public static final currency_short_tomoe:I = 0x7f111c99
+.field public static final currency_short_trueusd:I = 0x7f111cb2
 
-.field public static final currency_short_ton:I = 0x7f111c9a
+.field public static final currency_short_ufi:I = 0x7f111cb3
 
-.field public static final currency_short_tron:I = 0x7f111c9b
+.field public static final currency_short_uft:I = 0x7f111cb4
 
-.field public static final currency_short_tru:I = 0x7f111c9c
+.field public static final currency_short_uni:I = 0x7f111cb5
 
-.field public static final currency_short_trueusd:I = 0x7f111c9d
+.field public static final currency_short_unn:I = 0x7f111cb6
 
-.field public static final currency_short_ufi:I = 0x7f111c9e
+.field public static final currency_short_usdc:I = 0x7f111cb7
 
-.field public static final currency_short_uft:I = 0x7f111c9f
+.field public static final currency_short_usdo:I = 0x7f111cb8
 
-.field public static final currency_short_uni:I = 0x7f111ca0
+.field public static final currency_short_usdt:I = 0x7f111cb9
 
-.field public static final currency_short_unn:I = 0x7f111ca1
+.field public static final currency_short_wbtc:I = 0x7f111cba
 
-.field public static final currency_short_usdc:I = 0x7f111ca2
+.field public static final currency_short_xend:I = 0x7f111cbb
 
-.field public static final currency_short_usdo:I = 0x7f111ca3
+.field public static final currency_short_yay:I = 0x7f111cbc
 
-.field public static final currency_short_usdt:I = 0x7f111ca4
+.field public static final currency_short_zcx:I = 0x7f111cbd
 
-.field public static final currency_short_wbtc:I = 0x7f111ca5
+.field public static final currency_shr:I = 0x7f111cbe
 
-.field public static final currency_short_xend:I = 0x7f111ca6
+.field public static final currency_shr_site:I = 0x7f111cbf
 
-.field public static final currency_short_yay:I = 0x7f111ca7
+.field public static final currency_sig:I = 0x7f111cc0
 
-.field public static final currency_short_zcx:I = 0x7f111ca8
+.field public static final currency_sig_site:I = 0x7f111cc1
 
-.field public static final currency_shr:I = 0x7f111ca9
+.field public static final currency_sinverse:I = 0x7f111cc2
 
-.field public static final currency_shr_site:I = 0x7f111caa
+.field public static final currency_sinverse_site:I = 0x7f111cc3
 
-.field public static final currency_sig:I = 0x7f111cab
+.field public static final currency_skill:I = 0x7f111cc4
 
-.field public static final currency_sig_site:I = 0x7f111cac
+.field public static final currency_skill_site:I = 0x7f111cc5
 
-.field public static final currency_sinverse:I = 0x7f111cad
+.field public static final currency_tara:I = 0x7f111cc6
 
-.field public static final currency_sinverse_site:I = 0x7f111cae
+.field public static final currency_tara_site:I = 0x7f111cc7
 
-.field public static final currency_skill:I = 0x7f111caf
+.field public static final currency_tomoe:I = 0x7f111cc8
 
-.field public static final currency_skill_site:I = 0x7f111cb0
+.field public static final currency_tomoe_site:I = 0x7f111cc9
 
-.field public static final currency_tara:I = 0x7f111cb1
+.field public static final currency_ton:I = 0x7f111cca
 
-.field public static final currency_tara_site:I = 0x7f111cb2
+.field public static final currency_ton_site:I = 0x7f111ccb
 
-.field public static final currency_tomoe:I = 0x7f111cb3
+.field public static final currency_tron:I = 0x7f111ccc
 
-.field public static final currency_tomoe_site:I = 0x7f111cb4
+.field public static final currency_tron_site:I = 0x7f111ccd
 
-.field public static final currency_ton:I = 0x7f111cb5
+.field public static final currency_tru:I = 0x7f111cce
 
-.field public static final currency_ton_site:I = 0x7f111cb6
+.field public static final currency_tru_site:I = 0x7f111ccf
 
-.field public static final currency_tron:I = 0x7f111cb7
+.field public static final currency_trueusd:I = 0x7f111cd0
 
-.field public static final currency_tron_site:I = 0x7f111cb8
+.field public static final currency_trueusd_site:I = 0x7f111cd1
 
-.field public static final currency_tru:I = 0x7f111cb9
+.field public static final currency_ufi:I = 0x7f111cd2
 
-.field public static final currency_tru_site:I = 0x7f111cba
+.field public static final currency_ufi_site:I = 0x7f111cd3
 
-.field public static final currency_trueusd:I = 0x7f111cbb
+.field public static final currency_uft:I = 0x7f111cd4
 
-.field public static final currency_trueusd_site:I = 0x7f111cbc
+.field public static final currency_uft_site:I = 0x7f111cd5
 
-.field public static final currency_ufi:I = 0x7f111cbd
+.field public static final currency_uni:I = 0x7f111cd6
 
-.field public static final currency_ufi_site:I = 0x7f111cbe
+.field public static final currency_uni_site:I = 0x7f111cd7
 
-.field public static final currency_uft:I = 0x7f111cbf
+.field public static final currency_unn:I = 0x7f111cd8
 
-.field public static final currency_uft_site:I = 0x7f111cc0
+.field public static final currency_unn_site:I = 0x7f111cd9
 
-.field public static final currency_uni:I = 0x7f111cc1
+.field public static final currency_usdc:I = 0x7f111cda
 
-.field public static final currency_uni_site:I = 0x7f111cc2
+.field public static final currency_usdc_site:I = 0x7f111cdb
 
-.field public static final currency_unn:I = 0x7f111cc3
+.field public static final currency_usdo:I = 0x7f111cdc
 
-.field public static final currency_unn_site:I = 0x7f111cc4
+.field public static final currency_usdo_site:I = 0x7f111cdd
 
-.field public static final currency_usdc:I = 0x7f111cc5
+.field public static final currency_usdt:I = 0x7f111cde
 
-.field public static final currency_usdc_site:I = 0x7f111cc6
+.field public static final currency_usdt_site:I = 0x7f111cdf
 
-.field public static final currency_usdo:I = 0x7f111cc7
+.field public static final currency_wbtc:I = 0x7f111ce0
 
-.field public static final currency_usdo_site:I = 0x7f111cc8
+.field public static final currency_wbtc_site:I = 0x7f111ce1
 
-.field public static final currency_usdt:I = 0x7f111cc9
+.field public static final currency_xend:I = 0x7f111ce2
 
-.field public static final currency_usdt_site:I = 0x7f111cca
+.field public static final currency_xend_site:I = 0x7f111ce3
 
-.field public static final currency_wbtc:I = 0x7f111ccb
+.field public static final currency_yay:I = 0x7f111ce4
 
-.field public static final currency_wbtc_site:I = 0x7f111ccc
+.field public static final currency_yay_site:I = 0x7f111ce5
 
-.field public static final currency_xend:I = 0x7f111ccd
+.field public static final currency_zcx:I = 0x7f111ce6
 
-.field public static final currency_xend_site:I = 0x7f111cce
+.field public static final currency_zcx_site:I = 0x7f111ce7
 
-.field public static final currency_yay:I = 0x7f111ccf
+.field public static final custom_avatar_downloading:I = 0x7f111ce8
 
-.field public static final currency_yay_site:I = 0x7f111cd0
+.field public static final custom_avatar_processing:I = 0x7f111ce9
 
-.field public static final currency_zcx:I = 0x7f111cd1
+.field public static final custom_avatar_set:I = 0x7f111cea
 
-.field public static final currency_zcx_site:I = 0x7f111cd2
+.field public static final custom_avatar_success:I = 0x7f111ceb
 
-.field public static final custom_avatar_downloading:I = 0x7f111cd3
+.field public static final custom_avatar_upload:I = 0x7f111cec
 
-.field public static final custom_avatar_processing:I = 0x7f111cd4
+.field public static final custom_forward_option_author:I = 0x7f111ced
 
-.field public static final custom_avatar_set:I = 0x7f111cd5
+.field public static final custom_forward_option_link_preview:I = 0x7f111cee
 
-.field public static final custom_avatar_success:I = 0x7f111cd6
+.field public static final custom_forward_option_media:I = 0x7f111cef
 
-.field public static final custom_avatar_upload:I = 0x7f111cd7
+.field public static final custom_forward_option_text:I = 0x7f111cf0
 
-.field public static final custom_forward_option_author:I = 0x7f111cd8
+.field public static final custom_mention_change:I = 0x7f111cf1
 
-.field public static final custom_forward_option_link_preview:I = 0x7f111cd9
+.field public static final custom_mention_hint:I = 0x7f111cf2
 
-.field public static final custom_forward_option_media:I = 0x7f111cda
+.field public static final custom_qr_error:I = 0x7f111cf3
 
-.field public static final custom_forward_option_text:I = 0x7f111cdb
+.field public static final data_settings_storage_path_no_flash_drive:I = 0x7f111cf4
 
-.field public static final custom_mention_change:I = 0x7f111cdc
+.field public static final debug_option_choose_wallet_environment:I = 0x7f111cf5
 
-.field public static final custom_mention_hint:I = 0x7f111cdd
+.field public static final debug_option_choose_wallet_environment_dialog_message:I = 0x7f111cf6
 
-.field public static final custom_qr_error:I = 0x7f111cde
+.field public static final debug_option_choose_wallet_environment_dialog_title:I = 0x7f111cf7
 
-.field public static final data_settings_storage_path_no_flash_drive:I = 0x7f111cdf
+.field public static final debug_option_reset_airdrop:I = 0x7f111cf8
 
-.field public static final debug_option_choose_wallet_environment:I = 0x7f111ce0
+.field public static final debug_option_theme_switch_off:I = 0x7f111cf9
 
-.field public static final debug_option_choose_wallet_environment_dialog_message:I = 0x7f111ce1
+.field public static final debug_option_theme_switch_on:I = 0x7f111cfa
 
-.field public static final debug_option_choose_wallet_environment_dialog_title:I = 0x7f111ce2
+.field public static final deleting_messages:I = 0x7f111cfc
 
-.field public static final debug_option_reset_airdrop:I = 0x7f111ce3
+.field public static final deleting_messages_success:I = 0x7f111cfd
 
-.field public static final debug_option_theme_switch_off:I = 0x7f111ce4
+.field public static final dialog_promo_discussion_group_description:I = 0x7f111cfe
 
-.field public static final debug_option_theme_switch_on:I = 0x7f111ce5
+.field public static final dialog_promo_en_news_channel_description:I = 0x7f111cff
 
-.field public static final deleting_messages:I = 0x7f111ce7
+.field public static final dialog_promo_ru_news_channel_description:I = 0x7f111d00
 
-.field public static final deleting_messages_success:I = 0x7f111ce8
+.field public static final dialog_promo_subscribe_subtitle:I = 0x7f111d01
 
-.field public static final dialog_promo_discussion_group_description:I = 0x7f111ce9
+.field public static final dialog_promo_subscribe_title:I = 0x7f111d02
 
-.field public static final dialog_promo_en_news_channel_description:I = 0x7f111cea
+.field public static final dialogs_activity_move_to_folder:I = 0x7f111d03
 
-.field public static final dialog_promo_ru_news_channel_description:I = 0x7f111ceb
+.field public static final dialogs_albums_sort_alphabetically:I = 0x7f111d04
 
-.field public static final dialog_promo_subscribe_subtitle:I = 0x7f111cec
+.field public static final dialogs_albums_sort_date:I = 0x7f111d05
 
-.field public static final dialog_promo_subscribe_title:I = 0x7f111ced
+.field public static final dialogs_cloud_or_albums_open_by_default:I = 0x7f111d06
 
-.field public static final dialogs_activity_move_to_folder:I = 0x7f111cee
+.field public static final dialogs_empty_cache:I = 0x7f111d07
 
-.field public static final dialogs_albums_sort_alphabetically:I = 0x7f111cef
+.field public static final dialogs_folders_anonymous:I = 0x7f111d08
 
-.field public static final dialogs_albums_sort_date:I = 0x7f111cf0
+.field public static final dialogs_folders_chooser_alert_close_btn:I = 0x7f111d09
 
-.field public static final dialogs_cloud_or_albums_open_by_default:I = 0x7f111cf1
+.field public static final dialogs_folders_chooser_alert_title:I = 0x7f111d0a
 
-.field public static final dialogs_empty_cache:I = 0x7f111cf2
+.field public static final dialogs_mark_all_folder_dialogs_as_read_alert_not_show_again_check_box:I = 0x7f111d0b
 
-.field public static final dialogs_folders_anonymous:I = 0x7f111cf3
+.field public static final dialogs_mark_folder_dialogs_as_read_alert_title:I = 0x7f111d0c
 
-.field public static final dialogs_folders_chooser_alert_close_btn:I = 0x7f111cf4
+.field public static final dialogs_menu_scroll_to_end:I = 0x7f111d0d
 
-.field public static final dialogs_folders_chooser_alert_title:I = 0x7f111cf5
+.field public static final dialogs_menu_scroll_to_start:I = 0x7f111d0e
 
-.field public static final dialogs_mark_all_folder_dialogs_as_read_alert_not_show_again_check_box:I = 0x7f111cf6
+.field public static final dialogs_multi_clear_with_revoke:I = 0x7f111d0f
 
-.field public static final dialogs_mark_folder_dialogs_as_read_alert_title:I = 0x7f111cf7
+.field public static final dialogs_multi_delete_with_revoke:I = 0x7f111d10
 
-.field public static final dialogs_menu_scroll_to_end:I = 0x7f111cf8
+.field public static final dialogs_qr_scanner_chat_link_hint:I = 0x7f111d11
 
-.field public static final dialogs_menu_scroll_to_start:I = 0x7f111cf9
+.field public static final dialogs_qr_search:I = 0x7f111d12
 
-.field public static final dialogs_multi_clear_with_revoke:I = 0x7f111cfa
+.field public static final dialogs_tab_popup_create_folder:I = 0x7f111d13
 
-.field public static final dialogs_multi_delete_with_revoke:I = 0x7f111cfb
+.field public static final dialogs_tab_popup_disable:I = 0x7f111d14
 
-.field public static final dialogs_qr_scanner_chat_link_hint:I = 0x7f111cfc
+.field public static final dialogs_tab_popup_read_all:I = 0x7f111d15
 
-.field public static final dialogs_qr_search:I = 0x7f111cfd
+.field public static final dialogs_tab_popup_sorting_settings:I = 0x7f111d16
 
-.field public static final dialogs_tab_popup_create_folder:I = 0x7f111cfe
+.field public static final dialogs_tel_search:I = 0x7f111d17
 
-.field public static final dialogs_tab_popup_disable:I = 0x7f111cff
+.field public static final dialogs_tel_search_hint:I = 0x7f111d18
 
-.field public static final dialogs_tab_popup_read_all:I = 0x7f111d00
+.field public static final dialogs_tel_search_user_error:I = 0x7f111d19
 
-.field public static final dialogs_tab_popup_sorting_settings:I = 0x7f111d01
+.field public static final dialogs_tel_search_user_not_found:I = 0x7f111d1a
 
-.field public static final dialogs_tel_search:I = 0x7f111d02
+.field public static final dialogs_tel_search_warning:I = 0x7f111d1b
 
-.field public static final dialogs_tel_search_hint:I = 0x7f111d03
+.field public static final drawer_account_avatar_in_action_bar_enable_item_title:I = 0x7f111d1d
 
-.field public static final dialogs_tel_search_user_error:I = 0x7f111d04
+.field public static final drawer_catalog_item_title:I = 0x7f111d1e
 
-.field public static final dialogs_tel_search_user_not_found:I = 0x7f111d05
+.field public static final drawer_collection_item_title:I = 0x7f111d1f
 
-.field public static final dialogs_tel_search_warning:I = 0x7f111d06
+.field public static final drawer_create_expandable_section:I = 0x7f111d20
 
-.field public static final drawer_account_avatar_in_action_bar_enable_item_title:I = 0x7f111d08
+.field public static final drawer_disable_archive_button:I = 0x7f111d21
 
-.field public static final drawer_catalog_item_title:I = 0x7f111d09
+.field public static final drawer_enable_archive_button:I = 0x7f111d22
 
-.field public static final drawer_collection_item_title:I = 0x7f111d0a
+.field public static final drawer_neurobots_store_item_title:I = 0x7f111d23
 
-.field public static final drawer_create_expandable_section:I = 0x7f111d0b
+.field public static final drawer_profile_cell_alert_name:I = 0x7f111d24
 
-.field public static final drawer_disable_archive_button:I = 0x7f111d0c
+.field public static final drawer_profile_cell_alert_phone_number:I = 0x7f111d25
 
-.field public static final drawer_enable_archive_button:I = 0x7f111d0d
+.field public static final drawer_profile_cell_alert_subtitle:I = 0x7f111d26
 
-.field public static final drawer_neurobots_store_item_title:I = 0x7f111d0e
+.field public static final drawer_profile_cell_alert_title:I = 0x7f111d27
 
-.field public static final drawer_profile_cell_alert_name:I = 0x7f111d0f
+.field public static final drawer_profile_cell_alert_user_id:I = 0x7f111d28
 
-.field public static final drawer_profile_cell_alert_phone_number:I = 0x7f111d10
+.field public static final drawer_profile_cell_alert_username:I = 0x7f111d29
 
-.field public static final drawer_profile_cell_alert_subtitle:I = 0x7f111d11
+.field public static final drawer_profile_cell_alert_wallet_balance:I = 0x7f111d2a
 
-.field public static final drawer_profile_cell_alert_title:I = 0x7f111d12
+.field public static final drawer_profile_cell_archive:I = 0x7f111d2b
 
-.field public static final drawer_profile_cell_alert_user_id:I = 0x7f111d13
+.field public static final drawer_profile_cell_avatar:I = 0x7f111d2c
 
-.field public static final drawer_profile_cell_alert_username:I = 0x7f111d14
+.field public static final drawer_social_network_app_store:I = 0x7f111d2d
 
-.field public static final drawer_profile_cell_alert_wallet_balance:I = 0x7f111d15
+.field public static final drawer_social_network_google_play:I = 0x7f111d2e
 
-.field public static final drawer_profile_cell_archive:I = 0x7f111d16
+.field public static final drawer_social_network_site:I = 0x7f111d2f
 
-.field public static final drawer_profile_cell_avatar:I = 0x7f111d17
+.field public static final drawer_social_network_telegram:I = 0x7f111d30
 
-.field public static final drawer_social_network_app_store:I = 0x7f111d18
+.field public static final drawer_social_network_twitter:I = 0x7f111d31
 
-.field public static final drawer_social_network_google_play:I = 0x7f111d19
+.field public static final drawer_social_network_youtube:I = 0x7f111d32
 
-.field public static final drawer_social_network_site:I = 0x7f111d1a
+.field public static final drawer_wallet_item_title:I = 0x7f111d33
 
-.field public static final drawer_social_network_telegram:I = 0x7f111d1b
+.field public static final emoji_premium_message_off_alert:I = 0x7f111d34
 
-.field public static final drawer_social_network_twitter:I = 0x7f111d1c
+.field public static final emoji_premium_message_on_alert:I = 0x7f111d35
 
-.field public static final drawer_social_network_youtube:I = 0x7f111d1d
+.field public static final emoji_premium_title_off_alert:I = 0x7f111d36
 
-.field public static final drawer_wallet_item_title:I = 0x7f111d1e
+.field public static final emoji_premium_title_on_alert:I = 0x7f111d37
 
-.field public static final emoji_premium_message_off_alert:I = 0x7f111d1f
+.field public static final enter_archive_passcode:I = 0x7f111d38
 
-.field public static final emoji_premium_message_on_alert:I = 0x7f111d20
+.field public static final enter_cloud_passcode:I = 0x7f111d39
 
-.field public static final emoji_premium_title_off_alert:I = 0x7f111d21
+.field public static final erasing_period:I = 0x7f111d3a
 
-.field public static final emoji_premium_title_on_alert:I = 0x7f111d22
+.field public static final error_block_failed_to_load_media:I = 0x7f111d3b
 
-.field public static final enter_archive_passcode:I = 0x7f111d23
+.field public static final error_icon_content_description:I = 0x7f111d3c
 
-.field public static final enter_cloud_passcode:I = 0x7f111d24
+.field public static final error_while_image_recognition:I = 0x7f111d3d
 
-.field public static final erasing_period:I = 0x7f111d25
+.field public static final error_while_text_recognition:I = 0x7f111d3e
 
-.field public static final error_block_failed_to_load_media:I = 0x7f111d26
+.field public static final event_log_restricted_send_games:I = 0x7f111d3f
 
-.field public static final error_icon_content_description:I = 0x7f111d27
+.field public static final event_log_restricted_send_gifs:I = 0x7f111d40
 
-.field public static final error_while_image_recognition:I = 0x7f111d28
+.field public static final event_log_restricted_send_inline:I = 0x7f111d41
 
-.field public static final error_while_text_recognition:I = 0x7f111d29
+.field public static final exposed_dropdown_menu_content_description:I = 0x7f111d42
 
-.field public static final event_log_restricted_send_games:I = 0x7f111d2a
+.field public static final fab_transformation_scrim_behavior:I = 0x7f111d43
 
-.field public static final event_log_restricted_send_gifs:I = 0x7f111d2b
+.field public static final fab_transformation_sheet_behavior:I = 0x7f111d44
 
-.field public static final event_log_restricted_send_inline:I = 0x7f111d2c
+.field public static final favorite_folder_add_chat:I = 0x7f111d45
 
-.field public static final exposed_dropdown_menu_content_description:I = 0x7f111d2d
+.field public static final favorite_folder_change:I = 0x7f111d46
 
-.field public static final fab_transformation_scrim_behavior:I = 0x7f111d2e
+.field public static final favorite_folder_create:I = 0x7f111d47
 
-.field public static final fab_transformation_sheet_behavior:I = 0x7f111d2f
+.field public static final favorite_folder_delete:I = 0x7f111d48
 
-.field public static final favorite_folder_add_chat:I = 0x7f111d30
+.field public static final fcm_fallback_notification_channel_label:I = 0x7f111d49
 
-.field public static final favorite_folder_change:I = 0x7f111d31
+.field public static final fee_nothing:I = 0x7f111d4a
 
-.field public static final favorite_folder_create:I = 0x7f111d32
+.field public static final folder_fab_settings_choose_fab_title:I = 0x7f111d4c
 
-.field public static final favorite_folder_delete:I = 0x7f111d33
+.field public static final folder_fab_settings_confirm_alert_cancel_btn:I = 0x7f111d4d
 
-.field public static final fcm_fallback_notification_channel_label:I = 0x7f111d34
+.field public static final folder_fab_settings_confirm_alert_description:I = 0x7f111d4e
 
-.field public static final fee_nothing:I = 0x7f111d35
+.field public static final folder_fab_settings_confirm_alert_ok_btn:I = 0x7f111d4f
 
-.field public static final folder_fab_settings_choose_fab_title:I = 0x7f111d37
+.field public static final folder_fab_settings_confirm_alert_title:I = 0x7f111d50
 
-.field public static final folder_fab_settings_confirm_alert_cancel_btn:I = 0x7f111d38
+.field public static final folder_fab_settings_current_fab_title:I = 0x7f111d51
 
-.field public static final folder_fab_settings_confirm_alert_description:I = 0x7f111d39
+.field public static final folder_fab_settings_fab_archive:I = 0x7f111d52
 
-.field public static final folder_fab_settings_confirm_alert_ok_btn:I = 0x7f111d3a
+.field public static final folder_fab_settings_fab_cloud:I = 0x7f111d53
 
-.field public static final folder_fab_settings_confirm_alert_title:I = 0x7f111d3b
+.field public static final folder_fab_settings_fab_collections:I = 0x7f111d54
 
-.field public static final folder_fab_settings_current_fab_title:I = 0x7f111d3c
+.field public static final folder_fab_settings_fab_contacts:I = 0x7f111d55
 
-.field public static final folder_fab_settings_fab_archive:I = 0x7f111d3d
+.field public static final folder_fab_settings_fab_create_chat:I = 0x7f111d56
 
-.field public static final folder_fab_settings_fab_cloud:I = 0x7f111d3e
+.field public static final folder_fab_settings_fab_mark_all_read:I = 0x7f111d57
 
-.field public static final folder_fab_settings_fab_collections:I = 0x7f111d3f
+.field public static final folder_fab_settings_fab_wallet:I = 0x7f111d58
 
-.field public static final folder_fab_settings_fab_contacts:I = 0x7f111d40
+.field public static final folder_fab_settings_toolbar_title:I = 0x7f111d59
 
-.field public static final folder_fab_settings_fab_create_chat:I = 0x7f111d41
+.field public static final folder_tabs_all_chats_tab_settings_item_title:I = 0x7f111d5a
 
-.field public static final folder_fab_settings_fab_mark_all_read:I = 0x7f111d42
+.field public static final folder_tabs_at_bottom_enable_item_title:I = 0x7f111d5b
 
-.field public static final folder_fab_settings_fab_wallet:I = 0x7f111d43
+.field public static final folder_tabs_disable_all_chats_tab_enable_item_title:I = 0x7f111d5c
 
-.field public static final folder_fab_settings_toolbar_title:I = 0x7f111d44
+.field public static final folder_tabs_notification_mode_item_title:I = 0x7f111d5d
 
-.field public static final folder_tabs_all_chats_tab_settings_item_title:I = 0x7f111d45
+.field public static final folder_tabs_notification_mode_value_default:I = 0x7f111d5e
 
-.field public static final folder_tabs_at_bottom_enable_item_title:I = 0x7f111d46
+.field public static final folder_tabs_notification_mode_value_hidden:I = 0x7f111d5f
 
-.field public static final folder_tabs_disable_all_chats_tab_enable_item_title:I = 0x7f111d47
+.field public static final folder_tabs_notification_mode_value_points:I = 0x7f111d60
 
-.field public static final folder_tabs_notification_mode_item_title:I = 0x7f111d48
+.field public static final folder_tabs_remember_last_filter_tab_hint:I = 0x7f111d61
 
-.field public static final folder_tabs_notification_mode_value_default:I = 0x7f111d49
+.field public static final folder_tabs_remember_last_filter_tab_item_title:I = 0x7f111d62
 
-.field public static final folder_tabs_notification_mode_value_hidden:I = 0x7f111d4a
+.field public static final folder_tabs_settings_folders_first:I = 0x7f111d63
 
-.field public static final folder_tabs_notification_mode_value_points:I = 0x7f111d4b
+.field public static final folder_tabs_settings_header:I = 0x7f111d64
 
-.field public static final folder_tabs_remember_last_filter_tab_hint:I = 0x7f111d4c
+.field public static final folder_tabs_settings_hide_folders:I = 0x7f111d65
 
-.field public static final folder_tabs_remember_last_filter_tab_item_title:I = 0x7f111d4d
+.field public static final folder_tabs_sorting_settings:I = 0x7f111d66
 
-.field public static final folder_tabs_settings_folders_first:I = 0x7f111d4e
+.field public static final folder_tabs_sorting_settings_item_title:I = 0x7f111d67
 
-.field public static final folder_tabs_settings_header:I = 0x7f111d4f
+.field public static final folder_tabs_sorting_settings_item_value_off:I = 0x7f111d68
 
-.field public static final folder_tabs_settings_hide_folders:I = 0x7f111d50
+.field public static final folder_tabs_sorting_settings_item_value_on:I = 0x7f111d69
 
-.field public static final folder_tabs_sorting_settings:I = 0x7f111d51
+.field public static final folder_tabs_sorting_settings_item_value_zero:I = 0x7f111d6a
 
-.field public static final folder_tabs_sorting_settings_item_title:I = 0x7f111d52
+.field public static final folder_tabs_width_mode_item_title:I = 0x7f111d6b
 
-.field public static final folder_tabs_sorting_settings_item_value_off:I = 0x7f111d53
+.field public static final folder_tabs_width_mode_value_default:I = 0x7f111d6c
 
-.field public static final folder_tabs_sorting_settings_item_value_on:I = 0x7f111d54
+.field public static final folder_tabs_width_mode_value_medium:I = 0x7f111d6d
 
-.field public static final folder_tabs_sorting_settings_item_value_zero:I = 0x7f111d55
+.field public static final folder_tabs_width_mode_value_minimum:I = 0x7f111d6e
 
-.field public static final folder_tabs_width_mode_item_title:I = 0x7f111d56
+.field public static final formatDateAtTime:I = 0x7f111d6f
 
-.field public static final folder_tabs_width_mode_value_default:I = 0x7f111d57
+.field public static final formatDateSchedule:I = 0x7f111d70
 
-.field public static final folder_tabs_width_mode_value_medium:I = 0x7f111d58
+.field public static final formatDateScheduleYear:I = 0x7f111d72
 
-.field public static final folder_tabs_width_mode_value_minimum:I = 0x7f111d59
+.field public static final formatterBannedUntil12H:I = 0x7f111d73
 
-.field public static final formatDateAtTime:I = 0x7f111d5a
+.field public static final formatterBannedUntil24H:I = 0x7f111d74
 
-.field public static final formatDateSchedule:I = 0x7f111d5b
+.field public static final formatterBannedUntilThisYear12H:I = 0x7f111d75
 
-.field public static final formatDateScheduleYear:I = 0x7f111d5d
+.field public static final formatterBannedUntilThisYear24H:I = 0x7f111d76
 
-.field public static final formatterBannedUntil12H:I = 0x7f111d5e
+.field public static final formatterDay12H:I = 0x7f111d77
 
-.field public static final formatterBannedUntil24H:I = 0x7f111d5f
+.field public static final formatterDay24H:I = 0x7f111d78
 
-.field public static final formatterBannedUntilThisYear12H:I = 0x7f111d60
+.field public static final formatterMonth:I = 0x7f111d79
 
-.field public static final formatterBannedUntilThisYear24H:I = 0x7f111d61
+.field public static final formatterMonthName:I = 0x7f111d7a
 
-.field public static final formatterDay12H:I = 0x7f111d62
+.field public static final formatterMonthYear:I = 0x7f111d7b
 
-.field public static final formatterDay24H:I = 0x7f111d63
+.field public static final formatterMonthYear2:I = 0x7f111d7c
 
-.field public static final formatterMonth:I = 0x7f111d64
+.field public static final formatterStats12H:I = 0x7f111d7d
 
-.field public static final formatterMonthName:I = 0x7f111d65
+.field public static final formatterStats24H:I = 0x7f111d7e
 
-.field public static final formatterMonthYear:I = 0x7f111d66
+.field public static final formatterWeek:I = 0x7f111d7f
 
-.field public static final formatterMonthYear2:I = 0x7f111d67
+.field public static final formatterWeekLong:I = 0x7f111d80
 
-.field public static final formatterStats12H:I = 0x7f111d68
+.field public static final formatterYear:I = 0x7f111d81
 
-.field public static final formatterStats24H:I = 0x7f111d69
+.field public static final formatterYearMax:I = 0x7f111d82
 
-.field public static final formatterWeek:I = 0x7f111d6a
+.field public static final forward_not_clicked_forum_toast:I = 0x7f111d83
 
-.field public static final formatterWeekLong:I = 0x7f111d6b
+.field public static final forwarding_editor_group:I = 0x7f111d84
 
-.field public static final formatterYear:I = 0x7f111d6c
+.field public static final forwarding_editor_move_down:I = 0x7f111d85
 
-.field public static final formatterYearMax:I = 0x7f111d6d
+.field public static final forwarding_editor_move_up:I = 0x7f111d86
 
-.field public static final forward_not_clicked_forum_toast:I = 0x7f111d6e
+.field public static final forwarding_editor_ungroup:I = 0x7f111d87
 
-.field public static final forwarding_editor_group:I = 0x7f111d6f
+.field public static final frontal_camera_popup_text:I = 0x7f111d88
 
-.field public static final forwarding_editor_move_down:I = 0x7f111d70
+.field public static final gif_sticker_preview_choose_alert_message:I = 0x7f111d8a
 
-.field public static final forwarding_editor_move_up:I = 0x7f111d71
+.field public static final hidden_chats_empty:I = 0x7f111d91
 
-.field public static final forwarding_editor_ungroup:I = 0x7f111d72
+.field public static final hidden_chats_empty_title:I = 0x7f111d92
 
-.field public static final frontal_camera_popup_text:I = 0x7f111d73
+.field public static final hidden_chats_hide_chats:I = 0x7f111d93
 
-.field public static final gif_sticker_preview_choose_alert_message:I = 0x7f111d75
+.field public static final hidden_chats_info_search_chats:I = 0x7f111d94
 
-.field public static final hidden_chats_empty:I = 0x7f111d7c
+.field public static final hidden_chats_info_unhide:I = 0x7f111d95
 
-.field public static final hidden_chats_empty_title:I = 0x7f111d7d
+.field public static final hidden_chats_pinned:I = 0x7f111d96
 
-.field public static final hidden_chats_hide_chats:I = 0x7f111d7e
+.field public static final hidden_chats_release_for_hidden_chats:I = 0x7f111d97
 
-.field public static final hidden_chats_info_search_chats:I = 0x7f111d7f
+.field public static final hidden_chats_swipe_for_hidden_chats:I = 0x7f111d98
 
-.field public static final hidden_chats_info_unhide:I = 0x7f111d80
+.field public static final hidden_chats_title:I = 0x7f111d99
 
-.field public static final hidden_chats_pinned:I = 0x7f111d81
+.field public static final hidden_chats_undo_chat_hidden:I = 0x7f111d9a
 
-.field public static final hidden_chats_release_for_hidden_chats:I = 0x7f111d82
+.field public static final hidden_chats_undo_chat_unhidden_subtitle:I = 0x7f111d9b
 
-.field public static final hidden_chats_swipe_for_hidden_chats:I = 0x7f111d83
+.field public static final hidden_chats_undo_chat_unhidden_title:I = 0x7f111d9c
 
-.field public static final hidden_chats_title:I = 0x7f111d84
+.field public static final hidden_chats_undo_chats_hidden:I = 0x7f111d9d
 
-.field public static final hidden_chats_undo_chat_hidden:I = 0x7f111d85
+.field public static final hidden_chats_undo_chats_unhidden_subtitle:I = 0x7f111d9e
 
-.field public static final hidden_chats_undo_chat_unhidden_subtitle:I = 0x7f111d86
+.field public static final hidden_chats_undo_chats_unhidden_title:I = 0x7f111d9f
 
-.field public static final hidden_chats_undo_chat_unhidden_title:I = 0x7f111d87
+.field public static final hidden_chats_unhide_chats:I = 0x7f111da0
 
-.field public static final hidden_chats_undo_chats_hidden:I = 0x7f111d88
+.field public static final hidden_chats_unpinned:I = 0x7f111da1
 
-.field public static final hidden_chats_undo_chats_unhidden_subtitle:I = 0x7f111d89
+.field public static final hide_bottom_view_on_scroll_behavior:I = 0x7f111da2
 
-.field public static final hidden_chats_undo_chats_unhidden_title:I = 0x7f111d8a
+.field public static final icon_content_description:I = 0x7f111da3
 
-.field public static final hidden_chats_unhide_chats:I = 0x7f111d8b
+.field public static final image_recognition_bottom_sheet_title:I = 0x7f111da4
 
-.field public static final hidden_chats_unpinned:I = 0x7f111d8c
+.field public static final in_app_update_snackbar_action:I = 0x7f111da5
 
-.field public static final hide_bottom_view_on_scroll_behavior:I = 0x7f111d8d
+.field public static final in_app_update_snackbar_message:I = 0x7f111da6
 
-.field public static final icon_content_description:I = 0x7f111d8e
+.field public static final info_votes_few:I = 0x7f111da7
 
-.field public static final image_recognition_bottom_sheet_title:I = 0x7f111d8f
+.field public static final info_votes_many:I = 0x7f111da8
 
-.field public static final in_app_update_snackbar_action:I = 0x7f111d90
+.field public static final info_votes_one:I = 0x7f111da9
 
-.field public static final in_app_update_snackbar_message:I = 0x7f111d91
+.field public static final info_votes_other:I = 0x7f111daa
 
-.field public static final info_votes_few:I = 0x7f111d92
+.field public static final info_votes_two:I = 0x7f111dab
 
-.field public static final info_votes_many:I = 0x7f111d93
+.field public static final info_votes_zero:I = 0x7f111dac
 
-.field public static final info_votes_one:I = 0x7f111d94
+.field public static final invite_link_created_date:I = 0x7f111dad
 
-.field public static final info_votes_other:I = 0x7f111d95
+.field public static final invite_link_joined_date:I = 0x7f111dae
 
-.field public static final info_votes_two:I = 0x7f111d96
+.field public static final item_view_role_description:I = 0x7f111daf
 
-.field public static final info_votes_zero:I = 0x7f111d97
+.field public static final items_few:I = 0x7f111db0
 
-.field public static final invite_link_created_date:I = 0x7f111d98
+.field public static final items_many:I = 0x7f111db1
 
-.field public static final invite_link_joined_date:I = 0x7f111d99
+.field public static final items_one:I = 0x7f111db2
 
-.field public static final item_view_role_description:I = 0x7f111d9a
+.field public static final items_other:I = 0x7f111db3
 
-.field public static final items_few:I = 0x7f111d9b
+.field public static final items_two:I = 0x7f111db4
 
-.field public static final items_many:I = 0x7f111d9c
+.field public static final items_zero:I = 0x7f111db5
 
-.field public static final items_one:I = 0x7f111d9d
+.field public static final kikliko_name:I = 0x7f111db6
 
-.field public static final items_other:I = 0x7f111d9e
+.field public static final kikliko_promo:I = 0x7f111db7
 
-.field public static final items_two:I = 0x7f111d9f
+.field public static final kikliko_search_hint:I = 0x7f111db8
 
-.field public static final items_zero:I = 0x7f111da0
+.field public static final kikliko_send_as_gif:I = 0x7f111db9
 
-.field public static final kikliko_name:I = 0x7f111da1
+.field public static final language_select_startup:I = 0x7f111dba
 
-.field public static final kikliko_promo:I = 0x7f111da2
+.field public static final language_settings_app_language:I = 0x7f111dbb
 
-.field public static final kikliko_search_hint:I = 0x7f111da3
+.field public static final language_settings_in_text_translate:I = 0x7f111dbc
 
-.field public static final kikliko_send_as_gif:I = 0x7f111da4
+.field public static final language_settings_in_voice_translate:I = 0x7f111dbd
 
-.field public static final language_select_startup:I = 0x7f111da5
+.field public static final language_settings_out_text_translate:I = 0x7f111dbe
 
-.field public static final language_settings_app_language:I = 0x7f111da6
+.field public static final language_settings_selected_language:I = 0x7f111dbf
 
-.field public static final language_settings_in_text_translate:I = 0x7f111da7
+.field public static final language_settings_text_messages:I = 0x7f111dc0
 
-.field public static final language_settings_in_voice_translate:I = 0x7f111da8
+.field public static final loading_messages:I = 0x7f111dc1
 
-.field public static final language_settings_out_text_translate:I = 0x7f111da9
+.field public static final loading_messages_error:I = 0x7f111dc2
 
-.field public static final language_settings_selected_language:I = 0x7f111daa
+.field public static final loading_participants:I = 0x7f111dc3
 
-.field public static final language_settings_text_messages:I = 0x7f111dab
+.field public static final loading_participants_error:I = 0x7f111dc4
 
-.field public static final loading_messages:I = 0x7f111dac
+.field public static final login_token_help:I = 0x7f111dc5
 
-.field public static final loading_messages_error:I = 0x7f111dad
+.field public static final main_camera_popup_text:I = 0x7f111dc7
 
-.field public static final loading_participants:I = 0x7f111dae
+.field public static final main_list:I = 0x7f111dc8
 
-.field public static final loading_participants_error:I = 0x7f111daf
+.field public static final material_clock_display_divider:I = 0x7f111dc9
 
-.field public static final login_token_help:I = 0x7f111db0
+.field public static final material_clock_toggle_content_description:I = 0x7f111dca
 
-.field public static final main_camera_popup_text:I = 0x7f111db2
+.field public static final material_hour_selection:I = 0x7f111dcb
 
-.field public static final main_list:I = 0x7f111db3
+.field public static final material_hour_suffix:I = 0x7f111dcc
 
-.field public static final management:I = 0x7f111db4
+.field public static final material_minute_selection:I = 0x7f111dcd
 
-.field public static final management_bookmarks_delete_all_alert_message:I = 0x7f111db5
+.field public static final material_minute_suffix:I = 0x7f111dce
 
-.field public static final management_bookmarks_delete_selected_alert_message:I = 0x7f111db6
+.field public static final material_motion_easing_accelerated:I = 0x7f111dcf
 
-.field public static final management_drafts:I = 0x7f111db7
+.field public static final material_motion_easing_decelerated:I = 0x7f111dd0
 
-.field public static final management_drafts_delete_selected_alert_message:I = 0x7f111db8
+.field public static final material_motion_easing_emphasized:I = 0x7f111dd1
 
-.field public static final material_clock_display_divider:I = 0x7f111db9
+.field public static final material_motion_easing_linear:I = 0x7f111dd2
 
-.field public static final material_clock_toggle_content_description:I = 0x7f111dba
+.field public static final material_motion_easing_standard:I = 0x7f111dd3
 
-.field public static final material_hour_selection:I = 0x7f111dbb
+.field public static final material_slider_range_end:I = 0x7f111dd4
 
-.field public static final material_hour_suffix:I = 0x7f111dbc
+.field public static final material_slider_range_start:I = 0x7f111dd5
 
-.field public static final material_minute_selection:I = 0x7f111dbd
+.field public static final material_timepicker_am:I = 0x7f111dd6
 
-.field public static final material_minute_suffix:I = 0x7f111dbe
+.field public static final material_timepicker_clock_mode_description:I = 0x7f111dd7
 
-.field public static final material_motion_easing_accelerated:I = 0x7f111dbf
+.field public static final material_timepicker_hour:I = 0x7f111dd8
 
-.field public static final material_motion_easing_decelerated:I = 0x7f111dc0
+.field public static final material_timepicker_minute:I = 0x7f111dd9
 
-.field public static final material_motion_easing_emphasized:I = 0x7f111dc1
+.field public static final material_timepicker_pm:I = 0x7f111dda
 
-.field public static final material_motion_easing_linear:I = 0x7f111dc2
+.field public static final material_timepicker_select_time:I = 0x7f111ddb
 
-.field public static final material_motion_easing_standard:I = 0x7f111dc3
+.field public static final material_timepicker_text_input_mode_description:I = 0x7f111ddc
 
-.field public static final material_slider_range_end:I = 0x7f111dc4
+.field public static final message_document_file_save_as:I = 0x7f111ddd
 
-.field public static final material_slider_range_start:I = 0x7f111dc5
+.field public static final message_document_file_save_as_choose:I = 0x7f111dde
 
-.field public static final material_timepicker_am:I = 0x7f111dc6
+.field public static final message_document_file_save_as_choose_directory:I = 0x7f111ddf
 
-.field public static final material_timepicker_clock_mode_description:I = 0x7f111dc7
+.field public static final message_document_file_save_as_empty_filename:I = 0x7f111de0
 
-.field public static final material_timepicker_hour:I = 0x7f111dc8
+.field public static final message_document_file_save_as_hint:I = 0x7f111de1
 
-.field public static final material_timepicker_minute:I = 0x7f111dc9
+.field public static final message_document_file_save_as_incorrect_description:I = 0x7f111de2
 
-.field public static final material_timepicker_pm:I = 0x7f111dca
+.field public static final message_document_file_save_as_incorrect_title:I = 0x7f111de3
 
-.field public static final material_timepicker_select_time:I = 0x7f111dcb
+.field public static final message_document_file_save_as_success:I = 0x7f111de4
 
-.field public static final material_timepicker_text_input_mode_description:I = 0x7f111dcc
+.field public static final message_document_file_save_original_name:I = 0x7f111de5
 
-.field public static final message_document_file_save_as:I = 0x7f111dcd
+.field public static final messages_few:I = 0x7f111de6
 
-.field public static final message_document_file_save_as_choose:I = 0x7f111dce
+.field public static final messages_many:I = 0x7f111de7
 
-.field public static final message_document_file_save_as_choose_directory:I = 0x7f111dcf
+.field public static final messages_one:I = 0x7f111de8
 
-.field public static final message_document_file_save_as_empty_filename:I = 0x7f111dd0
+.field public static final messages_other:I = 0x7f111de9
 
-.field public static final message_document_file_save_as_hint:I = 0x7f111dd1
+.field public static final messages_sorting_settings_section_enable_all_item_title:I = 0x7f111dea
 
-.field public static final message_document_file_save_as_incorrect_description:I = 0x7f111dd2
+.field public static final messages_sorting_settings_section_hint:I = 0x7f111deb
 
-.field public static final message_document_file_save_as_incorrect_title:I = 0x7f111dd3
+.field public static final messages_two:I = 0x7f111dec
 
-.field public static final message_document_file_save_as_success:I = 0x7f111dd4
+.field public static final messages_zero:I = 0x7f111ded
 
-.field public static final message_document_file_save_original_name:I = 0x7f111dd5
+.field public static final moved_to_folder:I = 0x7f111dee
 
-.field public static final messages_few:I = 0x7f111dd6
+.field public static final mtrl_badge_numberless_content_description:I = 0x7f111def
 
-.field public static final messages_many:I = 0x7f111dd7
+.field public static final mtrl_chip_close_icon_content_description:I = 0x7f111df0
 
-.field public static final messages_one:I = 0x7f111dd8
+.field public static final mtrl_exceed_max_badge_number_content_description:I = 0x7f111df1
 
-.field public static final messages_other:I = 0x7f111dd9
+.field public static final mtrl_exceed_max_badge_number_suffix:I = 0x7f111df2
 
-.field public static final messages_sorting_settings_section_enable_all_item_title:I = 0x7f111dda
+.field public static final mtrl_picker_a11y_next_month:I = 0x7f111df3
 
-.field public static final messages_sorting_settings_section_hint:I = 0x7f111ddb
+.field public static final mtrl_picker_a11y_prev_month:I = 0x7f111df4
 
-.field public static final messages_two:I = 0x7f111ddc
+.field public static final mtrl_picker_announce_current_selection:I = 0x7f111df5
 
-.field public static final messages_zero:I = 0x7f111ddd
+.field public static final mtrl_picker_cancel:I = 0x7f111df6
 
-.field public static final moved_to_folder:I = 0x7f111dde
+.field public static final mtrl_picker_confirm:I = 0x7f111df7
 
-.field public static final mtrl_badge_numberless_content_description:I = 0x7f111ddf
+.field public static final mtrl_picker_date_header_selected:I = 0x7f111df8
 
-.field public static final mtrl_chip_close_icon_content_description:I = 0x7f111de0
+.field public static final mtrl_picker_date_header_title:I = 0x7f111df9
 
-.field public static final mtrl_exceed_max_badge_number_content_description:I = 0x7f111de1
+.field public static final mtrl_picker_date_header_unselected:I = 0x7f111dfa
 
-.field public static final mtrl_exceed_max_badge_number_suffix:I = 0x7f111de2
+.field public static final mtrl_picker_day_of_week_column_header:I = 0x7f111dfb
 
-.field public static final mtrl_picker_a11y_next_month:I = 0x7f111de3
+.field public static final mtrl_picker_invalid_format:I = 0x7f111dfc
 
-.field public static final mtrl_picker_a11y_prev_month:I = 0x7f111de4
+.field public static final mtrl_picker_invalid_format_example:I = 0x7f111dfd
 
-.field public static final mtrl_picker_announce_current_selection:I = 0x7f111de5
+.field public static final mtrl_picker_invalid_format_use:I = 0x7f111dfe
 
-.field public static final mtrl_picker_cancel:I = 0x7f111de6
+.field public static final mtrl_picker_invalid_range:I = 0x7f111dff
 
-.field public static final mtrl_picker_confirm:I = 0x7f111de7
+.field public static final mtrl_picker_navigate_to_year_description:I = 0x7f111e00
 
-.field public static final mtrl_picker_date_header_selected:I = 0x7f111de8
+.field public static final mtrl_picker_out_of_range:I = 0x7f111e01
 
-.field public static final mtrl_picker_date_header_title:I = 0x7f111de9
+.field public static final mtrl_picker_range_header_only_end_selected:I = 0x7f111e02
 
-.field public static final mtrl_picker_date_header_unselected:I = 0x7f111dea
+.field public static final mtrl_picker_range_header_only_start_selected:I = 0x7f111e03
 
-.field public static final mtrl_picker_day_of_week_column_header:I = 0x7f111deb
+.field public static final mtrl_picker_range_header_selected:I = 0x7f111e04
 
-.field public static final mtrl_picker_invalid_format:I = 0x7f111dec
+.field public static final mtrl_picker_range_header_title:I = 0x7f111e05
 
-.field public static final mtrl_picker_invalid_format_example:I = 0x7f111ded
+.field public static final mtrl_picker_range_header_unselected:I = 0x7f111e06
 
-.field public static final mtrl_picker_invalid_format_use:I = 0x7f111dee
+.field public static final mtrl_picker_save:I = 0x7f111e07
 
-.field public static final mtrl_picker_invalid_range:I = 0x7f111def
+.field public static final mtrl_picker_text_input_date_hint:I = 0x7f111e08
 
-.field public static final mtrl_picker_navigate_to_year_description:I = 0x7f111df0
+.field public static final mtrl_picker_text_input_date_range_end_hint:I = 0x7f111e09
 
-.field public static final mtrl_picker_out_of_range:I = 0x7f111df1
+.field public static final mtrl_picker_text_input_date_range_start_hint:I = 0x7f111e0a
 
-.field public static final mtrl_picker_range_header_only_end_selected:I = 0x7f111df2
+.field public static final mtrl_picker_text_input_day_abbr:I = 0x7f111e0b
 
-.field public static final mtrl_picker_range_header_only_start_selected:I = 0x7f111df3
+.field public static final mtrl_picker_text_input_month_abbr:I = 0x7f111e0c
 
-.field public static final mtrl_picker_range_header_selected:I = 0x7f111df4
+.field public static final mtrl_picker_text_input_year_abbr:I = 0x7f111e0d
 
-.field public static final mtrl_picker_range_header_title:I = 0x7f111df5
+.field public static final mtrl_picker_toggle_to_calendar_input_mode:I = 0x7f111e0e
 
-.field public static final mtrl_picker_range_header_unselected:I = 0x7f111df6
+.field public static final mtrl_picker_toggle_to_day_selection:I = 0x7f111e0f
 
-.field public static final mtrl_picker_save:I = 0x7f111df7
+.field public static final mtrl_picker_toggle_to_text_input_mode:I = 0x7f111e10
 
-.field public static final mtrl_picker_text_input_date_hint:I = 0x7f111df8
+.field public static final mtrl_picker_toggle_to_year_selection:I = 0x7f111e11
 
-.field public static final mtrl_picker_text_input_date_range_end_hint:I = 0x7f111df9
+.field public static final multi_panel_hide_on_scroll:I = 0x7f111e12
 
-.field public static final mtrl_picker_text_input_date_range_start_hint:I = 0x7f111dfa
+.field public static final multi_panel_settings_button_cache_item_title:I = 0x7f111e13
 
-.field public static final mtrl_picker_text_input_day_abbr:I = 0x7f111dfb
+.field public static final multi_panel_settings_button_call_item_title:I = 0x7f111e14
 
-.field public static final mtrl_picker_text_input_month_abbr:I = 0x7f111dfc
+.field public static final multi_panel_settings_button_members_item_title:I = 0x7f111e15
 
-.field public static final mtrl_picker_text_input_year_abbr:I = 0x7f111dfd
+.field public static final multi_panel_settings_button_mute_item_title:I = 0x7f111e16
 
-.field public static final mtrl_picker_toggle_to_calendar_input_mode:I = 0x7f111dfe
+.field public static final multi_panel_settings_button_pins_item_title:I = 0x7f111e17
 
-.field public static final mtrl_picker_toggle_to_day_selection:I = 0x7f111dff
+.field public static final multi_panel_settings_button_recent_actions_item_title:I = 0x7f111e18
 
-.field public static final mtrl_picker_toggle_to_text_input_mode:I = 0x7f111e00
+.field public static final multi_panel_settings_button_search_item_title:I = 0x7f111e19
 
-.field public static final mtrl_picker_toggle_to_year_selection:I = 0x7f111e01
+.field public static final multi_panel_settings_button_shared_content_item_title:I = 0x7f111e1a
 
-.field public static final multi_panel_hide_on_scroll:I = 0x7f111e02
+.field public static final multi_panel_settings_button_stop_bot_item_title:I = 0x7f111e1b
 
-.field public static final multi_panel_settings_button_cache_item_title:I = 0x7f111e03
+.field public static final multi_panel_settings_button_subscribers_item_title:I = 0x7f111e1c
 
-.field public static final multi_panel_settings_button_call_item_title:I = 0x7f111e04
+.field public static final multi_panel_settings_button_video_call_item_title:I = 0x7f111e1d
 
-.field public static final multi_panel_settings_button_members_item_title:I = 0x7f111e05
+.field public static final multi_panel_settings_enable_item_subtitle:I = 0x7f111e1e
 
-.field public static final multi_panel_settings_button_mute_item_title:I = 0x7f111e06
+.field public static final multi_panel_settings_enable_item_title:I = 0x7f111e1f
 
-.field public static final multi_panel_settings_button_pins_item_title:I = 0x7f111e07
+.field public static final multi_panel_settings_only_for_admin_button_item_subtitle:I = 0x7f111e20
 
-.field public static final multi_panel_settings_button_recent_actions_item_title:I = 0x7f111e08
+.field public static final multi_panel_settings_section_enable_all_item_title:I = 0x7f111e21
 
-.field public static final multi_panel_settings_button_search_item_title:I = 0x7f111e09
+.field public static final multi_panel_settings_section_header_bots:I = 0x7f111e22
 
-.field public static final multi_panel_settings_button_shared_content_item_title:I = 0x7f111e0a
+.field public static final multi_panel_settings_section_header_channels:I = 0x7f111e23
 
-.field public static final multi_panel_settings_button_stop_bot_item_title:I = 0x7f111e0b
+.field public static final multi_panel_settings_section_header_chats:I = 0x7f111e24
 
-.field public static final multi_panel_settings_button_subscribers_item_title:I = 0x7f111e0c
+.field public static final multi_panel_settings_section_header_groups:I = 0x7f111e25
 
-.field public static final multi_panel_settings_button_video_call_item_title:I = 0x7f111e0d
+.field public static final multi_panel_settings_section_hint:I = 0x7f111e26
 
-.field public static final multi_panel_settings_enable_item_subtitle:I = 0x7f111e0e
+.field public static final multiple_files_sending_reset:I = 0x7f111e27
 
-.field public static final multi_panel_settings_enable_item_title:I = 0x7f111e0f
+.field public static final multiple_files_sending_selected:I = 0x7f111e28
 
-.field public static final multi_panel_settings_only_for_admin_button_item_subtitle:I = 0x7f111e10
+.field public static final music_albums_empty_subtitle:I = 0x7f111e29
 
-.field public static final multi_panel_settings_section_enable_all_item_title:I = 0x7f111e11
+.field public static final music_albums_empty_title:I = 0x7f111e2a
 
-.field public static final multi_panel_settings_section_header_bots:I = 0x7f111e12
+.field public static final music_albums_tab:I = 0x7f111e2b
 
-.field public static final multi_panel_settings_section_header_channels:I = 0x7f111e13
+.field public static final music_bots_empty_subtitle:I = 0x7f111e2c
 
-.field public static final multi_panel_settings_section_header_chats:I = 0x7f111e14
+.field public static final music_bots_empty_title:I = 0x7f111e2d
 
-.field public static final multi_panel_settings_section_header_groups:I = 0x7f111e15
+.field public static final music_bots_tab:I = 0x7f111e2e
 
-.field public static final multi_panel_settings_section_hint:I = 0x7f111e16
+.field public static final music_channels_empty_subtitle:I = 0x7f111e2f
 
-.field public static final multiple_files_sending_reset:I = 0x7f111e17
+.field public static final music_channels_empty_title:I = 0x7f111e30
 
-.field public static final multiple_files_sending_selected:I = 0x7f111e18
+.field public static final music_channels_tab:I = 0x7f111e31
 
-.field public static final music_albums_empty_subtitle:I = 0x7f111e19
+.field public static final music_device_delete_alert_message:I = 0x7f111e32
 
-.field public static final music_albums_empty_title:I = 0x7f111e1a
+.field public static final music_device_empty_subtitle:I = 0x7f111e33
 
-.field public static final music_albums_tab:I = 0x7f111e1b
+.field public static final music_device_empty_title:I = 0x7f111e34
 
-.field public static final music_bots_empty_subtitle:I = 0x7f111e1c
+.field public static final music_device_no_permission_subtitle:I = 0x7f111e35
 
-.field public static final music_bots_empty_title:I = 0x7f111e1d
+.field public static final music_device_no_permission_title:I = 0x7f111e36
 
-.field public static final music_bots_tab:I = 0x7f111e1e
+.field public static final music_device_tab:I = 0x7f111e37
 
-.field public static final music_channels_empty_subtitle:I = 0x7f111e1f
+.field public static final music_intro_subtitle:I = 0x7f111e38
 
-.field public static final music_channels_empty_title:I = 0x7f111e20
+.field public static final music_pinned_player_enabled_toast:I = 0x7f111e39
 
-.field public static final music_channels_tab:I = 0x7f111e21
+.field public static final music_player_add_to_playlist:I = 0x7f111e3a
 
-.field public static final music_device_delete_alert_message:I = 0x7f111e22
+.field public static final music_player_remove_from_playlist:I = 0x7f111e3b
 
-.field public static final music_device_empty_subtitle:I = 0x7f111e23
+.field public static final music_playlist_empty_title:I = 0x7f111e3c
 
-.field public static final music_device_empty_title:I = 0x7f111e24
+.field public static final music_playlists_tab:I = 0x7f111e3d
 
-.field public static final music_device_no_permission_subtitle:I = 0x7f111e25
+.field public static final music_tab_playlist:I = 0x7f111e3e
 
-.field public static final music_device_no_permission_title:I = 0x7f111e26
+.field public static final nav_app_bar_navigate_up_description:I = 0x7f111e3f
 
-.field public static final music_device_tab:I = 0x7f111e27
+.field public static final nav_app_bar_open_drawer_description:I = 0x7f111e40
 
-.field public static final music_intro_subtitle:I = 0x7f111e28
+.field public static final neurobots_enable_dialog_description:I = 0x7f111e41
 
-.field public static final music_pinned_player_enabled_toast:I = 0x7f111e29
+.field public static final neurobots_enable_dialog_positive_btn_text:I = 0x7f111e42
 
-.field public static final music_player_add_to_playlist:I = 0x7f111e2a
+.field public static final neurobots_enable_dialog_title:I = 0x7f111e43
 
-.field public static final music_player_remove_from_playlist:I = 0x7f111e2b
+.field public static final neurobots_settings_automatic_response_header:I = 0x7f111e44
 
-.field public static final music_playlist_empty_title:I = 0x7f111e2c
+.field public static final neurobots_settings_chats_automatic_response_enable_item_title:I = 0x7f111e45
 
-.field public static final music_playlists_tab:I = 0x7f111e2d
+.field public static final neurobots_settings_enable_item_title:I = 0x7f111e46
 
-.field public static final music_tab_playlist:I = 0x7f111e2e
+.field public static final neurobots_settings_groups_automatic_response_enable_item_title:I = 0x7f111e47
 
-.field public static final nav_app_bar_navigate_up_description:I = 0x7f111e2f
+.field public static final neurobots_settings_often_used_enable_item_title:I = 0x7f111e48
 
-.field public static final nav_app_bar_open_drawer_description:I = 0x7f111e30
+.field public static final neurobots_settings_screen_title:I = 0x7f111e49
 
-.field public static final neurobots_enable_dialog_description:I = 0x7f111e31
+.field public static final neurobots_store_ads_label:I = 0x7f111e4a
 
-.field public static final neurobots_enable_dialog_positive_btn_text:I = 0x7f111e32
+.field public static final neurobots_store_bot_action_disable:I = 0x7f111e4b
 
-.field public static final neurobots_enable_dialog_title:I = 0x7f111e33
+.field public static final neurobots_store_bot_action_download:I = 0x7f111e4c
 
-.field public static final neurobots_settings_automatic_response_header:I = 0x7f111e34
+.field public static final neurobots_store_bot_action_enable:I = 0x7f111e4d
 
-.field public static final neurobots_settings_chats_automatic_response_enable_item_title:I = 0x7f111e35
+.field public static final neurobots_store_bot_action_update:I = 0x7f111e4e
 
-.field public static final neurobots_settings_enable_item_title:I = 0x7f111e36
+.field public static final neurobots_store_bot_added:I = 0x7f111e4f
 
-.field public static final neurobots_settings_groups_automatic_response_enable_item_title:I = 0x7f111e37
+.field public static final neurobots_store_bot_info_developer:I = 0x7f111e50
 
-.field public static final neurobots_settings_often_used_enable_item_title:I = 0x7f111e38
+.field public static final neurobots_store_bot_info_installs:I = 0x7f111e51
 
-.field public static final neurobots_settings_screen_title:I = 0x7f111e39
+.field public static final neurobots_store_bot_info_link:I = 0x7f111e52
 
-.field public static final neurobots_store_ads_label:I = 0x7f111e3a
+.field public static final neurobots_store_bot_info_phrases:I = 0x7f111e53
 
-.field public static final neurobots_store_bot_action_disable:I = 0x7f111e3b
+.field public static final neurobots_store_bot_info_rate:I = 0x7f111e54
 
-.field public static final neurobots_store_bot_action_download:I = 0x7f111e3c
+.field public static final neurobots_store_bot_info_supported_language_en:I = 0x7f111e55
 
-.field public static final neurobots_store_bot_action_enable:I = 0x7f111e3d
+.field public static final neurobots_store_bot_info_supported_language_ru:I = 0x7f111e56
 
-.field public static final neurobots_store_bot_action_update:I = 0x7f111e3e
+.field public static final neurobots_store_bot_info_supported_languages:I = 0x7f111e57
 
-.field public static final neurobots_store_bot_added:I = 0x7f111e3f
+.field public static final neurobots_store_bot_info_themes:I = 0x7f111e58
 
-.field public static final neurobots_store_bot_info_developer:I = 0x7f111e40
+.field public static final neurobots_store_bot_status_downloading:I = 0x7f111e59
 
-.field public static final neurobots_store_bot_info_installs:I = 0x7f111e41
+.field public static final neurobots_store_bot_updated:I = 0x7f111e5a
 
-.field public static final neurobots_store_bot_info_link:I = 0x7f111e42
+.field public static final neurobots_store_label_new:I = 0x7f111e5b
 
-.field public static final neurobots_store_bot_info_phrases:I = 0x7f111e43
+.field public static final neurobots_store_language_en:I = 0x7f111e5c
 
-.field public static final neurobots_store_bot_info_rate:I = 0x7f111e44
+.field public static final neurobots_store_language_ru:I = 0x7f111e5d
 
-.field public static final neurobots_store_bot_info_supported_language_en:I = 0x7f111e45
+.field public static final neurobots_store_languages_screen_title:I = 0x7f111e5e
 
-.field public static final neurobots_store_bot_info_supported_language_ru:I = 0x7f111e46
+.field public static final neurobots_store_screen_title:I = 0x7f111e5f
 
-.field public static final neurobots_store_bot_info_supported_languages:I = 0x7f111e47
+.field public static final neurobots_store_search_empty:I = 0x7f111e60
 
-.field public static final neurobots_store_bot_info_themes:I = 0x7f111e48
+.field public static final neurobots_store_tab_all:I = 0x7f111e61
 
-.field public static final neurobots_store_bot_status_downloading:I = 0x7f111e49
+.field public static final neurobots_store_tab_free:I = 0x7f111e62
 
-.field public static final neurobots_store_bot_updated:I = 0x7f111e4a
+.field public static final neurobots_store_tab_my:I = 0x7f111e63
 
-.field public static final neurobots_store_label_new:I = 0x7f111e4b
+.field public static final neurobots_store_tab_popular:I = 0x7f111e64
 
-.field public static final neurobots_store_language_en:I = 0x7f111e4c
+.field public static final new_telegram_authorization_rules_alert:I = 0x7f111e65
 
-.field public static final neurobots_store_language_ru:I = 0x7f111e4d
+.field public static final new_telegram_authorization_rules_info:I = 0x7f111e66
 
-.field public static final neurobots_store_languages_screen_title:I = 0x7f111e4e
+.field public static final nft_collection_size:I = 0x7f111e67
 
-.field public static final neurobots_store_screen_title:I = 0x7f111e4f
+.field public static final nft_preview_copy_token_id:I = 0x7f111e68
 
-.field public static final neurobots_store_search_empty:I = 0x7f111e50
+.field public static final nft_preview_open_contract:I = 0x7f111e69
 
-.field public static final neurobots_store_tab_all:I = 0x7f111e51
+.field public static final nft_preview_open_source:I = 0x7f111e6a
 
-.field public static final neurobots_store_tab_free:I = 0x7f111e52
+.field public static final no_icon:I = 0x7f111e6b
 
-.field public static final neurobots_store_tab_my:I = 0x7f111e53
+.field public static final no_service_messages:I = 0x7f111e6c
 
-.field public static final neurobots_store_tab_popular:I = 0x7f111e54
+.field public static final no_unread_bots:I = 0x7f111e6d
 
-.field public static final new_telegram_authorization_rules_alert:I = 0x7f111e55
+.field public static final no_unread_groups:I = 0x7f111e6e
 
-.field public static final new_telegram_authorization_rules_info:I = 0x7f111e56
+.field public static final no_unread_personal_chats:I = 0x7f111e6f
 
-.field public static final nft_collection_size:I = 0x7f111e57
+.field public static final password_toggle_content_description:I = 0x7f111e70
 
-.field public static final nft_preview_copy_token_id:I = 0x7f111e58
+.field public static final path_password_eye:I = 0x7f111e71
 
-.field public static final nft_preview_open_contract:I = 0x7f111e59
+.field public static final path_password_eye_mask_strike_through:I = 0x7f111e72
 
-.field public static final nft_preview_open_source:I = 0x7f111e5a
+.field public static final path_password_eye_mask_visible:I = 0x7f111e73
 
-.field public static final no_icon:I = 0x7f111e5b
+.field public static final path_password_strike_through:I = 0x7f111e74
 
-.field public static final no_service_messages:I = 0x7f111e5c
+.field public static final period_all_time:I = 0x7f111e75
 
-.field public static final no_unread_bots:I = 0x7f111e5d
+.field public static final period_last_day:I = 0x7f111e76
 
-.field public static final no_unread_groups:I = 0x7f111e5e
+.field public static final period_last_half_year:I = 0x7f111e77
 
-.field public static final no_unread_personal_chats:I = 0x7f111e5f
+.field public static final period_last_month:I = 0x7f111e78
 
-.field public static final password_toggle_content_description:I = 0x7f111e60
+.field public static final period_last_week:I = 0x7f111e79
 
-.field public static final path_password_eye:I = 0x7f111e61
+.field public static final period_last_year:I = 0x7f111e7a
 
-.field public static final path_password_eye_mask_strike_through:I = 0x7f111e62
+.field public static final phone_contact_call:I = 0x7f111e7b
 
-.field public static final path_password_eye_mask_visible:I = 0x7f111e63
+.field public static final phone_contact_profile:I = 0x7f111e7c
 
-.field public static final path_password_strike_through:I = 0x7f111e64
+.field public static final phone_contact_video_call:I = 0x7f111e7d
 
-.field public static final period_all_time:I = 0x7f111e65
+.field public static final photo_viewer_clear_cache:I = 0x7f111e7e
 
-.field public static final period_last_day:I = 0x7f111e66
+.field public static final photo_viewer_image_copied:I = 0x7f111e7f
 
-.field public static final period_last_half_year:I = 0x7f111e67
+.field public static final photo_viewer_image_copy:I = 0x7f111e80
 
-.field public static final period_last_month:I = 0x7f111e68
+.field public static final photo_viewer_open_recognize_photo:I = 0x7f111e81
 
-.field public static final period_last_week:I = 0x7f111e69
+.field public static final photo_viewer_open_recognize_text:I = 0x7f111e82
 
-.field public static final period_last_year:I = 0x7f111e6a
+.field public static final pinned_messages_pin_panel_hidden_bulletin:I = 0x7f111e83
 
-.field public static final phone_contact_call:I = 0x7f111e6b
+.field public static final pinned_messages_show_pin_panel_bottom_button:I = 0x7f111e84
 
-.field public static final phone_contact_profile:I = 0x7f111e6c
+.field public static final plural_info_votes:I = 0x7f111e85
 
-.field public static final phone_contact_video_call:I = 0x7f111e6d
+.field public static final plural_messages_pinned:I = 0x7f111e86
 
-.field public static final photo_viewer_clear_cache:I = 0x7f111e6e
+.field public static final plural_wallet_tokens_management_verified:I = 0x7f111e87
 
-.field public static final photo_viewer_image_copied:I = 0x7f111e6f
+.field public static final premium_settings_animate_stickers:I = 0x7f111e88
 
-.field public static final photo_viewer_image_copy:I = 0x7f111e70
+.field public static final premium_settings_not_premium_animate_avatars:I = 0x7f111e89
 
-.field public static final photo_viewer_open_recognize_photo:I = 0x7f111e71
+.field public static final premium_settings_not_premium_show_badge:I = 0x7f111e8a
 
-.field public static final photo_viewer_open_recognize_text:I = 0x7f111e72
+.field public static final processing_participants:I = 0x7f111e8b
 
-.field public static final pinned_messages_pin_panel_hidden_bulletin:I = 0x7f111e73
+.field public static final processing_participants_success:I = 0x7f111e8c
 
-.field public static final pinned_messages_show_pin_panel_bottom_button:I = 0x7f111e74
+.field public static final processing_type_1inch:I = 0x7f111e8d
 
-.field public static final plural_info_votes:I = 0x7f111e75
+.field public static final processing_type_bsc:I = 0x7f111e8e
 
-.field public static final plural_messages_pinned:I = 0x7f111e76
+.field public static final processing_type_eth:I = 0x7f111e8f
 
-.field public static final premium_settings_animate_stickers:I = 0x7f111e77
+.field public static final processing_type_pancakeswap_v2:I = 0x7f111e90
 
-.field public static final premium_settings_not_premium_animate_avatars:I = 0x7f111e78
+.field public static final processing_type_polygon:I = 0x7f111e91
 
-.field public static final premium_settings_not_premium_show_badge:I = 0x7f111e79
+.field public static final processing_type_simplex:I = 0x7f111e92
 
-.field public static final processing_participants:I = 0x7f111e7a
+.field public static final processing_type_symbiosis:I = 0x7f111e93
 
-.field public static final processing_participants_success:I = 0x7f111e7b
+.field public static final processing_type_ton:I = 0x7f111e94
 
-.field public static final processing_type_1inch:I = 0x7f111e7c
+.field public static final processing_type_uniswap_v2:I = 0x7f111e95
 
-.field public static final processing_type_bsc:I = 0x7f111e7d
+.field public static final processing_type_uniswap_v3:I = 0x7f111e96
 
-.field public static final processing_type_eth:I = 0x7f111e7e
+.field public static final processing_type_unknown:I = 0x7f111e97
 
-.field public static final processing_type_pancakeswap_v2:I = 0x7f111e7f
+.field public static final profile_album_id_item_title:I = 0x7f111e98
 
-.field public static final processing_type_polygon:I = 0x7f111e80
+.field public static final profile_bot_id_item_title:I = 0x7f111e99
 
-.field public static final processing_type_simplex:I = 0x7f111e81
+.field public static final profile_channel_id_item_title:I = 0x7f111e9a
 
-.field public static final processing_type_symbiosis:I = 0x7f111e82
+.field public static final profile_group_filter_administrator:I = 0x7f111e9b
 
-.field public static final processing_type_ton:I = 0x7f111e83
+.field public static final profile_group_filter_all:I = 0x7f111e9c
 
-.field public static final processing_type_uniswap_v2:I = 0x7f111e84
+.field public static final profile_group_filter_blocked:I = 0x7f111e9d
 
-.field public static final processing_type_uniswap_v3:I = 0x7f111e85
+.field public static final profile_group_filter_bots:I = 0x7f111e9e
 
-.field public static final processing_type_unknown:I = 0x7f111e86
+.field public static final profile_group_filter_confirm_remove_message:I = 0x7f111e9f
 
-.field public static final profile_album_id_item_title:I = 0x7f111e87
+.field public static final profile_group_filter_confirm_return_message:I = 0x7f111ea0
 
-.field public static final profile_bot_id_item_title:I = 0x7f111e88
+.field public static final profile_group_filter_confirm_unban_message:I = 0x7f111ea1
 
-.field public static final profile_channel_id_item_title:I = 0x7f111e89
+.field public static final profile_group_filter_contacts:I = 0x7f111ea2
 
-.field public static final profile_group_filter_administrator:I = 0x7f111e8a
+.field public static final profile_group_filter_deleted:I = 0x7f111ea3
 
-.field public static final profile_group_filter_all:I = 0x7f111e8b
+.field public static final profile_group_filter_online:I = 0x7f111ea4
 
-.field public static final profile_group_filter_blocked:I = 0x7f111e8c
+.field public static final profile_group_filter_restricted:I = 0x7f111ea5
 
-.field public static final profile_group_filter_bots:I = 0x7f111e8d
+.field public static final profile_group_filter_success_removed_members:I = 0x7f111ea6
 
-.field public static final profile_group_filter_confirm_remove_message:I = 0x7f111e8e
+.field public static final profile_group_filter_title:I = 0x7f111ea7
 
-.field public static final profile_group_filter_confirm_return_message:I = 0x7f111e8f
+.field public static final profile_group_id_item_title:I = 0x7f111ea8
 
-.field public static final profile_group_filter_confirm_unban_message:I = 0x7f111e90
+.field public static final profile_my_id_item_title:I = 0x7f111ea9
 
-.field public static final profile_group_filter_contacts:I = 0x7f111e91
+.field public static final profile_twitter_account_actions_title:I = 0x7f111eaa
 
-.field public static final profile_group_filter_deleted:I = 0x7f111e92
+.field public static final profile_twitter_auth_to_use_feature_description:I = 0x7f111eab
 
-.field public static final profile_group_filter_online:I = 0x7f111e93
+.field public static final profile_twitter_bot_confirmation_alert_description:I = 0x7f111eac
 
-.field public static final profile_group_filter_restricted:I = 0x7f111e94
+.field public static final profile_twitter_bot_confirmation_alert_title:I = 0x7f111ead
 
-.field public static final profile_group_filter_success_removed_members:I = 0x7f111e95
+.field public static final profile_twitter_link_confirmation_alert_description:I = 0x7f111eae
 
-.field public static final profile_group_filter_title:I = 0x7f111e96
+.field public static final profile_twitter_link_confirmation_alert_title:I = 0x7f111eaf
 
-.field public static final profile_group_id_item_title:I = 0x7f111e97
+.field public static final profile_twitter_not_connected:I = 0x7f111eb0
 
-.field public static final profile_my_id_item_title:I = 0x7f111e98
+.field public static final profile_twitter_reset_confirmation_alert_description:I = 0x7f111eb1
 
-.field public static final profile_twitter_account_actions_title:I = 0x7f111e99
+.field public static final profile_twitter_reset_confirmation_alert_title:I = 0x7f111eb2
 
-.field public static final profile_twitter_auth_to_use_feature_description:I = 0x7f111e9a
+.field public static final profile_twitter_unlinked_error_alert_description:I = 0x7f111eb3
 
-.field public static final profile_twitter_bot_confirmation_alert_description:I = 0x7f111e9b
+.field public static final profile_twitter_unlinked_error_alert_link:I = 0x7f111eb4
 
-.field public static final profile_twitter_bot_confirmation_alert_title:I = 0x7f111e9c
+.field public static final profile_twitter_unlinked_error_alert_log_out:I = 0x7f111eb5
 
-.field public static final profile_twitter_link_confirmation_alert_description:I = 0x7f111e9d
+.field public static final profile_twitter_unlinked_error_alert_title:I = 0x7f111eb6
 
-.field public static final profile_twitter_link_confirmation_alert_title:I = 0x7f111e9e
+.field public static final profile_twitter_vpn_alert_description:I = 0x7f111eb7
 
-.field public static final profile_twitter_not_connected:I = 0x7f111e9f
+.field public static final profile_twitter_vpn_alert_title:I = 0x7f111eb8
 
-.field public static final profile_twitter_reset_confirmation_alert_description:I = 0x7f111ea0
+.field public static final profile_user_id_action_copy:I = 0x7f111eb9
 
-.field public static final profile_twitter_reset_confirmation_alert_title:I = 0x7f111ea1
+.field public static final profile_user_id_action_transfer:I = 0x7f111eba
 
-.field public static final profile_twitter_unlinked_error_alert_description:I = 0x7f111ea2
+.field public static final profile_user_id_item_title:I = 0x7f111ebb
 
-.field public static final profile_twitter_unlinked_error_alert_link:I = 0x7f111ea3
+.field public static final profile_user_id_item_value_unknown:I = 0x7f111ebc
 
-.field public static final profile_twitter_unlinked_error_alert_log_out:I = 0x7f111ea4
+.field public static final pull_to_go_to_next_unread_bot:I = 0x7f111ebe
 
-.field public static final profile_twitter_unlinked_error_alert_title:I = 0x7f111ea5
+.field public static final pull_to_go_to_next_unread_group:I = 0x7f111ebf
 
-.field public static final profile_twitter_vpn_alert_description:I = 0x7f111ea6
+.field public static final pull_to_go_to_next_unread_personal_chat:I = 0x7f111ec0
 
-.field public static final profile_twitter_vpn_alert_title:I = 0x7f111ea7
+.field public static final pull_to_go_to_unread_archived_bots:I = 0x7f111ec1
 
-.field public static final profile_user_id_action_copy:I = 0x7f111ea8
+.field public static final pull_to_go_to_unread_archived_groups:I = 0x7f111ec2
 
-.field public static final profile_user_id_action_transfer:I = 0x7f111ea9
+.field public static final pull_to_go_to_unread_archived_personal_chats:I = 0x7f111ec3
 
-.field public static final profile_user_id_item_title:I = 0x7f111eaa
+.field public static final push_notification_staking_finished:I = 0x7f111ec4
 
-.field public static final profile_user_id_item_value_unknown:I = 0x7f111eab
+.field public static final push_notification_staking_safe_withdrawal_finished:I = 0x7f111ec5
 
-.field public static final pull_to_go_to_next_unread_bot:I = 0x7f111ead
+.field public static final push_notification_staking_safe_withdrawal_started:I = 0x7f111ec6
 
-.field public static final pull_to_go_to_next_unread_group:I = 0x7f111eae
+.field public static final push_notification_staking_started:I = 0x7f111ec7
 
-.field public static final pull_to_go_to_next_unread_personal_chat:I = 0x7f111eaf
+.field public static final push_notification_staking_title:I = 0x7f111ec8
 
-.field public static final pull_to_go_to_unread_archived_bots:I = 0x7f111eb0
+.field public static final push_notification_wallet_approve_category_title:I = 0x7f111ec9
 
-.field public static final pull_to_go_to_unread_archived_groups:I = 0x7f111eb1
+.field public static final push_notification_wallet_approve_failed_description:I = 0x7f111eca
 
-.field public static final pull_to_go_to_unread_archived_personal_chats:I = 0x7f111eb2
+.field public static final push_notification_wallet_approve_success_description:I = 0x7f111ecb
 
-.field public static final push_notification_staking_finished:I = 0x7f111eb3
+.field public static final push_notification_wallet_binance_pay_request_created_description:I = 0x7f111ecc
 
-.field public static final push_notification_staking_safe_withdrawal_finished:I = 0x7f111eb4
+.field public static final push_notification_wallet_binance_pay_request_status_updated_description:I = 0x7f111ecd
 
-.field public static final push_notification_staking_safe_withdrawal_started:I = 0x7f111eb5
+.field public static final push_notification_wallet_cancelled_failed_description:I = 0x7f111ece
 
-.field public static final push_notification_staking_started:I = 0x7f111eb6
+.field public static final push_notification_wallet_cancelled_success_description:I = 0x7f111ecf
 
-.field public static final push_notification_staking_title:I = 0x7f111eb7
+.field public static final push_notification_wallet_crypto_transfer_in_description:I = 0x7f111ed0
 
-.field public static final push_notification_wallet_approve_category_title:I = 0x7f111eb8
+.field public static final push_notification_wallet_crypto_transfer_out_failed_description:I = 0x7f111ed1
 
-.field public static final push_notification_wallet_approve_failed_description:I = 0x7f111eb9
+.field public static final push_notification_wallet_crypto_transfer_out_success_description:I = 0x7f111ed2
 
-.field public static final push_notification_wallet_approve_success_description:I = 0x7f111eba
+.field public static final push_notification_wallet_simplex_payment:I = 0x7f111ed3
 
-.field public static final push_notification_wallet_binance_pay_request_created_description:I = 0x7f111ebb
+.field public static final push_notification_wallet_unsupported:I = 0x7f111ed4
 
-.field public static final push_notification_wallet_binance_pay_request_status_updated_description:I = 0x7f111ebc
+.field public static final quick_reaction_settings_enable_item_hint:I = 0x7f111ed5
 
-.field public static final push_notification_wallet_cancelled_failed_description:I = 0x7f111ebd
+.field public static final recent_chats_clear_history:I = 0x7f111ed6
 
-.field public static final push_notification_wallet_cancelled_success_description:I = 0x7f111ebe
+.field public static final recent_chats_counters_and_reactions:I = 0x7f111ed7
 
-.field public static final push_notification_wallet_crypto_transfer_in_description:I = 0x7f111ebf
+.field public static final recent_chats_hint:I = 0x7f111ed8
 
-.field public static final push_notification_wallet_crypto_transfer_out_failed_description:I = 0x7f111ec0
+.field public static final recent_chats_live:I = 0x7f111ed9
 
-.field public static final push_notification_wallet_crypto_transfer_out_success_description:I = 0x7f111ec1
+.field public static final recent_chats_mentions:I = 0x7f111eda
 
-.field public static final push_notification_wallet_simplex_payment:I = 0x7f111ec2
+.field public static final recent_chats_new_messages:I = 0x7f111edb
 
-.field public static final push_notification_wallet_unsupported:I = 0x7f111ec3
+.field public static final recent_chats_online_status:I = 0x7f111edc
 
-.field public static final quick_reaction_settings_enable_item_hint:I = 0x7f111ec4
+.field public static final recent_chats_reactions:I = 0x7f111edd
 
-.field public static final recent_chats_clear_history:I = 0x7f111ec5
+.field public static final release_to_go_to_next_unread_bot:I = 0x7f111ede
 
-.field public static final recent_chats_counters_and_reactions:I = 0x7f111ec6
+.field public static final release_to_go_to_next_unread_group:I = 0x7f111edf
 
-.field public static final recent_chats_hint:I = 0x7f111ec7
+.field public static final release_to_go_to_next_unread_personal_chat:I = 0x7f111ee0
 
-.field public static final recent_chats_live:I = 0x7f111ec8
+.field public static final release_to_go_to_unread_archived_bots:I = 0x7f111ee1
 
-.field public static final recent_chats_mentions:I = 0x7f111ec9
+.field public static final release_to_go_to_unread_archived_groups:I = 0x7f111ee2
 
-.field public static final recent_chats_new_messages:I = 0x7f111eca
+.field public static final release_to_go_to_unread_archived_personal_chats:I = 0x7f111ee3
 
-.field public static final recent_chats_online_status:I = 0x7f111ecb
+.field public static final remember_choice:I = 0x7f111ee4
 
-.field public static final recent_chats_reactions:I = 0x7f111ecc
+.field public static final search_menu_title:I = 0x7f111ee5
 
-.field public static final release_to_go_to_next_unread_bot:I = 0x7f111ecd
+.field public static final section_is_locked:I = 0x7f111ee6
 
-.field public static final release_to_go_to_next_unread_group:I = 0x7f111ece
+.field public static final section_passcode:I = 0x7f111ee7
 
-.field public static final release_to_go_to_next_unread_personal_chat:I = 0x7f111ecf
+.field public static final section_passcode_info:I = 0x7f111ee8
 
-.field public static final release_to_go_to_unread_archived_bots:I = 0x7f111ed0
+.field public static final select_icon:I = 0x7f111ee9
 
-.field public static final release_to_go_to_unread_archived_groups:I = 0x7f111ed1
+.field public static final send_with_sound:I = 0x7f111eea
 
-.field public static final release_to_go_to_unread_archived_personal_chats:I = 0x7f111ed2
+.field public static final sending_settings_audio_messages_enable_item_title:I = 0x7f111eeb
 
-.field public static final remember_choice:I = 0x7f111ed3
+.field public static final sending_settings_gif_enable_item_title:I = 0x7f111eec
 
-.field public static final search_menu_title:I = 0x7f111ed4
+.field public static final sending_settings_preview_header:I = 0x7f111eed
 
-.field public static final section_is_locked:I = 0x7f111ed5
+.field public static final sending_settings_send:I = 0x7f111eee
 
-.field public static final section_passcode:I = 0x7f111ed6
+.field public static final sending_settings_send_add_reactions:I = 0x7f111eef
 
-.field public static final section_passcode_info:I = 0x7f111ed7
+.field public static final sending_settings_send_button_popup_header:I = 0x7f111ef0
 
-.field public static final select_icon:I = 0x7f111ed8
+.field public static final sending_settings_stickers_enable_item_title:I = 0x7f111ef1
 
-.field public static final send_with_sound:I = 0x7f111ed9
+.field public static final sending_settings_translation_enable_item_title:I = 0x7f111ef2
 
-.field public static final sending_settings_audio_messages_enable_item_title:I = 0x7f111eda
+.field public static final sending_settings_video_messages_enable_item_title:I = 0x7f111ef3
 
-.field public static final sending_settings_gif_enable_item_title:I = 0x7f111edb
+.field public static final service_messages:I = 0x7f111ef4
 
-.field public static final sending_settings_preview_header:I = 0x7f111edc
+.field public static final service_messages_all:I = 0x7f111ef5
 
-.field public static final sending_settings_send:I = 0x7f111edd
+.field public static final service_messages_variants:I = 0x7f111ef6
 
-.field public static final sending_settings_send_add_reactions:I = 0x7f111ede
+.field public static final setting_tools_drawer_holiday_icon_menu:I = 0x7f111ef7
 
-.field public static final sending_settings_send_button_popup_header:I = 0x7f111edf
+.field public static final setting_tools_drawer_holiday_icon_menu_14:I = 0x7f111ef8
 
-.field public static final sending_settings_stickers_enable_item_title:I = 0x7f111ee0
+.field public static final setting_tools_drawer_holiday_icon_menu_hw:I = 0x7f111ef9
 
-.field public static final sending_settings_translation_enable_item_title:I = 0x7f111ee1
+.field public static final setting_tools_drawer_holiday_icon_menu_ny:I = 0x7f111efa
 
-.field public static final sending_settings_video_messages_enable_item_title:I = 0x7f111ee2
+.field public static final settings_emoji_premium_suggest_sets:I = 0x7f111efb
 
-.field public static final service_messages:I = 0x7f111ee3
+.field public static final settings_help_alert_channel_item_title:I = 0x7f111efc
 
-.field public static final service_messages_all:I = 0x7f111ee4
+.field public static final settings_help_alert_channel_username:I = 0x7f111efd
 
-.field public static final service_messages_variants:I = 0x7f111ee5
+.field public static final settings_help_alert_faq_item_title:I = 0x7f111efe
 
-.field public static final setting_tools_drawer_holiday_icon_menu:I = 0x7f111ee6
+.field public static final settings_help_alert_faq_url:I = 0x7f111eff
 
-.field public static final setting_tools_drawer_holiday_icon_menu_14:I = 0x7f111ee7
+.field public static final settings_help_alert_group_item_title:I = 0x7f111f00
 
-.field public static final setting_tools_drawer_holiday_icon_menu_hw:I = 0x7f111ee8
+.field public static final settings_help_alert_lime_group_item_title:I = 0x7f111f01
 
-.field public static final setting_tools_drawer_holiday_icon_menu_ny:I = 0x7f111ee9
+.field public static final settings_help_alert_support_item_title:I = 0x7f111f02
 
-.field public static final settings_emoji_premium_suggest_sets:I = 0x7f111eea
+.field public static final settings_interface:I = 0x7f111f03
 
-.field public static final settings_help_alert_channel_item_title:I = 0x7f111eeb
+.field public static final settings_interface_action_bar_account_switch:I = 0x7f111f04
 
-.field public static final settings_help_alert_channel_username:I = 0x7f111eec
+.field public static final settings_interface_action_bar_menu:I = 0x7f111f05
 
-.field public static final settings_help_alert_faq_item_title:I = 0x7f111eed
+.field public static final settings_interface_app_icon_aqua:I = 0x7f111f06
 
-.field public static final settings_help_alert_faq_url:I = 0x7f111eee
+.field public static final settings_interface_app_icon_autumn:I = 0x7f111f07
 
-.field public static final settings_help_alert_group_item_title:I = 0x7f111eef
+.field public static final settings_interface_app_icon_black:I = 0x7f111f08
 
-.field public static final settings_help_alert_lime_group_item_title:I = 0x7f111ef0
+.field public static final settings_interface_app_icon_blue:I = 0x7f111f09
 
-.field public static final settings_help_alert_support_item_title:I = 0x7f111ef1
+.field public static final settings_interface_app_icon_blue_light:I = 0x7f111f0a
 
-.field public static final settings_interface:I = 0x7f111ef2
+.field public static final settings_interface_app_icon_brown:I = 0x7f111f0b
 
-.field public static final settings_interface_action_bar_account_switch:I = 0x7f111ef3
+.field public static final settings_interface_app_icon_coffee:I = 0x7f111f0c
 
-.field public static final settings_interface_action_bar_menu:I = 0x7f111ef4
+.field public static final settings_interface_app_icon_gray:I = 0x7f111f0d
 
-.field public static final settings_interface_app_icon_aqua:I = 0x7f111ef5
+.field public static final settings_interface_app_icon_green:I = 0x7f111f0e
 
-.field public static final settings_interface_app_icon_autumn:I = 0x7f111ef6
+.field public static final settings_interface_app_icon_indigo:I = 0x7f111f0f
 
-.field public static final settings_interface_app_icon_black:I = 0x7f111ef7
+.field public static final settings_interface_app_icon_lime_aqua:I = 0x7f111f10
 
-.field public static final settings_interface_app_icon_blue:I = 0x7f111ef8
+.field public static final settings_interface_app_icon_lime_bep20:I = 0x7f111f11
 
-.field public static final settings_interface_app_icon_blue_light:I = 0x7f111ef9
+.field public static final settings_interface_app_icon_lime_blue_light:I = 0x7f111f12
 
-.field public static final settings_interface_app_icon_brown:I = 0x7f111efa
+.field public static final settings_interface_app_icon_lime_erc20:I = 0x7f111f13
 
-.field public static final settings_interface_app_icon_coffee:I = 0x7f111efb
+.field public static final settings_interface_app_icon_lime_neuro:I = 0x7f111f14
 
-.field public static final settings_interface_app_icon_gray:I = 0x7f111efc
+.field public static final settings_interface_app_icon_lime_polygon:I = 0x7f111f15
 
-.field public static final settings_interface_app_icon_green:I = 0x7f111efd
+.field public static final settings_interface_app_icon_lime_sunset:I = 0x7f111f16
 
-.field public static final settings_interface_app_icon_indigo:I = 0x7f111efe
+.field public static final settings_interface_app_icon_melon:I = 0x7f111f17
 
-.field public static final settings_interface_app_icon_lime_aqua:I = 0x7f111eff
+.field public static final settings_interface_app_icon_mint:I = 0x7f111f18
 
-.field public static final settings_interface_app_icon_lime_bep20:I = 0x7f111f00
+.field public static final settings_interface_app_icon_neuro:I = 0x7f111f19
 
-.field public static final settings_interface_app_icon_lime_blue_light:I = 0x7f111f01
+.field public static final settings_interface_app_icon_peach:I = 0x7f111f1a
 
-.field public static final settings_interface_app_icon_lime_erc20:I = 0x7f111f02
+.field public static final settings_interface_app_icon_pink:I = 0x7f111f1b
 
-.field public static final settings_interface_app_icon_lime_neuro:I = 0x7f111f03
+.field public static final settings_interface_app_icon_purple:I = 0x7f111f1c
 
-.field public static final settings_interface_app_icon_lime_polygon:I = 0x7f111f04
+.field public static final settings_interface_app_icon_red:I = 0x7f111f1d
 
-.field public static final settings_interface_app_icon_lime_sunset:I = 0x7f111f05
+.field public static final settings_interface_app_icon_spring:I = 0x7f111f1e
 
-.field public static final settings_interface_app_icon_melon:I = 0x7f111f06
+.field public static final settings_interface_app_icon_summer:I = 0x7f111f1f
 
-.field public static final settings_interface_app_icon_mint:I = 0x7f111f07
+.field public static final settings_interface_app_icon_sunset:I = 0x7f111f20
 
-.field public static final settings_interface_app_icon_neuro:I = 0x7f111f08
+.field public static final settings_interface_app_icon_white:I = 0x7f111f21
 
-.field public static final settings_interface_app_icon_peach:I = 0x7f111f09
+.field public static final settings_interface_app_icon_winter:I = 0x7f111f22
 
-.field public static final settings_interface_app_icon_pink:I = 0x7f111f0a
+.field public static final settings_interface_app_icon_yellow:I = 0x7f111f23
 
-.field public static final settings_interface_app_icon_purple:I = 0x7f111f0b
+.field public static final settings_interface_archive_sorting:I = 0x7f111f24
 
-.field public static final settings_interface_app_icon_red:I = 0x7f111f0c
+.field public static final settings_interface_bottom_panel_in_channel:I = 0x7f111f25
 
-.field public static final settings_interface_app_icon_spring:I = 0x7f111f0d
+.field public static final settings_interface_calls_confirmation:I = 0x7f111f26
 
-.field public static final settings_interface_app_icon_summer:I = 0x7f111f0e
+.field public static final settings_interface_chat_attach_alert_buttons:I = 0x7f111f27
 
-.field public static final settings_interface_app_icon_sunset:I = 0x7f111f0f
+.field public static final settings_interface_chat_header:I = 0x7f111f28
 
-.field public static final settings_interface_app_icon_white:I = 0x7f111f10
+.field public static final settings_interface_chat_hide_keyboard_on_scroll:I = 0x7f111f29
 
-.field public static final settings_interface_app_icon_winter:I = 0x7f111f11
+.field public static final settings_interface_chat_list_mode:I = 0x7f111f2a
 
-.field public static final settings_interface_app_icon_yellow:I = 0x7f111f12
+.field public static final settings_interface_chat_themes:I = 0x7f111f2b
 
-.field public static final settings_interface_archive_sorting:I = 0x7f111f13
+.field public static final settings_interface_chat_user_options_by_avatar_click_hint:I = 0x7f111f2c
 
-.field public static final settings_interface_bottom_panel_in_channel:I = 0x7f111f14
+.field public static final settings_interface_chat_user_options_by_avatar_click_subtitle:I = 0x7f111f2d
 
-.field public static final settings_interface_calls_confirmation:I = 0x7f111f15
+.field public static final settings_interface_chat_user_options_by_avatar_click_title:I = 0x7f111f2e
 
-.field public static final settings_interface_chat_attach_alert_buttons:I = 0x7f111f16
+.field public static final settings_interface_compact_mode:I = 0x7f111f2f
 
-.field public static final settings_interface_chat_header:I = 0x7f111f17
+.field public static final settings_interface_confirmation_header:I = 0x7f111f30
 
-.field public static final settings_interface_chat_hide_keyboard_on_scroll:I = 0x7f111f18
+.field public static final settings_interface_delete_cloud_confirmation:I = 0x7f111f31
 
-.field public static final settings_interface_chat_list_mode:I = 0x7f111f19
+.field public static final settings_interface_drawer_account_info:I = 0x7f111f32
 
-.field public static final settings_interface_chat_themes:I = 0x7f111f1a
+.field public static final settings_interface_drawer_header:I = 0x7f111f33
 
-.field public static final settings_interface_chat_user_options_by_avatar_click_hint:I = 0x7f111f1b
+.field public static final settings_interface_drawer_items:I = 0x7f111f34
 
-.field public static final settings_interface_chat_user_options_by_avatar_click_subtitle:I = 0x7f111f1c
+.field public static final settings_interface_message_context_menu:I = 0x7f111f35
 
-.field public static final settings_interface_chat_user_options_by_avatar_click_title:I = 0x7f111f1d
+.field public static final settings_interface_message_header:I = 0x7f111f36
 
-.field public static final settings_interface_compact_mode:I = 0x7f111f1e
+.field public static final settings_interface_message_popup_aggregator:I = 0x7f111f37
 
-.field public static final settings_interface_confirmation_header:I = 0x7f111f1f
+.field public static final settings_interface_message_popup_aggregator_hint:I = 0x7f111f38
 
-.field public static final settings_interface_delete_cloud_confirmation:I = 0x7f111f20
+.field public static final settings_interface_message_popup_item_forward_messengers:I = 0x7f111f39
 
-.field public static final settings_interface_drawer_account_info:I = 0x7f111f21
+.field public static final settings_interface_message_popup_items:I = 0x7f111f3a
 
-.field public static final settings_interface_drawer_header:I = 0x7f111f22
+.field public static final settings_interface_messages_sorting_swiping_between_tabs:I = 0x7f111f3b
 
-.field public static final settings_interface_drawer_items:I = 0x7f111f23
+.field public static final settings_interface_multi_panel_no_buttons:I = 0x7f111f3c
 
-.field public static final settings_interface_message_context_menu:I = 0x7f111f24
+.field public static final settings_interface_recent_chats:I = 0x7f111f3d
 
-.field public static final settings_interface_message_header:I = 0x7f111f25
+.field public static final settings_interface_sending_gif_confirmation:I = 0x7f111f3e
 
-.field public static final settings_interface_message_popup_aggregator:I = 0x7f111f26
+.field public static final settings_interface_sending_sticker_confirmation:I = 0x7f111f3f
 
-.field public static final settings_interface_message_popup_aggregator_hint:I = 0x7f111f27
+.field public static final settings_interface_speak_without_hold:I = 0x7f111f40
 
-.field public static final settings_interface_message_popup_item_forward_messengers:I = 0x7f111f28
+.field public static final settings_interface_swipe_to_next_unread_dialog:I = 0x7f111f41
 
-.field public static final settings_interface_message_popup_items:I = 0x7f111f29
+.field public static final settings_interface_video_speak_without_hold:I = 0x7f111f42
 
-.field public static final settings_interface_messages_sorting_swiping_between_tabs:I = 0x7f111f2a
+.field public static final settings_interface_video_voice_ask_camera:I = 0x7f111f43
 
-.field public static final settings_interface_multi_panel_no_buttons:I = 0x7f111f2b
+.field public static final settings_interface_video_voice_ask_camera_short:I = 0x7f111f44
 
-.field public static final settings_interface_recent_chats:I = 0x7f111f2c
+.field public static final settings_interface_video_voice_back_camera:I = 0x7f111f45
 
-.field public static final settings_interface_sending_gif_confirmation:I = 0x7f111f2d
+.field public static final settings_interface_video_voice_back_camera_short:I = 0x7f111f46
 
-.field public static final settings_interface_sending_sticker_confirmation:I = 0x7f111f2e
+.field public static final settings_interface_video_voice_camera:I = 0x7f111f47
 
-.field public static final settings_interface_speak_without_hold:I = 0x7f111f2f
+.field public static final settings_interface_video_voice_front_camera:I = 0x7f111f48
 
-.field public static final settings_interface_swipe_to_next_unread_dialog:I = 0x7f111f30
+.field public static final settings_interface_video_voice_front_camera_short:I = 0x7f111f49
 
-.field public static final settings_interface_video_speak_without_hold:I = 0x7f111f31
+.field public static final settings_interface_wide_posts_in_channel:I = 0x7f111f4a
 
-.field public static final settings_interface_video_voice_ask_camera:I = 0x7f111f32
+.field public static final settings_multi_panel_item_title:I = 0x7f111f4b
 
-.field public static final settings_interface_video_voice_ask_camera_short:I = 0x7f111f33
+.field public static final settings_neurobots_item_title:I = 0x7f111f4c
 
-.field public static final settings_interface_video_voice_back_camera:I = 0x7f111f34
+.field public static final settings_proxy_button_in_toolbar:I = 0x7f111f4d
 
-.field public static final settings_interface_video_voice_back_camera_short:I = 0x7f111f35
+.field public static final settings_reactions_enable_hint:I = 0x7f111f4e
 
-.field public static final settings_interface_video_voice_camera:I = 0x7f111f36
+.field public static final settings_revoke_by_default:I = 0x7f111f4f
 
-.field public static final settings_interface_video_voice_front_camera:I = 0x7f111f37
+.field public static final settings_section_passcode_archive:I = 0x7f111f50
 
-.field public static final settings_interface_video_voice_front_camera_short:I = 0x7f111f38
+.field public static final settings_section_passcode_cloud:I = 0x7f111f51
 
-.field public static final settings_interface_wide_posts_in_channel:I = 0x7f111f39
+.field public static final settings_speed_mega_fast:I = 0x7f111f52
 
-.field public static final settings_multi_panel_item_title:I = 0x7f111f3a
+.field public static final settings_speed_super_fast:I = 0x7f111f53
 
-.field public static final settings_neurobots_item_title:I = 0x7f111f3b
+.field public static final settings_tools:I = 0x7f111f54
 
-.field public static final settings_proxy_button_in_toolbar:I = 0x7f111f3c
+.field public static final settings_tools_base_toolbar:I = 0x7f111f55
 
-.field public static final settings_reactions_enable_hint:I = 0x7f111f3d
+.field public static final settings_tools_bot_help_translate:I = 0x7f111f56
 
-.field public static final settings_revoke_by_default:I = 0x7f111f3e
+.field public static final settings_tools_chat_profile:I = 0x7f111f57
 
-.field public static final settings_section_passcode_archive:I = 0x7f111f3f
+.field public static final settings_tools_chat_profile_id_telegram:I = 0x7f111f58
 
-.field public static final settings_section_passcode_cloud:I = 0x7f111f40
+.field public static final settings_tools_chat_profile_id_telegram_bot_api:I = 0x7f111f59
 
-.field public static final settings_speed_mega_fast:I = 0x7f111f41
+.field public static final settings_tools_chat_profile_id_telegram_description:I = 0x7f111f5a
 
-.field public static final settings_speed_super_fast:I = 0x7f111f42
+.field public static final settings_tools_chat_profile_id_telegram_enable_panel:I = 0x7f111f5b
 
-.field public static final settings_tools:I = 0x7f111f43
+.field public static final settings_tools_chat_profile_id_telegram_hint:I = 0x7f111f5c
 
-.field public static final settings_tools_base_toolbar:I = 0x7f111f44
+.field public static final settings_tools_chat_profile_id_telegram_telegram_api:I = 0x7f111f5d
 
-.field public static final settings_tools_bot_help_translate:I = 0x7f111f45
+.field public static final settings_tools_cloud:I = 0x7f111f5e
 
-.field public static final settings_tools_chat_profile:I = 0x7f111f46
+.field public static final settings_tools_cloud_albums:I = 0x7f111f5f
 
-.field public static final settings_tools_chat_profile_id_telegram:I = 0x7f111f47
+.field public static final settings_tools_cloud_albums_hint:I = 0x7f111f60
 
-.field public static final settings_tools_chat_profile_id_telegram_bot_api:I = 0x7f111f48
+.field public static final settings_tools_cloud_sorting:I = 0x7f111f61
 
-.field public static final settings_tools_chat_profile_id_telegram_description:I = 0x7f111f49
+.field public static final settings_tools_combine_messages:I = 0x7f111f62
 
-.field public static final settings_tools_chat_profile_id_telegram_telegram_api:I = 0x7f111f4a
+.field public static final settings_tools_combine_messages_hint:I = 0x7f111f63
 
-.field public static final settings_tools_cloud:I = 0x7f111f4b
+.field public static final settings_tools_custom_sharing:I = 0x7f111f64
 
-.field public static final settings_tools_cloud_albums:I = 0x7f111f4c
+.field public static final settings_tools_custom_sharing_hint:I = 0x7f111f65
 
-.field public static final settings_tools_cloud_albums_hint:I = 0x7f111f4d
+.field public static final settings_tools_customization:I = 0x7f111f66
 
-.field public static final settings_tools_cloud_sorting:I = 0x7f111f4e
+.field public static final settings_tools_design_icon:I = 0x7f111f67
 
-.field public static final settings_tools_combine_messages:I = 0x7f111f4f
+.field public static final settings_tools_message_popup_reactions:I = 0x7f111f68
 
-.field public static final settings_tools_combine_messages_hint:I = 0x7f111f50
+.field public static final settings_tools_message_quick_translate:I = 0x7f111f69
 
-.field public static final settings_tools_custom_sharing:I = 0x7f111f51
+.field public static final settings_tools_multi_reply:I = 0x7f111f6a
 
-.field public static final settings_tools_custom_sharing_hint:I = 0x7f111f52
+.field public static final settings_tools_multi_reply_hint:I = 0x7f111f6b
 
-.field public static final settings_tools_customization:I = 0x7f111f53
+.field public static final settings_tools_neuro_bots:I = 0x7f111f6c
 
-.field public static final settings_tools_design_icon:I = 0x7f111f54
+.field public static final settings_tools_photo_viewer:I = 0x7f111f6d
 
-.field public static final settings_tools_message_popup_reactions:I = 0x7f111f55
+.field public static final settings_tools_photo_viewer_menu_items:I = 0x7f111f6e
 
-.field public static final settings_tools_message_quick_translate:I = 0x7f111f56
+.field public static final settings_tools_reactions:I = 0x7f111f6f
 
-.field public static final settings_tools_multi_reply:I = 0x7f111f57
+.field public static final settings_tools_remember_chat:I = 0x7f111f70
 
-.field public static final settings_tools_multi_reply_hint:I = 0x7f111f58
+.field public static final settings_tools_send_popup_reactions:I = 0x7f111f71
 
-.field public static final settings_tools_neuro_bots:I = 0x7f111f59
+.field public static final settings_tools_send_popup_reactions_hint:I = 0x7f111f72
 
-.field public static final settings_tools_photo_viewer:I = 0x7f111f5a
+.field public static final settings_tools_send_popup_translate:I = 0x7f111f73
 
-.field public static final settings_tools_photo_viewer_menu_items:I = 0x7f111f5b
+.field public static final settings_tools_send_popup_translate_hint:I = 0x7f111f74
 
-.field public static final settings_tools_reactions:I = 0x7f111f5c
+.field public static final settings_tools_sent_message_font:I = 0x7f111f75
 
-.field public static final settings_tools_remember_chat:I = 0x7f111f5d
+.field public static final settings_tools_silent_sending:I = 0x7f111f76
 
-.field public static final settings_tools_send_popup_reactions:I = 0x7f111f5e
+.field public static final settings_tools_translator:I = 0x7f111f77
 
-.field public static final settings_tools_send_popup_reactions_hint:I = 0x7f111f5f
+.field public static final short_number_b:I = 0x7f111f78
 
-.field public static final settings_tools_send_popup_translate:I = 0x7f111f60
+.field public static final short_number_k:I = 0x7f111f79
 
-.field public static final settings_tools_send_popup_translate_hint:I = 0x7f111f61
+.field public static final short_number_m:I = 0x7f111f7a
 
-.field public static final settings_tools_sent_message_font:I = 0x7f111f62
+.field public static final short_number_t:I = 0x7f111f7b
 
-.field public static final settings_tools_silent_sending:I = 0x7f111f63
+.field public static final social_access_error:I = 0x7f111f7c
 
-.field public static final settings_tools_translator:I = 0x7f111f64
+.field public static final social_cell_add_button:I = 0x7f111f7d
 
-.field public static final short_number_b:I = 0x7f111f65
+.field public static final social_cell_not_connected:I = 0x7f111f7e
 
-.field public static final short_number_k:I = 0x7f111f66
+.field public static final social_cell_social_networks:I = 0x7f111f7f
 
-.field public static final short_number_m:I = 0x7f111f67
+.field public static final social_clear_cache_menu_item:I = 0x7f111f80
 
-.field public static final short_number_t:I = 0x7f111f68
+.field public static final social_connect_account_message:I = 0x7f111f81
 
-.field public static final social_access_error:I = 0x7f111f69
+.field public static final social_connect_account_negative_button:I = 0x7f111f82
 
-.field public static final social_cell_add_button:I = 0x7f111f6a
+.field public static final social_connect_account_positive_button:I = 0x7f111f83
 
-.field public static final social_cell_not_connected:I = 0x7f111f6b
+.field public static final social_connect_account_title:I = 0x7f111f84
 
-.field public static final social_cell_social_networks:I = 0x7f111f6c
+.field public static final social_dialog_select_social_networks:I = 0x7f111f85
 
-.field public static final social_clear_cache_menu_item:I = 0x7f111f6d
+.field public static final social_exit_confirmation_message:I = 0x7f111f86
 
-.field public static final social_connect_account_message:I = 0x7f111f6e
+.field public static final social_exit_confirmation_title:I = 0x7f111f87
 
-.field public static final social_connect_account_negative_button:I = 0x7f111f6f
+.field public static final social_refresh_page_menu_item:I = 0x7f111f88
 
-.field public static final social_connect_account_positive_button:I = 0x7f111f70
+.field public static final social_reset_account_message:I = 0x7f111f89
 
-.field public static final social_connect_account_title:I = 0x7f111f71
+.field public static final social_reset_account_negative_button:I = 0x7f111f8a
 
-.field public static final social_dialog_select_social_networks:I = 0x7f111f72
+.field public static final social_reset_account_positive_button:I = 0x7f111f8b
 
-.field public static final social_exit_confirmation_message:I = 0x7f111f73
+.field public static final social_reset_account_title:I = 0x7f111f8c
 
-.field public static final social_exit_confirmation_title:I = 0x7f111f74
+.field public static final social_reset_menu_item:I = 0x7f111f8d
 
-.field public static final social_refresh_page_menu_item:I = 0x7f111f75
+.field public static final social_social_open_in_menu_item:I = 0x7f111f8e
 
-.field public static final social_reset_account_message:I = 0x7f111f76
+.field public static final social_unable_to_load_page:I = 0x7f111f8f
 
-.field public static final social_reset_account_negative_button:I = 0x7f111f77
+.field public static final social_web_cancel_button:I = 0x7f111f90
 
-.field public static final social_reset_account_positive_button:I = 0x7f111f78
+.field public static final social_web_exit_button:I = 0x7f111f91
 
-.field public static final social_reset_account_title:I = 0x7f111f79
+.field public static final sort_by_usage:I = 0x7f111f92
 
-.field public static final social_reset_menu_item:I = 0x7f111f7a
+.field public static final sorting_enable_alert_message:I = 0x7f111f93
 
-.field public static final social_social_open_in_menu_item:I = 0x7f111f7b
+.field public static final sorting_settings_drag_and_drop_hint:I = 0x7f111f94
 
-.field public static final social_unable_to_load_page:I = 0x7f111f7c
+.field public static final sorting_settings_enable_item_hint:I = 0x7f111f95
 
-.field public static final social_web_cancel_button:I = 0x7f111f7d
+.field public static final sorting_settings_enable_item_title:I = 0x7f111f96
 
-.field public static final social_web_exit_button:I = 0x7f111f7e
+.field public static final sorting_settings_tab_admin_item_title:I = 0x7f111f97
 
-.field public static final sort_by_usage:I = 0x7f111f7f
+.field public static final sorting_settings_tab_bots_item_title:I = 0x7f111f98
 
-.field public static final sorting_enable_alert_message:I = 0x7f111f80
+.field public static final sorting_settings_tab_channels_item_title:I = 0x7f111f99
 
-.field public static final sorting_settings_drag_and_drop_hint:I = 0x7f111f81
+.field public static final sorting_settings_tab_deleted_users:I = 0x7f111f9a
 
-.field public static final sorting_settings_enable_item_hint:I = 0x7f111f82
+.field public static final sorting_settings_tab_drafts:I = 0x7f111f9b
 
-.field public static final sorting_settings_enable_item_title:I = 0x7f111f83
+.field public static final sorting_settings_tab_groups_item_title:I = 0x7f111f9c
 
-.field public static final sorting_settings_tab_admin_item_title:I = 0x7f111f84
+.field public static final sorting_settings_tab_live_chats:I = 0x7f111f9d
 
-.field public static final sorting_settings_tab_bots_item_title:I = 0x7f111f85
+.field public static final sorting_settings_tab_mentioned_chats:I = 0x7f111f9e
 
-.field public static final sorting_settings_tab_channels_item_title:I = 0x7f111f86
+.field public static final sorting_settings_tab_owner_item_title:I = 0x7f111f9f
 
-.field public static final sorting_settings_tab_deleted_users:I = 0x7f111f87
+.field public static final sorting_settings_tab_personal_chats_item_title:I = 0x7f111fa0
 
-.field public static final sorting_settings_tab_groups_item_title:I = 0x7f111f88
+.field public static final sorting_settings_tab_private_groups_item_title:I = 0x7f111fa1
 
-.field public static final sorting_settings_tab_live_chats:I = 0x7f111f89
+.field public static final sorting_settings_tab_public_groups_item_title:I = 0x7f111fa2
 
-.field public static final sorting_settings_tab_mentioned_chats:I = 0x7f111f8a
+.field public static final sorting_settings_tab_secret_chats_item_title:I = 0x7f111fa3
 
-.field public static final sorting_settings_tab_owner_item_title:I = 0x7f111f8b
+.field public static final sorting_settings_tab_unread_chats_item_title:I = 0x7f111fa4
 
-.field public static final sorting_settings_tab_personal_chats_item_title:I = 0x7f111f8c
+.field public static final speech_to_text_settings_enable_title:I = 0x7f111fa5
 
-.field public static final sorting_settings_tab_private_groups_item_title:I = 0x7f111f8d
+.field public static final speech_to_text_settings_language_selection_header:I = 0x7f111fa6
 
-.field public static final sorting_settings_tab_public_groups_item_title:I = 0x7f111f8e
+.field public static final speech_to_text_settings_language_title:I = 0x7f111fa7
 
-.field public static final sorting_settings_tab_secret_chats_item_title:I = 0x7f111f8f
+.field public static final speech_to_text_settings_toolbar_title:I = 0x7f111fa8
 
-.field public static final sorting_settings_tab_unread_chats_item_title:I = 0x7f111f90
+.field public static final staking_action_button_loading:I = 0x7f111fa9
 
-.field public static final speech_to_text_settings_enable_title:I = 0x7f111f91
+.field public static final staking_action_button_try_again:I = 0x7f111faa
 
-.field public static final speech_to_text_settings_language_selection_header:I = 0x7f111f92
+.field public static final staking_action_loading_wait:I = 0x7f111fab
 
-.field public static final speech_to_text_settings_language_title:I = 0x7f111f93
+.field public static final staking_all:I = 0x7f111fac
 
-.field public static final speech_to_text_settings_toolbar_title:I = 0x7f111f94
+.field public static final staking_approve_token:I = 0x7f111fad
 
-.field public static final staking_action_button_loading:I = 0x7f111f95
+.field public static final staking_calculator_deposit_description:I = 0x7f111fae
 
-.field public static final staking_action_button_try_again:I = 0x7f111f96
+.field public static final staking_calculator_deposit_title:I = 0x7f111faf
 
-.field public static final staking_action_loading_wait:I = 0x7f111f97
+.field public static final staking_calculator_description:I = 0x7f111fb0
 
-.field public static final staking_all:I = 0x7f111f98
+.field public static final staking_calculator_help_alert_description:I = 0x7f111fb1
 
-.field public static final staking_approve_token:I = 0x7f111f99
+.field public static final staking_calculator_help_alert_title:I = 0x7f111fb2
 
-.field public static final staking_calculator_deposit_description:I = 0x7f111f9a
+.field public static final staking_calculator_income_profit:I = 0x7f111fb3
 
-.field public static final staking_calculator_deposit_title:I = 0x7f111f9b
+.field public static final staking_calculator_mode:I = 0x7f111fb4
 
-.field public static final staking_calculator_description:I = 0x7f111f9c
+.field public static final staking_calculator_programme:I = 0x7f111fb5
 
-.field public static final staking_calculator_help_alert_description:I = 0x7f111f9d
+.field public static final staking_calculator_select_programme:I = 0x7f111fb6
 
-.field public static final staking_calculator_help_alert_title:I = 0x7f111f9e
+.field public static final staking_calculator_statistics:I = 0x7f111fb7
 
-.field public static final staking_calculator_income_profit:I = 0x7f111f9f
+.field public static final staking_calculator_title:I = 0x7f111fb8
 
-.field public static final staking_calculator_mode:I = 0x7f111fa0
+.field public static final staking_conditions_completion:I = 0x7f111fb9
 
-.field public static final staking_calculator_programme:I = 0x7f111fa1
+.field public static final staking_conditions_compound_threshold:I = 0x7f111fba
 
-.field public static final staking_calculator_select_programme:I = 0x7f111fa2
+.field public static final staking_conditions_end_output:I = 0x7f111fbb
 
-.field public static final staking_calculator_statistics:I = 0x7f111fa3
+.field public static final staking_conditions_fee_value:I = 0x7f111fbc
 
-.field public static final staking_calculator_title:I = 0x7f111fa4
+.field public static final staking_conditions_immediate_withdrawal:I = 0x7f111fbd
 
-.field public static final staking_conditions_completion:I = 0x7f111fa5
+.field public static final staking_conditions_planned_withdrawal:I = 0x7f111fbe
 
-.field public static final staking_conditions_compound_threshold:I = 0x7f111fa6
+.field public static final staking_conditions_start:I = 0x7f111fbf
 
-.field public static final staking_conditions_end_output:I = 0x7f111fa7
+.field public static final staking_dashboard_calculator:I = 0x7f111fc0
 
-.field public static final staking_conditions_fee_value:I = 0x7f111fa8
+.field public static final staking_dashboard_header:I = 0x7f111fc1
 
-.field public static final staking_conditions_immediate_withdrawal:I = 0x7f111fa9
+.field public static final staking_dashboard_history:I = 0x7f111fc2
 
-.field public static final staking_conditions_planned_withdrawal:I = 0x7f111faa
+.field public static final staking_dashboard_profit_title:I = 0x7f111fc3
 
-.field public static final staking_conditions_start:I = 0x7f111fab
+.field public static final staking_dashboard_staked_title:I = 0x7f111fc4
 
-.field public static final staking_dashboard_calculator:I = 0x7f111fac
+.field public static final staking_deposit_conditions:I = 0x7f111fc5
 
-.field public static final staking_dashboard_header:I = 0x7f111fad
+.field public static final staking_details_apr:I = 0x7f111fc6
 
-.field public static final staking_dashboard_history:I = 0x7f111fae
+.field public static final staking_details_apy:I = 0x7f111fc7
 
-.field public static final staking_dashboard_profit_title:I = 0x7f111faf
+.field public static final staking_details_apy_apr:I = 0x7f111fc8
 
-.field public static final staking_dashboard_staked_title:I = 0x7f111fb0
+.field public static final staking_details_apy_apr_values:I = 0x7f111fc9
 
-.field public static final staking_deposit_conditions:I = 0x7f111fb1
+.field public static final staking_details_claim:I = 0x7f111fca
 
-.field public static final staking_details_apr:I = 0x7f111fb2
+.field public static final staking_details_contract_action:I = 0x7f111fcb
 
-.field public static final staking_details_apy:I = 0x7f111fb3
+.field public static final staking_details_info:I = 0x7f111fcc
 
-.field public static final staking_details_apy_apr:I = 0x7f111fb4
+.field public static final staking_details_profit:I = 0x7f111fcd
 
-.field public static final staking_details_apy_apr_values:I = 0x7f111fb5
+.field public static final staking_details_profit_value:I = 0x7f111fce
 
-.field public static final staking_details_claim:I = 0x7f111fb6
+.field public static final staking_details_replenish:I = 0x7f111fcf
 
-.field public static final staking_details_contract_action:I = 0x7f111fb7
+.field public static final staking_details_status_active:I = 0x7f111fd0
 
-.field public static final staking_details_info:I = 0x7f111fb8
+.field public static final staking_details_status_finished:I = 0x7f111fd1
 
-.field public static final staking_details_profit:I = 0x7f111fb9
+.field public static final staking_details_status_short_of_funds:I = 0x7f111fd2
 
-.field public static final staking_details_profit_value:I = 0x7f111fba
+.field public static final staking_details_status_withdrawal_available:I = 0x7f111fd3
 
-.field public static final staking_details_replenish:I = 0x7f111fbb
+.field public static final staking_details_withdraw:I = 0x7f111fd4
 
-.field public static final staking_details_status_active:I = 0x7f111fbc
+.field public static final staking_info_description:I = 0x7f111fd5
 
-.field public static final staking_details_status_finished:I = 0x7f111fbd
+.field public static final staking_info_hint:I = 0x7f111fd6
 
-.field public static final staking_details_status_short_of_funds:I = 0x7f111fbe
+.field public static final staking_info_more:I = 0x7f111fd7
 
-.field public static final staking_details_status_withdrawal_available:I = 0x7f111fbf
+.field public static final staking_info_site_url:I = 0x7f111fd8
 
-.field public static final staking_details_withdraw:I = 0x7f111fc0
+.field public static final staking_list_header:I = 0x7f111fd9
 
-.field public static final staking_info_description:I = 0x7f111fc1
+.field public static final staking_not_enough_money:I = 0x7f111fda
 
-.field public static final staking_info_hint:I = 0x7f111fc2
+.field public static final staking_operation_type_approval:I = 0x7f111fdb
 
-.field public static final staking_info_more:I = 0x7f111fc3
+.field public static final staking_operation_type_claim:I = 0x7f111fdc
 
-.field public static final staking_info_site_url:I = 0x7f111fc4
+.field public static final staking_operation_type_deposit:I = 0x7f111fdd
 
-.field public static final staking_list_header:I = 0x7f111fc5
+.field public static final staking_operation_type_immediate_withdrawal:I = 0x7f111fde
 
-.field public static final staking_not_enough_money:I = 0x7f111fc6
+.field public static final staking_operation_type_withdraw:I = 0x7f111fdf
 
-.field public static final staking_operation_type_approval:I = 0x7f111fc7
+.field public static final staking_operation_type_withdrawal_request:I = 0x7f111fe0
 
-.field public static final staking_operation_type_claim:I = 0x7f111fc8
+.field public static final staking_participated:I = 0x7f111fe1
 
-.field public static final staking_operation_type_deposit:I = 0x7f111fc9
+.field public static final staking_profit_available_amount:I = 0x7f111fe2
 
-.field public static final staking_operation_type_immediate_withdrawal:I = 0x7f111fca
+.field public static final staking_profit_claim:I = 0x7f111fe3
 
-.field public static final staking_operation_type_withdraw:I = 0x7f111fcb
+.field public static final staking_profit_confirm_description:I = 0x7f111fe4
 
-.field public static final staking_operation_type_withdrawal_request:I = 0x7f111fcc
+.field public static final staking_profit_confirm_title:I = 0x7f111fe5
 
-.field public static final staking_participated:I = 0x7f111fcd
+.field public static final staking_profit_description:I = 0x7f111fe6
 
-.field public static final staking_profit_available_amount:I = 0x7f111fce
+.field public static final staking_profit_error_title:I = 0x7f111fe7
 
-.field public static final staking_profit_claim:I = 0x7f111fcf
+.field public static final staking_profit_get:I = 0x7f111fe8
 
-.field public static final staking_profit_confirm_description:I = 0x7f111fd0
+.field public static final staking_profit_help_alert:I = 0x7f111fe9
 
-.field public static final staking_profit_confirm_title:I = 0x7f111fd1
+.field public static final staking_profit_no_tokens_to_claim:I = 0x7f111fea
 
-.field public static final staking_profit_description:I = 0x7f111fd2
+.field public static final staking_profit_overlap_error_description:I = 0x7f111feb
 
-.field public static final staking_profit_error_title:I = 0x7f111fd3
+.field public static final staking_profit_success_description:I = 0x7f111fec
 
-.field public static final staking_profit_get:I = 0x7f111fd4
+.field public static final staking_profit_success_title:I = 0x7f111fed
 
-.field public static final staking_profit_help_alert:I = 0x7f111fd5
+.field public static final staking_profit_title:I = 0x7f111fee
 
-.field public static final staking_profit_no_tokens_to_claim:I = 0x7f111fd6
+.field public static final staking_programme_apr:I = 0x7f111fef
 
-.field public static final staking_profit_overlap_error_description:I = 0x7f111fd7
+.field public static final staking_programme_apy:I = 0x7f111ff0
 
-.field public static final staking_profit_success_description:I = 0x7f111fd8
+.field public static final staking_programme_expires:I = 0x7f111ff1
 
-.field public static final staking_profit_success_title:I = 0x7f111fd9
+.field public static final staking_programme_level_required_description:I = 0x7f111ff2
 
-.field public static final staking_profit_title:I = 0x7f111fda
+.field public static final staking_programme_level_required_title:I = 0x7f111ff3
 
-.field public static final staking_programme_apr:I = 0x7f111fdb
+.field public static final staking_programmes_count:I = 0x7f111ff4
 
-.field public static final staking_programme_apy:I = 0x7f111fdc
+.field public static final staking_programmes_empty_state_description:I = 0x7f111ff5
 
-.field public static final staking_programme_expires:I = 0x7f111fdd
+.field public static final staking_programmes_filter_active:I = 0x7f111ff6
 
-.field public static final staking_programme_level_required_description:I = 0x7f111fde
+.field public static final staking_programmes_filter_archive:I = 0x7f111ff7
 
-.field public static final staking_programme_level_required_title:I = 0x7f111fdf
+.field public static final staking_programmes_filter_completed:I = 0x7f111ff8
 
-.field public static final staking_programmes_count:I = 0x7f111fe0
+.field public static final staking_programmes_filters_info_description:I = 0x7f111ff9
 
-.field public static final staking_programmes_empty_state_description:I = 0x7f111fe1
+.field public static final staking_programmes_filters_info_title:I = 0x7f111ffa
 
-.field public static final staking_programmes_filter_active:I = 0x7f111fe2
+.field public static final staking_replenishment_already_finished:I = 0x7f111ffb
 
-.field public static final staking_programmes_filter_archive:I = 0x7f111fe3
+.field public static final staking_replenishment_confirm_description:I = 0x7f111ffc
 
-.field public static final staking_programmes_filter_completed:I = 0x7f111fe4
+.field public static final staking_replenishment_confirm_title:I = 0x7f111ffd
 
-.field public static final staking_programmes_filters_info_description:I = 0x7f111fe5
+.field public static final staking_replenishment_description:I = 0x7f111ffe
 
-.field public static final staking_programmes_filters_info_title:I = 0x7f111fe6
+.field public static final staking_replenishment_percentage_info_alert:I = 0x7f111fff
 
-.field public static final staking_replenishment_already_finished:I = 0x7f111fe7
+.field public static final staking_replenishment_success_description:I = 0x7f112000
 
-.field public static final staking_replenishment_confirm_description:I = 0x7f111fe8
+.field public static final staking_replenishment_success_title:I = 0x7f112001
 
-.field public static final staking_replenishment_confirm_title:I = 0x7f111fe9
+.field public static final staking_replenishment_title:I = 0x7f112002
 
-.field public static final staking_replenishment_description:I = 0x7f111fea
+.field public static final staking_title:I = 0x7f112003
 
-.field public static final staking_replenishment_percentage_info_alert:I = 0x7f111feb
+.field public static final staking_withdraw_confirm_description:I = 0x7f112004
 
-.field public static final staking_replenishment_success_description:I = 0x7f111fec
+.field public static final staking_withdraw_confirm_title:I = 0x7f112005
 
-.field public static final staking_replenishment_success_title:I = 0x7f111fed
+.field public static final staking_withdraw_description:I = 0x7f112006
 
-.field public static final staking_replenishment_title:I = 0x7f111fee
+.field public static final staking_withdraw_error_title:I = 0x7f112007
 
-.field public static final staking_title:I = 0x7f111fef
+.field public static final staking_withdraw_fee_title:I = 0x7f112008
 
-.field public static final staking_withdraw_confirm_description:I = 0x7f111ff0
+.field public static final staking_withdraw_fee_value:I = 0x7f112009
 
-.field public static final staking_withdraw_confirm_title:I = 0x7f111ff1
+.field public static final staking_withdraw_help_alert:I = 0x7f11200a
 
-.field public static final staking_withdraw_description:I = 0x7f111ff2
+.field public static final staking_withdraw_immediate_success_description:I = 0x7f11200b
 
-.field public static final staking_withdraw_error_title:I = 0x7f111ff3
+.field public static final staking_withdraw_immediate_success_title:I = 0x7f11200c
 
-.field public static final staking_withdraw_fee_title:I = 0x7f111ff4
+.field public static final staking_withdraw_over_limit_error_description:I = 0x7f11200d
 
-.field public static final staking_withdraw_fee_value:I = 0x7f111ff5
+.field public static final staking_withdraw_safe_success_description:I = 0x7f11200e
 
-.field public static final staking_withdraw_help_alert:I = 0x7f111ff6
+.field public static final staking_withdraw_safe_success_title:I = 0x7f11200f
 
-.field public static final staking_withdraw_immediate_success_description:I = 0x7f111ff7
+.field public static final staking_withdraw_safe_withdrawal:I = 0x7f112010
 
-.field public static final staking_withdraw_immediate_success_title:I = 0x7f111ff8
+.field public static final staking_withdraw_safe_withdrawal_help_alert_description:I = 0x7f112011
 
-.field public static final staking_withdraw_over_limit_error_description:I = 0x7f111ff9
+.field public static final staking_withdraw_safe_withdrawal_help_alert_title:I = 0x7f112012
 
-.field public static final staking_withdraw_safe_success_description:I = 0x7f111ffa
+.field public static final staking_withdraw_time_immediate:I = 0x7f112013
 
-.field public static final staking_withdraw_safe_success_title:I = 0x7f111ffb
+.field public static final staking_withdraw_time_title:I = 0x7f112014
 
-.field public static final staking_withdraw_safe_withdrawal:I = 0x7f111ffc
+.field public static final staking_withdraw_title:I = 0x7f112015
 
-.field public static final staking_withdraw_safe_withdrawal_help_alert_description:I = 0x7f111ffd
+.field public static final status_bar_notification_info_overflow:I = 0x7f112016
 
-.field public static final staking_withdraw_safe_withdrawal_help_alert_title:I = 0x7f111ffe
+.field public static final status_cancelled:I = 0x7f112017
 
-.field public static final staking_withdraw_time_immediate:I = 0x7f111fff
+.field public static final status_error:I = 0x7f112018
 
-.field public static final staking_withdraw_time_title:I = 0x7f112000
+.field public static final status_ok:I = 0x7f112019
 
-.field public static final staking_withdraw_title:I = 0x7f112001
+.field public static final status_pending:I = 0x7f11201a
 
-.field public static final status_bar_notification_info_overflow:I = 0x7f112002
+.field public static final sticker_edit_and_send:I = 0x7f11201b
 
-.field public static final status_cancelled:I = 0x7f112003
+.field public static final sticker_edit_send_as:I = 0x7f11201c
 
-.field public static final status_error:I = 0x7f112004
+.field public static final stickers_size_large:I = 0x7f11201d
 
-.field public static final status_ok:I = 0x7f112005
+.field public static final stickers_size_medium:I = 0x7f11201e
 
-.field public static final status_pending:I = 0x7f112006
+.field public static final stickers_size_small:I = 0x7f11201f
 
-.field public static final sticker_edit_and_send:I = 0x7f112007
+.field public static final stickers_size_title:I = 0x7f112020
 
-.field public static final sticker_edit_send_as:I = 0x7f112008
+.field public static final swipe_to_next_unread_dialog_consider_archive:I = 0x7f112021
 
-.field public static final stickers_size_large:I = 0x7f112009
+.field public static final swipe_to_next_unread_dialog_hint:I = 0x7f112022
 
-.field public static final stickers_size_medium:I = 0x7f11200a
+.field public static final swipe_to_next_unread_dialog_types:I = 0x7f112023
 
-.field public static final stickers_size_small:I = 0x7f11200b
+.field public static final text_recognition_bottom_sheet_title:I = 0x7f112025
 
-.field public static final stickers_size_title:I = 0x7f11200c
+.field public static final token_lists_description:I = 0x7f112026
 
-.field public static final swipe_to_next_unread_dialog_consider_archive:I = 0x7f11200d
+.field public static final token_lists_title:I = 0x7f112027
 
-.field public static final swipe_to_next_unread_dialog_hint:I = 0x7f11200e
+.field public static final token_search_coin:I = 0x7f112028
 
-.field public static final swipe_to_next_unread_dialog_types:I = 0x7f11200f
+.field public static final token_search_empty_result_add_token:I = 0x7f112029
 
-.field public static final text_recognition_bottom_sheet_title:I = 0x7f112011
+.field public static final token_search_empty_start_subtitle:I = 0x7f11202a
 
-.field public static final topic:I = 0x7f112012
+.field public static final token_search_empty_start_title:I = 0x7f11202b
 
-.field public static final topic_add_archived_chats_hint:I = 0x7f112013
+.field public static final token_search_hint:I = 0x7f11202c
 
-.field public static final topic_add_main_chats_hint:I = 0x7f112014
+.field public static final topic:I = 0x7f11202d
 
-.field public static final topic_archived_chats:I = 0x7f112015
+.field public static final topic_add_archived_chats_hint:I = 0x7f11202e
 
-.field public static final topic_create_discard_message:I = 0x7f112016
+.field public static final topic_add_main_chats_hint:I = 0x7f11202f
 
-.field public static final topic_create_discard_title:I = 0x7f112017
+.field public static final topic_archived_chats:I = 0x7f112030
 
-.field public static final topic_edit:I = 0x7f112018
+.field public static final topic_create_discard_message:I = 0x7f112031
 
-.field public static final topic_edit_discard_message:I = 0x7f112019
+.field public static final topic_create_discard_title:I = 0x7f112032
 
-.field public static final topic_main_chats:I = 0x7f11201a
+.field public static final topic_edit:I = 0x7f112033
 
-.field public static final topic_name_hint:I = 0x7f11201b
+.field public static final topic_edit_discard_message:I = 0x7f112034
 
-.field public static final topic_new:I = 0x7f11201c
+.field public static final topic_main_chats:I = 0x7f112035
 
-.field public static final topic_new_info:I = 0x7f11201d
+.field public static final topic_name_hint:I = 0x7f112036
 
-.field public static final topic_remove_chat_message:I = 0x7f11201e
+.field public static final topic_new:I = 0x7f112037
 
-.field public static final topic_remove_chat_title:I = 0x7f11201f
+.field public static final topic_new_info:I = 0x7f112038
 
-.field public static final topics:I = 0x7f112020
+.field public static final topic_remove_chat_message:I = 0x7f112039
 
-.field public static final topics_bar_hide:I = 0x7f112021
+.field public static final topic_remove_chat_title:I = 0x7f11203a
 
-.field public static final topics_bar_show:I = 0x7f112022
+.field public static final topics:I = 0x7f11203b
 
-.field public static final topics_catalog:I = 0x7f112023
+.field public static final topics_bar_hide:I = 0x7f11203c
 
-.field public static final topics_catalog_auto_update_settings_enable_item_hint:I = 0x7f112024
+.field public static final topics_bar_show:I = 0x7f11203d
 
-.field public static final topics_catalog_auto_update_settings_interval_chooser_header:I = 0x7f112025
+.field public static final topics_catalog:I = 0x7f11203e
 
-.field public static final topics_catalog_update_auto:I = 0x7f112026
+.field public static final topics_catalog_auto_update_settings_enable_item_hint:I = 0x7f11203f
 
-.field public static final topics_catalog_update_manually:I = 0x7f112027
+.field public static final topics_catalog_auto_update_settings_interval_chooser_header:I = 0x7f112040
 
-.field public static final topics_catalog_update_not_found:I = 0x7f112028
+.field public static final topics_catalog_update_auto:I = 0x7f112041
 
-.field public static final topics_catalog_updated:I = 0x7f112029
+.field public static final topics_catalog_update_manually:I = 0x7f112042
 
-.field public static final topics_create_new:I = 0x7f11202a
+.field public static final topics_catalog_update_not_found:I = 0x7f112043
 
-.field public static final topics_move_no_topic_to_beginning:I = 0x7f11202b
+.field public static final topics_catalog_updated:I = 0x7f112044
 
-.field public static final topics_move_no_topic_to_end:I = 0x7f11202c
+.field public static final topics_create_new:I = 0x7f112045
 
-.field public static final topics_remove:I = 0x7f11202d
+.field public static final topics_move_no_topic_to_beginning:I = 0x7f112046
 
-.field public static final topics_remove_alert:I = 0x7f11202e
+.field public static final topics_move_no_topic_to_end:I = 0x7f112047
 
-.field public static final topics_select:I = 0x7f11202f
+.field public static final topics_remove:I = 0x7f112048
 
-.field public static final topics_settings_enable:I = 0x7f112030
+.field public static final topics_remove_alert:I = 0x7f112049
 
-.field public static final topics_settings_enable_hint:I = 0x7f112031
+.field public static final topics_select:I = 0x7f11204a
 
-.field public static final topics_settings_topics_bar_at_bottom:I = 0x7f112032
+.field public static final topics_settings_enable:I = 0x7f11204b
 
-.field public static final topics_title_adulthood:I = 0x7f112033
+.field public static final topics_settings_enable_hint:I = 0x7f11204c
 
-.field public static final topics_title_animals:I = 0x7f112034
+.field public static final topics_settings_topics_bar_at_bottom:I = 0x7f11204d
 
-.field public static final topics_title_art:I = 0x7f112035
+.field public static final topics_title_adulthood:I = 0x7f11204e
 
-.field public static final topics_title_astrology:I = 0x7f112036
+.field public static final topics_title_animals:I = 0x7f11204f
 
-.field public static final topics_title_auto:I = 0x7f112037
+.field public static final topics_title_art:I = 0x7f112050
 
-.field public static final topics_title_blogs:I = 0x7f112038
+.field public static final topics_title_astrology:I = 0x7f112051
 
-.field public static final topics_title_books:I = 0x7f112039
+.field public static final topics_title_auto:I = 0x7f112052
 
-.field public static final topics_title_business:I = 0x7f11203a
+.field public static final topics_title_blogs:I = 0x7f112053
 
-.field public static final topics_title_crypto:I = 0x7f11203b
+.field public static final topics_title_books:I = 0x7f112054
 
-.field public static final topics_title_design:I = 0x7f11203c
+.field public static final topics_title_business:I = 0x7f112055
 
-.field public static final topics_title_develop:I = 0x7f11203d
+.field public static final topics_title_crypto:I = 0x7f112056
 
-.field public static final topics_title_economy:I = 0x7f11203e
+.field public static final topics_title_design:I = 0x7f112057
 
-.field public static final topics_title_education:I = 0x7f11203f
+.field public static final topics_title_develop:I = 0x7f112058
 
-.field public static final topics_title_family:I = 0x7f112040
+.field public static final topics_title_economy:I = 0x7f112059
 
-.field public static final topics_title_fashion:I = 0x7f112041
+.field public static final topics_title_education:I = 0x7f11205a
 
-.field public static final topics_title_films:I = 0x7f112042
+.field public static final topics_title_family:I = 0x7f11205b
 
-.field public static final topics_title_finance:I = 0x7f112043
+.field public static final topics_title_fashion:I = 0x7f11205c
 
-.field public static final topics_title_food:I = 0x7f112044
+.field public static final topics_title_films:I = 0x7f11205d
 
-.field public static final topics_title_friends:I = 0x7f112045
+.field public static final topics_title_finance:I = 0x7f11205e
 
-.field public static final topics_title_games:I = 0x7f112046
+.field public static final topics_title_food:I = 0x7f11205f
 
-.field public static final topics_title_hobbies:I = 0x7f112047
+.field public static final topics_title_friends:I = 0x7f112060
 
-.field public static final topics_title_home:I = 0x7f112048
+.field public static final topics_title_games:I = 0x7f112061
 
-.field public static final topics_title_humor:I = 0x7f112049
+.field public static final topics_title_hobbies:I = 0x7f112062
 
-.field public static final topics_title_it:I = 0x7f11204a
+.field public static final topics_title_home:I = 0x7f112063
 
-.field public static final topics_title_job:I = 0x7f11204b
+.field public static final topics_title_humor:I = 0x7f112064
 
-.field public static final topics_title_laws:I = 0x7f11204c
+.field public static final topics_title_it:I = 0x7f112065
 
-.field public static final topics_title_lifehack:I = 0x7f11204d
+.field public static final topics_title_job:I = 0x7f112066
 
-.field public static final topics_title_marketing:I = 0x7f11204e
+.field public static final topics_title_laws:I = 0x7f112067
 
-.field public static final topics_title_medicine:I = 0x7f11204f
+.field public static final topics_title_lifehack:I = 0x7f112068
 
-.field public static final topics_title_music:I = 0x7f112050
+.field public static final topics_title_marketing:I = 0x7f112069
 
-.field public static final topics_title_news:I = 0x7f112051
+.field public static final topics_title_medicine:I = 0x7f11206a
 
-.field public static final topics_title_notopic:I = 0x7f112052
+.field public static final topics_title_music:I = 0x7f11206b
 
-.field public static final topics_title_other:I = 0x7f112053
+.field public static final topics_title_news:I = 0x7f11206c
 
-.field public static final topics_title_politics:I = 0x7f112054
+.field public static final topics_title_notopic:I = 0x7f11206d
 
-.field public static final topics_title_quotes:I = 0x7f112055
+.field public static final topics_title_other:I = 0x7f11206e
 
-.field public static final topics_title_religion:I = 0x7f112056
+.field public static final topics_title_politics:I = 0x7f11206f
 
-.field public static final topics_title_sales:I = 0x7f112057
+.field public static final topics_title_quotes:I = 0x7f112070
 
-.field public static final topics_title_science:I = 0x7f112058
+.field public static final topics_title_religion:I = 0x7f112071
 
-.field public static final topics_title_sport:I = 0x7f112059
+.field public static final topics_title_sales:I = 0x7f112072
 
-.field public static final topics_title_technology:I = 0x7f11205a
+.field public static final topics_title_science:I = 0x7f112073
 
-.field public static final topics_title_telegram:I = 0x7f11205b
+.field public static final topics_title_sport:I = 0x7f112074
 
-.field public static final topics_title_travel:I = 0x7f11205c
+.field public static final topics_title_technology:I = 0x7f112075
 
-.field public static final topics_title_tv:I = 0x7f11205d
+.field public static final topics_title_telegram:I = 0x7f112076
 
-.field public static final transaction_direction_exchange_title:I = 0x7f11205e
+.field public static final topics_title_travel:I = 0x7f112077
 
-.field public static final transaction_direction_in_title:I = 0x7f11205f
+.field public static final topics_title_tv:I = 0x7f112078
 
-.field public static final transaction_direction_out_title:I = 0x7f112060
+.field public static final transaction_direction_exchange_title:I = 0x7f112079
 
-.field public static final transaction_speed_fastest:I = 0x7f112061
+.field public static final transaction_direction_in_title:I = 0x7f11207a
 
-.field public static final transaction_speed_low:I = 0x7f112062
+.field public static final transaction_direction_out_title:I = 0x7f11207b
 
-.field public static final transaction_speed_medium:I = 0x7f112063
+.field public static final transaction_speed_fastest:I = 0x7f11207c
 
-.field public static final transfer_donations_description:I = 0x7f112064
+.field public static final transaction_speed_low:I = 0x7f11207d
 
-.field public static final transfer_donations_menu_item_title:I = 0x7f112065
+.field public static final transaction_speed_medium:I = 0x7f11207e
 
-.field public static final transfer_donations_toolbar_title:I = 0x7f112066
+.field public static final transfer_donations_description:I = 0x7f11207f
 
-.field public static final transfer_via_wallet_action_item:I = 0x7f112067
+.field public static final transfer_donations_menu_item_title:I = 0x7f112080
 
-.field public static final transfer_via_wallet_choose_account_hint:I = 0x7f112068
+.field public static final transfer_donations_toolbar_title:I = 0x7f112081
 
-.field public static final transfer_via_wallet_my_accounts_title:I = 0x7f112069
+.field public static final transfer_via_wallet_action_item:I = 0x7f112082
 
-.field public static final transfer_via_wallet_toolbar_title:I = 0x7f11206a
+.field public static final transfer_via_wallet_choose_account_hint:I = 0x7f112083
 
-.field public static final transfer_via_wallet_transaction_title:I = 0x7f11206b
+.field public static final transfer_via_wallet_my_accounts_title:I = 0x7f112084
 
-.field public static final transfer_via_wallet_transfer_empty_selected_account:I = 0x7f11206c
+.field public static final transfer_via_wallet_toolbar_title:I = 0x7f112085
 
-.field public static final transfer_via_wallet_transfer_title:I = 0x7f11206d
+.field public static final transfer_via_wallet_transaction_title:I = 0x7f112086
 
-.field public static final translation_dialog_auto_language:I = 0x7f11206e
+.field public static final transfer_via_wallet_transfer_empty_selected_account:I = 0x7f112087
 
-.field public static final translation_dialog_paste_action:I = 0x7f11206f
+.field public static final transfer_via_wallet_transfer_title:I = 0x7f112088
 
-.field public static final translation_dialog_title_company:I = 0x7f112070
+.field public static final translation_dialog_auto_language:I = 0x7f112089
 
-.field public static final translation_dialog_title_service:I = 0x7f112071
+.field public static final translation_dialog_paste_action:I = 0x7f11208a
 
-.field public static final translation_dialog_translate_to:I = 0x7f112072
+.field public static final translation_dialog_title_company:I = 0x7f11208b
 
-.field public static final translation_dialog_translation_hint:I = 0x7f112073
+.field public static final translation_dialog_title_service:I = 0x7f11208c
 
-.field public static final translation_rate_limit_error:I = 0x7f112074
+.field public static final translation_dialog_translate_to:I = 0x7f11208d
 
-.field public static final translation_search_language:I = 0x7f112075
+.field public static final translation_dialog_translation_hint:I = 0x7f11208e
 
-.field public static final translation_search_language_empty:I = 0x7f112076
+.field public static final translation_rate_limit_error:I = 0x7f11208f
 
-.field public static final twitter_auth_title:I = 0x7f112077
+.field public static final translation_search_language:I = 0x7f112090
 
-.field public static final twitter_empty_state_subtitle:I = 0x7f112078
+.field public static final translation_search_language_empty:I = 0x7f112091
 
-.field public static final twitter_empty_state_title:I = 0x7f112079
+.field public static final twitter_auth_title:I = 0x7f112092
 
-.field public static final twitter_open_in_twitter:I = 0x7f11207a
+.field public static final twitter_empty_state_subtitle:I = 0x7f112093
 
-.field public static final twitter_search_hint:I = 0x7f11207b
+.field public static final twitter_empty_state_title:I = 0x7f112094
 
-.field public static final twitter_search_invite_confirmation_description:I = 0x7f11207c
+.field public static final twitter_open_in_twitter:I = 0x7f112095
 
-.field public static final twitter_search_invite_confirmation_title:I = 0x7f11207d
+.field public static final twitter_search_hint:I = 0x7f112096
 
-.field public static final twitter_search_invite_direct_messages_error:I = 0x7f11207e
+.field public static final twitter_search_invite_confirmation_description:I = 0x7f112097
 
-.field public static final twitter_search_invite_subtitle:I = 0x7f11207f
+.field public static final twitter_search_invite_confirmation_title:I = 0x7f112098
 
-.field public static final twitter_search_invite_success:I = 0x7f112080
+.field public static final twitter_search_invite_direct_messages_error:I = 0x7f112099
 
-.field public static final twitter_search_open_in_twitter:I = 0x7f112081
+.field public static final twitter_search_invite_subtitle:I = 0x7f11209a
 
-.field public static final twitter_search_subtitle:I = 0x7f112082
+.field public static final twitter_search_invite_success:I = 0x7f11209b
 
-.field public static final twitter_search_title:I = 0x7f112083
+.field public static final twitter_search_open_in_twitter:I = 0x7f11209c
 
-.field public static final twitter_title:I = 0x7f112084
+.field public static final twitter_search_subtitle:I = 0x7f11209d
 
-.field public static final undo_all_chats_tab_disabled:I = 0x7f112085
+.field public static final twitter_search_title:I = 0x7f11209e
 
-.field public static final undo_recent_chats_disabled:I = 0x7f112086
+.field public static final twitter_title:I = 0x7f11209f
 
-.field public static final unlock_premium_transcription_hint:I = 0x7f112087
+.field public static final undo_all_chats_tab_disabled:I = 0x7f1120a0
 
-.field public static final user_restrictions_send_games:I = 0x7f112088
+.field public static final undo_recent_chats_disabled:I = 0x7f1120a1
 
-.field public static final user_restrictions_send_gifs:I = 0x7f112089
+.field public static final unlock_premium_transcription_hint:I = 0x7f1120a2
 
-.field public static final user_restrictions_send_inline:I = 0x7f11208a
+.field public static final user_restrictions_send_games:I = 0x7f1120a3
 
-.field public static final voice_to_text_empty_data_error:I = 0x7f11208b
+.field public static final user_restrictions_send_gifs:I = 0x7f1120a4
 
-.field public static final voice_to_text_settings_messages_in_language_item_title:I = 0x7f11208c
+.field public static final user_restrictions_send_inline:I = 0x7f1120a5
 
-.field public static final voip_call_confirm_alert_message:I = 0x7f11208d
+.field public static final voice_to_text_empty_data_error:I = 0x7f1120a6
 
-.field public static final voip_call_confirm_alert_negative_button:I = 0x7f11208e
+.field public static final voice_to_text_settings_messages_in_language_item_title:I = 0x7f1120a7
 
-.field public static final voip_call_confirm_alert_positive_button:I = 0x7f11208f
+.field public static final voip_call_confirm_alert_message:I = 0x7f1120a8
 
-.field public static final voip_call_confirm_alert_title:I = 0x7f112090
+.field public static final voip_call_confirm_alert_negative_button:I = 0x7f1120a9
 
-.field public static final wallet_account_level_adviser_description:I = 0x7f112091
+.field public static final voip_call_confirm_alert_positive_button:I = 0x7f1120aa
 
-.field public static final wallet_account_level_alert_public:I = 0x7f112092
+.field public static final voip_call_confirm_alert_title:I = 0x7f1120ab
 
-.field public static final wallet_account_level_alert_title:I = 0x7f112093
+.field public static final wallet_account_level_adviser_description:I = 0x7f1120ac
 
-.field public static final wallet_account_level_base_description:I = 0x7f112094
+.field public static final wallet_account_level_alert_public:I = 0x7f1120ad
 
-.field public static final wallet_account_level_boss_description:I = 0x7f112095
+.field public static final wallet_account_level_alert_title:I = 0x7f1120ae
 
-.field public static final wallet_account_level_description:I = 0x7f112096
+.field public static final wallet_account_level_base_description:I = 0x7f1120af
 
-.field public static final wallet_account_level_fan_description:I = 0x7f112097
+.field public static final wallet_account_level_boss_description:I = 0x7f1120b0
 
-.field public static final wallet_account_level_oracle_description:I = 0x7f112098
+.field public static final wallet_account_level_description:I = 0x7f1120b1
 
-.field public static final wallet_account_level_zero_description:I = 0x7f112099
+.field public static final wallet_account_level_fan_description:I = 0x7f1120b2
 
-.field public static final wallet_account_type_crypto:I = 0x7f11209a
+.field public static final wallet_account_level_oracle_description:I = 0x7f1120b3
 
-.field public static final wallet_account_type_fiat:I = 0x7f11209b
+.field public static final wallet_account_level_zero_description:I = 0x7f1120b4
 
-.field public static final wallet_activation_confirmation_description:I = 0x7f11209c
+.field public static final wallet_account_type_crypto:I = 0x7f1120b5
 
-.field public static final wallet_activation_confirmation_title:I = 0x7f11209d
+.field public static final wallet_account_type_fiat:I = 0x7f1120b6
 
-.field public static final wallet_amount_button_calculate:I = 0x7f11209e
+.field public static final wallet_activation_confirmation_description:I = 0x7f1120b7
 
-.field public static final wallet_amount_button_txt:I = 0x7f11209f
+.field public static final wallet_activation_confirmation_title:I = 0x7f1120b8
 
-.field public static final wallet_amount_confirm_alert_ok_btn:I = 0x7f1120a0
+.field public static final wallet_amount_button_calculate:I = 0x7f1120b9
 
-.field public static final wallet_amount_confirm_alert_title:I = 0x7f1120a1
+.field public static final wallet_amount_button_txt:I = 0x7f1120ba
 
-.field public static final wallet_amount_enter_valid_amount_title:I = 0x7f1120a2
+.field public static final wallet_amount_confirm_alert_ok_btn:I = 0x7f1120bb
 
-.field public static final wallet_amount_error_invalid_user_btn_txt:I = 0x7f1120a3
+.field public static final wallet_amount_confirm_alert_title:I = 0x7f1120bc
 
-.field public static final wallet_amount_error_invalid_user_description:I = 0x7f1120a4
+.field public static final wallet_amount_enter_valid_amount_title:I = 0x7f1120bd
 
-.field public static final wallet_amount_error_invalid_user_title:I = 0x7f1120a5
+.field public static final wallet_amount_error_invalid_user_btn_txt:I = 0x7f1120be
 
-.field public static final wallet_amount_error_user_wallet_not_activated_description:I = 0x7f1120a6
+.field public static final wallet_amount_error_invalid_user_description:I = 0x7f1120bf
 
-.field public static final wallet_amount_input_hint:I = 0x7f1120a7
+.field public static final wallet_amount_error_invalid_user_title:I = 0x7f1120c0
 
-.field public static final wallet_amount_send_balance_title:I = 0x7f1120a8
+.field public static final wallet_amount_error_user_wallet_not_activated_description:I = 0x7f1120c1
 
-.field public static final wallet_amount_send_change_fee:I = 0x7f1120a9
+.field public static final wallet_amount_input_hint:I = 0x7f1120c2
 
-.field public static final wallet_amount_send_confirm_alert_description:I = 0x7f1120aa
+.field public static final wallet_amount_send_balance_title:I = 0x7f1120c3
 
-.field public static final wallet_amount_send_fee:I = 0x7f1120ab
+.field public static final wallet_amount_send_change_fee:I = 0x7f1120c4
 
-.field public static final wallet_amount_send_fee_dialog_title:I = 0x7f1120ac
+.field public static final wallet_amount_send_confirm_alert_description:I = 0x7f1120c5
 
-.field public static final wallet_amount_send_fee_format:I = 0x7f1120ad
+.field public static final wallet_amount_send_fee:I = 0x7f1120c6
 
-.field public static final wallet_amount_send_fee_title:I = 0x7f1120ae
+.field public static final wallet_amount_send_fee_dialog_title:I = 0x7f1120c7
 
-.field public static final wallet_amount_send_fee_value:I = 0x7f1120af
+.field public static final wallet_amount_send_fee_format:I = 0x7f1120c8
 
-.field public static final wallet_amount_send_invalid_chat_id:I = 0x7f1120b0
+.field public static final wallet_amount_send_fee_title:I = 0x7f1120c9
 
-.field public static final wallet_amount_send_invalid_eth_address:I = 0x7f1120b1
+.field public static final wallet_amount_send_fee_value:I = 0x7f1120ca
 
-.field public static final wallet_amount_send_message_checkbox_title:I = 0x7f1120b2
+.field public static final wallet_amount_send_invalid_chat_id:I = 0x7f1120cb
 
-.field public static final wallet_amount_send_message_id:I = 0x7f1120b3
+.field public static final wallet_amount_send_invalid_eth_address:I = 0x7f1120cc
 
-.field public static final wallet_amount_send_message_payload:I = 0x7f1120b4
+.field public static final wallet_amount_send_message_checkbox_title:I = 0x7f1120cd
 
-.field public static final wallet_amount_send_message_processing_name:I = 0x7f1120b5
+.field public static final wallet_amount_send_message_id:I = 0x7f1120ce
 
-.field public static final wallet_amount_send_recipient_crypto_bsc_unknown:I = 0x7f1120b6
+.field public static final wallet_amount_send_message_payload:I = 0x7f1120cf
 
-.field public static final wallet_amount_send_recipient_crypto_unknown:I = 0x7f1120b7
+.field public static final wallet_amount_send_message_processing_name:I = 0x7f1120d0
 
-.field public static final wallet_amount_send_recipient_tg_id:I = 0x7f1120b8
+.field public static final wallet_amount_send_recipient_crypto_bsc_unknown:I = 0x7f1120d1
 
-.field public static final wallet_amount_send_recipient_tg_unknown:I = 0x7f1120b9
+.field public static final wallet_amount_send_recipient_crypto_unknown:I = 0x7f1120d2
 
-.field public static final wallet_amount_send_recipient_title:I = 0x7f1120ba
+.field public static final wallet_amount_send_recipient_tg_id:I = 0x7f1120d3
 
-.field public static final wallet_amount_send_select_token_error:I = 0x7f1120bb
+.field public static final wallet_amount_send_recipient_tg_unknown:I = 0x7f1120d4
 
-.field public static final wallet_amount_send_unsupported_token_on_network_error:I = 0x7f1120bc
+.field public static final wallet_amount_send_recipient_title:I = 0x7f1120d5
 
-.field public static final wallet_amount_send_without_fee:I = 0x7f1120bd
+.field public static final wallet_amount_send_select_token_error:I = 0x7f1120d6
 
-.field public static final wallet_amount_success_send_description:I = 0x7f1120be
+.field public static final wallet_amount_send_unsupported_token_on_network_error:I = 0x7f1120d7
 
-.field public static final wallet_amount_success_send_title:I = 0x7f1120bf
+.field public static final wallet_amount_send_without_fee:I = 0x7f1120d8
 
-.field public static final wallet_amount_toolbar_title:I = 0x7f1120c0
+.field public static final wallet_amount_success_send_description:I = 0x7f1120d9
 
-.field public static final wallet_amount_validation_accept_to_send_message_error:I = 0x7f1120c1
+.field public static final wallet_amount_success_send_title:I = 0x7f1120da
 
-.field public static final wallet_amount_validation_zero_amount_error:I = 0x7f1120c2
+.field public static final wallet_amount_toolbar_title:I = 0x7f1120db
 
-.field public static final wallet_app_update_dialog_action_btn:I = 0x7f1120c3
+.field public static final wallet_amount_validation_accept_to_send_message_error:I = 0x7f1120dc
 
-.field public static final wallet_app_update_dialog_description:I = 0x7f1120c4
+.field public static final wallet_amount_validation_zero_amount_error:I = 0x7f1120dd
 
-.field public static final wallet_app_update_dialog_title:I = 0x7f1120c5
+.field public static final wallet_app_update_dialog_action_btn:I = 0x7f1120de
 
-.field public static final wallet_auth_dialog_action_btn:I = 0x7f1120c6
+.field public static final wallet_app_update_dialog_description:I = 0x7f1120df
 
-.field public static final wallet_auth_dialog_cancel_btn:I = 0x7f1120c7
+.field public static final wallet_app_update_dialog_title:I = 0x7f1120e0
 
-.field public static final wallet_auth_dialog_channels_description:I = 0x7f1120c8
+.field public static final wallet_auth_dialog_action_btn:I = 0x7f1120e1
 
-.field public static final wallet_auth_dialog_description:I = 0x7f1120c9
+.field public static final wallet_auth_dialog_cancel_btn:I = 0x7f1120e2
 
-.field public static final wallet_auth_dialog_donations_description:I = 0x7f1120ca
+.field public static final wallet_auth_dialog_channels_description:I = 0x7f1120e3
 
-.field public static final wallet_auth_dialog_from_shop_description:I = 0x7f1120cb
+.field public static final wallet_auth_dialog_description:I = 0x7f1120e4
 
-.field public static final wallet_auth_dialog_secure_description:I = 0x7f1120cc
+.field public static final wallet_auth_dialog_donations_description:I = 0x7f1120e5
 
-.field public static final wallet_auth_dialog_title:I = 0x7f1120cd
+.field public static final wallet_auth_dialog_from_shop_description:I = 0x7f1120e6
 
-.field public static final wallet_auth_dialog_to_use_feature_description:I = 0x7f1120ce
+.field public static final wallet_auth_dialog_secure_description:I = 0x7f1120e7
 
-.field public static final wallet_auth_dialog_transfer_description:I = 0x7f1120cf
+.field public static final wallet_auth_dialog_title:I = 0x7f1120e8
 
-.field public static final wallet_backup_continue:I = 0x7f1120d0
+.field public static final wallet_auth_dialog_to_use_feature_description:I = 0x7f1120e9
 
-.field public static final wallet_backup_done:I = 0x7f1120d1
+.field public static final wallet_auth_dialog_transfer_description:I = 0x7f1120ea
 
-.field public static final wallet_backup_quit_alert_description:I = 0x7f1120d2
+.field public static final wallet_backup_continue:I = 0x7f1120eb
 
-.field public static final wallet_backup_quit_alert_negative_button:I = 0x7f1120d3
+.field public static final wallet_backup_done:I = 0x7f1120ec
 
-.field public static final wallet_backup_quit_alert_positive_button:I = 0x7f1120d4
+.field public static final wallet_backup_quit_alert_description:I = 0x7f1120ed
 
-.field public static final wallet_backup_quit_alert_title:I = 0x7f1120d5
+.field public static final wallet_backup_quit_alert_negative_button:I = 0x7f1120ee
 
-.field public static final wallet_backup_ready:I = 0x7f1120d6
+.field public static final wallet_backup_quit_alert_positive_button:I = 0x7f1120ef
 
-.field public static final wallet_backup_ready_info:I = 0x7f1120d7
+.field public static final wallet_backup_quit_alert_title:I = 0x7f1120f0
 
-.field public static final wallet_backup_scan_qr:I = 0x7f1120d8
+.field public static final wallet_backup_ready:I = 0x7f1120f1
 
-.field public static final wallet_backup_secret_words:I = 0x7f1120d9
+.field public static final wallet_backup_ready_info:I = 0x7f1120f2
 
-.field public static final wallet_backup_secret_words_info:I = 0x7f1120da
+.field public static final wallet_backup_scan_qr:I = 0x7f1120f3
 
-.field public static final wallet_backup_secret_words_pdf:I = 0x7f1120db
+.field public static final wallet_backup_secret_words:I = 0x7f1120f4
 
-.field public static final wallet_backup_secret_words_pdf_secret_words:I = 0x7f1120dc
+.field public static final wallet_backup_secret_words_info:I = 0x7f1120f5
 
-.field public static final wallet_backup_secret_words_pdf_store_carefully:I = 0x7f1120dd
+.field public static final wallet_backup_secret_words_pdf:I = 0x7f1120f6
 
-.field public static final wallet_backup_secret_words_pdf_title:I = 0x7f1120de
+.field public static final wallet_backup_secret_words_pdf_secret_words:I = 0x7f1120f7
 
-.field public static final wallet_backup_secret_words_qr:I = 0x7f1120df
+.field public static final wallet_backup_secret_words_pdf_store_carefully:I = 0x7f1120f8
 
-.field public static final wallet_backup_secret_words_qr_description:I = 0x7f1120e0
+.field public static final wallet_backup_secret_words_pdf_title:I = 0x7f1120f9
 
-.field public static final wallet_backup_secret_words_qr_title:I = 0x7f1120e1
+.field public static final wallet_backup_secret_words_qr:I = 0x7f1120fa
 
-.field public static final wallet_backup_secret_words_title:I = 0x7f1120e2
+.field public static final wallet_backup_secret_words_qr_description:I = 0x7f1120fb
 
-.field public static final wallet_backup_test_time:I = 0x7f1120e3
+.field public static final wallet_backup_secret_words_qr_title:I = 0x7f1120fc
 
-.field public static final wallet_backup_test_time_alert_button_see:I = 0x7f1120e4
+.field public static final wallet_backup_secret_words_title:I = 0x7f1120fd
 
-.field public static final wallet_backup_test_time_alert_button_try:I = 0x7f1120e5
+.field public static final wallet_backup_test_time:I = 0x7f1120fe
 
-.field public static final wallet_backup_test_time_alert_text:I = 0x7f1120e6
+.field public static final wallet_backup_test_time_alert_button_see:I = 0x7f1120ff
 
-.field public static final wallet_backup_test_time_alert_title:I = 0x7f1120e7
+.field public static final wallet_backup_test_time_alert_button_try:I = 0x7f112100
 
-.field public static final wallet_backup_test_time_info:I = 0x7f1120e8
+.field public static final wallet_backup_test_time_alert_text:I = 0x7f112101
 
-.field public static final wallet_backup_test_time_title:I = 0x7f1120e9
+.field public static final wallet_backup_test_time_alert_title:I = 0x7f112102
 
-.field public static final wallet_backup_view:I = 0x7f1120ea
+.field public static final wallet_backup_test_time_info:I = 0x7f112103
 
-.field public static final wallet_banner_slide_ascendeex_description:I = 0x7f1120eb
+.field public static final wallet_backup_test_time_title:I = 0x7f112104
 
-.field public static final wallet_banner_slide_ascendeex_long_description:I = 0x7f1120ec
+.field public static final wallet_backup_view:I = 0x7f112105
 
-.field public static final wallet_banner_slide_ascendeex_title:I = 0x7f1120ed
+.field public static final wallet_banner_slide_ascendeex_description:I = 0x7f112106
 
-.field public static final wallet_banner_slide_binance_pay_faq_action_link:I = 0x7f1120ee
+.field public static final wallet_banner_slide_ascendeex_long_description:I = 0x7f112107
 
-.field public static final wallet_banner_slide_binance_pay_faq_description:I = 0x7f1120ef
+.field public static final wallet_banner_slide_ascendeex_title:I = 0x7f112108
 
-.field public static final wallet_banner_slide_binance_pay_faq_long_description:I = 0x7f1120f0
+.field public static final wallet_banner_slide_binance_pay_faq_action_link:I = 0x7f112109
 
-.field public static final wallet_banner_slide_binance_pay_faq_title:I = 0x7f1120f1
+.field public static final wallet_banner_slide_binance_pay_faq_description:I = 0x7f11210a
 
-.field public static final wallet_banner_slide_binance_pay_information_description:I = 0x7f1120f2
+.field public static final wallet_banner_slide_binance_pay_faq_long_description:I = 0x7f11210b
 
-.field public static final wallet_banner_slide_binance_pay_information_long_description:I = 0x7f1120f3
+.field public static final wallet_banner_slide_binance_pay_faq_title:I = 0x7f11210c
 
-.field public static final wallet_banner_slide_binance_pay_information_title:I = 0x7f1120f4
+.field public static final wallet_banner_slide_binance_pay_information_description:I = 0x7f11210d
 
-.field public static final wallet_banner_slide_binance_pay_marketplace_action_link:I = 0x7f1120f5
+.field public static final wallet_banner_slide_binance_pay_information_long_description:I = 0x7f11210e
 
-.field public static final wallet_banner_slide_binance_pay_marketplace_description:I = 0x7f1120f6
+.field public static final wallet_banner_slide_binance_pay_information_title:I = 0x7f11210f
 
-.field public static final wallet_banner_slide_binance_pay_marketplace_long_description:I = 0x7f1120f7
+.field public static final wallet_banner_slide_binance_pay_marketplace_action_link:I = 0x7f112110
 
-.field public static final wallet_banner_slide_binance_pay_marketplace_title:I = 0x7f1120f8
+.field public static final wallet_banner_slide_binance_pay_marketplace_description:I = 0x7f112111
 
-.field public static final wallet_banner_slide_binance_pay_operation_without_fee_description:I = 0x7f1120f9
+.field public static final wallet_banner_slide_binance_pay_marketplace_long_description:I = 0x7f112112
 
-.field public static final wallet_banner_slide_binance_pay_operation_without_fee_long_description:I = 0x7f1120fa
+.field public static final wallet_banner_slide_binance_pay_marketplace_title:I = 0x7f112113
 
-.field public static final wallet_banner_slide_binance_pay_operation_without_fee_title:I = 0x7f1120fb
+.field public static final wallet_banner_slide_binance_pay_operation_without_fee_description:I = 0x7f112114
 
-.field public static final wallet_banner_slide_crypto_transfers_description:I = 0x7f1120fc
+.field public static final wallet_banner_slide_binance_pay_operation_without_fee_long_description:I = 0x7f112115
 
-.field public static final wallet_banner_slide_crypto_transfers_long_description:I = 0x7f1120fd
+.field public static final wallet_banner_slide_binance_pay_operation_without_fee_title:I = 0x7f112116
 
-.field public static final wallet_banner_slide_crypto_transfers_title:I = 0x7f1120fe
+.field public static final wallet_banner_slide_crypto_transfers_description:I = 0x7f112117
 
-.field public static final wallet_banner_slide_faq_description:I = 0x7f1120ff
+.field public static final wallet_banner_slide_crypto_transfers_long_description:I = 0x7f112118
 
-.field public static final wallet_banner_slide_faq_long_description:I = 0x7f112100
+.field public static final wallet_banner_slide_crypto_transfers_title:I = 0x7f112119
 
-.field public static final wallet_banner_slide_faq_title:I = 0x7f112101
+.field public static final wallet_banner_slide_faq_description:I = 0x7f11211a
 
-.field public static final wallet_banner_slide_gate_description:I = 0x7f112102
+.field public static final wallet_banner_slide_faq_long_description:I = 0x7f11211b
 
-.field public static final wallet_banner_slide_gate_long_description:I = 0x7f112103
+.field public static final wallet_banner_slide_faq_title:I = 0x7f11211c
 
-.field public static final wallet_banner_slide_gate_title:I = 0x7f112104
+.field public static final wallet_banner_slide_gate_description:I = 0x7f11211d
 
-.field public static final wallet_banner_slide_multi_networks_description:I = 0x7f112105
+.field public static final wallet_banner_slide_gate_long_description:I = 0x7f11211e
 
-.field public static final wallet_banner_slide_multi_networks_long_description:I = 0x7f112106
+.field public static final wallet_banner_slide_gate_title:I = 0x7f11211f
 
-.field public static final wallet_banner_slide_multi_networks_title:I = 0x7f112107
+.field public static final wallet_banner_slide_multi_networks_description:I = 0x7f112120
 
-.field public static final wallet_banner_slide_non_custodial_description:I = 0x7f112108
+.field public static final wallet_banner_slide_multi_networks_long_description:I = 0x7f112121
 
-.field public static final wallet_banner_slide_non_custodial_long_description:I = 0x7f112109
+.field public static final wallet_banner_slide_multi_networks_title:I = 0x7f112122
 
-.field public static final wallet_banner_slide_non_custodial_title:I = 0x7f11210a
+.field public static final wallet_banner_slide_non_custodial_description:I = 0x7f112123
 
-.field public static final wallet_banner_slide_safe_description:I = 0x7f11210b
+.field public static final wallet_banner_slide_non_custodial_long_description:I = 0x7f112124
 
-.field public static final wallet_banner_slide_safe_long_description:I = 0x7f11210c
+.field public static final wallet_banner_slide_non_custodial_title:I = 0x7f112125
 
-.field public static final wallet_banner_slide_safe_title:I = 0x7f11210d
+.field public static final wallet_banner_slide_safe_description:I = 0x7f112126
 
-.field public static final wallet_banner_slide_staking_description:I = 0x7f11210e
+.field public static final wallet_banner_slide_safe_long_description:I = 0x7f112127
 
-.field public static final wallet_banner_slide_staking_long_description:I = 0x7f11210f
+.field public static final wallet_banner_slide_safe_title:I = 0x7f112128
 
-.field public static final wallet_banner_slide_staking_title:I = 0x7f112110
+.field public static final wallet_banner_slide_staking_description:I = 0x7f112129
 
-.field public static final wallet_banner_slide_swap_description:I = 0x7f112111
+.field public static final wallet_banner_slide_staking_long_description:I = 0x7f11212a
 
-.field public static final wallet_banner_slide_swap_long_description:I = 0x7f112112
+.field public static final wallet_banner_slide_staking_title:I = 0x7f11212b
 
-.field public static final wallet_banner_slide_swap_title:I = 0x7f112113
+.field public static final wallet_banner_slide_swap_description:I = 0x7f11212c
 
-.field public static final wallet_binance_attach_title:I = 0x7f112114
+.field public static final wallet_banner_slide_swap_long_description:I = 0x7f11212d
 
-.field public static final wallet_binance_logout_confirm_dialog_description:I = 0x7f112115
+.field public static final wallet_banner_slide_swap_title:I = 0x7f11212e
 
-.field public static final wallet_binance_logout_confirm_dialog_title:I = 0x7f112116
+.field public static final wallet_binance_attach_title:I = 0x7f11212f
 
-.field public static final wallet_binance_pay_account_header:I = 0x7f112117
+.field public static final wallet_binance_logout_confirm_dialog_description:I = 0x7f112130
 
-.field public static final wallet_binance_pay_action_convert:I = 0x7f112118
+.field public static final wallet_binance_logout_confirm_dialog_title:I = 0x7f112131
 
-.field public static final wallet_binance_pay_action_history:I = 0x7f112119
+.field public static final wallet_binance_pay_account_header:I = 0x7f112132
 
-.field public static final wallet_binance_pay_action_pay:I = 0x7f11211a
+.field public static final wallet_binance_pay_action_convert:I = 0x7f112133
 
-.field public static final wallet_binance_pay_action_receive:I = 0x7f11211b
+.field public static final wallet_binance_pay_action_history:I = 0x7f112134
 
-.field public static final wallet_binance_pay_balances_header:I = 0x7f11211c
+.field public static final wallet_binance_pay_action_pay:I = 0x7f112135
 
-.field public static final wallet_binance_pay_confirm_pay_dialog_description:I = 0x7f11211d
+.field public static final wallet_binance_pay_action_receive:I = 0x7f112136
 
-.field public static final wallet_binance_pay_id:I = 0x7f11211e
+.field public static final wallet_binance_pay_balances_header:I = 0x7f112137
 
-.field public static final wallet_binance_pay_intro_scan_description:I = 0x7f11211f
+.field public static final wallet_binance_pay_confirm_pay_dialog_description:I = 0x7f112138
 
-.field public static final wallet_binance_pay_intro_scan_title:I = 0x7f112120
+.field public static final wallet_binance_pay_id:I = 0x7f112139
 
-.field public static final wallet_binance_pay_login:I = 0x7f112121
+.field public static final wallet_binance_pay_intro_scan_description:I = 0x7f11213a
 
-.field public static final wallet_binance_pay_login_description:I = 0x7f112122
+.field public static final wallet_binance_pay_intro_scan_title:I = 0x7f11213b
 
-.field public static final wallet_binance_pay_login_positive_button:I = 0x7f112123
+.field public static final wallet_binance_pay_login:I = 0x7f11213c
 
-.field public static final wallet_binance_pay_login_title:I = 0x7f112124
+.field public static final wallet_binance_pay_login_description:I = 0x7f11213d
 
-.field public static final wallet_binance_pay_not_activated_dialog_description:I = 0x7f112125
+.field public static final wallet_binance_pay_login_positive_button:I = 0x7f11213e
 
-.field public static final wallet_binance_pay_not_activated_dialog_title:I = 0x7f112126
+.field public static final wallet_binance_pay_login_title:I = 0x7f11213f
 
-.field public static final wallet_binance_pay_request_paid_success_dialog_description:I = 0x7f112127
+.field public static final wallet_binance_pay_not_activated_dialog_description:I = 0x7f112140
 
-.field public static final wallet_binance_pay_request_paid_success_dialog_title:I = 0x7f112128
+.field public static final wallet_binance_pay_not_activated_dialog_title:I = 0x7f112141
 
-.field public static final wallet_binance_pay_request_send_success_dialog_description:I = 0x7f112129
+.field public static final wallet_binance_pay_request_paid_success_dialog_description:I = 0x7f112142
 
-.field public static final wallet_binance_pay_request_send_success_dialog_title:I = 0x7f11212a
+.field public static final wallet_binance_pay_request_paid_success_dialog_title:I = 0x7f112143
 
-.field public static final wallet_binance_pay_scan_qr_error:I = 0x7f11212b
+.field public static final wallet_binance_pay_request_send_success_dialog_description:I = 0x7f112144
 
-.field public static final wallet_binance_pay_transaction_direction_in_title:I = 0x7f11212c
+.field public static final wallet_binance_pay_request_send_success_dialog_title:I = 0x7f112145
 
-.field public static final wallet_binance_pay_transaction_direction_out_title:I = 0x7f11212d
+.field public static final wallet_binance_pay_scan_qr_error:I = 0x7f112146
 
-.field public static final wallet_binance_receive_amount_is_empty_or_zero:I = 0x7f11212e
+.field public static final wallet_binance_pay_transaction_direction_in_title:I = 0x7f112147
 
-.field public static final wallet_binance_receive_amount_title:I = 0x7f11212f
+.field public static final wallet_binance_pay_transaction_direction_out_title:I = 0x7f112148
 
-.field public static final wallet_binance_receive_choose_contact_hint:I = 0x7f112130
+.field public static final wallet_binance_receive_amount_is_empty_or_zero:I = 0x7f112149
 
-.field public static final wallet_binance_receive_choose_contact_title:I = 0x7f112131
+.field public static final wallet_binance_receive_amount_title:I = 0x7f11214a
 
-.field public static final wallet_binance_receive_description:I = 0x7f112132
+.field public static final wallet_binance_receive_choose_contact_hint:I = 0x7f11214b
 
-.field public static final wallet_binance_receive_select_token_hint:I = 0x7f112133
+.field public static final wallet_binance_receive_choose_contact_title:I = 0x7f11214c
 
-.field public static final wallet_binance_receive_select_token_title:I = 0x7f112134
+.field public static final wallet_binance_receive_description:I = 0x7f11214d
 
-.field public static final wallet_binance_receive_selected_token_is_empty:I = 0x7f112135
+.field public static final wallet_binance_receive_select_token_hint:I = 0x7f11214e
 
-.field public static final wallet_binance_receive_selected_token_is_unsupported:I = 0x7f112136
+.field public static final wallet_binance_receive_select_token_title:I = 0x7f11214f
 
-.field public static final wallet_binance_receive_selected_user_is_empty:I = 0x7f112137
+.field public static final wallet_binance_receive_selected_token_is_empty:I = 0x7f112150
 
-.field public static final wallet_binance_verify_profile_website:I = 0x7f112138
+.field public static final wallet_binance_receive_selected_token_is_unsupported:I = 0x7f112151
 
-.field public static final wallet_boost_transaction_description:I = 0x7f112139
+.field public static final wallet_binance_receive_selected_user_is_empty:I = 0x7f112152
 
-.field public static final wallet_boost_transaction_success_dialog_description:I = 0x7f11213a
+.field public static final wallet_binance_verify_profile_website:I = 0x7f112153
 
-.field public static final wallet_boost_transaction_success_dialog_title:I = 0x7f11213b
+.field public static final wallet_boost_transaction_description:I = 0x7f112154
 
-.field public static final wallet_boost_transaction_title:I = 0x7f11213c
+.field public static final wallet_boost_transaction_success_dialog_description:I = 0x7f112155
 
-.field public static final wallet_button_auth_dialog_action_btn:I = 0x7f11213d
+.field public static final wallet_boost_transaction_success_dialog_title:I = 0x7f112156
 
-.field public static final wallet_button_auth_dialog_description:I = 0x7f11213e
+.field public static final wallet_boost_transaction_title:I = 0x7f112157
 
-.field public static final wallet_button_auth_dialog_login_validation_error:I = 0x7f11213f
+.field public static final wallet_button_auth_dialog_action_btn:I = 0x7f112158
 
-.field public static final wallet_button_auth_dialog_title:I = 0x7f112140
+.field public static final wallet_button_auth_dialog_description:I = 0x7f112159
 
-.field public static final wallet_button_auth_dialog_write_access_validation_error:I = 0x7f112141
+.field public static final wallet_button_auth_dialog_login_validation_error:I = 0x7f11215a
 
-.field public static final wallet_button_old_auth_dialog_action_btn:I = 0x7f112142
+.field public static final wallet_button_auth_dialog_title:I = 0x7f11215b
 
-.field public static final wallet_button_old_auth_dialog_description:I = 0x7f112143
+.field public static final wallet_button_auth_dialog_write_access_validation_error:I = 0x7f11215c
 
-.field public static final wallet_button_old_auth_dialog_title:I = 0x7f112144
+.field public static final wallet_button_old_auth_dialog_action_btn:I = 0x7f11215d
 
-.field public static final wallet_buy_button_action_text:I = 0x7f112145
+.field public static final wallet_button_old_auth_dialog_description:I = 0x7f11215e
 
-.field public static final wallet_buy_button_place_holder:I = 0x7f112146
+.field public static final wallet_button_old_auth_dialog_title:I = 0x7f11215f
 
-.field public static final wallet_buy_tokens_purchase_slide_discount:I = 0x7f112147
+.field public static final wallet_buy_button_action_text:I = 0x7f112160
 
-.field public static final wallet_buy_tokens_purchase_slide_discount_base:I = 0x7f112148
+.field public static final wallet_buy_button_place_holder:I = 0x7f112161
 
-.field public static final wallet_buy_tokens_purchase_slide_price_title:I = 0x7f112149
+.field public static final wallet_buy_tokens_purchase_slide_discount:I = 0x7f112162
 
-.field public static final wallet_buy_tokens_success_alert_description:I = 0x7f11214a
+.field public static final wallet_buy_tokens_purchase_slide_discount_base:I = 0x7f112163
 
-.field public static final wallet_buy_tokens_success_alert_title:I = 0x7f11214b
+.field public static final wallet_buy_tokens_purchase_slide_price_title:I = 0x7f112164
 
-.field public static final wallet_buy_tokens_success_as_lottery_winner_description_title:I = 0x7f11214c
+.field public static final wallet_buy_tokens_success_alert_description:I = 0x7f112165
 
-.field public static final wallet_buy_tokens_success_as_lottery_winner_gift_title:I = 0x7f11214d
+.field public static final wallet_buy_tokens_success_alert_title:I = 0x7f112166
 
-.field public static final wallet_buy_toolbar_title:I = 0x7f11214e
+.field public static final wallet_buy_tokens_success_as_lottery_winner_description_title:I = 0x7f112167
 
-.field public static final wallet_cancel_transaction_description:I = 0x7f11214f
+.field public static final wallet_buy_tokens_success_as_lottery_winner_gift_title:I = 0x7f112168
 
-.field public static final wallet_cancel_transaction_success_dialog_description:I = 0x7f112150
+.field public static final wallet_buy_toolbar_title:I = 0x7f112169
 
-.field public static final wallet_cancel_transaction_success_dialog_title:I = 0x7f112151
+.field public static final wallet_cancel_transaction_description:I = 0x7f11216a
 
-.field public static final wallet_cancel_transaction_title:I = 0x7f112152
+.field public static final wallet_cancel_transaction_success_dialog_description:I = 0x7f11216b
 
-.field public static final wallet_centralized_exchange_ascendeex_description:I = 0x7f112153
+.field public static final wallet_cancel_transaction_success_dialog_title:I = 0x7f11216c
 
-.field public static final wallet_centralized_exchange_ascendeex_name:I = 0x7f112154
+.field public static final wallet_cancel_transaction_title:I = 0x7f11216d
 
-.field public static final wallet_centralized_exchange_binance_description:I = 0x7f112155
+.field public static final wallet_centralized_exchange_ascendeex_description:I = 0x7f11216e
 
-.field public static final wallet_centralized_exchange_binance_name:I = 0x7f112156
+.field public static final wallet_centralized_exchange_ascendeex_name:I = 0x7f11216f
 
-.field public static final wallet_centralized_exchange_gate_description:I = 0x7f112157
+.field public static final wallet_centralized_exchange_binance_description:I = 0x7f112170
 
-.field public static final wallet_centralized_exchange_gate_name:I = 0x7f112158
+.field public static final wallet_centralized_exchange_binance_name:I = 0x7f112171
 
-.field public static final wallet_channel_name_dialog_copy_id_action:I = 0x7f112159
+.field public static final wallet_centralized_exchange_gate_description:I = 0x7f112172
 
-.field public static final wallet_channel_name_dialog_go_to_channel:I = 0x7f11215a
+.field public static final wallet_centralized_exchange_gate_name:I = 0x7f112173
 
-.field public static final wallet_common_error_not_auth_description:I = 0x7f11215b
+.field public static final wallet_channel_name_dialog_copy_id_action:I = 0x7f112174
 
-.field public static final wallet_common_error_not_auth_title:I = 0x7f11215c
+.field public static final wallet_channel_name_dialog_go_to_channel:I = 0x7f112175
 
-.field public static final wallet_common_error_not_enough_money_btn_txt:I = 0x7f11215d
+.field public static final wallet_common_error_not_auth_description:I = 0x7f112176
 
-.field public static final wallet_common_error_not_enough_money_description:I = 0x7f11215e
+.field public static final wallet_common_error_not_auth_title:I = 0x7f112177
 
-.field public static final wallet_common_error_not_enough_money_simple_description:I = 0x7f11215f
+.field public static final wallet_common_error_not_enough_money_btn_txt:I = 0x7f112178
 
-.field public static final wallet_common_error_not_enough_money_title:I = 0x7f112160
+.field public static final wallet_common_error_not_enough_money_description:I = 0x7f112179
 
-.field public static final wallet_common_token_name_with_ticker:I = 0x7f112161
+.field public static final wallet_common_error_not_enough_money_simple_description:I = 0x7f11217a
 
-.field public static final wallet_confirm_eth_password_description:I = 0x7f112162
+.field public static final wallet_common_error_not_enough_money_title:I = 0x7f11217b
 
-.field public static final wallet_confirm_eth_password_title:I = 0x7f112163
+.field public static final wallet_common_token_name_with_ticker:I = 0x7f11217c
 
-.field public static final wallet_confirm_eth_password_validation_not_match_error:I = 0x7f112164
+.field public static final wallet_confirm_eth_password_description:I = 0x7f11217d
 
-.field public static final wallet_confirm_eth_pin_code_description:I = 0x7f112165
+.field public static final wallet_confirm_eth_password_title:I = 0x7f11217e
 
-.field public static final wallet_confirm_eth_pin_code_title:I = 0x7f112166
+.field public static final wallet_confirm_eth_password_validation_not_match_error:I = 0x7f11217f
 
-.field public static final wallet_confirm_eth_pin_code_validation_not_match_error:I = 0x7f112167
+.field public static final wallet_confirm_eth_pin_code_description:I = 0x7f112180
 
-.field public static final wallet_connect_active_sessions:I = 0x7f112168
+.field public static final wallet_confirm_eth_pin_code_title:I = 0x7f112181
 
-.field public static final wallet_connect_description:I = 0x7f112169
+.field public static final wallet_confirm_eth_pin_code_validation_not_match_error:I = 0x7f112182
 
-.field public static final wallet_connect_error_alert_title:I = 0x7f11216a
+.field public static final wallet_connect_active_sessions:I = 0x7f112183
 
-.field public static final wallet_connect_error_unsupported_network:I = 0x7f11216b
+.field public static final wallet_connect_description:I = 0x7f112184
 
-.field public static final wallet_connect_message_sign_address_hidden:I = 0x7f11216c
+.field public static final wallet_connect_error_alert_title:I = 0x7f112185
 
-.field public static final wallet_connect_message_sign_confirm_description:I = 0x7f11216d
+.field public static final wallet_connect_error_unsupported_network:I = 0x7f112186
 
-.field public static final wallet_connect_message_sign_confirm_title:I = 0x7f11216e
+.field public static final wallet_connect_message_sign_address_hidden:I = 0x7f112187
 
-.field public static final wallet_connect_new_connection:I = 0x7f11216f
+.field public static final wallet_connect_message_sign_confirm_description:I = 0x7f112188
 
-.field public static final wallet_connect_new_session_success:I = 0x7f112170
+.field public static final wallet_connect_message_sign_confirm_title:I = 0x7f112189
 
-.field public static final wallet_connect_new_session_title:I = 0x7f112171
+.field public static final wallet_connect_new_connection:I = 0x7f11218a
 
-.field public static final wallet_connect_new_session_view_balance:I = 0x7f112172
+.field public static final wallet_connect_new_session_success:I = 0x7f11218b
 
-.field public static final wallet_connect_new_session_wallet:I = 0x7f112173
+.field public static final wallet_connect_new_session_title:I = 0x7f11218c
 
-.field public static final wallet_connect_new_transactions_approval:I = 0x7f112174
+.field public static final wallet_connect_new_session_view_balance:I = 0x7f11218d
 
-.field public static final wallet_connect_session_details_address:I = 0x7f112175
+.field public static final wallet_connect_new_session_wallet:I = 0x7f11218e
 
-.field public static final wallet_connect_session_details_connected:I = 0x7f112176
+.field public static final wallet_connect_new_transactions_approval:I = 0x7f11218f
 
-.field public static final wallet_connect_session_details_network:I = 0x7f112177
+.field public static final wallet_connect_session_details_address:I = 0x7f112190
 
-.field public static final wallet_connect_subtitle:I = 0x7f112178
+.field public static final wallet_connect_session_details_connected:I = 0x7f112191
 
-.field public static final wallet_connect_switch_network:I = 0x7f112179
+.field public static final wallet_connect_session_details_network:I = 0x7f112192
 
-.field public static final wallet_connect_switch_network_title:I = 0x7f11217a
+.field public static final wallet_connect_subtitle:I = 0x7f112193
 
-.field public static final wallet_connect_terminate_all:I = 0x7f11217b
+.field public static final wallet_connect_switch_network:I = 0x7f112194
 
-.field public static final wallet_connect_terminate_all_description:I = 0x7f11217c
+.field public static final wallet_connect_switch_network_title:I = 0x7f112195
 
-.field public static final wallet_connect_title:I = 0x7f11217d
+.field public static final wallet_connect_terminate_all:I = 0x7f112196
 
-.field public static final wallet_connect_transaction_button_sign:I = 0x7f11217e
+.field public static final wallet_connect_terminate_all_description:I = 0x7f112197
 
-.field public static final wallet_connect_transaction_button_sign_and_send:I = 0x7f11217f
+.field public static final wallet_connect_title:I = 0x7f112198
 
-.field public static final wallet_connect_transaction_confirm_sign_description:I = 0x7f112180
+.field public static final wallet_connect_transaction_button_sign:I = 0x7f112199
 
-.field public static final wallet_connect_transaction_dapp:I = 0x7f112181
+.field public static final wallet_connect_transaction_button_sign_and_send:I = 0x7f11219a
 
-.field public static final wallet_connect_transaction_from:I = 0x7f112182
+.field public static final wallet_connect_transaction_confirm_sign_description:I = 0x7f11219b
 
-.field public static final wallet_connect_transaction_success:I = 0x7f112183
+.field public static final wallet_connect_transaction_dapp:I = 0x7f11219c
 
-.field public static final wallet_connect_transaction_title:I = 0x7f112184
+.field public static final wallet_connect_transaction_from:I = 0x7f11219d
 
-.field public static final wallet_connect_transaction_to:I = 0x7f112185
+.field public static final wallet_connect_transaction_success:I = 0x7f11219e
 
-.field public static final wallet_create_eth_account_tutorial_backup_description:I = 0x7f112186
+.field public static final wallet_connect_transaction_title:I = 0x7f11219f
 
-.field public static final wallet_create_eth_account_tutorial_backup_title:I = 0x7f112187
+.field public static final wallet_connect_transaction_to:I = 0x7f1121a0
 
-.field public static final wallet_create_eth_account_tutorial_carefull_description:I = 0x7f112188
+.field public static final wallet_create_eth_account_tutorial_backup_description:I = 0x7f1121a1
 
-.field public static final wallet_create_eth_account_tutorial_carefull_title:I = 0x7f112189
+.field public static final wallet_create_eth_account_tutorial_backup_title:I = 0x7f1121a2
 
-.field public static final wallet_create_eth_account_tutorial_check_data_description:I = 0x7f11218a
+.field public static final wallet_create_eth_account_tutorial_carefull_description:I = 0x7f1121a3
 
-.field public static final wallet_create_eth_account_tutorial_check_data_title:I = 0x7f11218b
+.field public static final wallet_create_eth_account_tutorial_carefull_title:I = 0x7f1121a4
 
-.field public static final wallet_create_eth_password_description:I = 0x7f11218c
+.field public static final wallet_create_eth_account_tutorial_check_data_description:I = 0x7f1121a5
 
-.field public static final wallet_create_eth_password_title:I = 0x7f11218d
+.field public static final wallet_create_eth_account_tutorial_check_data_title:I = 0x7f1121a6
 
-.field public static final wallet_create_eth_password_toolbar_title:I = 0x7f11218e
+.field public static final wallet_create_eth_password_description:I = 0x7f1121a7
 
-.field public static final wallet_create_eth_password_validation_length_error:I = 0x7f11218f
+.field public static final wallet_create_eth_password_title:I = 0x7f1121a8
 
-.field public static final wallet_create_eth_pin_code_description:I = 0x7f112190
+.field public static final wallet_create_eth_password_toolbar_title:I = 0x7f1121a9
 
-.field public static final wallet_create_eth_pin_code_title:I = 0x7f112191
+.field public static final wallet_create_eth_password_validation_length_error:I = 0x7f1121aa
 
-.field public static final wallet_create_eth_pin_code_toolbar_title:I = 0x7f112192
+.field public static final wallet_create_eth_pin_code_description:I = 0x7f1121ab
 
-.field public static final wallet_crypto_blockchains_active_wallets:I = 0x7f112193
+.field public static final wallet_create_eth_pin_code_title:I = 0x7f1121ac
 
-.field public static final wallet_crypto_blockchains_bitcoin_subtitle:I = 0x7f112194
+.field public static final wallet_create_eth_pin_code_toolbar_title:I = 0x7f1121ad
 
-.field public static final wallet_crypto_blockchains_bitcoin_title:I = 0x7f112195
+.field public static final wallet_creation_backup:I = 0x7f1121ae
 
-.field public static final wallet_crypto_blockchains_description:I = 0x7f112196
+.field public static final wallet_creation_intro_description:I = 0x7f1121af
 
-.field public static final wallet_crypto_blockchains_evm_subtitle:I = 0x7f112197
+.field public static final wallet_creation_intro_information_description:I = 0x7f1121b0
 
-.field public static final wallet_crypto_blockchains_evm_title:I = 0x7f112198
+.field public static final wallet_creation_intro_information_title:I = 0x7f1121b1
 
-.field public static final wallet_crypto_blockchains_item_description:I = 0x7f112199
+.field public static final wallet_creation_intro_linked_wallet:I = 0x7f1121b2
 
-.field public static final wallet_crypto_blockchains_reset_all:I = 0x7f11219a
+.field public static final wallet_creation_intro_new_wallet_confirmation_description:I = 0x7f1121b3
 
-.field public static final wallet_crypto_blockchains_title:I = 0x7f11219b
+.field public static final wallet_creation_intro_new_wallet_confirmation_title:I = 0x7f1121b4
 
-.field public static final wallet_crypto_blockchains_ton_subtitle:I = 0x7f11219c
+.field public static final wallet_creation_intro_privacy:I = 0x7f1121b5
 
-.field public static final wallet_crypto_blockchains_ton_title:I = 0x7f11219d
+.field public static final wallet_creation_intro_title:I = 0x7f1121b6
 
-.field public static final wallet_crypto_blockchains_tron_subtitle:I = 0x7f11219e
+.field public static final wallet_creation_intro_title_create:I = 0x7f1121b7
 
-.field public static final wallet_crypto_blockchains_tron_title:I = 0x7f11219f
+.field public static final wallet_creation_intro_title_import:I = 0x7f1121b8
 
-.field public static final wallet_crypto_buy_amount_title:I = 0x7f1121a0
+.field public static final wallet_crypto_blockchains_active_wallets:I = 0x7f1121b9
 
-.field public static final wallet_crypto_buy_confirm_dialog_action_txt:I = 0x7f1121a1
+.field public static final wallet_crypto_blockchains_bitcoin_subtitle:I = 0x7f1121ba
 
-.field public static final wallet_crypto_buy_confirm_dialog_description:I = 0x7f1121a2
+.field public static final wallet_crypto_blockchains_bitcoin_title:I = 0x7f1121bb
 
-.field public static final wallet_crypto_buy_confirm_dialog_title:I = 0x7f1121a3
+.field public static final wallet_crypto_blockchains_description:I = 0x7f1121bc
 
-.field public static final wallet_crypto_buy_custom_price_dialog_action:I = 0x7f1121a4
+.field public static final wallet_crypto_blockchains_evm_subtitle:I = 0x7f1121bd
 
-.field public static final wallet_crypto_buy_custom_price_dialog_tax:I = 0x7f1121a5
+.field public static final wallet_crypto_blockchains_evm_title:I = 0x7f1121be
 
-.field public static final wallet_crypto_buy_custom_price_dialog_toolbar_title:I = 0x7f1121a6
+.field public static final wallet_crypto_blockchains_item_description:I = 0x7f1121bf
 
-.field public static final wallet_crypto_buy_custom_price_dialog_validation_max_input:I = 0x7f1121a7
+.field public static final wallet_crypto_blockchains_reset_all:I = 0x7f1121c0
 
-.field public static final wallet_crypto_buy_custom_price_dialog_validation_min_input:I = 0x7f1121a8
+.field public static final wallet_crypto_blockchains_title:I = 0x7f1121c1
 
-.field public static final wallet_crypto_buy_error_dialog_description:I = 0x7f1121a9
+.field public static final wallet_crypto_blockchains_ton_subtitle:I = 0x7f1121c2
 
-.field public static final wallet_crypto_buy_footer_description:I = 0x7f1121aa
+.field public static final wallet_crypto_blockchains_ton_title:I = 0x7f1121c3
 
-.field public static final wallet_crypto_buy_footer_title:I = 0x7f1121ab
+.field public static final wallet_crypto_blockchains_tron_subtitle:I = 0x7f1121c4
 
-.field public static final wallet_crypto_buy_information_dialog_description:I = 0x7f1121ac
+.field public static final wallet_crypto_blockchains_tron_title:I = 0x7f1121c5
 
-.field public static final wallet_crypto_buy_information_dialog_title:I = 0x7f1121ad
+.field public static final wallet_crypto_buy_amount_title:I = 0x7f1121c6
 
-.field public static final wallet_crypto_buy_max_price:I = 0x7f1121ae
+.field public static final wallet_crypto_buy_confirm_dialog_action_txt:I = 0x7f1121c7
 
-.field public static final wallet_crypto_buy_processing_toolbar_title:I = 0x7f1121af
+.field public static final wallet_crypto_buy_confirm_dialog_description:I = 0x7f1121c8
 
-.field public static final wallet_crypto_buy_success_dialog_description:I = 0x7f1121b0
+.field public static final wallet_crypto_buy_confirm_dialog_title:I = 0x7f1121c9
 
-.field public static final wallet_crypto_buy_success_dialog_title:I = 0x7f1121b1
+.field public static final wallet_crypto_buy_custom_price_dialog_action:I = 0x7f1121ca
 
-.field public static final wallet_crypto_privacy_add_exception_section_description:I = 0x7f1121b2
+.field public static final wallet_crypto_buy_custom_price_dialog_tax:I = 0x7f1121cb
 
-.field public static final wallet_crypto_privacy_everyone_dialog_confirm_description:I = 0x7f1121b3
+.field public static final wallet_crypto_buy_custom_price_dialog_toolbar_title:I = 0x7f1121cc
 
-.field public static final wallet_crypto_privacy_everyone_dialog_confirm_title:I = 0x7f1121b4
+.field public static final wallet_crypto_buy_custom_price_dialog_validation_max_input:I = 0x7f1121cd
 
-.field public static final wallet_crypto_privacy_item_description:I = 0x7f1121b5
+.field public static final wallet_crypto_buy_custom_price_dialog_validation_min_input:I = 0x7f1121ce
 
-.field public static final wallet_crypto_privacy_toolbar_title:I = 0x7f1121b6
+.field public static final wallet_crypto_buy_error_dialog_description:I = 0x7f1121cf
 
-.field public static final wallet_crypto_privacy_who_can_ask_section_description:I = 0x7f1121b7
+.field public static final wallet_crypto_buy_footer_description:I = 0x7f1121d0
 
-.field public static final wallet_crypto_privacy_who_can_ask_section_title:I = 0x7f1121b8
+.field public static final wallet_crypto_buy_footer_title:I = 0x7f1121d1
 
-.field public static final wallet_crypto_privacy_who_can_see_account_rank_section_description:I = 0x7f1121b9
+.field public static final wallet_crypto_buy_information_dialog_description:I = 0x7f1121d2
 
-.field public static final wallet_crypto_privacy_who_can_see_account_rank_section_title:I = 0x7f1121ba
+.field public static final wallet_crypto_buy_information_dialog_title:I = 0x7f1121d3
 
-.field public static final wallet_crypto_wallet_not_created_dialog_description:I = 0x7f1121bb
+.field public static final wallet_crypto_buy_max_price:I = 0x7f1121d4
 
-.field public static final wallet_crypto_wallet_not_created_dialog_positive_btn:I = 0x7f1121bc
+.field public static final wallet_crypto_buy_processing_toolbar_title:I = 0x7f1121d5
 
-.field public static final wallet_crypto_wallet_not_created_dialog_title:I = 0x7f1121bd
+.field public static final wallet_crypto_buy_success_dialog_description:I = 0x7f1121d6
 
-.field public static final wallet_dashboard_account_title:I = 0x7f1121be
+.field public static final wallet_crypto_buy_success_dialog_title:I = 0x7f1121d7
 
-.field public static final wallet_dashboard_activate_wallet:I = 0x7f1121bf
+.field public static final wallet_crypto_privacy_add_exception_section_description:I = 0x7f1121d8
 
-.field public static final wallet_dashboard_balance_24h_rate:I = 0x7f1121c0
+.field public static final wallet_crypto_privacy_everyone_dialog_confirm_description:I = 0x7f1121d9
 
-.field public static final wallet_dashboard_create_eth_wallet:I = 0x7f1121c1
+.field public static final wallet_crypto_privacy_everyone_dialog_confirm_title:I = 0x7f1121da
 
-.field public static final wallet_dashboard_create_eth_wallet_success_dialog_description:I = 0x7f1121c2
+.field public static final wallet_crypto_privacy_item_description:I = 0x7f1121db
 
-.field public static final wallet_dashboard_create_eth_wallet_success_dialog_title:I = 0x7f1121c3
+.field public static final wallet_crypto_privacy_toolbar_title:I = 0x7f1121dc
 
-.field public static final wallet_dashboard_create_eth_wallet_warning_dialog_action_button:I = 0x7f1121c4
+.field public static final wallet_crypto_privacy_who_can_ask_section_description:I = 0x7f1121dd
 
-.field public static final wallet_dashboard_create_eth_wallet_warning_dialog_description:I = 0x7f1121c5
+.field public static final wallet_crypto_privacy_who_can_ask_section_title:I = 0x7f1121de
 
-.field public static final wallet_dashboard_create_start_dialog_description:I = 0x7f1121c6
+.field public static final wallet_crypto_privacy_who_can_see_account_rank_section_description:I = 0x7f1121df
 
-.field public static final wallet_dashboard_create_start_dialog_description_privacy:I = 0x7f1121c7
+.field public static final wallet_crypto_privacy_who_can_see_account_rank_section_title:I = 0x7f1121e0
 
-.field public static final wallet_dashboard_create_start_dialog_description_privacy_link:I = 0x7f1121c8
+.field public static final wallet_crypto_wallet_not_created_dialog_description:I = 0x7f1121e1
 
-.field public static final wallet_dashboard_create_start_dialog_title:I = 0x7f1121c9
+.field public static final wallet_crypto_wallet_not_created_dialog_positive_btn:I = 0x7f1121e2
 
-.field public static final wallet_dashboard_empty_account_title:I = 0x7f1121ca
+.field public static final wallet_crypto_wallet_not_created_dialog_title:I = 0x7f1121e3
 
-.field public static final wallet_dashboard_eth_wallet_warning_dialog_title:I = 0x7f1121cb
+.field public static final wallet_custom_tokens_empty_description:I = 0x7f1121e4
 
-.field public static final wallet_dashboard_import_eth_wallet:I = 0x7f1121cc
+.field public static final wallet_custom_tokens_empty_title:I = 0x7f1121e5
 
-.field public static final wallet_dashboard_import_eth_wallet_warning_dialog_action_button:I = 0x7f1121cd
+.field public static final wallet_custom_tokens_subtitle:I = 0x7f1121e6
 
-.field public static final wallet_dashboard_import_eth_wallet_warning_dialog_description:I = 0x7f1121ce
+.field public static final wallet_custom_tokens_title:I = 0x7f1121e7
 
-.field public static final wallet_dashboard_import_start_dialog_description:I = 0x7f1121cf
+.field public static final wallet_dashboard_account_title:I = 0x7f1121e8
 
-.field public static final wallet_dashboard_import_start_dialog_title:I = 0x7f1121d0
+.field public static final wallet_dashboard_activate_wallet:I = 0x7f1121e9
 
-.field public static final wallet_dashboard_internal_point_info_dialog_description:I = 0x7f1121d1
+.field public static final wallet_dashboard_balance_24h_rate:I = 0x7f1121ea
 
-.field public static final wallet_dashboard_internal_point_info_dialog_title:I = 0x7f1121d2
+.field public static final wallet_dashboard_create_eth_wallet:I = 0x7f1121eb
 
-.field public static final wallet_dashboard_operation_title:I = 0x7f1121d3
+.field public static final wallet_dashboard_create_eth_wallet_success_dialog_description:I = 0x7f1121ec
 
-.field public static final wallet_dashboard_restore_eth_wallet:I = 0x7f1121d4
+.field public static final wallet_dashboard_create_eth_wallet_success_dialog_title:I = 0x7f1121ed
 
-.field public static final wallet_dashboard_restore_eth_wallet_warning_dialog_action_button:I = 0x7f1121d5
+.field public static final wallet_dashboard_create_eth_wallet_warning_dialog_action_button:I = 0x7f1121ee
 
-.field public static final wallet_dashboard_restore_eth_wallet_warning_dialog_description:I = 0x7f1121d6
+.field public static final wallet_dashboard_create_eth_wallet_warning_dialog_description:I = 0x7f1121ef
 
-.field public static final wallet_details_created:I = 0x7f1121d7
+.field public static final wallet_dashboard_create_start_dialog_description:I = 0x7f1121f0
 
-.field public static final wallet_details_info_bitcoin_description:I = 0x7f1121d8
+.field public static final wallet_dashboard_create_start_dialog_description_privacy:I = 0x7f1121f1
 
-.field public static final wallet_details_info_bitcoin_title:I = 0x7f1121d9
+.field public static final wallet_dashboard_create_start_dialog_description_privacy_link:I = 0x7f1121f2
 
-.field public static final wallet_details_info_evm_description:I = 0x7f1121da
+.field public static final wallet_dashboard_create_start_dialog_title:I = 0x7f1121f3
 
-.field public static final wallet_details_info_evm_title:I = 0x7f1121db
+.field public static final wallet_dashboard_empty_account_title:I = 0x7f1121f4
 
-.field public static final wallet_details_info_ton_description:I = 0x7f1121dc
+.field public static final wallet_dashboard_eth_wallet_warning_dialog_title:I = 0x7f1121f5
 
-.field public static final wallet_details_info_ton_title:I = 0x7f1121dd
+.field public static final wallet_dashboard_import_eth_wallet:I = 0x7f1121f6
 
-.field public static final wallet_details_info_tron_description:I = 0x7f1121de
+.field public static final wallet_dashboard_import_eth_wallet_warning_dialog_action_button:I = 0x7f1121f7
 
-.field public static final wallet_details_info_tron_title:I = 0x7f1121df
+.field public static final wallet_dashboard_import_eth_wallet_warning_dialog_description:I = 0x7f1121f8
 
-.field public static final wallet_details_reset_description:I = 0x7f1121e0
+.field public static final wallet_dashboard_import_start_dialog_description:I = 0x7f1121f9
 
-.field public static final wallet_details_reset_title:I = 0x7f1121e1
+.field public static final wallet_dashboard_import_start_dialog_title:I = 0x7f1121fa
 
-.field public static final wallet_enter_eth_password_delete_wallet_dialog_description:I = 0x7f1121e2
+.field public static final wallet_dashboard_internal_point_info_dialog_description:I = 0x7f1121fb
 
-.field public static final wallet_enter_eth_password_delete_wallet_dialog_submit_btn:I = 0x7f1121e3
+.field public static final wallet_dashboard_internal_point_info_dialog_title:I = 0x7f1121fc
 
-.field public static final wallet_enter_eth_password_delete_wallet_dialog_title:I = 0x7f1121e4
+.field public static final wallet_dashboard_operation_title:I = 0x7f1121fd
 
-.field public static final wallet_enter_eth_password_description:I = 0x7f1121e5
+.field public static final wallet_dashboard_restore_eth_wallet:I = 0x7f1121fe
 
-.field public static final wallet_enter_eth_password_forgot:I = 0x7f1121e6
+.field public static final wallet_dashboard_restore_eth_wallet_warning_dialog_action_button:I = 0x7f1121ff
 
-.field public static final wallet_enter_eth_password_forgot_option_delete:I = 0x7f1121e7
+.field public static final wallet_dashboard_restore_eth_wallet_warning_dialog_description:I = 0x7f112200
 
-.field public static final wallet_enter_eth_password_forgot_option_restore:I = 0x7f1121e8
+.field public static final wallet_details_created:I = 0x7f112201
 
-.field public static final wallet_enter_eth_password_title:I = 0x7f1121e9
+.field public static final wallet_details_info_bitcoin_description:I = 0x7f112202
 
-.field public static final wallet_enter_eth_password_validation_error:I = 0x7f1121ea
+.field public static final wallet_details_info_bitcoin_title:I = 0x7f112203
 
-.field public static final wallet_enter_eth_pin_forgot:I = 0x7f1121eb
+.field public static final wallet_details_info_evm_description:I = 0x7f112204
 
-.field public static final wallet_enter_eth_pin_title:I = 0x7f1121ec
+.field public static final wallet_details_info_evm_title:I = 0x7f112205
 
-.field public static final wallet_eth_account_settings_backup_description:I = 0x7f1121ed
+.field public static final wallet_details_info_ton_description:I = 0x7f112206
 
-.field public static final wallet_eth_account_settings_backup_title:I = 0x7f1121ee
+.field public static final wallet_details_info_ton_title:I = 0x7f112207
 
-.field public static final wallet_eth_account_settings_reset:I = 0x7f1121ef
+.field public static final wallet_details_info_tron_description:I = 0x7f112208
 
-.field public static final wallet_eth_account_settings_toolbar_title:I = 0x7f1121f0
+.field public static final wallet_details_info_tron_title:I = 0x7f112209
 
-.field public static final wallet_eth_address_mismatch_btn_backup:I = 0x7f1121f1
+.field public static final wallet_details_reset_description:I = 0x7f11220a
 
-.field public static final wallet_eth_address_mismatch_btn_delete:I = 0x7f1121f2
+.field public static final wallet_details_reset_title:I = 0x7f11220b
 
-.field public static final wallet_eth_address_mismatch_description:I = 0x7f1121f3
+.field public static final wallet_enter_eth_password_delete_wallet_dialog_description:I = 0x7f11220c
 
-.field public static final wallet_eth_address_mismatch_title:I = 0x7f1121f4
+.field public static final wallet_enter_eth_password_delete_wallet_dialog_submit_btn:I = 0x7f11220d
 
-.field public static final wallet_eth_backup_confirm_error:I = 0x7f1121f5
+.field public static final wallet_enter_eth_password_delete_wallet_dialog_title:I = 0x7f11220e
 
-.field public static final wallet_eth_backup_confirm_toolbar_title:I = 0x7f1121f6
+.field public static final wallet_enter_eth_password_description:I = 0x7f11220f
 
-.field public static final wallet_eth_backup_confirm_word_description:I = 0x7f1121f7
+.field public static final wallet_enter_eth_password_forgot:I = 0x7f112210
 
-.field public static final wallet_eth_backup_copy_info:I = 0x7f1121f8
+.field public static final wallet_enter_eth_password_forgot_option_delete:I = 0x7f112211
 
-.field public static final wallet_eth_backup_description:I = 0x7f1121f9
+.field public static final wallet_enter_eth_password_forgot_option_restore:I = 0x7f112212
 
-.field public static final wallet_eth_backup_info_start_dialog_description:I = 0x7f1121fa
+.field public static final wallet_enter_eth_password_title:I = 0x7f112213
 
-.field public static final wallet_eth_backup_info_start_dialog_title:I = 0x7f1121fb
+.field public static final wallet_enter_eth_password_validation_error:I = 0x7f112214
 
-.field public static final wallet_eth_backup_info_success_dialog_description:I = 0x7f1121fc
+.field public static final wallet_enter_eth_pin_forgot:I = 0x7f112215
 
-.field public static final wallet_eth_backup_info_success_dialog_title:I = 0x7f1121fd
+.field public static final wallet_enter_eth_pin_title:I = 0x7f112216
 
-.field public static final wallet_eth_backup_intro_description:I = 0x7f1121fe
+.field public static final wallet_eth_account_settings_backup_description:I = 0x7f112217
 
-.field public static final wallet_eth_backup_intro_title:I = 0x7f1121ff
+.field public static final wallet_eth_account_settings_backup_title:I = 0x7f112218
 
-.field public static final wallet_eth_backup_toolbar_title:I = 0x7f112200
+.field public static final wallet_eth_account_settings_reset:I = 0x7f112219
 
-.field public static final wallet_feature_in_developing:I = 0x7f112201
+.field public static final wallet_eth_account_settings_toolbar_title:I = 0x7f11221a
 
-.field public static final wallet_feature_not_available:I = 0x7f112202
+.field public static final wallet_eth_address_mismatch_btn_backup:I = 0x7f11221b
 
-.field public static final wallet_gate_pair_lime_btc:I = 0x7f112203
+.field public static final wallet_eth_address_mismatch_btn_delete:I = 0x7f11221c
 
-.field public static final wallet_gate_pair_lime_btc_url:I = 0x7f112204
+.field public static final wallet_eth_address_mismatch_description:I = 0x7f11221d
 
-.field public static final wallet_gate_pair_lime_eth:I = 0x7f112205
+.field public static final wallet_eth_address_mismatch_title:I = 0x7f11221e
 
-.field public static final wallet_gate_pair_lime_eth_url:I = 0x7f112206
+.field public static final wallet_eth_backup_confirm_error:I = 0x7f11221f
 
-.field public static final wallet_gate_pair_lime_usdt:I = 0x7f112207
+.field public static final wallet_eth_backup_confirm_toolbar_title:I = 0x7f112220
 
-.field public static final wallet_gate_pair_lime_usdt_url:I = 0x7f112208
+.field public static final wallet_eth_backup_confirm_word_description:I = 0x7f112221
 
-.field public static final wallet_gate_select_pair_title:I = 0x7f112209
+.field public static final wallet_eth_backup_copy_info:I = 0x7f112222
 
-.field public static final wallet_home_crypto_account:I = 0x7f11220a
+.field public static final wallet_eth_backup_description:I = 0x7f112223
 
-.field public static final wallet_home_crypto_account_telegram_id:I = 0x7f11220b
+.field public static final wallet_eth_backup_info_start_dialog_description:I = 0x7f112224
 
-.field public static final wallet_home_crypto_select_tokens:I = 0x7f11220c
+.field public static final wallet_eth_backup_info_start_dialog_title:I = 0x7f112225
 
-.field public static final wallet_home_crypto_tokens_settings_only_positive:I = 0x7f11220d
+.field public static final wallet_eth_backup_info_success_dialog_description:I = 0x7f112226
 
-.field public static final wallet_home_crypto_tokens_settings_toolbar_title:I = 0x7f11220e
+.field public static final wallet_eth_backup_info_success_dialog_title:I = 0x7f112227
 
-.field public static final wallet_home_navigation_binance_pay:I = 0x7f11220f
+.field public static final wallet_eth_backup_intro_description:I = 0x7f112228
 
-.field public static final wallet_home_navigation_crypto:I = 0x7f112210
+.field public static final wallet_eth_backup_intro_title:I = 0x7f112229
 
-.field public static final wallet_home_navigation_services:I = 0x7f112211
+.field public static final wallet_eth_backup_toolbar_title:I = 0x7f11222a
 
-.field public static final wallet_import_alert_text:I = 0x7f112212
+.field public static final wallet_feature_in_developing:I = 0x7f11222b
 
-.field public static final wallet_import_alert_title:I = 0x7f112213
+.field public static final wallet_feature_not_available:I = 0x7f11222c
 
-.field public static final wallet_import_change_words_count:I = 0x7f112214
+.field public static final wallet_gate_pair_lime_btc:I = 0x7f11222d
 
-.field public static final wallet_import_change_words_count_dialog_title:I = 0x7f112215
+.field public static final wallet_gate_pair_lime_btc_url:I = 0x7f11222e
 
-.field public static final wallet_import_dont_have:I = 0x7f112216
+.field public static final wallet_gate_pair_lime_eth:I = 0x7f11222f
 
-.field public static final wallet_import_info:I = 0x7f112217
+.field public static final wallet_gate_pair_lime_eth_url:I = 0x7f112230
 
-.field public static final wallet_import_paste:I = 0x7f112218
+.field public static final wallet_gate_pair_lime_usdt:I = 0x7f112231
 
-.field public static final wallet_import_perfect:I = 0x7f112219
+.field public static final wallet_gate_pair_lime_usdt_url:I = 0x7f112232
 
-.field public static final wallet_import_perfect_info:I = 0x7f11221a
+.field public static final wallet_gate_select_pair_title:I = 0x7f112233
 
-.field public static final wallet_import_perfect_set_passcode:I = 0x7f11221b
+.field public static final wallet_home_crypto_account:I = 0x7f112234
 
-.field public static final wallet_import_secret_words:I = 0x7f11221c
+.field public static final wallet_home_crypto_account_telegram_id:I = 0x7f112235
 
-.field public static final wallet_import_too_bad:I = 0x7f11221d
+.field public static final wallet_home_crypto_add_tokens:I = 0x7f112236
 
-.field public static final wallet_import_too_bad_create:I = 0x7f11221e
+.field public static final wallet_home_crypto_select_tokens:I = 0x7f112237
 
-.field public static final wallet_import_too_bad_enter:I = 0x7f11221f
+.field public static final wallet_home_crypto_tokens_settings_only_positive:I = 0x7f112238
 
-.field public static final wallet_import_too_bad_info:I = 0x7f112220
+.field public static final wallet_home_crypto_tokens_settings_toolbar_title:I = 0x7f112239
 
-.field public static final wallet_import_words_count:I = 0x7f112221
+.field public static final wallet_home_navigation_binance_pay:I = 0x7f11223a
 
-.field public static final wallet_internal_point_ads_subtitle:I = 0x7f112222
+.field public static final wallet_home_navigation_crypto:I = 0x7f11223b
 
-.field public static final wallet_internal_point_ads_title:I = 0x7f112223
+.field public static final wallet_home_navigation_services:I = 0x7f11223c
 
-.field public static final wallet_internal_point_basic_services:I = 0x7f112224
+.field public static final wallet_import_alert_text:I = 0x7f11223d
 
-.field public static final wallet_internal_point_channels_catalog_subtitle:I = 0x7f112225
+.field public static final wallet_import_alert_title:I = 0x7f11223e
 
-.field public static final wallet_internal_point_channels_catalog_title:I = 0x7f112226
+.field public static final wallet_import_change_words_count:I = 0x7f11223f
 
-.field public static final wallet_internal_point_neurobots_store_subtitle:I = 0x7f112227
+.field public static final wallet_import_change_words_count_dialog_title:I = 0x7f112240
 
-.field public static final wallet_internal_point_neurobots_store_title:I = 0x7f112228
+.field public static final wallet_import_dont_have:I = 0x7f112241
 
-.field public static final wallet_internal_point_premium_account_subtitle:I = 0x7f112229
+.field public static final wallet_import_info:I = 0x7f112242
 
-.field public static final wallet_internal_point_premium_account_title:I = 0x7f11222a
+.field public static final wallet_import_paste:I = 0x7f112243
 
-.field public static final wallet_internal_point_staking_subtitle:I = 0x7f11222b
+.field public static final wallet_import_perfect:I = 0x7f112244
 
-.field public static final wallet_internal_point_staking_title:I = 0x7f11222c
+.field public static final wallet_import_perfect_info:I = 0x7f112245
 
-.field public static final wallet_internal_point_subscriptions:I = 0x7f11222d
+.field public static final wallet_import_perfect_set_passcode:I = 0x7f112246
 
-.field public static final wallet_navigation_exchange:I = 0x7f11222e
+.field public static final wallet_import_secret_words:I = 0x7f112247
 
-.field public static final wallet_navigation_settings:I = 0x7f11222f
+.field public static final wallet_import_too_bad:I = 0x7f112248
 
-.field public static final wallet_navigation_transactions:I = 0x7f112230
+.field public static final wallet_import_too_bad_create:I = 0x7f112249
 
-.field public static final wallet_navigation_wallet:I = 0x7f112231
+.field public static final wallet_import_too_bad_enter:I = 0x7f11224a
 
-.field public static final wallet_network_scanner_bitcoin:I = 0x7f112232
+.field public static final wallet_import_too_bad_info:I = 0x7f11224b
 
-.field public static final wallet_network_scanner_bsc:I = 0x7f112233
+.field public static final wallet_import_words_count:I = 0x7f11224c
 
-.field public static final wallet_network_scanner_eth:I = 0x7f112234
+.field public static final wallet_internal_point_ads_subtitle:I = 0x7f11224d
 
-.field public static final wallet_network_scanner_fantom:I = 0x7f112235
+.field public static final wallet_internal_point_ads_title:I = 0x7f11224e
 
-.field public static final wallet_network_scanner_polygon:I = 0x7f112236
+.field public static final wallet_internal_point_basic_services:I = 0x7f11224f
 
-.field public static final wallet_network_scanner_ton:I = 0x7f112237
+.field public static final wallet_internal_point_channels_catalog_subtitle:I = 0x7f112250
 
-.field public static final wallet_network_scanner_tron:I = 0x7f112238
+.field public static final wallet_internal_point_channels_catalog_title:I = 0x7f112251
 
-.field public static final wallet_network_type_bep20:I = 0x7f112239
+.field public static final wallet_internal_point_neurobots_store_subtitle:I = 0x7f112252
 
-.field public static final wallet_network_type_bitcoin:I = 0x7f11223a
+.field public static final wallet_internal_point_neurobots_store_title:I = 0x7f112253
 
-.field public static final wallet_network_type_bitcoin_short_name:I = 0x7f11223b
+.field public static final wallet_internal_point_premium_account_subtitle:I = 0x7f112254
 
-.field public static final wallet_network_type_bsc_short_name:I = 0x7f11223c
+.field public static final wallet_internal_point_premium_account_title:I = 0x7f112255
 
-.field public static final wallet_network_type_dialog_title:I = 0x7f11223d
+.field public static final wallet_internal_point_staking_subtitle:I = 0x7f112256
 
-.field public static final wallet_network_type_erc20:I = 0x7f11223e
+.field public static final wallet_internal_point_staking_title:I = 0x7f112257
 
-.field public static final wallet_network_type_eth_short_name:I = 0x7f11223f
+.field public static final wallet_internal_point_subscriptions:I = 0x7f112258
 
-.field public static final wallet_network_type_fantom:I = 0x7f112240
+.field public static final wallet_navigation_exchange:I = 0x7f112259
 
-.field public static final wallet_network_type_fantom_short_name:I = 0x7f112241
+.field public static final wallet_navigation_settings:I = 0x7f11225a
 
-.field public static final wallet_network_type_hint:I = 0x7f112242
+.field public static final wallet_navigation_transactions:I = 0x7f11225b
 
-.field public static final wallet_network_type_nft:I = 0x7f112243
+.field public static final wallet_navigation_wallet:I = 0x7f11225c
 
-.field public static final wallet_network_type_polygon:I = 0x7f112244
+.field public static final wallet_network_scanner_bitcoin:I = 0x7f11225d
 
-.field public static final wallet_network_type_polygon_short_name:I = 0x7f112245
+.field public static final wallet_network_scanner_bsc:I = 0x7f11225e
 
-.field public static final wallet_network_type_ton:I = 0x7f112246
+.field public static final wallet_network_scanner_eth:I = 0x7f11225f
 
-.field public static final wallet_network_type_ton_short_name:I = 0x7f112247
+.field public static final wallet_network_scanner_fantom:I = 0x7f112260
 
-.field public static final wallet_network_type_tron:I = 0x7f112248
+.field public static final wallet_network_scanner_polygon:I = 0x7f112261
 
-.field public static final wallet_network_type_tron_short_name:I = 0x7f112249
+.field public static final wallet_network_scanner_ton:I = 0x7f112262
 
-.field public static final wallet_notifications_success_mark_all_notification_as_read:I = 0x7f11224a
+.field public static final wallet_network_scanner_tron:I = 0x7f112263
 
-.field public static final wallet_notifications_toolbar_title:I = 0x7f11224b
+.field public static final wallet_network_type_bep20:I = 0x7f112264
 
-.field public static final wallet_operation_deposit:I = 0x7f11224c
+.field public static final wallet_network_type_bitcoin:I = 0x7f112265
 
-.field public static final wallet_operation_earn:I = 0x7f11224d
+.field public static final wallet_network_type_bitcoin_short_name:I = 0x7f112266
 
-.field public static final wallet_receive_dialog_btn_text:I = 0x7f11224e
+.field public static final wallet_network_type_bsc_short_name:I = 0x7f112267
 
-.field public static final wallet_receive_dialog_title:I = 0x7f11224f
+.field public static final wallet_network_type_dialog_search_empty:I = 0x7f112268
 
-.field public static final wallet_recipient_address_bsc_hint:I = 0x7f112250
+.field public static final wallet_network_type_dialog_search_hint:I = 0x7f112269
 
-.field public static final wallet_recipient_address_hint:I = 0x7f112251
+.field public static final wallet_network_type_dialog_title:I = 0x7f11226a
 
-.field public static final wallet_recipient_error_dialog_no_eth_address_description:I = 0x7f112252
+.field public static final wallet_network_type_erc20:I = 0x7f11226b
 
-.field public static final wallet_recipient_or_choose_title:I = 0x7f112253
+.field public static final wallet_network_type_eth_short_name:I = 0x7f11226c
 
-.field public static final wallet_recipient_request_permission_dialog_action_btn_text:I = 0x7f112254
+.field public static final wallet_network_type_fantom:I = 0x7f11226d
 
-.field public static final wallet_recipient_request_permission_dialog_description:I = 0x7f112255
+.field public static final wallet_network_type_fantom_short_name:I = 0x7f11226e
 
-.field public static final wallet_recipient_request_permission_dialog_title:I = 0x7f112256
+.field public static final wallet_network_type_hint:I = 0x7f11226f
 
-.field public static final wallet_recipient_request_permission_success_dialog_description:I = 0x7f112257
+.field public static final wallet_network_type_nft:I = 0x7f112270
 
-.field public static final wallet_recipient_request_permission_success_dialog_title:I = 0x7f112258
+.field public static final wallet_network_type_polygon:I = 0x7f112271
 
-.field public static final wallet_recipient_toolbar_title:I = 0x7f112259
+.field public static final wallet_network_type_polygon_short_name:I = 0x7f112272
 
-.field public static final wallet_recipient_validation_address_error:I = 0x7f11225a
+.field public static final wallet_network_type_ton:I = 0x7f112273
 
-.field public static final wallet_recipient_validation_chat_with_user_first_error:I = 0x7f11225b
+.field public static final wallet_network_type_ton_short_name:I = 0x7f112274
 
-.field public static final wallet_reset_all_description:I = 0x7f11225c
+.field public static final wallet_network_type_tron:I = 0x7f112275
 
-.field public static final wallet_reset_all_title:I = 0x7f11225d
+.field public static final wallet_network_type_tron_short_name:I = 0x7f112276
 
-.field public static final wallet_restore_address_eth_error:I = 0x7f11225e
+.field public static final wallet_notifications_success_mark_all_notification_as_read:I = 0x7f112277
 
-.field public static final wallet_restore_eth_error:I = 0x7f11225f
+.field public static final wallet_notifications_toolbar_title:I = 0x7f112278
 
-.field public static final wallet_restore_eth_submit_import_btn:I = 0x7f112260
+.field public static final wallet_operation_deposit:I = 0x7f112279
 
-.field public static final wallet_restore_eth_submit_restore_btn:I = 0x7f112261
+.field public static final wallet_operation_earn:I = 0x7f11227a
 
-.field public static final wallet_restore_eth_title:I = 0x7f112262
+.field public static final wallet_pin_code_change_success:I = 0x7f11227b
 
-.field public static final wallet_restore_eth_toolbar_title:I = 0x7f112263
+.field public static final wallet_receive_dialog_btn_text:I = 0x7f11227c
 
-.field public static final wallet_settings_eth_account_title:I = 0x7f112264
+.field public static final wallet_receive_dialog_title:I = 0x7f11227d
 
-.field public static final wallet_settings_help_title:I = 0x7f112265
+.field public static final wallet_recipient_address_bsc_hint:I = 0x7f11227e
 
-.field public static final wallet_settings_interface:I = 0x7f112266
+.field public static final wallet_recipient_address_hint:I = 0x7f11227f
 
-.field public static final wallet_settings_interface_banners:I = 0x7f112267
+.field public static final wallet_recipient_error_dialog_no_eth_address_description:I = 0x7f112280
 
-.field public static final wallet_settings_interface_banners_description:I = 0x7f112268
+.field public static final wallet_recipient_or_choose_title:I = 0x7f112281
 
-.field public static final wallet_settings_interface_quotations:I = 0x7f112269
+.field public static final wallet_recipient_request_permission_dialog_action_btn_text:I = 0x7f112282
 
-.field public static final wallet_settings_interface_quotations_description:I = 0x7f11226a
+.field public static final wallet_recipient_request_permission_dialog_description:I = 0x7f112283
 
-.field public static final wallet_settings_interface_title:I = 0x7f11226b
+.field public static final wallet_recipient_request_permission_dialog_title:I = 0x7f112284
 
-.field public static final wallet_settings_pin_code_change:I = 0x7f11226c
+.field public static final wallet_recipient_request_permission_success_dialog_description:I = 0x7f112285
 
-.field public static final wallet_settings_pin_code_subtitle:I = 0x7f11226d
+.field public static final wallet_recipient_request_permission_success_dialog_title:I = 0x7f112286
 
-.field public static final wallet_settings_pin_code_title:I = 0x7f11226e
+.field public static final wallet_recipient_toolbar_title:I = 0x7f112287
 
-.field public static final wallet_settings_toolbar_title:I = 0x7f11226f
+.field public static final wallet_recipient_validation_address_error:I = 0x7f112288
 
-.field public static final wallet_swap_centralized_exchanges_header_title:I = 0x7f112270
+.field public static final wallet_recipient_validation_chat_with_user_first_error:I = 0x7f112289
 
-.field public static final wallet_swap_intro_description:I = 0x7f112271
+.field public static final wallet_reset_all_description:I = 0x7f11228a
 
-.field public static final wallet_swap_intro_title:I = 0x7f112272
+.field public static final wallet_reset_all_title:I = 0x7f11228b
 
-.field public static final wallet_swap_process_approve_info_not_loaded_yet_validation:I = 0x7f112273
+.field public static final wallet_restore_address_eth_error:I = 0x7f11228c
 
-.field public static final wallet_swap_process_approve_success_description:I = 0x7f112274
+.field public static final wallet_restore_eth_error:I = 0x7f11228d
 
-.field public static final wallet_swap_process_approve_success_title:I = 0x7f112275
+.field public static final wallet_restore_eth_submit_import_btn:I = 0x7f11228e
 
-.field public static final wallet_swap_process_button_approve:I = 0x7f112276
+.field public static final wallet_restore_eth_submit_restore_btn:I = 0x7f11228f
 
-.field public static final wallet_swap_process_button_approving:I = 0x7f112277
+.field public static final wallet_restore_eth_title:I = 0x7f112290
 
-.field public static final wallet_swap_process_button_calculate:I = 0x7f112278
+.field public static final wallet_restore_eth_toolbar_title:I = 0x7f112291
 
-.field public static final wallet_swap_process_button_exchange:I = 0x7f112279
+.field public static final wallet_settings_eth_account_title:I = 0x7f112292
 
-.field public static final wallet_swap_process_confirm_approve_alert_action:I = 0x7f11227a
+.field public static final wallet_settings_help_title:I = 0x7f112293
 
-.field public static final wallet_swap_process_confirm_approve_alert_description:I = 0x7f11227b
+.field public static final wallet_settings_interface:I = 0x7f112294
 
-.field public static final wallet_swap_process_confirm_approve_alert_title:I = 0x7f11227c
+.field public static final wallet_settings_interface_banners:I = 0x7f112295
 
-.field public static final wallet_swap_process_confirm_swap_alert_action:I = 0x7f11227d
+.field public static final wallet_settings_interface_banners_description:I = 0x7f112296
 
-.field public static final wallet_swap_process_confirm_swap_alert_description:I = 0x7f11227e
+.field public static final wallet_settings_interface_quotations:I = 0x7f112297
 
-.field public static final wallet_swap_process_confirm_swap_alert_title:I = 0x7f11227f
+.field public static final wallet_settings_interface_quotations_description:I = 0x7f112298
 
-.field public static final wallet_swap_process_description:I = 0x7f112280
+.field public static final wallet_settings_interface_title:I = 0x7f112299
 
-.field public static final wallet_swap_process_diff_tokens_validation:I = 0x7f112281
+.field public static final wallet_settings_pin_code_change:I = 0x7f11229a
 
-.field public static final wallet_swap_process_fee_duration:I = 0x7f112282
+.field public static final wallet_settings_pin_code_subtitle:I = 0x7f11229b
 
-.field public static final wallet_swap_process_fee_duration_value:I = 0x7f112283
+.field public static final wallet_settings_pin_code_title:I = 0x7f11229c
 
-.field public static final wallet_swap_process_fee_price:I = 0x7f112284
+.field public static final wallet_settings_toolbar_title:I = 0x7f11229d
 
-.field public static final wallet_swap_process_fee_price_value:I = 0x7f112285
+.field public static final wallet_swap_centralized_exchanges_header_title:I = 0x7f11229e
 
-.field public static final wallet_swap_process_from_description:I = 0x7f112286
+.field public static final wallet_swap_intro_description:I = 0x7f11229f
 
-.field public static final wallet_swap_process_from_title:I = 0x7f112287
+.field public static final wallet_swap_intro_title:I = 0x7f1122a0
 
-.field public static final wallet_swap_process_give_token_amount_validation:I = 0x7f112288
+.field public static final wallet_swap_process_approve_info_not_loaded_yet_validation:I = 0x7f1122a1
 
-.field public static final wallet_swap_process_give_token_validation:I = 0x7f112289
+.field public static final wallet_swap_process_approve_success_description:I = 0x7f1122a2
 
-.field public static final wallet_swap_process_my_balance:I = 0x7f11228a
+.field public static final wallet_swap_process_approve_success_title:I = 0x7f1122a3
 
-.field public static final wallet_swap_process_receive_token_amount_validation:I = 0x7f11228b
+.field public static final wallet_swap_process_button_approve:I = 0x7f1122a4
 
-.field public static final wallet_swap_process_select_placeholder:I = 0x7f11228c
+.field public static final wallet_swap_process_button_approving:I = 0x7f1122a5
 
-.field public static final wallet_swap_process_select_token_header:I = 0x7f11228d
+.field public static final wallet_swap_process_button_calculate:I = 0x7f1122a6
 
-.field public static final wallet_swap_process_swap_success_description:I = 0x7f11228e
+.field public static final wallet_swap_process_button_exchange:I = 0x7f1122a7
 
-.field public static final wallet_swap_process_swap_success_title:I = 0x7f11228f
+.field public static final wallet_swap_process_confirm_approve_alert_action:I = 0x7f1122a8
 
-.field public static final wallet_swap_process_to_description:I = 0x7f112290
+.field public static final wallet_swap_process_confirm_approve_alert_description:I = 0x7f1122a9
 
-.field public static final wallet_swap_process_to_title:I = 0x7f112291
+.field public static final wallet_swap_process_confirm_approve_alert_title:I = 0x7f1122aa
 
-.field public static final wallet_swap_process_toolbar_title:I = 0x7f112292
+.field public static final wallet_swap_process_confirm_swap_alert_action:I = 0x7f1122ab
 
-.field public static final wallet_swap_process_what_is_approve:I = 0x7f112293
+.field public static final wallet_swap_process_confirm_swap_alert_description:I = 0x7f1122ac
 
-.field public static final wallet_swap_process_what_is_approve_dialog_description:I = 0x7f112294
+.field public static final wallet_swap_process_confirm_swap_alert_title:I = 0x7f1122ad
 
-.field public static final wallet_swap_protocols_1inch_description:I = 0x7f112295
+.field public static final wallet_swap_process_description:I = 0x7f1122ae
 
-.field public static final wallet_swap_protocols_1inch_long_description:I = 0x7f112296
+.field public static final wallet_swap_process_diff_tokens_validation:I = 0x7f1122af
 
-.field public static final wallet_swap_protocols_1inch_name:I = 0x7f112297
+.field public static final wallet_swap_process_fee_duration:I = 0x7f1122b0
 
-.field public static final wallet_swap_protocols_cross_chain_header_title:I = 0x7f112298
+.field public static final wallet_swap_process_fee_duration_value:I = 0x7f1122b1
 
-.field public static final wallet_swap_protocols_header_title:I = 0x7f112299
+.field public static final wallet_swap_process_fee_price:I = 0x7f1122b2
 
-.field public static final wallet_swap_protocols_pancake_swap_description:I = 0x7f11229a
+.field public static final wallet_swap_process_fee_price_value:I = 0x7f1122b3
 
-.field public static final wallet_swap_protocols_pancake_swap_long_description:I = 0x7f11229b
+.field public static final wallet_swap_process_from_description:I = 0x7f1122b4
 
-.field public static final wallet_swap_protocols_pancake_swap_name:I = 0x7f11229c
+.field public static final wallet_swap_process_from_title:I = 0x7f1122b5
 
-.field public static final wallet_swap_protocols_symbiosis_description:I = 0x7f11229d
+.field public static final wallet_swap_process_give_token_amount_validation:I = 0x7f1122b6
 
-.field public static final wallet_swap_protocols_symbiosis_long_description:I = 0x7f11229e
+.field public static final wallet_swap_process_give_token_validation:I = 0x7f1122b7
 
-.field public static final wallet_swap_protocols_symbiosis_name:I = 0x7f11229f
+.field public static final wallet_swap_process_my_balance:I = 0x7f1122b8
 
-.field public static final wallet_swap_protocols_uniswap_description:I = 0x7f1122a0
+.field public static final wallet_swap_process_receive_token_amount_validation:I = 0x7f1122b9
 
-.field public static final wallet_swap_protocols_uniswap_name:I = 0x7f1122a1
+.field public static final wallet_swap_process_select_placeholder:I = 0x7f1122ba
 
-.field public static final wallet_swap_transaction_options_deadline:I = 0x7f1122a2
+.field public static final wallet_swap_process_select_token_header:I = 0x7f1122bb
 
-.field public static final wallet_swap_transaction_options_deadline_description:I = 0x7f1122a3
+.field public static final wallet_swap_process_swap_success_description:I = 0x7f1122bc
 
-.field public static final wallet_swap_transaction_options_deadline_header:I = 0x7f1122a4
+.field public static final wallet_swap_process_swap_success_title:I = 0x7f1122bd
 
-.field public static final wallet_swap_transaction_options_fee_fastest:I = 0x7f1122a5
+.field public static final wallet_swap_process_to_description:I = 0x7f1122be
 
-.field public static final wallet_swap_transaction_options_fee_header:I = 0x7f1122a6
+.field public static final wallet_swap_process_to_title:I = 0x7f1122bf
 
-.field public static final wallet_swap_transaction_options_fee_low:I = 0x7f1122a7
+.field public static final wallet_swap_process_toolbar_title:I = 0x7f1122c0
 
-.field public static final wallet_swap_transaction_options_fee_medium:I = 0x7f1122a8
+.field public static final wallet_swap_process_what_is_approve:I = 0x7f1122c1
 
-.field public static final wallet_swap_transaction_options_slip:I = 0x7f1122a9
+.field public static final wallet_swap_process_what_is_approve_dialog_description:I = 0x7f1122c2
 
-.field public static final wallet_swap_transaction_options_slip_description:I = 0x7f1122aa
+.field public static final wallet_swap_protocols_1inch_description:I = 0x7f1122c3
 
-.field public static final wallet_swap_transaction_options_slip_header:I = 0x7f1122ab
+.field public static final wallet_swap_protocols_1inch_long_description:I = 0x7f1122c4
 
-.field public static final wallet_swap_transaction_options_toolbar_title:I = 0x7f1122ac
+.field public static final wallet_swap_protocols_1inch_name:I = 0x7f1122c5
 
-.field public static final wallet_token_details_action_ask_transfer:I = 0x7f1122ad
+.field public static final wallet_swap_protocols_cross_chain_header_title:I = 0x7f1122c6
 
-.field public static final wallet_token_details_action_buy:I = 0x7f1122ae
+.field public static final wallet_swap_protocols_header_title:I = 0x7f1122c7
 
-.field public static final wallet_token_details_action_copy_address:I = 0x7f1122af
+.field public static final wallet_swap_protocols_pancake_swap_description:I = 0x7f1122c8
 
-.field public static final wallet_token_details_action_copy_order_id:I = 0x7f1122b0
+.field public static final wallet_swap_protocols_pancake_swap_long_description:I = 0x7f1122c9
 
-.field public static final wallet_token_details_action_exchange:I = 0x7f1122b1
+.field public static final wallet_swap_protocols_pancake_swap_name:I = 0x7f1122ca
 
-.field public static final wallet_token_details_action_receive:I = 0x7f1122b2
+.field public static final wallet_swap_protocols_symbiosis_description:I = 0x7f1122cb
 
-.field public static final wallet_token_details_action_referral:I = 0x7f1122b3
+.field public static final wallet_swap_protocols_symbiosis_long_description:I = 0x7f1122cc
 
-.field public static final wallet_token_details_action_simplex_support:I = 0x7f1122b4
+.field public static final wallet_swap_protocols_symbiosis_name:I = 0x7f1122cd
 
-.field public static final wallet_token_details_binance_website:I = 0x7f1122b5
+.field public static final wallet_swap_protocols_uniswap_description:I = 0x7f1122ce
 
-.field public static final wallet_token_details_description_action:I = 0x7f1122b6
+.field public static final wallet_swap_protocols_uniswap_name:I = 0x7f1122cf
 
-.field public static final wallet_token_details_details_action_send:I = 0x7f1122b7
+.field public static final wallet_swap_transaction_options_deadline:I = 0x7f1122d0
 
-.field public static final wallet_token_details_distribution_action:I = 0x7f1122b8
+.field public static final wallet_swap_transaction_options_deadline_description:I = 0x7f1122d1
 
-.field public static final wallet_token_details_eth_description_website:I = 0x7f1122b9
+.field public static final wallet_swap_transaction_options_deadline_header:I = 0x7f1122d2
 
-.field public static final wallet_token_details_eth_website:I = 0x7f1122ba
+.field public static final wallet_swap_transaction_options_fee_fastest:I = 0x7f1122d3
 
-.field public static final wallet_token_details_internal_point_website:I = 0x7f1122bb
+.field public static final wallet_swap_transaction_options_fee_header:I = 0x7f1122d4
 
-.field public static final wallet_token_details_lime_description_website:I = 0x7f1122bc
+.field public static final wallet_swap_transaction_options_fee_low:I = 0x7f1122d5
 
-.field public static final wallet_token_details_site_action:I = 0x7f1122bd
+.field public static final wallet_swap_transaction_options_fee_medium:I = 0x7f1122d6
 
-.field public static final wallet_token_details_transactions:I = 0x7f1122be
+.field public static final wallet_swap_transaction_options_slip:I = 0x7f1122d7
 
-.field public static final wallet_token_details_transactions_all:I = 0x7f1122bf
+.field public static final wallet_swap_transaction_options_slip_description:I = 0x7f1122d8
 
-.field public static final wallet_token_details_transactions_incoming:I = 0x7f1122c0
+.field public static final wallet_swap_transaction_options_slip_header:I = 0x7f1122d9
 
-.field public static final wallet_token_details_transactions_outgoing:I = 0x7f1122c1
+.field public static final wallet_swap_transaction_options_toolbar_title:I = 0x7f1122da
 
-.field public static final wallet_token_details_transactions_swap:I = 0x7f1122c2
+.field public static final wallet_token_details_action_ask_transfer:I = 0x7f1122db
 
-.field public static final wallet_ton_address_v3r2:I = 0x7f1122c3
+.field public static final wallet_token_details_action_buy:I = 0x7f1122dc
 
-.field public static final wallet_transaction_details_action_boost:I = 0x7f1122c4
+.field public static final wallet_token_details_action_copy_address:I = 0x7f1122dd
 
-.field public static final wallet_transaction_details_action_cancel:I = 0x7f1122c5
+.field public static final wallet_token_details_action_copy_order_id:I = 0x7f1122de
 
-.field public static final wallet_transaction_details_action_copy_address:I = 0x7f1122c6
+.field public static final wallet_token_details_action_exchange:I = 0x7f1122df
 
-.field public static final wallet_transaction_details_action_copy_hash:I = 0x7f1122c7
+.field public static final wallet_token_details_action_receive:I = 0x7f1122e0
 
-.field public static final wallet_transaction_details_action_copy_user_id:I = 0x7f1122c8
+.field public static final wallet_token_details_action_referral:I = 0x7f1122e1
 
-.field public static final wallet_transaction_details_action_open_etherscan:I = 0x7f1122c9
+.field public static final wallet_token_details_action_simplex_support:I = 0x7f1122e2
 
-.field public static final wallet_transaction_details_action_open_profile:I = 0x7f1122ca
+.field public static final wallet_token_details_binance_website:I = 0x7f1122e3
 
-.field public static final wallet_transaction_details_action_view_smart_contract:I = 0x7f1122cb
+.field public static final wallet_token_details_description_action:I = 0x7f1122e4
 
-.field public static final wallet_transaction_details_comment_title:I = 0x7f1122cc
+.field public static final wallet_token_details_details_action_send:I = 0x7f1122e5
 
-.field public static final wallet_transaction_details_date_title:I = 0x7f1122cd
+.field public static final wallet_token_details_distribution_action:I = 0x7f1122e6
 
-.field public static final wallet_transaction_details_fee_title:I = 0x7f1122ce
+.field public static final wallet_token_details_eth_description_website:I = 0x7f1122e7
 
-.field public static final wallet_transaction_details_processing_title:I = 0x7f1122cf
+.field public static final wallet_token_details_eth_website:I = 0x7f1122e8
 
-.field public static final wallet_transaction_details_recipient_title:I = 0x7f1122d0
+.field public static final wallet_token_details_internal_point_website:I = 0x7f1122e9
 
-.field public static final wallet_transaction_details_section_actions:I = 0x7f1122d1
+.field public static final wallet_token_details_lime_description_website:I = 0x7f1122ea
 
-.field public static final wallet_transaction_details_section_info:I = 0x7f1122d2
+.field public static final wallet_token_details_site_action:I = 0x7f1122eb
 
-.field public static final wallet_transaction_details_sender:I = 0x7f1122d3
+.field public static final wallet_token_details_token_information:I = 0x7f1122ec
 
-.field public static final wallet_transaction_details_sender_bonus:I = 0x7f1122d4
+.field public static final wallet_token_details_transactions:I = 0x7f1122ed
 
-.field public static final wallet_transaction_details_sender_referral:I = 0x7f1122d5
+.field public static final wallet_token_details_transactions_all:I = 0x7f1122ee
 
-.field public static final wallet_transaction_details_sender_title:I = 0x7f1122d6
+.field public static final wallet_token_details_transactions_incoming:I = 0x7f1122ef
 
-.field public static final wallet_transaction_details_simplex_order_id_title:I = 0x7f1122d7
+.field public static final wallet_token_details_transactions_outgoing:I = 0x7f1122f0
 
-.field public static final wallet_transaction_details_status_title:I = 0x7f1122d8
+.field public static final wallet_token_details_transactions_swap:I = 0x7f1122f1
 
-.field public static final wallet_transaction_details_transaction_hash_title:I = 0x7f1122d9
+.field public static final wallet_token_family_description:I = 0x7f1122f2
 
-.field public static final wallet_transactions_header:I = 0x7f1122da
+.field public static final wallet_token_family_title:I = 0x7f1122f3
 
-.field public static final wallet_transactions_toolbar_title:I = 0x7f1122db
+.field public static final wallet_token_settings_add_custom_tokens:I = 0x7f1122f4
 
-.field public static final wallet_transactions_type_1inch_title:I = 0x7f1122dc
+.field public static final wallet_token_settings_displayed_tokens:I = 0x7f1122f5
 
-.field public static final wallet_transactions_type_approve_title:I = 0x7f1122dd
+.field public static final wallet_tokens_management_add_success:I = 0x7f1122f6
 
-.field public static final wallet_transactions_type_cancel_title:I = 0x7f1122de
+.field public static final wallet_tokens_management_decimals:I = 0x7f1122f7
 
-.field public static final wallet_transactions_type_cancelled_title:I = 0x7f1122df
+.field public static final wallet_tokens_management_delete_description:I = 0x7f1122f8
 
-.field public static final wallet_transactions_type_in_app_purchase_title:I = 0x7f1122e0
+.field public static final wallet_tokens_management_delete_success:I = 0x7f1122f9
 
-.field public static final wallet_transactions_type_lottery_title:I = 0x7f1122e1
+.field public static final wallet_tokens_management_delete_title:I = 0x7f1122fa
 
-.field public static final wallet_transactions_type_pancakeswap_title:I = 0x7f1122e2
+.field public static final wallet_tokens_management_enable_description:I = 0x7f1122fb
 
-.field public static final wallet_transactions_type_referral_title:I = 0x7f1122e3
+.field public static final wallet_tokens_management_enable_title:I = 0x7f1122fc
 
-.field public static final wallet_transactions_type_refund_title:I = 0x7f1122e4
+.field public static final wallet_tokens_management_icon:I = 0x7f1122fd
 
-.field public static final wallet_transactions_type_simplex_amount_value:I = 0x7f1122e5
+.field public static final wallet_tokens_management_import_confirmation_description:I = 0x7f1122fe
 
-.field public static final wallet_transactions_type_simplex_title:I = 0x7f1122e6
+.field public static final wallet_tokens_management_import_confirmation_import:I = 0x7f1122ff
 
-.field public static final wallet_transactions_type_symbiosis_title:I = 0x7f1122e7
+.field public static final wallet_tokens_management_import_confirmation_title:I = 0x7f112300
 
-.field public static final wallet_transactions_type_uniswap_title:I = 0x7f1122e8
+.field public static final wallet_tokens_management_import_token:I = 0x7f112301
 
-.field public static final wallet_transactions_type_unsupported_title:I = 0x7f1122e9
+.field public static final wallet_tokens_management_name:I = 0x7f112302
 
-.field public static final wallet_transactions_type_welcome_title:I = 0x7f1122ea
+.field public static final wallet_tokens_management_symbol:I = 0x7f112303
 
-.field public static final wallet_transfer_comment_hint:I = 0x7f1122eb
+.field public static final wallet_tokens_management_title_details:I = 0x7f112304
 
-.field public static final wallet_transfer_comment_title:I = 0x7f1122ec
+.field public static final wallet_tokens_management_title_import:I = 0x7f112305
 
-.field public static final wallet_unsupported_transaction_message:I = 0x7f1122ed
+.field public static final wallet_tokens_management_token_address:I = 0x7f112306
 
-.field public static final wallet_user_id_dialog_copy_id_action:I = 0x7f1122ee
+.field public static final wallet_tokens_management_token_address_invalid:I = 0x7f112307
 
-.field public static final wallet_user_id_dialog_go_to_profile_action:I = 0x7f1122ef
+.field public static final wallet_tokens_management_token_information:I = 0x7f112308
 
-.field public static final wallet_user_id_dialog_transfer_action:I = 0x7f1122f0
+.field public static final wallet_tokens_management_token_not_found:I = 0x7f112309
+
+.field public static final wallet_tokens_management_token_safety:I = 0x7f11230a
+
+.field public static final wallet_tokens_management_verified_few:I = 0x7f11230b
+
+.field public static final wallet_tokens_management_verified_many:I = 0x7f11230c
+
+.field public static final wallet_tokens_management_verified_one:I = 0x7f11230d
+
+.field public static final wallet_tokens_management_verified_other:I = 0x7f11230e
+
+.field public static final wallet_tokens_management_verified_two:I = 0x7f11230f
+
+.field public static final wallet_tokens_management_verified_zero:I = 0x7f112310
+
+.field public static final wallet_ton_address_v3r2:I = 0x7f112311
+
+.field public static final wallet_transaction_details_action_boost:I = 0x7f112312
+
+.field public static final wallet_transaction_details_action_cancel:I = 0x7f112313
+
+.field public static final wallet_transaction_details_action_copy_address:I = 0x7f112314
+
+.field public static final wallet_transaction_details_action_copy_hash:I = 0x7f112315
+
+.field public static final wallet_transaction_details_action_copy_user_id:I = 0x7f112316
+
+.field public static final wallet_transaction_details_action_open_etherscan:I = 0x7f112317
+
+.field public static final wallet_transaction_details_action_open_profile:I = 0x7f112318
+
+.field public static final wallet_transaction_details_action_view_smart_contract:I = 0x7f112319
+
+.field public static final wallet_transaction_details_comment_title:I = 0x7f11231a
+
+.field public static final wallet_transaction_details_date_title:I = 0x7f11231b
+
+.field public static final wallet_transaction_details_fee_title:I = 0x7f11231c
+
+.field public static final wallet_transaction_details_processing_title:I = 0x7f11231d
+
+.field public static final wallet_transaction_details_recipient_title:I = 0x7f11231e
+
+.field public static final wallet_transaction_details_section_actions:I = 0x7f11231f
+
+.field public static final wallet_transaction_details_section_info:I = 0x7f112320
+
+.field public static final wallet_transaction_details_sender:I = 0x7f112321
+
+.field public static final wallet_transaction_details_sender_bonus:I = 0x7f112322
+
+.field public static final wallet_transaction_details_sender_referral:I = 0x7f112323
+
+.field public static final wallet_transaction_details_sender_title:I = 0x7f112324
+
+.field public static final wallet_transaction_details_simplex_order_id_title:I = 0x7f112325
+
+.field public static final wallet_transaction_details_status_title:I = 0x7f112326
+
+.field public static final wallet_transaction_details_transaction_hash_title:I = 0x7f112327
+
+.field public static final wallet_transactions_header:I = 0x7f112328
+
+.field public static final wallet_transactions_toolbar_title:I = 0x7f112329
+
+.field public static final wallet_transactions_type_1inch_title:I = 0x7f11232a
+
+.field public static final wallet_transactions_type_approve_title:I = 0x7f11232b
+
+.field public static final wallet_transactions_type_cancel_title:I = 0x7f11232c
+
+.field public static final wallet_transactions_type_cancelled_title:I = 0x7f11232d
+
+.field public static final wallet_transactions_type_in_app_purchase_title:I = 0x7f11232e
+
+.field public static final wallet_transactions_type_lottery_title:I = 0x7f11232f
+
+.field public static final wallet_transactions_type_pancakeswap_title:I = 0x7f112330
+
+.field public static final wallet_transactions_type_referral_title:I = 0x7f112331
+
+.field public static final wallet_transactions_type_refund_title:I = 0x7f112332
+
+.field public static final wallet_transactions_type_simplex_amount_value:I = 0x7f112333
+
+.field public static final wallet_transactions_type_simplex_title:I = 0x7f112334
+
+.field public static final wallet_transactions_type_symbiosis_title:I = 0x7f112335
+
+.field public static final wallet_transactions_type_uniswap_title:I = 0x7f112336
+
+.field public static final wallet_transactions_type_unsupported_title:I = 0x7f112337
+
+.field public static final wallet_transactions_type_welcome_title:I = 0x7f112338
+
+.field public static final wallet_transfer_comment_hint:I = 0x7f112339
+
+.field public static final wallet_transfer_comment_title:I = 0x7f11233a
+
+.field public static final wallet_unsupported_transaction_message:I = 0x7f11233b
+
+.field public static final wallet_user_id_dialog_copy_id_action:I = 0x7f11233c
+
+.field public static final wallet_user_id_dialog_go_to_profile_action:I = 0x7f11233d
+
+.field public static final wallet_user_id_dialog_transfer_action:I = 0x7f11233e
 
 
 # direct methods

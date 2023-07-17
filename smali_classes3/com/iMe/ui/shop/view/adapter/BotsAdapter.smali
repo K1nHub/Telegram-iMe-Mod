@@ -296,25 +296,15 @@
 
     move-result-object v1
 
-    iget-object v2, p1, Lorg/telegram/messenger/databinding/ForkShopItemListBinding;->botAvatar:Landroid/widget/ImageView;
-
-    invoke-virtual {v2}, Landroid/widget/ImageView;->getContext()Landroid/content/Context;
-
-    move-result-object v2
-
-    const-string v3, "botAvatar.context"
-
-    invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    const/4 v2, 0x0
 
     const/4 v3, 0x0
 
-    const/4 v4, 0x0
+    const/4 v4, 0x6
 
-    const/16 v5, 0xc
+    const/4 v5, 0x0
 
-    const/4 v6, 0x0
-
-    invoke-static/range {v0 .. v6}, Lcom/iMe/utils/extentions/common/ImageViewExtKt;->loadFrom$default(Landroid/widget/ImageView;Ljava/lang/String;Landroid/content/Context;Landroid/graphics/drawable/Drawable;ZILjava/lang/Object;)V
+    invoke-static/range {v0 .. v5}, Lcom/iMe/utils/extentions/common/ImageViewExtKt;->loadFrom$default(Landroid/widget/ImageView;Ljava/lang/String;Ljava/lang/Integer;ZILjava/lang/Object;)V
 
     .line 47
     iget-object v0, p1, Lorg/telegram/messenger/databinding/ForkShopItemListBinding;->botName:Landroid/widget/TextView;

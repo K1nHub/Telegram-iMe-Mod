@@ -4,8 +4,8 @@ import java.util.AbstractList;
 import java.util.List;
 import java.util.ListIterator;
 import java.util.RandomAccess;
-import p034j$.util.Iterator;
-import p034j$.util.function.Consumer;
+import p033j$.util.Iterator;
+import p033j$.util.function.Consumer;
 /* loaded from: classes3.dex */
 public class UnmodifiableLazyStringList extends AbstractList<String> implements LazyStringList, RandomAccess {
     private final LazyStringList list;
@@ -41,26 +41,26 @@ public class UnmodifiableLazyStringList extends AbstractList<String> implements 
 
     /* renamed from: com.google.protobuf.UnmodifiableLazyStringList$1 */
     /* loaded from: classes3.dex */
-    class C12101 implements ListIterator<String>, Iterator {
+    class C12151 implements ListIterator<String>, Iterator {
         ListIterator<String> iter;
         final /* synthetic */ int val$index;
 
-        @Override // p034j$.util.Iterator
+        @Override // p033j$.util.Iterator
         public /* synthetic */ void forEachRemaining(Consumer consumer) {
             Iterator.CC.$default$forEachRemaining(this, consumer);
         }
 
-        C12101(int i) {
+        C12151(int i) {
             this.val$index = i;
             this.iter = UnmodifiableLazyStringList.this.list.listIterator(i);
         }
 
-        @Override // java.util.ListIterator, java.util.Iterator, p034j$.util.Iterator
+        @Override // java.util.ListIterator, java.util.Iterator, p033j$.util.Iterator
         public boolean hasNext() {
             return this.iter.hasNext();
         }
 
-        @Override // java.util.ListIterator, java.util.Iterator, p034j$.util.Iterator
+        @Override // java.util.ListIterator, java.util.Iterator, p033j$.util.Iterator
         public String next() {
             return this.iter.next();
         }
@@ -85,7 +85,7 @@ public class UnmodifiableLazyStringList extends AbstractList<String> implements 
             return this.iter.previousIndex();
         }
 
-        @Override // java.util.ListIterator, java.util.Iterator, p034j$.util.Iterator
+        @Override // java.util.ListIterator, java.util.Iterator, p033j$.util.Iterator
         public void remove() {
             throw new UnsupportedOperationException();
         }
@@ -103,34 +103,34 @@ public class UnmodifiableLazyStringList extends AbstractList<String> implements 
 
     @Override // java.util.AbstractList, java.util.List
     public ListIterator<String> listIterator(int i) {
-        return new C12101(i);
+        return new C12151(i);
     }
 
     /* renamed from: com.google.protobuf.UnmodifiableLazyStringList$2 */
     /* loaded from: classes3.dex */
-    class C12112 implements java.util.Iterator<String>, Iterator {
+    class C12162 implements java.util.Iterator<String>, Iterator {
         java.util.Iterator<String> iter;
 
-        @Override // p034j$.util.Iterator
+        @Override // p033j$.util.Iterator
         public /* synthetic */ void forEachRemaining(Consumer consumer) {
             Iterator.CC.$default$forEachRemaining(this, consumer);
         }
 
-        C12112() {
+        C12162() {
             this.iter = UnmodifiableLazyStringList.this.list.iterator();
         }
 
-        @Override // java.util.Iterator, p034j$.util.Iterator
+        @Override // java.util.Iterator, p033j$.util.Iterator
         public boolean hasNext() {
             return this.iter.hasNext();
         }
 
-        @Override // java.util.Iterator, p034j$.util.Iterator
+        @Override // java.util.Iterator, p033j$.util.Iterator
         public String next() {
             return this.iter.next();
         }
 
-        @Override // java.util.Iterator, p034j$.util.Iterator
+        @Override // java.util.Iterator, p033j$.util.Iterator
         public void remove() {
             throw new UnsupportedOperationException();
         }
@@ -138,7 +138,7 @@ public class UnmodifiableLazyStringList extends AbstractList<String> implements 
 
     @Override // java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.List
     public java.util.Iterator<String> iterator() {
-        return new C12112();
+        return new C12162();
     }
 
     @Override // com.google.protobuf.LazyStringList

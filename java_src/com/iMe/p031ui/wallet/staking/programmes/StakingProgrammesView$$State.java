@@ -7,6 +7,7 @@ import com.iMe.p031ui.base.mvp.base.BaseView;
 import com.iMe.storage.domain.model.Result;
 import com.iMe.storage.domain.model.crypto.level.AccountLevel;
 import com.iMe.storage.domain.model.wallet.staking.StakingOrderType;
+import com.iMe.storage.domain.model.wallet.token.TokenDetailed;
 import com.iMe.storage.domain.utils.system.ResourceManager;
 import io.reactivex.disposables.Disposable;
 import java.util.List;
@@ -20,6 +21,11 @@ public class StakingProgrammesView$$State extends MvpViewState<StakingProgrammes
     @Override // com.iMe.p031ui.base.mvp.base.BaseView
     public /* synthetic */ void finishScreen() {
         BaseView.CC.$default$finishScreen(this);
+    }
+
+    @Override // com.iMe.p031ui.base.mvp.base.BaseView
+    public /* synthetic */ void removeSelfFromStackImmediately() {
+        BaseView.CC.$default$removeSelfFromStackImmediately(this);
     }
 
     @Override // com.iMe.p031ui.base.mvp.LoadMoreView
@@ -67,14 +73,14 @@ public class StakingProgrammesView$$State extends MvpViewState<StakingProgrammes
     }
 
     @Override // com.iMe.p031ui.wallet.staking.programmes.StakingProgrammesView
-    public void showLevelRequiredDialog(AccountLevel accountLevel) {
-        ShowLevelRequiredDialogCommand showLevelRequiredDialogCommand = new ShowLevelRequiredDialogCommand(this, accountLevel);
+    public void showLevelRequiredDialog(AccountLevel accountLevel, TokenDetailed tokenDetailed) {
+        ShowLevelRequiredDialogCommand showLevelRequiredDialogCommand = new ShowLevelRequiredDialogCommand(this, accountLevel, tokenDetailed);
         this.viewCommands.beforeApply(showLevelRequiredDialogCommand);
         if (hasNotView().booleanValue()) {
             return;
         }
         for (View view : this.views) {
-            view.showLevelRequiredDialog(accountLevel);
+            view.showLevelRequiredDialog(accountLevel, tokenDetailed);
         }
         this.viewCommands.afterApply(showLevelRequiredDialogCommand);
     }
@@ -213,15 +219,17 @@ public class StakingProgrammesView$$State extends MvpViewState<StakingProgrammes
     /* loaded from: classes4.dex */
     public class ShowLevelRequiredDialogCommand extends ViewCommand<StakingProgrammesView> {
         public final AccountLevel minimalRank;
+        public final TokenDetailed token;
 
-        ShowLevelRequiredDialogCommand(StakingProgrammesView$$State stakingProgrammesView$$State, AccountLevel accountLevel) {
+        ShowLevelRequiredDialogCommand(StakingProgrammesView$$State stakingProgrammesView$$State, AccountLevel accountLevel, TokenDetailed tokenDetailed) {
             super("showLevelRequiredDialog", OneExecutionStateStrategy.class);
             this.minimalRank = accountLevel;
+            this.token = tokenDetailed;
         }
 
         @Override // moxy.viewstate.ViewCommand
         public void apply(StakingProgrammesView stakingProgrammesView) {
-            stakingProgrammesView.showLevelRequiredDialog(this.minimalRank);
+            stakingProgrammesView.showLevelRequiredDialog(this.minimalRank, this.token);
         }
     }
 

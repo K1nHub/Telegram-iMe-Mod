@@ -1,77 +1,43 @@
 package com.iMe.storage.domain.model.wallet.token;
 
-import com.google.android.gms.maps.model.BitmapDescriptorFactory;
-import com.iMe.storage.domain.model.crypto.NetworkType;
-import com.iMe.storage.domain.model.wallet.PriceRate;
+import com.iMe.storage.domain.model.wallet.token.FiatValue;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: TokenBalance.kt */
 /* loaded from: classes3.dex */
 public final class TokenBalance {
     public static final Companion Companion = new Companion(null);
-    private final TokenCode code;
-    private final TokenInfo info;
-    private final NetworkType networkType;
-    private final PriceRate priceRate;
+    private final double ratePercentageChange24h;
+    private final FiatValue rateToFiat;
+    private final TokenDetailed token;
     private final double total;
-    private final float totalInDollars;
+    private final FiatValue totalInFiat;
 
-    public static /* synthetic */ TokenBalance copy$default(TokenBalance tokenBalance, TokenCode tokenCode, double d, float f, TokenInfo tokenInfo, PriceRate priceRate, NetworkType networkType, int i, Object obj) {
-        if ((i & 1) != 0) {
-            tokenCode = tokenBalance.code;
-        }
-        if ((i & 2) != 0) {
-            d = tokenBalance.total;
-        }
-        double d2 = d;
-        if ((i & 4) != 0) {
-            f = tokenBalance.totalInDollars;
-        }
-        float f2 = f;
-        if ((i & 8) != 0) {
-            tokenInfo = tokenBalance.info;
-        }
-        TokenInfo tokenInfo2 = tokenInfo;
-        if ((i & 16) != 0) {
-            priceRate = tokenBalance.priceRate;
-        }
-        PriceRate priceRate2 = priceRate;
-        if ((i & 32) != 0) {
-            networkType = tokenBalance.networkType;
-        }
-        return tokenBalance.copy(tokenCode, d2, f2, tokenInfo2, priceRate2, networkType);
-    }
-
-    public final TokenCode component1() {
-        return this.code;
-    }
-
-    public final double component2() {
+    public final double component1() {
         return this.total;
     }
 
-    public final float component3() {
-        return this.totalInDollars;
+    public final FiatValue component2() {
+        return this.totalInFiat;
     }
 
-    public final TokenInfo component4() {
-        return this.info;
+    public final FiatValue component3() {
+        return this.rateToFiat;
     }
 
-    public final PriceRate component5() {
-        return this.priceRate;
+    public final double component4() {
+        return this.ratePercentageChange24h;
     }
 
-    public final NetworkType component6() {
-        return this.networkType;
+    public final TokenDetailed component5() {
+        return this.token;
     }
 
-    public final TokenBalance copy(TokenCode code, double d, float f, TokenInfo info, PriceRate priceRate, NetworkType networkType) {
-        Intrinsics.checkNotNullParameter(code, "code");
-        Intrinsics.checkNotNullParameter(info, "info");
-        Intrinsics.checkNotNullParameter(priceRate, "priceRate");
-        Intrinsics.checkNotNullParameter(networkType, "networkType");
-        return new TokenBalance(code, d, f, info, priceRate, networkType);
+    public final TokenBalance copy(double d, FiatValue totalInFiat, FiatValue rateToFiat, double d2, TokenDetailed token) {
+        Intrinsics.checkNotNullParameter(totalInFiat, "totalInFiat");
+        Intrinsics.checkNotNullParameter(rateToFiat, "rateToFiat");
+        Intrinsics.checkNotNullParameter(token, "token");
+        return new TokenBalance(d, totalInFiat, rateToFiat, d2, token);
     }
 
     public boolean equals(Object obj) {
@@ -80,54 +46,48 @@ public final class TokenBalance {
         }
         if (obj instanceof TokenBalance) {
             TokenBalance tokenBalance = (TokenBalance) obj;
-            return this.code == tokenBalance.code && Double.compare(this.total, tokenBalance.total) == 0 && Float.compare(this.totalInDollars, tokenBalance.totalInDollars) == 0 && Intrinsics.areEqual(this.info, tokenBalance.info) && Intrinsics.areEqual(this.priceRate, tokenBalance.priceRate) && this.networkType == tokenBalance.networkType;
+            return Double.compare(this.total, tokenBalance.total) == 0 && Intrinsics.areEqual(this.totalInFiat, tokenBalance.totalInFiat) && Intrinsics.areEqual(this.rateToFiat, tokenBalance.rateToFiat) && Double.compare(this.ratePercentageChange24h, tokenBalance.ratePercentageChange24h) == 0 && Intrinsics.areEqual(this.token, tokenBalance.token);
         }
         return false;
     }
 
     public int hashCode() {
-        return (((((((((this.code.hashCode() * 31) + Double.doubleToLongBits(this.total)) * 31) + Float.floatToIntBits(this.totalInDollars)) * 31) + this.info.hashCode()) * 31) + this.priceRate.hashCode()) * 31) + this.networkType.hashCode();
+        return (((((((Double.doubleToLongBits(this.total) * 31) + this.totalInFiat.hashCode()) * 31) + this.rateToFiat.hashCode()) * 31) + Double.doubleToLongBits(this.ratePercentageChange24h)) * 31) + this.token.hashCode();
     }
 
     public String toString() {
-        return "TokenBalance(code=" + this.code + ", total=" + this.total + ", totalInDollars=" + this.totalInDollars + ", info=" + this.info + ", priceRate=" + this.priceRate + ", networkType=" + this.networkType + ')';
+        return "TokenBalance(total=" + this.total + ", totalInFiat=" + this.totalInFiat + ", rateToFiat=" + this.rateToFiat + ", ratePercentageChange24h=" + this.ratePercentageChange24h + ", token=" + this.token + ')';
     }
 
-    public TokenBalance(TokenCode code, double d, float f, TokenInfo info, PriceRate priceRate, NetworkType networkType) {
-        Intrinsics.checkNotNullParameter(code, "code");
-        Intrinsics.checkNotNullParameter(info, "info");
-        Intrinsics.checkNotNullParameter(priceRate, "priceRate");
-        Intrinsics.checkNotNullParameter(networkType, "networkType");
-        this.code = code;
+    public TokenBalance(double d, FiatValue totalInFiat, FiatValue rateToFiat, double d2, TokenDetailed token) {
+        Intrinsics.checkNotNullParameter(totalInFiat, "totalInFiat");
+        Intrinsics.checkNotNullParameter(rateToFiat, "rateToFiat");
+        Intrinsics.checkNotNullParameter(token, "token");
         this.total = d;
-        this.totalInDollars = f;
-        this.info = info;
-        this.priceRate = priceRate;
-        this.networkType = networkType;
-    }
-
-    public final TokenCode getCode() {
-        return this.code;
+        this.totalInFiat = totalInFiat;
+        this.rateToFiat = rateToFiat;
+        this.ratePercentageChange24h = d2;
+        this.token = token;
     }
 
     public final double getTotal() {
         return this.total;
     }
 
-    public final float getTotalInDollars() {
-        return this.totalInDollars;
+    public final FiatValue getTotalInFiat() {
+        return this.totalInFiat;
     }
 
-    public final TokenInfo getInfo() {
-        return this.info;
+    public final FiatValue getRateToFiat() {
+        return this.rateToFiat;
     }
 
-    public final PriceRate getPriceRate() {
-        return this.priceRate;
+    public final double getRatePercentageChange24h() {
+        return this.ratePercentageChange24h;
     }
 
-    public final NetworkType getNetworkType() {
-        return this.networkType;
+    public final TokenDetailed getToken() {
+        return this.token;
     }
 
     /* compiled from: TokenBalance.kt */
@@ -140,9 +100,10 @@ public final class TokenBalance {
         private Companion() {
         }
 
-        public final TokenBalance createEmptyBalanceFor(TokenInfo info) {
-            Intrinsics.checkNotNullParameter(info, "info");
-            return new TokenBalance(info.getCode(), 0.0d, BitmapDescriptorFactory.HUE_RED, info, new PriceRate(0.0d, BitmapDescriptorFactory.HUE_RED), NetworkType.ETHEREUM);
+        public final TokenBalance createEmptyBalanceFor(TokenDetailed token) {
+            Intrinsics.checkNotNullParameter(token, "token");
+            FiatValue.Companion companion = FiatValue.Companion;
+            return new TokenBalance(0.0d, FiatValue.Companion.createUSDValue$default(companion, 0.0d, 1, null), FiatValue.Companion.createUSDValue$default(companion, 0.0d, 1, null), 0.0d, token);
         }
     }
 }

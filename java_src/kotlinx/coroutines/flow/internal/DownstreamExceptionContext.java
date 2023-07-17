@@ -8,7 +8,7 @@ public final class DownstreamExceptionContext implements CoroutineContext {
     private final /* synthetic */ CoroutineContext $$delegate_0;
 
     /* renamed from: e */
-    public final Throwable f1224e;
+    public final Throwable f1306e;
 
     @Override // kotlin.coroutines.CoroutineContext
     public <R> R fold(R r, Function2<? super R, ? super CoroutineContext.Element, ? extends R> function2) {
@@ -31,7 +31,7 @@ public final class DownstreamExceptionContext implements CoroutineContext {
     }
 
     public DownstreamExceptionContext(Throwable th, CoroutineContext coroutineContext) {
-        this.f1224e = th;
+        this.f1306e = th;
         this.$$delegate_0 = coroutineContext;
     }
 }

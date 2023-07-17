@@ -12,10 +12,6 @@
 
 .field public final synthetic f$10:Z
 
-.field public final synthetic f$11:Ljava/util/ArrayList;
-
-.field public final synthetic f$12:Ljava/util/HashMap;
-
 .field public final synthetic f$2:J
 
 .field public final synthetic f$3:Z
@@ -34,7 +30,7 @@
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/messenger/MessagesController;ZJZZLorg/telegram/tgnet/TLRPC$ChatFull;Ljava/util/ArrayList;Ljava/util/ArrayList;Ljava/util/HashMap;IZLjava/util/ArrayList;Ljava/util/HashMap;)V
+.method public synthetic constructor <init>(Lorg/telegram/messenger/MessagesController;ZJZZLorg/telegram/tgnet/TLRPC$ChatFull;Ljava/util/ArrayList;Ljava/util/ArrayList;Ljava/util/HashMap;IZ)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -61,17 +57,13 @@
 
     iput-boolean p12, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda232;->f$10:Z
 
-    iput-object p13, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda232;->f$11:Ljava/util/ArrayList;
-
-    iput-object p14, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda232;->f$12:Ljava/util/HashMap;
-
     return-void
 .end method
 
 
 # virtual methods
 .method public final run()V
-    .locals 14
+    .locals 12
 
     iget-object v0, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda232;->f$0:Lorg/telegram/messenger/MessagesController;
 
@@ -95,11 +87,7 @@
 
     iget-boolean v11, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda232;->f$10:Z
 
-    iget-object v12, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda232;->f$11:Ljava/util/ArrayList;
-
-    iget-object v13, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda232;->f$12:Ljava/util/HashMap;
-
-    invoke-static/range {v0 .. v13}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$-s2jsvYR_TAUa7aerUyY9LfG9Gk(Lorg/telegram/messenger/MessagesController;ZJZZLorg/telegram/tgnet/TLRPC$ChatFull;Ljava/util/ArrayList;Ljava/util/ArrayList;Ljava/util/HashMap;IZLjava/util/ArrayList;Ljava/util/HashMap;)V
+    invoke-static/range {v0 .. v11}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$ILuJ1_wWPpuPLcHCVyP2sHxuMn8(Lorg/telegram/messenger/MessagesController;ZJZZLorg/telegram/tgnet/TLRPC$ChatFull;Ljava/util/ArrayList;Ljava/util/ArrayList;Ljava/util/HashMap;IZ)V
 
     return-void
 .end method

@@ -1,27 +1,34 @@
 package com.iMe.p031ui.custom;
 
 import android.content.Context;
+import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
-import android.widget.TextView;
-import com.iMe.storage.domain.model.crypto.NetworkType;
-import com.iMe.storage.domain.utils.system.ResourceManager;
+import android.view.LayoutInflater;
+import android.widget.FrameLayout;
+import android.widget.LinearLayout;
+import androidx.appcompat.widget.AppCompatImageView;
+import androidx.appcompat.widget.AppCompatTextView;
+import com.iMe.storage.data.utils.crypto.NetworksHelper;
+import com.iMe.storage.domain.model.crypto.Network;
+import com.iMe.utils.extentions.common.ImageViewExtKt;
 import com.iMe.utils.extentions.common.ViewExtKt;
 import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
-import org.koin.core.Koin;
-import org.koin.core.component.KoinComponent;
-import org.koin.p043mp.KoinPlatformTools;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3295R;
-import org.telegram.p044ui.ActionBar.Theme;
+import org.telegram.messenger.C3417R;
+import org.telegram.messenger.databinding.ForkContentNetworkTypeBinding;
+import org.telegram.p043ui.ActionBar.Theme;
 /* compiled from: NetworkTypeView.kt */
 /* renamed from: com.iMe.ui.custom.NetworkTypeView */
 /* loaded from: classes3.dex */
-public final class NetworkTypeView extends TextView implements KoinComponent {
-    private NetworkType networkType;
-    private final Lazy resourceManager$delegate;
+public final class NetworkTypeView extends FrameLayout {
+    private final ForkContentNetworkTypeBinding binding;
+    private final Lazy cornerRadius$delegate;
+    private boolean isImmutable;
+    private Network network;
 
     static {
         new Companion(null);
@@ -37,45 +44,68 @@ public final class NetworkTypeView extends TextView implements KoinComponent {
         this(context, (i2 & 2) != 0 ? null : attributeSet, (i2 & 4) != 0 ? 0 : i);
     }
 
-    @Override // org.koin.core.component.KoinComponent
-    public Koin getKoin() {
-        return KoinComponent.DefaultImpls.getKoin(this);
-    }
-
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public NetworkTypeView(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
         Lazy lazy;
         Intrinsics.checkNotNullParameter(context, "context");
-        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new NetworkTypeView$special$$inlined$inject$default$1(this, null, null));
-        this.resourceManager$delegate = lazy;
-        this.networkType = NetworkType.BINANCE_SMART_CHAIN;
-        setTextSize(12.0f);
-        setGravity(17);
-        setIncludeFontPadding(false);
-        ViewExtKt.withMediumTypeface(this);
-        ViewExtKt.setVerticalPadding(this, 4);
-        ViewExtKt.setHorizontalPadding(this, 10);
-        setTag("network_type_view");
+        this.network = NetworksHelper.INSTANCE.getDefault();
+        ForkContentNetworkTypeBinding inflate = ForkContentNetworkTypeBinding.inflate(LayoutInflater.from(context));
+        Intrinsics.checkNotNullExpressionValue(inflate, "inflate(LayoutInflater.from(context))");
+        this.binding = inflate;
+        lazy = LazyKt__LazyJVMKt.lazy(NetworkTypeView$cornerRadius$2.INSTANCE);
+        this.cornerRadius$delegate = lazy;
+        setupView();
     }
 
-    private final ResourceManager getResourceManager() {
-        return (ResourceManager) this.resourceManager$delegate.getValue();
+    public final Network getNetwork() {
+        return this.network;
     }
 
-    public final NetworkType getNetworkType() {
-        return this.networkType;
-    }
-
-    public final void setNetworkType(NetworkType value) {
+    public final void setNetwork(Network value) {
         Intrinsics.checkNotNullParameter(value, "value");
-        this.networkType = value;
-        setBackground(Theme.createRoundRectDrawable(AndroidUtilities.m55dp(15.0f), getResourceManager().getColor(value.getBackgroundColor())));
-        setText(getResourceManager().getString(value.getTitleResId()));
-        setTextColor(getResourceManager().getColor(value.getTextColor()));
-        setCompoundDrawablesWithIntrinsicBounds(value.getSmallIcon(), 0, C3295R.C3297drawable.fork_ic_arrow_down_16, 0);
-        setCompoundDrawablePadding(AndroidUtilities.m54dp(4));
-        ViewExtKt.setCompoundDrawablesColor(this, getResourceManager().getColor(value.getTextColor()));
+        this.network = value;
+        updateView();
+    }
+
+    private final int getCornerRadius() {
+        return ((Number) this.cornerRadius$delegate.getValue()).intValue();
+    }
+
+    private final void updateView() {
+        Drawable createSimpleSelectorRoundRectDrawable;
+        ForkContentNetworkTypeBinding forkContentNetworkTypeBinding = this.binding;
+        LinearLayout root = forkContentNetworkTypeBinding.getRoot();
+        if (this.isImmutable) {
+            createSimpleSelectorRoundRectDrawable = Theme.createRoundRectDrawable(getCornerRadius(), Color.parseColor(this.network.getColorHex()));
+        } else {
+            createSimpleSelectorRoundRectDrawable = Theme.createSimpleSelectorRoundRectDrawable(getCornerRadius(), Color.parseColor(this.network.getColorHex()), 1090519039);
+        }
+        root.setBackground(createSimpleSelectorRoundRectDrawable);
+        AppCompatTextView updateView$lambda$2$lambda$1 = forkContentNetworkTypeBinding.textNetwork;
+        updateView$lambda$2$lambda$1.setText(this.network.getFullName());
+        if (!this.isImmutable) {
+            updateView$lambda$2$lambda$1.setCompoundDrawablesWithIntrinsicBounds(0, 0, C3417R.C3419drawable.fork_ic_arrow_down_16, 0);
+            updateView$lambda$2$lambda$1.setCompoundDrawablePadding(AndroidUtilities.m54dp(4));
+            Intrinsics.checkNotNullExpressionValue(updateView$lambda$2$lambda$1, "updateView$lambda$2$lambda$1");
+            ViewExtKt.setCompoundDrawablesColor(updateView$lambda$2$lambda$1, -1);
+        }
+        AppCompatImageView imageNetwork = forkContentNetworkTypeBinding.imageNetwork;
+        Intrinsics.checkNotNullExpressionValue(imageNetwork, "imageNetwork");
+        ImageViewExtKt.loadFrom$default(imageNetwork, this.network.getSmallLogoUrl(), null, false, 2, null);
+    }
+
+    private final void setupView() {
+        setupColors();
+        setTag("network_type_view");
+        addView(this.binding.getRoot());
+    }
+
+    private final void setupColors() {
+        AppCompatTextView setupColors$lambda$4$lambda$3 = this.binding.textNetwork;
+        setupColors$lambda$4$lambda$3.setTextColor(-1);
+        Intrinsics.checkNotNullExpressionValue(setupColors$lambda$4$lambda$3, "setupColors$lambda$4$lambda$3");
+        ViewExtKt.withMediumTypeface(setupColors$lambda$4$lambda$3);
     }
 
     /* compiled from: NetworkTypeView.kt */

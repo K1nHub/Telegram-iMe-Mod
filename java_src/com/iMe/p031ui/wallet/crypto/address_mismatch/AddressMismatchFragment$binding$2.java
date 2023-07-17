@@ -6,7 +6,7 @@ import kotlin.jvm.internal.Lambda;
 import org.telegram.messenger.databinding.ForkFragmentWalletEthAddressMismatchBinding;
 /* compiled from: AddressMismatchFragment.kt */
 /* renamed from: com.iMe.ui.wallet.crypto.address_mismatch.AddressMismatchFragment$binding$2 */
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 final class AddressMismatchFragment$binding$2 extends Lambda implements Function0<ForkFragmentWalletEthAddressMismatchBinding> {
     final /* synthetic */ AddressMismatchFragment this$0;
 

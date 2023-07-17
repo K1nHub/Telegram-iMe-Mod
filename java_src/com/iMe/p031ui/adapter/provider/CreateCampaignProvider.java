@@ -7,8 +7,8 @@ import com.iMe.model.catalog.CreateCampaignItem;
 import com.iMe.storage.domain.utils.system.ResourceManager;
 import com.iMe.utils.extentions.common.BaseQuickAdapterExtKt;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3295R;
-import org.telegram.p044ui.ActionBar.Theme;
+import org.telegram.messenger.C3417R;
+import org.telegram.p043ui.ActionBar.Theme;
 /* compiled from: CreateCampaignProvider.kt */
 /* renamed from: com.iMe.ui.adapter.provider.CreateCampaignProvider */
 /* loaded from: classes.dex */
@@ -21,7 +21,7 @@ public final class CreateCampaignProvider extends BaseNodeProvider<CreateCampaig
         Intrinsics.checkNotNullParameter(resourceManager, "resourceManager");
         this.resourceManager = resourceManager;
         this.itemViewType = IdFabric$ViewTypes.CATALOG_CREATE;
-        this.layoutId = C3295R.layout.fork_recycle_item_wallet_single_create_action;
+        this.layoutId = C3417R.layout.fork_recycle_item_wallet_single_create_action;
     }
 
     @Override // com.chad.library.adapter.base.provider.BaseItemProvider
@@ -38,9 +38,9 @@ public final class CreateCampaignProvider extends BaseNodeProvider<CreateCampaig
     public void convert(BaseViewHolder helper, CreateCampaignItem item) {
         Intrinsics.checkNotNullParameter(helper, "helper");
         Intrinsics.checkNotNullParameter(item, "item");
-        int i = C3295R.C3298id.card_empty_account;
+        int i = C3417R.C3420id.card_empty_account;
         BaseViewHolder foreground = BaseQuickAdapterExtKt.setForeground(BaseQuickAdapterExtKt.setThemedCardBackground(helper, i, Theme.key_windowBackgroundWhite), i, Theme.getSelectorDrawable(false));
-        int i2 = C3295R.C3298id.text_empty_title;
-        BaseQuickAdapterExtKt.setThemedTextColor(foreground, i2, Theme.key_chats_actionBackground).setText(i2, this.resourceManager.getString(item.getTitleResId())).setImageResource(C3295R.C3298id.image_empty_icon, item.getIcon());
+        int i2 = C3417R.C3420id.text_empty_title;
+        BaseQuickAdapterExtKt.setThemedTextColor(foreground, i2, Theme.key_chats_actionBackground).setText(i2, this.resourceManager.getString(item.getTitleResId())).setImageResource(C3417R.C3420id.image_empty_icon, item.getIcon());
     }
 }

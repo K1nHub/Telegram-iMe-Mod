@@ -9,20 +9,14 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.listener.OnItemClickListener;
 import com.iMe.fork.p024ui.dialog.SettingsHelpBottomSheet;
-import com.iMe.model.wallet.settings.SettingMenuItem;
-import com.iMe.model.wallet.settings.SettingUiItem;
+import com.iMe.model.wallet.crypto.settings.WalletSettingsItem;
 import com.iMe.p031ui.wallet.common.WalletTabFragment;
 import com.iMe.p031ui.wallet.crypto.settings.WalletAccountSettingsFragment;
 import com.iMe.p031ui.wallet.settings.adapter.WalletSettingsRecycleAdapter;
 import com.iMe.p031ui.wallet.settings.appearance.WalletAppearanceSettingsFragment;
-import com.iMe.storage.domain.utils.p030rx.RxEventBus;
-import com.iMe.storage.domain.utils.p030rx.event.DomainRxEvents;
 import com.iMe.utils.extentions.delegate.ResettableLazy;
 import com.iMe.utils.extentions.delegate.ResettableLazyDelegateKt;
 import com.iMe.utils.extentions.delegate.ResettableLazyManager;
-import com.iMe.utils.extentions.p033rx.RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
-import io.reactivex.Observable;
-import io.reactivex.disposables.Disposable;
 import java.util.ArrayList;
 import java.util.List;
 import kotlin.Lazy;
@@ -35,10 +29,10 @@ import kotlin.jvm.internal.Reflection;
 import kotlin.reflect.KProperty;
 import moxy.MvpDelegate;
 import moxy.ktx.MoxyKtxDelegate;
-import org.koin.p043mp.KoinPlatformTools;
+import org.koin.p042mp.KoinPlatformTools;
 import org.telegram.messenger.databinding.ForkFragmentWalletSettingsBinding;
-import org.telegram.p044ui.ActionBar.Theme;
-import org.telegram.p044ui.ActionBar.ThemeDescription;
+import org.telegram.p043ui.ActionBar.Theme;
+import org.telegram.p043ui.ActionBar.ThemeDescription;
 /* compiled from: WalletSettingsFragment.kt */
 /* renamed from: com.iMe.ui.wallet.settings.WalletSettingsFragment */
 /* loaded from: classes4.dex */
@@ -46,34 +40,9 @@ public final class WalletSettingsFragment extends WalletTabFragment implements W
     static final /* synthetic */ KProperty<Object>[] $$delegatedProperties = {Reflection.property1(new PropertyReference1Impl(WalletSettingsFragment.class, "presenter", "getPresenter()Lcom/iMe/ui/wallet/settings/WalletSettingsPresenter;", 0)), Reflection.property1(new PropertyReference1Impl(WalletSettingsFragment.class, "binding", "getBinding()Lorg/telegram/messenger/databinding/ForkFragmentWalletSettingsBinding;", 0))};
     public static final Companion Companion = new Companion(null);
     private final ResettableLazy binding$delegate;
-    private final MoxyKtxDelegate presenter$delegate;
     private final Lazy settingsRecycleAdapter$delegate;
 
-    /* compiled from: WalletSettingsFragment.kt */
-    /* renamed from: com.iMe.ui.wallet.settings.WalletSettingsFragment$WhenMappings */
-    /* loaded from: classes4.dex */
-    public /* synthetic */ class WhenMappings {
-        public static final /* synthetic */ int[] $EnumSwitchMapping$0;
-
-        static {
-            int[] iArr = new int[SettingMenuItem.values().length];
-            try {
-                iArr[SettingMenuItem.HELP.ordinal()] = 1;
-            } catch (NoSuchFieldError unused) {
-            }
-            try {
-                iArr[SettingMenuItem.CRYPTO_ACCOUNT.ordinal()] = 2;
-            } catch (NoSuchFieldError unused2) {
-            }
-            try {
-                iArr[SettingMenuItem.INTERFACE.ordinal()] = 3;
-            } catch (NoSuchFieldError unused3) {
-            }
-            $EnumSwitchMapping$0 = iArr;
-        }
-    }
-
-    @Override // org.telegram.p044ui.ActionBar.BaseFragment
+    @Override // org.telegram.p043ui.ActionBar.BaseFragment
     public boolean isSwipeBackEnabled(MotionEvent motionEvent) {
         return true;
     }
@@ -83,15 +52,10 @@ public final class WalletSettingsFragment extends WalletTabFragment implements W
         WalletSettingsFragment$presenter$2 walletSettingsFragment$presenter$2 = new WalletSettingsFragment$presenter$2(this);
         MvpDelegate mvpDelegate = getMvpDelegate();
         Intrinsics.checkExpressionValueIsNotNull(mvpDelegate, "mvpDelegate");
-        this.presenter$delegate = new MoxyKtxDelegate(mvpDelegate, WalletSettingsPresenter.class.getName() + ".presenter", walletSettingsFragment$presenter$2);
+        new MoxyKtxDelegate(mvpDelegate, WalletSettingsPresenter.class.getName() + ".presenter", walletSettingsFragment$presenter$2);
         lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new WalletSettingsFragment$special$$inlined$inject$default$1(this, null, null));
         this.settingsRecycleAdapter$delegate = lazy;
         this.binding$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new WalletSettingsFragment$binding$2(this), 1, (Object) null);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public final WalletSettingsPresenter getPresenter() {
-        return (WalletSettingsPresenter) this.presenter$delegate.getValue(this, $$delegatedProperties[0]);
     }
 
     private final WalletSettingsRecycleAdapter getSettingsRecycleAdapter() {
@@ -105,6 +69,7 @@ public final class WalletSettingsFragment extends WalletTabFragment implements W
     @Override // com.iMe.p031ui.wallet.common.BottomNavigationTabFragment
     public void handleBottomPadding(int i) {
         RecyclerView recyclerView = getBinding().recycleSettings;
+        Intrinsics.checkNotNullExpressionValue(recyclerView, "binding.recycleSettings");
         recyclerView.setPadding(recyclerView.getPaddingLeft(), recyclerView.getPaddingTop(), recyclerView.getPaddingRight(), i);
     }
 
@@ -120,27 +85,27 @@ public final class WalletSettingsFragment extends WalletTabFragment implements W
     }
 
     @Override // com.iMe.p031ui.wallet.settings.WalletSettingsView
-    public void setupSettingsItems(List<SettingUiItem> items) {
+    public void renderSettingsItems(List<WalletSettingsItem> items) {
         Intrinsics.checkNotNullParameter(items, "items");
         getSettingsRecycleAdapter().setNewInstance(items);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void getThemeDescriptions$lambda$1(WalletSettingsFragment this$0) {
+    public static final void getThemeDescriptions$lambda$0(WalletSettingsFragment this$0) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         this$0.getSettingsRecycleAdapter().notifyDataSetChanged();
     }
 
-    @Override // org.telegram.p044ui.ActionBar.BaseFragment
+    @Override // org.telegram.p043ui.ActionBar.BaseFragment
     public ArrayList<ThemeDescription> getThemeDescriptions() {
         ArrayList<ThemeDescription> arrayListOf;
         arrayListOf = CollectionsKt__CollectionsKt.arrayListOf(new ThemeDescription(getBinding().getRoot(), ThemeDescription.FLAG_BACKGROUND, null, null, null, new ThemeDescription.ThemeDescriptionDelegate() { // from class: com.iMe.ui.wallet.settings.WalletSettingsFragment$$ExternalSyntheticLambda1
-            @Override // org.telegram.p044ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
+            @Override // org.telegram.p043ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
             public final void didSetColor() {
-                WalletSettingsFragment.getThemeDescriptions$lambda$1(WalletSettingsFragment.this);
+                WalletSettingsFragment.getThemeDescriptions$lambda$0(WalletSettingsFragment.this);
             }
 
-            @Override // org.telegram.p044ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
+            @Override // org.telegram.p043ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
             public /* synthetic */ void onAnimationProgress(float f) {
                 ThemeDescription.ThemeDescriptionDelegate.CC.$default$onAnimationProgress(this, f);
             }
@@ -155,36 +120,29 @@ public final class WalletSettingsFragment extends WalletTabFragment implements W
     }
 
     private final void setupColors() {
-        getBinding().getRoot().setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundGray));
+        getBinding().getRoot().setBackgroundColor(getThemedColor(Theme.key_windowBackgroundGray));
     }
 
     private final void setupListeners() {
         getSettingsRecycleAdapter().setOnItemClickListener(new OnItemClickListener() { // from class: com.iMe.ui.wallet.settings.WalletSettingsFragment$$ExternalSyntheticLambda0
             @Override // com.chad.library.adapter.base.listener.OnItemClickListener
             public final void onItemClick(BaseQuickAdapter baseQuickAdapter, View view, int i) {
-                WalletSettingsFragment.setupListeners$lambda$4(WalletSettingsFragment.this, baseQuickAdapter, view, i);
+                WalletSettingsFragment.setupListeners$lambda$2(WalletSettingsFragment.this, baseQuickAdapter, view, i);
             }
         });
-        RxEventBus rxEventBus = getRxEventBus();
-        Observable observeOn = rxEventBus.getPublisher().ofType(DomainRxEvents.CryptoEvent.class).observeOn(rxEventBus.getSchedulersProvider().mo698ui());
-        Intrinsics.checkNotNullExpressionValue(observeOn, "publisher\n              …(schedulersProvider.ui())");
-        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2328x3106d7dd(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2329x3106d7de(null)));
-        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
-        autoDispose(subscribe);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void setupListeners$lambda$4(WalletSettingsFragment this$0, BaseQuickAdapter baseQuickAdapter, View view, int i) {
+    public static final void setupListeners$lambda$2(WalletSettingsFragment this$0, BaseQuickAdapter baseQuickAdapter, View view, int i) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         Intrinsics.checkNotNullParameter(baseQuickAdapter, "<anonymous parameter 0>");
         Intrinsics.checkNotNullParameter(view, "<anonymous parameter 1>");
-        int i2 = WhenMappings.$EnumSwitchMapping$0[this$0.getSettingsRecycleAdapter().getItem(i).getItem().ordinal()];
-        if (i2 == 1) {
+        WalletSettingsItem item = this$0.getSettingsRecycleAdapter().getItem(i);
+        if (Intrinsics.areEqual(item, WalletSettingsItem.Main.Help.INSTANCE)) {
             this$0.openFAQ();
-        } else if (i2 == 2) {
+        } else if (Intrinsics.areEqual(item, WalletSettingsItem.Main.CryptoAccount.INSTANCE)) {
             this$0.openWalletAccountSettings();
-        } else if (i2 != 3) {
-        } else {
+        } else if (Intrinsics.areEqual(item, WalletSettingsItem.Main.Interface.INSTANCE)) {
             this$0.openInterfaceSettings();
         }
     }

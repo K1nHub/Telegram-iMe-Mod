@@ -18,7 +18,7 @@
 
     const/4 v1, 0x0
 
-    const v2, 0x7f0403ed
+    const v2, 0x7f0403ef
 
     aput v2, v0, v1
 

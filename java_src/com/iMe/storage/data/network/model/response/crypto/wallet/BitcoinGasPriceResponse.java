@@ -1,5 +1,6 @@
 package com.iMe.storage.data.network.model.response.crypto.wallet;
 
+import com.iMe.storage.data.network.model.response.wallet.FiatValueResponse;
 import java.math.BigInteger;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: BitcoinGasPriceResponse.kt */
@@ -8,24 +9,24 @@ public final class BitcoinGasPriceResponse {
     private final BigInteger byteFee;
     private final float duration;
     private final double fee;
-    private final float feeInDollars;
+    private final FiatValueResponse feeInFiat;
 
-    public static /* synthetic */ BitcoinGasPriceResponse copy$default(BitcoinGasPriceResponse bitcoinGasPriceResponse, BigInteger bigInteger, float f, double d, float f2, int i, Object obj) {
+    public static /* synthetic */ BitcoinGasPriceResponse copy$default(BitcoinGasPriceResponse bitcoinGasPriceResponse, BigInteger bigInteger, float f, double d, FiatValueResponse fiatValueResponse, int i, Object obj) {
         if ((i & 1) != 0) {
             bigInteger = bitcoinGasPriceResponse.byteFee;
         }
         if ((i & 2) != 0) {
             f = bitcoinGasPriceResponse.duration;
         }
-        float f3 = f;
+        float f2 = f;
         if ((i & 4) != 0) {
             d = bitcoinGasPriceResponse.fee;
         }
         double d2 = d;
         if ((i & 8) != 0) {
-            f2 = bitcoinGasPriceResponse.feeInDollars;
+            fiatValueResponse = bitcoinGasPriceResponse.feeInFiat;
         }
-        return bitcoinGasPriceResponse.copy(bigInteger, f3, d2, f2);
+        return bitcoinGasPriceResponse.copy(bigInteger, f2, d2, fiatValueResponse);
     }
 
     public final BigInteger component1() {
@@ -40,13 +41,14 @@ public final class BitcoinGasPriceResponse {
         return this.fee;
     }
 
-    public final float component4() {
-        return this.feeInDollars;
+    public final FiatValueResponse component4() {
+        return this.feeInFiat;
     }
 
-    public final BitcoinGasPriceResponse copy(BigInteger byteFee, float f, double d, float f2) {
+    public final BitcoinGasPriceResponse copy(BigInteger byteFee, float f, double d, FiatValueResponse feeInFiat) {
         Intrinsics.checkNotNullParameter(byteFee, "byteFee");
-        return new BitcoinGasPriceResponse(byteFee, f, d, f2);
+        Intrinsics.checkNotNullParameter(feeInFiat, "feeInFiat");
+        return new BitcoinGasPriceResponse(byteFee, f, d, feeInFiat);
     }
 
     public boolean equals(Object obj) {
@@ -55,25 +57,26 @@ public final class BitcoinGasPriceResponse {
         }
         if (obj instanceof BitcoinGasPriceResponse) {
             BitcoinGasPriceResponse bitcoinGasPriceResponse = (BitcoinGasPriceResponse) obj;
-            return Intrinsics.areEqual(this.byteFee, bitcoinGasPriceResponse.byteFee) && Float.compare(this.duration, bitcoinGasPriceResponse.duration) == 0 && Double.compare(this.fee, bitcoinGasPriceResponse.fee) == 0 && Float.compare(this.feeInDollars, bitcoinGasPriceResponse.feeInDollars) == 0;
+            return Intrinsics.areEqual(this.byteFee, bitcoinGasPriceResponse.byteFee) && Float.compare(this.duration, bitcoinGasPriceResponse.duration) == 0 && Double.compare(this.fee, bitcoinGasPriceResponse.fee) == 0 && Intrinsics.areEqual(this.feeInFiat, bitcoinGasPriceResponse.feeInFiat);
         }
         return false;
     }
 
     public int hashCode() {
-        return (((((this.byteFee.hashCode() * 31) + Float.floatToIntBits(this.duration)) * 31) + Double.doubleToLongBits(this.fee)) * 31) + Float.floatToIntBits(this.feeInDollars);
+        return (((((this.byteFee.hashCode() * 31) + Float.floatToIntBits(this.duration)) * 31) + Double.doubleToLongBits(this.fee)) * 31) + this.feeInFiat.hashCode();
     }
 
     public String toString() {
-        return "BitcoinGasPriceResponse(byteFee=" + this.byteFee + ", duration=" + this.duration + ", fee=" + this.fee + ", feeInDollars=" + this.feeInDollars + ')';
+        return "BitcoinGasPriceResponse(byteFee=" + this.byteFee + ", duration=" + this.duration + ", fee=" + this.fee + ", feeInFiat=" + this.feeInFiat + ')';
     }
 
-    public BitcoinGasPriceResponse(BigInteger byteFee, float f, double d, float f2) {
+    public BitcoinGasPriceResponse(BigInteger byteFee, float f, double d, FiatValueResponse feeInFiat) {
         Intrinsics.checkNotNullParameter(byteFee, "byteFee");
+        Intrinsics.checkNotNullParameter(feeInFiat, "feeInFiat");
         this.byteFee = byteFee;
         this.duration = f;
         this.fee = d;
-        this.feeInDollars = f2;
+        this.feeInFiat = feeInFiat;
     }
 
     public final BigInteger getByteFee() {
@@ -88,7 +91,7 @@ public final class BitcoinGasPriceResponse {
         return this.fee;
     }
 
-    public final float getFeeInDollars() {
-        return this.feeInDollars;
+    public final FiatValueResponse getFeeInFiat() {
+        return this.feeInFiat;
     }
 }

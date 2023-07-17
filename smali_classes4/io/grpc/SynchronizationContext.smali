@@ -184,7 +184,7 @@
     .line 115
     iget-object v0, p0, Lio/grpc/SynchronizationContext;->queue:Ljava/util/Queue;
 
-    const-string v1, "runnable is null"
+    const-string/jumbo v1, "runnable is null"
 
     invoke-static {p1, v1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 

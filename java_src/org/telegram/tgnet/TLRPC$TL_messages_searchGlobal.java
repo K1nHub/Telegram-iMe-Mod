@@ -13,7 +13,7 @@ public class TLRPC$TL_messages_searchGlobal extends TLObject {
     public int offset_rate;
 
     /* renamed from: q */
-    public String f1539q;
+    public String f1621q;
 
     @Override // org.telegram.tgnet.TLObject
     public TLObject deserializeResponse(AbstractSerializedData abstractSerializedData, int i, boolean z) {
@@ -27,7 +27,7 @@ public class TLRPC$TL_messages_searchGlobal extends TLObject {
         if ((this.flags & 1) != 0) {
             abstractSerializedData.writeInt32(this.folder_id);
         }
-        abstractSerializedData.writeString(this.f1539q);
+        abstractSerializedData.writeString(this.f1621q);
         TLRPC$MessagesFilter tLRPC$MessagesFilter = this.filter;
         if (tLRPC$MessagesFilter != null) {
             tLRPC$MessagesFilter.serializeToStream(abstractSerializedData);

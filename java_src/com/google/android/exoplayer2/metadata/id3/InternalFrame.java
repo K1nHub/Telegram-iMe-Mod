@@ -20,20 +20,20 @@ public final class InternalFrame extends Id3Frame {
     };
 
     /* renamed from: ID */
-    public static final String f118ID = "----";
+    public static final String f200ID = "----";
     public final String description;
     public final String domain;
     public final String text;
 
     public InternalFrame(String str, String str2, String str3) {
-        super(f118ID);
+        super(f200ID);
         this.domain = str;
         this.description = str2;
         this.text = str3;
     }
 
     InternalFrame(Parcel parcel) {
-        super(f118ID);
+        super(f200ID);
         this.domain = (String) Util.castNonNull(parcel.readString());
         this.description = (String) Util.castNonNull(parcel.readString());
         this.text = (String) Util.castNonNull(parcel.readString());
@@ -61,12 +61,12 @@ public final class InternalFrame extends Id3Frame {
 
     @Override // com.google.android.exoplayer2.metadata.id3.Id3Frame
     public String toString() {
-        return this.f117id + ": domain=" + this.domain + ", description=" + this.description;
+        return this.f199id + ": domain=" + this.domain + ", description=" + this.description;
     }
 
     @Override // android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeString(this.f117id);
+        parcel.writeString(this.f199id);
         parcel.writeString(this.domain);
         parcel.writeString(this.text);
     }

@@ -47,19 +47,19 @@ import kotlin.reflect.KProperty;
 import moxy.MvpDelegate;
 import moxy.ktx.MoxyKtxDelegate;
 import org.koin.core.qualifier.StringQualifier;
-import org.koin.p043mp.KoinPlatformTools;
+import org.koin.p042mp.KoinPlatformTools;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3295R;
+import org.telegram.messenger.C3417R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.databinding.ForkFragmentCatalogGlobalBinding;
-import org.telegram.p044ui.ActionBar.BaseFragment;
-import org.telegram.p044ui.ActionBar.C3361ActionBar;
-import org.telegram.p044ui.ActionBar.Theme;
-import org.telegram.p044ui.ActionBar.ThemeDescription;
-import org.telegram.p044ui.LanguageSelectActivity;
+import org.telegram.p043ui.ActionBar.BaseFragment;
+import org.telegram.p043ui.ActionBar.C3484ActionBar;
+import org.telegram.p043ui.ActionBar.Theme;
+import org.telegram.p043ui.ActionBar.ThemeDescription;
+import org.telegram.p043ui.LanguageSelectActivity;
 /* compiled from: CatalogRootFragment.kt */
 /* renamed from: com.iMe.ui.catalog.CatalogRootFragment */
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public final class CatalogRootFragment extends MvpFragment implements BottomNavigationDelegate, CatalogRootView, NavigationViewConfiguration {
     static final /* synthetic */ KProperty<Object>[] $$delegatedProperties = {Reflection.property1(new PropertyReference1Impl(CatalogRootFragment.class, "presenter", "getPresenter()Lcom/iMe/ui/catalog/CatalogRootPresenter;", 0)), Reflection.property1(new PropertyReference1Impl(CatalogRootFragment.class, "binding", "getBinding()Lorg/telegram/messenger/databinding/ForkFragmentCatalogGlobalBinding;", 0))};
     public static final Companion Companion = new Companion(null);
@@ -118,7 +118,7 @@ public final class CatalogRootFragment extends MvpFragment implements BottomNavi
         return (List) this.tabs$delegate.getValue();
     }
 
-    @Override // org.telegram.p044ui.ActionBar.BaseFragment
+    @Override // org.telegram.p043ui.ActionBar.BaseFragment
     public boolean isSwipeBackEnabled(MotionEvent motionEvent) {
         CatalogFragment currentScreen = getBottomNavigationRouter().getCurrentScreen();
         if (currentScreen != null) {
@@ -143,13 +143,13 @@ public final class CatalogRootFragment extends MvpFragment implements BottomNavi
         setupNavigationRouter();
     }
 
-    @Override // com.iMe.p031ui.base.mvp.MvpFragment, org.telegram.p044ui.ActionBar.BaseFragment
+    @Override // com.iMe.p031ui.base.mvp.MvpFragment, org.telegram.p043ui.ActionBar.BaseFragment
     public void onFragmentDestroy() {
         super.onFragmentDestroy();
         getBottomNavigationRouter().clean();
     }
 
-    @Override // org.telegram.p044ui.ActionBar.BaseFragment
+    @Override // org.telegram.p043ui.ActionBar.BaseFragment
     public void onActivityResultFragment(int i, int i2, Intent intent) {
         super.onActivityResultFragment(i, i2, intent);
         for (CatalogFragment catalogFragment : getBottomNavigationRouter().getScreenStack()) {
@@ -157,7 +157,7 @@ public final class CatalogRootFragment extends MvpFragment implements BottomNavi
         }
     }
 
-    @Override // com.iMe.p031ui.base.mvp.MvpFragment, org.telegram.p044ui.ActionBar.BaseFragment
+    @Override // com.iMe.p031ui.base.mvp.MvpFragment, org.telegram.p043ui.ActionBar.BaseFragment
     public void onDestroyView() {
         super.onDestroyView();
         for (CatalogFragment catalogFragment : getBottomNavigationRouter().getScreenStack()) {
@@ -190,7 +190,7 @@ public final class CatalogRootFragment extends MvpFragment implements BottomNavi
         });
     }
 
-    @Override // com.iMe.p031ui.base.mvp.MvpFragment, org.telegram.p044ui.ActionBar.BaseFragment
+    @Override // com.iMe.p031ui.base.mvp.MvpFragment, org.telegram.p043ui.ActionBar.BaseFragment
     public void onResume() {
         super.onResume();
         CatalogFragment currentScreen = getBottomNavigationRouter().getCurrentScreen();
@@ -199,7 +199,7 @@ public final class CatalogRootFragment extends MvpFragment implements BottomNavi
         }
     }
 
-    @Override // com.iMe.p031ui.base.mvp.MvpFragment, org.telegram.p044ui.ActionBar.BaseFragment
+    @Override // com.iMe.p031ui.base.mvp.MvpFragment, org.telegram.p043ui.ActionBar.BaseFragment
     public void onPause() {
         super.onPause();
         CatalogFragment currentScreen = getBottomNavigationRouter().getCurrentScreen();
@@ -208,19 +208,19 @@ public final class CatalogRootFragment extends MvpFragment implements BottomNavi
         }
     }
 
-    @Override // org.telegram.p044ui.ActionBar.BaseFragment
+    @Override // org.telegram.p043ui.ActionBar.BaseFragment
     public ArrayList<ThemeDescription> getThemeDescriptions() {
         ArrayList<ThemeDescription> arrayListOf;
-        C3361ActionBar c3361ActionBar = this.actionBar;
+        C3484ActionBar c3484ActionBar = this.actionBar;
         int i = ThemeDescription.FLAG_AB_SELECTORCOLOR;
         int i2 = Theme.key_actionBarDefaultSelector;
-        arrayListOf = CollectionsKt__CollectionsKt.arrayListOf(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, Theme.key_actionBarDefault), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_ITEMSCOLOR, null, null, null, null, Theme.key_actionBarDefaultIcon), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_TITLECOLOR, null, null, null, null, Theme.key_actionBarDefaultTitle), new ThemeDescription(c3361ActionBar, i, null, null, null, null, i2), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SELECTORCOLOR, null, null, null, null, i2), new ThemeDescription(null, 0, null, null, null, new ThemeDescription.ThemeDescriptionDelegate() { // from class: com.iMe.ui.catalog.CatalogRootFragment$$ExternalSyntheticLambda1
-            @Override // org.telegram.p044ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
+        arrayListOf = CollectionsKt__CollectionsKt.arrayListOf(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, Theme.key_actionBarDefault), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_ITEMSCOLOR, null, null, null, null, Theme.key_actionBarDefaultIcon), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_TITLECOLOR, null, null, null, null, Theme.key_actionBarDefaultTitle), new ThemeDescription(c3484ActionBar, i, null, null, null, null, i2), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SELECTORCOLOR, null, null, null, null, i2), new ThemeDescription(null, 0, null, null, null, new ThemeDescription.ThemeDescriptionDelegate() { // from class: com.iMe.ui.catalog.CatalogRootFragment$$ExternalSyntheticLambda1
+            @Override // org.telegram.p043ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
             public final void didSetColor() {
                 CatalogRootFragment.getThemeDescriptions$lambda$4(CatalogRootFragment.this);
             }
 
-            @Override // org.telegram.p044ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
+            @Override // org.telegram.p043ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
             public /* synthetic */ void onAnimationProgress(float f) {
                 ThemeDescription.ThemeDescriptionDelegate.CC.$default$onAnimationProgress(this, f);
             }
@@ -280,14 +280,14 @@ public final class CatalogRootFragment extends MvpFragment implements BottomNavi
     }
 
     private final void setupActionBar() {
-        C3361ActionBar c3361ActionBar = this.actionBar;
-        c3361ActionBar.setCastShadows(false);
-        c3361ActionBar.setBackButtonImage(C3295R.C3297drawable.ic_ab_back);
-        c3361ActionBar.setTitle(getResourceManager().getString(C3295R.string.catalog_title));
-        c3361ActionBar.setAllowOverlayTitle(true);
-        c3361ActionBar.createMenu().addItem(IdFabric$Menu.LANGUAGE, C3295R.C3297drawable.msg_language);
-        c3361ActionBar.setActionBarMenuOnItemClick(new C3361ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.ui.catalog.CatalogRootFragment$setupActionBar$1$1
-            @Override // org.telegram.p044ui.ActionBar.C3361ActionBar.ActionBarMenuOnItemClick
+        C3484ActionBar c3484ActionBar = this.actionBar;
+        c3484ActionBar.setCastShadows(false);
+        c3484ActionBar.setBackButtonImage(C3417R.C3419drawable.ic_ab_back);
+        c3484ActionBar.setTitle(getResourceManager().getString(C3417R.string.catalog_title));
+        c3484ActionBar.setAllowOverlayTitle(true);
+        c3484ActionBar.createMenu().addItem(IdFabric$Menu.LANGUAGE, C3417R.C3419drawable.msg_language);
+        c3484ActionBar.setActionBarMenuOnItemClick(new C3484ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.ui.catalog.CatalogRootFragment$setupActionBar$1$1
+            @Override // org.telegram.p043ui.ActionBar.C3484ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 CatalogRootPresenter presenter;
                 if (i == -1) {
@@ -321,9 +321,9 @@ public final class CatalogRootFragment extends MvpFragment implements BottomNavi
     /* JADX INFO: Access modifiers changed from: private */
     public final List<NavigationTab<CatalogFragment>> initTabs() {
         List<NavigationTab<CatalogFragment>> mutableListOf;
-        int i = C3295R.C3298id.catalog_root_bottom_navigation_channels;
+        int i = C3417R.C3420id.catalog_root_bottom_navigation_channels;
         CatalogFragment.Companion companion = CatalogFragment.Companion;
-        mutableListOf = CollectionsKt__CollectionsKt.mutableListOf(new NavigationTab(i, companion.newInstance(ChatType.CHANNEL)), new NavigationTab(C3295R.C3298id.catalog_root_bottom_navigation_groups, companion.newInstance(ChatType.GROUP)));
+        mutableListOf = CollectionsKt__CollectionsKt.mutableListOf(new NavigationTab(i, companion.newInstance(ChatType.CHANNEL)), new NavigationTab(C3417R.C3420id.catalog_root_bottom_navigation_groups, companion.newInstance(ChatType.GROUP)));
         Iterator<T> it = mutableListOf.iterator();
         while (it.hasNext()) {
             ((CatalogFragment) ((NavigationTab) it.next()).getFragment()).setBottomNavigationDelegate(this);
@@ -343,13 +343,13 @@ public final class CatalogRootFragment extends MvpFragment implements BottomNavi
                 return true;
             }
         });
-        mutableListOf = CollectionsKt__CollectionsKt.mutableListOf(new MenuItem(C3295R.C3298id.catalog_root_bottom_navigation_channels, getResourceManager().getString(C3295R.string.catalog_navigation_channels), C3295R.C3297drawable.fork_filter_icon_channel, true, getResourceManager().getColor(17170443), false, 32, null), new MenuItem(C3295R.C3298id.catalog_root_bottom_navigation_groups, getResourceManager().getString(C3295R.string.catalog_navigation_groups), C3295R.C3297drawable.msg_groups, true, getResourceManager().getColor(17170443), false, 32, null));
+        mutableListOf = CollectionsKt__CollectionsKt.mutableListOf(new MenuItem(C3417R.C3420id.catalog_root_bottom_navigation_channels, getResourceManager().getString(C3417R.string.catalog_navigation_channels), C3417R.C3419drawable.fork_filter_icon_channel, true, getResourceManager().getColor(17170443), false, 32, null), new MenuItem(C3417R.C3420id.catalog_root_bottom_navigation_groups, getResourceManager().getString(C3417R.string.catalog_navigation_groups), C3417R.C3419drawable.msg_groups, true, getResourceManager().getColor(17170443), false, 32, null));
         bubbleTabBar.setMenu(mutableListOf);
     }
 
     /* compiled from: CatalogRootFragment.kt */
     /* renamed from: com.iMe.ui.catalog.CatalogRootFragment$Companion */
-    /* loaded from: classes.dex */
+    /* loaded from: classes3.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

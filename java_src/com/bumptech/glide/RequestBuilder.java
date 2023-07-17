@@ -11,6 +11,7 @@ import com.bumptech.glide.request.RequestListener;
 import com.bumptech.glide.request.RequestOptions;
 import com.bumptech.glide.request.SingleRequest;
 import com.bumptech.glide.request.ThumbnailRequestCoordinator;
+import com.bumptech.glide.request.target.PreloadTarget;
 import com.bumptech.glide.request.target.Target;
 import com.bumptech.glide.request.target.ViewTarget;
 import com.bumptech.glide.util.Executors;
@@ -181,6 +182,14 @@ public class RequestBuilder<TranscodeType> extends BaseRequestOptions<RequestBui
         }
         requestBuilder = this;
         return (ViewTarget) into(this.glideContext.buildImageViewTarget(imageView, this.transcodeClass), null, requestBuilder, Executors.mainThreadExecutor());
+    }
+
+    public Target<TranscodeType> preload(int i, int i2) {
+        return into((RequestBuilder<TranscodeType>) PreloadTarget.obtain(this.requestManager, i, i2));
+    }
+
+    public Target<TranscodeType> preload() {
+        return preload(Integer.MIN_VALUE, Integer.MIN_VALUE);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */

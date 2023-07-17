@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/iMe/ui/wallet/swap/WalletSwapProtocolsFragment;-><init>(Lcom/iMe/model/common/ScreenType;Lcom/iMe/storage/domain/model/wallet/token/TokenCode;)V
+    value = Lcom/iMe/ui/wallet/swap/WalletSwapProtocolsFragment;-><init>(Lcom/iMe/model/common/ScreenType;Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -26,7 +26,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nWalletSwapProtocolsFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WalletSwapProtocolsFragment.kt\ncom/iMe/ui/wallet/swap/WalletSwapProtocolsFragment$presenter$2\n+ 2 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n*L\n1#1,166:1\n56#2,6:167\n*S KotlinDebug\n*F\n+ 1 WalletSwapProtocolsFragment.kt\ncom/iMe/ui/wallet/swap/WalletSwapProtocolsFragment$presenter$2\n*L\n41#1:167,6\n*E\n"
+    value = "SMAP\nWalletSwapProtocolsFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WalletSwapProtocolsFragment.kt\ncom/iMe/ui/wallet/swap/WalletSwapProtocolsFragment$presenter$2\n+ 2 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n*L\n1#1,165:1\n56#2,6:166\n*S KotlinDebug\n*F\n+ 1 WalletSwapProtocolsFragment.kt\ncom/iMe/ui/wallet/swap/WalletSwapProtocolsFragment$presenter$2\n*L\n40#1:166,6\n*E\n"
 .end annotation
 
 
@@ -52,7 +52,7 @@
 .method public final invoke()Lcom/iMe/ui/wallet/swap/WalletSwapProtocolsPresenter;
     .locals 4
 
-    .line 41
+    .line 40
     iget-object v0, p0, Lcom/iMe/ui/wallet/swap/WalletSwapProtocolsFragment$presenter$2;->this$0:Lcom/iMe/ui/wallet/swap/WalletSwapProtocolsFragment;
 
     .line 58
@@ -73,7 +73,7 @@
 
     move-result-object v0
 
-    .line 41
+    .line 40
     invoke-interface {v0}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
 
     move-result-object v0
@@ -86,7 +86,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 41
+    .line 40
     invoke-virtual {p0}, Lcom/iMe/ui/wallet/swap/WalletSwapProtocolsFragment$presenter$2;->invoke()Lcom/iMe/ui/wallet/swap/WalletSwapProtocolsPresenter;
 
     move-result-object v0

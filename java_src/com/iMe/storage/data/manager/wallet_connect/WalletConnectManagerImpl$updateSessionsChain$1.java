@@ -1,5 +1,6 @@
 package com.iMe.storage.data.manager.wallet_connect;
 
+import com.iMe.storage.data.utils.extentions.NumberExtKt;
 import com.iMe.storage.domain.model.crypto.Wallet;
 import com.iMe.storage.domain.storage.CryptoPreferenceHelper;
 import com.trustwallet.walletconnect.WCClient;
@@ -46,7 +47,7 @@ public final class WalletConnectManagerImpl$updateSessionsChain$1 extends Lambda
             }
             listOf = CollectionsKt__CollectionsJVMKt.listOf(address);
             cryptoPreferenceHelper = walletConnectManagerImpl.cryptoPreferenceHelper;
-            wCClient.updateSession(listOf, Integer.valueOf((int) cryptoPreferenceHelper.getNetworkType().getChainId()), true);
+            wCClient.updateSession(listOf, Integer.valueOf((int) NumberExtKt.orZero(cryptoPreferenceHelper.getNetwork().getChainId())), true);
         }
     }
 }

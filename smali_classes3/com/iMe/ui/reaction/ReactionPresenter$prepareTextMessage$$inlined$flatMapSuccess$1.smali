@@ -34,7 +34,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nObservableExt.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ObservableExt.kt\ncom/iMe/storage/domain/utils/extentions/ObservableExtKt$flatMapSuccess$1\n+ 2 ReactionPresenter.kt\ncom/iMe/ui/reaction/ReactionPresenter\n+ 3 ObservableExt.kt\ncom/iMe/storage/domain/utils/extentions/ObservableExtKt\n*L\n1#1,80:1\n56#2,4:81\n78#3,2:85\n*S KotlinDebug\n*F\n+ 1 ReactionPresenter.kt\ncom/iMe/ui/reaction/ReactionPresenter\n*L\n59#1:85,2\n*E\n"
+    value = "SMAP\nObservableExt.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ObservableExt.kt\ncom/iMe/storage/domain/utils/extentions/ObservableExtKt$flatMapSuccess$1\n+ 2 ReactionPresenter.kt\ncom/iMe/ui/reaction/ReactionPresenter\n+ 3 ObservableExt.kt\ncom/iMe/storage/domain/utils/extentions/ObservableExtKt\n*L\n1#1,92:1\n56#2,4:93\n90#3,2:97\n*S KotlinDebug\n*F\n+ 1 ReactionPresenter.kt\ncom/iMe/ui/reaction/ReactionPresenter\n*L\n59#1:97,2\n*E\n"
 .end annotation
 
 
@@ -84,7 +84,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 81
+    .line 93
     iget-object v0, p0, Lcom/iMe/ui/reaction/ReactionPresenter$prepareTextMessage$$inlined$flatMapSuccess$1;->this$0:Lcom/iMe/ui/reaction/ReactionPresenter;
 
     invoke-virtual {p1}, Lcom/iMe/storage/domain/model/Result;->getData()Ljava/lang/Object;
@@ -101,14 +101,14 @@
 
     invoke-static {v0, v1}, Lcom/iMe/ui/reaction/ReactionPresenter;->access$setMessageId$p(Lcom/iMe/ui/reaction/ReactionPresenter;Ljava/lang/String;)V
 
-    .line 82
+    .line 94
     iget-object v0, p0, Lcom/iMe/ui/reaction/ReactionPresenter$prepareTextMessage$$inlined$flatMapSuccess$1;->this$0:Lcom/iMe/ui/reaction/ReactionPresenter;
 
     invoke-static {v0}, Lcom/iMe/ui/reaction/ReactionPresenter;->access$getTelegramApi$p(Lcom/iMe/ui/reaction/ReactionPresenter;)Lcom/iMe/manager/TelegramApi;
 
     move-result-object v1
 
-    .line 83
+    .line 95
     invoke-virtual {p1}, Lcom/iMe/storage/domain/model/Result;->getData()Ljava/lang/Object;
 
     move-result-object p1
@@ -135,7 +135,7 @@
 
     move-result-object p1
 
-    .line 78
+    .line 90
     sget-object v0, Lcom/iMe/ui/reaction/ReactionPresenter$prepareTextMessage$lambda$0$$inlined$wrapAsResult$1;->INSTANCE:Lcom/iMe/ui/reaction/ReactionPresenter$prepareTextMessage$lambda$0$$inlined$wrapAsResult$1;
 
     new-instance v1, Lcom/iMe/ui/reaction/ReactionPresenter$inlined$sam$i$io_reactivex_functions_Function$0;
@@ -146,7 +146,7 @@
 
     move-result-object p1
 
-    .line 79
+    .line 91
     sget-object v0, Lcom/iMe/ui/reaction/ReactionPresenter$prepareTextMessage$lambda$0$$inlined$wrapAsResult$2;->INSTANCE:Lcom/iMe/ui/reaction/ReactionPresenter$prepareTextMessage$lambda$0$$inlined$wrapAsResult$2;
 
     new-instance v1, Lcom/iMe/ui/reaction/ReactionPresenter$inlined$sam$i$io_reactivex_functions_Function$0;

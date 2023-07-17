@@ -16,6 +16,30 @@
 
 
 # direct methods
+.method public static synthetic $r8$lambda$FofBvlvF-tUDzyJm8NOKcqwhB3k(Lcom/iMe/fork/utils/Callbacks$Callback;Landroid/view/View;)V
+    .locals 0
+
+    invoke-static {p0, p1}, Lcom/iMe/ui/custom/StakingTransactionActionButtonsView;->setupViewData$lambda$6$lambda$3$lambda$2(Lcom/iMe/fork/utils/Callbacks$Callback;Landroid/view/View;)V
+
+    return-void
+.end method
+
+.method public static synthetic $r8$lambda$VqUizQWmJ3H4InsUjVRF3pmRHio(Lcom/iMe/fork/utils/Callbacks$Callback;Landroid/view/View;)V
+    .locals 0
+
+    invoke-static {p0, p1}, Lcom/iMe/ui/custom/StakingTransactionActionButtonsView;->setupViewData$lambda$6$lambda$1$lambda$0(Lcom/iMe/fork/utils/Callbacks$Callback;Landroid/view/View;)V
+
+    return-void
+.end method
+
+.method public static synthetic $r8$lambda$f07qvjvRAjo_RJv9aeise9WuZFE(Lcom/iMe/fork/utils/Callbacks$Callback;Landroid/view/View;)V
+    .locals 0
+
+    invoke-static {p0, p1}, Lcom/iMe/ui/custom/StakingTransactionActionButtonsView;->setupViewData$lambda$6$lambda$5$lambda$4(Lcom/iMe/fork/utils/Callbacks$Callback;Landroid/view/View;)V
+
+    return-void
+.end method
+
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 7
 
@@ -172,6 +196,45 @@
     return-void
 .end method
 
+.method private static final setupViewData$lambda$6$lambda$1$lambda$0(Lcom/iMe/fork/utils/Callbacks$Callback;Landroid/view/View;)V
+    .locals 0
+
+    const-string p1, "$onActionClickAction"
+
+    invoke-static {p0, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 45
+    invoke-interface {p0}, Lcom/iMe/fork/utils/Callbacks$Callback;->invoke()V
+
+    return-void
+.end method
+
+.method private static final setupViewData$lambda$6$lambda$3$lambda$2(Lcom/iMe/fork/utils/Callbacks$Callback;Landroid/view/View;)V
+    .locals 0
+
+    const-string p1, "$onApproveInfoClickAction"
+
+    invoke-static {p0, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 49
+    invoke-interface {p0}, Lcom/iMe/fork/utils/Callbacks$Callback;->invoke()V
+
+    return-void
+.end method
+
+.method private static final setupViewData$lambda$6$lambda$5$lambda$4(Lcom/iMe/fork/utils/Callbacks$Callback;Landroid/view/View;)V
+    .locals 0
+
+    const-string p1, "$onConditionsClickAction"
+
+    invoke-static {p0, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 53
+    invoke-interface {p0}, Lcom/iMe/fork/utils/Callbacks$Callback;->invoke()V
+
+    return-void
+.end method
+
 
 # virtual methods
 .method public final setupColors()V
@@ -216,7 +279,7 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    const-string v2, "setupColors$lambda$6$lambda$4"
+    const-string v2, "setupColors$lambda$9$lambda$7"
 
     .line 64
     invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
@@ -281,21 +344,21 @@
     .line 44
     invoke-virtual {v1, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    const-string p1, "setupViewData$lambda$3$lambda$0"
+    const-string p1, "setupViewData$lambda$6$lambda$1"
 
     .line 45
     invoke-static {v1, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    new-instance p1, Lcom/iMe/ui/custom/StakingTransactionActionButtonsView$setupViewData$1$1$1;
+    new-instance p1, Lcom/iMe/ui/custom/StakingTransactionActionButtonsView$$ExternalSyntheticLambda1;
 
-    invoke-direct {p1, p4}, Lcom/iMe/ui/custom/StakingTransactionActionButtonsView$setupViewData$1$1$1;-><init>(Lcom/iMe/fork/utils/Callbacks$Callback;)V
+    invoke-direct {p1, p4}, Lcom/iMe/ui/custom/StakingTransactionActionButtonsView$$ExternalSyntheticLambda1;-><init>(Lcom/iMe/fork/utils/Callbacks$Callback;)V
 
-    invoke-static {v1, p1}, Lcom/iMe/utils/extentions/common/ViewExtKt;->setMixedClickListener(Landroid/view/View;Lkotlin/jvm/functions/Function1;)V
+    invoke-static {v1, p1}, Lcom/iMe/utils/extentions/common/ViewExtKt;->setMixedClickListener(Landroid/view/View;Lcom/iMe/fork/utils/Callbacks$Callback1;)V
 
     .line 47
     iget-object p1, v0, Lorg/telegram/messenger/databinding/ForkContentStakingTransactionActionsBinding;->buttonApproveInfo:Landroidx/appcompat/widget/AppCompatTextView;
 
-    const-string p4, "setupViewData$lambda$3$lambda$1"
+    const-string p4, "setupViewData$lambda$6$lambda$3"
 
     .line 48
     invoke-static {p1, p4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
@@ -318,16 +381,16 @@
     invoke-virtual {p1, v2}, Landroid/view/View;->setVisibility(I)V
 
     .line 49
-    new-instance v2, Lcom/iMe/ui/custom/StakingTransactionActionButtonsView$setupViewData$1$2$1;
+    new-instance v2, Lcom/iMe/ui/custom/StakingTransactionActionButtonsView$$ExternalSyntheticLambda0;
 
-    invoke-direct {v2, p6}, Lcom/iMe/ui/custom/StakingTransactionActionButtonsView$setupViewData$1$2$1;-><init>(Lcom/iMe/fork/utils/Callbacks$Callback;)V
+    invoke-direct {v2, p6}, Lcom/iMe/ui/custom/StakingTransactionActionButtonsView$$ExternalSyntheticLambda0;-><init>(Lcom/iMe/fork/utils/Callbacks$Callback;)V
 
-    invoke-static {p1, v2}, Lcom/iMe/utils/extentions/common/ViewExtKt;->setMixedClickListener(Landroid/view/View;Lkotlin/jvm/functions/Function1;)V
+    invoke-static {p1, v2}, Lcom/iMe/utils/extentions/common/ViewExtKt;->setMixedClickListener(Landroid/view/View;Lcom/iMe/fork/utils/Callbacks$Callback1;)V
 
     .line 51
     iget-object p1, v0, Lorg/telegram/messenger/databinding/ForkContentStakingTransactionActionsBinding;->buttonConditions:Landroidx/appcompat/widget/AppCompatTextView;
 
-    const-string p6, "setupViewData$lambda$3$lambda$2"
+    const-string p6, "setupViewData$lambda$6$lambda$5"
 
     .line 52
     invoke-static {p1, p6}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
@@ -353,11 +416,11 @@
     invoke-virtual {p1, p4}, Landroid/view/View;->setVisibility(I)V
 
     .line 53
-    new-instance p2, Lcom/iMe/ui/custom/StakingTransactionActionButtonsView$setupViewData$1$3$1;
+    new-instance p2, Lcom/iMe/ui/custom/StakingTransactionActionButtonsView$$ExternalSyntheticLambda2;
 
-    invoke-direct {p2, p5}, Lcom/iMe/ui/custom/StakingTransactionActionButtonsView$setupViewData$1$3$1;-><init>(Lcom/iMe/fork/utils/Callbacks$Callback;)V
+    invoke-direct {p2, p5}, Lcom/iMe/ui/custom/StakingTransactionActionButtonsView$$ExternalSyntheticLambda2;-><init>(Lcom/iMe/fork/utils/Callbacks$Callback;)V
 
-    invoke-static {p1, p2}, Lcom/iMe/utils/extentions/common/ViewExtKt;->setMixedClickListener(Landroid/view/View;Lkotlin/jvm/functions/Function1;)V
+    invoke-static {p1, p2}, Lcom/iMe/utils/extentions/common/ViewExtKt;->setMixedClickListener(Landroid/view/View;Lcom/iMe/fork/utils/Callbacks$Callback1;)V
 
     return-void
 .end method

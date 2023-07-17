@@ -112,7 +112,7 @@
 
     aput-object v6, v3, v5
 
-    const-string v6, "setHostname"
+    const-string/jumbo v6, "setHostname"
 
     invoke-direct {v1, v4, v6, v3}, Lio/grpc/okhttp/internal/OptionalMethod;-><init>(Ljava/lang/Class;Ljava/lang/String;[Ljava/lang/Class;)V
 
@@ -136,7 +136,7 @@
 
     aput-object v0, v3, v5
 
-    const-string v6, "setAlpnProtocols"
+    const-string/jumbo v6, "setAlpnProtocols"
 
     invoke-direct {v1, v4, v6, v3}, Lio/grpc/okhttp/internal/OptionalMethod;-><init>(Ljava/lang/Class;Ljava/lang/String;[Ljava/lang/Class;)V
 
@@ -160,7 +160,7 @@
 
     aput-object v0, v2, v5
 
-    const-string v0, "setNpnProtocols"
+    const-string/jumbo v0, "setNpnProtocols"
 
     invoke-direct {v1, v4, v0, v2}, Lio/grpc/okhttp/internal/OptionalMethod;-><init>(Ljava/lang/Class;Ljava/lang/String;[Ljava/lang/Class;)V
 

@@ -47,7 +47,7 @@
 
 # virtual methods
 .method protected dispatchDraw(Landroid/graphics/Canvas;)V
-    .locals 8
+    .locals 14
 
     .line 493
     invoke-super {p0, p1}, Lorg/telegram/ui/Components/SizeNotifierFrameLayout;->dispatchDraw(Landroid/graphics/Canvas;)V
@@ -111,6 +111,25 @@
     move-object v2, p1
 
     invoke-virtual/range {v2 .. v7}, Landroid/graphics/Canvas;->drawRect(FFFFLandroid/graphics/Paint;)V
+
+    const/4 v9, 0x0
+
+    const/4 v10, 0x0
+
+    const/4 v11, 0x0
+
+    .line 498
+    invoke-virtual {p0}, Landroid/widget/FrameLayout;->getHeight()I
+
+    move-result v0
+
+    int-to-float v12, v0
+
+    sget-object v13, Lorg/telegram/ui/ActionBar/Theme;->dividerPaint:Landroid/graphics/Paint;
+
+    move-object v8, p1
+
+    invoke-virtual/range {v8 .. v13}, Landroid/graphics/Canvas;->drawLine(FFFFLandroid/graphics/Paint;)V
 
     :cond_0
     return-void

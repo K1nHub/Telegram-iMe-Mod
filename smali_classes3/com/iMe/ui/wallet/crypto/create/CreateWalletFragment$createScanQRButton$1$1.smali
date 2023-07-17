@@ -49,7 +49,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 665
+    .line 762
     check-cast p1, Landroid/view/View;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$createScanQRButton$1$1;->invoke(Landroid/view/View;)V
@@ -66,13 +66,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 666
-    sget p1, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v0, 0x17
-
-    if-lt p1, v0, :cond_0
-
+    .line 763
     iget-object p1, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$createScanQRButton$1$1;->this$0:Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;
 
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -87,7 +81,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 667
+    .line 764
     iget-object p1, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$createScanQRButton$1$1;->this$0:Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;
 
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -104,7 +98,7 @@
 
     return-void
 
-    .line 670
+    .line 767
     :cond_0
     iget-object p1, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$createScanQRButton$1$1;->this$0:Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;
 

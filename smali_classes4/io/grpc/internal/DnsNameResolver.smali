@@ -128,7 +128,7 @@
 
     const-string v4, "clientHostname"
 
-    const-string v5, "serviceConfig"
+    const-string/jumbo v5, "serviceConfig"
 
     filled-new-array {v2, v3, v4, v5}, [Ljava/lang/String;
 
@@ -433,7 +433,7 @@
 
     move-result-object p1
 
-    const-string p2, "serviceConfigParser"
+    const-string/jumbo p2, "serviceConfigParser"
 
     invoke-static {p1, p2}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -1189,7 +1189,7 @@
     return-object v1
 
     :cond_8
-    const-string p1, "serviceConfig"
+    const-string/jumbo p1, "serviceConfig"
 
     .line 568
     invoke-static {p0, p1}, Lio/grpc/internal/JsonUtil;->getObject(Ljava/util/Map;Ljava/lang/String;)Ljava/util/Map;

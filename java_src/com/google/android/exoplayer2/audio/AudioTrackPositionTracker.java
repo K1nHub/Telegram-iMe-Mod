@@ -2,7 +2,7 @@ package com.google.android.exoplayer2.audio;
 
 import android.media.AudioTrack;
 import android.os.SystemClock;
-import com.google.android.exoplayer2.C0475C;
+import com.google.android.exoplayer2.C0480C;
 import com.google.android.exoplayer2.util.Assertions;
 import com.google.android.exoplayer2.util.Util;
 import java.lang.annotation.Documented;
@@ -101,8 +101,8 @@ final class AudioTrackPositionTracker {
         this.rawPlaybackHeadWrapCount = 0L;
         this.passthroughWorkaroundPauseOffset = 0L;
         this.hasData = false;
-        this.stopTimestampUs = C0475C.TIME_UNSET;
-        this.forceResetWorkaroundTimeMs = C0475C.TIME_UNSET;
+        this.stopTimestampUs = C0480C.TIME_UNSET;
+        this.forceResetWorkaroundTimeMs = C0480C.TIME_UNSET;
         this.lastLatencySampleTimeUs = 0L;
         this.latencyUs = 0L;
         this.audioTrackPlaybackSpeed = 1.0f;
@@ -190,7 +190,7 @@ final class AudioTrackPositionTracker {
     }
 
     public boolean isStalled(long j) {
-        return this.forceResetWorkaroundTimeMs != C0475C.TIME_UNSET && j > 0 && SystemClock.elapsedRealtime() - this.forceResetWorkaroundTimeMs >= FORCE_RESET_WORKAROUND_TIMEOUT_MS;
+        return this.forceResetWorkaroundTimeMs != C0480C.TIME_UNSET && j > 0 && SystemClock.elapsedRealtime() - this.forceResetWorkaroundTimeMs >= FORCE_RESET_WORKAROUND_TIMEOUT_MS;
     }
 
     public void handleEndOfStream(long j) {
@@ -205,7 +205,7 @@ final class AudioTrackPositionTracker {
 
     public boolean pause() {
         resetSyncParams();
-        if (this.stopTimestampUs == C0475C.TIME_UNSET) {
+        if (this.stopTimestampUs == C0480C.TIME_UNSET) {
             ((AudioTimestampPoller) Assertions.checkNotNull(this.audioTimestampPoller)).reset();
             return true;
         }
@@ -317,7 +317,7 @@ final class AudioTrackPositionTracker {
 
     private long getPlaybackHeadPosition() {
         AudioTrack audioTrack = (AudioTrack) Assertions.checkNotNull(this.audioTrack);
-        if (this.stopTimestampUs != C0475C.TIME_UNSET) {
+        if (this.stopTimestampUs != C0480C.TIME_UNSET) {
             return Math.min(this.endPlaybackHeadPosition, this.stopPlaybackHeadPosition + ((((SystemClock.elapsedRealtime() * 1000) - this.stopTimestampUs) * this.outputSampleRate) / 1000000));
         }
         int playState = audioTrack.getPlayState();
@@ -333,12 +333,12 @@ final class AudioTrackPositionTracker {
         }
         if (Util.SDK_INT <= 29) {
             if (playbackHeadPosition == 0 && this.lastRawPlaybackHeadPosition > 0 && playState == 3) {
-                if (this.forceResetWorkaroundTimeMs == C0475C.TIME_UNSET) {
+                if (this.forceResetWorkaroundTimeMs == C0480C.TIME_UNSET) {
                     this.forceResetWorkaroundTimeMs = SystemClock.elapsedRealtime();
                 }
                 return this.lastRawPlaybackHeadPosition;
             }
-            this.forceResetWorkaroundTimeMs = C0475C.TIME_UNSET;
+            this.forceResetWorkaroundTimeMs = C0480C.TIME_UNSET;
         }
         if (this.lastRawPlaybackHeadPosition > playbackHeadPosition) {
             this.rawPlaybackHeadWrapCount++;

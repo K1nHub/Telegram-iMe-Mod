@@ -9,16 +9,16 @@ import java.util.Map;
 import java.util.WeakHashMap;
 import org.bouncycastle.crypto.Digest;
 import org.bouncycastle.util.Arrays;
-import org.bouncycastle.util.p042io.Streams;
+import org.bouncycastle.util.p041io.Streams;
 /* loaded from: classes4.dex */
 public class LMSPrivateKeyParameters extends LMSKeyParameters {
 
     /* renamed from: T1 */
-    private static CacheKey f1315T1;
+    private static CacheKey f1397T1;
     private static CacheKey[] internedKeys;
 
     /* renamed from: I */
-    private final byte[] f1316I;
+    private final byte[] f1398I;
     private final byte[] masterSecret;
     private final int maxCacheR;
     private final int maxQ;
@@ -27,7 +27,7 @@ public class LMSPrivateKeyParameters extends LMSKeyParameters {
     private LMSPublicKeyParameters publicKey;
 
     /* renamed from: q */
-    private int f1317q;
+    private int f1399q;
     private final Map<CacheKey, byte[]> tCache;
     private final Digest tDigest;
 
@@ -51,7 +51,7 @@ public class LMSPrivateKeyParameters extends LMSKeyParameters {
 
     static {
         CacheKey cacheKey = new CacheKey(1);
-        f1315T1 = cacheKey;
+        f1397T1 = cacheKey;
         CacheKey[] cacheKeyArr = new CacheKey[TsExtractor.TS_STREAM_TYPE_AC3];
         internedKeys = cacheKeyArr;
         cacheKeyArr[1] = cacheKey;
@@ -70,8 +70,8 @@ public class LMSPrivateKeyParameters extends LMSKeyParameters {
         super(true);
         this.parameters = lMSigParameters;
         this.otsParameters = lMOtsParameters;
-        this.f1317q = i;
-        this.f1316I = Arrays.clone(bArr);
+        this.f1399q = i;
+        this.f1398I = Arrays.clone(bArr);
         this.maxQ = i2;
         this.masterSecret = Arrays.clone(bArr2);
         this.maxCacheR = 1 << (lMSigParameters.getH() + 1);
@@ -116,56 +116,55 @@ public class LMSPrivateKeyParameters extends LMSKeyParameters {
     }
 
     public static LMSPrivateKeyParameters getInstance(Object obj) throws IOException {
-        DataInputStream dataInputStream;
         if (obj instanceof LMSPrivateKeyParameters) {
             return (LMSPrivateKeyParameters) obj;
         }
-        if (!(obj instanceof DataInputStream)) {
-            if (!(obj instanceof byte[])) {
-                if (obj instanceof InputStream) {
-                    return getInstance(Streams.readAll((InputStream) obj));
+        if (obj instanceof DataInputStream) {
+            DataInputStream dataInputStream = (DataInputStream) obj;
+            if (dataInputStream.readInt() == 0) {
+                LMSigParameters parametersForType = LMSigParameters.getParametersForType(dataInputStream.readInt());
+                LMOtsParameters parametersForType2 = LMOtsParameters.getParametersForType(dataInputStream.readInt());
+                byte[] bArr = new byte[16];
+                dataInputStream.readFully(bArr);
+                int readInt = dataInputStream.readInt();
+                int readInt2 = dataInputStream.readInt();
+                int readInt3 = dataInputStream.readInt();
+                if (readInt3 >= 0) {
+                    if (readInt3 <= dataInputStream.available()) {
+                        byte[] bArr2 = new byte[readInt3];
+                        dataInputStream.readFully(bArr2);
+                        return new LMSPrivateKeyParameters(parametersForType, parametersForType2, readInt, bArr, readInt2, bArr2);
+                    }
+                    throw new IOException("secret length exceeded " + dataInputStream.available());
                 }
-                throw new IllegalArgumentException("cannot parse " + obj);
+                throw new IllegalStateException("secret length less than zero");
             }
+            throw new IllegalStateException("expected version 0 lms private key");
+        } else if (!(obj instanceof byte[])) {
+            if (obj instanceof InputStream) {
+                return getInstance(Streams.readAll((InputStream) obj));
+            }
+            throw new IllegalArgumentException("cannot parse " + obj);
+        } else {
             DataInputStream dataInputStream2 = null;
             try {
-                dataInputStream = new DataInputStream(new ByteArrayInputStream((byte[]) obj));
-            } catch (Throwable th) {
-                th = th;
-            }
-            try {
-                LMSPrivateKeyParameters lMSPrivateKeyParameters = getInstance(dataInputStream);
-                dataInputStream.close();
-                return lMSPrivateKeyParameters;
+                DataInputStream dataInputStream3 = new DataInputStream(new ByteArrayInputStream((byte[]) obj));
+                try {
+                    LMSPrivateKeyParameters lMSPrivateKeyParameters = getInstance(dataInputStream3);
+                    dataInputStream3.close();
+                    return lMSPrivateKeyParameters;
+                } catch (Throwable th) {
+                    th = th;
+                    dataInputStream2 = dataInputStream3;
+                    if (dataInputStream2 != null) {
+                        dataInputStream2.close();
+                    }
+                    throw th;
+                }
             } catch (Throwable th2) {
                 th = th2;
-                dataInputStream2 = dataInputStream;
-                if (dataInputStream2 != null) {
-                    dataInputStream2.close();
-                }
-                throw th;
             }
         }
-        DataInputStream dataInputStream3 = (DataInputStream) obj;
-        if (dataInputStream3.readInt() == 0) {
-            LMSigParameters parametersForType = LMSigParameters.getParametersForType(dataInputStream3.readInt());
-            LMOtsParameters parametersForType2 = LMOtsParameters.getParametersForType(dataInputStream3.readInt());
-            byte[] bArr = new byte[16];
-            dataInputStream3.readFully(bArr);
-            int readInt = dataInputStream3.readInt();
-            int readInt2 = dataInputStream3.readInt();
-            int readInt3 = dataInputStream3.readInt();
-            if (readInt3 >= 0) {
-                if (readInt3 <= dataInputStream3.available()) {
-                    byte[] bArr2 = new byte[readInt3];
-                    dataInputStream3.readFully(bArr2);
-                    return new LMSPrivateKeyParameters(parametersForType, parametersForType2, readInt, bArr, readInt2, bArr2);
-                }
-                throw new IOException("secret length exceeded " + dataInputStream3.available());
-            }
-            throw new IllegalStateException("secret length less than zero");
-        }
-        throw new IllegalStateException("expected version 0 lms private key");
     }
 
     public static LMSPrivateKeyParameters getInstance(byte[] bArr, byte[] bArr2) throws IOException {
@@ -183,7 +182,7 @@ public class LMSPrivateKeyParameters extends LMSKeyParameters {
             return false;
         }
         LMSPrivateKeyParameters lMSPrivateKeyParameters = (LMSPrivateKeyParameters) obj;
-        if (this.f1317q == lMSPrivateKeyParameters.f1317q && this.maxQ == lMSPrivateKeyParameters.maxQ && Arrays.areEqual(this.f1316I, lMSPrivateKeyParameters.f1316I)) {
+        if (this.f1399q == lMSPrivateKeyParameters.f1399q && this.maxQ == lMSPrivateKeyParameters.maxQ && Arrays.areEqual(this.f1398I, lMSPrivateKeyParameters.f1398I)) {
             LMSigParameters lMSigParameters = this.parameters;
             if (lMSigParameters == null ? lMSPrivateKeyParameters.parameters == null : lMSigParameters.equals(lMSPrivateKeyParameters.parameters)) {
                 LMOtsParameters lMOtsParameters = this.otsParameters;
@@ -214,11 +213,11 @@ public class LMSPrivateKeyParameters extends LMSKeyParameters {
 
     @Override // org.bouncycastle.pqc.crypto.lms.LMSKeyParameters, org.bouncycastle.util.Encodable
     public byte[] getEncoded() throws IOException {
-        return Composer.compose().u32str(0).u32str(this.parameters.getType()).u32str(this.otsParameters.getType()).bytes(this.f1316I).u32str(this.f1317q).u32str(this.maxQ).u32str(this.masterSecret.length).bytes(this.masterSecret).build();
+        return Composer.compose().u32str(0).u32str(this.parameters.getType()).u32str(this.otsParameters.getType()).bytes(this.f1398I).u32str(this.f1399q).u32str(this.maxQ).u32str(this.masterSecret.length).bytes(this.masterSecret).build();
     }
 
     public byte[] getI() {
-        return Arrays.clone(this.f1316I);
+        return Arrays.clone(this.f1398I);
     }
 
     public byte[] getMasterSecret() {
@@ -233,7 +232,7 @@ public class LMSPrivateKeyParameters extends LMSKeyParameters {
         LMSPublicKeyParameters lMSPublicKeyParameters;
         synchronized (this) {
             if (this.publicKey == null) {
-                this.publicKey = new LMSPublicKeyParameters(this.parameters, this.otsParameters, findT(f1315T1), this.f1316I);
+                this.publicKey = new LMSPublicKeyParameters(this.parameters, this.otsParameters, findT(f1397T1), this.f1398I);
             }
             lMSPublicKeyParameters = this.publicKey;
         }
@@ -245,7 +244,7 @@ public class LMSPrivateKeyParameters extends LMSKeyParameters {
     }
 
     public int hashCode() {
-        int hashCode = ((this.f1317q * 31) + Arrays.hashCode(this.f1316I)) * 31;
+        int hashCode = ((this.f1399q * 31) + Arrays.hashCode(this.f1398I)) * 31;
         LMSigParameters lMSigParameters = this.parameters;
         int hashCode2 = (hashCode + (lMSigParameters != null ? lMSigParameters.hashCode() : 0)) * 31;
         LMOtsParameters lMOtsParameters = this.otsParameters;

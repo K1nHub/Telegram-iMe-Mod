@@ -1,14 +1,12 @@
 package com.iMe.storage.data.mapper.wallet;
 
-import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.iMe.storage.data.locale.p027db.model.wallet.WalletTokenBalanceDb;
 import com.iMe.storage.data.network.model.response.wallet.TokenBalanceResponse;
 import com.iMe.storage.data.network.model.response.wallet.WalletBalancesResponse;
-import com.iMe.storage.domain.model.crypto.NetworkType;
-import com.iMe.storage.domain.model.wallet.PriceRate;
+import com.iMe.storage.data.utils.extentions.NumberExtKt;
+import com.iMe.storage.domain.model.wallet.token.FiatValue;
 import com.iMe.storage.domain.model.wallet.token.TokenBalance;
-import com.iMe.storage.domain.model.wallet.token.TokenCode;
-import com.iMe.storage.domain.model.wallet.token.TokenInfo;
+import com.iMe.storage.domain.model.wallet.token.TokenDetailed;
 import java.util.ArrayList;
 import java.util.List;
 import kotlin.jvm.internal.Intrinsics;
@@ -17,12 +15,12 @@ import kotlin.jvm.internal.Intrinsics;
 public final class WalletBalanceMappingKt {
     public static final TokenBalance mapToDomain(WalletTokenBalanceDb walletTokenBalanceDb) {
         Intrinsics.checkNotNullParameter(walletTokenBalanceDb, "<this>");
-        return new TokenBalance(TokenCode.Companion.map(walletTokenBalanceDb.getCoinCode()), walletTokenBalanceDb.getTotal(), walletTokenBalanceDb.getTotalInDollars(), TokenInfo.Companion.map(walletTokenBalanceDb.getCoinCode()), new PriceRate(walletTokenBalanceDb.getRateToDollars(), walletTokenBalanceDb.getRatePercentageChange24h()), NetworkType.Companion.map(walletTokenBalanceDb.getNetworkType()));
+        return new TokenBalance(walletTokenBalanceDb.getTotal(), new FiatValue(walletTokenBalanceDb.getTotalInFiatValue(), walletTokenBalanceDb.getTotalInFiatSymbol(), walletTokenBalanceDb.getTotalInFiatTicker()), new FiatValue(walletTokenBalanceDb.getRateToFiatValue(), walletTokenBalanceDb.getRateToFiatSymbol(), walletTokenBalanceDb.getRateToFiatTicker()), walletTokenBalanceDb.getRatePercentageChange24h(), new TokenDetailed(walletTokenBalanceDb.getAddress(), walletTokenBalanceDb.getNetworkId(), walletTokenBalanceDb.getAvatarUrl(), walletTokenBalanceDb.getDecimals(), walletTokenBalanceDb.getTicker(), walletTokenBalanceDb.isCoin(), walletTokenBalanceDb.getName(), walletTokenBalanceDb.getWebsite()));
     }
 
     public static final WalletTokenBalanceDb mapToDb(TokenBalance tokenBalance, long j) {
         Intrinsics.checkNotNullParameter(tokenBalance, "<this>");
-        return new WalletTokenBalanceDb(j, tokenBalance.getCode().getName(), tokenBalance.getTotal(), tokenBalance.getTotalInDollars(), tokenBalance.getPriceRate().getRateToDollars(), tokenBalance.getPriceRate().getRatePercentageChange24h(), tokenBalance.getNetworkType().name());
+        return new WalletTokenBalanceDb(j, tokenBalance.getTotal(), tokenBalance.getTotalInFiat().getValue(), tokenBalance.getTotalInFiat().getSymbol(), tokenBalance.getTotalInFiat().getTicker(), tokenBalance.getRateToFiat().getValue(), tokenBalance.getRateToFiat().getSymbol(), tokenBalance.getRateToFiat().getTicker(), tokenBalance.getRatePercentageChange24h(), tokenBalance.getToken().getAddress(), tokenBalance.getToken().getNetworkId(), tokenBalance.getToken().getAvatarUrl(), tokenBalance.getToken().getDecimals(), tokenBalance.getToken().getTicker(), tokenBalance.getToken().isCoin(), tokenBalance.getToken().getName(), tokenBalance.getToken().getWebsite());
     }
 
     public static final List<TokenBalance> mapToDomain(WalletBalancesResponse walletBalancesResponse) {
@@ -30,13 +28,7 @@ public final class WalletBalanceMappingKt {
         List<TokenBalanceResponse> balances = walletBalancesResponse.getBalances();
         ArrayList arrayList = new ArrayList();
         for (TokenBalanceResponse tokenBalanceResponse : balances) {
-            TokenCode map = TokenCode.Companion.map(tokenBalanceResponse.getCoinCode());
-            double total = tokenBalanceResponse.getTotal();
-            float totalInDollars = tokenBalanceResponse.getTotalInDollars();
-            TokenInfo map2 = TokenInfo.Companion.map(tokenBalanceResponse.getCoinCode());
-            double rateToDollars = tokenBalanceResponse.getRateToDollars();
-            Float ratePercentageChange24h = tokenBalanceResponse.getRatePercentageChange24h();
-            arrayList.add(new TokenBalance(map, total, totalInDollars, map2, new PriceRate(rateToDollars, ratePercentageChange24h != null ? ratePercentageChange24h.floatValue() : BitmapDescriptorFactory.HUE_RED), NetworkType.Companion.map(tokenBalanceResponse.getNetworkType())));
+            arrayList.add(new TokenBalance(tokenBalanceResponse.getTotal(), FiatValueMappingKt.mapToDomain(tokenBalanceResponse.getTotalInFiat()), FiatValueMappingKt.mapToDomain(tokenBalanceResponse.getRateToFiat()), NumberExtKt.orZero(tokenBalanceResponse.getRatePercentageChange24h()), TokenMappingKt.mapToDomain(tokenBalanceResponse.getToken())));
         }
         return arrayList;
     }

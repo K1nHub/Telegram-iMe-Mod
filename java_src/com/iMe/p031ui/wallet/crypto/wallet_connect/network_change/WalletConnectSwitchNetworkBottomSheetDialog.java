@@ -6,7 +6,6 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import com.iMe.model.wallet.crypto.wallet_connect.WalletConnectSessionItem;
 import com.iMe.p031ui.base.mvp.MvpBottomSheet;
 import com.iMe.p031ui.custom.BigActionButton;
-import com.iMe.storage.domain.model.crypto.NetworkType;
 import com.iMe.storage.domain.utils.system.ResourceManager;
 import com.iMe.utils.extentions.common.ViewExtKt;
 import com.iMe.utils.extentions.delegate.ResettableLazy;
@@ -17,11 +16,11 @@ import kotlin.jvm.internal.PropertyReference1Impl;
 import kotlin.jvm.internal.Reflection;
 import kotlin.reflect.KProperty;
 import moxy.ktx.MoxyKtxDelegate;
-import org.telegram.messenger.C3295R;
+import org.telegram.messenger.C3417R;
 import org.telegram.messenger.databinding.ForkContentWalletConnectSwitchNetworkBinding;
-import org.telegram.p044ui.ActionBar.ActionBarMenuItem;
-import org.telegram.p044ui.ActionBar.BaseFragment;
-import org.telegram.p044ui.ActionBar.Theme;
+import org.telegram.p043ui.ActionBar.ActionBarMenuItem;
+import org.telegram.p043ui.ActionBar.BaseFragment;
+import org.telegram.p043ui.ActionBar.Theme;
 /* compiled from: WalletConnectSwitchNetworkBottomSheetDialog.kt */
 /* renamed from: com.iMe.ui.wallet.crypto.wallet_connect.network_change.WalletConnectSwitchNetworkBottomSheetDialog */
 /* loaded from: classes4.dex */
@@ -32,16 +31,16 @@ public final class WalletConnectSwitchNetworkBottomSheetDialog extends MvpBottom
     private final MoxyKtxDelegate presenter$delegate;
     private final Lazy resourceManager$delegate;
 
-    public static final WalletConnectSwitchNetworkBottomSheetDialog newInstance(long j, WalletConnectSessionItem walletConnectSessionItem, NetworkType networkType, BaseFragment baseFragment) {
-        return Companion.newInstance(j, walletConnectSessionItem, networkType, baseFragment);
+    public static final WalletConnectSwitchNetworkBottomSheetDialog newInstance(long j, WalletConnectSessionItem walletConnectSessionItem, String str, BaseFragment baseFragment) {
+        return Companion.newInstance(j, walletConnectSessionItem, str, baseFragment);
     }
 
-    @Override // org.telegram.p044ui.ActionBar.BottomSheet
+    @Override // org.telegram.p043ui.ActionBar.BottomSheet
     protected boolean canDismissWithSwipe() {
         return false;
     }
 
-    @Override // org.telegram.p044ui.ActionBar.BottomSheet
+    @Override // org.telegram.p043ui.ActionBar.BottomSheet
     protected boolean canDismissWithTouchOutside() {
         return false;
     }
@@ -51,12 +50,12 @@ public final class WalletConnectSwitchNetworkBottomSheetDialog extends MvpBottom
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
-    public WalletConnectSwitchNetworkBottomSheetDialog(long r9, com.iMe.model.wallet.crypto.wallet_connect.WalletConnectSessionItem r11, com.iMe.storage.domain.model.crypto.NetworkType r12, org.telegram.p044ui.ActionBar.BaseFragment r13) {
+    public WalletConnectSwitchNetworkBottomSheetDialog(long r9, com.iMe.model.wallet.crypto.wallet_connect.WalletConnectSessionItem r11, java.lang.String r12, org.telegram.p043ui.ActionBar.BaseFragment r13) {
         /*
             r8 = this;
             java.lang.String r0 = "sessionItem"
             kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r11, r0)
-            java.lang.String r0 = "networkType"
+            java.lang.String r0 = "networkId"
             kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r12, r0)
             java.lang.String r0 = "fragment"
             kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r13, r0)
@@ -88,7 +87,7 @@ public final class WalletConnectSwitchNetworkBottomSheetDialog extends MvpBottom
             java.lang.String r11 = r11.toString()
             r9.<init>(r10, r11, r0)
             r8.presenter$delegate = r9
-            org.koin.mp.KoinPlatformTools r9 = org.koin.p043mp.KoinPlatformTools.INSTANCE
+            org.koin.mp.KoinPlatformTools r9 = org.koin.p042mp.KoinPlatformTools.INSTANCE
             kotlin.LazyThreadSafetyMode r9 = r9.defaultLazyMode()
             com.iMe.ui.wallet.crypto.wallet_connect.network_change.WalletConnectSwitchNetworkBottomSheetDialog$special$$inlined$inject$default$1 r10 = new com.iMe.ui.wallet.crypto.wallet_connect.network_change.WalletConnectSwitchNetworkBottomSheetDialog$special$$inlined$inject$default$1
             r11 = 0
@@ -103,7 +102,7 @@ public final class WalletConnectSwitchNetworkBottomSheetDialog extends MvpBottom
             r8.setApplyBottomPadding(r9)
             return
         */
-        throw new UnsupportedOperationException("Method not decompiled: com.iMe.p031ui.wallet.crypto.wallet_connect.network_change.WalletConnectSwitchNetworkBottomSheetDialog.<init>(long, com.iMe.model.wallet.crypto.wallet_connect.WalletConnectSessionItem, com.iMe.storage.domain.model.crypto.NetworkType, org.telegram.ui.ActionBar.BaseFragment):void");
+        throw new UnsupportedOperationException("Method not decompiled: com.iMe.p031ui.wallet.crypto.wallet_connect.network_change.WalletConnectSwitchNetworkBottomSheetDialog.<init>(long, com.iMe.model.wallet.crypto.wallet_connect.WalletConnectSessionItem, java.lang.String, org.telegram.ui.ActionBar.BaseFragment):void");
     }
 
     private final WalletConnectSwitchNetworkPresenter getPresenter() {
@@ -129,14 +128,15 @@ public final class WalletConnectSwitchNetworkBottomSheetDialog extends MvpBottom
     }
 
     @Override // com.iMe.p031ui.wallet.crypto.wallet_connect.network_change.WalletConnectSwitchNetworkView
-    public void setupScreenWithData(String iconUrl, String name, String url, int i, String networkName) {
+    public void setupScreenWithData(String iconUrl, String name, String url, String networkLogoUrl, String networkName) {
         Intrinsics.checkNotNullParameter(iconUrl, "iconUrl");
         Intrinsics.checkNotNullParameter(name, "name");
         Intrinsics.checkNotNullParameter(url, "url");
+        Intrinsics.checkNotNullParameter(networkLogoUrl, "networkLogoUrl");
         Intrinsics.checkNotNullParameter(networkName, "networkName");
         ForkContentWalletConnectSwitchNetworkBinding binding = getBinding();
-        binding.viewHeader.setupViewData(iconUrl, getResourceManager().getString(C3295R.string.wallet_connect_switch_network_title, name), url);
-        binding.viewNetworkCell.setupViewData(getResourceManager().getString(C3295R.string.wallet_connect_session_details_network), networkName, i, true);
+        binding.viewHeader.setupViewData(iconUrl, getResourceManager().getString(C3417R.string.wallet_connect_switch_network_title, name), url);
+        binding.viewNetworkCell.setupViewData(getResourceManager().getString(C3417R.string.wallet_connect_session_details_network), networkName, networkLogoUrl, true);
     }
 
     @Override // android.app.Dialog
@@ -159,10 +159,10 @@ public final class WalletConnectSwitchNetworkBottomSheetDialog extends MvpBottom
     private final void setupViews() {
         ForkContentWalletConnectSwitchNetworkBinding binding = getBinding();
         binding.viewNetworkCell.setIconTinted(false);
-        binding.buttonChangeNetwork.setText(getResourceManager().getString(C3295R.string.wallet_connect_switch_network));
+        binding.buttonChangeNetwork.setText(getResourceManager().getString(C3417R.string.wallet_connect_switch_network));
         ActionBarMenuItem actionBarMenuItem = getBinding().buttonClose;
         actionBarMenuItem.setLongClickEnabled(false);
-        actionBarMenuItem.setIcon(C3295R.C3297drawable.ic_close_white);
+        actionBarMenuItem.setIcon(C3417R.C3419drawable.ic_close_white);
     }
 
     private final void setupListeners() {
@@ -198,11 +198,11 @@ public final class WalletConnectSwitchNetworkBottomSheetDialog extends MvpBottom
         private Companion() {
         }
 
-        public final WalletConnectSwitchNetworkBottomSheetDialog newInstance(long j, WalletConnectSessionItem sessionItem, NetworkType networkType, BaseFragment fragment) {
+        public final WalletConnectSwitchNetworkBottomSheetDialog newInstance(long j, WalletConnectSessionItem sessionItem, String networkId, BaseFragment fragment) {
             Intrinsics.checkNotNullParameter(sessionItem, "sessionItem");
-            Intrinsics.checkNotNullParameter(networkType, "networkType");
+            Intrinsics.checkNotNullParameter(networkId, "networkId");
             Intrinsics.checkNotNullParameter(fragment, "fragment");
-            return new WalletConnectSwitchNetworkBottomSheetDialog(j, sessionItem, networkType, fragment);
+            return new WalletConnectSwitchNetworkBottomSheetDialog(j, sessionItem, networkId, fragment);
         }
     }
 }

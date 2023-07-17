@@ -18,6 +18,8 @@
 
 .field private static final MIGRATION_15_16:Lcom/iMe/storage/data/locale/db/migration/AppMainDatabaseMigrations$MIGRATION_15_16$1;
 
+.field private static final MIGRATION_16_17:Lcom/iMe/storage/data/locale/db/migration/AppMainDatabaseMigrations$MIGRATION_16_17$1;
+
 .field private static final MIGRATION_1_2:Lcom/iMe/storage/data/locale/db/migration/AppMainDatabaseMigrations$MIGRATION_1_2$1;
 
 .field private static final MIGRATION_2_3:Lcom/iMe/storage/data/locale/db/migration/AppMainDatabaseMigrations$MIGRATION_2_3$1;
@@ -41,7 +43,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 17
+    .locals 18
 
     new-instance v0, Lcom/iMe/storage/data/locale/db/migration/AppMainDatabaseMigrations;
 
@@ -154,13 +156,22 @@
 
     sput-object v14, Lcom/iMe/storage/data/locale/db/migration/AppMainDatabaseMigrations;->MIGRATION_15_16:Lcom/iMe/storage/data/locale/db/migration/AppMainDatabaseMigrations$MIGRATION_15_16$1;
 
-    const/16 v15, 0xf
+    .line 175
+    new-instance v15, Lcom/iMe/storage/data/locale/db/migration/AppMainDatabaseMigrations$MIGRATION_16_17$1;
+
+    invoke-direct {v15}, Lcom/iMe/storage/data/locale/db/migration/AppMainDatabaseMigrations$MIGRATION_16_17$1;-><init>()V
+
+    sput-object v15, Lcom/iMe/storage/data/locale/db/migration/AppMainDatabaseMigrations;->MIGRATION_16_17:Lcom/iMe/storage/data/locale/db/migration/AppMainDatabaseMigrations$MIGRATION_16_17$1;
+
+    move-object/from16 v16, v15
+
+    const/16 v15, 0x10
 
     new-array v15, v15, [Landroidx/room/migration/Migration;
 
-    const/16 v16, 0x0
+    const/16 v17, 0x0
 
-    aput-object v0, v15, v16
+    aput-object v0, v15, v17
 
     const/4 v0, 0x1
 
@@ -218,7 +229,11 @@
 
     aput-object v14, v15, v0
 
-    .line 175
+    const/16 v0, 0xf
+
+    aput-object v16, v15, v0
+
+    .line 181
     sput-object v15, Lcom/iMe/storage/data/locale/db/migration/AppMainDatabaseMigrations;->migrations:[Landroidx/room/migration/Migration;
 
     return-void
@@ -238,7 +253,7 @@
 .method public final getMigrations()[Landroidx/room/migration/Migration;
     .locals 1
 
-    .line 175
+    .line 181
     sget-object v0, Lcom/iMe/storage/data/locale/db/migration/AppMainDatabaseMigrations;->migrations:[Landroidx/room/migration/Migration;
 
     return-object v0

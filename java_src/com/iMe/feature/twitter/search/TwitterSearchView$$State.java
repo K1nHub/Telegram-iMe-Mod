@@ -21,6 +21,11 @@ public class TwitterSearchView$$State extends MvpViewState<TwitterSearchView> im
         BaseView.CC.$default$finishScreen(this);
     }
 
+    @Override // com.iMe.p031ui.base.mvp.base.BaseView
+    public /* synthetic */ void removeSelfFromStackImmediately() {
+        BaseView.CC.$default$removeSelfFromStackImmediately(this);
+    }
+
     @Override // com.iMe.p031ui.base.mvp.LoadMoreView
     public /* synthetic */ void resetLoadMore() {
         LoadMoreView.CC.$default$resetLoadMore(this);
@@ -331,21 +336,21 @@ public class TwitterSearchView$$State extends MvpViewState<TwitterSearchView> im
     /* loaded from: classes3.dex */
     public class OnRecipientSelectedCommand extends ViewCommand<TwitterSearchView> {
         public final String address;
-        public final boolean contactSelected;
 
         /* renamed from: id */
-        public final String f259id;
+        public final String f341id;
+        public final boolean isContactSelected;
 
         OnRecipientSelectedCommand(TwitterSearchView$$State twitterSearchView$$State, String str, String str2, boolean z) {
             super("onRecipientSelected", OneExecutionStateStrategy.class);
-            this.f259id = str;
+            this.f341id = str;
             this.address = str2;
-            this.contactSelected = z;
+            this.isContactSelected = z;
         }
 
         @Override // moxy.viewstate.ViewCommand
         public void apply(TwitterSearchView twitterSearchView) {
-            twitterSearchView.onRecipientSelected(this.f259id, this.address, this.contactSelected);
+            twitterSearchView.onRecipientSelected(this.f341id, this.address, this.isContactSelected);
         }
     }
 

@@ -26,10 +26,10 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import org.koin.core.Koin;
 import org.koin.core.component.KoinComponent;
-import org.koin.p043mp.KoinPlatformTools;
-import org.telegram.messenger.C3295R;
+import org.koin.p042mp.KoinPlatformTools;
+import org.telegram.messenger.C3417R;
 import org.telegram.messenger.databinding.ForkRecylcerImageItemBinding;
-import org.telegram.p044ui.ActionBar.Theme;
+import org.telegram.p043ui.ActionBar.Theme;
 /* compiled from: TweetProvider.kt */
 /* renamed from: com.iMe.ui.adapter.provider.TweetProvider */
 /* loaded from: classes.dex */
@@ -45,7 +45,7 @@ public final class TweetProvider extends BaseNodeProvider<TweetItem> implements 
         lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new TweetProvider$special$$inlined$inject$default$1(this, null, null));
         this.resource$delegate = lazy;
         this.itemViewType = IdFabric$ViewTypes.TWEET;
-        this.layoutId = C3295R.layout.fork_recycle_item_tweet;
+        this.layoutId = C3417R.layout.fork_recycle_item_tweet;
     }
 
     @Override // com.chad.library.adapter.base.provider.BaseItemProvider
@@ -105,47 +105,43 @@ public final class TweetProvider extends BaseNodeProvider<TweetItem> implements 
         if (url == null) {
             url = "";
         }
-        BaseViewHolder themedBackgroundColor = BaseQuickAdapterExtKt.setThemedBackgroundColor(helper, C3295R.C3298id.view_tweet, Theme.key_windowBackgroundWhite);
-        int i = C3295R.C3298id.text_name;
-        int i2 = Theme.key_windowBackgroundWhiteBlackText;
-        BaseViewHolder themedTextColor = BaseQuickAdapterExtKt.setThemedTextColor(themedBackgroundColor, i, i2);
-        int i3 = C3295R.C3298id.text_post;
-        BaseViewHolder themedTextColor2 = BaseQuickAdapterExtKt.setThemedTextColor(themedTextColor, i3, i2);
-        int i4 = C3295R.C3298id.text_nickname;
-        int i5 = Theme.key_windowBackgroundWhiteGrayText;
-        BaseViewHolder themedTextColor3 = BaseQuickAdapterExtKt.setThemedTextColor(themedTextColor2, i4, i5);
-        int i6 = C3295R.C3298id.text_time;
-        BaseViewHolder themedTextColor4 = BaseQuickAdapterExtKt.setThemedTextColor(themedTextColor3, i6, i5);
-        int i7 = C3295R.C3298id.text_comments_count;
-        int i8 = Theme.key_windowBackgroundWhiteGrayText2;
-        BaseViewHolder themedTextColor5 = BaseQuickAdapterExtKt.setThemedTextColor(themedTextColor4, i7, i8);
-        int i9 = C3295R.C3298id.text_retweets_count;
-        BaseViewHolder themedTextColor6 = BaseQuickAdapterExtKt.setThemedTextColor(themedTextColor5, i9, i8);
-        int i10 = C3295R.C3298id.text_likes_count;
-        BaseViewHolder themedImageColor = BaseQuickAdapterExtKt.setThemedImageColor(BaseQuickAdapterExtKt.setThemedImageColor(BaseQuickAdapterExtKt.setThemedTextColor(themedTextColor6, i10, i8), C3295R.C3298id.image_comments, i8), C3295R.C3298id.image_retweets, i8);
-        int i11 = C3295R.C3298id.image_share;
-        BaseViewHolder themedImageColor2 = BaseQuickAdapterExtKt.setThemedImageColor(BaseQuickAdapterExtKt.setThemedImageColor(themedImageColor, i11, i8), C3295R.C3298id.image_menu, i8);
-        int i12 = C3295R.C3298id.image_like;
-        BaseViewHolder autoSizedCircleRippleBackground = BaseQuickAdapterExtKt.setAutoSizedCircleRippleBackground(themedImageColor2.setImageResource(i12, item.isLiked() ? C3295R.C3297drawable.fork_ic_heart_filled_20 : C3295R.C3297drawable.fork_ic_heart_20), i11);
+        BaseViewHolder themedBackgroundColor = BaseQuickAdapterExtKt.setThemedBackgroundColor(helper, C3417R.C3420id.view_tweet, Theme.key_windowBackgroundWhite);
+        int i = Theme.key_windowBackgroundWhiteBlackText;
+        int i2 = C3417R.C3420id.text_name;
+        int i3 = C3417R.C3420id.text_post;
+        BaseViewHolder themedTextColor = BaseQuickAdapterExtKt.setThemedTextColor(themedBackgroundColor, i, i2, i3);
+        int i4 = Theme.key_windowBackgroundWhiteGrayText;
+        int i5 = C3417R.C3420id.text_nickname;
+        int i6 = C3417R.C3420id.text_time;
+        BaseViewHolder themedTextColor2 = BaseQuickAdapterExtKt.setThemedTextColor(themedTextColor, i4, i5, i6);
+        int i7 = Theme.key_windowBackgroundWhiteGrayText2;
+        int i8 = C3417R.C3420id.text_comments_count;
+        int i9 = C3417R.C3420id.text_retweets_count;
+        int i10 = C3417R.C3420id.text_likes_count;
+        BaseViewHolder themedTextColor3 = BaseQuickAdapterExtKt.setThemedTextColor(themedTextColor2, i7, i8, i9, i10);
+        int i11 = C3417R.C3420id.image_share;
+        BaseViewHolder themedImageColor = BaseQuickAdapterExtKt.setThemedImageColor(themedTextColor3, i7, C3417R.C3420id.image_comments, C3417R.C3420id.image_retweets, i11, C3417R.C3420id.image_menu);
+        int i12 = C3417R.C3420id.image_like;
+        BaseViewHolder autoSizedCircleRippleBackground = BaseQuickAdapterExtKt.setAutoSizedCircleRippleBackground(themedImageColor.setImageResource(i12, item.isLiked() ? C3417R.C3419drawable.fork_ic_heart_filled_20 : C3417R.C3419drawable.fork_ic_heart_20), i11);
         if (item.isLiked()) {
-            i8 = Theme.key_text_RedRegular;
+            i7 = Theme.key_text_RedRegular;
         }
-        BaseQuickAdapterExtKt.applyForView(BaseQuickAdapterExtKt.applyForView(BaseQuickAdapterExtKt.loadImage(BaseQuickAdapterExtKt.setMediumTypeface(BaseQuickAdapterExtKt.setThemedImageColor(autoSizedCircleRippleBackground, i12, i8), i), C3295R.C3298id.image_avatar, item.getAvatarUrl(), Integer.valueOf(C3295R.C3297drawable.fork_logo_avatar), true).setText(i, item.getAuthorName()).setText(i4, item.getAuthorNickname()).setText(i3, StringExtKt.addTwitterLinks(item.getText())).setText(i7, item.getCommentsCountText()).setText(i9, item.getRetweetsCountText()).setText(i10, item.getLikesCountText()).setText(i6, item.getDate()), i3, TweetProvider$convert$1$1.INSTANCE), C3295R.C3298id.recycler, new TweetProvider$convert$1$2(url, this, item));
+        BaseQuickAdapterExtKt.applyForView(BaseQuickAdapterExtKt.applyForView(BaseQuickAdapterExtKt.loadImage$default(BaseQuickAdapterExtKt.setMediumTypeface(BaseQuickAdapterExtKt.setThemedImageColor(autoSizedCircleRippleBackground, i12, i7), i2), C3417R.C3420id.image_avatar, item.getAvatarUrl(), Integer.valueOf(C3417R.C3419drawable.fork_logo_avatar), false, 8, null).setText(i2, item.getAuthorName()).setText(i5, item.getAuthorNickname()).setText(i3, StringExtKt.addTwitterLinks(item.getText())).setText(i8, item.getCommentsCountText()).setText(i9, item.getRetweetsCountText()).setText(i10, item.getLikesCountText()).setText(i6, item.getDate()), i3, TweetProvider$convert$1$1.INSTANCE), C3417R.C3420id.recycler, new TweetProvider$convert$1$2(url, this, item));
     }
 
     public void convert(BaseViewHolder helper, TweetItem item, List<? extends Object> payloads) {
         Intrinsics.checkNotNullParameter(helper, "helper");
         Intrinsics.checkNotNullParameter(item, "item");
         Intrinsics.checkNotNullParameter(payloads, "payloads");
-        int i = C3295R.C3298id.image_like;
-        BaseQuickAdapterExtKt.loadImage(BaseQuickAdapterExtKt.setThemedImageColor(helper.setImageResource(i, item.isLiked() ? C3295R.C3297drawable.fork_ic_heart_filled_20 : C3295R.C3297drawable.fork_ic_heart_20), i, item.isLiked() ? Theme.key_text_RedRegular : Theme.key_windowBackgroundWhiteGrayText2), C3295R.C3298id.image_avatar, item.getAvatarUrl(), Integer.valueOf(C3295R.C3297drawable.fork_logo_avatar), true).setText(C3295R.C3298id.text_name, item.getAuthorName()).setText(C3295R.C3298id.text_nickname, item.getAuthorNickname()).setText(C3295R.C3298id.text_post, item.getText()).setText(C3295R.C3298id.text_comments_count, item.getCommentsCountText()).setText(C3295R.C3298id.text_retweets_count, item.getRetweetsCountText()).setText(C3295R.C3298id.text_likes_count, item.getLikesCountText()).setText(C3295R.C3298id.text_time, item.getDate());
+        int i = C3417R.C3420id.image_like;
+        BaseQuickAdapterExtKt.loadImage$default(BaseQuickAdapterExtKt.setThemedImageColor(helper.setImageResource(i, item.isLiked() ? C3417R.C3419drawable.fork_ic_heart_filled_20 : C3417R.C3419drawable.fork_ic_heart_20), i, item.isLiked() ? Theme.key_text_RedRegular : Theme.key_windowBackgroundWhiteGrayText2), C3417R.C3420id.image_avatar, item.getAvatarUrl(), Integer.valueOf(C3417R.C3419drawable.fork_logo_avatar), false, 8, null).setText(C3417R.C3420id.text_name, item.getAuthorName()).setText(C3417R.C3420id.text_nickname, item.getAuthorNickname()).setText(C3417R.C3420id.text_post, item.getText()).setText(C3417R.C3420id.text_comments_count, item.getCommentsCountText()).setText(C3417R.C3420id.text_retweets_count, item.getRetweetsCountText()).setText(C3417R.C3420id.text_likes_count, item.getLikesCountText()).setText(C3417R.C3420id.text_time, item.getDate());
     }
 
     @Override // com.chad.library.adapter.base.provider.BaseItemProvider
     public void onViewAttachedToWindow(BaseViewHolder holder) {
         Intrinsics.checkNotNullParameter(holder, "holder");
         super.onViewAttachedToWindow(holder);
-        BaseQuickAdapterExtKt.applyForView(holder, C3295R.C3298id.text_post, TweetProvider$onViewAttachedToWindow$1.INSTANCE);
+        BaseQuickAdapterExtKt.applyForView(holder, C3417R.C3420id.text_post, TweetProvider$onViewAttachedToWindow$1.INSTANCE);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -160,7 +156,7 @@ public final class TweetProvider extends BaseNodeProvider<TweetItem> implements 
         ImageView imageView = bind.imageView;
         Intrinsics.checkNotNullExpressionValue(imageView, "imageView");
         ImageViewExtKt.withGlide(imageView, mediaInfoDomain.getUrl(), new TweetProvider$onBindImage$1$1(bind), new TweetProvider$onBindImage$1$2(bind));
-        bind.errorBlock.textError.setText(getResource().getString(C3295R.string.error_block_failed_to_load_media));
+        bind.errorBlock.textError.setText(getResource().getString(C3417R.string.error_block_failed_to_load_media));
         bind.imageView.setOnClickListener(new View.OnClickListener() { // from class: com.iMe.ui.adapter.provider.TweetProvider$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {

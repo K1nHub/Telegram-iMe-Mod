@@ -34,13 +34,13 @@
 .method private constructor <init>()V
     .locals 6
 
-    .line 47
+    .line 50
     sget v2, Lorg/telegram/messenger/R$raw;->fork_state_progress:I
 
-    .line 48
+    .line 51
     sget v3, Lorg/telegram/messenger/R$string;->common_progress_state_title:I
 
-    .line 49
+    .line 52
     sget v4, Lorg/telegram/messenger/R$string;->common_progress_state_description:I
 
     const-string v1, "progress_state"
@@ -49,7 +49,7 @@
 
     move-object v0, p0
 
-    .line 45
+    .line 48
     invoke-direct/range {v0 .. v5}, Lcom/iMe/model/state/GlobalState;-><init>(Ljava/lang/String;IIILkotlin/jvm/internal/DefaultConstructorMarker;)V
 
     return-void

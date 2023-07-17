@@ -2,7 +2,6 @@ package com.iMe.model.wallet.transaction;
 
 import com.iMe.model.common.NoChildNode;
 import com.iMe.storage.domain.model.wallet.token.FiatCode;
-import com.iMe.storage.domain.model.wallet.token.TokenInfo;
 import com.iMe.storage.domain.model.wallet.transaction.Transaction;
 import com.iMe.storage.domain.model.wallet.transaction.TransactionDirection;
 import com.iMe.storage.domain.utils.system.ResourceManager;
@@ -13,7 +12,7 @@ import com.iMe.utils.formatter.BalanceFormatter;
 import com.iMe.utils.formatter.DateFormatter;
 import kotlin.NoWhenBranchMatchedException;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3295R;
+import org.telegram.messenger.C3417R;
 /* compiled from: TransactionItem.kt */
 /* loaded from: classes3.dex */
 public final class TransactionItem extends NoChildNode {
@@ -27,7 +26,7 @@ public final class TransactionItem extends NoChildNode {
         static {
             int[] iArr = new int[TransactionDirection.values().length];
             try {
-                iArr[TransactionDirection.f373IN.ordinal()] = 1;
+                iArr[TransactionDirection.f446IN.ordinal()] = 1;
             } catch (NoSuchFieldError unused) {
             }
             try {
@@ -104,8 +103,8 @@ public final class TransactionItem extends NoChildNode {
         return resourceManager.getString(this.transaction.getStatus().getTitle());
     }
 
-    public final int getTransactionStatusColor() {
-        return StatusExtKt.colorKey(this.transaction.getStatus());
+    public final int getTransactionStatusColorKey() {
+        return StatusExtKt.getColorKey(this.transaction.getStatus());
     }
 
     public final boolean isUnsupported() {
@@ -116,22 +115,18 @@ public final class TransactionItem extends NoChildNode {
         Intrinsics.checkNotNullParameter(resourceManager, "resourceManager");
         Transaction transaction = this.transaction;
         if (transaction instanceof Transaction.Unsupported) {
-            return resourceManager.getString(C3295R.string.wallet_unsupported_transaction_message);
+            return resourceManager.getString(C3417R.string.wallet_unsupported_transaction_message);
         }
         if (transaction instanceof Transaction.Crypto.Approve) {
-            return resourceManager.getString(C3295R.string.wallet_transactions_type_approve_title, resourceManager.getString(TokenInfo.Companion.map(transaction.getTokenCode()).getShortName()));
+            return resourceManager.getString(C3417R.string.wallet_transactions_type_approve_title, transaction.getToken().getTicker());
         }
         if (transaction instanceof Transaction.Crypto.SimplexPurchase) {
             FiatCode spentFiatCode = ((Transaction.Crypto.SimplexPurchase) transaction).getSpentFiatCode();
-            TokenInfo map = TokenInfo.Companion.map(this.transaction.getTokenCode());
-            return resourceManager.getString(C3295R.string.wallet_transactions_type_simplex_amount_value, BalanceFormatter.formatBalance(((Transaction.Crypto.SimplexPurchase) this.transaction).getSpentAmount(), spentFiatCode.getDecimals()), spentFiatCode.getShortName(), BalanceFormatter.formatBalance(this.transaction.getAmount(), map.getDecimals()), resourceManager.getString(map.getShortName()));
+            return resourceManager.getString(C3417R.string.wallet_transactions_type_simplex_amount_value, BalanceFormatter.formatBalance(((Transaction.Crypto.SimplexPurchase) this.transaction).getSpentAmount(), Integer.valueOf(spentFiatCode.getDecimals())), spentFiatCode.getShortName(), BalanceFormatter.formatBalance(this.transaction.getAmount(), Integer.valueOf(this.transaction.getToken().getDecimals())), this.transaction.getToken().getTicker());
         } else if (transaction instanceof Transaction.Crypto.Swap) {
-            TokenInfo.Companion companion = TokenInfo.Companion;
-            TokenInfo map2 = companion.map(((Transaction.Crypto.Swap) transaction).getInputTokenCode());
-            TokenInfo map3 = companion.map(((Transaction.Crypto.Swap) this.transaction).getOutputTokenCode());
-            return resourceManager.getString(C3295R.string.wallet_transactions_type_simplex_amount_value, BalanceFormatter.formatBalance(((Transaction.Crypto.Swap) this.transaction).getInputAmount(), map2.getDecimals()), resourceManager.getString(map2.getShortName()), BalanceFormatter.formatBalance(((Transaction.Crypto.Swap) this.transaction).getOutputAmount(), map3.getDecimals()), resourceManager.getString(map3.getShortName()));
+            return resourceManager.getString(C3417R.string.wallet_transactions_type_simplex_amount_value, BalanceFormatter.formatBalance(((Transaction.Crypto.Swap) transaction).getInputAmount(), Integer.valueOf(((Transaction.Crypto.Swap) this.transaction).getInputToken().getDecimals())), ((Transaction.Crypto.Swap) this.transaction).getInputToken().getTicker(), BalanceFormatter.formatBalance(((Transaction.Crypto.Swap) this.transaction).getOutputAmount(), Integer.valueOf(((Transaction.Crypto.Swap) this.transaction).getOutputToken().getDecimals())), ((Transaction.Crypto.Swap) this.transaction).getOutputToken().getTicker());
         } else {
-            return getAmountWithSymbol(true) + ' ' + resourceManager.getString(TokenInfo.Companion.map(this.transaction.getTokenCode()).getShortName());
+            return getAmountWithSymbol(true) + ' ' + this.transaction.getToken().getTicker();
         }
     }
 
@@ -143,10 +138,11 @@ public final class TransactionItem extends NoChildNode {
     }
 
     public final String getAmountWithSymbol(boolean z) {
+        Transaction transaction = this.transaction;
         if (z) {
-            return this.transaction.getDirection().getSymbol() + TransactionExtKt.getFormattedAmount(this.transaction);
+            return transaction.getDirection().getSymbol() + TransactionExtKt.getFormattedAmount(transaction);
         }
-        return TransactionExtKt.getFormattedAmount(this.transaction);
+        return TransactionExtKt.getFormattedAmount(transaction);
     }
 
     public final String getRecipientAddress() {

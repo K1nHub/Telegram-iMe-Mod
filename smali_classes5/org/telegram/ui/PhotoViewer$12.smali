@@ -24,12 +24,12 @@
 .method constructor <init>(Lorg/telegram/ui/PhotoViewer;Landroid/content/Context;)V
     .locals 0
 
-    .line 4734
+    .line 4735
     iput-object p1, p0, Lorg/telegram/ui/PhotoViewer$12;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-direct {p0, p1, p2}, Lorg/telegram/ui/PhotoViewer$FrameLayoutDrawer;-><init>(Lorg/telegram/ui/PhotoViewer;Landroid/content/Context;)V
 
-    .line 4735
+    .line 4736
     new-instance p1, Lorg/telegram/ui/PhotoViewer$12$1;
 
     invoke-direct {p1, p0}, Lorg/telegram/ui/PhotoViewer$12$1;-><init>(Lorg/telegram/ui/PhotoViewer$12;)V
@@ -44,10 +44,10 @@
 .method protected onAttachedToWindow()V
     .locals 1
 
-    .line 4747
+    .line 4748
     invoke-super {p0}, Lorg/telegram/ui/PhotoViewer$FrameLayoutDrawer;->onAttachedToWindow()V
 
-    .line 4749
+    .line 4750
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$12;->delegate:Lorg/telegram/ui/Components/Bulletin$Delegate;
 
     invoke-static {p0, v0}, Lorg/telegram/ui/Components/Bulletin;->addDelegate(Landroid/widget/FrameLayout;Lorg/telegram/ui/Components/Bulletin$Delegate;)V
@@ -58,10 +58,10 @@
 .method protected onDetachedFromWindow()V
     .locals 0
 
-    .line 4754
+    .line 4755
     invoke-super {p0}, Lorg/telegram/ui/PhotoViewer$FrameLayoutDrawer;->onDetachedFromWindow()V
 
-    .line 4756
+    .line 4757
     invoke-static {p0}, Lorg/telegram/ui/Components/Bulletin;->removeDelegate(Landroid/widget/FrameLayout;)V
 
     return-void

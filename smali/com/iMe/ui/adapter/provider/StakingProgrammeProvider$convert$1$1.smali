@@ -20,7 +20,7 @@
     value = {
         "Lkotlin/jvm/internal/Lambda;",
         "Lkotlin/jvm/functions/Function1<",
-        "Lcom/iMe/ui/custom/CoinTickerView;",
+        "Landroidx/appcompat/widget/AppCompatImageView;",
         "Lkotlin/Unit;",
         ">;"
     }
@@ -53,41 +53,88 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 68
-    check-cast p1, Lcom/iMe/ui/custom/CoinTickerView;
+    .line 72
+    check-cast p1, Landroidx/appcompat/widget/AppCompatImageView;
 
-    invoke-virtual {p0, p1}, Lcom/iMe/ui/adapter/provider/StakingProgrammeProvider$convert$1$1;->invoke(Lcom/iMe/ui/custom/CoinTickerView;)V
+    invoke-virtual {p0, p1}, Lcom/iMe/ui/adapter/provider/StakingProgrammeProvider$convert$1$1;->invoke(Landroidx/appcompat/widget/AppCompatImageView;)V
 
     sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     return-object p1
 .end method
 
-.method public final invoke(Lcom/iMe/ui/custom/CoinTickerView;)V
-    .locals 2
+.method public final invoke(Landroidx/appcompat/widget/AppCompatImageView;)V
+    .locals 7
 
     const-string v0, "$this$applyForView"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 68
+    .line 74
     iget-object v0, p0, Lcom/iMe/ui/adapter/provider/StakingProgrammeProvider$convert$1$1;->$this_with:Lcom/iMe/model/staking/StakingProgrammeItem;
 
     invoke-virtual {v0}, Lcom/iMe/model/staking/StakingProgrammeItem;->getTokenBalance()Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;->getInfo()Lcom/iMe/storage/domain/model/wallet/token/TokenInfo;
+    invoke-virtual {v0}, Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;->getToken()Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
 
     move-result-object v0
 
+    invoke-virtual {v0}, Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;->getNetworkId()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcom/iMe/storage/data/utils/crypto/NetworksHelper;->getNetworkById(Ljava/lang/String;)Lcom/iMe/storage/domain/model/crypto/Network;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/iMe/storage/domain/model/crypto/Network;->getLogoUrl()Ljava/lang/String;
+
+    move-result-object v2
+
+    const/4 v3, 0x0
+
+    const/4 v4, 0x1
+
+    const/4 v5, 0x2
+
+    const/4 v6, 0x0
+
+    move-object v1, p1
+
+    .line 73
+    invoke-static/range {v1 .. v6}, Lcom/iMe/utils/extentions/common/ImageViewExtKt;->loadFrom$default(Landroid/widget/ImageView;Ljava/lang/String;Ljava/lang/Integer;ZILjava/lang/Object;)V
+
+    .line 77
+    new-instance v0, Lcom/google/android/material/shape/MaterialShapeDrawable;
+
+    invoke-direct {v0}, Lcom/google/android/material/shape/MaterialShapeDrawable;-><init>()V
+
     iget-object v1, p0, Lcom/iMe/ui/adapter/provider/StakingProgrammeProvider$convert$1$1;->this$0:Lcom/iMe/ui/adapter/provider/StakingProgrammeProvider;
 
-    invoke-static {v1}, Lcom/iMe/ui/adapter/provider/StakingProgrammeProvider;->access$getResourceManager$p(Lcom/iMe/ui/adapter/provider/StakingProgrammeProvider;)Lcom/iMe/storage/domain/utils/system/ResourceManager;
+    .line 78
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
-    move-result-object v1
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
-    invoke-virtual {p1, v0, v1}, Lcom/iMe/ui/custom/CoinTickerView;->setTicker(Lcom/iMe/storage/domain/model/wallet/token/TokenInfo;Lcom/iMe/storage/domain/utils/system/ResourceManager;)V
+    move-result v2
+
+    invoke-static {v2}, Landroid/content/res/ColorStateList;->valueOf(I)Landroid/content/res/ColorStateList;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v2}, Lcom/google/android/material/shape/MaterialShapeDrawable;->setFillColor(Landroid/content/res/ColorStateList;)V
+
+    .line 79
+    invoke-static {v1}, Lcom/iMe/ui/adapter/provider/StakingProgrammeProvider;->access$getNetworkIconCornerSize(Lcom/iMe/ui/adapter/provider/StakingProgrammeProvider;)F
+
+    move-result v1
+
+    invoke-virtual {v0, v1}, Lcom/google/android/material/shape/MaterialShapeDrawable;->setCornerSize(F)V
+
+    .line 77
+    invoke-virtual {p1, v0}, Landroid/widget/ImageView;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
     return-void
 .end method

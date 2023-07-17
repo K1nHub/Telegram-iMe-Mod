@@ -1,5 +1,5 @@
 .class public final Lcom/iMe/ui/wallet/staking/StakingFragment;
-.super Lcom/iMe/ui/base/WalletAuthFragment;
+.super Lcom/iMe/ui/base/wallet_auth/WalletAuthBaseFragment;
 .source "StakingFragment.kt"
 
 # interfaces
@@ -17,7 +17,7 @@
 
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "Lcom/iMe/ui/base/WalletAuthFragment;",
+        "Lcom/iMe/ui/base/wallet_auth/WalletAuthBaseFragment;",
         "Lcom/iMe/ui/wallet/staking/StakingView;",
         "Lcom/iMe/navigation/common/configuration/NavigationViewConfiguration;",
         "Lcom/iMe/fork/utils/TabbedViewPagerDelegate<",
@@ -160,7 +160,7 @@
     .locals 5
 
     .line 42
-    invoke-direct {p0}, Lcom/iMe/ui/base/WalletAuthFragment;-><init>()V
+    invoke-direct {p0}, Lcom/iMe/ui/base/wallet_auth/WalletAuthBaseFragment;-><init>()V
 
     .line 45
     new-instance v0, Lcom/iMe/ui/wallet/staking/StakingFragment$presenter$2;
@@ -492,7 +492,7 @@
     new-instance v14, Lcom/iMe/fork/utils/TabbedFragmentPage;
 
     .line 184
-    invoke-virtual {p0}, Lcom/iMe/ui/base/WalletAuthFragment;->getResourceManager()Lcom/iMe/storage/domain/utils/system/ResourceManager;
+    invoke-virtual {p0}, Lcom/iMe/ui/base/wallet_auth/WalletAuthBaseFragment;->getResourceManager()Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     move-result-object v7
 
@@ -570,7 +570,7 @@
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBar;->setBackButtonImage(I)V
 
     .line 198
-    invoke-virtual {p0}, Lcom/iMe/ui/base/WalletAuthFragment;->getResourceManager()Lcom/iMe/storage/domain/utils/system/ResourceManager;
+    invoke-virtual {p0}, Lcom/iMe/ui/base/wallet_auth/WalletAuthBaseFragment;->getResourceManager()Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     move-result-object v1
 
@@ -753,7 +753,7 @@
     .locals 9
 
     .line 215
-    invoke-virtual {p0}, Lcom/iMe/ui/base/WalletAuthFragment;->getResourceManager()Lcom/iMe/storage/domain/utils/system/ResourceManager;
+    invoke-virtual {p0}, Lcom/iMe/ui/base/wallet_auth/WalletAuthBaseFragment;->getResourceManager()Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     move-result-object v0
 
@@ -764,7 +764,7 @@
     move-result-object v4
 
     .line 216
-    invoke-virtual {p0}, Lcom/iMe/ui/base/WalletAuthFragment;->getResourceManager()Lcom/iMe/storage/domain/utils/system/ResourceManager;
+    invoke-virtual {p0}, Lcom/iMe/ui/base/wallet_auth/WalletAuthBaseFragment;->getResourceManager()Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     move-result-object v0
 
@@ -810,7 +810,7 @@
     move-result-object v0
 
     .line 220
-    invoke-virtual {p0}, Lcom/iMe/ui/base/WalletAuthFragment;->getResourceManager()Lcom/iMe/storage/domain/utils/system/ResourceManager;
+    invoke-virtual {p0}, Lcom/iMe/ui/base/wallet_auth/WalletAuthBaseFragment;->getResourceManager()Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     move-result-object p0
 
@@ -1423,7 +1423,7 @@
     .locals 2
 
     .line 87
-    invoke-super {p0}, Lcom/iMe/ui/base/WalletAuthFragment;->onResume()V
+    invoke-super {p0}, Lcom/iMe/ui/base/wallet_auth/WalletAuthBaseFragment;->onResume()V
 
     .line 88
     invoke-direct {p0}, Lcom/iMe/ui/wallet/staking/StakingFragment;->getNavigationRouter()Lcom/iMe/navigation/common/router/base/NavigationRouter;

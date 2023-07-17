@@ -12,7 +12,7 @@ import okhttp3.Response;
 import okhttp3.ResponseBody;
 import okhttp3.internal.http.ExchangeCodec;
 import okhttp3.internal.http.RealResponseBody;
-import okhttp3.internal.p038ws.RealWebSocket;
+import okhttp3.internal.p037ws.RealWebSocket;
 import okio.Buffer;
 import okio.ForwardingSink;
 import okio.ForwardingSource;

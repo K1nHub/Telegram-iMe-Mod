@@ -17,7 +17,10 @@
     value = {
         Lcom/iMe/model/state/GlobalState$Empty$Balance;,
         Lcom/iMe/model/state/GlobalState$Empty$Common;,
+        Lcom/iMe/model/state/GlobalState$Empty$CustomTokens;,
         Lcom/iMe/model/state/GlobalState$Empty$Staking;,
+        Lcom/iMe/model/state/GlobalState$Empty$TokenSearchResult;,
+        Lcom/iMe/model/state/GlobalState$Empty$TokenSearchStart;,
         Lcom/iMe/model/state/GlobalState$Empty$Twitter;,
         Lcom/iMe/model/state/GlobalState$Empty$TwitterSearch;
     }
@@ -50,19 +53,19 @@
 
     move v4, p4
 
-    .line 57
+    .line 60
     invoke-direct/range {v0 .. v5}, Lcom/iMe/model/state/GlobalState;-><init>(Ljava/lang/String;IIILkotlin/jvm/internal/DefaultConstructorMarker;)V
 
-    .line 53
+    .line 56
     iput-object p1, p0, Lcom/iMe/model/state/GlobalState$Empty;->state:Ljava/lang/String;
 
-    .line 54
+    .line 57
     iput p2, p0, Lcom/iMe/model/state/GlobalState$Empty;->icon:I
 
-    .line 55
+    .line 58
     iput p3, p0, Lcom/iMe/model/state/GlobalState$Empty;->title:I
 
-    .line 56
+    .line 59
     iput p4, p0, Lcom/iMe/model/state/GlobalState$Empty;->description:I
 
     return-void
@@ -81,7 +84,7 @@
 .method public getDescription()I
     .locals 1
 
-    .line 56
+    .line 59
     iget v0, p0, Lcom/iMe/model/state/GlobalState$Empty;->description:I
 
     return v0
@@ -90,7 +93,7 @@
 .method public getIcon()I
     .locals 1
 
-    .line 54
+    .line 57
     iget v0, p0, Lcom/iMe/model/state/GlobalState$Empty;->icon:I
 
     return v0
@@ -99,7 +102,7 @@
 .method public getState()Ljava/lang/String;
     .locals 1
 
-    .line 53
+    .line 56
     iget-object v0, p0, Lcom/iMe/model/state/GlobalState$Empty;->state:Ljava/lang/String;
 
     return-object v0
@@ -108,7 +111,7 @@
 .method public getTitle()I
     .locals 1
 
-    .line 55
+    .line 58
     iget v0, p0, Lcom/iMe/model/state/GlobalState$Empty;->title:I
 
     return v0

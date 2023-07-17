@@ -64,7 +64,7 @@ public final class CheckoutInventory extends BaseInventory {
         }
 
         private void loadPurchases(BillingRequests billingRequests, final Inventory.Product product) {
-            billingRequests.getAllPurchases(product.f1354id, CheckoutInventory.this.synchronizedListener(new RequestListener<Purchases>() { // from class: org.solovyev.android.checkout.CheckoutInventory.Worker.1
+            billingRequests.getAllPurchases(product.f1436id, CheckoutInventory.this.synchronizedListener(new RequestListener<Purchases>() { // from class: org.solovyev.android.checkout.CheckoutInventory.Worker.1
                 @Override // org.solovyev.android.checkout.RequestListener
                 public void onSuccess(Purchases purchases) {
                     product.setPurchases(purchases.list);
@@ -79,15 +79,15 @@ public final class CheckoutInventory extends BaseInventory {
         }
 
         private void loadSkus(BillingRequests billingRequests, final Inventory.Product product) {
-            List<String> skus = this.mTask.getRequest().getSkus(product.f1354id);
+            List<String> skus = this.mTask.getRequest().getSkus(product.f1436id);
             if (skus.isEmpty()) {
-                Billing.warning("There are no SKUs for \"" + product.f1354id + "\" product. No SKU information will be loaded");
+                Billing.warning("There are no SKUs for \"" + product.f1436id + "\" product. No SKU information will be loaded");
                 synchronized (CheckoutInventory.this.mLock) {
                     countDown();
                 }
                 return;
             }
-            billingRequests.getSkus(product.f1354id, skus, CheckoutInventory.this.synchronizedListener(new RequestListener<Skus>() { // from class: org.solovyev.android.checkout.CheckoutInventory.Worker.2
+            billingRequests.getSkus(product.f1436id, skus, CheckoutInventory.this.synchronizedListener(new RequestListener<Skus>() { // from class: org.solovyev.android.checkout.CheckoutInventory.Worker.2
                 @Override // org.solovyev.android.checkout.RequestListener
                 public void onSuccess(Skus skus2) {
                     product.setSkus(skus2.list);

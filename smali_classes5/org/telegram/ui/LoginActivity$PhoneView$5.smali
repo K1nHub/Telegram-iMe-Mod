@@ -29,14 +29,14 @@
 .method constructor <init>(Lorg/telegram/ui/LoginActivity$PhoneView;Lorg/telegram/ui/LoginActivity;)V
     .locals 0
 
-    .line 2532
+    .line 2606
     iput-object p1, p0, Lorg/telegram/ui/LoginActivity$PhoneView$5;->this$1:Lorg/telegram/ui/LoginActivity$PhoneView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     const/4 p1, -0x1
 
-    .line 2534
+    .line 2608
     iput p1, p0, Lorg/telegram/ui/LoginActivity$PhoneView$5;->characterAction:I
 
     return-void
@@ -47,10 +47,10 @@
 .method public afterTextChanged(Landroid/text/Editable;)V
     .locals 10
 
-    .line 2596
+    .line 2670
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$PhoneView$5;->this$1:Lorg/telegram/ui/LoginActivity$PhoneView;
 
-    invoke-static {v0}, Lorg/telegram/ui/LoginActivity$PhoneView;->access$5000(Lorg/telegram/ui/LoginActivity$PhoneView;)Z
+    invoke-static {v0}, Lorg/telegram/ui/LoginActivity$PhoneView;->access$5100(Lorg/telegram/ui/LoginActivity$PhoneView;)Z
 
     move-result v0
 
@@ -58,11 +58,11 @@
 
     return-void
 
-    .line 2599
+    .line 2673
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$PhoneView$5;->this$1:Lorg/telegram/ui/LoginActivity$PhoneView;
 
-    invoke-static {v0}, Lorg/telegram/ui/LoginActivity$PhoneView;->access$3600(Lorg/telegram/ui/LoginActivity$PhoneView;)Lorg/telegram/ui/Components/AnimatedPhoneNumberEditText;
+    invoke-static {v0}, Lorg/telegram/ui/LoginActivity$PhoneView;->access$3700(Lorg/telegram/ui/LoginActivity$PhoneView;)Lorg/telegram/ui/Components/AnimatedPhoneNumberEditText;
 
     move-result-object v0
 
@@ -70,10 +70,10 @@
 
     move-result v0
 
-    .line 2601
+    .line 2675
     iget-object v1, p0, Lorg/telegram/ui/LoginActivity$PhoneView$5;->this$1:Lorg/telegram/ui/LoginActivity$PhoneView;
 
-    invoke-static {v1}, Lorg/telegram/ui/LoginActivity$PhoneView;->access$3600(Lorg/telegram/ui/LoginActivity$PhoneView;)Lorg/telegram/ui/Components/AnimatedPhoneNumberEditText;
+    invoke-static {v1}, Lorg/telegram/ui/LoginActivity$PhoneView;->access$3700(Lorg/telegram/ui/LoginActivity$PhoneView;)Lorg/telegram/ui/Components/AnimatedPhoneNumberEditText;
 
     move-result-object v1
 
@@ -85,7 +85,7 @@
 
     move-result-object v1
 
-    .line 2602
+    .line 2676
     iget v2, p0, Lorg/telegram/ui/LoginActivity$PhoneView$5;->characterAction:I
 
     const/4 v3, 0x3
@@ -96,7 +96,7 @@
 
     if-ne v2, v3, :cond_1
 
-    .line 2603
+    .line 2677
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -125,7 +125,7 @@
 
     add-int/lit8 v0, v0, -0x1
 
-    .line 2606
+    .line 2680
     :cond_1
     new-instance v2, Ljava/lang/StringBuilder;
 
@@ -137,7 +137,7 @@
 
     move v6, v4
 
-    .line 2607
+    .line 2681
     :goto_0
     invoke-virtual {v1}, Ljava/lang/String;->length()I
 
@@ -147,21 +147,21 @@
 
     add-int/lit8 v7, v6, 0x1
 
-    .line 2608
+    .line 2682
     invoke-virtual {v1, v6, v7}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
     move-result-object v6
 
     const-string v8, "0123456789"
 
-    .line 2609
+    .line 2683
     invoke-virtual {v8, v6}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
 
     move-result v8
 
     if-eqz v8, :cond_2
 
-    .line 2610
+    .line 2684
     invoke-virtual {v2, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     :cond_2
@@ -169,16 +169,16 @@
 
     goto :goto_0
 
-    .line 2613
+    .line 2687
     :cond_3
     iget-object v1, p0, Lorg/telegram/ui/LoginActivity$PhoneView$5;->this$1:Lorg/telegram/ui/LoginActivity$PhoneView;
 
-    invoke-static {v1, v5}, Lorg/telegram/ui/LoginActivity$PhoneView;->access$5002(Lorg/telegram/ui/LoginActivity$PhoneView;Z)Z
+    invoke-static {v1, v5}, Lorg/telegram/ui/LoginActivity$PhoneView;->access$5102(Lorg/telegram/ui/LoginActivity$PhoneView;Z)Z
 
-    .line 2614
+    .line 2688
     iget-object v1, p0, Lorg/telegram/ui/LoginActivity$PhoneView$5;->this$1:Lorg/telegram/ui/LoginActivity$PhoneView;
 
-    invoke-static {v1}, Lorg/telegram/ui/LoginActivity$PhoneView;->access$3600(Lorg/telegram/ui/LoginActivity$PhoneView;)Lorg/telegram/ui/Components/AnimatedPhoneNumberEditText;
+    invoke-static {v1}, Lorg/telegram/ui/LoginActivity$PhoneView;->access$3700(Lorg/telegram/ui/LoginActivity$PhoneView;)Lorg/telegram/ui/Components/AnimatedPhoneNumberEditText;
 
     move-result-object v1
 
@@ -190,7 +190,7 @@
 
     move v6, v4
 
-    .line 2616
+    .line 2690
     :goto_1
     invoke-virtual {v2}, Ljava/lang/StringBuilder;->length()I
 
@@ -198,7 +198,7 @@
 
     if-ge v6, v7, :cond_6
 
-    .line 2617
+    .line 2691
     invoke-virtual {v1}, Ljava/lang/String;->length()I
 
     move-result v7
@@ -209,21 +209,21 @@
 
     if-ge v6, v7, :cond_5
 
-    .line 2618
+    .line 2692
     invoke-virtual {v1, v6}, Ljava/lang/String;->charAt(I)C
 
     move-result v7
 
     if-ne v7, v9, :cond_4
 
-    .line 2619
+    .line 2693
     invoke-virtual {v2, v6, v9}, Ljava/lang/StringBuilder;->insert(IC)Ljava/lang/StringBuilder;
 
     add-int/lit8 v6, v6, 0x1
 
     if-ne v0, v6, :cond_4
 
-    .line 2621
+    .line 2695
     iget v7, p0, Lorg/telegram/ui/LoginActivity$PhoneView$5;->characterAction:I
 
     if-eq v7, v8, :cond_4
@@ -237,7 +237,7 @@
 
     goto :goto_1
 
-    .line 2626
+    .line 2700
     :cond_5
     invoke-virtual {v2, v6, v9}, Ljava/lang/StringBuilder;->insert(IC)Ljava/lang/StringBuilder;
 
@@ -245,7 +245,7 @@
 
     if-ne v0, v6, :cond_6
 
-    .line 2627
+    .line 2701
     iget v1, p0, Lorg/telegram/ui/LoginActivity$PhoneView$5;->characterAction:I
 
     if-eq v1, v8, :cond_6
@@ -254,7 +254,7 @@
 
     add-int/lit8 v0, v0, 0x1
 
-    .line 2634
+    .line 2708
     :cond_6
     invoke-interface {p1}, Landroid/text/Editable;->length()I
 
@@ -264,16 +264,16 @@
 
     if-ltz v0, :cond_7
 
-    .line 2636
+    .line 2710
     iget-object p1, p0, Lorg/telegram/ui/LoginActivity$PhoneView$5;->this$1:Lorg/telegram/ui/LoginActivity$PhoneView;
 
-    invoke-static {p1}, Lorg/telegram/ui/LoginActivity$PhoneView;->access$3600(Lorg/telegram/ui/LoginActivity$PhoneView;)Lorg/telegram/ui/Components/AnimatedPhoneNumberEditText;
+    invoke-static {p1}, Lorg/telegram/ui/LoginActivity$PhoneView;->access$3700(Lorg/telegram/ui/LoginActivity$PhoneView;)Lorg/telegram/ui/Components/AnimatedPhoneNumberEditText;
 
     move-result-object p1
 
     iget-object v1, p0, Lorg/telegram/ui/LoginActivity$PhoneView$5;->this$1:Lorg/telegram/ui/LoginActivity$PhoneView;
 
-    invoke-static {v1}, Lorg/telegram/ui/LoginActivity$PhoneView;->access$3600(Lorg/telegram/ui/LoginActivity$PhoneView;)Lorg/telegram/ui/Components/AnimatedPhoneNumberEditText;
+    invoke-static {v1}, Lorg/telegram/ui/LoginActivity$PhoneView;->access$3700(Lorg/telegram/ui/LoginActivity$PhoneView;)Lorg/telegram/ui/Components/AnimatedPhoneNumberEditText;
 
     move-result-object v1
 
@@ -287,25 +287,25 @@
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setSelection(I)V
 
-    .line 2638
+    .line 2712
     :cond_7
     iget-object p1, p0, Lorg/telegram/ui/LoginActivity$PhoneView$5;->this$1:Lorg/telegram/ui/LoginActivity$PhoneView;
 
-    invoke-static {p1}, Lorg/telegram/ui/LoginActivity$PhoneView;->access$3600(Lorg/telegram/ui/LoginActivity$PhoneView;)Lorg/telegram/ui/Components/AnimatedPhoneNumberEditText;
+    invoke-static {p1}, Lorg/telegram/ui/LoginActivity$PhoneView;->access$3700(Lorg/telegram/ui/LoginActivity$PhoneView;)Lorg/telegram/ui/Components/AnimatedPhoneNumberEditText;
 
     move-result-object p1
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/HintEditText;->onTextChange()V
 
-    .line 2639
+    .line 2713
     iget-object p1, p0, Lorg/telegram/ui/LoginActivity$PhoneView$5;->this$1:Lorg/telegram/ui/LoginActivity$PhoneView;
 
-    invoke-static {p1}, Lorg/telegram/ui/LoginActivity$PhoneView;->access$5100(Lorg/telegram/ui/LoginActivity$PhoneView;)V
+    invoke-static {p1}, Lorg/telegram/ui/LoginActivity$PhoneView;->access$5200(Lorg/telegram/ui/LoginActivity$PhoneView;)V
 
-    .line 2640
+    .line 2714
     iget-object p1, p0, Lorg/telegram/ui/LoginActivity$PhoneView$5;->this$1:Lorg/telegram/ui/LoginActivity$PhoneView;
 
-    invoke-static {p1, v4}, Lorg/telegram/ui/LoginActivity$PhoneView;->access$5002(Lorg/telegram/ui/LoginActivity$PhoneView;Z)Z
+    invoke-static {p1, v4}, Lorg/telegram/ui/LoginActivity$PhoneView;->access$5102(Lorg/telegram/ui/LoginActivity$PhoneView;Z)Z
 
     return-void
 .end method
@@ -319,7 +319,7 @@
 
     if-ne p4, v0, :cond_0
 
-    .line 2540
+    .line 2614
     iput v0, p0, Lorg/telegram/ui/LoginActivity$PhoneView$5;->characterAction:I
 
     goto :goto_0
@@ -329,7 +329,7 @@
 
     if-nez p4, :cond_2
 
-    .line 2542
+    .line 2616
     invoke-interface {p1, p2}, Ljava/lang/CharSequence;->charAt(I)C
 
     move-result p1
@@ -342,12 +342,12 @@
 
     const/4 p1, 0x3
 
-    .line 2543
+    .line 2617
     iput p1, p0, Lorg/telegram/ui/LoginActivity$PhoneView$5;->characterAction:I
 
     sub-int/2addr p2, v0
 
-    .line 2544
+    .line 2618
     iput p2, p0, Lorg/telegram/ui/LoginActivity$PhoneView$5;->actionPosition:I
 
     goto :goto_0
@@ -355,7 +355,7 @@
     :cond_1
     const/4 p1, 0x2
 
-    .line 2546
+    .line 2620
     iput p1, p0, Lorg/telegram/ui/LoginActivity$PhoneView$5;->characterAction:I
 
     goto :goto_0
@@ -363,7 +363,7 @@
     :cond_2
     const/4 p1, -0x1
 
-    .line 2549
+    .line 2623
     iput p1, p0, Lorg/telegram/ui/LoginActivity$PhoneView$5;->characterAction:I
 
     :goto_0

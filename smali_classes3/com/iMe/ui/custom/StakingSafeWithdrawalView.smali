@@ -8,6 +8,22 @@
 
 
 # direct methods
+.method public static synthetic $r8$lambda$69gHPannAmqQhlzrP_3q1rhtFTQ(Lorg/telegram/ui/Components/CheckBoxSquare;Lcom/iMe/fork/utils/Callbacks$Callback1;Landroid/view/View;)V
+    .locals 0
+
+    invoke-static {p0, p1, p2}, Lcom/iMe/ui/custom/StakingSafeWithdrawalView;->setupViewData$lambda$3$lambda$1$lambda$0(Lorg/telegram/ui/Components/CheckBoxSquare;Lcom/iMe/fork/utils/Callbacks$Callback1;Landroid/view/View;)V
+
+    return-void
+.end method
+
+.method public static synthetic $r8$lambda$BHGOLDEq3nJRTGoWFRjFzRpjg08(Lcom/iMe/fork/utils/Callbacks$Callback;Landroid/view/View;)V
+    .locals 0
+
+    invoke-static {p0, p1}, Lcom/iMe/ui/custom/StakingSafeWithdrawalView;->setupViewData$lambda$3$lambda$2(Lcom/iMe/fork/utils/Callbacks$Callback;Landroid/view/View;)V
+
+    return-void
+.end method
+
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 7
 
@@ -117,6 +133,55 @@
     return-void
 .end method
 
+.method private static final setupViewData$lambda$3$lambda$1$lambda$0(Lorg/telegram/ui/Components/CheckBoxSquare;Lcom/iMe/fork/utils/Callbacks$Callback1;Landroid/view/View;)V
+    .locals 1
+
+    const-string p2, "$this_with"
+
+    invoke-static {p0, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string p2, "$onCheckedAction"
+
+    invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 40
+    invoke-virtual {p0}, Lorg/telegram/ui/Components/CheckBoxSquare;->isChecked()Z
+
+    move-result p2
+
+    const/4 v0, 0x1
+
+    xor-int/2addr p2, v0
+
+    invoke-virtual {p0, p2, v0}, Lorg/telegram/ui/Components/CheckBoxSquare;->setChecked(ZZ)V
+
+    .line 41
+    invoke-virtual {p0}, Lorg/telegram/ui/Components/CheckBoxSquare;->isChecked()Z
+
+    move-result p0
+
+    invoke-static {p0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object p0
+
+    invoke-interface {p1, p0}, Lcom/iMe/fork/utils/Callbacks$Callback1;->invoke(Ljava/lang/Object;)V
+
+    return-void
+.end method
+
+.method private static final setupViewData$lambda$3$lambda$2(Lcom/iMe/fork/utils/Callbacks$Callback;Landroid/view/View;)V
+    .locals 0
+
+    const-string p1, "$onInfoClickAction"
+
+    invoke-static {p0, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 44
+    invoke-interface {p0}, Lcom/iMe/fork/utils/Callbacks$Callback;->invoke()V
+
+    return-void
+.end method
+
 
 # virtual methods
 .method public final setupColors()V
@@ -154,7 +219,7 @@
     .line 56
     iget-object v0, v0, Lorg/telegram/messenger/databinding/ForkContentStakingSafeWithdrawalBinding;->imageHelp:Landroidx/appcompat/widget/AppCompatImageView;
 
-    const-string v1, "setupColors$lambda$3$lambda$2"
+    const-string v1, "setupColors$lambda$5$lambda$4"
 
     .line 57
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
@@ -212,11 +277,11 @@
 
     invoke-static {p1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    new-instance v2, Lcom/iMe/ui/custom/StakingSafeWithdrawalView$setupViewData$1$1$1;
+    new-instance v2, Lcom/iMe/ui/custom/StakingSafeWithdrawalView$$ExternalSyntheticLambda1;
 
-    invoke-direct {v2, v1, p2}, Lcom/iMe/ui/custom/StakingSafeWithdrawalView$setupViewData$1$1$1;-><init>(Lorg/telegram/ui/Components/CheckBoxSquare;Lcom/iMe/fork/utils/Callbacks$Callback1;)V
+    invoke-direct {v2, v1, p2}, Lcom/iMe/ui/custom/StakingSafeWithdrawalView$$ExternalSyntheticLambda1;-><init>(Lorg/telegram/ui/Components/CheckBoxSquare;Lcom/iMe/fork/utils/Callbacks$Callback1;)V
 
-    invoke-static {p1, v2}, Lcom/iMe/utils/extentions/common/ViewExtKt;->setMixedClickListener(Landroid/view/View;Lkotlin/jvm/functions/Function1;)V
+    invoke-static {p1, v2}, Lcom/iMe/utils/extentions/common/ViewExtKt;->setMixedClickListener(Landroid/view/View;Lcom/iMe/fork/utils/Callbacks$Callback1;)V
 
     .line 44
     iget-object p1, v0, Lorg/telegram/messenger/databinding/ForkContentStakingSafeWithdrawalBinding;->imageHelp:Landroidx/appcompat/widget/AppCompatImageView;
@@ -225,11 +290,11 @@
 
     invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    new-instance p2, Lcom/iMe/ui/custom/StakingSafeWithdrawalView$setupViewData$1$2;
+    new-instance p2, Lcom/iMe/ui/custom/StakingSafeWithdrawalView$$ExternalSyntheticLambda0;
 
-    invoke-direct {p2, p3}, Lcom/iMe/ui/custom/StakingSafeWithdrawalView$setupViewData$1$2;-><init>(Lcom/iMe/fork/utils/Callbacks$Callback;)V
+    invoke-direct {p2, p3}, Lcom/iMe/ui/custom/StakingSafeWithdrawalView$$ExternalSyntheticLambda0;-><init>(Lcom/iMe/fork/utils/Callbacks$Callback;)V
 
-    invoke-static {p1, p2}, Lcom/iMe/utils/extentions/common/ViewExtKt;->setMixedClickListener(Landroid/view/View;Lkotlin/jvm/functions/Function1;)V
+    invoke-static {p1, p2}, Lcom/iMe/utils/extentions/common/ViewExtKt;->setMixedClickListener(Landroid/view/View;Lcom/iMe/fork/utils/Callbacks$Callback1;)V
 
     return-void
 .end method

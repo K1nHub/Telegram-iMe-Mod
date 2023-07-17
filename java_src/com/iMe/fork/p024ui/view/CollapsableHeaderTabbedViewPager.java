@@ -15,7 +15,7 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.databinding.ForkViewCollapsableHeaderPagerBinding;
-import org.telegram.p044ui.Components.LayoutHelper;
+import org.telegram.p043ui.Components.LayoutHelper;
 /* compiled from: CollapsableHeaderTabbedViewPager.kt */
 /* renamed from: com.iMe.fork.ui.view.CollapsableHeaderTabbedViewPager */
 /* loaded from: classes3.dex */

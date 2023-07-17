@@ -1,11 +1,14 @@
 .class Lorg/telegram/ui/Components/PasscodeView$5;
-.super Landroid/animation/AnimatorListenerAdapter;
+.super Ljava/lang/Object;
 .source "PasscodeView.java"
+
+# interfaces
+.implements Landroid/view/ActionMode$Callback;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/Components/PasscodeView;->lambda$processDone$12()V
+    value = Lorg/telegram/ui/Components/PasscodeView;-><init>(Landroid/content/Context;Lcom/iMe/fork/enums/LockedSection;Lorg/telegram/ui/ActionBar/BaseFragment;Landroid/util/AttributeSet;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -14,33 +17,44 @@
 .end annotation
 
 
-# instance fields
-.field final synthetic this$0:Lorg/telegram/ui/Components/PasscodeView;
-
-
 # direct methods
 .method constructor <init>(Lorg/telegram/ui/Components/PasscodeView;)V
     .locals 0
 
-    .line 1147
-    iput-object p1, p0, Lorg/telegram/ui/Components/PasscodeView$5;->this$0:Lorg/telegram/ui/Components/PasscodeView;
-
-    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
+    .line 895
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onAnimationEnd(Landroid/animation/Animator;)V
-    .locals 1
+.method public onActionItemClicked(Landroid/view/ActionMode;Landroid/view/MenuItem;)Z
+    .locals 0
 
-    .line 1150
-    iget-object p1, p0, Lorg/telegram/ui/Components/PasscodeView$5;->this$0:Lorg/telegram/ui/Components/PasscodeView;
+    const/4 p1, 0x0
 
-    const/16 v0, 0x8
+    return p1
+.end method
 
-    invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->setVisibility(I)V
+.method public onCreateActionMode(Landroid/view/ActionMode;Landroid/view/Menu;)Z
+    .locals 0
+
+    const/4 p1, 0x0
+
+    return p1
+.end method
+
+.method public onDestroyActionMode(Landroid/view/ActionMode;)V
+    .locals 0
 
     return-void
+.end method
+
+.method public onPrepareActionMode(Landroid/view/ActionMode;Landroid/view/Menu;)Z
+    .locals 0
+
+    const/4 p1, 0x0
+
+    return p1
 .end method

@@ -11,8 +11,8 @@ import java.util.Iterator;
 import java.util.Locale;
 import java.util.NoSuchElementException;
 import java.util.Objects;
-import p034j$.util.Iterator;
-import p034j$.util.function.Consumer;
+import p033j$.util.Iterator;
+import p033j$.util.function.Consumer;
 /* loaded from: classes3.dex */
 public abstract class ByteString implements Iterable<Byte>, Serializable {
     public static final ByteString EMPTY = new LiteralByteString(Internal.EMPTY_BYTE_ARRAY);
@@ -127,7 +127,7 @@ public abstract class ByteString implements Iterable<Byte>, Serializable {
                 this.limit = ByteString.this.size();
             }
 
-            @Override // java.util.Iterator, p034j$.util.Iterator
+            @Override // java.util.Iterator, p033j$.util.Iterator
             public boolean hasNext() {
                 return this.position < this.limit;
             }
@@ -145,18 +145,18 @@ public abstract class ByteString implements Iterable<Byte>, Serializable {
     }
 
     /* loaded from: classes3.dex */
-    static abstract class AbstractByteIterator implements ByteIterator, p034j$.util.Iterator {
-        @Override // p034j$.util.Iterator
+    static abstract class AbstractByteIterator implements ByteIterator, p033j$.util.Iterator {
+        @Override // p033j$.util.Iterator
         public /* synthetic */ void forEachRemaining(Consumer consumer) {
             Iterator.CC.$default$forEachRemaining(this, consumer);
         }
 
-        @Override // java.util.Iterator, p034j$.util.Iterator
+        @Override // java.util.Iterator, p033j$.util.Iterator
         public final Byte next() {
             return Byte.valueOf(nextByte());
         }
 
-        @Override // java.util.Iterator, p034j$.util.Iterator
+        @Override // java.util.Iterator, p033j$.util.Iterator
         public final void remove() {
             throw new UnsupportedOperationException();
         }

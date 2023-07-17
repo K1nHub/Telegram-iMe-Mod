@@ -2,7 +2,7 @@ package com.iMe.p031ui.wallet.swap.fee;
 
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Lambda;
-import org.telegram.p044ui.Components.RecyclerListView;
+import org.telegram.p043ui.Components.RecyclerListView;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: WalletSwapFeeFragment.kt */
 /* renamed from: com.iMe.ui.wallet.swap.fee.WalletSwapFeeFragment$listView$2 */

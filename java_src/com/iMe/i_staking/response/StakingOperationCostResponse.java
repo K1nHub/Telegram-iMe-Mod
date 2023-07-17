@@ -1,23 +1,24 @@
 package com.iMe.i_staking.response;
 
+import com.iMe.storage.data.network.model.response.wallet.TokenDetailedResponse;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: StakingOperationCostResponse.kt */
 /* loaded from: classes3.dex */
 public final class StakingOperationCostResponse {
-    private final StakingTokenResponse token;
+    private final TokenDetailedResponse token;
     private final StakingValuesResponse value;
 
-    public static /* synthetic */ StakingOperationCostResponse copy$default(StakingOperationCostResponse stakingOperationCostResponse, StakingTokenResponse stakingTokenResponse, StakingValuesResponse stakingValuesResponse, int i, Object obj) {
+    public static /* synthetic */ StakingOperationCostResponse copy$default(StakingOperationCostResponse stakingOperationCostResponse, TokenDetailedResponse tokenDetailedResponse, StakingValuesResponse stakingValuesResponse, int i, Object obj) {
         if ((i & 1) != 0) {
-            stakingTokenResponse = stakingOperationCostResponse.token;
+            tokenDetailedResponse = stakingOperationCostResponse.token;
         }
         if ((i & 2) != 0) {
             stakingValuesResponse = stakingOperationCostResponse.value;
         }
-        return stakingOperationCostResponse.copy(stakingTokenResponse, stakingValuesResponse);
+        return stakingOperationCostResponse.copy(tokenDetailedResponse, stakingValuesResponse);
     }
 
-    public final StakingTokenResponse component1() {
+    public final TokenDetailedResponse component1() {
         return this.token;
     }
 
@@ -25,7 +26,7 @@ public final class StakingOperationCostResponse {
         return this.value;
     }
 
-    public final StakingOperationCostResponse copy(StakingTokenResponse token, StakingValuesResponse value) {
+    public final StakingOperationCostResponse copy(TokenDetailedResponse token, StakingValuesResponse value) {
         Intrinsics.checkNotNullParameter(token, "token");
         Intrinsics.checkNotNullParameter(value, "value");
         return new StakingOperationCostResponse(token, value);
@@ -50,14 +51,14 @@ public final class StakingOperationCostResponse {
         return "StakingOperationCostResponse(token=" + this.token + ", value=" + this.value + ')';
     }
 
-    public StakingOperationCostResponse(StakingTokenResponse token, StakingValuesResponse value) {
+    public StakingOperationCostResponse(TokenDetailedResponse token, StakingValuesResponse value) {
         Intrinsics.checkNotNullParameter(token, "token");
         Intrinsics.checkNotNullParameter(value, "value");
         this.token = token;
         this.value = value;
     }
 
-    public final StakingTokenResponse getToken() {
+    public final TokenDetailedResponse getToken() {
         return this.token;
     }
 

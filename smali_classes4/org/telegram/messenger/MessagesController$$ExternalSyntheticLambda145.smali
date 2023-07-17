@@ -63,7 +63,7 @@
 
     iget-object v6, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda145;->f$6:Lorg/telegram/tgnet/TLRPC$TL_channels_convertToGigagroup;
 
-    invoke-static/range {v0 .. v6}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$zVlIa4BR8IinE-3_OOIiUhgMiSM(Lorg/telegram/messenger/MessagesController;Lorg/telegram/messenger/MessagesStorage$BooleanCallback;Landroid/content/Context;Lorg/telegram/ui/ActionBar/AlertDialog;Lorg/telegram/tgnet/TLRPC$TL_error;Lorg/telegram/ui/ActionBar/BaseFragment;Lorg/telegram/tgnet/TLRPC$TL_channels_convertToGigagroup;)V
+    invoke-static/range {v0 .. v6}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$h5cXkTKCbV6S434jBu6vlT42ito(Lorg/telegram/messenger/MessagesController;Lorg/telegram/messenger/MessagesStorage$BooleanCallback;Landroid/content/Context;Lorg/telegram/ui/ActionBar/AlertDialog;Lorg/telegram/tgnet/TLRPC$TL_error;Lorg/telegram/ui/ActionBar/BaseFragment;Lorg/telegram/tgnet/TLRPC$TL_channels_convertToGigagroup;)V
 
     return-void
 .end method

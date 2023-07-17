@@ -25,7 +25,7 @@
 .method constructor <init>(Lcom/bumptech/glide/integration/webp/decoder/WebpFrameLoader;)V
     .locals 0
 
-    .line 309
+    .line 316
     iput-object p1, p0, Lcom/bumptech/glide/integration/webp/decoder/WebpFrameLoader$FrameLoaderCallback;->this$0:Lcom/bumptech/glide/integration/webp/decoder/WebpFrameLoader;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,19 +38,19 @@
 .method public handleMessage(Landroid/os/Message;)Z
     .locals 2
 
-    .line 314
+    .line 321
     iget v0, p1, Landroid/os/Message;->what:I
 
     const/4 v1, 0x1
 
     if-ne v0, v1, :cond_0
 
-    .line 315
+    .line 322
     iget-object p1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast p1, Lcom/bumptech/glide/integration/webp/decoder/WebpFrameLoader$DelayTarget;
 
-    .line 316
+    .line 323
     iget-object v0, p0, Lcom/bumptech/glide/integration/webp/decoder/WebpFrameLoader$FrameLoaderCallback;->this$0:Lcom/bumptech/glide/integration/webp/decoder/WebpFrameLoader;
 
     invoke-virtual {v0, p1}, Lcom/bumptech/glide/integration/webp/decoder/WebpFrameLoader;->onFrameReady(Lcom/bumptech/glide/integration/webp/decoder/WebpFrameLoader$DelayTarget;)V
@@ -62,12 +62,12 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 319
+    .line 326
     iget-object p1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast p1, Lcom/bumptech/glide/integration/webp/decoder/WebpFrameLoader$DelayTarget;
 
-    .line 320
+    .line 327
     iget-object v0, p0, Lcom/bumptech/glide/integration/webp/decoder/WebpFrameLoader$FrameLoaderCallback;->this$0:Lcom/bumptech/glide/integration/webp/decoder/WebpFrameLoader;
 
     iget-object v0, v0, Lcom/bumptech/glide/integration/webp/decoder/WebpFrameLoader;->requestManager:Lcom/bumptech/glide/RequestManager;

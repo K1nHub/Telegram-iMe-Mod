@@ -78,7 +78,7 @@
 
     if-eqz p1, :cond_0
 
-    const-string p1, "screen off"
+    const-string/jumbo p1, "screen off"
 
     .line 43
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
@@ -120,7 +120,7 @@
 
     if-eqz p1, :cond_2
 
-    const-string p1, "screen on"
+    const-string/jumbo p1, "screen on"
 
     .line 50
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V

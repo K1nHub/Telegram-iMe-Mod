@@ -20,17 +20,17 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Ref$IntRef;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3295R;
+import org.telegram.messenger.C3417R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
-import org.telegram.p044ui.ActionBar.AlertDialog;
-import org.telegram.p044ui.ActionBar.Theme;
-import org.telegram.p044ui.Cells.ProfileSearchCell;
-import org.telegram.p044ui.ChatActivity;
-import org.telegram.p044ui.Components.CheckBoxSquare;
-import org.telegram.p044ui.Components.FlickerLoadingView;
-import org.telegram.p044ui.Components.LayoutHelper;
-import org.telegram.p044ui.LaunchActivity;
+import org.telegram.p043ui.ActionBar.AlertDialog;
+import org.telegram.p043ui.ActionBar.Theme;
+import org.telegram.p043ui.Cells.ProfileSearchCell;
+import org.telegram.p043ui.ChatActivity;
+import org.telegram.p043ui.Components.CheckBoxSquare;
+import org.telegram.p043ui.Components.FlickerLoadingView;
+import org.telegram.p043ui.Components.LayoutHelper;
+import org.telegram.p043ui.LaunchActivity;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
@@ -84,7 +84,7 @@ public final class PromoSubscribeAlert extends AlertDialog.Builder {
         lazy7 = LazyKt__LazyJVMKt.lazy(new PromoSubscribeAlert$skipButton$2(this));
         this.skipButton$delegate = lazy7;
         setTopHeight(166);
-        setTopImage(C3295R.C3297drawable.fork_promo_subscribe_dialog_icon, Theme.getColor(Theme.key_windowBackgroundGray));
+        setTopImage(C3417R.C3419drawable.fork_promo_subscribe_dialog_icon, Theme.getColor(Theme.key_windowBackgroundGray));
         int m55dp = AndroidUtilities.m55dp(30.0f);
         setTopImagePaddings(0, m55dp, AndroidUtilities.m55dp(16.0f), m55dp);
         LinearLayout linearLayout = new LinearLayout(getContext());
@@ -144,7 +144,7 @@ public final class PromoSubscribeAlert extends AlertDialog.Builder {
     /* JADX INFO: Access modifiers changed from: private */
     public final TextView initTitleTextView() {
         TextView textView = new TextView(getContext());
-        textView.setText(LocaleController.getInternalString(C3295R.string.dialog_promo_subscribe_title));
+        textView.setText(LocaleController.getInternalString(C3417R.string.dialog_promo_subscribe_title));
         textView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
         textView.setGravity(17);
         textView.setTextColor(Theme.getColor(Theme.key_dialogTextBlack));
@@ -155,7 +155,7 @@ public final class PromoSubscribeAlert extends AlertDialog.Builder {
     /* JADX INFO: Access modifiers changed from: private */
     public final TextView initSubtitleTextView() {
         TextView textView = new TextView(getContext());
-        textView.setText(LocaleController.getInternalString(C3295R.string.dialog_promo_subscribe_subtitle));
+        textView.setText(LocaleController.getInternalString(C3417R.string.dialog_promo_subscribe_subtitle));
         textView.setTextColor(Theme.getColor(Theme.key_dialogTextGray3));
         textView.setTextSize(1, 14.0f);
         return textView;
@@ -205,7 +205,7 @@ public final class PromoSubscribeAlert extends AlertDialog.Builder {
         LaunchActivity launchActivity = this$0.activity;
         Object tag = view.getTag();
         Intrinsics.checkNotNull(tag, "null cannot be cast to non-null type com.iMe.fork.enums.PromoSubscribeChat");
-        launchActivity.lambda$runLinkRequest$82(new ChatActivity(BundleKt.bundleOf(TuplesKt.m85to("chat_id", Long.valueOf(-((PromoSubscribeChat) tag).getId())))));
+        launchActivity.lambda$runLinkRequest$84(new ChatActivity(BundleKt.bundleOf(TuplesKt.m85to("chat_id", Long.valueOf(-((PromoSubscribeChat) tag).getId())))));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -214,7 +214,7 @@ public final class PromoSubscribeAlert extends AlertDialog.Builder {
         linearLayout.setGravity(17);
         linearLayout.addView(getNotShowAgainCheckBox(), LayoutHelper.createLinear(18, 18));
         TextView textView = new TextView(linearLayout.getContext());
-        textView.setText(LocaleController.getInternalString(C3295R.string.common_not_show_again));
+        textView.setText(LocaleController.getInternalString(C3417R.string.common_not_show_again));
         textView.setGravity(19);
         textView.setTextColor(Theme.getColor(Theme.key_dialogTextBlack));
         textView.setTextSize(1, 16.0f);
@@ -242,7 +242,7 @@ public final class PromoSubscribeAlert extends AlertDialog.Builder {
     /* JADX INFO: Access modifiers changed from: private */
     public final TextView initSkipButton() {
         TextView textView = new TextView(getContext());
-        String string = LocaleController.getString("Close", C3295R.string.Close);
+        String string = LocaleController.getString("Close", C3417R.string.Close);
         Intrinsics.checkNotNullExpressionValue(string, "getString(\"Close\", R.string.Close)");
         String upperCase = string.toUpperCase(Locale.ROOT);
         Intrinsics.checkNotNullExpressionValue(upperCase, "this as java.lang.String).toUpperCase(Locale.ROOT)");

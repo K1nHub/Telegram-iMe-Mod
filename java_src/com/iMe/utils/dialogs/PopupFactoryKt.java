@@ -1,7 +1,6 @@
 package com.iMe.utils.dialogs;
 
 import android.content.Context;
-import android.graphics.drawable.ColorDrawable;
 import android.view.View;
 import android.widget.AdapterView;
 import androidx.appcompat.widget.ListPopupWindow;
@@ -11,18 +10,35 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.p044ui.ActionBar.Theme;
+import org.telegram.p043ui.ActionBar.Theme;
 /* compiled from: PopupFactory.kt */
 /* loaded from: classes4.dex */
 public final class PopupFactoryKt {
-    public static final ListPopupWindow createPopupWithOptions(View view, final List<String> options, final Function2<? super Integer, ? super String, Unit> onSelected) {
+    public static /* synthetic */ ListPopupWindow createPopupWithOptions$default(View view, List list, Integer num, Integer num2, Function2 function2, int i, Object obj) {
+        if ((i & 2) != 0) {
+            num = null;
+        }
+        if ((i & 4) != 0) {
+            num2 = null;
+        }
+        return createPopupWithOptions(view, list, num, num2, function2);
+    }
+
+    public static final ListPopupWindow createPopupWithOptions(View view, final List<String> options, Integer num, Integer num2, final Function2<? super Integer, ? super String, Unit> onSelected) {
         Intrinsics.checkNotNullParameter(view, "<this>");
         Intrinsics.checkNotNullParameter(options, "options");
         Intrinsics.checkNotNullParameter(onSelected, "onSelected");
         final ListPopupWindow listPopupWindow = new ListPopupWindow(view.getContext());
         listPopupWindow.setWidth(AndroidUtilities.displaySize.x / 2);
         listPopupWindow.setAnchorView(view);
-        listPopupWindow.setBackgroundDrawable(new ColorDrawable(Theme.getColor(Theme.key_windowBackgroundWhite)));
+        int m54dp = AndroidUtilities.m54dp(6);
+        listPopupWindow.setBackgroundDrawable(Theme.createRoundRectDrawable(m54dp, m54dp, Theme.getColor(Theme.key_actionBarDefaultSubmenuBackground)));
+        if (num != null) {
+            listPopupWindow.setVerticalOffset(num.intValue());
+        }
+        if (num2 != null) {
+            listPopupWindow.setHorizontalOffset(num2.intValue());
+        }
         Context context = view.getContext();
         Intrinsics.checkNotNullExpressionValue(context, "context");
         listPopupWindow.setAdapter(new PopupOptionsAdapter(context, options));

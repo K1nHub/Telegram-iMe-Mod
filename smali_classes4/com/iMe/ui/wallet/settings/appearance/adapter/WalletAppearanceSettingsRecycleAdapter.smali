@@ -22,7 +22,7 @@
 .method public constructor <init>(Lcom/iMe/storage/domain/utils/system/ResourceManager;)V
     .locals 3
 
-    const-string v0, "resourceManager"
+    const-string/jumbo v0, "resourceManager"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 

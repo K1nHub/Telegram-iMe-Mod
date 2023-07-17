@@ -46,8 +46,8 @@ public class WebpDrawable extends Drawable implements WebpFrameLoader.FrameCallb
         this.isVisible = true;
         this.maxLoopCount = -1;
         this.isVisible = true;
-        this.maxLoopCount = -1;
         this.state = (WebpState) Preconditions.checkNotNull(webpState);
+        setLoopCount(0);
     }
 
     public int getSize() {
@@ -228,6 +228,18 @@ public class WebpDrawable extends Drawable implements WebpFrameLoader.FrameCallb
 
     boolean isRecycled() {
         return this.isRecycled;
+    }
+
+    public void setLoopCount(int i) {
+        if (i <= 0 && i != -1 && i != 0) {
+            throw new IllegalArgumentException("Loop count must be greater than 0, or equal to LOOP_FOREVER, or equal to LOOP_INTRINSIC");
+        }
+        if (i == 0) {
+            int loopCount = this.state.frameLoader.getLoopCount();
+            this.maxLoopCount = loopCount != 0 ? loopCount : -1;
+            return;
+        }
+        this.maxLoopCount = i;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */

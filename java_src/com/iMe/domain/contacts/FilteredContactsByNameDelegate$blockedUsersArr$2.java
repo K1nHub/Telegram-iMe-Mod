@@ -23,11 +23,11 @@ public final class FilteredContactsByNameDelegate$blockedUsersArr$2 extends Lamb
     /* compiled from: FilteredContactsByNameDelegate.kt */
     /* renamed from: com.iMe.domain.contacts.FilteredContactsByNameDelegate$blockedUsersArr$2$1 */
     /* loaded from: classes3.dex */
-    public static final class C14251 extends Lambda implements Function1<TLRPC$TL_contact, Boolean> {
+    public static final class C14361 extends Lambda implements Function1<TLRPC$TL_contact, Boolean> {
         final /* synthetic */ FilteredContactsByNameDelegate this$0;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C14251(FilteredContactsByNameDelegate filteredContactsByNameDelegate) {
+        C14361(FilteredContactsByNameDelegate filteredContactsByNameDelegate) {
             super(1);
             this.this$0 = filteredContactsByNameDelegate;
         }
@@ -56,7 +56,7 @@ public final class FilteredContactsByNameDelegate$blockedUsersArr$2 extends Lamb
     public final ArrayList<String> invoke() {
         ArrayList<String> arrCharsByPredicate;
         FilteredContactsByNameDelegate filteredContactsByNameDelegate = this.this$0;
-        arrCharsByPredicate = filteredContactsByNameDelegate.getArrCharsByPredicate(new C14251(filteredContactsByNameDelegate));
+        arrCharsByPredicate = filteredContactsByNameDelegate.getArrCharsByPredicate(new C14361(filteredContactsByNameDelegate));
         return arrCharsByPredicate;
     }
 }

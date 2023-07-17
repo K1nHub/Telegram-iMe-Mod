@@ -17,7 +17,7 @@ final class EnvironmentInformation$Companion$availableEnvironments$2 extends Lam
     @Override // kotlin.jvm.functions.Function0
     public final List<? extends EnvironmentInformation> invoke() {
         List<? extends EnvironmentInformation> listOfNotNull;
-        listOfNotNull = CollectionsKt__CollectionsKt.listOfNotNull(EnvironmentInformation.Production.INSTANCE, EnvironmentInformation.Stage.INSTANCE, EnvironmentInformation.Development.INSTANCE);
+        listOfNotNull = CollectionsKt__CollectionsKt.listOfNotNull((Object[]) new EnvironmentInformation[]{EnvironmentInformation.Production.INSTANCE, EnvironmentInformation.Stage.INSTANCE, EnvironmentInformation.Development.INSTANCE});
         return listOfNotNull;
     }
 }

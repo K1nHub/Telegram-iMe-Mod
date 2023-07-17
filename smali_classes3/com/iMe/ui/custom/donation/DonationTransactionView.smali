@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nDonationTransactionView.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DonationTransactionView.kt\ncom/iMe/ui/custom/donation/DonationTransactionView\n+ 2 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n+ 3 View.kt\nandroidx/core/view/ViewKt\n+ 4 CollectionExt.kt\ncom/iMe/utils/extentions/common/CollectionExtKt\n+ 5 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 6 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,99:1\n56#2,6:100\n56#2,6:106\n262#3,2:112\n4#4:114\n5#4,2:117\n2634#5:115\n1#6:116\n*S KotlinDebug\n*F\n+ 1 DonationTransactionView.kt\ncom/iMe/ui/custom/donation/DonationTransactionView\n*L\n30#1:100,6\n31#1:106,6\n43#1:112,2\n73#1:114\n73#1:117,2\n73#1:115\n73#1:116\n*E\n"
+    value = "SMAP\nDonationTransactionView.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DonationTransactionView.kt\ncom/iMe/ui/custom/donation/DonationTransactionView\n+ 2 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n+ 3 View.kt\nandroidx/core/view/ViewKt\n+ 4 CollectionExt.kt\ncom/iMe/utils/extentions/common/CollectionExtKt\n+ 5 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 6 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,98:1\n56#2,6:99\n56#2,6:105\n262#3,2:111\n4#4:113\n5#4,2:116\n2634#5:114\n1#6:115\n*S KotlinDebug\n*F\n+ 1 DonationTransactionView.kt\ncom/iMe/ui/custom/donation/DonationTransactionView\n*L\n29#1:99,6\n30#1:105,6\n42#1:111,2\n72#1:113\n72#1:116,2\n72#1:114\n72#1:115\n*E\n"
 .end annotation
 
 
@@ -52,7 +52,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 27
+    .line 26
     invoke-direct {p0, p1, p2, p3}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
     .line 58
@@ -73,7 +73,7 @@
 
     move-result-object p3
 
-    .line 30
+    .line 29
     iput-object p3, p0, Lcom/iMe/ui/custom/donation/DonationTransactionView;->telegramControllersGateway$delegate:Lkotlin/Lazy;
 
     .line 58
@@ -90,10 +90,10 @@
 
     move-result-object p2
 
-    .line 31
+    .line 30
     iput-object p2, p0, Lcom/iMe/ui/custom/donation/DonationTransactionView;->resourceManager$delegate:Lkotlin/Lazy;
 
-    .line 34
+    .line 33
     invoke-static {p1}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
 
     move-result-object p1
@@ -108,7 +108,7 @@
 
     iput-object p1, p0, Lcom/iMe/ui/custom/donation/DonationTransactionView;->binding:Lorg/telegram/messenger/databinding/ForkRecycleItemWalletDonationTransactionBinding;
 
-    .line 37
+    .line 36
     invoke-direct {p0}, Lcom/iMe/ui/custom/donation/DonationTransactionView;->setupView()V
 
     return-void
@@ -130,7 +130,7 @@
 
     const/4 p3, 0x0
 
-    .line 23
+    .line 22
     :cond_1
     invoke-direct {p0, p1, p2, p3}, Lcom/iMe/ui/custom/donation/DonationTransactionView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
@@ -140,7 +140,7 @@
 .method private final getResourceManager()Lcom/iMe/storage/domain/utils/system/ResourceManager;
     .locals 1
 
-    .line 31
+    .line 30
     iget-object v0, p0, Lcom/iMe/ui/custom/donation/DonationTransactionView;->resourceManager$delegate:Lkotlin/Lazy;
 
     invoke-interface {v0}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
@@ -155,7 +155,7 @@
 .method private final getTelegramControllersGateway()Lcom/iMe/gateway/TelegramControllersGateway;
     .locals 1
 
-    .line 30
+    .line 29
     iget-object v0, p0, Lcom/iMe/ui/custom/donation/DonationTransactionView;->telegramControllersGateway$delegate:Lkotlin/Lazy;
 
     invoke-interface {v0}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
@@ -170,10 +170,10 @@
 .method private final setupView()V
     .locals 1
 
-    .line 93
+    .line 92
     invoke-virtual {p0}, Lcom/iMe/ui/custom/donation/DonationTransactionView;->setupColors()V
 
-    .line 94
+    .line 93
     iget-object v0, p0, Lcom/iMe/ui/custom/donation/DonationTransactionView;->binding:Lorg/telegram/messenger/databinding/ForkRecycleItemWalletDonationTransactionBinding;
 
     invoke-virtual {v0}, Lorg/telegram/messenger/databinding/ForkRecycleItemWalletDonationTransactionBinding;->getRoot()Landroid/widget/LinearLayout;
@@ -190,7 +190,7 @@
 .method public getKoin()Lorg/koin/core/Koin;
     .locals 1
 
-    .line 23
+    .line 22
     invoke-static {p0}, Lorg/koin/core/component/KoinComponent$DefaultImpls;->getKoin(Lorg/koin/core/component/KoinComponent;)Lorg/koin/core/Koin;
 
     move-result-object v0
@@ -201,7 +201,7 @@
 .method public setPadding(IIII)V
     .locals 1
 
-    .line 85
+    .line 84
     iget-object v0, p0, Lcom/iMe/ui/custom/donation/DonationTransactionView;->binding:Lorg/telegram/messenger/databinding/ForkRecycleItemWalletDonationTransactionBinding;
 
     invoke-virtual {v0}, Lorg/telegram/messenger/databinding/ForkRecycleItemWalletDonationTransactionBinding;->getRoot()Landroid/widget/LinearLayout;
@@ -220,7 +220,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 47
+    .line 46
     invoke-virtual {p1}, Lcom/iMe/model/wallet/transaction/TransactionItem;->getTransaction()Lcom/iMe/storage/domain/model/wallet/transaction/Transaction;
 
     move-result-object v0
@@ -231,11 +231,11 @@
 
     return-void
 
-    .line 49
+    .line 48
     :cond_0
     iget-object v0, p0, Lcom/iMe/ui/custom/donation/DonationTransactionView;->binding:Lorg/telegram/messenger/databinding/ForkRecycleItemWalletDonationTransactionBinding;
 
-    .line 50
+    .line 49
     invoke-direct {p0}, Lcom/iMe/ui/custom/donation/DonationTransactionView;->getTelegramControllersGateway()Lcom/iMe/gateway/TelegramControllersGateway;
 
     move-result-object v1
@@ -272,12 +272,12 @@
 
     move-result-object v1
 
-    .line 51
+    .line 50
     new-instance v2, Lorg/telegram/ui/Components/AvatarDrawable;
 
     invoke-direct {v2}, Lorg/telegram/ui/Components/AvatarDrawable;-><init>()V
 
-    .line 52
+    .line 51
     iget-object v5, v0, Lorg/telegram/messenger/databinding/ForkRecycleItemWalletDonationTransactionBinding;->imageUserAvatar:Lorg/telegram/ui/Components/BackupImageView;
 
     invoke-virtual {v5}, Lorg/telegram/ui/Components/BackupImageView;->getImageReceiver()Lorg/telegram/messenger/ImageReceiver;
@@ -300,15 +300,15 @@
 
     if-eqz v1, :cond_1
 
-    .line 54
+    .line 53
     invoke-virtual {v2, v1}, Lorg/telegram/ui/Components/AvatarDrawable;->setInfo(Lorg/telegram/tgnet/TLRPC$User;)V
 
-    .line 55
+    .line 54
     iget-object v4, v0, Lorg/telegram/messenger/databinding/ForkRecycleItemWalletDonationTransactionBinding;->imageUserAvatar:Lorg/telegram/ui/Components/BackupImageView;
 
     invoke-virtual {v4, v1, v2}, Lorg/telegram/ui/Components/BackupImageView;->setForUserOrChat(Lorg/telegram/tgnet/TLObject;Lorg/telegram/ui/Components/AvatarDrawable;)V
 
-    .line 56
+    .line 55
     iget-object v2, v0, Lorg/telegram/messenger/databinding/ForkRecycleItemWalletDonationTransactionBinding;->textUserFullName:Landroidx/appcompat/widget/AppCompatTextView;
 
     invoke-static {v1}, Lorg/telegram/messenger/UserObject;->getUserName(Lorg/telegram/tgnet/TLRPC$User;)Ljava/lang/String;
@@ -319,7 +319,7 @@
 
     goto :goto_0
 
-    .line 58
+    .line 57
     :cond_1
     invoke-virtual {p1}, Lcom/iMe/model/wallet/transaction/TransactionItem;->getTransaction()Lcom/iMe/storage/domain/model/wallet/transaction/Transaction;
 
@@ -361,12 +361,12 @@
 
     invoke-virtual/range {v5 .. v10}, Lorg/telegram/ui/Components/AvatarDrawable;->setInfo(JLjava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 59
+    .line 58
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkRecycleItemWalletDonationTransactionBinding;->imageUserAvatar:Lorg/telegram/ui/Components/BackupImageView;
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Components/BackupImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 60
+    .line 59
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkRecycleItemWalletDonationTransactionBinding;->textUserFullName:Landroidx/appcompat/widget/AppCompatTextView;
 
     invoke-direct {p0}, Lcom/iMe/ui/custom/donation/DonationTransactionView;->getResourceManager()Lcom/iMe/storage/domain/utils/system/ResourceManager;
@@ -403,7 +403,7 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 62
+    .line 61
     :goto_0
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkRecycleItemWalletDonationTransactionBinding;->textDate:Landroidx/appcompat/widget/AppCompatTextView;
 
@@ -413,30 +413,24 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 63
-    iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkRecycleItemWalletDonationTransactionBinding;->textCoinTicker:Lcom/iMe/ui/custom/CoinTickerView;
-
-    sget-object v2, Lcom/iMe/storage/domain/model/wallet/token/TokenInfo;->Companion:Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Companion;
+    .line 62
+    iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkRecycleItemWalletDonationTransactionBinding;->textCoinTicker:Lcom/iMe/ui/custom/TickerView;
 
     invoke-virtual {p1}, Lcom/iMe/model/wallet/transaction/TransactionItem;->getTransaction()Lcom/iMe/storage/domain/model/wallet/transaction/Transaction;
 
-    move-result-object v4
+    move-result-object v2
 
-    invoke-virtual {v4}, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction;->getTokenCode()Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
-
-    move-result-object v4
-
-    invoke-virtual {v2, v4}, Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Companion;->map(Lcom/iMe/storage/domain/model/wallet/token/TokenCode;)Lcom/iMe/storage/domain/model/wallet/token/TokenInfo;
+    invoke-virtual {v2}, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction;->getToken()Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
 
     move-result-object v2
 
-    invoke-direct {p0}, Lcom/iMe/ui/custom/donation/DonationTransactionView;->getResourceManager()Lcom/iMe/storage/domain/utils/system/ResourceManager;
+    invoke-virtual {v2}, Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;->getTicker()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v2
 
-    invoke-virtual {v1, v2, v4}, Lcom/iMe/ui/custom/CoinTickerView;->setTicker(Lcom/iMe/storage/domain/model/wallet/token/TokenInfo;Lcom/iMe/storage/domain/utils/system/ResourceManager;)V
+    invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 64
+    .line 63
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkRecycleItemWalletDonationTransactionBinding;->textAmount:Landroidx/appcompat/widget/AppCompatTextView;
 
     invoke-virtual {p1, v3}, Lcom/iMe/model/wallet/transaction/TransactionItem;->getAmountWithSymbol(Z)Ljava/lang/String;
@@ -445,7 +439,7 @@
 
     invoke-virtual {v1, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 65
+    .line 64
     iget-object p1, v0, Lorg/telegram/messenger/databinding/ForkRecycleItemWalletDonationTransactionBinding;->textUserFullName:Landroidx/appcompat/widget/AppCompatTextView;
 
     const-string v1, "textUserFullName"
@@ -454,7 +448,7 @@
 
     invoke-static {p1}, Lcom/iMe/utils/extentions/common/ViewExtKt;->withMediumTypeface(Landroid/widget/TextView;)V
 
-    .line 66
+    .line 65
     iget-object p1, v0, Lorg/telegram/messenger/databinding/ForkRecycleItemWalletDonationTransactionBinding;->textAmount:Landroidx/appcompat/widget/AppCompatTextView;
 
     const-string v0, "textAmount"
@@ -469,10 +463,10 @@
 .method public final setupColors()V
     .locals 4
 
-    .line 71
+    .line 70
     iget-object v0, p0, Lcom/iMe/ui/custom/donation/DonationTransactionView;->binding:Lorg/telegram/messenger/databinding/ForkRecycleItemWalletDonationTransactionBinding;
 
-    .line 72
+    .line 71
     invoke-virtual {v0}, Lorg/telegram/messenger/databinding/ForkRecycleItemWalletDonationTransactionBinding;->getRoot()Landroid/widget/LinearLayout;
 
     move-result-object v1
@@ -489,7 +483,7 @@
 
     new-array v1, v1, [Landroidx/appcompat/widget/AppCompatTextView;
 
-    .line 73
+    .line 72
     iget-object v2, v0, Lorg/telegram/messenger/databinding/ForkRecycleItemWalletDonationTransactionBinding;->textUserFullName:Landroidx/appcompat/widget/AppCompatTextView;
 
     const/4 v3, 0x0
@@ -525,7 +519,7 @@
     .line 5
     check-cast v2, Landroidx/appcompat/widget/AppCompatTextView;
 
-    .line 73
+    .line 72
     sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
 
     invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -536,7 +530,7 @@
 
     goto :goto_0
 
-    .line 74
+    .line 73
     :cond_0
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkRecycleItemWalletDonationTransactionBinding;->textDate:Landroidx/appcompat/widget/AppCompatTextView;
 
@@ -548,12 +542,12 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setTextColor(I)V
 
+    .line 74
+    iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkRecycleItemWalletDonationTransactionBinding;->textCoinTicker:Lcom/iMe/ui/custom/TickerView;
+
+    invoke-virtual {v1}, Lcom/iMe/ui/custom/TickerView;->setupColors()V
+
     .line 75
-    iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkRecycleItemWalletDonationTransactionBinding;->textCoinTicker:Lcom/iMe/ui/custom/CoinTickerView;
-
-    invoke-virtual {v1}, Lcom/iMe/ui/custom/CoinTickerView;->setupColors()V
-
-    .line 76
     iget-object v0, v0, Lorg/telegram/messenger/databinding/ForkRecycleItemWalletDonationTransactionBinding;->viewDivider:Lcom/iMe/ui/custom/DividerView;
 
     invoke-virtual {v0}, Lcom/iMe/ui/custom/DividerView;->setupColors()V
@@ -564,7 +558,7 @@
 .method public final showDivider(Z)V
     .locals 2
 
-    .line 43
+    .line 42
     iget-object v0, p0, Lcom/iMe/ui/custom/donation/DonationTransactionView;->binding:Lorg/telegram/messenger/databinding/ForkRecycleItemWalletDonationTransactionBinding;
 
     iget-object v0, v0, Lorg/telegram/messenger/databinding/ForkRecycleItemWalletDonationTransactionBinding;->viewDivider:Lcom/iMe/ui/custom/DividerView;

@@ -6,7 +6,7 @@ import com.google.firebase.inject.Provider;
 import java.util.HashMap;
 import java.util.Map;
 import org.json.JSONObject;
-import p034j$.util.DesugarCollections;
+import p033j$.util.DesugarCollections;
 /* loaded from: classes3.dex */
 public class Personalization {
     private final Provider<AnalyticsConnector> analyticsConnector;

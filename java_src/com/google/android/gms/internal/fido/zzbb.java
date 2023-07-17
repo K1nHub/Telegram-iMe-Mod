@@ -12,12 +12,12 @@ final class zzbb extends zzbf {
         this.zzb = obj;
     }
 
-    @Override // java.util.Iterator, p034j$.util.Iterator
+    @Override // java.util.Iterator, p033j$.util.Iterator
     public final boolean hasNext() {
         return !this.zza;
     }
 
-    @Override // java.util.Iterator, p034j$.util.Iterator
+    @Override // java.util.Iterator, p033j$.util.Iterator
     public final Object next() {
         if (this.zza) {
             throw new NoSuchElementException();

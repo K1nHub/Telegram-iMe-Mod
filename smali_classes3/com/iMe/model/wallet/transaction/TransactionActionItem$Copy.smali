@@ -22,7 +22,7 @@
 .method public constructor <init>(I)V
     .locals 6
 
-    .line 17
+    .line 19
     sget v2, Lorg/telegram/messenger/R$drawable;->fork_ic_id_28:I
 
     const/4 v3, 0x0
@@ -47,7 +47,7 @@
 .method public getTitle()I
     .locals 1
 
-    .line 17
+    .line 19
     iget v0, p0, Lcom/iMe/model/wallet/transaction/TransactionActionItem$Copy;->title:I
 
     return v0

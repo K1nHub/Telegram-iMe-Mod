@@ -1,12 +1,12 @@
 package com.iMe.i_staking.mapper;
 
 import com.iMe.i_staking.response.StakingDetailedMetadataResponse;
-import com.iMe.storage.domain.model.crypto.NetworkType;
+import com.iMe.storage.data.mapper.wallet.TokenMappingKt;
 import com.iMe.storage.domain.model.crypto.level.AccountLevel;
 import com.iMe.storage.domain.model.staking.StakingDetailedMetadata;
 import com.iMe.storage.domain.model.staking.StakingDetailedStats;
 import com.iMe.storage.domain.model.staking.StakingRules;
-import com.iMe.storage.domain.model.staking.StakingToken;
+import com.iMe.storage.domain.model.wallet.token.TokenDetailed;
 import java.math.BigDecimal;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: StakingDetailedMetadataMapper.kt */
@@ -15,14 +15,14 @@ public final class StakingDetailedMetadataMapperKt {
     public static final StakingDetailedMetadata mapToDomain(StakingDetailedMetadataResponse stakingDetailedMetadataResponse) {
         Intrinsics.checkNotNullParameter(stakingDetailedMetadataResponse, "<this>");
         long id = stakingDetailedMetadataResponse.getId();
-        NetworkType map = NetworkType.Companion.map(stakingDetailedMetadataResponse.getNet());
+        String net2 = stakingDetailedMetadataResponse.getNet();
         String name = stakingDetailedMetadataResponse.getName();
         String author = stakingDetailedMetadataResponse.getAuthor();
         String contract = stakingDetailedMetadataResponse.getContract();
         String startsAt = stakingDetailedMetadataResponse.getStartsAt();
         String endsAt = stakingDetailedMetadataResponse.getEndsAt();
-        StakingToken mapToDomain = StakingTokenMapperKt.mapToDomain(stakingDetailedMetadataResponse.getToken());
-        StakingToken mapToDomain2 = StakingTokenMapperKt.mapToDomain(stakingDetailedMetadataResponse.getFeeToken());
+        TokenDetailed mapToDomain = TokenMappingKt.mapToDomain(stakingDetailedMetadataResponse.getToken());
+        TokenDetailed mapToDomain2 = TokenMappingKt.mapToDomain(stakingDetailedMetadataResponse.getFeeToken());
         double apy = stakingDetailedMetadataResponse.getApy();
         double apr = stakingDetailedMetadataResponse.getApr();
         long incomePeriod = stakingDetailedMetadataResponse.getIncomePeriod();
@@ -40,6 +40,6 @@ public final class StakingDetailedMetadataMapperKt {
         if (minimalRank == null) {
             minimalRank = "";
         }
-        return new StakingDetailedMetadata(id, map, name, author, contract, startsAt, endsAt, mapToDomain, mapToDomain2, apy, apr, incomePeriod, incomePercent, prematureWithdrawalFee, immediateWithdrawalFee, safeWithdrawalFee, safeWithdrawalDuration, compoundAccrualThreshold, mapToDomain3, mapToDomain4, hasEnoughFunds, companion.map(minimalRank), stakingDetailedMetadataResponse.getWebsite());
+        return new StakingDetailedMetadata(id, net2, name, author, contract, startsAt, endsAt, mapToDomain, mapToDomain2, apy, apr, incomePeriod, incomePercent, prematureWithdrawalFee, immediateWithdrawalFee, safeWithdrawalFee, safeWithdrawalDuration, compoundAccrualThreshold, mapToDomain3, mapToDomain4, hasEnoughFunds, companion.map(minimalRank), stakingDetailedMetadataResponse.getWebsite());
     }
 }

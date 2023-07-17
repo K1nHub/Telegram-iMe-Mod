@@ -2,14 +2,14 @@ package com.iMe.storage.domain.storage;
 
 import com.iMe.storage.data.locale.prefs.model.AccountLevelMetadata;
 import com.iMe.storage.data.locale.prefs.model.CryptoWalletInformationMetadata;
+import com.iMe.storage.data.locale.prefs.model.TokenDisplaySettings;
 import com.iMe.storage.data.locale.prefs.model.WalletAirdropMetadata;
-import com.iMe.storage.data.locale.prefs.model.WalletCryptoTokensSettingsMetadata;
 import com.iMe.storage.data.locale.prefs.model.auth.AuthTokensMetadata;
 import com.iMe.storage.data.locale.prefs.model.binancepay.BinanceAuthTokensMetadata;
 import com.iMe.storage.data.locale.prefs.model.binancepay.BinanceUserInfoMetadata;
 import com.iMe.storage.domain.model.PreferenceBlockchainMappedData;
 import com.iMe.storage.domain.model.crypto.BlockchainType;
-import com.iMe.storage.domain.model.crypto.NetworkType;
+import com.iMe.storage.domain.model.crypto.Network;
 import com.iMe.storage.domain.model.crypto.airdrop.AirdropVersion;
 import com.iMe.storage.domain.model.wallet.staking.StakingOrderType;
 import com.iMe.storage.domain.model.wallet.token.TokenOrderType;
@@ -31,17 +31,19 @@ public interface CryptoPreferenceHelper extends BasePreferenceHelper {
 
     TokenOrderType getBinanceTokensOrderType();
 
-    WalletCryptoTokensSettingsMetadata getBinanceTokensSettings();
+    List<TokenDisplaySettings.Binance> getBinanceTokensSettings();
 
     BinanceUserInfoMetadata getBinanceUserInfo();
-
-    boolean getCryptoHiddenBalance();
 
     BlockchainType getCurrentBlockchainType();
 
     String getLastLoggedInGuid();
 
-    NetworkType getNetworkType();
+    long getLastNetworksUpdateTime();
+
+    Network getNetwork();
+
+    String getNetworkId();
 
     String getOldWalletPublicAddress();
 
@@ -53,9 +55,11 @@ public interface CryptoPreferenceHelper extends BasePreferenceHelper {
 
     StakingOrderType getStakingProgrammesOrderType();
 
+    List<Network> getSupportedNetworks();
+
     TokenOrderType getTokensOrderType();
 
-    WalletCryptoTokensSettingsMetadata getTokensSettings(NetworkType networkType);
+    List<TokenDisplaySettings.Crypto> getTokensSettings(String str);
 
     String getTonConfigJsonString();
 
@@ -65,13 +69,21 @@ public interface CryptoPreferenceHelper extends BasePreferenceHelper {
 
     String getWalletPassword();
 
+    int getWalletPinCodeBadTriesCount();
+
+    long getWalletPinCodeTimeoutUntil();
+
     PreferenceBlockchainMappedData<String> getWalletPublicAddresses();
 
     String getWalletSeedByGuid(String str, BlockchainType blockchainType);
 
     PreferenceBlockchainMappedData<String> getWalletSeeds();
 
+    boolean isBalanceHidden();
+
     boolean isBannersVisible();
+
+    boolean isLocalEncryptionCompleted();
 
     boolean isQuotationsVisible();
 
@@ -85,15 +97,15 @@ public interface CryptoPreferenceHelper extends BasePreferenceHelper {
 
     void resetTokensSettingsByBlockchainType(BlockchainType blockchainType);
 
-    void resetTokensSettingsByNetwork(NetworkType networkType);
-
-    void saveTokensSettings(WalletCryptoTokensSettingsMetadata walletCryptoTokensSettingsMetadata, NetworkType networkType);
+    void saveTokensSettings(List<TokenDisplaySettings.Crypto> list, String str);
 
     void setAccountLevelMetadata(AccountLevelMetadata accountLevelMetadata);
 
     void setAirdropMetadata(WalletAirdropMetadata walletAirdropMetadata);
 
     void setAuthSession(AuthTokensMetadata authTokensMetadata);
+
+    void setBalanceHidden(boolean z);
 
     void setBannersVisible(boolean z);
 
@@ -103,15 +115,19 @@ public interface CryptoPreferenceHelper extends BasePreferenceHelper {
 
     void setBinanceTokensOrderType(TokenOrderType tokenOrderType);
 
-    void setBinanceTokensSettings(WalletCryptoTokensSettingsMetadata walletCryptoTokensSettingsMetadata);
+    void setBinanceTokensSettings(List<TokenDisplaySettings.Binance> list);
 
     void setBinanceUserInfo(BinanceUserInfoMetadata binanceUserInfoMetadata);
 
-    void setCryptoHiddenBalance(boolean z);
-
     void setLastLoggedInGuid(String str);
 
-    void setNetworkType(NetworkType networkType);
+    void setLastNetworksUpdateTime(long j);
+
+    void setLocalEncryptionCompleted(boolean z);
+
+    void setNetwork(Network network);
+
+    void setNetworkId(String str);
 
     void setOnlyPositiveTokens(boolean z);
 
@@ -121,6 +137,8 @@ public interface CryptoPreferenceHelper extends BasePreferenceHelper {
 
     void setStakingProgrammesOrderType(StakingOrderType stakingOrderType);
 
+    void setSupportedNetworks(List<Network> list);
+
     void setTokensOrderType(TokenOrderType tokenOrderType);
 
     void setTonConfigJsonString(String str);
@@ -128,6 +146,10 @@ public interface CryptoPreferenceHelper extends BasePreferenceHelper {
     void setWalletInfoMetadata(CryptoWalletInformationMetadata cryptoWalletInformationMetadata);
 
     void setWalletPassword(String str);
+
+    void setWalletPinCodeBadTriesCount(int i);
+
+    void setWalletPinCodeTimeoutUntil(long j);
 
     void setWalletsGuid(List<String> list);
 

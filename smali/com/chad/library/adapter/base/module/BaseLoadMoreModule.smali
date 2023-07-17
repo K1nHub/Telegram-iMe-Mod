@@ -252,7 +252,7 @@
     .line 179
     iget-object v0, p0, Lcom/chad/library/adapter/base/module/BaseLoadMoreModule;->baseQuickAdapter:Lcom/chad/library/adapter/base/BaseQuickAdapter;
 
-    invoke-virtual {v0}, Lcom/chad/library/adapter/base/BaseQuickAdapter;->getMRecyclerView$TMessagesProj_release()Landroidx/recyclerview/widget/RecyclerView;
+    invoke-virtual {v0}, Lcom/chad/library/adapter/base/BaseQuickAdapter;->getMRecyclerView$TMessagesProj_HA_public()Landroidx/recyclerview/widget/RecyclerView;
 
     move-result-object v0
 
@@ -412,7 +412,7 @@
 
 
 # virtual methods
-.method public final autoLoadMore$TMessagesProj_release(I)V
+.method public final autoLoadMore$TMessagesProj_HA_public(I)V
     .locals 2
 
     .line 151
@@ -500,7 +500,7 @@
     .line 197
     iget-object v0, p0, Lcom/chad/library/adapter/base/module/BaseLoadMoreModule;->baseQuickAdapter:Lcom/chad/library/adapter/base/BaseQuickAdapter;
 
-    invoke-virtual {v0}, Lcom/chad/library/adapter/base/BaseQuickAdapter;->getMRecyclerView$TMessagesProj_release()Landroidx/recyclerview/widget/RecyclerView;
+    invoke-virtual {v0}, Lcom/chad/library/adapter/base/BaseQuickAdapter;->getMRecyclerView$TMessagesProj_HA_public()Landroidx/recyclerview/widget/RecyclerView;
 
     move-result-object v0
 
@@ -808,7 +808,7 @@
     return-void
 .end method
 
-.method public final reset$TMessagesProj_release()V
+.method public final reset$TMessagesProj_HA_public()V
     .locals 1
 
     .line 296
@@ -924,7 +924,7 @@
     return-void
 .end method
 
-.method public final setupViewHolder$TMessagesProj_release(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;)V
+.method public final setupViewHolder$TMessagesProj_HA_public(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;)V
     .locals 1
 
     const-string v0, "viewHolder"

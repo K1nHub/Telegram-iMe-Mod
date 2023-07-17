@@ -15,18 +15,18 @@
 
 
 # instance fields
-.field private final oldTxHash:Ljava/lang/String;
+.field private final networkId:Ljava/lang/String;
 
-.field private final token:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
+.field private final oldTxHash:Ljava/lang/String;
 
 .field private final transferArgs:Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$EVM;
 
 
 # direct methods
-.method public constructor <init>(Lcom/iMe/storage/domain/model/wallet/token/TokenCode;Ljava/lang/String;Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$EVM;)V
+.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$EVM;)V
     .locals 1
 
-    const-string v0, "token"
+    const-string v0, "networkId"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -41,10 +41,10 @@
     const/4 v0, 0x0
 
     .line 13
-    invoke-direct {p0, p1, v0}, Lcom/iMe/storage/domain/model/crypto/cancel/CancelArgs;-><init>(Lcom/iMe/storage/domain/model/wallet/token/TokenCode;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
+    invoke-direct {p0, p1, v0}, Lcom/iMe/storage/domain/model/crypto/cancel/CancelArgs;-><init>(Ljava/lang/String;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
 
     .line 10
-    iput-object p1, p0, Lcom/iMe/storage/domain/model/crypto/cancel/CancelArgs$Ethereum;->token:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
+    iput-object p1, p0, Lcom/iMe/storage/domain/model/crypto/cancel/CancelArgs$Ethereum;->networkId:Ljava/lang/String;
 
     .line 11
     iput-object p2, p0, Lcom/iMe/storage/domain/model/crypto/cancel/CancelArgs$Ethereum;->oldTxHash:Ljava/lang/String;
@@ -55,14 +55,14 @@
     return-void
 .end method
 
-.method public static synthetic copy$default(Lcom/iMe/storage/domain/model/crypto/cancel/CancelArgs$Ethereum;Lcom/iMe/storage/domain/model/wallet/token/TokenCode;Ljava/lang/String;Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$EVM;ILjava/lang/Object;)Lcom/iMe/storage/domain/model/crypto/cancel/CancelArgs$Ethereum;
+.method public static synthetic copy$default(Lcom/iMe/storage/domain/model/crypto/cancel/CancelArgs$Ethereum;Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$EVM;ILjava/lang/Object;)Lcom/iMe/storage/domain/model/crypto/cancel/CancelArgs$Ethereum;
     .locals 0
 
     and-int/lit8 p5, p4, 0x1
 
     if-eqz p5, :cond_0
 
-    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/crypto/cancel/CancelArgs$Ethereum;->getToken()Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
+    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/crypto/cancel/CancelArgs$Ethereum;->getNetworkId()Ljava/lang/String;
 
     move-result-object p1
 
@@ -81,7 +81,7 @@
     iget-object p3, p0, Lcom/iMe/storage/domain/model/crypto/cancel/CancelArgs$Ethereum;->transferArgs:Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$EVM;
 
     :cond_2
-    invoke-virtual {p0, p1, p2, p3}, Lcom/iMe/storage/domain/model/crypto/cancel/CancelArgs$Ethereum;->copy(Lcom/iMe/storage/domain/model/wallet/token/TokenCode;Ljava/lang/String;Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$EVM;)Lcom/iMe/storage/domain/model/crypto/cancel/CancelArgs$Ethereum;
+    invoke-virtual {p0, p1, p2, p3}, Lcom/iMe/storage/domain/model/crypto/cancel/CancelArgs$Ethereum;->copy(Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$EVM;)Lcom/iMe/storage/domain/model/crypto/cancel/CancelArgs$Ethereum;
 
     move-result-object p0
 
@@ -90,10 +90,10 @@
 
 
 # virtual methods
-.method public final component1()Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
+.method public final component1()Ljava/lang/String;
     .locals 1
 
-    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/crypto/cancel/CancelArgs$Ethereum;->getToken()Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
+    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/crypto/cancel/CancelArgs$Ethereum;->getNetworkId()Ljava/lang/String;
 
     move-result-object v0
 
@@ -116,10 +116,10 @@
     return-object v0
 .end method
 
-.method public final copy(Lcom/iMe/storage/domain/model/wallet/token/TokenCode;Ljava/lang/String;Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$EVM;)Lcom/iMe/storage/domain/model/crypto/cancel/CancelArgs$Ethereum;
+.method public final copy(Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$EVM;)Lcom/iMe/storage/domain/model/crypto/cancel/CancelArgs$Ethereum;
     .locals 1
 
-    const-string v0, "token"
+    const-string v0, "networkId"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -133,7 +133,7 @@
 
     new-instance v0, Lcom/iMe/storage/domain/model/crypto/cancel/CancelArgs$Ethereum;
 
-    invoke-direct {v0, p1, p2, p3}, Lcom/iMe/storage/domain/model/crypto/cancel/CancelArgs$Ethereum;-><init>(Lcom/iMe/storage/domain/model/wallet/token/TokenCode;Ljava/lang/String;Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$EVM;)V
+    invoke-direct {v0, p1, p2, p3}, Lcom/iMe/storage/domain/model/crypto/cancel/CancelArgs$Ethereum;-><init>(Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$EVM;)V
 
     return-object v0
 .end method
@@ -159,15 +159,19 @@
     :cond_1
     check-cast p1, Lcom/iMe/storage/domain/model/crypto/cancel/CancelArgs$Ethereum;
 
-    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/crypto/cancel/CancelArgs$Ethereum;->getToken()Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
+    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/crypto/cancel/CancelArgs$Ethereum;->getNetworkId()Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/crypto/cancel/CancelArgs$Ethereum;->getToken()Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
+    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/crypto/cancel/CancelArgs$Ethereum;->getNetworkId()Ljava/lang/String;
 
     move-result-object v3
 
-    if-eq v1, v3, :cond_2
+    invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_2
 
     return v2
 
@@ -201,20 +205,20 @@
     return v0
 .end method
 
+.method public getNetworkId()Ljava/lang/String;
+    .locals 1
+
+    .line 10
+    iget-object v0, p0, Lcom/iMe/storage/domain/model/crypto/cancel/CancelArgs$Ethereum;->networkId:Ljava/lang/String;
+
+    return-object v0
+.end method
+
 .method public final getOldTxHash()Ljava/lang/String;
     .locals 1
 
     .line 11
     iget-object v0, p0, Lcom/iMe/storage/domain/model/crypto/cancel/CancelArgs$Ethereum;->oldTxHash:Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method public getToken()Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
-    .locals 1
-
-    .line 10
-    iget-object v0, p0, Lcom/iMe/storage/domain/model/crypto/cancel/CancelArgs$Ethereum;->token:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
 
     return-object v0
 .end method
@@ -231,11 +235,11 @@
 .method public hashCode()I
     .locals 2
 
-    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/crypto/cancel/CancelArgs$Ethereum;->getToken()Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
+    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/crypto/cancel/CancelArgs$Ethereum;->getNetworkId()Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Ljava/lang/Enum;->hashCode()I
+    invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
 
     move-result v0
 
@@ -269,15 +273,15 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v1, "Ethereum(token="
+    const-string v1, "Ethereum(networkId="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/crypto/cancel/CancelArgs$Ethereum;->getToken()Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
+    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/crypto/cancel/CancelArgs$Ethereum;->getNetworkId()Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     const-string v1, ", oldTxHash="
 

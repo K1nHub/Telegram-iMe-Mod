@@ -231,7 +231,7 @@
 
     move-object/from16 v1, v25
 
-    invoke-static/range {v1 .. v24}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$2U7ylE1cKdrwytA7VYr-zRMrt74(Lorg/telegram/messenger/MessagesController;Lorg/telegram/tgnet/TLRPC$messages_Messages;ZZIZIIIJLjava/util/ArrayList;IIIZIIIIIILjava/util/ArrayList;Ljava/util/HashMap;)V
+    invoke-static/range {v1 .. v24}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$qfITSnl0lQ0s9OBUp2WOV_hXNfw(Lorg/telegram/messenger/MessagesController;Lorg/telegram/tgnet/TLRPC$messages_Messages;ZZIZIIIJLjava/util/ArrayList;IIIZIIIIIILjava/util/ArrayList;Ljava/util/HashMap;)V
 
     return-void
 .end method

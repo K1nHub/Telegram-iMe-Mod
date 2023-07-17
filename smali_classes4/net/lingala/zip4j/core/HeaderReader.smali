@@ -1463,7 +1463,7 @@
     :cond_10
     new-instance v0, Lnet/lingala/zip4j/exception/ZipException;
 
-    const-string v2, "random access file was null"
+    const-string/jumbo v2, "random access file was null"
 
     const/4 v3, 0x3
 
@@ -1742,7 +1742,7 @@
 
     const/4 v1, 0x3
 
-    const-string v2, "random access file was null"
+    const-string/jumbo v2, "random access file was null"
 
     invoke-direct {v0, v2, v1}, Lnet/lingala/zip4j/exception/ZipException;-><init>(Ljava/lang/String;I)V
 

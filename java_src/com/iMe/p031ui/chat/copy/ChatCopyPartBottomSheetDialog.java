@@ -14,10 +14,10 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.PropertyReference1Impl;
 import kotlin.jvm.internal.Reflection;
 import kotlin.reflect.KProperty;
-import org.telegram.messenger.C3295R;
+import org.telegram.messenger.C3417R;
 import org.telegram.messenger.databinding.ForkChatCopyContentLayoutBinding;
-import org.telegram.p044ui.ActionBar.BaseFragment;
-import org.telegram.p044ui.ActionBar.Theme;
+import org.telegram.p043ui.ActionBar.BaseFragment;
+import org.telegram.p043ui.ActionBar.Theme;
 /* compiled from: ChatCopyPartBottomSheetDialog.kt */
 /* renamed from: com.iMe.ui.chat.copy.ChatCopyPartBottomSheetDialog */
 /* loaded from: classes3.dex */
@@ -32,7 +32,7 @@ public final class ChatCopyPartBottomSheetDialog extends MvpBottomSheet {
         return Companion.newInstance(baseFragment, str);
     }
 
-    @Override // org.telegram.p044ui.ActionBar.BottomSheet
+    @Override // org.telegram.p043ui.ActionBar.BottomSheet
     protected boolean canDismissWithSwipe() {
         return false;
     }
@@ -42,7 +42,7 @@ public final class ChatCopyPartBottomSheetDialog extends MvpBottomSheet {
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
-    public ChatCopyPartBottomSheetDialog(org.telegram.p044ui.ActionBar.BaseFragment r4, java.lang.String r5) {
+    public ChatCopyPartBottomSheetDialog(org.telegram.p043ui.ActionBar.BaseFragment r4, java.lang.String r5) {
         /*
             r3 = this;
             java.lang.String r0 = "fragment"
@@ -55,7 +55,7 @@ public final class ChatCopyPartBottomSheetDialog extends MvpBottomSheet {
             r1 = 1
             r3.<init>(r0, r1)
             r3.message = r5
-            org.koin.mp.KoinPlatformTools r5 = org.koin.p043mp.KoinPlatformTools.INSTANCE
+            org.koin.mp.KoinPlatformTools r5 = org.koin.p042mp.KoinPlatformTools.INSTANCE
             kotlin.LazyThreadSafetyMode r5 = r5.defaultLazyMode()
             com.iMe.ui.chat.copy.ChatCopyPartBottomSheetDialog$special$$inlined$inject$default$1 r0 = new com.iMe.ui.chat.copy.ChatCopyPartBottomSheetDialog$special$$inlined$inject$default$1
             r2 = 0
@@ -104,7 +104,7 @@ public final class ChatCopyPartBottomSheetDialog extends MvpBottomSheet {
 
     private final void setupTexts() {
         ForkChatCopyContentLayoutBinding binding = getBinding();
-        binding.buttonClose.setText(getResourceManager().getString(C3295R.string.common_close));
+        binding.buttonClose.setText(getResourceManager().getString(C3417R.string.common_close));
         binding.textMessage.setText(this.message);
     }
 

@@ -26,7 +26,7 @@
 .method constructor <init>(Lcom/iMe/ui/wallet/notifications/WalletNotificationsView$$State;)V
     .locals 1
 
-    .line 411
+    .line 438
     const-class p1, Lmoxy/viewstate/strategy/AddToEndSingleStrategy;
 
     const-string v0, "onUnexpectedErrorState"
@@ -41,7 +41,7 @@
 .method public apply(Lcom/iMe/ui/wallet/notifications/WalletNotificationsView;)V
     .locals 0
 
-    .line 416
+    .line 443
     invoke-interface {p1}, Lcom/iMe/ui/custom/state/GlobalStateView;->onUnexpectedErrorState()V
 
     return-void
@@ -50,7 +50,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 409
+    .line 436
     check-cast p1, Lcom/iMe/ui/wallet/notifications/WalletNotificationsView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/wallet/notifications/WalletNotificationsView$$State$OnUnexpectedErrorStateCommand;->apply(Lcom/iMe/ui/wallet/notifications/WalletNotificationsView;)V

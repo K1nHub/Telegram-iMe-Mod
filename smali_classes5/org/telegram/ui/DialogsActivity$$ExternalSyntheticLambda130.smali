@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda130;->f$0:Ljava/lang/Runnable;
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/DialogsActivity;->$r8$lambda$IXyaye2jlFqB2wdVDtzEaPk6pcE(Ljava/lang/Runnable;Lorg/telegram/tgnet/TLRPC$TL_error;)Z
+    invoke-static {v0, p1}, Lorg/telegram/ui/DialogsActivity;->$r8$lambda$JfNDMooEzZCWyTdqUHRnSLjiIy8(Ljava/lang/Runnable;Lorg/telegram/tgnet/TLRPC$TL_error;)Z
 
     move-result p1
 

@@ -11,7 +11,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nBinancePayProcessManager.kt\nKotlin\n*S Kotlin\n*F\n+ 1 BinancePayProcessManager.kt\ncom/iMe/manager/crypto/pay/BinancePayProcessManager\n+ 2 ObservableExt.kt\ncom/iMe/storage/domain/utils/extentions/ObservableExtKt\n+ 3 RxExt.kt\ncom/iMe/utils/extentions/rx/RxExtKt\n*L\n1#1,134:1\n14#2:135\n39#3,8:136\n*S KotlinDebug\n*F\n+ 1 BinancePayProcessManager.kt\ncom/iMe/manager/crypto/pay/BinancePayProcessManager\n*L\n54#1:135\n64#1:136,8\n*E\n"
+    value = "SMAP\nBinancePayProcessManager.kt\nKotlin\n*S Kotlin\n*F\n+ 1 BinancePayProcessManager.kt\ncom/iMe/manager/crypto/pay/BinancePayProcessManager\n+ 2 ObservableExt.kt\ncom/iMe/storage/domain/utils/extentions/ObservableExtKt\n+ 3 RxExt.kt\ncom/iMe/utils/extentions/rx/RxExtKt\n*L\n1#1,134:1\n14#2:135\n42#3,12:136\n*S KotlinDebug\n*F\n+ 1 BinancePayProcessManager.kt\ncom/iMe/manager/crypto/pay/BinancePayProcessManager\n*L\n54#1:135\n64#1:136,12\n*E\n"
 .end annotation
 
 
@@ -349,7 +349,7 @@
     .line 64
     iget-object v0, p0, Lcom/iMe/manager/crypto/pay/BinancePayProcessManager;->viewState:Lcom/iMe/manager/crypto/pay/BinancePayProcessView;
 
-    .line 44
+    .line 47
     new-instance v1, Lcom/iMe/manager/crypto/pay/BinancePayProcessManager$loadAndPay$$inlined$subscribeWithErrorHandle$default$1;
 
     invoke-direct {v1, p0, p1}, Lcom/iMe/manager/crypto/pay/BinancePayProcessManager$loadAndPay$$inlined$subscribeWithErrorHandle$default$1;-><init>(Lcom/iMe/manager/crypto/pay/BinancePayProcessManager;Lcom/iMe/storage/data/utils/system/AndroidActivityHolder;)V
@@ -362,19 +362,19 @@
 
     invoke-direct {v1, v0}, Lcom/iMe/manager/crypto/pay/BinancePayProcessManager$loadAndPay$$inlined$subscribeWithErrorHandle$default$2;-><init>(Lcom/iMe/ui/base/mvp/base/BaseView;)V
 
-    .line 46
+    .line 49
     new-instance v0, Lcom/iMe/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
 
     invoke-direct {v0, v1}, Lcom/iMe/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;-><init>(Lkotlin/jvm/functions/Function1;)V
 
-    .line 44
+    .line 47
     invoke-virtual {p2, p1, v0}, Lio/reactivex/Observable;->subscribe(Lio/reactivex/functions/Consumer;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
 
     move-result-object p1
 
-    const-string p2, "viewState: BaseView? = n\u2026  onError.invoke()\n    })"
+    const-string p2, "viewState: BaseView? = n\u2026Error.invoke()\n        })"
 
-    .line 46
+    .line 49
     invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 71

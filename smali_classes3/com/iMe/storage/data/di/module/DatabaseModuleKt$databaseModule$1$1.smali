@@ -28,7 +28,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nDatabaseModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DatabaseModule.kt\ncom/iMe/storage/data/di/module/DatabaseModuleKt$databaseModule$1$1\n+ 2 DatabaseModule.kt\ncom/iMe/storage/data/di/module/DatabaseModuleKt\n*L\n1#1,44:1\n38#2,4:45\n*S KotlinDebug\n*F\n+ 1 DatabaseModule.kt\ncom/iMe/storage/data/di/module/DatabaseModuleKt$databaseModule$1$1\n*L\n17#1:45,4\n*E\n"
+    value = "SMAP\nDatabaseModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DatabaseModule.kt\ncom/iMe/storage/data/di/module/DatabaseModuleKt$databaseModule$1$1\n+ 2 DatabaseModule.kt\ncom/iMe/storage/data/di/module/DatabaseModuleKt\n*L\n1#1,40:1\n37#2,4:41\n*S KotlinDebug\n*F\n+ 1 DatabaseModule.kt\ncom/iMe/storage/data/di/module/DatabaseModuleKt$databaseModule$1$1\n*L\n17#1:41,4\n*E\n"
 .end annotation
 
 
@@ -83,7 +83,7 @@
 
     move-result-object p2
 
-    .line 38
+    .line 37
     const-class v0, Lcom/iMe/storage/data/locale/db/database/AppMainDatabase;
 
     const-string v1, "user_main_db"
@@ -92,7 +92,7 @@
 
     move-result-object p1
 
-    .line 39
+    .line 38
     array-length v0, p2
 
     invoke-static {p2, v0}, Ljava/util/Arrays;->copyOf([Ljava/lang/Object;I)[Ljava/lang/Object;
@@ -105,17 +105,17 @@
 
     move-result-object p1
 
-    .line 40
+    .line 39
     invoke-virtual {p1}, Landroidx/room/RoomDatabase$Builder;->fallbackToDestructiveMigration()Landroidx/room/RoomDatabase$Builder;
 
     move-result-object p1
 
-    .line 41
+    .line 40
     invoke-virtual {p1}, Landroidx/room/RoomDatabase$Builder;->build()Landroidx/room/RoomDatabase;
 
     move-result-object p1
 
-    const-string p2, "databaseBuilder(context,\u2026ration()\n        .build()"
+    const-string p2, "initDb"
 
     invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 

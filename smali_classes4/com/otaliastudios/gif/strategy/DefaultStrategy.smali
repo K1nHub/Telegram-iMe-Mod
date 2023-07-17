@@ -172,7 +172,7 @@
 
     int-to-float v6, v6
 
-    const-string v9, "rotation-degrees"
+    const-string/jumbo v9, "rotation-degrees"
 
     .line 290
     invoke-virtual {v8, v9}, Landroid/media/MediaFormat;->containsKey(Ljava/lang/String;)Z
@@ -567,7 +567,7 @@
 
     const/4 v2, 0x0
 
-    const-string v3, "rotation-degrees"
+    const-string/jumbo v3, "rotation-degrees"
 
     .line 256
     invoke-virtual {p2, v3, v2}, Landroid/media/MediaFormat;->setInteger(Ljava/lang/String;I)V

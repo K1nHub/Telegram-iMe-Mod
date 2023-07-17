@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/GroupCallActivity;Z)V
     .locals 0
 
-    .line 6137
+    .line 6148
     iput-object p1, p0, Lorg/telegram/ui/GroupCallActivity$48;->this$0:Lorg/telegram/ui/GroupCallActivity;
 
     iput-boolean p2, p0, Lorg/telegram/ui/GroupCallActivity$48;->val$show:Z
@@ -39,14 +39,14 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 6140
+    .line 6151
     iget-object p1, p0, Lorg/telegram/ui/GroupCallActivity$48;->this$0:Lorg/telegram/ui/GroupCallActivity;
 
     const/4 v0, 0x0
 
     iput-object v0, p1, Lorg/telegram/ui/GroupCallActivity;->subtitleYAnimator:Landroid/animation/ObjectAnimator;
 
-    .line 6141
+    .line 6152
     invoke-static {p1}, Lorg/telegram/ui/GroupCallActivity;->access$7100(Lorg/telegram/ui/GroupCallActivity;)Lorg/telegram/ui/ActionBar/ActionBar;
 
     move-result-object p1

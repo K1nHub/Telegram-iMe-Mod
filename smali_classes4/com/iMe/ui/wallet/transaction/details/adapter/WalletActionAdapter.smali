@@ -22,11 +22,11 @@
 .method public constructor <init>(Lcom/iMe/storage/domain/utils/system/ResourceManager;)V
     .locals 3
 
-    const-string v0, "resourceManager"
+    const-string/jumbo v0, "resourceManager"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 16
+    .line 18
     sget v0, Lorg/telegram/messenger/R$layout;->fork_recycle_item_wallet_action:I
 
     const/4 v1, 0x0
@@ -35,7 +35,7 @@
 
     invoke-direct {p0, v0, v1, v2, v1}, Lcom/chad/library/adapter/base/BaseQuickAdapter;-><init>(ILjava/util/List;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
 
-    .line 15
+    .line 17
     iput-object p1, p0, Lcom/iMe/ui/wallet/transaction/details/adapter/WalletActionAdapter;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     return-void
@@ -54,7 +54,7 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 22
+    .line 24
     sget v0, Lorg/telegram/messenger/R$id;->linear_root:I
 
     const/4 v1, 0x0
@@ -63,56 +63,78 @@
 
     move-result-object p1
 
-    .line 23
-    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
-
-    invoke-static {p1, v0, v1}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setThemedBackgroundColor(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;II)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
-
-    move-result-object p1
-
-    .line 24
-    sget v0, Lorg/telegram/messenger/R$id;->image_action:I
-
-    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_dialogIcon:I
-
-    invoke-static {p1, v0, v1}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setThemedImageColor(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;II)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
-
-    move-result-object p1
-
     .line 25
-    sget v1, Lorg/telegram/messenger/R$id;->text_action:I
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
-    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextBlack:I
-
-    invoke-static {p1, v1, v2}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setThemedTextColor(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;II)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
+    invoke-static {p1, v0, v2}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setThemedBackgroundColor(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;II)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     move-result-object p1
 
     .line 26
-    invoke-interface {p2}, Lcom/iMe/model/wallet/ActionItem;->getIcon()I
+    sget v0, Lorg/telegram/messenger/R$id;->text_action:I
 
-    move-result v2
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextBlack:I
 
-    invoke-virtual {p1, v0, v2}, Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;->setImageResource(II)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
+    invoke-static {p1, v0, v2}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setThemedTextColor(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;II)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     move-result-object p1
 
     .line 27
-    iget-object v0, p0, Lcom/iMe/ui/wallet/transaction/details/adapter/WalletActionAdapter;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
+    iget-object v2, p0, Lcom/iMe/ui/wallet/transaction/details/adapter/WalletActionAdapter;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
-    invoke-interface {p2, v0}, Lcom/iMe/model/wallet/ActionItem;->getTitle(Lcom/iMe/storage/domain/utils/system/ResourceManager;)Ljava/lang/String;
+    invoke-interface {p2, v2}, Lcom/iMe/model/wallet/ActionItem;->getTitle(Lcom/iMe/storage/domain/utils/system/ResourceManager;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {p1, v0, v2}, Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;->setText(ILjava/lang/CharSequence;)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
+
+    move-result-object p1
+
+    .line 29
+    instance-of v0, p2, Lcom/iMe/model/wallet/transaction/TransactionActionItem$OpenScan;
+
+    if-eqz v0, :cond_0
+
+    .line 30
+    sget v0, Lorg/telegram/messenger/R$id;->image_action:I
+
+    check-cast p2, Lcom/iMe/model/wallet/transaction/TransactionActionItem$OpenScan;
+
+    invoke-virtual {p2}, Lcom/iMe/model/wallet/transaction/TransactionActionItem$OpenScan;->getIconUrl()Ljava/lang/String;
 
     move-result-object p2
 
-    invoke-virtual {p1, v1, p2}, Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;->setText(ILjava/lang/CharSequence;)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
+    const/4 v2, 0x0
 
+    invoke-static {p1, v0, p2, v2, v1}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->loadImage(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;ILjava/lang/String;Ljava/lang/Integer;Z)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
+
+    goto :goto_0
+
+    .line 32
+    :cond_0
+    sget v0, Lorg/telegram/messenger/R$id;->image_action:I
+
+    invoke-interface {p2}, Lcom/iMe/model/wallet/ActionItem;->getIcon()I
+
+    move-result p2
+
+    invoke-virtual {p1, v0, p2}, Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;->setImageResource(II)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
+
+    move-result-object p1
+
+    .line 33
+    sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_dialogIcon:I
+
+    invoke-static {p1, v0, p2}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setThemedImageColor(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;II)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
+
+    :goto_0
     return-void
 .end method
 
 .method public bridge synthetic convert(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;Ljava/lang/Object;)V
     .locals 0
 
-    .line 14
+    .line 16
     check-cast p2, Lcom/iMe/model/wallet/ActionItem;
 
     invoke-virtual {p0, p1, p2}, Lcom/iMe/ui/wallet/transaction/details/adapter/WalletActionAdapter;->convert(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;Lcom/iMe/model/wallet/ActionItem;)V

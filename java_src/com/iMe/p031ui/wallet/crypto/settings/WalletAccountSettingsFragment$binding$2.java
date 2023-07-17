@@ -7,7 +7,7 @@ import org.telegram.messenger.databinding.ForkFragmentWalletEthSettingsBinding;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: WalletAccountSettingsFragment.kt */
 /* renamed from: com.iMe.ui.wallet.crypto.settings.WalletAccountSettingsFragment$binding$2 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class WalletAccountSettingsFragment$binding$2 extends Lambda implements Function0<ForkFragmentWalletEthSettingsBinding> {
     final /* synthetic */ WalletAccountSettingsFragment this$0;
 

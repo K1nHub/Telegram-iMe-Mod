@@ -48,7 +48,7 @@
 .method public final invoke()Landroidx/appcompat/widget/AppCompatImageView;
     .locals 1
 
-    .line 30
+    .line 32
     iget-object v0, p0, Lcom/iMe/fork/ui/view/ImageRadioCell$imageView$2;->this$0:Lcom/iMe/fork/ui/view/ImageRadioCell;
 
     invoke-static {v0}, Lcom/iMe/fork/ui/view/ImageRadioCell;->access$initImageView(Lcom/iMe/fork/ui/view/ImageRadioCell;)Landroidx/appcompat/widget/AppCompatImageView;
@@ -61,7 +61,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 30
+    .line 32
     invoke-virtual {p0}, Lcom/iMe/fork/ui/view/ImageRadioCell$imageView$2;->invoke()Landroidx/appcompat/widget/AppCompatImageView;
 
     move-result-object v0

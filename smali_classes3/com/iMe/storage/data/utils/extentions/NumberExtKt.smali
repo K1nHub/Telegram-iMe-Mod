@@ -35,27 +35,33 @@
     return-object p0
 .end method
 
-.method public static final convertToWei(Ljava/lang/Number;Lcom/iMe/storage/domain/utils/crypto/Convert$Unit;)Ljava/math/BigInteger;
+.method public static final convertToBaseUnit(Ljava/lang/Number;I)Ljava/math/BigInteger;
     .locals 1
 
     const-string v0, "<this>"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "unit"
+    .line 19
+    new-instance v0, Ljava/math/BigDecimal;
 
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    .line 8
     invoke-virtual {p0}, Ljava/lang/Number;->toString()Ljava/lang/String;
 
     move-result-object p0
 
-    invoke-static {p0, p1}, Lcom/iMe/storage/domain/utils/crypto/Convert;->toWei(Ljava/lang/String;Lcom/iMe/storage/domain/utils/crypto/Convert$Unit;)Ljava/math/BigDecimal;
+    invoke-direct {v0, p0}, Ljava/math/BigDecimal;-><init>(Ljava/lang/String;)V
+
+    sget-object p0, Ljava/math/BigDecimal;->TEN:Ljava/math/BigDecimal;
+
+    invoke-virtual {p0, p1}, Ljava/math/BigDecimal;->pow(I)Ljava/math/BigDecimal;
 
     move-result-object p0
 
-    const-string p1, "toWei(this.toString(), unit)"
+    invoke-virtual {v0, p0}, Ljava/math/BigDecimal;->multiply(Ljava/math/BigDecimal;)Ljava/math/BigDecimal;
+
+    move-result-object p0
+
+    const-string p1, "BigDecimal(this.toString\u2026ecimal.TEN.pow(decimals))"
 
     invoke-static {p0, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -73,7 +79,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 19
+    .line 22
     instance-of v0, p0, Ljava/lang/Float;
 
     const/4 v1, 0x1
@@ -99,7 +105,7 @@
 
     goto :goto_0
 
-    .line 20
+    .line 23
     :cond_1
     instance-of v0, p0, Ljava/lang/Double;
 
@@ -117,7 +123,7 @@
 
     goto :goto_0
 
-    .line 21
+    .line 24
     :cond_2
     instance-of v0, p0, Ljava/math/BigInteger;
 
@@ -131,7 +137,7 @@
 
     goto :goto_0
 
-    .line 22
+    .line 25
     :cond_3
     instance-of v0, p0, Ljava/math/BigDecimal;
 
@@ -149,7 +155,7 @@
 
     goto :goto_0
 
-    .line 23
+    .line 26
     :cond_4
     instance-of v0, p0, Ljava/lang/Long;
 
@@ -167,7 +173,7 @@
 
     goto :goto_0
 
-    .line 24
+    .line 27
     :cond_5
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -186,7 +192,7 @@
 
     if-eqz p0, :cond_0
 
-    .line 33
+    .line 36
     invoke-virtual {p0}, Ljava/lang/Double;->doubleValue()D
 
     move-result-wide v0
@@ -205,7 +211,7 @@
 
     if-eqz p0, :cond_0
 
-    .line 31
+    .line 34
     invoke-virtual {p0}, Ljava/lang/Float;->floatValue()F
 
     move-result p0
@@ -224,7 +230,7 @@
 
     if-eqz p0, :cond_0
 
-    .line 27
+    .line 30
     invoke-virtual {p0}, Ljava/lang/Integer;->intValue()I
 
     move-result p0
@@ -243,7 +249,7 @@
 
     if-eqz p0, :cond_0
 
-    .line 29
+    .line 32
     invoke-virtual {p0}, Ljava/lang/Long;->longValue()J
 
     move-result-wide v0
@@ -262,7 +268,7 @@
 
     if-nez p0, :cond_0
 
-    .line 37
+    .line 40
     sget-object p0, Ljava/math/BigDecimal;->ZERO:Ljava/math/BigDecimal;
 
     const-string v0, "orZero"
@@ -278,7 +284,7 @@
 
     if-nez p0, :cond_0
 
-    .line 35
+    .line 38
     sget-object p0, Ljava/math/BigInteger;->ZERO:Ljava/math/BigInteger;
 
     const-string v0, "ZERO"

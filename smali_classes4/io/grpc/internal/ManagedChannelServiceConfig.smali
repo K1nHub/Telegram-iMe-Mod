@@ -504,7 +504,7 @@
 
     iget-object v1, p0, Lio/grpc/internal/ManagedChannelServiceConfig;->serviceMethodMap:Ljava/util/Map;
 
-    const-string v2, "serviceMethodMap"
+    const-string/jumbo v2, "serviceMethodMap"
 
     .line 177
     invoke-virtual {v0, v2, v1}, Lcom/google/common/base/MoreObjects$ToStringHelper;->add(Ljava/lang/String;Ljava/lang/Object;)Lcom/google/common/base/MoreObjects$ToStringHelper;
@@ -513,7 +513,7 @@
 
     iget-object v1, p0, Lio/grpc/internal/ManagedChannelServiceConfig;->serviceMap:Ljava/util/Map;
 
-    const-string v2, "serviceMap"
+    const-string/jumbo v2, "serviceMap"
 
     .line 178
     invoke-virtual {v0, v2, v1}, Lcom/google/common/base/MoreObjects$ToStringHelper;->add(Ljava/lang/String;Ljava/lang/Object;)Lcom/google/common/base/MoreObjects$ToStringHelper;
@@ -522,7 +522,7 @@
 
     iget-object v1, p0, Lio/grpc/internal/ManagedChannelServiceConfig;->retryThrottling:Lio/grpc/internal/RetriableStream$Throttle;
 
-    const-string v2, "retryThrottling"
+    const-string/jumbo v2, "retryThrottling"
 
     .line 179
     invoke-virtual {v0, v2, v1}, Lcom/google/common/base/MoreObjects$ToStringHelper;->add(Ljava/lang/String;Ljava/lang/Object;)Lcom/google/common/base/MoreObjects$ToStringHelper;

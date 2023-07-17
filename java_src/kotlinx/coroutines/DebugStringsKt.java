@@ -12,21 +12,21 @@ public final class DebugStringsKt {
     }
 
     public static final String toDebugString(Continuation<?> continuation) {
-        String m1576constructorimpl;
+        String m1601constructorimpl;
         if (continuation instanceof DispatchedContinuation) {
             return continuation.toString();
         }
         try {
             Result.Companion companion = Result.Companion;
-            m1576constructorimpl = Result.m1576constructorimpl(continuation + '@' + getHexAddress(continuation));
+            m1601constructorimpl = Result.m1601constructorimpl(continuation + '@' + getHexAddress(continuation));
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            m1576constructorimpl = Result.m1576constructorimpl(ResultKt.createFailure(th));
+            m1601constructorimpl = Result.m1601constructorimpl(ResultKt.createFailure(th));
         }
-        if (Result.m1577exceptionOrNullimpl(m1576constructorimpl) != null) {
-            m1576constructorimpl = continuation.getClass().getName() + '@' + getHexAddress(continuation);
+        if (Result.m1602exceptionOrNullimpl(m1601constructorimpl) != null) {
+            m1601constructorimpl = continuation.getClass().getName() + '@' + getHexAddress(continuation);
         }
-        return (String) m1576constructorimpl;
+        return (String) m1601constructorimpl;
     }
 
     public static final String getClassSimpleName(Object obj) {

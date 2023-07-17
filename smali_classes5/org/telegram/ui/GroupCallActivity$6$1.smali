@@ -64,7 +64,7 @@
 .method constructor <init>(Lorg/telegram/ui/GroupCallActivity$6;Landroid/content/Context;Lorg/telegram/tgnet/TLRPC$Chat;Z)V
     .locals 0
 
-    .line 1911
+    .line 1922
     iput-object p1, p0, Lorg/telegram/ui/GroupCallActivity$6$1;->this$1:Lorg/telegram/ui/GroupCallActivity$6;
 
     invoke-direct {p0, p2, p3, p4}, Lorg/telegram/ui/Components/GroupCallRecordAlert;-><init>(Landroid/content/Context;Lorg/telegram/tgnet/TLRPC$Chat;Z)V
@@ -75,10 +75,10 @@
 .method private static synthetic lambda$onStartRecord$0(Lorg/telegram/ui/ActionBar/AlertDialog$Builder;Landroid/widget/TextView;ILandroid/view/KeyEvent;)Z
     .locals 0
 
-    .line 1953
+    .line 1964
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->hideKeyboard(Landroid/view/View;)V
 
-    .line 1954
+    .line 1965
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->create()Lorg/telegram/ui/ActionBar/AlertDialog;
 
     move-result-object p0
@@ -99,7 +99,7 @@
 .method private synthetic lambda$onStartRecord$1(Lorg/telegram/ui/ActionBar/AlertDialog;Lorg/telegram/ui/Components/EditTextBoldCursor;Landroid/content/DialogInterface;)V
     .locals 2
 
-    .line 1960
+    .line 1971
     iget-object p3, p0, Lorg/telegram/ui/GroupCallActivity$6$1;->this$1:Lorg/telegram/ui/GroupCallActivity$6;
 
     iget-object p3, p3, Lorg/telegram/ui/GroupCallActivity$6;->this$0:Lorg/telegram/ui/GroupCallActivity;
@@ -116,7 +116,7 @@
 .method private static synthetic lambda$onStartRecord$2(Lorg/telegram/ui/Components/EditTextBoldCursor;Landroid/content/DialogInterface;)V
     .locals 0
 
-    .line 1961
+    .line 1972
     invoke-static {p0}, Lorg/telegram/messenger/AndroidUtilities;->hideKeyboard(Landroid/view/View;)V
 
     return-void
@@ -125,7 +125,7 @@
 .method private synthetic lambda$onStartRecord$3(Lorg/telegram/ui/Components/EditTextBoldCursor;ILandroid/content/DialogInterface;I)V
     .locals 2
 
-    .line 1964
+    .line 1975
     iget-object p3, p0, Lorg/telegram/ui/GroupCallActivity$6$1;->this$1:Lorg/telegram/ui/GroupCallActivity$6;
 
     iget-object p3, p3, Lorg/telegram/ui/GroupCallActivity$6;->this$0:Lorg/telegram/ui/GroupCallActivity;
@@ -142,10 +142,10 @@
 
     invoke-virtual {p3, p4, p2}, Lorg/telegram/messenger/ChatObject$Call;->toggleRecord(Ljava/lang/String;I)V
 
-    .line 1965
+    .line 1976
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->hideKeyboard(Landroid/view/View;)V
 
-    .line 1966
+    .line 1977
     iget-object p1, p0, Lorg/telegram/ui/GroupCallActivity$6$1;->this$1:Lorg/telegram/ui/GroupCallActivity$6;
 
     iget-object p1, p1, Lorg/telegram/ui/GroupCallActivity$6;->this$0:Lorg/telegram/ui/GroupCallActivity;
@@ -170,14 +170,14 @@
 
     invoke-virtual {p1, v0, v1, p2, p3}, Lorg/telegram/ui/Components/UndoView;->showWithAction(JILjava/lang/Runnable;)V
 
-    .line 1967
+    .line 1978
     invoke-static {}, Lorg/telegram/messenger/voip/VoIPService;->getSharedInstance()Lorg/telegram/messenger/voip/VoIPService;
 
     move-result-object p1
 
     if-eqz p1, :cond_1
 
-    .line 1968
+    .line 1979
     invoke-static {}, Lorg/telegram/messenger/voip/VoIPService;->getSharedInstance()Lorg/telegram/messenger/voip/VoIPService;
 
     move-result-object p1
@@ -191,7 +191,7 @@
 .method private static synthetic lambda$onStartRecord$4(Lorg/telegram/ui/Components/EditTextBoldCursor;Landroid/content/DialogInterface;I)V
     .locals 0
 
-    .line 1971
+    .line 1982
     invoke-static {p0}, Lorg/telegram/messenger/AndroidUtilities;->hideKeyboard(Landroid/view/View;)V
 
     return-void
@@ -202,7 +202,7 @@
 .method public onStartRecord(I)V
     .locals 13
 
-    .line 1914
+    .line 1925
     new-instance v0, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
     invoke-virtual {p0}, Landroid/app/Dialog;->getContext()Landroid/content/Context;
@@ -211,12 +211,12 @@
 
     invoke-direct {v0, v1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    .line 1915
+    .line 1926
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_voipgroup_listeningText:I
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setDialogButtonColorKey(I)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 1917
+    .line 1928
     iget-object v1, p0, Lorg/telegram/ui/GroupCallActivity$6$1;->this$1:Lorg/telegram/ui/GroupCallActivity$6;
 
     iget-object v1, v1, Lorg/telegram/ui/GroupCallActivity$6;->this$0:Lorg/telegram/ui/GroupCallActivity;
@@ -225,7 +225,7 @@
 
     invoke-static {v1, v2}, Lorg/telegram/ui/GroupCallActivity;->access$3102(Lorg/telegram/ui/GroupCallActivity;Z)Z
 
-    .line 1918
+    .line 1929
     sget v1, Lorg/telegram/messenger/R$string;->VoipGroupStartRecordingTitle:I
 
     const-string v3, "VoipGroupStartRecordingTitle"
@@ -238,7 +238,7 @@
 
     if-nez p1, :cond_1
 
-    .line 1920
+    .line 1931
     iget-object v1, p0, Lorg/telegram/ui/GroupCallActivity$6$1;->this$1:Lorg/telegram/ui/GroupCallActivity$6;
 
     iget-object v1, v1, Lorg/telegram/ui/GroupCallActivity$6;->this$0:Lorg/telegram/ui/GroupCallActivity;
@@ -267,7 +267,7 @@
 
     goto :goto_3
 
-    .line 1922
+    .line 1933
     :cond_1
     iget-object v1, p0, Lorg/telegram/ui/GroupCallActivity$6$1;->this$1:Lorg/telegram/ui/GroupCallActivity$6;
 
@@ -281,7 +281,7 @@
 
     if-eqz v1, :cond_3
 
-    .line 1923
+    .line 1934
     iget-object v1, p0, Lorg/telegram/ui/GroupCallActivity$6$1;->this$1:Lorg/telegram/ui/GroupCallActivity$6;
 
     iget-object v1, v1, Lorg/telegram/ui/GroupCallActivity$6;->this$0:Lorg/telegram/ui/GroupCallActivity;
@@ -310,7 +310,7 @@
 
     goto :goto_3
 
-    .line 1925
+    .line 1936
     :cond_3
     iget-object v1, p0, Lorg/telegram/ui/GroupCallActivity$6$1;->this$1:Lorg/telegram/ui/GroupCallActivity$6;
 
@@ -338,11 +338,11 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setMessage(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 1928
+    .line 1939
     :goto_3
     invoke-virtual {v0, v2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setCheckFocusable(Z)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 1930
+    .line 1941
     new-instance v1, Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     invoke-virtual {p0}, Landroid/app/Dialog;->getContext()Landroid/content/Context;
@@ -351,7 +351,7 @@
 
     invoke-direct {v1, v3}, Lorg/telegram/ui/Components/EditTextBoldCursor;-><init>(Landroid/content/Context;)V
 
-    .line 1931
+    .line 1942
     invoke-virtual {p0}, Landroid/app/Dialog;->getContext()Landroid/content/Context;
 
     move-result-object v3
@@ -374,7 +374,7 @@
 
     invoke-virtual {v1, v3}, Landroid/widget/EditText;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 1933
+    .line 1944
     new-instance v3, Landroid/widget/LinearLayout;
 
     invoke-virtual {p0}, Landroid/app/Dialog;->getContext()Landroid/content/Context;
@@ -385,18 +385,18 @@
 
     const/4 v4, 0x1
 
-    .line 1934
+    .line 1945
     invoke-virtual {v3, v4}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
-    .line 1935
+    .line 1946
     invoke-virtual {v0, v3}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setView(Landroid/view/View;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
     const/high16 v5, 0x41800000    # 16.0f
 
-    .line 1937
+    .line 1948
     invoke-virtual {v1, v4, v5}, Landroid/widget/EditText;->setTextSize(IF)V
 
-    .line 1938
+    .line 1949
     sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_voipgroup_nameText:I
 
     invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -405,26 +405,26 @@
 
     invoke-virtual {v1, v6}, Landroid/widget/EditText;->setTextColor(I)V
 
-    .line 1939
+    .line 1950
     invoke-virtual {v1, v4}, Landroid/widget/EditText;->setMaxLines(I)V
 
-    .line 1940
+    .line 1951
     invoke-virtual {v1, v4}, Landroid/widget/EditText;->setLines(I)V
 
     const/16 v6, 0x4001
 
-    .line 1941
+    .line 1952
     invoke-virtual {v1, v6}, Landroid/widget/EditText;->setInputType(I)V
 
     const/16 v6, 0x33
 
-    .line 1942
+    .line 1953
     invoke-virtual {v1, v6}, Landroid/widget/EditText;->setGravity(I)V
 
-    .line 1943
+    .line 1954
     invoke-virtual {v1, v4}, Landroid/widget/EditText;->setSingleLine(Z)V
 
-    .line 1944
+    .line 1955
     sget v4, Lorg/telegram/messenger/R$string;->VoipGroupSaveFileHint:I
 
     const-string v6, "VoipGroupSaveFileHint"
@@ -437,10 +437,10 @@
 
     const/4 v4, 0x6
 
-    .line 1945
+    .line 1956
     invoke-virtual {v1, v4}, Landroid/widget/EditText;->setImeOptions(I)V
 
-    .line 1946
+    .line 1957
     sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_voipgroup_lastSeenText:I
 
     invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -449,7 +449,7 @@
 
     invoke-virtual {v1, v4}, Landroid/widget/EditText;->setHintTextColor(I)V
 
-    .line 1947
+    .line 1958
     invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v4
@@ -458,7 +458,7 @@
 
     const/16 v4, 0x14
 
-    .line 1948
+    .line 1959
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v4
@@ -467,12 +467,12 @@
 
     const/high16 v4, 0x3fc00000    # 1.5f
 
-    .line 1949
+    .line 1960
     invoke-virtual {v1, v4}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setCursorWidth(F)V
 
     const/4 v4, 0x4
 
-    .line 1950
+    .line 1961
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v4
@@ -493,26 +493,26 @@
 
     const/16 v12, 0xc
 
-    .line 1951
+    .line 1962
     invoke-static/range {v6 .. v12}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(IIIIIII)Landroid/widget/LinearLayout$LayoutParams;
 
     move-result-object v2
 
     invoke-virtual {v3, v1, v2}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1952
+    .line 1963
     new-instance v2, Lorg/telegram/ui/GroupCallActivity$6$1$$ExternalSyntheticLambda4;
 
     invoke-direct {v2, v0}, Lorg/telegram/ui/GroupCallActivity$6$1$$ExternalSyntheticLambda4;-><init>(Lorg/telegram/ui/ActionBar/AlertDialog$Builder;)V
 
     invoke-virtual {v1, v2}, Landroid/widget/EditText;->setOnEditorActionListener(Landroid/widget/TextView$OnEditorActionListener;)V
 
-    .line 1958
+    .line 1969
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->create()Lorg/telegram/ui/ActionBar/AlertDialog;
 
     move-result-object v2
 
-    .line 1959
+    .line 1970
     sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_voipgroup_inviteMembersBackground:I
 
     invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -521,21 +521,21 @@
 
     invoke-virtual {v2, v3}, Lorg/telegram/ui/ActionBar/AlertDialog;->setBackgroundColor(I)V
 
-    .line 1960
+    .line 1971
     new-instance v3, Lorg/telegram/ui/GroupCallActivity$6$1$$ExternalSyntheticLambda3;
 
     invoke-direct {v3, p0, v2, v1}, Lorg/telegram/ui/GroupCallActivity$6$1$$ExternalSyntheticLambda3;-><init>(Lorg/telegram/ui/GroupCallActivity$6$1;Lorg/telegram/ui/ActionBar/AlertDialog;Lorg/telegram/ui/Components/EditTextBoldCursor;)V
 
     invoke-virtual {v2, v3}, Landroid/app/Dialog;->setOnShowListener(Landroid/content/DialogInterface$OnShowListener;)V
 
-    .line 1961
+    .line 1972
     new-instance v3, Lorg/telegram/ui/GroupCallActivity$6$1$$ExternalSyntheticLambda2;
 
     invoke-direct {v3, v1}, Lorg/telegram/ui/GroupCallActivity$6$1$$ExternalSyntheticLambda2;-><init>(Lorg/telegram/ui/Components/EditTextBoldCursor;)V
 
     invoke-virtual {v2, v3}, Landroid/app/Dialog;->setOnDismissListener(Landroid/content/DialogInterface$OnDismissListener;)V
 
-    .line 1963
+    .line 1974
     sget v2, Lorg/telegram/messenger/R$string;->Start:I
 
     const-string v3, "Start"
@@ -550,7 +550,7 @@
 
     invoke-virtual {v0, v2, v3}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 1971
+    .line 1982
     sget p1, Lorg/telegram/messenger/R$string;->Cancel:I
 
     const-string v2, "Cancel"
@@ -565,12 +565,12 @@
 
     invoke-virtual {v0, p1, v2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setNegativeButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 1972
+    .line 1983
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->create()Lorg/telegram/ui/ActionBar/AlertDialog;
 
     move-result-object p1
 
-    .line 1973
+    .line 1984
     sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_voipgroup_dialogBackground:I
 
     invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -579,17 +579,17 @@
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/ActionBar/AlertDialog;->setBackgroundColor(I)V
 
-    .line 1974
+    .line 1985
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/AlertDialog;->show()V
 
-    .line 1975
+    .line 1986
     invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v0
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/ActionBar/AlertDialog;->setTextColor(I)V
 
-    .line 1977
+    .line 1988
     invoke-virtual {v1}, Landroid/widget/EditText;->requestFocus()Z
 
     return-void

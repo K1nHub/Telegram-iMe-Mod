@@ -11,11 +11,16 @@ import moxy.viewstate.strategy.AddToEndSingleStrategy;
 import moxy.viewstate.strategy.OneExecutionStateStrategy;
 import org.telegram.messenger.LocaleController;
 /* renamed from: com.iMe.ui.catalog.CatalogRootView$$State */
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public class CatalogRootView$$State extends MvpViewState<CatalogRootView> implements CatalogRootView {
     @Override // com.iMe.p031ui.base.mvp.base.BaseView
     public /* synthetic */ void finishScreen() {
         BaseView.CC.$default$finishScreen(this);
+    }
+
+    @Override // com.iMe.p031ui.base.mvp.base.BaseView
+    public /* synthetic */ void removeSelfFromStackImmediately() {
+        BaseView.CC.$default$removeSelfFromStackImmediately(this);
     }
 
     @Override // com.iMe.p031ui.catalog.CatalogRootView
@@ -98,26 +103,26 @@ public class CatalogRootView$$State extends MvpViewState<CatalogRootView> implem
 
     /* compiled from: CatalogRootView$$State.java */
     /* renamed from: com.iMe.ui.catalog.CatalogRootView$$State$OnTabSelectedCommand */
-    /* loaded from: classes.dex */
+    /* loaded from: classes3.dex */
     public class OnTabSelectedCommand extends ViewCommand<CatalogRootView> {
 
         /* renamed from: id */
-        public final int f374id;
+        public final int f447id;
 
         OnTabSelectedCommand(CatalogRootView$$State catalogRootView$$State, int i) {
             super("onTabSelected", AddToEndSingleStrategy.class);
-            this.f374id = i;
+            this.f447id = i;
         }
 
         @Override // moxy.viewstate.ViewCommand
         public void apply(CatalogRootView catalogRootView) {
-            catalogRootView.onTabSelected(this.f374id);
+            catalogRootView.onTabSelected(this.f447id);
         }
     }
 
     /* compiled from: CatalogRootView$$State.java */
     /* renamed from: com.iMe.ui.catalog.CatalogRootView$$State$OnSelectedLanguageChangedCommand */
-    /* loaded from: classes.dex */
+    /* loaded from: classes3.dex */
     public class OnSelectedLanguageChangedCommand extends ViewCommand<CatalogRootView> {
         OnSelectedLanguageChangedCommand(CatalogRootView$$State catalogRootView$$State) {
             super("onSelectedLanguageChanged", AddToEndSingleStrategy.class);
@@ -131,7 +136,7 @@ public class CatalogRootView$$State extends MvpViewState<CatalogRootView> implem
 
     /* compiled from: CatalogRootView$$State.java */
     /* renamed from: com.iMe.ui.catalog.CatalogRootView$$State$OpenSelectLanguageScreenCommand */
-    /* loaded from: classes.dex */
+    /* loaded from: classes3.dex */
     public class OpenSelectLanguageScreenCommand extends ViewCommand<CatalogRootView> {
         public final List<? extends LocaleController.LocaleInfo> languages;
         public final int selectedLanguageId;
@@ -150,7 +155,7 @@ public class CatalogRootView$$State extends MvpViewState<CatalogRootView> implem
 
     /* compiled from: CatalogRootView$$State.java */
     /* renamed from: com.iMe.ui.catalog.CatalogRootView$$State$ShowToastCommand */
-    /* loaded from: classes.dex */
+    /* loaded from: classes3.dex */
     public class ShowToastCommand extends ViewCommand<CatalogRootView> {
         public final String text;
 
@@ -167,7 +172,7 @@ public class CatalogRootView$$State extends MvpViewState<CatalogRootView> implem
 
     /* compiled from: CatalogRootView$$State.java */
     /* renamed from: com.iMe.ui.catalog.CatalogRootView$$State$ShowLoadingDialogCommand */
-    /* loaded from: classes.dex */
+    /* loaded from: classes3.dex */
     public class ShowLoadingDialogCommand extends ViewCommand<CatalogRootView> {
         public final Disposable actionToCancel;
         public final boolean cancellable;
@@ -188,7 +193,7 @@ public class CatalogRootView$$State extends MvpViewState<CatalogRootView> implem
 
     /* compiled from: CatalogRootView$$State.java */
     /* renamed from: com.iMe.ui.catalog.CatalogRootView$$State$ShowErrorToastCommand */
-    /* loaded from: classes.dex */
+    /* loaded from: classes3.dex */
     public class ShowErrorToastCommand<T> extends ViewCommand<CatalogRootView> {
         public final ResourceManager resourceManager;
         public final Result.Error<? extends T> result;

@@ -13,7 +13,7 @@ import org.koin.core.definition.BeanDefinitionKt;
 import org.koin.core.instance.InstanceFactory;
 import org.koin.core.instance.SingleInstanceFactory;
 import org.koin.core.qualifier.Qualifier;
-import org.koin.p043mp.KoinPlatformTools;
+import org.koin.p042mp.KoinPlatformTools;
 /* compiled from: Module.kt */
 /* loaded from: classes4.dex */
 public final class Module {
@@ -21,7 +21,7 @@ public final class Module {
     private HashSet<SingleInstanceFactory<?>> eagerInstances;
 
     /* renamed from: id */
-    private final String f1352id;
+    private final String f1434id;
     private final List<Module> includedModules;
     private final HashMap<String, InstanceFactory<?>> mappings;
     private final HashSet<Qualifier> scopes;
@@ -32,7 +32,7 @@ public final class Module {
 
     public Module(boolean z) {
         this._createdAtStart = z;
-        this.f1352id = KoinPlatformTools.INSTANCE.generateId();
+        this.f1434id = KoinPlatformTools.INSTANCE.generateId();
         this.eagerInstances = new HashSet<>();
         this.mappings = new HashMap<>();
         this.scopes = new HashSet<>();
@@ -93,10 +93,10 @@ public final class Module {
         if (this == obj) {
             return true;
         }
-        return obj != null && Module.class == obj.getClass() && Intrinsics.areEqual(this.f1352id, ((Module) obj).f1352id);
+        return obj != null && Module.class == obj.getClass() && Intrinsics.areEqual(this.f1434id, ((Module) obj).f1434id);
     }
 
     public int hashCode() {
-        return this.f1352id.hashCode();
+        return this.f1434id.hashCode();
     }
 }

@@ -6,6 +6,8 @@
 # static fields
 .field public static final INSTANCE:Lcom/iMe/storage/data/locale/db/migration/AppCacheDatabaseMigrations;
 
+.field private static final MIGRATION_10_11:Lcom/iMe/storage/data/locale/db/migration/AppCacheDatabaseMigrations$MIGRATION_10_11$1;
+
 .field private static final MIGRATION_2_3:Lcom/iMe/storage/data/locale/db/migration/AppCacheDatabaseMigrations$MIGRATION_2_3$1;
 
 .field private static final MIGRATION_3_4:Lcom/iMe/storage/data/locale/db/migration/AppCacheDatabaseMigrations$MIGRATION_3_4$1;
@@ -25,7 +27,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 9
+    .locals 10
 
     new-instance v0, Lcom/iMe/storage/data/locale/db/migration/AppCacheDatabaseMigrations;
 
@@ -82,40 +84,51 @@
 
     sput-object v6, Lcom/iMe/storage/data/locale/db/migration/AppCacheDatabaseMigrations;->MIGRATION_9_10:Lcom/iMe/storage/data/locale/db/migration/AppCacheDatabaseMigrations$MIGRATION_9_10$1;
 
-    const/4 v7, 0x7
+    .line 81
+    new-instance v7, Lcom/iMe/storage/data/locale/db/migration/AppCacheDatabaseMigrations$MIGRATION_10_11$1;
 
-    new-array v7, v7, [Landroidx/room/migration/Migration;
+    invoke-direct {v7}, Lcom/iMe/storage/data/locale/db/migration/AppCacheDatabaseMigrations$MIGRATION_10_11$1;-><init>()V
 
-    const/4 v8, 0x0
+    sput-object v7, Lcom/iMe/storage/data/locale/db/migration/AppCacheDatabaseMigrations;->MIGRATION_10_11:Lcom/iMe/storage/data/locale/db/migration/AppCacheDatabaseMigrations$MIGRATION_10_11$1;
 
-    aput-object v0, v7, v8
+    const/16 v8, 0x8
+
+    new-array v8, v8, [Landroidx/room/migration/Migration;
+
+    const/4 v9, 0x0
+
+    aput-object v0, v8, v9
 
     const/4 v0, 0x1
 
-    aput-object v1, v7, v0
+    aput-object v1, v8, v0
 
     const/4 v0, 0x2
 
-    aput-object v2, v7, v0
+    aput-object v2, v8, v0
 
     const/4 v0, 0x3
 
-    aput-object v3, v7, v0
+    aput-object v3, v8, v0
 
     const/4 v0, 0x4
 
-    aput-object v4, v7, v0
+    aput-object v4, v8, v0
 
     const/4 v0, 0x5
 
-    aput-object v5, v7, v0
+    aput-object v5, v8, v0
 
     const/4 v0, 0x6
 
-    aput-object v6, v7, v0
+    aput-object v6, v8, v0
 
-    .line 81
-    sput-object v7, Lcom/iMe/storage/data/locale/db/migration/AppCacheDatabaseMigrations;->migrations:[Landroidx/room/migration/Migration;
+    const/4 v0, 0x7
+
+    aput-object v7, v8, v0
+
+    .line 92
+    sput-object v8, Lcom/iMe/storage/data/locale/db/migration/AppCacheDatabaseMigrations;->migrations:[Landroidx/room/migration/Migration;
 
     return-void
 .end method
@@ -134,7 +147,7 @@
 .method public final getMigrations()[Landroidx/room/migration/Migration;
     .locals 1
 
-    .line 81
+    .line 92
     sget-object v0, Lcom/iMe/storage/data/locale/db/migration/AppCacheDatabaseMigrations;->migrations:[Landroidx/room/migration/Migration;
 
     return-object v0

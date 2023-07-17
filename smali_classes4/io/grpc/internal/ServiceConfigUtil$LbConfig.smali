@@ -55,7 +55,7 @@
 
     iput-object p1, p0, Lio/grpc/internal/ServiceConfigUtil$LbConfig;->policyName:Ljava/lang/String;
 
-    const-string p1, "rawConfigValue"
+    const-string/jumbo p1, "rawConfigValue"
 
     .line 327
     invoke-static {p2, p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
@@ -184,7 +184,7 @@
 
     iget-object v1, p0, Lio/grpc/internal/ServiceConfigUtil$LbConfig;->rawConfigValue:Ljava/util/Map;
 
-    const-string v2, "rawConfigValue"
+    const-string/jumbo v2, "rawConfigValue"
 
     .line 357
     invoke-virtual {v0, v2, v1}, Lcom/google/common/base/MoreObjects$ToStringHelper;->add(Ljava/lang/String;Ljava/lang/Object;)Lcom/google/common/base/MoreObjects$ToStringHelper;

@@ -1,7 +1,5 @@
 package com.iMe.manager.wallet;
 
-import com.iMe.storage.domain.model.crypto.NetworkType;
-import com.iMe.storage.domain.model.wallet.token.TokenCode;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
@@ -13,8 +11,6 @@ import moxy.viewstate.strategy.alias.OneExecution;
 /* loaded from: classes3.dex */
 public interface WalletLinkClickableView extends MvpView {
     void actionCopyToClipboard(String str);
-
-    void actionMakeTransfer(TokenCode tokenCode, String str, boolean z, String str2, NetworkType networkType);
 
     void actionOpenProfileScreen(long j);
 

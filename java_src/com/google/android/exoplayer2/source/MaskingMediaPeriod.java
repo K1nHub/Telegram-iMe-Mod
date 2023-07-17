@@ -1,6 +1,6 @@
 package com.google.android.exoplayer2.source;
 
-import com.google.android.exoplayer2.C0475C;
+import com.google.android.exoplayer2.C0480C;
 import com.google.android.exoplayer2.SeekParameters;
 import com.google.android.exoplayer2.source.MediaPeriod;
 import com.google.android.exoplayer2.source.MediaSource;
@@ -17,12 +17,12 @@ public final class MaskingMediaPeriod implements MediaPeriod, MediaPeriod.Callba
     private MediaPeriod.Callback callback;
 
     /* renamed from: id */
-    public final MediaSource.MediaPeriodId f124id;
+    public final MediaSource.MediaPeriodId f206id;
     private PrepareListener listener;
     private MediaPeriod mediaPeriod;
     private MediaSource mediaSource;
     private boolean notifiedPrepareError;
-    private long preparePositionOverrideUs = C0475C.TIME_UNSET;
+    private long preparePositionOverrideUs = C0480C.TIME_UNSET;
     private final long preparePositionUs;
 
     /* loaded from: classes.dex */
@@ -40,7 +40,7 @@ public final class MaskingMediaPeriod implements MediaPeriod, MediaPeriod.Callba
     }
 
     public MaskingMediaPeriod(MediaSource.MediaPeriodId mediaPeriodId, Allocator allocator, long j) {
-        this.f124id = mediaPeriodId;
+        this.f206id = mediaPeriodId;
         this.allocator = allocator;
         this.preparePositionUs = j;
     }
@@ -111,7 +111,7 @@ public final class MaskingMediaPeriod implements MediaPeriod, MediaPeriod.Callba
                 return;
             }
             this.notifiedPrepareError = true;
-            prepareListener.onPrepareError(this.f124id, e);
+            prepareListener.onPrepareError(this.f206id, e);
         }
     }
 
@@ -124,10 +124,10 @@ public final class MaskingMediaPeriod implements MediaPeriod, MediaPeriod.Callba
     public long selectTracks(ExoTrackSelection[] exoTrackSelectionArr, boolean[] zArr, SampleStream[] sampleStreamArr, boolean[] zArr2, long j) {
         long j2;
         long j3 = this.preparePositionOverrideUs;
-        if (j3 == C0475C.TIME_UNSET || j != this.preparePositionUs) {
+        if (j3 == C0480C.TIME_UNSET || j != this.preparePositionUs) {
             j2 = j;
         } else {
-            this.preparePositionOverrideUs = C0475C.TIME_UNSET;
+            this.preparePositionOverrideUs = C0480C.TIME_UNSET;
             j2 = j3;
         }
         return ((MediaPeriod) Util.castNonNull(this.mediaPeriod)).selectTracks(exoTrackSelectionArr, zArr, sampleStreamArr, zArr2, j2);
@@ -190,12 +190,12 @@ public final class MaskingMediaPeriod implements MediaPeriod, MediaPeriod.Callba
         ((MediaPeriod.Callback) Util.castNonNull(this.callback)).onPrepared(this);
         PrepareListener prepareListener = this.listener;
         if (prepareListener != null) {
-            prepareListener.onPrepareComplete(this.f124id);
+            prepareListener.onPrepareComplete(this.f206id);
         }
     }
 
     private long getPreparePositionWithOverride(long j) {
         long j2 = this.preparePositionOverrideUs;
-        return j2 != C0475C.TIME_UNSET ? j2 : j;
+        return j2 != C0480C.TIME_UNSET ? j2 : j;
     }
 }

@@ -13,6 +13,8 @@ import moxy.viewstate.strategy.alias.OneExecution;
 public interface BaseView extends MvpView {
     void finishScreen();
 
+    void removeSelfFromStackImmediately();
+
     <T> void showErrorToast(Result.Error<? extends T> error, ResourceManager resourceManager);
 
     void showLoadingDialog(boolean z, boolean z2, Disposable disposable);
@@ -24,6 +26,9 @@ public interface BaseView extends MvpView {
     /* loaded from: classes.dex */
     public final /* synthetic */ class CC {
         public static void $default$finishScreen(BaseView baseView) {
+        }
+
+        public static void $default$removeSelfFromStackImmediately(BaseView baseView) {
         }
 
         public static /* synthetic */ void showLoadingDialog$default(BaseView baseView, boolean z, boolean z2, Disposable disposable, int i, Object obj) {

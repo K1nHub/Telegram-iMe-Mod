@@ -89,7 +89,7 @@
     :cond_0
     if-eqz p8, :cond_1
 
-    const-string p1, "reflector"
+    const-string/jumbo p1, "reflector"
 
     .line 224
     iput-object p1, p0, Lorg/telegram/messenger/voip/Instance$Endpoint;->username:Ljava/lang/String;

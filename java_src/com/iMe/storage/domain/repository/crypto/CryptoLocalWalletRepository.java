@@ -10,13 +10,13 @@ import java.util.List;
 public interface CryptoLocalWalletRepository {
     Observable<Result<Wallet>> createWallet(BlockchainType blockchainType);
 
+    Observable<Result<String>> getPasswordByPinCodeWithValidation(String str, BlockchainType blockchainType);
+
     Observable<Result<Wallet>> importWallet(String str, String str2, String str3, BlockchainType blockchainType);
 
     Observable<Result<Boolean>> isValidAddress(String str, BlockchainType blockchainType);
 
     Observable<Result<Boolean>> isValidPasswordForWallet(String str, BlockchainType blockchainType);
-
-    Observable<Result<Boolean>> isValidRestoredAddress(String str, String str2, BlockchainType blockchainType);
 
     Observable<Result<Boolean>> isValidSeed(String str, BlockchainType blockchainType);
 

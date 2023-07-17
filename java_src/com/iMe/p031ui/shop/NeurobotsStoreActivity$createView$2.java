@@ -8,9 +8,9 @@ import io.reactivex.disposables.Disposable;
 import io.reactivex.subjects.PublishSubject;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.p044ui.ActionBar.ActionBarMenuItem;
-import org.telegram.p044ui.Components.EditTextBoldCursor;
-import org.telegram.p044ui.Components.RecyclerListView;
+import org.telegram.p043ui.ActionBar.ActionBarMenuItem;
+import org.telegram.p043ui.Components.EditTextBoldCursor;
+import org.telegram.p043ui.Components.RecyclerListView;
 /* compiled from: NeurobotsStoreActivity.kt */
 /* renamed from: com.iMe.ui.shop.NeurobotsStoreActivity$createView$2 */
 /* loaded from: classes3.dex */
@@ -22,7 +22,7 @@ public final class NeurobotsStoreActivity$createView$2 extends ActionBarMenuItem
         this.this$0 = neurobotsStoreActivity;
     }
 
-    @Override // org.telegram.p044ui.ActionBar.ActionBarMenuItem.ActionBarMenuItemSearchListener
+    @Override // org.telegram.p043ui.ActionBar.ActionBarMenuItem.ActionBarMenuItemSearchListener
     public void onSearchExpand() {
         CustomTabLayout customTabLayout;
         ActionBarMenuItem actionBarMenuItem;
@@ -65,7 +65,7 @@ public final class NeurobotsStoreActivity$createView$2 extends ActionBarMenuItem
         AndroidUtilities.showKeyboard(actionBarMenuItem != null ? actionBarMenuItem.getSearchField() : null);
     }
 
-    @Override // org.telegram.p044ui.ActionBar.ActionBarMenuItem.ActionBarMenuItemSearchListener
+    @Override // org.telegram.p043ui.ActionBar.ActionBarMenuItem.ActionBarMenuItemSearchListener
     public void onSearchCollapse() {
         TextView textView;
         RecyclerListView recyclerListView;
@@ -120,7 +120,7 @@ public final class NeurobotsStoreActivity$createView$2 extends ActionBarMenuItem
         actionBarMenuItem3.setVisibility(8);
     }
 
-    @Override // org.telegram.p044ui.ActionBar.ActionBarMenuItem.ActionBarMenuItemSearchListener
+    @Override // org.telegram.p043ui.ActionBar.ActionBarMenuItem.ActionBarMenuItemSearchListener
     public void onTextChanged(EditText editText) {
         PublishSubject publishSubject;
         String valueOf = String.valueOf(editText != null ? editText.getText() : null);

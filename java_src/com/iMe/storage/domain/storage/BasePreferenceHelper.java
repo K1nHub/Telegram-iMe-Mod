@@ -2,13 +2,9 @@ package com.iMe.storage.domain.storage;
 /* compiled from: BasePreferenceHelper.kt */
 /* loaded from: classes3.dex */
 public interface BasePreferenceHelper {
-    boolean isKeyContains(String str);
-
     void remove(String str);
 
     void setTempOneActionUserId(String str);
-
-    String withPrefix(String str, String str2);
 
     String withTgAccount(String str, String str2);
 

@@ -21,13 +21,13 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 10
+    .line 9
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 11
+    .line 10
     iput-object p1, p0, Lcom/iMe/storage/domain/interactor/crypto/nft/avatar/NftAvatarInteractor;->nftAvatarRepository:Lcom/iMe/storage/domain/repository/crypto/nft/avatar/NftAvatarRepository;
 
-    .line 12
+    .line 11
     iput-object p2, p0, Lcom/iMe/storage/domain/interactor/crypto/nft/avatar/NftAvatarInteractor;->schedulersProvider:Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
     return-void
@@ -35,12 +35,12 @@
 
 
 # virtual methods
-.method public final getNftAvatars(Lcom/iMe/storage/domain/model/crypto/NetworkType;)Lio/reactivex/Observable;
+.method public final getNftAvatars(Ljava/lang/String;)Lio/reactivex/Observable;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lcom/iMe/storage/domain/model/crypto/NetworkType;",
+            "Ljava/lang/String;",
             ")",
             "Lio/reactivex/Observable<",
             "Lcom/iMe/storage/domain/model/Result<",
@@ -50,19 +50,19 @@
         }
     .end annotation
 
-    const-string v0, "networkType"
+    const-string v0, "networkId"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 18
+    .line 17
     iget-object v0, p0, Lcom/iMe/storage/domain/interactor/crypto/nft/avatar/NftAvatarInteractor;->nftAvatarRepository:Lcom/iMe/storage/domain/repository/crypto/nft/avatar/NftAvatarRepository;
 
-    .line 19
-    invoke-interface {v0, p1}, Lcom/iMe/storage/domain/repository/crypto/nft/avatar/NftAvatarRepository;->getNftAvatars(Lcom/iMe/storage/domain/model/crypto/NetworkType;)Lio/reactivex/Observable;
+    .line 18
+    invoke-interface {v0, p1}, Lcom/iMe/storage/domain/repository/crypto/nft/avatar/NftAvatarRepository;->getNftAvatars(Ljava/lang/String;)Lio/reactivex/Observable;
 
     move-result-object p1
 
-    .line 20
+    .line 19
     iget-object v0, p0, Lcom/iMe/storage/domain/interactor/crypto/nft/avatar/NftAvatarInteractor;->schedulersProvider:Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
     invoke-interface {v0}, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;->io()Lio/reactivex/Scheduler;

@@ -7,10 +7,10 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Lambda;
-import org.telegram.messenger.C3295R;
+import org.telegram.messenger.C3417R;
 import org.telegram.messenger.LocaleController;
-import org.telegram.p044ui.ActionBar.ActionBarMenuItem;
-import org.telegram.p044ui.ActionBar.Theme;
+import org.telegram.p043ui.ActionBar.ActionBarMenuItem;
+import org.telegram.p043ui.ActionBar.Theme;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: CryptoAccountProvider.kt */
 /* renamed from: com.iMe.ui.adapter.provider.CryptoAccountProvider$convert$1 */
@@ -38,7 +38,8 @@ public final class CryptoAccountProvider$convert$1 extends Lambda implements Fun
         Intrinsics.checkNotNullParameter(applyForView, "$this$applyForView");
         applyForView.setLongClickEnabled(false);
         applyForView.setSubMenuOpenSide(2);
-        applyForView.setIcon(C3295R.C3297drawable.ic_ab_other);
+        applyForView.setIcon(C3417R.C3419drawable.ic_ab_other);
+        applyForView.setIconColor(Theme.getColor(Theme.key_windowBackgroundWhiteGrayIcon));
         ViewExtKt.setCircleRippleBackground(applyForView);
         this.this$0.setupMenuItems(applyForView, this.$item.getNetworkType(), this.$item.getAddress());
         applyForView.redrawPopup(Theme.getColor(Theme.key_actionBarDefaultSubmenuBackground));
@@ -51,13 +52,25 @@ public final class CryptoAccountProvider$convert$1 extends Lambda implements Fun
                 CryptoAccountProvider$convert$1.invoke$lambda$0(ActionBarMenuItem.this, view);
             }
         });
-        applyForView.setDelegate(this.this$0.getActionBarMenuItemDelegate());
-        applyForView.setContentDescription(LocaleController.getString("AccDescrMoreOptions", C3295R.string.AccDescrMoreOptions));
+        final CryptoAccountProvider cryptoAccountProvider = this.this$0;
+        applyForView.setDelegate(new ActionBarMenuItem.ActionBarMenuItemDelegate() { // from class: com.iMe.ui.adapter.provider.CryptoAccountProvider$convert$1$$ExternalSyntheticLambda1
+            @Override // org.telegram.p043ui.ActionBar.ActionBarMenuItem.ActionBarMenuItemDelegate
+            public final void onItemClick(int i) {
+                CryptoAccountProvider$convert$1.invoke$lambda$1(CryptoAccountProvider.this, i);
+            }
+        });
+        applyForView.setContentDescription(LocaleController.getString("AccDescrMoreOptions", C3417R.string.AccDescrMoreOptions));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final void invoke$lambda$0(ActionBarMenuItem this_applyForView, View view) {
         Intrinsics.checkNotNullParameter(this_applyForView, "$this_applyForView");
         this_applyForView.toggleSubMenu();
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final void invoke$lambda$1(CryptoAccountProvider this$0, int i) {
+        Intrinsics.checkNotNullParameter(this$0, "this$0");
+        this$0.getOnMenuItemClickAction().invoke(Integer.valueOf(i));
     }
 }

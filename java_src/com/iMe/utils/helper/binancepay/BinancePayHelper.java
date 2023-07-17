@@ -20,11 +20,11 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt__StringsJVMKt;
 import org.koin.core.Koin;
 import org.koin.core.component.KoinComponent;
-import org.koin.p043mp.KoinPlatformTools;
-import org.telegram.messenger.C3295R;
+import org.koin.p042mp.KoinPlatformTools;
+import org.telegram.messenger.C3417R;
 import org.telegram.messenger.LocaleController;
-import org.telegram.p044ui.ActionBar.BaseFragment;
-import org.telegram.p044ui.ActionBar.INavigationLayout;
+import org.telegram.p043ui.ActionBar.BaseFragment;
+import org.telegram.p043ui.ActionBar.INavigationLayout;
 /* compiled from: BinancePayHelper.kt */
 /* loaded from: classes4.dex */
 public final class BinancePayHelper implements KoinComponent {
@@ -107,7 +107,7 @@ public final class BinancePayHelper implements KoinComponent {
             action.invoke();
             return;
         }
-        DialogModel dialogModel = new DialogModel(LocaleController.getInternalString(C3295R.string.wallet_binance_pay_not_activated_dialog_title), LocaleController.getInternalString(C3295R.string.wallet_binance_pay_not_activated_dialog_description), LocaleController.getInternalString(C3295R.string.common_cancel), LocaleController.getInternalString(C3295R.string.wallet_button_auth_dialog_action_btn));
+        DialogModel dialogModel = new DialogModel(LocaleController.getInternalString(C3417R.string.wallet_binance_pay_not_activated_dialog_title), LocaleController.getInternalString(C3417R.string.wallet_binance_pay_not_activated_dialog_description), LocaleController.getInternalString(C3417R.string.common_cancel), LocaleController.getInternalString(C3417R.string.wallet_button_auth_dialog_action_btn));
         Activity parentActivity = fragment.getParentActivity();
         Intrinsics.checkNotNullExpressionValue(parentActivity, "fragment.parentActivity");
         DialogUtils.createDialog$default(parentActivity, dialogModel, new Callbacks$Callback() { // from class: com.iMe.utils.helper.binancepay.BinancePayHelper$$ExternalSyntheticLambda1

@@ -8,7 +8,7 @@
 
 .field private final fee:D
 
-.field private final feeInDollars:F
+.field private final feeInFiat:Lcom/iMe/storage/data/network/model/response/wallet/FiatValueResponse;
 
 .field private final limit:Ljava/math/BigInteger;
 
@@ -16,31 +16,35 @@
 
 
 # direct methods
-.method public constructor <init>(Ljava/math/BigInteger;Ljava/math/BigInteger;FDF)V
-    .locals 0
+.method public constructor <init>(Ljava/math/BigInteger;Ljava/math/BigInteger;FDLcom/iMe/storage/data/network/model/response/wallet/FiatValueResponse;)V
+    .locals 1
 
-    .line 5
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const-string v0, "feeInFiat"
+
+    invoke-static {p6, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 6
-    iput-object p1, p0, Lcom/iMe/storage/data/network/model/response/crypto/wallet/GasPriceResponse;->price:Ljava/math/BigInteger;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 7
-    iput-object p2, p0, Lcom/iMe/storage/data/network/model/response/crypto/wallet/GasPriceResponse;->limit:Ljava/math/BigInteger;
+    iput-object p1, p0, Lcom/iMe/storage/data/network/model/response/crypto/wallet/GasPriceResponse;->price:Ljava/math/BigInteger;
 
     .line 8
-    iput p3, p0, Lcom/iMe/storage/data/network/model/response/crypto/wallet/GasPriceResponse;->duration:F
+    iput-object p2, p0, Lcom/iMe/storage/data/network/model/response/crypto/wallet/GasPriceResponse;->limit:Ljava/math/BigInteger;
 
     .line 9
-    iput-wide p4, p0, Lcom/iMe/storage/data/network/model/response/crypto/wallet/GasPriceResponse;->fee:D
+    iput p3, p0, Lcom/iMe/storage/data/network/model/response/crypto/wallet/GasPriceResponse;->duration:F
 
     .line 10
-    iput p6, p0, Lcom/iMe/storage/data/network/model/response/crypto/wallet/GasPriceResponse;->feeInDollars:F
+    iput-wide p4, p0, Lcom/iMe/storage/data/network/model/response/crypto/wallet/GasPriceResponse;->fee:D
+
+    .line 11
+    iput-object p6, p0, Lcom/iMe/storage/data/network/model/response/crypto/wallet/GasPriceResponse;->feeInFiat:Lcom/iMe/storage/data/network/model/response/wallet/FiatValueResponse;
 
     return-void
 .end method
 
-.method public static synthetic copy$default(Lcom/iMe/storage/data/network/model/response/crypto/wallet/GasPriceResponse;Ljava/math/BigInteger;Ljava/math/BigInteger;FDFILjava/lang/Object;)Lcom/iMe/storage/data/network/model/response/crypto/wallet/GasPriceResponse;
+.method public static synthetic copy$default(Lcom/iMe/storage/data/network/model/response/crypto/wallet/GasPriceResponse;Ljava/math/BigInteger;Ljava/math/BigInteger;FDLcom/iMe/storage/data/network/model/response/wallet/FiatValueResponse;ILjava/lang/Object;)Lcom/iMe/storage/data/network/model/response/crypto/wallet/GasPriceResponse;
     .locals 4
 
     and-int/lit8 p8, p7, 0x1
@@ -81,10 +85,10 @@
 
     if-eqz p2, :cond_4
 
-    iget p6, p0, Lcom/iMe/storage/data/network/model/response/crypto/wallet/GasPriceResponse;->feeInDollars:F
+    iget-object p6, p0, Lcom/iMe/storage/data/network/model/response/crypto/wallet/GasPriceResponse;->feeInFiat:Lcom/iMe/storage/data/network/model/response/wallet/FiatValueResponse;
 
     :cond_4
-    move v3, p6
+    move-object v3, p6
 
     move-object p2, p0
 
@@ -96,9 +100,9 @@
 
     move-wide p6, v1
 
-    move p8, v3
+    move-object p8, v3
 
-    invoke-virtual/range {p2 .. p8}, Lcom/iMe/storage/data/network/model/response/crypto/wallet/GasPriceResponse;->copy(Ljava/math/BigInteger;Ljava/math/BigInteger;FDF)Lcom/iMe/storage/data/network/model/response/crypto/wallet/GasPriceResponse;
+    invoke-virtual/range {p2 .. p8}, Lcom/iMe/storage/data/network/model/response/crypto/wallet/GasPriceResponse;->copy(Ljava/math/BigInteger;Ljava/math/BigInteger;FDLcom/iMe/storage/data/network/model/response/wallet/FiatValueResponse;)Lcom/iMe/storage/data/network/model/response/crypto/wallet/GasPriceResponse;
 
     move-result-object p0
 
@@ -139,34 +143,38 @@
     return-wide v0
 .end method
 
-.method public final component5()F
+.method public final component5()Lcom/iMe/storage/data/network/model/response/wallet/FiatValueResponse;
     .locals 1
 
-    iget v0, p0, Lcom/iMe/storage/data/network/model/response/crypto/wallet/GasPriceResponse;->feeInDollars:F
+    iget-object v0, p0, Lcom/iMe/storage/data/network/model/response/crypto/wallet/GasPriceResponse;->feeInFiat:Lcom/iMe/storage/data/network/model/response/wallet/FiatValueResponse;
 
-    return v0
+    return-object v0
 .end method
 
-.method public final copy(Ljava/math/BigInteger;Ljava/math/BigInteger;FDF)Lcom/iMe/storage/data/network/model/response/crypto/wallet/GasPriceResponse;
+.method public final copy(Ljava/math/BigInteger;Ljava/math/BigInteger;FDLcom/iMe/storage/data/network/model/response/wallet/FiatValueResponse;)Lcom/iMe/storage/data/network/model/response/crypto/wallet/GasPriceResponse;
     .locals 8
 
-    new-instance v7, Lcom/iMe/storage/data/network/model/response/crypto/wallet/GasPriceResponse;
+    const-string v0, "feeInFiat"
 
-    move-object v0, v7
+    invoke-static {p6, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    move-object v1, p1
+    new-instance v0, Lcom/iMe/storage/data/network/model/response/crypto/wallet/GasPriceResponse;
 
-    move-object v2, p2
+    move-object v1, v0
 
-    move v3, p3
+    move-object v2, p1
 
-    move-wide v4, p4
+    move-object v3, p2
 
-    move v6, p6
+    move v4, p3
 
-    invoke-direct/range {v0 .. v6}, Lcom/iMe/storage/data/network/model/response/crypto/wallet/GasPriceResponse;-><init>(Ljava/math/BigInteger;Ljava/math/BigInteger;FDF)V
+    move-wide v5, p4
 
-    return-object v7
+    move-object v7, p6
+
+    invoke-direct/range {v1 .. v7}, Lcom/iMe/storage/data/network/model/response/crypto/wallet/GasPriceResponse;-><init>(Ljava/math/BigInteger;Ljava/math/BigInteger;FDLcom/iMe/storage/data/network/model/response/wallet/FiatValueResponse;)V
+
+    return-object v0
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
@@ -242,15 +250,15 @@
     return v2
 
     :cond_5
-    iget v1, p0, Lcom/iMe/storage/data/network/model/response/crypto/wallet/GasPriceResponse;->feeInDollars:F
+    iget-object v1, p0, Lcom/iMe/storage/data/network/model/response/crypto/wallet/GasPriceResponse;->feeInFiat:Lcom/iMe/storage/data/network/model/response/wallet/FiatValueResponse;
 
-    iget p1, p1, Lcom/iMe/storage/data/network/model/response/crypto/wallet/GasPriceResponse;->feeInDollars:F
+    iget-object p1, p1, Lcom/iMe/storage/data/network/model/response/crypto/wallet/GasPriceResponse;->feeInFiat:Lcom/iMe/storage/data/network/model/response/wallet/FiatValueResponse;
 
-    invoke-static {v1, p1}, Ljava/lang/Float;->compare(FF)I
+    invoke-static {v1, p1}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result p1
 
-    if-eqz p1, :cond_6
+    if-nez p1, :cond_6
 
     return v2
 
@@ -261,7 +269,7 @@
 .method public final getDuration()F
     .locals 1
 
-    .line 8
+    .line 9
     iget v0, p0, Lcom/iMe/storage/data/network/model/response/crypto/wallet/GasPriceResponse;->duration:F
 
     return v0
@@ -270,25 +278,25 @@
 .method public final getFee()D
     .locals 2
 
-    .line 9
+    .line 10
     iget-wide v0, p0, Lcom/iMe/storage/data/network/model/response/crypto/wallet/GasPriceResponse;->fee:D
 
     return-wide v0
 .end method
 
-.method public final getFeeInDollars()F
+.method public final getFeeInFiat()Lcom/iMe/storage/data/network/model/response/wallet/FiatValueResponse;
     .locals 1
 
-    .line 10
-    iget v0, p0, Lcom/iMe/storage/data/network/model/response/crypto/wallet/GasPriceResponse;->feeInDollars:F
+    .line 11
+    iget-object v0, p0, Lcom/iMe/storage/data/network/model/response/crypto/wallet/GasPriceResponse;->feeInFiat:Lcom/iMe/storage/data/network/model/response/wallet/FiatValueResponse;
 
-    return v0
+    return-object v0
 .end method
 
 .method public final getLimit()Ljava/math/BigInteger;
     .locals 1
 
-    .line 7
+    .line 8
     iget-object v0, p0, Lcom/iMe/storage/data/network/model/response/crypto/wallet/GasPriceResponse;->limit:Ljava/math/BigInteger;
 
     return-object v0
@@ -297,7 +305,7 @@
 .method public final getPrice()Ljava/math/BigInteger;
     .locals 1
 
-    .line 6
+    .line 7
     iget-object v0, p0, Lcom/iMe/storage/data/network/model/response/crypto/wallet/GasPriceResponse;->price:Ljava/math/BigInteger;
 
     return-object v0
@@ -360,9 +368,9 @@
 
     mul-int/lit8 v0, v0, 0x1f
 
-    iget v1, p0, Lcom/iMe/storage/data/network/model/response/crypto/wallet/GasPriceResponse;->feeInDollars:F
+    iget-object v1, p0, Lcom/iMe/storage/data/network/model/response/crypto/wallet/GasPriceResponse;->feeInFiat:Lcom/iMe/storage/data/network/model/response/wallet/FiatValueResponse;
 
-    invoke-static {v1}, Ljava/lang/Float;->floatToIntBits(F)I
+    invoke-virtual {v1}, Lcom/iMe/storage/data/network/model/response/wallet/FiatValueResponse;->hashCode()I
 
     move-result v1
 
@@ -410,13 +418,13 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
 
-    const-string v1, ", feeInDollars="
+    const-string v1, ", feeInFiat="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget v1, p0, Lcom/iMe/storage/data/network/model/response/crypto/wallet/GasPriceResponse;->feeInDollars:F
+    iget-object v1, p0, Lcom/iMe/storage/data/network/model/response/crypto/wallet/GasPriceResponse;->feeInFiat:Lcom/iMe/storage/data/network/model/response/wallet/FiatValueResponse;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     const/16 v1, 0x29
 

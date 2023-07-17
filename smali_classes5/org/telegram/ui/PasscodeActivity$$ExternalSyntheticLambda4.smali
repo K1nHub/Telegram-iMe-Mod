@@ -39,7 +39,7 @@
 
     iget v2, p0, Lorg/telegram/ui/PasscodeActivity$$ExternalSyntheticLambda4;->f$2:I
 
-    invoke-static {v0, v1, v2, p1, p2}, Lorg/telegram/ui/PasscodeActivity;->$r8$lambda$-AEq1b2wiWV9NW0X7lPOdGksG04(Lorg/telegram/ui/PasscodeActivity;Lorg/telegram/ui/Components/NumberPicker;ILandroid/content/DialogInterface;I)V
+    invoke-static {v0, v1, v2, p1, p2}, Lorg/telegram/ui/PasscodeActivity;->$r8$lambda$Cd9_hrxDU5f_OUyfP64Y_sO4o7k(Lorg/telegram/ui/PasscodeActivity;Lorg/telegram/ui/Components/NumberPicker;ILandroid/content/DialogInterface;I)V
 
     return-void
 .end method

@@ -15,7 +15,7 @@
 .method static constructor <clinit>()V
     .locals 3
 
-    const-string v0, "rx2.newthread-priority"
+    const-string/jumbo v0, "rx2.newthread-priority"
 
     const/4 v1, 0x5
 

@@ -23,7 +23,7 @@
 
 .field private isRead:Z
 
-.field private final networkType:Lcom/iMe/storage/domain/model/crypto/NetworkType;
+.field private final networkId:Ljava/lang/String;
 
 .field private final spentAmount:Ljava/math/BigDecimal;
 
@@ -33,7 +33,7 @@
 
 .field private final toAddress:Ljava/lang/String;
 
-.field private final tokenCode:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
+.field private final tokenCode:Ljava/lang/String;
 
 .field private final type:Lcom/iMe/storage/domain/model/notification/NotificationType;
 
@@ -41,7 +41,7 @@
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;ZLcom/iMe/storage/domain/model/notification/NotificationType;Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/domain/model/crypto/NetworkType;Lcom/iMe/storage/domain/model/wallet/token/TokenCode;Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/data/network/model/response/base/Status;Ljava/math/BigDecimal;Lcom/iMe/storage/domain/model/wallet/token/FiatCode;)V
+.method public constructor <init>(Ljava/lang/String;ZLcom/iMe/storage/domain/model/notification/NotificationType;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/data/network/model/response/base/Status;Ljava/math/BigDecimal;Lcom/iMe/storage/domain/model/wallet/token/FiatCode;)V
     .locals 17
 
     move-object/from16 v8, p0
@@ -84,7 +84,7 @@
 
     invoke-static {v12, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "networkType"
+    const-string v0, "networkId"
 
     invoke-static {v13, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -130,59 +130,59 @@
 
     move-object/from16 v7, v16
 
-    .line 32
-    invoke-direct/range {v0 .. v7}, Lcom/iMe/storage/domain/model/notification/Notification;-><init>(Ljava/lang/String;ZLcom/iMe/storage/domain/model/notification/NotificationType;Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/domain/model/crypto/NetworkType;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
+    .line 30
+    invoke-direct/range {v0 .. v7}, Lcom/iMe/storage/domain/model/notification/Notification;-><init>(Ljava/lang/String;ZLcom/iMe/storage/domain/model/notification/NotificationType;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
 
-    .line 20
+    .line 18
     iput-object v9, v8, Lcom/iMe/storage/domain/model/notification/Notification$Simplex;->id:Ljava/lang/String;
 
     move/from16 v0, p2
 
-    .line 21
+    .line 19
     iput-boolean v0, v8, Lcom/iMe/storage/domain/model/notification/Notification$Simplex;->isRead:Z
 
-    .line 22
+    .line 20
     iput-object v10, v8, Lcom/iMe/storage/domain/model/notification/Notification$Simplex;->type:Lcom/iMe/storage/domain/model/notification/NotificationType;
 
-    .line 23
+    .line 21
     iput-object v11, v8, Lcom/iMe/storage/domain/model/notification/Notification$Simplex;->date:Ljava/lang/String;
 
-    .line 24
+    .line 22
     iput-object v12, v8, Lcom/iMe/storage/domain/model/notification/Notification$Simplex;->userId:Ljava/lang/String;
 
+    .line 23
+    iput-object v13, v8, Lcom/iMe/storage/domain/model/notification/Notification$Simplex;->networkId:Ljava/lang/String;
+
+    .line 24
+    iput-object v14, v8, Lcom/iMe/storage/domain/model/notification/Notification$Simplex;->tokenCode:Ljava/lang/String;
+
     .line 25
-    iput-object v13, v8, Lcom/iMe/storage/domain/model/notification/Notification$Simplex;->networkType:Lcom/iMe/storage/domain/model/crypto/NetworkType;
-
-    .line 26
-    iput-object v14, v8, Lcom/iMe/storage/domain/model/notification/Notification$Simplex;->tokenCode:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
-
-    .line 27
     iput-object v15, v8, Lcom/iMe/storage/domain/model/notification/Notification$Simplex;->toAddress:Ljava/lang/String;
 
     move-object/from16 v0, p9
 
-    .line 28
+    .line 26
     iput-object v0, v8, Lcom/iMe/storage/domain/model/notification/Notification$Simplex;->amount:Ljava/lang/String;
 
     move-object/from16 v0, p10
 
-    .line 29
+    .line 27
     iput-object v0, v8, Lcom/iMe/storage/domain/model/notification/Notification$Simplex;->status:Lcom/iMe/storage/data/network/model/response/base/Status;
 
     move-object/from16 v0, p11
 
-    .line 30
+    .line 28
     iput-object v0, v8, Lcom/iMe/storage/domain/model/notification/Notification$Simplex;->spentAmount:Ljava/math/BigDecimal;
 
     move-object/from16 v0, p12
 
-    .line 31
+    .line 29
     iput-object v0, v8, Lcom/iMe/storage/domain/model/notification/Notification$Simplex;->spentFiatCode:Lcom/iMe/storage/domain/model/wallet/token/FiatCode;
 
     return-void
 .end method
 
-.method public static synthetic copy$default(Lcom/iMe/storage/domain/model/notification/Notification$Simplex;Ljava/lang/String;ZLcom/iMe/storage/domain/model/notification/NotificationType;Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/domain/model/crypto/NetworkType;Lcom/iMe/storage/domain/model/wallet/token/TokenCode;Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/data/network/model/response/base/Status;Ljava/math/BigDecimal;Lcom/iMe/storage/domain/model/wallet/token/FiatCode;ILjava/lang/Object;)Lcom/iMe/storage/domain/model/notification/Notification$Simplex;
+.method public static synthetic copy$default(Lcom/iMe/storage/domain/model/notification/Notification$Simplex;Ljava/lang/String;ZLcom/iMe/storage/domain/model/notification/NotificationType;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/data/network/model/response/base/Status;Ljava/math/BigDecimal;Lcom/iMe/storage/domain/model/wallet/token/FiatCode;ILjava/lang/Object;)Lcom/iMe/storage/domain/model/notification/Notification$Simplex;
     .locals 13
 
     move-object v0, p0
@@ -263,7 +263,7 @@
 
     if-eqz v7, :cond_5
 
-    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/notification/Notification$Simplex;->getNetworkType()Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/notification/Notification$Simplex;->getNetworkId()Ljava/lang/String;
 
     move-result-object v7
 
@@ -277,7 +277,7 @@
 
     if-eqz v8, :cond_6
 
-    iget-object v8, v0, Lcom/iMe/storage/domain/model/notification/Notification$Simplex;->tokenCode:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
+    iget-object v8, v0, Lcom/iMe/storage/domain/model/notification/Notification$Simplex;->tokenCode:Ljava/lang/String;
 
     goto :goto_6
 
@@ -369,7 +369,7 @@
 
     move-object/from16 p12, v1
 
-    invoke-virtual/range {p0 .. p12}, Lcom/iMe/storage/domain/model/notification/Notification$Simplex;->copy(Ljava/lang/String;ZLcom/iMe/storage/domain/model/notification/NotificationType;Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/domain/model/crypto/NetworkType;Lcom/iMe/storage/domain/model/wallet/token/TokenCode;Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/data/network/model/response/base/Status;Ljava/math/BigDecimal;Lcom/iMe/storage/domain/model/wallet/token/FiatCode;)Lcom/iMe/storage/domain/model/notification/Notification$Simplex;
+    invoke-virtual/range {p0 .. p12}, Lcom/iMe/storage/domain/model/notification/Notification$Simplex;->copy(Ljava/lang/String;ZLcom/iMe/storage/domain/model/notification/NotificationType;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/data/network/model/response/base/Status;Ljava/math/BigDecimal;Lcom/iMe/storage/domain/model/wallet/token/FiatCode;)Lcom/iMe/storage/domain/model/notification/Notification$Simplex;
 
     move-result-object v0
 
@@ -452,20 +452,20 @@
     return-object v0
 .end method
 
-.method public final component6()Lcom/iMe/storage/domain/model/crypto/NetworkType;
+.method public final component6()Ljava/lang/String;
     .locals 1
 
-    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/notification/Notification$Simplex;->getNetworkType()Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/notification/Notification$Simplex;->getNetworkId()Ljava/lang/String;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public final component7()Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
+.method public final component7()Ljava/lang/String;
     .locals 1
 
-    iget-object v0, p0, Lcom/iMe/storage/domain/model/notification/Notification$Simplex;->tokenCode:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
+    iget-object v0, p0, Lcom/iMe/storage/domain/model/notification/Notification$Simplex;->tokenCode:Ljava/lang/String;
 
     return-object v0
 .end method
@@ -486,7 +486,7 @@
     return-object v0
 .end method
 
-.method public final copy(Ljava/lang/String;ZLcom/iMe/storage/domain/model/notification/NotificationType;Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/domain/model/crypto/NetworkType;Lcom/iMe/storage/domain/model/wallet/token/TokenCode;Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/data/network/model/response/base/Status;Ljava/math/BigDecimal;Lcom/iMe/storage/domain/model/wallet/token/FiatCode;)Lcom/iMe/storage/domain/model/notification/Notification$Simplex;
+.method public final copy(Ljava/lang/String;ZLcom/iMe/storage/domain/model/notification/NotificationType;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/data/network/model/response/base/Status;Ljava/math/BigDecimal;Lcom/iMe/storage/domain/model/wallet/token/FiatCode;)Lcom/iMe/storage/domain/model/notification/Notification$Simplex;
     .locals 14
 
     const-string v0, "id"
@@ -513,7 +513,7 @@
 
     invoke-static {v6, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "networkType"
+    const-string v0, "networkId"
 
     move-object/from16 v7, p6
 
@@ -561,7 +561,7 @@
 
     move/from16 v3, p2
 
-    invoke-direct/range {v1 .. v13}, Lcom/iMe/storage/domain/model/notification/Notification$Simplex;-><init>(Ljava/lang/String;ZLcom/iMe/storage/domain/model/notification/NotificationType;Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/domain/model/crypto/NetworkType;Lcom/iMe/storage/domain/model/wallet/token/TokenCode;Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/data/network/model/response/base/Status;Ljava/math/BigDecimal;Lcom/iMe/storage/domain/model/wallet/token/FiatCode;)V
+    invoke-direct/range {v1 .. v13}, Lcom/iMe/storage/domain/model/notification/Notification$Simplex;-><init>(Ljava/lang/String;ZLcom/iMe/storage/domain/model/notification/NotificationType;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/data/network/model/response/base/Status;Ljava/math/BigDecimal;Lcom/iMe/storage/domain/model/wallet/token/FiatCode;)V
 
     return-object v0
 .end method
@@ -664,24 +664,32 @@
     return v2
 
     :cond_6
-    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/notification/Notification$Simplex;->getNetworkType()Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/notification/Notification$Simplex;->getNetworkId()Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/notification/Notification$Simplex;->getNetworkType()Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/notification/Notification$Simplex;->getNetworkId()Ljava/lang/String;
 
     move-result-object v3
 
-    if-eq v1, v3, :cond_7
+    invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_7
 
     return v2
 
     :cond_7
-    iget-object v1, p0, Lcom/iMe/storage/domain/model/notification/Notification$Simplex;->tokenCode:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
+    iget-object v1, p0, Lcom/iMe/storage/domain/model/notification/Notification$Simplex;->tokenCode:Ljava/lang/String;
 
-    iget-object v3, p1, Lcom/iMe/storage/domain/model/notification/Notification$Simplex;->tokenCode:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
+    iget-object v3, p1, Lcom/iMe/storage/domain/model/notification/Notification$Simplex;->tokenCode:Ljava/lang/String;
 
-    if-eq v1, v3, :cond_8
+    invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_8
 
     return v2
 
@@ -753,7 +761,7 @@
 .method public final getAmount()Ljava/lang/String;
     .locals 1
 
-    .line 28
+    .line 26
     iget-object v0, p0, Lcom/iMe/storage/domain/model/notification/Notification$Simplex;->amount:Ljava/lang/String;
 
     return-object v0
@@ -762,7 +770,7 @@
 .method public getDate()Ljava/lang/String;
     .locals 1
 
-    .line 23
+    .line 21
     iget-object v0, p0, Lcom/iMe/storage/domain/model/notification/Notification$Simplex;->date:Ljava/lang/String;
 
     return-object v0
@@ -771,17 +779,17 @@
 .method public getId()Ljava/lang/String;
     .locals 1
 
-    .line 20
+    .line 18
     iget-object v0, p0, Lcom/iMe/storage/domain/model/notification/Notification$Simplex;->id:Ljava/lang/String;
 
     return-object v0
 .end method
 
-.method public getNetworkType()Lcom/iMe/storage/domain/model/crypto/NetworkType;
+.method public getNetworkId()Ljava/lang/String;
     .locals 1
 
-    .line 25
-    iget-object v0, p0, Lcom/iMe/storage/domain/model/notification/Notification$Simplex;->networkType:Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    .line 23
+    iget-object v0, p0, Lcom/iMe/storage/domain/model/notification/Notification$Simplex;->networkId:Ljava/lang/String;
 
     return-object v0
 .end method
@@ -789,7 +797,7 @@
 .method public final getSpentAmount()Ljava/math/BigDecimal;
     .locals 1
 
-    .line 30
+    .line 28
     iget-object v0, p0, Lcom/iMe/storage/domain/model/notification/Notification$Simplex;->spentAmount:Ljava/math/BigDecimal;
 
     return-object v0
@@ -798,7 +806,7 @@
 .method public final getSpentFiatCode()Lcom/iMe/storage/domain/model/wallet/token/FiatCode;
     .locals 1
 
-    .line 31
+    .line 29
     iget-object v0, p0, Lcom/iMe/storage/domain/model/notification/Notification$Simplex;->spentFiatCode:Lcom/iMe/storage/domain/model/wallet/token/FiatCode;
 
     return-object v0
@@ -807,7 +815,7 @@
 .method public final getStatus()Lcom/iMe/storage/data/network/model/response/base/Status;
     .locals 1
 
-    .line 29
+    .line 27
     iget-object v0, p0, Lcom/iMe/storage/domain/model/notification/Notification$Simplex;->status:Lcom/iMe/storage/data/network/model/response/base/Status;
 
     return-object v0
@@ -816,17 +824,17 @@
 .method public final getToAddress()Ljava/lang/String;
     .locals 1
 
-    .line 27
+    .line 25
     iget-object v0, p0, Lcom/iMe/storage/domain/model/notification/Notification$Simplex;->toAddress:Ljava/lang/String;
 
     return-object v0
 .end method
 
-.method public final getTokenCode()Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
+.method public final getTokenCode()Ljava/lang/String;
     .locals 1
 
-    .line 26
-    iget-object v0, p0, Lcom/iMe/storage/domain/model/notification/Notification$Simplex;->tokenCode:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
+    .line 24
+    iget-object v0, p0, Lcom/iMe/storage/domain/model/notification/Notification$Simplex;->tokenCode:Ljava/lang/String;
 
     return-object v0
 .end method
@@ -834,7 +842,7 @@
 .method public getType()Lcom/iMe/storage/domain/model/notification/NotificationType;
     .locals 1
 
-    .line 22
+    .line 20
     iget-object v0, p0, Lcom/iMe/storage/domain/model/notification/Notification$Simplex;->type:Lcom/iMe/storage/domain/model/notification/NotificationType;
 
     return-object v0
@@ -843,7 +851,7 @@
 .method public getUserId()Ljava/lang/String;
     .locals 1
 
-    .line 24
+    .line 22
     iget-object v0, p0, Lcom/iMe/storage/domain/model/notification/Notification$Simplex;->userId:Ljava/lang/String;
 
     return-object v0
@@ -911,11 +919,11 @@
 
     mul-int/lit8 v0, v0, 0x1f
 
-    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/notification/Notification$Simplex;->getNetworkType()Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/notification/Notification$Simplex;->getNetworkId()Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-virtual {v1}, Ljava/lang/Enum;->hashCode()I
+    invoke-virtual {v1}, Ljava/lang/String;->hashCode()I
 
     move-result v1
 
@@ -923,9 +931,9 @@
 
     mul-int/lit8 v0, v0, 0x1f
 
-    iget-object v1, p0, Lcom/iMe/storage/domain/model/notification/Notification$Simplex;->tokenCode:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
+    iget-object v1, p0, Lcom/iMe/storage/domain/model/notification/Notification$Simplex;->tokenCode:Ljava/lang/String;
 
-    invoke-virtual {v1}, Ljava/lang/Enum;->hashCode()I
+    invoke-virtual {v1}, Ljava/lang/String;->hashCode()I
 
     move-result v1
 
@@ -987,7 +995,7 @@
 .method public isRead()Z
     .locals 1
 
-    .line 21
+    .line 19
     iget-boolean v0, p0, Lcom/iMe/storage/domain/model/notification/Notification$Simplex;->isRead:Z
 
     return v0
@@ -996,7 +1004,7 @@
 .method public setRead(Z)V
     .locals 0
 
-    .line 21
+    .line 19
     iput-boolean p1, p0, Lcom/iMe/storage/domain/model/notification/Notification$Simplex;->isRead:Z
 
     return-void
@@ -1059,23 +1067,23 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v1, ", networkType="
+    const-string v1, ", networkId="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/notification/Notification$Simplex;->getNetworkType()Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/notification/Notification$Simplex;->getNetworkId()Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     const-string v1, ", tokenCode="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v1, p0, Lcom/iMe/storage/domain/model/notification/Notification$Simplex;->tokenCode:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
+    iget-object v1, p0, Lcom/iMe/storage/domain/model/notification/Notification$Simplex;->tokenCode:Ljava/lang/String;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     const-string v1, ", toAddress="
 

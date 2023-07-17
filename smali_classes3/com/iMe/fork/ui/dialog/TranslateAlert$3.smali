@@ -22,7 +22,7 @@
 .method constructor <init>(Lcom/iMe/fork/ui/dialog/TranslateAlert;Landroid/content/Context;Ljava/lang/CharSequence;II)V
     .locals 0
 
-    .line 784
+    .line 783
     iput-object p1, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert$3;->this$0:Lcom/iMe/fork/ui/dialog/TranslateAlert;
 
     invoke-direct {p0, p2, p3, p4, p5}, Lcom/iMe/fork/ui/dialog/TranslateAlert$InlineLoadingTextView;-><init>(Landroid/content/Context;Ljava/lang/CharSequence;II)V
@@ -35,7 +35,7 @@
 .method protected onLoadAnimation(F)V
     .locals 4
 
-    .line 787
+    .line 786
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert$3;->this$0:Lcom/iMe/fork/ui/dialog/TranslateAlert;
 
     invoke-static {v0}, Lcom/iMe/fork/ui/dialog/TranslateAlert;->access$900(Lcom/iMe/fork/ui/dialog/TranslateAlert;)Lcom/iMe/fork/ui/dialog/TranslateAlert$InlineLoadingTextView;
@@ -50,7 +50,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 789
+    .line 788
     sget-boolean v1, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     const/high16 v2, 0x40c00000    # 6.0f
@@ -63,7 +63,7 @@
 
     sub-float/2addr v3, p1
 
-    .line 790
+    .line 789
     invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
 
     move-result p1
@@ -77,14 +77,14 @@
 
     sub-float/2addr v3, p1
 
-    .line 792
+    .line 791
     invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
 
     move-result p1
 
     iput p1, v0, Landroid/view/ViewGroup$MarginLayoutParams;->rightMargin:I
 
-    .line 794
+    .line 793
     :goto_0
     iget-object p1, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert$3;->this$0:Lcom/iMe/fork/ui/dialog/TranslateAlert;
 

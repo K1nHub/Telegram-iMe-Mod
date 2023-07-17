@@ -59,201 +59,10 @@
 .method public onEmptyState()V
     .locals 3
 
-    .line 181
+    .line 197
     new-instance v0, Lcom/iMe/ui/wallet/notifications/WalletNotificationsView$$State$OnEmptyStateCommand;
 
     invoke-direct {v0, p0}, Lcom/iMe/ui/wallet/notifications/WalletNotificationsView$$State$OnEmptyStateCommand;-><init>(Lcom/iMe/ui/wallet/notifications/WalletNotificationsView$$State;)V
-
-    .line 182
-    iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
-
-    invoke-virtual {v1, v0}, Lmoxy/viewstate/ViewCommands;->beforeApply(Lmoxy/viewstate/ViewCommand;)V
-
-    .line 184
-    invoke-virtual {p0}, Lmoxy/viewstate/MvpViewState;->hasNotView()Ljava/lang/Boolean;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    return-void
-
-    .line 188
-    :cond_0
-    iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->views:Ljava/util/Set;
-
-    invoke-interface {v1}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
-
-    move-result-object v1
-
-    :goto_0
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_1
-
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Lcom/iMe/ui/wallet/notifications/WalletNotificationsView;
-
-    .line 189
-    invoke-interface {v2}, Lcom/iMe/ui/custom/state/GlobalStateView;->onEmptyState()V
-
-    goto :goto_0
-
-    .line 192
-    :cond_1
-    iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
-
-    invoke-virtual {v1, v0}, Lmoxy/viewstate/ViewCommands;->afterApply(Lmoxy/viewstate/ViewCommand;)V
-
-    return-void
-.end method
-
-.method public onLoadMoreComplete()V
-    .locals 3
-
-    .line 213
-    new-instance v0, Lcom/iMe/ui/wallet/notifications/WalletNotificationsView$$State$OnLoadMoreCompleteCommand;
-
-    invoke-direct {v0, p0}, Lcom/iMe/ui/wallet/notifications/WalletNotificationsView$$State$OnLoadMoreCompleteCommand;-><init>(Lcom/iMe/ui/wallet/notifications/WalletNotificationsView$$State;)V
-
-    .line 214
-    iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
-
-    invoke-virtual {v1, v0}, Lmoxy/viewstate/ViewCommands;->beforeApply(Lmoxy/viewstate/ViewCommand;)V
-
-    .line 216
-    invoke-virtual {p0}, Lmoxy/viewstate/MvpViewState;->hasNotView()Ljava/lang/Boolean;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    return-void
-
-    .line 220
-    :cond_0
-    iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->views:Ljava/util/Set;
-
-    invoke-interface {v1}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
-
-    move-result-object v1
-
-    :goto_0
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_1
-
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Lcom/iMe/ui/wallet/notifications/WalletNotificationsView;
-
-    .line 221
-    invoke-interface {v2}, Lcom/iMe/ui/base/mvp/LoadMoreView;->onLoadMoreComplete()V
-
-    goto :goto_0
-
-    .line 224
-    :cond_1
-    iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
-
-    invoke-virtual {v1, v0}, Lmoxy/viewstate/ViewCommands;->afterApply(Lmoxy/viewstate/ViewCommand;)V
-
-    return-void
-.end method
-
-.method public onLoadMoreError()V
-    .locals 3
-
-    .line 229
-    new-instance v0, Lcom/iMe/ui/wallet/notifications/WalletNotificationsView$$State$OnLoadMoreErrorCommand;
-
-    invoke-direct {v0, p0}, Lcom/iMe/ui/wallet/notifications/WalletNotificationsView$$State$OnLoadMoreErrorCommand;-><init>(Lcom/iMe/ui/wallet/notifications/WalletNotificationsView$$State;)V
-
-    .line 230
-    iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
-
-    invoke-virtual {v1, v0}, Lmoxy/viewstate/ViewCommands;->beforeApply(Lmoxy/viewstate/ViewCommand;)V
-
-    .line 232
-    invoke-virtual {p0}, Lmoxy/viewstate/MvpViewState;->hasNotView()Ljava/lang/Boolean;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    return-void
-
-    .line 236
-    :cond_0
-    iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->views:Ljava/util/Set;
-
-    invoke-interface {v1}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
-
-    move-result-object v1
-
-    :goto_0
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_1
-
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Lcom/iMe/ui/wallet/notifications/WalletNotificationsView;
-
-    .line 237
-    invoke-interface {v2}, Lcom/iMe/ui/base/mvp/LoadMoreView;->onLoadMoreError()V
-
-    goto :goto_0
-
-    .line 240
-    :cond_1
-    iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
-
-    invoke-virtual {v1, v0}, Lmoxy/viewstate/ViewCommands;->afterApply(Lmoxy/viewstate/ViewCommand;)V
-
-    return-void
-.end method
-
-.method public onLoadMoreItems(Ljava/util/List;)V
-    .locals 3
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/util/List<",
-            "Lcom/iMe/model/wallet/notification/NotificationItem;",
-            ">;)V"
-        }
-    .end annotation
-
-    .line 197
-    new-instance v0, Lcom/iMe/ui/wallet/notifications/WalletNotificationsView$$State$OnLoadMoreItemsCommand;
-
-    invoke-direct {v0, p0, p1}, Lcom/iMe/ui/wallet/notifications/WalletNotificationsView$$State$OnLoadMoreItemsCommand;-><init>(Lcom/iMe/ui/wallet/notifications/WalletNotificationsView$$State;Ljava/util/List;)V
 
     .line 198
     iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
@@ -295,11 +104,202 @@
     check-cast v2, Lcom/iMe/ui/wallet/notifications/WalletNotificationsView;
 
     .line 205
-    invoke-interface {v2, p1}, Lcom/iMe/ui/base/mvp/LoadMoreView;->onLoadMoreItems(Ljava/util/List;)V
+    invoke-interface {v2}, Lcom/iMe/ui/custom/state/GlobalStateView;->onEmptyState()V
 
     goto :goto_0
 
     .line 208
+    :cond_1
+    iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
+
+    invoke-virtual {v1, v0}, Lmoxy/viewstate/ViewCommands;->afterApply(Lmoxy/viewstate/ViewCommand;)V
+
+    return-void
+.end method
+
+.method public onLoadMoreComplete()V
+    .locals 3
+
+    .line 229
+    new-instance v0, Lcom/iMe/ui/wallet/notifications/WalletNotificationsView$$State$OnLoadMoreCompleteCommand;
+
+    invoke-direct {v0, p0}, Lcom/iMe/ui/wallet/notifications/WalletNotificationsView$$State$OnLoadMoreCompleteCommand;-><init>(Lcom/iMe/ui/wallet/notifications/WalletNotificationsView$$State;)V
+
+    .line 230
+    iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
+
+    invoke-virtual {v1, v0}, Lmoxy/viewstate/ViewCommands;->beforeApply(Lmoxy/viewstate/ViewCommand;)V
+
+    .line 232
+    invoke-virtual {p0}, Lmoxy/viewstate/MvpViewState;->hasNotView()Ljava/lang/Boolean;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    return-void
+
+    .line 236
+    :cond_0
+    iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->views:Ljava/util/Set;
+
+    invoke-interface {v1}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    :goto_0
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_1
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lcom/iMe/ui/wallet/notifications/WalletNotificationsView;
+
+    .line 237
+    invoke-interface {v2}, Lcom/iMe/ui/base/mvp/LoadMoreView;->onLoadMoreComplete()V
+
+    goto :goto_0
+
+    .line 240
+    :cond_1
+    iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
+
+    invoke-virtual {v1, v0}, Lmoxy/viewstate/ViewCommands;->afterApply(Lmoxy/viewstate/ViewCommand;)V
+
+    return-void
+.end method
+
+.method public onLoadMoreError()V
+    .locals 3
+
+    .line 245
+    new-instance v0, Lcom/iMe/ui/wallet/notifications/WalletNotificationsView$$State$OnLoadMoreErrorCommand;
+
+    invoke-direct {v0, p0}, Lcom/iMe/ui/wallet/notifications/WalletNotificationsView$$State$OnLoadMoreErrorCommand;-><init>(Lcom/iMe/ui/wallet/notifications/WalletNotificationsView$$State;)V
+
+    .line 246
+    iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
+
+    invoke-virtual {v1, v0}, Lmoxy/viewstate/ViewCommands;->beforeApply(Lmoxy/viewstate/ViewCommand;)V
+
+    .line 248
+    invoke-virtual {p0}, Lmoxy/viewstate/MvpViewState;->hasNotView()Ljava/lang/Boolean;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    return-void
+
+    .line 252
+    :cond_0
+    iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->views:Ljava/util/Set;
+
+    invoke-interface {v1}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    :goto_0
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_1
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lcom/iMe/ui/wallet/notifications/WalletNotificationsView;
+
+    .line 253
+    invoke-interface {v2}, Lcom/iMe/ui/base/mvp/LoadMoreView;->onLoadMoreError()V
+
+    goto :goto_0
+
+    .line 256
+    :cond_1
+    iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
+
+    invoke-virtual {v1, v0}, Lmoxy/viewstate/ViewCommands;->afterApply(Lmoxy/viewstate/ViewCommand;)V
+
+    return-void
+.end method
+
+.method public onLoadMoreItems(Ljava/util/List;)V
+    .locals 3
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/List<",
+            "Lcom/iMe/model/wallet/notification/NotificationItem;",
+            ">;)V"
+        }
+    .end annotation
+
+    .line 213
+    new-instance v0, Lcom/iMe/ui/wallet/notifications/WalletNotificationsView$$State$OnLoadMoreItemsCommand;
+
+    invoke-direct {v0, p0, p1}, Lcom/iMe/ui/wallet/notifications/WalletNotificationsView$$State$OnLoadMoreItemsCommand;-><init>(Lcom/iMe/ui/wallet/notifications/WalletNotificationsView$$State;Ljava/util/List;)V
+
+    .line 214
+    iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
+
+    invoke-virtual {v1, v0}, Lmoxy/viewstate/ViewCommands;->beforeApply(Lmoxy/viewstate/ViewCommand;)V
+
+    .line 216
+    invoke-virtual {p0}, Lmoxy/viewstate/MvpViewState;->hasNotView()Ljava/lang/Boolean;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    return-void
+
+    .line 220
+    :cond_0
+    iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->views:Ljava/util/Set;
+
+    invoke-interface {v1}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    :goto_0
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_1
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lcom/iMe/ui/wallet/notifications/WalletNotificationsView;
+
+    .line 221
+    invoke-interface {v2, p1}, Lcom/iMe/ui/base/mvp/LoadMoreView;->onLoadMoreItems(Ljava/util/List;)V
+
+    goto :goto_0
+
+    .line 224
     :cond_1
     iget-object p1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
 
@@ -380,17 +380,17 @@
 .method public onLoadingState()V
     .locals 3
 
-    .line 165
+    .line 181
     new-instance v0, Lcom/iMe/ui/wallet/notifications/WalletNotificationsView$$State$OnLoadingStateCommand;
 
     invoke-direct {v0, p0}, Lcom/iMe/ui/wallet/notifications/WalletNotificationsView$$State$OnLoadingStateCommand;-><init>(Lcom/iMe/ui/wallet/notifications/WalletNotificationsView$$State;)V
 
-    .line 166
+    .line 182
     iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
 
     invoke-virtual {v1, v0}, Lmoxy/viewstate/ViewCommands;->beforeApply(Lmoxy/viewstate/ViewCommand;)V
 
-    .line 168
+    .line 184
     invoke-virtual {p0}, Lmoxy/viewstate/MvpViewState;->hasNotView()Ljava/lang/Boolean;
 
     move-result-object v1
@@ -403,7 +403,7 @@
 
     return-void
 
-    .line 172
+    .line 188
     :cond_0
     iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->views:Ljava/util/Set;
 
@@ -424,12 +424,12 @@
 
     check-cast v2, Lcom/iMe/ui/wallet/notifications/WalletNotificationsView;
 
-    .line 173
+    .line 189
     invoke-interface {v2}, Lcom/iMe/ui/custom/state/GlobalStateView;->onLoadingState()V
 
     goto :goto_0
 
-    .line 176
+    .line 192
     :cond_1
     iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
 
@@ -441,71 +441,10 @@
 .method public onNoInternetErrorState()V
     .locals 3
 
-    .line 133
+    .line 149
     new-instance v0, Lcom/iMe/ui/wallet/notifications/WalletNotificationsView$$State$OnNoInternetErrorStateCommand;
 
     invoke-direct {v0, p0}, Lcom/iMe/ui/wallet/notifications/WalletNotificationsView$$State$OnNoInternetErrorStateCommand;-><init>(Lcom/iMe/ui/wallet/notifications/WalletNotificationsView$$State;)V
-
-    .line 134
-    iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
-
-    invoke-virtual {v1, v0}, Lmoxy/viewstate/ViewCommands;->beforeApply(Lmoxy/viewstate/ViewCommand;)V
-
-    .line 136
-    invoke-virtual {p0}, Lmoxy/viewstate/MvpViewState;->hasNotView()Ljava/lang/Boolean;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    return-void
-
-    .line 140
-    :cond_0
-    iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->views:Ljava/util/Set;
-
-    invoke-interface {v1}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
-
-    move-result-object v1
-
-    :goto_0
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_1
-
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Lcom/iMe/ui/wallet/notifications/WalletNotificationsView;
-
-    .line 141
-    invoke-interface {v2}, Lcom/iMe/ui/custom/state/GlobalStateView;->onNoInternetErrorState()V
-
-    goto :goto_0
-
-    .line 144
-    :cond_1
-    iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
-
-    invoke-virtual {v1, v0}, Lmoxy/viewstate/ViewCommands;->afterApply(Lmoxy/viewstate/ViewCommand;)V
-
-    return-void
-.end method
-
-.method public onUnexpectedErrorState()V
-    .locals 3
-
-    .line 149
-    new-instance v0, Lcom/iMe/ui/wallet/notifications/WalletNotificationsView$$State$OnUnexpectedErrorStateCommand;
-
-    invoke-direct {v0, p0}, Lcom/iMe/ui/wallet/notifications/WalletNotificationsView$$State$OnUnexpectedErrorStateCommand;-><init>(Lcom/iMe/ui/wallet/notifications/WalletNotificationsView$$State;)V
 
     .line 150
     iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
@@ -547,7 +486,7 @@
     check-cast v2, Lcom/iMe/ui/wallet/notifications/WalletNotificationsView;
 
     .line 157
-    invoke-interface {v2}, Lcom/iMe/ui/custom/state/GlobalStateView;->onUnexpectedErrorState()V
+    invoke-interface {v2}, Lcom/iMe/ui/custom/state/GlobalStateView;->onNoInternetErrorState()V
 
     goto :goto_0
 
@@ -560,20 +499,20 @@
     return-void
 .end method
 
-.method public resetLoadMore()V
+.method public onUnexpectedErrorState()V
     .locals 3
 
-    .line 245
-    new-instance v0, Lcom/iMe/ui/wallet/notifications/WalletNotificationsView$$State$ResetLoadMoreCommand;
+    .line 165
+    new-instance v0, Lcom/iMe/ui/wallet/notifications/WalletNotificationsView$$State$OnUnexpectedErrorStateCommand;
 
-    invoke-direct {v0, p0}, Lcom/iMe/ui/wallet/notifications/WalletNotificationsView$$State$ResetLoadMoreCommand;-><init>(Lcom/iMe/ui/wallet/notifications/WalletNotificationsView$$State;)V
+    invoke-direct {v0, p0}, Lcom/iMe/ui/wallet/notifications/WalletNotificationsView$$State$OnUnexpectedErrorStateCommand;-><init>(Lcom/iMe/ui/wallet/notifications/WalletNotificationsView$$State;)V
 
-    .line 246
+    .line 166
     iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
 
     invoke-virtual {v1, v0}, Lmoxy/viewstate/ViewCommands;->beforeApply(Lmoxy/viewstate/ViewCommand;)V
 
-    .line 248
+    .line 168
     invoke-virtual {p0}, Lmoxy/viewstate/MvpViewState;->hasNotView()Ljava/lang/Boolean;
 
     move-result-object v1
@@ -586,7 +525,7 @@
 
     return-void
 
-    .line 252
+    .line 172
     :cond_0
     iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->views:Ljava/util/Set;
 
@@ -607,12 +546,81 @@
 
     check-cast v2, Lcom/iMe/ui/wallet/notifications/WalletNotificationsView;
 
-    .line 253
+    .line 173
+    invoke-interface {v2}, Lcom/iMe/ui/custom/state/GlobalStateView;->onUnexpectedErrorState()V
+
+    goto :goto_0
+
+    .line 176
+    :cond_1
+    iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
+
+    invoke-virtual {v1, v0}, Lmoxy/viewstate/ViewCommands;->afterApply(Lmoxy/viewstate/ViewCommand;)V
+
+    return-void
+.end method
+
+.method public synthetic removeSelfFromStackImmediately()V
+    .locals 0
+
+    invoke-static {p0}, Lcom/iMe/ui/base/mvp/base/BaseView$-CC;->$default$removeSelfFromStackImmediately(Lcom/iMe/ui/base/mvp/base/BaseView;)V
+
+    return-void
+.end method
+
+.method public resetLoadMore()V
+    .locals 3
+
+    .line 261
+    new-instance v0, Lcom/iMe/ui/wallet/notifications/WalletNotificationsView$$State$ResetLoadMoreCommand;
+
+    invoke-direct {v0, p0}, Lcom/iMe/ui/wallet/notifications/WalletNotificationsView$$State$ResetLoadMoreCommand;-><init>(Lcom/iMe/ui/wallet/notifications/WalletNotificationsView$$State;)V
+
+    .line 262
+    iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
+
+    invoke-virtual {v1, v0}, Lmoxy/viewstate/ViewCommands;->beforeApply(Lmoxy/viewstate/ViewCommand;)V
+
+    .line 264
+    invoke-virtual {p0}, Lmoxy/viewstate/MvpViewState;->hasNotView()Ljava/lang/Boolean;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    return-void
+
+    .line 268
+    :cond_0
+    iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->views:Ljava/util/Set;
+
+    invoke-interface {v1}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    :goto_0
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_1
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lcom/iMe/ui/wallet/notifications/WalletNotificationsView;
+
+    .line 269
     invoke-interface {v2}, Lcom/iMe/ui/base/mvp/LoadMoreView;->resetLoadMore()V
 
     goto :goto_0
 
-    .line 256
+    .line 272
     :cond_1
     iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
 
@@ -757,17 +765,17 @@
 .method public showRefreshing(Z)V
     .locals 3
 
-    .line 261
+    .line 277
     new-instance v0, Lcom/iMe/ui/wallet/notifications/WalletNotificationsView$$State$ShowRefreshingCommand;
 
     invoke-direct {v0, p0, p1}, Lcom/iMe/ui/wallet/notifications/WalletNotificationsView$$State$ShowRefreshingCommand;-><init>(Lcom/iMe/ui/wallet/notifications/WalletNotificationsView$$State;Z)V
 
-    .line 262
+    .line 278
     iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
 
     invoke-virtual {v1, v0}, Lmoxy/viewstate/ViewCommands;->beforeApply(Lmoxy/viewstate/ViewCommand;)V
 
-    .line 264
+    .line 280
     invoke-virtual {p0}, Lmoxy/viewstate/MvpViewState;->hasNotView()Ljava/lang/Boolean;
 
     move-result-object v1
@@ -780,7 +788,7 @@
 
     return-void
 
-    .line 268
+    .line 284
     :cond_0
     iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->views:Ljava/util/Set;
 
@@ -801,12 +809,12 @@
 
     check-cast v2, Lcom/iMe/ui/wallet/notifications/WalletNotificationsView;
 
-    .line 269
+    .line 285
     invoke-interface {v2, p1}, Lcom/iMe/ui/base/mvp/SwipeRefreshView;->showRefreshing(Z)V
 
     goto :goto_0
 
-    .line 272
+    .line 288
     :cond_1
     iget-object p1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
 

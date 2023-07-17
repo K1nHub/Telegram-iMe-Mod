@@ -58,7 +58,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 2
 
-    .line 294
+    .line 293
     check-cast p1, Ljava/lang/Number;
 
     invoke-virtual {p1}, Ljava/lang/Number;->longValue()J
@@ -79,23 +79,29 @@
 .end method
 
 .method public final invoke(JI)V
-    .locals 4
+    .locals 3
 
-    .line 295
-    sget-object v0, Lcom/iMe/storage/domain/model/crypto/Chain;->Companion:Lcom/iMe/storage/domain/model/crypto/Chain$Companion;
+    .line 294
+    sget-object v0, Lcom/iMe/storage/data/utils/crypto/NetworksHelper;->INSTANCE:Lcom/iMe/storage/data/utils/crypto/NetworksHelper;
 
     int-to-long v1, p3
 
-    invoke-virtual {v0, v1, v2}, Lcom/iMe/storage/domain/model/crypto/Chain$Companion;->getChainById(J)Lcom/iMe/storage/domain/model/crypto/Chain;
+    invoke-virtual {v0, v1, v2}, Lcom/iMe/storage/data/utils/crypto/NetworksHelper;->getNetworkByChainId(J)Lcom/iMe/storage/domain/model/crypto/Network;
 
     move-result-object p3
 
+    .line 295
+    invoke-virtual {v0}, Lcom/iMe/storage/data/utils/crypto/NetworksHelper;->getDefault()Lcom/iMe/storage/domain/model/crypto/Network;
+
+    move-result-object v0
+
+    invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
     .line 296
-    instance-of p3, p3, Lcom/iMe/storage/domain/model/crypto/Chain$Unknown;
-
-    if-eqz p3, :cond_0
-
-    .line 297
     iget-object p3, p0, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl$setupClientListeners$1$7;->this$0:Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;
 
     invoke-virtual {p3}, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;->getEventsDelegate()Lcom/iMe/storage/domain/manager/wallet_connect/WalletConnectEventsDelegate;
@@ -104,7 +110,7 @@
 
     invoke-interface {p3}, Lcom/iMe/storage/domain/manager/wallet_connect/WalletConnectEventsDelegate;->onWalletChangeUnsupportedNetwork()V
 
-    .line 298
+    .line 297
     iget-object p3, p0, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl$setupClientListeners$1$7;->$this_with:Lcom/trustwallet/walletconnect/WCClient;
 
     iget-object v0, p0, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl$setupClientListeners$1$7;->$sessionStoreItem:Lcom/trustwallet/walletconnect/WCSessionStoreItem;
@@ -121,26 +127,21 @@
 
     goto :goto_0
 
-    .line 301
+    .line 300
     :cond_0
-    iget-object p3, p0, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl$setupClientListeners$1$7;->this$0:Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;
+    iget-object v0, p0, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl$setupClientListeners$1$7;->this$0:Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;
 
-    invoke-virtual {p3}, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;->getEventsDelegate()Lcom/iMe/storage/domain/manager/wallet_connect/WalletConnectEventsDelegate;
+    invoke-virtual {v0}, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;->getEventsDelegate()Lcom/iMe/storage/domain/manager/wallet_connect/WalletConnectEventsDelegate;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl$setupClientListeners$1$7;->$sessionStoreItem:Lcom/trustwallet/walletconnect/WCSessionStoreItem;
+
+    invoke-virtual {p3}, Lcom/iMe/storage/domain/model/crypto/Network;->getId()Ljava/lang/String;
 
     move-result-object p3
 
-    .line 303
-    iget-object v0, p0, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl$setupClientListeners$1$7;->$sessionStoreItem:Lcom/trustwallet/walletconnect/WCSessionStoreItem;
-
-    .line 304
-    sget-object v3, Lcom/iMe/storage/domain/model/crypto/NetworkType;->Companion:Lcom/iMe/storage/domain/model/crypto/NetworkType$Companion;
-
-    invoke-virtual {v3, v1, v2}, Lcom/iMe/storage/domain/model/crypto/NetworkType$Companion;->fromChainId(J)Lcom/iMe/storage/domain/model/crypto/NetworkType;
-
-    move-result-object v1
-
-    .line 301
-    invoke-interface {p3, p1, p2, v0, v1}, Lcom/iMe/storage/domain/manager/wallet_connect/WalletConnectEventsDelegate;->onWalletChangeNetwork(JLcom/trustwallet/walletconnect/WCSessionStoreItem;Lcom/iMe/storage/domain/model/crypto/NetworkType;)V
+    invoke-interface {v0, p1, p2, v1, p3}, Lcom/iMe/storage/domain/manager/wallet_connect/WalletConnectEventsDelegate;->onWalletChangeNetwork(JLcom/trustwallet/walletconnect/WCSessionStoreItem;Ljava/lang/String;)V
 
     :goto_0
     return-void

@@ -10,7 +10,6 @@ import com.iMe.storage.domain.manager.wallet_connect.WalletConnectEventsDelegate
 import com.iMe.storage.domain.manager.wallet_connect.WalletConnectManager;
 import com.iMe.storage.domain.model.Result;
 import com.iMe.storage.domain.model.crypto.BlockchainType;
-import com.iMe.storage.domain.model.crypto.NetworkType;
 import com.iMe.storage.domain.model.crypto.Wallet;
 import com.iMe.storage.domain.model.crypto.wallet_connect.WalletConnectProcessedTransaction;
 import com.iMe.storage.domain.model.crypto.wallet_connect.WalletConnectTransaction;
@@ -116,8 +115,8 @@ public final class WalletConnectManagerImpl implements WalletConnectManager {
             }
 
             @Override // com.iMe.storage.domain.manager.wallet_connect.WalletConnectEventsDelegate
-            public /* synthetic */ void onWalletChangeNetwork(long j, WCSessionStoreItem wCSessionStoreItem, NetworkType networkType) {
-                WalletConnectEventsDelegate.CC.$default$onWalletChangeNetwork(this, j, wCSessionStoreItem, networkType);
+            public /* synthetic */ void onWalletChangeNetwork(long j, WCSessionStoreItem wCSessionStoreItem, String str) {
+                WalletConnectEventsDelegate.CC.$default$onWalletChangeNetwork(this, j, wCSessionStoreItem, str);
             }
 
             @Override // com.iMe.storage.domain.manager.wallet_connect.WalletConnectEventsDelegate
@@ -455,12 +454,12 @@ public final class WalletConnectManagerImpl implements WalletConnectManager {
             if (session == null) {
                 return;
             }
-            int chainId = (int) this.cryptoPreferenceHelper.getNetworkType().getChainId();
+            int orZero = (int) NumberExtKt.orZero(this.cryptoPreferenceHelper.getNetwork().getChainId());
             String peerId = wCClient.getPeerId();
             if (peerId == null || (remotePeerId = wCClient.getRemotePeerId()) == null) {
                 return;
             }
-            getEventsDelegate().onSessionRequest(new WCSessionStoreItem(session, chainId, peerId, remotePeerId, wCPeerMeta, true, new Date()));
+            getEventsDelegate().onSessionRequest(new WCSessionStoreItem(session, orZero, peerId, remotePeerId, wCPeerMeta, true, new Date()));
             return;
         }
         runWithErrorHandle(new WalletConnectManagerImpl$onSessionRequest$1(wCClient, this));
@@ -485,7 +484,7 @@ public final class WalletConnectManagerImpl implements WalletConnectManager {
         String gasPrice = wCEthereumTransaction.getGasPrice();
         BigInteger convertFromWei = (gasPrice == null || (hexToBigIntegerOrNull = CryptoExtKt.hexToBigIntegerOrNull(gasPrice)) == null) ? null : NumberExtKt.convertFromWei(hexToBigIntegerOrNull, Convert.Unit.GWEI);
         String nonce = wCEthereumTransaction.getNonce();
-        Observable<Result<WalletConnectProcessedTransaction>> observeOn = walletConnectInteractor.getWalletConnectParamsForCryptoTransaction(new WalletConnectTransaction(from, str, bigInteger, data, hexToBigIntegerOrNull2, convertFromWei, nonce != null ? CryptoExtKt.hexToBigIntegerOrNull(nonce) : null, this.cryptoPreferenceHelper.getNetworkType())).observeOn(this.schedulersProvider.mo698ui());
+        Observable<Result<WalletConnectProcessedTransaction>> observeOn = walletConnectInteractor.getWalletConnectParamsForCryptoTransaction(new WalletConnectTransaction(from, str, bigInteger, data, hexToBigIntegerOrNull2, convertFromWei, nonce != null ? CryptoExtKt.hexToBigIntegerOrNull(nonce) : null, this.cryptoPreferenceHelper.getNetworkId())).observeOn(this.schedulersProvider.mo698ui());
         final WalletConnectManagerImpl$onTransactionProcessing$1$1 walletConnectManagerImpl$onTransactionProcessing$1$1 = new WalletConnectManagerImpl$onTransactionProcessing$1$1(this, j, wCSessionStoreItem, z);
         Consumer<? super Result<WalletConnectProcessedTransaction>> consumer = new Consumer() { // from class: com.iMe.storage.data.manager.wallet_connect.WalletConnectManagerImpl$$ExternalSyntheticLambda8
             @Override // io.reactivex.functions.Consumer

@@ -3,14 +3,14 @@ package com.iMe.model.wallet.notification;
 import com.iMe.storage.data.network.model.response.base.Status;
 import com.iMe.storage.domain.model.notification.NotificationType;
 import com.iMe.storage.domain.model.wallet.token.FiatCode;
-import com.iMe.storage.domain.model.wallet.token.TokenInfo;
+import com.iMe.storage.domain.model.wallet.token.TokenDetailed;
 import com.iMe.utils.extentions.common.StringExtKt;
 import com.iMe.utils.formatter.BalanceFormatter;
 import java.math.BigDecimal;
 import java.util.Arrays;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3295R;
+import org.telegram.messenger.C3417R;
 import org.telegram.messenger.LocaleController;
 /* compiled from: PushNotificationModel.kt */
 /* loaded from: classes3.dex */
@@ -35,21 +35,21 @@ public abstract class PushNotificationModel {
     }
 
     /* renamed from: getUserId  reason: collision with other method in class */
-    public String mo1289getUserId() {
+    public String mo1290getUserId() {
         return this.userId;
     }
 
     /* renamed from: getType  reason: collision with other method in class */
-    public String mo1288getType() {
+    public String mo1289getType() {
         return this.type;
     }
 
     public long getUserId() {
-        return Long.parseLong(mo1289getUserId());
+        return Long.parseLong(mo1290getUserId());
     }
 
     public NotificationType getType() {
-        return NotificationType.Companion.map(mo1288getType());
+        return NotificationType.Companion.map(mo1289getType());
     }
 
     /* compiled from: PushNotificationModel.kt */
@@ -60,20 +60,20 @@ public abstract class PushNotificationModel {
 
         public static /* synthetic */ Unsupported copy$default(Unsupported unsupported, String str, String str2, int i, Object obj) {
             if ((i & 1) != 0) {
-                str = unsupported.mo1289getUserId();
+                str = unsupported.mo1290getUserId();
             }
             if ((i & 2) != 0) {
-                str2 = unsupported.mo1288getType();
+                str2 = unsupported.mo1289getType();
             }
             return unsupported.copy(str, str2);
         }
 
         public final String component1() {
-            return mo1289getUserId();
+            return mo1290getUserId();
         }
 
         public final String component2() {
-            return mo1288getType();
+            return mo1289getType();
         }
 
         public final Unsupported copy(String userId, String type) {
@@ -88,28 +88,28 @@ public abstract class PushNotificationModel {
             }
             if (obj instanceof Unsupported) {
                 Unsupported unsupported = (Unsupported) obj;
-                return Intrinsics.areEqual(mo1289getUserId(), unsupported.mo1289getUserId()) && Intrinsics.areEqual(mo1288getType(), unsupported.mo1288getType());
+                return Intrinsics.areEqual(mo1290getUserId(), unsupported.mo1290getUserId()) && Intrinsics.areEqual(mo1289getType(), unsupported.mo1289getType());
             }
             return false;
         }
 
         public int hashCode() {
-            return (mo1289getUserId().hashCode() * 31) + mo1288getType().hashCode();
+            return (mo1290getUserId().hashCode() * 31) + mo1289getType().hashCode();
         }
 
         public String toString() {
-            return "Unsupported(userId=" + mo1289getUserId() + ", type=" + mo1288getType() + ')';
+            return "Unsupported(userId=" + mo1290getUserId() + ", type=" + mo1289getType() + ')';
         }
 
         @Override // com.iMe.model.wallet.notification.PushNotificationModel
         /* renamed from: getUserId */
-        public String mo1289getUserId() {
+        public String mo1290getUserId() {
             return this.userId;
         }
 
         @Override // com.iMe.model.wallet.notification.PushNotificationModel
         /* renamed from: getType */
-        public String mo1288getType() {
+        public String mo1289getType() {
             return this.type;
         }
 
@@ -124,7 +124,7 @@ public abstract class PushNotificationModel {
 
         @Override // com.iMe.model.wallet.notification.PushNotificationModel
         public String getMessage() {
-            return getString$TMessagesProj_release(C3295R.string.push_notification_wallet_unsupported, new Object[0]);
+            return getString$TMessagesProj_HA_public(C3417R.string.push_notification_wallet_unsupported, new Object[0]);
         }
     }
 
@@ -141,11 +141,11 @@ public abstract class PushNotificationModel {
         private final String userId;
 
         public final String component1() {
-            return mo1289getUserId();
+            return mo1290getUserId();
         }
 
         public final String component2() {
-            return mo1288getType();
+            return mo1289getType();
         }
 
         public final String component3() {
@@ -190,28 +190,28 @@ public abstract class PushNotificationModel {
             }
             if (obj instanceof Simplex) {
                 Simplex simplex = (Simplex) obj;
-                return Intrinsics.areEqual(mo1289getUserId(), simplex.mo1289getUserId()) && Intrinsics.areEqual(mo1288getType(), simplex.mo1288getType()) && Intrinsics.areEqual(this.status, simplex.status) && Intrinsics.areEqual(this.cryptoCode, simplex.cryptoCode) && Intrinsics.areEqual(this.toWalletAddress, simplex.toWalletAddress) && Intrinsics.areEqual(this.amount, simplex.amount) && Intrinsics.areEqual(this.spentCurrency, simplex.spentCurrency) && Intrinsics.areEqual(this.amountToSpent, simplex.amountToSpent);
+                return Intrinsics.areEqual(mo1290getUserId(), simplex.mo1290getUserId()) && Intrinsics.areEqual(mo1289getType(), simplex.mo1289getType()) && Intrinsics.areEqual(this.status, simplex.status) && Intrinsics.areEqual(this.cryptoCode, simplex.cryptoCode) && Intrinsics.areEqual(this.toWalletAddress, simplex.toWalletAddress) && Intrinsics.areEqual(this.amount, simplex.amount) && Intrinsics.areEqual(this.spentCurrency, simplex.spentCurrency) && Intrinsics.areEqual(this.amountToSpent, simplex.amountToSpent);
             }
             return false;
         }
 
         public int hashCode() {
-            return (((((((((((((mo1289getUserId().hashCode() * 31) + mo1288getType().hashCode()) * 31) + this.status.hashCode()) * 31) + this.cryptoCode.hashCode()) * 31) + this.toWalletAddress.hashCode()) * 31) + this.amount.hashCode()) * 31) + this.spentCurrency.hashCode()) * 31) + this.amountToSpent.hashCode();
+            return (((((((((((((mo1290getUserId().hashCode() * 31) + mo1289getType().hashCode()) * 31) + this.status.hashCode()) * 31) + this.cryptoCode.hashCode()) * 31) + this.toWalletAddress.hashCode()) * 31) + this.amount.hashCode()) * 31) + this.spentCurrency.hashCode()) * 31) + this.amountToSpent.hashCode();
         }
 
         public String toString() {
-            return "Simplex(userId=" + mo1289getUserId() + ", type=" + mo1288getType() + ", status=" + this.status + ", cryptoCode=" + this.cryptoCode + ", toWalletAddress=" + this.toWalletAddress + ", amount=" + this.amount + ", spentCurrency=" + this.spentCurrency + ", amountToSpent=" + this.amountToSpent + ')';
+            return "Simplex(userId=" + mo1290getUserId() + ", type=" + mo1289getType() + ", status=" + this.status + ", cryptoCode=" + this.cryptoCode + ", toWalletAddress=" + this.toWalletAddress + ", amount=" + this.amount + ", spentCurrency=" + this.spentCurrency + ", amountToSpent=" + this.amountToSpent + ')';
         }
 
         @Override // com.iMe.model.wallet.notification.PushNotificationModel
         /* renamed from: getUserId */
-        public String mo1289getUserId() {
+        public String mo1290getUserId() {
             return this.userId;
         }
 
         @Override // com.iMe.model.wallet.notification.PushNotificationModel
         /* renamed from: getType */
-        public String mo1288getType() {
+        public String mo1289getType() {
             return this.type;
         }
 
@@ -263,8 +263,7 @@ public abstract class PushNotificationModel {
         @Override // com.iMe.model.wallet.notification.PushNotificationModel
         public String getMessage() {
             FiatCode fiatCode = new FiatCode(this.spentCurrency, 0, 2, null);
-            TokenInfo map = TokenInfo.Companion.map(this.cryptoCode);
-            return getString$TMessagesProj_release(C3295R.string.push_notification_wallet_simplex_payment, BalanceFormatter.formatBalance(new BigDecimal(this.amountToSpent), fiatCode.getDecimals()), fiatCode.getShortName(), BalanceFormatter.formatBalance(new BigDecimal(this.amount), map.getDecimals()), getString$TMessagesProj_release(map.getShortName(), new Object[0]), getString$TMessagesProj_release(Status.Companion.map(this.status).getTitle(), new Object[0]));
+            return getString$TMessagesProj_HA_public(C3417R.string.push_notification_wallet_simplex_payment, BalanceFormatter.formatBalance(new BigDecimal(this.amountToSpent), Integer.valueOf(fiatCode.getDecimals())), fiatCode.getShortName(), BalanceFormatter.formatBalance(new BigDecimal(this.amount), 8), this.cryptoCode, getString$TMessagesProj_HA_public(Status.Companion.map(this.status).getTitle(), new Object[0]));
         }
     }
 
@@ -280,10 +279,10 @@ public abstract class PushNotificationModel {
 
         public static /* synthetic */ BinancePayRequestCreated copy$default(BinancePayRequestCreated binancePayRequestCreated, String str, String str2, String str3, String str4, String str5, String str6, int i, Object obj) {
             if ((i & 1) != 0) {
-                str = binancePayRequestCreated.mo1288getType();
+                str = binancePayRequestCreated.mo1289getType();
             }
             if ((i & 2) != 0) {
-                str2 = binancePayRequestCreated.mo1289getUserId();
+                str2 = binancePayRequestCreated.mo1290getUserId();
             }
             String str7 = str2;
             if ((i & 4) != 0) {
@@ -305,11 +304,11 @@ public abstract class PushNotificationModel {
         }
 
         public final String component1() {
-            return mo1288getType();
+            return mo1289getType();
         }
 
         public final String component2() {
-            return mo1289getUserId();
+            return mo1290getUserId();
         }
 
         public final String component3() {
@@ -344,28 +343,28 @@ public abstract class PushNotificationModel {
             }
             if (obj instanceof BinancePayRequestCreated) {
                 BinancePayRequestCreated binancePayRequestCreated = (BinancePayRequestCreated) obj;
-                return Intrinsics.areEqual(mo1288getType(), binancePayRequestCreated.mo1288getType()) && Intrinsics.areEqual(mo1289getUserId(), binancePayRequestCreated.mo1289getUserId()) && Intrinsics.areEqual(this.amount, binancePayRequestCreated.amount) && Intrinsics.areEqual(this.assetCode, binancePayRequestCreated.assetCode) && Intrinsics.areEqual(this.assetName, binancePayRequestCreated.assetName) && Intrinsics.areEqual(this.payerUserId, binancePayRequestCreated.payerUserId);
+                return Intrinsics.areEqual(mo1289getType(), binancePayRequestCreated.mo1289getType()) && Intrinsics.areEqual(mo1290getUserId(), binancePayRequestCreated.mo1290getUserId()) && Intrinsics.areEqual(this.amount, binancePayRequestCreated.amount) && Intrinsics.areEqual(this.assetCode, binancePayRequestCreated.assetCode) && Intrinsics.areEqual(this.assetName, binancePayRequestCreated.assetName) && Intrinsics.areEqual(this.payerUserId, binancePayRequestCreated.payerUserId);
             }
             return false;
         }
 
         public int hashCode() {
-            return (((((((((mo1288getType().hashCode() * 31) + mo1289getUserId().hashCode()) * 31) + this.amount.hashCode()) * 31) + this.assetCode.hashCode()) * 31) + this.assetName.hashCode()) * 31) + this.payerUserId.hashCode();
+            return (((((((((mo1289getType().hashCode() * 31) + mo1290getUserId().hashCode()) * 31) + this.amount.hashCode()) * 31) + this.assetCode.hashCode()) * 31) + this.assetName.hashCode()) * 31) + this.payerUserId.hashCode();
         }
 
         public String toString() {
-            return "BinancePayRequestCreated(type=" + mo1288getType() + ", userId=" + mo1289getUserId() + ", amount=" + this.amount + ", assetCode=" + this.assetCode + ", assetName=" + this.assetName + ", payerUserId=" + this.payerUserId + ')';
+            return "BinancePayRequestCreated(type=" + mo1289getType() + ", userId=" + mo1290getUserId() + ", amount=" + this.amount + ", assetCode=" + this.assetCode + ", assetName=" + this.assetName + ", payerUserId=" + this.payerUserId + ')';
         }
 
         @Override // com.iMe.model.wallet.notification.PushNotificationModel
         /* renamed from: getType */
-        public String mo1288getType() {
+        public String mo1289getType() {
             return this.type;
         }
 
         @Override // com.iMe.model.wallet.notification.PushNotificationModel
         /* renamed from: getUserId */
-        public String mo1289getUserId() {
+        public String mo1290getUserId() {
             return this.userId;
         }
 
@@ -404,7 +403,7 @@ public abstract class PushNotificationModel {
 
         @Override // com.iMe.model.wallet.notification.PushNotificationModel
         public String getMessage() {
-            return getString$TMessagesProj_release(C3295R.string.push_notification_wallet_binance_pay_request_created_description, BalanceFormatter.formatBalance(Double.valueOf(Double.parseDouble(this.amount)), TokenInfo.Crypto.Ethereum.BNB.INSTANCE.getDecimals()), this.assetCode, mo1289getUserId());
+            return getString$TMessagesProj_HA_public(C3417R.string.push_notification_wallet_binance_pay_request_created_description, BalanceFormatter.formatBalance(Double.valueOf(Double.parseDouble(this.amount)), Integer.valueOf(TokenDetailed.Companion.getBNB().getDecimals())), this.assetCode, mo1290getUserId());
         }
     }
 
@@ -421,10 +420,10 @@ public abstract class PushNotificationModel {
 
         public static /* synthetic */ BinancePayRequestStatusUpdated copy$default(BinancePayRequestStatusUpdated binancePayRequestStatusUpdated, String str, String str2, String str3, String str4, String str5, String str6, String str7, int i, Object obj) {
             if ((i & 1) != 0) {
-                str = binancePayRequestStatusUpdated.mo1288getType();
+                str = binancePayRequestStatusUpdated.mo1289getType();
             }
             if ((i & 2) != 0) {
-                str2 = binancePayRequestStatusUpdated.mo1289getUserId();
+                str2 = binancePayRequestStatusUpdated.mo1290getUserId();
             }
             String str8 = str2;
             if ((i & 4) != 0) {
@@ -450,11 +449,11 @@ public abstract class PushNotificationModel {
         }
 
         public final String component1() {
-            return mo1288getType();
+            return mo1289getType();
         }
 
         public final String component2() {
-            return mo1289getUserId();
+            return mo1290getUserId();
         }
 
         public final String component3() {
@@ -494,28 +493,28 @@ public abstract class PushNotificationModel {
             }
             if (obj instanceof BinancePayRequestStatusUpdated) {
                 BinancePayRequestStatusUpdated binancePayRequestStatusUpdated = (BinancePayRequestStatusUpdated) obj;
-                return Intrinsics.areEqual(mo1288getType(), binancePayRequestStatusUpdated.mo1288getType()) && Intrinsics.areEqual(mo1289getUserId(), binancePayRequestStatusUpdated.mo1289getUserId()) && Intrinsics.areEqual(this.amount, binancePayRequestStatusUpdated.amount) && Intrinsics.areEqual(this.assetCode, binancePayRequestStatusUpdated.assetCode) && Intrinsics.areEqual(this.assetName, binancePayRequestStatusUpdated.assetName) && Intrinsics.areEqual(this.payerUserId, binancePayRequestStatusUpdated.payerUserId) && Intrinsics.areEqual(this.status, binancePayRequestStatusUpdated.status);
+                return Intrinsics.areEqual(mo1289getType(), binancePayRequestStatusUpdated.mo1289getType()) && Intrinsics.areEqual(mo1290getUserId(), binancePayRequestStatusUpdated.mo1290getUserId()) && Intrinsics.areEqual(this.amount, binancePayRequestStatusUpdated.amount) && Intrinsics.areEqual(this.assetCode, binancePayRequestStatusUpdated.assetCode) && Intrinsics.areEqual(this.assetName, binancePayRequestStatusUpdated.assetName) && Intrinsics.areEqual(this.payerUserId, binancePayRequestStatusUpdated.payerUserId) && Intrinsics.areEqual(this.status, binancePayRequestStatusUpdated.status);
             }
             return false;
         }
 
         public int hashCode() {
-            return (((((((((((mo1288getType().hashCode() * 31) + mo1289getUserId().hashCode()) * 31) + this.amount.hashCode()) * 31) + this.assetCode.hashCode()) * 31) + this.assetName.hashCode()) * 31) + this.payerUserId.hashCode()) * 31) + this.status.hashCode();
+            return (((((((((((mo1289getType().hashCode() * 31) + mo1290getUserId().hashCode()) * 31) + this.amount.hashCode()) * 31) + this.assetCode.hashCode()) * 31) + this.assetName.hashCode()) * 31) + this.payerUserId.hashCode()) * 31) + this.status.hashCode();
         }
 
         public String toString() {
-            return "BinancePayRequestStatusUpdated(type=" + mo1288getType() + ", userId=" + mo1289getUserId() + ", amount=" + this.amount + ", assetCode=" + this.assetCode + ", assetName=" + this.assetName + ", payerUserId=" + this.payerUserId + ", status=" + this.status + ')';
+            return "BinancePayRequestStatusUpdated(type=" + mo1289getType() + ", userId=" + mo1290getUserId() + ", amount=" + this.amount + ", assetCode=" + this.assetCode + ", assetName=" + this.assetName + ", payerUserId=" + this.payerUserId + ", status=" + this.status + ')';
         }
 
         @Override // com.iMe.model.wallet.notification.PushNotificationModel
         /* renamed from: getType */
-        public String mo1288getType() {
+        public String mo1289getType() {
             return this.type;
         }
 
         @Override // com.iMe.model.wallet.notification.PushNotificationModel
         /* renamed from: getUserId */
-        public String mo1289getUserId() {
+        public String mo1290getUserId() {
             return this.userId;
         }
 
@@ -560,7 +559,7 @@ public abstract class PushNotificationModel {
 
         @Override // com.iMe.model.wallet.notification.PushNotificationModel
         public String getMessage() {
-            return getString$TMessagesProj_release(C3295R.string.push_notification_wallet_binance_pay_request_status_updated_description, BalanceFormatter.formatBalance(Double.valueOf(Double.parseDouble(this.amount)), TokenInfo.Crypto.Ethereum.BNB.INSTANCE.getDecimals()), this.assetCode, this.payerUserId);
+            return getString$TMessagesProj_HA_public(C3417R.string.push_notification_wallet_binance_pay_request_status_updated_description, BalanceFormatter.formatBalance(Double.valueOf(Double.parseDouble(this.amount)), Integer.valueOf(TokenDetailed.Companion.getBNB().getDecimals())), this.assetCode, this.payerUserId);
         }
     }
 
@@ -568,7 +567,7 @@ public abstract class PushNotificationModel {
     /* loaded from: classes3.dex */
     public static final class StakingSafeWithdrawalStarted extends PushNotificationModel {
         private final String amount;
-        private final String networkType;
+        private final String networkId;
         private final String shouldFinishAt;
         private final String stakingId;
         private final String stakingName;
@@ -577,15 +576,15 @@ public abstract class PushNotificationModel {
         private final String userId;
 
         public final String component1() {
-            return mo1288getType();
+            return mo1289getType();
         }
 
         public final String component2() {
-            return mo1289getUserId();
+            return mo1290getUserId();
         }
 
         public final String component3() {
-            return this.networkType;
+            return this.networkId;
         }
 
         public final String component4() {
@@ -608,16 +607,16 @@ public abstract class PushNotificationModel {
             return this.shouldFinishAt;
         }
 
-        public final StakingSafeWithdrawalStarted copy(String type, String userId, String networkType, String stakingId, String stakingName, String stakingToken, String amount, String shouldFinishAt) {
+        public final StakingSafeWithdrawalStarted copy(String type, String userId, String networkId, String stakingId, String stakingName, String stakingToken, String amount, String shouldFinishAt) {
             Intrinsics.checkNotNullParameter(type, "type");
             Intrinsics.checkNotNullParameter(userId, "userId");
-            Intrinsics.checkNotNullParameter(networkType, "networkType");
+            Intrinsics.checkNotNullParameter(networkId, "networkId");
             Intrinsics.checkNotNullParameter(stakingId, "stakingId");
             Intrinsics.checkNotNullParameter(stakingName, "stakingName");
             Intrinsics.checkNotNullParameter(stakingToken, "stakingToken");
             Intrinsics.checkNotNullParameter(amount, "amount");
             Intrinsics.checkNotNullParameter(shouldFinishAt, "shouldFinishAt");
-            return new StakingSafeWithdrawalStarted(type, userId, networkType, stakingId, stakingName, stakingToken, amount, shouldFinishAt);
+            return new StakingSafeWithdrawalStarted(type, userId, networkId, stakingId, stakingName, stakingToken, amount, shouldFinishAt);
         }
 
         public boolean equals(Object obj) {
@@ -626,33 +625,33 @@ public abstract class PushNotificationModel {
             }
             if (obj instanceof StakingSafeWithdrawalStarted) {
                 StakingSafeWithdrawalStarted stakingSafeWithdrawalStarted = (StakingSafeWithdrawalStarted) obj;
-                return Intrinsics.areEqual(mo1288getType(), stakingSafeWithdrawalStarted.mo1288getType()) && Intrinsics.areEqual(mo1289getUserId(), stakingSafeWithdrawalStarted.mo1289getUserId()) && Intrinsics.areEqual(this.networkType, stakingSafeWithdrawalStarted.networkType) && Intrinsics.areEqual(this.stakingId, stakingSafeWithdrawalStarted.stakingId) && Intrinsics.areEqual(this.stakingName, stakingSafeWithdrawalStarted.stakingName) && Intrinsics.areEqual(this.stakingToken, stakingSafeWithdrawalStarted.stakingToken) && Intrinsics.areEqual(this.amount, stakingSafeWithdrawalStarted.amount) && Intrinsics.areEqual(this.shouldFinishAt, stakingSafeWithdrawalStarted.shouldFinishAt);
+                return Intrinsics.areEqual(mo1289getType(), stakingSafeWithdrawalStarted.mo1289getType()) && Intrinsics.areEqual(mo1290getUserId(), stakingSafeWithdrawalStarted.mo1290getUserId()) && Intrinsics.areEqual(this.networkId, stakingSafeWithdrawalStarted.networkId) && Intrinsics.areEqual(this.stakingId, stakingSafeWithdrawalStarted.stakingId) && Intrinsics.areEqual(this.stakingName, stakingSafeWithdrawalStarted.stakingName) && Intrinsics.areEqual(this.stakingToken, stakingSafeWithdrawalStarted.stakingToken) && Intrinsics.areEqual(this.amount, stakingSafeWithdrawalStarted.amount) && Intrinsics.areEqual(this.shouldFinishAt, stakingSafeWithdrawalStarted.shouldFinishAt);
             }
             return false;
         }
 
         public int hashCode() {
-            return (((((((((((((mo1288getType().hashCode() * 31) + mo1289getUserId().hashCode()) * 31) + this.networkType.hashCode()) * 31) + this.stakingId.hashCode()) * 31) + this.stakingName.hashCode()) * 31) + this.stakingToken.hashCode()) * 31) + this.amount.hashCode()) * 31) + this.shouldFinishAt.hashCode();
+            return (((((((((((((mo1289getType().hashCode() * 31) + mo1290getUserId().hashCode()) * 31) + this.networkId.hashCode()) * 31) + this.stakingId.hashCode()) * 31) + this.stakingName.hashCode()) * 31) + this.stakingToken.hashCode()) * 31) + this.amount.hashCode()) * 31) + this.shouldFinishAt.hashCode();
         }
 
         public String toString() {
-            return "StakingSafeWithdrawalStarted(type=" + mo1288getType() + ", userId=" + mo1289getUserId() + ", networkType=" + this.networkType + ", stakingId=" + this.stakingId + ", stakingName=" + this.stakingName + ", stakingToken=" + this.stakingToken + ", amount=" + this.amount + ", shouldFinishAt=" + this.shouldFinishAt + ')';
+            return "StakingSafeWithdrawalStarted(type=" + mo1289getType() + ", userId=" + mo1290getUserId() + ", networkId=" + this.networkId + ", stakingId=" + this.stakingId + ", stakingName=" + this.stakingName + ", stakingToken=" + this.stakingToken + ", amount=" + this.amount + ", shouldFinishAt=" + this.shouldFinishAt + ')';
         }
 
         @Override // com.iMe.model.wallet.notification.PushNotificationModel
         /* renamed from: getType */
-        public String mo1288getType() {
+        public String mo1289getType() {
             return this.type;
         }
 
         @Override // com.iMe.model.wallet.notification.PushNotificationModel
         /* renamed from: getUserId */
-        public String mo1289getUserId() {
+        public String mo1290getUserId() {
             return this.userId;
         }
 
-        public final String getNetworkType() {
-            return this.networkType;
+        public final String getNetworkId() {
+            return this.networkId;
         }
 
         public final String getStakingId() {
@@ -676,11 +675,11 @@ public abstract class PushNotificationModel {
         }
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public StakingSafeWithdrawalStarted(String type, String userId, String networkType, String stakingId, String stakingName, String stakingToken, String amount, String shouldFinishAt) {
+        public StakingSafeWithdrawalStarted(String type, String userId, String networkId, String stakingId, String stakingName, String stakingToken, String amount, String shouldFinishAt) {
             super(userId, type);
             Intrinsics.checkNotNullParameter(type, "type");
             Intrinsics.checkNotNullParameter(userId, "userId");
-            Intrinsics.checkNotNullParameter(networkType, "networkType");
+            Intrinsics.checkNotNullParameter(networkId, "networkId");
             Intrinsics.checkNotNullParameter(stakingId, "stakingId");
             Intrinsics.checkNotNullParameter(stakingName, "stakingName");
             Intrinsics.checkNotNullParameter(stakingToken, "stakingToken");
@@ -688,7 +687,7 @@ public abstract class PushNotificationModel {
             Intrinsics.checkNotNullParameter(shouldFinishAt, "shouldFinishAt");
             this.type = type;
             this.userId = userId;
-            this.networkType = networkType;
+            this.networkId = networkId;
             this.stakingId = stakingId;
             this.stakingName = stakingName;
             this.stakingToken = stakingToken;
@@ -698,7 +697,7 @@ public abstract class PushNotificationModel {
 
         @Override // com.iMe.model.wallet.notification.PushNotificationModel
         public String getMessage() {
-            return getString$TMessagesProj_release(C3295R.string.push_notification_staking_safe_withdrawal_started, StringExtKt.formatISODate$default(this.shouldFinishAt, null, 1, null));
+            return getString$TMessagesProj_HA_public(C3417R.string.push_notification_staking_safe_withdrawal_started, StringExtKt.formatISODate$default(this.shouldFinishAt, null, 1, null));
         }
     }
 
@@ -706,7 +705,7 @@ public abstract class PushNotificationModel {
     /* loaded from: classes3.dex */
     public static final class StakingSafeWithdrawalFinished extends PushNotificationModel {
         private final String amount;
-        private final String networkType;
+        private final String networkId;
         private final String stakingId;
         private final String stakingName;
         private final String stakingToken;
@@ -715,14 +714,14 @@ public abstract class PushNotificationModel {
 
         public static /* synthetic */ StakingSafeWithdrawalFinished copy$default(StakingSafeWithdrawalFinished stakingSafeWithdrawalFinished, String str, String str2, String str3, String str4, String str5, String str6, String str7, int i, Object obj) {
             if ((i & 1) != 0) {
-                str = stakingSafeWithdrawalFinished.mo1288getType();
+                str = stakingSafeWithdrawalFinished.mo1289getType();
             }
             if ((i & 2) != 0) {
-                str2 = stakingSafeWithdrawalFinished.mo1289getUserId();
+                str2 = stakingSafeWithdrawalFinished.mo1290getUserId();
             }
             String str8 = str2;
             if ((i & 4) != 0) {
-                str3 = stakingSafeWithdrawalFinished.networkType;
+                str3 = stakingSafeWithdrawalFinished.networkId;
             }
             String str9 = str3;
             if ((i & 8) != 0) {
@@ -744,15 +743,15 @@ public abstract class PushNotificationModel {
         }
 
         public final String component1() {
-            return mo1288getType();
+            return mo1289getType();
         }
 
         public final String component2() {
-            return mo1289getUserId();
+            return mo1290getUserId();
         }
 
         public final String component3() {
-            return this.networkType;
+            return this.networkId;
         }
 
         public final String component4() {
@@ -771,15 +770,15 @@ public abstract class PushNotificationModel {
             return this.amount;
         }
 
-        public final StakingSafeWithdrawalFinished copy(String type, String userId, String networkType, String stakingId, String stakingName, String stakingToken, String amount) {
+        public final StakingSafeWithdrawalFinished copy(String type, String userId, String networkId, String stakingId, String stakingName, String stakingToken, String amount) {
             Intrinsics.checkNotNullParameter(type, "type");
             Intrinsics.checkNotNullParameter(userId, "userId");
-            Intrinsics.checkNotNullParameter(networkType, "networkType");
+            Intrinsics.checkNotNullParameter(networkId, "networkId");
             Intrinsics.checkNotNullParameter(stakingId, "stakingId");
             Intrinsics.checkNotNullParameter(stakingName, "stakingName");
             Intrinsics.checkNotNullParameter(stakingToken, "stakingToken");
             Intrinsics.checkNotNullParameter(amount, "amount");
-            return new StakingSafeWithdrawalFinished(type, userId, networkType, stakingId, stakingName, stakingToken, amount);
+            return new StakingSafeWithdrawalFinished(type, userId, networkId, stakingId, stakingName, stakingToken, amount);
         }
 
         public boolean equals(Object obj) {
@@ -788,33 +787,33 @@ public abstract class PushNotificationModel {
             }
             if (obj instanceof StakingSafeWithdrawalFinished) {
                 StakingSafeWithdrawalFinished stakingSafeWithdrawalFinished = (StakingSafeWithdrawalFinished) obj;
-                return Intrinsics.areEqual(mo1288getType(), stakingSafeWithdrawalFinished.mo1288getType()) && Intrinsics.areEqual(mo1289getUserId(), stakingSafeWithdrawalFinished.mo1289getUserId()) && Intrinsics.areEqual(this.networkType, stakingSafeWithdrawalFinished.networkType) && Intrinsics.areEqual(this.stakingId, stakingSafeWithdrawalFinished.stakingId) && Intrinsics.areEqual(this.stakingName, stakingSafeWithdrawalFinished.stakingName) && Intrinsics.areEqual(this.stakingToken, stakingSafeWithdrawalFinished.stakingToken) && Intrinsics.areEqual(this.amount, stakingSafeWithdrawalFinished.amount);
+                return Intrinsics.areEqual(mo1289getType(), stakingSafeWithdrawalFinished.mo1289getType()) && Intrinsics.areEqual(mo1290getUserId(), stakingSafeWithdrawalFinished.mo1290getUserId()) && Intrinsics.areEqual(this.networkId, stakingSafeWithdrawalFinished.networkId) && Intrinsics.areEqual(this.stakingId, stakingSafeWithdrawalFinished.stakingId) && Intrinsics.areEqual(this.stakingName, stakingSafeWithdrawalFinished.stakingName) && Intrinsics.areEqual(this.stakingToken, stakingSafeWithdrawalFinished.stakingToken) && Intrinsics.areEqual(this.amount, stakingSafeWithdrawalFinished.amount);
             }
             return false;
         }
 
         public int hashCode() {
-            return (((((((((((mo1288getType().hashCode() * 31) + mo1289getUserId().hashCode()) * 31) + this.networkType.hashCode()) * 31) + this.stakingId.hashCode()) * 31) + this.stakingName.hashCode()) * 31) + this.stakingToken.hashCode()) * 31) + this.amount.hashCode();
+            return (((((((((((mo1289getType().hashCode() * 31) + mo1290getUserId().hashCode()) * 31) + this.networkId.hashCode()) * 31) + this.stakingId.hashCode()) * 31) + this.stakingName.hashCode()) * 31) + this.stakingToken.hashCode()) * 31) + this.amount.hashCode();
         }
 
         public String toString() {
-            return "StakingSafeWithdrawalFinished(type=" + mo1288getType() + ", userId=" + mo1289getUserId() + ", networkType=" + this.networkType + ", stakingId=" + this.stakingId + ", stakingName=" + this.stakingName + ", stakingToken=" + this.stakingToken + ", amount=" + this.amount + ')';
+            return "StakingSafeWithdrawalFinished(type=" + mo1289getType() + ", userId=" + mo1290getUserId() + ", networkId=" + this.networkId + ", stakingId=" + this.stakingId + ", stakingName=" + this.stakingName + ", stakingToken=" + this.stakingToken + ", amount=" + this.amount + ')';
         }
 
         @Override // com.iMe.model.wallet.notification.PushNotificationModel
         /* renamed from: getType */
-        public String mo1288getType() {
+        public String mo1289getType() {
             return this.type;
         }
 
         @Override // com.iMe.model.wallet.notification.PushNotificationModel
         /* renamed from: getUserId */
-        public String mo1289getUserId() {
+        public String mo1290getUserId() {
             return this.userId;
         }
 
-        public final String getNetworkType() {
-            return this.networkType;
+        public final String getNetworkId() {
+            return this.networkId;
         }
 
         public final String getStakingId() {
@@ -834,18 +833,18 @@ public abstract class PushNotificationModel {
         }
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public StakingSafeWithdrawalFinished(String type, String userId, String networkType, String stakingId, String stakingName, String stakingToken, String amount) {
+        public StakingSafeWithdrawalFinished(String type, String userId, String networkId, String stakingId, String stakingName, String stakingToken, String amount) {
             super(userId, type);
             Intrinsics.checkNotNullParameter(type, "type");
             Intrinsics.checkNotNullParameter(userId, "userId");
-            Intrinsics.checkNotNullParameter(networkType, "networkType");
+            Intrinsics.checkNotNullParameter(networkId, "networkId");
             Intrinsics.checkNotNullParameter(stakingId, "stakingId");
             Intrinsics.checkNotNullParameter(stakingName, "stakingName");
             Intrinsics.checkNotNullParameter(stakingToken, "stakingToken");
             Intrinsics.checkNotNullParameter(amount, "amount");
             this.type = type;
             this.userId = userId;
-            this.networkType = networkType;
+            this.networkId = networkId;
             this.stakingId = stakingId;
             this.stakingName = stakingName;
             this.stakingToken = stakingToken;
@@ -854,14 +853,14 @@ public abstract class PushNotificationModel {
 
         @Override // com.iMe.model.wallet.notification.PushNotificationModel
         public String getMessage() {
-            return getString$TMessagesProj_release(C3295R.string.push_notification_staking_safe_withdrawal_finished, this.stakingToken, BalanceFormatter.formatBalance(new BigDecimal(this.amount), TokenInfo.Companion.map(this.stakingToken).getDecimals()), this.stakingToken);
+            return getString$TMessagesProj_HA_public(C3417R.string.push_notification_staking_safe_withdrawal_finished, this.stakingToken, BalanceFormatter.formatBalance(new BigDecimal(this.amount), 8), this.stakingToken);
         }
     }
 
     /* compiled from: PushNotificationModel.kt */
     /* loaded from: classes3.dex */
     public static final class StakingStarted extends PushNotificationModel {
-        private final String networkType;
+        private final String networkId;
         private final String stakingAPR;
         private final String stakingAPY;
         private final String stakingAuthor;
@@ -874,7 +873,7 @@ public abstract class PushNotificationModel {
         private final String userId;
 
         public final String component1() {
-            return mo1288getType();
+            return mo1289getType();
         }
 
         public final String component10() {
@@ -886,11 +885,11 @@ public abstract class PushNotificationModel {
         }
 
         public final String component2() {
-            return mo1289getUserId();
+            return mo1290getUserId();
         }
 
         public final String component3() {
-            return this.networkType;
+            return this.networkId;
         }
 
         public final String component4() {
@@ -917,10 +916,10 @@ public abstract class PushNotificationModel {
             return this.stakingAPR;
         }
 
-        public final StakingStarted copy(String type, String userId, String networkType, String stakingId, String stakingName, String stakingAuthor, String stakingWebsite, String stakingAPY, String stakingAPR, String stakingEndsAt, String stakingToken) {
+        public final StakingStarted copy(String type, String userId, String networkId, String stakingId, String stakingName, String stakingAuthor, String stakingWebsite, String stakingAPY, String stakingAPR, String stakingEndsAt, String stakingToken) {
             Intrinsics.checkNotNullParameter(type, "type");
             Intrinsics.checkNotNullParameter(userId, "userId");
-            Intrinsics.checkNotNullParameter(networkType, "networkType");
+            Intrinsics.checkNotNullParameter(networkId, "networkId");
             Intrinsics.checkNotNullParameter(stakingId, "stakingId");
             Intrinsics.checkNotNullParameter(stakingName, "stakingName");
             Intrinsics.checkNotNullParameter(stakingAuthor, "stakingAuthor");
@@ -929,7 +928,7 @@ public abstract class PushNotificationModel {
             Intrinsics.checkNotNullParameter(stakingAPR, "stakingAPR");
             Intrinsics.checkNotNullParameter(stakingEndsAt, "stakingEndsAt");
             Intrinsics.checkNotNullParameter(stakingToken, "stakingToken");
-            return new StakingStarted(type, userId, networkType, stakingId, stakingName, stakingAuthor, stakingWebsite, stakingAPY, stakingAPR, stakingEndsAt, stakingToken);
+            return new StakingStarted(type, userId, networkId, stakingId, stakingName, stakingAuthor, stakingWebsite, stakingAPY, stakingAPR, stakingEndsAt, stakingToken);
         }
 
         public boolean equals(Object obj) {
@@ -938,33 +937,33 @@ public abstract class PushNotificationModel {
             }
             if (obj instanceof StakingStarted) {
                 StakingStarted stakingStarted = (StakingStarted) obj;
-                return Intrinsics.areEqual(mo1288getType(), stakingStarted.mo1288getType()) && Intrinsics.areEqual(mo1289getUserId(), stakingStarted.mo1289getUserId()) && Intrinsics.areEqual(this.networkType, stakingStarted.networkType) && Intrinsics.areEqual(this.stakingId, stakingStarted.stakingId) && Intrinsics.areEqual(this.stakingName, stakingStarted.stakingName) && Intrinsics.areEqual(this.stakingAuthor, stakingStarted.stakingAuthor) && Intrinsics.areEqual(this.stakingWebsite, stakingStarted.stakingWebsite) && Intrinsics.areEqual(this.stakingAPY, stakingStarted.stakingAPY) && Intrinsics.areEqual(this.stakingAPR, stakingStarted.stakingAPR) && Intrinsics.areEqual(this.stakingEndsAt, stakingStarted.stakingEndsAt) && Intrinsics.areEqual(this.stakingToken, stakingStarted.stakingToken);
+                return Intrinsics.areEqual(mo1289getType(), stakingStarted.mo1289getType()) && Intrinsics.areEqual(mo1290getUserId(), stakingStarted.mo1290getUserId()) && Intrinsics.areEqual(this.networkId, stakingStarted.networkId) && Intrinsics.areEqual(this.stakingId, stakingStarted.stakingId) && Intrinsics.areEqual(this.stakingName, stakingStarted.stakingName) && Intrinsics.areEqual(this.stakingAuthor, stakingStarted.stakingAuthor) && Intrinsics.areEqual(this.stakingWebsite, stakingStarted.stakingWebsite) && Intrinsics.areEqual(this.stakingAPY, stakingStarted.stakingAPY) && Intrinsics.areEqual(this.stakingAPR, stakingStarted.stakingAPR) && Intrinsics.areEqual(this.stakingEndsAt, stakingStarted.stakingEndsAt) && Intrinsics.areEqual(this.stakingToken, stakingStarted.stakingToken);
             }
             return false;
         }
 
         public int hashCode() {
-            return (((((((((((((((((((mo1288getType().hashCode() * 31) + mo1289getUserId().hashCode()) * 31) + this.networkType.hashCode()) * 31) + this.stakingId.hashCode()) * 31) + this.stakingName.hashCode()) * 31) + this.stakingAuthor.hashCode()) * 31) + this.stakingWebsite.hashCode()) * 31) + this.stakingAPY.hashCode()) * 31) + this.stakingAPR.hashCode()) * 31) + this.stakingEndsAt.hashCode()) * 31) + this.stakingToken.hashCode();
+            return (((((((((((((((((((mo1289getType().hashCode() * 31) + mo1290getUserId().hashCode()) * 31) + this.networkId.hashCode()) * 31) + this.stakingId.hashCode()) * 31) + this.stakingName.hashCode()) * 31) + this.stakingAuthor.hashCode()) * 31) + this.stakingWebsite.hashCode()) * 31) + this.stakingAPY.hashCode()) * 31) + this.stakingAPR.hashCode()) * 31) + this.stakingEndsAt.hashCode()) * 31) + this.stakingToken.hashCode();
         }
 
         public String toString() {
-            return "StakingStarted(type=" + mo1288getType() + ", userId=" + mo1289getUserId() + ", networkType=" + this.networkType + ", stakingId=" + this.stakingId + ", stakingName=" + this.stakingName + ", stakingAuthor=" + this.stakingAuthor + ", stakingWebsite=" + this.stakingWebsite + ", stakingAPY=" + this.stakingAPY + ", stakingAPR=" + this.stakingAPR + ", stakingEndsAt=" + this.stakingEndsAt + ", stakingToken=" + this.stakingToken + ')';
+            return "StakingStarted(type=" + mo1289getType() + ", userId=" + mo1290getUserId() + ", networkId=" + this.networkId + ", stakingId=" + this.stakingId + ", stakingName=" + this.stakingName + ", stakingAuthor=" + this.stakingAuthor + ", stakingWebsite=" + this.stakingWebsite + ", stakingAPY=" + this.stakingAPY + ", stakingAPR=" + this.stakingAPR + ", stakingEndsAt=" + this.stakingEndsAt + ", stakingToken=" + this.stakingToken + ')';
         }
 
         @Override // com.iMe.model.wallet.notification.PushNotificationModel
         /* renamed from: getType */
-        public String mo1288getType() {
+        public String mo1289getType() {
             return this.type;
         }
 
         @Override // com.iMe.model.wallet.notification.PushNotificationModel
         /* renamed from: getUserId */
-        public String mo1289getUserId() {
+        public String mo1290getUserId() {
             return this.userId;
         }
 
-        public final String getNetworkType() {
-            return this.networkType;
+        public final String getNetworkId() {
+            return this.networkId;
         }
 
         public final String getStakingId() {
@@ -1000,11 +999,11 @@ public abstract class PushNotificationModel {
         }
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public StakingStarted(String type, String userId, String networkType, String stakingId, String stakingName, String stakingAuthor, String stakingWebsite, String stakingAPY, String stakingAPR, String stakingEndsAt, String stakingToken) {
+        public StakingStarted(String type, String userId, String networkId, String stakingId, String stakingName, String stakingAuthor, String stakingWebsite, String stakingAPY, String stakingAPR, String stakingEndsAt, String stakingToken) {
             super(userId, type);
             Intrinsics.checkNotNullParameter(type, "type");
             Intrinsics.checkNotNullParameter(userId, "userId");
-            Intrinsics.checkNotNullParameter(networkType, "networkType");
+            Intrinsics.checkNotNullParameter(networkId, "networkId");
             Intrinsics.checkNotNullParameter(stakingId, "stakingId");
             Intrinsics.checkNotNullParameter(stakingName, "stakingName");
             Intrinsics.checkNotNullParameter(stakingAuthor, "stakingAuthor");
@@ -1015,7 +1014,7 @@ public abstract class PushNotificationModel {
             Intrinsics.checkNotNullParameter(stakingToken, "stakingToken");
             this.type = type;
             this.userId = userId;
-            this.networkType = networkType;
+            this.networkId = networkId;
             this.stakingId = stakingId;
             this.stakingName = stakingName;
             this.stakingAuthor = stakingAuthor;
@@ -1028,7 +1027,7 @@ public abstract class PushNotificationModel {
 
         @Override // com.iMe.model.wallet.notification.PushNotificationModel
         public String getMessage() {
-            return getString$TMessagesProj_release(C3295R.string.push_notification_staking_started, this.stakingName);
+            return getString$TMessagesProj_HA_public(C3417R.string.push_notification_staking_started, this.stakingName);
         }
     }
 
@@ -1037,7 +1036,7 @@ public abstract class PushNotificationModel {
     public static final class StakingFinished extends PushNotificationModel {
         private final String debtAsToken;
         private final String debtAsUsd;
-        private final String networkType;
+        private final String networkId;
         private final String profitAsToken;
         private final String profitAsUsd;
         private final String stakingId;
@@ -1047,7 +1046,7 @@ public abstract class PushNotificationModel {
         private final String userId;
 
         public final String component1() {
-            return mo1288getType();
+            return mo1289getType();
         }
 
         public final String component10() {
@@ -1055,11 +1054,11 @@ public abstract class PushNotificationModel {
         }
 
         public final String component2() {
-            return mo1289getUserId();
+            return mo1290getUserId();
         }
 
         public final String component3() {
-            return this.networkType;
+            return this.networkId;
         }
 
         public final String component4() {
@@ -1086,10 +1085,10 @@ public abstract class PushNotificationModel {
             return this.profitAsToken;
         }
 
-        public final StakingFinished copy(String type, String userId, String networkType, String stakingId, String stakingName, String stakingToken, String debtAsToken, String debtAsUsd, String profitAsToken, String profitAsUsd) {
+        public final StakingFinished copy(String type, String userId, String networkId, String stakingId, String stakingName, String stakingToken, String debtAsToken, String debtAsUsd, String profitAsToken, String profitAsUsd) {
             Intrinsics.checkNotNullParameter(type, "type");
             Intrinsics.checkNotNullParameter(userId, "userId");
-            Intrinsics.checkNotNullParameter(networkType, "networkType");
+            Intrinsics.checkNotNullParameter(networkId, "networkId");
             Intrinsics.checkNotNullParameter(stakingId, "stakingId");
             Intrinsics.checkNotNullParameter(stakingName, "stakingName");
             Intrinsics.checkNotNullParameter(stakingToken, "stakingToken");
@@ -1097,7 +1096,7 @@ public abstract class PushNotificationModel {
             Intrinsics.checkNotNullParameter(debtAsUsd, "debtAsUsd");
             Intrinsics.checkNotNullParameter(profitAsToken, "profitAsToken");
             Intrinsics.checkNotNullParameter(profitAsUsd, "profitAsUsd");
-            return new StakingFinished(type, userId, networkType, stakingId, stakingName, stakingToken, debtAsToken, debtAsUsd, profitAsToken, profitAsUsd);
+            return new StakingFinished(type, userId, networkId, stakingId, stakingName, stakingToken, debtAsToken, debtAsUsd, profitAsToken, profitAsUsd);
         }
 
         public boolean equals(Object obj) {
@@ -1106,33 +1105,33 @@ public abstract class PushNotificationModel {
             }
             if (obj instanceof StakingFinished) {
                 StakingFinished stakingFinished = (StakingFinished) obj;
-                return Intrinsics.areEqual(mo1288getType(), stakingFinished.mo1288getType()) && Intrinsics.areEqual(mo1289getUserId(), stakingFinished.mo1289getUserId()) && Intrinsics.areEqual(this.networkType, stakingFinished.networkType) && Intrinsics.areEqual(this.stakingId, stakingFinished.stakingId) && Intrinsics.areEqual(this.stakingName, stakingFinished.stakingName) && Intrinsics.areEqual(this.stakingToken, stakingFinished.stakingToken) && Intrinsics.areEqual(this.debtAsToken, stakingFinished.debtAsToken) && Intrinsics.areEqual(this.debtAsUsd, stakingFinished.debtAsUsd) && Intrinsics.areEqual(this.profitAsToken, stakingFinished.profitAsToken) && Intrinsics.areEqual(this.profitAsUsd, stakingFinished.profitAsUsd);
+                return Intrinsics.areEqual(mo1289getType(), stakingFinished.mo1289getType()) && Intrinsics.areEqual(mo1290getUserId(), stakingFinished.mo1290getUserId()) && Intrinsics.areEqual(this.networkId, stakingFinished.networkId) && Intrinsics.areEqual(this.stakingId, stakingFinished.stakingId) && Intrinsics.areEqual(this.stakingName, stakingFinished.stakingName) && Intrinsics.areEqual(this.stakingToken, stakingFinished.stakingToken) && Intrinsics.areEqual(this.debtAsToken, stakingFinished.debtAsToken) && Intrinsics.areEqual(this.debtAsUsd, stakingFinished.debtAsUsd) && Intrinsics.areEqual(this.profitAsToken, stakingFinished.profitAsToken) && Intrinsics.areEqual(this.profitAsUsd, stakingFinished.profitAsUsd);
             }
             return false;
         }
 
         public int hashCode() {
-            return (((((((((((((((((mo1288getType().hashCode() * 31) + mo1289getUserId().hashCode()) * 31) + this.networkType.hashCode()) * 31) + this.stakingId.hashCode()) * 31) + this.stakingName.hashCode()) * 31) + this.stakingToken.hashCode()) * 31) + this.debtAsToken.hashCode()) * 31) + this.debtAsUsd.hashCode()) * 31) + this.profitAsToken.hashCode()) * 31) + this.profitAsUsd.hashCode();
+            return (((((((((((((((((mo1289getType().hashCode() * 31) + mo1290getUserId().hashCode()) * 31) + this.networkId.hashCode()) * 31) + this.stakingId.hashCode()) * 31) + this.stakingName.hashCode()) * 31) + this.stakingToken.hashCode()) * 31) + this.debtAsToken.hashCode()) * 31) + this.debtAsUsd.hashCode()) * 31) + this.profitAsToken.hashCode()) * 31) + this.profitAsUsd.hashCode();
         }
 
         public String toString() {
-            return "StakingFinished(type=" + mo1288getType() + ", userId=" + mo1289getUserId() + ", networkType=" + this.networkType + ", stakingId=" + this.stakingId + ", stakingName=" + this.stakingName + ", stakingToken=" + this.stakingToken + ", debtAsToken=" + this.debtAsToken + ", debtAsUsd=" + this.debtAsUsd + ", profitAsToken=" + this.profitAsToken + ", profitAsUsd=" + this.profitAsUsd + ')';
+            return "StakingFinished(type=" + mo1289getType() + ", userId=" + mo1290getUserId() + ", networkId=" + this.networkId + ", stakingId=" + this.stakingId + ", stakingName=" + this.stakingName + ", stakingToken=" + this.stakingToken + ", debtAsToken=" + this.debtAsToken + ", debtAsUsd=" + this.debtAsUsd + ", profitAsToken=" + this.profitAsToken + ", profitAsUsd=" + this.profitAsUsd + ')';
         }
 
         @Override // com.iMe.model.wallet.notification.PushNotificationModel
         /* renamed from: getType */
-        public String mo1288getType() {
+        public String mo1289getType() {
             return this.type;
         }
 
         @Override // com.iMe.model.wallet.notification.PushNotificationModel
         /* renamed from: getUserId */
-        public String mo1289getUserId() {
+        public String mo1290getUserId() {
             return this.userId;
         }
 
-        public final String getNetworkType() {
-            return this.networkType;
+        public final String getNetworkId() {
+            return this.networkId;
         }
 
         public final String getStakingId() {
@@ -1164,11 +1163,11 @@ public abstract class PushNotificationModel {
         }
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public StakingFinished(String type, String userId, String networkType, String stakingId, String stakingName, String stakingToken, String debtAsToken, String debtAsUsd, String profitAsToken, String profitAsUsd) {
+        public StakingFinished(String type, String userId, String networkId, String stakingId, String stakingName, String stakingToken, String debtAsToken, String debtAsUsd, String profitAsToken, String profitAsUsd) {
             super(userId, type);
             Intrinsics.checkNotNullParameter(type, "type");
             Intrinsics.checkNotNullParameter(userId, "userId");
-            Intrinsics.checkNotNullParameter(networkType, "networkType");
+            Intrinsics.checkNotNullParameter(networkId, "networkId");
             Intrinsics.checkNotNullParameter(stakingId, "stakingId");
             Intrinsics.checkNotNullParameter(stakingName, "stakingName");
             Intrinsics.checkNotNullParameter(stakingToken, "stakingToken");
@@ -1178,7 +1177,7 @@ public abstract class PushNotificationModel {
             Intrinsics.checkNotNullParameter(profitAsUsd, "profitAsUsd");
             this.type = type;
             this.userId = userId;
-            this.networkType = networkType;
+            this.networkId = networkId;
             this.stakingId = stakingId;
             this.stakingName = stakingName;
             this.stakingToken = stakingToken;
@@ -1190,7 +1189,7 @@ public abstract class PushNotificationModel {
 
         @Override // com.iMe.model.wallet.notification.PushNotificationModel
         public String getMessage() {
-            return getString$TMessagesProj_release(C3295R.string.push_notification_staking_finished, this.stakingName, this.stakingToken);
+            return getString$TMessagesProj_HA_public(C3417R.string.push_notification_staking_finished, this.stakingName, this.stakingToken);
         }
     }
 
@@ -1223,10 +1222,10 @@ public abstract class PushNotificationModel {
 
         public static /* synthetic */ Cancel copy$default(Cancel cancel, String str, String str2, String str3, String str4, int i, Object obj) {
             if ((i & 1) != 0) {
-                str = cancel.mo1289getUserId();
+                str = cancel.mo1290getUserId();
             }
             if ((i & 2) != 0) {
-                str2 = cancel.mo1288getType();
+                str2 = cancel.mo1289getType();
             }
             if ((i & 4) != 0) {
                 str3 = cancel.status;
@@ -1238,11 +1237,11 @@ public abstract class PushNotificationModel {
         }
 
         public final String component1() {
-            return mo1289getUserId();
+            return mo1290getUserId();
         }
 
         public final String component2() {
-            return mo1288getType();
+            return mo1289getType();
         }
 
         public final String component3() {
@@ -1267,28 +1266,28 @@ public abstract class PushNotificationModel {
             }
             if (obj instanceof Cancel) {
                 Cancel cancel = (Cancel) obj;
-                return Intrinsics.areEqual(mo1289getUserId(), cancel.mo1289getUserId()) && Intrinsics.areEqual(mo1288getType(), cancel.mo1288getType()) && Intrinsics.areEqual(this.status, cancel.status) && Intrinsics.areEqual(this.txHash, cancel.txHash);
+                return Intrinsics.areEqual(mo1290getUserId(), cancel.mo1290getUserId()) && Intrinsics.areEqual(mo1289getType(), cancel.mo1289getType()) && Intrinsics.areEqual(this.status, cancel.status) && Intrinsics.areEqual(this.txHash, cancel.txHash);
             }
             return false;
         }
 
         public int hashCode() {
-            return (((((mo1289getUserId().hashCode() * 31) + mo1288getType().hashCode()) * 31) + this.status.hashCode()) * 31) + this.txHash.hashCode();
+            return (((((mo1290getUserId().hashCode() * 31) + mo1289getType().hashCode()) * 31) + this.status.hashCode()) * 31) + this.txHash.hashCode();
         }
 
         public String toString() {
-            return "Cancel(userId=" + mo1289getUserId() + ", type=" + mo1288getType() + ", status=" + this.status + ", txHash=" + this.txHash + ')';
+            return "Cancel(userId=" + mo1290getUserId() + ", type=" + mo1289getType() + ", status=" + this.status + ", txHash=" + this.txHash + ')';
         }
 
         @Override // com.iMe.model.wallet.notification.PushNotificationModel.CryptoTransfer, com.iMe.model.wallet.notification.PushNotificationModel
         /* renamed from: getUserId */
-        public String mo1289getUserId() {
+        public String mo1290getUserId() {
             return this.userId;
         }
 
         @Override // com.iMe.model.wallet.notification.PushNotificationModel.CryptoTransfer, com.iMe.model.wallet.notification.PushNotificationModel
         /* renamed from: getType */
-        public String mo1288getType() {
+        public String mo1289getType() {
             return this.type;
         }
 
@@ -1316,7 +1315,7 @@ public abstract class PushNotificationModel {
         @Override // com.iMe.model.wallet.notification.PushNotificationModel
         public String getMessage() {
             int i = WhenMappings.$EnumSwitchMapping$0[Status.Companion.map(this.status).ordinal()];
-            return i != 1 ? i != 2 ? "" : getString$TMessagesProj_release(C3295R.string.push_notification_wallet_cancelled_failed_description, this.txHash) : getString$TMessagesProj_release(C3295R.string.push_notification_wallet_cancelled_success_description, this.txHash);
+            return i != 1 ? i != 2 ? "" : getString$TMessagesProj_HA_public(C3417R.string.push_notification_wallet_cancelled_failed_description, this.txHash) : getString$TMessagesProj_HA_public(C3417R.string.push_notification_wallet_cancelled_success_description, this.txHash);
         }
     }
 
@@ -1350,10 +1349,10 @@ public abstract class PushNotificationModel {
 
         public static /* synthetic */ Approve copy$default(Approve approve, String str, String str2, String str3, String str4, String str5, int i, Object obj) {
             if ((i & 1) != 0) {
-                str = approve.mo1289getUserId();
+                str = approve.mo1290getUserId();
             }
             if ((i & 2) != 0) {
-                str2 = approve.mo1288getType();
+                str2 = approve.mo1289getType();
             }
             String str6 = str2;
             if ((i & 4) != 0) {
@@ -1371,11 +1370,11 @@ public abstract class PushNotificationModel {
         }
 
         public final String component1() {
-            return mo1289getUserId();
+            return mo1290getUserId();
         }
 
         public final String component2() {
-            return mo1288getType();
+            return mo1289getType();
         }
 
         public final String component3() {
@@ -1405,28 +1404,28 @@ public abstract class PushNotificationModel {
             }
             if (obj instanceof Approve) {
                 Approve approve = (Approve) obj;
-                return Intrinsics.areEqual(mo1289getUserId(), approve.mo1289getUserId()) && Intrinsics.areEqual(mo1288getType(), approve.mo1288getType()) && Intrinsics.areEqual(this.cryptoCode, approve.cryptoCode) && Intrinsics.areEqual(this.status, approve.status) && Intrinsics.areEqual(this.txHash, approve.txHash);
+                return Intrinsics.areEqual(mo1290getUserId(), approve.mo1290getUserId()) && Intrinsics.areEqual(mo1289getType(), approve.mo1289getType()) && Intrinsics.areEqual(this.cryptoCode, approve.cryptoCode) && Intrinsics.areEqual(this.status, approve.status) && Intrinsics.areEqual(this.txHash, approve.txHash);
             }
             return false;
         }
 
         public int hashCode() {
-            return (((((((mo1289getUserId().hashCode() * 31) + mo1288getType().hashCode()) * 31) + this.cryptoCode.hashCode()) * 31) + this.status.hashCode()) * 31) + this.txHash.hashCode();
+            return (((((((mo1290getUserId().hashCode() * 31) + mo1289getType().hashCode()) * 31) + this.cryptoCode.hashCode()) * 31) + this.status.hashCode()) * 31) + this.txHash.hashCode();
         }
 
         public String toString() {
-            return "Approve(userId=" + mo1289getUserId() + ", type=" + mo1288getType() + ", cryptoCode=" + this.cryptoCode + ", status=" + this.status + ", txHash=" + this.txHash + ')';
+            return "Approve(userId=" + mo1290getUserId() + ", type=" + mo1289getType() + ", cryptoCode=" + this.cryptoCode + ", status=" + this.status + ", txHash=" + this.txHash + ')';
         }
 
         @Override // com.iMe.model.wallet.notification.PushNotificationModel.CryptoTransfer, com.iMe.model.wallet.notification.PushNotificationModel
         /* renamed from: getUserId */
-        public String mo1289getUserId() {
+        public String mo1290getUserId() {
             return this.userId;
         }
 
         @Override // com.iMe.model.wallet.notification.PushNotificationModel.CryptoTransfer, com.iMe.model.wallet.notification.PushNotificationModel
         /* renamed from: getType */
-        public String mo1288getType() {
+        public String mo1289getType() {
             return this.type;
         }
 
@@ -1460,7 +1459,7 @@ public abstract class PushNotificationModel {
         @Override // com.iMe.model.wallet.notification.PushNotificationModel
         public String getMessage() {
             int i = WhenMappings.$EnumSwitchMapping$0[Status.Companion.map(this.status).ordinal()];
-            return i != 1 ? i != 2 ? "" : getString$TMessagesProj_release(C3295R.string.push_notification_wallet_approve_failed_description, getString$TMessagesProj_release(TokenInfo.Companion.map(this.cryptoCode).getShortName(), new Object[0])) : getString$TMessagesProj_release(C3295R.string.push_notification_wallet_approve_success_description, getString$TMessagesProj_release(TokenInfo.Companion.map(this.cryptoCode).getShortName(), new Object[0]));
+            return i != 1 ? i != 2 ? "" : getString$TMessagesProj_HA_public(C3417R.string.push_notification_wallet_approve_failed_description, this.cryptoCode) : getString$TMessagesProj_HA_public(C3417R.string.push_notification_wallet_approve_success_description, this.cryptoCode);
         }
     }
 
@@ -1472,13 +1471,13 @@ public abstract class PushNotificationModel {
 
         @Override // com.iMe.model.wallet.notification.PushNotificationModel
         /* renamed from: getUserId */
-        public String mo1289getUserId() {
+        public String mo1290getUserId() {
             return this.userId;
         }
 
         @Override // com.iMe.model.wallet.notification.PushNotificationModel
         /* renamed from: getType */
-        public String mo1288getType() {
+        public String mo1289getType() {
             return this.type;
         }
 
@@ -1494,7 +1493,7 @@ public abstract class PushNotificationModel {
         /* compiled from: PushNotificationModel.kt */
         /* renamed from: com.iMe.model.wallet.notification.PushNotificationModel$CryptoTransfer$In */
         /* loaded from: classes3.dex */
-        public static final class C1601In extends CryptoTransfer {
+        public static final class C1610In extends CryptoTransfer {
             private final String amount;
             private final String cryptoCode;
             private final String fromWalletAddress;
@@ -1502,38 +1501,38 @@ public abstract class PushNotificationModel {
             private final String type;
             private final String userId;
 
-            public static /* synthetic */ C1601In copy$default(C1601In c1601In, String str, String str2, String str3, String str4, String str5, String str6, int i, Object obj) {
+            public static /* synthetic */ C1610In copy$default(C1610In c1610In, String str, String str2, String str3, String str4, String str5, String str6, int i, Object obj) {
                 if ((i & 1) != 0) {
-                    str = c1601In.mo1289getUserId();
+                    str = c1610In.mo1290getUserId();
                 }
                 if ((i & 2) != 0) {
-                    str2 = c1601In.mo1288getType();
+                    str2 = c1610In.mo1289getType();
                 }
                 String str7 = str2;
                 if ((i & 4) != 0) {
-                    str3 = c1601In.cryptoCode;
+                    str3 = c1610In.cryptoCode;
                 }
                 String str8 = str3;
                 if ((i & 8) != 0) {
-                    str4 = c1601In.fromWalletAddress;
+                    str4 = c1610In.fromWalletAddress;
                 }
                 String str9 = str4;
                 if ((i & 16) != 0) {
-                    str5 = c1601In.toWalletAddress;
+                    str5 = c1610In.toWalletAddress;
                 }
                 String str10 = str5;
                 if ((i & 32) != 0) {
-                    str6 = c1601In.amount;
+                    str6 = c1610In.amount;
                 }
-                return c1601In.copy(str, str7, str8, str9, str10, str6);
+                return c1610In.copy(str, str7, str8, str9, str10, str6);
             }
 
             public final String component1() {
-                return mo1289getUserId();
+                return mo1290getUserId();
             }
 
             public final String component2() {
-                return mo1288getType();
+                return mo1289getType();
             }
 
             public final String component3() {
@@ -1552,44 +1551,44 @@ public abstract class PushNotificationModel {
                 return this.amount;
             }
 
-            public final C1601In copy(String userId, String type, String cryptoCode, String fromWalletAddress, String toWalletAddress, String amount) {
+            public final C1610In copy(String userId, String type, String cryptoCode, String fromWalletAddress, String toWalletAddress, String amount) {
                 Intrinsics.checkNotNullParameter(userId, "userId");
                 Intrinsics.checkNotNullParameter(type, "type");
                 Intrinsics.checkNotNullParameter(cryptoCode, "cryptoCode");
                 Intrinsics.checkNotNullParameter(fromWalletAddress, "fromWalletAddress");
                 Intrinsics.checkNotNullParameter(toWalletAddress, "toWalletAddress");
                 Intrinsics.checkNotNullParameter(amount, "amount");
-                return new C1601In(userId, type, cryptoCode, fromWalletAddress, toWalletAddress, amount);
+                return new C1610In(userId, type, cryptoCode, fromWalletAddress, toWalletAddress, amount);
             }
 
             public boolean equals(Object obj) {
                 if (this == obj) {
                     return true;
                 }
-                if (obj instanceof C1601In) {
-                    C1601In c1601In = (C1601In) obj;
-                    return Intrinsics.areEqual(mo1289getUserId(), c1601In.mo1289getUserId()) && Intrinsics.areEqual(mo1288getType(), c1601In.mo1288getType()) && Intrinsics.areEqual(this.cryptoCode, c1601In.cryptoCode) && Intrinsics.areEqual(this.fromWalletAddress, c1601In.fromWalletAddress) && Intrinsics.areEqual(this.toWalletAddress, c1601In.toWalletAddress) && Intrinsics.areEqual(this.amount, c1601In.amount);
+                if (obj instanceof C1610In) {
+                    C1610In c1610In = (C1610In) obj;
+                    return Intrinsics.areEqual(mo1290getUserId(), c1610In.mo1290getUserId()) && Intrinsics.areEqual(mo1289getType(), c1610In.mo1289getType()) && Intrinsics.areEqual(this.cryptoCode, c1610In.cryptoCode) && Intrinsics.areEqual(this.fromWalletAddress, c1610In.fromWalletAddress) && Intrinsics.areEqual(this.toWalletAddress, c1610In.toWalletAddress) && Intrinsics.areEqual(this.amount, c1610In.amount);
                 }
                 return false;
             }
 
             public int hashCode() {
-                return (((((((((mo1289getUserId().hashCode() * 31) + mo1288getType().hashCode()) * 31) + this.cryptoCode.hashCode()) * 31) + this.fromWalletAddress.hashCode()) * 31) + this.toWalletAddress.hashCode()) * 31) + this.amount.hashCode();
+                return (((((((((mo1290getUserId().hashCode() * 31) + mo1289getType().hashCode()) * 31) + this.cryptoCode.hashCode()) * 31) + this.fromWalletAddress.hashCode()) * 31) + this.toWalletAddress.hashCode()) * 31) + this.amount.hashCode();
             }
 
             public String toString() {
-                return "In(userId=" + mo1289getUserId() + ", type=" + mo1288getType() + ", cryptoCode=" + this.cryptoCode + ", fromWalletAddress=" + this.fromWalletAddress + ", toWalletAddress=" + this.toWalletAddress + ", amount=" + this.amount + ')';
+                return "In(userId=" + mo1290getUserId() + ", type=" + mo1289getType() + ", cryptoCode=" + this.cryptoCode + ", fromWalletAddress=" + this.fromWalletAddress + ", toWalletAddress=" + this.toWalletAddress + ", amount=" + this.amount + ')';
             }
 
             @Override // com.iMe.model.wallet.notification.PushNotificationModel.CryptoTransfer, com.iMe.model.wallet.notification.PushNotificationModel
             /* renamed from: getUserId */
-            public String mo1289getUserId() {
+            public String mo1290getUserId() {
                 return this.userId;
             }
 
             @Override // com.iMe.model.wallet.notification.PushNotificationModel.CryptoTransfer, com.iMe.model.wallet.notification.PushNotificationModel
             /* renamed from: getType */
-            public String mo1288getType() {
+            public String mo1289getType() {
                 return this.type;
             }
 
@@ -1610,7 +1609,7 @@ public abstract class PushNotificationModel {
             }
 
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-            public C1601In(String userId, String type, String cryptoCode, String fromWalletAddress, String toWalletAddress, String amount) {
+            public C1610In(String userId, String type, String cryptoCode, String fromWalletAddress, String toWalletAddress, String amount) {
                 super(userId, type);
                 Intrinsics.checkNotNullParameter(userId, "userId");
                 Intrinsics.checkNotNullParameter(type, "type");
@@ -1628,10 +1627,7 @@ public abstract class PushNotificationModel {
 
             @Override // com.iMe.model.wallet.notification.PushNotificationModel
             public String getMessage() {
-                int i = C3295R.string.push_notification_wallet_crypto_transfer_in_description;
-                BigDecimal bigDecimal = new BigDecimal(this.amount);
-                TokenInfo.Companion companion = TokenInfo.Companion;
-                return getString$TMessagesProj_release(i, BalanceFormatter.formatBalance(bigDecimal, companion.map(this.cryptoCode).getDecimals()), getString$TMessagesProj_release(companion.map(this.cryptoCode).getShortName(), new Object[0]), this.fromWalletAddress);
+                return getString$TMessagesProj_HA_public(C3417R.string.push_notification_wallet_crypto_transfer_in_description, BalanceFormatter.formatBalance(new BigDecimal(this.amount), 8), this.cryptoCode, this.fromWalletAddress);
             }
         }
 
@@ -1667,10 +1663,10 @@ public abstract class PushNotificationModel {
 
             public static /* synthetic */ Out copy$default(Out out, String str, String str2, String str3, String str4, String str5, String str6, String str7, int i, Object obj) {
                 if ((i & 1) != 0) {
-                    str = out.mo1289getUserId();
+                    str = out.mo1290getUserId();
                 }
                 if ((i & 2) != 0) {
-                    str2 = out.mo1288getType();
+                    str2 = out.mo1289getType();
                 }
                 String str8 = str2;
                 if ((i & 4) != 0) {
@@ -1696,11 +1692,11 @@ public abstract class PushNotificationModel {
             }
 
             public final String component1() {
-                return mo1289getUserId();
+                return mo1290getUserId();
             }
 
             public final String component2() {
-                return mo1288getType();
+                return mo1289getType();
             }
 
             public final String component3() {
@@ -1740,28 +1736,28 @@ public abstract class PushNotificationModel {
                 }
                 if (obj instanceof Out) {
                     Out out = (Out) obj;
-                    return Intrinsics.areEqual(mo1289getUserId(), out.mo1289getUserId()) && Intrinsics.areEqual(mo1288getType(), out.mo1288getType()) && Intrinsics.areEqual(this.status, out.status) && Intrinsics.areEqual(this.cryptoCode, out.cryptoCode) && Intrinsics.areEqual(this.fromWalletAddress, out.fromWalletAddress) && Intrinsics.areEqual(this.toWalletAddress, out.toWalletAddress) && Intrinsics.areEqual(this.amount, out.amount);
+                    return Intrinsics.areEqual(mo1290getUserId(), out.mo1290getUserId()) && Intrinsics.areEqual(mo1289getType(), out.mo1289getType()) && Intrinsics.areEqual(this.status, out.status) && Intrinsics.areEqual(this.cryptoCode, out.cryptoCode) && Intrinsics.areEqual(this.fromWalletAddress, out.fromWalletAddress) && Intrinsics.areEqual(this.toWalletAddress, out.toWalletAddress) && Intrinsics.areEqual(this.amount, out.amount);
                 }
                 return false;
             }
 
             public int hashCode() {
-                return (((((((((((mo1289getUserId().hashCode() * 31) + mo1288getType().hashCode()) * 31) + this.status.hashCode()) * 31) + this.cryptoCode.hashCode()) * 31) + this.fromWalletAddress.hashCode()) * 31) + this.toWalletAddress.hashCode()) * 31) + this.amount.hashCode();
+                return (((((((((((mo1290getUserId().hashCode() * 31) + mo1289getType().hashCode()) * 31) + this.status.hashCode()) * 31) + this.cryptoCode.hashCode()) * 31) + this.fromWalletAddress.hashCode()) * 31) + this.toWalletAddress.hashCode()) * 31) + this.amount.hashCode();
             }
 
             public String toString() {
-                return "Out(userId=" + mo1289getUserId() + ", type=" + mo1288getType() + ", status=" + this.status + ", cryptoCode=" + this.cryptoCode + ", fromWalletAddress=" + this.fromWalletAddress + ", toWalletAddress=" + this.toWalletAddress + ", amount=" + this.amount + ')';
+                return "Out(userId=" + mo1290getUserId() + ", type=" + mo1289getType() + ", status=" + this.status + ", cryptoCode=" + this.cryptoCode + ", fromWalletAddress=" + this.fromWalletAddress + ", toWalletAddress=" + this.toWalletAddress + ", amount=" + this.amount + ')';
             }
 
             @Override // com.iMe.model.wallet.notification.PushNotificationModel.CryptoTransfer, com.iMe.model.wallet.notification.PushNotificationModel
             /* renamed from: getUserId */
-            public String mo1289getUserId() {
+            public String mo1290getUserId() {
                 return this.userId;
             }
 
             @Override // com.iMe.model.wallet.notification.PushNotificationModel.CryptoTransfer, com.iMe.model.wallet.notification.PushNotificationModel
             /* renamed from: getType */
-            public String mo1288getType() {
+            public String mo1289getType() {
                 return this.type;
             }
 
@@ -1808,22 +1804,9 @@ public abstract class PushNotificationModel {
             public String getMessage() {
                 int i = WhenMappings.$EnumSwitchMapping$0[Status.Companion.map(this.status).ordinal()];
                 if (i != 1) {
-                    if (i != 2) {
-                        return "";
-                    }
-                    int i2 = C3295R.string.push_notification_wallet_crypto_transfer_out_failed_description;
-                    BigDecimal bigDecimal = new BigDecimal(this.amount);
-                    TokenInfo.Companion companion = TokenInfo.Companion;
-                    return getString$TMessagesProj_release(i2, BalanceFormatter.formatBalance(bigDecimal, companion.map(this.cryptoCode).getDecimals()), getString$TMessagesProj_release(companion.map(this.cryptoCode).getShortName(), new Object[0]), this.toWalletAddress);
+                    return i != 2 ? "" : getString$TMessagesProj_HA_public(C3417R.string.push_notification_wallet_crypto_transfer_out_failed_description, BalanceFormatter.formatBalance(new BigDecimal(this.amount), 8), this.cryptoCode, this.toWalletAddress);
                 }
-                TokenInfo.Companion companion2 = TokenInfo.Companion;
-                TokenInfo map = companion2.map(this.cryptoCode);
-                int i3 = C3295R.string.push_notification_wallet_crypto_transfer_out_success_description;
-                Object[] objArr = new Object[3];
-                objArr[0] = BalanceFormatter.formatBalance(new BigDecimal(this.amount), companion2.map(this.cryptoCode).getDecimals());
-                objArr[1] = map.isUnknown() ? this.cryptoCode : getString$TMessagesProj_release(map.getShortName(), new Object[0]);
-                objArr[2] = this.toWalletAddress;
-                return getString$TMessagesProj_release(i3, objArr);
+                return getString$TMessagesProj_HA_public(C3417R.string.push_notification_wallet_crypto_transfer_out_success_description, BalanceFormatter.formatBalance(new BigDecimal(this.amount), 8), this.cryptoCode, this.toWalletAddress);
             }
         }
     }
@@ -1836,13 +1819,13 @@ public abstract class PushNotificationModel {
 
         @Override // com.iMe.model.wallet.notification.PushNotificationModel
         /* renamed from: getUserId */
-        public String mo1289getUserId() {
+        public String mo1290getUserId() {
             return this.userId;
         }
 
         @Override // com.iMe.model.wallet.notification.PushNotificationModel
         /* renamed from: getType */
-        public String mo1288getType() {
+        public String mo1289getType() {
             return this.type;
         }
 
@@ -1858,7 +1841,7 @@ public abstract class PushNotificationModel {
         /* compiled from: PushNotificationModel.kt */
         /* renamed from: com.iMe.model.wallet.notification.PushNotificationModel$Donation$In */
         /* loaded from: classes3.dex */
-        public static final class C1602In extends CryptoTransfer {
+        public static final class C1611In extends CryptoTransfer {
             private final String amount;
             private final String cryptoCode;
             private final String fromWalletAddress;
@@ -1866,38 +1849,38 @@ public abstract class PushNotificationModel {
             private final String type;
             private final String userId;
 
-            public static /* synthetic */ C1602In copy$default(C1602In c1602In, String str, String str2, String str3, String str4, String str5, String str6, int i, Object obj) {
+            public static /* synthetic */ C1611In copy$default(C1611In c1611In, String str, String str2, String str3, String str4, String str5, String str6, int i, Object obj) {
                 if ((i & 1) != 0) {
-                    str = c1602In.mo1289getUserId();
+                    str = c1611In.mo1290getUserId();
                 }
                 if ((i & 2) != 0) {
-                    str2 = c1602In.mo1288getType();
+                    str2 = c1611In.mo1289getType();
                 }
                 String str7 = str2;
                 if ((i & 4) != 0) {
-                    str3 = c1602In.cryptoCode;
+                    str3 = c1611In.cryptoCode;
                 }
                 String str8 = str3;
                 if ((i & 8) != 0) {
-                    str4 = c1602In.fromWalletAddress;
+                    str4 = c1611In.fromWalletAddress;
                 }
                 String str9 = str4;
                 if ((i & 16) != 0) {
-                    str5 = c1602In.toWalletAddress;
+                    str5 = c1611In.toWalletAddress;
                 }
                 String str10 = str5;
                 if ((i & 32) != 0) {
-                    str6 = c1602In.amount;
+                    str6 = c1611In.amount;
                 }
-                return c1602In.copy(str, str7, str8, str9, str10, str6);
+                return c1611In.copy(str, str7, str8, str9, str10, str6);
             }
 
             public final String component1() {
-                return mo1289getUserId();
+                return mo1290getUserId();
             }
 
             public final String component2() {
-                return mo1288getType();
+                return mo1289getType();
             }
 
             public final String component3() {
@@ -1916,44 +1899,44 @@ public abstract class PushNotificationModel {
                 return this.amount;
             }
 
-            public final C1602In copy(String userId, String type, String cryptoCode, String fromWalletAddress, String toWalletAddress, String amount) {
+            public final C1611In copy(String userId, String type, String cryptoCode, String fromWalletAddress, String toWalletAddress, String amount) {
                 Intrinsics.checkNotNullParameter(userId, "userId");
                 Intrinsics.checkNotNullParameter(type, "type");
                 Intrinsics.checkNotNullParameter(cryptoCode, "cryptoCode");
                 Intrinsics.checkNotNullParameter(fromWalletAddress, "fromWalletAddress");
                 Intrinsics.checkNotNullParameter(toWalletAddress, "toWalletAddress");
                 Intrinsics.checkNotNullParameter(amount, "amount");
-                return new C1602In(userId, type, cryptoCode, fromWalletAddress, toWalletAddress, amount);
+                return new C1611In(userId, type, cryptoCode, fromWalletAddress, toWalletAddress, amount);
             }
 
             public boolean equals(Object obj) {
                 if (this == obj) {
                     return true;
                 }
-                if (obj instanceof C1602In) {
-                    C1602In c1602In = (C1602In) obj;
-                    return Intrinsics.areEqual(mo1289getUserId(), c1602In.mo1289getUserId()) && Intrinsics.areEqual(mo1288getType(), c1602In.mo1288getType()) && Intrinsics.areEqual(this.cryptoCode, c1602In.cryptoCode) && Intrinsics.areEqual(this.fromWalletAddress, c1602In.fromWalletAddress) && Intrinsics.areEqual(this.toWalletAddress, c1602In.toWalletAddress) && Intrinsics.areEqual(this.amount, c1602In.amount);
+                if (obj instanceof C1611In) {
+                    C1611In c1611In = (C1611In) obj;
+                    return Intrinsics.areEqual(mo1290getUserId(), c1611In.mo1290getUserId()) && Intrinsics.areEqual(mo1289getType(), c1611In.mo1289getType()) && Intrinsics.areEqual(this.cryptoCode, c1611In.cryptoCode) && Intrinsics.areEqual(this.fromWalletAddress, c1611In.fromWalletAddress) && Intrinsics.areEqual(this.toWalletAddress, c1611In.toWalletAddress) && Intrinsics.areEqual(this.amount, c1611In.amount);
                 }
                 return false;
             }
 
             public int hashCode() {
-                return (((((((((mo1289getUserId().hashCode() * 31) + mo1288getType().hashCode()) * 31) + this.cryptoCode.hashCode()) * 31) + this.fromWalletAddress.hashCode()) * 31) + this.toWalletAddress.hashCode()) * 31) + this.amount.hashCode();
+                return (((((((((mo1290getUserId().hashCode() * 31) + mo1289getType().hashCode()) * 31) + this.cryptoCode.hashCode()) * 31) + this.fromWalletAddress.hashCode()) * 31) + this.toWalletAddress.hashCode()) * 31) + this.amount.hashCode();
             }
 
             public String toString() {
-                return "In(userId=" + mo1289getUserId() + ", type=" + mo1288getType() + ", cryptoCode=" + this.cryptoCode + ", fromWalletAddress=" + this.fromWalletAddress + ", toWalletAddress=" + this.toWalletAddress + ", amount=" + this.amount + ')';
+                return "In(userId=" + mo1290getUserId() + ", type=" + mo1289getType() + ", cryptoCode=" + this.cryptoCode + ", fromWalletAddress=" + this.fromWalletAddress + ", toWalletAddress=" + this.toWalletAddress + ", amount=" + this.amount + ')';
             }
 
             @Override // com.iMe.model.wallet.notification.PushNotificationModel.CryptoTransfer, com.iMe.model.wallet.notification.PushNotificationModel
             /* renamed from: getUserId */
-            public String mo1289getUserId() {
+            public String mo1290getUserId() {
                 return this.userId;
             }
 
             @Override // com.iMe.model.wallet.notification.PushNotificationModel.CryptoTransfer, com.iMe.model.wallet.notification.PushNotificationModel
             /* renamed from: getType */
-            public String mo1288getType() {
+            public String mo1289getType() {
                 return this.type;
             }
 
@@ -1974,7 +1957,7 @@ public abstract class PushNotificationModel {
             }
 
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-            public C1602In(String userId, String type, String cryptoCode, String fromWalletAddress, String toWalletAddress, String amount) {
+            public C1611In(String userId, String type, String cryptoCode, String fromWalletAddress, String toWalletAddress, String amount) {
                 super(userId, type);
                 Intrinsics.checkNotNullParameter(userId, "userId");
                 Intrinsics.checkNotNullParameter(type, "type");
@@ -1992,10 +1975,7 @@ public abstract class PushNotificationModel {
 
             @Override // com.iMe.model.wallet.notification.PushNotificationModel
             public String getMessage() {
-                int i = C3295R.string.push_notification_wallet_crypto_transfer_in_description;
-                BigDecimal bigDecimal = new BigDecimal(this.amount);
-                TokenInfo.Companion companion = TokenInfo.Companion;
-                return getString$TMessagesProj_release(i, BalanceFormatter.formatBalance(bigDecimal, companion.map(this.cryptoCode).getDecimals()), getString$TMessagesProj_release(companion.map(this.cryptoCode).getShortName(), new Object[0]), this.fromWalletAddress);
+                return getString$TMessagesProj_HA_public(C3417R.string.push_notification_wallet_crypto_transfer_in_description, BalanceFormatter.formatBalance(new BigDecimal(this.amount), 8), this.cryptoCode, this.fromWalletAddress);
             }
         }
 
@@ -2031,10 +2011,10 @@ public abstract class PushNotificationModel {
 
             public static /* synthetic */ Out copy$default(Out out, String str, String str2, String str3, String str4, String str5, String str6, String str7, int i, Object obj) {
                 if ((i & 1) != 0) {
-                    str = out.mo1289getUserId();
+                    str = out.mo1290getUserId();
                 }
                 if ((i & 2) != 0) {
-                    str2 = out.mo1288getType();
+                    str2 = out.mo1289getType();
                 }
                 String str8 = str2;
                 if ((i & 4) != 0) {
@@ -2060,11 +2040,11 @@ public abstract class PushNotificationModel {
             }
 
             public final String component1() {
-                return mo1289getUserId();
+                return mo1290getUserId();
             }
 
             public final String component2() {
-                return mo1288getType();
+                return mo1289getType();
             }
 
             public final String component3() {
@@ -2104,28 +2084,28 @@ public abstract class PushNotificationModel {
                 }
                 if (obj instanceof Out) {
                     Out out = (Out) obj;
-                    return Intrinsics.areEqual(mo1289getUserId(), out.mo1289getUserId()) && Intrinsics.areEqual(mo1288getType(), out.mo1288getType()) && Intrinsics.areEqual(this.status, out.status) && Intrinsics.areEqual(this.cryptoCode, out.cryptoCode) && Intrinsics.areEqual(this.fromWalletAddress, out.fromWalletAddress) && Intrinsics.areEqual(this.toWalletAddress, out.toWalletAddress) && Intrinsics.areEqual(this.amount, out.amount);
+                    return Intrinsics.areEqual(mo1290getUserId(), out.mo1290getUserId()) && Intrinsics.areEqual(mo1289getType(), out.mo1289getType()) && Intrinsics.areEqual(this.status, out.status) && Intrinsics.areEqual(this.cryptoCode, out.cryptoCode) && Intrinsics.areEqual(this.fromWalletAddress, out.fromWalletAddress) && Intrinsics.areEqual(this.toWalletAddress, out.toWalletAddress) && Intrinsics.areEqual(this.amount, out.amount);
                 }
                 return false;
             }
 
             public int hashCode() {
-                return (((((((((((mo1289getUserId().hashCode() * 31) + mo1288getType().hashCode()) * 31) + this.status.hashCode()) * 31) + this.cryptoCode.hashCode()) * 31) + this.fromWalletAddress.hashCode()) * 31) + this.toWalletAddress.hashCode()) * 31) + this.amount.hashCode();
+                return (((((((((((mo1290getUserId().hashCode() * 31) + mo1289getType().hashCode()) * 31) + this.status.hashCode()) * 31) + this.cryptoCode.hashCode()) * 31) + this.fromWalletAddress.hashCode()) * 31) + this.toWalletAddress.hashCode()) * 31) + this.amount.hashCode();
             }
 
             public String toString() {
-                return "Out(userId=" + mo1289getUserId() + ", type=" + mo1288getType() + ", status=" + this.status + ", cryptoCode=" + this.cryptoCode + ", fromWalletAddress=" + this.fromWalletAddress + ", toWalletAddress=" + this.toWalletAddress + ", amount=" + this.amount + ')';
+                return "Out(userId=" + mo1290getUserId() + ", type=" + mo1289getType() + ", status=" + this.status + ", cryptoCode=" + this.cryptoCode + ", fromWalletAddress=" + this.fromWalletAddress + ", toWalletAddress=" + this.toWalletAddress + ", amount=" + this.amount + ')';
             }
 
             @Override // com.iMe.model.wallet.notification.PushNotificationModel.CryptoTransfer, com.iMe.model.wallet.notification.PushNotificationModel
             /* renamed from: getUserId */
-            public String mo1289getUserId() {
+            public String mo1290getUserId() {
                 return this.userId;
             }
 
             @Override // com.iMe.model.wallet.notification.PushNotificationModel.CryptoTransfer, com.iMe.model.wallet.notification.PushNotificationModel
             /* renamed from: getType */
-            public String mo1288getType() {
+            public String mo1289getType() {
                 return this.type;
             }
 
@@ -2171,24 +2151,15 @@ public abstract class PushNotificationModel {
             @Override // com.iMe.model.wallet.notification.PushNotificationModel
             public String getMessage() {
                 int i = WhenMappings.$EnumSwitchMapping$0[Status.Companion.map(this.status).ordinal()];
-                if (i == 1) {
-                    int i2 = C3295R.string.push_notification_wallet_crypto_transfer_out_success_description;
-                    BigDecimal bigDecimal = new BigDecimal(this.amount);
-                    TokenInfo.Companion companion = TokenInfo.Companion;
-                    return getString$TMessagesProj_release(i2, BalanceFormatter.formatBalance(bigDecimal, companion.map(this.cryptoCode).getDecimals()), getString$TMessagesProj_release(companion.map(this.cryptoCode).getShortName(), new Object[0]), this.toWalletAddress);
-                } else if (i != 2) {
-                    return "";
-                } else {
-                    int i3 = C3295R.string.push_notification_wallet_crypto_transfer_out_failed_description;
-                    BigDecimal bigDecimal2 = new BigDecimal(this.amount);
-                    TokenInfo.Companion companion2 = TokenInfo.Companion;
-                    return getString$TMessagesProj_release(i3, BalanceFormatter.formatBalance(bigDecimal2, companion2.map(this.cryptoCode).getDecimals()), getString$TMessagesProj_release(companion2.map(this.cryptoCode).getShortName(), new Object[0]), this.toWalletAddress);
+                if (i != 1) {
+                    return i != 2 ? "" : getString$TMessagesProj_HA_public(C3417R.string.push_notification_wallet_crypto_transfer_out_failed_description, BalanceFormatter.formatBalance(new BigDecimal(this.amount), 8), this.cryptoCode, this.toWalletAddress);
                 }
+                return getString$TMessagesProj_HA_public(C3417R.string.push_notification_wallet_crypto_transfer_out_success_description, BalanceFormatter.formatBalance(new BigDecimal(this.amount), 8), this.cryptoCode, this.toWalletAddress);
             }
         }
     }
 
-    public final String getString$TMessagesProj_release(int i, Object... formatArgs) {
+    public final String getString$TMessagesProj_HA_public(int i, Object... formatArgs) {
         Intrinsics.checkNotNullParameter(formatArgs, "formatArgs");
         String formatStringInternal = LocaleController.formatStringInternal(i, Arrays.copyOf(formatArgs, formatArgs.length));
         Intrinsics.checkNotNullExpressionValue(formatStringInternal, "formatStringInternal(id, *formatArgs)");

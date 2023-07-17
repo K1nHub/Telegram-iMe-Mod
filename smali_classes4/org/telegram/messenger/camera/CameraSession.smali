@@ -1107,7 +1107,7 @@
 
     invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v6, "set preview size = "
+    const-string/jumbo v6, "set preview size = "
 
     invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1163,7 +1163,7 @@
 
     invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v5, "set picture size = "
+    const-string/jumbo v5, "set picture size = "
 
     invoke-virtual {p1, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -2050,7 +2050,7 @@
     .line 299
     sget-object v1, Landroid/os/Build;->MANUFACTURER:Ljava/lang/String;
 
-    const-string v3, "samsung"
+    const-string/jumbo v3, "samsung"
 
     invoke-virtual {v3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 

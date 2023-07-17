@@ -2,7 +2,7 @@ package com.iMe.fork.p024ui.view;
 
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Lambda;
-import org.telegram.p044ui.Components.RecyclerListView;
+import org.telegram.p043ui.Components.RecyclerListView;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: DialogTypeTopicsBar.kt */
 /* renamed from: com.iMe.fork.ui.view.DialogTypeTopicsBar$listView$2 */

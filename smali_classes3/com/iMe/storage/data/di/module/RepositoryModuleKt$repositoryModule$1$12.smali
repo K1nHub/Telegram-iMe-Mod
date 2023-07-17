@@ -28,7 +28,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nRepositoryModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 RepositoryModule.kt\ncom/iMe/storage/data/di/module/RepositoryModuleKt$repositoryModule$1$12\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,153:1\n129#2,5:154\n129#2,5:159\n*S KotlinDebug\n*F\n+ 1 RepositoryModule.kt\ncom/iMe/storage/data/di/module/RepositoryModuleKt$repositoryModule$1$12\n*L\n102#1:154,5\n103#1:159,5\n*E\n"
+    value = "SMAP\nRepositoryModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 RepositoryModule.kt\ncom/iMe/storage/data/di/module/RepositoryModuleKt$repositoryModule$1$12\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,157:1\n129#2,5:158\n129#2,5:163\n*S KotlinDebug\n*F\n+ 1 RepositoryModule.kt\ncom/iMe/storage/data/di/module/RepositoryModuleKt$repositoryModule$1$12\n*L\n102#1:158,5\n103#1:163,5\n*E\n"
 .end annotation
 
 
@@ -139,7 +139,7 @@
     check-cast v3, Lcom/iMe/storage/domain/gateway/TelegramGateway;
 
     .line 133
-    const-class p2, Lcom/iMe/storage/data/locale/db/dao/minor/wallet/WalletTokenBalanceDao;
+    const-class p2, Lcom/iMe/storage/data/locale/db/dao/minor/wallet/WalletTokensBalancesDao;
 
     invoke-static {p2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
 
@@ -152,7 +152,7 @@
     .line 103
     move-object v5, p2
 
-    check-cast v5, Lcom/iMe/storage/data/locale/db/dao/minor/wallet/WalletTokenBalanceDao;
+    check-cast v5, Lcom/iMe/storage/data/locale/db/dao/minor/wallet/WalletTokensBalancesDao;
 
     .line 133
     const-class p2, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
@@ -175,7 +175,7 @@
 
     move-object v1, p1
 
-    invoke-direct/range {v1 .. v7}, Lcom/iMe/storage/data/repository/crypto/CryptoWalletRepositoryImpl;-><init>(Lcom/iMe/storage/data/network/api/own/CryptoWalletApi;Lcom/iMe/storage/domain/gateway/TelegramGateway;Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;Lcom/iMe/storage/data/locale/db/dao/minor/wallet/WalletTokenBalanceDao;Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler;Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;)V
+    invoke-direct/range {v1 .. v7}, Lcom/iMe/storage/data/repository/crypto/CryptoWalletRepositoryImpl;-><init>(Lcom/iMe/storage/data/network/api/own/CryptoWalletApi;Lcom/iMe/storage/domain/gateway/TelegramGateway;Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;Lcom/iMe/storage/data/locale/db/dao/minor/wallet/WalletTokensBalancesDao;Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler;Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;)V
 
     return-object p1
 .end method

@@ -93,6 +93,21 @@
     throw v0
 .end method
 
+.method public static inflate(Landroid/view/LayoutInflater;)Lorg/telegram/messenger/databinding/ForkDialogSocialNetworksItemBinding;
+    .locals 2
+
+    const/4 v0, 0x0
+
+    const/4 v1, 0x0
+
+    .line 44
+    invoke-static {p0, v0, v1}, Lorg/telegram/messenger/databinding/ForkDialogSocialNetworksItemBinding;->inflate(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Z)Lorg/telegram/messenger/databinding/ForkDialogSocialNetworksItemBinding;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
 .method public static inflate(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Z)Lorg/telegram/messenger/databinding/ForkDialogSocialNetworksItemBinding;
     .locals 2
 

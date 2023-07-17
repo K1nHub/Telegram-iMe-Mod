@@ -6,11 +6,11 @@ import com.iMe.navigation.common.router.base.NavigationRouter;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Lambda;
-import org.telegram.messenger.C3295R;
+import org.telegram.messenger.C3417R;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: CatalogFragment.kt */
 /* renamed from: com.iMe.ui.catalog.tabs.CatalogFragment$initPageTabs$2 */
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public final class CatalogFragment$initPageTabs$2 extends Lambda implements Function0<View> {
     final /* synthetic */ CatalogFragment this$0;
 
@@ -27,6 +27,6 @@ public final class CatalogFragment$initPageTabs$2 extends Lambda implements Func
         NavigationRouter navigationRouter;
         navigationRouter = this.this$0.getNavigationRouter();
         Intrinsics.checkNotNull(navigationRouter, "null cannot be cast to non-null type com.iMe.navigation.common.router.base.BaseNavigationRouter<com.iMe.ui.catalog.tabs.CatalogTabFragment>");
-        return ((BaseNavigationRouter) navigationRouter).getViewByFragmentId(C3295R.C3298id.catalog_categories);
+        return ((BaseNavigationRouter) navigationRouter).getViewByFragmentId(C3417R.C3420id.catalog_categories);
     }
 }

@@ -57,7 +57,7 @@
 .method public constructor <init>(Lorg/koin/core/qualifier/Qualifier;Ljava/lang/String;ZLorg/koin/core/Koin;)V
     .locals 1
 
-    const-string v0, "scopeQualifier"
+    const-string/jumbo v0, "scopeQualifier"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 

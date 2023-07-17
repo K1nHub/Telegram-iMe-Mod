@@ -68,13 +68,13 @@
 
     move-object/from16 v2, p1
 
-    .line 661
+    .line 663
     iput-object v2, v0, Lorg/telegram/ui/GroupCallActivity$VolumeSlider;->this$0:Lorg/telegram/ui/GroupCallActivity;
 
-    .line 662
+    .line 664
     invoke-direct {v0, v1}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    .line 649
+    .line 651
     new-instance v2, Landroid/graphics/Paint;
 
     const/4 v3, 0x1
@@ -83,14 +83,14 @@
 
     iput-object v2, v0, Lorg/telegram/ui/GroupCallActivity$VolumeSlider;->paint:Landroid/graphics/Paint;
 
-    .line 650
+    .line 652
     new-instance v2, Landroid/graphics/Paint;
 
     invoke-direct {v2, v3}, Landroid/graphics/Paint;-><init>(I)V
 
     iput-object v2, v0, Lorg/telegram/ui/GroupCallActivity$VolumeSlider;->paint2:Landroid/graphics/Paint;
 
-    .line 651
+    .line 653
     new-instance v2, Landroid/graphics/Path;
 
     invoke-direct {v2}, Landroid/graphics/Path;-><init>()V
@@ -101,10 +101,10 @@
 
     new-array v2, v2, [F
 
-    .line 652
+    .line 654
     iput-object v2, v0, Lorg/telegram/ui/GroupCallActivity$VolumeSlider;->radii:[F
 
-    .line 653
+    .line 655
     new-instance v2, Landroid/graphics/RectF;
 
     invoke-direct {v2}, Landroid/graphics/RectF;-><init>()V
@@ -115,20 +115,20 @@
 
     new-array v4, v2, [F
 
-    .line 658
+    .line 660
     iput-object v4, v0, Lorg/telegram/ui/GroupCallActivity$VolumeSlider;->volumeAlphas:[F
 
     const/4 v4, 0x0
 
-    .line 663
+    .line 665
     invoke-virtual {v0, v4}, Landroid/widget/FrameLayout;->setWillNotDraw(Z)V
 
     move-object/from16 v5, p3
 
-    .line 664
+    .line 666
     iput-object v5, v0, Lorg/telegram/ui/GroupCallActivity$VolumeSlider;->currentParticipant:Lorg/telegram/tgnet/TLRPC$TL_groupCallParticipant;
 
-    .line 665
+    .line 667
     invoke-static/range {p3 .. p3}, Lorg/telegram/messenger/ChatObject;->getParticipantVolume(Lorg/telegram/tgnet/TLRPC$TL_groupCallParticipant;)I
 
     move-result v5
@@ -145,12 +145,12 @@
 
     const/high16 v5, 0x3f800000    # 1.0f
 
-    .line 666
+    .line 668
     iput v5, v0, Lorg/telegram/ui/GroupCallActivity$VolumeSlider;->colorChangeProgress:F
 
     const/16 v6, 0xc
 
-    .line 668
+    .line 670
     invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v7
@@ -161,7 +161,7 @@
 
     invoke-virtual {v0, v7, v4, v6, v4}, Landroid/widget/FrameLayout;->setPadding(IIII)V
 
-    .line 670
+    .line 672
     new-instance v6, Lorg/telegram/ui/Components/RLottieDrawable;
 
     sget v9, Lorg/telegram/messenger/R$raw;->speaker:I
@@ -200,26 +200,26 @@
 
     iput-object v6, v0, Lorg/telegram/ui/GroupCallActivity$VolumeSlider;->speakerDrawable:Lorg/telegram/ui/Components/RLottieDrawable;
 
-    .line 672
+    .line 674
     new-instance v6, Lorg/telegram/ui/Components/RLottieImageView;
 
     invoke-direct {v6, v1}, Lorg/telegram/ui/Components/RLottieImageView;-><init>(Landroid/content/Context;)V
 
     iput-object v6, v0, Lorg/telegram/ui/GroupCallActivity$VolumeSlider;->imageView:Lorg/telegram/ui/Components/RLottieImageView;
 
-    .line 673
+    .line 675
     sget-object v7, Landroid/widget/ImageView$ScaleType;->CENTER:Landroid/widget/ImageView$ScaleType;
 
     invoke-virtual {v6, v7}, Landroid/widget/ImageView;->setScaleType(Landroid/widget/ImageView$ScaleType;)V
 
-    .line 674
+    .line 676
     iget-object v6, v0, Lorg/telegram/ui/GroupCallActivity$VolumeSlider;->imageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     iget-object v7, v0, Lorg/telegram/ui/GroupCallActivity$VolumeSlider;->speakerDrawable:Lorg/telegram/ui/Components/RLottieDrawable;
 
     invoke-virtual {v6, v7}, Lorg/telegram/ui/Components/RLottieImageView;->setAnimation(Lorg/telegram/ui/Components/RLottieDrawable;)V
 
-    .line 675
+    .line 677
     iget-object v6, v0, Lorg/telegram/ui/GroupCallActivity$VolumeSlider;->imageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     iget-wide v7, v0, Lorg/telegram/ui/GroupCallActivity$VolumeSlider;->currentProgress:D
@@ -242,7 +242,7 @@
     :goto_0
     invoke-virtual {v6, v7}, Landroid/widget/ImageView;->setTag(Ljava/lang/Object;)V
 
-    .line 676
+    .line 678
     iget-object v6, v0, Lorg/telegram/ui/GroupCallActivity$VolumeSlider;->imageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     const/4 v11, -0x2
@@ -279,7 +279,7 @@
 
     invoke-virtual {v0, v6, v7}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 678
+    .line 680
     iget-object v6, v0, Lorg/telegram/ui/GroupCallActivity$VolumeSlider;->speakerDrawable:Lorg/telegram/ui/Components/RLottieDrawable;
 
     iget-wide v11, v0, Lorg/telegram/ui/GroupCallActivity$VolumeSlider;->currentProgress:D
@@ -298,7 +298,7 @@
     :goto_2
     invoke-virtual {v6, v7}, Lorg/telegram/ui/Components/RLottieDrawable;->setCustomEndFrame(I)Z
 
-    .line 679
+    .line 681
     iget-object v6, v0, Lorg/telegram/ui/GroupCallActivity$VolumeSlider;->speakerDrawable:Lorg/telegram/ui/Components/RLottieDrawable;
 
     invoke-virtual {v6}, Lorg/telegram/ui/Components/RLottieDrawable;->getCustomEndFrame()I
@@ -309,34 +309,34 @@
 
     invoke-virtual {v6, v7, v4, v3}, Lorg/telegram/ui/Components/RLottieDrawable;->setCurrentFrame(IZZ)V
 
-    .line 681
+    .line 683
     new-instance v6, Landroid/widget/TextView;
 
     invoke-direct {v6, v1}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
     iput-object v6, v0, Lorg/telegram/ui/GroupCallActivity$VolumeSlider;->textView:Landroid/widget/TextView;
 
-    .line 682
+    .line 684
     invoke-virtual {v6, v3}, Landroid/widget/TextView;->setLines(I)V
 
-    .line 683
+    .line 685
     iget-object v1, v0, Lorg/telegram/ui/GroupCallActivity$VolumeSlider;->textView:Landroid/widget/TextView;
 
     invoke-virtual {v1, v3}, Landroid/widget/TextView;->setSingleLine(Z)V
 
-    .line 684
+    .line 686
     iget-object v1, v0, Lorg/telegram/ui/GroupCallActivity$VolumeSlider;->textView:Landroid/widget/TextView;
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 685
+    .line 687
     iget-object v1, v0, Lorg/telegram/ui/GroupCallActivity$VolumeSlider;->textView:Landroid/widget/TextView;
 
     sget-object v6, Landroid/text/TextUtils$TruncateAt;->END:Landroid/text/TextUtils$TruncateAt;
 
     invoke-virtual {v1, v6}, Landroid/widget/TextView;->setEllipsize(Landroid/text/TextUtils$TruncateAt;)V
 
-    .line 686
+    .line 688
     iget-object v1, v0, Lorg/telegram/ui/GroupCallActivity$VolumeSlider;->textView:Landroid/widget/TextView;
 
     sget v6, Lorg/telegram/ui/ActionBar/Theme;->key_voipgroup_actionBarItems:I
@@ -347,14 +347,14 @@
 
     invoke-virtual {v1, v6}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 687
+    .line 689
     iget-object v1, v0, Lorg/telegram/ui/GroupCallActivity$VolumeSlider;->textView:Landroid/widget/TextView;
 
     const/high16 v6, 0x41800000    # 16.0f
 
     invoke-virtual {v1, v3, v6}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 688
+    .line 690
     iget-object v1, v0, Lorg/telegram/ui/GroupCallActivity$VolumeSlider;->currentParticipant:Lorg/telegram/tgnet/TLRPC$TL_groupCallParticipant;
 
     invoke-static {v1}, Lorg/telegram/messenger/ChatObject;->getParticipantVolume(Lorg/telegram/tgnet/TLRPC$TL_groupCallParticipant;)I
@@ -367,7 +367,7 @@
 
     div-double/2addr v6, v11
 
-    .line 689
+    .line 691
     iget-object v1, v0, Lorg/telegram/ui/GroupCallActivity$VolumeSlider;->textView:Landroid/widget/TextView;
 
     sget-object v13, Ljava/util/Locale;->US:Ljava/util/Locale;
@@ -401,7 +401,7 @@
 
     invoke-virtual {v1, v6}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 690
+    .line 692
     iget-object v1, v0, Lorg/telegram/ui/GroupCallActivity$VolumeSlider;->textView:Landroid/widget/TextView;
 
     sget-boolean v6, Lorg/telegram/messenger/LocaleController;->isRTL:Z
@@ -436,7 +436,7 @@
     :goto_4
     invoke-virtual {v1, v6, v4, v7, v4}, Landroid/widget/TextView;->setPadding(IIII)V
 
-    .line 691
+    .line 693
     iget-object v1, v0, Lorg/telegram/ui/GroupCallActivity$VolumeSlider;->textView:Landroid/widget/TextView;
 
     sget-boolean v6, Lorg/telegram/messenger/LocaleController;->isRTL:Z
@@ -456,14 +456,14 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 693
+    .line 695
     iget-object v1, v0, Lorg/telegram/ui/GroupCallActivity$VolumeSlider;->paint2:Landroid/graphics/Paint;
 
     sget-object v2, Landroid/graphics/Paint$Style;->STROKE:Landroid/graphics/Paint$Style;
 
     invoke-virtual {v1, v2}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
 
-    .line 694
+    .line 696
     iget-object v1, v0, Lorg/telegram/ui/GroupCallActivity$VolumeSlider;->paint2:Landroid/graphics/Paint;
 
     const/high16 v2, 0x3fc00000    # 1.5f
@@ -476,21 +476,21 @@
 
     invoke-virtual {v1, v2}, Landroid/graphics/Paint;->setStrokeWidth(F)V
 
-    .line 695
+    .line 697
     iget-object v1, v0, Lorg/telegram/ui/GroupCallActivity$VolumeSlider;->paint2:Landroid/graphics/Paint;
 
     sget-object v2, Landroid/graphics/Paint$Cap;->ROUND:Landroid/graphics/Paint$Cap;
 
     invoke-virtual {v1, v2}, Landroid/graphics/Paint;->setStrokeCap(Landroid/graphics/Paint$Cap;)V
 
-    .line 696
+    .line 698
     iget-object v1, v0, Lorg/telegram/ui/GroupCallActivity$VolumeSlider;->paint2:Landroid/graphics/Paint;
 
     const/4 v2, -0x1
 
     invoke-virtual {v1, v2}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 698
+    .line 700
     iget-object v1, v0, Lorg/telegram/ui/GroupCallActivity$VolumeSlider;->currentParticipant:Lorg/telegram/tgnet/TLRPC$TL_groupCallParticipant;
 
     invoke-static {v1}, Lorg/telegram/messenger/ChatObject;->getParticipantVolume(Lorg/telegram/tgnet/TLRPC$TL_groupCallParticipant;)I
@@ -505,7 +505,7 @@
 
     move v2, v4
 
-    .line 699
+    .line 701
     :goto_5
     iget-object v6, v0, Lorg/telegram/ui/GroupCallActivity$VolumeSlider;->volumeAlphas:[F
 
@@ -532,7 +532,7 @@
     :goto_6
     if-le v1, v7, :cond_9
 
-    .line 709
+    .line 711
     aput v5, v6, v2
 
     goto :goto_7
@@ -540,7 +540,7 @@
     :cond_9
     const/4 v7, 0x0
 
-    .line 711
+    .line 713
     aput v7, v6, v2
 
     :goto_7
@@ -559,7 +559,7 @@
 
     move-wide/from16 v1, p1
 
-    .line 798
+    .line 800
     invoke-static {}, Lorg/telegram/messenger/voip/VoIPService;->getSharedInstance()Lorg/telegram/messenger/voip/VoIPService;
 
     move-result-object v3
@@ -568,11 +568,11 @@
 
     return-void
 
-    .line 801
+    .line 803
     :cond_0
     iput-wide v1, v0, Lorg/telegram/ui/GroupCallActivity$VolumeSlider;->currentProgress:D
 
-    .line 802
+    .line 804
     iget-object v3, v0, Lorg/telegram/ui/GroupCallActivity$VolumeSlider;->currentParticipant:Lorg/telegram/tgnet/TLRPC$TL_groupCallParticipant;
 
     const-wide v4, 0x40d3880000000000L    # 20000.0
@@ -585,17 +585,17 @@
 
     const/4 v1, 0x0
 
-    .line 803
+    .line 805
     iput-boolean v1, v3, Lorg/telegram/tgnet/TLRPC$TL_groupCallParticipant;->volume_by_admin:Z
 
-    .line 804
+    .line 806
     iget v2, v3, Lorg/telegram/tgnet/TLRPC$TL_groupCallParticipant;->flags:I
 
     or-int/lit16 v2, v2, 0x80
 
     iput v2, v3, Lorg/telegram/tgnet/TLRPC$TL_groupCallParticipant;->flags:I
 
-    .line 805
+    .line 807
     invoke-static {v3}, Lorg/telegram/messenger/ChatObject;->getParticipantVolume(Lorg/telegram/tgnet/TLRPC$TL_groupCallParticipant;)I
 
     move-result v2
@@ -606,7 +606,7 @@
 
     div-double/2addr v2, v4
 
-    .line 806
+    .line 808
     iget-object v4, v0, Lorg/telegram/ui/GroupCallActivity$VolumeSlider;->textView:Landroid/widget/TextView;
 
     sget-object v5, Ljava/util/Locale;->US:Ljava/util/Locale;
@@ -649,7 +649,7 @@
 
     invoke-virtual {v4, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 807
+    .line 809
     invoke-static {}, Lorg/telegram/messenger/voip/VoIPService;->getSharedInstance()Lorg/telegram/messenger/voip/VoIPService;
 
     move-result-object v2
@@ -664,7 +664,7 @@
 
     if-eqz p3, :cond_6
 
-    .line 809
+    .line 811
     iget-object v3, v0, Lorg/telegram/ui/GroupCallActivity$VolumeSlider;->currentParticipant:Lorg/telegram/tgnet/TLRPC$TL_groupCallParticipant;
 
     iget-object v3, v3, Lorg/telegram/tgnet/TLRPC$TL_groupCallParticipant;->peer:Lorg/telegram/tgnet/TLRPC$Peer;
@@ -679,7 +679,7 @@
 
     if-lez v5, :cond_2
 
-    .line 812
+    .line 814
     iget-object v5, v0, Lorg/telegram/ui/GroupCallActivity$VolumeSlider;->this$0:Lorg/telegram/ui/GroupCallActivity;
 
     invoke-static {v5}, Lorg/telegram/ui/GroupCallActivity;->access$200(Lorg/telegram/ui/GroupCallActivity;)Lorg/telegram/messenger/AccountInstance;
@@ -700,7 +700,7 @@
 
     goto :goto_1
 
-    .line 814
+    .line 816
     :cond_2
     iget-object v5, v0, Lorg/telegram/ui/GroupCallActivity$VolumeSlider;->this$0:Lorg/telegram/ui/GroupCallActivity;
 
@@ -725,14 +725,14 @@
     :goto_1
     move-object v11, v5
 
-    .line 816
+    .line 818
     iget-object v5, v0, Lorg/telegram/ui/GroupCallActivity$VolumeSlider;->currentParticipant:Lorg/telegram/tgnet/TLRPC$TL_groupCallParticipant;
 
     iget v5, v5, Lorg/telegram/tgnet/TLRPC$TL_groupCallParticipant;->volume:I
 
     if-nez v5, :cond_5
 
-    .line 817
+    .line 819
     iget-object v5, v0, Lorg/telegram/ui/GroupCallActivity$VolumeSlider;->this$0:Lorg/telegram/ui/GroupCallActivity;
 
     invoke-static {v5}, Lorg/telegram/ui/GroupCallActivity;->access$800(Lorg/telegram/ui/GroupCallActivity;)Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
@@ -741,7 +741,7 @@
 
     if-eqz v5, :cond_3
 
-    .line 818
+    .line 820
     iget-object v5, v0, Lorg/telegram/ui/GroupCallActivity$VolumeSlider;->this$0:Lorg/telegram/ui/GroupCallActivity;
 
     invoke-static {v5}, Lorg/telegram/ui/GroupCallActivity;->access$800(Lorg/telegram/ui/GroupCallActivity;)Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
@@ -750,18 +750,18 @@
 
     invoke-virtual {v5}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->dismiss()V
 
-    .line 819
+    .line 821
     iget-object v5, v0, Lorg/telegram/ui/GroupCallActivity$VolumeSlider;->this$0:Lorg/telegram/ui/GroupCallActivity;
 
     invoke-static {v5, v2}, Lorg/telegram/ui/GroupCallActivity;->access$802(Lorg/telegram/ui/GroupCallActivity;Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;)Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
 
-    .line 821
+    .line 823
     :cond_3
     iget-object v5, v0, Lorg/telegram/ui/GroupCallActivity$VolumeSlider;->this$0:Lorg/telegram/ui/GroupCallActivity;
 
     invoke-static {v5, v6}, Lorg/telegram/ui/GroupCallActivity;->access$900(Lorg/telegram/ui/GroupCallActivity;Z)V
 
-    .line 822
+    .line 824
     iget-object v5, v0, Lorg/telegram/ui/GroupCallActivity$VolumeSlider;->this$0:Lorg/telegram/ui/GroupCallActivity;
 
     iget-object v7, v0, Lorg/telegram/ui/GroupCallActivity$VolumeSlider;->currentParticipant:Lorg/telegram/tgnet/TLRPC$TL_groupCallParticipant;
@@ -786,7 +786,7 @@
 
     goto :goto_3
 
-    .line 824
+    .line 826
     :cond_5
     invoke-static {}, Lorg/telegram/messenger/voip/VoIPService;->getSharedInstance()Lorg/telegram/messenger/voip/VoIPService;
 
@@ -810,7 +810,7 @@
 
     invoke-virtual/range {v10 .. v16}, Lorg/telegram/messenger/voip/VoIPService;->editCallMember(Lorg/telegram/tgnet/TLObject;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Integer;Ljava/lang/Boolean;Ljava/lang/Runnable;)V
 
-    .line 827
+    .line 829
     :cond_6
     :goto_3
     iget-wide v3, v0, Lorg/telegram/ui/GroupCallActivity$VolumeSlider;->currentProgress:D
@@ -823,7 +823,7 @@
 
     move-result-object v2
 
-    .line 828
+    .line 830
     :cond_7
     iget-object v3, v0, Lorg/telegram/ui/GroupCallActivity$VolumeSlider;->imageView:Lorg/telegram/ui/Components/RLottieImageView;
 
@@ -846,7 +846,7 @@
 
     if-nez v2, :cond_c
 
-    .line 829
+    .line 831
     :cond_9
     iget-object v3, v0, Lorg/telegram/ui/GroupCallActivity$VolumeSlider;->speakerDrawable:Lorg/telegram/ui/Components/RLottieDrawable;
 
@@ -868,7 +868,7 @@
     :goto_4
     invoke-virtual {v3, v4}, Lorg/telegram/ui/Components/RLottieDrawable;->setCustomEndFrame(I)Z
 
-    .line 830
+    .line 832
     iget-object v3, v0, Lorg/telegram/ui/GroupCallActivity$VolumeSlider;->speakerDrawable:Lorg/telegram/ui/Components/RLottieDrawable;
 
     iget-wide v6, v0, Lorg/telegram/ui/GroupCallActivity$VolumeSlider;->currentProgress:D
@@ -885,12 +885,12 @@
     :goto_5
     invoke-virtual {v3, v1}, Lorg/telegram/ui/Components/RLottieDrawable;->setCurrentFrame(I)V
 
-    .line 831
+    .line 833
     iget-object v1, v0, Lorg/telegram/ui/GroupCallActivity$VolumeSlider;->speakerDrawable:Lorg/telegram/ui/Components/RLottieDrawable;
 
     invoke-virtual {v1}, Lorg/telegram/ui/Components/RLottieDrawable;->start()V
 
-    .line 832
+    .line 834
     iget-object v1, v0, Lorg/telegram/ui/GroupCallActivity$VolumeSlider;->imageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     invoke-virtual {v1, v2}, Landroid/widget/ImageView;->setTag(Ljava/lang/Object;)V
@@ -906,10 +906,10 @@
 
     move-object/from16 v0, p0
 
-    .line 838
+    .line 840
     iget v1, v0, Lorg/telegram/ui/GroupCallActivity$VolumeSlider;->currentColor:I
 
-    .line 839
+    .line 841
     iget-wide v2, v0, Lorg/telegram/ui/GroupCallActivity$VolumeSlider;->currentProgress:D
 
     const-wide/high16 v4, 0x3fd0000000000000L    # 0.25
@@ -920,7 +920,7 @@
 
     const v2, -0x33a8a9
 
-    .line 840
+    .line 842
     iput v2, v0, Lorg/telegram/ui/GroupCallActivity$VolumeSlider;->currentColor:I
 
     goto :goto_0
@@ -938,7 +938,7 @@
 
     const v2, -0x365ac5
 
-    .line 842
+    .line 844
     iput v2, v0, Lorg/telegram/ui/GroupCallActivity$VolumeSlider;->currentColor:I
 
     goto :goto_0
@@ -956,7 +956,7 @@
 
     const v2, -0xa84395
 
-    .line 844
+    .line 846
     iput v2, v0, Lorg/telegram/ui/GroupCallActivity$VolumeSlider;->currentColor:I
 
     goto :goto_0
@@ -964,7 +964,7 @@
     :cond_2
     const v2, -0xb25921
 
-    .line 846
+    .line 848
     iput v2, v0, Lorg/telegram/ui/GroupCallActivity$VolumeSlider;->currentColor:I
 
     :goto_0
@@ -974,15 +974,15 @@
 
     if-nez v1, :cond_3
 
-    .line 850
+    .line 852
     iget v1, v0, Lorg/telegram/ui/GroupCallActivity$VolumeSlider;->currentColor:I
 
-    .line 851
+    .line 853
     iput v3, v0, Lorg/telegram/ui/GroupCallActivity$VolumeSlider;->colorChangeProgress:F
 
     goto :goto_1
 
-    .line 853
+    .line 855
     :cond_3
     iget v4, v0, Lorg/telegram/ui/GroupCallActivity$VolumeSlider;->oldColor:I
 
@@ -992,32 +992,32 @@
 
     move-result v4
 
-    .line 854
+    .line 856
     iget v5, v0, Lorg/telegram/ui/GroupCallActivity$VolumeSlider;->currentColor:I
 
     if-eq v1, v5, :cond_4
 
-    .line 855
+    .line 857
     iput v2, v0, Lorg/telegram/ui/GroupCallActivity$VolumeSlider;->colorChangeProgress:F
 
-    .line 856
+    .line 858
     iput v4, v0, Lorg/telegram/ui/GroupCallActivity$VolumeSlider;->oldColor:I
 
     :cond_4
     move v1, v4
 
-    .line 859
+    .line 861
     :goto_1
     iget-object v4, v0, Lorg/telegram/ui/GroupCallActivity$VolumeSlider;->paint:Landroid/graphics/Paint;
 
     invoke-virtual {v4, v1}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 860
+    .line 862
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v4
 
-    .line 861
+    .line 863
     iget-wide v6, v0, Lorg/telegram/ui/GroupCallActivity$VolumeSlider;->lastUpdateTime:J
 
     sub-long v6, v4, v6
@@ -1030,11 +1030,11 @@
 
     move-wide v6, v8
 
-    .line 865
+    .line 867
     :cond_5
     iput-wide v4, v0, Lorg/telegram/ui/GroupCallActivity$VolumeSlider;->lastUpdateTime:J
 
-    .line 866
+    .line 868
     iget v1, v0, Lorg/telegram/ui/GroupCallActivity$VolumeSlider;->colorChangeProgress:F
 
     cmpg-float v4, v1, v3
@@ -1049,30 +1049,30 @@
 
     add-float/2addr v1, v4
 
-    .line 867
+    .line 869
     iput v1, v0, Lorg/telegram/ui/GroupCallActivity$VolumeSlider;->colorChangeProgress:F
 
     cmpl-float v1, v1, v3
 
     if-lez v1, :cond_6
 
-    .line 869
+    .line 871
     iput v3, v0, Lorg/telegram/ui/GroupCallActivity$VolumeSlider;->colorChangeProgress:F
 
     goto :goto_2
 
-    .line 871
+    .line 873
     :cond_6
     invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->invalidate()V
 
-    .line 874
+    .line 876
     :cond_7
     :goto_2
     iget-object v1, v0, Lorg/telegram/ui/GroupCallActivity$VolumeSlider;->path:Landroid/graphics/Path;
 
     invoke-virtual {v1}, Landroid/graphics/Path;->reset()V
 
-    .line 875
+    .line 877
     iget-object v1, v0, Lorg/telegram/ui/GroupCallActivity$VolumeSlider;->radii:[F
 
     const/4 v4, 0x7
@@ -1097,7 +1097,7 @@
 
     aput v8, v1, v9
 
-    .line 876
+    .line 878
     iget v1, v0, Lorg/telegram/ui/GroupCallActivity$VolumeSlider;->thumbX:I
 
     const/16 v8, 0xc
@@ -1135,7 +1135,7 @@
     :cond_8
     move v1, v3
 
-    .line 877
+    .line 879
     :goto_3
     iget-object v8, v0, Lorg/telegram/ui/GroupCallActivity$VolumeSlider;->radii:[F
 
@@ -1163,7 +1163,7 @@
 
     aput v12, v8, v10
 
-    .line 878
+    .line 880
     iget-object v8, v0, Lorg/telegram/ui/GroupCallActivity$VolumeSlider;->rect:Landroid/graphics/RectF;
 
     iget v11, v0, Lorg/telegram/ui/GroupCallActivity$VolumeSlider;->thumbX:I
@@ -1178,7 +1178,7 @@
 
     invoke-virtual {v8, v2, v2, v11, v12}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 879
+    .line 881
     iget-object v8, v0, Lorg/telegram/ui/GroupCallActivity$VolumeSlider;->path:Landroid/graphics/Path;
 
     iget-object v11, v0, Lorg/telegram/ui/GroupCallActivity$VolumeSlider;->rect:Landroid/graphics/RectF;
@@ -1189,12 +1189,12 @@
 
     invoke-virtual {v8, v11, v12, v13}, Landroid/graphics/Path;->addRoundRect(Landroid/graphics/RectF;[FLandroid/graphics/Path$Direction;)V
 
-    .line 880
+    .line 882
     iget-object v8, v0, Lorg/telegram/ui/GroupCallActivity$VolumeSlider;->path:Landroid/graphics/Path;
 
     invoke-virtual {v8}, Landroid/graphics/Path;->close()V
 
-    .line 881
+    .line 883
     iget-object v8, v0, Lorg/telegram/ui/GroupCallActivity$VolumeSlider;->path:Landroid/graphics/Path;
 
     iget-object v11, v0, Lorg/telegram/ui/GroupCallActivity$VolumeSlider;->paint:Landroid/graphics/Paint;
@@ -1203,7 +1203,7 @@
 
     invoke-virtual {v15, v8, v11}, Landroid/graphics/Canvas;->drawPath(Landroid/graphics/Path;Landroid/graphics/Paint;)V
 
-    .line 883
+    .line 885
     iget-object v8, v0, Lorg/telegram/ui/GroupCallActivity$VolumeSlider;->currentParticipant:Lorg/telegram/tgnet/TLRPC$TL_groupCallParticipant;
 
     invoke-static {v8}, Lorg/telegram/messenger/ChatObject;->getParticipantVolume(Lorg/telegram/tgnet/TLRPC$TL_groupCallParticipant;)I
@@ -1218,7 +1218,7 @@
 
     double-to-int v8, v11
 
-    .line 884
+    .line 886
     iget-object v11, v0, Lorg/telegram/ui/GroupCallActivity$VolumeSlider;->imageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     invoke-virtual {v11}, Landroid/widget/ImageView;->getLeft()I
@@ -1241,7 +1241,7 @@
 
     add-int/2addr v11, v1
 
-    .line 885
+    .line 887
     iget-object v1, v0, Lorg/telegram/ui/GroupCallActivity$VolumeSlider;->imageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     invoke-virtual {v1}, Landroid/widget/ImageView;->getTop()I
@@ -1260,7 +1260,7 @@
 
     move v14, v9
 
-    .line 886
+    .line 888
     :goto_4
     iget-object v12, v0, Lorg/telegram/ui/GroupCallActivity$VolumeSlider;->volumeAlphas:[F
 
@@ -1270,7 +1270,7 @@
 
     if-nez v14, :cond_9
 
-    .line 890
+    .line 892
     invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v12
@@ -1288,7 +1288,7 @@
 
     const/16 v13, 0xa
 
-    .line 893
+    .line 895
     invoke-static {v13}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v13
@@ -1300,7 +1300,7 @@
 
     const/16 v13, 0xe
 
-    .line 896
+    .line 898
     invoke-static {v13}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v13
@@ -1314,7 +1314,7 @@
 
     move/from16 v12, v18
 
-    .line 898
+    .line 900
     :goto_6
     invoke-static {v10}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
@@ -1330,7 +1330,7 @@
 
     mul-float v4, v4, v16
 
-    .line 899
+    .line 901
     iget-object v9, v0, Lorg/telegram/ui/GroupCallActivity$VolumeSlider;->paint2:Landroid/graphics/Paint;
 
     const/high16 v16, 0x437f0000    # 255.0f
@@ -1343,7 +1343,7 @@
 
     invoke-virtual {v9, v5}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    .line 900
+    .line 902
     iget-object v5, v0, Lorg/telegram/ui/GroupCallActivity$VolumeSlider;->rect:Landroid/graphics/RectF;
 
     int-to-float v9, v11
@@ -1368,7 +1368,7 @@
 
     invoke-virtual {v5, v10, v3, v9, v2}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 901
+    .line 903
     iget-object v2, v0, Lorg/telegram/ui/GroupCallActivity$VolumeSlider;->rect:Landroid/graphics/RectF;
 
     const/high16 v3, -0x3db80000    # -50.0f
@@ -1399,7 +1399,7 @@
 
     if-le v8, v9, :cond_d
 
-    .line 903
+    .line 905
     iget-object v4, v0, Lorg/telegram/ui/GroupCallActivity$VolumeSlider;->volumeAlphas:[F
 
     aget v5, v4, v2
@@ -1410,7 +1410,7 @@
 
     if-gez v5, :cond_c
 
-    .line 904
+    .line 906
     aget v5, v4, v2
 
     long-to-float v10, v6
@@ -1421,17 +1421,17 @@
 
     aput v5, v4, v2
 
-    .line 905
+    .line 907
     aget v3, v4, v2
 
     cmpl-float v3, v3, v9
 
     if-lez v3, :cond_b
 
-    .line 906
+    .line 908
     aput v9, v4, v2
 
-    .line 908
+    .line 910
     :cond_b
     invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->invalidate()V
 
@@ -1443,7 +1443,7 @@
     :cond_d
     const/high16 v9, 0x3f800000    # 1.0f
 
-    .line 911
+    .line 913
     iget-object v4, v0, Lorg/telegram/ui/GroupCallActivity$VolumeSlider;->volumeAlphas:[F
 
     aget v5, v4, v2
@@ -1454,7 +1454,7 @@
 
     if-lez v5, :cond_f
 
-    .line 912
+    .line 914
     aget v5, v4, v2
 
     long-to-float v12, v6
@@ -1465,17 +1465,17 @@
 
     aput v5, v4, v2
 
-    .line 913
+    .line 915
     aget v3, v4, v2
 
     cmpg-float v3, v3, v10
 
     if-gez v3, :cond_e
 
-    .line 914
+    .line 916
     aput v10, v4, v2
 
-    .line 916
+    .line 918
     :cond_e
     invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->invalidate()V
 
@@ -1506,7 +1506,7 @@
 .method public onInterceptTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 0
 
-    .line 724
+    .line 726
     invoke-virtual {p0, p1}, Lorg/telegram/ui/GroupCallActivity$VolumeSlider;->onTouch(Landroid/view/MotionEvent;)Z
 
     move-result p1
@@ -1519,7 +1519,7 @@
 
     const/16 p2, 0x30
 
-    .line 718
+    .line 720
     invoke-static {p2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p2
@@ -1532,7 +1532,7 @@
 
     invoke-super {p0, p1, p2}, Landroid/widget/FrameLayout;->onMeasure(II)V
 
-    .line 719
+    .line 721
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result p1
@@ -1553,7 +1553,7 @@
 .method onTouch(Landroid/view/MotionEvent;)Z
     .locals 7
 
-    .line 733
+    .line 735
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v0
@@ -1562,14 +1562,14 @@
 
     if-nez v0, :cond_0
 
-    .line 734
+    .line 736
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/ui/GroupCallActivity$VolumeSlider;->sx:F
 
-    .line 735
+    .line 737
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
 
     move-result p1
@@ -1578,7 +1578,7 @@
 
     return v1
 
-    .line 737
+    .line 739
     :cond_0
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
@@ -1598,7 +1598,7 @@
 
     goto/16 :goto_2
 
-    .line 759
+    .line 761
     :cond_1
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
@@ -1608,12 +1608,12 @@
 
     if-ne v0, v3, :cond_d
 
-    .line 760
+    .line 762
     iget-boolean v0, p0, Lorg/telegram/ui/GroupCallActivity$VolumeSlider;->captured:Z
 
     if-nez v0, :cond_5
 
-    .line 761
+    .line 763
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
 
     move-result-object v0
@@ -1622,7 +1622,7 @@
 
     move-result-object v0
 
-    .line 762
+    .line 764
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
 
     move-result v3
@@ -1647,7 +1647,7 @@
 
     return v2
 
-    .line 765
+    .line 767
     :cond_2
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
@@ -1671,17 +1671,17 @@
 
     if-lez v0, :cond_d
 
-    .line 766
+    .line 768
     iput-boolean v1, p0, Lorg/telegram/ui/GroupCallActivity$VolumeSlider;->captured:Z
 
-    .line 767
+    .line 769
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getParent()Landroid/view/ViewParent;
 
     move-result-object v0
 
     invoke-interface {v0, v1}, Landroid/view/ViewParent;->requestDisallowInterceptTouchEvent(Z)V
 
-    .line 768
+    .line 770
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
 
     move-result v0
@@ -1706,7 +1706,7 @@
 
     if-gtz v0, :cond_d
 
-    .line 769
+    .line 771
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
     move-result p1
@@ -1717,12 +1717,12 @@
 
     if-gez p1, :cond_3
 
-    .line 771
+    .line 773
     iput v2, p0, Lorg/telegram/ui/GroupCallActivity$VolumeSlider;->thumbX:I
 
     goto :goto_0
 
-    .line 772
+    .line 774
     :cond_3
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
@@ -1730,30 +1730,30 @@
 
     if-le p1, v0, :cond_4
 
-    .line 773
+    .line 775
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
     move-result p1
 
     iput p1, p0, Lorg/telegram/ui/GroupCallActivity$VolumeSlider;->thumbX:I
 
-    .line 775
+    .line 777
     :cond_4
     :goto_0
     iput-boolean v1, p0, Lorg/telegram/ui/GroupCallActivity$VolumeSlider;->dragging:Z
 
-    .line 776
+    .line 778
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->invalidate()V
 
     return v1
 
-    .line 781
+    .line 783
     :cond_5
     iget-boolean v0, p0, Lorg/telegram/ui/GroupCallActivity$VolumeSlider;->dragging:Z
 
     if-eqz v0, :cond_d
 
-    .line 782
+    .line 784
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
     move-result p1
@@ -1764,12 +1764,12 @@
 
     if-gez p1, :cond_6
 
-    .line 784
+    .line 786
     iput v2, p0, Lorg/telegram/ui/GroupCallActivity$VolumeSlider;->thumbX:I
 
     goto :goto_1
 
-    .line 785
+    .line 787
     :cond_6
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
@@ -1777,14 +1777,14 @@
 
     if-le p1, v0, :cond_7
 
-    .line 786
+    .line 788
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
     move-result p1
 
     iput p1, p0, Lorg/telegram/ui/GroupCallActivity$VolumeSlider;->thumbX:I
 
-    .line 788
+    .line 790
     :cond_7
     :goto_1
     iget p1, p0, Lorg/telegram/ui/GroupCallActivity$VolumeSlider;->thumbX:I
@@ -1801,24 +1801,24 @@
 
     invoke-direct {p0, v3, v4, v2}, Lorg/telegram/ui/GroupCallActivity$VolumeSlider;->onSeekBarDrag(DZ)V
 
-    .line 789
+    .line 791
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->invalidate()V
 
     return v1
 
-    .line 738
+    .line 740
     :cond_8
     :goto_2
     iput-boolean v2, p0, Lorg/telegram/ui/GroupCallActivity$VolumeSlider;->captured:Z
 
-    .line 739
+    .line 741
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v0
 
     if-ne v0, v1, :cond_b
 
-    .line 740
+    .line 742
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
 
     move-result-object v0
@@ -1827,7 +1827,7 @@
 
     move-result-object v0
 
-    .line 741
+    .line 743
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
 
     move-result v3
@@ -1850,7 +1850,7 @@
 
     if-gez v0, :cond_b
 
-    .line 742
+    .line 744
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
     move-result v0
@@ -1861,12 +1861,12 @@
 
     if-gez v0, :cond_9
 
-    .line 744
+    .line 746
     iput v2, p0, Lorg/telegram/ui/GroupCallActivity$VolumeSlider;->thumbX:I
 
     goto :goto_3
 
-    .line 745
+    .line 747
     :cond_9
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
@@ -1874,32 +1874,32 @@
 
     if-le v0, v3, :cond_a
 
-    .line 746
+    .line 748
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/ui/GroupCallActivity$VolumeSlider;->thumbX:I
 
-    .line 748
+    .line 750
     :cond_a
     :goto_3
     iput-boolean v1, p0, Lorg/telegram/ui/GroupCallActivity$VolumeSlider;->dragging:Z
 
-    .line 751
+    .line 753
     :cond_b
     iget-boolean v0, p0, Lorg/telegram/ui/GroupCallActivity$VolumeSlider;->dragging:Z
 
     if-eqz v0, :cond_d
 
-    .line 752
+    .line 754
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
     move-result p1
 
     if-ne p1, v1, :cond_c
 
-    .line 753
+    .line 755
     iget p1, p0, Lorg/telegram/ui/GroupCallActivity$VolumeSlider;->thumbX:I
 
     int-to-double v3, p1
@@ -1914,11 +1914,11 @@
 
     invoke-direct {p0, v3, v4, v1}, Lorg/telegram/ui/GroupCallActivity$VolumeSlider;->onSeekBarDrag(DZ)V
 
-    .line 755
+    .line 757
     :cond_c
     iput-boolean v2, p0, Lorg/telegram/ui/GroupCallActivity$VolumeSlider;->dragging:Z
 
-    .line 756
+    .line 758
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->invalidate()V
 
     return v1
@@ -1930,7 +1930,7 @@
 .method public onTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 0
 
-    .line 729
+    .line 731
     invoke-virtual {p0, p1}, Lorg/telegram/ui/GroupCallActivity$VolumeSlider;->onTouch(Landroid/view/MotionEvent;)Z
 
     move-result p1

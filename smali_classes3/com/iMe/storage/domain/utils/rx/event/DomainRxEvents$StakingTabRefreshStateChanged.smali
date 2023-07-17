@@ -33,11 +33,13 @@
 
     const/4 v0, 0x0
 
-    .line 26
+    .line 38
     invoke-direct {p0, v0}, Lcom/iMe/storage/domain/utils/rx/event/DomainRxEvents;-><init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
 
+    .line 36
     iput-object p1, p0, Lcom/iMe/storage/domain/utils/rx/event/DomainRxEvents$StakingTabRefreshStateChanged;->stakingTabType:Lcom/iMe/storage/domain/model/staking/StakingTabType;
 
+    .line 37
     iput-boolean p2, p0, Lcom/iMe/storage/domain/utils/rx/event/DomainRxEvents$StakingTabRefreshStateChanged;->isShowRefresh:Z
 
     return-void
@@ -48,7 +50,7 @@
 .method public final getStakingTabType()Lcom/iMe/storage/domain/model/staking/StakingTabType;
     .locals 1
 
-    .line 26
+    .line 36
     iget-object v0, p0, Lcom/iMe/storage/domain/utils/rx/event/DomainRxEvents$StakingTabRefreshStateChanged;->stakingTabType:Lcom/iMe/storage/domain/model/staking/StakingTabType;
 
     return-object v0
@@ -57,7 +59,7 @@
 .method public final isShowRefresh()Z
     .locals 1
 
-    .line 26
+    .line 37
     iget-boolean v0, p0, Lcom/iMe/storage/domain/utils/rx/event/DomainRxEvents$StakingTabRefreshStateChanged;->isShowRefresh:Z
 
     return v0

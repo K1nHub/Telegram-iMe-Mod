@@ -33,9 +33,9 @@
 
     iget-object v1, p0, Lcom/iMe/ui/wallet/actions/send/amount/WalletSendAmountPresenter$$ExternalSyntheticLambda1;->f$1:Lcom/iMe/fork/utils/Callbacks$Callback1;
 
-    check-cast p1, Lcom/iMe/model/wallet/select/SelectableToken;
+    check-cast p1, Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
 
-    invoke-static {v0, v1, p1}, Lcom/iMe/ui/wallet/actions/send/amount/WalletSendAmountPresenter;->$r8$lambda$LjpcyjFC-zRj2vSMNoDtiYXQrEw(Lcom/iMe/ui/wallet/actions/send/amount/WalletSendAmountPresenter;Lcom/iMe/fork/utils/Callbacks$Callback1;Lcom/iMe/model/wallet/select/SelectableToken;)V
+    invoke-static {v0, v1, p1}, Lcom/iMe/ui/wallet/actions/send/amount/WalletSendAmountPresenter;->$r8$lambda$djbJoV1FP01AZknmIwnftNDFjac(Lcom/iMe/ui/wallet/actions/send/amount/WalletSendAmountPresenter;Lcom/iMe/fork/utils/Callbacks$Callback1;Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;)V
 
     return-void
 .end method

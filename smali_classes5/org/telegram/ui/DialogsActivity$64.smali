@@ -1,11 +1,14 @@
 .class Lorg/telegram/ui/DialogsActivity$64;
-.super Landroid/animation/AnimatorListenerAdapter;
+.super Ljava/lang/Object;
 .source "DialogsActivity.java"
+
+# interfaces
+.implements Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/DialogsActivity;->updateSelectedCount()V
+    value = Lorg/telegram/ui/DialogsActivity;->onConfigurationChanged(Landroid/content/res/Configuration;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -22,49 +25,88 @@
 .method constructor <init>(Lorg/telegram/ui/DialogsActivity;)V
     .locals 0
 
-    .line 12404
+    .line 12380
     iput-object p1, p0, Lorg/telegram/ui/DialogsActivity$64;->this$0:Lorg/telegram/ui/DialogsActivity;
 
-    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onAnimationEnd(Landroid/animation/Animator;)V
-    .locals 1
+.method public onGlobalLayout()V
+    .locals 2
 
-    .line 12407
-    iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$64;->this$0:Lorg/telegram/ui/DialogsActivity;
+    .line 12383
+    iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$64;->this$0:Lorg/telegram/ui/DialogsActivity;
 
-    invoke-static {p1}, Lorg/telegram/ui/DialogsActivity;->access$2100(Lorg/telegram/ui/DialogsActivity;)Lorg/telegram/ui/Components/ChatActivityEnterView;
+    invoke-static {v0}, Lorg/telegram/ui/DialogsActivity;->access$24000(Lorg/telegram/ui/DialogsActivity;)Z
 
-    move-result-object p1
+    move-result v1
 
-    const/4 v0, 0x2
+    if-eqz v1, :cond_0
 
-    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    const/16 v1, 0x64
+
+    invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v1
+
+    int-to-float v1, v1
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v1, 0x0
+
+    :goto_0
+    invoke-static {v0, v1}, Lorg/telegram/ui/DialogsActivity;->access$24102(Lorg/telegram/ui/DialogsActivity;F)F
+
+    .line 12384
+    iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$64;->this$0:Lorg/telegram/ui/DialogsActivity;
+
+    invoke-static {v0}, Lorg/telegram/ui/DialogsActivity;->access$24300(Lorg/telegram/ui/DialogsActivity;)V
+
+    .line 12385
+    iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$64;->this$0:Lorg/telegram/ui/DialogsActivity;
+
+    invoke-static {v0}, Lorg/telegram/ui/DialogsActivity;->access$4400(Lorg/telegram/ui/DialogsActivity;)Landroid/widget/FrameLayout;
 
     move-result-object v0
 
-    invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->setTag(Ljava/lang/Object;)V
+    iget-object v1, p0, Lorg/telegram/ui/DialogsActivity$64;->this$0:Lorg/telegram/ui/DialogsActivity;
 
-    .line 12408
-    iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$64;->this$0:Lorg/telegram/ui/DialogsActivity;
+    invoke-static {v1}, Lorg/telegram/ui/DialogsActivity;->access$24000(Lorg/telegram/ui/DialogsActivity;)Z
 
-    invoke-static {p1}, Lorg/telegram/ui/DialogsActivity;->access$2100(Lorg/telegram/ui/DialogsActivity;)Lorg/telegram/ui/Components/ChatActivityEnterView;
+    move-result v1
 
-    move-result-object p1
+    xor-int/lit8 v1, v1, 0x1
 
-    invoke-virtual {p1}, Landroid/widget/FrameLayout;->requestLayout()V
+    invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setClickable(Z)V
 
-    .line 12409
-    iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$64;->this$0:Lorg/telegram/ui/DialogsActivity;
+    .line 12386
+    iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$64;->this$0:Lorg/telegram/ui/DialogsActivity;
 
-    const/4 v0, 0x1
+    invoke-static {v0}, Lorg/telegram/ui/DialogsActivity;->access$4400(Lorg/telegram/ui/DialogsActivity;)Landroid/widget/FrameLayout;
 
-    invoke-static {p1, v0}, Lorg/telegram/ui/DialogsActivity;->access$39400(Lorg/telegram/ui/DialogsActivity;Z)V
+    move-result-object v0
 
+    if-eqz v0, :cond_1
+
+    .line 12387
+    iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$64;->this$0:Lorg/telegram/ui/DialogsActivity;
+
+    invoke-static {v0}, Lorg/telegram/ui/DialogsActivity;->access$4400(Lorg/telegram/ui/DialogsActivity;)Landroid/widget/FrameLayout;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/widget/FrameLayout;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p0}, Landroid/view/ViewTreeObserver;->removeOnGlobalLayoutListener(Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;)V
+
+    :cond_1
     return-void
 .end method

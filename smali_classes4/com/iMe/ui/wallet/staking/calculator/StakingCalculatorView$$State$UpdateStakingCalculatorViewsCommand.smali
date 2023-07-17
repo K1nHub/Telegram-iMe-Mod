@@ -26,7 +26,7 @@
 .method constructor <init>(Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorView$$State;)V
     .locals 1
 
-    .line 181
+    .line 198
     const-class p1, Lmoxy/viewstate/strategy/AddToEndSingleStrategy;
 
     const-string/jumbo v0, "updateStakingCalculatorViews"
@@ -41,7 +41,7 @@
 .method public apply(Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorView;)V
     .locals 0
 
-    .line 186
+    .line 203
     invoke-interface {p1}, Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorView;->updateStakingCalculatorViews()V
 
     return-void
@@ -50,7 +50,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 179
+    .line 196
     check-cast p1, Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorView$$State$UpdateStakingCalculatorViewsCommand;->apply(Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorView;)V

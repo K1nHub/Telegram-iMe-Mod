@@ -21,6 +21,11 @@ public class ChatView$$State extends MvpViewState<ChatView> implements ChatView 
         BaseView.CC.$default$finishScreen(this);
     }
 
+    @Override // com.iMe.p031ui.base.mvp.base.BaseView
+    public /* synthetic */ void removeSelfFromStackImmediately() {
+        BaseView.CC.$default$removeSelfFromStackImmediately(this);
+    }
+
     @Override // com.iMe.p031ui.chat.ChatView
     public void onMultiReplyMessageBuilt(CharSequence charSequence) {
         OnMultiReplyMessageBuiltCommand onMultiReplyMessageBuiltCommand = new OnMultiReplyMessageBuiltCommand(this, charSequence);

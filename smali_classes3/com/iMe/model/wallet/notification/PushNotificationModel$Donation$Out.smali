@@ -68,28 +68,28 @@
 
     invoke-static {p7, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 289
+    .line 292
     invoke-direct {p0, p1, p2}, Lcom/iMe/model/wallet/notification/PushNotificationModel$CryptoTransfer;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 282
+    .line 285
     iput-object p1, p0, Lcom/iMe/model/wallet/notification/PushNotificationModel$Donation$Out;->userId:Ljava/lang/String;
 
-    .line 283
+    .line 286
     iput-object p2, p0, Lcom/iMe/model/wallet/notification/PushNotificationModel$Donation$Out;->type:Ljava/lang/String;
 
-    .line 284
+    .line 287
     iput-object p3, p0, Lcom/iMe/model/wallet/notification/PushNotificationModel$Donation$Out;->status:Ljava/lang/String;
 
-    .line 285
+    .line 288
     iput-object p4, p0, Lcom/iMe/model/wallet/notification/PushNotificationModel$Donation$Out;->cryptoCode:Ljava/lang/String;
 
-    .line 286
+    .line 289
     iput-object p5, p0, Lcom/iMe/model/wallet/notification/PushNotificationModel$Donation$Out;->fromWalletAddress:Ljava/lang/String;
 
-    .line 287
+    .line 290
     iput-object p6, p0, Lcom/iMe/model/wallet/notification/PushNotificationModel$Donation$Out;->toWalletAddress:Ljava/lang/String;
 
-    .line 288
+    .line 291
     iput-object p7, p0, Lcom/iMe/model/wallet/notification/PushNotificationModel$Donation$Out;->amount:Ljava/lang/String;
 
     return-void
@@ -428,7 +428,7 @@
 .method public final getAmount()Ljava/lang/String;
     .locals 1
 
-    .line 288
+    .line 291
     iget-object v0, p0, Lcom/iMe/model/wallet/notification/PushNotificationModel$Donation$Out;->amount:Ljava/lang/String;
 
     return-object v0
@@ -437,7 +437,7 @@
 .method public final getCryptoCode()Ljava/lang/String;
     .locals 1
 
-    .line 285
+    .line 288
     iget-object v0, p0, Lcom/iMe/model/wallet/notification/PushNotificationModel$Donation$Out;->cryptoCode:Ljava/lang/String;
 
     return-object v0
@@ -446,7 +446,7 @@
 .method public final getFromWalletAddress()Ljava/lang/String;
     .locals 1
 
-    .line 286
+    .line 289
     iget-object v0, p0, Lcom/iMe/model/wallet/notification/PushNotificationModel$Donation$Out;->fromWalletAddress:Ljava/lang/String;
 
     return-object v0
@@ -455,7 +455,7 @@
 .method public getMessage()Ljava/lang/String;
     .locals 8
 
-    .line 291
+    .line 294
     sget-object v0, Lcom/iMe/storage/data/network/model/response/base/Status;->Companion:Lcom/iMe/storage/data/network/model/response/base/Status$Companion;
 
     iget-object v1, p0, Lcom/iMe/model/wallet/notification/PushNotificationModel$Donation$Out;->status:Ljava/lang/String;
@@ -472,139 +472,99 @@
 
     aget v0, v1, v0
 
-    const/4 v1, 0x3
+    const/16 v1, 0x8
 
-    const/4 v2, 0x2
+    const/4 v2, 0x0
 
-    const/4 v3, 0x1
+    const/4 v3, 0x3
 
-    const/4 v4, 0x0
+    const/4 v4, 0x2
 
-    if-eq v0, v3, :cond_1
+    const/4 v5, 0x1
 
-    if-eq v0, v2, :cond_0
+    if-eq v0, v5, :cond_1
+
+    if-eq v0, v4, :cond_0
 
     const-string v0, ""
 
     goto :goto_0
 
-    .line 298
+    .line 303
     :cond_0
     sget v0, Lorg/telegram/messenger/R$string;->push_notification_wallet_crypto_transfer_out_failed_description:I
 
-    new-array v1, v1, [Ljava/lang/Object;
+    new-array v3, v3, [Ljava/lang/Object;
 
-    .line 299
-    new-instance v5, Ljava/math/BigDecimal;
+    .line 304
+    new-instance v6, Ljava/math/BigDecimal;
 
-    iget-object v6, p0, Lcom/iMe/model/wallet/notification/PushNotificationModel$Donation$Out;->amount:Ljava/lang/String;
+    iget-object v7, p0, Lcom/iMe/model/wallet/notification/PushNotificationModel$Donation$Out;->amount:Ljava/lang/String;
 
-    invoke-direct {v5, v6}, Ljava/math/BigDecimal;-><init>(Ljava/lang/String;)V
+    invoke-direct {v6, v7}, Ljava/math/BigDecimal;-><init>(Ljava/lang/String;)V
 
-    sget-object v6, Lcom/iMe/storage/domain/model/wallet/token/TokenInfo;->Companion:Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Companion;
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    iget-object v7, p0, Lcom/iMe/model/wallet/notification/PushNotificationModel$Donation$Out;->cryptoCode:Ljava/lang/String;
+    move-result-object v1
 
-    invoke-virtual {v6, v7}, Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Companion;->map(Ljava/lang/String;)Lcom/iMe/storage/domain/model/wallet/token/TokenInfo;
+    invoke-static {v6, v1}, Lcom/iMe/utils/formatter/BalanceFormatter;->formatBalance(Ljava/lang/Number;Ljava/lang/Integer;)Ljava/lang/String;
 
-    move-result-object v7
+    move-result-object v1
 
-    invoke-virtual {v7}, Lcom/iMe/storage/domain/model/wallet/token/TokenInfo;->getDecimals()I
+    aput-object v1, v3, v2
 
-    move-result v7
+    .line 305
+    iget-object v1, p0, Lcom/iMe/model/wallet/notification/PushNotificationModel$Donation$Out;->cryptoCode:Ljava/lang/String;
 
-    invoke-static {v5, v7}, Lcom/iMe/utils/formatter/BalanceFormatter;->formatBalance(Ljava/lang/Number;I)Ljava/lang/String;
+    aput-object v1, v3, v5
 
-    move-result-object v5
+    .line 306
+    iget-object v1, p0, Lcom/iMe/model/wallet/notification/PushNotificationModel$Donation$Out;->toWalletAddress:Ljava/lang/String;
 
-    aput-object v5, v1, v4
+    aput-object v1, v3, v4
 
-    .line 300
-    iget-object v5, p0, Lcom/iMe/model/wallet/notification/PushNotificationModel$Donation$Out;->cryptoCode:Ljava/lang/String;
-
-    invoke-virtual {v6, v5}, Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Companion;->map(Ljava/lang/String;)Lcom/iMe/storage/domain/model/wallet/token/TokenInfo;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Lcom/iMe/storage/domain/model/wallet/token/TokenInfo;->getShortName()I
-
-    move-result v5
-
-    new-array v4, v4, [Ljava/lang/Object;
-
-    invoke-virtual {p0, v5, v4}, Lcom/iMe/model/wallet/notification/PushNotificationModel;->getString$TMessagesProj_release(I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v4
-
-    aput-object v4, v1, v3
-
-    iget-object v3, p0, Lcom/iMe/model/wallet/notification/PushNotificationModel$Donation$Out;->toWalletAddress:Ljava/lang/String;
-
-    aput-object v3, v1, v2
-
-    .line 297
-    invoke-virtual {p0, v0, v1}, Lcom/iMe/model/wallet/notification/PushNotificationModel;->getString$TMessagesProj_release(I[Ljava/lang/Object;)Ljava/lang/String;
+    .line 302
+    invoke-virtual {p0, v0, v3}, Lcom/iMe/model/wallet/notification/PushNotificationModel;->getString$TMessagesProj_HA_public(I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
     goto :goto_0
 
-    .line 293
+    .line 296
     :cond_1
     sget v0, Lorg/telegram/messenger/R$string;->push_notification_wallet_crypto_transfer_out_success_description:I
 
-    new-array v1, v1, [Ljava/lang/Object;
+    new-array v3, v3, [Ljava/lang/Object;
 
-    .line 294
-    new-instance v5, Ljava/math/BigDecimal;
+    .line 297
+    new-instance v6, Ljava/math/BigDecimal;
 
-    iget-object v6, p0, Lcom/iMe/model/wallet/notification/PushNotificationModel$Donation$Out;->amount:Ljava/lang/String;
+    iget-object v7, p0, Lcom/iMe/model/wallet/notification/PushNotificationModel$Donation$Out;->amount:Ljava/lang/String;
 
-    invoke-direct {v5, v6}, Ljava/math/BigDecimal;-><init>(Ljava/lang/String;)V
+    invoke-direct {v6, v7}, Ljava/math/BigDecimal;-><init>(Ljava/lang/String;)V
 
-    sget-object v6, Lcom/iMe/storage/domain/model/wallet/token/TokenInfo;->Companion:Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Companion;
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    iget-object v7, p0, Lcom/iMe/model/wallet/notification/PushNotificationModel$Donation$Out;->cryptoCode:Ljava/lang/String;
+    move-result-object v1
 
-    invoke-virtual {v6, v7}, Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Companion;->map(Ljava/lang/String;)Lcom/iMe/storage/domain/model/wallet/token/TokenInfo;
+    invoke-static {v6, v1}, Lcom/iMe/utils/formatter/BalanceFormatter;->formatBalance(Ljava/lang/Number;Ljava/lang/Integer;)Ljava/lang/String;
 
-    move-result-object v7
+    move-result-object v1
 
-    invoke-virtual {v7}, Lcom/iMe/storage/domain/model/wallet/token/TokenInfo;->getDecimals()I
+    aput-object v1, v3, v2
 
-    move-result v7
+    .line 298
+    iget-object v1, p0, Lcom/iMe/model/wallet/notification/PushNotificationModel$Donation$Out;->cryptoCode:Ljava/lang/String;
 
-    invoke-static {v5, v7}, Lcom/iMe/utils/formatter/BalanceFormatter;->formatBalance(Ljava/lang/Number;I)Ljava/lang/String;
+    aput-object v1, v3, v5
 
-    move-result-object v5
+    .line 299
+    iget-object v1, p0, Lcom/iMe/model/wallet/notification/PushNotificationModel$Donation$Out;->toWalletAddress:Ljava/lang/String;
 
-    aput-object v5, v1, v4
+    aput-object v1, v3, v4
 
     .line 295
-    iget-object v5, p0, Lcom/iMe/model/wallet/notification/PushNotificationModel$Donation$Out;->cryptoCode:Ljava/lang/String;
-
-    invoke-virtual {v6, v5}, Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Companion;->map(Ljava/lang/String;)Lcom/iMe/storage/domain/model/wallet/token/TokenInfo;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Lcom/iMe/storage/domain/model/wallet/token/TokenInfo;->getShortName()I
-
-    move-result v5
-
-    new-array v4, v4, [Ljava/lang/Object;
-
-    invoke-virtual {p0, v5, v4}, Lcom/iMe/model/wallet/notification/PushNotificationModel;->getString$TMessagesProj_release(I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v4
-
-    aput-object v4, v1, v3
-
-    iget-object v3, p0, Lcom/iMe/model/wallet/notification/PushNotificationModel$Donation$Out;->toWalletAddress:Ljava/lang/String;
-
-    aput-object v3, v1, v2
-
-    .line 292
-    invoke-virtual {p0, v0, v1}, Lcom/iMe/model/wallet/notification/PushNotificationModel;->getString$TMessagesProj_release(I[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual {p0, v0, v3}, Lcom/iMe/model/wallet/notification/PushNotificationModel;->getString$TMessagesProj_HA_public(I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -615,7 +575,7 @@
 .method public final getStatus()Ljava/lang/String;
     .locals 1
 
-    .line 284
+    .line 287
     iget-object v0, p0, Lcom/iMe/model/wallet/notification/PushNotificationModel$Donation$Out;->status:Ljava/lang/String;
 
     return-object v0
@@ -624,7 +584,7 @@
 .method public final getToWalletAddress()Ljava/lang/String;
     .locals 1
 
-    .line 287
+    .line 290
     iget-object v0, p0, Lcom/iMe/model/wallet/notification/PushNotificationModel$Donation$Out;->toWalletAddress:Ljava/lang/String;
 
     return-object v0
@@ -633,7 +593,7 @@
 .method public getType()Ljava/lang/String;
     .locals 1
 
-    .line 283
+    .line 286
     iget-object v0, p0, Lcom/iMe/model/wallet/notification/PushNotificationModel$Donation$Out;->type:Ljava/lang/String;
 
     return-object v0
@@ -642,7 +602,7 @@
 .method public getUserId()Ljava/lang/String;
     .locals 1
 
-    .line 282
+    .line 285
     iget-object v0, p0, Lcom/iMe/model/wallet/notification/PushNotificationModel$Donation$Out;->userId:Ljava/lang/String;
 
     return-object v0

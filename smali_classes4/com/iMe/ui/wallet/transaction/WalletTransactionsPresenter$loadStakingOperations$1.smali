@@ -30,16 +30,20 @@
 # instance fields
 .field final synthetic $isLoadMore:Z
 
+.field final synthetic $isReload:Z
+
 .field final synthetic this$0:Lcom/iMe/ui/wallet/transaction/WalletTransactionsPresenter;
 
 
 # direct methods
-.method constructor <init>(Lcom/iMe/ui/wallet/transaction/WalletTransactionsPresenter;Z)V
+.method constructor <init>(Lcom/iMe/ui/wallet/transaction/WalletTransactionsPresenter;ZZ)V
     .locals 0
 
     iput-object p1, p0, Lcom/iMe/ui/wallet/transaction/WalletTransactionsPresenter$loadStakingOperations$1;->this$0:Lcom/iMe/ui/wallet/transaction/WalletTransactionsPresenter;
 
     iput-boolean p2, p0, Lcom/iMe/ui/wallet/transaction/WalletTransactionsPresenter$loadStakingOperations$1;->$isLoadMore:Z
+
+    iput-boolean p3, p0, Lcom/iMe/ui/wallet/transaction/WalletTransactionsPresenter$loadStakingOperations$1;->$isReload:Z
 
     const/4 p1, 0x1
 
@@ -53,7 +57,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 154
+    .line 161
     check-cast p1, Lcom/iMe/storage/domain/model/staking/StakingOperationsPaged;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/wallet/transaction/WalletTransactionsPresenter$loadStakingOperations$1;->invoke(Lcom/iMe/storage/domain/model/staking/StakingOperationsPaged;)V
@@ -70,7 +74,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 174
+    .line 183
     invoke-virtual {p1}, Lcom/iMe/storage/domain/model/staking/StakingOperationsPaged;->getOperations()Ljava/util/List;
 
     move-result-object v0
@@ -81,9 +85,9 @@
 
     xor-int/lit8 v0, v0, 0x1
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_2
 
-    .line 175
+    .line 184
     iget-object v0, p0, Lcom/iMe/ui/wallet/transaction/WalletTransactionsPresenter$loadStakingOperations$1;->this$0:Lcom/iMe/ui/wallet/transaction/WalletTransactionsPresenter;
 
     invoke-virtual {p1}, Lcom/iMe/storage/domain/model/staking/StakingOperationsPaged;->getOperations()Ljava/util/List;
@@ -94,7 +98,7 @@
 
     move-result-object v0
 
-    .line 176
+    .line 185
     iget-object v1, p0, Lcom/iMe/ui/wallet/transaction/WalletTransactionsPresenter$loadStakingOperations$1;->this$0:Lcom/iMe/ui/wallet/transaction/WalletTransactionsPresenter;
 
     invoke-virtual {p1}, Lcom/iMe/storage/domain/model/staking/StakingOperationsPaged;->getNextCursor()Ljava/lang/String;
@@ -103,12 +107,11 @@
 
     invoke-static {v1, v2}, Lcom/iMe/ui/wallet/transaction/WalletTransactionsPresenter;->access$setStakingOperationsCursor$p(Lcom/iMe/ui/wallet/transaction/WalletTransactionsPresenter;Ljava/lang/String;)V
 
-    .line 177
+    .line 187
     iget-boolean v1, p0, Lcom/iMe/ui/wallet/transaction/WalletTransactionsPresenter$loadStakingOperations$1;->$isLoadMore:Z
 
     if-eqz v1, :cond_0
 
-    .line 178
     iget-object v1, p0, Lcom/iMe/ui/wallet/transaction/WalletTransactionsPresenter$loadStakingOperations$1;->this$0:Lcom/iMe/ui/wallet/transaction/WalletTransactionsPresenter;
 
     invoke-virtual {v1}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
@@ -121,8 +124,26 @@
 
     goto :goto_0
 
-    .line 180
+    .line 188
     :cond_0
+    iget-boolean v1, p0, Lcom/iMe/ui/wallet/transaction/WalletTransactionsPresenter$loadStakingOperations$1;->$isReload:Z
+
+    if-nez v1, :cond_1
+
+    iget-object v1, p0, Lcom/iMe/ui/wallet/transaction/WalletTransactionsPresenter$loadStakingOperations$1;->this$0:Lcom/iMe/ui/wallet/transaction/WalletTransactionsPresenter;
+
+    invoke-virtual {v1}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
+
+    move-result-object v1
+
+    check-cast v1, Lcom/iMe/ui/wallet/transaction/WalletTransactionsView;
+
+    invoke-interface {v1, v0}, Lcom/iMe/ui/wallet/transaction/WalletTransactionsView;->renderInitialItems(Ljava/util/List;)V
+
+    goto :goto_0
+
+    .line 189
+    :cond_1
     iget-object v1, p0, Lcom/iMe/ui/wallet/transaction/WalletTransactionsPresenter$loadStakingOperations$1;->this$0:Lcom/iMe/ui/wallet/transaction/WalletTransactionsPresenter;
 
     invoke-virtual {v1}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
@@ -135,29 +156,29 @@
 
     goto :goto_0
 
-    .line 182
-    :cond_1
+    .line 191
+    :cond_2
     iget-boolean v0, p0, Lcom/iMe/ui/wallet/transaction/WalletTransactionsPresenter$loadStakingOperations$1;->$isLoadMore:Z
 
-    if-nez v0, :cond_2
+    if-nez v0, :cond_3
 
-    .line 183
+    .line 192
     iget-object v0, p0, Lcom/iMe/ui/wallet/transaction/WalletTransactionsPresenter$loadStakingOperations$1;->this$0:Lcom/iMe/ui/wallet/transaction/WalletTransactionsPresenter;
 
     sget-object v1, Lcom/iMe/model/state/GlobalState$Empty$Common;->INSTANCE:Lcom/iMe/model/state/GlobalState$Empty$Common;
 
     invoke-static {v0, v1}, Lcom/iMe/ui/wallet/transaction/WalletTransactionsPresenter;->access$renderGlobalState(Lcom/iMe/ui/wallet/transaction/WalletTransactionsPresenter;Lcom/iMe/model/state/GlobalState;)V
 
-    .line 185
-    :cond_2
+    .line 194
+    :cond_3
     :goto_0
     invoke-virtual {p1}, Lcom/iMe/storage/domain/model/staking/StakingOperationsPaged;->getNextCursor()Ljava/lang/String;
 
     move-result-object p1
 
-    if-nez p1, :cond_3
+    if-nez p1, :cond_4
 
-    .line 186
+    .line 195
     iget-object p1, p0, Lcom/iMe/ui/wallet/transaction/WalletTransactionsPresenter$loadStakingOperations$1;->this$0:Lcom/iMe/ui/wallet/transaction/WalletTransactionsPresenter;
 
     invoke-virtual {p1}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
@@ -168,6 +189,6 @@
 
     invoke-interface {p1}, Lcom/iMe/ui/base/mvp/LoadMoreView;->onLoadMoreComplete()V
 
-    :cond_3
+    :cond_4
     return-void
 .end method

@@ -1,6 +1,6 @@
 package com.google.android.exoplayer2.source;
 
-import com.google.android.exoplayer2.C0475C;
+import com.google.android.exoplayer2.C0480C;
 import com.google.android.exoplayer2.MediaItem;
 import com.google.android.exoplayer2.Timeline;
 import com.google.android.exoplayer2.source.MediaSource;
@@ -227,7 +227,7 @@ public final class MergingMediaSource extends CompositeMediaSource<Integer> {
                     break;
                 }
                 long durationUs = timelineArr[i2].getPeriod(i, period).getDurationUs();
-                if (durationUs != C0475C.TIME_UNSET) {
+                if (durationUs != C0480C.TIME_UNSET) {
                     long j2 = durationUs + this.periodTimeOffsetsUs[i][i2];
                     if (j == Long.MIN_VALUE || j2 < j) {
                         j = j2;
@@ -266,7 +266,7 @@ public final class MergingMediaSource extends CompositeMediaSource<Integer> {
                 long[] jArr = this.periodDurationsUs;
                 jArr[i2] = longValue == Long.MIN_VALUE ? period.durationUs : longValue;
                 long j = period.durationUs;
-                if (j != C0475C.TIME_UNSET) {
+                if (j != C0480C.TIME_UNSET) {
                     long[] jArr2 = this.windowDurationsUs;
                     int i3 = period.windowIndex;
                     jArr2[i3] = jArr2[i3] - (j - jArr[i2]);
@@ -280,9 +280,9 @@ public final class MergingMediaSource extends CompositeMediaSource<Integer> {
             super.getWindow(i, window, j);
             long j3 = this.windowDurationsUs[i];
             window.durationUs = j3;
-            if (j3 != C0475C.TIME_UNSET) {
+            if (j3 != C0480C.TIME_UNSET) {
                 long j4 = window.defaultPositionUs;
-                if (j4 != C0475C.TIME_UNSET) {
+                if (j4 != C0480C.TIME_UNSET) {
                     j2 = Math.min(j4, j3);
                     window.defaultPositionUs = j2;
                     return window;

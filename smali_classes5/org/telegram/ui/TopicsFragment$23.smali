@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/TopicsFragment;Z)V
     .locals 0
 
-    .line 1986
+    .line 1989
     iput-object p1, p0, Lorg/telegram/ui/TopicsFragment$23;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     iput-boolean p2, p0, Lorg/telegram/ui/TopicsFragment$23;->val$showSearch:Z
@@ -39,10 +39,10 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 2
 
-    .line 1990
+    .line 1993
     invoke-super {p0, p1}, Landroid/animation/AnimatorListenerAdapter;->onAnimationEnd(Landroid/animation/Animator;)V
 
-    .line 1991
+    .line 1994
     iget-object p1, p0, Lorg/telegram/ui/TopicsFragment$23;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     iget-boolean v0, p0, Lorg/telegram/ui/TopicsFragment$23;->val$showSearch:Z
@@ -59,14 +59,14 @@
     :goto_0
     invoke-static {p1, v0}, Lorg/telegram/ui/TopicsFragment;->access$6300(Lorg/telegram/ui/TopicsFragment;F)V
 
-    .line 1992
+    .line 1995
     iget-boolean p1, p0, Lorg/telegram/ui/TopicsFragment$23;->val$showSearch:Z
 
     const/16 v0, 0x8
 
     if-eqz p1, :cond_1
 
-    .line 1993
+    .line 1996
     iget-object p1, p0, Lorg/telegram/ui/TopicsFragment$23;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     invoke-static {p1}, Lorg/telegram/ui/TopicsFragment;->access$6400(Lorg/telegram/ui/TopicsFragment;)Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
@@ -77,7 +77,7 @@
 
     goto :goto_1
 
-    .line 1995
+    .line 1998
     :cond_1
     iget-object p1, p0, Lorg/telegram/ui/TopicsFragment$23;->this$0:Lorg/telegram/ui/TopicsFragment;
 
@@ -93,7 +93,7 @@
 
     invoke-static {p1, v1}, Lorg/telegram/messenger/AndroidUtilities;->setAdjustResizeToNothing(Landroid/app/Activity;I)V
 
-    .line 1996
+    .line 1999
     iget-object p1, p0, Lorg/telegram/ui/TopicsFragment$23;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     invoke-static {p1}, Lorg/telegram/ui/TopicsFragment;->access$2800(Lorg/telegram/ui/TopicsFragment;)Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;
@@ -102,7 +102,7 @@
 
     invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 1997
+    .line 2000
     iget-object p1, p0, Lorg/telegram/ui/TopicsFragment$23;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     const/4 v0, 0x1

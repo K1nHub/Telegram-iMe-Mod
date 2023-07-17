@@ -237,7 +237,7 @@
     const/4 v1, 0x0
 
     :goto_0
-    const-string v2, "realStream already set to %s"
+    const-string/jumbo v2, "realStream already set to %s"
 
     invoke-static {v1, v2, v0}, Lcom/google/common/base/Preconditions;->checkState(ZLjava/lang/String;Ljava/lang/Object;)V
 
@@ -343,7 +343,7 @@
 .method public cancel(Lio/grpc/Status;)V
     .locals 2
 
-    const-string v0, "reason"
+    const-string/jumbo v0, "reason"
 
     .line 280
     invoke-static {p1, v0}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;

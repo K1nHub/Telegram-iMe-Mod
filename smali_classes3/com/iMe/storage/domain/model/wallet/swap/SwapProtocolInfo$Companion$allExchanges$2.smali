@@ -60,7 +60,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 72
+    .line 73
     invoke-virtual {p0}, Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocolInfo$Companion$allExchanges$2;->invoke()Ljava/util/List;
 
     move-result-object v0
@@ -79,7 +79,7 @@
         }
     .end annotation
 
-    .line 72
+    .line 73
     sget-object v0, Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocolInfo;->Companion:Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocolInfo$Companion;
 
     invoke-virtual {v0}, Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocolInfo$Companion;->getSupportedExchanges()Ljava/util/List;
@@ -94,7 +94,7 @@
 
     move-result-object v1
 
-    invoke-virtual {v0}, Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocolInfo$Companion;->getInvisibleExchanges()Ljava/util/List;
+    invoke-static {v0}, Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocolInfo$Companion;->access$getInvisibleExchanges(Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocolInfo$Companion;)Ljava/util/List;
 
     move-result-object v0
 

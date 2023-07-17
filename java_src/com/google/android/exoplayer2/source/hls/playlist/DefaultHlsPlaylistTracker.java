@@ -3,7 +3,7 @@ package com.google.android.exoplayer2.source.hls.playlist;
 import android.net.Uri;
 import android.os.Handler;
 import android.os.SystemClock;
-import com.google.android.exoplayer2.C0475C;
+import com.google.android.exoplayer2.C0480C;
 import com.google.android.exoplayer2.ParserException;
 import com.google.android.exoplayer2.source.LoadEventInfo;
 import com.google.android.exoplayer2.source.MediaLoadData;
@@ -58,7 +58,7 @@ public final class DefaultHlsPlaylistTracker implements HlsPlaylistTracker, Load
         this.playlistStuckTargetDurationCoefficient = d;
         this.listeners = new CopyOnWriteArrayList<>();
         this.playlistBundles = new HashMap<>();
-        this.initialStartTimeUs = C0475C.TIME_UNSET;
+        this.initialStartTimeUs = C0480C.TIME_UNSET;
     }
 
     @Override // com.google.android.exoplayer2.source.hls.playlist.HlsPlaylistTracker
@@ -78,7 +78,7 @@ public final class DefaultHlsPlaylistTracker implements HlsPlaylistTracker, Load
         this.primaryMediaPlaylistUrl = null;
         this.primaryMediaPlaylistSnapshot = null;
         this.multivariantPlaylist = null;
-        this.initialStartTimeUs = C0475C.TIME_UNSET;
+        this.initialStartTimeUs = C0480C.TIME_UNSET;
         this.initialPlaylistLoader.release();
         this.initialPlaylistLoader = null;
         for (MediaPlaylistBundle mediaPlaylistBundle : this.playlistBundles.values()) {
@@ -196,7 +196,7 @@ public final class DefaultHlsPlaylistTracker implements HlsPlaylistTracker, Load
     public Loader.LoadErrorAction onLoadError(ParsingLoadable<HlsPlaylist> parsingLoadable, long j, long j2, IOException iOException, int i) {
         LoadEventInfo loadEventInfo = new LoadEventInfo(parsingLoadable.loadTaskId, parsingLoadable.dataSpec, parsingLoadable.getUri(), parsingLoadable.getResponseHeaders(), j, j2, parsingLoadable.bytesLoaded());
         long retryDelayMsFor = this.loadErrorHandlingPolicy.getRetryDelayMsFor(new LoadErrorHandlingPolicy.LoadErrorInfo(loadEventInfo, new MediaLoadData(parsingLoadable.type), iOException, i));
-        boolean z = retryDelayMsFor == C0475C.TIME_UNSET;
+        boolean z = retryDelayMsFor == C0480C.TIME_UNSET;
         this.eventDispatcher.loadError(loadEventInfo, parsingLoadable.type, iOException, z);
         if (z) {
             this.loadErrorHandlingPolicy.onLoadTaskConcluded(parsingLoadable.loadTaskId);
@@ -436,7 +436,7 @@ public final class DefaultHlsPlaylistTracker implements HlsPlaylistTracker, Load
             LoadErrorHandlingPolicy.LoadErrorInfo loadErrorInfo = new LoadErrorHandlingPolicy.LoadErrorInfo(loadEventInfo, new MediaLoadData(parsingLoadable.type), iOException, i);
             if (DefaultHlsPlaylistTracker.this.notifyPlaylistError(this.playlistUrl, loadErrorInfo, false)) {
                 long retryDelayMsFor = DefaultHlsPlaylistTracker.this.loadErrorHandlingPolicy.getRetryDelayMsFor(loadErrorInfo);
-                if (retryDelayMsFor != C0475C.TIME_UNSET) {
+                if (retryDelayMsFor != C0480C.TIME_UNSET) {
                     loadErrorAction = Loader.createRetryAction(false, retryDelayMsFor);
                 } else {
                     loadErrorAction = Loader.DONT_RETRY_FATAL;
@@ -521,7 +521,7 @@ public final class DefaultHlsPlaylistTracker implements HlsPlaylistTracker, Load
                 }
             }
             this.earliestNextLoadTimeMs = elapsedRealtime + Util.usToMs(j);
-            if (this.playlistSnapshot.partTargetDurationUs != C0475C.TIME_UNSET || this.playlistUrl.equals(DefaultHlsPlaylistTracker.this.primaryMediaPlaylistUrl)) {
+            if (this.playlistSnapshot.partTargetDurationUs != C0480C.TIME_UNSET || this.playlistUrl.equals(DefaultHlsPlaylistTracker.this.primaryMediaPlaylistUrl)) {
                 z2 = true;
             }
             if (!z2 || this.playlistSnapshot.hasEndTag) {
@@ -534,13 +534,13 @@ public final class DefaultHlsPlaylistTracker implements HlsPlaylistTracker, Load
             HlsMediaPlaylist hlsMediaPlaylist = this.playlistSnapshot;
             if (hlsMediaPlaylist != null) {
                 HlsMediaPlaylist.ServerControl serverControl = hlsMediaPlaylist.serverControl;
-                if (serverControl.skipUntilUs != C0475C.TIME_UNSET || serverControl.canBlockReload) {
+                if (serverControl.skipUntilUs != C0480C.TIME_UNSET || serverControl.canBlockReload) {
                     Uri.Builder buildUpon = this.playlistUrl.buildUpon();
                     HlsMediaPlaylist hlsMediaPlaylist2 = this.playlistSnapshot;
                     if (hlsMediaPlaylist2.serverControl.canBlockReload) {
                         buildUpon.appendQueryParameter(BLOCK_MSN_PARAM, String.valueOf(hlsMediaPlaylist2.mediaSequence + hlsMediaPlaylist2.segments.size()));
                         HlsMediaPlaylist hlsMediaPlaylist3 = this.playlistSnapshot;
-                        if (hlsMediaPlaylist3.partTargetDurationUs != C0475C.TIME_UNSET) {
+                        if (hlsMediaPlaylist3.partTargetDurationUs != C0480C.TIME_UNSET) {
                             List<HlsMediaPlaylist.Part> list = hlsMediaPlaylist3.trailingParts;
                             int size = list.size();
                             if (!list.isEmpty() && ((HlsMediaPlaylist.Part) Iterables.getLast(list)).isPreload) {
@@ -550,7 +550,7 @@ public final class DefaultHlsPlaylistTracker implements HlsPlaylistTracker, Load
                         }
                     }
                     HlsMediaPlaylist.ServerControl serverControl2 = this.playlistSnapshot.serverControl;
-                    if (serverControl2.skipUntilUs != C0475C.TIME_UNSET) {
+                    if (serverControl2.skipUntilUs != C0480C.TIME_UNSET) {
                         buildUpon.appendQueryParameter(SKIP_PARAM, serverControl2.canSkipDateRanges ? "v2" : "YES");
                     }
                     return buildUpon.build();

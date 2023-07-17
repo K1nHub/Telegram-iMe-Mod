@@ -22,7 +22,7 @@ final class TranslationRepositoryImpl$translate$2 extends Lambda implements Func
     public final Result<Translation> invoke(List<Translation> translations) {
         String joinToString$default;
         Intrinsics.checkNotNullParameter(translations, "translations");
-        joinToString$default = CollectionsKt___CollectionsKt.joinToString$default(translations, "", null, null, 0, null, new C19291(translations), 30, null);
+        joinToString$default = CollectionsKt___CollectionsKt.joinToString$default(translations, "", null, null, 0, null, new C19361(translations), 30, null);
         Translation translation = (Translation) CollectionsKt.firstOrNull(translations);
         String sourceLang = translation != null ? translation.getSourceLang() : null;
         if (sourceLang == null) {
@@ -35,11 +35,11 @@ final class TranslationRepositoryImpl$translate$2 extends Lambda implements Func
     /* compiled from: TranslationRepositoryImpl.kt */
     /* renamed from: com.iMe.storage.data.repository.translate.TranslationRepositoryImpl$translate$2$1 */
     /* loaded from: classes3.dex */
-    public static final class C19291 extends Lambda implements Function1<Translation, CharSequence> {
+    public static final class C19361 extends Lambda implements Function1<Translation, CharSequence> {
         final /* synthetic */ List<Translation> $translations;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C19291(List<Translation> list) {
+        C19361(List<Translation> list) {
             super(1);
             this.$translations = list;
         }

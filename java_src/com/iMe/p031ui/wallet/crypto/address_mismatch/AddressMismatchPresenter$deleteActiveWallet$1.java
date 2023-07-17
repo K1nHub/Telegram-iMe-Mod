@@ -9,7 +9,7 @@ import kotlin.jvm.internal.Lambda;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: AddressMismatchPresenter.kt */
 /* renamed from: com.iMe.ui.wallet.crypto.address_mismatch.AddressMismatchPresenter$deleteActiveWallet$1 */
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class AddressMismatchPresenter$deleteActiveWallet$1 extends Lambda implements Function1<Result<? extends Boolean>, Unit> {
     final /* synthetic */ long $delayToCloseScreen;
     final /* synthetic */ AddressMismatchPresenter this$0;

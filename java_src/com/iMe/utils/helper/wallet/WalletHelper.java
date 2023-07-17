@@ -12,34 +12,38 @@ import com.iMe.p031ui.wallet.common.WalletRootFragment;
 import com.iMe.storage.domain.manager.auth.AuthManager;
 import com.iMe.storage.domain.manager.crypto.CryptoAccessManager;
 import com.iMe.storage.domain.model.crypto.BlockchainType;
+import com.iMe.storage.domain.utils.p030rx.RxEventBus;
+import com.iMe.storage.domain.utils.p030rx.event.DomainRxEvents;
 import com.iMe.utils.dialogs.DialogUtils;
 import com.iMe.utils.dialogs.DialogsFactoryKt;
 import com.iMe.utils.helper.wallet.AuthHelper;
 import java.util.List;
 import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
+import kotlin.collections.CollectionsKt;
 import kotlin.collections.CollectionsKt__CollectionsKt;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt__StringsKt;
 import org.koin.core.Koin;
 import org.koin.core.component.KoinComponent;
-import org.koin.p043mp.KoinPlatformTools;
+import org.koin.p042mp.KoinPlatformTools;
 import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.C3295R;
+import org.telegram.messenger.C3417R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.browser.Browser;
-import org.telegram.p044ui.ActionBar.BaseFragment;
-import org.telegram.p044ui.ActionBar.INavigationLayout;
-import org.telegram.p044ui.ActionBar.Theme;
-import org.telegram.p044ui.Components.URLSpanNoUnderline;
-import org.telegram.p044ui.LaunchActivity;
+import org.telegram.p043ui.ActionBar.BaseFragment;
+import org.telegram.p043ui.ActionBar.INavigationLayout;
+import org.telegram.p043ui.ActionBar.Theme;
+import org.telegram.p043ui.Components.URLSpanNoUnderline;
+import org.telegram.p043ui.LaunchActivity;
 /* compiled from: WalletHelper.kt */
 /* loaded from: classes4.dex */
 public final class WalletHelper implements KoinComponent {
     public static final WalletHelper INSTANCE;
     private static final Lazy authManager$delegate;
     private static final Lazy cryptoAccessManager$delegate;
+    private static final Lazy rxEventBus$delegate;
     private static final Lazy walletFlowCoordinator$delegate;
 
     private WalletHelper() {
@@ -50,12 +54,16 @@ public final class WalletHelper implements KoinComponent {
         return KoinComponent.DefaultImpls.getKoin(this);
     }
 
+    private final AuthManager getAuthManager() {
+        return (AuthManager) authManager$delegate.getValue();
+    }
+
     private final CryptoAccessManager getCryptoAccessManager() {
         return (CryptoAccessManager) cryptoAccessManager$delegate.getValue();
     }
 
-    private final AuthManager getAuthManager() {
-        return (AuthManager) authManager$delegate.getValue();
+    private final RxEventBus getRxEventBus() {
+        return (RxEventBus) rxEventBus$delegate.getValue();
     }
 
     private final WalletFlowCoordinator getWalletFlowCoordinator() {
@@ -87,15 +95,18 @@ public final class WalletHelper implements KoinComponent {
         Lazy lazy;
         Lazy lazy2;
         Lazy lazy3;
+        Lazy lazy4;
         WalletHelper walletHelper = new WalletHelper();
         INSTANCE = walletHelper;
         KoinPlatformTools koinPlatformTools = KoinPlatformTools.INSTANCE;
         lazy = LazyKt__LazyJVMKt.lazy(koinPlatformTools.defaultLazyMode(), new WalletHelper$special$$inlined$inject$default$1(walletHelper, null, null));
-        cryptoAccessManager$delegate = lazy;
+        authManager$delegate = lazy;
         lazy2 = LazyKt__LazyJVMKt.lazy(koinPlatformTools.defaultLazyMode(), new WalletHelper$special$$inlined$inject$default$2(walletHelper, null, null));
-        authManager$delegate = lazy2;
+        cryptoAccessManager$delegate = lazy2;
         lazy3 = LazyKt__LazyJVMKt.lazy(koinPlatformTools.defaultLazyMode(), new WalletHelper$special$$inlined$inject$default$3(walletHelper, null, null));
-        walletFlowCoordinator$delegate = lazy3;
+        rxEventBus$delegate = lazy3;
+        lazy4 = LazyKt__LazyJVMKt.lazy(koinPlatformTools.defaultLazyMode(), new WalletHelper$special$$inlined$inject$default$4(walletHelper, null, null));
+        walletFlowCoordinator$delegate = lazy4;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -122,6 +133,12 @@ public final class WalletHelper implements KoinComponent {
     /* JADX INFO: Access modifiers changed from: private */
     public static final void safeRunWalletScreen$lambda$2(BaseFragment this_safeRunWalletScreen) {
         Intrinsics.checkNotNullParameter(this_safeRunWalletScreen, "$this_safeRunWalletScreen");
+        List<BaseFragment> fragmentStack = this_safeRunWalletScreen.getParentLayout().getFragmentStack();
+        Intrinsics.checkNotNullExpressionValue(fragmentStack, "parentLayout.fragmentStack");
+        if (CollectionsKt.lastOrNull((List<? extends Object>) fragmentStack) instanceof WalletRootFragment) {
+            INSTANCE.getRxEventBus().publish(DomainRxEvents.SelectWalletCryptoTab.INSTANCE);
+            return;
+        }
         WalletFlowCoordinator walletFlowCoordinator = INSTANCE.getWalletFlowCoordinator();
         INavigationLayout parentLayout = this_safeRunWalletScreen.getParentLayout();
         Intrinsics.checkNotNullExpressionValue(parentLayout, "parentLayout");
@@ -167,7 +184,7 @@ public final class WalletHelper implements KoinComponent {
     }
 
     private final void showAppUpdateDialog(final LaunchActivity launchActivity) {
-        DialogUtils.createDialog$default(launchActivity, new DialogModel(LocaleController.getInternalString(C3295R.string.wallet_app_update_dialog_title), LocaleController.getInternalString(C3295R.string.wallet_app_update_dialog_description), LocaleController.getInternalString(C3295R.string.common_cancel), LocaleController.getInternalString(C3295R.string.wallet_app_update_dialog_action_btn)), new Callbacks$Callback() { // from class: com.iMe.utils.helper.wallet.WalletHelper$$ExternalSyntheticLambda2
+        DialogUtils.createDialog$default(launchActivity, new DialogModel(LocaleController.getInternalString(C3417R.string.wallet_app_update_dialog_title), LocaleController.getInternalString(C3417R.string.wallet_app_update_dialog_description), LocaleController.getInternalString(C3417R.string.common_cancel), LocaleController.getInternalString(C3417R.string.wallet_app_update_dialog_action_btn)), new Callbacks$Callback() { // from class: com.iMe.utils.helper.wallet.WalletHelper$$ExternalSyntheticLambda2
             @Override // com.iMe.fork.utils.Callbacks$Callback
             public final void invoke() {
                 WalletHelper.showAppUpdateDialog$lambda$4(LaunchActivity.this);
@@ -182,11 +199,11 @@ public final class WalletHelper implements KoinComponent {
     }
 
     private final void showAuthDialog(final LaunchActivity launchActivity, final Callbacks$Callback callbacks$Callback) {
-        int i = C3295R.raw.fork_auth;
-        String internalString = LocaleController.getInternalString(C3295R.string.auth_dialog_title);
+        int i = C3417R.raw.fork_auth;
+        String internalString = LocaleController.getInternalString(C3417R.string.auth_dialog_title);
         Intrinsics.checkNotNullExpressionValue(internalString, "getInternalString(R.string.auth_dialog_title)");
         SpannableStringBuilder authSpannableStringBuilder = getAuthSpannableStringBuilder();
-        String internalString2 = LocaleController.getInternalString(C3295R.string.common_next);
+        String internalString2 = LocaleController.getInternalString(C3417R.string.common_next);
         Intrinsics.checkNotNullExpressionValue(internalString2, "getInternalString(R.string.common_next)");
         DialogsFactoryKt.createDialogWithAnimation(launchActivity, new AnimatedSpannableDialogModel(i, internalString, authSpannableStringBuilder, internalString2), new Callbacks$Callback() { // from class: com.iMe.utils.helper.wallet.WalletHelper$$ExternalSyntheticLambda3
             @Override // com.iMe.fork.utils.Callbacks$Callback
@@ -202,14 +219,14 @@ public final class WalletHelper implements KoinComponent {
         Intrinsics.checkNotNullParameter(activateClickAction, "$activateClickAction");
         AuthHelper.Delegate authDelegate = this_showAuthDialog.getAuthDelegate(activateClickAction);
         Intrinsics.checkNotNullExpressionValue(authDelegate, "getAuthDelegate(activateClickAction)");
-        AuthHelper.auth(authDelegate, true);
+        AuthHelper.auth$default(authDelegate, true, 0, 4, null);
     }
 
     private final SpannableStringBuilder getAuthSpannableStringBuilder() {
         int indexOf$default;
         int lastIndexOf$default;
         List<Object> listOf;
-        String descriptionText = LocaleController.getInternalString(C3295R.string.auth_dialog_description);
+        String descriptionText = LocaleController.getInternalString(C3417R.string.auth_dialog_description);
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(descriptionText);
         Intrinsics.checkNotNullExpressionValue(descriptionText, "descriptionText");
         indexOf$default = StringsKt__StringsKt.indexOf$default((CharSequence) descriptionText, "*", 0, false, 6, (Object) null);
@@ -217,7 +234,7 @@ public final class WalletHelper implements KoinComponent {
         if (indexOf$default != -1 && lastIndexOf$default != -1 && indexOf$default != lastIndexOf$default) {
             spannableStringBuilder.replace(lastIndexOf$default, lastIndexOf$default + 1, (CharSequence) "");
             spannableStringBuilder.replace(indexOf$default, indexOf$default + 1, (CharSequence) "");
-            listOf = CollectionsKt__CollectionsKt.listOf((Object[]) new Object[]{new URLSpanNoUnderline(LocaleController.getString("PrivacyPolicyUrl", C3295R.string.PrivacyPolicyUrl)), new ForegroundColorSpan(Theme.getColor(Theme.key_windowBackgroundWhiteLinkText))});
+            listOf = CollectionsKt__CollectionsKt.listOf((Object[]) new Object[]{new URLSpanNoUnderline(LocaleController.getString("PrivacyPolicyUrl", C3417R.string.PrivacyPolicyUrl)), new ForegroundColorSpan(Theme.getColor(Theme.key_windowBackgroundWhiteLinkText))});
             for (Object obj : listOf) {
                 spannableStringBuilder.setSpan(obj, indexOf$default, lastIndexOf$default - 1, 33);
             }

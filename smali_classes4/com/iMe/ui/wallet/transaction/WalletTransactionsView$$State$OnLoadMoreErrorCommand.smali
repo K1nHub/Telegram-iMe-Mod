@@ -26,7 +26,7 @@
 .method constructor <init>(Lcom/iMe/ui/wallet/transaction/WalletTransactionsView$$State;)V
     .locals 1
 
-    .line 457
+    .line 484
     const-class p1, Lmoxy/viewstate/strategy/AddToEndSingleStrategy;
 
     const-string v0, "onLoadMoreError"
@@ -41,7 +41,7 @@
 .method public apply(Lcom/iMe/ui/wallet/transaction/WalletTransactionsView;)V
     .locals 0
 
-    .line 462
+    .line 489
     invoke-interface {p1}, Lcom/iMe/ui/base/mvp/LoadMoreView;->onLoadMoreError()V
 
     return-void
@@ -50,7 +50,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 455
+    .line 482
     check-cast p1, Lcom/iMe/ui/wallet/transaction/WalletTransactionsView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/wallet/transaction/WalletTransactionsView$$State$OnLoadMoreErrorCommand;->apply(Lcom/iMe/ui/wallet/transaction/WalletTransactionsView;)V

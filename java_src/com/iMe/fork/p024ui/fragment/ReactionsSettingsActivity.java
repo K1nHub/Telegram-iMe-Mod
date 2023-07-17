@@ -35,27 +35,27 @@ import kotlin.reflect.KProperty;
 import kotlin.sequences.Sequence;
 import kotlin.sequences.SequencesKt___SequencesKt;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3295R;
+import org.telegram.messenger.C3417R;
 import org.telegram.messenger.DocumentObject;
 import org.telegram.messenger.ImageLocation;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.SharedConfig;
-import org.telegram.p044ui.ActionBar.BaseFragment;
-import org.telegram.p044ui.ActionBar.BottomSheet;
-import org.telegram.p044ui.ActionBar.C3361ActionBar;
-import org.telegram.p044ui.ActionBar.Theme;
-import org.telegram.p044ui.ActionBar.ThemeDescription;
-import org.telegram.p044ui.Cells.HeaderCell;
-import org.telegram.p044ui.Cells.NotificationsCheckCell;
-import org.telegram.p044ui.Cells.TextCheckBoxCell;
-import org.telegram.p044ui.Cells.TextCheckCell;
-import org.telegram.p044ui.Cells.TextInfoPrivacyCell;
-import org.telegram.p044ui.Cells.TextSettingsCell;
-import org.telegram.p044ui.Components.BackupImageView;
-import org.telegram.p044ui.Components.LayoutHelper;
-import org.telegram.p044ui.Components.RecyclerListView;
-import org.telegram.p044ui.ReactionsDoubleTapManageActivity;
+import org.telegram.p043ui.ActionBar.BaseFragment;
+import org.telegram.p043ui.ActionBar.BottomSheet;
+import org.telegram.p043ui.ActionBar.C3484ActionBar;
+import org.telegram.p043ui.ActionBar.Theme;
+import org.telegram.p043ui.ActionBar.ThemeDescription;
+import org.telegram.p043ui.Cells.HeaderCell;
+import org.telegram.p043ui.Cells.NotificationsCheckCell;
+import org.telegram.p043ui.Cells.TextCheckBoxCell;
+import org.telegram.p043ui.Cells.TextCheckCell;
+import org.telegram.p043ui.Cells.TextInfoPrivacyCell;
+import org.telegram.p043ui.Cells.TextSettingsCell;
+import org.telegram.p043ui.Components.BackupImageView;
+import org.telegram.p043ui.Components.LayoutHelper;
+import org.telegram.p043ui.Components.RecyclerListView;
+import org.telegram.p043ui.ReactionsDoubleTapManageActivity;
 import org.telegram.tgnet.TLRPC$TL_availableReaction;
 /* compiled from: ReactionsSettingsActivity.kt */
 /* renamed from: com.iMe.fork.ui.fragment.ReactionsSettingsActivity */
@@ -96,30 +96,30 @@ public final class ReactionsSettingsActivity extends MvpFragment {
         return rootView;
     }
 
-    @Override // com.iMe.p031ui.base.mvp.MvpFragment, org.telegram.p044ui.ActionBar.BaseFragment
+    @Override // com.iMe.p031ui.base.mvp.MvpFragment, org.telegram.p043ui.ActionBar.BaseFragment
     public void onResume() {
         super.onResume();
         getListAdapter().notifyDataSetChanged();
     }
 
-    @Override // org.telegram.p044ui.ActionBar.BaseFragment
+    @Override // org.telegram.p043ui.ActionBar.BaseFragment
     public ArrayList<ThemeDescription> getThemeDescriptions() {
         ArrayList<ThemeDescription> arrayListOf;
-        C3361ActionBar c3361ActionBar = this.actionBar;
+        C3484ActionBar c3484ActionBar = this.actionBar;
         int i = ThemeDescription.FLAG_BACKGROUND;
         int i2 = Theme.key_actionBarDefault;
         int i3 = Theme.key_windowBackgroundWhiteBlackText;
-        arrayListOf = CollectionsKt__CollectionsKt.arrayListOf(new ThemeDescription(this.fragmentView, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, Theme.key_windowBackgroundGray), new ThemeDescription(c3361ActionBar, i, null, null, null, null, i2), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_ITEMSCOLOR, null, null, null, null, Theme.key_actionBarDefaultIcon), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_TITLECOLOR, null, null, null, null, Theme.key_actionBarDefaultTitle), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SELECTORCOLOR, null, null, null, null, Theme.key_actionBarDefaultSelector), new ThemeDescription(getListView(), ThemeDescription.FLAG_LISTGLOWCOLOR, null, null, null, null, i2), new ThemeDescription(getListView(), ThemeDescription.FLAG_SELECTOR, null, null, null, null, Theme.key_listSelector), new ThemeDescription(getListView(), 0, new Class[]{View.class}, Theme.dividerPaint, null, null, Theme.key_divider), new ThemeDescription(getListView(), ThemeDescription.FLAG_CELLBACKGROUNDCOLOR, new Class[]{TextCheckCell.class, NotificationsCheckCell.class, TextSettingsCell.class}, null, null, null, Theme.key_windowBackgroundWhite), new ThemeDescription(getListView(), ThemeDescription.FLAG_CELLBACKGROUNDCOLOR | ThemeDescription.FLAG_CHECKTAG, new Class[]{TextCheckCell.class}, null, null, null, Theme.key_windowBackgroundChecked), new ThemeDescription(getListView(), ThemeDescription.FLAG_CELLBACKGROUNDCOLOR | ThemeDescription.FLAG_CHECKTAG, new Class[]{TextCheckCell.class}, null, null, null, Theme.key_windowBackgroundUnchecked), new ThemeDescription(getListView(), ThemeDescription.FLAG_CHECKTAG, new Class[]{TextCheckCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_windowBackgroundCheckText), new ThemeDescription(getListView(), ThemeDescription.FLAG_CHECKTAG, new Class[]{TextCheckCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, i3), new ThemeDescription(getListView(), 0, new Class[]{TextCheckCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_switchTrackBlue), new ThemeDescription(getListView(), 0, new Class[]{TextCheckCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_switchTrackBlueChecked), new ThemeDescription(getListView(), 0, new Class[]{TextCheckCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_switchTrackBlueThumb), new ThemeDescription(getListView(), 0, new Class[]{TextCheckCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_switchTrackBlueThumbChecked), new ThemeDescription(getListView(), 0, new Class[]{TextCheckCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_switchTrackBlueSelector), new ThemeDescription(getListView(), 0, new Class[]{TextCheckCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_switchTrackBlueSelectorChecked), new ThemeDescription(getListView(), 0, new Class[]{HeaderCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_windowBackgroundWhiteBlueHeader), new ThemeDescription(getListView(), 0, new Class[]{NotificationsCheckCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, i3), new ThemeDescription(getListView(), 0, new Class[]{NotificationsCheckCell.class}, new String[]{"valueTextView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_windowBackgroundWhiteGrayText2), new ThemeDescription(getListView(), 0, new Class[]{NotificationsCheckCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_switchTrack), new ThemeDescription(getListView(), 0, new Class[]{NotificationsCheckCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_switchTrackChecked), new ThemeDescription(getListView(), 0, new Class[]{TextSettingsCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, i3), new ThemeDescription(getListView(), 0, new Class[]{TextSettingsCell.class}, new String[]{"valueTextView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_windowBackgroundWhiteValueText));
+        arrayListOf = CollectionsKt__CollectionsKt.arrayListOf(new ThemeDescription(this.fragmentView, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, Theme.key_windowBackgroundGray), new ThemeDescription(c3484ActionBar, i, null, null, null, null, i2), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_ITEMSCOLOR, null, null, null, null, Theme.key_actionBarDefaultIcon), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_TITLECOLOR, null, null, null, null, Theme.key_actionBarDefaultTitle), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SELECTORCOLOR, null, null, null, null, Theme.key_actionBarDefaultSelector), new ThemeDescription(getListView(), ThemeDescription.FLAG_LISTGLOWCOLOR, null, null, null, null, i2), new ThemeDescription(getListView(), ThemeDescription.FLAG_SELECTOR, null, null, null, null, Theme.key_listSelector), new ThemeDescription(getListView(), 0, new Class[]{View.class}, Theme.dividerPaint, null, null, Theme.key_divider), new ThemeDescription(getListView(), ThemeDescription.FLAG_CELLBACKGROUNDCOLOR, new Class[]{TextCheckCell.class, NotificationsCheckCell.class, TextSettingsCell.class}, null, null, null, Theme.key_windowBackgroundWhite), new ThemeDescription(getListView(), ThemeDescription.FLAG_CELLBACKGROUNDCOLOR | ThemeDescription.FLAG_CHECKTAG, new Class[]{TextCheckCell.class}, null, null, null, Theme.key_windowBackgroundChecked), new ThemeDescription(getListView(), ThemeDescription.FLAG_CELLBACKGROUNDCOLOR | ThemeDescription.FLAG_CHECKTAG, new Class[]{TextCheckCell.class}, null, null, null, Theme.key_windowBackgroundUnchecked), new ThemeDescription(getListView(), ThemeDescription.FLAG_CHECKTAG, new Class[]{TextCheckCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_windowBackgroundCheckText), new ThemeDescription(getListView(), ThemeDescription.FLAG_CHECKTAG, new Class[]{TextCheckCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, i3), new ThemeDescription(getListView(), 0, new Class[]{TextCheckCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_switchTrackBlue), new ThemeDescription(getListView(), 0, new Class[]{TextCheckCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_switchTrackBlueChecked), new ThemeDescription(getListView(), 0, new Class[]{TextCheckCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_switchTrackBlueThumb), new ThemeDescription(getListView(), 0, new Class[]{TextCheckCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_switchTrackBlueThumbChecked), new ThemeDescription(getListView(), 0, new Class[]{TextCheckCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_switchTrackBlueSelector), new ThemeDescription(getListView(), 0, new Class[]{TextCheckCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_switchTrackBlueSelectorChecked), new ThemeDescription(getListView(), 0, new Class[]{HeaderCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_windowBackgroundWhiteBlueHeader), new ThemeDescription(getListView(), 0, new Class[]{NotificationsCheckCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, i3), new ThemeDescription(getListView(), 0, new Class[]{NotificationsCheckCell.class}, new String[]{"valueTextView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_windowBackgroundWhiteGrayText2), new ThemeDescription(getListView(), 0, new Class[]{NotificationsCheckCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_switchTrack), new ThemeDescription(getListView(), 0, new Class[]{NotificationsCheckCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_switchTrackChecked), new ThemeDescription(getListView(), 0, new Class[]{TextSettingsCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, i3), new ThemeDescription(getListView(), 0, new Class[]{TextSettingsCell.class}, new String[]{"valueTextView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_windowBackgroundWhiteValueText));
         return arrayListOf;
     }
 
     private final void setupActionBar() {
-        C3361ActionBar c3361ActionBar = this.actionBar;
-        c3361ActionBar.setBackButtonImage(C3295R.C3297drawable.ic_ab_back);
-        c3361ActionBar.setAllowOverlayTitle(true);
-        c3361ActionBar.setTitle(LocaleController.getString("Reactions", C3295R.string.Reactions));
-        c3361ActionBar.setActionBarMenuOnItemClick(new C3361ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.fork.ui.fragment.ReactionsSettingsActivity$setupActionBar$1$1
-            @Override // org.telegram.p044ui.ActionBar.C3361ActionBar.ActionBarMenuOnItemClick
+        C3484ActionBar c3484ActionBar = this.actionBar;
+        c3484ActionBar.setBackButtonImage(C3417R.C3419drawable.ic_ab_back);
+        c3484ActionBar.setAllowOverlayTitle(true);
+        c3484ActionBar.setTitle(LocaleController.getString("Reactions", C3417R.string.Reactions));
+        c3484ActionBar.setActionBarMenuOnItemClick(new C3484ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.fork.ui.fragment.ReactionsSettingsActivity$setupActionBar$1$1
+            @Override // org.telegram.p043ui.ActionBar.C3484ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
                     ReactionsSettingsActivity.this.finishFragment();
@@ -142,17 +142,17 @@ public final class ReactionsSettingsActivity extends MvpFragment {
         recyclerListView.setLayoutManager(new LinearLayoutManager(getParentActivity()));
         recyclerListView.setAdapter(getListAdapter());
         recyclerListView.setOnItemClickListener(new RecyclerListView.OnItemClickListenerExtended() { // from class: com.iMe.fork.ui.fragment.ReactionsSettingsActivity$$ExternalSyntheticLambda3
-            @Override // org.telegram.p044ui.Components.RecyclerListView.OnItemClickListenerExtended
+            @Override // org.telegram.p043ui.Components.RecyclerListView.OnItemClickListenerExtended
             public /* synthetic */ boolean hasDoubleTap(View view, int i) {
                 return RecyclerListView.OnItemClickListenerExtended.CC.$default$hasDoubleTap(this, view, i);
             }
 
-            @Override // org.telegram.p044ui.Components.RecyclerListView.OnItemClickListenerExtended
+            @Override // org.telegram.p043ui.Components.RecyclerListView.OnItemClickListenerExtended
             public /* synthetic */ void onDoubleTap(View view, int i, float f, float f2) {
                 RecyclerListView.OnItemClickListenerExtended.CC.$default$onDoubleTap(this, view, i, f, f2);
             }
 
-            @Override // org.telegram.p044ui.Components.RecyclerListView.OnItemClickListenerExtended
+            @Override // org.telegram.p043ui.Components.RecyclerListView.OnItemClickListenerExtended
             public final void onItemClick(View view, int i, float f, float f2) {
                 ReactionsSettingsActivity.initListView$lambda$5$lambda$4(ReactionsSettingsActivity.this, view, i, f, f2);
             }
@@ -200,7 +200,7 @@ public final class ReactionsSettingsActivity extends MvpFragment {
         int collectionSizeOrDefault;
         int lastIndex;
         final BottomSheet.Builder builder = new BottomSheet.Builder(getParentActivity());
-        builder.setTitle(LocaleController.getInternalString(C3295R.string.settings_interface_message_popup_items), true);
+        builder.setTitle(LocaleController.getInternalString(C3417R.string.settings_interface_message_popup_items), true);
         boolean z = false;
         builder.setApplyBottomPadding(false);
         FrameLayout frameLayout = new FrameLayout(getParentActivity());
@@ -243,7 +243,7 @@ public final class ReactionsSettingsActivity extends MvpFragment {
         frameLayout2.setPadding(m54dp, m54dp, m54dp, m54dp);
         TextView textView = new TextView(getParentActivity());
         textView.setGravity(17);
-        String string = LocaleController.getString("Cancel", C3295R.string.Cancel);
+        String string = LocaleController.getString("Cancel", C3417R.string.Cancel);
         Intrinsics.checkNotNullExpressionValue(string, "getString(\"Cancel\", R.string.Cancel)");
         Locale locale = Locale.ROOT;
         String upperCase = string.toUpperCase(locale);
@@ -263,7 +263,7 @@ public final class ReactionsSettingsActivity extends MvpFragment {
         frameLayout2.addView(textView, LayoutHelper.createFrame(-2, 36, 8388659));
         TextView textView2 = new TextView(getParentActivity());
         textView2.setGravity(17);
-        String string2 = LocaleController.getString("Save", C3295R.string.Save);
+        String string2 = LocaleController.getString("Save", C3417R.string.Save);
         Intrinsics.checkNotNullExpressionValue(string2, "getString(\"Save\", R.string.Save)");
         String upperCase2 = string2.toUpperCase(locale);
         Intrinsics.checkNotNullExpressionValue(upperCase2, "this as java.lang.String).toUpperCase(Locale.ROOT)");
@@ -313,8 +313,8 @@ public final class ReactionsSettingsActivity extends MvpFragment {
         Intrinsics.checkNotNullParameter(builder, "$builder");
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         asSequence = CollectionsKt___CollectionsKt.asSequence(cells);
-        filter = SequencesKt___SequencesKt.filter(asSequence, C1521xecddff80.INSTANCE);
-        map = SequencesKt___SequencesKt.map(filter, C1522xecddff81.INSTANCE);
+        filter = SequencesKt___SequencesKt.filter(asSequence, C1532xecddff80.INSTANCE);
+        map = SequencesKt___SequencesKt.map(filter, C1533xecddff81.INSTANCE);
         set = SequencesKt___SequencesKt.toSet(map);
         builder.getDismissRunnable().run();
         SharedConfig.setSelectedDialogTypesForMessagePopupReactions(set);
@@ -374,7 +374,7 @@ public final class ReactionsSettingsActivity extends MvpFragment {
             return i == ReactionsSettingsActivity.this.enableRow ? IdFabric$ViewTypes.TEXT_CHECK_CELL : i == ReactionsSettingsActivity.this.enableSectionRow ? IdFabric$ViewTypes.TEXT_INFO_PRIVACY_CELL : i == ReactionsSettingsActivity.this.messagePopupRow ? IdFabric$ViewTypes.NOTIFICATIONS_CHECK_CELL : IdFabric$ViewTypes.TEXT_SETTINGS_CELL;
         }
 
-        @Override // org.telegram.p044ui.Components.RecyclerListView.SelectionAdapter
+        @Override // org.telegram.p043ui.Components.RecyclerListView.SelectionAdapter
         public boolean isEnabled(RecyclerView.ViewHolder holder) {
             Intrinsics.checkNotNullParameter(holder, "holder");
             return ReactionsSettingsActivity.this.isClickableViewType(holder.getItemViewType());
@@ -415,18 +415,18 @@ public final class ReactionsSettingsActivity extends MvpFragment {
             if (itemViewType == IdFabric$ViewTypes.TEXT_CHECK_CELL && (view instanceof TextCheckCell)) {
                 TextCheckCell textCheckCell = (TextCheckCell) view;
                 if (i == ReactionsSettingsActivity.this.enableRow) {
-                    textCheckCell.setTextAndCheck(LocaleController.getString("EnableReactions", C3295R.string.EnableReactions), SharedConfig.isReactionsEnabled, needDivider);
+                    textCheckCell.setTextAndCheck(LocaleController.getString("EnableReactions", C3417R.string.EnableReactions), SharedConfig.isReactionsEnabled, needDivider);
                 }
             } else if (itemViewType == IdFabric$ViewTypes.TEXT_INFO_PRIVACY_CELL && (view instanceof TextInfoPrivacyCell)) {
                 ReactionsSettingsActivity reactionsSettingsActivity = ReactionsSettingsActivity.this;
                 TextInfoPrivacyCell textInfoPrivacyCell = (TextInfoPrivacyCell) view;
                 if (i == reactionsSettingsActivity.enableSectionRow && !SharedConfig.isReactionsEnabled) {
-                    textInfoPrivacyCell.setBackground(Theme.getThemedDrawable(reactionsSettingsActivity.getParentActivity(), C3295R.C3297drawable.greydivider_bottom, Theme.key_windowBackgroundGrayShadow));
-                    textInfoPrivacyCell.setText(LocaleController.getInternalString(C3295R.string.settings_reactions_enable_hint));
+                    textInfoPrivacyCell.setBackground(Theme.getThemedDrawable(reactionsSettingsActivity.getParentActivity(), C3417R.C3419drawable.greydivider_bottom, Theme.key_windowBackgroundGrayShadow));
+                    textInfoPrivacyCell.setText(LocaleController.getInternalString(C3417R.string.settings_reactions_enable_hint));
                     textInfoPrivacyCell.setFixedSize(0);
                     return;
                 }
-                textInfoPrivacyCell.setBackground(Theme.getThemedDrawable(reactionsSettingsActivity.getParentActivity(), C3295R.C3297drawable.greydivider, Theme.key_windowBackgroundGrayShadow));
+                textInfoPrivacyCell.setBackground(Theme.getThemedDrawable(reactionsSettingsActivity.getParentActivity(), C3417R.C3419drawable.greydivider, Theme.key_windowBackgroundGrayShadow));
                 textInfoPrivacyCell.setText(null);
                 textInfoPrivacyCell.setFixedSize(12);
             } else if (itemViewType == IdFabric$ViewTypes.NOTIFICATIONS_CHECK_CELL && (view instanceof NotificationsCheckCell)) {
@@ -436,17 +436,17 @@ public final class ReactionsSettingsActivity extends MvpFragment {
                 List<String> mapEnumsToTitles = companion.mapEnumsToTitles(selectedDialogTypesForMessagePopupReactions);
                 boolean z = !mapEnumsToTitles.isEmpty();
                 NotificationsCheckCell notificationsCheckCell = (NotificationsCheckCell) view;
-                String internalString2 = LocaleController.getInternalString(C3295R.string.settings_tools_message_popup_reactions);
+                String internalString2 = LocaleController.getInternalString(C3417R.string.settings_tools_message_popup_reactions);
                 if (z) {
                     internalString = TextUtils.join(", ", mapEnumsToTitles);
                 } else {
-                    internalString = LocaleController.getInternalString(C3295R.string.common_off);
+                    internalString = LocaleController.getInternalString(C3417R.string.common_off);
                 }
                 notificationsCheckCell.setTextAndValueAndCheck(internalString2, internalString, z, needDivider);
             } else if (itemViewType == IdFabric$ViewTypes.TEXT_SETTINGS_CELL && (view instanceof TextSettingsCell)) {
                 ReactionsSettingsActivity reactionsSettingsActivity2 = ReactionsSettingsActivity.this;
                 TextSettingsCell textSettingsCell = (TextSettingsCell) view;
-                textSettingsCell.setText(LocaleController.getString("DoubleTapSetting", C3295R.string.DoubleTapSetting), needDivider);
+                textSettingsCell.setText(LocaleController.getString("DoubleTapSetting", C3417R.string.DoubleTapSetting), needDivider);
                 if (reactionsSettingsActivity2.getForkCommonController().isQuickReactionEnabled()) {
                     BackupImageView valueBackupImageView = textSettingsCell.getValueBackupImageView();
                     Intrinsics.checkNotNullExpressionValue(valueBackupImageView, "valueBackupImageView");
@@ -456,7 +456,7 @@ public final class ReactionsSettingsActivity extends MvpFragment {
                     BackupImageView valueBackupImageView2 = textSettingsCell.getValueBackupImageView();
                     Intrinsics.checkNotNullExpressionValue(valueBackupImageView2, "valueBackupImageView");
                     ViewExtKt.gone$default(valueBackupImageView2, false, 1, null);
-                    textSettingsCell.setValue(LocaleController.getInternalString(C3295R.string.common_off));
+                    textSettingsCell.setValue(LocaleController.getInternalString(C3417R.string.common_off));
                 }
                 String doubleTapReaction = MediaDataController.getInstance(((BaseFragment) reactionsSettingsActivity2).currentAccount).getDoubleTapReaction();
                 if (doubleTapReaction == null || (tLRPC$TL_availableReaction = MediaDataController.getInstance(((BaseFragment) reactionsSettingsActivity2).currentAccount).getReactionsMap().get(doubleTapReaction)) == null) {

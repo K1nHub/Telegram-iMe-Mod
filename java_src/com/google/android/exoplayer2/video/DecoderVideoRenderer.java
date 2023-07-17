@@ -4,7 +4,7 @@ import android.os.Handler;
 import android.os.SystemClock;
 import android.view.Surface;
 import com.google.android.exoplayer2.BaseRenderer;
-import com.google.android.exoplayer2.C0475C;
+import com.google.android.exoplayer2.C0480C;
 import com.google.android.exoplayer2.ExoPlaybackException;
 import com.google.android.exoplayer2.Format;
 import com.google.android.exoplayer2.FormatHolder;
@@ -97,7 +97,7 @@ public abstract class DecoderVideoRenderer extends BaseRenderer {
         super(2);
         this.allowedJoiningTimeMs = j;
         this.maxDroppedFramesToNotify = i;
-        this.joiningDeadlineMs = C0475C.TIME_UNSET;
+        this.joiningDeadlineMs = C0480C.TIME_UNSET;
         clearReportedVideoSize();
         this.formatQueue = new TimedValueQueue<>();
         this.flagsOnlyBuffer = DecoderInputBuffer.newNoDataInstance();
@@ -152,15 +152,15 @@ public abstract class DecoderVideoRenderer extends BaseRenderer {
     @Override // com.google.android.exoplayer2.Renderer
     public boolean isReady() {
         if (this.inputFormat != null && ((isSourceReady() || this.outputBuffer != null) && (this.renderedFirstFrameAfterReset || !hasOutput()))) {
-            this.joiningDeadlineMs = C0475C.TIME_UNSET;
+            this.joiningDeadlineMs = C0480C.TIME_UNSET;
             return true;
-        } else if (this.joiningDeadlineMs == C0475C.TIME_UNSET) {
+        } else if (this.joiningDeadlineMs == C0480C.TIME_UNSET) {
             return false;
         } else {
             if (SystemClock.elapsedRealtime() < this.joiningDeadlineMs) {
                 return true;
             }
-            this.joiningDeadlineMs = C0475C.TIME_UNSET;
+            this.joiningDeadlineMs = C0480C.TIME_UNSET;
             return false;
         }
     }
@@ -190,7 +190,7 @@ public abstract class DecoderVideoRenderer extends BaseRenderer {
         this.inputStreamEnded = false;
         this.outputStreamEnded = false;
         clearRenderedFirstFrame();
-        this.initialPositionUs = C0475C.TIME_UNSET;
+        this.initialPositionUs = C0480C.TIME_UNSET;
         this.consecutiveDroppedFrameCount = 0;
         if (this.decoder != null) {
             flushDecoder();
@@ -198,7 +198,7 @@ public abstract class DecoderVideoRenderer extends BaseRenderer {
         if (z) {
             setJoiningDeadlineMs();
         } else {
-            this.joiningDeadlineMs = C0475C.TIME_UNSET;
+            this.joiningDeadlineMs = C0480C.TIME_UNSET;
         }
         this.formatQueue.clear();
     }
@@ -212,7 +212,7 @@ public abstract class DecoderVideoRenderer extends BaseRenderer {
 
     @Override // com.google.android.exoplayer2.BaseRenderer
     protected void onStopped() {
-        this.joiningDeadlineMs = C0475C.TIME_UNSET;
+        this.joiningDeadlineMs = C0480C.TIME_UNSET;
         maybeNotifyDroppedFrames();
     }
 
@@ -533,7 +533,7 @@ public abstract class DecoderVideoRenderer extends BaseRenderer {
     }
 
     private boolean processOutputBuffer(long j, long j2) throws ExoPlaybackException, DecoderException {
-        if (this.initialPositionUs == C0475C.TIME_UNSET) {
+        if (this.initialPositionUs == C0480C.TIME_UNSET) {
             this.initialPositionUs = j;
         }
         long j3 = this.outputBuffer.timeUs - j;
@@ -592,7 +592,7 @@ public abstract class DecoderVideoRenderer extends BaseRenderer {
     }
 
     private void setJoiningDeadlineMs() {
-        this.joiningDeadlineMs = this.allowedJoiningTimeMs > 0 ? SystemClock.elapsedRealtime() + this.allowedJoiningTimeMs : C0475C.TIME_UNSET;
+        this.joiningDeadlineMs = this.allowedJoiningTimeMs > 0 ? SystemClock.elapsedRealtime() + this.allowedJoiningTimeMs : C0480C.TIME_UNSET;
     }
 
     private void clearRenderedFirstFrame() {

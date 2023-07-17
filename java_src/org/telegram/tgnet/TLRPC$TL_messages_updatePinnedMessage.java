@@ -5,7 +5,7 @@ public class TLRPC$TL_messages_updatePinnedMessage extends TLObject {
     public int flags;
 
     /* renamed from: id */
-    public int f1546id;
+    public int f1628id;
     public TLRPC$InputPeer peer;
     public boolean pm_oneside;
     public boolean silent;
@@ -27,6 +27,6 @@ public class TLRPC$TL_messages_updatePinnedMessage extends TLObject {
         this.flags = i3;
         abstractSerializedData.writeInt32(i3);
         this.peer.serializeToStream(abstractSerializedData);
-        abstractSerializedData.writeInt32(this.f1546id);
+        abstractSerializedData.writeInt32(this.f1628id);
     }
 }

@@ -9,7 +9,7 @@ public final class SmartBotResponse {
     private final String gif;
 
     /* renamed from: id */
-    private final String f251id;
+    private final String f333id;
     private final String link;
     private final int localAvatar;
     private final String name;
@@ -17,7 +17,7 @@ public final class SmartBotResponse {
     private final String tag;
 
     public final String component1() {
-        return this.f251id;
+        return this.f333id;
     }
 
     public final String component2() {
@@ -65,17 +65,17 @@ public final class SmartBotResponse {
         }
         if (obj instanceof SmartBotResponse) {
             SmartBotResponse smartBotResponse = (SmartBotResponse) obj;
-            return Intrinsics.areEqual(this.f251id, smartBotResponse.f251id) && Intrinsics.areEqual(this.name, smartBotResponse.name) && this.localAvatar == smartBotResponse.localAvatar && Intrinsics.areEqual(this.remoteAvatar, smartBotResponse.remoteAvatar) && Intrinsics.areEqual(this.tag, smartBotResponse.tag) && Intrinsics.areEqual(this.gif, smartBotResponse.gif) && Intrinsics.areEqual(this.link, smartBotResponse.link) && Intrinsics.areEqual(this.answers, smartBotResponse.answers);
+            return Intrinsics.areEqual(this.f333id, smartBotResponse.f333id) && Intrinsics.areEqual(this.name, smartBotResponse.name) && this.localAvatar == smartBotResponse.localAvatar && Intrinsics.areEqual(this.remoteAvatar, smartBotResponse.remoteAvatar) && Intrinsics.areEqual(this.tag, smartBotResponse.tag) && Intrinsics.areEqual(this.gif, smartBotResponse.gif) && Intrinsics.areEqual(this.link, smartBotResponse.link) && Intrinsics.areEqual(this.answers, smartBotResponse.answers);
         }
         return false;
     }
 
     public int hashCode() {
-        return (((((((((((((this.f251id.hashCode() * 31) + this.name.hashCode()) * 31) + this.localAvatar) * 31) + this.remoteAvatar.hashCode()) * 31) + this.tag.hashCode()) * 31) + this.gif.hashCode()) * 31) + this.link.hashCode()) * 31) + this.answers.hashCode();
+        return (((((((((((((this.f333id.hashCode() * 31) + this.name.hashCode()) * 31) + this.localAvatar) * 31) + this.remoteAvatar.hashCode()) * 31) + this.tag.hashCode()) * 31) + this.gif.hashCode()) * 31) + this.link.hashCode()) * 31) + this.answers.hashCode();
     }
 
     public String toString() {
-        return "SmartBotResponse(id=" + this.f251id + ", name=" + this.name + ", localAvatar=" + this.localAvatar + ", remoteAvatar=" + this.remoteAvatar + ", tag=" + this.tag + ", gif=" + this.gif + ", link=" + this.link + ", answers=" + this.answers + ')';
+        return "SmartBotResponse(id=" + this.f333id + ", name=" + this.name + ", localAvatar=" + this.localAvatar + ", remoteAvatar=" + this.remoteAvatar + ", tag=" + this.tag + ", gif=" + this.gif + ", link=" + this.link + ", answers=" + this.answers + ')';
     }
 
     public SmartBotResponse(String id, String name, int i, String remoteAvatar, String tag, String gif, String link, List<String> answers) {
@@ -86,7 +86,7 @@ public final class SmartBotResponse {
         Intrinsics.checkNotNullParameter(gif, "gif");
         Intrinsics.checkNotNullParameter(link, "link");
         Intrinsics.checkNotNullParameter(answers, "answers");
-        this.f251id = id;
+        this.f333id = id;
         this.name = name;
         this.localAvatar = i;
         this.remoteAvatar = remoteAvatar;
@@ -97,7 +97,7 @@ public final class SmartBotResponse {
     }
 
     public final String getId() {
-        return this.f251id;
+        return this.f333id;
     }
 
     public final String getName() {

@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerDelegate;
+.implements Lorg/telegram/messenger/Utilities$Callback;
 
 
 # instance fields
@@ -22,22 +22,14 @@
 
 
 # virtual methods
-.method public final didSelectDate(ZILjava/lang/String;)V
+.method public final run(Ljava/lang/Object;)V
     .locals 1
 
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda90;->f$0:Lorg/telegram/ui/PhotoViewer;
 
-    invoke-static {v0, p1, p2, p3}, Lorg/telegram/ui/PhotoViewer;->$r8$lambda$QEU1Fa0biBgdSfsUDSeOauUeHK8(Lorg/telegram/ui/PhotoViewer;ZILjava/lang/String;)V
+    check-cast p1, Ljava/lang/Boolean;
+
+    invoke-static {v0, p1}, Lorg/telegram/ui/PhotoViewer;->$r8$lambda$g82rTgOoD3XVPwzZ23JQqB7egAw(Lorg/telegram/ui/PhotoViewer;Ljava/lang/Boolean;)V
 
     return-void
-.end method
-
-.method public synthetic getSelectedDialogs()Ljava/util/ArrayList;
-    .locals 1
-
-    invoke-static {p0}, Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerDelegate$-CC;->$default$getSelectedDialogs(Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerDelegate;)Ljava/util/ArrayList;
-
-    move-result-object v0
-
-    return-object v0
 .end method

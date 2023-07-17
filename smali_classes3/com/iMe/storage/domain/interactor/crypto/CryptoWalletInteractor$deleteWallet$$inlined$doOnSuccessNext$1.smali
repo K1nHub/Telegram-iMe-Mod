@@ -30,7 +30,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nObservableExt.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ObservableExt.kt\ncom/iMe/storage/domain/utils/extentions/ObservableExtKt$doOnSuccessNext$1\n+ 2 CryptoWalletInteractor.kt\ncom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor\n*L\n1#1,80:1\n155#2,6:81\n*E\n"
+    value = "SMAP\nObservableExt.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ObservableExt.kt\ncom/iMe/storage/domain/utils/extentions/ObservableExtKt$doOnSuccessNext$1\n+ 2 CryptoWalletInteractor.kt\ncom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor\n*L\n1#1,92:1\n141#2,4:93\n*E\n"
 .end annotation
 
 
@@ -71,7 +71,7 @@
 .end method
 
 .method public final invoke(Lcom/iMe/storage/domain/model/Result;)V
-    .locals 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -87,35 +87,19 @@
 
     if-eqz p1, :cond_0
 
-    .line 81
+    .line 93
     iget-boolean p1, p0, Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor$deleteWallet$$inlined$doOnSuccessNext$1;->$shouldSendRxEvent$inlined:Z
 
     if-eqz p1, :cond_0
 
-    .line 82
+    .line 94
     iget-object p1, p0, Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor$deleteWallet$$inlined$doOnSuccessNext$1;->this$0:Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;
 
     invoke-static {p1}, Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;->access$getRxEventBus$p(Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;)Lcom/iMe/storage/domain/utils/rx/RxEventBus;
 
     move-result-object p1
 
-    new-instance v0, Lcom/iMe/storage/domain/utils/rx/event/DomainRxEvents$SuccessResetWallet;
-
-    .line 83
-    iget-object v1, p0, Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor$deleteWallet$$inlined$doOnSuccessNext$1;->this$0:Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;
-
-    invoke-static {v1}, Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;->access$getCryptoAccessManager$p(Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;)Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;
-
-    move-result-object v1
-
-    invoke-interface {v1}, Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;->isAnyWalletCreated()Z
-
-    move-result v1
-
-    xor-int/lit8 v1, v1, 0x1
-
-    .line 82
-    invoke-direct {v0, v1}, Lcom/iMe/storage/domain/utils/rx/event/DomainRxEvents$SuccessResetWallet;-><init>(Z)V
+    sget-object v0, Lcom/iMe/storage/domain/utils/rx/event/DomainRxEvents$WalletReset;->INSTANCE:Lcom/iMe/storage/domain/utils/rx/event/DomainRxEvents$WalletReset;
 
     invoke-virtual {p1, v0}, Lcom/iMe/storage/domain/utils/rx/RxEventBus;->publish(Lcom/iMe/storage/domain/utils/rx/event/RxEvent;)V
 

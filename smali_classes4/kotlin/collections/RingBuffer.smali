@@ -104,7 +104,7 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v1, "ring buffer filled size: "
+    const-string/jumbo v1, "ring buffer filled size: "
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -138,7 +138,7 @@
 
     invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v0, "ring buffer filled size should not be negative but it is "
+    const-string/jumbo v0, "ring buffer filled size should not be negative but it is "
 
     invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -239,7 +239,7 @@
     :cond_0
     new-instance p1, Ljava/lang/IllegalStateException;
 
-    const-string v0, "ring buffer is full"
+    const-string/jumbo v0, "ring buffer is full"
 
     invoke-direct {p1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 

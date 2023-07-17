@@ -6,7 +6,7 @@ import kotlin.jvm.internal.Intrinsics;
 public final class GetParamsForTonCryptoTransferRequest {
 
     /* renamed from: to */
-    private final String f293to;
+    private final String f371to;
     private final String type;
     private final String value;
 
@@ -15,7 +15,7 @@ public final class GetParamsForTonCryptoTransferRequest {
             str = getParamsForTonCryptoTransferRequest.type;
         }
         if ((i & 2) != 0) {
-            str2 = getParamsForTonCryptoTransferRequest.f293to;
+            str2 = getParamsForTonCryptoTransferRequest.f371to;
         }
         if ((i & 4) != 0) {
             str3 = getParamsForTonCryptoTransferRequest.value;
@@ -28,7 +28,7 @@ public final class GetParamsForTonCryptoTransferRequest {
     }
 
     public final String component2() {
-        return this.f293to;
+        return this.f371to;
     }
 
     public final String component3() {
@@ -48,17 +48,17 @@ public final class GetParamsForTonCryptoTransferRequest {
         }
         if (obj instanceof GetParamsForTonCryptoTransferRequest) {
             GetParamsForTonCryptoTransferRequest getParamsForTonCryptoTransferRequest = (GetParamsForTonCryptoTransferRequest) obj;
-            return Intrinsics.areEqual(this.type, getParamsForTonCryptoTransferRequest.type) && Intrinsics.areEqual(this.f293to, getParamsForTonCryptoTransferRequest.f293to) && Intrinsics.areEqual(this.value, getParamsForTonCryptoTransferRequest.value);
+            return Intrinsics.areEqual(this.type, getParamsForTonCryptoTransferRequest.type) && Intrinsics.areEqual(this.f371to, getParamsForTonCryptoTransferRequest.f371to) && Intrinsics.areEqual(this.value, getParamsForTonCryptoTransferRequest.value);
         }
         return false;
     }
 
     public int hashCode() {
-        return (((this.type.hashCode() * 31) + this.f293to.hashCode()) * 31) + this.value.hashCode();
+        return (((this.type.hashCode() * 31) + this.f371to.hashCode()) * 31) + this.value.hashCode();
     }
 
     public String toString() {
-        return "GetParamsForTonCryptoTransferRequest(type=" + this.type + ", to=" + this.f293to + ", value=" + this.value + ')';
+        return "GetParamsForTonCryptoTransferRequest(type=" + this.type + ", to=" + this.f371to + ", value=" + this.value + ')';
     }
 
     public GetParamsForTonCryptoTransferRequest(String type, String to, String value) {
@@ -66,7 +66,7 @@ public final class GetParamsForTonCryptoTransferRequest {
         Intrinsics.checkNotNullParameter(to, "to");
         Intrinsics.checkNotNullParameter(value, "value");
         this.type = type;
-        this.f293to = to;
+        this.f371to = to;
         this.value = value;
     }
 
@@ -75,7 +75,7 @@ public final class GetParamsForTonCryptoTransferRequest {
     }
 
     public final String getTo() {
-        return this.f293to;
+        return this.f371to;
     }
 
     public final String getValue() {

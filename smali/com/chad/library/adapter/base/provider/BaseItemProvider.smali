@@ -366,7 +366,7 @@
     return-void
 .end method
 
-.method public final setAdapter$TMessagesProj_release(Lcom/chad/library/adapter/base/BaseProviderMultiAdapter;)V
+.method public final setAdapter$TMessagesProj_HA_public(Lcom/chad/library/adapter/base/BaseProviderMultiAdapter;)V
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {

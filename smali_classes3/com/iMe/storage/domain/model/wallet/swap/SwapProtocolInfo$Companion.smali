@@ -14,7 +14,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nSwapProtocolInfo.kt\nKotlin\n*S Kotlin\n*F\n+ 1 SwapProtocolInfo.kt\ncom/iMe/storage/domain/model/wallet/swap/SwapProtocolInfo$Companion\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,85:1\n1#2:86\n*E\n"
+    value = "SMAP\nSwapProtocolInfo.kt\nKotlin\n*S Kotlin\n*F\n+ 1 SwapProtocolInfo.kt\ncom/iMe/storage/domain/model/wallet/swap/SwapProtocolInfo$Companion\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,86:1\n1#2:87\n*E\n"
 .end annotation
 
 
@@ -22,7 +22,7 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 71
+    .line 72
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -36,9 +36,18 @@
     return-void
 .end method
 
+.method public static final synthetic access$getInvisibleExchanges(Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocolInfo$Companion;)Ljava/util/List;
+    .locals 0
 
-# virtual methods
-.method public final getAllExchanges()Ljava/util/List;
+    .line 72
+    invoke-direct {p0}, Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocolInfo$Companion;->getInvisibleExchanges()Ljava/util/List;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method private final getAllExchanges()Ljava/util/List;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -49,7 +58,7 @@
         }
     .end annotation
 
-    .line 72
+    .line 73
     invoke-static {}, Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocolInfo;->access$getAllExchanges$delegate$cp()Lkotlin/Lazy;
 
     move-result-object v0
@@ -63,18 +72,18 @@
     return-object v0
 .end method
 
-.method public final getInvisibleExchanges()Ljava/util/List;
+.method private final getInvisibleExchanges()Ljava/util/List;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
             "Ljava/util/List<",
-            "Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocolInfo$UniswapV3;",
+            "Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocolInfo;",
             ">;"
         }
     .end annotation
 
-    .line 76
+    .line 74
     invoke-static {}, Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocolInfo;->access$getInvisibleExchanges$delegate$cp()Lkotlin/Lazy;
 
     move-result-object v0
@@ -88,6 +97,8 @@
     return-object v0
 .end method
 
+
+# virtual methods
 .method public final getSupportedCrossChainExchanges()Ljava/util/List;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
@@ -99,7 +110,7 @@
         }
     .end annotation
 
-    .line 75
+    .line 77
     invoke-static {}, Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocolInfo;->access$getSupportedCrossChainExchanges$delegate$cp()Lkotlin/Lazy;
 
     move-result-object v0
@@ -119,12 +130,12 @@
         value = {
             "()",
             "Ljava/util/List<",
-            "Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocolInfo;",
+            "Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocolInfo$Oneinch;",
             ">;"
         }
     .end annotation
 
-    .line 74
+    .line 76
     invoke-static {}, Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocolInfo;->access$getSupportedExchanges$delegate$cp()Lkotlin/Lazy;
 
     move-result-object v0
@@ -145,8 +156,8 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 81
-    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocolInfo$Companion;->getAllExchanges()Ljava/util/List;
+    .line 82
+    invoke-direct {p0}, Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocolInfo$Companion;->getAllExchanges()Ljava/util/List;
 
     move-result-object v0
 
@@ -195,7 +206,7 @@
 
     if-nez v1, :cond_3
 
-    .line 82
+    .line 83
     sget-object v1, Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocolInfo$Unknown;->INSTANCE:Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocolInfo$Unknown;
 
     :cond_3
@@ -209,8 +220,8 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 78
-    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocolInfo$Companion;->getAllExchanges()Ljava/util/List;
+    .line 79
+    invoke-direct {p0}, Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocolInfo$Companion;->getAllExchanges()Ljava/util/List;
 
     move-result-object v0
 
@@ -257,7 +268,7 @@
 
     if-nez v1, :cond_2
 
-    .line 79
+    .line 80
     sget-object v1, Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocolInfo$Unknown;->INSTANCE:Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocolInfo$Unknown;
 
     :cond_2

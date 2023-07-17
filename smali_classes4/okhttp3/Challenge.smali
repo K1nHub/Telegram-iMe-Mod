@@ -32,7 +32,7 @@
         }
     .end annotation
 
-    const-string v0, "scheme"
+    const-string/jumbo v0, "scheme"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -246,7 +246,7 @@
     .line 43
     iget-object v0, p0, Lokhttp3/Challenge;->authParams:Ljava/util/Map;
 
-    const-string v1, "realm"
+    const-string/jumbo v1, "realm"
 
     invoke-interface {v0, v1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 

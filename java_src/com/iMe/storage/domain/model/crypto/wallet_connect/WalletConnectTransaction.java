@@ -1,6 +1,5 @@
 package com.iMe.storage.domain.model.crypto.wallet_connect;
 
-import com.iMe.storage.domain.model.crypto.NetworkType;
 import java.math.BigInteger;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: WalletConnectTransaction.kt */
@@ -10,27 +9,27 @@ public final class WalletConnectTransaction {
     private final String from;
     private final BigInteger gas;
     private final BigInteger gasPrice;
-    private final NetworkType networkType;
+    private final String networkId;
     private final BigInteger nonce;
 
     /* renamed from: to */
-    private final String f332to;
+    private final String f408to;
     private final String value;
 
-    public WalletConnectTransaction(String from, String to, String value, String data, BigInteger bigInteger, BigInteger bigInteger2, BigInteger bigInteger3, NetworkType networkType) {
+    public WalletConnectTransaction(String from, String to, String value, String data, BigInteger bigInteger, BigInteger bigInteger2, BigInteger bigInteger3, String networkId) {
         Intrinsics.checkNotNullParameter(from, "from");
         Intrinsics.checkNotNullParameter(to, "to");
         Intrinsics.checkNotNullParameter(value, "value");
         Intrinsics.checkNotNullParameter(data, "data");
-        Intrinsics.checkNotNullParameter(networkType, "networkType");
+        Intrinsics.checkNotNullParameter(networkId, "networkId");
         this.from = from;
-        this.f332to = to;
+        this.f408to = to;
         this.value = value;
         this.data = data;
         this.gas = bigInteger;
         this.gasPrice = bigInteger2;
         this.nonce = bigInteger3;
-        this.networkType = networkType;
+        this.networkId = networkId;
     }
 
     public final String getFrom() {
@@ -38,7 +37,7 @@ public final class WalletConnectTransaction {
     }
 
     public final String getTo() {
-        return this.f332to;
+        return this.f408to;
     }
 
     public final String getValue() {
@@ -61,7 +60,7 @@ public final class WalletConnectTransaction {
         return this.nonce;
     }
 
-    public final NetworkType getNetworkType() {
-        return this.networkType;
+    public final String getNetworkId() {
+        return this.networkId;
     }
 }

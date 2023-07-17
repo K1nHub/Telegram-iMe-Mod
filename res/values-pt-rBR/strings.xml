@@ -344,7 +344,7 @@
     <string name="Answer_zero">%1$d respostas</string>
     <string name="ApkRestricted">A instalação de APKs está restrita neste aplicativo. Você pode ativar nas configurações do sistema.</string>
     <string name="AppFolderInfo">Acessar pasta do aplicativo</string>
-    <string name="AppUpdate">Atualizar o Telegram</string>
+    <string name="AppNameBeta">Telegram Beta</string>
     <string name="AppUpdateChangelogEmpty">"**O que há de novo?**
 
 • Correções de bugs e melhorias."</string>
@@ -4715,9 +4715,6 @@ Clique aqui para adicionar bot rapidamente."</string>
     <string name="chat_attach_alert_bot_buttons">Botões de bot</string>
     <string name="chat_avatar_previewer_mention_by_name">Mencionar pelo nome</string>
     <string name="chat_avatar_previewer_user_messages">Mensagens do usuário</string>
-    <string name="chat_bookmarks">Favoritos</string>
-    <string name="chat_bookmarks_empty">Sem favoritos</string>
-    <string name="chat_bookmarks_empty_subtitle">Você não tem favoritos nos chats</string>
     <string name="chat_drafts_empty">Sem rascunhos</string>
     <string name="chat_drafts_empty_subtitle">Você não tem rascunhos de mensagens nos chats</string>
     <string name="chat_long_action_translate">Traduzir</string>
@@ -4728,7 +4725,6 @@ Clique aqui para adicionar bot rapidamente."</string>
     <string name="chat_menu_language_settings">Configurações de idioma</string>
     <string name="chat_message_forward_media">Encaminhar multimídia</string>
     <string name="chat_message_forward_text">Encaminhar texto</string>
-    <string name="chat_message_popup_option_add_to_bookmarks">Adicionar aos favoritos</string>
     <string name="chat_message_popup_option_copy_image">Copiar imagem</string>
     <string name="chat_message_popup_option_copy_part">Copiar parte</string>
     <string name="chat_message_popup_option_copy_text">Copiar texto</string>
@@ -4736,8 +4732,6 @@ Clique aqui para adicionar bot rapidamente."</string>
     <string name="chat_message_popup_option_forward_viber">Encaminhar para o Viber</string>
     <string name="chat_message_popup_option_forward_whatsapp">Encaminhar para o WhatsApp</string>
     <string name="chat_message_popup_option_forward_whatsapp_business">Encaminhar para o WA Business</string>
-    <string name="chat_message_popup_option_remove_all_bookmarks">REMOVER TODOS OS FAVORITOS</string>
-    <string name="chat_message_popup_option_remove_from_bookmarks">Remover dos favoritos</string>
     <string name="chat_message_spoiler_less">MENOS</string>
     <string name="chat_message_spoiler_more">MAIS</string>
     <string name="chat_multi_panel_empty_cache_toast">Cache ausente neste chat</string>
@@ -5111,11 +5105,6 @@ e tentaremos encontrar a conta dele no Telegram"</string>
     <string name="loading_participants_error">Erro ao carregar membro, tente novamente mais tarde</string>
     <string name="main_camera_popup_text">Câmera traseira</string>
     <string name="main_list">Lista principal</string>
-    <string name="management">Gestão</string>
-    <string name="management_bookmarks_delete_all_alert_message">Quer mesmo excluir todos os favoritos de todos os chats? Seus chats não serão excluídos.</string>
-    <string name="management_bookmarks_delete_selected_alert_message">Quer mesmo excluir todos os favoritos dos chats selecionados? Seus chats não serão excluídos.</string>
-    <string name="management_drafts">Rascunhos</string>
-    <string name="management_drafts_delete_selected_alert_message">Quer mesmo excluir todos os rascunhos dos chats selecionados? Seus chats não serão excluídos.</string>
     <string name="material_clock_toggle_content_description">Selecionar AM ou PM</string>
     <string name="material_hour_selection">Selecionar horário</string>
     <string name="material_hour_suffix">%1$s em ponto</string>
@@ -5495,6 +5484,7 @@ Você sempre pode editar essa opção na seção Pasta (Classificação de chats
     <string name="sorting_settings_tab_bots_item_title">Bots</string>
     <string name="sorting_settings_tab_channels_item_title">Canais</string>
     <string name="sorting_settings_tab_deleted_users">Contas excluídas</string>
+    <string name="sorting_settings_tab_drafts">Rascunhos</string>
     <string name="sorting_settings_tab_groups_item_title">Chats de grupo</string>
     <string name="sorting_settings_tab_live_chats">Chats em tempo real</string>
     <string name="sorting_settings_tab_mentioned_chats">Chats mencionados</string>
@@ -5851,8 +5841,8 @@ Insira as palavras **%d**, **%d** e **%d** abaixo:"</string>
     <string name="wallet_banner_slide_gate_description">Sua porta de entrada para as criptomoedas</string>
     <string name="wallet_banner_slide_gate_long_description">Negocie LIME e outras criptomoedas com baixas taxas de câmbio.</string>
     <string name="wallet_banner_slide_gate_title">Gate.io</string>
-    <string name="wallet_banner_slide_multi_networks_description">Ethereum, BNB Chain, Polygon, Fantom, TON, NFT</string>
-    <string name="wallet_banner_slide_multi_networks_long_description">Comutação de redes Ethereum, BNB Chain, Polygon, Fantom, TON e NFT para uso conveniente de tokens de diferentes plataformas em uma carteira.</string>
+    <string name="wallet_banner_slide_multi_networks_description">Bitcoin, Ethereum, BNB Chain, Polygon, Fantom, Tron, TON, NFT</string>
+    <string name="wallet_banner_slide_multi_networks_long_description">Comutação de redes Bitcoin, Ethereum, BNB Chain, Polygon, Fantom, Tron, TON e NFT para uso conveniente de tokens de diferentes plataformas em uma carteira.</string>
     <string name="wallet_banner_slide_multi_networks_title">MULTIRREDE</string>
     <string name="wallet_banner_slide_non_custodial_description">Só você tem acesso à carteira</string>
     <string name="wallet_banner_slide_non_custodial_long_description">Você é a única pessoa com acesso à sua carteira. Salve a frase de acesso para conseguir recuperar ou importar sua carteira.</string>
@@ -5863,7 +5853,7 @@ Insira as palavras **%d**, **%d** e **%d** abaixo:"</string>
     <string name="wallet_banner_slide_staking_description">Criar depósitos</string>
     <string name="wallet_banner_slide_staking_long_description">Crie depósitos em LIME e tokens parceiros para os seus ativos trabalharem para você.</string>
     <string name="wallet_banner_slide_staking_title">Staking</string>
-    <string name="wallet_banner_slide_swap_description">Uniswap, PancakeSwap, 1inch</string>
+    <string name="wallet_banner_slide_swap_description">1inch, Symbiosis</string>
     <string name="wallet_banner_slide_swap_long_description">Troque criptomoedas e tokens usando protocolos de câmbio decentralizado desenvolvidos com contratos inteligentes.</string>
     <string name="wallet_banner_slide_swap_title">CÂMBIO</string>
     <string name="wallet_binance_logout_confirm_dialog_description">Quer mesmo fazer logout?</string>
@@ -6058,7 +6048,7 @@ Atenção:
 você só pode ter uma conta Ethereum ativa na iMe Wallet. Portanto, quando outros usuários transferirem fundos para o seu ID do Telegram, todos os fundos serão automaticamente creditados no último endereço vinculado."</string>
     <string name="wallet_dashboard_create_start_dialog_description">"Carteira sem custódia para criptomoedas e tokens.
 
-Armazene, compre, troque e faça transferências nas redes Ethereum e BNB Chain.
+Armazene, compre, troque e faça transferências nas redes Ethereum, Bitcoin, BNB Chain, Polygon, Fantom, Tron e TON.
 
 Ao pressionar SEGUINTE, você concordará com a
 %s

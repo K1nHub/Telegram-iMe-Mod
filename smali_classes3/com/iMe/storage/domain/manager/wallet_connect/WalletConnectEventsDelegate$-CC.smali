@@ -58,14 +58,14 @@
     return-void
 .end method
 
-.method public static $default$onWalletChangeNetwork(Lcom/iMe/storage/domain/manager/wallet_connect/WalletConnectEventsDelegate;JLcom/trustwallet/walletconnect/WCSessionStoreItem;Lcom/iMe/storage/domain/model/crypto/NetworkType;)V
+.method public static $default$onWalletChangeNetwork(Lcom/iMe/storage/domain/manager/wallet_connect/WalletConnectEventsDelegate;JLcom/trustwallet/walletconnect/WCSessionStoreItem;Ljava/lang/String;)V
     .locals 0
 
     const-string p1, "sessionStoreItem"
 
     invoke-static {p3, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string p1, "networkType"
+    const-string p1, "networkId"
 
     invoke-static {p4, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 

@@ -259,13 +259,9 @@
 .method private static getAnnotationGeneratedGlideModules(Landroid/content/Context;)Lcom/bumptech/glide/GeneratedAppGlideModule;
     .locals 5
 
-    :try_start_0
-    const-string v0, "com.bumptech.glide.GeneratedAppGlideModuleImpl"
-
     .line 269
-    invoke-static {v0}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
-
-    move-result-object v0
+    :try_start_0
+    const-class v0, Lcom/bumptech/glide/GeneratedAppGlideModuleImpl;
 
     const/4 v1, 0x1
 

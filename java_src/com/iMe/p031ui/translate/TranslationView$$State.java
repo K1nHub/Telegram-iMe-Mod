@@ -1,6 +1,7 @@
 package com.iMe.p031ui.translate;
 
 import com.iMe.model.translation.TranslationLanguageUiModel;
+import com.iMe.p031ui.base.mvp.base.BaseView;
 import com.iMe.storage.domain.model.Result;
 import com.iMe.storage.domain.model.dialogs.DialogTranslationSettings;
 import com.iMe.storage.domain.utils.system.ResourceManager;
@@ -13,6 +14,11 @@ import moxy.viewstate.strategy.OneExecutionStateStrategy;
 /* renamed from: com.iMe.ui.translate.TranslationView$$State */
 /* loaded from: classes3.dex */
 public class TranslationView$$State extends MvpViewState<TranslationView> implements TranslationView {
+    @Override // com.iMe.p031ui.base.mvp.base.BaseView
+    public /* synthetic */ void removeSelfFromStackImmediately() {
+        BaseView.CC.$default$removeSelfFromStackImmediately(this);
+    }
+
     @Override // com.iMe.p031ui.translate.TranslationView
     public void configureScreenWith(String str, String str2) {
         ConfigureScreenWithCommand configureScreenWithCommand = new ConfigureScreenWithCommand(this, str, str2);

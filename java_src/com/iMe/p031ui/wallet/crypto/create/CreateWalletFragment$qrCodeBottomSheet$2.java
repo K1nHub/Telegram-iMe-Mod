@@ -2,7 +2,7 @@ package com.iMe.p031ui.wallet.crypto.create;
 
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Lambda;
-import org.telegram.p044ui.Components.QRCodeBottomSheet;
+import org.telegram.p043ui.Components.QRCodeBottomSheet;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: CreateWalletFragment.kt */
 /* renamed from: com.iMe.ui.wallet.crypto.create.CreateWalletFragment$qrCodeBottomSheet$2 */

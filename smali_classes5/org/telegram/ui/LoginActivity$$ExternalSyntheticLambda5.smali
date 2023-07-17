@@ -33,7 +33,7 @@
 
     iget-boolean v1, p0, Lorg/telegram/ui/LoginActivity$$ExternalSyntheticLambda5;->f$1:Z
 
-    invoke-static {v0, v1, p1}, Lorg/telegram/ui/LoginActivity;->$r8$lambda$ULyZGyk3Lc_10YtoJZknFU_HIUY(Lorg/telegram/ui/LoginActivity;ZLandroid/animation/ValueAnimator;)V
+    invoke-static {v0, v1, p1}, Lorg/telegram/ui/LoginActivity;->$r8$lambda$iOYmzRpAAjvTZT400Ilrz765hUA(Lorg/telegram/ui/LoginActivity;ZLandroid/animation/ValueAnimator;)V
 
     return-void
 .end method

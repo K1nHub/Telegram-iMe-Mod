@@ -21,7 +21,7 @@
 .method constructor <init>(Lorg/telegram/ui/DialogsActivity;)V
     .locals 0
 
-    .line 5693
+    .line 5676
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

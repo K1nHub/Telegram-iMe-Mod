@@ -5,7 +5,7 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import org.koin.core.scope.Scope;
-import org.koin.p043mp.KoinPlatformTools;
+import org.koin.p042mp.KoinPlatformTools;
 /* compiled from: ScopedInstanceFactory.kt */
 /* loaded from: classes4.dex */
 public final class ScopedInstanceFactory<T> extends InstanceFactory<T> {
@@ -45,7 +45,7 @@ public final class ScopedInstanceFactory<T> extends InstanceFactory<T> {
         if (!Intrinsics.areEqual(context.getScope().getScopeQualifier(), getBeanDefinition().getScopeQualifier())) {
             throw new IllegalStateException(("Wrong Scope: trying to open instance for " + context.getScope().getId() + " in " + getBeanDefinition()).toString());
         }
-        KoinPlatformTools.INSTANCE.m1614synchronized(this, new ScopedInstanceFactory$get$1(this, context));
+        KoinPlatformTools.INSTANCE.m1639synchronized(this, new ScopedInstanceFactory$get$1(this, context));
         T t = this.values.get(context.getScope().getId());
         if (t != null) {
             return t;

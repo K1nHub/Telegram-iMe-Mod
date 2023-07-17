@@ -27,7 +27,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nRxExt.kt\nKotlin\n*S Kotlin\n*F\n+ 1 RxExt.kt\ncom/iMe/utils/extentions/rx/RxExtKt$subscribeWithErrorHandle$2\n+ 2 CreateWalletFragment.kt\ncom/iMe/ui/wallet/crypto/create/CreateWalletFragment\n*L\n1#1,111:1\n883#2,8:112\n*E\n"
+    value = "SMAP\nRxExt.kt\nKotlin\n*S Kotlin\n*F\n+ 1 RxExt.kt\ncom/iMe/utils/extentions/rx/RxExtKt$subscribeWithErrorHandle$2\n+ 2 CreateWalletFragment.kt\ncom/iMe/ui/wallet/crypto/create/CreateWalletFragment\n*L\n1#1,111:1\n980#2,5:112\n*E\n"
 .end annotation
 
 
@@ -53,7 +53,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 44
+    .line 47
     invoke-virtual {p0, p1}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$setupEventListeners$$inlined$subscribeWithErrorHandle$default$1;->invoke(Ljava/lang/Object;)V
 
     sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
@@ -62,7 +62,7 @@
 .end method
 
 .method public final invoke(Ljava/lang/Object;)V
-    .locals 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -73,71 +73,39 @@
 
     const-string v0, "it"
 
-    .line 45
+    .line 48
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     check-cast p1, Lcom/iMe/storage/domain/utils/rx/event/DomainRxEvents$CryptoEvent;
 
     .line 113
-    instance-of v0, p1, Lcom/iMe/storage/domain/utils/rx/event/DomainRxEvents$SuccessRecreateWalletByPassword;
+    sget-object v0, Lcom/iMe/storage/domain/utils/rx/event/DomainRxEvents$SuccessRecreateWalletByPassword;->INSTANCE:Lcom/iMe/storage/domain/utils/rx/event/DomainRxEvents$SuccessRecreateWalletByPassword;
 
-    const/4 v1, 0x1
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v0
 
     if-eqz v0, :cond_0
 
-    move v0, v1
+    const/4 p1, 0x1
 
     goto :goto_0
 
     .line 114
     :cond_0
-    instance-of v0, p1, Lcom/iMe/storage/domain/utils/rx/event/DomainRxEvents$SuccessResetWallet;
+    sget-object v0, Lcom/iMe/storage/domain/utils/rx/event/DomainRxEvents$WalletReset;->INSTANCE:Lcom/iMe/storage/domain/utils/rx/event/DomainRxEvents$WalletReset;
 
-    :goto_0
-    if-eqz v0, :cond_1
-
-    move p1, v1
-
-    goto :goto_1
-
-    .line 115
-    :cond_1
-    instance-of p1, p1, Lcom/iMe/storage/domain/utils/rx/event/DomainRxEvents$SuccessRestoreWallet;
-
-    :goto_1
-    if-eqz p1, :cond_3
-
-    iget-object p1, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$setupEventListeners$$inlined$subscribeWithErrorHandle$default$1;->this$0:Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;
-
-    invoke-static {p1}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->access$getCurrentType$p(Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;)Lcom/iMe/model/wallet/crypto/create/CreateWalletScreenType;
-
-    move-result-object p1
-
-    check-cast p1, Lcom/iMe/model/wallet/crypto/create/CreateWalletScreenType$Import;
-
-    invoke-virtual {p1}, Lcom/iMe/model/wallet/crypto/create/CreateWalletScreenType$Import;->getPassword()Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-interface {p1}, Ljava/lang/CharSequence;->length()I
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result p1
 
-    if-nez p1, :cond_2
+    :goto_0
+    if-eqz p1, :cond_1
 
-    goto :goto_2
-
-    :cond_2
-    const/4 v1, 0x0
-
-    :goto_2
-    if-eqz v1, :cond_3
-
-    .line 116
     iget-object p1, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$setupEventListeners$$inlined$subscribeWithErrorHandle$default$1;->this$0:Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;
 
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->removeSelfFromStack()V
 
-    :cond_3
+    :cond_1
     return-void
 .end method

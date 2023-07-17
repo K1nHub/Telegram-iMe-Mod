@@ -24,18 +24,10 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$ZXt2bgOUtgBV4P56hYG_DwXiELk(Lcom/iMe/fork/utils/Callbacks$Callback;Landroid/content/DialogInterface;)V
-    .locals 0
-
-    invoke-static {p0, p1}, Lorg/telegram/ui/LaunchActivity$2;->lambda$showLoadingDialog$0(Lcom/iMe/fork/utils/Callbacks$Callback;Landroid/content/DialogInterface;)V
-
-    return-void
-.end method
-
 .method constructor <init>(Lorg/telegram/ui/LaunchActivity;Lcom/iMe/fork/utils/Callbacks$Callback;)V
     .locals 0
 
-    .line 426
+    .line 475
     iput-object p1, p0, Lorg/telegram/ui/LaunchActivity$2;->this$0:Lorg/telegram/ui/LaunchActivity;
 
     iput-object p2, p0, Lorg/telegram/ui/LaunchActivity$2;->val$onAuthSuccessAction:Lcom/iMe/fork/utils/Callbacks$Callback;
@@ -45,58 +37,23 @@
     return-void
 .end method
 
-.method private static synthetic lambda$showLoadingDialog$0(Lcom/iMe/fork/utils/Callbacks$Callback;Landroid/content/DialogInterface;)V
-    .locals 0
-
-    .line 436
-    invoke-interface {p0}, Lcom/iMe/fork/utils/Callbacks$Callback;->invoke()V
-
-    return-void
-.end method
-
 
 # virtual methods
 .method public hideLoadingDialog()V
     .locals 1
 
-    .line 442
+    .line 484
     iget-object v0, p0, Lorg/telegram/ui/LaunchActivity$2;->this$0:Lorg/telegram/ui/LaunchActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/LaunchActivity;->access$100(Lorg/telegram/ui/LaunchActivity;)Lorg/telegram/ui/ActionBar/AlertDialog;
+    invoke-virtual {v0}, Lorg/telegram/ui/LaunchActivity;->hideLoadingDialog()V
 
-    move-result-object v0
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lorg/telegram/ui/LaunchActivity$2;->this$0:Lorg/telegram/ui/LaunchActivity;
-
-    invoke-static {v0}, Lorg/telegram/ui/LaunchActivity;->access$100(Lorg/telegram/ui/LaunchActivity;)Lorg/telegram/ui/ActionBar/AlertDialog;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/app/Dialog;->isShowing()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    .line 443
-    iget-object v0, p0, Lorg/telegram/ui/LaunchActivity$2;->this$0:Lorg/telegram/ui/LaunchActivity;
-
-    invoke-static {v0}, Lorg/telegram/ui/LaunchActivity;->access$100(Lorg/telegram/ui/LaunchActivity;)Lorg/telegram/ui/ActionBar/AlertDialog;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/AlertDialog;->dismiss()V
-
-    :cond_0
     return-void
 .end method
 
 .method public onAuthSuccess()V
     .locals 1
 
-    .line 454
+    .line 494
     iget-object v0, p0, Lorg/telegram/ui/LaunchActivity$2;->val$onAuthSuccessAction:Lcom/iMe/fork/utils/Callbacks$Callback;
 
     invoke-interface {v0}, Lcom/iMe/fork/utils/Callbacks$Callback;->invoke()V
@@ -105,75 +62,14 @@
 .end method
 
 .method public showLoadingDialog(Lcom/iMe/fork/utils/Callbacks$Callback;)V
-    .locals 4
+    .locals 2
 
-    .line 430
+    .line 479
     iget-object v0, p0, Lorg/telegram/ui/LaunchActivity$2;->this$0:Lorg/telegram/ui/LaunchActivity;
-
-    invoke-static {v0}, Lorg/telegram/ui/LaunchActivity;->access$100(Lorg/telegram/ui/LaunchActivity;)Lorg/telegram/ui/ActionBar/AlertDialog;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_0
-
-    .line 431
-    iget-object v0, p0, Lorg/telegram/ui/LaunchActivity$2;->this$0:Lorg/telegram/ui/LaunchActivity;
-
-    invoke-static {v0}, Lorg/telegram/ui/LaunchActivity;->access$100(Lorg/telegram/ui/LaunchActivity;)Lorg/telegram/ui/ActionBar/AlertDialog;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/AlertDialog;->dismiss()V
-
-    goto :goto_0
-
-    .line 433
-    :cond_0
-    iget-object v0, p0, Lorg/telegram/ui/LaunchActivity$2;->this$0:Lorg/telegram/ui/LaunchActivity;
-
-    new-instance v1, Lorg/telegram/ui/ActionBar/AlertDialog;
-
-    iget-object v2, p0, Lorg/telegram/ui/LaunchActivity$2;->this$0:Lorg/telegram/ui/LaunchActivity;
-
-    const/4 v3, 0x3
-
-    invoke-direct {v1, v2, v3}, Lorg/telegram/ui/ActionBar/AlertDialog;-><init>(Landroid/content/Context;I)V
-
-    invoke-static {v0, v1}, Lorg/telegram/ui/LaunchActivity;->access$102(Lorg/telegram/ui/LaunchActivity;Lorg/telegram/ui/ActionBar/AlertDialog;)Lorg/telegram/ui/ActionBar/AlertDialog;
-
-    .line 435
-    :goto_0
-    iget-object v0, p0, Lorg/telegram/ui/LaunchActivity$2;->this$0:Lorg/telegram/ui/LaunchActivity;
-
-    invoke-static {v0}, Lorg/telegram/ui/LaunchActivity;->access$100(Lorg/telegram/ui/LaunchActivity;)Lorg/telegram/ui/ActionBar/AlertDialog;
-
-    move-result-object v0
 
     const/4 v1, 0x1
 
-    invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/AlertDialog;->setCanCancel(Z)V
-
-    .line 436
-    iget-object v0, p0, Lorg/telegram/ui/LaunchActivity$2;->this$0:Lorg/telegram/ui/LaunchActivity;
-
-    invoke-static {v0}, Lorg/telegram/ui/LaunchActivity;->access$100(Lorg/telegram/ui/LaunchActivity;)Lorg/telegram/ui/ActionBar/AlertDialog;
-
-    move-result-object v0
-
-    new-instance v1, Lorg/telegram/ui/LaunchActivity$2$$ExternalSyntheticLambda0;
-
-    invoke-direct {v1, p1}, Lorg/telegram/ui/LaunchActivity$2$$ExternalSyntheticLambda0;-><init>(Lcom/iMe/fork/utils/Callbacks$Callback;)V
-
-    invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/AlertDialog;->setOnCancelListener(Landroid/content/DialogInterface$OnCancelListener;)V
-
-    .line 437
-    iget-object p1, p0, Lorg/telegram/ui/LaunchActivity$2;->this$0:Lorg/telegram/ui/LaunchActivity;
-
-    invoke-static {p1}, Lorg/telegram/ui/LaunchActivity;->access$100(Lorg/telegram/ui/LaunchActivity;)Lorg/telegram/ui/ActionBar/AlertDialog;
-
-    move-result-object p1
-
-    invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/AlertDialog;->show()V
+    invoke-virtual {v0, v1, p1}, Lorg/telegram/ui/LaunchActivity;->showLoadingDialog(ZLcom/iMe/fork/utils/Callbacks$Callback;)V
 
     return-void
 .end method
@@ -181,7 +77,7 @@
 .method public showToast(Ljava/lang/String;)V
     .locals 0
 
-    .line 449
+    .line 489
     invoke-static {p1}, Lcom/iMe/utils/extentions/common/ContextExtKt;->toast(Ljava/lang/CharSequence;)V
 
     return-void

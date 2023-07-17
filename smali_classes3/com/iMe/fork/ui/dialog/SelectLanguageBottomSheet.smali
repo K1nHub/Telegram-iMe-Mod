@@ -7,14 +7,13 @@
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
         Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet$Companion;,
-        Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet$EmptyView;,
         Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet$ListAdapter;,
         Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet$RootView;
     }
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nSelectLanguageBottomSheet.kt\nKotlin\n*S Kotlin\n*F\n+ 1 SelectLanguageBottomSheet.kt\ncom/iMe/fork/ui/dialog/SelectLanguageBottomSheet\n+ 2 View.kt\nandroidx/core/view/ViewKt\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,416:1\n304#2,2:417\n766#3:419\n857#3,2:420\n819#3:422\n847#3,2:423\n*S KotlinDebug\n*F\n+ 1 SelectLanguageBottomSheet.kt\ncom/iMe/fork/ui/dialog/SelectLanguageBottomSheet\n*L\n134#1:417,2\n164#1:419\n164#1:420,2\n164#1:422\n164#1:423,2\n*E\n"
+    value = "SMAP\nSelectLanguageBottomSheet.kt\nKotlin\n*S Kotlin\n*F\n+ 1 SelectLanguageBottomSheet.kt\ncom/iMe/fork/ui/dialog/SelectLanguageBottomSheet\n+ 2 View.kt\nandroidx/core/view/ViewKt\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,388:1\n304#2,2:389\n766#3:391\n857#3,2:392\n819#3:394\n847#3,2:395\n*S KotlinDebug\n*F\n+ 1 SelectLanguageBottomSheet.kt\ncom/iMe/fork/ui/dialog/SelectLanguageBottomSheet\n*L\n130#1:389,2\n160#1:391\n160#1:392,2\n160#1:394\n160#1:395,2\n*E\n"
 .end annotation
 
 
@@ -145,19 +144,19 @@
 
     const/4 v0, 0x1
 
-    .line 52
+    .line 48
     invoke-direct {p0, p1, v0}, Lorg/telegram/ui/ActionBar/BottomSheet;-><init>(Landroid/content/Context;Z)V
 
-    .line 49
+    .line 45
     iput-object p2, p0, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;->languages:Ljava/util/List;
 
-    .line 50
+    .line 46
     iput-object p3, p0, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;->selectedLangCode:Ljava/lang/String;
 
-    .line 51
+    .line 47
     iput-object p4, p0, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;->selectLanguageDelegate:Lcom/iMe/fork/utils/Callbacks$Callback1;
 
-    .line 55
+    .line 51
     new-instance p1, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet$topShadow$2;
 
     invoke-direct {p1, p0}, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet$topShadow$2;-><init>(Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;)V
@@ -168,7 +167,7 @@
 
     iput-object p1, p0, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;->topShadow$delegate:Lkotlin/Lazy;
 
-    .line 56
+    .line 52
     new-instance p1, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet$searchView$2;
 
     invoke-direct {p1, p0}, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet$searchView$2;-><init>(Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;)V
@@ -179,7 +178,7 @@
 
     iput-object p1, p0, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;->searchView$delegate:Lkotlin/Lazy;
 
-    .line 57
+    .line 53
     new-instance p1, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet$listView$2;
 
     invoke-direct {p1, p0}, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet$listView$2;-><init>(Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;)V
@@ -190,7 +189,7 @@
 
     iput-object p1, p0, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;->listView$delegate:Lkotlin/Lazy;
 
-    .line 58
+    .line 54
     new-instance p1, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet$listAdapter$2;
 
     invoke-direct {p1, p0}, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet$listAdapter$2;-><init>(Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;)V
@@ -201,7 +200,7 @@
 
     iput-object p1, p0, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;->listAdapter$delegate:Lkotlin/Lazy;
 
-    .line 59
+    .line 55
     new-instance p1, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet$bottomShadow$2;
 
     invoke-direct {p1, p0}, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet$bottomShadow$2;-><init>(Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;)V
@@ -212,7 +211,7 @@
 
     iput-object p1, p0, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;->bottomShadow$delegate:Lkotlin/Lazy;
 
-    .line 60
+    .line 56
     new-instance p1, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet$cancelButton$2;
 
     invoke-direct {p1, p0}, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet$cancelButton$2;-><init>(Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;)V
@@ -223,31 +222,31 @@
 
     iput-object p1, p0, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;->cancelButton$delegate:Lkotlin/Lazy;
 
-    .line 67
+    .line 63
     invoke-static {}, Lkotlin/collections/CollectionsKt;->emptyList()Ljava/util/List;
 
     move-result-object p1
 
     iput-object p1, p0, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;->filteredLanguages:Ljava/util/List;
 
-    .line 68
+    .line 64
     invoke-direct {p0}, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;->getLastSelectionList()Ljava/util/List;
 
     move-result-object p1
 
     iput-object p1, p0, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;->lastSelectLanguages:Ljava/util/List;
 
-    .line 73
+    .line 69
     new-instance p1, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet$RootView;
 
     invoke-direct {p1, p0}, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet$RootView;-><init>(Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;)V
 
     const/4 p2, 0x0
 
-    .line 74
+    .line 70
     invoke-virtual {p1, p2}, Landroid/widget/FrameLayout;->setWillNotDraw(Z)V
 
-    .line 75
+    .line 71
     invoke-direct {p0}, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;->getTopShadow()Landroid/view/View;
 
     move-result-object p2
@@ -274,7 +273,7 @@
 
     invoke-virtual {p1, p2, p3}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 76
+    .line 72
     invoke-direct {p0}, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;->getListView()Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet$initListView$1;
 
     move-result-object p2
@@ -289,7 +288,7 @@
 
     invoke-virtual {p1, p2, p3}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 77
+    .line 73
     invoke-direct {p0}, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;->getSearchView()Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet$initSearchView$1;
 
     move-result-object p2
@@ -306,7 +305,7 @@
 
     invoke-virtual {p1, p2, p4}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 78
+    .line 74
     invoke-direct {p0}, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;->getBottomShadow()Landroid/view/View;
 
     move-result-object p2
@@ -329,7 +328,7 @@
 
     invoke-virtual {p1, p2, p4}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 79
+    .line 75
     invoke-direct {p0}, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;->getCancelButton()Landroid/widget/TextView;
 
     move-result-object p2
@@ -342,10 +341,10 @@
 
     invoke-virtual {p1, p2, p3}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 73
+    .line 69
     iput-object p1, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->containerView:Landroid/view/ViewGroup;
 
-    .line 81
+    .line 77
     invoke-direct {p0}, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;->setupListeners()V
 
     return-void
@@ -354,7 +353,7 @@
 .method public static final synthetic access$getBackgroundPaddingLeft$p$s1435040960(Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;)I
     .locals 0
 
-    .line 47
+    .line 43
     iget p0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->backgroundPaddingLeft:I
 
     return p0
@@ -363,7 +362,7 @@
 .method public static final synthetic access$getBackgroundPaddingTop$p$s1435040960(Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;)I
     .locals 0
 
-    .line 47
+    .line 43
     iget p0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->backgroundPaddingTop:I
 
     return p0
@@ -372,7 +371,7 @@
 .method public static final synthetic access$getCurrentItemsList(Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;)Ljava/util/List;
     .locals 0
 
-    .line 47
+    .line 43
     invoke-direct {p0}, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;->getCurrentItemsList()Ljava/util/List;
 
     move-result-object p0
@@ -383,7 +382,7 @@
 .method public static final synthetic access$getIgnoreLayout$p(Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;)Z
     .locals 0
 
-    .line 47
+    .line 43
     iget-boolean p0, p0, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;->ignoreLayout:Z
 
     return p0
@@ -392,7 +391,7 @@
 .method public static final synthetic access$getLastSelectionList(Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;)Ljava/util/List;
     .locals 0
 
-    .line 47
+    .line 43
     invoke-direct {p0}, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;->getLastSelectionList()Ljava/util/List;
 
     move-result-object p0
@@ -403,7 +402,7 @@
 .method public static final synthetic access$getListAdapter(Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;)Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet$ListAdapter;
     .locals 0
 
-    .line 47
+    .line 43
     invoke-direct {p0}, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;->getListAdapter()Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet$ListAdapter;
 
     move-result-object p0
@@ -414,7 +413,7 @@
 .method public static final synthetic access$getListView(Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;)Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet$initListView$1;
     .locals 0
 
-    .line 47
+    .line 43
     invoke-direct {p0}, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;->getListView()Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet$initListView$1;
 
     move-result-object p0
@@ -425,7 +424,7 @@
 .method public static final synthetic access$getScrollOffsetY$p(Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;)I
     .locals 0
 
-    .line 47
+    .line 43
     iget p0, p0, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;->scrollOffsetY:I
 
     return p0
@@ -434,7 +433,7 @@
 .method public static final synthetic access$getShadowAnimation$p(Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;)Landroid/animation/AnimatorSet;
     .locals 0
 
-    .line 47
+    .line 43
     iget-object p0, p0, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;->shadowAnimation:Landroid/animation/AnimatorSet;
 
     return-object p0
@@ -443,7 +442,7 @@
 .method public static final synthetic access$getShadowDrawable$p$s1435040960(Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;)Landroid/graphics/drawable/Drawable;
     .locals 0
 
-    .line 47
+    .line 43
     iget-object p0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->shadowDrawable:Landroid/graphics/drawable/Drawable;
 
     return-object p0
@@ -452,7 +451,7 @@
 .method public static final synthetic access$getTopShadow(Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;)Landroid/view/View;
     .locals 0
 
-    .line 47
+    .line 43
     invoke-direct {p0}, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;->getTopShadow()Landroid/view/View;
 
     move-result-object p0
@@ -463,7 +462,7 @@
 .method public static final synthetic access$initCancelButton(Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;)Landroid/widget/TextView;
     .locals 0
 
-    .line 47
+    .line 43
     invoke-direct {p0}, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;->initCancelButton()Landroid/widget/TextView;
 
     move-result-object p0
@@ -474,7 +473,7 @@
 .method public static final synthetic access$initListView(Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;)Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet$initListView$1;
     .locals 0
 
-    .line 47
+    .line 43
     invoke-direct {p0}, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;->initListView()Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet$initListView$1;
 
     move-result-object p0
@@ -485,7 +484,7 @@
 .method public static final synthetic access$initSearchView(Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;)Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet$initSearchView$1;
     .locals 0
 
-    .line 47
+    .line 43
     invoke-direct {p0}, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;->initSearchView()Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet$initSearchView$1;
 
     move-result-object p0
@@ -496,7 +495,7 @@
 .method public static final synthetic access$initShadow(Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;Z)Landroid/view/View;
     .locals 0
 
-    .line 47
+    .line 43
     invoke-direct {p0, p1}, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;->initShadow(Z)Landroid/view/View;
 
     move-result-object p0
@@ -507,7 +506,7 @@
 .method public static final synthetic access$isSearching$p(Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;)Z
     .locals 0
 
-    .line 47
+    .line 43
     iget-boolean p0, p0, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;->isSearching:Z
 
     return p0
@@ -516,7 +515,7 @@
 .method public static final synthetic access$isSelectedLanguagePosition(Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;I)Z
     .locals 0
 
-    .line 47
+    .line 43
     invoke-direct {p0, p1}, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;->isSelectedLanguagePosition(I)Z
 
     move-result p0
@@ -527,7 +526,7 @@
 .method public static final synthetic access$setFilteredLanguages$p(Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;Ljava/util/List;)V
     .locals 0
 
-    .line 47
+    .line 43
     iput-object p1, p0, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;->filteredLanguages:Ljava/util/List;
 
     return-void
@@ -536,7 +535,7 @@
 .method public static final synthetic access$setIgnoreLayout$p(Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;Z)V
     .locals 0
 
-    .line 47
+    .line 43
     iput-boolean p1, p0, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;->ignoreLayout:Z
 
     return-void
@@ -545,7 +544,7 @@
 .method public static final synthetic access$setItemWidth$p(Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;I)V
     .locals 0
 
-    .line 47
+    .line 43
     iput p1, p0, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;->itemWidth:I
 
     return-void
@@ -554,7 +553,7 @@
 .method public static final synthetic access$setSearching$p(Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;Z)V
     .locals 0
 
-    .line 47
+    .line 43
     iput-boolean p1, p0, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;->isSearching:Z
 
     return-void
@@ -563,7 +562,7 @@
 .method public static final synthetic access$setShadowAnimation$p(Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;Landroid/animation/AnimatorSet;)V
     .locals 0
 
-    .line 47
+    .line 43
     iput-object p1, p0, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;->shadowAnimation:Landroid/animation/AnimatorSet;
 
     return-void
@@ -572,7 +571,7 @@
 .method public static final synthetic access$updateLayout(Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;)V
     .locals 0
 
-    .line 47
+    .line 43
     invoke-direct {p0}, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;->updateLayout()V
 
     return-void
@@ -581,7 +580,7 @@
 .method private final getBottomShadow()Landroid/view/View;
     .locals 1
 
-    .line 59
+    .line 55
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;->bottomShadow$delegate:Lkotlin/Lazy;
 
     invoke-interface {v0}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
@@ -596,7 +595,7 @@
 .method private final getCancelButton()Landroid/widget/TextView;
     .locals 1
 
-    .line 60
+    .line 56
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;->cancelButton$delegate:Lkotlin/Lazy;
 
     invoke-interface {v0}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
@@ -619,7 +618,7 @@
         }
     .end annotation
 
-    .line 70
+    .line 66
     iget-boolean v0, p0, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;->isSearching:Z
 
     if-eqz v0, :cond_0
@@ -648,7 +647,7 @@
         }
     .end annotation
 
-    .line 167
+    .line 163
     sget-object v0, Lorg/telegram/messenger/SharedConfig;->lastSelectedLanguage:Ljava/lang/String;
 
     const-string v1, "lastSelectedLanguage"
@@ -671,7 +670,7 @@
     :goto_0
     if-eqz v0, :cond_1
 
-    .line 168
+    .line 164
     sget-object v2, Lorg/telegram/messenger/SharedConfig;->lastSelectedLanguage:Ljava/lang/String;
 
     invoke-static {v2, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
@@ -700,7 +699,7 @@
 
     goto :goto_1
 
-    .line 169
+    .line 165
     :cond_1
     new-instance v0, Ljava/util/ArrayList;
 
@@ -713,7 +712,7 @@
 .method private final getListAdapter()Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet$ListAdapter;
     .locals 1
 
-    .line 58
+    .line 54
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;->listAdapter$delegate:Lkotlin/Lazy;
 
     invoke-interface {v0}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
@@ -728,7 +727,7 @@
 .method private final getListView()Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet$initListView$1;
     .locals 1
 
-    .line 57
+    .line 53
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;->listView$delegate:Lkotlin/Lazy;
 
     invoke-interface {v0}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
@@ -743,7 +742,7 @@
 .method private final getSearchView()Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet$initSearchView$1;
     .locals 1
 
-    .line 56
+    .line 52
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;->searchView$delegate:Lkotlin/Lazy;
 
     invoke-interface {v0}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
@@ -766,7 +765,7 @@
         }
     .end annotation
 
-    .line 164
+    .line 160
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;->languages:Ljava/util/List;
 
     .line 766
@@ -795,7 +794,7 @@
 
     check-cast v3, Lcom/iMe/model/translation/TranslationLanguageUiModel;
 
-    .line 164
+    .line 160
     iget-object v4, p0, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;->lastSelectLanguages:Ljava/util/List;
 
     invoke-virtual {v3}, Lcom/iMe/model/translation/TranslationLanguageUiModel;->getLanguageCode()Ljava/lang/String;
@@ -813,7 +812,7 @@
 
     goto :goto_0
 
-    .line 164
+    .line 160
     :cond_1
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;->languages:Ljava/util/List;
 
@@ -843,7 +842,7 @@
 
     check-cast v4, Lcom/iMe/model/translation/TranslationLanguageUiModel;
 
-    .line 164
+    .line 160
     iget-object v5, p0, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;->lastSelectLanguages:Ljava/util/List;
 
     invoke-virtual {v4}, Lcom/iMe/model/translation/TranslationLanguageUiModel;->getLanguageCode()Ljava/lang/String;
@@ -861,7 +860,7 @@
 
     goto :goto_1
 
-    .line 164
+    .line 160
     :cond_3
     invoke-static {v1, v2}, Lkotlin/collections/CollectionsKt;->plus(Ljava/util/Collection;Ljava/lang/Iterable;)Ljava/util/List;
 
@@ -873,7 +872,7 @@
 .method private final getTopShadow()Landroid/view/View;
     .locals 1
 
-    .line 55
+    .line 51
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;->topShadow$delegate:Lkotlin/Lazy;
 
     invoke-interface {v0}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
@@ -888,7 +887,7 @@
 .method private final initCancelButton()Landroid/widget/TextView;
     .locals 3
 
-    .line 105
+    .line 101
     new-instance v0, Landroid/widget/TextView;
 
     invoke-virtual {p0}, Landroid/app/Dialog;->getContext()Landroid/content/Context;
@@ -899,7 +898,7 @@
 
     const/16 v1, 0x12
 
-    .line 106
+    .line 102
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v1
@@ -908,12 +907,12 @@
 
     const/4 v1, 0x1
 
-    .line 107
+    .line 103
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setAllCaps(Z)V
 
     const-string v1, "fonts/rmedium.ttf"
 
-    .line 108
+    .line 104
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->getTypeface(Ljava/lang/String;)Landroid/graphics/Typeface;
 
     move-result-object v1
@@ -922,10 +921,10 @@
 
     const/16 v1, 0x11
 
-    .line 109
+    .line 105
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 110
+    .line 106
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_dialogBackground:I
 
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -944,7 +943,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 111
+    .line 107
     sget v1, Lorg/telegram/messenger/R$string;->Cancel:I
 
     const-string v2, "Cancel"
@@ -955,7 +954,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 112
+    .line 108
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextBlue2:I
 
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -964,7 +963,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 113
+    .line 109
     new-instance v1, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet$$ExternalSyntheticLambda0;
 
     invoke-direct {v1, p0}, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet$$ExternalSyntheticLambda0;-><init>(Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;)V
@@ -981,7 +980,7 @@
 
     invoke-static {p0, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 113
+    .line 109
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BottomSheet;->dismiss()V
 
     return-void
@@ -990,7 +989,7 @@
 .method private final initListView()Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet$initListView$1;
     .locals 3
 
-    .line 116
+    .line 112
     invoke-virtual {p0}, Landroid/app/Dialog;->getContext()Landroid/content/Context;
 
     move-result-object v0
@@ -999,7 +998,7 @@
 
     invoke-direct {v1, p0, v0}, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet$initListView$1;-><init>(Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;Landroid/content/Context;)V
 
-    .line 124
+    .line 120
     new-instance v0, Landroidx/recyclerview/widget/LinearLayoutManager;
 
     invoke-virtual {v1}, Landroid/view/ViewGroup;->getContext()Landroid/content/Context;
@@ -1010,7 +1009,7 @@
 
     invoke-virtual {v1, v0}, Landroidx/recyclerview/widget/RecyclerView;->setLayoutManager(Landroidx/recyclerview/widget/RecyclerView$LayoutManager;)V
 
-    .line 125
+    .line 121
     invoke-direct {p0}, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;->getListAdapter()Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet$ListAdapter;
 
     move-result-object v0
@@ -1019,18 +1018,18 @@
 
     const/4 v0, 0x0
 
-    .line 126
+    .line 122
     invoke-virtual {v1, v0}, Lorg/telegram/ui/Components/RecyclerListView;->setVerticalScrollBarEnabled(Z)V
 
-    .line 127
+    .line 123
     invoke-virtual {v1, v0}, Landroidx/recyclerview/widget/RecyclerView;->setClipToPadding(Z)V
 
     const/4 v0, 0x1
 
-    .line 128
+    .line 124
     invoke-virtual {v1, v0}, Landroid/view/ViewGroup;->setEnabled(Z)V
 
-    .line 129
+    .line 125
     sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_dialogScrollGlow:I
 
     invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -1045,7 +1044,7 @@
 .method private final initSearchView()Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet$initSearchView$1;
     .locals 3
 
-    .line 92
+    .line 88
     invoke-virtual {p0}, Landroid/app/Dialog;->getContext()Landroid/content/Context;
 
     move-result-object v0
@@ -1056,7 +1055,7 @@
 
     invoke-direct {v2, p0, v0, v1}, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet$initSearchView$1;-><init>(Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
-    .line 102
+    .line 98
     sget v0, Lorg/telegram/messenger/R$string;->translation_search_language:I
 
     invoke-static {v0}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
@@ -1071,7 +1070,7 @@
 .method private final initShadow(Z)Landroid/view/View;
     .locals 2
 
-    .line 132
+    .line 128
     new-instance v0, Landroid/view/View;
 
     invoke-virtual {p0}, Landroid/app/Dialog;->getContext()Landroid/content/Context;
@@ -1080,7 +1079,7 @@
 
     invoke-direct {v0, v1}, Landroid/view/View;-><init>(Landroid/content/Context;)V
 
-    .line 133
+    .line 129
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_dialogShadowLine:I
 
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -1108,7 +1107,7 @@
 .method private final isSelectedLanguagePosition(I)Z
     .locals 1
 
-    .line 171
+    .line 167
     invoke-direct {p0}, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;->getCurrentItemsList()Ljava/util/List;
 
     move-result-object v0
@@ -1135,12 +1134,12 @@
 .method private final runShadowAnimation(Z)V
     .locals 7
 
-    .line 202
+    .line 198
     iget-boolean v0, p0, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;->shadowShowed:Z
 
     if-eq v0, p1, :cond_3
 
-    .line 203
+    .line 199
     iput-boolean p1, p0, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;->shadowShowed:Z
 
     const/4 v0, 0x1
@@ -1149,7 +1148,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 205
+    .line 201
     invoke-direct {p0}, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;->getTopShadow()Landroid/view/View;
 
     move-result-object v2
@@ -1158,7 +1157,7 @@
 
     invoke-static {v2, v1, v0, v3}, Lcom/iMe/utils/extentions/common/ViewExtKt;->visible$default(Landroid/view/View;ZILjava/lang/Object;)V
 
-    .line 207
+    .line 203
     :cond_0
     iget-object v2, p0, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;->shadowAnimation:Landroid/animation/AnimatorSet;
 
@@ -1166,7 +1165,7 @@
 
     invoke-virtual {v2}, Landroid/animation/AnimatorSet;->cancel()V
 
-    .line 208
+    .line 204
     :cond_1
     new-instance v2, Landroid/animation/AnimatorSet;
 
@@ -1174,7 +1173,7 @@
 
     new-array v3, v0, [Landroid/animation/Animator;
 
-    .line 209
+    .line 205
     invoke-direct {p0}, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;->getTopShadow()Landroid/view/View;
 
     move-result-object v4
@@ -1203,7 +1202,7 @@
 
     invoke-virtual {v2, v3}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
 
-    .line 210
+    .line 206
     new-instance v0, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet$runShadowAnimation$1$1;
 
     invoke-direct {v0, p0, p1}, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet$runShadowAnimation$1$1;-><init>(Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;Z)V
@@ -1212,13 +1211,13 @@
 
     const-wide/16 v0, 0x96
 
-    .line 226
+    .line 222
     invoke-virtual {v2, v0, v1}, Landroid/animation/AnimatorSet;->setDuration(J)Landroid/animation/AnimatorSet;
 
-    .line 227
+    .line 223
     invoke-virtual {v2}, Landroid/animation/AnimatorSet;->start()V
 
-    .line 208
+    .line 204
     iput-object v2, p0, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;->shadowAnimation:Landroid/animation/AnimatorSet;
 
     :cond_3
@@ -1228,17 +1227,17 @@
 .method private final setScrollOffsetY(I)V
     .locals 1
 
-    .line 194
+    .line 190
     iput p1, p0, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;->scrollOffsetY:I
 
-    .line 195
+    .line 191
     invoke-direct {p0}, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;->getListView()Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet$initListView$1;
 
     move-result-object v0
 
     invoke-virtual {v0, p1}, Landroidx/recyclerview/widget/RecyclerView;->setTopGlowOffset(I)V
 
-    .line 196
+    .line 192
     invoke-direct {p0}, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;->getSearchView()Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet$initSearchView$1;
 
     move-result-object v0
@@ -1247,14 +1246,14 @@
 
     invoke-virtual {v0, p1}, Landroid/widget/FrameLayout;->setTranslationY(F)V
 
-    .line 197
+    .line 193
     invoke-direct {p0}, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;->getTopShadow()Landroid/view/View;
 
     move-result-object v0
 
     invoke-virtual {v0, p1}, Landroid/view/View;->setTranslationY(F)V
 
-    .line 198
+    .line 194
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->containerView:Landroid/view/ViewGroup;
 
     invoke-virtual {p1}, Landroid/view/ViewGroup;->invalidate()V
@@ -1265,19 +1264,19 @@
 .method private final setupListeners()V
     .locals 2
 
-    .line 138
+    .line 134
     invoke-direct {p0}, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;->getListView()Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet$initListView$1;
 
     move-result-object v0
 
-    .line 139
+    .line 135
     new-instance v1, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet$setupListeners$1$1;
 
     invoke-direct {v1, p0}, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet$setupListeners$1$1;-><init>(Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;)V
 
     invoke-virtual {v0, v1}, Landroidx/recyclerview/widget/RecyclerView;->addOnScrollListener(Landroidx/recyclerview/widget/RecyclerView$OnScrollListener;)V
 
-    .line 144
+    .line 140
     new-instance v1, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet$$ExternalSyntheticLambda1;
 
     invoke-direct {v1, p0}, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet$$ExternalSyntheticLambda1;-><init>(Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;)V
@@ -1294,7 +1293,7 @@
 
     invoke-static {p0, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 145
+    .line 141
     invoke-direct {p0}, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;->getCurrentItemsList()Ljava/util/List;
 
     move-result-object p1
@@ -1307,7 +1306,7 @@
 
     return-void
 
-    .line 148
+    .line 144
     :cond_0
     invoke-direct {p0}, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;->getCurrentItemsList()Ljava/util/List;
 
@@ -1325,7 +1324,7 @@
 
     iput-object p1, p0, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;->selectedLangCode:Ljava/lang/String;
 
-    .line 149
+    .line 145
     iget-object p2, p0, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;->lastSelectLanguages:Ljava/util/List;
 
     invoke-static {p2, p1}, Lkotlin/collections/CollectionsKt;->contains(Ljava/lang/Iterable;Ljava/lang/Object;)Z
@@ -1334,7 +1333,7 @@
 
     if-nez p1, :cond_2
 
-    .line 150
+    .line 146
     iget-object p1, p0, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;->lastSelectLanguages:Ljava/util/List;
 
     invoke-interface {p1}, Ljava/util/List;->size()I
@@ -1345,7 +1344,7 @@
 
     if-ge p1, p2, :cond_1
 
-    .line 151
+    .line 147
     iget-object p1, p0, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;->lastSelectLanguages:Ljava/util/List;
 
     iget-object p2, p0, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;->selectedLangCode:Ljava/lang/String;
@@ -1358,7 +1357,7 @@
 
     goto :goto_0
 
-    .line 153
+    .line 149
     :cond_1
     iget-object p1, p0, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;->lastSelectLanguages:Ljava/util/List;
 
@@ -1372,7 +1371,7 @@
 
     invoke-interface {p1, p2, v0}, Ljava/util/List;->set(ILjava/lang/Object;)Ljava/lang/Object;
 
-    .line 155
+    .line 151
     :goto_0
     iget-object v1, p0, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;->lastSelectLanguages:Ljava/util/List;
 
@@ -1398,7 +1397,7 @@
 
     invoke-static {p1}, Lorg/telegram/messenger/SharedConfig;->setLastSelectedLanguage(Ljava/lang/String;)V
 
-    .line 157
+    .line 153
     :cond_2
     invoke-direct {p0}, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;->getListAdapter()Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet$ListAdapter;
 
@@ -1406,10 +1405,10 @@
 
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyDataSetChanged()V
 
-    .line 158
+    .line 154
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BottomSheet;->dismiss()V
 
-    .line 159
+    .line 155
     iget-object p1, p0, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;->selectLanguageDelegate:Lcom/iMe/fork/utils/Callbacks$Callback1;
 
     iget-object p0, p0, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;->selectedLangCode:Ljava/lang/String;
@@ -1422,7 +1421,7 @@
 .method private final updateLayout()V
     .locals 3
 
-    .line 174
+    .line 170
     invoke-direct {p0}, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;->getListView()Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet$initListView$1;
 
     move-result-object v0
@@ -1433,7 +1432,7 @@
 
     if-gtz v0, :cond_0
 
-    .line 175
+    .line 171
     invoke-direct {p0}, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;->getListView()Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet$initListView$1;
 
     move-result-object v0
@@ -1446,7 +1445,7 @@
 
     return-void
 
-    .line 178
+    .line 174
     :cond_0
     invoke-direct {p0}, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;->getListView()Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet$initListView$1;
 
@@ -1458,7 +1457,7 @@
 
     move-result-object v0
 
-    .line 179
+    .line 175
     invoke-direct {p0}, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;->getListView()Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet$initListView$1;
 
     move-result-object v2
@@ -1469,7 +1468,7 @@
 
     check-cast v2, Lorg/telegram/ui/Components/RecyclerListView$Holder;
 
-    .line 180
+    .line 176
     invoke-virtual {v0}, Landroid/view/View;->getTop()I
 
     move-result v0
@@ -1478,14 +1477,14 @@
 
     if-eqz v2, :cond_1
 
-    .line 182
+    .line 178
     invoke-virtual {v2}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getAdapterPosition()I
 
     move-result v2
 
     if-nez v2, :cond_1
 
-    .line 184
+    .line 180
     invoke-direct {p0, v1}, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;->runShadowAnimation(Z)V
 
     move v1, v0
@@ -1495,16 +1494,16 @@
     :cond_1
     const/4 v0, 0x1
 
-    .line 186
+    .line 182
     invoke-direct {p0, v0}, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;->runShadowAnimation(Z)V
 
-    .line 188
+    .line 184
     :goto_0
     iget v0, p0, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;->scrollOffsetY:I
 
     if-eq v0, v1, :cond_2
 
-    .line 189
+    .line 185
     invoke-direct {p0, v1}, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;->setScrollOffsetY(I)V
 
     :cond_2
@@ -1532,7 +1531,7 @@
         }
     .end annotation
 
-    .line 49
+    .line 45
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;->languages:Ljava/util/List;
 
     return-object v0

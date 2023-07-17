@@ -10,7 +10,7 @@ public final class WalletBottomNavigationTab extends NavigationTab<WalletTabFrag
     private final WalletTabFragment fragment;
 
     /* renamed from: id */
-    private final int f285id;
+    private final int f367id;
     private final String title;
 
     public static /* synthetic */ WalletBottomNavigationTab copy$default(WalletBottomNavigationTab walletBottomNavigationTab, int i, WalletTabFragment walletTabFragment, String str, int i2, Object obj) {
@@ -69,7 +69,7 @@ public final class WalletBottomNavigationTab extends NavigationTab<WalletTabFrag
 
     @Override // com.iMe.model.common.NavigationTab
     public int getId() {
-        return this.f285id;
+        return this.f367id;
     }
 
     @Override // com.iMe.model.common.NavigationTab
@@ -86,7 +86,7 @@ public final class WalletBottomNavigationTab extends NavigationTab<WalletTabFrag
         super(i, fragment);
         Intrinsics.checkNotNullParameter(fragment, "fragment");
         Intrinsics.checkNotNullParameter(title, "title");
-        this.f285id = i;
+        this.f367id = i;
         this.fragment = fragment;
         this.title = title;
     }

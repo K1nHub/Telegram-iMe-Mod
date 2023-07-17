@@ -60,7 +60,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 116
+    .line 121
     check-cast p1, Landroid/widget/TextView;
 
     check-cast p2, Lorg/telegram/ui/ActionBar/AlertDialog;

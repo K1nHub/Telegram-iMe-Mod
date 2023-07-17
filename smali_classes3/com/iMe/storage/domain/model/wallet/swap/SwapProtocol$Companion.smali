@@ -14,7 +14,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nSwapProtocol.kt\nKotlin\n*S Kotlin\n*F\n+ 1 SwapProtocol.kt\ncom/iMe/storage/domain/model/wallet/swap/SwapProtocol$Companion\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,18:1\n1#2:19\n*E\n"
+    value = "SMAP\nSwapProtocol.kt\nKotlin\n*S Kotlin\n*F\n+ 1 SwapProtocol.kt\ncom/iMe/storage/domain/model/wallet/swap/SwapProtocol$Companion\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,21:1\n1#2:22\n*E\n"
 .end annotation
 
 
@@ -86,4 +86,17 @@
 
     :cond_2
     return-object v3
+.end method
+
+.method public final resolveByNetworkId(Ljava/lang/String;)Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocol;
+    .locals 1
+
+    const-string v0, "networkId"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 19
+    sget-object p1, Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocol;->ONEINCH:Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocol;
+
+    return-object p1
 .end method

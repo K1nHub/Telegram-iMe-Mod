@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import com.iMe.common.IdFabric$Menu;
+import com.iMe.fork.p024ui.dialog.SelectNetworkBottomSheet;
 import com.iMe.fork.p024ui.view.TabbedViewPager;
 import com.iMe.fork.utils.Callbacks$Callback1;
 import com.iMe.fork.utils.TabbedFragmentPage;
@@ -18,12 +19,11 @@ import com.iMe.navigation.common.configuration.NavigationConfiguration;
 import com.iMe.navigation.common.configuration.NavigationViewConfiguration;
 import com.iMe.navigation.common.router.base.NavigationRouter;
 import com.iMe.p023di.module.NavigationModuleKt;
-import com.iMe.p031ui.base.WalletAuthFragment;
 import com.iMe.p031ui.base.mvp.MvpFragment;
+import com.iMe.p031ui.base.wallet_auth.WalletAuthBaseFragment;
 import com.iMe.p031ui.custom.NetworkTypeView;
 import com.iMe.p031ui.wallet.transaction.WalletTransactionsFragment;
-import com.iMe.storage.domain.model.crypto.NetworkType;
-import com.iMe.utils.dialogs.DialogsFactoryKt;
+import com.iMe.storage.domain.model.crypto.Network;
 import com.iMe.utils.extentions.delegate.ResettableLazy;
 import com.iMe.utils.extentions.delegate.ResettableLazyDelegateKt;
 import com.iMe.utils.extentions.delegate.ResettableLazyManager;
@@ -45,21 +45,21 @@ import kotlin.jvm.internal.Reflection;
 import kotlin.reflect.KProperty;
 import moxy.MvpDelegate;
 import moxy.ktx.MoxyKtxDelegate;
-import org.koin.p043mp.KoinPlatformTools;
+import org.koin.p042mp.KoinPlatformTools;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3295R;
+import org.telegram.messenger.C3417R;
 import org.telegram.messenger.databinding.ForkFragmentStakingOperationsBinding;
-import org.telegram.p044ui.ActionBar.ActionBarMenuItem;
-import org.telegram.p044ui.ActionBar.BaseFragment;
-import org.telegram.p044ui.ActionBar.C3361ActionBar;
-import org.telegram.p044ui.ActionBar.Theme;
-import org.telegram.p044ui.ActionBar.ThemeDescription;
-import org.telegram.p044ui.Components.LayoutHelper;
-import org.telegram.p044ui.Components.ViewPagerFixed;
+import org.telegram.p043ui.ActionBar.ActionBarMenuItem;
+import org.telegram.p043ui.ActionBar.BaseFragment;
+import org.telegram.p043ui.ActionBar.C3484ActionBar;
+import org.telegram.p043ui.ActionBar.Theme;
+import org.telegram.p043ui.ActionBar.ThemeDescription;
+import org.telegram.p043ui.Components.LayoutHelper;
+import org.telegram.p043ui.Components.ViewPagerFixed;
 /* compiled from: StakingOperationsFragment.kt */
 /* renamed from: com.iMe.ui.wallet.staking.operations.StakingOperationsFragment */
 /* loaded from: classes4.dex */
-public final class StakingOperationsFragment extends WalletAuthFragment implements StakingOperationsView, NavigationViewConfiguration, TabbedViewPagerDelegate<TabbedFragmentPage<MvpFragment>> {
+public final class StakingOperationsFragment extends WalletAuthBaseFragment implements StakingOperationsView, NavigationViewConfiguration, TabbedViewPagerDelegate<TabbedFragmentPage<MvpFragment>> {
     static final /* synthetic */ KProperty<Object>[] $$delegatedProperties = {Reflection.property1(new PropertyReference1Impl(StakingOperationsFragment.class, "presenter", "getPresenter()Lcom/iMe/ui/wallet/staking/operations/StakingOperationsPresenter;", 0)), Reflection.property1(new PropertyReference1Impl(StakingOperationsFragment.class, "binding", "getBinding()Lorg/telegram/messenger/databinding/ForkFragmentStakingOperationsBinding;", 0))};
     public static final Companion Companion = new Companion(null);
     private final ResettableLazy binding$delegate;
@@ -129,12 +129,12 @@ public final class StakingOperationsFragment extends WalletAuthFragment implemen
         return root;
     }
 
-    @Override // com.iMe.p031ui.base.WalletAuthFragment, com.iMe.p031ui.base.mvp.MvpFragment
+    @Override // com.iMe.p031ui.base.wallet_auth.WalletAuthBaseFragment, com.iMe.p031ui.base.mvp.MvpFragment
     public void onViewReady() {
         getPresenter().setupNavigationRouter();
     }
 
-    @Override // org.telegram.p044ui.ActionBar.BaseFragment
+    @Override // org.telegram.p043ui.ActionBar.BaseFragment
     public void onActivityResultFragment(int i, int i2, Intent intent) {
         super.onActivityResultFragment(i, i2, intent);
         for (MvpFragment mvpFragment : getNavigationRouter().getScreenStack()) {
@@ -142,13 +142,13 @@ public final class StakingOperationsFragment extends WalletAuthFragment implemen
         }
     }
 
-    @Override // com.iMe.p031ui.base.mvp.MvpFragment, org.telegram.p044ui.ActionBar.BaseFragment
+    @Override // com.iMe.p031ui.base.mvp.MvpFragment, org.telegram.p043ui.ActionBar.BaseFragment
     public void onFragmentDestroy() {
         getNavigationRouter().clean();
         super.onFragmentDestroy();
     }
 
-    @Override // com.iMe.p031ui.base.mvp.MvpFragment, org.telegram.p044ui.ActionBar.BaseFragment
+    @Override // com.iMe.p031ui.base.mvp.MvpFragment, org.telegram.p043ui.ActionBar.BaseFragment
     public void onDestroyView() {
         for (MvpFragment mvpFragment : getNavigationRouter().getScreenStack()) {
             mvpFragment.onDestroyView();
@@ -156,7 +156,7 @@ public final class StakingOperationsFragment extends WalletAuthFragment implemen
         super.onDestroyView();
     }
 
-    @Override // com.iMe.p031ui.base.WalletAuthFragment, com.iMe.p031ui.base.mvp.MvpFragment, org.telegram.p044ui.ActionBar.BaseFragment
+    @Override // com.iMe.p031ui.base.wallet_auth.WalletAuthBaseFragment, com.iMe.p031ui.base.mvp.MvpFragment, org.telegram.p043ui.ActionBar.BaseFragment
     public void onResume() {
         super.onResume();
         for (MvpFragment mvpFragment : getNavigationRouter().getScreenStack()) {
@@ -164,7 +164,7 @@ public final class StakingOperationsFragment extends WalletAuthFragment implemen
         }
     }
 
-    @Override // com.iMe.p031ui.base.mvp.MvpFragment, org.telegram.p044ui.ActionBar.BaseFragment
+    @Override // com.iMe.p031ui.base.mvp.MvpFragment, org.telegram.p043ui.ActionBar.BaseFragment
     public void onPause() {
         for (MvpFragment mvpFragment : getNavigationRouter().getScreenStack()) {
             mvpFragment.onPause();
@@ -194,7 +194,7 @@ public final class StakingOperationsFragment extends WalletAuthFragment implemen
         tabsView.setColors(Theme.key_actionBarTabLine, Theme.key_actionBarTabActiveText, Theme.key_actionBarTabUnactiveText, Theme.key_actionBarTabSelector, Theme.key_actionBarDefault);
     }
 
-    @Override // org.telegram.p044ui.ActionBar.BaseFragment
+    @Override // org.telegram.p043ui.ActionBar.BaseFragment
     public boolean isSwipeBackEnabled(MotionEvent motionEvent) {
         return getBinding().operationsPager.isSwipeBackEnabled();
     }
@@ -221,35 +221,37 @@ public final class StakingOperationsFragment extends WalletAuthFragment implemen
     }
 
     @Override // com.iMe.p031ui.base.mvp.SwitchNetworkView
-    public void showChooseNetworkDialog(NetworkType networkType, List<? extends NetworkType> availableNetworks, final Function1<? super NetworkType, Unit> action) {
-        Intrinsics.checkNotNullParameter(networkType, "networkType");
+    public void showChooseNetworkDialog(Network network, List<Network> availableNetworks, final Function1<? super Network, Unit> action) {
+        Intrinsics.checkNotNullParameter(network, "network");
         Intrinsics.checkNotNullParameter(availableNetworks, "availableNetworks");
         Intrinsics.checkNotNullParameter(action, "action");
+        SelectNetworkBottomSheet.Companion companion = SelectNetworkBottomSheet.Companion;
         Activity parentActivity = getParentActivity();
-        Intrinsics.checkNotNullExpressionValue(parentActivity, "parentActivity");
-        showDialog(DialogsFactoryKt.createSelectNetworkTypeDialog(parentActivity, availableNetworks, networkType, new Callbacks$Callback1() { // from class: com.iMe.ui.wallet.staking.operations.StakingOperationsFragment$$ExternalSyntheticLambda0
+        Callbacks$Callback1<Network> callbacks$Callback1 = new Callbacks$Callback1() { // from class: com.iMe.ui.wallet.staking.operations.StakingOperationsFragment$$ExternalSyntheticLambda0
             @Override // com.iMe.fork.utils.Callbacks$Callback1
             public final void invoke(Object obj) {
-                StakingOperationsFragment.showChooseNetworkDialog$lambda$8(Function1.this, (NetworkType) obj);
+                StakingOperationsFragment.showChooseNetworkDialog$lambda$8(Function1.this, (Network) obj);
             }
-        }));
+        };
+        Intrinsics.checkNotNullExpressionValue(parentActivity, "parentActivity");
+        showDialog(companion.newInstance(parentActivity, network, availableNetworks, callbacks$Callback1));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void showChooseNetworkDialog$lambda$8(Function1 action, NetworkType selectedNetworkType) {
+    public static final void showChooseNetworkDialog$lambda$8(Function1 action, Network selectedNetworkType) {
         Intrinsics.checkNotNullParameter(action, "$action");
         Intrinsics.checkNotNullExpressionValue(selectedNetworkType, "selectedNetworkType");
         action.invoke(selectedNetworkType);
     }
 
     @Override // com.iMe.p031ui.base.mvp.SwitchNetworkView
-    public void setupNetworkType(NetworkType networkType) {
-        Intrinsics.checkNotNullParameter(networkType, "networkType");
+    public void setupNetwork(Network network) {
+        Intrinsics.checkNotNullParameter(network, "network");
         NetworkTypeView networkTypeView = this.networkTypeView;
         if (networkTypeView == null) {
             return;
         }
-        networkTypeView.setNetworkType(networkType);
+        networkTypeView.setNetwork(network);
     }
 
     @Override // com.iMe.navigation.common.configuration.NavigationViewConfiguration
@@ -259,7 +261,7 @@ public final class StakingOperationsFragment extends WalletAuthFragment implemen
         return root;
     }
 
-    @Override // org.telegram.p044ui.ActionBar.BaseFragment
+    @Override // org.telegram.p043ui.ActionBar.BaseFragment
     public ArrayList<ThemeDescription> getThemeDescriptions() {
         ArrayList<ThemeDescription> arrayListOf;
         arrayListOf = CollectionsKt__CollectionsKt.arrayListOf(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, Theme.key_actionBarDefault), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_ITEMSCOLOR, null, null, null, null, Theme.key_actionBarDefaultIcon), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_TITLECOLOR, null, null, null, null, Theme.key_actionBarDefaultTitle), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SELECTORCOLOR, null, null, null, null, Theme.key_actionBarDefaultSelector));
@@ -281,13 +283,13 @@ public final class StakingOperationsFragment extends WalletAuthFragment implemen
     }
 
     private final void setupActionBar() {
-        C3361ActionBar c3361ActionBar = this.actionBar;
-        c3361ActionBar.setCastShadows(false);
-        c3361ActionBar.setBackButtonImage(C3295R.C3297drawable.ic_ab_back);
-        c3361ActionBar.setTitle(getResourceManager().getString(C3295R.string.wallet_transactions_toolbar_title));
-        c3361ActionBar.setAllowOverlayTitle(true);
-        c3361ActionBar.setActionBarMenuOnItemClick(new C3361ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.ui.wallet.staking.operations.StakingOperationsFragment$setupActionBar$1$1
-            @Override // org.telegram.p044ui.ActionBar.C3361ActionBar.ActionBarMenuOnItemClick
+        C3484ActionBar c3484ActionBar = this.actionBar;
+        c3484ActionBar.setCastShadows(false);
+        c3484ActionBar.setBackButtonImage(C3417R.C3419drawable.ic_ab_back);
+        c3484ActionBar.setTitle(getResourceManager().getString(C3417R.string.wallet_transactions_toolbar_title));
+        c3484ActionBar.setAllowOverlayTitle(true);
+        c3484ActionBar.setActionBarMenuOnItemClick(new C3484ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.ui.wallet.staking.operations.StakingOperationsFragment$setupActionBar$1$1
+            @Override // org.telegram.p043ui.ActionBar.C3484ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 StakingOperationsPresenter presenter;
                 if (i == -1) {
@@ -301,7 +303,8 @@ public final class StakingOperationsFragment extends WalletAuthFragment implemen
         Activity parentActivity = getParentActivity();
         Intrinsics.checkNotNullExpressionValue(parentActivity, "parentActivity");
         this.networkTypeView = new NetworkTypeView(parentActivity, null, 0, 6, null);
-        ActionBarMenuItem setupActionBar$lambda$13$lambda$12 = c3361ActionBar.createMenu().addItemWithWidth(IdFabric$Menu.NETWORK_SWITCH, 0, -2);
+        ActionBarMenuItem setupActionBar$lambda$13$lambda$12 = c3484ActionBar.createMenu().addItemWithWidth(IdFabric$Menu.NETWORK_SWITCH, 0, -2);
+        setupActionBar$lambda$13$lambda$12.disableRipple();
         Intrinsics.checkNotNullExpressionValue(setupActionBar$lambda$13$lambda$12, "setupActionBar$lambda$13$lambda$12");
         ViewExtKt.setPaddingHorizontal(setupActionBar$lambda$13$lambda$12, AndroidUtilities.m54dp(14));
         setupActionBar$lambda$13$lambda$12.addView(this.networkTypeView, LayoutHelper.createFrame(-2, -2, 8388629));

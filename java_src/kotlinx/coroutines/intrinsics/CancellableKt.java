@@ -18,7 +18,7 @@ public final class CancellableKt {
             createCoroutineUnintercepted = IntrinsicsKt__IntrinsicsJvmKt.createCoroutineUnintercepted(function1, continuation);
             intercepted = IntrinsicsKt__IntrinsicsJvmKt.intercepted(createCoroutineUnintercepted);
             Result.Companion companion = Result.Companion;
-            DispatchedContinuationKt.resumeCancellableWith$default(intercepted, Result.m1576constructorimpl(Unit.INSTANCE), null, 2, null);
+            DispatchedContinuationKt.resumeCancellableWith$default(intercepted, Result.m1601constructorimpl(Unit.INSTANCE), null, 2, null);
         } catch (Throwable th) {
             dispatcherFailure(continuation, th);
         }
@@ -38,7 +38,7 @@ public final class CancellableKt {
             createCoroutineUnintercepted = IntrinsicsKt__IntrinsicsJvmKt.createCoroutineUnintercepted(function2, r, continuation);
             intercepted = IntrinsicsKt__IntrinsicsJvmKt.intercepted(createCoroutineUnintercepted);
             Result.Companion companion = Result.Companion;
-            DispatchedContinuationKt.resumeCancellableWith(intercepted, Result.m1576constructorimpl(Unit.INSTANCE), function1);
+            DispatchedContinuationKt.resumeCancellableWith(intercepted, Result.m1601constructorimpl(Unit.INSTANCE), function1);
         } catch (Throwable th) {
             dispatcherFailure(continuation, th);
         }
@@ -49,7 +49,7 @@ public final class CancellableKt {
         try {
             intercepted = IntrinsicsKt__IntrinsicsJvmKt.intercepted(continuation);
             Result.Companion companion = Result.Companion;
-            DispatchedContinuationKt.resumeCancellableWith$default(intercepted, Result.m1576constructorimpl(Unit.INSTANCE), null, 2, null);
+            DispatchedContinuationKt.resumeCancellableWith$default(intercepted, Result.m1601constructorimpl(Unit.INSTANCE), null, 2, null);
         } catch (Throwable th) {
             dispatcherFailure(continuation2, th);
         }
@@ -57,7 +57,7 @@ public final class CancellableKt {
 
     private static final void dispatcherFailure(Continuation<?> continuation, Throwable th) {
         Result.Companion companion = Result.Companion;
-        continuation.resumeWith(Result.m1576constructorimpl(ResultKt.createFailure(th)));
+        continuation.resumeWith(Result.m1601constructorimpl(ResultKt.createFailure(th)));
         throw th;
     }
 }

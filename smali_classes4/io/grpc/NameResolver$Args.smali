@@ -80,7 +80,7 @@
 
     iput-object p1, p0, Lio/grpc/NameResolver$Args;->syncContext:Lio/grpc/SynchronizationContext;
 
-    const-string p1, "serviceConfigParser not set"
+    const-string/jumbo p1, "serviceConfigParser not set"
 
     .line 432
     invoke-static {p4, p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
@@ -207,7 +207,7 @@
 
     iget-object v1, p0, Lio/grpc/NameResolver$Args;->serviceConfigParser:Lio/grpc/NameResolver$ServiceConfigParser;
 
-    const-string v2, "serviceConfigParser"
+    const-string/jumbo v2, "serviceConfigParser"
 
     .line 527
     invoke-virtual {v0, v2, v1}, Lcom/google/common/base/MoreObjects$ToStringHelper;->add(Ljava/lang/String;Ljava/lang/Object;)Lcom/google/common/base/MoreObjects$ToStringHelper;
@@ -216,7 +216,7 @@
 
     iget-object v1, p0, Lio/grpc/NameResolver$Args;->scheduledExecutorService:Ljava/util/concurrent/ScheduledExecutorService;
 
-    const-string v2, "scheduledExecutorService"
+    const-string/jumbo v2, "scheduledExecutorService"
 
     .line 528
     invoke-virtual {v0, v2, v1}, Lcom/google/common/base/MoreObjects$ToStringHelper;->add(Ljava/lang/String;Ljava/lang/Object;)Lcom/google/common/base/MoreObjects$ToStringHelper;

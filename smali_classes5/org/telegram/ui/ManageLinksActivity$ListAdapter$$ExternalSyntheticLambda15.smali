@@ -6,16 +6,16 @@
 
 
 # instance fields
-.field public final synthetic f$0:Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;
+.field public final synthetic f$0:Lorg/telegram/ui/ManageLinksActivity$ListAdapter;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/ManageLinksActivity$ListAdapter;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter$$ExternalSyntheticLambda15;->f$0:Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;
+    iput-object p1, p0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter$$ExternalSyntheticLambda15;->f$0:Lorg/telegram/ui/ManageLinksActivity$ListAdapter;
 
     return-void
 .end method
@@ -25,9 +25,9 @@
 .method public final invoke()V
     .locals 1
 
-    iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter$$ExternalSyntheticLambda15;->f$0:Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;
+    iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter$$ExternalSyntheticLambda15;->f$0:Lorg/telegram/ui/ManageLinksActivity$ListAdapter;
 
-    invoke-virtual {v0}, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->startStakingConditionsDialog()V
+    invoke-static {v0}, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->$r8$lambda$Ef1MgekAZq6xT6VcG9JpuceRI2Q(Lorg/telegram/ui/ManageLinksActivity$ListAdapter;)V
 
     return-void
 .end method

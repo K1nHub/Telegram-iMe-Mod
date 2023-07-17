@@ -18,13 +18,15 @@
     .end annotation
 .end method
 
-.method public abstract getApproveTokensInfo(Lcom/iMe/storage/domain/model/crypto/NetworkType;Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocol;)Lio/reactivex/Observable;
+.method public abstract getApproveTokensInfo(Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocol;Ljava/lang/String;Ljava/util/List;)Lio/reactivex/Observable;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lcom/iMe/storage/domain/model/crypto/NetworkType;",
             "Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocol;",
-            ")",
+            "Ljava/lang/String;",
+            "Ljava/util/List<",
+            "Lcom/iMe/storage/domain/model/wallet/token/Token;",
+            ">;)",
             "Lio/reactivex/Observable<",
             "Lcom/iMe/storage/domain/model/Result<",
             "Ljava/util/List<",
@@ -34,35 +36,36 @@
     .end annotation
 .end method
 
-.method public abstract getAvailableTokensToSwap(Lcom/iMe/storage/domain/model/crypto/NetworkType;Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocol;)Lio/reactivex/Observable;
+.method public abstract getAvailableTokensToSwap(Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocol;Lcom/iMe/storage/domain/model/wallet/transaction/TransactionDirection;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Integer;)Lio/reactivex/Observable;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lcom/iMe/storage/domain/model/crypto/NetworkType;",
             "Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocol;",
+            "Lcom/iMe/storage/domain/model/wallet/transaction/TransactionDirection;",
+            "Ljava/lang/String;",
+            "Ljava/lang/String;",
+            "Ljava/lang/String;",
+            "Ljava/lang/Integer;",
             ")",
             "Lio/reactivex/Observable<",
             "Lcom/iMe/storage/domain/model/Result<",
-            "Ljava/util/List<",
-            "Lcom/iMe/storage/domain/model/wallet/token/TokenInfo;",
+            "Lcom/iMe/storage/domain/model/common/CursoredData<",
+            "Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;",
             ">;>;>;"
         }
     .end annotation
 .end method
 
-.method public abstract getQuoteToSwap(Lcom/iMe/storage/domain/model/wallet/token/TokenCode;Lcom/iMe/storage/domain/model/wallet/token/TokenCode;Ljava/lang/String;Lcom/iMe/storage/domain/model/wallet/swap/TradeType;FLcom/iMe/storage/domain/model/crypto/NetworkType;Lcom/iMe/storage/domain/model/crypto/NetworkType;Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocol;)Lio/reactivex/Observable;
+.method public abstract getQuoteToSwap(Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocol;Lcom/iMe/storage/domain/model/wallet/token/Token;Lcom/iMe/storage/domain/model/wallet/token/Token;Ljava/lang/String;Lcom/iMe/storage/domain/model/wallet/swap/TradeType;F)Lio/reactivex/Observable;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lcom/iMe/storage/domain/model/wallet/token/TokenCode;",
-            "Lcom/iMe/storage/domain/model/wallet/token/TokenCode;",
+            "Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocol;",
+            "Lcom/iMe/storage/domain/model/wallet/token/Token;",
+            "Lcom/iMe/storage/domain/model/wallet/token/Token;",
             "Ljava/lang/String;",
             "Lcom/iMe/storage/domain/model/wallet/swap/TradeType;",
-            "F",
-            "Lcom/iMe/storage/domain/model/crypto/NetworkType;",
-            "Lcom/iMe/storage/domain/model/crypto/NetworkType;",
-            "Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocol;",
-            ")",
+            "F)",
             "Lio/reactivex/Observable<",
             "Lcom/iMe/storage/domain/model/Result<",
             "Lcom/iMe/storage/domain/model/crypto/swap/CryptoSwapMetadata;",

@@ -1,6 +1,6 @@
 package com.iMe.p031ui.wallet.transaction;
 
-import com.iMe.storage.domain.model.crypto.NetworkType;
+import com.iMe.storage.domain.model.crypto.Network;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
@@ -9,7 +9,7 @@ import kotlin.jvm.internal.Lambda;
 /* compiled from: WalletTransactionsPresenter.kt */
 /* renamed from: com.iMe.ui.wallet.transaction.WalletTransactionsPresenter$startChooseNetworkDialog$1 */
 /* loaded from: classes4.dex */
-public final class WalletTransactionsPresenter$startChooseNetworkDialog$1 extends Lambda implements Function1<NetworkType, Unit> {
+public final class WalletTransactionsPresenter$startChooseNetworkDialog$1 extends Lambda implements Function1<Network, Unit> {
     final /* synthetic */ WalletTransactionsPresenter this$0;
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -20,18 +20,18 @@ public final class WalletTransactionsPresenter$startChooseNetworkDialog$1 extend
     }
 
     @Override // kotlin.jvm.functions.Function1
-    public /* bridge */ /* synthetic */ Unit invoke(NetworkType networkType) {
-        invoke2(networkType);
+    public /* bridge */ /* synthetic */ Unit invoke(Network network) {
+        invoke2(network);
         return Unit.INSTANCE;
     }
 
     /* renamed from: invoke  reason: avoid collision after fix types in other method */
-    public final void invoke2(NetworkType newNetworkType) {
-        NetworkType networkType;
-        Intrinsics.checkNotNullParameter(newNetworkType, "newNetworkType");
-        this.this$0.selectedNetworkType = newNetworkType;
-        networkType = this.this$0.selectedNetworkType;
-        ((WalletTransactionsView) this.this$0.getViewState()).setupNetworkType(networkType);
+    public final void invoke2(Network newNetwork) {
+        Network network;
+        Intrinsics.checkNotNullParameter(newNetwork, "newNetwork");
+        this.this$0.selectedNetwork = newNetwork;
+        network = this.this$0.selectedNetwork;
+        ((WalletTransactionsView) this.this$0.getViewState()).setupNetwork(network);
         WalletTransactionsPresenter.load$default(this.this$0, true, false, null, 6, null);
     }
 }

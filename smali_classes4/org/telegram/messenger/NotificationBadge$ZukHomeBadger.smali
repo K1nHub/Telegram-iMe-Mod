@@ -61,7 +61,7 @@
 
     iget-object v1, p0, Lorg/telegram/messenger/NotificationBadge$ZukHomeBadger;->CONTENT_URI:Landroid/net/Uri;
 
-    const-string v2, "setAppBadgeCount"
+    const-string/jumbo v2, "setAppBadgeCount"
 
     const/4 v3, 0x0
 

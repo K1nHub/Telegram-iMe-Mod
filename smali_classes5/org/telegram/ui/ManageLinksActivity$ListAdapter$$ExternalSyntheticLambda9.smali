@@ -2,38 +2,32 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Landroid/view/View$OnClickListener;
+.implements Lcom/iMe/fork/utils/Callbacks$Callback;
 
 
 # instance fields
-.field public final synthetic f$0:Lorg/telegram/ui/ManageLinksActivity$ListAdapter;
-
-.field public final synthetic f$1:Lorg/telegram/ui/Components/LinkActionView;
+.field public final synthetic f$0:Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorPresenter;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/ManageLinksActivity$ListAdapter;Lorg/telegram/ui/Components/LinkActionView;)V
+.method public synthetic constructor <init>(Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorPresenter;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter$$ExternalSyntheticLambda9;->f$0:Lorg/telegram/ui/ManageLinksActivity$ListAdapter;
-
-    iput-object p2, p0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter$$ExternalSyntheticLambda9;->f$1:Lorg/telegram/ui/Components/LinkActionView;
+    iput-object p1, p0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter$$ExternalSyntheticLambda9;->f$0:Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorPresenter;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onClick(Landroid/view/View;)V
-    .locals 2
+.method public final invoke()V
+    .locals 1
 
-    iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter$$ExternalSyntheticLambda9;->f$0:Lorg/telegram/ui/ManageLinksActivity$ListAdapter;
+    iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter$$ExternalSyntheticLambda9;->f$0:Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorPresenter;
 
-    iget-object v1, p0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter$$ExternalSyntheticLambda9;->f$1:Lorg/telegram/ui/Components/LinkActionView;
-
-    invoke-static {v0, v1, p1}, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->$r8$lambda$tWHk8q-9D3pv95cOOsyk4EbuY_k(Lorg/telegram/ui/ManageLinksActivity$ListAdapter;Lorg/telegram/ui/Components/LinkActionView;Landroid/view/View;)V
+    invoke-virtual {v0}, Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorPresenter;->onDepositClick()V
 
     return-void
 .end method

@@ -10,8 +10,8 @@ import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 import java.util.NoSuchElementException;
-import p034j$.util.Iterator;
-import p034j$.util.function.Consumer;
+import p033j$.util.Iterator;
+import p033j$.util.function.Consumer;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: classes3.dex */
 public final class RopeByteString extends ByteString {
@@ -114,7 +114,7 @@ public final class RopeByteString extends ByteString {
                 return null;
             }
 
-            @Override // java.util.Iterator, p034j$.util.Iterator
+            @Override // java.util.Iterator, p033j$.util.Iterator
             public boolean hasNext() {
                 return this.current != null;
             }
@@ -379,11 +379,11 @@ public final class RopeByteString extends ByteString {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* loaded from: classes3.dex */
-    public static final class PieceIterator implements Iterator<ByteString.LeafByteString>, p034j$.util.Iterator {
+    public static final class PieceIterator implements Iterator<ByteString.LeafByteString>, p033j$.util.Iterator {
         private final ArrayDeque<RopeByteString> breadCrumbs;
         private ByteString.LeafByteString next;
 
-        @Override // p034j$.util.Iterator
+        @Override // p033j$.util.Iterator
         public /* synthetic */ void forEachRemaining(Consumer consumer) {
             Iterator.CC.$default$forEachRemaining(this, consumer);
         }
@@ -422,12 +422,12 @@ public final class RopeByteString extends ByteString {
             return leafByLeft;
         }
 
-        @Override // java.util.Iterator, p034j$.util.Iterator
+        @Override // java.util.Iterator, p033j$.util.Iterator
         public boolean hasNext() {
             return this.next != null;
         }
 
-        @Override // java.util.Iterator, p034j$.util.Iterator
+        @Override // java.util.Iterator, p033j$.util.Iterator
         public ByteString.LeafByteString next() {
             ByteString.LeafByteString leafByteString = this.next;
             if (leafByteString == null) {
@@ -437,7 +437,7 @@ public final class RopeByteString extends ByteString {
             return leafByteString;
         }
 
-        @Override // java.util.Iterator, p034j$.util.Iterator
+        @Override // java.util.Iterator, p033j$.util.Iterator
         public void remove() {
             throw new UnsupportedOperationException();
         }

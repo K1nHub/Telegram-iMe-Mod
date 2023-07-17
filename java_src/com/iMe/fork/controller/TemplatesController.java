@@ -42,7 +42,7 @@ import kotlin.sequences.Sequence;
 import kotlin.sequences.SequencesKt___SequencesKt;
 import org.koin.core.Koin;
 import org.koin.core.component.KoinComponent;
-import org.koin.p043mp.KoinPlatformTools;
+import org.koin.p042mp.KoinPlatformTools;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BaseController;
 import org.telegram.messenger.ChatObject;
@@ -58,9 +58,9 @@ import org.telegram.tgnet.TLRPC$TL_channels_getMessages;
 import org.telegram.tgnet.TLRPC$TL_error;
 import org.telegram.tgnet.TLRPC$User;
 import org.telegram.tgnet.TLRPC$messages_Messages;
-import p034j$.util.concurrent.ConcurrentHashMap;
-import p034j$.util.concurrent.ConcurrentMap$EL;
-import p034j$.util.function.Function;
+import p033j$.util.concurrent.ConcurrentHashMap;
+import p033j$.util.concurrent.ConcurrentMap$EL;
+import p033j$.util.function.Function;
 /* compiled from: TemplatesController.kt */
 /* loaded from: classes3.dex */
 public final class TemplatesController extends BaseController implements KoinComponent {
@@ -150,7 +150,7 @@ public final class TemplatesController extends BaseController implements KoinCom
                 this.templates.clear();
                 TLRPC$TL_channels_getMessages tLRPC$TL_channels_getMessages = new TLRPC$TL_channels_getMessages();
                 tLRPC$TL_channels_getMessages.channel = getMessagesController().getInputChannel(this.templatesChannelId);
-                ArrayList<Integer> arrayList = tLRPC$TL_channels_getMessages.f1475id;
+                ArrayList<Integer> arrayList = tLRPC$TL_channels_getMessages.f1557id;
                 List<TemplateModel> templates = backup.getTemplates();
                 collectionSizeOrDefault = CollectionsKt__IterablesKt.collectionSizeOrDefault(templates, 10);
                 ArrayList arrayList2 = new ArrayList(collectionSizeOrDefault);
@@ -184,13 +184,13 @@ public final class TemplatesController extends BaseController implements KoinCom
             ArrayList<TLRPC$User> arrayList2 = tLRPC$messages_Messages.users;
             Intrinsics.checkNotNullExpressionValue(arrayList2, "response.users");
             for (TLRPC$User tLRPC$User : arrayList2) {
-                longSparseArray.put(tLRPC$User.f1574id, tLRPC$User);
+                longSparseArray.put(tLRPC$User.f1656id, tLRPC$User);
             }
             LongSparseArray longSparseArray2 = new LongSparseArray();
             ArrayList<TLRPC$Chat> arrayList3 = tLRPC$messages_Messages.chats;
             Intrinsics.checkNotNullExpressionValue(arrayList3, "response.chats");
             for (TLRPC$Chat tLRPC$Chat : arrayList3) {
-                longSparseArray2.put(tLRPC$Chat.f1433id, tLRPC$Chat);
+                longSparseArray2.put(tLRPC$Chat.f1515id, tLRPC$Chat);
             }
             ArrayList<TLRPC$Message> arrayList4 = tLRPC$messages_Messages.messages;
             Intrinsics.checkNotNullExpressionValue(arrayList4, "response.messages");
@@ -575,19 +575,19 @@ public final class TemplatesController extends BaseController implements KoinCom
             Integer valueOf = Integer.valueOf(i);
             final TemplatesController$Companion$getInstance$1 templatesController$Companion$getInstance$1 = new TemplatesController$Companion$getInstance$1(i);
             Object computeIfAbsent = ConcurrentMap$EL.computeIfAbsent(concurrentHashMap, valueOf, new Function() { // from class: com.iMe.fork.controller.TemplatesController$Companion$$ExternalSyntheticLambda0
-                @Override // p034j$.util.function.Function
+                @Override // p033j$.util.function.Function
                 public /* synthetic */ Function andThen(Function function) {
                     return Objects.requireNonNull(function);
                 }
 
-                @Override // p034j$.util.function.Function
+                @Override // p033j$.util.function.Function
                 public final Object apply(Object obj) {
                     TemplatesController instance$lambda$0;
                     instance$lambda$0 = TemplatesController.Companion.getInstance$lambda$0(Function1.this, obj);
                     return instance$lambda$0;
                 }
 
-                @Override // p034j$.util.function.Function
+                @Override // p033j$.util.function.Function
                 public /* synthetic */ Function compose(Function function) {
                     return Objects.requireNonNull(function);
                 }

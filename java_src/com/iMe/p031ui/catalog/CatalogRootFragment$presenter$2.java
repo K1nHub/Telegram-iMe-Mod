@@ -4,11 +4,11 @@ import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Lambda;
-import org.koin.p043mp.KoinPlatformTools;
+import org.koin.p042mp.KoinPlatformTools;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: CatalogRootFragment.kt */
 /* renamed from: com.iMe.ui.catalog.CatalogRootFragment$presenter$2 */
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public final class CatalogRootFragment$presenter$2 extends Lambda implements Function0<CatalogRootPresenter> {
     final /* synthetic */ CatalogRootFragment this$0;
 

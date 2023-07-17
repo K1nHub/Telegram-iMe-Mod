@@ -115,7 +115,7 @@ public class Glide implements ComponentCallbacks2 {
 
     private static GeneratedAppGlideModule getAnnotationGeneratedGlideModules(Context context) {
         try {
-            return (GeneratedAppGlideModule) Class.forName("com.bumptech.glide.GeneratedAppGlideModuleImpl").getDeclaredConstructor(Context.class).newInstance(context.getApplicationContext());
+            return (GeneratedAppGlideModule) GeneratedAppGlideModuleImpl.class.getDeclaredConstructor(Context.class).newInstance(context.getApplicationContext());
         } catch (ClassNotFoundException unused) {
             if (Log.isLoggable("Glide", 5)) {
                 Log.w("Glide", "Failed to find GeneratedAppGlideModule. You should include an annotationProcessor compile dependency on com.github.bumptech.glide:compiler in your application and a @GlideModule annotated AppGlideModule implementation or LibraryGlideModules will be silently ignored");

@@ -6,40 +6,40 @@ import org.bouncycastle.crypto.CipherParameters;
 public class DSAParameters implements CipherParameters {
 
     /* renamed from: g */
-    private BigInteger f1291g;
+    private BigInteger f1373g;
 
     /* renamed from: p */
-    private BigInteger f1292p;
+    private BigInteger f1374p;
 
     /* renamed from: q */
-    private BigInteger f1293q;
+    private BigInteger f1375q;
     private DSAValidationParameters validation;
 
     public DSAParameters(BigInteger bigInteger, BigInteger bigInteger2, BigInteger bigInteger3, DSAValidationParameters dSAValidationParameters) {
-        this.f1291g = bigInteger3;
-        this.f1292p = bigInteger;
-        this.f1293q = bigInteger2;
+        this.f1373g = bigInteger3;
+        this.f1374p = bigInteger;
+        this.f1375q = bigInteger2;
         this.validation = dSAValidationParameters;
     }
 
     public boolean equals(Object obj) {
         if (obj instanceof DSAParameters) {
             DSAParameters dSAParameters = (DSAParameters) obj;
-            return dSAParameters.getP().equals(this.f1292p) && dSAParameters.getQ().equals(this.f1293q) && dSAParameters.getG().equals(this.f1291g);
+            return dSAParameters.getP().equals(this.f1374p) && dSAParameters.getQ().equals(this.f1375q) && dSAParameters.getG().equals(this.f1373g);
         }
         return false;
     }
 
     public BigInteger getG() {
-        return this.f1291g;
+        return this.f1373g;
     }
 
     public BigInteger getP() {
-        return this.f1292p;
+        return this.f1374p;
     }
 
     public BigInteger getQ() {
-        return this.f1293q;
+        return this.f1375q;
     }
 
     public DSAValidationParameters getValidationParameters() {

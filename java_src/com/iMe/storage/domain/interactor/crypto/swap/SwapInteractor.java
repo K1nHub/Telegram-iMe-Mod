@@ -1,15 +1,16 @@
 package com.iMe.storage.domain.interactor.crypto.swap;
 
 import com.iMe.storage.domain.model.Result;
-import com.iMe.storage.domain.model.crypto.NetworkType;
+import com.iMe.storage.domain.model.common.CursoredData;
 import com.iMe.storage.domain.model.crypto.swap.ApproveArgs;
 import com.iMe.storage.domain.model.crypto.swap.CryptoSwapMetadata;
 import com.iMe.storage.domain.model.crypto.swap.CryptoTokenApproveMetadata;
 import com.iMe.storage.domain.model.crypto.swap.SwapArgs;
 import com.iMe.storage.domain.model.wallet.swap.SwapProtocol;
 import com.iMe.storage.domain.model.wallet.swap.TradeType;
-import com.iMe.storage.domain.model.wallet.token.TokenCode;
-import com.iMe.storage.domain.model.wallet.token.TokenInfo;
+import com.iMe.storage.domain.model.wallet.token.Token;
+import com.iMe.storage.domain.model.wallet.token.TokenDetailed;
+import com.iMe.storage.domain.model.wallet.transaction.TransactionDirection;
 import com.iMe.storage.domain.repository.crypto.swap.SwapRepository;
 import com.iMe.storage.domain.utils.p030rx.SchedulersProvider;
 import io.reactivex.Observable;
@@ -28,18 +29,20 @@ public final class SwapInteractor {
         this.schedulersProvider = schedulersProvider;
     }
 
-    public final Observable<Result<List<TokenInfo>>> getAvailableTokensToSwap(NetworkType networkType, SwapProtocol protocol) {
-        Intrinsics.checkNotNullParameter(networkType, "networkType");
+    public final Observable<Result<CursoredData<TokenDetailed>>> getAvailableTokensToSwap(SwapProtocol protocol, TransactionDirection direction, String networkId, String str, String str2, Integer num) {
         Intrinsics.checkNotNullParameter(protocol, "protocol");
-        Observable<Result<List<TokenInfo>>> subscribeOn = this.swapRepository.getAvailableTokensToSwap(networkType, protocol).subscribeOn(this.schedulersProvider.mo699io());
+        Intrinsics.checkNotNullParameter(direction, "direction");
+        Intrinsics.checkNotNullParameter(networkId, "networkId");
+        Observable<Result<CursoredData<TokenDetailed>>> subscribeOn = this.swapRepository.getAvailableTokensToSwap(protocol, direction, networkId, str, str2, num).subscribeOn(this.schedulersProvider.mo699io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn, "swapRepository\n         …(schedulersProvider.io())");
         return subscribeOn;
     }
 
-    public final Observable<Result<List<CryptoTokenApproveMetadata>>> getApproveTokensInfo(NetworkType networkType, SwapProtocol protocol) {
-        Intrinsics.checkNotNullParameter(networkType, "networkType");
+    public final Observable<Result<List<CryptoTokenApproveMetadata>>> getApproveTokensInfo(String networkId, SwapProtocol protocol, List<Token> tokens) {
+        Intrinsics.checkNotNullParameter(networkId, "networkId");
         Intrinsics.checkNotNullParameter(protocol, "protocol");
-        Observable<Result<List<CryptoTokenApproveMetadata>>> startWith = this.swapRepository.getApproveTokensInfo(networkType, protocol).subscribeOn(this.schedulersProvider.mo699io()).startWith((Observable<Result<List<CryptoTokenApproveMetadata>>>) Result.Companion.loading$default(Result.Companion, null, 1, null));
+        Intrinsics.checkNotNullParameter(tokens, "tokens");
+        Observable<Result<List<CryptoTokenApproveMetadata>>> startWith = this.swapRepository.getApproveTokensInfo(protocol, networkId, tokens).subscribeOn(this.schedulersProvider.mo699io()).startWith((Observable<Result<List<CryptoTokenApproveMetadata>>>) Result.Companion.loading$default(Result.Companion, null, 1, null));
         Intrinsics.checkNotNullExpressionValue(startWith, "swapRepository\n         …artWith(Result.loading())");
         return startWith;
     }
@@ -58,14 +61,13 @@ public final class SwapInteractor {
         return subscribeOn;
     }
 
-    public final Observable<Result<CryptoSwapMetadata>> getQuoteToSwap(TokenCode inputToken, TokenCode outputToken, String amount, TradeType tradeType, float f, NetworkType inputNetworkType, NetworkType networkType, SwapProtocol protocol) {
+    public final Observable<Result<CryptoSwapMetadata>> getQuoteToSwap(SwapProtocol protocol, Token inputToken, Token outputToken, String amount, TradeType tradeType, float f) {
+        Intrinsics.checkNotNullParameter(protocol, "protocol");
         Intrinsics.checkNotNullParameter(inputToken, "inputToken");
         Intrinsics.checkNotNullParameter(outputToken, "outputToken");
         Intrinsics.checkNotNullParameter(amount, "amount");
         Intrinsics.checkNotNullParameter(tradeType, "tradeType");
-        Intrinsics.checkNotNullParameter(inputNetworkType, "inputNetworkType");
-        Intrinsics.checkNotNullParameter(protocol, "protocol");
-        Observable<Result<CryptoSwapMetadata>> startWith = this.swapRepository.getQuoteToSwap(inputToken, outputToken, amount, tradeType, f, inputNetworkType, networkType, protocol).subscribeOn(this.schedulersProvider.mo699io()).startWith((Observable<Result<CryptoSwapMetadata>>) Result.Companion.loading$default(Result.Companion, null, 1, null));
+        Observable<Result<CryptoSwapMetadata>> startWith = this.swapRepository.getQuoteToSwap(protocol, inputToken, outputToken, amount, tradeType, f).subscribeOn(this.schedulersProvider.mo699io()).startWith((Observable<Result<CryptoSwapMetadata>>) Result.Companion.loading$default(Result.Companion, null, 1, null));
         Intrinsics.checkNotNullExpressionValue(startWith, "swapRepository\n         …artWith(Result.loading())");
         return startWith;
     }

@@ -17,14 +17,14 @@ public class BCRainbowPrivateKey implements PrivateKey {
     private short[][] A2inv;
 
     /* renamed from: b1 */
-    private short[] f1344b1;
+    private short[] f1426b1;
 
     /* renamed from: b2 */
-    private short[] f1345b2;
+    private short[] f1427b2;
     private Layer[] layers;
 
     /* renamed from: vi */
-    private int[] f1346vi;
+    private int[] f1428vi;
 
     public BCRainbowPrivateKey(RainbowPrivateKeySpec rainbowPrivateKeySpec) {
         this(rainbowPrivateKeySpec.getInvA1(), rainbowPrivateKeySpec.getB1(), rainbowPrivateKeySpec.getInvA2(), rainbowPrivateKeySpec.getB2(), rainbowPrivateKeySpec.getVi(), rainbowPrivateKeySpec.getLayers());
@@ -32,10 +32,10 @@ public class BCRainbowPrivateKey implements PrivateKey {
 
     public BCRainbowPrivateKey(short[][] sArr, short[] sArr2, short[][] sArr3, short[] sArr4, int[] iArr, Layer[] layerArr) {
         this.A1inv = sArr;
-        this.f1344b1 = sArr2;
+        this.f1426b1 = sArr2;
         this.A2inv = sArr3;
-        this.f1345b2 = sArr4;
-        this.f1346vi = iArr;
+        this.f1427b2 = sArr4;
+        this.f1428vi = iArr;
         this.layers = layerArr;
     }
 
@@ -44,7 +44,7 @@ public class BCRainbowPrivateKey implements PrivateKey {
             return false;
         }
         BCRainbowPrivateKey bCRainbowPrivateKey = (BCRainbowPrivateKey) obj;
-        boolean z = ((((RainbowUtil.equals(this.A1inv, bCRainbowPrivateKey.getInvA1())) && RainbowUtil.equals(this.A2inv, bCRainbowPrivateKey.getInvA2())) && RainbowUtil.equals(this.f1344b1, bCRainbowPrivateKey.getB1())) && RainbowUtil.equals(this.f1345b2, bCRainbowPrivateKey.getB2())) && Arrays.equals(this.f1346vi, bCRainbowPrivateKey.getVi());
+        boolean z = ((((RainbowUtil.equals(this.A1inv, bCRainbowPrivateKey.getInvA1())) && RainbowUtil.equals(this.A2inv, bCRainbowPrivateKey.getInvA2())) && RainbowUtil.equals(this.f1426b1, bCRainbowPrivateKey.getB1())) && RainbowUtil.equals(this.f1427b2, bCRainbowPrivateKey.getB2())) && Arrays.equals(this.f1428vi, bCRainbowPrivateKey.getVi());
         if (this.layers.length != bCRainbowPrivateKey.getLayers().length) {
             return false;
         }
@@ -60,17 +60,17 @@ public class BCRainbowPrivateKey implements PrivateKey {
     }
 
     public short[] getB1() {
-        return this.f1344b1;
+        return this.f1426b1;
     }
 
     public short[] getB2() {
-        return this.f1345b2;
+        return this.f1427b2;
     }
 
     @Override // java.security.Key
     public byte[] getEncoded() {
         try {
-            return new PrivateKeyInfo(new AlgorithmIdentifier(PQCObjectIdentifiers.rainbow, DERNull.INSTANCE), new RainbowPrivateKey(this.A1inv, this.f1344b1, this.A2inv, this.f1345b2, this.f1346vi, this.layers)).getEncoded();
+            return new PrivateKeyInfo(new AlgorithmIdentifier(PQCObjectIdentifiers.rainbow, DERNull.INSTANCE), new RainbowPrivateKey(this.A1inv, this.f1426b1, this.A2inv, this.f1427b2, this.f1428vi, this.layers)).getEncoded();
         } catch (IOException unused) {
             return null;
         }
@@ -94,11 +94,11 @@ public class BCRainbowPrivateKey implements PrivateKey {
     }
 
     public int[] getVi() {
-        return this.f1346vi;
+        return this.f1428vi;
     }
 
     public int hashCode() {
-        int length = (((((((((this.layers.length * 37) + org.bouncycastle.util.Arrays.hashCode(this.A1inv)) * 37) + org.bouncycastle.util.Arrays.hashCode(this.f1344b1)) * 37) + org.bouncycastle.util.Arrays.hashCode(this.A2inv)) * 37) + org.bouncycastle.util.Arrays.hashCode(this.f1345b2)) * 37) + org.bouncycastle.util.Arrays.hashCode(this.f1346vi);
+        int length = (((((((((this.layers.length * 37) + org.bouncycastle.util.Arrays.hashCode(this.A1inv)) * 37) + org.bouncycastle.util.Arrays.hashCode(this.f1426b1)) * 37) + org.bouncycastle.util.Arrays.hashCode(this.A2inv)) * 37) + org.bouncycastle.util.Arrays.hashCode(this.f1427b2)) * 37) + org.bouncycastle.util.Arrays.hashCode(this.f1428vi);
         for (int length2 = this.layers.length - 1; length2 >= 0; length2--) {
             length = (length * 37) + this.layers[length2].hashCode();
         }

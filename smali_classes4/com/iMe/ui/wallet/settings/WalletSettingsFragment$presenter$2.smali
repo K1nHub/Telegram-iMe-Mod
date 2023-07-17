@@ -26,7 +26,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nWalletSettingsFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WalletSettingsFragment.kt\ncom/iMe/ui/wallet/settings/WalletSettingsFragment$presenter$2\n+ 2 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n*L\n1#1,117:1\n56#2,6:118\n*S KotlinDebug\n*F\n+ 1 WalletSettingsFragment.kt\ncom/iMe/ui/wallet/settings/WalletSettingsFragment$presenter$2\n*L\n27#1:118,6\n*E\n"
+    value = "SMAP\nWalletSettingsFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WalletSettingsFragment.kt\ncom/iMe/ui/wallet/settings/WalletSettingsFragment$presenter$2\n+ 2 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n*L\n1#1,100:1\n56#2,6:101\n*S KotlinDebug\n*F\n+ 1 WalletSettingsFragment.kt\ncom/iMe/ui/wallet/settings/WalletSettingsFragment$presenter$2\n*L\n25#1:101,6\n*E\n"
 .end annotation
 
 
@@ -52,7 +52,7 @@
 .method public final invoke()Lcom/iMe/ui/wallet/settings/WalletSettingsPresenter;
     .locals 4
 
-    .line 27
+    .line 25
     iget-object v0, p0, Lcom/iMe/ui/wallet/settings/WalletSettingsFragment$presenter$2;->this$0:Lcom/iMe/ui/wallet/settings/WalletSettingsFragment;
 
     .line 58
@@ -73,7 +73,7 @@
 
     move-result-object v0
 
-    .line 27
+    .line 25
     invoke-interface {v0}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
 
     move-result-object v0
@@ -86,7 +86,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 27
+    .line 25
     invoke-virtual {p0}, Lcom/iMe/ui/wallet/settings/WalletSettingsFragment$presenter$2;->invoke()Lcom/iMe/ui/wallet/settings/WalletSettingsPresenter;
 
     move-result-object v0

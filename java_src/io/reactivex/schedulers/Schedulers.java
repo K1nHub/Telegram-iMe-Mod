@@ -16,7 +16,7 @@ public final class Schedulers {
     static final Scheduler COMPUTATION = RxJavaPlugins.initComputationScheduler(new ComputationTask());
 
     /* renamed from: IO */
-    static final Scheduler f480IO = RxJavaPlugins.initIoScheduler(new IOTask());
+    static final Scheduler f562IO = RxJavaPlugins.initIoScheduler(new IOTask());
     static final Scheduler TRAMPOLINE = TrampolineScheduler.instance();
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -53,7 +53,7 @@ public final class Schedulers {
 
     /* renamed from: io */
     public static Scheduler m679io() {
-        return RxJavaPlugins.onIoScheduler(f480IO);
+        return RxJavaPlugins.onIoScheduler(f562IO);
     }
 
     public static Scheduler trampoline() {

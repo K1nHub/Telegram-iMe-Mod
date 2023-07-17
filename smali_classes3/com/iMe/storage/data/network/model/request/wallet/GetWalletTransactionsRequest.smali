@@ -4,9 +4,17 @@
 
 
 # instance fields
-.field private final filterByToken:Ljava/lang/String;
+.field private final filterByTokens:Ljava/util/List;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
         value = "filter"
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/List<",
+            "Lcom/iMe/storage/data/network/model/request/wallet/TokenRequest;",
+            ">;"
+        }
     .end annotation
 .end field
 
@@ -18,8 +26,19 @@
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;)V
+.method public constructor <init>(Ljava/lang/String;ILjava/lang/String;Ljava/util/List;)V
     .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/lang/String;",
+            "I",
+            "Ljava/lang/String;",
+            "Ljava/util/List<",
+            "Lcom/iMe/storage/data/network/model/request/wallet/TokenRequest;",
+            ">;)V"
+        }
+    .end annotation
 
     const-string v0, "networkType"
 
@@ -38,12 +57,12 @@
     iput-object p3, p0, Lcom/iMe/storage/data/network/model/request/wallet/GetWalletTransactionsRequest;->networkType:Ljava/lang/String;
 
     .line 9
-    iput-object p4, p0, Lcom/iMe/storage/data/network/model/request/wallet/GetWalletTransactionsRequest;->filterByToken:Ljava/lang/String;
+    iput-object p4, p0, Lcom/iMe/storage/data/network/model/request/wallet/GetWalletTransactionsRequest;->filterByTokens:Ljava/util/List;
 
     return-void
 .end method
 
-.method public static synthetic copy$default(Lcom/iMe/storage/data/network/model/request/wallet/GetWalletTransactionsRequest;Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;ILjava/lang/Object;)Lcom/iMe/storage/data/network/model/request/wallet/GetWalletTransactionsRequest;
+.method public static synthetic copy$default(Lcom/iMe/storage/data/network/model/request/wallet/GetWalletTransactionsRequest;Ljava/lang/String;ILjava/lang/String;Ljava/util/List;ILjava/lang/Object;)Lcom/iMe/storage/data/network/model/request/wallet/GetWalletTransactionsRequest;
     .locals 0
 
     and-int/lit8 p6, p5, 0x1
@@ -71,10 +90,10 @@
 
     if-eqz p5, :cond_3
 
-    iget-object p4, p0, Lcom/iMe/storage/data/network/model/request/wallet/GetWalletTransactionsRequest;->filterByToken:Ljava/lang/String;
+    iget-object p4, p0, Lcom/iMe/storage/data/network/model/request/wallet/GetWalletTransactionsRequest;->filterByTokens:Ljava/util/List;
 
     :cond_3
-    invoke-virtual {p0, p1, p2, p3, p4}, Lcom/iMe/storage/data/network/model/request/wallet/GetWalletTransactionsRequest;->copy(Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;)Lcom/iMe/storage/data/network/model/request/wallet/GetWalletTransactionsRequest;
+    invoke-virtual {p0, p1, p2, p3, p4}, Lcom/iMe/storage/data/network/model/request/wallet/GetWalletTransactionsRequest;->copy(Ljava/lang/String;ILjava/lang/String;Ljava/util/List;)Lcom/iMe/storage/data/network/model/request/wallet/GetWalletTransactionsRequest;
 
     move-result-object p0
 
@@ -107,16 +126,36 @@
     return-object v0
 .end method
 
-.method public final component4()Ljava/lang/String;
+.method public final component4()Ljava/util/List;
     .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/List<",
+            "Lcom/iMe/storage/data/network/model/request/wallet/TokenRequest;",
+            ">;"
+        }
+    .end annotation
 
-    iget-object v0, p0, Lcom/iMe/storage/data/network/model/request/wallet/GetWalletTransactionsRequest;->filterByToken:Ljava/lang/String;
+    iget-object v0, p0, Lcom/iMe/storage/data/network/model/request/wallet/GetWalletTransactionsRequest;->filterByTokens:Ljava/util/List;
 
     return-object v0
 .end method
 
-.method public final copy(Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;)Lcom/iMe/storage/data/network/model/request/wallet/GetWalletTransactionsRequest;
+.method public final copy(Ljava/lang/String;ILjava/lang/String;Ljava/util/List;)Lcom/iMe/storage/data/network/model/request/wallet/GetWalletTransactionsRequest;
     .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/lang/String;",
+            "I",
+            "Ljava/lang/String;",
+            "Ljava/util/List<",
+            "Lcom/iMe/storage/data/network/model/request/wallet/TokenRequest;",
+            ">;)",
+            "Lcom/iMe/storage/data/network/model/request/wallet/GetWalletTransactionsRequest;"
+        }
+    .end annotation
 
     const-string v0, "networkType"
 
@@ -124,7 +163,7 @@
 
     new-instance v0, Lcom/iMe/storage/data/network/model/request/wallet/GetWalletTransactionsRequest;
 
-    invoke-direct {v0, p1, p2, p3, p4}, Lcom/iMe/storage/data/network/model/request/wallet/GetWalletTransactionsRequest;-><init>(Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;)V
+    invoke-direct {v0, p1, p2, p3, p4}, Lcom/iMe/storage/data/network/model/request/wallet/GetWalletTransactionsRequest;-><init>(Ljava/lang/String;ILjava/lang/String;Ljava/util/List;)V
 
     return-object v0
 .end method
@@ -185,9 +224,9 @@
     return v2
 
     :cond_4
-    iget-object v1, p0, Lcom/iMe/storage/data/network/model/request/wallet/GetWalletTransactionsRequest;->filterByToken:Ljava/lang/String;
+    iget-object v1, p0, Lcom/iMe/storage/data/network/model/request/wallet/GetWalletTransactionsRequest;->filterByTokens:Ljava/util/List;
 
-    iget-object p1, p1, Lcom/iMe/storage/data/network/model/request/wallet/GetWalletTransactionsRequest;->filterByToken:Ljava/lang/String;
+    iget-object p1, p1, Lcom/iMe/storage/data/network/model/request/wallet/GetWalletTransactionsRequest;->filterByTokens:Ljava/util/List;
 
     invoke-static {v1, p1}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
@@ -201,11 +240,19 @@
     return v0
 .end method
 
-.method public final getFilterByToken()Ljava/lang/String;
+.method public final getFilterByTokens()Ljava/util/List;
     .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/List<",
+            "Lcom/iMe/storage/data/network/model/request/wallet/TokenRequest;",
+            ">;"
+        }
+    .end annotation
 
     .line 9
-    iget-object v0, p0, Lcom/iMe/storage/data/network/model/request/wallet/GetWalletTransactionsRequest;->filterByToken:Ljava/lang/String;
+    iget-object v0, p0, Lcom/iMe/storage/data/network/model/request/wallet/GetWalletTransactionsRequest;->filterByTokens:Ljava/util/List;
 
     return-object v0
 .end method
@@ -274,14 +321,14 @@
 
     mul-int/lit8 v0, v0, 0x1f
 
-    iget-object v2, p0, Lcom/iMe/storage/data/network/model/request/wallet/GetWalletTransactionsRequest;->filterByToken:Ljava/lang/String;
+    iget-object v2, p0, Lcom/iMe/storage/data/network/model/request/wallet/GetWalletTransactionsRequest;->filterByTokens:Ljava/util/List;
 
     if-nez v2, :cond_1
 
     goto :goto_1
 
     :cond_1
-    invoke-virtual {v2}, Ljava/lang/String;->hashCode()I
+    invoke-virtual {v2}, Ljava/lang/Object;->hashCode()I
 
     move-result v1
 
@@ -322,13 +369,13 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v1, ", filterByToken="
+    const-string v1, ", filterByTokens="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v1, p0, Lcom/iMe/storage/data/network/model/request/wallet/GetWalletTransactionsRequest;->filterByToken:Ljava/lang/String;
+    iget-object v1, p0, Lcom/iMe/storage/data/network/model/request/wallet/GetWalletTransactionsRequest;->filterByTokens:Ljava/util/List;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     const/16 v1, 0x29
 

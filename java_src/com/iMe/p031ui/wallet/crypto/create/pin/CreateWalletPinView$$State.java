@@ -9,50 +9,68 @@ import moxy.viewstate.MvpViewState;
 import moxy.viewstate.ViewCommand;
 import moxy.viewstate.strategy.OneExecutionStateStrategy;
 /* renamed from: com.iMe.ui.wallet.crypto.create.pin.CreateWalletPinView$$State */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class CreateWalletPinView$$State extends MvpViewState<CreateWalletPinView> implements CreateWalletPinView {
     @Override // com.iMe.p031ui.base.mvp.base.BaseView
     public /* synthetic */ void finishScreen() {
         BaseView.CC.$default$finishScreen(this);
     }
 
-    @Override // com.iMe.p031ui.wallet.crypto.create.pin.CreateWalletPinView
-    public void goToBackUpTutorial(String str, String str2, Wallet wallet2) {
-        GoToBackUpTutorialCommand goToBackUpTutorialCommand = new GoToBackUpTutorialCommand(this, str, str2, wallet2);
-        this.viewCommands.beforeApply(goToBackUpTutorialCommand);
-        if (hasNotView().booleanValue()) {
-            return;
-        }
-        for (View view : this.views) {
-            view.goToBackUpTutorial(str, str2, wallet2);
-        }
-        this.viewCommands.afterApply(goToBackUpTutorialCommand);
+    @Override // com.iMe.p031ui.base.mvp.base.BaseView
+    public /* synthetic */ void removeSelfFromStackImmediately() {
+        BaseView.CC.$default$removeSelfFromStackImmediately(this);
     }
 
     @Override // com.iMe.p031ui.wallet.crypto.create.pin.CreateWalletPinView
-    public void onSuccessCreateWallet() {
-        OnSuccessCreateWalletCommand onSuccessCreateWalletCommand = new OnSuccessCreateWalletCommand(this);
-        this.viewCommands.beforeApply(onSuccessCreateWalletCommand);
+    public void onWalletCreateSuccess(String str, String str2, Wallet wallet2) {
+        OnWalletCreateSuccessCommand onWalletCreateSuccessCommand = new OnWalletCreateSuccessCommand(this, str, str2, wallet2);
+        this.viewCommands.beforeApply(onWalletCreateSuccessCommand);
         if (hasNotView().booleanValue()) {
             return;
         }
         for (View view : this.views) {
-            view.onSuccessCreateWallet();
+            view.onWalletCreateSuccess(str, str2, wallet2);
         }
-        this.viewCommands.afterApply(onSuccessCreateWalletCommand);
+        this.viewCommands.afterApply(onWalletCreateSuccessCommand);
     }
 
     @Override // com.iMe.p031ui.wallet.crypto.create.pin.CreateWalletPinView
-    public void onCodeErrorShake() {
-        OnCodeErrorShakeCommand onCodeErrorShakeCommand = new OnCodeErrorShakeCommand(this);
-        this.viewCommands.beforeApply(onCodeErrorShakeCommand);
+    public void onWalletImportSuccess() {
+        OnWalletImportSuccessCommand onWalletImportSuccessCommand = new OnWalletImportSuccessCommand(this);
+        this.viewCommands.beforeApply(onWalletImportSuccessCommand);
         if (hasNotView().booleanValue()) {
             return;
         }
         for (View view : this.views) {
-            view.onCodeErrorShake();
+            view.onWalletImportSuccess();
         }
-        this.viewCommands.afterApply(onCodeErrorShakeCommand);
+        this.viewCommands.afterApply(onWalletImportSuccessCommand);
+    }
+
+    @Override // com.iMe.p031ui.wallet.crypto.create.pin.CreateWalletPinView
+    public void onWalletPinCodeChangeSuccess() {
+        OnWalletPinCodeChangeSuccessCommand onWalletPinCodeChangeSuccessCommand = new OnWalletPinCodeChangeSuccessCommand(this);
+        this.viewCommands.beforeApply(onWalletPinCodeChangeSuccessCommand);
+        if (hasNotView().booleanValue()) {
+            return;
+        }
+        for (View view : this.views) {
+            view.onWalletPinCodeChangeSuccess();
+        }
+        this.viewCommands.afterApply(onWalletPinCodeChangeSuccessCommand);
+    }
+
+    @Override // com.iMe.p031ui.wallet.crypto.create.pin.CreateWalletPinView
+    public void onWalletPinCodeError() {
+        OnWalletPinCodeErrorCommand onWalletPinCodeErrorCommand = new OnWalletPinCodeErrorCommand(this);
+        this.viewCommands.beforeApply(onWalletPinCodeErrorCommand);
+        if (hasNotView().booleanValue()) {
+            return;
+        }
+        for (View view : this.views) {
+            view.onWalletPinCodeError();
+        }
+        this.viewCommands.afterApply(onWalletPinCodeErrorCommand);
     }
 
     @Override // com.iMe.p031ui.base.mvp.base.BaseView
@@ -95,59 +113,73 @@ public class CreateWalletPinView$$State extends MvpViewState<CreateWalletPinView
     }
 
     /* compiled from: CreateWalletPinView$$State.java */
-    /* renamed from: com.iMe.ui.wallet.crypto.create.pin.CreateWalletPinView$$State$GoToBackUpTutorialCommand */
-    /* loaded from: classes3.dex */
-    public class GoToBackUpTutorialCommand extends ViewCommand<CreateWalletPinView> {
+    /* renamed from: com.iMe.ui.wallet.crypto.create.pin.CreateWalletPinView$$State$OnWalletCreateSuccessCommand */
+    /* loaded from: classes4.dex */
+    public class OnWalletCreateSuccessCommand extends ViewCommand<CreateWalletPinView> {
         public final String password;
         public final String pin;
 
         /* renamed from: wallet  reason: collision with root package name */
-        public final Wallet f1845wallet;
+        public final Wallet f1932wallet;
 
-        GoToBackUpTutorialCommand(CreateWalletPinView$$State createWalletPinView$$State, String str, String str2, Wallet wallet2) {
-            super("goToBackUpTutorial", OneExecutionStateStrategy.class);
+        OnWalletCreateSuccessCommand(CreateWalletPinView$$State createWalletPinView$$State, String str, String str2, Wallet wallet2) {
+            super("onWalletCreateSuccess", OneExecutionStateStrategy.class);
             this.password = str;
             this.pin = str2;
-            this.f1845wallet = wallet2;
+            this.f1932wallet = wallet2;
         }
 
         @Override // moxy.viewstate.ViewCommand
         public void apply(CreateWalletPinView createWalletPinView) {
-            createWalletPinView.goToBackUpTutorial(this.password, this.pin, this.f1845wallet);
+            createWalletPinView.onWalletCreateSuccess(this.password, this.pin, this.f1932wallet);
         }
     }
 
     /* compiled from: CreateWalletPinView$$State.java */
-    /* renamed from: com.iMe.ui.wallet.crypto.create.pin.CreateWalletPinView$$State$OnSuccessCreateWalletCommand */
-    /* loaded from: classes3.dex */
-    public class OnSuccessCreateWalletCommand extends ViewCommand<CreateWalletPinView> {
-        OnSuccessCreateWalletCommand(CreateWalletPinView$$State createWalletPinView$$State) {
-            super("onSuccessCreateWallet", OneExecutionStateStrategy.class);
+    /* renamed from: com.iMe.ui.wallet.crypto.create.pin.CreateWalletPinView$$State$OnWalletImportSuccessCommand */
+    /* loaded from: classes4.dex */
+    public class OnWalletImportSuccessCommand extends ViewCommand<CreateWalletPinView> {
+        OnWalletImportSuccessCommand(CreateWalletPinView$$State createWalletPinView$$State) {
+            super("onWalletImportSuccess", OneExecutionStateStrategy.class);
         }
 
         @Override // moxy.viewstate.ViewCommand
         public void apply(CreateWalletPinView createWalletPinView) {
-            createWalletPinView.onSuccessCreateWallet();
+            createWalletPinView.onWalletImportSuccess();
         }
     }
 
     /* compiled from: CreateWalletPinView$$State.java */
-    /* renamed from: com.iMe.ui.wallet.crypto.create.pin.CreateWalletPinView$$State$OnCodeErrorShakeCommand */
-    /* loaded from: classes3.dex */
-    public class OnCodeErrorShakeCommand extends ViewCommand<CreateWalletPinView> {
-        OnCodeErrorShakeCommand(CreateWalletPinView$$State createWalletPinView$$State) {
-            super("onCodeErrorShake", OneExecutionStateStrategy.class);
+    /* renamed from: com.iMe.ui.wallet.crypto.create.pin.CreateWalletPinView$$State$OnWalletPinCodeChangeSuccessCommand */
+    /* loaded from: classes4.dex */
+    public class OnWalletPinCodeChangeSuccessCommand extends ViewCommand<CreateWalletPinView> {
+        OnWalletPinCodeChangeSuccessCommand(CreateWalletPinView$$State createWalletPinView$$State) {
+            super("onWalletPinCodeChangeSuccess", OneExecutionStateStrategy.class);
         }
 
         @Override // moxy.viewstate.ViewCommand
         public void apply(CreateWalletPinView createWalletPinView) {
-            createWalletPinView.onCodeErrorShake();
+            createWalletPinView.onWalletPinCodeChangeSuccess();
+        }
+    }
+
+    /* compiled from: CreateWalletPinView$$State.java */
+    /* renamed from: com.iMe.ui.wallet.crypto.create.pin.CreateWalletPinView$$State$OnWalletPinCodeErrorCommand */
+    /* loaded from: classes4.dex */
+    public class OnWalletPinCodeErrorCommand extends ViewCommand<CreateWalletPinView> {
+        OnWalletPinCodeErrorCommand(CreateWalletPinView$$State createWalletPinView$$State) {
+            super("onWalletPinCodeError", OneExecutionStateStrategy.class);
+        }
+
+        @Override // moxy.viewstate.ViewCommand
+        public void apply(CreateWalletPinView createWalletPinView) {
+            createWalletPinView.onWalletPinCodeError();
         }
     }
 
     /* compiled from: CreateWalletPinView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.create.pin.CreateWalletPinView$$State$ShowToastCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class ShowToastCommand extends ViewCommand<CreateWalletPinView> {
         public final String text;
 
@@ -164,7 +196,7 @@ public class CreateWalletPinView$$State extends MvpViewState<CreateWalletPinView
 
     /* compiled from: CreateWalletPinView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.create.pin.CreateWalletPinView$$State$ShowLoadingDialogCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class ShowLoadingDialogCommand extends ViewCommand<CreateWalletPinView> {
         public final Disposable actionToCancel;
         public final boolean cancellable;
@@ -185,7 +217,7 @@ public class CreateWalletPinView$$State extends MvpViewState<CreateWalletPinView
 
     /* compiled from: CreateWalletPinView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.create.pin.CreateWalletPinView$$State$ShowErrorToastCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class ShowErrorToastCommand<T> extends ViewCommand<CreateWalletPinView> {
         public final ResourceManager resourceManager;
         public final Result.Error<? extends T> result;

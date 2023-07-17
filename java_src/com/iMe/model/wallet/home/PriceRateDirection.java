@@ -1,13 +1,13 @@
 package com.iMe.model.wallet.home;
 
-import org.telegram.messenger.C3295R;
-import org.telegram.p044ui.ActionBar.Theme;
+import org.telegram.messenger.C3417R;
+import org.telegram.p043ui.ActionBar.Theme;
 /* compiled from: PriceRateDirection.kt */
 /* loaded from: classes3.dex */
 public enum PriceRateDirection {
-    UP(C3295R.C3297drawable.chat_calls_outgoing, Theme.key_chat_inGreenCall),
-    DOWN(C3295R.C3297drawable.chat_calls_incoming, Theme.key_fill_RedNormal),
-    NOT_CHANGED(C3295R.C3297drawable.fork_ic_rate_not_changed_14, Theme.key_windowBackgroundWhiteGrayText8);
+    UP(C3417R.C3419drawable.chat_calls_outgoing, Theme.key_chat_inGreenCall),
+    DOWN(C3417R.C3419drawable.chat_calls_incoming, Theme.key_fill_RedNormal),
+    NOT_CHANGED(C3417R.C3419drawable.fork_ic_rate_not_changed_14, Theme.key_windowBackgroundWhiteGrayText8);
     
     private final int colorKey;
     private final int icon;

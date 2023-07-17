@@ -9,18 +9,14 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.listener.OnItemClickListener;
 import com.iMe.model.wallet.crypto.settings.WalletSettingsItem;
-import com.iMe.p031ui.base.WalletAuthFragment;
-import com.iMe.p031ui.wallet.crypto.settings.adapter.WalletAccountSettingsRecycleAdapter;
+import com.iMe.p031ui.base.wallet_auth.WalletAuthBaseFragment;
 import com.iMe.p031ui.wallet.crypto.settings.blockchains.BlockchainsManagementFragment;
+import com.iMe.p031ui.wallet.crypto.settings.custom_tokens.CustomTokensFragment;
 import com.iMe.p031ui.wallet.crypto.wallet_connect.WalletConnectFragment;
-import com.iMe.storage.domain.utils.p030rx.RxEventBus;
-import com.iMe.storage.domain.utils.p030rx.event.DomainRxEvents;
+import com.iMe.p031ui.wallet.settings.adapter.WalletSettingsRecycleAdapter;
 import com.iMe.utils.extentions.delegate.ResettableLazy;
 import com.iMe.utils.extentions.delegate.ResettableLazyDelegateKt;
 import com.iMe.utils.extentions.delegate.ResettableLazyManager;
-import com.iMe.utils.extentions.p033rx.RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
-import io.reactivex.Observable;
-import io.reactivex.disposables.Disposable;
 import java.util.ArrayList;
 import java.util.List;
 import kotlin.Lazy;
@@ -33,25 +29,25 @@ import kotlin.jvm.internal.Reflection;
 import kotlin.reflect.KProperty;
 import moxy.MvpDelegate;
 import moxy.ktx.MoxyKtxDelegate;
-import org.koin.p043mp.KoinPlatformTools;
-import org.telegram.messenger.C3295R;
+import org.koin.p042mp.KoinPlatformTools;
+import org.telegram.messenger.C3417R;
 import org.telegram.messenger.databinding.ForkFragmentWalletEthSettingsBinding;
-import org.telegram.p044ui.ActionBar.C3361ActionBar;
-import org.telegram.p044ui.ActionBar.Theme;
-import org.telegram.p044ui.ActionBar.ThemeDescription;
-import org.telegram.p044ui.PasscodeActivity;
-import org.telegram.p044ui.PrivacyControlActivity;
+import org.telegram.p043ui.ActionBar.C3484ActionBar;
+import org.telegram.p043ui.ActionBar.Theme;
+import org.telegram.p043ui.ActionBar.ThemeDescription;
+import org.telegram.p043ui.PasscodeActivity;
+import org.telegram.p043ui.PrivacyControlActivity;
 /* compiled from: WalletAccountSettingsFragment.kt */
 /* renamed from: com.iMe.ui.wallet.crypto.settings.WalletAccountSettingsFragment */
-/* loaded from: classes3.dex */
-public final class WalletAccountSettingsFragment extends WalletAuthFragment implements WalletAccountSettingsView {
+/* loaded from: classes4.dex */
+public final class WalletAccountSettingsFragment extends WalletAuthBaseFragment implements WalletAccountSettingsView {
     static final /* synthetic */ KProperty<Object>[] $$delegatedProperties = {Reflection.property1(new PropertyReference1Impl(WalletAccountSettingsFragment.class, "presenter", "getPresenter()Lcom/iMe/ui/wallet/crypto/settings/WalletAccountSettingsPresenter;", 0)), Reflection.property1(new PropertyReference1Impl(WalletAccountSettingsFragment.class, "binding", "getBinding()Lorg/telegram/messenger/databinding/ForkFragmentWalletEthSettingsBinding;", 0))};
     public static final Companion Companion = new Companion(null);
     private final ResettableLazy binding$delegate;
     private final MoxyKtxDelegate presenter$delegate;
     private final Lazy settingsRecycleAdapter$delegate;
 
-    @Override // org.telegram.p044ui.ActionBar.BaseFragment
+    @Override // org.telegram.p043ui.ActionBar.BaseFragment
     public boolean isSwipeBackEnabled(MotionEvent motionEvent) {
         return true;
     }
@@ -67,13 +63,12 @@ public final class WalletAccountSettingsFragment extends WalletAuthFragment impl
         this.binding$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new WalletAccountSettingsFragment$binding$2(this), 1, (Object) null);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public final WalletAccountSettingsPresenter getPresenter() {
+    private final WalletAccountSettingsPresenter getPresenter() {
         return (WalletAccountSettingsPresenter) this.presenter$delegate.getValue(this, $$delegatedProperties[0]);
     }
 
-    private final WalletAccountSettingsRecycleAdapter getSettingsRecycleAdapter() {
-        return (WalletAccountSettingsRecycleAdapter) this.settingsRecycleAdapter$delegate.getValue();
+    private final WalletSettingsRecycleAdapter getSettingsRecycleAdapter() {
+        return (WalletSettingsRecycleAdapter) this.settingsRecycleAdapter$delegate.getValue();
     }
 
     private final ForkFragmentWalletEthSettingsBinding getBinding() {
@@ -93,7 +88,7 @@ public final class WalletAccountSettingsFragment extends WalletAuthFragment impl
     }
 
     @Override // com.iMe.p031ui.wallet.crypto.settings.WalletAccountSettingsView
-    public void setupSettingsItems(List<WalletSettingsItem> items) {
+    public void renderSettingsItems(List<WalletSettingsItem> items) {
         Intrinsics.checkNotNullParameter(items, "items");
         getSettingsRecycleAdapter().setNewInstance(items);
     }
@@ -114,20 +109,25 @@ public final class WalletAccountSettingsFragment extends WalletAuthFragment impl
     }
 
     @Override // com.iMe.p031ui.wallet.crypto.settings.WalletAccountSettingsView
+    public void openCustomTokensScreen() {
+        presentFragment(CustomTokensFragment.Companion.newInstance());
+    }
+
+    @Override // com.iMe.p031ui.wallet.crypto.settings.WalletAccountSettingsView
     public void openPinCodeSettingsScreen() {
         presentFragment(PasscodeActivity.newInstanceForWalletPinSettings());
     }
 
-    @Override // org.telegram.p044ui.ActionBar.BaseFragment
+    @Override // org.telegram.p043ui.ActionBar.BaseFragment
     public ArrayList<ThemeDescription> getThemeDescriptions() {
         ArrayList<ThemeDescription> arrayListOf;
         arrayListOf = CollectionsKt__CollectionsKt.arrayListOf(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, Theme.key_actionBarDefault), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_ITEMSCOLOR, null, null, null, null, Theme.key_actionBarDefaultIcon), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_TITLECOLOR, null, null, null, null, Theme.key_actionBarDefaultTitle), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SELECTORCOLOR, null, null, null, null, Theme.key_actionBarDefaultSelector), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SUBMENUBACKGROUND, null, null, null, null, Theme.key_actionBarDefaultSubmenuBackground), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SUBMENUITEM, null, null, null, null, Theme.key_actionBarDefaultSubmenuItem), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SUBMENUITEM | ThemeDescription.FLAG_IMAGECOLOR, null, null, null, null, Theme.key_actionBarDefaultSubmenuItemIcon), new ThemeDescription(getBinding().getRoot(), ThemeDescription.FLAG_BACKGROUND, null, null, null, new ThemeDescription.ThemeDescriptionDelegate() { // from class: com.iMe.ui.wallet.crypto.settings.WalletAccountSettingsFragment$$ExternalSyntheticLambda1
-            @Override // org.telegram.p044ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
+            @Override // org.telegram.p043ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
             public final void didSetColor() {
-                WalletAccountSettingsFragment.getThemeDescriptions$lambda$1(WalletAccountSettingsFragment.this);
+                WalletAccountSettingsFragment.getThemeDescriptions$lambda$0(WalletAccountSettingsFragment.this);
             }
 
-            @Override // org.telegram.p044ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
+            @Override // org.telegram.p043ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
             public /* synthetic */ void onAnimationProgress(float f) {
                 ThemeDescription.ThemeDescriptionDelegate.CC.$default$onAnimationProgress(this, f);
             }
@@ -136,19 +136,19 @@ public final class WalletAccountSettingsFragment extends WalletAuthFragment impl
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void getThemeDescriptions$lambda$1(WalletAccountSettingsFragment this$0) {
+    public static final void getThemeDescriptions$lambda$0(WalletAccountSettingsFragment this$0) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         this$0.getSettingsRecycleAdapter().notifyDataSetChanged();
     }
 
     private final void setupActionBar() {
-        C3361ActionBar c3361ActionBar = this.actionBar;
-        c3361ActionBar.setCastShadows(false);
-        c3361ActionBar.setBackButtonImage(C3295R.C3297drawable.ic_ab_back);
-        c3361ActionBar.setAllowOverlayTitle(true);
-        c3361ActionBar.setTitle(getResourceManager().getString(C3295R.string.wallet_eth_account_settings_toolbar_title));
-        c3361ActionBar.setActionBarMenuOnItemClick(new C3361ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.ui.wallet.crypto.settings.WalletAccountSettingsFragment$setupActionBar$1$1
-            @Override // org.telegram.p044ui.ActionBar.C3361ActionBar.ActionBarMenuOnItemClick
+        C3484ActionBar c3484ActionBar = this.actionBar;
+        c3484ActionBar.setCastShadows(false);
+        c3484ActionBar.setBackButtonImage(C3417R.C3419drawable.ic_ab_back);
+        c3484ActionBar.setAllowOverlayTitle(true);
+        c3484ActionBar.setTitle(getResourceManager().getString(C3417R.string.wallet_eth_account_settings_toolbar_title));
+        c3484ActionBar.setActionBarMenuOnItemClick(new C3484ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.ui.wallet.crypto.settings.WalletAccountSettingsFragment$setupActionBar$1$1
+            @Override // org.telegram.p043ui.ActionBar.C3484ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
                     WalletAccountSettingsFragment.this.finishFragment();
@@ -171,19 +171,13 @@ public final class WalletAccountSettingsFragment extends WalletAuthFragment impl
         getSettingsRecycleAdapter().setOnItemClickListener(new OnItemClickListener() { // from class: com.iMe.ui.wallet.crypto.settings.WalletAccountSettingsFragment$$ExternalSyntheticLambda0
             @Override // com.chad.library.adapter.base.listener.OnItemClickListener
             public final void onItemClick(BaseQuickAdapter baseQuickAdapter, View view, int i) {
-                WalletAccountSettingsFragment.setupListeners$lambda$5(WalletAccountSettingsFragment.this, baseQuickAdapter, view, i);
+                WalletAccountSettingsFragment.setupListeners$lambda$4(WalletAccountSettingsFragment.this, baseQuickAdapter, view, i);
             }
         });
-        RxEventBus rxEventBus = getRxEventBus();
-        Observable observeOn = rxEventBus.getPublisher().ofType(DomainRxEvents.class).observeOn(rxEventBus.getSchedulersProvider().mo698ui());
-        Intrinsics.checkNotNullExpressionValue(observeOn, "publisher\n              …(schedulersProvider.ui())");
-        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2176xdd3a1942(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2177xdd3a1943(null)));
-        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
-        autoDispose(subscribe);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void setupListeners$lambda$5(WalletAccountSettingsFragment this$0, BaseQuickAdapter baseQuickAdapter, View view, int i) {
+    public static final void setupListeners$lambda$4(WalletAccountSettingsFragment this$0, BaseQuickAdapter baseQuickAdapter, View view, int i) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         Intrinsics.checkNotNullParameter(baseQuickAdapter, "<anonymous parameter 0>");
         Intrinsics.checkNotNullParameter(view, "<anonymous parameter 1>");
@@ -192,7 +186,7 @@ public final class WalletAccountSettingsFragment extends WalletAuthFragment impl
 
     /* compiled from: WalletAccountSettingsFragment.kt */
     /* renamed from: com.iMe.ui.wallet.crypto.settings.WalletAccountSettingsFragment$Companion */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

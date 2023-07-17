@@ -28,13 +28,7 @@
     move-result-wide v3
 
     .line 19
-    sget-object v2, Lcom/iMe/storage/domain/model/crypto/NetworkType;->Companion:Lcom/iMe/storage/domain/model/crypto/NetworkType$Companion;
-
     invoke-virtual/range {p0 .. p0}, Lcom/iMe/i_staking/response/StakingMetadataResponse;->getNet()Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-virtual {v2, v5}, Lcom/iMe/storage/domain/model/crypto/NetworkType$Companion;->map(Ljava/lang/String;)Lcom/iMe/storage/domain/model/crypto/NetworkType;
 
     move-result-object v5
 
@@ -64,20 +58,20 @@
     move-result-object v10
 
     .line 25
-    invoke-virtual/range {p0 .. p0}, Lcom/iMe/i_staking/response/StakingMetadataResponse;->getToken()Lcom/iMe/i_staking/response/StakingTokenResponse;
+    invoke-virtual/range {p0 .. p0}, Lcom/iMe/i_staking/response/StakingMetadataResponse;->getToken()Lcom/iMe/storage/data/network/model/response/wallet/TokenDetailedResponse;
 
     move-result-object v2
 
-    invoke-static {v2}, Lcom/iMe/i_staking/mapper/StakingTokenMapperKt;->mapToDomain(Lcom/iMe/i_staking/response/StakingTokenResponse;)Lcom/iMe/storage/domain/model/staking/StakingToken;
+    invoke-static {v2}, Lcom/iMe/storage/data/mapper/wallet/TokenMappingKt;->mapToDomain(Lcom/iMe/storage/data/network/model/response/wallet/TokenDetailedResponse;)Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
 
     move-result-object v11
 
     .line 26
-    invoke-virtual/range {p0 .. p0}, Lcom/iMe/i_staking/response/StakingMetadataResponse;->getFeeToken()Lcom/iMe/i_staking/response/StakingTokenResponse;
+    invoke-virtual/range {p0 .. p0}, Lcom/iMe/i_staking/response/StakingMetadataResponse;->getFeeToken()Lcom/iMe/storage/data/network/model/response/wallet/TokenDetailedResponse;
 
     move-result-object v2
 
-    invoke-static {v2}, Lcom/iMe/i_staking/mapper/StakingTokenMapperKt;->mapToDomain(Lcom/iMe/i_staking/response/StakingTokenResponse;)Lcom/iMe/storage/domain/model/staking/StakingToken;
+    invoke-static {v2}, Lcom/iMe/storage/data/mapper/wallet/TokenMappingKt;->mapToDomain(Lcom/iMe/storage/data/network/model/response/wallet/TokenDetailedResponse;)Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
 
     move-result-object v12
 
@@ -161,7 +155,7 @@
     move-object v2, v0
 
     .line 17
-    invoke-direct/range {v2 .. v32}, Lcom/iMe/storage/domain/model/staking/StakingMetadata;-><init>(JLcom/iMe/storage/domain/model/crypto/NetworkType;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/domain/model/staking/StakingToken;Lcom/iMe/storage/domain/model/staking/StakingToken;DDJDDDDJLjava/math/BigDecimal;Lcom/iMe/storage/domain/model/staking/StakingStats;Lcom/iMe/storage/domain/model/crypto/level/AccountLevel;Ljava/lang/String;)V
+    invoke-direct/range {v2 .. v32}, Lcom/iMe/storage/domain/model/staking/StakingMetadata;-><init>(JLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;DDJDDDDJLjava/math/BigDecimal;Lcom/iMe/storage/domain/model/staking/StakingStats;Lcom/iMe/storage/domain/model/crypto/level/AccountLevel;Ljava/lang/String;)V
 
     return-object v0
 .end method

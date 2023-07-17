@@ -48,7 +48,7 @@
 .method public final invoke()Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet$initListView$1;
     .locals 1
 
-    .line 57
+    .line 53
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet$listView$2;->this$0:Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;
 
     invoke-static {v0}, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;->access$initListView(Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;)Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet$initListView$1;
@@ -61,7 +61,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 57
+    .line 53
     invoke-virtual {p0}, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet$listView$2;->invoke()Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet$initListView$1;
 
     move-result-object v0

@@ -33,7 +33,7 @@
 
     iget-object v1, p0, Lorg/telegram/ui/PasscodeActivity$$ExternalSyntheticLambda11;->f$1:Lorg/telegram/ui/CodeNumberField;
 
-    invoke-static {v0, v1, p1, p2}, Lorg/telegram/ui/PasscodeActivity;->$r8$lambda$Ew_XvB2QpY6adg2bEXJ5BqkNHLM(Lorg/telegram/ui/PasscodeActivity;Lorg/telegram/ui/CodeNumberField;Landroid/view/View;Z)V
+    invoke-static {v0, v1, p1, p2}, Lorg/telegram/ui/PasscodeActivity;->$r8$lambda$SVxqnAdYwXOcmq8I1_zpfjuVc_s(Lorg/telegram/ui/PasscodeActivity;Lorg/telegram/ui/CodeNumberField;Landroid/view/View;Z)V
 
     return-void
 .end method

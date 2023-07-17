@@ -137,24 +137,24 @@ final class ProtobufDataEncoderContext implements ObjectEncoderContext {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.google.firebase.encoders.proto.ProtobufDataEncoderContext$1 */
     /* loaded from: classes3.dex */
-    public static /* synthetic */ class C10021 {
+    public static /* synthetic */ class C10071 {
 
         /* renamed from: $SwitchMap$com$google$firebase$encoders$proto$Protobuf$IntEncoding */
-        static final /* synthetic */ int[] f163x531607dd;
+        static final /* synthetic */ int[] f245x531607dd;
 
         static {
             int[] iArr = new int[Protobuf.IntEncoding.values().length];
-            f163x531607dd = iArr;
+            f245x531607dd = iArr;
             try {
                 iArr[Protobuf.IntEncoding.DEFAULT.ordinal()] = 1;
             } catch (NoSuchFieldError unused) {
             }
             try {
-                f163x531607dd[Protobuf.IntEncoding.SIGNED.ordinal()] = 2;
+                f245x531607dd[Protobuf.IntEncoding.SIGNED.ordinal()] = 2;
             } catch (NoSuchFieldError unused2) {
             }
             try {
-                f163x531607dd[Protobuf.IntEncoding.FIXED.ordinal()] = 3;
+                f245x531607dd[Protobuf.IntEncoding.FIXED.ordinal()] = 3;
             } catch (NoSuchFieldError unused3) {
             }
         }
@@ -165,7 +165,7 @@ final class ProtobufDataEncoderContext implements ObjectEncoderContext {
             return this;
         }
         Protobuf protobuf = getProtobuf(fieldDescriptor);
-        int i2 = C10021.f163x531607dd[protobuf.intEncoding().ordinal()];
+        int i2 = C10071.f245x531607dd[protobuf.intEncoding().ordinal()];
         if (i2 == 1) {
             writeVarInt32(protobuf.tag() << 3);
             writeVarInt32(i);
@@ -189,7 +189,7 @@ final class ProtobufDataEncoderContext implements ObjectEncoderContext {
             return this;
         }
         Protobuf protobuf = getProtobuf(fieldDescriptor);
-        int i = C10021.f163x531607dd[protobuf.intEncoding().ordinal()];
+        int i = C10071.f245x531607dd[protobuf.intEncoding().ordinal()];
         if (i == 1) {
             writeVarInt32(protobuf.tag() << 3);
             writeVarInt64(j);

@@ -152,7 +152,7 @@
 .method public static fromAction(Lio/reactivex/functions/Action;)Lio/reactivex/Completable;
     .locals 1
 
-    const-string v0, "run is null"
+    const-string/jumbo v0, "run is null"
 
     .line 426
     invoke-static {p0, v0}, Lio/reactivex/internal/functions/ObjectHelper;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
@@ -355,7 +355,7 @@
 .method public final observeOn(Lio/reactivex/Scheduler;)Lio/reactivex/Completable;
     .locals 1
 
-    const-string v0, "scheduler is null"
+    const-string/jumbo v0, "scheduler is null"
 
     .line 1890
     invoke-static {p1, v0}, Lio/reactivex/internal/functions/ObjectHelper;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
@@ -477,7 +477,7 @@
 .method public final subscribeOn(Lio/reactivex/Scheduler;)Lio/reactivex/Completable;
     .locals 1
 
-    const-string v0, "scheduler is null"
+    const-string/jumbo v0, "scheduler is null"
 
     .line 2431
     invoke-static {p1, v0}, Lio/reactivex/internal/functions/ObjectHelper;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;

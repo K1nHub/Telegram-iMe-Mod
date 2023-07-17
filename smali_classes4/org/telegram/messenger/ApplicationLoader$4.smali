@@ -18,7 +18,7 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 490
+    .line 492
     invoke-direct {p0}, Landroid/net/ConnectivityManager$NetworkCallback;-><init>()V
 
     return-void
@@ -31,7 +31,7 @@
 
     const/4 p1, -0x1
 
-    .line 493
+    .line 495
     invoke-static {p1}, Lorg/telegram/messenger/ApplicationLoader;->access$202(I)I
 
     return-void
@@ -42,7 +42,7 @@
 
     const/4 p1, -0x1
 
-    .line 498
+    .line 500
     invoke-static {p1}, Lorg/telegram/messenger/ApplicationLoader;->access$202(I)I
 
     return-void

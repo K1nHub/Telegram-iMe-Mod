@@ -28,7 +28,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nRepositoryModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 RepositoryModule.kt\ncom/iMe/storage/data/di/module/RepositoryModuleKt$repositoryModule$1$22\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,153:1\n129#2,5:154\n*S KotlinDebug\n*F\n+ 1 RepositoryModule.kt\ncom/iMe/storage/data/di/module/RepositoryModuleKt$repositoryModule$1$22\n*L\n141#1:154,5\n*E\n"
+    value = "SMAP\nRepositoryModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 RepositoryModule.kt\ncom/iMe/storage/data/di/module/RepositoryModuleKt$repositoryModule$1$22\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,157:1\n129#2,5:158\n*S KotlinDebug\n*F\n+ 1 RepositoryModule.kt\ncom/iMe/storage/data/di/module/RepositoryModuleKt$repositoryModule$1$22\n*L\n145#1:158,5\n*E\n"
 .end annotation
 
 
@@ -62,7 +62,7 @@
 
 # virtual methods
 .method public final invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/iMe/storage/domain/repository/crypto/boost/BoostRepository;
-    .locals 7
+    .locals 4
 
     const-string v0, "$this$single"
 
@@ -85,88 +85,62 @@
 
     move-result-object p2
 
-    .line 141
-    move-object v6, p2
-
-    check-cast v6, Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler;
+    .line 145
+    check-cast p2, Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler;
 
     .line 133
-    const-class p2, Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;
+    const-class v1, Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;
 
-    invoke-static {p2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
+    invoke-static {v1}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
 
-    move-result-object p2
+    move-result-object v1
 
-    invoke-virtual {p1, p2, v0, v0}, Lorg/koin/core/scope/Scope;->get(Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
+    invoke-virtual {p1, v1, v0, v0}, Lorg/koin/core/scope/Scope;->get(Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
 
-    move-result-object p2
+    move-result-object v1
 
-    .line 141
-    move-object v5, p2
-
-    check-cast v5, Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;
+    .line 145
+    check-cast v1, Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;
 
     .line 133
-    const-class p2, Lcom/iMe/storage/data/network/api/own/BoostApi;
+    const-class v2, Lcom/iMe/storage/data/network/api/own/BoostApi;
 
-    invoke-static {p2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
+    invoke-static {v2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
 
-    move-result-object p2
+    move-result-object v2
 
-    invoke-virtual {p1, p2, v0, v0}, Lorg/koin/core/scope/Scope;->get(Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
+    invoke-virtual {p1, v2, v0, v0}, Lorg/koin/core/scope/Scope;->get(Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
 
-    move-result-object p2
+    move-result-object v2
 
-    .line 141
-    move-object v2, p2
-
+    .line 145
     check-cast v2, Lcom/iMe/storage/data/network/api/own/BoostApi;
 
     .line 133
-    const-class p2, Lcom/iMe/storage/data/datasource/boost/WalletBoostDataSourceFactory;
+    const-class v3, Lcom/iMe/storage/data/datasource/boost/WalletBoostDataSourceFactory;
 
-    invoke-static {p2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
+    invoke-static {v3}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
 
-    move-result-object p2
+    move-result-object v3
 
-    invoke-virtual {p1, p2, v0, v0}, Lorg/koin/core/scope/Scope;->get(Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
-
-    move-result-object p2
-
-    .line 141
-    move-object v4, p2
-
-    check-cast v4, Lcom/iMe/storage/data/datasource/boost/WalletBoostDataSourceFactory;
-
-    .line 133
-    const-class p2, Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;
-
-    invoke-static {p2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
-
-    move-result-object p2
-
-    invoke-virtual {p1, p2, v0, v0}, Lorg/koin/core/scope/Scope;->get(Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
+    invoke-virtual {p1, v3, v0, v0}, Lorg/koin/core/scope/Scope;->get(Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
 
     move-result-object p1
 
-    .line 141
-    move-object v3, p1
+    .line 145
+    check-cast p1, Lcom/iMe/storage/data/datasource/boost/WalletBoostDataSourceFactory;
 
-    check-cast v3, Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;
+    new-instance v0, Lcom/iMe/storage/data/repository/crypto/boost/BoostRepositoryImpl;
 
-    new-instance p1, Lcom/iMe/storage/data/repository/crypto/boost/BoostRepositoryImpl;
+    invoke-direct {v0, v2, p1, v1, p2}, Lcom/iMe/storage/data/repository/crypto/boost/BoostRepositoryImpl;-><init>(Lcom/iMe/storage/data/network/api/own/BoostApi;Lcom/iMe/storage/data/datasource/boost/WalletBoostDataSourceFactory;Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler;)V
 
-    move-object v1, p1
-
-    invoke-direct/range {v1 .. v6}, Lcom/iMe/storage/data/repository/crypto/boost/BoostRepositoryImpl;-><init>(Lcom/iMe/storage/data/network/api/own/BoostApi;Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;Lcom/iMe/storage/data/datasource/boost/WalletBoostDataSourceFactory;Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler;)V
-
-    return-object p1
+    return-object v0
 .end method
 
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 141
+    .line 145
     check-cast p1, Lorg/koin/core/scope/Scope;
 
     check-cast p2, Lorg/koin/core/parameter/ParametersHolder;

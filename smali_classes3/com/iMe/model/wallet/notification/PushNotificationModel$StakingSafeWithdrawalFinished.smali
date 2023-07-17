@@ -17,7 +17,7 @@
 # instance fields
 .field private final amount:Ljava/lang/String;
 
-.field private final networkType:Ljava/lang/String;
+.field private final networkId:Ljava/lang/String;
 
 .field private final stakingId:Ljava/lang/String;
 
@@ -42,7 +42,7 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "networkType"
+    const-string v0, "networkId"
 
     invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -62,28 +62,28 @@
 
     invoke-static {p7, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 122
+    .line 121
     invoke-direct {p0, p2, p1}, Lcom/iMe/model/wallet/notification/PushNotificationModel;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 115
+    .line 114
     iput-object p1, p0, Lcom/iMe/model/wallet/notification/PushNotificationModel$StakingSafeWithdrawalFinished;->type:Ljava/lang/String;
 
-    .line 116
+    .line 115
     iput-object p2, p0, Lcom/iMe/model/wallet/notification/PushNotificationModel$StakingSafeWithdrawalFinished;->userId:Ljava/lang/String;
 
-    .line 117
-    iput-object p3, p0, Lcom/iMe/model/wallet/notification/PushNotificationModel$StakingSafeWithdrawalFinished;->networkType:Ljava/lang/String;
+    .line 116
+    iput-object p3, p0, Lcom/iMe/model/wallet/notification/PushNotificationModel$StakingSafeWithdrawalFinished;->networkId:Ljava/lang/String;
 
-    .line 118
+    .line 117
     iput-object p4, p0, Lcom/iMe/model/wallet/notification/PushNotificationModel$StakingSafeWithdrawalFinished;->stakingId:Ljava/lang/String;
 
-    .line 119
+    .line 118
     iput-object p5, p0, Lcom/iMe/model/wallet/notification/PushNotificationModel$StakingSafeWithdrawalFinished;->stakingName:Ljava/lang/String;
 
-    .line 120
+    .line 119
     iput-object p6, p0, Lcom/iMe/model/wallet/notification/PushNotificationModel$StakingSafeWithdrawalFinished;->stakingToken:Ljava/lang/String;
 
-    .line 121
+    .line 120
     iput-object p7, p0, Lcom/iMe/model/wallet/notification/PushNotificationModel$StakingSafeWithdrawalFinished;->amount:Ljava/lang/String;
 
     return-void
@@ -116,7 +116,7 @@
 
     if-eqz p2, :cond_2
 
-    iget-object p3, p0, Lcom/iMe/model/wallet/notification/PushNotificationModel$StakingSafeWithdrawalFinished;->networkType:Ljava/lang/String;
+    iget-object p3, p0, Lcom/iMe/model/wallet/notification/PushNotificationModel$StakingSafeWithdrawalFinished;->networkId:Ljava/lang/String;
 
     :cond_2
     move-object v0, p3
@@ -205,7 +205,7 @@
 .method public final component3()Ljava/lang/String;
     .locals 1
 
-    iget-object v0, p0, Lcom/iMe/model/wallet/notification/PushNotificationModel$StakingSafeWithdrawalFinished;->networkType:Ljava/lang/String;
+    iget-object v0, p0, Lcom/iMe/model/wallet/notification/PushNotificationModel$StakingSafeWithdrawalFinished;->networkId:Ljava/lang/String;
 
     return-object v0
 .end method
@@ -257,7 +257,7 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "networkType"
+    const-string v0, "networkId"
 
     move-object v4, p3
 
@@ -351,9 +351,9 @@
     return v2
 
     :cond_3
-    iget-object v1, p0, Lcom/iMe/model/wallet/notification/PushNotificationModel$StakingSafeWithdrawalFinished;->networkType:Ljava/lang/String;
+    iget-object v1, p0, Lcom/iMe/model/wallet/notification/PushNotificationModel$StakingSafeWithdrawalFinished;->networkId:Ljava/lang/String;
 
-    iget-object v3, p1, Lcom/iMe/model/wallet/notification/PushNotificationModel$StakingSafeWithdrawalFinished;->networkType:Ljava/lang/String;
+    iget-object v3, p1, Lcom/iMe/model/wallet/notification/PushNotificationModel$StakingSafeWithdrawalFinished;->networkId:Ljava/lang/String;
 
     invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
@@ -422,23 +422,23 @@
 .method public final getAmount()Ljava/lang/String;
     .locals 1
 
-    .line 121
+    .line 120
     iget-object v0, p0, Lcom/iMe/model/wallet/notification/PushNotificationModel$StakingSafeWithdrawalFinished;->amount:Ljava/lang/String;
 
     return-object v0
 .end method
 
 .method public getMessage()Ljava/lang/String;
-    .locals 5
+    .locals 4
 
-    .line 125
+    .line 124
     sget v0, Lorg/telegram/messenger/R$string;->push_notification_staking_safe_withdrawal_finished:I
 
     const/4 v1, 0x3
 
     new-array v1, v1, [Ljava/lang/Object;
 
-    .line 126
+    .line 125
     iget-object v2, p0, Lcom/iMe/model/wallet/notification/PushNotificationModel$StakingSafeWithdrawalFinished;->stakingToken:Ljava/lang/String;
 
     const/4 v3, 0x0
@@ -447,24 +447,18 @@
 
     new-instance v2, Ljava/math/BigDecimal;
 
-    .line 127
+    .line 126
     iget-object v3, p0, Lcom/iMe/model/wallet/notification/PushNotificationModel$StakingSafeWithdrawalFinished;->amount:Ljava/lang/String;
 
     invoke-direct {v2, v3}, Ljava/math/BigDecimal;-><init>(Ljava/lang/String;)V
 
-    sget-object v3, Lcom/iMe/storage/domain/model/wallet/token/TokenInfo;->Companion:Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Companion;
+    const/16 v3, 0x8
 
-    iget-object v4, p0, Lcom/iMe/model/wallet/notification/PushNotificationModel$StakingSafeWithdrawalFinished;->stakingToken:Ljava/lang/String;
-
-    invoke-virtual {v3, v4}, Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Companion;->map(Ljava/lang/String;)Lcom/iMe/storage/domain/model/wallet/token/TokenInfo;
+    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
 
-    invoke-virtual {v3}, Lcom/iMe/storage/domain/model/wallet/token/TokenInfo;->getDecimals()I
-
-    move-result v3
-
-    invoke-static {v2, v3}, Lcom/iMe/utils/formatter/BalanceFormatter;->formatBalance(Ljava/lang/Number;I)Ljava/lang/String;
+    invoke-static {v2, v3}, Lcom/iMe/utils/formatter/BalanceFormatter;->formatBalance(Ljava/lang/Number;Ljava/lang/Integer;)Ljava/lang/String;
 
     move-result-object v2
 
@@ -472,26 +466,26 @@
 
     aput-object v2, v1, v3
 
-    .line 128
+    .line 127
     iget-object v2, p0, Lcom/iMe/model/wallet/notification/PushNotificationModel$StakingSafeWithdrawalFinished;->stakingToken:Ljava/lang/String;
 
     const/4 v3, 0x2
 
     aput-object v2, v1, v3
 
-    .line 124
-    invoke-virtual {p0, v0, v1}, Lcom/iMe/model/wallet/notification/PushNotificationModel;->getString$TMessagesProj_release(I[Ljava/lang/Object;)Ljava/lang/String;
+    .line 123
+    invoke-virtual {p0, v0, v1}, Lcom/iMe/model/wallet/notification/PushNotificationModel;->getString$TMessagesProj_HA_public(I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public final getNetworkType()Ljava/lang/String;
+.method public final getNetworkId()Ljava/lang/String;
     .locals 1
 
-    .line 117
-    iget-object v0, p0, Lcom/iMe/model/wallet/notification/PushNotificationModel$StakingSafeWithdrawalFinished;->networkType:Ljava/lang/String;
+    .line 116
+    iget-object v0, p0, Lcom/iMe/model/wallet/notification/PushNotificationModel$StakingSafeWithdrawalFinished;->networkId:Ljava/lang/String;
 
     return-object v0
 .end method
@@ -499,7 +493,7 @@
 .method public final getStakingId()Ljava/lang/String;
     .locals 1
 
-    .line 118
+    .line 117
     iget-object v0, p0, Lcom/iMe/model/wallet/notification/PushNotificationModel$StakingSafeWithdrawalFinished;->stakingId:Ljava/lang/String;
 
     return-object v0
@@ -508,7 +502,7 @@
 .method public final getStakingName()Ljava/lang/String;
     .locals 1
 
-    .line 119
+    .line 118
     iget-object v0, p0, Lcom/iMe/model/wallet/notification/PushNotificationModel$StakingSafeWithdrawalFinished;->stakingName:Ljava/lang/String;
 
     return-object v0
@@ -517,7 +511,7 @@
 .method public final getStakingToken()Ljava/lang/String;
     .locals 1
 
-    .line 120
+    .line 119
     iget-object v0, p0, Lcom/iMe/model/wallet/notification/PushNotificationModel$StakingSafeWithdrawalFinished;->stakingToken:Ljava/lang/String;
 
     return-object v0
@@ -526,7 +520,7 @@
 .method public getType()Ljava/lang/String;
     .locals 1
 
-    .line 115
+    .line 114
     iget-object v0, p0, Lcom/iMe/model/wallet/notification/PushNotificationModel$StakingSafeWithdrawalFinished;->type:Ljava/lang/String;
 
     return-object v0
@@ -535,7 +529,7 @@
 .method public getUserId()Ljava/lang/String;
     .locals 1
 
-    .line 116
+    .line 115
     iget-object v0, p0, Lcom/iMe/model/wallet/notification/PushNotificationModel$StakingSafeWithdrawalFinished;->userId:Ljava/lang/String;
 
     return-object v0
@@ -566,7 +560,7 @@
 
     mul-int/lit8 v0, v0, 0x1f
 
-    iget-object v1, p0, Lcom/iMe/model/wallet/notification/PushNotificationModel$StakingSafeWithdrawalFinished;->networkType:Ljava/lang/String;
+    iget-object v1, p0, Lcom/iMe/model/wallet/notification/PushNotificationModel$StakingSafeWithdrawalFinished;->networkId:Ljava/lang/String;
 
     invoke-virtual {v1}, Ljava/lang/String;->hashCode()I
 
@@ -644,11 +638,11 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v1, ", networkType="
+    const-string v1, ", networkId="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v1, p0, Lcom/iMe/model/wallet/notification/PushNotificationModel$StakingSafeWithdrawalFinished;->networkType:Ljava/lang/String;
+    iget-object v1, p0, Lcom/iMe/model/wallet/notification/PushNotificationModel$StakingSafeWithdrawalFinished;->networkId:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

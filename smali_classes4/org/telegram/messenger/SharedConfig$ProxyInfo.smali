@@ -116,7 +116,7 @@
     invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     :try_start_0
-    const-string v2, "server="
+    const-string/jumbo v2, "server="
 
     .line 708
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;

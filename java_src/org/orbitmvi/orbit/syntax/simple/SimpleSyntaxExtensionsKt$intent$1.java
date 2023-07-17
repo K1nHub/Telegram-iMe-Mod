@@ -47,7 +47,7 @@ public final class SimpleSyntaxExtensionsKt$intent$1 extends SuspendLambda imple
     @DebugMetadata(m84c = "org.orbitmvi.orbit.syntax.simple.SimpleSyntaxExtensionsKt$intent$1$1", m83f = "SimpleSyntaxExtensions.kt", m82l = {73}, m81m = "invokeSuspend")
     /* renamed from: org.orbitmvi.orbit.syntax.simple.SimpleSyntaxExtensionsKt$intent$1$1 */
     /* loaded from: classes4.dex */
-    public static final class C31861 extends SuspendLambda implements Function2<ContainerContext<STATE, SIDE_EFFECT>, Continuation<? super Unit>, Object> {
+    public static final class C33071 extends SuspendLambda implements Function2<ContainerContext<STATE, SIDE_EFFECT>, Continuation<? super Unit>, Object> {
         final /* synthetic */ boolean $registerIdling;
         final /* synthetic */ Function2<SimpleSyntax<STATE, SIDE_EFFECT>, Continuation<? super Unit>, Object> $transformer;
         private /* synthetic */ Object L$0;
@@ -55,7 +55,7 @@ public final class SimpleSyntaxExtensionsKt$intent$1 extends SuspendLambda imple
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         /* JADX WARN: Multi-variable type inference failed */
-        C31861(boolean z, Function2<? super SimpleSyntax<STATE, SIDE_EFFECT>, ? super Continuation<? super Unit>, ? extends Object> function2, Continuation<? super C31861> continuation) {
+        C33071(boolean z, Function2<? super SimpleSyntax<STATE, SIDE_EFFECT>, ? super Continuation<? super Unit>, ? extends Object> function2, Continuation<? super C33071> continuation) {
             super(2, continuation);
             this.$registerIdling = z;
             this.$transformer = function2;
@@ -63,14 +63,14 @@ public final class SimpleSyntaxExtensionsKt$intent$1 extends SuspendLambda imple
 
         @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            C31861 c31861 = new C31861(this.$registerIdling, this.$transformer, continuation);
-            c31861.L$0 = obj;
-            return c31861;
+            C33071 c33071 = new C33071(this.$registerIdling, this.$transformer, continuation);
+            c33071.L$0 = obj;
+            return c33071;
         }
 
         @Override // kotlin.jvm.functions.Function2
         public final Object invoke(ContainerContext<STATE, SIDE_EFFECT> containerContext, Continuation<? super Unit> continuation) {
-            return ((C31861) create(containerContext, continuation)).invokeSuspend(Unit.INSTANCE);
+            return ((C33071) create(containerContext, continuation)).invokeSuspend(Unit.INSTANCE);
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
@@ -78,28 +78,28 @@ public final class SimpleSyntaxExtensionsKt$intent$1 extends SuspendLambda imple
         @DebugMetadata(m84c = "org.orbitmvi.orbit.syntax.simple.SimpleSyntaxExtensionsKt$intent$1$1$1", m83f = "SimpleSyntaxExtensions.kt", m82l = {74}, m81m = "invokeSuspend")
         /* renamed from: org.orbitmvi.orbit.syntax.simple.SimpleSyntaxExtensionsKt$intent$1$1$1 */
         /* loaded from: classes4.dex */
-        public static final class C31871 extends SuspendLambda implements Function2<ContainerContext<STATE, SIDE_EFFECT>, Continuation<? super Unit>, Object> {
+        public static final class C33081 extends SuspendLambda implements Function2<ContainerContext<STATE, SIDE_EFFECT>, Continuation<? super Unit>, Object> {
             final /* synthetic */ Function2<SimpleSyntax<STATE, SIDE_EFFECT>, Continuation<? super Unit>, Object> $transformer;
             private /* synthetic */ Object L$0;
             int label;
 
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             /* JADX WARN: Multi-variable type inference failed */
-            C31871(Function2<? super SimpleSyntax<STATE, SIDE_EFFECT>, ? super Continuation<? super Unit>, ? extends Object> function2, Continuation<? super C31871> continuation) {
+            C33081(Function2<? super SimpleSyntax<STATE, SIDE_EFFECT>, ? super Continuation<? super Unit>, ? extends Object> function2, Continuation<? super C33081> continuation) {
                 super(2, continuation);
                 this.$transformer = function2;
             }
 
             @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
             public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-                C31871 c31871 = new C31871(this.$transformer, continuation);
-                c31871.L$0 = obj;
-                return c31871;
+                C33081 c33081 = new C33081(this.$transformer, continuation);
+                c33081.L$0 = obj;
+                return c33081;
             }
 
             @Override // kotlin.jvm.functions.Function2
             public final Object invoke(ContainerContext<STATE, SIDE_EFFECT> containerContext, Continuation<? super Unit> continuation) {
-                return ((C31871) create(containerContext, continuation)).invokeSuspend(Unit.INSTANCE);
+                return ((C33081) create(containerContext, continuation)).invokeSuspend(Unit.INSTANCE);
             }
 
             @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
@@ -132,9 +132,9 @@ public final class SimpleSyntaxExtensionsKt$intent$1 extends SuspendLambda imple
             if (i == 0) {
                 ResultKt.throwOnFailure(obj);
                 boolean z = this.$registerIdling;
-                C31871 c31871 = new C31871(this.$transformer, null);
+                C33081 c33081 = new C33081(this.$transformer, null);
                 this.label = 1;
-                if (SimpleIdlingExtensionsKt.withIdling((ContainerContext) this.L$0, z, c31871, this) == coroutine_suspended) {
+                if (SimpleIdlingExtensionsKt.withIdling((ContainerContext) this.L$0, z, c33081, this) == coroutine_suspended) {
                     return coroutine_suspended;
                 }
             } else if (i != 1) {
@@ -154,9 +154,9 @@ public final class SimpleSyntaxExtensionsKt$intent$1 extends SuspendLambda imple
         if (i == 0) {
             ResultKt.throwOnFailure(obj);
             Container container = this.$this_intent.getContainer();
-            C31861 c31861 = new C31861(this.$registerIdling, this.$transformer, null);
+            C33071 c33071 = new C33071(this.$registerIdling, this.$transformer, null);
             this.label = 1;
-            if (container.orbit(c31861, this) == coroutine_suspended) {
+            if (container.orbit(c33071, this) == coroutine_suspended) {
                 return coroutine_suspended;
             }
         } else if (i != 1) {

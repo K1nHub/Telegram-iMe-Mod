@@ -28,7 +28,7 @@
 
     const/4 v0, 0x0
 
-    .line 300
+    .line 308
     invoke-direct {p0, v0}, Lcom/iMe/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$ScreenType;-><init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
 
     iput-object p1, p0, Lcom/iMe/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$ScreenType$TransactionDetails;->item:Lcom/iMe/model/wallet/transaction/TransactionItem;
@@ -78,7 +78,7 @@
 .method public final getItem()Lcom/iMe/model/wallet/transaction/TransactionItem;
     .locals 1
 
-    .line 300
+    .line 308
     iget-object v0, p0, Lcom/iMe/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$ScreenType$TransactionDetails;->item:Lcom/iMe/model/wallet/transaction/TransactionItem;
 
     return-object v0

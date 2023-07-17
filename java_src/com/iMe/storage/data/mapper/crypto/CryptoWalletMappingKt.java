@@ -1,6 +1,7 @@
 package com.iMe.storage.data.mapper.crypto;
 
-import com.google.android.gms.maps.model.BitmapDescriptorFactory;
+import com.iMe.storage.data.mapper.wallet.TokenMappingKt;
+import com.iMe.storage.data.network.model.response.crypto.ton.TonFeesResponse;
 import com.iMe.storage.data.network.model.response.crypto.wallet.AccountInfoResponse;
 import com.iMe.storage.data.network.model.response.crypto.wallet.AccountWalletAddressResponse;
 import com.iMe.storage.data.network.model.response.crypto.wallet.BitcoinUnspentOutputResponse;
@@ -8,10 +9,11 @@ import com.iMe.storage.data.network.model.response.crypto.wallet.GasPriceRespons
 import com.iMe.storage.data.network.model.response.crypto.wallet.TransactionParamsResponse;
 import com.iMe.storage.data.network.model.response.crypto.wallet_connect.ParamsForCryptoTransactionResponse;
 import com.iMe.storage.domain.model.crypto.AccountInfo;
-import com.iMe.storage.domain.model.crypto.Chain;
+import com.iMe.storage.domain.model.crypto.BlockchainType;
 import com.iMe.storage.domain.model.crypto.TransactionParams;
 import com.iMe.storage.domain.model.crypto.send.GasPriceInfo;
 import com.iMe.storage.domain.model.crypto.wallet_connect.WalletConnectProcessedTransaction;
+import com.iMe.storage.domain.model.wallet.token.FiatValue;
 import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
@@ -21,8 +23,15 @@ import kotlin.jvm.internal.Intrinsics;
 /* loaded from: classes3.dex */
 public final class CryptoWalletMappingKt {
     public static final AccountInfo mapToDomain(AccountInfoResponse accountInfoResponse) {
+        int collectionSizeOrDefault;
         Intrinsics.checkNotNullParameter(accountInfoResponse, "<this>");
-        return new AccountInfo(mapToDomain(accountInfoResponse.getEtherWalletAddress()), mapToDomain(accountInfoResponse.getTonWalletAddress()), mapToDomain(accountInfoResponse.getTronWalletAddress()), mapToDomain(accountInfoResponse.getBitcoinWalletAddress()));
+        List<AccountWalletAddressResponse> wallets = accountInfoResponse.getWallets();
+        collectionSizeOrDefault = CollectionsKt__IterablesKt.collectionSizeOrDefault(wallets, 10);
+        ArrayList arrayList = new ArrayList(collectionSizeOrDefault);
+        for (AccountWalletAddressResponse accountWalletAddressResponse : wallets) {
+            arrayList.add(mapToDomain(accountWalletAddressResponse));
+        }
+        return new AccountInfo(arrayList, accountInfoResponse.getHasAccess());
     }
 
     public static final AccountInfo.Address mapToDomain(AccountWalletAddressResponse accountWalletAddressResponse) {
@@ -31,29 +40,38 @@ public final class CryptoWalletMappingKt {
         if (value == null) {
             value = "";
         }
-        return new AccountInfo.Address(value, accountWalletAddressResponse.isSet(), accountWalletAddressResponse.getHasAccess());
+        return new AccountInfo.Address(value, accountWalletAddressResponse.isSet(), BlockchainType.Companion.mapByBackendName(accountWalletAddressResponse.getPlatform()));
     }
 
     public static final WalletConnectProcessedTransaction mapToDomain(ParamsForCryptoTransactionResponse paramsForCryptoTransactionResponse) {
         Intrinsics.checkNotNullParameter(paramsForCryptoTransactionResponse, "<this>");
-        return new WalletConnectProcessedTransaction(paramsForCryptoTransactionResponse.getFrom(), paramsForCryptoTransactionResponse.getTo(), paramsForCryptoTransactionResponse.getValue(), paramsForCryptoTransactionResponse.getData(), mapToDomain(paramsForCryptoTransactionResponse.getTransactionParams()), paramsForCryptoTransactionResponse.getNetworkType(), paramsForCryptoTransactionResponse.getFeeTokenCode());
+        return new WalletConnectProcessedTransaction(paramsForCryptoTransactionResponse.getFrom(), paramsForCryptoTransactionResponse.getTo(), paramsForCryptoTransactionResponse.getValue(), paramsForCryptoTransactionResponse.getData(), mapToDomain(paramsForCryptoTransactionResponse.getTransactionParams()), TokenMappingKt.mapToDomain(paramsForCryptoTransactionResponse.getFeeToken()));
     }
 
     public static final TransactionParams.Ether mapToDomain(TransactionParamsResponse.EVM evm) {
         Intrinsics.checkNotNullParameter(evm, "<this>");
         BigInteger nonce = evm.getNonce();
-        Chain chainById = Chain.Companion.getChainById(evm.getChainId());
+        long chainId = evm.getChainId();
         GasPriceResponse safeLow = evm.getSafeLow();
         GasPriceInfo mapToDomain = safeLow != null ? GasPriceInfoMappingKt.mapToDomain(safeLow) : null;
         GasPriceInfo mapToDomain2 = GasPriceInfoMappingKt.mapToDomain(evm.getFast());
         GasPriceResponse fastest = evm.getFastest();
-        return new TransactionParams.Ether(mapToDomain2, fastest != null ? GasPriceInfoMappingKt.mapToDomain(fastest) : null, mapToDomain, nonce, chainById);
+        return new TransactionParams.Ether(mapToDomain2, fastest != null ? GasPriceInfoMappingKt.mapToDomain(fastest) : null, mapToDomain, nonce, chainId);
     }
 
     public static final TransactionParams.Tron mapToDomain(TransactionParamsResponse.TRON tron, GasPriceResponse estimateFees) {
         Intrinsics.checkNotNullParameter(tron, "<this>");
         Intrinsics.checkNotNullParameter(estimateFees, "estimateFees");
-        return new TransactionParams.Tron(GasPriceInfo.copy$default(GasPriceInfoMappingKt.mapToDomain(estimateFees), null, tron.getFeeLimit(), 0, 0.0d, BitmapDescriptorFactory.HUE_RED, 29, null), TronBlockHeaderMappingKt.mapToDomain(tron.getBlockHeader()));
+        return new TransactionParams.Tron(GasPriceInfo.copy$default(GasPriceInfoMappingKt.mapToDomain(estimateFees), null, tron.getFeeLimit(), 0, 0.0d, null, 29, null), TronBlockHeaderMappingKt.mapToDomain(tron.getBlockHeader()), tron.getContractAddress());
+    }
+
+    public static final TransactionParams.Ton mapToDomain(TransactionParamsResponse.TON ton, TonFeesResponse estimateFees) {
+        Intrinsics.checkNotNullParameter(ton, "<this>");
+        Intrinsics.checkNotNullParameter(estimateFees, "estimateFees");
+        BigInteger ZERO = BigInteger.ZERO;
+        Intrinsics.checkNotNullExpressionValue(ZERO, "ZERO");
+        Intrinsics.checkNotNullExpressionValue(ZERO, "ZERO");
+        return new TransactionParams.Ton(new GasPriceInfo(ZERO, ZERO, (int) estimateFees.getDuration(), estimateFees.getFee(), FiatValue.Companion.createUSDValue(estimateFees.getFeeInDollars())), ton.getWalletSeqno());
     }
 
     public static final TransactionParams.Bitcoin mapToDomain(TransactionParamsResponse.BTC btc) {

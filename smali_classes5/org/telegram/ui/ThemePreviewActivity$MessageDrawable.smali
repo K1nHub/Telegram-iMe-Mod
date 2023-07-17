@@ -22,10 +22,10 @@
 .method public constructor <init>(Lorg/telegram/ui/ThemePreviewActivity;IZZ)V
     .locals 0
 
-    .line 5441
+    .line 5446
     iput-object p1, p0, Lorg/telegram/ui/ThemePreviewActivity$MessageDrawable;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
 
-    .line 5442
+    .line 5447
     invoke-direct {p0, p2, p3, p4}, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;-><init>(IZZ)V
 
     return-void
@@ -36,7 +36,7 @@
 .method public setTop(IIIIIIZZ)V
     .locals 1
 
-    .line 5455
+    .line 5460
     iget-object v0, p0, Lorg/telegram/ui/ThemePreviewActivity$MessageDrawable;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ThemePreviewActivity;->access$11900(Lorg/telegram/ui/ThemePreviewActivity;)Z
@@ -47,7 +47,7 @@
 
     return-void
 
-    .line 5458
+    .line 5463
     :cond_0
     invoke-super/range {p0 .. p8}, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->setTop(IIIIIIZZ)V
 
@@ -57,7 +57,7 @@
 .method public setTop(IIIZZ)V
     .locals 1
 
-    .line 5447
+    .line 5452
     iget-object v0, p0, Lorg/telegram/ui/ThemePreviewActivity$MessageDrawable;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ThemePreviewActivity;->access$11900(Lorg/telegram/ui/ThemePreviewActivity;)Z
@@ -68,7 +68,7 @@
 
     return-void
 
-    .line 5450
+    .line 5455
     :cond_0
     invoke-super/range {p0 .. p5}, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;->setTop(IIIZZ)V
 

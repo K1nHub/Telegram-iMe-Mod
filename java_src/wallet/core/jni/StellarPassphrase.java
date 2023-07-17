@@ -26,7 +26,7 @@ public enum StellarPassphrase {
 
     /* renamed from: wallet.core.jni.StellarPassphrase$1 */
     /* loaded from: classes6.dex */
-    static /* synthetic */ class C68071 {
+    static /* synthetic */ class C69321 {
         static final /* synthetic */ int[] $SwitchMap$wallet$core$jni$StellarPassphrase;
 
         static {
@@ -45,7 +45,7 @@ public enum StellarPassphrase {
 
     @Override // java.lang.Enum
     public String toString() {
-        int i = C68071.$SwitchMap$wallet$core$jni$StellarPassphrase[ordinal()];
+        int i = C69321.$SwitchMap$wallet$core$jni$StellarPassphrase[ordinal()];
         return i != 1 ? i != 2 ? "" : "Kin Mainnet ; December 2018" : "Public Global Stellar Network ; September 2015";
     }
 }

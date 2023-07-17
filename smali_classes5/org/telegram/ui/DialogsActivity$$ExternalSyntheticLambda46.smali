@@ -33,7 +33,7 @@
 
     iget-object v1, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda46;->f$1:Landroid/app/Activity;
 
-    invoke-static {v0, v1, p1}, Lorg/telegram/ui/DialogsActivity;->$r8$lambda$Hw2za5jByqEw6cokH4cw7qYbcSc(Lorg/telegram/ui/DialogsActivity;Landroid/app/Activity;Landroid/view/View;)V
+    invoke-static {v0, v1, p1}, Lorg/telegram/ui/DialogsActivity;->$r8$lambda$2AdsfqlwFzEM6S98CSfzp40I12E(Lorg/telegram/ui/DialogsActivity;Landroid/app/Activity;Landroid/view/View;)V
 
     return-void
 .end method

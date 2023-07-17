@@ -27,7 +27,7 @@
 
     iput-object p1, p0, Lcom/iMe/ui/wallet/common/WalletRootFragment$setupBottomNavigationBar$1$1;->this$0:Lcom/iMe/ui/wallet/common/WalletRootFragment;
 
-    .line 237
+    .line 239
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -38,7 +38,7 @@
 .method public onBubbleClick(I)Z
     .locals 1
 
-    .line 239
+    .line 241
     iget-object v0, p0, Lcom/iMe/ui/wallet/common/WalletRootFragment$setupBottomNavigationBar$1$1;->this$0:Lcom/iMe/ui/wallet/common/WalletRootFragment;
 
     invoke-static {v0}, Lcom/iMe/ui/wallet/common/WalletRootFragment;->access$getPresenter(Lcom/iMe/ui/wallet/common/WalletRootFragment;)Lcom/iMe/ui/wallet/common/WalletRootPresenter;

@@ -26,7 +26,7 @@
 .method constructor <init>(Lcom/iMe/ui/wallet/donations/WalletDonationsView$$State;)V
     .locals 1
 
-    .line 195
+    .line 211
     const-class p1, Lmoxy/viewstate/strategy/AddToEndSingleStrategy;
 
     const-string/jumbo v0, "updateScreenAfterLoad"
@@ -41,7 +41,7 @@
 .method public apply(Lcom/iMe/ui/wallet/donations/WalletDonationsView;)V
     .locals 0
 
-    .line 200
+    .line 216
     invoke-interface {p1}, Lcom/iMe/ui/wallet/donations/WalletDonationsView;->updateScreenAfterLoad()V
 
     return-void
@@ -50,7 +50,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 193
+    .line 209
     check-cast p1, Lcom/iMe/ui/wallet/donations/WalletDonationsView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/wallet/donations/WalletDonationsView$$State$UpdateScreenAfterLoadCommand;->apply(Lcom/iMe/ui/wallet/donations/WalletDonationsView;)V

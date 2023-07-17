@@ -69,26 +69,26 @@ public final class AndroidResourceManager implements ResourceManager {
         boolean contains$default;
         Locale locale;
         List split$default;
-        String supportedLanguage = this.telegramGateway.getCurrentLocaleInformation().getSupportedLanguage();
-        contains$default = StringsKt__StringsKt.contains$default((CharSequence) supportedLanguage, (CharSequence) "-", false, 2, (Object) null);
+        String currentLanguage = this.telegramGateway.getCurrentLanguage();
+        contains$default = StringsKt__StringsKt.contains$default((CharSequence) currentLanguage, (CharSequence) "-", false, 2, (Object) null);
         if (contains$default) {
-            split$default = StringsKt__StringsKt.split$default((CharSequence) supportedLanguage, new String[]{"-"}, false, 0, 6, (Object) null);
+            split$default = StringsKt__StringsKt.split$default((CharSequence) currentLanguage, new String[]{"-"}, false, 0, 6, (Object) null);
             if (split$default.size() > 1) {
                 return new Locale((String) split$default.get(0), (String) split$default.get(1));
             }
-            locale = new Locale(supportedLanguage);
+            locale = new Locale(currentLanguage);
         } else {
-            locale = new Locale(supportedLanguage);
+            locale = new Locale(currentLanguage);
         }
         return locale;
     }
 
     private final boolean isLanguageConfigurationChanged() {
-        String supportedLanguage = this.telegramGateway.getCurrentLocaleInformation().getSupportedLanguage();
+        String currentLanguage = this.telegramGateway.getCurrentLanguage();
         Locale locale = ConfigurationCompat.getLocales(this.config).get(0);
-        if (Intrinsics.areEqual(supportedLanguage, locale != null ? locale.getLanguage() : null)) {
+        if (Intrinsics.areEqual(currentLanguage, locale != null ? locale.getLanguage() : null)) {
             Locale locale2 = ConfigurationCompat.getLocales(this.context.getResources().getConfiguration()).get(0);
-            if (Intrinsics.areEqual(supportedLanguage, locale2 != null ? locale2.getLanguage() : null)) {
+            if (Intrinsics.areEqual(currentLanguage, locale2 != null ? locale2.getLanguage() : null)) {
                 return false;
             }
         }

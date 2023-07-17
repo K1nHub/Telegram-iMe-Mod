@@ -49,17 +49,17 @@
         }
     .end annotation
 
-    .line 461
+    .line 475
     const-class p1, Lmoxy/viewstate/strategy/OneExecutionStateStrategy;
 
     const-string/jumbo v0, "showConfirmBoostDialog"
 
     invoke-direct {p0, v0, p1}, Lmoxy/viewstate/ViewCommand;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
-    .line 463
+    .line 477
     iput-object p2, p0, Lcom/iMe/ui/wallet/transaction/details/WalletTransactionDetailsView$$State$ShowConfirmBoostDialogCommand;->dialogModel:Lcom/iMe/model/dialog/DialogModel;
 
-    .line 464
+    .line 478
     iput-object p3, p0, Lcom/iMe/ui/wallet/transaction/details/WalletTransactionDetailsView$$State$ShowConfirmBoostDialogCommand;->action:Lkotlin/jvm/functions/Function0;
 
     return-void
@@ -70,7 +70,7 @@
 .method public apply(Lcom/iMe/ui/wallet/transaction/details/WalletTransactionDetailsView;)V
     .locals 2
 
-    .line 469
+    .line 483
     iget-object v0, p0, Lcom/iMe/ui/wallet/transaction/details/WalletTransactionDetailsView$$State$ShowConfirmBoostDialogCommand;->dialogModel:Lcom/iMe/model/dialog/DialogModel;
 
     iget-object v1, p0, Lcom/iMe/ui/wallet/transaction/details/WalletTransactionDetailsView$$State$ShowConfirmBoostDialogCommand;->action:Lkotlin/jvm/functions/Function0;
@@ -83,7 +83,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 455
+    .line 469
     check-cast p1, Lcom/iMe/ui/wallet/transaction/details/WalletTransactionDetailsView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/wallet/transaction/details/WalletTransactionDetailsView$$State$ShowConfirmBoostDialogCommand;->apply(Lcom/iMe/ui/wallet/transaction/details/WalletTransactionDetailsView;)V

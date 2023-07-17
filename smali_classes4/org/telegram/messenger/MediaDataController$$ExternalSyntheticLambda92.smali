@@ -10,11 +10,21 @@
 
 .field public final synthetic f$1:Lorg/telegram/tgnet/TLObject;
 
-.field public final synthetic f$2:Lorg/telegram/tgnet/TLRPC$Document;
+.field public final synthetic f$2:Ljava/util/ArrayList;
+
+.field public final synthetic f$3:I
+
+.field public final synthetic f$4:Landroidx/collection/LongSparseArray;
+
+.field public final synthetic f$5:Lorg/telegram/tgnet/TLRPC$StickerSet;
+
+.field public final synthetic f$6:Lorg/telegram/tgnet/TLRPC$TL_messages_allStickers;
+
+.field public final synthetic f$7:I
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/messenger/MediaDataController;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$Document;)V
+.method public synthetic constructor <init>(Lorg/telegram/messenger/MediaDataController;Lorg/telegram/tgnet/TLObject;Ljava/util/ArrayList;ILandroidx/collection/LongSparseArray;Lorg/telegram/tgnet/TLRPC$StickerSet;Lorg/telegram/tgnet/TLRPC$TL_messages_allStickers;I)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -23,7 +33,17 @@
 
     iput-object p2, p0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda92;->f$1:Lorg/telegram/tgnet/TLObject;
 
-    iput-object p3, p0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda92;->f$2:Lorg/telegram/tgnet/TLRPC$Document;
+    iput-object p3, p0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda92;->f$2:Ljava/util/ArrayList;
+
+    iput p4, p0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda92;->f$3:I
+
+    iput-object p5, p0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda92;->f$4:Landroidx/collection/LongSparseArray;
+
+    iput-object p6, p0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda92;->f$5:Lorg/telegram/tgnet/TLRPC$StickerSet;
+
+    iput-object p7, p0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda92;->f$6:Lorg/telegram/tgnet/TLRPC$TL_messages_allStickers;
+
+    iput p8, p0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda92;->f$7:I
 
     return-void
 .end method
@@ -31,15 +51,25 @@
 
 # virtual methods
 .method public final run()V
-    .locals 3
+    .locals 8
 
     iget-object v0, p0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda92;->f$0:Lorg/telegram/messenger/MediaDataController;
 
     iget-object v1, p0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda92;->f$1:Lorg/telegram/tgnet/TLObject;
 
-    iget-object v2, p0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda92;->f$2:Lorg/telegram/tgnet/TLRPC$Document;
+    iget-object v2, p0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda92;->f$2:Ljava/util/ArrayList;
 
-    invoke-static {v0, v1, v2}, Lorg/telegram/messenger/MediaDataController;->$r8$lambda$xJyz9FZ5C7fPHQcY6OilyelLSXc(Lorg/telegram/messenger/MediaDataController;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$Document;)V
+    iget v3, p0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda92;->f$3:I
+
+    iget-object v4, p0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda92;->f$4:Landroidx/collection/LongSparseArray;
+
+    iget-object v5, p0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda92;->f$5:Lorg/telegram/tgnet/TLRPC$StickerSet;
+
+    iget-object v6, p0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda92;->f$6:Lorg/telegram/tgnet/TLRPC$TL_messages_allStickers;
+
+    iget v7, p0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda92;->f$7:I
+
+    invoke-static/range {v0 .. v7}, Lorg/telegram/messenger/MediaDataController;->$r8$lambda$erMOvivn7r7Dxftjkm48otDMOV4(Lorg/telegram/messenger/MediaDataController;Lorg/telegram/tgnet/TLObject;Ljava/util/ArrayList;ILandroidx/collection/LongSparseArray;Lorg/telegram/tgnet/TLRPC$StickerSet;Lorg/telegram/tgnet/TLRPC$TL_messages_allStickers;I)V
 
     return-void
 .end method

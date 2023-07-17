@@ -3,8 +3,8 @@ package com.iMe.i_staking.mapper;
 import com.iMe.i_staking.response.StakingOperationCostResponse;
 import com.iMe.i_staking.response.StakingOperationResponse;
 import com.iMe.i_staking.response.StakingOperationsPagedResponse;
-import com.iMe.i_staking.response.StakingTokenResponse;
-import com.iMe.storage.domain.model.crypto.NetworkType;
+import com.iMe.storage.data.mapper.wallet.TokenMappingKt;
+import com.iMe.storage.data.network.model.response.wallet.TokenDetailedResponse;
 import com.iMe.storage.domain.model.staking.StakingOperation;
 import com.iMe.storage.domain.model.staking.StakingOperationCost;
 import com.iMe.storage.domain.model.staking.StakingOperationStatus;
@@ -45,7 +45,7 @@ public final class StakingOperationsMapperKt {
         StakingOperationCostResponse fee = stakingOperationResponse.getFee();
         StakingOperationCost mapToDomain2 = fee != null ? StakingOperationCostMapperKt.mapToDomain(fee) : null;
         Boolean safe = stakingOperationResponse.getSafe();
-        StakingTokenResponse approvedToken = stakingOperationResponse.getApprovedToken();
-        return new StakingOperation(id, stakingId, transaction, map, map2, issuer, issuedAt, settledAt, failReason, mapToDomain, mapToDomain2, safe, approvedToken != null ? StakingTokenMapperKt.mapToDomain(approvedToken) : null, stakingOperationResponse.getToken(), NetworkType.Companion.map(stakingOperationResponse.getNetwork()));
+        TokenDetailedResponse approvedToken = stakingOperationResponse.getApprovedToken();
+        return new StakingOperation(id, stakingId, transaction, map, map2, issuer, issuedAt, settledAt, failReason, mapToDomain, mapToDomain2, safe, approvedToken != null ? TokenMappingKt.mapToDomain(approvedToken) : null, TokenMappingKt.mapToDomain(stakingOperationResponse.getToken()));
     }
 }

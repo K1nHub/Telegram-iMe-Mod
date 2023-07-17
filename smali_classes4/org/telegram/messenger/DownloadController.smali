@@ -557,7 +557,7 @@
 
     const-string v10, "currentMobilePreset"
 
-    const-string v11, "roamingPreset"
+    const-string/jumbo v11, "roamingPreset"
 
     const-string/jumbo v12, "wifiPreset"
 
@@ -720,7 +720,7 @@
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v9, "roamingDownloadMask"
+    const-string/jumbo v9, "roamingDownloadMask"
 
     invoke-virtual {v4, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -853,7 +853,7 @@
 
     aget-wide v12, v4, v5
 
-    const-string v4, "roamingMaxDownloadSize2"
+    const-string/jumbo v4, "roamingMaxDownloadSize2"
 
     invoke-interface {v2, v4, v12, v13}, Landroid/content/SharedPreferences;->getLong(Ljava/lang/String;J)J
 
@@ -868,7 +868,7 @@
 
     aget-wide v12, v4, v9
 
-    const-string v4, "roamingMaxDownloadSize3"
+    const-string/jumbo v4, "roamingMaxDownloadSize3"
 
     invoke-interface {v2, v4, v12, v13}, Landroid/content/SharedPreferences;->getLong(Ljava/lang/String;J)J
 
@@ -1784,7 +1784,7 @@
 
     move-result-object v0
 
-    const-string v1, "roamingPreset"
+    const-string/jumbo v1, "roamingPreset"
 
     invoke-interface {p1, v1, v0}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 

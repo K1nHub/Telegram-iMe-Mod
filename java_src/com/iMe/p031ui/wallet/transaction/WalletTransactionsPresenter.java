@@ -13,13 +13,14 @@ import com.iMe.p031ui.base.mvp.base.BaseView;
 import com.iMe.p031ui.wallet.transaction.WalletTransactionsFragment;
 import com.iMe.storage.data.network.handlers.impl.ApiErrorHandler;
 import com.iMe.storage.data.network.model.error.ErrorModel;
+import com.iMe.storage.data.utils.crypto.NetworksHelper;
 import com.iMe.storage.domain.interactor.wallet.WalletInteractor;
 import com.iMe.storage.domain.manager.crypto.CryptoAccessManager;
 import com.iMe.storage.domain.model.Result;
-import com.iMe.storage.domain.model.crypto.NetworkType;
+import com.iMe.storage.domain.model.crypto.Network;
 import com.iMe.storage.domain.model.staking.StakingOperation;
 import com.iMe.storage.domain.model.wallet.Hint;
-import com.iMe.storage.domain.model.wallet.token.TokenCode;
+import com.iMe.storage.domain.model.wallet.token.Token;
 import com.iMe.storage.domain.model.wallet.transaction.Transaction;
 import com.iMe.storage.domain.storage.CryptoPreferenceHelper;
 import com.iMe.storage.domain.storage.HintsPreferenceHelper;
@@ -28,7 +29,7 @@ import com.iMe.storage.domain.utils.p030rx.SchedulersProvider;
 import com.iMe.storage.domain.utils.p030rx.event.RxEvent;
 import com.iMe.storage.domain.utils.system.ResourceManager;
 import com.iMe.utils.extentions.common.StringExtKt;
-import com.iMe.utils.extentions.p033rx.RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
+import com.iMe.utils.extentions.p032rx.RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
 import io.reactivex.Observable;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Action;
@@ -49,34 +50,34 @@ import moxy.InjectViewState;
 /* loaded from: classes4.dex */
 public final class WalletTransactionsPresenter extends BasePresenter<WalletTransactionsView> {
     private final CryptoAccessManager cryptoAccessManager;
+    private final CryptoPreferenceHelper cryptoPreferenceHelper;
     private final HintsPreferenceHelper hintsPreferenceHelper;
     private final ResourceManager resourceManager;
     private final RxEventBus rxEventBus;
     private final SchedulersProvider schedulersProvider;
     private final WalletTransactionsFragment.ScreenType screenType;
-    private NetworkType selectedNetworkType;
+    private Network selectedNetwork;
     private final StakingInteractor stakingInteractor;
     private final List<StakingOperation> stakingOperations;
     private String stakingOperationsCursor;
-    private final TokenCode tokenCode;
+    private final Token token;
     private final List<Transaction> transactions;
     private final WalletInteractor walletInteractor;
 
-    public WalletTransactionsPresenter(CryptoPreferenceHelper cryptoPreferenceHelper, TokenCode tokenCode, WalletTransactionsFragment.ScreenType screenType, CryptoAccessManager cryptoAccessManager, HintsPreferenceHelper hintsPreferenceHelper, ResourceManager resourceManager, RxEventBus rxEventBus, SchedulersProvider schedulersProvider, StakingInteractor stakingInteractor, WalletInteractor walletInteractor) {
-        NetworkType networkType;
-        Intrinsics.checkNotNullParameter(cryptoPreferenceHelper, "cryptoPreferenceHelper");
-        Intrinsics.checkNotNullParameter(tokenCode, "tokenCode");
+    public WalletTransactionsPresenter(Token token, WalletTransactionsFragment.ScreenType screenType, CryptoAccessManager cryptoAccessManager, CryptoPreferenceHelper cryptoPreferenceHelper, HintsPreferenceHelper hintsPreferenceHelper, ResourceManager resourceManager, RxEventBus rxEventBus, SchedulersProvider schedulersProvider, StakingInteractor stakingInteractor, WalletInteractor walletInteractor) {
         Intrinsics.checkNotNullParameter(screenType, "screenType");
         Intrinsics.checkNotNullParameter(cryptoAccessManager, "cryptoAccessManager");
+        Intrinsics.checkNotNullParameter(cryptoPreferenceHelper, "cryptoPreferenceHelper");
         Intrinsics.checkNotNullParameter(hintsPreferenceHelper, "hintsPreferenceHelper");
         Intrinsics.checkNotNullParameter(resourceManager, "resourceManager");
         Intrinsics.checkNotNullParameter(rxEventBus, "rxEventBus");
         Intrinsics.checkNotNullParameter(schedulersProvider, "schedulersProvider");
         Intrinsics.checkNotNullParameter(stakingInteractor, "stakingInteractor");
         Intrinsics.checkNotNullParameter(walletInteractor, "walletInteractor");
-        this.tokenCode = tokenCode;
+        this.token = token;
         this.screenType = screenType;
         this.cryptoAccessManager = cryptoAccessManager;
+        this.cryptoPreferenceHelper = cryptoPreferenceHelper;
         this.hintsPreferenceHelper = hintsPreferenceHelper;
         this.resourceManager = resourceManager;
         this.rxEventBus = rxEventBus;
@@ -85,16 +86,11 @@ public final class WalletTransactionsPresenter extends BasePresenter<WalletTrans
         this.walletInteractor = walletInteractor;
         this.transactions = new ArrayList();
         this.stakingOperations = new ArrayList();
-        if ((screenType instanceof WalletTransactionsFragment.ScreenType.StakingOperationsTab) && !cryptoPreferenceHelper.getNetworkType().isEVM()) {
-            networkType = (NetworkType) CollectionsKt.first((List<? extends Object>) NetworkType.Companion.getEVMNetworks());
-        } else {
-            networkType = cryptoPreferenceHelper.getNetworkType();
-        }
-        this.selectedNetworkType = networkType;
+        this.selectedNetwork = getInitialSelectedNetwork();
     }
 
     public final void startChooseNetworkDialog() {
-        ((WalletTransactionsView) getViewState()).showChooseNetworkDialog(this.selectedNetworkType, NetworkType.Companion.getNetworksByBlockchains(this.cryptoAccessManager.getCreatedWalletsBlockchains()), new WalletTransactionsPresenter$startChooseNetworkDialog$1(this));
+        ((WalletTransactionsView) getViewState()).showChooseNetworkDialog(this.selectedNetwork, NetworksHelper.INSTANCE.getNetworksByBlockchains(this.cryptoAccessManager.getLoggedIndWalletsBlockchains()), new WalletTransactionsPresenter$startChooseNetworkDialog$1(this));
     }
 
     public static /* synthetic */ void load$default(WalletTransactionsPresenter walletTransactionsPresenter, boolean z, boolean z2, String str, int i, Object obj) {
@@ -136,30 +132,37 @@ public final class WalletTransactionsPresenter extends BasePresenter<WalletTrans
     }
 
     public final void onStakingOperationClick(StakingOperationItem item) {
-        NetworkType networkType;
+        Network network;
         Intrinsics.checkNotNullParameter(item, "item");
         WalletTransactionsView walletTransactionsView = (WalletTransactionsView) getViewState();
         WalletTransactionsFragment.ScreenType screenType = this.screenType;
         if (screenType instanceof WalletTransactionsFragment.ScreenType.StakingDetailsTab) {
-            networkType = ((WalletTransactionsFragment.ScreenType.StakingDetailsTab) screenType).getStakingDetails().getNetworkType();
+            network = NetworksHelper.getNetworkById(((WalletTransactionsFragment.ScreenType.StakingDetailsTab) screenType).getStakingDetails().getTokenItem().getNetworkId());
         } else if (!(screenType instanceof WalletTransactionsFragment.ScreenType.StakingOperationsTab)) {
             return;
         } else {
-            networkType = this.selectedNetworkType;
+            network = this.selectedNetwork;
         }
-        walletTransactionsView.openStakingOperationDetails(item, networkType);
+        walletTransactionsView.openStakingOperationDetails(item, network);
     }
 
     @Override // moxy.MvpPresenter
     public void onFirstViewAttach() {
-        ((WalletTransactionsView) getViewState()).setupNetworkType(this.selectedNetworkType);
+        ((WalletTransactionsView) getViewState()).setupNetwork(this.selectedNetwork);
         load$default(this, false, true, null, 5, null);
         listenEvents();
     }
 
+    private final Network getInitialSelectedNetwork() {
+        if ((this.screenType instanceof WalletTransactionsFragment.ScreenType.StakingOperationsTab) && !this.cryptoPreferenceHelper.getNetwork().isEVM()) {
+            return (Network) CollectionsKt.first((List<? extends Object>) NetworksHelper.INSTANCE.getEVMNetworks());
+        }
+        return this.cryptoPreferenceHelper.getNetwork();
+    }
+
     private final void loadTransactions(boolean z, String str) {
         boolean z2 = str != null;
-        loadInternal(z, z2, WalletInteractor.getWalletTransactions$default(this.walletInteractor, z, str, this.tokenCode, 0, this.selectedNetworkType, 8, null), new WalletTransactionsPresenter$loadTransactions$1(this, z2, z));
+        loadInternal(z, z2, WalletInteractor.getWalletTransactions$default(this.walletInteractor, z, str, this.token, 0, this.selectedNetwork.getId(), 8, null), new WalletTransactionsPresenter$loadTransactions$1(this, z2, z));
     }
 
     public final void renderGlobalState(GlobalState globalState) {
@@ -171,7 +174,7 @@ public final class WalletTransactionsPresenter extends BasePresenter<WalletTrans
     private final void loadStakingOperations(boolean z, boolean z2) {
         Observable stakingOperations$default;
         boolean z3 = (z || z2) ? false : true;
-        if (z3 && this.stakingOperationsCursor != null) {
+        if (z3 && this.stakingOperationsCursor == null) {
             ((WalletTransactionsView) getViewState()).onLoadMoreComplete();
             return;
         }
@@ -181,9 +184,9 @@ public final class WalletTransactionsPresenter extends BasePresenter<WalletTrans
         } else if (!(screenType instanceof WalletTransactionsFragment.ScreenType.StakingOperationsTab)) {
             return;
         } else {
-            stakingOperations$default = StakingInteractor.getStakingOperations$default(this.stakingInteractor, null, ((WalletTransactionsFragment.ScreenType.StakingOperationsTab) screenType).getOperationsType(), this.selectedNetworkType, this.stakingOperationsCursor, 1, null);
+            stakingOperations$default = StakingInteractor.getStakingOperations$default(this.stakingInteractor, null, ((WalletTransactionsFragment.ScreenType.StakingOperationsTab) screenType).getOperationsType(), this.selectedNetwork.getId(), this.stakingOperationsCursor, 1, null);
         }
-        loadInternal(z, z3, stakingOperations$default, new WalletTransactionsPresenter$loadStakingOperations$1(this, z3));
+        loadInternal(z, z3, stakingOperations$default, new WalletTransactionsPresenter$loadStakingOperations$1(this, z3, z));
     }
 
     private final <T> void loadInternal(boolean z, boolean z2, Observable<Result<T>> observable, Function1<? super T, Unit> function1) {
@@ -194,8 +197,8 @@ public final class WalletTransactionsPresenter extends BasePresenter<WalletTrans
             }
         });
         Intrinsics.checkNotNullExpressionValue(doFinally, "observable\n             …e.showRefreshing(false) }");
-        Disposable subscribe = doFinally.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2411x713e530(function1, z2, this, z)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2412x713e531((BaseView) getViewState())));
-        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
+        Disposable subscribe = doFinally.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2462x713e530(function1, z2, this, z)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2463x713e531((BaseView) getViewState())));
+        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…Error.invoke()\n        })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
 
@@ -225,8 +228,8 @@ public final class WalletTransactionsPresenter extends BasePresenter<WalletTrans
         RxEventBus rxEventBus = this.rxEventBus;
         Observable observeOn = rxEventBus.getPublisher().ofType(RxEvent.class).observeOn(rxEventBus.getSchedulersProvider().mo698ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "publisher\n              …(schedulersProvider.ui())");
-        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2409x655d1dad(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2410x655d1dae(null)));
-        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
+        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2460x655d1dad(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2461x655d1dae(null)));
+        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…Error.invoke()\n        })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
 

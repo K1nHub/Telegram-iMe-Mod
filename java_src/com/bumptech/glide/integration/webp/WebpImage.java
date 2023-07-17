@@ -56,7 +56,7 @@ public class WebpImage {
 
     private void fixFrameDurations(int[] iArr) {
         for (int i = 0; i < iArr.length; i++) {
-            if (iArr[i] < 20) {
+            if (iArr[i] < 11) {
                 iArr[i] = 100;
             }
         }

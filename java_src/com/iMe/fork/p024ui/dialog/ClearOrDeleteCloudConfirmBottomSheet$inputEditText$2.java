@@ -2,7 +2,7 @@ package com.iMe.fork.p024ui.dialog;
 
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Lambda;
-import org.telegram.p044ui.Components.EditTextBoldCursor;
+import org.telegram.p043ui.Components.EditTextBoldCursor;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: ClearOrDeleteCloudConfirmBottomSheet.kt */
 /* renamed from: com.iMe.fork.ui.dialog.ClearOrDeleteCloudConfirmBottomSheet$inputEditText$2 */

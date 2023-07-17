@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/ManageLinksActivity$ListAdapter;Lorg/telegram/ui/Components/LinkActionView;)V
     .locals 0
 
-    .line 2326
+    .line 2335
     iput-object p1, p0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter$5;->this$1:Lorg/telegram/ui/ManageLinksActivity$ListAdapter;
 
     iput-object p2, p0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter$5;->val$linkActionView:Lorg/telegram/ui/Components/LinkActionView;
@@ -39,7 +39,7 @@
 .method public onTextChanged(Ljava/lang/CharSequence;III)V
     .locals 0
 
-    .line 2329
+    .line 2338
     iget-object p1, p0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter$5;->this$1:Lorg/telegram/ui/ManageLinksActivity$ListAdapter;
 
     iget-object p1, p1, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;

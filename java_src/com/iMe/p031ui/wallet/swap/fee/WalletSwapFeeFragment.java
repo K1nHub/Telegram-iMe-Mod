@@ -10,10 +10,10 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import com.iMe.common.IdFabric$ViewTypes;
 import com.iMe.model.wallet.crypto.swap.SwapFeeScreenArgs;
-import com.iMe.p031ui.base.WalletAuthFragment;
+import com.iMe.p031ui.base.wallet_auth.WalletAuthBaseFragment;
 import com.iMe.p031ui.wallet.swap.fee.WalletSwapFeeFragment;
 import com.iMe.storage.domain.model.crypto.send.GasPriceInfo;
-import com.iMe.storage.domain.model.wallet.token.TokenInfo;
+import com.iMe.storage.domain.model.wallet.token.TokenDetailed;
 import com.iMe.storage.domain.utils.system.ResourceManager;
 import com.iMe.utils.extentions.delegate.ResettableLazy;
 import com.iMe.utils.extentions.delegate.ResettableLazyDelegateKt;
@@ -32,20 +32,20 @@ import kotlin.jvm.internal.Reflection;
 import kotlin.reflect.KProperty;
 import moxy.MvpDelegate;
 import moxy.ktx.MoxyKtxDelegate;
-import org.telegram.messenger.C3295R;
-import org.telegram.p044ui.ActionBar.C3361ActionBar;
-import org.telegram.p044ui.ActionBar.Theme;
-import org.telegram.p044ui.ActionBar.ThemeDescription;
-import org.telegram.p044ui.Cells.HeaderCell;
-import org.telegram.p044ui.Cells.TextInfoPrivacyCell;
-import org.telegram.p044ui.Cells.TextSettingsCell;
-import org.telegram.p044ui.Components.RecyclerListView;
-import org.telegram.p044ui.Components.SlideChooseView;
+import org.telegram.messenger.C3417R;
+import org.telegram.p043ui.ActionBar.C3484ActionBar;
+import org.telegram.p043ui.ActionBar.Theme;
+import org.telegram.p043ui.ActionBar.ThemeDescription;
+import org.telegram.p043ui.Cells.HeaderCell;
+import org.telegram.p043ui.Cells.TextInfoPrivacyCell;
+import org.telegram.p043ui.Cells.TextSettingsCell;
+import org.telegram.p043ui.Components.RecyclerListView;
+import org.telegram.p043ui.Components.SlideChooseView;
 import timber.log.Timber;
 /* compiled from: WalletSwapFeeFragment.kt */
 /* renamed from: com.iMe.ui.wallet.swap.fee.WalletSwapFeeFragment */
 /* loaded from: classes4.dex */
-public final class WalletSwapFeeFragment extends WalletAuthFragment implements WalletSwapFeeView {
+public final class WalletSwapFeeFragment extends WalletAuthBaseFragment implements WalletSwapFeeView {
     static final /* synthetic */ KProperty<Object>[] $$delegatedProperties = {Reflection.property1(new PropertyReference1Impl(WalletSwapFeeFragment.class, "presenter", "getPresenter()Lcom/iMe/ui/wallet/swap/fee/WalletSwapFeePresenter;", 0)), Reflection.property1(new PropertyReference1Impl(WalletSwapFeeFragment.class, "listAdapter", "getListAdapter()Lcom/iMe/ui/wallet/swap/fee/WalletSwapFeeFragment$ListAdapter;", 0)), Reflection.property1(new PropertyReference1Impl(WalletSwapFeeFragment.class, "rootView", "getRootView()Landroid/widget/FrameLayout;", 0)), Reflection.property1(new PropertyReference1Impl(WalletSwapFeeFragment.class, "listView", "getListView()Lorg/telegram/ui/Components/RecyclerListView;", 0))};
     public static final Companion Companion = new Companion(null);
     private int deadlineChooserRow;
@@ -92,7 +92,7 @@ public final class WalletSwapFeeFragment extends WalletAuthFragment implements W
         return (RecyclerListView) this.listView$delegate.getValue(this, $$delegatedProperties[3]);
     }
 
-    @Override // com.iMe.p031ui.base.WalletAuthFragment, com.iMe.p031ui.base.mvp.MvpFragment, org.telegram.p044ui.ActionBar.BaseFragment
+    @Override // com.iMe.p031ui.base.wallet_auth.WalletAuthBaseFragment, com.iMe.p031ui.base.mvp.MvpFragment, org.telegram.p043ui.ActionBar.BaseFragment
     public void onResume() {
         super.onResume();
         updateRows();
@@ -107,7 +107,7 @@ public final class WalletSwapFeeFragment extends WalletAuthFragment implements W
         return rootView;
     }
 
-    @Override // com.iMe.p031ui.base.mvp.MvpFragment, org.telegram.p044ui.ActionBar.BaseFragment
+    @Override // com.iMe.p031ui.base.mvp.MvpFragment, org.telegram.p043ui.ActionBar.BaseFragment
     public void onFragmentDestroy() {
         super.onFragmentDestroy();
         invokeResultListener();
@@ -118,24 +118,24 @@ public final class WalletSwapFeeFragment extends WalletAuthFragment implements W
         getListAdapter().notifyItemChanged(this.feeInfoRow);
     }
 
-    @Override // org.telegram.p044ui.ActionBar.BaseFragment
+    @Override // org.telegram.p043ui.ActionBar.BaseFragment
     public ArrayList<ThemeDescription> getThemeDescriptions() {
         ArrayList<ThemeDescription> arrayListOf;
-        C3361ActionBar c3361ActionBar = this.actionBar;
+        C3484ActionBar c3484ActionBar = this.actionBar;
         int i = ThemeDescription.FLAG_BACKGROUND;
         int i2 = Theme.key_actionBarDefault;
-        arrayListOf = CollectionsKt__CollectionsKt.arrayListOf(new ThemeDescription(getListView(), ThemeDescription.FLAG_CELLBACKGROUNDCOLOR, new Class[]{TextSettingsCell.class, SlideChooseView.class, HeaderCell.class}, null, null, null, Theme.key_windowBackgroundWhite), new ThemeDescription(this.fragmentView, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, Theme.key_windowBackgroundGray), new ThemeDescription(c3361ActionBar, i, null, null, null, null, i2), new ThemeDescription(getListView(), ThemeDescription.FLAG_LISTGLOWCOLOR, null, null, null, null, i2), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_ITEMSCOLOR, null, null, null, null, Theme.key_actionBarDefaultIcon), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_TITLECOLOR, null, null, null, null, Theme.key_actionBarDefaultTitle), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SELECTORCOLOR, null, null, null, null, Theme.key_actionBarDefaultSelector), new ThemeDescription(getListView(), ThemeDescription.FLAG_SELECTOR, null, null, null, null, Theme.key_listSelector), new ThemeDescription(getListView(), 0, new Class[]{TextSettingsCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_windowBackgroundWhiteBlackText), new ThemeDescription(getListView(), 0, new Class[]{TextSettingsCell.class}, new String[]{"valueTextView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_windowBackgroundWhiteValueText), new ThemeDescription(getListView(), ThemeDescription.FLAG_BACKGROUNDFILTER, new Class[]{TextInfoPrivacyCell.class}, null, null, null, Theme.key_windowBackgroundGrayShadow), new ThemeDescription(getListView(), 0, new Class[]{TextInfoPrivacyCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_windowBackgroundWhiteGrayText4), new ThemeDescription(getListView(), 0, new Class[]{HeaderCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_windowBackgroundWhiteBlueHeader), new ThemeDescription(getListView(), 0, new Class[]{SlideChooseView.class}, null, null, null, Theme.key_switchTrack), new ThemeDescription(getListView(), 0, new Class[]{SlideChooseView.class}, null, null, null, Theme.key_switchTrackChecked), new ThemeDescription(getListView(), 0, new Class[]{SlideChooseView.class}, null, null, null, Theme.key_windowBackgroundWhiteGrayText));
+        arrayListOf = CollectionsKt__CollectionsKt.arrayListOf(new ThemeDescription(getListView(), ThemeDescription.FLAG_CELLBACKGROUNDCOLOR, new Class[]{TextSettingsCell.class, SlideChooseView.class, HeaderCell.class}, null, null, null, Theme.key_windowBackgroundWhite), new ThemeDescription(this.fragmentView, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, Theme.key_windowBackgroundGray), new ThemeDescription(c3484ActionBar, i, null, null, null, null, i2), new ThemeDescription(getListView(), ThemeDescription.FLAG_LISTGLOWCOLOR, null, null, null, null, i2), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_ITEMSCOLOR, null, null, null, null, Theme.key_actionBarDefaultIcon), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_TITLECOLOR, null, null, null, null, Theme.key_actionBarDefaultTitle), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SELECTORCOLOR, null, null, null, null, Theme.key_actionBarDefaultSelector), new ThemeDescription(getListView(), ThemeDescription.FLAG_SELECTOR, null, null, null, null, Theme.key_listSelector), new ThemeDescription(getListView(), 0, new Class[]{TextSettingsCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_windowBackgroundWhiteBlackText), new ThemeDescription(getListView(), 0, new Class[]{TextSettingsCell.class}, new String[]{"valueTextView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_windowBackgroundWhiteValueText), new ThemeDescription(getListView(), ThemeDescription.FLAG_BACKGROUNDFILTER, new Class[]{TextInfoPrivacyCell.class}, null, null, null, Theme.key_windowBackgroundGrayShadow), new ThemeDescription(getListView(), 0, new Class[]{TextInfoPrivacyCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_windowBackgroundWhiteGrayText4), new ThemeDescription(getListView(), 0, new Class[]{HeaderCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_windowBackgroundWhiteBlueHeader), new ThemeDescription(getListView(), 0, new Class[]{SlideChooseView.class}, null, null, null, Theme.key_switchTrack), new ThemeDescription(getListView(), 0, new Class[]{SlideChooseView.class}, null, null, null, Theme.key_switchTrackChecked), new ThemeDescription(getListView(), 0, new Class[]{SlideChooseView.class}, null, null, null, Theme.key_windowBackgroundWhiteGrayText));
         return arrayListOf;
     }
 
     private final void setupActionBar() {
-        C3361ActionBar c3361ActionBar = this.actionBar;
-        c3361ActionBar.setBackButtonImage(C3295R.C3297drawable.ic_ab_back);
-        c3361ActionBar.setTitle(getResourceManager().getString(C3295R.string.wallet_swap_transaction_options_toolbar_title));
-        c3361ActionBar.setAllowOverlayTitle(true);
-        c3361ActionBar.createMenu();
-        c3361ActionBar.setActionBarMenuOnItemClick(new C3361ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.ui.wallet.swap.fee.WalletSwapFeeFragment$setupActionBar$1$1
-            @Override // org.telegram.p044ui.ActionBar.C3361ActionBar.ActionBarMenuOnItemClick
+        C3484ActionBar c3484ActionBar = this.actionBar;
+        c3484ActionBar.setBackButtonImage(C3417R.C3419drawable.ic_ab_back);
+        c3484ActionBar.setTitle(getResourceManager().getString(C3417R.string.wallet_swap_transaction_options_toolbar_title));
+        c3484ActionBar.setAllowOverlayTitle(true);
+        c3484ActionBar.createMenu();
+        c3484ActionBar.setActionBarMenuOnItemClick(new C3484ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.ui.wallet.swap.fee.WalletSwapFeeFragment$setupActionBar$1$1
+            @Override // org.telegram.p043ui.ActionBar.C3484ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
                     WalletSwapFeeFragment.this.finishFragment();
@@ -203,7 +203,7 @@ public final class WalletSwapFeeFragment extends WalletAuthFragment implements W
         private final Context mContext;
         final /* synthetic */ WalletSwapFeeFragment this$0;
 
-        @Override // org.telegram.p044ui.Components.RecyclerListView.SelectionAdapter
+        @Override // org.telegram.p043ui.Components.RecyclerListView.SelectionAdapter
         public boolean isEnabled(RecyclerView.ViewHolder holder) {
             Intrinsics.checkNotNullParameter(holder, "holder");
             return false;
@@ -251,27 +251,25 @@ public final class WalletSwapFeeFragment extends WalletAuthFragment implements W
                 WalletSwapFeeFragment walletSwapFeeFragment = this.this$0;
                 if (holder.getItemViewType() == IdFabric$ViewTypes.TEXT_INFO_PRIVACY_CELL && (view instanceof TextInfoPrivacyCell)) {
                     if (i == walletSwapFeeFragment.slipInfoRow) {
-                        ((TextInfoPrivacyCell) view).setText(walletSwapFeeFragment.getResourceManager().getString(C3295R.string.wallet_swap_transaction_options_slip_description));
+                        ((TextInfoPrivacyCell) view).setText(walletSwapFeeFragment.getResourceManager().getString(C3417R.string.wallet_swap_transaction_options_slip_description));
                     } else if (i == walletSwapFeeFragment.deadlineInfoRow) {
-                        ((TextInfoPrivacyCell) view).setText(walletSwapFeeFragment.getResourceManager().getString(C3295R.string.wallet_swap_transaction_options_deadline_description));
+                        ((TextInfoPrivacyCell) view).setText(walletSwapFeeFragment.getResourceManager().getString(C3417R.string.wallet_swap_transaction_options_deadline_description));
                     } else {
                         GasPriceInfo info = walletSwapFeeFragment.getPresenter().getSelectedFee().getInfo();
                         ResourceManager resourceManager = walletSwapFeeFragment.getResourceManager();
-                        int i2 = C3295R.string.wallet_amount_send_fee_format;
-                        Double valueOf = Double.valueOf(info.getFee());
-                        TokenInfo.Companion companion = TokenInfo.Companion;
-                        Float valueOf2 = Float.valueOf(info.getFeeInDollars());
-                        TokenInfo.Fiat.USD usd = TokenInfo.Fiat.USD.INSTANCE;
-                        ((TextInfoPrivacyCell) view).setText(resourceManager.getString(i2, Integer.valueOf(info.getDuration()), BalanceFormatter.formatBalance(valueOf, companion.map(walletSwapFeeFragment.getPresenter().getMetadata().getFeeTokenCode()).getDecimals()), walletSwapFeeFragment.getResourceManager().getString(companion.map(walletSwapFeeFragment.getPresenter().getMetadata().getFeeTokenCode()).getShortName()), BalanceFormatter.formatBalance(valueOf2, usd.getDecimals()), walletSwapFeeFragment.getResourceManager().getString(usd.getShortName())));
+                        int i2 = C3417R.string.wallet_amount_send_fee_format;
+                        Double valueOf = Double.valueOf(info.getFeeInFiat().getValue());
+                        TokenDetailed.Companion companion = TokenDetailed.Companion;
+                        ((TextInfoPrivacyCell) view).setText(resourceManager.getString(i2, Integer.valueOf(info.getDuration()), BalanceFormatter.formatBalance(Double.valueOf(info.getFee()), Integer.valueOf(walletSwapFeeFragment.getPresenter().getMetadata().getFeeToken().getDecimals())), walletSwapFeeFragment.getPresenter().getMetadata().getFeeToken().getTicker(), BalanceFormatter.formatBalance(valueOf, Integer.valueOf(companion.getUSD().getDecimals())), companion.getUSD().getTicker()));
                     }
-                    ((TextInfoPrivacyCell) view).setBackground(Theme.getThemedDrawable(this.mContext, C3295R.C3297drawable.greydivider, Theme.key_windowBackgroundGrayShadow));
+                    ((TextInfoPrivacyCell) view).setBackground(Theme.getThemedDrawable(this.mContext, C3417R.C3419drawable.greydivider, Theme.key_windowBackgroundGrayShadow));
                 } else if (holder.getItemViewType() == IdFabric$ViewTypes.HEADER_CELL && (view instanceof HeaderCell)) {
                     if (i == walletSwapFeeFragment.slipHeaderRow) {
-                        ((HeaderCell) view).setText(walletSwapFeeFragment.getResourceManager().getString(C3295R.string.wallet_swap_transaction_options_slip_header));
+                        ((HeaderCell) view).setText(walletSwapFeeFragment.getResourceManager().getString(C3417R.string.wallet_swap_transaction_options_slip_header));
                     } else if (i == walletSwapFeeFragment.deadlineHeaderRow) {
-                        ((HeaderCell) view).setText(walletSwapFeeFragment.getResourceManager().getString(C3295R.string.wallet_swap_transaction_options_deadline_header));
+                        ((HeaderCell) view).setText(walletSwapFeeFragment.getResourceManager().getString(C3417R.string.wallet_swap_transaction_options_deadline_header));
                     } else {
-                        ((HeaderCell) view).setText(walletSwapFeeFragment.getResourceManager().getString(C3295R.string.wallet_swap_transaction_options_fee_header));
+                        ((HeaderCell) view).setText(walletSwapFeeFragment.getResourceManager().getString(C3417R.string.wallet_swap_transaction_options_fee_header));
                     }
                 } else if (holder.getItemViewType() == IdFabric$ViewTypes.SLIDE_CHOOSE && (view instanceof SlideChooseView)) {
                     if (i == walletSwapFeeFragment.slipChooserRow) {
@@ -307,12 +305,12 @@ public final class WalletSwapFeeFragment extends WalletAuthFragment implements W
                 Intrinsics.checkNotNullExpressionValue(view, "holder.itemView");
                 final WalletSwapFeeFragment walletSwapFeeFragment = this.this$0;
                 ((SlideChooseView) view).setCallback(new SlideChooseView.Callback() { // from class: com.iMe.ui.wallet.swap.fee.WalletSwapFeeFragment$ListAdapter$$ExternalSyntheticLambda0
-                    @Override // org.telegram.p044ui.Components.SlideChooseView.Callback
+                    @Override // org.telegram.p043ui.Components.SlideChooseView.Callback
                     public final void onOptionSelected(int i) {
                         WalletSwapFeeFragment.ListAdapter.setupChooser$lambda$5$lambda$4(RecyclerListView.Holder.this, walletSwapFeeFragment, i);
                     }
 
-                    @Override // org.telegram.p044ui.Components.SlideChooseView.Callback
+                    @Override // org.telegram.p043ui.Components.SlideChooseView.Callback
                     public /* synthetic */ void onTouchEnd() {
                         SlideChooseView.Callback.CC.$default$onTouchEnd(this);
                     }

@@ -2,34 +2,38 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Landroid/view/View$OnTouchListener;
+.implements Landroid/view/View$OnClickListener;
 
 
 # instance fields
-.field public final synthetic f$0:Lorg/telegram/ui/LaunchActivity;
+.field public final synthetic f$0:[Lorg/telegram/messenger/LocaleController$LocaleInfo;
+
+.field public final synthetic f$1:[Lorg/telegram/ui/Cells/LanguageCell;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/LaunchActivity;)V
+.method public synthetic constructor <init>([Lorg/telegram/messenger/LocaleController$LocaleInfo;[Lorg/telegram/ui/Cells/LanguageCell;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda22;->f$0:Lorg/telegram/ui/LaunchActivity;
+    iput-object p1, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda22;->f$0:[Lorg/telegram/messenger/LocaleController$LocaleInfo;
+
+    iput-object p2, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda22;->f$1:[Lorg/telegram/ui/Cells/LanguageCell;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onTouch(Landroid/view/View;Landroid/view/MotionEvent;)Z
-    .locals 1
+.method public final onClick(Landroid/view/View;)V
+    .locals 2
 
-    iget-object v0, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda22;->f$0:Lorg/telegram/ui/LaunchActivity;
+    iget-object v0, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda22;->f$0:[Lorg/telegram/messenger/LocaleController$LocaleInfo;
 
-    invoke-static {v0, p1, p2}, Lorg/telegram/ui/LaunchActivity;->$r8$lambda$gkB-u_4a0RF3_65jzqnAcJLpIs0(Lorg/telegram/ui/LaunchActivity;Landroid/view/View;Landroid/view/MotionEvent;)Z
+    iget-object v1, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda22;->f$1:[Lorg/telegram/ui/Cells/LanguageCell;
 
-    move-result p1
+    invoke-static {v0, v1, p1}, Lorg/telegram/ui/LaunchActivity;->$r8$lambda$Hc7BTUiIr7bWmlYzjl-nsXDkh-c([Lorg/telegram/messenger/LocaleController$LocaleInfo;[Lorg/telegram/ui/Cells/LanguageCell;Landroid/view/View;)V
 
-    return p1
+    return-void
 .end method

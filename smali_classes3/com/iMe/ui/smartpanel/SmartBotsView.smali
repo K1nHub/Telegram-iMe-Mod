@@ -908,7 +908,7 @@
 .end method
 
 .method private final updateIcons()V
-    .locals 14
+    .locals 13
 
     .line 136
     iget-object v0, p0, Lcom/iMe/ui/smartpanel/SmartBotsView;->content:Ljava/util/List;
@@ -1011,23 +1011,15 @@
 
     move-result-object v8
 
-    invoke-virtual {p0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
-
-    move-result-object v9
-
-    const-string v3, "context"
-
-    invoke-static {v9, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    const/4 v9, 0x0
 
     const/4 v10, 0x0
 
-    const/4 v11, 0x0
+    const/4 v11, 0x6
 
-    const/16 v12, 0xc
+    const/4 v12, 0x0
 
-    const/4 v13, 0x0
-
-    invoke-static/range {v7 .. v13}, Lcom/iMe/utils/extentions/common/ImageViewExtKt;->loadFrom$default(Landroid/widget/ImageView;Ljava/lang/String;Landroid/content/Context;Landroid/graphics/drawable/Drawable;ZILjava/lang/Object;)V
+    invoke-static/range {v7 .. v12}, Lcom/iMe/utils/extentions/common/ImageViewExtKt;->loadFrom$default(Landroid/widget/ImageView;Ljava/lang/String;Ljava/lang/Integer;ZILjava/lang/Object;)V
 
     goto :goto_2
 

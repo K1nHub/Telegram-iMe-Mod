@@ -20,7 +20,6 @@ import com.iMe.storage.domain.model.binancepay.BinanceTransactionStatus;
 import com.iMe.storage.domain.model.binancepay.BinanceTransactionType;
 import com.iMe.storage.domain.model.binancepay.BinanceUserInfo;
 import com.iMe.storage.domain.model.binancepay.BinanceVerificationStatus;
-import com.iMe.storage.domain.model.crypto.NetworkType;
 import java.util.ArrayList;
 import java.util.List;
 import kotlin.NoWhenBranchMatchedException;
@@ -154,25 +153,11 @@ public final class BinancePayMappingKt {
 
     public static final List<BinanceTokenBalanceInfo> mapToDomainBinanceTokenBalanceResponse(List<BinanceTokenBalanceResponse> list) {
         int collectionSizeOrDefault;
-        int collectionSizeOrDefault2;
         Intrinsics.checkNotNullParameter(list, "<this>");
         collectionSizeOrDefault = CollectionsKt__IterablesKt.collectionSizeOrDefault(list, 10);
         ArrayList arrayList = new ArrayList(collectionSizeOrDefault);
         for (BinanceTokenBalanceResponse binanceTokenBalanceResponse : list) {
-            String assetCode = binanceTokenBalanceResponse.getAssetCode();
-            String assetName = binanceTokenBalanceResponse.getAssetName();
-            String assetShortName = binanceTokenBalanceResponse.getAssetShortName();
-            String logoUrl = binanceTokenBalanceResponse.getLogoUrl();
-            BinanceTokenBalanceInfo.Balance mapToDomain = mapToDomain(binanceTokenBalanceResponse.getSpot());
-            BinanceTokenBalanceInfo.Balance mapToDomain2 = mapToDomain(binanceTokenBalanceResponse.getMargin());
-            BinanceTokenBalanceInfo.Balance mapToDomain3 = mapToDomain(binanceTokenBalanceResponse.getCombined());
-            List<String> replenishNetworks = binanceTokenBalanceResponse.getReplenishNetworks();
-            collectionSizeOrDefault2 = CollectionsKt__IterablesKt.collectionSizeOrDefault(replenishNetworks, 10);
-            ArrayList arrayList2 = new ArrayList(collectionSizeOrDefault2);
-            for (String str : replenishNetworks) {
-                arrayList2.add(NetworkType.Companion.map(str));
-            }
-            arrayList.add(new BinanceTokenBalanceInfo(assetCode, assetName, assetShortName, logoUrl, mapToDomain, mapToDomain2, mapToDomain3, arrayList2, binanceTokenBalanceResponse.getConvertible(), binanceTokenBalanceResponse.getReceivable()));
+            arrayList.add(new BinanceTokenBalanceInfo(binanceTokenBalanceResponse.getAssetCode(), binanceTokenBalanceResponse.getAssetName(), binanceTokenBalanceResponse.getAssetShortName(), binanceTokenBalanceResponse.getLogoUrl(), mapToDomain(binanceTokenBalanceResponse.getSpot()), mapToDomain(binanceTokenBalanceResponse.getMargin()), mapToDomain(binanceTokenBalanceResponse.getCombined()), binanceTokenBalanceResponse.getReplenishNetworks(), binanceTokenBalanceResponse.getConvertible(), binanceTokenBalanceResponse.getReceivable()));
         }
         return arrayList;
     }

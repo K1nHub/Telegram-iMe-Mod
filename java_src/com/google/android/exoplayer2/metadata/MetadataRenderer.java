@@ -4,7 +4,7 @@ import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
 import com.google.android.exoplayer2.BaseRenderer;
-import com.google.android.exoplayer2.C0475C;
+import com.google.android.exoplayer2.C0480C;
 import com.google.android.exoplayer2.Format;
 import com.google.android.exoplayer2.FormatHolder;
 import com.google.android.exoplayer2.RendererCapabilities;
@@ -55,7 +55,7 @@ public final class MetadataRenderer extends BaseRenderer implements Handler.Call
         this.decoderFactory = (MetadataDecoderFactory) Assertions.checkNotNull(metadataDecoderFactory);
         this.outputMetadataEarly = z;
         this.buffer = new MetadataInputBuffer();
-        this.outputStreamOffsetUs = C0475C.TIME_UNSET;
+        this.outputStreamOffsetUs = C0480C.TIME_UNSET;
     }
 
     @Override // com.google.android.exoplayer2.RendererCapabilities
@@ -117,7 +117,7 @@ public final class MetadataRenderer extends BaseRenderer implements Handler.Call
     protected void onDisabled() {
         this.pendingMetadata = null;
         this.decoder = null;
-        this.outputStreamOffsetUs = C0475C.TIME_UNSET;
+        this.outputStreamOffsetUs = C0480C.TIME_UNSET;
     }
 
     @Override // com.google.android.exoplayer2.Renderer
@@ -193,8 +193,8 @@ public final class MetadataRenderer extends BaseRenderer implements Handler.Call
     }
 
     private long getPresentationTimeUs(long j) {
-        Assertions.checkState(j != C0475C.TIME_UNSET);
-        Assertions.checkState(this.outputStreamOffsetUs != C0475C.TIME_UNSET);
+        Assertions.checkState(j != C0480C.TIME_UNSET);
+        Assertions.checkState(this.outputStreamOffsetUs != C0480C.TIME_UNSET);
         return j - this.outputStreamOffsetUs;
     }
 }

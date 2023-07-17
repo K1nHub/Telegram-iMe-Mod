@@ -10,13 +10,13 @@
 
 .field private final fiatCurrency:Lcom/iMe/storage/domain/model/crypto/simplex/Currency;
 
-.field private final networkType:Lcom/iMe/storage/domain/model/crypto/NetworkType;
+.field private final networkId:Ljava/lang/String;
 
 .field private final requestedCurrency:Lcom/iMe/storage/domain/model/crypto/simplex/Currency;
 
 
 # direct methods
-.method public constructor <init>(Lcom/iMe/storage/domain/model/crypto/simplex/Currency;Lcom/iMe/storage/domain/model/crypto/simplex/Currency;Lcom/iMe/storage/domain/model/crypto/simplex/Currency;FLcom/iMe/storage/domain/model/crypto/NetworkType;)V
+.method public constructor <init>(Lcom/iMe/storage/domain/model/crypto/simplex/Currency;Lcom/iMe/storage/domain/model/crypto/simplex/Currency;Lcom/iMe/storage/domain/model/crypto/simplex/Currency;FLjava/lang/String;)V
     .locals 1
 
     const-string v0, "digitalCurrency"
@@ -31,32 +31,32 @@
 
     invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "networkType"
+    const-string v0, "networkId"
 
     invoke-static {p5, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 5
+    .line 3
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 6
+    .line 4
     iput-object p1, p0, Lcom/iMe/storage/domain/model/crypto/simplex/BuyingCryptoQuoteArgs;->digitalCurrency:Lcom/iMe/storage/domain/model/crypto/simplex/Currency;
 
-    .line 7
+    .line 5
     iput-object p2, p0, Lcom/iMe/storage/domain/model/crypto/simplex/BuyingCryptoQuoteArgs;->fiatCurrency:Lcom/iMe/storage/domain/model/crypto/simplex/Currency;
 
-    .line 8
+    .line 6
     iput-object p3, p0, Lcom/iMe/storage/domain/model/crypto/simplex/BuyingCryptoQuoteArgs;->requestedCurrency:Lcom/iMe/storage/domain/model/crypto/simplex/Currency;
 
-    .line 9
+    .line 7
     iput p4, p0, Lcom/iMe/storage/domain/model/crypto/simplex/BuyingCryptoQuoteArgs;->amount:F
 
-    .line 10
-    iput-object p5, p0, Lcom/iMe/storage/domain/model/crypto/simplex/BuyingCryptoQuoteArgs;->networkType:Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    .line 8
+    iput-object p5, p0, Lcom/iMe/storage/domain/model/crypto/simplex/BuyingCryptoQuoteArgs;->networkId:Ljava/lang/String;
 
     return-void
 .end method
 
-.method public static synthetic copy$default(Lcom/iMe/storage/domain/model/crypto/simplex/BuyingCryptoQuoteArgs;Lcom/iMe/storage/domain/model/crypto/simplex/Currency;Lcom/iMe/storage/domain/model/crypto/simplex/Currency;Lcom/iMe/storage/domain/model/crypto/simplex/Currency;FLcom/iMe/storage/domain/model/crypto/NetworkType;ILjava/lang/Object;)Lcom/iMe/storage/domain/model/crypto/simplex/BuyingCryptoQuoteArgs;
+.method public static synthetic copy$default(Lcom/iMe/storage/domain/model/crypto/simplex/BuyingCryptoQuoteArgs;Lcom/iMe/storage/domain/model/crypto/simplex/Currency;Lcom/iMe/storage/domain/model/crypto/simplex/Currency;Lcom/iMe/storage/domain/model/crypto/simplex/Currency;FLjava/lang/String;ILjava/lang/Object;)Lcom/iMe/storage/domain/model/crypto/simplex/BuyingCryptoQuoteArgs;
     .locals 3
 
     and-int/lit8 p7, p6, 0x1
@@ -97,7 +97,7 @@
 
     if-eqz p2, :cond_4
 
-    iget-object p5, p0, Lcom/iMe/storage/domain/model/crypto/simplex/BuyingCryptoQuoteArgs;->networkType:Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    iget-object p5, p0, Lcom/iMe/storage/domain/model/crypto/simplex/BuyingCryptoQuoteArgs;->networkId:Ljava/lang/String;
 
     :cond_4
     move-object v2, p5
@@ -114,7 +114,7 @@
 
     move-object p7, v2
 
-    invoke-virtual/range {p2 .. p7}, Lcom/iMe/storage/domain/model/crypto/simplex/BuyingCryptoQuoteArgs;->copy(Lcom/iMe/storage/domain/model/crypto/simplex/Currency;Lcom/iMe/storage/domain/model/crypto/simplex/Currency;Lcom/iMe/storage/domain/model/crypto/simplex/Currency;FLcom/iMe/storage/domain/model/crypto/NetworkType;)Lcom/iMe/storage/domain/model/crypto/simplex/BuyingCryptoQuoteArgs;
+    invoke-virtual/range {p2 .. p7}, Lcom/iMe/storage/domain/model/crypto/simplex/BuyingCryptoQuoteArgs;->copy(Lcom/iMe/storage/domain/model/crypto/simplex/Currency;Lcom/iMe/storage/domain/model/crypto/simplex/Currency;Lcom/iMe/storage/domain/model/crypto/simplex/Currency;FLjava/lang/String;)Lcom/iMe/storage/domain/model/crypto/simplex/BuyingCryptoQuoteArgs;
 
     move-result-object p0
 
@@ -155,15 +155,15 @@
     return v0
 .end method
 
-.method public final component5()Lcom/iMe/storage/domain/model/crypto/NetworkType;
+.method public final component5()Ljava/lang/String;
     .locals 1
 
-    iget-object v0, p0, Lcom/iMe/storage/domain/model/crypto/simplex/BuyingCryptoQuoteArgs;->networkType:Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    iget-object v0, p0, Lcom/iMe/storage/domain/model/crypto/simplex/BuyingCryptoQuoteArgs;->networkId:Ljava/lang/String;
 
     return-object v0
 .end method
 
-.method public final copy(Lcom/iMe/storage/domain/model/crypto/simplex/Currency;Lcom/iMe/storage/domain/model/crypto/simplex/Currency;Lcom/iMe/storage/domain/model/crypto/simplex/Currency;FLcom/iMe/storage/domain/model/crypto/NetworkType;)Lcom/iMe/storage/domain/model/crypto/simplex/BuyingCryptoQuoteArgs;
+.method public final copy(Lcom/iMe/storage/domain/model/crypto/simplex/Currency;Lcom/iMe/storage/domain/model/crypto/simplex/Currency;Lcom/iMe/storage/domain/model/crypto/simplex/Currency;FLjava/lang/String;)Lcom/iMe/storage/domain/model/crypto/simplex/BuyingCryptoQuoteArgs;
     .locals 7
 
     const-string v0, "digitalCurrency"
@@ -178,7 +178,7 @@
 
     invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "networkType"
+    const-string v0, "networkId"
 
     invoke-static {p5, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -196,7 +196,7 @@
 
     move-object v6, p5
 
-    invoke-direct/range {v1 .. v6}, Lcom/iMe/storage/domain/model/crypto/simplex/BuyingCryptoQuoteArgs;-><init>(Lcom/iMe/storage/domain/model/crypto/simplex/Currency;Lcom/iMe/storage/domain/model/crypto/simplex/Currency;Lcom/iMe/storage/domain/model/crypto/simplex/Currency;FLcom/iMe/storage/domain/model/crypto/NetworkType;)V
+    invoke-direct/range {v1 .. v6}, Lcom/iMe/storage/domain/model/crypto/simplex/BuyingCryptoQuoteArgs;-><init>(Lcom/iMe/storage/domain/model/crypto/simplex/Currency;Lcom/iMe/storage/domain/model/crypto/simplex/Currency;Lcom/iMe/storage/domain/model/crypto/simplex/Currency;FLjava/lang/String;)V
 
     return-object v0
 .end method
@@ -274,11 +274,15 @@
     return v2
 
     :cond_5
-    iget-object v1, p0, Lcom/iMe/storage/domain/model/crypto/simplex/BuyingCryptoQuoteArgs;->networkType:Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    iget-object v1, p0, Lcom/iMe/storage/domain/model/crypto/simplex/BuyingCryptoQuoteArgs;->networkId:Ljava/lang/String;
 
-    iget-object p1, p1, Lcom/iMe/storage/domain/model/crypto/simplex/BuyingCryptoQuoteArgs;->networkType:Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    iget-object p1, p1, Lcom/iMe/storage/domain/model/crypto/simplex/BuyingCryptoQuoteArgs;->networkId:Ljava/lang/String;
 
-    if-eq v1, p1, :cond_6
+    invoke-static {v1, p1}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result p1
+
+    if-nez p1, :cond_6
 
     return v2
 
@@ -289,7 +293,7 @@
 .method public final getAmount()F
     .locals 1
 
-    .line 9
+    .line 7
     iget v0, p0, Lcom/iMe/storage/domain/model/crypto/simplex/BuyingCryptoQuoteArgs;->amount:F
 
     return v0
@@ -298,7 +302,7 @@
 .method public final getDigitalCurrency()Lcom/iMe/storage/domain/model/crypto/simplex/Currency;
     .locals 1
 
-    .line 6
+    .line 4
     iget-object v0, p0, Lcom/iMe/storage/domain/model/crypto/simplex/BuyingCryptoQuoteArgs;->digitalCurrency:Lcom/iMe/storage/domain/model/crypto/simplex/Currency;
 
     return-object v0
@@ -307,17 +311,17 @@
 .method public final getFiatCurrency()Lcom/iMe/storage/domain/model/crypto/simplex/Currency;
     .locals 1
 
-    .line 7
+    .line 5
     iget-object v0, p0, Lcom/iMe/storage/domain/model/crypto/simplex/BuyingCryptoQuoteArgs;->fiatCurrency:Lcom/iMe/storage/domain/model/crypto/simplex/Currency;
 
     return-object v0
 .end method
 
-.method public final getNetworkType()Lcom/iMe/storage/domain/model/crypto/NetworkType;
+.method public final getNetworkId()Ljava/lang/String;
     .locals 1
 
-    .line 10
-    iget-object v0, p0, Lcom/iMe/storage/domain/model/crypto/simplex/BuyingCryptoQuoteArgs;->networkType:Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    .line 8
+    iget-object v0, p0, Lcom/iMe/storage/domain/model/crypto/simplex/BuyingCryptoQuoteArgs;->networkId:Ljava/lang/String;
 
     return-object v0
 .end method
@@ -325,7 +329,7 @@
 .method public final getRequestedCurrency()Lcom/iMe/storage/domain/model/crypto/simplex/Currency;
     .locals 1
 
-    .line 8
+    .line 6
     iget-object v0, p0, Lcom/iMe/storage/domain/model/crypto/simplex/BuyingCryptoQuoteArgs;->requestedCurrency:Lcom/iMe/storage/domain/model/crypto/simplex/Currency;
 
     return-object v0
@@ -372,9 +376,9 @@
 
     mul-int/lit8 v0, v0, 0x1f
 
-    iget-object v1, p0, Lcom/iMe/storage/domain/model/crypto/simplex/BuyingCryptoQuoteArgs;->networkType:Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    iget-object v1, p0, Lcom/iMe/storage/domain/model/crypto/simplex/BuyingCryptoQuoteArgs;->networkId:Ljava/lang/String;
 
-    invoke-virtual {v1}, Ljava/lang/Enum;->hashCode()I
+    invoke-virtual {v1}, Ljava/lang/String;->hashCode()I
 
     move-result v1
 
@@ -422,13 +426,13 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
 
-    const-string v1, ", networkType="
+    const-string v1, ", networkId="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v1, p0, Lcom/iMe/storage/domain/model/crypto/simplex/BuyingCryptoQuoteArgs;->networkType:Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    iget-object v1, p0, Lcom/iMe/storage/domain/model/crypto/simplex/BuyingCryptoQuoteArgs;->networkId:Ljava/lang/String;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     const/16 v1, 0x29
 

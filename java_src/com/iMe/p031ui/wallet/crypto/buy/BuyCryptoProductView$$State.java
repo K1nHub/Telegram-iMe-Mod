@@ -1,8 +1,6 @@
 package com.iMe.p031ui.wallet.crypto.buy;
 
 import com.chad.library.adapter.base.entity.node.BaseNode;
-import com.iMe.model.dialog.DialogModel;
-import com.iMe.model.wallet.crypto.buy.CryptoBuyItem;
 import com.iMe.p031ui.base.mvp.base.BaseView;
 import com.iMe.storage.domain.model.Result;
 import com.iMe.storage.domain.utils.system.ResourceManager;
@@ -20,30 +18,9 @@ public class BuyCryptoProductView$$State extends MvpViewState<BuyCryptoProductVi
         BaseView.CC.$default$finishScreen(this);
     }
 
-    @Override // com.iMe.p031ui.wallet.crypto.buy.BuyCryptoProductView
-    public void showSuccessPurchase() {
-        ShowSuccessPurchaseCommand showSuccessPurchaseCommand = new ShowSuccessPurchaseCommand(this);
-        this.viewCommands.beforeApply(showSuccessPurchaseCommand);
-        if (hasNotView().booleanValue()) {
-            return;
-        }
-        for (View view : this.views) {
-            view.showSuccessPurchase();
-        }
-        this.viewCommands.afterApply(showSuccessPurchaseCommand);
-    }
-
-    @Override // com.iMe.p031ui.wallet.crypto.buy.BuyCryptoProductView
-    public void showErrorPurchase(String str) {
-        ShowErrorPurchaseCommand showErrorPurchaseCommand = new ShowErrorPurchaseCommand(this, str);
-        this.viewCommands.beforeApply(showErrorPurchaseCommand);
-        if (hasNotView().booleanValue()) {
-            return;
-        }
-        for (View view : this.views) {
-            view.showErrorPurchase(str);
-        }
-        this.viewCommands.afterApply(showErrorPurchaseCommand);
+    @Override // com.iMe.p031ui.base.mvp.base.BaseView
+    public /* synthetic */ void removeSelfFromStackImmediately() {
+        BaseView.CC.$default$removeSelfFromStackImmediately(this);
     }
 
     @Override // com.iMe.p031ui.wallet.crypto.buy.BuyCryptoProductView
@@ -60,19 +37,6 @@ public class BuyCryptoProductView$$State extends MvpViewState<BuyCryptoProductVi
     }
 
     @Override // com.iMe.p031ui.wallet.crypto.buy.BuyCryptoProductView
-    public void showProcessingUrl(String str) {
-        ShowProcessingUrlCommand showProcessingUrlCommand = new ShowProcessingUrlCommand(this, str);
-        this.viewCommands.beforeApply(showProcessingUrlCommand);
-        if (hasNotView().booleanValue()) {
-            return;
-        }
-        for (View view : this.views) {
-            view.showProcessingUrl(str);
-        }
-        this.viewCommands.afterApply(showProcessingUrlCommand);
-    }
-
-    @Override // com.iMe.p031ui.wallet.crypto.buy.BuyCryptoProductView
     public void showRefreshLoading(boolean z) {
         ShowRefreshLoadingCommand showRefreshLoadingCommand = new ShowRefreshLoadingCommand(this, z);
         this.viewCommands.beforeApply(showRefreshLoadingCommand);
@@ -83,32 +47,6 @@ public class BuyCryptoProductView$$State extends MvpViewState<BuyCryptoProductVi
             view.showRefreshLoading(z);
         }
         this.viewCommands.afterApply(showRefreshLoadingCommand);
-    }
-
-    @Override // com.iMe.p031ui.wallet.crypto.buy.BuyCryptoProductView
-    public void showConfirmDialog(CryptoBuyItem cryptoBuyItem, DialogModel dialogModel) {
-        ShowConfirmDialogCommand showConfirmDialogCommand = new ShowConfirmDialogCommand(this, cryptoBuyItem, dialogModel);
-        this.viewCommands.beforeApply(showConfirmDialogCommand);
-        if (hasNotView().booleanValue()) {
-            return;
-        }
-        for (View view : this.views) {
-            view.showConfirmDialog(cryptoBuyItem, dialogModel);
-        }
-        this.viewCommands.afterApply(showConfirmDialogCommand);
-    }
-
-    @Override // com.iMe.p031ui.wallet.crypto.buy.BuyCryptoProductView
-    public void openCustomPriceDialog(CryptoBuyItem cryptoBuyItem) {
-        OpenCustomPriceDialogCommand openCustomPriceDialogCommand = new OpenCustomPriceDialogCommand(this, cryptoBuyItem);
-        this.viewCommands.beforeApply(openCustomPriceDialogCommand);
-        if (hasNotView().booleanValue()) {
-            return;
-        }
-        for (View view : this.views) {
-            view.openCustomPriceDialog(cryptoBuyItem);
-        }
-        this.viewCommands.afterApply(openCustomPriceDialogCommand);
     }
 
     @Override // com.iMe.p031ui.base.mvp.base.BaseView
@@ -151,37 +89,6 @@ public class BuyCryptoProductView$$State extends MvpViewState<BuyCryptoProductVi
     }
 
     /* compiled from: BuyCryptoProductView$$State.java */
-    /* renamed from: com.iMe.ui.wallet.crypto.buy.BuyCryptoProductView$$State$ShowSuccessPurchaseCommand */
-    /* loaded from: classes3.dex */
-    public class ShowSuccessPurchaseCommand extends ViewCommand<BuyCryptoProductView> {
-        ShowSuccessPurchaseCommand(BuyCryptoProductView$$State buyCryptoProductView$$State) {
-            super("showSuccessPurchase", OneExecutionStateStrategy.class);
-        }
-
-        @Override // moxy.viewstate.ViewCommand
-        public void apply(BuyCryptoProductView buyCryptoProductView) {
-            buyCryptoProductView.showSuccessPurchase();
-        }
-    }
-
-    /* compiled from: BuyCryptoProductView$$State.java */
-    /* renamed from: com.iMe.ui.wallet.crypto.buy.BuyCryptoProductView$$State$ShowErrorPurchaseCommand */
-    /* loaded from: classes3.dex */
-    public class ShowErrorPurchaseCommand extends ViewCommand<BuyCryptoProductView> {
-        public final String orderId;
-
-        ShowErrorPurchaseCommand(BuyCryptoProductView$$State buyCryptoProductView$$State, String str) {
-            super("showErrorPurchase", OneExecutionStateStrategy.class);
-            this.orderId = str;
-        }
-
-        @Override // moxy.viewstate.ViewCommand
-        public void apply(BuyCryptoProductView buyCryptoProductView) {
-            buyCryptoProductView.showErrorPurchase(this.orderId);
-        }
-    }
-
-    /* compiled from: BuyCryptoProductView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.buy.BuyCryptoProductView$$State$ShowUiItemsCommand */
     /* loaded from: classes3.dex */
     public class ShowUiItemsCommand extends ViewCommand<BuyCryptoProductView> {
@@ -199,23 +106,6 @@ public class BuyCryptoProductView$$State extends MvpViewState<BuyCryptoProductVi
     }
 
     /* compiled from: BuyCryptoProductView$$State.java */
-    /* renamed from: com.iMe.ui.wallet.crypto.buy.BuyCryptoProductView$$State$ShowProcessingUrlCommand */
-    /* loaded from: classes3.dex */
-    public class ShowProcessingUrlCommand extends ViewCommand<BuyCryptoProductView> {
-        public final String url;
-
-        ShowProcessingUrlCommand(BuyCryptoProductView$$State buyCryptoProductView$$State, String str) {
-            super("showProcessingUrl", AddToEndSingleStrategy.class);
-            this.url = str;
-        }
-
-        @Override // moxy.viewstate.ViewCommand
-        public void apply(BuyCryptoProductView buyCryptoProductView) {
-            buyCryptoProductView.showProcessingUrl(this.url);
-        }
-    }
-
-    /* compiled from: BuyCryptoProductView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.buy.BuyCryptoProductView$$State$ShowRefreshLoadingCommand */
     /* loaded from: classes3.dex */
     public class ShowRefreshLoadingCommand extends ViewCommand<BuyCryptoProductView> {
@@ -229,42 +119,6 @@ public class BuyCryptoProductView$$State extends MvpViewState<BuyCryptoProductVi
         @Override // moxy.viewstate.ViewCommand
         public void apply(BuyCryptoProductView buyCryptoProductView) {
             buyCryptoProductView.showRefreshLoading(this.show);
-        }
-    }
-
-    /* compiled from: BuyCryptoProductView$$State.java */
-    /* renamed from: com.iMe.ui.wallet.crypto.buy.BuyCryptoProductView$$State$ShowConfirmDialogCommand */
-    /* loaded from: classes3.dex */
-    public class ShowConfirmDialogCommand extends ViewCommand<BuyCryptoProductView> {
-        public final DialogModel dialogModel;
-        public final CryptoBuyItem item;
-
-        ShowConfirmDialogCommand(BuyCryptoProductView$$State buyCryptoProductView$$State, CryptoBuyItem cryptoBuyItem, DialogModel dialogModel) {
-            super("showConfirmDialog", OneExecutionStateStrategy.class);
-            this.item = cryptoBuyItem;
-            this.dialogModel = dialogModel;
-        }
-
-        @Override // moxy.viewstate.ViewCommand
-        public void apply(BuyCryptoProductView buyCryptoProductView) {
-            buyCryptoProductView.showConfirmDialog(this.item, this.dialogModel);
-        }
-    }
-
-    /* compiled from: BuyCryptoProductView$$State.java */
-    /* renamed from: com.iMe.ui.wallet.crypto.buy.BuyCryptoProductView$$State$OpenCustomPriceDialogCommand */
-    /* loaded from: classes3.dex */
-    public class OpenCustomPriceDialogCommand extends ViewCommand<BuyCryptoProductView> {
-        public final CryptoBuyItem lowerPriceItem;
-
-        OpenCustomPriceDialogCommand(BuyCryptoProductView$$State buyCryptoProductView$$State, CryptoBuyItem cryptoBuyItem) {
-            super("openCustomPriceDialog", OneExecutionStateStrategy.class);
-            this.lowerPriceItem = cryptoBuyItem;
-        }
-
-        @Override // moxy.viewstate.ViewCommand
-        public void apply(BuyCryptoProductView buyCryptoProductView) {
-            buyCryptoProductView.openCustomPriceDialog(this.lowerPriceItem);
         }
     }
 

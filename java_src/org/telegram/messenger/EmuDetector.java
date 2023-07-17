@@ -18,7 +18,7 @@ import java.util.List;
 public class EmuDetector {
 
     /* renamed from: IP */
-    private static final String f1360IP = "10.0.2.15";
+    private static final String f1442IP = "10.0.2.15";
     private static final int MIN_PROPERTIES_THRESHOLD = 5;
     private static EmuDetector mEmulatorDetector;
     private boolean detectResult;
@@ -139,8 +139,8 @@ public class EmuDetector {
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:42:0x00d0 A[RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:43:0x00d1  */
+    /* JADX WARN: Removed duplicated region for block: B:42:0x00d2 A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:43:0x00d3  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
@@ -156,91 +156,91 @@ public class EmuDetector {
             java.lang.String r3 = "google_sdk"
             java.lang.String r4 = "generic"
             r5 = 1
-            if (r0 != 0) goto Lcd
+            if (r0 != 0) goto Lcf
             java.lang.String r0 = android.os.Build.BOOTLOADER
             java.lang.String r0 = r0.toLowerCase()
             boolean r0 = r0.contains(r1)
-            if (r0 != 0) goto Lcd
+            if (r0 != 0) goto Lcf
             java.lang.String r0 = android.os.Build.FINGERPRINT
             boolean r0 = r0.startsWith(r4)
-            if (r0 != 0) goto Lcd
+            if (r0 != 0) goto Lcf
             java.lang.String r0 = android.os.Build.MODEL
             java.lang.String r6 = r0.toLowerCase()
             boolean r6 = r6.contains(r3)
-            if (r6 != 0) goto Lcd
+            if (r6 != 0) goto Lcf
             java.lang.String r6 = r0.toLowerCase()
             java.lang.String r7 = "droid4x"
             boolean r6 = r6.contains(r7)
-            if (r6 != 0) goto Lcd
+            if (r6 != 0) goto Lcf
             java.lang.String r6 = r0.toLowerCase()
             java.lang.String r7 = "emulator"
             boolean r6 = r6.contains(r7)
-            if (r6 != 0) goto Lcd
+            if (r6 != 0) goto Lcf
             java.lang.String r6 = "Android SDK built for x86"
             boolean r0 = r0.contains(r6)
-            if (r0 != 0) goto Lcd
+            if (r0 != 0) goto Lcf
             java.lang.String r0 = android.os.Build.MANUFACTURER
             java.lang.String r0 = r0.toLowerCase()
             java.lang.String r6 = "genymotion"
             boolean r0 = r0.contains(r6)
-            if (r0 != 0) goto Lcd
+            if (r0 != 0) goto Lcf
             java.lang.String r0 = android.os.Build.HARDWARE
             java.lang.String r6 = r0.toLowerCase()
             java.lang.String r7 = "goldfish"
             boolean r6 = r6.contains(r7)
-            if (r6 != 0) goto Lcd
+            if (r6 != 0) goto Lcf
             java.lang.String r6 = r0.toLowerCase()
             java.lang.String r7 = "vbox86"
             boolean r6 = r6.contains(r7)
-            if (r6 != 0) goto Lcd
+            if (r6 != 0) goto Lcf
             java.lang.String r6 = r0.toLowerCase()
             java.lang.String r7 = "android_x86"
             boolean r6 = r6.contains(r7)
-            if (r6 != 0) goto Lcd
+            if (r6 != 0) goto Lcf
             java.lang.String r0 = r0.toLowerCase()
             boolean r0 = r0.contains(r1)
-            if (r0 != 0) goto Lcd
+            if (r0 != 0) goto Lcf
             java.lang.String r0 = android.os.Build.PRODUCT
             java.lang.String r6 = "sdk"
             boolean r6 = r0.equals(r6)
-            if (r6 != 0) goto Lcd
+            if (r6 != 0) goto Lcf
             boolean r6 = r0.equals(r3)
-            if (r6 != 0) goto Lcd
+            if (r6 != 0) goto Lcf
             java.lang.String r6 = "sdk_x86"
             boolean r6 = r0.equals(r6)
-            if (r6 != 0) goto Lcd
+            if (r6 != 0) goto Lcf
             java.lang.String r6 = "vbox86p"
             boolean r6 = r0.equals(r6)
-            if (r6 != 0) goto Lcd
+            if (r6 != 0) goto Lcf
             java.lang.String r0 = r0.toLowerCase()
             boolean r0 = r0.contains(r1)
-            if (r0 != 0) goto Lcd
+            if (r0 != 0) goto Lcf
             java.lang.String r0 = android.os.Build.SERIAL
             java.lang.String r0 = r0.toLowerCase()
             boolean r0 = r0.contains(r1)
-            if (r0 == 0) goto Lcb
-            goto Lcd
-        Lcb:
-            r0 = r2
-            goto Lce
+            if (r0 == 0) goto Lcd
+            goto Lcf
         Lcd:
+            r0 = r2
+            goto Ld0
+        Lcf:
             r0 = r5
-        Lce:
-            if (r0 == 0) goto Ld1
+        Ld0:
+            if (r0 == 0) goto Ld3
             return r5
-        Ld1:
+        Ld3:
             java.lang.String r1 = android.os.Build.BRAND
             boolean r1 = r1.startsWith(r4)
-            if (r1 == 0) goto Le2
+            if (r1 == 0) goto Le4
             java.lang.String r1 = android.os.Build.DEVICE
             boolean r1 = r1.startsWith(r4)
-            if (r1 == 0) goto Le2
+            if (r1 == 0) goto Le4
             r2 = r5
-        Le2:
+        Le4:
             r0 = r0 | r2
-            if (r0 == 0) goto Le6
+            if (r0 == 0) goto Le8
             return r5
-        Le6:
+        Le8:
             java.lang.String r1 = android.os.Build.PRODUCT
             boolean r1 = r3.equals(r1)
             r0 = r0 | r1
@@ -386,7 +386,7 @@ public class EmuDetector {
                 return false;
             }
             for (String str : sb2.split("\n")) {
-                if ((str.contains("wlan0") || str.contains("tunl0") || str.contains("eth0")) && str.contains(f1360IP)) {
+                if ((str.contains("wlan0") || str.contains("tunl0") || str.contains("eth0")) && str.contains(f1442IP)) {
                     return true;
                 }
             }

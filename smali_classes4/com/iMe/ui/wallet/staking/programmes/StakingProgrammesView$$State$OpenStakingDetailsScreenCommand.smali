@@ -30,14 +30,14 @@
 .method constructor <init>(Lcom/iMe/ui/wallet/staking/programmes/StakingProgrammesView$$State;Lcom/iMe/model/staking/StakingDetailsItem;)V
     .locals 1
 
-    .line 250
+    .line 267
     const-class p1, Lmoxy/viewstate/strategy/OneExecutionStateStrategy;
 
     const-string v0, "openStakingDetailsScreen"
 
     invoke-direct {p0, v0, p1}, Lmoxy/viewstate/ViewCommand;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
-    .line 252
+    .line 269
     iput-object p2, p0, Lcom/iMe/ui/wallet/staking/programmes/StakingProgrammesView$$State$OpenStakingDetailsScreenCommand;->stakingDetails:Lcom/iMe/model/staking/StakingDetailsItem;
 
     return-void
@@ -48,7 +48,7 @@
 .method public apply(Lcom/iMe/ui/wallet/staking/programmes/StakingProgrammesView;)V
     .locals 1
 
-    .line 257
+    .line 274
     iget-object v0, p0, Lcom/iMe/ui/wallet/staking/programmes/StakingProgrammesView$$State$OpenStakingDetailsScreenCommand;->stakingDetails:Lcom/iMe/model/staking/StakingDetailsItem;
 
     invoke-interface {p1, v0}, Lcom/iMe/ui/wallet/staking/programmes/StakingProgrammesView;->openStakingDetailsScreen(Lcom/iMe/model/staking/StakingDetailsItem;)V
@@ -59,7 +59,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 246
+    .line 263
     check-cast p1, Lcom/iMe/ui/wallet/staking/programmes/StakingProgrammesView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/wallet/staking/programmes/StakingProgrammesView$$State$OpenStakingDetailsScreenCommand;->apply(Lcom/iMe/ui/wallet/staking/programmes/StakingProgrammesView;)V

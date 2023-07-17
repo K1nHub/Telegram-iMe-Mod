@@ -13,9 +13,9 @@ import kotlin.LazyKt__LazyJVMKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3295R;
-import org.telegram.p044ui.ActionBar.Theme;
-import org.telegram.p044ui.Components.LayoutHelper;
+import org.telegram.messenger.C3417R;
+import org.telegram.p043ui.ActionBar.Theme;
+import org.telegram.p043ui.Components.LayoutHelper;
 /* compiled from: AccountLevelBadgeView.kt */
 /* renamed from: com.iMe.fork.ui.view.AccountLevelBadgeView */
 /* loaded from: classes3.dex */
@@ -64,7 +64,7 @@ public final class AccountLevelBadgeView extends LinearLayout {
 
     public final void setAccountLevel(AccountLevel accountLevel) {
         Intrinsics.checkNotNullParameter(accountLevel, "accountLevel");
-        getIconView().setImageResource(C3295R.C3297drawable.fork_account_level_badge);
+        getIconView().setImageResource(C3417R.C3419drawable.fork_account_level_badge);
         getNameTextView().setText(accountLevel.name());
         setBackground(Theme.createRoundRectDrawable(AndroidUtilities.m55dp(19.0f), ContextCompat.getColor(getContext(), accountLevel.getColorResId())));
     }

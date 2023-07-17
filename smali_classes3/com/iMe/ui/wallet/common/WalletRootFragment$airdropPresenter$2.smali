@@ -26,7 +26,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nWalletRootFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WalletRootFragment.kt\ncom/iMe/ui/wallet/common/WalletRootFragment$airdropPresenter$2\n+ 2 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n*L\n1#1,279:1\n56#2,6:280\n*S KotlinDebug\n*F\n+ 1 WalletRootFragment.kt\ncom/iMe/ui/wallet/common/WalletRootFragment$airdropPresenter$2\n*L\n47#1:280,6\n*E\n"
+    value = "SMAP\nWalletRootFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WalletRootFragment.kt\ncom/iMe/ui/wallet/common/WalletRootFragment$airdropPresenter$2\n+ 2 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n*L\n1#1,281:1\n56#2,6:282\n*S KotlinDebug\n*F\n+ 1 WalletRootFragment.kt\ncom/iMe/ui/wallet/common/WalletRootFragment$airdropPresenter$2\n*L\n51#1:282,6\n*E\n"
 .end annotation
 
 
@@ -52,7 +52,7 @@
 .method public final invoke()Lcom/iMe/ui/wallet/airdrop/WalletAirdropPresenter;
     .locals 4
 
-    .line 47
+    .line 51
     iget-object v0, p0, Lcom/iMe/ui/wallet/common/WalletRootFragment$airdropPresenter$2;->this$0:Lcom/iMe/ui/wallet/common/WalletRootFragment;
 
     .line 58
@@ -73,7 +73,7 @@
 
     move-result-object v0
 
-    .line 47
+    .line 51
     invoke-interface {v0}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
 
     move-result-object v0
@@ -86,7 +86,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 47
+    .line 51
     invoke-virtual {p0}, Lcom/iMe/ui/wallet/common/WalletRootFragment$airdropPresenter$2;->invoke()Lcom/iMe/ui/wallet/airdrop/WalletAirdropPresenter;
 
     move-result-object v0

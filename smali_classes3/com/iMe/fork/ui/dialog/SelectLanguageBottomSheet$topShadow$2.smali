@@ -48,7 +48,7 @@
 .method public final invoke()Landroid/view/View;
     .locals 2
 
-    .line 55
+    .line 51
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet$topShadow$2;->this$0:Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;
 
     const/4 v1, 0x1
@@ -63,7 +63,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 55
+    .line 51
     invoke-virtual {p0}, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet$topShadow$2;->invoke()Landroid/view/View;
 
     move-result-object v0

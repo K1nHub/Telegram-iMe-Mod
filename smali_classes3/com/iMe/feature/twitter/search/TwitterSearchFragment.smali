@@ -440,7 +440,7 @@
     move-result-object v2
 
     .line 166
-    sget v3, Lcom/iMe/common/IdFabric$Menu;->SEARCH_TWITTER:I
+    sget v3, Lcom/iMe/common/IdFabric$Menu;->SEARCH:I
 
     sget v4, Lorg/telegram/messenger/R$drawable;->ic_ab_search:I
 

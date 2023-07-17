@@ -38,7 +38,7 @@
 
 # virtual methods
 .method public final createFromParcel(Landroid/os/Parcel;)Lcom/iMe/model/wallet/transfer/TransferScreenArgs;
-    .locals 8
+    .locals 7
 
     const-string v0, "parcel"
 
@@ -54,22 +54,22 @@
 
     if-nez v1, :cond_0
 
-    move-object v3, v2
+    move-object v1, v2
 
     goto :goto_0
 
     :cond_0
-    invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
+    sget-object v1, Lcom/iMe/model/wallet/crypto/TokenItem;->CREATOR:Landroid/os/Parcelable$Creator;
+
+    invoke-interface {v1, p1}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
 
     move-result-object v1
-
-    invoke-static {v1}, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;->valueOf(Ljava/lang/String;)Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
-
-    move-result-object v1
-
-    move-object v3, v1
 
     :goto_0
+    move-object v3, v1
+
+    check-cast v3, Lcom/iMe/model/wallet/crypto/TokenItem;
+
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v4
@@ -109,35 +109,19 @@
     :cond_2
     invoke-virtual {p1}, Landroid/os/Parcel;->readLong()J
 
-    move-result-wide v6
+    move-result-wide v1
 
-    invoke-static {v6, v7}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    invoke-static {v1, v2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v1
 
     move-object v6, v1
 
     :goto_2
-    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
-
-    move-result v1
-
-    if-nez v1, :cond_3
-
-    move-object p1, v2
-
-    goto :goto_3
-
-    :cond_3
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object p1
 
-    invoke-static {p1}, Lcom/iMe/storage/domain/model/crypto/NetworkType;->valueOf(Ljava/lang/String;)Lcom/iMe/storage/domain/model/crypto/NetworkType;
-
-    move-result-object p1
-
-    :goto_3
     move-object v1, v0
 
     move-object v2, v3
@@ -150,7 +134,7 @@
 
     move-object v6, p1
 
-    invoke-direct/range {v1 .. v6}, Lcom/iMe/model/wallet/transfer/TransferScreenArgs;-><init>(Lcom/iMe/storage/domain/model/wallet/token/TokenCode;Ljava/lang/String;Ljava/lang/Long;Ljava/lang/Long;Lcom/iMe/storage/domain/model/crypto/NetworkType;)V
+    invoke-direct/range {v1 .. v6}, Lcom/iMe/model/wallet/transfer/TransferScreenArgs;-><init>(Lcom/iMe/model/wallet/crypto/TokenItem;Ljava/lang/String;Ljava/lang/Long;Ljava/lang/Long;Ljava/lang/String;)V
 
     return-object v0
 .end method

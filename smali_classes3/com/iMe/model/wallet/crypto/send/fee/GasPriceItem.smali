@@ -7,7 +7,7 @@
 
 
 # instance fields
-.field private final feeTokenInfo:Lcom/iMe/storage/domain/model/wallet/token/TokenInfo;
+.field private final feeToken:Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
 
 .field private final info:Lcom/iMe/storage/domain/model/crypto/send/GasPriceInfo;
 
@@ -15,14 +15,14 @@
 
 
 # direct methods
-.method public constructor <init>(Lcom/iMe/storage/domain/model/crypto/send/TransactionSpeedLevel;Lcom/iMe/storage/domain/model/wallet/token/TokenInfo;Lcom/iMe/storage/domain/model/crypto/send/GasPriceInfo;)V
+.method public constructor <init>(Lcom/iMe/storage/domain/model/crypto/send/TransactionSpeedLevel;Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;Lcom/iMe/storage/domain/model/crypto/send/GasPriceInfo;)V
     .locals 1
 
     const-string v0, "speedLevel"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "feeTokenInfo"
+    const-string v0, "feeToken"
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -37,7 +37,7 @@
     iput-object p1, p0, Lcom/iMe/model/wallet/crypto/send/fee/GasPriceItem;->speedLevel:Lcom/iMe/storage/domain/model/crypto/send/TransactionSpeedLevel;
 
     .line 13
-    iput-object p2, p0, Lcom/iMe/model/wallet/crypto/send/fee/GasPriceItem;->feeTokenInfo:Lcom/iMe/storage/domain/model/wallet/token/TokenInfo;
+    iput-object p2, p0, Lcom/iMe/model/wallet/crypto/send/fee/GasPriceItem;->feeToken:Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
 
     .line 14
     iput-object p3, p0, Lcom/iMe/model/wallet/crypto/send/fee/GasPriceItem;->info:Lcom/iMe/storage/domain/model/crypto/send/GasPriceInfo;
@@ -45,7 +45,7 @@
     return-void
 .end method
 
-.method public static synthetic copy$default(Lcom/iMe/model/wallet/crypto/send/fee/GasPriceItem;Lcom/iMe/storage/domain/model/crypto/send/TransactionSpeedLevel;Lcom/iMe/storage/domain/model/wallet/token/TokenInfo;Lcom/iMe/storage/domain/model/crypto/send/GasPriceInfo;ILjava/lang/Object;)Lcom/iMe/model/wallet/crypto/send/fee/GasPriceItem;
+.method public static synthetic copy$default(Lcom/iMe/model/wallet/crypto/send/fee/GasPriceItem;Lcom/iMe/storage/domain/model/crypto/send/TransactionSpeedLevel;Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;Lcom/iMe/storage/domain/model/crypto/send/GasPriceInfo;ILjava/lang/Object;)Lcom/iMe/model/wallet/crypto/send/fee/GasPriceItem;
     .locals 0
 
     and-int/lit8 p5, p4, 0x1
@@ -59,7 +59,7 @@
 
     if-eqz p5, :cond_1
 
-    iget-object p2, p0, Lcom/iMe/model/wallet/crypto/send/fee/GasPriceItem;->feeTokenInfo:Lcom/iMe/storage/domain/model/wallet/token/TokenInfo;
+    iget-object p2, p0, Lcom/iMe/model/wallet/crypto/send/fee/GasPriceItem;->feeToken:Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
 
     :cond_1
     and-int/lit8 p4, p4, 0x4
@@ -69,7 +69,7 @@
     iget-object p3, p0, Lcom/iMe/model/wallet/crypto/send/fee/GasPriceItem;->info:Lcom/iMe/storage/domain/model/crypto/send/GasPriceInfo;
 
     :cond_2
-    invoke-virtual {p0, p1, p2, p3}, Lcom/iMe/model/wallet/crypto/send/fee/GasPriceItem;->copy(Lcom/iMe/storage/domain/model/crypto/send/TransactionSpeedLevel;Lcom/iMe/storage/domain/model/wallet/token/TokenInfo;Lcom/iMe/storage/domain/model/crypto/send/GasPriceInfo;)Lcom/iMe/model/wallet/crypto/send/fee/GasPriceItem;
+    invoke-virtual {p0, p1, p2, p3}, Lcom/iMe/model/wallet/crypto/send/fee/GasPriceItem;->copy(Lcom/iMe/storage/domain/model/crypto/send/TransactionSpeedLevel;Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;Lcom/iMe/storage/domain/model/crypto/send/GasPriceInfo;)Lcom/iMe/model/wallet/crypto/send/fee/GasPriceItem;
 
     move-result-object p0
 
@@ -86,10 +86,10 @@
     return-object v0
 .end method
 
-.method public final component2()Lcom/iMe/storage/domain/model/wallet/token/TokenInfo;
+.method public final component2()Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
     .locals 1
 
-    iget-object v0, p0, Lcom/iMe/model/wallet/crypto/send/fee/GasPriceItem;->feeTokenInfo:Lcom/iMe/storage/domain/model/wallet/token/TokenInfo;
+    iget-object v0, p0, Lcom/iMe/model/wallet/crypto/send/fee/GasPriceItem;->feeToken:Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
 
     return-object v0
 .end method
@@ -102,14 +102,14 @@
     return-object v0
 .end method
 
-.method public final copy(Lcom/iMe/storage/domain/model/crypto/send/TransactionSpeedLevel;Lcom/iMe/storage/domain/model/wallet/token/TokenInfo;Lcom/iMe/storage/domain/model/crypto/send/GasPriceInfo;)Lcom/iMe/model/wallet/crypto/send/fee/GasPriceItem;
+.method public final copy(Lcom/iMe/storage/domain/model/crypto/send/TransactionSpeedLevel;Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;Lcom/iMe/storage/domain/model/crypto/send/GasPriceInfo;)Lcom/iMe/model/wallet/crypto/send/fee/GasPriceItem;
     .locals 1
 
     const-string v0, "speedLevel"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "feeTokenInfo"
+    const-string v0, "feeToken"
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -119,7 +119,7 @@
 
     new-instance v0, Lcom/iMe/model/wallet/crypto/send/fee/GasPriceItem;
 
-    invoke-direct {v0, p1, p2, p3}, Lcom/iMe/model/wallet/crypto/send/fee/GasPriceItem;-><init>(Lcom/iMe/storage/domain/model/crypto/send/TransactionSpeedLevel;Lcom/iMe/storage/domain/model/wallet/token/TokenInfo;Lcom/iMe/storage/domain/model/crypto/send/GasPriceInfo;)V
+    invoke-direct {v0, p1, p2, p3}, Lcom/iMe/model/wallet/crypto/send/fee/GasPriceItem;-><init>(Lcom/iMe/storage/domain/model/crypto/send/TransactionSpeedLevel;Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;Lcom/iMe/storage/domain/model/crypto/send/GasPriceInfo;)V
 
     return-object v0
 .end method
@@ -154,9 +154,9 @@
     return v2
 
     :cond_2
-    iget-object v1, p0, Lcom/iMe/model/wallet/crypto/send/fee/GasPriceItem;->feeTokenInfo:Lcom/iMe/storage/domain/model/wallet/token/TokenInfo;
+    iget-object v1, p0, Lcom/iMe/model/wallet/crypto/send/fee/GasPriceItem;->feeToken:Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
 
-    iget-object v3, p1, Lcom/iMe/model/wallet/crypto/send/fee/GasPriceItem;->feeTokenInfo:Lcom/iMe/storage/domain/model/wallet/token/TokenInfo;
+    iget-object v3, p1, Lcom/iMe/model/wallet/crypto/send/fee/GasPriceItem;->feeToken:Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
 
     invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
@@ -183,11 +183,11 @@
     return v0
 .end method
 
-.method public final getFeeTokenInfo()Lcom/iMe/storage/domain/model/wallet/token/TokenInfo;
+.method public final getFeeToken()Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
     .locals 1
 
     .line 13
-    iget-object v0, p0, Lcom/iMe/model/wallet/crypto/send/fee/GasPriceItem;->feeTokenInfo:Lcom/iMe/storage/domain/model/wallet/token/TokenInfo;
+    iget-object v0, p0, Lcom/iMe/model/wallet/crypto/send/fee/GasPriceItem;->feeToken:Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
 
     return-object v0
 .end method
@@ -263,7 +263,7 @@
 .end method
 
 .method public getValue(Lcom/iMe/storage/domain/utils/system/ResourceManager;)Ljava/lang/String;
-    .locals 5
+    .locals 4
 
     const-string v0, "resourceManager"
 
@@ -287,13 +287,17 @@
 
     move-result-object v2
 
-    iget-object v3, p0, Lcom/iMe/model/wallet/crypto/send/fee/GasPriceItem;->feeTokenInfo:Lcom/iMe/storage/domain/model/wallet/token/TokenInfo;
+    iget-object v3, p0, Lcom/iMe/model/wallet/crypto/send/fee/GasPriceItem;->feeToken:Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
 
-    invoke-virtual {v3}, Lcom/iMe/storage/domain/model/wallet/token/TokenInfo;->getDecimals()I
+    invoke-virtual {v3}, Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;->getDecimals()I
 
     move-result v3
 
-    invoke-static {v2, v3}, Lcom/iMe/utils/formatter/BalanceFormatter;->formatBalance(Ljava/lang/Number;I)Ljava/lang/String;
+    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v3
+
+    invoke-static {v2, v3}, Lcom/iMe/utils/formatter/BalanceFormatter;->formatBalance(Ljava/lang/Number;Ljava/lang/Integer;)Ljava/lang/String;
 
     move-result-object v2
 
@@ -302,13 +306,9 @@
     aput-object v2, v1, v3
 
     .line 29
-    iget-object v2, p0, Lcom/iMe/model/wallet/crypto/send/fee/GasPriceItem;->feeTokenInfo:Lcom/iMe/storage/domain/model/wallet/token/TokenInfo;
+    iget-object v2, p0, Lcom/iMe/model/wallet/crypto/send/fee/GasPriceItem;->feeToken:Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
 
-    invoke-virtual {v2}, Lcom/iMe/storage/domain/model/wallet/token/TokenInfo;->getShortName()I
-
-    move-result v2
-
-    invoke-interface {p1, v2}, Lcom/iMe/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
+    invoke-virtual {v2}, Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;->getTicker()Ljava/lang/String;
 
     move-result-object v2
 
@@ -319,34 +319,48 @@
     .line 30
     iget-object v2, p0, Lcom/iMe/model/wallet/crypto/send/fee/GasPriceItem;->info:Lcom/iMe/storage/domain/model/crypto/send/GasPriceInfo;
 
-    invoke-virtual {v2}, Lcom/iMe/storage/domain/model/crypto/send/GasPriceInfo;->getFeeInDollars()F
-
-    move-result v2
-
-    invoke-static {v2}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+    invoke-virtual {v2}, Lcom/iMe/storage/domain/model/crypto/send/GasPriceInfo;->getFeeInFiat()Lcom/iMe/storage/domain/model/wallet/token/FiatValue;
 
     move-result-object v2
 
-    sget-object v3, Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Fiat$USD;->INSTANCE:Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Fiat$USD;
+    invoke-virtual {v2}, Lcom/iMe/storage/domain/model/wallet/token/FiatValue;->getValue()D
 
-    invoke-virtual {v3}, Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Fiat;->getDecimals()I
+    move-result-wide v2
 
-    move-result v4
-
-    invoke-static {v2, v4}, Lcom/iMe/utils/formatter/BalanceFormatter;->formatBalance(Ljava/lang/Number;I)Ljava/lang/String;
+    invoke-static {v2, v3}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
 
     move-result-object v2
 
-    const/4 v4, 0x2
+    sget-object v3, Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;->Companion:Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed$Companion;
 
-    aput-object v2, v1, v4
+    invoke-virtual {v3}, Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed$Companion;->getUSD()Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;->getDecimals()I
+
+    move-result v3
+
+    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v3
+
+    invoke-static {v2, v3}, Lcom/iMe/utils/formatter/BalanceFormatter;->formatBalance(Ljava/lang/Number;Ljava/lang/Integer;)Ljava/lang/String;
+
+    move-result-object v2
+
+    const/4 v3, 0x2
+
+    aput-object v2, v1, v3
 
     .line 31
-    invoke-virtual {v3}, Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Fiat;->getShortName()I
+    iget-object v2, p0, Lcom/iMe/model/wallet/crypto/send/fee/GasPriceItem;->info:Lcom/iMe/storage/domain/model/crypto/send/GasPriceInfo;
 
-    move-result v2
+    invoke-virtual {v2}, Lcom/iMe/storage/domain/model/crypto/send/GasPriceInfo;->getFeeInFiat()Lcom/iMe/storage/domain/model/wallet/token/FiatValue;
 
-    invoke-interface {p1, v2}, Lcom/iMe/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
+    move-result-object v2
+
+    invoke-virtual {v2}, Lcom/iMe/storage/domain/model/wallet/token/FiatValue;->getSymbol()Ljava/lang/String;
 
     move-result-object v2
 
@@ -373,9 +387,9 @@
 
     mul-int/lit8 v0, v0, 0x1f
 
-    iget-object v1, p0, Lcom/iMe/model/wallet/crypto/send/fee/GasPriceItem;->feeTokenInfo:Lcom/iMe/storage/domain/model/wallet/token/TokenInfo;
+    iget-object v1, p0, Lcom/iMe/model/wallet/crypto/send/fee/GasPriceItem;->feeToken:Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
 
-    invoke-virtual {v1}, Ljava/lang/Object;->hashCode()I
+    invoke-virtual {v1}, Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;->hashCode()I
 
     move-result v1
 
@@ -409,11 +423,11 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    const-string v1, ", feeTokenInfo="
+    const-string v1, ", feeToken="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v1, p0, Lcom/iMe/model/wallet/crypto/send/fee/GasPriceItem;->feeTokenInfo:Lcom/iMe/storage/domain/model/wallet/token/TokenInfo;
+    iget-object v1, p0, Lcom/iMe/model/wallet/crypto/send/fee/GasPriceItem;->feeToken:Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 

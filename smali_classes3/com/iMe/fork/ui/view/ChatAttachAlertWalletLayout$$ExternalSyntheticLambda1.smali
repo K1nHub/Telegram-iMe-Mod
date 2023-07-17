@@ -33,9 +33,9 @@
 
     iget-object v1, p0, Lcom/iMe/fork/ui/view/ChatAttachAlertWalletLayout$$ExternalSyntheticLambda1;->f$1:Lcom/iMe/fork/ui/view/ChatAttachAlertWalletLayout;
 
-    check-cast p1, Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    check-cast p1, Lcom/iMe/storage/domain/model/crypto/Network;
 
-    invoke-static {v0, v1, p1}, Lcom/iMe/fork/ui/view/ChatAttachAlertWalletLayout;->$r8$lambda$vX6A6UqNE_oQUZjd-gGUX6FvAWM(Lkotlin/jvm/functions/Function1;Lcom/iMe/fork/ui/view/ChatAttachAlertWalletLayout;Lcom/iMe/storage/domain/model/crypto/NetworkType;)V
+    invoke-static {v0, v1, p1}, Lcom/iMe/fork/ui/view/ChatAttachAlertWalletLayout;->$r8$lambda$Fl0Uq03K9VlF3h08orJk0OLfFDM(Lkotlin/jvm/functions/Function1;Lcom/iMe/fork/ui/view/ChatAttachAlertWalletLayout;Lcom/iMe/storage/domain/model/crypto/Network;)V
 
     return-void
 .end method

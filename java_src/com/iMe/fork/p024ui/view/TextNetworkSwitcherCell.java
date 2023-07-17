@@ -7,15 +7,15 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.iMe.p031ui.custom.NetworkTypeView;
-import com.iMe.storage.domain.model.crypto.NetworkType;
+import com.iMe.storage.domain.model.crypto.Network;
 import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
-import org.telegram.p044ui.ActionBar.Theme;
-import org.telegram.p044ui.Components.LayoutHelper;
+import org.telegram.p043ui.ActionBar.Theme;
+import org.telegram.p043ui.Components.LayoutHelper;
 /* compiled from: TextNetworkSwitcherCell.kt */
 /* renamed from: com.iMe.fork.ui.view.TextNetworkSwitcherCell */
 /* loaded from: classes3.dex */
@@ -61,9 +61,9 @@ public final class TextNetworkSwitcherCell extends FrameLayout {
         return (NetworkTypeView) this.networkTypeView$delegate.getValue();
     }
 
-    public final void setNetworkType(NetworkType networkType) {
-        Intrinsics.checkNotNullParameter(networkType, "networkType");
-        getNetworkTypeView().setNetworkType(networkType);
+    public final void setNetworkType(Network network) {
+        Intrinsics.checkNotNullParameter(network, "network");
+        getNetworkTypeView().setNetwork(network);
     }
 
     public final void setNetworkTypeClickListener(View.OnClickListener listener) {

@@ -41,11 +41,11 @@
     .line 64
     iget-object v0, p0, Lcom/iMe/ui/adapter/provider/BannerProvider$convert$1$3;->this$0:Lcom/iMe/ui/adapter/provider/BannerProvider;
 
-    invoke-virtual {v0}, Lcom/iMe/ui/adapter/provider/BannerProvider;->getBannersRecycleAdapter()Lcom/iMe/ui/wallet/home/v2/adapter/BannersRecycleAdapter;
+    invoke-virtual {v0}, Lcom/iMe/ui/adapter/provider/BannerProvider;->getBannersRecycleAdapter()Lcom/iMe/ui/wallet/home/adapter/BannersRecycleAdapter;
 
     move-result-object v0
 
-    invoke-virtual {v0, p1}, Lcom/iMe/ui/wallet/home/v2/adapter/BannersRecycleAdapter;->animateNewBanner(I)V
+    invoke-virtual {v0, p1}, Lcom/iMe/ui/wallet/home/adapter/BannersRecycleAdapter;->animateNewBanner(I)V
 
     return-void
 .end method

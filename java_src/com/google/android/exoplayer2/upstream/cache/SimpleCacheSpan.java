@@ -1,6 +1,6 @@
 package com.google.android.exoplayer2.upstream.cache;
 
-import com.google.android.exoplayer2.C0475C;
+import com.google.android.exoplayer2.C0480C;
 import com.google.android.exoplayer2.util.Assertions;
 import com.google.android.exoplayer2.util.Util;
 import java.io.File;
@@ -20,15 +20,15 @@ public final class SimpleCacheSpan extends CacheSpan {
     }
 
     public static SimpleCacheSpan createLookup(String str, long j) {
-        return new SimpleCacheSpan(str, j, -1L, C0475C.TIME_UNSET, null);
+        return new SimpleCacheSpan(str, j, -1L, C0480C.TIME_UNSET, null);
     }
 
     public static SimpleCacheSpan createHole(String str, long j, long j2) {
-        return new SimpleCacheSpan(str, j, j2, C0475C.TIME_UNSET, null);
+        return new SimpleCacheSpan(str, j, j2, C0480C.TIME_UNSET, null);
     }
 
     public static SimpleCacheSpan createCacheEntry(File file, long j, CachedContentIndex cachedContentIndex) {
-        return createCacheEntry(file, j, C0475C.TIME_UNSET, cachedContentIndex);
+        return createCacheEntry(file, j, C0480C.TIME_UNSET, cachedContentIndex);
     }
 
     public static SimpleCacheSpan createCacheEntry(File file, long j, long j2, CachedContentIndex cachedContentIndex) {
@@ -51,7 +51,7 @@ public final class SimpleCacheSpan extends CacheSpan {
             if (length == 0) {
                 return null;
             }
-            return new SimpleCacheSpan(keyForId, Long.parseLong((String) Assertions.checkNotNull(matcher.group(2))), length, j2 == C0475C.TIME_UNSET ? Long.parseLong((String) Assertions.checkNotNull(matcher.group(3))) : j2, file2);
+            return new SimpleCacheSpan(keyForId, Long.parseLong((String) Assertions.checkNotNull(matcher.group(2))), length, j2 == C0480C.TIME_UNSET ? Long.parseLong((String) Assertions.checkNotNull(matcher.group(3))) : j2, file2);
         }
         return null;
     }

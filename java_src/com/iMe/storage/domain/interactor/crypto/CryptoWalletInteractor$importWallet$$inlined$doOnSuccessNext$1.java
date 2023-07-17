@@ -29,7 +29,7 @@ public final class CryptoWalletInteractor$importWallet$$inlined$doOnSuccessNext$
         RxEventBus rxEventBus;
         if (result instanceof Result.Success) {
             rxEventBus = this.this$0.rxEventBus;
-            rxEventBus.publish(DomainRxEvents.SuccessRestoreWallet.INSTANCE);
+            rxEventBus.publish(DomainRxEvents.WalletRestored.INSTANCE);
         }
     }
 }

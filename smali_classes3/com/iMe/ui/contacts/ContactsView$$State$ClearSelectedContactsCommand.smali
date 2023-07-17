@@ -26,7 +26,7 @@
 .method constructor <init>(Lcom/iMe/ui/contacts/ContactsView$$State;)V
     .locals 1
 
-    .line 185
+    .line 201
     const-class p1, Lmoxy/viewstate/strategy/AddToEndSingleStrategy;
 
     const-string v0, "clearSelectedContacts"
@@ -41,7 +41,7 @@
 .method public apply(Lcom/iMe/ui/contacts/ContactsView;)V
     .locals 0
 
-    .line 190
+    .line 206
     invoke-interface {p1}, Lcom/iMe/ui/contacts/ContactsView;->clearSelectedContacts()V
 
     return-void
@@ -50,7 +50,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 183
+    .line 199
     check-cast p1, Lcom/iMe/ui/contacts/ContactsView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/contacts/ContactsView$$State$ClearSelectedContactsCommand;->apply(Lcom/iMe/ui/contacts/ContactsView;)V

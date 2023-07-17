@@ -3,4 +3,4 @@
 
 
 # static fields
-.field public static final scrollingPagerIndicatorStyle:I = 0x7f040384
+.field public static final scrollingPagerIndicatorStyle:I = 0x7f040385

@@ -7,31 +7,7 @@
 
 
 # instance fields
-.field public final editFromAmount:Landroidx/appcompat/widget/AppCompatEditText;
-
-.field public final imageBack:Landroidx/appcompat/widget/AppCompatImageView;
-
-.field public final linearHeader:Landroid/widget/LinearLayout;
-
-.field public final linearRoot:Landroid/widget/LinearLayout;
-
-.field public final linearTo:Landroid/widget/LinearLayout;
-
 .field private final rootView:Landroid/widget/LinearLayout;
-
-.field public final textAction:Landroidx/appcompat/widget/AppCompatTextView;
-
-.field public final textFromCurrency:Landroidx/appcompat/widget/AppCompatTextView;
-
-.field public final textTax:Landroidx/appcompat/widget/AppCompatTextView;
-
-.field public final textTitle:Landroidx/appcompat/widget/AppCompatTextView;
-
-.field public final textToAmount:Landroidx/appcompat/widget/AppCompatTextView;
-
-.field public final textToCurrency:Landroidx/appcompat/widget/AppCompatTextView;
-
-.field public final viewDivider:Landroid/view/View;
 
 
 # direct methods
@@ -43,42 +19,6 @@
 
     .line 67
     iput-object p1, p0, Lorg/telegram/messenger/databinding/ForkContentWalletCryptoBuyCustomPriceLayoutBinding;->rootView:Landroid/widget/LinearLayout;
-
-    .line 68
-    iput-object p2, p0, Lorg/telegram/messenger/databinding/ForkContentWalletCryptoBuyCustomPriceLayoutBinding;->editFromAmount:Landroidx/appcompat/widget/AppCompatEditText;
-
-    .line 69
-    iput-object p3, p0, Lorg/telegram/messenger/databinding/ForkContentWalletCryptoBuyCustomPriceLayoutBinding;->imageBack:Landroidx/appcompat/widget/AppCompatImageView;
-
-    .line 70
-    iput-object p4, p0, Lorg/telegram/messenger/databinding/ForkContentWalletCryptoBuyCustomPriceLayoutBinding;->linearHeader:Landroid/widget/LinearLayout;
-
-    .line 71
-    iput-object p5, p0, Lorg/telegram/messenger/databinding/ForkContentWalletCryptoBuyCustomPriceLayoutBinding;->linearRoot:Landroid/widget/LinearLayout;
-
-    .line 72
-    iput-object p6, p0, Lorg/telegram/messenger/databinding/ForkContentWalletCryptoBuyCustomPriceLayoutBinding;->linearTo:Landroid/widget/LinearLayout;
-
-    .line 73
-    iput-object p7, p0, Lorg/telegram/messenger/databinding/ForkContentWalletCryptoBuyCustomPriceLayoutBinding;->textAction:Landroidx/appcompat/widget/AppCompatTextView;
-
-    .line 74
-    iput-object p8, p0, Lorg/telegram/messenger/databinding/ForkContentWalletCryptoBuyCustomPriceLayoutBinding;->textFromCurrency:Landroidx/appcompat/widget/AppCompatTextView;
-
-    .line 75
-    iput-object p9, p0, Lorg/telegram/messenger/databinding/ForkContentWalletCryptoBuyCustomPriceLayoutBinding;->textTax:Landroidx/appcompat/widget/AppCompatTextView;
-
-    .line 76
-    iput-object p10, p0, Lorg/telegram/messenger/databinding/ForkContentWalletCryptoBuyCustomPriceLayoutBinding;->textTitle:Landroidx/appcompat/widget/AppCompatTextView;
-
-    .line 77
-    iput-object p11, p0, Lorg/telegram/messenger/databinding/ForkContentWalletCryptoBuyCustomPriceLayoutBinding;->textToAmount:Landroidx/appcompat/widget/AppCompatTextView;
-
-    .line 78
-    iput-object p12, p0, Lorg/telegram/messenger/databinding/ForkContentWalletCryptoBuyCustomPriceLayoutBinding;->textToCurrency:Landroidx/appcompat/widget/AppCompatTextView;
-
-    .line 79
-    iput-object p13, p0, Lorg/telegram/messenger/databinding/ForkContentWalletCryptoBuyCustomPriceLayoutBinding;->viewDivider:Landroid/view/View;
 
     return-void
 .end method

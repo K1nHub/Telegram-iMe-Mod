@@ -8,7 +8,7 @@ import org.koin.core.logger.Level;
 import org.koin.core.logger.Logger;
 import org.koin.core.parameter.ParametersHolder;
 import org.koin.core.parameter.ParametersHolderKt;
-import org.koin.p043mp.KoinPlatformTools;
+import org.koin.p042mp.KoinPlatformTools;
 /* compiled from: InstanceFactory.kt */
 /* loaded from: classes4.dex */
 public abstract class InstanceFactory<T> {

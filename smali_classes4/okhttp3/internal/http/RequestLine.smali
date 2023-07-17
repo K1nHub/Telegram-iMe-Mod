@@ -60,7 +60,7 @@
 .method public final get(Lokhttp3/Request;Ljava/net/Proxy$Type;)Ljava/lang/String;
     .locals 2
 
-    const-string v0, "request"
+    const-string/jumbo v0, "request"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 

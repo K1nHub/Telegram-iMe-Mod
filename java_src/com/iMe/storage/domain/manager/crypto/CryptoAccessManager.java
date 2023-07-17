@@ -24,6 +24,8 @@ public interface CryptoAccessManager {
 
     String getLastLoggedInGuid();
 
+    List<BlockchainType> getLoggedIndWalletsBlockchains();
+
     Wallet.TRON getTRONWallet();
 
     List<BlockchainType> getUnactivatedBip39PhraseBasedBlockchainTypes();
@@ -43,8 +45,6 @@ public interface CryptoAccessManager {
     boolean isWalletCreated(BlockchainType blockchainType);
 
     void logoutAllWallets();
-
-    void onUserChanged();
 
     void setWallet(Wallet wallet2, String str);
 }

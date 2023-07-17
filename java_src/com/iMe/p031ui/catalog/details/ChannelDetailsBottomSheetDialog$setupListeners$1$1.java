@@ -8,7 +8,7 @@ import kotlin.jvm.internal.Lambda;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: ChannelDetailsBottomSheetDialog.kt */
 /* renamed from: com.iMe.ui.catalog.details.ChannelDetailsBottomSheetDialog$setupListeners$1$1 */
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public final class ChannelDetailsBottomSheetDialog$setupListeners$1$1 extends Lambda implements Function1<View, Unit> {
     final /* synthetic */ ChannelDetailsBottomSheetDialog this$0;
 

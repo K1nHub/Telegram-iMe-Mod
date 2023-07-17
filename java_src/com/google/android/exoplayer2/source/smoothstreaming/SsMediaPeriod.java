@@ -1,6 +1,6 @@
 package com.google.android.exoplayer2.source.smoothstreaming;
 
-import com.google.android.exoplayer2.C0475C;
+import com.google.android.exoplayer2.C0480C;
 import com.google.android.exoplayer2.Format;
 import com.google.android.exoplayer2.SeekParameters;
 import com.google.android.exoplayer2.drm.DrmSessionEventListener;
@@ -44,7 +44,7 @@ public final class SsMediaPeriod implements MediaPeriod, SequenceableLoader.Call
 
     @Override // com.google.android.exoplayer2.source.MediaPeriod
     public long readDiscontinuity() {
-        return C0475C.TIME_UNSET;
+        return C0480C.TIME_UNSET;
     }
 
     public SsMediaPeriod(SsManifest ssManifest, SsChunkSource.Factory factory, TransferListener transferListener, CompositeSequenceableLoaderFactory compositeSequenceableLoaderFactory, DrmSessionManager drmSessionManager, DrmSessionEventListener.EventDispatcher eventDispatcher, LoadErrorHandlingPolicy loadErrorHandlingPolicy, MediaSourceEventListener.EventDispatcher eventDispatcher2, LoaderErrorThrower loaderErrorThrower, Allocator allocator) {

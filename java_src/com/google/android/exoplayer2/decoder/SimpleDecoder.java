@@ -1,6 +1,6 @@
 package com.google.android.exoplayer2.decoder;
 
-import com.google.android.exoplayer2.C0475C;
+import com.google.android.exoplayer2.C0480C;
 import com.google.android.exoplayer2.decoder.DecoderException;
 import com.google.android.exoplayer2.decoder.DecoderInputBuffer;
 import com.google.android.exoplayer2.decoder.DecoderOutputBuffer;
@@ -193,7 +193,7 @@ public abstract class SimpleDecoder<I extends DecoderInputBuffer, O extends Deco
                     o.addFlag(Integer.MIN_VALUE);
                 }
                 if (removeFirst.isFirstSample()) {
-                    o.addFlag(C0475C.BUFFER_FLAG_FIRST_SAMPLE);
+                    o.addFlag(C0480C.BUFFER_FLAG_FIRST_SAMPLE);
                 }
                 try {
                     createUnexpectedDecodeException = decode(removeFirst, o, z);

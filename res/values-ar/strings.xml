@@ -344,7 +344,7 @@
     <string name="Answer_zero">%1$d إجابة</string>
     <string name="ApkRestricted">"تثبيت ملفات APK محظور لهذا التطبيق، يمكنك السماح بهذا من إعدادات النظام. "</string>
     <string name="AppFolderInfo">استعراض مجلد التطبيق</string>
-    <string name="AppUpdate">تحديث تيليجرام</string>
+    <string name="AppNameBeta">Telegram Beta</string>
     <string name="AppUpdateChangelogEmpty">"**ما الجديد؟**
 
 • إصلاح للمشاكل وتحسينات أخرى."</string>

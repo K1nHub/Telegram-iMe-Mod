@@ -15,7 +15,7 @@ public final class zzh extends AbstractSafeParcelable {
     @SafeParcelable.Field(m779id = 3)
 
     /* renamed from: id */
-    private final int f200id;
+    private final int f282id;
     @SafeParcelable.Field(m779id = 5)
     private final int rotation;
     @SafeParcelable.Field(m779id = 4)
@@ -27,7 +27,7 @@ public final class zzh extends AbstractSafeParcelable {
     public zzh(@SafeParcelable.Param(m778id = 1) int i, @SafeParcelable.Param(m778id = 2) int i2, @SafeParcelable.Param(m778id = 3) int i3, @SafeParcelable.Param(m778id = 4) long j, @SafeParcelable.Param(m778id = 5) int i4) {
         this.width = i;
         this.height = i2;
-        this.f200id = i3;
+        this.f282id = i3;
         this.timestampMillis = j;
         this.rotation = i4;
     }
@@ -37,7 +37,7 @@ public final class zzh extends AbstractSafeParcelable {
         int beginObjectHeader = SafeParcelWriter.beginObjectHeader(parcel);
         SafeParcelWriter.writeInt(parcel, 1, this.width);
         SafeParcelWriter.writeInt(parcel, 2, this.height);
-        SafeParcelWriter.writeInt(parcel, 3, this.f200id);
+        SafeParcelWriter.writeInt(parcel, 3, this.f282id);
         SafeParcelWriter.writeLong(parcel, 4, this.timestampMillis);
         SafeParcelWriter.writeInt(parcel, 5, this.rotation);
         SafeParcelWriter.finishObjectHeader(parcel, beginObjectHeader);

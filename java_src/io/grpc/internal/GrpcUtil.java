@@ -1,6 +1,6 @@
 package io.grpc.internal;
 
-import com.google.android.exoplayer2.C0475C;
+import com.google.android.exoplayer2.C0480C;
 import com.google.common.base.Preconditions;
 import com.google.common.base.Splitter;
 import com.google.common.base.Stopwatch;
@@ -54,7 +54,7 @@ public final class GrpcUtil {
     private static final Logger log = Logger.getLogger(GrpcUtil.class.getName());
 
     static {
-        Charset.forName(C0475C.ASCII_NAME);
+        Charset.forName(C0480C.ASCII_NAME);
         TIMEOUT_KEY = Metadata.Key.m685of("grpc-timeout", new TimeoutMarshaller());
         Metadata.AsciiMarshaller<String> asciiMarshaller = Metadata.ASCII_STRING_MARSHALLER;
         MESSAGE_ENCODING_KEY = Metadata.Key.m685of("grpc-encoding", asciiMarshaller);

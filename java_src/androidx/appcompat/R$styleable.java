@@ -1,6 +1,6 @@
 package androidx.appcompat;
 
-import com.iMe.android.R;
+import com.iMe.android.web.R;
 /* loaded from: classes.dex */
 public final class R$styleable {
     public static final int ActionBarLayout_android_layout_gravity = 0;

@@ -46,14 +46,14 @@
         }
     .end annotation
 
-    .line 242
+    .line 258
     const-class p1, Lmoxy/viewstate/strategy/AddToEndSingleStrategy;
 
     const-string v0, "showUiItems"
 
     invoke-direct {p0, v0, p1}, Lmoxy/viewstate/ViewCommand;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
-    .line 244
+    .line 260
     iput-object p2, p0, Lcom/iMe/ui/wallet/crypto/buy/BuyCryptoProductView$$State$ShowUiItemsCommand;->availablePurchases:Ljava/util/List;
 
     return-void
@@ -64,7 +64,7 @@
 .method public apply(Lcom/iMe/ui/wallet/crypto/buy/BuyCryptoProductView;)V
     .locals 1
 
-    .line 249
+    .line 265
     iget-object v0, p0, Lcom/iMe/ui/wallet/crypto/buy/BuyCryptoProductView$$State$ShowUiItemsCommand;->availablePurchases:Ljava/util/List;
 
     invoke-interface {p1, v0}, Lcom/iMe/ui/wallet/crypto/buy/BuyCryptoProductView;->showUiItems(Ljava/util/List;)V
@@ -75,7 +75,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 238
+    .line 254
     check-cast p1, Lcom/iMe/ui/wallet/crypto/buy/BuyCryptoProductView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/wallet/crypto/buy/BuyCryptoProductView$$State$ShowUiItemsCommand;->apply(Lcom/iMe/ui/wallet/crypto/buy/BuyCryptoProductView;)V

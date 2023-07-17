@@ -8,14 +8,6 @@ import kotlin.jvm.internal.Intrinsics;
 /* compiled from: NumberExt.kt */
 /* loaded from: classes3.dex */
 public final class NumberExtKt {
-    public static final BigInteger convertToWei(Number number, Convert.Unit unit) {
-        Intrinsics.checkNotNullParameter(number, "<this>");
-        Intrinsics.checkNotNullParameter(unit, "unit");
-        BigDecimal wei = Convert.toWei(number.toString(), unit);
-        Intrinsics.checkNotNullExpressionValue(wei, "toWei(this.toString(), unit)");
-        return toBigIntegerCatching(wei);
-    }
-
     public static final BigInteger convertFromWei(Number number, Convert.Unit unit) {
         Intrinsics.checkNotNullParameter(number, "<this>");
         Intrinsics.checkNotNullParameter(unit, "unit");
@@ -35,6 +27,13 @@ public final class NumberExtKt {
             Intrinsics.checkNotNullExpressionValue(bigInteger, "{\n    toBigInteger()\n}");
             return bigInteger;
         }
+    }
+
+    public static final BigInteger convertToBaseUnit(Number number, int i) {
+        Intrinsics.checkNotNullParameter(number, "<this>");
+        BigDecimal multiply = new BigDecimal(number.toString()).multiply(BigDecimal.TEN.pow(i));
+        Intrinsics.checkNotNullExpressionValue(multiply, "BigDecimal(this.toString…ecimal.TEN.pow(decimals))");
+        return toBigIntegerCatching(multiply);
     }
 
     public static final boolean isZero(Number number) {

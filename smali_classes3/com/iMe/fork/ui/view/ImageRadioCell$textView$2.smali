@@ -48,7 +48,7 @@
 .method public final invoke()Landroid/widget/TextView;
     .locals 1
 
-    .line 31
+    .line 33
     iget-object v0, p0, Lcom/iMe/fork/ui/view/ImageRadioCell$textView$2;->this$0:Lcom/iMe/fork/ui/view/ImageRadioCell;
 
     invoke-static {v0}, Lcom/iMe/fork/ui/view/ImageRadioCell;->access$initTextView(Lcom/iMe/fork/ui/view/ImageRadioCell;)Landroid/widget/TextView;
@@ -61,7 +61,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 31
+    .line 33
     invoke-virtual {p0}, Lcom/iMe/fork/ui/view/ImageRadioCell$textView$2;->invoke()Landroid/widget/TextView;
 
     move-result-object v0

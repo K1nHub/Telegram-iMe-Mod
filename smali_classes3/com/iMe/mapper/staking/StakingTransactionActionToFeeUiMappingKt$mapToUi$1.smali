@@ -59,7 +59,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 37
+    .line 35
     check-cast p1, Lcom/iMe/model/wallet/crypto/send/fee/GasPriceItem;
 
     invoke-virtual {p0, p1}, Lcom/iMe/mapper/staking/StakingTransactionActionToFeeUiMappingKt$mapToUi$1;->invoke(Lcom/iMe/model/wallet/crypto/send/fee/GasPriceItem;)V

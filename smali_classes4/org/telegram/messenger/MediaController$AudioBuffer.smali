@@ -30,17 +30,17 @@
 .method public constructor <init>(I)V
     .locals 1
 
-    .line 174
+    .line 173
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 175
+    .line 174
     invoke-static {p1}, Ljava/nio/ByteBuffer;->allocateDirect(I)Ljava/nio/ByteBuffer;
 
     move-result-object v0
 
     iput-object v0, p0, Lorg/telegram/messenger/MediaController$AudioBuffer;->buffer:Ljava/nio/ByteBuffer;
 
-    .line 176
+    .line 175
     new-array p1, p1, [B
 
     iput-object p1, p0, Lorg/telegram/messenger/MediaController$AudioBuffer;->bufferBytes:[B

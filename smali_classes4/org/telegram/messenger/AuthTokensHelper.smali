@@ -19,7 +19,7 @@
     .line 112
     sget-object v0, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
-    const-string v1, "saved_tokens"
+    const-string/jumbo v1, "saved_tokens"
 
     const/4 v2, 0x0
 
@@ -107,7 +107,7 @@
     .line 59
     sget-object v0, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
-    const-string v1, "saved_tokens_login"
+    const-string/jumbo v1, "saved_tokens_login"
 
     const/4 v2, 0x0
 
@@ -211,7 +211,7 @@
     .line 17
     sget-object v0, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
-    const-string v1, "saved_tokens"
+    const-string/jumbo v1, "saved_tokens"
 
     const/4 v2, 0x0
 
@@ -309,7 +309,7 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v1, "saveLogInToken "
+    const-string/jumbo v1, "saveLogInToken "
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -368,7 +368,7 @@
     .line 92
     sget-object v0, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
-    const-string v1, "saved_tokens_login"
+    const-string/jumbo v1, "saved_tokens_login"
 
     const/4 v2, 0x0
 
@@ -531,7 +531,7 @@
     .line 38
     sget-object v0, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
-    const-string v1, "saved_tokens"
+    const-string/jumbo v1, "saved_tokens"
 
     const/4 v2, 0x0
 

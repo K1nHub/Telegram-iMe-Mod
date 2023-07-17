@@ -51,17 +51,17 @@
         }
     .end annotation
 
-    .line 408
+    .line 424
     const-class p1, Lmoxy/viewstate/strategy/OneExecutionStateStrategy;
 
     const-string v0, "showErrorToast"
 
     invoke-direct {p0, v0, p1}, Lmoxy/viewstate/ViewCommand;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
-    .line 410
+    .line 426
     iput-object p2, p0, Lcom/iMe/feature/twitter/TwitterView$$State$ShowErrorToastCommand;->result:Lcom/iMe/storage/domain/model/Result$Error;
 
-    .line 411
+    .line 427
     iput-object p3, p0, Lcom/iMe/feature/twitter/TwitterView$$State$ShowErrorToastCommand;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     return-void
@@ -72,7 +72,7 @@
 .method public apply(Lcom/iMe/feature/twitter/TwitterView;)V
     .locals 2
 
-    .line 416
+    .line 432
     iget-object v0, p0, Lcom/iMe/feature/twitter/TwitterView$$State$ShowErrorToastCommand;->result:Lcom/iMe/storage/domain/model/Result$Error;
 
     iget-object v1, p0, Lcom/iMe/feature/twitter/TwitterView$$State$ShowErrorToastCommand;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
@@ -85,7 +85,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 402
+    .line 418
     check-cast p1, Lcom/iMe/feature/twitter/TwitterView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/feature/twitter/TwitterView$$State$ShowErrorToastCommand;->apply(Lcom/iMe/feature/twitter/TwitterView;)V

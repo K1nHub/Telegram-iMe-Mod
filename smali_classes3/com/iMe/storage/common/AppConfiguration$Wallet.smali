@@ -17,7 +17,7 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 109
+    .line 65
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -26,7 +26,7 @@
 .method public static final getWalletBotId()J
     .locals 2
 
-    .line 117
+    .line 74
     sget-object v0, Lcom/iMe/storage/data/manager/common/EnvironmentManager;->INSTANCE:Lcom/iMe/storage/data/manager/common/EnvironmentManager;
 
     invoke-virtual {v0}, Lcom/iMe/storage/data/manager/common/EnvironmentManager;->getEnvironmentInformation()Lcom/iMe/storage/domain/model/common/EnvironmentInformation;
@@ -43,7 +43,7 @@
 .method public static final getWalletBotUsernameLowerCase()Ljava/lang/String;
     .locals 3
 
-    .line 120
+    .line 77
     sget-object v0, Lcom/iMe/storage/data/manager/common/EnvironmentManager;->INSTANCE:Lcom/iMe/storage/data/manager/common/EnvironmentManager;
 
     invoke-virtual {v0}, Lcom/iMe/storage/data/manager/common/EnvironmentManager;->getEnvironmentInformation()Lcom/iMe/storage/domain/model/common/EnvironmentInformation;
@@ -74,7 +74,7 @@
 .method public static final getWalletBotUsernameWithAT()Ljava/lang/String;
     .locals 2
 
-    .line 123
+    .line 80
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

@@ -197,7 +197,7 @@
 
     iget-object v1, p0, Lorg/telegram/messenger/FileStreamLoadOperation;->uri:Landroid/net/Uri;
 
-    const-string v2, "rid"
+    const-string/jumbo v2, "rid"
 
     invoke-virtual {v1, v2}, Landroid/net/Uri;->getQueryParameter(Ljava/lang/String;)Ljava/lang/String;
 
@@ -324,7 +324,7 @@
 
     iget-object v1, p0, Lorg/telegram/messenger/FileStreamLoadOperation;->uri:Landroid/net/Uri;
 
-    const-string v2, "reference"
+    const-string/jumbo v2, "reference"
 
     invoke-virtual {v1, v2}, Landroid/net/Uri;->getQueryParameter(Ljava/lang/String;)Ljava/lang/String;
 

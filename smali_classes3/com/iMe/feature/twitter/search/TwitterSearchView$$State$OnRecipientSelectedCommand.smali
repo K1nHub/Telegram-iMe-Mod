@@ -25,30 +25,30 @@
 # instance fields
 .field public final address:Ljava/lang/String;
 
-.field public final contactSelected:Z
-
 .field public final id:Ljava/lang/String;
+
+.field public final isContactSelected:Z
 
 
 # direct methods
 .method constructor <init>(Lcom/iMe/feature/twitter/search/TwitterSearchView$$State;Ljava/lang/String;Ljava/lang/String;Z)V
     .locals 1
 
-    .line 553
+    .line 580
     const-class p1, Lmoxy/viewstate/strategy/OneExecutionStateStrategy;
 
     const-string v0, "onRecipientSelected"
 
     invoke-direct {p0, v0, p1}, Lmoxy/viewstate/ViewCommand;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
-    .line 555
+    .line 582
     iput-object p2, p0, Lcom/iMe/feature/twitter/search/TwitterSearchView$$State$OnRecipientSelectedCommand;->id:Ljava/lang/String;
 
-    .line 556
+    .line 583
     iput-object p3, p0, Lcom/iMe/feature/twitter/search/TwitterSearchView$$State$OnRecipientSelectedCommand;->address:Ljava/lang/String;
 
-    .line 557
-    iput-boolean p4, p0, Lcom/iMe/feature/twitter/search/TwitterSearchView$$State$OnRecipientSelectedCommand;->contactSelected:Z
+    .line 584
+    iput-boolean p4, p0, Lcom/iMe/feature/twitter/search/TwitterSearchView$$State$OnRecipientSelectedCommand;->isContactSelected:Z
 
     return-void
 .end method
@@ -58,12 +58,12 @@
 .method public apply(Lcom/iMe/feature/twitter/search/TwitterSearchView;)V
     .locals 3
 
-    .line 562
+    .line 589
     iget-object v0, p0, Lcom/iMe/feature/twitter/search/TwitterSearchView$$State$OnRecipientSelectedCommand;->id:Ljava/lang/String;
 
     iget-object v1, p0, Lcom/iMe/feature/twitter/search/TwitterSearchView$$State$OnRecipientSelectedCommand;->address:Ljava/lang/String;
 
-    iget-boolean v2, p0, Lcom/iMe/feature/twitter/search/TwitterSearchView$$State$OnRecipientSelectedCommand;->contactSelected:Z
+    iget-boolean v2, p0, Lcom/iMe/feature/twitter/search/TwitterSearchView$$State$OnRecipientSelectedCommand;->isContactSelected:Z
 
     invoke-interface {p1, v0, v1, v2}, Lcom/iMe/manager/crypto/recipient/CryptoRecipientView;->onRecipientSelected(Ljava/lang/String;Ljava/lang/String;Z)V
 
@@ -73,7 +73,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 545
+    .line 572
     check-cast p1, Lcom/iMe/feature/twitter/search/TwitterSearchView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/feature/twitter/search/TwitterSearchView$$State$OnRecipientSelectedCommand;->apply(Lcom/iMe/feature/twitter/search/TwitterSearchView;)V

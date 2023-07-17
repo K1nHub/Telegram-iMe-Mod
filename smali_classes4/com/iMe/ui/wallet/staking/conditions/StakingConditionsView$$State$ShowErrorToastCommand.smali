@@ -51,17 +51,17 @@
         }
     .end annotation
 
-    .line 204
+    .line 220
     const-class p1, Lmoxy/viewstate/strategy/OneExecutionStateStrategy;
 
     const-string/jumbo v0, "showErrorToast"
 
     invoke-direct {p0, v0, p1}, Lmoxy/viewstate/ViewCommand;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
-    .line 206
+    .line 222
     iput-object p2, p0, Lcom/iMe/ui/wallet/staking/conditions/StakingConditionsView$$State$ShowErrorToastCommand;->result:Lcom/iMe/storage/domain/model/Result$Error;
 
-    .line 207
+    .line 223
     iput-object p3, p0, Lcom/iMe/ui/wallet/staking/conditions/StakingConditionsView$$State$ShowErrorToastCommand;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     return-void
@@ -72,7 +72,7 @@
 .method public apply(Lcom/iMe/ui/wallet/staking/conditions/StakingConditionsView;)V
     .locals 2
 
-    .line 212
+    .line 228
     iget-object v0, p0, Lcom/iMe/ui/wallet/staking/conditions/StakingConditionsView$$State$ShowErrorToastCommand;->result:Lcom/iMe/storage/domain/model/Result$Error;
 
     iget-object v1, p0, Lcom/iMe/ui/wallet/staking/conditions/StakingConditionsView$$State$ShowErrorToastCommand;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
@@ -85,7 +85,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 198
+    .line 214
     check-cast p1, Lcom/iMe/ui/wallet/staking/conditions/StakingConditionsView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/wallet/staking/conditions/StakingConditionsView$$State$ShowErrorToastCommand;->apply(Lcom/iMe/ui/wallet/staking/conditions/StakingConditionsView;)V

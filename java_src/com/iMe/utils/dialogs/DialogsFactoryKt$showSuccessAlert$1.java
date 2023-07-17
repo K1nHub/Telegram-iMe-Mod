@@ -5,7 +5,7 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Lambda;
-import org.telegram.p044ui.ActionBar.AlertDialog;
+import org.telegram.p043ui.ActionBar.AlertDialog;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: DialogsFactory.kt */
 /* loaded from: classes4.dex */

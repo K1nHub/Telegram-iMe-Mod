@@ -23,9 +23,9 @@
 
 .field private final chatId:Ljava/lang/Long;
 
-.field private final code:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
+.field private final networkId:Ljava/lang/String;
 
-.field private final networkType:Lcom/iMe/storage/domain/model/crypto/NetworkType;
+.field private final tokenItem:Lcom/iMe/model/wallet/crypto/TokenItem;
 
 .field private final userId:Ljava/lang/Long;
 
@@ -62,40 +62,40 @@
 
     move-object v0, p0
 
-    invoke-direct/range {v0 .. v7}, Lcom/iMe/model/wallet/transfer/TransferScreenArgs;-><init>(Lcom/iMe/storage/domain/model/wallet/token/TokenCode;Ljava/lang/String;Ljava/lang/Long;Ljava/lang/Long;Lcom/iMe/storage/domain/model/crypto/NetworkType;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+    invoke-direct/range {v0 .. v7}, Lcom/iMe/model/wallet/transfer/TransferScreenArgs;-><init>(Lcom/iMe/model/wallet/crypto/TokenItem;Ljava/lang/String;Ljava/lang/Long;Ljava/lang/Long;Ljava/lang/String;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
 
     return-void
 .end method
 
-.method public constructor <init>(Lcom/iMe/storage/domain/model/wallet/token/TokenCode;Ljava/lang/String;Ljava/lang/Long;Ljava/lang/Long;Lcom/iMe/storage/domain/model/crypto/NetworkType;)V
+.method public constructor <init>(Lcom/iMe/model/wallet/crypto/TokenItem;Ljava/lang/String;Ljava/lang/Long;Ljava/lang/Long;Ljava/lang/String;)V
     .locals 1
 
     const-string v0, "address"
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 9
+    .line 8
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 11
-    iput-object p1, p0, Lcom/iMe/model/wallet/transfer/TransferScreenArgs;->code:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
+    .line 10
+    iput-object p1, p0, Lcom/iMe/model/wallet/transfer/TransferScreenArgs;->tokenItem:Lcom/iMe/model/wallet/crypto/TokenItem;
 
-    .line 12
+    .line 11
     iput-object p2, p0, Lcom/iMe/model/wallet/transfer/TransferScreenArgs;->address:Ljava/lang/String;
 
-    .line 13
+    .line 12
     iput-object p3, p0, Lcom/iMe/model/wallet/transfer/TransferScreenArgs;->userId:Ljava/lang/Long;
 
-    .line 14
+    .line 13
     iput-object p4, p0, Lcom/iMe/model/wallet/transfer/TransferScreenArgs;->chatId:Ljava/lang/Long;
 
-    .line 15
-    iput-object p5, p0, Lcom/iMe/model/wallet/transfer/TransferScreenArgs;->networkType:Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    .line 14
+    iput-object p5, p0, Lcom/iMe/model/wallet/transfer/TransferScreenArgs;->networkId:Ljava/lang/String;
 
     return-void
 .end method
 
-.method public synthetic constructor <init>(Lcom/iMe/storage/domain/model/wallet/token/TokenCode;Ljava/lang/String;Ljava/lang/Long;Ljava/lang/Long;Lcom/iMe/storage/domain/model/crypto/NetworkType;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+.method public synthetic constructor <init>(Lcom/iMe/model/wallet/crypto/TokenItem;Ljava/lang/String;Ljava/lang/Long;Ljava/lang/Long;Ljava/lang/String;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
     .locals 4
 
     and-int/lit8 p7, p6, 0x1
@@ -167,20 +167,20 @@
 
     move-object p5, v3
 
-    .line 10
-    invoke-direct/range {p1 .. p6}, Lcom/iMe/model/wallet/transfer/TransferScreenArgs;-><init>(Lcom/iMe/storage/domain/model/wallet/token/TokenCode;Ljava/lang/String;Ljava/lang/Long;Ljava/lang/Long;Lcom/iMe/storage/domain/model/crypto/NetworkType;)V
+    .line 9
+    invoke-direct/range {p1 .. p6}, Lcom/iMe/model/wallet/transfer/TransferScreenArgs;-><init>(Lcom/iMe/model/wallet/crypto/TokenItem;Ljava/lang/String;Ljava/lang/Long;Ljava/lang/Long;Ljava/lang/String;)V
 
     return-void
 .end method
 
-.method public static synthetic copy$default(Lcom/iMe/model/wallet/transfer/TransferScreenArgs;Lcom/iMe/storage/domain/model/wallet/token/TokenCode;Ljava/lang/String;Ljava/lang/Long;Ljava/lang/Long;Lcom/iMe/storage/domain/model/crypto/NetworkType;ILjava/lang/Object;)Lcom/iMe/model/wallet/transfer/TransferScreenArgs;
+.method public static synthetic copy$default(Lcom/iMe/model/wallet/transfer/TransferScreenArgs;Lcom/iMe/model/wallet/crypto/TokenItem;Ljava/lang/String;Ljava/lang/Long;Ljava/lang/Long;Ljava/lang/String;ILjava/lang/Object;)Lcom/iMe/model/wallet/transfer/TransferScreenArgs;
     .locals 3
 
     and-int/lit8 p7, p6, 0x1
 
     if-eqz p7, :cond_0
 
-    iget-object p1, p0, Lcom/iMe/model/wallet/transfer/TransferScreenArgs;->code:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
+    iget-object p1, p0, Lcom/iMe/model/wallet/transfer/TransferScreenArgs;->tokenItem:Lcom/iMe/model/wallet/crypto/TokenItem;
 
     :cond_0
     and-int/lit8 p7, p6, 0x2
@@ -214,7 +214,7 @@
 
     if-eqz p2, :cond_4
 
-    iget-object p5, p0, Lcom/iMe/model/wallet/transfer/TransferScreenArgs;->networkType:Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    iget-object p5, p0, Lcom/iMe/model/wallet/transfer/TransferScreenArgs;->networkId:Ljava/lang/String;
 
     :cond_4
     move-object v2, p5
@@ -231,7 +231,7 @@
 
     move-object p7, v2
 
-    invoke-virtual/range {p2 .. p7}, Lcom/iMe/model/wallet/transfer/TransferScreenArgs;->copy(Lcom/iMe/storage/domain/model/wallet/token/TokenCode;Ljava/lang/String;Ljava/lang/Long;Ljava/lang/Long;Lcom/iMe/storage/domain/model/crypto/NetworkType;)Lcom/iMe/model/wallet/transfer/TransferScreenArgs;
+    invoke-virtual/range {p2 .. p7}, Lcom/iMe/model/wallet/transfer/TransferScreenArgs;->copy(Lcom/iMe/model/wallet/crypto/TokenItem;Ljava/lang/String;Ljava/lang/Long;Ljava/lang/Long;Ljava/lang/String;)Lcom/iMe/model/wallet/transfer/TransferScreenArgs;
 
     move-result-object p0
 
@@ -240,10 +240,10 @@
 
 
 # virtual methods
-.method public final component1()Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
+.method public final component1()Lcom/iMe/model/wallet/crypto/TokenItem;
     .locals 1
 
-    iget-object v0, p0, Lcom/iMe/model/wallet/transfer/TransferScreenArgs;->code:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
+    iget-object v0, p0, Lcom/iMe/model/wallet/transfer/TransferScreenArgs;->tokenItem:Lcom/iMe/model/wallet/crypto/TokenItem;
 
     return-object v0
 .end method
@@ -272,15 +272,15 @@
     return-object v0
 .end method
 
-.method public final component5()Lcom/iMe/storage/domain/model/crypto/NetworkType;
+.method public final component5()Ljava/lang/String;
     .locals 1
 
-    iget-object v0, p0, Lcom/iMe/model/wallet/transfer/TransferScreenArgs;->networkType:Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    iget-object v0, p0, Lcom/iMe/model/wallet/transfer/TransferScreenArgs;->networkId:Ljava/lang/String;
 
     return-object v0
 .end method
 
-.method public final copy(Lcom/iMe/storage/domain/model/wallet/token/TokenCode;Ljava/lang/String;Ljava/lang/Long;Ljava/lang/Long;Lcom/iMe/storage/domain/model/crypto/NetworkType;)Lcom/iMe/model/wallet/transfer/TransferScreenArgs;
+.method public final copy(Lcom/iMe/model/wallet/crypto/TokenItem;Ljava/lang/String;Ljava/lang/Long;Ljava/lang/Long;Ljava/lang/String;)Lcom/iMe/model/wallet/transfer/TransferScreenArgs;
     .locals 7
 
     const-string v0, "address"
@@ -301,7 +301,7 @@
 
     move-object v6, p5
 
-    invoke-direct/range {v1 .. v6}, Lcom/iMe/model/wallet/transfer/TransferScreenArgs;-><init>(Lcom/iMe/storage/domain/model/wallet/token/TokenCode;Ljava/lang/String;Ljava/lang/Long;Ljava/lang/Long;Lcom/iMe/storage/domain/model/crypto/NetworkType;)V
+    invoke-direct/range {v1 .. v6}, Lcom/iMe/model/wallet/transfer/TransferScreenArgs;-><init>(Lcom/iMe/model/wallet/crypto/TokenItem;Ljava/lang/String;Ljava/lang/Long;Ljava/lang/Long;Ljava/lang/String;)V
 
     return-object v0
 .end method
@@ -335,11 +335,15 @@
     :cond_1
     check-cast p1, Lcom/iMe/model/wallet/transfer/TransferScreenArgs;
 
-    iget-object v1, p0, Lcom/iMe/model/wallet/transfer/TransferScreenArgs;->code:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
+    iget-object v1, p0, Lcom/iMe/model/wallet/transfer/TransferScreenArgs;->tokenItem:Lcom/iMe/model/wallet/crypto/TokenItem;
 
-    iget-object v3, p1, Lcom/iMe/model/wallet/transfer/TransferScreenArgs;->code:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
+    iget-object v3, p1, Lcom/iMe/model/wallet/transfer/TransferScreenArgs;->tokenItem:Lcom/iMe/model/wallet/crypto/TokenItem;
 
-    if-eq v1, v3, :cond_2
+    invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_2
 
     return v2
 
@@ -383,11 +387,15 @@
     return v2
 
     :cond_5
-    iget-object v1, p0, Lcom/iMe/model/wallet/transfer/TransferScreenArgs;->networkType:Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    iget-object v1, p0, Lcom/iMe/model/wallet/transfer/TransferScreenArgs;->networkId:Ljava/lang/String;
 
-    iget-object p1, p1, Lcom/iMe/model/wallet/transfer/TransferScreenArgs;->networkType:Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    iget-object p1, p1, Lcom/iMe/model/wallet/transfer/TransferScreenArgs;->networkId:Ljava/lang/String;
 
-    if-eq v1, p1, :cond_6
+    invoke-static {v1, p1}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result p1
+
+    if-nez p1, :cond_6
 
     return v2
 
@@ -398,7 +406,7 @@
 .method public final getAddress()Ljava/lang/String;
     .locals 1
 
-    .line 12
+    .line 11
     iget-object v0, p0, Lcom/iMe/model/wallet/transfer/TransferScreenArgs;->address:Ljava/lang/String;
 
     return-object v0
@@ -407,26 +415,26 @@
 .method public final getChatId()Ljava/lang/Long;
     .locals 1
 
-    .line 14
+    .line 13
     iget-object v0, p0, Lcom/iMe/model/wallet/transfer/TransferScreenArgs;->chatId:Ljava/lang/Long;
 
     return-object v0
 .end method
 
-.method public final getCode()Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
+.method public final getNetworkId()Ljava/lang/String;
     .locals 1
 
-    .line 11
-    iget-object v0, p0, Lcom/iMe/model/wallet/transfer/TransferScreenArgs;->code:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
+    .line 14
+    iget-object v0, p0, Lcom/iMe/model/wallet/transfer/TransferScreenArgs;->networkId:Ljava/lang/String;
 
     return-object v0
 .end method
 
-.method public final getNetworkType()Lcom/iMe/storage/domain/model/crypto/NetworkType;
+.method public final getTokenItem()Lcom/iMe/model/wallet/crypto/TokenItem;
     .locals 1
 
-    .line 15
-    iget-object v0, p0, Lcom/iMe/model/wallet/transfer/TransferScreenArgs;->networkType:Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    .line 10
+    iget-object v0, p0, Lcom/iMe/model/wallet/transfer/TransferScreenArgs;->tokenItem:Lcom/iMe/model/wallet/crypto/TokenItem;
 
     return-object v0
 .end method
@@ -434,7 +442,7 @@
 .method public final getUserId()Ljava/lang/Long;
     .locals 1
 
-    .line 13
+    .line 12
     iget-object v0, p0, Lcom/iMe/model/wallet/transfer/TransferScreenArgs;->userId:Ljava/lang/Long;
 
     return-object v0
@@ -443,7 +451,7 @@
 .method public hashCode()I
     .locals 3
 
-    iget-object v0, p0, Lcom/iMe/model/wallet/transfer/TransferScreenArgs;->code:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
+    iget-object v0, p0, Lcom/iMe/model/wallet/transfer/TransferScreenArgs;->tokenItem:Lcom/iMe/model/wallet/crypto/TokenItem;
 
     const/4 v1, 0x0
 
@@ -454,7 +462,7 @@
     goto :goto_0
 
     :cond_0
-    invoke-virtual {v0}, Ljava/lang/Enum;->hashCode()I
+    invoke-virtual {v0}, Lcom/iMe/model/wallet/crypto/TokenItem;->hashCode()I
 
     move-result v0
 
@@ -507,14 +515,14 @@
 
     mul-int/lit8 v0, v0, 0x1f
 
-    iget-object v2, p0, Lcom/iMe/model/wallet/transfer/TransferScreenArgs;->networkType:Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    iget-object v2, p0, Lcom/iMe/model/wallet/transfer/TransferScreenArgs;->networkId:Ljava/lang/String;
 
     if-nez v2, :cond_3
 
     goto :goto_3
 
     :cond_3
-    invoke-virtual {v2}, Ljava/lang/Enum;->hashCode()I
+    invoke-virtual {v2}, Ljava/lang/String;->hashCode()I
 
     move-result v1
 
@@ -531,11 +539,11 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v1, "TransferScreenArgs(code="
+    const-string v1, "TransferScreenArgs(tokenItem="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v1, p0, Lcom/iMe/model/wallet/transfer/TransferScreenArgs;->code:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
+    iget-object v1, p0, Lcom/iMe/model/wallet/transfer/TransferScreenArgs;->tokenItem:Lcom/iMe/model/wallet/crypto/TokenItem;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
@@ -563,13 +571,13 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    const-string v1, ", networkType="
+    const-string v1, ", networkId="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v1, p0, Lcom/iMe/model/wallet/transfer/TransferScreenArgs;->networkType:Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    iget-object v1, p0, Lcom/iMe/model/wallet/transfer/TransferScreenArgs;->networkId:Ljava/lang/String;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     const/16 v1, 0x29
 
@@ -583,32 +591,28 @@
 .end method
 
 .method public writeToParcel(Landroid/os/Parcel;I)V
-    .locals 4
+    .locals 5
 
-    const-string p2, "out"
+    const-string v0, "out"
 
-    invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    iget-object p2, p0, Lcom/iMe/model/wallet/transfer/TransferScreenArgs;->code:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
+    iget-object v0, p0, Lcom/iMe/model/wallet/transfer/TransferScreenArgs;->tokenItem:Lcom/iMe/model/wallet/crypto/TokenItem;
 
-    const/4 v0, 0x0
+    const/4 v1, 0x0
 
-    const/4 v1, 0x1
+    const/4 v2, 0x1
 
-    if-nez p2, :cond_0
+    if-nez v0, :cond_0
 
-    invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
+    invoke-virtual {p1, v1}, Landroid/os/Parcel;->writeInt(I)V
 
     goto :goto_0
 
     :cond_0
-    invoke-virtual {p1, v1}, Landroid/os/Parcel;->writeInt(I)V
+    invoke-virtual {p1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    invoke-virtual {p2}, Ljava/lang/Enum;->name()Ljava/lang/String;
-
-    move-result-object p2
-
-    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
+    invoke-virtual {v0, p1, p2}, Lcom/iMe/model/wallet/crypto/TokenItem;->writeToParcel(Landroid/os/Parcel;I)V
 
     :goto_0
     iget-object p2, p0, Lcom/iMe/model/wallet/transfer/TransferScreenArgs;->address:Ljava/lang/String;
@@ -619,55 +623,41 @@
 
     if-nez p2, :cond_1
 
-    invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
+    invoke-virtual {p1, v1}, Landroid/os/Parcel;->writeInt(I)V
 
     goto :goto_1
 
     :cond_1
-    invoke-virtual {p1, v1}, Landroid/os/Parcel;->writeInt(I)V
+    invoke-virtual {p1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
     invoke-virtual {p2}, Ljava/lang/Long;->longValue()J
 
-    move-result-wide v2
+    move-result-wide v3
 
-    invoke-virtual {p1, v2, v3}, Landroid/os/Parcel;->writeLong(J)V
+    invoke-virtual {p1, v3, v4}, Landroid/os/Parcel;->writeLong(J)V
 
     :goto_1
     iget-object p2, p0, Lcom/iMe/model/wallet/transfer/TransferScreenArgs;->chatId:Ljava/lang/Long;
 
     if-nez p2, :cond_2
 
-    invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
+    invoke-virtual {p1, v1}, Landroid/os/Parcel;->writeInt(I)V
 
     goto :goto_2
 
     :cond_2
-    invoke-virtual {p1, v1}, Landroid/os/Parcel;->writeInt(I)V
+    invoke-virtual {p1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
     invoke-virtual {p2}, Ljava/lang/Long;->longValue()J
 
-    move-result-wide v2
+    move-result-wide v0
 
-    invoke-virtual {p1, v2, v3}, Landroid/os/Parcel;->writeLong(J)V
+    invoke-virtual {p1, v0, v1}, Landroid/os/Parcel;->writeLong(J)V
 
     :goto_2
-    iget-object p2, p0, Lcom/iMe/model/wallet/transfer/TransferScreenArgs;->networkType:Lcom/iMe/storage/domain/model/crypto/NetworkType;
-
-    if-nez p2, :cond_3
-
-    invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
-
-    goto :goto_3
-
-    :cond_3
-    invoke-virtual {p1, v1}, Landroid/os/Parcel;->writeInt(I)V
-
-    invoke-virtual {p2}, Ljava/lang/Enum;->name()Ljava/lang/String;
-
-    move-result-object p2
+    iget-object p2, p0, Lcom/iMe/model/wallet/transfer/TransferScreenArgs;->networkId:Ljava/lang/String;
 
     invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    :goto_3
     return-void
 .end method

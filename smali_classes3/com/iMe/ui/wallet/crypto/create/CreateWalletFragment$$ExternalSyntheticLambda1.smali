@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Lcom/iMe/fork/utils/Callbacks$Callback1;
 
 
 # instance fields
@@ -22,12 +22,14 @@
 
 
 # virtual methods
-.method public final run()V
+.method public final invoke(Ljava/lang/Object;)V
     .locals 1
 
     iget-object v0, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$$ExternalSyntheticLambda1;->f$0:Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;
 
-    invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->removeSelfFromStack()V
+    check-cast p1, Ljava/lang/Integer;
+
+    invoke-static {v0, p1}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->$r8$lambda$oLgQABfFjx-E7ktv_s8bDEyRRpA(Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;Ljava/lang/Integer;)V
 
     return-void
 .end method

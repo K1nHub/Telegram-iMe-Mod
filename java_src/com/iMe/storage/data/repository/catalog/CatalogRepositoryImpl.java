@@ -140,9 +140,9 @@ public final class CatalogRepositoryImpl implements CatalogRepository {
     @Override // com.iMe.storage.domain.repository.catalog.CatalogRepository
     public Observable<Result<CampaignsCursored>> getCampaignsByCategoryId(long j, ChatType chatType, String str) {
         Intrinsics.checkNotNullParameter(chatType, "chatType");
-        Observable map = CatalogApi.CC.getCampaignsByCategoryId$default(this.catalogApi, j, chatType.name(), str, null, this.preferenceHelper.getCatalogSelectedLanguageId(), 8, null).map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new C1858x5d040d4b(this.firebaseErrorHandler)));
+        Observable map = CatalogApi.CC.getCampaignsByCategoryId$default(this.catalogApi, j, chatType.name(), str, null, this.preferenceHelper.getCatalogSelectedLanguageId(), 8, null).map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new C1866x5d040d4b(this.firebaseErrorHandler)));
         Intrinsics.checkNotNullExpressionValue(map, "errorHandler: FirebaseFu…response).toError()\n    }");
-        Observable<Result<CampaignsCursored>> onErrorReturn = map.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new C1857x268554b6(this.errorHandler)));
+        Observable<Result<CampaignsCursored>> onErrorReturn = map.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new C1865x268554b6(this.errorHandler)));
         Intrinsics.checkNotNullExpressionValue(onErrorReturn, "errorHandler: ErrorHandl…ndleError(it).toError() }");
         return onErrorReturn;
     }

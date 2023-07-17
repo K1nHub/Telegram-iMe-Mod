@@ -48,7 +48,7 @@
 .method public final invoke()Landroid/content/ClipboardManager;
     .locals 2
 
-    .line 95
+    .line 140
     iget-object v0, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$clipboardManager$2;->this$0:Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -73,7 +73,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 94
+    .line 139
     invoke-virtual {p0}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$clipboardManager$2;->invoke()Landroid/content/ClipboardManager;
 
     move-result-object v0

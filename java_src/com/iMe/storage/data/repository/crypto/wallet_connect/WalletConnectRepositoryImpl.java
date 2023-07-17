@@ -52,9 +52,9 @@ public final class WalletConnectRepositoryImpl implements WalletConnectRepositor
     @Override // com.iMe.storage.domain.repository.crypto.wallet_connect.WalletConnectRepository
     public Observable<Result<WalletConnectProcessedTransaction>> getWalletConnectParamsForCryptoTransaction(WalletConnectTransaction transaction) {
         Intrinsics.checkNotNullParameter(transaction, "transaction");
-        Observable<R> map = this.walletConnectApi.getWalletConnectParamsForCryptoTransaction(new GetParamsForCryptoTransactionRequest(transaction.getFrom(), transaction.getTo(), transaction.getValue(), transaction.getData(), transaction.getGas(), transaction.getGasPrice(), transaction.getNonce(), transaction.getNetworkType().name())).map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new C1907x1a4c414b(this.firebaseErrorHandler)));
+        Observable<R> map = this.walletConnectApi.getWalletConnectParamsForCryptoTransaction(new GetParamsForCryptoTransactionRequest(transaction.getFrom(), transaction.getTo(), transaction.getValue(), transaction.getData(), transaction.getGas(), transaction.getGasPrice(), transaction.getNonce(), transaction.getNetworkId())).map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new C1914x1a4c414b(this.firebaseErrorHandler)));
         Intrinsics.checkNotNullExpressionValue(map, "errorHandler: FirebaseFu…response).toError()\n    }");
-        Observable<Result<WalletConnectProcessedTransaction>> onErrorReturn = map.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new C1906x1243a0b6(this.errorHandler)));
+        Observable<Result<WalletConnectProcessedTransaction>> onErrorReturn = map.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new C1913x1243a0b6(this.errorHandler)));
         Intrinsics.checkNotNullExpressionValue(onErrorReturn, "errorHandler: ErrorHandl…ndleError(it).toError() }");
         return onErrorReturn;
     }
@@ -62,7 +62,7 @@ public final class WalletConnectRepositoryImpl implements WalletConnectRepositor
     @Override // com.iMe.storage.domain.repository.crypto.wallet_connect.WalletConnectRepository
     public Observable<Result<String>> sendWalletConnectCryptoTransaction(WalletConnectTransactionArgs args) {
         Intrinsics.checkNotNullParameter(args, "args");
-        Observable<Result<String>> onErrorReturn = this.walletConnectDataSource.sendTransaction(args).onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new C1910xc1db6217(this.errorHandler)));
+        Observable<Result<String>> onErrorReturn = this.walletConnectDataSource.sendTransaction(args).onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new C1917xc1db6217(this.errorHandler)));
         Intrinsics.checkNotNullExpressionValue(onErrorReturn, "errorHandler: ErrorHandl…ndleError(it).toError() }");
         return onErrorReturn;
     }
@@ -86,7 +86,7 @@ public final class WalletConnectRepositoryImpl implements WalletConnectRepositor
             }
         });
         Intrinsics.checkNotNullExpressionValue(map, "walletConnectSessionsDao…s()\n                    }");
-        Flowable<Result<List<WCSessionStoreItem>>> handleError = map.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new C1908x8b365d34(this.errorHandler)));
+        Flowable<Result<List<WCSessionStoreItem>>> handleError = map.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new C1915x8b365d34(this.errorHandler)));
         Intrinsics.checkNotNullExpressionValue(handleError, "handleError");
         return handleError;
     }

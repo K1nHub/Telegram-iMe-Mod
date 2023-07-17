@@ -64,7 +64,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 391
+    .line 386
     check-cast p1, Lcom/iMe/storage/domain/model/Result;
 
     invoke-virtual {p0, p1}, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl$onTransactionProcessing$1$1;->invoke(Lcom/iMe/storage/domain/model/Result;)V
@@ -85,7 +85,7 @@
         }
     .end annotation
 
-    .line 394
+    .line 389
     instance-of v0, p1, Lcom/iMe/storage/domain/model/Result$Success;
 
     if-eqz v0, :cond_0
@@ -96,13 +96,13 @@
 
     move-result-object v1
 
-    .line 395
+    .line 390
     iget-wide v2, p0, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl$onTransactionProcessing$1$1;->$requestId:J
 
-    .line 396
+    .line 391
     iget-object v4, p0, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl$onTransactionProcessing$1$1;->$sessionStoreItem:Lcom/trustwallet/walletconnect/WCSessionStoreItem;
 
-    .line 397
+    .line 392
     check-cast p1, Lcom/iMe/storage/domain/model/Result$Success;
 
     invoke-virtual {p1}, Lcom/iMe/storage/domain/model/Result$Success;->getData()Ljava/lang/Object;
@@ -113,15 +113,15 @@
 
     check-cast v5, Lcom/iMe/storage/domain/model/crypto/wallet_connect/WalletConnectProcessedTransaction;
 
-    .line 398
+    .line 393
     iget-boolean v6, p0, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl$onTransactionProcessing$1$1;->$isSignEvent:Z
 
-    .line 394
+    .line 389
     invoke-interface/range {v1 .. v6}, Lcom/iMe/storage/domain/manager/wallet_connect/WalletConnectEventsDelegate;->onTransactionProcessing(JLcom/trustwallet/walletconnect/WCSessionStoreItem;Lcom/iMe/storage/domain/model/crypto/wallet_connect/WalletConnectProcessedTransaction;Z)V
 
     goto :goto_0
 
-    .line 400
+    .line 395
     :cond_0
     instance-of v0, p1, Lcom/iMe/storage/domain/model/Result$Error;
 

@@ -34,7 +34,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nObservableExt.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ObservableExt.kt\ncom/iMe/storage/domain/utils/extentions/ObservableExtKt$flatMapSuccess$1\n+ 2 CryptoWalletInteractor.kt\ncom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor\n*L\n1#1,80:1\n48#2:81\n*E\n"
+    value = "SMAP\nObservableExt.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ObservableExt.kt\ncom/iMe/storage/domain/utils/extentions/ObservableExtKt$flatMapSuccess$1\n+ 2 CryptoWalletInteractor.kt\ncom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor\n+ 3 ObservableExt.kt\ncom/iMe/storage/domain/utils/extentions/ObservableExtKt\n*L\n1#1,92:1\n63#2,2:93\n26#3:95\n*S KotlinDebug\n*F\n+ 1 CryptoWalletInteractor.kt\ncom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor\n*L\n64#1:95\n*E\n"
 .end annotation
 
 
@@ -84,20 +84,37 @@
 
     if-eqz v0, :cond_0
 
-    .line 48
+    .line 93
     iget-object v0, p0, Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor$importWallet$$inlined$flatMapSuccess$1;->this$0:Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;
 
     invoke-virtual {p1}, Lcom/iMe/storage/domain/model/Result;->getData()Ljava/lang/Object;
 
     move-result-object p1
 
-    invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
-
-    check-cast p1, Lcom/iMe/storage/domain/model/crypto/Wallet;
-
-    invoke-static {v0, p1}, Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;->access$linkWalletAddressWithCheck(Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;Lcom/iMe/storage/domain/model/crypto/Wallet;)Lio/reactivex/Observable;
+    invoke-static {p1}, Lkotlin/collections/CollectionsKt;->listOfNotNull(Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object p1
+
+    invoke-static {v0, p1}, Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;->access$linkWalletsWithCheck(Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;Ljava/util/List;)Lio/reactivex/Observable;
+
+    move-result-object p1
+
+    .line 26
+    new-instance v0, Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor$importWallet$lambda$2$$inlined$mapSuccess$1;
+
+    invoke-direct {v0}, Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor$importWallet$lambda$2$$inlined$mapSuccess$1;-><init>()V
+
+    new-instance v1, Lcom/iMe/storage/domain/utils/extentions/ObservableExtKt$sam$i$io_reactivex_functions_Function$0;
+
+    invoke-direct {v1, v0}, Lcom/iMe/storage/domain/utils/extentions/ObservableExtKt$sam$i$io_reactivex_functions_Function$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    invoke-virtual {p1, v1}, Lio/reactivex/Observable;->map(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
+
+    move-result-object p1
+
+    const-string v0, "crossinline body: (T) ->\u2026ult as? R\n        }\n    }"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     goto :goto_0
 

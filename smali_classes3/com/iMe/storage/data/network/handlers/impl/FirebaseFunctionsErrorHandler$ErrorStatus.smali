@@ -108,7 +108,7 @@
 .method static constructor <clinit>()V
     .locals 3
 
-    .line 68
+    .line 69
     new-instance v0, Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$ErrorStatus;
 
     const-string v1, "UNAUTHORIZED"
@@ -119,7 +119,7 @@
 
     sput-object v0, Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$ErrorStatus;->UNAUTHORIZED:Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$ErrorStatus;
 
-    .line 69
+    .line 70
     new-instance v0, Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$ErrorStatus;
 
     const-string v1, "NO_ENOUGH_MONEY"
@@ -130,7 +130,7 @@
 
     sput-object v0, Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$ErrorStatus;->NO_ENOUGH_MONEY:Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$ErrorStatus;
 
-    .line 70
+    .line 71
     new-instance v0, Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$ErrorStatus;
 
     const-string v1, "REFRESH_TOKEN_NOT_FOUND"
@@ -141,7 +141,7 @@
 
     sput-object v0, Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$ErrorStatus;->REFRESH_TOKEN_NOT_FOUND:Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$ErrorStatus;
 
-    .line 71
+    .line 72
     new-instance v0, Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$ErrorStatus;
 
     const-string v1, "VALIDATION_ERROR"
@@ -152,7 +152,7 @@
 
     sput-object v0, Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$ErrorStatus;->VALIDATION_ERROR:Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$ErrorStatus;
 
-    .line 72
+    .line 73
     new-instance v0, Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$ErrorStatus;
 
     const-string v1, "USER_NOT_FOUND"
@@ -163,7 +163,7 @@
 
     sput-object v0, Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$ErrorStatus;->USER_NOT_FOUND:Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$ErrorStatus;
 
-    .line 73
+    .line 74
     new-instance v0, Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$ErrorStatus;
 
     const-string v1, "ERR_MONEY_ACCOUNT_NOT_EXIST"
@@ -174,7 +174,7 @@
 
     sput-object v0, Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$ErrorStatus;->ERR_MONEY_ACCOUNT_NOT_EXIST:Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$ErrorStatus;
 
-    .line 74
+    .line 75
     new-instance v0, Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$ErrorStatus;
 
     const-string v1, "ZERO_AMOUNT_ERROR"
@@ -185,7 +185,7 @@
 
     sput-object v0, Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$ErrorStatus;->ZERO_AMOUNT_ERROR:Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$ErrorStatus;
 
-    .line 75
+    .line 76
     new-instance v0, Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$ErrorStatus;
 
     const-string v1, "TRANSLATION_UNSUPPORTED_LANGUAGE"
@@ -213,7 +213,7 @@
         }
     .end annotation
 
-    .line 67
+    .line 68
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void

@@ -18,7 +18,7 @@
 
 .field private final endsAt:Ljava/lang/String;
 
-.field private final feeToken:Lcom/iMe/i_staking/response/StakingTokenResponse;
+.field private final feeToken:Lcom/iMe/storage/data/network/model/response/wallet/TokenDetailedResponse;
 
 .field private final id:J
 
@@ -44,13 +44,13 @@
 
 .field private final stats:Lcom/iMe/i_staking/response/StakingStatsResponse;
 
-.field private final token:Lcom/iMe/i_staking/response/StakingTokenResponse;
+.field private final token:Lcom/iMe/storage/data/network/model/response/wallet/TokenDetailedResponse;
 
 .field private final website:Ljava/lang/String;
 
 
 # direct methods
-.method public constructor <init>(JLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/iMe/i_staking/response/StakingValuesResponse;Lcom/iMe/i_staking/response/StakingTokenResponse;Lcom/iMe/i_staking/response/StakingTokenResponse;DDJDDDDJLjava/math/BigDecimal;Lcom/iMe/i_staking/response/StakingStatsResponse;Ljava/lang/String;Ljava/lang/String;)V
+.method public constructor <init>(JLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/iMe/i_staking/response/StakingValuesResponse;Lcom/iMe/storage/data/network/model/response/wallet/TokenDetailedResponse;Lcom/iMe/storage/data/network/model/response/wallet/TokenDetailedResponse;DDJDDDDJLjava/math/BigDecimal;Lcom/iMe/i_staking/response/StakingStatsResponse;Ljava/lang/String;Ljava/lang/String;)V
     .locals 15
 
     move-object v0, p0
@@ -127,99 +127,99 @@
 
     invoke-static {v12, v13}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 5
+    .line 6
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     move-wide/from16 v13, p1
 
-    .line 6
+    .line 7
     iput-wide v13, v0, Lcom/iMe/i_staking/response/StakingMetadataResponse;->id:J
 
-    .line 7
+    .line 8
     iput-object v1, v0, Lcom/iMe/i_staking/response/StakingMetadataResponse;->net:Ljava/lang/String;
 
-    .line 8
+    .line 9
     iput-object v2, v0, Lcom/iMe/i_staking/response/StakingMetadataResponse;->name:Ljava/lang/String;
 
-    .line 9
+    .line 10
     iput-object v3, v0, Lcom/iMe/i_staking/response/StakingMetadataResponse;->author:Ljava/lang/String;
 
-    .line 10
+    .line 11
     iput-object v4, v0, Lcom/iMe/i_staking/response/StakingMetadataResponse;->contract:Ljava/lang/String;
 
-    .line 11
+    .line 12
     iput-object v5, v0, Lcom/iMe/i_staking/response/StakingMetadataResponse;->startsAt:Ljava/lang/String;
 
-    .line 12
+    .line 13
     iput-object v6, v0, Lcom/iMe/i_staking/response/StakingMetadataResponse;->endsAt:Ljava/lang/String;
 
-    .line 13
+    .line 14
     iput-object v7, v0, Lcom/iMe/i_staking/response/StakingMetadataResponse;->debt:Lcom/iMe/i_staking/response/StakingValuesResponse;
 
-    .line 14
-    iput-object v8, v0, Lcom/iMe/i_staking/response/StakingMetadataResponse;->token:Lcom/iMe/i_staking/response/StakingTokenResponse;
-
     .line 15
-    iput-object v9, v0, Lcom/iMe/i_staking/response/StakingMetadataResponse;->feeToken:Lcom/iMe/i_staking/response/StakingTokenResponse;
+    iput-object v8, v0, Lcom/iMe/i_staking/response/StakingMetadataResponse;->token:Lcom/iMe/storage/data/network/model/response/wallet/TokenDetailedResponse;
+
+    .line 16
+    iput-object v9, v0, Lcom/iMe/i_staking/response/StakingMetadataResponse;->feeToken:Lcom/iMe/storage/data/network/model/response/wallet/TokenDetailedResponse;
 
     move-wide/from16 v1, p12
 
-    .line 16
+    .line 17
     iput-wide v1, v0, Lcom/iMe/i_staking/response/StakingMetadataResponse;->apy:D
 
     move-wide/from16 v1, p14
 
-    .line 17
+    .line 18
     iput-wide v1, v0, Lcom/iMe/i_staking/response/StakingMetadataResponse;->apr:D
 
     move-wide/from16 v1, p16
 
-    .line 18
+    .line 19
     iput-wide v1, v0, Lcom/iMe/i_staking/response/StakingMetadataResponse;->incomePeriod:J
 
     move-wide/from16 v1, p18
 
-    .line 19
+    .line 20
     iput-wide v1, v0, Lcom/iMe/i_staking/response/StakingMetadataResponse;->incomePercent:D
 
     move-wide/from16 v1, p20
 
-    .line 20
+    .line 21
     iput-wide v1, v0, Lcom/iMe/i_staking/response/StakingMetadataResponse;->prematureWithdrawalFee:D
 
     move-wide/from16 v1, p22
 
-    .line 21
+    .line 22
     iput-wide v1, v0, Lcom/iMe/i_staking/response/StakingMetadataResponse;->immediateWithdrawalFee:D
 
     move-wide/from16 v1, p24
 
-    .line 22
+    .line 23
     iput-wide v1, v0, Lcom/iMe/i_staking/response/StakingMetadataResponse;->safeWithdrawalFee:D
 
     move-wide/from16 v1, p26
 
-    .line 23
+    .line 24
     iput-wide v1, v0, Lcom/iMe/i_staking/response/StakingMetadataResponse;->safeWithdrawalDuration:J
 
-    .line 24
+    .line 25
     iput-object v10, v0, Lcom/iMe/i_staking/response/StakingMetadataResponse;->compoundAccrualThreshold:Ljava/math/BigDecimal;
 
-    .line 25
+    .line 26
     iput-object v11, v0, Lcom/iMe/i_staking/response/StakingMetadataResponse;->stats:Lcom/iMe/i_staking/response/StakingStatsResponse;
 
     move-object/from16 v1, p30
 
-    .line 26
+    .line 27
     iput-object v1, v0, Lcom/iMe/i_staking/response/StakingMetadataResponse;->minimalRank:Ljava/lang/String;
 
-    .line 27
+    .line 28
     iput-object v12, v0, Lcom/iMe/i_staking/response/StakingMetadataResponse;->website:Ljava/lang/String;
 
     return-void
 .end method
 
-.method public static synthetic copy$default(Lcom/iMe/i_staking/response/StakingMetadataResponse;JLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/iMe/i_staking/response/StakingValuesResponse;Lcom/iMe/i_staking/response/StakingTokenResponse;Lcom/iMe/i_staking/response/StakingTokenResponse;DDJDDDDJLjava/math/BigDecimal;Lcom/iMe/i_staking/response/StakingStatsResponse;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Object;)Lcom/iMe/i_staking/response/StakingMetadataResponse;
+.method public static synthetic copy$default(Lcom/iMe/i_staking/response/StakingMetadataResponse;JLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/iMe/i_staking/response/StakingValuesResponse;Lcom/iMe/storage/data/network/model/response/wallet/TokenDetailedResponse;Lcom/iMe/storage/data/network/model/response/wallet/TokenDetailedResponse;DDJDDDDJLjava/math/BigDecimal;Lcom/iMe/i_staking/response/StakingStatsResponse;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Object;)Lcom/iMe/i_staking/response/StakingMetadataResponse;
     .locals 17
 
     move-object/from16 v0, p0
@@ -326,7 +326,7 @@
 
     if-eqz v11, :cond_8
 
-    iget-object v11, v0, Lcom/iMe/i_staking/response/StakingMetadataResponse;->token:Lcom/iMe/i_staking/response/StakingTokenResponse;
+    iget-object v11, v0, Lcom/iMe/i_staking/response/StakingMetadataResponse;->token:Lcom/iMe/storage/data/network/model/response/wallet/TokenDetailedResponse;
 
     goto :goto_8
 
@@ -338,7 +338,7 @@
 
     if-eqz v12, :cond_9
 
-    iget-object v12, v0, Lcom/iMe/i_staking/response/StakingMetadataResponse;->feeToken:Lcom/iMe/i_staking/response/StakingTokenResponse;
+    iget-object v12, v0, Lcom/iMe/i_staking/response/StakingMetadataResponse;->feeToken:Lcom/iMe/storage/data/network/model/response/wallet/TokenDetailedResponse;
 
     goto :goto_9
 
@@ -548,7 +548,7 @@
 
     move-object/from16 p31, v1
 
-    invoke-virtual/range {p0 .. p31}, Lcom/iMe/i_staking/response/StakingMetadataResponse;->copy(JLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/iMe/i_staking/response/StakingValuesResponse;Lcom/iMe/i_staking/response/StakingTokenResponse;Lcom/iMe/i_staking/response/StakingTokenResponse;DDJDDDDJLjava/math/BigDecimal;Lcom/iMe/i_staking/response/StakingStatsResponse;Ljava/lang/String;Ljava/lang/String;)Lcom/iMe/i_staking/response/StakingMetadataResponse;
+    invoke-virtual/range {p0 .. p31}, Lcom/iMe/i_staking/response/StakingMetadataResponse;->copy(JLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/iMe/i_staking/response/StakingValuesResponse;Lcom/iMe/storage/data/network/model/response/wallet/TokenDetailedResponse;Lcom/iMe/storage/data/network/model/response/wallet/TokenDetailedResponse;DDJDDDDJLjava/math/BigDecimal;Lcom/iMe/i_staking/response/StakingStatsResponse;Ljava/lang/String;Ljava/lang/String;)Lcom/iMe/i_staking/response/StakingMetadataResponse;
 
     move-result-object v0
 
@@ -565,10 +565,10 @@
     return-wide v0
 .end method
 
-.method public final component10()Lcom/iMe/i_staking/response/StakingTokenResponse;
+.method public final component10()Lcom/iMe/storage/data/network/model/response/wallet/TokenDetailedResponse;
     .locals 1
 
-    iget-object v0, p0, Lcom/iMe/i_staking/response/StakingMetadataResponse;->feeToken:Lcom/iMe/i_staking/response/StakingTokenResponse;
+    iget-object v0, p0, Lcom/iMe/i_staking/response/StakingMetadataResponse;->feeToken:Lcom/iMe/storage/data/network/model/response/wallet/TokenDetailedResponse;
 
     return-object v0
 .end method
@@ -725,15 +725,15 @@
     return-object v0
 .end method
 
-.method public final component9()Lcom/iMe/i_staking/response/StakingTokenResponse;
+.method public final component9()Lcom/iMe/storage/data/network/model/response/wallet/TokenDetailedResponse;
     .locals 1
 
-    iget-object v0, p0, Lcom/iMe/i_staking/response/StakingMetadataResponse;->token:Lcom/iMe/i_staking/response/StakingTokenResponse;
+    iget-object v0, p0, Lcom/iMe/i_staking/response/StakingMetadataResponse;->token:Lcom/iMe/storage/data/network/model/response/wallet/TokenDetailedResponse;
 
     return-object v0
 .end method
 
-.method public final copy(JLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/iMe/i_staking/response/StakingValuesResponse;Lcom/iMe/i_staking/response/StakingTokenResponse;Lcom/iMe/i_staking/response/StakingTokenResponse;DDJDDDDJLjava/math/BigDecimal;Lcom/iMe/i_staking/response/StakingStatsResponse;Ljava/lang/String;Ljava/lang/String;)Lcom/iMe/i_staking/response/StakingMetadataResponse;
+.method public final copy(JLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/iMe/i_staking/response/StakingValuesResponse;Lcom/iMe/storage/data/network/model/response/wallet/TokenDetailedResponse;Lcom/iMe/storage/data/network/model/response/wallet/TokenDetailedResponse;DDJDDDDJLjava/math/BigDecimal;Lcom/iMe/i_staking/response/StakingStatsResponse;Ljava/lang/String;Ljava/lang/String;)Lcom/iMe/i_staking/response/StakingMetadataResponse;
     .locals 33
 
     move-wide/from16 v1, p1
@@ -858,7 +858,7 @@
 
     move-wide/from16 v1, p1
 
-    invoke-direct/range {v0 .. v31}, Lcom/iMe/i_staking/response/StakingMetadataResponse;-><init>(JLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/iMe/i_staking/response/StakingValuesResponse;Lcom/iMe/i_staking/response/StakingTokenResponse;Lcom/iMe/i_staking/response/StakingTokenResponse;DDJDDDDJLjava/math/BigDecimal;Lcom/iMe/i_staking/response/StakingStatsResponse;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct/range {v0 .. v31}, Lcom/iMe/i_staking/response/StakingMetadataResponse;-><init>(JLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/iMe/i_staking/response/StakingValuesResponse;Lcom/iMe/storage/data/network/model/response/wallet/TokenDetailedResponse;Lcom/iMe/storage/data/network/model/response/wallet/TokenDetailedResponse;DDJDDDDJLjava/math/BigDecimal;Lcom/iMe/i_staking/response/StakingStatsResponse;Ljava/lang/String;Ljava/lang/String;)V
 
     return-object v32
 .end method
@@ -986,9 +986,9 @@
     return v2
 
     :cond_9
-    iget-object v1, p0, Lcom/iMe/i_staking/response/StakingMetadataResponse;->token:Lcom/iMe/i_staking/response/StakingTokenResponse;
+    iget-object v1, p0, Lcom/iMe/i_staking/response/StakingMetadataResponse;->token:Lcom/iMe/storage/data/network/model/response/wallet/TokenDetailedResponse;
 
-    iget-object v3, p1, Lcom/iMe/i_staking/response/StakingMetadataResponse;->token:Lcom/iMe/i_staking/response/StakingTokenResponse;
+    iget-object v3, p1, Lcom/iMe/i_staking/response/StakingMetadataResponse;->token:Lcom/iMe/storage/data/network/model/response/wallet/TokenDetailedResponse;
 
     invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
@@ -999,9 +999,9 @@
     return v2
 
     :cond_a
-    iget-object v1, p0, Lcom/iMe/i_staking/response/StakingMetadataResponse;->feeToken:Lcom/iMe/i_staking/response/StakingTokenResponse;
+    iget-object v1, p0, Lcom/iMe/i_staking/response/StakingMetadataResponse;->feeToken:Lcom/iMe/storage/data/network/model/response/wallet/TokenDetailedResponse;
 
-    iget-object v3, p1, Lcom/iMe/i_staking/response/StakingMetadataResponse;->feeToken:Lcom/iMe/i_staking/response/StakingTokenResponse;
+    iget-object v3, p1, Lcom/iMe/i_staking/response/StakingMetadataResponse;->feeToken:Lcom/iMe/storage/data/network/model/response/wallet/TokenDetailedResponse;
 
     invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
@@ -1170,7 +1170,7 @@
 .method public final getApr()D
     .locals 2
 
-    .line 17
+    .line 18
     iget-wide v0, p0, Lcom/iMe/i_staking/response/StakingMetadataResponse;->apr:D
 
     return-wide v0
@@ -1179,7 +1179,7 @@
 .method public final getApy()D
     .locals 2
 
-    .line 16
+    .line 17
     iget-wide v0, p0, Lcom/iMe/i_staking/response/StakingMetadataResponse;->apy:D
 
     return-wide v0
@@ -1188,7 +1188,7 @@
 .method public final getAuthor()Ljava/lang/String;
     .locals 1
 
-    .line 9
+    .line 10
     iget-object v0, p0, Lcom/iMe/i_staking/response/StakingMetadataResponse;->author:Ljava/lang/String;
 
     return-object v0
@@ -1197,7 +1197,7 @@
 .method public final getCompoundAccrualThreshold()Ljava/math/BigDecimal;
     .locals 1
 
-    .line 24
+    .line 25
     iget-object v0, p0, Lcom/iMe/i_staking/response/StakingMetadataResponse;->compoundAccrualThreshold:Ljava/math/BigDecimal;
 
     return-object v0
@@ -1206,7 +1206,7 @@
 .method public final getContract()Ljava/lang/String;
     .locals 1
 
-    .line 10
+    .line 11
     iget-object v0, p0, Lcom/iMe/i_staking/response/StakingMetadataResponse;->contract:Ljava/lang/String;
 
     return-object v0
@@ -1215,7 +1215,7 @@
 .method public final getDebt()Lcom/iMe/i_staking/response/StakingValuesResponse;
     .locals 1
 
-    .line 13
+    .line 14
     iget-object v0, p0, Lcom/iMe/i_staking/response/StakingMetadataResponse;->debt:Lcom/iMe/i_staking/response/StakingValuesResponse;
 
     return-object v0
@@ -1224,17 +1224,17 @@
 .method public final getEndsAt()Ljava/lang/String;
     .locals 1
 
-    .line 12
+    .line 13
     iget-object v0, p0, Lcom/iMe/i_staking/response/StakingMetadataResponse;->endsAt:Ljava/lang/String;
 
     return-object v0
 .end method
 
-.method public final getFeeToken()Lcom/iMe/i_staking/response/StakingTokenResponse;
+.method public final getFeeToken()Lcom/iMe/storage/data/network/model/response/wallet/TokenDetailedResponse;
     .locals 1
 
-    .line 15
-    iget-object v0, p0, Lcom/iMe/i_staking/response/StakingMetadataResponse;->feeToken:Lcom/iMe/i_staking/response/StakingTokenResponse;
+    .line 16
+    iget-object v0, p0, Lcom/iMe/i_staking/response/StakingMetadataResponse;->feeToken:Lcom/iMe/storage/data/network/model/response/wallet/TokenDetailedResponse;
 
     return-object v0
 .end method
@@ -1242,7 +1242,7 @@
 .method public final getId()J
     .locals 2
 
-    .line 6
+    .line 7
     iget-wide v0, p0, Lcom/iMe/i_staking/response/StakingMetadataResponse;->id:J
 
     return-wide v0
@@ -1251,7 +1251,7 @@
 .method public final getImmediateWithdrawalFee()D
     .locals 2
 
-    .line 21
+    .line 22
     iget-wide v0, p0, Lcom/iMe/i_staking/response/StakingMetadataResponse;->immediateWithdrawalFee:D
 
     return-wide v0
@@ -1260,7 +1260,7 @@
 .method public final getIncomePercent()D
     .locals 2
 
-    .line 19
+    .line 20
     iget-wide v0, p0, Lcom/iMe/i_staking/response/StakingMetadataResponse;->incomePercent:D
 
     return-wide v0
@@ -1269,7 +1269,7 @@
 .method public final getIncomePeriod()J
     .locals 2
 
-    .line 18
+    .line 19
     iget-wide v0, p0, Lcom/iMe/i_staking/response/StakingMetadataResponse;->incomePeriod:J
 
     return-wide v0
@@ -1278,7 +1278,7 @@
 .method public final getMinimalRank()Ljava/lang/String;
     .locals 1
 
-    .line 26
+    .line 27
     iget-object v0, p0, Lcom/iMe/i_staking/response/StakingMetadataResponse;->minimalRank:Ljava/lang/String;
 
     return-object v0
@@ -1287,7 +1287,7 @@
 .method public final getName()Ljava/lang/String;
     .locals 1
 
-    .line 8
+    .line 9
     iget-object v0, p0, Lcom/iMe/i_staking/response/StakingMetadataResponse;->name:Ljava/lang/String;
 
     return-object v0
@@ -1296,7 +1296,7 @@
 .method public final getNet()Ljava/lang/String;
     .locals 1
 
-    .line 7
+    .line 8
     iget-object v0, p0, Lcom/iMe/i_staking/response/StakingMetadataResponse;->net:Ljava/lang/String;
 
     return-object v0
@@ -1305,7 +1305,7 @@
 .method public final getPrematureWithdrawalFee()D
     .locals 2
 
-    .line 20
+    .line 21
     iget-wide v0, p0, Lcom/iMe/i_staking/response/StakingMetadataResponse;->prematureWithdrawalFee:D
 
     return-wide v0
@@ -1314,7 +1314,7 @@
 .method public final getSafeWithdrawalDuration()J
     .locals 2
 
-    .line 23
+    .line 24
     iget-wide v0, p0, Lcom/iMe/i_staking/response/StakingMetadataResponse;->safeWithdrawalDuration:J
 
     return-wide v0
@@ -1323,7 +1323,7 @@
 .method public final getSafeWithdrawalFee()D
     .locals 2
 
-    .line 22
+    .line 23
     iget-wide v0, p0, Lcom/iMe/i_staking/response/StakingMetadataResponse;->safeWithdrawalFee:D
 
     return-wide v0
@@ -1332,7 +1332,7 @@
 .method public final getStartsAt()Ljava/lang/String;
     .locals 1
 
-    .line 11
+    .line 12
     iget-object v0, p0, Lcom/iMe/i_staking/response/StakingMetadataResponse;->startsAt:Ljava/lang/String;
 
     return-object v0
@@ -1341,17 +1341,17 @@
 .method public final getStats()Lcom/iMe/i_staking/response/StakingStatsResponse;
     .locals 1
 
-    .line 25
+    .line 26
     iget-object v0, p0, Lcom/iMe/i_staking/response/StakingMetadataResponse;->stats:Lcom/iMe/i_staking/response/StakingStatsResponse;
 
     return-object v0
 .end method
 
-.method public final getToken()Lcom/iMe/i_staking/response/StakingTokenResponse;
+.method public final getToken()Lcom/iMe/storage/data/network/model/response/wallet/TokenDetailedResponse;
     .locals 1
 
-    .line 14
-    iget-object v0, p0, Lcom/iMe/i_staking/response/StakingMetadataResponse;->token:Lcom/iMe/i_staking/response/StakingTokenResponse;
+    .line 15
+    iget-object v0, p0, Lcom/iMe/i_staking/response/StakingMetadataResponse;->token:Lcom/iMe/storage/data/network/model/response/wallet/TokenDetailedResponse;
 
     return-object v0
 .end method
@@ -1359,7 +1359,7 @@
 .method public final getWebsite()Ljava/lang/String;
     .locals 1
 
-    .line 27
+    .line 28
     iget-object v0, p0, Lcom/iMe/i_staking/response/StakingMetadataResponse;->website:Ljava/lang/String;
 
     return-object v0
@@ -1446,9 +1446,9 @@
 
     mul-int/lit8 v0, v0, 0x1f
 
-    iget-object v1, p0, Lcom/iMe/i_staking/response/StakingMetadataResponse;->token:Lcom/iMe/i_staking/response/StakingTokenResponse;
+    iget-object v1, p0, Lcom/iMe/i_staking/response/StakingMetadataResponse;->token:Lcom/iMe/storage/data/network/model/response/wallet/TokenDetailedResponse;
 
-    invoke-virtual {v1}, Lcom/iMe/i_staking/response/StakingTokenResponse;->hashCode()I
+    invoke-virtual {v1}, Lcom/iMe/storage/data/network/model/response/wallet/TokenDetailedResponse;->hashCode()I
 
     move-result v1
 
@@ -1456,9 +1456,9 @@
 
     mul-int/lit8 v0, v0, 0x1f
 
-    iget-object v1, p0, Lcom/iMe/i_staking/response/StakingMetadataResponse;->feeToken:Lcom/iMe/i_staking/response/StakingTokenResponse;
+    iget-object v1, p0, Lcom/iMe/i_staking/response/StakingMetadataResponse;->feeToken:Lcom/iMe/storage/data/network/model/response/wallet/TokenDetailedResponse;
 
-    invoke-virtual {v1}, Lcom/iMe/i_staking/response/StakingTokenResponse;->hashCode()I
+    invoke-virtual {v1}, Lcom/iMe/storage/data/network/model/response/wallet/TokenDetailedResponse;->hashCode()I
 
     move-result v1
 
@@ -1670,7 +1670,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v1, p0, Lcom/iMe/i_staking/response/StakingMetadataResponse;->token:Lcom/iMe/i_staking/response/StakingTokenResponse;
+    iget-object v1, p0, Lcom/iMe/i_staking/response/StakingMetadataResponse;->token:Lcom/iMe/storage/data/network/model/response/wallet/TokenDetailedResponse;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
@@ -1678,7 +1678,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v1, p0, Lcom/iMe/i_staking/response/StakingMetadataResponse;->feeToken:Lcom/iMe/i_staking/response/StakingTokenResponse;
+    iget-object v1, p0, Lcom/iMe/i_staking/response/StakingMetadataResponse;->feeToken:Lcom/iMe/storage/data/network/model/response/wallet/TokenDetailedResponse;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 

@@ -21,19 +21,19 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 12
+    .line 11
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 13
+    .line 12
     iput-object p1, p0, Lcom/iMe/i_staking/StakingInteractor;->schedulersProvider:Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
-    .line 14
+    .line 13
     iput-object p2, p0, Lcom/iMe/i_staking/StakingInteractor;->stakingRepository:Lcom/iMe/i_staking/repository/StakingRepository;
 
     return-void
 .end method
 
-.method public static synthetic getStakingOperations$default(Lcom/iMe/i_staking/StakingInteractor;Ljava/lang/Long;Lcom/iMe/storage/domain/model/staking/StakingOperationType;Lcom/iMe/storage/domain/model/crypto/NetworkType;Ljava/lang/String;ILjava/lang/Object;)Lio/reactivex/Observable;
+.method public static synthetic getStakingOperations$default(Lcom/iMe/i_staking/StakingInteractor;Ljava/lang/Long;Lcom/iMe/storage/domain/model/staking/StakingOperationType;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Object;)Lio/reactivex/Observable;
     .locals 1
 
     and-int/lit8 p6, p5, 0x1
@@ -58,9 +58,9 @@
 
     move-object p3, v0
 
-    .line 43
+    .line 42
     :cond_2
-    invoke-virtual {p0, p1, p2, p3, p4}, Lcom/iMe/i_staking/StakingInteractor;->getStakingOperations(Ljava/lang/Long;Lcom/iMe/storage/domain/model/staking/StakingOperationType;Lcom/iMe/storage/domain/model/crypto/NetworkType;Ljava/lang/String;)Lio/reactivex/Observable;
+    invoke-virtual {p0, p1, p2, p3, p4}, Lcom/iMe/i_staking/StakingInteractor;->getStakingOperations(Ljava/lang/Long;Lcom/iMe/storage/domain/model/staking/StakingOperationType;Ljava/lang/String;Ljava/lang/String;)Lio/reactivex/Observable;
 
     move-result-object p0
 
@@ -81,15 +81,15 @@
         }
     .end annotation
 
-    .line 55
+    .line 54
     iget-object v0, p0, Lcom/iMe/i_staking/StakingInteractor;->stakingRepository:Lcom/iMe/i_staking/repository/StakingRepository;
 
-    .line 56
+    .line 55
     invoke-interface {v0, p1, p2}, Lcom/iMe/i_staking/repository/StakingRepository;->getApprovalInfo(J)Lio/reactivex/Observable;
 
     move-result-object p1
 
-    .line 57
+    .line 56
     sget-object p2, Lcom/iMe/storage/domain/model/Result;->Companion:Lcom/iMe/storage/domain/model/Result$Companion;
 
     const/4 v0, 0x0
@@ -104,7 +104,7 @@
 
     move-result-object p1
 
-    .line 58
+    .line 57
     iget-object p2, p0, Lcom/iMe/i_staking/StakingInteractor;->schedulersProvider:Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
     invoke-interface {p2}, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;->io()Lio/reactivex/Scheduler;
@@ -134,15 +134,15 @@
         }
     .end annotation
 
-    .line 38
+    .line 37
     iget-object v0, p0, Lcom/iMe/i_staking/StakingInteractor;->stakingRepository:Lcom/iMe/i_staking/repository/StakingRepository;
 
-    .line 39
+    .line 38
     invoke-interface {v0, p1, p2}, Lcom/iMe/i_staking/repository/StakingRepository;->getStakingDetails(J)Lio/reactivex/Observable;
 
     move-result-object p1
 
-    .line 40
+    .line 39
     sget-object p2, Lcom/iMe/storage/domain/model/Result;->Companion:Lcom/iMe/storage/domain/model/Result$Companion;
 
     const/4 v0, 0x0
@@ -157,7 +157,7 @@
 
     move-result-object p1
 
-    .line 41
+    .line 40
     iget-object p2, p0, Lcom/iMe/i_staking/StakingInteractor;->schedulersProvider:Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
     invoke-interface {p2}, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;->io()Lio/reactivex/Scheduler;
@@ -175,14 +175,14 @@
     return-object p1
 .end method
 
-.method public final getStakingOperations(Ljava/lang/Long;Lcom/iMe/storage/domain/model/staking/StakingOperationType;Lcom/iMe/storage/domain/model/crypto/NetworkType;Ljava/lang/String;)Lio/reactivex/Observable;
+.method public final getStakingOperations(Ljava/lang/Long;Lcom/iMe/storage/domain/model/staking/StakingOperationType;Ljava/lang/String;Ljava/lang/String;)Lio/reactivex/Observable;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Ljava/lang/Long;",
             "Lcom/iMe/storage/domain/model/staking/StakingOperationType;",
-            "Lcom/iMe/storage/domain/model/crypto/NetworkType;",
+            "Ljava/lang/String;",
             "Ljava/lang/String;",
             ")",
             "Lio/reactivex/Observable<",
@@ -192,15 +192,15 @@
         }
     .end annotation
 
-    .line 49
+    .line 48
     iget-object v0, p0, Lcom/iMe/i_staking/StakingInteractor;->stakingRepository:Lcom/iMe/i_staking/repository/StakingRepository;
 
-    .line 50
-    invoke-interface {v0, p1, p2, p3, p4}, Lcom/iMe/i_staking/repository/StakingRepository;->getStakingOperations(Ljava/lang/Long;Lcom/iMe/storage/domain/model/staking/StakingOperationType;Lcom/iMe/storage/domain/model/crypto/NetworkType;Ljava/lang/String;)Lio/reactivex/Observable;
+    .line 49
+    invoke-interface {v0, p1, p2, p3, p4}, Lcom/iMe/i_staking/repository/StakingRepository;->getStakingOperations(Ljava/lang/Long;Lcom/iMe/storage/domain/model/staking/StakingOperationType;Ljava/lang/String;Ljava/lang/String;)Lio/reactivex/Observable;
 
     move-result-object p1
 
-    .line 51
+    .line 50
     sget-object p2, Lcom/iMe/storage/domain/model/Result;->Companion:Lcom/iMe/storage/domain/model/Result$Companion;
 
     const/4 p3, 0x0
@@ -215,7 +215,7 @@
 
     move-result-object p1
 
-    .line 52
+    .line 51
     iget-object p2, p0, Lcom/iMe/i_staking/StakingInteractor;->schedulersProvider:Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
     invoke-interface {p2}, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;->io()Lio/reactivex/Scheduler;
@@ -257,15 +257,15 @@
 
     invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 32
+    .line 31
     iget-object v0, p0, Lcom/iMe/i_staking/StakingInteractor;->stakingRepository:Lcom/iMe/i_staking/repository/StakingRepository;
 
-    .line 33
+    .line 32
     invoke-interface {v0, p1, p2, p3}, Lcom/iMe/i_staking/repository/StakingRepository;->getStakingOwnProgrammesList(Lcom/iMe/storage/domain/model/wallet/staking/StakingOrderType;Ljava/lang/Long;Lcom/iMe/storage/domain/model/staking/StakingProgrammesFilterType;)Lio/reactivex/Observable;
 
     move-result-object p1
 
-    .line 34
+    .line 33
     sget-object p2, Lcom/iMe/storage/domain/model/Result;->Companion:Lcom/iMe/storage/domain/model/Result$Companion;
 
     const/4 p3, 0x0
@@ -280,7 +280,7 @@
 
     move-result-object p1
 
-    .line 35
+    .line 34
     iget-object p2, p0, Lcom/iMe/i_staking/StakingInteractor;->schedulersProvider:Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
     invoke-interface {p2}, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;->io()Lio/reactivex/Scheduler;
@@ -317,15 +317,15 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 26
+    .line 25
     iget-object v0, p0, Lcom/iMe/i_staking/StakingInteractor;->stakingRepository:Lcom/iMe/i_staking/repository/StakingRepository;
 
-    .line 27
+    .line 26
     invoke-interface {v0, p1, p2}, Lcom/iMe/i_staking/repository/StakingRepository;->getStakingProgrammesList(Lcom/iMe/storage/domain/model/wallet/staking/StakingOrderType;Ljava/lang/Long;)Lio/reactivex/Observable;
 
     move-result-object p1
 
-    .line 28
+    .line 27
     sget-object p2, Lcom/iMe/storage/domain/model/Result;->Companion:Lcom/iMe/storage/domain/model/Result$Companion;
 
     const/4 v0, 0x0
@@ -340,7 +340,7 @@
 
     move-result-object p1
 
-    .line 29
+    .line 28
     iget-object p2, p0, Lcom/iMe/i_staking/StakingInteractor;->schedulersProvider:Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
     invoke-interface {p2}, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;->io()Lio/reactivex/Scheduler;
@@ -370,15 +370,15 @@
         }
     .end annotation
 
-    .line 20
+    .line 19
     iget-object v0, p0, Lcom/iMe/i_staking/StakingInteractor;->stakingRepository:Lcom/iMe/i_staking/repository/StakingRepository;
 
-    .line 21
+    .line 20
     invoke-interface {v0}, Lcom/iMe/i_staking/repository/StakingRepository;->getStakingTotalStats()Lio/reactivex/Observable;
 
     move-result-object v0
 
-    .line 22
+    .line 21
     sget-object v1, Lcom/iMe/storage/domain/model/Result;->Companion:Lcom/iMe/storage/domain/model/Result$Companion;
 
     const/4 v2, 0x0
@@ -393,7 +393,7 @@
 
     move-result-object v0
 
-    .line 23
+    .line 22
     iget-object v1, p0, Lcom/iMe/i_staking/StakingInteractor;->schedulersProvider:Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
     invoke-interface {v1}, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;->io()Lio/reactivex/Scheduler;
@@ -434,15 +434,15 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 67
+    .line 66
     iget-object v0, p0, Lcom/iMe/i_staking/StakingInteractor;->stakingRepository:Lcom/iMe/i_staking/repository/StakingRepository;
 
-    .line 68
+    .line 67
     invoke-interface {v0, p1, p2}, Lcom/iMe/i_staking/repository/StakingRepository;->sendApprovalExecute(Ljava/lang/String;Lcom/iMe/storage/domain/model/staking/StakingTransactionArgs;)Lio/reactivex/Observable;
 
     move-result-object p1
 
-    .line 69
+    .line 68
     sget-object p2, Lcom/iMe/storage/domain/model/Result;->Companion:Lcom/iMe/storage/domain/model/Result$Companion;
 
     const/4 v0, 0x0
@@ -457,7 +457,7 @@
 
     move-result-object p1
 
-    .line 70
+    .line 69
     iget-object p2, p0, Lcom/iMe/i_staking/StakingInteractor;->schedulersProvider:Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
     invoke-interface {p2}, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;->io()Lio/reactivex/Scheduler;
@@ -495,15 +495,15 @@
 
     invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 61
+    .line 60
     iget-object v0, p0, Lcom/iMe/i_staking/StakingInteractor;->stakingRepository:Lcom/iMe/i_staking/repository/StakingRepository;
 
-    .line 62
+    .line 61
     invoke-interface {v0, p1, p2, p3}, Lcom/iMe/i_staking/repository/StakingRepository;->sendApprovalPrepare(JLcom/iMe/storage/domain/model/staking/StakingApprovalTokenType;)Lio/reactivex/Observable;
 
     move-result-object p1
 
-    .line 63
+    .line 62
     sget-object p2, Lcom/iMe/storage/domain/model/Result;->Companion:Lcom/iMe/storage/domain/model/Result$Companion;
 
     const/4 p3, 0x0
@@ -518,7 +518,7 @@
 
     move-result-object p1
 
-    .line 64
+    .line 63
     iget-object p2, p0, Lcom/iMe/i_staking/StakingInteractor;->schedulersProvider:Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
     invoke-interface {p2}, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;->io()Lio/reactivex/Scheduler;
@@ -559,15 +559,15 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 91
+    .line 90
     iget-object v0, p0, Lcom/iMe/i_staking/StakingInteractor;->stakingRepository:Lcom/iMe/i_staking/repository/StakingRepository;
 
-    .line 92
+    .line 91
     invoke-interface {v0, p1, p2}, Lcom/iMe/i_staking/repository/StakingRepository;->sendClaimExecute(Ljava/lang/String;Lcom/iMe/storage/domain/model/staking/StakingTransactionArgs;)Lio/reactivex/Observable;
 
     move-result-object p1
 
-    .line 93
+    .line 92
     sget-object p2, Lcom/iMe/storage/domain/model/Result;->Companion:Lcom/iMe/storage/domain/model/Result$Companion;
 
     const/4 v0, 0x0
@@ -582,7 +582,7 @@
 
     move-result-object p1
 
-    .line 94
+    .line 93
     iget-object p2, p0, Lcom/iMe/i_staking/StakingInteractor;->schedulersProvider:Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
     invoke-interface {p2}, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;->io()Lio/reactivex/Scheduler;
@@ -614,15 +614,15 @@
         }
     .end annotation
 
-    .line 85
+    .line 84
     iget-object v0, p0, Lcom/iMe/i_staking/StakingInteractor;->stakingRepository:Lcom/iMe/i_staking/repository/StakingRepository;
 
-    .line 86
+    .line 85
     invoke-interface {v0, p1, p2}, Lcom/iMe/i_staking/repository/StakingRepository;->sendClaimPrepare(J)Lio/reactivex/Observable;
 
     move-result-object p1
 
-    .line 87
+    .line 86
     sget-object p2, Lcom/iMe/storage/domain/model/Result;->Companion:Lcom/iMe/storage/domain/model/Result$Companion;
 
     const/4 v0, 0x0
@@ -637,7 +637,7 @@
 
     move-result-object p1
 
-    .line 88
+    .line 87
     iget-object p2, p0, Lcom/iMe/i_staking/StakingInteractor;->schedulersProvider:Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
     invoke-interface {p2}, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;->io()Lio/reactivex/Scheduler;
@@ -678,15 +678,15 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 79
+    .line 78
     iget-object v0, p0, Lcom/iMe/i_staking/StakingInteractor;->stakingRepository:Lcom/iMe/i_staking/repository/StakingRepository;
 
-    .line 80
+    .line 79
     invoke-interface {v0, p1, p2}, Lcom/iMe/i_staking/repository/StakingRepository;->sendDepositExecute(Ljava/lang/String;Lcom/iMe/storage/domain/model/staking/StakingTransactionArgs;)Lio/reactivex/Observable;
 
     move-result-object p1
 
-    .line 81
+    .line 80
     sget-object p2, Lcom/iMe/storage/domain/model/Result;->Companion:Lcom/iMe/storage/domain/model/Result$Companion;
 
     const/4 v0, 0x0
@@ -701,7 +701,7 @@
 
     move-result-object p1
 
-    .line 82
+    .line 81
     iget-object p2, p0, Lcom/iMe/i_staking/StakingInteractor;->schedulersProvider:Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
     invoke-interface {p2}, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;->io()Lio/reactivex/Scheduler;
@@ -739,15 +739,15 @@
 
     invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 73
+    .line 72
     iget-object v0, p0, Lcom/iMe/i_staking/StakingInteractor;->stakingRepository:Lcom/iMe/i_staking/repository/StakingRepository;
 
-    .line 74
+    .line 73
     invoke-interface {v0, p1, p2, p3}, Lcom/iMe/i_staking/repository/StakingRepository;->sendDepositPrepare(JLjava/math/BigDecimal;)Lio/reactivex/Observable;
 
     move-result-object p1
 
-    .line 75
+    .line 74
     sget-object p2, Lcom/iMe/storage/domain/model/Result;->Companion:Lcom/iMe/storage/domain/model/Result$Companion;
 
     const/4 p3, 0x0
@@ -762,7 +762,7 @@
 
     move-result-object p1
 
-    .line 76
+    .line 75
     iget-object p2, p0, Lcom/iMe/i_staking/StakingInteractor;->schedulersProvider:Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
     invoke-interface {p2}, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;->io()Lio/reactivex/Scheduler;
@@ -803,15 +803,15 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 103
+    .line 102
     iget-object v0, p0, Lcom/iMe/i_staking/StakingInteractor;->stakingRepository:Lcom/iMe/i_staking/repository/StakingRepository;
 
-    .line 104
+    .line 103
     invoke-interface {v0, p1, p2}, Lcom/iMe/i_staking/repository/StakingRepository;->sendWithdrawExecute(Ljava/lang/String;Lcom/iMe/storage/domain/model/staking/StakingTransactionArgs;)Lio/reactivex/Observable;
 
     move-result-object p1
 
-    .line 105
+    .line 104
     sget-object p2, Lcom/iMe/storage/domain/model/Result;->Companion:Lcom/iMe/storage/domain/model/Result$Companion;
 
     const/4 v0, 0x0
@@ -826,7 +826,7 @@
 
     move-result-object p1
 
-    .line 106
+    .line 105
     iget-object p2, p0, Lcom/iMe/i_staking/StakingInteractor;->schedulersProvider:Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
     invoke-interface {p2}, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;->io()Lio/reactivex/Scheduler;
@@ -864,15 +864,15 @@
 
     invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 97
+    .line 96
     iget-object v0, p0, Lcom/iMe/i_staking/StakingInteractor;->stakingRepository:Lcom/iMe/i_staking/repository/StakingRepository;
 
-    .line 98
+    .line 97
     invoke-interface {v0, p1, p2, p3, p4}, Lcom/iMe/i_staking/repository/StakingRepository;->sendWithdrawPrepare(JLjava/math/BigDecimal;Z)Lio/reactivex/Observable;
 
     move-result-object p1
 
-    .line 99
+    .line 98
     sget-object p2, Lcom/iMe/storage/domain/model/Result;->Companion:Lcom/iMe/storage/domain/model/Result$Companion;
 
     const/4 p3, 0x0
@@ -887,7 +887,7 @@
 
     move-result-object p1
 
-    .line 100
+    .line 99
     iget-object p2, p0, Lcom/iMe/i_staking/StakingInteractor;->schedulersProvider:Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
     invoke-interface {p2}, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;->io()Lio/reactivex/Scheduler;

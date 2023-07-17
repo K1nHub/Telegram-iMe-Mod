@@ -1,52 +1,35 @@
 package com.iMe.storage.domain.model.crypto;
 
+import java.util.List;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: AccountInfo.kt */
 /* loaded from: classes3.dex */
 public final class AccountInfo {
-    private final Address bitcoinAddress;
-    private final Address ethAddress;
-    private final Address tonAddress;
-    private final Address tronAddress;
+    private final boolean hasAccess;
+    private final List<Address> wallets;
 
-    public static /* synthetic */ AccountInfo copy$default(AccountInfo accountInfo, Address address, Address address2, Address address3, Address address4, int i, Object obj) {
+    /* JADX WARN: Multi-variable type inference failed */
+    public static /* synthetic */ AccountInfo copy$default(AccountInfo accountInfo, List list, boolean z, int i, Object obj) {
         if ((i & 1) != 0) {
-            address = accountInfo.ethAddress;
+            list = accountInfo.wallets;
         }
         if ((i & 2) != 0) {
-            address2 = accountInfo.tonAddress;
+            z = accountInfo.hasAccess;
         }
-        if ((i & 4) != 0) {
-            address3 = accountInfo.tronAddress;
-        }
-        if ((i & 8) != 0) {
-            address4 = accountInfo.bitcoinAddress;
-        }
-        return accountInfo.copy(address, address2, address3, address4);
+        return accountInfo.copy(list, z);
     }
 
-    public final Address component1() {
-        return this.ethAddress;
+    public final List<Address> component1() {
+        return this.wallets;
     }
 
-    public final Address component2() {
-        return this.tonAddress;
+    public final boolean component2() {
+        return this.hasAccess;
     }
 
-    public final Address component3() {
-        return this.tronAddress;
-    }
-
-    public final Address component4() {
-        return this.bitcoinAddress;
-    }
-
-    public final AccountInfo copy(Address ethAddress, Address tonAddress, Address tronAddress, Address bitcoinAddress) {
-        Intrinsics.checkNotNullParameter(ethAddress, "ethAddress");
-        Intrinsics.checkNotNullParameter(tonAddress, "tonAddress");
-        Intrinsics.checkNotNullParameter(tronAddress, "tronAddress");
-        Intrinsics.checkNotNullParameter(bitcoinAddress, "bitcoinAddress");
-        return new AccountInfo(ethAddress, tonAddress, tronAddress, bitcoinAddress);
+    public final AccountInfo copy(List<Address> wallets, boolean z) {
+        Intrinsics.checkNotNullParameter(wallets, "wallets");
+        return new AccountInfo(wallets, z);
     }
 
     public boolean equals(Object obj) {
@@ -55,54 +38,48 @@ public final class AccountInfo {
         }
         if (obj instanceof AccountInfo) {
             AccountInfo accountInfo = (AccountInfo) obj;
-            return Intrinsics.areEqual(this.ethAddress, accountInfo.ethAddress) && Intrinsics.areEqual(this.tonAddress, accountInfo.tonAddress) && Intrinsics.areEqual(this.tronAddress, accountInfo.tronAddress) && Intrinsics.areEqual(this.bitcoinAddress, accountInfo.bitcoinAddress);
+            return Intrinsics.areEqual(this.wallets, accountInfo.wallets) && this.hasAccess == accountInfo.hasAccess;
         }
         return false;
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
     public int hashCode() {
-        return (((((this.ethAddress.hashCode() * 31) + this.tonAddress.hashCode()) * 31) + this.tronAddress.hashCode()) * 31) + this.bitcoinAddress.hashCode();
+        int hashCode = this.wallets.hashCode() * 31;
+        boolean z = this.hasAccess;
+        int i = z;
+        if (z != 0) {
+            i = 1;
+        }
+        return hashCode + i;
     }
 
     public String toString() {
-        return "AccountInfo(ethAddress=" + this.ethAddress + ", tonAddress=" + this.tonAddress + ", tronAddress=" + this.tronAddress + ", bitcoinAddress=" + this.bitcoinAddress + ')';
+        return "AccountInfo(wallets=" + this.wallets + ", hasAccess=" + this.hasAccess + ')';
     }
 
-    public AccountInfo(Address ethAddress, Address tonAddress, Address tronAddress, Address bitcoinAddress) {
-        Intrinsics.checkNotNullParameter(ethAddress, "ethAddress");
-        Intrinsics.checkNotNullParameter(tonAddress, "tonAddress");
-        Intrinsics.checkNotNullParameter(tronAddress, "tronAddress");
-        Intrinsics.checkNotNullParameter(bitcoinAddress, "bitcoinAddress");
-        this.ethAddress = ethAddress;
-        this.tonAddress = tonAddress;
-        this.tronAddress = tronAddress;
-        this.bitcoinAddress = bitcoinAddress;
+    public AccountInfo(List<Address> wallets, boolean z) {
+        Intrinsics.checkNotNullParameter(wallets, "wallets");
+        this.wallets = wallets;
+        this.hasAccess = z;
     }
 
-    public final Address getEthAddress() {
-        return this.ethAddress;
+    public final List<Address> getWallets() {
+        return this.wallets;
     }
 
-    public final Address getTonAddress() {
-        return this.tonAddress;
-    }
-
-    public final Address getTronAddress() {
-        return this.tronAddress;
-    }
-
-    public final Address getBitcoinAddress() {
-        return this.bitcoinAddress;
+    public final boolean getHasAccess() {
+        return this.hasAccess;
     }
 
     /* compiled from: AccountInfo.kt */
     /* loaded from: classes3.dex */
     public static final class Address {
         private final String addressValue;
-        private final boolean hasAccess;
+        private final BlockchainType blockchainType;
         private final boolean isAddressSet;
 
-        public static /* synthetic */ Address copy$default(Address address, String str, boolean z, boolean z2, int i, Object obj) {
+        public static /* synthetic */ Address copy$default(Address address, String str, boolean z, BlockchainType blockchainType, int i, Object obj) {
             if ((i & 1) != 0) {
                 str = address.addressValue;
             }
@@ -110,9 +87,9 @@ public final class AccountInfo {
                 z = address.isAddressSet;
             }
             if ((i & 4) != 0) {
-                z2 = address.hasAccess;
+                blockchainType = address.blockchainType;
             }
-            return address.copy(str, z, z2);
+            return address.copy(str, z, blockchainType);
         }
 
         public final String component1() {
@@ -123,13 +100,14 @@ public final class AccountInfo {
             return this.isAddressSet;
         }
 
-        public final boolean component3() {
-            return this.hasAccess;
+        public final BlockchainType component3() {
+            return this.blockchainType;
         }
 
-        public final Address copy(String addressValue, boolean z, boolean z2) {
+        public final Address copy(String addressValue, boolean z, BlockchainType blockchainType) {
             Intrinsics.checkNotNullParameter(addressValue, "addressValue");
-            return new Address(addressValue, z, z2);
+            Intrinsics.checkNotNullParameter(blockchainType, "blockchainType");
+            return new Address(addressValue, z, blockchainType);
         }
 
         public boolean equals(Object obj) {
@@ -138,7 +116,7 @@ public final class AccountInfo {
             }
             if (obj instanceof Address) {
                 Address address = (Address) obj;
-                return Intrinsics.areEqual(this.addressValue, address.addressValue) && this.isAddressSet == address.isAddressSet && this.hasAccess == address.hasAccess;
+                return Intrinsics.areEqual(this.addressValue, address.addressValue) && this.isAddressSet == address.isAddressSet && this.blockchainType == address.blockchainType;
             }
             return false;
         }
@@ -151,20 +129,19 @@ public final class AccountInfo {
             if (z != 0) {
                 i = 1;
             }
-            int i2 = (hashCode + i) * 31;
-            boolean z2 = this.hasAccess;
-            return i2 + (z2 ? 1 : z2 ? 1 : 0);
+            return ((hashCode + i) * 31) + this.blockchainType.hashCode();
         }
 
         public String toString() {
-            return "Address(addressValue=" + this.addressValue + ", isAddressSet=" + this.isAddressSet + ", hasAccess=" + this.hasAccess + ')';
+            return "Address(addressValue=" + this.addressValue + ", isAddressSet=" + this.isAddressSet + ", blockchainType=" + this.blockchainType + ')';
         }
 
-        public Address(String addressValue, boolean z, boolean z2) {
+        public Address(String addressValue, boolean z, BlockchainType blockchainType) {
             Intrinsics.checkNotNullParameter(addressValue, "addressValue");
+            Intrinsics.checkNotNullParameter(blockchainType, "blockchainType");
             this.addressValue = addressValue;
             this.isAddressSet = z;
-            this.hasAccess = z2;
+            this.blockchainType = blockchainType;
         }
 
         public final String getAddressValue() {
@@ -175,8 +152,8 @@ public final class AccountInfo {
             return this.isAddressSet;
         }
 
-        public final boolean getHasAccess() {
-            return this.hasAccess;
+        public final BlockchainType getBlockchainType() {
+            return this.blockchainType;
         }
     }
 }

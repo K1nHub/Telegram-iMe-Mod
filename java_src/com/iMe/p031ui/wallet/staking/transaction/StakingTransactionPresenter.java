@@ -1,36 +1,36 @@
 package com.iMe.p031ui.wallet.staking.transaction;
 
-import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.iMe.fork.utils.Callbacks$Callback;
 import com.iMe.i_staking.StakingInteractor;
+import com.iMe.mapper.wallet.TokenUiMappingKt;
 import com.iMe.model.dialog.DialogModel;
 import com.iMe.model.staking.StakingAnnualPercentageData;
 import com.iMe.model.staking.StakingDetailsItem;
 import com.iMe.model.staking.StakingTransactionStep;
+import com.iMe.model.wallet.crypto.TokenItem;
 import com.iMe.navigation.wallet.coordinator.args.TokenBuyCoordinatorArgs;
 import com.iMe.p031ui.base.mvp.base.BasePresenter;
 import com.iMe.p031ui.base.mvp.base.BaseView;
 import com.iMe.p031ui.custom.FeeView;
-import com.iMe.storage.common.AppConfiguration$Crypto;
 import com.iMe.storage.data.utils.extentions.NumberExtKt;
 import com.iMe.storage.domain.interactor.wallet.WalletInteractor;
 import com.iMe.storage.domain.model.Result;
-import com.iMe.storage.domain.model.crypto.NetworkType;
 import com.iMe.storage.domain.model.staking.StakingApprovalTokenType;
 import com.iMe.storage.domain.model.staking.StakingOperation;
 import com.iMe.storage.domain.model.staking.StakingTransactionAction;
 import com.iMe.storage.domain.model.staking.StakingTransactionArgs;
+import com.iMe.storage.domain.model.wallet.swap.SwapProtocol;
+import com.iMe.storage.domain.model.wallet.token.Token;
 import com.iMe.storage.domain.model.wallet.token.TokenBalance;
-import com.iMe.storage.domain.model.wallet.token.TokenCode;
-import com.iMe.storage.domain.model.wallet.token.TokenInfo;
+import com.iMe.storage.domain.model.wallet.token.TokenDetailed;
+import com.iMe.storage.domain.utils.extentions.TokenExtKt;
 import com.iMe.storage.domain.utils.p030rx.RxEventBus;
 import com.iMe.storage.domain.utils.p030rx.SchedulersProvider;
 import com.iMe.storage.domain.utils.system.ResourceManager;
 import com.iMe.utils.extentions.model.wallet.TokenBalanceExtKt;
-import com.iMe.utils.extentions.p033rx.RxExtKt;
-import com.iMe.utils.extentions.p033rx.RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
+import com.iMe.utils.extentions.p032rx.RxExtKt;
+import com.iMe.utils.extentions.p032rx.RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
 import com.iMe.utils.formatter.BalanceFormatter;
-import com.iMe.utils.helper.wallet.SwapHelper;
 import io.reactivex.Observable;
 import io.reactivex.ObservableSource;
 import io.reactivex.disposables.Disposable;
@@ -46,9 +46,9 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import moxy.InjectViewState;
-import org.telegram.messenger.C3295R;
+import org.telegram.messenger.C3417R;
 import org.telegram.messenger.LocaleController;
-import org.telegram.p044ui.ManageLinksActivity;
+import org.telegram.p043ui.ManageLinksActivity;
 import timber.log.Timber;
 /* compiled from: StakingTransactionPresenter.kt */
 @InjectViewState
@@ -71,9 +71,8 @@ public final class StakingTransactionPresenter extends BasePresenter<StakingTran
     private final StakingDetailsItem stakingDetails;
     private final StakingInteractor stakingInteractor;
     private StakingTransactionAction stakingTransactionAction;
+    private final TokenDetailed token;
     private TokenBalance tokenBalance;
-    private final TokenCode tokenCode;
-    private final TokenInfo tokenInfo;
     private Disposable tokensApprovalStatusUpdateDisposable;
     private final WalletInteractor walletInteractor;
     private String wrappedAction;
@@ -87,6 +86,9 @@ public final class StakingTransactionPresenter extends BasePresenter<StakingTran
         Lazy lazy;
         BigDecimal ZERO;
         BigDecimal stripTrailingZeros;
+        TokenItem feeTokenItem;
+        TokenDetailed mapToDomain;
+        TokenItem tokenItem;
         Intrinsics.checkNotNullParameter(resourceManager, "resourceManager");
         Intrinsics.checkNotNullParameter(rxEventBus, "rxEventBus");
         Intrinsics.checkNotNullParameter(schedulersProvider, "schedulersProvider");
@@ -99,14 +101,9 @@ public final class StakingTransactionPresenter extends BasePresenter<StakingTran
         this.schedulersProvider = schedulersProvider;
         this.stakingInteractor = stakingInteractor;
         this.walletInteractor = walletInteractor;
-        TokenCode.Companion companion = TokenCode.Companion;
         String str = null;
-        String tokenTicker = stakingDetailsItem != null ? stakingDetailsItem.getTokenTicker() : null;
-        TokenCode map = companion.map(tokenTicker == null ? "" : tokenTicker);
-        this.tokenCode = map;
-        TokenInfo.Companion companion2 = TokenInfo.Companion;
-        TokenInfo map2 = companion2.map(map);
-        this.tokenInfo = map2;
+        TokenDetailed mapToDomain2 = (stakingDetailsItem == null || (tokenItem = stakingDetailsItem.getTokenItem()) == null) ? null : TokenUiMappingKt.mapToDomain(tokenItem);
+        this.token = mapToDomain2;
         if (stakingDetailsItem != null) {
             String formattedAPR = stakingDetailsItem.getFormattedAPR();
             String formattedAPY = stakingDetailsItem.getFormattedAPY();
@@ -119,11 +116,9 @@ public final class StakingTransactionPresenter extends BasePresenter<StakingTran
         this.stakingAnnualPercentageData = stakingAnnualPercentageData;
         this.isSafeWithdrawalVisible = stakingDetailsItem != null && stakingDetailsItem.getCanWithdrawSafely() && stakingDetailsItem.getCanWithdrawImmediately();
         this.isSafeWithdrawalSelected = stakingDetailsItem != null ? stakingDetailsItem.getCanWithdrawSafely() : false;
-        TokenBalance.Companion companion3 = TokenBalance.Companion;
-        this.tokenBalance = companion3.createEmptyBalanceFor(map2);
+        this.tokenBalance = mapToDomain2 != null ? TokenBalance.Companion.createEmptyBalanceFor(mapToDomain2) : null;
         this.currentStep = StakingTransactionStep.Loading.INSTANCE;
-        String feeTokenTicker = stakingDetailsItem != null ? stakingDetailsItem.getFeeTokenTicker() : null;
-        this.feeTokenBalance = companion3.createEmptyBalanceFor(companion2.map(feeTokenTicker == null ? "" : feeTokenTicker));
+        this.feeTokenBalance = (stakingDetailsItem == null || (feeTokenItem = stakingDetailsItem.getFeeTokenItem()) == null || (mapToDomain = TokenUiMappingKt.mapToDomain(feeTokenItem)) == null) ? null : TokenBalance.Companion.createEmptyBalanceFor(mapToDomain);
         lazy = LazyKt__LazyJVMKt.lazy(new StakingTransactionPresenter$safeWithdrawalReceiveTimeText$2(this));
         this.safeWithdrawalReceiveTimeText$delegate = lazy;
         if (d != null) {
@@ -144,12 +139,8 @@ public final class StakingTransactionPresenter extends BasePresenter<StakingTran
         this.tokensApprovalStatusUpdateDisposable = disposed;
     }
 
-    public final TokenCode getTokenCode() {
-        return this.tokenCode;
-    }
-
-    public final TokenInfo getTokenInfo() {
-        return this.tokenInfo;
+    public final TokenDetailed getToken() {
+        return this.token;
     }
 
     public final StakingAnnualPercentageData getStakingAnnualPercentageData() {
@@ -160,12 +151,14 @@ public final class StakingTransactionPresenter extends BasePresenter<StakingTran
         return this.isSafeWithdrawalVisible;
     }
 
-    public final boolean isSafeWithdrawalSelected() {
-        return this.isSafeWithdrawalSelected;
+    public final String getTokenBalanceShortText() {
+        TokenBalance tokenBalance = this.tokenBalance;
+        String totalBalanceShortText = tokenBalance != null ? TokenBalanceExtKt.getTotalBalanceShortText(tokenBalance) : null;
+        return totalBalanceShortText == null ? "" : totalBalanceShortText;
     }
 
-    public final TokenBalance getTokenBalance() {
-        return this.tokenBalance;
+    public final boolean isSafeWithdrawalSelected() {
+        return this.isSafeWithdrawalSelected;
     }
 
     public final StakingTransactionStep getCurrentStep() {
@@ -185,9 +178,9 @@ public final class StakingTransactionPresenter extends BasePresenter<StakingTran
     }
 
     public final String getStakingContractUrl() {
-        String formatScanAddressUrl;
         StakingDetailsItem stakingDetailsItem = this.stakingDetails;
-        return (stakingDetailsItem == null || (formatScanAddressUrl = AppConfiguration$Crypto.INSTANCE.formatScanAddressUrl(stakingDetailsItem.getNetworkType(), stakingDetailsItem.getContract())) == null) ? "" : formatScanAddressUrl;
+        String contractUrl = stakingDetailsItem != null ? stakingDetailsItem.getContractUrl() : null;
+        return contractUrl == null ? "" : contractUrl;
     }
 
     public final float getCompoundThresholdProgress() {
@@ -205,6 +198,7 @@ public final class StakingTransactionPresenter extends BasePresenter<StakingTran
 
     public final String getWithdrawalFeeText() {
         double immediateWithdrawalFeePercentage;
+        TokenBalance copy;
         StakingDetailsItem stakingDetailsItem = this.stakingDetails;
         String str = null;
         if (stakingDetailsItem != null) {
@@ -214,22 +208,34 @@ public final class StakingTransactionPresenter extends BasePresenter<StakingTran
                 immediateWithdrawalFeePercentage = stakingDetailsItem.getImmediateWithdrawalFeePercentage();
             }
             ResourceManager resourceManager = this.resourceManager;
-            int i = C3295R.string.staking_withdraw_fee_value;
+            int i = C3417R.string.staking_withdraw_fee_value;
+            Object[] objArr = new Object[2];
+            objArr[0] = BalanceFormatter.formatPercents$default(BalanceFormatter.INSTANCE, Double.valueOf(immediateWithdrawalFeePercentage), 0, 2, null);
             TokenBalance tokenBalance = this.feeTokenBalance;
-            BigDecimal multiply = this.currentAmount.multiply(new BigDecimal(String.valueOf(immediateWithdrawalFeePercentage / 100)));
-            Intrinsics.checkNotNullExpressionValue(multiply, "this.multiply(other)");
-            str = resourceManager.getString(i, BalanceFormatter.formatPercents$default(BalanceFormatter.INSTANCE, Double.valueOf(immediateWithdrawalFeePercentage), 0, 2, null), TokenBalanceExtKt.getTotalBalanceShortText(TokenBalance.copy$default(tokenBalance, null, multiply.doubleValue(), BitmapDescriptorFactory.HUE_RED, null, null, null, 61, null), this.resourceManager));
+            if (tokenBalance != null) {
+                BigDecimal multiply = this.currentAmount.multiply(new BigDecimal(String.valueOf(immediateWithdrawalFeePercentage / 100)));
+                Intrinsics.checkNotNullExpressionValue(multiply, "this.multiply(other)");
+                copy = tokenBalance.copy((r16 & 1) != 0 ? tokenBalance.total : multiply.doubleValue(), (r16 & 2) != 0 ? tokenBalance.totalInFiat : null, (r16 & 4) != 0 ? tokenBalance.rateToFiat : null, (r16 & 8) != 0 ? tokenBalance.ratePercentageChange24h : 0.0d, (r16 & 16) != 0 ? tokenBalance.token : null);
+                if (copy != null) {
+                    str = TokenBalanceExtKt.getTotalBalanceShortText(copy);
+                }
+            }
+            if (str == null) {
+                str = "";
+            }
+            objArr[1] = str;
+            str = resourceManager.getString(i, objArr);
         }
         return str == null ? "" : str;
     }
 
     public final String getWithdrawalTimeText() {
-        return this.isSafeWithdrawalSelected ? getSafeWithdrawalReceiveTimeText() : this.resourceManager.getString(C3295R.string.staking_withdraw_time_immediate);
+        return this.isSafeWithdrawalSelected ? getSafeWithdrawalReceiveTimeText() : this.resourceManager.getString(C3417R.string.staking_withdraw_time_immediate);
     }
 
     public final String getWithdrawalHelpAlertText() {
         ResourceManager resourceManager = this.resourceManager;
-        int i = C3295R.string.staking_withdraw_help_alert;
+        int i = C3417R.string.staking_withdraw_help_alert;
         Object[] objArr = new Object[3];
         objArr[0] = getWithdrawalTimeText();
         BalanceFormatter balanceFormatter = BalanceFormatter.INSTANCE;
@@ -242,7 +248,7 @@ public final class StakingTransactionPresenter extends BasePresenter<StakingTran
 
     public final String getSafeWithdrawalHelpAlertText() {
         ResourceManager resourceManager = this.resourceManager;
-        int i = C3295R.string.staking_withdraw_safe_withdrawal_help_alert_description;
+        int i = C3417R.string.staking_withdraw_safe_withdrawal_help_alert_description;
         Object[] objArr = new Object[2];
         objArr[0] = getWithdrawalTimeText();
         BalanceFormatter balanceFormatter = BalanceFormatter.INSTANCE;
@@ -269,7 +275,7 @@ public final class StakingTransactionPresenter extends BasePresenter<StakingTran
         } else if (Intrinsics.areEqual(stakingTransactionStep, new StakingTransactionStep.Execute(this.screenType))) {
             confirmExecution();
         } else if (Intrinsics.areEqual(stakingTransactionStep, StakingTransactionStep.Loading.INSTANCE)) {
-            ((StakingTransactionView) getViewState()).showToast(this.resourceManager.getString(C3295R.string.staking_action_loading_wait));
+            ((StakingTransactionView) getViewState()).showToast(this.resourceManager.getString(C3417R.string.staking_action_loading_wait));
         } else if (Intrinsics.areEqual(stakingTransactionStep, StakingTransactionStep.RetryLoading.INSTANCE)) {
             loadInitialData();
         }
@@ -285,7 +291,8 @@ public final class StakingTransactionPresenter extends BasePresenter<StakingTran
     }
 
     public final void setMaxAmount() {
-        String it = new BigDecimal(String.valueOf(this.tokenBalance.getTotal())).toPlainString();
+        TokenBalance tokenBalance = this.tokenBalance;
+        String it = new BigDecimal(String.valueOf(NumberExtKt.orZero(tokenBalance != null ? Double.valueOf(tokenBalance.getTotal()) : null))).toPlainString();
         Intrinsics.checkNotNullExpressionValue(it, "it");
         onAmountChanged(it);
         this.forcedAmountText = it;
@@ -322,7 +329,7 @@ public final class StakingTransactionPresenter extends BasePresenter<StakingTran
     }
 
     public final DialogModel getApproveTokenDescriptionModel() {
-        return new DialogModel(this.resourceManager.getString(C3295R.string.wallet_swap_process_what_is_approve), this.resourceManager.getString(C3295R.string.wallet_swap_process_what_is_approve_dialog_description), null, this.resourceManager.getString(C3295R.string.common_ok), 4, null);
+        return new DialogModel(this.resourceManager.getString(C3417R.string.wallet_swap_process_what_is_approve), this.resourceManager.getString(C3417R.string.wallet_swap_process_what_is_approve_dialog_description), null, this.resourceManager.getString(C3417R.string.common_ok), 4, null);
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -364,20 +371,20 @@ public final class StakingTransactionPresenter extends BasePresenter<StakingTran
         Observable observeOn = interval.flatMap(new Function() { // from class: com.iMe.ui.wallet.staking.transaction.StakingTransactionPresenter$$ExternalSyntheticLambda2
             @Override // io.reactivex.functions.Function
             public final Object apply(Object obj) {
-                ObservableSource checkTokensApproval$lambda$9;
-                checkTokensApproval$lambda$9 = StakingTransactionPresenter.checkTokensApproval$lambda$9(Function1.this, obj);
-                return checkTokensApproval$lambda$9;
+                ObservableSource checkTokensApproval$lambda$10;
+                checkTokensApproval$lambda$10 = StakingTransactionPresenter.checkTokensApproval$lambda$10(Function1.this, obj);
+                return checkTokensApproval$lambda$10;
             }
         }).observeOn(this.schedulersProvider.mo698ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "private fun checkTokensA…y { autoDispose() }\n    }");
-        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2356x3cd58b65(z, this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2357x3cd58b66((BaseView) getViewState())));
-        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
+        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2402x3cd58b65(z, this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2403x3cd58b66((BaseView) getViewState())));
+        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…Error.invoke()\n        })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
         this.tokensApprovalStatusUpdateDisposable = subscribe;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final ObservableSource checkTokensApproval$lambda$9(Function1 tmp0, Object obj) {
+    public static final ObservableSource checkTokensApproval$lambda$10(Function1 tmp0, Object obj) {
         Intrinsics.checkNotNullParameter(tmp0, "$tmp0");
         return (ObservableSource) tmp0.invoke(obj);
     }
@@ -391,8 +398,8 @@ public final class StakingTransactionPresenter extends BasePresenter<StakingTran
         }
         Observable<Result<Pair<String, StakingTransactionAction>>> observeOn = this.stakingInteractor.sendApprovalPrepare(stakingDetailsItem.getId(), stakingApprovalTokenType).observeOn(this.schedulersProvider.mo698ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "stakingInteractor\n      …(schedulersProvider.ui())");
-        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2366xfabfc97b(this, stakingApprovalTokenType, stakingDetailsItem)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2367xfabfc97c((BaseView) getViewState())));
-        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
+        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2412xfabfc97b(this, stakingApprovalTokenType, stakingDetailsItem)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2413xfabfc97c((BaseView) getViewState())));
+        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…Error.invoke()\n        })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
 
@@ -418,21 +425,27 @@ public final class StakingTransactionPresenter extends BasePresenter<StakingTran
         Intrinsics.checkNotNullExpressionValue(observeOn, "stakingInteractor\n      …(schedulersProvider.ui())");
         T viewState = getViewState();
         Intrinsics.checkNotNullExpressionValue(viewState, "viewState");
-        Disposable subscribe = RxExtKt.withLoadingDialog$default((Observable) observeOn, (BaseView) viewState, false, 2, (Object) null).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2360x63b00ecd(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2361x63b00ece((BaseView) getViewState())));
-        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
+        Disposable subscribe = RxExtKt.withLoadingDialog$default((Observable) observeOn, (BaseView) viewState, false, 2, (Object) null).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2406x63b00ecd(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2407x63b00ece((BaseView) getViewState())));
+        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…Error.invoke()\n        })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
 
     private final void validatePrepareAmount() {
         if (NumberExtKt.isZero(this.currentAmount)) {
-            ((StakingTransactionView) getViewState()).showToast(this.resourceManager.getString(this.screenType == ManageLinksActivity.STAKING_PROFIT_SCREEN_TYPE ? C3295R.string.staking_profit_no_tokens_to_claim : C3295R.string.wallet_amount_validation_zero_amount_error));
-        } else if (new BigDecimal(String.valueOf(this.tokenBalance.getTotal())).compareTo(this.currentAmount) >= 0) {
-            prepareAction();
-        } else if (this.screenType == ManageLinksActivity.STAKING_REPLENISH_SCREEN_TYPE) {
-            runNoEnoughMoneyFlow();
-        } else {
-            ((StakingTransactionView) getViewState()).showToast(this.resourceManager.getString(C3295R.string.staking_not_enough_money));
+            ((StakingTransactionView) getViewState()).showToast(this.resourceManager.getString(this.screenType == ManageLinksActivity.STAKING_PROFIT_SCREEN_TYPE ? C3417R.string.staking_profit_no_tokens_to_claim : C3417R.string.wallet_amount_validation_zero_amount_error));
+            return;
         }
+        TokenBalance tokenBalance = this.tokenBalance;
+        if (NumberExtKt.orZero(tokenBalance != null ? new BigDecimal(String.valueOf(tokenBalance.getTotal())) : null).compareTo(this.currentAmount) < 0) {
+            if (this.screenType == ManageLinksActivity.STAKING_REPLENISH_SCREEN_TYPE) {
+                runNoEnoughMoneyFlow();
+                return;
+            } else {
+                ((StakingTransactionView) getViewState()).showToast(this.resourceManager.getString(C3417R.string.staking_not_enough_money));
+                return;
+            }
+        }
+        prepareAction();
     }
 
     private final void prepareAction() {
@@ -444,8 +457,8 @@ public final class StakingTransactionPresenter extends BasePresenter<StakingTran
         Intrinsics.checkNotNullExpressionValue(observeOn, "getPrepareActionObservab…(schedulersProvider.ui())");
         T viewState = getViewState();
         Intrinsics.checkNotNullExpressionValue(viewState, "viewState");
-        Disposable subscribe = RxExtKt.withLoadingDialog$default((Observable) observeOn, (BaseView) viewState, false, 2, (Object) null).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2364x101cb61d(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2365x101cb61e((BaseView) getViewState())));
-        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
+        Disposable subscribe = RxExtKt.withLoadingDialog$default((Observable) observeOn, (BaseView) viewState, false, 2, (Object) null).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2410x101cb61d(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2411x101cb61e((BaseView) getViewState())));
+        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…Error.invoke()\n        })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
 
@@ -477,8 +490,8 @@ public final class StakingTransactionPresenter extends BasePresenter<StakingTran
         Intrinsics.checkNotNullExpressionValue(observeOn, "getExecuteActionObservab…(schedulersProvider.ui())");
         T viewState = getViewState();
         Intrinsics.checkNotNullExpressionValue(viewState, "viewState");
-        Disposable subscribe = RxExtKt.withLoadingDialog$default((Observable) observeOn, (BaseView) viewState, false, 2, (Object) null).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2358x8ae7e90b(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2359x8ae7e90c((BaseView) getViewState())));
-        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
+        Disposable subscribe = RxExtKt.withLoadingDialog$default((Observable) observeOn, (BaseView) viewState, false, 2, (Object) null).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2404x8ae7e90b(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2405x8ae7e90c((BaseView) getViewState())));
+        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…Error.invoke()\n        })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
 
@@ -514,38 +527,41 @@ public final class StakingTransactionPresenter extends BasePresenter<StakingTran
 
     /* JADX INFO: Access modifiers changed from: private */
     public final void runNoEnoughMoneyFlow() {
-        NetworkType networkType;
-        StakingDetailsItem stakingDetailsItem = this.stakingDetails;
-        if (stakingDetailsItem == null || (networkType = stakingDetailsItem.getNetworkType()) == null) {
+        String networkId;
+        TokenDetailed tokenDetailed = this.token;
+        if (tokenDetailed == null || (networkId = tokenDetailed.getNetworkId()) == null) {
             return;
         }
-        ((StakingTransactionView) getViewState()).showNoEnoughMoneyErrorDialog(new TokenBuyCoordinatorArgs(this.tokenCode, SwapHelper.INSTANCE.resolveSwapProtocolByNetwork(networkType), networkType));
+        ((StakingTransactionView) getViewState()).showNoEnoughMoneyErrorDialog(new TokenBuyCoordinatorArgs(this.token, SwapProtocol.Companion.resolveByNetworkId(networkId), networkId));
     }
 
     private final void updateAvailableBalance(StakingDetailsItem stakingDetailsItem) {
         int i = this.screenType;
         if (i == ManageLinksActivity.STAKING_REPLENISH_SCREEN_TYPE) {
             loadBalance();
-        } else if (i == ManageLinksActivity.STAKING_PROFIT_SCREEN_TYPE) {
-            this.tokenBalance = TokenBalance.copy$default(this.tokenBalance, null, stakingDetailsItem.getAvailableForClaim(), BitmapDescriptorFactory.HUE_RED, null, null, null, 61, null);
+            return;
+        }
+        if (i == ManageLinksActivity.STAKING_PROFIT_SCREEN_TYPE) {
+            TokenBalance tokenBalance = this.tokenBalance;
+            this.tokenBalance = tokenBalance != null ? tokenBalance.copy((r16 & 1) != 0 ? tokenBalance.total : stakingDetailsItem.getAvailableForClaim(), (r16 & 2) != 0 ? tokenBalance.totalInFiat : null, (r16 & 4) != 0 ? tokenBalance.rateToFiat : null, (r16 & 8) != 0 ? tokenBalance.ratePercentageChange24h : 0.0d, (r16 & 16) != 0 ? tokenBalance.token : null) : null;
             setMaxAmount();
         } else if (i == ManageLinksActivity.STAKING_WITHDRAW_SCREEN_TYPE) {
-            this.tokenBalance = TokenBalance.copy$default(this.tokenBalance, null, stakingDetailsItem.getDebt().doubleValue(), BitmapDescriptorFactory.HUE_RED, null, null, null, 61, null);
+            TokenBalance tokenBalance2 = this.tokenBalance;
+            this.tokenBalance = tokenBalance2 != null ? tokenBalance2.copy((r16 & 1) != 0 ? tokenBalance2.total : stakingDetailsItem.getDebt().doubleValue(), (r16 & 2) != 0 ? tokenBalance2.totalInFiat : null, (r16 & 4) != 0 ? tokenBalance2.rateToFiat : null, (r16 & 8) != 0 ? tokenBalance2.ratePercentageChange24h : 0.0d, (r16 & 16) != 0 ? tokenBalance2.token : null) : null;
         }
     }
 
     private final void loadBalance() {
-        NetworkType networkType;
+        Token indexedToken;
         WalletInteractor walletInteractor = this.walletInteractor;
-        TokenCode tokenCode = this.tokenCode;
-        StakingDetailsItem stakingDetailsItem = this.stakingDetails;
-        if (stakingDetailsItem == null || (networkType = stakingDetailsItem.getNetworkType()) == null) {
+        TokenDetailed tokenDetailed = this.token;
+        if (tokenDetailed == null || (indexedToken = TokenExtKt.toIndexedToken(tokenDetailed)) == null) {
             return;
         }
-        Observable observeOn = WalletInteractor.getTokenBalance$default(walletInteractor, tokenCode, false, networkType, 2, null).observeOn(this.schedulersProvider.mo698ui());
+        Observable observeOn = WalletInteractor.getTokenBalance$default(walletInteractor, indexedToken, false, this.token.getNetworkId(), 2, null).observeOn(this.schedulersProvider.mo698ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "walletInteractor\n       …(schedulersProvider.ui())");
-        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2362xfeb72cd6(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2363xfeb72cd7((BaseView) getViewState())));
-        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
+        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2408xfeb72cd6(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2409xfeb72cd7((BaseView) getViewState())));
+        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…Error.invoke()\n        })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
 
@@ -565,25 +581,25 @@ public final class StakingTransactionPresenter extends BasePresenter<StakingTran
     }
 
     private final DialogModel getApproveConfirmationDialogModel(String str) {
-        return new DialogModel(this.resourceManager.getString(C3295R.string.wallet_swap_process_confirm_approve_alert_title), this.resourceManager.getString(C3295R.string.wallet_swap_process_confirm_approve_alert_description, str), this.resourceManager.getString(C3295R.string.common_cancel), this.resourceManager.getString(C3295R.string.wallet_swap_process_confirm_approve_alert_action));
+        return new DialogModel(this.resourceManager.getString(C3417R.string.wallet_swap_process_confirm_approve_alert_title), this.resourceManager.getString(C3417R.string.wallet_swap_process_confirm_approve_alert_description, str), this.resourceManager.getString(C3417R.string.common_cancel), this.resourceManager.getString(C3417R.string.wallet_swap_process_confirm_approve_alert_action));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public final DialogModel getFeeDialogModel() {
-        return new DialogModel(this.resourceManager.getString(C3295R.string.wallet_amount_send_fee_dialog_title), null, null, this.resourceManager.getString(C3295R.string.common_cancel), 6, null);
+        return new DialogModel(this.resourceManager.getString(C3417R.string.wallet_amount_send_fee_dialog_title), null, null, this.resourceManager.getString(C3417R.string.common_cancel), 6, null);
     }
 
     private final DialogModel getSendConfirmationDialogModel() {
         int i;
         String confirmTitle = getConfirmTitle();
         String confirmMessage = getConfirmMessage();
-        String string = this.resourceManager.getString(C3295R.string.common_cancel);
+        String string = this.resourceManager.getString(C3417R.string.common_cancel);
         ResourceManager resourceManager = this.resourceManager;
         int i2 = this.screenType;
         if (i2 == ManageLinksActivity.STAKING_REPLENISH_SCREEN_TYPE) {
-            i = C3295R.string.wallet_operation_deposit;
+            i = C3417R.string.wallet_operation_deposit;
         } else {
-            i = i2 == ManageLinksActivity.STAKING_PROFIT_SCREEN_TYPE ? C3295R.string.staking_profit_claim : C3295R.string.staking_details_withdraw;
+            i = i2 == ManageLinksActivity.STAKING_PROFIT_SCREEN_TYPE ? C3417R.string.staking_profit_claim : C3417R.string.staking_details_withdraw;
         }
         return new DialogModel(confirmTitle, confirmMessage, string, resourceManager.getString(i));
     }
@@ -593,9 +609,9 @@ public final class StakingTransactionPresenter extends BasePresenter<StakingTran
         ResourceManager resourceManager = this.resourceManager;
         int i2 = this.screenType;
         if (i2 == ManageLinksActivity.STAKING_REPLENISH_SCREEN_TYPE) {
-            i = C3295R.string.staking_replenishment_confirm_title;
+            i = C3417R.string.staking_replenishment_confirm_title;
         } else {
-            i = i2 == ManageLinksActivity.STAKING_PROFIT_SCREEN_TYPE ? C3295R.string.staking_profit_confirm_title : C3295R.string.staking_withdraw_confirm_title;
+            i = i2 == ManageLinksActivity.STAKING_PROFIT_SCREEN_TYPE ? C3417R.string.staking_profit_confirm_title : C3417R.string.staking_withdraw_confirm_title;
         }
         return resourceManager.getString(i);
     }
@@ -605,11 +621,21 @@ public final class StakingTransactionPresenter extends BasePresenter<StakingTran
         ResourceManager resourceManager = this.resourceManager;
         int i2 = this.screenType;
         if (i2 == ManageLinksActivity.STAKING_REPLENISH_SCREEN_TYPE) {
-            i = C3295R.string.staking_replenishment_confirm_description;
+            i = C3417R.string.staking_replenishment_confirm_description;
         } else {
-            i = i2 == ManageLinksActivity.STAKING_PROFIT_SCREEN_TYPE ? C3295R.string.staking_profit_confirm_description : C3295R.string.staking_withdraw_confirm_description;
+            i = i2 == ManageLinksActivity.STAKING_PROFIT_SCREEN_TYPE ? C3417R.string.staking_profit_confirm_description : C3417R.string.staking_withdraw_confirm_description;
         }
-        return resourceManager.getString(i, BalanceFormatter.formatBalance(Double.valueOf(this.currentAmount.doubleValue()), this.tokenInfo.getDecimals()), this.resourceManager.getString(this.tokenInfo.getShortName()));
+        Object[] objArr = new Object[2];
+        Double valueOf = Double.valueOf(this.currentAmount.doubleValue());
+        TokenDetailed tokenDetailed = this.token;
+        objArr[0] = BalanceFormatter.formatBalance(valueOf, Integer.valueOf(NumberExtKt.orZero(tokenDetailed != null ? Integer.valueOf(tokenDetailed.getDecimals()) : null)));
+        TokenDetailed tokenDetailed2 = this.token;
+        String ticker = tokenDetailed2 != null ? tokenDetailed2.getTicker() : null;
+        if (ticker == null) {
+            ticker = "";
+        }
+        objArr[1] = ticker;
+        return resourceManager.getString(i, objArr);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -618,13 +644,13 @@ public final class StakingTransactionPresenter extends BasePresenter<StakingTran
         ResourceManager resourceManager = this.resourceManager;
         int i2 = this.screenType;
         if (i2 == ManageLinksActivity.STAKING_REPLENISH_SCREEN_TYPE) {
-            i = C3295R.string.staking_replenishment_success_title;
+            i = C3417R.string.staking_replenishment_success_title;
         } else if (i2 == ManageLinksActivity.STAKING_PROFIT_SCREEN_TYPE) {
-            i = C3295R.string.staking_profit_success_title;
+            i = C3417R.string.staking_profit_success_title;
         } else if (this.isSafeWithdrawalSelected) {
-            i = C3295R.string.staking_withdraw_safe_success_title;
+            i = C3417R.string.staking_withdraw_safe_success_title;
         } else {
-            i = C3295R.string.staking_withdraw_immediate_success_title;
+            i = C3417R.string.staking_withdraw_immediate_success_title;
         }
         return resourceManager.getString(i);
     }
@@ -635,15 +661,25 @@ public final class StakingTransactionPresenter extends BasePresenter<StakingTran
         ResourceManager resourceManager = this.resourceManager;
         int i2 = this.screenType;
         if (i2 == ManageLinksActivity.STAKING_REPLENISH_SCREEN_TYPE) {
-            i = C3295R.string.staking_replenishment_success_description;
+            i = C3417R.string.staking_replenishment_success_description;
         } else if (i2 == ManageLinksActivity.STAKING_PROFIT_SCREEN_TYPE) {
-            i = C3295R.string.staking_profit_success_description;
+            i = C3417R.string.staking_profit_success_description;
         } else if (this.isSafeWithdrawalSelected) {
-            i = C3295R.string.staking_withdraw_safe_success_description;
+            i = C3417R.string.staking_withdraw_safe_success_description;
         } else {
-            i = C3295R.string.staking_withdraw_immediate_success_description;
+            i = C3417R.string.staking_withdraw_immediate_success_description;
         }
-        return resourceManager.getString(i, BalanceFormatter.formatBalance(Double.valueOf(d), this.tokenInfo.getDecimals()), this.resourceManager.getString(this.tokenInfo.getShortName()));
+        Object[] objArr = new Object[2];
+        Double valueOf = Double.valueOf(d);
+        TokenDetailed tokenDetailed = this.token;
+        objArr[0] = BalanceFormatter.formatBalance(valueOf, Integer.valueOf(NumberExtKt.orZero(tokenDetailed != null ? Integer.valueOf(tokenDetailed.getDecimals()) : null)));
+        TokenDetailed tokenDetailed2 = this.token;
+        String ticker = tokenDetailed2 != null ? tokenDetailed2.getTicker() : null;
+        if (ticker == null) {
+            ticker = "";
+        }
+        objArr[1] = ticker;
+        return resourceManager.getString(i, objArr);
     }
 
     /* compiled from: StakingTransactionPresenter.kt */

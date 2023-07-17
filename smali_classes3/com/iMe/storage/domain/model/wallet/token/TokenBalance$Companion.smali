@@ -18,7 +18,7 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 14
+    .line 12
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -34,37 +34,46 @@
 
 
 # virtual methods
-.method public final createEmptyBalanceFor(Lcom/iMe/storage/domain/model/wallet/token/TokenInfo;)Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;
+.method public final createEmptyBalanceFor(Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;)Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;
     .locals 9
 
-    const-string v0, "info"
+    const-string v0, "token"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 15
+    .line 14
     new-instance v0, Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;
 
-    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/wallet/token/TokenInfo;->getCode()Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
+    .line 16
+    sget-object v1, Lcom/iMe/storage/domain/model/wallet/token/FiatValue;->Companion:Lcom/iMe/storage/domain/model/wallet/token/FiatValue$Companion;
 
-    move-result-object v2
+    const-wide/16 v2, 0x0
 
-    new-instance v7, Lcom/iMe/storage/domain/model/wallet/PriceRate;
-
-    const-wide/16 v3, 0x0
-
-    const/4 v1, 0x0
-
-    invoke-direct {v7, v3, v4, v1}, Lcom/iMe/storage/domain/model/wallet/PriceRate;-><init>(DF)V
-
-    sget-object v8, Lcom/iMe/storage/domain/model/crypto/NetworkType;->ETHEREUM:Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    const/4 v4, 0x1
 
     const/4 v5, 0x0
 
+    invoke-static {v1, v2, v3, v4, v5}, Lcom/iMe/storage/domain/model/wallet/token/FiatValue$Companion;->createUSDValue$default(Lcom/iMe/storage/domain/model/wallet/token/FiatValue$Companion;DILjava/lang/Object;)Lcom/iMe/storage/domain/model/wallet/token/FiatValue;
+
+    move-result-object v6
+
+    .line 17
+    invoke-static {v1, v2, v3, v4, v5}, Lcom/iMe/storage/domain/model/wallet/token/FiatValue$Companion;->createUSDValue$default(Lcom/iMe/storage/domain/model/wallet/token/FiatValue$Companion;DILjava/lang/Object;)Lcom/iMe/storage/domain/model/wallet/token/FiatValue;
+
+    move-result-object v5
+
+    const-wide/16 v7, 0x0
+
     move-object v1, v0
 
-    move-object v6, p1
+    move-object v4, v6
 
-    invoke-direct/range {v1 .. v8}, Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;-><init>(Lcom/iMe/storage/domain/model/wallet/token/TokenCode;DFLcom/iMe/storage/domain/model/wallet/token/TokenInfo;Lcom/iMe/storage/domain/model/wallet/PriceRate;Lcom/iMe/storage/domain/model/crypto/NetworkType;)V
+    move-wide v6, v7
+
+    move-object v8, p1
+
+    .line 14
+    invoke-direct/range {v1 .. v8}, Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;-><init>(DLcom/iMe/storage/domain/model/wallet/token/FiatValue;Lcom/iMe/storage/domain/model/wallet/token/FiatValue;DLcom/iMe/storage/domain/model/wallet/token/TokenDetailed;)V
 
     return-object v0
 .end method

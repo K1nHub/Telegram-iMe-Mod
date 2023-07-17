@@ -14,14 +14,14 @@ public class LMOtsParameters {
     private final ASN1ObjectIdentifier digestOID;
 
     /* renamed from: n */
-    private final int f1310n;
+    private final int f1392n;
 
     /* renamed from: p */
-    private final int f1311p;
+    private final int f1393p;
     private final int type;
 
     /* renamed from: w */
-    private final int f1312w;
+    private final int f1394w;
 
     static {
         ASN1ObjectIdentifier aSN1ObjectIdentifier = NISTObjectIdentifiers.id_sha256;
@@ -45,9 +45,9 @@ public class LMOtsParameters {
 
     protected LMOtsParameters(int i, int i2, int i3, int i4, int i5, int i6, ASN1ObjectIdentifier aSN1ObjectIdentifier) {
         this.type = i;
-        this.f1310n = i2;
-        this.f1312w = i3;
-        this.f1311p = i4;
+        this.f1392n = i2;
+        this.f1394w = i3;
+        this.f1393p = i4;
         this.digestOID = aSN1ObjectIdentifier;
     }
 
@@ -60,11 +60,11 @@ public class LMOtsParameters {
     }
 
     public int getN() {
-        return this.f1310n;
+        return this.f1392n;
     }
 
     public int getP() {
-        return this.f1311p;
+        return this.f1393p;
     }
 
     public int getType() {
@@ -72,6 +72,6 @@ public class LMOtsParameters {
     }
 
     public int getW() {
-        return this.f1312w;
+        return this.f1394w;
     }
 }

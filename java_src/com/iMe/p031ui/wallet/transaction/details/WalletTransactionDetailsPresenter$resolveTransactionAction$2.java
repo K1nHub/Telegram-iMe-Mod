@@ -25,6 +25,6 @@ public final class WalletTransactionDetailsPresenter$resolveTransactionAction$2 
 
     /* renamed from: invoke  reason: avoid collision after fix types in other method */
     public final void invoke2() {
-        this.this$0.startSendScreen();
+        this.this$0.startProfileScreen();
     }
 }

@@ -35,7 +35,7 @@
 
     check-cast p1, Ljava/lang/Runnable;
 
-    invoke-static {v0, v1, p1}, Lorg/telegram/ui/DialogsActivity;->$r8$lambda$GJ0lyBNals4vcf8EmpgL6LZ_fjI(Lorg/telegram/ui/DialogsActivity;Ljava/lang/Long;Ljava/lang/Runnable;)V
+    invoke-static {v0, v1, p1}, Lorg/telegram/ui/DialogsActivity;->$r8$lambda$zjnpAEZBN6nS_x0NYU2x3Wk8lZQ(Lorg/telegram/ui/DialogsActivity;Ljava/lang/Long;Ljava/lang/Runnable;)V
 
     return-void
 .end method

@@ -61,7 +61,7 @@
 
     check-cast v6, Ljava/lang/Long;
 
-    invoke-static/range {v0 .. v6}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$LcdMw50PMwFoi82gqjcMaiIwilc(Lorg/telegram/messenger/MessagesController;Lorg/telegram/messenger/browser/Browser$Progress;[Lorg/telegram/ui/ActionBar/AlertDialog;Lorg/telegram/ui/ActionBar/BaseFragment;[ZILjava/lang/Long;)V
+    invoke-static/range {v0 .. v6}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$Sly2aiZS_Q7-jAjNMFi_3Y1KO74(Lorg/telegram/messenger/MessagesController;Lorg/telegram/messenger/browser/Browser$Progress;[Lorg/telegram/ui/ActionBar/AlertDialog;Lorg/telegram/ui/ActionBar/BaseFragment;[ZILjava/lang/Long;)V
 
     return-void
 .end method

@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/Components/UpdateAppAlertDialog$$ExternalSyntheticLambda1;->f$0:Lorg/telegram/ui/Components/UpdateAppAlertDialog;
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/Components/UpdateAppAlertDialog;->$r8$lambda$iWt6wiHetSsFroTsHnr4U-PRsrQ(Lorg/telegram/ui/Components/UpdateAppAlertDialog;Landroid/view/View;)V
+    invoke-static {v0, p1}, Lorg/telegram/ui/Components/UpdateAppAlertDialog;->$r8$lambda$r0ZMXKgENhTg5gS2eBw-rAgIniY(Lorg/telegram/ui/Components/UpdateAppAlertDialog;Landroid/view/View;)V
 
     return-void
 .end method

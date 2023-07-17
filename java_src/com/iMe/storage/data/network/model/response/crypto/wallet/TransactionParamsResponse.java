@@ -131,16 +131,20 @@ public abstract class TransactionParamsResponse {
     /* loaded from: classes3.dex */
     public static final class TRON extends TransactionParamsResponse {
         private final TronBlockHeaderResponse blockHeader;
+        private final String contractAddress;
         private final BigInteger feeLimit;
 
-        public static /* synthetic */ TRON copy$default(TRON tron, BigInteger bigInteger, TronBlockHeaderResponse tronBlockHeaderResponse, int i, Object obj) {
+        public static /* synthetic */ TRON copy$default(TRON tron, BigInteger bigInteger, TronBlockHeaderResponse tronBlockHeaderResponse, String str, int i, Object obj) {
             if ((i & 1) != 0) {
                 bigInteger = tron.feeLimit;
             }
             if ((i & 2) != 0) {
                 tronBlockHeaderResponse = tron.blockHeader;
             }
-            return tron.copy(bigInteger, tronBlockHeaderResponse);
+            if ((i & 4) != 0) {
+                str = tron.contractAddress;
+            }
+            return tron.copy(bigInteger, tronBlockHeaderResponse, str);
         }
 
         public final BigInteger component1() {
@@ -151,10 +155,14 @@ public abstract class TransactionParamsResponse {
             return this.blockHeader;
         }
 
-        public final TRON copy(BigInteger feeLimit, TronBlockHeaderResponse blockHeader) {
+        public final String component3() {
+            return this.contractAddress;
+        }
+
+        public final TRON copy(BigInteger feeLimit, TronBlockHeaderResponse blockHeader, String str) {
             Intrinsics.checkNotNullParameter(feeLimit, "feeLimit");
             Intrinsics.checkNotNullParameter(blockHeader, "blockHeader");
-            return new TRON(feeLimit, blockHeader);
+            return new TRON(feeLimit, blockHeader, str);
         }
 
         public boolean equals(Object obj) {
@@ -163,17 +171,19 @@ public abstract class TransactionParamsResponse {
             }
             if (obj instanceof TRON) {
                 TRON tron = (TRON) obj;
-                return Intrinsics.areEqual(this.feeLimit, tron.feeLimit) && Intrinsics.areEqual(this.blockHeader, tron.blockHeader);
+                return Intrinsics.areEqual(this.feeLimit, tron.feeLimit) && Intrinsics.areEqual(this.blockHeader, tron.blockHeader) && Intrinsics.areEqual(this.contractAddress, tron.contractAddress);
             }
             return false;
         }
 
         public int hashCode() {
-            return (this.feeLimit.hashCode() * 31) + this.blockHeader.hashCode();
+            int hashCode = ((this.feeLimit.hashCode() * 31) + this.blockHeader.hashCode()) * 31;
+            String str = this.contractAddress;
+            return hashCode + (str == null ? 0 : str.hashCode());
         }
 
         public String toString() {
-            return "TRON(feeLimit=" + this.feeLimit + ", blockHeader=" + this.blockHeader + ')';
+            return "TRON(feeLimit=" + this.feeLimit + ", blockHeader=" + this.blockHeader + ", contractAddress=" + this.contractAddress + ')';
         }
 
         public final BigInteger getFeeLimit() {
@@ -184,13 +194,111 @@ public abstract class TransactionParamsResponse {
             return this.blockHeader;
         }
 
+        public final String getContractAddress() {
+            return this.contractAddress;
+        }
+
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public TRON(BigInteger feeLimit, TronBlockHeaderResponse blockHeader) {
+        public TRON(BigInteger feeLimit, TronBlockHeaderResponse blockHeader, String str) {
             super(null);
             Intrinsics.checkNotNullParameter(feeLimit, "feeLimit");
             Intrinsics.checkNotNullParameter(blockHeader, "blockHeader");
             this.feeLimit = feeLimit;
             this.blockHeader = blockHeader;
+            this.contractAddress = str;
+        }
+    }
+
+    /* compiled from: TransactionParamsResponse.kt */
+    /* loaded from: classes3.dex */
+    public static final class TON extends TransactionParamsResponse {
+        private final int sendMode;
+        private final String toWalletAddressFixed;
+        private final int walletSeqno;
+
+        /* renamed from: wc */
+        private final int f388wc;
+
+        public static /* synthetic */ TON copy$default(TON ton, int i, String str, int i2, int i3, int i4, Object obj) {
+            if ((i4 & 1) != 0) {
+                i = ton.sendMode;
+            }
+            if ((i4 & 2) != 0) {
+                str = ton.toWalletAddressFixed;
+            }
+            if ((i4 & 4) != 0) {
+                i2 = ton.walletSeqno;
+            }
+            if ((i4 & 8) != 0) {
+                i3 = ton.f388wc;
+            }
+            return ton.copy(i, str, i2, i3);
+        }
+
+        public final int component1() {
+            return this.sendMode;
+        }
+
+        public final String component2() {
+            return this.toWalletAddressFixed;
+        }
+
+        public final int component3() {
+            return this.walletSeqno;
+        }
+
+        public final int component4() {
+            return this.f388wc;
+        }
+
+        public final TON copy(int i, String toWalletAddressFixed, int i2, int i3) {
+            Intrinsics.checkNotNullParameter(toWalletAddressFixed, "toWalletAddressFixed");
+            return new TON(i, toWalletAddressFixed, i2, i3);
+        }
+
+        public boolean equals(Object obj) {
+            if (this == obj) {
+                return true;
+            }
+            if (obj instanceof TON) {
+                TON ton = (TON) obj;
+                return this.sendMode == ton.sendMode && Intrinsics.areEqual(this.toWalletAddressFixed, ton.toWalletAddressFixed) && this.walletSeqno == ton.walletSeqno && this.f388wc == ton.f388wc;
+            }
+            return false;
+        }
+
+        public int hashCode() {
+            return (((((this.sendMode * 31) + this.toWalletAddressFixed.hashCode()) * 31) + this.walletSeqno) * 31) + this.f388wc;
+        }
+
+        public String toString() {
+            return "TON(sendMode=" + this.sendMode + ", toWalletAddressFixed=" + this.toWalletAddressFixed + ", walletSeqno=" + this.walletSeqno + ", wc=" + this.f388wc + ')';
+        }
+
+        public final int getSendMode() {
+            return this.sendMode;
+        }
+
+        public final String getToWalletAddressFixed() {
+            return this.toWalletAddressFixed;
+        }
+
+        public final int getWalletSeqno() {
+            return this.walletSeqno;
+        }
+
+        public final int getWc() {
+            return this.f388wc;
+        }
+
+        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+        public TON(int i, String toWalletAddressFixed, int i2, int i3) {
+            super(null);
+            Intrinsics.checkNotNullParameter(toWalletAddressFixed, "toWalletAddressFixed");
+            this.sendMode = i;
+            this.toWalletAddressFixed = toWalletAddressFixed;
+            this.walletSeqno = i2;
+            this.f388wc = i3;
         }
     }
 

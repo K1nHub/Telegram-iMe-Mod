@@ -38,31 +38,6 @@
     return p0
 .end method
 
-.method public static areEqual(Ljava/lang/Float;F)Z
-    .locals 0
-
-    if-eqz p0, :cond_0
-
-    .line 194
-    invoke-virtual {p0}, Ljava/lang/Float;->floatValue()F
-
-    move-result p0
-
-    cmpl-float p0, p0, p1
-
-    if-nez p0, :cond_0
-
-    const/4 p0, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    const/4 p0, 0x0
-
-    :goto_0
-    return p0
-.end method
-
 .method public static areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
     .locals 0
 

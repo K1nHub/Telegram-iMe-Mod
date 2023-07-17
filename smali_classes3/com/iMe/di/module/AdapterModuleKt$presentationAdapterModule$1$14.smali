@@ -22,13 +22,13 @@
         "Lkotlin/jvm/functions/Function2<",
         "Lorg/koin/core/scope/Scope;",
         "Lorg/koin/core/parameter/ParametersHolder;",
-        "Lcom/iMe/ui/wallet/home/v2/adapter/BannersRecycleAdapter;",
+        "Lcom/iMe/ui/wallet/home/tabs/crypto/settings/adapter/FoundTokensRecycleAdapter;",
         ">;"
     }
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nAdapterModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 AdapterModule.kt\ncom/iMe/di/module/AdapterModuleKt$presentationAdapterModule$1$14\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,118:1\n129#2,5:119\n*S KotlinDebug\n*F\n+ 1 AdapterModule.kt\ncom/iMe/di/module/AdapterModuleKt$presentationAdapterModule$1$14\n*L\n95#1:119,5\n*E\n"
+    value = "SMAP\nAdapterModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 AdapterModule.kt\ncom/iMe/di/module/AdapterModuleKt$presentationAdapterModule$1$14\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,120:1\n129#2,5:121\n*S KotlinDebug\n*F\n+ 1 AdapterModule.kt\ncom/iMe/di/module/AdapterModuleKt$presentationAdapterModule$1$14\n*L\n91#1:121,5\n*E\n"
 .end annotation
 
 
@@ -61,7 +61,7 @@
 
 
 # virtual methods
-.method public final invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/iMe/ui/wallet/home/v2/adapter/BannersRecycleAdapter;
+.method public final invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/iMe/ui/wallet/home/tabs/crypto/settings/adapter/FoundTokensRecycleAdapter;
     .locals 2
 
     const-string v0, "$this$factory"
@@ -72,39 +72,52 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 95
-    new-instance p2, Lcom/iMe/ui/wallet/home/v2/adapter/BannersRecycleAdapter;
+    .line 133
+    const-class p2, Lcom/iMe/ui/adapter/provider/GlobalStateProvider;
+
+    invoke-static {p2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
+
+    move-result-object p2
+
+    const/4 v0, 0x0
+
+    invoke-virtual {p1, p2, v0, v0}, Lorg/koin/core/scope/Scope;->get(Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
+
+    move-result-object p2
+
+    .line 91
+    check-cast p2, Lcom/iMe/ui/adapter/provider/GlobalStateProvider;
 
     .line 133
-    const-class v0, Lcom/iMe/storage/domain/utils/system/ResourceManager;
+    const-class v1, Lcom/iMe/ui/adapter/provider/FoundTokenProvider;
 
-    invoke-static {v0}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
+    invoke-static {v1}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
 
-    move-result-object v0
+    move-result-object v1
 
-    const/4 v1, 0x0
-
-    invoke-virtual {p1, v0, v1, v1}, Lorg/koin/core/scope/Scope;->get(Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
+    invoke-virtual {p1, v1, v0, v0}, Lorg/koin/core/scope/Scope;->get(Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
 
     move-result-object p1
 
-    check-cast p1, Lcom/iMe/storage/domain/utils/system/ResourceManager;
+    .line 91
+    check-cast p1, Lcom/iMe/ui/adapter/provider/FoundTokenProvider;
 
-    .line 95
-    invoke-direct {p2, p1}, Lcom/iMe/ui/wallet/home/v2/adapter/BannersRecycleAdapter;-><init>(Lcom/iMe/storage/domain/utils/system/ResourceManager;)V
+    new-instance v0, Lcom/iMe/ui/wallet/home/tabs/crypto/settings/adapter/FoundTokensRecycleAdapter;
 
-    return-object p2
+    invoke-direct {v0, p1, p2}, Lcom/iMe/ui/wallet/home/tabs/crypto/settings/adapter/FoundTokensRecycleAdapter;-><init>(Lcom/iMe/ui/adapter/provider/FoundTokenProvider;Lcom/iMe/ui/adapter/provider/GlobalStateProvider;)V
+
+    return-object v0
 .end method
 
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 95
+    .line 91
     check-cast p1, Lorg/koin/core/scope/Scope;
 
     check-cast p2, Lorg/koin/core/parameter/ParametersHolder;
 
-    invoke-virtual {p0, p1, p2}, Lcom/iMe/di/module/AdapterModuleKt$presentationAdapterModule$1$14;->invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/iMe/ui/wallet/home/v2/adapter/BannersRecycleAdapter;
+    invoke-virtual {p0, p1, p2}, Lcom/iMe/di/module/AdapterModuleKt$presentationAdapterModule$1$14;->invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/iMe/ui/wallet/home/tabs/crypto/settings/adapter/FoundTokensRecycleAdapter;
 
     move-result-object p1
 

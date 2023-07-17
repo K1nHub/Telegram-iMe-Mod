@@ -1885,7 +1885,7 @@
     :cond_a
     instance-of v0, p0, Lorg/telegram/tgnet/TLRPC$TL_messages_stickerSet;
 
-    const-string v1, "set"
+    const-string/jumbo v1, "set"
 
     if-eqz v0, :cond_b
 
@@ -3362,7 +3362,7 @@
 
     if-eqz v0, :cond_3
 
-    const-string v0, "recent"
+    const-string/jumbo v0, "recent"
 
     goto :goto_0
 
@@ -6786,7 +6786,7 @@
     goto/16 :goto_0
 
     :cond_10
-    const-string v0, "recent"
+    const-string/jumbo v0, "recent"
 
     .line 430
     invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -7051,7 +7051,7 @@
     goto/16 :goto_0
 
     :cond_18
-    const-string v0, "sent_"
+    const-string/jumbo v0, "sent_"
 
     .line 471
     invoke-virtual {p1, v0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
@@ -7471,7 +7471,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v1, "reference can\'t update: fail operation "
+    const-string/jumbo v1, "reference can\'t update: fail operation "
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -8412,7 +8412,7 @@
 
     const-string v3, "fav"
 
-    const-string v5, "recent"
+    const-string/jumbo v5, "recent"
 
     const-string v6, "gif"
 

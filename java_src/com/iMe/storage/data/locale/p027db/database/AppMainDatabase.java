@@ -1,7 +1,6 @@
 package com.iMe.storage.data.locale.p027db.database;
 
 import androidx.room.RoomDatabase;
-import com.iMe.storage.data.locale.p027db.dao.main.BookmarksDao;
 import com.iMe.storage.data.locale.p027db.dao.main.DialogTranslationSettingsDao;
 import com.iMe.storage.data.locale.p027db.dao.main.FiltersDao;
 import com.iMe.storage.data.locale.p027db.dao.main.HiddenChatsDao;
@@ -14,8 +13,6 @@ import com.iMe.storage.data.locale.p027db.dao.minor.wallet.WalletConnectSessions
 /* renamed from: com.iMe.storage.data.locale.db.database.AppMainDatabase */
 /* loaded from: classes3.dex */
 public abstract class AppMainDatabase extends RoomDatabase {
-    public abstract BookmarksDao bookmarksDao();
-
     public abstract DialogTranslationSettingsDao dialogTranslationSettingsDao();
 
     public abstract FiltersDao filtersDao();

@@ -1,7 +1,7 @@
 package com.google.android.exoplayer2.extractor.mp4;
 
 import android.util.Pair;
-import com.google.android.exoplayer2.C0475C;
+import com.google.android.exoplayer2.C0480C;
 import com.google.android.exoplayer2.Format;
 import com.google.android.exoplayer2.ParserException;
 import com.google.android.exoplayer2.drm.DrmInitData;
@@ -163,8 +163,8 @@ public final class AtomParsers {
             return null;
         }
         TkhdData parseTkhd = parseTkhd(((Atom.LeafAtom) Assertions.checkNotNull(containerAtom.getLeafAtomOfType(Atom.TYPE_tkhd))).data);
-        long j3 = C0475C.TIME_UNSET;
-        if (j == C0475C.TIME_UNSET) {
+        long j3 = C0480C.TIME_UNSET;
+        if (j == C0480C.TIME_UNSET) {
             leafAtom2 = leafAtom;
             j2 = parseTkhd.duration;
         } else {
@@ -172,7 +172,7 @@ public final class AtomParsers {
             j2 = j;
         }
         long parseMvhd = parseMvhd(leafAtom2.data);
-        if (j2 != C0475C.TIME_UNSET) {
+        if (j2 != C0480C.TIME_UNSET) {
             j3 = Util.scaleLargeTimestamp(j2, 1000000L, parseMvhd);
         }
         long j4 = j3;
@@ -181,7 +181,7 @@ public final class AtomParsers {
         if (leafAtomOfType == null) {
             throw ParserException.createForMalformedContainer("Malformed sample table (stbl) missing sample description (stsd)", null);
         }
-        StsdData parseStsd = parseStsd(leafAtomOfType.data, parseTkhd.f108id, parseTkhd.rotationDegrees, (String) parseMdhd.second, drmInitData, z2);
+        StsdData parseStsd = parseStsd(leafAtomOfType.data, parseTkhd.f190id, parseTkhd.rotationDegrees, (String) parseMdhd.second, drmInitData, z2);
         if (z || (containerAtomOfType = containerAtom.getContainerAtomOfType(Atom.TYPE_edts)) == null || (parseEdts = parseEdts(containerAtomOfType)) == null) {
             jArr = null;
             jArr2 = null;
@@ -192,7 +192,7 @@ public final class AtomParsers {
         if (parseStsd.format == null) {
             return null;
         }
-        return new Track(parseTkhd.f108id, trackTypeForHdlr, ((Long) parseMdhd.first).longValue(), parseMvhd, j4, parseStsd.format, parseStsd.requiredSampleTransformation, parseStsd.trackEncryptionBoxes, parseStsd.nalUnitLengthFieldLength, jArr, jArr2);
+        return new Track(parseTkhd.f190id, trackTypeForHdlr, ((Long) parseMdhd.first).longValue(), parseMvhd, j4, parseStsd.format, parseStsd.requiredSampleTransformation, parseStsd.trackEncryptionBoxes, parseStsd.nalUnitLengthFieldLength, jArr, jArr2);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:149:0x03b4  */
@@ -302,7 +302,7 @@ public final class AtomParsers {
                 i3++;
             }
         }
-        long j = C0475C.TIME_UNSET;
+        long j = C0480C.TIME_UNSET;
         if (z) {
             parsableByteArray.skipBytes(i);
         } else {
@@ -817,7 +817,7 @@ public final class AtomParsers {
             }
             i3 += readInt;
         }
-        if (C0475C.CENC_TYPE_cenc.equals(str) || C0475C.CENC_TYPE_cbc1.equals(str) || C0475C.CENC_TYPE_cens.equals(str) || C0475C.CENC_TYPE_cbcs.equals(str)) {
+        if (C0480C.CENC_TYPE_cenc.equals(str) || C0480C.CENC_TYPE_cbc1.equals(str) || C0480C.CENC_TYPE_cens.equals(str) || C0480C.CENC_TYPE_cbcs.equals(str)) {
             ExtractorUtil.checkContainerInput(num != null, "frma atom is mandatory");
             ExtractorUtil.checkContainerInput(i4 != -1, "schi atom is mandatory");
             TrackEncryptionBox parseSchiFromParent = parseSchiFromParent(parsableByteArray, i4, i5, str);
@@ -951,11 +951,11 @@ public final class AtomParsers {
         private final long duration;
 
         /* renamed from: id */
-        private final int f108id;
+        private final int f190id;
         private final int rotationDegrees;
 
         public TkhdData(int i, long j, int i2) {
-            this.f108id = i;
+            this.f190id = i;
             this.duration = j;
             this.rotationDegrees = i2;
         }

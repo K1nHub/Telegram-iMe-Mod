@@ -17,6 +17,11 @@ public class WalletSendRecipientView$$State extends MvpViewState<WalletSendRecip
         BaseView.CC.$default$finishScreen(this);
     }
 
+    @Override // com.iMe.p031ui.base.mvp.base.BaseView
+    public /* synthetic */ void removeSelfFromStackImmediately() {
+        BaseView.CC.$default$removeSelfFromStackImmediately(this);
+    }
+
     @Override // com.iMe.manager.crypto.recipient.CryptoRecipientView
     public void onRecipientSelected(String str, String str2, boolean z) {
         OnRecipientSelectedCommand onRecipientSelectedCommand = new OnRecipientSelectedCommand(this, str, str2, z);
@@ -126,21 +131,21 @@ public class WalletSendRecipientView$$State extends MvpViewState<WalletSendRecip
     /* loaded from: classes3.dex */
     public class OnRecipientSelectedCommand extends ViewCommand<WalletSendRecipientView> {
         public final String address;
-        public final boolean contactSelected;
 
         /* renamed from: id */
-        public final String f380id;
+        public final String f453id;
+        public final boolean isContactSelected;
 
         OnRecipientSelectedCommand(WalletSendRecipientView$$State walletSendRecipientView$$State, String str, String str2, boolean z) {
             super("onRecipientSelected", OneExecutionStateStrategy.class);
-            this.f380id = str;
+            this.f453id = str;
             this.address = str2;
-            this.contactSelected = z;
+            this.isContactSelected = z;
         }
 
         @Override // moxy.viewstate.ViewCommand
         public void apply(WalletSendRecipientView walletSendRecipientView) {
-            walletSendRecipientView.onRecipientSelected(this.f380id, this.address, this.contactSelected);
+            walletSendRecipientView.onRecipientSelected(this.f453id, this.address, this.isContactSelected);
         }
     }
 

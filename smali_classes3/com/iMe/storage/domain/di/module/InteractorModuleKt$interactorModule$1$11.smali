@@ -28,7 +28,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nInteractorModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 InteractorModule.kt\ncom/iMe/storage/domain/di/module/InteractorModuleKt$interactorModule$1$11\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,81:1\n129#2,5:82\n129#2,5:87\n129#2,5:92\n*S KotlinDebug\n*F\n+ 1 InteractorModule.kt\ncom/iMe/storage/domain/di/module/InteractorModuleKt$interactorModule$1$11\n*L\n58#1:82,5\n59#1:87,5\n60#1:92,5\n*E\n"
+    value = "SMAP\nInteractorModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 InteractorModule.kt\ncom/iMe/storage/domain/di/module/InteractorModuleKt$interactorModule$1$11\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,90:1\n129#2,5:91\n129#2,5:96\n129#2,5:101\n129#2,5:106\n129#2,5:111\n129#2,5:116\n*S KotlinDebug\n*F\n+ 1 InteractorModule.kt\ncom/iMe/storage/domain/di/module/InteractorModuleKt$interactorModule$1$11\n*L\n58#1:91,5\n59#1:96,5\n60#1:101,5\n61#1:106,5\n62#1:111,5\n63#1:116,5\n*E\n"
 .end annotation
 
 
@@ -62,7 +62,7 @@
 
 # virtual methods
 .method public final invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;
-    .locals 9
+    .locals 8
 
     const-string v0, "$this$single"
 
@@ -72,128 +72,107 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 133
-    const-class p2, Lcom/iMe/storage/domain/repository/crypto/CryptoLocalWalletRepository;
-
-    invoke-static {p2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
-
-    move-result-object p2
-
-    const/4 v0, 0x0
-
-    invoke-virtual {p1, p2, v0, v0}, Lorg/koin/core/scope/Scope;->get(Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
-
-    move-result-object p2
-
-    .line 58
-    move-object v2, p2
-
-    check-cast v2, Lcom/iMe/storage/domain/repository/crypto/CryptoLocalWalletRepository;
+    .line 57
+    new-instance p2, Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;
 
     .line 133
-    const-class p2, Lcom/iMe/storage/domain/repository/crypto/CryptoWalletRepository;
+    const-class v0, Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;
 
-    invoke-static {p2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
+    invoke-static {v0}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
 
-    move-result-object p2
+    move-result-object v0
 
-    invoke-virtual {p1, p2, v0, v0}, Lorg/koin/core/scope/Scope;->get(Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
+    const/4 v1, 0x0
 
-    move-result-object p2
+    invoke-virtual {p1, v0, v1, v1}, Lorg/koin/core/scope/Scope;->get(Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
 
-    .line 58
-    move-object v3, p2
+    move-result-object v0
 
-    check-cast v3, Lcom/iMe/storage/domain/repository/crypto/CryptoWalletRepository;
+    move-object v2, v0
 
-    .line 133
-    const-class p2, Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;
-
-    invoke-static {p2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
-
-    move-result-object p2
-
-    invoke-virtual {p1, p2, v0, v0}, Lorg/koin/core/scope/Scope;->get(Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
-
-    move-result-object p2
-
-    .line 58
-    move-object v4, p2
-
-    check-cast v4, Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;
+    check-cast v2, Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;
 
     .line 133
-    const-class p2, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
+    const-class v0, Lcom/iMe/storage/domain/repository/crypto/CryptoLocalWalletRepository;
 
-    invoke-static {p2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
+    invoke-static {v0}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
 
-    move-result-object p2
+    move-result-object v0
 
-    invoke-virtual {p1, p2, v0, v0}, Lorg/koin/core/scope/Scope;->get(Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
+    invoke-virtual {p1, v0, v1, v1}, Lorg/koin/core/scope/Scope;->get(Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
 
-    move-result-object p2
+    move-result-object v0
 
-    .line 59
-    move-object v8, p2
+    move-object v3, v0
 
-    check-cast v8, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
-
-    .line 133
-    const-class p2, Lcom/iMe/storage/domain/interactor/crypto/pin/PinCodeInteractor;
-
-    invoke-static {p2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
-
-    move-result-object p2
-
-    invoke-virtual {p1, p2, v0, v0}, Lorg/koin/core/scope/Scope;->get(Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
-
-    move-result-object p2
-
-    .line 59
-    move-object v6, p2
-
-    check-cast v6, Lcom/iMe/storage/domain/interactor/crypto/pin/PinCodeInteractor;
+    check-cast v3, Lcom/iMe/storage/domain/repository/crypto/CryptoLocalWalletRepository;
 
     .line 133
-    const-class p2, Lcom/iMe/storage/domain/utils/rx/RxEventBus;
+    const-class v0, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
 
-    invoke-static {p2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
+    invoke-static {v0}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
 
-    move-result-object p2
+    move-result-object v0
 
-    invoke-virtual {p1, p2, v0, v0}, Lorg/koin/core/scope/Scope;->get(Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
+    invoke-virtual {p1, v0, v1, v1}, Lorg/koin/core/scope/Scope;->get(Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
 
-    move-result-object p2
+    move-result-object v0
 
-    .line 59
-    move-object v7, p2
+    move-object v4, v0
 
-    check-cast v7, Lcom/iMe/storage/domain/utils/rx/RxEventBus;
+    check-cast v4, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
 
     .line 133
-    const-class p2, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
+    const-class v0, Lcom/iMe/storage/domain/repository/crypto/CryptoWalletRepository;
 
-    invoke-static {p2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
+    invoke-static {v0}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
 
-    move-result-object p2
+    move-result-object v0
 
-    invoke-virtual {p1, p2, v0, v0}, Lorg/koin/core/scope/Scope;->get(Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
+    invoke-virtual {p1, v0, v1, v1}, Lorg/koin/core/scope/Scope;->get(Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    move-object v5, v0
+
+    check-cast v5, Lcom/iMe/storage/domain/repository/crypto/CryptoWalletRepository;
+
+    .line 133
+    const-class v0, Lcom/iMe/storage/domain/utils/rx/RxEventBus;
+
+    invoke-static {v0}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
+
+    move-result-object v0
+
+    invoke-virtual {p1, v0, v1, v1}, Lorg/koin/core/scope/Scope;->get(Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    move-object v6, v0
+
+    check-cast v6, Lcom/iMe/storage/domain/utils/rx/RxEventBus;
+
+    .line 133
+    const-class v0, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
+
+    invoke-static {v0}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
+
+    move-result-object v0
+
+    invoke-virtual {p1, v0, v1, v1}, Lorg/koin/core/scope/Scope;->get(Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
 
     move-result-object p1
 
-    .line 60
-    move-object v5, p1
+    move-object v7, p1
 
-    check-cast v5, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
+    check-cast v7, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
+
+    move-object v1, p2
 
     .line 57
-    new-instance p1, Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;
+    invoke-direct/range {v1 .. v7}, Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;-><init>(Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;Lcom/iMe/storage/domain/repository/crypto/CryptoLocalWalletRepository;Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;Lcom/iMe/storage/domain/repository/crypto/CryptoWalletRepository;Lcom/iMe/storage/domain/utils/rx/RxEventBus;Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;)V
 
-    move-object v1, p1
-
-    invoke-direct/range {v1 .. v8}, Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;-><init>(Lcom/iMe/storage/domain/repository/crypto/CryptoLocalWalletRepository;Lcom/iMe/storage/domain/repository/crypto/CryptoWalletRepository;Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;Lcom/iMe/storage/domain/interactor/crypto/pin/PinCodeInteractor;Lcom/iMe/storage/domain/utils/rx/RxEventBus;Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;)V
-
-    return-object p1
+    return-object p2
 .end method
 
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;

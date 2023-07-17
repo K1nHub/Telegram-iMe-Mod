@@ -14,9 +14,9 @@ import com.iMe.storage.common.AppConfiguration$Twitter;
 import com.iMe.storage.domain.interactor.twitter.TwitterInteractor;
 import com.iMe.storage.domain.model.twitter.TweetInfo;
 import com.iMe.storage.domain.utils.system.ResourceManager;
-import com.iMe.utils.extentions.p033rx.RxExtKt;
-import com.iMe.utils.extentions.p033rx.RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
-import com.iMe.utils.extentions.p033rx.SchedulersExtKt;
+import com.iMe.utils.extentions.p032rx.RxExtKt;
+import com.iMe.utils.extentions.p032rx.RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
+import com.iMe.utils.extentions.p032rx.SchedulersExtKt;
 import io.reactivex.Observable;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.subjects.PublishSubject;
@@ -28,7 +28,7 @@ import kotlin.collections.CollectionsKt__CollectionsKt;
 import kotlin.jvm.internal.Intrinsics;
 import moxy.InjectViewState;
 import okhttp3.internal.Util;
-import org.telegram.messenger.C3295R;
+import org.telegram.messenger.C3417R;
 /* compiled from: TwitterPresenter.kt */
 @InjectViewState
 /* loaded from: classes3.dex */
@@ -88,8 +88,8 @@ public final class TwitterPresenter extends BasePresenter<TwitterView> {
         long longOrDefault = Util.toLongOrDefault(this.socialNetwork.getSocialElementId(), -1L);
         boolean z3 = (z || z2) ? false : true;
         if (!z3 || this.lastItemId != null) {
-            Disposable subscribe = SchedulersExtKt.scheduleIO(this.twitterInteractor.getUserTweets(this.telegramProfileId, longOrDefault, this.lastItemId)).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1468x586e495a(this, z3, z)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1469x586e495b(null)));
-            Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
+            Disposable subscribe = SchedulersExtKt.scheduleIO(this.twitterInteractor.getUserTweets(this.telegramProfileId, longOrDefault, this.lastItemId)).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1479x586e495a(this, z3, z)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1480x586e495b(null)));
+            Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…Error.invoke()\n        })");
             BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
             return;
         }
@@ -106,23 +106,23 @@ public final class TwitterPresenter extends BasePresenter<TwitterView> {
     }
 
     public final void onResetMenuClicked() {
-        ((TwitterView) getViewState()).showResetTwitterDialog(new DialogModel(this.resourceManager.getString(C3295R.string.social_reset_account_title, this.socialNetwork.getSocialName()), this.resourceManager.getString(C3295R.string.social_reset_account_message, this.socialNetwork.getSocialName()), this.resourceManager.getString(C3295R.string.social_reset_account_negative_button), this.resourceManager.getString(C3295R.string.social_reset_account_positive_button)));
+        ((TwitterView) getViewState()).showResetTwitterDialog(new DialogModel(this.resourceManager.getString(C3417R.string.social_reset_account_title, this.socialNetwork.getSocialName()), this.resourceManager.getString(C3417R.string.social_reset_account_message, this.socialNetwork.getSocialName()), this.resourceManager.getString(C3417R.string.social_reset_account_negative_button), this.resourceManager.getString(C3417R.string.social_reset_account_positive_button)));
     }
 
     public final void onResetConfirmClicked() {
         Observable scheduleIO = SchedulersExtKt.scheduleIO(this.socialUseCase.logout(this.socialNetwork));
         T viewState = getViewState();
         Intrinsics.checkNotNullExpressionValue(viewState, "viewState");
-        Disposable subscribe = RxExtKt.withLoadingDialog$default(scheduleIO, (BaseView) viewState, false, 2, (Object) null).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1470xc9d68b0b(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1471xc9d68b0c((BaseView) getViewState())));
-        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
+        Disposable subscribe = RxExtKt.withLoadingDialog$default(scheduleIO, (BaseView) viewState, false, 2, (Object) null).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1481xc9d68b0b(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1482xc9d68b0c((BaseView) getViewState())));
+        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…Error.invoke()\n        })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
 
     private final void subscribeToLikeToggles() {
         Observable<TweetItem> distinctUntilChanged = this.likeToggleSubject.debounce(200L, TimeUnit.MILLISECONDS).distinctUntilChanged();
         Intrinsics.checkNotNullExpressionValue(distinctUntilChanged, "likeToggleSubject\n      …  .distinctUntilChanged()");
-        Disposable subscribe = SchedulersExtKt.scheduleIO(distinctUntilChanged).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1472xbd4bb315(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1473xbd4bb316(null)));
-        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
+        Disposable subscribe = SchedulersExtKt.scheduleIO(distinctUntilChanged).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1483xbd4bb315(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1484xbd4bb316(null)));
+        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…Error.invoke()\n        })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
 
@@ -147,7 +147,7 @@ public final class TwitterPresenter extends BasePresenter<TwitterView> {
         }
         List<TweetInfo> list = this.tweets;
         TweetInfo tweetInfo = list.get(i);
-        copy = tweetInfo.copy((r28 & 1) != 0 ? tweetInfo.f354id : 0L, (r28 & 2) != 0 ? tweetInfo.authorName : null, (r28 & 4) != 0 ? tweetInfo.authorNickname : null, (r28 & 8) != 0 ? tweetInfo.avatarUrl : null, (r28 & 16) != 0 ? tweetInfo.likesCount : tweetInfo.getLikesCount() + (tweetInfo.isLiked() ? -1 : 1), (r28 & 32) != 0 ? tweetInfo.quotesCount : 0, (r28 & 64) != 0 ? tweetInfo.retweetsCount : 0, (r28 & 128) != 0 ? tweetInfo.text : null, (r28 & 256) != 0 ? tweetInfo.createdAt : 0L, (r28 & 512) != 0 ? tweetInfo.isLiked : !tweetInfo.isLiked(), (r28 & 1024) != 0 ? tweetInfo.mediaInfo : null);
+        copy = tweetInfo.copy((r28 & 1) != 0 ? tweetInfo.f430id : 0L, (r28 & 2) != 0 ? tweetInfo.authorName : null, (r28 & 4) != 0 ? tweetInfo.authorNickname : null, (r28 & 8) != 0 ? tweetInfo.avatarUrl : null, (r28 & 16) != 0 ? tweetInfo.likesCount : tweetInfo.getLikesCount() + (tweetInfo.isLiked() ? -1 : 1), (r28 & 32) != 0 ? tweetInfo.quotesCount : 0, (r28 & 64) != 0 ? tweetInfo.retweetsCount : 0, (r28 & 128) != 0 ? tweetInfo.text : null, (r28 & 256) != 0 ? tweetInfo.createdAt : 0L, (r28 & 512) != 0 ? tweetInfo.isLiked : !tweetInfo.isLiked(), (r28 & 1024) != 0 ? tweetInfo.mediaInfo : null);
         list.set(i, copy);
         this.items.set(indexOf, TweetInfoUiMappingKt.mapToUi(this.tweets.get(i)));
         ((TwitterView) getViewState()).renderItems(this.items);

@@ -13,7 +13,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nPhotoViewerPresenter.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PhotoViewerPresenter.kt\ncom/iMe/ui/recognition/PhotoViewerPresenter\n+ 2 RxExt.kt\ncom/iMe/utils/extentions/rx/RxExtKt\n*L\n1#1,68:1\n39#2,8:69\n39#2,8:77\n*S KotlinDebug\n*F\n+ 1 PhotoViewerPresenter.kt\ncom/iMe/ui/recognition/PhotoViewerPresenter\n*L\n29#1:69,8\n52#1:77,8\n*E\n"
+    value = "SMAP\nPhotoViewerPresenter.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PhotoViewerPresenter.kt\ncom/iMe/ui/recognition/PhotoViewerPresenter\n+ 2 RxExt.kt\ncom/iMe/utils/extentions/rx/RxExtKt\n*L\n1#1,68:1\n42#2,12:69\n42#2,12:81\n*S KotlinDebug\n*F\n+ 1 PhotoViewerPresenter.kt\ncom/iMe/ui/recognition/PhotoViewerPresenter\n*L\n29#1:69,12\n52#1:81,12\n*E\n"
 .end annotation
 
 .annotation runtime Lmoxy/InjectViewState;
@@ -128,7 +128,7 @@
 
     check-cast v0, Lcom/iMe/ui/base/mvp/base/BaseView;
 
-    .line 44
+    .line 47
     new-instance v1, Lcom/iMe/ui/recognition/PhotoViewerPresenter$getPhotoObjects$$inlined$subscribeWithErrorHandle$default$1;
 
     invoke-direct {v1, p0}, Lcom/iMe/ui/recognition/PhotoViewerPresenter$getPhotoObjects$$inlined$subscribeWithErrorHandle$default$1;-><init>(Lcom/iMe/ui/recognition/PhotoViewerPresenter;)V
@@ -141,19 +141,19 @@
 
     invoke-direct {v1, v0}, Lcom/iMe/ui/recognition/PhotoViewerPresenter$getPhotoObjects$$inlined$subscribeWithErrorHandle$default$2;-><init>(Lcom/iMe/ui/base/mvp/base/BaseView;)V
 
-    .line 46
+    .line 49
     new-instance v0, Lcom/iMe/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
 
     invoke-direct {v0, v1}, Lcom/iMe/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;-><init>(Lkotlin/jvm/functions/Function1;)V
 
-    .line 44
+    .line 47
     invoke-virtual {p1, v2, v0}, Lio/reactivex/Observable;->subscribe(Lio/reactivex/functions/Consumer;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
 
     move-result-object p1
 
-    const-string v0, "viewState: BaseView? = n\u2026  onError.invoke()\n    })"
+    const-string v0, "viewState: BaseView? = n\u2026Error.invoke()\n        })"
 
-    .line 46
+    .line 49
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     const/4 v0, 0x1
@@ -222,7 +222,7 @@
 
     check-cast v0, Lcom/iMe/ui/base/mvp/base/BaseView;
 
-    .line 44
+    .line 47
     new-instance v1, Lcom/iMe/ui/recognition/PhotoViewerPresenter$getPhotoText$$inlined$subscribeWithErrorHandle$default$1;
 
     invoke-direct {v1, p2, p0}, Lcom/iMe/ui/recognition/PhotoViewerPresenter$getPhotoText$$inlined$subscribeWithErrorHandle$default$1;-><init>(ZLcom/iMe/ui/recognition/PhotoViewerPresenter;)V
@@ -235,19 +235,19 @@
 
     invoke-direct {v1, v0}, Lcom/iMe/ui/recognition/PhotoViewerPresenter$getPhotoText$$inlined$subscribeWithErrorHandle$default$2;-><init>(Lcom/iMe/ui/base/mvp/base/BaseView;)V
 
-    .line 46
+    .line 49
     new-instance v0, Lcom/iMe/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
 
     invoke-direct {v0, v1}, Lcom/iMe/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;-><init>(Lkotlin/jvm/functions/Function1;)V
 
-    .line 44
+    .line 47
     invoke-virtual {p1, p2, v0}, Lio/reactivex/Observable;->subscribe(Lio/reactivex/functions/Consumer;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
 
     move-result-object p1
 
-    const-string p2, "viewState: BaseView? = n\u2026  onError.invoke()\n    })"
+    const-string p2, "viewState: BaseView? = n\u2026Error.invoke()\n        })"
 
-    .line 46
+    .line 49
     invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     const/4 p2, 0x1

@@ -11,7 +11,7 @@ import com.iMe.p031ui.shop.view.model.DisplayingBotsCategory;
 import java.util.ArrayList;
 import java.util.List;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.p044ui.Components.RecyclerListView;
+import org.telegram.p043ui.Components.RecyclerListView;
 /* compiled from: BotsCategoriesAdapter.kt */
 /* renamed from: com.iMe.ui.shop.view.adapter.BotsCategoriesAdapter */
 /* loaded from: classes3.dex */
@@ -24,7 +24,7 @@ public final class BotsCategoriesAdapter extends RecyclerListView.SelectionAdapt
         return i;
     }
 
-    @Override // org.telegram.p044ui.Components.RecyclerListView.SelectionAdapter
+    @Override // org.telegram.p043ui.Components.RecyclerListView.SelectionAdapter
     public boolean isEnabled(RecyclerView.ViewHolder viewHolder) {
         return false;
     }

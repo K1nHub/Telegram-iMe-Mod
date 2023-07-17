@@ -2,9 +2,8 @@ package com.iMe.storage.domain.interactor.crypto.permission;
 
 import com.iMe.storage.domain.model.Result;
 import com.iMe.storage.domain.model.crypto.AccountInfo;
-import com.iMe.storage.domain.model.crypto.CryptoWalletInfo;
+import com.iMe.storage.domain.model.crypto.CryptoWalletsInfo;
 import com.iMe.storage.domain.model.crypto.permission.PermissionAction;
-import com.iMe.storage.domain.model.wallet.token.TokenCode;
 import com.iMe.storage.domain.repository.crypto.permission.CryptoPermissionRepository;
 import com.iMe.storage.domain.utils.p030rx.SchedulersProvider;
 import io.reactivex.Observable;
@@ -23,23 +22,15 @@ public final class CryptoPermissionInteractor {
         this.schedulersProvider = schedulersProvider;
     }
 
-    public final Observable<Result<CryptoWalletInfo>> getCryptoPrivacySettings(boolean z) {
-        Observable<Result<CryptoWalletInfo>> subscribeOn = this.cryptoPermissionRepository.getPermissionSettings(z).subscribeOn(this.schedulersProvider.mo699io());
+    public final Observable<Result<CryptoWalletsInfo>> getCryptoPrivacySettings(boolean z) {
+        Observable<Result<CryptoWalletsInfo>> subscribeOn = this.cryptoPermissionRepository.getPermissionSettings(z).subscribeOn(this.schedulersProvider.mo699io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn, "cryptoPermissionReposito…(schedulersProvider.io())");
         return subscribeOn;
     }
 
-    public static /* synthetic */ Observable manageCryptoPrivacySettings$default(CryptoPermissionInteractor cryptoPermissionInteractor, TokenCode tokenCode, boolean z, List list, int i, Object obj) {
-        if ((i & 1) != 0) {
-            tokenCode = TokenCode.ETHER;
-        }
-        return cryptoPermissionInteractor.manageCryptoPrivacySettings(tokenCode, z, list);
-    }
-
-    public final Observable<Result<Boolean>> manageCryptoPrivacySettings(TokenCode type, boolean z, List<Long> whitelistUsers) {
-        Intrinsics.checkNotNullParameter(type, "type");
+    public final Observable<Result<Boolean>> manageCryptoPrivacySettings(boolean z, List<Long> whitelistUsers) {
         Intrinsics.checkNotNullParameter(whitelistUsers, "whitelistUsers");
-        Observable<Result<Boolean>> subscribeOn = this.cryptoPermissionRepository.managePermissionSettings(type, z, whitelistUsers).subscribeOn(this.schedulersProvider.mo699io());
+        Observable<Result<Boolean>> subscribeOn = this.cryptoPermissionRepository.managePermissionSettings(z, whitelistUsers).subscribeOn(this.schedulersProvider.mo699io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn, "cryptoPermissionReposito…(schedulersProvider.io())");
         return subscribeOn;
     }

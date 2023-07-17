@@ -56,11 +56,13 @@
 
 .field public static final enum CHANNELS:Lcom/iMe/fork/enums/SortingFilter;
 
-.field public static final CURRENT_DEPLOY_VERSION:I = 0x8
+.field public static final CURRENT_DEPLOY_VERSION:I = 0x9
 
 .field public static final Companion:Lcom/iMe/fork/enums/SortingFilter$Companion;
 
 .field public static final enum DELETED_USERS:Lcom/iMe/fork/enums/SortingFilter;
+
+.field public static final enum DRAFTS:Lcom/iMe/fork/enums/SortingFilter;
 
 .field public static final enum GROUPS:Lcom/iMe/fork/enums/SortingFilter;
 
@@ -98,6 +100,8 @@
 
 .field private final isEnabledByDefault:Z
 
+.field private final isFabEditable:Z
+
 .field private final titleResId:I
 
 
@@ -105,7 +109,7 @@
 .method private static final synthetic $values()[Lcom/iMe/fork/enums/SortingFilter;
     .locals 3
 
-    const/16 v0, 0x1a
+    const/16 v0, 0x1b
 
     new-array v0, v0, [Lcom/iMe/fork/enums/SortingFilter;
 
@@ -187,81 +191,87 @@
 
     aput-object v1, v0, v2
 
-    sget-object v1, Lcom/iMe/fork/enums/SortingFilter;->ARCHIVE_UNREAD:Lcom/iMe/fork/enums/SortingFilter;
+    sget-object v1, Lcom/iMe/fork/enums/SortingFilter;->DRAFTS:Lcom/iMe/fork/enums/SortingFilter;
 
     const/16 v2, 0xd
 
     aput-object v1, v0, v2
 
-    sget-object v1, Lcom/iMe/fork/enums/SortingFilter;->ARCHIVE_PERSONAL:Lcom/iMe/fork/enums/SortingFilter;
+    sget-object v1, Lcom/iMe/fork/enums/SortingFilter;->ARCHIVE_UNREAD:Lcom/iMe/fork/enums/SortingFilter;
 
     const/16 v2, 0xe
 
     aput-object v1, v0, v2
 
-    sget-object v1, Lcom/iMe/fork/enums/SortingFilter;->ARCHIVE_GROUPS:Lcom/iMe/fork/enums/SortingFilter;
+    sget-object v1, Lcom/iMe/fork/enums/SortingFilter;->ARCHIVE_PERSONAL:Lcom/iMe/fork/enums/SortingFilter;
 
     const/16 v2, 0xf
 
     aput-object v1, v0, v2
 
-    sget-object v1, Lcom/iMe/fork/enums/SortingFilter;->ARCHIVE_CHANNELS:Lcom/iMe/fork/enums/SortingFilter;
+    sget-object v1, Lcom/iMe/fork/enums/SortingFilter;->ARCHIVE_GROUPS:Lcom/iMe/fork/enums/SortingFilter;
 
     const/16 v2, 0x10
 
     aput-object v1, v0, v2
 
-    sget-object v1, Lcom/iMe/fork/enums/SortingFilter;->ARCHIVE_BOTS:Lcom/iMe/fork/enums/SortingFilter;
+    sget-object v1, Lcom/iMe/fork/enums/SortingFilter;->ARCHIVE_CHANNELS:Lcom/iMe/fork/enums/SortingFilter;
 
     const/16 v2, 0x11
 
     aput-object v1, v0, v2
 
-    sget-object v1, Lcom/iMe/fork/enums/SortingFilter;->ARCHIVE_ADMIN:Lcom/iMe/fork/enums/SortingFilter;
+    sget-object v1, Lcom/iMe/fork/enums/SortingFilter;->ARCHIVE_BOTS:Lcom/iMe/fork/enums/SortingFilter;
 
     const/16 v2, 0x12
 
     aput-object v1, v0, v2
 
-    sget-object v1, Lcom/iMe/fork/enums/SortingFilter;->ARCHIVE_OWNER:Lcom/iMe/fork/enums/SortingFilter;
+    sget-object v1, Lcom/iMe/fork/enums/SortingFilter;->ARCHIVE_ADMIN:Lcom/iMe/fork/enums/SortingFilter;
 
     const/16 v2, 0x13
 
     aput-object v1, v0, v2
 
-    sget-object v1, Lcom/iMe/fork/enums/SortingFilter;->ARCHIVE_PRIVATE_GROUPS:Lcom/iMe/fork/enums/SortingFilter;
+    sget-object v1, Lcom/iMe/fork/enums/SortingFilter;->ARCHIVE_OWNER:Lcom/iMe/fork/enums/SortingFilter;
 
     const/16 v2, 0x14
 
     aput-object v1, v0, v2
 
-    sget-object v1, Lcom/iMe/fork/enums/SortingFilter;->ARCHIVE_PUBLIC_GROUPS:Lcom/iMe/fork/enums/SortingFilter;
+    sget-object v1, Lcom/iMe/fork/enums/SortingFilter;->ARCHIVE_PRIVATE_GROUPS:Lcom/iMe/fork/enums/SortingFilter;
 
     const/16 v2, 0x15
 
     aput-object v1, v0, v2
 
-    sget-object v1, Lcom/iMe/fork/enums/SortingFilter;->ARCHIVE_LIVE_CHATS:Lcom/iMe/fork/enums/SortingFilter;
+    sget-object v1, Lcom/iMe/fork/enums/SortingFilter;->ARCHIVE_PUBLIC_GROUPS:Lcom/iMe/fork/enums/SortingFilter;
 
     const/16 v2, 0x16
 
     aput-object v1, v0, v2
 
-    sget-object v1, Lcom/iMe/fork/enums/SortingFilter;->ARCHIVE_DELETED_USERS:Lcom/iMe/fork/enums/SortingFilter;
+    sget-object v1, Lcom/iMe/fork/enums/SortingFilter;->ARCHIVE_LIVE_CHATS:Lcom/iMe/fork/enums/SortingFilter;
 
     const/16 v2, 0x17
 
     aput-object v1, v0, v2
 
-    sget-object v1, Lcom/iMe/fork/enums/SortingFilter;->ARCHIVE_SECRET_CHATS:Lcom/iMe/fork/enums/SortingFilter;
+    sget-object v1, Lcom/iMe/fork/enums/SortingFilter;->ARCHIVE_DELETED_USERS:Lcom/iMe/fork/enums/SortingFilter;
 
     const/16 v2, 0x18
 
     aput-object v1, v0, v2
 
-    sget-object v1, Lcom/iMe/fork/enums/SortingFilter;->ARCHIVE_ALBUMS:Lcom/iMe/fork/enums/SortingFilter;
+    sget-object v1, Lcom/iMe/fork/enums/SortingFilter;->ARCHIVE_SECRET_CHATS:Lcom/iMe/fork/enums/SortingFilter;
 
     const/16 v2, 0x19
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lcom/iMe/fork/enums/SortingFilter;->ARCHIVE_ALBUMS:Lcom/iMe/fork/enums/SortingFilter;
+
+    const/16 v2, 0x1a
 
     aput-object v1, v0, v2
 
@@ -269,24 +279,24 @@
 .end method
 
 .method static constructor <clinit>()V
-    .locals 58
-
-    .line 20
-    new-instance v11, Lcom/iMe/fork/enums/SortingFilter;
+    .locals 72
 
     .line 21
-    sget v12, Lorg/telegram/messenger/R$string;->sorting_settings_tab_unread_chats_item_title:I
+    new-instance v12, Lcom/iMe/fork/enums/SortingFilter;
 
     .line 22
-    sget v13, Lorg/telegram/messenger/R$drawable;->fork_filter_icon_bubble_point:I
+    sget v13, Lorg/telegram/messenger/R$string;->sorting_settings_tab_unread_chats_item_title:I
 
     .line 23
-    sget v14, Lorg/telegram/messenger/R$drawable;->fork_filter_icon_bubble_point_filled:I
+    sget v14, Lorg/telegram/messenger/R$drawable;->fork_filter_icon_bubble_point:I
 
     .line 24
-    sget-object v15, Lcom/iMe/storage/domain/model/filters/FilterFab;->MARK_ALL_READ:Lcom/iMe/storage/domain/model/filters/FilterFab;
+    sget v15, Lorg/telegram/messenger/R$drawable;->fork_filter_icon_bubble_point_filled:I
 
     .line 25
+    sget-object v16, Lcom/iMe/storage/domain/model/filters/FilterFab;->MARK_ALL_READ:Lcom/iMe/storage/domain/model/filters/FilterFab;
+
+    .line 27
     sget v0, Lorg/telegram/messenger/MessagesController;->DIALOG_FILTER_FLAG_ALL_CHATS:I
 
     sget v1, Lorg/telegram/messenger/MessagesController;->DIALOG_FILTER_FLAG_EXCLUDE_READ:I
@@ -295,49 +305,51 @@
 
     sget v1, Lorg/telegram/messenger/MessagesController;->DIALOG_FILTER_FLAG_EXCLUDE_ARCHIVED:I
 
-    or-int v7, v0, v1
+    or-int v8, v0, v1
 
     const-string v1, "UNREAD"
 
     const/4 v2, 0x0
 
-    const/4 v8, 0x1
+    const/4 v7, 0x1
 
-    const/4 v9, 0x0
+    const/4 v9, 0x1
 
     const/4 v10, 0x0
 
-    move-object v0, v11
+    const/4 v11, 0x0
 
-    move v3, v12
+    move-object v0, v12
 
-    move v4, v13
+    move v3, v13
 
-    move v5, v14
+    move v4, v14
 
-    move-object v6, v15
+    move v5, v15
 
-    .line 20
-    invoke-direct/range {v0 .. v10}, Lcom/iMe/fork/enums/SortingFilter;-><init>(Ljava/lang/String;IIIILcom/iMe/storage/domain/model/filters/FilterFab;IZIZ)V
+    move-object/from16 v6, v16
 
-    sput-object v11, Lcom/iMe/fork/enums/SortingFilter;->UNREAD:Lcom/iMe/fork/enums/SortingFilter;
+    .line 21
+    invoke-direct/range {v0 .. v11}, Lcom/iMe/fork/enums/SortingFilter;-><init>(Ljava/lang/String;IIIILcom/iMe/storage/domain/model/filters/FilterFab;ZIZIZ)V
 
-    .line 30
-    new-instance v0, Lcom/iMe/fork/enums/SortingFilter;
-
-    .line 31
-    sget v11, Lorg/telegram/messenger/R$string;->sorting_settings_tab_personal_chats_item_title:I
+    sput-object v12, Lcom/iMe/fork/enums/SortingFilter;->UNREAD:Lcom/iMe/fork/enums/SortingFilter;
 
     .line 32
-    sget v27, Lorg/telegram/messenger/R$drawable;->fork_filter_icon_user:I
+    new-instance v0, Lcom/iMe/fork/enums/SortingFilter;
 
     .line 33
-    sget v28, Lorg/telegram/messenger/R$drawable;->fork_filter_icon_user_filled:I
+    sget v12, Lorg/telegram/messenger/R$string;->sorting_settings_tab_personal_chats_item_title:I
 
     .line 34
-    sget-object v29, Lcom/iMe/storage/domain/model/filters/FilterFab;->CREATE_CHAT:Lcom/iMe/storage/domain/model/filters/FilterFab;
+    sget v29, Lorg/telegram/messenger/R$drawable;->fork_filter_icon_user:I
 
     .line 35
+    sget v30, Lorg/telegram/messenger/R$drawable;->fork_filter_icon_user_filled:I
+
+    .line 36
+    sget-object v31, Lcom/iMe/storage/domain/model/filters/FilterFab;->CREATE_CHAT:Lcom/iMe/storage/domain/model/filters/FilterFab;
+
+    .line 38
     sget v1, Lorg/telegram/messenger/MessagesController;->DIALOG_FILTER_FLAG_CONTACTS:I
 
     sget v2, Lorg/telegram/messenger/MessagesController;->DIALOG_FILTER_FLAG_NON_CONTACTS:I
@@ -346,449 +358,488 @@
 
     sget v2, Lorg/telegram/messenger/MessagesController;->DIALOG_FILTER_FLAG_EXCLUDE_ARCHIVED:I
 
-    or-int v23, v1, v2
+    or-int v25, v1, v2
 
-    const-string v17, "PERSONAL"
+    const-string v18, "PERSONAL"
 
-    const/16 v18, 0x1
+    const/16 v19, 0x1
 
     const/16 v24, 0x1
 
-    const/16 v25, 0x1
+    const/16 v26, 0x1
 
-    const/16 v26, 0x0
+    const/16 v27, 0x1
 
-    move-object/from16 v16, v0
+    const/16 v28, 0x0
 
-    move/from16 v19, v11
+    move-object/from16 v17, v0
 
-    move/from16 v20, v27
+    move/from16 v20, v12
 
-    move/from16 v21, v28
+    move/from16 v21, v29
 
-    move-object/from16 v22, v29
+    move/from16 v22, v30
 
-    .line 30
-    invoke-direct/range {v16 .. v26}, Lcom/iMe/fork/enums/SortingFilter;-><init>(Ljava/lang/String;IIIILcom/iMe/storage/domain/model/filters/FilterFab;IZIZ)V
+    move-object/from16 v23, v31
+
+    .line 32
+    invoke-direct/range {v17 .. v28}, Lcom/iMe/fork/enums/SortingFilter;-><init>(Ljava/lang/String;IIIILcom/iMe/storage/domain/model/filters/FilterFab;ZIZIZ)V
 
     sput-object v0, Lcom/iMe/fork/enums/SortingFilter;->PERSONAL:Lcom/iMe/fork/enums/SortingFilter;
 
-    .line 40
+    .line 43
     new-instance v0, Lcom/iMe/fork/enums/SortingFilter;
 
-    .line 41
-    sget v30, Lorg/telegram/messenger/R$string;->sorting_settings_tab_groups_item_title:I
-
-    .line 42
-    sget v31, Lorg/telegram/messenger/R$drawable;->fork_filter_icon_users:I
-
-    .line 43
-    sget v32, Lorg/telegram/messenger/R$drawable;->fork_filter_icon_users_filled:I
+    .line 44
+    sget v32, Lorg/telegram/messenger/R$string;->sorting_settings_tab_groups_item_title:I
 
     .line 45
+    sget v33, Lorg/telegram/messenger/R$drawable;->fork_filter_icon_users:I
+
+    .line 46
+    sget v34, Lorg/telegram/messenger/R$drawable;->fork_filter_icon_users_filled:I
+
+    .line 49
     sget v1, Lorg/telegram/messenger/MessagesController;->DIALOG_FILTER_FLAG_GROUPS:I
 
     sget v2, Lorg/telegram/messenger/MessagesController;->DIALOG_FILTER_FLAG_EXCLUDE_ARCHIVED:I
 
-    or-int v23, v1, v2
+    or-int v25, v1, v2
 
-    const-string v17, "GROUPS"
+    const-string v18, "GROUPS"
 
-    const/16 v18, 0x2
+    const/16 v19, 0x2
 
-    const/16 v25, 0x2
+    const/16 v27, 0x2
 
-    move-object/from16 v16, v0
+    move-object/from16 v17, v0
 
-    move/from16 v19, v30
+    move/from16 v20, v32
 
-    move/from16 v20, v31
+    move/from16 v21, v33
 
-    move/from16 v21, v32
+    move/from16 v22, v34
 
-    .line 40
-    invoke-direct/range {v16 .. v26}, Lcom/iMe/fork/enums/SortingFilter;-><init>(Ljava/lang/String;IIIILcom/iMe/storage/domain/model/filters/FilterFab;IZIZ)V
+    .line 43
+    invoke-direct/range {v17 .. v28}, Lcom/iMe/fork/enums/SortingFilter;-><init>(Ljava/lang/String;IIIILcom/iMe/storage/domain/model/filters/FilterFab;ZIZIZ)V
 
     sput-object v0, Lcom/iMe/fork/enums/SortingFilter;->GROUPS:Lcom/iMe/fork/enums/SortingFilter;
 
-    .line 50
+    .line 54
     new-instance v0, Lcom/iMe/fork/enums/SortingFilter;
 
-    .line 51
-    sget v33, Lorg/telegram/messenger/R$string;->sorting_settings_tab_channels_item_title:I
-
-    .line 52
-    sget v34, Lorg/telegram/messenger/R$drawable;->fork_filter_icon_channel:I
-
-    .line 53
-    sget v35, Lorg/telegram/messenger/R$drawable;->fork_filter_icon_channel_filled:I
-
     .line 55
+    sget v35, Lorg/telegram/messenger/R$string;->sorting_settings_tab_channels_item_title:I
+
+    .line 56
+    sget v36, Lorg/telegram/messenger/R$drawable;->fork_filter_icon_channel:I
+
+    .line 57
+    sget v37, Lorg/telegram/messenger/R$drawable;->fork_filter_icon_channel_filled:I
+
+    .line 60
     sget v1, Lorg/telegram/messenger/MessagesController;->DIALOG_FILTER_FLAG_CHANNELS:I
 
     sget v2, Lorg/telegram/messenger/MessagesController;->DIALOG_FILTER_FLAG_EXCLUDE_ARCHIVED:I
 
-    or-int v23, v1, v2
+    or-int v25, v1, v2
 
-    const-string v17, "CHANNELS"
+    const-string v18, "CHANNELS"
 
-    const/16 v18, 0x3
+    const/16 v19, 0x3
 
-    const/16 v25, 0x3
+    const/16 v27, 0x3
 
-    move-object/from16 v16, v0
+    move-object/from16 v17, v0
 
-    move/from16 v19, v33
+    move/from16 v20, v35
 
-    move/from16 v20, v34
+    move/from16 v21, v36
 
-    move/from16 v21, v35
+    move/from16 v22, v37
 
-    .line 50
-    invoke-direct/range {v16 .. v26}, Lcom/iMe/fork/enums/SortingFilter;-><init>(Ljava/lang/String;IIIILcom/iMe/storage/domain/model/filters/FilterFab;IZIZ)V
+    .line 54
+    invoke-direct/range {v17 .. v28}, Lcom/iMe/fork/enums/SortingFilter;-><init>(Ljava/lang/String;IIIILcom/iMe/storage/domain/model/filters/FilterFab;ZIZIZ)V
 
     sput-object v0, Lcom/iMe/fork/enums/SortingFilter;->CHANNELS:Lcom/iMe/fork/enums/SortingFilter;
 
-    .line 60
+    .line 65
     new-instance v0, Lcom/iMe/fork/enums/SortingFilter;
 
-    .line 61
-    sget v36, Lorg/telegram/messenger/R$string;->sorting_settings_tab_bots_item_title:I
+    .line 66
+    sget v38, Lorg/telegram/messenger/R$string;->sorting_settings_tab_bots_item_title:I
 
-    .line 62
-    sget v37, Lorg/telegram/messenger/R$drawable;->fork_filter_icon_bot:I
+    .line 67
+    sget v39, Lorg/telegram/messenger/R$drawable;->fork_filter_icon_bot:I
 
-    .line 63
-    sget v38, Lorg/telegram/messenger/R$drawable;->fork_filter_icon_bot_filled:I
+    .line 68
+    sget v40, Lorg/telegram/messenger/R$drawable;->fork_filter_icon_bot_filled:I
 
-    .line 65
+    .line 71
     sget v1, Lorg/telegram/messenger/MessagesController;->DIALOG_FILTER_FLAG_BOTS:I
 
     sget v2, Lorg/telegram/messenger/MessagesController;->DIALOG_FILTER_FLAG_EXCLUDE_ARCHIVED:I
 
-    or-int v23, v1, v2
+    or-int v25, v1, v2
 
-    const-string v17, "BOTS"
+    const-string v18, "BOTS"
 
-    const/16 v18, 0x4
+    const/16 v19, 0x4
 
-    const/16 v25, 0x4
+    const/16 v27, 0x4
 
-    move-object/from16 v16, v0
+    move-object/from16 v17, v0
 
-    move/from16 v19, v36
+    move/from16 v20, v38
 
-    move/from16 v20, v37
+    move/from16 v21, v39
 
-    move/from16 v21, v38
+    move/from16 v22, v40
 
-    .line 60
-    invoke-direct/range {v16 .. v26}, Lcom/iMe/fork/enums/SortingFilter;-><init>(Ljava/lang/String;IIIILcom/iMe/storage/domain/model/filters/FilterFab;IZIZ)V
+    .line 65
+    invoke-direct/range {v17 .. v28}, Lcom/iMe/fork/enums/SortingFilter;-><init>(Ljava/lang/String;IIIILcom/iMe/storage/domain/model/filters/FilterFab;ZIZIZ)V
 
     sput-object v0, Lcom/iMe/fork/enums/SortingFilter;->BOTS:Lcom/iMe/fork/enums/SortingFilter;
 
-    .line 70
+    .line 76
     new-instance v0, Lcom/iMe/fork/enums/SortingFilter;
 
-    .line 71
-    sget v39, Lorg/telegram/messenger/R$string;->sorting_settings_tab_admin_item_title:I
+    .line 77
+    sget v41, Lorg/telegram/messenger/R$string;->sorting_settings_tab_admin_item_title:I
 
-    .line 72
-    sget v40, Lorg/telegram/messenger/R$drawable;->fork_filter_icon_chat_admin:I
+    .line 78
+    sget v42, Lorg/telegram/messenger/R$drawable;->fork_filter_icon_chat_admin:I
 
-    .line 73
-    sget v41, Lorg/telegram/messenger/R$drawable;->fork_filter_icon_chat_admin_filled:I
+    .line 79
+    sget v43, Lorg/telegram/messenger/R$drawable;->fork_filter_icon_chat_admin_filled:I
 
-    .line 75
+    .line 82
     sget v1, Lorg/telegram/messenger/MessagesController;->DIALOG_FILTER_FLAG_ADMIN:I
 
     sget v2, Lorg/telegram/messenger/MessagesController;->DIALOG_FILTER_FLAG_EXCLUDE_ARCHIVED:I
 
-    or-int v23, v1, v2
+    or-int v25, v1, v2
 
-    const-string v17, "ADMIN"
+    const-string v18, "ADMIN"
 
-    const/16 v18, 0x5
+    const/16 v19, 0x5
 
-    const/16 v25, 0x6
+    const/16 v27, 0x6
 
-    move-object/from16 v16, v0
+    move-object/from16 v17, v0
 
-    move/from16 v19, v39
+    move/from16 v20, v41
 
-    move/from16 v20, v40
+    move/from16 v21, v42
 
-    move/from16 v21, v41
+    move/from16 v22, v43
 
-    .line 70
-    invoke-direct/range {v16 .. v26}, Lcom/iMe/fork/enums/SortingFilter;-><init>(Ljava/lang/String;IIIILcom/iMe/storage/domain/model/filters/FilterFab;IZIZ)V
+    .line 76
+    invoke-direct/range {v17 .. v28}, Lcom/iMe/fork/enums/SortingFilter;-><init>(Ljava/lang/String;IIIILcom/iMe/storage/domain/model/filters/FilterFab;ZIZIZ)V
 
     sput-object v0, Lcom/iMe/fork/enums/SortingFilter;->ADMIN:Lcom/iMe/fork/enums/SortingFilter;
 
-    .line 80
+    .line 87
     new-instance v0, Lcom/iMe/fork/enums/SortingFilter;
 
-    .line 81
-    sget v42, Lorg/telegram/messenger/R$string;->sorting_settings_tab_owner_item_title:I
+    .line 88
+    sget v44, Lorg/telegram/messenger/R$string;->sorting_settings_tab_owner_item_title:I
 
-    .line 82
-    sget v43, Lorg/telegram/messenger/R$drawable;->fork_filter_icon_owner:I
+    .line 89
+    sget v45, Lorg/telegram/messenger/R$drawable;->fork_filter_icon_owner:I
 
-    .line 83
-    sget v44, Lorg/telegram/messenger/R$drawable;->fork_filter_icon_owner_filled:I
+    .line 90
+    sget v46, Lorg/telegram/messenger/R$drawable;->fork_filter_icon_owner_filled:I
 
-    .line 85
+    .line 93
     sget v1, Lorg/telegram/messenger/MessagesController;->DIALOG_FILTER_FLAG_OWNER:I
 
     sget v2, Lorg/telegram/messenger/MessagesController;->DIALOG_FILTER_FLAG_EXCLUDE_ARCHIVED:I
 
-    or-int v23, v1, v2
+    or-int v25, v1, v2
 
-    const-string v17, "OWNER"
+    const-string v18, "OWNER"
 
-    const/16 v18, 0x6
+    const/16 v19, 0x6
 
-    const/16 v25, 0x5
+    const/16 v27, 0x5
 
-    move-object/from16 v16, v0
+    move-object/from16 v17, v0
 
-    move/from16 v19, v42
+    move/from16 v20, v44
 
-    move/from16 v20, v43
+    move/from16 v21, v45
 
-    move/from16 v21, v44
+    move/from16 v22, v46
 
-    .line 80
-    invoke-direct/range {v16 .. v26}, Lcom/iMe/fork/enums/SortingFilter;-><init>(Ljava/lang/String;IIIILcom/iMe/storage/domain/model/filters/FilterFab;IZIZ)V
+    .line 87
+    invoke-direct/range {v17 .. v28}, Lcom/iMe/fork/enums/SortingFilter;-><init>(Ljava/lang/String;IIIILcom/iMe/storage/domain/model/filters/FilterFab;ZIZIZ)V
 
     sput-object v0, Lcom/iMe/fork/enums/SortingFilter;->OWNER:Lcom/iMe/fork/enums/SortingFilter;
 
-    .line 90
+    .line 98
     new-instance v0, Lcom/iMe/fork/enums/SortingFilter;
 
-    .line 91
-    sget v45, Lorg/telegram/messenger/R$string;->sorting_settings_tab_private_groups_item_title:I
+    .line 99
+    sget v47, Lorg/telegram/messenger/R$string;->sorting_settings_tab_private_groups_item_title:I
 
-    .line 92
-    sget v46, Lorg/telegram/messenger/R$drawable;->fork_filter_icon_private_groups:I
+    .line 100
+    sget v48, Lorg/telegram/messenger/R$drawable;->fork_filter_icon_private_groups:I
 
-    .line 93
-    sget v47, Lorg/telegram/messenger/R$drawable;->fork_filter_icon_private_groups_filled:I
+    .line 101
+    sget v49, Lorg/telegram/messenger/R$drawable;->fork_filter_icon_private_groups_filled:I
 
-    .line 95
+    .line 104
     sget v1, Lorg/telegram/messenger/MessagesController;->DIALOG_FILTER_FLAG_PRIVATE_GROUPS:I
 
     sget v2, Lorg/telegram/messenger/MessagesController;->DIALOG_FILTER_FLAG_EXCLUDE_ARCHIVED:I
 
-    or-int v23, v1, v2
+    or-int v25, v1, v2
 
-    const-string v17, "PRIVATE_GROUPS"
+    const-string v18, "PRIVATE_GROUPS"
 
-    const/16 v18, 0x7
+    const/16 v19, 0x7
 
-    const/16 v24, 0x0
+    const/16 v26, 0x0
 
-    const/16 v25, 0x8
+    const/16 v27, 0x8
 
-    move-object/from16 v16, v0
+    move-object/from16 v17, v0
 
-    move/from16 v19, v45
+    move/from16 v20, v47
 
-    move/from16 v20, v46
+    move/from16 v21, v48
 
-    move/from16 v21, v47
+    move/from16 v22, v49
 
-    .line 90
-    invoke-direct/range {v16 .. v26}, Lcom/iMe/fork/enums/SortingFilter;-><init>(Ljava/lang/String;IIIILcom/iMe/storage/domain/model/filters/FilterFab;IZIZ)V
+    .line 98
+    invoke-direct/range {v17 .. v28}, Lcom/iMe/fork/enums/SortingFilter;-><init>(Ljava/lang/String;IIIILcom/iMe/storage/domain/model/filters/FilterFab;ZIZIZ)V
 
     sput-object v0, Lcom/iMe/fork/enums/SortingFilter;->PRIVATE_GROUPS:Lcom/iMe/fork/enums/SortingFilter;
 
-    .line 100
+    .line 109
     new-instance v0, Lcom/iMe/fork/enums/SortingFilter;
 
-    .line 101
-    sget v48, Lorg/telegram/messenger/R$string;->sorting_settings_tab_public_groups_item_title:I
+    .line 110
+    sget v50, Lorg/telegram/messenger/R$string;->sorting_settings_tab_public_groups_item_title:I
 
-    .line 102
-    sget v49, Lorg/telegram/messenger/R$drawable;->fork_filter_icon_public_groups:I
+    .line 111
+    sget v51, Lorg/telegram/messenger/R$drawable;->fork_filter_icon_public_groups:I
 
-    .line 103
-    sget v50, Lorg/telegram/messenger/R$drawable;->fork_filter_icon_public_groups_filled:I
+    .line 112
+    sget v52, Lorg/telegram/messenger/R$drawable;->fork_filter_icon_public_groups_filled:I
 
-    .line 105
+    .line 115
     sget v1, Lorg/telegram/messenger/MessagesController;->DIALOG_FILTER_FLAG_PUBLIC_GROUPS:I
 
     sget v2, Lorg/telegram/messenger/MessagesController;->DIALOG_FILTER_FLAG_EXCLUDE_ARCHIVED:I
 
-    or-int v23, v1, v2
+    or-int v25, v1, v2
 
-    const-string v17, "PUBLIC_GROUPS"
+    const-string v18, "PUBLIC_GROUPS"
 
-    const/16 v18, 0x8
+    const/16 v19, 0x8
 
-    const/16 v25, 0x9
+    const/16 v27, 0x9
 
-    move-object/from16 v16, v0
+    move-object/from16 v17, v0
 
-    move/from16 v19, v48
+    move/from16 v20, v50
 
-    move/from16 v20, v49
+    move/from16 v21, v51
 
-    move/from16 v21, v50
+    move/from16 v22, v52
 
-    .line 100
-    invoke-direct/range {v16 .. v26}, Lcom/iMe/fork/enums/SortingFilter;-><init>(Ljava/lang/String;IIIILcom/iMe/storage/domain/model/filters/FilterFab;IZIZ)V
+    .line 109
+    invoke-direct/range {v17 .. v28}, Lcom/iMe/fork/enums/SortingFilter;-><init>(Ljava/lang/String;IIIILcom/iMe/storage/domain/model/filters/FilterFab;ZIZIZ)V
 
     sput-object v0, Lcom/iMe/fork/enums/SortingFilter;->PUBLIC_GROUPS:Lcom/iMe/fork/enums/SortingFilter;
 
-    .line 110
-    new-instance v16, Lcom/iMe/fork/enums/SortingFilter;
+    .line 120
+    new-instance v17, Lcom/iMe/fork/enums/SortingFilter;
 
-    .line 111
+    .line 121
     sget v3, Lorg/telegram/messenger/R$string;->sorting_settings_tab_mentioned_chats:I
 
-    .line 112
+    .line 122
     sget v4, Lorg/telegram/messenger/R$drawable;->fork_filter_icon_mentionbutton:I
 
-    .line 113
+    .line 123
     sget v5, Lorg/telegram/messenger/R$drawable;->fork_filter_icon_mentionbutton_filled:I
 
-    .line 115
+    .line 126
     sget v0, Lorg/telegram/messenger/MessagesController;->DIALOG_FILTER_FLAG_MENTIONED:I
 
     sget v1, Lorg/telegram/messenger/MessagesController;->DIALOG_FILTER_FLAG_EXCLUDE_ARCHIVED:I
 
-    or-int v7, v0, v1
+    or-int v8, v0, v1
 
     const-string v1, "MENTIONED_CHATS"
 
     const/16 v2, 0x9
 
-    const/4 v8, 0x0
+    const/4 v9, 0x0
 
-    const/16 v9, 0xb
+    const/16 v10, 0xb
 
-    move-object/from16 v0, v16
-
-    .line 110
-    invoke-direct/range {v0 .. v10}, Lcom/iMe/fork/enums/SortingFilter;-><init>(Ljava/lang/String;IIIILcom/iMe/storage/domain/model/filters/FilterFab;IZIZ)V
-
-    sput-object v16, Lcom/iMe/fork/enums/SortingFilter;->MENTIONED_CHATS:Lcom/iMe/fork/enums/SortingFilter;
+    move-object/from16 v0, v17
 
     .line 120
-    new-instance v16, Lcom/iMe/fork/enums/SortingFilter;
+    invoke-direct/range {v0 .. v11}, Lcom/iMe/fork/enums/SortingFilter;-><init>(Ljava/lang/String;IIIILcom/iMe/storage/domain/model/filters/FilterFab;ZIZIZ)V
 
-    .line 121
-    sget v51, Lorg/telegram/messenger/R$string;->sorting_settings_tab_live_chats:I
+    sput-object v17, Lcom/iMe/fork/enums/SortingFilter;->MENTIONED_CHATS:Lcom/iMe/fork/enums/SortingFilter;
 
-    .line 122
+    .line 131
+    new-instance v17, Lcom/iMe/fork/enums/SortingFilter;
+
+    .line 132
+    sget v53, Lorg/telegram/messenger/R$string;->sorting_settings_tab_live_chats:I
+
+    .line 133
     sget v4, Lorg/telegram/messenger/R$drawable;->fork_filter_icon_voicechat:I
 
-    .line 123
+    .line 134
     sget v5, Lorg/telegram/messenger/R$drawable;->fork_filter_icon_voicechat_filled:I
 
-    .line 125
+    .line 137
     sget v0, Lorg/telegram/messenger/MessagesController;->DIALOG_FILTER_FLAG_LIVE_CHAT:I
 
     sget v1, Lorg/telegram/messenger/MessagesController;->DIALOG_FILTER_FLAG_EXCLUDE_ARCHIVED:I
 
-    or-int v7, v0, v1
+    or-int v8, v0, v1
 
     const-string v1, "LIVE_CHATS"
 
     const/16 v2, 0xa
 
-    const/16 v9, 0xc
+    const/16 v10, 0xc
 
-    move-object/from16 v0, v16
+    move-object/from16 v0, v17
 
-    move/from16 v3, v51
-
-    .line 120
-    invoke-direct/range {v0 .. v10}, Lcom/iMe/fork/enums/SortingFilter;-><init>(Ljava/lang/String;IIIILcom/iMe/storage/domain/model/filters/FilterFab;IZIZ)V
-
-    sput-object v16, Lcom/iMe/fork/enums/SortingFilter;->LIVE_CHATS:Lcom/iMe/fork/enums/SortingFilter;
-
-    .line 130
-    new-instance v16, Lcom/iMe/fork/enums/SortingFilter;
+    move/from16 v3, v53
 
     .line 131
-    sget v52, Lorg/telegram/messenger/R$string;->sorting_settings_tab_deleted_users:I
+    invoke-direct/range {v0 .. v11}, Lcom/iMe/fork/enums/SortingFilter;-><init>(Ljava/lang/String;IIIILcom/iMe/storage/domain/model/filters/FilterFab;ZIZIZ)V
 
-    .line 132
-    sget v53, Lorg/telegram/messenger/R$drawable;->fork_ic_ghost_26:I
+    sput-object v17, Lcom/iMe/fork/enums/SortingFilter;->LIVE_CHATS:Lcom/iMe/fork/enums/SortingFilter;
 
-    .line 133
-    sget v54, Lorg/telegram/messenger/R$drawable;->fork_ic_ghost_filled_26:I
+    .line 142
+    new-instance v17, Lcom/iMe/fork/enums/SortingFilter;
 
-    .line 135
+    .line 143
+    sget v54, Lorg/telegram/messenger/R$string;->sorting_settings_tab_deleted_users:I
+
+    .line 144
+    sget v55, Lorg/telegram/messenger/R$drawable;->fork_ic_ghost_26:I
+
+    .line 145
+    sget v56, Lorg/telegram/messenger/R$drawable;->fork_ic_ghost_filled_26:I
+
+    .line 148
     sget v0, Lorg/telegram/messenger/MessagesController;->DIALOG_FILTER_FLAG_DELETED:I
 
     sget v1, Lorg/telegram/messenger/MessagesController;->DIALOG_FILTER_FLAG_EXCLUDE_ARCHIVED:I
 
-    or-int v7, v0, v1
+    or-int v8, v0, v1
 
     const-string v1, "DELETED_USERS"
 
     const/16 v2, 0xb
 
-    const/16 v9, 0xa
+    const/16 v10, 0xa
 
-    move-object/from16 v0, v16
+    move-object/from16 v0, v17
 
-    move/from16 v3, v52
+    move/from16 v3, v54
 
-    move/from16 v4, v53
+    move/from16 v4, v55
 
-    move/from16 v5, v54
-
-    .line 130
-    invoke-direct/range {v0 .. v10}, Lcom/iMe/fork/enums/SortingFilter;-><init>(Ljava/lang/String;IIIILcom/iMe/storage/domain/model/filters/FilterFab;IZIZ)V
-
-    sput-object v16, Lcom/iMe/fork/enums/SortingFilter;->DELETED_USERS:Lcom/iMe/fork/enums/SortingFilter;
-
-    .line 140
-    new-instance v0, Lcom/iMe/fork/enums/SortingFilter;
-
-    .line 141
-    sget v55, Lorg/telegram/messenger/R$string;->sorting_settings_tab_secret_chats_item_title:I
+    move/from16 v5, v56
 
     .line 142
-    sget v56, Lorg/telegram/messenger/R$drawable;->fork_filter_icon_lock:I
+    invoke-direct/range {v0 .. v11}, Lcom/iMe/fork/enums/SortingFilter;-><init>(Ljava/lang/String;IIIILcom/iMe/storage/domain/model/filters/FilterFab;ZIZIZ)V
 
-    .line 143
-    sget v57, Lorg/telegram/messenger/R$drawable;->fork_filter_icon_lock_filled:I
+    sput-object v17, Lcom/iMe/fork/enums/SortingFilter;->DELETED_USERS:Lcom/iMe/fork/enums/SortingFilter;
 
-    .line 145
+    .line 153
+    new-instance v0, Lcom/iMe/fork/enums/SortingFilter;
+
+    .line 154
+    sget v57, Lorg/telegram/messenger/R$string;->sorting_settings_tab_secret_chats_item_title:I
+
+    .line 155
+    sget v58, Lorg/telegram/messenger/R$drawable;->fork_filter_icon_lock:I
+
+    .line 156
+    sget v59, Lorg/telegram/messenger/R$drawable;->fork_filter_icon_lock_filled:I
+
+    .line 159
     sget v1, Lorg/telegram/messenger/MessagesController;->DIALOG_FILTER_FLAG_SECRET_CHAT:I
 
     sget v2, Lorg/telegram/messenger/MessagesController;->DIALOG_FILTER_FLAG_EXCLUDE_ARCHIVED:I
 
-    or-int v23, v1, v2
+    or-int v25, v1, v2
 
-    const-string v17, "SECRET_CHATS"
+    const-string v18, "SECRET_CHATS"
 
-    const/16 v18, 0xc
+    const/16 v19, 0xc
 
-    const/16 v25, 0x7
+    const/16 v27, 0x7
 
-    move-object/from16 v16, v0
+    move-object/from16 v17, v0
 
-    move/from16 v19, v55
+    move/from16 v20, v57
 
-    move/from16 v20, v56
+    move/from16 v21, v58
 
-    move/from16 v21, v57
+    move/from16 v22, v59
 
-    .line 140
-    invoke-direct/range {v16 .. v26}, Lcom/iMe/fork/enums/SortingFilter;-><init>(Ljava/lang/String;IIIILcom/iMe/storage/domain/model/filters/FilterFab;IZIZ)V
+    .line 153
+    invoke-direct/range {v17 .. v28}, Lcom/iMe/fork/enums/SortingFilter;-><init>(Ljava/lang/String;IIIILcom/iMe/storage/domain/model/filters/FilterFab;ZIZIZ)V
 
     sput-object v0, Lcom/iMe/fork/enums/SortingFilter;->SECRET_CHATS:Lcom/iMe/fork/enums/SortingFilter;
 
-    .line 150
-    new-instance v16, Lcom/iMe/fork/enums/SortingFilter;
+    .line 164
+    new-instance v0, Lcom/iMe/fork/enums/SortingFilter;
 
-    .line 155
+    .line 165
+    sget v63, Lorg/telegram/messenger/R$string;->sorting_settings_tab_drafts:I
+
+    .line 166
+    sget v64, Lorg/telegram/messenger/R$drawable;->fork_filter_icon_drafts:I
+
+    .line 167
+    sget v65, Lorg/telegram/messenger/R$drawable;->fork_filter_icon_drafts_filled:I
+
+    .line 168
+    sget-object v66, Lcom/iMe/storage/domain/model/filters/FilterFab;->CLEAR_DRAFTS:Lcom/iMe/storage/domain/model/filters/FilterFab;
+
+    .line 170
+    sget v68, Lorg/telegram/messenger/MessagesController;->DIALOG_FILTER_FLAG_DRAFTS:I
+
+    const-string v61, "DRAFTS"
+
+    const/16 v62, 0xd
+
+    const/16 v67, 0x0
+
+    const/16 v69, 0x0
+
+    const/16 v70, 0xd
+
+    const/16 v71, 0x0
+
+    move-object/from16 v60, v0
+
+    .line 164
+    invoke-direct/range {v60 .. v71}, Lcom/iMe/fork/enums/SortingFilter;-><init>(Ljava/lang/String;IIIILcom/iMe/storage/domain/model/filters/FilterFab;ZIZIZ)V
+
+    sput-object v0, Lcom/iMe/fork/enums/SortingFilter;->DRAFTS:Lcom/iMe/fork/enums/SortingFilter;
+
+    .line 175
+    new-instance v17, Lcom/iMe/fork/enums/SortingFilter;
+
+    .line 181
     sget v0, Lorg/telegram/messenger/MessagesController;->DIALOG_FILTER_FLAG_ALL_CHATS:I
 
     sget v1, Lorg/telegram/messenger/MessagesController;->DIALOG_FILTER_FLAG_EXCLUDE_READ:I
@@ -797,35 +848,37 @@
 
     sget v1, Lorg/telegram/messenger/MessagesController;->DIALOG_FILTER_FLAG_ONLY_ARCHIVED:I
 
-    or-int v7, v0, v1
+    or-int v8, v0, v1
 
     const-string v1, "ARCHIVE_UNREAD"
 
-    const/16 v2, 0xd
+    const/16 v2, 0xe
 
-    const/4 v8, 0x1
+    const/4 v7, 0x0
 
-    const/4 v9, 0x0
+    const/4 v9, 0x1
 
-    const/4 v10, 0x1
+    const/4 v10, 0x0
 
-    move-object/from16 v0, v16
+    const/4 v11, 0x1
 
-    move v3, v12
+    move-object/from16 v0, v17
 
-    move v4, v13
+    move v3, v13
 
-    move v5, v14
+    move v4, v14
 
-    .line 150
-    invoke-direct/range {v0 .. v10}, Lcom/iMe/fork/enums/SortingFilter;-><init>(Ljava/lang/String;IIIILcom/iMe/storage/domain/model/filters/FilterFab;IZIZ)V
+    move v5, v15
 
-    sput-object v16, Lcom/iMe/fork/enums/SortingFilter;->ARCHIVE_UNREAD:Lcom/iMe/fork/enums/SortingFilter;
+    .line 175
+    invoke-direct/range {v0 .. v11}, Lcom/iMe/fork/enums/SortingFilter;-><init>(Ljava/lang/String;IIIILcom/iMe/storage/domain/model/filters/FilterFab;ZIZIZ)V
 
-    .line 160
-    new-instance v12, Lcom/iMe/fork/enums/SortingFilter;
+    sput-object v17, Lcom/iMe/fork/enums/SortingFilter;->ARCHIVE_UNREAD:Lcom/iMe/fork/enums/SortingFilter;
 
-    .line 165
+    .line 186
+    new-instance v13, Lcom/iMe/fork/enums/SortingFilter;
+
+    .line 192
     sget v0, Lorg/telegram/messenger/MessagesController;->DIALOG_FILTER_FLAG_CONTACTS:I
 
     sget v1, Lorg/telegram/messenger/MessagesController;->DIALOG_FILTER_FLAG_NON_CONTACTS:I
@@ -834,357 +887,359 @@
 
     sget v1, Lorg/telegram/messenger/MessagesController;->DIALOG_FILTER_FLAG_ONLY_ARCHIVED:I
 
-    or-int v7, v0, v1
+    or-int v8, v0, v1
 
     const-string v1, "ARCHIVE_PERSONAL"
 
-    const/16 v2, 0xe
+    const/16 v2, 0xf
 
-    const/4 v9, 0x1
+    const/4 v10, 0x1
 
-    move-object v0, v12
+    move-object v0, v13
 
-    move v3, v11
+    move v3, v12
 
-    move/from16 v4, v27
+    move/from16 v4, v29
 
-    move/from16 v5, v28
+    move/from16 v5, v30
 
-    .line 160
-    invoke-direct/range {v0 .. v10}, Lcom/iMe/fork/enums/SortingFilter;-><init>(Ljava/lang/String;IIIILcom/iMe/storage/domain/model/filters/FilterFab;IZIZ)V
+    .line 186
+    invoke-direct/range {v0 .. v11}, Lcom/iMe/fork/enums/SortingFilter;-><init>(Ljava/lang/String;IIIILcom/iMe/storage/domain/model/filters/FilterFab;ZIZIZ)V
 
-    sput-object v12, Lcom/iMe/fork/enums/SortingFilter;->ARCHIVE_PERSONAL:Lcom/iMe/fork/enums/SortingFilter;
+    sput-object v13, Lcom/iMe/fork/enums/SortingFilter;->ARCHIVE_PERSONAL:Lcom/iMe/fork/enums/SortingFilter;
 
-    .line 170
-    new-instance v11, Lcom/iMe/fork/enums/SortingFilter;
+    .line 197
+    new-instance v12, Lcom/iMe/fork/enums/SortingFilter;
 
-    .line 175
+    .line 203
     sget v0, Lorg/telegram/messenger/MessagesController;->DIALOG_FILTER_FLAG_GROUPS:I
 
     sget v1, Lorg/telegram/messenger/MessagesController;->DIALOG_FILTER_FLAG_ONLY_ARCHIVED:I
 
-    or-int v7, v0, v1
+    or-int v8, v0, v1
 
     const-string v1, "ARCHIVE_GROUPS"
 
-    const/16 v2, 0xf
+    const/16 v2, 0x10
 
-    const/4 v9, 0x2
+    const/4 v10, 0x2
 
-    move-object v0, v11
+    move-object v0, v12
 
-    move/from16 v3, v30
+    move/from16 v3, v32
 
-    move/from16 v4, v31
+    move/from16 v4, v33
 
-    move/from16 v5, v32
+    move/from16 v5, v34
 
-    .line 170
-    invoke-direct/range {v0 .. v10}, Lcom/iMe/fork/enums/SortingFilter;-><init>(Ljava/lang/String;IIIILcom/iMe/storage/domain/model/filters/FilterFab;IZIZ)V
+    .line 197
+    invoke-direct/range {v0 .. v11}, Lcom/iMe/fork/enums/SortingFilter;-><init>(Ljava/lang/String;IIIILcom/iMe/storage/domain/model/filters/FilterFab;ZIZIZ)V
 
-    sput-object v11, Lcom/iMe/fork/enums/SortingFilter;->ARCHIVE_GROUPS:Lcom/iMe/fork/enums/SortingFilter;
+    sput-object v12, Lcom/iMe/fork/enums/SortingFilter;->ARCHIVE_GROUPS:Lcom/iMe/fork/enums/SortingFilter;
 
-    .line 180
-    new-instance v11, Lcom/iMe/fork/enums/SortingFilter;
+    .line 208
+    new-instance v12, Lcom/iMe/fork/enums/SortingFilter;
 
-    .line 185
+    .line 214
     sget v0, Lorg/telegram/messenger/MessagesController;->DIALOG_FILTER_FLAG_CHANNELS:I
 
     sget v1, Lorg/telegram/messenger/MessagesController;->DIALOG_FILTER_FLAG_ONLY_ARCHIVED:I
 
-    or-int v7, v0, v1
+    or-int v8, v0, v1
 
     const-string v1, "ARCHIVE_CHANNELS"
 
-    const/16 v2, 0x10
+    const/16 v2, 0x11
 
-    const/4 v9, 0x3
+    const/4 v10, 0x3
 
-    move-object v0, v11
+    move-object v0, v12
 
-    move/from16 v3, v33
+    move/from16 v3, v35
 
-    move/from16 v4, v34
+    move/from16 v4, v36
 
-    move/from16 v5, v35
+    move/from16 v5, v37
 
-    .line 180
-    invoke-direct/range {v0 .. v10}, Lcom/iMe/fork/enums/SortingFilter;-><init>(Ljava/lang/String;IIIILcom/iMe/storage/domain/model/filters/FilterFab;IZIZ)V
+    .line 208
+    invoke-direct/range {v0 .. v11}, Lcom/iMe/fork/enums/SortingFilter;-><init>(Ljava/lang/String;IIIILcom/iMe/storage/domain/model/filters/FilterFab;ZIZIZ)V
 
-    sput-object v11, Lcom/iMe/fork/enums/SortingFilter;->ARCHIVE_CHANNELS:Lcom/iMe/fork/enums/SortingFilter;
+    sput-object v12, Lcom/iMe/fork/enums/SortingFilter;->ARCHIVE_CHANNELS:Lcom/iMe/fork/enums/SortingFilter;
 
-    .line 190
-    new-instance v11, Lcom/iMe/fork/enums/SortingFilter;
+    .line 219
+    new-instance v12, Lcom/iMe/fork/enums/SortingFilter;
 
-    .line 195
+    .line 225
     sget v0, Lorg/telegram/messenger/MessagesController;->DIALOG_FILTER_FLAG_BOTS:I
 
     sget v1, Lorg/telegram/messenger/MessagesController;->DIALOG_FILTER_FLAG_ONLY_ARCHIVED:I
 
-    or-int v7, v0, v1
+    or-int v8, v0, v1
 
     const-string v1, "ARCHIVE_BOTS"
 
-    const/16 v2, 0x11
+    const/16 v2, 0x12
 
-    const/4 v9, 0x4
+    const/4 v10, 0x4
 
-    move-object v0, v11
+    move-object v0, v12
 
-    move/from16 v3, v36
+    move/from16 v3, v38
 
-    move/from16 v4, v37
+    move/from16 v4, v39
 
-    move/from16 v5, v38
+    move/from16 v5, v40
 
-    .line 190
-    invoke-direct/range {v0 .. v10}, Lcom/iMe/fork/enums/SortingFilter;-><init>(Ljava/lang/String;IIIILcom/iMe/storage/domain/model/filters/FilterFab;IZIZ)V
+    .line 219
+    invoke-direct/range {v0 .. v11}, Lcom/iMe/fork/enums/SortingFilter;-><init>(Ljava/lang/String;IIIILcom/iMe/storage/domain/model/filters/FilterFab;ZIZIZ)V
 
-    sput-object v11, Lcom/iMe/fork/enums/SortingFilter;->ARCHIVE_BOTS:Lcom/iMe/fork/enums/SortingFilter;
+    sput-object v12, Lcom/iMe/fork/enums/SortingFilter;->ARCHIVE_BOTS:Lcom/iMe/fork/enums/SortingFilter;
 
-    .line 200
-    new-instance v11, Lcom/iMe/fork/enums/SortingFilter;
+    .line 230
+    new-instance v12, Lcom/iMe/fork/enums/SortingFilter;
 
-    .line 205
+    .line 236
     sget v0, Lorg/telegram/messenger/MessagesController;->DIALOG_FILTER_FLAG_ADMIN:I
 
     sget v1, Lorg/telegram/messenger/MessagesController;->DIALOG_FILTER_FLAG_ONLY_ARCHIVED:I
 
-    or-int v7, v0, v1
+    or-int v8, v0, v1
 
     const-string v1, "ARCHIVE_ADMIN"
 
-    const/16 v2, 0x12
+    const/16 v2, 0x13
 
-    const/16 v9, 0x8
+    const/16 v10, 0x8
 
-    move-object v0, v11
+    move-object v0, v12
 
-    move/from16 v3, v39
+    move/from16 v3, v41
 
-    move/from16 v4, v40
+    move/from16 v4, v42
 
-    move/from16 v5, v41
+    move/from16 v5, v43
 
-    .line 200
-    invoke-direct/range {v0 .. v10}, Lcom/iMe/fork/enums/SortingFilter;-><init>(Ljava/lang/String;IIIILcom/iMe/storage/domain/model/filters/FilterFab;IZIZ)V
+    .line 230
+    invoke-direct/range {v0 .. v11}, Lcom/iMe/fork/enums/SortingFilter;-><init>(Ljava/lang/String;IIIILcom/iMe/storage/domain/model/filters/FilterFab;ZIZIZ)V
 
-    sput-object v11, Lcom/iMe/fork/enums/SortingFilter;->ARCHIVE_ADMIN:Lcom/iMe/fork/enums/SortingFilter;
+    sput-object v12, Lcom/iMe/fork/enums/SortingFilter;->ARCHIVE_ADMIN:Lcom/iMe/fork/enums/SortingFilter;
 
-    .line 210
-    new-instance v11, Lcom/iMe/fork/enums/SortingFilter;
+    .line 241
+    new-instance v12, Lcom/iMe/fork/enums/SortingFilter;
 
-    .line 215
+    .line 247
     sget v0, Lorg/telegram/messenger/MessagesController;->DIALOG_FILTER_FLAG_OWNER:I
 
     sget v1, Lorg/telegram/messenger/MessagesController;->DIALOG_FILTER_FLAG_ONLY_ARCHIVED:I
 
-    or-int v7, v0, v1
+    or-int v8, v0, v1
 
     const-string v1, "ARCHIVE_OWNER"
 
-    const/16 v2, 0x13
+    const/16 v2, 0x14
 
-    const/4 v9, 0x7
+    const/4 v10, 0x7
 
-    move-object v0, v11
+    move-object v0, v12
 
-    move/from16 v3, v42
+    move/from16 v3, v44
 
-    move/from16 v4, v43
+    move/from16 v4, v45
 
-    move/from16 v5, v44
+    move/from16 v5, v46
 
-    .line 210
-    invoke-direct/range {v0 .. v10}, Lcom/iMe/fork/enums/SortingFilter;-><init>(Ljava/lang/String;IIIILcom/iMe/storage/domain/model/filters/FilterFab;IZIZ)V
+    .line 241
+    invoke-direct/range {v0 .. v11}, Lcom/iMe/fork/enums/SortingFilter;-><init>(Ljava/lang/String;IIIILcom/iMe/storage/domain/model/filters/FilterFab;ZIZIZ)V
 
-    sput-object v11, Lcom/iMe/fork/enums/SortingFilter;->ARCHIVE_OWNER:Lcom/iMe/fork/enums/SortingFilter;
+    sput-object v12, Lcom/iMe/fork/enums/SortingFilter;->ARCHIVE_OWNER:Lcom/iMe/fork/enums/SortingFilter;
 
-    .line 220
-    new-instance v11, Lcom/iMe/fork/enums/SortingFilter;
+    .line 252
+    new-instance v12, Lcom/iMe/fork/enums/SortingFilter;
 
-    .line 225
+    .line 258
     sget v0, Lorg/telegram/messenger/MessagesController;->DIALOG_FILTER_FLAG_PRIVATE_GROUPS:I
 
     sget v1, Lorg/telegram/messenger/MessagesController;->DIALOG_FILTER_FLAG_ONLY_ARCHIVED:I
 
-    or-int v7, v0, v1
+    or-int v8, v0, v1
 
     const-string v1, "ARCHIVE_PRIVATE_GROUPS"
 
-    const/16 v2, 0x14
+    const/16 v2, 0x15
 
-    const/4 v8, 0x0
+    const/4 v9, 0x0
 
-    const/4 v9, 0x5
+    const/4 v10, 0x5
 
-    move-object v0, v11
+    move-object v0, v12
 
-    move/from16 v3, v45
+    move/from16 v3, v47
 
-    move/from16 v4, v46
+    move/from16 v4, v48
 
-    move/from16 v5, v47
+    move/from16 v5, v49
 
-    .line 220
-    invoke-direct/range {v0 .. v10}, Lcom/iMe/fork/enums/SortingFilter;-><init>(Ljava/lang/String;IIIILcom/iMe/storage/domain/model/filters/FilterFab;IZIZ)V
+    .line 252
+    invoke-direct/range {v0 .. v11}, Lcom/iMe/fork/enums/SortingFilter;-><init>(Ljava/lang/String;IIIILcom/iMe/storage/domain/model/filters/FilterFab;ZIZIZ)V
 
-    sput-object v11, Lcom/iMe/fork/enums/SortingFilter;->ARCHIVE_PRIVATE_GROUPS:Lcom/iMe/fork/enums/SortingFilter;
+    sput-object v12, Lcom/iMe/fork/enums/SortingFilter;->ARCHIVE_PRIVATE_GROUPS:Lcom/iMe/fork/enums/SortingFilter;
 
-    .line 230
-    new-instance v11, Lcom/iMe/fork/enums/SortingFilter;
+    .line 263
+    new-instance v12, Lcom/iMe/fork/enums/SortingFilter;
 
-    .line 235
+    .line 269
     sget v0, Lorg/telegram/messenger/MessagesController;->DIALOG_FILTER_FLAG_PUBLIC_GROUPS:I
 
     sget v1, Lorg/telegram/messenger/MessagesController;->DIALOG_FILTER_FLAG_ONLY_ARCHIVED:I
 
-    or-int v7, v0, v1
+    or-int v8, v0, v1
 
     const-string v1, "ARCHIVE_PUBLIC_GROUPS"
 
-    const/16 v2, 0x15
+    const/16 v2, 0x16
 
-    const/4 v9, 0x6
+    const/4 v10, 0x6
 
-    move-object v0, v11
+    move-object v0, v12
 
-    move/from16 v3, v48
+    move/from16 v3, v50
 
-    move/from16 v4, v49
+    move/from16 v4, v51
 
-    move/from16 v5, v50
+    move/from16 v5, v52
 
-    .line 230
-    invoke-direct/range {v0 .. v10}, Lcom/iMe/fork/enums/SortingFilter;-><init>(Ljava/lang/String;IIIILcom/iMe/storage/domain/model/filters/FilterFab;IZIZ)V
+    .line 263
+    invoke-direct/range {v0 .. v11}, Lcom/iMe/fork/enums/SortingFilter;-><init>(Ljava/lang/String;IIIILcom/iMe/storage/domain/model/filters/FilterFab;ZIZIZ)V
 
-    sput-object v11, Lcom/iMe/fork/enums/SortingFilter;->ARCHIVE_PUBLIC_GROUPS:Lcom/iMe/fork/enums/SortingFilter;
+    sput-object v12, Lcom/iMe/fork/enums/SortingFilter;->ARCHIVE_PUBLIC_GROUPS:Lcom/iMe/fork/enums/SortingFilter;
 
-    .line 240
-    new-instance v11, Lcom/iMe/fork/enums/SortingFilter;
+    .line 274
+    new-instance v12, Lcom/iMe/fork/enums/SortingFilter;
 
-    .line 242
+    .line 276
     sget v4, Lorg/telegram/messenger/R$drawable;->msg_voicechat:I
 
-    .line 243
+    .line 277
     sget v5, Lorg/telegram/messenger/R$drawable;->msg_voicechat2:I
 
-    .line 245
+    .line 280
     sget v0, Lorg/telegram/messenger/MessagesController;->DIALOG_FILTER_FLAG_LIVE_CHAT:I
 
     sget v1, Lorg/telegram/messenger/MessagesController;->DIALOG_FILTER_FLAG_ONLY_ARCHIVED:I
 
-    or-int v7, v0, v1
+    or-int v8, v0, v1
 
     const-string v1, "ARCHIVE_LIVE_CHATS"
 
-    const/16 v2, 0x16
+    const/16 v2, 0x17
 
-    const/16 v9, 0xc
+    const/16 v10, 0xc
 
-    move-object v0, v11
+    move-object v0, v12
 
-    move/from16 v3, v51
+    move/from16 v3, v53
 
-    .line 240
-    invoke-direct/range {v0 .. v10}, Lcom/iMe/fork/enums/SortingFilter;-><init>(Ljava/lang/String;IIIILcom/iMe/storage/domain/model/filters/FilterFab;IZIZ)V
+    .line 274
+    invoke-direct/range {v0 .. v11}, Lcom/iMe/fork/enums/SortingFilter;-><init>(Ljava/lang/String;IIIILcom/iMe/storage/domain/model/filters/FilterFab;ZIZIZ)V
 
-    sput-object v11, Lcom/iMe/fork/enums/SortingFilter;->ARCHIVE_LIVE_CHATS:Lcom/iMe/fork/enums/SortingFilter;
+    sput-object v12, Lcom/iMe/fork/enums/SortingFilter;->ARCHIVE_LIVE_CHATS:Lcom/iMe/fork/enums/SortingFilter;
 
-    .line 250
-    new-instance v11, Lcom/iMe/fork/enums/SortingFilter;
+    .line 285
+    new-instance v12, Lcom/iMe/fork/enums/SortingFilter;
 
-    .line 255
+    .line 291
     sget v0, Lorg/telegram/messenger/MessagesController;->DIALOG_FILTER_FLAG_DELETED:I
 
     sget v1, Lorg/telegram/messenger/MessagesController;->DIALOG_FILTER_FLAG_ONLY_ARCHIVED:I
 
-    or-int v7, v0, v1
+    or-int v8, v0, v1
 
     const-string v1, "ARCHIVE_DELETED_USERS"
 
-    const/16 v2, 0x17
+    const/16 v2, 0x18
 
-    const/16 v9, 0xb
+    const/16 v10, 0xb
 
-    move-object v0, v11
+    move-object v0, v12
 
-    move/from16 v3, v52
+    move/from16 v3, v54
 
-    move/from16 v4, v53
+    move/from16 v4, v55
 
-    move/from16 v5, v54
+    move/from16 v5, v56
 
-    .line 250
-    invoke-direct/range {v0 .. v10}, Lcom/iMe/fork/enums/SortingFilter;-><init>(Ljava/lang/String;IIIILcom/iMe/storage/domain/model/filters/FilterFab;IZIZ)V
+    .line 285
+    invoke-direct/range {v0 .. v11}, Lcom/iMe/fork/enums/SortingFilter;-><init>(Ljava/lang/String;IIIILcom/iMe/storage/domain/model/filters/FilterFab;ZIZIZ)V
 
-    sput-object v11, Lcom/iMe/fork/enums/SortingFilter;->ARCHIVE_DELETED_USERS:Lcom/iMe/fork/enums/SortingFilter;
+    sput-object v12, Lcom/iMe/fork/enums/SortingFilter;->ARCHIVE_DELETED_USERS:Lcom/iMe/fork/enums/SortingFilter;
 
-    .line 260
-    new-instance v11, Lcom/iMe/fork/enums/SortingFilter;
+    .line 296
+    new-instance v12, Lcom/iMe/fork/enums/SortingFilter;
 
-    .line 265
+    .line 302
     sget v0, Lorg/telegram/messenger/MessagesController;->DIALOG_FILTER_FLAG_SECRET_CHAT:I
 
     sget v1, Lorg/telegram/messenger/MessagesController;->DIALOG_FILTER_FLAG_ONLY_ARCHIVED:I
 
-    or-int v7, v0, v1
+    or-int v8, v0, v1
 
     const-string v1, "ARCHIVE_SECRET_CHATS"
 
-    const/16 v2, 0x18
+    const/16 v2, 0x19
 
-    const/16 v9, 0x9
+    const/16 v10, 0x9
 
-    move-object v0, v11
+    move-object v0, v12
 
-    move/from16 v3, v55
+    move/from16 v3, v57
 
-    move/from16 v4, v56
+    move/from16 v4, v58
 
-    move/from16 v5, v57
+    move/from16 v5, v59
 
-    .line 260
-    invoke-direct/range {v0 .. v10}, Lcom/iMe/fork/enums/SortingFilter;-><init>(Ljava/lang/String;IIIILcom/iMe/storage/domain/model/filters/FilterFab;IZIZ)V
+    .line 296
+    invoke-direct/range {v0 .. v11}, Lcom/iMe/fork/enums/SortingFilter;-><init>(Ljava/lang/String;IIIILcom/iMe/storage/domain/model/filters/FilterFab;ZIZIZ)V
 
-    sput-object v11, Lcom/iMe/fork/enums/SortingFilter;->ARCHIVE_SECRET_CHATS:Lcom/iMe/fork/enums/SortingFilter;
+    sput-object v12, Lcom/iMe/fork/enums/SortingFilter;->ARCHIVE_SECRET_CHATS:Lcom/iMe/fork/enums/SortingFilter;
 
-    .line 270
+    .line 307
     new-instance v0, Lcom/iMe/fork/enums/SortingFilter;
 
-    .line 271
-    sget v19, Lorg/telegram/messenger/R$string;->settings_tools_cloud_albums:I
+    .line 308
+    sget v20, Lorg/telegram/messenger/R$string;->settings_tools_cloud_albums:I
 
-    .line 272
-    sget v20, Lorg/telegram/messenger/R$drawable;->fork_filter_icon_albums:I
+    .line 309
+    sget v21, Lorg/telegram/messenger/R$drawable;->fork_filter_icon_albums:I
 
-    .line 273
-    sget v21, Lorg/telegram/messenger/R$drawable;->fork_filter_icon_albums_filled:I
+    .line 310
+    sget v22, Lorg/telegram/messenger/R$drawable;->fork_filter_icon_albums_filled:I
 
-    .line 274
-    sget-object v22, Lcom/iMe/storage/domain/model/filters/FilterFab;->CREATE_ALBUM:Lcom/iMe/storage/domain/model/filters/FilterFab;
+    .line 311
+    sget-object v23, Lcom/iMe/storage/domain/model/filters/FilterFab;->CREATE_ALBUM:Lcom/iMe/storage/domain/model/filters/FilterFab;
 
-    .line 275
+    .line 313
     sget v1, Lorg/telegram/messenger/MessagesController;->DIALOG_FILTER_FLAG_ALBUMS:I
 
     sget v2, Lorg/telegram/messenger/MessagesController;->DIALOG_FILTER_FLAG_ONLY_ARCHIVED:I
 
-    or-int v23, v1, v2
+    or-int v25, v1, v2
 
-    const-string v17, "ARCHIVE_ALBUMS"
+    const-string v18, "ARCHIVE_ALBUMS"
 
-    const/16 v18, 0x19
+    const/16 v19, 0x1a
 
-    const/16 v24, 0x1
-
-    const/16 v25, 0xa
+    const/16 v24, 0x0
 
     const/16 v26, 0x1
 
-    move-object/from16 v16, v0
+    const/16 v27, 0xa
 
-    .line 270
-    invoke-direct/range {v16 .. v26}, Lcom/iMe/fork/enums/SortingFilter;-><init>(Ljava/lang/String;IIIILcom/iMe/storage/domain/model/filters/FilterFab;IZIZ)V
+    const/16 v28, 0x1
+
+    move-object/from16 v17, v0
+
+    .line 307
+    invoke-direct/range {v17 .. v28}, Lcom/iMe/fork/enums/SortingFilter;-><init>(Ljava/lang/String;IIIILcom/iMe/storage/domain/model/filters/FilterFab;ZIZIZ)V
 
     sput-object v0, Lcom/iMe/fork/enums/SortingFilter;->ARCHIVE_ALBUMS:Lcom/iMe/fork/enums/SortingFilter;
 
@@ -1205,13 +1260,13 @@
     return-void
 .end method
 
-.method private constructor <init>(Ljava/lang/String;IIIILcom/iMe/storage/domain/model/filters/FilterFab;IZIZ)V
+.method private constructor <init>(Ljava/lang/String;IIIILcom/iMe/storage/domain/model/filters/FilterFab;ZIZIZ)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(III",
             "Lcom/iMe/storage/domain/model/filters/FilterFab;",
-            "IZIZ)V"
+            "ZIZIZ)V"
         }
     .end annotation
 
@@ -1231,16 +1286,19 @@
     iput-object p6, p0, Lcom/iMe/fork/enums/SortingFilter;->fabByDefault:Lcom/iMe/storage/domain/model/filters/FilterFab;
 
     .line 14
-    iput p7, p0, Lcom/iMe/fork/enums/SortingFilter;->flags:I
+    iput-boolean p7, p0, Lcom/iMe/fork/enums/SortingFilter;->isFabEditable:Z
 
     .line 15
-    iput-boolean p8, p0, Lcom/iMe/fork/enums/SortingFilter;->isEnabledByDefault:Z
+    iput p8, p0, Lcom/iMe/fork/enums/SortingFilter;->flags:I
 
     .line 16
-    iput p9, p0, Lcom/iMe/fork/enums/SortingFilter;->addingOrder:I
+    iput-boolean p9, p0, Lcom/iMe/fork/enums/SortingFilter;->isEnabledByDefault:Z
 
     .line 17
-    iput-boolean p10, p0, Lcom/iMe/fork/enums/SortingFilter;->isArchive:Z
+    iput p10, p0, Lcom/iMe/fork/enums/SortingFilter;->addingOrder:I
+
+    .line 18
+    iput-boolean p11, p0, Lcom/iMe/fork/enums/SortingFilter;->isArchive:Z
 
     return-void
 .end method
@@ -1358,7 +1416,7 @@
 .method public final generateIdWithExtra()I
     .locals 2
 
-    .line 281
+    .line 319
     sget-object v0, Lcom/iMe/fork/enums/SortingFilter;->Companion:Lcom/iMe/fork/enums/SortingFilter$Companion;
 
     iget-boolean v1, p0, Lcom/iMe/fork/enums/SortingFilter;->isArchive:Z
@@ -1377,7 +1435,7 @@
 .method public final getAddingOrder()I
     .locals 1
 
-    .line 16
+    .line 17
     iget v0, p0, Lcom/iMe/fork/enums/SortingFilter;->addingOrder:I
 
     return v0
@@ -1413,7 +1471,7 @@
 .method public final getFlags()I
     .locals 1
 
-    .line 14
+    .line 15
     iget v0, p0, Lcom/iMe/fork/enums/SortingFilter;->flags:I
 
     return v0
@@ -1431,7 +1489,7 @@
 .method public final groupOrdinal()I
     .locals 3
 
-    .line 284
+    .line 322
     iget-boolean v0, p0, Lcom/iMe/fork/enums/SortingFilter;->isArchive:Z
 
     if-eqz v0, :cond_0
@@ -1456,7 +1514,7 @@
 
     goto :goto_0
 
-    .line 285
+    .line 323
     :cond_0
     invoke-virtual {p0}, Ljava/lang/Enum;->ordinal()I
 
@@ -1469,7 +1527,7 @@
 .method public final isArchive()Z
     .locals 1
 
-    .line 17
+    .line 18
     iget-boolean v0, p0, Lcom/iMe/fork/enums/SortingFilter;->isArchive:Z
 
     return v0
@@ -1478,8 +1536,17 @@
 .method public final isEnabledByDefault()Z
     .locals 1
 
-    .line 15
+    .line 16
     iget-boolean v0, p0, Lcom/iMe/fork/enums/SortingFilter;->isEnabledByDefault:Z
+
+    return v0
+.end method
+
+.method public final isFabEditable()Z
+    .locals 1
+
+    .line 14
+    iget-boolean v0, p0, Lcom/iMe/fork/enums/SortingFilter;->isFabEditable:Z
 
     return v0
 .end method

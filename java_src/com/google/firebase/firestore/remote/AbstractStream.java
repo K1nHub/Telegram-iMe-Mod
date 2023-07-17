@@ -244,7 +244,7 @@ public abstract class AbstractStream<ReqT, RespT, CallbackT extends Stream$Strea
 
     public void stop() {
         if (isStarted()) {
-            close(Stream$State.Initial, Status.f431OK);
+            close(Stream$State.Initial, Status.f513OK);
         }
     }
 
@@ -266,7 +266,7 @@ public abstract class AbstractStream<ReqT, RespT, CallbackT extends Stream$Strea
     /* JADX INFO: Access modifiers changed from: private */
     public void handleIdleCloseTimer() {
         if (isOpen()) {
-            close(Stream$State.Initial, Status.f431OK);
+            close(Stream$State.Initial, Status.f513OK);
         }
     }
 

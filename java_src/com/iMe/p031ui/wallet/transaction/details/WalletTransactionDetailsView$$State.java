@@ -4,8 +4,6 @@ import com.iMe.model.dialog.DialogModel;
 import com.iMe.model.wallet.ActionItem;
 import com.iMe.p031ui.base.mvp.base.BaseView;
 import com.iMe.storage.domain.model.Result;
-import com.iMe.storage.domain.model.crypto.NetworkType;
-import com.iMe.storage.domain.model.wallet.token.TokenCode;
 import com.iMe.storage.domain.utils.system.ResourceManager;
 import io.reactivex.disposables.Disposable;
 import java.util.List;
@@ -23,15 +21,20 @@ public class WalletTransactionDetailsView$$State extends MvpViewState<WalletTran
         BaseView.CC.$default$finishScreen(this);
     }
 
+    @Override // com.iMe.p031ui.base.mvp.base.BaseView
+    public /* synthetic */ void removeSelfFromStackImmediately() {
+        BaseView.CC.$default$removeSelfFromStackImmediately(this);
+    }
+
     @Override // com.iMe.p031ui.wallet.transaction.details.WalletTransactionDetailsView
-    public void setupScreenWithData(int i, String str, String str2, String str3, String str4, String str5, String str6, String str7, String str8, String str9, boolean z, boolean z2, Integer num) {
-        SetupScreenWithDataCommand setupScreenWithDataCommand = new SetupScreenWithDataCommand(this, i, str, str2, str3, str4, str5, str6, str7, str8, str9, z, z2, num);
+    public void setupScreenWithData(int i, String str, String str2, String str3, String str4, String str5, String str6, String str7, String str8, String str9, boolean z, boolean z2, String str10) {
+        SetupScreenWithDataCommand setupScreenWithDataCommand = new SetupScreenWithDataCommand(this, i, str, str2, str3, str4, str5, str6, str7, str8, str9, z, z2, str10);
         this.viewCommands.beforeApply(setupScreenWithDataCommand);
         if (hasNotView().booleanValue()) {
             return;
         }
         for (View view : this.views) {
-            view.setupScreenWithData(i, str, str2, str3, str4, str5, str6, str7, str8, str9, z, z2, num);
+            view.setupScreenWithData(i, str, str2, str3, str4, str5, str6, str7, str8, str9, z, z2, str10);
         }
         this.viewCommands.afterApply(setupScreenWithDataCommand);
     }
@@ -60,19 +63,6 @@ public class WalletTransactionDetailsView$$State extends MvpViewState<WalletTran
             view.actionCopyToClipboard(str);
         }
         this.viewCommands.afterApply(actionCopyToClipboardCommand);
-    }
-
-    @Override // com.iMe.p031ui.wallet.transaction.details.WalletTransactionDetailsView
-    public void openSendScreen(TokenCode tokenCode, NetworkType networkType, String str) {
-        OpenSendScreenCommand openSendScreenCommand = new OpenSendScreenCommand(this, tokenCode, networkType, str);
-        this.viewCommands.beforeApply(openSendScreenCommand);
-        if (hasNotView().booleanValue()) {
-            return;
-        }
-        for (View view : this.views) {
-            view.openSendScreen(tokenCode, networkType, str);
-        }
-        this.viewCommands.afterApply(openSendScreenCommand);
     }
 
     @Override // com.iMe.p031ui.wallet.transaction.details.WalletTransactionDetailsView
@@ -220,10 +210,10 @@ public class WalletTransactionDetailsView$$State extends MvpViewState<WalletTran
         public final String processing;
         public final String recipient;
         public final String recipientTitle;
-        public final Integer stakingIconResId;
+        public final String stakingIconUrl;
         public final String status;
 
-        SetupScreenWithDataCommand(WalletTransactionDetailsView$$State walletTransactionDetailsView$$State, int i, String str, String str2, String str3, String str4, String str5, String str6, String str7, String str8, String str9, boolean z, boolean z2, Integer num) {
+        SetupScreenWithDataCommand(WalletTransactionDetailsView$$State walletTransactionDetailsView$$State, int i, String str, String str2, String str3, String str4, String str5, String str6, String str7, String str8, String str9, boolean z, boolean z2, String str10) {
             super("setupScreenWithData", AddToEndSingleStrategy.class);
             this.iconResId = i;
             this.category = str;
@@ -237,12 +227,12 @@ public class WalletTransactionDetailsView$$State extends MvpViewState<WalletTran
             this.fee = str9;
             this.isFeeEnabled = z;
             this.isShareEnable = z2;
-            this.stakingIconResId = num;
+            this.stakingIconUrl = str10;
         }
 
         @Override // moxy.viewstate.ViewCommand
         public void apply(WalletTransactionDetailsView walletTransactionDetailsView) {
-            walletTransactionDetailsView.setupScreenWithData(this.iconResId, this.category, this.amount, this.recipientTitle, this.recipient, this.comment, this.status, this.date, this.processing, this.fee, this.isFeeEnabled, this.isShareEnable, this.stakingIconResId);
+            walletTransactionDetailsView.setupScreenWithData(this.iconResId, this.category, this.amount, this.recipientTitle, this.recipient, this.comment, this.status, this.date, this.processing, this.fee, this.isFeeEnabled, this.isShareEnable, this.stakingIconUrl);
         }
     }
 
@@ -283,42 +273,21 @@ public class WalletTransactionDetailsView$$State extends MvpViewState<WalletTran
     }
 
     /* compiled from: WalletTransactionDetailsView$$State.java */
-    /* renamed from: com.iMe.ui.wallet.transaction.details.WalletTransactionDetailsView$$State$OpenSendScreenCommand */
-    /* loaded from: classes4.dex */
-    public class OpenSendScreenCommand extends ViewCommand<WalletTransactionDetailsView> {
-        public final String address;
-        public final TokenCode code;
-        public final NetworkType networkType;
-
-        OpenSendScreenCommand(WalletTransactionDetailsView$$State walletTransactionDetailsView$$State, TokenCode tokenCode, NetworkType networkType, String str) {
-            super("openSendScreen", OneExecutionStateStrategy.class);
-            this.code = tokenCode;
-            this.networkType = networkType;
-            this.address = str;
-        }
-
-        @Override // moxy.viewstate.ViewCommand
-        public void apply(WalletTransactionDetailsView walletTransactionDetailsView) {
-            walletTransactionDetailsView.openSendScreen(this.code, this.networkType, this.address);
-        }
-    }
-
-    /* compiled from: WalletTransactionDetailsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.transaction.details.WalletTransactionDetailsView$$State$OpenProfileScreenCommand */
     /* loaded from: classes4.dex */
     public class OpenProfileScreenCommand extends ViewCommand<WalletTransactionDetailsView> {
 
         /* renamed from: id */
-        public final long f384id;
+        public final long f457id;
 
         OpenProfileScreenCommand(WalletTransactionDetailsView$$State walletTransactionDetailsView$$State, long j) {
             super("openProfileScreen", OneExecutionStateStrategy.class);
-            this.f384id = j;
+            this.f457id = j;
         }
 
         @Override // moxy.viewstate.ViewCommand
         public void apply(WalletTransactionDetailsView walletTransactionDetailsView) {
-            walletTransactionDetailsView.openProfileScreen(this.f384id);
+            walletTransactionDetailsView.openProfileScreen(this.f457id);
         }
     }
 

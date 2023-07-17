@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/iMe/storage/data/repository/crypto/swap/SwapRepositoryImpl;->getAvailableTokensToSwap(Lcom/iMe/storage/domain/model/crypto/NetworkType;Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocol;)Lio/reactivex/Observable;
+    value = Lcom/iMe/storage/data/repository/crypto/swap/SwapRepositoryImpl;->getAvailableTokensToSwap(Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocol;Lcom/iMe/storage/domain/model/wallet/transaction/TransactionDirection;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Integer;)Lio/reactivex/Observable;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -23,9 +23,8 @@
         "Ljava/lang/Throwable;",
         "Lcom/iMe/storage/domain/model/Result<",
         "+",
-        "Ljava/util/List<",
-        "+",
-        "Lcom/iMe/storage/domain/model/wallet/token/TokenInfo;",
+        "Lcom/iMe/storage/domain/model/common/CursoredData<",
+        "Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;",
         ">;>;>;"
     }
 .end annotation
@@ -62,9 +61,8 @@
             "Ljava/lang/Throwable;",
             ")",
             "Lcom/iMe/storage/domain/model/Result<",
-            "Ljava/util/List<",
-            "+",
-            "Lcom/iMe/storage/domain/model/wallet/token/TokenInfo;",
+            "Lcom/iMe/storage/domain/model/common/CursoredData<",
+            "Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;",
             ">;>;"
         }
     .end annotation

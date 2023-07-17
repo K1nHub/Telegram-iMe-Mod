@@ -83,8 +83,6 @@
     <dimen name="abc_text_size_title_material_toolbar">20.0dip</dimen>
     <dimen name="action_bar_menu_size">40.0dip</dimen>
     <dimen name="action_bar_size">16.0dip</dimen>
-    <dimen name="action_icon_container_height">28.0dip</dimen>
-    <dimen name="action_icon_container_width">30.0dip</dimen>
     <dimen name="action_title_margin">27.0dip</dimen>
     <dimen name="answer_bg_corner_radius">6.0dip</dimen>
     <dimen name="answer_bg_padding">4.0dip</dimen>
@@ -174,8 +172,12 @@
     <item type="dimen" name="hint_alpha_material_light">0.38</item>
     <item type="dimen" name="hint_pressed_alpha_material_dark">0.7</item>
     <item type="dimen" name="hint_pressed_alpha_material_light">0.54</item>
+    <dimen name="icon_size_big">42.0dip</dimen>
     <dimen name="icon_size_default">24.0dip</dimen>
+    <dimen name="icon_size_default_upper">28.0dip</dimen>
+    <dimen name="icon_size_extra_small">16.0dip</dimen>
     <dimen name="icon_size_medium">32.0dip</dimen>
+    <dimen name="icon_size_medium_upper">36.0dip</dimen>
     <dimen name="icon_size_small">18.0dip</dimen>
     <dimen name="icon_size_small_upper">21.0dip</dimen>
     <dimen name="margin_big">32.0dip</dimen>
@@ -461,6 +463,8 @@
     <dimen name="shop_button_width">105.0dip</dimen>
     <dimen name="sliding_pane_detail_pane_width">300.0dip</dimen>
     <dimen name="square_checkbox_size">19.0dip</dimen>
+    <dimen name="switch_height">32.0dip</dimen>
+    <dimen name="switch_width">48.0dip</dimen>
     <dimen name="telegram_action_button_height">42.0dip</dimen>
     <dimen name="telegram_avatar_size_medium">46.0dip</dimen>
     <dimen name="telegram_big_description_icon_size">90.0dip</dimen>
@@ -503,4 +507,5 @@
     <dimen name="wallet_image_info_size">28.0dip</dimen>
     <dimen name="wallet_navigation_badge">7.0dip</dimen>
     <dimen name="wallet_notification_mark_size">6.0dip</dimen>
+    <dimen name="wallet_token_management_element_height">50.0dip</dimen>
 </resources>

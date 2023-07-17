@@ -1,7 +1,7 @@
 package com.iMe.model.wallet.settings;
 
 import kotlin.jvm.internal.DefaultConstructorMarker;
-import org.telegram.messenger.C3295R;
+import org.telegram.messenger.C3417R;
 /* compiled from: InterfaceSettingItem.kt */
 /* loaded from: classes3.dex */
 public abstract class InterfaceSettingItem {
@@ -48,7 +48,7 @@ public abstract class InterfaceSettingItem {
         }
 
         public Banners(boolean z) {
-            super(z, C3295R.C3297drawable.msg_sticker, C3295R.string.wallet_settings_interface_banners, C3295R.string.wallet_settings_interface_banners_description, null);
+            super(z, C3417R.C3419drawable.msg_sticker, C3417R.string.wallet_settings_interface_banners, C3417R.string.wallet_settings_interface_banners_description, null);
             this.isEnabled = z;
         }
     }
@@ -64,7 +64,7 @@ public abstract class InterfaceSettingItem {
         }
 
         public Quotations(boolean z) {
-            super(z, C3295R.C3297drawable.fork_ic_quotation_26, C3295R.string.wallet_settings_interface_quotations, C3295R.string.wallet_settings_interface_quotations_description, null);
+            super(z, C3417R.C3419drawable.fork_ic_quotation_26, C3417R.string.wallet_settings_interface_quotations, C3417R.string.wallet_settings_interface_quotations_description, null);
             this.isEnabled = z;
         }
     }

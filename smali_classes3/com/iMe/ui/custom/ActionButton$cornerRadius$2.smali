@@ -48,7 +48,7 @@
 .method public final invoke()Ljava/lang/Integer;
     .locals 1
 
-    .line 21
+    .line 24
     iget-object v0, p0, Lcom/iMe/ui/custom/ActionButton$cornerRadius$2;->this$0:Lcom/iMe/ui/custom/ActionButton;
 
     invoke-virtual {v0}, Lcom/iMe/ui/custom/ActionButton;->calculateCornerRadius()I
@@ -65,7 +65,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 21
+    .line 24
     invoke-virtual {p0}, Lcom/iMe/ui/custom/ActionButton$cornerRadius$2;->invoke()Ljava/lang/Integer;
 
     move-result-object v0

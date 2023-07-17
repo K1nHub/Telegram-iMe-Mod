@@ -3,7 +3,6 @@ package com.iMe.p031ui.wallet.swap;
 import com.chad.library.adapter.base.entity.node.BaseNode;
 import com.iMe.p031ui.base.mvp.base.BaseView;
 import com.iMe.storage.domain.model.Result;
-import com.iMe.storage.domain.model.crypto.NetworkType;
 import com.iMe.storage.domain.model.wallet.swap.SwapProtocolInfo;
 import com.iMe.storage.domain.utils.system.ResourceManager;
 import io.reactivex.disposables.Disposable;
@@ -18,6 +17,11 @@ public class WalletSwapProtocolsView$$State extends MvpViewState<WalletSwapProto
     @Override // com.iMe.p031ui.base.mvp.base.BaseView
     public /* synthetic */ void finishScreen() {
         BaseView.CC.$default$finishScreen(this);
+    }
+
+    @Override // com.iMe.p031ui.base.mvp.base.BaseView
+    public /* synthetic */ void removeSelfFromStackImmediately() {
+        BaseView.CC.$default$removeSelfFromStackImmediately(this);
     }
 
     @Override // com.iMe.p031ui.wallet.swap.WalletSwapProtocolsView
@@ -60,14 +64,14 @@ public class WalletSwapProtocolsView$$State extends MvpViewState<WalletSwapProto
     }
 
     @Override // com.iMe.p031ui.wallet.swap.WalletSwapProtocolsView
-    public void openSwapScreen(SwapProtocolInfo swapProtocolInfo, NetworkType networkType) {
-        OpenSwapScreenCommand openSwapScreenCommand = new OpenSwapScreenCommand(this, swapProtocolInfo, networkType);
+    public void openSwapScreen(SwapProtocolInfo swapProtocolInfo, String str) {
+        OpenSwapScreenCommand openSwapScreenCommand = new OpenSwapScreenCommand(this, swapProtocolInfo, str);
         this.viewCommands.beforeApply(openSwapScreenCommand);
         if (hasNotView().booleanValue()) {
             return;
         }
         for (View view : this.views) {
-            view.openSwapScreen(swapProtocolInfo, networkType);
+            view.openSwapScreen(swapProtocolInfo, str);
         }
         this.viewCommands.afterApply(openSwapScreenCommand);
     }
@@ -160,18 +164,18 @@ public class WalletSwapProtocolsView$$State extends MvpViewState<WalletSwapProto
     /* renamed from: com.iMe.ui.wallet.swap.WalletSwapProtocolsView$$State$OpenSwapScreenCommand */
     /* loaded from: classes4.dex */
     public class OpenSwapScreenCommand extends ViewCommand<WalletSwapProtocolsView> {
-        public final NetworkType forcedNetworkType;
+        public final String forcedNetworkId;
         public final SwapProtocolInfo item;
 
-        OpenSwapScreenCommand(WalletSwapProtocolsView$$State walletSwapProtocolsView$$State, SwapProtocolInfo swapProtocolInfo, NetworkType networkType) {
+        OpenSwapScreenCommand(WalletSwapProtocolsView$$State walletSwapProtocolsView$$State, SwapProtocolInfo swapProtocolInfo, String str) {
             super("openSwapScreen", OneExecutionStateStrategy.class);
             this.item = swapProtocolInfo;
-            this.forcedNetworkType = networkType;
+            this.forcedNetworkId = str;
         }
 
         @Override // moxy.viewstate.ViewCommand
         public void apply(WalletSwapProtocolsView walletSwapProtocolsView) {
-            walletSwapProtocolsView.openSwapScreen(this.item, this.forcedNetworkType);
+            walletSwapProtocolsView.openSwapScreen(this.item, this.forcedNetworkId);
         }
     }
 

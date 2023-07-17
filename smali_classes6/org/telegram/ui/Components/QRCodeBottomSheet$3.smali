@@ -26,7 +26,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/QRCodeBottomSheet;Landroid/content/Context;Landroid/widget/ImageView;)V
     .locals 0
 
-    .line 183
+    .line 199
     iput-object p1, p0, Lorg/telegram/ui/Components/QRCodeBottomSheet$3;->this$0:Lorg/telegram/ui/Components/QRCodeBottomSheet;
 
     iput-object p3, p0, Lorg/telegram/ui/Components/QRCodeBottomSheet$3;->val$imageView:Landroid/widget/ImageView;
@@ -41,10 +41,10 @@
 .method protected onMeasure(II)V
     .locals 3
 
-    .line 188
+    .line 204
     invoke-super {p0, p1, p2}, Landroid/widget/FrameLayout;->onMeasure(II)V
 
-    .line 189
+    .line 205
     iget-object v0, p0, Lorg/telegram/ui/Components/QRCodeBottomSheet$3;->this$0:Lorg/telegram/ui/Components/QRCodeBottomSheet;
 
     iget v0, v0, Lorg/telegram/ui/Components/QRCodeBottomSheet;->imageSize:I
@@ -65,17 +65,17 @@
 
     mul-float/2addr v0, v1
 
-    .line 190
+    .line 206
     iget v1, p0, Lorg/telegram/ui/Components/QRCodeBottomSheet$3;->lastX:F
 
     cmpl-float v1, v1, v0
 
     if-eqz v1, :cond_0
 
-    .line 191
+    .line 207
     iput v0, p0, Lorg/telegram/ui/Components/QRCodeBottomSheet$3;->lastX:F
 
-    .line 192
+    .line 208
     iget-object v1, p0, Lorg/telegram/ui/Components/QRCodeBottomSheet$3;->this$0:Lorg/telegram/ui/Components/QRCodeBottomSheet;
 
     iget-object v1, v1, Lorg/telegram/ui/Components/QRCodeBottomSheet;->iconImage:Lorg/telegram/ui/Components/RLottieImageView;
@@ -98,7 +98,7 @@
 
     iput v0, v1, Landroid/view/ViewGroup$LayoutParams;->height:I
 
-    .line 193
+    .line 209
     invoke-super {p0, p1, p2}, Landroid/widget/FrameLayout;->onMeasure(II)V
 
     :cond_0

@@ -15,6 +15,6 @@ public final class SimplexMappingKt {
 
     public static final GetBuyingCryptoQuoteRequest mapToRequest(BuyingCryptoQuoteArgs buyingCryptoQuoteArgs) {
         Intrinsics.checkNotNullParameter(buyingCryptoQuoteArgs, "<this>");
-        return new GetBuyingCryptoQuoteRequest(buyingCryptoQuoteArgs.getDigitalCurrency().getValue(), buyingCryptoQuoteArgs.getFiatCurrency().getValue(), buyingCryptoQuoteArgs.getRequestedCurrency().getValue(), buyingCryptoQuoteArgs.getAmount(), buyingCryptoQuoteArgs.getNetworkType().name());
+        return new GetBuyingCryptoQuoteRequest(buyingCryptoQuoteArgs.getDigitalCurrency().getValue(), buyingCryptoQuoteArgs.getFiatCurrency().getValue(), buyingCryptoQuoteArgs.getRequestedCurrency().getValue(), buyingCryptoQuoteArgs.getAmount(), buyingCryptoQuoteArgs.getNetworkId());
     }
 }

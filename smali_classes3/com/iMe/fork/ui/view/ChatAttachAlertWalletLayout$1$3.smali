@@ -28,7 +28,7 @@
 
     iput-object p2, p0, Lcom/iMe/fork/ui/view/ChatAttachAlertWalletLayout$1$3;->$this_apply:Lorg/telegram/ui/Components/RecyclerListView;
 
-    .line 130
+    .line 129
     invoke-direct {p0}, Landroidx/recyclerview/widget/RecyclerView$OnScrollListener;-><init>()V
 
     return-void
@@ -47,12 +47,12 @@
 
     const/high16 p1, 0x41500000    # 13.0f
 
-    .line 137
+    .line 136
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
 
     move-result p1
 
-    .line 138
+    .line 137
     iget-object p2, p0, Lcom/iMe/fork/ui/view/ChatAttachAlertWalletLayout$1$3;->this$0:Lcom/iMe/fork/ui/view/ChatAttachAlertWalletLayout;
 
     invoke-static {p2}, Lcom/iMe/fork/ui/view/ChatAttachAlertWalletLayout;->access$getParentAlert$p$s-1876542046(Lcom/iMe/fork/ui/view/ChatAttachAlertWalletLayout;)Lorg/telegram/ui/Components/ChatAttachAlert;
@@ -63,7 +63,7 @@
 
     move-result p2
 
-    .line 139
+    .line 138
     iget-object v0, p0, Lcom/iMe/fork/ui/view/ChatAttachAlertWalletLayout$1$3;->this$0:Lcom/iMe/fork/ui/view/ChatAttachAlertWalletLayout;
 
     invoke-static {v0}, Lcom/iMe/fork/ui/view/ChatAttachAlertWalletLayout;->access$getParentAlert$p$s-1876542046(Lcom/iMe/fork/ui/view/ChatAttachAlertWalletLayout;)Lorg/telegram/ui/Components/ChatAttachAlert;
@@ -82,14 +82,14 @@
 
     add-int/2addr v0, p2
 
-    .line 140
+    .line 139
     invoke-static {}, Lorg/telegram/ui/ActionBar/ActionBar;->getCurrentActionBarHeight()I
 
     move-result p1
 
     if-ge v0, p1, :cond_0
 
-    .line 141
+    .line 140
     iget-object p1, p0, Lcom/iMe/fork/ui/view/ChatAttachAlertWalletLayout$1$3;->$this_apply:Lorg/telegram/ui/Components/RecyclerListView;
 
     const/4 p2, 0x1
@@ -102,7 +102,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 142
+    .line 141
     iget-object p2, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     invoke-virtual {p2}, Landroid/view/View;->getTop()I
@@ -117,7 +117,7 @@
 
     if-le p2, v2, :cond_0
 
-    .line 143
+    .line 142
     iget-object p2, p0, Lcom/iMe/fork/ui/view/ChatAttachAlertWalletLayout$1$3;->$this_apply:Lorg/telegram/ui/Components/RecyclerListView;
 
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
@@ -145,7 +145,7 @@
 
     invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 132
+    .line 131
     iget-object p1, p0, Lcom/iMe/fork/ui/view/ChatAttachAlertWalletLayout$1$3;->this$0:Lcom/iMe/fork/ui/view/ChatAttachAlertWalletLayout;
 
     invoke-static {p1}, Lcom/iMe/fork/ui/view/ChatAttachAlertWalletLayout;->access$getParentAlert$p$s-1876542046(Lcom/iMe/fork/ui/view/ChatAttachAlertWalletLayout;)Lorg/telegram/ui/Components/ChatAttachAlert;

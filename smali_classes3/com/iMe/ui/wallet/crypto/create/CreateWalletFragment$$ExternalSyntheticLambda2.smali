@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$$ExternalSyntheticLambda2;->f$0:Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;
 
-    invoke-static {v0}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->$r8$lambda$EvO40xEx0pJsV3nWveih4pXbuQo(Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;)V
+    invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->removeSelfFromStack()V
 
     return-void
 .end method

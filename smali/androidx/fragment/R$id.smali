@@ -3,8 +3,8 @@
 
 
 # static fields
-.field public static final fragment_container_view_tag:I = 0x7f090163
+.field public static final fragment_container_view_tag:I = 0x7f09016c
 
-.field public static final special_effects_controller_view_tag:I = 0x7f090334
+.field public static final special_effects_controller_view_tag:I = 0x7f09034c
 
-.field public static final visible_removing_fragment_view_tag:I = 0x7f09046d
+.field public static final visible_removing_fragment_view_tag:I = 0x7f090499

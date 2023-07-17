@@ -11,7 +11,7 @@ import java.util.List;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: CatalogUserChannelsRecycleAdapter.kt */
 /* renamed from: com.iMe.ui.catalog.tabs.user_channels.adapter.CatalogUserChannelsRecycleAdapter */
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public final class CatalogUserChannelsRecycleAdapter extends BaseNodeAdapter<BaseNode> implements LoadMoreModule {
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public CatalogUserChannelsRecycleAdapter(CreateCampaignProvider createCampaignProvider) {

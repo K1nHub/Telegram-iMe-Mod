@@ -30,7 +30,7 @@
 
     sput-object v0, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper$Keys;->$$INSTANCE:Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper$Keys;
 
-    .line 86
+    .line 96
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -59,7 +59,7 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 67
+    .line 73
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -70,7 +70,7 @@
 .method public final getKEY_AIRDROP_METADATA()Ljava/lang/String;
     .locals 1
 
-    .line 86
+    .line 96
     sget-object v0, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper$Keys;->KEY_AIRDROP_METADATA:Ljava/lang/String;
 
     return-object v0

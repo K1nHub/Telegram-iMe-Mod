@@ -17,6 +17,11 @@ public class WalletConnectTransactionView$$State extends MvpViewState<WalletConn
         BaseView.CC.$default$finishScreen(this);
     }
 
+    @Override // com.iMe.p031ui.base.mvp.base.BaseView
+    public /* synthetic */ void removeSelfFromStackImmediately() {
+        BaseView.CC.$default$removeSelfFromStackImmediately(this);
+    }
+
     @Override // com.iMe.p031ui.wallet.crypto.wallet_connect.transaction.WalletConnectTransactionView
     public void onTransactionSuccess() {
         OnTransactionSuccessCommand onTransactionSuccessCommand = new OnTransactionSuccessCommand(this);
@@ -118,7 +123,7 @@ public class WalletConnectTransactionView$$State extends MvpViewState<WalletConn
         public final String peerUrl;
 
         /* renamed from: to */
-        public final String f382to;
+        public final String f455to;
         public final String transactionAmount;
 
         SetupScreenWithDataCommand(WalletConnectTransactionView$$State walletConnectTransactionView$$State, String str, String str2, String str3, String str4, String str5) {
@@ -126,13 +131,13 @@ public class WalletConnectTransactionView$$State extends MvpViewState<WalletConn
             this.transactionAmount = str;
             this.network = str2;
             this.from = str3;
-            this.f382to = str4;
+            this.f455to = str4;
             this.peerUrl = str5;
         }
 
         @Override // moxy.viewstate.ViewCommand
         public void apply(WalletConnectTransactionView walletConnectTransactionView) {
-            walletConnectTransactionView.setupScreenWithData(this.transactionAmount, this.network, this.from, this.f382to, this.peerUrl);
+            walletConnectTransactionView.setupScreenWithData(this.transactionAmount, this.network, this.from, this.f455to, this.peerUrl);
         }
     }
 

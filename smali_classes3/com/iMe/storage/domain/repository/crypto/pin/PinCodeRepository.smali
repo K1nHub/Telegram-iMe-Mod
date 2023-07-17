@@ -4,22 +4,6 @@
 
 
 # virtual methods
-.method public abstract createPinCode(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lio/reactivex/Observable;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/lang/String;",
-            "Ljava/lang/String;",
-            "Ljava/lang/String;",
-            ")",
-            "Lio/reactivex/Observable<",
-            "Lcom/iMe/storage/domain/model/Result<",
-            "Ljava/lang/Boolean;",
-            ">;>;"
-        }
-    .end annotation
-.end method
-
 .method public abstract readPasswordByPinCode(Ljava/lang/String;Ljava/lang/String;Z)Lio/reactivex/Observable;
     .annotation system Ldalvik/annotation/Signature;
         value = {

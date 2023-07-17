@@ -31,18 +31,18 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 19
+    .line 23
     invoke-direct {p0}, Lcom/chad/library/adapter/base/provider/BaseNodeProvider;-><init>()V
 
-    .line 18
+    .line 22
     iput-object p1, p0, Lcom/iMe/ui/adapter/provider/SelectableHeaderProvider;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
-    .line 22
+    .line 26
     sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->SELECTABLE_HEADER:I
 
     iput p1, p0, Lcom/iMe/ui/adapter/provider/SelectableHeaderProvider;->itemViewType:I
 
-    .line 23
+    .line 27
     sget p1, Lorg/telegram/messenger/R$layout;->fork_recycle_item_wallet_dashboard_header_with_icon:I
 
     iput p1, p0, Lcom/iMe/ui/adapter/provider/SelectableHeaderProvider;->layoutId:I
@@ -53,7 +53,7 @@
 .method public static final synthetic access$getPopupWindow$p(Lcom/iMe/ui/adapter/provider/SelectableHeaderProvider;)Landroidx/appcompat/widget/ListPopupWindow;
     .locals 0
 
-    .line 17
+    .line 21
     iget-object p0, p0, Lcom/iMe/ui/adapter/provider/SelectableHeaderProvider;->popupWindow:Landroidx/appcompat/widget/ListPopupWindow;
 
     return-object p0
@@ -62,7 +62,7 @@
 .method public static final synthetic access$getResourceManager$p(Lcom/iMe/ui/adapter/provider/SelectableHeaderProvider;)Lcom/iMe/storage/domain/utils/system/ResourceManager;
     .locals 0
 
-    .line 17
+    .line 21
     iget-object p0, p0, Lcom/iMe/ui/adapter/provider/SelectableHeaderProvider;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     return-object p0
@@ -71,7 +71,7 @@
 .method public static final synthetic access$setPopupWindow$p(Lcom/iMe/ui/adapter/provider/SelectableHeaderProvider;Landroidx/appcompat/widget/ListPopupWindow;)V
     .locals 0
 
-    .line 17
+    .line 21
     iput-object p1, p0, Lcom/iMe/ui/adapter/provider/SelectableHeaderProvider;->popupWindow:Landroidx/appcompat/widget/ListPopupWindow;
 
     return-void
@@ -90,7 +90,7 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 32
+    .line 36
     sget v0, Lorg/telegram/messenger/R$id;->text_wallet_header:I
 
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayText2:I
@@ -107,12 +107,12 @@
 
     aput v0, v3, v4
 
-    .line 33
+    .line 37
     invoke-static {v2, v3}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setMediumTypeface(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;[I)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     move-result-object v2
 
-    .line 34
+    .line 38
     iget-object v3, p0, Lcom/iMe/ui/adapter/provider/SelectableHeaderProvider;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     invoke-virtual {p2}, Lcom/iMe/model/wallet/home/SelectableHeaderItem;->getTitleResId()I
@@ -127,7 +127,7 @@
 
     move-result-object v0
 
-    .line 35
+    .line 39
     sget v2, Lorg/telegram/messenger/R$id;->header_info_icon:I
 
     invoke-virtual {p2}, Lcom/iMe/model/wallet/home/SelectableHeaderItem;->getIcon()I
@@ -138,12 +138,12 @@
 
     move-result-object v0
 
-    .line 36
+    .line 40
     invoke-static {v0, v2, v1}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setThemedImageColor(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;II)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     move-result-object v0
 
-    .line 37
+    .line 41
     sget v1, Lorg/telegram/messenger/R$id;->linear_root:I
 
     new-instance v2, Lcom/iMe/ui/adapter/provider/SelectableHeaderProvider$convert$1;
@@ -181,7 +181,7 @@
 
     invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 57
+    .line 66
     sget p3, Lorg/telegram/messenger/R$id;->text_wallet_header:I
 
     iget-object v0, p0, Lcom/iMe/ui/adapter/provider/SelectableHeaderProvider;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
@@ -202,7 +202,7 @@
 .method public bridge synthetic convert(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;Ljava/lang/Object;)V
     .locals 0
 
-    .line 17
+    .line 21
     check-cast p2, Lcom/iMe/model/wallet/home/SelectableHeaderItem;
 
     invoke-virtual {p0, p1, p2}, Lcom/iMe/ui/adapter/provider/SelectableHeaderProvider;->convert(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;Lcom/iMe/model/wallet/home/SelectableHeaderItem;)V
@@ -213,7 +213,7 @@
 .method public bridge synthetic convert(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;Ljava/lang/Object;Ljava/util/List;)V
     .locals 0
 
-    .line 17
+    .line 21
     check-cast p2, Lcom/iMe/model/wallet/home/SelectableHeaderItem;
 
     invoke-virtual {p0, p1, p2, p3}, Lcom/iMe/ui/adapter/provider/SelectableHeaderProvider;->convert(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;Lcom/iMe/model/wallet/home/SelectableHeaderItem;Ljava/util/List;)V
@@ -224,7 +224,7 @@
 .method public getItemViewType()I
     .locals 1
 
-    .line 22
+    .line 26
     iget v0, p0, Lcom/iMe/ui/adapter/provider/SelectableHeaderProvider;->itemViewType:I
 
     return v0
@@ -233,7 +233,7 @@
 .method public getLayoutId()I
     .locals 1
 
-    .line 23
+    .line 27
     iget v0, p0, Lcom/iMe/ui/adapter/provider/SelectableHeaderProvider;->layoutId:I
 
     return v0

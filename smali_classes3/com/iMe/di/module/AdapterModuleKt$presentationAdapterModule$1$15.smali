@@ -22,9 +22,13 @@
         "Lkotlin/jvm/functions/Function2<",
         "Lorg/koin/core/scope/Scope;",
         "Lorg/koin/core/parameter/ParametersHolder;",
-        "Lcom/iMe/ui/wallet/notifications/adapter/WalletNotificationsRecycleAdapter;",
+        "Lcom/iMe/ui/wallet/crypto/settings/custom_tokens/adapter/CustomTokensRecycleAdapter;",
         ">;"
     }
+.end annotation
+
+.annotation system Ldalvik/annotation/SourceDebugExtension;
+    value = "SMAP\nAdapterModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 AdapterModule.kt\ncom/iMe/di/module/AdapterModuleKt$presentationAdapterModule$1$15\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,120:1\n129#2,5:121\n*S KotlinDebug\n*F\n+ 1 AdapterModule.kt\ncom/iMe/di/module/AdapterModuleKt$presentationAdapterModule$1$15\n*L\n92#1:121,5\n*E\n"
 .end annotation
 
 
@@ -57,34 +61,63 @@
 
 
 # virtual methods
-.method public final invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/iMe/ui/wallet/notifications/adapter/WalletNotificationsRecycleAdapter;
-    .locals 1
+.method public final invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/iMe/ui/wallet/crypto/settings/custom_tokens/adapter/CustomTokensRecycleAdapter;
+    .locals 2
 
     const-string v0, "$this$factory"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string p1, "it"
+    const-string v0, "it"
 
-    invoke-static {p2, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 96
-    new-instance p1, Lcom/iMe/ui/wallet/notifications/adapter/WalletNotificationsRecycleAdapter;
+    .line 133
+    const-class p2, Lcom/iMe/ui/adapter/provider/GlobalStateProvider;
 
-    invoke-direct {p1}, Lcom/iMe/ui/wallet/notifications/adapter/WalletNotificationsRecycleAdapter;-><init>()V
+    invoke-static {p2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
 
-    return-object p1
+    move-result-object p2
+
+    const/4 v0, 0x0
+
+    invoke-virtual {p1, p2, v0, v0}, Lorg/koin/core/scope/Scope;->get(Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
+
+    move-result-object p2
+
+    .line 92
+    check-cast p2, Lcom/iMe/ui/adapter/provider/GlobalStateProvider;
+
+    .line 133
+    const-class v1, Lcom/iMe/ui/adapter/provider/CustomTokenProvider;
+
+    invoke-static {v1}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
+
+    move-result-object v1
+
+    invoke-virtual {p1, v1, v0, v0}, Lorg/koin/core/scope/Scope;->get(Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    .line 92
+    check-cast p1, Lcom/iMe/ui/adapter/provider/CustomTokenProvider;
+
+    new-instance v0, Lcom/iMe/ui/wallet/crypto/settings/custom_tokens/adapter/CustomTokensRecycleAdapter;
+
+    invoke-direct {v0, p1, p2}, Lcom/iMe/ui/wallet/crypto/settings/custom_tokens/adapter/CustomTokensRecycleAdapter;-><init>(Lcom/iMe/ui/adapter/provider/CustomTokenProvider;Lcom/iMe/ui/adapter/provider/GlobalStateProvider;)V
+
+    return-object v0
 .end method
 
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 96
+    .line 92
     check-cast p1, Lorg/koin/core/scope/Scope;
 
     check-cast p2, Lorg/koin/core/parameter/ParametersHolder;
 
-    invoke-virtual {p0, p1, p2}, Lcom/iMe/di/module/AdapterModuleKt$presentationAdapterModule$1$15;->invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/iMe/ui/wallet/notifications/adapter/WalletNotificationsRecycleAdapter;
+    invoke-virtual {p0, p1, p2}, Lcom/iMe/di/module/AdapterModuleKt$presentationAdapterModule$1$15;->invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/iMe/ui/wallet/crypto/settings/custom_tokens/adapter/CustomTokensRecycleAdapter;
 
     move-result-object p1
 

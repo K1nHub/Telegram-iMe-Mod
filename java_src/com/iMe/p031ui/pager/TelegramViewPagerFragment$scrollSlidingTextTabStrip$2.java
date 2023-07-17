@@ -2,7 +2,7 @@ package com.iMe.p031ui.pager;
 
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Lambda;
-import org.telegram.p044ui.Components.ScrollSlidingTextTabStrip;
+import org.telegram.p043ui.Components.ScrollSlidingTextTabStrip;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: TelegramViewPagerFragment.kt */
 /* renamed from: com.iMe.ui.pager.TelegramViewPagerFragment$scrollSlidingTextTabStrip$2 */

@@ -7,10 +7,14 @@
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Lcom/chad/library/adapter/base/BaseQuickAdapter<",
-        "Lcom/iMe/model/wallet/settings/SettingUiItem;",
+        "Lcom/iMe/model/wallet/crypto/settings/WalletSettingsItem;",
         "Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;",
         ">;"
     }
+.end annotation
+
+.annotation system Ldalvik/annotation/SourceDebugExtension;
+    value = "SMAP\nWalletSettingsRecycleAdapter.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WalletSettingsRecycleAdapter.kt\ncom/iMe/ui/wallet/settings/adapter/WalletSettingsRecycleAdapter\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,43:1\n1#2:44\n*E\n"
 .end annotation
 
 
@@ -22,11 +26,11 @@
 .method public constructor <init>(Lcom/iMe/storage/domain/utils/system/ResourceManager;)V
     .locals 3
 
-    const-string v0, "resourceManager"
+    const-string/jumbo v0, "resourceManager"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 13
+    .line 19
     sget v0, Lorg/telegram/messenger/R$layout;->fork_recycle_item_wallet_settings:I
 
     const/4 v1, 0x0
@@ -35,7 +39,7 @@
 
     invoke-direct {p0, v0, v1, v2, v1}, Lcom/chad/library/adapter/base/BaseQuickAdapter;-><init>(ILjava/util/List;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
 
-    .line 12
+    .line 18
     iput-object p1, p0, Lcom/iMe/ui/wallet/settings/adapter/WalletSettingsRecycleAdapter;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     return-void
@@ -43,7 +47,7 @@
 
 
 # virtual methods
-.method protected convert(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;Lcom/iMe/model/wallet/settings/SettingUiItem;)V
+.method protected convert(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;Lcom/iMe/model/wallet/crypto/settings/WalletSettingsItem;)V
     .locals 6
 
     const-string v0, "holder"
@@ -54,7 +58,7 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 19
+    .line 25
     sget v0, Lorg/telegram/messenger/R$id;->linear_root:I
 
     const/4 v1, 0x0
@@ -63,14 +67,14 @@
 
     move-result-object v2
 
-    .line 20
+    .line 26
     sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
     invoke-static {v2, v0, v3}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setThemedBackgroundColor(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;II)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     move-result-object v0
 
-    .line 21
+    .line 27
     sget v2, Lorg/telegram/messenger/R$id;->text_setting_description:I
 
     sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayText2:I
@@ -79,7 +83,7 @@
 
     move-result-object v0
 
-    .line 22
+    .line 28
     sget v3, Lorg/telegram/messenger/R$id;->text_setting_title:I
 
     sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
@@ -88,7 +92,7 @@
 
     move-result-object v0
 
-    .line 23
+    .line 29
     sget v4, Lorg/telegram/messenger/R$id;->image_icon:I
 
     sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayIcon:I
@@ -97,12 +101,8 @@
 
     move-result-object v0
 
-    .line 24
-    invoke-virtual {p2}, Lcom/iMe/model/wallet/settings/SettingUiItem;->getItem()Lcom/iMe/model/wallet/settings/SettingMenuItem;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Lcom/iMe/model/wallet/settings/SettingMenuItem;->getIcon()I
+    .line 30
+    invoke-virtual {p2}, Lcom/iMe/model/wallet/crypto/settings/WalletSettingsItem;->getIcon()I
 
     move-result v5
 
@@ -110,12 +110,8 @@
 
     move-result-object v0
 
-    .line 25
-    invoke-virtual {p2}, Lcom/iMe/model/wallet/settings/SettingUiItem;->getItem()Lcom/iMe/model/wallet/settings/SettingMenuItem;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Lcom/iMe/model/wallet/settings/SettingMenuItem;->getDescription()Ljava/lang/Integer;
+    .line 31
+    invoke-virtual {p2}, Lcom/iMe/model/wallet/crypto/settings/WalletSettingsItem;->getDescription()Ljava/lang/Integer;
 
     move-result-object v4
 
@@ -130,7 +126,7 @@
 
     move-result-object v0
 
-    .line 26
+    .line 32
     sget v1, Lorg/telegram/messenger/R$id;->view_divider:I
 
     invoke-static {p1, p0}, Lcom/iMe/utils/extentions/common/RecycleViewExtKt;->isLastItem(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;Landroidx/recyclerview/widget/RecyclerView$Adapter;)Z
@@ -143,14 +139,10 @@
 
     move-result-object p1
 
-    .line 27
+    .line 33
     iget-object v0, p0, Lcom/iMe/ui/wallet/settings/adapter/WalletSettingsRecycleAdapter;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
-    invoke-virtual {p2}, Lcom/iMe/model/wallet/settings/SettingUiItem;->getItem()Lcom/iMe/model/wallet/settings/SettingMenuItem;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Lcom/iMe/model/wallet/settings/SettingMenuItem;->getTitle()I
+    invoke-virtual {p2}, Lcom/iMe/model/wallet/crypto/settings/WalletSettingsItem;->getTitle()I
 
     move-result v1
 
@@ -162,13 +154,30 @@
 
     move-result-object p1
 
-    .line 28
-    iget-object v0, p0, Lcom/iMe/ui/wallet/settings/adapter/WalletSettingsRecycleAdapter;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
-
-    invoke-virtual {p2, v0}, Lcom/iMe/model/wallet/settings/SettingUiItem;->getDescription(Lcom/iMe/storage/domain/utils/system/ResourceManager;)Ljava/lang/String;
+    .line 36
+    invoke-virtual {p2}, Lcom/iMe/model/wallet/crypto/settings/WalletSettingsItem;->getDescription()Ljava/lang/Integer;
 
     move-result-object p2
 
+    if-eqz p2, :cond_1
+
+    invoke-virtual {p2}, Ljava/lang/Number;->intValue()I
+
+    move-result p2
+
+    iget-object v0, p0, Lcom/iMe/ui/wallet/settings/adapter/WalletSettingsRecycleAdapter;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
+
+    invoke-interface {v0, p2}, Lcom/iMe/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
+
+    move-result-object p2
+
+    if-nez p2, :cond_2
+
+    :cond_1
+    const-string p2, ""
+
+    .line 34
+    :cond_2
     invoke-virtual {p1, v2, p2}, Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;->setText(ILjava/lang/CharSequence;)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     return-void
@@ -177,10 +186,10 @@
 .method public bridge synthetic convert(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;Ljava/lang/Object;)V
     .locals 0
 
-    .line 11
-    check-cast p2, Lcom/iMe/model/wallet/settings/SettingUiItem;
+    .line 17
+    check-cast p2, Lcom/iMe/model/wallet/crypto/settings/WalletSettingsItem;
 
-    invoke-virtual {p0, p1, p2}, Lcom/iMe/ui/wallet/settings/adapter/WalletSettingsRecycleAdapter;->convert(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;Lcom/iMe/model/wallet/settings/SettingUiItem;)V
+    invoke-virtual {p0, p1, p2}, Lcom/iMe/ui/wallet/settings/adapter/WalletSettingsRecycleAdapter;->convert(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;Lcom/iMe/model/wallet/crypto/settings/WalletSettingsItem;)V
 
     return-void
 .end method

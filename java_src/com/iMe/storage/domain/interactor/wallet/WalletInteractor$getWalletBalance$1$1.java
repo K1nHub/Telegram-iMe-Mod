@@ -1,7 +1,6 @@
 package com.iMe.storage.domain.interactor.wallet;
 
 import com.iMe.storage.domain.model.Result;
-import com.iMe.storage.domain.model.crypto.NetworkType;
 import com.iMe.storage.domain.model.wallet.token.TokenBalance;
 import com.iMe.storage.domain.repository.wallet.WalletRepository;
 import com.iMe.storage.domain.utils.p030rx.SchedulersProvider;
@@ -15,16 +14,16 @@ import kotlin.jvm.internal.Lambda;
 /* loaded from: classes3.dex */
 final class WalletInteractor$getWalletBalance$1$1 extends Lambda implements Function1<Result<? extends Boolean>, ObservableSource<? extends Result<? extends List<? extends TokenBalance>>>> {
     final /* synthetic */ boolean $force;
-    final /* synthetic */ NetworkType $networkType;
+    final /* synthetic */ String $networkId;
     final /* synthetic */ WalletInteractor this$0;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public WalletInteractor$getWalletBalance$1$1(WalletInteractor walletInteractor, boolean z, NetworkType networkType) {
+    public WalletInteractor$getWalletBalance$1$1(WalletInteractor walletInteractor, boolean z, String str) {
         super(1);
         this.this$0 = walletInteractor;
         this.$force = z;
-        this.$networkType = networkType;
+        this.$networkId = str;
     }
 
     /* renamed from: invoke  reason: avoid collision after fix types in other method */
@@ -33,7 +32,7 @@ final class WalletInteractor$getWalletBalance$1$1 extends Lambda implements Func
         SchedulersProvider schedulersProvider;
         Intrinsics.checkNotNullParameter(it, "it");
         walletRepository = this.this$0.walletRepository;
-        Observable<Result<List<TokenBalance>>> walletBalance = walletRepository.getWalletBalance(this.$force, this.$networkType);
+        Observable<Result<List<TokenBalance>>> walletBalance = walletRepository.getWalletBalance(this.$force, this.$networkId);
         schedulersProvider = this.this$0.schedulersProvider;
         return walletBalance.subscribeOn(schedulersProvider.mo699io());
     }

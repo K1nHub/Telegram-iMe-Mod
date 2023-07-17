@@ -33,7 +33,7 @@
 
     iget-object v1, p0, Lcom/iMe/manager/wallet/create/WalletCreateManager$$ExternalSyntheticLambda2;->f$1:Lcom/iMe/model/wallet/crypto/create/WalletCreationType;
 
-    invoke-static {v0, v1}, Lcom/iMe/manager/wallet/create/WalletCreateManager;->$r8$lambda$KSM4VJt7PxGuCm617MI9Vkcn3tY(Lcom/iMe/manager/wallet/create/WalletCreateManager;Lcom/iMe/model/wallet/crypto/create/WalletCreationType;)V
+    invoke-static {v0, v1}, Lcom/iMe/manager/wallet/create/WalletCreateManager;->$r8$lambda$8-qA5GOlv_EBoPlDkZUj16T2N-U(Lcom/iMe/manager/wallet/create/WalletCreateManager;Lcom/iMe/model/wallet/crypto/create/WalletCreationType;)V
 
     return-void
 .end method

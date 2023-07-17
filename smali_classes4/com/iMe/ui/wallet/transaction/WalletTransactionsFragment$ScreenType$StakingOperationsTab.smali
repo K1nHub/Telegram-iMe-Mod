@@ -24,10 +24,10 @@
 
     const/4 v0, 0x0
 
-    .line 259
+    .line 264
     invoke-direct {p0, v0}, Lcom/iMe/ui/wallet/transaction/WalletTransactionsFragment$ScreenType;-><init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
 
-    .line 258
+    .line 263
     iput-object p1, p0, Lcom/iMe/ui/wallet/transaction/WalletTransactionsFragment$ScreenType$StakingOperationsTab;->operationsType:Lcom/iMe/storage/domain/model/staking/StakingOperationType;
 
     return-void
@@ -71,7 +71,7 @@
 .method public final getOperationsType()Lcom/iMe/storage/domain/model/staking/StakingOperationType;
     .locals 1
 
-    .line 258
+    .line 263
     iget-object v0, p0, Lcom/iMe/ui/wallet/transaction/WalletTransactionsFragment$ScreenType$StakingOperationsTab;->operationsType:Lcom/iMe/storage/domain/model/staking/StakingOperationType;
 
     return-object v0

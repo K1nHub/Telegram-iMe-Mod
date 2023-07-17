@@ -550,7 +550,7 @@ public class DefaultHttpDataSource extends BaseDataSource implements HttpDataSou
 
         @Override // com.google.common.collect.ForwardingMap, java.util.Map
         public Set<String> keySet() {
-            return Sets.filter(super.keySet(), C0660x828bc3d2.INSTANCE);
+            return Sets.filter(super.keySet(), C0665x828bc3d2.INSTANCE);
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -560,7 +560,7 @@ public class DefaultHttpDataSource extends BaseDataSource implements HttpDataSou
 
         @Override // com.google.common.collect.ForwardingMap, java.util.Map
         public Set<Map.Entry<String, List<String>>> entrySet() {
-            return Sets.filter(super.entrySet(), C0661x828bc3d3.INSTANCE);
+            return Sets.filter(super.entrySet(), C0666x828bc3d3.INSTANCE);
         }
 
         @Override // com.google.common.collect.ForwardingMap, java.util.Map

@@ -2,15 +2,15 @@ package com.iMe.model.contacts;
 
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3295R;
+import org.telegram.messenger.C3417R;
 /* compiled from: ContactsFilter.kt */
 /* loaded from: classes3.dex */
 public enum ContactsFilter {
-    ALL(C3295R.string.contacts_filter_all, C3295R.C3297drawable.msg_contacts, false),
-    ONLINE(C3295R.string.contacts_filter_online, C3295R.C3297drawable.fork_ic_online_26, false),
-    MUTUAL(C3295R.string.contacts_filter_mutual, C3295R.C3297drawable.msg_groups, false),
-    NOT_MUTUAL(C3295R.string.contacts_filter_not_mutual, C3295R.C3297drawable.fork_ic_unmutal_users_28, true),
-    BLOCKED(C3295R.string.contacts_filter_blocked, C3295R.C3297drawable.msg_block, true);
+    ALL(C3417R.string.contacts_filter_all, C3417R.C3419drawable.msg_contacts, false),
+    ONLINE(C3417R.string.contacts_filter_online, C3417R.C3419drawable.fork_ic_online_26, false),
+    MUTUAL(C3417R.string.contacts_filter_mutual, C3417R.C3419drawable.msg_groups, false),
+    NOT_MUTUAL(C3417R.string.contacts_filter_not_mutual, C3417R.C3419drawable.fork_ic_unmutal_users_28, true),
+    BLOCKED(C3417R.string.contacts_filter_blocked, C3417R.C3419drawable.msg_block, true);
     
     public static final Companion Companion = new Companion(null);
     private final int icon;

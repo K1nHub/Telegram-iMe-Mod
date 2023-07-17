@@ -1385,7 +1385,7 @@
     goto :goto_1
 
     :sswitch_7
-    const-string v0, "red"
+    const-string/jumbo v0, "red"
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -1508,8 +1508,6 @@
     move-result-object p0
 
     return-object p0
-
-    nop
 
     :sswitch_data_0
     .sparse-switch
@@ -2475,7 +2473,7 @@
     return-object p0
 
     :cond_2
-    const-string v0, "scale("
+    const-string/jumbo v0, "scale("
 
     .line 660
     invoke-virtual {p0, v0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
@@ -2683,7 +2681,7 @@
     return-object v0
 
     :cond_6
-    const-string v0, "rotate("
+    const-string/jumbo v0, "rotate("
 
     .line 688
     invoke-virtual {p0, v0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z

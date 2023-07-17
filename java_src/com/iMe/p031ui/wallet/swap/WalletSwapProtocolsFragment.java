@@ -18,11 +18,10 @@ import com.iMe.p031ui.wallet.common.WalletTabFragment;
 import com.iMe.p031ui.wallet.swap.adapter.WalletSwapProtocolsRecycleAdapter;
 import com.iMe.p031ui.wallet.swap.process.WalletSwapProcessFragment;
 import com.iMe.storage.domain.model.crypto.BlockchainType;
-import com.iMe.storage.domain.model.crypto.NetworkType;
 import com.iMe.storage.domain.model.wallet.swap.CentralizedExchange;
 import com.iMe.storage.domain.model.wallet.swap.CentralizedExchangesInfo;
 import com.iMe.storage.domain.model.wallet.swap.SwapProtocolInfo;
-import com.iMe.storage.domain.model.wallet.token.TokenCode;
+import com.iMe.storage.domain.model.wallet.token.TokenDetailed;
 import com.iMe.utils.dialogs.DialogsFactoryKt;
 import com.iMe.utils.extentions.delegate.ResettableLazy;
 import com.iMe.utils.extentions.delegate.ResettableLazyDelegateKt;
@@ -42,13 +41,13 @@ import kotlin.jvm.internal.Reflection;
 import kotlin.reflect.KProperty;
 import moxy.MvpDelegate;
 import moxy.ktx.MoxyKtxDelegate;
-import org.koin.p043mp.KoinPlatformTools;
-import org.telegram.messenger.C3295R;
+import org.koin.p042mp.KoinPlatformTools;
+import org.telegram.messenger.C3417R;
 import org.telegram.messenger.databinding.ForkFragmentWalletSwapProtocolsBinding;
-import org.telegram.p044ui.ActionBar.C3361ActionBar;
-import org.telegram.p044ui.ActionBar.Theme;
-import org.telegram.p044ui.ActionBar.ThemeDescription;
-import org.telegram.p044ui.ActionIntroActivity;
+import org.telegram.p043ui.ActionBar.C3484ActionBar;
+import org.telegram.p043ui.ActionBar.Theme;
+import org.telegram.p043ui.ActionBar.ThemeDescription;
+import org.telegram.p043ui.ActionIntroActivity;
 /* compiled from: WalletSwapProtocolsFragment.kt */
 /* renamed from: com.iMe.ui.wallet.swap.WalletSwapProtocolsFragment */
 /* loaded from: classes4.dex */
@@ -59,7 +58,7 @@ public final class WalletSwapProtocolsFragment extends WalletTabFragment impleme
     private final MoxyKtxDelegate presenter$delegate;
     private final ScreenType screenType;
     private final Lazy swapProtocolsAdapter$delegate;
-    private final TokenCode toToken;
+    private final TokenDetailed toToken;
 
     /* compiled from: WalletSwapProtocolsFragment.kt */
     /* renamed from: com.iMe.ui.wallet.swap.WalletSwapProtocolsFragment$WhenMappings */
@@ -89,20 +88,20 @@ public final class WalletSwapProtocolsFragment extends WalletTabFragment impleme
         }
     }
 
-    public static final WalletSwapProtocolsFragment newInstance(ScreenType screenType, TokenCode tokenCode) {
-        return Companion.newInstance(screenType, tokenCode);
+    public static final WalletSwapProtocolsFragment newInstance(ScreenType screenType, TokenDetailed tokenDetailed) {
+        return Companion.newInstance(screenType, tokenDetailed);
     }
 
-    @Override // org.telegram.p044ui.ActionBar.BaseFragment
+    @Override // org.telegram.p043ui.ActionBar.BaseFragment
     public boolean isSwipeBackEnabled(MotionEvent motionEvent) {
         return false;
     }
 
-    public WalletSwapProtocolsFragment(ScreenType screenType, TokenCode tokenCode) {
+    public WalletSwapProtocolsFragment(ScreenType screenType, TokenDetailed tokenDetailed) {
         Lazy lazy;
         Intrinsics.checkNotNullParameter(screenType, "screenType");
         this.screenType = screenType;
-        this.toToken = tokenCode;
+        this.toToken = tokenDetailed;
         WalletSwapProtocolsFragment$presenter$2 walletSwapProtocolsFragment$presenter$2 = new WalletSwapProtocolsFragment$presenter$2(this);
         MvpDelegate mvpDelegate = getMvpDelegate();
         Intrinsics.checkExpressionValueIsNotNull(mvpDelegate, "mvpDelegate");
@@ -144,16 +143,16 @@ public final class WalletSwapProtocolsFragment extends WalletTabFragment impleme
         return root;
     }
 
-    @Override // org.telegram.p044ui.ActionBar.BaseFragment
+    @Override // org.telegram.p043ui.ActionBar.BaseFragment
     public ArrayList<ThemeDescription> getThemeDescriptions() {
         ArrayList<ThemeDescription> arrayListOf;
         arrayListOf = CollectionsKt__CollectionsKt.arrayListOf(new ThemeDescription(getBinding().getRoot(), ThemeDescription.FLAG_BACKGROUND, null, null, null, new ThemeDescription.ThemeDescriptionDelegate() { // from class: com.iMe.ui.wallet.swap.WalletSwapProtocolsFragment$$ExternalSyntheticLambda2
-            @Override // org.telegram.p044ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
+            @Override // org.telegram.p043ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
             public final void didSetColor() {
                 WalletSwapProtocolsFragment.getThemeDescriptions$lambda$1(WalletSwapProtocolsFragment.this);
             }
 
-            @Override // org.telegram.p044ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
+            @Override // org.telegram.p043ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
             public /* synthetic */ void onAnimationProgress(float f) {
                 ThemeDescription.ThemeDescriptionDelegate.CC.$default$onAnimationProgress(this, f);
             }
@@ -161,7 +160,6 @@ public final class WalletSwapProtocolsFragment extends WalletTabFragment impleme
         return arrayListOf;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
     public static final void getThemeDescriptions$lambda$1(WalletSwapProtocolsFragment this$0) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         this$0.getSwapProtocolsAdapter().notifyDataSetChanged();
@@ -187,30 +185,29 @@ public final class WalletSwapProtocolsFragment extends WalletTabFragment impleme
     }
 
     @Override // com.iMe.p031ui.wallet.swap.WalletSwapProtocolsView
-    public void openSwapScreen(final SwapProtocolInfo item, final NetworkType networkType) {
+    public void openSwapScreen(final SwapProtocolInfo item, final String str) {
         Intrinsics.checkNotNullParameter(item, "item");
         WalletHelper.runWithCheckIsCryptoWalletCreated(this, null, BlockchainType.EVM, new Callbacks$Callback() { // from class: com.iMe.ui.wallet.swap.WalletSwapProtocolsFragment$$ExternalSyntheticLambda1
             @Override // com.iMe.fork.utils.Callbacks$Callback
             public final void invoke() {
-                WalletSwapProtocolsFragment.openSwapScreen$lambda$2(WalletSwapProtocolsFragment.this, item, networkType);
+                WalletSwapProtocolsFragment.openSwapScreen$lambda$2(WalletSwapProtocolsFragment.this, item, str);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void openSwapScreen$lambda$2(WalletSwapProtocolsFragment this$0, SwapProtocolInfo item, NetworkType networkType) {
+    public static final void openSwapScreen$lambda$2(WalletSwapProtocolsFragment this$0, SwapProtocolInfo item, String str) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         Intrinsics.checkNotNullParameter(item, "$item");
-        this$0.presentFragment(WalletSwapProcessFragment.Companion.newInstance(new WalletSwapProcessFragment.ScreenType.Crypto(item.getCode(), null, this$0.toToken, networkType, 2, null)));
+        this$0.presentFragment(WalletSwapProcessFragment.Companion.newInstance(new WalletSwapProcessFragment.ScreenType.Crypto(item.getCode(), null, this$0.toToken, str, 2, null)));
     }
 
     private final void setupActionBar() {
-        C3361ActionBar c3361ActionBar = this.actionBar;
-        c3361ActionBar.setBackButtonImage(C3295R.C3297drawable.ic_ab_back);
-        c3361ActionBar.setTitle(getResourceManager().getString(C3295R.string.wallet_navigation_exchange));
-        c3361ActionBar.setAllowOverlayTitle(true);
-        c3361ActionBar.setActionBarMenuOnItemClick(new C3361ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.ui.wallet.swap.WalletSwapProtocolsFragment$setupActionBar$1$1
-            @Override // org.telegram.p044ui.ActionBar.C3361ActionBar.ActionBarMenuOnItemClick
+        C3484ActionBar c3484ActionBar = this.actionBar;
+        c3484ActionBar.setBackButtonImage(C3417R.C3419drawable.ic_ab_back);
+        c3484ActionBar.setTitle(getResourceManager().getString(C3417R.string.wallet_navigation_exchange));
+        c3484ActionBar.setAllowOverlayTitle(true);
+        c3484ActionBar.setActionBarMenuOnItemClick(new C3484ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.ui.wallet.swap.WalletSwapProtocolsFragment$setupActionBar$1$1
+            @Override // org.telegram.p043ui.ActionBar.C3484ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
                     WalletSwapProtocolsFragment.this.finishFragment();
@@ -232,7 +229,6 @@ public final class WalletSwapProtocolsFragment extends WalletTabFragment impleme
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
     public static final void setupListeners$lambda$5(WalletSwapProtocolsFragment this$0, BaseQuickAdapter baseQuickAdapter, View view, int i) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         Intrinsics.checkNotNullParameter(baseQuickAdapter, "<anonymous parameter 0>");
@@ -280,16 +276,16 @@ public final class WalletSwapProtocolsFragment extends WalletTabFragment impleme
         private Companion() {
         }
 
-        public static /* synthetic */ WalletSwapProtocolsFragment newInstance$default(Companion companion, ScreenType screenType, TokenCode tokenCode, int i, Object obj) {
+        public static /* synthetic */ WalletSwapProtocolsFragment newInstance$default(Companion companion, ScreenType screenType, TokenDetailed tokenDetailed, int i, Object obj) {
             if ((i & 2) != 0) {
-                tokenCode = null;
+                tokenDetailed = null;
             }
-            return companion.newInstance(screenType, tokenCode);
+            return companion.newInstance(screenType, tokenDetailed);
         }
 
-        public final WalletSwapProtocolsFragment newInstance(ScreenType screenType, TokenCode tokenCode) {
+        public final WalletSwapProtocolsFragment newInstance(ScreenType screenType, TokenDetailed tokenDetailed) {
             Intrinsics.checkNotNullParameter(screenType, "screenType");
-            return new WalletSwapProtocolsFragment(screenType, tokenCode);
+            return new WalletSwapProtocolsFragment(screenType, tokenDetailed);
         }
     }
 }

@@ -9,7 +9,7 @@ import kotlin.ranges.IntRange;
 import kotlin.ranges.RangesKt___RangesKt;
 /* compiled from: SecretWordsCountPresenter.kt */
 /* renamed from: com.iMe.ui.wallet.crypto.create.secret_words_count.SecretWordsCountPresenter$wordsCountItems$2 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 final class SecretWordsCountPresenter$wordsCountItems$2 extends Lambda implements Function0<List<Integer>> {
     public static final SecretWordsCountPresenter$wordsCountItems$2 INSTANCE = new SecretWordsCountPresenter$wordsCountItems$2();
 

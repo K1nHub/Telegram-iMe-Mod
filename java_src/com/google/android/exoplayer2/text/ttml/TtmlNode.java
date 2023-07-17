@@ -5,7 +5,7 @@ import android.graphics.BitmapFactory;
 import android.text.SpannableStringBuilder;
 import android.util.Base64;
 import android.util.Pair;
-import com.google.android.exoplayer2.C0475C;
+import com.google.android.exoplayer2.C0480C;
 import com.google.android.exoplayer2.text.Cue;
 import com.google.android.exoplayer2.util.Assertions;
 import java.util.ArrayList;
@@ -100,7 +100,7 @@ public final class TtmlNode {
     public final String text;
 
     public static TtmlNode buildTextNode(String str) {
-        return new TtmlNode(null, TtmlRenderUtil.applyTextElementSpacePolicy(str), C0475C.TIME_UNSET, C0475C.TIME_UNSET, null, null, "", null, null);
+        return new TtmlNode(null, TtmlRenderUtil.applyTextElementSpacePolicy(str), C0480C.TIME_UNSET, C0480C.TIME_UNSET, null, null, "", null, null);
     }
 
     public static TtmlNode buildNode(String str, long j, long j2, TtmlStyle ttmlStyle, String[] strArr, String str2, String str3, TtmlNode ttmlNode) {
@@ -124,7 +124,7 @@ public final class TtmlNode {
 
     public boolean isActive(long j) {
         long j2 = this.startTimeUs;
-        return (j2 == C0475C.TIME_UNSET && this.endTimeUs == C0475C.TIME_UNSET) || (j2 <= j && this.endTimeUs == C0475C.TIME_UNSET) || ((j2 == C0475C.TIME_UNSET && j < this.endTimeUs) || (j2 <= j && j < this.endTimeUs));
+        return (j2 == C0480C.TIME_UNSET && this.endTimeUs == C0480C.TIME_UNSET) || (j2 <= j && this.endTimeUs == C0480C.TIME_UNSET) || ((j2 == C0480C.TIME_UNSET && j < this.endTimeUs) || (j2 <= j && j < this.endTimeUs));
     }
 
     public void addChild(TtmlNode ttmlNode) {
@@ -168,11 +168,11 @@ public final class TtmlNode {
         boolean equals2 = TAG_DIV.equals(this.tag);
         if (z || equals || (equals2 && this.imageId != null)) {
             long j = this.startTimeUs;
-            if (j != C0475C.TIME_UNSET) {
+            if (j != C0480C.TIME_UNSET) {
                 treeSet.add(Long.valueOf(j));
             }
             long j2 = this.endTimeUs;
-            if (j2 != C0475C.TIME_UNSET) {
+            if (j2 != C0480C.TIME_UNSET) {
                 treeSet.add(Long.valueOf(j2));
             }
         }

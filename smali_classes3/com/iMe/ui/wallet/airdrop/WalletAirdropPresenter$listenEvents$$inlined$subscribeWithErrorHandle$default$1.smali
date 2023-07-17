@@ -53,7 +53,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 44
+    .line 47
     invoke-virtual {p0, p1}, Lcom/iMe/ui/wallet/airdrop/WalletAirdropPresenter$listenEvents$$inlined$subscribeWithErrorHandle$default$1;->invoke(Ljava/lang/Object;)V
 
     sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
@@ -73,13 +73,13 @@
 
     const-string v0, "it"
 
-    .line 45
+    .line 48
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     check-cast p1, Lcom/iMe/storage/domain/utils/rx/event/DomainRxEvents$CryptoEvent;
 
     .line 113
-    instance-of v0, p1, Lcom/iMe/storage/domain/utils/rx/event/DomainRxEvents$SuccessRestoreWallet;
+    instance-of v0, p1, Lcom/iMe/storage/domain/utils/rx/event/DomainRxEvents$WalletRestored;
 
     if-eqz v0, :cond_0
 
@@ -88,7 +88,7 @@
     goto :goto_0
 
     :cond_0
-    instance-of p1, p1, Lcom/iMe/storage/domain/utils/rx/event/DomainRxEvents$SuccessCreateWallet;
+    instance-of p1, p1, Lcom/iMe/storage/domain/utils/rx/event/DomainRxEvents$WalletCreated;
 
     :goto_0
     if-eqz p1, :cond_1

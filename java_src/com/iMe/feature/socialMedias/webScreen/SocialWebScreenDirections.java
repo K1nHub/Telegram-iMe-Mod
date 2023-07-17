@@ -6,7 +6,7 @@ import androidx.navigation.NavDirections;
 import com.iMe.feature.socialMedias.SocialNetwork;
 import java.io.Serializable;
 import java.util.HashMap;
-import org.telegram.messenger.C3295R;
+import org.telegram.messenger.C3417R;
 /* loaded from: classes3.dex */
 public class SocialWebScreenDirections {
     public static ToSocialWeb toSocialWeb(SocialNetwork socialNetwork) {
@@ -44,7 +44,7 @@ public class SocialWebScreenDirections {
 
         @Override // androidx.navigation.NavDirections
         public int getActionId() {
-            return C3295R.C3298id.toSocialWeb;
+            return C3417R.C3420id.toSocialWeb;
         }
 
         public SocialNetwork getSocialNetwork() {

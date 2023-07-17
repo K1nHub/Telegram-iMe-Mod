@@ -10,9 +10,9 @@ import com.iMe.p031ui.shop.view.adapter.BotsPreviewAdapter;
 import java.util.List;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.p044ui.ActionBar.Theme;
-import org.telegram.p044ui.Components.LayoutHelper;
-import org.telegram.p044ui.Components.RecyclerListView;
+import org.telegram.p043ui.ActionBar.Theme;
+import org.telegram.p043ui.Components.LayoutHelper;
+import org.telegram.p043ui.Components.RecyclerListView;
 /* compiled from: BotsListView.kt */
 /* renamed from: com.iMe.ui.shop.view.custom.BotsListView */
 /* loaded from: classes3.dex */

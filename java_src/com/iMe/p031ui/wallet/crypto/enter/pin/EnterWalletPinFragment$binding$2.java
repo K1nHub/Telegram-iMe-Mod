@@ -6,7 +6,7 @@ import kotlin.jvm.internal.Lambda;
 import org.telegram.messenger.databinding.ForkFragmentWalletEthEnterPinBinding;
 /* compiled from: EnterWalletPinFragment.kt */
 /* renamed from: com.iMe.ui.wallet.crypto.enter.pin.EnterWalletPinFragment$binding$2 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 final class EnterWalletPinFragment$binding$2 extends Lambda implements Function0<ForkFragmentWalletEthEnterPinBinding> {
     final /* synthetic */ EnterWalletPinFragment this$0;
 

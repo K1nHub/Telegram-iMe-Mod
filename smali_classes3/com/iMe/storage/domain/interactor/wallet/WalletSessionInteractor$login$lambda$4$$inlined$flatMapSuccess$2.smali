@@ -34,7 +34,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nObservableExt.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ObservableExt.kt\ncom/iMe/storage/domain/utils/extentions/ObservableExtKt$flatMapSuccess$1\n+ 2 WalletSessionInteractor.kt\ncom/iMe/storage/domain/interactor/wallet/WalletSessionInteractor\n*L\n1#1,80:1\n66#2:81\n*E\n"
+    value = "SMAP\nObservableExt.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ObservableExt.kt\ncom/iMe/storage/domain/utils/extentions/ObservableExtKt$flatMapSuccess$1\n+ 2 WalletSessionInteractor.kt\ncom/iMe/storage/domain/interactor/wallet/WalletSessionInteractor\n*L\n1#1,92:1\n66#2:93\n*E\n"
 .end annotation
 
 
@@ -84,7 +84,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 81
+    .line 93
     iget-object v0, p0, Lcom/iMe/storage/domain/interactor/wallet/WalletSessionInteractor$login$lambda$4$$inlined$flatMapSuccess$2;->this$0:Lcom/iMe/storage/domain/interactor/wallet/WalletSessionInteractor;
 
     invoke-static {v0}, Lcom/iMe/storage/domain/interactor/wallet/WalletSessionInteractor;->access$getNotificationRepository$p(Lcom/iMe/storage/domain/interactor/wallet/WalletSessionInteractor;)Lcom/iMe/storage/domain/repository/notification/PushNotificationRepository;

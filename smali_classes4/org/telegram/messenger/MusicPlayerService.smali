@@ -83,7 +83,7 @@
 
     if-lt v0, v3, :cond_2
 
-    const-string v0, "ro.miui.ui.version.code"
+    const-string/jumbo v0, "ro.miui.ui.version.code"
 
     .line 61
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->getSystemProperty(Ljava/lang/String;)Ljava/lang/String;

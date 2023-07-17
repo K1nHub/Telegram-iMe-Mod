@@ -103,7 +103,7 @@
 
     iput-object p1, p0, Lorg/telegram/ui/IntroActivity$EGLThread;->telegramMaskProvider:Lorg/telegram/messenger/GenericProvider;
 
-    .line 824
+    .line 823
     new-instance p1, Lorg/telegram/ui/IntroActivity$EGLThread$1;
 
     invoke-direct {p1, p0}, Lorg/telegram/ui/IntroActivity$EGLThread$1;-><init>(Lorg/telegram/ui/IntroActivity$EGLThread;)V
@@ -756,32 +756,32 @@
 
     invoke-direct {v0, v4, v11}, Lorg/telegram/ui/IntroActivity$EGLThread;->loadTexture(II)V
 
-    .line 775
+    .line 774
     sget v4, Lorg/telegram/messenger/R$drawable;->fork_intro_plane:I
 
     const/16 v14, 0x15
 
     invoke-direct {v0, v4, v14}, Lorg/telegram/ui/IntroActivity$EGLThread;->loadTexture(II)V
 
-    .line 776
+    .line 775
     sget-object v4, Lorg/telegram/ui/IntroActivity$EGLThread$$ExternalSyntheticLambda1;->INSTANCE:Lorg/telegram/ui/IntroActivity$EGLThread$$ExternalSyntheticLambda1;
 
     const/16 v14, 0x16
 
     invoke-direct {v0, v4, v14}, Lorg/telegram/ui/IntroActivity$EGLThread;->loadTexture(Lorg/telegram/messenger/GenericProvider;I)V
 
-    .line 786
+    .line 785
     iget-object v4, v0, Lorg/telegram/ui/IntroActivity$EGLThread;->telegramMaskProvider:Lorg/telegram/messenger/GenericProvider;
 
     invoke-direct {v0, v4, v6}, Lorg/telegram/ui/IntroActivity$EGLThread;->loadTexture(Lorg/telegram/messenger/GenericProvider;I)V
 
-    .line 788
+    .line 787
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/IntroActivity$EGLThread;->updateTelegramTextures()V
 
-    .line 789
+    .line 788
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/IntroActivity$EGLThread;->updatePowerfulTextures()V
 
-    .line 790
+    .line 789
     iget-object v4, v0, Lorg/telegram/ui/IntroActivity$EGLThread;->textures:[I
 
     aget v6, v4, v13
@@ -790,7 +790,7 @@
 
     invoke-static {v6, v4}, Lorg/telegram/messenger/Intro;->setPrivateTextures(II)V
 
-    .line 791
+    .line 790
     iget-object v4, v0, Lorg/telegram/ui/IntroActivity$EGLThread;->textures:[I
 
     aget v6, v4, v15
@@ -799,7 +799,7 @@
 
     invoke-static {v6, v4}, Lorg/telegram/messenger/Intro;->setFreeTextures(II)V
 
-    .line 792
+    .line 791
     iget-object v4, v0, Lorg/telegram/ui/IntroActivity$EGLThread;->textures:[I
 
     aget v2, v4, v2
@@ -812,7 +812,7 @@
 
     invoke-static {v2, v5, v6, v3}, Lorg/telegram/messenger/Intro;->setFastTextures(IIII)V
 
-    .line 793
+    .line 792
     iget-object v2, v0, Lorg/telegram/ui/IntroActivity$EGLThread;->textures:[I
 
     aget v17, v2, v7
@@ -845,10 +845,10 @@
 
     invoke-static/range {v17 .. v25}, Lorg/telegram/messenger/Intro;->setIcTextures(IIIIIIIII)V
 
-    .line 794
+    .line 793
     invoke-static {}, Lorg/telegram/messenger/Intro;->onSurfaceCreated()V
 
-    .line 795
+    .line 794
     iget-object v2, v0, Lorg/telegram/ui/IntroActivity$EGLThread;->this$0:Lorg/telegram/ui/IntroActivity;
 
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
@@ -977,7 +977,7 @@
 .method private static synthetic lambda$initGL$1(Ljava/lang/Void;)Landroid/graphics/Bitmap;
     .locals 4
 
-    .line 777
+    .line 776
     new-instance p0, Landroid/graphics/Paint;
 
     const/4 v0, 0x1
@@ -986,10 +986,10 @@
 
     const v0, -0xd35a20
 
-    .line 778
+    .line 777
     invoke-virtual {p0, v0}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 779
+    .line 778
     sget-object v0, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
     sget v1, Lorg/telegram/messenger/R$color;->fork_color:I
@@ -1002,19 +1002,19 @@
 
     const/16 v0, 0x96
 
-    .line 780
+    .line 779
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
 
-    .line 781
+    .line 780
     sget-object v1, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
 
     invoke-static {v0, v0, v1}, Landroid/graphics/Bitmap;->createBitmap(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
 
     move-result-object v1
 
-    .line 782
+    .line 781
     new-instance v2, Landroid/graphics/Canvas;
 
     invoke-direct {v2, v1}, Landroid/graphics/Canvas;-><init>(Landroid/graphics/Bitmap;)V
@@ -1025,7 +1025,7 @@
 
     div-float/2addr v0, v3
 
-    .line 783
+    .line 782
     invoke-virtual {v2, v0, v0, v0, p0}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
 
     return-object v1
@@ -1115,17 +1115,17 @@
 .method private synthetic lambda$shutdown$2()V
     .locals 1
 
-    .line 922
+    .line 921
     invoke-virtual {p0}, Lorg/telegram/ui/IntroActivity$EGLThread;->finish()V
 
-    .line 923
+    .line 922
     invoke-static {}, Landroid/os/Looper;->myLooper()Landroid/os/Looper;
 
     move-result-object v0
 
     if-eqz v0, :cond_0
 
-    .line 925
+    .line 924
     invoke-virtual {v0}, Landroid/os/Looper;->quit()V
 
     :cond_0
@@ -1137,7 +1137,7 @@
 
     const/4 v0, 0x0
 
-    .line 888
+    .line 887
     invoke-direct {p0, p1, p2, v0, v0}, Lorg/telegram/ui/IntroActivity$EGLThread;->loadTexture(IIIZ)V
 
     return-void
@@ -1146,7 +1146,7 @@
 .method private loadTexture(IIIZ)V
     .locals 5
 
-    .line 892
+    .line 891
     iget-object v0, p0, Lorg/telegram/ui/IntroActivity$EGLThread;->this$0:Lorg/telegram/ui/IntroActivity;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -1161,26 +1161,26 @@
 
     move-result-object p1
 
-    .line 893
+    .line 892
     instance-of v0, p1, Landroid/graphics/drawable/BitmapDrawable;
 
     if-eqz v0, :cond_2
 
     if-eqz p4, :cond_0
 
-    .line 895
+    .line 894
     iget-object p4, p0, Lorg/telegram/ui/IntroActivity$EGLThread;->textures:[I
 
     const/4 v0, 0x1
 
     invoke-static {v0, p4, p2}, Landroid/opengl/GLES20;->glDeleteTextures(I[II)V
 
-    .line 896
+    .line 895
     iget-object p4, p0, Lorg/telegram/ui/IntroActivity$EGLThread;->textures:[I
 
     invoke-static {v0, p4, p2}, Landroid/opengl/GLES20;->glGenTextures(I[II)V
 
-    .line 899
+    .line 898
     :cond_0
     check-cast p1, Landroid/graphics/drawable/BitmapDrawable;
 
@@ -1188,7 +1188,7 @@
 
     move-result-object p1
 
-    .line 900
+    .line 899
     iget-object p4, p0, Lorg/telegram/ui/IntroActivity$EGLThread;->textures:[I
 
     aget p2, p4, p2
@@ -1201,31 +1201,31 @@
 
     const/16 v0, 0x2601
 
-    .line 901
+    .line 900
     invoke-static {p4, p2, v0}, Landroid/opengl/GLES20;->glTexParameteri(III)V
 
     const/16 p2, 0x2800
 
-    .line 902
+    .line 901
     invoke-static {p4, p2, v0}, Landroid/opengl/GLES20;->glTexParameteri(III)V
 
     const/16 p2, 0x2802
 
     const v0, 0x812f
 
-    .line 903
+    .line 902
     invoke-static {p4, p2, v0}, Landroid/opengl/GLES20;->glTexParameteri(III)V
 
     const/16 p2, 0x2803
 
-    .line 904
+    .line 903
     invoke-static {p4, p2, v0}, Landroid/opengl/GLES20;->glTexParameteri(III)V
 
     const/4 p2, 0x0
 
     if-eqz p3, :cond_1
 
-    .line 907
+    .line 906
     invoke-virtual {p1}, Landroid/graphics/Bitmap;->getWidth()I
 
     move-result v0
@@ -1240,19 +1240,19 @@
 
     move-result-object v0
 
-    .line 908
+    .line 907
     new-instance v1, Landroid/graphics/Canvas;
 
     invoke-direct {v1, v0}, Landroid/graphics/Canvas;-><init>(Landroid/graphics/Bitmap;)V
 
-    .line 909
+    .line 908
     new-instance v2, Landroid/graphics/Paint;
 
     const/4 v3, 0x5
 
     invoke-direct {v2, v3}, Landroid/graphics/Paint;-><init>(I)V
 
-    .line 910
+    .line 909
     new-instance v3, Landroid/graphics/PorterDuffColorFilter;
 
     sget-object v4, Landroid/graphics/PorterDuff$Mode;->SRC_IN:Landroid/graphics/PorterDuff$Mode;
@@ -1263,18 +1263,18 @@
 
     const/4 p3, 0x0
 
-    .line 911
+    .line 910
     invoke-virtual {v1, p1, p3, p3, v2}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;FFLandroid/graphics/Paint;)V
 
-    .line 912
+    .line 911
     invoke-static {p4, p2, v0, p2}, Landroid/opengl/GLUtils;->texImage2D(IILandroid/graphics/Bitmap;I)V
 
-    .line 913
+    .line 912
     invoke-virtual {v0}, Landroid/graphics/Bitmap;->recycle()V
 
     goto :goto_0
 
-    .line 915
+    .line 914
     :cond_1
     invoke-static {p4, p2, p1, p2}, Landroid/opengl/GLUtils;->texImage2D(IILandroid/graphics/Bitmap;I)V
 
@@ -1297,7 +1297,7 @@
 
     const/4 v0, 0x0
 
-    .line 869
+    .line 868
     invoke-direct {p0, p1, p2, v0}, Lorg/telegram/ui/IntroActivity$EGLThread;->loadTexture(Lorg/telegram/messenger/GenericProvider;IZ)V
 
     return-void
@@ -1317,14 +1317,14 @@
 
     if-eqz p3, :cond_0
 
-    .line 874
+    .line 873
     iget-object p3, p0, Lorg/telegram/ui/IntroActivity$EGLThread;->textures:[I
 
     const/4 v0, 0x1
 
     invoke-static {v0, p3, p2}, Landroid/opengl/GLES20;->glDeleteTextures(I[II)V
 
-    .line 875
+    .line 874
     iget-object p3, p0, Lorg/telegram/ui/IntroActivity$EGLThread;->textures:[I
 
     invoke-static {v0, p3, p2}, Landroid/opengl/GLES20;->glGenTextures(I[II)V
@@ -1332,14 +1332,14 @@
     :cond_0
     const/4 p3, 0x0
 
-    .line 877
+    .line 876
     invoke-interface {p1, p3}, Lorg/telegram/messenger/GenericProvider;->provide(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p1
 
     check-cast p1, Landroid/graphics/Bitmap;
 
-    .line 878
+    .line 877
     iget-object p3, p0, Lorg/telegram/ui/IntroActivity$EGLThread;->textures:[I
 
     aget p2, p3, p2
@@ -1352,32 +1352,32 @@
 
     const/16 v0, 0x2601
 
-    .line 879
+    .line 878
     invoke-static {p3, p2, v0}, Landroid/opengl/GLES20;->glTexParameteri(III)V
 
     const/16 p2, 0x2800
 
-    .line 880
+    .line 879
     invoke-static {p3, p2, v0}, Landroid/opengl/GLES20;->glTexParameteri(III)V
 
     const/16 p2, 0x2802
 
     const v0, 0x812f
 
-    .line 881
+    .line 880
     invoke-static {p3, p2, v0}, Landroid/opengl/GLES20;->glTexParameteri(III)V
 
     const/16 p2, 0x2803
 
-    .line 882
+    .line 881
     invoke-static {p3, p2, v0}, Landroid/opengl/GLES20;->glTexParameteri(III)V
 
     const/4 p2, 0x0
 
-    .line 883
+    .line 882
     invoke-static {p3, p2, p1, p2}, Landroid/opengl/GLUtils;->texImage2D(IILandroid/graphics/Bitmap;I)V
 
-    .line 884
+    .line 883
     invoke-virtual {p1}, Landroid/graphics/Bitmap;->recycle()V
 
     return-void
@@ -1388,14 +1388,14 @@
 .method public finish()V
     .locals 5
 
-    .line 809
+    .line 808
     iget-object v0, p0, Lorg/telegram/ui/IntroActivity$EGLThread;->eglSurface:Ljavax/microedition/khronos/egl/EGLSurface;
 
     const/4 v1, 0x0
 
     if-eqz v0, :cond_0
 
-    .line 810
+    .line 809
     iget-object v0, p0, Lorg/telegram/ui/IntroActivity$EGLThread;->egl10:Ljavax/microedition/khronos/egl/EGL10;
 
     iget-object v2, p0, Lorg/telegram/ui/IntroActivity$EGLThread;->eglDisplay:Ljavax/microedition/khronos/egl/EGLDisplay;
@@ -1406,7 +1406,7 @@
 
     invoke-interface {v0, v2, v3, v3, v4}, Ljavax/microedition/khronos/egl/EGL10;->eglMakeCurrent(Ljavax/microedition/khronos/egl/EGLDisplay;Ljavax/microedition/khronos/egl/EGLSurface;Ljavax/microedition/khronos/egl/EGLSurface;Ljavax/microedition/khronos/egl/EGLContext;)Z
 
-    .line 811
+    .line 810
     iget-object v0, p0, Lorg/telegram/ui/IntroActivity$EGLThread;->egl10:Ljavax/microedition/khronos/egl/EGL10;
 
     iget-object v2, p0, Lorg/telegram/ui/IntroActivity$EGLThread;->eglDisplay:Ljavax/microedition/khronos/egl/EGLDisplay;
@@ -1415,37 +1415,37 @@
 
     invoke-interface {v0, v2, v3}, Ljavax/microedition/khronos/egl/EGL10;->eglDestroySurface(Ljavax/microedition/khronos/egl/EGLDisplay;Ljavax/microedition/khronos/egl/EGLSurface;)Z
 
-    .line 812
+    .line 811
     iput-object v1, p0, Lorg/telegram/ui/IntroActivity$EGLThread;->eglSurface:Ljavax/microedition/khronos/egl/EGLSurface;
 
-    .line 814
+    .line 813
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/IntroActivity$EGLThread;->eglContext:Ljavax/microedition/khronos/egl/EGLContext;
 
     if-eqz v0, :cond_1
 
-    .line 815
+    .line 814
     iget-object v2, p0, Lorg/telegram/ui/IntroActivity$EGLThread;->egl10:Ljavax/microedition/khronos/egl/EGL10;
 
     iget-object v3, p0, Lorg/telegram/ui/IntroActivity$EGLThread;->eglDisplay:Ljavax/microedition/khronos/egl/EGLDisplay;
 
     invoke-interface {v2, v3, v0}, Ljavax/microedition/khronos/egl/EGL10;->eglDestroyContext(Ljavax/microedition/khronos/egl/EGLDisplay;Ljavax/microedition/khronos/egl/EGLContext;)Z
 
-    .line 816
+    .line 815
     iput-object v1, p0, Lorg/telegram/ui/IntroActivity$EGLThread;->eglContext:Ljavax/microedition/khronos/egl/EGLContext;
 
-    .line 818
+    .line 817
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/IntroActivity$EGLThread;->eglDisplay:Ljavax/microedition/khronos/egl/EGLDisplay;
 
     if-eqz v0, :cond_2
 
-    .line 819
+    .line 818
     iget-object v2, p0, Lorg/telegram/ui/IntroActivity$EGLThread;->egl10:Ljavax/microedition/khronos/egl/EGL10;
 
     invoke-interface {v2, v0}, Ljavax/microedition/khronos/egl/EGL10;->eglTerminate(Ljavax/microedition/khronos/egl/EGLDisplay;)Z
 
-    .line 820
+    .line 819
     iput-object v1, p0, Lorg/telegram/ui/IntroActivity$EGLThread;->eglDisplay:Ljavax/microedition/khronos/egl/EGLDisplay;
 
     :cond_2
@@ -1455,14 +1455,14 @@
 .method public run()V
     .locals 1
 
-    .line 936
+    .line 935
     invoke-direct {p0}, Lorg/telegram/ui/IntroActivity$EGLThread;->initGL()Z
 
     move-result v0
 
     iput-boolean v0, p0, Lorg/telegram/ui/IntroActivity$EGLThread;->initied:Z
 
-    .line 937
+    .line 936
     invoke-super {p0}, Lorg/telegram/messenger/DispatchQueue;->run()V
 
     return-void
@@ -1481,7 +1481,7 @@
 
     div-float/2addr v2, v1
 
-    .line 931
+    .line 930
     invoke-static {v0, v2}, Ljava/lang/Math;->min(FF)F
 
     move-result v0
@@ -1496,7 +1496,7 @@
 .method public shutdown()V
     .locals 1
 
-    .line 921
+    .line 920
     new-instance v0, Lorg/telegram/ui/IntroActivity$EGLThread$$ExternalSyntheticLambda0;
 
     invoke-direct {v0, p0}, Lorg/telegram/ui/IntroActivity$EGLThread$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/IntroActivity$EGLThread;)V
@@ -1509,7 +1509,7 @@
 .method public updatePowerfulTextures()V
     .locals 5
 
-    .line 805
+    .line 804
     iget-object v0, p0, Lorg/telegram/ui/IntroActivity$EGLThread;->textures:[I
 
     const/16 v1, 0x11
@@ -1536,7 +1536,7 @@
 .method public updateTelegramTextures()V
     .locals 4
 
-    .line 801
+    .line 800
     iget-object v0, p0, Lorg/telegram/ui/IntroActivity$EGLThread;->textures:[I
 
     const/16 v1, 0x16

@@ -28,8 +28,6 @@
 
 .field public static final enum ARCHIVE_ALBUMS:Lcom/iMe/ui/dialogs/EmptyCellType;
 
-.field public static final enum BOOKMARKS:Lcom/iMe/ui/dialogs/EmptyCellType;
-
 .field public static final Companion:Lcom/iMe/ui/dialogs/EmptyCellType$Companion;
 
 .field public static final enum DRAFTS:Lcom/iMe/ui/dialogs/EmptyCellType;
@@ -59,7 +57,7 @@
 .method private static final synthetic $values()[Lcom/iMe/ui/dialogs/EmptyCellType;
     .locals 3
 
-    const/16 v0, 0xa
+    const/16 v0, 0x9
 
     new-array v0, v0, [Lcom/iMe/ui/dialogs/EmptyCellType;
 
@@ -105,21 +103,15 @@
 
     aput-object v1, v0, v2
 
-    sget-object v1, Lcom/iMe/ui/dialogs/EmptyCellType;->BOOKMARKS:Lcom/iMe/ui/dialogs/EmptyCellType;
+    sget-object v1, Lcom/iMe/ui/dialogs/EmptyCellType;->DRAFTS:Lcom/iMe/ui/dialogs/EmptyCellType;
 
     const/4 v2, 0x7
 
     aput-object v1, v0, v2
 
-    sget-object v1, Lcom/iMe/ui/dialogs/EmptyCellType;->DRAFTS:Lcom/iMe/ui/dialogs/EmptyCellType;
-
-    const/16 v2, 0x8
-
-    aput-object v1, v0, v2
-
     sget-object v1, Lcom/iMe/ui/dialogs/EmptyCellType;->HIDDEN_CHATS:Lcom/iMe/ui/dialogs/EmptyCellType;
 
-    const/16 v2, 0x9
+    const/16 v2, 0x8
 
     aput-object v1, v0, v2
 
@@ -257,11 +249,11 @@
     .line 15
     new-instance v6, Lcom/iMe/ui/dialogs/EmptyCellType;
 
-    sget v4, Lorg/telegram/messenger/R$string;->chat_bookmarks_empty:I
+    sget v4, Lorg/telegram/messenger/R$string;->chat_drafts_empty:I
 
-    sget v5, Lorg/telegram/messenger/R$string;->chat_bookmarks_empty_subtitle:I
+    sget v5, Lorg/telegram/messenger/R$string;->chat_drafts_empty_subtitle:I
 
-    const-string v1, "BOOKMARKS"
+    const-string v1, "DRAFTS"
 
     const/4 v2, 0x7
 
@@ -269,26 +261,9 @@
 
     invoke-direct/range {v0 .. v5}, Lcom/iMe/ui/dialogs/EmptyCellType;-><init>(Ljava/lang/String;IIII)V
 
-    sput-object v6, Lcom/iMe/ui/dialogs/EmptyCellType;->BOOKMARKS:Lcom/iMe/ui/dialogs/EmptyCellType;
-
-    .line 16
-    new-instance v6, Lcom/iMe/ui/dialogs/EmptyCellType;
-
-    sget v4, Lorg/telegram/messenger/R$string;->chat_drafts_empty:I
-
-    sget v5, Lorg/telegram/messenger/R$string;->chat_drafts_empty_subtitle:I
-
-    const-string v1, "DRAFTS"
-
-    const/16 v2, 0x8
-
-    move-object v0, v6
-
-    invoke-direct/range {v0 .. v5}, Lcom/iMe/ui/dialogs/EmptyCellType;-><init>(Ljava/lang/String;IIII)V
-
     sput-object v6, Lcom/iMe/ui/dialogs/EmptyCellType;->DRAFTS:Lcom/iMe/ui/dialogs/EmptyCellType;
 
-    .line 17
+    .line 16
     new-instance v6, Lcom/iMe/ui/dialogs/EmptyCellType;
 
     sget v4, Lorg/telegram/messenger/R$string;->hidden_chats_empty:I
@@ -297,7 +272,7 @@
 
     const-string v1, "HIDDEN_CHATS"
 
-    const/16 v2, 0x9
+    const/16 v2, 0x8
 
     move-object v0, v6
 
@@ -402,7 +377,7 @@
 .method public final id()I
     .locals 1
 
-    .line 19
+    .line 18
     invoke-virtual {p0}, Ljava/lang/Enum;->ordinal()I
 
     move-result v0

@@ -15,7 +15,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nApiErrorInterceptor.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ApiErrorInterceptor.kt\ncom/iMe/storage/data/network/interceptor/ApiErrorInterceptor\n+ 2 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n+ 3 CommonExt.kt\ncom/iMe/storage/data/utils/extentions/CommonExtKt\n+ 4 GsonExt.kt\ncom/iMe/storage/data/utils/extentions/GsonExtKt\n*L\n1#1,154:1\n56#2,6:155\n56#2,6:161\n56#2,6:167\n56#2,6:173\n6#3,2:179\n8#3,4:183\n25#4,2:181\n*S KotlinDebug\n*F\n+ 1 ApiErrorInterceptor.kt\ncom/iMe/storage/data/network/interceptor/ApiErrorInterceptor\n*L\n30#1:155,6\n31#1:161,6\n32#1:167,6\n33#1:173,6\n42#1:179,2\n42#1:183,4\n42#1:181,2\n*E\n"
+    value = "SMAP\nApiErrorInterceptor.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ApiErrorInterceptor.kt\ncom/iMe/storage/data/network/interceptor/ApiErrorInterceptor\n+ 2 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n+ 3 CommonExt.kt\ncom/iMe/storage/data/utils/extentions/CommonExtKt\n+ 4 GsonExt.kt\ncom/iMe/storage/data/utils/extentions/GsonExtKt\n*L\n1#1,157:1\n56#2,6:158\n56#2,6:164\n56#2,6:170\n56#2,6:176\n6#3,2:182\n8#3,4:186\n25#4,2:184\n*S KotlinDebug\n*F\n+ 1 ApiErrorInterceptor.kt\ncom/iMe/storage/data/network/interceptor/ApiErrorInterceptor\n*L\n30#1:158,6\n31#1:164,6\n32#1:170,6\n33#1:176,6\n42#1:182,2\n42#1:186,4\n42#1:184,2\n*E\n"
 .end annotation
 
 
@@ -141,14 +141,14 @@
 .method private final forceWalletLogout()V
     .locals 2
 
-    .line 148
+    .line 151
     invoke-direct {p0}, Lcom/iMe/storage/data/network/interceptor/ApiErrorInterceptor;->getAuthManager()Lcom/iMe/storage/domain/manager/auth/AuthManager;
 
     move-result-object v0
 
     invoke-interface {v0}, Lcom/iMe/storage/domain/manager/auth/AuthManager;->logout()V
 
-    .line 149
+    .line 152
     iget-object v0, p0, Lcom/iMe/storage/data/network/interceptor/ApiErrorInterceptor;->rxEventBus:Lcom/iMe/storage/domain/utils/rx/RxEventBus;
 
     sget-object v1, Lcom/iMe/storage/domain/utils/rx/event/DomainRxEvents$ForceWalletLogout;->INSTANCE:Lcom/iMe/storage/domain/utils/rx/event/DomainRxEvents$ForceWalletLogout;
@@ -221,12 +221,12 @@
 .method private final processNewRequest(Ljava/lang/String;Lokhttp3/Interceptor$Chain;Lokhttp3/Request;Ljava/lang/String;)Lokhttp3/Response;
     .locals 1
 
-    .line 134
+    .line 137
     invoke-virtual {p3}, Lokhttp3/Request;->newBuilder()Lokhttp3/Request$Builder;
 
     move-result-object p3
 
-    .line 135
+    .line 138
     sget-object v0, Lcom/iMe/storage/data/network/interceptor/MetadataInterceptor;->Companion:Lcom/iMe/storage/data/network/interceptor/MetadataInterceptor$Companion;
 
     invoke-virtual {v0, p4}, Lcom/iMe/storage/data/network/interceptor/MetadataInterceptor$Companion;->formatAuthToken(Ljava/lang/String;)Ljava/lang/String;
@@ -237,12 +237,12 @@
 
     move-result-object p1
 
-    .line 136
+    .line 139
     invoke-virtual {p1}, Lokhttp3/Request$Builder;->build()Lokhttp3/Request;
 
     move-result-object p1
 
-    .line 132
+    .line 135
     invoke-interface {p2, p1}, Lokhttp3/Interceptor$Chain;->proceed(Lokhttp3/Request;)Lokhttp3/Response;
 
     move-result-object p1
@@ -253,7 +253,7 @@
 .method private final repeatBinanceRequestWithNewToken(Ljava/lang/String;Lokhttp3/Interceptor$Chain;Lokhttp3/Request;Lokhttp3/Response;)Lokhttp3/Response;
     .locals 4
 
-    .line 97
+    .line 100
     invoke-direct {p0}, Lcom/iMe/storage/data/network/interceptor/ApiErrorInterceptor;->getBinancePayManager()Lcom/iMe/storage/domain/manager/binancepay/BinancePayManager;
 
     move-result-object v0
@@ -268,7 +268,7 @@
 
     move-object v0, v1
 
-    .line 99
+    .line 102
     :cond_0
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
@@ -278,12 +278,12 @@
 
     if-eqz p1, :cond_3
 
-    .line 100
+    .line 103
     invoke-direct {p0}, Lcom/iMe/storage/data/network/interceptor/ApiErrorInterceptor;->getBinanceInternalRepository()Lcom/iMe/storage/domain/repository/binancepay/BinanceInternalRepository;
 
     move-result-object p1
 
-    .line 101
+    .line 104
     sget-object v0, Lcom/iMe/storage/domain/model/binancepay/BinancePayAuthType;->REFRESH_TOKEN:Lcom/iMe/storage/domain/model/binancepay/BinancePayAuthType;
 
     invoke-direct {p0}, Lcom/iMe/storage/data/network/interceptor/ApiErrorInterceptor;->getBinancePayManager()Lcom/iMe/storage/domain/manager/binancepay/BinancePayManager;
@@ -303,14 +303,14 @@
 
     move-result-object p1
 
-    .line 102
+    .line 105
     invoke-virtual {p1}, Lio/reactivex/Observable;->blockingFirst()Ljava/lang/Object;
 
     move-result-object p1
 
     check-cast p1, Lcom/iMe/storage/domain/model/Result;
 
-    .line 104
+    .line 107
     invoke-virtual {p1}, Lcom/iMe/storage/domain/model/Result;->isSuccess()Z
 
     move-result p1
@@ -339,7 +339,7 @@
 
     goto :goto_1
 
-    .line 107
+    .line 110
     :cond_3
     invoke-direct {p0, v2, p2, p3, v0}, Lcom/iMe/storage/data/network/interceptor/ApiErrorInterceptor;->processNewRequest(Ljava/lang/String;Lokhttp3/Interceptor$Chain;Lokhttp3/Request;Ljava/lang/String;)Lokhttp3/Response;
 
@@ -353,7 +353,7 @@
 .method private final repeatRequestWithNewToken(Ljava/lang/String;Lokhttp3/Interceptor$Chain;Lokhttp3/Request;Lokhttp3/Response;)Lokhttp3/Response;
     .locals 3
 
-    .line 117
+    .line 120
     invoke-direct {p0}, Lcom/iMe/storage/data/network/interceptor/ApiErrorInterceptor;->getAuthManager()Lcom/iMe/storage/domain/manager/auth/AuthManager;
 
     move-result-object v0
@@ -368,7 +368,7 @@
 
     move-object v0, v1
 
-    .line 119
+    .line 122
     :cond_0
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
@@ -378,24 +378,24 @@
 
     if-eqz p1, :cond_2
 
-    .line 120
+    .line 123
     invoke-direct {p0}, Lcom/iMe/storage/data/network/interceptor/ApiErrorInterceptor;->getWalletSessionInteractor()Lcom/iMe/storage/domain/interactor/wallet/WalletSessionInteractor;
 
     move-result-object p1
 
-    .line 121
+    .line 124
     invoke-virtual {p1}, Lcom/iMe/storage/domain/interactor/wallet/WalletSessionInteractor;->refreshToken()Lio/reactivex/Observable;
 
     move-result-object p1
 
-    .line 122
+    .line 125
     invoke-virtual {p1}, Lio/reactivex/Observable;->blockingFirst()Ljava/lang/Object;
 
     move-result-object p1
 
     check-cast p1, Lcom/iMe/storage/domain/model/Result;
 
-    .line 124
+    .line 127
     invoke-virtual {p1}, Lcom/iMe/storage/domain/model/Result;->isSuccess()Z
 
     move-result p1
@@ -424,7 +424,7 @@
 
     goto :goto_1
 
-    .line 127
+    .line 130
     :cond_2
     invoke-direct {p0, v2, p2, p3, v0}, Lcom/iMe/storage/data/network/interceptor/ApiErrorInterceptor;->processNewRequest(Ljava/lang/String;Lokhttp3/Interceptor$Chain;Lokhttp3/Request;Ljava/lang/String;)Lokhttp3/Response;
 
@@ -438,24 +438,24 @@
 .method private final requestForceAppUpdate()V
     .locals 2
 
-    .line 140
+    .line 143
     iget-object v0, p0, Lcom/iMe/storage/data/network/interceptor/ApiErrorInterceptor;->telegramGateway:Lcom/iMe/storage/domain/gateway/TelegramGateway;
 
-    .line 141
+    .line 144
     invoke-interface {v0}, Lcom/iMe/storage/domain/gateway/TelegramGateway;->getAppVersion()Ljava/lang/String;
 
     move-result-object v1
 
     invoke-interface {v0, v1}, Lcom/iMe/storage/domain/gateway/TelegramGateway;->setAppVersionRequiredUpdate(Ljava/lang/String;)V
 
-    .line 142
+    .line 145
     invoke-direct {p0}, Lcom/iMe/storage/data/network/interceptor/ApiErrorInterceptor;->getAuthManager()Lcom/iMe/storage/domain/manager/auth/AuthManager;
 
     move-result-object v0
 
     invoke-interface {v0}, Lcom/iMe/storage/domain/manager/auth/AuthManager;->logout()V
 
-    .line 143
+    .line 146
     iget-object v0, p0, Lcom/iMe/storage/data/network/interceptor/ApiErrorInterceptor;->rxEventBus:Lcom/iMe/storage/domain/utils/rx/RxEventBus;
 
     sget-object v1, Lcom/iMe/storage/domain/utils/rx/event/DomainRxEvents$AppUpdateRequired;->INSTANCE:Lcom/iMe/storage/domain/utils/rx/event/DomainRxEvents$AppUpdateRequired;
@@ -582,13 +582,13 @@
 
     goto/16 :goto_2
 
-    .line 79
+    .line 82
     :pswitch_0
     invoke-direct {p0}, Lcom/iMe/storage/data/network/interceptor/ApiErrorInterceptor;->forceWalletLogout()V
 
     goto :goto_2
 
-    .line 66
+    .line 69
     :pswitch_1
     invoke-direct {p0}, Lcom/iMe/storage/data/network/interceptor/ApiErrorInterceptor;->getAuthManager()Lcom/iMe/storage/domain/manager/auth/AuthManager;
 
@@ -602,7 +602,7 @@
 
     const-string v2, ""
 
-    .line 68
+    .line 71
     :cond_1
     invoke-interface {v2}, Ljava/lang/CharSequence;->length()I
 
@@ -615,7 +615,7 @@
     :cond_2
     if-eqz v4, :cond_4
 
-    .line 69
+    .line 72
     invoke-direct {p0}, Lcom/iMe/storage/data/network/interceptor/ApiErrorInterceptor;->getAuthManager()Lcom/iMe/storage/domain/manager/auth/AuthManager;
 
     move-result-object v2
@@ -628,11 +628,11 @@
 
     const-string v2, ""
 
-    .line 70
+    .line 73
     :cond_3
     monitor-enter p0
 
-    .line 71
+    .line 74
     :try_start_1
     invoke-direct {p0, v2, p1, v0, v1}, Lcom/iMe/storage/data/network/interceptor/ApiErrorInterceptor;->repeatRequestWithNewToken(Ljava/lang/String;Lokhttp3/Interceptor$Chain;Lokhttp3/Request;Lokhttp3/Response;)Lokhttp3/Response;
 
@@ -640,7 +640,7 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 70
+    .line 73
     monitor-exit p0
 
     goto :goto_2
@@ -652,7 +652,7 @@
 
     throw p1
 
-    .line 74
+    .line 77
     :cond_4
     invoke-direct {p0}, Lcom/iMe/storage/data/network/interceptor/ApiErrorInterceptor;->forceWalletLogout()V
 
@@ -759,6 +759,7 @@
         :pswitch_4
         :pswitch_3
         :pswitch_2
+        :pswitch_1
         :pswitch_1
         :pswitch_1
         :pswitch_1

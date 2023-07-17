@@ -1,19 +1,19 @@
 package com.iMe.storage.domain.model.crypto.wallet_connect;
 
-import com.iMe.storage.domain.model.crypto.Chain;
+import com.iMe.bots.data.model.database.BotsDbModel$$ExternalSyntheticBackport0;
 import com.iMe.storage.domain.model.crypto.send.GasPriceInfo;
 import java.math.BigInteger;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: WalletConnectTransactionParams.kt */
 /* loaded from: classes3.dex */
 public final class WalletConnectTransactionParams {
-    private final Chain chain;
+    private final long chainId;
     private final GasPriceInfo fast;
     private final GasPriceInfo fastest;
     private final BigInteger nonce;
     private final GasPriceInfo safeLow;
 
-    public static /* synthetic */ WalletConnectTransactionParams copy$default(WalletConnectTransactionParams walletConnectTransactionParams, GasPriceInfo gasPriceInfo, GasPriceInfo gasPriceInfo2, GasPriceInfo gasPriceInfo3, BigInteger bigInteger, Chain chain, int i, Object obj) {
+    public static /* synthetic */ WalletConnectTransactionParams copy$default(WalletConnectTransactionParams walletConnectTransactionParams, GasPriceInfo gasPriceInfo, GasPriceInfo gasPriceInfo2, GasPriceInfo gasPriceInfo3, BigInteger bigInteger, long j, int i, Object obj) {
         if ((i & 1) != 0) {
             gasPriceInfo = walletConnectTransactionParams.fastest;
         }
@@ -30,9 +30,9 @@ public final class WalletConnectTransactionParams {
         }
         BigInteger bigInteger2 = bigInteger;
         if ((i & 16) != 0) {
-            chain = walletConnectTransactionParams.chain;
+            j = walletConnectTransactionParams.chainId;
         }
-        return walletConnectTransactionParams.copy(gasPriceInfo, gasPriceInfo4, gasPriceInfo5, bigInteger2, chain);
+        return walletConnectTransactionParams.copy(gasPriceInfo, gasPriceInfo4, gasPriceInfo5, bigInteger2, j);
     }
 
     public final GasPriceInfo component1() {
@@ -51,15 +51,14 @@ public final class WalletConnectTransactionParams {
         return this.nonce;
     }
 
-    public final Chain component5() {
-        return this.chain;
+    public final long component5() {
+        return this.chainId;
     }
 
-    public final WalletConnectTransactionParams copy(GasPriceInfo gasPriceInfo, GasPriceInfo fast, GasPriceInfo gasPriceInfo2, BigInteger nonce, Chain chain) {
+    public final WalletConnectTransactionParams copy(GasPriceInfo gasPriceInfo, GasPriceInfo fast, GasPriceInfo gasPriceInfo2, BigInteger nonce, long j) {
         Intrinsics.checkNotNullParameter(fast, "fast");
         Intrinsics.checkNotNullParameter(nonce, "nonce");
-        Intrinsics.checkNotNullParameter(chain, "chain");
-        return new WalletConnectTransactionParams(gasPriceInfo, fast, gasPriceInfo2, nonce, chain);
+        return new WalletConnectTransactionParams(gasPriceInfo, fast, gasPriceInfo2, nonce, j);
     }
 
     public boolean equals(Object obj) {
@@ -68,7 +67,7 @@ public final class WalletConnectTransactionParams {
         }
         if (obj instanceof WalletConnectTransactionParams) {
             WalletConnectTransactionParams walletConnectTransactionParams = (WalletConnectTransactionParams) obj;
-            return Intrinsics.areEqual(this.fastest, walletConnectTransactionParams.fastest) && Intrinsics.areEqual(this.fast, walletConnectTransactionParams.fast) && Intrinsics.areEqual(this.safeLow, walletConnectTransactionParams.safeLow) && Intrinsics.areEqual(this.nonce, walletConnectTransactionParams.nonce) && Intrinsics.areEqual(this.chain, walletConnectTransactionParams.chain);
+            return Intrinsics.areEqual(this.fastest, walletConnectTransactionParams.fastest) && Intrinsics.areEqual(this.fast, walletConnectTransactionParams.fast) && Intrinsics.areEqual(this.safeLow, walletConnectTransactionParams.safeLow) && Intrinsics.areEqual(this.nonce, walletConnectTransactionParams.nonce) && this.chainId == walletConnectTransactionParams.chainId;
         }
         return false;
     }
@@ -77,22 +76,21 @@ public final class WalletConnectTransactionParams {
         GasPriceInfo gasPriceInfo = this.fastest;
         int hashCode = (((gasPriceInfo == null ? 0 : gasPriceInfo.hashCode()) * 31) + this.fast.hashCode()) * 31;
         GasPriceInfo gasPriceInfo2 = this.safeLow;
-        return ((((hashCode + (gasPriceInfo2 != null ? gasPriceInfo2.hashCode() : 0)) * 31) + this.nonce.hashCode()) * 31) + this.chain.hashCode();
+        return ((((hashCode + (gasPriceInfo2 != null ? gasPriceInfo2.hashCode() : 0)) * 31) + this.nonce.hashCode()) * 31) + BotsDbModel$$ExternalSyntheticBackport0.m706m(this.chainId);
     }
 
     public String toString() {
-        return "WalletConnectTransactionParams(fastest=" + this.fastest + ", fast=" + this.fast + ", safeLow=" + this.safeLow + ", nonce=" + this.nonce + ", chain=" + this.chain + ')';
+        return "WalletConnectTransactionParams(fastest=" + this.fastest + ", fast=" + this.fast + ", safeLow=" + this.safeLow + ", nonce=" + this.nonce + ", chainId=" + this.chainId + ')';
     }
 
-    public WalletConnectTransactionParams(GasPriceInfo gasPriceInfo, GasPriceInfo fast, GasPriceInfo gasPriceInfo2, BigInteger nonce, Chain chain) {
+    public WalletConnectTransactionParams(GasPriceInfo gasPriceInfo, GasPriceInfo fast, GasPriceInfo gasPriceInfo2, BigInteger nonce, long j) {
         Intrinsics.checkNotNullParameter(fast, "fast");
         Intrinsics.checkNotNullParameter(nonce, "nonce");
-        Intrinsics.checkNotNullParameter(chain, "chain");
         this.fastest = gasPriceInfo;
         this.fast = fast;
         this.safeLow = gasPriceInfo2;
         this.nonce = nonce;
-        this.chain = chain;
+        this.chainId = j;
     }
 
     public final GasPriceInfo getFastest() {
@@ -111,7 +109,7 @@ public final class WalletConnectTransactionParams {
         return this.nonce;
     }
 
-    public final Chain getChain() {
-        return this.chain;
+    public final long getChainId() {
+        return this.chainId;
     }
 }

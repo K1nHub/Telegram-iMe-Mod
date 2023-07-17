@@ -19,6 +19,14 @@
 
 
 # direct methods
+.method public static synthetic $r8$lambda$QxDdxaRE5gsxEZQUSg2VMPfPokA(Lcom/iMe/fork/utils/Callbacks$Callback;Landroid/view/View;)V
+    .locals 0
+
+    invoke-static {p0, p1}, Lcom/iMe/ui/custom/StakingPrognosisView;->setupViewData$lambda$1$lambda$0(Lcom/iMe/fork/utils/Callbacks$Callback;Landroid/view/View;)V
+
+    return-void
+.end method
+
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 7
 
@@ -250,6 +258,19 @@
     return-void
 .end method
 
+.method private static final setupViewData$lambda$1$lambda$0(Lcom/iMe/fork/utils/Callbacks$Callback;Landroid/view/View;)V
+    .locals 0
+
+    const-string p1, "$onDepositClickAction"
+
+    invoke-static {p0, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 52
+    invoke-interface {p0}, Lcom/iMe/fork/utils/Callbacks$Callback;->invoke()V
+
+    return-void
+.end method
+
 
 # virtual methods
 .method public getKoin()Lorg/koin/core/Koin;
@@ -392,7 +413,7 @@
 
     invoke-virtual {v3, v7}, Landroid/widget/TextView;->setTextColor(I)V
 
-    const-string v7, "setupColors$lambda$5$lambda$2"
+    const-string v7, "setupColors$lambda$6$lambda$3"
 
     .line 64
     invoke-static {v3, v7}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
@@ -445,7 +466,7 @@
 
     invoke-virtual {v3, v7}, Landroid/widget/TextView;->setTextColor(I)V
 
-    const-string v7, "setupColors$lambda$5$lambda$3"
+    const-string v7, "setupColors$lambda$6$lambda$4"
 
     .line 68
     invoke-static {v3, v7}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
@@ -498,7 +519,7 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setTextColor(I)V
 
-    const-string v2, "setupColors$lambda$5$lambda$4"
+    const-string v2, "setupColors$lambda$6$lambda$5"
 
     .line 73
     invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
@@ -573,11 +594,11 @@
 
     invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    new-instance p2, Lcom/iMe/ui/custom/StakingPrognosisView$setupViewData$1$1;
+    new-instance p2, Lcom/iMe/ui/custom/StakingPrognosisView$$ExternalSyntheticLambda0;
 
-    invoke-direct {p2, p6}, Lcom/iMe/ui/custom/StakingPrognosisView$setupViewData$1$1;-><init>(Lcom/iMe/fork/utils/Callbacks$Callback;)V
+    invoke-direct {p2, p6}, Lcom/iMe/ui/custom/StakingPrognosisView$$ExternalSyntheticLambda0;-><init>(Lcom/iMe/fork/utils/Callbacks$Callback;)V
 
-    invoke-static {p1, p2}, Lcom/iMe/utils/extentions/common/ViewExtKt;->setMixedClickListener(Landroid/view/View;Lkotlin/jvm/functions/Function1;)V
+    invoke-static {p1, p2}, Lcom/iMe/utils/extentions/common/ViewExtKt;->setMixedClickListener(Landroid/view/View;Lcom/iMe/fork/utils/Callbacks$Callback1;)V
 
     .line 54
     invoke-virtual {p0}, Lcom/iMe/ui/custom/StakingPrognosisView;->setupColors()V

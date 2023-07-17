@@ -5,12 +5,12 @@ public class TLRPC$TL_channelParticipantsContacts extends TLRPC$ChannelParticipa
 
     @Override // org.telegram.tgnet.TLObject
     public void readParams(AbstractSerializedData abstractSerializedData, boolean z) {
-        this.f1432q = abstractSerializedData.readString(z);
+        this.f1514q = abstractSerializedData.readString(z);
     }
 
     @Override // org.telegram.tgnet.TLObject
     public void serializeToStream(AbstractSerializedData abstractSerializedData) {
         abstractSerializedData.writeInt32(constructor);
-        abstractSerializedData.writeString(this.f1432q);
+        abstractSerializedData.writeString(this.f1514q);
     }
 }

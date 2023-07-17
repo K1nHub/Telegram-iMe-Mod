@@ -5,10 +5,10 @@ import com.iMe.model.dialog.DialogModel;
 import com.iMe.model.wallet.crypto.wallet_connect.WalletConnectSessionItem;
 import com.iMe.p031ui.base.mvp.base.BasePresenter;
 import com.iMe.p031ui.base.mvp.base.BaseView;
+import com.iMe.storage.data.utils.crypto.NetworksHelper;
 import com.iMe.storage.domain.interactor.crypto.wallet_connect.WalletConnectInteractor;
 import com.iMe.storage.domain.manager.wallet_connect.WalletConnectManager;
 import com.iMe.storage.domain.model.Result;
-import com.iMe.storage.domain.model.crypto.NetworkType;
 import com.iMe.storage.domain.model.wallet.Hint;
 import com.iMe.storage.domain.storage.CryptoPreferenceHelper;
 import com.iMe.storage.domain.storage.HintsPreferenceHelper;
@@ -16,7 +16,7 @@ import com.iMe.storage.domain.utils.p030rx.RxEventBus;
 import com.iMe.storage.domain.utils.p030rx.SchedulersProvider;
 import com.iMe.storage.domain.utils.p030rx.event.DomainRxEvents;
 import com.iMe.storage.domain.utils.system.ResourceManager;
-import com.iMe.utils.extentions.p033rx.RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
+import com.iMe.utils.extentions.p032rx.RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
 import com.trustwallet.walletconnect.WCSessionStoreItem;
 import io.reactivex.Flowable;
 import io.reactivex.Observable;
@@ -28,7 +28,7 @@ import kotlin.collections.CollectionsKt__IterablesKt;
 import kotlin.collections.CollectionsKt___CollectionsKt;
 import kotlin.jvm.internal.Intrinsics;
 import moxy.InjectViewState;
-import org.telegram.messenger.C3295R;
+import org.telegram.messenger.C3417R;
 import org.telegram.messenger.LocaleController;
 /* compiled from: WalletConnectPresenter.kt */
 @InjectViewState
@@ -75,11 +75,11 @@ public final class WalletConnectPresenter extends BasePresenter<WalletConnectVie
     }
 
     public final void startChooseNetworkDialog() {
-        ((WalletConnectView) getViewState()).showChooseNetworkDialog(this.cryptoPreferenceHelper.getNetworkType(), NetworkType.Companion.getEVMNetworks(), new WalletConnectPresenter$startChooseNetworkDialog$1(this));
+        ((WalletConnectView) getViewState()).showChooseNetworkDialog(this.cryptoPreferenceHelper.getNetwork(), NetworksHelper.INSTANCE.getEVMNetworks(), new WalletConnectPresenter$startChooseNetworkDialog$1(this));
     }
 
     public final DialogModel getDisconnectAllConfirmationDialogModel() {
-        return new DialogModel(LocaleController.getString("AreYouSureSessionsTitle", C3295R.string.AreYouSureSessionsTitle), this.resourceManager.getString(C3295R.string.wallet_connect_terminate_all_description), LocaleController.getString("Cancel", C3295R.string.Cancel), LocaleController.getString("Terminate", C3295R.string.Terminate));
+        return new DialogModel(LocaleController.getString("AreYouSureSessionsTitle", C3417R.string.AreYouSureSessionsTitle), this.resourceManager.getString(C3417R.string.wallet_connect_terminate_all_description), LocaleController.getString("Cancel", C3417R.string.Cancel), LocaleController.getString("Terminate", C3417R.string.Terminate));
     }
 
     public final void showChangeNetworkHintIfNeeded() {
@@ -94,7 +94,7 @@ public final class WalletConnectPresenter extends BasePresenter<WalletConnectVie
     /* JADX INFO: Access modifiers changed from: protected */
     @Override // moxy.MvpPresenter
     public void onFirstViewAttach() {
-        ((WalletConnectView) getViewState()).setupNetworkType(this.cryptoPreferenceHelper.getNetworkType());
+        ((WalletConnectView) getViewState()).setupNetwork(this.cryptoPreferenceHelper.getNetwork());
         subscribeToEvents();
         subscribeToSessionList();
     }
@@ -103,17 +103,17 @@ public final class WalletConnectPresenter extends BasePresenter<WalletConnectVie
         RxEventBus rxEventBus = this.rxEventBus;
         Observable observeOn = rxEventBus.getPublisher().ofType(DomainRxEvents.NetworkUpdated.class).observeOn(rxEventBus.getSchedulersProvider().mo698ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "publisher\n              …(schedulersProvider.ui())");
-        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2204x796451d4(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2205x796451d5(null)));
-        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
+        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2220x796451d4(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2221x796451d5(null)));
+        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…Error.invoke()\n        })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
 
     private final void subscribeToSessionList() {
         Flowable<Result<List<WCSessionStoreItem>>> observeOn = this.walletConnectInteractor.getWalletConnectSavedSessions().distinctUntilChanged().observeOn(this.schedulersProvider.mo698ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "walletConnectInteractor\n…(schedulersProvider.ui())");
-        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2206xd4a7409f(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2207xd4a740a0((BaseView) getViewState())));
-        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
-        BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
+        Disposable subscribeWithErrorHandle = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2222xd4a7409f(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2223xd4a740a0((BaseView) getViewState())));
+        Intrinsics.checkNotNullExpressionValue(subscribeWithErrorHandle, "subscribeWithErrorHandle");
+        BasePresenter.autoDispose$default(this, subscribeWithErrorHandle, null, 1, null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -124,7 +124,7 @@ public final class WalletConnectPresenter extends BasePresenter<WalletConnectVie
         collectionSizeOrDefault = CollectionsKt__IterablesKt.collectionSizeOrDefault(list, 10);
         ArrayList arrayList = new ArrayList(collectionSizeOrDefault);
         for (WCSessionStoreItem wCSessionStoreItem : list) {
-            arrayList.add(WCSessionStoreUiMappingKt.mapToUi(wCSessionStoreItem, this.resourceManager));
+            arrayList.add(WCSessionStoreUiMappingKt.mapToUi(wCSessionStoreItem));
         }
         mutableList = CollectionsKt___CollectionsKt.toMutableList((Collection) arrayList);
         walletConnectView.setupSessionsItems(mutableList);

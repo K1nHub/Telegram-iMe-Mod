@@ -93,7 +93,7 @@
     .line 32
     sget v11, Lorg/telegram/messenger/R$id;->text_status:I
 
-    invoke-virtual {p2}, Lcom/iMe/model/wallet/transaction/TransactionItem;->getTransactionStatusColor()I
+    invoke-virtual {p2}, Lcom/iMe/model/wallet/transaction/TransactionItem;->getTransactionStatusColorKey()I
 
     move-result v3
 

@@ -5,12 +5,12 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nCryptoQuotesToCryptoBuyItemUiMapping.kt\nKotlin\n*S Kotlin\n*F\n+ 1 CryptoQuotesToCryptoBuyItemUiMapping.kt\ncom/iMe/mapper/crypto/CryptoQuotesToCryptoBuyItemUiMappingKt\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,10:1\n1549#2:11\n1620#2,3:12\n*S KotlinDebug\n*F\n+ 1 CryptoQuotesToCryptoBuyItemUiMapping.kt\ncom/iMe/mapper/crypto/CryptoQuotesToCryptoBuyItemUiMappingKt\n*L\n9#1:11\n9#1:12,3\n*E\n"
+    value = "SMAP\nCryptoQuotesToCryptoBuyItemUiMapping.kt\nKotlin\n*S Kotlin\n*F\n+ 1 CryptoQuotesToCryptoBuyItemUiMapping.kt\ncom/iMe/mapper/crypto/CryptoQuotesToCryptoBuyItemUiMappingKt\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,16:1\n1549#2:17\n1620#2,3:18\n*S KotlinDebug\n*F\n+ 1 CryptoQuotesToCryptoBuyItemUiMapping.kt\ncom/iMe/mapper/crypto/CryptoQuotesToCryptoBuyItemUiMappingKt\n*L\n9#1:17\n9#1:18,3\n*E\n"
 .end annotation
 
 
 # direct methods
-.method public static final mapToUI(Ljava/util/List;Lcom/iMe/storage/domain/model/wallet/token/TokenInfo;)Ljava/util/List;
+.method public static final mapToUI(Ljava/util/List;Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;)Ljava/util/List;
     .locals 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -18,7 +18,7 @@
             "Ljava/util/List<",
             "Lcom/iMe/storage/domain/model/crypto/simplex/BuyingCryptoQuote;",
             ">;",
-            "Lcom/iMe/storage/domain/model/wallet/token/TokenInfo;",
+            "Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;",
             ")",
             "Ljava/util/List<",
             "Lcom/iMe/model/wallet/crypto/buy/CryptoBuyItem;",
@@ -30,7 +30,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "tokenInfo"
+    const-string v0, "tokenDetailed"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -64,9 +64,10 @@
     .line 1621
     check-cast v1, Lcom/iMe/storage/domain/model/crypto/simplex/BuyingCryptoQuote;
 
-    .line 9
+    .line 10
     new-instance v2, Lcom/iMe/model/wallet/crypto/buy/CryptoBuyItem;
 
+    .line 12
     sget-object v3, Lcom/iMe/storage/domain/model/billing/CryptoProduct;->Companion:Lcom/iMe/storage/domain/model/billing/CryptoProduct$Companion;
 
     invoke-virtual {v1}, Lcom/iMe/storage/domain/model/crypto/simplex/BuyingCryptoQuote;->getFiatMoneyAmount()F
@@ -77,7 +78,8 @@
 
     move-result-object v3
 
-    invoke-direct {v2, p1, v3, v1}, Lcom/iMe/model/wallet/crypto/buy/CryptoBuyItem;-><init>(Lcom/iMe/storage/domain/model/wallet/token/TokenInfo;Lcom/iMe/storage/domain/model/billing/CryptoProduct;Lcom/iMe/storage/domain/model/crypto/simplex/BuyingCryptoQuote;)V
+    .line 10
+    invoke-direct {v2, p1, v3, v1}, Lcom/iMe/model/wallet/crypto/buy/CryptoBuyItem;-><init>(Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;Lcom/iMe/storage/domain/model/billing/CryptoProduct;Lcom/iMe/storage/domain/model/crypto/simplex/BuyingCryptoQuote;)V
 
     .line 1621
     invoke-interface {v0, v2}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z

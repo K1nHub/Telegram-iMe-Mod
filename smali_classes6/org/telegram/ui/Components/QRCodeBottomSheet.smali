@@ -61,7 +61,7 @@
 .method public constructor <init>(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
     .locals 7
 
-    .line 59
+    .line 69
     sget v6, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
     move-object v0, p0
@@ -92,15 +92,15 @@
 
     const/4 v3, 0x0
 
-    .line 139
+    .line 153
     invoke-direct {v0, v1, v3}, Lorg/telegram/ui/ActionBar/BottomSheet;-><init>(Landroid/content/Context;Z)V
 
     move/from16 v4, p6
 
-    .line 141
+    .line 155
     iput v4, v0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentAccount:I
 
-    .line 142
+    .line 156
     new-instance v4, Lorg/telegram/ui/Components/RadialProgressView;
 
     iget-object v5, v0, Lorg/telegram/ui/ActionBar/BottomSheet;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
@@ -111,14 +111,14 @@
 
     const/16 v5, 0x32
 
-    .line 143
+    .line 157
     invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v5
 
     invoke-virtual {v4, v5}, Lorg/telegram/ui/Components/RadialProgressView;->setSize(I)V
 
-    .line 144
+    .line 158
     sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_featuredStickers_addButton:I
 
     invoke-virtual {v0, v5}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(I)I
@@ -129,65 +129,65 @@
 
     const/16 v5, 0x8
 
-    .line 145
+    .line 159
     invoke-virtual {v4, v5}, Landroid/view/View;->setVisibility(I)V
 
-    .line 147
+    .line 161
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/ActionBar/BottomSheet;->fixNavigationBar()V
 
     const/4 v6, 0x1
 
     move-object/from16 v7, p2
 
-    .line 149
+    .line 163
     invoke-virtual {v0, v7, v6}, Lorg/telegram/ui/ActionBar/BottomSheet;->setTitle(Ljava/lang/CharSequence;Z)V
 
-    .line 150
+    .line 164
     new-instance v7, Lorg/telegram/ui/Components/QRCodeBottomSheet$1;
 
     invoke-direct {v7, v0, v1}, Lorg/telegram/ui/Components/QRCodeBottomSheet$1;-><init>(Lorg/telegram/ui/Components/QRCodeBottomSheet;Landroid/content/Context;)V
 
-    .line 157
+    .line 171
     sget-object v8, Landroid/widget/ImageView$ScaleType;->FIT_XY:Landroid/widget/ImageView$ScaleType;
 
     invoke-virtual {v7, v8}, Landroid/widget/ImageView;->setScaleType(Landroid/widget/ImageView$ScaleType;)V
 
-    .line 158
+    .line 172
     sget v8, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v9, 0x15
 
     if-lt v8, v9, :cond_0
 
-    .line 159
+    .line 173
     new-instance v8, Lorg/telegram/ui/Components/QRCodeBottomSheet$2;
 
     invoke-direct {v8, v0}, Lorg/telegram/ui/Components/QRCodeBottomSheet$2;-><init>(Lorg/telegram/ui/Components/QRCodeBottomSheet;)V
 
     invoke-virtual {v7, v8}, Landroid/widget/ImageView;->setOutlineProvider(Landroid/view/ViewOutlineProvider;)V
 
-    .line 165
+    .line 179
     invoke-virtual {v7, v6}, Landroid/widget/ImageView;->setClipToOutline(Z)V
 
-    .line 168
+    .line 182
     :cond_0
     new-instance v8, Landroid/widget/LinearLayout;
 
     invoke-direct {v8, v1}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
 
-    .line 169
+    .line 183
     invoke-virtual {v8, v6}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
     const/16 v9, 0x10
 
-    .line 170
+    .line 184
     invoke-static {v9}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v10
 
     invoke-virtual {v8, v3, v10, v3, v3}, Landroid/widget/LinearLayout;->setPadding(IIII)V
 
-    .line 171
+    .line 185
     iget-object v10, v0, Lorg/telegram/ui/Components/QRCodeBottomSheet;->qrCode:Landroid/graphics/Bitmap;
 
     invoke-virtual {v0, v1, v2, v10}, Lorg/telegram/ui/Components/QRCodeBottomSheet;->createQR(Landroid/content/Context;Ljava/lang/String;Landroid/graphics/Bitmap;)Landroid/graphics/Bitmap;
@@ -198,33 +198,58 @@
 
     invoke-virtual {v7, v10}, Landroid/widget/ImageView;->setImageBitmap(Landroid/graphics/Bitmap;)V
 
-    .line 173
+    .line 187
     new-instance v10, Lorg/telegram/ui/Components/RLottieImageView;
 
     invoke-direct {v10, v1}, Lorg/telegram/ui/Components/RLottieImageView;-><init>(Landroid/content/Context;)V
 
     iput-object v10, v0, Lorg/telegram/ui/Components/QRCodeBottomSheet;->iconImage:Lorg/telegram/ui/Components/RLottieImageView;
 
-    .line 174
+    .line 188
     sget-object v11, Landroid/widget/ImageView$ScaleType;->FIT_CENTER:Landroid/widget/ImageView$ScaleType;
 
     invoke-virtual {v10, v11}, Landroid/widget/ImageView;->setScaleType(Landroid/widget/ImageView$ScaleType;)V
 
-    .line 175
+    .line 189
     iget-object v10, v0, Lorg/telegram/ui/Components/QRCodeBottomSheet;->iconImage:Lorg/telegram/ui/Components/RLottieImageView;
 
     const/4 v11, -0x1
 
     invoke-virtual {v10, v11}, Landroid/widget/ImageView;->setBackgroundColor(I)V
 
-    .line 178
+    .line 192
+    invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/Components/QRCodeBottomSheet;->getCustomQrCenterImageUrl()Ljava/lang/String;
+
+    move-result-object v10
+
+    invoke-virtual {v10}, Ljava/lang/String;->isEmpty()Z
+
+    move-result v10
+
+    if-nez v10, :cond_1
+
+    .line 193
+    iget-object v10, v0, Lorg/telegram/ui/Components/QRCodeBottomSheet;->iconImage:Lorg/telegram/ui/Components/RLottieImageView;
+
+    invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/Components/QRCodeBottomSheet;->getCustomQrCenterImageUrl()Ljava/lang/String;
+
+    move-result-object v12
+
+    const/4 v13, 0x0
+
+    invoke-static {v10, v12, v13, v3}, Lcom/iMe/utils/extentions/common/ImageViewExtKt;->loadFrom(Landroid/widget/ImageView;Ljava/lang/String;Ljava/lang/Integer;Z)V
+
+    goto :goto_0
+
+    .line 194
+    :cond_1
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/Components/QRCodeBottomSheet;->getCustomQrCenterImageRes()I
 
     move-result v10
 
-    if-eq v10, v11, :cond_1
+    if-eq v10, v11, :cond_2
 
-    .line 179
+    .line 195
     iget-object v10, v0, Lorg/telegram/ui/Components/QRCodeBottomSheet;->iconImage:Lorg/telegram/ui/Components/RLottieImageView;
 
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/Components/QRCodeBottomSheet;->getCustomQrCenterImageRes()I
@@ -233,20 +258,21 @@
 
     invoke-virtual {v10, v12}, Lorg/telegram/ui/Components/RLottieImageView;->setImageResource(I)V
 
-    .line 183
-    :cond_1
+    .line 199
+    :cond_2
+    :goto_0
     new-instance v10, Lorg/telegram/ui/Components/QRCodeBottomSheet$3;
 
     invoke-direct {v10, v0, v1, v7}, Lorg/telegram/ui/Components/QRCodeBottomSheet$3;-><init>(Lorg/telegram/ui/Components/QRCodeBottomSheet;Landroid/content/Context;Landroid/widget/ImageView;)V
 
-    .line 197
+    .line 213
     invoke-static {v11, v11}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(II)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object v11
 
     invoke-virtual {v10, v7, v11}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 198
+    .line 214
     iget-object v11, v0, Lorg/telegram/ui/Components/QRCodeBottomSheet;->iconImage:Lorg/telegram/ui/Components/RLottieImageView;
 
     const/16 v12, 0x3c
@@ -259,7 +285,7 @@
 
     invoke-virtual {v10, v11, v14}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 199
+    .line 215
     invoke-static {v12, v12, v13}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(III)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object v11
@@ -280,14 +306,14 @@
 
     const/16 v20, 0x0
 
-    .line 200
+    .line 216
     invoke-static/range {v14 .. v20}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(IIIIIII)Landroid/widget/LinearLayout$LayoutParams;
 
     move-result-object v4
 
     invoke-virtual {v8, v10, v4}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 202
+    .line 218
     new-instance v4, Landroid/widget/TextView;
 
     invoke-direct {v4, v1}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
@@ -296,28 +322,28 @@
 
     const/high16 v10, 0x41600000    # 14.0f
 
-    .line 203
+    .line 219
     invoke-virtual {v4, v6, v10}, Landroid/widget/TextView;->setTextSize(IF)V
 
     move-object/from16 v11, p4
 
-    .line 204
+    .line 220
     invoke-virtual {v4, v11}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 205
+    .line 221
     invoke-virtual {v4, v6}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 207
+    .line 223
     iput-object v7, v0, Lorg/telegram/ui/Components/QRCodeBottomSheet;->qrImageView:Landroid/widget/ImageView;
 
-    .line 208
+    .line 224
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/Components/QRCodeBottomSheet;->getType()I
 
     move-result v7
 
     sget v11, Lcom/iMe/common/IdFabric$CustomType;->QR_BOTTOM_SHEET_WALLET_RECEIVE:I
 
-    if-eq v7, v11, :cond_2
+    if-eq v7, v11, :cond_3
 
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/Components/QRCodeBottomSheet;->getType()I
 
@@ -325,24 +351,24 @@
 
     sget v12, Lcom/iMe/common/IdFabric$CustomType;->QR_BOTTOM_SHEET_WALLET_BACKUP:I
 
-    if-ne v7, v12, :cond_3
+    if-ne v7, v12, :cond_4
 
-    :cond_2
+    :cond_3
     const/high16 v7, 0x41880000    # 17.0f
 
-    .line 209
+    .line 225
     invoke-virtual {v4, v6, v7}, Landroid/widget/TextView;->setTextSize(IF)V
 
     const-string v7, "fonts/rmono.ttf"
 
-    .line 210
+    .line 226
     invoke-static {v7}, Lorg/telegram/messenger/AndroidUtilities;->getTypeface(Ljava/lang/String;)Landroid/graphics/Typeface;
 
     move-result-object v7
 
     invoke-virtual {v4, v7}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
-    :cond_3
+    :cond_4
     const/4 v14, -0x1
 
     const/4 v15, -0x2
@@ -351,12 +377,12 @@
 
     const/16 v17, 0x28
 
-    .line 213
+    .line 229
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/Components/QRCodeBottomSheet;->getType()I
 
     move-result v7
 
-    if-eq v7, v11, :cond_5
+    if-eq v7, v11, :cond_6
 
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/Components/QRCodeBottomSheet;->getType()I
 
@@ -364,20 +390,20 @@
 
     sget v11, Lcom/iMe/common/IdFabric$CustomType;->QR_BOTTOM_SHEET_WALLET_BACKUP:I
 
-    if-ne v7, v11, :cond_4
-
-    goto :goto_0
-
-    :cond_4
-    move/from16 v18, v5
+    if-ne v7, v11, :cond_5
 
     goto :goto_1
 
     :cond_5
-    :goto_0
+    move/from16 v18, v5
+
+    goto :goto_2
+
+    :cond_6
+    :goto_1
     move/from16 v18, v9
 
-    :goto_1
+    :goto_2
     const/16 v19, 0x28
 
     const/16 v20, 0x8
@@ -388,7 +414,7 @@
 
     invoke-virtual {v8, v4, v5}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 215
+    .line 231
     new-instance v4, Landroid/widget/TextView;
 
     invoke-direct {v4, v1}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
@@ -397,7 +423,7 @@
 
     const/16 v5, 0x22
 
-    .line 216
+    .line 232
     invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v7
@@ -408,31 +434,31 @@
 
     invoke-virtual {v4, v7, v3, v9, v3}, Landroid/widget/TextView;->setPadding(IIII)V
 
-    .line 217
+    .line 233
     invoke-virtual {v4, v13}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 218
+    .line 234
     invoke-virtual {v4, v6, v10}, Landroid/widget/TextView;->setTextSize(IF)V
 
     const-string v7, "fonts/rmedium.ttf"
 
-    .line 219
+    .line 235
     invoke-static {v7}, Lorg/telegram/messenger/AndroidUtilities;->getTypeface(Ljava/lang/String;)Landroid/graphics/Typeface;
 
     move-result-object v7
 
     invoke-virtual {v4, v7}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
-    .line 221
+    .line 237
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/Components/QRCodeBottomSheet;->getType()I
 
     move-result v7
 
     sget v9, Lcom/iMe/common/IdFabric$CustomType;->QR_BOTTOM_SHEET_LOGIN_TOKEN:I
 
-    if-ne v7, v9, :cond_6
+    if-ne v7, v9, :cond_7
 
-    .line 222
+    .line 238
     sget v7, Lorg/telegram/messenger/R$string;->Close:I
 
     const-string v9, "Close"
@@ -443,10 +469,10 @@
 
     invoke-virtual {v4, v7}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    goto :goto_2
+    goto :goto_3
 
-    .line 224
-    :cond_6
+    .line 240
+    :cond_7
     sget v7, Lorg/telegram/messenger/R$string;->ShareQrCode:I
 
     const-string v9, "ShareQrCode"
@@ -457,8 +483,8 @@
 
     invoke-virtual {v4, v7}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 225
-    :goto_2
+    .line 241
+    :goto_3
     new-instance v7, Lorg/telegram/ui/Components/QRCodeBottomSheet$$ExternalSyntheticLambda2;
 
     invoke-direct {v7, v0, v1}, Lorg/telegram/ui/Components/QRCodeBottomSheet$$ExternalSyntheticLambda2;-><init>(Lorg/telegram/ui/Components/QRCodeBottomSheet;Landroid/content/Context;)V
@@ -479,23 +505,23 @@
 
     const/16 v20, 0x3
 
-    .line 250
+    .line 274
     invoke-static/range {v14 .. v20}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(IIIIIII)Landroid/widget/LinearLayout$LayoutParams;
 
     move-result-object v7
 
     invoke-virtual {v8, v4, v7}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    if-eqz p5, :cond_7
+    if-eqz p5, :cond_8
 
-    .line 253
+    .line 277
     new-instance v4, Landroid/widget/TextView;
 
     invoke-direct {v4, v1}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
     iput-object v4, v0, Lorg/telegram/ui/Components/QRCodeBottomSheet;->button2TextView:Landroid/widget/TextView;
 
-    .line 254
+    .line 278
     invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v7
@@ -506,17 +532,17 @@
 
     invoke-virtual {v4, v7, v3, v5, v3}, Landroid/widget/TextView;->setPadding(IIII)V
 
-    .line 255
+    .line 279
     iget-object v3, v0, Lorg/telegram/ui/Components/QRCodeBottomSheet;->button2TextView:Landroid/widget/TextView;
 
     invoke-virtual {v3, v13}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 256
+    .line 280
     iget-object v3, v0, Lorg/telegram/ui/Components/QRCodeBottomSheet;->button2TextView:Landroid/widget/TextView;
 
     invoke-virtual {v3, v6, v10}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 258
+    .line 282
     iget-object v3, v0, Lorg/telegram/ui/Components/QRCodeBottomSheet;->button2TextView:Landroid/widget/TextView;
 
     sget v4, Lorg/telegram/messenger/R$string;->ShareLink:I
@@ -529,7 +555,7 @@
 
     invoke-virtual {v3, v4}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 259
+    .line 283
     iget-object v3, v0, Lorg/telegram/ui/Components/QRCodeBottomSheet;->button2TextView:Landroid/widget/TextView;
 
     new-instance v4, Lorg/telegram/ui/Components/QRCodeBottomSheet$$ExternalSyntheticLambda0;
@@ -538,7 +564,7 @@
 
     invoke-virtual {v3, v4}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 267
+    .line 291
     iget-object v2, v0, Lorg/telegram/ui/Components/QRCodeBottomSheet;->button2TextView:Landroid/widget/TextView;
 
     const/4 v9, -0x1
@@ -561,19 +587,19 @@
 
     invoke-virtual {v8, v2, v3}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 270
-    :cond_7
+    .line 294
+    :cond_8
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/Components/QRCodeBottomSheet;->updateColors()V
 
-    .line 271
+    .line 295
     new-instance v2, Landroid/widget/ScrollView;
 
     invoke-direct {v2, v1}, Landroid/widget/ScrollView;-><init>(Landroid/content/Context;)V
 
-    .line 272
+    .line 296
     invoke-virtual {v2, v8}, Landroid/widget/ScrollView;->addView(Landroid/view/View;)V
 
-    .line 273
+    .line 297
     invoke-virtual {v0, v2}, Lorg/telegram/ui/ActionBar/BottomSheet;->setCustomView(Landroid/view/View;)V
 
     return-void
@@ -582,7 +608,7 @@
 .method private addOptionMenu()V
     .locals 9
 
-    .line 110
+    .line 124
     new-instance v0, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
     invoke-virtual {p0}, Landroid/app/Dialog;->getContext()Landroid/content/Context;
@@ -605,17 +631,17 @@
 
     const/4 v1, 0x2
 
-    .line 111
+    .line 125
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->setSubMenuOpenSide(I)V
 
-    .line 112
+    .line 126
     iget-object v0, p0, Lorg/telegram/ui/Components/QRCodeBottomSheet;->optionsButton:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
     sget v1, Lorg/telegram/messenger/R$drawable;->ic_ab_other:I
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->setIcon(I)V
 
-    .line 113
+    .line 127
     iget-object v0, p0, Lorg/telegram/ui/Components/QRCodeBottomSheet;->optionsButton:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_player_actionBarSelector:I
@@ -630,7 +656,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 114
+    .line 128
     iget-object v0, p0, Lorg/telegram/ui/Components/QRCodeBottomSheet;->optionsButton:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
     new-instance v1, Lorg/telegram/ui/Components/QRCodeBottomSheet$$ExternalSyntheticLambda1;
@@ -639,7 +665,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 115
+    .line 129
     iget-object v0, p0, Lorg/telegram/ui/Components/QRCodeBottomSheet;->optionsButton:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
     sget v1, Lorg/telegram/messenger/R$string;->AccDescrMoreOptions:I
@@ -652,7 +678,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setContentDescription(Ljava/lang/CharSequence;)V
 
-    .line 116
+    .line 130
     invoke-virtual {p0}, Lorg/telegram/ui/Components/QRCodeBottomSheet;->getType()I
 
     move-result v0
@@ -661,7 +687,7 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 117
+    .line 131
     iget-object v0, p0, Lorg/telegram/ui/Components/QRCodeBottomSheet;->optionsButton:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
     sget v1, Lcom/iMe/common/IdFabric$Menu;->COPY:I
@@ -676,7 +702,7 @@
 
     invoke-virtual {v0, v1, v2, v3}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->addSubItem(IILjava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
-    .line 118
+    .line 132
     iget-object v0, p0, Lorg/telegram/ui/Components/QRCodeBottomSheet;->optionsButton:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
     new-instance v1, Lorg/telegram/ui/Components/QRCodeBottomSheet$$ExternalSyntheticLambda3;
@@ -685,7 +711,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->setDelegate(Lorg/telegram/ui/ActionBar/ActionBarMenuItem$ActionBarMenuItemDelegate;)V
 
-    .line 124
+    .line 138
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->containerView:Landroid/view/ViewGroup;
 
@@ -717,7 +743,7 @@
 .method private isNeedOptionsMenu()Z
     .locals 2
 
-    .line 106
+    .line 120
     invoke-virtual {p0}, Lorg/telegram/ui/Components/QRCodeBottomSheet;->getType()I
 
     move-result v0
@@ -740,7 +766,7 @@
 .method private synthetic lambda$addOptionMenu$0(Landroid/view/View;)V
     .locals 0
 
-    .line 114
+    .line 128
     iget-object p1, p0, Lorg/telegram/ui/Components/QRCodeBottomSheet;->optionsButton:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->toggleSubMenu()V
@@ -751,12 +777,12 @@
 .method private synthetic lambda$addOptionMenu$1(I)V
     .locals 2
 
-    .line 119
+    .line 133
     sget v0, Lcom/iMe/common/IdFabric$Menu;->COPY:I
 
     if-ne p1, v0, :cond_0
 
-    .line 120
+    .line 134
     iget-object p1, p0, Lorg/telegram/ui/Components/QRCodeBottomSheet;->address:Ljava/lang/String;
 
     sget v0, Lorg/telegram/messenger/R$string;->TextCopied:I
@@ -774,16 +800,16 @@
 .end method
 
 .method private synthetic lambda$new$2(Landroid/content/Context;Landroid/view/View;)V
-    .locals 2
+    .locals 5
 
-    .line 227
+    .line 243
     invoke-virtual {p0}, Lorg/telegram/ui/Components/QRCodeBottomSheet;->getType()I
 
     move-result p2
 
     sget v0, Lcom/iMe/common/IdFabric$CustomType;->QR_BOTTOM_SHEET_WALLET_BACKUP:I
 
-    if-eq p2, v0, :cond_3
+    if-eq p2, v0, :cond_4
 
     invoke-virtual {p0}, Lorg/telegram/ui/Components/QRCodeBottomSheet;->getType()I
 
@@ -793,57 +819,125 @@
 
     if-ne p2, v0, :cond_0
 
-    goto :goto_1
+    goto/16 :goto_1
 
-    .line 232
+    .line 247
     :cond_0
-    iget-object p2, p0, Lorg/telegram/ui/Components/QRCodeBottomSheet;->qrCode:Landroid/graphics/Bitmap;
-
-    sget-object v0, Landroid/graphics/Bitmap$CompressFormat;->PNG:Landroid/graphics/Bitmap$CompressFormat;
-
-    const-string v1, "qr_tmp.png"
-
-    invoke-static {p2, v1, v0}, Lorg/telegram/messenger/AndroidUtilities;->getBitmapShareUri(Landroid/graphics/Bitmap;Ljava/lang/String;Landroid/graphics/Bitmap$CompressFormat;)Landroid/net/Uri;
-
-    move-result-object p2
-
-    if-eqz p2, :cond_2
-
-    .line 234
-    new-instance v0, Landroid/content/Intent;
-
-    const-string v1, "android.intent.action.SEND"
-
-    invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
-
-    const-string v1, "image/*"
-
-    .line 236
-    invoke-virtual {v0, v1}, Landroid/content/Intent;->setType(Ljava/lang/String;)Landroid/content/Intent;
-
-    const-string v1, "android.intent.extra.STREAM"
-
-    .line 237
-    invoke-virtual {v0, v1, p2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/Parcelable;)Landroid/content/Intent;
-
-    .line 239
     invoke-virtual {p0}, Lorg/telegram/ui/Components/QRCodeBottomSheet;->getType()I
 
     move-result p2
 
-    sget v1, Lcom/iMe/common/IdFabric$CustomType;->QR_BOTTOM_SHEET_WALLET_RECEIVE:I
+    sget v0, Lcom/iMe/common/IdFabric$CustomType;->QR_BOTTOM_SHEET_WALLET_RECEIVE:I
 
-    if-ne p2, v1, :cond_1
+    if-ne p2, v0, :cond_1
 
-    .line 240
+    .line 248
+    iget-object p2, p0, Lorg/telegram/ui/Components/QRCodeBottomSheet;->iconImage:Lorg/telegram/ui/Components/RLottieImageView;
+
+    invoke-virtual {p2}, Landroid/widget/ImageView;->getDrawable()Landroid/graphics/drawable/Drawable;
+
+    move-result-object p2
+
+    check-cast p2, Landroid/graphics/drawable/BitmapDrawable;
+
+    invoke-virtual {p2}, Landroid/graphics/drawable/BitmapDrawable;->getBitmap()Landroid/graphics/Bitmap;
+
+    move-result-object p2
+
+    .line 249
+    new-instance v1, Landroid/graphics/Canvas;
+
+    iget-object v2, p0, Lorg/telegram/ui/Components/QRCodeBottomSheet;->qrCode:Landroid/graphics/Bitmap;
+
+    invoke-direct {v1, v2}, Landroid/graphics/Canvas;-><init>(Landroid/graphics/Bitmap;)V
+
+    .line 250
+    iget-object v2, p0, Lorg/telegram/ui/Components/QRCodeBottomSheet;->qrCode:Landroid/graphics/Bitmap;
+
+    invoke-virtual {v2}, Landroid/graphics/Bitmap;->getWidth()I
+
+    move-result v2
+
+    .line 251
+    iget-object v3, p0, Lorg/telegram/ui/Components/QRCodeBottomSheet;->iconImage:Lorg/telegram/ui/Components/RLottieImageView;
+
+    invoke-virtual {v3}, Landroid/widget/ImageView;->getWidth()I
+
+    move-result v3
+
+    mul-int/2addr v3, v2
+
+    iget-object v4, p0, Lorg/telegram/ui/Components/QRCodeBottomSheet;->qrImageView:Landroid/widget/ImageView;
+
+    invoke-virtual {v4}, Landroid/widget/ImageView;->getWidth()I
+
+    move-result v4
+
+    div-int/2addr v3, v4
+
+    sub-int/2addr v2, v3
+
+    .line 252
+    div-int/lit8 v2, v2, 0x2
+
+    .line 253
+    new-instance v4, Landroid/graphics/Rect;
+
+    add-int/2addr v3, v2
+
+    invoke-direct {v4, v2, v2, v3, v3}, Landroid/graphics/Rect;-><init>(IIII)V
+
+    const/4 v2, 0x0
+
+    invoke-virtual {v1, p2, v2, v4, v2}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;Landroid/graphics/Rect;Landroid/graphics/Rect;Landroid/graphics/Paint;)V
+
+    .line 256
+    :cond_1
+    iget-object p2, p0, Lorg/telegram/ui/Components/QRCodeBottomSheet;->qrCode:Landroid/graphics/Bitmap;
+
+    sget-object v1, Landroid/graphics/Bitmap$CompressFormat;->PNG:Landroid/graphics/Bitmap$CompressFormat;
+
+    const-string v2, "qr_tmp.png"
+
+    invoke-static {p2, v2, v1}, Lorg/telegram/messenger/AndroidUtilities;->getBitmapShareUri(Landroid/graphics/Bitmap;Ljava/lang/String;Landroid/graphics/Bitmap$CompressFormat;)Landroid/net/Uri;
+
+    move-result-object p2
+
+    if-eqz p2, :cond_3
+
+    .line 258
+    new-instance v1, Landroid/content/Intent;
+
+    const-string v2, "android.intent.action.SEND"
+
+    invoke-direct {v1, v2}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
+
+    const-string v2, "image/*"
+
+    .line 260
+    invoke-virtual {v1, v2}, Landroid/content/Intent;->setType(Ljava/lang/String;)Landroid/content/Intent;
+
+    const-string v2, "android.intent.extra.STREAM"
+
+    .line 261
+    invoke-virtual {v1, v2, p2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/Parcelable;)Landroid/content/Intent;
+
+    .line 263
+    invoke-virtual {p0}, Lorg/telegram/ui/Components/QRCodeBottomSheet;->getType()I
+
+    move-result p2
+
+    if-ne p2, v0, :cond_2
+
+    .line 264
     iget-object p2, p0, Lorg/telegram/ui/Components/QRCodeBottomSheet;->address:Ljava/lang/String;
 
-    const-string v1, "android.intent.extra.TEXT"
+    const-string v0, "android.intent.extra.TEXT"
 
-    invoke-virtual {v0, v1, p2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+    invoke-virtual {v1, v0, p2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 244
-    :cond_1
+    .line 268
+    :cond_2
     :try_start_0
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->findActivity(Landroid/content/Context;)Landroid/app/Activity;
 
@@ -857,7 +951,7 @@
 
     move-result-object p2
 
-    invoke-static {v0, p2}, Landroid/content/Intent;->createChooser(Landroid/content/Intent;Ljava/lang/CharSequence;)Landroid/content/Intent;
+    invoke-static {v1, p2}, Landroid/content/Intent;->createChooser(Landroid/content/Intent;Ljava/lang/CharSequence;)Landroid/content/Intent;
 
     move-result-object p2
 
@@ -872,15 +966,15 @@
     :catch_0
     move-exception p1
 
-    .line 246
+    .line 270
     invoke-virtual {p1}, Landroid/content/ActivityNotFoundException;->printStackTrace()V
 
-    :cond_2
+    :cond_3
     :goto_0
     return-void
 
-    .line 228
-    :cond_3
+    .line 244
+    :cond_4
     :goto_1
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BottomSheet;->dismiss()V
 
@@ -890,7 +984,7 @@
 .method private static synthetic lambda$new$3(Ljava/lang/String;Landroid/content/Context;Landroid/view/View;)V
     .locals 1
 
-    .line 260
+    .line 284
     new-instance p2, Landroid/content/Intent;
 
     const-string v0, "android.intent.action.SEND"
@@ -899,15 +993,15 @@
 
     const-string v0, "text/plain"
 
-    .line 261
+    .line 285
     invoke-virtual {p2, v0}, Landroid/content/Intent;->setType(Ljava/lang/String;)Landroid/content/Intent;
 
     const-string v0, "android.intent.extra.TEXT"
 
-    .line 262
+    .line 286
     invoke-virtual {p2, v0, p0}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 263
+    .line 287
     sget p0, Lorg/telegram/messenger/R$string;->ShareLink:I
 
     const-string v0, "ShareLink"
@@ -922,10 +1016,10 @@
 
     const/high16 p2, 0x10000000
 
-    .line 264
+    .line 288
     invoke-virtual {p0, p2}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
 
-    .line 265
+    .line 289
     invoke-virtual {p1, p0}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
 
     return-void
@@ -936,20 +1030,20 @@
 .method public createQR(Landroid/content/Context;Ljava/lang/String;Landroid/graphics/Bitmap;)Landroid/graphics/Bitmap;
     .locals 6
 
-    .line 278
+    .line 302
     :try_start_0
     new-instance v4, Ljava/util/HashMap;
 
     invoke-direct {v4}, Ljava/util/HashMap;-><init>()V
 
-    .line 279
+    .line 303
     sget-object p1, Lcom/google/zxing/EncodeHintType;->ERROR_CORRECTION:Lcom/google/zxing/EncodeHintType;
 
     sget-object v0, Lcom/google/zxing/qrcode/decoder/ErrorCorrectionLevel;->M:Lcom/google/zxing/qrcode/decoder/ErrorCorrectionLevel;
 
     invoke-virtual {v4, p1, v0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 280
+    .line 304
     sget-object p1, Lcom/google/zxing/EncodeHintType;->MARGIN:Lcom/google/zxing/EncodeHintType;
 
     const/4 v0, 0x0
@@ -960,71 +1054,91 @@
 
     invoke-virtual {v4, p1, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 281
+    .line 305
     new-instance p1, Lcom/google/zxing/qrcode/QRCodeWriter;
 
     invoke-direct {p1}, Lcom/google/zxing/qrcode/QRCodeWriter;-><init>()V
 
-    .line 283
+    .line 307
+    invoke-virtual {p0}, Lorg/telegram/ui/Components/QRCodeBottomSheet;->getCustomQrCenterImageUrl()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/String;->isEmpty()Z
+
+    move-result v1
+
+    if-nez v1, :cond_0
+
+    .line 308
+    sget v1, Lorg/telegram/messenger/R$drawable;->fork_bg_white_circle:I
+
+    invoke-virtual {p1, v1}, Lcom/google/zxing/qrcode/QRCodeWriter;->setQrImageRes(I)V
+
+    goto :goto_0
+
+    .line 309
+    :cond_0
     invoke-virtual {p0}, Lorg/telegram/ui/Components/QRCodeBottomSheet;->getCustomQrCenterImageRes()I
 
     move-result v1
 
     const/4 v2, -0x1
 
-    if-eq v1, v2, :cond_0
+    if-eq v1, v2, :cond_1
 
-    .line 284
+    .line 310
     invoke-virtual {p0}, Lorg/telegram/ui/Components/QRCodeBottomSheet;->getCustomQrCenterImageRes()I
 
     move-result v1
 
     invoke-virtual {p1, v1}, Lcom/google/zxing/qrcode/QRCodeWriter;->setQrImageRes(I)V
 
-    .line 286
-    :cond_0
+    .line 312
+    :cond_1
+    :goto_0
     iget-object v1, p0, Lorg/telegram/ui/Components/QRCodeBottomSheet;->progressView:Lorg/telegram/ui/Components/RadialProgressView;
 
     const/16 v2, 0x8
 
-    if-eqz v1, :cond_2
+    if-eqz v1, :cond_3
 
-    .line 287
+    .line 313
     invoke-static {p2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v3
 
-    if-eqz v3, :cond_1
+    if-eqz v3, :cond_2
 
     move v3, v0
 
-    goto :goto_0
+    goto :goto_1
 
-    :cond_1
+    :cond_2
     move v3, v2
 
-    :goto_0
+    :goto_1
     invoke-virtual {v1, v3}, Landroid/view/View;->setVisibility(I)V
 
-    .line 289
-    :cond_2
+    .line 315
+    :cond_3
     iget-object v1, p0, Lorg/telegram/ui/Components/QRCodeBottomSheet;->iconImage:Lorg/telegram/ui/Components/RLottieImageView;
 
-    if-eqz v1, :cond_4
+    if-eqz v1, :cond_5
 
-    .line 290
+    .line 316
     invoke-static {p2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v3
 
-    if-eqz v3, :cond_3
+    if-eqz v3, :cond_4
 
     move v0, v2
 
-    :cond_3
+    :cond_4
     invoke-virtual {v1, v0}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    :cond_4
+    :cond_5
     const/16 v2, 0x300
 
     const/16 v3, 0x300
@@ -1035,12 +1149,12 @@
 
     move-object v5, p3
 
-    .line 293
+    .line 319
     invoke-virtual/range {v0 .. v5}, Lcom/google/zxing/qrcode/QRCodeWriter;->encode(Ljava/lang/String;IILjava/util/Map;Landroid/graphics/Bitmap;)Landroid/graphics/Bitmap;
 
     move-result-object p2
 
-    .line 294
+    .line 320
     invoke-virtual {p1}, Lcom/google/zxing/qrcode/QRCodeWriter;->getImageSize()I
 
     move-result p1
@@ -1054,7 +1168,7 @@
     :catch_0
     move-exception p1
 
-    .line 297
+    .line 323
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     const/4 p1, 0x0
@@ -1070,6 +1184,14 @@
     return v0
 .end method
 
+.method public getCustomQrCenterImageUrl()Ljava/lang/String;
+    .locals 1
+
+    const-string v0, ""
+
+    return-object v0
+.end method
+
 .method public getType()I
     .locals 1
 
@@ -1081,17 +1203,17 @@
 .method protected onCreate(Landroid/os/Bundle;)V
     .locals 0
 
-    .line 95
+    .line 109
     invoke-super {p0, p1}, Lorg/telegram/ui/ActionBar/BottomSheet;->onCreate(Landroid/os/Bundle;)V
 
-    .line 96
+    .line 110
     invoke-direct {p0}, Lorg/telegram/ui/Components/QRCodeBottomSheet;->isNeedOptionsMenu()Z
 
     move-result p1
 
     if-eqz p1, :cond_0
 
-    .line 97
+    .line 111
     invoke-direct {p0}, Lorg/telegram/ui/Components/QRCodeBottomSheet;->addOptionMenu()V
 
     :cond_0
@@ -1101,21 +1223,21 @@
 .method public setCenterAnimation(I)V
     .locals 2
 
-    .line 303
+    .line 329
     iget-object v0, p0, Lorg/telegram/ui/Components/QRCodeBottomSheet;->iconImage:Lorg/telegram/ui/Components/RLottieImageView;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/RLottieImageView;->setAutoRepeat(Z)V
 
-    .line 304
+    .line 330
     iget-object v0, p0, Lorg/telegram/ui/Components/QRCodeBottomSheet;->iconImage:Lorg/telegram/ui/Components/RLottieImageView;
 
     const/16 v1, 0x3c
 
     invoke-virtual {v0, p1, v1, v1}, Lorg/telegram/ui/Components/RLottieImageView;->setAnimation(III)V
 
-    .line 305
+    .line 331
     iget-object p1, p0, Lorg/telegram/ui/Components/QRCodeBottomSheet;->iconImage:Lorg/telegram/ui/Components/RLottieImageView;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/RLottieImageView;->playAnimation()V
@@ -1126,7 +1248,7 @@
 .method public setCenterImage(Landroid/graphics/Bitmap;)V
     .locals 1
 
-    .line 317
+    .line 343
     iget-object v0, p0, Lorg/telegram/ui/Components/QRCodeBottomSheet;->iconImage:Lorg/telegram/ui/Components/RLottieImageView;
 
     invoke-virtual {v0, p1}, Landroid/widget/ImageView;->setImageBitmap(Landroid/graphics/Bitmap;)V
@@ -1137,7 +1259,7 @@
 .method public setLoginToken(Ljava/lang/String;)V
     .locals 4
 
-    .line 86
+    .line 100
     iget-object v0, p0, Lorg/telegram/ui/Components/QRCodeBottomSheet;->qrImageView:Landroid/widget/ImageView;
 
     invoke-virtual {p0}, Landroid/app/Dialog;->getContext()Landroid/content/Context;
@@ -1184,15 +1306,15 @@
 
     const/4 v0, 0x1
 
-    .line 80
+    .line 94
     invoke-virtual {p0, p1, v0}, Lorg/telegram/ui/ActionBar/BottomSheet;->setTitle(Ljava/lang/CharSequence;Z)V
 
     const/4 p1, 0x0
 
-    .line 81
+    .line 95
     invoke-virtual {p0, p1}, Lorg/telegram/ui/ActionBar/BottomSheet;->setTitleClickable(Z)V
 
-    .line 82
+    .line 96
     iget-object p1, p0, Lorg/telegram/ui/Components/QRCodeBottomSheet;->buttonTextView:Landroid/widget/TextView;
 
     invoke-virtual {p1, p2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
@@ -1203,18 +1325,18 @@
 .method public setupWalletTypeReceive(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
     .locals 0
 
-    .line 73
+    .line 87
     iput-object p3, p0, Lorg/telegram/ui/Components/QRCodeBottomSheet;->address:Ljava/lang/String;
 
     const/4 p3, 0x1
 
-    .line 74
+    .line 88
     invoke-virtual {p0, p1, p3}, Lorg/telegram/ui/ActionBar/BottomSheet;->setTitle(Ljava/lang/CharSequence;Z)V
 
-    .line 75
+    .line 89
     invoke-virtual {p0, p3}, Lorg/telegram/ui/ActionBar/BottomSheet;->setTitleClickable(Z)V
 
-    .line 76
+    .line 90
     iget-object p1, p0, Lorg/telegram/ui/Components/QRCodeBottomSheet;->buttonTextView:Landroid/widget/TextView;
 
     invoke-virtual {p1, p2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
@@ -1225,12 +1347,12 @@
 .method updateColors()V
     .locals 5
 
-    .line 322
+    .line 348
     iget-object v0, p0, Lorg/telegram/ui/Components/QRCodeBottomSheet;->optionsButton:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
     if-eqz v0, :cond_0
 
-    .line 323
+    .line 349
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_sheet_other:I
 
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -1239,7 +1361,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->setIconColor(I)V
 
-    .line 324
+    .line 350
     iget-object v0, p0, Lorg/telegram/ui/Components/QRCodeBottomSheet;->optionsButton:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefaultSubmenuItem:I
@@ -1252,7 +1374,7 @@
 
     invoke-virtual {v0, v1, v2}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->setPopupItemsColor(IZ)V
 
-    .line 325
+    .line 351
     iget-object v0, p0, Lorg/telegram/ui/Components/QRCodeBottomSheet;->optionsButton:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefaultSubmenuItemIcon:I
@@ -1265,7 +1387,7 @@
 
     invoke-virtual {v0, v1, v2}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->setPopupItemsColor(IZ)V
 
-    .line 326
+    .line 352
     iget-object v0, p0, Lorg/telegram/ui/Components/QRCodeBottomSheet;->optionsButton:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_dialogButtonSelector:I
@@ -1276,7 +1398,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->setPopupItemsSelectorColor(I)V
 
-    .line 327
+    .line 353
     iget-object v0, p0, Lorg/telegram/ui/Components/QRCodeBottomSheet;->optionsButton:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefaultSubmenuBackground:I
@@ -1287,7 +1409,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->redrawPopup(I)V
 
-    .line 330
+    .line 356
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/QRCodeBottomSheet;->buttonTextView:Landroid/widget/TextView;
 
@@ -1299,7 +1421,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 331
+    .line 357
     iget-object v0, p0, Lorg/telegram/ui/Components/QRCodeBottomSheet;->buttonTextView:Landroid/widget/TextView;
 
     const/4 v1, 0x6
@@ -1326,19 +1448,19 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 332
+    .line 358
     iget-object v0, p0, Lorg/telegram/ui/Components/QRCodeBottomSheet;->button2TextView:Landroid/widget/TextView;
 
     if-eqz v0, :cond_1
 
-    .line 333
+    .line 359
     invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 334
+    .line 360
     iget-object v0, p0, Lorg/telegram/ui/Components/QRCodeBottomSheet;->button2TextView:Landroid/widget/TextView;
 
     invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -1375,7 +1497,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 336
+    .line 362
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/Components/QRCodeBottomSheet;->help:Landroid/widget/TextView;
 
@@ -1387,7 +1509,7 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 337
+    .line 363
     iget-object v0, p0, Lorg/telegram/ui/Components/QRCodeBottomSheet;->help:Landroid/widget/TextView;
 
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -1396,14 +1518,14 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 338
+    .line 364
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BottomSheet;->getTitleView()Landroid/widget/TextView;
 
     move-result-object v0
 
     if-eqz v0, :cond_2
 
-    .line 339
+    .line 365
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BottomSheet;->getTitleView()Landroid/widget/TextView;
 
     move-result-object v0
@@ -1416,7 +1538,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 341
+    .line 367
     :cond_2
     sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_dialogBackground:I
 

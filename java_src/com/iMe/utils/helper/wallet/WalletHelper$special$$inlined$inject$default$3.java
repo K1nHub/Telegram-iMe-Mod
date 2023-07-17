@@ -1,6 +1,6 @@
 package com.iMe.utils.helper.wallet;
 
-import com.iMe.navigation.wallet.coordinator.WalletFlowCoordinator;
+import com.iMe.storage.domain.utils.p030rx.RxEventBus;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Lambda;
 import kotlin.jvm.internal.Reflection;
@@ -11,7 +11,7 @@ import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 /* compiled from: KoinComponent.kt */
 /* loaded from: classes4.dex */
-public final class WalletHelper$special$$inlined$inject$default$3 extends Lambda implements Function0<WalletFlowCoordinator> {
+public final class WalletHelper$special$$inlined$inject$default$3 extends Lambda implements Function0<RxEventBus> {
     final /* synthetic */ Function0 $parameters;
     final /* synthetic */ Qualifier $qualifier;
     final /* synthetic */ KoinComponent $this_inject;
@@ -24,9 +24,9 @@ public final class WalletHelper$special$$inlined$inject$default$3 extends Lambda
         this.$parameters = function0;
     }
 
-    /* JADX WARN: Type inference failed for: r0v2, types: [com.iMe.navigation.wallet.coordinator.WalletFlowCoordinator, java.lang.Object] */
+    /* JADX WARN: Type inference failed for: r0v2, types: [com.iMe.storage.domain.utils.rx.RxEventBus, java.lang.Object] */
     @Override // kotlin.jvm.functions.Function0
-    public final WalletFlowCoordinator invoke() {
+    public final RxEventBus invoke() {
         Scope rootScope;
         KoinComponent koinComponent = this.$this_inject;
         Qualifier qualifier = this.$qualifier;
@@ -36,6 +36,6 @@ public final class WalletHelper$special$$inlined$inject$default$3 extends Lambda
         } else {
             rootScope = koinComponent.getKoin().getScopeRegistry().getRootScope();
         }
-        return rootScope.get(Reflection.getOrCreateKotlinClass(WalletFlowCoordinator.class), qualifier, function0);
+        return rootScope.get(Reflection.getOrCreateKotlinClass(RxEventBus.class), qualifier, function0);
     }
 }

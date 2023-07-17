@@ -38,15 +38,15 @@
 
 # virtual methods
 .method public final createFromParcel(Landroid/os/Parcel;)Lcom/iMe/model/staking/StakingDetailsItem;
-    .locals 42
+    .locals 41
 
-    const-string v0, "parcel"
+    move-object/from16 v0, p1
 
-    move-object/from16 v1, p1
+    const-string v1, "parcel"
 
-    invoke-static {v1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    new-instance v0, Lcom/iMe/model/staking/StakingDetailsItem;
+    new-instance v1, Lcom/iMe/model/staking/StakingDetailsItem;
 
     invoke-virtual/range {p1 .. p1}, Landroid/os/Parcel;->readLong()J
 
@@ -60,21 +60,25 @@
 
     move-result-object v6
 
-    invoke-virtual/range {p1 .. p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
+    sget-object v2, Lcom/iMe/model/wallet/crypto/TokenItem;->CREATOR:Landroid/os/Parcelable$Creator;
 
-    move-result-object v2
-
-    invoke-static {v2}, Lcom/iMe/storage/domain/model/crypto/NetworkType;->valueOf(Ljava/lang/String;)Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    invoke-interface {v2, v0}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
 
     move-result-object v7
+
+    check-cast v7, Lcom/iMe/model/wallet/crypto/TokenItem;
 
     invoke-virtual/range {p1 .. p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v8
 
-    invoke-virtual/range {p1 .. p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
+    invoke-interface {v2, v0}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
 
-    move-result-object v9
+    move-result-object v2
+
+    move-object v9, v2
+
+    check-cast v9, Lcom/iMe/model/wallet/crypto/TokenItem;
 
     invoke-virtual/range {p1 .. p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
@@ -84,17 +88,17 @@
 
     move-result-object v11
 
-    invoke-virtual/range {p1 .. p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
-
-    move-result-object v12
-
     invoke-virtual/range {p1 .. p1}, Landroid/os/Parcel;->readSerializable()Ljava/io/Serializable;
 
     move-result-object v2
 
-    move-object v13, v2
+    move-object v12, v2
 
-    check-cast v13, Ljava/math/BigDecimal;
+    check-cast v12, Ljava/math/BigDecimal;
+
+    invoke-virtual/range {p1 .. p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
+
+    move-result-object v13
 
     invoke-virtual/range {p1 .. p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
@@ -108,9 +112,13 @@
 
     move-result-object v16
 
-    invoke-virtual/range {p1 .. p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
+    invoke-virtual/range {p1 .. p1}, Landroid/os/Parcel;->readSerializable()Ljava/io/Serializable;
 
-    move-result-object v17
+    move-result-object v2
+
+    move-object/from16 v17, v2
+
+    check-cast v17, Ljava/math/BigDecimal;
 
     invoke-virtual/range {p1 .. p1}, Landroid/os/Parcel;->readSerializable()Ljava/io/Serializable;
 
@@ -120,34 +128,26 @@
 
     check-cast v18, Ljava/math/BigDecimal;
 
-    invoke-virtual/range {p1 .. p1}, Landroid/os/Parcel;->readSerializable()Ljava/io/Serializable;
-
-    move-result-object v2
-
-    move-object/from16 v19, v2
-
-    check-cast v19, Ljava/math/BigDecimal;
-
     invoke-virtual/range {p1 .. p1}, Landroid/os/Parcel;->readDouble()D
 
-    move-result-wide v20
+    move-result-wide v19
 
     invoke-virtual/range {p1 .. p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v2
 
-    const/16 v22, 0x1
+    const/16 v21, 0x1
 
-    const/16 v23, 0x0
+    const/16 v22, 0x0
 
     if-eqz v2, :cond_0
 
-    move/from16 v24, v22
+    move/from16 v23, v21
 
     goto :goto_0
 
     :cond_0
-    move/from16 v24, v23
+    move/from16 v23, v22
 
     :goto_0
     invoke-virtual/range {p1 .. p1}, Landroid/os/Parcel;->readInt()I
@@ -156,29 +156,29 @@
 
     if-eqz v2, :cond_1
 
-    move/from16 v25, v22
+    move/from16 v24, v21
 
     goto :goto_1
 
     :cond_1
-    move/from16 v25, v23
+    move/from16 v24, v22
 
     :goto_1
     invoke-virtual/range {p1 .. p1}, Landroid/os/Parcel;->readDouble()D
 
-    move-result-wide v26
+    move-result-wide v25
 
     invoke-virtual/range {p1 .. p1}, Landroid/os/Parcel;->readDouble()D
 
-    move-result-wide v28
+    move-result-wide v27
 
     invoke-virtual/range {p1 .. p1}, Landroid/os/Parcel;->readDouble()D
 
-    move-result-wide v30
+    move-result-wide v29
 
     invoke-virtual/range {p1 .. p1}, Landroid/os/Parcel;->readLong()J
 
-    move-result-wide v32
+    move-result-wide v31
 
     invoke-virtual/range {p1 .. p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
@@ -186,7 +186,7 @@
 
     invoke-static {v2}, Lcom/iMe/model/staking/StakingAnnualPercentageMode;->valueOf(Ljava/lang/String;)Lcom/iMe/model/staking/StakingAnnualPercentageMode;
 
-    move-result-object v40
+    move-result-object v39
 
     invoke-virtual/range {p1 .. p1}, Landroid/os/Parcel;->readInt()I
 
@@ -194,12 +194,12 @@
 
     if-eqz v2, :cond_2
 
-    move/from16 v41, v22
+    move/from16 v40, v21
 
     goto :goto_2
 
     :cond_2
-    move/from16 v41, v23
+    move/from16 v40, v22
 
     :goto_2
     invoke-virtual/range {p1 .. p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
@@ -208,41 +208,41 @@
 
     invoke-static {v2}, Lcom/iMe/storage/domain/model/crypto/level/AccountLevel;->valueOf(Ljava/lang/String;)Lcom/iMe/storage/domain/model/crypto/level/AccountLevel;
 
-    move-result-object v34
+    move-result-object v33
 
     invoke-virtual/range {p1 .. p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
-    move-result-object v35
+    move-result-object v34
 
     invoke-virtual/range {p1 .. p1}, Landroid/os/Parcel;->readLong()J
 
-    move-result-wide v36
+    move-result-wide v35
 
     invoke-virtual/range {p1 .. p1}, Landroid/os/Parcel;->readDouble()D
 
-    move-result-wide v38
+    move-result-wide v37
 
-    move-object v2, v0
+    move-object v2, v1
+
+    move/from16 v21, v23
 
     move/from16 v22, v24
 
-    move/from16 v23, v25
+    move-wide/from16 v23, v25
 
-    move-wide/from16 v24, v26
+    move-wide/from16 v25, v27
 
-    move-wide/from16 v26, v28
+    move-wide/from16 v27, v29
 
-    move-wide/from16 v28, v30
+    move-wide/from16 v29, v31
 
-    move-wide/from16 v30, v32
+    move-object/from16 v31, v39
 
-    move-object/from16 v32, v40
+    move/from16 v32, v40
 
-    move/from16 v33, v41
+    invoke-direct/range {v2 .. v38}, Lcom/iMe/model/staking/StakingDetailsItem;-><init>(JLjava/lang/String;Ljava/lang/String;Lcom/iMe/model/wallet/crypto/TokenItem;Ljava/lang/String;Lcom/iMe/model/wallet/crypto/TokenItem;Ljava/lang/String;Ljava/lang/String;Ljava/math/BigDecimal;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/math/BigDecimal;Ljava/math/BigDecimal;DZZDDDJLcom/iMe/model/staking/StakingAnnualPercentageMode;ZLcom/iMe/storage/domain/model/crypto/level/AccountLevel;Ljava/lang/String;JD)V
 
-    invoke-direct/range {v2 .. v39}, Lcom/iMe/model/staking/StakingDetailsItem;-><init>(JLjava/lang/String;Ljava/lang/String;Lcom/iMe/storage/domain/model/crypto/NetworkType;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/math/BigDecimal;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/math/BigDecimal;Ljava/math/BigDecimal;DZZDDDJLcom/iMe/model/staking/StakingAnnualPercentageMode;ZLcom/iMe/storage/domain/model/crypto/level/AccountLevel;Ljava/lang/String;JD)V
-
-    return-object v0
+    return-object v1
 .end method
 
 .method public bridge synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;

@@ -29,10 +29,10 @@
 .method public abstract onReport()V
 .end method
 
-.method public abstract onUnpin(ZZZZLorg/telegram/ui/ChatActivity;Ljava/util/ArrayList;Ljava/util/HashMap;)V
+.method public abstract onUnpin(ZZZLorg/telegram/ui/ChatActivity;Ljava/util/ArrayList;Ljava/util/HashMap;)V
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "(ZZZZ",
+            "(ZZZ",
             "Lorg/telegram/ui/ChatActivity;",
             "Ljava/util/ArrayList<",
             "Ljava/lang/Integer;",

@@ -49,7 +49,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 49
+    .line 56
     check-cast p1, Lcom/iMe/ui/custom/TimeWithClockView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/adapter/provider/StakingOperationProvider$convert$1;->invoke(Lcom/iMe/ui/custom/TimeWithClockView;)V
@@ -66,7 +66,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 49
+    .line 56
     iget-object v0, p0, Lcom/iMe/ui/adapter/provider/StakingOperationProvider$convert$1;->$item:Lcom/iMe/model/wallet/transaction/StakingOperationItem;
 
     invoke-virtual {p1, v0}, Lcom/iMe/ui/custom/TimeWithClockView;->setTime(Lcom/iMe/model/wallet/transaction/StakingOperationItem;)V

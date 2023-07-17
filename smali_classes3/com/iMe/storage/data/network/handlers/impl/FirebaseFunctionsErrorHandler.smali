@@ -99,190 +99,196 @@
 
     packed-switch v0, :pswitch_data_0
 
-    .line 61
+    .line 62
     sget-object v0, Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler$ErrorStatus;->BAD_RESPONSE:Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler$ErrorStatus;
 
     goto/16 :goto_1
 
-    .line 59
+    .line 60
     :pswitch_0
     sget-object v0, Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$TwitterErrorStatus;->NO_OAUTH_ACCESS_GRANTED_ERROR:Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$TwitterErrorStatus;
 
     goto/16 :goto_1
 
-    .line 58
+    .line 59
     :pswitch_1
     sget-object v0, Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$TwitterErrorStatus;->TWITTER_USER_DISABLED_DIRECT_MESSAGES:Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$TwitterErrorStatus;
 
     goto/16 :goto_1
 
-    .line 57
+    .line 58
     :pswitch_2
     sget-object v0, Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$TwitterErrorStatus;->WRONG_TWITTER_REFRESH_TOKEN_ERROR:Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$TwitterErrorStatus;
 
     goto/16 :goto_1
 
-    .line 56
+    .line 57
     :pswitch_3
     sget-object v0, Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$TwitterErrorStatus;->WRONG_TWITTER_ACCESS_TOKEN_ERROR:Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$TwitterErrorStatus;
 
     goto/16 :goto_1
 
-    .line 53
+    .line 54
     :pswitch_4
     sget-object v0, Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$AirdropErrorStatus;->AIRDROP_NO_TOKENS:Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$AirdropErrorStatus;
 
-    goto :goto_1
+    goto/16 :goto_1
 
-    .line 52
+    .line 53
     :pswitch_5
     sget-object v0, Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$AirdropErrorStatus;->USER_ALREADY_PARTICIPATED:Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$AirdropErrorStatus;
 
     goto :goto_1
 
-    .line 51
+    .line 52
     :pswitch_6
     sget-object v0, Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$AirdropErrorStatus;->REQUEST_ID_NOT_FOUND:Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$AirdropErrorStatus;
 
     goto :goto_1
 
-    .line 50
+    .line 51
     :pswitch_7
     sget-object v0, Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$AirdropErrorStatus;->AIRDROP_NOT_ACTIVE:Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$AirdropErrorStatus;
 
     goto :goto_1
 
-    .line 47
+    .line 48
     :pswitch_8
     sget-object v0, Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$StakingErrorStatus;->ERR_STAKING_CLAIM_OVERLAP:Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$StakingErrorStatus;
 
     goto :goto_1
 
-    .line 46
+    .line 47
     :pswitch_9
     sget-object v0, Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$StakingErrorStatus;->ERR_STAKING_WITHDRAWAL_OVER_LIMIT:Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$StakingErrorStatus;
 
     goto :goto_1
 
-    .line 45
+    .line 46
     :pswitch_a
     sget-object v0, Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$StakingErrorStatus;->ERR_STAKING_FINISHED:Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$StakingErrorStatus;
 
     goto :goto_1
 
-    .line 44
+    .line 45
     :pswitch_b
     sget-object v0, Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$ErrorStatus;->NO_ENOUGH_MONEY:Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$ErrorStatus;
 
     goto :goto_1
 
-    .line 41
+    .line 42
     :pswitch_c
+    sget-object v0, Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$CryptoErrorStatus;->ERR_TOKEN_NOT_FOUND:Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$CryptoErrorStatus;
+
+    goto :goto_1
+
+    .line 41
+    :pswitch_d
     sget-object v0, Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$CryptoErrorStatus;->DONATIONS_ADDRESS_ALREADY_LINKED:Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$CryptoErrorStatus;
 
     goto :goto_1
 
     .line 40
-    :pswitch_d
+    :pswitch_e
     sget-object v0, Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$CryptoErrorStatus;->DONATIONS_NOT_CONFIGURED_YET:Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$CryptoErrorStatus;
 
     goto :goto_1
 
     .line 39
-    :pswitch_e
+    :pswitch_f
     sget-object v0, Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$CryptoErrorStatus;->ETHER_BLOCK_CHAIN_ERROR:Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$CryptoErrorStatus;
 
     goto :goto_1
 
     .line 38
-    :pswitch_f
+    :pswitch_10
     sget-object v0, Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$CryptoErrorStatus;->SWAP_QUOTE_NOT_FOUND:Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$CryptoErrorStatus;
 
     goto :goto_1
 
     .line 37
-    :pswitch_10
+    :pswitch_11
     sget-object v0, Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$CryptoErrorStatus;->SWAP_DIFF_BTW_TOKEN_EXCHANGE_RATES_IS_TOO_BIG:Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$CryptoErrorStatus;
 
     goto :goto_1
 
     .line 36
-    :pswitch_11
+    :pswitch_12
     sget-object v0, Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$ErrorStatus;->NO_ENOUGH_MONEY:Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$ErrorStatus;
 
     goto :goto_1
 
     .line 35
-    :pswitch_12
+    :pswitch_13
     sget-object v0, Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$CryptoErrorStatus;->SWAP_APPROVED_AMOUNT_NOT_SUFFICIENT:Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$CryptoErrorStatus;
 
     goto :goto_1
 
     .line 34
-    :pswitch_13
+    :pswitch_14
     sget-object v0, Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$CryptoErrorStatus;->SIMPLEX_QUOTE_ALREADY_USED:Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$CryptoErrorStatus;
 
     goto :goto_1
 
     .line 33
-    :pswitch_14
+    :pswitch_15
     sget-object v0, Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$CryptoErrorStatus;->ETHER_WALLET_NOT_LINKED:Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$CryptoErrorStatus;
 
     goto :goto_1
 
     .line 32
-    :pswitch_15
+    :pswitch_16
     sget-object v0, Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$CryptoErrorStatus;->PIN_CODE_MAX_ATTEMPTS:Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$CryptoErrorStatus;
 
     goto :goto_1
 
     .line 29
-    :pswitch_16
+    :pswitch_17
     sget-object v0, Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$ErrorStatus;->TRANSLATION_UNSUPPORTED_LANGUAGE:Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$ErrorStatus;
 
     goto :goto_1
 
     .line 28
-    :pswitch_17
+    :pswitch_18
     sget-object v0, Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$ErrorStatus;->REFRESH_TOKEN_NOT_FOUND:Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$ErrorStatus;
 
     goto :goto_1
 
     .line 27
-    :pswitch_18
+    :pswitch_19
     sget-object v0, Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$ErrorStatus;->ZERO_AMOUNT_ERROR:Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$ErrorStatus;
 
     goto :goto_1
 
     .line 26
-    :pswitch_19
+    :pswitch_1a
     sget-object v0, Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$ErrorStatus;->VALIDATION_ERROR:Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$ErrorStatus;
 
     goto :goto_1
 
     .line 25
-    :pswitch_1a
+    :pswitch_1b
     sget-object v0, Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$ErrorStatus;->ERR_MONEY_ACCOUNT_NOT_EXIST:Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$ErrorStatus;
 
     goto :goto_1
 
     .line 24
-    :pswitch_1b
+    :pswitch_1c
     sget-object v0, Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$ErrorStatus;->UNAUTHORIZED:Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$ErrorStatus;
 
     goto :goto_1
 
     .line 23
-    :pswitch_1c
+    :pswitch_1d
     sget-object v0, Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$ErrorStatus;->NO_ENOUGH_MONEY:Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$ErrorStatus;
 
     goto :goto_1
 
     .line 22
-    :pswitch_1d
+    :pswitch_1e
     sget-object v0, Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$ErrorStatus;->USER_NOT_FOUND:Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$ErrorStatus;
 
-    .line 64
+    .line 65
     :goto_1
     new-instance v2, Lcom/iMe/storage/data/network/model/error/ErrorModel;
 
@@ -306,6 +312,7 @@
 
     :pswitch_data_0
     .packed-switch 0x1
+        :pswitch_1e
         :pswitch_1d
         :pswitch_1c
         :pswitch_1b
@@ -322,7 +329,7 @@
         :pswitch_10
         :pswitch_f
         :pswitch_e
-        :pswitch_d
+        :pswitch_e
         :pswitch_d
         :pswitch_c
         :pswitch_b

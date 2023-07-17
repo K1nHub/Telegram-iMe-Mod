@@ -3,10 +3,10 @@ package com.google.android.gms.internal.clearcut;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
-import p034j$.util.Iterator;
-import p034j$.util.function.Consumer;
+import p033j$.util.Iterator;
+import p033j$.util.function.Consumer;
 /* loaded from: classes.dex */
-final class zzek implements Iterator<Map.Entry<K, V>>, p034j$.util.Iterator {
+final class zzek implements Iterator<Map.Entry<K, V>>, p033j$.util.Iterator {
     private int pos;
     private Iterator<Map.Entry<K, V>> zzor;
     private final /* synthetic */ zzei zzos;
@@ -32,12 +32,12 @@ final class zzek implements Iterator<Map.Entry<K, V>>, p034j$.util.Iterator {
         return this.zzor;
     }
 
-    @Override // p034j$.util.Iterator
+    @Override // p033j$.util.Iterator
     public /* synthetic */ void forEachRemaining(Consumer consumer) {
         Iterator.CC.$default$forEachRemaining(this, consumer);
     }
 
-    @Override // java.util.Iterator, p034j$.util.Iterator
+    @Override // java.util.Iterator, p033j$.util.Iterator
     public final boolean hasNext() {
         List list;
         int i = this.pos;
@@ -50,7 +50,7 @@ final class zzek implements Iterator<Map.Entry<K, V>>, p034j$.util.Iterator {
         return zzdw().hasNext();
     }
 
-    @Override // java.util.Iterator, p034j$.util.Iterator
+    @Override // java.util.Iterator, p033j$.util.Iterator
     public final /* synthetic */ Object next() {
         List list;
         Object obj;
@@ -65,7 +65,7 @@ final class zzek implements Iterator<Map.Entry<K, V>>, p034j$.util.Iterator {
         return (Map.Entry) obj;
     }
 
-    @Override // java.util.Iterator, p034j$.util.Iterator
+    @Override // java.util.Iterator, p033j$.util.Iterator
     public final void remove() {
         throw new UnsupportedOperationException();
     }

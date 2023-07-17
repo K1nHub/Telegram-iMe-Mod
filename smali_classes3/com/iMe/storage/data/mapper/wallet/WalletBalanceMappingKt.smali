@@ -5,155 +5,293 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nWalletBalanceMapping.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WalletBalanceMapping.kt\ncom/iMe/storage/data/mapper/wallet/WalletBalanceMappingKt\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,51:1\n1620#2,3:52\n*S KotlinDebug\n*F\n+ 1 WalletBalanceMapping.kt\ncom/iMe/storage/data/mapper/wallet/WalletBalanceMappingKt\n*L\n38#1:52,3\n*E\n"
+    value = "SMAP\nWalletBalanceMapping.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WalletBalanceMapping.kt\ncom/iMe/storage/data/mapper/wallet/WalletBalanceMappingKt\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,68:1\n1620#2,3:69\n*S KotlinDebug\n*F\n+ 1 WalletBalanceMapping.kt\ncom/iMe/storage/data/mapper/wallet/WalletBalanceMappingKt\n*L\n58#1:69,3\n*E\n"
 .end annotation
 
 
 # direct methods
 .method public static final mapToDb(Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;J)Lcom/iMe/storage/data/locale/db/model/wallet/WalletTokenBalanceDb;
-    .locals 12
+    .locals 24
+
+    move-wide/from16 v1, p1
 
     const-string v0, "<this>"
 
-    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    move-object/from16 v15, p0
 
-    .line 27
-    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;->getCode()Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
+    invoke-static {v15, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    move-result-object v0
+    .line 37
+    new-instance v23, Lcom/iMe/storage/data/locale/db/model/wallet/WalletTokenBalanceDb;
 
-    invoke-virtual {v0}, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;->getName()Ljava/lang/String;
+    move-object/from16 v0, v23
 
-    move-result-object v4
-
-    .line 28
-    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;->getTotal()D
-
-    move-result-wide v5
-
-    .line 29
-    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;->getTotalInDollars()F
-
-    move-result v7
-
-    .line 31
-    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;->getPriceRate()Lcom/iMe/storage/domain/model/wallet/PriceRate;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/iMe/storage/domain/model/wallet/PriceRate;->getRateToDollars()D
-
-    move-result-wide v8
-
-    .line 32
-    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;->getPriceRate()Lcom/iMe/storage/domain/model/wallet/PriceRate;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/iMe/storage/domain/model/wallet/PriceRate;->getRatePercentageChange24h()F
-
-    move-result v10
-
-    .line 33
-    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;->getNetworkType()Lcom/iMe/storage/domain/model/crypto/NetworkType;
-
-    move-result-object p0
-
-    invoke-virtual {p0}, Ljava/lang/Enum;->name()Ljava/lang/String;
-
-    move-result-object v11
-
-    .line 26
-    new-instance p0, Lcom/iMe/storage/data/locale/db/model/wallet/WalletTokenBalanceDb;
-
-    move-object v1, p0
-
-    move-wide v2, p1
-
-    invoke-direct/range {v1 .. v11}, Lcom/iMe/storage/data/locale/db/model/wallet/WalletTokenBalanceDb;-><init>(JLjava/lang/String;DFDFLjava/lang/String;)V
-
-    return-object p0
-.end method
-
-.method public static final mapToDomain(Lcom/iMe/storage/data/locale/db/model/wallet/WalletTokenBalanceDb;)Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;
-    .locals 10
-
-    const-string v0, "<this>"
-
-    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    .line 12
-    new-instance v0, Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;
-
-    .line 13
-    sget-object v1, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;->Companion:Lcom/iMe/storage/domain/model/wallet/token/TokenCode$Companion;
-
-    invoke-virtual {p0}, Lcom/iMe/storage/data/locale/db/model/wallet/WalletTokenBalanceDb;->getCoinCode()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Lcom/iMe/storage/domain/model/wallet/token/TokenCode$Companion;->map(Ljava/lang/String;)Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
-
-    move-result-object v2
-
-    .line 14
-    invoke-virtual {p0}, Lcom/iMe/storage/data/locale/db/model/wallet/WalletTokenBalanceDb;->getTotal()D
+    .line 39
+    invoke-virtual/range {p0 .. p0}, Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;->getTotal()D
 
     move-result-wide v3
 
-    .line 15
-    invoke-virtual {p0}, Lcom/iMe/storage/data/locale/db/model/wallet/WalletTokenBalanceDb;->getTotalInDollars()F
+    .line 40
+    invoke-virtual/range {p0 .. p0}, Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;->getTotalInFiat()Lcom/iMe/storage/domain/model/wallet/token/FiatValue;
 
-    move-result v5
+    move-result-object v5
 
-    .line 16
-    sget-object v1, Lcom/iMe/storage/domain/model/wallet/token/TokenInfo;->Companion:Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Companion;
+    invoke-virtual {v5}, Lcom/iMe/storage/domain/model/wallet/token/FiatValue;->getValue()D
 
-    invoke-virtual {p0}, Lcom/iMe/storage/data/locale/db/model/wallet/WalletTokenBalanceDb;->getCoinCode()Ljava/lang/String;
+    move-result-wide v5
 
-    move-result-object v6
+    .line 41
+    invoke-virtual/range {p0 .. p0}, Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;->getTotalInFiat()Lcom/iMe/storage/domain/model/wallet/token/FiatValue;
 
-    invoke-virtual {v1, v6}, Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Companion;->map(Ljava/lang/String;)Lcom/iMe/storage/domain/model/wallet/token/TokenInfo;
+    move-result-object v7
 
-    move-result-object v6
+    invoke-virtual {v7}, Lcom/iMe/storage/domain/model/wallet/token/FiatValue;->getSymbol()Ljava/lang/String;
 
-    .line 17
-    new-instance v7, Lcom/iMe/storage/domain/model/wallet/PriceRate;
+    move-result-object v7
 
-    .line 18
-    invoke-virtual {p0}, Lcom/iMe/storage/data/locale/db/model/wallet/WalletTokenBalanceDb;->getRateToDollars()D
-
-    move-result-wide v8
-
-    .line 19
-    invoke-virtual {p0}, Lcom/iMe/storage/data/locale/db/model/wallet/WalletTokenBalanceDb;->getRatePercentageChange24h()F
-
-    move-result v1
-
-    .line 17
-    invoke-direct {v7, v8, v9, v1}, Lcom/iMe/storage/domain/model/wallet/PriceRate;-><init>(DF)V
-
-    .line 21
-    sget-object v1, Lcom/iMe/storage/domain/model/crypto/NetworkType;->Companion:Lcom/iMe/storage/domain/model/crypto/NetworkType$Companion;
-
-    invoke-virtual {p0}, Lcom/iMe/storage/data/locale/db/model/wallet/WalletTokenBalanceDb;->getNetworkType()Ljava/lang/String;
-
-    move-result-object p0
-
-    invoke-virtual {v1, p0}, Lcom/iMe/storage/domain/model/crypto/NetworkType$Companion;->map(Ljava/lang/String;)Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    .line 42
+    invoke-virtual/range {p0 .. p0}, Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;->getTotalInFiat()Lcom/iMe/storage/domain/model/wallet/token/FiatValue;
 
     move-result-object v8
 
-    move-object v1, v0
+    invoke-virtual {v8}, Lcom/iMe/storage/domain/model/wallet/token/FiatValue;->getTicker()Ljava/lang/String;
+
+    move-result-object v8
+
+    .line 43
+    invoke-virtual/range {p0 .. p0}, Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;->getRateToFiat()Lcom/iMe/storage/domain/model/wallet/token/FiatValue;
+
+    move-result-object v9
+
+    invoke-virtual {v9}, Lcom/iMe/storage/domain/model/wallet/token/FiatValue;->getValue()D
+
+    move-result-wide v9
+
+    .line 44
+    invoke-virtual/range {p0 .. p0}, Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;->getRateToFiat()Lcom/iMe/storage/domain/model/wallet/token/FiatValue;
+
+    move-result-object v11
+
+    invoke-virtual {v11}, Lcom/iMe/storage/domain/model/wallet/token/FiatValue;->getSymbol()Ljava/lang/String;
+
+    move-result-object v11
+
+    .line 45
+    invoke-virtual/range {p0 .. p0}, Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;->getRateToFiat()Lcom/iMe/storage/domain/model/wallet/token/FiatValue;
+
+    move-result-object v12
+
+    invoke-virtual {v12}, Lcom/iMe/storage/domain/model/wallet/token/FiatValue;->getTicker()Ljava/lang/String;
+
+    move-result-object v12
+
+    .line 46
+    invoke-virtual/range {p0 .. p0}, Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;->getRatePercentageChange24h()D
+
+    move-result-wide v13
+
+    .line 47
+    invoke-virtual/range {p0 .. p0}, Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;->getToken()Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
+
+    move-result-object v16
+
+    invoke-virtual/range {v16 .. v16}, Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;->getAddress()Ljava/lang/String;
+
+    move-result-object v16
+
+    move-object/from16 v15, v16
+
+    .line 48
+    invoke-virtual/range {p0 .. p0}, Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;->getToken()Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
+
+    move-result-object v16
+
+    invoke-virtual/range {v16 .. v16}, Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;->getNetworkId()Ljava/lang/String;
+
+    move-result-object v16
+
+    .line 49
+    invoke-virtual/range {p0 .. p0}, Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;->getToken()Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
+
+    move-result-object v17
+
+    invoke-virtual/range {v17 .. v17}, Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;->getAvatarUrl()Ljava/lang/String;
+
+    move-result-object v17
+
+    .line 50
+    invoke-virtual/range {p0 .. p0}, Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;->getToken()Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
+
+    move-result-object v18
+
+    invoke-virtual/range {v18 .. v18}, Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;->getDecimals()I
+
+    move-result v18
+
+    .line 51
+    invoke-virtual/range {p0 .. p0}, Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;->getToken()Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
+
+    move-result-object v19
+
+    invoke-virtual/range {v19 .. v19}, Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;->getTicker()Ljava/lang/String;
+
+    move-result-object v19
+
+    .line 52
+    invoke-virtual/range {p0 .. p0}, Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;->getToken()Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
+
+    move-result-object v20
+
+    invoke-virtual/range {v20 .. v20}, Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;->isCoin()Z
+
+    move-result v20
+
+    .line 53
+    invoke-virtual/range {p0 .. p0}, Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;->getToken()Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
+
+    move-result-object v21
+
+    invoke-virtual/range {v21 .. v21}, Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;->getName()Ljava/lang/String;
+
+    move-result-object v21
+
+    .line 54
+    invoke-virtual/range {p0 .. p0}, Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;->getToken()Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
+
+    move-result-object v22
+
+    invoke-virtual/range {v22 .. v22}, Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;->getWebsite()Ljava/lang/String;
+
+    move-result-object v22
+
+    .line 37
+    invoke-direct/range {v0 .. v22}, Lcom/iMe/storage/data/locale/db/model/wallet/WalletTokenBalanceDb;-><init>(JDDLjava/lang/String;Ljava/lang/String;DLjava/lang/String;Ljava/lang/String;DLjava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;ZLjava/lang/String;Ljava/lang/String;)V
+
+    return-object v23
+.end method
+
+.method public static final mapToDomain(Lcom/iMe/storage/data/locale/db/model/wallet/WalletTokenBalanceDb;)Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;
+    .locals 18
+
+    const-string v0, "<this>"
+
+    move-object/from16 v1, p0
+
+    invoke-static {v1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 11
+    new-instance v0, Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;
 
     .line 12
-    invoke-direct/range {v1 .. v8}, Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;-><init>(Lcom/iMe/storage/domain/model/wallet/token/TokenCode;DFLcom/iMe/storage/domain/model/wallet/token/TokenInfo;Lcom/iMe/storage/domain/model/wallet/PriceRate;Lcom/iMe/storage/domain/model/crypto/NetworkType;)V
+    invoke-virtual/range {p0 .. p0}, Lcom/iMe/storage/data/locale/db/model/wallet/WalletTokenBalanceDb;->getTotal()D
+
+    move-result-wide v2
+
+    .line 13
+    new-instance v4, Lcom/iMe/storage/domain/model/wallet/token/FiatValue;
+
+    .line 14
+    invoke-virtual/range {p0 .. p0}, Lcom/iMe/storage/data/locale/db/model/wallet/WalletTokenBalanceDb;->getTotalInFiatValue()D
+
+    move-result-wide v5
+
+    .line 15
+    invoke-virtual/range {p0 .. p0}, Lcom/iMe/storage/data/locale/db/model/wallet/WalletTokenBalanceDb;->getTotalInFiatSymbol()Ljava/lang/String;
+
+    move-result-object v7
+
+    .line 16
+    invoke-virtual/range {p0 .. p0}, Lcom/iMe/storage/data/locale/db/model/wallet/WalletTokenBalanceDb;->getTotalInFiatTicker()Ljava/lang/String;
+
+    move-result-object v8
+
+    .line 13
+    invoke-direct {v4, v5, v6, v7, v8}, Lcom/iMe/storage/domain/model/wallet/token/FiatValue;-><init>(DLjava/lang/String;Ljava/lang/String;)V
+
+    .line 18
+    new-instance v5, Lcom/iMe/storage/domain/model/wallet/token/FiatValue;
+
+    .line 19
+    invoke-virtual/range {p0 .. p0}, Lcom/iMe/storage/data/locale/db/model/wallet/WalletTokenBalanceDb;->getRateToFiatValue()D
+
+    move-result-wide v6
+
+    .line 20
+    invoke-virtual/range {p0 .. p0}, Lcom/iMe/storage/data/locale/db/model/wallet/WalletTokenBalanceDb;->getRateToFiatSymbol()Ljava/lang/String;
+
+    move-result-object v8
+
+    .line 21
+    invoke-virtual/range {p0 .. p0}, Lcom/iMe/storage/data/locale/db/model/wallet/WalletTokenBalanceDb;->getRateToFiatTicker()Ljava/lang/String;
+
+    move-result-object v9
+
+    .line 18
+    invoke-direct {v5, v6, v7, v8, v9}, Lcom/iMe/storage/domain/model/wallet/token/FiatValue;-><init>(DLjava/lang/String;Ljava/lang/String;)V
+
+    .line 23
+    invoke-virtual/range {p0 .. p0}, Lcom/iMe/storage/data/locale/db/model/wallet/WalletTokenBalanceDb;->getRatePercentageChange24h()D
+
+    move-result-wide v6
+
+    .line 24
+    new-instance v17, Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
+
+    .line 25
+    invoke-virtual/range {p0 .. p0}, Lcom/iMe/storage/data/locale/db/model/wallet/WalletTokenBalanceDb;->getAddress()Ljava/lang/String;
+
+    move-result-object v9
+
+    .line 26
+    invoke-virtual/range {p0 .. p0}, Lcom/iMe/storage/data/locale/db/model/wallet/WalletTokenBalanceDb;->getNetworkId()Ljava/lang/String;
+
+    move-result-object v10
+
+    .line 27
+    invoke-virtual/range {p0 .. p0}, Lcom/iMe/storage/data/locale/db/model/wallet/WalletTokenBalanceDb;->getAvatarUrl()Ljava/lang/String;
+
+    move-result-object v11
+
+    .line 28
+    invoke-virtual/range {p0 .. p0}, Lcom/iMe/storage/data/locale/db/model/wallet/WalletTokenBalanceDb;->getDecimals()I
+
+    move-result v12
+
+    .line 29
+    invoke-virtual/range {p0 .. p0}, Lcom/iMe/storage/data/locale/db/model/wallet/WalletTokenBalanceDb;->getTicker()Ljava/lang/String;
+
+    move-result-object v13
+
+    .line 30
+    invoke-virtual/range {p0 .. p0}, Lcom/iMe/storage/data/locale/db/model/wallet/WalletTokenBalanceDb;->isCoin()Z
+
+    move-result v14
+
+    .line 31
+    invoke-virtual/range {p0 .. p0}, Lcom/iMe/storage/data/locale/db/model/wallet/WalletTokenBalanceDb;->getName()Ljava/lang/String;
+
+    move-result-object v15
+
+    .line 32
+    invoke-virtual/range {p0 .. p0}, Lcom/iMe/storage/data/locale/db/model/wallet/WalletTokenBalanceDb;->getWebsite()Ljava/lang/String;
+
+    move-result-object v16
+
+    move-object/from16 v8, v17
+
+    .line 24
+    invoke-direct/range {v8 .. v16}, Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;ZLjava/lang/String;Ljava/lang/String;)V
+
+    move-object v1, v0
+
+    .line 11
+    invoke-direct/range {v1 .. v8}, Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;-><init>(DLcom/iMe/storage/domain/model/wallet/token/FiatValue;Lcom/iMe/storage/domain/model/wallet/token/FiatValue;DLcom/iMe/storage/domain/model/wallet/token/TokenDetailed;)V
 
     return-object v0
 .end method
 
 .method public static final mapToDomain(Lcom/iMe/storage/data/network/model/response/wallet/WalletBalancesResponse;)Ljava/util/List;
-    .locals 13
+    .locals 11
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -169,7 +307,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 38
+    .line 58
     invoke-virtual {p0}, Lcom/iMe/storage/data/network/model/response/wallet/WalletBalancesResponse;->getBalances()Ljava/util/List;
 
     move-result-object p0
@@ -188,7 +326,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_1
+    if-eqz v1, :cond_0
 
     invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -197,90 +335,60 @@
     .line 1621
     check-cast v1, Lcom/iMe/storage/data/network/model/response/wallet/TokenBalanceResponse;
 
-    .line 39
+    .line 60
     new-instance v10, Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;
 
-    .line 40
-    sget-object v2, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;->Companion:Lcom/iMe/storage/domain/model/wallet/token/TokenCode$Companion;
-
-    invoke-virtual {v1}, Lcom/iMe/storage/data/network/model/response/wallet/TokenBalanceResponse;->getCoinCode()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {v2, v3}, Lcom/iMe/storage/domain/model/wallet/token/TokenCode$Companion;->map(Ljava/lang/String;)Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
-
-    move-result-object v3
-
-    .line 41
+    .line 61
     invoke-virtual {v1}, Lcom/iMe/storage/data/network/model/response/wallet/TokenBalanceResponse;->getTotal()D
 
-    move-result-wide v4
+    move-result-wide v3
 
-    .line 42
-    invoke-virtual {v1}, Lcom/iMe/storage/data/network/model/response/wallet/TokenBalanceResponse;->getTotalInDollars()F
-
-    move-result v6
-
-    .line 43
-    sget-object v2, Lcom/iMe/storage/domain/model/wallet/token/TokenInfo;->Companion:Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Companion;
-
-    invoke-virtual {v1}, Lcom/iMe/storage/data/network/model/response/wallet/TokenBalanceResponse;->getCoinCode()Ljava/lang/String;
-
-    move-result-object v7
-
-    invoke-virtual {v2, v7}, Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Companion;->map(Ljava/lang/String;)Lcom/iMe/storage/domain/model/wallet/token/TokenInfo;
-
-    move-result-object v7
-
-    .line 44
-    new-instance v8, Lcom/iMe/storage/domain/model/wallet/PriceRate;
-
-    .line 45
-    invoke-virtual {v1}, Lcom/iMe/storage/data/network/model/response/wallet/TokenBalanceResponse;->getRateToDollars()D
-
-    move-result-wide v11
-
-    .line 46
-    invoke-virtual {v1}, Lcom/iMe/storage/data/network/model/response/wallet/TokenBalanceResponse;->getRatePercentageChange24h()Ljava/lang/Float;
+    .line 62
+    invoke-virtual {v1}, Lcom/iMe/storage/data/network/model/response/wallet/TokenBalanceResponse;->getTotalInFiat()Lcom/iMe/storage/data/network/model/response/wallet/FiatValueResponse;
 
     move-result-object v2
 
-    if-eqz v2, :cond_0
+    invoke-static {v2}, Lcom/iMe/storage/data/mapper/wallet/FiatValueMappingKt;->mapToDomain(Lcom/iMe/storage/data/network/model/response/wallet/FiatValueResponse;)Lcom/iMe/storage/domain/model/wallet/token/FiatValue;
 
-    invoke-virtual {v2}, Ljava/lang/Float;->floatValue()F
+    move-result-object v5
 
-    move-result v2
+    .line 63
+    invoke-virtual {v1}, Lcom/iMe/storage/data/network/model/response/wallet/TokenBalanceResponse;->getRateToFiat()Lcom/iMe/storage/data/network/model/response/wallet/FiatValueResponse;
 
-    goto :goto_1
+    move-result-object v2
 
-    :cond_0
-    const/4 v2, 0x0
+    invoke-static {v2}, Lcom/iMe/storage/data/mapper/wallet/FiatValueMappingKt;->mapToDomain(Lcom/iMe/storage/data/network/model/response/wallet/FiatValueResponse;)Lcom/iMe/storage/domain/model/wallet/token/FiatValue;
 
-    .line 44
-    :goto_1
-    invoke-direct {v8, v11, v12, v2}, Lcom/iMe/storage/domain/model/wallet/PriceRate;-><init>(DF)V
+    move-result-object v6
 
-    .line 48
-    sget-object v2, Lcom/iMe/storage/domain/model/crypto/NetworkType;->Companion:Lcom/iMe/storage/domain/model/crypto/NetworkType$Companion;
+    .line 64
+    invoke-virtual {v1}, Lcom/iMe/storage/data/network/model/response/wallet/TokenBalanceResponse;->getRatePercentageChange24h()Ljava/lang/Double;
 
-    invoke-virtual {v1}, Lcom/iMe/storage/data/network/model/response/wallet/TokenBalanceResponse;->getNetworkType()Ljava/lang/String;
+    move-result-object v2
+
+    invoke-static {v2}, Lcom/iMe/storage/data/utils/extentions/NumberExtKt;->orZero(Ljava/lang/Double;)D
+
+    move-result-wide v7
+
+    .line 65
+    invoke-virtual {v1}, Lcom/iMe/storage/data/network/model/response/wallet/TokenBalanceResponse;->getToken()Lcom/iMe/storage/data/network/model/response/wallet/TokenDetailedResponse;
 
     move-result-object v1
 
-    invoke-virtual {v2, v1}, Lcom/iMe/storage/domain/model/crypto/NetworkType$Companion;->map(Ljava/lang/String;)Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    invoke-static {v1}, Lcom/iMe/storage/data/mapper/wallet/TokenMappingKt;->mapToDomain(Lcom/iMe/storage/data/network/model/response/wallet/TokenDetailedResponse;)Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
 
     move-result-object v9
 
     move-object v2, v10
 
-    .line 39
-    invoke-direct/range {v2 .. v9}, Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;-><init>(Lcom/iMe/storage/domain/model/wallet/token/TokenCode;DFLcom/iMe/storage/domain/model/wallet/token/TokenInfo;Lcom/iMe/storage/domain/model/wallet/PriceRate;Lcom/iMe/storage/domain/model/crypto/NetworkType;)V
+    .line 60
+    invoke-direct/range {v2 .. v9}, Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;-><init>(DLcom/iMe/storage/domain/model/wallet/token/FiatValue;Lcom/iMe/storage/domain/model/wallet/token/FiatValue;DLcom/iMe/storage/domain/model/wallet/token/TokenDetailed;)V
 
     .line 1621
     invoke-interface {v0, v10}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
 
-    :cond_1
+    :cond_0
     return-object v0
 .end method

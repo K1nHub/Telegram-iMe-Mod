@@ -18,6 +18,11 @@ public class WalletNotificationsView$$State extends MvpViewState<WalletNotificat
         BaseView.CC.$default$finishScreen(this);
     }
 
+    @Override // com.iMe.p031ui.base.mvp.base.BaseView
+    public /* synthetic */ void removeSelfFromStackImmediately() {
+        BaseView.CC.$default$removeSelfFromStackImmediately(this);
+    }
+
     @Override // com.iMe.p031ui.wallet.notifications.WalletNotificationsView
     public void onLoadedNotifications(List<NotificationItem> list) {
         OnLoadedNotificationsCommand onLoadedNotificationsCommand = new OnLoadedNotificationsCommand(this, list);

@@ -49,7 +49,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 331
+    .line 326
     check-cast p1, Lcom/iMe/storage/domain/utils/rx/event/RxEvent;
 
     invoke-virtual {p0, p1}, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl$subscribeToRxEvents$1;->invoke(Lcom/iMe/storage/domain/utils/rx/event/RxEvent;)V
@@ -62,7 +62,7 @@
 .method public final invoke(Lcom/iMe/storage/domain/utils/rx/event/RxEvent;)V
     .locals 0
 
-    .line 331
+    .line 326
     iget-object p1, p0, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl$subscribeToRxEvents$1;->this$0:Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;
 
     invoke-static {p1}, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;->access$updateSessionsChain(Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;)V

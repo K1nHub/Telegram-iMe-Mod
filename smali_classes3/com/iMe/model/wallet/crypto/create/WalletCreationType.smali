@@ -13,9 +13,9 @@
 
 
 # instance fields
-.field private final iconResId:I
+.field private final buttonTextResId:I
 
-.field private final stringResId:I
+.field private final iconResId:I
 
 
 # direct methods
@@ -29,7 +29,7 @@
     iput p1, p0, Lcom/iMe/model/wallet/crypto/create/WalletCreationType;->iconResId:I
 
     .line 11
-    iput p2, p0, Lcom/iMe/model/wallet/crypto/create/WalletCreationType;->stringResId:I
+    iput p2, p0, Lcom/iMe/model/wallet/crypto/create/WalletCreationType;->buttonTextResId:I
 
     return-void
 .end method
@@ -47,20 +47,20 @@
 .method public abstract getActionText(Lcom/iMe/storage/domain/utils/system/ResourceManager;)Ljava/lang/String;
 .end method
 
+.method public getButtonTextResId()I
+    .locals 1
+
+    .line 11
+    iget v0, p0, Lcom/iMe/model/wallet/crypto/create/WalletCreationType;->buttonTextResId:I
+
+    return v0
+.end method
+
 .method public getIconResId()I
     .locals 1
 
     .line 10
     iget v0, p0, Lcom/iMe/model/wallet/crypto/create/WalletCreationType;->iconResId:I
-
-    return v0
-.end method
-
-.method public getStringResId()I
-    .locals 1
-
-    .line 11
-    iget v0, p0, Lcom/iMe/model/wallet/crypto/create/WalletCreationType;->stringResId:I
 
     return v0
 .end method

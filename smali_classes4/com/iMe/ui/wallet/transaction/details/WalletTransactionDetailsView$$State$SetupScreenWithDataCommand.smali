@@ -45,60 +45,60 @@
 
 .field public final recipientTitle:Ljava/lang/String;
 
-.field public final stakingIconResId:Ljava/lang/Integer;
+.field public final stakingIconUrl:Ljava/lang/String;
 
 .field public final status:Ljava/lang/String;
 
 
 # direct methods
-.method constructor <init>(Lcom/iMe/ui/wallet/transaction/details/WalletTransactionDetailsView$$State;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZZLjava/lang/Integer;)V
+.method constructor <init>(Lcom/iMe/ui/wallet/transaction/details/WalletTransactionDetailsView$$State;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZZLjava/lang/String;)V
     .locals 1
 
-    .line 314
+    .line 328
     const-class p1, Lmoxy/viewstate/strategy/AddToEndSingleStrategy;
 
     const-string/jumbo v0, "setupScreenWithData"
 
     invoke-direct {p0, v0, p1}, Lmoxy/viewstate/ViewCommand;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
-    .line 316
+    .line 330
     iput p2, p0, Lcom/iMe/ui/wallet/transaction/details/WalletTransactionDetailsView$$State$SetupScreenWithDataCommand;->iconResId:I
 
-    .line 317
+    .line 331
     iput-object p3, p0, Lcom/iMe/ui/wallet/transaction/details/WalletTransactionDetailsView$$State$SetupScreenWithDataCommand;->category:Ljava/lang/String;
 
-    .line 318
+    .line 332
     iput-object p4, p0, Lcom/iMe/ui/wallet/transaction/details/WalletTransactionDetailsView$$State$SetupScreenWithDataCommand;->amount:Ljava/lang/String;
 
-    .line 319
+    .line 333
     iput-object p5, p0, Lcom/iMe/ui/wallet/transaction/details/WalletTransactionDetailsView$$State$SetupScreenWithDataCommand;->recipientTitle:Ljava/lang/String;
 
-    .line 320
+    .line 334
     iput-object p6, p0, Lcom/iMe/ui/wallet/transaction/details/WalletTransactionDetailsView$$State$SetupScreenWithDataCommand;->recipient:Ljava/lang/String;
 
-    .line 321
+    .line 335
     iput-object p7, p0, Lcom/iMe/ui/wallet/transaction/details/WalletTransactionDetailsView$$State$SetupScreenWithDataCommand;->comment:Ljava/lang/String;
 
-    .line 322
+    .line 336
     iput-object p8, p0, Lcom/iMe/ui/wallet/transaction/details/WalletTransactionDetailsView$$State$SetupScreenWithDataCommand;->status:Ljava/lang/String;
 
-    .line 323
+    .line 337
     iput-object p9, p0, Lcom/iMe/ui/wallet/transaction/details/WalletTransactionDetailsView$$State$SetupScreenWithDataCommand;->date:Ljava/lang/String;
 
-    .line 324
+    .line 338
     iput-object p10, p0, Lcom/iMe/ui/wallet/transaction/details/WalletTransactionDetailsView$$State$SetupScreenWithDataCommand;->processing:Ljava/lang/String;
 
-    .line 325
+    .line 339
     iput-object p11, p0, Lcom/iMe/ui/wallet/transaction/details/WalletTransactionDetailsView$$State$SetupScreenWithDataCommand;->fee:Ljava/lang/String;
 
-    .line 326
+    .line 340
     iput-boolean p12, p0, Lcom/iMe/ui/wallet/transaction/details/WalletTransactionDetailsView$$State$SetupScreenWithDataCommand;->isFeeEnabled:Z
 
-    .line 327
+    .line 341
     iput-boolean p13, p0, Lcom/iMe/ui/wallet/transaction/details/WalletTransactionDetailsView$$State$SetupScreenWithDataCommand;->isShareEnable:Z
 
-    .line 328
-    iput-object p14, p0, Lcom/iMe/ui/wallet/transaction/details/WalletTransactionDetailsView$$State$SetupScreenWithDataCommand;->stakingIconResId:Ljava/lang/Integer;
+    .line 342
+    iput-object p14, p0, Lcom/iMe/ui/wallet/transaction/details/WalletTransactionDetailsView$$State$SetupScreenWithDataCommand;->stakingIconUrl:Ljava/lang/String;
 
     return-void
 .end method
@@ -108,7 +108,7 @@
 .method public apply(Lcom/iMe/ui/wallet/transaction/details/WalletTransactionDetailsView;)V
     .locals 14
 
-    .line 333
+    .line 347
     iget v1, p0, Lcom/iMe/ui/wallet/transaction/details/WalletTransactionDetailsView$$State$SetupScreenWithDataCommand;->iconResId:I
 
     iget-object v2, p0, Lcom/iMe/ui/wallet/transaction/details/WalletTransactionDetailsView$$State$SetupScreenWithDataCommand;->category:Ljava/lang/String;
@@ -133,11 +133,11 @@
 
     iget-boolean v12, p0, Lcom/iMe/ui/wallet/transaction/details/WalletTransactionDetailsView$$State$SetupScreenWithDataCommand;->isShareEnable:Z
 
-    iget-object v13, p0, Lcom/iMe/ui/wallet/transaction/details/WalletTransactionDetailsView$$State$SetupScreenWithDataCommand;->stakingIconResId:Ljava/lang/Integer;
+    iget-object v13, p0, Lcom/iMe/ui/wallet/transaction/details/WalletTransactionDetailsView$$State$SetupScreenWithDataCommand;->stakingIconUrl:Ljava/lang/String;
 
     move-object v0, p1
 
-    invoke-interface/range {v0 .. v13}, Lcom/iMe/ui/wallet/transaction/details/WalletTransactionDetailsView;->setupScreenWithData(ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZZLjava/lang/Integer;)V
+    invoke-interface/range {v0 .. v13}, Lcom/iMe/ui/wallet/transaction/details/WalletTransactionDetailsView;->setupScreenWithData(ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZZLjava/lang/String;)V
 
     return-void
 .end method
@@ -145,7 +145,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 284
+    .line 298
     check-cast p1, Lcom/iMe/ui/wallet/transaction/details/WalletTransactionDetailsView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/wallet/transaction/details/WalletTransactionDetailsView$$State$SetupScreenWithDataCommand;->apply(Lcom/iMe/ui/wallet/transaction/details/WalletTransactionDetailsView;)V

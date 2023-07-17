@@ -29,7 +29,7 @@
 .method public toString()Ljava/lang/String;
     .locals 1
 
-    const-string v0, "service config is unused"
+    const-string/jumbo v0, "service config is unused"
 
     return-object v0
 .end method

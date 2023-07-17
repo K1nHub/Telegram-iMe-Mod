@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/ChatActivity;Landroid/content/Context;Lorg/telegram/ui/Components/SizeNotifierFrameLayout;)V
     .locals 0
 
-    .line 9518
+    .line 9456
     iput-object p1, p0, Lorg/telegram/ui/ChatActivity$54;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-direct {p0, p2, p3}, Lorg/telegram/ui/Components/BlurredFrameLayout;-><init>(Landroid/content/Context;Lorg/telegram/ui/Components/SizeNotifierFrameLayout;)V
@@ -37,15 +37,15 @@
 .method protected onMeasure(II)V
     .locals 8
 
-    .line 9524
+    .line 9462
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result v0
 
-    .line 9525
+    .line 9463
     iget-object v1, p0, Lorg/telegram/ui/ChatActivity$54;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    invoke-static {v1}, Lorg/telegram/ui/ChatActivity;->access$14000(Lorg/telegram/ui/ChatActivity;)Landroid/widget/TextView;
+    invoke-static {v1}, Lorg/telegram/ui/ChatActivity;->access$13600(Lorg/telegram/ui/ChatActivity;)Landroid/widget/TextView;
 
     move-result-object v1
 
@@ -53,7 +53,7 @@
 
     iget-object v1, p0, Lorg/telegram/ui/ChatActivity$54;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    invoke-static {v1}, Lorg/telegram/ui/ChatActivity;->access$14000(Lorg/telegram/ui/ChatActivity;)Landroid/widget/TextView;
+    invoke-static {v1}, Lorg/telegram/ui/ChatActivity;->access$13600(Lorg/telegram/ui/ChatActivity;)Landroid/widget/TextView;
 
     move-result-object v1
 
@@ -65,7 +65,7 @@
 
     iget-object v1, p0, Lorg/telegram/ui/ChatActivity$54;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    invoke-static {v1}, Lorg/telegram/ui/ChatActivity;->access$29500(Lorg/telegram/ui/ChatActivity;)Landroid/widget/TextView;
+    invoke-static {v1}, Lorg/telegram/ui/ChatActivity;->access$29100(Lorg/telegram/ui/ChatActivity;)Landroid/widget/TextView;
 
     move-result-object v1
 
@@ -73,7 +73,7 @@
 
     iget-object v1, p0, Lorg/telegram/ui/ChatActivity$54;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    invoke-static {v1}, Lorg/telegram/ui/ChatActivity;->access$29500(Lorg/telegram/ui/ChatActivity;)Landroid/widget/TextView;
+    invoke-static {v1}, Lorg/telegram/ui/ChatActivity;->access$29100(Lorg/telegram/ui/ChatActivity;)Landroid/widget/TextView;
 
     move-result-object v1
 
@@ -85,7 +85,7 @@
 
     const/16 v1, 0x1f
 
-    .line 9526
+    .line 9464
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
@@ -97,13 +97,13 @@
     :cond_0
     const/4 v1, 0x1
 
-    .line 9528
+    .line 9466
     iput-boolean v1, p0, Lorg/telegram/ui/ChatActivity$54;->ignoreLayout:Z
 
-    .line 9529
+    .line 9467
     iget-object v1, p0, Lorg/telegram/ui/ChatActivity$54;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    invoke-static {v1}, Lorg/telegram/ui/ChatActivity;->access$29500(Lorg/telegram/ui/ChatActivity;)Landroid/widget/TextView;
+    invoke-static {v1}, Lorg/telegram/ui/ChatActivity;->access$29100(Lorg/telegram/ui/ChatActivity;)Landroid/widget/TextView;
 
     move-result-object v1
 
@@ -117,7 +117,7 @@
 
     iget-object v1, p0, Lorg/telegram/ui/ChatActivity$54;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    invoke-static {v1}, Lorg/telegram/ui/ChatActivity;->access$29500(Lorg/telegram/ui/ChatActivity;)Landroid/widget/TextView;
+    invoke-static {v1}, Lorg/telegram/ui/ChatActivity;->access$29100(Lorg/telegram/ui/ChatActivity;)Landroid/widget/TextView;
 
     move-result-object v1
 
@@ -127,10 +127,10 @@
 
     if-nez v1, :cond_2
 
-    .line 9530
+    .line 9468
     iget-object v1, p0, Lorg/telegram/ui/ChatActivity$54;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    invoke-static {v1}, Lorg/telegram/ui/ChatActivity;->access$29500(Lorg/telegram/ui/ChatActivity;)Landroid/widget/TextView;
+    invoke-static {v1}, Lorg/telegram/ui/ChatActivity;->access$29100(Lorg/telegram/ui/ChatActivity;)Landroid/widget/TextView;
 
     move-result-object v1
 
@@ -140,13 +140,13 @@
 
     check-cast v1, Landroid/widget/FrameLayout$LayoutParams;
 
-    .line 9531
+    .line 9469
     iput v0, v1, Landroid/widget/FrameLayout$LayoutParams;->width:I
 
-    .line 9532
+    .line 9470
     iget-object v5, p0, Lorg/telegram/ui/ChatActivity$54;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    invoke-static {v5}, Lorg/telegram/ui/ChatActivity;->access$14000(Lorg/telegram/ui/ChatActivity;)Landroid/widget/TextView;
+    invoke-static {v5}, Lorg/telegram/ui/ChatActivity;->access$13600(Lorg/telegram/ui/ChatActivity;)Landroid/widget/TextView;
 
     move-result-object v5
 
@@ -154,7 +154,7 @@
 
     iget-object v5, p0, Lorg/telegram/ui/ChatActivity$54;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    invoke-static {v5}, Lorg/telegram/ui/ChatActivity;->access$14000(Lorg/telegram/ui/ChatActivity;)Landroid/widget/TextView;
+    invoke-static {v5}, Lorg/telegram/ui/ChatActivity;->access$13600(Lorg/telegram/ui/ChatActivity;)Landroid/widget/TextView;
 
     move-result-object v5
 
@@ -164,10 +164,10 @@
 
     if-nez v5, :cond_1
 
-    .line 9533
+    .line 9471
     iget-object v5, p0, Lorg/telegram/ui/ChatActivity$54;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    invoke-static {v5}, Lorg/telegram/ui/ChatActivity;->access$29500(Lorg/telegram/ui/ChatActivity;)Landroid/widget/TextView;
+    invoke-static {v5}, Lorg/telegram/ui/ChatActivity;->access$29100(Lorg/telegram/ui/ChatActivity;)Landroid/widget/TextView;
 
     move-result-object v5
 
@@ -181,10 +181,10 @@
 
     invoke-virtual {v5, v6, v4, v7, v4}, Landroid/widget/TextView;->setPadding(IIII)V
 
-    .line 9534
+    .line 9472
     iput v0, v1, Landroid/widget/FrameLayout$LayoutParams;->leftMargin:I
 
-    .line 9535
+    .line 9473
     iget v5, v1, Landroid/widget/FrameLayout$LayoutParams;->width:I
 
     const/16 v6, 0xf
@@ -199,11 +199,11 @@
 
     goto :goto_0
 
-    .line 9537
+    .line 9475
     :cond_1
     iget-object v5, p0, Lorg/telegram/ui/ChatActivity$54;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    invoke-static {v5}, Lorg/telegram/ui/ChatActivity;->access$29500(Lorg/telegram/ui/ChatActivity;)Landroid/widget/TextView;
+    invoke-static {v5}, Lorg/telegram/ui/ChatActivity;->access$29100(Lorg/telegram/ui/ChatActivity;)Landroid/widget/TextView;
 
     move-result-object v5
 
@@ -217,15 +217,15 @@
 
     invoke-virtual {v5, v6, v4, v7, v4}, Landroid/widget/TextView;->setPadding(IIII)V
 
-    .line 9538
+    .line 9476
     iput v4, v1, Landroid/widget/FrameLayout$LayoutParams;->leftMargin:I
 
-    .line 9541
+    .line 9479
     :cond_2
     :goto_0
     iget-object v1, p0, Lorg/telegram/ui/ChatActivity$54;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    invoke-static {v1}, Lorg/telegram/ui/ChatActivity;->access$14000(Lorg/telegram/ui/ChatActivity;)Landroid/widget/TextView;
+    invoke-static {v1}, Lorg/telegram/ui/ChatActivity;->access$13600(Lorg/telegram/ui/ChatActivity;)Landroid/widget/TextView;
 
     move-result-object v1
 
@@ -233,7 +233,7 @@
 
     iget-object v1, p0, Lorg/telegram/ui/ChatActivity$54;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    invoke-static {v1}, Lorg/telegram/ui/ChatActivity;->access$14000(Lorg/telegram/ui/ChatActivity;)Landroid/widget/TextView;
+    invoke-static {v1}, Lorg/telegram/ui/ChatActivity;->access$13600(Lorg/telegram/ui/ChatActivity;)Landroid/widget/TextView;
 
     move-result-object v1
 
@@ -243,10 +243,10 @@
 
     if-nez v1, :cond_4
 
-    .line 9542
+    .line 9480
     iget-object v1, p0, Lorg/telegram/ui/ChatActivity$54;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    invoke-static {v1}, Lorg/telegram/ui/ChatActivity;->access$14000(Lorg/telegram/ui/ChatActivity;)Landroid/widget/TextView;
+    invoke-static {v1}, Lorg/telegram/ui/ChatActivity;->access$13600(Lorg/telegram/ui/ChatActivity;)Landroid/widget/TextView;
 
     move-result-object v1
 
@@ -256,13 +256,13 @@
 
     check-cast v1, Landroid/widget/FrameLayout$LayoutParams;
 
-    .line 9543
+    .line 9481
     iput v0, v1, Landroid/widget/FrameLayout$LayoutParams;->width:I
 
-    .line 9544
+    .line 9482
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$54;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$29500(Lorg/telegram/ui/ChatActivity;)Landroid/widget/TextView;
+    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$29100(Lorg/telegram/ui/ChatActivity;)Landroid/widget/TextView;
 
     move-result-object v0
 
@@ -270,7 +270,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$54;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$29500(Lorg/telegram/ui/ChatActivity;)Landroid/widget/TextView;
+    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$29100(Lorg/telegram/ui/ChatActivity;)Landroid/widget/TextView;
 
     move-result-object v0
 
@@ -280,10 +280,10 @@
 
     if-nez v0, :cond_3
 
-    .line 9545
+    .line 9483
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$54;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$14000(Lorg/telegram/ui/ChatActivity;)Landroid/widget/TextView;
+    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$13600(Lorg/telegram/ui/ChatActivity;)Landroid/widget/TextView;
 
     move-result-object v0
 
@@ -301,11 +301,11 @@
 
     goto :goto_1
 
-    .line 9547
+    .line 9485
     :cond_3
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$54;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$14000(Lorg/telegram/ui/ChatActivity;)Landroid/widget/TextView;
+    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$13600(Lorg/telegram/ui/ChatActivity;)Landroid/widget/TextView;
 
     move-result-object v0
 
@@ -319,15 +319,15 @@
 
     invoke-virtual {v0, v2, v4, v3, v4}, Landroid/widget/TextView;->setPadding(IIII)V
 
-    .line 9548
+    .line 9486
     iput v4, v1, Landroid/widget/FrameLayout$LayoutParams;->leftMargin:I
 
-    .line 9551
+    .line 9489
     :cond_4
     :goto_1
     iput-boolean v4, p0, Lorg/telegram/ui/ChatActivity$54;->ignoreLayout:Z
 
-    .line 9552
+    .line 9490
     invoke-super {p0, p1, p2}, Landroid/widget/FrameLayout;->onMeasure(II)V
 
     return-void
@@ -336,14 +336,14 @@
 .method public requestLayout()V
     .locals 1
 
-    .line 9558
+    .line 9496
     iget-boolean v0, p0, Lorg/telegram/ui/ChatActivity$54;->ignoreLayout:Z
 
     if-eqz v0, :cond_0
 
     return-void
 
-    .line 9561
+    .line 9499
     :cond_0
     invoke-super {p0}, Landroid/widget/FrameLayout;->requestLayout()V
 

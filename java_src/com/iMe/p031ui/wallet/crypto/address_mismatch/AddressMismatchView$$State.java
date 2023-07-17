@@ -9,11 +9,16 @@ import moxy.viewstate.ViewCommand;
 import moxy.viewstate.strategy.AddToEndSingleStrategy;
 import moxy.viewstate.strategy.OneExecutionStateStrategy;
 /* renamed from: com.iMe.ui.wallet.crypto.address_mismatch.AddressMismatchView$$State */
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public class AddressMismatchView$$State extends MvpViewState<AddressMismatchView> implements AddressMismatchView {
     @Override // com.iMe.p031ui.base.mvp.base.BaseView
     public /* synthetic */ void finishScreen() {
         BaseView.CC.$default$finishScreen(this);
+    }
+
+    @Override // com.iMe.p031ui.base.mvp.base.BaseView
+    public /* synthetic */ void removeSelfFromStackImmediately() {
+        BaseView.CC.$default$removeSelfFromStackImmediately(this);
     }
 
     @Override // com.iMe.p031ui.wallet.crypto.address_mismatch.AddressMismatchView
@@ -70,7 +75,7 @@ public class AddressMismatchView$$State extends MvpViewState<AddressMismatchView
 
     /* compiled from: AddressMismatchView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.address_mismatch.AddressMismatchView$$State$CloseScreenCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes.dex */
     public class CloseScreenCommand extends ViewCommand<AddressMismatchView> {
         public final long delay;
 
@@ -87,7 +92,7 @@ public class AddressMismatchView$$State extends MvpViewState<AddressMismatchView
 
     /* compiled from: AddressMismatchView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.address_mismatch.AddressMismatchView$$State$ShowToastCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes.dex */
     public class ShowToastCommand extends ViewCommand<AddressMismatchView> {
         public final String text;
 
@@ -104,7 +109,7 @@ public class AddressMismatchView$$State extends MvpViewState<AddressMismatchView
 
     /* compiled from: AddressMismatchView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.address_mismatch.AddressMismatchView$$State$ShowLoadingDialogCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes.dex */
     public class ShowLoadingDialogCommand extends ViewCommand<AddressMismatchView> {
         public final Disposable actionToCancel;
         public final boolean cancellable;
@@ -125,7 +130,7 @@ public class AddressMismatchView$$State extends MvpViewState<AddressMismatchView
 
     /* compiled from: AddressMismatchView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.address_mismatch.AddressMismatchView$$State$ShowErrorToastCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes.dex */
     public class ShowErrorToastCommand<T> extends ViewCommand<AddressMismatchView> {
         public final ResourceManager resourceManager;
         public final Result.Error<? extends T> result;

@@ -23,13 +23,13 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 27
+    .line 29
     invoke-direct {p0, p1}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    .line 25
+    .line 27
     iput-boolean p2, p0, Lcom/iMe/fork/ui/view/ImageRadioCell;->dialog:Z
 
-    .line 30
+    .line 32
     new-instance p1, Lcom/iMe/fork/ui/view/ImageRadioCell$imageView$2;
 
     invoke-direct {p1, p0}, Lcom/iMe/fork/ui/view/ImageRadioCell$imageView$2;-><init>(Lcom/iMe/fork/ui/view/ImageRadioCell;)V
@@ -40,7 +40,7 @@
 
     iput-object p1, p0, Lcom/iMe/fork/ui/view/ImageRadioCell;->imageView$delegate:Lkotlin/Lazy;
 
-    .line 31
+    .line 33
     new-instance p1, Lcom/iMe/fork/ui/view/ImageRadioCell$textView$2;
 
     invoke-direct {p1, p0}, Lcom/iMe/fork/ui/view/ImageRadioCell$textView$2;-><init>(Lcom/iMe/fork/ui/view/ImageRadioCell;)V
@@ -51,7 +51,7 @@
 
     iput-object p1, p0, Lcom/iMe/fork/ui/view/ImageRadioCell;->textView$delegate:Lkotlin/Lazy;
 
-    .line 32
+    .line 34
     new-instance p1, Lcom/iMe/fork/ui/view/ImageRadioCell$radioButton$2;
 
     invoke-direct {p1, p0}, Lcom/iMe/fork/ui/view/ImageRadioCell$radioButton$2;-><init>(Lcom/iMe/fork/ui/view/ImageRadioCell;)V
@@ -62,7 +62,7 @@
 
     iput-object p1, p0, Lcom/iMe/fork/ui/view/ImageRadioCell;->radioButton$delegate:Lkotlin/Lazy;
 
-    .line 36
+    .line 38
     invoke-direct {p0}, Lcom/iMe/fork/ui/view/ImageRadioCell;->getImageView()Landroidx/appcompat/widget/AppCompatImageView;
 
     move-result-object p1
@@ -87,7 +87,7 @@
 
     invoke-virtual {p0, p1, p2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 37
+    .line 39
     invoke-direct {p0}, Lcom/iMe/fork/ui/view/ImageRadioCell;->getTextView()Landroid/widget/TextView;
 
     move-result-object p1
@@ -108,7 +108,7 @@
 
     invoke-virtual {p0, p1, p2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 38
+    .line 40
     invoke-direct {p0}, Lcom/iMe/fork/ui/view/ImageRadioCell;->getRadioButton()Lorg/telegram/ui/Components/RadioButton;
 
     move-result-object p1
@@ -150,7 +150,7 @@
 
     const/16 p3, 0x15
 
-    .line 23
+    .line 25
     :cond_1
     invoke-direct {p0, p1, p2, p3}, Lcom/iMe/fork/ui/view/ImageRadioCell;-><init>(Landroid/content/Context;ZI)V
 
@@ -160,7 +160,7 @@
 .method public static final synthetic access$initImageView(Lcom/iMe/fork/ui/view/ImageRadioCell;)Landroidx/appcompat/widget/AppCompatImageView;
     .locals 0
 
-    .line 23
+    .line 25
     invoke-direct {p0}, Lcom/iMe/fork/ui/view/ImageRadioCell;->initImageView()Landroidx/appcompat/widget/AppCompatImageView;
 
     move-result-object p0
@@ -171,7 +171,7 @@
 .method public static final synthetic access$initRadioButton(Lcom/iMe/fork/ui/view/ImageRadioCell;)Lorg/telegram/ui/Components/RadioButton;
     .locals 0
 
-    .line 23
+    .line 25
     invoke-direct {p0}, Lcom/iMe/fork/ui/view/ImageRadioCell;->initRadioButton()Lorg/telegram/ui/Components/RadioButton;
 
     move-result-object p0
@@ -182,7 +182,7 @@
 .method public static final synthetic access$initTextView(Lcom/iMe/fork/ui/view/ImageRadioCell;)Landroid/widget/TextView;
     .locals 0
 
-    .line 23
+    .line 25
     invoke-direct {p0}, Lcom/iMe/fork/ui/view/ImageRadioCell;->initTextView()Landroid/widget/TextView;
 
     move-result-object p0
@@ -193,7 +193,7 @@
 .method private final getImageView()Landroidx/appcompat/widget/AppCompatImageView;
     .locals 1
 
-    .line 30
+    .line 32
     iget-object v0, p0, Lcom/iMe/fork/ui/view/ImageRadioCell;->imageView$delegate:Lkotlin/Lazy;
 
     invoke-interface {v0}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
@@ -208,7 +208,7 @@
 .method private final getRadioButton()Lorg/telegram/ui/Components/RadioButton;
     .locals 1
 
-    .line 32
+    .line 34
     iget-object v0, p0, Lcom/iMe/fork/ui/view/ImageRadioCell;->radioButton$delegate:Lkotlin/Lazy;
 
     invoke-interface {v0}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
@@ -223,7 +223,7 @@
 .method private final getTextView()Landroid/widget/TextView;
     .locals 1
 
-    .line 31
+    .line 33
     iget-object v0, p0, Lcom/iMe/fork/ui/view/ImageRadioCell;->textView$delegate:Lkotlin/Lazy;
 
     invoke-interface {v0}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
@@ -238,7 +238,7 @@
 .method private final initImageView()Landroidx/appcompat/widget/AppCompatImageView;
     .locals 2
 
-    .line 112
+    .line 118
     new-instance v0, Landroidx/appcompat/widget/AppCompatImageView;
 
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
@@ -247,7 +247,7 @@
 
     invoke-direct {v0, v1}, Landroidx/appcompat/widget/AppCompatImageView;-><init>(Landroid/content/Context;)V
 
-    .line 113
+    .line 119
     sget-object v1, Landroid/widget/ImageView$ScaleType;->FIT_CENTER:Landroid/widget/ImageView$ScaleType;
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setScaleType(Landroid/widget/ImageView$ScaleType;)V
@@ -258,7 +258,7 @@
 .method private final initRadioButton()Lorg/telegram/ui/Components/RadioButton;
     .locals 3
 
-    .line 128
+    .line 134
     new-instance v0, Lorg/telegram/ui/Components/RadioButton;
 
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
@@ -269,19 +269,19 @@
 
     const/16 v1, 0x14
 
-    .line 129
+    .line 135
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/RadioButton;->setSize(I)V
 
-    .line 130
+    .line 136
     iget-boolean v1, p0, Lcom/iMe/fork/ui/view/ImageRadioCell;->dialog:Z
 
     if-eqz v1, :cond_0
 
-    .line 131
+    .line 137
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_dialogRadioBackground:I
 
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -298,7 +298,7 @@
 
     goto :goto_0
 
-    .line 133
+    .line 139
     :cond_0
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_radioBackground:I
 
@@ -321,7 +321,7 @@
 .method private final initTextView()Landroid/widget/TextView;
     .locals 3
 
-    .line 116
+    .line 122
     new-instance v0, Landroid/widget/TextView;
 
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
@@ -330,15 +330,15 @@
 
     invoke-direct {v0, v1}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
-    .line 117
+    .line 123
     invoke-static {v0}, Lcom/iMe/utils/extentions/common/ViewExtKt;->singleLine(Landroid/widget/TextView;)V
 
-    .line 118
+    .line 124
     sget-object v1, Landroid/text/TextUtils$TruncateAt;->END:Landroid/text/TextUtils$TruncateAt;
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setEllipsize(Landroid/text/TextUtils$TruncateAt;)V
 
-    .line 119
+    .line 125
     sget-boolean v1, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     if-eqz v1, :cond_0
@@ -359,15 +359,15 @@
 
     const/high16 v2, 0x41800000    # 16.0f
 
-    .line 120
+    .line 126
     invoke-virtual {v0, v1, v2}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 121
+    .line 127
     iget-boolean v1, p0, Lcom/iMe/fork/ui/view/ImageRadioCell;->dialog:Z
 
     if-eqz v1, :cond_1
 
-    .line 122
+    .line 128
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextBlack:I
 
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -378,7 +378,7 @@
 
     goto :goto_1
 
-    .line 124
+    .line 130
     :cond_1
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
 
@@ -397,7 +397,7 @@
 .method public final getDialog()Z
     .locals 1
 
-    .line 25
+    .line 27
     iget-boolean v0, p0, Lcom/iMe/fork/ui/view/ImageRadioCell;->dialog:Z
 
     return v0
@@ -406,7 +406,7 @@
 .method public final isChecked()Z
     .locals 1
 
-    .line 58
+    .line 64
     invoke-direct {p0}, Lcom/iMe/fork/ui/view/ImageRadioCell;->getRadioButton()Lorg/telegram/ui/Components/RadioButton;
 
     move-result-object v0
@@ -425,12 +425,12 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 88
+    .line 94
     iget-boolean v0, p0, Lcom/iMe/fork/ui/view/ImageRadioCell;->needDivider:Z
 
     if-eqz v0, :cond_2
 
-    .line 90
+    .line 96
     sget-boolean v0, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     const/16 v1, 0x14
@@ -451,7 +451,7 @@
     :goto_0
     move v3, v0
 
-    .line 91
+    .line 97
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
 
     move-result v0
@@ -460,7 +460,7 @@
 
     int-to-float v4, v0
 
-    .line 92
+    .line 98
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
     move-result v0
@@ -483,7 +483,7 @@
 
     int-to-float v5, v0
 
-    .line 93
+    .line 99
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
 
     move-result v0
@@ -492,12 +492,12 @@
 
     int-to-float v6, v0
 
-    .line 94
+    .line 100
     sget-object v7, Lorg/telegram/ui/ActionBar/Theme;->dividerPaint:Landroid/graphics/Paint;
 
     move-object v2, p1
 
-    .line 89
+    .line 95
     invoke-virtual/range {v2 .. v7}, Landroid/graphics/Canvas;->drawLine(FFFFLandroid/graphics/Paint;)V
 
     :cond_2
@@ -511,20 +511,20 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 100
+    .line 106
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
 
     const-string v0, "android.widget.RadioButton"
 
-    .line 102
+    .line 108
     invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityNodeInfo;->setClassName(Ljava/lang/CharSequence;)V
 
     const/4 v0, 0x1
 
-    .line 103
+    .line 109
     invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityNodeInfo;->setCheckable(Z)V
 
-    .line 104
+    .line 110
     invoke-virtual {p0}, Lcom/iMe/fork/ui/view/ImageRadioCell;->isChecked()Z
 
     move-result v0
@@ -537,7 +537,7 @@
 .method protected onMeasure(II)V
     .locals 4
 
-    .line 80
+    .line 86
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result p1
@@ -554,7 +554,7 @@
 
     invoke-virtual {p0, p1, p2}, Landroid/widget/FrameLayout;->setMeasuredDimension(II)V
 
-    .line 81
+    .line 87
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
     move-result p1
@@ -579,7 +579,7 @@
 
     sub-int/2addr p1, p2
 
-    .line 82
+    .line 88
     invoke-direct {p0}, Lcom/iMe/fork/ui/view/ImageRadioCell;->getRadioButton()Lorg/telegram/ui/Components/RadioButton;
 
     move-result-object p2
@@ -608,7 +608,7 @@
 
     invoke-virtual {p2, v1, v0}, Landroid/view/View;->measure(II)V
 
-    .line 83
+    .line 89
     invoke-direct {p0}, Lcom/iMe/fork/ui/view/ImageRadioCell;->getImageView()Landroidx/appcompat/widget/AppCompatImageView;
 
     move-result-object p2
@@ -633,7 +633,7 @@
 
     invoke-virtual {p2, v1, v0}, Landroid/widget/ImageView;->measure(II)V
 
-    .line 84
+    .line 90
     invoke-direct {p0}, Lcom/iMe/fork/ui/view/ImageRadioCell;->getTextView()Landroid/widget/TextView;
 
     move-result-object p2
@@ -658,7 +658,7 @@
 .method public final setImage(Ljava/lang/Integer;)V
     .locals 1
 
-    .line 51
+    .line 53
     invoke-direct {p0}, Lcom/iMe/fork/ui/view/ImageRadioCell;->getImageView()Landroidx/appcompat/widget/AppCompatImageView;
 
     move-result-object v0
@@ -674,17 +674,48 @@
     return-void
 .end method
 
+.method public final setImageUrl(Ljava/lang/String;)V
+    .locals 7
+
+    const-string v0, "imageUrl"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 57
+    invoke-direct {p0}, Lcom/iMe/fork/ui/view/ImageRadioCell;->getImageView()Landroidx/appcompat/widget/AppCompatImageView;
+
+    move-result-object v1
+
+    sget v0, Lorg/telegram/messenger/R$drawable;->fork_bg_white_circle:I
+
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v3
+
+    const/4 v4, 0x0
+
+    const/4 v5, 0x4
+
+    const/4 v6, 0x0
+
+    move-object v2, p1
+
+    invoke-static/range {v1 .. v6}, Lcom/iMe/utils/extentions/common/ImageViewExtKt;->loadFrom$default(Landroid/widget/ImageView;Ljava/lang/String;Ljava/lang/Integer;ZILjava/lang/Object;)V
+
+    return-void
+.end method
+
 .method public final setText(Ljava/lang/String;ZZ)V
     .locals 1
 
-    .line 44
+    .line 46
     invoke-direct {p0}, Lcom/iMe/fork/ui/view/ImageRadioCell;->getTextView()Landroid/widget/TextView;
 
     move-result-object v0
 
     invoke-virtual {v0, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 45
+    .line 47
     invoke-direct {p0}, Lcom/iMe/fork/ui/view/ImageRadioCell;->getRadioButton()Lorg/telegram/ui/Components/RadioButton;
 
     move-result-object p1
@@ -693,12 +724,12 @@
 
     invoke-virtual {p1, p2, v0}, Lorg/telegram/ui/Components/RadioButton;->setChecked(ZZ)V
 
-    .line 46
+    .line 48
     iput-boolean p3, p0, Lcom/iMe/fork/ui/view/ImageRadioCell;->needDivider:Z
 
     xor-int/lit8 p1, p3, 0x1
 
-    .line 47
+    .line 49
     invoke-virtual {p0, p1}, Landroid/widget/FrameLayout;->setWillNotDraw(Z)V
 
     return-void
@@ -707,7 +738,7 @@
 .method public final setTextColor(I)V
     .locals 1
 
-    .line 55
+    .line 61
     invoke-direct {p0}, Lcom/iMe/fork/ui/view/ImageRadioCell;->getTextView()Landroid/widget/TextView;
 
     move-result-object v0

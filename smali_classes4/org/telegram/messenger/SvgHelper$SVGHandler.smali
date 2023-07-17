@@ -425,7 +425,7 @@
 
     move-result-object v0
 
-    const-string v1, "round"
+    const-string/jumbo v1, "round"
 
     .line 1180
     invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -1025,7 +1025,7 @@
     goto/16 :goto_0
 
     :sswitch_3
-    const-string v4, "rect"
+    const-string/jumbo v4, "rect"
 
     invoke-virtual {v1, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -1165,7 +1165,7 @@
     move v3, v8
 
     :goto_0
-    const-string v4, "rx"
+    const-string/jumbo v4, "rx"
 
     const-string v5, "cy"
 
@@ -2424,7 +2424,7 @@
 
     move-result-object v4
 
-    const-string v5, "ry"
+    const-string/jumbo v5, "ry"
 
     .line 1397
     invoke-static {v5, v2}, Lorg/telegram/messenger/SvgHelper;->access$700(Ljava/lang/String;Lorg/xml/sax/Attributes;)Ljava/lang/Float;
@@ -2574,6 +2574,8 @@
     :cond_32
     :goto_f
     return-void
+
+    nop
 
     :sswitch_data_0
     .sparse-switch

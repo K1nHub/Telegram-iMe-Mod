@@ -30,14 +30,14 @@
 .method constructor <init>(Lcom/iMe/ui/wallet/actions/send/amount/WalletSendAmountView$$State;Ljava/lang/String;)V
     .locals 1
 
-    .line 334
+    .line 349
     const-class p1, Lmoxy/viewstate/strategy/OneExecutionStateStrategy;
 
     const-string v0, "showSuccessSend"
 
     invoke-direct {p0, v0, p1}, Lmoxy/viewstate/ViewCommand;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
-    .line 336
+    .line 351
     iput-object p2, p0, Lcom/iMe/ui/wallet/actions/send/amount/WalletSendAmountView$$State$ShowSuccessSendCommand;->message:Ljava/lang/String;
 
     return-void
@@ -48,7 +48,7 @@
 .method public apply(Lcom/iMe/ui/wallet/actions/send/amount/WalletSendAmountView;)V
     .locals 1
 
-    .line 341
+    .line 356
     iget-object v0, p0, Lcom/iMe/ui/wallet/actions/send/amount/WalletSendAmountView$$State$ShowSuccessSendCommand;->message:Ljava/lang/String;
 
     invoke-interface {p1, v0}, Lcom/iMe/ui/wallet/actions/send/amount/WalletSendAmountView;->showSuccessSend(Ljava/lang/String;)V
@@ -59,7 +59,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 330
+    .line 345
     check-cast p1, Lcom/iMe/ui/wallet/actions/send/amount/WalletSendAmountView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/wallet/actions/send/amount/WalletSendAmountView$$State$ShowSuccessSendCommand;->apply(Lcom/iMe/ui/wallet/actions/send/amount/WalletSendAmountView;)V

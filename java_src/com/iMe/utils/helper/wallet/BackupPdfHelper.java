@@ -19,7 +19,7 @@ import kotlin.Unit;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.C3295R;
+import org.telegram.messenger.C3417R;
 import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.Utilities;
@@ -37,8 +37,7 @@ public final class BackupPdfHelper {
         Intrinsics.checkNotNullParameter(walletAddress, "walletAddress");
         Intrinsics.checkNotNullParameter(secretWords, "secretWords");
         Intrinsics.checkNotNullParameter(qrBitmap, "qrBitmap");
-        int i = Build.VERSION.SDK_INT;
-        if (i >= 23 && ((i <= 28 || BuildVars.NO_SCOPED_STORAGE) && parentActivity.checkSelfPermission("android.permission.WRITE_EXTERNAL_STORAGE") != 0)) {
+        if ((Build.VERSION.SDK_INT <= 28 || BuildVars.NO_SCOPED_STORAGE) && parentActivity.checkSelfPermission("android.permission.WRITE_EXTERNAL_STORAGE") != 0) {
             parentActivity.requestPermissions(new String[]{"android.permission.WRITE_EXTERNAL_STORAGE"}, 4);
         } else {
             Utilities.stageQueue.postRunnable(new Runnable() { // from class: com.iMe.utils.helper.wallet.BackupPdfHelper$$ExternalSyntheticLambda0
@@ -89,7 +88,7 @@ public final class BackupPdfHelper {
     }
 
     private final void saveAndOpenPdf(PdfDocument pdfDocument, final Activity activity) {
-        Object m1576constructorimpl;
+        Object m1601constructorimpl;
         File checkDirectory = FileLoader.checkDirectory(3);
         String absolutePath = checkDirectory != null ? checkDirectory.getAbsolutePath() : null;
         if (absolutePath == null) {
@@ -99,22 +98,22 @@ public final class BackupPdfHelper {
         try {
             Result.Companion companion = Result.Companion;
             pdfDocument.writeTo(new FileOutputStream(file));
-            m1576constructorimpl = Result.m1576constructorimpl(Unit.INSTANCE);
+            m1601constructorimpl = Result.m1601constructorimpl(Unit.INSTANCE);
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            m1576constructorimpl = Result.m1576constructorimpl(ResultKt.createFailure(th));
+            m1601constructorimpl = Result.m1601constructorimpl(ResultKt.createFailure(th));
         }
-        final Throwable m1577exceptionOrNullimpl = Result.m1577exceptionOrNullimpl(m1576constructorimpl);
-        if (m1577exceptionOrNullimpl != null) {
+        final Throwable m1602exceptionOrNullimpl = Result.m1602exceptionOrNullimpl(m1601constructorimpl);
+        if (m1602exceptionOrNullimpl != null) {
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: com.iMe.utils.helper.wallet.BackupPdfHelper$$ExternalSyntheticLambda2
                 @Override // java.lang.Runnable
                 public final void run() {
-                    BackupPdfHelper.saveAndOpenPdf$lambda$7$lambda$6(m1577exceptionOrNullimpl);
+                    BackupPdfHelper.saveAndOpenPdf$lambda$7$lambda$6(m1602exceptionOrNullimpl);
                 }
             });
         }
-        if (Result.m1579isSuccessimpl(m1576constructorimpl)) {
-            Unit unit = (Unit) m1576constructorimpl;
+        if (Result.m1604isSuccessimpl(m1601constructorimpl)) {
+            Unit unit = (Unit) m1601constructorimpl;
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: com.iMe.utils.helper.wallet.BackupPdfHelper$$ExternalSyntheticLambda1
                 @Override // java.lang.Runnable
                 public final void run() {
@@ -129,7 +128,7 @@ public final class BackupPdfHelper {
         Intrinsics.checkNotNullParameter(it, "$it");
         String message = it.getMessage();
         if (message == null) {
-            message = LocaleController.getString("ErrorOccurred", C3295R.string.ErrorOccurred);
+            message = LocaleController.getString("ErrorOccurred", C3417R.string.ErrorOccurred);
         }
         Intrinsics.checkNotNullExpressionValue(message, "it.message ?: LocaleCont…, R.string.ErrorOccurred)");
         ContextExtKt.toast(message);

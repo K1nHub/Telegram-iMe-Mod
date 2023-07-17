@@ -6,7 +6,7 @@ public class TLRPC$TL_messages_sendScheduledMessages extends TLObject {
     public static int constructor = -1120369398;
 
     /* renamed from: id */
-    public ArrayList<Integer> f1542id = new ArrayList<>();
+    public ArrayList<Integer> f1624id = new ArrayList<>();
     public TLRPC$InputPeer peer;
 
     @Override // org.telegram.tgnet.TLObject
@@ -19,10 +19,10 @@ public class TLRPC$TL_messages_sendScheduledMessages extends TLObject {
         abstractSerializedData.writeInt32(constructor);
         this.peer.serializeToStream(abstractSerializedData);
         abstractSerializedData.writeInt32(481674261);
-        int size = this.f1542id.size();
+        int size = this.f1624id.size();
         abstractSerializedData.writeInt32(size);
         for (int i = 0; i < size; i++) {
-            abstractSerializedData.writeInt32(this.f1542id.get(i).intValue());
+            abstractSerializedData.writeInt32(this.f1624id.get(i).intValue());
         }
     }
 }

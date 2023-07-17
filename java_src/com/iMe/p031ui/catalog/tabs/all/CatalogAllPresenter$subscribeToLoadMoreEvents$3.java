@@ -7,7 +7,7 @@ import kotlin.jvm.internal.Lambda;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: CatalogAllPresenter.kt */
 /* renamed from: com.iMe.ui.catalog.tabs.all.CatalogAllPresenter$subscribeToLoadMoreEvents$3 */
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public final class CatalogAllPresenter$subscribeToLoadMoreEvents$3 extends Lambda implements Function1<Pair<? extends Long, ? extends String>, Unit> {
     final /* synthetic */ CatalogAllPresenter this$0;
 

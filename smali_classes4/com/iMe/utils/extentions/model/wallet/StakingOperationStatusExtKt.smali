@@ -12,7 +12,7 @@
 
 
 # direct methods
-.method public static final colorKey(Lcom/iMe/storage/domain/model/staking/StakingOperationStatus;)I
+.method public static final getColorKey(Lcom/iMe/storage/domain/model/staking/StakingOperationStatus;)I
     .locals 1
 
     const-string v0, "<this>"

@@ -2,7 +2,7 @@ package com.iMe.p031ui.custom;
 
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Lambda;
-import org.telegram.p044ui.ActionBar.Theme;
+import org.telegram.p043ui.ActionBar.Theme;
 /* compiled from: TimeWithClockView.kt */
 /* renamed from: com.iMe.ui.custom.TimeWithClockView$clockWidth$2 */
 /* loaded from: classes3.dex */

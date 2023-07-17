@@ -24,8 +24,6 @@
 
 .field public static final enum ADD_TO_TOPIC:Lcom/iMe/fork/enums/MultiPanelButton;
 
-.field public static final enum BOOKMARKS:Lcom/iMe/fork/enums/MultiPanelButton;
-
 .field public static final enum CACHE:Lcom/iMe/fork/enums/MultiPanelButton;
 
 .field public static final Companion:Lcom/iMe/fork/enums/MultiPanelButton$Companion;
@@ -61,7 +59,7 @@
 .method private static final synthetic $values()[Lcom/iMe/fork/enums/MultiPanelButton;
     .locals 3
 
-    const/16 v0, 0xb
+    const/16 v0, 0xa
 
     new-array v0, v0, [Lcom/iMe/fork/enums/MultiPanelButton;
 
@@ -119,15 +117,9 @@
 
     aput-object v1, v0, v2
 
-    sget-object v1, Lcom/iMe/fork/enums/MultiPanelButton;->BOOKMARKS:Lcom/iMe/fork/enums/MultiPanelButton;
-
-    const/16 v2, 0x9
-
-    aput-object v1, v0, v2
-
     sget-object v1, Lcom/iMe/fork/enums/MultiPanelButton;->PINS:Lcom/iMe/fork/enums/MultiPanelButton;
 
-    const/16 v2, 0xa
+    const/16 v2, 0x9
 
     aput-object v1, v0, v2
 
@@ -377,49 +369,22 @@
     new-instance v0, Lcom/iMe/fork/enums/MultiPanelButton;
 
     .line 61
-    sget v4, Lorg/telegram/messenger/R$drawable;->msg_saved:I
+    sget v4, Lorg/telegram/messenger/R$drawable;->msg_pin:I
 
     .line 62
     sget-object v5, Landroid/graphics/PorterDuff$Mode;->MULTIPLY:Landroid/graphics/PorterDuff$Mode;
 
     .line 63
-    sget v6, Lorg/telegram/messenger/R$string;->chat_bookmarks:I
+    sget v6, Lorg/telegram/messenger/R$string;->multi_panel_settings_button_pins_item_title:I
 
-    const-string v2, "BOOKMARKS"
+    const-string v2, "PINS"
 
     const/16 v3, 0x9
-
-    const/4 v7, 0x1
 
     move-object v1, v0
 
     .line 60
     invoke-direct/range {v1 .. v7}, Lcom/iMe/fork/enums/MultiPanelButton;-><init>(Ljava/lang/String;IILandroid/graphics/PorterDuff$Mode;IZ)V
-
-    sput-object v0, Lcom/iMe/fork/enums/MultiPanelButton;->BOOKMARKS:Lcom/iMe/fork/enums/MultiPanelButton;
-
-    .line 66
-    new-instance v0, Lcom/iMe/fork/enums/MultiPanelButton;
-
-    .line 67
-    sget v11, Lorg/telegram/messenger/R$drawable;->msg_pin:I
-
-    .line 68
-    sget-object v12, Landroid/graphics/PorterDuff$Mode;->MULTIPLY:Landroid/graphics/PorterDuff$Mode;
-
-    .line 69
-    sget v13, Lorg/telegram/messenger/R$string;->multi_panel_settings_button_pins_item_title:I
-
-    const-string v9, "PINS"
-
-    const/16 v10, 0xa
-
-    const/4 v14, 0x0
-
-    move-object v8, v0
-
-    .line 66
-    invoke-direct/range {v8 .. v14}, Lcom/iMe/fork/enums/MultiPanelButton;-><init>(Ljava/lang/String;IILandroid/graphics/PorterDuff$Mode;IZ)V
 
     sput-object v0, Lcom/iMe/fork/enums/MultiPanelButton;->PINS:Lcom/iMe/fork/enums/MultiPanelButton;
 

@@ -11,7 +11,7 @@ import kotlin.LazyKt__LazyJVMKt;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
-import org.telegram.p044ui.Cells.TextCell;
+import org.telegram.p043ui.Cells.TextCell;
 /* compiled from: TextCellWithRightImage.kt */
 /* renamed from: com.iMe.ui.contacts.view.TextCellWithRightImage */
 /* loaded from: classes3.dex */
@@ -50,14 +50,14 @@ public final class TextCellWithRightImage extends TextCell {
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    @Override // org.telegram.p044ui.Cells.TextCell, android.widget.FrameLayout, android.view.View
+    @Override // org.telegram.p043ui.Cells.TextCell, android.widget.FrameLayout, android.view.View
     public void onMeasure(int i, int i2) {
         super.onMeasure(i, i2);
         getRightImage().measure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), Integer.MIN_VALUE), View.MeasureSpec.makeMeasureSpec(this.rightImageHeight, Integer.MIN_VALUE));
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    @Override // org.telegram.p044ui.Cells.TextCell, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.p043ui.Cells.TextCell, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
     public void onLayout(boolean z, int i, int i2, int i3, int i4) {
         super.onLayout(z, i, i2, i3, i4);
         int i5 = i3 - i;

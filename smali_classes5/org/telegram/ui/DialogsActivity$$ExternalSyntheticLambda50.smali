@@ -33,7 +33,7 @@
 
     iget-object v1, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda50;->f$1:Lorg/telegram/ui/Cells/CheckBoxCell;
 
-    invoke-static {v0, v1, p1}, Lorg/telegram/ui/DialogsActivity;->$r8$lambda$mMJmzgN4MOPChGjmmFON3PGbfb8([ZLorg/telegram/ui/Cells/CheckBoxCell;Landroid/view/View;)V
+    invoke-static {v0, v1, p1}, Lorg/telegram/ui/DialogsActivity;->$r8$lambda$X7qea1tZztNIgt8iKukp6x_5QOQ([ZLorg/telegram/ui/Cells/CheckBoxCell;Landroid/view/View;)V
 
     return-void
 .end method

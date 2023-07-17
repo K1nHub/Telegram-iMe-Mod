@@ -60,7 +60,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 75
+    .line 77
     invoke-virtual {p0}, Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocolInfo$Companion$supportedCrossChainExchanges$2;->invoke()Ljava/util/List;
 
     move-result-object v0
@@ -79,7 +79,7 @@
         }
     .end annotation
 
-    .line 75
+    .line 77
     sget-object v0, Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocolInfo$Symbiosis;->INSTANCE:Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocolInfo$Symbiosis;
 
     invoke-static {v0}, Lkotlin/collections/CollectionsKt;->listOf(Ljava/lang/Object;)Ljava/util/List;

@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lcom/iMe/fork/utils/Callbacks$Callback1;
+.implements Landroid/widget/ViewSwitcher$ViewFactory;
 
 
 # instance fields
@@ -22,14 +22,14 @@
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;)V
+.method public final makeView()Landroid/view/View;
     .locals 1
 
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda56;->f$0:Lorg/telegram/ui/PhotoViewer;
 
-    check-cast p1, Ljava/util/ArrayList;
+    invoke-static {v0}, Lorg/telegram/ui/PhotoViewer;->$r8$lambda$exYr-C1fuuR_znpO_YPsHWVnx2M(Lorg/telegram/ui/PhotoViewer;)Landroid/view/View;
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/PhotoViewer;->$r8$lambda$CHDJli6hZ6Qo3Ho4WYMl0wC3RbM(Lorg/telegram/ui/PhotoViewer;Ljava/util/ArrayList;)V
+    move-result-object v0
 
-    return-void
+    return-object v0
 .end method

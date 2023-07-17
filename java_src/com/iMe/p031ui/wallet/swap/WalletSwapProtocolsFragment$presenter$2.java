@@ -4,7 +4,7 @@ import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Lambda;
-import org.koin.p043mp.KoinPlatformTools;
+import org.koin.p042mp.KoinPlatformTools;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: WalletSwapProtocolsFragment.kt */
 /* renamed from: com.iMe.ui.wallet.swap.WalletSwapProtocolsFragment$presenter$2 */
@@ -23,7 +23,7 @@ public final class WalletSwapProtocolsFragment$presenter$2 extends Lambda implem
     @Override // kotlin.jvm.functions.Function0
     public final WalletSwapProtocolsPresenter invoke() {
         Lazy lazy;
-        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new C2368x4e80c69f(this.this$0, null, null));
+        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new C2414x4e80c69f(this.this$0, null, null));
         return (WalletSwapProtocolsPresenter) lazy.getValue();
     }
 }

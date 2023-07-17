@@ -17,6 +17,11 @@ public class WalletRootView$$State extends MvpViewState<WalletRootView> implemen
         BaseView.CC.$default$finishScreen(this);
     }
 
+    @Override // com.iMe.p031ui.base.mvp.base.BaseView
+    public /* synthetic */ void removeSelfFromStackImmediately() {
+        BaseView.CC.$default$removeSelfFromStackImmediately(this);
+    }
+
     @Override // com.iMe.p031ui.wallet.common.WalletRootView
     public void onTabSelected(int i) {
         OnTabSelectedCommand onTabSelectedCommand = new OnTabSelectedCommand(this, i);
@@ -114,16 +119,16 @@ public class WalletRootView$$State extends MvpViewState<WalletRootView> implemen
     public class OnTabSelectedCommand extends ViewCommand<WalletRootView> {
 
         /* renamed from: id */
-        public final int f381id;
+        public final int f454id;
 
         OnTabSelectedCommand(WalletRootView$$State walletRootView$$State, int i) {
             super("onTabSelected", AddToEndSingleStrategy.class);
-            this.f381id = i;
+            this.f454id = i;
         }
 
         @Override // moxy.viewstate.ViewCommand
         public void apply(WalletRootView walletRootView) {
-            walletRootView.onTabSelected(this.f381id);
+            walletRootView.onTabSelected(this.f454id);
         }
     }
 

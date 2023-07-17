@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/Adapters/ContactsAdapter;Lorg/telegram/ui/Cells/EditTextSettingsCell;)V
     .locals 0
 
-    .line 570
+    .line 569
     iput-object p1, p0, Lorg/telegram/ui/Adapters/ContactsAdapter$1;->this$0:Lorg/telegram/ui/Adapters/ContactsAdapter;
 
     iput-object p2, p0, Lorg/telegram/ui/Adapters/ContactsAdapter$1;->val$editTextCell:Lorg/telegram/ui/Cells/EditTextSettingsCell;
@@ -39,7 +39,7 @@
 .method public onTextChanged(Ljava/lang/CharSequence;III)V
     .locals 0
 
-    .line 573
+    .line 572
     iget-object p1, p0, Lorg/telegram/ui/Adapters/ContactsAdapter$1;->this$0:Lorg/telegram/ui/Adapters/ContactsAdapter;
 
     iget-object p2, p0, Lorg/telegram/ui/Adapters/ContactsAdapter$1;->val$editTextCell:Lorg/telegram/ui/Cells/EditTextSettingsCell;

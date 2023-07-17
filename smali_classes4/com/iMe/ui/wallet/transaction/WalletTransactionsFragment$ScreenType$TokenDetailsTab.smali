@@ -28,7 +28,7 @@
 
     const/4 v0, 0x0
 
-    .line 250
+    .line 255
     invoke-direct {p0, v0}, Lcom/iMe/ui/wallet/transaction/WalletTransactionsFragment$ScreenType;-><init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
 
     iput-object p1, p0, Lcom/iMe/ui/wallet/transaction/WalletTransactionsFragment$ScreenType$TokenDetailsTab;->transactionsGroup:Lcom/iMe/model/wallet/details/TransactionsGroup;
@@ -78,7 +78,7 @@
 .method public final getTransactionsGroup()Lcom/iMe/model/wallet/details/TransactionsGroup;
     .locals 1
 
-    .line 250
+    .line 255
     iget-object v0, p0, Lcom/iMe/ui/wallet/transaction/WalletTransactionsFragment$ScreenType$TokenDetailsTab;->transactionsGroup:Lcom/iMe/model/wallet/details/TransactionsGroup;
 
     return-object v0

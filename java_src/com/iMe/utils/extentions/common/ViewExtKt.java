@@ -29,7 +29,8 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.load.model.GlideUrl;
 import com.bumptech.glide.load.model.Headers;
 import com.iMe.fork.utils.Callbacks$Callback;
-import com.iMe.model.wallet.select.SelectableToken;
+import com.iMe.fork.utils.Callbacks$Callback1;
+import com.iMe.storage.domain.model.wallet.token.TokenDetailed;
 import com.iMe.utils.common.DigitsInputFilter;
 import com.iMe.utils.helper.binancepay.BinancePayHelper;
 import java.util.List;
@@ -43,8 +44,8 @@ import kotlin.jvm.internal.Ref$BooleanRef;
 import kotlin.jvm.internal.Ref$LongRef;
 import kotlin.text.StringsKt__StringsKt;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3295R;
-import org.telegram.p044ui.ActionBar.Theme;
+import org.telegram.messenger.C3417R;
+import org.telegram.p043ui.ActionBar.Theme;
 import timber.log.Timber;
 /* compiled from: ViewExt.kt */
 /* loaded from: classes4.dex */
@@ -83,14 +84,10 @@ public final class ViewExtKt {
         view.setPadding(AndroidUtilities.m55dp(horizontalPadding.floatValue()), view.getPaddingTop(), AndroidUtilities.m55dp(horizontalPadding.floatValue()), view.getPaddingBottom());
     }
 
-    public static final void loadImage(ImageView imageView, SelectableToken token) {
+    public static final void loadImage(ImageView imageView, TokenDetailed token) {
         Intrinsics.checkNotNullParameter(imageView, "<this>");
         Intrinsics.checkNotNullParameter(token, "token");
-        if (token instanceof SelectableToken.WithLogoUrl.Binance) {
-            loadImage(imageView, ((SelectableToken.WithLogoUrl.Binance) token).getLogoUrl(), BinancePayHelper.INSTANCE.getRefererHeader());
-        } else if (token instanceof SelectableToken.WithResLogo) {
-            imageView.setImageResource(((SelectableToken.WithResLogo) token).getLogoRes());
-        }
+        loadImage(imageView, token.getAvatarUrl(), BinancePayHelper.INSTANCE.getRefererHeader());
     }
 
     public static final void loadImage(ImageView imageView, String url, final Map<String, String> headers) {
@@ -253,10 +250,10 @@ public final class ViewExtKt {
         }
     }
 
-    public static final void setMixedClickListener(final View view, Function1<? super View, Unit> listener) {
+    public static final void setMixedClickListener(final View view, Callbacks$Callback1<View> listener) {
         Intrinsics.checkNotNullParameter(view, "<this>");
         Intrinsics.checkNotNullParameter(listener, "listener");
-        safeThrottledClick$default(view, 0L, listener, 1, null);
+        safeThrottledClick$default(view, 0L, new ViewExtKt$setMixedClickListener$1(listener), 1, null);
         final Ref$BooleanRef ref$BooleanRef = new Ref$BooleanRef();
         view.setOnTouchListener(new View.OnTouchListener() { // from class: com.iMe.utils.extentions.common.ViewExtKt$$ExternalSyntheticLambda2
             @Override // android.view.View.OnTouchListener
@@ -366,14 +363,14 @@ public final class ViewExtKt {
         }
     }
 
-    public static final void visible(View view, boolean z) {
-        Intrinsics.checkNotNullParameter(view, "<this>");
-        view.setVisibility(z ? 0 : 8);
-    }
-
     public static final void clearText(TextView textView) {
         Intrinsics.checkNotNullParameter(textView, "<this>");
         textView.setText("");
+    }
+
+    public static final void visible(View view, boolean z) {
+        Intrinsics.checkNotNullParameter(view, "<this>");
+        view.setVisibility(z ? 0 : 8);
     }
 
     public static /* synthetic */ void shake$default(View view, boolean z, int i, Object obj) {
@@ -428,9 +425,16 @@ public final class ViewExtKt {
         textView.setLines(1);
     }
 
+    public static /* synthetic */ void limitInputLength$default(EditText editText, int i, int i2, int i3, Object obj) {
+        if ((i3 & 2) != 0) {
+            i2 = 10;
+        }
+        limitInputLength(editText, i, i2);
+    }
+
     public static final void limitInputLength(EditText editText, int i, int i2) {
         Intrinsics.checkNotNullParameter(editText, "<this>");
-        editText.setFilters(new DigitsInputFilter[]{new DigitsInputFilter(i, i2, 0.0d, 4, null)});
+        editText.setFilters(new DigitsInputFilter[]{new DigitsInputFilter(i2, i, 0.0d, 4, null)});
     }
 
     public static final void setAllowDecimals(EditText editText, boolean z) {
@@ -465,7 +469,7 @@ public final class ViewExtKt {
 
     public static final void setGreyShadowBackground(View view, boolean z) {
         Intrinsics.checkNotNullParameter(view, "<this>");
-        view.setBackground(Theme.getThemedDrawable(view.getContext(), z ? C3295R.C3297drawable.greydivider_bottom : C3295R.C3297drawable.greydivider_top, Theme.key_windowBackgroundGrayShadow));
+        view.setBackground(Theme.getThemedDrawable(view.getContext(), z ? C3417R.C3419drawable.greydivider_bottom : C3417R.C3419drawable.greydivider_top, Theme.key_windowBackgroundGrayShadow));
     }
 
     public static final void setScale(View view, float f) {

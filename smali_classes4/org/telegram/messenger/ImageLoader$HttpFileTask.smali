@@ -35,6 +35,8 @@
 
 .field private fileSize:I
 
+.field private final isAppUpdate:Z
+
 .field private lastProgressTime:J
 
 .field private tempFile:Ljava/io/File;
@@ -64,32 +66,57 @@
 .method public constructor <init>(Lorg/telegram/messenger/ImageLoader;Ljava/lang/String;Ljava/io/File;Ljava/lang/String;I)V
     .locals 0
 
-    .line 208
+    .line 215
     iput-object p1, p0, Lorg/telegram/messenger/ImageLoader$HttpFileTask;->this$0:Lorg/telegram/messenger/ImageLoader;
 
     invoke-direct {p0}, Landroid/os/AsyncTask;-><init>()V
 
     const/4 p1, 0x0
 
-    .line 203
+    .line 210
     iput-object p1, p0, Lorg/telegram/messenger/ImageLoader$HttpFileTask;->fileOutputStream:Ljava/io/RandomAccessFile;
 
     const/4 p1, 0x1
 
-    .line 204
+    .line 211
     iput-boolean p1, p0, Lorg/telegram/messenger/ImageLoader$HttpFileTask;->canRetry:Z
 
-    .line 209
+    .line 216
     iput-object p2, p0, Lorg/telegram/messenger/ImageLoader$HttpFileTask;->url:Ljava/lang/String;
 
-    .line 210
+    .line 217
     iput-object p3, p0, Lorg/telegram/messenger/ImageLoader$HttpFileTask;->tempFile:Ljava/io/File;
 
-    .line 211
+    .line 218
     iput-object p4, p0, Lorg/telegram/messenger/ImageLoader$HttpFileTask;->ext:Ljava/lang/String;
 
-    .line 212
+    .line 219
     iput p5, p0, Lorg/telegram/messenger/ImageLoader$HttpFileTask;->currentAccount:I
+
+    .line 220
+    invoke-static {}, Lorg/telegram/messenger/SharedConfig;->isAppUpdateAvailable()Z
+
+    move-result p3
+
+    if-eqz p3, :cond_0
+
+    sget-object p3, Lorg/telegram/messenger/SharedConfig;->pendingAppUpdate:Lorg/telegram/tgnet/TLRPC$TL_help_appUpdate;
+
+    iget-object p3, p3, Lorg/telegram/tgnet/TLRPC$TL_help_appUpdate;->url:Ljava/lang/String;
+
+    invoke-virtual {p3, p2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p2
+
+    if-eqz p2, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    const/4 p1, 0x0
+
+    :goto_0
+    iput-boolean p1, p0, Lorg/telegram/messenger/ImageLoader$HttpFileTask;->isAppUpdate:Z
 
     return-void
 .end method
@@ -98,7 +125,7 @@
     .locals 0
 
     .line 197
-    iget-boolean p0, p0, Lorg/telegram/messenger/ImageLoader$HttpFileTask;->canRetry:Z
+    iget-boolean p0, p0, Lorg/telegram/messenger/ImageLoader$HttpFileTask;->isAppUpdate:Z
 
     return p0
 .end method
@@ -112,7 +139,16 @@
     return-object p0
 .end method
 
-.method static synthetic access$4000(Lorg/telegram/messenger/ImageLoader$HttpFileTask;)Ljava/io/File;
+.method static synthetic access$4000(Lorg/telegram/messenger/ImageLoader$HttpFileTask;)Z
+    .locals 0
+
+    .line 197
+    iget-boolean p0, p0, Lorg/telegram/messenger/ImageLoader$HttpFileTask;->canRetry:Z
+
+    return p0
+.end method
+
+.method static synthetic access$4100(Lorg/telegram/messenger/ImageLoader$HttpFileTask;)Ljava/io/File;
     .locals 0
 
     .line 197
@@ -121,7 +157,7 @@
     return-object p0
 .end method
 
-.method static synthetic access$4100(Lorg/telegram/messenger/ImageLoader$HttpFileTask;)Ljava/lang/String;
+.method static synthetic access$4200(Lorg/telegram/messenger/ImageLoader$HttpFileTask;)Ljava/lang/String;
     .locals 0
 
     .line 197
@@ -130,7 +166,7 @@
     return-object p0
 .end method
 
-.method static synthetic access$4200(Lorg/telegram/messenger/ImageLoader$HttpFileTask;)I
+.method static synthetic access$4300(Lorg/telegram/messenger/ImageLoader$HttpFileTask;)I
     .locals 0
 
     .line 197
@@ -142,40 +178,52 @@
 .method private synthetic lambda$reportProgress$0(JJ)V
     .locals 5
 
-    .line 221
+    .line 229
+    iget-boolean v0, p0, Lorg/telegram/messenger/ImageLoader$HttpFileTask;->isAppUpdate:Z
+
+    if-eqz v0, :cond_0
+
+    invoke-static {}, Lorg/telegram/messenger/NotificationCenter;->getGlobalInstance()Lorg/telegram/messenger/NotificationCenter;
+
+    move-result-object v0
+
+    goto :goto_0
+
+    :cond_0
     iget v0, p0, Lorg/telegram/messenger/ImageLoader$HttpFileTask;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object v0
 
+    :goto_0
     sget v1, Lorg/telegram/messenger/NotificationCenter;->fileLoadProgressChanged:I
 
     const/4 v2, 0x3
 
     new-array v2, v2, [Ljava/lang/Object;
 
-    iget-object v3, p0, Lorg/telegram/messenger/ImageLoader$HttpFileTask;->url:Ljava/lang/String;
+    const/4 v3, 0x0
 
-    const/4 v4, 0x0
+    iget-object v4, p0, Lorg/telegram/messenger/ImageLoader$HttpFileTask;->url:Ljava/lang/String;
 
-    aput-object v3, v2, v4
+    aput-object v4, v2, v3
+
+    const/4 v3, 0x1
 
     invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object p1
 
-    const/4 p2, 0x1
+    aput-object p1, v2, v3
 
-    aput-object p1, v2, p2
+    const/4 p1, 0x2
 
     invoke-static {p3, p4}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    move-result-object p1
+    move-result-object p2
 
-    const/4 p2, 0x2
-
-    aput-object p1, v2, p2
+    aput-object p2, v2, p1
 
     invoke-virtual {v0, v1, v2}, Lorg/telegram/messenger/NotificationCenter;->postNotificationName(I[Ljava/lang/Object;)V
 
@@ -185,7 +233,7 @@
 .method private synthetic lambda$reportProgress$1(JJ)V
     .locals 10
 
-    .line 220
+    .line 228
     iget-object v0, p0, Lorg/telegram/messenger/ImageLoader$HttpFileTask;->this$0:Lorg/telegram/messenger/ImageLoader;
 
     invoke-static {v0}, Lorg/telegram/messenger/ImageLoader;->access$100(Lorg/telegram/messenger/ImageLoader;)Lj$/util/concurrent/ConcurrentHashMap;
@@ -208,7 +256,7 @@
 
     invoke-virtual {v0, v1, v2}, Lj$/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 221
+    .line 229
     new-instance v0, Lorg/telegram/messenger/ImageLoader$HttpFileTask$$ExternalSyntheticLambda1;
 
     move-object v4, v0
@@ -229,7 +277,7 @@
 .method private reportProgress(JJ)V
     .locals 8
 
-    .line 216
+    .line 224
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v0
@@ -238,7 +286,7 @@
 
     if-eqz v2, :cond_0
 
-    .line 217
+    .line 225
     iget-wide v2, p0, Lorg/telegram/messenger/ImageLoader$HttpFileTask;->lastProgressTime:J
 
     const-wide/16 v4, 0x0
@@ -255,11 +303,11 @@
 
     if-gez v2, :cond_1
 
-    .line 218
+    .line 226
     :cond_0
     iput-wide v0, p0, Lorg/telegram/messenger/ImageLoader$HttpFileTask;->lastProgressTime:J
 
-    .line 219
+    .line 227
     sget-object v0, Lorg/telegram/messenger/Utilities;->stageQueue:Lorg/telegram/messenger/DispatchQueue;
 
     new-instance v7, Lorg/telegram/messenger/ImageLoader$HttpFileTask$$ExternalSyntheticLambda0;
@@ -295,7 +343,7 @@
 
     const/4 v3, 0x0
 
-    .line 232
+    .line 240
     :try_start_0
     new-instance v4, Ljava/net/URL;
 
@@ -303,39 +351,39 @@
 
     invoke-direct {v4, v5}, Ljava/net/URL;-><init>(Ljava/lang/String;)V
 
-    .line 233
+    .line 241
     invoke-virtual {v4}, Ljava/net/URL;->openConnection()Ljava/net/URLConnection;
 
     move-result-object v4
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_2
 
-    .line 234
+    .line 242
     :try_start_1
     invoke-virtual {v4, v0, p1}, Ljava/net/URLConnection;->addRequestProperty(Ljava/lang/String;Ljava/lang/String;)V
 
     const/16 v5, 0x1388
 
-    .line 235
+    .line 243
     invoke-virtual {v4, v5}, Ljava/net/URLConnection;->setConnectTimeout(I)V
 
-    .line 236
+    .line 244
     invoke-virtual {v4, v5}, Ljava/net/URLConnection;->setReadTimeout(I)V
 
-    .line 237
+    .line 245
     instance-of v5, v4, Ljava/net/HttpURLConnection;
 
     if-eqz v5, :cond_1
 
-    .line 238
+    .line 246
     move-object v5, v4
 
     check-cast v5, Ljava/net/HttpURLConnection;
 
-    .line 239
+    .line 247
     invoke-virtual {v5, v1}, Ljava/net/HttpURLConnection;->setInstanceFollowRedirects(Z)V
 
-    .line 240
+    .line 248
     invoke-virtual {v5}, Ljava/net/HttpURLConnection;->getResponseCode()I
 
     move-result v6
@@ -355,54 +403,54 @@
     :cond_0
     const-string v6, "Location"
 
-    .line 242
+    .line 250
     invoke-virtual {v5, v6}, Ljava/net/HttpURLConnection;->getHeaderField(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v6
 
     const-string v7, "Set-Cookie"
 
-    .line 243
+    .line 251
     invoke-virtual {v5, v7}, Ljava/net/HttpURLConnection;->getHeaderField(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v5
 
-    .line 244
+    .line 252
     new-instance v7, Ljava/net/URL;
 
     invoke-direct {v7, v6}, Ljava/net/URL;-><init>(Ljava/lang/String;)V
 
-    .line 245
+    .line 253
     invoke-virtual {v7}, Ljava/net/URL;->openConnection()Ljava/net/URLConnection;
 
     move-result-object v4
 
     const-string v6, "Cookie"
 
-    .line 246
+    .line 254
     invoke-virtual {v4, v6, v5}, Ljava/net/URLConnection;->setRequestProperty(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 247
+    .line 255
     invoke-virtual {v4, v0, p1}, Ljava/net/URLConnection;->addRequestProperty(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 250
+    .line 258
     :cond_1
     invoke-virtual {v4}, Ljava/net/URLConnection;->connect()V
 
-    .line 251
+    .line 259
     invoke-virtual {v4}, Ljava/net/URLConnection;->getInputStream()Ljava/io/InputStream;
 
     move-result-object p1
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
-    .line 253
+    .line 261
     :try_start_2
     new-instance v0, Ljava/io/RandomAccessFile;
 
     iget-object v5, p0, Lorg/telegram/messenger/ImageLoader$HttpFileTask;->tempFile:Ljava/io/File;
 
-    const-string v6, "rws"
+    const-string/jumbo v6, "rws"
 
     invoke-direct {v0, v5, v6}, Ljava/io/RandomAccessFile;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
@@ -437,42 +485,42 @@
 
     move-object v4, v0
 
-    .line 255
+    .line 263
     :goto_0
     instance-of v5, p1, Ljava/net/SocketTimeoutException;
 
     if-eqz v5, :cond_2
 
-    .line 256
+    .line 264
     invoke-static {}, Lorg/telegram/messenger/ApplicationLoader;->isNetworkOnline()Z
 
     move-result v5
 
     if-eqz v5, :cond_5
 
-    .line 257
+    .line 265
     iput-boolean v3, p0, Lorg/telegram/messenger/ImageLoader$HttpFileTask;->canRetry:Z
 
     goto :goto_1
 
-    .line 259
+    .line 267
     :cond_2
     instance-of v5, p1, Ljava/net/UnknownHostException;
 
     if-eqz v5, :cond_3
 
-    .line 260
+    .line 268
     iput-boolean v3, p0, Lorg/telegram/messenger/ImageLoader$HttpFileTask;->canRetry:Z
 
     goto :goto_1
 
-    .line 261
+    .line 269
     :cond_3
     instance-of v5, p1, Ljava/net/SocketException;
 
     if-eqz v5, :cond_4
 
-    .line 262
+    .line 270
     invoke-virtual {p1}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
 
     move-result-object v5
@@ -491,40 +539,40 @@
 
     if-eqz v5, :cond_5
 
-    .line 263
+    .line 271
     iput-boolean v3, p0, Lorg/telegram/messenger/ImageLoader$HttpFileTask;->canRetry:Z
 
     goto :goto_1
 
-    .line 265
+    .line 273
     :cond_4
     instance-of v5, p1, Ljava/io/FileNotFoundException;
 
     if-eqz v5, :cond_5
 
-    .line 266
+    .line 274
     iput-boolean v3, p0, Lorg/telegram/messenger/ImageLoader$HttpFileTask;->canRetry:Z
 
-    .line 268
+    .line 276
     :cond_5
     :goto_1
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     move-object p1, v0
 
-    .line 271
+    .line 279
     :goto_2
     iget-boolean v0, p0, Lorg/telegram/messenger/ImageLoader$HttpFileTask;->canRetry:Z
 
     if-eqz v0, :cond_f
 
-    .line 273
+    .line 281
     :try_start_3
     instance-of v0, v4, Ljava/net/HttpURLConnection;
 
     if-eqz v0, :cond_6
 
-    .line 274
+    .line 282
     move-object v0, v4
 
     check-cast v0, Ljava/net/HttpURLConnection;
@@ -545,7 +593,7 @@
 
     if-eq v0, v5, :cond_6
 
-    .line 276
+    .line 284
     iput-boolean v3, p0, Lorg/telegram/messenger/ImageLoader$HttpFileTask;->canRetry:Z
     :try_end_3
     .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_0
@@ -555,14 +603,14 @@
     :catch_0
     move-exception v0
 
-    .line 280
+    .line 288
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :cond_6
     :goto_3
     if-eqz v4, :cond_7
 
-    .line 284
+    .line 292
     :try_start_4
     invoke-virtual {v4}, Ljava/net/URLConnection;->getHeaderFields()Ljava/util/Map;
 
@@ -572,7 +620,7 @@
 
     const-string v4, "content-Length"
 
-    .line 286
+    .line 294
     invoke-interface {v0, v4}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -581,14 +629,14 @@
 
     if-eqz v0, :cond_7
 
-    .line 287
+    .line 295
     invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
 
     move-result v4
 
     if-nez v4, :cond_7
 
-    .line 288
+    .line 296
     invoke-interface {v0, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v0
@@ -597,7 +645,7 @@
 
     if-eqz v0, :cond_7
 
-    .line 290
+    .line 298
     invoke-static {v0}, Lorg/telegram/messenger/Utilities;->parseInt(Ljava/lang/CharSequence;)Ljava/lang/Integer;
 
     move-result-object v0
@@ -615,7 +663,7 @@
     :catch_1
     move-exception v0
 
-    .line 295
+    .line 303
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :cond_7
@@ -629,7 +677,7 @@
 
     move v4, v3
 
-    .line 304
+    .line 312
     :cond_8
     :goto_5
     invoke-virtual {p0}, Landroid/os/AsyncTask;->isCancelled()Z
@@ -642,7 +690,7 @@
 
     goto :goto_6
 
-    .line 308
+    .line 316
     :cond_9
     :try_start_6
     invoke-virtual {p1, v0}, Ljava/io/InputStream;->read([B)I
@@ -651,14 +699,14 @@
 
     if-lez v5, :cond_a
 
-    .line 310
+    .line 318
     iget-object v6, p0, Lorg/telegram/messenger/ImageLoader$HttpFileTask;->fileOutputStream:Ljava/io/RandomAccessFile;
 
     invoke-virtual {v6, v0, v3, v5}, Ljava/io/RandomAccessFile;->write([BII)V
 
     add-int/2addr v4, v5
 
-    .line 312
+    .line 320
     iget v5, p0, Lorg/telegram/messenger/ImageLoader$HttpFileTask;->fileSize:I
 
     if-lez v5, :cond_8
@@ -667,7 +715,7 @@
 
     int-to-long v8, v5
 
-    .line 313
+    .line 321
     invoke-direct {p0, v6, v7, v8, v9}, Lorg/telegram/messenger/ImageLoader$HttpFileTask;->reportProgress(JJ)V
     :try_end_6
     .catch Ljava/lang/Exception; {:try_start_6 .. :try_end_6} :catch_3
@@ -680,7 +728,7 @@
 
     if-ne v5, v0, :cond_b
 
-    .line 317
+    .line 325
     :try_start_7
     iget v0, p0, Lorg/telegram/messenger/ImageLoader$HttpFileTask;->fileSize:I
 
@@ -690,7 +738,7 @@
 
     int-to-long v5, v0
 
-    .line 318
+    .line 326
     invoke-direct {p0, v3, v4, v5, v6}, Lorg/telegram/messenger/ImageLoader$HttpFileTask;->reportProgress(JJ)V
     :try_end_7
     .catch Ljava/lang/Exception; {:try_start_7 .. :try_end_7} :catch_2
@@ -714,7 +762,7 @@
 
     move v1, v3
 
-    .line 325
+    .line 333
     :goto_7
     :try_start_8
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
@@ -733,7 +781,7 @@
 
     move v1, v3
 
-    .line 330
+    .line 338
     :goto_8
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
@@ -741,17 +789,17 @@
     :goto_9
     move v3, v1
 
-    .line 335
+    .line 343
     :cond_d
     :try_start_9
     iget-object v0, p0, Lorg/telegram/messenger/ImageLoader$HttpFileTask;->fileOutputStream:Ljava/io/RandomAccessFile;
 
     if-eqz v0, :cond_e
 
-    .line 336
+    .line 344
     invoke-virtual {v0}, Ljava/io/RandomAccessFile;->close()V
 
-    .line 337
+    .line 345
     iput-object v2, p0, Lorg/telegram/messenger/ImageLoader$HttpFileTask;->fileOutputStream:Ljava/io/RandomAccessFile;
     :try_end_9
     .catchall {:try_start_9 .. :try_end_9} :catchall_5
@@ -761,14 +809,14 @@
     :catchall_5
     move-exception v0
 
-    .line 340
+    .line 348
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :cond_e
     :goto_a
     if-eqz p1, :cond_f
 
-    .line 345
+    .line 353
     :try_start_a
     invoke-virtual {p1}, Ljava/io/InputStream;->close()V
     :try_end_a
@@ -779,10 +827,10 @@
     :catchall_6
     move-exception p1
 
-    .line 348
+    .line 356
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 352
+    .line 360
     :cond_f
     :goto_b
     invoke-static {v3}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
@@ -808,11 +856,21 @@
 .method protected onCancelled()V
     .locals 2
 
-    .line 362
+    .line 370
     iget-object v0, p0, Lorg/telegram/messenger/ImageLoader$HttpFileTask;->this$0:Lorg/telegram/messenger/ImageLoader;
 
+    iget-boolean v1, p0, Lorg/telegram/messenger/ImageLoader$HttpFileTask;->isAppUpdate:Z
+
+    if-eqz v1, :cond_0
+
+    const/4 v1, 0x0
+
+    goto :goto_0
+
+    :cond_0
     const/4 v1, 0x2
 
+    :goto_0
     invoke-static {v0, p0, v1}, Lorg/telegram/messenger/ImageLoader;->access$000(Lorg/telegram/messenger/ImageLoader;Lorg/telegram/messenger/ImageLoader$HttpFileTask;I)V
 
     return-void
@@ -821,7 +879,7 @@
 .method protected onPostExecute(Ljava/lang/Boolean;)V
     .locals 1
 
-    .line 357
+    .line 365
     iget-object v0, p0, Lorg/telegram/messenger/ImageLoader$HttpFileTask;->this$0:Lorg/telegram/messenger/ImageLoader;
 
     invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z

@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/ContentPreviewViewer;)V
     .locals 0
 
-    .line 206
+    .line 205
     iput-object p1, p0, Lorg/telegram/ui/ContentPreviewViewer$1;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -78,7 +78,7 @@
 
     if-ne p2, p1, :cond_0
 
-    .line 210
+    .line 209
     iget-object p1, p0, Lorg/telegram/ui/ContentPreviewViewer$1;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
     invoke-static {p1}, Lorg/telegram/ui/ContentPreviewViewer;->access$000(Lorg/telegram/ui/ContentPreviewViewer;)Z
@@ -87,14 +87,14 @@
 
     if-nez p1, :cond_0
 
-    .line 211
+    .line 210
     iget-object p1, p0, Lorg/telegram/ui/ContentPreviewViewer$1;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
     const/4 p2, 0x1
 
     invoke-static {p1, p2}, Lorg/telegram/ui/ContentPreviewViewer;->access$002(Lorg/telegram/ui/ContentPreviewViewer;Z)Z
 
-    .line 212
+    .line 211
     iget-object v0, p0, Lorg/telegram/ui/ContentPreviewViewer$1;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
     const/4 v1, 0x0

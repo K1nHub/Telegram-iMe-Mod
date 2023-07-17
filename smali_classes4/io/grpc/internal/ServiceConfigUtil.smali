@@ -468,7 +468,7 @@
         }
     .end annotation
 
-    const-string v0, "retryPolicy"
+    const-string/jumbo v0, "retryPolicy"
 
     .line 204
     invoke-static {p0, v0}, Lio/grpc/internal/JsonUtil;->getObject(Ljava/util/Map;Ljava/lang/String;)Ljava/util/Map;
@@ -492,7 +492,7 @@
         }
     .end annotation
 
-    const-string v0, "retryableStatusCodes"
+    const-string/jumbo v0, "retryableStatusCodes"
 
     .line 165
     invoke-static {p0, v0}, Lio/grpc/internal/ServiceConfigUtil;->getListOfStatusCodesAsSet(Ljava/util/Map;Ljava/lang/String;)Ljava/util/Set;
@@ -555,7 +555,7 @@
         }
     .end annotation
 
-    const-string v0, "service"
+    const-string/jumbo v0, "service"
 
     .line 194
     invoke-static {p0, v0}, Lio/grpc/internal/JsonUtil;->getString(Ljava/util/Map;Ljava/lang/String;)Ljava/lang/String;
@@ -788,7 +788,7 @@
     return-object v0
 
     :cond_0
-    const-string v1, "retryThrottling"
+    const-string/jumbo v1, "retryThrottling"
 
     .line 96
     invoke-static {p0, v1}, Lio/grpc/internal/JsonUtil;->getObject(Ljava/util/Map;Ljava/lang/String;)Ljava/util/Map;

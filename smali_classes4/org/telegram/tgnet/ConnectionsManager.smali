@@ -2455,7 +2455,7 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v2, "send request "
+    const-string/jumbo v2, "send request "
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -2960,7 +2960,7 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v2, "selected ip strategy "
+    const-string/jumbo v2, "selected ip strategy "
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -4184,7 +4184,7 @@
 
     if-eqz p1, :cond_7
 
-    const-string p1, "reset app pause time"
+    const-string/jumbo p1, "reset app pause time"
 
     .line 579
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V

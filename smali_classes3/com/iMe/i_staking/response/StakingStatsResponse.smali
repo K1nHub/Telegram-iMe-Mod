@@ -11,11 +11,7 @@
 
 # direct methods
 .method public constructor <init>(ZLcom/iMe/i_staking/response/StakingValuesResponse;)V
-    .locals 1
-
-    const-string v0, "debt"
-
-    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    .locals 0
 
     .line 3
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -73,10 +69,6 @@
 
 .method public final copy(ZLcom/iMe/i_staking/response/StakingValuesResponse;)Lcom/iMe/i_staking/response/StakingStatsResponse;
     .locals 1
-
-    const-string v0, "debt"
-
-    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     new-instance v0, Lcom/iMe/i_staking/response/StakingStatsResponse;
 
@@ -163,10 +155,18 @@
 
     iget-object v1, p0, Lcom/iMe/i_staking/response/StakingStatsResponse;->debt:Lcom/iMe/i_staking/response/StakingValuesResponse;
 
+    if-nez v1, :cond_1
+
+    const/4 v1, 0x0
+
+    goto :goto_0
+
+    :cond_1
     invoke-virtual {v1}, Lcom/iMe/i_staking/response/StakingValuesResponse;->hashCode()I
 
     move-result v1
 
+    :goto_0
     add-int/2addr v0, v1
 
     return v0

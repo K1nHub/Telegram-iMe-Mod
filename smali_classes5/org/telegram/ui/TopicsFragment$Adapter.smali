@@ -22,7 +22,7 @@
 .method private constructor <init>(Lorg/telegram/ui/TopicsFragment;)V
     .locals 0
 
-    .line 2727
+    .line 2730
     iput-object p1, p0, Lorg/telegram/ui/TopicsFragment$Adapter;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     invoke-direct {p0}, Lorg/telegram/ui/Components/ListView/AdapterWithDiffUtils;-><init>()V
@@ -33,7 +33,7 @@
 .method synthetic constructor <init>(Lorg/telegram/ui/TopicsFragment;Lorg/telegram/ui/TopicsFragment$1;)V
     .locals 0
 
-    .line 2727
+    .line 2730
     invoke-direct {p0, p1}, Lorg/telegram/ui/TopicsFragment$Adapter;-><init>(Lorg/telegram/ui/TopicsFragment;)V
 
     return-void
@@ -52,7 +52,7 @@
         }
     .end annotation
 
-    .line 2738
+    .line 2741
     iget-object v0, p0, Lorg/telegram/ui/TopicsFragment$Adapter;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     invoke-static {v0}, Lorg/telegram/ui/TopicsFragment;->access$4600(Lorg/telegram/ui/TopicsFragment;)Z
@@ -81,7 +81,7 @@
 .method public getItemCount()I
     .locals 1
 
-    .line 2829
+    .line 2832
     invoke-virtual {p0}, Lorg/telegram/ui/TopicsFragment$Adapter;->getArray()Ljava/util/ArrayList;
 
     move-result-object v0
@@ -98,7 +98,7 @@
 .method public getItemViewType(I)I
     .locals 1
 
-    .line 2731
+    .line 2734
     invoke-virtual {p0}, Lorg/telegram/ui/TopicsFragment$Adapter;->getItemCount()I
 
     move-result v0
@@ -111,7 +111,7 @@
 
     return p1
 
-    .line 2734
+    .line 2737
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/TopicsFragment$Adapter;->this$0:Lorg/telegram/ui/TopicsFragment;
 
@@ -131,7 +131,7 @@
 .method public isEnabled(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;)Z
     .locals 0
 
-    .line 2834
+    .line 2837
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getItemViewType()I
 
     move-result p1
@@ -152,7 +152,7 @@
 .method public notifyDataSetChanged()V
     .locals 2
 
-    .line 2851
+    .line 2854
     iget-object v0, p0, Lorg/telegram/ui/TopicsFragment$Adapter;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     invoke-virtual {p0}, Lorg/telegram/ui/TopicsFragment$Adapter;->getItemCount()I
@@ -161,7 +161,7 @@
 
     invoke-static {v0, v1}, Lorg/telegram/ui/TopicsFragment;->access$4502(Lorg/telegram/ui/TopicsFragment;I)I
 
-    .line 2852
+    .line 2855
     invoke-super {p0}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyDataSetChanged()V
 
     return-void
@@ -170,14 +170,14 @@
 .method public onBindViewHolder(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;I)V
     .locals 13
 
-    .line 2798
+    .line 2801
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getItemViewType()I
 
     move-result v0
 
     if-nez v0, :cond_a
 
-    .line 2799
+    .line 2802
     invoke-virtual {p0}, Lorg/telegram/ui/TopicsFragment$Adapter;->getArray()Ljava/util/ArrayList;
 
     move-result-object v0
@@ -194,7 +194,7 @@
 
     add-int/lit8 v2, p2, 0x1
 
-    .line 2801
+    .line 2804
     invoke-virtual {p0}, Lorg/telegram/ui/TopicsFragment$Adapter;->getArray()Ljava/util/ArrayList;
 
     move-result-object v3
@@ -205,7 +205,7 @@
 
     if-ge v2, v3, :cond_0
 
-    .line 2802
+    .line 2805
     invoke-virtual {p0}, Lorg/telegram/ui/TopicsFragment$Adapter;->getArray()Ljava/util/ArrayList;
 
     move-result-object v1
@@ -221,15 +221,15 @@
     :cond_0
     move-object v8, v1
 
-    .line 2804
+    .line 2807
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/TopicsFragment$TopicDialogCell;
 
-    .line 2806
+    .line 2809
     iget-object v1, v0, Lorg/telegram/tgnet/TLRPC$TL_forumTopic;->topMessage:Lorg/telegram/tgnet/TLRPC$Message;
 
-    .line 2807
+    .line 2810
     iget-object v2, p1, Lorg/telegram/ui/Cells/DialogCell;->forumTopic:Lorg/telegram/tgnet/TLRPC$TL_forumTopic;
 
     const/4 v9, 0x0
@@ -243,7 +243,7 @@
     :cond_1
     iget v2, v2, Lorg/telegram/tgnet/TLRPC$TL_forumTopic;->id:I
 
-    .line 2808
+    .line 2811
     :goto_0
     iget v10, v0, Lorg/telegram/tgnet/TLRPC$TL_forumTopic;->id:I
 
@@ -251,7 +251,7 @@
 
     if-ne v2, v10, :cond_2
 
-    .line 2809
+    .line 2812
     iget v2, p1, Lorg/telegram/ui/TopicsFragment$TopicDialogCell;->position:I
 
     if-ne v2, p2, :cond_2
@@ -272,7 +272,7 @@
     :goto_1
     if-eqz v1, :cond_8
 
-    .line 2811
+    .line 2814
     new-instance v5, Lorg/telegram/messenger/MessageObject;
 
     iget-object v2, p0, Lorg/telegram/ui/TopicsFragment$Adapter;->this$0:Lorg/telegram/ui/TopicsFragment;
@@ -283,7 +283,7 @@
 
     invoke-direct {v5, v2, v1, v9, v9}, Lorg/telegram/messenger/MessageObject;-><init>(ILorg/telegram/tgnet/TLRPC$Message;ZZ)V
 
-    .line 2812
+    .line 2815
     iget-object v1, p0, Lorg/telegram/ui/TopicsFragment$Adapter;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     iget-wide v2, v1, Lorg/telegram/ui/TopicsFragment;->chatId:J
@@ -302,7 +302,7 @@
 
     invoke-virtual/range {v1 .. v7}, Lorg/telegram/ui/Cells/DialogCell;->setForumTopic(Lorg/telegram/tgnet/TLRPC$TL_forumTopic;JLorg/telegram/messenger/MessageObject;ZZ)V
 
-    .line 2813
+    .line 2816
     iget-object v1, p0, Lorg/telegram/ui/TopicsFragment$Adapter;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     iget-object v1, v1, Lorg/telegram/ui/TopicsFragment;->forumTopics:Ljava/util/ArrayList;
@@ -341,7 +341,7 @@
     :goto_3
     iput-boolean v1, p1, Lorg/telegram/ui/TopicsFragment$TopicDialogCell;->drawDivider:Z
 
-    .line 2814
+    .line 2817
     iget-boolean v1, v0, Lorg/telegram/tgnet/TLRPC$TL_forumTopic;->pinned:Z
 
     if-eqz v1, :cond_6
@@ -365,7 +365,7 @@
 
     if-eqz v1, :cond_7
 
-    .line 2815
+    .line 2818
     iget-boolean v1, v0, Lorg/telegram/tgnet/TLRPC$TL_forumTopic;->hidden:Z
 
     if-nez v1, :cond_7
@@ -380,14 +380,14 @@
     :goto_5
     invoke-virtual {p1, v1}, Lorg/telegram/ui/Cells/DialogCell;->setPinForced(Z)V
 
-    .line 2816
+    .line 2819
     iput p2, p1, Lorg/telegram/ui/TopicsFragment$TopicDialogCell;->position:I
 
-    .line 2819
+    .line 2822
     :cond_8
     invoke-virtual {p1, v0}, Lorg/telegram/ui/TopicsFragment$TopicDialogCell;->setTopicIcon(Lorg/telegram/tgnet/TLRPC$TL_forumTopic;)V
 
-    .line 2821
+    .line 2824
     iget-object p2, p0, Lorg/telegram/ui/TopicsFragment$Adapter;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     iget-object p2, p2, Lorg/telegram/ui/TopicsFragment;->selectedTopics:Ljava/util/HashSet;
@@ -402,7 +402,7 @@
 
     invoke-virtual {p1, p2, v12}, Lorg/telegram/ui/Cells/DialogCell;->setChecked(ZZ)V
 
-    .line 2822
+    .line 2825
     iget-object p2, p0, Lorg/telegram/ui/TopicsFragment$Adapter;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     invoke-static {p2}, Lorg/telegram/ui/TopicsFragment;->access$7100(Lorg/telegram/ui/TopicsFragment;)I
@@ -416,7 +416,7 @@
     :cond_9
     invoke-virtual {p1, v9}, Lorg/telegram/ui/Cells/DialogCell;->setDialogSelected(Z)V
 
-    .line 2823
+    .line 2826
     iget-object p2, p0, Lorg/telegram/ui/TopicsFragment$Adapter;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     invoke-static {p2}, Lorg/telegram/ui/TopicsFragment;->access$7200(Lorg/telegram/ui/TopicsFragment;)Z
@@ -434,7 +434,7 @@
 
     if-nez p2, :cond_0
 
-    .line 2745
+    .line 2748
     new-instance p2, Lorg/telegram/ui/TopicsFragment$TopicDialogCell;
 
     iget-object v1, p0, Lorg/telegram/ui/TopicsFragment$Adapter;->this$0:Lorg/telegram/ui/TopicsFragment;
@@ -453,12 +453,12 @@
 
     invoke-direct/range {v0 .. v5}, Lorg/telegram/ui/TopicsFragment$TopicDialogCell;-><init>(Lorg/telegram/ui/TopicsFragment;Lorg/telegram/ui/DialogsActivity;Landroid/content/Context;ZZ)V
 
-    .line 2746
+    .line 2749
     sget-boolean p1, Lorg/telegram/messenger/SharedConfig;->isDialogsCompactModeEnabled:Z
 
     invoke-virtual {p2, p1}, Lorg/telegram/ui/Cells/DialogCell;->setCompactMode(Z)V
 
-    .line 2747
+    .line 2750
     iget-object p1, p0, Lorg/telegram/ui/TopicsFragment$Adapter;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     invoke-static {p1}, Lorg/telegram/ui/TopicsFragment;->access$6900(Lorg/telegram/ui/TopicsFragment;)Z
@@ -467,7 +467,7 @@
 
     iput-boolean p1, p2, Lorg/telegram/ui/Cells/DialogCell;->inPreviewMode:Z
 
-    .line 2748
+    .line 2751
     iget-object p1, p0, Lorg/telegram/ui/TopicsFragment$Adapter;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     invoke-static {p1}, Lorg/telegram/ui/TopicsFragment;->access$3200(Lorg/telegram/ui/TopicsFragment;)Lorg/telegram/ui/Components/PullForegroundDrawable;
@@ -476,7 +476,7 @@
 
     invoke-virtual {p2, p1}, Lorg/telegram/ui/Cells/DialogCell;->setArchivedPullAnimation(Lorg/telegram/ui/Components/PullForegroundDrawable;)V
 
-    .line 2749
+    .line 2752
     new-instance p1, Lorg/telegram/ui/Components/RecyclerListView$Holder;
 
     invoke-direct {p1, p2}, Lorg/telegram/ui/Components/RecyclerListView$Holder;-><init>(Landroid/view/View;)V
@@ -488,7 +488,7 @@
 
     if-ne p2, v0, :cond_1
 
-    .line 2751
+    .line 2754
     new-instance p1, Lorg/telegram/ui/Components/RecyclerListView$Holder;
 
     iget-object p2, p0, Lorg/telegram/ui/TopicsFragment$Adapter;->this$0:Lorg/telegram/ui/TopicsFragment;
@@ -511,7 +511,7 @@
 
     return-object p1
 
-    .line 2788
+    .line 2791
     :cond_1
     new-instance p2, Lorg/telegram/ui/Components/FlickerLoadingView;
 
@@ -523,18 +523,18 @@
 
     const/16 p1, 0x18
 
-    .line 2789
+    .line 2792
     invoke-virtual {p2, p1}, Lorg/telegram/ui/Components/FlickerLoadingView;->setViewType(I)V
 
     const/4 p1, 0x1
 
-    .line 2790
+    .line 2793
     invoke-virtual {p2, p1}, Lorg/telegram/ui/Components/FlickerLoadingView;->setIsSingleCell(Z)V
 
-    .line 2791
+    .line 2794
     invoke-virtual {p2, p1}, Lorg/telegram/ui/Components/FlickerLoadingView;->showDate(Z)V
 
-    .line 2792
+    .line 2795
     new-instance p1, Lorg/telegram/ui/Components/RecyclerListView$Holder;
 
     invoke-direct {p1, p2}, Lorg/telegram/ui/Components/RecyclerListView$Holder;-><init>(Landroid/view/View;)V
@@ -545,7 +545,7 @@
 .method public swapElements(II)V
     .locals 2
 
-    .line 2838
+    .line 2841
     iget-object v0, p0, Lorg/telegram/ui/TopicsFragment$Adapter;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     invoke-static {v0}, Lorg/telegram/ui/TopicsFragment;->access$4600(Lorg/telegram/ui/TopicsFragment;)Z
@@ -556,7 +556,7 @@
 
     return-void
 
-    .line 2842
+    .line 2845
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/TopicsFragment$Adapter;->this$0:Lorg/telegram/ui/TopicsFragment;
 
@@ -570,7 +570,7 @@
 
     invoke-virtual {v0, p2, v1}, Ljava/util/ArrayList;->add(ILjava/lang/Object;)V
 
-    .line 2843
+    .line 2846
     iget-object v0, p0, Lorg/telegram/ui/TopicsFragment$Adapter;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     invoke-static {v0}, Lorg/telegram/ui/TopicsFragment;->access$1100(Lorg/telegram/ui/TopicsFragment;)Lorg/telegram/ui/TopicsFragment$TopicsRecyclerView;
@@ -589,7 +589,7 @@
 
     if-eq v0, v1, :cond_1
 
-    .line 2844
+    .line 2847
     iget-object v0, p0, Lorg/telegram/ui/TopicsFragment$Adapter;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     invoke-static {v0}, Lorg/telegram/ui/TopicsFragment;->access$1100(Lorg/telegram/ui/TopicsFragment;)Lorg/telegram/ui/TopicsFragment$TopicsRecyclerView;
@@ -604,7 +604,7 @@
 
     invoke-virtual {v0, v1}, Landroidx/recyclerview/widget/RecyclerView;->setItemAnimator(Landroidx/recyclerview/widget/RecyclerView$ItemAnimator;)V
 
-    .line 2846
+    .line 2849
     :cond_1
     invoke-virtual {p0, p1, p2}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyItemMoved(II)V
 

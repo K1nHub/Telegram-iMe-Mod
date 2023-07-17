@@ -7,8 +7,8 @@ import android.widget.FrameLayout;
 import androidx.appcompat.widget.AppCompatImageView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
-import org.telegram.messenger.C3295R;
-import org.telegram.p044ui.Components.PasscodeView;
+import org.telegram.messenger.C3417R;
+import org.telegram.p043ui.Components.PasscodeView;
 /* loaded from: classes4.dex */
 public final class ForkFragmentWalletEthEnterPinBinding implements ViewBinding {
     public final AppCompatImageView imageBack;
@@ -31,7 +31,7 @@ public final class ForkFragmentWalletEthEnterPinBinding implements ViewBinding {
     }
 
     public static ForkFragmentWalletEthEnterPinBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3295R.layout.fork_fragment_wallet_eth_enter_pin, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3417R.layout.fork_fragment_wallet_eth_enter_pin, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -39,10 +39,10 @@ public final class ForkFragmentWalletEthEnterPinBinding implements ViewBinding {
     }
 
     public static ForkFragmentWalletEthEnterPinBinding bind(View view) {
-        int i = C3295R.C3298id.image_back;
+        int i = C3417R.C3420id.image_back;
         AppCompatImageView appCompatImageView = (AppCompatImageView) ViewBindings.findChildViewById(view, i);
         if (appCompatImageView != null) {
-            i = C3295R.C3298id.passcode_view;
+            i = C3417R.C3420id.passcode_view;
             PasscodeView passcodeView = (PasscodeView) ViewBindings.findChildViewById(view, i);
             if (passcodeView != null) {
                 return new ForkFragmentWalletEthEnterPinBinding((FrameLayout) view, appCompatImageView, passcodeView);

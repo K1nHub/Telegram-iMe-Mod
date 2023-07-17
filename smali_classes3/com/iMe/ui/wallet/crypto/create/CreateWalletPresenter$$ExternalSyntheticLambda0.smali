@@ -2,34 +2,38 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lio/reactivex/functions/Function;
+.implements Lcom/iMe/fork/utils/Callbacks$Callback1;
 
 
 # instance fields
-.field public final synthetic f$0:Lkotlin/jvm/functions/Function1;
+.field public final synthetic f$0:Lcom/iMe/ui/wallet/crypto/create/CreateWalletView;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lkotlin/jvm/functions/Function1;)V
+.method public synthetic constructor <init>(Lcom/iMe/ui/wallet/crypto/create/CreateWalletView;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter$$ExternalSyntheticLambda0;->f$0:Lkotlin/jvm/functions/Function1;
+    iput-object p1, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter$$ExternalSyntheticLambda0;->f$0:Lcom/iMe/ui/wallet/crypto/create/CreateWalletView;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final apply(Ljava/lang/Object;)Ljava/lang/Object;
+.method public final invoke(Ljava/lang/Object;)V
     .locals 1
 
-    iget-object v0, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter$$ExternalSyntheticLambda0;->f$0:Lkotlin/jvm/functions/Function1;
+    iget-object v0, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter$$ExternalSyntheticLambda0;->f$0:Lcom/iMe/ui/wallet/crypto/create/CreateWalletView;
 
-    invoke-static {v0, p1}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter;->$r8$lambda$cl3zsLjp_R5vOzCdBVkvcgchiFg(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lio/reactivex/ObservableSource;
+    check-cast p1, Ljava/lang/Boolean;
 
-    move-result-object p1
+    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
 
-    return-object p1
+    move-result p1
+
+    invoke-interface {v0, p1}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletView;->updateLoadingState(Z)V
+
+    return-void
 .end method

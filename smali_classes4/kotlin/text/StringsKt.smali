@@ -463,16 +463,6 @@
     return-object p0
 .end method
 
-.method public static bridge synthetic toFloatOrNull(Ljava/lang/String;)Ljava/lang/Float;
-    .locals 0
-
-    invoke-static {p0}, Lkotlin/text/StringsKt__StringNumberConversionsJVMKt;->toFloatOrNull(Ljava/lang/String;)Ljava/lang/Float;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
 .method public static bridge synthetic toIntOrNull(Ljava/lang/String;)Ljava/lang/Integer;
     .locals 0
 

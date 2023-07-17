@@ -27,7 +27,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nDatabaseModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DatabaseModule.kt\ncom/iMe/storage/data/di/module/DatabaseModuleKt$databaseModule$1\n+ 2 Module.kt\norg/koin/core/module/Module\n+ 3 Module.kt\norg/koin/core/module/ModuleKt\n+ 4 BeanDefinition.kt\norg/koin/core/definition/BeanDefinitionKt\n*L\n1#1,44:1\n103#2,6:45\n109#2,5:72\n103#2,6:77\n109#2,5:104\n103#2,6:109\n109#2,5:136\n103#2,6:141\n109#2,5:168\n103#2,6:173\n109#2,5:200\n103#2,6:205\n109#2,5:232\n103#2,6:237\n109#2,5:264\n103#2,6:269\n109#2,5:296\n103#2,6:301\n109#2,5:328\n103#2,6:333\n109#2,5:360\n103#2,6:365\n109#2,5:392\n103#2,6:397\n109#2,5:424\n103#2,6:429\n109#2,5:456\n103#2,6:461\n109#2,5:488\n103#2,6:493\n109#2,5:520\n103#2,6:525\n109#2,5:552\n201#3,6:51\n207#3:71\n201#3,6:83\n207#3:103\n201#3,6:115\n207#3:135\n201#3,6:147\n207#3:167\n201#3,6:179\n207#3:199\n201#3,6:211\n207#3:231\n201#3,6:243\n207#3:263\n201#3,6:275\n207#3:295\n201#3,6:307\n207#3:327\n201#3,6:339\n207#3:359\n201#3,6:371\n207#3:391\n201#3,6:403\n207#3:423\n201#3,6:435\n207#3:455\n201#3,6:467\n207#3:487\n201#3,6:499\n207#3:519\n201#3,6:531\n207#3:551\n105#4,14:57\n105#4,14:89\n105#4,14:121\n105#4,14:153\n105#4,14:185\n105#4,14:217\n105#4,14:249\n105#4,14:281\n105#4,14:313\n105#4,14:345\n105#4,14:377\n105#4,14:409\n105#4,14:441\n105#4,14:473\n105#4,14:505\n105#4,14:537\n*S KotlinDebug\n*F\n+ 1 DatabaseModule.kt\ncom/iMe/storage/data/di/module/DatabaseModuleKt$databaseModule$1\n*L\n17#1:45,6\n17#1:72,5\n18#1:77,6\n18#1:104,5\n21#1:109,6\n21#1:136,5\n22#1:141,6\n22#1:168,5\n23#1:173,6\n23#1:200,5\n24#1:205,6\n24#1:232,5\n25#1:237,6\n25#1:264,5\n26#1:269,6\n26#1:296,5\n27#1:301,6\n27#1:328,5\n28#1:333,6\n28#1:360,5\n29#1:365,6\n29#1:392,5\n30#1:397,6\n30#1:424,5\n31#1:429,6\n31#1:456,5\n32#1:461,6\n32#1:488,5\n33#1:493,6\n33#1:520,5\n34#1:525,6\n34#1:552,5\n17#1:51,6\n17#1:71\n18#1:83,6\n18#1:103\n21#1:115,6\n21#1:135\n22#1:147,6\n22#1:167\n23#1:179,6\n23#1:199\n24#1:211,6\n24#1:231\n25#1:243,6\n25#1:263\n26#1:275,6\n26#1:295\n27#1:307,6\n27#1:327\n28#1:339,6\n28#1:359\n29#1:371,6\n29#1:391\n30#1:403,6\n30#1:423\n31#1:435,6\n31#1:455\n32#1:467,6\n32#1:487\n33#1:499,6\n33#1:519\n34#1:531,6\n34#1:551\n17#1:57,14\n18#1:89,14\n21#1:121,14\n22#1:153,14\n23#1:185,14\n24#1:217,14\n25#1:249,14\n26#1:281,14\n27#1:313,14\n28#1:345,14\n29#1:377,14\n30#1:409,14\n31#1:441,14\n32#1:473,14\n33#1:505,14\n34#1:537,14\n*E\n"
+    value = "SMAP\nDatabaseModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DatabaseModule.kt\ncom/iMe/storage/data/di/module/DatabaseModuleKt$databaseModule$1\n+ 2 Module.kt\norg/koin/core/module/Module\n+ 3 Module.kt\norg/koin/core/module/ModuleKt\n+ 4 BeanDefinition.kt\norg/koin/core/definition/BeanDefinitionKt\n*L\n1#1,40:1\n103#2,6:41\n109#2,5:68\n103#2,6:73\n109#2,5:100\n103#2,6:105\n109#2,5:132\n103#2,6:137\n109#2,5:164\n103#2,6:169\n109#2,5:196\n103#2,6:201\n109#2,5:228\n103#2,6:233\n109#2,5:260\n103#2,6:265\n109#2,5:292\n103#2,6:297\n109#2,5:324\n103#2,6:329\n109#2,5:356\n103#2,6:361\n109#2,5:388\n103#2,6:393\n109#2,5:420\n103#2,6:425\n109#2,5:452\n103#2,6:457\n109#2,5:484\n103#2,6:489\n109#2,5:516\n201#3,6:47\n207#3:67\n201#3,6:79\n207#3:99\n201#3,6:111\n207#3:131\n201#3,6:143\n207#3:163\n201#3,6:175\n207#3:195\n201#3,6:207\n207#3:227\n201#3,6:239\n207#3:259\n201#3,6:271\n207#3:291\n201#3,6:303\n207#3:323\n201#3,6:335\n207#3:355\n201#3,6:367\n207#3:387\n201#3,6:399\n207#3:419\n201#3,6:431\n207#3:451\n201#3,6:463\n207#3:483\n201#3,6:495\n207#3:515\n105#4,14:53\n105#4,14:85\n105#4,14:117\n105#4,14:149\n105#4,14:181\n105#4,14:213\n105#4,14:245\n105#4,14:277\n105#4,14:309\n105#4,14:341\n105#4,14:373\n105#4,14:405\n105#4,14:437\n105#4,14:469\n105#4,14:501\n*S KotlinDebug\n*F\n+ 1 DatabaseModule.kt\ncom/iMe/storage/data/di/module/DatabaseModuleKt$databaseModule$1\n*L\n17#1:41,6\n17#1:68,5\n18#1:73,6\n18#1:100,5\n21#1:105,6\n21#1:132,5\n22#1:137,6\n22#1:164,5\n23#1:169,6\n23#1:196,5\n24#1:201,6\n24#1:228,5\n25#1:233,6\n25#1:260,5\n26#1:265,6\n26#1:292,5\n27#1:297,6\n27#1:324,5\n28#1:329,6\n28#1:356,5\n29#1:361,6\n29#1:388,5\n30#1:393,6\n30#1:420,5\n31#1:425,6\n31#1:452,5\n32#1:457,6\n32#1:484,5\n33#1:489,6\n33#1:516,5\n17#1:47,6\n17#1:67\n18#1:79,6\n18#1:99\n21#1:111,6\n21#1:131\n22#1:143,6\n22#1:163\n23#1:175,6\n23#1:195\n24#1:207,6\n24#1:227\n25#1:239,6\n25#1:259\n26#1:271,6\n26#1:291\n27#1:303,6\n27#1:323\n28#1:335,6\n28#1:355\n29#1:367,6\n29#1:387\n30#1:399,6\n30#1:419\n31#1:431,6\n31#1:451\n32#1:463,6\n32#1:483\n33#1:495,6\n33#1:515\n17#1:53,14\n18#1:85,14\n21#1:117,14\n22#1:149,14\n23#1:181,14\n24#1:213,14\n25#1:245,14\n26#1:277,14\n27#1:309,14\n28#1:341,14\n29#1:373,14\n30#1:405,14\n31#1:437,14\n32#1:469,14\n33#1:501,14\n*E\n"
 .end annotation
 
 
@@ -608,7 +608,7 @@
     new-instance v1, Lorg/koin/core/definition/BeanDefinition;
 
     .line 113
-    const-class v2, Lcom/iMe/storage/data/locale/db/dao/main/BookmarksDao;
+    const-class v2, Lcom/iMe/storage/data/locale/db/dao/main/PlaylistsDao;
 
     invoke-static {v2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
 
@@ -664,7 +664,7 @@
     new-instance v1, Lorg/koin/core/definition/BeanDefinition;
 
     .line 113
-    const-class v2, Lcom/iMe/storage/data/locale/db/dao/main/PlaylistsDao;
+    const-class v2, Lcom/iMe/storage/data/locale/db/dao/minor/catalog/CatalogCategoryDao;
 
     invoke-static {v2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
 
@@ -720,7 +720,7 @@
     new-instance v1, Lorg/koin/core/definition/BeanDefinition;
 
     .line 113
-    const-class v2, Lcom/iMe/storage/data/locale/db/dao/minor/catalog/CatalogCategoryDao;
+    const-class v2, Lcom/iMe/storage/data/locale/db/dao/minor/catalog/CatalogLanguageDao;
 
     invoke-static {v2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
 
@@ -776,7 +776,7 @@
     new-instance v1, Lorg/koin/core/definition/BeanDefinition;
 
     .line 113
-    const-class v2, Lcom/iMe/storage/data/locale/db/dao/minor/catalog/CatalogLanguageDao;
+    const-class v2, Lcom/iMe/storage/data/locale/db/dao/minor/wallet/WalletTokensBalancesDao;
 
     invoke-static {v2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
 
@@ -832,7 +832,7 @@
     new-instance v1, Lorg/koin/core/definition/BeanDefinition;
 
     .line 113
-    const-class v2, Lcom/iMe/storage/data/locale/db/dao/minor/wallet/WalletTokenBalanceDao;
+    const-class v2, Lcom/iMe/storage/data/locale/db/dao/minor/cloud/AlbumsDao;
 
     invoke-static {v2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
 
@@ -885,62 +885,6 @@
     move-result-object v12
 
     .line 112
-    new-instance v1, Lorg/koin/core/definition/BeanDefinition;
-
-    .line 113
-    const-class v2, Lcom/iMe/storage/data/locale/db/dao/minor/cloud/AlbumsDao;
-
-    invoke-static {v2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
-
-    move-result-object v8
-
-    move-object v6, v1
-
-    move-object v11, v13
-
-    .line 112
-    invoke-direct/range {v6 .. v12}, Lorg/koin/core/definition/BeanDefinition;-><init>(Lorg/koin/core/qualifier/Qualifier;Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function2;Lorg/koin/core/definition/Kind;Ljava/util/List;)V
-
-    .line 207
-    new-instance v2, Lorg/koin/core/instance/SingleInstanceFactory;
-
-    invoke-direct {v2, v1}, Lorg/koin/core/instance/SingleInstanceFactory;-><init>(Lorg/koin/core/definition/BeanDefinition;)V
-
-    .line 109
-    invoke-virtual {p1, v2}, Lorg/koin/core/module/Module;->indexPrimaryType(Lorg/koin/core/instance/InstanceFactory;)V
-
-    .line 110
-    invoke-virtual {p1}, Lorg/koin/core/module/Module;->get_createdAtStart()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_e
-
-    .line 111
-    invoke-virtual {p1, v2}, Lorg/koin/core/module/Module;->prepareForCreationAtStart(Lorg/koin/core/instance/SingleInstanceFactory;)V
-
-    .line 113
-    :cond_e
-    new-instance v1, Lorg/koin/core/definition/KoinDefinition;
-
-    invoke-direct {v1, p1, v2}, Lorg/koin/core/definition/KoinDefinition;-><init>(Lorg/koin/core/module/Module;Lorg/koin/core/instance/InstanceFactory;)V
-
-    .line 34
-    sget-object v10, Lcom/iMe/storage/data/di/module/DatabaseModuleKt$databaseModule$1$16;->INSTANCE:Lcom/iMe/storage/data/di/module/DatabaseModuleKt$databaseModule$1$16;
-
-    const/4 v9, 0x0
-
-    .line 204
-    invoke-virtual {v0}, Lorg/koin/core/registry/ScopeRegistry$Companion;->getRootScopeQualifier()Lorg/koin/core/qualifier/StringQualifier;
-
-    move-result-object v7
-
-    .line 109
-    invoke-static {}, Lkotlin/collections/CollectionsKt;->emptyList()Ljava/util/List;
-
-    move-result-object v12
-
-    .line 112
     new-instance v0, Lorg/koin/core/definition/BeanDefinition;
 
     .line 113
@@ -970,13 +914,13 @@
 
     move-result v0
 
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_e
 
     .line 111
     invoke-virtual {p1, v1}, Lorg/koin/core/module/Module;->prepareForCreationAtStart(Lorg/koin/core/instance/SingleInstanceFactory;)V
 
     .line 113
-    :cond_f
+    :cond_e
     new-instance v0, Lorg/koin/core/definition/KoinDefinition;
 
     invoke-direct {v0, p1, v1}, Lorg/koin/core/definition/KoinDefinition;-><init>(Lorg/koin/core/module/Module;Lorg/koin/core/instance/InstanceFactory;)V

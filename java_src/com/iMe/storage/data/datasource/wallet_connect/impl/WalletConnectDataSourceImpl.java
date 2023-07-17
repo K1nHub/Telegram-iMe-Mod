@@ -34,7 +34,7 @@ public final class WalletConnectDataSourceImpl implements WalletConnectDataSourc
     @Override // com.iMe.storage.data.datasource.wallet_connect.WalletConnectDataSource
     public Observable<Result<String>> sendTransaction(TransactionArgs args) {
         Intrinsics.checkNotNullParameter(args, "args");
-        Observable flatMap = sign(args).flatMap(new ObservableExtKt$sam$i$io_reactivex_functions_Function$0(new C1622x2f0ca7ae(this)));
+        Observable flatMap = sign(args).flatMap(new ObservableExtKt$sam$i$io_reactivex_functions_Function$0(new C1633x2f0ca7ae(this)));
         Intrinsics.checkNotNullExpressionValue(flatMap, "crossinline body: (T) ->…e.empty()\n        }\n    }");
         return flatMap;
     }

@@ -31,7 +31,7 @@ public final class SQLitePersistence extends Persistence {
     private final SQLiteBundleCache bundleCache;
 
     /* renamed from: db */
-    private SQLiteDatabase f175db;
+    private SQLiteDatabase f257db;
     private final IndexBackfiller indexBackfiller;
     private final SQLiteIndexManager indexManager;
     private final SQLiteOpenHelper opener;
@@ -85,7 +85,7 @@ public final class SQLitePersistence extends Persistence {
         Assert.hardAssert(!this.started, "SQLitePersistence double-started!", new Object[0]);
         this.started = true;
         try {
-            this.f175db = this.opener.getWritableDatabase();
+            this.f257db = this.opener.getWritableDatabase();
             this.targetCache.start();
             this.referenceDelegate.start(this.targetCache.getHighestListenSequenceNumber());
         } catch (SQLiteDatabaseLockedException e) {
@@ -138,25 +138,25 @@ public final class SQLitePersistence extends Persistence {
     @Override // com.google.firebase.firestore.local.Persistence
     void runTransaction(String str, Runnable runnable) {
         Logger.debug(Persistence.TAG, "Starting transaction: %s", str);
-        this.f175db.beginTransactionWithListener(this.transactionListener);
+        this.f257db.beginTransactionWithListener(this.transactionListener);
         try {
             runnable.run();
-            this.f175db.setTransactionSuccessful();
+            this.f257db.setTransactionSuccessful();
         } finally {
-            this.f175db.endTransaction();
+            this.f257db.endTransaction();
         }
     }
 
     @Override // com.google.firebase.firestore.local.Persistence
     <T> T runTransaction(String str, Supplier<T> supplier) {
         Logger.debug(Persistence.TAG, "Starting transaction: %s", str);
-        this.f175db.beginTransactionWithListener(this.transactionListener);
+        this.f257db.beginTransactionWithListener(this.transactionListener);
         try {
             T t = supplier.get();
-            this.f175db.setTransactionSuccessful();
+            this.f257db.setTransactionSuccessful();
             return t;
         } finally {
-            this.f175db.endTransaction();
+            this.f257db.endTransaction();
         }
     }
 
@@ -231,12 +231,12 @@ public final class SQLitePersistence extends Persistence {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public void execute(String str, Object... objArr) {
-        this.f175db.execSQL(str, objArr);
+        this.f257db.execSQL(str, objArr);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public SQLiteStatement prepare(String str) {
-        return this.f175db.compileStatement(str);
+        return this.f257db.compileStatement(str);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -248,7 +248,7 @@ public final class SQLitePersistence extends Persistence {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public Query query(String str) {
-        return new Query(this.f175db, str);
+        return new Query(this.f257db, str);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -257,12 +257,12 @@ public final class SQLitePersistence extends Persistence {
         private SQLiteDatabase.CursorFactory cursorFactory;
 
         /* renamed from: db */
-        private final SQLiteDatabase f177db;
+        private final SQLiteDatabase f259db;
         private final String sql;
 
         /* JADX INFO: Access modifiers changed from: package-private */
         public Query(SQLiteDatabase sQLiteDatabase, String str) {
-            this.f177db = sQLiteDatabase;
+            this.f259db = sQLiteDatabase;
             this.sql = str;
         }
 
@@ -385,9 +385,9 @@ public final class SQLitePersistence extends Persistence {
         private Cursor startQuery() {
             SQLiteDatabase.CursorFactory cursorFactory = this.cursorFactory;
             if (cursorFactory != null) {
-                return this.f177db.rawQueryWithFactory(cursorFactory, this.sql, null, null);
+                return this.f259db.rawQueryWithFactory(cursorFactory, this.sql, null, null);
             }
-            return this.f177db.rawQuery(this.sql, null);
+            return this.f259db.rawQuery(this.sql, null);
         }
     }
 
@@ -397,7 +397,7 @@ public final class SQLitePersistence extends Persistence {
         private final Iterator<Object> argsIter;
 
         /* renamed from: db */
-        private final SQLitePersistence f176db;
+        private final SQLitePersistence f258db;
         private final String head;
         private int subqueriesPerformed;
         private final String tail;
@@ -405,7 +405,7 @@ public final class SQLitePersistence extends Persistence {
         /* JADX INFO: Access modifiers changed from: package-private */
         public LongQuery(SQLitePersistence sQLitePersistence, String str, List<Object> list, String str2) {
             this.subqueriesPerformed = 0;
-            this.f176db = sQLitePersistence;
+            this.f258db = sQLitePersistence;
             this.head = str;
             this.argsHead = Collections.emptyList();
             this.tail = str2;
@@ -415,7 +415,7 @@ public final class SQLitePersistence extends Persistence {
         /* JADX INFO: Access modifiers changed from: package-private */
         public LongQuery(SQLitePersistence sQLitePersistence, String str, List<Object> list, List<Object> list2, String str2) {
             this.subqueriesPerformed = 0;
-            this.f176db = sQLitePersistence;
+            this.f258db = sQLitePersistence;
             this.head = str;
             this.argsHead = list;
             this.tail = str2;
@@ -440,7 +440,7 @@ public final class SQLitePersistence extends Persistence {
                 arrayList.add(this.argsIter.next());
             }
             String sb2 = sb.toString();
-            return this.f176db.query(this.head + sb2 + this.tail).binding(arrayList.toArray());
+            return this.f258db.query(this.head + sb2 + this.tail).binding(arrayList.toArray());
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */

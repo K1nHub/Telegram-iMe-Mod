@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$$ExternalSyntheticLambda3;->f$0:Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;
 
-    invoke-static {v0}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->$r8$lambda$s_XPKYql5U8r7eWg-QyTQAB-Gmk(Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;)V
+    invoke-static {v0}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->$r8$lambda$EvO40xEx0pJsV3nWveih4pXbuQo(Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;)V
 
     return-void
 .end method

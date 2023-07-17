@@ -6,7 +6,7 @@ import kotlin.jvm.internal.Lambda;
 import timber.log.Timber;
 /* compiled from: AddressMismatchPresenter.kt */
 /* renamed from: com.iMe.ui.wallet.crypto.address_mismatch.AddressMismatchPresenter$deleteActiveWallet$2 */
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 final class AddressMismatchPresenter$deleteActiveWallet$2 extends Lambda implements Function1<Throwable, Unit> {
     final /* synthetic */ AddressMismatchPresenter this$0;
 

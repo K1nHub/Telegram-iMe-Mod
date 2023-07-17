@@ -186,7 +186,7 @@ public final class MutexImpl implements Mutex {
 
         @Override // kotlinx.coroutines.DisposableHandle
         public final void dispose() {
-            mo1605remove();
+            mo1630remove();
         }
     }
 
@@ -218,10 +218,9 @@ public final class MutexImpl implements Mutex {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
     /* compiled from: Mutex.kt */
     /* loaded from: classes4.dex */
-    public static final class UnlockOp extends AtomicOp<MutexImpl> {
+    private static final class UnlockOp extends AtomicOp<MutexImpl> {
         public final LockedQueue queue;
 
         public UnlockOp(LockedQueue lockedQueue) {

@@ -62,7 +62,7 @@ public class LinkedListChannel<E> extends AbstractChannel<E> {
 
     @Override // kotlinx.coroutines.channels.AbstractChannel
     /* renamed from: onCancelIdempotentList-w-w6eGU */
-    protected void mo1587onCancelIdempotentListww6eGU(Object obj, Closed<?> closed) {
+    protected void mo1612onCancelIdempotentListww6eGU(Object obj, Closed<?> closed) {
         UndeliveredElementException undeliveredElementException = null;
         if (obj != null) {
             if (obj instanceof ArrayList) {

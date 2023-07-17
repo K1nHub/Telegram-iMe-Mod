@@ -12,8 +12,8 @@ import com.iMe.utils.extentions.common.RecycleViewExtKt;
 import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3295R;
-import org.telegram.p044ui.ActionBar.Theme;
+import org.telegram.messenger.C3417R;
+import org.telegram.p043ui.ActionBar.Theme;
 /* compiled from: StakingOperationProvider.kt */
 /* renamed from: com.iMe.ui.adapter.provider.StakingOperationProvider */
 /* loaded from: classes.dex */
@@ -29,7 +29,7 @@ public final class StakingOperationProvider extends BaseNodeProvider<StakingOper
         Intrinsics.checkNotNullParameter(resourceManager, "resourceManager");
         this.resourceManager = resourceManager;
         this.itemViewType = IdFabric$ViewTypes.STAKING_OPERATION;
-        this.layoutId = C3295R.layout.fork_recycle_item_wallet_transaction;
+        this.layoutId = C3417R.layout.fork_recycle_item_wallet_transaction;
         lazy = LazyKt__LazyJVMKt.lazy(new StakingOperationProvider$networkIconCornerSize$2(this));
         this.networkIconCornerSize$delegate = lazy;
     }
@@ -54,22 +54,22 @@ public final class StakingOperationProvider extends BaseNodeProvider<StakingOper
         BaseViewHolder padding;
         Intrinsics.checkNotNullParameter(helper, "helper");
         Intrinsics.checkNotNullParameter(item, "item");
-        int i = C3295R.C3298id.linear_root;
+        int i = C3417R.C3420id.linear_root;
         BaseViewHolder rippleForeground = BaseQuickAdapterExtKt.setRippleForeground(helper, i, false);
-        int i2 = C3295R.C3298id.text_date;
+        int i2 = C3417R.C3420id.text_date;
         BaseViewHolder themedTextColor = BaseQuickAdapterExtKt.setThemedTextColor(rippleForeground, i2, Theme.key_chats_date);
-        int i3 = C3295R.C3298id.text_amount;
+        int i3 = C3417R.C3420id.text_amount;
         BaseViewHolder themedTextColor2 = BaseQuickAdapterExtKt.setThemedTextColor(themedTextColor, i3, Theme.key_chats_name);
-        int i4 = C3295R.C3298id.text_status;
+        int i4 = C3417R.C3420id.text_status;
         BaseViewHolder themedTextColor3 = BaseQuickAdapterExtKt.setThemedTextColor(themedTextColor2, i4, item.getStatusColor());
-        int i5 = C3295R.C3298id.text_transaction_type_title;
+        int i5 = C3417R.C3420id.text_transaction_type_title;
         BaseViewHolder themedTextColor4 = BaseQuickAdapterExtKt.setThemedTextColor(themedTextColor3, i5, Theme.key_chats_message);
-        int i6 = C3295R.C3298id.view_divider;
+        int i6 = C3417R.C3420id.view_divider;
         BaseNodeAdapter<StakingOperationItem> adapter = getAdapter();
         Intrinsics.checkNotNull(adapter);
         BaseViewHolder visibleElseGone = BaseQuickAdapterExtKt.setVisibleElseGone(themedTextColor4, i6, !RecycleViewExtKt.isLastItem(helper, adapter));
-        int i7 = C3295R.C3298id.image_staking_icon;
-        BaseViewHolder mediumTypeface = BaseQuickAdapterExtKt.setMediumTypeface(visibleElseGone.setVisible(i7, item.isBadgeVisible()).setImageResource(C3295R.C3298id.image_transaction_type_icon, item.getIcon()).setImageResource(i7, item.getStakingIconResId()), i3);
+        int i7 = C3417R.C3420id.image_staking_icon;
+        BaseViewHolder mediumTypeface = BaseQuickAdapterExtKt.setMediumTypeface(BaseQuickAdapterExtKt.loadImage$default(visibleElseGone.setVisible(i7, item.isBadgeVisible()).setImageResource(C3417R.C3420id.image_transaction_type_icon, item.getIcon()), i7, item.getToken().getAvatarUrl(), null, false, 12, null), i3);
         float f = this.extraPadding;
         padding = BaseQuickAdapterExtKt.setPadding(mediumTypeface, i, (r13 & 2) != 0 ? 0.0f : f, (r13 & 4) != 0 ? 0.0f : BitmapDescriptorFactory.HUE_RED, (r13 & 8) != 0 ? 0.0f : f, (r13 & 16) != 0 ? 0.0f : BitmapDescriptorFactory.HUE_RED);
         BaseQuickAdapterExtKt.applyForView(BaseQuickAdapterExtKt.applyForView(padding.setText(i4, item.getStatusText(this.resourceManager)).setText(i3, item.getAmount(this.resourceManager)).setText(i5, item.getTransactionTitle(this.resourceManager)), i2, new StakingOperationProvider$convert$1(item)), i7, new StakingOperationProvider$convert$2(this));

@@ -2,38 +2,38 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Landroid/content/DialogInterface$OnDismissListener;
+.implements Landroid/content/DialogInterface$OnClickListener;
 
 
 # instance fields
-.field public final synthetic f$0:Lcom/iMe/model/dialog/EditTextDialogModel;
+.field public final synthetic f$0:Lcom/iMe/fork/utils/Callbacks$Callback;
 
-.field public final synthetic f$1:Lorg/telegram/ui/Components/EditTextBoldCursor;
+.field public final synthetic f$1:Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lcom/iMe/model/dialog/EditTextDialogModel;Lorg/telegram/ui/Components/EditTextBoldCursor;)V
+.method public synthetic constructor <init>(Lcom/iMe/fork/utils/Callbacks$Callback;Lorg/telegram/ui/ActionBar/AlertDialog$Builder;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lcom/iMe/utils/dialogs/DialogUtils$$ExternalSyntheticLambda8;->f$0:Lcom/iMe/model/dialog/EditTextDialogModel;
+    iput-object p1, p0, Lcom/iMe/utils/dialogs/DialogUtils$$ExternalSyntheticLambda8;->f$0:Lcom/iMe/fork/utils/Callbacks$Callback;
 
-    iput-object p2, p0, Lcom/iMe/utils/dialogs/DialogUtils$$ExternalSyntheticLambda8;->f$1:Lorg/telegram/ui/Components/EditTextBoldCursor;
+    iput-object p2, p0, Lcom/iMe/utils/dialogs/DialogUtils$$ExternalSyntheticLambda8;->f$1:Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onDismiss(Landroid/content/DialogInterface;)V
+.method public final onClick(Landroid/content/DialogInterface;I)V
     .locals 2
 
-    iget-object v0, p0, Lcom/iMe/utils/dialogs/DialogUtils$$ExternalSyntheticLambda8;->f$0:Lcom/iMe/model/dialog/EditTextDialogModel;
+    iget-object v0, p0, Lcom/iMe/utils/dialogs/DialogUtils$$ExternalSyntheticLambda8;->f$0:Lcom/iMe/fork/utils/Callbacks$Callback;
 
-    iget-object v1, p0, Lcom/iMe/utils/dialogs/DialogUtils$$ExternalSyntheticLambda8;->f$1:Lorg/telegram/ui/Components/EditTextBoldCursor;
+    iget-object v1, p0, Lcom/iMe/utils/dialogs/DialogUtils$$ExternalSyntheticLambda8;->f$1:Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    invoke-static {v0, v1, p1}, Lcom/iMe/utils/dialogs/DialogUtils;->$r8$lambda$-e7cbPENVNBF1uMO4rYG760OkHo(Lcom/iMe/model/dialog/EditTextDialogModel;Lorg/telegram/ui/Components/EditTextBoldCursor;Landroid/content/DialogInterface;)V
+    invoke-static {v0, v1, p1, p2}, Lcom/iMe/utils/dialogs/DialogUtils;->$r8$lambda$I_ii6NuOJGNp_QEwJEpJPWU8uKA(Lcom/iMe/fork/utils/Callbacks$Callback;Lorg/telegram/ui/ActionBar/AlertDialog$Builder;Landroid/content/DialogInterface;I)V
 
     return-void
 .end method

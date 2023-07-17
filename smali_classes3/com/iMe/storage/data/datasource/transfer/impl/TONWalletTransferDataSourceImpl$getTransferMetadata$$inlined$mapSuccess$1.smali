@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/iMe/storage/data/datasource/transfer/impl/TONWalletTransferDataSourceImpl;->getTransferMetadata(Lcom/iMe/storage/domain/model/wallet/token/TokenCode;Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/domain/model/crypto/NetworkType;)Lio/reactivex/Observable;
+    value = Lcom/iMe/storage/data/datasource/transfer/impl/TONWalletTransferDataSourceImpl;->getTransferMetadata(Lcom/iMe/storage/domain/model/wallet/token/Token;Ljava/lang/String;Ljava/lang/String;)Lio/reactivex/Observable;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -21,7 +21,7 @@
         "Lkotlin/jvm/internal/Lambda;",
         "Lkotlin/jvm/functions/Function1<",
         "Lcom/iMe/storage/data/network/model/response/base/ApiBaseResponse<",
-        "Lcom/iMe/storage/data/network/model/response/crypto/ton/ParamsForTonCryptoTransferResponse;",
+        "Lcom/iMe/storage/data/network/model/response/crypto/wallet/CryptoTransferDataResponse$TON;",
         ">;",
         "Lcom/iMe/storage/domain/model/Result<",
         "+",
@@ -60,7 +60,7 @@
         value = {
             "(",
             "Lcom/iMe/storage/data/network/model/response/base/ApiBaseResponse<",
-            "Lcom/iMe/storage/data/network/model/response/crypto/ton/ParamsForTonCryptoTransferResponse;",
+            "Lcom/iMe/storage/data/network/model/response/crypto/wallet/CryptoTransferDataResponse$TON;",
             ">;)",
             "Lcom/iMe/storage/domain/model/Result<",
             "Lcom/iMe/storage/domain/model/crypto/send/CryptoTransferMetadata;",
@@ -84,9 +84,9 @@
 
     move-result-object p1
 
-    check-cast p1, Lcom/iMe/storage/data/network/model/response/crypto/ton/ParamsForTonCryptoTransferResponse;
+    check-cast p1, Lcom/iMe/storage/data/network/model/response/crypto/wallet/CryptoTransferDataResponse;
 
-    invoke-static {p1}, Lcom/iMe/storage/data/mapper/crypto/TransferMappingKt;->mapToDomain(Lcom/iMe/storage/data/network/model/response/crypto/ton/ParamsForTonCryptoTransferResponse;)Lcom/iMe/storage/domain/model/crypto/send/CryptoTransferMetadata;
+    invoke-static {p1}, Lcom/iMe/storage/data/mapper/crypto/TransferMappingKt;->mapToDomain(Lcom/iMe/storage/data/network/model/response/crypto/wallet/CryptoTransferDataResponse;)Lcom/iMe/storage/domain/model/crypto/send/CryptoTransferMetadata;
 
     move-result-object p1
 

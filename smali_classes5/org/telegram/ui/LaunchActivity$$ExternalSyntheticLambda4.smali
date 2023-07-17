@@ -2,32 +2,32 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Landroid/content/DialogInterface$OnClickListener;
+.implements Landroid/content/DialogInterface$OnCancelListener;
 
 
 # instance fields
-.field public final synthetic f$0:I
+.field public final synthetic f$0:[Z
 
 
 # direct methods
-.method public synthetic constructor <init>(I)V
+.method public synthetic constructor <init>([Z)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput p1, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda4;->f$0:I
+    iput-object p1, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda4;->f$0:[Z
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onClick(Landroid/content/DialogInterface;I)V
+.method public final onCancel(Landroid/content/DialogInterface;)V
     .locals 1
 
-    iget v0, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda4;->f$0:I
+    iget-object v0, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda4;->f$0:[Z
 
-    invoke-static {v0, p1, p2}, Lorg/telegram/ui/LaunchActivity;->$r8$lambda$43_QcTsZsbyF2FlgEOMcc5L0eAE(ILandroid/content/DialogInterface;I)V
+    invoke-static {v0, p1}, Lorg/telegram/ui/LaunchActivity;->$r8$lambda$IlpD8qb6nsH6gtw8iS_ovmkEZus([ZLandroid/content/DialogInterface;)V
 
     return-void
 .end method

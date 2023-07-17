@@ -33,11 +33,11 @@
 
 .field private final receivable:Z
 
-.field private final replenishNetworks:Ljava/util/List;
+.field private final replenishNetworksIds:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
-            "Lcom/iMe/storage/domain/model/crypto/NetworkType;",
+            "Ljava/lang/String;",
             ">;"
         }
     .end annotation
@@ -74,8 +74,7 @@
             "Lcom/iMe/storage/domain/model/binancepay/BinanceTokenBalanceInfo$Balance;",
             "Lcom/iMe/storage/domain/model/binancepay/BinanceTokenBalanceInfo$Balance;",
             "Ljava/util/List<",
-            "+",
-            "Lcom/iMe/storage/domain/model/crypto/NetworkType;",
+            "Ljava/lang/String;",
             ">;ZZ)V"
         }
     .end annotation
@@ -108,7 +107,7 @@
 
     invoke-static {p7, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "replenishNetworks"
+    const-string v0, "replenishNetworksIds"
 
     invoke-static {p8, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -137,7 +136,7 @@
     iput-object p7, p0, Lcom/iMe/storage/domain/model/binancepay/BinanceTokenBalanceInfo;->combined:Lcom/iMe/storage/domain/model/binancepay/BinanceTokenBalanceInfo$Balance;
 
     .line 14
-    iput-object p8, p0, Lcom/iMe/storage/domain/model/binancepay/BinanceTokenBalanceInfo;->replenishNetworks:Ljava/util/List;
+    iput-object p8, p0, Lcom/iMe/storage/domain/model/binancepay/BinanceTokenBalanceInfo;->replenishNetworksIds:Ljava/util/List;
 
     .line 15
     iput-boolean p9, p0, Lcom/iMe/storage/domain/model/binancepay/BinanceTokenBalanceInfo;->convertible:Z
@@ -243,7 +242,7 @@
 
     if-eqz v9, :cond_7
 
-    iget-object v9, v0, Lcom/iMe/storage/domain/model/binancepay/BinanceTokenBalanceInfo;->replenishNetworks:Ljava/util/List;
+    iget-object v9, v0, Lcom/iMe/storage/domain/model/binancepay/BinanceTokenBalanceInfo;->replenishNetworksIds:Ljava/util/List;
 
     goto :goto_7
 
@@ -374,12 +373,12 @@
         value = {
             "()",
             "Ljava/util/List<",
-            "Lcom/iMe/storage/domain/model/crypto/NetworkType;",
+            "Ljava/lang/String;",
             ">;"
         }
     .end annotation
 
-    iget-object v0, p0, Lcom/iMe/storage/domain/model/binancepay/BinanceTokenBalanceInfo;->replenishNetworks:Ljava/util/List;
+    iget-object v0, p0, Lcom/iMe/storage/domain/model/binancepay/BinanceTokenBalanceInfo;->replenishNetworksIds:Ljava/util/List;
 
     return-object v0
 .end method
@@ -405,8 +404,7 @@
             "Lcom/iMe/storage/domain/model/binancepay/BinanceTokenBalanceInfo$Balance;",
             "Lcom/iMe/storage/domain/model/binancepay/BinanceTokenBalanceInfo$Balance;",
             "Ljava/util/List<",
-            "+",
-            "Lcom/iMe/storage/domain/model/crypto/NetworkType;",
+            "Ljava/lang/String;",
             ">;ZZ)",
             "Lcom/iMe/storage/domain/model/binancepay/BinanceTokenBalanceInfo;"
         }
@@ -454,7 +452,7 @@
 
     invoke-static {v8, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "replenishNetworks"
+    const-string v0, "replenishNetworksIds"
 
     move-object/from16 v9, p8
 
@@ -585,9 +583,9 @@
     return v2
 
     :cond_8
-    iget-object v1, p0, Lcom/iMe/storage/domain/model/binancepay/BinanceTokenBalanceInfo;->replenishNetworks:Ljava/util/List;
+    iget-object v1, p0, Lcom/iMe/storage/domain/model/binancepay/BinanceTokenBalanceInfo;->replenishNetworksIds:Ljava/util/List;
 
-    iget-object v3, p1, Lcom/iMe/storage/domain/model/binancepay/BinanceTokenBalanceInfo;->replenishNetworks:Ljava/util/List;
+    iget-object v3, p1, Lcom/iMe/storage/domain/model/binancepay/BinanceTokenBalanceInfo;->replenishNetworksIds:Ljava/util/List;
 
     invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
@@ -691,19 +689,19 @@
     return v0
 .end method
 
-.method public final getReplenishNetworks()Ljava/util/List;
+.method public final getReplenishNetworksIds()Ljava/util/List;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
             "Ljava/util/List<",
-            "Lcom/iMe/storage/domain/model/crypto/NetworkType;",
+            "Ljava/lang/String;",
             ">;"
         }
     .end annotation
 
     .line 14
-    iget-object v0, p0, Lcom/iMe/storage/domain/model/binancepay/BinanceTokenBalanceInfo;->replenishNetworks:Ljava/util/List;
+    iget-object v0, p0, Lcom/iMe/storage/domain/model/binancepay/BinanceTokenBalanceInfo;->replenishNetworksIds:Ljava/util/List;
 
     return-object v0
 .end method
@@ -788,7 +786,7 @@
 
     mul-int/lit8 v0, v0, 0x1f
 
-    iget-object v1, p0, Lcom/iMe/storage/domain/model/binancepay/BinanceTokenBalanceInfo;->replenishNetworks:Ljava/util/List;
+    iget-object v1, p0, Lcom/iMe/storage/domain/model/binancepay/BinanceTokenBalanceInfo;->replenishNetworksIds:Ljava/util/List;
 
     invoke-virtual {v1}, Ljava/lang/Object;->hashCode()I
 
@@ -889,11 +887,11 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    const-string v1, ", replenishNetworks="
+    const-string v1, ", replenishNetworksIds="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v1, p0, Lcom/iMe/storage/domain/model/binancepay/BinanceTokenBalanceInfo;->replenishNetworks:Ljava/util/List;
+    iget-object v1, p0, Lcom/iMe/storage/domain/model/binancepay/BinanceTokenBalanceInfo;->replenishNetworksIds:Ljava/util/List;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 

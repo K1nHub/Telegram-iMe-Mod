@@ -1,5 +1,5 @@
 .class public final Lcom/iMe/ui/wallet/settings/appearance/WalletAppearanceSettingsFragment;
-.super Lcom/iMe/ui/base/WalletAuthFragment;
+.super Lcom/iMe/ui/base/wallet_auth/WalletAuthBaseFragment;
 .source "WalletAppearanceSettingsFragment.kt"
 
 # interfaces
@@ -118,7 +118,7 @@
     .locals 5
 
     .line 22
-    invoke-direct {p0}, Lcom/iMe/ui/base/WalletAuthFragment;-><init>()V
+    invoke-direct {p0}, Lcom/iMe/ui/base/wallet_auth/WalletAuthBaseFragment;-><init>()V
 
     .line 25
     new-instance v0, Lcom/iMe/ui/wallet/settings/appearance/WalletAppearanceSettingsFragment$presenter$2;
@@ -298,7 +298,7 @@
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBar;->setAllowOverlayTitle(Z)V
 
     .line 68
-    invoke-virtual {p0}, Lcom/iMe/ui/base/WalletAuthFragment;->getResourceManager()Lcom/iMe/storage/domain/utils/system/ResourceManager;
+    invoke-virtual {p0}, Lcom/iMe/ui/base/wallet_auth/WalletAuthBaseFragment;->getResourceManager()Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     move-result-object v1
 

@@ -86,7 +86,7 @@ public final class FlowableDistinctUntilChanged<T, K> extends AbstractFlowableWi
         @Override // io.reactivex.internal.fuseable.SimpleQueue
         public T poll() throws Exception {
             while (true) {
-                T poll = this.f477qs.poll();
+                T poll = this.f559qs.poll();
                 if (poll == null) {
                     return null;
                 }
@@ -165,7 +165,7 @@ public final class FlowableDistinctUntilChanged<T, K> extends AbstractFlowableWi
         @Override // io.reactivex.internal.fuseable.SimpleQueue
         public T poll() throws Exception {
             while (true) {
-                T poll = this.f476qs.poll();
+                T poll = this.f558qs.poll();
                 if (poll == null) {
                     return null;
                 }

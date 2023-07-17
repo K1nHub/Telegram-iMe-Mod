@@ -33,7 +33,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 19
+    .line 18
     invoke-direct {p0}, Lmoxy/viewstate/MvpViewState;-><init>()V
 
     return-void
@@ -52,17 +52,17 @@
 .method public openBinanceConvertScreen()V
     .locals 3
 
-    .line 54
+    .line 53
     new-instance v0, Lcom/iMe/ui/wallet/swap/WalletSwapProtocolsView$$State$OpenBinanceConvertScreenCommand;
 
     invoke-direct {v0, p0}, Lcom/iMe/ui/wallet/swap/WalletSwapProtocolsView$$State$OpenBinanceConvertScreenCommand;-><init>(Lcom/iMe/ui/wallet/swap/WalletSwapProtocolsView$$State;)V
 
-    .line 55
+    .line 54
     iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
 
     invoke-virtual {v1, v0}, Lmoxy/viewstate/ViewCommands;->beforeApply(Lmoxy/viewstate/ViewCommand;)V
 
-    .line 57
+    .line 56
     invoke-virtual {p0}, Lmoxy/viewstate/MvpViewState;->hasNotView()Ljava/lang/Boolean;
 
     move-result-object v1
@@ -75,7 +75,7 @@
 
     return-void
 
-    .line 61
+    .line 60
     :cond_0
     iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->views:Ljava/util/Set;
 
@@ -96,12 +96,12 @@
 
     check-cast v2, Lcom/iMe/ui/wallet/swap/WalletSwapProtocolsView;
 
-    .line 62
+    .line 61
     invoke-interface {v2}, Lcom/iMe/ui/wallet/swap/WalletSwapProtocolsView;->openBinanceConvertScreen()V
 
     goto :goto_0
 
-    .line 65
+    .line 64
     :cond_1
     iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
 
@@ -110,20 +110,20 @@
     return-void
 .end method
 
-.method public openSwapScreen(Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocolInfo;Lcom/iMe/storage/domain/model/crypto/NetworkType;)V
+.method public openSwapScreen(Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocolInfo;Ljava/lang/String;)V
     .locals 3
 
-    .line 70
+    .line 69
     new-instance v0, Lcom/iMe/ui/wallet/swap/WalletSwapProtocolsView$$State$OpenSwapScreenCommand;
 
-    invoke-direct {v0, p0, p1, p2}, Lcom/iMe/ui/wallet/swap/WalletSwapProtocolsView$$State$OpenSwapScreenCommand;-><init>(Lcom/iMe/ui/wallet/swap/WalletSwapProtocolsView$$State;Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocolInfo;Lcom/iMe/storage/domain/model/crypto/NetworkType;)V
+    invoke-direct {v0, p0, p1, p2}, Lcom/iMe/ui/wallet/swap/WalletSwapProtocolsView$$State$OpenSwapScreenCommand;-><init>(Lcom/iMe/ui/wallet/swap/WalletSwapProtocolsView$$State;Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocolInfo;Ljava/lang/String;)V
 
-    .line 71
+    .line 70
     iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
 
     invoke-virtual {v1, v0}, Lmoxy/viewstate/ViewCommands;->beforeApply(Lmoxy/viewstate/ViewCommand;)V
 
-    .line 73
+    .line 72
     invoke-virtual {p0}, Lmoxy/viewstate/MvpViewState;->hasNotView()Ljava/lang/Boolean;
 
     move-result-object v1
@@ -136,7 +136,7 @@
 
     return-void
 
-    .line 77
+    .line 76
     :cond_0
     iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->views:Ljava/util/Set;
 
@@ -157,16 +157,24 @@
 
     check-cast v2, Lcom/iMe/ui/wallet/swap/WalletSwapProtocolsView;
 
-    .line 78
-    invoke-interface {v2, p1, p2}, Lcom/iMe/ui/wallet/swap/WalletSwapProtocolsView;->openSwapScreen(Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocolInfo;Lcom/iMe/storage/domain/model/crypto/NetworkType;)V
+    .line 77
+    invoke-interface {v2, p1, p2}, Lcom/iMe/ui/wallet/swap/WalletSwapProtocolsView;->openSwapScreen(Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocolInfo;Ljava/lang/String;)V
 
     goto :goto_0
 
-    .line 81
+    .line 80
     :cond_1
     iget-object p1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
 
     invoke-virtual {p1, v0}, Lmoxy/viewstate/ViewCommands;->afterApply(Lmoxy/viewstate/ViewCommand;)V
+
+    return-void
+.end method
+
+.method public synthetic removeSelfFromStackImmediately()V
+    .locals 0
+
+    invoke-static {p0}, Lcom/iMe/ui/base/mvp/base/BaseView$-CC;->$default$removeSelfFromStackImmediately(Lcom/iMe/ui/base/mvp/base/BaseView;)V
 
     return-void
 .end method
@@ -185,17 +193,17 @@
         }
     .end annotation
 
-    .line 118
+    .line 117
     new-instance v0, Lcom/iMe/ui/wallet/swap/WalletSwapProtocolsView$$State$ShowErrorToastCommand;
 
     invoke-direct {v0, p0, p1, p2}, Lcom/iMe/ui/wallet/swap/WalletSwapProtocolsView$$State$ShowErrorToastCommand;-><init>(Lcom/iMe/ui/wallet/swap/WalletSwapProtocolsView$$State;Lcom/iMe/storage/domain/model/Result$Error;Lcom/iMe/storage/domain/utils/system/ResourceManager;)V
 
-    .line 119
+    .line 118
     iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
 
     invoke-virtual {v1, v0}, Lmoxy/viewstate/ViewCommands;->beforeApply(Lmoxy/viewstate/ViewCommand;)V
 
-    .line 121
+    .line 120
     invoke-virtual {p0}, Lmoxy/viewstate/MvpViewState;->hasNotView()Ljava/lang/Boolean;
 
     move-result-object v1
@@ -208,7 +216,7 @@
 
     return-void
 
-    .line 125
+    .line 124
     :cond_0
     iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->views:Ljava/util/Set;
 
@@ -229,12 +237,12 @@
 
     check-cast v2, Lcom/iMe/ui/wallet/swap/WalletSwapProtocolsView;
 
-    .line 126
+    .line 125
     invoke-interface {v2, p1, p2}, Lcom/iMe/ui/base/mvp/base/BaseView;->showErrorToast(Lcom/iMe/storage/domain/model/Result$Error;Lcom/iMe/storage/domain/utils/system/ResourceManager;)V
 
     goto :goto_0
 
-    .line 129
+    .line 128
     :cond_1
     iget-object p1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
 
@@ -255,17 +263,17 @@
         }
     .end annotation
 
-    .line 22
+    .line 21
     new-instance v0, Lcom/iMe/ui/wallet/swap/WalletSwapProtocolsView$$State$ShowExchangesProvidersCommand;
 
     invoke-direct {v0, p0, p1}, Lcom/iMe/ui/wallet/swap/WalletSwapProtocolsView$$State$ShowExchangesProvidersCommand;-><init>(Lcom/iMe/ui/wallet/swap/WalletSwapProtocolsView$$State;Ljava/util/List;)V
 
-    .line 23
+    .line 22
     iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
 
     invoke-virtual {v1, v0}, Lmoxy/viewstate/ViewCommands;->beforeApply(Lmoxy/viewstate/ViewCommand;)V
 
-    .line 25
+    .line 24
     invoke-virtual {p0}, Lmoxy/viewstate/MvpViewState;->hasNotView()Ljava/lang/Boolean;
 
     move-result-object v1
@@ -278,7 +286,7 @@
 
     return-void
 
-    .line 29
+    .line 28
     :cond_0
     iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->views:Ljava/util/Set;
 
@@ -299,12 +307,12 @@
 
     check-cast v2, Lcom/iMe/ui/wallet/swap/WalletSwapProtocolsView;
 
-    .line 30
+    .line 29
     invoke-interface {v2, p1}, Lcom/iMe/ui/wallet/swap/WalletSwapProtocolsView;->showExchangesProviders(Ljava/util/List;)V
 
     goto :goto_0
 
-    .line 33
+    .line 32
     :cond_1
     iget-object p1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
 
@@ -316,17 +324,17 @@
 .method public showLoadingDialog(ZZLio/reactivex/disposables/Disposable;)V
     .locals 3
 
-    .line 102
+    .line 101
     new-instance v0, Lcom/iMe/ui/wallet/swap/WalletSwapProtocolsView$$State$ShowLoadingDialogCommand;
 
     invoke-direct {v0, p0, p1, p2, p3}, Lcom/iMe/ui/wallet/swap/WalletSwapProtocolsView$$State$ShowLoadingDialogCommand;-><init>(Lcom/iMe/ui/wallet/swap/WalletSwapProtocolsView$$State;ZZLio/reactivex/disposables/Disposable;)V
 
-    .line 103
+    .line 102
     iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
 
     invoke-virtual {v1, v0}, Lmoxy/viewstate/ViewCommands;->beforeApply(Lmoxy/viewstate/ViewCommand;)V
 
-    .line 105
+    .line 104
     invoke-virtual {p0}, Lmoxy/viewstate/MvpViewState;->hasNotView()Ljava/lang/Boolean;
 
     move-result-object v1
@@ -339,7 +347,7 @@
 
     return-void
 
-    .line 109
+    .line 108
     :cond_0
     iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->views:Ljava/util/Set;
 
@@ -360,12 +368,12 @@
 
     check-cast v2, Lcom/iMe/ui/wallet/swap/WalletSwapProtocolsView;
 
-    .line 110
+    .line 109
     invoke-interface {v2, p1, p2, p3}, Lcom/iMe/ui/base/mvp/base/BaseView;->showLoadingDialog(ZZLio/reactivex/disposables/Disposable;)V
 
     goto :goto_0
 
-    .line 113
+    .line 112
     :cond_1
     iget-object p1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
 
@@ -377,17 +385,17 @@
 .method public showRequiredVerifyDialog()V
     .locals 3
 
-    .line 38
+    .line 37
     new-instance v0, Lcom/iMe/ui/wallet/swap/WalletSwapProtocolsView$$State$ShowRequiredVerifyDialogCommand;
 
     invoke-direct {v0, p0}, Lcom/iMe/ui/wallet/swap/WalletSwapProtocolsView$$State$ShowRequiredVerifyDialogCommand;-><init>(Lcom/iMe/ui/wallet/swap/WalletSwapProtocolsView$$State;)V
 
-    .line 39
+    .line 38
     iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
 
     invoke-virtual {v1, v0}, Lmoxy/viewstate/ViewCommands;->beforeApply(Lmoxy/viewstate/ViewCommand;)V
 
-    .line 41
+    .line 40
     invoke-virtual {p0}, Lmoxy/viewstate/MvpViewState;->hasNotView()Ljava/lang/Boolean;
 
     move-result-object v1
@@ -400,7 +408,7 @@
 
     return-void
 
-    .line 45
+    .line 44
     :cond_0
     iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->views:Ljava/util/Set;
 
@@ -421,12 +429,12 @@
 
     check-cast v2, Lcom/iMe/ui/wallet/swap/WalletSwapProtocolsView;
 
-    .line 46
+    .line 45
     invoke-interface {v2}, Lcom/iMe/ui/wallet/swap/WalletSwapProtocolsView;->showRequiredVerifyDialog()V
 
     goto :goto_0
 
-    .line 49
+    .line 48
     :cond_1
     iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
 
@@ -438,17 +446,17 @@
 .method public showToast(Ljava/lang/String;)V
     .locals 3
 
-    .line 86
+    .line 85
     new-instance v0, Lcom/iMe/ui/wallet/swap/WalletSwapProtocolsView$$State$ShowToastCommand;
 
     invoke-direct {v0, p0, p1}, Lcom/iMe/ui/wallet/swap/WalletSwapProtocolsView$$State$ShowToastCommand;-><init>(Lcom/iMe/ui/wallet/swap/WalletSwapProtocolsView$$State;Ljava/lang/String;)V
 
-    .line 87
+    .line 86
     iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
 
     invoke-virtual {v1, v0}, Lmoxy/viewstate/ViewCommands;->beforeApply(Lmoxy/viewstate/ViewCommand;)V
 
-    .line 89
+    .line 88
     invoke-virtual {p0}, Lmoxy/viewstate/MvpViewState;->hasNotView()Ljava/lang/Boolean;
 
     move-result-object v1
@@ -461,7 +469,7 @@
 
     return-void
 
-    .line 93
+    .line 92
     :cond_0
     iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->views:Ljava/util/Set;
 
@@ -482,12 +490,12 @@
 
     check-cast v2, Lcom/iMe/ui/wallet/swap/WalletSwapProtocolsView;
 
-    .line 94
+    .line 93
     invoke-interface {v2, p1}, Lcom/iMe/ui/base/mvp/base/BaseView;->showToast(Ljava/lang/String;)V
 
     goto :goto_0
 
-    .line 97
+    .line 96
     :cond_1
     iget-object p1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
 

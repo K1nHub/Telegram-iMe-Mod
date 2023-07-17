@@ -9,8 +9,3 @@
 # annotations
 .annotation runtime Lmoxy/viewstate/strategy/alias/OneExecution;
 .end annotation
-
-
-# virtual methods
-.method public abstract redirectAndShowResult(Lcom/iMe/model/wallet/crypto/simplex/PaymentResult;)V
-.end method

@@ -20,7 +20,7 @@
     value = {
         "Lkotlin/jvm/internal/Lambda;",
         "Lkotlin/jvm/functions/Function1<",
-        "Lcom/iMe/model/wallet/select/SelectableToken;",
+        "Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;",
         "Lkotlin/Unit;",
         ">;"
     }
@@ -53,29 +53,29 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 241
-    check-cast p1, Lcom/iMe/model/wallet/select/SelectableToken;
+    .line 261
+    check-cast p1, Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
 
-    invoke-virtual {p0, p1}, Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessPresenter$startSelectTokenDialog$4;->invoke(Lcom/iMe/model/wallet/select/SelectableToken;)V
+    invoke-virtual {p0, p1}, Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessPresenter$startSelectTokenDialog$4;->invoke(Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;)V
 
     sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     return-object p1
 .end method
 
-.method public final invoke(Lcom/iMe/model/wallet/select/SelectableToken;)V
+.method public final invoke(Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;)V
     .locals 2
 
     const-string/jumbo v0, "token"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 249
+    .line 271
     iget-object v0, p0, Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessPresenter$startSelectTokenDialog$4;->this$0:Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessPresenter;
 
     iget-object v1, p0, Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessPresenter$startSelectTokenDialog$4;->$side:Lcom/iMe/model/wallet/swap/SwapSide;
 
-    invoke-virtual {v0, v1, p1}, Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessPresenter;->selectToken(Lcom/iMe/model/wallet/swap/SwapSide;Lcom/iMe/model/wallet/select/SelectableToken;)V
+    invoke-virtual {v0, v1, p1}, Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessPresenter;->selectToken(Lcom/iMe/model/wallet/swap/SwapSide;Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;)V
 
     return-void
 .end method

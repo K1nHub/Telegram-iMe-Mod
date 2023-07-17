@@ -77,7 +77,7 @@
 
     move-result-object v1
 
-    const-string v2, "setAppBadgeCount"
+    const-string/jumbo v2, "setAppBadgeCount"
 
     const/4 v3, 0x0
 

@@ -15,11 +15,11 @@ import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3295R;
+import org.telegram.messenger.C3417R;
 import org.telegram.messenger.FileLog;
-import org.telegram.p044ui.ActionBar.Theme;
-import org.telegram.p044ui.Components.CubicBezierInterpolator;
-import org.telegram.p044ui.Components.LayoutHelper;
+import org.telegram.p043ui.ActionBar.Theme;
+import org.telegram.p043ui.Components.CubicBezierInterpolator;
+import org.telegram.p043ui.Components.LayoutHelper;
 /* compiled from: DrawerExpandableCell.kt */
 /* renamed from: com.iMe.fork.ui.view.DrawerExpandableCell */
 /* loaded from: classes3.dex */
@@ -100,7 +100,7 @@ public final class DrawerExpandableCell extends FrameLayout {
         ImageView imageView = new ImageView(getContext());
         imageView.setScaleType(ImageView.ScaleType.CENTER);
         imageView.setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_chats_menuItemIcon), PorterDuff.Mode.MULTIPLY));
-        imageView.setImageResource(C3295R.C3297drawable.msg_expand);
+        imageView.setImageResource(C3417R.C3419drawable.msg_expand);
         return imageView;
     }
 

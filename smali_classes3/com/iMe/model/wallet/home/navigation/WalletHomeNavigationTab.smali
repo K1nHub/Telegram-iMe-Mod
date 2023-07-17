@@ -7,7 +7,7 @@
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Lcom/iMe/model/common/NavigationTab<",
-        "Lcom/iMe/ui/wallet/home/v2/tabs/WalletHomeTabFragment;",
+        "Lcom/iMe/ui/wallet/home/tabs/WalletHomeTabFragment;",
         ">;"
     }
 .end annotation
@@ -20,7 +20,7 @@
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/iMe/fork/utils/TabbedFragmentPage<",
-            "Lcom/iMe/ui/wallet/home/v2/tabs/WalletHomeTabFragment;",
+            "Lcom/iMe/ui/wallet/home/tabs/WalletHomeTabFragment;",
             ">;"
         }
     .end annotation
@@ -34,7 +34,7 @@
         value = {
             "(I",
             "Lcom/iMe/fork/utils/TabbedFragmentPage<",
-            "Lcom/iMe/ui/wallet/home/v2/tabs/WalletHomeTabFragment;",
+            "Lcom/iMe/ui/wallet/home/tabs/WalletHomeTabFragment;",
             ">;)V"
         }
     .end annotation
@@ -105,7 +105,7 @@
         value = {
             "()",
             "Lcom/iMe/fork/utils/TabbedFragmentPage<",
-            "Lcom/iMe/ui/wallet/home/v2/tabs/WalletHomeTabFragment;",
+            "Lcom/iMe/ui/wallet/home/tabs/WalletHomeTabFragment;",
             ">;"
         }
     .end annotation
@@ -121,7 +121,7 @@
         value = {
             "(I",
             "Lcom/iMe/fork/utils/TabbedFragmentPage<",
-            "Lcom/iMe/ui/wallet/home/v2/tabs/WalletHomeTabFragment;",
+            "Lcom/iMe/ui/wallet/home/tabs/WalletHomeTabFragment;",
             ">;)",
             "Lcom/iMe/model/wallet/home/navigation/WalletHomeNavigationTab;"
         }
@@ -203,7 +203,7 @@
         value = {
             "()",
             "Lcom/iMe/fork/utils/TabbedFragmentPage<",
-            "Lcom/iMe/ui/wallet/home/v2/tabs/WalletHomeTabFragment;",
+            "Lcom/iMe/ui/wallet/home/tabs/WalletHomeTabFragment;",
             ">;"
         }
     .end annotation

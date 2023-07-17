@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/iMe/storage/domain/interactor/crypto/cancel/CancelInteractor;->cancelEthTransaction(Lcom/iMe/storage/domain/model/wallet/token/TokenCode;Ljava/lang/String;)Lio/reactivex/Observable;
+    value = Lcom/iMe/storage/domain/interactor/crypto/cancel/CancelInteractor;->cancelEthTransaction(Ljava/lang/String;Ljava/lang/String;)Lio/reactivex/Observable;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -34,12 +34,12 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nObservableExt.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ObservableExt.kt\ncom/iMe/storage/domain/utils/extentions/ObservableExtKt$flatMapSuccess$1\n+ 2 CancelInteractor.kt\ncom/iMe/storage/domain/interactor/crypto/cancel/CancelInteractor\n*L\n1#1,80:1\n26#2,19:81\n*E\n"
+    value = "SMAP\nObservableExt.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ObservableExt.kt\ncom/iMe/storage/domain/utils/extentions/ObservableExtKt$flatMapSuccess$1\n+ 2 CancelInteractor.kt\ncom/iMe/storage/domain/interactor/crypto/cancel/CancelInteractor\n*L\n1#1,92:1\n25#2,19:93\n*E\n"
 .end annotation
 
 
 # instance fields
-.field final synthetic $tokenCode$inlined:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
+.field final synthetic $networkId$inlined:Ljava/lang/String;
 
 .field final synthetic $txHash$inlined:Ljava/lang/String;
 
@@ -47,12 +47,12 @@
 
 
 # direct methods
-.method public constructor <init>(Lcom/iMe/storage/domain/interactor/crypto/cancel/CancelInteractor;Lcom/iMe/storage/domain/model/wallet/token/TokenCode;Ljava/lang/String;)V
+.method public constructor <init>(Lcom/iMe/storage/domain/interactor/crypto/cancel/CancelInteractor;Ljava/lang/String;Ljava/lang/String;)V
     .locals 0
 
     iput-object p1, p0, Lcom/iMe/storage/domain/interactor/crypto/cancel/CancelInteractor$cancelEthTransaction$$inlined$flatMapSuccess$1;->this$0:Lcom/iMe/storage/domain/interactor/crypto/cancel/CancelInteractor;
 
-    iput-object p2, p0, Lcom/iMe/storage/domain/interactor/crypto/cancel/CancelInteractor$cancelEthTransaction$$inlined$flatMapSuccess$1;->$tokenCode$inlined:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
+    iput-object p2, p0, Lcom/iMe/storage/domain/interactor/crypto/cancel/CancelInteractor$cancelEthTransaction$$inlined$flatMapSuccess$1;->$networkId$inlined:Ljava/lang/String;
 
     iput-object p3, p0, Lcom/iMe/storage/domain/interactor/crypto/cancel/CancelInteractor$cancelEthTransaction$$inlined$flatMapSuccess$1;->$txHash$inlined:Ljava/lang/String;
 
@@ -66,7 +66,7 @@
 
 # virtual methods
 .method public final invoke(Lcom/iMe/storage/domain/model/Result;)Lio/reactivex/ObservableSource;
-    .locals 20
+    .locals 19
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -98,7 +98,7 @@
 
     if-eqz v2, :cond_2
 
-    .line 81
+    .line 93
     invoke-virtual/range {p1 .. p1}, Lcom/iMe/storage/domain/model/Result;->getData()Ljava/lang/Object;
 
     move-result-object v1
@@ -107,54 +107,48 @@
 
     check-cast v1, Lcom/iMe/storage/domain/model/crypto/cancel/CryptoCancelMetadata;
 
-    .line 83
+    .line 94
     iget-object v2, v0, Lcom/iMe/storage/domain/interactor/crypto/cancel/CancelInteractor$cancelEthTransaction$$inlined$flatMapSuccess$1;->this$0:Lcom/iMe/storage/domain/interactor/crypto/cancel/CancelInteractor;
 
     invoke-static {v2}, Lcom/iMe/storage/domain/interactor/crypto/cancel/CancelInteractor;->access$getCancelRepository$p(Lcom/iMe/storage/domain/interactor/crypto/cancel/CancelInteractor;)Lcom/iMe/storage/domain/repository/crypto/cancel/CancelRepository;
 
     move-result-object v2
 
-    .line 85
+    .line 96
     new-instance v4, Lcom/iMe/storage/domain/model/crypto/cancel/CancelArgs$Ethereum;
 
-    .line 86
-    iget-object v5, v0, Lcom/iMe/storage/domain/interactor/crypto/cancel/CancelInteractor$cancelEthTransaction$$inlined$flatMapSuccess$1;->this$0:Lcom/iMe/storage/domain/interactor/crypto/cancel/CancelInteractor;
+    .line 97
+    iget-object v5, v0, Lcom/iMe/storage/domain/interactor/crypto/cancel/CancelInteractor$cancelEthTransaction$$inlined$flatMapSuccess$1;->$networkId$inlined:Ljava/lang/String;
 
-    iget-object v6, v0, Lcom/iMe/storage/domain/interactor/crypto/cancel/CancelInteractor$cancelEthTransaction$$inlined$flatMapSuccess$1;->$tokenCode$inlined:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
-
-    invoke-static {v5, v6}, Lcom/iMe/storage/domain/interactor/crypto/cancel/CancelInteractor;->access$getCancelTokenBySourceTxToken(Lcom/iMe/storage/domain/interactor/crypto/cancel/CancelInteractor;Lcom/iMe/storage/domain/model/wallet/token/TokenCode;)Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
-
-    move-result-object v5
-
-    .line 87
+    .line 98
     iget-object v6, v0, Lcom/iMe/storage/domain/interactor/crypto/cancel/CancelInteractor$cancelEthTransaction$$inlined$flatMapSuccess$1;->$txHash$inlined:Ljava/lang/String;
 
-    .line 89
-    sget-object v10, Lcom/iMe/storage/domain/utils/crypto/Convert$Unit;->ETHER:Lcom/iMe/storage/domain/utils/crypto/Convert$Unit;
+    .line 100
+    sget-object v7, Lcom/iMe/storage/domain/utils/crypto/Convert$Unit;->ETHER:Lcom/iMe/storage/domain/utils/crypto/Convert$Unit;
 
-    .line 90
+    invoke-virtual {v7}, Lcom/iMe/storage/domain/utils/crypto/Convert$Unit;->getFactor()I
+
+    move-result v11
+
+    .line 101
     invoke-virtual {v1}, Lcom/iMe/storage/domain/model/crypto/cancel/CryptoCancelMetadata;->getTransactionParams()Lcom/iMe/storage/domain/model/crypto/TransactionParams$Ether;
 
     move-result-object v7
 
-    invoke-virtual {v7}, Lcom/iMe/storage/domain/model/crypto/TransactionParams$Ether;->getChain()Lcom/iMe/storage/domain/model/crypto/Chain;
+    invoke-virtual {v7}, Lcom/iMe/storage/domain/model/crypto/TransactionParams$Ether;->getChainId()J
 
-    move-result-object v7
+    move-result-wide v13
 
-    invoke-virtual {v7}, Lcom/iMe/storage/domain/model/crypto/Chain;->getId()J
-
-    move-result-wide v12
-
-    .line 91
+    .line 102
     invoke-virtual {v1}, Lcom/iMe/storage/domain/model/crypto/cancel/CryptoCancelMetadata;->getValue()Ljava/lang/String;
 
     move-result-object v7
 
     invoke-static {v7}, Ljava/lang/Double;->parseDouble(Ljava/lang/String;)D
 
-    move-result-wide v8
+    move-result-wide v9
 
-    .line 92
+    .line 103
     invoke-virtual {v1}, Lcom/iMe/storage/domain/model/crypto/cancel/CryptoCancelMetadata;->getTransactionParams()Lcom/iMe/storage/domain/model/crypto/TransactionParams$Ether;
 
     move-result-object v7
@@ -167,9 +161,9 @@
 
     invoke-virtual {v7}, Lcom/iMe/storage/domain/model/crypto/send/GasPriceInfo;->getLimit()Ljava/math/BigInteger;
 
-    move-result-object v16
+    move-result-object v17
 
-    .line 93
+    .line 104
     invoke-virtual {v1}, Lcom/iMe/storage/domain/model/crypto/cancel/CryptoCancelMetadata;->getTransactionParams()Lcom/iMe/storage/domain/model/crypto/TransactionParams$Ether;
 
     move-result-object v7
@@ -180,18 +174,18 @@
 
     invoke-virtual {v7}, Lcom/iMe/storage/domain/model/crypto/send/GasPriceInfo;->getPrice()Ljava/math/BigInteger;
 
-    move-result-object v15
+    move-result-object v16
 
-    .line 94
+    .line 105
     invoke-virtual {v1}, Lcom/iMe/storage/domain/model/crypto/cancel/CryptoCancelMetadata;->getTransactionParams()Lcom/iMe/storage/domain/model/crypto/TransactionParams$Ether;
 
     move-result-object v1
 
     invoke-virtual {v1}, Lcom/iMe/storage/domain/model/crypto/TransactionParams$Ether;->getNonce()Ljava/math/BigInteger;
 
-    move-result-object v14
+    move-result-object v15
 
-    .line 95
+    .line 106
     iget-object v1, v0, Lcom/iMe/storage/domain/interactor/crypto/cancel/CancelInteractor$cancelEthTransaction$$inlined$flatMapSuccess$1;->this$0:Lcom/iMe/storage/domain/interactor/crypto/cancel/CancelInteractor;
 
     invoke-static {v1}, Lcom/iMe/storage/domain/interactor/crypto/cancel/CancelInteractor;->access$getCryptoAccessManager$p(Lcom/iMe/storage/domain/interactor/crypto/cancel/CancelInteractor;)Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;
@@ -204,7 +198,7 @@
 
     if-eqz v1, :cond_0
 
-    invoke-virtual {v1}, Lcom/iMe/storage/domain/model/crypto/Wallet$EVM;->getAddress()Ljava/lang/String;
+    invoke-virtual {v1}, Lcom/iMe/storage/domain/model/crypto/Wallet$MultiCoinWallet;->getAddress()Ljava/lang/String;
 
     move-result-object v3
 
@@ -213,36 +207,32 @@
 
     const-string v1, ""
 
-    move-object v11, v1
+    move-object v12, v1
 
     goto :goto_0
 
     :cond_1
-    move-object v11, v3
+    move-object v12, v3
 
-    .line 88
+    .line 99
     :goto_0
     new-instance v1, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$EVM;
 
-    const/16 v17, 0x0
+    const/16 v18, 0x0
 
-    const/16 v18, 0x80
+    move-object v8, v1
 
-    const/16 v19, 0x0
+    invoke-direct/range {v8 .. v18}, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$EVM;-><init>(DILjava/lang/String;JLjava/math/BigInteger;Ljava/math/BigInteger;Ljava/math/BigInteger;Ljava/lang/String;)V
 
-    move-object v7, v1
+    .line 96
+    invoke-direct {v4, v5, v6, v1}, Lcom/iMe/storage/domain/model/crypto/cancel/CancelArgs$Ethereum;-><init>(Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$EVM;)V
 
-    invoke-direct/range {v7 .. v19}, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$EVM;-><init>(DLcom/iMe/storage/domain/utils/crypto/Convert$Unit;Ljava/lang/String;JLjava/math/BigInteger;Ljava/math/BigInteger;Ljava/math/BigInteger;Ljava/lang/String;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
-
-    .line 85
-    invoke-direct {v4, v5, v6, v1}, Lcom/iMe/storage/domain/model/crypto/cancel/CancelArgs$Ethereum;-><init>(Lcom/iMe/storage/domain/model/wallet/token/TokenCode;Ljava/lang/String;Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$EVM;)V
-
-    .line 84
+    .line 95
     invoke-interface {v2, v4}, Lcom/iMe/storage/domain/repository/crypto/cancel/CancelRepository;->cancel(Lcom/iMe/storage/domain/model/crypto/cancel/CancelArgs;)Lio/reactivex/Observable;
 
     move-result-object v1
 
-    .line 99
+    .line 111
     iget-object v2, v0, Lcom/iMe/storage/domain/interactor/crypto/cancel/CancelInteractor$cancelEthTransaction$$inlined$flatMapSuccess$1;->this$0:Lcom/iMe/storage/domain/interactor/crypto/cancel/CancelInteractor;
 
     invoke-static {v2}, Lcom/iMe/storage/domain/interactor/crypto/cancel/CancelInteractor;->access$getSchedulersProvider$p(Lcom/iMe/storage/domain/interactor/crypto/cancel/CancelInteractor;)Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
@@ -257,8 +247,9 @@
 
     move-result-object v1
 
-    const-string v2, "cancelRepository\n       \u2026(schedulersProvider.io())"
+    const-string v2, "with(result.data!!) {\n  \u2026                        }"
 
+    .line 93
     invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     goto :goto_1

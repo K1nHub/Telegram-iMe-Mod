@@ -4,8 +4,8 @@ import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import kotlin.jvm.internal.Intrinsics;
-import kotlin.p035io.CloseableKt;
-import kotlin.p035io.TextStreamsKt;
+import kotlin.p034io.CloseableKt;
+import kotlin.p034io.TextStreamsKt;
 import kotlin.text.Charsets;
 /* compiled from: InputStreamExt.kt */
 /* loaded from: classes3.dex */

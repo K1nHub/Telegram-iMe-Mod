@@ -22,7 +22,7 @@
         "Lkotlin/jvm/functions/Function0<",
         "Ljava/util/List<",
         "+",
-        "Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocolInfo$UniswapV3;",
+        "Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocolInfo;",
         ">;>;"
     }
 .end annotation
@@ -60,7 +60,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 76
+    .line 74
     invoke-virtual {p0}, Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocolInfo$Companion$invisibleExchanges$2;->invoke()Ljava/util/List;
 
     move-result-object v0
@@ -74,15 +74,13 @@
         value = {
             "()",
             "Ljava/util/List<",
-            "Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocolInfo$UniswapV3;",
+            "Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocolInfo;",
             ">;"
         }
     .end annotation
 
-    .line 76
-    sget-object v0, Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocolInfo$UniswapV3;->INSTANCE:Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocolInfo$UniswapV3;
-
-    invoke-static {v0}, Lkotlin/collections/CollectionsKt;->listOf(Ljava/lang/Object;)Ljava/util/List;
+    .line 74
+    invoke-static {}, Lkotlin/collections/CollectionsKt;->emptyList()Ljava/util/List;
 
     move-result-object v0
 

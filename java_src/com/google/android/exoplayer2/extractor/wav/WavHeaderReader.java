@@ -15,7 +15,7 @@ final class WavHeaderReader {
 
     public static boolean checkFileType(ExtractorInput extractorInput) throws IOException {
         ParsableByteArray parsableByteArray = new ParsableByteArray(8);
-        int i = ChunkHeader.peek(extractorInput, parsableByteArray).f110id;
+        int i = ChunkHeader.peek(extractorInput, parsableByteArray).f192id;
         if (i == 1380533830 || i == 1380333108) {
             extractorInput.peekFully(parsableByteArray.getData(), 0, 4);
             parsableByteArray.setPosition(0);
@@ -32,7 +32,7 @@ final class WavHeaderReader {
     public static long readRf64SampleDataSize(ExtractorInput extractorInput) throws IOException {
         ParsableByteArray parsableByteArray = new ParsableByteArray(8);
         ChunkHeader peek = ChunkHeader.peek(extractorInput, parsableByteArray);
-        if (peek.f110id != 1685272116) {
+        if (peek.f192id != 1685272116) {
             extractorInput.resetPeekPosition();
             return -1L;
         }
@@ -78,11 +78,11 @@ final class WavHeaderReader {
 
     private static ChunkHeader skipToChunk(int i, ExtractorInput extractorInput, ParsableByteArray parsableByteArray) throws IOException {
         ChunkHeader peek = ChunkHeader.peek(extractorInput, parsableByteArray);
-        while (peek.f110id != i) {
-            Log.m796w(TAG, "Ignoring unknown WAV chunk: " + peek.f110id);
+        while (peek.f192id != i) {
+            Log.m796w(TAG, "Ignoring unknown WAV chunk: " + peek.f192id);
             long j = peek.size + 8;
             if (j > 2147483647L) {
-                throw ParserException.createForUnsupportedContainerFeature("Chunk is too large (~2GB+) to skip; id: " + peek.f110id);
+                throw ParserException.createForUnsupportedContainerFeature("Chunk is too large (~2GB+) to skip; id: " + peek.f192id);
             }
             extractorInput.skipFully((int) j);
             peek = ChunkHeader.peek(extractorInput, parsableByteArray);
@@ -99,11 +99,11 @@ final class WavHeaderReader {
         public static final int SIZE_IN_BYTES = 8;
 
         /* renamed from: id */
-        public final int f110id;
+        public final int f192id;
         public final long size;
 
         private ChunkHeader(int i, long j) {
-            this.f110id = i;
+            this.f192id = i;
             this.size = j;
         }
 

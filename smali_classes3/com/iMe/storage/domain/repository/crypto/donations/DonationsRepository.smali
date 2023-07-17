@@ -30,12 +30,12 @@
     .end annotation
 .end method
 
-.method public abstract getDataForDonation(JLjava/lang/String;Lcom/iMe/storage/domain/model/crypto/NetworkType;)Lio/reactivex/Observable;
+.method public abstract getDataForDonation(JLjava/lang/String;Lcom/iMe/storage/domain/model/wallet/token/Token;)Lio/reactivex/Observable;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(J",
             "Ljava/lang/String;",
-            "Lcom/iMe/storage/domain/model/crypto/NetworkType;",
+            "Lcom/iMe/storage/domain/model/wallet/token/Token;",
             ")",
             "Lio/reactivex/Observable<",
             "Lcom/iMe/storage/domain/model/Result<",
@@ -57,13 +57,13 @@
     .end annotation
 .end method
 
-.method public abstract getDonationTransactionHistory(JLjava/lang/String;ILcom/iMe/storage/domain/model/crypto/NetworkType;)Lio/reactivex/Observable;
+.method public abstract getDonationTransactionHistory(JLjava/lang/String;ILjava/lang/String;)Lio/reactivex/Observable;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(J",
             "Ljava/lang/String;",
             "I",
-            "Lcom/iMe/storage/domain/model/crypto/NetworkType;",
+            "Ljava/lang/String;",
             ")",
             "Lio/reactivex/Observable<",
             "Lcom/iMe/storage/domain/model/Result<",
@@ -74,11 +74,11 @@
     .end annotation
 .end method
 
-.method public abstract getDonationWalletBalance(JLcom/iMe/storage/domain/model/crypto/NetworkType;)Lio/reactivex/Observable;
+.method public abstract getDonationWalletBalance(JLjava/lang/String;)Lio/reactivex/Observable;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(J",
-            "Lcom/iMe/storage/domain/model/crypto/NetworkType;",
+            "Ljava/lang/String;",
             ")",
             "Lio/reactivex/Observable<",
             "Lcom/iMe/storage/domain/model/Result<",

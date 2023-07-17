@@ -18,17 +18,15 @@
 
 .field public final synthetic f$5:Z
 
-.field public final synthetic f$6:Z
+.field public final synthetic f$6:J
 
-.field public final synthetic f$7:J
+.field public final synthetic f$7:Lorg/telegram/tgnet/TLRPC$TL_messages_getMessages;
 
-.field public final synthetic f$8:Lorg/telegram/tgnet/TLRPC$TL_messages_getMessages;
-
-.field public final synthetic f$9:Ljava/util/concurrent/CountDownLatch;
+.field public final synthetic f$8:Ljava/util/concurrent/CountDownLatch;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/messenger/MediaDataController;ZLjava/util/ArrayList;Ljava/util/ArrayList;Ljava/util/ArrayList;ZZJLorg/telegram/tgnet/TLRPC$TL_messages_getMessages;Ljava/util/concurrent/CountDownLatch;)V
+.method public synthetic constructor <init>(Lorg/telegram/messenger/MediaDataController;ZLjava/util/ArrayList;Ljava/util/ArrayList;Ljava/util/ArrayList;ZJLorg/telegram/tgnet/TLRPC$TL_messages_getMessages;Ljava/util/concurrent/CountDownLatch;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -45,13 +43,11 @@
 
     iput-boolean p6, p0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda215;->f$5:Z
 
-    iput-boolean p7, p0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda215;->f$6:Z
+    iput-wide p7, p0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda215;->f$6:J
 
-    iput-wide p8, p0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda215;->f$7:J
+    iput-object p9, p0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda215;->f$7:Lorg/telegram/tgnet/TLRPC$TL_messages_getMessages;
 
-    iput-object p10, p0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda215;->f$8:Lorg/telegram/tgnet/TLRPC$TL_messages_getMessages;
-
-    iput-object p11, p0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda215;->f$9:Ljava/util/concurrent/CountDownLatch;
+    iput-object p10, p0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda215;->f$8:Ljava/util/concurrent/CountDownLatch;
 
     return-void
 .end method
@@ -59,7 +55,7 @@
 
 # virtual methods
 .method public final run(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
-    .locals 13
+    .locals 12
 
     iget-object v0, p0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda215;->f$0:Lorg/telegram/messenger/MediaDataController;
 
@@ -73,19 +69,17 @@
 
     iget-boolean v5, p0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda215;->f$5:Z
 
-    iget-boolean v6, p0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda215;->f$6:Z
+    iget-wide v6, p0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda215;->f$6:J
 
-    iget-wide v7, p0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda215;->f$7:J
+    iget-object v8, p0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda215;->f$7:Lorg/telegram/tgnet/TLRPC$TL_messages_getMessages;
 
-    iget-object v9, p0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda215;->f$8:Lorg/telegram/tgnet/TLRPC$TL_messages_getMessages;
+    iget-object v9, p0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda215;->f$8:Ljava/util/concurrent/CountDownLatch;
 
-    iget-object v10, p0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda215;->f$9:Ljava/util/concurrent/CountDownLatch;
+    move-object v10, p1
 
-    move-object v11, p1
+    move-object v11, p2
 
-    move-object v12, p2
-
-    invoke-static/range {v0 .. v12}, Lorg/telegram/messenger/MediaDataController;->$r8$lambda$qPoeLHoH5scOK_ChD7JpwelkXzU(Lorg/telegram/messenger/MediaDataController;ZLjava/util/ArrayList;Ljava/util/ArrayList;Ljava/util/ArrayList;ZZJLorg/telegram/tgnet/TLRPC$TL_messages_getMessages;Ljava/util/concurrent/CountDownLatch;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+    invoke-static/range {v0 .. v11}, Lorg/telegram/messenger/MediaDataController;->$r8$lambda$cIpupIEdaHqczEaMjBlO8OOKzlI(Lorg/telegram/messenger/MediaDataController;ZLjava/util/ArrayList;Ljava/util/ArrayList;Ljava/util/ArrayList;ZJLorg/telegram/tgnet/TLRPC$TL_messages_getMessages;Ljava/util/concurrent/CountDownLatch;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
 
     return-void
 .end method

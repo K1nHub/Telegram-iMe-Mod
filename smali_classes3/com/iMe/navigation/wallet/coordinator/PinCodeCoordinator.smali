@@ -11,7 +11,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nPinCodeCoordinator.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PinCodeCoordinator.kt\ncom/iMe/navigation/wallet/coordinator/PinCodeCoordinator\n+ 2 ContextExt.kt\ncom/iMe/utils/extentions/common/ContextExtKt\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,83:1\n47#2:84\n1747#3,3:85\n*S KotlinDebug\n*F\n+ 1 PinCodeCoordinator.kt\ncom/iMe/navigation/wallet/coordinator/PinCodeCoordinator\n*L\n18#1:84\n18#1:85,3\n*E\n"
+    value = "SMAP\nPinCodeCoordinator.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PinCodeCoordinator.kt\ncom/iMe/navigation/wallet/coordinator/PinCodeCoordinator\n+ 2 ContextExt.kt\ncom/iMe/utils/extentions/common/ContextExtKt\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,87:1\n47#2:88\n1747#3,3:89\n*S KotlinDebug\n*F\n+ 1 PinCodeCoordinator.kt\ncom/iMe/navigation/wallet/coordinator/PinCodeCoordinator\n*L\n18#1:88\n18#1:89,3\n*E\n"
 .end annotation
 
 
@@ -41,14 +41,14 @@
     return-void
 .end method
 
-.method public static synthetic start$default(Lcom/iMe/navigation/wallet/coordinator/PinCodeCoordinator;Lorg/telegram/ui/ActionBar/INavigationLayout;Lcom/iMe/ui/base/WalletAuthFragment;Lcom/iMe/navigation/wallet/coordinator/PinCodeCoordinator$Args;ZILjava/lang/Object;)V
+.method public static synthetic start$default(Lcom/iMe/navigation/wallet/coordinator/PinCodeCoordinator;Lorg/telegram/ui/ActionBar/INavigationLayout;Lcom/iMe/ui/base/wallet_auth/WalletAuthBaseFragment;Lcom/iMe/navigation/wallet/coordinator/PinCodeCoordinator$Args;ZILjava/lang/Object;)V
     .locals 0
 
     and-int/lit8 p6, p5, 0x4
 
     if-eqz p6, :cond_0
 
-    .line 27
+    .line 28
     new-instance p3, Lcom/iMe/navigation/wallet/coordinator/PinCodeCoordinator$Args;
 
     sget-object p6, Lcom/iMe/model/wallet/crypto/pin/EnterPinCodeScreenType;->CHECK:Lcom/iMe/model/wallet/crypto/pin/EnterPinCodeScreenType;
@@ -62,9 +62,9 @@
 
     const/4 p4, 0x0
 
-    .line 25
+    .line 26
     :cond_1
-    invoke-virtual {p0, p1, p2, p3, p4}, Lcom/iMe/navigation/wallet/coordinator/PinCodeCoordinator;->start(Lorg/telegram/ui/ActionBar/INavigationLayout;Lcom/iMe/ui/base/WalletAuthFragment;Lcom/iMe/navigation/wallet/coordinator/PinCodeCoordinator$Args;Z)V
+    invoke-virtual {p0, p1, p2, p3, p4}, Lcom/iMe/navigation/wallet/coordinator/PinCodeCoordinator;->start(Lorg/telegram/ui/ActionBar/INavigationLayout;Lcom/iMe/ui/base/wallet_auth/WalletAuthBaseFragment;Lcom/iMe/navigation/wallet/coordinator/PinCodeCoordinator$Args;Z)V
 
     return-void
 .end method
@@ -161,7 +161,37 @@
     return-void
 .end method
 
-.method public final start(Lorg/telegram/ui/ActionBar/INavigationLayout;Lcom/iMe/ui/base/WalletAuthFragment;Lcom/iMe/navigation/wallet/coordinator/PinCodeCoordinator$Args;Z)V
+.method public final start(Lorg/telegram/ui/ActionBar/INavigationLayout;Lcom/iMe/ui/base/wallet_auth/WalletAuthBaseFragment;)V
+    .locals 8
+
+    const-string v0, "actionBarLayout"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "nextFragment"
+
+    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const/4 v4, 0x0
+
+    const/4 v5, 0x0
+
+    const/16 v6, 0xc
+
+    const/4 v7, 0x0
+
+    move-object v1, p0
+
+    move-object v2, p1
+
+    move-object v3, p2
+
+    invoke-static/range {v1 .. v7}, Lcom/iMe/navigation/wallet/coordinator/PinCodeCoordinator;->start$default(Lcom/iMe/navigation/wallet/coordinator/PinCodeCoordinator;Lorg/telegram/ui/ActionBar/INavigationLayout;Lcom/iMe/ui/base/wallet_auth/WalletAuthBaseFragment;Lcom/iMe/navigation/wallet/coordinator/PinCodeCoordinator$Args;ZILjava/lang/Object;)V
+
+    return-void
+.end method
+
+.method public final start(Lorg/telegram/ui/ActionBar/INavigationLayout;Lcom/iMe/ui/base/wallet_auth/WalletAuthBaseFragment;Lcom/iMe/navigation/wallet/coordinator/PinCodeCoordinator$Args;Z)V
     .locals 2
 
     const-string v0, "actionBarLayout"
@@ -176,7 +206,7 @@
 
     invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 29
+    .line 30
     sget-object v0, Lcom/iMe/ui/wallet/crypto/enter/pin/EnterWalletPinFragment;->Companion:Lcom/iMe/ui/wallet/crypto/enter/pin/EnterWalletPinFragment$Companion;
 
     invoke-virtual {p3}, Lcom/iMe/navigation/wallet/coordinator/PinCodeCoordinator$Args;->getLockType()Lcom/iMe/model/wallet/crypto/pin/EnterPinCodeScreenType;
@@ -185,7 +215,7 @@
 
     new-instance v1, Lcom/iMe/navigation/wallet/coordinator/PinCodeCoordinator$start$1;
 
-    invoke-direct {v1, p2}, Lcom/iMe/navigation/wallet/coordinator/PinCodeCoordinator$start$1;-><init>(Lcom/iMe/ui/base/WalletAuthFragment;)V
+    invoke-direct {v1, p2}, Lcom/iMe/navigation/wallet/coordinator/PinCodeCoordinator$start$1;-><init>(Lcom/iMe/ui/base/wallet_auth/WalletAuthBaseFragment;)V
 
     invoke-virtual {v0, p3, v1}, Lcom/iMe/ui/wallet/crypto/enter/pin/EnterWalletPinFragment$Companion;->newInstance(Lcom/iMe/model/wallet/crypto/pin/EnterPinCodeScreenType;Lkotlin/jvm/functions/Function2;)Lcom/iMe/ui/wallet/crypto/enter/pin/EnterWalletPinFragment;
 
@@ -211,7 +241,7 @@
 
     invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 48
+    .line 50
     sget-object v0, Lcom/iMe/ui/wallet/crypto/enter/pin/EnterWalletPinFragment;->Companion:Lcom/iMe/ui/wallet/crypto/enter/pin/EnterWalletPinFragment$Companion;
 
     invoke-virtual {p3}, Lcom/iMe/navigation/wallet/coordinator/PinCodeCoordinator$Args;->getLockType()Lcom/iMe/model/wallet/crypto/pin/EnterPinCodeScreenType;

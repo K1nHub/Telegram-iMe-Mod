@@ -20,6 +20,11 @@ public class StakingCalculatorProgrammesView$$State extends MvpViewState<Staking
         BaseView.CC.$default$finishScreen(this);
     }
 
+    @Override // com.iMe.p031ui.base.mvp.base.BaseView
+    public /* synthetic */ void removeSelfFromStackImmediately() {
+        BaseView.CC.$default$removeSelfFromStackImmediately(this);
+    }
+
     @Override // com.iMe.p031ui.base.mvp.LoadMoreView
     public /* synthetic */ void resetLoadMore() {
         LoadMoreView.CC.$default$resetLoadMore(this);

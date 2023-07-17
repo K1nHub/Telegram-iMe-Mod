@@ -3,12 +3,12 @@
 .source "PaymentFormActivity.java"
 
 # interfaces
-.implements Lcom/stripe/android/TokenCallback;
+.implements Lorg/telegram/ui/PaymentFormActivity$PaymentFormActivityDelegate;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/PaymentFormActivity;->sendCardData()Z
+    value = Lorg/telegram/ui/PaymentFormActivity;->goToNextStep()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -22,18 +22,10 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$XRW7Agk29OMGMWUE1hg3r4QLhf4(Lorg/telegram/ui/PaymentFormActivity$25;)V
-    .locals 0
-
-    invoke-direct {p0}, Lorg/telegram/ui/PaymentFormActivity$25;->lambda$onSuccess$0()V
-
-    return-void
-.end method
-
 .method constructor <init>(Lorg/telegram/ui/PaymentFormActivity;)V
     .locals 0
 
-    .line 3707
+    .line 3327
     iput-object p1, p0, Lorg/telegram/ui/PaymentFormActivity$25;->this$0:Lorg/telegram/ui/PaymentFormActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,158 +33,103 @@
     return-void
 .end method
 
-.method private synthetic lambda$onSuccess$0()V
-    .locals 3
 
-    .line 3714
+# virtual methods
+.method public currentPasswordUpdated(Lorg/telegram/tgnet/TLRPC$account_Password;)V
+    .locals 1
+
+    .line 3346
     iget-object v0, p0, Lorg/telegram/ui/PaymentFormActivity$25;->this$0:Lorg/telegram/ui/PaymentFormActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/PaymentFormActivity;->access$200(Lorg/telegram/ui/PaymentFormActivity;)V
-
-    .line 3715
-    iget-object v0, p0, Lorg/telegram/ui/PaymentFormActivity$25;->this$0:Lorg/telegram/ui/PaymentFormActivity;
-
-    const/4 v1, 0x1
-
-    const/4 v2, 0x0
-
-    invoke-static {v0, v1, v2}, Lorg/telegram/ui/PaymentFormActivity;->access$2500(Lorg/telegram/ui/PaymentFormActivity;ZZ)V
-
-    .line 3716
-    iget-object v0, p0, Lorg/telegram/ui/PaymentFormActivity$25;->this$0:Lorg/telegram/ui/PaymentFormActivity;
-
-    invoke-static {v0, v2}, Lorg/telegram/ui/PaymentFormActivity;->access$600(Lorg/telegram/ui/PaymentFormActivity;Z)V
+    invoke-static {v0, p1}, Lorg/telegram/ui/PaymentFormActivity;->access$302(Lorg/telegram/ui/PaymentFormActivity;Lorg/telegram/tgnet/TLRPC$account_Password;)Lorg/telegram/tgnet/TLRPC$account_Password;
 
     return-void
 .end method
 
+.method public synthetic didSelectNewAddress(Lorg/telegram/tgnet/TLRPC$TL_payments_validateRequestedInfo;)V
+    .locals 0
 
-# virtual methods
-.method public onError(Ljava/lang/Exception;)V
-    .locals 3
-
-    .line 3721
-    iget-object v0, p0, Lorg/telegram/ui/PaymentFormActivity$25;->this$0:Lorg/telegram/ui/PaymentFormActivity;
-
-    invoke-static {v0}, Lorg/telegram/ui/PaymentFormActivity;->access$4100(Lorg/telegram/ui/PaymentFormActivity;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
+    invoke-static {p0, p1}, Lorg/telegram/ui/PaymentFormActivity$PaymentFormActivityDelegate$-CC;->$default$didSelectNewAddress(Lorg/telegram/ui/PaymentFormActivity$PaymentFormActivityDelegate;Lorg/telegram/tgnet/TLRPC$TL_payments_validateRequestedInfo;)V
 
     return-void
+.end method
 
-    .line 3724
-    :cond_0
+.method public didSelectNewCard(Ljava/lang/String;Ljava/lang/String;ZLorg/telegram/tgnet/TLRPC$TL_inputPaymentCredentialsGooglePay;Lorg/telegram/tgnet/TLRPC$TL_paymentSavedCredentialsCard;)Z
+    .locals 7
+
+    .line 3330
     iget-object v0, p0, Lorg/telegram/ui/PaymentFormActivity$25;->this$0:Lorg/telegram/ui/PaymentFormActivity;
 
-    const/4 v1, 0x1
-
-    const/4 v2, 0x0
-
-    invoke-static {v0, v1, v2}, Lorg/telegram/ui/PaymentFormActivity;->access$2500(Lorg/telegram/ui/PaymentFormActivity;ZZ)V
-
-    .line 3725
-    iget-object v0, p0, Lorg/telegram/ui/PaymentFormActivity$25;->this$0:Lorg/telegram/ui/PaymentFormActivity;
-
-    invoke-static {v0, v2}, Lorg/telegram/ui/PaymentFormActivity;->access$600(Lorg/telegram/ui/PaymentFormActivity;Z)V
-
-    .line 3726
-    instance-of v0, p1, Lcom/stripe/android/exception/APIConnectionException;
-
-    if-nez v0, :cond_2
-
-    instance-of v0, p1, Lcom/stripe/android/exception/APIException;
-
-    if-eqz v0, :cond_1
-
-    goto :goto_0
-
-    .line 3729
-    :cond_1
-    iget-object v0, p0, Lorg/telegram/ui/PaymentFormActivity$25;->this$0:Lorg/telegram/ui/PaymentFormActivity;
-
-    invoke-virtual {p1}, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-static {v0, p1}, Lorg/telegram/ui/Components/AlertsCreator;->showSimpleToast(Lorg/telegram/ui/ActionBar/BaseFragment;Ljava/lang/String;)Landroid/widget/Toast;
-
-    goto :goto_1
-
-    .line 3727
-    :cond_2
-    :goto_0
-    iget-object p1, p0, Lorg/telegram/ui/PaymentFormActivity$25;->this$0:Lorg/telegram/ui/PaymentFormActivity;
-
-    sget v0, Lorg/telegram/messenger/R$string;->PaymentConnectionFailed:I
-
-    const-string v1, "PaymentConnectionFailed"
-
-    invoke-static {v1, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v0}, Lorg/telegram/ui/PaymentFormActivity;->access$3800(Lorg/telegram/ui/PaymentFormActivity;)Lorg/telegram/ui/PaymentFormActivity$PaymentFormActivityDelegate;
 
     move-result-object v0
 
-    invoke-static {p1, v0}, Lorg/telegram/ui/Components/AlertsCreator;->showSimpleToast(Lorg/telegram/ui/ActionBar/BaseFragment;Ljava/lang/String;)Landroid/widget/Toast;
-
-    :goto_1
-    return-void
-.end method
-
-.method public onSuccess(Lcom/stripe/android/model/Token;)V
-    .locals 5
-
-    .line 3709
-    iget-object v0, p0, Lorg/telegram/ui/PaymentFormActivity$25;->this$0:Lorg/telegram/ui/PaymentFormActivity;
-
-    invoke-static {v0}, Lorg/telegram/ui/PaymentFormActivity;->access$4100(Lorg/telegram/ui/PaymentFormActivity;)Z
-
-    move-result v0
-
     if-eqz v0, :cond_0
 
-    return-void
-
-    .line 3712
-    :cond_0
+    .line 3331
     iget-object v0, p0, Lorg/telegram/ui/PaymentFormActivity$25;->this$0:Lorg/telegram/ui/PaymentFormActivity;
 
-    sget-object v1, Ljava/util/Locale;->US:Ljava/util/Locale;
+    invoke-static {v0}, Lorg/telegram/ui/PaymentFormActivity;->access$3800(Lorg/telegram/ui/PaymentFormActivity;)Lorg/telegram/ui/PaymentFormActivity$PaymentFormActivityDelegate;
 
-    const/4 v2, 0x2
+    move-result-object v1
 
-    new-array v2, v2, [Ljava/lang/Object;
+    move-object v2, p1
 
-    const/4 v3, 0x0
+    move-object v3, p2
 
-    invoke-virtual {p1}, Lcom/stripe/android/model/Token;->getType()Ljava/lang/String;
+    move v4, p3
 
-    move-result-object v4
+    move-object v5, p4
 
-    aput-object v4, v2, v3
+    move-object v6, p5
 
-    const/4 v3, 0x1
+    invoke-interface/range {v1 .. v6}, Lorg/telegram/ui/PaymentFormActivity$PaymentFormActivityDelegate;->didSelectNewCard(Ljava/lang/String;Ljava/lang/String;ZLorg/telegram/tgnet/TLRPC$TL_inputPaymentCredentialsGooglePay;Lorg/telegram/tgnet/TLRPC$TL_paymentSavedCredentialsCard;)Z
 
-    invoke-virtual {p1}, Lcom/stripe/android/model/Token;->getId()Ljava/lang/String;
+    .line 3333
+    :cond_0
+    iget-object p1, p0, Lorg/telegram/ui/PaymentFormActivity$25;->this$0:Lorg/telegram/ui/PaymentFormActivity;
+
+    invoke-static {p1}, Lorg/telegram/ui/PaymentFormActivity;->access$3900(Lorg/telegram/ui/PaymentFormActivity;)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_1
+
+    .line 3334
+    iget-object p1, p0, Lorg/telegram/ui/PaymentFormActivity$25;->this$0:Lorg/telegram/ui/PaymentFormActivity;
+
+    invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->removeSelfFromStack()V
+
+    .line 3336
+    :cond_1
+    iget-object p1, p0, Lorg/telegram/ui/PaymentFormActivity$25;->this$0:Lorg/telegram/ui/PaymentFormActivity;
+
+    invoke-static {p1}, Lorg/telegram/ui/PaymentFormActivity;->access$3800(Lorg/telegram/ui/PaymentFormActivity;)Lorg/telegram/ui/PaymentFormActivity$PaymentFormActivityDelegate;
 
     move-result-object p1
 
-    aput-object p1, v2, v3
+    if-eqz p1, :cond_2
 
-    const-string p1, "{\"type\":\"%1$s\", \"id\":\"%2$s\"}"
+    const/4 p1, 0x1
 
-    invoke-static {v1, p1, v2}, Ljava/lang/String;->format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    goto :goto_0
 
-    move-result-object p1
+    :cond_2
+    const/4 p1, 0x0
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/PaymentFormActivity;->access$002(Lorg/telegram/ui/PaymentFormActivity;Ljava/lang/String;)Ljava/lang/String;
+    :goto_0
+    return p1
+.end method
 
-    .line 3713
-    new-instance p1, Lorg/telegram/ui/PaymentFormActivity$25$$ExternalSyntheticLambda0;
+.method public onFragmentDestroyed()V
+    .locals 2
 
-    invoke-direct {p1, p0}, Lorg/telegram/ui/PaymentFormActivity$25$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/PaymentFormActivity$25;)V
+    .line 3341
+    iget-object v0, p0, Lorg/telegram/ui/PaymentFormActivity$25;->this$0:Lorg/telegram/ui/PaymentFormActivity;
 
-    invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;)V
+    const/4 v1, 0x0
+
+    invoke-static {v0, v1}, Lorg/telegram/ui/PaymentFormActivity;->access$4002(Lorg/telegram/ui/PaymentFormActivity;Lorg/telegram/ui/PaymentFormActivity;)Lorg/telegram/ui/PaymentFormActivity;
 
     return-void
 .end method

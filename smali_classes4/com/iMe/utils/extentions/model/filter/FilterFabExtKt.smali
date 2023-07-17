@@ -30,7 +30,7 @@
 
     packed-switch p0, :pswitch_data_0
 
-    .line 16
+    .line 17
     new-instance p0, Lkotlin/NoWhenBranchMatchedException;
 
     invoke-direct {p0}, Lkotlin/NoWhenBranchMatchedException;-><init>()V
@@ -38,11 +38,17 @@
     throw p0
 
     :pswitch_0
+    sget p0, Lorg/telegram/messenger/R$drawable;->msg_clear:I
+
+    goto :goto_0
+
+    .line 16
+    :pswitch_1
     sget p0, Lorg/telegram/messenger/R$drawable;->msg_add:I
 
     goto :goto_0
 
-    :pswitch_1
+    :pswitch_2
     if-eqz p1, :cond_0
 
     .line 15
@@ -55,7 +61,7 @@
 
     goto :goto_0
 
-    :pswitch_2
+    :pswitch_3
     if-eqz p1, :cond_1
 
     .line 14
@@ -68,7 +74,7 @@
 
     goto :goto_0
 
-    :pswitch_3
+    :pswitch_4
     if-eqz p1, :cond_2
 
     .line 13
@@ -81,7 +87,7 @@
 
     goto :goto_0
 
-    :pswitch_4
+    :pswitch_5
     if-eqz p1, :cond_3
 
     .line 12
@@ -94,7 +100,7 @@
 
     goto :goto_0
 
-    :pswitch_5
+    :pswitch_6
     if-eqz p1, :cond_4
 
     .line 11
@@ -107,7 +113,7 @@
 
     goto :goto_0
 
-    :pswitch_6
+    :pswitch_7
     if-eqz p1, :cond_5
 
     .line 10
@@ -120,7 +126,7 @@
 
     goto :goto_0
 
-    :pswitch_7
+    :pswitch_8
     if-eqz p1, :cond_6
 
     .line 9
@@ -133,7 +139,7 @@
 
     goto :goto_0
 
-    :pswitch_8
+    :pswitch_9
     if-eqz p1, :cond_7
 
     .line 8
@@ -147,10 +153,9 @@
     :goto_0
     return p0
 
-    nop
-
     :pswitch_data_0
     .packed-switch 0x1
+        :pswitch_9
         :pswitch_8
         :pswitch_7
         :pswitch_6
@@ -170,7 +175,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 19
+    .line 20
     sget-object v0, Lcom/iMe/utils/extentions/model/filter/FilterFabExtKt$WhenMappings;->$EnumSwitchMapping$0:[I
 
     invoke-virtual {p0}, Ljava/lang/Enum;->ordinal()I
@@ -181,7 +186,7 @@
 
     packed-switch p0, :pswitch_data_0
 
-    .line 28
+    .line 30
     new-instance p0, Lkotlin/NoWhenBranchMatchedException;
 
     invoke-direct {p0}, Lkotlin/NoWhenBranchMatchedException;-><init>()V
@@ -189,63 +194,68 @@
     throw p0
 
     :pswitch_0
+    sget p0, Lorg/telegram/messenger/R$string;->AreYouSureClearDraftsTitle:I
+
+    goto :goto_0
+
+    .line 29
+    :pswitch_1
     sget p0, Lorg/telegram/messenger/R$string;->cloud_albums_intro_button:I
 
     goto :goto_0
 
-    .line 27
-    :pswitch_1
+    .line 28
+    :pswitch_2
     sget p0, Lorg/telegram/messenger/R$string;->music_albums_tab:I
 
     goto :goto_0
 
-    .line 26
-    :pswitch_2
+    .line 27
+    :pswitch_3
     sget p0, Lorg/telegram/messenger/R$string;->cloud_filter_music:I
 
     goto :goto_0
 
-    .line 25
-    :pswitch_3
+    .line 26
+    :pswitch_4
     sget p0, Lorg/telegram/messenger/R$string;->folder_fab_settings_fab_contacts:I
 
     goto :goto_0
 
-    .line 24
-    :pswitch_4
+    .line 25
+    :pswitch_5
     sget p0, Lorg/telegram/messenger/R$string;->folder_fab_settings_fab_wallet:I
 
     goto :goto_0
 
-    .line 23
-    :pswitch_5
+    .line 24
+    :pswitch_6
     sget p0, Lorg/telegram/messenger/R$string;->folder_fab_settings_fab_mark_all_read:I
 
     goto :goto_0
 
-    .line 22
-    :pswitch_6
+    .line 23
+    :pswitch_7
     sget p0, Lorg/telegram/messenger/R$string;->folder_fab_settings_fab_cloud:I
 
     goto :goto_0
 
-    .line 21
-    :pswitch_7
+    .line 22
+    :pswitch_8
     sget p0, Lorg/telegram/messenger/R$string;->folder_fab_settings_fab_archive:I
 
     goto :goto_0
 
-    .line 20
-    :pswitch_8
+    .line 21
+    :pswitch_9
     sget p0, Lorg/telegram/messenger/R$string;->folder_fab_settings_fab_create_chat:I
 
     :goto_0
     return p0
 
-    nop
-
     :pswitch_data_0
     .packed-switch 0x1
+        :pswitch_9
         :pswitch_8
         :pswitch_7
         :pswitch_6

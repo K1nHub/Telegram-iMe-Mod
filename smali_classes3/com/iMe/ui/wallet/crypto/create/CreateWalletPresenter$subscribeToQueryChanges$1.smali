@@ -69,12 +69,12 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 149
+    .line 184
     iget-object v0, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter$subscribeToQueryChanges$1;->this$0:Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter;
 
     invoke-static {v0, p1}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter;->access$setLastSearchQuery$p(Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter;Ljava/lang/String;)V
 
-    .line 150
+    .line 185
     iget-object v0, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter$subscribeToQueryChanges$1;->this$0:Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter;
 
     invoke-static {v0}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter;->access$getCryptoWalletInteractor$p(Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter;)Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;
@@ -91,7 +91,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 148
+    .line 183
     check-cast p1, Ljava/lang/String;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter$subscribeToQueryChanges$1;->invoke(Ljava/lang/String;)Lio/reactivex/ObservableSource;

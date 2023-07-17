@@ -12,11 +12,11 @@ import moxy.viewstate.ViewCommand;
 import moxy.viewstate.strategy.AddToEndSingleStrategy;
 import moxy.viewstate.strategy.OneExecutionStateStrategy;
 /* renamed from: com.iMe.ui.wallet.crypto.tutorial.CreateWalletTutorialView$$State */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class CreateWalletTutorialView$$State extends MvpViewState<CreateWalletTutorialView> implements CreateWalletTutorialView {
     @Override // com.iMe.p031ui.base.mvp.base.BaseView
-    public /* synthetic */ void finishScreen() {
-        BaseView.CC.$default$finishScreen(this);
+    public /* synthetic */ void removeSelfFromStackImmediately() {
+        BaseView.CC.$default$removeSelfFromStackImmediately(this);
     }
 
     @Override // com.iMe.p031ui.wallet.crypto.tutorial.CreateWalletTutorialView
@@ -33,27 +33,14 @@ public class CreateWalletTutorialView$$State extends MvpViewState<CreateWalletTu
     }
 
     @Override // com.iMe.p031ui.wallet.crypto.tutorial.CreateWalletTutorialView
-    public void openPasscodeScreen() {
-        OpenPasscodeScreenCommand openPasscodeScreenCommand = new OpenPasscodeScreenCommand(this);
-        this.viewCommands.beforeApply(openPasscodeScreenCommand);
-        if (hasNotView().booleanValue()) {
-            return;
-        }
-        for (View view : this.views) {
-            view.openPasscodeScreen();
-        }
-        this.viewCommands.afterApply(openPasscodeScreenCommand);
-    }
-
-    @Override // com.iMe.p031ui.wallet.crypto.tutorial.CreateWalletTutorialView
-    public void openTutorialPassedScreen(TutorialType.Backup backup) {
-        OpenTutorialPassedScreenCommand openTutorialPassedScreenCommand = new OpenTutorialPassedScreenCommand(this, backup);
+    public void openTutorialPassedScreen(TutorialType.WalletIntro walletIntro) {
+        OpenTutorialPassedScreenCommand openTutorialPassedScreenCommand = new OpenTutorialPassedScreenCommand(this, walletIntro);
         this.viewCommands.beforeApply(openTutorialPassedScreenCommand);
         if (hasNotView().booleanValue()) {
             return;
         }
         for (View view : this.views) {
-            view.openTutorialPassedScreen(backup);
+            view.openTutorialPassedScreen(walletIntro);
         }
         this.viewCommands.afterApply(openTutorialPassedScreenCommand);
     }
@@ -97,9 +84,22 @@ public class CreateWalletTutorialView$$State extends MvpViewState<CreateWalletTu
         this.viewCommands.afterApply(showErrorToastCommand);
     }
 
+    @Override // com.iMe.p031ui.base.mvp.base.BaseView
+    public void finishScreen() {
+        FinishScreenCommand finishScreenCommand = new FinishScreenCommand(this);
+        this.viewCommands.beforeApply(finishScreenCommand);
+        if (hasNotView().booleanValue()) {
+            return;
+        }
+        for (View view : this.views) {
+            view.finishScreen();
+        }
+        this.viewCommands.afterApply(finishScreenCommand);
+    }
+
     /* compiled from: CreateWalletTutorialView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.tutorial.CreateWalletTutorialView$$State$ShowTutorialPagesCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class ShowTutorialPagesCommand extends ViewCommand<CreateWalletTutorialView> {
         public final List<TutorialPage> pages;
 
@@ -115,28 +115,14 @@ public class CreateWalletTutorialView$$State extends MvpViewState<CreateWalletTu
     }
 
     /* compiled from: CreateWalletTutorialView$$State.java */
-    /* renamed from: com.iMe.ui.wallet.crypto.tutorial.CreateWalletTutorialView$$State$OpenPasscodeScreenCommand */
-    /* loaded from: classes3.dex */
-    public class OpenPasscodeScreenCommand extends ViewCommand<CreateWalletTutorialView> {
-        OpenPasscodeScreenCommand(CreateWalletTutorialView$$State createWalletTutorialView$$State) {
-            super("openPasscodeScreen", OneExecutionStateStrategy.class);
-        }
-
-        @Override // moxy.viewstate.ViewCommand
-        public void apply(CreateWalletTutorialView createWalletTutorialView) {
-            createWalletTutorialView.openPasscodeScreen();
-        }
-    }
-
-    /* compiled from: CreateWalletTutorialView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.tutorial.CreateWalletTutorialView$$State$OpenTutorialPassedScreenCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class OpenTutorialPassedScreenCommand extends ViewCommand<CreateWalletTutorialView> {
-        public final TutorialType.Backup tutorialType;
+        public final TutorialType.WalletIntro tutorialType;
 
-        OpenTutorialPassedScreenCommand(CreateWalletTutorialView$$State createWalletTutorialView$$State, TutorialType.Backup backup) {
+        OpenTutorialPassedScreenCommand(CreateWalletTutorialView$$State createWalletTutorialView$$State, TutorialType.WalletIntro walletIntro) {
             super("openTutorialPassedScreen", OneExecutionStateStrategy.class);
-            this.tutorialType = backup;
+            this.tutorialType = walletIntro;
         }
 
         @Override // moxy.viewstate.ViewCommand
@@ -147,7 +133,7 @@ public class CreateWalletTutorialView$$State extends MvpViewState<CreateWalletTu
 
     /* compiled from: CreateWalletTutorialView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.tutorial.CreateWalletTutorialView$$State$ShowToastCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class ShowToastCommand extends ViewCommand<CreateWalletTutorialView> {
         public final String text;
 
@@ -164,7 +150,7 @@ public class CreateWalletTutorialView$$State extends MvpViewState<CreateWalletTu
 
     /* compiled from: CreateWalletTutorialView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.tutorial.CreateWalletTutorialView$$State$ShowLoadingDialogCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class ShowLoadingDialogCommand extends ViewCommand<CreateWalletTutorialView> {
         public final Disposable actionToCancel;
         public final boolean cancellable;
@@ -185,7 +171,7 @@ public class CreateWalletTutorialView$$State extends MvpViewState<CreateWalletTu
 
     /* compiled from: CreateWalletTutorialView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.tutorial.CreateWalletTutorialView$$State$ShowErrorToastCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class ShowErrorToastCommand<T> extends ViewCommand<CreateWalletTutorialView> {
         public final ResourceManager resourceManager;
         public final Result.Error<? extends T> result;
@@ -199,6 +185,20 @@ public class CreateWalletTutorialView$$State extends MvpViewState<CreateWalletTu
         @Override // moxy.viewstate.ViewCommand
         public void apply(CreateWalletTutorialView createWalletTutorialView) {
             createWalletTutorialView.showErrorToast(this.result, this.resourceManager);
+        }
+    }
+
+    /* compiled from: CreateWalletTutorialView$$State.java */
+    /* renamed from: com.iMe.ui.wallet.crypto.tutorial.CreateWalletTutorialView$$State$FinishScreenCommand */
+    /* loaded from: classes4.dex */
+    public class FinishScreenCommand extends ViewCommand<CreateWalletTutorialView> {
+        FinishScreenCommand(CreateWalletTutorialView$$State createWalletTutorialView$$State) {
+            super("finishScreen", OneExecutionStateStrategy.class);
+        }
+
+        @Override // moxy.viewstate.ViewCommand
+        public void apply(CreateWalletTutorialView createWalletTutorialView) {
+            createWalletTutorialView.finishScreen();
         }
     }
 }

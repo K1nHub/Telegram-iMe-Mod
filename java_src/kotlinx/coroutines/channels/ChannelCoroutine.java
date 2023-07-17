@@ -36,10 +36,10 @@ public class ChannelCoroutine<E> extends AbstractCoroutine<Unit> implements Chan
 
     @Override // kotlinx.coroutines.channels.ReceiveChannel
     /* renamed from: receiveCatching-JP2dKIU */
-    public Object mo1588receiveCatchingJP2dKIU(Continuation<? super ChannelResult<? extends E>> continuation) {
-        Object mo1588receiveCatchingJP2dKIU = this._channel.mo1588receiveCatchingJP2dKIU(continuation);
+    public Object mo1613receiveCatchingJP2dKIU(Continuation<? super ChannelResult<? extends E>> continuation) {
+        Object mo1613receiveCatchingJP2dKIU = this._channel.mo1613receiveCatchingJP2dKIU(continuation);
         IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        return mo1588receiveCatchingJP2dKIU;
+        return mo1613receiveCatchingJP2dKIU;
     }
 
     @Override // kotlinx.coroutines.channels.SendChannel
@@ -49,8 +49,8 @@ public class ChannelCoroutine<E> extends AbstractCoroutine<Unit> implements Chan
 
     @Override // kotlinx.coroutines.channels.SendChannel
     /* renamed from: trySend-JP2dKIU */
-    public Object mo1589trySendJP2dKIU(E e) {
-        return this._channel.mo1589trySendJP2dKIU(e);
+    public Object mo1614trySendJP2dKIU(E e) {
+        return this._channel.mo1614trySendJP2dKIU(e);
     }
 
     /* JADX INFO: Access modifiers changed from: protected */

@@ -149,6 +149,11 @@ public class WebpFrameLoader {
         return this.webpDecoder.getFrameCount();
     }
 
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public int getLoopCount() {
+        return this.webpDecoder.getTotalIterationCount();
+    }
+
     private void start() {
         if (this.isRunning) {
             return;
@@ -243,7 +248,14 @@ public class WebpFrameLoader {
                 DelayTarget delayTarget2 = this.current;
                 this.current = delayTarget;
                 for (int size = this.callbacks.size() - 1; size >= 0; size--) {
-                    this.callbacks.get(size).onFrameReady();
+                    try {
+                        FrameCallback frameCallback = this.callbacks.get(size);
+                        if (frameCallback != null) {
+                            frameCallback.onFrameReady();
+                        }
+                    } catch (IndexOutOfBoundsException e) {
+                        e.printStackTrace();
+                    }
                 }
                 if (delayTarget2 != null) {
                     this.handler.obtainMessage(2, delayTarget2).sendToTarget();

@@ -20,7 +20,7 @@
 .method public abstract showBalance(Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;)V
 .end method
 
-.method public abstract showLevelRequiredDialog(Lcom/iMe/storage/domain/model/crypto/level/AccountLevel;)V
+.method public abstract showLevelRequiredDialog(Lcom/iMe/storage/domain/model/crypto/level/AccountLevel;Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;)V
     .annotation runtime Lmoxy/viewstate/strategy/alias/OneExecution;
     .end annotation
 .end method

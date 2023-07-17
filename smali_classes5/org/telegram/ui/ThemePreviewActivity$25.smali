@@ -33,7 +33,7 @@
 .method constructor <init>(Lorg/telegram/ui/ThemePreviewActivity;)V
     .locals 0
 
-    .line 2197
+    .line 2202
     iput-object p1, p0, Lorg/telegram/ui/ThemePreviewActivity$25;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -44,7 +44,7 @@
 .method private synthetic lambda$deleteTheme$0(Landroid/content/DialogInterface;I)V
     .locals 4
 
-    .line 2232
+    .line 2237
     iget-object p1, p0, Lorg/telegram/ui/ThemePreviewActivity$25;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ThemePreviewActivity;->access$2900(Lorg/telegram/ui/ThemePreviewActivity;)Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;
@@ -53,7 +53,7 @@
 
     iget-object p2, p0, Lorg/telegram/ui/ThemePreviewActivity$25;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
 
-    invoke-static {p2}, Lorg/telegram/ui/ThemePreviewActivity;->access$2400(Lorg/telegram/ui/ThemePreviewActivity;)Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;
+    invoke-static {p2}, Lorg/telegram/ui/ThemePreviewActivity;->access$2300(Lorg/telegram/ui/ThemePreviewActivity;)Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;
 
     move-result-object p2
 
@@ -61,13 +61,13 @@
 
     invoke-static {p1, p2, v0}, Lorg/telegram/ui/ActionBar/Theme;->deleteThemeAccent(Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;Z)Z
 
-    .line 2233
+    .line 2238
     invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->applyPreviousTheme()V
 
-    .line 2234
+    .line 2239
     invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->refreshThemeColors()V
 
-    .line 2235
+    .line 2240
     invoke-static {}, Lorg/telegram/messenger/NotificationCenter;->getGlobalInstance()Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object p1
@@ -118,7 +118,7 @@
 
     invoke-virtual {p1, p2, v1}, Lorg/telegram/messenger/NotificationCenter;->postNotificationName(I[Ljava/lang/Object;)V
 
-    .line 2236
+    .line 2241
     iget-object p1, p0, Lorg/telegram/ui/ThemePreviewActivity$25;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
 
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->finishFragment()V
@@ -131,7 +131,7 @@
 .method public deleteTheme()V
     .locals 3
 
-    .line 2225
+    .line 2230
     iget-object v0, p0, Lorg/telegram/ui/ThemePreviewActivity$25;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -142,7 +142,7 @@
 
     return-void
 
-    .line 2228
+    .line 2233
     :cond_0
     new-instance v0, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
@@ -154,7 +154,7 @@
 
     invoke-direct {v0, v1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    .line 2229
+    .line 2234
     sget v1, Lorg/telegram/messenger/R$string;->DeleteThemeTitle:I
 
     const-string v2, "DeleteThemeTitle"
@@ -165,7 +165,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 2230
+    .line 2235
     sget v1, Lorg/telegram/messenger/R$string;->DeleteThemeAlert:I
 
     const-string v2, "DeleteThemeAlert"
@@ -176,7 +176,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setMessage(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 2231
+    .line 2236
     sget v1, Lorg/telegram/messenger/R$string;->Delete:I
 
     const-string v2, "Delete"
@@ -191,7 +191,7 @@
 
     invoke-virtual {v0, v1, v2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 2238
+    .line 2243
     sget v1, Lorg/telegram/messenger/R$string;->Cancel:I
 
     const-string v2, "Cancel"
@@ -204,19 +204,19 @@
 
     invoke-virtual {v0, v1, v2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setNegativeButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 2239
+    .line 2244
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->create()Lorg/telegram/ui/ActionBar/AlertDialog;
 
     move-result-object v0
 
-    .line 2240
+    .line 2245
     iget-object v1, p0, Lorg/telegram/ui/ThemePreviewActivity$25;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
 
     invoke-virtual {v1, v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->showDialog(Landroid/app/Dialog;)Landroid/app/Dialog;
 
     const/4 v1, -0x1
 
-    .line 2241
+    .line 2246
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/AlertDialog;->getButton(I)Landroid/view/View;
 
     move-result-object v0
@@ -225,7 +225,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 2243
+    .line 2248
     iget-object v1, p0, Lorg/telegram/ui/ThemePreviewActivity$25;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
 
     sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_text_RedBold:I
@@ -243,7 +243,7 @@
 .method public getDefaultColor(I)I
     .locals 3
 
-    .line 2254
+    .line 2259
     iget-object v0, p0, Lorg/telegram/ui/ThemePreviewActivity$25;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ThemePreviewActivity;->access$7200(Lorg/telegram/ui/ThemePreviewActivity;)I
@@ -268,7 +268,7 @@
 
     if-nez p1, :cond_0
 
-    .line 2255
+    .line 2260
     iget-object p1, p0, Lorg/telegram/ui/ThemePreviewActivity$25;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ThemePreviewActivity;->access$2900(Lorg/telegram/ui/ThemePreviewActivity;)Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;
@@ -287,7 +287,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 2256
+    .line 2261
     iget v1, p1, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->myMessagesAccentColor:I
 
     :cond_0
@@ -301,10 +301,10 @@
 
     if-eqz p1, :cond_1
 
-    .line 2210
+    .line 2215
     iget-object p1, p0, Lorg/telegram/ui/ThemePreviewActivity$25;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
 
-    invoke-static {p1}, Lorg/telegram/ui/ThemePreviewActivity;->access$2400(Lorg/telegram/ui/ThemePreviewActivity;)Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;
+    invoke-static {p1}, Lorg/telegram/ui/ThemePreviewActivity;->access$2300(Lorg/telegram/ui/ThemePreviewActivity;)Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;
 
     move-result-object p1
 
@@ -312,12 +312,12 @@
 
     if-nez p1, :cond_0
 
-    .line 2211
+    .line 2216
     iget-object p1, p0, Lorg/telegram/ui/ThemePreviewActivity$25;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
 
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->finishFragment()V
 
-    .line 2212
+    .line 2217
     iget-object p1, p0, Lorg/telegram/ui/ThemePreviewActivity$25;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ThemePreviewActivity;->access$7000(Lorg/telegram/ui/ThemePreviewActivity;)I
@@ -330,7 +330,7 @@
 
     iget-object v1, p0, Lorg/telegram/ui/ThemePreviewActivity$25;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
 
-    invoke-static {v1}, Lorg/telegram/ui/ThemePreviewActivity;->access$2400(Lorg/telegram/ui/ThemePreviewActivity;)Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;
+    invoke-static {v1}, Lorg/telegram/ui/ThemePreviewActivity;->access$2300(Lorg/telegram/ui/ThemePreviewActivity;)Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;
 
     move-result-object v1
 
@@ -338,13 +338,13 @@
 
     iget-object v2, p0, Lorg/telegram/ui/ThemePreviewActivity$25;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
 
-    invoke-static {v2}, Lorg/telegram/ui/ThemePreviewActivity;->access$2400(Lorg/telegram/ui/ThemePreviewActivity;)Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;
+    invoke-static {v2}, Lorg/telegram/ui/ThemePreviewActivity;->access$2300(Lorg/telegram/ui/ThemePreviewActivity;)Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;
 
     move-result-object v2
 
     invoke-virtual {p1, v1, v2}, Lorg/telegram/messenger/MessagesController;->saveThemeToServer(Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;)V
 
-    .line 2213
+    .line 2218
     invoke-static {}, Lorg/telegram/messenger/NotificationCenter;->getGlobalInstance()Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object p1
@@ -359,7 +359,7 @@
 
     iget-object v4, p0, Lorg/telegram/ui/ThemePreviewActivity$25;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
 
-    invoke-static {v4}, Lorg/telegram/ui/ThemePreviewActivity;->access$2400(Lorg/telegram/ui/ThemePreviewActivity;)Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;
+    invoke-static {v4}, Lorg/telegram/ui/ThemePreviewActivity;->access$2300(Lorg/telegram/ui/ThemePreviewActivity;)Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;
 
     move-result-object v4
 
@@ -369,7 +369,7 @@
 
     iget-object v3, p0, Lorg/telegram/ui/ThemePreviewActivity$25;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
 
-    invoke-static {v3}, Lorg/telegram/ui/ThemePreviewActivity;->access$2400(Lorg/telegram/ui/ThemePreviewActivity;)Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;
+    invoke-static {v3}, Lorg/telegram/ui/ThemePreviewActivity;->access$2300(Lorg/telegram/ui/ThemePreviewActivity;)Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;
 
     move-result-object v3
 
@@ -379,7 +379,7 @@
 
     goto :goto_0
 
-    .line 2215
+    .line 2220
     :cond_0
     new-instance p1, Ljava/lang/StringBuilder;
 
@@ -409,7 +409,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/ThemePreviewActivity$25;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/ThemePreviewActivity;->access$2400(Lorg/telegram/ui/ThemePreviewActivity;)Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;
+    invoke-static {v0}, Lorg/telegram/ui/ThemePreviewActivity;->access$2300(Lorg/telegram/ui/ThemePreviewActivity;)Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;
 
     move-result-object v0
 
@@ -423,7 +423,7 @@
 
     move-result-object v6
 
-    .line 2216
+    .line 2221
     iget-object p1, p0, Lorg/telegram/ui/ThemePreviewActivity$25;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
 
     new-instance v0, Lorg/telegram/ui/Components/ShareAlert;
@@ -450,7 +450,7 @@
 
     goto :goto_0
 
-    .line 2219
+    .line 2224
     :cond_1
     iget-object p1, p0, Lorg/telegram/ui/ThemePreviewActivity$25;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
 
@@ -465,7 +465,7 @@
 .method public setColor(IIZ)V
     .locals 2
 
-    .line 2200
+    .line 2205
     iget-object v0, p0, Lorg/telegram/ui/ThemePreviewActivity$25;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ThemePreviewActivity;->access$6700(Lorg/telegram/ui/ThemePreviewActivity;)I
@@ -476,7 +476,7 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 2201
+    .line 2206
     iget-object v0, p0, Lorg/telegram/ui/ThemePreviewActivity$25;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
 
     const/4 v1, 0x1
@@ -485,7 +485,7 @@
 
     goto :goto_0
 
-    .line 2203
+    .line 2208
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/ThemePreviewActivity$25;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
 

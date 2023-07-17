@@ -2,32 +2,36 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/tgnet/RequestDelegate;
+.implements Lorg/telegram/messenger/GenericProvider;
 
 
 # instance fields
-.field public final synthetic f$0:Lorg/telegram/ui/LoginActivity;
+.field public final synthetic f$0:Z
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/LoginActivity;)V
+.method public synthetic constructor <init>(Z)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lorg/telegram/ui/LoginActivity$$ExternalSyntheticLambda24;->f$0:Lorg/telegram/ui/LoginActivity;
+    iput-boolean p1, p0, Lorg/telegram/ui/LoginActivity$$ExternalSyntheticLambda24;->f$0:Z
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+.method public final provide(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 1
 
-    iget-object v0, p0, Lorg/telegram/ui/LoginActivity$$ExternalSyntheticLambda24;->f$0:Lorg/telegram/ui/LoginActivity;
+    iget-boolean v0, p0, Lorg/telegram/ui/LoginActivity$$ExternalSyntheticLambda24;->f$0:Z
 
-    invoke-static {v0, p1, p2}, Lorg/telegram/ui/LoginActivity;->$r8$lambda$v7eyHqjIuIoRXGqlWFM9XrYa2zU(Lorg/telegram/ui/LoginActivity;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+    check-cast p1, Ljava/lang/Void;
 
-    return-void
+    invoke-static {v0, p1}, Lorg/telegram/ui/LoginActivity;->$r8$lambda$fXu4enIdbpZVkix59nAPj3ZILZI(ZLjava/lang/Void;)Lorg/telegram/ui/DialogsActivity;
+
+    move-result-object p1
+
+    return-object p1
 .end method

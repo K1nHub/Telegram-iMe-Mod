@@ -39,10 +39,10 @@ final class UtilsModuleKt$dataUtilsModule$1 extends Lambda implements Function1<
     /* compiled from: UtilsModule.kt */
     /* renamed from: com.iMe.storage.data.di.module.UtilsModuleKt$dataUtilsModule$1$1 */
     /* loaded from: classes3.dex */
-    public static final class C17401 extends Lambda implements Function2<Scope, ParametersHolder, ResourceManager> {
-        public static final C17401 INSTANCE = new C17401();
+    public static final class C17491 extends Lambda implements Function2<Scope, ParametersHolder, ResourceManager> {
+        public static final C17491 INSTANCE = new C17491();
 
-        C17401() {
+        C17491() {
             super(2);
         }
 
@@ -64,10 +64,10 @@ final class UtilsModuleKt$dataUtilsModule$1 extends Lambda implements Function1<
     /* compiled from: UtilsModule.kt */
     /* renamed from: com.iMe.storage.data.di.module.UtilsModuleKt$dataUtilsModule$1$2 */
     /* loaded from: classes3.dex */
-    public static final class C17412 extends Lambda implements Function2<Scope, ParametersHolder, SchedulersProvider> {
-        public static final C17412 INSTANCE = new C17412();
+    public static final class C17502 extends Lambda implements Function2<Scope, ParametersHolder, SchedulersProvider> {
+        public static final C17502 INSTANCE = new C17502();
 
-        C17412() {
+        C17502() {
             super(2);
         }
 
@@ -84,22 +84,22 @@ final class UtilsModuleKt$dataUtilsModule$1 extends Lambda implements Function1<
         List emptyList;
         List emptyList2;
         Intrinsics.checkNotNullParameter(module, "$this$module");
-        C17401 c17401 = C17401.INSTANCE;
+        C17491 c17491 = C17491.INSTANCE;
         ScopeRegistry.Companion companion = ScopeRegistry.Companion;
         StringQualifier rootScopeQualifier = companion.getRootScopeQualifier();
         Kind kind = Kind.Singleton;
         emptyList = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier, Reflection.getOrCreateKotlinClass(ResourceManager.class), null, c17401, kind, emptyList));
+        SingleInstanceFactory<?> singleInstanceFactory = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier, Reflection.getOrCreateKotlinClass(ResourceManager.class), null, c17491, kind, emptyList));
         module.indexPrimaryType(singleInstanceFactory);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory);
         }
         new KoinDefinition(module, singleInstanceFactory);
-        C17412 c17412 = C17412.INSTANCE;
+        C17502 c17502 = C17502.INSTANCE;
         StringQualifier rootScopeQualifier2 = companion.getRootScopeQualifier();
         Kind kind2 = Kind.Factory;
         emptyList2 = CollectionsKt__CollectionsKt.emptyList();
-        InstanceFactory<?> factoryInstanceFactory = new FactoryInstanceFactory<>(new BeanDefinition(rootScopeQualifier2, Reflection.getOrCreateKotlinClass(SchedulersProvider.class), null, c17412, kind2, emptyList2));
+        InstanceFactory<?> factoryInstanceFactory = new FactoryInstanceFactory<>(new BeanDefinition(rootScopeQualifier2, Reflection.getOrCreateKotlinClass(SchedulersProvider.class), null, c17502, kind2, emptyList2));
         module.indexPrimaryType(factoryInstanceFactory);
         new KoinDefinition(module, factoryInstanceFactory);
     }

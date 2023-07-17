@@ -12,7 +12,7 @@ import okhttp3.Interceptor;
 import okhttp3.Response;
 import org.koin.core.Koin;
 import org.koin.core.component.KoinComponent;
-import org.koin.p043mp.KoinPlatformTools;
+import org.koin.p042mp.KoinPlatformTools;
 /* compiled from: DurationAnalyticsInterceptor.kt */
 /* loaded from: classes3.dex */
 public final class DurationAnalyticsInterceptor implements Interceptor, KoinComponent {

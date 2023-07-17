@@ -18,12 +18,12 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt__StringsKt;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
-import org.telegram.p044ui.ActionBar.AlertDialog;
-import org.telegram.p044ui.ActionBar.BaseFragment;
-import org.telegram.p044ui.ActionBar.Theme;
-import org.telegram.p044ui.Cells.RadioColorCell;
-import org.telegram.p044ui.Components.EditTextBoldCursor;
-import org.telegram.p044ui.Components.LayoutHelper;
+import org.telegram.p043ui.ActionBar.AlertDialog;
+import org.telegram.p043ui.ActionBar.BaseFragment;
+import org.telegram.p043ui.ActionBar.Theme;
+import org.telegram.p043ui.Cells.RadioColorCell;
+import org.telegram.p043ui.Components.EditTextBoldCursor;
+import org.telegram.p043ui.Components.LayoutHelper;
 /* compiled from: DialogUtils.kt */
 /* loaded from: classes4.dex */
 public final class DialogUtils {
@@ -56,7 +56,7 @@ public final class DialogUtils {
                 DialogUtils.createDialog$lambda$2$lambda$0(Callbacks$Callback.this, dialogInterface, i);
             }
         });
-        builder.setPositiveButton(model.getPositiveButtonText(), new DialogInterface.OnClickListener() { // from class: com.iMe.utils.dialogs.DialogUtils$$ExternalSyntheticLambda5
+        builder.setPositiveButton(model.getPositiveButtonText(), new DialogInterface.OnClickListener() { // from class: com.iMe.utils.dialogs.DialogUtils$$ExternalSyntheticLambda7
             @Override // android.content.DialogInterface.OnClickListener
             public final void onClick(DialogInterface dialogInterface, int i) {
                 DialogUtils.createDialog$lambda$2$lambda$1(Callbacks$Callback.this, dialogInterface, i);
@@ -79,6 +79,51 @@ public final class DialogUtils {
         }
     }
 
+    public static /* synthetic */ AlertDialog createFormattedDialog$default(Context context, DialogModel dialogModel, Callbacks$Callback callbacks$Callback, Callbacks$Callback callbacks$Callback2, int i, Object obj) {
+        if ((i & 4) != 0) {
+            callbacks$Callback = null;
+        }
+        if ((i & 8) != 0) {
+            callbacks$Callback2 = null;
+        }
+        return createFormattedDialog(context, dialogModel, callbacks$Callback, callbacks$Callback2);
+    }
+
+    public static final AlertDialog createFormattedDialog(Context context, DialogModel model, final Callbacks$Callback callbacks$Callback, final Callbacks$Callback callbacks$Callback2) {
+        Intrinsics.checkNotNullParameter(context, "context");
+        Intrinsics.checkNotNullParameter(model, "model");
+        AlertDialog.Builder builder = new AlertDialog.Builder(context);
+        builder.setTitle(model.getTitle());
+        builder.setMessage(AndroidUtilities.replaceTags(model.getMessage()));
+        builder.setNegativeButton(model.getNegativeButtonText(), new DialogInterface.OnClickListener() { // from class: com.iMe.utils.dialogs.DialogUtils$$ExternalSyntheticLambda4
+            @Override // android.content.DialogInterface.OnClickListener
+            public final void onClick(DialogInterface dialogInterface, int i) {
+                DialogUtils.createFormattedDialog$lambda$5$lambda$3(Callbacks$Callback.this, dialogInterface, i);
+            }
+        });
+        builder.setPositiveButton(model.getPositiveButtonText(), new DialogInterface.OnClickListener() { // from class: com.iMe.utils.dialogs.DialogUtils$$ExternalSyntheticLambda5
+            @Override // android.content.DialogInterface.OnClickListener
+            public final void onClick(DialogInterface dialogInterface, int i) {
+                DialogUtils.createFormattedDialog$lambda$5$lambda$4(Callbacks$Callback.this, dialogInterface, i);
+            }
+        });
+        AlertDialog create = builder.create();
+        Intrinsics.checkNotNullExpressionValue(create, "Builder(context).apply {…invoke() }\n    }.create()");
+        return create;
+    }
+
+    public static final void createFormattedDialog$lambda$5$lambda$3(Callbacks$Callback callbacks$Callback, DialogInterface dialogInterface, int i) {
+        if (callbacks$Callback != null) {
+            callbacks$Callback.invoke();
+        }
+    }
+
+    public static final void createFormattedDialog$lambda$5$lambda$4(Callbacks$Callback callbacks$Callback, DialogInterface dialogInterface, int i) {
+        if (callbacks$Callback != null) {
+            callbacks$Callback.invoke();
+        }
+    }
+
     public static final AlertDialog createDialogWithSelectableList(Context context, ListDialogModel model, final Callbacks$Callback1<Integer> itemSelectedListener, final Callbacks$Callback callbacks$Callback, final Callbacks$Callback callbacks$Callback2) {
         Intrinsics.checkNotNullParameter(context, "context");
         Intrinsics.checkNotNullParameter(model, "model");
@@ -93,7 +138,7 @@ public final class DialogUtils {
                 DialogUtils.createDialogWithSelectableList$lambda$9$lambda$6(Callbacks$Callback1.this, dialogInterface, i);
             }
         });
-        builder.setNegativeButton(model.getNegativeButtonText(), new DialogInterface.OnClickListener() { // from class: com.iMe.utils.dialogs.DialogUtils$$ExternalSyntheticLambda4
+        builder.setNegativeButton(model.getNegativeButtonText(), new DialogInterface.OnClickListener() { // from class: com.iMe.utils.dialogs.DialogUtils$$ExternalSyntheticLambda6
             @Override // android.content.DialogInterface.OnClickListener
             public final void onClick(DialogInterface dialogInterface, int i) {
                 DialogUtils.createDialogWithSelectableList$lambda$9$lambda$7(Callbacks$Callback.this, dialogInterface, i);
@@ -155,7 +200,7 @@ public final class DialogUtils {
             ViewExtKt.setHorizontalPadding(radioColorCell, Integer.valueOf(m54dp));
             radioColorCell.setCheckColor(Theme.getColor(Theme.key_radioBackground), Theme.getColor(Theme.key_dialogRadioBackgroundChecked));
             radioColorCell.setTextAndValue((CharSequence) pair.getFirst(), ((Boolean) pair.getSecond()).booleanValue());
-            radioColorCell.setOnClickListener(new View.OnClickListener() { // from class: com.iMe.utils.dialogs.DialogUtils$$ExternalSyntheticLambda9
+            radioColorCell.setOnClickListener(new View.OnClickListener() { // from class: com.iMe.utils.dialogs.DialogUtils$$ExternalSyntheticLambda11
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
                     DialogUtils.m696x4de0a121(Callbacks$Callback1.this, i, builder, view);
@@ -215,7 +260,7 @@ public final class DialogUtils {
         }
         editTextBoldCursor.setText(model.getPresetText());
         editTextBoldCursor.setSelection(editTextBoldCursor.getText().length());
-        ViewExtKt.onAction(editTextBoldCursor, 6, new Callbacks$Callback() { // from class: com.iMe.utils.dialogs.DialogUtils$$ExternalSyntheticLambda10
+        ViewExtKt.onAction(editTextBoldCursor, 6, new Callbacks$Callback() { // from class: com.iMe.utils.dialogs.DialogUtils$$ExternalSyntheticLambda12
             @Override // com.iMe.fork.utils.Callbacks$Callback
             public final void invoke() {
                 DialogUtils.createEditTextAlert$lambda$22$lambda$17$lambda$16(EditTextBoldCursor.this, positiveClickListener);
@@ -225,19 +270,19 @@ public final class DialogUtils {
         linearLayout.setOrientation(1);
         linearLayout.addView(editTextBoldCursor, LayoutHelper.createLinear(-1, -2, 23, 12, 23, 21));
         builder.setView(linearLayout);
-        builder.setNegativeButton(model.getNegativeButtonText(), new DialogInterface.OnClickListener() { // from class: com.iMe.utils.dialogs.DialogUtils$$ExternalSyntheticLambda6
+        builder.setNegativeButton(model.getNegativeButtonText(), new DialogInterface.OnClickListener() { // from class: com.iMe.utils.dialogs.DialogUtils$$ExternalSyntheticLambda8
             @Override // android.content.DialogInterface.OnClickListener
             public final void onClick(DialogInterface dialogInterface, int i) {
                 DialogUtils.createEditTextAlert$lambda$22$lambda$19(Callbacks$Callback.this, builder, dialogInterface, i);
             }
         });
-        builder.setPositiveButton(model.getPositiveButtonText(), new DialogInterface.OnClickListener() { // from class: com.iMe.utils.dialogs.DialogUtils$$ExternalSyntheticLambda7
+        builder.setPositiveButton(model.getPositiveButtonText(), new DialogInterface.OnClickListener() { // from class: com.iMe.utils.dialogs.DialogUtils$$ExternalSyntheticLambda9
             @Override // android.content.DialogInterface.OnClickListener
             public final void onClick(DialogInterface dialogInterface, int i) {
                 DialogUtils.createEditTextAlert$lambda$22$lambda$20(EditTextBoldCursor.this, positiveClickListener, builder, dialogInterface, i);
             }
         });
-        builder.setOnPreDismissListener(new DialogInterface.OnDismissListener() { // from class: com.iMe.utils.dialogs.DialogUtils$$ExternalSyntheticLambda8
+        builder.setOnPreDismissListener(new DialogInterface.OnDismissListener() { // from class: com.iMe.utils.dialogs.DialogUtils$$ExternalSyntheticLambda10
             @Override // android.content.DialogInterface.OnDismissListener
             public final void onDismiss(DialogInterface dialogInterface) {
                 DialogUtils.createEditTextAlert$lambda$22$lambda$21(EditTextDialogModel.this, editTextBoldCursor, dialogInterface);

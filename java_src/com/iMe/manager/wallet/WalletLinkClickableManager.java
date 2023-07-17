@@ -4,7 +4,6 @@ import com.iMe.model.wallet.transaction.ClickableItem;
 import com.iMe.model.wallet.transaction.LinkedTextType;
 import com.iMe.storage.domain.gateway.TelegramGateway;
 import com.iMe.storage.domain.manager.crypto.CryptoAccessManager;
-import com.iMe.storage.domain.model.wallet.token.TokenCode;
 import com.iMe.storage.domain.utils.system.ResourceManager;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -19,7 +18,7 @@ import kotlin.collections.CollectionsKt__IterablesKt;
 import kotlin.collections.CollectionsKt___CollectionsKt;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3295R;
+import org.telegram.messenger.C3417R;
 /* compiled from: WalletLinkClickableManager.kt */
 /* loaded from: classes3.dex */
 public final class WalletLinkClickableManager {
@@ -108,10 +107,9 @@ public final class WalletLinkClickableManager {
         List filterNotNull;
         List<Pair<String, Function0<Unit>>> mutableList;
         int collectionSizeOrDefault;
-        Pair[] pairArr = new Pair[3];
-        pairArr[0] = this.telegramGateway.hasUser(j) ? TuplesKt.m85to(this.resourceManager.getString(C3295R.string.wallet_user_id_dialog_go_to_profile_action), new WalletLinkClickableManager$getUserIdAlertOptions$1(this, j)) : null;
-        pairArr[1] = TuplesKt.m85to(this.resourceManager.getString(C3295R.string.wallet_user_id_dialog_copy_id_action), new WalletLinkClickableManager$getUserIdAlertOptions$2(this, j));
-        pairArr[2] = TuplesKt.m85to(this.resourceManager.getString(C3295R.string.wallet_user_id_dialog_transfer_action), new WalletLinkClickableManager$getUserIdAlertOptions$3(this, j));
+        Pair[] pairArr = new Pair[2];
+        pairArr[0] = this.telegramGateway.hasUser(j) ? TuplesKt.m85to(this.resourceManager.getString(C3417R.string.wallet_user_id_dialog_go_to_profile_action), new WalletLinkClickableManager$getUserIdAlertOptions$1(this, j)) : null;
+        pairArr[1] = TuplesKt.m85to(this.resourceManager.getString(C3417R.string.wallet_user_id_dialog_copy_id_action), new WalletLinkClickableManager$getUserIdAlertOptions$2(this, j));
         mutableListOf = CollectionsKt__CollectionsKt.mutableListOf(pairArr);
         filterNotNull = CollectionsKt___CollectionsKt.filterNotNull(mutableListOf);
         mutableList = CollectionsKt___CollectionsKt.toMutableList((Collection) filterNotNull);
@@ -130,10 +128,7 @@ public final class WalletLinkClickableManager {
         List filterNotNull;
         List<Pair<String, Function0<Unit>>> mutableList;
         int collectionSizeOrDefault;
-        Pair[] pairArr = new Pair[2];
-        pairArr[0] = TuplesKt.m85to(this.resourceManager.getString(C3295R.string.wallet_token_details_action_copy_address), new WalletLinkClickableManager$getAddressAlertOptions$1(this, str));
-        pairArr[1] = isTransferAvailable(this.clickableItem.getTokenCode()) ? TuplesKt.m85to(this.resourceManager.getString(C3295R.string.wallet_user_id_dialog_transfer_action), new WalletLinkClickableManager$getAddressAlertOptions$2(this)) : null;
-        mutableListOf = CollectionsKt__CollectionsKt.mutableListOf(pairArr);
+        mutableListOf = CollectionsKt__CollectionsKt.mutableListOf(TuplesKt.m85to(this.resourceManager.getString(C3417R.string.wallet_token_details_action_copy_address), new WalletLinkClickableManager$getAddressAlertOptions$1(this, str)));
         filterNotNull = CollectionsKt___CollectionsKt.filterNotNull(mutableListOf);
         mutableList = CollectionsKt___CollectionsKt.toMutableList((Collection) filterNotNull);
         this.dialogsOptions = mutableList;
@@ -144,12 +139,5 @@ public final class WalletLinkClickableManager {
             arrayList.add((String) ((Pair) it.next()).component1());
         }
         return (String[]) arrayList.toArray(new String[0]);
-    }
-
-    private final boolean isTransferAvailable(TokenCode tokenCode) {
-        if (tokenCode.isCryptoTokens()) {
-            return this.accessManager.isCurrentBlockchainWalletCreated();
-        }
-        return false;
     }
 }

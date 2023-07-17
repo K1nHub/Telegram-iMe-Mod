@@ -1,6 +1,6 @@
 package com.iMe.p031ui.wallet.crypto.settings;
 
-import com.iMe.p031ui.wallet.crypto.settings.adapter.WalletAccountSettingsRecycleAdapter;
+import com.iMe.p031ui.wallet.settings.adapter.WalletSettingsRecycleAdapter;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Lambda;
 import kotlin.jvm.internal.Reflection;
@@ -11,8 +11,8 @@ import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 /* compiled from: KoinComponent.kt */
 /* renamed from: com.iMe.ui.wallet.crypto.settings.WalletAccountSettingsFragment$special$$inlined$inject$default$1 */
-/* loaded from: classes3.dex */
-public final class WalletAccountSettingsFragment$special$$inlined$inject$default$1 extends Lambda implements Function0<WalletAccountSettingsRecycleAdapter> {
+/* loaded from: classes4.dex */
+public final class WalletAccountSettingsFragment$special$$inlined$inject$default$1 extends Lambda implements Function0<WalletSettingsRecycleAdapter> {
     final /* synthetic */ Function0 $parameters;
     final /* synthetic */ Qualifier $qualifier;
     final /* synthetic */ KoinComponent $this_inject;
@@ -25,9 +25,9 @@ public final class WalletAccountSettingsFragment$special$$inlined$inject$default
         this.$parameters = function0;
     }
 
-    /* JADX WARN: Type inference failed for: r0v2, types: [java.lang.Object, com.iMe.ui.wallet.crypto.settings.adapter.WalletAccountSettingsRecycleAdapter] */
+    /* JADX WARN: Type inference failed for: r0v2, types: [java.lang.Object, com.iMe.ui.wallet.settings.adapter.WalletSettingsRecycleAdapter] */
     @Override // kotlin.jvm.functions.Function0
-    public final WalletAccountSettingsRecycleAdapter invoke() {
+    public final WalletSettingsRecycleAdapter invoke() {
         Scope rootScope;
         KoinComponent koinComponent = this.$this_inject;
         Qualifier qualifier = this.$qualifier;
@@ -37,6 +37,6 @@ public final class WalletAccountSettingsFragment$special$$inlined$inject$default
         } else {
             rootScope = koinComponent.getKoin().getScopeRegistry().getRootScope();
         }
-        return rootScope.get(Reflection.getOrCreateKotlinClass(WalletAccountSettingsRecycleAdapter.class), qualifier, function0);
+        return rootScope.get(Reflection.getOrCreateKotlinClass(WalletSettingsRecycleAdapter.class), qualifier, function0);
     }
 }

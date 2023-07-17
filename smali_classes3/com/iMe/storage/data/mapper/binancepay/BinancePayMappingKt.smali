@@ -11,7 +11,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nBinancePayMapping.kt\nKotlin\n*S Kotlin\n*F\n+ 1 BinancePayMapping.kt\ncom/iMe/storage/data/mapper/binancepay/BinancePayMappingKt\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,132:1\n1549#2:133\n1620#2,3:134\n1549#2:137\n1620#2,2:138\n1549#2:140\n1620#2,3:141\n1622#2:144\n1549#2:145\n1620#2,3:146\n*S KotlinDebug\n*F\n+ 1 BinancePayMapping.kt\ncom/iMe/storage/data/mapper/binancepay/BinancePayMappingKt\n*L\n36#1:133\n36#1:134,3\n89#1:137\n89#1:138,2\n98#1:140\n98#1:141,3\n89#1:144\n118#1:145\n118#1:146,3\n*E\n"
+    value = "SMAP\nBinancePayMapping.kt\nKotlin\n*S Kotlin\n*F\n+ 1 BinancePayMapping.kt\ncom/iMe/storage/data/mapper/binancepay/BinancePayMappingKt\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,131:1\n1549#2:132\n1620#2,3:133\n1549#2:136\n1620#2,3:137\n1549#2:140\n1620#2,3:141\n*S KotlinDebug\n*F\n+ 1 BinancePayMapping.kt\ncom/iMe/storage/data/mapper/binancepay/BinancePayMappingKt\n*L\n35#1:132\n35#1:133,3\n88#1:136\n88#1:137,3\n117#1:140\n117#1:141,3\n*E\n"
 .end annotation
 
 
@@ -23,25 +23,25 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 11
+    .line 10
     new-instance v0, Lcom/iMe/storage/domain/model/binancepay/BinanceAuthTokens;
 
-    .line 12
+    .line 11
     invoke-virtual {p0}, Lcom/iMe/storage/data/network/model/response/binance/pay/BinancePayGetAuthTokensResponse;->getAccessToken()Ljava/lang/String;
 
     move-result-object v2
 
-    .line 13
+    .line 12
     invoke-virtual {p0}, Lcom/iMe/storage/data/network/model/response/binance/pay/BinancePayGetAuthTokensResponse;->getRefreshToken()Ljava/lang/String;
 
     move-result-object v3
 
-    .line 14
+    .line 13
     invoke-virtual {p0}, Lcom/iMe/storage/data/network/model/response/binance/pay/BinancePayGetAuthTokensResponse;->getExpiresIn()J
 
     move-result-wide v4
 
-    .line 15
+    .line 14
     sget-object v1, Lcom/iMe/storage/domain/model/binancepay/BinancePayAuthType;->Companion:Lcom/iMe/storage/domain/model/binancepay/BinancePayAuthType$Companion;
 
     invoke-virtual {p0}, Lcom/iMe/storage/data/network/model/response/binance/pay/BinancePayGetAuthTokensResponse;->getTokenType()Ljava/lang/String;
@@ -54,7 +54,7 @@
 
     move-object v1, v0
 
-    .line 11
+    .line 10
     invoke-direct/range {v1 .. v6}, Lcom/iMe/storage/domain/model/binancepay/BinanceAuthTokens;-><init>(Ljava/lang/String;Ljava/lang/String;JLcom/iMe/storage/domain/model/binancepay/BinancePayAuthType;)V
 
     return-object v0
@@ -67,15 +67,15 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 129
+    .line 128
     new-instance v0, Lcom/iMe/storage/domain/model/binancepay/BinanceCollectionOrder;
 
-    .line 130
+    .line 129
     invoke-virtual {p0}, Lcom/iMe/storage/data/network/model/response/binance/pay/BinancePayCreateCollectionResponse;->getMessageId()Ljava/lang/String;
 
     move-result-object p0
 
-    .line 129
+    .line 128
     invoke-direct {v0, p0}, Lcom/iMe/storage/domain/model/binancepay/BinanceCollectionOrder;-><init>(Ljava/lang/String;)V
 
     return-object v0
@@ -90,10 +90,10 @@
 
     invoke-static {v1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 106
+    .line 105
     new-instance v0, Lcom/iMe/storage/domain/model/binancepay/BinanceTokenBalanceInfo$Balance;
 
-    .line 107
+    .line 106
     invoke-virtual/range {p0 .. p0}, Lcom/iMe/storage/data/network/model/response/binance/pay/BinanceTokenBalanceResponse$Balance;->getTotal()Ljava/lang/String;
 
     move-result-object v2
@@ -102,7 +102,7 @@
 
     move-result-wide v2
 
-    .line 108
+    .line 107
     invoke-virtual/range {p0 .. p0}, Lcom/iMe/storage/data/network/model/response/binance/pay/BinanceTokenBalanceResponse$Balance;->getFree()Ljava/lang/String;
 
     move-result-object v4
@@ -111,7 +111,7 @@
 
     move-result-wide v4
 
-    .line 109
+    .line 108
     invoke-virtual/range {p0 .. p0}, Lcom/iMe/storage/data/network/model/response/binance/pay/BinanceTokenBalanceResponse$Balance;->getLocked()Ljava/lang/String;
 
     move-result-object v6
@@ -120,7 +120,7 @@
 
     move-result-wide v6
 
-    .line 110
+    .line 109
     invoke-virtual/range {p0 .. p0}, Lcom/iMe/storage/data/network/model/response/binance/pay/BinanceTokenBalanceResponse$Balance;->getFreeze()Ljava/lang/String;
 
     move-result-object v8
@@ -129,7 +129,7 @@
 
     move-result-wide v8
 
-    .line 111
+    .line 110
     invoke-virtual/range {p0 .. p0}, Lcom/iMe/storage/data/network/model/response/binance/pay/BinanceTokenBalanceResponse$Balance;->getWithdrawing()Ljava/lang/String;
 
     move-result-object v10
@@ -138,7 +138,7 @@
 
     move-result-wide v10
 
-    .line 112
+    .line 111
     invoke-virtual/range {p0 .. p0}, Lcom/iMe/storage/data/network/model/response/binance/pay/BinanceTokenBalanceResponse$Balance;->getBtcValuation()Ljava/lang/String;
 
     move-result-object v12
@@ -147,7 +147,7 @@
 
     move-result-wide v12
 
-    .line 113
+    .line 112
     invoke-virtual/range {p0 .. p0}, Lcom/iMe/storage/data/network/model/response/binance/pay/BinanceTokenBalanceResponse$Balance;->getFiatValuation()Ljava/lang/String;
 
     move-result-object v1
@@ -158,7 +158,7 @@
 
     move-object v1, v0
 
-    .line 106
+    .line 105
     invoke-direct/range {v1 .. v15}, Lcom/iMe/storage/domain/model/binancepay/BinanceTokenBalanceInfo$Balance;-><init>(DDDDDDD)V
 
     return-object v0
@@ -173,7 +173,7 @@
 
     invoke-static {v1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 40
+    .line 39
     sget-object v0, Lcom/iMe/storage/domain/model/binancepay/BinanceTransactionType;->Companion:Lcom/iMe/storage/domain/model/binancepay/BinanceTransactionType$Companion;
 
     invoke-virtual/range {p0 .. p0}, Lcom/iMe/storage/data/network/model/response/binance/pay/BinancePayGetTransactionHistoryResponse$HistoryItem;->getType()Ljava/lang/String;
@@ -204,17 +204,17 @@
 
     if-ne v2, v3, :cond_0
 
-    .line 77
+    .line 76
     invoke-virtual/range {p0 .. p0}, Lcom/iMe/storage/data/network/model/response/binance/pay/BinancePayGetTransactionHistoryResponse$HistoryItem;->getOrderId()Ljava/lang/String;
 
     move-result-object v5
 
-    .line 78
+    .line 77
     invoke-virtual/range {p0 .. p0}, Lcom/iMe/storage/data/network/model/response/binance/pay/BinancePayGetTransactionHistoryResponse$HistoryItem;->getTransactionId()Ljava/lang/String;
 
     move-result-object v6
 
-    .line 79
+    .line 78
     sget-object v2, Lcom/iMe/storage/domain/model/binancepay/BinanceTransactionStatus;->Companion:Lcom/iMe/storage/domain/model/binancepay/BinanceTransactionStatus$Companion;
 
     invoke-virtual/range {p0 .. p0}, Lcom/iMe/storage/data/network/model/response/binance/pay/BinancePayGetTransactionHistoryResponse$HistoryItem;->getStatus()Ljava/lang/String;
@@ -225,7 +225,7 @@
 
     move-result-object v9
 
-    .line 80
+    .line 79
     invoke-virtual/range {p0 .. p0}, Lcom/iMe/storage/data/network/model/response/binance/pay/BinancePayGetTransactionHistoryResponse$HistoryItem;->getType()Ljava/lang/String;
 
     move-result-object v2
@@ -234,7 +234,7 @@
 
     move-result-object v8
 
-    .line 81
+    .line 80
     sget-object v0, Lcom/iMe/storage/domain/model/binancepay/BinanceTransactionDirection;->Companion:Lcom/iMe/storage/domain/model/binancepay/BinanceTransactionDirection$Companion;
 
     invoke-virtual/range {p0 .. p0}, Lcom/iMe/storage/data/network/model/response/binance/pay/BinancePayGetTransactionHistoryResponse$HistoryItem;->getDirection()Ljava/lang/String;
@@ -245,12 +245,12 @@
 
     move-result-object v7
 
-    .line 82
+    .line 81
     invoke-virtual/range {p0 .. p0}, Lcom/iMe/storage/data/network/model/response/binance/pay/BinancePayGetTransactionHistoryResponse$HistoryItem;->getCreatedAt()Ljava/lang/String;
 
     move-result-object v10
 
-    .line 76
+    .line 75
     new-instance v0, Lcom/iMe/storage/domain/model/binancepay/BinanceTransaction$Unsupported;
 
     move-object v4, v0
@@ -266,28 +266,28 @@
 
     throw v0
 
-    .line 57
+    .line 56
     :cond_1
     invoke-virtual/range {p0 .. p0}, Lcom/iMe/storage/data/network/model/response/binance/pay/BinancePayGetTransactionHistoryResponse$HistoryItem;->getOrderId()Ljava/lang/String;
 
     move-result-object v2
 
-    .line 58
+    .line 57
     invoke-virtual/range {p0 .. p0}, Lcom/iMe/storage/data/network/model/response/binance/pay/BinancePayGetTransactionHistoryResponse$HistoryItem;->getTransactionId()Ljava/lang/String;
 
     move-result-object v3
 
-    .line 59
+    .line 58
     invoke-virtual/range {p0 .. p0}, Lcom/iMe/storage/data/network/model/response/binance/pay/BinancePayGetTransactionHistoryResponse$HistoryItem;->getPayerUserId()Ljava/lang/String;
 
     move-result-object v4
 
-    .line 60
+    .line 59
     invoke-virtual/range {p0 .. p0}, Lcom/iMe/storage/data/network/model/response/binance/pay/BinancePayGetTransactionHistoryResponse$HistoryItem;->getInitiatorUserId()Ljava/lang/String;
 
     move-result-object v5
 
-    .line 61
+    .line 60
     invoke-virtual/range {p0 .. p0}, Lcom/iMe/storage/data/network/model/response/binance/pay/BinancePayGetTransactionHistoryResponse$HistoryItem;->getAmount()Ljava/lang/String;
 
     move-result-object v6
@@ -296,22 +296,22 @@
 
     move-result-wide v6
 
-    .line 62
+    .line 61
     invoke-virtual/range {p0 .. p0}, Lcom/iMe/storage/data/network/model/response/binance/pay/BinancePayGetTransactionHistoryResponse$HistoryItem;->getAssetCode()Ljava/lang/String;
 
     move-result-object v8
 
-    .line 63
+    .line 62
     invoke-virtual/range {p0 .. p0}, Lcom/iMe/storage/data/network/model/response/binance/pay/BinancePayGetTransactionHistoryResponse$HistoryItem;->getAssetName()Ljava/lang/String;
 
     move-result-object v9
 
-    .line 64
+    .line 63
     invoke-virtual/range {p0 .. p0}, Lcom/iMe/storage/data/network/model/response/binance/pay/BinancePayGetTransactionHistoryResponse$HistoryItem;->getLogoUrl()Ljava/lang/String;
 
     move-result-object v10
 
-    .line 65
+    .line 64
     sget-object v11, Lcom/iMe/storage/domain/model/binancepay/BinanceTransactionStatus;->Companion:Lcom/iMe/storage/domain/model/binancepay/BinanceTransactionStatus$Companion;
 
     invoke-virtual/range {p0 .. p0}, Lcom/iMe/storage/data/network/model/response/binance/pay/BinancePayGetTransactionHistoryResponse$HistoryItem;->getStatus()Ljava/lang/String;
@@ -322,7 +322,7 @@
 
     move-result-object v13
 
-    .line 66
+    .line 65
     invoke-virtual/range {p0 .. p0}, Lcom/iMe/storage/data/network/model/response/binance/pay/BinancePayGetTransactionHistoryResponse$HistoryItem;->getType()Ljava/lang/String;
 
     move-result-object v11
@@ -331,7 +331,7 @@
 
     move-result-object v12
 
-    .line 67
+    .line 66
     sget-object v0, Lcom/iMe/storage/domain/model/binancepay/BinanceTransactionDirection;->Companion:Lcom/iMe/storage/domain/model/binancepay/BinanceTransactionDirection$Companion;
 
     invoke-virtual/range {p0 .. p0}, Lcom/iMe/storage/data/network/model/response/binance/pay/BinancePayGetTransactionHistoryResponse$HistoryItem;->getDirection()Ljava/lang/String;
@@ -342,12 +342,12 @@
 
     move-result-object v11
 
-    .line 68
+    .line 67
     invoke-virtual/range {p0 .. p0}, Lcom/iMe/storage/data/network/model/response/binance/pay/BinancePayGetTransactionHistoryResponse$HistoryItem;->getCreatedAt()Ljava/lang/String;
 
     move-result-object v14
 
-    .line 69
+    .line 68
     invoke-virtual/range {p0 .. p0}, Lcom/iMe/storage/data/network/model/response/binance/pay/BinancePayGetTransactionHistoryResponse$HistoryItem;->getInputAmount()Ljava/lang/String;
 
     move-result-object v0
@@ -365,7 +365,7 @@
     :cond_2
     move-wide/from16 v17, v15
 
-    .line 70
+    .line 69
     :goto_0
     invoke-virtual/range {p0 .. p0}, Lcom/iMe/storage/data/network/model/response/binance/pay/BinancePayGetTransactionHistoryResponse$HistoryItem;->getOutputAmount()Ljava/lang/String;
 
@@ -380,7 +380,7 @@
     :cond_3
     move-wide/from16 v19, v15
 
-    .line 71
+    .line 70
     invoke-virtual/range {p0 .. p0}, Lcom/iMe/storage/data/network/model/response/binance/pay/BinancePayGetTransactionHistoryResponse$HistoryItem;->getInputAssetCode()Ljava/lang/String;
 
     move-result-object v0
@@ -391,7 +391,7 @@
 
     move-object v0, v15
 
-    .line 72
+    .line 71
     :cond_4
     invoke-virtual/range {p0 .. p0}, Lcom/iMe/storage/data/network/model/response/binance/pay/BinancePayGetTransactionHistoryResponse$HistoryItem;->getOutputAssetCode()Ljava/lang/String;
 
@@ -406,7 +406,7 @@
     :cond_5
     move-object/from16 v21, v16
 
-    .line 73
+    .line 72
     :goto_1
     invoke-virtual/range {p0 .. p0}, Lcom/iMe/storage/data/network/model/response/binance/pay/BinancePayGetTransactionHistoryResponse$HistoryItem;->getInputAssetShortName()Ljava/lang/String;
 
@@ -421,7 +421,7 @@
     :cond_6
     move-object/from16 v22, v16
 
-    .line 74
+    .line 73
     :goto_2
     invoke-virtual/range {p0 .. p0}, Lcom/iMe/storage/data/network/model/response/binance/pay/BinancePayGetTransactionHistoryResponse$HistoryItem;->getOutputAssetShortName()Ljava/lang/String;
 
@@ -436,7 +436,7 @@
     :cond_7
     move-object/from16 v23, v1
 
-    .line 56
+    .line 55
     :goto_3
     new-instance v24, Lcom/iMe/storage/domain/model/binancepay/BinanceTransaction$Convert;
 
@@ -460,33 +460,33 @@
 
     goto :goto_4
 
-    .line 42
+    .line 41
     :cond_8
     invoke-virtual/range {p0 .. p0}, Lcom/iMe/storage/data/network/model/response/binance/pay/BinancePayGetTransactionHistoryResponse$HistoryItem;->getOrderId()Ljava/lang/String;
 
     move-result-object v26
 
-    .line 43
+    .line 42
     invoke-virtual/range {p0 .. p0}, Lcom/iMe/storage/data/network/model/response/binance/pay/BinancePayGetTransactionHistoryResponse$HistoryItem;->getTransactionId()Ljava/lang/String;
 
     move-result-object v27
 
-    .line 44
+    .line 43
     invoke-virtual/range {p0 .. p0}, Lcom/iMe/storage/data/network/model/response/binance/pay/BinancePayGetTransactionHistoryResponse$HistoryItem;->getClientTradeNo()Ljava/lang/String;
 
     move-result-object v39
 
-    .line 45
+    .line 44
     invoke-virtual/range {p0 .. p0}, Lcom/iMe/storage/data/network/model/response/binance/pay/BinancePayGetTransactionHistoryResponse$HistoryItem;->getPayerUserId()Ljava/lang/String;
 
     move-result-object v28
 
-    .line 46
+    .line 45
     invoke-virtual/range {p0 .. p0}, Lcom/iMe/storage/data/network/model/response/binance/pay/BinancePayGetTransactionHistoryResponse$HistoryItem;->getInitiatorUserId()Ljava/lang/String;
 
     move-result-object v29
 
-    .line 47
+    .line 46
     invoke-virtual/range {p0 .. p0}, Lcom/iMe/storage/data/network/model/response/binance/pay/BinancePayGetTransactionHistoryResponse$HistoryItem;->getAmount()Ljava/lang/String;
 
     move-result-object v2
@@ -495,22 +495,22 @@
 
     move-result-wide v30
 
-    .line 48
+    .line 47
     invoke-virtual/range {p0 .. p0}, Lcom/iMe/storage/data/network/model/response/binance/pay/BinancePayGetTransactionHistoryResponse$HistoryItem;->getAssetCode()Ljava/lang/String;
 
     move-result-object v32
 
-    .line 49
+    .line 48
     invoke-virtual/range {p0 .. p0}, Lcom/iMe/storage/data/network/model/response/binance/pay/BinancePayGetTransactionHistoryResponse$HistoryItem;->getAssetName()Ljava/lang/String;
 
     move-result-object v33
 
-    .line 50
+    .line 49
     invoke-virtual/range {p0 .. p0}, Lcom/iMe/storage/data/network/model/response/binance/pay/BinancePayGetTransactionHistoryResponse$HistoryItem;->getLogoUrl()Ljava/lang/String;
 
     move-result-object v34
 
-    .line 51
+    .line 50
     sget-object v2, Lcom/iMe/storage/domain/model/binancepay/BinanceTransactionStatus;->Companion:Lcom/iMe/storage/domain/model/binancepay/BinanceTransactionStatus$Companion;
 
     invoke-virtual/range {p0 .. p0}, Lcom/iMe/storage/data/network/model/response/binance/pay/BinancePayGetTransactionHistoryResponse$HistoryItem;->getStatus()Ljava/lang/String;
@@ -521,7 +521,7 @@
 
     move-result-object v37
 
-    .line 52
+    .line 51
     invoke-virtual/range {p0 .. p0}, Lcom/iMe/storage/data/network/model/response/binance/pay/BinancePayGetTransactionHistoryResponse$HistoryItem;->getType()Ljava/lang/String;
 
     move-result-object v2
@@ -530,7 +530,7 @@
 
     move-result-object v36
 
-    .line 53
+    .line 52
     sget-object v0, Lcom/iMe/storage/domain/model/binancepay/BinanceTransactionDirection;->Companion:Lcom/iMe/storage/domain/model/binancepay/BinanceTransactionDirection$Companion;
 
     invoke-virtual/range {p0 .. p0}, Lcom/iMe/storage/data/network/model/response/binance/pay/BinancePayGetTransactionHistoryResponse$HistoryItem;->getDirection()Ljava/lang/String;
@@ -541,12 +541,12 @@
 
     move-result-object v35
 
-    .line 54
+    .line 53
     invoke-virtual/range {p0 .. p0}, Lcom/iMe/storage/data/network/model/response/binance/pay/BinancePayGetTransactionHistoryResponse$HistoryItem;->getCreatedAt()Ljava/lang/String;
 
     move-result-object v38
 
-    .line 41
+    .line 40
     new-instance v0, Lcom/iMe/storage/domain/model/binancepay/BinanceTransaction$Pay;
 
     move-object/from16 v25, v0
@@ -564,12 +564,12 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 25
+    .line 24
     invoke-virtual {p0}, Lcom/iMe/storage/data/network/model/response/binance/pay/BinancePayGetUserInfoResponse;->getId()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 26
+    .line 25
     invoke-virtual {p0}, Lcom/iMe/storage/data/network/model/response/binance/pay/BinancePayGetUserInfoResponse;->getEmail()Ljava/lang/String;
 
     move-result-object v1
@@ -578,7 +578,7 @@
 
     const-string v1, ""
 
-    .line 27
+    .line 26
     :cond_0
     sget-object v2, Lcom/iMe/storage/domain/model/binancepay/BinanceVerificationStatus;->Companion:Lcom/iMe/storage/domain/model/binancepay/BinanceVerificationStatus$Companion;
 
@@ -598,7 +598,7 @@
 
     move-result p0
 
-    .line 24
+    .line 23
     new-instance v2, Lcom/iMe/storage/domain/model/binancepay/BinanceUserInfo;
 
     invoke-direct {v2, v1, v0, p0}, Lcom/iMe/storage/domain/model/binancepay/BinanceUserInfo;-><init>(Ljava/lang/String;Ljava/lang/String;Z)V
@@ -623,7 +623,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 36
+    .line 35
     invoke-virtual {p0}, Lcom/iMe/storage/data/network/model/response/binance/pay/BinancePayGetTransactionHistoryResponse;->getTransactionsData()Ljava/util/List;
 
     move-result-object p0
@@ -658,7 +658,7 @@
     .line 1621
     check-cast v1, Lcom/iMe/storage/data/network/model/response/binance/pay/BinancePayGetTransactionHistoryResponse$HistoryItem;
 
-    .line 36
+    .line 35
     invoke-static {v1}, Lcom/iMe/storage/data/mapper/binancepay/BinancePayMappingKt;->mapToDomain(Lcom/iMe/storage/data/network/model/response/binance/pay/BinancePayGetTransactionHistoryResponse$HistoryItem;)Lcom/iMe/storage/domain/model/binancepay/BinanceTransaction;
 
     move-result-object v1
@@ -720,30 +720,30 @@
     .line 1621
     check-cast v1, Lcom/iMe/storage/data/network/model/response/binance/pay/BinancePayGetAvailablePaymentTokensResponse;
 
-    .line 119
+    .line 118
     new-instance v2, Lcom/iMe/storage/domain/model/binancepay/BinanceTokenInfo;
 
-    .line 120
+    .line 119
     invoke-virtual {v1}, Lcom/iMe/storage/data/network/model/response/binance/pay/BinancePayGetAvailablePaymentTokensResponse;->getAssetCode()Ljava/lang/String;
 
     move-result-object v3
 
-    .line 121
+    .line 120
     invoke-virtual {v1}, Lcom/iMe/storage/data/network/model/response/binance/pay/BinancePayGetAvailablePaymentTokensResponse;->getAssetName()Ljava/lang/String;
 
     move-result-object v4
 
-    .line 122
+    .line 121
     invoke-virtual {v1}, Lcom/iMe/storage/data/network/model/response/binance/pay/BinancePayGetAvailablePaymentTokensResponse;->getAssetShortName()Ljava/lang/String;
 
     move-result-object v5
 
-    .line 123
+    .line 122
     invoke-virtual {v1}, Lcom/iMe/storage/data/network/model/response/binance/pay/BinancePayGetAvailablePaymentTokensResponse;->getLogoUrl()Ljava/lang/String;
 
     move-result-object v1
 
-    .line 119
+    .line 118
     invoke-direct {v2, v3, v4, v5, v1}, Lcom/iMe/storage/domain/model/binancepay/BinanceTokenInfo;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
     .line 1621
@@ -780,9 +780,9 @@
 
     invoke-static {p0, v1}, Lkotlin/collections/CollectionsKt;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
 
-    move-result v2
+    move-result v1
 
-    invoke-direct {v0, v2}, Ljava/util/ArrayList;-><init>(I)V
+    invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(I)V
 
     .line 1620
     invoke-interface {p0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
@@ -792,133 +792,93 @@
     :goto_0
     invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v2
+    move-result v1
 
-    if-eqz v2, :cond_1
+    if-eqz v1, :cond_0
 
     invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v2
+    move-result-object v1
 
     .line 1621
-    check-cast v2, Lcom/iMe/storage/data/network/model/response/binance/pay/BinanceTokenBalanceResponse;
+    check-cast v1, Lcom/iMe/storage/data/network/model/response/binance/pay/BinanceTokenBalanceResponse;
+
+    .line 89
+    new-instance v13, Lcom/iMe/storage/domain/model/binancepay/BinanceTokenBalanceInfo;
+
+    .line 90
+    invoke-virtual {v1}, Lcom/iMe/storage/data/network/model/response/binance/pay/BinanceTokenBalanceResponse;->getAssetCode()Ljava/lang/String;
+
+    move-result-object v3
 
     .line 91
-    invoke-virtual {v2}, Lcom/iMe/storage/data/network/model/response/binance/pay/BinanceTokenBalanceResponse;->getAssetCode()Ljava/lang/String;
+    invoke-virtual {v1}, Lcom/iMe/storage/data/network/model/response/binance/pay/BinanceTokenBalanceResponse;->getAssetName()Ljava/lang/String;
 
     move-result-object v4
 
     .line 92
-    invoke-virtual {v2}, Lcom/iMe/storage/data/network/model/response/binance/pay/BinanceTokenBalanceResponse;->getAssetName()Ljava/lang/String;
+    invoke-virtual {v1}, Lcom/iMe/storage/data/network/model/response/binance/pay/BinanceTokenBalanceResponse;->getAssetShortName()Ljava/lang/String;
 
     move-result-object v5
 
     .line 93
-    invoke-virtual {v2}, Lcom/iMe/storage/data/network/model/response/binance/pay/BinanceTokenBalanceResponse;->getAssetShortName()Ljava/lang/String;
+    invoke-virtual {v1}, Lcom/iMe/storage/data/network/model/response/binance/pay/BinanceTokenBalanceResponse;->getLogoUrl()Ljava/lang/String;
 
     move-result-object v6
 
     .line 94
-    invoke-virtual {v2}, Lcom/iMe/storage/data/network/model/response/binance/pay/BinanceTokenBalanceResponse;->getLogoUrl()Ljava/lang/String;
+    invoke-virtual {v1}, Lcom/iMe/storage/data/network/model/response/binance/pay/BinanceTokenBalanceResponse;->getSpot()Lcom/iMe/storage/data/network/model/response/binance/pay/BinanceTokenBalanceResponse$Balance;
+
+    move-result-object v2
+
+    invoke-static {v2}, Lcom/iMe/storage/data/mapper/binancepay/BinancePayMappingKt;->mapToDomain(Lcom/iMe/storage/data/network/model/response/binance/pay/BinanceTokenBalanceResponse$Balance;)Lcom/iMe/storage/domain/model/binancepay/BinanceTokenBalanceInfo$Balance;
 
     move-result-object v7
 
     .line 95
-    invoke-virtual {v2}, Lcom/iMe/storage/data/network/model/response/binance/pay/BinanceTokenBalanceResponse;->getSpot()Lcom/iMe/storage/data/network/model/response/binance/pay/BinanceTokenBalanceResponse$Balance;
+    invoke-virtual {v1}, Lcom/iMe/storage/data/network/model/response/binance/pay/BinanceTokenBalanceResponse;->getMargin()Lcom/iMe/storage/data/network/model/response/binance/pay/BinanceTokenBalanceResponse$Balance;
 
-    move-result-object v3
+    move-result-object v2
 
-    invoke-static {v3}, Lcom/iMe/storage/data/mapper/binancepay/BinancePayMappingKt;->mapToDomain(Lcom/iMe/storage/data/network/model/response/binance/pay/BinanceTokenBalanceResponse$Balance;)Lcom/iMe/storage/domain/model/binancepay/BinanceTokenBalanceInfo$Balance;
+    invoke-static {v2}, Lcom/iMe/storage/data/mapper/binancepay/BinancePayMappingKt;->mapToDomain(Lcom/iMe/storage/data/network/model/response/binance/pay/BinanceTokenBalanceResponse$Balance;)Lcom/iMe/storage/domain/model/binancepay/BinanceTokenBalanceInfo$Balance;
 
     move-result-object v8
 
     .line 96
-    invoke-virtual {v2}, Lcom/iMe/storage/data/network/model/response/binance/pay/BinanceTokenBalanceResponse;->getMargin()Lcom/iMe/storage/data/network/model/response/binance/pay/BinanceTokenBalanceResponse$Balance;
+    invoke-virtual {v1}, Lcom/iMe/storage/data/network/model/response/binance/pay/BinanceTokenBalanceResponse;->getCombined()Lcom/iMe/storage/data/network/model/response/binance/pay/BinanceTokenBalanceResponse$Balance;
 
-    move-result-object v3
+    move-result-object v2
 
-    invoke-static {v3}, Lcom/iMe/storage/data/mapper/binancepay/BinancePayMappingKt;->mapToDomain(Lcom/iMe/storage/data/network/model/response/binance/pay/BinanceTokenBalanceResponse$Balance;)Lcom/iMe/storage/domain/model/binancepay/BinanceTokenBalanceInfo$Balance;
+    invoke-static {v2}, Lcom/iMe/storage/data/mapper/binancepay/BinancePayMappingKt;->mapToDomain(Lcom/iMe/storage/data/network/model/response/binance/pay/BinanceTokenBalanceResponse$Balance;)Lcom/iMe/storage/domain/model/binancepay/BinanceTokenBalanceInfo$Balance;
 
     move-result-object v9
 
     .line 97
-    invoke-virtual {v2}, Lcom/iMe/storage/data/network/model/response/binance/pay/BinanceTokenBalanceResponse;->getCombined()Lcom/iMe/storage/data/network/model/response/binance/pay/BinanceTokenBalanceResponse$Balance;
-
-    move-result-object v3
-
-    invoke-static {v3}, Lcom/iMe/storage/data/mapper/binancepay/BinancePayMappingKt;->mapToDomain(Lcom/iMe/storage/data/network/model/response/binance/pay/BinanceTokenBalanceResponse$Balance;)Lcom/iMe/storage/domain/model/binancepay/BinanceTokenBalanceInfo$Balance;
+    invoke-virtual {v1}, Lcom/iMe/storage/data/network/model/response/binance/pay/BinanceTokenBalanceResponse;->getReplenishNetworks()Ljava/util/List;
 
     move-result-object v10
 
     .line 98
-    invoke-virtual {v2}, Lcom/iMe/storage/data/network/model/response/binance/pay/BinanceTokenBalanceResponse;->getReplenishNetworks()Ljava/util/List;
+    invoke-virtual {v1}, Lcom/iMe/storage/data/network/model/response/binance/pay/BinanceTokenBalanceResponse;->getConvertible()Z
 
-    move-result-object v3
-
-    .line 1549
-    new-instance v11, Ljava/util/ArrayList;
-
-    invoke-static {v3, v1}, Lkotlin/collections/CollectionsKt;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
-
-    move-result v12
-
-    invoke-direct {v11, v12}, Ljava/util/ArrayList;-><init>(I)V
-
-    .line 1620
-    invoke-interface {v3}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
-
-    move-result-object v3
-
-    :goto_1
-    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v12
-
-    if-eqz v12, :cond_0
-
-    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v12
-
-    .line 1621
-    check-cast v12, Ljava/lang/String;
-
-    .line 98
-    sget-object v13, Lcom/iMe/storage/domain/model/crypto/NetworkType;->Companion:Lcom/iMe/storage/domain/model/crypto/NetworkType$Companion;
-
-    invoke-virtual {v13, v12}, Lcom/iMe/storage/domain/model/crypto/NetworkType$Companion;->map(Ljava/lang/String;)Lcom/iMe/storage/domain/model/crypto/NetworkType;
-
-    move-result-object v12
-
-    .line 1621
-    invoke-interface {v11, v12}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
-
-    goto :goto_1
+    move-result v11
 
     .line 99
-    :cond_0
-    invoke-virtual {v2}, Lcom/iMe/storage/data/network/model/response/binance/pay/BinanceTokenBalanceResponse;->getConvertible()Z
+    invoke-virtual {v1}, Lcom/iMe/storage/data/network/model/response/binance/pay/BinanceTokenBalanceResponse;->getReceivable()Z
 
     move-result v12
 
-    .line 100
-    invoke-virtual {v2}, Lcom/iMe/storage/data/network/model/response/binance/pay/BinanceTokenBalanceResponse;->getReceivable()Z
+    move-object v2, v13
 
-    move-result v13
-
-    .line 90
-    new-instance v2, Lcom/iMe/storage/domain/model/binancepay/BinanceTokenBalanceInfo;
-
-    move-object v3, v2
-
-    invoke-direct/range {v3 .. v13}, Lcom/iMe/storage/domain/model/binancepay/BinanceTokenBalanceInfo;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/domain/model/binancepay/BinanceTokenBalanceInfo$Balance;Lcom/iMe/storage/domain/model/binancepay/BinanceTokenBalanceInfo$Balance;Lcom/iMe/storage/domain/model/binancepay/BinanceTokenBalanceInfo$Balance;Ljava/util/List;ZZ)V
+    .line 89
+    invoke-direct/range {v2 .. v12}, Lcom/iMe/storage/domain/model/binancepay/BinanceTokenBalanceInfo;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/domain/model/binancepay/BinanceTokenBalanceInfo$Balance;Lcom/iMe/storage/domain/model/binancepay/BinanceTokenBalanceInfo$Balance;Lcom/iMe/storage/domain/model/binancepay/BinanceTokenBalanceInfo$Balance;Ljava/util/List;ZZ)V
 
     .line 1621
-    invoke-interface {v0, v2}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
+    invoke-interface {v0, v13}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
 
-    :cond_1
+    :cond_0
     return-object v0
 .end method
 
@@ -929,7 +889,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 20
+    .line 19
     new-instance v0, Lcom/iMe/storage/data/locale/prefs/model/binancepay/BinanceAuthTokensMetadata;
 
     invoke-static {}, Lcom/iMe/storage/data/utils/extentions/DateExtKt;->now()J
@@ -948,7 +908,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 32
+    .line 31
     new-instance v0, Lcom/iMe/storage/data/locale/prefs/model/binancepay/BinanceUserInfoMetadata;
 
     invoke-direct {v0, p0}, Lcom/iMe/storage/data/locale/prefs/model/binancepay/BinanceUserInfoMetadata;-><init>(Lcom/iMe/storage/domain/model/binancepay/BinanceUserInfo;)V

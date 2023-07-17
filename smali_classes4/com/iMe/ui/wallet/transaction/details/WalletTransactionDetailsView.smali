@@ -24,13 +24,10 @@
 .method public abstract openProfileScreen(J)V
 .end method
 
-.method public abstract openSendScreen(Lcom/iMe/storage/domain/model/wallet/token/TokenCode;Lcom/iMe/storage/domain/model/crypto/NetworkType;Ljava/lang/String;)V
-.end method
-
 .method public abstract openUrl(Ljava/lang/String;)V
 .end method
 
-.method public abstract setupScreenWithData(ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZZLjava/lang/Integer;)V
+.method public abstract setupScreenWithData(ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZZLjava/lang/String;)V
     .annotation runtime Lmoxy/viewstate/strategy/alias/AddToEndSingle;
     .end annotation
 .end method

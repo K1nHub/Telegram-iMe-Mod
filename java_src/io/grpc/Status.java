@@ -29,7 +29,7 @@ public final class Status {
     private static final List<Status> STATUS_LIST = buildStatusList();
 
     /* renamed from: OK */
-    public static final Status f431OK = Code.OK.toStatus();
+    public static final Status f513OK = Code.OK.toStatus();
     public static final Status CANCELLED = Code.CANCELLED.toStatus();
     public static final Status UNKNOWN = Code.UNKNOWN.toStatus();
 
@@ -122,7 +122,7 @@ public final class Status {
     /* JADX INFO: Access modifiers changed from: private */
     public static Status fromCodeValue(byte[] bArr) {
         if (bArr.length == 1 && bArr[0] == 48) {
-            return f431OK;
+            return f513OK;
         }
         return fromCodeValueSlow(bArr);
     }

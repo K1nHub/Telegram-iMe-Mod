@@ -38,17 +38,17 @@ import kotlin.jvm.internal.Reflection;
 import kotlin.reflect.KProperty;
 import moxy.MvpDelegate;
 import moxy.ktx.MoxyKtxDelegate;
-import org.koin.p043mp.KoinPlatformTools;
+import org.koin.p042mp.KoinPlatformTools;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3295R;
+import org.telegram.messenger.C3417R;
 import org.telegram.messenger.databinding.ForkFragmentCatalogTabsBinding;
-import org.telegram.p044ui.ActionBar.BaseFragment;
-import org.telegram.p044ui.ActionBar.Theme;
-import org.telegram.p044ui.ActionBar.ThemeDescription;
-import org.telegram.p044ui.Components.ViewPagerFixed;
+import org.telegram.p043ui.ActionBar.BaseFragment;
+import org.telegram.p043ui.ActionBar.Theme;
+import org.telegram.p043ui.ActionBar.ThemeDescription;
+import org.telegram.p043ui.Components.ViewPagerFixed;
 /* compiled from: CatalogFragment.kt */
 /* renamed from: com.iMe.ui.catalog.tabs.CatalogFragment */
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public final class CatalogFragment extends BottomNavigationTabFragment implements CatalogView, NavigationViewConfiguration, TabbedViewPagerDelegate<TabbedFragmentPage<CatalogTabFragment>> {
     static final /* synthetic */ KProperty<Object>[] $$delegatedProperties = {Reflection.property1(new PropertyReference1Impl(CatalogFragment.class, "presenter", "getPresenter()Lcom/iMe/ui/catalog/tabs/CatalogPresenter;", 0)), Reflection.property1(new PropertyReference1Impl(CatalogFragment.class, "binding", "getBinding()Lorg/telegram/messenger/databinding/ForkFragmentCatalogTabsBinding;", 0))};
     public static final Companion Companion = new Companion(null);
@@ -129,12 +129,12 @@ public final class CatalogFragment extends BottomNavigationTabFragment implement
         return root;
     }
 
-    @Override // com.iMe.p031ui.wallet.common.BottomNavigationTabFragment, com.iMe.p031ui.base.WalletAuthFragment, com.iMe.p031ui.base.mvp.MvpFragment
+    @Override // com.iMe.p031ui.wallet.common.BottomNavigationTabFragment, com.iMe.p031ui.base.wallet_auth.WalletAuthBaseFragment, com.iMe.p031ui.base.mvp.MvpFragment
     public void onViewReady() {
         getPresenter().setupNavigationRouter();
     }
 
-    @Override // org.telegram.p044ui.ActionBar.BaseFragment
+    @Override // org.telegram.p043ui.ActionBar.BaseFragment
     public void onActivityResultFragment(int i, int i2, Intent intent) {
         super.onActivityResultFragment(i, i2, intent);
         for (CatalogTabFragment catalogTabFragment : getNavigationRouter().getScreenStack()) {
@@ -142,13 +142,13 @@ public final class CatalogFragment extends BottomNavigationTabFragment implement
         }
     }
 
-    @Override // com.iMe.p031ui.base.mvp.MvpFragment, org.telegram.p044ui.ActionBar.BaseFragment
+    @Override // com.iMe.p031ui.base.mvp.MvpFragment, org.telegram.p043ui.ActionBar.BaseFragment
     public void onFragmentDestroy() {
         super.onFragmentDestroy();
         getNavigationRouter().clean();
     }
 
-    @Override // com.iMe.p031ui.wallet.common.BottomNavigationTabFragment, com.iMe.p031ui.base.mvp.MvpFragment, org.telegram.p044ui.ActionBar.BaseFragment
+    @Override // com.iMe.p031ui.wallet.common.BottomNavigationTabFragment, com.iMe.p031ui.base.mvp.MvpFragment, org.telegram.p043ui.ActionBar.BaseFragment
     public void onDestroyView() {
         super.onDestroyView();
         for (CatalogTabFragment catalogTabFragment : getNavigationRouter().getScreenStack()) {
@@ -156,7 +156,7 @@ public final class CatalogFragment extends BottomNavigationTabFragment implement
         }
     }
 
-    @Override // com.iMe.p031ui.wallet.common.BottomNavigationTabFragment, com.iMe.p031ui.base.WalletAuthFragment, com.iMe.p031ui.base.mvp.MvpFragment, org.telegram.p044ui.ActionBar.BaseFragment
+    @Override // com.iMe.p031ui.wallet.common.BottomNavigationTabFragment, com.iMe.p031ui.base.wallet_auth.WalletAuthBaseFragment, com.iMe.p031ui.base.mvp.MvpFragment, org.telegram.p043ui.ActionBar.BaseFragment
     public void onResume() {
         super.onResume();
         for (CatalogTabFragment catalogTabFragment : getNavigationRouter().getScreenStack()) {
@@ -164,7 +164,7 @@ public final class CatalogFragment extends BottomNavigationTabFragment implement
         }
     }
 
-    @Override // com.iMe.p031ui.base.mvp.MvpFragment, org.telegram.p044ui.ActionBar.BaseFragment
+    @Override // com.iMe.p031ui.base.mvp.MvpFragment, org.telegram.p043ui.ActionBar.BaseFragment
     public void onPause() {
         super.onPause();
         for (CatalogTabFragment catalogTabFragment : getNavigationRouter().getScreenStack()) {
@@ -201,7 +201,7 @@ public final class CatalogFragment extends BottomNavigationTabFragment implement
         }
     }
 
-    @Override // org.telegram.p044ui.ActionBar.BaseFragment
+    @Override // org.telegram.p043ui.ActionBar.BaseFragment
     public boolean isSwipeBackEnabled(MotionEvent motionEvent) {
         return getBinding().catalogPager.isSwipeBackEnabled();
     }
@@ -234,16 +234,16 @@ public final class CatalogFragment extends BottomNavigationTabFragment implement
         return root;
     }
 
-    @Override // org.telegram.p044ui.ActionBar.BaseFragment
+    @Override // org.telegram.p043ui.ActionBar.BaseFragment
     public ArrayList<ThemeDescription> getThemeDescriptions() {
         ArrayList<ThemeDescription> arrayListOf;
         arrayListOf = CollectionsKt__CollectionsKt.arrayListOf(new ThemeDescription(getBinding().getRoot(), ThemeDescription.FLAG_BACKGROUND, null, null, null, new ThemeDescription.ThemeDescriptionDelegate() { // from class: com.iMe.ui.catalog.tabs.CatalogFragment$$ExternalSyntheticLambda0
-            @Override // org.telegram.p044ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
+            @Override // org.telegram.p043ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
             public final void didSetColor() {
                 CatalogFragment.this.setupColors();
             }
 
-            @Override // org.telegram.p044ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
+            @Override // org.telegram.p043ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
             public /* synthetic */ void onAnimationProgress(float f) {
                 ThemeDescription.ThemeDescriptionDelegate.CC.$default$onAnimationProgress(this, f);
             }
@@ -258,7 +258,7 @@ public final class CatalogFragment extends BottomNavigationTabFragment implement
     /* JADX INFO: Access modifiers changed from: private */
     public final List<CatalogNavigationTab> initPageTabs() {
         List<CatalogNavigationTab> listOf;
-        listOf = CollectionsKt__CollectionsKt.listOf((Object[]) new CatalogNavigationTab[]{new CatalogNavigationTab(C3295R.C3298id.catalog_all, new TabbedFragmentPage(getResourceManager().getString(C3295R.string.catalog_all), 0, CatalogAllFragment.Companion.newInstance(this.chatType), new CatalogFragment$initPageTabs$1(this), 2, null)), new CatalogNavigationTab(C3295R.C3298id.catalog_categories, new TabbedFragmentPage(getResourceManager().getString(C3295R.string.catalog_categories), 0, CatalogCategoriesFragment.Companion.newInstance(this.chatType), new CatalogFragment$initPageTabs$2(this), 2, null)), new CatalogNavigationTab(C3295R.C3298id.catalog_user_channels, new TabbedFragmentPage(getResourceManager().getString(C3295R.string.catalog_user_channels), 0, CatalogUserChannelsFragment.Companion.newInstance(this.chatType), new CatalogFragment$initPageTabs$3(this), 2, null))});
+        listOf = CollectionsKt__CollectionsKt.listOf((Object[]) new CatalogNavigationTab[]{new CatalogNavigationTab(C3417R.C3420id.catalog_all, new TabbedFragmentPage(getResourceManager().getString(C3417R.string.catalog_all), 0, CatalogAllFragment.Companion.newInstance(this.chatType), new CatalogFragment$initPageTabs$1(this), 2, null)), new CatalogNavigationTab(C3417R.C3420id.catalog_categories, new TabbedFragmentPage(getResourceManager().getString(C3417R.string.catalog_categories), 0, CatalogCategoriesFragment.Companion.newInstance(this.chatType), new CatalogFragment$initPageTabs$2(this), 2, null)), new CatalogNavigationTab(C3417R.C3420id.catalog_user_channels, new TabbedFragmentPage(getResourceManager().getString(C3417R.string.catalog_user_channels), 0, CatalogUserChannelsFragment.Companion.newInstance(this.chatType), new CatalogFragment$initPageTabs$3(this), 2, null))});
         for (CatalogNavigationTab catalogNavigationTab : listOf) {
             catalogNavigationTab.getPage().getFragment().setBottomNavigationDelegate(getBottomNavigationDelegate());
         }
@@ -272,7 +272,7 @@ public final class CatalogFragment extends BottomNavigationTabFragment implement
 
     /* compiled from: CatalogFragment.kt */
     /* renamed from: com.iMe.ui.catalog.tabs.CatalogFragment$Companion */
-    /* loaded from: classes.dex */
+    /* loaded from: classes3.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

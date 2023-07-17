@@ -6,19 +6,20 @@ import com.iMe.model.wallet.crypto.wallet_connect.WalletConnectTransactionScreen
 import com.iMe.p031ui.base.mvp.base.BasePresenter;
 import com.iMe.p031ui.base.mvp.base.BaseView;
 import com.iMe.p031ui.custom.FeeView;
+import com.iMe.storage.data.utils.crypto.NetworksHelper;
+import com.iMe.storage.data.utils.extentions.NumberExtKt;
 import com.iMe.storage.domain.interactor.crypto.wallet_connect.WalletConnectInteractor;
 import com.iMe.storage.domain.manager.wallet_connect.WalletConnectManager;
 import com.iMe.storage.domain.model.Result;
-import com.iMe.storage.domain.model.crypto.NetworkType;
 import com.iMe.storage.domain.model.crypto.send.TransactionSpeedLevel;
 import com.iMe.storage.domain.model.crypto.wallet_connect.WalletConnectProcessedTransaction;
 import com.iMe.storage.domain.model.crypto.wallet_connect.WalletConnectTransactionArgs;
-import com.iMe.storage.domain.model.wallet.token.TokenInfo;
+import com.iMe.storage.domain.model.wallet.token.TokenDetailed;
 import com.iMe.storage.domain.utils.p030rx.SchedulersProvider;
 import com.iMe.storage.domain.utils.system.ResourceManager;
 import com.iMe.utils.extentions.common.StringExtKt;
-import com.iMe.utils.extentions.p033rx.RxExtKt;
-import com.iMe.utils.extentions.p033rx.RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
+import com.iMe.utils.extentions.p032rx.RxExtKt;
+import com.iMe.utils.extentions.p032rx.RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
 import com.iMe.utils.formatter.BalanceFormatter;
 import io.reactivex.Observable;
 import io.reactivex.disposables.Disposable;
@@ -29,7 +30,7 @@ import kotlin.LazyKt__LazyJVMKt;
 import kotlin.NoWhenBranchMatchedException;
 import kotlin.jvm.internal.Intrinsics;
 import moxy.InjectViewState;
-import org.telegram.messenger.C3295R;
+import org.telegram.messenger.C3417R;
 /* compiled from: WalletConnectTransactionPresenter.kt */
 @InjectViewState
 /* renamed from: com.iMe.ui.wallet.crypto.wallet_connect.transaction.WalletConnectTransactionPresenter */
@@ -40,7 +41,7 @@ public final class WalletConnectTransactionPresenter extends BasePresenter<Walle
     private final SchedulersProvider schedulersProvider;
     private final WalletConnectTransactionScreenType screenType;
     private GasPriceItem selectedFee;
-    private final Lazy tokenInfo$delegate;
+    private final Lazy token$delegate;
     private final WalletConnectInteractor walletConnectInteractor;
     private final WalletConnectManager walletConnectManager;
 
@@ -57,15 +58,15 @@ public final class WalletConnectTransactionPresenter extends BasePresenter<Walle
         this.schedulersProvider = schedulersProvider;
         this.walletConnectInteractor = walletConnectInteractor;
         this.walletConnectManager = walletConnectManager;
-        lazy = LazyKt__LazyJVMKt.lazy(new WalletConnectTransactionPresenter$tokenInfo$2(this));
-        this.tokenInfo$delegate = lazy;
+        lazy = LazyKt__LazyJVMKt.lazy(new WalletConnectTransactionPresenter$token$2(this));
+        this.token$delegate = lazy;
         lazy2 = LazyKt__LazyJVMKt.lazy(new WalletConnectTransactionPresenter$amount$2(this));
         this.amount$delegate = lazy2;
-        this.selectedFee = new GasPriceItem(TransactionSpeedLevel.MEDIUM, getTokenInfo(), screenType.getTransaction().getTransactionParams().getMedium());
+        this.selectedFee = new GasPriceItem(TransactionSpeedLevel.MEDIUM, getToken(), screenType.getTransaction().getTransactionParams().getMedium());
     }
 
-    private final TokenInfo getTokenInfo() {
-        return (TokenInfo) this.tokenInfo$delegate.getValue();
+    private final TokenDetailed getToken() {
+        return (TokenDetailed) this.token$delegate.getValue();
     }
 
     private final BigDecimal getAmount() {
@@ -77,17 +78,17 @@ public final class WalletConnectTransactionPresenter extends BasePresenter<Walle
     public final DialogModel getSendConfirmationDialogModel() {
         WalletConnectTransactionScreenType walletConnectTransactionScreenType = this.screenType;
         if (walletConnectTransactionScreenType instanceof WalletConnectTransactionScreenType.Send) {
-            return new DialogModel(this.resourceManager.getString(C3295R.string.wallet_amount_confirm_alert_title), getConfirmMessage(), this.resourceManager.getString(C3295R.string.common_cancel), this.resourceManager.getString(C3295R.string.wallet_amount_confirm_alert_ok_btn));
+            return new DialogModel(this.resourceManager.getString(C3417R.string.wallet_amount_confirm_alert_title), getConfirmMessage(), this.resourceManager.getString(C3417R.string.common_cancel), this.resourceManager.getString(C3417R.string.wallet_amount_confirm_alert_ok_btn));
         }
         if (walletConnectTransactionScreenType instanceof WalletConnectTransactionScreenType.Sign) {
-            return new DialogModel(this.resourceManager.getString(C3295R.string.wallet_connect_message_sign_confirm_title), getConfirmMessage(), this.resourceManager.getString(C3295R.string.common_cancel), this.resourceManager.getString(C3295R.string.wallet_connect_transaction_button_sign));
+            return new DialogModel(this.resourceManager.getString(C3417R.string.wallet_connect_message_sign_confirm_title), getConfirmMessage(), this.resourceManager.getString(C3417R.string.common_cancel), this.resourceManager.getString(C3417R.string.wallet_connect_transaction_button_sign));
         }
         throw new NoWhenBranchMatchedException();
     }
 
     public final void processTransaction() {
         WalletConnectProcessedTransaction transaction = this.screenType.getTransaction();
-        processTransaction(new WalletConnectTransactionArgs(transaction.getTo(), new BigInteger(transaction.getValue()), transaction.getData(), NetworkType.Companion.map(transaction.getNetworkType()).getChainId(), transaction.getTransactionParams().getNonce(), this.selectedFee.getInfo().getPrice(), this.selectedFee.getInfo().getLimit()));
+        processTransaction(new WalletConnectTransactionArgs(transaction.getTo(), new BigInteger(transaction.getValue()), transaction.getData(), NumberExtKt.orZero(NetworksHelper.getNetworkById(getToken().getNetworkId()).getChainId()), transaction.getTransactionParams().getNonce(), this.selectedFee.getInfo().getPrice(), this.selectedFee.getInfo().getLimit()));
     }
 
     public final void rejectTransaction() {
@@ -99,7 +100,7 @@ public final class WalletConnectTransactionPresenter extends BasePresenter<Walle
     @Override // moxy.MvpPresenter
     public void onFirstViewAttach() {
         WalletConnectProcessedTransaction transaction = this.screenType.getTransaction();
-        ((WalletConnectTransactionView) getViewState()).setupScreenWithData(getTransactionAmountText(), this.resourceManager.getString(NetworkType.Companion.map(transaction.getNetworkType()).getShortName()), StringExtKt.shortened$default(transaction.getFrom(), 0, 1, null), StringExtKt.shortened$default(transaction.getTo(), 0, 1, null), this.screenType.getSessionItem().getPeerUrl());
+        ((WalletConnectTransactionView) getViewState()).setupScreenWithData(getTransactionAmountText(), NetworksHelper.getNetworkById(getToken().getNetworkId()).getShortName(), StringExtKt.shortened$default(transaction.getFrom(), 0, 1, null), StringExtKt.shortened$default(transaction.getTo(), 0, 1, null), this.screenType.getSessionItem().getPeerUrl());
         if (this.screenType instanceof WalletConnectTransactionScreenType.Send) {
             ((WalletConnectTransactionView) getViewState()).showFee(getChooseFeeType());
         }
@@ -123,8 +124,8 @@ public final class WalletConnectTransactionPresenter extends BasePresenter<Walle
         Intrinsics.checkNotNullExpressionValue(observeOn, "processingObservable\n   …(schedulersProvider.ui())");
         T viewState = getViewState();
         Intrinsics.checkNotNullExpressionValue(viewState, "viewState");
-        Disposable subscribe = RxExtKt.withLoadingDialog((Observable) observeOn, (BaseView) viewState, true).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2230xc1738946(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2231xc1738947((BaseView) getViewState())));
-        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
+        Disposable subscribe = RxExtKt.withLoadingDialog((Observable) observeOn, (BaseView) viewState, true).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2246xc1738946(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2247xc1738947((BaseView) getViewState())));
+        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…Error.invoke()\n        })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
 
@@ -136,7 +137,7 @@ public final class WalletConnectTransactionPresenter extends BasePresenter<Walle
     }
 
     private final FeeView.ChooseFeeType getChooseFeeType() {
-        return new FeeView.ChooseFeeType.Default(getFeeDialogModel(), this.screenType.getTransaction().getTransactionParams(), TokenInfo.Companion.map(this.screenType.getTransaction().getFeeTokenCode()), this.selectedFee, new WalletConnectTransactionPresenter$getChooseFeeType$1(this));
+        return new FeeView.ChooseFeeType.Default(getFeeDialogModel(), this.screenType.getTransaction().getTransactionParams(), getToken(), this.selectedFee, new WalletConnectTransactionPresenter$getChooseFeeType$1(this));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -146,7 +147,7 @@ public final class WalletConnectTransactionPresenter extends BasePresenter<Walle
     }
 
     private final DialogModel getFeeDialogModel() {
-        return new DialogModel(this.resourceManager.getString(C3295R.string.wallet_amount_send_fee_dialog_title), null, null, this.resourceManager.getString(C3295R.string.common_cancel), 6, null);
+        return new DialogModel(this.resourceManager.getString(C3417R.string.wallet_amount_send_fee_dialog_title), null, null, this.resourceManager.getString(C3417R.string.common_cancel), 6, null);
     }
 
     private final String getConfirmMessage() {
@@ -154,16 +155,16 @@ public final class WalletConnectTransactionPresenter extends BasePresenter<Walle
         ResourceManager resourceManager = this.resourceManager;
         WalletConnectTransactionScreenType walletConnectTransactionScreenType = this.screenType;
         if (walletConnectTransactionScreenType instanceof WalletConnectTransactionScreenType.Send) {
-            i = C3295R.string.wallet_amount_send_confirm_alert_description;
+            i = C3417R.string.wallet_amount_send_confirm_alert_description;
         } else if (!(walletConnectTransactionScreenType instanceof WalletConnectTransactionScreenType.Sign)) {
             throw new NoWhenBranchMatchedException();
         } else {
-            i = C3295R.string.wallet_connect_transaction_confirm_sign_description;
+            i = C3417R.string.wallet_connect_transaction_confirm_sign_description;
         }
-        return resourceManager.getString(i, BalanceFormatter.formatBalance(Double.valueOf(getAmount().doubleValue()), getTokenInfo().getDecimals()), this.resourceManager.getString(getTokenInfo().getShortName()));
+        return resourceManager.getString(i, BalanceFormatter.formatBalance(Double.valueOf(getAmount().doubleValue()), Integer.valueOf(getToken().getDecimals())), getToken().getTicker());
     }
 
     private final String getTransactionAmountText() {
-        return getAmount().toString() + ' ' + this.screenType.getTransaction().getFeeTokenCode();
+        return getAmount().toString() + ' ' + getToken().getTicker();
     }
 }

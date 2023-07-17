@@ -35,7 +35,7 @@
 .method load(Ljava/util/Properties;)V
     .locals 3
 
-    const-string v0, "rx2.purge-enabled"
+    const-string/jumbo v0, "rx2.purge-enabled"
 
     .line 111
     invoke-virtual {p1, v0}, Ljava/util/Properties;->containsKey(Ljava/lang/Object;)Z
@@ -69,7 +69,7 @@
 
     if-eqz v0, :cond_1
 
-    const-string v0, "rx2.purge-period-seconds"
+    const-string/jumbo v0, "rx2.purge-period-seconds"
 
     invoke-virtual {p1, v0}, Ljava/util/Properties;->containsKey(Ljava/lang/Object;)Z
 

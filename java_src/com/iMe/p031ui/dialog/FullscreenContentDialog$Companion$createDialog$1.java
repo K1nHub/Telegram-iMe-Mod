@@ -6,7 +6,7 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Lambda;
-import org.telegram.p044ui.ActionBar.AlertDialog;
+import org.telegram.p043ui.ActionBar.AlertDialog;
 /* compiled from: FullscreenContentDialog.kt */
 /* renamed from: com.iMe.ui.dialog.FullscreenContentDialog$Companion$createDialog$1 */
 /* loaded from: classes3.dex */

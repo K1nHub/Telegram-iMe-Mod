@@ -57,7 +57,7 @@ final class PickFirstLoadBalancer extends LoadBalancer {
         if (state == ConnectivityState.SHUTDOWN) {
             return;
         }
-        int i = C25652.$SwitchMap$io$grpc$ConnectivityState[state.ordinal()];
+        int i = C26862.$SwitchMap$io$grpc$ConnectivityState[state.ordinal()];
         if (i == 1) {
             requestConnectionPicker = new RequestConnectionPicker(subchannel);
         } else {
@@ -79,7 +79,7 @@ final class PickFirstLoadBalancer extends LoadBalancer {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: io.grpc.internal.PickFirstLoadBalancer$2 */
     /* loaded from: classes4.dex */
-    public static /* synthetic */ class C25652 {
+    public static /* synthetic */ class C26862 {
         static final /* synthetic */ int[] $SwitchMap$io$grpc$ConnectivityState;
 
         static {

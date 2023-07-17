@@ -8,8 +8,8 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
-import p034j$.util.Iterator;
-import p034j$.util.function.Consumer;
+import p033j$.util.Iterator;
+import p033j$.util.function.Consumer;
 /* loaded from: classes3.dex */
 public class ArraySortedMap<K, V> extends ImmutableSortedMap<K, V> {
     private final Comparator<K> comparator;
@@ -124,23 +124,23 @@ public class ArraySortedMap<K, V> extends ImmutableSortedMap<K, V> {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.google.firebase.database.collection.ArraySortedMap$1 */
     /* loaded from: classes3.dex */
-    public class C09961 implements Iterator<Map.Entry<K, V>>, p034j$.util.Iterator {
+    public class C10011 implements Iterator<Map.Entry<K, V>>, p033j$.util.Iterator {
         int currentPos;
         final /* synthetic */ int val$pos;
         final /* synthetic */ boolean val$reverse;
 
-        @Override // p034j$.util.Iterator
+        @Override // p033j$.util.Iterator
         public /* synthetic */ void forEachRemaining(Consumer consumer) {
             Iterator.CC.$default$forEachRemaining(this, consumer);
         }
 
-        C09961(int i, boolean z) {
+        C10011(int i, boolean z) {
             this.val$pos = i;
             this.val$reverse = z;
             this.currentPos = i;
         }
 
-        @Override // java.util.Iterator, p034j$.util.Iterator
+        @Override // java.util.Iterator, p033j$.util.Iterator
         public boolean hasNext() {
             if (this.val$reverse) {
                 if (this.currentPos >= 0) {
@@ -152,7 +152,7 @@ public class ArraySortedMap<K, V> extends ImmutableSortedMap<K, V> {
             return false;
         }
 
-        @Override // java.util.Iterator, p034j$.util.Iterator
+        @Override // java.util.Iterator, p033j$.util.Iterator
         public Map.Entry<K, V> next() {
             Object obj = ArraySortedMap.this.keys[this.currentPos];
             Object[] objArr = ArraySortedMap.this.values;
@@ -162,14 +162,14 @@ public class ArraySortedMap<K, V> extends ImmutableSortedMap<K, V> {
             return new AbstractMap.SimpleImmutableEntry(obj, obj2);
         }
 
-        @Override // java.util.Iterator, p034j$.util.Iterator
+        @Override // java.util.Iterator, p033j$.util.Iterator
         public void remove() {
             throw new UnsupportedOperationException("Can't remove elements from ImmutableSortedMap");
         }
     }
 
     private java.util.Iterator<Map.Entry<K, V>> iterator(int i, boolean z) {
-        return new C09961(i, z);
+        return new C10011(i, z);
     }
 
     @Override // com.google.firebase.database.collection.ImmutableSortedMap, java.lang.Iterable

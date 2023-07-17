@@ -32,20 +32,25 @@
 .end method
 
 .method private constructor <init>()V
-    .locals 4
+    .locals 6
 
-    .line 32
-    sget v0, Lorg/telegram/messenger/R$drawable;->fork_ic_wallet_import:I
+    .line 34
+    sget v1, Lorg/telegram/messenger/R$drawable;->fork_ic_wallet_import:I
+
+    .line 35
+    sget v2, Lorg/telegram/messenger/R$string;->wallet_dashboard_import_eth_wallet:I
+
+    .line 36
+    sget v3, Lorg/telegram/messenger/R$string;->wallet_creation_intro_title_import:I
+
+    const/4 v4, 0x1
+
+    const/4 v5, 0x0
+
+    move-object v0, p0
 
     .line 33
-    sget v1, Lorg/telegram/messenger/R$string;->wallet_dashboard_import_eth_wallet:I
-
-    const/4 v2, 0x1
-
-    const/4 v3, 0x0
-
-    .line 31
-    invoke-direct {p0, v0, v1, v2, v3}, Lcom/iMe/model/wallet/crypto/create/WalletCreationType$Initial;-><init>(IIILkotlin/jvm/internal/DefaultConstructorMarker;)V
+    invoke-direct/range {v0 .. v5}, Lcom/iMe/model/wallet/crypto/create/WalletCreationType$Initial;-><init>(IIIILkotlin/jvm/internal/DefaultConstructorMarker;)V
 
     return-void
 .end method

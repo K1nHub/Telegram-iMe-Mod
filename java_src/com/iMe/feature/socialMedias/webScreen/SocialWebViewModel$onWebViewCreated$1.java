@@ -112,7 +112,7 @@ public final class SocialWebViewModel$onWebViewCreated$1 extends SuspendLambda i
         L6d:
             com.iMe.feature.socialMedias.webScreen.SocialWebViewModel r9 = r8.this$0
             com.iMe.feature.socialMedias.webScreen.SocialWebViewModel.access$processUrl(r9, r1)
-            com.iMe.feature.socialMedias.webScreen.SocialWebViewModel$onWebViewCreated$1$2 r9 = com.iMe.feature.socialMedias.webScreen.SocialWebViewModel$onWebViewCreated$1.C14662.INSTANCE
+            com.iMe.feature.socialMedias.webScreen.SocialWebViewModel$onWebViewCreated$1$2 r9 = com.iMe.feature.socialMedias.webScreen.SocialWebViewModel$onWebViewCreated$1.C14772.INSTANCE
             r1 = 0
             r8.L$0 = r1
             r8.L$1 = r1
@@ -131,12 +131,12 @@ public final class SocialWebViewModel$onWebViewCreated$1 extends SuspendLambda i
     /* compiled from: SocialWebViewModel.kt */
     /* renamed from: com.iMe.feature.socialMedias.webScreen.SocialWebViewModel$onWebViewCreated$1$1 */
     /* loaded from: classes3.dex */
-    public static final class C14651 extends Lambda implements Function1<SimpleContext<SocialWebState>, SocialWebState> {
+    public static final class C14761 extends Lambda implements Function1<SimpleContext<SocialWebState>, SocialWebState> {
         final /* synthetic */ SocialNetwork $socialNetwork;
         final /* synthetic */ String $title;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C14651(String str, SocialNetwork socialNetwork) {
+        C14761(String str, SocialNetwork socialNetwork) {
             super(1);
             this.$title = str;
             this.$socialNetwork = socialNetwork;
@@ -153,10 +153,10 @@ public final class SocialWebViewModel$onWebViewCreated$1 extends SuspendLambda i
     /* compiled from: SocialWebViewModel.kt */
     /* renamed from: com.iMe.feature.socialMedias.webScreen.SocialWebViewModel$onWebViewCreated$1$2 */
     /* loaded from: classes3.dex */
-    public static final class C14662 extends Lambda implements Function1<SimpleContext<SocialWebState>, SocialWebState> {
-        public static final C14662 INSTANCE = new C14662();
+    public static final class C14772 extends Lambda implements Function1<SimpleContext<SocialWebState>, SocialWebState> {
+        public static final C14772 INSTANCE = new C14772();
 
-        C14662() {
+        C14772() {
             super(1);
         }
 

@@ -42,12 +42,12 @@ import kotlin.jvm.internal.Reflection;
 import kotlin.reflect.KProperty;
 import org.koin.core.Koin;
 import org.koin.core.component.KoinComponent;
-import org.koin.p043mp.KoinPlatformTools;
+import org.koin.p042mp.KoinPlatformTools;
 import org.orbitmvi.orbit.viewmodel.ContainerHostExtensionsKt;
-import org.telegram.messenger.C3295R;
+import org.telegram.messenger.C3417R;
 import org.telegram.messenger.databinding.ForkToolbarBinding;
 import org.telegram.messenger.databinding.ForkWebScreenBinding;
-import org.telegram.p044ui.ActionBar.Theme;
+import org.telegram.p043ui.ActionBar.Theme;
 /* compiled from: AuthScreen.kt */
 /* loaded from: classes3.dex */
 public final class AuthScreen extends Fragment implements KoinComponent {
@@ -58,7 +58,7 @@ public final class AuthScreen extends Fragment implements KoinComponent {
     private final Lazy viewModel$delegate;
 
     public AuthScreen() {
-        super(C3295R.layout.fork_web_screen);
+        super(C3417R.layout.fork_web_screen);
         Lazy lazy;
         Lazy lazy2;
         this.binding$delegate = new FragmentViewBindingDelegate(ForkWebScreenBinding.class, this);
@@ -143,7 +143,7 @@ public final class AuthScreen extends Fragment implements KoinComponent {
         } else if (Intrinsics.areEqual(authSideEffects, AuthSideEffects.RemoveCookies.INSTANCE)) {
             CookieManager.getInstance().removeAllCookies(null);
         } else if (Intrinsics.areEqual(authSideEffects, AuthSideEffects.ShowAccessError.INSTANCE)) {
-            showErrorMessageAndClose(getResource().getString(C3295R.string.social_access_error));
+            showErrorMessageAndClose(getResource().getString(C3417R.string.social_access_error));
         }
     }
 
@@ -170,10 +170,10 @@ public final class AuthScreen extends Fragment implements KoinComponent {
     /* JADX INFO: Access modifiers changed from: private */
     public final void showPopupMenu() {
         List mutableListOf;
-        String string = getResource().getString(C3295R.string.social_clear_cache_menu_item);
-        int i = C3295R.C3297drawable.msg_delete;
+        String string = getResource().getString(C3417R.string.social_clear_cache_menu_item);
+        int i = C3417R.C3419drawable.msg_delete;
         int i2 = Theme.key_color_red;
-        mutableListOf = CollectionsKt__CollectionsKt.mutableListOf(new MenuItem(getResource().getString(C3295R.string.social_refresh_page_menu_item), C3295R.C3297drawable.msg_retry, 0, 0, new AuthScreen$showPopupMenu$menuItems$1(getViewModel()), 12, null), new MenuItem(string, i, Theme.getColor(i2), Theme.getColor(i2), new AuthScreen$showPopupMenu$menuItems$2(getViewModel())));
+        mutableListOf = CollectionsKt__CollectionsKt.mutableListOf(new MenuItem(getResource().getString(C3417R.string.social_refresh_page_menu_item), C3417R.C3419drawable.msg_retry, 0, 0, new AuthScreen$showPopupMenu$menuItems$1(getViewModel()), 12, null), new MenuItem(string, i, Theme.getColor(i2), Theme.getColor(i2), new AuthScreen$showPopupMenu$menuItems$2(getViewModel())));
         ImageView imageView = getBinding().toolbar.imageMenu;
         Intrinsics.checkNotNullExpressionValue(imageView, "binding.toolbar.imageMenu");
         PopupMenuExtKt.showPopupMenu(imageView, mutableListOf);
@@ -195,7 +195,7 @@ public final class AuthScreen extends Fragment implements KoinComponent {
         String capitalizeOnlyFirstSymbol = StringExtKt.capitalizeOnlyFirstSymbol(getArgs().getSocialAuthDomain().getSocialType().name());
         Context requireContext = requireContext();
         Intrinsics.checkNotNullExpressionValue(requireContext, "requireContext()");
-        DialogUtils.createDialog$default(requireContext, new DialogModel(getString(C3295R.string.social_connect_account_title, capitalizeOnlyFirstSymbol), getString(C3295R.string.social_connect_account_message), getString(C3295R.string.social_connect_account_negative_button), getString(C3295R.string.social_connect_account_positive_button)), new Callbacks$Callback() { // from class: com.iMe.feature.socialMedias.auth.AuthScreen$$ExternalSyntheticLambda0
+        DialogUtils.createDialog$default(requireContext, new DialogModel(getString(C3417R.string.social_connect_account_title, capitalizeOnlyFirstSymbol), getString(C3417R.string.social_connect_account_message), getString(C3417R.string.social_connect_account_negative_button), getString(C3417R.string.social_connect_account_positive_button)), new Callbacks$Callback() { // from class: com.iMe.feature.socialMedias.auth.AuthScreen$$ExternalSyntheticLambda0
             @Override // com.iMe.fork.utils.Callbacks$Callback
             public final void invoke() {
                 AuthScreen.this.closeAuthScreen();

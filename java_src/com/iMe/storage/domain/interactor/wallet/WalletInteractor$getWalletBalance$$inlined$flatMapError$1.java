@@ -2,7 +2,6 @@ package com.iMe.storage.domain.interactor.wallet;
 
 import com.iMe.storage.data.network.model.error.IErrorStatus;
 import com.iMe.storage.domain.model.Result;
-import com.iMe.storage.domain.model.crypto.NetworkType;
 import com.iMe.storage.domain.model.wallet.token.TokenBalance;
 import com.iMe.storage.domain.repository.wallet.WalletRepository;
 import com.iMe.storage.domain.utils.p030rx.SchedulersProvider;
@@ -19,16 +18,16 @@ import kotlin.jvm.internal.Lambda;
 public final class WalletInteractor$getWalletBalance$$inlined$flatMapError$1 extends Lambda implements Function1<Result<? extends List<? extends TokenBalance>>, ObservableSource<? extends Result<? extends List<? extends TokenBalance>>>> {
     final /* synthetic */ IErrorStatus[] $errorStatus;
     final /* synthetic */ boolean $force$inlined;
-    final /* synthetic */ NetworkType $networkType$inlined;
+    final /* synthetic */ String $networkId$inlined;
     final /* synthetic */ WalletInteractor this$0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public WalletInteractor$getWalletBalance$$inlined$flatMapError$1(IErrorStatus[] iErrorStatusArr, WalletInteractor walletInteractor, boolean z, NetworkType networkType) {
+    public WalletInteractor$getWalletBalance$$inlined$flatMapError$1(IErrorStatus[] iErrorStatusArr, WalletInteractor walletInteractor, boolean z, String str) {
         super(1);
         this.$errorStatus = iErrorStatusArr;
         this.this$0 = walletInteractor;
         this.$force$inlined = z;
-        this.$networkType$inlined = networkType;
+        this.$networkId$inlined = str;
     }
 
     @Override // kotlin.jvm.functions.Function1
@@ -47,7 +46,7 @@ public final class WalletInteractor$getWalletBalance$$inlined$flatMapError$1 ext
                 error.getError();
                 walletRepository = this.this$0.walletRepository;
                 Observable<Result<Boolean>> activateWallet = walletRepository.activateWallet();
-                final WalletInteractor$getWalletBalance$1$1 walletInteractor$getWalletBalance$1$1 = new WalletInteractor$getWalletBalance$1$1(this.this$0, this.$force$inlined, this.$networkType$inlined);
+                final WalletInteractor$getWalletBalance$1$1 walletInteractor$getWalletBalance$1$1 = new WalletInteractor$getWalletBalance$1$1(this.this$0, this.$force$inlined, this.$networkId$inlined);
                 Observable<R> flatMap = activateWallet.flatMap(new Function(walletInteractor$getWalletBalance$1$1) { // from class: com.iMe.storage.domain.interactor.wallet.WalletInteractor$sam$io_reactivex_functions_Function$0
                     private final /* synthetic */ Function1 function;
 
@@ -64,7 +63,7 @@ public final class WalletInteractor$getWalletBalance$$inlined$flatMapError$1 ext
                 });
                 schedulersProvider = this.this$0.schedulersProvider;
                 Observable subscribeOn = flatMap.subscribeOn(schedulersProvider.mo699io());
-                Intrinsics.checkNotNullExpressionValue(subscribeOn, "fun getWalletBalance(for…(schedulersProvider.io())");
+                Intrinsics.checkNotNullExpressionValue(subscribeOn, "fun getWalletBalance(\n  …(schedulersProvider.io())");
                 return subscribeOn;
             }
             Result error$default = Result.Companion.error$default(Result.Companion, error.getError(), null, 2, null);

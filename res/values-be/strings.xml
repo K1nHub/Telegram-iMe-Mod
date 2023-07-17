@@ -178,9 +178,6 @@
     <string name="chat_attach_alert_bot_buttons">Кнопкі ботаў</string>
     <string name="chat_avatar_previewer_mention_by_name">Згадаць па імені</string>
     <string name="chat_avatar_previewer_user_messages">Паведамлення карыстальніка</string>
-    <string name="chat_bookmarks">Закладкі</string>
-    <string name="chat_bookmarks_empty">Няма закладак</string>
-    <string name="chat_bookmarks_empty_subtitle">У вас няма закладак у чатах</string>
     <string name="chat_drafts_empty">Няма чарнавікоў</string>
     <string name="chat_drafts_empty_subtitle">У вас няма чарнавікоў у чатах</string>
     <string name="chat_long_action_translate">Перавесці</string>
@@ -192,7 +189,6 @@
     <string name="chat_menu_quote">Цытаваць</string>
     <string name="chat_message_forward_media">Пераслаць медыя</string>
     <string name="chat_message_forward_text">Пераслаць тэкст</string>
-    <string name="chat_message_popup_option_add_to_bookmarks">Захаваць у закладкі</string>
     <string name="chat_message_popup_option_copy_image">Капіяваць фота</string>
     <string name="chat_message_popup_option_copy_part">Капіяваць фрагмент</string>
     <string name="chat_message_popup_option_copy_text">Капіяваць тэкст</string>
@@ -200,8 +196,6 @@
     <string name="chat_message_popup_option_forward_viber">Пераслаць у Viber</string>
     <string name="chat_message_popup_option_forward_whatsapp">Пераслаць у WhatsApp</string>
     <string name="chat_message_popup_option_forward_whatsapp_business">Пераслаць у WA Business</string>
-    <string name="chat_message_popup_option_remove_all_bookmarks">ВЫДАЛІЦЬ УСЕ ЗАКЛАДКІ</string>
-    <string name="chat_message_popup_option_remove_from_bookmarks">Выдаліць з закладак</string>
     <string name="chat_message_spoiler_less">МЕНШЫЯ</string>
     <string name="chat_message_spoiler_more">БОЛЬШ</string>
     <string name="chat_multi_panel_empty_cache_toast">У дадзеным чаце кэш адсутнічае</string>
@@ -549,11 +543,6 @@
     <string name="loading_participants_error">Памылка загрузкі удзельнікаў, паўторыце спробу пазней</string>
     <string name="main_camera_popup_text">Задняя камера</string>
     <string name="main_list">Асноўны спіс</string>
-    <string name="management">Мэнэджмент</string>
-    <string name="management_bookmarks_delete_all_alert_message">Вы ўпэўненыя, што жадаеце выдаліць усе закладкі з усіх чатаў? Вашы чаты пры гэтым не будуць выдалены.</string>
-    <string name="management_bookmarks_delete_selected_alert_message">Вы ўпэўненыя, што жадаеце выдаліць усе закладкі з абраных чатаў? Вашы чаты пры гэтым не будуць выдалены.</string>
-    <string name="management_drafts">Чарнавікі</string>
-    <string name="management_drafts_delete_selected_alert_message">Вы ўпэўненыя, што хочаце выдаліць усе чарнавікі з абраных чатаў? Вашы чаты пры гэтым не будуць выдалены.</string>
     <string name="material_clock_toggle_content_description">Выберыце AM (да паўдня) або PM (пасля паўдня)</string>
     <string name="material_hour_selection">Выберыце гадзіну</string>
     <string name="material_hour_suffix">%1$s гадз</string>
@@ -930,6 +919,7 @@
     <string name="sorting_settings_tab_bots_item_title">Боты</string>
     <string name="sorting_settings_tab_channels_item_title">Каналы</string>
     <string name="sorting_settings_tab_deleted_users">Выдаленыя акаўнты</string>
+    <string name="sorting_settings_tab_drafts">Чарнавікі</string>
     <string name="sorting_settings_tab_groups_item_title">Групы</string>
     <string name="sorting_settings_tab_live_chats">Чаты з прамым эфірам</string>
     <string name="sorting_settings_tab_mentioned_chats">Упамінанні</string>
@@ -1287,8 +1277,8 @@
     <string name="wallet_banner_slide_gate_description">Ваш шлюз да криптовалюте</string>
     <string name="wallet_banner_slide_gate_long_description">Гандлюйце LIME і іншымі криптовалютами з нізкімі курсамі абмену.</string>
     <string name="wallet_banner_slide_gate_title">Gate.io</string>
-    <string name="wallet_banner_slide_multi_networks_description">Ethereum, BNB Chain, Fantom, TON, NFT</string>
-    <string name="wallet_banner_slide_multi_networks_long_description">Пераключэнне сетак Ethereum, BNB Chain, Polygon, Fantom, TON і NFT для зручнага выкарыстання токенаў розных платформаў у адным кашальку.</string>
+    <string name="wallet_banner_slide_multi_networks_description">Bitcoin, Ethereum, BNB Chain, Polygon, Fantom, Tron, TON, NFT</string>
+    <string name="wallet_banner_slide_multi_networks_long_description">Пераключэнне сетак Bitcoin, Ethereum, BNB Chain, Polygon, Fantom, Tron, TON і NFT для зручнага выкарыстання токенаў розных платформаў у адным кашальку.</string>
     <string name="wallet_banner_slide_multi_networks_title">МУЛЬТИСЕТЕВОЙ</string>
     <string name="wallet_banner_slide_non_custodial_description">Толькі ў вас ёсць доступ да кашалька</string>
     <string name="wallet_banner_slide_non_custodial_long_description">Вы адзіны, хто мае доступ да кашалька. Захавайце парольную фразу, каб аднавіць або імпартаваць кашалёк.</string>
@@ -1299,7 +1289,7 @@
     <string name="wallet_banner_slide_staking_description">Стварайце дэпазіты</string>
     <string name="wallet_banner_slide_staking_long_description">Стварайце дэпазіты ў LIME і партнёрскіх токена, каб вашыя актывы працавалі на вас.</string>
     <string name="wallet_banner_slide_staking_title">Стэйкінг</string>
-    <string name="wallet_banner_slide_swap_description">Uniswap, PancakeSwap, 1inch</string>
+    <string name="wallet_banner_slide_swap_description">1inch, Symbiosis</string>
     <string name="wallet_banner_slide_swap_long_description">Абменьвайце крыптавалюты і токены адзін з адным з дапамогай дэцэнтралізаваных пратаколаў абмену на аснове смарт -кантрактаў.</string>
     <string name="wallet_banner_slide_swap_title">ОБМЕН</string>
     <string name="wallet_binance_logout_confirm_dialog_description">Вы ўпэўненыя, што хочаце выйсці?</string>
@@ -1497,7 +1487,7 @@
 У iMe Wallet можна мець толькі адзін актыўны рахунак Ethereum. Таму, пры перакладзе сродкаў іншымі карыстальнікамі на ваш ID Telegram, усе сродкі будуць аўтаматычна залічвацца на апошні прывязаны адрас."</string>
     <string name="wallet_dashboard_create_start_dialog_description">"Кашалёк без захавання криптовалют і токенаў.
 
-Захоўвайце, купляйце, абменьвайцеся і рабіце пераклады ў сетках Ethereum, BNB Chain, TON i Polygon.
+Захоўвайце, купляйце, абменьвайцеся і рабіце пераклады ў сетках Ethereum, Bitcoin, BNB Chain, Polygon, Fantom, Tron i TON.
 
 Націскаючы ДАЛЕЕ, вы згаджаецеся з
 %s

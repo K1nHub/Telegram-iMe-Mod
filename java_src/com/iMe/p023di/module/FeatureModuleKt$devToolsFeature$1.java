@@ -37,10 +37,10 @@ final class FeatureModuleKt$devToolsFeature$1 extends Lambda implements Function
     /* compiled from: FeatureModule.kt */
     /* renamed from: com.iMe.di.module.FeatureModuleKt$devToolsFeature$1$1 */
     /* loaded from: classes3.dex */
-    public static final class C12871 extends Lambda implements Function2<Scope, ParametersHolder, DevViewModel> {
-        public static final C12871 INSTANCE = new C12871();
+    public static final class C12931 extends Lambda implements Function2<Scope, ParametersHolder, DevViewModel> {
+        public static final C12931 INSTANCE = new C12931();
 
-        C12871() {
+        C12931() {
             super(2);
         }
 
@@ -64,28 +64,28 @@ final class FeatureModuleKt$devToolsFeature$1 extends Lambda implements Function
         List emptyList2;
         List emptyList3;
         Intrinsics.checkNotNullParameter(module, "$this$module");
-        C12871 c12871 = C12871.INSTANCE;
+        C12931 c12931 = C12931.INSTANCE;
         ScopeRegistry.Companion companion = ScopeRegistry.Companion;
         StringQualifier rootScopeQualifier = companion.getRootScopeQualifier();
         Kind kind = Kind.Factory;
         emptyList = CollectionsKt__CollectionsKt.emptyList();
-        InstanceFactory<?> factoryInstanceFactory = new FactoryInstanceFactory<>(new BeanDefinition(rootScopeQualifier, Reflection.getOrCreateKotlinClass(DevViewModel.class), null, c12871, kind, emptyList));
+        InstanceFactory<?> factoryInstanceFactory = new FactoryInstanceFactory<>(new BeanDefinition(rootScopeQualifier, Reflection.getOrCreateKotlinClass(DevViewModel.class), null, c12931, kind, emptyList));
         module.indexPrimaryType(factoryInstanceFactory);
         new KoinDefinition(module, factoryInstanceFactory);
-        C1286xe4c75efa c1286xe4c75efa = new C1286xe4c75efa();
+        C1292xe4c75efa c1292xe4c75efa = new C1292xe4c75efa();
         StringQualifier rootScopeQualifier2 = companion.getRootScopeQualifier();
         Kind kind2 = Kind.Singleton;
         emptyList2 = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier2, Reflection.getOrCreateKotlinClass(DevToolRepository.class), null, c1286xe4c75efa, kind2, emptyList2));
+        SingleInstanceFactory<?> singleInstanceFactory = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier2, Reflection.getOrCreateKotlinClass(DevToolRepository.class), null, c1292xe4c75efa, kind2, emptyList2));
         module.indexPrimaryType(singleInstanceFactory);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory);
         }
         OptionDSLKt.onOptions(new KoinDefinition(module, singleInstanceFactory), null);
-        C12883 c12883 = C12883.INSTANCE;
+        C12943 c12943 = C12943.INSTANCE;
         StringQualifier rootScopeQualifier3 = companion.getRootScopeQualifier();
         emptyList3 = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory2 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier3, Reflection.getOrCreateKotlinClass(DevUseCase.class), null, c12883, kind2, emptyList3));
+        SingleInstanceFactory<?> singleInstanceFactory2 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier3, Reflection.getOrCreateKotlinClass(DevUseCase.class), null, c12943, kind2, emptyList3));
         module.indexPrimaryType(singleInstanceFactory2);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory2);
@@ -97,10 +97,10 @@ final class FeatureModuleKt$devToolsFeature$1 extends Lambda implements Function
     /* compiled from: FeatureModule.kt */
     /* renamed from: com.iMe.di.module.FeatureModuleKt$devToolsFeature$1$3 */
     /* loaded from: classes3.dex */
-    public static final class C12883 extends Lambda implements Function2<Scope, ParametersHolder, DevUseCase> {
-        public static final C12883 INSTANCE = new C12883();
+    public static final class C12943 extends Lambda implements Function2<Scope, ParametersHolder, DevUseCase> {
+        public static final C12943 INSTANCE = new C12943();
 
-        C12883() {
+        C12943() {
             super(2);
         }
 

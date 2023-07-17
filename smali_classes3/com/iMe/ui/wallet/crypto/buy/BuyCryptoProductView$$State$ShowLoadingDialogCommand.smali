@@ -34,20 +34,20 @@
 .method constructor <init>(Lcom/iMe/ui/wallet/crypto/buy/BuyCryptoProductView$$State;ZZLio/reactivex/disposables/Disposable;)V
     .locals 1
 
-    .line 339
+    .line 355
     const-class p1, Lmoxy/viewstate/strategy/OneExecutionStateStrategy;
 
     const-string v0, "showLoadingDialog"
 
     invoke-direct {p0, v0, p1}, Lmoxy/viewstate/ViewCommand;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
-    .line 341
+    .line 357
     iput-boolean p2, p0, Lcom/iMe/ui/wallet/crypto/buy/BuyCryptoProductView$$State$ShowLoadingDialogCommand;->show:Z
 
-    .line 342
+    .line 358
     iput-boolean p3, p0, Lcom/iMe/ui/wallet/crypto/buy/BuyCryptoProductView$$State$ShowLoadingDialogCommand;->cancellable:Z
 
-    .line 343
+    .line 359
     iput-object p4, p0, Lcom/iMe/ui/wallet/crypto/buy/BuyCryptoProductView$$State$ShowLoadingDialogCommand;->actionToCancel:Lio/reactivex/disposables/Disposable;
 
     return-void
@@ -58,7 +58,7 @@
 .method public apply(Lcom/iMe/ui/wallet/crypto/buy/BuyCryptoProductView;)V
     .locals 3
 
-    .line 348
+    .line 364
     iget-boolean v0, p0, Lcom/iMe/ui/wallet/crypto/buy/BuyCryptoProductView$$State$ShowLoadingDialogCommand;->show:Z
 
     iget-boolean v1, p0, Lcom/iMe/ui/wallet/crypto/buy/BuyCryptoProductView$$State$ShowLoadingDialogCommand;->cancellable:Z
@@ -73,7 +73,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 331
+    .line 347
     check-cast p1, Lcom/iMe/ui/wallet/crypto/buy/BuyCryptoProductView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/wallet/crypto/buy/BuyCryptoProductView$$State$ShowLoadingDialogCommand;->apply(Lcom/iMe/ui/wallet/crypto/buy/BuyCryptoProductView;)V

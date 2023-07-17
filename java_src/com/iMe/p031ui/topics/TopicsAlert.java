@@ -34,15 +34,15 @@ import kotlin.LazyKt__LazyJVMKt;
 import kotlin.collections.CollectionsKt___CollectionsKt;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3295R;
+import org.telegram.messenger.C3417R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
-import org.telegram.p044ui.ActionBar.BaseFragment;
-import org.telegram.p044ui.ActionBar.BottomSheet;
-import org.telegram.p044ui.ActionBar.Theme;
-import org.telegram.p044ui.Components.LayoutHelper;
-import org.telegram.p044ui.Components.RecyclerListView;
-import org.telegram.p044ui.FilterCreateActivity;
+import org.telegram.p043ui.ActionBar.BaseFragment;
+import org.telegram.p043ui.ActionBar.BottomSheet;
+import org.telegram.p043ui.ActionBar.Theme;
+import org.telegram.p043ui.Components.LayoutHelper;
+import org.telegram.p043ui.Components.RecyclerListView;
+import org.telegram.p043ui.FilterCreateActivity;
 /* compiled from: TopicsAlert.kt */
 /* renamed from: com.iMe.ui.topics.TopicsAlert */
 /* loaded from: classes3.dex */
@@ -65,7 +65,7 @@ public final class TopicsAlert extends BottomSheet {
     private final Lazy topShadow$delegate;
     private final Lazy topics$delegate;
 
-    @Override // org.telegram.p044ui.ActionBar.BottomSheet
+    @Override // org.telegram.p043ui.ActionBar.BottomSheet
     protected boolean canDismissWithSwipe() {
         return false;
     }
@@ -172,7 +172,7 @@ public final class TopicsAlert extends BottomSheet {
     public final TopicsAlert$initListView$1 initListView() {
         final Context context = getContext();
         ?? r1 = new RecyclerListView(context) { // from class: com.iMe.ui.topics.TopicsAlert$initListView$1
-            @Override // org.telegram.p044ui.Components.RecyclerListView, androidx.recyclerview.widget.RecyclerView, android.view.View, android.view.ViewParent
+            @Override // org.telegram.p043ui.Components.RecyclerListView, androidx.recyclerview.widget.RecyclerView, android.view.View, android.view.ViewParent
             public void requestLayout() {
                 if (TopicsAlert.this.ignoreLayout) {
                     return;
@@ -212,7 +212,7 @@ public final class TopicsAlert extends BottomSheet {
         textView.setEllipsize(TextUtils.TruncateAt.END);
         textView.setGravity(16);
         textView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
-        textView.setText(LocaleController.getInternalString(C3295R.string.topics_select));
+        textView.setText(LocaleController.getInternalString(C3417R.string.topics_select));
         textView.setTextColor(getThemedColor(Theme.key_dialogTextBlack));
         textView.setTextSize(1, 20.0f);
         textView.setLinkTextColor(getThemedColor(Theme.key_dialogTextLink));
@@ -228,7 +228,7 @@ public final class TopicsAlert extends BottomSheet {
         textView.setGravity(17);
         textView.setTextSize(1, 14.0f);
         if (z) {
-            textView.setText(LocaleController.getString("Create", C3295R.string.Create));
+            textView.setText(LocaleController.getString("Create", C3417R.string.Create));
             textView.setTextColor(getThemedColor(Theme.key_dialogTextBlue2));
             textView.setOnClickListener(new View.OnClickListener() { // from class: com.iMe.ui.topics.TopicsAlert$$ExternalSyntheticLambda1
                 @Override // android.view.View.OnClickListener
@@ -237,7 +237,7 @@ public final class TopicsAlert extends BottomSheet {
                 }
             });
         } else if (this.selectedTopic == null) {
-            textView.setText(LocaleController.getString("Close", C3295R.string.Close));
+            textView.setText(LocaleController.getString("Close", C3417R.string.Close));
             textView.setTextColor(getThemedColor(Theme.key_dialogTextBlue2));
             textView.setOnClickListener(new View.OnClickListener() { // from class: com.iMe.ui.topics.TopicsAlert$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnClickListener
@@ -246,7 +246,7 @@ public final class TopicsAlert extends BottomSheet {
                 }
             });
         } else {
-            textView.setText(LocaleController.getInternalString(C3295R.string.topics_remove));
+            textView.setText(LocaleController.getInternalString(C3417R.string.topics_remove));
             textView.setTextColor(getThemedColor(Theme.key_text_RedRegular));
             textView.setOnClickListener(new View.OnClickListener() { // from class: com.iMe.ui.topics.TopicsAlert$$ExternalSyntheticLambda2
                 @Override // android.view.View.OnClickListener
@@ -311,7 +311,7 @@ public final class TopicsAlert extends BottomSheet {
             }
         });
         listView.setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: com.iMe.ui.topics.TopicsAlert$$ExternalSyntheticLambda4
-            @Override // org.telegram.p044ui.Components.RecyclerListView.OnItemClickListener
+            @Override // org.telegram.p043ui.Components.RecyclerListView.OnItemClickListener
             public final void onItemClick(View view, int i) {
                 TopicsAlert.setupListeners$lambda$12$lambda$11(TopicsAlert.this, view, i);
             }
@@ -561,7 +561,7 @@ public final class TopicsAlert extends BottomSheet {
             return TopicsAlert.this.getTopics().size();
         }
 
-        @Override // org.telegram.p044ui.Components.RecyclerListView.SelectionAdapter
+        @Override // org.telegram.p043ui.Components.RecyclerListView.SelectionAdapter
         public boolean isEnabled(RecyclerView.ViewHolder holder) {
             Intrinsics.checkNotNullParameter(holder, "holder");
             TopicModel topicModel = TopicsAlert.this.selectedTopic;
@@ -619,7 +619,7 @@ public final class TopicsAlert extends BottomSheet {
                 com.iMe.ui.topics.TopicsAlert r0 = com.iMe.p031ui.topics.TopicsAlert.this
                 boolean r1 = r8.isUserTopic()
                 if (r1 == 0) goto L4b
-                int r1 = org.telegram.p044ui.ActionBar.Theme.key_chats_actionBackground
+                int r1 = org.telegram.p043ui.ActionBar.Theme.key_chats_actionBackground
                 int r1 = com.iMe.p031ui.topics.TopicsAlert.access$getThemedColor(r0, r1)
                 com.iMe.storage.data.repository.topics.Topic r2 = r8.getIcon()
                 if (r2 == 0) goto L36

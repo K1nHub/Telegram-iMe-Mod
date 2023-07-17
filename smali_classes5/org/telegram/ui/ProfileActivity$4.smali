@@ -30,7 +30,7 @@
 .method constructor <init>(Lorg/telegram/ui/ProfileActivity;Ljava/lang/String;)V
     .locals 0
 
-    .line 1062
+    .line 1063
     iput-object p1, p0, Lorg/telegram/ui/ProfileActivity$4;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-direct {p0, p2}, Lorg/telegram/ui/Components/AnimationProperties$FloatProperty;-><init>(Ljava/lang/String;)V
@@ -43,7 +43,7 @@
 .method public get(Lorg/telegram/ui/ProfileActivity;)Ljava/lang/Float;
     .locals 0
 
-    .line 1071
+    .line 1072
     iget-object p1, p0, Lorg/telegram/ui/ProfileActivity$4;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     iget p1, p1, Lorg/telegram/ui/ProfileActivity;->headerShadowAlpha:F
@@ -58,7 +58,7 @@
 .method public bridge synthetic get(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 1062
+    .line 1063
     check-cast p1, Lorg/telegram/ui/ProfileActivity;
 
     invoke-virtual {p0, p1}, Lorg/telegram/ui/ProfileActivity$4;->get(Lorg/telegram/ui/ProfileActivity;)Ljava/lang/Float;
@@ -71,7 +71,7 @@
 .method public bridge synthetic setValue(Ljava/lang/Object;F)V
     .locals 0
 
-    .line 1062
+    .line 1063
     check-cast p1, Lorg/telegram/ui/ProfileActivity;
 
     invoke-virtual {p0, p1, p2}, Lorg/telegram/ui/ProfileActivity$4;->setValue(Lorg/telegram/ui/ProfileActivity;F)V
@@ -82,12 +82,12 @@
 .method public setValue(Lorg/telegram/ui/ProfileActivity;F)V
     .locals 0
 
-    .line 1065
+    .line 1066
     iget-object p1, p0, Lorg/telegram/ui/ProfileActivity$4;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     iput p2, p1, Lorg/telegram/ui/ProfileActivity;->headerShadowAlpha:F
 
-    .line 1066
+    .line 1067
     invoke-static {p1}, Lorg/telegram/ui/ProfileActivity;->access$100(Lorg/telegram/ui/ProfileActivity;)Lorg/telegram/ui/ProfileActivity$TopView;
 
     move-result-object p1

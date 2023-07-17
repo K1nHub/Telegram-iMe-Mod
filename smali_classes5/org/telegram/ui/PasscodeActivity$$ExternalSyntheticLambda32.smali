@@ -2,32 +2,46 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/ui/Components/SizeNotifierFrameLayout$SizeNotifierFrameLayoutDelegate;
+.implements Lkotlin/jvm/functions/Function0;
 
 
 # instance fields
-.field public final synthetic f$0:Lorg/telegram/ui/PasscodeActivity;
+.field public final synthetic f$0:Ljava/lang/String;
+
+.field public final synthetic f$1:Ljava/lang/String;
+
+.field public final synthetic f$2:Lcom/iMe/storage/domain/model/crypto/Wallet;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/PasscodeActivity;)V
+.method public synthetic constructor <init>(Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/domain/model/crypto/Wallet;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lorg/telegram/ui/PasscodeActivity$$ExternalSyntheticLambda32;->f$0:Lorg/telegram/ui/PasscodeActivity;
+    iput-object p1, p0, Lorg/telegram/ui/PasscodeActivity$$ExternalSyntheticLambda32;->f$0:Ljava/lang/String;
+
+    iput-object p2, p0, Lorg/telegram/ui/PasscodeActivity$$ExternalSyntheticLambda32;->f$1:Ljava/lang/String;
+
+    iput-object p3, p0, Lorg/telegram/ui/PasscodeActivity$$ExternalSyntheticLambda32;->f$2:Lcom/iMe/storage/domain/model/crypto/Wallet;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onSizeChanged(IZ)V
-    .locals 1
+.method public final invoke()Ljava/lang/Object;
+    .locals 3
 
-    iget-object v0, p0, Lorg/telegram/ui/PasscodeActivity$$ExternalSyntheticLambda32;->f$0:Lorg/telegram/ui/PasscodeActivity;
+    iget-object v0, p0, Lorg/telegram/ui/PasscodeActivity$$ExternalSyntheticLambda32;->f$0:Ljava/lang/String;
 
-    invoke-static {v0, p1, p2}, Lorg/telegram/ui/PasscodeActivity;->$r8$lambda$q2ZQbV69jEccZCRm5URK11TfvlU(Lorg/telegram/ui/PasscodeActivity;IZ)V
+    iget-object v1, p0, Lorg/telegram/ui/PasscodeActivity$$ExternalSyntheticLambda32;->f$1:Ljava/lang/String;
 
-    return-void
+    iget-object v2, p0, Lorg/telegram/ui/PasscodeActivity$$ExternalSyntheticLambda32;->f$2:Lcom/iMe/storage/domain/model/crypto/Wallet;
+
+    invoke-static {v0, v1, v2}, Lorg/telegram/ui/PasscodeActivity;->$r8$lambda$FvJwtfpbx8HgQ39UnjjVMkUufcc(Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/domain/model/crypto/Wallet;)Lorg/telegram/ui/ActionBar/BaseFragment;
+
+    move-result-object v0
+
+    return-object v0
 .end method

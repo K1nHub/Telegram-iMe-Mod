@@ -41,10 +41,10 @@
 .method public constructor <init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/BaseFragment;I)V
     .locals 2
 
-    .line 59
+    .line 63
     invoke-direct {p0, p1}, Lorg/telegram/ui/Components/RecyclerListView;-><init>(Landroid/content/Context;)V
 
-    .line 54
+    .line 58
     new-instance p3, Ljava/util/ArrayList;
 
     invoke-direct {p3}, Ljava/util/ArrayList;-><init>()V
@@ -53,7 +53,7 @@
 
     const/16 p3, 0xc
 
-    .line 61
+    .line 65
     invoke-static {p3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
@@ -66,10 +66,10 @@
 
     invoke-virtual {p0, v1, v0, v1, p3}, Landroid/view/ViewGroup;->setPadding(IIII)V
 
-    .line 63
+    .line 67
     invoke-virtual {p0, v1}, Landroid/view/ViewGroup;->setFocusable(Z)V
 
-    .line 64
+    .line 68
     sget p3, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
     invoke-static {p3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -80,13 +80,13 @@
 
     const/4 p3, 0x0
 
-    .line 65
+    .line 69
     invoke-virtual {p0, p3}, Landroidx/recyclerview/widget/RecyclerView;->setItemAnimator(Landroidx/recyclerview/widget/RecyclerView$ItemAnimator;)V
 
-    .line 66
+    .line 70
     invoke-virtual {p0, p3}, Landroid/view/ViewGroup;->setLayoutAnimation(Landroid/view/animation/LayoutAnimationController;)V
 
-    .line 68
+    .line 72
     new-instance p3, Landroidx/recyclerview/widget/LinearLayoutManager;
 
     invoke-direct {p3, p1, v1, v1}, Landroidx/recyclerview/widget/LinearLayoutManager;-><init>(Landroid/content/Context;IZ)V
@@ -95,28 +95,28 @@
 
     invoke-virtual {p0, p3}, Landroidx/recyclerview/widget/RecyclerView;->setLayoutManager(Landroidx/recyclerview/widget/RecyclerView$LayoutManager;)V
 
-    .line 69
+    .line 73
     new-instance p3, Lorg/telegram/ui/Cells/AppIconsSelectorCell$1;
 
     invoke-direct {p3, p0}, Lorg/telegram/ui/Cells/AppIconsSelectorCell$1;-><init>(Lorg/telegram/ui/Cells/AppIconsSelectorCell;)V
 
     invoke-virtual {p0, p3}, Lorg/telegram/ui/Components/RecyclerListView;->setAdapter(Landroidx/recyclerview/widget/RecyclerView$Adapter;)V
 
-    .line 91
+    .line 95
     new-instance p3, Lorg/telegram/ui/Cells/AppIconsSelectorCell$2;
 
     invoke-direct {p3, p0}, Lorg/telegram/ui/Cells/AppIconsSelectorCell$2;-><init>(Lorg/telegram/ui/Cells/AppIconsSelectorCell;)V
 
     invoke-virtual {p0, p3}, Landroidx/recyclerview/widget/RecyclerView;->addItemDecoration(Landroidx/recyclerview/widget/RecyclerView$ItemDecoration;)V
 
-    .line 110
+    .line 114
     new-instance p3, Lorg/telegram/ui/Cells/AppIconsSelectorCell$$ExternalSyntheticLambda0;
 
     invoke-direct {p3, p0, p2, p1}, Lorg/telegram/ui/Cells/AppIconsSelectorCell$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/Cells/AppIconsSelectorCell;Lorg/telegram/ui/ActionBar/BaseFragment;Landroid/content/Context;)V
 
     invoke-virtual {p0, p3}, Lorg/telegram/ui/Components/RecyclerListView;->setOnItemClickListener(Lorg/telegram/ui/Components/RecyclerListView$OnItemClickListener;)V
 
-    .line 148
+    .line 152
     invoke-direct {p0}, Lorg/telegram/ui/Cells/AppIconsSelectorCell;->updateIconsVisibility()V
 
     return-void
@@ -125,7 +125,7 @@
 .method static synthetic access$100(Lorg/telegram/ui/Cells/AppIconsSelectorCell;)Ljava/util/List;
     .locals 0
 
-    .line 51
+    .line 55
     iget-object p0, p0, Lorg/telegram/ui/Cells/AppIconsSelectorCell;->availableIcons:Ljava/util/List;
 
     return-object p0
@@ -134,10 +134,10 @@
 .method private synthetic lambda$new$0(Lorg/telegram/ui/ActionBar/BaseFragment;Landroid/content/Context;Landroid/view/View;I)V
     .locals 3
 
-    .line 111
+    .line 115
     check-cast p3, Lorg/telegram/ui/Cells/AppIconsSelectorCell$IconHolderView;
 
-    .line 112
+    .line 116
     iget-object v0, p0, Lorg/telegram/ui/Cells/AppIconsSelectorCell;->availableIcons:Ljava/util/List;
 
     invoke-interface {v0, p4}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -146,7 +146,7 @@
 
     check-cast v0, Lorg/telegram/ui/LauncherIconController$LauncherIcon;
 
-    .line 113
+    .line 117
     iget-boolean v1, v0, Lorg/telegram/ui/LauncherIconController$LauncherIcon;->premium:Z
 
     const/4 v2, 0x1
@@ -159,7 +159,7 @@
 
     if-nez v1, :cond_0
 
-    .line 114
+    .line 118
     new-instance p2, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet;
 
     const/16 p3, 0xa
@@ -170,7 +170,7 @@
 
     return-void
 
-    .line 118
+    .line 122
     :cond_0
     invoke-static {v0}, Lorg/telegram/ui/LauncherIconController;->isEnabled(Lorg/telegram/ui/LauncherIconController$LauncherIcon;)Z
 
@@ -180,31 +180,31 @@
 
     return-void
 
-    .line 122
+    .line 126
     :cond_1
     new-instance p1, Lorg/telegram/ui/Cells/AppIconsSelectorCell$3;
 
     invoke-direct {p1, p0, p2}, Lorg/telegram/ui/Cells/AppIconsSelectorCell$3;-><init>(Lorg/telegram/ui/Cells/AppIconsSelectorCell;Landroid/content/Context;)V
 
-    .line 133
+    .line 137
     invoke-virtual {p1, p4}, Landroidx/recyclerview/widget/RecyclerView$SmoothScroller;->setTargetPosition(I)V
 
-    .line 134
+    .line 138
     iget-object p2, p0, Lorg/telegram/ui/Cells/AppIconsSelectorCell;->linearLayoutManager:Landroidx/recyclerview/widget/LinearLayoutManager;
 
     invoke-virtual {p2, p1}, Landroidx/recyclerview/widget/RecyclerView$LayoutManager;->startSmoothScroll(Landroidx/recyclerview/widget/RecyclerView$SmoothScroller;)V
 
-    .line 136
+    .line 140
     invoke-static {v0}, Lorg/telegram/ui/LauncherIconController;->setIcon(Lorg/telegram/ui/LauncherIconController$LauncherIcon;)V
 
-    .line 137
+    .line 141
     invoke-static {p3, v2, v2}, Lorg/telegram/ui/Cells/AppIconsSelectorCell$IconHolderView;->access$400(Lorg/telegram/ui/Cells/AppIconsSelectorCell$IconHolderView;ZZ)V
 
     const/4 p1, 0x0
 
     move p2, p1
 
-    .line 139
+    .line 143
     :goto_0
     invoke-virtual {p0}, Landroid/view/ViewGroup;->getChildCount()I
 
@@ -212,7 +212,7 @@
 
     if-ge p2, p4, :cond_3
 
-    .line 140
+    .line 144
     invoke-virtual {p0, p2}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object p4
@@ -221,7 +221,7 @@
 
     if-eq p4, p3, :cond_2
 
-    .line 142
+    .line 146
     invoke-static {p4, p1, v2}, Lorg/telegram/ui/Cells/AppIconsSelectorCell$IconHolderView;->access$400(Lorg/telegram/ui/Cells/AppIconsSelectorCell$IconHolderView;ZZ)V
 
     :cond_2
@@ -229,7 +229,7 @@
 
     goto :goto_0
 
-    .line 146
+    .line 150
     :cond_3
     invoke-static {}, Lorg/telegram/messenger/NotificationCenter;->getGlobalInstance()Lorg/telegram/messenger/NotificationCenter;
 
@@ -257,14 +257,14 @@
 .end method
 
 .method private updateIconsVisibility()V
-    .locals 3
+    .locals 4
 
-    .line 153
+    .line 157
     iget-object v0, p0, Lorg/telegram/ui/Cells/AppIconsSelectorCell;->availableIcons:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->clear()V
 
-    .line 154
+    .line 158
     iget-object v0, p0, Lorg/telegram/ui/Cells/AppIconsSelectorCell;->availableIcons:Ljava/util/List;
 
     invoke-static {}, Lorg/telegram/ui/LauncherIconController$LauncherIcon;->values()[Lorg/telegram/ui/LauncherIconController$LauncherIcon;
@@ -281,7 +281,7 @@
 
     move v1, v0
 
-    .line 156
+    .line 160
     :goto_0
     iget-object v2, p0, Lorg/telegram/ui/Cells/AppIconsSelectorCell;->availableIcons:Ljava/util/List;
 
@@ -291,7 +291,7 @@
 
     if-ge v1, v2, :cond_1
 
-    .line 157
+    .line 161
     iget-object v2, p0, Lorg/telegram/ui/Cells/AppIconsSelectorCell;->availableIcons:Ljava/util/List;
 
     invoke-interface {v2, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -304,7 +304,7 @@
 
     if-eqz v2, :cond_0
 
-    .line 158
+    .line 162
     iget-object v2, p0, Lorg/telegram/ui/Cells/AppIconsSelectorCell;->availableIcons:Ljava/util/List;
 
     invoke-interface {v2, v1}, Ljava/util/List;->remove(I)Ljava/lang/Object;
@@ -316,18 +316,49 @@
 
     goto :goto_0
 
-    .line 163
+    .line 168
     :cond_1
+    invoke-static {}, Lorg/telegram/messenger/BuildVars;->isStandaloneApp()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_2
+
+    .line 169
+    iget-object v1, p0, Lorg/telegram/ui/Cells/AppIconsSelectorCell;->availableIcons:Ljava/util/List;
+
+    sget-object v2, Lorg/telegram/ui/LauncherIconController$LauncherIcon;->DEFAULT:Lorg/telegram/ui/LauncherIconController$LauncherIcon;
+
+    invoke-interface {v1, v2}, Ljava/util/List;->indexOf(Ljava/lang/Object;)I
+
+    move-result v1
+
+    .line 170
+    iget-object v2, p0, Lorg/telegram/ui/Cells/AppIconsSelectorCell;->availableIcons:Ljava/util/List;
+
+    sget-object v3, Lorg/telegram/ui/LauncherIconController$LauncherIcon;->ROCKET:Lorg/telegram/ui/LauncherIconController$LauncherIcon;
+
+    invoke-interface {v2, v3}, Ljava/util/List;->indexOf(Ljava/lang/Object;)I
+
+    move-result v2
+
+    .line 171
+    iget-object v3, p0, Lorg/telegram/ui/Cells/AppIconsSelectorCell;->availableIcons:Ljava/util/List;
+
+    invoke-static {v3, v1, v2}, Ljava/util/Collections;->swap(Ljava/util/List;II)V
+
+    .line 174
+    :cond_2
     invoke-virtual {p0}, Landroidx/recyclerview/widget/RecyclerView;->getAdapter()Landroidx/recyclerview/widget/RecyclerView$Adapter;
 
     move-result-object v1
 
     invoke-virtual {v1}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyDataSetChanged()V
 
-    .line 164
+    .line 175
     invoke-virtual {p0}, Landroidx/recyclerview/widget/RecyclerView;->invalidateItemDecorations()V
 
-    .line 166
+    .line 177
     :goto_1
     iget-object v1, p0, Lorg/telegram/ui/Cells/AppIconsSelectorCell;->availableIcons:Ljava/util/List;
 
@@ -335,9 +366,9 @@
 
     move-result v1
 
-    if-ge v0, v1, :cond_3
+    if-ge v0, v1, :cond_4
 
-    .line 167
+    .line 178
     iget-object v1, p0, Lorg/telegram/ui/Cells/AppIconsSelectorCell;->availableIcons:Ljava/util/List;
 
     invoke-interface {v1, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -346,14 +377,14 @@
 
     check-cast v1, Lorg/telegram/ui/LauncherIconController$LauncherIcon;
 
-    .line 168
+    .line 179
     invoke-static {v1}, Lorg/telegram/ui/LauncherIconController;->isEnabled(Lorg/telegram/ui/LauncherIconController$LauncherIcon;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_2
+    if-eqz v1, :cond_3
 
-    .line 169
+    .line 180
     iget-object v1, p0, Lorg/telegram/ui/Cells/AppIconsSelectorCell;->linearLayoutManager:Landroidx/recyclerview/widget/LinearLayoutManager;
 
     const/16 v2, 0x10
@@ -366,12 +397,12 @@
 
     goto :goto_2
 
-    :cond_2
+    :cond_3
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_1
 
-    :cond_3
+    :cond_4
     :goto_2
     return-void
 .end method
@@ -381,12 +412,12 @@
 .method public varargs didReceivedNotification(II[Ljava/lang/Object;)V
     .locals 0
 
-    .line 203
+    .line 214
     sget p2, Lorg/telegram/messenger/NotificationCenter;->premiumStatusChangedGlobal:I
 
     if-ne p1, p2, :cond_0
 
-    .line 204
+    .line 215
     invoke-direct {p0}, Lorg/telegram/ui/Cells/AppIconsSelectorCell;->updateIconsVisibility()V
 
     :cond_0
@@ -396,10 +427,10 @@
 .method protected onAttachedToWindow()V
     .locals 2
 
-    .line 189
+    .line 200
     invoke-super {p0}, Lorg/telegram/ui/Components/RecyclerListView;->onAttachedToWindow()V
 
-    .line 191
+    .line 202
     invoke-static {}, Lorg/telegram/messenger/NotificationCenter;->getGlobalInstance()Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object v0
@@ -414,10 +445,10 @@
 .method protected onDetachedFromWindow()V
     .locals 2
 
-    .line 196
+    .line 207
     invoke-super {p0}, Lorg/telegram/ui/Components/RecyclerListView;->onDetachedFromWindow()V
 
-    .line 198
+    .line 209
     invoke-static {}, Lorg/telegram/messenger/NotificationCenter;->getGlobalInstance()Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object v0
@@ -432,7 +463,7 @@
 .method protected onMeasure(II)V
     .locals 1
 
-    .line 184
+    .line 195
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result p1
@@ -451,10 +482,10 @@
 .method protected onSizeChanged(IIII)V
     .locals 0
 
-    .line 177
+    .line 188
     invoke-super {p0, p1, p2, p3, p4}, Lorg/telegram/ui/Components/RecyclerListView;->onSizeChanged(IIII)V
 
-    .line 179
+    .line 190
     invoke-virtual {p0}, Landroidx/recyclerview/widget/RecyclerView;->invalidateItemDecorations()V
 
     return-void

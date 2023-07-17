@@ -4,14 +4,8 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lcom/iMe/storage/domain/interactor/crypto/cancel/CancelInteractor$Companion;
-    }
-.end annotation
-
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nCancelInteractor.kt\nKotlin\n*S Kotlin\n*F\n+ 1 CancelInteractor.kt\ncom/iMe/storage/domain/interactor/crypto/cancel/CancelInteractor\n+ 2 ObservableExt.kt\ncom/iMe/storage/domain/utils/extentions/ObservableExtKt\n*L\n1#1,70:1\n14#2:71\n*S KotlinDebug\n*F\n+ 1 CancelInteractor.kt\ncom/iMe/storage/domain/interactor/crypto/cancel/CancelInteractor\n*L\n25#1:71\n*E\n"
+    value = "SMAP\nCancelInteractor.kt\nKotlin\n*S Kotlin\n*F\n+ 1 CancelInteractor.kt\ncom/iMe/storage/domain/interactor/crypto/cancel/CancelInteractor\n+ 2 ObservableExt.kt\ncom/iMe/storage/domain/utils/extentions/ObservableExtKt\n*L\n1#1,51:1\n14#2:52\n*S KotlinDebug\n*F\n+ 1 CancelInteractor.kt\ncom/iMe/storage/domain/interactor/crypto/cancel/CancelInteractor\n*L\n24#1:52\n*E\n"
 .end annotation
 
 
@@ -24,18 +18,6 @@
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
-
-    new-instance v0, Lcom/iMe/storage/domain/interactor/crypto/cancel/CancelInteractor$Companion;
-
-    const/4 v1, 0x0
-
-    invoke-direct {v0, v1}, Lcom/iMe/storage/domain/interactor/crypto/cancel/CancelInteractor$Companion;-><init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
-
-    return-void
-.end method
-
 .method public constructor <init>(Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;Lcom/iMe/storage/domain/repository/crypto/cancel/CancelRepository;Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;)V
     .locals 1
 
@@ -51,16 +33,16 @@
 
     invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 14
+    .line 13
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 15
+    .line 14
     iput-object p1, p0, Lcom/iMe/storage/domain/interactor/crypto/cancel/CancelInteractor;->cryptoAccessManager:Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;
 
-    .line 16
+    .line 15
     iput-object p2, p0, Lcom/iMe/storage/domain/interactor/crypto/cancel/CancelInteractor;->cancelRepository:Lcom/iMe/storage/domain/repository/crypto/cancel/CancelRepository;
 
-    .line 17
+    .line 16
     iput-object p3, p0, Lcom/iMe/storage/domain/interactor/crypto/cancel/CancelInteractor;->schedulersProvider:Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
     return-void
@@ -69,19 +51,8 @@
 .method public static final synthetic access$getCancelRepository$p(Lcom/iMe/storage/domain/interactor/crypto/cancel/CancelInteractor;)Lcom/iMe/storage/domain/repository/crypto/cancel/CancelRepository;
     .locals 0
 
-    .line 14
+    .line 13
     iget-object p0, p0, Lcom/iMe/storage/domain/interactor/crypto/cancel/CancelInteractor;->cancelRepository:Lcom/iMe/storage/domain/repository/crypto/cancel/CancelRepository;
-
-    return-object p0
-.end method
-
-.method public static final synthetic access$getCancelTokenBySourceTxToken(Lcom/iMe/storage/domain/interactor/crypto/cancel/CancelInteractor;Lcom/iMe/storage/domain/model/wallet/token/TokenCode;)Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
-    .locals 0
-
-    .line 14
-    invoke-direct {p0, p1}, Lcom/iMe/storage/domain/interactor/crypto/cancel/CancelInteractor;->getCancelTokenBySourceTxToken(Lcom/iMe/storage/domain/model/wallet/token/TokenCode;)Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
-
-    move-result-object p0
 
     return-object p0
 .end method
@@ -89,7 +60,7 @@
 .method public static final synthetic access$getCryptoAccessManager$p(Lcom/iMe/storage/domain/interactor/crypto/cancel/CancelInteractor;)Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;
     .locals 0
 
-    .line 14
+    .line 13
     iget-object p0, p0, Lcom/iMe/storage/domain/interactor/crypto/cancel/CancelInteractor;->cryptoAccessManager:Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;
 
     return-object p0
@@ -98,86 +69,20 @@
 .method public static final synthetic access$getSchedulersProvider$p(Lcom/iMe/storage/domain/interactor/crypto/cancel/CancelInteractor;)Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
     .locals 0
 
-    .line 14
+    .line 13
     iget-object p0, p0, Lcom/iMe/storage/domain/interactor/crypto/cancel/CancelInteractor;->schedulersProvider:Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
     return-object p0
 .end method
 
-.method private final getCancelTokenBySourceTxToken(Lcom/iMe/storage/domain/model/wallet/token/TokenCode;)Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
-    .locals 1
-
-    .line 57
-    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;->isEthAndTokens()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    sget-object p1, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;->ETHER:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
-
-    goto :goto_0
-
-    .line 58
-    :cond_0
-    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;->isBscTokens()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    sget-object p1, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;->BNB:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
-
-    goto :goto_0
-
-    .line 59
-    :cond_1
-    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;->isPolygonTokens()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_2
-
-    sget-object p1, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;->MATIC:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
-
-    goto :goto_0
-
-    .line 60
-    :cond_2
-    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;->isFantomTokens()Z
-
-    move-result p1
-
-    if-eqz p1, :cond_3
-
-    sget-object p1, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;->FTM:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
-
-    :goto_0
-    return-object p1
-
-    :cond_3
-    new-instance p1, Ljava/lang/IllegalStateException;
-
-    const-string v0, "Unsupported token transaction for cancel"
-
-    .line 61
-    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-direct {p1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-.end method
-
 
 # virtual methods
-.method public final cancelEthTransaction(Lcom/iMe/storage/domain/model/wallet/token/TokenCode;Ljava/lang/String;)Lio/reactivex/Observable;
+.method public final cancelEthTransaction(Ljava/lang/String;Ljava/lang/String;)Lio/reactivex/Observable;
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lcom/iMe/storage/domain/model/wallet/token/TokenCode;",
+            "Ljava/lang/String;",
             "Ljava/lang/String;",
             ")",
             "Lio/reactivex/Observable<",
@@ -187,7 +92,7 @@
         }
     .end annotation
 
-    const-string v0, "tokenCode"
+    const-string v0, "networkId"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -195,10 +100,10 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 23
+    .line 22
     iget-object v0, p0, Lcom/iMe/storage/domain/interactor/crypto/cancel/CancelInteractor;->cancelRepository:Lcom/iMe/storage/domain/repository/crypto/cancel/CancelRepository;
 
-    .line 24
+    .line 23
     invoke-interface {v0, p2}, Lcom/iMe/storage/domain/repository/crypto/cancel/CancelRepository;->getCryptoCancelMetadata(Ljava/lang/String;)Lio/reactivex/Observable;
 
     move-result-object v0
@@ -206,7 +111,7 @@
     .line 14
     new-instance v1, Lcom/iMe/storage/domain/interactor/crypto/cancel/CancelInteractor$cancelEthTransaction$$inlined$flatMapSuccess$1;
 
-    invoke-direct {v1, p0, p1, p2}, Lcom/iMe/storage/domain/interactor/crypto/cancel/CancelInteractor$cancelEthTransaction$$inlined$flatMapSuccess$1;-><init>(Lcom/iMe/storage/domain/interactor/crypto/cancel/CancelInteractor;Lcom/iMe/storage/domain/model/wallet/token/TokenCode;Ljava/lang/String;)V
+    invoke-direct {v1, p0, p1, p2}, Lcom/iMe/storage/domain/interactor/crypto/cancel/CancelInteractor$cancelEthTransaction$$inlined$flatMapSuccess$1;-><init>(Lcom/iMe/storage/domain/interactor/crypto/cancel/CancelInteractor;Ljava/lang/String;Ljava/lang/String;)V
 
     new-instance p1, Lcom/iMe/storage/domain/utils/extentions/ObservableExtKt$sam$i$io_reactivex_functions_Function$0;
 

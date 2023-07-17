@@ -1,27 +1,26 @@
 package com.iMe.storage.domain.model.crypto.simplex;
 
-import com.iMe.storage.domain.model.wallet.token.TokenCode;
-import com.iMe.storage.domain.model.wallet.token.TokenInfo;
+import com.iMe.storage.R$string;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: DigitalCurrency.kt */
 /* loaded from: classes3.dex */
 public enum DigitalCurrency implements Currency {
-    ETH(TokenInfo.Crypto.Ethereum.ETH.INSTANCE.getShortName()),
-    USDT(TokenInfo.Crypto.Ethereum.USDT.INSTANCE.getShortName()),
-    BNB(TokenInfo.Crypto.Ethereum.BNB.INSTANCE.getShortName()),
-    BUSD(TokenInfo.Crypto.Ethereum.BUSD.INSTANCE.getShortName()),
-    MATIC(TokenInfo.Crypto.Ethereum.MATIC.INSTANCE.getShortName());
+    ETH(R$string.currency_short_eth),
+    USDT(R$string.currency_short_usdt),
+    BNB(R$string.currency_short_bnb),
+    BUSD(R$string.currency_short_busd),
+    MATIC(R$string.currency_short_matic);
     
     public static final Companion Companion = new Companion(null);
-    private final int currencySymbol;
+    private final int currencySymbolResId;
 
     DigitalCurrency(int i) {
-        this.currencySymbol = i;
+        this.currencySymbolResId = i;
     }
 
-    public final int getCurrencySymbol() {
-        return this.currencySymbol;
+    public final int getCurrencySymbolResId() {
+        return this.currencySymbolResId;
     }
 
     @Override // com.iMe.storage.domain.model.crypto.simplex.Currency
@@ -30,8 +29,8 @@ public enum DigitalCurrency implements Currency {
     }
 
     @Override // com.iMe.storage.domain.model.crypto.simplex.Currency
-    public int getSymbol() {
-        return this.currencySymbol;
+    public int getSymbolResId() {
+        return this.currencySymbolResId;
     }
 
     /* compiled from: DigitalCurrency.kt */
@@ -44,9 +43,9 @@ public enum DigitalCurrency implements Currency {
         private Companion() {
         }
 
-        public final DigitalCurrency map(TokenCode tokenCode) {
+        public final DigitalCurrency map(String tokenTicker) {
             DigitalCurrency digitalCurrency;
-            Intrinsics.checkNotNullParameter(tokenCode, "tokenCode");
+            Intrinsics.checkNotNullParameter(tokenTicker, "tokenTicker");
             DigitalCurrency[] values = DigitalCurrency.values();
             int length = values.length;
             int i = 0;
@@ -56,7 +55,7 @@ public enum DigitalCurrency implements Currency {
                     break;
                 }
                 digitalCurrency = values[i];
-                if (Intrinsics.areEqual(digitalCurrency.name(), tokenCode.getName())) {
+                if (Intrinsics.areEqual(digitalCurrency.name(), tokenTicker)) {
                     break;
                 }
                 i++;

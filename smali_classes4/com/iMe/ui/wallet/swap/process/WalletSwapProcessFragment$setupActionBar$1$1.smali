@@ -24,7 +24,7 @@
 
     iput-object p1, p0, Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessFragment$setupActionBar$1$1;->this$0:Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessFragment;
 
-    .line 361
+    .line 383
     invoke-direct {p0}, Lorg/telegram/ui/ActionBar/ActionBar$ActionBarMenuOnItemClick;-><init>()V
 
     return-void
@@ -39,14 +39,14 @@
 
     if-ne p1, v0, :cond_0
 
-    .line 364
+    .line 386
     iget-object p1, p0, Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessFragment$setupActionBar$1$1;->this$0:Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessFragment;
 
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->finishFragment()V
 
     goto :goto_0
 
-    .line 365
+    .line 387
     :cond_0
     sget v0, Lcom/iMe/common/IdFabric$Menu;->NETWORK_SWITCH:I
 

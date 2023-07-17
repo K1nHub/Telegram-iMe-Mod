@@ -92,7 +92,7 @@
 
     move-result-object v2
 
-    const-string v3, "setRemoveOnCancelPolicy"
+    const-string/jumbo v3, "setRemoveOnCancelPolicy"
 
     new-array v4, v1, [Ljava/lang/Class;
 

@@ -11,7 +11,7 @@
 # static fields
 .field static final FRAME_DURATION_MS_FOR_MIN:I = 0x64
 
-.field static final MIN_FRAME_DURATION_MS:I = 0x14
+.field static final MIN_FRAME_DURATION_MS:I = 0xb
 
 
 # instance fields
@@ -78,7 +78,7 @@
     .line 67
     iget v0, p0, Lcom/bumptech/glide/integration/webp/WebpFrame;->delay:I
 
-    const/16 v1, 0x14
+    const/16 v1, 0xb
 
     if-ge v0, v1, :cond_0
 

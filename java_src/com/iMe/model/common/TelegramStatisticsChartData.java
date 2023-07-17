@@ -252,17 +252,17 @@ public final class TelegramStatisticsChartData {
     public static final class Colors {
 
         /* renamed from: y0 */
-        private final String f268y0;
+        private final String f350y0;
 
         public static /* synthetic */ Colors copy$default(Colors colors, String str, int i, Object obj) {
             if ((i & 1) != 0) {
-                str = colors.f268y0;
+                str = colors.f350y0;
             }
             return colors.copy(str);
         }
 
         public final String component1() {
-            return this.f268y0;
+            return this.f350y0;
         }
 
         public final Colors copy(String y0) {
@@ -274,24 +274,24 @@ public final class TelegramStatisticsChartData {
             if (this == obj) {
                 return true;
             }
-            return (obj instanceof Colors) && Intrinsics.areEqual(this.f268y0, ((Colors) obj).f268y0);
+            return (obj instanceof Colors) && Intrinsics.areEqual(this.f350y0, ((Colors) obj).f350y0);
         }
 
         public int hashCode() {
-            return this.f268y0.hashCode();
+            return this.f350y0.hashCode();
         }
 
         public String toString() {
-            return "Colors(y0=" + this.f268y0 + ')';
+            return "Colors(y0=" + this.f350y0 + ')';
         }
 
         public Colors(String y0) {
             Intrinsics.checkNotNullParameter(y0, "y0");
-            this.f268y0 = y0;
+            this.f350y0 = y0;
         }
 
         public final String getY0() {
-            return this.f268y0;
+            return this.f350y0;
         }
     }
 
@@ -300,17 +300,17 @@ public final class TelegramStatisticsChartData {
     public static final class Names {
 
         /* renamed from: y0 */
-        private final String f269y0;
+        private final String f351y0;
 
         public static /* synthetic */ Names copy$default(Names names, String str, int i, Object obj) {
             if ((i & 1) != 0) {
-                str = names.f269y0;
+                str = names.f351y0;
             }
             return names.copy(str);
         }
 
         public final String component1() {
-            return this.f269y0;
+            return this.f351y0;
         }
 
         public final Names copy(String y0) {
@@ -322,24 +322,24 @@ public final class TelegramStatisticsChartData {
             if (this == obj) {
                 return true;
             }
-            return (obj instanceof Names) && Intrinsics.areEqual(this.f269y0, ((Names) obj).f269y0);
+            return (obj instanceof Names) && Intrinsics.areEqual(this.f351y0, ((Names) obj).f351y0);
         }
 
         public int hashCode() {
-            return this.f269y0.hashCode();
+            return this.f351y0.hashCode();
         }
 
         public String toString() {
-            return "Names(y0=" + this.f269y0 + ')';
+            return "Names(y0=" + this.f351y0 + ')';
         }
 
         public Names(String y0) {
             Intrinsics.checkNotNullParameter(y0, "y0");
-            this.f269y0 = y0;
+            this.f351y0 = y0;
         }
 
         public final String getY0() {
-            return this.f269y0;
+            return this.f351y0;
         }
     }
 
@@ -419,27 +419,27 @@ public final class TelegramStatisticsChartData {
     public static final class Types {
 
         /* renamed from: x */
-        private final String f270x;
+        private final String f352x;
 
         /* renamed from: y0 */
-        private final String f271y0;
+        private final String f353y0;
 
         public static /* synthetic */ Types copy$default(Types types, String str, String str2, int i, Object obj) {
             if ((i & 1) != 0) {
-                str = types.f270x;
+                str = types.f352x;
             }
             if ((i & 2) != 0) {
-                str2 = types.f271y0;
+                str2 = types.f353y0;
             }
             return types.copy(str, str2);
         }
 
         public final String component1() {
-            return this.f270x;
+            return this.f352x;
         }
 
         public final String component2() {
-            return this.f271y0;
+            return this.f353y0;
         }
 
         public final Types copy(String x, String y0) {
@@ -454,32 +454,32 @@ public final class TelegramStatisticsChartData {
             }
             if (obj instanceof Types) {
                 Types types = (Types) obj;
-                return Intrinsics.areEqual(this.f270x, types.f270x) && Intrinsics.areEqual(this.f271y0, types.f271y0);
+                return Intrinsics.areEqual(this.f352x, types.f352x) && Intrinsics.areEqual(this.f353y0, types.f353y0);
             }
             return false;
         }
 
         public int hashCode() {
-            return (this.f270x.hashCode() * 31) + this.f271y0.hashCode();
+            return (this.f352x.hashCode() * 31) + this.f353y0.hashCode();
         }
 
         public String toString() {
-            return "Types(x=" + this.f270x + ", y0=" + this.f271y0 + ')';
+            return "Types(x=" + this.f352x + ", y0=" + this.f353y0 + ')';
         }
 
         public Types(String x, String y0) {
             Intrinsics.checkNotNullParameter(x, "x");
             Intrinsics.checkNotNullParameter(y0, "y0");
-            this.f270x = x;
-            this.f271y0 = y0;
+            this.f352x = x;
+            this.f353y0 = y0;
         }
 
         public final String getX() {
-            return this.f270x;
+            return this.f352x;
         }
 
         public final String getY0() {
-            return this.f271y0;
+            return this.f353y0;
         }
     }
 
@@ -509,7 +509,7 @@ public final class TelegramStatisticsChartData {
             listOf2 = CollectionsKt__CollectionsJVMKt.listOf("y0");
             plus2 = CollectionsKt___CollectionsKt.plus((Collection) listOf2, (Iterable) yValues);
             listOf3 = CollectionsKt__CollectionsKt.listOf((Object[]) new List[]{plus, plus2});
-            listOf4 = CollectionsKt__CollectionsKt.listOf((Object[]) new Long[]{(Long) CollectionsKt.first((List) xValues), (Long) CollectionsKt.last((List) xValues)});
+            listOf4 = CollectionsKt__CollectionsKt.listOf((Object[]) new Long[]{(Long) CollectionsKt.first((List) xValues), (Long) CollectionsKt.last(xValues)});
             return new JSONObject(new Gson().toJson(new TelegramStatisticsChartData(null, listOf3, null, names, 0, new Subchart(listOf4, true), null, null, null, null, null, null, null, 8149, null)));
         }
     }

@@ -45,7 +45,7 @@
     .line 43
     invoke-interface {v0}, Ljava/util/concurrent/ScheduledExecutorService;->shutdown()V
 
-    const-string v0, "rx2.single-priority"
+    const-string/jumbo v0, "rx2.single-priority"
 
     const/4 v1, 0x5
 

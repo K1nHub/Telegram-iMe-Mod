@@ -7,8 +7,8 @@ import com.iMe.p031ui.base.mvp.base.BasePresenter;
 import com.iMe.p031ui.base.mvp.base.BaseView;
 import com.iMe.storage.domain.utils.p030rx.SchedulersProvider;
 import com.iMe.utils.extentions.common.ContextExtKt;
-import com.iMe.utils.extentions.p033rx.RxExtKt;
-import com.iMe.utils.extentions.p033rx.RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
+import com.iMe.utils.extentions.p032rx.RxExtKt;
+import com.iMe.utils.extentions.p032rx.RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
 import io.reactivex.Observable;
 import io.reactivex.ObservableSource;
 import io.reactivex.disposables.Disposable;
@@ -17,14 +17,14 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt__StringBuilderKt;
 import moxy.InjectViewState;
-import org.telegram.messenger.C3295R;
+import org.telegram.messenger.C3417R;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.LocaleController;
 import org.telegram.tgnet.TLRPC$Chat;
 /* compiled from: ChannelDetailsPresenter.kt */
 @InjectViewState
 /* renamed from: com.iMe.ui.catalog.details.ChannelDetailsPresenter */
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public final class ChannelDetailsPresenter extends BasePresenter<ChannelDetailsView> {
     private final CampaignItem campaign;
     private final TLRPC$Chat chat;
@@ -66,8 +66,8 @@ public final class ChannelDetailsPresenter extends BasePresenter<ChannelDetailsV
             }
         });
         Intrinsics.checkNotNullExpressionValue(flatMap, "fun onSubscribeClick() {…     .autoDispose()\n    }");
-        Disposable subscribe = flatMap.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2004x14036c9b(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2005x14036c9c(null)));
-        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
+        Disposable subscribe = flatMap.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2008x14036c9b(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2009x14036c9c(null)));
+        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…Error.invoke()\n        })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
 
@@ -96,13 +96,13 @@ public final class ChannelDetailsPresenter extends BasePresenter<ChannelDetailsV
     }
 
     public final void copyChannelLink() {
-        String string = LocaleController.getString("LinkCopied", C3295R.string.LinkCopied);
+        String string = LocaleController.getString("LinkCopied", C3417R.string.LinkCopied);
         Intrinsics.checkNotNullExpressionValue(string, "getString(\"LinkCopied\", R.string.LinkCopied)");
         ContextExtKt.copyToClipboard("https://" + TelegramControllersGateway.CC.getMessagesController$default(this.telegramControllersGateway, 0, 1, null).linkPrefix + '/' + this.campaign.getShortname(), string);
     }
 
     public final void createChannelQr() {
-        ((ChannelDetailsView) getViewState()).showChannelQr(this.chat.f1433id);
+        ((ChannelDetailsView) getViewState()).showChannelQr(this.chat.f1515id);
     }
 
     /* JADX INFO: Access modifiers changed from: protected */

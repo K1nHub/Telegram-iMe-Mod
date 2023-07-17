@@ -6,15 +6,15 @@ public class IdFabric$RequestCode {
     public static final int QUICK_LOGIN_AUTHORIZE;
 
     /* renamed from: id */
-    private static int f256id = 1073741823;
+    private static int f338id = 1073741823;
 
     static {
         int i = FILE_SAVING_DIRECTORY + 1;
-        f256id = i;
+        f338id = i;
         int i2 = i + 1;
-        f256id = i2;
+        f338id = i2;
         FILE_SAVING_WRITE_STORAGE_PERMISSION = i;
-        f256id = i2 + 1;
+        f338id = i2 + 1;
         QUICK_LOGIN_AUTHORIZE = i2;
     }
 }

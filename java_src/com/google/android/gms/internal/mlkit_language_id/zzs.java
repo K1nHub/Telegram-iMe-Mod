@@ -4,7 +4,7 @@ import java.lang.ref.Reference;
 import java.lang.ref.ReferenceQueue;
 import java.util.List;
 import java.util.Vector;
-import p034j$.util.concurrent.ConcurrentHashMap;
+import p033j$.util.concurrent.ConcurrentHashMap;
 /* compiled from: com.google.mlkit:language-id@@16.1.1 */
 /* loaded from: classes3.dex */
 final class zzs {

@@ -41,10 +41,10 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 17
+    .line 16
     new-instance v0, Lcom/iMe/storage/data/network/model/request/crypto/simplex/GetBuyingCryptoQuoteRequest;
 
-    .line 18
+    .line 17
     invoke-virtual {p0}, Lcom/iMe/storage/domain/model/crypto/simplex/BuyingCryptoQuoteArgs;->getDigitalCurrency()Lcom/iMe/storage/domain/model/crypto/simplex/Currency;
 
     move-result-object v1
@@ -53,7 +53,7 @@
 
     move-result-object v2
 
-    .line 19
+    .line 18
     invoke-virtual {p0}, Lcom/iMe/storage/domain/model/crypto/simplex/BuyingCryptoQuoteArgs;->getFiatCurrency()Lcom/iMe/storage/domain/model/crypto/simplex/Currency;
 
     move-result-object v1
@@ -62,7 +62,7 @@
 
     move-result-object v3
 
-    .line 20
+    .line 19
     invoke-virtual {p0}, Lcom/iMe/storage/domain/model/crypto/simplex/BuyingCryptoQuoteArgs;->getRequestedCurrency()Lcom/iMe/storage/domain/model/crypto/simplex/Currency;
 
     move-result-object v1
@@ -71,23 +71,19 @@
 
     move-result-object v4
 
-    .line 21
+    .line 20
     invoke-virtual {p0}, Lcom/iMe/storage/domain/model/crypto/simplex/BuyingCryptoQuoteArgs;->getAmount()F
 
     move-result v5
 
-    .line 22
-    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/crypto/simplex/BuyingCryptoQuoteArgs;->getNetworkType()Lcom/iMe/storage/domain/model/crypto/NetworkType;
-
-    move-result-object p0
-
-    invoke-virtual {p0}, Ljava/lang/Enum;->name()Ljava/lang/String;
+    .line 21
+    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/crypto/simplex/BuyingCryptoQuoteArgs;->getNetworkId()Ljava/lang/String;
 
     move-result-object v6
 
     move-object v1, v0
 
-    .line 17
+    .line 16
     invoke-direct/range {v1 .. v6}, Lcom/iMe/storage/data/network/model/request/crypto/simplex/GetBuyingCryptoQuoteRequest;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;FLjava/lang/String;)V
 
     return-object v0

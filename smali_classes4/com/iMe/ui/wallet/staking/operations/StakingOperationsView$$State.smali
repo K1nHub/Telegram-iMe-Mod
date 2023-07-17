@@ -10,7 +10,7 @@
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
         Lcom/iMe/ui/wallet/staking/operations/StakingOperationsView$$State$ShowChooseNetworkDialogCommand;,
-        Lcom/iMe/ui/wallet/staking/operations/StakingOperationsView$$State$SetupNetworkTypeCommand;,
+        Lcom/iMe/ui/wallet/staking/operations/StakingOperationsView$$State$SetupNetworkCommand;,
         Lcom/iMe/ui/wallet/staking/operations/StakingOperationsView$$State$ShowErrorToastCommand;,
         Lcom/iMe/ui/wallet/staking/operations/StakingOperationsView$$State$ShowLoadingDialogCommand;,
         Lcom/iMe/ui/wallet/staking/operations/StakingOperationsView$$State$ShowToastCommand;,
@@ -171,20 +171,28 @@
     return-void
 .end method
 
-.method public setupNetworkType(Lcom/iMe/storage/domain/model/crypto/NetworkType;)V
+.method public synthetic removeSelfFromStackImmediately()V
+    .locals 0
+
+    invoke-static {p0}, Lcom/iMe/ui/base/mvp/base/BaseView$-CC;->$default$removeSelfFromStackImmediately(Lcom/iMe/ui/base/mvp/base/BaseView;)V
+
+    return-void
+.end method
+
+.method public setupNetwork(Lcom/iMe/storage/domain/model/crypto/Network;)V
     .locals 3
 
-    .line 135
-    new-instance v0, Lcom/iMe/ui/wallet/staking/operations/StakingOperationsView$$State$SetupNetworkTypeCommand;
+    .line 151
+    new-instance v0, Lcom/iMe/ui/wallet/staking/operations/StakingOperationsView$$State$SetupNetworkCommand;
 
-    invoke-direct {v0, p0, p1}, Lcom/iMe/ui/wallet/staking/operations/StakingOperationsView$$State$SetupNetworkTypeCommand;-><init>(Lcom/iMe/ui/wallet/staking/operations/StakingOperationsView$$State;Lcom/iMe/storage/domain/model/crypto/NetworkType;)V
+    invoke-direct {v0, p0, p1}, Lcom/iMe/ui/wallet/staking/operations/StakingOperationsView$$State$SetupNetworkCommand;-><init>(Lcom/iMe/ui/wallet/staking/operations/StakingOperationsView$$State;Lcom/iMe/storage/domain/model/crypto/Network;)V
 
-    .line 136
+    .line 152
     iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
 
     invoke-virtual {v1, v0}, Lmoxy/viewstate/ViewCommands;->beforeApply(Lmoxy/viewstate/ViewCommand;)V
 
-    .line 138
+    .line 154
     invoke-virtual {p0}, Lmoxy/viewstate/MvpViewState;->hasNotView()Ljava/lang/Boolean;
 
     move-result-object v1
@@ -197,7 +205,7 @@
 
     return-void
 
-    .line 142
+    .line 158
     :cond_0
     iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->views:Ljava/util/Set;
 
@@ -218,12 +226,12 @@
 
     check-cast v2, Lcom/iMe/ui/wallet/staking/operations/StakingOperationsView;
 
-    .line 143
-    invoke-interface {v2, p1}, Lcom/iMe/ui/base/mvp/SwitchNetworkView;->setupNetworkType(Lcom/iMe/storage/domain/model/crypto/NetworkType;)V
+    .line 159
+    invoke-interface {v2, p1}, Lcom/iMe/ui/base/mvp/SwitchNetworkView;->setupNetwork(Lcom/iMe/storage/domain/model/crypto/Network;)V
 
     goto :goto_0
 
-    .line 146
+    .line 162
     :cond_1
     iget-object p1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
 
@@ -232,35 +240,34 @@
     return-void
 .end method
 
-.method public showChooseNetworkDialog(Lcom/iMe/storage/domain/model/crypto/NetworkType;Ljava/util/List;Lkotlin/jvm/functions/Function1;)V
+.method public showChooseNetworkDialog(Lcom/iMe/storage/domain/model/crypto/Network;Ljava/util/List;Lkotlin/jvm/functions/Function1;)V
     .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lcom/iMe/storage/domain/model/crypto/NetworkType;",
+            "Lcom/iMe/storage/domain/model/crypto/Network;",
             "Ljava/util/List<",
-            "+",
-            "Lcom/iMe/storage/domain/model/crypto/NetworkType;",
+            "Lcom/iMe/storage/domain/model/crypto/Network;",
             ">;",
             "Lkotlin/jvm/functions/Function1<",
             "-",
-            "Lcom/iMe/storage/domain/model/crypto/NetworkType;",
+            "Lcom/iMe/storage/domain/model/crypto/Network;",
             "Lkotlin/Unit;",
             ">;)V"
         }
     .end annotation
 
-    .line 152
+    .line 168
     new-instance v0, Lcom/iMe/ui/wallet/staking/operations/StakingOperationsView$$State$ShowChooseNetworkDialogCommand;
 
-    invoke-direct {v0, p0, p1, p2, p3}, Lcom/iMe/ui/wallet/staking/operations/StakingOperationsView$$State$ShowChooseNetworkDialogCommand;-><init>(Lcom/iMe/ui/wallet/staking/operations/StakingOperationsView$$State;Lcom/iMe/storage/domain/model/crypto/NetworkType;Ljava/util/List;Lkotlin/jvm/functions/Function1;)V
+    invoke-direct {v0, p0, p1, p2, p3}, Lcom/iMe/ui/wallet/staking/operations/StakingOperationsView$$State$ShowChooseNetworkDialogCommand;-><init>(Lcom/iMe/ui/wallet/staking/operations/StakingOperationsView$$State;Lcom/iMe/storage/domain/model/crypto/Network;Ljava/util/List;Lkotlin/jvm/functions/Function1;)V
 
-    .line 153
+    .line 169
     iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
 
     invoke-virtual {v1, v0}, Lmoxy/viewstate/ViewCommands;->beforeApply(Lmoxy/viewstate/ViewCommand;)V
 
-    .line 155
+    .line 171
     invoke-virtual {p0}, Lmoxy/viewstate/MvpViewState;->hasNotView()Ljava/lang/Boolean;
 
     move-result-object v1
@@ -273,7 +280,7 @@
 
     return-void
 
-    .line 159
+    .line 175
     :cond_0
     iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->views:Ljava/util/Set;
 
@@ -294,12 +301,12 @@
 
     check-cast v2, Lcom/iMe/ui/wallet/staking/operations/StakingOperationsView;
 
-    .line 160
-    invoke-interface {v2, p1, p2, p3}, Lcom/iMe/ui/base/mvp/SwitchNetworkView;->showChooseNetworkDialog(Lcom/iMe/storage/domain/model/crypto/NetworkType;Ljava/util/List;Lkotlin/jvm/functions/Function1;)V
+    .line 176
+    invoke-interface {v2, p1, p2, p3}, Lcom/iMe/ui/base/mvp/SwitchNetworkView;->showChooseNetworkDialog(Lcom/iMe/storage/domain/model/crypto/Network;Ljava/util/List;Lkotlin/jvm/functions/Function1;)V
 
     goto :goto_0
 
-    .line 163
+    .line 179
     :cond_1
     iget-object p1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
 

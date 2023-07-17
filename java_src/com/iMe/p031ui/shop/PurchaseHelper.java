@@ -232,12 +232,12 @@ public final class PurchaseHelper {
         List<Sku> skus = product.getSkus();
         Intrinsics.checkNotNullExpressionValue(skus, "inAppProduct.skus");
         for (Sku sku : skus) {
-            String str = sku.f1356id.code;
+            String str = sku.f1438id.code;
             Intrinsics.checkNotNullExpressionValue(str, "it.id.code");
             String str2 = sku.price;
             Intrinsics.checkNotNullExpressionValue(str2, "it.price");
             boolean isPurchased = product.isPurchased(sku);
-            String str3 = sku.f1356id.code;
+            String str3 = sku.f1438id.code;
             Intrinsics.checkNotNullExpressionValue(str3, "it.id.code");
             List<Purchase> purchases = product.getPurchases();
             Intrinsics.checkNotNullExpressionValue(purchases, "inAppProduct.purchases");
@@ -331,7 +331,7 @@ public final class PurchaseHelper {
             String str4 = purchase.sku;
             Intrinsics.checkNotNullExpressionValue(str4, "it.sku");
             long j = purchase.time;
-            int i = purchase.state.f1355id;
+            int i = purchase.state.f1437id;
             String str5 = purchase.token;
             Intrinsics.checkNotNullExpressionValue(str5, "it.token");
             return new ShopProduct.Receipt(str2, str3, str4, j, i, str5);

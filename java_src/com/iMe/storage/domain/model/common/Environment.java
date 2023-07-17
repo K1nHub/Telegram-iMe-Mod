@@ -20,12 +20,8 @@ public enum Environment {
         return Companion.map(str);
     }
 
-    public final boolean isStage() {
-        return this == STAGE;
-    }
-
-    public final boolean isDevelopment() {
-        return this == DEVELOPMENT;
+    public final boolean isStageEnvironment() {
+        return this == STAGE || this == DEVELOPMENT;
     }
 
     /* compiled from: Environment.kt */

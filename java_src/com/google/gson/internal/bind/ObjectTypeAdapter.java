@@ -48,7 +48,7 @@ public final class ObjectTypeAdapter extends TypeAdapter<Object> {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.google.gson.internal.bind.ObjectTypeAdapter$2 */
     /* loaded from: classes3.dex */
-    public static /* synthetic */ class C11392 {
+    public static /* synthetic */ class C11442 {
         static final /* synthetic */ int[] $SwitchMap$com$google$gson$stream$JsonToken;
 
         static {
@@ -82,7 +82,7 @@ public final class ObjectTypeAdapter extends TypeAdapter<Object> {
     }
 
     private Object tryBeginNesting(JsonReader jsonReader, JsonToken jsonToken) throws IOException {
-        int i = C11392.$SwitchMap$com$google$gson$stream$JsonToken[jsonToken.ordinal()];
+        int i = C11442.$SwitchMap$com$google$gson$stream$JsonToken[jsonToken.ordinal()];
         if (i == 1) {
             jsonReader.beginArray();
             return new ArrayList();
@@ -95,7 +95,7 @@ public final class ObjectTypeAdapter extends TypeAdapter<Object> {
     }
 
     private Object readTerminal(JsonReader jsonReader, JsonToken jsonToken) throws IOException {
-        int i = C11392.$SwitchMap$com$google$gson$stream$JsonToken[jsonToken.ordinal()];
+        int i = C11442.$SwitchMap$com$google$gson$stream$JsonToken[jsonToken.ordinal()];
         if (i != 3) {
             if (i != 4) {
                 if (i != 5) {

@@ -1,9 +1,9 @@
 package com.iMe.model.wallet.crypto.swap;
 
-import com.iMe.model.wallet.select.SelectableToken;
 import com.iMe.p031ui.custom.FeeView;
 import com.iMe.storage.domain.model.binancepay.BinanceConvertQuote;
 import com.iMe.storage.domain.model.crypto.swap.CryptoSwapMetadata;
+import com.iMe.storage.domain.model.wallet.token.TokenDetailed;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: SwapUiState.kt */
@@ -30,21 +30,21 @@ public abstract class SwapUiState {
     /* loaded from: classes3.dex */
     public static final class NeedApprove extends SwapUiState {
         private final FeeView.ChooseFeeType chooseFeeType;
-        private final SelectableToken token;
+        private final TokenDetailed token;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public NeedApprove(FeeView.ChooseFeeType chooseFeeType, SelectableToken selectableToken) {
+        public NeedApprove(FeeView.ChooseFeeType chooseFeeType, TokenDetailed tokenDetailed) {
             super(null);
             Intrinsics.checkNotNullParameter(chooseFeeType, "chooseFeeType");
             this.chooseFeeType = chooseFeeType;
-            this.token = selectableToken;
+            this.token = tokenDetailed;
         }
 
         public final FeeView.ChooseFeeType getChooseFeeType() {
             return this.chooseFeeType;
         }
 
-        public final SelectableToken getToken() {
+        public final TokenDetailed getToken() {
             return this.token;
         }
     }
@@ -62,14 +62,14 @@ public abstract class SwapUiState {
     /* compiled from: SwapUiState.kt */
     /* loaded from: classes3.dex */
     public static final class PrepareSwap extends SwapUiState {
-        private final SelectableToken token;
+        private final TokenDetailed token;
 
-        public PrepareSwap(SelectableToken selectableToken) {
+        public PrepareSwap(TokenDetailed tokenDetailed) {
             super(null);
-            this.token = selectableToken;
+            this.token = tokenDetailed;
         }
 
-        public final SelectableToken getToken() {
+        public final TokenDetailed getToken() {
             return this.token;
         }
     }

@@ -42,15 +42,15 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.ranges.RangesKt___RangesKt;
 import org.koin.core.Koin;
 import org.koin.core.component.KoinComponent;
-import org.koin.p043mp.KoinPlatformTools;
+import org.koin.p042mp.KoinPlatformTools;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BaseController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC$Dialog;
-import p034j$.util.concurrent.ConcurrentHashMap;
-import p034j$.util.concurrent.ConcurrentMap$EL;
-import p034j$.util.function.Function;
+import p033j$.util.concurrent.ConcurrentHashMap;
+import p033j$.util.concurrent.ConcurrentMap$EL;
+import p033j$.util.function.Function;
 /* compiled from: ForkTopicsController.kt */
 /* loaded from: classes3.dex */
 public final class ForkTopicsController extends BaseController implements KoinComponent {
@@ -287,7 +287,7 @@ public final class ForkTopicsController extends BaseController implements KoinCo
                 TLRPC$Dialog dialog = getMessagesController().getDialog(longValue);
                 if (dialog != null) {
                     Intrinsics.checkNotNullExpressionValue(dialog, "getDialog(did)");
-                    if (!getHiddenChatsController().isChatHidden(dialog.f1439id)) {
+                    if (!getHiddenChatsController().isChatHidden(dialog.f1521id)) {
                         if (dialog.folder_id == 0) {
                             arrayList.add(Long.valueOf(longValue));
                         } else {
@@ -301,7 +301,7 @@ public final class ForkTopicsController extends BaseController implements KoinCo
                 TLRPC$Dialog dialog2 = getMessagesController().getDialog(longValue2);
                 if (dialog2 != null) {
                     Intrinsics.checkNotNullExpressionValue(dialog2, "getDialog(did)");
-                    if (!getHiddenChatsController().isChatHidden(dialog2.f1439id)) {
+                    if (!getHiddenChatsController().isChatHidden(dialog2.f1521id)) {
                         if (dialog2.folder_id == 0) {
                             arrayList.add(Long.valueOf(longValue2));
                         } else {
@@ -709,19 +709,19 @@ public final class ForkTopicsController extends BaseController implements KoinCo
             Integer valueOf = Integer.valueOf(i);
             final ForkTopicsController$Companion$getInstance$1 forkTopicsController$Companion$getInstance$1 = new ForkTopicsController$Companion$getInstance$1(i);
             Object computeIfAbsent = ConcurrentMap$EL.computeIfAbsent(concurrentHashMap, valueOf, new Function() { // from class: com.iMe.fork.controller.ForkTopicsController$Companion$$ExternalSyntheticLambda0
-                @Override // p034j$.util.function.Function
+                @Override // p033j$.util.function.Function
                 public /* synthetic */ Function andThen(Function function) {
                     return Objects.requireNonNull(function);
                 }
 
-                @Override // p034j$.util.function.Function
+                @Override // p033j$.util.function.Function
                 public final Object apply(Object obj) {
                     ForkTopicsController instance$lambda$0;
                     instance$lambda$0 = ForkTopicsController.Companion.getInstance$lambda$0(Function1.this, obj);
                     return instance$lambda$0;
                 }
 
-                @Override // p034j$.util.function.Function
+                @Override // p033j$.util.function.Function
                 public /* synthetic */ Function compose(Function function) {
                     return Objects.requireNonNull(function);
                 }

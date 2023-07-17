@@ -47,7 +47,7 @@
 .method constructor <init>(Lorg/telegram/ui/TopicsFragment;Ljava/util/HashSet;Ljava/util/ArrayList;Ljava/lang/Runnable;)V
     .locals 0
 
-    .line 1763
+    .line 1766
     iput-object p1, p0, Lorg/telegram/ui/TopicsFragment$20;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     iput-object p2, p0, Lorg/telegram/ui/TopicsFragment$20;->val$selectedTopics:Ljava/util/HashSet;
@@ -64,7 +64,7 @@
 .method private synthetic lambda$onClick$0()V
     .locals 3
 
-    .line 1770
+    .line 1773
     iget-object v0, p0, Lorg/telegram/ui/TopicsFragment$20;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     const/4 v1, 0x0
@@ -75,7 +75,7 @@
 
     const/4 v2, 0x0
 
-    .line 1771
+    .line 1774
     invoke-static {v0, v1, v2}, Lorg/telegram/ui/TopicsFragment;->access$2000(Lorg/telegram/ui/TopicsFragment;ZZ)V
 
     return-void
@@ -84,7 +84,7 @@
 .method private synthetic lambda$onClick$1(Ljava/util/ArrayList;Ljava/lang/Runnable;)V
     .locals 3
 
-    .line 1773
+    .line 1776
     iget-object v0, p0, Lorg/telegram/ui/TopicsFragment$20;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     invoke-static {v0}, Lorg/telegram/ui/TopicsFragment;->access$2400(Lorg/telegram/ui/TopicsFragment;)Lorg/telegram/messenger/TopicsController;
@@ -97,7 +97,7 @@
 
     invoke-virtual {v0, v1, v2, p1}, Lorg/telegram/messenger/TopicsController;->deleteTopics(JLjava/util/ArrayList;)V
 
-    .line 1774
+    .line 1777
     invoke-interface {p2}, Ljava/lang/Runnable;->run()V
 
     return-void
@@ -108,7 +108,7 @@
 .method public onClick(Landroid/content/DialogInterface;I)V
     .locals 5
 
-    .line 1766
+    .line 1769
     iget-object p2, p0, Lorg/telegram/ui/TopicsFragment$20;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     new-instance v0, Ljava/util/HashSet;
@@ -117,7 +117,7 @@
 
     iput-object v0, p2, Lorg/telegram/ui/TopicsFragment;->excludeTopics:Ljava/util/HashSet;
 
-    .line 1767
+    .line 1770
     iget-object p2, p0, Lorg/telegram/ui/TopicsFragment$20;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     iget-object p2, p2, Lorg/telegram/ui/TopicsFragment;->excludeTopics:Ljava/util/HashSet;
@@ -126,7 +126,7 @@
 
     invoke-virtual {p2, v0}, Ljava/util/HashSet;->addAll(Ljava/util/Collection;)Z
 
-    .line 1768
+    .line 1771
     iget-object p2, p0, Lorg/telegram/ui/TopicsFragment$20;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     const/4 v0, 0x1
@@ -135,7 +135,7 @@
 
     invoke-static {p2, v0, v1}, Lorg/telegram/ui/TopicsFragment;->access$2000(Lorg/telegram/ui/TopicsFragment;ZZ)V
 
-    .line 1769
+    .line 1772
     iget-object p2, p0, Lorg/telegram/ui/TopicsFragment$20;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     invoke-static {p2}, Lorg/telegram/ui/Components/BulletinFactory;->of(Lorg/telegram/ui/ActionBar/BaseFragment;)Lorg/telegram/ui/Components/BulletinFactory;
@@ -170,15 +170,15 @@
 
     move-result-object p2
 
-    .line 1775
+    .line 1778
     invoke-virtual {p2}, Lorg/telegram/ui/Components/Bulletin;->show()Lorg/telegram/ui/Components/Bulletin;
 
-    .line 1776
+    .line 1779
     iget-object p2, p0, Lorg/telegram/ui/TopicsFragment$20;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     invoke-static {p2}, Lorg/telegram/ui/TopicsFragment;->access$1200(Lorg/telegram/ui/TopicsFragment;)V
 
-    .line 1777
+    .line 1780
     invoke-interface {p1}, Landroid/content/DialogInterface;->dismiss()V
 
     return-void

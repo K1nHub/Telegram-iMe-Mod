@@ -21,13 +21,11 @@
         "Lkotlin/jvm/internal/Lambda;",
         "Lkotlin/jvm/functions/Function1<",
         "Ljava/util/List<",
-        "+",
         "Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;",
         ">;",
         "Lcom/iMe/storage/domain/model/Result<",
         "+",
         "Ljava/util/List<",
-        "+",
         "Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;",
         ">;>;>;"
     }
@@ -73,12 +71,10 @@
         value = {
             "(",
             "Ljava/util/List<",
-            "+",
             "Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;",
             ">;)",
             "Lcom/iMe/storage/domain/model/Result<",
             "Ljava/util/List<",
-            "+",
             "Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;",
             ">;>;"
         }

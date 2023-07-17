@@ -34,20 +34,20 @@
 .method constructor <init>(Lcom/iMe/ui/wallet/actions/send/recipient/WalletSendRecipientView$$State;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
     .locals 1
 
-    .line 229
+    .line 245
     const-class p1, Lmoxy/viewstate/strategy/OneExecutionStateStrategy;
 
     const-string v0, "showErrorDialog"
 
     invoke-direct {p0, v0, p1}, Lmoxy/viewstate/ViewCommand;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
-    .line 231
+    .line 247
     iput-object p2, p0, Lcom/iMe/ui/wallet/actions/send/recipient/WalletSendRecipientView$$State$ShowErrorDialogCommand;->title:Ljava/lang/String;
 
-    .line 232
+    .line 248
     iput-object p3, p0, Lcom/iMe/ui/wallet/actions/send/recipient/WalletSendRecipientView$$State$ShowErrorDialogCommand;->description:Ljava/lang/String;
 
-    .line 233
+    .line 249
     iput-object p4, p0, Lcom/iMe/ui/wallet/actions/send/recipient/WalletSendRecipientView$$State$ShowErrorDialogCommand;->buttonText:Ljava/lang/String;
 
     return-void
@@ -58,7 +58,7 @@
 .method public apply(Lcom/iMe/ui/wallet/actions/send/recipient/WalletSendRecipientView;)V
     .locals 3
 
-    .line 238
+    .line 254
     iget-object v0, p0, Lcom/iMe/ui/wallet/actions/send/recipient/WalletSendRecipientView$$State$ShowErrorDialogCommand;->title:Ljava/lang/String;
 
     iget-object v1, p0, Lcom/iMe/ui/wallet/actions/send/recipient/WalletSendRecipientView$$State$ShowErrorDialogCommand;->description:Ljava/lang/String;
@@ -73,7 +73,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 221
+    .line 237
     check-cast p1, Lcom/iMe/ui/wallet/actions/send/recipient/WalletSendRecipientView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/wallet/actions/send/recipient/WalletSendRecipientView$$State$ShowErrorDialogCommand;->apply(Lcom/iMe/ui/wallet/actions/send/recipient/WalletSendRecipientView;)V

@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/PhotoViewer$12;)V
     .locals 0
 
-    .line 4735
+    .line 4736
     iput-object p1, p0, Lorg/telegram/ui/PhotoViewer$12$1;->this$1:Lorg/telegram/ui/PhotoViewer$12;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -48,7 +48,7 @@
 .method public getBottomOffset(I)I
     .locals 1
 
-    .line 4738
+    .line 4739
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$12$1;->this$1:Lorg/telegram/ui/PhotoViewer$12;
 
     iget-object p1, p1, Lorg/telegram/ui/PhotoViewer$12;->this$0:Lorg/telegram/ui/PhotoViewer;
@@ -69,7 +69,7 @@
 
     return p1
 
-    .line 4741
+    .line 4742
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$12$1;->this$1:Lorg/telegram/ui/PhotoViewer$12;
 

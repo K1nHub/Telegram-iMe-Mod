@@ -5,7 +5,7 @@ import android.media.MediaCodec;
 import android.media.MediaFormat;
 import android.media.MediaParser;
 import android.util.Pair;
-import com.google.android.exoplayer2.C0475C;
+import com.google.android.exoplayer2.C0480C;
 import com.google.android.exoplayer2.Format;
 import com.google.android.exoplayer2.drm.DrmInitData;
 import com.google.android.exoplayer2.extractor.ChunkIndex;
@@ -83,7 +83,7 @@ public final class OutputConsumerAdapterV30 implements MediaParser.OutputConsume
         this.lastOutputCryptoDatas = new ArrayList<>();
         this.scratchDataReaderAdapter = new DataReaderAdapter();
         this.extractorOutput = new DummyExtractorOutput();
-        this.sampleTimestampUpperLimitFilterUs = C0475C.TIME_UNSET;
+        this.sampleTimestampUpperLimitFilterUs = C0480C.TIME_UNSET;
         this.muxedCaptionFormats = ImmutableList.m744of();
     }
 
@@ -153,7 +153,7 @@ public final class OutputConsumerAdapterV30 implements MediaParser.OutputConsume
         ExtractorOutput extractorOutput = this.extractorOutput;
         if (this.seekingDisabled) {
             if (durationMicros == -2147483648L) {
-                durationMicros = C0475C.TIME_UNSET;
+                durationMicros = C0480C.TIME_UNSET;
             }
             seekMapAdapter = new SeekMap.Unseekable(durationMicros);
         } else {
@@ -204,7 +204,7 @@ public final class OutputConsumerAdapterV30 implements MediaParser.OutputConsume
     @Override // android.media.MediaParser.OutputConsumer
     public void onSampleCompleted(int i, long j, int i2, int i3, int i4, MediaCodec.CryptoInfo cryptoInfo) {
         long j2 = this.sampleTimestampUpperLimitFilterUs;
-        if (j2 == C0475C.TIME_UNSET || j < j2) {
+        if (j2 == C0480C.TIME_UNSET || j < j2) {
             TimestampAdjuster timestampAdjuster = this.timestampAdjuster;
             if (timestampAdjuster != null) {
                 j = timestampAdjuster.adjustSampleTimestamp(j);
@@ -545,7 +545,7 @@ public final class OutputConsumerAdapterV30 implements MediaParser.OutputConsume
         @Override // com.google.android.exoplayer2.extractor.SeekMap
         public long getDurationUs() {
             long durationMicros = this.adaptedSeekMap.getDurationMicros();
-            return durationMicros != -2147483648L ? durationMicros : C0475C.TIME_UNSET;
+            return durationMicros != -2147483648L ? durationMicros : C0480C.TIME_UNSET;
         }
 
         @Override // com.google.android.exoplayer2.extractor.SeekMap

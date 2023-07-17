@@ -42,10 +42,10 @@ public final class SocialWebViewModel$onResetClicked$1 extends SuspendLambda imp
     /* compiled from: SocialWebViewModel.kt */
     /* renamed from: com.iMe.feature.socialMedias.webScreen.SocialWebViewModel$onResetClicked$1$1 */
     /* loaded from: classes3.dex */
-    public static final class C14631 extends Lambda implements Function1<SimpleContext<SocialWebState>, SocialWebState> {
-        public static final C14631 INSTANCE = new C14631();
+    public static final class C14741 extends Lambda implements Function1<SimpleContext<SocialWebState>, SocialWebState> {
+        public static final C14741 INSTANCE = new C14741();
 
-        C14631() {
+        C14741() {
             super(1);
         }
 
@@ -100,7 +100,7 @@ public final class SocialWebViewModel$onResetClicked$1 extends SuspendLambda imp
             kotlin.ResultKt.throwOnFailure(r7)
             java.lang.Object r7 = r6.L$0
             org.orbitmvi.orbit.syntax.simple.SimpleSyntax r7 = (org.orbitmvi.orbit.syntax.simple.SimpleSyntax) r7
-            com.iMe.feature.socialMedias.webScreen.SocialWebViewModel$onResetClicked$1$1 r1 = com.iMe.feature.socialMedias.webScreen.SocialWebViewModel$onResetClicked$1.C14631.INSTANCE
+            com.iMe.feature.socialMedias.webScreen.SocialWebViewModel$onResetClicked$1$1 r1 = com.iMe.feature.socialMedias.webScreen.SocialWebViewModel$onResetClicked$1.C14741.INSTANCE
             r6.L$0 = r7
             r6.label = r4
             java.lang.Object r1 = org.orbitmvi.orbit.syntax.simple.SimpleSyntaxExtensionsKt.reduce(r7, r1, r6)
@@ -123,7 +123,7 @@ public final class SocialWebViewModel$onResetClicked$1 extends SuspendLambda imp
             return r0
         L69:
             com.iMe.storage.domain.model.Result r7 = (com.iMe.storage.domain.model.Result) r7
-            com.iMe.feature.socialMedias.webScreen.SocialWebViewModel$onResetClicked$1$2 r3 = com.iMe.feature.socialMedias.webScreen.SocialWebViewModel$onResetClicked$1.C14642.INSTANCE
+            com.iMe.feature.socialMedias.webScreen.SocialWebViewModel$onResetClicked$1$2 r3 = com.iMe.feature.socialMedias.webScreen.SocialWebViewModel$onResetClicked$1.C14752.INSTANCE
             r6.L$0 = r7
             r6.label = r2
             java.lang.Object r1 = org.orbitmvi.orbit.syntax.simple.SimpleSyntaxExtensionsKt.reduce(r1, r3, r6)
@@ -155,10 +155,10 @@ public final class SocialWebViewModel$onResetClicked$1 extends SuspendLambda imp
     /* compiled from: SocialWebViewModel.kt */
     /* renamed from: com.iMe.feature.socialMedias.webScreen.SocialWebViewModel$onResetClicked$1$2 */
     /* loaded from: classes3.dex */
-    public static final class C14642 extends Lambda implements Function1<SimpleContext<SocialWebState>, SocialWebState> {
-        public static final C14642 INSTANCE = new C14642();
+    public static final class C14752 extends Lambda implements Function1<SimpleContext<SocialWebState>, SocialWebState> {
+        public static final C14752 INSTANCE = new C14752();
 
-        C14642() {
+        C14752() {
             super(1);
         }
 

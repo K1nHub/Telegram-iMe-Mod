@@ -1,6 +1,6 @@
 package org.telegram.messenger.audioinfo.mp3;
 
-import com.google.android.exoplayer2.C0475C;
+import com.google.android.exoplayer2.C0480C;
 import java.io.IOException;
 /* loaded from: classes4.dex */
 public class ID3v2FrameHeader {
@@ -19,9 +19,9 @@ public class ID3v2FrameHeader {
         ID3v2DataInput data = iD3v2TagBody.getData();
         byte b3 = 2;
         if (iD3v2TagBody.getTagHeader().getVersion() == 2) {
-            this.frameId = new String(data.readFully(3), C0475C.ISO88591_NAME);
+            this.frameId = new String(data.readFully(3), C0480C.ISO88591_NAME);
         } else {
-            this.frameId = new String(data.readFully(4), C0475C.ISO88591_NAME);
+            this.frameId = new String(data.readFully(4), C0480C.ISO88591_NAME);
         }
         byte b4 = 8;
         if (iD3v2TagBody.getTagHeader().getVersion() == 2) {

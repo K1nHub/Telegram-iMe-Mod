@@ -4,10 +4,12 @@ import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 import androidx.core.content.ContextCompat;
 import com.iMe.fork.utils.Callbacks$Callback;
+import com.iMe.fork.utils.Callbacks$Callback1;
 import com.iMe.storage.domain.utils.system.ResourceManager;
 import com.iMe.utils.extentions.common.ViewExtKt;
 import java.util.List;
@@ -18,11 +20,11 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.koin.core.Koin;
 import org.koin.core.component.KoinComponent;
-import org.koin.p043mp.KoinPlatformTools;
-import org.telegram.messenger.C3295R;
+import org.koin.p042mp.KoinPlatformTools;
+import org.telegram.messenger.C3417R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.databinding.ForkContentWalletChooseRecipientOptionsBinding;
-import org.telegram.p044ui.ActionBar.Theme;
+import org.telegram.p043ui.ActionBar.Theme;
 /* compiled from: ChooseRecipientOptionsView.kt */
 /* renamed from: com.iMe.ui.custom.ChooseRecipientOptionsView */
 /* loaded from: classes3.dex */
@@ -106,20 +108,53 @@ public final class ChooseRecipientOptionsView extends FrameLayout implements Koi
         return ((Number) this.backgroundPressedColor$delegate.getValue()).intValue();
     }
 
-    public final void setupListeners(Callbacks$Callback onContactsClickAction, Callbacks$Callback onTwitterClickAction, Callbacks$Callback onQRClickAction) {
+    public final void setupListeners(final Callbacks$Callback onContactsClickAction, final Callbacks$Callback onTwitterClickAction, final Callbacks$Callback onQRClickAction) {
         Intrinsics.checkNotNullParameter(onContactsClickAction, "onContactsClickAction");
         Intrinsics.checkNotNullParameter(onTwitterClickAction, "onTwitterClickAction");
         Intrinsics.checkNotNullParameter(onQRClickAction, "onQRClickAction");
         ForkContentWalletChooseRecipientOptionsBinding forkContentWalletChooseRecipientOptionsBinding = this.binding;
         FrameLayout frameContacts = forkContentWalletChooseRecipientOptionsBinding.frameContacts;
         Intrinsics.checkNotNullExpressionValue(frameContacts, "frameContacts");
-        ViewExtKt.setMixedClickListener(frameContacts, new ChooseRecipientOptionsView$setupListeners$1$1(onContactsClickAction));
+        ViewExtKt.setMixedClickListener(frameContacts, new Callbacks$Callback1() { // from class: com.iMe.ui.custom.ChooseRecipientOptionsView$$ExternalSyntheticLambda1
+            @Override // com.iMe.fork.utils.Callbacks$Callback1
+            public final void invoke(Object obj) {
+                ChooseRecipientOptionsView.setupListeners$lambda$3$lambda$0(Callbacks$Callback.this, (View) obj);
+            }
+        });
         FrameLayout frameTwitter = forkContentWalletChooseRecipientOptionsBinding.frameTwitter;
         Intrinsics.checkNotNullExpressionValue(frameTwitter, "frameTwitter");
-        ViewExtKt.setMixedClickListener(frameTwitter, new ChooseRecipientOptionsView$setupListeners$1$2(onTwitterClickAction));
+        ViewExtKt.setMixedClickListener(frameTwitter, new Callbacks$Callback1() { // from class: com.iMe.ui.custom.ChooseRecipientOptionsView$$ExternalSyntheticLambda2
+            @Override // com.iMe.fork.utils.Callbacks$Callback1
+            public final void invoke(Object obj) {
+                ChooseRecipientOptionsView.setupListeners$lambda$3$lambda$1(Callbacks$Callback.this, (View) obj);
+            }
+        });
         FrameLayout frameQr = forkContentWalletChooseRecipientOptionsBinding.frameQr;
         Intrinsics.checkNotNullExpressionValue(frameQr, "frameQr");
-        ViewExtKt.setMixedClickListener(frameQr, new ChooseRecipientOptionsView$setupListeners$1$3(onQRClickAction));
+        ViewExtKt.setMixedClickListener(frameQr, new Callbacks$Callback1() { // from class: com.iMe.ui.custom.ChooseRecipientOptionsView$$ExternalSyntheticLambda0
+            @Override // com.iMe.fork.utils.Callbacks$Callback1
+            public final void invoke(Object obj) {
+                ChooseRecipientOptionsView.setupListeners$lambda$3$lambda$2(Callbacks$Callback.this, (View) obj);
+            }
+        });
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final void setupListeners$lambda$3$lambda$0(Callbacks$Callback onContactsClickAction, View view) {
+        Intrinsics.checkNotNullParameter(onContactsClickAction, "$onContactsClickAction");
+        onContactsClickAction.invoke();
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final void setupListeners$lambda$3$lambda$1(Callbacks$Callback onTwitterClickAction, View view) {
+        Intrinsics.checkNotNullParameter(onTwitterClickAction, "$onTwitterClickAction");
+        onTwitterClickAction.invoke();
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final void setupListeners$lambda$3$lambda$2(Callbacks$Callback onQRClickAction, View view) {
+        Intrinsics.checkNotNullParameter(onQRClickAction, "$onQRClickAction");
+        onQRClickAction.invoke();
     }
 
     public final void setupColors() {
@@ -139,9 +174,9 @@ public final class ChooseRecipientOptionsView extends FrameLayout implements Koi
             frameLayout.setBackground(Theme.createSimpleSelectorRoundRectDrawable(getCornerSize(), getBackgroundColor(), getBackgroundPressedColor()));
         }
         listOf2 = CollectionsKt__CollectionsKt.listOf((Object[]) new TextView[]{forkContentWalletChooseRecipientOptionsBinding.textContacts, forkContentWalletChooseRecipientOptionsBinding.textTwitter, forkContentWalletChooseRecipientOptionsBinding.textQr});
-        for (TextView setupColors$lambda$3$lambda$2 : listOf2) {
-            Intrinsics.checkNotNullExpressionValue(setupColors$lambda$3$lambda$2, "setupColors$lambda$3$lambda$2");
-            ViewExtKt.setCompoundDrawablesColor(setupColors$lambda$3$lambda$2, Theme.getColor(Theme.key_windowBackgroundWhiteBlueHeader));
+        for (TextView setupColors$lambda$6$lambda$5 : listOf2) {
+            Intrinsics.checkNotNullExpressionValue(setupColors$lambda$6$lambda$5, "setupColors$lambda$6$lambda$5");
+            ViewExtKt.setCompoundDrawablesColor(setupColors$lambda$6$lambda$5, Theme.getColor(Theme.key_windowBackgroundWhiteBlueHeader));
         }
     }
 
@@ -153,18 +188,18 @@ public final class ChooseRecipientOptionsView extends FrameLayout implements Koi
 
     private final void setupViews() {
         ForkContentWalletChooseRecipientOptionsBinding forkContentWalletChooseRecipientOptionsBinding = this.binding;
-        TextView setupViews$lambda$7$lambda$4 = forkContentWalletChooseRecipientOptionsBinding.textContacts;
-        setupViews$lambda$7$lambda$4.setText(LocaleController.getString("Contacts", C3295R.string.Contacts));
-        Intrinsics.checkNotNullExpressionValue(setupViews$lambda$7$lambda$4, "setupViews$lambda$7$lambda$4");
-        setSizedStartIcon(setupViews$lambda$7$lambda$4, C3295R.C3297drawable.fork_drawer_social_telegram);
-        TextView setupViews$lambda$7$lambda$5 = forkContentWalletChooseRecipientOptionsBinding.textTwitter;
-        setupViews$lambda$7$lambda$5.setText(getResourceManager().getString(C3295R.string.drawer_social_network_twitter));
-        Intrinsics.checkNotNullExpressionValue(setupViews$lambda$7$lambda$5, "setupViews$lambda$7$lambda$5");
-        setSizedStartIcon(setupViews$lambda$7$lambda$5, C3295R.C3297drawable.fork_drawer_social_twitter);
-        TextView setupViews$lambda$7$lambda$6 = forkContentWalletChooseRecipientOptionsBinding.textQr;
-        setupViews$lambda$7$lambda$6.setText(getResourceManager().getString(C3295R.string.wallet_backup_secret_words_qr_title));
-        Intrinsics.checkNotNullExpressionValue(setupViews$lambda$7$lambda$6, "setupViews$lambda$7$lambda$6");
-        setSizedStartIcon(setupViews$lambda$7$lambda$6, C3295R.C3297drawable.msg_qrcode);
+        TextView setupViews$lambda$10$lambda$7 = forkContentWalletChooseRecipientOptionsBinding.textContacts;
+        setupViews$lambda$10$lambda$7.setText(LocaleController.getString("Contacts", C3417R.string.Contacts));
+        Intrinsics.checkNotNullExpressionValue(setupViews$lambda$10$lambda$7, "setupViews$lambda$10$lambda$7");
+        setSizedStartIcon(setupViews$lambda$10$lambda$7, C3417R.C3419drawable.fork_drawer_social_telegram);
+        TextView setupViews$lambda$10$lambda$8 = forkContentWalletChooseRecipientOptionsBinding.textTwitter;
+        setupViews$lambda$10$lambda$8.setText(getResourceManager().getString(C3417R.string.drawer_social_network_twitter));
+        Intrinsics.checkNotNullExpressionValue(setupViews$lambda$10$lambda$8, "setupViews$lambda$10$lambda$8");
+        setSizedStartIcon(setupViews$lambda$10$lambda$8, C3417R.C3419drawable.fork_drawer_social_twitter);
+        TextView setupViews$lambda$10$lambda$9 = forkContentWalletChooseRecipientOptionsBinding.textQr;
+        setupViews$lambda$10$lambda$9.setText(getResourceManager().getString(C3417R.string.wallet_backup_secret_words_qr_title));
+        Intrinsics.checkNotNullExpressionValue(setupViews$lambda$10$lambda$9, "setupViews$lambda$10$lambda$9");
+        setSizedStartIcon(setupViews$lambda$10$lambda$9, C3417R.C3419drawable.msg_qrcode);
     }
 
     private final void setSizedStartIcon(TextView textView, int i) {

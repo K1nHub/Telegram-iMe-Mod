@@ -28,7 +28,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nInteractorModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 InteractorModule.kt\ncom/iMe/storage/domain/di/module/InteractorModuleKt$interactorModule$1$14\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,81:1\n129#2,5:82\n*S KotlinDebug\n*F\n+ 1 InteractorModule.kt\ncom/iMe/storage/domain/di/module/InteractorModuleKt$interactorModule$1$14\n*L\n65#1:82,5\n*E\n"
+    value = "SMAP\nInteractorModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 InteractorModule.kt\ncom/iMe/storage/domain/di/module/InteractorModuleKt$interactorModule$1$14\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,90:1\n129#2,5:91\n*S KotlinDebug\n*F\n+ 1 InteractorModule.kt\ncom/iMe/storage/domain/di/module/InteractorModuleKt$interactorModule$1$14\n*L\n74#1:91,5\n*E\n"
 .end annotation
 
 
@@ -72,7 +72,7 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 65
+    .line 74
     new-instance p2, Lcom/iMe/storage/domain/interactor/crypto/swap/SwapInteractor;
 
     .line 133
@@ -102,7 +102,7 @@
 
     check-cast p1, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
-    .line 65
+    .line 74
     invoke-direct {p2, v0, p1}, Lcom/iMe/storage/domain/interactor/crypto/swap/SwapInteractor;-><init>(Lcom/iMe/storage/domain/repository/crypto/swap/SwapRepository;Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;)V
 
     return-object p2
@@ -111,7 +111,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 65
+    .line 74
     check-cast p1, Lorg/koin/core/scope/Scope;
 
     check-cast p2, Lorg/koin/core/parameter/ParametersHolder;

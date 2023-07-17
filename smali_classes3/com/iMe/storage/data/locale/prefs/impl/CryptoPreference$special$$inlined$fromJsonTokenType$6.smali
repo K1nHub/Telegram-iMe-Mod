@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/iMe/storage/data/locale/prefs/impl/CryptoPreference;->getBinanceAuthSession()Lcom/iMe/storage/data/locale/prefs/model/binancepay/BinanceAuthTokensMetadata;
+    value = Lcom/iMe/storage/data/locale/prefs/impl/CryptoPreference;->getAuthSession()Lcom/iMe/storage/data/locale/prefs/model/auth/AuthTokensMetadata;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -16,7 +16,7 @@
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Lcom/google/gson/reflect/TypeToken<",
-        "Lcom/iMe/storage/data/locale/prefs/model/binancepay/BinanceAuthTokensMetadata;",
+        "Lcom/iMe/storage/data/locale/prefs/model/auth/AuthTokensMetadata;",
         ">;"
     }
 .end annotation

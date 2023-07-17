@@ -1,6 +1,6 @@
 package org.telegram.tgnet;
 
-import com.google.android.exoplayer2.C0475C;
+import com.google.android.exoplayer2.C0480C;
 import com.google.android.exoplayer2.source.ProgressiveMediaSource;
 import org.telegram.messenger.LiteMode;
 /* loaded from: classes4.dex */
@@ -25,7 +25,7 @@ public class TLRPC$TL_channelFull extends TLRPC$ChatFull {
         this.antispam = (readInt322 & 2) != 0;
         this.participants_hidden = (readInt322 & 4) != 0;
         this.translations_disabled = (readInt322 & 8) != 0;
-        this.f1434id = abstractSerializedData.readInt64(z);
+        this.f1516id = abstractSerializedData.readInt64(z);
         this.about = abstractSerializedData.readString(z);
         if ((this.flags & 1) != 0) {
             this.participants_count = abstractSerializedData.readInt32(z);
@@ -121,7 +121,7 @@ public class TLRPC$TL_channelFull extends TLRPC$ChatFull {
         if ((this.flags & ConnectionsManager.FileTypeFile) != 0) {
             this.groupcall_default_join_as = TLRPC$Peer.TLdeserialize(abstractSerializedData, abstractSerializedData.readInt32(z), z);
         }
-        if ((this.flags & C0475C.BUFFER_FLAG_FIRST_SAMPLE) != 0) {
+        if ((this.flags & C0480C.BUFFER_FLAG_FIRST_SAMPLE) != 0) {
             this.theme_emoticon = abstractSerializedData.readString(z);
         }
         if ((this.flags & 268435456) != 0) {
@@ -177,7 +177,7 @@ public class TLRPC$TL_channelFull extends TLRPC$ChatFull {
         int i12 = this.translations_disabled ? i11 | 8 : i11 & (-9);
         this.flags2 = i12;
         abstractSerializedData.writeInt32(i12);
-        abstractSerializedData.writeInt64(this.f1434id);
+        abstractSerializedData.writeInt64(this.f1516id);
         abstractSerializedData.writeString(this.about);
         if ((this.flags & 1) != 0) {
             abstractSerializedData.writeInt32(this.participants_count);
@@ -259,7 +259,7 @@ public class TLRPC$TL_channelFull extends TLRPC$ChatFull {
         if ((this.flags & ConnectionsManager.FileTypeFile) != 0) {
             this.groupcall_default_join_as.serializeToStream(abstractSerializedData);
         }
-        if ((this.flags & C0475C.BUFFER_FLAG_FIRST_SAMPLE) != 0) {
+        if ((this.flags & C0480C.BUFFER_FLAG_FIRST_SAMPLE) != 0) {
             abstractSerializedData.writeString(this.theme_emoticon);
         }
         if ((this.flags & 268435456) != 0) {

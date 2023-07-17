@@ -27,14 +27,14 @@
 .method constructor <init>(Lorg/telegram/ui/ThemePreviewActivity;)V
     .locals 0
 
-    .line 1752
+    .line 1757
     iput-object p1, p0, Lorg/telegram/ui/ThemePreviewActivity$16;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     const/4 p1, 0x0
 
-    .line 1754
+    .line 1759
     iput p1, p0, Lorg/telegram/ui/ThemePreviewActivity$16;->rotation:I
 
     return-void
@@ -45,7 +45,7 @@
 .method public onClick(Landroid/view/View;)V
     .locals 3
 
-    .line 1758
+    .line 1763
     iget-object p1, p0, Lorg/telegram/ui/ThemePreviewActivity$16;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ThemePreviewActivity;->access$100(Lorg/telegram/ui/ThemePreviewActivity;)Lorg/telegram/ui/ThemePreviewActivity$BackgroundView;
@@ -56,7 +56,7 @@
 
     move-result-object p1
 
-    .line 1759
+    .line 1764
     iget-object v0, p0, Lorg/telegram/ui/ThemePreviewActivity$16;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ThemePreviewActivity;->access$6100(Lorg/telegram/ui/ThemePreviewActivity;)Landroid/widget/ImageView;
@@ -69,14 +69,14 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setRotation(F)V
 
-    .line 1760
+    .line 1765
     iget v0, p0, Lorg/telegram/ui/ThemePreviewActivity$16;->rotation:I
 
     add-int/lit8 v0, v0, -0x2d
 
     iput v0, p0, Lorg/telegram/ui/ThemePreviewActivity$16;->rotation:I
 
-    .line 1761
+    .line 1766
     iget-object v0, p0, Lorg/telegram/ui/ThemePreviewActivity$16;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ThemePreviewActivity;->access$6100(Lorg/telegram/ui/ThemePreviewActivity;)Landroid/widget/ImageView;
@@ -107,20 +107,20 @@
 
     invoke-virtual {v0}, Landroid/view/ViewPropertyAnimator;->start()V
 
-    .line 1762
+    .line 1767
     instance-of v0, p1, Lorg/telegram/ui/Components/MotionBackgroundDrawable;
 
     if-eqz v0, :cond_0
 
-    .line 1763
+    .line 1768
     check-cast p1, Lorg/telegram/ui/Components/MotionBackgroundDrawable;
 
-    .line 1764
+    .line 1769
     invoke-virtual {p1}, Lorg/telegram/ui/Components/MotionBackgroundDrawable;->switchToNextPosition()V
 
     goto :goto_0
 
-    .line 1766
+    .line 1771
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/ThemePreviewActivity$16;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
 

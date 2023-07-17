@@ -7,6 +7,7 @@ import com.iMe.model.staking.StakingDetailsItem;
 import com.iMe.p031ui.base.mvp.MvpBottomSheet;
 import com.iMe.p031ui.custom.BigActionButton;
 import com.iMe.p031ui.custom.DetailsIconCellView;
+import com.iMe.p031ui.custom.ImageHeaderView;
 import com.iMe.storage.domain.utils.system.ResourceManager;
 import com.iMe.utils.extentions.common.ViewExtKt;
 import com.iMe.utils.extentions.delegate.ResettableLazy;
@@ -17,11 +18,11 @@ import kotlin.jvm.internal.PropertyReference1Impl;
 import kotlin.jvm.internal.Reflection;
 import kotlin.reflect.KProperty;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3295R;
+import org.telegram.messenger.C3417R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.databinding.ForkContentStakingConditionsBinding;
-import org.telegram.p044ui.ActionBar.BaseFragment;
-import org.telegram.p044ui.ActionBar.Theme;
+import org.telegram.p043ui.ActionBar.BaseFragment;
+import org.telegram.p043ui.ActionBar.Theme;
 /* compiled from: StakingConditionsBottomSheetDialog.kt */
 /* renamed from: com.iMe.ui.wallet.staking.conditions.StakingConditionsBottomSheetDialog */
 /* loaded from: classes4.dex */
@@ -36,7 +37,7 @@ public final class StakingConditionsBottomSheetDialog extends MvpBottomSheet imp
         return Companion.newInstance(stakingDetailsItem, baseFragment);
     }
 
-    @Override // org.telegram.p044ui.ActionBar.BottomSheet
+    @Override // org.telegram.p043ui.ActionBar.BottomSheet
     protected boolean canDismissWithSwipe() {
         return false;
     }
@@ -46,7 +47,7 @@ public final class StakingConditionsBottomSheetDialog extends MvpBottomSheet imp
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
-    public StakingConditionsBottomSheetDialog(com.iMe.model.staking.StakingDetailsItem r5, org.telegram.p044ui.ActionBar.BaseFragment r6) {
+    public StakingConditionsBottomSheetDialog(com.iMe.model.staking.StakingDetailsItem r5, org.telegram.p043ui.ActionBar.BaseFragment r6) {
         /*
             r4 = this;
             java.lang.String r0 = "stakingDetails"
@@ -76,7 +77,7 @@ public final class StakingConditionsBottomSheetDialog extends MvpBottomSheet imp
             r2.append(r3)
             java.lang.String r2 = r2.toString()
             r5.<init>(r0, r2, r6)
-            org.koin.mp.KoinPlatformTools r5 = org.koin.p043mp.KoinPlatformTools.INSTANCE
+            org.koin.mp.KoinPlatformTools r5 = org.koin.p042mp.KoinPlatformTools.INSTANCE
             kotlin.LazyThreadSafetyMode r5 = r5.defaultLazyMode()
             com.iMe.ui.wallet.staking.conditions.StakingConditionsBottomSheetDialog$special$$inlined$inject$default$1 r6 = new com.iMe.ui.wallet.staking.conditions.StakingConditionsBottomSheetDialog$special$$inlined$inject$default$1
             r0 = 0
@@ -113,7 +114,9 @@ public final class StakingConditionsBottomSheetDialog extends MvpBottomSheet imp
     }
 
     @Override // com.iMe.p031ui.wallet.staking.conditions.StakingConditionsView
-    public void setupScreenWithData(int i, int i2, String name, String author, String annualPercentage, String startDate, String completionDate, String compoundThreshold, String plannedWithdrawalFeeText, String immediateWithdrawalFeeText, String finishedFeeText) {
+    public void setupScreenWithData(String iconUrl, String networkIconUrl, String name, String author, String annualPercentage, String startDate, String completionDate, String compoundThreshold, String plannedWithdrawalFeeText, String immediateWithdrawalFeeText, String finishedFeeText) {
+        Intrinsics.checkNotNullParameter(iconUrl, "iconUrl");
+        Intrinsics.checkNotNullParameter(networkIconUrl, "networkIconUrl");
         Intrinsics.checkNotNullParameter(name, "name");
         Intrinsics.checkNotNullParameter(author, "author");
         Intrinsics.checkNotNullParameter(annualPercentage, "annualPercentage");
@@ -124,16 +127,18 @@ public final class StakingConditionsBottomSheetDialog extends MvpBottomSheet imp
         Intrinsics.checkNotNullParameter(immediateWithdrawalFeeText, "immediateWithdrawalFeeText");
         Intrinsics.checkNotNullParameter(finishedFeeText, "finishedFeeText");
         ForkContentStakingConditionsBinding binding = getBinding();
-        binding.viewHeader.setupViewData(i, Integer.valueOf(i2), name, author);
-        binding.viewAnnualPercentageCell.setupViewData(getResourceManager().getString(C3295R.string.staking_details_apy_apr), annualPercentage, C3295R.C3297drawable.fork_ic_percent, true);
-        binding.viewStartDateCell.setupViewData(getResourceManager().getString(C3295R.string.staking_conditions_start), startDate, C3295R.C3297drawable.fork_ic_start, true);
-        binding.viewCompletionDateCell.setupViewData(getResourceManager().getString(C3295R.string.staking_conditions_completion), completionDate, C3295R.C3297drawable.fork_ic_done_24, true);
-        binding.viewThresholdCell.setupViewData(getResourceManager().getString(C3295R.string.staking_conditions_compound_threshold), compoundThreshold, C3295R.C3297drawable.fork_ic_donations_24, true);
-        binding.viewPlannedWithdrawalFeeCell.setupViewData(getResourceManager().getString(C3295R.string.staking_conditions_planned_withdrawal), plannedWithdrawalFeeText, C3295R.C3297drawable.fork_ic_transactions_24, true);
-        binding.viewImmediateWithdrawalFeeCell.setupViewData(getResourceManager().getString(C3295R.string.staking_conditions_immediate_withdrawal), immediateWithdrawalFeeText, C3295R.C3297drawable.fork_ic_ask_transfer_24, true);
+        ImageHeaderView viewHeader = binding.viewHeader;
+        Intrinsics.checkNotNullExpressionValue(viewHeader, "viewHeader");
+        viewHeader.setupViewData((r13 & 1) != 0 ? null : iconUrl, (r13 & 2) != 0 ? null : null, (r13 & 4) != 0 ? null : networkIconUrl, name, author);
+        binding.viewAnnualPercentageCell.setupViewData(getResourceManager().getString(C3417R.string.staking_details_apy_apr), annualPercentage, C3417R.C3419drawable.fork_ic_percent, true);
+        binding.viewStartDateCell.setupViewData(getResourceManager().getString(C3417R.string.staking_conditions_start), startDate, C3417R.C3419drawable.fork_ic_start, true);
+        binding.viewCompletionDateCell.setupViewData(getResourceManager().getString(C3417R.string.staking_conditions_completion), completionDate, C3417R.C3419drawable.fork_ic_done_24, true);
+        binding.viewThresholdCell.setupViewData(getResourceManager().getString(C3417R.string.staking_conditions_compound_threshold), compoundThreshold, C3417R.C3419drawable.fork_ic_donations_24, true);
+        binding.viewPlannedWithdrawalFeeCell.setupViewData(getResourceManager().getString(C3417R.string.staking_conditions_planned_withdrawal), plannedWithdrawalFeeText, C3417R.C3419drawable.fork_ic_transactions_24, true);
+        binding.viewImmediateWithdrawalFeeCell.setupViewData(getResourceManager().getString(C3417R.string.staking_conditions_immediate_withdrawal), immediateWithdrawalFeeText, C3417R.C3419drawable.fork_ic_ask_transfer_24, true);
         DetailsIconCellView viewFinishedFeeCell = binding.viewFinishedFeeCell;
         Intrinsics.checkNotNullExpressionValue(viewFinishedFeeCell, "viewFinishedFeeCell");
-        DetailsIconCellView.setupViewData$default(viewFinishedFeeCell, getResourceManager().getString(C3295R.string.staking_conditions_end_output), finishedFeeText, C3295R.C3297drawable.fork_ic_end_24, false, 8, null);
+        DetailsIconCellView.setupViewData$default(viewFinishedFeeCell, getResourceManager().getString(C3417R.string.staking_conditions_end_output), finishedFeeText, C3417R.C3419drawable.fork_ic_end_24, false, 8, null);
     }
 
     private final void setupColors() {
@@ -147,7 +152,7 @@ public final class StakingConditionsBottomSheetDialog extends MvpBottomSheet imp
     }
 
     private final void setupTexts() {
-        getBinding().buttonOk.setText(LocaleController.getString("OK", C3295R.string.OK));
+        getBinding().buttonOk.setText(LocaleController.getString("OK", C3417R.string.OK));
     }
 
     private final void setupListeners() {

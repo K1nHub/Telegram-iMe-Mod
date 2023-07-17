@@ -8,11 +8,11 @@ import java.util.List;
 import kotlin.collections.CollectionsKt__CollectionsKt;
 import kotlin.jvm.internal.Intrinsics;
 import moxy.InjectViewState;
-import org.telegram.messenger.C3295R;
+import org.telegram.messenger.C3417R;
 /* compiled from: CatalogUserChannelsPresenter.kt */
 @InjectViewState
 /* renamed from: com.iMe.ui.catalog.tabs.user_channels.CatalogUserChannelsPresenter */
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public final class CatalogUserChannelsPresenter extends BasePresenter<CatalogUserChannelsView> {
     public CatalogUserChannelsPresenter(ChatType chatType) {
         Intrinsics.checkNotNullParameter(chatType, "chatType");
@@ -30,7 +30,7 @@ public final class CatalogUserChannelsPresenter extends BasePresenter<CatalogUse
 
     private final void showItems() {
         List<BaseNode> mutableListOf;
-        mutableListOf = CollectionsKt__CollectionsKt.mutableListOf(new CreateCampaignItem(C3295R.C3297drawable.fork_ic_add_account_40, C3295R.string.catalog_user_channels_create));
+        mutableListOf = CollectionsKt__CollectionsKt.mutableListOf(new CreateCampaignItem(C3417R.C3419drawable.fork_ic_add_account_40, C3417R.string.catalog_user_channels_create));
         ((CatalogUserChannelsView) getViewState()).showItems(mutableListOf);
     }
 }

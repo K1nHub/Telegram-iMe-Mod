@@ -13,7 +13,7 @@ import com.iMe.p031ui.adapter.diff.FiltersDiffCallback;
 import com.iMe.utils.extentions.common.BaseQuickAdapterExtKt;
 import java.util.List;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3295R;
+import org.telegram.messenger.C3417R;
 /* compiled from: FilterProvider.kt */
 /* renamed from: com.iMe.ui.adapter.provider.FilterProvider */
 /* loaded from: classes.dex */
@@ -38,7 +38,7 @@ public final class FilterProvider extends BaseNodeProvider<FiltersListItem> {
         Intrinsics.checkNotNullParameter(filtersRecycleAdapter, "filtersRecycleAdapter");
         this.filtersRecycleAdapter = filtersRecycleAdapter;
         this.itemViewType = IdFabric$ViewTypes.FILTERS_LIST;
-        this.layoutId = C3295R.layout.fork_recycle_item_filters_list;
+        this.layoutId = C3417R.layout.fork_recycle_item_filters_list;
         this.filtersDiffCallback = new FiltersDiffCallback();
     }
 
@@ -63,7 +63,7 @@ public final class FilterProvider extends BaseNodeProvider<FiltersListItem> {
     public final void onViewRecycled(BaseViewHolder holder) {
         Intrinsics.checkNotNullParameter(holder, "holder");
         if (BaseQuickAdapterExtKt.isViewType(holder, getItemViewType())) {
-            RecyclerView.LayoutManager layoutManager = ((RecyclerView) holder.getView(C3295R.C3298id.recycle_filters)).getLayoutManager();
+            RecyclerView.LayoutManager layoutManager = ((RecyclerView) holder.getView(C3417R.C3420id.recycle_filters)).getLayoutManager();
             this.filtersScrollState = layoutManager != null ? layoutManager.onSaveInstanceState() : null;
         }
     }
@@ -72,7 +72,7 @@ public final class FilterProvider extends BaseNodeProvider<FiltersListItem> {
     public void convert(BaseViewHolder helper, FiltersListItem item) {
         Intrinsics.checkNotNullParameter(helper, "helper");
         Intrinsics.checkNotNullParameter(item, "item");
-        BaseQuickAdapterExtKt.applyForView(helper, C3295R.C3298id.recycle_filters, new FilterProvider$convert$1(this, item));
+        BaseQuickAdapterExtKt.applyForView(helper, C3417R.C3420id.recycle_filters, new FilterProvider$convert$1(this, item));
     }
 
     public void convert(BaseViewHolder helper, FiltersListItem item, List<? extends Object> payloads) {

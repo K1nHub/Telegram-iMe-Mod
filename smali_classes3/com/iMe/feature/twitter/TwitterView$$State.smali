@@ -111,71 +111,10 @@
 .method public onLoadMoreComplete()V
     .locals 3
 
-    .line 214
+    .line 230
     new-instance v0, Lcom/iMe/feature/twitter/TwitterView$$State$OnLoadMoreCompleteCommand;
 
     invoke-direct {v0, p0}, Lcom/iMe/feature/twitter/TwitterView$$State$OnLoadMoreCompleteCommand;-><init>(Lcom/iMe/feature/twitter/TwitterView$$State;)V
-
-    .line 215
-    iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
-
-    invoke-virtual {v1, v0}, Lmoxy/viewstate/ViewCommands;->beforeApply(Lmoxy/viewstate/ViewCommand;)V
-
-    .line 217
-    invoke-virtual {p0}, Lmoxy/viewstate/MvpViewState;->hasNotView()Ljava/lang/Boolean;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    return-void
-
-    .line 221
-    :cond_0
-    iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->views:Ljava/util/Set;
-
-    invoke-interface {v1}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
-
-    move-result-object v1
-
-    :goto_0
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_1
-
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Lcom/iMe/feature/twitter/TwitterView;
-
-    .line 222
-    invoke-interface {v2}, Lcom/iMe/ui/base/mvp/LoadMoreView;->onLoadMoreComplete()V
-
-    goto :goto_0
-
-    .line 225
-    :cond_1
-    iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
-
-    invoke-virtual {v1, v0}, Lmoxy/viewstate/ViewCommands;->afterApply(Lmoxy/viewstate/ViewCommand;)V
-
-    return-void
-.end method
-
-.method public onLoadMoreError()V
-    .locals 3
-
-    .line 230
-    new-instance v0, Lcom/iMe/feature/twitter/TwitterView$$State$OnLoadMoreErrorCommand;
-
-    invoke-direct {v0, p0}, Lcom/iMe/feature/twitter/TwitterView$$State$OnLoadMoreErrorCommand;-><init>(Lcom/iMe/feature/twitter/TwitterView$$State;)V
 
     .line 231
     iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
@@ -217,7 +156,7 @@
     check-cast v2, Lcom/iMe/feature/twitter/TwitterView;
 
     .line 238
-    invoke-interface {v2}, Lcom/iMe/ui/base/mvp/LoadMoreView;->onLoadMoreError()V
+    invoke-interface {v2}, Lcom/iMe/ui/base/mvp/LoadMoreView;->onLoadMoreComplete()V
 
     goto :goto_0
 
@@ -230,28 +169,20 @@
     return-void
 .end method
 
-.method public onLoadMoreItems(Ljava/util/List;)V
+.method public onLoadMoreError()V
     .locals 3
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/util/List<",
-            "Lcom/chad/library/adapter/base/entity/node/BaseNode;",
-            ">;)V"
-        }
-    .end annotation
 
-    .line 198
-    new-instance v0, Lcom/iMe/feature/twitter/TwitterView$$State$OnLoadMoreItemsCommand;
+    .line 246
+    new-instance v0, Lcom/iMe/feature/twitter/TwitterView$$State$OnLoadMoreErrorCommand;
 
-    invoke-direct {v0, p0, p1}, Lcom/iMe/feature/twitter/TwitterView$$State$OnLoadMoreItemsCommand;-><init>(Lcom/iMe/feature/twitter/TwitterView$$State;Ljava/util/List;)V
+    invoke-direct {v0, p0}, Lcom/iMe/feature/twitter/TwitterView$$State$OnLoadMoreErrorCommand;-><init>(Lcom/iMe/feature/twitter/TwitterView$$State;)V
 
-    .line 199
+    .line 247
     iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
 
     invoke-virtual {v1, v0}, Lmoxy/viewstate/ViewCommands;->beforeApply(Lmoxy/viewstate/ViewCommand;)V
 
-    .line 201
+    .line 249
     invoke-virtual {p0}, Lmoxy/viewstate/MvpViewState;->hasNotView()Ljava/lang/Boolean;
 
     move-result-object v1
@@ -264,7 +195,7 @@
 
     return-void
 
-    .line 205
+    .line 253
     :cond_0
     iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->views:Ljava/util/Set;
 
@@ -285,12 +216,81 @@
 
     check-cast v2, Lcom/iMe/feature/twitter/TwitterView;
 
-    .line 206
+    .line 254
+    invoke-interface {v2}, Lcom/iMe/ui/base/mvp/LoadMoreView;->onLoadMoreError()V
+
+    goto :goto_0
+
+    .line 257
+    :cond_1
+    iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
+
+    invoke-virtual {v1, v0}, Lmoxy/viewstate/ViewCommands;->afterApply(Lmoxy/viewstate/ViewCommand;)V
+
+    return-void
+.end method
+
+.method public onLoadMoreItems(Ljava/util/List;)V
+    .locals 3
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/List<",
+            "Lcom/chad/library/adapter/base/entity/node/BaseNode;",
+            ">;)V"
+        }
+    .end annotation
+
+    .line 214
+    new-instance v0, Lcom/iMe/feature/twitter/TwitterView$$State$OnLoadMoreItemsCommand;
+
+    invoke-direct {v0, p0, p1}, Lcom/iMe/feature/twitter/TwitterView$$State$OnLoadMoreItemsCommand;-><init>(Lcom/iMe/feature/twitter/TwitterView$$State;Ljava/util/List;)V
+
+    .line 215
+    iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
+
+    invoke-virtual {v1, v0}, Lmoxy/viewstate/ViewCommands;->beforeApply(Lmoxy/viewstate/ViewCommand;)V
+
+    .line 217
+    invoke-virtual {p0}, Lmoxy/viewstate/MvpViewState;->hasNotView()Ljava/lang/Boolean;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    return-void
+
+    .line 221
+    :cond_0
+    iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->views:Ljava/util/Set;
+
+    invoke-interface {v1}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    :goto_0
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_1
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lcom/iMe/feature/twitter/TwitterView;
+
+    .line 222
     invoke-interface {v2, p1}, Lcom/iMe/ui/base/mvp/LoadMoreView;->onLoadMoreItems(Ljava/util/List;)V
 
     goto :goto_0
 
-    .line 209
+    .line 225
     :cond_1
     iget-object p1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
 
@@ -356,6 +356,14 @@
     iget-object p1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
 
     invoke-virtual {p1, v0}, Lmoxy/viewstate/ViewCommands;->afterApply(Lmoxy/viewstate/ViewCommand;)V
+
+    return-void
+.end method
+
+.method public synthetic removeSelfFromStackImmediately()V
+    .locals 0
+
+    invoke-static {p0}, Lcom/iMe/ui/base/mvp/base/BaseView$-CC;->$default$removeSelfFromStackImmediately(Lcom/iMe/ui/base/mvp/base/BaseView;)V
 
     return-void
 .end method
@@ -703,17 +711,17 @@
 .method public showRefreshing(Z)V
     .locals 3
 
-    .line 262
+    .line 278
     new-instance v0, Lcom/iMe/feature/twitter/TwitterView$$State$ShowRefreshingCommand;
 
     invoke-direct {v0, p0, p1}, Lcom/iMe/feature/twitter/TwitterView$$State$ShowRefreshingCommand;-><init>(Lcom/iMe/feature/twitter/TwitterView$$State;Z)V
 
-    .line 263
+    .line 279
     iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
 
     invoke-virtual {v1, v0}, Lmoxy/viewstate/ViewCommands;->beforeApply(Lmoxy/viewstate/ViewCommand;)V
 
-    .line 265
+    .line 281
     invoke-virtual {p0}, Lmoxy/viewstate/MvpViewState;->hasNotView()Ljava/lang/Boolean;
 
     move-result-object v1
@@ -726,7 +734,7 @@
 
     return-void
 
-    .line 269
+    .line 285
     :cond_0
     iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->views:Ljava/util/Set;
 
@@ -747,12 +755,12 @@
 
     check-cast v2, Lcom/iMe/feature/twitter/TwitterView;
 
-    .line 270
+    .line 286
     invoke-interface {v2, p1}, Lcom/iMe/ui/base/mvp/SwipeRefreshView;->showRefreshing(Z)V
 
     goto :goto_0
 
-    .line 273
+    .line 289
     :cond_1
     iget-object p1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
 

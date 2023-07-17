@@ -27,7 +27,7 @@
 
 
 # instance fields
-.field final synthetic $networkType:Lcom/iMe/storage/domain/model/crypto/NetworkType;
+.field final synthetic $networkId:Ljava/lang/String;
 
 .field final synthetic $requestId:J
 
@@ -35,14 +35,14 @@
 
 
 # direct methods
-.method constructor <init>(JLcom/iMe/model/wallet/crypto/wallet_connect/WalletConnectSessionItem;Lcom/iMe/storage/domain/model/crypto/NetworkType;)V
+.method constructor <init>(JLcom/iMe/model/wallet/crypto/wallet_connect/WalletConnectSessionItem;Ljava/lang/String;)V
     .locals 0
 
     iput-wide p1, p0, Lcom/iMe/ui/wallet/crypto/wallet_connect/network_change/WalletConnectSwitchNetworkBottomSheetDialog$presenter$2$1;->$requestId:J
 
     iput-object p3, p0, Lcom/iMe/ui/wallet/crypto/wallet_connect/network_change/WalletConnectSwitchNetworkBottomSheetDialog$presenter$2$1;->$sessionItem:Lcom/iMe/model/wallet/crypto/wallet_connect/WalletConnectSessionItem;
 
-    iput-object p4, p0, Lcom/iMe/ui/wallet/crypto/wallet_connect/network_change/WalletConnectSwitchNetworkBottomSheetDialog$presenter$2$1;->$networkType:Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    iput-object p4, p0, Lcom/iMe/ui/wallet/crypto/wallet_connect/network_change/WalletConnectSwitchNetworkBottomSheetDialog$presenter$2$1;->$networkId:Ljava/lang/String;
 
     const/4 p1, 0x0
 
@@ -56,7 +56,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 31
+    .line 29
     invoke-virtual {p0}, Lcom/iMe/ui/wallet/crypto/wallet_connect/network_change/WalletConnectSwitchNetworkBottomSheetDialog$presenter$2$1;->invoke()Lorg/koin/core/parameter/ParametersHolder;
 
     move-result-object v0
@@ -71,7 +71,7 @@
 
     new-array v0, v0, [Ljava/lang/Object;
 
-    .line 31
+    .line 29
     iget-wide v1, p0, Lcom/iMe/ui/wallet/crypto/wallet_connect/network_change/WalletConnectSwitchNetworkBottomSheetDialog$presenter$2$1;->$requestId:J
 
     invoke-static {v1, v2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -88,7 +88,7 @@
 
     aput-object v1, v0, v2
 
-    iget-object v1, p0, Lcom/iMe/ui/wallet/crypto/wallet_connect/network_change/WalletConnectSwitchNetworkBottomSheetDialog$presenter$2$1;->$networkType:Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    iget-object v1, p0, Lcom/iMe/ui/wallet/crypto/wallet_connect/network_change/WalletConnectSwitchNetworkBottomSheetDialog$presenter$2$1;->$networkId:Ljava/lang/String;
 
     const/4 v2, 0x2
 

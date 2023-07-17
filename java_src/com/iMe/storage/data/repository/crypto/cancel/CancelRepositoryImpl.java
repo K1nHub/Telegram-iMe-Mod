@@ -4,7 +4,7 @@ import com.iMe.storage.data.datasource.cancel.WalletCancelDataSourceFactory;
 import com.iMe.storage.data.network.api.own.CancelApi;
 import com.iMe.storage.data.network.handlers.impl.ApiErrorHandler;
 import com.iMe.storage.data.network.handlers.impl.FirebaseFunctionsErrorHandler;
-import com.iMe.storage.data.network.model.request.crypto.cancel.GetDataForCancelOrBoostCryptoTransactionRequest;
+import com.iMe.storage.data.network.model.request.crypto.cancel.PrepareSpeedUpOrCancelTransactionRequest;
 import com.iMe.storage.data.utils.extentions.FirebaseExtKt$sam$i$io_reactivex_functions_Function$0;
 import com.iMe.storage.data.utils.extentions.RxExtKt$sam$i$io_reactivex_functions_Function$0;
 import com.iMe.storage.domain.model.Result;
@@ -35,9 +35,9 @@ public final class CancelRepositoryImpl implements CancelRepository {
     @Override // com.iMe.storage.domain.repository.crypto.cancel.CancelRepository
     public Observable<Result<CryptoCancelMetadata>> getCryptoCancelMetadata(String txHash) {
         Intrinsics.checkNotNullParameter(txHash, "txHash");
-        Observable<R> map = this.cancelApi.getDataForCancelCryptoTransaction(new GetDataForCancelOrBoostCryptoTransactionRequest(txHash)).map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new C1872xd0a5ed(this.firebaseErrorHandler)));
+        Observable<R> map = this.cancelApi.getDataForCancelCryptoTransaction(new PrepareSpeedUpOrCancelTransactionRequest(txHash)).map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new C1881xd0a5ed(this.firebaseErrorHandler)));
         Intrinsics.checkNotNullExpressionValue(map, "errorHandler: FirebaseFu…response).toError()\n    }");
-        Observable<Result<CryptoCancelMetadata>> onErrorReturn = map.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new C1871xfc4bd054(this.errorHandler)));
+        Observable<Result<CryptoCancelMetadata>> onErrorReturn = map.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new C1880xfc4bd054(this.errorHandler)));
         Intrinsics.checkNotNullExpressionValue(onErrorReturn, "errorHandler: ErrorHandl…ndleError(it).toError() }");
         return onErrorReturn;
     }
@@ -45,7 +45,7 @@ public final class CancelRepositoryImpl implements CancelRepository {
     @Override // com.iMe.storage.domain.repository.crypto.cancel.CancelRepository
     public Observable<Result<String>> cancel(CancelArgs args) {
         Intrinsics.checkNotNullParameter(args, "args");
-        Observable<Result<String>> onErrorReturn = this.cancelDataSourceFactory.getDataSource(args.getToken()).cancel(args).onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new CancelRepositoryImpl$cancel$$inlined$handleError$1(this.errorHandler)));
+        Observable<Result<String>> onErrorReturn = this.cancelDataSourceFactory.getDataSource(args.getNetworkId()).cancel(args).onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new CancelRepositoryImpl$cancel$$inlined$handleError$1(this.errorHandler)));
         Intrinsics.checkNotNullExpressionValue(onErrorReturn, "errorHandler: ErrorHandl…ndleError(it).toError() }");
         return onErrorReturn;
     }

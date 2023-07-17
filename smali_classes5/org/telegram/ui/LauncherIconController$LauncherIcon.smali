@@ -118,7 +118,7 @@
 .method static constructor <clinit>()V
     .locals 65
 
-    .line 53
+    .line 56
     new-instance v8, Lorg/telegram/ui/LauncherIconController$LauncherIcon;
 
     sget v9, Lorg/telegram/messenger/R$mipmap;->fork_launcher_foreground:I
@@ -143,7 +143,7 @@
 
     sput-object v8, Lorg/telegram/ui/LauncherIconController$LauncherIcon;->DEFAULT:Lorg/telegram/ui/LauncherIconController$LauncherIcon;
 
-    .line 54
+    .line 57
     new-instance v10, Lorg/telegram/ui/LauncherIconController$LauncherIcon;
 
     sget v11, Lorg/telegram/messenger/R$mipmap;->fork_launcher_aqua_background:I
@@ -166,7 +166,7 @@
 
     sput-object v10, Lorg/telegram/ui/LauncherIconController$LauncherIcon;->AQUA:Lorg/telegram/ui/LauncherIconController$LauncherIcon;
 
-    .line 55
+    .line 58
     new-instance v12, Lorg/telegram/ui/LauncherIconController$LauncherIcon;
 
     sget v13, Lorg/telegram/messenger/R$mipmap;->fork_launcher_sunset_background:I
@@ -187,7 +187,7 @@
 
     sput-object v12, Lorg/telegram/ui/LauncherIconController$LauncherIcon;->SUNSET:Lorg/telegram/ui/LauncherIconController$LauncherIcon;
 
-    .line 56
+    .line 59
     new-instance v14, Lorg/telegram/ui/LauncherIconController$LauncherIcon;
 
     sget v15, Lorg/telegram/messenger/R$mipmap;->fork_launcher_blue_light_background:I
@@ -208,7 +208,7 @@
 
     sput-object v14, Lorg/telegram/ui/LauncherIconController$LauncherIcon;->BLUE_LIGHT:Lorg/telegram/ui/LauncherIconController$LauncherIcon;
 
-    .line 57
+    .line 60
     new-instance v16, Lorg/telegram/ui/LauncherIconController$LauncherIcon;
 
     sget v17, Lorg/telegram/messenger/R$mipmap;->fork_launcher_neuro_background:I
@@ -229,7 +229,7 @@
 
     sput-object v16, Lorg/telegram/ui/LauncherIconController$LauncherIcon;->NEURO:Lorg/telegram/ui/LauncherIconController$LauncherIcon;
 
-    .line 58
+    .line 61
     new-instance v26, Lorg/telegram/ui/LauncherIconController$LauncherIcon;
 
     sget v22, Lorg/telegram/messenger/R$mipmap;->fork_launcher_star_background:I
@@ -254,7 +254,7 @@
 
     sput-object v26, Lorg/telegram/ui/LauncherIconController$LauncherIcon;->STAR:Lorg/telegram/ui/LauncherIconController$LauncherIcon;
 
-    .line 59
+    .line 62
     new-instance v18, Lorg/telegram/ui/LauncherIconController$LauncherIcon;
 
     sget v4, Lorg/telegram/messenger/R$mipmap;->fork_launcher_rocket_background:I
@@ -277,7 +277,7 @@
 
     sput-object v18, Lorg/telegram/ui/LauncherIconController$LauncherIcon;->ROCKET:Lorg/telegram/ui/LauncherIconController$LauncherIcon;
 
-    .line 60
+    .line 63
     new-instance v19, Lorg/telegram/ui/LauncherIconController$LauncherIcon;
 
     sget v4, Lorg/telegram/messenger/R$mipmap;->fork_launcher_space_background:I
@@ -300,7 +300,7 @@
 
     sput-object v19, Lorg/telegram/ui/LauncherIconController$LauncherIcon;->SPACE:Lorg/telegram/ui/LauncherIconController$LauncherIcon;
 
-    .line 61
+    .line 64
     new-instance v20, Lorg/telegram/ui/LauncherIconController$LauncherIcon;
 
     sget v21, Lorg/telegram/messenger/R$mipmap;->fork_launcher_lime_foreground:I
@@ -325,7 +325,7 @@
 
     sput-object v20, Lorg/telegram/ui/LauncherIconController$LauncherIcon;->LIME_ERC20:Lorg/telegram/ui/LauncherIconController$LauncherIcon;
 
-    .line 62
+    .line 65
     new-instance v22, Lorg/telegram/ui/LauncherIconController$LauncherIcon;
 
     sget v6, Lorg/telegram/messenger/R$string;->settings_interface_app_icon_lime_bep20:I
@@ -348,7 +348,7 @@
 
     sput-object v22, Lorg/telegram/ui/LauncherIconController$LauncherIcon;->LIME_BEP20:Lorg/telegram/ui/LauncherIconController$LauncherIcon;
 
-    .line 63
+    .line 66
     new-instance v23, Lorg/telegram/ui/LauncherIconController$LauncherIcon;
 
     sget v6, Lorg/telegram/messenger/R$string;->settings_interface_app_icon_lime_polygon:I
@@ -367,7 +367,7 @@
 
     sput-object v23, Lorg/telegram/ui/LauncherIconController$LauncherIcon;->LIME_POLYGON:Lorg/telegram/ui/LauncherIconController$LauncherIcon;
 
-    .line 64
+    .line 67
     new-instance v24, Lorg/telegram/ui/LauncherIconController$LauncherIcon;
 
     sget v6, Lorg/telegram/messenger/R$string;->settings_interface_app_icon_lime_aqua:I
@@ -388,7 +388,7 @@
 
     sput-object v24, Lorg/telegram/ui/LauncherIconController$LauncherIcon;->LIME_AQUA:Lorg/telegram/ui/LauncherIconController$LauncherIcon;
 
-    .line 65
+    .line 68
     new-instance v11, Lorg/telegram/ui/LauncherIconController$LauncherIcon;
 
     sget v6, Lorg/telegram/messenger/R$string;->settings_interface_app_icon_lime_sunset:I
@@ -407,7 +407,7 @@
 
     sput-object v11, Lorg/telegram/ui/LauncherIconController$LauncherIcon;->LIME_SUNSET:Lorg/telegram/ui/LauncherIconController$LauncherIcon;
 
-    .line 66
+    .line 69
     new-instance v13, Lorg/telegram/ui/LauncherIconController$LauncherIcon;
 
     sget v6, Lorg/telegram/messenger/R$string;->settings_interface_app_icon_lime_blue_light:I
@@ -426,7 +426,7 @@
 
     sput-object v13, Lorg/telegram/ui/LauncherIconController$LauncherIcon;->LIME_BLUE_LIGHT:Lorg/telegram/ui/LauncherIconController$LauncherIcon;
 
-    .line 67
+    .line 70
     new-instance v15, Lorg/telegram/ui/LauncherIconController$LauncherIcon;
 
     sget v6, Lorg/telegram/messenger/R$string;->settings_interface_app_icon_lime_neuro:I
@@ -445,7 +445,7 @@
 
     sput-object v15, Lorg/telegram/ui/LauncherIconController$LauncherIcon;->LIME_NEURO:Lorg/telegram/ui/LauncherIconController$LauncherIcon;
 
-    .line 68
+    .line 71
     new-instance v17, Lorg/telegram/ui/LauncherIconController$LauncherIcon;
 
     sget v6, Lorg/telegram/messenger/R$string;->settings_interface_app_icon_black:I
@@ -468,7 +468,7 @@
 
     sput-object v17, Lorg/telegram/ui/LauncherIconController$LauncherIcon;->BLACK:Lorg/telegram/ui/LauncherIconController$LauncherIcon;
 
-    .line 69
+    .line 72
     new-instance v21, Lorg/telegram/ui/LauncherIconController$LauncherIcon;
 
     sget v46, Lorg/telegram/messenger/R$mipmap;->fork_launcher_winter_background:I
@@ -491,7 +491,7 @@
 
     sput-object v21, Lorg/telegram/ui/LauncherIconController$LauncherIcon;->WINTER:Lorg/telegram/ui/LauncherIconController$LauncherIcon;
 
-    .line 70
+    .line 73
     new-instance v25, Lorg/telegram/ui/LauncherIconController$LauncherIcon;
 
     sget v4, Lorg/telegram/messenger/R$mipmap;->fork_launcher_spring_background:I
@@ -514,7 +514,7 @@
 
     sput-object v25, Lorg/telegram/ui/LauncherIconController$LauncherIcon;->SPRING:Lorg/telegram/ui/LauncherIconController$LauncherIcon;
 
-    .line 71
+    .line 74
     new-instance v50, Lorg/telegram/ui/LauncherIconController$LauncherIcon;
 
     sget v46, Lorg/telegram/messenger/R$mipmap;->fork_launcher_summer_background:I
@@ -535,7 +535,7 @@
 
     sput-object v50, Lorg/telegram/ui/LauncherIconController$LauncherIcon;->SUMMER:Lorg/telegram/ui/LauncherIconController$LauncherIcon;
 
-    .line 72
+    .line 75
     new-instance v43, Lorg/telegram/ui/LauncherIconController$LauncherIcon;
 
     sget v4, Lorg/telegram/messenger/R$mipmap;->fork_launcher_autumn_background:I
@@ -556,7 +556,7 @@
 
     sput-object v43, Lorg/telegram/ui/LauncherIconController$LauncherIcon;->AUTUMN:Lorg/telegram/ui/LauncherIconController$LauncherIcon;
 
-    .line 73
+    .line 76
     new-instance v44, Lorg/telegram/ui/LauncherIconController$LauncherIcon;
 
     sget v6, Lorg/telegram/messenger/R$string;->settings_interface_app_icon_red:I
@@ -579,7 +579,7 @@
 
     sput-object v44, Lorg/telegram/ui/LauncherIconController$LauncherIcon;->RED:Lorg/telegram/ui/LauncherIconController$LauncherIcon;
 
-    .line 74
+    .line 77
     new-instance v45, Lorg/telegram/ui/LauncherIconController$LauncherIcon;
 
     sget v6, Lorg/telegram/messenger/R$string;->settings_interface_app_icon_purple:I
@@ -598,7 +598,7 @@
 
     sput-object v45, Lorg/telegram/ui/LauncherIconController$LauncherIcon;->PURPLE:Lorg/telegram/ui/LauncherIconController$LauncherIcon;
 
-    .line 75
+    .line 78
     new-instance v46, Lorg/telegram/ui/LauncherIconController$LauncherIcon;
 
     sget v6, Lorg/telegram/messenger/R$string;->settings_interface_app_icon_pink:I
@@ -617,7 +617,7 @@
 
     sput-object v46, Lorg/telegram/ui/LauncherIconController$LauncherIcon;->PINK:Lorg/telegram/ui/LauncherIconController$LauncherIcon;
 
-    .line 76
+    .line 79
     new-instance v47, Lorg/telegram/ui/LauncherIconController$LauncherIcon;
 
     sget v6, Lorg/telegram/messenger/R$string;->settings_interface_app_icon_indigo:I
@@ -636,7 +636,7 @@
 
     sput-object v47, Lorg/telegram/ui/LauncherIconController$LauncherIcon;->INDIGO:Lorg/telegram/ui/LauncherIconController$LauncherIcon;
 
-    .line 77
+    .line 80
     new-instance v48, Lorg/telegram/ui/LauncherIconController$LauncherIcon;
 
     sget v6, Lorg/telegram/messenger/R$string;->settings_interface_app_icon_green:I
@@ -655,7 +655,7 @@
 
     sput-object v48, Lorg/telegram/ui/LauncherIconController$LauncherIcon;->GREEN:Lorg/telegram/ui/LauncherIconController$LauncherIcon;
 
-    .line 78
+    .line 81
     new-instance v49, Lorg/telegram/ui/LauncherIconController$LauncherIcon;
 
     sget v6, Lorg/telegram/messenger/R$string;->settings_interface_app_icon_mint:I
@@ -674,7 +674,7 @@
 
     sput-object v49, Lorg/telegram/ui/LauncherIconController$LauncherIcon;->MINT:Lorg/telegram/ui/LauncherIconController$LauncherIcon;
 
-    .line 79
+    .line 82
     new-instance v51, Lorg/telegram/ui/LauncherIconController$LauncherIcon;
 
     sget v6, Lorg/telegram/messenger/R$string;->settings_interface_app_icon_yellow:I
@@ -693,7 +693,7 @@
 
     sput-object v51, Lorg/telegram/ui/LauncherIconController$LauncherIcon;->YELLOW:Lorg/telegram/ui/LauncherIconController$LauncherIcon;
 
-    .line 80
+    .line 83
     new-instance v52, Lorg/telegram/ui/LauncherIconController$LauncherIcon;
 
     sget v6, Lorg/telegram/messenger/R$string;->settings_interface_app_icon_peach:I
@@ -712,7 +712,7 @@
 
     sput-object v52, Lorg/telegram/ui/LauncherIconController$LauncherIcon;->PEACH:Lorg/telegram/ui/LauncherIconController$LauncherIcon;
 
-    .line 81
+    .line 84
     new-instance v53, Lorg/telegram/ui/LauncherIconController$LauncherIcon;
 
     sget v6, Lorg/telegram/messenger/R$string;->settings_interface_app_icon_melon:I
@@ -731,7 +731,7 @@
 
     sput-object v53, Lorg/telegram/ui/LauncherIconController$LauncherIcon;->MELON:Lorg/telegram/ui/LauncherIconController$LauncherIcon;
 
-    .line 82
+    .line 85
     new-instance v54, Lorg/telegram/ui/LauncherIconController$LauncherIcon;
 
     sget v6, Lorg/telegram/messenger/R$string;->settings_interface_app_icon_coffee:I
@@ -750,7 +750,7 @@
 
     sput-object v54, Lorg/telegram/ui/LauncherIconController$LauncherIcon;->COFFEE:Lorg/telegram/ui/LauncherIconController$LauncherIcon;
 
-    .line 83
+    .line 86
     new-instance v55, Lorg/telegram/ui/LauncherIconController$LauncherIcon;
 
     sget v6, Lorg/telegram/messenger/R$string;->settings_interface_app_icon_brown:I
@@ -769,7 +769,7 @@
 
     sput-object v55, Lorg/telegram/ui/LauncherIconController$LauncherIcon;->BROWN:Lorg/telegram/ui/LauncherIconController$LauncherIcon;
 
-    .line 84
+    .line 87
     new-instance v56, Lorg/telegram/ui/LauncherIconController$LauncherIcon;
 
     sget v6, Lorg/telegram/messenger/R$string;->settings_interface_app_icon_gray:I
@@ -788,7 +788,7 @@
 
     sput-object v56, Lorg/telegram/ui/LauncherIconController$LauncherIcon;->GRAY:Lorg/telegram/ui/LauncherIconController$LauncherIcon;
 
-    .line 85
+    .line 88
     new-instance v9, Lorg/telegram/ui/LauncherIconController$LauncherIcon;
 
     sget v62, Lorg/telegram/messenger/R$mipmap;->fork_launcher_white_foreground:I
@@ -811,7 +811,7 @@
 
     sput-object v9, Lorg/telegram/ui/LauncherIconController$LauncherIcon;->WHITE:Lorg/telegram/ui/LauncherIconController$LauncherIcon;
 
-    .line 87
+    .line 90
     new-instance v57, Lorg/telegram/ui/LauncherIconController$LauncherIcon;
 
     sget v4, Lorg/telegram/messenger/R$drawable;->icon_3_background_sa:I
@@ -834,7 +834,7 @@
 
     sput-object v57, Lorg/telegram/ui/LauncherIconController$LauncherIcon;->PREMIUM:Lorg/telegram/ui/LauncherIconController$LauncherIcon;
 
-    .line 88
+    .line 91
     new-instance v0, Lorg/telegram/ui/LauncherIconController$LauncherIcon;
 
     sget v32, Lorg/telegram/messenger/R$drawable;->icon_5_background_sa:I
@@ -855,7 +855,7 @@
 
     sput-object v0, Lorg/telegram/ui/LauncherIconController$LauncherIcon;->TURBO:Lorg/telegram/ui/LauncherIconController$LauncherIcon;
 
-    .line 89
+    .line 92
     new-instance v1, Lorg/telegram/ui/LauncherIconController$LauncherIcon;
 
     sget v39, Lorg/telegram/messenger/R$drawable;->icon_2_background_sa:I
@@ -1024,7 +1024,7 @@
 
     aput-object v1, v2, v0
 
-    .line 46
+    .line 49
     sput-object v2, Lorg/telegram/ui/LauncherIconController$LauncherIcon;->$VALUES:[Lorg/telegram/ui/LauncherIconController$LauncherIcon;
 
     return-void
@@ -1058,7 +1058,7 @@
 
     move/from16 v8, p7
 
-    .line 120
+    .line 123
     invoke-direct/range {v0 .. v8}, Lorg/telegram/ui/LauncherIconController$LauncherIcon;-><init>(Ljava/lang/String;ILjava/lang/String;IIIZI)V
 
     return-void
@@ -1092,7 +1092,7 @@
 
     move/from16 v7, p7
 
-    .line 98
+    .line 101
     invoke-direct/range {v0 .. v8}, Lorg/telegram/ui/LauncherIconController$LauncherIcon;-><init>(Ljava/lang/String;ILjava/lang/String;IIIZI)V
 
     return-void
@@ -1108,25 +1108,25 @@
         }
     .end annotation
 
-    .line 123
+    .line 126
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    .line 124
+    .line 127
     iput p8, p0, Lorg/telegram/ui/LauncherIconController$LauncherIcon;->backgroundColor:I
 
-    .line 125
+    .line 128
     iput-object p3, p0, Lorg/telegram/ui/LauncherIconController$LauncherIcon;->key:Ljava/lang/String;
 
-    .line 126
+    .line 129
     iput p4, p0, Lorg/telegram/ui/LauncherIconController$LauncherIcon;->background:I
 
-    .line 127
+    .line 130
     iput p5, p0, Lorg/telegram/ui/LauncherIconController$LauncherIcon;->foreground:I
 
-    .line 128
+    .line 131
     iput p6, p0, Lorg/telegram/ui/LauncherIconController$LauncherIcon;->title:I
 
-    .line 129
+    .line 132
     iput-boolean p7, p0, Lorg/telegram/ui/LauncherIconController$LauncherIcon;->premium:Z
 
     return-void
@@ -1135,7 +1135,7 @@
 .method public static valueOf(Ljava/lang/String;)Lorg/telegram/ui/LauncherIconController$LauncherIcon;
     .locals 1
 
-    .line 46
+    .line 49
     const-class v0, Lorg/telegram/ui/LauncherIconController$LauncherIcon;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -1150,7 +1150,7 @@
 .method public static values()[Lorg/telegram/ui/LauncherIconController$LauncherIcon;
     .locals 1
 
-    .line 46
+    .line 49
     sget-object v0, Lorg/telegram/ui/LauncherIconController$LauncherIcon;->$VALUES:[Lorg/telegram/ui/LauncherIconController$LauncherIcon;
 
     invoke-virtual {v0}, [Lorg/telegram/ui/LauncherIconController$LauncherIcon;->clone()Ljava/lang/Object;
@@ -1167,12 +1167,12 @@
 .method public getComponentName(Landroid/content/Context;)Landroid/content/ComponentName;
     .locals 3
 
-    .line 112
+    .line 115
     iget-object v0, p0, Lorg/telegram/ui/LauncherIconController$LauncherIcon;->componentName:Landroid/content/ComponentName;
 
     if-nez v0, :cond_0
 
-    .line 114
+    .line 117
     new-instance v0, Landroid/content/ComponentName;
 
     invoke-virtual {p1}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
@@ -1203,7 +1203,7 @@
 
     iput-object v0, p0, Lorg/telegram/ui/LauncherIconController$LauncherIcon;->componentName:Landroid/content/ComponentName;
 
-    .line 116
+    .line 119
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/LauncherIconController$LauncherIcon;->componentName:Landroid/content/ComponentName;
 

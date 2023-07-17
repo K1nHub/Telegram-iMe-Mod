@@ -558,7 +558,7 @@
 .method importKeys([B[B)V
     .locals 2
 
-    const-string v0, "secretKeySeed == null"
+    const-string/jumbo v0, "secretKeySeed == null"
 
     invoke-static {p1, v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 

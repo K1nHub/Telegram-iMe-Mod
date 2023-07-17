@@ -96,7 +96,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 import com.android.internal.telephony.ITelephony;
-import com.google.android.exoplayer2.C0475C;
+import com.google.android.exoplayer2.C0480C;
 import com.google.android.exoplayer2.MediaPeriodQueue;
 import com.google.android.exoplayer2.source.rtsp.RtpPacket;
 import com.google.android.exoplayer2.source.rtsp.SessionDescription;
@@ -143,39 +143,39 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import org.telegram.PhoneFormat.C3212PhoneFormat;
+import org.telegram.PhoneFormat.C3333PhoneFormat;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.browser.Browser;
 import org.telegram.messenger.utils.CustomHtml;
-import org.telegram.p044ui.ActionBar.AlertDialog;
-import org.telegram.p044ui.ActionBar.BaseFragment;
-import org.telegram.p044ui.ActionBar.BottomSheet;
-import org.telegram.p044ui.ActionBar.INavigationLayout;
-import org.telegram.p044ui.ActionBar.Theme;
-import org.telegram.p044ui.Cells.TextDetailSettingsCell;
-import org.telegram.p044ui.ChatActivity;
-import org.telegram.p044ui.ChatBackgroundDrawable;
-import org.telegram.p044ui.Components.AlertsCreator;
-import org.telegram.p044ui.Components.BackgroundGradientDrawable;
-import org.telegram.p044ui.Components.BulletinFactory;
-import org.telegram.p044ui.Components.CubicBezierInterpolator;
-import org.telegram.p044ui.Components.EllipsizeSpanAnimator;
-import org.telegram.p044ui.Components.ForegroundColorSpanThemable;
-import org.telegram.p044ui.Components.ForegroundDetector;
-import org.telegram.p044ui.Components.HideViewAfterAnimation;
-import org.telegram.p044ui.Components.LayoutHelper;
-import org.telegram.p044ui.Components.MotionBackgroundDrawable;
-import org.telegram.p044ui.Components.PickerBottomLayout;
-import org.telegram.p044ui.Components.RecyclerListView;
-import org.telegram.p044ui.Components.ShareAlert;
-import org.telegram.p044ui.Components.TypefaceSpan;
-import org.telegram.p044ui.Components.URLSpanReplacement;
-import org.telegram.p044ui.Components.UndoView;
-import org.telegram.p044ui.LaunchActivity;
-import org.telegram.p044ui.ThemePreviewActivity;
-import org.telegram.p044ui.WallpapersListActivity;
+import org.telegram.p043ui.ActionBar.AlertDialog;
+import org.telegram.p043ui.ActionBar.BaseFragment;
+import org.telegram.p043ui.ActionBar.BottomSheet;
+import org.telegram.p043ui.ActionBar.INavigationLayout;
+import org.telegram.p043ui.ActionBar.Theme;
+import org.telegram.p043ui.Cells.TextDetailSettingsCell;
+import org.telegram.p043ui.ChatActivity;
+import org.telegram.p043ui.ChatBackgroundDrawable;
+import org.telegram.p043ui.Components.AlertsCreator;
+import org.telegram.p043ui.Components.BackgroundGradientDrawable;
+import org.telegram.p043ui.Components.BulletinFactory;
+import org.telegram.p043ui.Components.CubicBezierInterpolator;
+import org.telegram.p043ui.Components.EllipsizeSpanAnimator;
+import org.telegram.p043ui.Components.ForegroundColorSpanThemable;
+import org.telegram.p043ui.Components.ForegroundDetector;
+import org.telegram.p043ui.Components.HideViewAfterAnimation;
+import org.telegram.p043ui.Components.LayoutHelper;
+import org.telegram.p043ui.Components.MotionBackgroundDrawable;
+import org.telegram.p043ui.Components.PickerBottomLayout;
+import org.telegram.p043ui.Components.RecyclerListView;
+import org.telegram.p043ui.Components.ShareAlert;
+import org.telegram.p043ui.Components.TypefaceSpan;
+import org.telegram.p043ui.Components.URLSpanReplacement;
+import org.telegram.p043ui.Components.UndoView;
+import org.telegram.p043ui.LaunchActivity;
+import org.telegram.p043ui.ThemePreviewActivity;
+import org.telegram.p043ui.WallpapersListActivity;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.RequestTimeDelegate;
 import org.telegram.tgnet.TLRPC$Document;
@@ -343,7 +343,7 @@ public class AndroidUtilities {
     public static String formatNumber(long j) {
         StringBuilder sb;
         if (j == Long.MIN_VALUE) {
-            return formatNumber(C0475C.TIME_UNSET);
+            return formatNumber(C0480C.TIME_UNSET);
         }
         if (j < 0) {
             return "-" + formatNumber(-j);
@@ -351,11 +351,11 @@ public class AndroidUtilities {
             return Long.toString(j);
         } else {
             TreeMap treeMap = new TreeMap();
-            String[] stringArray = ApplicationLoader.applicationContext.getResources().getStringArray(C3295R.array.short_numbers);
+            String[] stringArray = ApplicationLoader.applicationContext.getResources().getStringArray(C3417R.array.short_numbers);
             boolean z = false;
             treeMap.put(1000L, stringArray[0]);
             treeMap.put(1000000L, stringArray[1]);
-            treeMap.put(Long.valueOf((long) C0475C.NANOS_PER_SECOND), stringArray[2]);
+            treeMap.put(Long.valueOf((long) C0480C.NANOS_PER_SECOND), stringArray[2]);
             treeMap.put(Long.valueOf((long) MediaPeriodQueue.INITIAL_RENDERER_POSITION_OFFSET_US), stringArray[3]);
             Map.Entry floorEntry = treeMap.floorEntry(Long.valueOf(j));
             if (floorEntry == null) {
@@ -424,19 +424,22 @@ public class AndroidUtilities {
         UndoView undoView = baseFragment instanceof ChatActivity ? ((ChatActivity) baseFragment).getUndoView() : null;
         if (!pathToMessage.exists()) {
             if (undoView != null) {
-                undoView.showError(LocaleController.getString("ErrorOccurred", C3295R.string.ErrorOccurred));
+                undoView.showError(LocaleController.getString("ErrorOccurred", C3417R.string.ErrorOccurred));
                 return;
             } else {
-                BulletinFactory.m30of(baseFragment.getLayoutContainer(), baseFragment.getResourceProvider()).createSimpleBulletin(C3295R.raw.error, LocaleController.getString("ErrorOccurred", C3295R.string.ErrorOccurred)).show();
+                BulletinFactory.m30of(baseFragment.getLayoutContainer(), baseFragment.getResourceProvider()).createSimpleBulletin(C3417R.raw.error, LocaleController.getString("ErrorOccurred", C3417R.string.ErrorOccurred)).show();
                 return;
             }
         }
         Activity parentActivity = baseFragment.getParentActivity();
+        if (parentActivity == null) {
+            return;
+        }
         ((ClipboardManager) parentActivity.getSystemService("clipboard")).setPrimaryClip(ClipData.newUri(parentActivity.getContentResolver(), "URI", FileProvider.getUriForFile(parentActivity, ApplicationLoader.getApplicationId() + ".provider", pathToMessage)));
         if (undoView != null) {
             undoView.showWithAction(0L, IdFabric$CustomType.UNDO_IMAGE_COPIED, (Runnable) null);
         } else {
-            BulletinFactory.m30of(baseFragment.getLayoutContainer(), baseFragment.getResourceProvider()).createCopyBulletin(LocaleController.getInternalString(C3295R.string.photo_viewer_image_copied)).show();
+            BulletinFactory.m30of(baseFragment.getLayoutContainer(), baseFragment.getResourceProvider()).createCopyBulletin(LocaleController.getInternalString(C3417R.string.photo_viewer_image_copied)).show();
         }
     }
 
@@ -455,8 +458,8 @@ public class AndroidUtilities {
         }
         leftBaseline = isTablet() ? 80 : 72;
         checkDisplaySize(ApplicationLoader.applicationContext, null);
-        documentIcons = new int[]{C3295R.C3297drawable.media_doc_blue, C3295R.C3297drawable.media_doc_green, C3295R.C3297drawable.media_doc_red, C3295R.C3297drawable.media_doc_yellow};
-        documentMediaIcons = new int[]{C3295R.C3297drawable.media_doc_blue_b, C3295R.C3297drawable.media_doc_green_b, C3295R.C3297drawable.media_doc_red_b, C3295R.C3297drawable.media_doc_yellow_b};
+        documentIcons = new int[]{C3417R.C3419drawable.media_doc_blue, C3417R.C3419drawable.media_doc_green, C3417R.C3419drawable.media_doc_red, C3417R.C3419drawable.media_doc_yellow};
+        documentMediaIcons = new int[]{C3417R.C3419drawable.media_doc_blue_b, C3417R.C3419drawable.media_doc_green_b, C3417R.C3419drawable.media_doc_red_b, C3417R.C3419drawable.media_doc_yellow_b};
         sUrlMatchFilter = AndroidUtilities$$ExternalSyntheticLambda4.INSTANCE;
         hasCallPermissions = Build.VERSION.SDK_INT >= 23;
         numbersSignatureArray = new String[]{"", "K", "M", "G", "T", "P"};
@@ -718,7 +721,7 @@ public class AndroidUtilities {
                 }
                 if (user != null) {
                     ContactsController.getInstance(i).markAsContacted(stringExtra2);
-                    SendMessagesHelper.getInstance(i).sendMessage(stringExtra, user.f1574id, null, null, null, true, null, null, null, true, 0, null, false, null);
+                    SendMessagesHelper.getInstance(i).sendMessage(stringExtra, user.f1656id, null, null, null, true, null, null, null, true, 0, null, false, null);
                 }
             }
         } catch (Exception e) {
@@ -1326,13 +1329,13 @@ public class AndroidUtilities {
             }
             AlertDialog.Builder builder = new AlertDialog.Builder(baseFragment.getParentActivity());
             builder.setMessage(LocaleController.getString(ApplicationLoader.getMapsProvider().getInstallMapsString()));
-            builder.setPositiveButton(LocaleController.getString("OK", C3295R.string.OK), new DialogInterface.OnClickListener() { // from class: org.telegram.messenger.AndroidUtilities$$ExternalSyntheticLambda3
+            builder.setPositiveButton(LocaleController.getString("OK", C3417R.string.OK), new DialogInterface.OnClickListener() { // from class: org.telegram.messenger.AndroidUtilities$$ExternalSyntheticLambda3
                 @Override // android.content.DialogInterface.OnClickListener
                 public final void onClick(DialogInterface dialogInterface, int i) {
                     AndroidUtilities.lambda$isMapsInstalled$5(mapsAppPackageName, baseFragment, dialogInterface, i);
                 }
             });
-            builder.setNegativeButton(LocaleController.getString("Cancel", C3295R.string.Cancel), null);
+            builder.setNegativeButton(LocaleController.getString("Cancel", C3417R.string.Cancel), null);
             baseFragment.showDialog(builder.create());
             return false;
         }
@@ -1577,7 +1580,7 @@ public class AndroidUtilities {
             if (z) {
                 int i2 = this.type;
                 if (i2 == 0) {
-                    return C3212PhoneFormat.getInstance().format(sb.toString());
+                    return C3333PhoneFormat.getInstance().format(sb.toString());
                 }
                 if (i2 == 5) {
                     String[] split3 = sb.toString().split("T");
@@ -1654,7 +1657,7 @@ public class AndroidUtilities {
         VcardItem vcardItem;
         ArrayList<VcardItem> arrayList2 = arrayList;
         ArrayList<TLRPC$User> arrayList3 = null;
-        C32131 c32131 = 0;
+        C33341 c33341 = 0;
         if (z) {
             try {
                 createInputStream = ApplicationLoader.applicationContext.getContentResolver().openAssetFileDescriptor(uri, "r").createInputStream();
@@ -1719,7 +1722,7 @@ public class AndroidUtilities {
                                                     vcardItem = new VcardItem();
                                                     vcardItem.type = 20;
                                                 }
-                                                vcardItem2 = c32131;
+                                                vcardItem2 = c33341;
                                                 if (vcardItem2 != null && vcardItem2.type >= 0) {
                                                     arrayList2.add(vcardItem2);
                                                 }
@@ -1739,7 +1742,7 @@ public class AndroidUtilities {
                             }
                             i3 = i2;
                         }
-                        vcardItem2 = c32131;
+                        vcardItem2 = c33341;
                         i3 = i2;
                     }
                     if (i3 == 0 && vcardData != null) {
@@ -1759,7 +1762,7 @@ public class AndroidUtilities {
                     String str4 = "=";
                     if (readLine.contains("=QUOTED-PRINTABLE") && readLine.endsWith("=")) {
                         str3 = readLine.substring(i2, readLine.length() - 1);
-                        c32131 = 0;
+                        c33341 = 0;
                     } else {
                         if (i3 == 0 && vcardData != null && vcardItem2 != null) {
                             vcardItem2.fullData = readLine;
@@ -1813,13 +1816,13 @@ public class AndroidUtilities {
                             }
                             arrayList2 = arrayList;
                             str3 = str2;
-                            c32131 = 0;
+                            c33341 = 0;
                             i2 = 0;
                         }
                         str2 = str3;
                         arrayList2 = arrayList;
                         str3 = str2;
-                        c32131 = 0;
+                        c33341 = 0;
                         i2 = 0;
                     }
                 }
@@ -1857,7 +1860,7 @@ public class AndroidUtilities {
                 tLRPC$TL_userContact_old2.phone = str8;
                 tLRPC$TL_userContact_old2.first_name = vcardData2.name;
                 tLRPC$TL_userContact_old2.last_name = "";
-                tLRPC$TL_userContact_old2.f1574id = 0L;
+                tLRPC$TL_userContact_old2.f1656id = 0L;
                 TLRPC$TL_restrictionReason tLRPC$TL_restrictionReason = new TLRPC$TL_restrictionReason();
                 tLRPC$TL_restrictionReason.text = vcardData2.vcard.toString();
                 tLRPC$TL_restrictionReason.platform = "";
@@ -2356,7 +2359,7 @@ public class AndroidUtilities {
     }
 
     public static boolean isTabletForce() {
-        return ApplicationLoader.applicationContext != null && ApplicationLoader.applicationContext.getResources().getBoolean(C3295R.bool.isTablet);
+        return ApplicationLoader.applicationContext != null && ApplicationLoader.applicationContext.getResources().getBoolean(C3417R.bool.isTablet);
     }
 
     public static boolean isTabletInternal() {
@@ -2470,7 +2473,7 @@ public class AndroidUtilities {
     public static boolean checkPhonePattern(String str, String str2) {
         if (!TextUtils.isEmpty(str) && !str.equals("*")) {
             String[] split = str.split("\\*");
-            String stripExceptNumbers = C3212PhoneFormat.stripExceptNumbers(str2);
+            String stripExceptNumbers = C3333PhoneFormat.stripExceptNumbers(str2);
             int i = 0;
             for (String str3 : split) {
                 if (!TextUtils.isEmpty(str3)) {
@@ -2811,7 +2814,7 @@ public class AndroidUtilities {
         if (view == null) {
             return;
         }
-        int i = C3295R.C3298id.shake_animation;
+        int i = C3417R.C3420id.shake_animation;
         Object tag = view.getTag(i);
         if (tag instanceof ValueAnimator) {
             ((ValueAnimator) tag).cancel();
@@ -2854,11 +2857,11 @@ public class AndroidUtilities {
 
     public static void shakeViewSpring(final View view, float f, final Runnable runnable) {
         int m55dp = m55dp(f);
-        int i = C3295R.C3298id.spring_tag;
+        int i = C3417R.C3420id.spring_tag;
         if (view.getTag(i) != null) {
             ((SpringAnimation) view.getTag(i)).cancel();
         }
-        int i2 = C3295R.C3298id.spring_was_translation_x_tag;
+        int i2 = C3417R.C3420id.spring_was_translation_x_tag;
         Float f2 = (Float) view.getTag(i2);
         if (f2 != null) {
             view.setTranslationX(f2.floatValue());
@@ -2881,8 +2884,8 @@ public class AndroidUtilities {
             runnable.run();
         }
         view.setTranslationX(f);
-        view.setTag(C3295R.C3298id.spring_tag, null);
-        view.setTag(C3295R.C3298id.spring_was_translation_x_tag, null);
+        view.setTag(C3417R.C3420id.spring_tag, null);
+        view.setTag(C3417R.C3420id.spring_was_translation_x_tag, null);
     }
 
     public static void appCenterLog(Throwable th) {
@@ -3373,10 +3376,10 @@ public class AndroidUtilities {
             int i = Theme.key_dialogTopBackground;
             hashMap.put("info1.**", Integer.valueOf(baseFragment.getThemedColor(i)));
             hashMap.put("info2.**", Integer.valueOf(baseFragment.getThemedColor(i)));
-            builder.setTopAnimation(C3295R.raw.not_available, 52, false, baseFragment.getThemedColor(i), hashMap);
+            builder.setTopAnimation(C3417R.raw.not_available, 52, false, baseFragment.getThemedColor(i), hashMap);
             builder.setTopAnimationIsNew(true);
-            builder.setMessage(LocaleController.getString("IncorrectTheme", C3295R.string.IncorrectTheme));
-            builder.setPositiveButton(LocaleController.getString("OK", C3295R.string.OK), null);
+            builder.setMessage(LocaleController.getString("IncorrectTheme", C3417R.string.IncorrectTheme));
+            builder.setPositiveButton(LocaleController.getString("OK", C3417R.string.OK), null);
             baseFragment.showDialog(builder.create());
             return;
         }
@@ -3417,10 +3420,10 @@ public class AndroidUtilities {
             int i2 = Theme.key_dialogTopBackground;
             hashMap2.put("info1.**", Integer.valueOf(baseFragment.getThemedColor(i2)));
             hashMap2.put("info2.**", Integer.valueOf(baseFragment.getThemedColor(i2)));
-            builder2.setTopAnimation(C3295R.raw.not_available, 52, false, baseFragment.getThemedColor(i2), hashMap2);
+            builder2.setTopAnimation(C3417R.raw.not_available, 52, false, baseFragment.getThemedColor(i2), hashMap2);
             builder2.setTopAnimationIsNew(true);
-            builder2.setPositiveButton(LocaleController.getString("OK", C3295R.string.OK), null);
-            builder2.setMessage(LocaleController.formatString("NoHandleAppInstalled", C3295R.string.NoHandleAppInstalled, messageObject.getDocument().mime_type));
+            builder2.setPositiveButton(LocaleController.getString("OK", C3417R.string.OK), null);
+            builder2.setMessage(LocaleController.formatString("NoHandleAppInstalled", C3417R.string.NoHandleAppInstalled, messageObject.getDocument().mime_type));
             baseFragment.showDialog(builder2.create());
         }
     }
@@ -3436,7 +3439,7 @@ public class AndroidUtilities {
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
-    public static boolean openForView(java.io.File r6, java.lang.String r7, java.lang.String r8, android.app.Activity r9, org.telegram.p044ui.ActionBar.Theme.ResourcesProvider r10) {
+    public static boolean openForView(java.io.File r6, java.lang.String r7, java.lang.String r8, android.app.Activity r9, org.telegram.p043ui.ActionBar.Theme.ResourcesProvider r10) {
         /*
             if (r6 == 0) goto Lcb
             boolean r0 = r6.exists()
@@ -3478,7 +3481,7 @@ public class AndroidUtilities {
             android.content.pm.PackageManager r2 = r2.getPackageManager()
             boolean r2 = r2.canRequestPackageInstalls()
             if (r2 != 0) goto L60
-            android.app.Dialog r6 = org.telegram.p044ui.Components.AlertsCreator.createApkRestrictedDialog(r9, r10)
+            android.app.Dialog r6 = org.telegram.p043ui.Components.AlertsCreator.createApkRestrictedDialog(r9, r10)
             r6.show()
             return r1
         L60:
@@ -3864,20 +3867,20 @@ public class AndroidUtilities {
         return accessibilityManager.isEnabled() && accessibilityManager.isTouchExplorationEnabled();
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:54:0x0112 A[Catch: Exception -> 0x012f, TRY_LEAVE, TryCatch #0 {Exception -> 0x012f, blocks: (B:5:0x000a, B:8:0x0014, B:10:0x001a, B:12:0x0022, B:15:0x0035, B:18:0x003e, B:20:0x0047, B:23:0x005a, B:25:0x0060, B:27:0x0066, B:29:0x006c, B:31:0x008a, B:32:0x008e, B:52:0x010c, B:54:0x0112, B:67:0x012b, B:33:0x00a4, B:35:0x00b5, B:37:0x00be, B:39:0x00c7, B:41:0x00cd, B:43:0x00d5, B:45:0x00dd, B:47:0x00e7, B:48:0x00eb), top: B:71:0x000a }] */
-    /* JADX WARN: Removed duplicated region for block: B:58:0x011c  */
-    /* JADX WARN: Removed duplicated region for block: B:59:0x011e  */
-    /* JADX WARN: Removed duplicated region for block: B:61:0x0121  */
-    /* JADX WARN: Removed duplicated region for block: B:62:0x0123  */
-    /* JADX WARN: Removed duplicated region for block: B:64:0x0126  */
-    /* JADX WARN: Removed duplicated region for block: B:65:0x0128  */
+    /* JADX WARN: Removed duplicated region for block: B:54:0x0114 A[Catch: Exception -> 0x0131, TRY_LEAVE, TryCatch #0 {Exception -> 0x0131, blocks: (B:5:0x000a, B:8:0x0014, B:10:0x001a, B:12:0x0022, B:15:0x0037, B:18:0x0040, B:20:0x0049, B:23:0x005c, B:25:0x0062, B:27:0x0068, B:29:0x006e, B:31:0x008c, B:32:0x0090, B:52:0x010e, B:54:0x0114, B:67:0x012d, B:33:0x00a6, B:35:0x00b7, B:37:0x00c0, B:39:0x00c9, B:41:0x00cf, B:43:0x00d7, B:45:0x00df, B:47:0x00e9, B:48:0x00ed), top: B:71:0x000a }] */
+    /* JADX WARN: Removed duplicated region for block: B:58:0x011e  */
+    /* JADX WARN: Removed duplicated region for block: B:59:0x0120  */
+    /* JADX WARN: Removed duplicated region for block: B:61:0x0123  */
+    /* JADX WARN: Removed duplicated region for block: B:62:0x0125  */
+    /* JADX WARN: Removed duplicated region for block: B:64:0x0128  */
+    /* JADX WARN: Removed duplicated region for block: B:65:0x012a  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
     public static boolean handleProxyIntent(android.app.Activity r16, android.content.Intent r17) {
         /*
-            Method dump skipped, instructions count: 304
+            Method dump skipped, instructions count: 306
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.messenger.AndroidUtilities.handleProxyIntent(android.app.Activity, android.content.Intent):boolean");
@@ -3902,7 +3905,7 @@ public class AndroidUtilities {
         int i3 = 5;
         if (!TextUtils.isEmpty(str5)) {
             TextView textView = new TextView(activity);
-            textView.setText(LocaleController.getString("UseProxyTelegramInfo2", C3295R.string.UseProxyTelegramInfo2));
+            textView.setText(LocaleController.getString("UseProxyTelegramInfo2", C3417R.string.UseProxyTelegramInfo2));
             textView.setTextColor(Theme.getColor(Theme.key_dialogTextGray4));
             textView.setTextSize(1, 14.0f);
             textView.setGravity(49);
@@ -3915,23 +3918,23 @@ public class AndroidUtilities {
         while (i4 < 6) {
             CharSequence charSequence2 = null;
             if (i4 == 0) {
-                charSequence = LocaleController.getString("UseProxyAddress", C3295R.string.UseProxyAddress);
+                charSequence = LocaleController.getString("UseProxyAddress", C3417R.string.UseProxyAddress);
                 charSequence2 = str;
             } else if (i4 == 1) {
                 charSequence2 = "" + str2;
-                charSequence = LocaleController.getString("UseProxyPort", C3295R.string.UseProxyPort);
+                charSequence = LocaleController.getString("UseProxyPort", C3417R.string.UseProxyPort);
             } else if (i4 == 2) {
-                charSequence = LocaleController.getString("UseProxySecret", C3295R.string.UseProxySecret);
+                charSequence = LocaleController.getString("UseProxySecret", C3417R.string.UseProxySecret);
                 charSequence2 = str5;
             } else if (i4 == i2) {
-                charSequence = LocaleController.getString("UseProxyUsername", C3295R.string.UseProxyUsername);
+                charSequence = LocaleController.getString("UseProxyUsername", C3417R.string.UseProxyUsername);
                 charSequence2 = str3;
             } else if (i4 == 4) {
-                charSequence = LocaleController.getString("UseProxyPassword", C3295R.string.UseProxyPassword);
+                charSequence = LocaleController.getString("UseProxyPassword", C3417R.string.UseProxyPassword);
                 charSequence2 = str4;
             } else if (i4 == i3) {
-                charSequence2 = LocaleController.getString(C3295R.string.ProxyBottomSheetChecking);
-                charSequence = LocaleController.getString(C3295R.string.ProxyStatus);
+                charSequence2 = LocaleController.getString(C3417R.string.ProxyBottomSheetChecking);
+                charSequence = LocaleController.getString(C3417R.string.ProxyStatus);
             } else {
                 charSequence = null;
             }
@@ -3981,7 +3984,7 @@ public class AndroidUtilities {
                             }
                         });
                     } catch (NumberFormatException unused) {
-                        textDetailSettingsCell.getTextView().setText(LocaleController.getString(C3295R.string.Unavailable));
+                        textDetailSettingsCell.getTextView().setText(LocaleController.getString(C3417R.string.Unavailable));
                         textDetailSettingsCell.getTextView().setTextColor(Theme.getColor(Theme.key_text_RedRegular));
                     }
                 }
@@ -3997,7 +4000,7 @@ public class AndroidUtilities {
         TextView textView2 = pickerBottomLayout.cancelButton;
         int i5 = Theme.key_dialogTextBlue2;
         textView2.setTextColor(Theme.getColor(i5));
-        pickerBottomLayout.cancelButton.setText(LocaleController.getString("Cancel", C3295R.string.Cancel).toUpperCase());
+        pickerBottomLayout.cancelButton.setText(LocaleController.getString("Cancel", C3417R.string.Cancel).toUpperCase());
         pickerBottomLayout.cancelButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.messenger.AndroidUtilities$$ExternalSyntheticLambda5
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
@@ -4007,7 +4010,7 @@ public class AndroidUtilities {
         pickerBottomLayout.doneButtonTextView.setTextColor(Theme.getColor(i5));
         pickerBottomLayout.doneButton.setPadding(m54dp(18), 0, m54dp(18), 0);
         pickerBottomLayout.doneButtonBadgeTextView.setVisibility(8);
-        pickerBottomLayout.doneButtonTextView.setText(LocaleController.getString("ConnectingConnectProxy", C3295R.string.ConnectingConnectProxy).toUpperCase());
+        pickerBottomLayout.doneButtonTextView.setText(LocaleController.getString("ConnectingConnectProxy", C3417R.string.ConnectingConnectProxy).toUpperCase());
         pickerBottomLayout.doneButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.messenger.AndroidUtilities$$ExternalSyntheticLambda6
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
@@ -4030,12 +4033,12 @@ public class AndroidUtilities {
     /* JADX INFO: Access modifiers changed from: private */
     public static /* synthetic */ void lambda$showProxyAlert$11(long j, TextDetailSettingsCell textDetailSettingsCell) {
         if (j == -1) {
-            textDetailSettingsCell.getTextView().setText(LocaleController.getString(C3295R.string.Unavailable));
+            textDetailSettingsCell.getTextView().setText(LocaleController.getString(C3417R.string.Unavailable));
             textDetailSettingsCell.getTextView().setTextColor(Theme.getColor(Theme.key_text_RedRegular));
             return;
         }
         TextView textView = textDetailSettingsCell.getTextView();
-        textView.setText(LocaleController.getString(C3295R.string.Available) + ", " + LocaleController.formatString(C3295R.string.Ping, Long.valueOf(j)));
+        textView.setText(LocaleController.getString(C3417R.string.Available) + ", " + LocaleController.formatString(C3417R.string.Ping, Long.valueOf(j)));
         textDetailSettingsCell.getTextView().setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteGreenText));
     }
 
@@ -4081,10 +4084,10 @@ public class AndroidUtilities {
                 z = true;
             }
             if (!z) {
-                NotificationCenter.getGlobalInstance().postNotificationName(NotificationCenter.showBulletin, 6, LocaleController.getString(C3295R.string.ProxyAddedSuccess));
+                NotificationCenter.getGlobalInstance().postNotificationName(NotificationCenter.showBulletin, 6, LocaleController.getString(C3417R.string.ProxyAddedSuccess));
             }
         } else {
-            NotificationCenter.getGlobalInstance().postNotificationName(NotificationCenter.showBulletin, 6, LocaleController.getString(C3295R.string.ProxyAddedSuccess));
+            NotificationCenter.getGlobalInstance().postNotificationName(NotificationCenter.showBulletin, 6, LocaleController.getString(C3417R.string.ProxyAddedSuccess));
         }
         runnable.run();
     }
@@ -4605,7 +4608,7 @@ public class AndroidUtilities {
             declaredField.setAccessible(true);
             final RecyclerListView recyclerListView = (RecyclerListView) declaredField.get(baseFragment);
             recyclerListView.highlightRow(new RecyclerListView.IntReturnCallback() { // from class: org.telegram.messenger.AndroidUtilities$$ExternalSyntheticLambda19
-                @Override // org.telegram.p044ui.Components.RecyclerListView.IntReturnCallback
+                @Override // org.telegram.p043ui.Components.RecyclerListView.IntReturnCallback
                 public final int run() {
                     int lambda$scrollToFragmentRow$16;
                     lambda$scrollToFragmentRow$16 = AndroidUtilities.lambda$scrollToFragmentRow$16(BaseFragment.this, str, recyclerListView);

@@ -101,7 +101,7 @@
     .line 57
     iget-object v0, p0, Lcom/iMe/ui/adapter/provider/BannerProvider$convert$1;->this$0:Lcom/iMe/ui/adapter/provider/BannerProvider;
 
-    invoke-virtual {v0}, Lcom/iMe/ui/adapter/provider/BannerProvider;->getBannersRecycleAdapter()Lcom/iMe/ui/wallet/home/v2/adapter/BannersRecycleAdapter;
+    invoke-virtual {v0}, Lcom/iMe/ui/adapter/provider/BannerProvider;->getBannersRecycleAdapter()Lcom/iMe/ui/wallet/home/adapter/BannersRecycleAdapter;
 
     move-result-object v0
 
@@ -117,7 +117,7 @@
     invoke-virtual {v0, v1}, Lcom/chad/library/adapter/base/BaseQuickAdapter;->setNewInstance(Ljava/util/List;)V
 
     .line 59
-    invoke-static {v2}, Lcom/iMe/ui/adapter/provider/BannerProvider;->access$getBannersDiffCallback$p(Lcom/iMe/ui/adapter/provider/BannerProvider;)Lcom/iMe/ui/wallet/home/v2/adapter/diff/BannerSlideDiffCallback;
+    invoke-static {v2}, Lcom/iMe/ui/adapter/provider/BannerProvider;->access$getBannersDiffCallback$p(Lcom/iMe/ui/adapter/provider/BannerProvider;)Lcom/iMe/ui/wallet/home/adapter/diff/BannerSlideDiffCallback;
 
     move-result-object v1
 

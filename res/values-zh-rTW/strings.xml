@@ -362,7 +362,7 @@
     <string name="Answer_zero">%1$d 人回答</string>
     <string name="ApkRestricted">此應用程式的APK檔安裝受到限制。您可以在系統安全性設定中啟用允許不明來源的安裝。</string>
     <string name="AppFolderInfo">瀏覽應用程式的資料夾</string>
-    <string name="AppUpdate">更新 Telegram</string>
+    <string name="AppNameBeta">Telegram Beta</string>
     <string name="AppUpdateChangelogEmpty">"**有什麼進展？**
 
 • 錯誤修復和改進。"</string>
@@ -5030,6 +5030,25 @@ Telegram 更新到最新版本。"</string>
     <string name="already_removing">已經開始處理另一項刪除程序，請稍後再試</string>
     <string name="app_restart_error">我們無法開啟應用程式。請您自己試試。</string>
     <string name="app_update_dialog_description">更新應用程式來使用此功能</string>
+    <string name="appcenter_distribute_dialog_actioned_on_disabled_toast">散發已停用</string>
+    <string name="appcenter_distribute_download_progress_number_format">%1$d MB (共 %2$d MB)</string>
+    <string name="appcenter_distribute_downloading_mandatory_update">正在下載更新</string>
+    <string name="appcenter_distribute_install">安裝</string>
+    <string name="appcenter_distribute_install_ready_message">%1$s %2$s (%3$d) 已下載並準備好安裝。</string>
+    <string name="appcenter_distribute_install_ready_title">應用程式更新已下載</string>
+    <string name="appcenter_distribute_notification_category">應用程式更新</string>
+    <string name="appcenter_distribute_unknown_sources_dialog_message">基於安全性的考量，您的裝置已設定為封鎖從未知來源取得的應用程式安裝。</string>
+    <string name="appcenter_distribute_unknown_sources_dialog_settings">設定</string>
+    <string name="appcenter_distribute_update_dialog_download">下載</string>
+    <string name="appcenter_distribute_update_dialog_message_mandatory">此應用程式的開發人員要求您更新為 %1$s %2$s (%3$d)。</string>
+    <string name="appcenter_distribute_update_dialog_message_optional">%1$s %2$s (%3$d) 已可下載及安裝。</string>
+    <string name="appcenter_distribute_update_dialog_postpone">一天後詢問我</string>
+    <string name="appcenter_distribute_update_dialog_title">應用程式更新已可使用</string>
+    <string name="appcenter_distribute_update_dialog_view_release_notes">檢視版本資訊</string>
+    <string name="appcenter_distribute_update_failed_dialog_ignore">忽略</string>
+    <string name="appcenter_distribute_update_failed_dialog_message">此版本要麼是側面載入, 要麼是在專用模式下使用瀏覽器下載的。</string>
+    <string name="appcenter_distribute_update_failed_dialog_reinstall">重新安裝應用程式</string>
+    <string name="appcenter_distribute_update_failed_dialog_title">禁用應用程式更新</string>
     <string name="archive_content_is_hidden">內容已隱藏</string>
     <string name="archive_empty_subtitle">這裡顯示您封存的聊天室內容</string>
     <string name="archive_empty_title">沒有封存的內容</string>
@@ -5129,9 +5148,6 @@ Telegram 更新到最新版本。"</string>
     <string name="chat_attach_alert_bot_buttons">機器人按鈕</string>
     <string name="chat_avatar_previewer_mention_by_name">按名稱提及</string>
     <string name="chat_avatar_previewer_user_messages">用户的消息</string>
-    <string name="chat_bookmarks">書籤</string>
-    <string name="chat_bookmarks_empty">沒有書籤</string>
-    <string name="chat_bookmarks_empty_subtitle">您沒有聊天室書籤</string>
     <string name="chat_drafts_empty">沒有草稿</string>
     <string name="chat_drafts_empty_subtitle">您在聊天中沒有草稿訊息</string>
     <string name="chat_long_action_translate">翻譯</string>
@@ -5142,7 +5158,6 @@ Telegram 更新到最新版本。"</string>
     <string name="chat_menu_language_settings">語言設定</string>
     <string name="chat_message_forward_media">轉傳媒體</string>
     <string name="chat_message_forward_text">轉傳文字</string>
-    <string name="chat_message_popup_option_add_to_bookmarks">加入書籤</string>
     <string name="chat_message_popup_option_copy_image">複製圖像</string>
     <string name="chat_message_popup_option_copy_part">複製部分</string>
     <string name="chat_message_popup_option_copy_text">複製文字</string>
@@ -5150,8 +5165,6 @@ Telegram 更新到最新版本。"</string>
     <string name="chat_message_popup_option_forward_viber">轉傳至 Viber</string>
     <string name="chat_message_popup_option_forward_whatsapp">轉傳至 WhatsApp</string>
     <string name="chat_message_popup_option_forward_whatsapp_business">轉傳至 WA Business</string>
-    <string name="chat_message_popup_option_remove_all_bookmarks">移除所有書籤</string>
-    <string name="chat_message_popup_option_remove_from_bookmarks">從書籤中移除</string>
     <string name="chat_message_spoiler_less">更少</string>
     <string name="chat_message_spoiler_more">更多</string>
     <string name="chat_multi_panel_empty_cache_toast">聊天室需要快取</string>
@@ -5521,11 +5534,6 @@ Telegram 更新到最新版本。"</string>
     <string name="loading_participants_error">載入參與者錯誤，請稍後再試</string>
     <string name="main_camera_popup_text">後置鏡頭</string>
     <string name="main_list">主列表</string>
-    <string name="management">管理</string>
-    <string name="management_bookmarks_delete_all_alert_message">您確定要刪除所有聊天室的書籤嗎？您的聊天室不會被刪除。</string>
-    <string name="management_bookmarks_delete_selected_alert_message">您確定要刪除已選擇聊天室的書籤嗎？您的聊天室不會被刪除。</string>
-    <string name="management_drafts">草稿</string>
-    <string name="management_drafts_delete_selected_alert_message">您確定要刪除已選擇聊天室的草稿嗎？您的聊天室不會被刪除。</string>
     <string name="material_clock_toggle_content_description">選取上午或下午</string>
     <string name="material_hour_selection">請選取時段</string>
     <string name="material_hour_suffix">%1$s 點</string>
@@ -5901,6 +5909,7 @@ Telegram 更新到最新版本。"</string>
     <string name="sorting_settings_tab_bots_item_title">機器人</string>
     <string name="sorting_settings_tab_channels_item_title">頻道</string>
     <string name="sorting_settings_tab_deleted_users">已刪除帳號</string>
+    <string name="sorting_settings_tab_drafts">草稿</string>
     <string name="sorting_settings_tab_groups_item_title">群組聊天室</string>
     <string name="sorting_settings_tab_live_chats">即時聊天</string>
     <string name="sorting_settings_tab_mentioned_chats">已提及聊天室</string>
@@ -6246,8 +6255,8 @@ iMe 不收取額外費用。"</string>
     <string name="wallet_banner_slide_gate_description">您通往加密貨幣的門戶</string>
     <string name="wallet_banner_slide_gate_long_description">以低交易費用來交易 LIME 和其它加密貨幣。</string>
     <string name="wallet_banner_slide_gate_title">Gate.io</string>
-    <string name="wallet_banner_slide_multi_networks_description">乙太坊、BNB 鏈、Polygon 、Fantom、TON、 NFT</string>
-    <string name="wallet_banner_slide_multi_networks_long_description">切換乙太坊、BNB 鏈、Polygon 和、Fantom、TON、NFT 網路，方便在一個錢包中使用不同權杖。</string>
+    <string name="wallet_banner_slide_multi_networks_description">Bitcoin、乙太坊、BNB 鏈、Polygon、Fantom、Tron、TON、 NFT</string>
+    <string name="wallet_banner_slide_multi_networks_long_description">切換乙太坊、Bitcoin、BNB 鏈、Polygon 和、Fantom、Tron、TON、NFT 網路，方便在一個錢包中使用不同權杖。</string>
     <string name="wallet_banner_slide_multi_networks_title">多網路</string>
     <string name="wallet_banner_slide_non_custodial_description">只有您可以存取錢包</string>
     <string name="wallet_banner_slide_non_custodial_long_description">只有您可以存取您的錢包。請儲存詞組密碼以便將來可以恢復或匯入您的錢包。</string>
@@ -6258,7 +6267,7 @@ iMe 不收取額外費用。"</string>
     <string name="wallet_banner_slide_staking_description">建立存款</string>
     <string name="wallet_banner_slide_staking_long_description">用 LIME 和合作夥伴權杖建立存款，讓您的資產為您賺錢。</string>
     <string name="wallet_banner_slide_staking_title">質押</string>
-    <string name="wallet_banner_slide_swap_description">Uniswap、PancakeSwap、1inch</string>
+    <string name="wallet_banner_slide_swap_description">1inch, Symbiosis</string>
     <string name="wallet_banner_slide_swap_long_description">使用由智慧型合約所支援的去中心化交易所協議交換加密貨幣和代幣。</string>
     <string name="wallet_banner_slide_swap_title">交易所</string>
     <string name="wallet_binance_logout_confirm_dialog_description">您確定要登出嗎？</string>
@@ -6438,7 +6447,7 @@ iMe 不收取額外費用。"</string>
     <string name="wallet_dashboard_create_eth_wallet_warning_dialog_description">%s 要使用之前連結的乙太坊地址，請使用詞組密碼恢復您的帳號。如果您建立一個新帳號，舊的 iMe 錢包帳號的資料將被覆寫，而一個新的乙太坊地址將連結到您的 Telegram ID。注意：您的 iMe 錢包只能有一個有效的乙太坊帳號。因此，當其他用戶轉帳至您的 Telegram ID 時，所有的資金將自動匯入最後一個連結的地址。</string>
     <string name="wallet_dashboard_create_start_dialog_description">"加密貨幣與權杖的非託管型錢包。
 
-在乙太坊與 BNB 鏈網路上儲存、購買、交換與轉帳。
+在以太坊、比特幣、BNB Chain、Polygon、Fantom、Tron 和 TON 網絡上存儲、購買、交換和轉賬。
 
 按「下一步」，即表示您同意
 %s

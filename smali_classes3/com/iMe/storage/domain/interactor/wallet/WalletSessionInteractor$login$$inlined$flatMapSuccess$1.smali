@@ -34,7 +34,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nObservableExt.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ObservableExt.kt\ncom/iMe/storage/domain/utils/extentions/ObservableExtKt$flatMapSuccess$1\n+ 2 WalletSessionInteractor.kt\ncom/iMe/storage/domain/interactor/wallet/WalletSessionInteractor\n+ 3 ObservableExt.kt\ncom/iMe/storage/domain/utils/extentions/ObservableExtKt\n*L\n1#1,80:1\n63#2,3:81\n66#2:85\n67#2,2:87\n14#3:84\n14#3:86\n*S KotlinDebug\n*F\n+ 1 WalletSessionInteractor.kt\ncom/iMe/storage/domain/interactor/wallet/WalletSessionInteractor\n*L\n65#1:84\n66#1:86\n*E\n"
+    value = "SMAP\nObservableExt.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ObservableExt.kt\ncom/iMe/storage/domain/utils/extentions/ObservableExtKt$flatMapSuccess$1\n+ 2 WalletSessionInteractor.kt\ncom/iMe/storage/domain/interactor/wallet/WalletSessionInteractor\n+ 3 ObservableExt.kt\ncom/iMe/storage/domain/utils/extentions/ObservableExtKt\n*L\n1#1,92:1\n63#2,3:93\n66#2:97\n67#2,2:99\n14#3:96\n14#3:98\n*S KotlinDebug\n*F\n+ 1 WalletSessionInteractor.kt\ncom/iMe/storage/domain/interactor/wallet/WalletSessionInteractor\n*L\n65#1:96\n66#1:98\n*E\n"
 .end annotation
 
 
@@ -84,14 +84,14 @@
 
     if-eqz v0, :cond_0
 
-    .line 81
+    .line 93
     iget-object v0, p0, Lcom/iMe/storage/domain/interactor/wallet/WalletSessionInteractor$login$$inlined$flatMapSuccess$1;->this$0:Lcom/iMe/storage/domain/interactor/wallet/WalletSessionInteractor;
 
     invoke-static {v0}, Lcom/iMe/storage/domain/interactor/wallet/WalletSessionInteractor;->access$getWalletRepository$p(Lcom/iMe/storage/domain/interactor/wallet/WalletSessionInteractor;)Lcom/iMe/storage/domain/repository/wallet/WalletRepository;
 
     move-result-object v0
 
-    .line 82
+    .line 94
     invoke-interface {v0}, Lcom/iMe/storage/domain/repository/wallet/WalletRepository;->activateWallet()Lio/reactivex/Observable;
 
     move-result-object v0
@@ -132,7 +132,7 @@
 
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 87
+    .line 99
     new-instance v1, Lcom/iMe/storage/domain/interactor/wallet/WalletSessionInteractor$login$1$3;
 
     invoke-direct {v1, p1}, Lcom/iMe/storage/domain/interactor/wallet/WalletSessionInteractor$login$1$3;-><init>(Lcom/iMe/storage/domain/model/Result;)V
@@ -145,7 +145,7 @@
 
     move-result-object p1
 
-    .line 88
+    .line 100
     invoke-static {}, Lio/reactivex/schedulers/Schedulers;->io()Lio/reactivex/Scheduler;
 
     move-result-object v0
@@ -156,7 +156,7 @@
 
     const-string v0, "result ->\n              \u2026scribeOn(Schedulers.io())"
 
-    .line 87
+    .line 99
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     goto :goto_0

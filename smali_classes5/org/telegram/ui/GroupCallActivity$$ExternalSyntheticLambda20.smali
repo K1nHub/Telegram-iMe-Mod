@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/GroupCallActivity$$ExternalSyntheticLambda20;->f$0:Lorg/telegram/ui/GroupCallActivity;
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/GroupCallActivity;->$r8$lambda$xjk87oIkqUROrBT1EOQj6f_pv1U(Lorg/telegram/ui/GroupCallActivity;Landroid/view/View;)V
+    invoke-static {v0, p1}, Lorg/telegram/ui/GroupCallActivity;->$r8$lambda$jlqWxnYIDU76gdopSgi2pVhcoaA(Lorg/telegram/ui/GroupCallActivity;Landroid/view/View;)V
 
     return-void
 .end method

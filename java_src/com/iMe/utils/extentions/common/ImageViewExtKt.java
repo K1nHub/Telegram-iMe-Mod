@@ -3,26 +3,38 @@ package com.iMe.utils.extentions.common;
 import android.content.Context;
 import android.content.res.ColorStateList;
 import android.graphics.drawable.Drawable;
-import android.graphics.drawable.GradientDrawable;
+import android.view.View;
 import android.widget.ImageView;
 import androidx.core.content.ContextCompat;
+import androidx.core.view.ViewCompat;
 import androidx.core.widget.ImageViewCompat;
 import com.bumptech.glide.Glide;
-import com.bumptech.glide.RequestBuilder;
 import com.bumptech.glide.load.DataSource;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.load.engine.GlideException;
 import com.bumptech.glide.request.RequestListener;
 import com.bumptech.glide.request.target.Target;
+import com.iMe.storage.data.utils.extentions.NumberExtKt;
+import com.iMe.utils.glide.GlideApp;
+import com.iMe.utils.glide.GlideRequest;
+import com.iMe.utils.glide.SvgSoftwareLayerSetter;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3295R;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.p043ui.ActionBar.Theme;
+import org.telegram.p043ui.Components.LoadingDrawable;
 import timber.log.Timber;
 /* compiled from: ImageViewExt.kt */
 /* loaded from: classes4.dex */
 public final class ImageViewExtKt {
+    public static final void loadFrom(ImageView imageView, String url) {
+        Intrinsics.checkNotNullParameter(imageView, "<this>");
+        Intrinsics.checkNotNullParameter(url, "url");
+        loadFrom$default(imageView, url, null, false, 6, null);
+    }
+
     public static /* synthetic */ void withGlide$default(ImageView imageView, Object obj, Function0 function0, Function1 function1, int i, Object obj2) {
         if ((i & 2) != 0) {
             function0 = null;
@@ -58,55 +70,75 @@ public final class ImageViewExtKt {
         }).into(imageView);
     }
 
-    public static /* synthetic */ void loadFrom$default(ImageView imageView, String str, Context context, Drawable drawable, boolean z, int i, Object obj) {
-        if ((i & 4) != 0) {
-            drawable = null;
-        }
-        if ((i & 8) != 0) {
-            z = false;
-        }
-        loadFrom(imageView, str, context, drawable, z);
-    }
-
-    public static final void loadFrom(ImageView imageView, String url, Context context, Drawable drawable, boolean z) {
-        RequestBuilder fitCenter;
-        Intrinsics.checkNotNullParameter(imageView, "<this>");
-        Intrinsics.checkNotNullParameter(url, "url");
-        Intrinsics.checkNotNullParameter(context, "context");
-        if (url.length() > 0) {
-            RequestBuilder<Drawable> load = Glide.with(context).load(url);
-            if (drawable != null) {
-                load = (RequestBuilder) load.placeholder(drawable).error(drawable);
-            }
-            if (z) {
-                fitCenter = load.circleCrop();
-            } else {
-                fitCenter = load.fitCenter();
-            }
-            fitCenter.diskCacheStrategy(DiskCacheStrategy.ALL).into(imageView);
-        }
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r4v4, types: [android.graphics.drawable.Drawable] */
-    public static final void loadFromWithPlaceholderResId(ImageView imageView, String url, Context context, Integer num, boolean z) {
-        GradientDrawable gradientDrawable;
-        Intrinsics.checkNotNullParameter(imageView, "<this>");
-        Intrinsics.checkNotNullParameter(url, "url");
-        Intrinsics.checkNotNullParameter(context, "context");
-        if (num != null) {
-            gradientDrawable = ContextCompat.getDrawable(context, num.intValue());
-        } else {
-            GradientDrawable gradientDrawable2 = new GradientDrawable();
-            gradientDrawable2.setShape(1);
-            gradientDrawable2.setColor(ColorStateList.valueOf(ContextCompat.getColor(context, C3295R.C3296color.placeholder_color)));
-            gradientDrawable = gradientDrawable2;
-        }
-        loadFrom(imageView, url, context, gradientDrawable, z);
-    }
-
     public static final void setTint(ImageView imageView, int i) {
         Intrinsics.checkNotNullParameter(imageView, "<this>");
         ImageViewCompat.setImageTintList(imageView, ColorStateList.valueOf(i));
+    }
+
+    public static /* synthetic */ void loadFrom$default(ImageView imageView, String str, Integer num, boolean z, int i, Object obj) {
+        if ((i & 2) != 0) {
+            num = null;
+        }
+        if ((i & 4) != 0) {
+            z = true;
+        }
+        loadFrom(imageView, str, num, z);
+    }
+
+    public static final void loadFrom(final ImageView imageView, final String url, Integer num, final boolean z) {
+        Intrinsics.checkNotNullParameter(imageView, "<this>");
+        Intrinsics.checkNotNullParameter(url, "url");
+        if (num != null) {
+            Context context = imageView.getContext();
+            Intrinsics.checkNotNullExpressionValue(context, "context");
+            loadFrom(imageView, url, context, ContextCompat.getDrawable(imageView.getContext(), num.intValue()), z);
+            return;
+        }
+        final LoadingDrawable loadingDrawable = new LoadingDrawable();
+        loadingDrawable.setColors(Theme.getColor(Theme.key_actionBarActionModeDefaultSelector), ViewExtKt.withAlpha(-1, 0.15f));
+        loadingDrawable.setAppearByGradient(true);
+        if (NumberExtKt.isZero(Integer.valueOf(imageView.getHeight()))) {
+            if (!ViewCompat.isLaidOut(imageView) || imageView.isLayoutRequested()) {
+                imageView.addOnLayoutChangeListener(new View.OnLayoutChangeListener() { // from class: com.iMe.utils.extentions.common.ImageViewExtKt$loadFrom$$inlined$doOnLayout$1
+                    @Override // android.view.View.OnLayoutChangeListener
+                    public void onLayoutChange(View view, int i, int i2, int i3, int i4, int i5, int i6, int i7, int i8) {
+                        Intrinsics.checkNotNullParameter(view, "view");
+                        view.removeOnLayoutChangeListener(this);
+                        LoadingDrawable.this.setRadiiDp(AndroidUtilities.m54dp(imageView.getHeight()));
+                        ImageView imageView2 = imageView;
+                        String str = url;
+                        Context context2 = imageView2.getContext();
+                        Intrinsics.checkNotNullExpressionValue(context2, "context");
+                        ImageViewExtKt.loadFrom(imageView2, str, context2, LoadingDrawable.this, z);
+                    }
+                });
+                return;
+            }
+            loadingDrawable.setRadiiDp(AndroidUtilities.m54dp(imageView.getHeight()));
+            Context context2 = imageView.getContext();
+            Intrinsics.checkNotNullExpressionValue(context2, "context");
+            loadFrom(imageView, url, context2, loadingDrawable, z);
+            return;
+        }
+        loadingDrawable.setRadiiDp(AndroidUtilities.m54dp(imageView.getHeight()));
+        Context context3 = imageView.getContext();
+        Intrinsics.checkNotNullExpressionValue(context3, "context");
+        loadFrom(imageView, url, context3, loadingDrawable, z);
+    }
+
+    public static final void loadFrom(ImageView imageView, String str, Context context, Drawable drawable, boolean z) {
+        GlideRequest<Drawable> fitCenter;
+        if (str.length() > 0) {
+            GlideRequest<Drawable> addListener = GlideApp.with(context).asDrawable().load(str).addListener((RequestListener<Drawable>) new SvgSoftwareLayerSetter());
+            if (drawable != null) {
+                addListener = addListener.placeholder(drawable).error(drawable);
+            }
+            if (z) {
+                fitCenter = addListener.circleCrop();
+            } else {
+                fitCenter = addListener.fitCenter();
+            }
+            fitCenter.diskCacheStrategy(DiskCacheStrategy.DATA).into(imageView);
+        }
     }
 }

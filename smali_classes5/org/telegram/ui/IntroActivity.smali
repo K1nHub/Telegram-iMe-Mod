@@ -1000,7 +1000,7 @@
 
     const/4 v0, 0x1
 
-    .line 943
+    .line 942
     invoke-direct {p0, v0}, Lorg/telegram/ui/IntroActivity;->updateColors(Z)V
 
     return-void
@@ -1009,7 +1009,7 @@
 .method private synthetic lambda$updateColors$6()V
     .locals 6
 
-    .line 959
+    .line 958
     iget-object v0, p0, Lorg/telegram/ui/IntroActivity;->eglThread:Lorg/telegram/ui/IntroActivity$EGLThread;
 
     sget v1, Lorg/telegram/messenger/R$drawable;->intro_powerful_mask:I
@@ -1026,12 +1026,12 @@
 
     invoke-static {v0, v1, v4, v3, v5}, Lorg/telegram/ui/IntroActivity$EGLThread;->access$2500(Lorg/telegram/ui/IntroActivity$EGLThread;IIIZ)V
 
-    .line 960
+    .line 959
     iget-object v0, p0, Lorg/telegram/ui/IntroActivity;->eglThread:Lorg/telegram/ui/IntroActivity$EGLThread;
 
     invoke-virtual {v0}, Lorg/telegram/ui/IntroActivity$EGLThread;->updatePowerfulTextures()V
 
-    .line 962
+    .line 961
     iget-object v0, p0, Lorg/telegram/ui/IntroActivity;->eglThread:Lorg/telegram/ui/IntroActivity$EGLThread;
 
     invoke-static {v0}, Lorg/telegram/ui/IntroActivity$EGLThread;->access$2600(Lorg/telegram/ui/IntroActivity$EGLThread;)Lorg/telegram/messenger/GenericProvider;
@@ -1042,15 +1042,15 @@
 
     invoke-static {v0, v1, v3, v5}, Lorg/telegram/ui/IntroActivity$EGLThread;->access$2700(Lorg/telegram/ui/IntroActivity$EGLThread;Lorg/telegram/messenger/GenericProvider;IZ)V
 
-    .line 964
+    .line 963
     iget-object v0, p0, Lorg/telegram/ui/IntroActivity;->eglThread:Lorg/telegram/ui/IntroActivity$EGLThread;
 
     if-eqz v0, :cond_0
 
-    .line 965
+    .line 964
     invoke-virtual {v0}, Lorg/telegram/ui/IntroActivity$EGLThread;->updateTelegramTextures()V
 
-    .line 967
+    .line 966
     :cond_0
     invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
@@ -1064,7 +1064,7 @@
 .method private updateColors(Z)V
     .locals 6
 
-    .line 950
+    .line 949
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->fragmentView:Landroid/view/View;
 
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
@@ -1075,7 +1075,7 @@
 
     invoke-virtual {v0, v2}, Landroid/view/View;->setBackgroundColor(I)V
 
-    .line 951
+    .line 950
     iget-object v0, p0, Lorg/telegram/ui/IntroActivity;->switchLanguageTextView:Landroid/widget/TextView;
 
     sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlueText4:I
@@ -1086,7 +1086,7 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 952
+    .line 951
     iget-object v0, p0, Lorg/telegram/ui/IntroActivity;->startMessagingButton:Landroid/widget/TextView;
 
     sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_featuredStickers_buttonText:I
@@ -1097,7 +1097,7 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 953
+    .line 952
     iget-object v0, p0, Lorg/telegram/ui/IntroActivity;->startMessagingButton:Landroid/widget/TextView;
 
     const/4 v2, 0x6
@@ -1124,7 +1124,7 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 954
+    .line 953
     iget-object v0, p0, Lorg/telegram/ui/IntroActivity;->darkThemeDrawable:Lorg/telegram/ui/Components/RLottieDrawable;
 
     new-instance v2, Landroid/graphics/PorterDuffColorFilter;
@@ -1139,19 +1139,19 @@
 
     invoke-virtual {v0, v2}, Landroid/graphics/drawable/BitmapDrawable;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    .line 955
+    .line 954
     iget-object v0, p0, Lorg/telegram/ui/IntroActivity;->bottomPages:Lorg/telegram/ui/Components/BottomPagesView;
 
     invoke-virtual {v0}, Landroid/view/View;->invalidate()V
 
     if-eqz p1, :cond_1
 
-    .line 957
+    .line 956
     iget-object p1, p0, Lorg/telegram/ui/IntroActivity;->eglThread:Lorg/telegram/ui/IntroActivity$EGLThread;
 
     if-eqz p1, :cond_0
 
-    .line 958
+    .line 957
     new-instance v0, Lorg/telegram/ui/IntroActivity$$ExternalSyntheticLambda3;
 
     invoke-direct {v0, p0}, Lorg/telegram/ui/IntroActivity$$ExternalSyntheticLambda3;-><init>(Lorg/telegram/ui/IntroActivity;)V
@@ -1161,7 +1161,7 @@
     :cond_0
     const/4 p1, 0x0
 
-    .line 970
+    .line 969
     :goto_0
     iget-object v0, p0, Lorg/telegram/ui/IntroActivity;->viewPager:Landroidx/viewpager/widget/ViewPager;
 
@@ -1171,14 +1171,14 @@
 
     if-ge p1, v0, :cond_2
 
-    .line 971
+    .line 970
     iget-object v0, p0, Lorg/telegram/ui/IntroActivity;->viewPager:Landroidx/viewpager/widget/ViewPager;
 
     invoke-virtual {v0, p1}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v0
 
-    .line 972
+    .line 971
     iget-object v1, p0, Lorg/telegram/ui/IntroActivity;->pagerHeaderTag:Ljava/lang/Object;
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewWithTag(Ljava/lang/Object;)Landroid/view/View;
@@ -1187,7 +1187,7 @@
 
     check-cast v1, Landroid/widget/TextView;
 
-    .line 973
+    .line 972
     sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
 
     invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -1196,7 +1196,7 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 974
+    .line 973
     iget-object v1, p0, Lorg/telegram/ui/IntroActivity;->pagerMessageTag:Ljava/lang/Object;
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewWithTag(Ljava/lang/Object;)Landroid/view/View;
@@ -1205,7 +1205,7 @@
 
     check-cast v0, Landroid/widget/TextView;
 
-    .line 975
+    .line 974
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayText3:I
 
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -1218,7 +1218,7 @@
 
     goto :goto_0
 
-    .line 977
+    .line 976
     :cond_1
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
@@ -1808,7 +1808,7 @@
         }
     .end annotation
 
-    .line 943
+    .line 942
     new-instance v0, Lorg/telegram/ui/IntroActivity$$ExternalSyntheticLambda6;
 
     invoke-direct {v0, p0}, Lorg/telegram/ui/IntroActivity$$ExternalSyntheticLambda6;-><init>(Lorg/telegram/ui/IntroActivity;)V
@@ -1877,7 +1877,7 @@
 .method public isLightStatusBar()Z
     .locals 5
 
-    .line 982
+    .line 981
     sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
     const/4 v1, 0x0
@@ -1888,7 +1888,7 @@
 
     move-result v0
 
-    .line 983
+    .line 982
     invoke-static {v0}, Landroidx/core/graphics/ColorUtils;->calculateLuminance(I)D
 
     move-result-wide v0

@@ -14,11 +14,21 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nGlobalStateLayout.kt\nKotlin\n*S Kotlin\n*F\n+ 1 GlobalStateLayout.kt\ncom/iMe/ui/custom/state/GlobalStateLayout\n+ 2 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n*L\n1#1,149:1\n56#2,6:150\n*S KotlinDebug\n*F\n+ 1 GlobalStateLayout.kt\ncom/iMe/ui/custom/state/GlobalStateLayout\n*L\n29#1:150,6\n*E\n"
+    value = "SMAP\nGlobalStateLayout.kt\nKotlin\n*S Kotlin\n*F\n+ 1 GlobalStateLayout.kt\ncom/iMe/ui/custom/state/GlobalStateLayout\n+ 2 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n*L\n1#1,175:1\n56#2,6:176\n*S KotlinDebug\n*F\n+ 1 GlobalStateLayout.kt\ncom/iMe/ui/custom/state/GlobalStateLayout\n*L\n34#1:176,6\n*E\n"
 .end annotation
 
 
 # instance fields
+.field private emptyButtonClickListener:Lkotlin/jvm/functions/Function0;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lkotlin/jvm/functions/Function0<",
+            "Lkotlin/Unit;",
+            ">;"
+        }
+    .end annotation
+.end field
+
 .field private final resourceManager$delegate:Lkotlin/Lazy;
 
 .field private retryButtonClickListener:Lkotlin/jvm/functions/Function0;
@@ -76,13 +86,18 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 23
+    .line 27
     invoke-direct {p0, p1, p2, p3}, Lcom/iMe/ui/custom/state/StatefulLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    .line 26
+    .line 30
     sget-object p1, Lcom/iMe/ui/custom/state/GlobalStateLayout$retryButtonClickListener$1;->INSTANCE:Lcom/iMe/ui/custom/state/GlobalStateLayout$retryButtonClickListener$1;
 
     iput-object p1, p0, Lcom/iMe/ui/custom/state/GlobalStateLayout;->retryButtonClickListener:Lkotlin/jvm/functions/Function0;
+
+    .line 31
+    sget-object p1, Lcom/iMe/ui/custom/state/GlobalStateLayout$emptyButtonClickListener$1;->INSTANCE:Lcom/iMe/ui/custom/state/GlobalStateLayout$emptyButtonClickListener$1;
+
+    iput-object p1, p0, Lcom/iMe/ui/custom/state/GlobalStateLayout;->emptyButtonClickListener:Lkotlin/jvm/functions/Function0;
 
     .line 58
     sget-object p1, Lorg/koin/mp/KoinPlatformTools;->INSTANCE:Lorg/koin/mp/KoinPlatformTools;
@@ -102,10 +117,10 @@
 
     move-result-object p1
 
-    .line 29
+    .line 34
     iput-object p1, p0, Lcom/iMe/ui/custom/state/GlobalStateLayout;->resourceManager$delegate:Lkotlin/Lazy;
 
-    .line 32
+    .line 37
     invoke-direct {p0}, Lcom/iMe/ui/custom/state/GlobalStateLayout;->setupStates()V
 
     return-void
@@ -127,7 +142,7 @@
 
     const/4 p3, 0x0
 
-    .line 19
+    .line 23
     :cond_1
     invoke-direct {p0, p1, p2, p3}, Lcom/iMe/ui/custom/state/GlobalStateLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
@@ -137,7 +152,7 @@
 .method private final configureProgressState(Landroid/view/View;)Landroid/view/View;
     .locals 5
 
-    .line 92
+    .line 100
     sget v0, Lorg/telegram/messenger/R$id;->image_state_animation:I
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -146,7 +161,7 @@
 
     check-cast v0, Lorg/telegram/ui/Components/RLottieImageView;
 
-    .line 94
+    .line 102
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_chats_actionBackground:I
 
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -163,7 +178,7 @@
 
     invoke-virtual {v0, v3, v2}, Lorg/telegram/ui/Components/RLottieImageView;->setLayerColor(Ljava/lang/String;I)V
 
-    .line 95
+    .line 103
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
@@ -172,7 +187,7 @@
 
     invoke-virtual {v0, v2, v1}, Lorg/telegram/ui/Components/RLottieImageView;->setLayerColor(Ljava/lang/String;I)V
 
-    .line 97
+    .line 105
     sget v0, Lorg/telegram/messenger/R$id;->text_state_title:I
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -195,7 +210,7 @@
 
     invoke-static {v0, v3, v2, v1}, Lcom/iMe/utils/extentions/common/ViewExtKt;->gone$default(Landroid/view/View;ZILjava/lang/Object;)V
 
-    .line 98
+    .line 106
     :cond_0
     sget v0, Lorg/telegram/messenger/R$id;->text_state_description:I
 
@@ -220,7 +235,7 @@
 .method private final getResourceManager()Lcom/iMe/storage/domain/utils/system/ResourceManager;
     .locals 1
 
-    .line 29
+    .line 34
     iget-object v0, p0, Lcom/iMe/ui/custom/state/GlobalStateLayout;->resourceManager$delegate:Lkotlin/Lazy;
 
     invoke-interface {v0}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
@@ -235,7 +250,7 @@
 .method private final getStateView(Lcom/iMe/model/state/GlobalState;)Landroid/view/View;
     .locals 10
 
-    .line 102
+    .line 110
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
 
     move-result-object v0
@@ -244,7 +259,7 @@
 
     move-result-object v0
 
-    .line 103
+    .line 111
     sget v1, Lorg/telegram/messenger/R$layout;->fork_content_global_state_layout:I
 
     const/4 v2, 0x0
@@ -253,7 +268,7 @@
 
     move-result-object v0
 
-    .line 105
+    .line 113
     sget v1, Lorg/telegram/messenger/R$id;->image_state_animation:I
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -264,10 +279,10 @@
 
     const/4 v3, 0x1
 
-    .line 106
+    .line 114
     invoke-virtual {v1, v3}, Lorg/telegram/ui/Components/RLottieImageView;->setAutoRepeat(Z)V
 
-    .line 107
+    .line 115
     invoke-virtual {p1}, Lcom/iMe/model/state/GlobalState;->getIcon()I
 
     move-result v4
@@ -276,7 +291,7 @@
 
     invoke-virtual {v1, v4, v5, v5}, Lorg/telegram/ui/Components/RLottieImageView;->setAnimation(III)V
 
-    .line 109
+    .line 117
     sget v1, Lorg/telegram/messenger/R$id;->text_state_title:I
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -285,7 +300,7 @@
 
     check-cast v1, Landroidx/appcompat/widget/AppCompatTextView;
 
-    .line 110
+    .line 118
     invoke-direct {p0}, Lcom/iMe/ui/custom/state/GlobalStateLayout;->getResourceManager()Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     move-result-object v4
@@ -300,7 +315,7 @@
 
     invoke-virtual {v1, v4}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 111
+    .line 119
     sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_chat_messagePanelText:I
 
     invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -311,12 +326,12 @@
 
     const-string v4, "getStateView$lambda$6$lambda$3"
 
-    .line 112
+    .line 120
     invoke-static {v1, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-static {v1}, Lcom/iMe/utils/extentions/common/ViewExtKt;->withMediumTypeface(Landroid/widget/TextView;)V
 
-    .line 114
+    .line 122
     sget v1, Lorg/telegram/messenger/R$id;->text_state_description:I
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -325,78 +340,110 @@
 
     check-cast v1, Landroidx/appcompat/widget/AppCompatTextView;
 
-    .line 115
+    .line 123
     invoke-direct {p0}, Lcom/iMe/ui/custom/state/GlobalStateLayout;->getResourceManager()Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     move-result-object v4
 
     invoke-virtual {p1}, Lcom/iMe/model/state/GlobalState;->getDescription()I
 
-    move-result p1
+    move-result v5
 
-    invoke-interface {v4, p1}, Lcom/iMe/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
+    invoke-interface {v4, v5}, Lcom/iMe/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
 
-    move-result-object p1
+    move-result-object v4
 
-    invoke-virtual {v1, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v1, v4}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 116
-    sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextGray2:I
+    .line 124
+    sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextGray2:I
 
-    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
+    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
-    move-result p1
+    move-result v4
 
-    invoke-virtual {v1, p1}, Landroid/widget/TextView;->setTextColor(I)V
+    invoke-virtual {v1, v4}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 118
-    sget p1, Lorg/telegram/messenger/R$id;->button_retry:I
+    .line 126
+    sget v1, Lorg/telegram/messenger/R$id;->button_retry:I
 
-    invoke-virtual {v0, p1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
-    move-result-object p1
+    move-result-object v1
 
-    move-object v4, p1
+    move-object v4, v1
 
     check-cast v4, Landroidx/appcompat/widget/AppCompatButton;
 
-    .line 119
+    .line 127
     invoke-direct {p0}, Lcom/iMe/ui/custom/state/GlobalStateLayout;->getResourceManager()Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
-    move-result-object p1
+    move-result-object v1
 
-    sget v1, Lorg/telegram/messenger/R$string;->common_retry:I
+    .line 129
+    sget-object v5, Lcom/iMe/model/state/GlobalState$Empty$TokenSearchResult;->INSTANCE:Lcom/iMe/model/state/GlobalState$Empty$TokenSearchResult;
 
-    invoke-interface {p1, v1}, Lcom/iMe/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
+    invoke-static {p1, v5}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    move-result-object p1
+    move-result v5
 
-    invoke-virtual {v4, p1}, Landroid/widget/Button;->setText(Ljava/lang/CharSequence;)V
+    if-eqz v5, :cond_0
 
-    const-string p1, "getStateView$lambda$6$lambda$5"
+    move v5, v3
 
-    .line 120
-    invoke-static {v4, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    goto :goto_0
 
-    const/4 p1, 0x0
+    .line 130
+    :cond_0
+    sget-object v5, Lcom/iMe/model/state/GlobalState$Empty$CustomTokens;->INSTANCE:Lcom/iMe/model/state/GlobalState$Empty$CustomTokens;
 
-    invoke-static {v4, p1, v3, v2}, Lcom/iMe/utils/extentions/common/ViewExtKt;->setRippleBackground$default(Landroid/view/View;ZILjava/lang/Object;)V
+    invoke-static {p1, v5}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    .line 121
-    sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_chats_actionBackground:I
+    move-result v5
 
-    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
+    :goto_0
+    if-eqz v5, :cond_1
 
-    move-result p1
+    sget v5, Lorg/telegram/messenger/R$string;->token_search_empty_result_add_token:I
 
-    invoke-virtual {v4, p1}, Landroid/widget/Button;->setTextColor(I)V
+    goto :goto_1
 
-    .line 122
-    new-instance v7, Lcom/iMe/ui/custom/state/GlobalStateLayout$getStateView$1$4$1;
+    .line 132
+    :cond_1
+    sget v5, Lorg/telegram/messenger/R$string;->common_retry:I
 
-    invoke-direct {v7, p0}, Lcom/iMe/ui/custom/state/GlobalStateLayout$getStateView$1$4$1;-><init>(Lcom/iMe/ui/custom/state/GlobalStateLayout;)V
+    .line 127
+    :goto_1
+    invoke-interface {v1, v5}, Lcom/iMe/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v4, v1}, Landroid/widget/Button;->setText(Ljava/lang/CharSequence;)V
+
+    const-string v1, "getStateView$lambda$6$lambda$5"
+
+    .line 135
+    invoke-static {v4, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const/4 v1, 0x0
+
+    invoke-static {v4, v1, v3, v2}, Lcom/iMe/utils/extentions/common/ViewExtKt;->setRippleBackground$default(Landroid/view/View;ZILjava/lang/Object;)V
+
+    .line 136
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_chats_actionBackground:I
+
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
+
+    move-result v1
+
+    invoke-virtual {v4, v1}, Landroid/widget/Button;->setTextColor(I)V
 
     const-wide/16 v5, 0x0
+
+    .line 137
+    new-instance v7, Lcom/iMe/ui/custom/state/GlobalStateLayout$getStateView$1$4$1;
+
+    invoke-direct {v7, p1, p0}, Lcom/iMe/ui/custom/state/GlobalStateLayout$getStateView$1$4$1;-><init>(Lcom/iMe/model/state/GlobalState;Lcom/iMe/ui/custom/state/GlobalStateLayout;)V
 
     const/4 v8, 0x1
 
@@ -406,7 +453,7 @@
 
     const-string p1, "from(context)\n          \u2026          }\n            }"
 
-    .line 104
+    .line 112
     invoke-static {v0, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     return-object v0
@@ -415,7 +462,7 @@
 .method private final hideActionButton(Landroid/view/View;)Landroid/view/View;
     .locals 4
 
-    .line 139
+    .line 165
     sget v0, Lorg/telegram/messenger/R$id;->button_retry:I
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -441,7 +488,7 @@
 .method private final setupStates()V
     .locals 2
 
-    .line 81
+    .line 86
     sget-object v0, Lcom/iMe/model/state/GlobalState$NoInternet;->INSTANCE:Lcom/iMe/model/state/GlobalState$NoInternet;
 
     invoke-virtual {v0}, Lcom/iMe/model/state/GlobalState;->getState()Ljava/lang/String;
@@ -454,7 +501,7 @@
 
     invoke-virtual {p0, v1, v0}, Lcom/iMe/ui/custom/state/StatefulLayout;->setStateView(Ljava/lang/String;Landroid/view/View;)V
 
-    .line 82
+    .line 87
     sget-object v0, Lcom/iMe/model/state/GlobalState$Unexpected;->INSTANCE:Lcom/iMe/model/state/GlobalState$Unexpected;
 
     invoke-virtual {v0}, Lcom/iMe/model/state/GlobalState;->getState()Ljava/lang/String;
@@ -467,7 +514,33 @@
 
     invoke-virtual {p0, v1, v0}, Lcom/iMe/ui/custom/state/StatefulLayout;->setStateView(Ljava/lang/String;Landroid/view/View;)V
 
-    .line 83
+    .line 88
+    sget-object v0, Lcom/iMe/model/state/GlobalState$Empty$TokenSearchResult;->INSTANCE:Lcom/iMe/model/state/GlobalState$Empty$TokenSearchResult;
+
+    invoke-virtual {v0}, Lcom/iMe/model/state/GlobalState$Empty;->getState()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-direct {p0, v0}, Lcom/iMe/ui/custom/state/GlobalStateLayout;->getStateView(Lcom/iMe/model/state/GlobalState;)Landroid/view/View;
+
+    move-result-object v0
+
+    invoke-virtual {p0, v1, v0}, Lcom/iMe/ui/custom/state/StatefulLayout;->setStateView(Ljava/lang/String;Landroid/view/View;)V
+
+    .line 89
+    sget-object v0, Lcom/iMe/model/state/GlobalState$Empty$CustomTokens;->INSTANCE:Lcom/iMe/model/state/GlobalState$Empty$CustomTokens;
+
+    invoke-virtual {v0}, Lcom/iMe/model/state/GlobalState$Empty;->getState()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-direct {p0, v0}, Lcom/iMe/ui/custom/state/GlobalStateLayout;->getStateView(Lcom/iMe/model/state/GlobalState;)Landroid/view/View;
+
+    move-result-object v0
+
+    invoke-virtual {p0, v1, v0}, Lcom/iMe/ui/custom/state/StatefulLayout;->setStateView(Ljava/lang/String;Landroid/view/View;)V
+
+    .line 90
     sget-object v0, Lcom/iMe/model/state/GlobalState$Empty$Common;->INSTANCE:Lcom/iMe/model/state/GlobalState$Empty$Common;
 
     invoke-virtual {v0}, Lcom/iMe/model/state/GlobalState$Empty;->getState()Ljava/lang/String;
@@ -484,7 +557,7 @@
 
     invoke-virtual {p0, v1, v0}, Lcom/iMe/ui/custom/state/StatefulLayout;->setStateView(Ljava/lang/String;Landroid/view/View;)V
 
-    .line 84
+    .line 91
     sget-object v0, Lcom/iMe/model/state/GlobalState$Empty$Balance;->INSTANCE:Lcom/iMe/model/state/GlobalState$Empty$Balance;
 
     invoke-virtual {v0}, Lcom/iMe/model/state/GlobalState$Empty;->getState()Ljava/lang/String;
@@ -501,7 +574,7 @@
 
     invoke-virtual {p0, v1, v0}, Lcom/iMe/ui/custom/state/StatefulLayout;->setStateView(Ljava/lang/String;Landroid/view/View;)V
 
-    .line 85
+    .line 92
     sget-object v0, Lcom/iMe/model/state/GlobalState$Empty$Staking;->INSTANCE:Lcom/iMe/model/state/GlobalState$Empty$Staking;
 
     invoke-virtual {v0}, Lcom/iMe/model/state/GlobalState$Empty;->getState()Ljava/lang/String;
@@ -518,7 +591,7 @@
 
     invoke-virtual {p0, v1, v0}, Lcom/iMe/ui/custom/state/StatefulLayout;->setStateView(Ljava/lang/String;Landroid/view/View;)V
 
-    .line 86
+    .line 93
     sget-object v0, Lcom/iMe/model/state/GlobalState$Empty$Twitter;->INSTANCE:Lcom/iMe/model/state/GlobalState$Empty$Twitter;
 
     invoke-virtual {v0}, Lcom/iMe/model/state/GlobalState$Empty;->getState()Ljava/lang/String;
@@ -535,7 +608,7 @@
 
     invoke-virtual {p0, v1, v0}, Lcom/iMe/ui/custom/state/StatefulLayout;->setStateView(Ljava/lang/String;Landroid/view/View;)V
 
-    .line 87
+    .line 94
     sget-object v0, Lcom/iMe/model/state/GlobalState$Empty$TwitterSearch;->INSTANCE:Lcom/iMe/model/state/GlobalState$Empty$TwitterSearch;
 
     invoke-virtual {v0}, Lcom/iMe/model/state/GlobalState$Empty;->getState()Ljava/lang/String;
@@ -552,7 +625,24 @@
 
     invoke-virtual {p0, v1, v0}, Lcom/iMe/ui/custom/state/StatefulLayout;->setStateView(Ljava/lang/String;Landroid/view/View;)V
 
-    .line 88
+    .line 95
+    sget-object v0, Lcom/iMe/model/state/GlobalState$Empty$TokenSearchStart;->INSTANCE:Lcom/iMe/model/state/GlobalState$Empty$TokenSearchStart;
+
+    invoke-virtual {v0}, Lcom/iMe/model/state/GlobalState$Empty;->getState()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-direct {p0, v0}, Lcom/iMe/ui/custom/state/GlobalStateLayout;->getStateView(Lcom/iMe/model/state/GlobalState;)Landroid/view/View;
+
+    move-result-object v0
+
+    invoke-direct {p0, v0}, Lcom/iMe/ui/custom/state/GlobalStateLayout;->hideActionButton(Landroid/view/View;)Landroid/view/View;
+
+    move-result-object v0
+
+    invoke-virtual {p0, v1, v0}, Lcom/iMe/ui/custom/state/StatefulLayout;->setStateView(Ljava/lang/String;Landroid/view/View;)V
+
+    .line 96
     sget-object v0, Lcom/iMe/model/state/GlobalState$Progress;->INSTANCE:Lcom/iMe/model/state/GlobalState$Progress;
 
     invoke-virtual {v0}, Lcom/iMe/model/state/GlobalState;->getState()Ljava/lang/String;
@@ -583,7 +673,7 @@
 
     if-eqz p2, :cond_0
 
-    .line 45
+    .line 50
     sget-object p1, Lcom/iMe/model/state/GlobalState$Empty$Common;->INSTANCE:Lcom/iMe/model/state/GlobalState$Empty$Common;
 
     :cond_0
@@ -595,7 +685,7 @@
 .method private final startAnimation(Ljava/lang/String;)V
     .locals 1
 
-    .line 127
+    .line 153
     sget-object v0, Lcom/iMe/model/state/GlobalState$Content;->INSTANCE:Lcom/iMe/model/state/GlobalState$Content;
 
     invoke-virtual {v0}, Lcom/iMe/model/state/GlobalState;->getState()Ljava/lang/String;
@@ -610,7 +700,7 @@
 
     return-void
 
-    .line 129
+    .line 155
     :cond_0
     invoke-virtual {p0, p1}, Lcom/iMe/ui/custom/state/StatefulLayout;->getStateView(Ljava/lang/String;)Landroid/view/View;
 
@@ -637,7 +727,7 @@
 .method private final stopAnimation(Ljava/lang/String;)V
     .locals 1
 
-    .line 133
+    .line 159
     sget-object v0, Lcom/iMe/model/state/GlobalState$Content;->INSTANCE:Lcom/iMe/model/state/GlobalState$Content;
 
     invoke-virtual {v0}, Lcom/iMe/model/state/GlobalState;->getState()Ljava/lang/String;
@@ -652,7 +742,7 @@
 
     return-void
 
-    .line 135
+    .line 161
     :cond_0
     invoke-virtual {p0, p1}, Lcom/iMe/ui/custom/state/StatefulLayout;->getStateView(Ljava/lang/String;)Landroid/view/View;
 
@@ -678,10 +768,27 @@
 
 
 # virtual methods
+.method public final getEmptyButtonClickListener()Lkotlin/jvm/functions/Function0;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Lkotlin/jvm/functions/Function0<",
+            "Lkotlin/Unit;",
+            ">;"
+        }
+    .end annotation
+
+    .line 31
+    iget-object v0, p0, Lcom/iMe/ui/custom/state/GlobalStateLayout;->emptyButtonClickListener:Lkotlin/jvm/functions/Function0;
+
+    return-object v0
+.end method
+
 .method public getKoin()Lorg/koin/core/Koin;
     .locals 1
 
-    .line 19
+    .line 23
     invoke-static {p0}, Lorg/koin/core/component/KoinComponent$DefaultImpls;->getKoin(Lorg/koin/core/component/KoinComponent;)Lorg/koin/core/Koin;
 
     move-result-object v0
@@ -700,7 +807,7 @@
         }
     .end annotation
 
-    .line 26
+    .line 30
     iget-object v0, p0, Lcom/iMe/ui/custom/state/GlobalStateLayout;->retryButtonClickListener:Lkotlin/jvm/functions/Function0;
 
     return-object v0
@@ -709,7 +816,7 @@
 .method public final isContentState()Z
     .locals 2
 
-    .line 65
+    .line 70
     invoke-virtual {p0}, Lcom/iMe/ui/custom/state/StatefulLayout;->getState()Ljava/lang/String;
 
     move-result-object v0
@@ -730,15 +837,36 @@
 .method protected onDetachedFromWindow()V
     .locals 1
 
-    .line 72
+    .line 77
     invoke-virtual {p0}, Lcom/iMe/ui/custom/state/StatefulLayout;->getState()Ljava/lang/String;
 
     move-result-object v0
 
     invoke-direct {p0, v0}, Lcom/iMe/ui/custom/state/GlobalStateLayout;->stopAnimation(Ljava/lang/String;)V
 
-    .line 73
+    .line 78
     invoke-super {p0}, Landroid/widget/FrameLayout;->onDetachedFromWindow()V
+
+    return-void
+.end method
+
+.method public final setEmptyButtonClickListener(Lkotlin/jvm/functions/Function0;)V
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lkotlin/jvm/functions/Function0<",
+            "Lkotlin/Unit;",
+            ">;)V"
+        }
+    .end annotation
+
+    const-string v0, "<set-?>"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 31
+    iput-object p1, p0, Lcom/iMe/ui/custom/state/GlobalStateLayout;->emptyButtonClickListener:Lkotlin/jvm/functions/Function0;
 
     return-void
 .end method
@@ -750,21 +878,21 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 58
+    .line 63
     invoke-virtual {p0}, Lcom/iMe/ui/custom/state/StatefulLayout;->getState()Ljava/lang/String;
 
     move-result-object v0
 
     invoke-direct {p0, v0}, Lcom/iMe/ui/custom/state/GlobalStateLayout;->stopAnimation(Ljava/lang/String;)V
 
-    .line 59
+    .line 64
     invoke-virtual {p1}, Lcom/iMe/model/state/GlobalState;->getState()Ljava/lang/String;
 
     move-result-object p1
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/custom/state/StatefulLayout;->setState(Ljava/lang/String;)V
 
-    .line 60
+    .line 65
     invoke-virtual {p0}, Lcom/iMe/ui/custom/state/StatefulLayout;->getState()Ljava/lang/String;
 
     move-result-object p1
@@ -789,7 +917,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 26
+    .line 30
     iput-object p1, p0, Lcom/iMe/ui/custom/state/GlobalStateLayout;->retryButtonClickListener:Lkotlin/jvm/functions/Function0;
 
     return-void
@@ -798,7 +926,7 @@
 .method public final showContent()V
     .locals 1
 
-    .line 38
+    .line 43
     sget-object v0, Lcom/iMe/model/state/GlobalState$Content;->INSTANCE:Lcom/iMe/model/state/GlobalState$Content;
 
     invoke-virtual {p0, v0}, Lcom/iMe/ui/custom/state/GlobalStateLayout;->setInternalState(Lcom/iMe/model/state/GlobalState;)V
@@ -813,7 +941,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 46
+    .line 51
     invoke-virtual {p0, p1}, Lcom/iMe/ui/custom/state/GlobalStateLayout;->setInternalState(Lcom/iMe/model/state/GlobalState;)V
 
     return-void
@@ -822,7 +950,7 @@
 .method public final showNoInternetError()V
     .locals 1
 
-    .line 50
+    .line 55
     sget-object v0, Lcom/iMe/model/state/GlobalState$NoInternet;->INSTANCE:Lcom/iMe/model/state/GlobalState$NoInternet;
 
     invoke-virtual {p0, v0}, Lcom/iMe/ui/custom/state/GlobalStateLayout;->setInternalState(Lcom/iMe/model/state/GlobalState;)V
@@ -833,7 +961,7 @@
 .method public final showProgress()V
     .locals 1
 
-    .line 42
+    .line 47
     sget-object v0, Lcom/iMe/model/state/GlobalState$Progress;->INSTANCE:Lcom/iMe/model/state/GlobalState$Progress;
 
     invoke-virtual {p0, v0}, Lcom/iMe/ui/custom/state/GlobalStateLayout;->setInternalState(Lcom/iMe/model/state/GlobalState;)V
@@ -844,7 +972,7 @@
 .method public final showUnexpectedError()V
     .locals 1
 
-    .line 54
+    .line 59
     sget-object v0, Lcom/iMe/model/state/GlobalState$Unexpected;->INSTANCE:Lcom/iMe/model/state/GlobalState$Unexpected;
 
     invoke-virtual {p0, v0}, Lcom/iMe/ui/custom/state/GlobalStateLayout;->setInternalState(Lcom/iMe/model/state/GlobalState;)V

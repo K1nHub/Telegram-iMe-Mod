@@ -2,7 +2,8 @@ package com.iMe.p031ui.wallet.swap.process;
 
 import com.iMe.model.wallet.crypto.swap.SwapUiState;
 import com.iMe.model.wallet.swap.SwapSide;
-import com.iMe.storage.domain.model.crypto.NetworkType;
+import com.iMe.storage.data.utils.crypto.NetworksHelper;
+import com.iMe.storage.domain.model.crypto.Network;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
@@ -11,7 +12,7 @@ import kotlin.jvm.internal.Lambda;
 /* compiled from: WalletSwapProcessPresenter.kt */
 /* renamed from: com.iMe.ui.wallet.swap.process.WalletSwapProcessPresenter$startChooseNetworkDialog$1 */
 /* loaded from: classes4.dex */
-public final class WalletSwapProcessPresenter$startChooseNetworkDialog$1 extends Lambda implements Function1<NetworkType, Unit> {
+public final class WalletSwapProcessPresenter$startChooseNetworkDialog$1 extends Lambda implements Function1<Network, Unit> {
     final /* synthetic */ SwapSide $side;
     final /* synthetic */ WalletSwapProcessPresenter this$0;
 
@@ -44,23 +45,23 @@ public final class WalletSwapProcessPresenter$startChooseNetworkDialog$1 extends
     }
 
     @Override // kotlin.jvm.functions.Function1
-    public /* bridge */ /* synthetic */ Unit invoke(NetworkType networkType) {
-        invoke2(networkType);
+    public /* bridge */ /* synthetic */ Unit invoke(Network network) {
+        invoke2(network);
         return Unit.INSTANCE;
     }
 
     /* renamed from: invoke  reason: avoid collision after fix types in other method */
-    public final void invoke2(NetworkType newNetworkType) {
-        NetworkType selectedNetworkTypeBySwapSide;
-        Intrinsics.checkNotNullParameter(newNetworkType, "newNetworkType");
+    public final void invoke2(Network newNetwork) {
+        String selectedNetworkIdBySwapSide;
+        Intrinsics.checkNotNullParameter(newNetwork, "newNetwork");
         int i = WhenMappings.$EnumSwitchMapping$0[this.$side.ordinal()];
         if (i == 1) {
-            this.this$0.selectedInputNetworkType = newNetworkType;
+            this.this$0.selectedInputNetworkId = newNetwork.getId();
         } else if (i == 2) {
-            this.this$0.selectedOutputNetworkType = newNetworkType;
+            this.this$0.selectedOutputNetworkId = newNetwork.getId();
         }
-        selectedNetworkTypeBySwapSide = this.this$0.getSelectedNetworkTypeBySwapSide(this.$side);
-        ((WalletSwapProcessView) this.this$0.getViewState()).setupNetworkType(selectedNetworkTypeBySwapSide, this.$side);
+        selectedNetworkIdBySwapSide = this.this$0.getSelectedNetworkIdBySwapSide(this.$side);
+        ((WalletSwapProcessView) this.this$0.getViewState()).setupNetwork(NetworksHelper.getNetworkById(selectedNetworkIdBySwapSide), this.$side);
         this.this$0.resetLoadedInformation();
         this.this$0.resolveSwapProtocol();
         this.this$0.setupSwapInformation();

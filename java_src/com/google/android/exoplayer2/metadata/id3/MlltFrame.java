@@ -21,7 +21,7 @@ public final class MlltFrame extends Id3Frame {
     };
 
     /* renamed from: ID */
-    public static final String f119ID = "MLLT";
+    public static final String f201ID = "MLLT";
     public final int bytesBetweenReference;
     public final int[] bytesDeviations;
     public final int millisecondsBetweenReference;
@@ -34,7 +34,7 @@ public final class MlltFrame extends Id3Frame {
     }
 
     public MlltFrame(int i, int i2, int i3, int[] iArr, int[] iArr2) {
-        super(f119ID);
+        super(f201ID);
         this.mpegFramesBetweenReference = i;
         this.bytesBetweenReference = i2;
         this.millisecondsBetweenReference = i3;
@@ -43,7 +43,7 @@ public final class MlltFrame extends Id3Frame {
     }
 
     MlltFrame(Parcel parcel) {
-        super(f119ID);
+        super(f201ID);
         this.mpegFramesBetweenReference = parcel.readInt();
         this.bytesBetweenReference = parcel.readInt();
         this.millisecondsBetweenReference = parcel.readInt();

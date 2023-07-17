@@ -173,16 +173,16 @@ public class CrashlyticsController {
             return Tasks.forResult(null);
         }
         Logger.getLogger().m722v("Crash reports are available to be sent.");
-        return waitForReportAction().onSuccessTask(new C09494(task));
+        return waitForReportAction().onSuccessTask(new C09544(task));
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.google.firebase.crashlytics.internal.common.CrashlyticsController$4 */
     /* loaded from: classes3.dex */
-    public class C09494 implements SuccessContinuation<Boolean, Void> {
+    public class C09544 implements SuccessContinuation<Boolean, Void> {
         final /* synthetic */ Task val$appSettingsDataTask;
 
-        C09494(Task task) {
+        C09544(Task task) {
             this.val$appSettingsDataTask = task;
         }
 
@@ -202,7 +202,7 @@ public class CrashlyticsController {
                     Logger.getLogger().m728d("Sending cached crash reports...");
                     CrashlyticsController.this.dataCollectionArbiter.grantDataCollectionPermission(bool.booleanValue());
                     final Executor executor = CrashlyticsController.this.backgroundWorker.getExecutor();
-                    return C09494.this.val$appSettingsDataTask.onSuccessTask(executor, new SuccessContinuation<AppSettingsData, Void>() { // from class: com.google.firebase.crashlytics.internal.common.CrashlyticsController.4.1.1
+                    return C09544.this.val$appSettingsDataTask.onSuccessTask(executor, new SuccessContinuation<AppSettingsData, Void>() { // from class: com.google.firebase.crashlytics.internal.common.CrashlyticsController.4.1.1
                         @Override // com.google.android.gms.tasks.SuccessContinuation
                         public Task<Void> then(AppSettingsData appSettingsData) throws Exception {
                             if (appSettingsData != null) {

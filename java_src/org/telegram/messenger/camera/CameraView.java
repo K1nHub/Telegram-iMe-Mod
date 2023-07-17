@@ -62,9 +62,9 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.camera.CameraView;
 import org.telegram.messenger.video.MP4Builder;
 import org.telegram.messenger.video.Mp4Movie;
-import org.telegram.p044ui.Components.CubicBezierInterpolator;
-import org.telegram.p044ui.Components.InstantCameraView;
-import org.telegram.p044ui.Components.LayoutHelper;
+import org.telegram.p043ui.Components.CubicBezierInterpolator;
+import org.telegram.p043ui.Components.InstantCameraView;
+import org.telegram.p043ui.Components.LayoutHelper;
 import org.webrtc.EglBase;
 /* loaded from: classes4.dex */
 public class CameraView extends FrameLayout implements TextureView.SurfaceTextureListener {
@@ -85,10 +85,10 @@ public class CameraView extends FrameLayout implements TextureView.SurfaceTextur
     private int clipTop;
 
     /* renamed from: cx */
-    private int f1414cx;
+    private int f1496cx;
 
     /* renamed from: cy */
-    private int f1415cy;
+    private int f1497cy;
     private CameraViewDelegate delegate;
     boolean firstFrameRendered;
     ValueAnimator flipAnimator;
@@ -666,8 +666,8 @@ public class CameraView extends FrameLayout implements TextureView.SurfaceTextur
             this.focusProgress = BitmapDescriptorFactory.HUE_RED;
             this.innerAlpha = 1.0f;
             this.outerAlpha = 1.0f;
-            this.f1414cx = i;
-            this.f1415cy = i2;
+            this.f1496cx = i;
+            this.f1497cy = i2;
             this.lastDrawTime = System.currentTimeMillis();
             invalidate();
         }
@@ -724,8 +724,8 @@ public class CameraView extends FrameLayout implements TextureView.SurfaceTextur
             this.innerPaint.setAlpha((int) (this.interpolator.getInterpolation(this.innerAlpha) * 127.0f));
             float interpolation = this.interpolator.getInterpolation(this.focusProgress);
             float f = m54dp;
-            canvas.drawCircle(this.f1414cx, this.f1415cy, ((1.0f - interpolation) * f) + f, this.outerPaint);
-            canvas.drawCircle(this.f1414cx, this.f1415cy, f * interpolation, this.innerPaint);
+            canvas.drawCircle(this.f1496cx, this.f1497cy, ((1.0f - interpolation) * f) + f, this.outerPaint);
+            canvas.drawCircle(this.f1496cx, this.f1497cy, f * interpolation, this.innerPaint);
             float f2 = this.focusProgress;
             if (f2 < 1.0f) {
                 float f3 = f2 + (((float) j2) / 200.0f);
@@ -1401,7 +1401,7 @@ public class CameraView extends FrameLayout implements TextureView.SurfaceTextur
                         Method dump skipped, instructions count: 262
                         To view this dump add '--comments-level debug' option
                     */
-                    throw new UnsupportedOperationException("Method not decompiled: org.telegram.messenger.camera.CameraView.VideoRecorder.RunnableC33231.run():void");
+                    throw new UnsupportedOperationException("Method not decompiled: org.telegram.messenger.camera.CameraView.VideoRecorder.RunnableC34451.run():void");
                 }
             };
         }
@@ -1493,7 +1493,7 @@ public class CameraView extends FrameLayout implements TextureView.SurfaceTextur
             Code decompiled incorrectly, please refer to instructions dump.
             To view partially-correct add '--show-bad-code' argument
         */
-        public void handleAudioFrameAvailable(org.telegram.p044ui.Components.InstantCameraView.AudioBufferInfo r17) {
+        public void handleAudioFrameAvailable(org.telegram.p043ui.Components.InstantCameraView.AudioBufferInfo r17) {
             /*
                 Method dump skipped, instructions count: 517
                 To view this dump add '--comments-level debug' option

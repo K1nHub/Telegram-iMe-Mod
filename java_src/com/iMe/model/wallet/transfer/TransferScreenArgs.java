@@ -2,8 +2,7 @@ package com.iMe.model.wallet.transfer;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import com.iMe.storage.domain.model.crypto.NetworkType;
-import com.iMe.storage.domain.model.wallet.token.TokenCode;
+import com.iMe.model.wallet.crypto.TokenItem;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: TransferScreenArgs.kt */
@@ -12,8 +11,8 @@ public final class TransferScreenArgs implements Parcelable {
     public static final Parcelable.Creator<TransferScreenArgs> CREATOR = new Creator();
     private final String address;
     private final Long chatId;
-    private final TokenCode code;
-    private final NetworkType networkType;
+    private final String networkId;
+    private final TokenItem tokenItem;
     private final Long userId;
 
     /* compiled from: TransferScreenArgs.kt */
@@ -23,7 +22,7 @@ public final class TransferScreenArgs implements Parcelable {
         @Override // android.os.Parcelable.Creator
         public final TransferScreenArgs createFromParcel(Parcel parcel) {
             Intrinsics.checkNotNullParameter(parcel, "parcel");
-            return new TransferScreenArgs(parcel.readInt() == 0 ? null : TokenCode.valueOf(parcel.readString()), parcel.readString(), parcel.readInt() == 0 ? null : Long.valueOf(parcel.readLong()), parcel.readInt() == 0 ? null : Long.valueOf(parcel.readLong()), parcel.readInt() == 0 ? null : NetworkType.valueOf(parcel.readString()));
+            return new TransferScreenArgs(parcel.readInt() == 0 ? null : TokenItem.CREATOR.createFromParcel(parcel), parcel.readString(), parcel.readInt() == 0 ? null : Long.valueOf(parcel.readLong()), parcel.readInt() == 0 ? null : Long.valueOf(parcel.readLong()), parcel.readString());
         }
 
         /* JADX WARN: Can't rename method to resolve collision */
@@ -37,14 +36,14 @@ public final class TransferScreenArgs implements Parcelable {
         this(null, null, null, null, null, 31, null);
     }
 
-    public static /* synthetic */ TransferScreenArgs copy$default(TransferScreenArgs transferScreenArgs, TokenCode tokenCode, String str, Long l, Long l2, NetworkType networkType, int i, Object obj) {
+    public static /* synthetic */ TransferScreenArgs copy$default(TransferScreenArgs transferScreenArgs, TokenItem tokenItem, String str, Long l, Long l2, String str2, int i, Object obj) {
         if ((i & 1) != 0) {
-            tokenCode = transferScreenArgs.code;
+            tokenItem = transferScreenArgs.tokenItem;
         }
         if ((i & 2) != 0) {
             str = transferScreenArgs.address;
         }
-        String str2 = str;
+        String str3 = str;
         if ((i & 4) != 0) {
             l = transferScreenArgs.userId;
         }
@@ -54,13 +53,13 @@ public final class TransferScreenArgs implements Parcelable {
         }
         Long l4 = l2;
         if ((i & 16) != 0) {
-            networkType = transferScreenArgs.networkType;
+            str2 = transferScreenArgs.networkId;
         }
-        return transferScreenArgs.copy(tokenCode, str2, l3, l4, networkType);
+        return transferScreenArgs.copy(tokenItem, str3, l3, l4, str2);
     }
 
-    public final TokenCode component1() {
-        return this.code;
+    public final TokenItem component1() {
+        return this.tokenItem;
     }
 
     public final String component2() {
@@ -75,13 +74,13 @@ public final class TransferScreenArgs implements Parcelable {
         return this.chatId;
     }
 
-    public final NetworkType component5() {
-        return this.networkType;
+    public final String component5() {
+        return this.networkId;
     }
 
-    public final TransferScreenArgs copy(TokenCode tokenCode, String address, Long l, Long l2, NetworkType networkType) {
+    public final TransferScreenArgs copy(TokenItem tokenItem, String address, Long l, Long l2, String str) {
         Intrinsics.checkNotNullParameter(address, "address");
-        return new TransferScreenArgs(tokenCode, address, l, l2, networkType);
+        return new TransferScreenArgs(tokenItem, address, l, l2, str);
     }
 
     @Override // android.os.Parcelable
@@ -95,35 +94,35 @@ public final class TransferScreenArgs implements Parcelable {
         }
         if (obj instanceof TransferScreenArgs) {
             TransferScreenArgs transferScreenArgs = (TransferScreenArgs) obj;
-            return this.code == transferScreenArgs.code && Intrinsics.areEqual(this.address, transferScreenArgs.address) && Intrinsics.areEqual(this.userId, transferScreenArgs.userId) && Intrinsics.areEqual(this.chatId, transferScreenArgs.chatId) && this.networkType == transferScreenArgs.networkType;
+            return Intrinsics.areEqual(this.tokenItem, transferScreenArgs.tokenItem) && Intrinsics.areEqual(this.address, transferScreenArgs.address) && Intrinsics.areEqual(this.userId, transferScreenArgs.userId) && Intrinsics.areEqual(this.chatId, transferScreenArgs.chatId) && Intrinsics.areEqual(this.networkId, transferScreenArgs.networkId);
         }
         return false;
     }
 
     public int hashCode() {
-        TokenCode tokenCode = this.code;
-        int hashCode = (((tokenCode == null ? 0 : tokenCode.hashCode()) * 31) + this.address.hashCode()) * 31;
+        TokenItem tokenItem = this.tokenItem;
+        int hashCode = (((tokenItem == null ? 0 : tokenItem.hashCode()) * 31) + this.address.hashCode()) * 31;
         Long l = this.userId;
         int hashCode2 = (hashCode + (l == null ? 0 : l.hashCode())) * 31;
         Long l2 = this.chatId;
         int hashCode3 = (hashCode2 + (l2 == null ? 0 : l2.hashCode())) * 31;
-        NetworkType networkType = this.networkType;
-        return hashCode3 + (networkType != null ? networkType.hashCode() : 0);
+        String str = this.networkId;
+        return hashCode3 + (str != null ? str.hashCode() : 0);
     }
 
     public String toString() {
-        return "TransferScreenArgs(code=" + this.code + ", address=" + this.address + ", userId=" + this.userId + ", chatId=" + this.chatId + ", networkType=" + this.networkType + ')';
+        return "TransferScreenArgs(tokenItem=" + this.tokenItem + ", address=" + this.address + ", userId=" + this.userId + ", chatId=" + this.chatId + ", networkId=" + this.networkId + ')';
     }
 
     @Override // android.os.Parcelable
     public void writeToParcel(Parcel out, int i) {
         Intrinsics.checkNotNullParameter(out, "out");
-        TokenCode tokenCode = this.code;
-        if (tokenCode == null) {
+        TokenItem tokenItem = this.tokenItem;
+        if (tokenItem == null) {
             out.writeInt(0);
         } else {
             out.writeInt(1);
-            out.writeString(tokenCode.name());
+            tokenItem.writeToParcel(out, i);
         }
         out.writeString(this.address);
         Long l = this.userId;
@@ -140,30 +139,24 @@ public final class TransferScreenArgs implements Parcelable {
             out.writeInt(1);
             out.writeLong(l2.longValue());
         }
-        NetworkType networkType = this.networkType;
-        if (networkType == null) {
-            out.writeInt(0);
-            return;
-        }
-        out.writeInt(1);
-        out.writeString(networkType.name());
+        out.writeString(this.networkId);
     }
 
-    public TransferScreenArgs(TokenCode tokenCode, String address, Long l, Long l2, NetworkType networkType) {
+    public TransferScreenArgs(TokenItem tokenItem, String address, Long l, Long l2, String str) {
         Intrinsics.checkNotNullParameter(address, "address");
-        this.code = tokenCode;
+        this.tokenItem = tokenItem;
         this.address = address;
         this.userId = l;
         this.chatId = l2;
-        this.networkType = networkType;
+        this.networkId = str;
     }
 
-    public /* synthetic */ TransferScreenArgs(TokenCode tokenCode, String str, Long l, Long l2, NetworkType networkType, int i, DefaultConstructorMarker defaultConstructorMarker) {
-        this((i & 1) != 0 ? null : tokenCode, (i & 2) != 0 ? "" : str, (i & 4) != 0 ? null : l, (i & 8) != 0 ? null : l2, (i & 16) != 0 ? null : networkType);
+    public /* synthetic */ TransferScreenArgs(TokenItem tokenItem, String str, Long l, Long l2, String str2, int i, DefaultConstructorMarker defaultConstructorMarker) {
+        this((i & 1) != 0 ? null : tokenItem, (i & 2) != 0 ? "" : str, (i & 4) != 0 ? null : l, (i & 8) != 0 ? null : l2, (i & 16) != 0 ? null : str2);
     }
 
-    public final TokenCode getCode() {
-        return this.code;
+    public final TokenItem getTokenItem() {
+        return this.tokenItem;
     }
 
     public final String getAddress() {
@@ -178,7 +171,7 @@ public final class TransferScreenArgs implements Parcelable {
         return this.chatId;
     }
 
-    public final NetworkType getNetworkType() {
-        return this.networkType;
+    public final String getNetworkId() {
+        return this.networkId;
     }
 }

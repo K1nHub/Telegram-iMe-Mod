@@ -14,9 +14,9 @@ import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3295R;
+import org.telegram.messenger.C3417R;
 import org.telegram.messenger.databinding.ForkContentImageHeaderBinding;
-import org.telegram.p044ui.ActionBar.Theme;
+import org.telegram.p043ui.ActionBar.Theme;
 /* compiled from: ImageHeaderView.kt */
 /* renamed from: com.iMe.ui.custom.ImageHeaderView */
 /* loaded from: classes3.dex */
@@ -51,23 +51,22 @@ public final class ImageHeaderView extends FrameLayout {
         return ((Number) this.networkIconCornerSize$delegate.getValue()).floatValue();
     }
 
-    public static /* synthetic */ void setupViewData$default(ImageHeaderView imageHeaderView, int i, Integer num, String str, String str2, int i2, Object obj) {
-        if ((i2 & 2) != 0) {
-            num = null;
-        }
-        imageHeaderView.setupViewData(i, num, str, str2);
-    }
-
-    public final void setupViewData(int i, Integer num, String titleText, String subtitleText) {
+    public final void setupViewData(String str, Integer num, String str2, String titleText, String subtitleText) {
         Intrinsics.checkNotNullParameter(titleText, "titleText");
         Intrinsics.checkNotNullParameter(subtitleText, "subtitleText");
         ForkContentImageHeaderBinding forkContentImageHeaderBinding = this.binding;
-        forkContentImageHeaderBinding.imageIcon.setImageResource(i);
-        if (num != null) {
-            AppCompatImageView setupViewData$lambda$1$lambda$0 = forkContentImageHeaderBinding.imageNetworkIcon;
-            Intrinsics.checkNotNullExpressionValue(setupViewData$lambda$1$lambda$0, "setupViewData$lambda$1$lambda$0");
-            ViewExtKt.visible$default(setupViewData$lambda$1$lambda$0, false, 1, null);
-            setupViewData$lambda$1$lambda$0.setImageResource(num.intValue());
+        AppCompatImageView setupViewData$lambda$2$lambda$0 = forkContentImageHeaderBinding.imageIcon;
+        if (str != null) {
+            Intrinsics.checkNotNullExpressionValue(setupViewData$lambda$2$lambda$0, "setupViewData$lambda$2$lambda$0");
+            ImageViewExtKt.loadFrom$default(setupViewData$lambda$2$lambda$0, str, null, false, 6, null);
+        } else if (num != null) {
+            setupViewData$lambda$2$lambda$0.setImageResource(num.intValue());
+        }
+        if (str2 != null) {
+            AppCompatImageView setupViewData$lambda$2$lambda$1 = forkContentImageHeaderBinding.imageNetworkIcon;
+            Intrinsics.checkNotNullExpressionValue(setupViewData$lambda$2$lambda$1, "setupViewData$lambda$2$lambda$1");
+            ViewExtKt.visible$default(setupViewData$lambda$2$lambda$1, false, 1, null);
+            ImageViewExtKt.loadFrom$default(setupViewData$lambda$2$lambda$1, str2, null, false, 6, null);
         }
         forkContentImageHeaderBinding.textTitle.setText(titleText);
         forkContentImageHeaderBinding.textSubtitle.setText(subtitleText);
@@ -80,9 +79,7 @@ public final class ImageHeaderView extends FrameLayout {
         ForkContentImageHeaderBinding forkContentImageHeaderBinding = this.binding;
         AppCompatImageView imageIcon = forkContentImageHeaderBinding.imageIcon;
         Intrinsics.checkNotNullExpressionValue(imageIcon, "imageIcon");
-        Context context = getContext();
-        Intrinsics.checkNotNullExpressionValue(context, "context");
-        ImageViewExtKt.loadFromWithPlaceholderResId(imageIcon, iconUrl, context, Integer.valueOf(C3295R.C3297drawable.fork_ic_internal_logo), true);
+        ImageViewExtKt.loadFrom$default(imageIcon, iconUrl, Integer.valueOf(C3417R.C3419drawable.fork_ic_internal_logo), false, 4, null);
         forkContentImageHeaderBinding.textTitle.setText(titleText);
         forkContentImageHeaderBinding.textSubtitle.setText(subtitleText);
     }
@@ -94,10 +91,10 @@ public final class ImageHeaderView extends FrameLayout {
         materialShapeDrawable.setFillColor(ColorStateList.valueOf(Theme.getColor(Theme.key_windowBackgroundWhite)));
         materialShapeDrawable.setCornerSize(getNetworkIconCornerSize());
         appCompatImageView.setBackground(materialShapeDrawable);
-        AppCompatTextView setupColors$lambda$5$lambda$4 = forkContentImageHeaderBinding.textTitle;
-        setupColors$lambda$5$lambda$4.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteBlackText));
-        Intrinsics.checkNotNullExpressionValue(setupColors$lambda$5$lambda$4, "setupColors$lambda$5$lambda$4");
-        ViewExtKt.withMediumTypeface(setupColors$lambda$5$lambda$4);
+        AppCompatTextView setupColors$lambda$6$lambda$5 = forkContentImageHeaderBinding.textTitle;
+        setupColors$lambda$6$lambda$5.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteBlackText));
+        Intrinsics.checkNotNullExpressionValue(setupColors$lambda$6$lambda$5, "setupColors$lambda$6$lambda$5");
+        ViewExtKt.withMediumTypeface(setupColors$lambda$6$lambda$5);
         forkContentImageHeaderBinding.textSubtitle.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteGrayText));
     }
 

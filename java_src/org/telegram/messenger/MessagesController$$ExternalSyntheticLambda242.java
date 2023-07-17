@@ -1,6 +1,6 @@
 package org.telegram.messenger;
 
-import org.telegram.p044ui.ActionBar.Theme;
+import org.telegram.p043ui.ActionBar.Theme;
 /* loaded from: classes4.dex */
 public final /* synthetic */ class MessagesController$$ExternalSyntheticLambda242 implements Runnable {
     public static final /* synthetic */ MessagesController$$ExternalSyntheticLambda242 INSTANCE = new MessagesController$$ExternalSyntheticLambda242();

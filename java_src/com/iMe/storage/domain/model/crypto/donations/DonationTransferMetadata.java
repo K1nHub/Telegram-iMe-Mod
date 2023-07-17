@@ -1,54 +1,54 @@
 package com.iMe.storage.domain.model.crypto.donations;
 
 import com.iMe.storage.domain.model.crypto.TransactionParams;
-import com.iMe.storage.domain.model.wallet.token.TokenCode;
+import com.iMe.storage.domain.model.wallet.token.TokenDetailed;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: DonationTransferMetadata.kt */
 /* loaded from: classes3.dex */
 public final class DonationTransferMetadata {
-    private final String contractAddress;
-    private final TokenCode feeTokenCode;
+    private final TokenDetailed feeToken;
     private final String recipientAddress;
+    private final TokenDetailed token;
     private final TransactionParams.Ether transactionParams;
 
-    public static /* synthetic */ DonationTransferMetadata copy$default(DonationTransferMetadata donationTransferMetadata, TransactionParams.Ether ether, TokenCode tokenCode, String str, String str2, int i, Object obj) {
+    public static /* synthetic */ DonationTransferMetadata copy$default(DonationTransferMetadata donationTransferMetadata, TransactionParams.Ether ether, TokenDetailed tokenDetailed, TokenDetailed tokenDetailed2, String str, int i, Object obj) {
         if ((i & 1) != 0) {
             ether = donationTransferMetadata.transactionParams;
         }
         if ((i & 2) != 0) {
-            tokenCode = donationTransferMetadata.feeTokenCode;
+            tokenDetailed = donationTransferMetadata.feeToken;
         }
         if ((i & 4) != 0) {
-            str = donationTransferMetadata.contractAddress;
+            tokenDetailed2 = donationTransferMetadata.token;
         }
         if ((i & 8) != 0) {
-            str2 = donationTransferMetadata.recipientAddress;
+            str = donationTransferMetadata.recipientAddress;
         }
-        return donationTransferMetadata.copy(ether, tokenCode, str, str2);
+        return donationTransferMetadata.copy(ether, tokenDetailed, tokenDetailed2, str);
     }
 
     public final TransactionParams.Ether component1() {
         return this.transactionParams;
     }
 
-    public final TokenCode component2() {
-        return this.feeTokenCode;
+    public final TokenDetailed component2() {
+        return this.feeToken;
     }
 
-    public final String component3() {
-        return this.contractAddress;
+    public final TokenDetailed component3() {
+        return this.token;
     }
 
     public final String component4() {
         return this.recipientAddress;
     }
 
-    public final DonationTransferMetadata copy(TransactionParams.Ether transactionParams, TokenCode feeTokenCode, String contractAddress, String recipientAddress) {
+    public final DonationTransferMetadata copy(TransactionParams.Ether transactionParams, TokenDetailed feeToken, TokenDetailed token, String recipientAddress) {
         Intrinsics.checkNotNullParameter(transactionParams, "transactionParams");
-        Intrinsics.checkNotNullParameter(feeTokenCode, "feeTokenCode");
-        Intrinsics.checkNotNullParameter(contractAddress, "contractAddress");
+        Intrinsics.checkNotNullParameter(feeToken, "feeToken");
+        Intrinsics.checkNotNullParameter(token, "token");
         Intrinsics.checkNotNullParameter(recipientAddress, "recipientAddress");
-        return new DonationTransferMetadata(transactionParams, feeTokenCode, contractAddress, recipientAddress);
+        return new DonationTransferMetadata(transactionParams, feeToken, token, recipientAddress);
     }
 
     public boolean equals(Object obj) {
@@ -57,27 +57,27 @@ public final class DonationTransferMetadata {
         }
         if (obj instanceof DonationTransferMetadata) {
             DonationTransferMetadata donationTransferMetadata = (DonationTransferMetadata) obj;
-            return Intrinsics.areEqual(this.transactionParams, donationTransferMetadata.transactionParams) && this.feeTokenCode == donationTransferMetadata.feeTokenCode && Intrinsics.areEqual(this.contractAddress, donationTransferMetadata.contractAddress) && Intrinsics.areEqual(this.recipientAddress, donationTransferMetadata.recipientAddress);
+            return Intrinsics.areEqual(this.transactionParams, donationTransferMetadata.transactionParams) && Intrinsics.areEqual(this.feeToken, donationTransferMetadata.feeToken) && Intrinsics.areEqual(this.token, donationTransferMetadata.token) && Intrinsics.areEqual(this.recipientAddress, donationTransferMetadata.recipientAddress);
         }
         return false;
     }
 
     public int hashCode() {
-        return (((((this.transactionParams.hashCode() * 31) + this.feeTokenCode.hashCode()) * 31) + this.contractAddress.hashCode()) * 31) + this.recipientAddress.hashCode();
+        return (((((this.transactionParams.hashCode() * 31) + this.feeToken.hashCode()) * 31) + this.token.hashCode()) * 31) + this.recipientAddress.hashCode();
     }
 
     public String toString() {
-        return "DonationTransferMetadata(transactionParams=" + this.transactionParams + ", feeTokenCode=" + this.feeTokenCode + ", contractAddress=" + this.contractAddress + ", recipientAddress=" + this.recipientAddress + ')';
+        return "DonationTransferMetadata(transactionParams=" + this.transactionParams + ", feeToken=" + this.feeToken + ", token=" + this.token + ", recipientAddress=" + this.recipientAddress + ')';
     }
 
-    public DonationTransferMetadata(TransactionParams.Ether transactionParams, TokenCode feeTokenCode, String contractAddress, String recipientAddress) {
+    public DonationTransferMetadata(TransactionParams.Ether transactionParams, TokenDetailed feeToken, TokenDetailed token, String recipientAddress) {
         Intrinsics.checkNotNullParameter(transactionParams, "transactionParams");
-        Intrinsics.checkNotNullParameter(feeTokenCode, "feeTokenCode");
-        Intrinsics.checkNotNullParameter(contractAddress, "contractAddress");
+        Intrinsics.checkNotNullParameter(feeToken, "feeToken");
+        Intrinsics.checkNotNullParameter(token, "token");
         Intrinsics.checkNotNullParameter(recipientAddress, "recipientAddress");
         this.transactionParams = transactionParams;
-        this.feeTokenCode = feeTokenCode;
-        this.contractAddress = contractAddress;
+        this.feeToken = feeToken;
+        this.token = token;
         this.recipientAddress = recipientAddress;
     }
 
@@ -85,12 +85,12 @@ public final class DonationTransferMetadata {
         return this.transactionParams;
     }
 
-    public final TokenCode getFeeTokenCode() {
-        return this.feeTokenCode;
+    public final TokenDetailed getFeeToken() {
+        return this.feeToken;
     }
 
-    public final String getContractAddress() {
-        return this.contractAddress;
+    public final TokenDetailed getToken() {
+        return this.token;
     }
 
     public final String getRecipientAddress() {

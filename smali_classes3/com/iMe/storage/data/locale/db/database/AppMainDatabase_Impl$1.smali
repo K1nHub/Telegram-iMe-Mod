@@ -32,7 +32,7 @@
         }
     .end annotation
 
-    .line 71
+    .line 67
     iput-object p1, p0, Lcom/iMe/storage/data/locale/db/database/AppMainDatabase_Impl$1;->this$0:Lcom/iMe/storage/data/locale/db/database/AppMainDatabase_Impl;
 
     invoke-direct {p0, p2}, Landroidx/room/RoomOpenHelper$Delegate;-><init>(I)V
@@ -55,57 +55,52 @@
 
     const-string v0, "CREATE TABLE IF NOT EXISTS `FilterSettingsDb` (`filterId` INTEGER NOT NULL, `fabs` TEXT NOT NULL, `icon` TEXT, `userId` INTEGER NOT NULL, PRIMARY KEY(`filterId`, `userId`))"
 
-    .line 74
+    .line 70
     invoke-interface {p1, v0}, Landroidx/sqlite/db/SupportSQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
     const-string v0, "CREATE TABLE IF NOT EXISTS `DialogTranslationSettingsDb` (`isInTextTranslateEnabled` INTEGER NOT NULL, `inTextTranslateTargetLangCode` TEXT, `isOutTextTranslateEnabled` INTEGER NOT NULL, `outTextTranslateTargetLangCode` TEXT NOT NULL, `dialogId` INTEGER NOT NULL, `userId` INTEGER NOT NULL, PRIMARY KEY(`dialogId`, `userId`))"
 
-    .line 75
+    .line 71
     invoke-interface {p1, v0}, Landroidx/sqlite/db/SupportSQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
     const-string v0, "CREATE TABLE IF NOT EXISTS `TopicDb` (`topicId` INTEGER NOT NULL, `name` TEXT, `icon` TEXT, `order` INTEGER NOT NULL, `presets` TEXT NOT NULL, `dialogs` TEXT NOT NULL, `userId` INTEGER NOT NULL, PRIMARY KEY(`userId`, `topicId`))"
 
-    .line 76
+    .line 72
     invoke-interface {p1, v0}, Landroidx/sqlite/db/SupportSQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
     const-string v0, "CREATE TABLE IF NOT EXISTS `WalletConnectSessionDb` (`tgUserId` INTEGER NOT NULL, `sessionTopic` TEXT NOT NULL, `sessionVersion` TEXT NOT NULL, `sessionBridge` TEXT NOT NULL, `sessionKey` TEXT NOT NULL, `chainId` INTEGER NOT NULL, `peerId` TEXT NOT NULL, `remotePeerId` TEXT NOT NULL, `remotePeerMetaName` TEXT NOT NULL, `remotePeerMetaUrl` TEXT NOT NULL, `remotePeerMetaDescription` TEXT, `remotePeerMetaIcons` TEXT NOT NULL, `isAutoSign` INTEGER NOT NULL, `date` INTEGER NOT NULL, PRIMARY KEY(`tgUserId`, `sessionKey`))"
 
-    .line 77
+    .line 73
     invoke-interface {p1, v0}, Landroidx/sqlite/db/SupportSQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
     const-string v0, "CREATE TABLE IF NOT EXISTS `TemplatesDb` (`userId` INTEGER NOT NULL, `messageId` INTEGER NOT NULL, `groupId` INTEGER NOT NULL, `templateName` TEXT NOT NULL, `creationDate` INTEGER NOT NULL, `usageRating` INTEGER NOT NULL, `sent` INTEGER NOT NULL, PRIMARY KEY(`userId`, `messageId`))"
 
-    .line 78
-    invoke-interface {p1, v0}, Landroidx/sqlite/db/SupportSQLiteDatabase;->execSQL(Ljava/lang/String;)V
-
-    const-string v0, "CREATE TABLE IF NOT EXISTS `BookmarksDb` (`messageIds` TEXT NOT NULL, `dialogId` INTEGER NOT NULL, `userId` INTEGER NOT NULL, PRIMARY KEY(`dialogId`, `userId`))"
-
-    .line 79
+    .line 74
     invoke-interface {p1, v0}, Landroidx/sqlite/db/SupportSQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
     const-string v0, "CREATE TABLE IF NOT EXISTS `PlaylistsDb` (`messageIds` TEXT NOT NULL, `dialogId` INTEGER NOT NULL, `userId` INTEGER NOT NULL, PRIMARY KEY(`dialogId`, `userId`))"
 
-    .line 80
+    .line 75
     invoke-interface {p1, v0}, Landroidx/sqlite/db/SupportSQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
     const-string v0, "CREATE TABLE IF NOT EXISTS `HistoryDialogDb` (`userId` INTEGER NOT NULL, `dialogId` INTEGER NOT NULL, `creationDate` INTEGER NOT NULL, `isPinned` INTEGER NOT NULL, PRIMARY KEY(`userId`, `dialogId`))"
 
-    .line 81
+    .line 76
     invoke-interface {p1, v0}, Landroidx/sqlite/db/SupportSQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
     const-string v0, "CREATE TABLE IF NOT EXISTS `HiddenChatsDb` (`userId` INTEGER NOT NULL, `dialogId` INTEGER NOT NULL, PRIMARY KEY(`userId`, `dialogId`))"
 
-    .line 82
+    .line 77
     invoke-interface {p1, v0}, Landroidx/sqlite/db/SupportSQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
     const-string v0, "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)"
 
-    .line 83
+    .line 78
     invoke-interface {p1, v0}, Landroidx/sqlite/db/SupportSQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
-    const-string v0, "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, \'32c7fe2134632796b25f227e56e9ec33\')"
+    const-string v0, "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, \'d26c30a66c211afebfa310894b978450\')"
 
-    .line 84
+    .line 79
     invoke-interface {p1, v0}, Landroidx/sqlite/db/SupportSQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
     return-void
@@ -124,50 +119,45 @@
 
     const-string v0, "DROP TABLE IF EXISTS `FilterSettingsDb`"
 
-    .line 89
+    .line 84
     invoke-interface {p1, v0}, Landroidx/sqlite/db/SupportSQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
     const-string v0, "DROP TABLE IF EXISTS `DialogTranslationSettingsDb`"
 
-    .line 90
+    .line 85
     invoke-interface {p1, v0}, Landroidx/sqlite/db/SupportSQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
     const-string v0, "DROP TABLE IF EXISTS `TopicDb`"
 
-    .line 91
+    .line 86
     invoke-interface {p1, v0}, Landroidx/sqlite/db/SupportSQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
     const-string v0, "DROP TABLE IF EXISTS `WalletConnectSessionDb`"
 
-    .line 92
+    .line 87
     invoke-interface {p1, v0}, Landroidx/sqlite/db/SupportSQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
     const-string v0, "DROP TABLE IF EXISTS `TemplatesDb`"
 
-    .line 93
-    invoke-interface {p1, v0}, Landroidx/sqlite/db/SupportSQLiteDatabase;->execSQL(Ljava/lang/String;)V
-
-    const-string v0, "DROP TABLE IF EXISTS `BookmarksDb`"
-
-    .line 94
+    .line 88
     invoke-interface {p1, v0}, Landroidx/sqlite/db/SupportSQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
     const-string v0, "DROP TABLE IF EXISTS `PlaylistsDb`"
 
-    .line 95
+    .line 89
     invoke-interface {p1, v0}, Landroidx/sqlite/db/SupportSQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
     const-string v0, "DROP TABLE IF EXISTS `HistoryDialogDb`"
 
-    .line 96
+    .line 90
     invoke-interface {p1, v0}, Landroidx/sqlite/db/SupportSQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
     const-string v0, "DROP TABLE IF EXISTS `HiddenChatsDb`"
 
-    .line 97
+    .line 91
     invoke-interface {p1, v0}, Landroidx/sqlite/db/SupportSQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
-    .line 98
+    .line 92
     iget-object v0, p0, Lcom/iMe/storage/data/locale/db/database/AppMainDatabase_Impl$1;->this$0:Lcom/iMe/storage/data/locale/db/database/AppMainDatabase_Impl;
 
     invoke-static {v0}, Lcom/iMe/storage/data/locale/db/database/AppMainDatabase_Impl;->access$000(Lcom/iMe/storage/data/locale/db/database/AppMainDatabase_Impl;)Ljava/util/List;
@@ -178,7 +168,7 @@
 
     const/4 v0, 0x0
 
-    .line 99
+    .line 93
     iget-object v1, p0, Lcom/iMe/storage/data/locale/db/database/AppMainDatabase_Impl$1;->this$0:Lcom/iMe/storage/data/locale/db/database/AppMainDatabase_Impl;
 
     invoke-static {v1}, Lcom/iMe/storage/data/locale/db/database/AppMainDatabase_Impl;->access$100(Lcom/iMe/storage/data/locale/db/database/AppMainDatabase_Impl;)Ljava/util/List;
@@ -192,7 +182,7 @@
     :goto_0
     if-ge v0, v1, :cond_0
 
-    .line 100
+    .line 94
     iget-object v2, p0, Lcom/iMe/storage/data/locale/db/database/AppMainDatabase_Impl$1;->this$0:Lcom/iMe/storage/data/locale/db/database/AppMainDatabase_Impl;
 
     invoke-static {v2}, Lcom/iMe/storage/data/locale/db/database/AppMainDatabase_Impl;->access$200(Lcom/iMe/storage/data/locale/db/database/AppMainDatabase_Impl;)Ljava/util/List;
@@ -226,7 +216,7 @@
         }
     .end annotation
 
-    .line 107
+    .line 101
     iget-object v0, p0, Lcom/iMe/storage/data/locale/db/database/AppMainDatabase_Impl$1;->this$0:Lcom/iMe/storage/data/locale/db/database/AppMainDatabase_Impl;
 
     invoke-static {v0}, Lcom/iMe/storage/data/locale/db/database/AppMainDatabase_Impl;->access$300(Lcom/iMe/storage/data/locale/db/database/AppMainDatabase_Impl;)Ljava/util/List;
@@ -237,7 +227,7 @@
 
     const/4 v0, 0x0
 
-    .line 108
+    .line 102
     iget-object v1, p0, Lcom/iMe/storage/data/locale/db/database/AppMainDatabase_Impl$1;->this$0:Lcom/iMe/storage/data/locale/db/database/AppMainDatabase_Impl;
 
     invoke-static {v1}, Lcom/iMe/storage/data/locale/db/database/AppMainDatabase_Impl;->access$400(Lcom/iMe/storage/data/locale/db/database/AppMainDatabase_Impl;)Ljava/util/List;
@@ -251,7 +241,7 @@
     :goto_0
     if-ge v0, v1, :cond_0
 
-    .line 109
+    .line 103
     iget-object v2, p0, Lcom/iMe/storage/data/locale/db/database/AppMainDatabase_Impl$1;->this$0:Lcom/iMe/storage/data/locale/db/database/AppMainDatabase_Impl;
 
     invoke-static {v2}, Lcom/iMe/storage/data/locale/db/database/AppMainDatabase_Impl;->access$500(Lcom/iMe/storage/data/locale/db/database/AppMainDatabase_Impl;)Ljava/util/List;
@@ -285,17 +275,17 @@
         }
     .end annotation
 
-    .line 116
+    .line 110
     iget-object v0, p0, Lcom/iMe/storage/data/locale/db/database/AppMainDatabase_Impl$1;->this$0:Lcom/iMe/storage/data/locale/db/database/AppMainDatabase_Impl;
 
     invoke-static {v0, p1}, Lcom/iMe/storage/data/locale/db/database/AppMainDatabase_Impl;->access$602(Lcom/iMe/storage/data/locale/db/database/AppMainDatabase_Impl;Landroidx/sqlite/db/SupportSQLiteDatabase;)Landroidx/sqlite/db/SupportSQLiteDatabase;
 
-    .line 117
+    .line 111
     iget-object v0, p0, Lcom/iMe/storage/data/locale/db/database/AppMainDatabase_Impl$1;->this$0:Lcom/iMe/storage/data/locale/db/database/AppMainDatabase_Impl;
 
     invoke-static {v0, p1}, Lcom/iMe/storage/data/locale/db/database/AppMainDatabase_Impl;->access$700(Lcom/iMe/storage/data/locale/db/database/AppMainDatabase_Impl;Landroidx/sqlite/db/SupportSQLiteDatabase;)V
 
-    .line 118
+    .line 112
     iget-object v0, p0, Lcom/iMe/storage/data/locale/db/database/AppMainDatabase_Impl$1;->this$0:Lcom/iMe/storage/data/locale/db/database/AppMainDatabase_Impl;
 
     invoke-static {v0}, Lcom/iMe/storage/data/locale/db/database/AppMainDatabase_Impl;->access$800(Lcom/iMe/storage/data/locale/db/database/AppMainDatabase_Impl;)Ljava/util/List;
@@ -306,7 +296,7 @@
 
     const/4 v0, 0x0
 
-    .line 119
+    .line 113
     iget-object v1, p0, Lcom/iMe/storage/data/locale/db/database/AppMainDatabase_Impl$1;->this$0:Lcom/iMe/storage/data/locale/db/database/AppMainDatabase_Impl;
 
     invoke-static {v1}, Lcom/iMe/storage/data/locale/db/database/AppMainDatabase_Impl;->access$900(Lcom/iMe/storage/data/locale/db/database/AppMainDatabase_Impl;)Ljava/util/List;
@@ -320,7 +310,7 @@
     :goto_0
     if-ge v0, v1, :cond_0
 
-    .line 120
+    .line 114
     iget-object v2, p0, Lcom/iMe/storage/data/locale/db/database/AppMainDatabase_Impl$1;->this$0:Lcom/iMe/storage/data/locale/db/database/AppMainDatabase_Impl;
 
     invoke-static {v2}, Lcom/iMe/storage/data/locale/db/database/AppMainDatabase_Impl;->access$1000(Lcom/iMe/storage/data/locale/db/database/AppMainDatabase_Impl;)Ljava/util/List;
@@ -368,7 +358,7 @@
         }
     .end annotation
 
-    .line 127
+    .line 121
     invoke-static {p1}, Landroidx/room/util/DBUtil;->dropFtsSyncTriggers(Landroidx/sqlite/db/SupportSQLiteDatabase;)V
 
     return-void
@@ -387,14 +377,14 @@
 
     move-object/from16 v0, p1
 
-    .line 136
+    .line 130
     new-instance v1, Ljava/util/HashMap;
 
     const/4 v2, 0x4
 
     invoke-direct {v1, v2}, Ljava/util/HashMap;-><init>(I)V
 
-    .line 137
+    .line 131
     new-instance v10, Landroidx/room/util/TableInfo$Column;
 
     const-string v4, "filterId"
@@ -417,7 +407,7 @@
 
     invoke-virtual {v1, v3, v10}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 138
+    .line 132
     new-instance v3, Landroidx/room/util/TableInfo$Column;
 
     const-string v12, "fabs"
@@ -440,7 +430,7 @@
 
     invoke-virtual {v1, v4, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 139
+    .line 133
     new-instance v3, Landroidx/room/util/TableInfo$Column;
 
     const-string v6, "icon"
@@ -463,7 +453,7 @@
 
     invoke-virtual {v1, v4, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 140
+    .line 134
     new-instance v3, Landroidx/room/util/TableInfo$Column;
 
     const-string v6, "userId"
@@ -482,31 +472,31 @@
 
     invoke-virtual {v1, v5, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 141
+    .line 135
     new-instance v3, Ljava/util/HashSet;
 
     const/4 v6, 0x0
 
     invoke-direct {v3, v6}, Ljava/util/HashSet;-><init>(I)V
 
-    .line 142
+    .line 136
     new-instance v7, Ljava/util/HashSet;
 
     invoke-direct {v7, v6}, Ljava/util/HashSet;-><init>(I)V
 
-    .line 143
+    .line 137
     new-instance v8, Landroidx/room/util/TableInfo;
 
     const-string v9, "FilterSettingsDb"
 
     invoke-direct {v8, v9, v1, v3, v7}, Landroidx/room/util/TableInfo;-><init>(Ljava/lang/String;Ljava/util/Map;Ljava/util/Set;Ljava/util/Set;)V
 
-    .line 144
+    .line 138
     invoke-static {v0, v9}, Landroidx/room/util/TableInfo;->read(Landroidx/sqlite/db/SupportSQLiteDatabase;Ljava/lang/String;)Landroidx/room/util/TableInfo;
 
     move-result-object v1
 
-    .line 145
+    .line 139
     invoke-virtual {v8, v1}, Landroidx/room/util/TableInfo;->equals(Ljava/lang/Object;)Z
 
     move-result v3
@@ -515,7 +505,7 @@
 
     if-nez v3, :cond_0
 
-    .line 146
+    .line 140
     new-instance v0, Landroidx/room/RoomOpenHelper$ValidationResult;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -540,7 +530,7 @@
 
     return-object v0
 
-    .line 150
+    .line 144
     :cond_0
     new-instance v1, Ljava/util/HashMap;
 
@@ -548,7 +538,7 @@
 
     invoke-direct {v1, v3}, Ljava/util/HashMap;-><init>(I)V
 
-    .line 151
+    .line 145
     new-instance v3, Landroidx/room/util/TableInfo$Column;
 
     const/4 v11, 0x1
@@ -571,7 +561,7 @@
 
     invoke-virtual {v1, v8, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 152
+    .line 146
     new-instance v3, Landroidx/room/util/TableInfo$Column;
 
     const/4 v13, 0x0
@@ -592,7 +582,7 @@
 
     invoke-virtual {v1, v8, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 153
+    .line 147
     new-instance v3, Landroidx/room/util/TableInfo$Column;
 
     const/4 v12, 0x1
@@ -609,7 +599,7 @@
 
     invoke-virtual {v1, v8, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 154
+    .line 148
     new-instance v3, Landroidx/room/util/TableInfo$Column;
 
     const-string v10, "outTextTranslateTargetLangCode"
@@ -624,7 +614,7 @@
 
     invoke-virtual {v1, v8, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 155
+    .line 149
     new-instance v3, Landroidx/room/util/TableInfo$Column;
 
     const/4 v13, 0x1
@@ -641,7 +631,7 @@
 
     invoke-virtual {v1, v8, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 156
+    .line 150
     new-instance v3, Landroidx/room/util/TableInfo$Column;
 
     const/4 v13, 0x2
@@ -656,36 +646,36 @@
 
     invoke-virtual {v1, v5, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 157
+    .line 151
     new-instance v3, Ljava/util/HashSet;
 
     invoke-direct {v3, v6}, Ljava/util/HashSet;-><init>(I)V
 
-    .line 158
+    .line 152
     new-instance v9, Ljava/util/HashSet;
 
     invoke-direct {v9, v6}, Ljava/util/HashSet;-><init>(I)V
 
-    .line 159
+    .line 153
     new-instance v10, Landroidx/room/util/TableInfo;
 
     const-string v11, "DialogTranslationSettingsDb"
 
     invoke-direct {v10, v11, v1, v3, v9}, Landroidx/room/util/TableInfo;-><init>(Ljava/lang/String;Ljava/util/Map;Ljava/util/Set;Ljava/util/Set;)V
 
-    .line 160
+    .line 154
     invoke-static {v0, v11}, Landroidx/room/util/TableInfo;->read(Landroidx/sqlite/db/SupportSQLiteDatabase;Ljava/lang/String;)Landroidx/room/util/TableInfo;
 
     move-result-object v1
 
-    .line 161
+    .line 155
     invoke-virtual {v10, v1}, Landroidx/room/util/TableInfo;->equals(Ljava/lang/Object;)Z
 
     move-result v3
 
     if-nez v3, :cond_1
 
-    .line 162
+    .line 156
     new-instance v0, Landroidx/room/RoomOpenHelper$ValidationResult;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -710,7 +700,7 @@
 
     return-object v0
 
-    .line 166
+    .line 160
     :cond_1
     new-instance v1, Ljava/util/HashMap;
 
@@ -718,7 +708,7 @@
 
     invoke-direct {v1, v3}, Ljava/util/HashMap;-><init>(I)V
 
-    .line 167
+    .line 161
     new-instance v15, Landroidx/room/util/TableInfo$Column;
 
     const/4 v12, 0x1
@@ -745,7 +735,7 @@
 
     invoke-virtual {v1, v9, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 168
+    .line 162
     new-instance v2, Landroidx/room/util/TableInfo$Column;
 
     const/4 v13, 0x0
@@ -766,7 +756,7 @@
 
     invoke-virtual {v1, v9, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 169
+    .line 163
     new-instance v2, Landroidx/room/util/TableInfo$Column;
 
     const-string v11, "icon"
@@ -779,7 +769,7 @@
 
     invoke-virtual {v1, v4, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 170
+    .line 164
     new-instance v2, Landroidx/room/util/TableInfo$Column;
 
     const/16 v21, 0x1
@@ -802,7 +792,7 @@
 
     invoke-virtual {v1, v4, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 171
+    .line 165
     new-instance v2, Landroidx/room/util/TableInfo$Column;
 
     const/4 v12, 0x1
@@ -823,7 +813,7 @@
 
     invoke-virtual {v1, v4, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 172
+    .line 166
     new-instance v2, Landroidx/room/util/TableInfo$Column;
 
     const-string v10, "dialogs"
@@ -838,7 +828,7 @@
 
     invoke-virtual {v1, v4, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 173
+    .line 167
     new-instance v2, Landroidx/room/util/TableInfo$Column;
 
     const/4 v13, 0x1
@@ -853,36 +843,36 @@
 
     invoke-virtual {v1, v5, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 174
+    .line 168
     new-instance v2, Ljava/util/HashSet;
 
     invoke-direct {v2, v6}, Ljava/util/HashSet;-><init>(I)V
 
-    .line 175
+    .line 169
     new-instance v4, Ljava/util/HashSet;
 
     invoke-direct {v4, v6}, Ljava/util/HashSet;-><init>(I)V
 
-    .line 176
+    .line 170
     new-instance v9, Landroidx/room/util/TableInfo;
 
     const-string v10, "TopicDb"
 
     invoke-direct {v9, v10, v1, v2, v4}, Landroidx/room/util/TableInfo;-><init>(Ljava/lang/String;Ljava/util/Map;Ljava/util/Set;Ljava/util/Set;)V
 
-    .line 177
+    .line 171
     invoke-static {v0, v10}, Landroidx/room/util/TableInfo;->read(Landroidx/sqlite/db/SupportSQLiteDatabase;Ljava/lang/String;)Landroidx/room/util/TableInfo;
 
     move-result-object v1
 
-    .line 178
+    .line 172
     invoke-virtual {v9, v1}, Landroidx/room/util/TableInfo;->equals(Ljava/lang/Object;)Z
 
     move-result v2
 
     if-nez v2, :cond_2
 
-    .line 179
+    .line 173
     new-instance v0, Landroidx/room/RoomOpenHelper$ValidationResult;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -907,7 +897,7 @@
 
     return-object v0
 
-    .line 183
+    .line 177
     :cond_2
     new-instance v1, Ljava/util/HashMap;
 
@@ -915,7 +905,7 @@
 
     invoke-direct {v1, v2}, Ljava/util/HashMap;-><init>(I)V
 
-    .line 184
+    .line 178
     new-instance v2, Landroidx/room/util/TableInfo$Column;
 
     const/4 v12, 0x1
@@ -938,7 +928,7 @@
 
     invoke-virtual {v1, v4, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 185
+    .line 179
     new-instance v2, Landroidx/room/util/TableInfo$Column;
 
     const/4 v13, 0x0
@@ -955,7 +945,7 @@
 
     invoke-virtual {v1, v4, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 186
+    .line 180
     new-instance v2, Landroidx/room/util/TableInfo$Column;
 
     const-string v10, "sessionVersion"
@@ -970,7 +960,7 @@
 
     invoke-virtual {v1, v4, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 187
+    .line 181
     new-instance v2, Landroidx/room/util/TableInfo$Column;
 
     const-string v10, "sessionBridge"
@@ -985,7 +975,7 @@
 
     invoke-virtual {v1, v4, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 188
+    .line 182
     new-instance v2, Landroidx/room/util/TableInfo$Column;
 
     const/4 v13, 0x2
@@ -1002,7 +992,7 @@
 
     invoke-virtual {v1, v4, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 189
+    .line 183
     new-instance v2, Landroidx/room/util/TableInfo$Column;
 
     const/4 v13, 0x0
@@ -1019,7 +1009,7 @@
 
     invoke-virtual {v1, v4, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 190
+    .line 184
     new-instance v2, Landroidx/room/util/TableInfo$Column;
 
     const-string v10, "peerId"
@@ -1034,7 +1024,7 @@
 
     invoke-virtual {v1, v4, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 191
+    .line 185
     new-instance v2, Landroidx/room/util/TableInfo$Column;
 
     const-string v10, "remotePeerId"
@@ -1049,7 +1039,7 @@
 
     invoke-virtual {v1, v4, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 192
+    .line 186
     new-instance v2, Landroidx/room/util/TableInfo$Column;
 
     const-string v10, "remotePeerMetaName"
@@ -1064,7 +1054,7 @@
 
     invoke-virtual {v1, v4, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 193
+    .line 187
     new-instance v2, Landroidx/room/util/TableInfo$Column;
 
     const-string v10, "remotePeerMetaUrl"
@@ -1079,7 +1069,7 @@
 
     invoke-virtual {v1, v4, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 194
+    .line 188
     new-instance v2, Landroidx/room/util/TableInfo$Column;
 
     const/4 v12, 0x0
@@ -1096,7 +1086,7 @@
 
     invoke-virtual {v1, v4, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 195
+    .line 189
     new-instance v2, Landroidx/room/util/TableInfo$Column;
 
     const/4 v12, 0x1
@@ -1113,7 +1103,7 @@
 
     invoke-virtual {v1, v4, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 196
+    .line 190
     new-instance v2, Landroidx/room/util/TableInfo$Column;
 
     const-string v10, "isAutoSign"
@@ -1128,7 +1118,7 @@
 
     invoke-virtual {v1, v4, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 197
+    .line 191
     new-instance v2, Landroidx/room/util/TableInfo$Column;
 
     const-string v10, "date"
@@ -1143,36 +1133,36 @@
 
     invoke-virtual {v1, v4, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 198
+    .line 192
     new-instance v2, Ljava/util/HashSet;
 
     invoke-direct {v2, v6}, Ljava/util/HashSet;-><init>(I)V
 
-    .line 199
+    .line 193
     new-instance v4, Ljava/util/HashSet;
 
     invoke-direct {v4, v6}, Ljava/util/HashSet;-><init>(I)V
 
-    .line 200
+    .line 194
     new-instance v9, Landroidx/room/util/TableInfo;
 
     const-string v10, "WalletConnectSessionDb"
 
     invoke-direct {v9, v10, v1, v2, v4}, Landroidx/room/util/TableInfo;-><init>(Ljava/lang/String;Ljava/util/Map;Ljava/util/Set;Ljava/util/Set;)V
 
-    .line 201
+    .line 195
     invoke-static {v0, v10}, Landroidx/room/util/TableInfo;->read(Landroidx/sqlite/db/SupportSQLiteDatabase;Ljava/lang/String;)Landroidx/room/util/TableInfo;
 
     move-result-object v1
 
-    .line 202
+    .line 196
     invoke-virtual {v9, v1}, Landroidx/room/util/TableInfo;->equals(Ljava/lang/Object;)Z
 
     move-result v2
 
     if-nez v2, :cond_3
 
-    .line 203
+    .line 197
     new-instance v0, Landroidx/room/RoomOpenHelper$ValidationResult;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -1197,13 +1187,13 @@
 
     return-object v0
 
-    .line 207
+    .line 201
     :cond_3
     new-instance v1, Ljava/util/HashMap;
 
     invoke-direct {v1, v3}, Ljava/util/HashMap;-><init>(I)V
 
-    .line 208
+    .line 202
     new-instance v2, Landroidx/room/util/TableInfo$Column;
 
     const/4 v12, 0x1
@@ -1224,7 +1214,7 @@
 
     invoke-virtual {v1, v5, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 209
+    .line 203
     new-instance v2, Landroidx/room/util/TableInfo$Column;
 
     const/16 v21, 0x1
@@ -1247,7 +1237,7 @@
 
     invoke-virtual {v1, v3, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 210
+    .line 204
     new-instance v2, Landroidx/room/util/TableInfo$Column;
 
     const/4 v13, 0x0
@@ -1264,7 +1254,7 @@
 
     invoke-virtual {v1, v3, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 211
+    .line 205
     new-instance v2, Landroidx/room/util/TableInfo$Column;
 
     const-string v10, "templateName"
@@ -1279,7 +1269,7 @@
 
     invoke-virtual {v1, v3, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 212
+    .line 206
     new-instance v2, Landroidx/room/util/TableInfo$Column;
 
     const-string v10, "creationDate"
@@ -1294,7 +1284,7 @@
 
     invoke-virtual {v1, v3, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 213
+    .line 207
     new-instance v2, Landroidx/room/util/TableInfo$Column;
 
     const-string v10, "usageRating"
@@ -1309,7 +1299,7 @@
 
     invoke-virtual {v1, v4, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 214
+    .line 208
     new-instance v2, Landroidx/room/util/TableInfo$Column;
 
     const-string v10, "sent"
@@ -1324,36 +1314,36 @@
 
     invoke-virtual {v1, v4, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 215
+    .line 209
     new-instance v2, Ljava/util/HashSet;
 
     invoke-direct {v2, v6}, Ljava/util/HashSet;-><init>(I)V
 
-    .line 216
+    .line 210
     new-instance v4, Ljava/util/HashSet;
 
     invoke-direct {v4, v6}, Ljava/util/HashSet;-><init>(I)V
 
-    .line 217
+    .line 211
     new-instance v9, Landroidx/room/util/TableInfo;
 
     const-string v10, "TemplatesDb"
 
     invoke-direct {v9, v10, v1, v2, v4}, Landroidx/room/util/TableInfo;-><init>(Ljava/lang/String;Ljava/util/Map;Ljava/util/Set;Ljava/util/Set;)V
 
-    .line 218
+    .line 212
     invoke-static {v0, v10}, Landroidx/room/util/TableInfo;->read(Landroidx/sqlite/db/SupportSQLiteDatabase;Ljava/lang/String;)Landroidx/room/util/TableInfo;
 
     move-result-object v1
 
-    .line 219
+    .line 213
     invoke-virtual {v9, v1}, Landroidx/room/util/TableInfo;->equals(Ljava/lang/Object;)Z
 
     move-result v2
 
     if-nez v2, :cond_4
 
-    .line 220
+    .line 214
     new-instance v0, Landroidx/room/RoomOpenHelper$ValidationResult;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -1378,7 +1368,7 @@
 
     return-object v0
 
-    .line 224
+    .line 218
     :cond_4
     new-instance v1, Ljava/util/HashMap;
 
@@ -1386,8 +1376,8 @@
 
     invoke-direct {v1, v2}, Ljava/util/HashMap;-><init>(I)V
 
-    .line 225
-    new-instance v4, Landroidx/room/util/TableInfo$Column;
+    .line 219
+    new-instance v2, Landroidx/room/util/TableInfo$Column;
 
     const/4 v12, 0x1
 
@@ -1401,37 +1391,31 @@
 
     const-string v11, "TEXT"
 
-    move-object v9, v4
+    move-object v9, v2
 
     invoke-direct/range {v9 .. v15}, Landroidx/room/util/TableInfo$Column;-><init>(Ljava/lang/String;Ljava/lang/String;ZILjava/lang/String;I)V
 
-    const-string v9, "messageIds"
+    const-string v4, "messageIds"
 
-    invoke-virtual {v1, v9, v4}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v1, v4, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 226
-    new-instance v4, Landroidx/room/util/TableInfo$Column;
+    .line 220
+    new-instance v2, Landroidx/room/util/TableInfo$Column;
 
     const/4 v13, 0x1
 
-    const/4 v14, 0x1
+    const-string v10, "dialogId"
 
-    const/4 v15, 0x0
+    const-string v11, "INTEGER"
 
-    const/16 v16, 0x1
+    move-object v9, v2
 
-    const-string v11, "dialogId"
+    invoke-direct/range {v9 .. v15}, Landroidx/room/util/TableInfo$Column;-><init>(Ljava/lang/String;Ljava/lang/String;ZILjava/lang/String;I)V
 
-    const-string v12, "INTEGER"
+    invoke-virtual {v1, v8, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-object v10, v4
-
-    invoke-direct/range {v10 .. v16}, Landroidx/room/util/TableInfo$Column;-><init>(Ljava/lang/String;Ljava/lang/String;ZILjava/lang/String;I)V
-
-    invoke-virtual {v1, v8, v4}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 227
-    new-instance v4, Landroidx/room/util/TableInfo$Column;
+    .line 221
+    new-instance v2, Landroidx/room/util/TableInfo$Column;
 
     const/16 v21, 0x1
 
@@ -1445,165 +1429,42 @@
 
     const-string v20, "INTEGER"
 
-    move-object/from16 v18, v4
-
-    invoke-direct/range {v18 .. v24}, Landroidx/room/util/TableInfo$Column;-><init>(Ljava/lang/String;Ljava/lang/String;ZILjava/lang/String;I)V
-
-    invoke-virtual {v1, v5, v4}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 228
-    new-instance v4, Ljava/util/HashSet;
-
-    invoke-direct {v4, v6}, Ljava/util/HashSet;-><init>(I)V
-
-    .line 229
-    new-instance v10, Ljava/util/HashSet;
-
-    invoke-direct {v10, v6}, Ljava/util/HashSet;-><init>(I)V
-
-    .line 230
-    new-instance v11, Landroidx/room/util/TableInfo;
-
-    const-string v12, "BookmarksDb"
-
-    invoke-direct {v11, v12, v1, v4, v10}, Landroidx/room/util/TableInfo;-><init>(Ljava/lang/String;Ljava/util/Map;Ljava/util/Set;Ljava/util/Set;)V
-
-    .line 231
-    invoke-static {v0, v12}, Landroidx/room/util/TableInfo;->read(Landroidx/sqlite/db/SupportSQLiteDatabase;Ljava/lang/String;)Landroidx/room/util/TableInfo;
-
-    move-result-object v1
-
-    .line 232
-    invoke-virtual {v11, v1}, Landroidx/room/util/TableInfo;->equals(Ljava/lang/Object;)Z
-
-    move-result v4
-
-    if-nez v4, :cond_5
-
-    .line 233
-    new-instance v0, Landroidx/room/RoomOpenHelper$ValidationResult;
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "BookmarksDb(com.iMe.storage.data.locale.db.model.bookmarks.BookmarksDb).\n Expected:\n"
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {v0, v6, v1}, Landroidx/room/RoomOpenHelper$ValidationResult;-><init>(ZLjava/lang/String;)V
-
-    return-object v0
-
-    .line 237
-    :cond_5
-    new-instance v1, Ljava/util/HashMap;
-
-    invoke-direct {v1, v2}, Ljava/util/HashMap;-><init>(I)V
-
-    .line 238
-    new-instance v2, Landroidx/room/util/TableInfo$Column;
-
-    const/4 v13, 0x1
-
-    const/4 v14, 0x0
-
-    const/4 v15, 0x0
-
-    const/16 v16, 0x1
-
-    const-string v11, "messageIds"
-
-    const-string v12, "TEXT"
-
-    move-object v10, v2
-
-    invoke-direct/range {v10 .. v16}, Landroidx/room/util/TableInfo$Column;-><init>(Ljava/lang/String;Ljava/lang/String;ZILjava/lang/String;I)V
-
-    invoke-virtual {v1, v9, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 239
-    new-instance v2, Landroidx/room/util/TableInfo$Column;
-
-    const/16 v21, 0x1
-
-    const/16 v22, 0x1
-
-    const/16 v23, 0x0
-
-    const/16 v24, 0x1
-
-    const-string v19, "dialogId"
-
-    const-string v20, "INTEGER"
-
     move-object/from16 v18, v2
 
     invoke-direct/range {v18 .. v24}, Landroidx/room/util/TableInfo$Column;-><init>(Ljava/lang/String;Ljava/lang/String;ZILjava/lang/String;I)V
 
-    invoke-virtual {v1, v8, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 240
-    new-instance v2, Landroidx/room/util/TableInfo$Column;
-
-    const/4 v12, 0x1
-
-    const/4 v13, 0x2
-
-    const/4 v14, 0x0
-
-    const/4 v15, 0x1
-
-    const-string v10, "userId"
-
-    const-string v11, "INTEGER"
-
-    move-object v9, v2
-
-    invoke-direct/range {v9 .. v15}, Landroidx/room/util/TableInfo$Column;-><init>(Ljava/lang/String;Ljava/lang/String;ZILjava/lang/String;I)V
-
     invoke-virtual {v1, v5, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 241
+    .line 222
     new-instance v2, Ljava/util/HashSet;
 
     invoke-direct {v2, v6}, Ljava/util/HashSet;-><init>(I)V
 
-    .line 242
+    .line 223
     new-instance v4, Ljava/util/HashSet;
 
     invoke-direct {v4, v6}, Ljava/util/HashSet;-><init>(I)V
 
-    .line 243
+    .line 224
     new-instance v9, Landroidx/room/util/TableInfo;
 
     const-string v10, "PlaylistsDb"
 
     invoke-direct {v9, v10, v1, v2, v4}, Landroidx/room/util/TableInfo;-><init>(Ljava/lang/String;Ljava/util/Map;Ljava/util/Set;Ljava/util/Set;)V
 
-    .line 244
+    .line 225
     invoke-static {v0, v10}, Landroidx/room/util/TableInfo;->read(Landroidx/sqlite/db/SupportSQLiteDatabase;Ljava/lang/String;)Landroidx/room/util/TableInfo;
 
     move-result-object v1
 
-    .line 245
+    .line 226
     invoke-virtual {v9, v1}, Landroidx/room/util/TableInfo;->equals(Ljava/lang/Object;)Z
 
     move-result v2
 
-    if-nez v2, :cond_6
+    if-nez v2, :cond_5
 
-    .line 246
+    .line 227
     new-instance v0, Landroidx/room/RoomOpenHelper$ValidationResult;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -1628,15 +1489,15 @@
 
     return-object v0
 
-    .line 250
-    :cond_6
+    .line 231
+    :cond_5
     new-instance v1, Ljava/util/HashMap;
 
     const/4 v2, 0x4
 
     invoke-direct {v1, v2}, Ljava/util/HashMap;-><init>(I)V
 
-    .line 251
+    .line 232
     new-instance v2, Landroidx/room/util/TableInfo$Column;
 
     const/4 v12, 0x1
@@ -1657,7 +1518,7 @@
 
     invoke-virtual {v1, v5, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 252
+    .line 233
     new-instance v2, Landroidx/room/util/TableInfo$Column;
 
     const/16 v19, 0x1
@@ -1678,7 +1539,7 @@
 
     invoke-virtual {v1, v8, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 253
+    .line 234
     new-instance v2, Landroidx/room/util/TableInfo$Column;
 
     const/4 v13, 0x0
@@ -1693,7 +1554,7 @@
 
     invoke-virtual {v1, v3, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 254
+    .line 235
     new-instance v2, Landroidx/room/util/TableInfo$Column;
 
     const/16 v20, 0x0
@@ -1710,36 +1571,36 @@
 
     invoke-virtual {v1, v3, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 255
+    .line 236
     new-instance v2, Ljava/util/HashSet;
 
     invoke-direct {v2, v6}, Ljava/util/HashSet;-><init>(I)V
 
-    .line 256
+    .line 237
     new-instance v3, Ljava/util/HashSet;
 
     invoke-direct {v3, v6}, Ljava/util/HashSet;-><init>(I)V
 
-    .line 257
+    .line 238
     new-instance v4, Landroidx/room/util/TableInfo;
 
     const-string v9, "HistoryDialogDb"
 
     invoke-direct {v4, v9, v1, v2, v3}, Landroidx/room/util/TableInfo;-><init>(Ljava/lang/String;Ljava/util/Map;Ljava/util/Set;Ljava/util/Set;)V
 
-    .line 258
+    .line 239
     invoke-static {v0, v9}, Landroidx/room/util/TableInfo;->read(Landroidx/sqlite/db/SupportSQLiteDatabase;Ljava/lang/String;)Landroidx/room/util/TableInfo;
 
     move-result-object v1
 
-    .line 259
+    .line 240
     invoke-virtual {v4, v1}, Landroidx/room/util/TableInfo;->equals(Ljava/lang/Object;)Z
 
     move-result v2
 
-    if-nez v2, :cond_7
+    if-nez v2, :cond_6
 
-    .line 260
+    .line 241
     new-instance v0, Landroidx/room/RoomOpenHelper$ValidationResult;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -1764,15 +1625,15 @@
 
     return-object v0
 
-    .line 264
-    :cond_7
+    .line 245
+    :cond_6
     new-instance v1, Ljava/util/HashMap;
 
     const/4 v2, 0x2
 
     invoke-direct {v1, v2}, Ljava/util/HashMap;-><init>(I)V
 
-    .line 265
+    .line 246
     new-instance v2, Landroidx/room/util/TableInfo$Column;
 
     const/4 v12, 0x1
@@ -1793,7 +1654,7 @@
 
     invoke-virtual {v1, v5, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 266
+    .line 247
     new-instance v2, Landroidx/room/util/TableInfo$Column;
 
     const/16 v19, 0x1
@@ -1814,36 +1675,36 @@
 
     invoke-virtual {v1, v8, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 267
+    .line 248
     new-instance v2, Ljava/util/HashSet;
 
     invoke-direct {v2, v6}, Ljava/util/HashSet;-><init>(I)V
 
-    .line 268
+    .line 249
     new-instance v3, Ljava/util/HashSet;
 
     invoke-direct {v3, v6}, Ljava/util/HashSet;-><init>(I)V
 
-    .line 269
+    .line 250
     new-instance v4, Landroidx/room/util/TableInfo;
 
     const-string v5, "HiddenChatsDb"
 
     invoke-direct {v4, v5, v1, v2, v3}, Landroidx/room/util/TableInfo;-><init>(Ljava/lang/String;Ljava/util/Map;Ljava/util/Set;Ljava/util/Set;)V
 
-    .line 270
+    .line 251
     invoke-static {v0, v5}, Landroidx/room/util/TableInfo;->read(Landroidx/sqlite/db/SupportSQLiteDatabase;Ljava/lang/String;)Landroidx/room/util/TableInfo;
 
     move-result-object v0
 
-    .line 271
+    .line 252
     invoke-virtual {v4, v0}, Landroidx/room/util/TableInfo;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-nez v1, :cond_8
+    if-nez v1, :cond_7
 
-    .line 272
+    .line 253
     new-instance v1, Landroidx/room/RoomOpenHelper$ValidationResult;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -1868,8 +1729,8 @@
 
     return-object v1
 
-    .line 276
-    :cond_8
+    .line 257
+    :cond_7
     new-instance v0, Landroidx/room/RoomOpenHelper$ValidationResult;
 
     const/4 v1, 0x1

@@ -28,7 +28,7 @@
 
     iput-boolean p2, p0, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet$runShadowAnimation$1$1;->$show:Z
 
-    .line 210
+    .line 206
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
 
     return-void
@@ -43,7 +43,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 221
+    .line 217
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet$runShadowAnimation$1$1;->this$0:Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;
 
     invoke-static {v0}, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;->access$getShadowAnimation$p(Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;)Landroid/animation/AnimatorSet;
@@ -64,7 +64,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 222
+    .line 218
     iget-object p1, p0, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet$runShadowAnimation$1$1;->this$0:Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;
 
     const/4 v0, 0x0
@@ -82,7 +82,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 212
+    .line 208
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet$runShadowAnimation$1$1;->this$0:Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;
 
     invoke-static {v0}, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;->access$getShadowAnimation$p(Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;)Landroid/animation/AnimatorSet;
@@ -103,14 +103,14 @@
 
     if-eqz p1, :cond_1
 
-    .line 213
+    .line 209
     iget-boolean p1, p0, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet$runShadowAnimation$1$1;->$show:Z
 
     const/4 v0, 0x0
 
     if-nez p1, :cond_0
 
-    .line 214
+    .line 210
     iget-object p1, p0, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet$runShadowAnimation$1$1;->this$0:Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;
 
     invoke-static {p1}, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;->access$getTopShadow(Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;)Landroid/view/View;
@@ -123,7 +123,7 @@
 
     invoke-static {p1, v1, v2, v0}, Lcom/iMe/utils/extentions/common/ViewExtKt;->invisible$default(Landroid/view/View;ZILjava/lang/Object;)V
 
-    .line 216
+    .line 212
     :cond_0
     iget-object p1, p0, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet$runShadowAnimation$1$1;->this$0:Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;
 

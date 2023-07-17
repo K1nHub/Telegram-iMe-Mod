@@ -21,13 +21,13 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 17
+    .line 18
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 18
+    .line 19
     iput-object p1, p0, Lcom/iMe/storage/domain/interactor/crypto/swap/SwapInteractor;->swapRepository:Lcom/iMe/storage/domain/repository/crypto/swap/SwapRepository;
 
-    .line 19
+    .line 20
     iput-object p2, p0, Lcom/iMe/storage/domain/interactor/crypto/swap/SwapInteractor;->schedulersProvider:Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
     return-void
@@ -53,15 +53,15 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 36
+    .line 42
     iget-object v0, p0, Lcom/iMe/storage/domain/interactor/crypto/swap/SwapInteractor;->swapRepository:Lcom/iMe/storage/domain/repository/crypto/swap/SwapRepository;
 
-    .line 37
+    .line 43
     invoke-interface {v0, p1}, Lcom/iMe/storage/domain/repository/crypto/swap/SwapRepository;->approveToken(Lcom/iMe/storage/domain/model/crypto/swap/ApproveArgs;)Lio/reactivex/Observable;
 
     move-result-object p1
 
-    .line 38
+    .line 44
     iget-object v0, p0, Lcom/iMe/storage/domain/interactor/crypto/swap/SwapInteractor;->schedulersProvider:Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
     invoke-interface {v0}, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;->io()Lio/reactivex/Scheduler;
@@ -79,14 +79,16 @@
     return-object p1
 .end method
 
-.method public final getApproveTokensInfo(Lcom/iMe/storage/domain/model/crypto/NetworkType;Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocol;)Lio/reactivex/Observable;
-    .locals 2
+.method public final getApproveTokensInfo(Ljava/lang/String;Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocol;Ljava/util/List;)Lio/reactivex/Observable;
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lcom/iMe/storage/domain/model/crypto/NetworkType;",
+            "Ljava/lang/String;",
             "Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocol;",
-            ")",
+            "Ljava/util/List<",
+            "Lcom/iMe/storage/domain/model/wallet/token/Token;",
+            ">;)",
             "Lio/reactivex/Observable<",
             "Lcom/iMe/storage/domain/model/Result<",
             "Ljava/util/List<",
@@ -95,7 +97,7 @@
         }
     .end annotation
 
-    const-string v0, "networkType"
+    const-string v0, "networkId"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -103,15 +105,19 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 29
+    const-string v0, "tokens"
+
+    invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 36
     iget-object v0, p0, Lcom/iMe/storage/domain/interactor/crypto/swap/SwapInteractor;->swapRepository:Lcom/iMe/storage/domain/repository/crypto/swap/SwapRepository;
 
-    .line 30
-    invoke-interface {v0, p1, p2}, Lcom/iMe/storage/domain/repository/crypto/swap/SwapRepository;->getApproveTokensInfo(Lcom/iMe/storage/domain/model/crypto/NetworkType;Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocol;)Lio/reactivex/Observable;
+    .line 37
+    invoke-interface {v0, p2, p1, p3}, Lcom/iMe/storage/domain/repository/crypto/swap/SwapRepository;->getApproveTokensInfo(Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocol;Ljava/lang/String;Ljava/util/List;)Lio/reactivex/Observable;
 
     move-result-object p1
 
-    .line 31
+    .line 38
     iget-object p2, p0, Lcom/iMe/storage/domain/interactor/crypto/swap/SwapInteractor;->schedulersProvider:Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
     invoke-interface {p2}, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;->io()Lio/reactivex/Scheduler;
@@ -122,14 +128,14 @@
 
     move-result-object p1
 
-    .line 32
+    .line 39
     sget-object p2, Lcom/iMe/storage/domain/model/Result;->Companion:Lcom/iMe/storage/domain/model/Result$Companion;
 
-    const/4 v0, 0x0
+    const/4 p3, 0x0
 
-    const/4 v1, 0x1
+    const/4 v0, 0x1
 
-    invoke-static {p2, v0, v1, v0}, Lcom/iMe/storage/domain/model/Result$Companion;->loading$default(Lcom/iMe/storage/domain/model/Result$Companion;Ljava/lang/Object;ILjava/lang/Object;)Lcom/iMe/storage/domain/model/Result;
+    invoke-static {p2, p3, v0, p3}, Lcom/iMe/storage/domain/model/Result$Companion;->loading$default(Lcom/iMe/storage/domain/model/Result$Companion;Ljava/lang/Object;ILjava/lang/Object;)Lcom/iMe/storage/domain/model/Result;
 
     move-result-object p2
 
@@ -144,39 +150,59 @@
     return-object p1
 .end method
 
-.method public final getAvailableTokensToSwap(Lcom/iMe/storage/domain/model/crypto/NetworkType;Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocol;)Lio/reactivex/Observable;
-    .locals 1
+.method public final getAvailableTokensToSwap(Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocol;Lcom/iMe/storage/domain/model/wallet/transaction/TransactionDirection;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Integer;)Lio/reactivex/Observable;
+    .locals 8
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lcom/iMe/storage/domain/model/crypto/NetworkType;",
             "Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocol;",
+            "Lcom/iMe/storage/domain/model/wallet/transaction/TransactionDirection;",
+            "Ljava/lang/String;",
+            "Ljava/lang/String;",
+            "Ljava/lang/String;",
+            "Ljava/lang/Integer;",
             ")",
             "Lio/reactivex/Observable<",
             "Lcom/iMe/storage/domain/model/Result<",
-            "Ljava/util/List<",
-            "Lcom/iMe/storage/domain/model/wallet/token/TokenInfo;",
+            "Lcom/iMe/storage/domain/model/common/CursoredData<",
+            "Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;",
             ">;>;>;"
         }
     .end annotation
 
-    const-string v0, "networkType"
+    const-string v0, "protocol"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "protocol"
+    const-string v0, "direction"
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 23
-    iget-object v0, p0, Lcom/iMe/storage/domain/interactor/crypto/swap/SwapInteractor;->swapRepository:Lcom/iMe/storage/domain/repository/crypto/swap/SwapRepository;
+    const-string v0, "networkId"
 
-    .line 24
-    invoke-interface {v0, p1, p2}, Lcom/iMe/storage/domain/repository/crypto/swap/SwapRepository;->getAvailableTokensToSwap(Lcom/iMe/storage/domain/model/crypto/NetworkType;Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocol;)Lio/reactivex/Observable;
+    invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 31
+    iget-object v1, p0, Lcom/iMe/storage/domain/interactor/crypto/swap/SwapInteractor;->swapRepository:Lcom/iMe/storage/domain/repository/crypto/swap/SwapRepository;
+
+    move-object v2, p1
+
+    move-object v3, p2
+
+    move-object v4, p3
+
+    move-object v5, p4
+
+    move-object v6, p5
+
+    move-object v7, p6
+
+    .line 32
+    invoke-interface/range {v1 .. v7}, Lcom/iMe/storage/domain/repository/crypto/swap/SwapRepository;->getAvailableTokensToSwap(Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocol;Lcom/iMe/storage/domain/model/wallet/transaction/TransactionDirection;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Integer;)Lio/reactivex/Observable;
 
     move-result-object p1
 
-    .line 25
+    .line 33
     iget-object p2, p0, Lcom/iMe/storage/domain/interactor/crypto/swap/SwapInteractor;->schedulersProvider:Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
     invoke-interface {p2}, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;->io()Lio/reactivex/Scheduler;
@@ -194,20 +220,17 @@
     return-object p1
 .end method
 
-.method public final getQuoteToSwap(Lcom/iMe/storage/domain/model/wallet/token/TokenCode;Lcom/iMe/storage/domain/model/wallet/token/TokenCode;Ljava/lang/String;Lcom/iMe/storage/domain/model/wallet/swap/TradeType;FLcom/iMe/storage/domain/model/crypto/NetworkType;Lcom/iMe/storage/domain/model/crypto/NetworkType;Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocol;)Lio/reactivex/Observable;
-    .locals 11
+.method public final getQuoteToSwap(Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocol;Lcom/iMe/storage/domain/model/wallet/token/Token;Lcom/iMe/storage/domain/model/wallet/token/Token;Ljava/lang/String;Lcom/iMe/storage/domain/model/wallet/swap/TradeType;F)Lio/reactivex/Observable;
+    .locals 8
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lcom/iMe/storage/domain/model/wallet/token/TokenCode;",
-            "Lcom/iMe/storage/domain/model/wallet/token/TokenCode;",
+            "Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocol;",
+            "Lcom/iMe/storage/domain/model/wallet/token/Token;",
+            "Lcom/iMe/storage/domain/model/wallet/token/Token;",
             "Ljava/lang/String;",
             "Lcom/iMe/storage/domain/model/wallet/swap/TradeType;",
-            "F",
-            "Lcom/iMe/storage/domain/model/crypto/NetworkType;",
-            "Lcom/iMe/storage/domain/model/crypto/NetworkType;",
-            "Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocol;",
-            ")",
+            "F)",
             "Lio/reactivex/Observable<",
             "Lcom/iMe/storage/domain/model/Result<",
             "Lcom/iMe/storage/domain/model/crypto/swap/CryptoSwapMetadata;",
@@ -215,87 +238,77 @@
         }
     .end annotation
 
-    move-object v0, p0
+    const-string v0, "protocol"
 
-    const-string v1, "inputToken"
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    move-object v3, p1
+    const-string v0, "inputToken"
 
-    invoke-static {p1, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v1, "outputToken"
+    const-string v0, "outputToken"
 
-    move-object v4, p2
+    invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-static {p2, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    const-string v0, "amount"
 
-    const-string v1, "amount"
+    invoke-static {p4, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    move-object v5, p3
+    const-string v0, "tradeType"
 
-    invoke-static {p3, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string v1, "tradeType"
-
-    move-object v6, p4
-
-    invoke-static {p4, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string v1, "inputNetworkType"
-
-    move-object/from16 v8, p6
-
-    invoke-static {v8, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string v1, "protocol"
-
-    move-object/from16 v10, p8
-
-    invoke-static {v10, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    .line 53
-    iget-object v2, v0, Lcom/iMe/storage/domain/interactor/crypto/swap/SwapInteractor;->swapRepository:Lcom/iMe/storage/domain/repository/crypto/swap/SwapRepository;
-
-    move/from16 v7, p5
-
-    move-object/from16 v9, p7
-
-    .line 54
-    invoke-interface/range {v2 .. v10}, Lcom/iMe/storage/domain/repository/crypto/swap/SwapRepository;->getQuoteToSwap(Lcom/iMe/storage/domain/model/wallet/token/TokenCode;Lcom/iMe/storage/domain/model/wallet/token/TokenCode;Ljava/lang/String;Lcom/iMe/storage/domain/model/wallet/swap/TradeType;FLcom/iMe/storage/domain/model/crypto/NetworkType;Lcom/iMe/storage/domain/model/crypto/NetworkType;Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocol;)Lio/reactivex/Observable;
-
-    move-result-object v1
+    invoke-static {p5, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 55
-    iget-object v2, v0, Lcom/iMe/storage/domain/interactor/crypto/swap/SwapInteractor;->schedulersProvider:Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
+    iget-object v1, p0, Lcom/iMe/storage/domain/interactor/crypto/swap/SwapInteractor;->swapRepository:Lcom/iMe/storage/domain/repository/crypto/swap/SwapRepository;
 
-    invoke-interface {v2}, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;->io()Lio/reactivex/Scheduler;
+    move-object v2, p1
 
-    move-result-object v2
+    move-object v3, p2
 
-    invoke-virtual {v1, v2}, Lio/reactivex/Observable;->subscribeOn(Lio/reactivex/Scheduler;)Lio/reactivex/Observable;
+    move-object v4, p3
 
-    move-result-object v1
+    move-object v5, p4
+
+    move-object v6, p5
+
+    move v7, p6
 
     .line 56
-    sget-object v2, Lcom/iMe/storage/domain/model/Result;->Companion:Lcom/iMe/storage/domain/model/Result$Companion;
+    invoke-interface/range {v1 .. v7}, Lcom/iMe/storage/domain/repository/crypto/swap/SwapRepository;->getQuoteToSwap(Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocol;Lcom/iMe/storage/domain/model/wallet/token/Token;Lcom/iMe/storage/domain/model/wallet/token/Token;Ljava/lang/String;Lcom/iMe/storage/domain/model/wallet/swap/TradeType;F)Lio/reactivex/Observable;
 
-    const/4 v3, 0x0
+    move-result-object p1
 
-    const/4 v4, 0x1
+    .line 60
+    iget-object p2, p0, Lcom/iMe/storage/domain/interactor/crypto/swap/SwapInteractor;->schedulersProvider:Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
-    invoke-static {v2, v3, v4, v3}, Lcom/iMe/storage/domain/model/Result$Companion;->loading$default(Lcom/iMe/storage/domain/model/Result$Companion;Ljava/lang/Object;ILjava/lang/Object;)Lcom/iMe/storage/domain/model/Result;
+    invoke-interface {p2}, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;->io()Lio/reactivex/Scheduler;
 
-    move-result-object v2
+    move-result-object p2
 
-    invoke-virtual {v1, v2}, Lio/reactivex/Observable;->startWith(Ljava/lang/Object;)Lio/reactivex/Observable;
+    invoke-virtual {p1, p2}, Lio/reactivex/Observable;->subscribeOn(Lio/reactivex/Scheduler;)Lio/reactivex/Observable;
 
-    move-result-object v1
+    move-result-object p1
 
-    const-string v2, "swapRepository\n         \u2026artWith(Result.loading())"
+    .line 61
+    sget-object p2, Lcom/iMe/storage/domain/model/Result;->Companion:Lcom/iMe/storage/domain/model/Result$Companion;
 
-    invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    const/4 p3, 0x0
 
-    return-object v1
+    const/4 p4, 0x1
+
+    invoke-static {p2, p3, p4, p3}, Lcom/iMe/storage/domain/model/Result$Companion;->loading$default(Lcom/iMe/storage/domain/model/Result$Companion;Ljava/lang/Object;ILjava/lang/Object;)Lcom/iMe/storage/domain/model/Result;
+
+    move-result-object p2
+
+    invoke-virtual {p1, p2}, Lio/reactivex/Observable;->startWith(Ljava/lang/Object;)Lio/reactivex/Observable;
+
+    move-result-object p1
+
+    const-string p2, "swapRepository\n         \u2026artWith(Result.loading())"
+
+    invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    return-object p1
 .end method
 
 .method public final swap(Lcom/iMe/storage/domain/model/crypto/swap/SwapArgs;)Lio/reactivex/Observable;
@@ -316,15 +329,15 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 42
+    .line 47
     iget-object v0, p0, Lcom/iMe/storage/domain/interactor/crypto/swap/SwapInteractor;->swapRepository:Lcom/iMe/storage/domain/repository/crypto/swap/SwapRepository;
 
-    .line 43
+    .line 48
     invoke-interface {v0, p1}, Lcom/iMe/storage/domain/repository/crypto/swap/SwapRepository;->swap(Lcom/iMe/storage/domain/model/crypto/swap/SwapArgs;)Lio/reactivex/Observable;
 
     move-result-object p1
 
-    .line 44
+    .line 49
     iget-object v0, p0, Lcom/iMe/storage/domain/interactor/crypto/swap/SwapInteractor;->schedulersProvider:Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
     invoke-interface {v0}, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;->io()Lio/reactivex/Scheduler;

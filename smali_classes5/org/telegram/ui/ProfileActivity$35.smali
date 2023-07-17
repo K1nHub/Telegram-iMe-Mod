@@ -30,7 +30,7 @@
 
     move-object v0, p1
 
-    .line 5512
+    .line 5543
     iput-object v0, v13, Lorg/telegram/ui/ProfileActivity$35;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     move-object/from16 v0, p14
@@ -77,7 +77,7 @@
 
     if-eqz p2, :cond_0
 
-    .line 5515
+    .line 5546
     iget-object p1, p0, Lorg/telegram/ui/ProfileActivity$35;->val$needShowBulletin:[Z
 
     const/4 p2, 0x0
@@ -94,7 +94,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 5516
+    .line 5547
     iget-object p1, p0, Lorg/telegram/ui/ProfileActivity$35;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     iget-object p2, p0, Lorg/telegram/ui/ProfileActivity$35;->val$user:Lorg/telegram/tgnet/TLRPC$User;

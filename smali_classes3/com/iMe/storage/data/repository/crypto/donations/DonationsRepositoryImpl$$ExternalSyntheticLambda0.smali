@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lcom/iMe/storage/data/repository/crypto/donations/DonationsRepositoryImpl$$ExternalSyntheticLambda0;->f$0:Lkotlin/jvm/functions/Function1;
 
-    invoke-static {v0, p1}, Lcom/iMe/storage/data/repository/crypto/donations/DonationsRepositoryImpl;->$r8$lambda$poZ2-M7CqYlMZaARCNu7hUDif7A(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lio/reactivex/ObservableSource;
+    invoke-static {v0, p1}, Lcom/iMe/storage/data/repository/crypto/donations/DonationsRepositoryImpl;->$r8$lambda$xrndl6XDjV7ZYmxWSd81jiL8sBk(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lio/reactivex/ObservableSource;
 
     move-result-object p1
 

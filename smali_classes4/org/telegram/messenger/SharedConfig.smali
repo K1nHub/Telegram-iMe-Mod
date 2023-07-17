@@ -2260,7 +2260,7 @@
 
     sput v1, Lorg/telegram/messenger/SharedConfig;->scheduledOrNoSoundHintShows:I
 
-    const-string v2, "scheduledOrNoSoundHintShows"
+    const-string/jumbo v2, "scheduledOrNoSoundHintShows"
 
     invoke-interface {v0, v2, v1}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
 
@@ -2290,7 +2290,7 @@
 
     sput v1, Lorg/telegram/messenger/SharedConfig;->searchMessagesAsListHintShows:I
 
-    const-string v2, "searchMessagesAsListHintShows"
+    const-string/jumbo v2, "searchMessagesAsListHintShows"
 
     invoke-interface {v0, v2, v1}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
 
@@ -2900,7 +2900,7 @@
 
     move-result-object v1
 
-    const-string v2, "saveIncomingPhotos"
+    const-string/jumbo v2, "saveIncomingPhotos"
 
     .line 808
     invoke-interface {v1, v2, v3}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
@@ -3331,21 +3331,15 @@
 
     .line 873
     :cond_6
-    sget v7, Lorg/telegram/messenger/SharedConfig;->pendingAppUpdateBuildVersion:I
+    sget v1, Lorg/telegram/messenger/SharedConfig;->pendingAppUpdateBuildVersion:I
 
-    if-ne v7, v2, :cond_7
+    if-ne v1, v2, :cond_7
 
-    sget-object v2, Lorg/telegram/messenger/SharedConfig;->pendingAppUpdate:Lorg/telegram/tgnet/TLRPC$TL_help_appUpdate;
+    sget-object v1, Lorg/telegram/messenger/SharedConfig;->pendingAppUpdate:Lorg/telegram/tgnet/TLRPC$TL_help_appUpdate;
 
-    iget-object v2, v2, Lorg/telegram/tgnet/TLRPC$TL_help_appUpdate;->version:Ljava/lang/String;
+    iget-object v1, v1, Lorg/telegram/tgnet/TLRPC$TL_help_appUpdate;->version:Ljava/lang/String;
 
-    if-eqz v2, :cond_7
-
-    invoke-virtual {v1, v2}, Ljava/lang/String;->compareTo(Ljava/lang/String;)I
-
-    move-result v1
-
-    if-gez v1, :cond_7
+    if-eqz v1, :cond_7
 
     sget-boolean v1, Lorg/telegram/messenger/BuildVars;->DEBUG_PRIVATE_VERSION:Z
 
@@ -4412,7 +4406,7 @@
 
     sput v2, Lorg/telegram/messenger/SharedConfig;->mapPreviewType:I
 
-    const-string v2, "raise_to_listen"
+    const-string/jumbo v2, "raise_to_listen"
 
     .line 950
     invoke-interface {v1, v2, v4}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
@@ -4421,7 +4415,7 @@
 
     sput-boolean v2, Lorg/telegram/messenger/SharedConfig;->raiseToListen:Z
 
-    const-string v2, "raise_to_speak"
+    const-string/jumbo v2, "raise_to_speak"
 
     .line 951
     invoke-interface {v1, v2, v3}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
@@ -4439,7 +4433,7 @@
 
     sput-boolean v2, Lorg/telegram/messenger/SharedConfig;->nextMediaTap:Z
 
-    const-string v2, "record_via_sco"
+    const-string/jumbo v2, "record_via_sco"
 
     .line 953
     invoke-interface {v1, v2, v3}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
@@ -4517,7 +4511,7 @@
     .line 960
     sput-boolean v4, Lorg/telegram/messenger/SharedConfig;->roundCamera16to9:Z
 
-    const-string v2, "repeatMode"
+    const-string/jumbo v2, "repeatMode"
 
     .line 961
     invoke-interface {v1, v2, v3}, Landroid/content/SharedPreferences;->getInt(Ljava/lang/String;I)I
@@ -4617,7 +4611,7 @@
 
     sput-boolean v2, Lorg/telegram/messenger/SharedConfig;->streamMedia:Z
 
-    const-string v2, "saveStreamMedia"
+    const-string/jumbo v2, "saveStreamMedia"
 
     .line 969
     invoke-interface {v1, v2, v4}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
@@ -4812,7 +4806,7 @@
 
     sput v2, Lorg/telegram/messenger/SharedConfig;->lastLogsCheckTime:I
 
-    const-string v2, "searchMessagesAsListHintShows"
+    const-string/jumbo v2, "searchMessagesAsListHintShows"
 
     .line 990
     invoke-interface {v1, v2, v3}, Landroid/content/SharedPreferences;->getInt(Ljava/lang/String;I)I
@@ -4821,7 +4815,7 @@
 
     sput v2, Lorg/telegram/messenger/SharedConfig;->searchMessagesAsListHintShows:I
 
-    const-string v2, "searchMessagesAsListUsed"
+    const-string/jumbo v2, "searchMessagesAsListUsed"
 
     .line 991
     invoke-interface {v1, v2, v3}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
@@ -4848,7 +4842,7 @@
 
     sput v2, Lorg/telegram/messenger/SharedConfig;->textSelectionHintShows:I
 
-    const-string v2, "scheduledOrNoSoundHintShows"
+    const-string/jumbo v2, "scheduledOrNoSoundHintShows"
 
     .line 994
     invoke-interface {v1, v2, v3}, Landroid/content/SharedPreferences;->getInt(Ljava/lang/String;I)I
@@ -5950,7 +5944,7 @@
 
     move-result-object v0
 
-    const-string v1, "scheduledOrNoSoundHintShows"
+    const-string/jumbo v1, "scheduledOrNoSoundHintShows"
 
     const/4 v2, 0x3
 
@@ -6014,7 +6008,7 @@
 
     move-result-object v1
 
-    const-string v2, "saveIncomingPhotos"
+    const-string/jumbo v2, "saveIncomingPhotos"
 
     .line 732
     sget-boolean v4, Lorg/telegram/messenger/SharedConfig;->saveIncomingPhotos:Z
@@ -6201,7 +6195,7 @@
 
     invoke-interface {v1, v2, v4}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
 
-    const-string v2, "scheduledOrNoSoundHintShows"
+    const-string/jumbo v2, "scheduledOrNoSoundHintShows"
 
     .line 755
     sget v4, Lorg/telegram/messenger/SharedConfig;->scheduledOrNoSoundHintShows:I
@@ -6355,7 +6349,7 @@
 
     invoke-interface {v1, v2, v3}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
 
-    const-string v2, "record_via_sco"
+    const-string/jumbo v2, "record_via_sco"
 
     .line 783
     sget-boolean v3, Lorg/telegram/messenger/SharedConfig;->recordViaSco:Z
@@ -7664,7 +7658,7 @@
 .end method
 
 .method public static setNewAppVersionAvailable(Lorg/telegram/tgnet/TLRPC$TL_help_appUpdate;)Z
-    .locals 4
+    .locals 3
 
     const/4 v0, 0x0
 
@@ -7729,17 +7723,11 @@
 
     .line 1165
     :cond_1
-    iget-object v3, p0, Lorg/telegram/tgnet/TLRPC$TL_help_appUpdate;->version:Ljava/lang/String;
+    iget-object v1, p0, Lorg/telegram/tgnet/TLRPC$TL_help_appUpdate;->version:Ljava/lang/String;
 
-    if-eqz v3, :cond_3
+    if-nez v1, :cond_2
 
-    invoke-virtual {v1, v3}, Ljava/lang/String;->compareTo(Ljava/lang/String;)I
-
-    move-result v1
-
-    if-ltz v1, :cond_2
-
-    goto :goto_2
+    return v0
 
     .line 1168
     :cond_2
@@ -7754,10 +7742,6 @@
     const/4 p0, 0x1
 
     return p0
-
-    :cond_3
-    :goto_2
-    return v0
 .end method
 
 .method public static setNewTelegramAuthorizationRulesRead(Z)V
@@ -8287,7 +8271,7 @@
     .line 1463
     sget v0, Lorg/telegram/messenger/SharedConfig;->repeatMode:I
 
-    const-string v1, "repeatMode"
+    const-string/jumbo v1, "repeatMode"
 
     invoke-interface {p0, v1, v0}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
 
@@ -8316,7 +8300,7 @@
     .line 1272
     sget-boolean v0, Lorg/telegram/messenger/SharedConfig;->searchMessagesAsListUsed:Z
 
-    const-string v1, "searchMessagesAsListUsed"
+    const-string/jumbo v1, "searchMessagesAsListUsed"
 
     invoke-interface {p0, v1, v0}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
 
@@ -9654,7 +9638,7 @@
     .line 1536
     sget-boolean v1, Lorg/telegram/messenger/SharedConfig;->raiseToListen:Z
 
-    const-string v2, "raise_to_listen"
+    const-string/jumbo v2, "raise_to_listen"
 
     invoke-interface {v0, v2, v1}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
 
@@ -9687,7 +9671,7 @@
     .line 1528
     sget-boolean v1, Lorg/telegram/messenger/SharedConfig;->raiseToSpeak:Z
 
-    const-string v2, "raise_to_speak"
+    const-string/jumbo v2, "raise_to_speak"
 
     invoke-interface {v0, v2, v1}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
 
@@ -9761,7 +9745,7 @@
     .line 1658
     sget-boolean v1, Lorg/telegram/messenger/SharedConfig;->roundCamera16to9:Z
 
-    const-string v2, "roundCamera16to9"
+    const-string/jumbo v2, "roundCamera16to9"
 
     invoke-interface {v0, v2, v1}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
 
@@ -9794,7 +9778,7 @@
     .line 1614
     sget-boolean v1, Lorg/telegram/messenger/SharedConfig;->saveStreamMedia:Z
 
-    const-string v2, "saveStreamMedia"
+    const-string/jumbo v2, "saveStreamMedia"
 
     invoke-interface {v0, v2, v1}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
 

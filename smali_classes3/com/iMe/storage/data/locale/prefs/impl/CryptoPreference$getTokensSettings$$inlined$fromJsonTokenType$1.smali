@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/iMe/storage/data/locale/prefs/impl/CryptoPreference;->getTokensSettings(Lcom/iMe/storage/domain/model/crypto/NetworkType;)Lcom/iMe/storage/data/locale/prefs/model/WalletCryptoTokensSettingsMetadata;
+    value = Lcom/iMe/storage/data/locale/prefs/impl/CryptoPreference;->getTokensSettings(Ljava/lang/String;)Ljava/util/List;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -16,8 +16,10 @@
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Lcom/google/gson/reflect/TypeToken<",
-        "Lcom/iMe/storage/data/locale/prefs/model/WalletCryptoTokensSettingsMetadata;",
-        ">;"
+        "Ljava/util/List<",
+        "+",
+        "Lcom/iMe/storage/data/locale/prefs/model/TokenDisplaySettings$Crypto;",
+        ">;>;"
     }
 .end annotation
 

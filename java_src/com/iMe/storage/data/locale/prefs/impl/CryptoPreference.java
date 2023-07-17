@@ -6,25 +6,29 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.iMe.storage.data.locale.prefs.model.AccountLevelMetadata;
 import com.iMe.storage.data.locale.prefs.model.CryptoWalletInformationMetadata;
+import com.iMe.storage.data.locale.prefs.model.TokenDisplaySettings;
 import com.iMe.storage.data.locale.prefs.model.WalletAirdropMetadata;
-import com.iMe.storage.data.locale.prefs.model.WalletCryptoTokensSettingsMetadata;
-import com.iMe.storage.data.locale.prefs.model.WalletCryptoTokensSettingsTokenState;
 import com.iMe.storage.data.locale.prefs.model.auth.AuthTokensMetadata;
 import com.iMe.storage.data.locale.prefs.model.binancepay.BinanceAuthTokensMetadata;
 import com.iMe.storage.data.locale.prefs.model.binancepay.BinanceUserInfoMetadata;
+import com.iMe.storage.data.utils.crypto.NetworksHelper;
 import com.iMe.storage.domain.gateway.TelegramGateway;
 import com.iMe.storage.domain.model.PreferenceBlockchainMappedData;
 import com.iMe.storage.domain.model.crypto.BlockchainType;
+import com.iMe.storage.domain.model.crypto.Network;
 import com.iMe.storage.domain.model.crypto.NetworkType;
 import com.iMe.storage.domain.model.wallet.staking.StakingOrderType;
 import com.iMe.storage.domain.model.wallet.token.TokenOrderType;
 import com.iMe.storage.domain.storage.BasePreferenceHelper;
 import com.iMe.storage.domain.storage.CryptoPreferenceHelper;
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
+import kotlin.collections.CollectionsKt__CollectionsJVMKt;
 import kotlin.collections.CollectionsKt__CollectionsKt;
-import kotlin.collections.CollectionsKt__MutableCollectionsJVMKt;
+import kotlin.collections.CollectionsKt___CollectionsKt;
 import kotlin.comparisons.ComparisonsKt__ComparisonsKt;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: CryptoPreference.kt */
@@ -39,7 +43,7 @@ public final class CryptoPreference extends BasePreference implements CryptoPref
     @Override // com.iMe.storage.domain.storage.CryptoPreferenceHelper
     public /* synthetic */ BlockchainType getCurrentBlockchainType() {
         BlockchainType blockchainType;
-        blockchainType = getNetworkType().getBlockchainType();
+        blockchainType = getNetwork().getBlockchainType();
         return blockchainType;
     }
 
@@ -112,6 +116,36 @@ public final class CryptoPreference extends BasePreference implements CryptoPref
     }
 
     @Override // com.iMe.storage.domain.storage.CryptoPreferenceHelper
+    public int getWalletPinCodeBadTriesCount() {
+        return getMPref().getInt(CryptoPreferenceHelper.CC.withGuid$default(this, "wallet_pin_code_bad_tries_count", null, 2, null), 0);
+    }
+
+    @Override // com.iMe.storage.domain.storage.CryptoPreferenceHelper
+    public void setWalletPinCodeBadTriesCount(int i) {
+        getMPref().edit().putInt(CryptoPreferenceHelper.CC.withGuid$default(this, "wallet_pin_code_bad_tries_count", null, 2, null), i).apply();
+    }
+
+    @Override // com.iMe.storage.domain.storage.CryptoPreferenceHelper
+    public long getWalletPinCodeTimeoutUntil() {
+        return getMPref().getLong(CryptoPreferenceHelper.CC.withGuid$default(this, "wallet_pin_code_timeout_until", null, 2, null), 0L);
+    }
+
+    @Override // com.iMe.storage.domain.storage.CryptoPreferenceHelper
+    public void setWalletPinCodeTimeoutUntil(long j) {
+        getMPref().edit().putLong(CryptoPreferenceHelper.CC.withGuid$default(this, "wallet_pin_code_timeout_until", null, 2, null), j).apply();
+    }
+
+    @Override // com.iMe.storage.domain.storage.CryptoPreferenceHelper
+    public boolean isLocalEncryptionCompleted() {
+        return getMPref().getBoolean(CryptoPreferenceHelper.CC.withGuid$default(this, "remote_pin_code_migration_completed", null, 2, null), false);
+    }
+
+    @Override // com.iMe.storage.domain.storage.CryptoPreferenceHelper
+    public void setLocalEncryptionCompleted(boolean z) {
+        getMPref().edit().putBoolean(CryptoPreferenceHelper.CC.withGuid$default(this, "remote_pin_code_migration_completed", null, 2, null), z).apply();
+    }
+
+    @Override // com.iMe.storage.domain.storage.CryptoPreferenceHelper
     public CryptoWalletInformationMetadata getWalletInfoMetadata() {
         Gson gson = this.gson;
         String string = getMPref().getString("wallet_information_metadata", "{}");
@@ -129,12 +163,12 @@ public final class CryptoPreference extends BasePreference implements CryptoPref
     }
 
     @Override // com.iMe.storage.domain.storage.CryptoPreferenceHelper
-    public boolean getCryptoHiddenBalance() {
+    public boolean isBalanceHidden() {
         return getMPref().getBoolean(CryptoPreferenceHelper.CC.withGuid$default(this, "hidden_balance", null, 2, null), false);
     }
 
     @Override // com.iMe.storage.domain.storage.CryptoPreferenceHelper
-    public void setCryptoHiddenBalance(boolean z) {
+    public void setBalanceHidden(boolean z) {
         getMPref().edit().putBoolean(CryptoPreferenceHelper.CC.withGuid$default(this, "hidden_balance", null, 2, null), z).apply();
     }
 
@@ -156,23 +190,60 @@ public final class CryptoPreference extends BasePreference implements CryptoPref
     }
 
     @Override // com.iMe.storage.domain.storage.CryptoPreferenceHelper
-    public NetworkType getNetworkType() {
-        NetworkType.Companion companion = NetworkType.Companion;
+    public String getNetworkId() {
         SharedPreferences mPref = getMPref();
         String withTgAccount$default = BasePreferenceHelper.CC.withTgAccount$default(this, "network_type", null, 2, null);
-        NetworkType networkType = NetworkType.BINANCE_SMART_CHAIN;
-        String string = mPref.getString(withTgAccount$default, networkType.name());
-        if (string == null) {
-            string = networkType.name();
-        }
-        Intrinsics.checkNotNullExpressionValue(string, "mPref.getString(withTgAc….BINANCE_SMART_CHAIN.name");
-        return companion.map(string);
+        NetworksHelper networksHelper = NetworksHelper.INSTANCE;
+        String string = mPref.getString(withTgAccount$default, networksHelper.getDefault().getId());
+        return string == null ? networksHelper.getDefault().getId() : string;
     }
 
     @Override // com.iMe.storage.domain.storage.CryptoPreferenceHelper
-    public void setNetworkType(NetworkType value) {
+    public void setNetworkId(String value) {
         Intrinsics.checkNotNullParameter(value, "value");
-        getMPref().edit().putString(BasePreferenceHelper.CC.withTgAccount$default(this, "network_type", null, 2, null), value.name()).apply();
+        getMPref().edit().putString(BasePreferenceHelper.CC.withTgAccount$default(this, "network_type", null, 2, null), value).apply();
+    }
+
+    @Override // com.iMe.storage.domain.storage.CryptoPreferenceHelper
+    public Network getNetwork() {
+        return NetworksHelper.getNetworkById(getMPref().getString(BasePreferenceHelper.CC.withTgAccount$default(this, "network_type", null, 2, null), NetworksHelper.INSTANCE.getDefault().getId()));
+    }
+
+    @Override // com.iMe.storage.domain.storage.CryptoPreferenceHelper
+    public void setNetwork(Network value) {
+        Intrinsics.checkNotNullParameter(value, "value");
+        getMPref().edit().putString(BasePreferenceHelper.CC.withTgAccount$default(this, "network_type", null, 2, null), value.getId()).apply();
+    }
+
+    @Override // com.iMe.storage.domain.storage.CryptoPreferenceHelper
+    public List<Network> getSupportedNetworks() {
+        Gson gson = this.gson;
+        String string = getMPref().getString(BasePreferenceHelper.CC.withTgAccount$default(this, "supported_networks", null, 2, null), "[]");
+        if (string == null) {
+            string = "";
+        }
+        Collection collection = (Collection) gson.fromJson(string, new TypeToken<List<? extends Network>>() { // from class: com.iMe.storage.data.locale.prefs.impl.CryptoPreference$special$$inlined$fromJsonTokenType$4
+        }.getType());
+        if (collection.isEmpty()) {
+            collection = CollectionsKt__CollectionsJVMKt.listOf(NetworksHelper.INSTANCE.getDefault());
+        }
+        return (List) collection;
+    }
+
+    @Override // com.iMe.storage.domain.storage.CryptoPreferenceHelper
+    public void setSupportedNetworks(List<Network> value) {
+        Intrinsics.checkNotNullParameter(value, "value");
+        getMPref().edit().putString(BasePreferenceHelper.CC.withTgAccount$default(this, "supported_networks", null, 2, null), this.gson.toJson(value)).apply();
+    }
+
+    @Override // com.iMe.storage.domain.storage.CryptoPreferenceHelper
+    public long getLastNetworksUpdateTime() {
+        return getMPref().getLong(CryptoPreferenceHelper.CC.withGuid$default(this, "last_networks_update_time", null, 2, null), 0L);
+    }
+
+    @Override // com.iMe.storage.domain.storage.CryptoPreferenceHelper
+    public void setLastNetworksUpdateTime(long j) {
+        getMPref().edit().putLong(CryptoPreferenceHelper.CC.withGuid$default(this, "last_networks_update_time", null, 2, null), j).apply();
     }
 
     @Override // com.iMe.storage.domain.storage.CryptoPreferenceHelper
@@ -224,7 +295,7 @@ public final class CryptoPreference extends BasePreference implements CryptoPref
         if (string == null) {
             string = "";
         }
-        return (WalletAirdropMetadata) gson.fromJson(string, new TypeToken<WalletAirdropMetadata>() { // from class: com.iMe.storage.data.locale.prefs.impl.CryptoPreference$special$$inlined$fromJsonTokenType$4
+        return (WalletAirdropMetadata) gson.fromJson(string, new TypeToken<WalletAirdropMetadata>() { // from class: com.iMe.storage.data.locale.prefs.impl.CryptoPreference$special$$inlined$fromJsonTokenType$5
         }.getType());
     }
 
@@ -241,7 +312,7 @@ public final class CryptoPreference extends BasePreference implements CryptoPref
         if (string == null) {
             string = "";
         }
-        return (AuthTokensMetadata) gson.fromJson(string, new TypeToken<AuthTokensMetadata>() { // from class: com.iMe.storage.data.locale.prefs.impl.CryptoPreference$special$$inlined$fromJsonTokenType$5
+        return (AuthTokensMetadata) gson.fromJson(string, new TypeToken<AuthTokensMetadata>() { // from class: com.iMe.storage.data.locale.prefs.impl.CryptoPreference$special$$inlined$fromJsonTokenType$6
         }.getType());
     }
 
@@ -258,7 +329,7 @@ public final class CryptoPreference extends BasePreference implements CryptoPref
         if (string == null) {
             string = "";
         }
-        return (BinanceAuthTokensMetadata) gson.fromJson(string, new TypeToken<BinanceAuthTokensMetadata>() { // from class: com.iMe.storage.data.locale.prefs.impl.CryptoPreference$special$$inlined$fromJsonTokenType$6
+        return (BinanceAuthTokensMetadata) gson.fromJson(string, new TypeToken<BinanceAuthTokensMetadata>() { // from class: com.iMe.storage.data.locale.prefs.impl.CryptoPreference$special$$inlined$fromJsonTokenType$7
         }.getType());
     }
 
@@ -275,7 +346,7 @@ public final class CryptoPreference extends BasePreference implements CryptoPref
         if (string == null) {
             string = "";
         }
-        return (BinanceUserInfoMetadata) gson.fromJson(string, new TypeToken<BinanceUserInfoMetadata>() { // from class: com.iMe.storage.data.locale.prefs.impl.CryptoPreference$special$$inlined$fromJsonTokenType$7
+        return (BinanceUserInfoMetadata) gson.fromJson(string, new TypeToken<BinanceUserInfoMetadata>() { // from class: com.iMe.storage.data.locale.prefs.impl.CryptoPreference$special$$inlined$fromJsonTokenType$8
         }.getType());
     }
 
@@ -296,18 +367,18 @@ public final class CryptoPreference extends BasePreference implements CryptoPref
     }
 
     @Override // com.iMe.storage.domain.storage.CryptoPreferenceHelper
-    public WalletCryptoTokensSettingsMetadata getBinanceTokensSettings() {
+    public List<TokenDisplaySettings.Binance> getBinanceTokensSettings() {
         Gson gson = this.gson;
-        String string = getMPref().getString(BasePreferenceHelper.CC.withTgAccount$default(this, "binance_tokens_settings", null, 2, null), "{}");
+        String string = getMPref().getString(BasePreferenceHelper.CC.withTgAccount$default(this, "binance_tokens_settings", null, 2, null), "[]");
         if (string == null) {
             string = "";
         }
-        return (WalletCryptoTokensSettingsMetadata) gson.fromJson(string, new TypeToken<WalletCryptoTokensSettingsMetadata>() { // from class: com.iMe.storage.data.locale.prefs.impl.CryptoPreference$special$$inlined$fromJsonTokenType$8
+        return (List) gson.fromJson(string, new TypeToken<List<? extends TokenDisplaySettings.Binance>>() { // from class: com.iMe.storage.data.locale.prefs.impl.CryptoPreference$special$$inlined$fromJsonTokenType$9
         }.getType());
     }
 
     @Override // com.iMe.storage.domain.storage.CryptoPreferenceHelper
-    public void setBinanceTokensSettings(WalletCryptoTokensSettingsMetadata value) {
+    public void setBinanceTokensSettings(List<TokenDisplaySettings.Binance> value) {
         Intrinsics.checkNotNullParameter(value, "value");
         getMPref().edit().putString(BasePreferenceHelper.CC.withTgAccount$default(this, "binance_tokens_settings", null, 2, null), this.gson.toJson(value)).apply();
     }
@@ -375,58 +446,47 @@ public final class CryptoPreference extends BasePreference implements CryptoPref
     }
 
     @Override // com.iMe.storage.domain.storage.CryptoPreferenceHelper
-    public WalletCryptoTokensSettingsMetadata getTokensSettings(NetworkType networkType) {
-        WalletCryptoTokensSettingsMetadata defaultTokensSettings;
-        Intrinsics.checkNotNullParameter(networkType, "networkType");
-        String withTgAccount$default = BasePreferenceHelper.CC.withTgAccount$default(this, withPrefix(networkType.name(), "tokens_settings"), null, 2, null);
+    public List<TokenDisplaySettings.Crypto> getTokensSettings(String networkId) {
+        Iterable arrayList;
+        List<TokenDisplaySettings.Crypto> sortedWith;
+        Intrinsics.checkNotNullParameter(networkId, "networkId");
+        String withTgAccount$default = BasePreferenceHelper.CC.withTgAccount$default(this, withPrefix(networkId, "tokens_settings"), null, 2, null);
         if (getMPref().contains(withTgAccount$default)) {
             Gson gson = this.gson;
-            String string = getMPref().getString(withTgAccount$default, "{}");
+            String string = getMPref().getString(withTgAccount$default, "[]");
             if (string == null) {
                 string = "";
             }
-            defaultTokensSettings = (WalletCryptoTokensSettingsMetadata) gson.fromJson(string, new TypeToken<WalletCryptoTokensSettingsMetadata>() { // from class: com.iMe.storage.data.locale.prefs.impl.CryptoPreference$getTokensSettings$$inlined$fromJsonTokenType$1
-            }.getType());
+            arrayList = CollectionsKt___CollectionsKt.toMutableList((Collection) ((Collection) gson.fromJson(string, new TypeToken<List<? extends TokenDisplaySettings.Crypto>>() { // from class: com.iMe.storage.data.locale.prefs.impl.CryptoPreference$getTokensSettings$$inlined$fromJsonTokenType$1
+            }.getType())));
         } else {
-            defaultTokensSettings = WalletCryptoTokensSettingsMetadata.Companion.getDefaultTokensSettings(networkType);
+            arrayList = new ArrayList();
         }
-        List<WalletCryptoTokensSettingsTokenState> states = defaultTokensSettings.getStates();
-        if (states.size() > 1) {
-            CollectionsKt__MutableCollectionsJVMKt.sortWith(states, new Comparator() { // from class: com.iMe.storage.data.locale.prefs.impl.CryptoPreference$getTokensSettings$lambda$1$$inlined$sortBy$1
-                @Override // java.util.Comparator
-                public final int compare(T t, T t2) {
-                    int compareValues;
-                    compareValues = ComparisonsKt__ComparisonsKt.compareValues(Integer.valueOf(((WalletCryptoTokensSettingsTokenState) t).getPosition()), Integer.valueOf(((WalletCryptoTokensSettingsTokenState) t2).getPosition()));
-                    return compareValues;
-                }
-            });
-        }
-        return defaultTokensSettings;
+        sortedWith = CollectionsKt___CollectionsKt.sortedWith(arrayList, new Comparator() { // from class: com.iMe.storage.data.locale.prefs.impl.CryptoPreference$getTokensSettings$$inlined$sortedBy$1
+            @Override // java.util.Comparator
+            public final int compare(T t, T t2) {
+                int compareValues;
+                compareValues = ComparisonsKt__ComparisonsKt.compareValues(Integer.valueOf(((TokenDisplaySettings.Crypto) t).getPosition()), Integer.valueOf(((TokenDisplaySettings.Crypto) t2).getPosition()));
+                return compareValues;
+            }
+        });
+        return sortedWith;
     }
 
     @Override // com.iMe.storage.domain.storage.CryptoPreferenceHelper
-    public void saveTokensSettings(WalletCryptoTokensSettingsMetadata settings, NetworkType networkType) {
+    public void saveTokensSettings(List<TokenDisplaySettings.Crypto> settings, String networkId) {
         Intrinsics.checkNotNullParameter(settings, "settings");
-        Intrinsics.checkNotNullParameter(networkType, "networkType");
-        getMPref().edit().putString(BasePreferenceHelper.CC.withTgAccount$default(this, withPrefix(networkType.name(), "tokens_settings"), null, 2, null), this.gson.toJson(settings)).apply();
+        Intrinsics.checkNotNullParameter(networkId, "networkId");
+        getMPref().edit().putString(BasePreferenceHelper.CC.withTgAccount$default(this, withPrefix(networkId, "tokens_settings"), null, 2, null), this.gson.toJson(settings)).apply();
     }
 
     @Override // com.iMe.storage.domain.storage.CryptoPreferenceHelper
     public void resetAllTokensSettings() {
         SharedPreferences.Editor edit = getMPref().edit();
         edit.remove(BasePreferenceHelper.CC.withTgAccount$default(this, "tokens_only_positive", null, 2, null));
-        for (NetworkType networkType : NetworkType.values()) {
-            edit.remove(BasePreferenceHelper.CC.withTgAccount$default(this, withPrefix(networkType.name(), "tokens_settings"), null, 2, null));
+        for (String str : NetworkType.INSTANCE.getValues()) {
+            edit.remove(BasePreferenceHelper.CC.withTgAccount$default(this, withPrefix(str, "tokens_settings"), null, 2, null));
         }
-        edit.apply();
-    }
-
-    @Override // com.iMe.storage.domain.storage.CryptoPreferenceHelper
-    public void resetTokensSettingsByNetwork(NetworkType networkType) {
-        Intrinsics.checkNotNullParameter(networkType, "networkType");
-        SharedPreferences.Editor edit = getMPref().edit();
-        edit.remove(BasePreferenceHelper.CC.withTgAccount$default(this, "tokens_only_positive", null, 2, null));
-        edit.remove(BasePreferenceHelper.CC.withTgAccount$default(this, withPrefix(networkType.name(), "tokens_settings"), null, 2, null));
         edit.apply();
     }
 
@@ -435,8 +495,15 @@ public final class CryptoPreference extends BasePreference implements CryptoPref
         Intrinsics.checkNotNullParameter(blockchainType, "blockchainType");
         SharedPreferences.Editor edit = getMPref().edit();
         edit.remove(BasePreferenceHelper.CC.withTgAccount$default(this, "tokens_only_positive", null, 2, null));
-        for (NetworkType networkType : NetworkType.Companion.getNetworksByBlockchain(blockchainType)) {
-            edit.remove(BasePreferenceHelper.CC.withTgAccount$default(this, withPrefix(networkType.name(), "tokens_settings"), null, 2, null));
+        List<Network> supportedNetworks = getSupportedNetworks();
+        ArrayList<Network> arrayList = new ArrayList();
+        for (Object obj : supportedNetworks) {
+            if (((Network) obj).getBlockchainType() == blockchainType) {
+                arrayList.add(obj);
+            }
+        }
+        for (Network network : arrayList) {
+            edit.remove(BasePreferenceHelper.CC.withTgAccount$default(this, withPrefix(network.getId(), "tokens_settings"), null, 2, null));
         }
         edit.apply();
     }

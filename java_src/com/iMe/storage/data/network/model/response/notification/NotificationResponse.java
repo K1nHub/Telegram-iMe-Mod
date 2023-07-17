@@ -16,7 +16,7 @@ public final class NotificationResponse {
     private final String fromWalletAddress;
 
     /* renamed from: id */
-    private final String f310id;
+    private final String f390id;
     private final String linkedObjectId;
     private final String linkedUserId;
     private final String networkType;
@@ -41,7 +41,7 @@ public final class NotificationResponse {
     private final String userId;
 
     public final String component1() {
-        return this.f310id;
+        return this.f390id;
     }
 
     public final String component10() {
@@ -195,14 +195,14 @@ public final class NotificationResponse {
         }
         if (obj instanceof NotificationResponse) {
             NotificationResponse notificationResponse = (NotificationResponse) obj;
-            return Intrinsics.areEqual(this.f310id, notificationResponse.f310id) && Intrinsics.areEqual(this.userId, notificationResponse.userId) && Intrinsics.areEqual(this.amount, notificationResponse.amount) && this.read == notificationResponse.read && Intrinsics.areEqual(this.linkedUserId, notificationResponse.linkedUserId) && Intrinsics.areEqual(this.linkedObjectId, notificationResponse.linkedObjectId) && Intrinsics.areEqual(this.type, notificationResponse.type) && Intrinsics.areEqual(this.date, notificationResponse.date) && Intrinsics.areEqual(this.status, notificationResponse.status) && Intrinsics.areEqual(this.cryptoCode, notificationResponse.cryptoCode) && Intrinsics.areEqual(this.fromWalletAddress, notificationResponse.fromWalletAddress) && Intrinsics.areEqual(this.toWalletAddress, notificationResponse.toWalletAddress) && Intrinsics.areEqual(this.txHash, notificationResponse.txHash) && Intrinsics.areEqual(this.networkType, notificationResponse.networkType) && Intrinsics.areEqual(this.spentCurrency, notificationResponse.spentCurrency) && Intrinsics.areEqual(this.amountToSpent, notificationResponse.amountToSpent) && Intrinsics.areEqual(this.assetCode, notificationResponse.assetCode) && Intrinsics.areEqual(this.assetName, notificationResponse.assetName) && Intrinsics.areEqual(this.payerUserId, notificationResponse.payerUserId) && Intrinsics.areEqual(this.stakingId, notificationResponse.stakingId) && Intrinsics.areEqual(this.stakingName, notificationResponse.stakingName) && Intrinsics.areEqual(this.stakingAuthor, notificationResponse.stakingAuthor) && Intrinsics.areEqual(this.stakingWebsite, notificationResponse.stakingWebsite) && Intrinsics.areEqual(this.stakingAPY, notificationResponse.stakingAPY) && Intrinsics.areEqual(this.stakingAPR, notificationResponse.stakingAPR) && Intrinsics.areEqual(this.stakingEndsAt, notificationResponse.stakingEndsAt) && Intrinsics.areEqual(this.stakingToken, notificationResponse.stakingToken) && Intrinsics.areEqual(this.shouldFinishAt, notificationResponse.shouldFinishAt) && Intrinsics.areEqual(this.debtAsToken, notificationResponse.debtAsToken) && Intrinsics.areEqual(this.debtAsUsd, notificationResponse.debtAsUsd) && Intrinsics.areEqual(this.profitAsToken, notificationResponse.profitAsToken) && Intrinsics.areEqual(this.profitAsUsd, notificationResponse.profitAsUsd);
+            return Intrinsics.areEqual(this.f390id, notificationResponse.f390id) && Intrinsics.areEqual(this.userId, notificationResponse.userId) && Intrinsics.areEqual(this.amount, notificationResponse.amount) && this.read == notificationResponse.read && Intrinsics.areEqual(this.linkedUserId, notificationResponse.linkedUserId) && Intrinsics.areEqual(this.linkedObjectId, notificationResponse.linkedObjectId) && Intrinsics.areEqual(this.type, notificationResponse.type) && Intrinsics.areEqual(this.date, notificationResponse.date) && Intrinsics.areEqual(this.status, notificationResponse.status) && Intrinsics.areEqual(this.cryptoCode, notificationResponse.cryptoCode) && Intrinsics.areEqual(this.fromWalletAddress, notificationResponse.fromWalletAddress) && Intrinsics.areEqual(this.toWalletAddress, notificationResponse.toWalletAddress) && Intrinsics.areEqual(this.txHash, notificationResponse.txHash) && Intrinsics.areEqual(this.networkType, notificationResponse.networkType) && Intrinsics.areEqual(this.spentCurrency, notificationResponse.spentCurrency) && Intrinsics.areEqual(this.amountToSpent, notificationResponse.amountToSpent) && Intrinsics.areEqual(this.assetCode, notificationResponse.assetCode) && Intrinsics.areEqual(this.assetName, notificationResponse.assetName) && Intrinsics.areEqual(this.payerUserId, notificationResponse.payerUserId) && Intrinsics.areEqual(this.stakingId, notificationResponse.stakingId) && Intrinsics.areEqual(this.stakingName, notificationResponse.stakingName) && Intrinsics.areEqual(this.stakingAuthor, notificationResponse.stakingAuthor) && Intrinsics.areEqual(this.stakingWebsite, notificationResponse.stakingWebsite) && Intrinsics.areEqual(this.stakingAPY, notificationResponse.stakingAPY) && Intrinsics.areEqual(this.stakingAPR, notificationResponse.stakingAPR) && Intrinsics.areEqual(this.stakingEndsAt, notificationResponse.stakingEndsAt) && Intrinsics.areEqual(this.stakingToken, notificationResponse.stakingToken) && Intrinsics.areEqual(this.shouldFinishAt, notificationResponse.shouldFinishAt) && Intrinsics.areEqual(this.debtAsToken, notificationResponse.debtAsToken) && Intrinsics.areEqual(this.debtAsUsd, notificationResponse.debtAsUsd) && Intrinsics.areEqual(this.profitAsToken, notificationResponse.profitAsToken) && Intrinsics.areEqual(this.profitAsUsd, notificationResponse.profitAsUsd);
         }
         return false;
     }
 
     /* JADX WARN: Multi-variable type inference failed */
     public int hashCode() {
-        int hashCode = ((((this.f310id.hashCode() * 31) + this.userId.hashCode()) * 31) + this.amount.hashCode()) * 31;
+        int hashCode = ((((this.f390id.hashCode() * 31) + this.userId.hashCode()) * 31) + this.amount.hashCode()) * 31;
         boolean z = this.read;
         int i = z;
         if (z != 0) {
@@ -240,7 +240,7 @@ public final class NotificationResponse {
     }
 
     public String toString() {
-        return "NotificationResponse(id=" + this.f310id + ", userId=" + this.userId + ", amount=" + this.amount + ", read=" + this.read + ", linkedUserId=" + this.linkedUserId + ", linkedObjectId=" + this.linkedObjectId + ", type=" + this.type + ", date=" + this.date + ", status=" + this.status + ", cryptoCode=" + this.cryptoCode + ", fromWalletAddress=" + this.fromWalletAddress + ", toWalletAddress=" + this.toWalletAddress + ", txHash=" + this.txHash + ", networkType=" + this.networkType + ", spentCurrency=" + this.spentCurrency + ", amountToSpent=" + this.amountToSpent + ", assetCode=" + this.assetCode + ", assetName=" + this.assetName + ", payerUserId=" + this.payerUserId + ", stakingId=" + this.stakingId + ", stakingName=" + this.stakingName + ", stakingAuthor=" + this.stakingAuthor + ", stakingWebsite=" + this.stakingWebsite + ", stakingAPY=" + this.stakingAPY + ", stakingAPR=" + this.stakingAPR + ", stakingEndsAt=" + this.stakingEndsAt + ", stakingToken=" + this.stakingToken + ", shouldFinishAt=" + this.shouldFinishAt + ", debtAsToken=" + this.debtAsToken + ", debtAsUsd=" + this.debtAsUsd + ", profitAsToken=" + this.profitAsToken + ", profitAsUsd=" + this.profitAsUsd + ')';
+        return "NotificationResponse(id=" + this.f390id + ", userId=" + this.userId + ", amount=" + this.amount + ", read=" + this.read + ", linkedUserId=" + this.linkedUserId + ", linkedObjectId=" + this.linkedObjectId + ", type=" + this.type + ", date=" + this.date + ", status=" + this.status + ", cryptoCode=" + this.cryptoCode + ", fromWalletAddress=" + this.fromWalletAddress + ", toWalletAddress=" + this.toWalletAddress + ", txHash=" + this.txHash + ", networkType=" + this.networkType + ", spentCurrency=" + this.spentCurrency + ", amountToSpent=" + this.amountToSpent + ", assetCode=" + this.assetCode + ", assetName=" + this.assetName + ", payerUserId=" + this.payerUserId + ", stakingId=" + this.stakingId + ", stakingName=" + this.stakingName + ", stakingAuthor=" + this.stakingAuthor + ", stakingWebsite=" + this.stakingWebsite + ", stakingAPY=" + this.stakingAPY + ", stakingAPR=" + this.stakingAPR + ", stakingEndsAt=" + this.stakingEndsAt + ", stakingToken=" + this.stakingToken + ", shouldFinishAt=" + this.shouldFinishAt + ", debtAsToken=" + this.debtAsToken + ", debtAsUsd=" + this.debtAsUsd + ", profitAsToken=" + this.profitAsToken + ", profitAsUsd=" + this.profitAsUsd + ')';
     }
 
     public NotificationResponse(String id, String userId, BigDecimal amount, boolean z, String str, String str2, String type, String date, String str3, String str4, String str5, String str6, String str7, String str8, String str9, String str10, String str11, String str12, String str13, String stakingId, String stakingName, String stakingAuthor, String stakingWebsite, String stakingAPY, String stakingAPR, String stakingEndsAt, String stakingToken, String str14, String debtAsToken, String debtAsUsd, String profitAsToken, String profitAsUsd) {
@@ -261,7 +261,7 @@ public final class NotificationResponse {
         Intrinsics.checkNotNullParameter(debtAsUsd, "debtAsUsd");
         Intrinsics.checkNotNullParameter(profitAsToken, "profitAsToken");
         Intrinsics.checkNotNullParameter(profitAsUsd, "profitAsUsd");
-        this.f310id = id;
+        this.f390id = id;
         this.userId = userId;
         this.amount = amount;
         this.read = z;
@@ -296,7 +296,7 @@ public final class NotificationResponse {
     }
 
     public final String getId() {
-        return this.f310id;
+        return this.f390id;
     }
 
     public final String getUserId() {

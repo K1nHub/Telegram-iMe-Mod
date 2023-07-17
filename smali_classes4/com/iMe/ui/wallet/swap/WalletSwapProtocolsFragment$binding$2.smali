@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/iMe/ui/wallet/swap/WalletSwapProtocolsFragment;-><init>(Lcom/iMe/model/common/ScreenType;Lcom/iMe/storage/domain/model/wallet/token/TokenCode;)V
+    value = Lcom/iMe/ui/wallet/swap/WalletSwapProtocolsFragment;-><init>(Lcom/iMe/model/common/ScreenType;Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -48,7 +48,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 45
+    .line 44
     invoke-virtual {p0}, Lcom/iMe/ui/wallet/swap/WalletSwapProtocolsFragment$binding$2;->invoke()Lorg/telegram/messenger/databinding/ForkFragmentWalletSwapProtocolsBinding;
 
     move-result-object v0
@@ -59,7 +59,7 @@
 .method public final invoke()Lorg/telegram/messenger/databinding/ForkFragmentWalletSwapProtocolsBinding;
     .locals 1
 
-    .line 45
+    .line 44
     iget-object v0, p0, Lcom/iMe/ui/wallet/swap/WalletSwapProtocolsFragment$binding$2;->this$0:Lcom/iMe/ui/wallet/swap/WalletSwapProtocolsFragment;
 
     invoke-static {v0}, Lcom/iMe/utils/extentions/common/BaseFragmentExtKt;->getLayoutInflater(Lorg/telegram/ui/ActionBar/BaseFragment;)Landroid/view/LayoutInflater;

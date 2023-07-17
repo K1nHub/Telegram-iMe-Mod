@@ -628,7 +628,7 @@
 
     invoke-direct {p2}, Lorg/telegram/tgnet/TLRPC$TL_photoSizeEmpty;-><init>()V
 
-    const-string v2, "s"
+    const-string/jumbo v2, "s"
 
     .line 60608
     iput-object v2, p2, Lorg/telegram/tgnet/TLRPC$PhotoSize;->type:Ljava/lang/String;
@@ -690,8 +690,6 @@
 
     :cond_8
     return-object v0
-
-    nop
 
     :sswitch_data_0
     .sparse-switch

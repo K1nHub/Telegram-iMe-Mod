@@ -61,11 +61,11 @@ public final class BrvahAsyncDiffer<T> {
         final List<? extends T> data = this.adapter.getData();
         if (list == null) {
             int size = this.adapter.getData().size();
-            this.adapter.setData$TMessagesProj_release(new ArrayList());
+            this.adapter.setData$TMessagesProj_HA_public(new ArrayList());
             this.mUpdateCallback.onRemoved(0, size);
             onCurrentListChanged(data, runnable);
         } else if (this.adapter.getData().isEmpty()) {
-            this.adapter.setData$TMessagesProj_release(list);
+            this.adapter.setData$TMessagesProj_HA_public(list);
             this.mUpdateCallback.onInserted(0, list.size());
             onCurrentListChanged(data, runnable);
         } else {
@@ -152,7 +152,7 @@ public final class BrvahAsyncDiffer<T> {
 
     private final void latchList(List<T> list, DiffUtil.DiffResult diffResult, Runnable runnable) {
         List<? extends T> data = this.adapter.getData();
-        this.adapter.setData$TMessagesProj_release(list);
+        this.adapter.setData$TMessagesProj_HA_public(list);
         diffResult.dispatchUpdatesTo(this.mUpdateCallback);
         onCurrentListChanged(data, runnable);
     }

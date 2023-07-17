@@ -15,9 +15,6 @@
 .method public abstract actionCopyToClipboard(Ljava/lang/String;)V
 .end method
 
-.method public abstract actionMakeTransfer(Lcom/iMe/storage/domain/model/wallet/token/TokenCode;Ljava/lang/String;ZLjava/lang/String;Lcom/iMe/storage/domain/model/crypto/NetworkType;)V
-.end method
-
 .method public abstract actionOpenProfileScreen(J)V
 .end method
 

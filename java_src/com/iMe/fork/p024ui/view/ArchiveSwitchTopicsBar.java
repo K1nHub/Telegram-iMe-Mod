@@ -9,7 +9,7 @@ import kotlin.LazyKt__LazyJVMKt;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.p044ui.Components.LayoutHelper;
+import org.telegram.p043ui.Components.LayoutHelper;
 /* compiled from: ArchiveSwitchTopicsBar.kt */
 /* renamed from: com.iMe.fork.ui.view.ArchiveSwitchTopicsBar */
 /* loaded from: classes3.dex */

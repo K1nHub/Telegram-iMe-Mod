@@ -181,40 +181,29 @@
 
 
 # virtual methods
-.method public final isDevelopment()Z
-    .locals 1
-
-    .line 9
-    sget-object v0, Lcom/iMe/storage/domain/model/common/Environment;->DEVELOPMENT:Lcom/iMe/storage/domain/model/common/Environment;
-
-    if-ne p0, v0, :cond_0
-
-    const/4 v0, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    :goto_0
-    return v0
-.end method
-
-.method public final isStage()Z
+.method public final isStageEnvironment()Z
     .locals 1
 
     .line 8
     sget-object v0, Lcom/iMe/storage/domain/model/common/Environment;->STAGE:Lcom/iMe/storage/domain/model/common/Environment;
 
-    if-ne p0, v0, :cond_0
+    if-eq p0, v0, :cond_1
 
-    const/4 v0, 0x1
+    sget-object v0, Lcom/iMe/storage/domain/model/common/Environment;->DEVELOPMENT:Lcom/iMe/storage/domain/model/common/Environment;
+
+    if-ne p0, v0, :cond_0
 
     goto :goto_0
 
     :cond_0
     const/4 v0, 0x0
 
+    goto :goto_1
+
+    :cond_1
     :goto_0
+    const/4 v0, 0x1
+
+    :goto_1
     return v0
 .end method

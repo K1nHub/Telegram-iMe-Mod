@@ -19,7 +19,7 @@ public class Context {
 
     /* renamed from: io.grpc.Context$1 */
     /* loaded from: classes4.dex */
-    class RunnableC24671 implements Runnable {
+    class RunnableC25881 implements Runnable {
     }
 
     /* loaded from: classes4.dex */
@@ -33,14 +33,14 @@ public class Context {
         ROOT = new Context(null, persistentHashArrayMappedTrie);
     }
 
-    static AbstractC2468Storage storage() {
+    static AbstractC2589Storage storage() {
         return LazyStorage.storage;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     /* loaded from: classes4.dex */
     public static final class LazyStorage {
-        static final AbstractC2468Storage storage;
+        static final AbstractC2589Storage storage;
 
         static {
             AtomicReference atomicReference = new AtomicReference();
@@ -51,9 +51,9 @@ public class Context {
             }
         }
 
-        private static AbstractC2468Storage createStorage(AtomicReference<? super ClassNotFoundException> atomicReference) {
+        private static AbstractC2589Storage createStorage(AtomicReference<? super ClassNotFoundException> atomicReference) {
             try {
-                return (AbstractC2468Storage) Class.forName("io.grpc.override.ContextStorageOverride").asSubclass(AbstractC2468Storage.class).getConstructor(new Class[0]).newInstance(new Object[0]);
+                return (AbstractC2589Storage) Class.forName("io.grpc.override.ContextStorageOverride").asSubclass(AbstractC2589Storage.class).getConstructor(new Class[0]).newInstance(new Object[0]);
             } catch (ClassNotFoundException e) {
                 atomicReference.set(e);
                 return new ThreadLocalContextStorage();
@@ -273,7 +273,7 @@ public class Context {
 
     /* renamed from: io.grpc.Context$Storage */
     /* loaded from: classes4.dex */
-    public static abstract class AbstractC2468Storage {
+    public static abstract class AbstractC2589Storage {
         public abstract Context current();
 
         public abstract void detach(Context context, Context context2);
@@ -321,7 +321,7 @@ public class Context {
         private ParentListener() {
         }
 
-        /* synthetic */ ParentListener(Context context, RunnableC24671 runnableC24671) {
+        /* synthetic */ ParentListener(Context context, RunnableC25881 runnableC25881) {
             this();
         }
 

@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/iMe/storage/data/repository/crypto/swap/SwapRepositoryImpl;->getAvailableTokensToSwap(Lcom/iMe/storage/domain/model/crypto/NetworkType;Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocol;)Lio/reactivex/Observable;
+    value = Lcom/iMe/storage/data/repository/crypto/swap/SwapRepositoryImpl;->getAvailableTokensToSwap(Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocol;Lcom/iMe/storage/domain/model/wallet/transaction/TransactionDirection;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Integer;)Lio/reactivex/Observable;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -25,15 +25,14 @@
         ">;",
         "Lcom/iMe/storage/domain/model/Result<",
         "+",
-        "Ljava/util/List<",
-        "+",
-        "Lcom/iMe/storage/domain/model/wallet/token/TokenInfo;",
+        "Lcom/iMe/storage/domain/model/common/CursoredData<",
+        "Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;",
         ">;>;>;"
     }
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nFirebaseExt.kt\nKotlin\n*S Kotlin\n*F\n+ 1 FirebaseExt.kt\ncom/iMe/storage/data/utils/extentions/FirebaseExtKt$mapSuccess$1\n+ 2 SwapRepositoryImpl.kt\ncom/iMe/storage/data/repository/crypto/swap/SwapRepositoryImpl\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 4 ResultExt.kt\ncom/iMe/storage/domain/utils/extentions/ResultExtKt\n*L\n1#1,86:1\n48#2,3:87\n766#3:90\n857#3,2:91\n9#4:93\n7#4:94\n*S KotlinDebug\n*F\n+ 1 SwapRepositoryImpl.kt\ncom/iMe/storage/data/repository/crypto/swap/SwapRepositoryImpl\n+ 2 FirebaseExt.kt\ncom/iMe/storage/data/utils/extentions/FirebaseExtKt$mapSuccess$1\n*L\n50#1:90\n50#1:91,2\n71#2:93\n72#2:94\n*E\n"
+    value = "SMAP\nFirebaseExt.kt\nKotlin\n*S Kotlin\n*F\n+ 1 FirebaseExt.kt\ncom/iMe/storage/data/utils/extentions/FirebaseExtKt$mapSuccess$1\n+ 2 SwapRepositoryImpl.kt\ncom/iMe/storage/data/repository/crypto/swap/SwapRepositoryImpl\n+ 3 ResultExt.kt\ncom/iMe/storage/domain/utils/extentions/ResultExtKt\n*L\n1#1,86:1\n59#2:87\n9#3:88\n7#3:89\n*S KotlinDebug\n*F\n+ 1 FirebaseExt.kt\ncom/iMe/storage/data/utils/extentions/FirebaseExtKt$mapSuccess$1\n*L\n71#1:88\n72#1:89\n*E\n"
 .end annotation
 
 
@@ -65,9 +64,8 @@
             "Lcom/iMe/storage/data/network/model/response/crypto/swap/AvailableSwapTokensResponse;",
             ">;)",
             "Lcom/iMe/storage/domain/model/Result<",
-            "Ljava/util/List<",
-            "+",
-            "Lcom/iMe/storage/domain/model/wallet/token/TokenInfo;",
+            "Lcom/iMe/storage/domain/model/common/CursoredData<",
+            "Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;",
             ">;>;"
         }
     .end annotation
@@ -81,7 +79,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_0
 
     .line 87
     invoke-virtual {p1}, Lcom/iMe/storage/data/network/model/response/base/ApiBaseResponse;->getPayload()Ljava/lang/Object;
@@ -90,63 +88,21 @@
 
     check-cast p1, Lcom/iMe/storage/data/network/model/response/crypto/swap/AvailableSwapTokensResponse;
 
-    .line 88
-    invoke-static {p1}, Lcom/iMe/storage/data/mapper/crypto/SwapMappingKt;->mapToDomain(Lcom/iMe/storage/data/network/model/response/crypto/swap/AvailableSwapTokensResponse;)Ljava/util/List;
+    invoke-static {p1}, Lcom/iMe/storage/data/mapper/crypto/SwapMappingKt;->mapToDomain(Lcom/iMe/storage/data/network/model/response/crypto/swap/AvailableSwapTokensResponse;)Lcom/iMe/storage/domain/model/common/CursoredData;
 
     move-result-object p1
 
-    .line 766
-    new-instance v0, Ljava/util/ArrayList;
+    .line 9
+    sget-object v0, Lcom/iMe/storage/domain/model/Result;->Companion:Lcom/iMe/storage/domain/model/Result$Companion;
 
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
-
-    .line 857
-    invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+    invoke-virtual {v0, p1}, Lcom/iMe/storage/domain/model/Result$Companion;->success(Ljava/lang/Object;)Lcom/iMe/storage/domain/model/Result;
 
     move-result-object p1
-
-    :cond_0
-    :goto_0
-    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_1
-
-    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v1
-
-    move-object v2, v1
-
-    check-cast v2, Lcom/iMe/storage/domain/model/wallet/token/TokenInfo;
-
-    .line 89
-    invoke-virtual {v2}, Lcom/iMe/storage/domain/model/wallet/token/TokenInfo;->isUnknown()Z
-
-    move-result v2
-
-    xor-int/lit8 v2, v2, 0x1
-
-    if-eqz v2, :cond_0
-
-    .line 857
-    invoke-interface {v0, v1}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
 
-    .line 9
-    :cond_1
-    sget-object p1, Lcom/iMe/storage/domain/model/Result;->Companion:Lcom/iMe/storage/domain/model/Result$Companion;
-
-    invoke-virtual {p1, v0}, Lcom/iMe/storage/domain/model/Result$Companion;->success(Ljava/lang/Object;)Lcom/iMe/storage/domain/model/Result;
-
-    move-result-object p1
-
-    goto :goto_1
-
     .line 72
-    :cond_2
+    :cond_0
     iget-object v0, p0, Lcom/iMe/storage/data/repository/crypto/swap/SwapRepositoryImpl$getAvailableTokensToSwap$$inlined$mapSuccess$1;->$errorHandler:Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;
 
     invoke-virtual {v0, p1}, Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;->handleError(Lcom/iMe/storage/data/network/model/response/base/ApiBaseResponse;)Lcom/iMe/storage/data/network/model/error/ErrorModel;
@@ -164,7 +120,7 @@
 
     move-result-object p1
 
-    :goto_1
+    :goto_0
     return-object p1
 .end method
 

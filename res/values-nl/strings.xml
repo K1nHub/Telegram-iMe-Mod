@@ -344,7 +344,7 @@
     <string name="Answer_zero">%1$d antwoorden</string>
     <string name="ApkRestricted">APK-installatie is beperkt voor deze app. Je kunt dit inschakelen via de systeeminstellingen.</string>
     <string name="AppFolderInfo">Blader door de map van de App</string>
-    <string name="AppUpdate">Update Telegram</string>
+    <string name="AppNameBeta">Telegram Beta</string>
     <string name="AppUpdateChangelogEmpty">"**What's new?**
 
 • Bug fixes and improvements."</string>

@@ -182,7 +182,7 @@ public class DatabaseMigrationHelper {
                     byteBufferValue2.reuse();
                     if (TLdeserialize != null) {
                         TLRPC$TL_chatFull tLRPC$TL_chatFull = new TLRPC$TL_chatFull();
-                        tLRPC$TL_chatFull.f1434id = intValue2;
+                        tLRPC$TL_chatFull.f1516id = intValue2;
                         tLRPC$TL_chatFull.chat_photo = new TLRPC$TL_photoEmpty();
                         tLRPC$TL_chatFull.notify_settings = new TLRPC$TL_peerNotifySettingsEmpty_layer77();
                         tLRPC$TL_chatFull.exported_invite = null;

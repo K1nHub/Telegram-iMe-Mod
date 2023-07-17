@@ -55,6 +55,10 @@ public abstract class ViewTarget<T extends View, Z> extends BaseTarget<Z> {
         this.isAttachStateListenerAdded = false;
     }
 
+    public T getView() {
+        return this.view;
+    }
+
     @Override // com.bumptech.glide.request.target.Target
     public void getSize(SizeReadyCallback sizeReadyCallback) {
         this.sizeDeterminer.getSize(sizeReadyCallback);

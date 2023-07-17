@@ -279,7 +279,7 @@
 
     if-eq v1, v3, :cond_3
 
-    const-string v1, "s-maxage="
+    const-string/jumbo v1, "s-maxage="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

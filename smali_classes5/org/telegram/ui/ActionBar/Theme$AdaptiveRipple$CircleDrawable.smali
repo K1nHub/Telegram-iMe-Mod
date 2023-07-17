@@ -28,18 +28,18 @@
 .method public constructor <init>(F)V
     .locals 1
 
-    .line 5794
+    .line 5802
     invoke-direct {p0}, Landroid/graphics/drawable/Drawable;-><init>()V
 
-    .line 5795
+    .line 5803
     iput p1, p0, Lorg/telegram/ui/ActionBar/Theme$AdaptiveRipple$CircleDrawable;->radius:F
 
-    .line 5796
+    .line 5804
     sget-object p1, Lorg/telegram/ui/ActionBar/Theme$AdaptiveRipple$CircleDrawable;->maskPaint:Landroid/graphics/Paint;
 
     if-nez p1, :cond_0
 
-    .line 5797
+    .line 5805
     new-instance p1, Landroid/graphics/Paint;
 
     const/4 v0, 0x1
@@ -50,10 +50,10 @@
 
     const/4 v0, -0x1
 
-    .line 5798
+    .line 5806
     invoke-virtual {p1, v0}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 5800
+    .line 5808
     :cond_0
     sget-object p1, Lorg/telegram/ui/ActionBar/Theme$AdaptiveRipple$CircleDrawable;->maskPaint:Landroid/graphics/Paint;
 
@@ -65,13 +65,13 @@
 .method public constructor <init>(FI)V
     .locals 1
 
-    .line 5803
+    .line 5811
     invoke-direct {p0}, Landroid/graphics/drawable/Drawable;-><init>()V
 
-    .line 5804
+    .line 5812
     iput p1, p0, Lorg/telegram/ui/ActionBar/Theme$AdaptiveRipple$CircleDrawable;->radius:F
 
-    .line 5805
+    .line 5813
     new-instance p1, Landroid/graphics/Paint;
 
     const/4 v0, 0x1
@@ -80,7 +80,7 @@
 
     iput-object p1, p0, Lorg/telegram/ui/ActionBar/Theme$AdaptiveRipple$CircleDrawable;->paint:Landroid/graphics/Paint;
 
-    .line 5806
+    .line 5814
     invoke-virtual {p1, p2}, Landroid/graphics/Paint;->setColor(I)V
 
     return-void
@@ -91,12 +91,12 @@
 .method public draw(Landroid/graphics/Canvas;)V
     .locals 5
 
-    .line 5811
+    .line 5819
     invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
 
     move-result-object v0
 
-    .line 5813
+    .line 5821
     iget v1, p0, Lorg/telegram/ui/ActionBar/Theme$AdaptiveRipple$CircleDrawable;->radius:F
 
     const/high16 v2, -0x40800000    # -1.0f
@@ -113,7 +113,7 @@
 
     if-gez v1, :cond_0
 
-    .line 5814
+    .line 5822
     invoke-virtual {v0}, Landroid/graphics/Rect;->width()I
 
     move-result v1
@@ -133,7 +133,7 @@
 
     goto :goto_1
 
-    .line 5815
+    .line 5823
     :cond_0
     iget v1, p0, Lorg/telegram/ui/ActionBar/Theme$AdaptiveRipple$CircleDrawable;->radius:F
 
@@ -149,7 +149,7 @@
 
     if-gez v1, :cond_1
 
-    .line 5816
+    .line 5824
     iget v1, v0, Landroid/graphics/Rect;->left:I
 
     invoke-virtual {v0}, Landroid/graphics/Rect;->centerX()I
@@ -202,7 +202,7 @@
 
     goto :goto_0
 
-    .line 5818
+    .line 5826
     :cond_1
     iget v1, p0, Lorg/telegram/ui/ActionBar/Theme$AdaptiveRipple$CircleDrawable;->radius:F
 
@@ -212,7 +212,7 @@
 
     goto :goto_0
 
-    .line 5820
+    .line 5828
     :goto_1
     invoke-virtual {v0}, Landroid/graphics/Rect;->centerX()I
 

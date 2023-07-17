@@ -16,25 +16,25 @@
             ")",
             "Lio/reactivex/Observable<",
             "Lcom/iMe/storage/data/network/model/response/base/ApiBaseResponse<",
-            "Lcom/iMe/storage/data/network/model/response/crypto/donations/GetChatInfoResponse;",
+            "Lcom/iMe/storage/data/network/model/response/crypto/donations/GetDonationWalletInfoResponse;",
             ">;>;"
         }
     .end annotation
 
     .annotation runtime Lretrofit2/http/POST;
-        value = "donation/getChatInfo"
+        value = "donation/getWallets"
     .end annotation
 .end method
 
-.method public abstract getDataForDonationTransaction(Lcom/iMe/storage/data/network/model/request/crypto/donations/GetDataForDonationTransactionRequest;)Lio/reactivex/Observable;
-    .param p1    # Lcom/iMe/storage/data/network/model/request/crypto/donations/GetDataForDonationTransactionRequest;
+.method public abstract getDataForDonationTransaction(Lcom/iMe/storage/data/network/model/request/crypto/donations/PrepareDonationTransactionRequest;)Lio/reactivex/Observable;
+    .param p1    # Lcom/iMe/storage/data/network/model/request/crypto/donations/PrepareDonationTransactionRequest;
         .annotation runtime Lretrofit2/http/Body;
         .end annotation
     .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lcom/iMe/storage/data/network/model/request/crypto/donations/GetDataForDonationTransactionRequest;",
+            "Lcom/iMe/storage/data/network/model/request/crypto/donations/PrepareDonationTransactionRequest;",
             ")",
             "Lio/reactivex/Observable<",
             "Lcom/iMe/storage/data/network/model/response/base/ApiBaseResponse<",
@@ -44,7 +44,7 @@
     .end annotation
 
     .annotation runtime Lretrofit2/http/POST;
-        value = "donation/getParamsForCryptoTransfer"
+        value = "donation/prepareTransferTx"
     .end annotation
 .end method
 
@@ -88,7 +88,7 @@
     .end annotation
 
     .annotation runtime Lretrofit2/http/POST;
-        value = "donation/getWalletBalance"
+        value = "donation/v2/getWalletBalance"
     .end annotation
 .end method
 
@@ -132,7 +132,7 @@
     .end annotation
 
     .annotation runtime Lretrofit2/http/POST;
-        value = "donation/linkEtherWallet"
+        value = "donation/linkWallet"
     .end annotation
 .end method
 
@@ -154,7 +154,7 @@
     .end annotation
 
     .annotation runtime Lretrofit2/http/POST;
-        value = "donation/sendTransfer"
+        value = "donation/sendTransferTx"
     .end annotation
 .end method
 
@@ -176,6 +176,6 @@
     .end annotation
 
     .annotation runtime Lretrofit2/http/POST;
-        value = "donation/unlinkEtherWallet"
+        value = "donation/unlinkWallet"
     .end annotation
 .end method

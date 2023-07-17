@@ -7,11 +7,11 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Lambda;
 import org.koin.core.parameter.ParametersHolder;
 import org.koin.core.parameter.ParametersHolderKt;
-import org.koin.p043mp.KoinPlatformTools;
+import org.koin.p042mp.KoinPlatformTools;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: BlockchainWalletDetailsBottomSheetDialog.kt */
 /* renamed from: com.iMe.ui.wallet.crypto.settings.blockchains.details.BlockchainWalletDetailsBottomSheetDialog$presenter$2 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class BlockchainWalletDetailsBottomSheetDialog$presenter$2 extends Lambda implements Function0<BlockchainWalletDetailsPresenter> {
     final /* synthetic */ BlockchainWalletDetailsBottomSheetDialog this$0;
 
@@ -25,12 +25,12 @@ public final class BlockchainWalletDetailsBottomSheetDialog$presenter$2 extends 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: BlockchainWalletDetailsBottomSheetDialog.kt */
     /* renamed from: com.iMe.ui.wallet.crypto.settings.blockchains.details.BlockchainWalletDetailsBottomSheetDialog$presenter$2$1 */
-    /* loaded from: classes3.dex */
-    public static final class C21861 extends Lambda implements Function0<ParametersHolder> {
+    /* loaded from: classes4.dex */
+    public static final class C21821 extends Lambda implements Function0<ParametersHolder> {
         final /* synthetic */ BlockchainWalletDetailsBottomSheetDialog this$0;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C21861(BlockchainWalletDetailsBottomSheetDialog blockchainWalletDetailsBottomSheetDialog) {
+        C21821(BlockchainWalletDetailsBottomSheetDialog blockchainWalletDetailsBottomSheetDialog) {
             super(0);
             this.this$0 = blockchainWalletDetailsBottomSheetDialog;
         }
@@ -48,7 +48,7 @@ public final class BlockchainWalletDetailsBottomSheetDialog$presenter$2 extends 
     public final BlockchainWalletDetailsPresenter invoke() {
         Lazy lazy;
         BlockchainWalletDetailsBottomSheetDialog blockchainWalletDetailsBottomSheetDialog = this.this$0;
-        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new C2184xac57dd17(blockchainWalletDetailsBottomSheetDialog, null, new C21861(blockchainWalletDetailsBottomSheetDialog)));
+        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new C2180xac57dd17(blockchainWalletDetailsBottomSheetDialog, null, new C21821(blockchainWalletDetailsBottomSheetDialog)));
         return (BlockchainWalletDetailsPresenter) lazy.getValue();
     }
 }

@@ -2,8 +2,7 @@ package com.iMe.storage.domain.model.staking;
 
 import com.iMe.bots.data.model.database.BotsDbModel$$ExternalSyntheticBackport0;
 import com.iMe.storage.data.network.model.response.base.Status;
-import com.iMe.storage.domain.model.crypto.NetworkType;
-import com.iMe.storage.domain.model.wallet.token.TokenCode;
+import com.iMe.storage.domain.model.wallet.token.TokenDetailed;
 import com.iMe.storage.domain.model.wallet.transaction.TransactionDirection;
 import com.iMe.storage.domain.model.wallet.transaction.TransactionType;
 import kotlin.NoWhenBranchMatchedException;
@@ -12,20 +11,19 @@ import kotlin.jvm.internal.Intrinsics;
 /* loaded from: classes3.dex */
 public final class StakingOperation {
     private final StakingOperationCost amount;
-    private final StakingToken approvedToken;
+    private final TokenDetailed approvedToken;
     private final String failReason;
     private final StakingOperationCost fee;
 
     /* renamed from: id */
-    private final long f352id;
+    private final long f428id;
     private final String issuedAt;
     private final String issuer;
-    private final NetworkType networkType;
     private final Boolean safe;
     private final String settledAt;
     private final int stakingId;
     private final StakingOperationStatus status;
-    private final String token;
+    private final TokenDetailed token;
     private final String transaction;
     private final StakingOperationType type;
 
@@ -72,7 +70,7 @@ public final class StakingOperation {
     }
 
     public final long component1() {
-        return this.f352id;
+        return this.f428id;
     }
 
     public final StakingOperationCost component10() {
@@ -87,16 +85,12 @@ public final class StakingOperation {
         return this.safe;
     }
 
-    public final StakingToken component13() {
+    public final TokenDetailed component13() {
         return this.approvedToken;
     }
 
-    public final String component14() {
+    public final TokenDetailed component14() {
         return this.token;
-    }
-
-    public final NetworkType component15() {
-        return this.networkType;
     }
 
     public final int component2() {
@@ -131,15 +125,14 @@ public final class StakingOperation {
         return this.failReason;
     }
 
-    public final StakingOperation copy(long j, int i, String transaction, StakingOperationType type, StakingOperationStatus status, String issuer, String issuedAt, String str, String str2, StakingOperationCost stakingOperationCost, StakingOperationCost stakingOperationCost2, Boolean bool, StakingToken stakingToken, String token, NetworkType networkType) {
+    public final StakingOperation copy(long j, int i, String transaction, StakingOperationType type, StakingOperationStatus status, String issuer, String issuedAt, String str, String str2, StakingOperationCost stakingOperationCost, StakingOperationCost stakingOperationCost2, Boolean bool, TokenDetailed tokenDetailed, TokenDetailed token) {
         Intrinsics.checkNotNullParameter(transaction, "transaction");
         Intrinsics.checkNotNullParameter(type, "type");
         Intrinsics.checkNotNullParameter(status, "status");
         Intrinsics.checkNotNullParameter(issuer, "issuer");
         Intrinsics.checkNotNullParameter(issuedAt, "issuedAt");
         Intrinsics.checkNotNullParameter(token, "token");
-        Intrinsics.checkNotNullParameter(networkType, "networkType");
-        return new StakingOperation(j, i, transaction, type, status, issuer, issuedAt, str, str2, stakingOperationCost, stakingOperationCost2, bool, stakingToken, token, networkType);
+        return new StakingOperation(j, i, transaction, type, status, issuer, issuedAt, str, str2, stakingOperationCost, stakingOperationCost2, bool, tokenDetailed, token);
     }
 
     public boolean equals(Object obj) {
@@ -148,13 +141,13 @@ public final class StakingOperation {
         }
         if (obj instanceof StakingOperation) {
             StakingOperation stakingOperation = (StakingOperation) obj;
-            return this.f352id == stakingOperation.f352id && this.stakingId == stakingOperation.stakingId && Intrinsics.areEqual(this.transaction, stakingOperation.transaction) && this.type == stakingOperation.type && this.status == stakingOperation.status && Intrinsics.areEqual(this.issuer, stakingOperation.issuer) && Intrinsics.areEqual(this.issuedAt, stakingOperation.issuedAt) && Intrinsics.areEqual(this.settledAt, stakingOperation.settledAt) && Intrinsics.areEqual(this.failReason, stakingOperation.failReason) && Intrinsics.areEqual(this.amount, stakingOperation.amount) && Intrinsics.areEqual(this.fee, stakingOperation.fee) && Intrinsics.areEqual(this.safe, stakingOperation.safe) && Intrinsics.areEqual(this.approvedToken, stakingOperation.approvedToken) && Intrinsics.areEqual(this.token, stakingOperation.token) && this.networkType == stakingOperation.networkType;
+            return this.f428id == stakingOperation.f428id && this.stakingId == stakingOperation.stakingId && Intrinsics.areEqual(this.transaction, stakingOperation.transaction) && this.type == stakingOperation.type && this.status == stakingOperation.status && Intrinsics.areEqual(this.issuer, stakingOperation.issuer) && Intrinsics.areEqual(this.issuedAt, stakingOperation.issuedAt) && Intrinsics.areEqual(this.settledAt, stakingOperation.settledAt) && Intrinsics.areEqual(this.failReason, stakingOperation.failReason) && Intrinsics.areEqual(this.amount, stakingOperation.amount) && Intrinsics.areEqual(this.fee, stakingOperation.fee) && Intrinsics.areEqual(this.safe, stakingOperation.safe) && Intrinsics.areEqual(this.approvedToken, stakingOperation.approvedToken) && Intrinsics.areEqual(this.token, stakingOperation.token);
         }
         return false;
     }
 
     public int hashCode() {
-        int m706m = ((((((((((((BotsDbModel$$ExternalSyntheticBackport0.m706m(this.f352id) * 31) + this.stakingId) * 31) + this.transaction.hashCode()) * 31) + this.type.hashCode()) * 31) + this.status.hashCode()) * 31) + this.issuer.hashCode()) * 31) + this.issuedAt.hashCode()) * 31;
+        int m706m = ((((((((((((BotsDbModel$$ExternalSyntheticBackport0.m706m(this.f428id) * 31) + this.stakingId) * 31) + this.transaction.hashCode()) * 31) + this.type.hashCode()) * 31) + this.status.hashCode()) * 31) + this.issuer.hashCode()) * 31) + this.issuedAt.hashCode()) * 31;
         String str = this.settledAt;
         int hashCode = (m706m + (str == null ? 0 : str.hashCode())) * 31;
         String str2 = this.failReason;
@@ -165,23 +158,22 @@ public final class StakingOperation {
         int hashCode4 = (hashCode3 + (stakingOperationCost2 == null ? 0 : stakingOperationCost2.hashCode())) * 31;
         Boolean bool = this.safe;
         int hashCode5 = (hashCode4 + (bool == null ? 0 : bool.hashCode())) * 31;
-        StakingToken stakingToken = this.approvedToken;
-        return ((((hashCode5 + (stakingToken != null ? stakingToken.hashCode() : 0)) * 31) + this.token.hashCode()) * 31) + this.networkType.hashCode();
+        TokenDetailed tokenDetailed = this.approvedToken;
+        return ((hashCode5 + (tokenDetailed != null ? tokenDetailed.hashCode() : 0)) * 31) + this.token.hashCode();
     }
 
     public String toString() {
-        return "StakingOperation(id=" + this.f352id + ", stakingId=" + this.stakingId + ", transaction=" + this.transaction + ", type=" + this.type + ", status=" + this.status + ", issuer=" + this.issuer + ", issuedAt=" + this.issuedAt + ", settledAt=" + this.settledAt + ", failReason=" + this.failReason + ", amount=" + this.amount + ", fee=" + this.fee + ", safe=" + this.safe + ", approvedToken=" + this.approvedToken + ", token=" + this.token + ", networkType=" + this.networkType + ')';
+        return "StakingOperation(id=" + this.f428id + ", stakingId=" + this.stakingId + ", transaction=" + this.transaction + ", type=" + this.type + ", status=" + this.status + ", issuer=" + this.issuer + ", issuedAt=" + this.issuedAt + ", settledAt=" + this.settledAt + ", failReason=" + this.failReason + ", amount=" + this.amount + ", fee=" + this.fee + ", safe=" + this.safe + ", approvedToken=" + this.approvedToken + ", token=" + this.token + ')';
     }
 
-    public StakingOperation(long j, int i, String transaction, StakingOperationType type, StakingOperationStatus status, String issuer, String issuedAt, String str, String str2, StakingOperationCost stakingOperationCost, StakingOperationCost stakingOperationCost2, Boolean bool, StakingToken stakingToken, String token, NetworkType networkType) {
+    public StakingOperation(long j, int i, String transaction, StakingOperationType type, StakingOperationStatus status, String issuer, String issuedAt, String str, String str2, StakingOperationCost stakingOperationCost, StakingOperationCost stakingOperationCost2, Boolean bool, TokenDetailed tokenDetailed, TokenDetailed token) {
         Intrinsics.checkNotNullParameter(transaction, "transaction");
         Intrinsics.checkNotNullParameter(type, "type");
         Intrinsics.checkNotNullParameter(status, "status");
         Intrinsics.checkNotNullParameter(issuer, "issuer");
         Intrinsics.checkNotNullParameter(issuedAt, "issuedAt");
         Intrinsics.checkNotNullParameter(token, "token");
-        Intrinsics.checkNotNullParameter(networkType, "networkType");
-        this.f352id = j;
+        this.f428id = j;
         this.stakingId = i;
         this.transaction = transaction;
         this.type = type;
@@ -193,13 +185,12 @@ public final class StakingOperation {
         this.amount = stakingOperationCost;
         this.fee = stakingOperationCost2;
         this.safe = bool;
-        this.approvedToken = stakingToken;
+        this.approvedToken = tokenDetailed;
         this.token = token;
-        this.networkType = networkType;
     }
 
     public final long getId() {
-        return this.f352id;
+        return this.f428id;
     }
 
     public final int getStakingId() {
@@ -246,16 +237,12 @@ public final class StakingOperation {
         return this.safe;
     }
 
-    public final StakingToken getApprovedToken() {
+    public final TokenDetailed getApprovedToken() {
         return this.approvedToken;
     }
 
-    public final String getToken() {
+    public final TokenDetailed getToken() {
         return this.token;
-    }
-
-    public final NetworkType getNetworkType() {
-        return this.networkType;
     }
 
     public final String getCreatedAt() {
@@ -292,7 +279,7 @@ public final class StakingOperation {
         if (i != 1) {
             if (i != 2) {
                 if (i == 3 || i == 4) {
-                    return TransactionDirection.f373IN;
+                    return TransactionDirection.f446IN;
                 }
                 throw new NoWhenBranchMatchedException();
             }
@@ -302,12 +289,12 @@ public final class StakingOperation {
     }
 
     public final String getTokenTicker() {
-        StakingToken token;
+        TokenDetailed token;
         String str = null;
         if (WhenMappings.$EnumSwitchMapping$0[this.type.ordinal()] == 1) {
-            StakingToken stakingToken = this.approvedToken;
-            if (stakingToken != null) {
-                str = stakingToken.getTicker();
+            TokenDetailed tokenDetailed = this.approvedToken;
+            if (tokenDetailed != null) {
+                str = tokenDetailed.getTicker();
             }
         } else {
             StakingOperationCost stakingOperationCost = this.amount;
@@ -315,6 +302,6 @@ public final class StakingOperation {
                 str = token.getTicker();
             }
         }
-        return str == null ? TokenCode.UNKNOWN.getName() : str;
+        return str == null ? "" : str;
     }
 }

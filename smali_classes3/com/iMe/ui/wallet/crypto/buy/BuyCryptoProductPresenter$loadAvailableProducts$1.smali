@@ -49,7 +49,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 59
+    .line 57
     check-cast p1, Lio/reactivex/disposables/Disposable;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/wallet/crypto/buy/BuyCryptoProductPresenter$loadAvailableProducts$1;->invoke(Lio/reactivex/disposables/Disposable;)V
@@ -62,7 +62,7 @@
 .method public final invoke(Lio/reactivex/disposables/Disposable;)V
     .locals 1
 
-    .line 59
+    .line 57
     iget-object p1, p0, Lcom/iMe/ui/wallet/crypto/buy/BuyCryptoProductPresenter$loadAvailableProducts$1;->this$0:Lcom/iMe/ui/wallet/crypto/buy/BuyCryptoProductPresenter;
 
     invoke-virtual {p1}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;

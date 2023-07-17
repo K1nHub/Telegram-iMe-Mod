@@ -64,7 +64,7 @@
 .method public static getMIUIMajorVersion()I
     .locals 3
 
-    const-string v0, "ro.miui.ui.version.name"
+    const-string/jumbo v0, "ro.miui.ui.version.name"
 
     .line 59
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->getSystemProperty(Ljava/lang/String;)Ljava/lang/String;
@@ -236,7 +236,7 @@
 .method public static isMIUI()Z
     .locals 1
 
-    const-string v0, "ro.miui.ui.version.name"
+    const-string/jumbo v0, "ro.miui.ui.version.name"
 
     .line 41
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->getSystemProperty(Ljava/lang/String;)Ljava/lang/String;

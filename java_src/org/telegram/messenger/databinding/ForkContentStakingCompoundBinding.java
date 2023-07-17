@@ -9,7 +9,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.iMe.p031ui.custom.ProgressView;
-import org.telegram.messenger.C3295R;
+import org.telegram.messenger.C3417R;
 /* loaded from: classes4.dex */
 public final class ForkContentStakingCompoundBinding implements ViewBinding {
     public final AppCompatImageView imageInfo;
@@ -40,7 +40,7 @@ public final class ForkContentStakingCompoundBinding implements ViewBinding {
     }
 
     public static ForkContentStakingCompoundBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3295R.layout.fork_content_staking_compound, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3417R.layout.fork_content_staking_compound, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -48,22 +48,22 @@ public final class ForkContentStakingCompoundBinding implements ViewBinding {
     }
 
     public static ForkContentStakingCompoundBinding bind(View view) {
-        int i = C3295R.C3298id.image_info;
+        int i = C3417R.C3420id.image_info;
         AppCompatImageView appCompatImageView = (AppCompatImageView) ViewBindings.findChildViewById(view, i);
         if (appCompatImageView != null) {
-            i = C3295R.C3298id.text_apr;
+            i = C3417R.C3420id.text_apr;
             AppCompatTextView appCompatTextView = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
             if (appCompatTextView != null) {
-                i = C3295R.C3298id.text_apy;
+                i = C3417R.C3420id.text_apy;
                 AppCompatTextView appCompatTextView2 = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
                 if (appCompatTextView2 != null) {
-                    i = C3295R.C3298id.text_start_value;
+                    i = C3417R.C3420id.text_start_value;
                     AppCompatTextView appCompatTextView3 = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
                     if (appCompatTextView3 != null) {
-                        i = C3295R.C3298id.text_threshold_value;
+                        i = C3417R.C3420id.text_threshold_value;
                         AppCompatTextView appCompatTextView4 = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
                         if (appCompatTextView4 != null) {
-                            i = C3295R.C3298id.view_progress;
+                            i = C3417R.C3420id.view_progress;
                             ProgressView progressView = (ProgressView) ViewBindings.findChildViewById(view, i);
                             if (progressView != null) {
                                 return new ForkContentStakingCompoundBinding((ConstraintLayout) view, appCompatImageView, appCompatTextView, appCompatTextView2, appCompatTextView3, appCompatTextView4, progressView);

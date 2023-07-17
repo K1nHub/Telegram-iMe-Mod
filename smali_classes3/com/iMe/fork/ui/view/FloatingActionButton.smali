@@ -3,22 +3,78 @@
 .source "FloatingActionButton.kt"
 
 
+# annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Lcom/iMe/fork/ui/view/FloatingActionButton$Companion;
+    }
+.end annotation
+
+
 # instance fields
+.field private final buttonSize$delegate:Lkotlin/Lazy;
+
 .field private final iconView$delegate:Lkotlin/Lazy;
+
+.field private isLoading:Z
+
+.field private final loadingAnimationSize$delegate:Lkotlin/Lazy;
+
+.field private originalIconResId:Ljava/lang/Integer;
+
+.field private final translationZDefault$delegate:Lkotlin/Lazy;
+
+.field private final translationZPressed$delegate:Lkotlin/Lazy;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;)V
-    .locals 9
+.method static constructor <clinit>()V
+    .locals 2
+
+    new-instance v0, Lcom/iMe/fork/ui/view/FloatingActionButton$Companion;
+
+    const/4 v1, 0x0
+
+    invoke-direct {v0, v1}, Lcom/iMe/fork/ui/view/FloatingActionButton$Companion;-><init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
+
+    return-void
+.end method
+
+.method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
+    .locals 7
 
     const-string v0, "context"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 21
-    invoke-direct {p0, p1}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
+    const/4 v4, 0x0
 
-    .line 24
+    const/4 v5, 0x4
+
+    const/4 v6, 0x0
+
+    move-object v1, p0
+
+    move-object v2, p1
+
+    move-object v3, p2
+
+    invoke-direct/range {v1 .. v6}, Lcom/iMe/fork/ui/view/FloatingActionButton;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;IILkotlin/jvm/internal/DefaultConstructorMarker;)V
+
+    return-void
+.end method
+
+.method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
+    .locals 6
+
+    const-string v0, "context"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 26
+    invoke-direct {p0, p1, p2, p3}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
+
+    .line 29
     new-instance p1, Lcom/iMe/fork/ui/view/FloatingActionButton$iconView$2;
 
     invoke-direct {p1, p0}, Lcom/iMe/fork/ui/view/FloatingActionButton$iconView$2;-><init>(Lcom/iMe/fork/ui/view/FloatingActionButton;)V
@@ -29,122 +85,186 @@
 
     iput-object p1, p0, Lcom/iMe/fork/ui/view/FloatingActionButton;->iconView$delegate:Lkotlin/Lazy;
 
-    .line 27
+    .line 30
+    sget-object p1, Lcom/iMe/fork/ui/view/FloatingActionButton$translationZDefault$2;->INSTANCE:Lcom/iMe/fork/ui/view/FloatingActionButton$translationZDefault$2;
+
+    invoke-static {p1}, Lkotlin/LazyKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lcom/iMe/fork/ui/view/FloatingActionButton;->translationZDefault$delegate:Lkotlin/Lazy;
+
+    .line 31
+    sget-object p1, Lcom/iMe/fork/ui/view/FloatingActionButton$translationZPressed$2;->INSTANCE:Lcom/iMe/fork/ui/view/FloatingActionButton$translationZPressed$2;
+
+    invoke-static {p1}, Lkotlin/LazyKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lcom/iMe/fork/ui/view/FloatingActionButton;->translationZPressed$delegate:Lkotlin/Lazy;
+
+    .line 32
+    sget-object p1, Lcom/iMe/fork/ui/view/FloatingActionButton$buttonSize$2;->INSTANCE:Lcom/iMe/fork/ui/view/FloatingActionButton$buttonSize$2;
+
+    invoke-static {p1}, Lkotlin/LazyKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lcom/iMe/fork/ui/view/FloatingActionButton;->buttonSize$delegate:Lkotlin/Lazy;
+
+    .line 33
+    sget-object p1, Lcom/iMe/fork/ui/view/FloatingActionButton$loadingAnimationSize$2;->INSTANCE:Lcom/iMe/fork/ui/view/FloatingActionButton$loadingAnimationSize$2;
+
+    invoke-static {p1}, Lkotlin/LazyKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lcom/iMe/fork/ui/view/FloatingActionButton;->loadingAnimationSize$delegate:Lkotlin/Lazy;
+
+    .line 38
     new-instance p1, Landroid/animation/StateListAnimator;
 
     invoke-direct {p1}, Landroid/animation/StateListAnimator;-><init>()V
 
-    const/4 v0, 0x1
+    const/4 p2, 0x1
 
-    new-array v1, v0, [I
+    new-array p3, p2, [I
 
-    const v2, 0x10100a7
+    const v0, 0x10100a7
 
-    const/4 v3, 0x0
+    const/4 v1, 0x0
 
-    aput v2, v1, v3
+    aput v0, p3, v1
 
-    .line 28
-    sget-object v2, Landroid/widget/FrameLayout;->TRANSLATION_Z:Landroid/util/Property;
+    .line 42
+    sget-object v0, Landroid/widget/FrameLayout;->TRANSLATION_Z:Landroid/util/Property;
 
-    const/4 v4, 0x2
+    const/4 v2, 0x2
 
-    new-array v5, v4, [F
+    new-array v3, v2, [F
 
-    invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-direct {p0}, Lcom/iMe/fork/ui/view/FloatingActionButton;->getTranslationZPressed()F
 
-    move-result v6
+    move-result v4
 
-    int-to-float v6, v6
+    aput v4, v3, v1
 
-    aput v6, v5, v3
+    invoke-direct {p0}, Lcom/iMe/fork/ui/view/FloatingActionButton;->getTranslationZDefault()F
 
-    const/4 v6, 0x4
+    move-result v4
 
-    invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    aput v4, v3, p2
 
-    move-result v7
+    invoke-static {p0, v0, v3}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
-    int-to-float v7, v7
+    move-result-object v3
 
-    aput v7, v5, v0
+    const-wide/16 v4, 0xc8
 
-    invoke-static {p0, v2, v5}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
+    .line 43
+    invoke-virtual {v3, v4, v5}, Landroid/animation/ObjectAnimator;->setDuration(J)Landroid/animation/ObjectAnimator;
 
-    move-result-object v5
+    move-result-object v3
 
-    const-wide/16 v7, 0xc8
+    .line 39
+    invoke-virtual {p1, p3, v3}, Landroid/animation/StateListAnimator;->addState([ILandroid/animation/Animator;)V
 
-    invoke-virtual {v5, v7, v8}, Landroid/animation/ObjectAnimator;->setDuration(J)Landroid/animation/ObjectAnimator;
+    new-array p3, v1, [I
 
-    move-result-object v5
+    new-array v2, v2, [F
 
-    invoke-virtual {p1, v1, v5}, Landroid/animation/StateListAnimator;->addState([ILandroid/animation/Animator;)V
-
-    new-array v1, v3, [I
-
-    new-array v5, v4, [F
-
-    .line 29
-    invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result v6
-
-    int-to-float v6, v6
-
-    aput v6, v5, v3
-
-    invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    .line 48
+    invoke-direct {p0}, Lcom/iMe/fork/ui/view/FloatingActionButton;->getTranslationZDefault()F
 
     move-result v3
 
-    int-to-float v3, v3
+    aput v3, v2, v1
 
-    aput v3, v5, v0
+    invoke-direct {p0}, Lcom/iMe/fork/ui/view/FloatingActionButton;->getTranslationZPressed()F
 
-    invoke-static {p0, v2, v5}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
+    move-result v1
 
-    move-result-object v0
+    aput v1, v2, p2
 
-    invoke-virtual {v0, v7, v8}, Landroid/animation/ObjectAnimator;->setDuration(J)Landroid/animation/ObjectAnimator;
+    invoke-static {p0, v0, v2}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
-    move-result-object v0
+    move-result-object p2
 
-    invoke-virtual {p1, v1, v0}, Landroid/animation/StateListAnimator;->addState([ILandroid/animation/Animator;)V
+    .line 49
+    invoke-virtual {p2, v4, v5}, Landroid/animation/ObjectAnimator;->setDuration(J)Landroid/animation/ObjectAnimator;
 
-    .line 27
+    move-result-object p2
+
+    .line 45
+    invoke-virtual {p1, p3, p2}, Landroid/animation/StateListAnimator;->addState([ILandroid/animation/Animator;)V
+
+    .line 38
     invoke-virtual {p0, p1}, Landroid/widget/FrameLayout;->setStateListAnimator(Landroid/animation/StateListAnimator;)V
 
-    .line 31
+    .line 52
     new-instance p1, Lcom/iMe/fork/ui/view/FloatingActionButton$2;
 
-    invoke-direct {p1}, Lcom/iMe/fork/ui/view/FloatingActionButton$2;-><init>()V
+    invoke-direct {p1, p0}, Lcom/iMe/fork/ui/view/FloatingActionButton$2;-><init>(Lcom/iMe/fork/ui/view/FloatingActionButton;)V
 
     invoke-virtual {p0, p1}, Landroid/widget/FrameLayout;->setOutlineProvider(Landroid/view/ViewOutlineProvider;)V
 
-    .line 37
+    .line 57
     invoke-direct {p0}, Lcom/iMe/fork/ui/view/FloatingActionButton;->getIconView()Lorg/telegram/ui/Components/RLottieImageView;
 
     move-result-object p1
 
-    const/4 v0, -0x1
+    const/4 p2, -0x1
 
-    invoke-static {v0, v0}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(II)Landroid/widget/FrameLayout$LayoutParams;
+    invoke-static {p2, p2}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(II)Landroid/widget/FrameLayout$LayoutParams;
 
-    move-result-object v0
+    move-result-object p2
 
-    invoke-virtual {p0, p1, v0}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {p0, p1, p2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 38
+    .line 58
     invoke-virtual {p0}, Lcom/iMe/fork/ui/view/FloatingActionButton;->updateColors()V
 
     return-void
 .end method
 
+.method public synthetic constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;IILkotlin/jvm/internal/DefaultConstructorMarker;)V
+    .locals 0
+
+    and-int/lit8 p5, p4, 0x2
+
+    if-eqz p5, :cond_0
+
+    const/4 p2, 0x0
+
+    :cond_0
+    and-int/lit8 p4, p4, 0x4
+
+    if-eqz p4, :cond_1
+
+    const/4 p3, 0x0
+
+    .line 22
+    :cond_1
+    invoke-direct {p0, p1, p2, p3}, Lcom/iMe/fork/ui/view/FloatingActionButton;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
+
+    return-void
+.end method
+
+.method public static final synthetic access$getButtonSize(Lcom/iMe/fork/ui/view/FloatingActionButton;)I
+    .locals 0
+
+    .line 22
+    invoke-direct {p0}, Lcom/iMe/fork/ui/view/FloatingActionButton;->getButtonSize()I
+
+    move-result p0
+
+    return p0
+.end method
+
 .method public static final synthetic access$initIconView(Lcom/iMe/fork/ui/view/FloatingActionButton;)Lorg/telegram/ui/Components/RLottieImageView;
     .locals 0
 
-    .line 21
+    .line 22
     invoke-direct {p0}, Lcom/iMe/fork/ui/view/FloatingActionButton;->initIconView()Lorg/telegram/ui/Components/RLottieImageView;
 
     move-result-object p0
@@ -152,10 +272,29 @@
     return-object p0
 .end method
 
+.method private final getButtonSize()I
+    .locals 1
+
+    .line 32
+    iget-object v0, p0, Lcom/iMe/fork/ui/view/FloatingActionButton;->buttonSize$delegate:Lkotlin/Lazy;
+
+    invoke-interface {v0}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Number;
+
+    invoke-virtual {v0}, Ljava/lang/Number;->intValue()I
+
+    move-result v0
+
+    return v0
+.end method
+
 .method private final getIconView()Lorg/telegram/ui/Components/RLottieImageView;
     .locals 1
 
-    .line 24
+    .line 29
     iget-object v0, p0, Lcom/iMe/fork/ui/view/FloatingActionButton;->iconView$delegate:Lkotlin/Lazy;
 
     invoke-interface {v0}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
@@ -167,10 +306,67 @@
     return-object v0
 .end method
 
+.method private final getLoadingAnimationSize()I
+    .locals 1
+
+    .line 33
+    iget-object v0, p0, Lcom/iMe/fork/ui/view/FloatingActionButton;->loadingAnimationSize$delegate:Lkotlin/Lazy;
+
+    invoke-interface {v0}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Number;
+
+    invoke-virtual {v0}, Ljava/lang/Number;->intValue()I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method private final getTranslationZDefault()F
+    .locals 1
+
+    .line 30
+    iget-object v0, p0, Lcom/iMe/fork/ui/view/FloatingActionButton;->translationZDefault$delegate:Lkotlin/Lazy;
+
+    invoke-interface {v0}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Number;
+
+    invoke-virtual {v0}, Ljava/lang/Number;->floatValue()F
+
+    move-result v0
+
+    return v0
+.end method
+
+.method private final getTranslationZPressed()F
+    .locals 1
+
+    .line 31
+    iget-object v0, p0, Lcom/iMe/fork/ui/view/FloatingActionButton;->translationZPressed$delegate:Lkotlin/Lazy;
+
+    invoke-interface {v0}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Number;
+
+    invoke-virtual {v0}, Ljava/lang/Number;->floatValue()F
+
+    move-result v0
+
+    return v0
+.end method
+
 .method private final initIconView()Lorg/telegram/ui/Components/RLottieImageView;
     .locals 2
 
-    .line 56
+    .line 93
     new-instance v0, Lorg/telegram/ui/Components/RLottieImageView;
 
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
@@ -179,7 +375,7 @@
 
     invoke-direct {v0, v1}, Lorg/telegram/ui/Components/RLottieImageView;-><init>(Landroid/content/Context;)V
 
-    .line 57
+    .line 94
     sget-object v1, Landroid/widget/ImageView$ScaleType;->CENTER:Landroid/widget/ImageView$ScaleType;
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setScaleType(Landroid/widget/ImageView$ScaleType;)V
@@ -192,7 +388,14 @@
 .method public final setIcon(I)V
     .locals 1
 
-    .line 44
+    .line 64
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/iMe/fork/ui/view/FloatingActionButton;->originalIconResId:Ljava/lang/Integer;
+
+    .line 65
     invoke-direct {p0}, Lcom/iMe/fork/ui/view/FloatingActionButton;->getIconView()Lorg/telegram/ui/Components/RLottieImageView;
 
     move-result-object v0
@@ -205,10 +408,8 @@
 .method public final updateColors()V
     .locals 4
 
-    const/16 v0, 0x38
-
-    .line 48
-    invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    .line 69
+    invoke-direct {p0}, Lcom/iMe/fork/ui/view/FloatingActionButton;->getButtonSize()I
 
     move-result v0
 
@@ -230,7 +431,7 @@
 
     invoke-virtual {p0, v0}, Landroid/widget/FrameLayout;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 49
+    .line 70
     invoke-direct {p0}, Lcom/iMe/fork/ui/view/FloatingActionButton;->getIconView()Lorg/telegram/ui/Components/RLottieImageView;
 
     move-result-object v0
@@ -249,5 +450,72 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
+    return-void
+.end method
+
+.method public final updateLoadingState(Z)V
+    .locals 3
+
+    .line 74
+    iget-boolean v0, p0, Lcom/iMe/fork/ui/view/FloatingActionButton;->isLoading:Z
+
+    if-ne v0, p1, :cond_0
+
+    return-void
+
+    .line 75
+    :cond_0
+    iput-boolean p1, p0, Lcom/iMe/fork/ui/view/FloatingActionButton;->isLoading:Z
+
+    .line 77
+    invoke-direct {p0}, Lcom/iMe/fork/ui/view/FloatingActionButton;->getIconView()Lorg/telegram/ui/Components/RLottieImageView;
+
+    move-result-object p1
+
+    .line 78
+    iget-boolean v0, p0, Lcom/iMe/fork/ui/view/FloatingActionButton;->isLoading:Z
+
+    if-eqz v0, :cond_1
+
+    const/4 v0, 0x1
+
+    .line 79
+    invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/RLottieImageView;->setAutoRepeat(Z)V
+
+    .line 80
+    sget v0, Lorg/telegram/messenger/R$raw;->fork_state_progress:I
+
+    invoke-direct {p0}, Lcom/iMe/fork/ui/view/FloatingActionButton;->getLoadingAnimationSize()I
+
+    move-result v1
+
+    invoke-direct {p0}, Lcom/iMe/fork/ui/view/FloatingActionButton;->getLoadingAnimationSize()I
+
+    move-result v2
+
+    invoke-virtual {p1, v0, v1, v2}, Lorg/telegram/ui/Components/RLottieImageView;->setAnimation(III)V
+
+    .line 81
+    invoke-virtual {p1}, Lorg/telegram/ui/Components/RLottieImageView;->playAnimation()V
+
+    goto :goto_0
+
+    .line 83
+    :cond_1
+    invoke-virtual {p1}, Lorg/telegram/ui/Components/RLottieImageView;->clearAnimationDrawable()V
+
+    .line 84
+    iget-object v0, p0, Lcom/iMe/fork/ui/view/FloatingActionButton;->originalIconResId:Ljava/lang/Integer;
+
+    if-eqz v0, :cond_2
+
+    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+
+    move-result v0
+
+    invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/RLottieImageView;->setImageResource(I)V
+
+    :cond_2
+    :goto_0
     return-void
 .end method

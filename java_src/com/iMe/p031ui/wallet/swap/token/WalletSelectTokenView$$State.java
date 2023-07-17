@@ -1,8 +1,8 @@
 package com.iMe.p031ui.wallet.swap.token;
 
 import com.iMe.model.wallet.select.SelectableTokenItem;
+import com.iMe.p031ui.base.mvp.LoadMoreView;
 import com.iMe.p031ui.base.mvp.base.BaseView;
-import com.iMe.p031ui.custom.state.GlobalStateView;
 import com.iMe.storage.domain.model.Result;
 import com.iMe.storage.domain.utils.system.ResourceManager;
 import io.reactivex.disposables.Disposable;
@@ -19,32 +19,27 @@ public class WalletSelectTokenView$$State extends MvpViewState<WalletSelectToken
         BaseView.CC.$default$finishScreen(this);
     }
 
-    @Override // com.iMe.p031ui.custom.state.GlobalStateView
-    public /* synthetic */ void onEmptyState() {
-        GlobalStateView.CC.$default$onEmptyState(this);
+    @Override // com.iMe.p031ui.base.mvp.base.BaseView
+    public /* synthetic */ void removeSelfFromStackImmediately() {
+        BaseView.CC.$default$removeSelfFromStackImmediately(this);
     }
 
-    @Override // com.iMe.p031ui.custom.state.GlobalStateView
-    public /* synthetic */ void onNoInternetErrorState() {
-        GlobalStateView.CC.$default$onNoInternetErrorState(this);
-    }
-
-    @Override // com.iMe.p031ui.custom.state.GlobalStateView
-    public /* synthetic */ void onUnexpectedErrorState() {
-        GlobalStateView.CC.$default$onUnexpectedErrorState(this);
+    @Override // com.iMe.p031ui.base.mvp.LoadMoreView
+    public /* synthetic */ void resetLoadMore() {
+        LoadMoreView.CC.$default$resetLoadMore(this);
     }
 
     @Override // com.iMe.p031ui.wallet.swap.token.WalletSelectTokenView
-    public void onTokensLoaded(List<SelectableTokenItem> list) {
-        OnTokensLoadedCommand onTokensLoadedCommand = new OnTokensLoadedCommand(this, list);
-        this.viewCommands.beforeApply(onTokensLoadedCommand);
+    public void renderItems(List<SelectableTokenItem> list) {
+        RenderItemsCommand renderItemsCommand = new RenderItemsCommand(this, list);
+        this.viewCommands.beforeApply(renderItemsCommand);
         if (hasNotView().booleanValue()) {
             return;
         }
         for (View view : this.views) {
-            view.onTokensLoaded(list);
+            view.renderItems(list);
         }
-        this.viewCommands.afterApply(onTokensLoadedCommand);
+        this.viewCommands.afterApply(renderItemsCommand);
     }
 
     @Override // com.iMe.p031ui.base.mvp.base.BaseView
@@ -87,6 +82,32 @@ public class WalletSelectTokenView$$State extends MvpViewState<WalletSelectToken
     }
 
     @Override // com.iMe.p031ui.custom.state.GlobalStateView
+    public void onNoInternetErrorState() {
+        OnNoInternetErrorStateCommand onNoInternetErrorStateCommand = new OnNoInternetErrorStateCommand(this);
+        this.viewCommands.beforeApply(onNoInternetErrorStateCommand);
+        if (hasNotView().booleanValue()) {
+            return;
+        }
+        for (View view : this.views) {
+            view.onNoInternetErrorState();
+        }
+        this.viewCommands.afterApply(onNoInternetErrorStateCommand);
+    }
+
+    @Override // com.iMe.p031ui.custom.state.GlobalStateView
+    public void onUnexpectedErrorState() {
+        OnUnexpectedErrorStateCommand onUnexpectedErrorStateCommand = new OnUnexpectedErrorStateCommand(this);
+        this.viewCommands.beforeApply(onUnexpectedErrorStateCommand);
+        if (hasNotView().booleanValue()) {
+            return;
+        }
+        for (View view : this.views) {
+            view.onUnexpectedErrorState();
+        }
+        this.viewCommands.afterApply(onUnexpectedErrorStateCommand);
+    }
+
+    @Override // com.iMe.p031ui.custom.state.GlobalStateView
     public void onLoadingState() {
         OnLoadingStateCommand onLoadingStateCommand = new OnLoadingStateCommand(this);
         this.viewCommands.beforeApply(onLoadingStateCommand);
@@ -99,20 +120,72 @@ public class WalletSelectTokenView$$State extends MvpViewState<WalletSelectToken
         this.viewCommands.afterApply(onLoadingStateCommand);
     }
 
+    @Override // com.iMe.p031ui.custom.state.GlobalStateView
+    public void onEmptyState() {
+        OnEmptyStateCommand onEmptyStateCommand = new OnEmptyStateCommand(this);
+        this.viewCommands.beforeApply(onEmptyStateCommand);
+        if (hasNotView().booleanValue()) {
+            return;
+        }
+        for (View view : this.views) {
+            view.onEmptyState();
+        }
+        this.viewCommands.afterApply(onEmptyStateCommand);
+    }
+
+    @Override // com.iMe.p031ui.base.mvp.LoadMoreView
+    public void onLoadMoreItems(List<SelectableTokenItem> list) {
+        OnLoadMoreItemsCommand onLoadMoreItemsCommand = new OnLoadMoreItemsCommand(this, list);
+        this.viewCommands.beforeApply(onLoadMoreItemsCommand);
+        if (hasNotView().booleanValue()) {
+            return;
+        }
+        for (View view : this.views) {
+            view.onLoadMoreItems(list);
+        }
+        this.viewCommands.afterApply(onLoadMoreItemsCommand);
+    }
+
+    @Override // com.iMe.p031ui.base.mvp.LoadMoreView
+    public void onLoadMoreComplete() {
+        OnLoadMoreCompleteCommand onLoadMoreCompleteCommand = new OnLoadMoreCompleteCommand(this);
+        this.viewCommands.beforeApply(onLoadMoreCompleteCommand);
+        if (hasNotView().booleanValue()) {
+            return;
+        }
+        for (View view : this.views) {
+            view.onLoadMoreComplete();
+        }
+        this.viewCommands.afterApply(onLoadMoreCompleteCommand);
+    }
+
+    @Override // com.iMe.p031ui.base.mvp.LoadMoreView
+    public void onLoadMoreError() {
+        OnLoadMoreErrorCommand onLoadMoreErrorCommand = new OnLoadMoreErrorCommand(this);
+        this.viewCommands.beforeApply(onLoadMoreErrorCommand);
+        if (hasNotView().booleanValue()) {
+            return;
+        }
+        for (View view : this.views) {
+            view.onLoadMoreError();
+        }
+        this.viewCommands.afterApply(onLoadMoreErrorCommand);
+    }
+
     /* compiled from: WalletSelectTokenView$$State.java */
-    /* renamed from: com.iMe.ui.wallet.swap.token.WalletSelectTokenView$$State$OnTokensLoadedCommand */
+    /* renamed from: com.iMe.ui.wallet.swap.token.WalletSelectTokenView$$State$RenderItemsCommand */
     /* loaded from: classes4.dex */
-    public class OnTokensLoadedCommand extends ViewCommand<WalletSelectTokenView> {
+    public class RenderItemsCommand extends ViewCommand<WalletSelectTokenView> {
         public final List<SelectableTokenItem> tokens;
 
-        OnTokensLoadedCommand(WalletSelectTokenView$$State walletSelectTokenView$$State, List<SelectableTokenItem> list) {
-            super("onTokensLoaded", AddToEndSingleStrategy.class);
+        RenderItemsCommand(WalletSelectTokenView$$State walletSelectTokenView$$State, List<SelectableTokenItem> list) {
+            super("renderItems", AddToEndSingleStrategy.class);
             this.tokens = list;
         }
 
         @Override // moxy.viewstate.ViewCommand
         public void apply(WalletSelectTokenView walletSelectTokenView) {
-            walletSelectTokenView.onTokensLoaded(this.tokens);
+            walletSelectTokenView.renderItems(this.tokens);
         }
     }
 
@@ -174,6 +247,34 @@ public class WalletSelectTokenView$$State extends MvpViewState<WalletSelectToken
     }
 
     /* compiled from: WalletSelectTokenView$$State.java */
+    /* renamed from: com.iMe.ui.wallet.swap.token.WalletSelectTokenView$$State$OnNoInternetErrorStateCommand */
+    /* loaded from: classes4.dex */
+    public class OnNoInternetErrorStateCommand extends ViewCommand<WalletSelectTokenView> {
+        OnNoInternetErrorStateCommand(WalletSelectTokenView$$State walletSelectTokenView$$State) {
+            super("onNoInternetErrorState", AddToEndSingleStrategy.class);
+        }
+
+        @Override // moxy.viewstate.ViewCommand
+        public void apply(WalletSelectTokenView walletSelectTokenView) {
+            walletSelectTokenView.onNoInternetErrorState();
+        }
+    }
+
+    /* compiled from: WalletSelectTokenView$$State.java */
+    /* renamed from: com.iMe.ui.wallet.swap.token.WalletSelectTokenView$$State$OnUnexpectedErrorStateCommand */
+    /* loaded from: classes4.dex */
+    public class OnUnexpectedErrorStateCommand extends ViewCommand<WalletSelectTokenView> {
+        OnUnexpectedErrorStateCommand(WalletSelectTokenView$$State walletSelectTokenView$$State) {
+            super("onUnexpectedErrorState", AddToEndSingleStrategy.class);
+        }
+
+        @Override // moxy.viewstate.ViewCommand
+        public void apply(WalletSelectTokenView walletSelectTokenView) {
+            walletSelectTokenView.onUnexpectedErrorState();
+        }
+    }
+
+    /* compiled from: WalletSelectTokenView$$State.java */
     /* renamed from: com.iMe.ui.wallet.swap.token.WalletSelectTokenView$$State$OnLoadingStateCommand */
     /* loaded from: classes4.dex */
     public class OnLoadingStateCommand extends ViewCommand<WalletSelectTokenView> {
@@ -184,6 +285,65 @@ public class WalletSelectTokenView$$State extends MvpViewState<WalletSelectToken
         @Override // moxy.viewstate.ViewCommand
         public void apply(WalletSelectTokenView walletSelectTokenView) {
             walletSelectTokenView.onLoadingState();
+        }
+    }
+
+    /* compiled from: WalletSelectTokenView$$State.java */
+    /* renamed from: com.iMe.ui.wallet.swap.token.WalletSelectTokenView$$State$OnEmptyStateCommand */
+    /* loaded from: classes4.dex */
+    public class OnEmptyStateCommand extends ViewCommand<WalletSelectTokenView> {
+        OnEmptyStateCommand(WalletSelectTokenView$$State walletSelectTokenView$$State) {
+            super("onEmptyState", AddToEndSingleStrategy.class);
+        }
+
+        @Override // moxy.viewstate.ViewCommand
+        public void apply(WalletSelectTokenView walletSelectTokenView) {
+            walletSelectTokenView.onEmptyState();
+        }
+    }
+
+    /* compiled from: WalletSelectTokenView$$State.java */
+    /* renamed from: com.iMe.ui.wallet.swap.token.WalletSelectTokenView$$State$OnLoadMoreItemsCommand */
+    /* loaded from: classes4.dex */
+    public class OnLoadMoreItemsCommand extends ViewCommand<WalletSelectTokenView> {
+        public final List<SelectableTokenItem> items;
+
+        OnLoadMoreItemsCommand(WalletSelectTokenView$$State walletSelectTokenView$$State, List<SelectableTokenItem> list) {
+            super("onLoadMoreItems", AddToEndSingleStrategy.class);
+            this.items = list;
+        }
+
+        @Override // moxy.viewstate.ViewCommand
+        public void apply(WalletSelectTokenView walletSelectTokenView) {
+            walletSelectTokenView.onLoadMoreItems(this.items);
+        }
+    }
+
+    /* compiled from: WalletSelectTokenView$$State.java */
+    /* renamed from: com.iMe.ui.wallet.swap.token.WalletSelectTokenView$$State$OnLoadMoreCompleteCommand */
+    /* loaded from: classes4.dex */
+    public class OnLoadMoreCompleteCommand extends ViewCommand<WalletSelectTokenView> {
+        OnLoadMoreCompleteCommand(WalletSelectTokenView$$State walletSelectTokenView$$State) {
+            super("onLoadMoreComplete", AddToEndSingleStrategy.class);
+        }
+
+        @Override // moxy.viewstate.ViewCommand
+        public void apply(WalletSelectTokenView walletSelectTokenView) {
+            walletSelectTokenView.onLoadMoreComplete();
+        }
+    }
+
+    /* compiled from: WalletSelectTokenView$$State.java */
+    /* renamed from: com.iMe.ui.wallet.swap.token.WalletSelectTokenView$$State$OnLoadMoreErrorCommand */
+    /* loaded from: classes4.dex */
+    public class OnLoadMoreErrorCommand extends ViewCommand<WalletSelectTokenView> {
+        OnLoadMoreErrorCommand(WalletSelectTokenView$$State walletSelectTokenView$$State) {
+            super("onLoadMoreError", AddToEndSingleStrategy.class);
+        }
+
+        @Override // moxy.viewstate.ViewCommand
+        public void apply(WalletSelectTokenView walletSelectTokenView) {
+            walletSelectTokenView.onLoadMoreError();
         }
     }
 }

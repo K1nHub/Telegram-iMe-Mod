@@ -2,44 +2,32 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lcom/iMe/fork/utils/Callbacks$Callback;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public final synthetic f$0:Lorg/telegram/ui/DialogsActivity;
-
-.field public final synthetic f$1:Ljava/util/ArrayList;
-
-.field public final synthetic f$2:Lorg/telegram/messenger/MessagesController$DialogFilter;
+.field public final synthetic f$0:Landroid/content/Context;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/DialogsActivity;Ljava/util/ArrayList;Lorg/telegram/messenger/MessagesController$DialogFilter;)V
+.method public synthetic constructor <init>(Landroid/content/Context;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda75;->f$0:Lorg/telegram/ui/DialogsActivity;
-
-    iput-object p2, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda75;->f$1:Ljava/util/ArrayList;
-
-    iput-object p3, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda75;->f$2:Lorg/telegram/messenger/MessagesController$DialogFilter;
+    iput-object p1, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda75;->f$0:Landroid/content/Context;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke()V
-    .locals 3
+.method public final run()V
+    .locals 1
 
-    iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda75;->f$0:Lorg/telegram/ui/DialogsActivity;
+    iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda75;->f$0:Landroid/content/Context;
 
-    iget-object v1, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda75;->f$1:Ljava/util/ArrayList;
-
-    iget-object v2, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda75;->f$2:Lorg/telegram/messenger/MessagesController$DialogFilter;
-
-    invoke-static {v0, v1, v2}, Lorg/telegram/ui/DialogsActivity;->$r8$lambda$QzBZ66mlO99IXNL_LtmVlDfcjWA(Lorg/telegram/ui/DialogsActivity;Ljava/util/ArrayList;Lorg/telegram/messenger/MessagesController$DialogFilter;)V
+    invoke-static {v0}, Lorg/telegram/ui/DialogsActivity;->$r8$lambda$zn9KLIhOuRH2VvlVBNCYjnSjnAw(Landroid/content/Context;)V
 
     return-void
 .end method

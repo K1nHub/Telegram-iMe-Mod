@@ -64,7 +64,7 @@ public abstract class AbstractSharedFlow<S extends AbstractSharedFlowSlot<?>> {
         for (Continuation<Unit> continuation : freeLocked) {
             if (continuation != null) {
                 Result.Companion companion = Result.Companion;
-                continuation.resumeWith(Result.m1576constructorimpl(Unit.INSTANCE));
+                continuation.resumeWith(Result.m1601constructorimpl(Unit.INSTANCE));
             }
         }
     }

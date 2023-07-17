@@ -18,7 +18,7 @@
 .method constructor <init>(Lorg/telegram/ui/ThemePreviewActivity;)V
     .locals 0
 
-    .line 2135
+    .line 2140
     invoke-direct {p0}, Landroidx/recyclerview/widget/RecyclerView$ItemDecoration;-><init>()V
 
     return-void
@@ -29,14 +29,14 @@
 .method public getItemOffsets(Landroid/graphics/Rect;Landroid/view/View;Landroidx/recyclerview/widget/RecyclerView;Landroidx/recyclerview/widget/RecyclerView$State;)V
     .locals 1
 
-    .line 2138
+    .line 2143
     invoke-virtual {p3, p2}, Landroidx/recyclerview/widget/RecyclerView;->getChildAdapterPosition(Landroid/view/View;)I
 
     move-result p2
 
     const/16 p3, 0xc
 
-    .line 2139
+    .line 2144
     invoke-static {p3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
@@ -45,12 +45,12 @@
 
     const/4 v0, 0x0
 
-    .line 2140
+    .line 2145
     iput v0, p1, Landroid/graphics/Rect;->top:I
 
     iput v0, p1, Landroid/graphics/Rect;->bottom:I
 
-    .line 2141
+    .line 2146
     invoke-virtual {p4}, Landroidx/recyclerview/widget/RecyclerView$State;->getItemCount()I
 
     move-result p4
@@ -59,7 +59,7 @@
 
     if-ne p2, p4, :cond_0
 
-    .line 2142
+    .line 2147
     invoke-static {p3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p2

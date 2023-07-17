@@ -46,7 +46,7 @@
 
     move-object v0, p0
 
-    .line 24
+    .line 27
     invoke-direct/range {v0 .. v5}, Lcom/iMe/model/state/GlobalState;-><init>(Ljava/lang/String;IIILkotlin/jvm/internal/DefaultConstructorMarker;)V
 
     return-void

@@ -26,7 +26,7 @@
 .method constructor <init>(Ljava/lang/String;)V
     .locals 0
 
-    .line 440
+    .line 442
     invoke-direct {p0, p1}, Lorg/telegram/ui/Components/AnimationProperties$FloatProperty;-><init>(Ljava/lang/String;)V
 
     return-void
@@ -37,7 +37,7 @@
 .method public get(Lorg/telegram/ui/GroupCallActivity;)Ljava/lang/Float;
     .locals 0
 
-    .line 448
+    .line 450
     invoke-static {p1}, Lorg/telegram/ui/GroupCallActivity;->access$700(Lorg/telegram/ui/GroupCallActivity;)F
 
     move-result p1
@@ -52,7 +52,7 @@
 .method public bridge synthetic get(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 440
+    .line 442
     check-cast p1, Lorg/telegram/ui/GroupCallActivity;
 
     invoke-virtual {p0, p1}, Lorg/telegram/ui/GroupCallActivity$2;->get(Lorg/telegram/ui/GroupCallActivity;)Ljava/lang/Float;
@@ -65,7 +65,7 @@
 .method public bridge synthetic setValue(Ljava/lang/Object;F)V
     .locals 0
 
-    .line 440
+    .line 442
     check-cast p1, Lorg/telegram/ui/GroupCallActivity;
 
     invoke-virtual {p0, p1, p2}, Lorg/telegram/ui/GroupCallActivity$2;->setValue(Lorg/telegram/ui/GroupCallActivity;F)V
@@ -76,7 +76,7 @@
 .method public setValue(Lorg/telegram/ui/GroupCallActivity;F)V
     .locals 0
 
-    .line 443
+    .line 445
     invoke-static {p1, p2}, Lorg/telegram/ui/GroupCallActivity;->access$600(Lorg/telegram/ui/GroupCallActivity;F)V
 
     return-void

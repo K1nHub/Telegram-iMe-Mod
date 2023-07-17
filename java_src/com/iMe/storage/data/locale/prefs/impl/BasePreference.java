@@ -47,12 +47,6 @@ public abstract class BasePreference implements BasePreferenceHelper {
     }
 
     @Override // com.iMe.storage.domain.storage.BasePreferenceHelper
-    public boolean isKeyContains(String key) {
-        Intrinsics.checkNotNullParameter(key, "key");
-        return getMPref().contains(key);
-    }
-
-    @Override // com.iMe.storage.domain.storage.BasePreferenceHelper
     public void remove(String key) {
         Intrinsics.checkNotNullParameter(key, "key");
         getMPref().edit().remove(key).apply();
@@ -68,7 +62,6 @@ public abstract class BasePreference implements BasePreferenceHelper {
         return withPrefix(userId, key);
     }
 
-    @Override // com.iMe.storage.domain.storage.BasePreferenceHelper
     public String withPrefix(String prefix, String key) {
         Intrinsics.checkNotNullParameter(prefix, "prefix");
         Intrinsics.checkNotNullParameter(key, "key");

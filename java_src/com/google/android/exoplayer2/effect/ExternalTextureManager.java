@@ -1,7 +1,7 @@
 package com.google.android.exoplayer2.effect;
 
 import android.graphics.SurfaceTexture;
-import com.google.android.exoplayer2.C0475C;
+import com.google.android.exoplayer2.C0480C;
 import com.google.android.exoplayer2.effect.GlTextureProcessor;
 import com.google.android.exoplayer2.util.Assertions;
 import com.google.android.exoplayer2.util.FrameInfo;
@@ -35,7 +35,7 @@ public class ExternalTextureManager implements GlTextureProcessor.InputListener 
             this.pendingFrames = new ConcurrentLinkedQueue();
             this.availableFrameCount = new AtomicInteger();
             this.externalTextureProcessorInputCapacity = new AtomicInteger();
-            this.previousStreamOffsetUs = C0475C.TIME_UNSET;
+            this.previousStreamOffsetUs = C0480C.TIME_UNSET;
         } catch (GlUtil.GlException e) {
             throw new FrameProcessingException(e);
         }
@@ -102,7 +102,7 @@ public class ExternalTextureManager implements GlTextureProcessor.InputListener 
         long j = frameInfo.streamOffsetUs;
         long j2 = this.previousStreamOffsetUs;
         if (j != j2) {
-            if (j2 != C0475C.TIME_UNSET) {
+            if (j2 != C0480C.TIME_UNSET) {
                 this.externalTextureProcessor.signalEndOfCurrentInputStream();
             }
             this.previousStreamOffsetUs = j;

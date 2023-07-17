@@ -1,14 +1,11 @@
 .class Lorg/telegram/ui/Components/PasscodeView$7;
-.super Ljava/lang/Object;
+.super Landroid/animation/AnimatorListenerAdapter;
 .source "PasscodeView.java"
-
-# interfaces
-.implements Ljava/lang/Runnable;
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lorg/telegram/ui/Components/PasscodeView;
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lorg/telegram/ui/Components/PasscodeView;->lambda$processDone$12()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -25,34 +22,25 @@
 .method constructor <init>(Lorg/telegram/ui/Components/PasscodeView;)V
     .locals 0
 
-    .line 1173
+    .line 1284
     iput-object p1, p0, Lorg/telegram/ui/Components/PasscodeView$7;->this$0:Lorg/telegram/ui/Components/PasscodeView;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public run()V
-    .locals 3
+.method public onAnimationEnd(Landroid/animation/Animator;)V
+    .locals 1
 
-    .line 1176
-    iget-object v0, p0, Lorg/telegram/ui/Components/PasscodeView$7;->this$0:Lorg/telegram/ui/Components/PasscodeView;
+    .line 1287
+    iget-object p1, p0, Lorg/telegram/ui/Components/PasscodeView$7;->this$0:Lorg/telegram/ui/Components/PasscodeView;
 
-    invoke-virtual {v0}, Lorg/telegram/ui/Components/PasscodeView;->checkRetryTextView()V
+    const/16 v0, 0x8
 
-    .line 1177
-    iget-object v0, p0, Lorg/telegram/ui/Components/PasscodeView$7;->this$0:Lorg/telegram/ui/Components/PasscodeView;
-
-    invoke-static {v0}, Lorg/telegram/ui/Components/PasscodeView;->access$1500(Lorg/telegram/ui/Components/PasscodeView;)Ljava/lang/Runnable;
-
-    move-result-object v0
-
-    const-wide/16 v1, 0x64
-
-    invoke-static {v0, v1, v2}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;J)V
+    invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
     return-void
 .end method

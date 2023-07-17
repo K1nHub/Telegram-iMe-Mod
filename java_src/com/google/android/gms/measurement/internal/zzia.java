@@ -8,7 +8,7 @@ import android.os.Bundle;
 import android.os.Parcelable;
 import android.text.TextUtils;
 import androidx.collection.ArrayMap;
-import com.google.android.exoplayer2.C0475C;
+import com.google.android.exoplayer2.C0480C;
 import com.google.android.exoplayer2.text.ttml.TtmlNode;
 import com.google.android.gms.common.internal.Preconditions;
 import com.google.android.gms.common.util.CollectionUtils;
@@ -827,22 +827,22 @@ public final class zzia extends zzf {
 
     public final Boolean zzi() {
         AtomicReference atomicReference = new AtomicReference();
-        return (Boolean) this.zzs.zzaz().zzd(atomicReference, C0475C.DEFAULT_SEEK_FORWARD_INCREMENT_MS, "boolean test flag value", new zzhl(this, atomicReference));
+        return (Boolean) this.zzs.zzaz().zzd(atomicReference, C0480C.DEFAULT_SEEK_FORWARD_INCREMENT_MS, "boolean test flag value", new zzhl(this, atomicReference));
     }
 
     public final Double zzj() {
         AtomicReference atomicReference = new AtomicReference();
-        return (Double) this.zzs.zzaz().zzd(atomicReference, C0475C.DEFAULT_SEEK_FORWARD_INCREMENT_MS, "double test flag value", new zzhs(this, atomicReference));
+        return (Double) this.zzs.zzaz().zzd(atomicReference, C0480C.DEFAULT_SEEK_FORWARD_INCREMENT_MS, "double test flag value", new zzhs(this, atomicReference));
     }
 
     public final Integer zzl() {
         AtomicReference atomicReference = new AtomicReference();
-        return (Integer) this.zzs.zzaz().zzd(atomicReference, C0475C.DEFAULT_SEEK_FORWARD_INCREMENT_MS, "int test flag value", new zzhr(this, atomicReference));
+        return (Integer) this.zzs.zzaz().zzd(atomicReference, C0480C.DEFAULT_SEEK_FORWARD_INCREMENT_MS, "int test flag value", new zzhr(this, atomicReference));
     }
 
     public final Long zzm() {
         AtomicReference atomicReference = new AtomicReference();
-        return (Long) this.zzs.zzaz().zzd(atomicReference, C0475C.DEFAULT_SEEK_FORWARD_INCREMENT_MS, "long test flag value", new zzhq(this, atomicReference));
+        return (Long) this.zzs.zzaz().zzd(atomicReference, C0480C.DEFAULT_SEEK_FORWARD_INCREMENT_MS, "long test flag value", new zzhq(this, atomicReference));
     }
 
     public final String zzo() {
@@ -867,7 +867,7 @@ public final class zzia extends zzf {
 
     public final String zzr() {
         AtomicReference atomicReference = new AtomicReference();
-        return (String) this.zzs.zzaz().zzd(atomicReference, C0475C.DEFAULT_SEEK_FORWARD_INCREMENT_MS, "String test flag value", new zzhp(this, atomicReference));
+        return (String) this.zzs.zzaz().zzd(atomicReference, C0480C.DEFAULT_SEEK_FORWARD_INCREMENT_MS, "String test flag value", new zzhp(this, atomicReference));
     }
 
     public final ArrayList<Bundle> zzs(String str, String str2) {

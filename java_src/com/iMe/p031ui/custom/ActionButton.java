@@ -1,6 +1,7 @@
 package com.iMe.p031ui.custom;
 
 import android.content.Context;
+import android.graphics.Canvas;
 import android.util.AttributeSet;
 import android.view.View;
 import androidx.appcompat.widget.AppCompatTextView;
@@ -10,7 +11,8 @@ import kotlin.LazyKt__LazyJVMKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.p044ui.ActionBar.Theme;
+import org.telegram.p043ui.ActionBar.Theme;
+import org.telegram.p043ui.Components.LoadingDrawable;
 /* compiled from: ActionButton.kt */
 /* renamed from: com.iMe.ui.custom.ActionButton */
 /* loaded from: classes3.dex */
@@ -19,6 +21,10 @@ public class ActionButton extends AppCompatTextView {
     private final Lazy cornerRadius$delegate;
     private Integer forcedButtonHeight;
     private final Lazy horizontalPadding$delegate;
+    private boolean isLoading;
+    private boolean isLoadingBeforeDetach;
+    private final Lazy loadingDrawable$delegate;
+    private String originalText;
 
     /* JADX WARN: 'this' call moved to the top of the method (can break code semantics) */
     public ActionButton(Context context, AttributeSet attributeSet) {
@@ -36,6 +42,7 @@ public class ActionButton extends AppCompatTextView {
         Lazy lazy;
         Lazy lazy2;
         Lazy lazy3;
+        Lazy lazy4;
         Intrinsics.checkNotNullParameter(context, "context");
         lazy = LazyKt__LazyJVMKt.lazy(new ActionButton$buttonHeight$2(this));
         this.buttonHeight$delegate = lazy;
@@ -43,10 +50,13 @@ public class ActionButton extends AppCompatTextView {
         this.cornerRadius$delegate = lazy2;
         lazy3 = LazyKt__LazyJVMKt.lazy(new ActionButton$horizontalPadding$2(this));
         this.horizontalPadding$delegate = lazy3;
+        lazy4 = LazyKt__LazyJVMKt.lazy(new ActionButton$loadingDrawable$2(this));
+        this.loadingDrawable$delegate = lazy4;
+        this.originalText = "";
         setupView();
     }
 
-    protected final int getButtonHeight() {
+    private final int getButtonHeight() {
         return ((Number) this.buttonHeight$delegate.getValue()).intValue();
     }
 
@@ -58,14 +68,33 @@ public class ActionButton extends AppCompatTextView {
         return ((Number) this.horizontalPadding$delegate.getValue()).intValue();
     }
 
+    private final LoadingDrawable getLoadingDrawable() {
+        return (LoadingDrawable) this.loadingDrawable$delegate.getValue();
+    }
+
     public final void applyColors() {
         setBackground(Theme.createSimpleSelectorRoundRectDrawable(getCornerRadius(), Theme.getColor(Theme.key_chats_actionBackground), Theme.getColor(Theme.key_chats_actionPressedBackground)));
         setTextColor(Theme.getColor(Theme.key_chats_actionIcon));
         ViewExtKt.withMediumTypeface(this);
+        getLoadingDrawable().setColors(Theme.getColor(Theme.key_actionBarActionModeDefaultSelector), ViewExtKt.withAlpha(-1, 0.5f));
     }
 
     public final void setForcedCustomHeight(int i) {
         this.forcedButtonHeight = Integer.valueOf(AndroidUtilities.m54dp(i));
+        invalidate();
+    }
+
+    public final void updateLoadingState(boolean z) {
+        boolean z2 = this.isLoading;
+        if (!z2 && z) {
+            this.originalText = getText().toString();
+        } else if (!z2 || z) {
+            return;
+        } else {
+            setText(this.originalText);
+            getLoadingDrawable().disappear();
+        }
+        this.isLoading = z;
         invalidate();
     }
 
@@ -96,10 +125,48 @@ public class ActionButton extends AppCompatTextView {
         super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), Integer.MIN_VALUE), View.MeasureSpec.makeMeasureSpec(getPreferredButtonHeight(), 1073741824));
     }
 
+    @Override // android.widget.TextView, android.view.View
+    protected void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        if (!this.isLoading || canvas == null) {
+            return;
+        }
+        canvas.save();
+        LoadingDrawable loadingDrawable = getLoadingDrawable();
+        loadingDrawable.setBounds(canvas.getClipBounds());
+        loadingDrawable.draw(canvas);
+        canvas.restore();
+        invalidate();
+    }
+
+    @Override // android.view.View
+    protected void onDetachedFromWindow() {
+        if (this.isLoading) {
+            this.isLoadingBeforeDetach = true;
+            updateLoadingState(false);
+        }
+        super.onDetachedFromWindow();
+    }
+
+    @Override // android.widget.TextView, android.view.View
+    protected void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        updateLoadingState(this.isLoadingBeforeDetach);
+    }
+
     private final void setupView() {
         applyColors();
         setGravity(17);
         setTextSize(14.0f);
         setPadding(getHorizontalPadding(), 0, getHorizontalPadding(), 0);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public final LoadingDrawable initLoadingDrawable() {
+        LoadingDrawable loadingDrawable = new LoadingDrawable();
+        loadingDrawable.setColors(Theme.getColor(Theme.key_actionBarActionModeDefaultSelector), ViewExtKt.withAlpha(-1, 0.5f));
+        loadingDrawable.setAppearByGradient(true);
+        loadingDrawable.setRadiiDp(4.0f);
+        return loadingDrawable;
     }
 }

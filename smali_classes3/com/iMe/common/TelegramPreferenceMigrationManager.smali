@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nTelegramPreferenceMigrationManager.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TelegramPreferenceMigrationManager.kt\ncom/iMe/common/TelegramPreferenceMigrationManager\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 4 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n*L\n1#1,308:1\n1#2:309\n1855#3,2:310\n1855#3:312\n1549#3:313\n1620#3,3:314\n1856#3:317\n1549#3:318\n1620#3,3:319\n1855#3,2:322\n1855#3,2:324\n1855#3,2:327\n1855#3,2:330\n1855#3,2:332\n1855#3,2:336\n1045#3:338\n1559#3:339\n1590#3,4:340\n1045#3:344\n1559#3:345\n1590#3,4:346\n13579#4:326\n13580#4:329\n13579#4,2:334\n*S KotlinDebug\n*F\n+ 1 TelegramPreferenceMigrationManager.kt\ncom/iMe/common/TelegramPreferenceMigrationManager\n*L\n103#1:310,2\n120#1:312\n128#1:313\n128#1:314,3\n120#1:317\n138#1:318\n138#1:319,3\n150#1:322,2\n167#1:324,2\n177#1:327,2\n189#1:330,2\n201#1:332,2\n262#1:336,2\n277#1:338\n278#1:339\n278#1:340,4\n281#1:344\n282#1:345\n282#1:346,4\n175#1:326\n175#1:329\n242#1:334,2\n*E\n"
+    value = "SMAP\nTelegramPreferenceMigrationManager.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TelegramPreferenceMigrationManager.kt\ncom/iMe/common/TelegramPreferenceMigrationManager\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 4 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n*L\n1#1,302:1\n1#2:303\n1855#3,2:304\n1855#3:306\n1549#3:307\n1620#3,3:308\n1856#3:311\n1549#3:312\n1620#3,3:313\n1855#3,2:316\n1855#3,2:318\n1855#3,2:321\n1855#3,2:324\n1855#3,2:326\n1855#3,2:330\n1045#3:332\n1559#3:333\n1590#3,4:334\n1045#3:338\n1559#3:339\n1590#3,4:340\n13579#4:320\n13580#4:323\n13579#4,2:328\n*S KotlinDebug\n*F\n+ 1 TelegramPreferenceMigrationManager.kt\ncom/iMe/common/TelegramPreferenceMigrationManager\n*L\n97#1:304,2\n114#1:306\n122#1:307\n122#1:308,3\n114#1:311\n132#1:312\n132#1:313,3\n144#1:316,2\n161#1:318,2\n171#1:321,2\n183#1:324,2\n195#1:326,2\n256#1:330,2\n271#1:332\n272#1:333\n272#1:334,4\n275#1:338\n276#1:339\n276#1:340,4\n169#1:320\n169#1:323\n236#1:328,2\n*E\n"
 .end annotation
 
 
@@ -64,7 +64,7 @@
 
     goto/16 :goto_2
 
-    .line 79
+    .line 73
     :pswitch_0
     invoke-static {}, Lcom/iMe/common/TelegramPreferenceKeys$Global;->isReadAllChatsConfirmationShown()Ljava/lang/String;
 
@@ -76,14 +76,14 @@
 
     if-eqz v4, :cond_0
 
-    .line 80
+    .line 74
     sget-boolean v4, Lorg/telegram/messenger/SharedConfig;->isReadAllChatsConfirmationShown:Z
 
     xor-int/2addr v4, v3
 
     invoke-static {v4}, Lorg/telegram/messenger/SharedConfig;->setReadAllChatsConfirmationShown(Z)V
 
-    .line 82
+    .line 76
     :cond_0
     invoke-static {}, Lcom/iMe/common/TelegramPreferenceKeys$Global;->isAlbumsIntroShown()Ljava/lang/String;
 
@@ -95,14 +95,14 @@
 
     if-eqz v4, :cond_1
 
-    .line 83
+    .line 77
     sget-boolean v4, Lorg/telegram/messenger/SharedConfig;->isAlbumsIntroShown:Z
 
     xor-int/2addr v4, v3
 
     invoke-static {v4}, Lorg/telegram/messenger/SharedConfig;->setAlbumsIntroShown(Z)V
 
-    .line 85
+    .line 79
     :cond_1
     invoke-static {}, Lcom/iMe/common/TelegramPreferenceKeys$Global;->isMusicIntroShown()Ljava/lang/String;
 
@@ -114,7 +114,7 @@
 
     if-eqz v4, :cond_6
 
-    .line 86
+    .line 80
     sget-boolean v4, Lorg/telegram/messenger/SharedConfig;->isMusicIntroShown:Z
 
     xor-int/2addr v4, v3
@@ -123,7 +123,7 @@
 
     goto/16 :goto_2
 
-    .line 69
+    .line 63
     :pswitch_1
     invoke-static {}, Lcom/iMe/common/TelegramPreferenceKeys$Global;->selectedPhotoViewerMenuItems()Ljava/lang/String;
 
@@ -135,25 +135,25 @@
 
     if-eqz v4, :cond_6
 
-    .line 71
+    .line 65
     sget-object v4, Lorg/telegram/messenger/SharedConfig;->selectedPhotoViewerMenuItems:Ljava/util/Set;
 
-    .line 72
+    .line 66
     sget-object v5, Lcom/iMe/fork/enums/PhotoViewerMenuItem;->COPY_IMAGE:Lcom/iMe/fork/enums/PhotoViewerMenuItem;
 
     invoke-interface {v4, v5}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    .line 73
+    .line 67
     sget-object v5, Lcom/iMe/fork/enums/PhotoViewerMenuItem;->CLEAR_CACHE:Lcom/iMe/fork/enums/PhotoViewerMenuItem;
 
     invoke-interface {v4, v5}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    .line 70
+    .line 64
     invoke-static {v4}, Lorg/telegram/messenger/SharedConfig;->setSelectedPhotoViewerMenuItems(Ljava/util/Set;)V
 
     goto/16 :goto_2
 
-    .line 64
+    .line 58
     :pswitch_2
     invoke-static {}, Lcom/iMe/common/TelegramPreferenceKeys$Global;->selectedDrawerItems()Ljava/lang/String;
 
@@ -165,7 +165,7 @@
 
     if-eqz v4, :cond_6
 
-    .line 65
+    .line 59
     sget-object v4, Lorg/telegram/messenger/SharedConfig;->selectedDrawerItems:Ljava/util/Set;
 
     sget-object v5, Lcom/iMe/ui/drawer/DrawerSwitchableItem;->CATALOG:Lcom/iMe/ui/drawer/DrawerSwitchableItem;
@@ -174,9 +174,9 @@
 
     invoke-static {v4}, Lorg/telegram/messenger/SharedConfig;->setSelectedDrawerItems(Ljava/util/Set;)V
 
-    goto/16 :goto_2
+    goto :goto_2
 
-    .line 58
+    .line 53
     :pswitch_3
     invoke-static {}, Lcom/iMe/common/TelegramPreferenceKeys$Global;->selectedDrawerItems()Ljava/lang/String;
 
@@ -188,7 +188,7 @@
 
     if-eqz v4, :cond_6
 
-    .line 59
+    .line 54
     invoke-interface {p0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
     move-result-object v4
@@ -200,38 +200,6 @@
     move-result-object v4
 
     invoke-interface {v4}, Landroid/content/SharedPreferences$Editor;->apply()V
-
-    .line 60
-    sget-object v4, Lorg/telegram/messenger/SharedConfig;->selectedDrawerItems:Ljava/util/Set;
-
-    sget-object v5, Lcom/iMe/ui/drawer/DrawerSwitchableItem;->MANAGEMENT:Lcom/iMe/ui/drawer/DrawerSwitchableItem;
-
-    invoke-interface {v4, v5}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
-
-    invoke-static {v4}, Lorg/telegram/messenger/SharedConfig;->setSelectedDrawerItems(Ljava/util/Set;)V
-
-    goto :goto_2
-
-    .line 53
-    :pswitch_4
-    invoke-static {}, Lcom/iMe/common/TelegramPreferenceKeys$Global;->selectedDrawerItems()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-interface {p0, v4}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z
-
-    move-result v4
-
-    if-eqz v4, :cond_6
-
-    .line 54
-    sget-object v4, Lorg/telegram/messenger/SharedConfig;->selectedDrawerItems:Ljava/util/Set;
-
-    sget-object v5, Lcom/iMe/ui/drawer/DrawerSwitchableItem;->MANAGEMENT:Lcom/iMe/ui/drawer/DrawerSwitchableItem;
-
-    invoke-interface {v4, v5}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
-
-    invoke-static {v4}, Lorg/telegram/messenger/SharedConfig;->setSelectedDrawerItems(Ljava/util/Set;)V
 
     goto :goto_2
 
@@ -331,7 +299,7 @@
 
     invoke-static {v4}, Lorg/telegram/messenger/SharedConfig;->setSelectedDrawerItems(Ljava/util/Set;)V
 
-    .line 90
+    .line 84
     :cond_6
     :goto_2
     invoke-interface {p0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
@@ -354,8 +322,7 @@
     nop
 
     :pswitch_data_0
-    .packed-switch 0x5
-        :pswitch_4
+    .packed-switch 0x6
         :pswitch_3
         :pswitch_2
         :pswitch_1
@@ -378,7 +345,7 @@
 
     const/4 v3, 0x0
 
-    .line 96
+    .line 90
     invoke-interface {v1, v2, v3}, Landroid/content/SharedPreferences;->getInt(Ljava/lang/String;I)I
 
     move-result v4
@@ -409,7 +376,7 @@
 
     goto/16 :goto_17
 
-    .line 297
+    .line 291
     :pswitch_1
     invoke-static {}, Lcom/iMe/common/TelegramPreferenceKeys$User;->selectedRecentChatsDialogTypes()Ljava/lang/String;
 
@@ -421,14 +388,14 @@
 
     if-eqz v6, :cond_0
 
-    .line 298
+    .line 292
     sget-object v6, Lcom/iMe/fork/controller/RecentChatsController;->Companion:Lcom/iMe/fork/controller/RecentChatsController$Companion;
 
     invoke-virtual {v6, v0}, Lcom/iMe/fork/controller/RecentChatsController$Companion;->getInstance(I)Lcom/iMe/fork/controller/RecentChatsController;
 
     move-result-object v6
 
-    .line 299
+    .line 293
     invoke-virtual {v6}, Lcom/iMe/fork/controller/RecentChatsController;->getSelectedRecentChatsDialogTypes()Ljava/util/Set;
 
     move-result-object v7
@@ -437,12 +404,12 @@
 
     invoke-interface {v7, v8}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    .line 300
+    .line 294
     invoke-virtual {v6}, Lcom/iMe/fork/controller/RecentChatsController;->saveConfig()V
 
     goto :goto_1
 
-    .line 289
+    .line 283
     :pswitch_2
     invoke-static {}, Lcom/iMe/common/TelegramPreferenceKeys$User;->selectedMessagePopupItems()Ljava/lang/String;
 
@@ -454,14 +421,14 @@
 
     if-eqz v6, :cond_0
 
-    .line 290
+    .line 284
     sget-object v6, Lcom/iMe/fork/controller/ToolsController;->Companion:Lcom/iMe/fork/controller/ToolsController$Companion;
 
     invoke-virtual {v6, v0}, Lcom/iMe/fork/controller/ToolsController$Companion;->getInstance(I)Lcom/iMe/fork/controller/ToolsController;
 
     move-result-object v6
 
-    .line 291
+    .line 285
     invoke-virtual {v6}, Lcom/iMe/fork/controller/ToolsController;->getSelectedMessagePopupItems()Ljava/util/Set;
 
     move-result-object v7
@@ -470,12 +437,12 @@
 
     invoke-interface {v7, v8}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    .line 292
+    .line 286
     invoke-virtual {v6}, Lcom/iMe/fork/controller/ToolsController;->saveConfig()V
 
     goto :goto_1
 
-    .line 274
+    .line 268
     :pswitch_3
     invoke-static {}, Lcom/iMe/common/TelegramPreferenceKeys$User;->isSortingChatsEnabled()Ljava/lang/String;
 
@@ -487,22 +454,22 @@
 
     if-eqz v6, :cond_0
 
-    .line 275
+    .line 269
     sget-object v6, Lcom/iMe/fork/controller/FiltersController;->Companion:Lcom/iMe/fork/controller/FiltersController$Companion;
 
     invoke-virtual {v6, v0}, Lcom/iMe/fork/controller/FiltersController$Companion;->getInstance(I)Lcom/iMe/fork/controller/FiltersController;
 
     move-result-object v6
 
-    .line 276
+    .line 270
     invoke-virtual {v6}, Lcom/iMe/fork/controller/FiltersController;->getSortingTabs()Ljava/util/List;
 
     move-result-object v7
 
     .line 1045
-    new-instance v9, Lcom/iMe/common/TelegramPreferenceMigrationManager$migrateUserPreferences$lambda$34$$inlined$sortedBy$1;
+    new-instance v9, Lcom/iMe/common/TelegramPreferenceMigrationManager$migrateUserPreferences$lambda$32$$inlined$sortedBy$1;
 
-    invoke-direct {v9}, Lcom/iMe/common/TelegramPreferenceMigrationManager$migrateUserPreferences$lambda$34$$inlined$sortedBy$1;-><init>()V
+    invoke-direct {v9}, Lcom/iMe/common/TelegramPreferenceMigrationManager$migrateUserPreferences$lambda$32$$inlined$sortedBy$1;-><init>()V
 
     invoke-static {v7, v9}, Lkotlin/collections/CollectionsKt;->sortedWith(Ljava/lang/Iterable;Ljava/util/Comparator;)Ljava/util/List;
 
@@ -545,7 +512,7 @@
     :cond_1
     check-cast v11, Lcom/iMe/fork/models/SortingTabState;
 
-    .line 278
+    .line 272
     invoke-virtual {v11, v10}, Lcom/iMe/fork/models/SortingTabState;->setPosition(I)V
 
     .line 1592
@@ -555,24 +522,24 @@
 
     goto :goto_2
 
-    .line 279
+    .line 273
     :cond_2
     invoke-static {v9}, Lkotlin/collections/CollectionsKt;->toMutableList(Ljava/util/Collection;)Ljava/util/List;
 
     move-result-object v7
 
-    .line 276
+    .line 270
     invoke-virtual {v6, v7}, Lcom/iMe/fork/controller/FiltersController;->setSortingTabs(Ljava/util/List;)V
 
-    .line 280
+    .line 274
     invoke-virtual {v6}, Lcom/iMe/fork/controller/FiltersController;->getArchiveSortingTabs()Ljava/util/List;
 
     move-result-object v7
 
     .line 1045
-    new-instance v9, Lcom/iMe/common/TelegramPreferenceMigrationManager$migrateUserPreferences$lambda$34$$inlined$sortedBy$2;
+    new-instance v9, Lcom/iMe/common/TelegramPreferenceMigrationManager$migrateUserPreferences$lambda$32$$inlined$sortedBy$2;
 
-    invoke-direct {v9}, Lcom/iMe/common/TelegramPreferenceMigrationManager$migrateUserPreferences$lambda$34$$inlined$sortedBy$2;-><init>()V
+    invoke-direct {v9}, Lcom/iMe/common/TelegramPreferenceMigrationManager$migrateUserPreferences$lambda$32$$inlined$sortedBy$2;-><init>()V
 
     invoke-static {v7, v9}, Lkotlin/collections/CollectionsKt;->sortedWith(Ljava/lang/Iterable;Ljava/util/Comparator;)Ljava/util/List;
 
@@ -615,7 +582,7 @@
     :cond_3
     check-cast v10, Lcom/iMe/fork/models/SortingTabState;
 
-    .line 282
+    .line 276
     invoke-virtual {v10, v8}, Lcom/iMe/fork/models/SortingTabState;->setPosition(I)V
 
     .line 1592
@@ -625,21 +592,21 @@
 
     goto :goto_3
 
-    .line 283
+    .line 277
     :cond_4
     invoke-static {v9}, Lkotlin/collections/CollectionsKt;->toMutableList(Ljava/util/Collection;)Ljava/util/List;
 
     move-result-object v7
 
-    .line 280
+    .line 274
     invoke-virtual {v6, v7}, Lcom/iMe/fork/controller/FiltersController;->setArchiveSortingTabs(Ljava/util/List;)V
 
-    .line 284
+    .line 278
     invoke-virtual {v6}, Lcom/iMe/fork/controller/FiltersController;->saveConfig()V
 
     goto/16 :goto_1
 
-    .line 257
+    .line 251
     :pswitch_4
     invoke-static {}, Lcom/iMe/common/TelegramPreferenceKeys$User;->isSortingChatsEnabled()Ljava/lang/String;
 
@@ -651,7 +618,7 @@
 
     if-eqz v6, :cond_0
 
-    .line 258
+    .line 252
     invoke-interface/range {p1 .. p1}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
     move-result-object v6
@@ -660,14 +627,14 @@
 
     const/4 v8, -0x1
 
-    .line 260
+    .line 254
     invoke-interface {v1, v7, v8}, Landroid/content/SharedPreferences;->getInt(Ljava/lang/String;I)I
 
     move-result v7
 
     if-eq v7, v8, :cond_6
 
-    .line 262
+    .line 256
     sget-object v8, Lcom/iMe/fork/enums/SortingFilter;->Companion:Lcom/iMe/fork/enums/SortingFilter$Companion;
 
     invoke-virtual {v8, v5}, Lcom/iMe/fork/enums/SortingFilter$Companion;->getSortingFilters(Z)Ljava/util/List;
@@ -693,7 +660,7 @@
 
     check-cast v9, Lcom/iMe/fork/enums/SortingFilter;
 
-    .line 263
+    .line 257
     invoke-static {v9}, Lcom/iMe/common/TelegramPreferenceKeys$User;->buildSortingTabPositionKey(Lcom/iMe/fork/enums/SortingFilter;)Ljava/lang/String;
 
     move-result-object v10
@@ -708,7 +675,7 @@
 
     if-le v10, v7, :cond_5
 
-    .line 265
+    .line 259
     invoke-static {v9}, Lcom/iMe/common/TelegramPreferenceKeys$User;->buildSortingTabPositionKey(Lcom/iMe/fork/enums/SortingFilter;)Ljava/lang/String;
 
     move-result-object v9
@@ -719,11 +686,11 @@
 
     goto :goto_4
 
-    .line 269
+    .line 263
     :cond_6
     invoke-interface {v6}, Landroid/content/SharedPreferences$Editor;->apply()V
 
-    .line 270
+    .line 264
     sget-object v6, Lcom/iMe/fork/controller/FiltersController;->Companion:Lcom/iMe/fork/controller/FiltersController$Companion;
 
     invoke-virtual {v6, v0}, Lcom/iMe/fork/controller/FiltersController$Companion;->getInstance(I)Lcom/iMe/fork/controller/FiltersController;
@@ -734,7 +701,7 @@
 
     goto/16 :goto_1
 
-    .line 223
+    .line 217
     :pswitch_5
     invoke-static {}, Lcom/iMe/common/TelegramPreferenceKeys$User;->selectedMessagePopupItems()Ljava/lang/String;
 
@@ -746,14 +713,14 @@
 
     if-eqz v8, :cond_7
 
-    .line 224
+    .line 218
     sget-object v8, Lcom/iMe/fork/controller/ToolsController;->Companion:Lcom/iMe/fork/controller/ToolsController$Companion;
 
     invoke-virtual {v8, v0}, Lcom/iMe/fork/controller/ToolsController$Companion;->getInstance(I)Lcom/iMe/fork/controller/ToolsController;
 
     move-result-object v8
 
-    .line 225
+    .line 219
     invoke-virtual {v8}, Lcom/iMe/fork/controller/ToolsController;->getSelectedMessagePopupItems()Ljava/util/Set;
 
     move-result-object v10
@@ -762,25 +729,25 @@
 
     invoke-interface {v10, v11}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    .line 226
+    .line 220
     invoke-virtual {v8}, Lcom/iMe/fork/controller/ToolsController;->saveConfig()V
 
     :cond_7
     const-string v8, "iMe_allChatsTabFabs"
 
-    .line 231
+    .line 225
     invoke-interface {v1, v8}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z
 
     move-result v10
 
     if-eqz v10, :cond_9
 
-    .line 232
+    .line 226
     invoke-interface/range {p1 .. p1}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
     move-result-object v10
 
-    .line 233
+    .line 227
     invoke-interface {v1, v8, v9}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v11
@@ -794,10 +761,10 @@
 
     invoke-static {v11, v12}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 235
+    .line 229
     invoke-interface {v10, v8}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    .line 236
+    .line 230
     invoke-static {}, Lcom/iMe/common/TelegramPreferenceKeys$User;->selectedAllChatsTabFabs()Ljava/lang/String;
 
     move-result-object v8
@@ -814,7 +781,7 @@
 
     invoke-interface {v10, v8, v11}, Landroid/content/SharedPreferences$Editor;->putStringSet(Ljava/lang/String;Ljava/util/Set;)Landroid/content/SharedPreferences$Editor;
 
-    .line 237
+    .line 231
     :goto_5
     invoke-interface {v10}, Landroid/content/SharedPreferences$Editor;->apply()V
 
@@ -825,7 +792,7 @@
     :cond_9
     move v8, v3
 
-    .line 240
+    .line 234
     :goto_6
     invoke-static {}, Lcom/iMe/common/TelegramPreferenceKeys$User;->isSortingChatsEnabled()Ljava/lang/String;
 
@@ -837,12 +804,12 @@
 
     if-eqz v10, :cond_c
 
-    .line 241
+    .line 235
     invoke-interface/range {p1 .. p1}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
     move-result-object v8
 
-    .line 242
+    .line 236
     invoke-static {}, Lcom/iMe/fork/enums/SortingFilter;->values()[Lcom/iMe/fork/enums/SortingFilter;
 
     move-result-object v10
@@ -857,7 +824,7 @@
 
     aget-object v13, v10, v12
 
-    .line 243
+    .line 237
     new-instance v14, Ljava/lang/StringBuilder;
 
     invoke-direct {v14}, Ljava/lang/StringBuilder;-><init>()V
@@ -878,7 +845,7 @@
 
     move-result-object v14
 
-    .line 244
+    .line 238
     invoke-interface {v1, v14, v9}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v15
@@ -890,10 +857,10 @@
     :cond_a
     invoke-static {v15, v6}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 246
+    .line 240
     invoke-interface {v8, v14}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    .line 247
+    .line 241
     invoke-static {v13}, Lcom/iMe/common/TelegramPreferenceKeys$User;->buildSortingTabSelectedFabsKey(Lcom/iMe/fork/enums/SortingFilter;)Ljava/lang/String;
 
     move-result-object v13
@@ -915,7 +882,7 @@
 
     goto :goto_7
 
-    .line 249
+    .line 243
     :cond_b
     invoke-interface {v8}, Landroid/content/SharedPreferences$Editor;->apply()V
 
@@ -924,7 +891,7 @@
     :cond_c
     if-eqz v8, :cond_0
 
-    .line 253
+    .line 247
     sget-object v6, Lcom/iMe/fork/controller/FiltersController;->Companion:Lcom/iMe/fork/controller/FiltersController$Companion;
 
     invoke-virtual {v6, v0}, Lcom/iMe/fork/controller/FiltersController$Companion;->getInstance(I)Lcom/iMe/fork/controller/FiltersController;
@@ -935,7 +902,7 @@
 
     goto/16 :goto_1
 
-    .line 215
+    .line 209
     :pswitch_6
     invoke-static {}, Lcom/iMe/common/TelegramPreferenceKeys$User;->selectedMessagePopupItems()Ljava/lang/String;
 
@@ -947,14 +914,14 @@
 
     if-eqz v6, :cond_0
 
-    .line 216
+    .line 210
     sget-object v6, Lcom/iMe/fork/controller/ToolsController;->Companion:Lcom/iMe/fork/controller/ToolsController$Companion;
 
     invoke-virtual {v6, v0}, Lcom/iMe/fork/controller/ToolsController$Companion;->getInstance(I)Lcom/iMe/fork/controller/ToolsController;
 
     move-result-object v6
 
-    .line 217
+    .line 211
     invoke-virtual {v6}, Lcom/iMe/fork/controller/ToolsController;->getSelectedMessagePopupItems()Ljava/util/Set;
 
     move-result-object v7
@@ -963,12 +930,12 @@
 
     invoke-interface {v7, v8}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    .line 218
+    .line 212
     invoke-virtual {v6}, Lcom/iMe/fork/controller/ToolsController;->saveConfig()V
 
     goto/16 :goto_1
 
-    .line 165
+    .line 159
     :pswitch_7
     invoke-static {}, Lcom/iMe/common/TelegramPreferenceKeys$User;->isMultiPanelEnabled()Ljava/lang/String;
 
@@ -980,12 +947,12 @@
 
     if-eqz v6, :cond_11
 
-    .line 166
+    .line 160
     invoke-interface/range {p1 .. p1}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
     move-result-object v6
 
-    .line 167
+    .line 161
     sget-object v7, Lcom/iMe/fork/enums/DialogType;->CHANNEL:Lcom/iMe/fork/enums/DialogType;
 
     invoke-virtual {v7}, Lcom/iMe/fork/enums/DialogType;->getMultiPanelButtons()Ljava/util/List;
@@ -1011,7 +978,7 @@
 
     check-cast v8, Lcom/iMe/fork/enums/MultiPanelButton;
 
-    .line 168
+    .line 162
     sget-object v9, Lcom/iMe/fork/enums/MultiPanelButton;->MUTE:Lcom/iMe/fork/enums/MultiPanelButton;
 
     if-eq v8, v9, :cond_d
@@ -1020,7 +987,7 @@
 
     if-eq v8, v9, :cond_d
 
-    .line 169
+    .line 163
     sget-object v9, Lcom/iMe/fork/enums/DialogType;->CHANNEL:Lcom/iMe/fork/enums/DialogType;
 
     invoke-static {v8, v9}, Lcom/iMe/common/TelegramPreferenceKeys$User;->buildMultiPanelButtonPositionKey(Lcom/iMe/fork/enums/MultiPanelButton;Lcom/iMe/fork/enums/DialogType;)Ljava/lang/String;
@@ -1031,7 +998,7 @@
 
     move-result v10
 
-    .line 170
+    .line 164
     invoke-static {v8, v9}, Lcom/iMe/common/TelegramPreferenceKeys$User;->buildMultiPanelButtonPositionKey(Lcom/iMe/fork/enums/MultiPanelButton;Lcom/iMe/fork/enums/DialogType;)Ljava/lang/String;
 
     move-result-object v8
@@ -1042,7 +1009,7 @@
 
     goto :goto_9
 
-    .line 173
+    .line 167
     :cond_e
     sget-object v7, Lcom/iMe/fork/enums/MultiPanelButton;->MUTE:Lcom/iMe/fork/enums/MultiPanelButton;
 
@@ -1054,14 +1021,14 @@
 
     invoke-interface {v6, v9, v3}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
 
-    .line 174
+    .line 168
     invoke-static {v7, v8}, Lcom/iMe/common/TelegramPreferenceKeys$User;->buildMultiPanelButtonEnabledKey(Lcom/iMe/fork/enums/MultiPanelButton;Lcom/iMe/fork/enums/DialogType;)Ljava/lang/String;
 
     move-result-object v7
 
     invoke-interface {v6, v7, v5}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
 
-    .line 175
+    .line 169
     invoke-static {}, Lcom/iMe/fork/enums/DialogType;->values()[Lcom/iMe/fork/enums/DialogType;
 
     move-result-object v7
@@ -1076,7 +1043,7 @@
 
     aget-object v10, v7, v9
 
-    .line 177
+    .line 171
     invoke-virtual {v10}, Lcom/iMe/fork/enums/DialogType;->getMultiPanelButtons()Ljava/util/List;
 
     move-result-object v11
@@ -1101,7 +1068,7 @@
 
     check-cast v13, Lcom/iMe/fork/enums/MultiPanelButton;
 
-    .line 178
+    .line 172
     invoke-static {v13, v10}, Lcom/iMe/common/TelegramPreferenceKeys$User;->buildMultiPanelButtonPositionKey(Lcom/iMe/fork/enums/MultiPanelButton;Lcom/iMe/fork/enums/DialogType;)Ljava/lang/String;
 
     move-result-object v13
@@ -1116,7 +1083,7 @@
 
     goto :goto_b
 
-    .line 180
+    .line 174
     :cond_f
     sget-object v11, Lcom/iMe/fork/enums/MultiPanelButton;->PINS:Lcom/iMe/fork/enums/MultiPanelButton;
 
@@ -1128,7 +1095,7 @@
 
     invoke-interface {v6, v13, v12}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
 
-    .line 181
+    .line 175
     invoke-static {v11, v10}, Lcom/iMe/common/TelegramPreferenceKeys$User;->buildMultiPanelButtonEnabledKey(Lcom/iMe/fork/enums/MultiPanelButton;Lcom/iMe/fork/enums/DialogType;)Ljava/lang/String;
 
     move-result-object v10
@@ -1143,11 +1110,11 @@
 
     goto :goto_a
 
-    .line 183
+    .line 177
     :cond_10
     invoke-interface {v6}, Landroid/content/SharedPreferences$Editor;->apply()V
 
-    .line 184
+    .line 178
     sget-object v6, Lcom/iMe/fork/controller/MultiPanelController;->Companion:Lcom/iMe/fork/controller/MultiPanelController$Companion;
 
     invoke-virtual {v6, v0}, Lcom/iMe/fork/controller/MultiPanelController$Companion;->getInstance(I)Lcom/iMe/fork/controller/MultiPanelController;
@@ -1156,7 +1123,7 @@
 
     invoke-virtual {v6, v1}, Lcom/iMe/fork/controller/MultiPanelController;->loadConfig(Landroid/content/SharedPreferences;)V
 
-    .line 186
+    .line 180
     :cond_11
     invoke-static {}, Lcom/iMe/common/TelegramPreferenceKeys$User;->isSortingChatsEnabled()Ljava/lang/String;
 
@@ -1168,12 +1135,12 @@
 
     if-eqz v6, :cond_0
 
-    .line 187
+    .line 181
     invoke-interface/range {p1 .. p1}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
     move-result-object v6
 
-    .line 188
+    .line 182
     sget-object v7, Lcom/iMe/fork/enums/SortingFilter;->PERSONAL:Lcom/iMe/fork/enums/SortingFilter;
 
     invoke-static {v7}, Lcom/iMe/common/TelegramPreferenceKeys$User;->buildSortingTabPositionKey(Lcom/iMe/fork/enums/SortingFilter;)Ljava/lang/String;
@@ -1188,7 +1155,7 @@
 
     move-result v7
 
-    .line 189
+    .line 183
     sget-object v8, Lcom/iMe/fork/enums/SortingFilter;->Companion:Lcom/iMe/fork/enums/SortingFilter$Companion;
 
     invoke-virtual {v8, v3}, Lcom/iMe/fork/enums/SortingFilter$Companion;->getSortingFilters(Z)Ljava/util/List;
@@ -1214,7 +1181,7 @@
 
     check-cast v9, Lcom/iMe/fork/enums/SortingFilter;
 
-    .line 190
+    .line 184
     sget-object v10, Lcom/iMe/fork/enums/SortingFilter;->MENTIONED_CHATS:Lcom/iMe/fork/enums/SortingFilter;
 
     if-eq v9, v10, :cond_12
@@ -1227,7 +1194,7 @@
 
     if-eq v9, v10, :cond_12
 
-    .line 191
+    .line 185
     invoke-static {v9}, Lcom/iMe/common/TelegramPreferenceKeys$User;->buildSortingTabPositionKey(Lcom/iMe/fork/enums/SortingFilter;)Ljava/lang/String;
 
     move-result-object v10
@@ -1242,7 +1209,7 @@
 
     if-le v10, v7, :cond_12
 
-    .line 193
+    .line 187
     invoke-static {v9}, Lcom/iMe/common/TelegramPreferenceKeys$User;->buildSortingTabPositionKey(Lcom/iMe/fork/enums/SortingFilter;)Ljava/lang/String;
 
     move-result-object v9
@@ -1253,7 +1220,7 @@
 
     goto :goto_c
 
-    .line 197
+    .line 191
     :cond_13
     sget-object v8, Lcom/iMe/fork/enums/SortingFilter;->MENTIONED_CHATS:Lcom/iMe/fork/enums/SortingFilter;
 
@@ -1265,7 +1232,7 @@
 
     invoke-interface {v6, v8, v9}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
 
-    .line 198
+    .line 192
     sget-object v8, Lcom/iMe/fork/enums/SortingFilter;->DELETED_USERS:Lcom/iMe/fork/enums/SortingFilter;
 
     invoke-static {v8}, Lcom/iMe/common/TelegramPreferenceKeys$User;->buildSortingTabPositionKey(Lcom/iMe/fork/enums/SortingFilter;)Ljava/lang/String;
@@ -1276,7 +1243,7 @@
 
     invoke-interface {v6, v8, v7}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
 
-    .line 200
+    .line 194
     sget-object v7, Lcom/iMe/fork/enums/SortingFilter;->CHANNELS:Lcom/iMe/fork/enums/SortingFilter;
 
     invoke-static {v7}, Lcom/iMe/common/TelegramPreferenceKeys$User;->buildSortingTabPositionKey(Lcom/iMe/fork/enums/SortingFilter;)Ljava/lang/String;
@@ -1291,7 +1258,7 @@
 
     move-result v7
 
-    .line 201
+    .line 195
     sget-object v8, Lcom/iMe/fork/enums/SortingFilter;->Companion:Lcom/iMe/fork/enums/SortingFilter$Companion;
 
     invoke-virtual {v8, v3}, Lcom/iMe/fork/enums/SortingFilter$Companion;->getSortingFilters(Z)Ljava/util/List;
@@ -1317,12 +1284,12 @@
 
     check-cast v9, Lcom/iMe/fork/enums/SortingFilter;
 
-    .line 202
+    .line 196
     sget-object v10, Lcom/iMe/fork/enums/SortingFilter;->LIVE_CHATS:Lcom/iMe/fork/enums/SortingFilter;
 
     if-eq v9, v10, :cond_14
 
-    .line 203
+    .line 197
     invoke-static {v9}, Lcom/iMe/common/TelegramPreferenceKeys$User;->buildSortingTabPositionKey(Lcom/iMe/fork/enums/SortingFilter;)Ljava/lang/String;
 
     move-result-object v10
@@ -1337,7 +1304,7 @@
 
     if-le v10, v7, :cond_14
 
-    .line 205
+    .line 199
     invoke-static {v9}, Lcom/iMe/common/TelegramPreferenceKeys$User;->buildSortingTabPositionKey(Lcom/iMe/fork/enums/SortingFilter;)Ljava/lang/String;
 
     move-result-object v9
@@ -1348,7 +1315,7 @@
 
     goto :goto_d
 
-    .line 209
+    .line 203
     :cond_15
     sget-object v8, Lcom/iMe/fork/enums/SortingFilter;->LIVE_CHATS:Lcom/iMe/fork/enums/SortingFilter;
 
@@ -1360,10 +1327,10 @@
 
     invoke-interface {v6, v8, v7}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
 
-    .line 210
+    .line 204
     invoke-interface {v6}, Landroid/content/SharedPreferences$Editor;->apply()V
 
-    .line 211
+    .line 205
     sget-object v6, Lcom/iMe/fork/controller/FiltersController;->Companion:Lcom/iMe/fork/controller/FiltersController$Companion;
 
     invoke-virtual {v6, v0}, Lcom/iMe/fork/controller/FiltersController$Companion;->getInstance(I)Lcom/iMe/fork/controller/FiltersController;
@@ -1374,7 +1341,7 @@
 
     goto/16 :goto_1
 
-    .line 147
+    .line 141
     :pswitch_8
     invoke-static {}, Lcom/iMe/common/TelegramPreferenceKeys$User;->isMultiPanelEnabled()Ljava/lang/String;
 
@@ -1386,12 +1353,12 @@
 
     if-eqz v6, :cond_0
 
-    .line 148
+    .line 142
     invoke-interface/range {p1 .. p1}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
     move-result-object v6
 
-    .line 149
+    .line 143
     sget-object v7, Lcom/iMe/fork/enums/MultiPanelButton;->SEARCH:Lcom/iMe/fork/enums/MultiPanelButton;
 
     sget-object v8, Lcom/iMe/fork/enums/DialogType;->BOT:Lcom/iMe/fork/enums/DialogType;
@@ -1404,7 +1371,7 @@
 
     move-result v7
 
-    .line 150
+    .line 144
     invoke-virtual {v8}, Lcom/iMe/fork/enums/DialogType;->getMultiPanelButtons()Ljava/util/List;
 
     move-result-object v8
@@ -1428,12 +1395,12 @@
 
     check-cast v9, Lcom/iMe/fork/enums/MultiPanelButton;
 
-    .line 151
+    .line 145
     sget-object v10, Lcom/iMe/fork/enums/MultiPanelButton;->CACHE:Lcom/iMe/fork/enums/MultiPanelButton;
 
     if-eq v9, v10, :cond_16
 
-    .line 152
+    .line 146
     sget-object v10, Lcom/iMe/fork/enums/DialogType;->BOT:Lcom/iMe/fork/enums/DialogType;
 
     invoke-static {v9, v10}, Lcom/iMe/common/TelegramPreferenceKeys$User;->buildMultiPanelButtonPositionKey(Lcom/iMe/fork/enums/MultiPanelButton;Lcom/iMe/fork/enums/DialogType;)Ljava/lang/String;
@@ -1446,7 +1413,7 @@
 
     if-lt v11, v7, :cond_16
 
-    .line 154
+    .line 148
     invoke-static {v9, v10}, Lcom/iMe/common/TelegramPreferenceKeys$User;->buildMultiPanelButtonPositionKey(Lcom/iMe/fork/enums/MultiPanelButton;Lcom/iMe/fork/enums/DialogType;)Ljava/lang/String;
 
     move-result-object v9
@@ -1457,7 +1424,7 @@
 
     goto :goto_e
 
-    .line 158
+    .line 152
     :cond_17
     sget-object v8, Lcom/iMe/fork/enums/MultiPanelButton;->CACHE:Lcom/iMe/fork/enums/MultiPanelButton;
 
@@ -1469,17 +1436,17 @@
 
     invoke-interface {v6, v10, v7}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
 
-    .line 159
+    .line 153
     invoke-static {v8, v9}, Lcom/iMe/common/TelegramPreferenceKeys$User;->buildMultiPanelButtonEnabledKey(Lcom/iMe/fork/enums/MultiPanelButton;Lcom/iMe/fork/enums/DialogType;)Ljava/lang/String;
 
     move-result-object v7
 
     invoke-interface {v6, v7, v5}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
 
-    .line 160
+    .line 154
     invoke-interface {v6}, Landroid/content/SharedPreferences$Editor;->apply()V
 
-    .line 161
+    .line 155
     sget-object v6, Lcom/iMe/fork/controller/MultiPanelController;->Companion:Lcom/iMe/fork/controller/MultiPanelController$Companion;
 
     invoke-virtual {v6, v0}, Lcom/iMe/fork/controller/MultiPanelController$Companion;->getInstance(I)Lcom/iMe/fork/controller/MultiPanelController;
@@ -1490,7 +1457,7 @@
 
     goto/16 :goto_1
 
-    .line 118
+    .line 112
     :pswitch_9
     invoke-static {}, Lcom/iMe/common/TelegramPreferenceKeys$User;->isSortingChatsEnabled()Ljava/lang/String;
 
@@ -1502,12 +1469,12 @@
 
     if-eqz v10, :cond_0
 
-    .line 119
+    .line 113
     invoke-interface/range {p1 .. p1}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
     move-result-object v10
 
-    .line 120
+    .line 114
     sget-object v11, Lcom/iMe/fork/enums/SortingFilter;->Companion:Lcom/iMe/fork/enums/SortingFilter$Companion;
 
     invoke-virtual {v11, v3}, Lcom/iMe/fork/enums/SortingFilter$Companion;->getSortingFilters(Z)Ljava/util/List;
@@ -1534,7 +1501,7 @@
 
     check-cast v12, Lcom/iMe/fork/enums/SortingFilter;
 
-    .line 121
+    .line 115
     new-instance v14, Ljava/lang/StringBuilder;
 
     invoke-direct {v14}, Ljava/lang/StringBuilder;-><init>()V
@@ -1555,7 +1522,7 @@
 
     move-result-object v14
 
-    .line 122
+    .line 116
     new-instance v15, Ljava/lang/StringBuilder;
 
     invoke-direct {v15}, Ljava/lang/StringBuilder;-><init>()V
@@ -1576,7 +1543,7 @@
 
     move-result-object v5
 
-    .line 123
+    .line 117
     invoke-interface {v1, v14, v9}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v15
@@ -1588,7 +1555,7 @@
     :cond_18
     invoke-static {v15, v6}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 125
+    .line 119
     invoke-interface {v1, v5, v9}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v3
@@ -1600,7 +1567,7 @@
     :cond_19
     invoke-static {v3, v6}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 127
+    .line 121
     invoke-static {v15, v13}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v13
@@ -1626,7 +1593,7 @@
 
     move-result-object v3
 
-    .line 128
+    .line 122
     :goto_10
     invoke-static {v12}, Lcom/iMe/common/TelegramPreferenceKeys$User;->buildSortingTabSelectedFabsKey(Lcom/iMe/fork/enums/SortingFilter;)Ljava/lang/String;
 
@@ -1664,7 +1631,7 @@
     .line 1621
     check-cast v9, Lcom/iMe/storage/domain/model/filters/FilterFab;
 
-    .line 128
+    .line 122
     invoke-virtual {v9}, Lcom/iMe/storage/domain/model/filters/FilterFab;->getOldPreferenceId()Ljava/lang/String;
 
     move-result-object v9
@@ -1674,7 +1641,7 @@
 
     goto :goto_11
 
-    .line 128
+    .line 122
     :cond_1b
     invoke-virtual {v13, v15}, Lcom/google/gson/Gson;->toJson(Ljava/lang/Object;)Ljava/lang/String;
 
@@ -1682,10 +1649,10 @@
 
     invoke-interface {v10, v12, v3}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    .line 129
+    .line 123
     invoke-interface {v10, v14}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    .line 130
+    .line 124
     invoke-interface {v10, v5}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
     :goto_12
@@ -1704,12 +1671,12 @@
 
     const/4 v6, 0x0
 
-    .line 134
+    .line 128
     invoke-interface {v1, v3, v6}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v7
 
-    .line 135
+    .line 129
     invoke-interface {v1, v5, v6}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v6
@@ -1718,7 +1685,7 @@
 
     if-eqz v6, :cond_1f
 
-    .line 137
+    .line 131
     invoke-static {v7, v13}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v9
@@ -1744,7 +1711,7 @@
 
     move-result-object v6
 
-    .line 138
+    .line 132
     :goto_13
     invoke-static {}, Lcom/iMe/common/TelegramPreferenceKeys$User;->selectedAllChatsTabFabs()Ljava/lang/String;
 
@@ -1782,7 +1749,7 @@
     .line 1621
     check-cast v8, Lcom/iMe/storage/domain/model/filters/FilterFab;
 
-    .line 138
+    .line 132
     invoke-virtual {v8}, Lcom/iMe/storage/domain/model/filters/FilterFab;->getOldPreferenceId()Ljava/lang/String;
 
     move-result-object v8
@@ -1792,7 +1759,7 @@
 
     goto :goto_14
 
-    .line 138
+    .line 132
     :cond_1e
     invoke-virtual {v9, v11}, Lcom/google/gson/Gson;->toJson(Ljava/lang/Object;)Ljava/lang/String;
 
@@ -1800,17 +1767,17 @@
 
     invoke-interface {v10, v7, v6}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    .line 139
+    .line 133
     invoke-interface {v10, v3}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    .line 140
+    .line 134
     invoke-interface {v10, v5}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    .line 142
+    .line 136
     :cond_1f
     invoke-interface {v10}, Landroid/content/SharedPreferences$Editor;->apply()V
 
-    .line 143
+    .line 137
     sget-object v3, Lcom/iMe/fork/controller/FiltersController;->Companion:Lcom/iMe/fork/controller/FiltersController$Companion;
 
     invoke-virtual {v3, v0}, Lcom/iMe/fork/controller/FiltersController$Companion;->getInstance(I)Lcom/iMe/fork/controller/FiltersController;
@@ -1821,7 +1788,7 @@
 
     goto/16 :goto_16
 
-    .line 100
+    .line 94
     :pswitch_a
     invoke-static {}, Lcom/iMe/common/TelegramPreferenceKeys$User;->isSortingChatsEnabled()Ljava/lang/String;
 
@@ -1833,12 +1800,12 @@
 
     if-eqz v3, :cond_22
 
-    .line 101
+    .line 95
     invoke-interface/range {p1 .. p1}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
     move-result-object v3
 
-    .line 102
+    .line 96
     sget-object v5, Lcom/iMe/fork/enums/SortingFilter;->GROUPS:Lcom/iMe/fork/enums/SortingFilter;
 
     invoke-static {v5}, Lcom/iMe/common/TelegramPreferenceKeys$User;->buildSortingTabPositionKey(Lcom/iMe/fork/enums/SortingFilter;)Ljava/lang/String;
@@ -1853,7 +1820,7 @@
 
     move-result v5
 
-    .line 103
+    .line 97
     sget-object v6, Lcom/iMe/fork/enums/SortingFilter;->Companion:Lcom/iMe/fork/enums/SortingFilter$Companion;
 
     const/4 v7, 0x0
@@ -1881,7 +1848,7 @@
 
     check-cast v8, Lcom/iMe/fork/enums/SortingFilter;
 
-    .line 104
+    .line 98
     sget-object v9, Lcom/iMe/fork/enums/SortingFilter;->PRIVATE_GROUPS:Lcom/iMe/fork/enums/SortingFilter;
 
     if-eq v8, v9, :cond_20
@@ -1890,7 +1857,7 @@
 
     if-eq v8, v9, :cond_20
 
-    .line 105
+    .line 99
     invoke-static {v8}, Lcom/iMe/common/TelegramPreferenceKeys$User;->buildSortingTabPositionKey(Lcom/iMe/fork/enums/SortingFilter;)Ljava/lang/String;
 
     move-result-object v9
@@ -1905,7 +1872,7 @@
 
     if-le v9, v5, :cond_20
 
-    .line 107
+    .line 101
     invoke-static {v8}, Lcom/iMe/common/TelegramPreferenceKeys$User;->buildSortingTabPositionKey(Lcom/iMe/fork/enums/SortingFilter;)Ljava/lang/String;
 
     move-result-object v8
@@ -1916,7 +1883,7 @@
 
     goto :goto_15
 
-    .line 111
+    .line 105
     :cond_21
     sget-object v6, Lcom/iMe/fork/enums/SortingFilter;->PRIVATE_GROUPS:Lcom/iMe/fork/enums/SortingFilter;
 
@@ -1928,7 +1895,7 @@
 
     invoke-interface {v3, v6, v8}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
 
-    .line 112
+    .line 106
     sget-object v6, Lcom/iMe/fork/enums/SortingFilter;->PUBLIC_GROUPS:Lcom/iMe/fork/enums/SortingFilter;
 
     invoke-static {v6}, Lcom/iMe/common/TelegramPreferenceKeys$User;->buildSortingTabPositionKey(Lcom/iMe/fork/enums/SortingFilter;)Ljava/lang/String;
@@ -1939,10 +1906,10 @@
 
     invoke-interface {v3, v6, v5}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
 
-    .line 113
+    .line 107
     invoke-interface {v3}, Landroid/content/SharedPreferences$Editor;->apply()V
 
-    .line 114
+    .line 108
     sget-object v3, Lcom/iMe/fork/controller/FiltersController;->Companion:Lcom/iMe/fork/controller/FiltersController$Companion;
 
     invoke-virtual {v3, v0}, Lcom/iMe/fork/controller/FiltersController$Companion;->getInstance(I)Lcom/iMe/fork/controller/FiltersController;
@@ -1957,7 +1924,7 @@
     :goto_16
     const/4 v7, 0x0
 
-    .line 305
+    .line 299
     :goto_17
     invoke-interface/range {p1 .. p1}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 

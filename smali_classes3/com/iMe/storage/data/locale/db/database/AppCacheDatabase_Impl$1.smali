@@ -68,7 +68,7 @@
     .line 60
     invoke-interface {p1, v0}, Landroidx/sqlite/db/SupportSQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
-    const-string v0, "CREATE TABLE IF NOT EXISTS `WalletTokenBalanceDb` (`tgUserId` INTEGER NOT NULL, `coinCode` TEXT NOT NULL, `total` REAL NOT NULL, `totalInDollars` REAL NOT NULL, `rateToDollars` REAL NOT NULL, `ratePercentageChange24h` REAL NOT NULL, `networkType` TEXT NOT NULL, PRIMARY KEY(`tgUserId`, `coinCode`, `networkType`))"
+    const-string v0, "CREATE TABLE IF NOT EXISTS `WalletTokenBalanceDb` (`tgUserId` INTEGER NOT NULL, `total` REAL NOT NULL, `totalInFiatValue` REAL NOT NULL, `totalInFiatSymbol` TEXT NOT NULL, `totalInFiatTicker` TEXT NOT NULL, `rateToFiatValue` REAL NOT NULL, `rateToFiatSymbol` TEXT NOT NULL, `rateToFiatTicker` TEXT NOT NULL, `ratePercentageChange24h` REAL NOT NULL, `address` TEXT NOT NULL, `networkId` TEXT NOT NULL, `avatarUrl` TEXT NOT NULL, `decimals` INTEGER NOT NULL, `ticker` TEXT NOT NULL, `isCoin` INTEGER NOT NULL, `name` TEXT NOT NULL, `website` TEXT NOT NULL, PRIMARY KEY(`tgUserId`, `ticker`, `networkId`))"
 
     .line 61
     invoke-interface {p1, v0}, Landroidx/sqlite/db/SupportSQLiteDatabase;->execSQL(Ljava/lang/String;)V
@@ -83,7 +83,7 @@
     .line 63
     invoke-interface {p1, v0}, Landroidx/sqlite/db/SupportSQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
-    const-string v0, "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, \'ecaf2fd7b9ef0744a7de30d3137a52cb\')"
+    const-string v0, "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, \'9018970c7b9d213d33ac9bd2b79bcb38\')"
 
     .line 64
     invoke-interface {p1, v0}, Landroidx/sqlite/db/SupportSQLiteDatabase;->execSQL(Ljava/lang/String;)V
@@ -704,7 +704,7 @@
     :cond_2
     new-instance v1, Ljava/util/HashMap;
 
-    const/4 v2, 0x7
+    const/16 v2, 0x11
 
     invoke-direct {v1, v2}, Ljava/util/HashMap;-><init>(I)V
 
@@ -734,23 +734,6 @@
     .line 152
     new-instance v2, Landroidx/room/util/TableInfo$Column;
 
-    const/4 v13, 0x2
-
-    const-string v10, "coinCode"
-
-    const-string v11, "TEXT"
-
-    move-object v9, v2
-
-    invoke-direct/range {v9 .. v15}, Landroidx/room/util/TableInfo$Column;-><init>(Ljava/lang/String;Ljava/lang/String;ZILjava/lang/String;I)V
-
-    const-string v3, "coinCode"
-
-    invoke-virtual {v1, v3, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 153
-    new-instance v2, Landroidx/room/util/TableInfo$Column;
-
     const/4 v13, 0x0
 
     const-string v10, "total"
@@ -763,7 +746,7 @@
 
     invoke-virtual {v1, v6, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 154
+    .line 153
     new-instance v2, Landroidx/room/util/TableInfo$Column;
 
     const/16 v19, 0x1
@@ -774,7 +757,7 @@
 
     const/16 v22, 0x1
 
-    const-string v17, "totalInDollars"
+    const-string v17, "totalInFiatValue"
 
     const-string v18, "REAL"
 
@@ -782,14 +765,44 @@
 
     invoke-direct/range {v16 .. v22}, Landroidx/room/util/TableInfo$Column;-><init>(Ljava/lang/String;Ljava/lang/String;ZILjava/lang/String;I)V
 
-    const-string v3, "totalInDollars"
+    const-string v3, "totalInFiatValue"
+
+    invoke-virtual {v1, v3, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 154
+    new-instance v2, Landroidx/room/util/TableInfo$Column;
+
+    const-string v10, "totalInFiatSymbol"
+
+    const-string v11, "TEXT"
+
+    move-object v9, v2
+
+    invoke-direct/range {v9 .. v15}, Landroidx/room/util/TableInfo$Column;-><init>(Ljava/lang/String;Ljava/lang/String;ZILjava/lang/String;I)V
+
+    const-string v3, "totalInFiatSymbol"
 
     invoke-virtual {v1, v3, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 155
     new-instance v2, Landroidx/room/util/TableInfo$Column;
 
-    const-string v10, "rateToDollars"
+    const-string v10, "totalInFiatTicker"
+
+    const-string v11, "TEXT"
+
+    move-object v9, v2
+
+    invoke-direct/range {v9 .. v15}, Landroidx/room/util/TableInfo$Column;-><init>(Ljava/lang/String;Ljava/lang/String;ZILjava/lang/String;I)V
+
+    const-string v3, "totalInFiatTicker"
+
+    invoke-virtual {v1, v3, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 156
+    new-instance v2, Landroidx/room/util/TableInfo$Column;
+
+    const-string v10, "rateToFiatValue"
 
     const-string v11, "REAL"
 
@@ -797,11 +810,41 @@
 
     invoke-direct/range {v9 .. v15}, Landroidx/room/util/TableInfo$Column;-><init>(Ljava/lang/String;Ljava/lang/String;ZILjava/lang/String;I)V
 
-    const-string v3, "rateToDollars"
+    const-string v3, "rateToFiatValue"
 
     invoke-virtual {v1, v3, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 156
+    .line 157
+    new-instance v2, Landroidx/room/util/TableInfo$Column;
+
+    const-string v10, "rateToFiatSymbol"
+
+    const-string v11, "TEXT"
+
+    move-object v9, v2
+
+    invoke-direct/range {v9 .. v15}, Landroidx/room/util/TableInfo$Column;-><init>(Ljava/lang/String;Ljava/lang/String;ZILjava/lang/String;I)V
+
+    const-string v3, "rateToFiatSymbol"
+
+    invoke-virtual {v1, v3, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 158
+    new-instance v2, Landroidx/room/util/TableInfo$Column;
+
+    const-string v10, "rateToFiatTicker"
+
+    const-string v11, "TEXT"
+
+    move-object v9, v2
+
+    invoke-direct/range {v9 .. v15}, Landroidx/room/util/TableInfo$Column;-><init>(Ljava/lang/String;Ljava/lang/String;ZILjava/lang/String;I)V
+
+    const-string v3, "rateToFiatTicker"
+
+    invoke-virtual {v1, v3, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 159
     new-instance v2, Landroidx/room/util/TableInfo$Column;
 
     const-string v10, "ratePercentageChange24h"
@@ -816,12 +859,10 @@
 
     invoke-virtual {v1, v3, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 157
+    .line 160
     new-instance v2, Landroidx/room/util/TableInfo$Column;
 
-    const/4 v13, 0x3
-
-    const-string v10, "networkType"
+    const-string v10, "address"
 
     const-string v11, "TEXT"
 
@@ -829,40 +870,153 @@
 
     invoke-direct/range {v9 .. v15}, Landroidx/room/util/TableInfo$Column;-><init>(Ljava/lang/String;Ljava/lang/String;ZILjava/lang/String;I)V
 
-    const-string v3, "networkType"
+    const-string v3, "address"
 
     invoke-virtual {v1, v3, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 158
+    .line 161
+    new-instance v2, Landroidx/room/util/TableInfo$Column;
+
+    const/4 v13, 0x3
+
+    const-string v10, "networkId"
+
+    const-string v11, "TEXT"
+
+    move-object v9, v2
+
+    invoke-direct/range {v9 .. v15}, Landroidx/room/util/TableInfo$Column;-><init>(Ljava/lang/String;Ljava/lang/String;ZILjava/lang/String;I)V
+
+    const-string v3, "networkId"
+
+    invoke-virtual {v1, v3, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 162
+    new-instance v2, Landroidx/room/util/TableInfo$Column;
+
+    const/4 v13, 0x0
+
+    const-string v10, "avatarUrl"
+
+    const-string v11, "TEXT"
+
+    move-object v9, v2
+
+    invoke-direct/range {v9 .. v15}, Landroidx/room/util/TableInfo$Column;-><init>(Ljava/lang/String;Ljava/lang/String;ZILjava/lang/String;I)V
+
+    const-string v3, "avatarUrl"
+
+    invoke-virtual {v1, v3, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 163
+    new-instance v2, Landroidx/room/util/TableInfo$Column;
+
+    const-string v10, "decimals"
+
+    const-string v11, "INTEGER"
+
+    move-object v9, v2
+
+    invoke-direct/range {v9 .. v15}, Landroidx/room/util/TableInfo$Column;-><init>(Ljava/lang/String;Ljava/lang/String;ZILjava/lang/String;I)V
+
+    const-string v3, "decimals"
+
+    invoke-virtual {v1, v3, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 164
+    new-instance v2, Landroidx/room/util/TableInfo$Column;
+
+    const/4 v13, 0x2
+
+    const-string v10, "ticker"
+
+    const-string v11, "TEXT"
+
+    move-object v9, v2
+
+    invoke-direct/range {v9 .. v15}, Landroidx/room/util/TableInfo$Column;-><init>(Ljava/lang/String;Ljava/lang/String;ZILjava/lang/String;I)V
+
+    const-string v3, "ticker"
+
+    invoke-virtual {v1, v3, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 165
+    new-instance v2, Landroidx/room/util/TableInfo$Column;
+
+    const/4 v13, 0x0
+
+    const-string v10, "isCoin"
+
+    const-string v11, "INTEGER"
+
+    move-object v9, v2
+
+    invoke-direct/range {v9 .. v15}, Landroidx/room/util/TableInfo$Column;-><init>(Ljava/lang/String;Ljava/lang/String;ZILjava/lang/String;I)V
+
+    const-string v3, "isCoin"
+
+    invoke-virtual {v1, v3, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 166
+    new-instance v2, Landroidx/room/util/TableInfo$Column;
+
+    const-string v10, "name"
+
+    const-string v11, "TEXT"
+
+    move-object v9, v2
+
+    invoke-direct/range {v9 .. v15}, Landroidx/room/util/TableInfo$Column;-><init>(Ljava/lang/String;Ljava/lang/String;ZILjava/lang/String;I)V
+
+    const-string v3, "name"
+
+    invoke-virtual {v1, v3, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 167
+    new-instance v2, Landroidx/room/util/TableInfo$Column;
+
+    const-string v10, "website"
+
+    const-string v11, "TEXT"
+
+    move-object v9, v2
+
+    invoke-direct/range {v9 .. v15}, Landroidx/room/util/TableInfo$Column;-><init>(Ljava/lang/String;Ljava/lang/String;ZILjava/lang/String;I)V
+
+    const-string v3, "website"
+
+    invoke-virtual {v1, v3, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 168
     new-instance v2, Ljava/util/HashSet;
 
     invoke-direct {v2, v7}, Ljava/util/HashSet;-><init>(I)V
 
-    .line 159
+    .line 169
     new-instance v3, Ljava/util/HashSet;
 
     invoke-direct {v3, v7}, Ljava/util/HashSet;-><init>(I)V
 
-    .line 160
+    .line 170
     new-instance v4, Landroidx/room/util/TableInfo;
 
     const-string v5, "WalletTokenBalanceDb"
 
     invoke-direct {v4, v5, v1, v2, v3}, Landroidx/room/util/TableInfo;-><init>(Ljava/lang/String;Ljava/util/Map;Ljava/util/Set;Ljava/util/Set;)V
 
-    .line 161
+    .line 171
     invoke-static {v0, v5}, Landroidx/room/util/TableInfo;->read(Landroidx/sqlite/db/SupportSQLiteDatabase;Ljava/lang/String;)Landroidx/room/util/TableInfo;
 
     move-result-object v1
 
-    .line 162
+    .line 172
     invoke-virtual {v4, v1}, Landroidx/room/util/TableInfo;->equals(Ljava/lang/Object;)Z
 
     move-result v2
 
     if-nez v2, :cond_3
 
-    .line 163
+    .line 173
     new-instance v0, Landroidx/room/RoomOpenHelper$ValidationResult;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -887,7 +1041,7 @@
 
     return-object v0
 
-    .line 167
+    .line 177
     :cond_3
     new-instance v1, Ljava/util/HashMap;
 
@@ -895,7 +1049,7 @@
 
     invoke-direct {v1, v2}, Ljava/util/HashMap;-><init>(I)V
 
-    .line 168
+    .line 178
     new-instance v2, Landroidx/room/util/TableInfo$Column;
 
     const/4 v12, 0x1
@@ -918,7 +1072,7 @@
 
     invoke-virtual {v1, v3, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 169
+    .line 179
     new-instance v2, Landroidx/room/util/TableInfo$Column;
 
     const/4 v13, 0x2
@@ -935,7 +1089,7 @@
 
     invoke-virtual {v1, v3, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 170
+    .line 180
     new-instance v2, Landroidx/room/util/TableInfo$Column;
 
     const/4 v13, 0x0
@@ -952,7 +1106,7 @@
 
     invoke-virtual {v1, v4, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 171
+    .line 181
     new-instance v2, Landroidx/room/util/TableInfo$Column;
 
     const-string v10, "socialPosition"
@@ -967,7 +1121,7 @@
 
     invoke-virtual {v1, v4, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 172
+    .line 182
     new-instance v2, Landroidx/room/util/TableInfo$Column;
 
     const-string v10, "socialElementId"
@@ -982,7 +1136,7 @@
 
     invoke-virtual {v1, v4, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 173
+    .line 183
     new-instance v2, Landroidx/room/util/TableInfo$Column;
 
     const-string v10, "socialElementAvatarUrl"
@@ -997,7 +1151,7 @@
 
     invoke-virtual {v1, v4, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 174
+    .line 184
     new-instance v2, Landroidx/room/util/TableInfo$Column;
 
     const-string v10, "socialUserName"
@@ -1012,7 +1166,7 @@
 
     invoke-virtual {v1, v4, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 175
+    .line 185
     new-instance v2, Landroidx/room/util/TableInfo$Column;
 
     const-string v10, "socialWebUrl"
@@ -1027,7 +1181,7 @@
 
     invoke-virtual {v1, v4, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 176
+    .line 186
     new-instance v2, Landroidx/room/util/TableInfo$Column;
 
     const-string v10, "isActive"
@@ -1042,7 +1196,7 @@
 
     invoke-virtual {v1, v4, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 177
+    .line 187
     new-instance v2, Landroidx/room/util/TableInfo$Column;
 
     const-string v10, "beforeConnectMessage"
@@ -1057,34 +1211,34 @@
 
     invoke-virtual {v1, v4, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 178
+    .line 188
     new-instance v2, Ljava/util/HashSet;
 
     invoke-direct {v2, v7}, Ljava/util/HashSet;-><init>(I)V
 
-    .line 179
+    .line 189
     new-instance v4, Ljava/util/HashSet;
 
     invoke-direct {v4, v7}, Ljava/util/HashSet;-><init>(I)V
 
-    .line 180
+    .line 190
     new-instance v5, Landroidx/room/util/TableInfo;
 
     invoke-direct {v5, v3, v1, v2, v4}, Landroidx/room/util/TableInfo;-><init>(Ljava/lang/String;Ljava/util/Map;Ljava/util/Set;Ljava/util/Set;)V
 
-    .line 181
+    .line 191
     invoke-static {v0, v3}, Landroidx/room/util/TableInfo;->read(Landroidx/sqlite/db/SupportSQLiteDatabase;Ljava/lang/String;)Landroidx/room/util/TableInfo;
 
     move-result-object v0
 
-    .line 182
+    .line 192
     invoke-virtual {v5, v0}, Landroidx/room/util/TableInfo;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
     if-nez v1, :cond_4
 
-    .line 183
+    .line 193
     new-instance v1, Landroidx/room/RoomOpenHelper$ValidationResult;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -1109,7 +1263,7 @@
 
     return-object v1
 
-    .line 187
+    .line 197
     :cond_4
     new-instance v0, Landroidx/room/RoomOpenHelper$ValidationResult;
 

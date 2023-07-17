@@ -49,7 +49,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 68
+    .line 66
     check-cast p1, Lcom/iMe/ui/custom/HorizontalActionButtonsView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/adapter/provider/CryptoAccountProvider$convert$3;->invoke(Lcom/iMe/ui/custom/HorizontalActionButtonsView;)V
@@ -66,7 +66,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 68
+    .line 66
     iget-object v0, p0, Lcom/iMe/ui/adapter/provider/CryptoAccountProvider$convert$3;->$item:Lcom/iMe/model/wallet/home/CryptoAccountItem;
 
     invoke-virtual {v0}, Lcom/iMe/model/wallet/home/CryptoAccountItem;->getActions()Ljava/util/List;

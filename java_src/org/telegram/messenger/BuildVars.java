@@ -12,11 +12,11 @@ public class BuildVars {
     public static String BUILD_VERSION_STRING = null;
     public static boolean CHECK_UPDATES = true;
     public static boolean DEBUG_PRIVATE_VERSION = false;
-    public static boolean DEBUG_VERSION = false;
+    public static boolean DEBUG_VERSION = true;
     public static String GOOGLE_AUTH_CLIENT_ID = null;
     public static String HUAWEI_APP_ID = null;
     public static boolean IS_BILLING_UNAVAILABLE = false;
-    public static boolean LOGS_ENABLED = false;
+    public static boolean LOGS_ENABLED = true;
     public static boolean NO_SCOPED_STORAGE = false;
     public static String PLAYSTORE_APP_URL = null;
     public static String SAFETYNET_KEY = null;
@@ -32,8 +32,8 @@ public class BuildVars {
     static {
         boolean z = true;
         NO_SCOPED_STORAGE = Build.VERSION.SDK_INT <= 29;
-        BUILD_VERSION = 3356;
-        BUILD_VERSION_STRING = "9.6.5";
+        BUILD_VERSION = 3362;
+        BUILD_VERSION_STRING = "9.6.6";
         APP_ID = 4;
         APP_HASH = "014b35b6184100b085b0d0572f9b5103";
         SAFETYNET_KEY = "AIzaSyDqt8P-7F7CPCseMkOiVRgb1LY8RN1bvH8";
@@ -60,7 +60,7 @@ public class BuildVars {
         APP_HASH = "314703a39f45937dcdee8dbb8c2dacbb";
         SAFETYNET_KEY = "";
         SMS_HASH = "+UbHfVTjSrJ";
-        PLAYSTORE_APP_URL = PLAYSTORE_APP_URL.replace(BuildConfig.LIBRARY_PACKAGE_NAME, ApplicationLoader.getApplicationId());
+        PLAYSTORE_APP_URL = PLAYSTORE_APP_URL.replace(BuildConfig.LIBRARY_PACKAGE_NAME, "com.iMe.android");
     }
 
     private static boolean hasDirectCurrency() {
@@ -81,14 +81,14 @@ public class BuildVars {
 
     public static boolean isStandaloneApp() {
         if (standaloneApp == null) {
-            standaloneApp = Boolean.valueOf(ApplicationLoader.applicationContext != null && "org.telegram.messenger.web".replace(BuildConfig.LIBRARY_PACKAGE_NAME, ApplicationLoader.getApplicationId()).equals(ApplicationLoader.applicationContext.getPackageName()));
+            standaloneApp = Boolean.valueOf(ApplicationLoader.applicationContext != null && "org.telegram.messenger.web".replace(BuildConfig.LIBRARY_PACKAGE_NAME, "com.iMe.android").equals(ApplicationLoader.applicationContext.getPackageName()));
         }
         return standaloneApp.booleanValue();
     }
 
     public static boolean isBetaApp() {
         if (betaApp == null) {
-            betaApp = Boolean.valueOf(ApplicationLoader.applicationContext != null && "org.telegram.messenger.beta".replace(BuildConfig.LIBRARY_PACKAGE_NAME, ApplicationLoader.getApplicationId()).equals(ApplicationLoader.applicationContext.getPackageName()));
+            betaApp = Boolean.valueOf(ApplicationLoader.applicationContext != null && "org.telegram.messenger.beta".replace(BuildConfig.LIBRARY_PACKAGE_NAME, "com.iMe.android").equals(ApplicationLoader.applicationContext.getPackageName()));
         }
         return betaApp.booleanValue();
     }

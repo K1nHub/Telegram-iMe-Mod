@@ -24,31 +24,31 @@
 
 .field public static final buyButtonWidth:I = 0x7f040096
 
-.field public static final customThemeStyle:I = 0x7f040146
+.field public static final customThemeStyle:I = 0x7f040147
 
-.field public static final environment:I = 0x7f040193
+.field public static final environment:I = 0x7f040194
 
-.field public static final fragmentMode:I = 0x7f0401dc
+.field public static final fragmentMode:I = 0x7f0401dd
 
-.field public static final fragmentStyle:I = 0x7f0401dd
+.field public static final fragmentStyle:I = 0x7f0401de
 
-.field public static final maskedWalletDetailsBackground:I = 0x7f0402af
+.field public static final maskedWalletDetailsBackground:I = 0x7f0402b0
 
-.field public static final maskedWalletDetailsButtonBackground:I = 0x7f0402b0
+.field public static final maskedWalletDetailsButtonBackground:I = 0x7f0402b1
 
-.field public static final maskedWalletDetailsButtonTextAppearance:I = 0x7f0402b1
+.field public static final maskedWalletDetailsButtonTextAppearance:I = 0x7f0402b2
 
-.field public static final maskedWalletDetailsHeaderTextAppearance:I = 0x7f0402b2
+.field public static final maskedWalletDetailsHeaderTextAppearance:I = 0x7f0402b3
 
-.field public static final maskedWalletDetailsLogoImageType:I = 0x7f0402b3
+.field public static final maskedWalletDetailsLogoImageType:I = 0x7f0402b4
 
-.field public static final maskedWalletDetailsLogoTextColor:I = 0x7f0402b4
+.field public static final maskedWalletDetailsLogoTextColor:I = 0x7f0402b5
 
-.field public static final maskedWalletDetailsTextAppearance:I = 0x7f0402b5
+.field public static final maskedWalletDetailsTextAppearance:I = 0x7f0402b6
 
-.field public static final toolbarTextColorStyle:I = 0x7f040463
+.field public static final toolbarTextColorStyle:I = 0x7f040465
 
-.field public static final windowTransitionStyle:I = 0x7f0404af
+.field public static final windowTransitionStyle:I = 0x7f0404b1
 
 
 # direct methods

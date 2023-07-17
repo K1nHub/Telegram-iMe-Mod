@@ -19,7 +19,7 @@
 .method public constructor <init>([[B[I)V
     .locals 1
 
-    const-string v0, "segments"
+    const-string/jumbo v0, "segments"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 

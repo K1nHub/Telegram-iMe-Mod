@@ -4,16 +4,20 @@
 
 
 # instance fields
-.field private final hasAccess:Z
-
 .field private final isSet:Z
+
+.field private final platform:Ljava/lang/String;
 
 .field private final value:Ljava/lang/String;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;ZZ)V
-    .locals 0
+.method public constructor <init>(Ljava/lang/String;ZLjava/lang/String;)V
+    .locals 1
+
+    const-string v0, "platform"
+
+    invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 3
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,12 +29,12 @@
     iput-boolean p2, p0, Lcom/iMe/storage/data/network/model/response/crypto/wallet/AccountWalletAddressResponse;->isSet:Z
 
     .line 6
-    iput-boolean p3, p0, Lcom/iMe/storage/data/network/model/response/crypto/wallet/AccountWalletAddressResponse;->hasAccess:Z
+    iput-object p3, p0, Lcom/iMe/storage/data/network/model/response/crypto/wallet/AccountWalletAddressResponse;->platform:Ljava/lang/String;
 
     return-void
 .end method
 
-.method public static synthetic copy$default(Lcom/iMe/storage/data/network/model/response/crypto/wallet/AccountWalletAddressResponse;Ljava/lang/String;ZZILjava/lang/Object;)Lcom/iMe/storage/data/network/model/response/crypto/wallet/AccountWalletAddressResponse;
+.method public static synthetic copy$default(Lcom/iMe/storage/data/network/model/response/crypto/wallet/AccountWalletAddressResponse;Ljava/lang/String;ZLjava/lang/String;ILjava/lang/Object;)Lcom/iMe/storage/data/network/model/response/crypto/wallet/AccountWalletAddressResponse;
     .locals 0
 
     and-int/lit8 p5, p4, 0x1
@@ -51,10 +55,10 @@
 
     if-eqz p4, :cond_2
 
-    iget-boolean p3, p0, Lcom/iMe/storage/data/network/model/response/crypto/wallet/AccountWalletAddressResponse;->hasAccess:Z
+    iget-object p3, p0, Lcom/iMe/storage/data/network/model/response/crypto/wallet/AccountWalletAddressResponse;->platform:Ljava/lang/String;
 
     :cond_2
-    invoke-virtual {p0, p1, p2, p3}, Lcom/iMe/storage/data/network/model/response/crypto/wallet/AccountWalletAddressResponse;->copy(Ljava/lang/String;ZZ)Lcom/iMe/storage/data/network/model/response/crypto/wallet/AccountWalletAddressResponse;
+    invoke-virtual {p0, p1, p2, p3}, Lcom/iMe/storage/data/network/model/response/crypto/wallet/AccountWalletAddressResponse;->copy(Ljava/lang/String;ZLjava/lang/String;)Lcom/iMe/storage/data/network/model/response/crypto/wallet/AccountWalletAddressResponse;
 
     move-result-object p0
 
@@ -79,20 +83,24 @@
     return v0
 .end method
 
-.method public final component3()Z
+.method public final component3()Ljava/lang/String;
     .locals 1
 
-    iget-boolean v0, p0, Lcom/iMe/storage/data/network/model/response/crypto/wallet/AccountWalletAddressResponse;->hasAccess:Z
+    iget-object v0, p0, Lcom/iMe/storage/data/network/model/response/crypto/wallet/AccountWalletAddressResponse;->platform:Ljava/lang/String;
 
-    return v0
+    return-object v0
 .end method
 
-.method public final copy(Ljava/lang/String;ZZ)Lcom/iMe/storage/data/network/model/response/crypto/wallet/AccountWalletAddressResponse;
+.method public final copy(Ljava/lang/String;ZLjava/lang/String;)Lcom/iMe/storage/data/network/model/response/crypto/wallet/AccountWalletAddressResponse;
     .locals 1
+
+    const-string v0, "platform"
+
+    invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     new-instance v0, Lcom/iMe/storage/data/network/model/response/crypto/wallet/AccountWalletAddressResponse;
 
-    invoke-direct {v0, p1, p2, p3}, Lcom/iMe/storage/data/network/model/response/crypto/wallet/AccountWalletAddressResponse;-><init>(Ljava/lang/String;ZZ)V
+    invoke-direct {v0, p1, p2, p3}, Lcom/iMe/storage/data/network/model/response/crypto/wallet/AccountWalletAddressResponse;-><init>(Ljava/lang/String;ZLjava/lang/String;)V
 
     return-object v0
 .end method
@@ -140,11 +148,15 @@
     return v2
 
     :cond_3
-    iget-boolean v1, p0, Lcom/iMe/storage/data/network/model/response/crypto/wallet/AccountWalletAddressResponse;->hasAccess:Z
+    iget-object v1, p0, Lcom/iMe/storage/data/network/model/response/crypto/wallet/AccountWalletAddressResponse;->platform:Ljava/lang/String;
 
-    iget-boolean p1, p1, Lcom/iMe/storage/data/network/model/response/crypto/wallet/AccountWalletAddressResponse;->hasAccess:Z
+    iget-object p1, p1, Lcom/iMe/storage/data/network/model/response/crypto/wallet/AccountWalletAddressResponse;->platform:Ljava/lang/String;
 
-    if-eq v1, p1, :cond_4
+    invoke-static {v1, p1}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result p1
+
+    if-nez p1, :cond_4
 
     return v2
 
@@ -152,13 +164,13 @@
     return v0
 .end method
 
-.method public final getHasAccess()Z
+.method public final getPlatform()Ljava/lang/String;
     .locals 1
 
     .line 6
-    iget-boolean v0, p0, Lcom/iMe/storage/data/network/model/response/crypto/wallet/AccountWalletAddressResponse;->hasAccess:Z
+    iget-object v0, p0, Lcom/iMe/storage/data/network/model/response/crypto/wallet/AccountWalletAddressResponse;->platform:Ljava/lang/String;
 
-    return v0
+    return-object v0
 .end method
 
 .method public final getValue()Ljava/lang/String;
@@ -171,7 +183,7 @@
 .end method
 
 .method public hashCode()I
-    .locals 3
+    .locals 2
 
     iget-object v0, p0, Lcom/iMe/storage/data/network/model/response/crypto/wallet/AccountWalletAddressResponse;->value:Ljava/lang/String;
 
@@ -191,28 +203,22 @@
 
     iget-boolean v1, p0, Lcom/iMe/storage/data/network/model/response/crypto/wallet/AccountWalletAddressResponse;->isSet:Z
 
-    const/4 v2, 0x1
-
     if-eqz v1, :cond_1
 
-    move v1, v2
+    const/4 v1, 0x1
 
     :cond_1
     add-int/2addr v0, v1
 
     mul-int/lit8 v0, v0, 0x1f
 
-    iget-boolean v1, p0, Lcom/iMe/storage/data/network/model/response/crypto/wallet/AccountWalletAddressResponse;->hasAccess:Z
+    iget-object v1, p0, Lcom/iMe/storage/data/network/model/response/crypto/wallet/AccountWalletAddressResponse;->platform:Ljava/lang/String;
 
-    if-eqz v1, :cond_2
+    invoke-virtual {v1}, Ljava/lang/String;->hashCode()I
 
-    goto :goto_1
+    move-result v1
 
-    :cond_2
-    move v2, v1
-
-    :goto_1
-    add-int/2addr v0, v2
+    add-int/2addr v0, v1
 
     return v0
 .end method
@@ -249,13 +255,13 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
-    const-string v1, ", hasAccess="
+    const-string v1, ", platform="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-boolean v1, p0, Lcom/iMe/storage/data/network/model/response/crypto/wallet/AccountWalletAddressResponse;->hasAccess:Z
+    iget-object v1, p0, Lcom/iMe/storage/data/network/model/response/crypto/wallet/AccountWalletAddressResponse;->platform:Ljava/lang/String;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     const/16 v1, 0x29
 

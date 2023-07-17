@@ -14,7 +14,7 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.functions.Function3;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Lambda;
-import org.telegram.messenger.C3295R;
+import org.telegram.messenger.C3417R;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: TweetProvider.kt */
 /* renamed from: com.iMe.ui.adapter.provider.TweetProvider$convert$1$2 */
@@ -52,19 +52,19 @@ public final class TweetProvider$convert$1$2 extends Lambda implements Function1
         applyForView.removeItemDecoration(linePagerIndicatorDecoration);
         linePagerIndicatorDecoration2 = this.this$0.itemDecoration;
         applyForView.addItemDecoration(linePagerIndicatorDecoration2);
-        SimpleInitExtensionsKt.quickInit(applyForView, this.$item.getMediaInfo(), C3295R.layout.fork_recylcer_image_item, new C19941(this.this$0, this.$item));
+        SimpleInitExtensionsKt.quickInit(applyForView, this.$item.getMediaInfo(), C3417R.layout.fork_recylcer_image_item, new C19961(this.this$0, this.$item));
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: TweetProvider.kt */
     /* renamed from: com.iMe.ui.adapter.provider.TweetProvider$convert$1$2$1 */
     /* loaded from: classes.dex */
-    public static final class C19941 extends Lambda implements Function3<View, MediaInfoDomain, Integer, Unit> {
+    public static final class C19961 extends Lambda implements Function3<View, MediaInfoDomain, Integer, Unit> {
         final /* synthetic */ TweetItem $item;
         final /* synthetic */ TweetProvider this$0;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C19941(TweetProvider tweetProvider, TweetItem tweetItem) {
+        C19961(TweetProvider tweetProvider, TweetItem tweetItem) {
             super(3);
             this.this$0 = tweetProvider;
             this.$item = tweetItem;

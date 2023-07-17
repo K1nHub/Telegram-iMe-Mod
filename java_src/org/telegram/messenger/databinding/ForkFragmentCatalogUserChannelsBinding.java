@@ -10,8 +10,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.iMe.p031ui.custom.ActionButton;
-import org.telegram.messenger.C3295R;
-import org.telegram.p044ui.Components.RLottieImageView;
+import org.telegram.messenger.C3417R;
+import org.telegram.p043ui.Components.RLottieImageView;
 /* loaded from: classes4.dex */
 public final class ForkFragmentCatalogUserChannelsBinding implements ViewBinding {
     public final ActionButton buttonAdd;
@@ -42,7 +42,7 @@ public final class ForkFragmentCatalogUserChannelsBinding implements ViewBinding
     }
 
     public static ForkFragmentCatalogUserChannelsBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3295R.layout.fork_fragment_catalog_user_channels, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3417R.layout.fork_fragment_catalog_user_channels, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -50,22 +50,22 @@ public final class ForkFragmentCatalogUserChannelsBinding implements ViewBinding
     }
 
     public static ForkFragmentCatalogUserChannelsBinding bind(View view) {
-        int i = C3295R.C3298id.button_add;
+        int i = C3417R.C3420id.button_add;
         ActionButton actionButton = (ActionButton) ViewBindings.findChildViewById(view, i);
         if (actionButton != null) {
-            i = C3295R.C3298id.image_empty;
+            i = C3417R.C3420id.image_empty;
             RLottieImageView rLottieImageView = (RLottieImageView) ViewBindings.findChildViewById(view, i);
             if (rLottieImageView != null) {
-                i = C3295R.C3298id.recycle_user_channels;
+                i = C3417R.C3420id.recycle_user_channels;
                 RecyclerView recyclerView = (RecyclerView) ViewBindings.findChildViewById(view, i);
                 if (recyclerView != null) {
-                    i = C3295R.C3298id.text_empty_description;
+                    i = C3417R.C3420id.text_empty_description;
                     AppCompatTextView appCompatTextView = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
                     if (appCompatTextView != null) {
-                        i = C3295R.C3298id.text_empty_title;
+                        i = C3417R.C3420id.text_empty_title;
                         AppCompatTextView appCompatTextView2 = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
                         if (appCompatTextView2 != null) {
-                            i = C3295R.C3298id.view_empty;
+                            i = C3417R.C3420id.view_empty;
                             NestedScrollView nestedScrollView = (NestedScrollView) ViewBindings.findChildViewById(view, i);
                             if (nestedScrollView != null) {
                                 return new ForkFragmentCatalogUserChannelsBinding((FrameLayout) view, actionButton, rLottieImageView, recyclerView, appCompatTextView, appCompatTextView2, nestedScrollView);

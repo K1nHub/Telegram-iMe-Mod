@@ -1,6 +1,5 @@
 package com.iMe.utils.extentions.common;
 
-import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.PaintDrawable;
 import android.view.View;
@@ -17,7 +16,7 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.p044ui.ActionBar.Theme;
+import org.telegram.p043ui.ActionBar.Theme;
 /* compiled from: BaseQuickAdapterExt.kt */
 /* loaded from: classes4.dex */
 public final class BaseQuickAdapterExtKt {
@@ -138,17 +137,24 @@ public final class BaseQuickAdapterExtKt {
         return i == baseViewHolder.getItemViewType();
     }
 
+    public static /* synthetic */ BaseViewHolder loadImage$default(BaseViewHolder baseViewHolder, int i, String str, Integer num, boolean z, int i2, Object obj) {
+        if ((i2 & 4) != 0) {
+            num = null;
+        }
+        if ((i2 & 8) != 0) {
+            z = true;
+        }
+        return loadImage(baseViewHolder, i, str, num, z);
+    }
+
     public static final BaseViewHolder loadImage(BaseViewHolder baseViewHolder, int i, String url, Integer num, boolean z) {
         Intrinsics.checkNotNullParameter(baseViewHolder, "<this>");
         Intrinsics.checkNotNullParameter(url, "url");
-        AppCompatImageView appCompatImageView = (AppCompatImageView) baseViewHolder.getView(i);
-        Context context = appCompatImageView.getContext();
-        Intrinsics.checkNotNullExpressionValue(context, "context");
-        ImageViewExtKt.loadFromWithPlaceholderResId(appCompatImageView, url, context, num, z);
+        ImageViewExtKt.loadFrom((AppCompatImageView) baseViewHolder.getView(i), url, num, z);
         return baseViewHolder;
     }
 
-    public static final BaseViewHolder loadImage(BaseViewHolder baseViewHolder, int i, String url, Map<String, String> headers) {
+    public static final BaseViewHolder loadImageWithHeaders(BaseViewHolder baseViewHolder, int i, String url, Map<String, String> headers) {
         Intrinsics.checkNotNullParameter(baseViewHolder, "<this>");
         Intrinsics.checkNotNullParameter(url, "url");
         Intrinsics.checkNotNullParameter(headers, "headers");
@@ -175,6 +181,24 @@ public final class BaseQuickAdapterExtKt {
         Intrinsics.checkNotNullParameter(viewIds, "viewIds");
         for (int i : viewIds) {
             ViewExtKt.withMediumTypeface((TextView) baseViewHolder.getView(i));
+        }
+        return baseViewHolder;
+    }
+
+    public static final BaseViewHolder setThemedImageColor(BaseViewHolder baseViewHolder, int i, int... viewIds) {
+        Intrinsics.checkNotNullParameter(baseViewHolder, "<this>");
+        Intrinsics.checkNotNullParameter(viewIds, "viewIds");
+        for (int i2 : viewIds) {
+            ViewExtKt.setImageColor((ImageView) baseViewHolder.getView(i2), Theme.getColor(i));
+        }
+        return baseViewHolder;
+    }
+
+    public static final BaseViewHolder setThemedTextColor(BaseViewHolder baseViewHolder, int i, int... viewIds) {
+        Intrinsics.checkNotNullParameter(baseViewHolder, "<this>");
+        Intrinsics.checkNotNullParameter(viewIds, "viewIds");
+        for (int i2 : viewIds) {
+            ((TextView) baseViewHolder.getView(i2)).setTextColor(Theme.getColor(i));
         }
         return baseViewHolder;
     }

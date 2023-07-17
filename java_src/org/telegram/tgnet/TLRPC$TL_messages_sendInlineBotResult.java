@@ -8,7 +8,7 @@ public class TLRPC$TL_messages_sendInlineBotResult extends TLObject {
     public boolean hide_via;
 
     /* renamed from: id */
-    public String f1541id;
+    public String f1623id;
     public TLRPC$InputPeer peer;
     public long query_id;
     public long random_id;
@@ -44,7 +44,7 @@ public class TLRPC$TL_messages_sendInlineBotResult extends TLObject {
         }
         abstractSerializedData.writeInt64(this.random_id);
         abstractSerializedData.writeInt64(this.query_id);
-        abstractSerializedData.writeString(this.f1541id);
+        abstractSerializedData.writeString(this.f1623id);
         if ((this.flags & 1024) != 0) {
             abstractSerializedData.writeInt32(this.schedule_date);
         }

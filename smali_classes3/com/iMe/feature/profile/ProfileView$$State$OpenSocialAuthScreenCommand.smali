@@ -30,14 +30,14 @@
 .method constructor <init>(Lcom/iMe/feature/profile/ProfileView$$State;Lcom/iMe/feature/socialMedias/SocialAuthDomain;)V
     .locals 1
 
-    .line 339
+    .line 355
     const-class p1, Lmoxy/viewstate/strategy/OneExecutionStateStrategy;
 
     const-string v0, "openSocialAuthScreen"
 
     invoke-direct {p0, v0, p1}, Lmoxy/viewstate/ViewCommand;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
-    .line 341
+    .line 357
     iput-object p2, p0, Lcom/iMe/feature/profile/ProfileView$$State$OpenSocialAuthScreenCommand;->socialAuthDomain:Lcom/iMe/feature/socialMedias/SocialAuthDomain;
 
     return-void
@@ -48,7 +48,7 @@
 .method public apply(Lcom/iMe/feature/profile/ProfileView;)V
     .locals 1
 
-    .line 346
+    .line 362
     iget-object v0, p0, Lcom/iMe/feature/profile/ProfileView$$State$OpenSocialAuthScreenCommand;->socialAuthDomain:Lcom/iMe/feature/socialMedias/SocialAuthDomain;
 
     invoke-interface {p1, v0}, Lcom/iMe/feature/profile/ProfileView;->openSocialAuthScreen(Lcom/iMe/feature/socialMedias/SocialAuthDomain;)V
@@ -59,7 +59,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 335
+    .line 351
     check-cast p1, Lcom/iMe/feature/profile/ProfileView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/feature/profile/ProfileView$$State$OpenSocialAuthScreenCommand;->apply(Lcom/iMe/feature/profile/ProfileView;)V

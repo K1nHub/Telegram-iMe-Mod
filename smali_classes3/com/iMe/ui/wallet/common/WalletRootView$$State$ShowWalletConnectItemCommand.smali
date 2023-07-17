@@ -30,14 +30,14 @@
 .method constructor <init>(Lcom/iMe/ui/wallet/common/WalletRootView$$State;Z)V
     .locals 1
 
-    .line 213
+    .line 229
     const-class p1, Lmoxy/viewstate/strategy/AddToEndSingleStrategy;
 
     const-string v0, "showWalletConnectItem"
 
     invoke-direct {p0, v0, p1}, Lmoxy/viewstate/ViewCommand;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
-    .line 215
+    .line 231
     iput-boolean p2, p0, Lcom/iMe/ui/wallet/common/WalletRootView$$State$ShowWalletConnectItemCommand;->show:Z
 
     return-void
@@ -48,7 +48,7 @@
 .method public apply(Lcom/iMe/ui/wallet/common/WalletRootView;)V
     .locals 1
 
-    .line 220
+    .line 236
     iget-boolean v0, p0, Lcom/iMe/ui/wallet/common/WalletRootView$$State$ShowWalletConnectItemCommand;->show:Z
 
     invoke-interface {p1, v0}, Lcom/iMe/ui/wallet/common/WalletRootView;->showWalletConnectItem(Z)V
@@ -59,7 +59,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 209
+    .line 225
     check-cast p1, Lcom/iMe/ui/wallet/common/WalletRootView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/wallet/common/WalletRootView$$State$ShowWalletConnectItemCommand;->apply(Lcom/iMe/ui/wallet/common/WalletRootView;)V

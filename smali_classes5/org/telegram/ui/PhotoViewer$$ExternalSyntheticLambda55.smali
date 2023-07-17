@@ -2,34 +2,42 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lcom/iMe/fork/utils/Callbacks$Callback1;
+.implements Landroid/view/View$OnTouchListener;
 
 
-# instance fields
-.field public final synthetic f$0:Lorg/telegram/ui/PhotoViewer;
+# static fields
+.field public static final synthetic INSTANCE:Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda55;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/PhotoViewer;)V
+.method static synthetic constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda55;
+
+    invoke-direct {v0}, Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda55;-><init>()V
+
+    sput-object v0, Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda55;->INSTANCE:Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda55;
+
+    return-void
+.end method
+
+.method private synthetic constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda55;->f$0:Lorg/telegram/ui/PhotoViewer;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;)V
-    .locals 1
+.method public final onTouch(Landroid/view/View;Landroid/view/MotionEvent;)Z
+    .locals 0
 
-    iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda55;->f$0:Lorg/telegram/ui/PhotoViewer;
+    invoke-static {p1, p2}, Lorg/telegram/ui/PhotoViewer;->$r8$lambda$y4_9kJeBgaJpF_cyqaIIP9MFWR4(Landroid/view/View;Landroid/view/MotionEvent;)Z
 
-    check-cast p1, Ljava/lang/String;
+    move-result p1
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/PhotoViewer;->$r8$lambda$Ktb8rtYSjR4t3y0dmplL552Mmzs(Lorg/telegram/ui/PhotoViewer;Ljava/lang/String;)V
-
-    return-void
+    return p1
 .end method

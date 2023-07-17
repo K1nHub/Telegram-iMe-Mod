@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/iMe/ui/wallet/transaction/WalletTransactionsFragment;-><init>(Lcom/iMe/ui/wallet/transaction/WalletTransactionsFragment$ScreenType;Lcom/iMe/storage/domain/model/wallet/token/TokenCode;)V
+    value = Lcom/iMe/ui/wallet/transaction/WalletTransactionsFragment;-><init>(Lcom/iMe/ui/wallet/transaction/WalletTransactionsFragment$ScreenType;Lcom/iMe/storage/domain/model/wallet/token/Token;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -26,7 +26,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nWalletTransactionsFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WalletTransactionsFragment.kt\ncom/iMe/ui/wallet/transaction/WalletTransactionsFragment$presenter$2\n+ 2 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n*L\n1#1,269:1\n56#2,6:270\n*S KotlinDebug\n*F\n+ 1 WalletTransactionsFragment.kt\ncom/iMe/ui/wallet/transaction/WalletTransactionsFragment$presenter$2\n*L\n44#1:270,6\n*E\n"
+    value = "SMAP\nWalletTransactionsFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WalletTransactionsFragment.kt\ncom/iMe/ui/wallet/transaction/WalletTransactionsFragment$presenter$2\n+ 2 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n*L\n1#1,274:1\n56#2,6:275\n*S KotlinDebug\n*F\n+ 1 WalletTransactionsFragment.kt\ncom/iMe/ui/wallet/transaction/WalletTransactionsFragment$presenter$2\n*L\n44#1:275,6\n*E\n"
 .end annotation
 
 

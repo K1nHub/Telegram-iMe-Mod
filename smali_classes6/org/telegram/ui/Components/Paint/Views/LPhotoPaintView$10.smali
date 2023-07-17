@@ -22,14 +22,14 @@
 .method constructor <init>(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;Landroid/content/Context;)V
     .locals 0
 
-    .line 724
+    .line 723
     iput-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$10;->this$0:Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;
 
     invoke-direct {p0, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
     const/4 p1, 0x0
 
-    .line 726
+    .line 725
     invoke-virtual {p0, p1}, Landroid/widget/FrameLayout;->setWillNotDraw(Z)V
 
     return-void
@@ -40,10 +40,10 @@
 .method protected onDraw(Landroid/graphics/Canvas;)V
     .locals 7
 
-    .line 740
+    .line 739
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->onDraw(Landroid/graphics/Canvas;)V
 
-    .line 742
+    .line 741
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$10;->this$0:Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->access$2600(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;)Landroid/graphics/Paint;
@@ -80,7 +80,7 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    .line 744
+    .line 743
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$10;->this$0:Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->access$2400(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;)Lorg/telegram/ui/Components/Paint/Views/PaintTextOptionsView;
@@ -91,7 +91,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/Paint/Views/PaintTextOptionsView;->getTypefaceCellBounds(Landroid/graphics/RectF;)V
 
-    .line 745
+    .line 744
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$10;->this$0:Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->access$2700(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;)Landroid/widget/FrameLayout;
@@ -140,7 +140,7 @@
 
     add-float/2addr v0, v2
 
-    .line 746
+    .line 745
     iget v2, v1, Landroid/graphics/RectF;->left:F
 
     iget-object v3, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$10;->this$0:Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;
@@ -171,7 +171,7 @@
 
     iget-object v4, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$10;->this$0:Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;
 
-    .line 747
+    .line 746
     invoke-static {v4}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->access$2800(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;)Lorg/telegram/ui/Components/Paint/Views/PaintTypefaceListView;
 
     move-result-object v4
@@ -208,7 +208,7 @@
 
     iget-object v5, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$10;->this$0:Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;
 
-    .line 748
+    .line 747
     invoke-static {v5}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->access$2800(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;)Lorg/telegram/ui/Components/Paint/Views/PaintTypefaceListView;
 
     move-result-object v5
@@ -235,7 +235,7 @@
 
     iget-object v5, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$10;->this$0:Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;
 
-    .line 749
+    .line 748
     invoke-static {v5}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->access$2800(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;)Lorg/telegram/ui/Components/Paint/Views/PaintTypefaceListView;
 
     move-result-object v5
@@ -268,10 +268,10 @@
 
     move-result v0
 
-    .line 746
+    .line 745
     invoke-virtual {v1, v2, v3, v4, v0}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 750
+    .line 749
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$10;->this$0:Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->access$2500(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;)F
@@ -292,7 +292,7 @@
 
     int-to-float v0, v0
 
-    .line 752
+    .line 751
     iget-object v2, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$10;->this$0:Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;
 
     invoke-static {v2}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->access$2900(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;)Landroid/graphics/Paint;
@@ -303,7 +303,7 @@
 
     move-result v2
 
-    .line 753
+    .line 752
     iget-object v3, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$10;->this$0:Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;
 
     invoke-static {v3}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->access$2900(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;)Landroid/graphics/Paint;
@@ -324,7 +324,7 @@
 
     invoke-virtual {v3, v4}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    .line 754
+    .line 753
     iget-object v3, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$10;->this$0:Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;
 
     invoke-static {v3}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->access$2900(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;)Landroid/graphics/Paint;
@@ -333,7 +333,7 @@
 
     invoke-virtual {p1, v1, v0, v0, v3}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
 
-    .line 755
+    .line 754
     iget-object v3, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$10;->this$0:Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;
 
     invoke-static {v3}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->access$2900(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;)Landroid/graphics/Paint;
@@ -342,7 +342,7 @@
 
     invoke-virtual {v3, v2}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    .line 757
+    .line 756
     iget-object v2, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$10;->this$0:Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;
 
     invoke-static {v2}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->access$2600(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;)Landroid/graphics/Paint;
@@ -357,7 +357,7 @@
 .method public onTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 1
 
-    .line 731
+    .line 730
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getActionMasked()I
 
     move-result v0
@@ -372,7 +372,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 732
+    .line 731
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$10;->this$0:Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;
 
     const/4 v0, 0x0
@@ -383,7 +383,7 @@
 
     return p1
 
-    .line 735
+    .line 734
     :cond_0
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->onTouchEvent(Landroid/view/MotionEvent;)Z
 

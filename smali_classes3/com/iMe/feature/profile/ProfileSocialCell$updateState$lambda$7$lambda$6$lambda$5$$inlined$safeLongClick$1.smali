@@ -17,7 +17,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nViewExt.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ViewExt.kt\ncom/iMe/utils/extentions/common/ViewExtKt$safeLongClick$1\n+ 2 ProfileSocialCell.kt\ncom/iMe/feature/profile/ProfileSocialCell\n*L\n1#1,360:1\n69#2:361\n*E\n"
+    value = "SMAP\nViewExt.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ViewExt.kt\ncom/iMe/utils/extentions/common/ViewExtKt$safeLongClick$1\n+ 2 ProfileSocialCell.kt\ncom/iMe/feature/profile/ProfileSocialCell\n*L\n1#1,361:1\n69#2:362\n*E\n"
 .end annotation
 
 

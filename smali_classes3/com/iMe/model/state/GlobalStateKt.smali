@@ -10,7 +10,13 @@
 
 .field private static final EMPTY_CONTENT_STATE:Ljava/lang/String; = "empty_content_state"
 
+.field private static final EMPTY_CUSTOM_TOKENS_STATE:Ljava/lang/String; = "empty_custom_tokens_state"
+
 .field private static final EMPTY_STAKING_STATE:Ljava/lang/String; = "empty_staking_state"
+
+.field private static final EMPTY_TOKEN_SEARCH_RESULT_STATE:Ljava/lang/String; = "empty_token_search_result_state"
+
+.field private static final EMPTY_TOKEN_SEARCH_START_STATE:Ljava/lang/String; = "empty_token_search_start_state"
 
 .field private static final EMPTY_TWITTER_SEARCH_STATE:Ljava/lang/String; = "empty_twitter_search_state"
 

@@ -2,13 +2,13 @@ package org.bouncycastle.util;
 
 import com.google.android.exoplayer2.extractor.p015ts.TsExtractor;
 import java.util.NoSuchElementException;
-import p034j$.util.Iterator;
-import p034j$.util.function.Consumer;
+import p033j$.util.Iterator;
+import p033j$.util.function.Consumer;
 /* loaded from: classes4.dex */
 public final class Arrays {
 
     /* loaded from: classes4.dex */
-    public static class Iterator<T> implements java.util.Iterator<T>, p034j$.util.Iterator {
+    public static class Iterator<T> implements java.util.Iterator<T>, p033j$.util.Iterator {
         private final T[] dataArray;
         private int position = 0;
 
@@ -16,17 +16,17 @@ public final class Arrays {
             this.dataArray = tArr;
         }
 
-        @Override // p034j$.util.Iterator
+        @Override // p033j$.util.Iterator
         public /* synthetic */ void forEachRemaining(Consumer consumer) {
             Iterator.CC.$default$forEachRemaining(this, consumer);
         }
 
-        @Override // java.util.Iterator, p034j$.util.Iterator
+        @Override // java.util.Iterator, p033j$.util.Iterator
         public boolean hasNext() {
             return this.position < this.dataArray.length;
         }
 
-        @Override // java.util.Iterator, p034j$.util.Iterator
+        @Override // java.util.Iterator, p033j$.util.Iterator
         public T next() {
             int i = this.position;
             T[] tArr = this.dataArray;
@@ -37,7 +37,7 @@ public final class Arrays {
             throw new NoSuchElementException("Out of elements: " + this.position);
         }
 
-        @Override // java.util.Iterator, p034j$.util.Iterator
+        @Override // java.util.Iterator, p033j$.util.Iterator
         public void remove() {
             throw new UnsupportedOperationException("Cannot remove element from an Array.");
         }

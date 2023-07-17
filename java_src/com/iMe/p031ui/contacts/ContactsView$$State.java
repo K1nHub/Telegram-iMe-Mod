@@ -16,6 +16,11 @@ public class ContactsView$$State extends MvpViewState<ContactsView> implements C
         BaseView.CC.$default$finishScreen(this);
     }
 
+    @Override // com.iMe.p031ui.base.mvp.base.BaseView
+    public /* synthetic */ void removeSelfFromStackImmediately() {
+        BaseView.CC.$default$removeSelfFromStackImmediately(this);
+    }
+
     @Override // com.iMe.p031ui.contacts.ContactsView
     public void openActionMode() {
         OpenActionModeCommand openActionModeCommand = new OpenActionModeCommand(this);

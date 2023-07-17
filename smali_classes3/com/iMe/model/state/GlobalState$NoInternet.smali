@@ -34,13 +34,13 @@
 .method private constructor <init>()V
     .locals 6
 
-    .line 33
+    .line 36
     sget v2, Lorg/telegram/messenger/R$raw;->fork_state_no_internet:I
 
-    .line 34
+    .line 37
     sget v3, Lorg/telegram/messenger/R$string;->common_no_network_state_title:I
 
-    .line 35
+    .line 38
     sget v4, Lorg/telegram/messenger/R$string;->common_no_network_state_description:I
 
     const-string v1, "no_internet_state"
@@ -49,7 +49,7 @@
 
     move-object v0, p0
 
-    .line 31
+    .line 34
     invoke-direct/range {v0 .. v5}, Lcom/iMe/model/state/GlobalState;-><init>(Ljava/lang/String;IIILkotlin/jvm/internal/DefaultConstructorMarker;)V
 
     return-void

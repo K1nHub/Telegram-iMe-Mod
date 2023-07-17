@@ -8,7 +8,7 @@ import androidx.appcompat.widget.LinearLayoutCompat;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.iMe.p031ui.custom.BigActionButton;
-import org.telegram.messenger.C3295R;
+import org.telegram.messenger.C3417R;
 /* loaded from: classes4.dex */
 public final class ForkContentStakingTransactionActionsBinding implements ViewBinding {
     public final BigActionButton buttonAction;
@@ -33,7 +33,7 @@ public final class ForkContentStakingTransactionActionsBinding implements ViewBi
     }
 
     public static ForkContentStakingTransactionActionsBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3295R.layout.fork_content_staking_transaction_actions, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3417R.layout.fork_content_staking_transaction_actions, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -41,13 +41,13 @@ public final class ForkContentStakingTransactionActionsBinding implements ViewBi
     }
 
     public static ForkContentStakingTransactionActionsBinding bind(View view) {
-        int i = C3295R.C3298id.button_action;
+        int i = C3417R.C3420id.button_action;
         BigActionButton bigActionButton = (BigActionButton) ViewBindings.findChildViewById(view, i);
         if (bigActionButton != null) {
-            i = C3295R.C3298id.button_approve_info;
+            i = C3417R.C3420id.button_approve_info;
             AppCompatTextView appCompatTextView = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
             if (appCompatTextView != null) {
-                i = C3295R.C3298id.button_conditions;
+                i = C3417R.C3420id.button_conditions;
                 AppCompatTextView appCompatTextView2 = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
                 if (appCompatTextView2 != null) {
                     return new ForkContentStakingTransactionActionsBinding((LinearLayoutCompat) view, bigActionButton, appCompatTextView, appCompatTextView2);

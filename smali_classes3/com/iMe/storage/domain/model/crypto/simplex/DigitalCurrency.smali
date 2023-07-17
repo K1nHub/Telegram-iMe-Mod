@@ -40,7 +40,7 @@
 
 
 # instance fields
-.field private final currencySymbol:I
+.field private final currencySymbolResId:I
 
 
 # direct methods
@@ -87,14 +87,10 @@
 .method static constructor <clinit>()V
     .locals 4
 
-    .line 8
+    .line 7
     new-instance v0, Lcom/iMe/storage/domain/model/crypto/simplex/DigitalCurrency;
 
-    sget-object v1, Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Crypto$Ethereum$ETH;->INSTANCE:Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Crypto$Ethereum$ETH;
-
-    invoke-virtual {v1}, Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Crypto$Ethereum;->getShortName()I
-
-    move-result v1
+    sget v1, Lcom/iMe/storage/R$string;->currency_short_eth:I
 
     const-string v2, "ETH"
 
@@ -104,14 +100,10 @@
 
     sput-object v0, Lcom/iMe/storage/domain/model/crypto/simplex/DigitalCurrency;->ETH:Lcom/iMe/storage/domain/model/crypto/simplex/DigitalCurrency;
 
-    .line 9
+    .line 8
     new-instance v0, Lcom/iMe/storage/domain/model/crypto/simplex/DigitalCurrency;
 
-    sget-object v1, Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Crypto$Ethereum$USDT;->INSTANCE:Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Crypto$Ethereum$USDT;
-
-    invoke-virtual {v1}, Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Crypto$Ethereum;->getShortName()I
-
-    move-result v1
+    sget v1, Lcom/iMe/storage/R$string;->currency_short_usdt:I
 
     const-string v2, "USDT"
 
@@ -121,14 +113,10 @@
 
     sput-object v0, Lcom/iMe/storage/domain/model/crypto/simplex/DigitalCurrency;->USDT:Lcom/iMe/storage/domain/model/crypto/simplex/DigitalCurrency;
 
-    .line 10
+    .line 9
     new-instance v0, Lcom/iMe/storage/domain/model/crypto/simplex/DigitalCurrency;
 
-    sget-object v1, Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Crypto$Ethereum$BNB;->INSTANCE:Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Crypto$Ethereum$BNB;
-
-    invoke-virtual {v1}, Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Crypto$Ethereum;->getShortName()I
-
-    move-result v1
+    sget v1, Lcom/iMe/storage/R$string;->currency_short_bnb:I
 
     const-string v2, "BNB"
 
@@ -138,14 +126,10 @@
 
     sput-object v0, Lcom/iMe/storage/domain/model/crypto/simplex/DigitalCurrency;->BNB:Lcom/iMe/storage/domain/model/crypto/simplex/DigitalCurrency;
 
-    .line 11
+    .line 10
     new-instance v0, Lcom/iMe/storage/domain/model/crypto/simplex/DigitalCurrency;
 
-    sget-object v1, Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Crypto$Ethereum$BUSD;->INSTANCE:Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Crypto$Ethereum$BUSD;
-
-    invoke-virtual {v1}, Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Crypto$Ethereum;->getShortName()I
-
-    move-result v1
+    sget v1, Lcom/iMe/storage/R$string;->currency_short_busd:I
 
     const-string v2, "BUSD"
 
@@ -155,14 +139,10 @@
 
     sput-object v0, Lcom/iMe/storage/domain/model/crypto/simplex/DigitalCurrency;->BUSD:Lcom/iMe/storage/domain/model/crypto/simplex/DigitalCurrency;
 
-    .line 12
+    .line 11
     new-instance v0, Lcom/iMe/storage/domain/model/crypto/simplex/DigitalCurrency;
 
-    sget-object v1, Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Crypto$Ethereum$MATIC;->INSTANCE:Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Crypto$Ethereum$MATIC;
-
-    invoke-virtual {v1}, Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Crypto$Ethereum;->getShortName()I
-
-    move-result v1
+    sget v1, Lcom/iMe/storage/R$string;->currency_short_matic:I
 
     const-string v2, "MATIC"
 
@@ -197,10 +177,10 @@
         }
     .end annotation
 
-    .line 7
+    .line 6
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    iput p3, p0, Lcom/iMe/storage/domain/model/crypto/simplex/DigitalCurrency;->currencySymbol:I
+    iput p3, p0, Lcom/iMe/storage/domain/model/crypto/simplex/DigitalCurrency;->currencySymbolResId:I
 
     return-void
 .end method
@@ -235,20 +215,20 @@
 
 
 # virtual methods
-.method public final getCurrencySymbol()I
+.method public final getCurrencySymbolResId()I
     .locals 1
 
-    .line 7
-    iget v0, p0, Lcom/iMe/storage/domain/model/crypto/simplex/DigitalCurrency;->currencySymbol:I
+    .line 6
+    iget v0, p0, Lcom/iMe/storage/domain/model/crypto/simplex/DigitalCurrency;->currencySymbolResId:I
 
     return v0
 .end method
 
-.method public getSymbol()I
+.method public getSymbolResId()I
     .locals 1
 
-    .line 15
-    iget v0, p0, Lcom/iMe/storage/domain/model/crypto/simplex/DigitalCurrency;->currencySymbol:I
+    .line 16
+    iget v0, p0, Lcom/iMe/storage/domain/model/crypto/simplex/DigitalCurrency;->currencySymbolResId:I
 
     return v0
 .end method
@@ -256,7 +236,7 @@
 .method public getValue()Ljava/lang/String;
     .locals 1
 
-    .line 14
+    .line 13
     invoke-virtual {p0}, Ljava/lang/Enum;->name()Ljava/lang/String;
 
     move-result-object v0

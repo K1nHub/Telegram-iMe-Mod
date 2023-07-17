@@ -25,7 +25,7 @@ import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
 import org.telegram.messenger.CompoundEmoji;
-import org.telegram.p044ui.Components.AnimatedEmojiSpan;
+import org.telegram.p043ui.Components.AnimatedEmojiSpan;
 /* loaded from: classes4.dex */
 public class Emoji {
     private static String[] DEFAULT_RECENT = null;

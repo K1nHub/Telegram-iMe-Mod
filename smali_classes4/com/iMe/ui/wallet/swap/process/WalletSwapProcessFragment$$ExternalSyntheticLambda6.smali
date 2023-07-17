@@ -27,9 +27,9 @@
 
     iget-object v0, p0, Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessFragment$$ExternalSyntheticLambda6;->f$0:Lkotlin/jvm/functions/Function1;
 
-    check-cast p1, Lcom/iMe/model/wallet/select/SelectableToken;
+    check-cast p1, Lcom/iMe/storage/domain/model/crypto/Network;
 
-    invoke-static {v0, p1}, Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessFragment;->$r8$lambda$_BuVzz2j2NvU4fTXes6QZWBW0Xk(Lkotlin/jvm/functions/Function1;Lcom/iMe/model/wallet/select/SelectableToken;)V
+    invoke-static {v0, p1}, Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessFragment;->$r8$lambda$2hB3UAlehbpyd-O4y4c1lC9VMSA(Lkotlin/jvm/functions/Function1;Lcom/iMe/storage/domain/model/crypto/Network;)V
 
     return-void
 .end method

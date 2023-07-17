@@ -1,6 +1,6 @@
 package org.telegram.tgnet;
 
-import com.google.android.exoplayer2.C0475C;
+import com.google.android.exoplayer2.C0480C;
 import com.google.android.exoplayer2.source.ProgressiveMediaSource;
 import org.telegram.messenger.LiteMode;
 /* loaded from: classes4.dex */
@@ -32,7 +32,7 @@ public class TLRPC$TL_user extends TLRPC$User {
         int readInt322 = abstractSerializedData.readInt32(z);
         this.flags2 = readInt322;
         this.bot_can_edit = (readInt322 & 2) != 0;
-        this.f1574id = abstractSerializedData.readInt64(z);
+        this.f1656id = abstractSerializedData.readInt64(z);
         if ((this.flags & 1) != 0) {
             this.access_hash = abstractSerializedData.readInt64(z);
         }
@@ -138,7 +138,7 @@ public class TLRPC$TL_user extends TLRPC$User {
         this.flags = i14;
         int i15 = this.fake ? i14 | ConnectionsManager.FileTypeFile : i14 & (-67108865);
         this.flags = i15;
-        int i16 = this.bot_attach_menu ? i15 | C0475C.BUFFER_FLAG_FIRST_SAMPLE : i15 & (-134217729);
+        int i16 = this.bot_attach_menu ? i15 | C0480C.BUFFER_FLAG_FIRST_SAMPLE : i15 & (-134217729);
         this.flags = i16;
         int i17 = this.premium ? i16 | 268435456 : i16 & (-268435457);
         this.flags = i17;
@@ -147,7 +147,7 @@ public class TLRPC$TL_user extends TLRPC$User {
         this.flags2 = this.bot_can_edit ? this.flags2 | 2 : this.flags2 & (-3);
         abstractSerializedData.writeInt32(i18);
         abstractSerializedData.writeInt32(this.flags2);
-        abstractSerializedData.writeInt64(this.f1574id);
+        abstractSerializedData.writeInt64(this.f1656id);
         if ((this.flags & 1) != 0) {
             abstractSerializedData.writeInt64(this.access_hash);
         }

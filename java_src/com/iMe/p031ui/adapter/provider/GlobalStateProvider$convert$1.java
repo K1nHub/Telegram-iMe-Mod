@@ -39,5 +39,6 @@ public final class GlobalStateProvider$convert$1 extends Lambda implements Funct
         }
         applyForView.setInternalState(this.$item.getState());
         applyForView.setRetryButtonClickListener(this.this$0.getOnRetryButtonClickAction());
+        applyForView.setEmptyButtonClickListener(this.this$0.getOnEmptyButtonClickAction());
     }
 }

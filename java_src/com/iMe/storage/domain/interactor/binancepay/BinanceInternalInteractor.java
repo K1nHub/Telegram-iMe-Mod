@@ -10,8 +10,6 @@ import com.iMe.storage.domain.model.binancepay.BinanceTokenInfo;
 import com.iMe.storage.domain.model.binancepay.BinanceTransaction;
 import com.iMe.storage.domain.model.binancepay.BinanceUserInfo;
 import com.iMe.storage.domain.model.binancepay.OutputConvertToken;
-import com.iMe.storage.domain.model.crypto.NetworkType;
-import com.iMe.storage.domain.model.wallet.token.TokenCode;
 import com.iMe.storage.domain.repository.binancepay.BinanceInternalRepository;
 import com.iMe.storage.domain.utils.p030rx.SchedulersProvider;
 import io.reactivex.Observable;
@@ -93,17 +91,17 @@ public final class BinanceInternalInteractor {
         return subscribeOn;
     }
 
-    public final Observable<Result<String>> getAddressForTokenReplenish(TokenCode tokenCode, NetworkType networkType) {
-        Intrinsics.checkNotNullParameter(tokenCode, "tokenCode");
-        Intrinsics.checkNotNullParameter(networkType, "networkType");
-        Observable<Result<String>> subscribeOn = this.binanceInternalRepository.getAddressForTokenReplenish(tokenCode, networkType).subscribeOn(this.schedulersProvider.mo699io());
+    public final Observable<Result<String>> getAddressForTokenReplenish(String tokenTicker, String networkId) {
+        Intrinsics.checkNotNullParameter(tokenTicker, "tokenTicker");
+        Intrinsics.checkNotNullParameter(networkId, "networkId");
+        Observable<Result<String>> subscribeOn = this.binanceInternalRepository.getAddressForTokenReplenish(tokenTicker, networkId).subscribeOn(this.schedulersProvider.mo699io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn, "binanceInternalRepositor…(schedulersProvider.io())");
         return subscribeOn;
     }
 
-    public final Observable<Result<List<BinanceTokenInfo>>> getTokensForReplenish(NetworkType networkType) {
-        Intrinsics.checkNotNullParameter(networkType, "networkType");
-        Observable<Result<List<BinanceTokenInfo>>> subscribeOn = this.binanceInternalRepository.getTokensForReplenish(networkType).subscribeOn(this.schedulersProvider.mo699io());
+    public final Observable<Result<List<BinanceTokenInfo>>> getTokensForReplenish(String networkId) {
+        Intrinsics.checkNotNullParameter(networkId, "networkId");
+        Observable<Result<List<BinanceTokenInfo>>> subscribeOn = this.binanceInternalRepository.getTokensForReplenish(networkId).subscribeOn(this.schedulersProvider.mo699io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn, "binanceInternalRepositor…(schedulersProvider.io())");
         return subscribeOn;
     }

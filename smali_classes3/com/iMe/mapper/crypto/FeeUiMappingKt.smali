@@ -10,13 +10,13 @@
 
 
 # direct methods
-.method public static final mapToUiFees(Lcom/iMe/storage/domain/model/crypto/TransactionParams;Lcom/iMe/storage/domain/model/wallet/token/TokenInfo;)Ljava/util/List;
+.method public static final mapToUiFees(Lcom/iMe/storage/domain/model/crypto/TransactionParams;Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;)Ljava/util/List;
     .locals 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Lcom/iMe/storage/domain/model/crypto/TransactionParams;",
-            "Lcom/iMe/storage/domain/model/wallet/token/TokenInfo;",
+            "Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;",
             ")",
             "Ljava/util/List<",
             "Lcom/iMe/model/wallet/crypto/send/fee/GasPriceItem;",
@@ -28,7 +28,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "feeTokenInfo"
+    const-string v0, "feeToken"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -49,7 +49,7 @@
 
     sget-object v4, Lcom/iMe/storage/domain/model/crypto/send/TransactionSpeedLevel;->LOW:Lcom/iMe/storage/domain/model/crypto/send/TransactionSpeedLevel;
 
-    invoke-direct {v3, v4, p1, v1}, Lcom/iMe/model/wallet/crypto/send/fee/GasPriceItem;-><init>(Lcom/iMe/storage/domain/model/crypto/send/TransactionSpeedLevel;Lcom/iMe/storage/domain/model/wallet/token/TokenInfo;Lcom/iMe/storage/domain/model/crypto/send/GasPriceInfo;)V
+    invoke-direct {v3, v4, p1, v1}, Lcom/iMe/model/wallet/crypto/send/fee/GasPriceItem;-><init>(Lcom/iMe/storage/domain/model/crypto/send/TransactionSpeedLevel;Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;Lcom/iMe/storage/domain/model/crypto/send/GasPriceInfo;)V
 
     goto :goto_0
 
@@ -72,7 +72,7 @@
 
     move-result-object v5
 
-    invoke-direct {v3, v4, p1, v5}, Lcom/iMe/model/wallet/crypto/send/fee/GasPriceItem;-><init>(Lcom/iMe/storage/domain/model/crypto/send/TransactionSpeedLevel;Lcom/iMe/storage/domain/model/wallet/token/TokenInfo;Lcom/iMe/storage/domain/model/crypto/send/GasPriceInfo;)V
+    invoke-direct {v3, v4, p1, v5}, Lcom/iMe/model/wallet/crypto/send/fee/GasPriceItem;-><init>(Lcom/iMe/storage/domain/model/crypto/send/TransactionSpeedLevel;Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;Lcom/iMe/storage/domain/model/crypto/send/GasPriceInfo;)V
 
     aput-object v3, v0, v1
 
@@ -89,7 +89,7 @@
 
     sget-object v3, Lcom/iMe/storage/domain/model/crypto/send/TransactionSpeedLevel;->FASTEST:Lcom/iMe/storage/domain/model/crypto/send/TransactionSpeedLevel;
 
-    invoke-direct {v2, v3, p1, p0}, Lcom/iMe/model/wallet/crypto/send/fee/GasPriceItem;-><init>(Lcom/iMe/storage/domain/model/crypto/send/TransactionSpeedLevel;Lcom/iMe/storage/domain/model/wallet/token/TokenInfo;Lcom/iMe/storage/domain/model/crypto/send/GasPriceInfo;)V
+    invoke-direct {v2, v3, p1, p0}, Lcom/iMe/model/wallet/crypto/send/fee/GasPriceItem;-><init>(Lcom/iMe/storage/domain/model/crypto/send/TransactionSpeedLevel;Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;Lcom/iMe/storage/domain/model/crypto/send/GasPriceInfo;)V
 
     :cond_1
     aput-object v2, v0, v1

@@ -7,7 +7,7 @@ import kotlin.jvm.internal.FunctionReferenceImpl;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: BlockchainsManagementFragment.kt */
 /* renamed from: com.iMe.ui.wallet.crypto.settings.blockchains.BlockchainsManagementFragment$showWalletDetailsDialog$2 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 /* synthetic */ class BlockchainsManagementFragment$showWalletDetailsDialog$2 extends FunctionReferenceImpl implements Function1<BlockchainWalletItem, Unit> {
     /* JADX INFO: Access modifiers changed from: package-private */
     public BlockchainsManagementFragment$showWalletDetailsDialog$2(Object obj) {

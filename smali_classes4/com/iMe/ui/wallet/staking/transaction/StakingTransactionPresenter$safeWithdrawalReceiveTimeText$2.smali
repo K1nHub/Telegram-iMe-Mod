@@ -48,7 +48,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 74
+    .line 83
     invoke-virtual {p0}, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter$safeWithdrawalReceiveTimeText$2;->invoke()Ljava/lang/String;
 
     move-result-object v0
@@ -59,7 +59,7 @@
 .method public final invoke()Ljava/lang/String;
     .locals 1
 
-    .line 74
+    .line 83
     iget-object v0, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter$safeWithdrawalReceiveTimeText$2;->this$0:Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;
 
     invoke-static {v0}, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->access$getSafeWithdrawalDurationText(Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;)Ljava/lang/String;

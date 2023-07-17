@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nBTCWalletTransferDataSourceImpl.kt\nKotlin\n*S Kotlin\n*F\n+ 1 BTCWalletTransferDataSourceImpl.kt\ncom/iMe/storage/data/datasource/transfer/impl/BTCWalletTransferDataSourceImpl\n+ 2 FirebaseExt.kt\ncom/iMe/storage/data/utils/extentions/FirebaseExtKt\n+ 3 ObservableExt.kt\ncom/iMe/storage/domain/utils/extentions/ObservableExtKt\n+ 4 ResultExt.kt\ncom/iMe/storage/domain/utils/extentions/ResultExtKt\n+ 5 RxExt.kt\ncom/iMe/storage/data/utils/extentions/RxExtKt\n+ 6 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,113:1\n70#2:114\n14#3:115\n7#4:116\n11#4:122\n18#5:117\n18#5:123\n1549#6:118\n1620#6,3:119\n*S KotlinDebug\n*F\n+ 1 BTCWalletTransferDataSourceImpl.kt\ncom/iMe/storage/data/datasource/transfer/impl/BTCWalletTransferDataSourceImpl\n*L\n56#1:114\n59#1:115\n71#1:116\n108#1:122\n71#1:117\n108#1:123\n85#1:118\n85#1:119,3\n*E\n"
+    value = "SMAP\nBTCWalletTransferDataSourceImpl.kt\nKotlin\n*S Kotlin\n*F\n+ 1 BTCWalletTransferDataSourceImpl.kt\ncom/iMe/storage/data/datasource/transfer/impl/BTCWalletTransferDataSourceImpl\n+ 2 FirebaseExt.kt\ncom/iMe/storage/data/utils/extentions/FirebaseExtKt\n+ 3 ObservableExt.kt\ncom/iMe/storage/domain/utils/extentions/ObservableExtKt\n+ 4 ResultExt.kt\ncom/iMe/storage/domain/utils/extentions/ResultExtKt\n+ 5 RxExt.kt\ncom/iMe/storage/data/utils/extentions/RxExtKt\n+ 6 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,106:1\n70#2:107\n14#3:108\n7#4:109\n11#4:115\n18#5:110\n18#5:116\n1549#6:111\n1620#6,3:112\n*S KotlinDebug\n*F\n+ 1 BTCWalletTransferDataSourceImpl.kt\ncom/iMe/storage/data/datasource/transfer/impl/BTCWalletTransferDataSourceImpl\n*L\n50#1:107\n53#1:108\n65#1:109\n101#1:115\n65#1:110\n101#1:116\n79#1:111\n79#1:112,3\n*E\n"
 .end annotation
 
 
@@ -19,11 +19,9 @@
 
 .field private final firebaseErrorHandler:Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;
 
-.field private final walletApi:Lcom/iMe/storage/data/network/api/own/WalletApi;
-
 
 # direct methods
-.method public constructor <init>(Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;Lcom/iMe/storage/data/network/api/own/CryptoWalletApi;Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;Lcom/iMe/storage/data/network/api/own/WalletApi;)V
+.method public constructor <init>(Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;Lcom/iMe/storage/data/network/api/own/CryptoWalletApi;Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;)V
     .locals 1
 
     const-string v0, "firebaseErrorHandler"
@@ -38,24 +36,17 @@
 
     invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "walletApi"
-
-    invoke-static {p4, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    .line 32
+    .line 31
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 33
+    .line 32
     iput-object p1, p0, Lcom/iMe/storage/data/datasource/transfer/impl/BTCWalletTransferDataSourceImpl;->firebaseErrorHandler:Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;
 
-    .line 34
+    .line 33
     iput-object p2, p0, Lcom/iMe/storage/data/datasource/transfer/impl/BTCWalletTransferDataSourceImpl;->cryptoWalletApi:Lcom/iMe/storage/data/network/api/own/CryptoWalletApi;
 
-    .line 35
+    .line 34
     iput-object p3, p0, Lcom/iMe/storage/data/datasource/transfer/impl/BTCWalletTransferDataSourceImpl;->cryptoAccessManager:Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;
-
-    .line 36
-    iput-object p4, p0, Lcom/iMe/storage/data/datasource/transfer/impl/BTCWalletTransferDataSourceImpl;->walletApi:Lcom/iMe/storage/data/network/api/own/WalletApi;
 
     return-void
 .end method
@@ -63,7 +54,7 @@
 .method public static final synthetic access$getCryptoWalletApi$p(Lcom/iMe/storage/data/datasource/transfer/impl/BTCWalletTransferDataSourceImpl;)Lcom/iMe/storage/data/network/api/own/CryptoWalletApi;
     .locals 0
 
-    .line 32
+    .line 31
     iget-object p0, p0, Lcom/iMe/storage/data/datasource/transfer/impl/BTCWalletTransferDataSourceImpl;->cryptoWalletApi:Lcom/iMe/storage/data/network/api/own/CryptoWalletApi;
 
     return-object p0
@@ -72,7 +63,7 @@
 .method public static final synthetic access$getFirebaseErrorHandler$p(Lcom/iMe/storage/data/datasource/transfer/impl/BTCWalletTransferDataSourceImpl;)Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;
     .locals 0
 
-    .line 32
+    .line 31
     iget-object p0, p0, Lcom/iMe/storage/data/datasource/transfer/impl/BTCWalletTransferDataSourceImpl;->firebaseErrorHandler:Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;
 
     return-object p0
@@ -80,15 +71,14 @@
 
 
 # virtual methods
-.method public getTransferMetadata(Lcom/iMe/storage/domain/model/wallet/token/TokenCode;Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/domain/model/crypto/NetworkType;)Lio/reactivex/Observable;
+.method public getTransferMetadata(Lcom/iMe/storage/domain/model/wallet/token/Token;Ljava/lang/String;Ljava/lang/String;)Lio/reactivex/Observable;
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lcom/iMe/storage/domain/model/wallet/token/TokenCode;",
+            "Lcom/iMe/storage/domain/model/wallet/token/Token;",
             "Ljava/lang/String;",
             "Ljava/lang/String;",
-            "Lcom/iMe/storage/domain/model/crypto/NetworkType;",
             ")",
             "Lio/reactivex/Observable<",
             "Lcom/iMe/storage/domain/model/Result<",
@@ -97,39 +87,30 @@
         }
     .end annotation
 
-    const-string v0, "tokenCode"
+    const-string v0, "token"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "networkType"
+    .line 42
+    iget-object v0, p0, Lcom/iMe/storage/data/datasource/transfer/impl/BTCWalletTransferDataSourceImpl;->cryptoWalletApi:Lcom/iMe/storage/data/network/api/own/CryptoWalletApi;
 
-    invoke-static {p4, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    .line 44
+    new-instance v1, Lcom/iMe/storage/data/network/model/request/crypto/wallet/PrepareTransferRequest;
 
-    .line 47
-    iget-object v0, p0, Lcom/iMe/storage/data/datasource/transfer/impl/BTCWalletTransferDataSourceImpl;->walletApi:Lcom/iMe/storage/data/network/api/own/WalletApi;
+    .line 45
+    invoke-static {p1}, Lcom/iMe/storage/data/mapper/wallet/TokenMappingKt;->mapToRequest(Lcom/iMe/storage/domain/model/wallet/token/Token;)Lcom/iMe/storage/data/network/model/request/wallet/TokenRequest;
 
-    .line 49
-    new-instance v1, Lcom/iMe/storage/data/network/model/request/crypto/wallet/GetDataForCryptoTransferRequest;
+    move-result-object p1
+
+    .line 44
+    invoke-direct {v1, p1, p2, p3}, Lcom/iMe/storage/data/network/model/request/crypto/wallet/PrepareTransferRequest;-><init>(Lcom/iMe/storage/data/network/model/request/wallet/TokenRequest;Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 43
+    invoke-interface {v0, v1}, Lcom/iMe/storage/data/network/api/own/CryptoWalletApi;->getBTCCryptoTransferData(Lcom/iMe/storage/data/network/model/request/crypto/wallet/PrepareTransferRequest;)Lio/reactivex/Observable;
+
+    move-result-object p1
 
     .line 50
-    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;->getName()Ljava/lang/String;
-
-    move-result-object p1
-
-    .line 53
-    invoke-virtual {p4}, Ljava/lang/Enum;->name()Ljava/lang/String;
-
-    move-result-object p4
-
-    .line 49
-    invoke-direct {v1, p1, p2, p3, p4}, Lcom/iMe/storage/data/network/model/request/crypto/wallet/GetDataForCryptoTransferRequest;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 48
-    invoke-interface {v0, v1}, Lcom/iMe/storage/data/network/api/own/WalletApi;->getBTCCryptoTransferData(Lcom/iMe/storage/data/network/model/request/crypto/wallet/GetDataForCryptoTransferRequest;)Lio/reactivex/Observable;
-
-    move-result-object p1
-
-    .line 56
     iget-object p2, p0, Lcom/iMe/storage/data/datasource/transfer/impl/BTCWalletTransferDataSourceImpl;->firebaseErrorHandler:Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;
 
     .line 70
@@ -170,12 +151,12 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 68
+    .line 62
     instance-of v0, p1, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$BTC;
 
     if-eqz v0, :cond_2
 
-    .line 70
+    .line 64
     iget-object v0, p0, Lcom/iMe/storage/data/datasource/transfer/impl/BTCWalletTransferDataSourceImpl;->cryptoAccessManager:Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;
 
     invoke-interface {v0}, Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;->getBTCWallet()Lcom/iMe/storage/domain/model/crypto/Wallet$BTC;
@@ -188,7 +169,7 @@
 
     if-nez v0, :cond_0
 
-    .line 71
+    .line 65
     new-instance p1, Lcom/iMe/storage/data/network/model/error/ErrorModel;
 
     const/4 v0, 0x3
@@ -213,7 +194,7 @@
 
     return-object p1
 
-    .line 73
+    .line 67
     :cond_0
     invoke-virtual {v0}, Lcom/iMe/storage/domain/model/crypto/Wallet$BTC;->getPrivateKeyBytes()[B
 
@@ -223,7 +204,7 @@
 
     move-result-object v3
 
-    .line 74
+    .line 68
     invoke-virtual {v0}, Lcom/iMe/storage/domain/model/crypto/Wallet$BTC;->getAddress()Ljava/lang/String;
 
     move-result-object v0
@@ -246,15 +227,15 @@
 
     move-result-object v0
 
-    .line 76
+    .line 70
     check-cast p1, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$BTC;
 
-    .line 77
+    .line 71
     invoke-static {}, Lwallet/core/jni/proto/Bitcoin$SigningInput;->newBuilder()Lwallet/core/jni/proto/Bitcoin$SigningInput$Builder;
 
     move-result-object v5
 
-    .line 78
+    .line 72
     invoke-virtual {p1}, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs;->getConvertedAmount()Ljava/math/BigInteger;
 
     move-result-object v6
@@ -267,7 +248,7 @@
 
     move-result-object v5
 
-    .line 79
+    .line 73
     invoke-static {v4}, Lwallet/core/jni/BitcoinScript;->hashTypeForCoin(Lwallet/core/jni/CoinType;)I
 
     move-result v6
@@ -276,7 +257,7 @@
 
     move-result-object v5
 
-    .line 80
+    .line 74
     invoke-virtual {p1}, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$BTC;->getRecipientAddress()Ljava/lang/String;
 
     move-result-object v6
@@ -285,7 +266,7 @@
 
     move-result-object v5
 
-    .line 81
+    .line 75
     invoke-virtual {p1}, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$BTC;->getChangeAddress()Ljava/lang/String;
 
     move-result-object v6
@@ -294,7 +275,7 @@
 
     move-result-object v5
 
-    .line 82
+    .line 76
     invoke-virtual {p1}, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$BTC;->getByteFee()Ljava/math/BigInteger;
 
     move-result-object v6
@@ -307,7 +288,7 @@
 
     move-result-object v5
 
-    .line 83
+    .line 77
     invoke-virtual {v4}, Lwallet/core/jni/CoinType;->value()I
 
     move-result v4
@@ -316,7 +297,7 @@
 
     move-result-object v4
 
-    .line 85
+    .line 79
     invoke-virtual {p1}, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$BTC;->getUtxos()Ljava/util/List;
 
     move-result-object p1
@@ -351,7 +332,7 @@
     .line 1621
     check-cast v6, Lcom/iMe/storage/domain/model/crypto/send/BitcoinUnspentOutput;
 
-    .line 87
+    .line 81
     invoke-virtual {v6}, Lcom/iMe/storage/domain/model/crypto/send/BitcoinUnspentOutput;->getTxId()Ljava/lang/String;
 
     move-result-object v7
@@ -376,22 +357,22 @@
 
     move-result-object v7
 
-    .line 88
+    .line 82
     invoke-static {}, Lwallet/core/jni/proto/Bitcoin$UnspentTransaction;->newBuilder()Lwallet/core/jni/proto/Bitcoin$UnspentTransaction$Builder;
 
     move-result-object v8
 
-    .line 90
+    .line 84
     invoke-static {}, Lwallet/core/jni/proto/Bitcoin$OutPoint;->newBuilder()Lwallet/core/jni/proto/Bitcoin$OutPoint$Builder;
 
     move-result-object v9
 
-    .line 91
+    .line 85
     invoke-virtual {v9, v7}, Lwallet/core/jni/proto/Bitcoin$OutPoint$Builder;->setHash(Lcom/google/protobuf/ByteString;)Lwallet/core/jni/proto/Bitcoin$OutPoint$Builder;
 
     move-result-object v7
 
-    .line 92
+    .line 86
     invoke-virtual {v6}, Lcom/iMe/storage/domain/model/crypto/send/BitcoinUnspentOutput;->getIndex()I
 
     move-result v9
@@ -400,19 +381,19 @@
 
     move-result-object v7
 
-    .line 93
+    .line 87
     invoke-virtual {v7}, Lcom/google/protobuf/GeneratedMessageLite$Builder;->build()Lcom/google/protobuf/GeneratedMessageLite;
 
     move-result-object v7
 
     check-cast v7, Lwallet/core/jni/proto/Bitcoin$OutPoint;
 
-    .line 89
+    .line 83
     invoke-virtual {v8, v7}, Lwallet/core/jni/proto/Bitcoin$UnspentTransaction$Builder;->setOutPoint(Lwallet/core/jni/proto/Bitcoin$OutPoint;)Lwallet/core/jni/proto/Bitcoin$UnspentTransaction$Builder;
 
     move-result-object v7
 
-    .line 95
+    .line 89
     invoke-virtual {v6}, Lcom/iMe/storage/domain/model/crypto/send/BitcoinUnspentOutput;->getAmount()Ljava/math/BigInteger;
 
     move-result-object v6
@@ -425,12 +406,12 @@
 
     move-result-object v6
 
-    .line 96
+    .line 90
     invoke-virtual {v6, v0}, Lwallet/core/jni/proto/Bitcoin$UnspentTransaction$Builder;->setScript(Lcom/google/protobuf/ByteString;)Lwallet/core/jni/proto/Bitcoin$UnspentTransaction$Builder;
 
     move-result-object v6
 
-    .line 97
+    .line 91
     invoke-virtual {v6}, Lcom/google/protobuf/GeneratedMessageLite$Builder;->build()Lcom/google/protobuf/GeneratedMessageLite;
 
     move-result-object v6
@@ -442,25 +423,25 @@
 
     goto :goto_0
 
-    .line 84
+    .line 78
     :cond_1
     invoke-virtual {v4, v5}, Lwallet/core/jni/proto/Bitcoin$SigningInput$Builder;->addAllUtxo(Ljava/lang/Iterable;)Lwallet/core/jni/proto/Bitcoin$SigningInput$Builder;
 
     move-result-object p1
 
-    .line 101
+    .line 95
     invoke-virtual {p1, v3}, Lwallet/core/jni/proto/Bitcoin$SigningInput$Builder;->addPrivateKey(Lcom/google/protobuf/ByteString;)Lwallet/core/jni/proto/Bitcoin$SigningInput$Builder;
 
     move-result-object p1
 
-    .line 102
+    .line 96
     invoke-virtual {p1}, Lcom/google/protobuf/GeneratedMessageLite$Builder;->build()Lcom/google/protobuf/GeneratedMessageLite;
 
     move-result-object p1
 
     check-cast p1, Lwallet/core/jni/proto/Bitcoin$SigningInput;
 
-    .line 106
+    .line 99
     sget-object v0, Lwallet/core/jni/CoinType;->BITCOIN:Lwallet/core/jni/CoinType;
 
     invoke-static {}, Lwallet/core/jni/proto/Bitcoin$SigningOutput;->parser()Lcom/google/protobuf/Parser;
@@ -473,7 +454,7 @@
 
     check-cast p1, Lwallet/core/jni/proto/Bitcoin$SigningOutput;
 
-    .line 108
+    .line 101
     invoke-virtual {p1}, Lwallet/core/jni/proto/Bitcoin$SigningOutput;->getEncoded()Lcom/google/protobuf/ByteString;
 
     move-result-object p1
@@ -506,7 +487,7 @@
 
     return-object p1
 
-    .line 68
+    .line 62
     :cond_2
     new-instance p1, Ljava/lang/IllegalStateException;
 
@@ -520,7 +501,7 @@
 .method public bridge synthetic sign(Ljava/lang/Object;)Lio/reactivex/Observable;
     .locals 0
 
-    .line 32
+    .line 31
     check-cast p1, Lcom/iMe/storage/domain/model/crypto/send/TransactionArgs;
 
     invoke-virtual {p0, p1}, Lcom/iMe/storage/data/datasource/transfer/impl/BTCWalletTransferDataSourceImpl;->sign(Lcom/iMe/storage/domain/model/crypto/send/TransactionArgs;)Lio/reactivex/Observable;
@@ -548,7 +529,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 59
+    .line 53
     invoke-virtual {p0, p1}, Lcom/iMe/storage/data/datasource/transfer/impl/BTCWalletTransferDataSourceImpl;->sign(Lcom/iMe/storage/domain/model/crypto/send/TransactionArgs;)Lio/reactivex/Observable;
 
     move-result-object p1

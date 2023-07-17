@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lcom/iMe/fork/utils/Callbacks$Callback;
+.implements Landroid/view/View$OnTouchListener;
 
 
 # instance fields
@@ -22,12 +22,14 @@
 
 
 # virtual methods
-.method public final invoke()V
+.method public final onTouch(Landroid/view/View;Landroid/view/MotionEvent;)Z
     .locals 1
 
     iget-object v0, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda25;->f$0:Lorg/telegram/ui/LaunchActivity;
 
-    invoke-virtual {v0}, Lorg/telegram/ui/LaunchActivity;->openWalletScreen()V
+    invoke-static {v0, p1, p2}, Lorg/telegram/ui/LaunchActivity;->$r8$lambda$cQfkn_PoI1PVpeGD5vHvlkPyYeg(Lorg/telegram/ui/LaunchActivity;Landroid/view/View;Landroid/view/MotionEvent;)Z
 
-    return-void
+    move-result p1
+
+    return p1
 .end method

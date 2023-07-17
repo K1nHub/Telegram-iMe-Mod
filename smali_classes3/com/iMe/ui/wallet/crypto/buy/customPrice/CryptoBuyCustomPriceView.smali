@@ -14,19 +14,3 @@
 # virtual methods
 .method public abstract configureExchangeState(FFLcom/iMe/storage/domain/model/crypto/simplex/Currency;Lcom/iMe/storage/domain/model/crypto/simplex/Currency;)V
 .end method
-
-.method public abstract resetInputError()V
-.end method
-
-.method public abstract showConfirmDialog(FLcom/iMe/storage/domain/model/crypto/simplex/Currency;Lcom/iMe/model/dialog/DialogModel;)V
-    .annotation runtime Lmoxy/viewstate/strategy/alias/OneExecution;
-    .end annotation
-.end method
-
-.method public abstract showExchangedValue(F)V
-.end method
-
-.method public abstract showInputError(Ljava/lang/String;)V
-    .annotation runtime Lmoxy/viewstate/strategy/alias/OneExecution;
-    .end annotation
-.end method

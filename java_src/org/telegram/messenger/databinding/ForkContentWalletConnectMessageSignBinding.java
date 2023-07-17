@@ -8,9 +8,9 @@ import androidx.core.widget.NestedScrollView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.iMe.p031ui.custom.BigActionButton;
-import org.telegram.messenger.C3295R;
-import org.telegram.p044ui.ActionBar.ActionBarMenuItem;
-import org.telegram.p044ui.Cells.TextDetailCell;
+import org.telegram.messenger.C3417R;
+import org.telegram.p043ui.ActionBar.ActionBarMenuItem;
+import org.telegram.p043ui.Cells.TextDetailCell;
 /* loaded from: classes4.dex */
 public final class ForkContentWalletConnectMessageSignBinding implements ViewBinding {
     public final ActionBarMenuItem buttonClose;
@@ -41,7 +41,7 @@ public final class ForkContentWalletConnectMessageSignBinding implements ViewBin
     }
 
     public static ForkContentWalletConnectMessageSignBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3295R.layout.fork_content_wallet_connect_message_sign, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3417R.layout.fork_content_wallet_connect_message_sign, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -49,22 +49,22 @@ public final class ForkContentWalletConnectMessageSignBinding implements ViewBin
     }
 
     public static ForkContentWalletConnectMessageSignBinding bind(View view) {
-        int i = C3295R.C3298id.button_close;
+        int i = C3417R.C3420id.button_close;
         ActionBarMenuItem actionBarMenuItem = (ActionBarMenuItem) ViewBindings.findChildViewById(view, i);
         if (actionBarMenuItem != null) {
-            i = C3295R.C3298id.button_process;
+            i = C3417R.C3420id.button_process;
             BigActionButton bigActionButton = (BigActionButton) ViewBindings.findChildViewById(view, i);
             if (bigActionButton != null) {
-                i = C3295R.C3298id.text_from;
+                i = C3417R.C3420id.text_from;
                 TextDetailCell textDetailCell = (TextDetailCell) ViewBindings.findChildViewById(view, i);
                 if (textDetailCell != null) {
-                    i = C3295R.C3298id.text_message;
+                    i = C3417R.C3420id.text_message;
                     AppCompatTextView appCompatTextView = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
                     if (appCompatTextView != null) {
-                        i = C3295R.C3298id.text_peer_url;
+                        i = C3417R.C3420id.text_peer_url;
                         TextDetailCell textDetailCell2 = (TextDetailCell) ViewBindings.findChildViewById(view, i);
                         if (textDetailCell2 != null) {
-                            i = C3295R.C3298id.text_title;
+                            i = C3417R.C3420id.text_title;
                             AppCompatTextView appCompatTextView2 = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
                             if (appCompatTextView2 != null) {
                                 return new ForkContentWalletConnectMessageSignBinding((NestedScrollView) view, actionBarMenuItem, bigActionButton, textDetailCell, appCompatTextView, textDetailCell2, appCompatTextView2);

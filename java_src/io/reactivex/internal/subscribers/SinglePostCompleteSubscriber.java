@@ -1,6 +1,6 @@
 package io.reactivex.internal.subscribers;
 
-import com.google.android.exoplayer2.C0475C;
+import com.google.android.exoplayer2.C0480C;
 import io.reactivex.FlowableSubscriber;
 import io.reactivex.internal.subscriptions.SubscriptionHelper;
 import io.reactivex.internal.util.BackpressureHelper;
@@ -41,7 +41,7 @@ public abstract class SinglePostCompleteSubscriber<T, R> extends AtomicLong impl
                 onDrop(r);
                 return;
             } else if ((j2 & Long.MAX_VALUE) != 0) {
-                lazySet(C0475C.TIME_UNSET);
+                lazySet(C0480C.TIME_UNSET);
                 this.downstream.onNext(r);
                 this.downstream.onComplete();
                 return;
@@ -62,7 +62,7 @@ public abstract class SinglePostCompleteSubscriber<T, R> extends AtomicLong impl
             do {
                 j2 = get();
                 if ((j2 & Long.MIN_VALUE) != 0) {
-                    if (compareAndSet(Long.MIN_VALUE, C0475C.TIME_UNSET)) {
+                    if (compareAndSet(Long.MIN_VALUE, C0480C.TIME_UNSET)) {
                         this.downstream.onNext((R) this.value);
                         this.downstream.onComplete();
                         return;

@@ -33,7 +33,7 @@
 
     iget-object v1, p0, Lcom/iMe/fork/controller/FiltersController$$ExternalSyntheticLambda0;->f$1:Lcom/iMe/storage/domain/model/filters/FilterSettingsModel;
 
-    invoke-static {v0, v1}, Lcom/iMe/fork/controller/FiltersController;->$r8$lambda$GnbYYgY-mT72xoSbFX2Xs_YgnHQ(Lcom/iMe/fork/controller/FiltersController;Lcom/iMe/storage/domain/model/filters/FilterSettingsModel;)V
+    invoke-static {v0, v1}, Lcom/iMe/fork/controller/FiltersController;->$r8$lambda$ADng7O9YfCVfmbIsFXrB5ZyOlP4(Lcom/iMe/fork/controller/FiltersController;Lcom/iMe/storage/domain/model/filters/FilterSettingsModel;)V
 
     return-void
 .end method

@@ -8,10 +8,10 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.util.ArrayList;
 import java.util.Locale;
 import org.telegram.messenger.MediaController;
-import org.telegram.p044ui.Components.AnimatedFileDrawable;
-import org.telegram.p044ui.Components.Paint.PaintTypeface;
-import org.telegram.p044ui.Components.PhotoFilterView;
-import org.telegram.p044ui.Components.Point;
+import org.telegram.p043ui.Components.AnimatedFileDrawable;
+import org.telegram.p043ui.Components.Paint.PaintTypeface;
+import org.telegram.p043ui.Components.PhotoFilterView;
+import org.telegram.p043ui.Components.Point;
 import org.telegram.tgnet.AbstractSerializedData;
 import org.telegram.tgnet.SerializedData;
 import org.telegram.tgnet.TLRPC$Document;
@@ -34,7 +34,7 @@ public class VideoEditedInfo {
     public boolean isPhoto;
 
     /* renamed from: iv */
-    public byte[] f1409iv;
+    public byte[] f1491iv;
     public byte[] key;
     public ArrayList<MediaEntity> mediaEntities;
     public boolean muted;
@@ -116,10 +116,10 @@ public class VideoEditedInfo {
         public float width;
 
         /* renamed from: x */
-        public float f1410x;
+        public float f1492x;
 
         /* renamed from: y */
-        public float f1411y;
+        public float f1493y;
 
         public MediaEntity() {
             this.entities = new ArrayList<>();
@@ -129,8 +129,8 @@ public class VideoEditedInfo {
             this.entities = new ArrayList<>();
             this.type = serializedData.readByte(false);
             this.subType = serializedData.readByte(false);
-            this.f1410x = serializedData.readFloat(false);
-            this.f1411y = serializedData.readFloat(false);
+            this.f1492x = serializedData.readFloat(false);
+            this.f1493y = serializedData.readFloat(false);
             this.rotation = serializedData.readFloat(false);
             this.width = serializedData.readFloat(false);
             this.height = serializedData.readFloat(false);
@@ -154,8 +154,8 @@ public class VideoEditedInfo {
         public void serializeTo(SerializedData serializedData) {
             serializedData.writeByte(this.type);
             serializedData.writeByte(this.subType);
-            serializedData.writeFloat(this.f1410x);
-            serializedData.writeFloat(this.f1411y);
+            serializedData.writeFloat(this.f1492x);
+            serializedData.writeFloat(this.f1493y);
             serializedData.writeFloat(this.rotation);
             serializedData.writeFloat(this.width);
             serializedData.writeFloat(this.height);
@@ -177,8 +177,8 @@ public class VideoEditedInfo {
             MediaEntity mediaEntity = new MediaEntity();
             mediaEntity.type = this.type;
             mediaEntity.subType = this.subType;
-            mediaEntity.f1410x = this.f1410x;
-            mediaEntity.f1411y = this.f1411y;
+            mediaEntity.f1492x = this.f1492x;
+            mediaEntity.f1493y = this.f1493y;
             mediaEntity.rotation = this.rotation;
             mediaEntity.width = this.width;
             mediaEntity.height = this.height;
@@ -239,8 +239,8 @@ public class VideoEditedInfo {
                 serializedData.writeFloat(this.filterState.blurExcludeSize);
                 Point point = this.filterState.blurExcludePoint;
                 if (point != null) {
-                    serializedData.writeFloat(point.f1693x);
-                    serializedData.writeFloat(this.filterState.blurExcludePoint.f1694y);
+                    serializedData.writeFloat(point.f1775x);
+                    serializedData.writeFloat(this.filterState.blurExcludePoint.f1776y);
                 } else {
                     serializedData.writeFloat(BitmapDescriptorFactory.HUE_RED);
                     serializedData.writeFloat(BitmapDescriptorFactory.HUE_RED);

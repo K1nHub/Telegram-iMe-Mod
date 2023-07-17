@@ -15,7 +15,7 @@
 .method public abstract openBinanceConvertScreen()V
 .end method
 
-.method public abstract openSwapScreen(Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocolInfo;Lcom/iMe/storage/domain/model/crypto/NetworkType;)V
+.method public abstract openSwapScreen(Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocolInfo;Ljava/lang/String;)V
 .end method
 
 .method public abstract showExchangesProviders(Ljava/util/List;)V

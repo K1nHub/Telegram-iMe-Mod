@@ -2,7 +2,7 @@ package com.google.android.exoplayer2.drm;
 
 import android.net.Uri;
 import android.text.TextUtils;
-import com.google.android.exoplayer2.C0475C;
+import com.google.android.exoplayer2.C0480C;
 import com.google.android.exoplayer2.drm.ExoMediaDrm;
 import com.google.android.exoplayer2.source.rtsp.RtspHeaders;
 import com.google.android.exoplayer2.upstream.DataSource;
@@ -75,11 +75,11 @@ public final class HttpMediaDrmCallback implements MediaDrmCallback {
             throw new MediaDrmCallbackException(new DataSpec.Builder().setUri(Uri.EMPTY).build(), Uri.EMPTY, ImmutableMap.m737of(), 0L, new IllegalStateException("No license URL"));
         }
         HashMap hashMap = new HashMap();
-        UUID uuid2 = C0475C.PLAYREADY_UUID;
+        UUID uuid2 = C0480C.PLAYREADY_UUID;
         if (uuid2.equals(uuid)) {
             str = "text/xml";
         } else {
-            str = C0475C.CLEARKEY_UUID.equals(uuid) ? "application/json" : "application/octet-stream";
+            str = C0480C.CLEARKEY_UUID.equals(uuid) ? "application/json" : "application/octet-stream";
         }
         hashMap.put(RtspHeaders.CONTENT_TYPE, str);
         if (uuid2.equals(uuid)) {

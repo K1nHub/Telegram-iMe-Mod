@@ -34,20 +34,20 @@
 .method constructor <init>(Lcom/iMe/feature/twitter/TwitterView$$State;ZZLio/reactivex/disposables/Disposable;)V
     .locals 1
 
-    .line 389
+    .line 405
     const-class p1, Lmoxy/viewstate/strategy/OneExecutionStateStrategy;
 
     const-string v0, "showLoadingDialog"
 
     invoke-direct {p0, v0, p1}, Lmoxy/viewstate/ViewCommand;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
-    .line 391
+    .line 407
     iput-boolean p2, p0, Lcom/iMe/feature/twitter/TwitterView$$State$ShowLoadingDialogCommand;->show:Z
 
-    .line 392
+    .line 408
     iput-boolean p3, p0, Lcom/iMe/feature/twitter/TwitterView$$State$ShowLoadingDialogCommand;->cancellable:Z
 
-    .line 393
+    .line 409
     iput-object p4, p0, Lcom/iMe/feature/twitter/TwitterView$$State$ShowLoadingDialogCommand;->actionToCancel:Lio/reactivex/disposables/Disposable;
 
     return-void
@@ -58,7 +58,7 @@
 .method public apply(Lcom/iMe/feature/twitter/TwitterView;)V
     .locals 3
 
-    .line 398
+    .line 414
     iget-boolean v0, p0, Lcom/iMe/feature/twitter/TwitterView$$State$ShowLoadingDialogCommand;->show:Z
 
     iget-boolean v1, p0, Lcom/iMe/feature/twitter/TwitterView$$State$ShowLoadingDialogCommand;->cancellable:Z
@@ -73,7 +73,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 381
+    .line 397
     check-cast p1, Lcom/iMe/feature/twitter/TwitterView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/feature/twitter/TwitterView$$State$ShowLoadingDialogCommand;->apply(Lcom/iMe/feature/twitter/TwitterView;)V

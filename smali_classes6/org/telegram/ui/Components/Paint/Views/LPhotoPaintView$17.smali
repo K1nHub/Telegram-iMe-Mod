@@ -26,7 +26,7 @@
 
     move-object v0, p1
 
-    .line 2731
+    .line 2740
     iput-object v0, v8, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$17;->this$0:Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;
 
     move-object v0, p0
@@ -55,7 +55,7 @@
 .method protected didSetAnimatedSticker(Lorg/telegram/ui/Components/RLottieDrawable;)V
     .locals 1
 
-    .line 2734
+    .line 2743
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$17;->this$0:Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->didSetAnimatedSticker(Lorg/telegram/ui/Components/RLottieDrawable;)V

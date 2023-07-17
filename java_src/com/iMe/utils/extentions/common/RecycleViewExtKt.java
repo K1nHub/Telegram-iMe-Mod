@@ -95,7 +95,7 @@ public final class RecycleViewExtKt {
                 Intrinsics.checkNotNullParameter(e, "e");
             }
 
-            /* JADX WARN: Code restructure failed: missing block: B:8:0x0018, code lost:
+            /* JADX WARN: Code restructure failed: missing block: B:8:0x0019, code lost:
                 if (r0 != 3) goto L8;
              */
             @Override // androidx.recyclerview.widget.RecyclerView.OnItemTouchListener
@@ -113,35 +113,35 @@ public final class RecycleViewExtKt {
                     int r0 = r7.getAction()
                     r1 = 1
                     r2 = 0
-                    if (r0 == 0) goto L8b
-                    if (r0 == r1) goto L83
+                    if (r0 == 0) goto L8c
+                    if (r0 == r1) goto L84
                     r3 = 2
-                    if (r0 == r3) goto L1c
+                    if (r0 == r3) goto L1d
                     r7 = 3
-                    if (r0 == r7) goto L83
-                    goto L9e
-                L1c:
+                    if (r0 == r7) goto L84
+                    goto L9f
+                L1d:
                     float r0 = r7.getX()
                     float r3 = r5.lastX
                     int r0 = (r0 > r3 ? 1 : (r0 == r3 ? 0 : -1))
-                    if (r0 >= 0) goto L34
+                    if (r0 >= 0) goto L35
                     boolean r0 = r6.canScrollHorizontally(r1)
-                    if (r0 != 0) goto L34
+                    if (r0 != 0) goto L35
                     android.view.ViewParent r6 = r6.getParent()
                     r6.requestDisallowInterceptTouchEvent(r2)
-                    goto L76
-                L34:
+                    goto L77
+                L35:
                     float r0 = r7.getX()
                     float r3 = r5.lastX
                     int r0 = (r0 > r3 ? 1 : (r0 == r3 ? 0 : -1))
-                    if (r0 <= 0) goto L4d
+                    if (r0 <= 0) goto L4e
                     r0 = -1
                     boolean r0 = r6.canScrollHorizontally(r0)
-                    if (r0 != 0) goto L4d
+                    if (r0 != 0) goto L4e
                     android.view.ViewParent r6 = r6.getParent()
                     r6.requestDisallowInterceptTouchEvent(r2)
-                    goto L76
-                L4d:
+                    goto L77
+                L4e:
                     float r0 = r7.getX()
                     float r3 = r5.lastX
                     float r0 = r0 - r3
@@ -151,31 +151,31 @@ public final class RecycleViewExtKt {
                     float r3 = r3 - r4
                     float r3 = java.lang.Math.abs(r3)
                     int r0 = (r0 > r3 ? 1 : (r0 == r3 ? 0 : -1))
-                    if (r0 <= 0) goto L6f
+                    if (r0 <= 0) goto L70
                     android.view.ViewParent r6 = r6.getParent()
                     r6.requestDisallowInterceptTouchEvent(r1)
-                    goto L76
-                L6f:
+                    goto L77
+                L70:
                     android.view.ViewParent r6 = r6.getParent()
                     r6.requestDisallowInterceptTouchEvent(r2)
-                L76:
+                L77:
                     float r6 = r7.getX()
                     r5.lastX = r6
                     float r6 = r7.getY()
                     r5.lastY = r6
-                    goto L9e
-                L83:
+                    goto L9f
+                L84:
                     android.view.ViewParent r6 = r6.getParent()
                     r6.requestDisallowInterceptTouchEvent(r2)
-                    goto L9e
-                L8b:
+                    goto L9f
+                L8c:
                     float r0 = r7.getX()
                     r5.lastX = r0
                     float r7 = r7.getY()
                     r5.lastY = r7
                     android.view.ViewParent r6 = r6.getParent()
                     r6.requestDisallowInterceptTouchEvent(r1)
-                L9e:
+                L9f:
                     return r2
                 */
                 throw new UnsupportedOperationException("Method not decompiled: com.iMe.utils.extentions.common.RecycleViewExtKt$setHorizontalRecyclerInPagerScrollHelper$1.onInterceptTouchEvent(androidx.recyclerview.widget.RecyclerView, android.view.MotionEvent):boolean");

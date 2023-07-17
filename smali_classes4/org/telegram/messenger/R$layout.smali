@@ -168,425 +168,445 @@
 
 .field public static final fork_content_image_header:I = 0x7f0c004c
 
-.field public static final fork_content_seed_list:I = 0x7f0c004d
+.field public static final fork_content_network_cell:I = 0x7f0c004d
 
-.field public static final fork_content_staking_compound:I = 0x7f0c004e
+.field public static final fork_content_network_type:I = 0x7f0c004e
 
-.field public static final fork_content_staking_conditions:I = 0x7f0c004f
+.field public static final fork_content_seed_list:I = 0x7f0c004f
 
-.field public static final fork_content_staking_dashboard:I = 0x7f0c0050
+.field public static final fork_content_staking_compound:I = 0x7f0c0050
 
-.field public static final fork_content_staking_prognosis:I = 0x7f0c0051
+.field public static final fork_content_staking_conditions:I = 0x7f0c0051
 
-.field public static final fork_content_staking_safe_withdrawal:I = 0x7f0c0052
+.field public static final fork_content_staking_dashboard:I = 0x7f0c0052
 
-.field public static final fork_content_staking_transaction_actions:I = 0x7f0c0053
+.field public static final fork_content_staking_prognosis:I = 0x7f0c0053
 
-.field public static final fork_content_staking_withdrawal_fee:I = 0x7f0c0054
+.field public static final fork_content_staking_safe_withdrawal:I = 0x7f0c0054
 
-.field public static final fork_content_wallet_choose_recipient_options:I = 0x7f0c0055
+.field public static final fork_content_staking_transaction_actions:I = 0x7f0c0055
 
-.field public static final fork_content_wallet_connect_message_sign:I = 0x7f0c0056
+.field public static final fork_content_staking_withdrawal_fee:I = 0x7f0c0056
 
-.field public static final fork_content_wallet_connect_new_session:I = 0x7f0c0057
+.field public static final fork_content_token_family:I = 0x7f0c0057
 
-.field public static final fork_content_wallet_connect_session_details:I = 0x7f0c0058
+.field public static final fork_content_wallet_choose_recipient_options:I = 0x7f0c0058
 
-.field public static final fork_content_wallet_connect_switch_network:I = 0x7f0c0059
+.field public static final fork_content_wallet_connect_message_sign:I = 0x7f0c0059
 
-.field public static final fork_content_wallet_connect_transaction:I = 0x7f0c005a
+.field public static final fork_content_wallet_connect_new_session:I = 0x7f0c005a
 
-.field public static final fork_content_wallet_crypto_buy_custom_price_layout:I = 0x7f0c005b
+.field public static final fork_content_wallet_connect_session_details:I = 0x7f0c005b
 
-.field public static final fork_content_wallet_notification_details_layout:I = 0x7f0c005c
+.field public static final fork_content_wallet_connect_switch_network:I = 0x7f0c005c
 
-.field public static final fork_content_wallet_transaction_details_layout:I = 0x7f0c005d
+.field public static final fork_content_wallet_connect_transaction:I = 0x7f0c005d
 
-.field public static final fork_content_word_switcher:I = 0x7f0c005e
+.field public static final fork_content_wallet_crypto_buy_custom_price_layout:I = 0x7f0c005e
 
-.field public static final fork_country_item_list:I = 0x7f0c005f
+.field public static final fork_content_wallet_notification_details_layout:I = 0x7f0c005f
 
-.field public static final fork_custom_menu_item:I = 0x7f0c0060
+.field public static final fork_content_wallet_transaction_details_layout:I = 0x7f0c0060
 
-.field public static final fork_dev_settings_screen:I = 0x7f0c0061
+.field public static final fork_content_word_switcher:I = 0x7f0c0061
 
-.field public static final fork_dialog_social_networks:I = 0x7f0c0062
+.field public static final fork_country_item_list:I = 0x7f0c0062
 
-.field public static final fork_dialog_social_networks_item:I = 0x7f0c0063
+.field public static final fork_custom_menu_item:I = 0x7f0c0063
 
-.field public static final fork_fragment_blockchains_management:I = 0x7f0c0064
+.field public static final fork_dev_settings_screen:I = 0x7f0c0064
 
-.field public static final fork_fragment_catalog_all:I = 0x7f0c0065
+.field public static final fork_dialog_social_networks:I = 0x7f0c0065
 
-.field public static final fork_fragment_catalog_categories:I = 0x7f0c0066
+.field public static final fork_dialog_social_networks_item:I = 0x7f0c0066
 
-.field public static final fork_fragment_catalog_global:I = 0x7f0c0067
+.field public static final fork_fragment_blockchains_management:I = 0x7f0c0067
 
-.field public static final fork_fragment_catalog_tabs:I = 0x7f0c0068
+.field public static final fork_fragment_catalog_all:I = 0x7f0c0068
 
-.field public static final fork_fragment_catalog_user_channels:I = 0x7f0c0069
+.field public static final fork_fragment_catalog_categories:I = 0x7f0c0069
 
-.field public static final fork_fragment_languages:I = 0x7f0c006a
+.field public static final fork_fragment_catalog_global:I = 0x7f0c006a
 
-.field public static final fork_fragment_staking:I = 0x7f0c006b
+.field public static final fork_fragment_catalog_tabs:I = 0x7f0c006b
 
-.field public static final fork_fragment_staking_calculator:I = 0x7f0c006c
+.field public static final fork_fragment_catalog_user_channels:I = 0x7f0c006c
 
-.field public static final fork_fragment_staking_calculator_programmes:I = 0x7f0c006d
+.field public static final fork_fragment_create_wallet_intro:I = 0x7f0c006d
 
-.field public static final fork_fragment_staking_operations:I = 0x7f0c006e
+.field public static final fork_fragment_custom_tokens:I = 0x7f0c006e
 
-.field public static final fork_fragment_staking_programmes:I = 0x7f0c006f
+.field public static final fork_fragment_languages:I = 0x7f0c006f
 
-.field public static final fork_fragment_twitter:I = 0x7f0c0070
+.field public static final fork_fragment_staking:I = 0x7f0c0070
 
-.field public static final fork_fragment_twitter_search:I = 0x7f0c0071
+.field public static final fork_fragment_staking_calculator:I = 0x7f0c0071
 
-.field public static final fork_fragment_wallet_binance_pay_history:I = 0x7f0c0072
+.field public static final fork_fragment_staking_calculator_programmes:I = 0x7f0c0072
 
-.field public static final fork_fragment_wallet_buy:I = 0x7f0c0073
+.field public static final fork_fragment_staking_operations:I = 0x7f0c0073
 
-.field public static final fork_fragment_wallet_connect:I = 0x7f0c0074
+.field public static final fork_fragment_staking_programmes:I = 0x7f0c0074
 
-.field public static final fork_fragment_wallet_crypto_buy:I = 0x7f0c0075
+.field public static final fork_fragment_token_management:I = 0x7f0c0075
 
-.field public static final fork_fragment_wallet_eth_address_mismatch:I = 0x7f0c0076
+.field public static final fork_fragment_twitter:I = 0x7f0c0076
 
-.field public static final fork_fragment_wallet_eth_backup:I = 0x7f0c0077
+.field public static final fork_fragment_twitter_search:I = 0x7f0c0077
 
-.field public static final fork_fragment_wallet_eth_backup_confirm:I = 0x7f0c0078
+.field public static final fork_fragment_wallet_binance_pay_history:I = 0x7f0c0078
 
-.field public static final fork_fragment_wallet_eth_backup_intro:I = 0x7f0c0079
+.field public static final fork_fragment_wallet_buy:I = 0x7f0c0079
 
-.field public static final fork_fragment_wallet_eth_create_password:I = 0x7f0c007a
+.field public static final fork_fragment_wallet_connect:I = 0x7f0c007a
 
-.field public static final fork_fragment_wallet_eth_create_pin:I = 0x7f0c007b
+.field public static final fork_fragment_wallet_crypto_buy:I = 0x7f0c007b
 
-.field public static final fork_fragment_wallet_eth_enter_password:I = 0x7f0c007c
+.field public static final fork_fragment_wallet_eth_address_mismatch:I = 0x7f0c007c
 
-.field public static final fork_fragment_wallet_eth_enter_pin:I = 0x7f0c007d
+.field public static final fork_fragment_wallet_eth_backup:I = 0x7f0c007d
 
-.field public static final fork_fragment_wallet_eth_restore:I = 0x7f0c007e
+.field public static final fork_fragment_wallet_eth_backup_confirm:I = 0x7f0c007e
 
-.field public static final fork_fragment_wallet_eth_settings:I = 0x7f0c007f
+.field public static final fork_fragment_wallet_eth_backup_intro:I = 0x7f0c007f
 
-.field public static final fork_fragment_wallet_eth_tutorial:I = 0x7f0c0080
+.field public static final fork_fragment_wallet_eth_create_password:I = 0x7f0c0080
 
-.field public static final fork_fragment_wallet_global:I = 0x7f0c0081
+.field public static final fork_fragment_wallet_eth_create_pin:I = 0x7f0c0081
 
-.field public static final fork_fragment_wallet_home:I = 0x7f0c0082
+.field public static final fork_fragment_wallet_eth_enter_password:I = 0x7f0c0082
 
-.field public static final fork_fragment_wallet_home_binance_pay:I = 0x7f0c0083
+.field public static final fork_fragment_wallet_eth_enter_pin:I = 0x7f0c0083
 
-.field public static final fork_fragment_wallet_home_crypto:I = 0x7f0c0084
+.field public static final fork_fragment_wallet_eth_restore:I = 0x7f0c0084
 
-.field public static final fork_fragment_wallet_home_internal_points:I = 0x7f0c0085
+.field public static final fork_fragment_wallet_eth_settings:I = 0x7f0c0085
 
-.field public static final fork_fragment_wallet_home_services:I = 0x7f0c0086
+.field public static final fork_fragment_wallet_global:I = 0x7f0c0086
 
-.field public static final fork_fragment_wallet_interface_settings:I = 0x7f0c0087
+.field public static final fork_fragment_wallet_home:I = 0x7f0c0087
 
-.field public static final fork_fragment_wallet_notifications:I = 0x7f0c0088
+.field public static final fork_fragment_wallet_home_binance_pay:I = 0x7f0c0088
 
-.field public static final fork_fragment_wallet_select_token:I = 0x7f0c0089
+.field public static final fork_fragment_wallet_home_crypto:I = 0x7f0c0089
 
-.field public static final fork_fragment_wallet_settings:I = 0x7f0c008a
+.field public static final fork_fragment_wallet_home_crypto_tokens:I = 0x7f0c008a
 
-.field public static final fork_fragment_wallet_swap_process:I = 0x7f0c008b
+.field public static final fork_fragment_wallet_home_internal_points:I = 0x7f0c008b
 
-.field public static final fork_fragment_wallet_swap_protocols:I = 0x7f0c008c
+.field public static final fork_fragment_wallet_home_services:I = 0x7f0c008c
 
-.field public static final fork_fragment_wallet_token_details:I = 0x7f0c008d
+.field public static final fork_fragment_wallet_interface_settings:I = 0x7f0c008d
 
-.field public static final fork_fragment_wallet_transactions:I = 0x7f0c008e
+.field public static final fork_fragment_wallet_notifications:I = 0x7f0c008e
 
-.field public static final fork_fullscreen_content_alert:I = 0x7f0c008f
+.field public static final fork_fragment_wallet_select_token:I = 0x7f0c008f
 
-.field public static final fork_item_adapter_popup_option:I = 0x7f0c0090
+.field public static final fork_fragment_wallet_settings:I = 0x7f0c0090
 
-.field public static final fork_item_adapter_wallet_eth_tutorial:I = 0x7f0c0091
+.field public static final fork_fragment_wallet_swap_process:I = 0x7f0c0091
 
-.field public static final fork_item_wallet_home_crypto_tokens_settings_header:I = 0x7f0c0092
+.field public static final fork_fragment_wallet_swap_protocols:I = 0x7f0c0092
 
-.field public static final fork_navigation_screen:I = 0x7f0c0093
+.field public static final fork_fragment_wallet_token_details:I = 0x7f0c0093
 
-.field public static final fork_panel_custom_tab_header:I = 0x7f0c0094
+.field public static final fork_fragment_wallet_transactions:I = 0x7f0c0094
 
-.field public static final fork_panel_view:I = 0x7f0c0095
+.field public static final fork_fragment_wallet_tutorial:I = 0x7f0c0095
 
-.field public static final fork_profile_social_cell:I = 0x7f0c0096
+.field public static final fork_fullscreen_content_alert:I = 0x7f0c0096
 
-.field public static final fork_recycle_item_blockchain_wallet:I = 0x7f0c0097
+.field public static final fork_item_adapter_popup_option:I = 0x7f0c0097
 
-.field public static final fork_recycle_item_catalog_category_preview:I = 0x7f0c0098
+.field public static final fork_item_adapter_wallet_eth_tutorial:I = 0x7f0c0098
 
-.field public static final fork_recycle_item_catalog_channel:I = 0x7f0c0099
+.field public static final fork_item_wallet_home_crypto_tokens_settings_header:I = 0x7f0c0099
 
-.field public static final fork_recycle_item_catalog_channel_square:I = 0x7f0c009a
+.field public static final fork_navigation_screen:I = 0x7f0c009a
 
-.field public static final fork_recycle_item_crypto_buy_footer:I = 0x7f0c009b
+.field public static final fork_panel_custom_tab_header:I = 0x7f0c009b
 
-.field public static final fork_recycle_item_date:I = 0x7f0c009c
+.field public static final fork_panel_view:I = 0x7f0c009c
 
-.field public static final fork_recycle_item_filter:I = 0x7f0c009d
+.field public static final fork_profile_social_cell:I = 0x7f0c009d
 
-.field public static final fork_recycle_item_filters_list:I = 0x7f0c009e
+.field public static final fork_recycle_item_blockchain_wallet:I = 0x7f0c009e
 
-.field public static final fork_recycle_item_global_state:I = 0x7f0c009f
+.field public static final fork_recycle_item_catalog_category_preview:I = 0x7f0c009f
 
-.field public static final fork_recycle_item_header_with_right_button:I = 0x7f0c00a0
+.field public static final fork_recycle_item_catalog_channel:I = 0x7f0c00a0
 
-.field public static final fork_recycle_item_nft_collection:I = 0x7f0c00a1
+.field public static final fork_recycle_item_catalog_channel_square:I = 0x7f0c00a1
 
-.field public static final fork_recycle_item_nft_token:I = 0x7f0c00a2
+.field public static final fork_recycle_item_crypto_buy_footer:I = 0x7f0c00a2
 
-.field public static final fork_recycle_item_staking_calculator_programme:I = 0x7f0c00a3
+.field public static final fork_recycle_item_custom_token:I = 0x7f0c00a3
 
-.field public static final fork_recycle_item_staking_dashboard:I = 0x7f0c00a4
+.field public static final fork_recycle_item_date:I = 0x7f0c00a4
 
-.field public static final fork_recycle_item_tweet:I = 0x7f0c00a5
+.field public static final fork_recycle_item_filter:I = 0x7f0c00a5
 
-.field public static final fork_recycle_item_twitter_user:I = 0x7f0c00a6
+.field public static final fork_recycle_item_filters_list:I = 0x7f0c00a6
 
-.field public static final fork_recycle_item_wallet_account:I = 0x7f0c00a7
+.field public static final fork_recycle_item_found_token:I = 0x7f0c00a7
 
-.field public static final fork_recycle_item_wallet_account_settings:I = 0x7f0c00a8
+.field public static final fork_recycle_item_global_state:I = 0x7f0c00a8
 
-.field public static final fork_recycle_item_wallet_action:I = 0x7f0c00a9
+.field public static final fork_recycle_item_header_with_right_button:I = 0x7f0c00a9
 
-.field public static final fork_recycle_item_wallet_appearance_settings:I = 0x7f0c00aa
+.field public static final fork_recycle_item_nft_collection:I = 0x7f0c00aa
 
-.field public static final fork_recycle_item_wallet_attach_transactions:I = 0x7f0c00ab
+.field public static final fork_recycle_item_nft_token:I = 0x7f0c00ab
 
-.field public static final fork_recycle_item_wallet_banner_slide:I = 0x7f0c00ac
+.field public static final fork_recycle_item_staking_calculator_programme:I = 0x7f0c00ac
 
-.field public static final fork_recycle_item_wallet_banners:I = 0x7f0c00ad
+.field public static final fork_recycle_item_staking_dashboard:I = 0x7f0c00ad
 
-.field public static final fork_recycle_item_wallet_buy_token:I = 0x7f0c00ae
+.field public static final fork_recycle_item_tweet:I = 0x7f0c00ae
 
-.field public static final fork_recycle_item_wallet_card_icon_title_subtitle:I = 0x7f0c00af
+.field public static final fork_recycle_item_twitter_user:I = 0x7f0c00af
 
-.field public static final fork_recycle_item_wallet_connect_session:I = 0x7f0c00b0
+.field public static final fork_recycle_item_wallet_account:I = 0x7f0c00b0
 
-.field public static final fork_recycle_item_wallet_crypto_select_tokens:I = 0x7f0c00b1
+.field public static final fork_recycle_item_wallet_account_settings:I = 0x7f0c00b1
 
-.field public static final fork_recycle_item_wallet_crypto_total_balance:I = 0x7f0c00b2
+.field public static final fork_recycle_item_wallet_action:I = 0x7f0c00b2
 
-.field public static final fork_recycle_item_wallet_dashboard_account_balance:I = 0x7f0c00b3
+.field public static final fork_recycle_item_wallet_appearance_settings:I = 0x7f0c00b3
 
-.field public static final fork_recycle_item_wallet_dashboard_account_empty:I = 0x7f0c00b4
+.field public static final fork_recycle_item_wallet_attach_transactions:I = 0x7f0c00b4
 
-.field public static final fork_recycle_item_wallet_dashboard_balances:I = 0x7f0c00b5
+.field public static final fork_recycle_item_wallet_banner_slide:I = 0x7f0c00b5
 
-.field public static final fork_recycle_item_wallet_dashboard_header:I = 0x7f0c00b6
+.field public static final fork_recycle_item_wallet_banners:I = 0x7f0c00b6
 
-.field public static final fork_recycle_item_wallet_dashboard_header_with_icon:I = 0x7f0c00b7
+.field public static final fork_recycle_item_wallet_buy_token:I = 0x7f0c00b7
 
-.field public static final fork_recycle_item_wallet_dashboard_header_with_network_switcher:I = 0x7f0c00b8
+.field public static final fork_recycle_item_wallet_card_icon_title_subtitle:I = 0x7f0c00b8
 
-.field public static final fork_recycle_item_wallet_donation_transaction:I = 0x7f0c00b9
+.field public static final fork_recycle_item_wallet_connect_session:I = 0x7f0c00b9
 
-.field public static final fork_recycle_item_wallet_notification:I = 0x7f0c00ba
+.field public static final fork_recycle_item_wallet_crypto_add_tokens:I = 0x7f0c00ba
 
-.field public static final fork_recycle_item_wallet_secret_words_count:I = 0x7f0c00bb
+.field public static final fork_recycle_item_wallet_crypto_total_balance:I = 0x7f0c00bb
 
-.field public static final fork_recycle_item_wallet_select_token:I = 0x7f0c00bc
+.field public static final fork_recycle_item_wallet_dashboard_account_balance:I = 0x7f0c00bc
 
-.field public static final fork_recycle_item_wallet_settings:I = 0x7f0c00bd
+.field public static final fork_recycle_item_wallet_dashboard_account_empty:I = 0x7f0c00bd
 
-.field public static final fork_recycle_item_wallet_single_create_action:I = 0x7f0c00be
+.field public static final fork_recycle_item_wallet_dashboard_balances:I = 0x7f0c00be
 
-.field public static final fork_recycle_item_wallet_token_balance:I = 0x7f0c00bf
+.field public static final fork_recycle_item_wallet_dashboard_header:I = 0x7f0c00bf
 
-.field public static final fork_recycle_item_wallet_transaction:I = 0x7f0c00c0
+.field public static final fork_recycle_item_wallet_dashboard_header_with_icon:I = 0x7f0c00c0
 
-.field public static final fork_recycle_item_wallet_transaction_header:I = 0x7f0c00c1
+.field public static final fork_recycle_item_wallet_dashboard_header_with_network_switcher:I = 0x7f0c00c1
 
-.field public static final fork_recylcer_error_block:I = 0x7f0c00c2
+.field public static final fork_recycle_item_wallet_donation_transaction:I = 0x7f0c00c2
 
-.field public static final fork_recylcer_image_item:I = 0x7f0c00c3
+.field public static final fork_recycle_item_wallet_notification:I = 0x7f0c00c3
 
-.field public static final fork_secret_words_count_layout:I = 0x7f0c00c4
+.field public static final fork_recycle_item_wallet_secret_words_count:I = 0x7f0c00c4
 
-.field public static final fork_shop_item_grid:I = 0x7f0c00c5
+.field public static final fork_recycle_item_wallet_select_token:I = 0x7f0c00c5
 
-.field public static final fork_shop_item_list:I = 0x7f0c00c6
+.field public static final fork_recycle_item_wallet_settings:I = 0x7f0c00c6
 
-.field public static final fork_text_recognition_content_layout:I = 0x7f0c00c7
+.field public static final fork_recycle_item_wallet_single_create_action:I = 0x7f0c00c7
 
-.field public static final fork_toolbar:I = 0x7f0c00c8
+.field public static final fork_recycle_item_wallet_token_balance:I = 0x7f0c00c8
 
-.field public static final fork_translate_content_layout:I = 0x7f0c00c9
+.field public static final fork_recycle_item_wallet_tokens_header:I = 0x7f0c00c9
 
-.field public static final fork_view_collapsable_header_pager:I = 0x7f0c00ca
+.field public static final fork_recycle_item_wallet_transaction:I = 0x7f0c00ca
 
-.field public static final fork_view_horizontal_load_more:I = 0x7f0c00cb
+.field public static final fork_recycle_item_wallet_transaction_header:I = 0x7f0c00cb
 
-.field public static final fork_wallet_backup_pdf_template:I = 0x7f0c00cc
+.field public static final fork_recylcer_error_block:I = 0x7f0c00cc
 
-.field public static final fork_web_screen:I = 0x7f0c00cd
+.field public static final fork_recylcer_image_item:I = 0x7f0c00cd
 
-.field public static final material_chip_input_combo:I = 0x7f0c00ce
+.field public static final fork_secret_words_count_layout:I = 0x7f0c00ce
 
-.field public static final material_clock_display:I = 0x7f0c00cf
+.field public static final fork_shop_item_grid:I = 0x7f0c00cf
 
-.field public static final material_clock_display_divider:I = 0x7f0c00d0
+.field public static final fork_shop_item_list:I = 0x7f0c00d0
 
-.field public static final material_clock_period_toggle:I = 0x7f0c00d1
+.field public static final fork_text_recognition_content_layout:I = 0x7f0c00d1
 
-.field public static final material_clock_period_toggle_land:I = 0x7f0c00d2
+.field public static final fork_toolbar:I = 0x7f0c00d2
 
-.field public static final material_clockface_textview:I = 0x7f0c00d3
+.field public static final fork_translate_content_layout:I = 0x7f0c00d3
 
-.field public static final material_clockface_view:I = 0x7f0c00d4
+.field public static final fork_view_collapsable_header_pager:I = 0x7f0c00d4
 
-.field public static final material_radial_view_group:I = 0x7f0c00d5
+.field public static final fork_view_horizontal_load_more:I = 0x7f0c00d5
 
-.field public static final material_textinput_timepicker:I = 0x7f0c00d6
+.field public static final fork_wallet_backup_pdf_template:I = 0x7f0c00d6
 
-.field public static final material_time_chip:I = 0x7f0c00d7
+.field public static final fork_web_screen:I = 0x7f0c00d7
 
-.field public static final material_time_input:I = 0x7f0c00d8
+.field public static final material_chip_input_combo:I = 0x7f0c00d8
 
-.field public static final material_timepicker:I = 0x7f0c00d9
+.field public static final material_clock_display:I = 0x7f0c00d9
 
-.field public static final material_timepicker_dialog:I = 0x7f0c00da
+.field public static final material_clock_display_divider:I = 0x7f0c00da
 
-.field public static final material_timepicker_textinput_display:I = 0x7f0c00db
+.field public static final material_clock_period_toggle:I = 0x7f0c00db
 
-.field public static final mtrl_alert_dialog:I = 0x7f0c00dc
+.field public static final material_clock_period_toggle_land:I = 0x7f0c00dc
 
-.field public static final mtrl_alert_dialog_actions:I = 0x7f0c00dd
+.field public static final material_clockface_textview:I = 0x7f0c00dd
 
-.field public static final mtrl_alert_dialog_title:I = 0x7f0c00de
+.field public static final material_clockface_view:I = 0x7f0c00de
 
-.field public static final mtrl_alert_select_dialog_item:I = 0x7f0c00df
+.field public static final material_radial_view_group:I = 0x7f0c00df
 
-.field public static final mtrl_alert_select_dialog_multichoice:I = 0x7f0c00e0
+.field public static final material_textinput_timepicker:I = 0x7f0c00e0
 
-.field public static final mtrl_alert_select_dialog_singlechoice:I = 0x7f0c00e1
+.field public static final material_time_chip:I = 0x7f0c00e1
 
-.field public static final mtrl_calendar_day:I = 0x7f0c00e2
+.field public static final material_time_input:I = 0x7f0c00e2
 
-.field public static final mtrl_calendar_day_of_week:I = 0x7f0c00e3
+.field public static final material_timepicker:I = 0x7f0c00e3
 
-.field public static final mtrl_calendar_days_of_week:I = 0x7f0c00e4
+.field public static final material_timepicker_dialog:I = 0x7f0c00e4
 
-.field public static final mtrl_calendar_horizontal:I = 0x7f0c00e5
+.field public static final material_timepicker_textinput_display:I = 0x7f0c00e5
 
-.field public static final mtrl_calendar_month:I = 0x7f0c00e6
+.field public static final mtrl_alert_dialog:I = 0x7f0c00e6
 
-.field public static final mtrl_calendar_month_labeled:I = 0x7f0c00e7
+.field public static final mtrl_alert_dialog_actions:I = 0x7f0c00e7
 
-.field public static final mtrl_calendar_month_navigation:I = 0x7f0c00e8
+.field public static final mtrl_alert_dialog_title:I = 0x7f0c00e8
 
-.field public static final mtrl_calendar_months:I = 0x7f0c00e9
+.field public static final mtrl_alert_select_dialog_item:I = 0x7f0c00e9
 
-.field public static final mtrl_calendar_vertical:I = 0x7f0c00ea
+.field public static final mtrl_alert_select_dialog_multichoice:I = 0x7f0c00ea
 
-.field public static final mtrl_calendar_year:I = 0x7f0c00eb
+.field public static final mtrl_alert_select_dialog_singlechoice:I = 0x7f0c00eb
 
-.field public static final mtrl_layout_snackbar:I = 0x7f0c00ec
+.field public static final mtrl_calendar_day:I = 0x7f0c00ec
 
-.field public static final mtrl_layout_snackbar_include:I = 0x7f0c00ed
+.field public static final mtrl_calendar_day_of_week:I = 0x7f0c00ed
 
-.field public static final mtrl_navigation_rail_item:I = 0x7f0c00ee
+.field public static final mtrl_calendar_days_of_week:I = 0x7f0c00ee
 
-.field public static final mtrl_picker_actions:I = 0x7f0c00ef
+.field public static final mtrl_calendar_horizontal:I = 0x7f0c00ef
 
-.field public static final mtrl_picker_dialog:I = 0x7f0c00f0
+.field public static final mtrl_calendar_month:I = 0x7f0c00f0
 
-.field public static final mtrl_picker_fullscreen:I = 0x7f0c00f1
+.field public static final mtrl_calendar_month_labeled:I = 0x7f0c00f1
 
-.field public static final mtrl_picker_header_dialog:I = 0x7f0c00f2
+.field public static final mtrl_calendar_month_navigation:I = 0x7f0c00f2
 
-.field public static final mtrl_picker_header_fullscreen:I = 0x7f0c00f3
+.field public static final mtrl_calendar_months:I = 0x7f0c00f3
 
-.field public static final mtrl_picker_header_selection_text:I = 0x7f0c00f4
+.field public static final mtrl_calendar_vertical:I = 0x7f0c00f4
 
-.field public static final mtrl_picker_header_title_text:I = 0x7f0c00f5
+.field public static final mtrl_calendar_year:I = 0x7f0c00f5
 
-.field public static final mtrl_picker_header_toggle:I = 0x7f0c00f6
+.field public static final mtrl_layout_snackbar:I = 0x7f0c00f6
 
-.field public static final mtrl_picker_text_input_date:I = 0x7f0c00f7
+.field public static final mtrl_layout_snackbar_include:I = 0x7f0c00f7
 
-.field public static final mtrl_picker_text_input_date_range:I = 0x7f0c00f8
+.field public static final mtrl_navigation_rail_item:I = 0x7f0c00f8
 
-.field public static final notification_action:I = 0x7f0c00f9
+.field public static final mtrl_picker_actions:I = 0x7f0c00f9
 
-.field public static final notification_action_tombstone:I = 0x7f0c00fa
+.field public static final mtrl_picker_dialog:I = 0x7f0c00fa
 
-.field public static final notification_template_custom_big:I = 0x7f0c00fb
+.field public static final mtrl_picker_fullscreen:I = 0x7f0c00fb
 
-.field public static final notification_template_icon_group:I = 0x7f0c00fc
+.field public static final mtrl_picker_header_dialog:I = 0x7f0c00fc
 
-.field public static final notification_template_part_chronometer:I = 0x7f0c00fd
+.field public static final mtrl_picker_header_fullscreen:I = 0x7f0c00fd
 
-.field public static final notification_template_part_time:I = 0x7f0c00fe
+.field public static final mtrl_picker_header_selection_text:I = 0x7f0c00fe
 
-.field public static final player_big_notification:I = 0x7f0c00ff
+.field public static final mtrl_picker_header_title_text:I = 0x7f0c00ff
 
-.field public static final player_small_notification:I = 0x7f0c0100
+.field public static final mtrl_picker_header_toggle:I = 0x7f0c0100
 
-.field public static final select_dialog_item_material:I = 0x7f0c0101
+.field public static final mtrl_picker_text_input_date:I = 0x7f0c0101
 
-.field public static final select_dialog_multichoice_material:I = 0x7f0c0102
+.field public static final mtrl_picker_text_input_date_range:I = 0x7f0c0102
 
-.field public static final select_dialog_singlechoice_material:I = 0x7f0c0103
+.field public static final notification_action:I = 0x7f0c0103
 
-.field public static final shortcut_widget_item:I = 0x7f0c0104
+.field public static final notification_action_tombstone:I = 0x7f0c0104
 
-.field public static final shortcut_widget_layout_1:I = 0x7f0c0105
+.field public static final notification_template_custom_big:I = 0x7f0c0105
 
-.field public static final shortcut_widget_layout_2:I = 0x7f0c0106
+.field public static final notification_template_icon_group:I = 0x7f0c0106
 
-.field public static final shortcut_widget_layout_3:I = 0x7f0c0107
+.field public static final notification_template_part_chronometer:I = 0x7f0c0107
 
-.field public static final shortcut_widget_layout_4:I = 0x7f0c0108
+.field public static final notification_template_part_time:I = 0x7f0c0108
 
-.field public static final shortcut_widget_layout_preview:I = 0x7f0c0109
+.field public static final player_big_notification:I = 0x7f0c0109
 
-.field public static final spring_dot_layout:I = 0x7f0c010a
+.field public static final player_small_notification:I = 0x7f0c010a
 
-.field public static final support_simple_spinner_dropdown_item:I = 0x7f0c010b
+.field public static final select_dialog_item_material:I = 0x7f0c010b
 
-.field public static final test_action_chip:I = 0x7f0c010c
+.field public static final select_dialog_multichoice_material:I = 0x7f0c010c
 
-.field public static final test_chip_zero_corner_radius:I = 0x7f0c010d
+.field public static final select_dialog_singlechoice_material:I = 0x7f0c010d
 
-.field public static final test_design_checkbox:I = 0x7f0c010e
+.field public static final shortcut_widget_item:I = 0x7f0c010e
 
-.field public static final test_design_radiobutton:I = 0x7f0c010f
+.field public static final shortcut_widget_layout_1:I = 0x7f0c010f
 
-.field public static final test_navigation_bar_item_layout:I = 0x7f0c0110
+.field public static final shortcut_widget_layout_2:I = 0x7f0c0110
 
-.field public static final test_reflow_chipgroup:I = 0x7f0c0111
+.field public static final shortcut_widget_layout_3:I = 0x7f0c0111
 
-.field public static final test_toolbar:I = 0x7f0c0112
+.field public static final shortcut_widget_layout_4:I = 0x7f0c0112
 
-.field public static final test_toolbar_custom_background:I = 0x7f0c0113
+.field public static final shortcut_widget_layout_preview:I = 0x7f0c0113
 
-.field public static final test_toolbar_elevation:I = 0x7f0c0114
+.field public static final spring_dot_layout:I = 0x7f0c0114
 
-.field public static final test_toolbar_surface:I = 0x7f0c0115
+.field public static final support_simple_spinner_dropdown_item:I = 0x7f0c0115
 
-.field public static final text_view_with_line_height_from_appearance:I = 0x7f0c0116
+.field public static final test_action_chip:I = 0x7f0c0116
 
-.field public static final text_view_with_line_height_from_layout:I = 0x7f0c0117
+.field public static final test_chip_zero_corner_radius:I = 0x7f0c0117
 
-.field public static final text_view_with_line_height_from_style:I = 0x7f0c0118
+.field public static final test_design_checkbox:I = 0x7f0c0118
 
-.field public static final text_view_with_theme_line_height:I = 0x7f0c0119
+.field public static final test_design_radiobutton:I = 0x7f0c0119
 
-.field public static final text_view_without_line_height:I = 0x7f0c011a
+.field public static final test_navigation_bar_item_layout:I = 0x7f0c011a
 
-.field public static final wallet_test_layout:I = 0x7f0c011b
+.field public static final test_reflow_chipgroup:I = 0x7f0c011b
 
-.field public static final widget_deleted:I = 0x7f0c011c
+.field public static final test_toolbar:I = 0x7f0c011c
 
-.field public static final widget_edititem:I = 0x7f0c011d
+.field public static final test_toolbar_custom_background:I = 0x7f0c011d
 
-.field public static final worm_dot_layout:I = 0x7f0c011e
+.field public static final test_toolbar_elevation:I = 0x7f0c011e
+
+.field public static final test_toolbar_surface:I = 0x7f0c011f
+
+.field public static final text_view_with_line_height_from_appearance:I = 0x7f0c0120
+
+.field public static final text_view_with_line_height_from_layout:I = 0x7f0c0121
+
+.field public static final text_view_with_line_height_from_style:I = 0x7f0c0122
+
+.field public static final text_view_with_theme_line_height:I = 0x7f0c0123
+
+.field public static final text_view_without_line_height:I = 0x7f0c0124
+
+.field public static final wallet_test_layout:I = 0x7f0c0125
+
+.field public static final widget_deleted:I = 0x7f0c0126
+
+.field public static final widget_edititem:I = 0x7f0c0127
+
+.field public static final worm_dot_layout:I = 0x7f0c0128
 
 
 # direct methods

@@ -7,7 +7,7 @@ import android.widget.FrameLayout;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
-import org.telegram.messenger.C3295R;
+import org.telegram.messenger.C3417R;
 /* loaded from: classes4.dex */
 public final class ForkFragmentWalletSwapProtocolsBinding implements ViewBinding {
     public final RecyclerView recycleSwapProtocols;
@@ -28,7 +28,7 @@ public final class ForkFragmentWalletSwapProtocolsBinding implements ViewBinding
     }
 
     public static ForkFragmentWalletSwapProtocolsBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3295R.layout.fork_fragment_wallet_swap_protocols, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3417R.layout.fork_fragment_wallet_swap_protocols, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -36,7 +36,7 @@ public final class ForkFragmentWalletSwapProtocolsBinding implements ViewBinding
     }
 
     public static ForkFragmentWalletSwapProtocolsBinding bind(View view) {
-        int i = C3295R.C3298id.recycle_swap_protocols;
+        int i = C3417R.C3420id.recycle_swap_protocols;
         RecyclerView recyclerView = (RecyclerView) ViewBindings.findChildViewById(view, i);
         if (recyclerView != null) {
             return new ForkFragmentWalletSwapProtocolsBinding((FrameLayout) view, recyclerView);

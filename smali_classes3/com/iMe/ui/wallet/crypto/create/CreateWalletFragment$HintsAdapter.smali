@@ -39,7 +39,7 @@
         }
     .end annotation
 
-    .line 1025
+    .line 1104
     iput-object p1, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$HintsAdapter;->this$0:Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;
 
     invoke-direct {p0}, Lorg/telegram/ui/Components/RecyclerListView$SelectionAdapter;-><init>()V
@@ -48,10 +48,10 @@
 
     new-array p1, p1, [I
 
-    .line 1028
+    .line 1107
     iput-object p1, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$HintsAdapter;->location:[I
 
-    .line 1029
+    .line 1108
     invoke-static {}, Lkotlin/collections/CollectionsKt;->emptyList()Ljava/util/List;
 
     move-result-object p1
@@ -66,7 +66,7 @@
 .method public final getItem(I)Ljava/lang/String;
     .locals 1
 
-    .line 1068
+    .line 1147
     iget-object v0, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$HintsAdapter;->searchResult:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -81,7 +81,7 @@
 .method public getItemCount()I
     .locals 1
 
-    .line 1098
+    .line 1177
     iget-object v0, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$HintsAdapter;->searchResult:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->size()I
@@ -118,7 +118,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 1090
+    .line 1169
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     const-string v0, "null cannot be cast to non-null type android.widget.TextView"
@@ -129,14 +129,14 @@
 
     const/16 v0, 0x9
 
-    .line 1091
+    .line 1170
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
 
     invoke-static {p1, v0}, Lcom/tbuonomo/viewpagerdotsindicator/ViewExtKt;->setPaddingHorizontal(Landroid/view/View;I)V
 
-    .line 1092
+    .line 1171
     iget-object v0, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$HintsAdapter;->searchResult:Ljava/util/List;
 
     invoke-interface {v0, p2}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -157,7 +157,7 @@
 
     invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 1078
+    .line 1157
     new-instance p1, Landroid/widget/TextView;
 
     iget-object p2, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$HintsAdapter;->this$0:Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;
@@ -174,10 +174,10 @@
 
     const/high16 v1, 0x41800000    # 16.0f
 
-    .line 1079
+    .line 1158
     invoke-virtual {p1, v0, v1}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 1080
+    .line 1159
     sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefaultSubmenuItem:I
 
     invoke-virtual {p2, v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(I)I
@@ -188,21 +188,21 @@
 
     const/16 p2, 0x10
 
-    .line 1081
+    .line 1160
     invoke-virtual {p1, p2}, Landroid/widget/TextView;->setGravity(I)V
 
     const/4 p2, -0x2
 
     const/4 v0, -0x1
 
-    .line 1082
+    .line 1161
     invoke-static {p2, v0}, Lorg/telegram/ui/Components/LayoutHelper;->createRecycler(II)Landroidx/recyclerview/widget/RecyclerView$LayoutParams;
 
     move-result-object p2
 
     invoke-virtual {p1, p2}, Landroid/widget/TextView;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1077
+    .line 1156
     new-instance p2, Lorg/telegram/ui/Components/RecyclerListView$Holder;
 
     invoke-direct {p2, p1}, Lorg/telegram/ui/Components/RecyclerListView$Holder;-><init>(Landroid/view/View;)V
@@ -217,7 +217,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 1034
+    .line 1113
     invoke-virtual {p1}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$NumericEditText;->getText()Ljava/lang/CharSequence;
 
     move-result-object v0
@@ -226,27 +226,27 @@
 
     move-result-object v0
 
-    .line 1035
+    .line 1114
     invoke-static {v0}, Lkotlin/text/StringsKt;->isBlank(Ljava/lang/CharSequence;)Z
 
     move-result v1
 
     if-eqz v1, :cond_0
 
-    .line 1036
+    .line 1115
     iget-object p1, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$HintsAdapter;->this$0:Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;
 
     invoke-static {p1}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->access$hideHint(Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;)V
 
     goto :goto_0
 
-    .line 1038
+    .line 1117
     :cond_0
     iget-object v1, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$HintsAdapter;->this$0:Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;
 
     invoke-static {v1, p1}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->access$setSearchingHintEditText$p(Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$NumericEditText;)V
 
-    .line 1039
+    .line 1118
     iget-object p1, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$HintsAdapter;->this$0:Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;
 
     invoke-static {p1}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->access$getPresenter(Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;)Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter;
@@ -274,13 +274,13 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 1044
+    .line 1123
     iput-object p1, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$HintsAdapter;->searchResult:Ljava/util/List;
 
-    .line 1045
+    .line 1124
     invoke-virtual {p0}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyDataSetChanged()V
 
-    .line 1046
+    .line 1125
     iget-object p1, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$HintsAdapter;->searchResult:Ljava/util/List;
 
     invoke-interface {p1}, Ljava/util/List;->isEmpty()Z
@@ -289,14 +289,14 @@
 
     if-eqz p1, :cond_0
 
-    .line 1047
+    .line 1126
     iget-object p1, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$HintsAdapter;->this$0:Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;
 
     invoke-static {p1}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->access$hideHint(Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;)V
 
     goto/16 :goto_0
 
-    .line 1049
+    .line 1128
     :cond_0
     iget-object p1, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$HintsAdapter;->this$0:Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;
 
@@ -327,19 +327,19 @@
     :cond_1
     const/16 p1, 0x3e8
 
-    .line 1051
+    .line 1130
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p1
 
     const/high16 v0, -0x80000000
 
-    .line 1050
+    .line 1129
     invoke-static {p1, v0}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
     move-result p1
 
-    .line 1054
+    .line 1133
     iget-object v0, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$HintsAdapter;->this$0:Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;
 
     invoke-static {v0}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->access$getHintPopupLayout(Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;)Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;
@@ -348,7 +348,7 @@
 
     invoke-virtual {v0, p1, p1}, Landroid/widget/FrameLayout;->measure(II)V
 
-    .line 1055
+    .line 1134
     iget-object p1, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$HintsAdapter;->this$0:Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;
 
     invoke-static {p1}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->access$getSearchingHintEditText$p(Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;)Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$NumericEditText;
@@ -361,7 +361,7 @@
 
     invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->getLocationInWindow([I)V
 
-    .line 1056
+    .line 1135
     :cond_2
     iget-object p1, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$HintsAdapter;->this$0:Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;
 
@@ -377,7 +377,7 @@
 
     invoke-virtual {p1, v0, v1}, Landroidx/recyclerview/widget/LinearLayoutManager;->scrollToPositionWithOffset(II)V
 
-    .line 1057
+    .line 1136
     :cond_3
     iget-object p1, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$HintsAdapter;->this$0:Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;
 
@@ -385,7 +385,7 @@
 
     move-result-object p1
 
-    .line 1058
+    .line 1137
     iget-object v1, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$HintsAdapter;->this$0:Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;
 
     invoke-static {v1}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->access$getFragmentView$p$s1606076837(Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;)Landroid/view/View;
@@ -394,7 +394,7 @@
 
     const/16 v2, 0x33
 
-    .line 1060
+    .line 1139
     iget-object v3, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$HintsAdapter;->location:[I
 
     aget v0, v3, v0
@@ -407,7 +407,7 @@
 
     sub-int/2addr v0, v3
 
-    .line 1061
+    .line 1140
     iget-object v3, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$HintsAdapter;->location:[I
 
     const/4 v4, 0x1
@@ -422,10 +422,10 @@
 
     sub-int/2addr v3, v4
 
-    .line 1057
+    .line 1136
     invoke-virtual {p1, v1, v2, v0, v3}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->showAtLocation(Landroid/view/View;III)V
 
-    .line 1064
+    .line 1143
     :cond_4
     iget-object p1, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$HintsAdapter;->this$0:Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;
 

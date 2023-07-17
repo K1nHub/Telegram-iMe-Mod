@@ -23,7 +23,7 @@ import com.iMe.storage.domain.model.Result;
 import com.iMe.storage.domain.model.notification.NotificationType;
 import com.iMe.storage.domain.storage.PreferenceHelper;
 import com.iMe.storage.domain.utils.p030rx.RxEventBus;
-import com.iMe.utils.extentions.p033rx.RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
+import com.iMe.utils.extentions.p032rx.RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
 import io.reactivex.Observable;
 import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.disposables.Disposable;
@@ -41,11 +41,11 @@ import kotlin.ranges.IntRange;
 import kotlin.ranges.RangesKt___RangesKt;
 import kotlin.text.StringsKt__StringsJVMKt;
 import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.C3295R;
+import org.telegram.messenger.C3417R;
 import org.telegram.messenger.LiteMode;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.UserConfig;
-import org.telegram.p044ui.LaunchActivity;
+import org.telegram.p043ui.LaunchActivity;
 /* compiled from: PushNotificationsManager.kt */
 /* loaded from: classes3.dex */
 public final class PushNotificationsManager {
@@ -203,8 +203,8 @@ public final class PushNotificationsManager {
                     }
                 });
                 Intrinsics.checkNotNullExpressionValue(doFinally, "notificationInteractor\n …{ subscriptions.clear() }");
-                Disposable subscribe = doFinally.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1592x6e1faa35(arrayList2, this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1593x6e1faa36(null)));
-                Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
+                Disposable subscribe = doFinally.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1603x6e1faa35(arrayList2, this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1604x6e1faa36(null)));
+                Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…Error.invoke()\n        })");
                 RxExtKt.autoDispose(subscribe, this.subscriptions);
             }
         }
@@ -265,7 +265,7 @@ public final class PushNotificationsManager {
                     }.getType());
                 case 3:
                     Gson globalGson3 = GsonExtKt.getGlobalGson();
-                    return (PushNotificationModel) globalGson3.fromJson(globalGson3.toJson(map), new TypeToken<PushNotificationModel.CryptoTransfer.C1601In>() { // from class: com.iMe.manager.notifications.PushNotificationsManager$convertMapParamsToModel$$inlined$toDataClass$default$3
+                    return (PushNotificationModel) globalGson3.fromJson(globalGson3.toJson(map), new TypeToken<PushNotificationModel.CryptoTransfer.C1610In>() { // from class: com.iMe.manager.notifications.PushNotificationsManager$convertMapParamsToModel$$inlined$toDataClass$default$3
                     }.getType());
                 case 4:
                     Gson globalGson4 = GsonExtKt.getGlobalGson();
@@ -273,7 +273,7 @@ public final class PushNotificationsManager {
                     }.getType());
                 case 5:
                     Gson globalGson5 = GsonExtKt.getGlobalGson();
-                    return (PushNotificationModel) globalGson5.fromJson(globalGson5.toJson(map), new TypeToken<PushNotificationModel.Donation.C1602In>() { // from class: com.iMe.manager.notifications.PushNotificationsManager$convertMapParamsToModel$$inlined$toDataClass$default$5
+                    return (PushNotificationModel) globalGson5.fromJson(globalGson5.toJson(map), new TypeToken<PushNotificationModel.Donation.C1611In>() { // from class: com.iMe.manager.notifications.PushNotificationsManager$convertMapParamsToModel$$inlined$toDataClass$default$5
                     }.getType());
                 case 6:
                     Gson globalGson6 = GsonExtKt.getGlobalGson();
@@ -323,9 +323,9 @@ public final class PushNotificationsManager {
         intent.putExtra("userId", pushNotificationModel.getUserId());
         PendingIntent activity = PendingIntent.getActivity(ApplicationLoader.applicationContext, 0, intent, 1107296256);
         if (Build.VERSION.SDK_INT >= 26 && from.getNotificationChannel("iMe Messenger") == null) {
-            from.createNotificationChannel(new NotificationChannel("iMe Messenger", LocaleController.getString("AppName", C3295R.string.AppName), 3));
+            from.createNotificationChannel(new NotificationChannel("iMe Messenger", LocaleController.getString("AppName", C3417R.string.AppName), 3));
         }
-        Notification build = new NotificationCompat.Builder(ApplicationLoader.applicationContext, "iMe Messenger").setContentTitle(LocaleController.getString("AppName", C3295R.string.AppName)).setContentText(pushNotificationModel.getMessage()).setSmallIcon(C3295R.C3297drawable.fork_notification).setAutoCancel(true).setGroupSummary(true).setGroup(LocaleController.getInternalString(C3295R.string.drawer_wallet_item_title)).setContentIntent(activity).setColor(ContextCompat.getColor(ApplicationLoader.applicationContext, C3295R.C3296color.fork_color)).setCategory("msg").build();
+        Notification build = new NotificationCompat.Builder(ApplicationLoader.applicationContext, "iMe Messenger").setContentTitle(LocaleController.getString("AppName", C3417R.string.AppName)).setContentText(pushNotificationModel.getMessage()).setSmallIcon(C3417R.C3419drawable.fork_notification).setAutoCancel(true).setGroupSummary(true).setGroup(LocaleController.getInternalString(C3417R.string.drawer_wallet_item_title)).setContentIntent(activity).setColor(ContextCompat.getColor(ApplicationLoader.applicationContext, C3417R.C3418color.fork_color)).setCategory("msg").build();
         Intrinsics.checkNotNullExpressionValue(build, "Builder(ApplicationLoade…\n                .build()");
         from.notify((int) System.currentTimeMillis(), build);
     }

@@ -29,15 +29,15 @@ import kotlin.sequences.Sequence;
 import kotlin.sequences.SequencesKt___SequencesKt;
 import org.koin.core.Koin;
 import org.koin.core.component.KoinComponent;
-import org.koin.p043mp.KoinPlatformTools;
+import org.koin.p042mp.KoinPlatformTools;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BaseController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.Utilities;
-import p034j$.util.concurrent.ConcurrentHashMap;
-import p034j$.util.concurrent.ConcurrentMap$EL;
-import p034j$.util.function.Function;
+import p033j$.util.concurrent.ConcurrentHashMap;
+import p033j$.util.concurrent.ConcurrentMap$EL;
+import p033j$.util.function.Function;
 /* compiled from: MusicController.kt */
 /* loaded from: classes3.dex */
 public final class MusicController extends BaseController implements KoinComponent {
@@ -122,27 +122,6 @@ public final class MusicController extends BaseController implements KoinCompone
         this.playlists = mutableMap;
     }
 
-    public final void setNewPlaylists(Map<Long, PlaylistModel> newBookmarks) {
-        Intrinsics.checkNotNullParameter(newBookmarks, "newBookmarks");
-        this.playlists = newBookmarks;
-        Utilities.stageQueue.postRunnable(new Runnable() { // from class: com.iMe.fork.controller.MusicController$$ExternalSyntheticLambda0
-            @Override // java.lang.Runnable
-            public final void run() {
-                MusicController.setNewPlaylists$lambda$4(MusicController.this);
-            }
-        });
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void setNewPlaylists$lambda$4(MusicController this$0) {
-        List<PlaylistModel> list;
-        Intrinsics.checkNotNullParameter(this$0, "this$0");
-        PlaylistsDao dao = this$0.getDao();
-        long j = this$0.getUserConfig().clientUserId;
-        list = CollectionsKt___CollectionsKt.toList(this$0.playlists.values());
-        dao.restoreBackup(j, list);
-    }
-
     public final void addPlaylistMessage(long j, final List<? extends MessageObject> messages) {
         int collectionSizeOrDefault;
         Intrinsics.checkNotNullParameter(messages, "messages");
@@ -161,29 +140,29 @@ public final class MusicController extends BaseController implements KoinCompone
             arrayList.add(Integer.valueOf(messageObject.getId()));
         }
         messageIds.addAll(arrayList);
-        Utilities.stageQueue.postRunnable(new Runnable() { // from class: com.iMe.fork.controller.MusicController$$ExternalSyntheticLambda2
+        Utilities.stageQueue.postRunnable(new Runnable() { // from class: com.iMe.fork.controller.MusicController$$ExternalSyntheticLambda1
             @Override // java.lang.Runnable
             public final void run() {
-                MusicController.addPlaylistMessage$lambda$7(MusicController.this, playlistModel2);
+                MusicController.addPlaylistMessage$lambda$6(MusicController.this, playlistModel2);
             }
         });
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: com.iMe.fork.controller.MusicController$$ExternalSyntheticLambda4
             @Override // java.lang.Runnable
             public final void run() {
-                MusicController.addPlaylistMessage$lambda$8(MusicController.this, messages);
+                MusicController.addPlaylistMessage$lambda$7(MusicController.this, messages);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void addPlaylistMessage$lambda$7(MusicController this$0, PlaylistModel playlist) {
+    public static final void addPlaylistMessage$lambda$6(MusicController this$0, PlaylistModel playlist) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         Intrinsics.checkNotNullParameter(playlist, "$playlist");
         this$0.getDao().insert((PlaylistsDao) PlaylistsMappingKt.mapToDb(playlist, this$0.getUserConfig().clientUserId));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void addPlaylistMessage$lambda$8(MusicController this$0, List messages) {
+    public static final void addPlaylistMessage$lambda$7(MusicController this$0, List messages) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         Intrinsics.checkNotNullParameter(messages, "$messages");
         this$0.getNotificationCenter().postNotificationName(NotificationCenter.playlistDidChanged, messages, Boolean.TRUE);
@@ -202,29 +181,29 @@ public final class MusicController extends BaseController implements KoinCompone
         if (playlistModel.getMessageIds().isEmpty()) {
             this.playlists.remove(Long.valueOf(j));
         }
-        Utilities.stageQueue.postRunnable(new Runnable() { // from class: com.iMe.fork.controller.MusicController$$ExternalSyntheticLambda1
+        Utilities.stageQueue.postRunnable(new Runnable() { // from class: com.iMe.fork.controller.MusicController$$ExternalSyntheticLambda2
             @Override // java.lang.Runnable
             public final void run() {
-                MusicController.removePlaylistMessage$lambda$9(MusicController.this, playlistModel);
+                MusicController.removePlaylistMessage$lambda$8(MusicController.this, playlistModel);
             }
         });
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: com.iMe.fork.controller.MusicController$$ExternalSyntheticLambda3
             @Override // java.lang.Runnable
             public final void run() {
-                MusicController.removePlaylistMessage$lambda$10(MusicController.this, messageIds);
+                MusicController.removePlaylistMessage$lambda$9(MusicController.this, messageIds);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void removePlaylistMessage$lambda$9(MusicController this$0, PlaylistModel playlist) {
+    public static final void removePlaylistMessage$lambda$8(MusicController this$0, PlaylistModel playlist) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         Intrinsics.checkNotNullParameter(playlist, "$playlist");
         this$0.getDao().insert((PlaylistsDao) PlaylistsMappingKt.mapToDb(playlist, this$0.getUserConfig().clientUserId));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void removePlaylistMessage$lambda$10(MusicController this$0, List messageIds) {
+    public static final void removePlaylistMessage$lambda$9(MusicController this$0, List messageIds) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         Intrinsics.checkNotNullParameter(messageIds, "$messageIds");
         this$0.getNotificationCenter().postNotificationName(NotificationCenter.playlistDidChanged, messageIds, Boolean.FALSE);
@@ -234,6 +213,26 @@ public final class MusicController extends BaseController implements KoinCompone
         ArrayList<Integer> messageIds;
         PlaylistModel playlistModel = this.playlists.get(Long.valueOf(j));
         return (playlistModel == null || (messageIds = playlistModel.getMessageIds()) == null) ? new ArrayList<>() : messageIds;
+    }
+
+    private final void setNewPlaylists(Map<Long, PlaylistModel> map) {
+        this.playlists = map;
+        Utilities.stageQueue.postRunnable(new Runnable() { // from class: com.iMe.fork.controller.MusicController$$ExternalSyntheticLambda0
+            @Override // java.lang.Runnable
+            public final void run() {
+                MusicController.setNewPlaylists$lambda$10(MusicController.this);
+            }
+        });
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final void setNewPlaylists$lambda$10(MusicController this$0) {
+        List<PlaylistModel> list;
+        Intrinsics.checkNotNullParameter(this$0, "this$0");
+        PlaylistsDao dao = this$0.getDao();
+        long j = this$0.getUserConfig().clientUserId;
+        list = CollectionsKt___CollectionsKt.toList(this$0.playlists.values());
+        dao.restoreBackup(j, list);
     }
 
     /* compiled from: MusicController.kt */
@@ -257,19 +256,19 @@ public final class MusicController extends BaseController implements KoinCompone
             Integer valueOf = Integer.valueOf(i);
             final MusicController$Companion$getInstance$1 musicController$Companion$getInstance$1 = new MusicController$Companion$getInstance$1(i);
             Object computeIfAbsent = ConcurrentMap$EL.computeIfAbsent(concurrentHashMap, valueOf, new Function() { // from class: com.iMe.fork.controller.MusicController$Companion$$ExternalSyntheticLambda0
-                @Override // p034j$.util.function.Function
+                @Override // p033j$.util.function.Function
                 public /* synthetic */ Function andThen(Function function) {
                     return Objects.requireNonNull(function);
                 }
 
-                @Override // p034j$.util.function.Function
+                @Override // p033j$.util.function.Function
                 public final Object apply(Object obj) {
                     MusicController instance$lambda$0;
                     instance$lambda$0 = MusicController.Companion.getInstance$lambda$0(Function1.this, obj);
                     return instance$lambda$0;
                 }
 
-                @Override // p034j$.util.function.Function
+                @Override // p033j$.util.function.Function
                 public /* synthetic */ Function compose(Function function) {
                     return Objects.requireNonNull(function);
                 }

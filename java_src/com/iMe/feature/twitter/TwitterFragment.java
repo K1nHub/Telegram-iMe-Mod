@@ -47,18 +47,18 @@ import kotlin.jvm.internal.Reflection;
 import kotlin.reflect.KProperty;
 import moxy.MvpDelegate;
 import moxy.ktx.MoxyKtxDelegate;
-import org.koin.p043mp.KoinPlatformTools;
-import org.telegram.messenger.C3295R;
+import org.koin.p042mp.KoinPlatformTools;
+import org.telegram.messenger.C3417R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.browser.Browser;
 import org.telegram.messenger.databinding.ForkFragmentTwitterBinding;
-import org.telegram.p044ui.ActionBar.ActionBarMenuItem;
-import org.telegram.p044ui.ActionBar.AlertDialog;
-import org.telegram.p044ui.ActionBar.C3361ActionBar;
-import org.telegram.p044ui.ActionBar.Theme;
-import org.telegram.p044ui.ActionBar.ThemeDescription;
-import org.telegram.p044ui.PhotoViewer;
+import org.telegram.p043ui.ActionBar.ActionBarMenuItem;
+import org.telegram.p043ui.ActionBar.AlertDialog;
+import org.telegram.p043ui.ActionBar.C3484ActionBar;
+import org.telegram.p043ui.ActionBar.Theme;
+import org.telegram.p043ui.ActionBar.ThemeDescription;
+import org.telegram.p043ui.PhotoViewer;
 /* compiled from: TwitterFragment.kt */
 /* loaded from: classes3.dex */
 public final class TwitterFragment extends MvpFragment implements TwitterView {
@@ -211,16 +211,16 @@ public final class TwitterFragment extends MvpFragment implements TwitterView {
         ContextExtKt.share(parentActivity, url);
     }
 
-    @Override // org.telegram.p044ui.ActionBar.BaseFragment
+    @Override // org.telegram.p043ui.ActionBar.BaseFragment
     public ArrayList<ThemeDescription> getThemeDescriptions() {
         ArrayList<ThemeDescription> arrayListOf;
         arrayListOf = CollectionsKt__CollectionsKt.arrayListOf(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, Theme.key_actionBarDefault), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_ITEMSCOLOR, null, null, null, null, Theme.key_actionBarDefaultIcon), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_TITLECOLOR, null, null, null, null, Theme.key_actionBarDefaultTitle), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SELECTORCOLOR, null, null, null, null, Theme.key_actionBarDefaultSelector), new ThemeDescription(getBinding().getRoot(), ThemeDescription.FLAG_BACKGROUND, null, null, null, new ThemeDescription.ThemeDescriptionDelegate() { // from class: com.iMe.feature.twitter.TwitterFragment$$ExternalSyntheticLambda4
-            @Override // org.telegram.p044ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
+            @Override // org.telegram.p043ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
             public final void didSetColor() {
                 TwitterFragment.getThemeDescriptions$lambda$2(TwitterFragment.this);
             }
 
-            @Override // org.telegram.p044ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
+            @Override // org.telegram.p043ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
             public /* synthetic */ void onAnimationProgress(float f) {
                 ThemeDescription.ThemeDescriptionDelegate.CC.$default$onAnimationProgress(this, f);
             }
@@ -236,18 +236,18 @@ public final class TwitterFragment extends MvpFragment implements TwitterView {
     }
 
     private final void setupActionBar() {
-        C3361ActionBar c3361ActionBar = this.actionBar;
-        c3361ActionBar.setBackButtonImage(C3295R.C3297drawable.ic_ab_back);
-        c3361ActionBar.setAllowOverlayTitle(true);
-        c3361ActionBar.setTitle(LocaleController.getInternalString(C3295R.string.twitter_title));
-        ActionBarMenuItem addItem = c3361ActionBar.createMenu().addItem(IdFabric$Menu.OPTIONS, C3295R.C3297drawable.ic_ab_other);
-        addItem.setContentDescription(LocaleController.getString("AccDescrMoreOptions", C3295R.string.AccDescrMoreOptions));
-        addItem.addSubItem(IdFabric$Menu.OPEN_IN_TWITTER, C3295R.C3297drawable.fork_drawer_social_twitter, getResourceManager().getString(C3295R.string.twitter_open_in_twitter));
+        C3484ActionBar c3484ActionBar = this.actionBar;
+        c3484ActionBar.setBackButtonImage(C3417R.C3419drawable.ic_ab_back);
+        c3484ActionBar.setAllowOverlayTitle(true);
+        c3484ActionBar.setTitle(LocaleController.getInternalString(C3417R.string.twitter_title));
+        ActionBarMenuItem addItem = c3484ActionBar.createMenu().addItem(IdFabric$Menu.OPTIONS, C3417R.C3419drawable.ic_ab_other);
+        addItem.setContentDescription(LocaleController.getString("AccDescrMoreOptions", C3417R.string.AccDescrMoreOptions));
+        addItem.addSubItem(IdFabric$Menu.OPEN_IN_TWITTER, C3417R.C3419drawable.fork_drawer_social_twitter, getResourceManager().getString(C3417R.string.twitter_open_in_twitter));
         if (this.socialNetwork.getHasEditAccess()) {
-            addItem.addSubItem(IdFabric$Menu.RESET_TWITTER, C3295R.C3297drawable.fork_ic_recycler_22, getResourceManager().getString(C3295R.string.social_reset_menu_item));
+            addItem.addSubItem(IdFabric$Menu.RESET_TWITTER, C3417R.C3419drawable.fork_ic_recycler_22, getResourceManager().getString(C3417R.string.social_reset_menu_item));
         }
-        c3361ActionBar.setActionBarMenuOnItemClick(new C3361ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.feature.twitter.TwitterFragment$setupActionBar$1$2
-            @Override // org.telegram.p044ui.ActionBar.C3361ActionBar.ActionBarMenuOnItemClick
+        c3484ActionBar.setActionBarMenuOnItemClick(new C3484ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.feature.twitter.TwitterFragment$setupActionBar$1$2
+            @Override // org.telegram.p043ui.ActionBar.C3484ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 TwitterPresenter presenter;
                 TwitterPresenter presenter2;
@@ -322,9 +322,9 @@ public final class TwitterFragment extends MvpFragment implements TwitterView {
         BaseNode baseNode = (BaseNode) this_with.getItem(i);
         if (baseNode instanceof TweetItem) {
             int id = view.getId();
-            if (id == C3295R.C3298id.image_share) {
+            if (id == C3417R.C3420id.image_share) {
                 this$0.getPresenter().onShareClick((TweetItem) baseNode);
-            } else if (id == C3295R.C3298id.image_menu) {
+            } else if (id == C3417R.C3420id.image_menu) {
                 this$0.showItemMenu(view, (TweetItem) baseNode);
             }
         }
@@ -338,7 +338,7 @@ public final class TwitterFragment extends MvpFragment implements TwitterView {
 
     private final void showItemMenu(View view, TweetItem tweetItem) {
         List listOf;
-        listOf = CollectionsKt__CollectionsJVMKt.listOf(new MenuItem(getResourceManager().getString(C3295R.string.common_translate), C3295R.C3297drawable.msg_premium_translate, 0, 0, new TwitterFragment$showItemMenu$menuItems$1(this, tweetItem), 12, null));
+        listOf = CollectionsKt__CollectionsJVMKt.listOf(new MenuItem(getResourceManager().getString(C3417R.string.common_translate), C3417R.C3419drawable.msg_premium_translate, 0, 0, new TwitterFragment$showItemMenu$menuItems$1(this, tweetItem), 12, null));
         PopupMenuExtKt.showPopupMenu(view, listOf);
     }
 

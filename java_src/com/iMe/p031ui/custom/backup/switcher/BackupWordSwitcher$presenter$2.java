@@ -4,11 +4,12 @@ import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Lambda;
-import org.koin.p043mp.KoinPlatformTools;
+import org.koin.p042mp.KoinPlatformTools;
+/* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: BackupWordSwitcher.kt */
 /* renamed from: com.iMe.ui.custom.backup.switcher.BackupWordSwitcher$presenter$2 */
 /* loaded from: classes3.dex */
-final class BackupWordSwitcher$presenter$2 extends Lambda implements Function0<BackupWordSwitcherPresenter> {
+public final class BackupWordSwitcher$presenter$2 extends Lambda implements Function0<BackupWordSwitcherPresenter> {
     final /* synthetic */ BackupWordSwitcher this$0;
 
     /* JADX INFO: Access modifiers changed from: package-private */

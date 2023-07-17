@@ -1,6 +1,6 @@
 package me.grantland.widget;
 
-import com.iMe.android.R;
+import com.iMe.android.web.R;
 /* loaded from: classes4.dex */
 public final class R$styleable {
     public static final int[] AutofitTextView = {R.attr.minTextSize, R.attr.precision, R.attr.sizeToFit};

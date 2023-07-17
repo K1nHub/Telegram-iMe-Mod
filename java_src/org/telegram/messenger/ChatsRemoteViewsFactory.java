@@ -9,7 +9,7 @@ import android.widget.RemoteViews;
 import android.widget.RemoteViewsService;
 import androidx.collection.LongSparseArray;
 import java.util.ArrayList;
-import org.telegram.p044ui.ActionBar.Theme;
+import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.tgnet.TLRPC$Chat;
 import org.telegram.tgnet.TLRPC$Dialog;
 import org.telegram.tgnet.TLRPC$Message;
@@ -97,7 +97,7 @@ class ChatsRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactory {
     */
     public android.widget.RemoteViews getViewAt(int r20) {
         /*
-            Method dump skipped, instructions count: 1562
+            Method dump skipped, instructions count: 1564
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.messenger.ChatsRemoteViewsFactory.getViewAt(int):android.widget.RemoteViews");

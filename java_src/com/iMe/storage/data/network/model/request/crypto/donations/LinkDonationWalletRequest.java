@@ -1,14 +1,17 @@
 package com.iMe.storage.data.network.model.request.crypto.donations;
 
+import com.iMe.storage.domain.model.crypto.BlockchainType;
+import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: LinkDonationWalletRequest.kt */
 /* loaded from: classes3.dex */
 public final class LinkDonationWalletRequest {
     private final String chatId;
-    private final String etherWalletAddress;
     private final boolean isPersonalWallet;
+    private final String platform;
+    private final String walletAddress;
 
-    public static /* synthetic */ LinkDonationWalletRequest copy$default(LinkDonationWalletRequest linkDonationWalletRequest, String str, boolean z, String str2, int i, Object obj) {
+    public static /* synthetic */ LinkDonationWalletRequest copy$default(LinkDonationWalletRequest linkDonationWalletRequest, String str, boolean z, String str2, String str3, int i, Object obj) {
         if ((i & 1) != 0) {
             str = linkDonationWalletRequest.chatId;
         }
@@ -16,9 +19,12 @@ public final class LinkDonationWalletRequest {
             z = linkDonationWalletRequest.isPersonalWallet;
         }
         if ((i & 4) != 0) {
-            str2 = linkDonationWalletRequest.etherWalletAddress;
+            str2 = linkDonationWalletRequest.walletAddress;
         }
-        return linkDonationWalletRequest.copy(str, z, str2);
+        if ((i & 8) != 0) {
+            str3 = linkDonationWalletRequest.platform;
+        }
+        return linkDonationWalletRequest.copy(str, z, str2, str3);
     }
 
     public final String component1() {
@@ -30,13 +36,18 @@ public final class LinkDonationWalletRequest {
     }
 
     public final String component3() {
-        return this.etherWalletAddress;
+        return this.walletAddress;
     }
 
-    public final LinkDonationWalletRequest copy(String chatId, boolean z, String etherWalletAddress) {
+    public final String component4() {
+        return this.platform;
+    }
+
+    public final LinkDonationWalletRequest copy(String chatId, boolean z, String walletAddress, String platform) {
         Intrinsics.checkNotNullParameter(chatId, "chatId");
-        Intrinsics.checkNotNullParameter(etherWalletAddress, "etherWalletAddress");
-        return new LinkDonationWalletRequest(chatId, z, etherWalletAddress);
+        Intrinsics.checkNotNullParameter(walletAddress, "walletAddress");
+        Intrinsics.checkNotNullParameter(platform, "platform");
+        return new LinkDonationWalletRequest(chatId, z, walletAddress, platform);
     }
 
     public boolean equals(Object obj) {
@@ -45,7 +56,7 @@ public final class LinkDonationWalletRequest {
         }
         if (obj instanceof LinkDonationWalletRequest) {
             LinkDonationWalletRequest linkDonationWalletRequest = (LinkDonationWalletRequest) obj;
-            return Intrinsics.areEqual(this.chatId, linkDonationWalletRequest.chatId) && this.isPersonalWallet == linkDonationWalletRequest.isPersonalWallet && Intrinsics.areEqual(this.etherWalletAddress, linkDonationWalletRequest.etherWalletAddress);
+            return Intrinsics.areEqual(this.chatId, linkDonationWalletRequest.chatId) && this.isPersonalWallet == linkDonationWalletRequest.isPersonalWallet && Intrinsics.areEqual(this.walletAddress, linkDonationWalletRequest.walletAddress) && Intrinsics.areEqual(this.platform, linkDonationWalletRequest.platform);
         }
         return false;
     }
@@ -58,19 +69,21 @@ public final class LinkDonationWalletRequest {
         if (z != 0) {
             i = 1;
         }
-        return ((hashCode + i) * 31) + this.etherWalletAddress.hashCode();
+        return ((((hashCode + i) * 31) + this.walletAddress.hashCode()) * 31) + this.platform.hashCode();
     }
 
     public String toString() {
-        return "LinkDonationWalletRequest(chatId=" + this.chatId + ", isPersonalWallet=" + this.isPersonalWallet + ", etherWalletAddress=" + this.etherWalletAddress + ')';
+        return "LinkDonationWalletRequest(chatId=" + this.chatId + ", isPersonalWallet=" + this.isPersonalWallet + ", walletAddress=" + this.walletAddress + ", platform=" + this.platform + ')';
     }
 
-    public LinkDonationWalletRequest(String chatId, boolean z, String etherWalletAddress) {
+    public LinkDonationWalletRequest(String chatId, boolean z, String walletAddress, String platform) {
         Intrinsics.checkNotNullParameter(chatId, "chatId");
-        Intrinsics.checkNotNullParameter(etherWalletAddress, "etherWalletAddress");
+        Intrinsics.checkNotNullParameter(walletAddress, "walletAddress");
+        Intrinsics.checkNotNullParameter(platform, "platform");
         this.chatId = chatId;
         this.isPersonalWallet = z;
-        this.etherWalletAddress = etherWalletAddress;
+        this.walletAddress = walletAddress;
+        this.platform = platform;
     }
 
     public final String getChatId() {
@@ -81,7 +94,15 @@ public final class LinkDonationWalletRequest {
         return this.isPersonalWallet;
     }
 
-    public final String getEtherWalletAddress() {
-        return this.etherWalletAddress;
+    public final String getWalletAddress() {
+        return this.walletAddress;
+    }
+
+    public /* synthetic */ LinkDonationWalletRequest(String str, boolean z, String str2, String str3, int i, DefaultConstructorMarker defaultConstructorMarker) {
+        this(str, z, str2, (i & 8) != 0 ? BlockchainType.EVM.getBackendName() : str3);
+    }
+
+    public final String getPlatform() {
+        return this.platform;
     }
 }

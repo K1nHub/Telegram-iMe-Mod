@@ -122,6 +122,13 @@ public class WebpDecoder implements GifDecoder {
         this.mFramePointer = -1;
     }
 
+    public int getTotalIterationCount() {
+        if (this.mWebPImage.getLoopCount() == 0) {
+            return 0;
+        }
+        return this.mWebPImage.getLoopCount();
+    }
+
     @Override // com.bumptech.glide.gifdecoder.GifDecoder
     public int getByteSize() {
         return this.mWebPImage.getSizeInBytes();
@@ -192,6 +199,9 @@ public class WebpDecoder implements GifDecoder {
         int i5 = webpFrameInfo.height / i3;
         int i6 = webpFrameInfo.xOffset / i3;
         int i7 = webpFrameInfo.yOffset / i3;
+        if (i4 == 0 || i5 == 0) {
+            return;
+        }
         WebpFrame frame = this.mWebPImage.getFrame(i);
         try {
             try {
@@ -201,7 +211,7 @@ public class WebpDecoder implements GifDecoder {
                 frame.renderFrame(i4, i5, obtain);
                 canvas.drawBitmap(obtain, i6, i7, (Paint) null);
                 this.mBitmapProvider.release(obtain);
-            } catch (IllegalStateException unused) {
+            } catch (IllegalArgumentException | IllegalStateException unused) {
                 Log.e("WebpDecoder", "Rendering of frame failed. Frame number: " + i);
             }
         } finally {

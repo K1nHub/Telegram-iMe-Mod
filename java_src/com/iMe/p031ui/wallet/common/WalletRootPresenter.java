@@ -6,14 +6,14 @@ import com.iMe.storage.domain.model.crypto.BlockchainType;
 import com.iMe.storage.domain.storage.CryptoPreferenceHelper;
 import com.iMe.storage.domain.utils.p030rx.RxEventBus;
 import com.iMe.storage.domain.utils.p030rx.event.RxEvent;
-import com.iMe.utils.extentions.p033rx.RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
+import com.iMe.utils.extentions.p032rx.RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
 import io.reactivex.Observable;
 import java.util.HashMap;
 import kotlin.TuplesKt;
 import kotlin.collections.MapsKt__MapsKt;
 import kotlin.jvm.internal.Intrinsics;
 import moxy.InjectViewState;
-import org.telegram.messenger.C3295R;
+import org.telegram.messenger.C3417R;
 /* compiled from: WalletRootPresenter.kt */
 @InjectViewState
 /* renamed from: com.iMe.ui.wallet.common.WalletRootPresenter */
@@ -31,7 +31,7 @@ public final class WalletRootPresenter extends BasePresenter<WalletRootView> {
         this.cryptoAccessManager = cryptoAccessManager;
         this.cryptoPreferenceHelper = cryptoPreferenceHelper;
         this.rxEventBus = rxEventBus;
-        this.selectedTabId = C3295R.C3298id.wallet_root_bottom_navigation_home;
+        this.selectedTabId = C3417R.C3420id.wallet_root_bottom_navigation_home;
     }
 
     public final void selectTab(int i) {
@@ -46,18 +46,18 @@ public final class WalletRootPresenter extends BasePresenter<WalletRootView> {
     public void onFirstViewAttach() {
         listenEvents();
         setupNavigation();
-        selectTab(C3295R.C3298id.wallet_root_bottom_navigation_home);
+        selectTab(C3417R.C3420id.wallet_root_bottom_navigation_home);
     }
 
     private final boolean isDefaultTabSelected() {
-        return this.selectedTabId == C3295R.C3298id.wallet_root_bottom_navigation_home;
+        return this.selectedTabId == C3417R.C3420id.wallet_root_bottom_navigation_home;
     }
 
     private final void listenEvents() {
         RxEventBus rxEventBus = this.rxEventBus;
         Observable observeOn = rxEventBus.getPublisher().ofType(RxEvent.class).observeOn(rxEventBus.getSchedulersProvider().mo698ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "publisher\n              …(schedulersProvider.ui())");
-        Intrinsics.checkNotNullExpressionValue(observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2117xb1f506fa(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2118xb1f506fb(null))), "viewState: BaseView? = n…  onError.invoke()\n    })");
+        Intrinsics.checkNotNullExpressionValue(observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2121xb1f506fa(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2122xb1f506fb(null))), "viewState: BaseView? = n…Error.invoke()\n        })");
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -68,9 +68,9 @@ public final class WalletRootPresenter extends BasePresenter<WalletRootView> {
     /* JADX INFO: Access modifiers changed from: private */
     public final void setupNavigation() {
         HashMap<Integer, Boolean> hashMapOf;
-        Integer valueOf = Integer.valueOf(C3295R.C3298id.wallet_root_bottom_navigation_home);
+        Integer valueOf = Integer.valueOf(C3417R.C3420id.wallet_root_bottom_navigation_home);
         Boolean bool = Boolean.TRUE;
-        hashMapOf = MapsKt__MapsKt.hashMapOf(TuplesKt.m85to(valueOf, bool), TuplesKt.m85to(Integer.valueOf(C3295R.C3298id.wallet_root_bottom_navigation_exchange), Boolean.valueOf(this.cryptoAccessManager.isAnyWalletCreated())), TuplesKt.m85to(Integer.valueOf(C3295R.C3298id.wallet_root_bottom_navigation_settings), bool));
+        hashMapOf = MapsKt__MapsKt.hashMapOf(TuplesKt.m85to(valueOf, bool), TuplesKt.m85to(Integer.valueOf(C3417R.C3420id.wallet_root_bottom_navigation_exchange), Boolean.valueOf(this.cryptoAccessManager.isAnyWalletCreated())), TuplesKt.m85to(Integer.valueOf(C3417R.C3420id.wallet_root_bottom_navigation_settings), bool));
         ((WalletRootView) getViewState()).setupNavigationTabsEnabled(hashMapOf);
     }
 }

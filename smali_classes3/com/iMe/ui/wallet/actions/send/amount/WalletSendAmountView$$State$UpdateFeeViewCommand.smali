@@ -26,7 +26,7 @@
 .method constructor <init>(Lcom/iMe/ui/wallet/actions/send/amount/WalletSendAmountView$$State;)V
     .locals 1
 
-    .line 494
+    .line 505
     const-class p1, Lmoxy/viewstate/strategy/AddToEndSingleStrategy;
 
     const-string v0, "updateFeeView"
@@ -41,7 +41,7 @@
 .method public apply(Lcom/iMe/ui/wallet/actions/send/amount/WalletSendAmountView;)V
     .locals 0
 
-    .line 499
+    .line 510
     invoke-interface {p1}, Lcom/iMe/ui/wallet/actions/send/amount/WalletSendAmountView;->updateFeeView()V
 
     return-void
@@ -50,7 +50,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 492
+    .line 503
     check-cast p1, Lcom/iMe/ui/wallet/actions/send/amount/WalletSendAmountView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/wallet/actions/send/amount/WalletSendAmountView$$State$UpdateFeeViewCommand;->apply(Lcom/iMe/ui/wallet/actions/send/amount/WalletSendAmountView;)V

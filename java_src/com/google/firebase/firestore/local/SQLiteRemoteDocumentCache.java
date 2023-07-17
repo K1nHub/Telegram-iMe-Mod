@@ -25,12 +25,12 @@ import java.util.Map;
 public final class SQLiteRemoteDocumentCache implements RemoteDocumentCache {
 
     /* renamed from: db */
-    private final SQLitePersistence f178db;
+    private final SQLitePersistence f260db;
     private final LocalSerializer serializer;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public SQLiteRemoteDocumentCache(SQLitePersistence sQLitePersistence, LocalSerializer localSerializer) {
-        this.f178db = sQLitePersistence;
+        this.f260db = sQLitePersistence;
         this.serializer = localSerializer;
     }
 
@@ -39,18 +39,18 @@ public final class SQLiteRemoteDocumentCache implements RemoteDocumentCache {
         Assert.hardAssert(!snapshotVersion.equals(SnapshotVersion.NONE), "Cannot add document to the RemoteDocumentCache with a read time of zero", new Object[0]);
         String pathForKey = pathForKey(mutableDocument.getKey());
         Timestamp timestamp = snapshotVersion.getTimestamp();
-        this.f178db.execute("INSERT OR REPLACE INTO remote_documents (path, read_time_seconds, read_time_nanos, contents) VALUES (?, ?, ?, ?)", pathForKey, Long.valueOf(timestamp.getSeconds()), Integer.valueOf(timestamp.getNanoseconds()), this.serializer.encodeMaybeDocument(mutableDocument).toByteArray());
-        this.f178db.getIndexManager().addToCollectionParentIndex(mutableDocument.getKey().getPath().popLast());
+        this.f260db.execute("INSERT OR REPLACE INTO remote_documents (path, read_time_seconds, read_time_nanos, contents) VALUES (?, ?, ?, ?)", pathForKey, Long.valueOf(timestamp.getSeconds()), Integer.valueOf(timestamp.getNanoseconds()), this.serializer.encodeMaybeDocument(mutableDocument).toByteArray());
+        this.f260db.getIndexManager().addToCollectionParentIndex(mutableDocument.getKey().getPath().popLast());
     }
 
     @Override // com.google.firebase.firestore.local.RemoteDocumentCache
     public void remove(DocumentKey documentKey) {
-        this.f178db.execute("DELETE FROM remote_documents WHERE path = ?", pathForKey(documentKey));
+        this.f260db.execute("DELETE FROM remote_documents WHERE path = ?", pathForKey(documentKey));
     }
 
     @Override // com.google.firebase.firestore.local.RemoteDocumentCache
     public MutableDocument get(DocumentKey documentKey) {
-        MutableDocument mutableDocument = (MutableDocument) this.f178db.query("SELECT contents FROM remote_documents WHERE path = ?").binding(pathForKey(documentKey)).firstValue(new Function() { // from class: com.google.firebase.firestore.local.SQLiteRemoteDocumentCache$$ExternalSyntheticLambda2
+        MutableDocument mutableDocument = (MutableDocument) this.f260db.query("SELECT contents FROM remote_documents WHERE path = ?").binding(pathForKey(documentKey)).firstValue(new Function() { // from class: com.google.firebase.firestore.local.SQLiteRemoteDocumentCache$$ExternalSyntheticLambda2
             @Override // com.google.firebase.firestore.util.Function
             public final Object apply(Object obj) {
                 MutableDocument lambda$get$0;
@@ -76,7 +76,7 @@ public final class SQLiteRemoteDocumentCache implements RemoteDocumentCache {
         for (DocumentKey documentKey2 : iterable) {
             hashMap.put(documentKey2, MutableDocument.newInvalidDocument(documentKey2));
         }
-        SQLitePersistence.LongQuery longQuery = new SQLitePersistence.LongQuery(this.f178db, "SELECT contents FROM remote_documents WHERE path IN (", arrayList, ") ORDER BY path");
+        SQLitePersistence.LongQuery longQuery = new SQLitePersistence.LongQuery(this.f260db, "SELECT contents FROM remote_documents WHERE path IN (", arrayList, ") ORDER BY path");
         while (longQuery.hasMoreSubqueries()) {
             longQuery.performNextSubquery().forEach(new Consumer() { // from class: com.google.firebase.firestore.local.SQLiteRemoteDocumentCache$$ExternalSyntheticLambda1
                 @Override // com.google.firebase.firestore.util.Consumer
@@ -106,9 +106,9 @@ public final class SQLiteRemoteDocumentCache implements RemoteDocumentCache {
         final BackgroundQueue backgroundQueue = new BackgroundQueue();
         final ImmutableSortedMap<DocumentKey, MutableDocument>[] immutableSortedMapArr = {DocumentCollections.emptyMutableDocumentMap()};
         if (snapshotVersion.equals(SnapshotVersion.NONE)) {
-            binding = this.f178db.query("SELECT path, contents FROM remote_documents WHERE path >= ? AND path < ?").binding(encode, prefixSuccessor);
+            binding = this.f260db.query("SELECT path, contents FROM remote_documents WHERE path >= ? AND path < ?").binding(encode, prefixSuccessor);
         } else {
-            binding = this.f178db.query("SELECT path, contents FROM remote_documents WHERE path >= ? AND path < ?AND (read_time_seconds > ? OR (read_time_seconds = ? AND read_time_nanos > ?))").binding(encode, prefixSuccessor, Long.valueOf(timestamp.getSeconds()), Long.valueOf(timestamp.getSeconds()), Integer.valueOf(timestamp.getNanoseconds()));
+            binding = this.f260db.query("SELECT path, contents FROM remote_documents WHERE path >= ? AND path < ?AND (read_time_seconds > ? OR (read_time_seconds = ? AND read_time_nanos > ?))").binding(encode, prefixSuccessor, Long.valueOf(timestamp.getSeconds()), Long.valueOf(timestamp.getSeconds()), Integer.valueOf(timestamp.getNanoseconds()));
         }
         binding.forEach(new Consumer() { // from class: com.google.firebase.firestore.local.SQLiteRemoteDocumentCache$$ExternalSyntheticLambda0
             @Override // com.google.firebase.firestore.util.Consumer

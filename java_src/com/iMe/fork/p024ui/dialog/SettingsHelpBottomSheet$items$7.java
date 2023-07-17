@@ -3,8 +3,8 @@ package com.iMe.fork.p024ui.dialog;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Lambda;
-import org.telegram.p044ui.ActionBar.BaseFragment;
-import org.telegram.p044ui.Components.AlertsCreator;
+import org.telegram.p043ui.ActionBar.BaseFragment;
+import org.telegram.p043ui.Components.AlertsCreator;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: SettingsHelpBottomSheet.kt */
 /* renamed from: com.iMe.fork.ui.dialog.SettingsHelpBottomSheet$items$7 */

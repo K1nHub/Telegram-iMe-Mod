@@ -26,7 +26,7 @@ public final class RtspMessageUtil {
     private static final Pattern WWW_AUTHENTICATION_HEADER_BASIC_PATTERN = Pattern.compile("Basic realm=\"([^\"\\x00-\\x08\\x0A-\\x1f\\x7f]+)\"");
 
     /* renamed from: LF */
-    private static final String f133LF = new String(new byte[]{10});
+    private static final String f215LF = new String(new byte[]{10});
     private static final String CRLF = new String(new byte[]{13, 10});
 
     /* loaded from: classes.dex */
@@ -281,7 +281,7 @@ public final class RtspMessageUtil {
     public static String[] splitRtspMessageBody(String str) {
         String str2 = CRLF;
         if (!str.contains(str2)) {
-            str2 = f133LF;
+            str2 = f215LF;
         }
         return Util.split(str, str2);
     }

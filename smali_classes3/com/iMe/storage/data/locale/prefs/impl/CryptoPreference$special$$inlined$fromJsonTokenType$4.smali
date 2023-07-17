@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/iMe/storage/data/locale/prefs/impl/CryptoPreference;->getAirdropMetadata()Lcom/iMe/storage/data/locale/prefs/model/WalletAirdropMetadata;
+    value = Lcom/iMe/storage/data/locale/prefs/impl/CryptoPreference;->getSupportedNetworks()Ljava/util/List;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -16,8 +16,10 @@
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Lcom/google/gson/reflect/TypeToken<",
-        "Lcom/iMe/storage/data/locale/prefs/model/WalletAirdropMetadata;",
-        ">;"
+        "Ljava/util/List<",
+        "+",
+        "Lcom/iMe/storage/domain/model/crypto/Network;",
+        ">;>;"
     }
 .end annotation
 

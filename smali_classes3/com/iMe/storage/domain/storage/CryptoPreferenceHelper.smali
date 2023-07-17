@@ -49,13 +49,18 @@
 .method public abstract getBinanceTokensOrderType()Lcom/iMe/storage/domain/model/wallet/token/TokenOrderType;
 .end method
 
-.method public abstract getBinanceTokensSettings()Lcom/iMe/storage/data/locale/prefs/model/WalletCryptoTokensSettingsMetadata;
+.method public abstract getBinanceTokensSettings()Ljava/util/List;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/List<",
+            "Lcom/iMe/storage/data/locale/prefs/model/TokenDisplaySettings$Binance;",
+            ">;"
+        }
+    .end annotation
 .end method
 
 .method public abstract getBinanceUserInfo()Lcom/iMe/storage/data/locale/prefs/model/binancepay/BinanceUserInfoMetadata;
-.end method
-
-.method public abstract getCryptoHiddenBalance()Z
 .end method
 
 .method public abstract getCurrentBlockchainType()Lcom/iMe/storage/domain/model/crypto/BlockchainType;
@@ -64,7 +69,13 @@
 .method public abstract getLastLoggedInGuid()Ljava/lang/String;
 .end method
 
-.method public abstract getNetworkType()Lcom/iMe/storage/domain/model/crypto/NetworkType;
+.method public abstract getLastNetworksUpdateTime()J
+.end method
+
+.method public abstract getNetwork()Lcom/iMe/storage/domain/model/crypto/Network;
+.end method
+
+.method public abstract getNetworkId()Ljava/lang/String;
 .end method
 
 .method public abstract getOldWalletPublicAddress()Ljava/lang/String;
@@ -82,10 +93,31 @@
 .method public abstract getStakingProgrammesOrderType()Lcom/iMe/storage/domain/model/wallet/staking/StakingOrderType;
 .end method
 
+.method public abstract getSupportedNetworks()Ljava/util/List;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/List<",
+            "Lcom/iMe/storage/domain/model/crypto/Network;",
+            ">;"
+        }
+    .end annotation
+.end method
+
 .method public abstract getTokensOrderType()Lcom/iMe/storage/domain/model/wallet/token/TokenOrderType;
 .end method
 
-.method public abstract getTokensSettings(Lcom/iMe/storage/domain/model/crypto/NetworkType;)Lcom/iMe/storage/data/locale/prefs/model/WalletCryptoTokensSettingsMetadata;
+.method public abstract getTokensSettings(Ljava/lang/String;)Ljava/util/List;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/lang/String;",
+            ")",
+            "Ljava/util/List<",
+            "Lcom/iMe/storage/data/locale/prefs/model/TokenDisplaySettings$Crypto;",
+            ">;"
+        }
+    .end annotation
 .end method
 
 .method public abstract getTonConfigJsonString()Ljava/lang/String;
@@ -106,6 +138,12 @@
 .end method
 
 .method public abstract getWalletPassword()Ljava/lang/String;
+.end method
+
+.method public abstract getWalletPinCodeBadTriesCount()I
+.end method
+
+.method public abstract getWalletPinCodeTimeoutUntil()J
 .end method
 
 .method public abstract getWalletPublicAddresses()Lcom/iMe/storage/domain/model/PreferenceBlockchainMappedData;
@@ -133,7 +171,13 @@
     .end annotation
 .end method
 
+.method public abstract isBalanceHidden()Z
+.end method
+
 .method public abstract isBannersVisible()Z
+.end method
+
+.method public abstract isLocalEncryptionCompleted()Z
 .end method
 
 .method public abstract isQuotationsVisible()Z
@@ -154,10 +198,17 @@
 .method public abstract resetTokensSettingsByBlockchainType(Lcom/iMe/storage/domain/model/crypto/BlockchainType;)V
 .end method
 
-.method public abstract resetTokensSettingsByNetwork(Lcom/iMe/storage/domain/model/crypto/NetworkType;)V
-.end method
-
-.method public abstract saveTokensSettings(Lcom/iMe/storage/data/locale/prefs/model/WalletCryptoTokensSettingsMetadata;Lcom/iMe/storage/domain/model/crypto/NetworkType;)V
+.method public abstract saveTokensSettings(Ljava/util/List;Ljava/lang/String;)V
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/List<",
+            "Lcom/iMe/storage/data/locale/prefs/model/TokenDisplaySettings$Crypto;",
+            ">;",
+            "Ljava/lang/String;",
+            ")V"
+        }
+    .end annotation
 .end method
 
 .method public abstract setAccountLevelMetadata(Lcom/iMe/storage/data/locale/prefs/model/AccountLevelMetadata;)V
@@ -167,6 +218,9 @@
 .end method
 
 .method public abstract setAuthSession(Lcom/iMe/storage/data/locale/prefs/model/auth/AuthTokensMetadata;)V
+.end method
+
+.method public abstract setBalanceHidden(Z)V
 .end method
 
 .method public abstract setBannersVisible(Z)V
@@ -181,19 +235,33 @@
 .method public abstract setBinanceTokensOrderType(Lcom/iMe/storage/domain/model/wallet/token/TokenOrderType;)V
 .end method
 
-.method public abstract setBinanceTokensSettings(Lcom/iMe/storage/data/locale/prefs/model/WalletCryptoTokensSettingsMetadata;)V
+.method public abstract setBinanceTokensSettings(Ljava/util/List;)V
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/List<",
+            "Lcom/iMe/storage/data/locale/prefs/model/TokenDisplaySettings$Binance;",
+            ">;)V"
+        }
+    .end annotation
 .end method
 
 .method public abstract setBinanceUserInfo(Lcom/iMe/storage/data/locale/prefs/model/binancepay/BinanceUserInfoMetadata;)V
 .end method
 
-.method public abstract setCryptoHiddenBalance(Z)V
-.end method
-
 .method public abstract setLastLoggedInGuid(Ljava/lang/String;)V
 .end method
 
-.method public abstract setNetworkType(Lcom/iMe/storage/domain/model/crypto/NetworkType;)V
+.method public abstract setLastNetworksUpdateTime(J)V
+.end method
+
+.method public abstract setLocalEncryptionCompleted(Z)V
+.end method
+
+.method public abstract setNetwork(Lcom/iMe/storage/domain/model/crypto/Network;)V
+.end method
+
+.method public abstract setNetworkId(Ljava/lang/String;)V
 .end method
 
 .method public abstract setOnlyPositiveTokens(Z)V
@@ -208,6 +276,17 @@
 .method public abstract setStakingProgrammesOrderType(Lcom/iMe/storage/domain/model/wallet/staking/StakingOrderType;)V
 .end method
 
+.method public abstract setSupportedNetworks(Ljava/util/List;)V
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/List<",
+            "Lcom/iMe/storage/domain/model/crypto/Network;",
+            ">;)V"
+        }
+    .end annotation
+.end method
+
 .method public abstract setTokensOrderType(Lcom/iMe/storage/domain/model/wallet/token/TokenOrderType;)V
 .end method
 
@@ -218,6 +297,12 @@
 .end method
 
 .method public abstract setWalletPassword(Ljava/lang/String;)V
+.end method
+
+.method public abstract setWalletPinCodeBadTriesCount(I)V
+.end method
+
+.method public abstract setWalletPinCodeTimeoutUntil(J)V
 .end method
 
 .method public abstract setWalletsGuid(Ljava/util/List;)V

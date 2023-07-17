@@ -3,16 +3,16 @@ package com.iMe.navigation.wallet.coordinator;
 import com.iMe.fork.utils.Callbacks$Callback;
 import com.iMe.manager.common.FeatureAvailableManager$Token;
 import com.iMe.navigation.wallet.coordinator.args.TokenBuyCoordinatorArgs;
-import com.iMe.p031ui.wallet.crypto.buy.BuyCryptoProductFragment;
-import com.iMe.storage.domain.model.crypto.NetworkType;
+import com.iMe.p031ui.wallet.swap.process.WalletSwapProcessFragment;
+import com.iMe.storage.domain.model.wallet.swap.SwapProtocol;
 import com.iMe.storage.domain.storage.CryptoPreferenceHelper;
 import com.iMe.storage.domain.utils.system.ResourceManager;
 import com.iMe.utils.dialogs.DialogsFactoryKt;
+import com.iMe.utils.extentions.common.ContextExtKt;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3295R;
-import org.telegram.p044ui.ActionBar.BaseFragment;
-import org.telegram.p044ui.ActionBar.INavigationLayout;
-import org.telegram.p044ui.ActionIntroActivity;
+import org.telegram.messenger.C3417R;
+import org.telegram.p043ui.ActionBar.BaseFragment;
+import org.telegram.p043ui.ActionBar.INavigationLayout;
 /* compiled from: TokenBuyCoordinator.kt */
 /* loaded from: classes3.dex */
 public final class TokenBuyCoordinator {
@@ -34,31 +34,31 @@ public final class TokenBuyCoordinator {
     }
 
     public final void start(INavigationLayout actionBarLayout, TokenBuyCoordinatorArgs args, boolean z) {
-        BuyCryptoProductFragment newInstance;
         Intrinsics.checkNotNullParameter(actionBarLayout, "actionBarLayout");
         Intrinsics.checkNotNullParameter(args, "args");
-        NetworkType networkType = args.getNetworkType();
-        if (networkType == null) {
-            networkType = this.cryptoPreferenceHelper.getNetworkType();
+        String networkId = args.getNetworkId();
+        if (networkId == null) {
+            networkId = this.cryptoPreferenceHelper.getNetworkId();
         }
-        FeatureAvailableManager$Token featureAvailableManager$Token = FeatureAvailableManager$Token.INSTANCE;
-        if (featureAvailableManager$Token.isPurchaseViaSimplexAvailable(args.getTokenCode(), networkType)) {
-            newInstance = BuyCryptoProductFragment.Companion.newInstance(args.getTokenCode());
-        } else if (featureAvailableManager$Token.isPurchaseViaSwapAvailable(args.getTokenCode(), networkType)) {
-            newInstance = new ActionIntroActivity(103, args.getTokenCode(), args.getSwapProtocol(), args.getNetworkType(), null, null);
-        } else {
-            newInstance = BuyCryptoProductFragment.Companion.newInstance(args.getTokenCode());
+        if (args.getToken() != null && FeatureAvailableManager$Token.INSTANCE.isPurchaseAvailable(networkId)) {
+            WalletSwapProcessFragment.Companion companion = WalletSwapProcessFragment.Companion;
+            SwapProtocol swapProtocol = args.getSwapProtocol();
+            if (swapProtocol == null) {
+                swapProtocol = SwapProtocol.ONEINCH;
+            }
+            actionBarLayout.presentFragment(companion.newInstance(new WalletSwapProcessFragment.ScreenType.Crypto(swapProtocol, null, args.getToken(), args.getNetworkId())), z);
+            return;
         }
-        actionBarLayout.presentFragment(newInstance, z);
+        ContextExtKt.toast(this.resourceManager.getString(C3417R.string.common_unexpected_error_title));
     }
 
     public final void showNoEnoughMoneyDialog(final INavigationLayout actionBarLayout, final TokenBuyCoordinatorArgs args) {
         Intrinsics.checkNotNullParameter(actionBarLayout, "actionBarLayout");
         Intrinsics.checkNotNullParameter(args, "args");
-        if (FeatureAvailableManager$Token.INSTANCE.isPurchaseAvailable(args.getTokenCode(), this.cryptoPreferenceHelper.getNetworkType())) {
+        if (args.getToken() != null && FeatureAvailableManager$Token.INSTANCE.isPurchaseAvailable(this.cryptoPreferenceHelper.getNetworkId())) {
             BaseFragment lastFragment = actionBarLayout.getLastFragment();
             Intrinsics.checkNotNullExpressionValue(lastFragment, "actionBarLayout.lastFragment");
-            DialogsFactoryKt.showErrorAlert(lastFragment, this.resourceManager.getString(C3295R.string.wallet_common_error_not_enough_money_title), this.resourceManager.getString(C3295R.string.wallet_common_error_not_enough_money_description), this.resourceManager.getString(C3295R.string.wallet_common_error_not_enough_money_btn_txt), new Callbacks$Callback() { // from class: com.iMe.navigation.wallet.coordinator.TokenBuyCoordinator$$ExternalSyntheticLambda0
+            DialogsFactoryKt.showErrorAlert(lastFragment, this.resourceManager.getString(C3417R.string.wallet_common_error_not_enough_money_title), this.resourceManager.getString(C3417R.string.wallet_common_error_not_enough_money_description), this.resourceManager.getString(C3417R.string.wallet_common_error_not_enough_money_btn_txt), new Callbacks$Callback() { // from class: com.iMe.navigation.wallet.coordinator.TokenBuyCoordinator$$ExternalSyntheticLambda0
                 @Override // com.iMe.fork.utils.Callbacks$Callback
                 public final void invoke() {
                     TokenBuyCoordinator.showNoEnoughMoneyDialog$lambda$0(TokenBuyCoordinator.this, actionBarLayout, args);
@@ -68,7 +68,7 @@ public final class TokenBuyCoordinator {
         }
         BaseFragment lastFragment2 = actionBarLayout.getLastFragment();
         Intrinsics.checkNotNullExpressionValue(lastFragment2, "actionBarLayout.lastFragment");
-        DialogsFactoryKt.showErrorAlert$default(lastFragment2, this.resourceManager.getString(C3295R.string.wallet_common_error_not_enough_money_title), this.resourceManager.getString(C3295R.string.wallet_common_error_not_enough_money_simple_description), this.resourceManager.getString(C3295R.string.common_ok), null, 8, null);
+        DialogsFactoryKt.showErrorAlert$default(lastFragment2, this.resourceManager.getString(C3417R.string.wallet_common_error_not_enough_money_title), this.resourceManager.getString(C3417R.string.wallet_common_error_not_enough_money_simple_description), this.resourceManager.getString(C3417R.string.common_ok), null, 8, null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */

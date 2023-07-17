@@ -2,7 +2,6 @@ package com.iMe.p031ui.wallet.swap;
 
 import com.chad.library.adapter.base.entity.node.BaseNode;
 import com.iMe.p031ui.base.mvp.base.BaseView;
-import com.iMe.storage.domain.model.crypto.NetworkType;
 import com.iMe.storage.domain.model.wallet.swap.SwapProtocolInfo;
 import java.util.List;
 import moxy.viewstate.strategy.alias.AddToEndSingle;
@@ -14,7 +13,7 @@ import moxy.viewstate.strategy.alias.OneExecution;
 public interface WalletSwapProtocolsView extends BaseView {
     void openBinanceConvertScreen();
 
-    void openSwapScreen(SwapProtocolInfo swapProtocolInfo, NetworkType networkType);
+    void openSwapScreen(SwapProtocolInfo swapProtocolInfo, String str);
 
     @AddToEndSingle
     void showExchangesProviders(List<? extends BaseNode> list);

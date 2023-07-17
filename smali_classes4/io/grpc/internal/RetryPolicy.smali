@@ -281,7 +281,7 @@
 
     iget-object v1, p0, Lio/grpc/internal/RetryPolicy;->retryableStatusCodes:Ljava/util/Set;
 
-    const-string v2, "retryableStatusCodes"
+    const-string/jumbo v2, "retryableStatusCodes"
 
     .line 91
     invoke-virtual {v0, v2, v1}, Lcom/google/common/base/MoreObjects$ToStringHelper;->add(Ljava/lang/String;Ljava/lang/Object;)Lcom/google/common/base/MoreObjects$ToStringHelper;

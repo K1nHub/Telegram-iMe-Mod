@@ -12,7 +12,7 @@
         Lcom/iMe/ui/wallet/settings/WalletSettingsView$$State$ShowErrorToastCommand;,
         Lcom/iMe/ui/wallet/settings/WalletSettingsView$$State$ShowLoadingDialogCommand;,
         Lcom/iMe/ui/wallet/settings/WalletSettingsView$$State$ShowToastCommand;,
-        Lcom/iMe/ui/wallet/settings/WalletSettingsView$$State$SetupSettingsItemsCommand;
+        Lcom/iMe/ui/wallet/settings/WalletSettingsView$$State$RenderSettingsItemsCommand;
     }
 .end annotation
 
@@ -46,21 +46,29 @@
     return-void
 .end method
 
-.method public setupSettingsItems(Ljava/util/List;)V
+.method public synthetic removeSelfFromStackImmediately()V
+    .locals 0
+
+    invoke-static {p0}, Lcom/iMe/ui/base/mvp/base/BaseView$-CC;->$default$removeSelfFromStackImmediately(Lcom/iMe/ui/base/mvp/base/BaseView;)V
+
+    return-void
+.end method
+
+.method public renderSettingsItems(Ljava/util/List;)V
     .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Ljava/util/List<",
-            "Lcom/iMe/model/wallet/settings/SettingUiItem;",
+            "Lcom/iMe/model/wallet/crypto/settings/WalletSettingsItem;",
             ">;)V"
         }
     .end annotation
 
     .line 20
-    new-instance v0, Lcom/iMe/ui/wallet/settings/WalletSettingsView$$State$SetupSettingsItemsCommand;
+    new-instance v0, Lcom/iMe/ui/wallet/settings/WalletSettingsView$$State$RenderSettingsItemsCommand;
 
-    invoke-direct {v0, p0, p1}, Lcom/iMe/ui/wallet/settings/WalletSettingsView$$State$SetupSettingsItemsCommand;-><init>(Lcom/iMe/ui/wallet/settings/WalletSettingsView$$State;Ljava/util/List;)V
+    invoke-direct {v0, p0, p1}, Lcom/iMe/ui/wallet/settings/WalletSettingsView$$State$RenderSettingsItemsCommand;-><init>(Lcom/iMe/ui/wallet/settings/WalletSettingsView$$State;Ljava/util/List;)V
 
     .line 21
     iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
@@ -102,7 +110,7 @@
     check-cast v2, Lcom/iMe/ui/wallet/settings/WalletSettingsView;
 
     .line 28
-    invoke-interface {v2, p1}, Lcom/iMe/ui/wallet/settings/WalletSettingsView;->setupSettingsItems(Ljava/util/List;)V
+    invoke-interface {v2, p1}, Lcom/iMe/ui/wallet/settings/WalletSettingsView;->renderSettingsItems(Ljava/util/List;)V
 
     goto :goto_0
 

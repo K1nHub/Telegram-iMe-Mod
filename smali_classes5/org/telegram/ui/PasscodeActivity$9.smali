@@ -30,7 +30,7 @@
 .method constructor <init>(Lorg/telegram/ui/PasscodeActivity;Landroid/content/Context;)V
     .locals 0
 
-    .line 980
+    .line 947
     iput-object p1, p0, Lorg/telegram/ui/PasscodeActivity$9;->this$0:Lorg/telegram/ui/PasscodeActivity;
 
     invoke-direct {p0, p2}, Lorg/telegram/ui/CodeFieldContainer;-><init>(Landroid/content/Context;)V
@@ -41,10 +41,10 @@
 .method private synthetic lambda$processNextPressed$0()V
     .locals 1
 
-    .line 984
+    .line 951
     iget-object v0, p0, Lorg/telegram/ui/PasscodeActivity$9;->this$0:Lorg/telegram/ui/PasscodeActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/PasscodeActivity;->access$1900(Lorg/telegram/ui/PasscodeActivity;)V
+    invoke-static {v0}, Lorg/telegram/ui/PasscodeActivity;->access$1700(Lorg/telegram/ui/PasscodeActivity;)V
 
     return-void
 .end method
@@ -54,7 +54,7 @@
 .method protected processNextPressed()V
     .locals 3
 
-    .line 983
+    .line 950
     iget-object v0, p0, Lorg/telegram/ui/PasscodeActivity$9;->this$0:Lorg/telegram/ui/PasscodeActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/PasscodeActivity;->access$1200(Lorg/telegram/ui/PasscodeActivity;)I
@@ -63,7 +63,7 @@
 
     if-nez v0, :cond_0
 
-    .line 984
+    .line 951
     new-instance v0, Lorg/telegram/ui/PasscodeActivity$9$$ExternalSyntheticLambda0;
 
     invoke-direct {v0, p0}, Lorg/telegram/ui/PasscodeActivity$9$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/PasscodeActivity$9;)V
@@ -74,17 +74,17 @@
 
     goto :goto_0
 
-    .line 987
+    .line 954
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/PasscodeActivity$9;->this$0:Lorg/telegram/ui/PasscodeActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/PasscodeActivity;->access$1300(Lorg/telegram/ui/PasscodeActivity;)I
+    invoke-static {v0}, Lorg/telegram/ui/PasscodeActivity;->access$1500(Lorg/telegram/ui/PasscodeActivity;)I
 
     move-result v0
 
     if-nez v0, :cond_1
 
-    .line 988
+    .line 955
     iget-object v0, p0, Lorg/telegram/ui/PasscodeActivity$9;->this$0:Lorg/telegram/ui/PasscodeActivity;
 
     iget-object v1, v0, Lorg/telegram/ui/PasscodeActivity;->walletCreatePinPresenter:Lcom/iMe/ui/wallet/crypto/create/pin/CreateWalletPinPresenter;
@@ -101,11 +101,11 @@
 
     goto :goto_0
 
-    .line 990
+    .line 957
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/PasscodeActivity$9;->this$0:Lorg/telegram/ui/PasscodeActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/PasscodeActivity;->access$1800(Lorg/telegram/ui/PasscodeActivity;)V
+    invoke-static {v0}, Lorg/telegram/ui/PasscodeActivity;->access$1600(Lorg/telegram/ui/PasscodeActivity;)V
 
     :goto_0
     return-void

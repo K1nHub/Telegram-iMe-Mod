@@ -159,7 +159,7 @@
 .method public final get$okhttp(Lokhttp3/Request;)Lokhttp3/Response;
     .locals 4
 
-    const-string v0, "request"
+    const-string/jumbo v0, "request"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -259,7 +259,7 @@
 .method public final put$okhttp(Lokhttp3/Response;)Lokhttp3/internal/cache/CacheRequest;
     .locals 9
 
-    const-string v0, "response"
+    const-string/jumbo v0, "response"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -400,7 +400,7 @@
         }
     .end annotation
 
-    const-string v0, "request"
+    const-string/jumbo v0, "request"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 

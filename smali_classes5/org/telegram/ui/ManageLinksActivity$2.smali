@@ -38,17 +38,19 @@
 
 
 # virtual methods
-.method public getCustomQrCenterImageRes()I
+.method public getCustomQrCenterImageUrl()Ljava/lang/String;
     .locals 1
 
     .line 741
-    sget-object v0, Lcom/iMe/storage/domain/model/crypto/NetworkType;->BINANCE_SMART_CHAIN:Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    invoke-static {}, Lcom/iMe/storage/data/utils/crypto/NetworksHelper;->getBSCNetwork()Lcom/iMe/storage/domain/model/crypto/Network;
 
-    invoke-virtual {v0}, Lcom/iMe/storage/domain/model/crypto/NetworkType;->getLogo()I
+    move-result-object v0
 
-    move-result v0
+    invoke-virtual {v0}, Lcom/iMe/storage/domain/model/crypto/Network;->getLogoUrl()Ljava/lang/String;
 
-    return v0
+    move-result-object v0
+
+    return-object v0
 .end method
 
 .method public getType()I

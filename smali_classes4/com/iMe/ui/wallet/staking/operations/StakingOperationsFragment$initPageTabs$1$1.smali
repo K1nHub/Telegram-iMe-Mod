@@ -52,7 +52,7 @@
 .method public final invoke()Landroid/view/View;
     .locals 2
 
-    .line 179
+    .line 181
     iget-object v0, p0, Lcom/iMe/ui/wallet/staking/operations/StakingOperationsFragment$initPageTabs$1$1;->this$0:Lcom/iMe/ui/wallet/staking/operations/StakingOperationsFragment;
 
     invoke-static {v0}, Lcom/iMe/ui/wallet/staking/operations/StakingOperationsFragment;->access$getNavigationRouter(Lcom/iMe/ui/wallet/staking/operations/StakingOperationsFragment;)Lcom/iMe/navigation/common/router/base/NavigationRouter;
@@ -81,7 +81,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 178
+    .line 180
     invoke-virtual {p0}, Lcom/iMe/ui/wallet/staking/operations/StakingOperationsFragment$initPageTabs$1$1;->invoke()Landroid/view/View;
 
     move-result-object v0

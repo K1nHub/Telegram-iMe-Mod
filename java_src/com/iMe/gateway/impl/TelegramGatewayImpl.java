@@ -4,7 +4,6 @@ import android.content.Context;
 import com.iMe.fork.controller.ForkCommonController;
 import com.iMe.fork.p024ui.dialog.TranslateAlert;
 import com.iMe.storage.domain.gateway.TelegramGateway;
-import com.iMe.storage.domain.model.telegram.TelegramLocaleInformation;
 import com.iMe.utils.extentions.common.ContextExtKt;
 import java.io.File;
 import java.util.ArrayList;
@@ -32,13 +31,20 @@ public final class TelegramGatewayImpl implements TelegramGateway {
     }
 
     @Override // com.iMe.storage.domain.gateway.TelegramGateway
-    public TelegramLocaleInformation getCurrentLocaleInformation() {
+    public String getCurrentLanguage() {
         LocaleController.LocaleInfo currentLocaleInfo = LocaleController.getInstance().getCurrentLocaleInfo();
-        String langCode = currentLocaleInfo.getLangCode();
-        Intrinsics.checkNotNullExpressionValue(langCode, "locale.langCode");
-        String str = currentLocaleInfo.pluralLangCode;
-        Intrinsics.checkNotNullExpressionValue(str, "locale.pluralLangCode");
-        return new TelegramLocaleInformation(langCode, str, currentLocaleInfo.isUnofficial());
+        boolean z = true;
+        if (currentLocaleInfo == null || !currentLocaleInfo.isUnofficial()) {
+            z = false;
+        }
+        if (z) {
+            String str = currentLocaleInfo.pluralLangCode;
+            Intrinsics.checkNotNullExpressionValue(str, "locale.pluralLangCode");
+            return str;
+        }
+        String localeStringIso639 = LocaleController.getLocaleStringIso639();
+        Intrinsics.checkNotNullExpressionValue(localeStringIso639, "getLocaleStringIso639()");
+        return localeStringIso639;
     }
 
     @Override // com.iMe.storage.domain.gateway.TelegramGateway

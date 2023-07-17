@@ -2,7 +2,7 @@ package com.iMe.storage.data.datasource.cancel.impl;
 
 import com.iMe.storage.data.network.api.own.CancelApi;
 import com.iMe.storage.data.network.handlers.impl.FirebaseFunctionsErrorHandler;
-import com.iMe.storage.data.network.model.request.crypto.cancel.SendEthereumCancelOrBoostTransactionRequest;
+import com.iMe.storage.data.network.model.request.crypto.cancel.SendCancelOrBoostTransactionRequest;
 import com.iMe.storage.data.network.model.response.base.ApiBaseResponse;
 import com.iMe.storage.data.network.model.response.crypto.wallet.TransactionResponse;
 import com.iMe.storage.data.utils.extentions.FirebaseExtKt$sam$i$io_reactivex_functions_Function$0;
@@ -45,9 +45,9 @@ public final class EthWalletCancelDataSourceImpl$cancel$$inlined$flatMapSuccess$
         if (data == null) {
             data = "";
         }
-        Observable<ApiBaseResponse<TransactionResponse>> sendEthereumCancelTransaction = cancelApi.sendEthereumCancelTransaction(new SendEthereumCancelOrBoostTransactionRequest(data, ((CancelArgs.Ethereum) this.$args$inlined).getOldTxHash()));
+        Observable<ApiBaseResponse<TransactionResponse>> sendEthereumCancelTransaction = cancelApi.sendEthereumCancelTransaction(new SendCancelOrBoostTransactionRequest(data, ((CancelArgs.Ethereum) this.$args$inlined).getOldTxHash()));
         firebaseFunctionsErrorHandler = this.this$0.firebaseErrorHandler;
-        ObservableSource map = sendEthereumCancelTransaction.map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new C1611x7e294538(firebaseFunctionsErrorHandler)));
+        ObservableSource map = sendEthereumCancelTransaction.map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new C1622x7e294538(firebaseFunctionsErrorHandler)));
         Intrinsics.checkNotNullExpressionValue(map, "errorHandler: FirebaseFu…response).toError()\n    }");
         return map;
     }

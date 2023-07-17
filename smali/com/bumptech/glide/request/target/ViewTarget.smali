@@ -228,6 +228,20 @@
     return-void
 .end method
 
+.method public getView()Landroid/view/View;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()TT;"
+        }
+    .end annotation
+
+    .line 203
+    iget-object v0, p0, Lcom/bumptech/glide/request/target/ViewTarget;->view:Landroid/view/View;
+
+    return-object v0
+.end method
+
 .method public onLoadCleared(Landroid/graphics/drawable/Drawable;)V
     .locals 0
 

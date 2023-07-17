@@ -6,6 +6,7 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Lambda;
+import org.telegram.messenger.AndroidUtilities;
 /* compiled from: FiltersRecycleAdapter.kt */
 /* renamed from: com.iMe.ui.adapter.FiltersRecycleAdapter$convert$1 */
 /* loaded from: classes.dex */
@@ -28,6 +29,7 @@ final class FiltersRecycleAdapter$convert$1 extends Lambda implements Function1<
     /* renamed from: invoke  reason: avoid collision after fix types in other method */
     public final void invoke2(TopicView applyForView) {
         Intrinsics.checkNotNullParameter(applyForView, "$this$applyForView");
+        applyForView.setHorizontalMargins(0, AndroidUtilities.m54dp(8));
         applyForView.setFilterItem(this.$item);
     }
 }

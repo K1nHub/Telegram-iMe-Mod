@@ -164,7 +164,7 @@ public final class FieldSet<T extends FieldDescriptorLite<T>> {
 
     private static boolean isValidType(WireFormat.FieldType fieldType, Object obj) {
         Internal.checkNotNull(obj);
-        switch (C11961.$SwitchMap$com$google$protobuf$WireFormat$JavaType[fieldType.getJavaType().ordinal()]) {
+        switch (C12011.$SwitchMap$com$google$protobuf$WireFormat$JavaType[fieldType.getJavaType().ordinal()]) {
             case 1:
                 return obj instanceof Integer;
             case 2:
@@ -294,7 +294,7 @@ public final class FieldSet<T extends FieldDescriptorLite<T>> {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.google.protobuf.FieldSet$1 */
     /* loaded from: classes3.dex */
-    public static /* synthetic */ class C11961 {
+    public static /* synthetic */ class C12011 {
         static final /* synthetic */ int[] $SwitchMap$com$google$protobuf$WireFormat$FieldType;
         static final /* synthetic */ int[] $SwitchMap$com$google$protobuf$WireFormat$JavaType;
 
@@ -415,7 +415,7 @@ public final class FieldSet<T extends FieldDescriptorLite<T>> {
     }
 
     static void writeElementNoTag(CodedOutputStream codedOutputStream, WireFormat.FieldType fieldType, Object obj) throws IOException {
-        switch (C11961.$SwitchMap$com$google$protobuf$WireFormat$FieldType[fieldType.ordinal()]) {
+        switch (C12011.$SwitchMap$com$google$protobuf$WireFormat$FieldType[fieldType.ordinal()]) {
             case 1:
                 codedOutputStream.writeDoubleNoTag(((Double) obj).doubleValue());
                 return;
@@ -535,7 +535,7 @@ public final class FieldSet<T extends FieldDescriptorLite<T>> {
     }
 
     static int computeElementSizeNoTag(WireFormat.FieldType fieldType, Object obj) {
-        switch (C11961.$SwitchMap$com$google$protobuf$WireFormat$FieldType[fieldType.ordinal()]) {
+        switch (C12011.$SwitchMap$com$google$protobuf$WireFormat$FieldType[fieldType.ordinal()]) {
             case 1:
                 return CodedOutputStream.computeDoubleSizeNoTag(((Double) obj).doubleValue());
             case 2:

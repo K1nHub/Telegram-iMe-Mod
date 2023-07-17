@@ -19,7 +19,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nWalletSwapFeePresenter.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WalletSwapFeePresenter.kt\ncom/iMe/ui/wallet/swap/fee/WalletSwapFeePresenter\n+ 2 RxExt.kt\ncom/iMe/utils/extentions/rx/RxExtKt\n+ 3 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n+ 4 ArraysJVM.kt\nkotlin/collections/ArraysKt__ArraysJVMKt\n*L\n1#1,143:1\n39#2,8:144\n11335#3:152\n11670#3,3:153\n11335#3:158\n11670#3,3:159\n11335#3:164\n11670#3,3:165\n37#4,2:156\n37#4,2:162\n37#4,2:168\n*S KotlinDebug\n*F\n+ 1 WalletSwapFeePresenter.kt\ncom/iMe/ui/wallet/swap/fee/WalletSwapFeePresenter\n*L\n111#1:144,8\n127#1:152\n127#1:153,3\n129#1:158\n129#1:159,3\n133#1:164\n133#1:165,3\n127#1:156,2\n131#1:162,2\n135#1:168,2\n*E\n"
+    value = "SMAP\nWalletSwapFeePresenter.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WalletSwapFeePresenter.kt\ncom/iMe/ui/wallet/swap/fee/WalletSwapFeePresenter\n+ 2 RxExt.kt\ncom/iMe/utils/extentions/rx/RxExtKt\n+ 3 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n+ 4 ArraysJVM.kt\nkotlin/collections/ArraysKt__ArraysJVMKt\n*L\n1#1,144:1\n42#2,12:145\n11335#3:157\n11670#3,3:158\n11335#3:163\n11670#3,3:164\n11335#3:169\n11670#3,3:170\n37#4,2:161\n37#4,2:167\n37#4,2:173\n*S KotlinDebug\n*F\n+ 1 WalletSwapFeePresenter.kt\ncom/iMe/ui/wallet/swap/fee/WalletSwapFeePresenter\n*L\n106#1:145,12\n128#1:157\n128#1:158,3\n130#1:163\n130#1:164,3\n134#1:169\n134#1:170,3\n128#1:161,2\n132#1:167,2\n136#1:173,2\n*E\n"
 .end annotation
 
 .annotation runtime Lmoxy/InjectViewState;
@@ -100,11 +100,11 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "schedulersProvider"
+    const-string/jumbo v0, "schedulersProvider"
 
     invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "resourceManager"
+    const-string/jumbo v0, "resourceManager"
 
     invoke-static {p4, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -288,7 +288,7 @@
 .method private final initDeadlineTitles()[Ljava/lang/String;
     .locals 9
 
-    .line 129
+    .line 130
     invoke-virtual {p0}, Lcom/iMe/ui/wallet/swap/fee/WalletSwapFeePresenter;->getDeadlineOptions()[Lcom/iMe/storage/domain/model/wallet/swap/SwapDeadline;
 
     move-result-object v0
@@ -312,7 +312,7 @@
 
     aget-object v5, v0, v4
 
-    .line 130
+    .line 131
     iget-object v6, p0, Lcom/iMe/ui/wallet/swap/fee/WalletSwapFeePresenter;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     sget v7, Lorg/telegram/messenger/R$string;->wallet_swap_transaction_options_deadline:I
@@ -358,7 +358,7 @@
 .method private final initFeesTitles()[Ljava/lang/String;
     .locals 7
 
-    .line 127
+    .line 128
     invoke-virtual {p0}, Lcom/iMe/ui/wallet/swap/fee/WalletSwapFeePresenter;->getFeesOptions()[Lcom/iMe/storage/domain/model/crypto/send/TransactionSpeedLevel;
 
     move-result-object v0
@@ -382,7 +382,7 @@
 
     aget-object v5, v0, v4
 
-    .line 127
+    .line 128
     iget-object v6, p0, Lcom/iMe/ui/wallet/swap/fee/WalletSwapFeePresenter;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     invoke-virtual {v5}, Lcom/iMe/storage/domain/model/crypto/send/TransactionSpeedLevel;->getTitle()I
@@ -416,7 +416,7 @@
 .method private final initSlipTitles()[Ljava/lang/String;
     .locals 11
 
-    .line 133
+    .line 134
     invoke-virtual {p0}, Lcom/iMe/ui/wallet/swap/fee/WalletSwapFeePresenter;->getSlipOptions()[Lcom/iMe/storage/domain/model/wallet/swap/SwapSlippage;
 
     move-result-object v0
@@ -440,7 +440,7 @@
 
     aget-object v5, v0, v4
 
-    .line 134
+    .line 135
     iget-object v6, p0, Lcom/iMe/ui/wallet/swap/fee/WalletSwapFeePresenter;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     sget v7, Lorg/telegram/messenger/R$string;->wallet_swap_transaction_options_slip:I
@@ -492,10 +492,10 @@
 .method private final subscribeToChangeEvents()V
     .locals 5
 
-    .line 91
+    .line 88
     iget-object v0, p0, Lcom/iMe/ui/wallet/swap/fee/WalletSwapFeePresenter;->slipChangeEvent:Lio/reactivex/subjects/PublishSubject;
 
-    .line 92
+    .line 89
     sget-object v1, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;
 
     const-wide/16 v2, 0xfa
@@ -504,12 +504,12 @@
 
     move-result-object v0
 
-    .line 93
+    .line 90
     invoke-virtual {v0}, Lio/reactivex/Observable;->distinctUntilChanged()Lio/reactivex/Observable;
 
     move-result-object v0
 
-    .line 94
+    .line 91
     new-instance v1, Lcom/iMe/ui/wallet/swap/fee/WalletSwapFeePresenter$subscribeToChangeEvents$1;
 
     invoke-direct {v1, p0}, Lcom/iMe/ui/wallet/swap/fee/WalletSwapFeePresenter$subscribeToChangeEvents$1;-><init>(Lcom/iMe/ui/wallet/swap/fee/WalletSwapFeePresenter;)V
@@ -522,7 +522,7 @@
 
     move-result-object v0
 
-    .line 109
+    .line 104
     iget-object v1, p0, Lcom/iMe/ui/wallet/swap/fee/WalletSwapFeePresenter;->schedulersProvider:Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
     invoke-interface {v1}, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;->io()Lio/reactivex/Scheduler;
@@ -533,7 +533,7 @@
 
     move-result-object v0
 
-    .line 110
+    .line 105
     iget-object v1, p0, Lcom/iMe/ui/wallet/swap/fee/WalletSwapFeePresenter;->schedulersProvider:Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
     invoke-interface {v1}, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;->ui()Lio/reactivex/Scheduler;
@@ -546,10 +546,10 @@
 
     const-string v1, "private fun subscribeToC\u2026     .autoDispose()\n    }"
 
-    .line 94
+    .line 91
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 44
+    .line 47
     new-instance v1, Lcom/iMe/ui/wallet/swap/fee/WalletSwapFeePresenter$subscribeToChangeEvents$$inlined$subscribeWithErrorHandle$default$1;
 
     invoke-direct {v1, p0}, Lcom/iMe/ui/wallet/swap/fee/WalletSwapFeePresenter$subscribeToChangeEvents$$inlined$subscribeWithErrorHandle$default$1;-><init>(Lcom/iMe/ui/wallet/swap/fee/WalletSwapFeePresenter;)V
@@ -564,24 +564,24 @@
 
     invoke-direct {v1, v3}, Lcom/iMe/ui/wallet/swap/fee/WalletSwapFeePresenter$subscribeToChangeEvents$$inlined$subscribeWithErrorHandle$default$2;-><init>(Lcom/iMe/ui/base/mvp/base/BaseView;)V
 
-    .line 46
+    .line 49
     new-instance v4, Lcom/iMe/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
 
     invoke-direct {v4, v1}, Lcom/iMe/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;-><init>(Lkotlin/jvm/functions/Function1;)V
 
-    .line 44
+    .line 47
     invoke-virtual {v0, v2, v4}, Lio/reactivex/Observable;->subscribe(Lio/reactivex/functions/Consumer;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
 
     move-result-object v0
 
-    const-string/jumbo v1, "viewState: BaseView? = n\u2026  onError.invoke()\n    })"
+    const-string/jumbo v1, "viewState: BaseView? = n\u2026Error.invoke()\n        })"
 
-    .line 46
+    .line 49
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     const/4 v1, 0x1
 
-    .line 124
+    .line 125
     invoke-static {p0, v0, v3, v1, v3}, Lcom/iMe/ui/base/mvp/base/BasePresenter;->autoDispose$default(Lcom/iMe/ui/base/mvp/base/BasePresenter;Lio/reactivex/disposables/Disposable;Lio/reactivex/disposables/CompositeDisposable;ILjava/lang/Object;)V
 
     return-void
@@ -594,7 +594,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 94
+    .line 91
     invoke-interface {p0, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
@@ -637,10 +637,10 @@
 .end method
 
 .method public final getFeeArgs()Lcom/iMe/model/wallet/crypto/swap/SwapFeeScreenArgs;
-    .locals 9
+    .locals 7
 
     .line 67
-    new-instance v8, Lcom/iMe/model/wallet/crypto/swap/SwapFeeScreenArgs;
+    new-instance v6, Lcom/iMe/model/wallet/crypto/swap/SwapFeeScreenArgs;
 
     .line 68
     iget-object v1, p0, Lcom/iMe/ui/wallet/swap/fee/WalletSwapFeePresenter;->metadata:Lcom/iMe/storage/domain/model/crypto/swap/CryptoSwapMetadata;
@@ -657,30 +657,16 @@
     .line 72
     iget-object v0, p0, Lcom/iMe/ui/wallet/swap/fee/WalletSwapFeePresenter;->args:Lcom/iMe/model/wallet/crypto/swap/SwapFeeScreenArgs;
 
-    invoke-virtual {v0}, Lcom/iMe/model/wallet/crypto/swap/SwapFeeScreenArgs;->getNetworkType()Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    invoke-virtual {v0}, Lcom/iMe/model/wallet/crypto/swap/SwapFeeScreenArgs;->getProtocol()Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocol;
 
     move-result-object v5
 
-    .line 73
-    iget-object v0, p0, Lcom/iMe/ui/wallet/swap/fee/WalletSwapFeePresenter;->args:Lcom/iMe/model/wallet/crypto/swap/SwapFeeScreenArgs;
-
-    invoke-virtual {v0}, Lcom/iMe/model/wallet/crypto/swap/SwapFeeScreenArgs;->getOutputNetworkType()Lcom/iMe/storage/domain/model/crypto/NetworkType;
-
-    move-result-object v6
-
-    .line 74
-    iget-object v0, p0, Lcom/iMe/ui/wallet/swap/fee/WalletSwapFeePresenter;->args:Lcom/iMe/model/wallet/crypto/swap/SwapFeeScreenArgs;
-
-    invoke-virtual {v0}, Lcom/iMe/model/wallet/crypto/swap/SwapFeeScreenArgs;->getProtocol()Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocol;
-
-    move-result-object v7
-
-    move-object v0, v8
+    move-object v0, v6
 
     .line 67
-    invoke-direct/range {v0 .. v7}, Lcom/iMe/model/wallet/crypto/swap/SwapFeeScreenArgs;-><init>(Lcom/iMe/storage/domain/model/crypto/swap/CryptoSwapMetadata;Lcom/iMe/storage/domain/model/wallet/swap/SwapDeadline;Lcom/iMe/storage/domain/model/wallet/swap/SwapSlippage;Lcom/iMe/model/wallet/crypto/send/fee/GasPriceItem;Lcom/iMe/storage/domain/model/crypto/NetworkType;Lcom/iMe/storage/domain/model/crypto/NetworkType;Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocol;)V
+    invoke-direct/range {v0 .. v5}, Lcom/iMe/model/wallet/crypto/swap/SwapFeeScreenArgs;-><init>(Lcom/iMe/storage/domain/model/crypto/swap/CryptoSwapMetadata;Lcom/iMe/storage/domain/model/wallet/swap/SwapDeadline;Lcom/iMe/storage/domain/model/wallet/swap/SwapSlippage;Lcom/iMe/model/wallet/crypto/send/fee/GasPriceItem;Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocol;)V
 
-    return-object v8
+    return-object v6
 .end method
 
 .method public final getFeesOptions()[Lcom/iMe/storage/domain/model/crypto/send/TransactionSpeedLevel;
@@ -782,7 +768,7 @@
 .method protected onFirstViewAttach()V
     .locals 0
 
-    .line 83
+    .line 80
     invoke-direct {p0}, Lcom/iMe/ui/wallet/swap/fee/WalletSwapFeePresenter;->subscribeToChangeEvents()V
 
     return-void
@@ -816,15 +802,9 @@
     .line 54
     new-instance v0, Lcom/iMe/model/wallet/crypto/send/fee/GasPriceItem;
 
-    sget-object v1, Lcom/iMe/storage/domain/model/wallet/token/TokenInfo;->Companion:Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Companion;
+    iget-object v1, p0, Lcom/iMe/ui/wallet/swap/fee/WalletSwapFeePresenter;->metadata:Lcom/iMe/storage/domain/model/crypto/swap/CryptoSwapMetadata;
 
-    iget-object v2, p0, Lcom/iMe/ui/wallet/swap/fee/WalletSwapFeePresenter;->metadata:Lcom/iMe/storage/domain/model/crypto/swap/CryptoSwapMetadata;
-
-    invoke-virtual {v2}, Lcom/iMe/storage/domain/model/crypto/swap/CryptoSwapMetadata;->getFeeTokenCode()Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Companion;->map(Lcom/iMe/storage/domain/model/wallet/token/TokenCode;)Lcom/iMe/storage/domain/model/wallet/token/TokenInfo;
+    invoke-virtual {v1}, Lcom/iMe/storage/domain/model/crypto/swap/CryptoSwapMetadata;->getFeeToken()Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
 
     move-result-object v1
 
@@ -838,7 +818,7 @@
 
     move-result-object v2
 
-    invoke-direct {v0, p1, v1, v2}, Lcom/iMe/model/wallet/crypto/send/fee/GasPriceItem;-><init>(Lcom/iMe/storage/domain/model/crypto/send/TransactionSpeedLevel;Lcom/iMe/storage/domain/model/wallet/token/TokenInfo;Lcom/iMe/storage/domain/model/crypto/send/GasPriceInfo;)V
+    invoke-direct {v0, p1, v1, v2}, Lcom/iMe/model/wallet/crypto/send/fee/GasPriceItem;-><init>(Lcom/iMe/storage/domain/model/crypto/send/TransactionSpeedLevel;Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;Lcom/iMe/storage/domain/model/crypto/send/GasPriceInfo;)V
 
     iput-object v0, p0, Lcom/iMe/ui/wallet/swap/fee/WalletSwapFeePresenter;->selectedFee:Lcom/iMe/model/wallet/crypto/send/fee/GasPriceItem;
 

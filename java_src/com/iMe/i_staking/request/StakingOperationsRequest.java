@@ -1,6 +1,5 @@
 package com.iMe.i_staking.request;
 
-import com.iMe.storage.domain.model.crypto.NetworkType;
 import com.iMe.storage.domain.model.staking.StakingOperationStatus;
 import com.iMe.storage.domain.model.staking.StakingOperationType;
 import kotlin.jvm.internal.DefaultConstructorMarker;
@@ -8,13 +7,13 @@ import kotlin.jvm.internal.Intrinsics;
 /* compiled from: StakingOperationsRequest.kt */
 /* loaded from: classes3.dex */
 public final class StakingOperationsRequest {
-    private final NetworkType networkType;
+    private final String networkType;
     private final StakingOperationsPaginationRequest paging;
     private final Long stakingId;
     private final StakingOperationStatus status;
     private final StakingOperationType type;
 
-    public static /* synthetic */ StakingOperationsRequest copy$default(StakingOperationsRequest stakingOperationsRequest, Long l, StakingOperationType stakingOperationType, StakingOperationStatus stakingOperationStatus, NetworkType networkType, StakingOperationsPaginationRequest stakingOperationsPaginationRequest, int i, Object obj) {
+    public static /* synthetic */ StakingOperationsRequest copy$default(StakingOperationsRequest stakingOperationsRequest, Long l, StakingOperationType stakingOperationType, StakingOperationStatus stakingOperationStatus, String str, StakingOperationsPaginationRequest stakingOperationsPaginationRequest, int i, Object obj) {
         if ((i & 1) != 0) {
             l = stakingOperationsRequest.stakingId;
         }
@@ -27,13 +26,13 @@ public final class StakingOperationsRequest {
         }
         StakingOperationStatus stakingOperationStatus2 = stakingOperationStatus;
         if ((i & 8) != 0) {
-            networkType = stakingOperationsRequest.networkType;
+            str = stakingOperationsRequest.networkType;
         }
-        NetworkType networkType2 = networkType;
+        String str2 = str;
         if ((i & 16) != 0) {
             stakingOperationsPaginationRequest = stakingOperationsRequest.paging;
         }
-        return stakingOperationsRequest.copy(l, stakingOperationType2, stakingOperationStatus2, networkType2, stakingOperationsPaginationRequest);
+        return stakingOperationsRequest.copy(l, stakingOperationType2, stakingOperationStatus2, str2, stakingOperationsPaginationRequest);
     }
 
     public final Long component1() {
@@ -48,7 +47,7 @@ public final class StakingOperationsRequest {
         return this.status;
     }
 
-    public final NetworkType component4() {
+    public final String component4() {
         return this.networkType;
     }
 
@@ -56,8 +55,8 @@ public final class StakingOperationsRequest {
         return this.paging;
     }
 
-    public final StakingOperationsRequest copy(Long l, StakingOperationType stakingOperationType, StakingOperationStatus stakingOperationStatus, NetworkType networkType, StakingOperationsPaginationRequest stakingOperationsPaginationRequest) {
-        return new StakingOperationsRequest(l, stakingOperationType, stakingOperationStatus, networkType, stakingOperationsPaginationRequest);
+    public final StakingOperationsRequest copy(Long l, StakingOperationType stakingOperationType, StakingOperationStatus stakingOperationStatus, String str, StakingOperationsPaginationRequest stakingOperationsPaginationRequest) {
+        return new StakingOperationsRequest(l, stakingOperationType, stakingOperationStatus, str, stakingOperationsPaginationRequest);
     }
 
     public boolean equals(Object obj) {
@@ -66,7 +65,7 @@ public final class StakingOperationsRequest {
         }
         if (obj instanceof StakingOperationsRequest) {
             StakingOperationsRequest stakingOperationsRequest = (StakingOperationsRequest) obj;
-            return Intrinsics.areEqual(this.stakingId, stakingOperationsRequest.stakingId) && this.type == stakingOperationsRequest.type && this.status == stakingOperationsRequest.status && this.networkType == stakingOperationsRequest.networkType && Intrinsics.areEqual(this.paging, stakingOperationsRequest.paging);
+            return Intrinsics.areEqual(this.stakingId, stakingOperationsRequest.stakingId) && this.type == stakingOperationsRequest.type && this.status == stakingOperationsRequest.status && Intrinsics.areEqual(this.networkType, stakingOperationsRequest.networkType) && Intrinsics.areEqual(this.paging, stakingOperationsRequest.paging);
         }
         return false;
     }
@@ -78,8 +77,8 @@ public final class StakingOperationsRequest {
         int hashCode2 = (hashCode + (stakingOperationType == null ? 0 : stakingOperationType.hashCode())) * 31;
         StakingOperationStatus stakingOperationStatus = this.status;
         int hashCode3 = (hashCode2 + (stakingOperationStatus == null ? 0 : stakingOperationStatus.hashCode())) * 31;
-        NetworkType networkType = this.networkType;
-        int hashCode4 = (hashCode3 + (networkType == null ? 0 : networkType.hashCode())) * 31;
+        String str = this.networkType;
+        int hashCode4 = (hashCode3 + (str == null ? 0 : str.hashCode())) * 31;
         StakingOperationsPaginationRequest stakingOperationsPaginationRequest = this.paging;
         return hashCode4 + (stakingOperationsPaginationRequest != null ? stakingOperationsPaginationRequest.hashCode() : 0);
     }
@@ -88,16 +87,16 @@ public final class StakingOperationsRequest {
         return "StakingOperationsRequest(stakingId=" + this.stakingId + ", type=" + this.type + ", status=" + this.status + ", networkType=" + this.networkType + ", paging=" + this.paging + ')';
     }
 
-    public StakingOperationsRequest(Long l, StakingOperationType stakingOperationType, StakingOperationStatus stakingOperationStatus, NetworkType networkType, StakingOperationsPaginationRequest stakingOperationsPaginationRequest) {
+    public StakingOperationsRequest(Long l, StakingOperationType stakingOperationType, StakingOperationStatus stakingOperationStatus, String str, StakingOperationsPaginationRequest stakingOperationsPaginationRequest) {
         this.stakingId = l;
         this.type = stakingOperationType;
         this.status = stakingOperationStatus;
-        this.networkType = networkType;
+        this.networkType = str;
         this.paging = stakingOperationsPaginationRequest;
     }
 
-    public /* synthetic */ StakingOperationsRequest(Long l, StakingOperationType stakingOperationType, StakingOperationStatus stakingOperationStatus, NetworkType networkType, StakingOperationsPaginationRequest stakingOperationsPaginationRequest, int i, DefaultConstructorMarker defaultConstructorMarker) {
-        this((i & 1) != 0 ? null : l, (i & 2) != 0 ? null : stakingOperationType, (i & 4) != 0 ? null : stakingOperationStatus, (i & 8) != 0 ? null : networkType, stakingOperationsPaginationRequest);
+    public /* synthetic */ StakingOperationsRequest(Long l, StakingOperationType stakingOperationType, StakingOperationStatus stakingOperationStatus, String str, StakingOperationsPaginationRequest stakingOperationsPaginationRequest, int i, DefaultConstructorMarker defaultConstructorMarker) {
+        this((i & 1) != 0 ? null : l, (i & 2) != 0 ? null : stakingOperationType, (i & 4) != 0 ? null : stakingOperationStatus, (i & 8) != 0 ? null : str, stakingOperationsPaginationRequest);
     }
 
     public final Long getStakingId() {
@@ -112,7 +111,7 @@ public final class StakingOperationsRequest {
         return this.status;
     }
 
-    public final NetworkType getNetworkType() {
+    public final String getNetworkType() {
         return this.networkType;
     }
 

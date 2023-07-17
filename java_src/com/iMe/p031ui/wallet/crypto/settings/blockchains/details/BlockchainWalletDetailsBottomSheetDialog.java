@@ -27,16 +27,16 @@ import kotlin.jvm.internal.Reflection;
 import kotlin.reflect.KProperty;
 import moxy.ktx.MoxyKtxDelegate;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3295R;
+import org.telegram.messenger.C3417R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.databinding.ForkContentBlockchainsWalletDetailsBinding;
-import org.telegram.p044ui.ActionBar.ActionBarMenuItem;
-import org.telegram.p044ui.ActionBar.AlertDialog;
-import org.telegram.p044ui.ActionBar.BaseFragment;
-import org.telegram.p044ui.ActionBar.Theme;
+import org.telegram.p043ui.ActionBar.ActionBarMenuItem;
+import org.telegram.p043ui.ActionBar.AlertDialog;
+import org.telegram.p043ui.ActionBar.BaseFragment;
+import org.telegram.p043ui.ActionBar.Theme;
 /* compiled from: BlockchainWalletDetailsBottomSheetDialog.kt */
 /* renamed from: com.iMe.ui.wallet.crypto.settings.blockchains.details.BlockchainWalletDetailsBottomSheetDialog */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class BlockchainWalletDetailsBottomSheetDialog extends MvpBottomSheet implements BlockchainWalletDetailsView {
     static final /* synthetic */ KProperty<Object>[] $$delegatedProperties = {Reflection.property1(new PropertyReference1Impl(BlockchainWalletDetailsBottomSheetDialog.class, "presenter", "getPresenter()Lcom/iMe/ui/wallet/crypto/settings/blockchains/details/BlockchainWalletDetailsPresenter;", 0)), Reflection.property1(new PropertyReference1Impl(BlockchainWalletDetailsBottomSheetDialog.class, "binding", "getBinding()Lorg/telegram/messenger/databinding/ForkContentBlockchainsWalletDetailsBinding;", 0))};
     public static final Companion Companion = new Companion(null);
@@ -48,7 +48,7 @@ public final class BlockchainWalletDetailsBottomSheetDialog extends MvpBottomShe
     private final Function1<BlockchainWalletItem, Unit> showBackupAction;
     private final BlockchainWalletItem walletItem;
 
-    @Override // org.telegram.p044ui.ActionBar.BottomSheet
+    @Override // org.telegram.p043ui.ActionBar.BottomSheet
     protected boolean canDismissWithSwipe() {
         return false;
     }
@@ -59,7 +59,7 @@ public final class BlockchainWalletDetailsBottomSheetDialog extends MvpBottomShe
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
-    public BlockchainWalletDetailsBottomSheetDialog(org.telegram.p044ui.ActionBar.BaseFragment r3, com.iMe.model.wallet.crypto.settings.BlockchainWalletItem r4, kotlin.jvm.functions.Function1<? super com.iMe.model.wallet.crypto.settings.BlockchainWalletItem, kotlin.Unit> r5, kotlin.jvm.functions.Function1<? super com.iMe.model.wallet.crypto.settings.BlockchainWalletItem, kotlin.Unit> r6, com.iMe.model.dialog.DialogModel r7) {
+    public BlockchainWalletDetailsBottomSheetDialog(org.telegram.p043ui.ActionBar.BaseFragment r3, com.iMe.model.wallet.crypto.settings.BlockchainWalletItem r4, kotlin.jvm.functions.Function1<? super com.iMe.model.wallet.crypto.settings.BlockchainWalletItem, kotlin.Unit> r5, kotlin.jvm.functions.Function1<? super com.iMe.model.wallet.crypto.settings.BlockchainWalletItem, kotlin.Unit> r6, com.iMe.model.dialog.DialogModel r7) {
         /*
             r2 = this;
             java.lang.String r0 = "fragment"
@@ -99,7 +99,7 @@ public final class BlockchainWalletDetailsBottomSheetDialog extends MvpBottomShe
             java.lang.String r7 = r7.toString()
             r5.<init>(r6, r7, r4)
             r2.presenter$delegate = r5
-            org.koin.mp.KoinPlatformTools r4 = org.koin.p043mp.KoinPlatformTools.INSTANCE
+            org.koin.mp.KoinPlatformTools r4 = org.koin.p042mp.KoinPlatformTools.INSTANCE
             kotlin.LazyThreadSafetyMode r4 = r4.defaultLazyMode()
             com.iMe.ui.wallet.crypto.settings.blockchains.details.BlockchainWalletDetailsBottomSheetDialog$special$$inlined$inject$default$1 r5 = new com.iMe.ui.wallet.crypto.settings.blockchains.details.BlockchainWalletDetailsBottomSheetDialog$special$$inlined$inject$default$1
             r6 = 0
@@ -150,9 +150,9 @@ public final class BlockchainWalletDetailsBottomSheetDialog extends MvpBottomShe
         ForkContentBlockchainsWalletDetailsBinding binding = getBinding();
         ImageHeaderView viewHeader = binding.viewHeader;
         Intrinsics.checkNotNullExpressionValue(viewHeader, "viewHeader");
-        ImageHeaderView.setupViewData$default(viewHeader, i, null, title, subtitle, 2, null);
-        binding.viewConnectedCell.setupViewData(getResourceManager().getString(C3295R.string.wallet_details_created), createdDate, C3295R.C3297drawable.msg_calendar2, true);
-        binding.viewAddressCell.setupViewData(getResourceManager().getString(C3295R.string.wallet_connect_session_details_address), address, C3295R.C3297drawable.fork_ic_nav_wallet_24, true);
+        viewHeader.setupViewData((r13 & 1) != 0 ? null : null, (r13 & 2) != 0 ? null : Integer.valueOf(i), (r13 & 4) != 0 ? null : null, title, subtitle);
+        binding.viewConnectedCell.setupViewData(getResourceManager().getString(C3417R.string.wallet_details_created), createdDate, C3417R.C3419drawable.msg_calendar2, true);
+        binding.viewAddressCell.setupViewData(getResourceManager().getString(C3417R.string.wallet_connect_session_details_address), address, C3417R.C3419drawable.fork_ic_nav_wallet_24, true);
     }
 
     @Override // com.iMe.p031ui.wallet.crypto.settings.blockchains.details.BlockchainWalletDetailsView
@@ -174,11 +174,11 @@ public final class BlockchainWalletDetailsBottomSheetDialog extends MvpBottomShe
         final ActionBarMenuItem setupActionItem$lambda$4 = getBinding().itemMoreOptions;
         setupActionItem$lambda$4.setLongClickEnabled(false);
         setupActionItem$lambda$4.setSubMenuOpenSide(2);
-        setupActionItem$lambda$4.setIcon(C3295R.C3297drawable.ic_ab_other);
+        setupActionItem$lambda$4.setIcon(C3417R.C3419drawable.ic_ab_other);
         Intrinsics.checkNotNullExpressionValue(setupActionItem$lambda$4, "setupActionItem$lambda$4");
         ViewExtKt.setCircleRippleBackground(setupActionItem$lambda$4);
-        setupActionItem$lambda$4.addSubItem(IdFabric$Menu.INFO, C3295R.C3297drawable.msg_info, getResourceManager().getString(C3295R.string.wallet_crypto_buy_information_dialog_title));
-        setupActionItem$lambda$4.addSubItem(IdFabric$Menu.COPY, C3295R.C3297drawable.msg_copy, getResourceManager().getString(C3295R.string.wallet_transaction_details_action_copy_address));
+        setupActionItem$lambda$4.addSubItem(IdFabric$Menu.INFO, C3417R.C3419drawable.msg_info, getResourceManager().getString(C3417R.string.wallet_crypto_buy_information_dialog_title));
+        setupActionItem$lambda$4.addSubItem(IdFabric$Menu.COPY, C3417R.C3419drawable.msg_copy, getResourceManager().getString(C3417R.string.wallet_transaction_details_action_copy_address));
         setupActionItem$lambda$4.setOnClickListener(new View.OnClickListener() { // from class: com.iMe.ui.wallet.crypto.settings.blockchains.details.BlockchainWalletDetailsBottomSheetDialog$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
@@ -186,12 +186,12 @@ public final class BlockchainWalletDetailsBottomSheetDialog extends MvpBottomShe
             }
         });
         setupActionItem$lambda$4.setDelegate(new ActionBarMenuItem.ActionBarMenuItemDelegate() { // from class: com.iMe.ui.wallet.crypto.settings.blockchains.details.BlockchainWalletDetailsBottomSheetDialog$$ExternalSyntheticLambda2
-            @Override // org.telegram.p044ui.ActionBar.ActionBarMenuItem.ActionBarMenuItemDelegate
+            @Override // org.telegram.p043ui.ActionBar.ActionBarMenuItem.ActionBarMenuItemDelegate
             public final void onItemClick(int i) {
                 BlockchainWalletDetailsBottomSheetDialog.setupActionItem$lambda$4$lambda$3(BlockchainWalletDetailsBottomSheetDialog.this, setupActionItem$lambda$4, i);
             }
         });
-        setupActionItem$lambda$4.setContentDescription(LocaleController.getString("AccDescrMoreOptions", C3295R.string.AccDescrMoreOptions));
+        setupActionItem$lambda$4.setContentDescription(LocaleController.getString("AccDescrMoreOptions", C3417R.string.AccDescrMoreOptions));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -228,8 +228,8 @@ public final class BlockchainWalletDetailsBottomSheetDialog extends MvpBottomShe
 
     private final void setupTexts() {
         ForkContentBlockchainsWalletDetailsBinding binding = getBinding();
-        binding.buttonBackup.setText(getResourceManager().getString(C3295R.string.wallet_eth_account_settings_backup_title));
-        binding.buttonReset.setText(LocaleController.getString("Reset", C3295R.string.Reset));
+        binding.buttonBackup.setText(getResourceManager().getString(C3417R.string.wallet_eth_account_settings_backup_title));
+        binding.buttonReset.setText(LocaleController.getString("Reset", C3417R.string.Reset));
     }
 
     private final void setupListeners() {
@@ -256,7 +256,7 @@ public final class BlockchainWalletDetailsBottomSheetDialog extends MvpBottomShe
 
     /* compiled from: BlockchainWalletDetailsBottomSheetDialog.kt */
     /* renamed from: com.iMe.ui.wallet.crypto.settings.blockchains.details.BlockchainWalletDetailsBottomSheetDialog$Companion */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

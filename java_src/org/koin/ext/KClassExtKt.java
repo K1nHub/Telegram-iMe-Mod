@@ -3,7 +3,7 @@ package org.koin.ext;
 import java.util.Map;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.reflect.KClass;
-import org.koin.p043mp.KoinPlatformTools;
+import org.koin.p042mp.KoinPlatformTools;
 /* compiled from: KClassExt.kt */
 /* loaded from: classes4.dex */
 public final class KClassExtKt {

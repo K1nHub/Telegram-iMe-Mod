@@ -659,9 +659,9 @@ public final class MediaItem implements Bundleable {
             private long targetOffsetMs;
 
             public Builder() {
-                this.targetOffsetMs = C0475C.TIME_UNSET;
-                this.minOffsetMs = C0475C.TIME_UNSET;
-                this.maxOffsetMs = C0475C.TIME_UNSET;
+                this.targetOffsetMs = C0480C.TIME_UNSET;
+                this.minOffsetMs = C0480C.TIME_UNSET;
+                this.maxOffsetMs = C0480C.TIME_UNSET;
                 this.minPlaybackSpeed = -3.4028235E38f;
                 this.maxPlaybackSpeed = -3.4028235E38f;
             }
@@ -782,7 +782,7 @@ public final class MediaItem implements Bundleable {
     public static class SubtitleConfiguration {
 
         /* renamed from: id */
-        public final String f102id;
+        public final String f184id;
         public final String label;
         public final String language;
         public final String mimeType;
@@ -794,7 +794,7 @@ public final class MediaItem implements Bundleable {
         public static final class Builder {
 
             /* renamed from: id */
-            private String f103id;
+            private String f185id;
             private String label;
             private String language;
             private String mimeType;
@@ -813,7 +813,7 @@ public final class MediaItem implements Bundleable {
                 this.selectionFlags = subtitleConfiguration.selectionFlags;
                 this.roleFlags = subtitleConfiguration.roleFlags;
                 this.label = subtitleConfiguration.label;
-                this.f103id = subtitleConfiguration.f102id;
+                this.f185id = subtitleConfiguration.f184id;
             }
 
             public Builder setUri(Uri uri) {
@@ -847,7 +847,7 @@ public final class MediaItem implements Bundleable {
             }
 
             public Builder setId(String str) {
-                this.f103id = str;
+                this.f185id = str;
                 return this;
             }
 
@@ -868,7 +868,7 @@ public final class MediaItem implements Bundleable {
             this.selectionFlags = i;
             this.roleFlags = i2;
             this.label = str3;
-            this.f102id = str4;
+            this.f184id = str4;
         }
 
         private SubtitleConfiguration(Builder builder) {
@@ -878,7 +878,7 @@ public final class MediaItem implements Bundleable {
             this.selectionFlags = builder.selectionFlags;
             this.roleFlags = builder.roleFlags;
             this.label = builder.label;
-            this.f102id = builder.f103id;
+            this.f184id = builder.f185id;
         }
 
         public Builder buildUpon() {
@@ -891,7 +891,7 @@ public final class MediaItem implements Bundleable {
             }
             if (obj instanceof SubtitleConfiguration) {
                 SubtitleConfiguration subtitleConfiguration = (SubtitleConfiguration) obj;
-                return this.uri.equals(subtitleConfiguration.uri) && Util.areEqual(this.mimeType, subtitleConfiguration.mimeType) && Util.areEqual(this.language, subtitleConfiguration.language) && this.selectionFlags == subtitleConfiguration.selectionFlags && this.roleFlags == subtitleConfiguration.roleFlags && Util.areEqual(this.label, subtitleConfiguration.label) && Util.areEqual(this.f102id, subtitleConfiguration.f102id);
+                return this.uri.equals(subtitleConfiguration.uri) && Util.areEqual(this.mimeType, subtitleConfiguration.mimeType) && Util.areEqual(this.language, subtitleConfiguration.language) && this.selectionFlags == subtitleConfiguration.selectionFlags && this.roleFlags == subtitleConfiguration.roleFlags && Util.areEqual(this.label, subtitleConfiguration.label) && Util.areEqual(this.f184id, subtitleConfiguration.f184id);
             }
             return false;
         }
@@ -904,7 +904,7 @@ public final class MediaItem implements Bundleable {
             int hashCode3 = (((((hashCode2 + (str2 == null ? 0 : str2.hashCode())) * 31) + this.selectionFlags) * 31) + this.roleFlags) * 31;
             String str3 = this.label;
             int hashCode4 = (hashCode3 + (str3 == null ? 0 : str3.hashCode())) * 31;
-            String str4 = this.f102id;
+            String str4 = this.f184id;
             return hashCode4 + (str4 != null ? str4.hashCode() : 0);
         }
     }

@@ -24,12 +24,12 @@
 .method constructor <init>(Lorg/telegram/ui/LaunchActivity;Landroid/content/Context;)V
     .locals 0
 
-    .line 1445
+    .line 1489
     iput-object p1, p0, Lorg/telegram/ui/LaunchActivity$12;->this$0:Lorg/telegram/ui/LaunchActivity;
 
     invoke-direct {p0, p2}, Landroid/widget/RelativeLayout;-><init>(Landroid/content/Context;)V
 
-    .line 1446
+    .line 1490
     new-instance p1, Landroid/graphics/Path;
 
     invoke-direct {p1}, Landroid/graphics/Path;-><init>()V
@@ -46,7 +46,7 @@
 
     sub-int/2addr p5, p3
 
-    .line 1489
+    .line 1533
     sget-boolean p1, Lorg/telegram/messenger/AndroidUtilities;->isInMultiwindow:Z
 
     const/4 p2, 0x2
@@ -73,7 +73,7 @@
 
     if-ne p1, p2, :cond_2
 
-    .line 1490
+    .line 1534
     :cond_0
     div-int/lit8 p1, p4, 0x64
 
@@ -81,19 +81,19 @@
 
     const/16 v0, 0x140
 
-    .line 1491
+    .line 1535
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
 
     if-ge p1, v1, :cond_1
 
-    .line 1492
+    .line 1536
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p1
 
-    .line 1494
+    .line 1538
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/LaunchActivity$12;->this$0:Lorg/telegram/ui/LaunchActivity;
 
@@ -125,10 +125,10 @@
 
     invoke-virtual {v0, p1, p3, v1, v2}, Landroid/widget/FrameLayout;->layout(IIII)V
 
-    .line 1495
+    .line 1539
     iget-object v0, p0, Lorg/telegram/ui/LaunchActivity$12;->this$0:Lorg/telegram/ui/LaunchActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/LaunchActivity;->access$300(Lorg/telegram/ui/LaunchActivity;)Lorg/telegram/ui/ActionBar/INavigationLayout;
+    invoke-static {v0}, Lorg/telegram/ui/LaunchActivity;->access$200(Lorg/telegram/ui/LaunchActivity;)Lorg/telegram/ui/ActionBar/INavigationLayout;
 
     move-result-object v0
 
@@ -138,7 +138,7 @@
 
     iget-object v1, p0, Lorg/telegram/ui/LaunchActivity$12;->this$0:Lorg/telegram/ui/LaunchActivity;
 
-    invoke-static {v1}, Lorg/telegram/ui/LaunchActivity;->access$300(Lorg/telegram/ui/LaunchActivity;)Lorg/telegram/ui/ActionBar/INavigationLayout;
+    invoke-static {v1}, Lorg/telegram/ui/LaunchActivity;->access$200(Lorg/telegram/ui/LaunchActivity;)Lorg/telegram/ui/ActionBar/INavigationLayout;
 
     move-result-object v1
 
@@ -152,7 +152,7 @@
 
     iget-object v2, p0, Lorg/telegram/ui/LaunchActivity$12;->this$0:Lorg/telegram/ui/LaunchActivity;
 
-    invoke-static {v2}, Lorg/telegram/ui/LaunchActivity;->access$300(Lorg/telegram/ui/LaunchActivity;)Lorg/telegram/ui/ActionBar/INavigationLayout;
+    invoke-static {v2}, Lorg/telegram/ui/LaunchActivity;->access$200(Lorg/telegram/ui/LaunchActivity;)Lorg/telegram/ui/ActionBar/INavigationLayout;
 
     move-result-object v2
 
@@ -166,7 +166,7 @@
 
     invoke-virtual {v0, p3, p3, v1, v2}, Landroid/view/ViewGroup;->layout(IIII)V
 
-    .line 1496
+    .line 1540
     iget-object v0, p0, Lorg/telegram/ui/LaunchActivity$12;->this$0:Lorg/telegram/ui/LaunchActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/LaunchActivity;->access$1400(Lorg/telegram/ui/LaunchActivity;)Lorg/telegram/ui/ActionBar/INavigationLayout;
@@ -211,11 +211,11 @@
 
     goto :goto_0
 
-    .line 1498
+    .line 1542
     :cond_2
     iget-object p1, p0, Lorg/telegram/ui/LaunchActivity$12;->this$0:Lorg/telegram/ui/LaunchActivity;
 
-    invoke-static {p1}, Lorg/telegram/ui/LaunchActivity;->access$300(Lorg/telegram/ui/LaunchActivity;)Lorg/telegram/ui/ActionBar/INavigationLayout;
+    invoke-static {p1}, Lorg/telegram/ui/LaunchActivity;->access$200(Lorg/telegram/ui/LaunchActivity;)Lorg/telegram/ui/ActionBar/INavigationLayout;
 
     move-result-object p1
 
@@ -225,7 +225,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/LaunchActivity$12;->this$0:Lorg/telegram/ui/LaunchActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/LaunchActivity;->access$300(Lorg/telegram/ui/LaunchActivity;)Lorg/telegram/ui/ActionBar/INavigationLayout;
+    invoke-static {v0}, Lorg/telegram/ui/LaunchActivity;->access$200(Lorg/telegram/ui/LaunchActivity;)Lorg/telegram/ui/ActionBar/INavigationLayout;
 
     move-result-object v0
 
@@ -239,7 +239,7 @@
 
     iget-object v1, p0, Lorg/telegram/ui/LaunchActivity$12;->this$0:Lorg/telegram/ui/LaunchActivity;
 
-    invoke-static {v1}, Lorg/telegram/ui/LaunchActivity;->access$300(Lorg/telegram/ui/LaunchActivity;)Lorg/telegram/ui/ActionBar/INavigationLayout;
+    invoke-static {v1}, Lorg/telegram/ui/LaunchActivity;->access$200(Lorg/telegram/ui/LaunchActivity;)Lorg/telegram/ui/ActionBar/INavigationLayout;
 
     move-result-object v1
 
@@ -253,7 +253,7 @@
 
     invoke-virtual {p1, p3, p3, v0, v1}, Landroid/view/ViewGroup;->layout(IIII)V
 
-    .line 1500
+    .line 1544
     :goto_0
     iget-object p1, p0, Lorg/telegram/ui/LaunchActivity$12;->this$0:Lorg/telegram/ui/LaunchActivity;
 
@@ -273,7 +273,7 @@
 
     div-int/2addr p4, p2
 
-    .line 1501
+    .line 1545
     iget-object p1, p0, Lorg/telegram/ui/LaunchActivity$12;->this$0:Lorg/telegram/ui/LaunchActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/LaunchActivity;->access$1700(Lorg/telegram/ui/LaunchActivity;)Lorg/telegram/ui/ActionBar/INavigationLayout;
@@ -296,7 +296,7 @@
 
     div-int/2addr p5, p2
 
-    .line 1502
+    .line 1546
     iget-object p1, p0, Lorg/telegram/ui/LaunchActivity$12;->this$0:Lorg/telegram/ui/LaunchActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/LaunchActivity;->access$1700(Lorg/telegram/ui/LaunchActivity;)Lorg/telegram/ui/ActionBar/INavigationLayout;
@@ -341,7 +341,7 @@
 
     invoke-virtual {p1, p4, p5, p2, v0}, Landroid/view/ViewGroup;->layout(IIII)V
 
-    .line 1503
+    .line 1547
     iget-object p1, p0, Lorg/telegram/ui/LaunchActivity$12;->this$0:Lorg/telegram/ui/LaunchActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/LaunchActivity;->access$1500(Lorg/telegram/ui/LaunchActivity;)Lorg/telegram/ui/Components/SizeNotifierFrameLayout;
@@ -370,7 +370,7 @@
 
     invoke-virtual {p1, p3, p3, p2, p4}, Landroid/widget/FrameLayout;->layout(IIII)V
 
-    .line 1504
+    .line 1548
     iget-object p1, p0, Lorg/telegram/ui/LaunchActivity$12;->this$0:Lorg/telegram/ui/LaunchActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/LaunchActivity;->access$1600(Lorg/telegram/ui/LaunchActivity;)Landroid/widget/FrameLayout;
@@ -407,23 +407,23 @@
 
     const/4 v0, 0x1
 
-    .line 1459
+    .line 1503
     iput-boolean v0, p0, Lorg/telegram/ui/LaunchActivity$12;->inLayout:Z
 
-    .line 1460
+    .line 1504
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result p1
 
-    .line 1461
+    .line 1505
     invoke-static {p2}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result p2
 
-    .line 1462
+    .line 1506
     invoke-virtual {p0, p1, p2}, Landroid/widget/RelativeLayout;->setMeasuredDimension(II)V
 
-    .line 1464
+    .line 1508
     sget-boolean v1, Lorg/telegram/messenger/AndroidUtilities;->isInMultiwindow:Z
 
     const/4 v2, 0x0
@@ -452,36 +452,36 @@
 
     if-ne v1, v4, :cond_2
 
-    .line 1465
+    .line 1509
     :cond_0
     iget-object v1, p0, Lorg/telegram/ui/LaunchActivity$12;->this$0:Lorg/telegram/ui/LaunchActivity;
 
     invoke-static {v1, v2}, Lorg/telegram/ui/LaunchActivity;->access$1202(Lorg/telegram/ui/LaunchActivity;Z)Z
 
-    .line 1466
+    .line 1510
     div-int/lit8 v1, p1, 0x64
 
     mul-int/lit8 v1, v1, 0x23
 
     const/16 v4, 0x140
 
-    .line 1467
+    .line 1511
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v5
 
     if-ge v1, v5, :cond_1
 
-    .line 1468
+    .line 1512
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
 
-    .line 1470
+    .line 1514
     :cond_1
     iget-object v4, p0, Lorg/telegram/ui/LaunchActivity$12;->this$0:Lorg/telegram/ui/LaunchActivity;
 
-    invoke-static {v4}, Lorg/telegram/ui/LaunchActivity;->access$300(Lorg/telegram/ui/LaunchActivity;)Lorg/telegram/ui/ActionBar/INavigationLayout;
+    invoke-static {v4}, Lorg/telegram/ui/LaunchActivity;->access$200(Lorg/telegram/ui/LaunchActivity;)Lorg/telegram/ui/ActionBar/INavigationLayout;
 
     move-result-object v4
 
@@ -499,7 +499,7 @@
 
     invoke-virtual {v4, v5, v6}, Landroid/view/ViewGroup;->measure(II)V
 
-    .line 1471
+    .line 1515
     iget-object v4, p0, Lorg/telegram/ui/LaunchActivity$12;->this$0:Lorg/telegram/ui/LaunchActivity;
 
     invoke-static {v4}, Lorg/telegram/ui/LaunchActivity;->access$1300(Lorg/telegram/ui/LaunchActivity;)Landroid/widget/FrameLayout;
@@ -520,7 +520,7 @@
 
     invoke-virtual {v4, v0, v5}, Landroid/widget/FrameLayout;->measure(II)V
 
-    .line 1472
+    .line 1516
     iget-object v0, p0, Lorg/telegram/ui/LaunchActivity$12;->this$0:Lorg/telegram/ui/LaunchActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/LaunchActivity;->access$1400(Lorg/telegram/ui/LaunchActivity;)Lorg/telegram/ui/ActionBar/INavigationLayout;
@@ -545,16 +545,16 @@
 
     goto :goto_0
 
-    .line 1474
+    .line 1518
     :cond_2
     iget-object v1, p0, Lorg/telegram/ui/LaunchActivity$12;->this$0:Lorg/telegram/ui/LaunchActivity;
 
     invoke-static {v1, v0}, Lorg/telegram/ui/LaunchActivity;->access$1202(Lorg/telegram/ui/LaunchActivity;Z)Z
 
-    .line 1475
+    .line 1519
     iget-object v0, p0, Lorg/telegram/ui/LaunchActivity$12;->this$0:Lorg/telegram/ui/LaunchActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/LaunchActivity;->access$300(Lorg/telegram/ui/LaunchActivity;)Lorg/telegram/ui/ActionBar/INavigationLayout;
+    invoke-static {v0}, Lorg/telegram/ui/LaunchActivity;->access$200(Lorg/telegram/ui/LaunchActivity;)Lorg/telegram/ui/ActionBar/INavigationLayout;
 
     move-result-object v0
 
@@ -572,7 +572,7 @@
 
     invoke-virtual {v0, v1, v4}, Landroid/view/ViewGroup;->measure(II)V
 
-    .line 1477
+    .line 1521
     :goto_0
     iget-object v0, p0, Lorg/telegram/ui/LaunchActivity$12;->this$0:Lorg/telegram/ui/LaunchActivity;
 
@@ -590,7 +590,7 @@
 
     invoke-virtual {v0, v1, v4}, Landroid/widget/FrameLayout;->measure(II)V
 
-    .line 1478
+    .line 1522
     iget-object v0, p0, Lorg/telegram/ui/LaunchActivity$12;->this$0:Lorg/telegram/ui/LaunchActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/LaunchActivity;->access$1600(Lorg/telegram/ui/LaunchActivity;)Landroid/widget/FrameLayout;
@@ -607,7 +607,7 @@
 
     invoke-virtual {v0, v1, v4}, Landroid/widget/FrameLayout;->measure(II)V
 
-    .line 1479
+    .line 1523
     iget-object v0, p0, Lorg/telegram/ui/LaunchActivity$12;->this$0:Lorg/telegram/ui/LaunchActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/LaunchActivity;->access$1700(Lorg/telegram/ui/LaunchActivity;)Lorg/telegram/ui/ActionBar/INavigationLayout;
@@ -656,7 +656,7 @@
 
     invoke-virtual {v0, p1, p2}, Landroid/view/ViewGroup;->measure(II)V
 
-    .line 1481
+    .line 1525
     iput-boolean v2, p0, Lorg/telegram/ui/LaunchActivity$12;->inLayout:Z
 
     return-void
@@ -665,14 +665,14 @@
 .method public requestLayout()V
     .locals 1
 
-    .line 1451
+    .line 1495
     iget-boolean v0, p0, Lorg/telegram/ui/LaunchActivity$12;->inLayout:Z
 
     if-eqz v0, :cond_0
 
     return-void
 
-    .line 1454
+    .line 1498
     :cond_0
     invoke-super {p0}, Landroid/widget/RelativeLayout;->requestLayout()V
 

@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/ActionBar/ActionBarMenuItem;Landroid/content/Context;)V
     .locals 0
 
-    .line 1370
+    .line 1377
     invoke-direct {p0, p2}, Landroid/widget/HorizontalScrollView;-><init>(Landroid/content/Context;)V
 
     return-void
@@ -31,7 +31,7 @@
 .method private checkDragg(Landroid/view/MotionEvent;)V
     .locals 2
 
-    .line 1387
+    .line 1394
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v0
@@ -40,12 +40,12 @@
 
     if-nez v0, :cond_0
 
-    .line 1388
+    .line 1395
     iput-boolean v1, p0, Lorg/telegram/ui/ActionBar/ActionBarMenuItem$8;->isDragging:Z
 
     goto :goto_0
 
-    .line 1389
+    .line 1396
     :cond_0
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
@@ -64,7 +64,7 @@
     :cond_1
     const/4 p1, 0x0
 
-    .line 1390
+    .line 1397
     iput-boolean p1, p0, Lorg/telegram/ui/ActionBar/ActionBarMenuItem$8;->isDragging:Z
 
     :cond_2
@@ -77,10 +77,10 @@
 .method public onInterceptTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 0
 
-    .line 1376
+    .line 1383
     invoke-direct {p0, p1}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem$8;->checkDragg(Landroid/view/MotionEvent;)V
 
-    .line 1377
+    .line 1384
     invoke-super {p0, p1}, Landroid/widget/HorizontalScrollView;->onInterceptTouchEvent(Landroid/view/MotionEvent;)Z
 
     move-result p1
@@ -91,14 +91,14 @@
 .method protected onOverScrolled(IIZZ)V
     .locals 1
 
-    .line 1396
+    .line 1403
     iget-boolean v0, p0, Lorg/telegram/ui/ActionBar/ActionBarMenuItem$8;->isDragging:Z
 
     if-nez v0, :cond_0
 
     return-void
 
-    .line 1399
+    .line 1406
     :cond_0
     invoke-super {p0, p1, p2, p3, p4}, Landroid/widget/HorizontalScrollView;->onOverScrolled(IIZZ)V
 
@@ -108,10 +108,10 @@
 .method public onTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 0
 
-    .line 1382
+    .line 1389
     invoke-direct {p0, p1}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem$8;->checkDragg(Landroid/view/MotionEvent;)V
 
-    .line 1383
+    .line 1390
     invoke-super {p0, p1}, Landroid/widget/HorizontalScrollView;->onTouchEvent(Landroid/view/MotionEvent;)Z
 
     move-result p1

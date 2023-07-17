@@ -2,13 +2,13 @@ package com.google.android.gms.measurement.internal;
 
 import android.content.Context;
 import android.content.res.Resources;
-import com.google.android.gms.common.C0700R;
+import com.google.android.gms.common.C0705R;
 /* compiled from: com.google.android.gms:play-services-measurement-base@@19.0.2 */
 /* loaded from: classes3.dex */
 public final class zzfn {
     public static String zza(Context context) {
         try {
-            return context.getResources().getResourcePackageName(C0700R.string.common_google_play_services_unknown_issue);
+            return context.getResources().getResourcePackageName(C0705R.string.common_google_play_services_unknown_issue);
         } catch (Resources.NotFoundException unused) {
             return context.getPackageName();
         }

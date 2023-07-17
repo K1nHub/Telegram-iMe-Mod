@@ -7,12 +7,6 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lcom/iMe/storage/data/repository/crypto/nft/avatar/NftAvatarRepositoryImpl$WhenMappings;
-    }
-.end annotation
-
 .annotation system Ldalvik/annotation/SourceDebugExtension;
     value = "SMAP\nNftAvatarRepositoryImpl.kt\nKotlin\n*S Kotlin\n*F\n+ 1 NftAvatarRepositoryImpl.kt\ncom/iMe/storage/data/repository/crypto/nft/avatar/NftAvatarRepositoryImpl\n+ 2 FirebaseExt.kt\ncom/iMe/storage/data/utils/extentions/FirebaseExtKt\n+ 3 RxExt.kt\ncom/iMe/storage/data/utils/extentions/RxExtKt\n+ 4 ResultExt.kt\ncom/iMe/storage/domain/utils/extentions/ResultExtKt\n*L\n1#1,36:1\n70#2:37\n26#3:38\n18#3:40\n11#4:39\n*S KotlinDebug\n*F\n+ 1 NftAvatarRepositoryImpl.kt\ncom/iMe/storage/data/repository/crypto/nft/avatar/NftAvatarRepositoryImpl\n*L\n28#1:37\n29#1:38\n30#1:40\n30#1:39\n*E\n"
 .end annotation
@@ -59,12 +53,12 @@
 
 
 # virtual methods
-.method public getNftAvatars(Lcom/iMe/storage/domain/model/crypto/NetworkType;)Lio/reactivex/Observable;
+.method public getNftAvatars(Ljava/lang/String;)Lio/reactivex/Observable;
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lcom/iMe/storage/domain/model/crypto/NetworkType;",
+            "Ljava/lang/String;",
             ")",
             "Lio/reactivex/Observable<",
             "Lcom/iMe/storage/domain/model/Result<",
@@ -74,24 +68,19 @@
         }
     .end annotation
 
-    const-string v0, "networkType"
+    const-string v0, "networkId"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 25
-    sget-object v0, Lcom/iMe/storage/data/repository/crypto/nft/avatar/NftAvatarRepositoryImpl$WhenMappings;->$EnumSwitchMapping$0:[I
+    const-string v0, "POLYGON"
 
-    invoke-virtual {p1}, Ljava/lang/Enum;->ordinal()I
+    .line 26
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result p1
 
-    aget p1, v0, p1
+    if-eqz p1, :cond_0
 
-    const/4 v0, 0x1
-
-    if-ne p1, v0, :cond_0
-
-    .line 26
     iget-object p1, p0, Lcom/iMe/storage/data/repository/crypto/nft/avatar/NftAvatarRepositoryImpl;->nftAvatarApi:Lcom/iMe/storage/data/network/api/own/NftAvatarApi;
 
     .line 27

@@ -28,7 +28,7 @@
 
     move-object v0, p1
 
-    .line 544
+    .line 547
     iput-object v0, v8, Lorg/telegram/ui/TopicsFragment$2$1;->this$1:Lorg/telegram/ui/TopicsFragment$2;
 
     move-wide/from16 v0, p9
@@ -59,7 +59,7 @@
 .method protected canGenerateLink()Z
     .locals 3
 
-    .line 547
+    .line 550
     iget-object v0, p0, Lorg/telegram/ui/TopicsFragment$2$1;->this$1:Lorg/telegram/ui/TopicsFragment$2;
 
     iget-object v0, v0, Lorg/telegram/ui/TopicsFragment$2;->this$0:Lorg/telegram/ui/TopicsFragment;
@@ -82,7 +82,7 @@
 
     const/4 v1, 0x3
 
-    .line 548
+    .line 551
     invoke-static {v0, v1}, Lorg/telegram/messenger/ChatObject;->canUserDoAdminAction(Lorg/telegram/tgnet/TLRPC$Chat;I)Z
 
     move-result v0

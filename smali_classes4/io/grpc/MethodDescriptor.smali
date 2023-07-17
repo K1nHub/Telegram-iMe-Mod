@@ -120,7 +120,7 @@
 
     iput-object p1, p0, Lio/grpc/MethodDescriptor;->serviceName:Ljava/lang/String;
 
-    const-string p1, "requestMarshaller"
+    const-string/jumbo p1, "requestMarshaller"
 
     .line 230
     invoke-static {p3, p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
@@ -131,7 +131,7 @@
 
     iput-object p1, p0, Lio/grpc/MethodDescriptor;->requestMarshaller:Lio/grpc/MethodDescriptor$Marshaller;
 
-    const-string p1, "responseMarshaller"
+    const-string/jumbo p1, "responseMarshaller"
 
     .line 231
     invoke-static {p4, p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
@@ -419,7 +419,7 @@
 
     iget-boolean v1, p0, Lio/grpc/MethodDescriptor;->safe:Z
 
-    const-string v2, "safe"
+    const-string/jumbo v2, "safe"
 
     .line 598
     invoke-virtual {v0, v2, v1}, Lcom/google/common/base/MoreObjects$ToStringHelper;->add(Ljava/lang/String;Z)Lcom/google/common/base/MoreObjects$ToStringHelper;
@@ -428,7 +428,7 @@
 
     iget-boolean v1, p0, Lio/grpc/MethodDescriptor;->sampledToLocalTracing:Z
 
-    const-string v2, "sampledToLocalTracing"
+    const-string/jumbo v2, "sampledToLocalTracing"
 
     .line 599
     invoke-virtual {v0, v2, v1}, Lcom/google/common/base/MoreObjects$ToStringHelper;->add(Ljava/lang/String;Z)Lcom/google/common/base/MoreObjects$ToStringHelper;
@@ -437,7 +437,7 @@
 
     iget-object v1, p0, Lio/grpc/MethodDescriptor;->requestMarshaller:Lio/grpc/MethodDescriptor$Marshaller;
 
-    const-string v2, "requestMarshaller"
+    const-string/jumbo v2, "requestMarshaller"
 
     .line 600
     invoke-virtual {v0, v2, v1}, Lcom/google/common/base/MoreObjects$ToStringHelper;->add(Ljava/lang/String;Ljava/lang/Object;)Lcom/google/common/base/MoreObjects$ToStringHelper;
@@ -446,7 +446,7 @@
 
     iget-object v1, p0, Lio/grpc/MethodDescriptor;->responseMarshaller:Lio/grpc/MethodDescriptor$Marshaller;
 
-    const-string v2, "responseMarshaller"
+    const-string/jumbo v2, "responseMarshaller"
 
     .line 601
     invoke-virtual {v0, v2, v1}, Lcom/google/common/base/MoreObjects$ToStringHelper;->add(Ljava/lang/String;Ljava/lang/Object;)Lcom/google/common/base/MoreObjects$ToStringHelper;
@@ -455,7 +455,7 @@
 
     iget-object v1, p0, Lio/grpc/MethodDescriptor;->schemaDescriptor:Ljava/lang/Object;
 
-    const-string v2, "schemaDescriptor"
+    const-string/jumbo v2, "schemaDescriptor"
 
     .line 602
     invoke-virtual {v0, v2, v1}, Lcom/google/common/base/MoreObjects$ToStringHelper;->add(Ljava/lang/String;Ljava/lang/Object;)Lcom/google/common/base/MoreObjects$ToStringHelper;

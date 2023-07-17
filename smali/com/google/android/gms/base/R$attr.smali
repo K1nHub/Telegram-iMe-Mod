@@ -20,11 +20,11 @@
 
 .field public static final colorScheme:I = 0x7f040105
 
-.field public static final imageAspectRatio:I = 0x7f040206
+.field public static final imageAspectRatio:I = 0x7f040207
 
-.field public static final imageAspectRatioAdjust:I = 0x7f040207
+.field public static final imageAspectRatioAdjust:I = 0x7f040208
 
-.field public static final scopeUris:I = 0x7f040380
+.field public static final scopeUris:I = 0x7f040381
 
 
 # direct methods

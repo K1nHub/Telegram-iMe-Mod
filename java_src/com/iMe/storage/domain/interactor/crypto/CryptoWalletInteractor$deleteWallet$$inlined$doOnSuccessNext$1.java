@@ -1,6 +1,5 @@
 package com.iMe.storage.domain.interactor.crypto;
 
-import com.iMe.storage.domain.manager.crypto.CryptoAccessManager;
 import com.iMe.storage.domain.model.Result;
 import com.iMe.storage.domain.utils.p030rx.RxEventBus;
 import com.iMe.storage.domain.utils.p030rx.event.DomainRxEvents;
@@ -29,11 +28,9 @@ public final class CryptoWalletInteractor$deleteWallet$$inlined$doOnSuccessNext$
     /* renamed from: invoke  reason: avoid collision after fix types in other method */
     public final void invoke2(Result<? extends Boolean> result) {
         RxEventBus rxEventBus;
-        CryptoAccessManager cryptoAccessManager;
         if ((result instanceof Result.Success) && this.$shouldSendRxEvent$inlined) {
             rxEventBus = this.this$0.rxEventBus;
-            cryptoAccessManager = this.this$0.cryptoAccessManager;
-            rxEventBus.publish(new DomainRxEvents.SuccessResetWallet(!cryptoAccessManager.isAnyWalletCreated()));
+            rxEventBus.publish(DomainRxEvents.WalletReset.INSTANCE);
         }
     }
 }

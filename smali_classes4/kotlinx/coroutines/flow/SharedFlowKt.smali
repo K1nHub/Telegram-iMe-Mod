@@ -109,7 +109,7 @@
 
     invoke-direct {p0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string p1, "replay or extraBufferCapacity must be positive with non-default onBufferOverflow strategy "
+    const-string/jumbo p1, "replay or extraBufferCapacity must be positive with non-default onBufferOverflow strategy "
 
     invoke-virtual {p0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -162,7 +162,7 @@
 
     invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string p2, "replay cannot be negative, but was "
+    const-string/jumbo p2, "replay cannot be negative, but was "
 
     invoke-virtual {p1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

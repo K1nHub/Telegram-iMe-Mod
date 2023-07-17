@@ -940,7 +940,7 @@
     .line 208
     iput v2, v0, Lorg/telegram/messenger/video/Track;->volume:F
 
-    const-string v2, "sample-rate"
+    const-string/jumbo v2, "sample-rate"
 
     .line 209
     invoke-virtual {v1, v2}, Landroid/media/MediaFormat;->getInteger(Ljava/lang/String;)I

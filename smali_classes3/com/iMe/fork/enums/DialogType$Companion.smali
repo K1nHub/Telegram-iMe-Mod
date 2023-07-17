@@ -14,7 +14,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nDialogType.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DialogType.kt\ncom/iMe/fork/enums/DialogType$Companion\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,163:1\n1#2:164\n1549#3:165\n1620#3,3:166\n1549#3:169\n1620#3,3:170\n1549#3:173\n1620#3,3:174\n*S KotlinDebug\n*F\n+ 1 DialogType.kt\ncom/iMe/fork/enums/DialogType$Companion\n*L\n135#1:165\n135#1:166,3\n138#1:169\n138#1:170,3\n141#1:173\n141#1:174,3\n*E\n"
+    value = "SMAP\nDialogType.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DialogType.kt\ncom/iMe/fork/enums/DialogType$Companion\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,161:1\n1#2:162\n1549#3:163\n1620#3,3:164\n1549#3:167\n1620#3,3:168\n1549#3:171\n1620#3,3:172\n*S KotlinDebug\n*F\n+ 1 DialogType.kt\ncom/iMe/fork/enums/DialogType$Companion\n*L\n133#1:163\n133#1:164,3\n136#1:167\n136#1:168,3\n139#1:171\n139#1:172,3\n*E\n"
 .end annotation
 
 
@@ -22,7 +22,7 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 131
+    .line 129
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -45,7 +45,7 @@
 
     invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 145
+    .line 143
     invoke-static {p1, p2}, Lorg/telegram/messenger/DialogObject;->isUserDialog(J)Z
 
     move-result v0
@@ -65,7 +65,7 @@
     :cond_0
     neg-long p1, p1
 
-    .line 146
+    .line 144
     invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object p1
@@ -74,7 +74,7 @@
 
     move-result-object p1
 
-    .line 144
+    .line 142
     :goto_0
     invoke-virtual {p0, p1}, Lcom/iMe/fork/enums/DialogType$Companion;->getDialogType(Lorg/telegram/tgnet/TLObject;)Lcom/iMe/fork/enums/DialogType;
 
@@ -86,12 +86,12 @@
 .method public final getDialogType(Lorg/telegram/tgnet/TLObject;)Lcom/iMe/fork/enums/DialogType;
     .locals 1
 
-    .line 151
+    .line 149
     instance-of v0, p1, Lorg/telegram/tgnet/TLRPC$User;
 
     if-eqz v0, :cond_1
 
-    .line 152
+    .line 150
     check-cast p1, Lorg/telegram/tgnet/TLRPC$User;
 
     iget-boolean p1, p1, Lorg/telegram/tgnet/TLRPC$User;->bot:Z
@@ -102,19 +102,19 @@
 
     goto :goto_1
 
-    .line 153
+    .line 151
     :cond_0
     sget-object p1, Lcom/iMe/fork/enums/DialogType;->CHAT:Lcom/iMe/fork/enums/DialogType;
 
     goto :goto_1
 
-    .line 155
+    .line 153
     :cond_1
     instance-of v0, p1, Lorg/telegram/tgnet/TLRPC$Chat;
 
     if-eqz v0, :cond_4
 
-    .line 156
+    .line 154
     check-cast p1, Lorg/telegram/tgnet/TLRPC$Chat;
 
     invoke-static {p1}, Lorg/telegram/messenger/ChatObject;->isChannel(Lorg/telegram/tgnet/TLRPC$Chat;)Z
@@ -129,13 +129,13 @@
 
     goto :goto_0
 
-    .line 157
+    .line 155
     :cond_2
     sget-object p1, Lcom/iMe/fork/enums/DialogType;->CHANNEL:Lcom/iMe/fork/enums/DialogType;
 
     goto :goto_1
 
-    .line 156
+    .line 154
     :cond_3
     :goto_0
     sget-object p1, Lcom/iMe/fork/enums/DialogType;->GROUP:Lcom/iMe/fork/enums/DialogType;
@@ -198,7 +198,7 @@
     .line 1621
     check-cast v1, Lcom/iMe/fork/enums/DialogType;
 
-    .line 138
+    .line 136
     invoke-virtual {v1}, Ljava/lang/Enum;->name()Ljava/lang/String;
 
     move-result-object v1
@@ -208,7 +208,7 @@
 
     goto :goto_0
 
-    .line 138
+    .line 136
     :cond_0
     invoke-static {v0}, Lkotlin/collections/CollectionsKt;->toMutableSet(Ljava/lang/Iterable;)Ljava/util/Set;
 
@@ -266,7 +266,7 @@
     .line 1621
     check-cast v1, Lcom/iMe/fork/enums/DialogType;
 
-    .line 141
+    .line 139
     invoke-virtual {v1}, Lcom/iMe/fork/enums/DialogType;->getNameResId()I
 
     move-result v1
@@ -291,7 +291,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 132
+    .line 130
     invoke-static {}, Lcom/iMe/fork/enums/DialogType;->values()[Lcom/iMe/fork/enums/DialogType;
 
     move-result-object v0
@@ -375,7 +375,7 @@
     .line 1621
     check-cast v1, Ljava/lang/String;
 
-    .line 135
+    .line 133
     invoke-static {v1}, Lcom/iMe/fork/enums/DialogType;->valueOf(Ljava/lang/String;)Lcom/iMe/fork/enums/DialogType;
 
     move-result-object v1
@@ -391,7 +391,7 @@
     :cond_1
     if-nez v0, :cond_2
 
-    .line 135
+    .line 133
     invoke-static {}, Lkotlin/collections/CollectionsKt;->emptyList()Ljava/util/List;
 
     move-result-object v0

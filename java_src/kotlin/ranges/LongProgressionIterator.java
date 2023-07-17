@@ -21,7 +21,7 @@ public final class LongProgressionIterator extends LongIterator {
         this.next = z ? j : j2;
     }
 
-    @Override // java.util.Iterator, p034j$.util.Iterator
+    @Override // java.util.Iterator, p033j$.util.Iterator
     public boolean hasNext() {
         return this.hasNext;
     }

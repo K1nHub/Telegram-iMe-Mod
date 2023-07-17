@@ -1,11 +1,12 @@
 package com.iMe.storage.data.manager.wallet_connect;
 
-import com.iMe.storage.domain.model.crypto.Chain;
-import com.iMe.storage.domain.model.crypto.NetworkType;
+import com.iMe.storage.data.utils.crypto.NetworksHelper;
+import com.iMe.storage.domain.model.crypto.Network;
 import com.trustwallet.walletconnect.WCClient;
 import com.trustwallet.walletconnect.WCSessionStoreItem;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function2;
+import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Lambda;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: WalletConnectManagerImpl.kt */
@@ -31,12 +32,13 @@ public final class WalletConnectManagerImpl$setupClientListeners$1$7 extends Lam
     }
 
     public final void invoke(long j, int i) {
-        long j2 = i;
-        if (Chain.Companion.getChainById(j2) instanceof Chain.Unknown) {
+        NetworksHelper networksHelper = NetworksHelper.INSTANCE;
+        Network networkByChainId = networksHelper.getNetworkByChainId(i);
+        if (Intrinsics.areEqual(networkByChainId, networksHelper.getDefault())) {
             this.this$0.getEventsDelegate().onWalletChangeUnsupportedNetwork();
             this.$this_with.rejectRequest(j, this.$sessionStoreItem.getSession().getKey());
             return;
         }
-        this.this$0.getEventsDelegate().onWalletChangeNetwork(j, this.$sessionStoreItem, NetworkType.Companion.fromChainId(j2));
+        this.this$0.getEventsDelegate().onWalletChangeNetwork(j, this.$sessionStoreItem, networkByChainId.getId());
     }
 }

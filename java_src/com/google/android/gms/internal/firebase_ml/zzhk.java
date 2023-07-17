@@ -3,11 +3,11 @@ package com.google.android.gms.internal.firebase_ml;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.NoSuchElementException;
-import p034j$.util.Iterator;
-import p034j$.util.function.Consumer;
+import p033j$.util.Iterator;
+import p033j$.util.function.Consumer;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: classes.dex */
-public final class zzhk implements Iterator<Map.Entry<String, Object>>, p034j$.util.Iterator {
+public final class zzhk implements Iterator<Map.Entry<String, Object>>, p033j$.util.Iterator {
     private int zzyw = -1;
     private zzhp zzyx;
     private Object zzyy;
@@ -21,12 +21,12 @@ public final class zzhk implements Iterator<Map.Entry<String, Object>>, p034j$.u
         this.zzzc = zzhiVar;
     }
 
-    @Override // p034j$.util.Iterator
+    @Override // p033j$.util.Iterator
     public /* synthetic */ void forEachRemaining(Consumer consumer) {
         Iterator.CC.$default$forEachRemaining(this, consumer);
     }
 
-    @Override // java.util.Iterator, p034j$.util.Iterator
+    @Override // java.util.Iterator, p033j$.util.Iterator
     public final boolean hasNext() {
         if (!this.zzza) {
             this.zzza = true;
@@ -46,14 +46,14 @@ public final class zzhk implements Iterator<Map.Entry<String, Object>>, p034j$.u
         return this.zzyy != null;
     }
 
-    @Override // java.util.Iterator, p034j$.util.Iterator
+    @Override // java.util.Iterator, p033j$.util.Iterator
     public final void remove() {
         zzkv.checkState((this.zzzb == null || this.zzyz) ? false : true);
         this.zzyz = true;
         this.zzzb.zzb(this.zzzc.object, null);
     }
 
-    @Override // java.util.Iterator, p034j$.util.Iterator
+    @Override // java.util.Iterator, p033j$.util.Iterator
     public final /* synthetic */ Object next() {
         if (!hasNext()) {
             throw new NoSuchElementException();

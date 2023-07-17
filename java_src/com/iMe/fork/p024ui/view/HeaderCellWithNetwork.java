@@ -11,9 +11,9 @@ import kotlin.LazyKt__LazyJVMKt;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
-import org.telegram.p044ui.ActionBar.Theme;
-import org.telegram.p044ui.Cells.HeaderCell;
-import org.telegram.p044ui.Components.LayoutHelper;
+import org.telegram.p043ui.ActionBar.Theme;
+import org.telegram.p043ui.Cells.HeaderCell;
+import org.telegram.p043ui.Components.LayoutHelper;
 /* compiled from: HeaderCellWithNetwork.kt */
 /* renamed from: com.iMe.fork.ui.view.HeaderCellWithNetwork */
 /* loaded from: classes3.dex */

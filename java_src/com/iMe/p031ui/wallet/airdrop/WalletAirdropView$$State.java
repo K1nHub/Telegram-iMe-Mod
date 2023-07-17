@@ -15,6 +15,11 @@ public class WalletAirdropView$$State extends MvpViewState<WalletAirdropView> im
         BaseView.CC.$default$finishScreen(this);
     }
 
+    @Override // com.iMe.p031ui.base.mvp.base.BaseView
+    public /* synthetic */ void removeSelfFromStackImmediately() {
+        BaseView.CC.$default$removeSelfFromStackImmediately(this);
+    }
+
     @Override // com.iMe.p031ui.wallet.airdrop.WalletAirdropView
     public void showAirdropDialog() {
         ShowAirdropDialogCommand showAirdropDialogCommand = new ShowAirdropDialogCommand(this);

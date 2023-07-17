@@ -13,9 +13,9 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt__StringsJVMKt;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.p044ui.ActionBar.Theme;
-import org.telegram.p044ui.Cells.DialogCell;
-import org.telegram.p044ui.Components.ColoredImageSpan;
+import org.telegram.p043ui.ActionBar.Theme;
+import org.telegram.p043ui.Cells.DialogCell;
+import org.telegram.p043ui.Components.ColoredImageSpan;
 /* compiled from: SecretWordsActionButton.kt */
 /* renamed from: com.iMe.ui.custom.backup.SecretWordsActionButton */
 /* loaded from: classes3.dex */

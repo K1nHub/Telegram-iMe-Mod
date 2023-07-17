@@ -22,10 +22,10 @@
 .method public constructor <init>(Lorg/telegram/ui/Components/SuggestEmojiView;)V
     .locals 0
 
-    .line 931
+    .line 949
     invoke-direct {p0}, Lorg/telegram/ui/Components/RecyclerListView$SelectionAdapter;-><init>()V
 
-    .line 932
+    .line 950
     iput-object p1, p0, Lorg/telegram/ui/Components/SuggestEmojiView$Adapter;->suggestEmojiView:Lorg/telegram/ui/Components/SuggestEmojiView;
 
     return-void
@@ -36,7 +36,7 @@
 .method public getItemCount()I
     .locals 1
 
-    .line 958
+    .line 976
     iget-object v0, p0, Lorg/telegram/ui/Components/SuggestEmojiView$Adapter;->suggestEmojiView:Lorg/telegram/ui/Components/SuggestEmojiView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/SuggestEmojiView;->access$700(Lorg/telegram/ui/Components/SuggestEmojiView;)Ljava/util/ArrayList;
@@ -67,7 +67,7 @@
 .method public getItemId(I)J
     .locals 2
 
-    .line 937
+    .line 955
     iget-object v0, p0, Lorg/telegram/ui/Components/SuggestEmojiView$Adapter;->suggestEmojiView:Lorg/telegram/ui/Components/SuggestEmojiView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/SuggestEmojiView;->access$700(Lorg/telegram/ui/Components/SuggestEmojiView;)Ljava/util/ArrayList;
@@ -116,7 +116,7 @@
 .method public onBindViewHolder(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;I)V
     .locals 1
 
-    .line 953
+    .line 971
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/Components/SuggestEmojiView$EmojiImageView;
@@ -157,7 +157,7 @@
 .method public onCreateViewHolder(Landroid/view/ViewGroup;I)Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
     .locals 1
 
-    .line 948
+    .line 966
     new-instance p1, Lorg/telegram/ui/Components/RecyclerListView$Holder;
 
     new-instance p2, Lorg/telegram/ui/Components/SuggestEmojiView$EmojiImageView;

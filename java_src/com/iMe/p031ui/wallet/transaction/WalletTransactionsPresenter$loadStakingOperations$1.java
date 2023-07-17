@@ -14,14 +14,16 @@ import kotlin.jvm.internal.Lambda;
 /* loaded from: classes4.dex */
 public final class WalletTransactionsPresenter$loadStakingOperations$1 extends Lambda implements Function1<StakingOperationsPaged, Unit> {
     final /* synthetic */ boolean $isLoadMore;
+    final /* synthetic */ boolean $isReload;
     final /* synthetic */ WalletTransactionsPresenter this$0;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public WalletTransactionsPresenter$loadStakingOperations$1(WalletTransactionsPresenter walletTransactionsPresenter, boolean z) {
+    public WalletTransactionsPresenter$loadStakingOperations$1(WalletTransactionsPresenter walletTransactionsPresenter, boolean z, boolean z2) {
         super(1);
         this.this$0 = walletTransactionsPresenter;
         this.$isLoadMore = z;
+        this.$isReload = z2;
     }
 
     @Override // kotlin.jvm.functions.Function1
@@ -39,8 +41,10 @@ public final class WalletTransactionsPresenter$loadStakingOperations$1 extends L
             this.this$0.stakingOperationsCursor = data.getNextCursor();
             if (this.$isLoadMore) {
                 ((WalletTransactionsView) this.this$0.getViewState()).onLoadMoreItems(mapStakingOperationsToGroups);
-            } else {
+            } else if (this.$isReload) {
                 ((WalletTransactionsView) this.this$0.getViewState()).renderItems(mapStakingOperationsToGroups);
+            } else {
+                ((WalletTransactionsView) this.this$0.getViewState()).renderInitialItems(mapStakingOperationsToGroups);
             }
         } else if (!this.$isLoadMore) {
             this.this$0.renderGlobalState(GlobalState.Empty.Common.INSTANCE);

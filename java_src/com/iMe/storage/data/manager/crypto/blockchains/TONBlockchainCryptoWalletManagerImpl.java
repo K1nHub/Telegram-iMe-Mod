@@ -41,7 +41,7 @@ public final class TONBlockchainCryptoWalletManagerImpl extends BlockchainCrypto
         Intrinsics.checkNotNullParameter(password, "password");
         Observable<Result<Wallet.TON>> subscribeOn = this.tonController.importWallet(StringExtKt.splitBySpace(mnemonic)).subscribeOn(this.schedulersProvider.mo699io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn, "tonController\n          …(schedulersProvider.io())");
-        Observable map = subscribeOn.map(new ObservableExtKt$sam$i$io_reactivex_functions_Function$0(new C1826xa78c6f83(this, guid, mnemonic, password)));
+        Observable map = subscribeOn.map(new ObservableExtKt$sam$i$io_reactivex_functions_Function$0(new C1833xa78c6f83(this, guid, mnemonic, password)));
         Intrinsics.checkNotNullExpressionValue(map, "crossinline body: (T) ->…ult as? R\n        }\n    }");
         return map;
     }
@@ -54,7 +54,7 @@ public final class TONBlockchainCryptoWalletManagerImpl extends BlockchainCrypto
         Intrinsics.checkNotNullParameter(password, "password");
         Observable<Result<Wallet.TON>> subscribeOn = this.tonController.importWallet(StringExtKt.splitBySpace(mnemonic)).subscribeOn(this.schedulersProvider.mo699io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn, "tonController\n          …(schedulersProvider.io())");
-        Observable map = subscribeOn.map(new ObservableExtKt$sam$i$io_reactivex_functions_Function$0(new C1827x643346a2(guid, oldGuid, this, mnemonic, password)));
+        Observable map = subscribeOn.map(new ObservableExtKt$sam$i$io_reactivex_functions_Function$0(new C1834x643346a2(guid, oldGuid, this, mnemonic, password)));
         Intrinsics.checkNotNullExpressionValue(map, "crossinline body: (T) ->…ult as? R\n        }\n    }");
         return map;
     }
@@ -64,7 +64,7 @@ public final class TONBlockchainCryptoWalletManagerImpl extends BlockchainCrypto
         Intrinsics.checkNotNullParameter(mnemonic, "mnemonic");
         Observable<Result<Wallet.TON>> subscribeOn = this.tonController.importWallet(StringExtKt.splitBySpace(mnemonic)).subscribeOn(this.schedulersProvider.mo699io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn, "tonController\n          …(schedulersProvider.io())");
-        Observable map = subscribeOn.map(new ObservableExtKt$sam$i$io_reactivex_functions_Function$0(new C1825xcf4b3e2d()));
+        Observable map = subscribeOn.map(new ObservableExtKt$sam$i$io_reactivex_functions_Function$0(new C1832xcf4b3e2d()));
         Intrinsics.checkNotNullExpressionValue(map, "crossinline body: (T) ->…ult as? R\n        }\n    }");
         return map;
     }

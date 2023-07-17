@@ -4,11 +4,13 @@ import android.animation.ValueAnimator;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.widget.FrameLayout;
 import androidx.appcompat.widget.AppCompatImageView;
 import androidx.appcompat.widget.AppCompatTextView;
 import com.google.android.exoplayer2.source.rtsp.SessionDescription;
 import com.iMe.fork.utils.Callbacks$Callback;
+import com.iMe.fork.utils.Callbacks$Callback1;
 import com.iMe.model.staking.StakingAnnualPercentageData;
 import com.iMe.storage.data.utils.extentions.RxExtKt;
 import com.iMe.storage.domain.utils.p030rx.SchedulersProvider;
@@ -26,11 +28,11 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.koin.core.Koin;
 import org.koin.core.component.KoinComponent;
-import org.koin.p043mp.KoinPlatformTools;
-import org.telegram.messenger.C3295R;
+import org.koin.p042mp.KoinPlatformTools;
+import org.telegram.messenger.C3417R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.databinding.ForkContentStakingCompoundBinding;
-import org.telegram.p044ui.ActionBar.Theme;
+import org.telegram.p043ui.ActionBar.Theme;
 /* compiled from: StakingPercentageView.kt */
 /* renamed from: com.iMe.ui.custom.StakingPercentageView */
 /* loaded from: classes3.dex */
@@ -79,21 +81,32 @@ public final class StakingPercentageView extends FrameLayout implements KoinComp
         return (SchedulersProvider) this.schedulersProvider$delegate.getValue();
     }
 
-    public final void setupViewData(StakingAnnualPercentageData stakingAnnualPercentageData, Callbacks$Callback onInfoClickAction) {
+    public final void setupViewData(StakingAnnualPercentageData stakingAnnualPercentageData, final Callbacks$Callback onInfoClickAction) {
         Intrinsics.checkNotNullParameter(onInfoClickAction, "onInfoClickAction");
         ForkContentStakingCompoundBinding forkContentStakingCompoundBinding = this.binding;
         AppCompatImageView imageInfo = forkContentStakingCompoundBinding.imageInfo;
         Intrinsics.checkNotNullExpressionValue(imageInfo, "imageInfo");
-        ViewExtKt.setMixedClickListener(imageInfo, new StakingPercentageView$setupViewData$1$1(onInfoClickAction));
+        ViewExtKt.setMixedClickListener(imageInfo, new Callbacks$Callback1() { // from class: com.iMe.ui.custom.StakingPercentageView$$ExternalSyntheticLambda0
+            @Override // com.iMe.fork.utils.Callbacks$Callback1
+            public final void invoke(Object obj) {
+                StakingPercentageView.setupViewData$lambda$1$lambda$0(Callbacks$Callback.this, (View) obj);
+            }
+        });
         if (stakingAnnualPercentageData == null) {
             return;
         }
         AppCompatTextView appCompatTextView = forkContentStakingCompoundBinding.textApr;
-        appCompatTextView.setText(LocaleController.getInternalString(C3295R.string.staking_programme_apr) + getAnnualPercentageText(stakingAnnualPercentageData.getApr()));
+        appCompatTextView.setText(LocaleController.getInternalString(C3417R.string.staking_programme_apr) + getAnnualPercentageText(stakingAnnualPercentageData.getApr()));
         AppCompatTextView appCompatTextView2 = forkContentStakingCompoundBinding.textApy;
-        appCompatTextView2.setText(LocaleController.getInternalString(C3295R.string.staking_programme_apy) + getAnnualPercentageText(stakingAnnualPercentageData.getApy()));
+        appCompatTextView2.setText(LocaleController.getInternalString(C3417R.string.staking_programme_apy) + getAnnualPercentageText(stakingAnnualPercentageData.getApy()));
         AppCompatTextView appCompatTextView3 = forkContentStakingCompoundBinding.textThresholdValue;
         appCompatTextView3.setText(stakingAnnualPercentageData.getCompoundThreshold() + '+');
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final void setupViewData$lambda$1$lambda$0(Callbacks$Callback onInfoClickAction, View view) {
+        Intrinsics.checkNotNullParameter(onInfoClickAction, "$onInfoClickAction");
+        onInfoClickAction.invoke();
     }
 
     public final void updateProgress(float f) {
@@ -102,18 +115,18 @@ public final class StakingPercentageView extends FrameLayout implements KoinComp
 
     public final void setupColors() {
         ForkContentStakingCompoundBinding forkContentStakingCompoundBinding = this.binding;
-        AppCompatTextView setupColors$lambda$4$lambda$1 = forkContentStakingCompoundBinding.textApr;
-        setupColors$lambda$4$lambda$1.setTextColor(Theme.getColor(this.isThresholdReached ? Theme.key_windowBackgroundWhiteGrayText : Theme.key_windowBackgroundWhiteBlueText));
-        Intrinsics.checkNotNullExpressionValue(setupColors$lambda$4$lambda$1, "setupColors$lambda$4$lambda$1");
-        ViewExtKt.withMediumTypeface(setupColors$lambda$4$lambda$1);
-        AppCompatTextView setupColors$lambda$4$lambda$2 = forkContentStakingCompoundBinding.textApy;
-        setupColors$lambda$4$lambda$2.setTextColor(Theme.getColor(this.isThresholdReached ? Theme.key_windowBackgroundWhiteBlueText : Theme.key_windowBackgroundWhiteGrayText));
-        Intrinsics.checkNotNullExpressionValue(setupColors$lambda$4$lambda$2, "setupColors$lambda$4$lambda$2");
-        ViewExtKt.withMediumTypeface(setupColors$lambda$4$lambda$2);
-        AppCompatImageView setupColors$lambda$4$lambda$3 = forkContentStakingCompoundBinding.imageInfo;
-        Intrinsics.checkNotNullExpressionValue(setupColors$lambda$4$lambda$3, "setupColors$lambda$4$lambda$3");
-        ViewExtKt.setImageColor(setupColors$lambda$4$lambda$3, Theme.getColor(Theme.key_windowBackgroundWhiteGrayIcon));
-        ViewExtKt.setBoundedCircleRippleBackground(setupColors$lambda$4$lambda$3);
+        AppCompatTextView setupColors$lambda$5$lambda$2 = forkContentStakingCompoundBinding.textApr;
+        setupColors$lambda$5$lambda$2.setTextColor(Theme.getColor(this.isThresholdReached ? Theme.key_windowBackgroundWhiteGrayText : Theme.key_windowBackgroundWhiteBlueText));
+        Intrinsics.checkNotNullExpressionValue(setupColors$lambda$5$lambda$2, "setupColors$lambda$5$lambda$2");
+        ViewExtKt.withMediumTypeface(setupColors$lambda$5$lambda$2);
+        AppCompatTextView setupColors$lambda$5$lambda$3 = forkContentStakingCompoundBinding.textApy;
+        setupColors$lambda$5$lambda$3.setTextColor(Theme.getColor(this.isThresholdReached ? Theme.key_windowBackgroundWhiteBlueText : Theme.key_windowBackgroundWhiteGrayText));
+        Intrinsics.checkNotNullExpressionValue(setupColors$lambda$5$lambda$3, "setupColors$lambda$5$lambda$3");
+        ViewExtKt.withMediumTypeface(setupColors$lambda$5$lambda$3);
+        AppCompatImageView setupColors$lambda$5$lambda$4 = forkContentStakingCompoundBinding.imageInfo;
+        Intrinsics.checkNotNullExpressionValue(setupColors$lambda$5$lambda$4, "setupColors$lambda$5$lambda$4");
+        ViewExtKt.setImageColor(setupColors$lambda$5$lambda$4, Theme.getColor(Theme.key_windowBackgroundWhiteGrayIcon));
+        ViewExtKt.setBoundedCircleRippleBackground(setupColors$lambda$5$lambda$4);
         forkContentStakingCompoundBinding.viewProgress.setupColors();
         int i = Theme.key_windowBackgroundWhiteGrayText;
         AppCompatTextView textStartValue = forkContentStakingCompoundBinding.textStartValue;
@@ -151,10 +164,10 @@ public final class StakingPercentageView extends FrameLayout implements KoinComp
     private final void setupProgressListener() {
         Observable<Float> observeOn = this.progressSubject.debounce(200L, TimeUnit.MILLISECONDS).subscribeOn(getSchedulersProvider().mo699io()).observeOn(getSchedulersProvider().mo698ui());
         final StakingPercentageView$setupProgressListener$1 stakingPercentageView$setupProgressListener$1 = new StakingPercentageView$setupProgressListener$1(this);
-        Disposable subscribe = observeOn.subscribe(new Consumer() { // from class: com.iMe.ui.custom.StakingPercentageView$$ExternalSyntheticLambda0
+        Disposable subscribe = observeOn.subscribe(new Consumer() { // from class: com.iMe.ui.custom.StakingPercentageView$$ExternalSyntheticLambda1
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                StakingPercentageView.setupProgressListener$lambda$5(Function1.this, obj);
+                StakingPercentageView.setupProgressListener$lambda$6(Function1.this, obj);
             }
         });
         Intrinsics.checkNotNullExpressionValue(subscribe, "private fun setupProgres…pose(subscriptions)\n    }");
@@ -162,7 +175,7 @@ public final class StakingPercentageView extends FrameLayout implements KoinComp
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void setupProgressListener$lambda$5(Function1 tmp0, Object obj) {
+    public static final void setupProgressListener$lambda$6(Function1 tmp0, Object obj) {
         Intrinsics.checkNotNullParameter(tmp0, "$tmp0");
         tmp0.invoke(obj);
     }

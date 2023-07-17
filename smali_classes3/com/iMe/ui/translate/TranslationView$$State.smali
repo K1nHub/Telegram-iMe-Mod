@@ -289,20 +289,28 @@
     return-void
 .end method
 
+.method public synthetic removeSelfFromStackImmediately()V
+    .locals 0
+
+    invoke-static {p0}, Lcom/iMe/ui/base/mvp/base/BaseView$-CC;->$default$removeSelfFromStackImmediately(Lcom/iMe/ui/base/mvp/base/BaseView;)V
+
+    return-void
+.end method
+
 .method public showAppUpdateDialog()V
     .locals 3
 
-    .line 199
+    .line 215
     new-instance v0, Lcom/iMe/ui/translate/TranslationView$$State$ShowAppUpdateDialogCommand;
 
     invoke-direct {v0, p0}, Lcom/iMe/ui/translate/TranslationView$$State$ShowAppUpdateDialogCommand;-><init>(Lcom/iMe/ui/translate/TranslationView$$State;)V
 
-    .line 200
+    .line 216
     iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
 
     invoke-virtual {v1, v0}, Lmoxy/viewstate/ViewCommands;->beforeApply(Lmoxy/viewstate/ViewCommand;)V
 
-    .line 202
+    .line 218
     invoke-virtual {p0}, Lmoxy/viewstate/MvpViewState;->hasNotView()Ljava/lang/Boolean;
 
     move-result-object v1
@@ -315,7 +323,7 @@
 
     return-void
 
-    .line 206
+    .line 222
     :cond_0
     iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->views:Ljava/util/Set;
 
@@ -336,12 +344,12 @@
 
     check-cast v2, Lcom/iMe/ui/translate/TranslationView;
 
-    .line 207
+    .line 223
     invoke-interface {v2}, Lcom/iMe/ui/base/mvp/AppUpdateRequiredView;->showAppUpdateDialog()V
 
     goto :goto_0
 
-    .line 210
+    .line 226
     :cond_1
     iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
 

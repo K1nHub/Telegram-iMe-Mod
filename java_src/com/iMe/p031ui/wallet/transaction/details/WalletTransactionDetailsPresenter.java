@@ -8,18 +8,16 @@ import com.iMe.model.wallet.transaction.TransactionItem;
 import com.iMe.p031ui.base.mvp.base.BasePresenter;
 import com.iMe.p031ui.base.mvp.base.BaseView;
 import com.iMe.p031ui.wallet.transaction.details.WalletTransactionDetailsBottomSheetDialog;
-import com.iMe.storage.common.AppConfiguration$Crypto;
 import com.iMe.storage.data.network.model.response.base.Status;
 import com.iMe.storage.domain.gateway.TelegramGateway;
 import com.iMe.storage.domain.interactor.crypto.boost.BoostInteractor;
 import com.iMe.storage.domain.interactor.crypto.cancel.CancelInteractor;
 import com.iMe.storage.domain.model.Result;
-import com.iMe.storage.domain.model.crypto.NetworkType;
+import com.iMe.storage.domain.model.crypto.Network;
 import com.iMe.storage.domain.model.staking.StakingOperationCost;
 import com.iMe.storage.domain.model.staking.StakingOperationStatus;
 import com.iMe.storage.domain.model.staking.StakingOperationType;
-import com.iMe.storage.domain.model.wallet.token.TokenCode;
-import com.iMe.storage.domain.model.wallet.token.TokenInfo;
+import com.iMe.storage.domain.model.wallet.token.TokenDetailed;
 import com.iMe.storage.domain.model.wallet.transaction.Transaction;
 import com.iMe.storage.domain.model.wallet.transaction.TransactionDirection;
 import com.iMe.storage.domain.model.wallet.transaction.TransactionType;
@@ -27,8 +25,8 @@ import com.iMe.storage.domain.storage.CryptoPreferenceHelper;
 import com.iMe.storage.domain.utils.p030rx.SchedulersProvider;
 import com.iMe.storage.domain.utils.system.ResourceManager;
 import com.iMe.utils.extentions.common.StringExtKt;
-import com.iMe.utils.extentions.p033rx.RxExtKt;
-import com.iMe.utils.extentions.p033rx.RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
+import com.iMe.utils.extentions.p032rx.RxExtKt;
+import com.iMe.utils.extentions.p032rx.RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
 import com.iMe.utils.formatter.BalanceFormatter;
 import com.iMe.utils.formatter.DateFormatter;
 import io.reactivex.Observable;
@@ -49,7 +47,7 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt__StringNumberConversionsKt;
 import moxy.InjectViewState;
-import org.telegram.messenger.C3295R;
+import org.telegram.messenger.C3417R;
 /* compiled from: WalletTransactionDetailsPresenter.kt */
 @InjectViewState
 /* renamed from: com.iMe.ui.wallet.transaction.details.WalletTransactionDetailsPresenter */
@@ -72,7 +70,7 @@ public final class WalletTransactionDetailsPresenter extends BasePresenter<Walle
         static {
             int[] iArr = new int[TransactionDirection.values().length];
             try {
-                iArr[TransactionDirection.f373IN.ordinal()] = 1;
+                iArr[TransactionDirection.f446IN.ordinal()] = 1;
             } catch (NoSuchFieldError unused) {
             }
             try {
@@ -119,15 +117,15 @@ public final class WalletTransactionDetailsPresenter extends BasePresenter<Walle
             String formatISODate = StringExtKt.formatISODate(item.getCreatedAt(), DateFormatter.DateType.DATE_AND_TIME);
             String transactionTitle = item.getTransactionTitle(this.resourceManager);
             String amount = item.getAmount(this.resourceManager);
-            String string = this.resourceManager.getString(C3295R.string.wallet_transaction_details_transaction_hash_title);
+            String string = this.resourceManager.getString(C3417R.string.wallet_transaction_details_transaction_hash_title);
             String txHash = item.getTxHash();
             if (txHash.length() == 0) {
                 txHash = "-";
             }
             String str = txHash;
-            String string2 = this.resourceManager.getString(((WalletTransactionDetailsBottomSheetDialog.ScreenType.StakingOperationDetails) this.screenType).getNetworkType().getTitleResId());
+            String fullName = ((WalletTransactionDetailsBottomSheetDialog.ScreenType.StakingOperationDetails) this.screenType).getNetwork().getFullName();
             boolean isFeeEnabled = isFeeEnabled();
-            walletTransactionDetailsView.setupScreenWithData(icon, transactionTitle, amount, string, str, null, item.getStatusText(this.resourceManager), formatISODate, string2, getFee(), isFeeEnabled, getScanUrl().length() > 0, Integer.valueOf(item.getStakingIconResId()));
+            walletTransactionDetailsView.setupScreenWithData(icon, transactionTitle, amount, string, str, null, item.getStatusText(this.resourceManager), formatISODate, fullName, getFee(), isFeeEnabled, getScanUrl().length() > 0, item.getToken().getAvatarUrl());
         } else if (screenType instanceof WalletTransactionDetailsBottomSheetDialog.ScreenType.TransactionDetails) {
             TransactionItem item2 = ((WalletTransactionDetailsBottomSheetDialog.ScreenType.TransactionDetails) screenType).getItem();
             WalletTransactionDetailsView walletTransactionDetailsView2 = (WalletTransactionDetailsView) getViewState();
@@ -140,36 +138,36 @@ public final class WalletTransactionDetailsPresenter extends BasePresenter<Walle
             Transaction transaction = ((WalletTransactionDetailsBottomSheetDialog.ScreenType.TransactionDetails) this.screenType).getItem().getTransaction();
             Transaction.Crypto.Transfer transfer = transaction instanceof Transaction.Crypto.Transfer ? (Transaction.Crypto.Transfer) transaction : null;
             String payloadMessage = transfer != null ? transfer.getPayloadMessage() : null;
-            String string3 = this.resourceManager.getString(item2.getTransaction().getProcessingType().getTitle());
+            String string2 = this.resourceManager.getString(item2.getTransaction().getProcessingType().getTitle());
             boolean isFeeEnabled2 = isFeeEnabled();
-            walletTransactionDetailsView2.setupScreenWithData(transactionIcon, transactionTitle2, amount2, recipientOrSenderOrElseTitle, recipientOrSenderOrElseValue, payloadMessage, this.resourceManager.getString(item2.getTransaction().getStatus().getTitle()), formatISODate2, string3, getFee(), isFeeEnabled2, getScanUrl().length() > 0, null);
+            walletTransactionDetailsView2.setupScreenWithData(transactionIcon, transactionTitle2, amount2, recipientOrSenderOrElseTitle, recipientOrSenderOrElseValue, payloadMessage, this.resourceManager.getString(item2.getTransaction().getStatus().getTitle()), formatISODate2, string2, getFee(), isFeeEnabled2, getScanUrl().length() > 0, null);
         }
         setupTransactionActions(resolveTransactionAction());
     }
 
     private final String getRecipientOrSenderOrElseTitle(Transaction transaction) {
         if (transaction instanceof Transaction.Crypto.SimplexPurchase) {
-            return this.resourceManager.getString(C3295R.string.wallet_transaction_details_simplex_order_id_title);
+            return this.resourceManager.getString(C3417R.string.wallet_transaction_details_simplex_order_id_title);
         }
         if (transaction instanceof Transaction.Crypto.Swap ? true : transaction instanceof Transaction.Crypto.Approve) {
-            return this.resourceManager.getString(C3295R.string.wallet_transaction_details_transaction_hash_title);
+            return this.resourceManager.getString(C3417R.string.wallet_transaction_details_transaction_hash_title);
         }
         int i = WhenMappings.$EnumSwitchMapping$0[transaction.getDirection().ordinal()];
         if (i != 1) {
             if (i == 2 || i == 3) {
-                return this.resourceManager.getString(C3295R.string.wallet_transaction_details_recipient_title);
+                return this.resourceManager.getString(C3417R.string.wallet_transaction_details_recipient_title);
             }
             throw new NoWhenBranchMatchedException();
         }
-        return this.resourceManager.getString(C3295R.string.wallet_transaction_details_sender_title);
+        return this.resourceManager.getString(C3417R.string.wallet_transaction_details_sender_title);
     }
 
     private final String getRecipientOrSenderOrElseValue(Transaction transaction) {
         if (transaction instanceof Transaction.Referral) {
-            return this.resourceManager.getString(C3295R.string.wallet_transaction_details_sender_referral, ((Transaction.Referral) transaction).getInvitedUserId());
+            return this.resourceManager.getString(C3417R.string.wallet_transaction_details_sender_referral, ((Transaction.Referral) transaction).getInvitedUserId());
         }
         if (transaction instanceof Transaction.Lottery ? true : transaction instanceof Transaction.Registration) {
-            return this.resourceManager.getString(C3295R.string.wallet_transaction_details_sender_bonus);
+            return this.resourceManager.getString(C3417R.string.wallet_transaction_details_sender_bonus);
         }
         if (transaction instanceof Transaction.Transfer) {
             return ((Transaction.Transfer) transaction).getRecipientUserId();
@@ -193,21 +191,20 @@ public final class WalletTransactionDetailsPresenter extends BasePresenter<Walle
             }
             return ((Transaction.Crypto.Transfer) transaction).getSenderAddress();
         }
-        return this.resourceManager.getString(C3295R.string.wallet_transaction_details_sender);
+        return this.resourceManager.getString(C3417R.string.wallet_transaction_details_sender);
     }
 
     private final List<Pair<TransactionActionItem, Function0<Unit>>> resolveTransactionAction() {
         List mutableListOf;
         List filterNotNull;
         List<Pair<TransactionActionItem, Function0<Unit>>> mutableList;
-        Pair[] pairArr = new Pair[7];
+        Pair[] pairArr = new Pair[6];
         pairArr[0] = canAskSupport() ? TuplesKt.m85to(TransactionActionItem.Support.INSTANCE, new WalletTransactionDetailsPresenter$resolveTransactionAction$1(this)) : null;
-        pairArr[1] = canSend() ? TuplesKt.m85to(TransactionActionItem.Send.INSTANCE, new WalletTransactionDetailsPresenter$resolveTransactionAction$2(this)) : null;
-        pairArr[2] = canOpenProfile() ? TuplesKt.m85to(TransactionActionItem.Profile.INSTANCE, new WalletTransactionDetailsPresenter$resolveTransactionAction$3(this)) : null;
-        pairArr[3] = canOpenScanSite() ? TuplesKt.m85to(new TransactionActionItem.OpenScan(getScanIconResId(), getOpenTitle()), new WalletTransactionDetailsPresenter$resolveTransactionAction$4(this)) : null;
-        pairArr[4] = canCopy() ? TuplesKt.m85to(new TransactionActionItem.Copy(getCopyTitle()), new WalletTransactionDetailsPresenter$resolveTransactionAction$5(this)) : null;
-        pairArr[5] = canCancelOrBoost() ? TuplesKt.m85to(TransactionActionItem.Cancel.INSTANCE, new WalletTransactionDetailsPresenter$resolveTransactionAction$6(this)) : null;
-        pairArr[6] = canCancelOrBoost() ? TuplesKt.m85to(TransactionActionItem.Boost.INSTANCE, new WalletTransactionDetailsPresenter$resolveTransactionAction$7(this)) : null;
+        pairArr[1] = canOpenProfile() ? TuplesKt.m85to(TransactionActionItem.Profile.INSTANCE, new WalletTransactionDetailsPresenter$resolveTransactionAction$2(this)) : null;
+        pairArr[2] = canOpenScanSite() ? TuplesKt.m85to(new TransactionActionItem.OpenScan(getOpenTitle(), getScanIconUrl()), new WalletTransactionDetailsPresenter$resolveTransactionAction$3(this)) : null;
+        pairArr[3] = canCopy() ? TuplesKt.m85to(new TransactionActionItem.Copy(getCopyTitle()), new WalletTransactionDetailsPresenter$resolveTransactionAction$4(this)) : null;
+        pairArr[4] = canCancelOrBoost() ? TuplesKt.m85to(TransactionActionItem.Cancel.INSTANCE, new WalletTransactionDetailsPresenter$resolveTransactionAction$5(this)) : null;
+        pairArr[5] = canCancelOrBoost() ? TuplesKt.m85to(TransactionActionItem.Boost.INSTANCE, new WalletTransactionDetailsPresenter$resolveTransactionAction$6(this)) : null;
         mutableListOf = CollectionsKt__CollectionsKt.mutableListOf(pairArr);
         filterNotNull = CollectionsKt___CollectionsKt.filterNotNull(mutableListOf);
         mutableList = CollectionsKt___CollectionsKt.toMutableList((Collection) filterNotNull);
@@ -242,12 +239,12 @@ public final class WalletTransactionDetailsPresenter extends BasePresenter<Walle
     public final void cancelTransaction(String str) {
         WalletTransactionDetailsBottomSheetDialog.ScreenType screenType = this.screenType;
         if (screenType instanceof WalletTransactionDetailsBottomSheetDialog.ScreenType.TransactionDetails) {
-            Observable<Result<String>> observeOn = this.cancelInteractor.cancelEthTransaction(((WalletTransactionDetailsBottomSheetDialog.ScreenType.TransactionDetails) screenType).getItem().getTransaction().getTokenCode(), str).observeOn(this.schedulersProvider.mo698ui());
+            Observable<Result<String>> observeOn = this.cancelInteractor.cancelEthTransaction(((WalletTransactionDetailsBottomSheetDialog.ScreenType.TransactionDetails) screenType).getItem().getTransaction().getToken().getTicker(), str).observeOn(this.schedulersProvider.mo698ui());
             Intrinsics.checkNotNullExpressionValue(observeOn, "cancelInteractor\n       …(schedulersProvider.ui())");
             T viewState = getViewState();
             Intrinsics.checkNotNullExpressionValue(viewState, "viewState");
-            Disposable subscribe = RxExtKt.withLoadingDialog$default((Observable) observeOn, (BaseView) viewState, false, 2, (Object) null).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2429xbfdb298e(this, str)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2430xbfdb298f((BaseView) getViewState())));
-            Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
+            Disposable subscribe = RxExtKt.withLoadingDialog$default((Observable) observeOn, (BaseView) viewState, false, 2, (Object) null).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2480xbfdb298e(this, str)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2481xbfdb298f((BaseView) getViewState())));
+            Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…Error.invoke()\n        })");
             BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
         }
     }
@@ -258,39 +255,39 @@ public final class WalletTransactionDetailsPresenter extends BasePresenter<Walle
         Intrinsics.checkNotNullExpressionValue(observeOn, "boostInteractor\n        …(schedulersProvider.ui())");
         T viewState = getViewState();
         Intrinsics.checkNotNullExpressionValue(viewState, "viewState");
-        Disposable subscribe = RxExtKt.withLoadingDialog$default((Observable) observeOn, (BaseView) viewState, false, 2, (Object) null).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2427x2bc727d7(this, str)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2428x2bc727d8((BaseView) getViewState())));
-        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
+        Disposable subscribe = RxExtKt.withLoadingDialog$default((Observable) observeOn, (BaseView) viewState, false, 2, (Object) null).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2478x2bc727d7(this, str)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2479x2bc727d8((BaseView) getViewState())));
+        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…Error.invoke()\n        })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
 
     private final String getOpenTitle() {
-        NetworkType networkTypeByProcessing;
+        Network networkTypeByProcessing;
         ResourceManager resourceManager = this.resourceManager;
-        int i = C3295R.string.wallet_transaction_details_action_open_etherscan;
+        int i = C3417R.string.wallet_transaction_details_action_open_etherscan;
         Object[] objArr = new Object[1];
         WalletTransactionDetailsBottomSheetDialog.ScreenType screenType = this.screenType;
         if (screenType instanceof WalletTransactionDetailsBottomSheetDialog.ScreenType.StakingOperationDetails) {
-            networkTypeByProcessing = ((WalletTransactionDetailsBottomSheetDialog.ScreenType.StakingOperationDetails) screenType).getNetworkType();
+            networkTypeByProcessing = ((WalletTransactionDetailsBottomSheetDialog.ScreenType.StakingOperationDetails) screenType).getNetwork();
         } else if (screenType instanceof WalletTransactionDetailsBottomSheetDialog.ScreenType.TransactionDetails) {
             networkTypeByProcessing = getNetworkTypeByProcessing(((WalletTransactionDetailsBottomSheetDialog.ScreenType.TransactionDetails) screenType).getItem().getTransaction());
         } else {
             throw new NoWhenBranchMatchedException();
         }
-        objArr[0] = resourceManager.getString(networkTypeByProcessing.getScannerName());
+        objArr[0] = networkTypeByProcessing.getExplorer().getName();
         return resourceManager.getString(i, objArr);
     }
 
-    private final int getScanIconResId() {
-        NetworkType networkTypeByProcessing;
+    private final String getScanIconUrl() {
+        Network networkTypeByProcessing;
         WalletTransactionDetailsBottomSheetDialog.ScreenType screenType = this.screenType;
         if (screenType instanceof WalletTransactionDetailsBottomSheetDialog.ScreenType.StakingOperationDetails) {
-            networkTypeByProcessing = ((WalletTransactionDetailsBottomSheetDialog.ScreenType.StakingOperationDetails) screenType).getNetworkType();
+            networkTypeByProcessing = ((WalletTransactionDetailsBottomSheetDialog.ScreenType.StakingOperationDetails) screenType).getNetwork();
         } else if (screenType instanceof WalletTransactionDetailsBottomSheetDialog.ScreenType.TransactionDetails) {
             networkTypeByProcessing = getNetworkTypeByProcessing(((WalletTransactionDetailsBottomSheetDialog.ScreenType.TransactionDetails) screenType).getItem().getTransaction());
         } else {
             throw new NoWhenBranchMatchedException();
         }
-        return networkTypeByProcessing.getScannerIcon();
+        return networkTypeByProcessing.getExplorer().getLogoUrl();
     }
 
     private final boolean isFeeEnabled() {
@@ -308,11 +305,6 @@ public final class WalletTransactionDetailsPresenter extends BasePresenter<Walle
             throw new NoWhenBranchMatchedException();
         }
         return false;
-    }
-
-    private final boolean canSend() {
-        WalletTransactionDetailsBottomSheetDialog.ScreenType screenType = this.screenType;
-        return (screenType instanceof WalletTransactionDetailsBottomSheetDialog.ScreenType.TransactionDetails) && (((WalletTransactionDetailsBottomSheetDialog.ScreenType.TransactionDetails) screenType).getItem().getTransaction() instanceof Transaction.Crypto.Transfer);
     }
 
     private final boolean canAskSupport() {
@@ -333,7 +325,7 @@ public final class WalletTransactionDetailsPresenter extends BasePresenter<Walle
             Transaction transaction = ((WalletTransactionDetailsBottomSheetDialog.ScreenType.TransactionDetails) screenType).getItem().getTransaction();
             if (transaction.getStatus() == Status.PENDING && (transaction instanceof Transaction.Crypto)) {
                 Transaction.Crypto crypto = (Transaction.Crypto) transaction;
-                if (crypto.getNetworkType().isEVM()) {
+                if (crypto.getNetwork().isEVM()) {
                     if ((crypto.getTxHash().length() > 0) && (transaction.getDirection() == TransactionDirection.OUT || transaction.getDirection() == TransactionDirection.SELF)) {
                         return true;
                     }
@@ -395,19 +387,6 @@ public final class WalletTransactionDetailsPresenter extends BasePresenter<Walle
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public final void startSendScreen() {
-        WalletTransactionDetailsBottomSheetDialog.ScreenType screenType = this.screenType;
-        if (screenType instanceof WalletTransactionDetailsBottomSheetDialog.ScreenType.TransactionDetails) {
-            Transaction transaction = ((WalletTransactionDetailsBottomSheetDialog.ScreenType.TransactionDetails) screenType).getItem().getTransaction();
-            if (transaction.getTokenCode().isCryptoTokens()) {
-                ((WalletTransactionDetailsView) getViewState()).openSendScreen(transaction.getTokenCode(), getNetworkTypeByProcessing(transaction), ((WalletTransactionDetailsBottomSheetDialog.ScreenType.TransactionDetails) this.screenType).getItem().getRecipientAddress());
-            } else {
-                ((WalletTransactionDetailsView) getViewState()).showToast(this.resourceManager.getString(C3295R.string.wallet_feature_not_available));
-            }
-        }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
     public final void startAskSupport() {
         WalletTransactionDetailsBottomSheetDialog.ScreenType screenType = this.screenType;
         if ((screenType instanceof WalletTransactionDetailsBottomSheetDialog.ScreenType.TransactionDetails) && (((WalletTransactionDetailsBottomSheetDialog.ScreenType.TransactionDetails) screenType).getItem().getTransaction() instanceof Transaction.Crypto.SimplexPurchase)) {
@@ -421,40 +400,14 @@ public final class WalletTransactionDetailsPresenter extends BasePresenter<Walle
     }
 
     private final String getScanUrl() {
-        String formatScanTxUrl;
         WalletTransactionDetailsBottomSheetDialog.ScreenType screenType = this.screenType;
         if (screenType instanceof WalletTransactionDetailsBottomSheetDialog.ScreenType.StakingOperationDetails) {
-            return ((WalletTransactionDetailsBottomSheetDialog.ScreenType.StakingOperationDetails) screenType).getItem().getTxHash().length() > 0 ? AppConfiguration$Crypto.INSTANCE.formatScanTxUrl(((WalletTransactionDetailsBottomSheetDialog.ScreenType.StakingOperationDetails) this.screenType).getNetworkType(), ((WalletTransactionDetailsBottomSheetDialog.ScreenType.StakingOperationDetails) this.screenType).getItem().getTxHash()) : "";
+            return ((WalletTransactionDetailsBottomSheetDialog.ScreenType.StakingOperationDetails) screenType).getItem().getTxHash().length() > 0 ? ((WalletTransactionDetailsBottomSheetDialog.ScreenType.StakingOperationDetails) this.screenType).getNetwork().getTxUrl(((WalletTransactionDetailsBottomSheetDialog.ScreenType.StakingOperationDetails) this.screenType).getItem().getTxHash()) : "";
         } else if (screenType instanceof WalletTransactionDetailsBottomSheetDialog.ScreenType.TransactionDetails) {
             Transaction transaction = ((WalletTransactionDetailsBottomSheetDialog.ScreenType.TransactionDetails) screenType).getItem().getTransaction();
-            if (transaction instanceof Transaction.Crypto.Transfer) {
-                Transaction.Crypto.Transfer transfer = (Transaction.Crypto.Transfer) transaction;
-                if (transfer.getTxHash().length() > 0) {
-                    formatScanTxUrl = AppConfiguration$Crypto.INSTANCE.formatScanTxUrl(getNetworkTypeByProcessing(transaction), transfer.getTxHash());
-                    return formatScanTxUrl;
-                }
-            }
-            if (transaction instanceof Transaction.Crypto.Approve) {
-                Transaction.Crypto.Approve approve = (Transaction.Crypto.Approve) transaction;
-                if (approve.getTxHash().length() > 0) {
-                    formatScanTxUrl = AppConfiguration$Crypto.INSTANCE.formatScanTxUrl(getNetworkTypeByProcessing(transaction), approve.getTxHash());
-                    return formatScanTxUrl;
-                }
-            }
-            if (transaction instanceof Transaction.Crypto.SimplexPurchase) {
-                Transaction.Crypto.SimplexPurchase simplexPurchase = (Transaction.Crypto.SimplexPurchase) transaction;
-                if (simplexPurchase.getTxHash().length() > 0) {
-                    formatScanTxUrl = AppConfiguration$Crypto.INSTANCE.formatScanTxUrl(getNetworkTypeByProcessing(transaction), simplexPurchase.getTxHash());
-                    return formatScanTxUrl;
-                }
-            }
-            if (transaction instanceof Transaction.Crypto.Swap) {
-                Transaction.Crypto.Swap swap = (Transaction.Crypto.Swap) transaction;
-                if (swap.getTxHash().length() > 0) {
-                    formatScanTxUrl = AppConfiguration$Crypto.INSTANCE.formatScanTxUrl(getNetworkTypeByProcessing(transaction), swap.getTxHash());
-                    return formatScanTxUrl;
-                }
-                return "";
+            if (transaction instanceof Transaction.Crypto) {
+                Transaction.Crypto crypto = (Transaction.Crypto) transaction;
+                return crypto.getTxHash().length() > 0 ? crypto.getNetwork().getTxUrl(crypto.getTxHash()) : "";
             }
             return "";
         } else {
@@ -462,8 +415,8 @@ public final class WalletTransactionDetailsPresenter extends BasePresenter<Walle
         }
     }
 
-    private final NetworkType getNetworkTypeByProcessing(Transaction transaction) {
-        return transaction instanceof Transaction.Crypto ? ((Transaction.Crypto) transaction).getNetworkType() : this.cryptoPreferenceHelper.getNetworkType();
+    private final Network getNetworkTypeByProcessing(Transaction transaction) {
+        return transaction instanceof Transaction.Crypto ? ((Transaction.Crypto) transaction).getNetwork() : this.cryptoPreferenceHelper.getNetwork();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -506,14 +459,14 @@ public final class WalletTransactionDetailsPresenter extends BasePresenter<Walle
     private final int getCopyTitle() {
         WalletTransactionDetailsBottomSheetDialog.ScreenType screenType = this.screenType;
         if (screenType instanceof WalletTransactionDetailsBottomSheetDialog.ScreenType.StakingOperationDetails) {
-            return C3295R.string.wallet_transaction_details_action_copy_hash;
+            return C3417R.string.wallet_transaction_details_action_copy_hash;
         }
         if (screenType instanceof WalletTransactionDetailsBottomSheetDialog.ScreenType.TransactionDetails) {
             Transaction transaction = ((WalletTransactionDetailsBottomSheetDialog.ScreenType.TransactionDetails) screenType).getItem().getTransaction();
             if (transaction instanceof Transaction.Crypto.SimplexPurchase) {
-                return C3295R.string.wallet_token_details_action_copy_order_id;
+                return C3417R.string.wallet_token_details_action_copy_order_id;
             }
-            return transaction instanceof Transaction.Crypto.Swap ? true : transaction instanceof Transaction.Crypto.Approve ? C3295R.string.wallet_transaction_details_action_copy_hash : C3295R.string.wallet_transaction_details_action_copy_address;
+            return transaction instanceof Transaction.Crypto.Swap ? true : transaction instanceof Transaction.Crypto.Approve ? C3417R.string.wallet_transaction_details_action_copy_hash : C3417R.string.wallet_transaction_details_action_copy_address;
         }
         throw new NoWhenBranchMatchedException();
     }
@@ -532,7 +485,7 @@ public final class WalletTransactionDetailsPresenter extends BasePresenter<Walle
 
     private final String getFee() {
         BigDecimal feeAmount;
-        TokenCode tokenCode;
+        TokenDetailed tokenDetailed;
         WalletTransactionDetailsBottomSheetDialog.ScreenType screenType = this.screenType;
         if (screenType instanceof WalletTransactionDetailsBottomSheetDialog.ScreenType.StakingOperationDetails) {
             StakingOperationCost fee = ((WalletTransactionDetailsBottomSheetDialog.ScreenType.StakingOperationDetails) screenType).getItem().getFee();
@@ -540,24 +493,23 @@ public final class WalletTransactionDetailsPresenter extends BasePresenter<Walle
                 return "";
             }
             feeAmount = fee.getValue().getAsToken();
-            tokenCode = TokenCode.Companion.map(fee.getToken().getTicker());
+            tokenDetailed = fee.getToken();
             if (((WalletTransactionDetailsBottomSheetDialog.ScreenType.StakingOperationDetails) this.screenType).getItem().getStatus() != StakingOperationStatus.PENDING) {
                 r2 = false;
             }
         } else if (screenType instanceof WalletTransactionDetailsBottomSheetDialog.ScreenType.TransactionDetails) {
             Transaction transaction = ((WalletTransactionDetailsBottomSheetDialog.ScreenType.TransactionDetails) screenType).getItem().getTransaction();
             feeAmount = transaction.getFeeAmount();
-            TokenCode feeTokenCode = transaction.getFeeTokenCode();
+            TokenDetailed feeToken = transaction.getFeeToken();
             r2 = transaction.getStatus() == Status.PENDING;
-            tokenCode = feeTokenCode;
+            tokenDetailed = feeToken;
         } else {
             throw new NoWhenBranchMatchedException();
         }
         if (Intrinsics.areEqual(feeAmount.stripTrailingZeros(), BigDecimal.ZERO)) {
-            return this.resourceManager.getString(C3295R.string.fee_nothing);
+            return this.resourceManager.getString(C3417R.string.fee_nothing);
         }
-        TokenInfo map = TokenInfo.Companion.map(tokenCode);
-        String str = BalanceFormatter.formatBalance(feeAmount, map.getDecimals()) + ' ' + this.resourceManager.getString(map.getShortName());
+        String str = BalanceFormatter.formatBalance(feeAmount, Integer.valueOf(tokenDetailed.getDecimals())) + ' ' + tokenDetailed.getTicker();
         if (r2) {
             return '~' + str;
         }
@@ -576,11 +528,11 @@ public final class WalletTransactionDetailsPresenter extends BasePresenter<Walle
     }
 
     private final DialogModel getConfirmCancelDialogModel() {
-        return new DialogModel(this.resourceManager.getString(C3295R.string.wallet_cancel_transaction_title), this.resourceManager.getString(C3295R.string.wallet_cancel_transaction_description), this.resourceManager.getString(C3295R.string.common_cancel), this.resourceManager.getString(C3295R.string.common_confirm));
+        return new DialogModel(this.resourceManager.getString(C3417R.string.wallet_cancel_transaction_title), this.resourceManager.getString(C3417R.string.wallet_cancel_transaction_description), this.resourceManager.getString(C3417R.string.common_cancel), this.resourceManager.getString(C3417R.string.common_confirm));
     }
 
     private final DialogModel getConfirmBoostDialogModel() {
-        return new DialogModel(this.resourceManager.getString(C3295R.string.wallet_boost_transaction_title), this.resourceManager.getString(C3295R.string.wallet_boost_transaction_description), this.resourceManager.getString(C3295R.string.common_cancel), this.resourceManager.getString(C3295R.string.common_confirm));
+        return new DialogModel(this.resourceManager.getString(C3417R.string.wallet_boost_transaction_title), this.resourceManager.getString(C3417R.string.wallet_boost_transaction_description), this.resourceManager.getString(C3417R.string.common_cancel), this.resourceManager.getString(C3417R.string.common_confirm));
     }
 
     private final void setupTransactionActions(List<Pair<TransactionActionItem, Function0<Unit>>> list) {

@@ -63,7 +63,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 233
+    .line 250
     invoke-virtual {p0, p1}, Lcom/iMe/utils/helper/wallet/AuthHelper$subscribeWithCommonErrorHandling$1;->invoke(Ljava/lang/Object;)V
 
     sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
@@ -79,7 +79,7 @@
         }
     .end annotation
 
-    .line 234
+    .line 251
     iget-object v0, p0, Lcom/iMe/utils/helper/wallet/AuthHelper$subscribeWithCommonErrorHandling$1;->$onSuccess:Lcom/iMe/fork/utils/Callbacks$Callback1;
 
     invoke-interface {v0, p1}, Lcom/iMe/fork/utils/Callbacks$Callback1;->invoke(Ljava/lang/Object;)V

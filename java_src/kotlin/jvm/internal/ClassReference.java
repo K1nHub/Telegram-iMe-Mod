@@ -1,5 +1,7 @@
 package kotlin.jvm.internal;
 
+import java.lang.reflect.Constructor;
+import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
@@ -47,6 +49,7 @@ public final class ClassReference implements KClass<Object>, ClassBasedDeclarati
     private static final HashMap<String, String> classFqNames;
     private static final HashMap<String, String> primitiveFqNames;
     private static final HashMap<String, String> primitiveWrapperFqNames;
+    private static final Map<String, String> simpleNames;
     private final Class<?> jClass;
 
     public ClassReference(Class<?> jClass) {
@@ -57,6 +60,11 @@ public final class ClassReference implements KClass<Object>, ClassBasedDeclarati
     @Override // kotlin.jvm.internal.ClassBasedDeclarationContainer
     public Class<?> getJClass() {
         return this.jClass;
+    }
+
+    @Override // kotlin.reflect.KClass
+    public String getSimpleName() {
+        return Companion.getClassSimpleName(getJClass());
     }
 
     @Override // kotlin.reflect.KClass
@@ -84,6 +92,49 @@ public final class ClassReference implements KClass<Object>, ClassBasedDeclarati
         }
 
         private Companion() {
+        }
+
+        public final String getClassSimpleName(Class<?> jClass) {
+            String str;
+            Method enclosingMethod;
+            Constructor<?> enclosingConstructor;
+            String substringAfter$default;
+            String substringAfter$default2;
+            String substringAfter$default3;
+            Intrinsics.checkNotNullParameter(jClass, "jClass");
+            String str2 = null;
+            if (!jClass.isAnonymousClass()) {
+                if (jClass.isLocalClass()) {
+                    String name = jClass.getSimpleName();
+                    if (jClass.getEnclosingMethod() != null) {
+                        Intrinsics.checkNotNullExpressionValue(name, "name");
+                        substringAfter$default3 = StringsKt__StringsKt.substringAfter$default(name, enclosingMethod.getName() + '$', (String) null, 2, (Object) null);
+                        if (substringAfter$default3 != null) {
+                            return substringAfter$default3;
+                        }
+                    }
+                    if (jClass.getEnclosingConstructor() == null) {
+                        Intrinsics.checkNotNullExpressionValue(name, "name");
+                        substringAfter$default = StringsKt__StringsKt.substringAfter$default(name, '$', (String) null, 2, (Object) null);
+                        return substringAfter$default;
+                    }
+                    Intrinsics.checkNotNullExpressionValue(name, "name");
+                    substringAfter$default2 = StringsKt__StringsKt.substringAfter$default(name, enclosingConstructor.getName() + '$', (String) null, 2, (Object) null);
+                    return substringAfter$default2;
+                } else if (!jClass.isArray()) {
+                    String str3 = (String) ClassReference.simpleNames.get(jClass.getName());
+                    return str3 == null ? jClass.getSimpleName() : str3;
+                } else {
+                    Class<?> componentType = jClass.getComponentType();
+                    if (componentType.isPrimitive() && (str = (String) ClassReference.simpleNames.get(componentType.getName())) != null) {
+                        str2 = str + "Array";
+                    }
+                    if (str2 == null) {
+                        return "Array";
+                    }
+                }
+            }
+            return str2;
         }
 
         public final boolean isInstance(Object obj, Class<?> jClass) {
@@ -189,5 +240,6 @@ public final class ClassReference implements KClass<Object>, ClassBasedDeclarati
             substringAfterLast$default = StringsKt__StringsKt.substringAfterLast$default((String) entry2.getValue(), '.', null, 2, null);
             linkedHashMap.put(key, substringAfterLast$default);
         }
+        simpleNames = linkedHashMap;
     }
 }

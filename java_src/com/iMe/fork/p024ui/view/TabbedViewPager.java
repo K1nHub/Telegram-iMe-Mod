@@ -13,10 +13,10 @@ import kotlin.LazyKt__LazyJVMKt;
 import kotlin.collections.CollectionsKt__CollectionsKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.p044ui.ActionBar.Theme;
-import org.telegram.p044ui.ActionBar.ThemeDescription;
-import org.telegram.p044ui.Components.LayoutHelper;
-import org.telegram.p044ui.Components.ViewPagerFixed;
+import org.telegram.p043ui.ActionBar.Theme;
+import org.telegram.p043ui.ActionBar.ThemeDescription;
+import org.telegram.p043ui.Components.LayoutHelper;
+import org.telegram.p043ui.Components.ViewPagerFixed;
 /* compiled from: TabbedViewPager.kt */
 /* renamed from: com.iMe.fork.ui.view.TabbedViewPager */
 /* loaded from: classes3.dex */
@@ -92,12 +92,12 @@ public class TabbedViewPager extends FrameLayout {
             return emptyList;
         }
         arrayListOf = CollectionsKt__CollectionsKt.arrayListOf(new ThemeDescription(getPager(), ThemeDescription.FLAG_BACKGROUND, null, null, null, null, Theme.key_windowBackgroundGray), new ThemeDescription(getTabsView(), ThemeDescription.FLAG_BACKGROUND, null, null, null, new ThemeDescription.ThemeDescriptionDelegate() { // from class: com.iMe.fork.ui.view.TabbedViewPager$$ExternalSyntheticLambda0
-            @Override // org.telegram.p044ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
+            @Override // org.telegram.p043ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
             public final void didSetColor() {
                 TabbedViewPager.getThemeDescription$lambda$0(TabbedViewPager.this);
             }
 
-            @Override // org.telegram.p044ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
+            @Override // org.telegram.p043ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
             public /* synthetic */ void onAnimationProgress(float f) {
                 ThemeDescription.ThemeDescriptionDelegate.CC.$default$onAnimationProgress(this, f);
             }
@@ -116,7 +116,7 @@ public class TabbedViewPager extends FrameLayout {
     public final TabbedViewPager$initPager$1 initPager() {
         final Context context = getContext();
         ?? r1 = new ViewPagerFixed(context) { // from class: com.iMe.fork.ui.view.TabbedViewPager$initPager$1
-            @Override // org.telegram.p044ui.Components.ViewPagerFixed
+            @Override // org.telegram.p043ui.Components.ViewPagerFixed
             protected void onItemSelected(View view, View view2, int i, int i2) {
                 TabbedViewPagerDelegate<AbstractTabbedViewPage> delegate = TabbedViewPager.this.getDelegate();
                 Intrinsics.checkNotNull(delegate);
@@ -128,40 +128,40 @@ public class TabbedViewPager extends FrameLayout {
             }
         };
         r1.setAdapter(new ViewPagerFixed.Adapter() { // from class: com.iMe.fork.ui.view.TabbedViewPager$initPager$2$1
-            @Override // org.telegram.p044ui.Components.ViewPagerFixed.Adapter
+            @Override // org.telegram.p043ui.Components.ViewPagerFixed.Adapter
             public int getItemViewType(int i) {
                 return i;
             }
 
-            @Override // org.telegram.p044ui.Components.ViewPagerFixed.Adapter
+            @Override // org.telegram.p043ui.Components.ViewPagerFixed.Adapter
             public int getItemIcon(int i) {
                 TabbedViewPagerDelegate<AbstractTabbedViewPage> delegate = TabbedViewPager.this.getDelegate();
                 Intrinsics.checkNotNull(delegate);
                 return delegate.getPages().get(i).getIcon();
             }
 
-            @Override // org.telegram.p044ui.Components.ViewPagerFixed.Adapter
+            @Override // org.telegram.p043ui.Components.ViewPagerFixed.Adapter
             public String getItemTitle(int i) {
                 TabbedViewPagerDelegate<AbstractTabbedViewPage> delegate = TabbedViewPager.this.getDelegate();
                 Intrinsics.checkNotNull(delegate);
                 return delegate.getPages().get(i).getTitle();
             }
 
-            @Override // org.telegram.p044ui.Components.ViewPagerFixed.Adapter
+            @Override // org.telegram.p043ui.Components.ViewPagerFixed.Adapter
             public int getItemCount() {
                 TabbedViewPagerDelegate<AbstractTabbedViewPage> delegate = TabbedViewPager.this.getDelegate();
                 Intrinsics.checkNotNull(delegate);
                 return delegate.getPages().size();
             }
 
-            @Override // org.telegram.p044ui.Components.ViewPagerFixed.Adapter
+            @Override // org.telegram.p043ui.Components.ViewPagerFixed.Adapter
             public View createView(int i) {
                 TabbedViewPagerDelegate<AbstractTabbedViewPage> delegate = TabbedViewPager.this.getDelegate();
                 Intrinsics.checkNotNull(delegate);
                 return delegate.getPages().get(i).getView();
             }
 
-            @Override // org.telegram.p044ui.Components.ViewPagerFixed.Adapter
+            @Override // org.telegram.p043ui.Components.ViewPagerFixed.Adapter
             public void bindView(View view, int i, int i2) {
                 Intrinsics.checkNotNullParameter(view, "view");
                 TabbedViewPagerDelegate<AbstractTabbedViewPage> delegate = TabbedViewPager.this.getDelegate();

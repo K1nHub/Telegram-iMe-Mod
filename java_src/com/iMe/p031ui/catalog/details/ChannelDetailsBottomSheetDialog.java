@@ -36,21 +36,21 @@ import kotlin.jvm.internal.Reflection;
 import kotlin.reflect.KProperty;
 import kotlin.text.StringsKt__StringsJVMKt;
 import moxy.ktx.MoxyKtxDelegate;
-import org.telegram.messenger.C3295R;
+import org.telegram.messenger.C3417R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.browser.Browser;
 import org.telegram.messenger.databinding.ForkContentChannelDetailsBinding;
-import org.telegram.p044ui.ActionBar.ActionBarMenuItem;
-import org.telegram.p044ui.ActionBar.BaseFragment;
-import org.telegram.p044ui.ActionBar.Theme;
-import org.telegram.p044ui.Components.LayoutHelper;
-import org.telegram.p044ui.Components.URLSpanNoUnderline;
-import org.telegram.p044ui.QrActivity;
+import org.telegram.p043ui.ActionBar.ActionBarMenuItem;
+import org.telegram.p043ui.ActionBar.BaseFragment;
+import org.telegram.p043ui.ActionBar.Theme;
+import org.telegram.p043ui.Components.LayoutHelper;
+import org.telegram.p043ui.Components.URLSpanNoUnderline;
+import org.telegram.p043ui.QrActivity;
 import org.telegram.tgnet.TLRPC$Chat;
 /* compiled from: ChannelDetailsBottomSheetDialog.kt */
 /* renamed from: com.iMe.ui.catalog.details.ChannelDetailsBottomSheetDialog */
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public final class ChannelDetailsBottomSheetDialog extends MvpBottomSheet implements ChannelDetailsView {
     static final /* synthetic */ KProperty<Object>[] $$delegatedProperties = {Reflection.property1(new PropertyReference1Impl(ChannelDetailsBottomSheetDialog.class, "presenter", "getPresenter()Lcom/iMe/ui/catalog/details/ChannelDetailsPresenter;", 0)), Reflection.property1(new PropertyReference1Impl(ChannelDetailsBottomSheetDialog.class, "binding", "getBinding()Lorg/telegram/messenger/databinding/ForkContentChannelDetailsBinding;", 0))};
     public static final Companion Companion = new Companion(null);
@@ -62,7 +62,7 @@ public final class ChannelDetailsBottomSheetDialog extends MvpBottomSheet implem
 
     /* compiled from: ChannelDetailsBottomSheetDialog.kt */
     /* renamed from: com.iMe.ui.catalog.details.ChannelDetailsBottomSheetDialog$WhenMappings */
-    /* loaded from: classes.dex */
+    /* loaded from: classes3.dex */
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
 
@@ -85,7 +85,7 @@ public final class ChannelDetailsBottomSheetDialog extends MvpBottomSheet implem
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
-    public ChannelDetailsBottomSheetDialog(com.iMe.model.catalog.CampaignItem r3, org.telegram.tgnet.TLRPC$Chat r4, com.iMe.storage.domain.model.catalog.ChatType r5, org.telegram.p044ui.ActionBar.BaseFragment r6) {
+    public ChannelDetailsBottomSheetDialog(com.iMe.model.catalog.CampaignItem r3, org.telegram.tgnet.TLRPC$Chat r4, com.iMe.storage.domain.model.catalog.ChatType r5, org.telegram.p043ui.ActionBar.BaseFragment r6) {
         /*
             r2 = this;
             java.lang.String r0 = "campaign"
@@ -121,7 +121,7 @@ public final class ChannelDetailsBottomSheetDialog extends MvpBottomSheet implem
             java.lang.String r6 = r6.toString()
             r3.<init>(r4, r6, r5)
             r2.presenter$delegate = r3
-            org.koin.mp.KoinPlatformTools r3 = org.koin.p043mp.KoinPlatformTools.INSTANCE
+            org.koin.mp.KoinPlatformTools r3 = org.koin.p042mp.KoinPlatformTools.INSTANCE
             kotlin.LazyThreadSafetyMode r3 = r3.defaultLazyMode()
             com.iMe.ui.catalog.details.ChannelDetailsBottomSheetDialog$special$$inlined$inject$default$1 r4 = new com.iMe.ui.catalog.details.ChannelDetailsBottomSheetDialog$special$$inlined$inject$default$1
             r5 = 0
@@ -170,10 +170,7 @@ public final class ChannelDetailsBottomSheetDialog extends MvpBottomSheet implem
         ForkContentChannelDetailsBinding binding = getBinding();
         AppCompatImageView imageAvatar = binding.imageAvatar;
         Intrinsics.checkNotNullExpressionValue(imageAvatar, "imageAvatar");
-        String photo = campaignItem.getPhoto();
-        Context context = getContext();
-        Intrinsics.checkNotNullExpressionValue(context, "context");
-        ImageViewExtKt.loadFromWithPlaceholderResId(imageAvatar, photo, context, Integer.valueOf(C3295R.C3297drawable.photo_placeholder_in), true);
+        ImageViewExtKt.loadFrom$default(imageAvatar, campaignItem.getPhoto(), Integer.valueOf(C3417R.C3419drawable.photo_placeholder_in), false, 4, null);
         AppCompatImageView imageVerified = binding.imageVerified;
         Intrinsics.checkNotNullExpressionValue(imageVerified, "imageVerified");
         imageVerified.setVisibility(campaignItem.isVerified() ? 0 : 8);
@@ -195,9 +192,9 @@ public final class ChannelDetailsBottomSheetDialog extends MvpBottomSheet implem
         binding.textSubscribersCount.setText(String.valueOf(campaignItem.getMembersCount()));
         for (String str2 : campaignItem.getTags()) {
             FlexboxLayout flexboxLayout = binding.flexboxTags;
-            Context context2 = getContext();
-            Intrinsics.checkNotNullExpressionValue(context2, "context");
-            ChannelTagView channelTagView = new ChannelTagView(context2, null, 0, 6, null);
+            Context context = getContext();
+            Intrinsics.checkNotNullExpressionValue(context, "context");
+            ChannelTagView channelTagView = new ChannelTagView(context, null, 0, 6, null);
             channelTagView.setText(str2);
             flexboxLayout.addView(channelTagView, LayoutHelper.createLinear(-2, -2, 6, 0, 0, 6));
         }
@@ -216,14 +213,14 @@ public final class ChannelDetailsBottomSheetDialog extends MvpBottomSheet implem
                 throw new NoWhenBranchMatchedException();
             }
             if (z) {
-                string = LocaleController.getString("JoinGroup", C3295R.string.JoinGroup);
+                string = LocaleController.getString("JoinGroup", C3417R.string.JoinGroup);
             } else {
-                string = LocaleController.getString("LeaveMegaMenu", C3295R.string.LeaveMegaMenu);
+                string = LocaleController.getString("LeaveMegaMenu", C3417R.string.LeaveMegaMenu);
             }
         } else if (z) {
-            string = LocaleController.getString("ChannelJoin", C3295R.string.ChannelJoin);
+            string = LocaleController.getString("ChannelJoin", C3417R.string.ChannelJoin);
         } else {
-            string = LocaleController.getString("LeaveChannel", C3295R.string.LeaveChannel);
+            string = LocaleController.getString("LeaveChannel", C3417R.string.LeaveChannel);
         }
         bigActionButton.setText(string);
     }
@@ -290,8 +287,8 @@ public final class ChannelDetailsBottomSheetDialog extends MvpBottomSheet implem
         AppCompatTextView appCompatTextView = binding.textDescription;
         appCompatTextView.setMovementMethod(LinkMovementMethod.getInstance());
         appCompatTextView.setOnTouchListener(ChannelDetailsBottomSheetDialog$$ExternalSyntheticLambda1.INSTANCE);
-        binding.textLanguageTitle.setText(getResourceManager().getString(C3295R.string.catalog_channel_details_language));
-        binding.textTags.setText(getResourceManager().getString(C3295R.string.catalog_channel_details_tags));
+        binding.textLanguageTitle.setText(getResourceManager().getString(C3417R.string.catalog_channel_details_language));
+        binding.textTags.setText(getResourceManager().getString(C3417R.string.catalog_channel_details_tags));
         setupButtonMore();
     }
 
@@ -310,12 +307,12 @@ public final class ChannelDetailsBottomSheetDialog extends MvpBottomSheet implem
         final ActionBarMenuItem setupButtonMore$lambda$18 = getBinding().buttonMore;
         setupButtonMore$lambda$18.setLongClickEnabled(false);
         setupButtonMore$lambda$18.setSubMenuOpenSide(2);
-        setupButtonMore$lambda$18.setIcon(C3295R.C3297drawable.ic_ab_other);
+        setupButtonMore$lambda$18.setIcon(C3417R.C3419drawable.ic_ab_other);
         Intrinsics.checkNotNullExpressionValue(setupButtonMore$lambda$18, "setupButtonMore$lambda$18");
         ViewExtKt.setCircleRippleBackground(setupButtonMore$lambda$18);
-        setupButtonMore$lambda$18.addSubItem(IdFabric$Menu.SHARE, C3295R.C3297drawable.share, LocaleController.getString("ShareLink", C3295R.string.ShareLink));
-        setupButtonMore$lambda$18.addSubItem(IdFabric$Menu.COPY, C3295R.C3297drawable.msg_link2, LocaleController.getString("CopyLink", C3295R.string.CopyLink));
-        setupButtonMore$lambda$18.addSubItem(IdFabric$Menu.f254QR, C3295R.C3297drawable.msg_qrcode, LocaleController.getString("GetQRCode", C3295R.string.GetQRCode));
+        setupButtonMore$lambda$18.addSubItem(IdFabric$Menu.SHARE, C3417R.C3419drawable.share, LocaleController.getString("ShareLink", C3417R.string.ShareLink));
+        setupButtonMore$lambda$18.addSubItem(IdFabric$Menu.COPY, C3417R.C3419drawable.msg_link2, LocaleController.getString("CopyLink", C3417R.string.CopyLink));
+        setupButtonMore$lambda$18.addSubItem(IdFabric$Menu.f336QR, C3417R.C3419drawable.msg_qrcode, LocaleController.getString("GetQRCode", C3417R.string.GetQRCode));
         setupButtonMore$lambda$18.redrawPopup(getThemedColor(Theme.key_actionBarDefaultSubmenuBackground));
         setupButtonMore$lambda$18.setPopupItemsColor(getThemedColor(Theme.key_actionBarDefaultSubmenuItem), false);
         setupButtonMore$lambda$18.setPopupItemsColor(getThemedColor(Theme.key_actionBarDefaultSubmenuItemIcon), true);
@@ -326,7 +323,7 @@ public final class ChannelDetailsBottomSheetDialog extends MvpBottomSheet implem
                 ChannelDetailsBottomSheetDialog.setupButtonMore$lambda$18$lambda$17(ActionBarMenuItem.this, view);
             }
         });
-        setupButtonMore$lambda$18.setContentDescription(LocaleController.getString("AccDescrMoreOptions", C3295R.string.AccDescrMoreOptions));
+        setupButtonMore$lambda$18.setContentDescription(LocaleController.getString("AccDescrMoreOptions", C3417R.string.AccDescrMoreOptions));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -340,7 +337,7 @@ public final class ChannelDetailsBottomSheetDialog extends MvpBottomSheet implem
             getPresenter().shareChannelLink();
         } else if (i == IdFabric$Menu.COPY) {
             getPresenter().copyChannelLink();
-        } else if (i == IdFabric$Menu.f254QR) {
+        } else if (i == IdFabric$Menu.f336QR) {
             getPresenter().createChannelQr();
         }
     }
@@ -351,7 +348,7 @@ public final class ChannelDetailsBottomSheetDialog extends MvpBottomSheet implem
         Intrinsics.checkNotNullExpressionValue(buttonSubscribe, "buttonSubscribe");
         ViewExtKt.safeThrottledClick$default(buttonSubscribe, 0L, new ChannelDetailsBottomSheetDialog$setupListeners$1$1(this), 1, null);
         binding.buttonMore.setDelegate(new ActionBarMenuItem.ActionBarMenuItemDelegate() { // from class: com.iMe.ui.catalog.details.ChannelDetailsBottomSheetDialog$$ExternalSyntheticLambda2
-            @Override // org.telegram.p044ui.ActionBar.ActionBarMenuItem.ActionBarMenuItemDelegate
+            @Override // org.telegram.p043ui.ActionBar.ActionBarMenuItem.ActionBarMenuItemDelegate
             public final void onItemClick(int i) {
                 ChannelDetailsBottomSheetDialog.setupListeners$lambda$20$lambda$19(ChannelDetailsBottomSheetDialog.this, i);
             }
@@ -366,7 +363,7 @@ public final class ChannelDetailsBottomSheetDialog extends MvpBottomSheet implem
 
     /* compiled from: ChannelDetailsBottomSheetDialog.kt */
     /* renamed from: com.iMe.ui.catalog.details.ChannelDetailsBottomSheetDialog$Companion */
-    /* loaded from: classes.dex */
+    /* loaded from: classes3.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

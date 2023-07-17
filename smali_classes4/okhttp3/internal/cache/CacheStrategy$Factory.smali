@@ -44,7 +44,7 @@
 .method public constructor <init>(JLokhttp3/Request;Lokhttp3/Response;)V
     .locals 4
 
-    const-string v0, "request"
+    const-string/jumbo v0, "request"
 
     invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 

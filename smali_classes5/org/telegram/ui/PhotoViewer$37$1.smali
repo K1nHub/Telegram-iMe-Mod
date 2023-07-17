@@ -30,7 +30,7 @@
 .method constructor <init>(Lorg/telegram/ui/PhotoViewer$37;)V
     .locals 0
 
-    .line 7729
+    .line 7730
     iput-object p1, p0, Lorg/telegram/ui/PhotoViewer$37$1;->this$1:Lorg/telegram/ui/PhotoViewer$37;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -41,7 +41,7 @@
 .method private synthetic lambda$onAnimationEnd$0()V
     .locals 2
 
-    .line 7736
+    .line 7737
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$37$1;->this$1:Lorg/telegram/ui/PhotoViewer$37;
 
     iget-object v0, v0, Lorg/telegram/ui/PhotoViewer$37;->this$0:Lorg/telegram/ui/PhotoViewer;
@@ -49,17 +49,6 @@
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Lorg/telegram/ui/PhotoViewer;->access$2602(Lorg/telegram/ui/PhotoViewer;Z)Z
-
-    .line 7737
-    iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$37$1;->this$1:Lorg/telegram/ui/PhotoViewer$37;
-
-    iget-object v0, v0, Lorg/telegram/ui/PhotoViewer$37;->this$0:Lorg/telegram/ui/PhotoViewer;
-
-    invoke-static {v0}, Lorg/telegram/ui/PhotoViewer;->access$1600(Lorg/telegram/ui/PhotoViewer;)Lorg/telegram/ui/Components/VideoPlayer;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_0
 
     .line 7738
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$37$1;->this$1:Lorg/telegram/ui/PhotoViewer$37;
@@ -70,9 +59,20 @@
 
     move-result-object v0
 
+    if-eqz v0, :cond_0
+
+    .line 7739
+    iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$37$1;->this$1:Lorg/telegram/ui/PhotoViewer$37;
+
+    iget-object v0, v0, Lorg/telegram/ui/PhotoViewer$37;->this$0:Lorg/telegram/ui/PhotoViewer;
+
+    invoke-static {v0}, Lorg/telegram/ui/PhotoViewer;->access$1600(Lorg/telegram/ui/PhotoViewer;)Lorg/telegram/ui/Components/VideoPlayer;
+
+    move-result-object v0
+
     invoke-virtual {v0}, Lorg/telegram/ui/Components/VideoPlayer;->play()V
 
-    .line 7740
+    .line 7741
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$37$1;->this$1:Lorg/telegram/ui/PhotoViewer$37;
 
@@ -90,7 +90,7 @@
 .method public onAnimationCancel(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 7746
+    .line 7747
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$37$1;->this$1:Lorg/telegram/ui/PhotoViewer$37;
 
     iget-object p1, p1, Lorg/telegram/ui/PhotoViewer$37;->this$0:Lorg/telegram/ui/PhotoViewer;
@@ -105,7 +105,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 2
 
-    .line 7732
+    .line 7733
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$37$1;->this$1:Lorg/telegram/ui/PhotoViewer$37;
 
     iget-object p1, p1, Lorg/telegram/ui/PhotoViewer$37;->this$0:Lorg/telegram/ui/PhotoViewer;
@@ -118,7 +118,7 @@
 
     return-void
 
-    .line 7735
+    .line 7736
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$37$1;->this$1:Lorg/telegram/ui/PhotoViewer$37;
 

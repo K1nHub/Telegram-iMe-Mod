@@ -21,7 +21,7 @@
         "Lkotlin/jvm/internal/Lambda;",
         "Lkotlin/jvm/functions/Function1<",
         "Lcom/iMe/storage/data/network/model/response/base/ApiBaseResponse<",
-        "Lcom/iMe/storage/data/network/model/response/crypto/boost/GetBoostTransactionDataResponse;",
+        "Lcom/iMe/storage/data/network/model/response/crypto/boost/SpeedUpTransactionDataResponse;",
         ">;",
         "Lcom/iMe/storage/domain/model/Result<",
         "+",
@@ -31,23 +31,19 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nFirebaseExt.kt\nKotlin\n*S Kotlin\n*F\n+ 1 FirebaseExt.kt\ncom/iMe/storage/data/utils/extentions/FirebaseExtKt$mapSuccess$1\n+ 2 BoostRepositoryImpl.kt\ncom/iMe/storage/data/repository/crypto/boost/BoostRepositoryImpl\n+ 3 ResultExt.kt\ncom/iMe/storage/domain/utils/extentions/ResultExtKt\n*L\n1#1,86:1\n34#2:87\n9#3:88\n7#3:89\n*S KotlinDebug\n*F\n+ 1 FirebaseExt.kt\ncom/iMe/storage/data/utils/extentions/FirebaseExtKt$mapSuccess$1\n*L\n71#1:88\n72#1:89\n*E\n"
+    value = "SMAP\nFirebaseExt.kt\nKotlin\n*S Kotlin\n*F\n+ 1 FirebaseExt.kt\ncom/iMe/storage/data/utils/extentions/FirebaseExtKt$mapSuccess$1\n+ 2 BoostRepositoryImpl.kt\ncom/iMe/storage/data/repository/crypto/boost/BoostRepositoryImpl\n+ 3 ResultExt.kt\ncom/iMe/storage/domain/utils/extentions/ResultExtKt\n*L\n1#1,86:1\n32#2:87\n9#3:88\n7#3:89\n*S KotlinDebug\n*F\n+ 1 FirebaseExt.kt\ncom/iMe/storage/data/utils/extentions/FirebaseExtKt$mapSuccess$1\n*L\n71#1:88\n72#1:89\n*E\n"
 .end annotation
 
 
 # instance fields
 .field final synthetic $errorHandler:Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;
 
-.field final synthetic this$0:Lcom/iMe/storage/data/repository/crypto/boost/BoostRepositoryImpl;
-
 
 # direct methods
-.method public constructor <init>(Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;Lcom/iMe/storage/data/repository/crypto/boost/BoostRepositoryImpl;)V
+.method public constructor <init>(Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;)V
     .locals 0
 
     iput-object p1, p0, Lcom/iMe/storage/data/repository/crypto/boost/BoostRepositoryImpl$getCryptoBoostMetadata$$inlined$mapSuccess$1;->$errorHandler:Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;
-
-    iput-object p2, p0, Lcom/iMe/storage/data/repository/crypto/boost/BoostRepositoryImpl$getCryptoBoostMetadata$$inlined$mapSuccess$1;->this$0:Lcom/iMe/storage/data/repository/crypto/boost/BoostRepositoryImpl;
 
     const/4 p1, 0x1
 
@@ -64,7 +60,7 @@
         value = {
             "(",
             "Lcom/iMe/storage/data/network/model/response/base/ApiBaseResponse<",
-            "Lcom/iMe/storage/data/network/model/response/crypto/boost/GetBoostTransactionDataResponse;",
+            "Lcom/iMe/storage/data/network/model/response/crypto/boost/SpeedUpTransactionDataResponse;",
             ">;)",
             "Lcom/iMe/storage/domain/model/Result<",
             "Lcom/iMe/storage/domain/model/crypto/send/TransactionArgs;",
@@ -88,15 +84,9 @@
 
     move-result-object p1
 
-    check-cast p1, Lcom/iMe/storage/data/network/model/response/crypto/boost/GetBoostTransactionDataResponse;
+    check-cast p1, Lcom/iMe/storage/data/network/model/response/crypto/boost/SpeedUpTransactionDataResponse;
 
-    iget-object v0, p0, Lcom/iMe/storage/data/repository/crypto/boost/BoostRepositoryImpl$getCryptoBoostMetadata$$inlined$mapSuccess$1;->this$0:Lcom/iMe/storage/data/repository/crypto/boost/BoostRepositoryImpl;
-
-    invoke-static {v0}, Lcom/iMe/storage/data/repository/crypto/boost/BoostRepositoryImpl;->access$getCryptoAccessManager$p(Lcom/iMe/storage/data/repository/crypto/boost/BoostRepositoryImpl;)Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;
-
-    move-result-object v0
-
-    invoke-static {p1, v0}, Lcom/iMe/storage/data/mapper/crypto/BoostMappingKt;->mapToDomain(Lcom/iMe/storage/data/network/model/response/crypto/boost/GetBoostTransactionDataResponse;Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;)Lcom/iMe/storage/domain/model/crypto/send/TransactionArgs;
+    invoke-static {p1}, Lcom/iMe/storage/data/mapper/crypto/BoostMappingKt;->mapToDomain(Lcom/iMe/storage/data/network/model/response/crypto/boost/SpeedUpTransactionDataResponse;)Lcom/iMe/storage/domain/model/crypto/send/TransactionArgs;
 
     move-result-object p1
 

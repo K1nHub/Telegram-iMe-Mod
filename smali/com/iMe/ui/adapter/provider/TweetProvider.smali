@@ -17,7 +17,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nTweetProvider.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TweetProvider.kt\ncom/iMe/ui/adapter/provider/TweetProvider\n+ 2 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,133:1\n56#2,6:134\n1#3:140\n*S KotlinDebug\n*F\n+ 1 TweetProvider.kt\ncom/iMe/ui/adapter/provider/TweetProvider\n*L\n40#1:134,6\n*E\n"
+    value = "SMAP\nTweetProvider.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TweetProvider.kt\ncom/iMe/ui/adapter/provider/TweetProvider\n+ 2 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,126:1\n56#2,6:127\n1#3:133\n*S KotlinDebug\n*F\n+ 1 TweetProvider.kt\ncom/iMe/ui/adapter/provider/TweetProvider\n*L\n40#1:127,6\n*E\n"
 .end annotation
 
 
@@ -135,12 +135,12 @@
 .method private final onBindImage(Landroid/view/View;Lcom/iMe/storage/domain/model/twitter/MediaInfoDomain;Lcom/iMe/model/twitter/TweetItem;)V
     .locals 4
 
-    .line 121
+    .line 114
     invoke-static {p1}, Lorg/telegram/messenger/databinding/ForkRecylcerImageItemBinding;->bind(Landroid/view/View;)Lorg/telegram/messenger/databinding/ForkRecylcerImageItemBinding;
 
     move-result-object p1
 
-    .line 122
+    .line 115
     invoke-virtual {p1}, Lorg/telegram/messenger/databinding/ForkRecylcerImageItemBinding;->getRoot()Landroid/widget/FrameLayout;
 
     move-result-object v0
@@ -153,7 +153,7 @@
 
     invoke-static {v0, v1}, Lcom/iMe/utils/CornersOutlineProviderKt;->roundCorners(Landroid/view/View;F)V
 
-    .line 123
+    .line 116
     iget-object v0, p1, Lorg/telegram/messenger/databinding/ForkRecylcerImageItemBinding;->progressBar:Landroid/widget/ProgressBar;
 
     const-string v1, "progressBar"
@@ -168,19 +168,19 @@
 
     invoke-static {v0, v1, v2, v3}, Lcom/iMe/utils/extentions/common/ViewExtKt;->visible$default(Landroid/view/View;ZILjava/lang/Object;)V
 
-    .line 124
+    .line 117
     iget-object v0, p1, Lorg/telegram/messenger/databinding/ForkRecylcerImageItemBinding;->imageView:Landroid/widget/ImageView;
 
     const-string v1, "imageView"
 
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 125
+    .line 118
     invoke-virtual {p2}, Lcom/iMe/storage/domain/model/twitter/MediaInfoDomain;->getUrl()Ljava/lang/String;
 
     move-result-object p2
 
-    .line 124
+    .line 117
     new-instance v1, Lcom/iMe/ui/adapter/provider/TweetProvider$onBindImage$1$1;
 
     invoke-direct {v1, p1}, Lcom/iMe/ui/adapter/provider/TweetProvider$onBindImage$1$1;-><init>(Lorg/telegram/messenger/databinding/ForkRecylcerImageItemBinding;)V
@@ -191,7 +191,7 @@
 
     invoke-static {v0, p2, v1, v2}, Lcom/iMe/utils/extentions/common/ImageViewExtKt;->withGlide(Landroid/widget/ImageView;Ljava/lang/Object;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function1;)V
 
-    .line 129
+    .line 122
     iget-object p2, p1, Lorg/telegram/messenger/databinding/ForkRecylcerImageItemBinding;->errorBlock:Lorg/telegram/messenger/databinding/ForkRecylcerErrorBlockBinding;
 
     iget-object p2, p2, Lorg/telegram/messenger/databinding/ForkRecylcerErrorBlockBinding;->textError:Landroid/widget/TextView;
@@ -208,7 +208,7 @@
 
     invoke-virtual {p2, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 130
+    .line 123
     iget-object p1, p1, Lorg/telegram/messenger/databinding/ForkRecylcerImageItemBinding;->imageView:Landroid/widget/ImageView;
 
     new-instance p2, Lcom/iMe/ui/adapter/provider/TweetProvider$$ExternalSyntheticLambda0;
@@ -231,7 +231,7 @@
 
     invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 130
+    .line 123
     iget-object p0, p0, Lcom/iMe/ui/adapter/provider/TweetProvider;->onTweetItemClick:Lkotlin/jvm/functions/Function1;
 
     if-eqz p0, :cond_0
@@ -245,7 +245,7 @@
 
 # virtual methods
 .method public convert(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;Lcom/iMe/model/twitter/TweetItem;)V
-    .locals 16
+    .locals 23
 
     move-object/from16 v0, p1
 
@@ -275,9 +275,9 @@
 
     const/4 v4, 0x0
 
-    const/4 v5, 0x0
+    const/4 v5, 0x1
 
-    const/4 v6, 0x1
+    const/4 v6, 0x0
 
     if-eqz v3, :cond_2
 
@@ -297,12 +297,12 @@
 
     if-ne v7, v8, :cond_1
 
-    move v7, v6
+    move v7, v5
 
     goto :goto_0
 
     :cond_1
-    move v7, v4
+    move v7, v6
 
     :goto_0
     if-eqz v7, :cond_0
@@ -310,7 +310,7 @@
     goto :goto_1
 
     :cond_2
-    move-object v3, v5
+    move-object v3, v4
 
     :goto_1
     check-cast v3, Lcom/iMe/storage/domain/model/twitter/MediaInfoDomain;
@@ -319,12 +319,12 @@
 
     invoke-virtual {v3}, Lcom/iMe/storage/domain/model/twitter/MediaInfoDomain;->getUrl()Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v4
 
     :cond_3
-    if-nez v5, :cond_4
+    if-nez v4, :cond_4
 
-    const-string v5, ""
+    const-string v4, ""
 
     .line 51
     :cond_4
@@ -337,173 +337,182 @@
     move-result-object v0
 
     .line 52
-    sget v2, Lorg/telegram/messenger/R$id;->text_name:I
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
 
-    sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
+    const/4 v3, 0x2
 
-    invoke-static {v0, v2, v3}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setThemedTextColor(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;II)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
+    new-array v7, v3, [I
+
+    sget v8, Lorg/telegram/messenger/R$id;->text_name:I
+
+    aput v8, v7, v6
+
+    sget v9, Lorg/telegram/messenger/R$id;->text_post:I
+
+    aput v9, v7, v5
+
+    invoke-static {v0, v2, v7}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setThemedTextColor(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;I[I)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     move-result-object v0
 
     .line 53
-    sget v7, Lorg/telegram/messenger/R$id;->text_post:I
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayText:I
 
-    invoke-static {v0, v7, v3}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setThemedTextColor(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;II)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
+    new-array v7, v3, [I
+
+    sget v10, Lorg/telegram/messenger/R$id;->text_nickname:I
+
+    aput v10, v7, v6
+
+    sget v11, Lorg/telegram/messenger/R$id;->text_time:I
+
+    aput v11, v7, v5
+
+    invoke-static {v0, v2, v7}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setThemedTextColor(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;I[I)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     move-result-object v0
 
     .line 54
-    sget v3, Lorg/telegram/messenger/R$id;->text_nickname:I
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayText2:I
 
-    sget v8, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayText:I
+    const/4 v7, 0x3
 
-    invoke-static {v0, v3, v8}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setThemedTextColor(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;II)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
+    new-array v12, v7, [I
+
+    sget v13, Lorg/telegram/messenger/R$id;->text_comments_count:I
+
+    aput v13, v12, v6
+
+    sget v14, Lorg/telegram/messenger/R$id;->text_retweets_count:I
+
+    aput v14, v12, v5
+
+    sget v15, Lorg/telegram/messenger/R$id;->text_likes_count:I
+
+    aput v15, v12, v3
+
+    invoke-static {v0, v2, v12}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setThemedTextColor(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;I[I)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     move-result-object v0
 
-    .line 55
-    sget v9, Lorg/telegram/messenger/R$id;->text_time:I
+    const/4 v12, 0x4
 
-    invoke-static {v0, v9, v8}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setThemedTextColor(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;II)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
+    new-array v12, v12, [I
+
+    .line 55
+    sget v16, Lorg/telegram/messenger/R$id;->image_comments:I
+
+    aput v16, v12, v6
+
+    sget v16, Lorg/telegram/messenger/R$id;->image_retweets:I
+
+    aput v16, v12, v5
+
+    sget v6, Lorg/telegram/messenger/R$id;->image_share:I
+
+    aput v6, v12, v3
+
+    sget v3, Lorg/telegram/messenger/R$id;->image_menu:I
+
+    aput v3, v12, v7
+
+    invoke-static {v0, v2, v12}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setThemedImageColor(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;I[I)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     move-result-object v0
 
     .line 56
-    sget v8, Lorg/telegram/messenger/R$id;->text_comments_count:I
-
-    sget v10, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayText2:I
-
-    invoke-static {v0, v8, v10}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setThemedTextColor(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;II)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
-
-    move-result-object v0
-
-    .line 57
-    sget v11, Lorg/telegram/messenger/R$id;->text_retweets_count:I
-
-    invoke-static {v0, v11, v10}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setThemedTextColor(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;II)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
-
-    move-result-object v0
-
-    .line 58
-    sget v12, Lorg/telegram/messenger/R$id;->text_likes_count:I
-
-    invoke-static {v0, v12, v10}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setThemedTextColor(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;II)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
-
-    move-result-object v0
-
-    .line 59
-    sget v13, Lorg/telegram/messenger/R$id;->image_comments:I
-
-    invoke-static {v0, v13, v10}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setThemedImageColor(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;II)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
-
-    move-result-object v0
-
-    .line 60
-    sget v13, Lorg/telegram/messenger/R$id;->image_retweets:I
-
-    invoke-static {v0, v13, v10}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setThemedImageColor(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;II)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
-
-    move-result-object v0
-
-    .line 61
-    sget v13, Lorg/telegram/messenger/R$id;->image_share:I
-
-    invoke-static {v0, v13, v10}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setThemedImageColor(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;II)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
-
-    move-result-object v0
-
-    .line 62
-    sget v14, Lorg/telegram/messenger/R$id;->image_menu:I
-
-    invoke-static {v0, v14, v10}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setThemedImageColor(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;II)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
-
-    move-result-object v0
-
-    .line 63
-    sget v14, Lorg/telegram/messenger/R$id;->image_like:I
+    sget v3, Lorg/telegram/messenger/R$id;->image_like:I
 
     invoke-virtual/range {p2 .. p2}, Lcom/iMe/model/twitter/TweetItem;->isLiked()Z
 
-    move-result v15
+    move-result v7
 
-    if-eqz v15, :cond_5
+    if-eqz v7, :cond_5
 
-    sget v15, Lorg/telegram/messenger/R$drawable;->fork_ic_heart_filled_20:I
+    sget v7, Lorg/telegram/messenger/R$drawable;->fork_ic_heart_filled_20:I
 
     goto :goto_2
 
     :cond_5
-    sget v15, Lorg/telegram/messenger/R$drawable;->fork_ic_heart_20:I
+    sget v7, Lorg/telegram/messenger/R$drawable;->fork_ic_heart_20:I
 
     :goto_2
-    invoke-virtual {v0, v14, v15}, Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;->setImageResource(II)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
+    invoke-virtual {v0, v3, v7}, Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;->setImageResource(II)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     move-result-object v0
 
-    .line 64
-    invoke-static {v0, v13}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setAutoSizedCircleRippleBackground(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;I)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
+    .line 57
+    invoke-static {v0, v6}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setAutoSizedCircleRippleBackground(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;I)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     move-result-object v0
 
-    .line 65
+    .line 58
     invoke-virtual/range {p2 .. p2}, Lcom/iMe/model/twitter/TweetItem;->isLiked()Z
 
-    move-result v13
+    move-result v6
 
-    if-eqz v13, :cond_6
+    if-eqz v6, :cond_6
 
-    sget v10, Lorg/telegram/ui/ActionBar/Theme;->key_text_RedRegular:I
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_text_RedRegular:I
 
     :cond_6
-    invoke-static {v0, v14, v10}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setThemedImageColor(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;II)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
+    invoke-static {v0, v3, v2}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setThemedImageColor(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;II)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     move-result-object v0
 
-    new-array v10, v6, [I
+    new-array v2, v5, [I
 
-    aput v2, v10, v4
+    const/4 v3, 0x0
 
-    .line 66
-    invoke-static {v0, v10}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setMediumTypeface(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;[I)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
+    aput v8, v2, v3
 
-    move-result-object v0
+    .line 59
+    invoke-static {v0, v2}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setMediumTypeface(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;[I)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
-    .line 67
-    sget v4, Lorg/telegram/messenger/R$id;->image_avatar:I
+    move-result-object v16
+
+    .line 60
+    sget v17, Lorg/telegram/messenger/R$id;->image_avatar:I
 
     invoke-virtual/range {p2 .. p2}, Lcom/iMe/model/twitter/TweetItem;->getAvatarUrl()Ljava/lang/String;
 
-    move-result-object v10
+    move-result-object v18
 
-    sget v13, Lorg/telegram/messenger/R$drawable;->fork_logo_avatar:I
+    sget v0, Lorg/telegram/messenger/R$drawable;->fork_logo_avatar:I
 
-    invoke-static {v13}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v13
+    move-result-object v19
 
-    invoke-static {v0, v4, v10, v13, v6}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->loadImage(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;ILjava/lang/String;Ljava/lang/Integer;Z)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
+    const/16 v20, 0x0
+
+    const/16 v21, 0x8
+
+    const/16 v22, 0x0
+
+    invoke-static/range {v16 .. v22}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->loadImage$default(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;ILjava/lang/String;Ljava/lang/Integer;ZILjava/lang/Object;)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     move-result-object v0
 
-    .line 68
+    .line 61
     invoke-virtual/range {p2 .. p2}, Lcom/iMe/model/twitter/TweetItem;->getAuthorName()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v2
 
-    invoke-virtual {v0, v2, v4}, Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;->setText(ILjava/lang/CharSequence;)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
+    invoke-virtual {v0, v8, v2}, Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;->setText(ILjava/lang/CharSequence;)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     move-result-object v0
 
-    .line 69
+    .line 62
     invoke-virtual/range {p2 .. p2}, Lcom/iMe/model/twitter/TweetItem;->getAuthorNickname()Ljava/lang/String;
 
     move-result-object v2
 
-    invoke-virtual {v0, v3, v2}, Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;->setText(ILjava/lang/CharSequence;)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
+    invoke-virtual {v0, v10, v2}, Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;->setText(ILjava/lang/CharSequence;)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     move-result-object v0
 
-    .line 70
+    .line 63
     invoke-virtual/range {p2 .. p2}, Lcom/iMe/model/twitter/TweetItem;->getText()Ljava/lang/String;
 
     move-result-object v2
@@ -512,21 +521,39 @@
 
     move-result-object v2
 
-    invoke-virtual {v0, v7, v2}, Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;->setText(ILjava/lang/CharSequence;)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
+    invoke-virtual {v0, v9, v2}, Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;->setText(ILjava/lang/CharSequence;)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     move-result-object v0
 
-    .line 71
+    .line 64
     invoke-virtual/range {p2 .. p2}, Lcom/iMe/model/twitter/TweetItem;->getCommentsCountText()Ljava/lang/String;
 
     move-result-object v2
 
-    invoke-virtual {v0, v8, v2}, Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;->setText(ILjava/lang/CharSequence;)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
+    invoke-virtual {v0, v13, v2}, Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;->setText(ILjava/lang/CharSequence;)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     move-result-object v0
 
-    .line 72
+    .line 65
     invoke-virtual/range {p2 .. p2}, Lcom/iMe/model/twitter/TweetItem;->getRetweetsCountText()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v14, v2}, Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;->setText(ILjava/lang/CharSequence;)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
+
+    move-result-object v0
+
+    .line 66
+    invoke-virtual/range {p2 .. p2}, Lcom/iMe/model/twitter/TweetItem;->getLikesCountText()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v15, v2}, Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;->setText(ILjava/lang/CharSequence;)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
+
+    move-result-object v0
+
+    .line 67
+    invoke-virtual/range {p2 .. p2}, Lcom/iMe/model/twitter/TweetItem;->getDate()Ljava/lang/String;
 
     move-result-object v2
 
@@ -534,39 +561,21 @@
 
     move-result-object v0
 
-    .line 73
-    invoke-virtual/range {p2 .. p2}, Lcom/iMe/model/twitter/TweetItem;->getLikesCountText()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v12, v2}, Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;->setText(ILjava/lang/CharSequence;)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
-
-    move-result-object v0
-
-    .line 74
-    invoke-virtual/range {p2 .. p2}, Lcom/iMe/model/twitter/TweetItem;->getDate()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v9, v2}, Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;->setText(ILjava/lang/CharSequence;)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
-
-    move-result-object v0
-
-    .line 75
+    .line 68
     sget-object v2, Lcom/iMe/ui/adapter/provider/TweetProvider$convert$1$1;->INSTANCE:Lcom/iMe/ui/adapter/provider/TweetProvider$convert$1$1;
 
-    invoke-static {v0, v7, v2}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->applyForView(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;ILkotlin/jvm/functions/Function1;)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
+    invoke-static {v0, v9, v2}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->applyForView(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;ILkotlin/jvm/functions/Function1;)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     move-result-object v0
 
-    .line 79
+    .line 72
     sget v2, Lorg/telegram/messenger/R$id;->recycler:I
 
     new-instance v3, Lcom/iMe/ui/adapter/provider/TweetProvider$convert$1$2;
 
-    move-object/from16 v4, p0
+    move-object/from16 v5, p0
 
-    invoke-direct {v3, v5, v4, v1}, Lcom/iMe/ui/adapter/provider/TweetProvider$convert$1$2;-><init>(Ljava/lang/String;Lcom/iMe/ui/adapter/provider/TweetProvider;Lcom/iMe/model/twitter/TweetItem;)V
+    invoke-direct {v3, v4, v5, v1}, Lcom/iMe/ui/adapter/provider/TweetProvider$convert$1$2;-><init>(Ljava/lang/String;Lcom/iMe/ui/adapter/provider/TweetProvider;Lcom/iMe/model/twitter/TweetItem;)V
 
     invoke-static {v0, v2, v3}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->applyForView(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;ILkotlin/jvm/functions/Function1;)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
@@ -574,7 +583,7 @@
 .end method
 
 .method public convert(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;Lcom/iMe/model/twitter/TweetItem;Ljava/util/List;)V
-    .locals 3
+    .locals 8
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -599,7 +608,7 @@
 
     invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 98
+    .line 91
     sget p3, Lorg/telegram/messenger/R$id;->image_like:I
 
     invoke-virtual {p2}, Lcom/iMe/model/twitter/TweetItem;->isLiked()Z
@@ -620,7 +629,7 @@
 
     move-result-object p1
 
-    .line 99
+    .line 92
     invoke-virtual {p2}, Lcom/iMe/model/twitter/TweetItem;->isLiked()Z
 
     move-result v0
@@ -637,28 +646,32 @@
     :goto_1
     invoke-static {p1, p3, v0}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setThemedImageColor(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;II)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
-    move-result-object p1
+    move-result-object v1
 
-    .line 100
-    sget p3, Lorg/telegram/messenger/R$id;->image_avatar:I
+    .line 93
+    sget v2, Lorg/telegram/messenger/R$id;->image_avatar:I
 
     invoke-virtual {p2}, Lcom/iMe/model/twitter/TweetItem;->getAvatarUrl()Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object v3
 
-    sget v1, Lorg/telegram/messenger/R$drawable;->fork_logo_avatar:I
+    sget p1, Lorg/telegram/messenger/R$drawable;->fork_logo_avatar:I
 
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v1
+    move-result-object v4
 
-    const/4 v2, 0x1
+    const/4 v5, 0x0
 
-    invoke-static {p1, p3, v0, v1, v2}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->loadImage(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;ILjava/lang/String;Ljava/lang/Integer;Z)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
+    const/16 v6, 0x8
+
+    const/4 v7, 0x0
+
+    invoke-static/range {v1 .. v7}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->loadImage$default(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;ILjava/lang/String;Ljava/lang/Integer;ZILjava/lang/Object;)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     move-result-object p1
 
-    .line 101
+    .line 94
     sget p3, Lorg/telegram/messenger/R$id;->text_name:I
 
     invoke-virtual {p2}, Lcom/iMe/model/twitter/TweetItem;->getAuthorName()Ljava/lang/String;
@@ -669,7 +682,7 @@
 
     move-result-object p1
 
-    .line 102
+    .line 95
     sget p3, Lorg/telegram/messenger/R$id;->text_nickname:I
 
     invoke-virtual {p2}, Lcom/iMe/model/twitter/TweetItem;->getAuthorNickname()Ljava/lang/String;
@@ -680,7 +693,7 @@
 
     move-result-object p1
 
-    .line 103
+    .line 96
     sget p3, Lorg/telegram/messenger/R$id;->text_post:I
 
     invoke-virtual {p2}, Lcom/iMe/model/twitter/TweetItem;->getText()Ljava/lang/String;
@@ -691,7 +704,7 @@
 
     move-result-object p1
 
-    .line 104
+    .line 97
     sget p3, Lorg/telegram/messenger/R$id;->text_comments_count:I
 
     invoke-virtual {p2}, Lcom/iMe/model/twitter/TweetItem;->getCommentsCountText()Ljava/lang/String;
@@ -702,7 +715,7 @@
 
     move-result-object p1
 
-    .line 105
+    .line 98
     sget p3, Lorg/telegram/messenger/R$id;->text_retweets_count:I
 
     invoke-virtual {p2}, Lcom/iMe/model/twitter/TweetItem;->getRetweetsCountText()Ljava/lang/String;
@@ -713,7 +726,7 @@
 
     move-result-object p1
 
-    .line 106
+    .line 99
     sget p3, Lorg/telegram/messenger/R$id;->text_likes_count:I
 
     invoke-virtual {p2}, Lcom/iMe/model/twitter/TweetItem;->getLikesCountText()Ljava/lang/String;
@@ -724,7 +737,7 @@
 
     move-result-object p1
 
-    .line 107
+    .line 100
     sget p3, Lorg/telegram/messenger/R$id;->text_time:I
 
     invoke-virtual {p2}, Lcom/iMe/model/twitter/TweetItem;->getDate()Ljava/lang/String;
@@ -794,10 +807,10 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 112
+    .line 105
     invoke-super {p0, p1}, Lcom/chad/library/adapter/base/provider/BaseItemProvider;->onViewAttachedToWindow(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;)V
 
-    .line 113
+    .line 106
     sget v0, Lorg/telegram/messenger/R$id;->text_post:I
 
     sget-object v1, Lcom/iMe/ui/adapter/provider/TweetProvider$onViewAttachedToWindow$1;->INSTANCE:Lcom/iMe/ui/adapter/provider/TweetProvider$onViewAttachedToWindow$1;

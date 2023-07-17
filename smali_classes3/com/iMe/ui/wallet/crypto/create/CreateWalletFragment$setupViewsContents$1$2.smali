@@ -48,7 +48,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 815
+    .line 918
     invoke-virtual {p0}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$setupViewsContents$1$2;->invoke()V
 
     sget-object v0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
@@ -57,34 +57,16 @@
 .end method
 
 .method public final invoke()V
-    .locals 5
+    .locals 1
 
-    .line 816
+    .line 919
     iget-object v0, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$setupViewsContents$1$2;->this$0:Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;
 
-    .line 817
-    sget-object v1, Lcom/iMe/ui/wallet/crypto/create/secret_words_count/SecretWordsCountBottomSheetDialog;->Companion:Lcom/iMe/ui/wallet/crypto/create/secret_words_count/SecretWordsCountBottomSheetDialog$Companion;
+    invoke-static {v0}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->access$getPresenter(Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;)Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter;
 
-    invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
+    move-result-object v0
 
-    move-result-object v2
-
-    const-string v3, "parentActivity"
-
-    invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    new-instance v3, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$setupViewsContents$1$2$1;
-
-    iget-object v4, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$setupViewsContents$1$2;->this$0:Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;
-
-    invoke-direct {v3, v4}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$setupViewsContents$1$2$1;-><init>(Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;)V
-
-    invoke-virtual {v1, v2, v3}, Lcom/iMe/ui/wallet/crypto/create/secret_words_count/SecretWordsCountBottomSheetDialog$Companion;->newInstance(Landroid/app/Activity;Lkotlin/jvm/functions/Function1;)Lcom/iMe/ui/wallet/crypto/create/secret_words_count/SecretWordsCountBottomSheetDialog;
-
-    move-result-object v1
-
-    .line 816
-    invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->showDialog(Landroid/app/Dialog;)Landroid/app/Dialog;
+    invoke-virtual {v0}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter;->onSelectWordsCountClick()V
 
     return-void
 .end method

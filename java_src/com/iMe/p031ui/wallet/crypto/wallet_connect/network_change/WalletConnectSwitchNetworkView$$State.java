@@ -16,15 +16,20 @@ public class WalletConnectSwitchNetworkView$$State extends MvpViewState<WalletCo
         BaseView.CC.$default$finishScreen(this);
     }
 
+    @Override // com.iMe.p031ui.base.mvp.base.BaseView
+    public /* synthetic */ void removeSelfFromStackImmediately() {
+        BaseView.CC.$default$removeSelfFromStackImmediately(this);
+    }
+
     @Override // com.iMe.p031ui.wallet.crypto.wallet_connect.network_change.WalletConnectSwitchNetworkView
-    public void setupScreenWithData(String str, String str2, String str3, int i, String str4) {
-        SetupScreenWithDataCommand setupScreenWithDataCommand = new SetupScreenWithDataCommand(this, str, str2, str3, i, str4);
+    public void setupScreenWithData(String str, String str2, String str3, String str4, String str5) {
+        SetupScreenWithDataCommand setupScreenWithDataCommand = new SetupScreenWithDataCommand(this, str, str2, str3, str4, str5);
         this.viewCommands.beforeApply(setupScreenWithDataCommand);
         if (hasNotView().booleanValue()) {
             return;
         }
         for (View view : this.views) {
-            view.setupScreenWithData(str, str2, str3, i, str4);
+            view.setupScreenWithData(str, str2, str3, str4, str5);
         }
         this.viewCommands.afterApply(setupScreenWithDataCommand);
     }
@@ -74,22 +79,22 @@ public class WalletConnectSwitchNetworkView$$State extends MvpViewState<WalletCo
     public class SetupScreenWithDataCommand extends ViewCommand<WalletConnectSwitchNetworkView> {
         public final String iconUrl;
         public final String name;
-        public final int networkIconResId;
+        public final String networkLogoUrl;
         public final String networkName;
         public final String url;
 
-        SetupScreenWithDataCommand(WalletConnectSwitchNetworkView$$State walletConnectSwitchNetworkView$$State, String str, String str2, String str3, int i, String str4) {
+        SetupScreenWithDataCommand(WalletConnectSwitchNetworkView$$State walletConnectSwitchNetworkView$$State, String str, String str2, String str3, String str4, String str5) {
             super("setupScreenWithData", AddToEndSingleStrategy.class);
             this.iconUrl = str;
             this.name = str2;
             this.url = str3;
-            this.networkIconResId = i;
-            this.networkName = str4;
+            this.networkLogoUrl = str4;
+            this.networkName = str5;
         }
 
         @Override // moxy.viewstate.ViewCommand
         public void apply(WalletConnectSwitchNetworkView walletConnectSwitchNetworkView) {
-            walletConnectSwitchNetworkView.setupScreenWithData(this.iconUrl, this.name, this.url, this.networkIconResId, this.networkName);
+            walletConnectSwitchNetworkView.setupScreenWithData(this.iconUrl, this.name, this.url, this.networkLogoUrl, this.networkName);
         }
     }
 

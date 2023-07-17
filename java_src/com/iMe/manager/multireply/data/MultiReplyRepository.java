@@ -31,7 +31,7 @@ public final class MultiReplyRepository {
     public final Single<MessageLinkPattern> requestPattern(MessageObject message, TLRPC$Chat currentChat) {
         Intrinsics.checkNotNullParameter(message, "message");
         Intrinsics.checkNotNullParameter(currentChat, "currentChat");
-        Single<MessageLinkPattern> subscribeOn = Observable.concat(this.messageLinkCache.getLinkPatternFromCache(currentChat.f1433id), getLinkPatternFromApi(message, currentChat)).firstOrError().subscribeOn(this.schedulersProvider.mo699io());
+        Single<MessageLinkPattern> subscribeOn = Observable.concat(this.messageLinkCache.getLinkPatternFromCache(currentChat.f1515id), getLinkPatternFromApi(message, currentChat)).firstOrError().subscribeOn(this.schedulersProvider.mo699io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn, "concat(\n            mess…(schedulersProvider.io())");
         return subscribeOn;
     }

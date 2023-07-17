@@ -77,7 +77,7 @@ public final class BackupWordSwitcherPresenter extends BasePresenter<BackupWordS
             }
         }
         strArr[2] = str;
-        listOfNotNull = CollectionsKt__CollectionsKt.listOfNotNull(strArr);
+        listOfNotNull = CollectionsKt__CollectionsKt.listOfNotNull((Object[]) strArr);
         shuffled = CollectionsKt__CollectionsJVMKt.shuffled(listOfNotNull);
         if (shuffled.size() == 3) {
             ((BackupWordSwitcherMvpView) getViewState()).setupBackupWords(shuffled);

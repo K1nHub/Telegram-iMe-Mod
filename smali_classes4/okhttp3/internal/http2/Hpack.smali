@@ -598,7 +598,7 @@
     .line 108
     new-instance v2, Lokhttp3/internal/http2/Header;
 
-    const-string v3, "range"
+    const-string/jumbo v3, "range"
 
     invoke-direct {v2, v3, v4}, Lokhttp3/internal/http2/Header;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
@@ -609,7 +609,7 @@
     .line 109
     new-instance v2, Lokhttp3/internal/http2/Header;
 
-    const-string v3, "referer"
+    const-string/jumbo v3, "referer"
 
     invoke-direct {v2, v3, v4}, Lokhttp3/internal/http2/Header;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
@@ -620,7 +620,7 @@
     .line 110
     new-instance v2, Lokhttp3/internal/http2/Header;
 
-    const-string v3, "refresh"
+    const-string/jumbo v3, "refresh"
 
     invoke-direct {v2, v3, v4}, Lokhttp3/internal/http2/Header;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
@@ -631,7 +631,7 @@
     .line 111
     new-instance v2, Lokhttp3/internal/http2/Header;
 
-    const-string v3, "retry-after"
+    const-string/jumbo v3, "retry-after"
 
     invoke-direct {v2, v3, v4}, Lokhttp3/internal/http2/Header;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
@@ -642,7 +642,7 @@
     .line 112
     new-instance v2, Lokhttp3/internal/http2/Header;
 
-    const-string v3, "server"
+    const-string/jumbo v3, "server"
 
     invoke-direct {v2, v3, v4}, Lokhttp3/internal/http2/Header;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
@@ -653,7 +653,7 @@
     .line 113
     new-instance v2, Lokhttp3/internal/http2/Header;
 
-    const-string v3, "set-cookie"
+    const-string/jumbo v3, "set-cookie"
 
     invoke-direct {v2, v3, v4}, Lokhttp3/internal/http2/Header;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 

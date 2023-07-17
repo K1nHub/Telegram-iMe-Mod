@@ -46,24 +46,34 @@
 
 # virtual methods
 .method public final invoke()Lcom/iMe/fork/ui/view/FloatingActionButton;
-    .locals 3
+    .locals 7
 
     .line 70
-    new-instance v0, Lcom/iMe/fork/ui/view/FloatingActionButton;
+    new-instance v6, Lcom/iMe/fork/ui/view/FloatingActionButton;
 
-    iget-object v1, p0, Lcom/iMe/ui/pager/TelegramViewPagerFragment$floatingActionButton$2;->this$0:Lcom/iMe/ui/pager/TelegramViewPagerFragment;
+    iget-object v0, p0, Lcom/iMe/ui/pager/TelegramViewPagerFragment$floatingActionButton$2;->this$0:Lcom/iMe/ui/pager/TelegramViewPagerFragment;
 
-    invoke-virtual {v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
+    invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object v1
 
-    const-string v2, "parentActivity"
+    const-string v0, "parentActivity"
 
-    invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-direct {v0, v1}, Lcom/iMe/fork/ui/view/FloatingActionButton;-><init>(Landroid/content/Context;)V
+    const/4 v2, 0x0
 
-    return-object v0
+    const/4 v3, 0x0
+
+    const/4 v4, 0x6
+
+    const/4 v5, 0x0
+
+    move-object v0, v6
+
+    invoke-direct/range {v0 .. v5}, Lcom/iMe/fork/ui/view/FloatingActionButton;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;IILkotlin/jvm/internal/DefaultConstructorMarker;)V
+
+    return-object v6
 .end method
 
 .method public bridge synthetic invoke()Ljava/lang/Object;

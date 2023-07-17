@@ -3,12 +3,12 @@
 .source "DialogsActivity.java"
 
 # interfaces
-.implements Lorg/telegram/ui/ChatActivity$ChatActivityDelegate;
+.implements Lorg/telegram/ui/Components/RecyclerListView$onMultiSelectionChanged;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/DialogsActivity;->onItemClick(Landroid/view/View;ILandroidx/recyclerview/widget/RecyclerView$Adapter;)V
+    value = Lorg/telegram/ui/DialogsActivity;->onItemLongClick(Lorg/telegram/ui/Components/RecyclerListView;Landroid/view/View;IFFILandroidx/recyclerview/widget/RecyclerView$Adapter;)Z
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,480 +20,353 @@
 # instance fields
 .field final synthetic this$0:Lorg/telegram/ui/DialogsActivity;
 
-.field final synthetic val$finalDialogId:J
+.field final synthetic val$adapter:Landroidx/recyclerview/widget/RecyclerView$Adapter;
+
+.field final synthetic val$alreadySelectedDialogs:Ljava/util/ArrayList;
+
+.field final synthetic val$currentViewPage:Lorg/telegram/ui/DialogsActivity$ViewPage;
+
+.field final synthetic val$dialogsType:I
+
+.field final synthetic val$unselect:Z
 
 
 # direct methods
-.method public static synthetic $r8$lambda$Hxh3Qr_jhK3HdfheG_QhEPS0IBU(Lorg/telegram/ui/DialogsActivity$56;ZJLjava/util/ArrayList;I)V
+.method constructor <init>(Lorg/telegram/ui/DialogsActivity;ILandroidx/recyclerview/widget/RecyclerView$Adapter;ZLjava/util/ArrayList;Lorg/telegram/ui/DialogsActivity$ViewPage;)V
     .locals 0
 
-    invoke-direct/range {p0 .. p5}, Lorg/telegram/ui/DialogsActivity$56;->lambda$onUnpin$1(ZJLjava/util/ArrayList;I)V
-
-    return-void
-.end method
-
-.method public static synthetic $r8$lambda$tmolNXp_p5ZaMUjKFYREGUXLhzc(Lorg/telegram/ui/DialogsActivity$56;JLjava/util/ArrayList;Ljava/util/ArrayList;II)V
-    .locals 0
-
-    invoke-direct/range {p0 .. p6}, Lorg/telegram/ui/DialogsActivity$56;->lambda$onUnpin$0(JLjava/util/ArrayList;Ljava/util/ArrayList;II)V
-
-    return-void
-.end method
-
-.method constructor <init>(Lorg/telegram/ui/DialogsActivity;J)V
-    .locals 0
-
-    .line 9973
+    .line 10110
     iput-object p1, p0, Lorg/telegram/ui/DialogsActivity$56;->this$0:Lorg/telegram/ui/DialogsActivity;
 
-    iput-wide p2, p0, Lorg/telegram/ui/DialogsActivity$56;->val$finalDialogId:J
+    iput p2, p0, Lorg/telegram/ui/DialogsActivity$56;->val$dialogsType:I
+
+    iput-object p3, p0, Lorg/telegram/ui/DialogsActivity$56;->val$adapter:Landroidx/recyclerview/widget/RecyclerView$Adapter;
+
+    iput-boolean p4, p0, Lorg/telegram/ui/DialogsActivity$56;->val$unselect:Z
+
+    iput-object p5, p0, Lorg/telegram/ui/DialogsActivity$56;->val$alreadySelectedDialogs:Ljava/util/ArrayList;
+
+    iput-object p6, p0, Lorg/telegram/ui/DialogsActivity$56;->val$currentViewPage:Lorg/telegram/ui/DialogsActivity$ViewPage;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method private synthetic lambda$onUnpin$0(JLjava/util/ArrayList;Ljava/util/ArrayList;II)V
-    .locals 3
 
-    .line 9998
+# virtual methods
+.method public canSelect(I)Z
+    .locals 5
+
+    .line 10137
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$56;->this$0:Lorg/telegram/ui/DialogsActivity;
 
-    invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getNotificationCenter()Lorg/telegram/messenger/NotificationCenter;
+    invoke-static {v0}, Lorg/telegram/ui/DialogsActivity;->access$38300(Lorg/telegram/ui/DialogsActivity;)I
+
+    move-result v1
+
+    iget v2, p0, Lorg/telegram/ui/DialogsActivity$56;->val$dialogsType:I
+
+    iget-object v3, p0, Lorg/telegram/ui/DialogsActivity$56;->this$0:Lorg/telegram/ui/DialogsActivity;
+
+    invoke-static {v3}, Lorg/telegram/ui/DialogsActivity;->access$8200(Lorg/telegram/ui/DialogsActivity;)I
+
+    move-result v3
+
+    iget-object v4, p0, Lorg/telegram/ui/DialogsActivity$56;->this$0:Lorg/telegram/ui/DialogsActivity;
+
+    invoke-static {v4}, Lorg/telegram/ui/DialogsActivity;->access$21900(Lorg/telegram/ui/DialogsActivity;)Z
+
+    move-result v4
+
+    invoke-virtual {v0, v1, v2, v3, v4}, Lorg/telegram/ui/DialogsActivity;->getDialogsArray(IIIZ)Ljava/util/ArrayList;
 
     move-result-object v0
 
-    sget v1, Lorg/telegram/messenger/NotificationCenter;->didLoadBookmarkMessages:I
+    .line 10138
+    iget-object v1, p0, Lorg/telegram/ui/DialogsActivity$56;->val$adapter:Landroidx/recyclerview/widget/RecyclerView$Adapter;
 
-    const/16 v2, 0x8
+    check-cast v1, Lorg/telegram/ui/Adapters/DialogsAdapter;
 
-    new-array v2, v2, [Ljava/lang/Object;
-
-    invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object p1
-
-    const/4 p2, 0x0
-
-    aput-object p1, v2, p2
-
-    const/4 p1, 0x1
-
-    aput-object p3, v2, p1
-
-    sget-object p1, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
-
-    const/4 p3, 0x2
-
-    aput-object p1, v2, p3
-
-    const/4 p3, 0x3
-
-    aput-object p4, v2, p3
-
-    const/4 p3, 0x4
-
-    const/4 p4, 0x0
-
-    aput-object p4, v2, p3
-
-    invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object p2
-
-    const/4 p3, 0x5
-
-    aput-object p2, v2, p3
-
-    invoke-static {p5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object p2
-
-    const/4 p3, 0x6
-
-    aput-object p2, v2, p3
-
-    const/4 p2, 0x7
-
-    aput-object p1, v2, p2
-
-    invoke-virtual {v0, v1, v2}, Lorg/telegram/messenger/NotificationCenter;->postNotificationName(I[Ljava/lang/Object;)V
-
-    .line 9999
-    iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$56;->this$0:Lorg/telegram/ui/DialogsActivity;
-
-    invoke-static {p1}, Lorg/telegram/ui/DialogsActivity;->access$38800(Lorg/telegram/ui/DialogsActivity;)I
+    invoke-virtual {v1, p1}, Lorg/telegram/ui/Adapters/DialogsAdapter;->fixPosition(I)I
 
     move-result p1
 
-    if-ne p6, p1, :cond_0
+    const/4 v1, 0x0
 
-    .line 10000
-    iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$56;->this$0:Lorg/telegram/ui/DialogsActivity;
+    if-ltz p1, :cond_3
 
-    invoke-static {p1, p4}, Lorg/telegram/ui/DialogsActivity;->access$38602(Lorg/telegram/ui/DialogsActivity;Lorg/telegram/ui/Components/Bulletin;)Lorg/telegram/ui/Components/Bulletin;
+    .line 10139
+    invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
-    :cond_0
-    return-void
-.end method
+    move-result v2
 
-.method private synthetic lambda$onUnpin$1(ZJLjava/util/ArrayList;I)V
-    .locals 0
-
-    if-eqz p1, :cond_0
-
-    .line 10004
-    iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$56;->this$0:Lorg/telegram/ui/DialogsActivity;
-
-    invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getBookmarksController()Lcom/iMe/fork/controller/BookmarksController;
-
-    move-result-object p1
-
-    invoke-virtual {p1, p2, p3, p4}, Lcom/iMe/fork/controller/BookmarksController;->unbookmarkMessages(JLjava/util/ArrayList;)V
+    if-lt p1, v2, :cond_0
 
     goto :goto_0
 
-    .line 10006
+    .line 10142
     :cond_0
-    iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$56;->this$0:Lorg/telegram/ui/DialogsActivity;
-
-    invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getBookmarksController()Lcom/iMe/fork/controller/BookmarksController;
+    invoke-virtual {v0, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object p1
 
-    invoke-virtual {p1, p2, p3}, Lcom/iMe/fork/controller/BookmarksController;->unbookmarkAllMessages(J)V
+    check-cast p1, Lorg/telegram/tgnet/TLRPC$Dialog;
 
-    .line 10008
-    :goto_0
-    iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$56;->this$0:Lorg/telegram/ui/DialogsActivity;
+    if-nez p1, :cond_1
 
-    invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
+    return v1
 
-    move-result-object p1
-
-    invoke-virtual {p1}, Lorg/telegram/messenger/MessagesController;->loadManagementBookmarks()V
-
-    .line 10009
-    iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$56;->this$0:Lorg/telegram/ui/DialogsActivity;
-
-    invoke-static {p1}, Lorg/telegram/ui/DialogsActivity;->access$38800(Lorg/telegram/ui/DialogsActivity;)I
-
-    move-result p1
-
-    if-ne p5, p1, :cond_1
-
-    .line 10010
-    iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$56;->this$0:Lorg/telegram/ui/DialogsActivity;
-
-    const/4 p2, 0x0
-
-    invoke-static {p1, p2}, Lorg/telegram/ui/DialogsActivity;->access$38602(Lorg/telegram/ui/DialogsActivity;Lorg/telegram/ui/Components/Bulletin;)Lorg/telegram/ui/Components/Bulletin;
-
+    .line 10146
     :cond_1
-    return-void
-.end method
+    iget-boolean v0, p0, Lorg/telegram/ui/DialogsActivity$56;->val$unselect:Z
 
+    const/4 v2, 0x1
 
-# virtual methods
-.method public synthetic onForwardingMessagesChanged(Ljava/util/ArrayList;)V
-    .locals 0
+    if-nez v0, :cond_2
 
-    invoke-static {p0, p1}, Lorg/telegram/ui/ChatActivity$ChatActivityDelegate$-CC;->$default$onForwardingMessagesChanged(Lorg/telegram/ui/ChatActivity$ChatActivityDelegate;Ljava/util/ArrayList;)V
+    iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$56;->val$alreadySelectedDialogs:Ljava/util/ArrayList;
 
-    return-void
-.end method
-
-.method public synthetic onReport()V
-    .locals 0
-
-    invoke-static {p0}, Lorg/telegram/ui/ChatActivity$ChatActivityDelegate$-CC;->$default$onReport(Lorg/telegram/ui/ChatActivity$ChatActivityDelegate;)V
-
-    return-void
-.end method
-
-.method public onUnpin(ZZZZLorg/telegram/ui/ChatActivity;Ljava/util/ArrayList;Ljava/util/HashMap;)V
-    .locals 19
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(ZZZZ",
-            "Lorg/telegram/ui/ChatActivity;",
-            "Ljava/util/ArrayList<",
-            "Ljava/lang/Integer;",
-            ">;",
-            "Ljava/util/HashMap<",
-            "Ljava/lang/Integer;",
-            "Lorg/telegram/messenger/MessageObject;",
-            ">;)V"
-        }
-    .end annotation
-
-    move-object/from16 v8, p0
-
-    .line 9988
-    invoke-virtual/range {p5 .. p5}, Lorg/telegram/ui/ChatActivity;->getTotalBookmarkMessagesCount()I
-
-    move-result v6
-
-    .line 9989
-    new-instance v9, Ljava/util/ArrayList;
-
-    move-object/from16 v0, p6
-
-    invoke-direct {v9, v0}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
-
-    .line 9990
-    new-instance v5, Ljava/util/ArrayList;
-
-    invoke-virtual/range {p7 .. p7}, Ljava/util/HashMap;->values()Ljava/util/Collection;
-
-    move-result-object v0
-
-    invoke-direct {v5, v0}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
-
-    .line 9991
-    iget-object v0, v8, Lorg/telegram/ui/DialogsActivity$56;->this$0:Lorg/telegram/ui/DialogsActivity;
-
-    invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getNotificationCenter()Lorg/telegram/messenger/NotificationCenter;
-
-    move-result-object v0
-
-    sget v1, Lorg/telegram/messenger/NotificationCenter;->didLoadBookmarkMessages:I
-
-    const/16 v2, 0x8
-
-    new-array v2, v2, [Ljava/lang/Object;
-
-    iget-wide v3, v8, Lorg/telegram/ui/DialogsActivity$56;->val$finalDialogId:J
+    iget-wide v3, p1, Lorg/telegram/tgnet/TLRPC$Dialog;->id:J
 
     invoke-static {v3, v4}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v3
 
-    const/4 v10, 0x0
+    invoke-virtual {v0, v3}, Ljava/util/ArrayList;->contains(Ljava/lang/Object;)Z
 
-    aput-object v3, v2, v10
+    move-result v0
 
-    const/4 v3, 0x1
+    if-nez v0, :cond_2
 
-    aput-object v9, v2, v3
+    return v2
 
-    sget-object v4, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
-
-    const/4 v7, 0x2
-
-    aput-object v4, v2, v7
-
-    const/4 v4, 0x3
-
-    const/4 v7, 0x0
-
-    aput-object v7, v2, v4
-
-    const/4 v4, 0x4
-
-    aput-object v7, v2, v4
-
-    invoke-static {v10}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v4
-
-    const/4 v7, 0x5
-
-    aput-object v4, v2, v7
-
-    invoke-virtual {v5}, Ljava/util/ArrayList;->size()I
-
-    move-result v4
-
-    sub-int v4, v6, v4
-
-    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v4
-
-    const/4 v7, 0x6
-
-    aput-object v4, v2, v7
-
-    sget-object v4, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
-
-    const/4 v7, 0x7
-
-    aput-object v4, v2, v7
-
-    invoke-virtual {v0, v1, v2}, Lorg/telegram/messenger/NotificationCenter;->postNotificationName(I[Ljava/lang/Object;)V
-
-    .line 9992
-    iget-object v0, v8, Lorg/telegram/ui/DialogsActivity$56;->this$0:Lorg/telegram/ui/DialogsActivity;
-
-    invoke-static {v0}, Lorg/telegram/ui/DialogsActivity;->access$38600(Lorg/telegram/ui/DialogsActivity;)Lorg/telegram/ui/Components/Bulletin;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_0
-
-    .line 9993
-    iget-object v0, v8, Lorg/telegram/ui/DialogsActivity$56;->this$0:Lorg/telegram/ui/DialogsActivity;
-
-    invoke-static {v0}, Lorg/telegram/ui/DialogsActivity;->access$38600(Lorg/telegram/ui/DialogsActivity;)Lorg/telegram/ui/Components/Bulletin;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lorg/telegram/ui/Components/Bulletin;->hide()V
-
-    .line 9995
-    :cond_0
-    iget-object v0, v8, Lorg/telegram/ui/DialogsActivity$56;->this$0:Lorg/telegram/ui/DialogsActivity;
-
-    invoke-static {v0, v3}, Lorg/telegram/ui/DialogsActivity;->access$38702(Lorg/telegram/ui/DialogsActivity;Z)Z
-
-    .line 9996
-    iget-object v0, v8, Lorg/telegram/ui/DialogsActivity$56;->this$0:Lorg/telegram/ui/DialogsActivity;
-
-    invoke-static {v0}, Lorg/telegram/ui/DialogsActivity;->access$38804(Lorg/telegram/ui/DialogsActivity;)I
-
-    move-result v11
-
-    .line 9997
-    iget-object v12, v8, Lorg/telegram/ui/DialogsActivity$56;->this$0:Lorg/telegram/ui/DialogsActivity;
-
-    if-eqz p3, :cond_1
-
-    move-object/from16 v13, p5
-
-    goto :goto_0
-
-    :cond_1
-    move-object v13, v12
-
-    :goto_0
-    invoke-virtual {v5}, Ljava/util/ArrayList;->size()I
-
-    move-result v14
-
-    const/4 v15, 0x0
-
-    iget-wide v2, v8, Lorg/telegram/ui/DialogsActivity$56;->val$finalDialogId:J
-
-    new-instance v16, Lorg/telegram/ui/DialogsActivity$56$$ExternalSyntheticLambda0;
-
-    move-object/from16 v0, v16
-
-    move-object/from16 v1, p0
-
-    move-object v4, v9
-
-    move v7, v11
-
-    invoke-direct/range {v0 .. v7}, Lorg/telegram/ui/DialogsActivity$56$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/DialogsActivity$56;JLjava/util/ArrayList;Ljava/util/ArrayList;II)V
-
-    iget-wide v3, v8, Lorg/telegram/ui/DialogsActivity$56;->val$finalDialogId:J
-
-    new-instance v17, Lorg/telegram/ui/DialogsActivity$56$$ExternalSyntheticLambda1;
-
-    move-object/from16 v0, v17
-
-    move/from16 v2, p3
-
-    move-object v5, v9
-
-    move v6, v11
-
-    invoke-direct/range {v0 .. v6}, Lorg/telegram/ui/DialogsActivity$56$$ExternalSyntheticLambda1;-><init>(Lorg/telegram/ui/DialogsActivity$56;ZJLjava/util/ArrayList;I)V
-
-    iget-object v0, v8, Lorg/telegram/ui/DialogsActivity$56;->this$0:Lorg/telegram/ui/DialogsActivity;
-
-    .line 10012
-    invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getResourceProvider()Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
-
-    move-result-object v18
-
-    .line 9997
-    invoke-static/range {v13 .. v18}, Lorg/telegram/ui/Components/BulletinFactory;->createUnpinAllMessagesBulletin(Lorg/telegram/ui/ActionBar/BaseFragment;IZLjava/lang/Runnable;Ljava/lang/Runnable;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)Lorg/telegram/ui/Components/Bulletin;
-
-    move-result-object v0
-
-    invoke-static {v12, v0}, Lorg/telegram/ui/DialogsActivity;->access$38602(Lorg/telegram/ui/DialogsActivity;Lorg/telegram/ui/Components/Bulletin;)Lorg/telegram/ui/Components/Bulletin;
-
-    if-eqz p3, :cond_2
-
-    .line 10013
-    iget-object v0, v8, Lorg/telegram/ui/DialogsActivity$56;->this$0:Lorg/telegram/ui/DialogsActivity;
-
-    invoke-static {v0}, Lorg/telegram/ui/DialogsActivity;->access$38600(Lorg/telegram/ui/DialogsActivity;)Lorg/telegram/ui/Components/Bulletin;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_2
-
-    .line 10014
-    iget-object v0, v8, Lorg/telegram/ui/DialogsActivity$56;->this$0:Lorg/telegram/ui/DialogsActivity;
-
-    invoke-static {v0, v10}, Lorg/telegram/ui/DialogsActivity;->access$38702(Lorg/telegram/ui/DialogsActivity;Z)Z
-
-    .line 10015
-    iget-object v0, v8, Lorg/telegram/ui/DialogsActivity$56;->this$0:Lorg/telegram/ui/DialogsActivity;
-
-    invoke-static {v0}, Lorg/telegram/ui/DialogsActivity;->access$38600(Lorg/telegram/ui/DialogsActivity;)Lorg/telegram/ui/Components/Bulletin;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lorg/telegram/ui/Components/Bulletin;->show()Lorg/telegram/ui/Components/Bulletin;
-
+    .line 10149
     :cond_2
-    return-void
-.end method
+    iget-boolean v0, p0, Lorg/telegram/ui/DialogsActivity$56;->val$unselect:Z
 
-.method public openReplyMessage(I)V
-    .locals 3
+    if-eqz v0, :cond_3
 
-    .line 9976
-    iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$56;->this$0:Lorg/telegram/ui/DialogsActivity;
+    iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$56;->val$alreadySelectedDialogs:Ljava/util/ArrayList;
 
-    iget-wide v1, p0, Lorg/telegram/ui/DialogsActivity$56;->val$finalDialogId:J
+    iget-wide v3, p1, Lorg/telegram/tgnet/TLRPC$Dialog;->id:J
 
-    invoke-static {v1, v2, p1}, Lorg/telegram/ui/ChatActivity;->newInstanceForDialogId(JI)Lorg/telegram/ui/ChatActivity;
+    invoke-static {v3, v4}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object p1
 
-    invoke-virtual {v0, p1}, Lorg/telegram/ui/DialogsActivity;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
+    invoke-virtual {v0, p1}, Ljava/util/ArrayList;->contains(Ljava/lang/Object;)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_3
+
+    return v2
+
+    :cond_3
+    :goto_0
+    return v1
+.end method
+
+.method public checkPosition(IZ)I
+    .locals 0
+
+    return p1
+.end method
+
+.method public getPaddings([I)V
+    .locals 2
+
+    const/4 v0, 0x1
+
+    const/4 v1, 0x0
+
+    .line 10167
+    aput v1, p1, v0
+
+    aput v1, p1, v1
 
     return-void
 .end method
 
-.method public openSearch(Ljava/lang/String;)V
-    .locals 4
+.method public limitReached()Z
+    .locals 1
 
-    .line 9981
-    new-instance v0, Landroid/os/Bundle;
+    const/4 v0, 0x0
 
-    invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
+    return v0
+.end method
 
-    const-string v1, "searchFromString"
+.method public onSelectionChanged(IZFF)V
+    .locals 3
 
-    .line 9982
-    invoke-virtual {v0, v1, p1}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
+    .line 10113
+    iget-object p3, p0, Lorg/telegram/ui/DialogsActivity$56;->this$0:Lorg/telegram/ui/DialogsActivity;
 
-    .line 9983
-    iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$56;->this$0:Lorg/telegram/ui/DialogsActivity;
+    invoke-static {p3}, Lorg/telegram/ui/DialogsActivity;->access$38100(Lorg/telegram/ui/DialogsActivity;)I
 
-    iget-wide v1, p0, Lorg/telegram/ui/DialogsActivity$56;->val$finalDialogId:J
+    move-result p4
 
-    const/4 v3, 0x0
+    iget v0, p0, Lorg/telegram/ui/DialogsActivity$56;->val$dialogsType:I
 
-    invoke-static {v1, v2, v3, v0}, Lorg/telegram/ui/ChatActivity;->newInstanceForDialogId(JILandroid/os/Bundle;)Lorg/telegram/ui/ChatActivity;
+    iget-object v1, p0, Lorg/telegram/ui/DialogsActivity$56;->this$0:Lorg/telegram/ui/DialogsActivity;
+
+    invoke-static {v1}, Lorg/telegram/ui/DialogsActivity;->access$8200(Lorg/telegram/ui/DialogsActivity;)I
+
+    move-result v1
+
+    iget-object v2, p0, Lorg/telegram/ui/DialogsActivity$56;->this$0:Lorg/telegram/ui/DialogsActivity;
+
+    invoke-static {v2}, Lorg/telegram/ui/DialogsActivity;->access$21900(Lorg/telegram/ui/DialogsActivity;)Z
+
+    move-result v2
+
+    invoke-virtual {p3, p4, v0, v1, v2}, Lorg/telegram/ui/DialogsActivity;->getDialogsArray(IIIZ)Ljava/util/ArrayList;
+
+    move-result-object p3
+
+    .line 10114
+    iget-object p4, p0, Lorg/telegram/ui/DialogsActivity$56;->val$adapter:Landroidx/recyclerview/widget/RecyclerView$Adapter;
+
+    check-cast p4, Lorg/telegram/ui/Adapters/DialogsAdapter;
+
+    invoke-virtual {p4, p1}, Lorg/telegram/ui/Adapters/DialogsAdapter;->fixPosition(I)I
+
+    move-result p1
+
+    .line 10115
+    iget-boolean p4, p0, Lorg/telegram/ui/DialogsActivity$56;->val$unselect:Z
+
+    if-eqz p4, :cond_0
+
+    xor-int/lit8 p2, p2, 0x1
+
+    :cond_0
+    if-ltz p1, :cond_5
+
+    .line 10118
+    invoke-virtual {p3}, Ljava/util/ArrayList;->size()I
+
+    move-result p4
+
+    if-lt p1, p4, :cond_1
+
+    goto :goto_0
+
+    .line 10121
+    :cond_1
+    invoke-virtual {p3, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Lorg/telegram/tgnet/TLRPC$Dialog;
+
+    if-eqz p1, :cond_5
+
+    .line 10122
+    instance-of p3, p1, Lorg/telegram/tgnet/TLRPC$TL_dialogFolder;
+
+    if-eqz p3, :cond_2
+
+    goto :goto_0
+
+    :cond_2
+    if-eqz p2, :cond_3
+
+    .line 10125
+    iget-object p3, p0, Lorg/telegram/ui/DialogsActivity$56;->this$0:Lorg/telegram/ui/DialogsActivity;
+
+    invoke-static {p3}, Lorg/telegram/ui/DialogsActivity;->access$2500(Lorg/telegram/ui/DialogsActivity;)Ljava/util/ArrayList;
+
+    move-result-object p3
+
+    iget-wide v0, p1, Lorg/telegram/tgnet/TLRPC$Dialog;->id:J
+
+    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object p4
+
+    invoke-virtual {p3, p4}, Ljava/util/ArrayList;->contains(Ljava/lang/Object;)Z
+
+    move-result p3
+
+    if-eqz p3, :cond_3
+
+    return-void
+
+    :cond_3
+    if-nez p2, :cond_4
+
+    .line 10128
+    iget-object p2, p0, Lorg/telegram/ui/DialogsActivity$56;->this$0:Lorg/telegram/ui/DialogsActivity;
+
+    invoke-static {p2}, Lorg/telegram/ui/DialogsActivity;->access$2500(Lorg/telegram/ui/DialogsActivity;)Ljava/util/ArrayList;
+
+    move-result-object p2
+
+    iget-wide p3, p1, Lorg/telegram/tgnet/TLRPC$Dialog;->id:J
+
+    invoke-static {p3, p4}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object p3
+
+    invoke-virtual {p2, p3}, Ljava/util/ArrayList;->contains(Ljava/lang/Object;)Z
+
+    move-result p2
+
+    if-nez p2, :cond_4
+
+    return-void
+
+    .line 10131
+    :cond_4
+    iget-object p2, p0, Lorg/telegram/ui/DialogsActivity$56;->this$0:Lorg/telegram/ui/DialogsActivity;
+
+    iget-wide p3, p1, Lorg/telegram/tgnet/TLRPC$Dialog;->id:J
+
+    const/4 v0, 0x0
+
+    invoke-static {p2, p3, p4, v0}, Lorg/telegram/ui/DialogsActivity;->access$38200(Lorg/telegram/ui/DialogsActivity;JLandroid/view/View;)V
+
+    .line 10132
+    iget-object p2, p0, Lorg/telegram/ui/DialogsActivity$56;->this$0:Lorg/telegram/ui/DialogsActivity;
+
+    iget-wide p3, p1, Lorg/telegram/tgnet/TLRPC$Dialog;->id:J
+
+    invoke-static {p2}, Lorg/telegram/ui/DialogsActivity;->access$2500(Lorg/telegram/ui/DialogsActivity;)Ljava/util/ArrayList;
 
     move-result-object v0
 
-    invoke-virtual {p1, v0}, Lorg/telegram/ui/DialogsActivity;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
+    iget-wide v1, p1, Lorg/telegram/tgnet/TLRPC$Dialog;->id:J
 
+    invoke-static {v1, v2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object p1
+
+    invoke-virtual {v0, p1}, Ljava/util/ArrayList;->contains(Ljava/lang/Object;)Z
+
+    move-result p1
+
+    invoke-static {p2, p3, p4, p1}, Lorg/telegram/ui/DialogsActivity;->access$28800(Lorg/telegram/ui/DialogsActivity;JZ)V
+
+    :cond_5
+    :goto_0
     return-void
 .end method
 
-.method public synthetic setFieldText(Ljava/lang/CharSequence;)V
-    .locals 0
+.method public scrollBy(I)V
+    .locals 2
 
-    invoke-static {p0, p1}, Lorg/telegram/ui/ChatActivity$ChatActivityDelegate$-CC;->$default$setFieldText(Lorg/telegram/ui/ChatActivity$ChatActivityDelegate;Ljava/lang/CharSequence;)V
+    .line 10172
+    iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$56;->val$currentViewPage:Lorg/telegram/ui/DialogsActivity$ViewPage;
+
+    invoke-static {v0}, Lorg/telegram/ui/DialogsActivity$ViewPage;->access$15500(Lorg/telegram/ui/DialogsActivity$ViewPage;)Lorg/telegram/ui/DialogsActivity$DialogsRecyclerView;
+
+    move-result-object v0
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1, p1}, Landroidx/recyclerview/widget/RecyclerView;->scrollBy(II)V
 
     return-void
 .end method

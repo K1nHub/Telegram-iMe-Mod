@@ -18,7 +18,7 @@
 .method public constructor <init>()V
     .locals 3
 
-    .line 10
+    .line 12
     sget v0, Lorg/telegram/messenger/R$layout;->fork_recycle_item_filter:I
 
     const/4 v1, 0x0
@@ -43,7 +43,7 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 13
+    .line 15
     sget v0, Lorg/telegram/messenger/R$id;->view_filter:I
 
     new-instance v1, Lcom/iMe/ui/adapter/FiltersRecycleAdapter$convert$1;
@@ -81,7 +81,7 @@
 
     invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 19
+    .line 22
     sget p3, Lorg/telegram/messenger/R$id;->view_filter:I
 
     new-instance v0, Lcom/iMe/ui/adapter/FiltersRecycleAdapter$convert$2;
@@ -96,7 +96,7 @@
 .method public bridge synthetic convert(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;Ljava/lang/Object;)V
     .locals 0
 
-    .line 10
+    .line 12
     check-cast p2, Lcom/iMe/model/common/FilterItem;
 
     invoke-virtual {p0, p1, p2}, Lcom/iMe/ui/adapter/FiltersRecycleAdapter;->convert(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;Lcom/iMe/model/common/FilterItem;)V
@@ -107,7 +107,7 @@
 .method public bridge synthetic convert(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;Ljava/lang/Object;Ljava/util/List;)V
     .locals 0
 
-    .line 10
+    .line 12
     check-cast p2, Lcom/iMe/model/common/FilterItem;
 
     invoke-virtual {p0, p1, p2, p3}, Lcom/iMe/ui/adapter/FiltersRecycleAdapter;->convert(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;Lcom/iMe/model/common/FilterItem;Ljava/util/List;)V

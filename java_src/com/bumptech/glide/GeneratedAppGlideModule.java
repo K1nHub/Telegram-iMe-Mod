@@ -12,9 +12,6 @@ public abstract class GeneratedAppGlideModule extends AppGlideModule {
         return null;
     }
 
-    GeneratedAppGlideModule() {
-    }
-
     /* JADX INFO: Access modifiers changed from: package-private */
     public Set<Class<?>> getExcludedModuleClasses() {
         return new HashSet();

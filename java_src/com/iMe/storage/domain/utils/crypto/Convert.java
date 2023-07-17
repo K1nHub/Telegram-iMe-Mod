@@ -11,14 +11,6 @@ public final class Convert {
         return number.divide(unit.getWeiFactor());
     }
 
-    public static BigDecimal toWei(String number, Unit unit) {
-        return toWei(new BigDecimal(number), unit);
-    }
-
-    public static BigDecimal toWei(BigDecimal number, Unit unit) {
-        return number.multiply(unit.getWeiFactor());
-    }
-
     /* loaded from: classes3.dex */
     public enum Unit {
         WEI("wei", 0),
@@ -33,21 +25,14 @@ public final class Convert {
         METHER("mether", 24),
         GETHER("gether", 27);
         
-        private String name;
-        private BigDecimal weiFactor;
+        private final int factor;
+        private final String name;
+        private final BigDecimal weiFactor;
 
         Unit(String name, int factor) {
             this.name = name;
+            this.factor = factor;
             this.weiFactor = BigDecimal.TEN.pow(factor);
-        }
-
-        public BigDecimal getWeiFactor() {
-            return this.weiFactor;
-        }
-
-        @Override // java.lang.Enum
-        public String toString() {
-            return this.name;
         }
 
         public static Unit fromString(String name) {
@@ -60,6 +45,19 @@ public final class Convert {
                 }
             }
             return valueOf(name);
+        }
+
+        public BigDecimal getWeiFactor() {
+            return this.weiFactor;
+        }
+
+        public int getFactor() {
+            return this.factor;
+        }
+
+        @Override // java.lang.Enum
+        public String toString() {
+            return this.name;
         }
     }
 }

@@ -2,7 +2,6 @@ package org.telegram.messenger;
 
 import com.iMe.fork.controller.AlbumsController;
 import com.iMe.fork.controller.BackupController;
-import com.iMe.fork.controller.BookmarksController;
 import com.iMe.fork.controller.DialogTranslationController;
 import com.iMe.fork.controller.FiltersController;
 import com.iMe.fork.controller.ForkCommonController;
@@ -16,7 +15,7 @@ import com.iMe.fork.controller.RecentChatsController;
 import com.iMe.fork.controller.TemplatesController;
 import com.iMe.fork.controller.ToolsController;
 import com.iMe.fork.controller.WalletFingerprintController;
-import org.telegram.p044ui.Components.Paint.PersistColorPalette;
+import org.telegram.p043ui.Components.Paint.PersistColorPalette;
 import org.telegram.tgnet.ConnectionsManager;
 /* loaded from: classes4.dex */
 public class BaseController {
@@ -31,11 +30,6 @@ public class BaseController {
     /* JADX INFO: Access modifiers changed from: protected */
     public final BackupController getBackupController() {
         return this.parentAccountInstance.getBackupController();
-    }
-
-    /* JADX INFO: Access modifiers changed from: protected */
-    public final BookmarksController getBookmarksController() {
-        return this.parentAccountInstance.getBookmarksController();
     }
 
     /* JADX INFO: Access modifiers changed from: protected */

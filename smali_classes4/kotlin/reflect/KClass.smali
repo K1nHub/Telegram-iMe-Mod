@@ -19,5 +19,8 @@
 
 
 # virtual methods
+.method public abstract getSimpleName()Ljava/lang/String;
+.end method
+
 .method public abstract isInstance(Ljava/lang/Object;)Z
 .end method

@@ -26,7 +26,7 @@
 .method public constructor <init>(Lorg/telegram/ui/PasscodeActivity$$PresentersBinder;)V
     .locals 2
 
-    .line 41
+    .line 23
     const-class p1, Lcom/iMe/ui/wallet/crypto/create/pin/CreateWalletPinPresenter;
 
     const-string v0, "walletCreatePinPresenter"
@@ -43,7 +43,7 @@
 .method public bridge synthetic bind(Ljava/lang/Object;Lmoxy/MvpPresenter;)V
     .locals 0
 
-    .line 39
+    .line 21
     check-cast p1, Lorg/telegram/ui/PasscodeActivity;
 
     invoke-virtual {p0, p1, p2}, Lorg/telegram/ui/PasscodeActivity$$PresentersBinder$WalletCreatePinPresenterBinder;->bind(Lorg/telegram/ui/PasscodeActivity;Lmoxy/MvpPresenter;)V
@@ -54,7 +54,7 @@
 .method public bind(Lorg/telegram/ui/PasscodeActivity;Lmoxy/MvpPresenter;)V
     .locals 0
 
-    .line 46
+    .line 28
     check-cast p2, Lcom/iMe/ui/wallet/crypto/create/pin/CreateWalletPinPresenter;
 
     iput-object p2, p1, Lorg/telegram/ui/PasscodeActivity;->walletCreatePinPresenter:Lcom/iMe/ui/wallet/crypto/create/pin/CreateWalletPinPresenter;
@@ -65,7 +65,7 @@
 .method public bridge synthetic providePresenter(Ljava/lang/Object;)Lmoxy/MvpPresenter;
     .locals 0
 
-    .line 39
+    .line 21
     check-cast p1, Lorg/telegram/ui/PasscodeActivity;
 
     invoke-virtual {p0, p1}, Lorg/telegram/ui/PasscodeActivity$$PresentersBinder$WalletCreatePinPresenterBinder;->providePresenter(Lorg/telegram/ui/PasscodeActivity;)Lmoxy/MvpPresenter;
@@ -87,7 +87,7 @@
         }
     .end annotation
 
-    .line 51
+    .line 33
     invoke-virtual {p1}, Lorg/telegram/ui/PasscodeActivity;->provideWalletPinPresenter()Lcom/iMe/ui/wallet/crypto/create/pin/CreateWalletPinPresenter;
 
     move-result-object p1

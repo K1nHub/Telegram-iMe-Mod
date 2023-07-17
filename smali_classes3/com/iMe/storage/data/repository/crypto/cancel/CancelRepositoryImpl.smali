@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nCancelRepositoryImpl.kt\nKotlin\n*S Kotlin\n*F\n+ 1 CancelRepositoryImpl.kt\ncom/iMe/storage/data/repository/crypto/cancel/CancelRepositoryImpl\n+ 2 FirebaseExt.kt\ncom/iMe/storage/data/utils/extentions/FirebaseExtKt\n+ 3 RxExt.kt\ncom/iMe/storage/data/utils/extentions/RxExtKt\n*L\n1#1,46:1\n70#2:47\n26#3:48\n26#3:49\n*S KotlinDebug\n*F\n+ 1 CancelRepositoryImpl.kt\ncom/iMe/storage/data/repository/crypto/cancel/CancelRepositoryImpl\n*L\n31#1:47\n34#1:48\n41#1:49\n*E\n"
+    value = "SMAP\nCancelRepositoryImpl.kt\nKotlin\n*S Kotlin\n*F\n+ 1 CancelRepositoryImpl.kt\ncom/iMe/storage/data/repository/crypto/cancel/CancelRepositoryImpl\n+ 2 FirebaseExt.kt\ncom/iMe/storage/data/utils/extentions/FirebaseExtKt\n+ 3 RxExt.kt\ncom/iMe/storage/data/utils/extentions/RxExtKt\n*L\n1#1,44:1\n70#2:45\n26#3:46\n26#3:47\n*S KotlinDebug\n*F\n+ 1 CancelRepositoryImpl.kt\ncom/iMe/storage/data/repository/crypto/cancel/CancelRepositoryImpl\n*L\n31#1:45\n34#1:46\n40#1:47\n*E\n"
 .end annotation
 
 
@@ -80,24 +80,24 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 38
+    .line 37
     iget-object v0, p0, Lcom/iMe/storage/data/repository/crypto/cancel/CancelRepositoryImpl;->cancelDataSourceFactory:Lcom/iMe/storage/data/datasource/cancel/WalletCancelDataSourceFactory;
 
-    .line 39
-    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/crypto/cancel/CancelArgs;->getToken()Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
+    .line 38
+    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/crypto/cancel/CancelArgs;->getNetworkId()Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-virtual {v0, v1}, Lcom/iMe/storage/data/datasource/cancel/WalletCancelDataSourceFactory;->getDataSource(Lcom/iMe/storage/domain/model/wallet/token/TokenCode;)Lcom/iMe/storage/data/datasource/cancel/WalletCancelDataSource;
+    invoke-virtual {v0, v1}, Lcom/iMe/storage/data/datasource/cancel/WalletCancelDataSourceFactory;->getDataSource(Ljava/lang/String;)Lcom/iMe/storage/data/datasource/cancel/WalletCancelDataSource;
 
     move-result-object v0
 
-    .line 40
+    .line 39
     invoke-interface {v0, p1}, Lcom/iMe/storage/data/datasource/cancel/WalletCancelDataSource;->cancel(Lcom/iMe/storage/domain/model/crypto/send/TransactionArgs;)Lio/reactivex/Observable;
 
     move-result-object p1
 
-    .line 41
+    .line 40
     iget-object v0, p0, Lcom/iMe/storage/data/repository/crypto/cancel/CancelRepositoryImpl;->errorHandler:Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler;
 
     .line 26
@@ -139,15 +139,15 @@
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 27
-    new-instance v0, Lcom/iMe/storage/data/network/model/request/crypto/cancel/GetDataForCancelOrBoostCryptoTransactionRequest;
-
-    invoke-direct {v0, p1}, Lcom/iMe/storage/data/network/model/request/crypto/cancel/GetDataForCancelOrBoostCryptoTransactionRequest;-><init>(Ljava/lang/String;)V
+    iget-object v0, p0, Lcom/iMe/storage/data/repository/crypto/cancel/CancelRepositoryImpl;->cancelApi:Lcom/iMe/storage/data/network/api/own/CancelApi;
 
     .line 29
-    iget-object p1, p0, Lcom/iMe/storage/data/repository/crypto/cancel/CancelRepositoryImpl;->cancelApi:Lcom/iMe/storage/data/network/api/own/CancelApi;
+    new-instance v1, Lcom/iMe/storage/data/network/model/request/crypto/cancel/PrepareSpeedUpOrCancelTransactionRequest;
 
-    .line 30
-    invoke-interface {p1, v0}, Lcom/iMe/storage/data/network/api/own/CancelApi;->getDataForCancelCryptoTransaction(Lcom/iMe/storage/data/network/model/request/crypto/cancel/GetDataForCancelOrBoostCryptoTransactionRequest;)Lio/reactivex/Observable;
+    invoke-direct {v1, p1}, Lcom/iMe/storage/data/network/model/request/crypto/cancel/PrepareSpeedUpOrCancelTransactionRequest;-><init>(Ljava/lang/String;)V
+
+    .line 28
+    invoke-interface {v0, v1}, Lcom/iMe/storage/data/network/api/own/CancelApi;->getDataForCancelCryptoTransaction(Lcom/iMe/storage/data/network/model/request/crypto/cancel/PrepareSpeedUpOrCancelTransactionRequest;)Lio/reactivex/Observable;
 
     move-result-object p1
 

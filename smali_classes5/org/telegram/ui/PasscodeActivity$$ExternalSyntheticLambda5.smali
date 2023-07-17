@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/PasscodeActivity$$ExternalSyntheticLambda5;->f$0:Lorg/telegram/ui/PasscodeActivity;
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/PasscodeActivity;->$r8$lambda$mNblxw6VWk3rB1_1Sfu_7olJfnA(Lorg/telegram/ui/PasscodeActivity;Landroid/content/DialogInterface;)V
+    invoke-static {v0, p1}, Lorg/telegram/ui/PasscodeActivity;->$r8$lambda$UdfJM2boSME8twBKuQJLTcKz0SE(Lorg/telegram/ui/PasscodeActivity;Landroid/content/DialogInterface;)V
 
     return-void
 .end method

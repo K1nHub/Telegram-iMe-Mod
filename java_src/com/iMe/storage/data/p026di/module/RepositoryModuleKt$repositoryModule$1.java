@@ -9,7 +9,7 @@ import com.iMe.storage.data.datasource.wallet_connect.WalletConnectDataSource;
 import com.iMe.storage.data.locale.p027db.dao.minor.catalog.CatalogCategoryDao;
 import com.iMe.storage.data.locale.p027db.dao.minor.catalog.CatalogLanguageDao;
 import com.iMe.storage.data.locale.p027db.dao.minor.wallet.WalletConnectSessionsDao;
-import com.iMe.storage.data.locale.p027db.dao.minor.wallet.WalletTokenBalanceDao;
+import com.iMe.storage.data.locale.p027db.dao.minor.wallet.WalletTokensBalancesDao;
 import com.iMe.storage.data.network.api.google.DynamicLinksApi;
 import com.iMe.storage.data.network.api.google.RemoteConfigApi;
 import com.iMe.storage.data.network.api.own.AccountLevelApi;
@@ -161,237 +161,237 @@ final class RepositoryModuleKt$repositoryModule$1 extends Lambda implements Func
         List emptyList25;
         List emptyList26;
         Intrinsics.checkNotNullParameter(module, "$this$module");
-        C17101 c17101 = C17101.INSTANCE;
+        C17191 c17191 = C17191.INSTANCE;
         ScopeRegistry.Companion companion = ScopeRegistry.Companion;
         StringQualifier rootScopeQualifier = companion.getRootScopeQualifier();
         Kind kind = Kind.Singleton;
         emptyList = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier, Reflection.getOrCreateKotlinClass(TranslationRepository.class), null, c17101, kind, emptyList));
+        SingleInstanceFactory<?> singleInstanceFactory = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier, Reflection.getOrCreateKotlinClass(TranslationRepository.class), null, c17191, kind, emptyList));
         module.indexPrimaryType(singleInstanceFactory);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory);
         }
         new KoinDefinition(module, singleInstanceFactory);
-        C17212 c17212 = C17212.INSTANCE;
+        C17302 c17302 = C17302.INSTANCE;
         StringQualifier rootScopeQualifier2 = companion.getRootScopeQualifier();
         emptyList2 = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory2 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier2, Reflection.getOrCreateKotlinClass(WalletSessionRepository.class), null, c17212, kind, emptyList2));
+        SingleInstanceFactory<?> singleInstanceFactory2 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier2, Reflection.getOrCreateKotlinClass(WalletSessionRepository.class), null, c17302, kind, emptyList2));
         module.indexPrimaryType(singleInstanceFactory2);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory2);
         }
         new KoinDefinition(module, singleInstanceFactory2);
-        C17293 c17293 = C17293.INSTANCE;
+        C17383 c17383 = C17383.INSTANCE;
         StringQualifier rootScopeQualifier3 = companion.getRootScopeQualifier();
         emptyList3 = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory3 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier3, Reflection.getOrCreateKotlinClass(WalletRepository.class), null, c17293, kind, emptyList3));
+        SingleInstanceFactory<?> singleInstanceFactory3 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier3, Reflection.getOrCreateKotlinClass(WalletRepository.class), null, c17383, kind, emptyList3));
         module.indexPrimaryType(singleInstanceFactory3);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory3);
         }
         new KoinDefinition(module, singleInstanceFactory3);
-        C17304 c17304 = C17304.INSTANCE;
+        C17394 c17394 = C17394.INSTANCE;
         StringQualifier rootScopeQualifier4 = companion.getRootScopeQualifier();
         emptyList4 = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory4 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier4, Reflection.getOrCreateKotlinClass(PushNotificationRepository.class), null, c17304, kind, emptyList4));
+        SingleInstanceFactory<?> singleInstanceFactory4 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier4, Reflection.getOrCreateKotlinClass(PushNotificationRepository.class), null, c17394, kind, emptyList4));
         module.indexPrimaryType(singleInstanceFactory4);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory4);
         }
         new KoinDefinition(module, singleInstanceFactory4);
-        C17315 c17315 = C17315.INSTANCE;
+        C17405 c17405 = C17405.INSTANCE;
         StringQualifier rootScopeQualifier5 = companion.getRootScopeQualifier();
         emptyList5 = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory5 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier5, Reflection.getOrCreateKotlinClass(CatalogRepository.class), null, c17315, kind, emptyList5));
+        SingleInstanceFactory<?> singleInstanceFactory5 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier5, Reflection.getOrCreateKotlinClass(CatalogRepository.class), null, c17405, kind, emptyList5));
         module.indexPrimaryType(singleInstanceFactory5);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory5);
         }
         new KoinDefinition(module, singleInstanceFactory5);
-        C17326 c17326 = C17326.INSTANCE;
+        C17416 c17416 = C17416.INSTANCE;
         StringQualifier rootScopeQualifier6 = companion.getRootScopeQualifier();
         emptyList6 = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory6 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier6, Reflection.getOrCreateKotlinClass(GoogleServicesRepository.class), null, c17326, kind, emptyList6));
+        SingleInstanceFactory<?> singleInstanceFactory6 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier6, Reflection.getOrCreateKotlinClass(GoogleServicesRepository.class), null, c17416, kind, emptyList6));
         module.indexPrimaryType(singleInstanceFactory6);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory6);
         }
         new KoinDefinition(module, singleInstanceFactory6);
-        C17337 c17337 = C17337.INSTANCE;
+        C17427 c17427 = C17427.INSTANCE;
         StringQualifier rootScopeQualifier7 = companion.getRootScopeQualifier();
         emptyList7 = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory7 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier7, Reflection.getOrCreateKotlinClass(RemoteConfigRepository.class), null, c17337, kind, emptyList7));
+        SingleInstanceFactory<?> singleInstanceFactory7 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier7, Reflection.getOrCreateKotlinClass(RemoteConfigRepository.class), null, c17427, kind, emptyList7));
         module.indexPrimaryType(singleInstanceFactory7);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory7);
         }
         new KoinDefinition(module, singleInstanceFactory7);
-        C17348 c17348 = C17348.INSTANCE;
+        C17438 c17438 = C17438.INSTANCE;
         StringQualifier rootScopeQualifier8 = companion.getRootScopeQualifier();
         emptyList8 = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory8 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier8, Reflection.getOrCreateKotlinClass(DynamicLinksRepository.class), null, c17348, kind, emptyList8));
+        SingleInstanceFactory<?> singleInstanceFactory8 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier8, Reflection.getOrCreateKotlinClass(DynamicLinksRepository.class), null, c17438, kind, emptyList8));
         module.indexPrimaryType(singleInstanceFactory8);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory8);
         }
         new KoinDefinition(module, singleInstanceFactory8);
-        C17359 c17359 = C17359.INSTANCE;
+        C17449 c17449 = C17449.INSTANCE;
         StringQualifier rootScopeQualifier9 = companion.getRootScopeQualifier();
         emptyList9 = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory9 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier9, Reflection.getOrCreateKotlinClass(ReactionRepository.class), null, c17359, kind, emptyList9));
+        SingleInstanceFactory<?> singleInstanceFactory9 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier9, Reflection.getOrCreateKotlinClass(ReactionRepository.class), null, c17449, kind, emptyList9));
         module.indexPrimaryType(singleInstanceFactory9);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory9);
         }
         new KoinDefinition(module, singleInstanceFactory9);
-        C171110 c171110 = C171110.INSTANCE;
+        C172010 c172010 = C172010.INSTANCE;
         StringQualifier rootScopeQualifier10 = companion.getRootScopeQualifier();
         emptyList10 = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory10 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier10, Reflection.getOrCreateKotlinClass(KiklikoRepository.class), null, c171110, kind, emptyList10));
+        SingleInstanceFactory<?> singleInstanceFactory10 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier10, Reflection.getOrCreateKotlinClass(KiklikoRepository.class), null, c172010, kind, emptyList10));
         module.indexPrimaryType(singleInstanceFactory10);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory10);
         }
         new KoinDefinition(module, singleInstanceFactory10);
-        C171211 c171211 = C171211.INSTANCE;
+        C172111 c172111 = C172111.INSTANCE;
         StringQualifier rootScopeQualifier11 = companion.getRootScopeQualifier();
         emptyList11 = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory11 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier11, Reflection.getOrCreateKotlinClass(TwitterRepository.class), null, c171211, kind, emptyList11));
+        SingleInstanceFactory<?> singleInstanceFactory11 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier11, Reflection.getOrCreateKotlinClass(TwitterRepository.class), null, c172111, kind, emptyList11));
         module.indexPrimaryType(singleInstanceFactory11);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory11);
         }
         new KoinDefinition(module, singleInstanceFactory11);
-        C171312 c171312 = C171312.INSTANCE;
+        C172212 c172212 = C172212.INSTANCE;
         StringQualifier rootScopeQualifier12 = companion.getRootScopeQualifier();
         emptyList12 = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory12 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier12, Reflection.getOrCreateKotlinClass(CryptoWalletRepository.class), null, c171312, kind, emptyList12));
+        SingleInstanceFactory<?> singleInstanceFactory12 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier12, Reflection.getOrCreateKotlinClass(CryptoWalletRepository.class), null, c172212, kind, emptyList12));
         module.indexPrimaryType(singleInstanceFactory12);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory12);
         }
         new KoinDefinition(module, singleInstanceFactory12);
-        C171413 c171413 = C171413.INSTANCE;
+        C172313 c172313 = C172313.INSTANCE;
         StringQualifier rootScopeQualifier13 = companion.getRootScopeQualifier();
         emptyList13 = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory13 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier13, Reflection.getOrCreateKotlinClass(BinanceInternalRepository.class), null, c171413, kind, emptyList13));
+        SingleInstanceFactory<?> singleInstanceFactory13 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier13, Reflection.getOrCreateKotlinClass(BinanceInternalRepository.class), null, c172313, kind, emptyList13));
         module.indexPrimaryType(singleInstanceFactory13);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory13);
         }
         new KoinDefinition(module, singleInstanceFactory13);
-        C171514 c171514 = C171514.INSTANCE;
+        C172414 c172414 = C172414.INSTANCE;
         StringQualifier rootScopeQualifier14 = companion.getRootScopeQualifier();
         emptyList14 = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory14 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier14, Reflection.getOrCreateKotlinClass(CryptoPermissionRepository.class), null, c171514, kind, emptyList14));
+        SingleInstanceFactory<?> singleInstanceFactory14 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier14, Reflection.getOrCreateKotlinClass(CryptoPermissionRepository.class), null, c172414, kind, emptyList14));
         module.indexPrimaryType(singleInstanceFactory14);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory14);
         }
         new KoinDefinition(module, singleInstanceFactory14);
-        C171615 c171615 = C171615.INSTANCE;
+        C172515 c172515 = C172515.INSTANCE;
         StringQualifier rootScopeQualifier15 = companion.getRootScopeQualifier();
         emptyList15 = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory15 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier15, Reflection.getOrCreateKotlinClass(AccountLevelRepository.class), null, c171615, kind, emptyList15));
+        SingleInstanceFactory<?> singleInstanceFactory15 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier15, Reflection.getOrCreateKotlinClass(AccountLevelRepository.class), null, c172515, kind, emptyList15));
         module.indexPrimaryType(singleInstanceFactory15);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory15);
         }
         new KoinDefinition(module, singleInstanceFactory15);
-        C171716 c171716 = C171716.INSTANCE;
+        C172616 c172616 = C172616.INSTANCE;
         StringQualifier rootScopeQualifier16 = companion.getRootScopeQualifier();
         emptyList16 = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory16 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier16, Reflection.getOrCreateKotlinClass(CryptoLocalWalletRepository.class), null, c171716, kind, emptyList16));
+        SingleInstanceFactory<?> singleInstanceFactory16 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier16, Reflection.getOrCreateKotlinClass(CryptoLocalWalletRepository.class), null, c172616, kind, emptyList16));
         module.indexPrimaryType(singleInstanceFactory16);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory16);
         }
         new KoinDefinition(module, singleInstanceFactory16);
-        C171817 c171817 = C171817.INSTANCE;
+        C172717 c172717 = C172717.INSTANCE;
         StringQualifier rootScopeQualifier17 = companion.getRootScopeQualifier();
         emptyList17 = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory17 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier17, Reflection.getOrCreateKotlinClass(PinCodeRepository.class), null, c171817, kind, emptyList17));
+        SingleInstanceFactory<?> singleInstanceFactory17 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier17, Reflection.getOrCreateKotlinClass(PinCodeRepository.class), null, c172717, kind, emptyList17));
         module.indexPrimaryType(singleInstanceFactory17);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory17);
         }
         new KoinDefinition(module, singleInstanceFactory17);
-        C171918 c171918 = C171918.INSTANCE;
+        C172818 c172818 = C172818.INSTANCE;
         StringQualifier rootScopeQualifier18 = companion.getRootScopeQualifier();
         emptyList18 = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory18 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier18, Reflection.getOrCreateKotlinClass(SimplexRepository.class), null, c171918, kind, emptyList18));
+        SingleInstanceFactory<?> singleInstanceFactory18 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier18, Reflection.getOrCreateKotlinClass(SimplexRepository.class), null, c172818, kind, emptyList18));
         module.indexPrimaryType(singleInstanceFactory18);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory18);
         }
         new KoinDefinition(module, singleInstanceFactory18);
-        C172019 c172019 = C172019.INSTANCE;
+        C172919 c172919 = C172919.INSTANCE;
         StringQualifier rootScopeQualifier19 = companion.getRootScopeQualifier();
         emptyList19 = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory19 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier19, Reflection.getOrCreateKotlinClass(SwapRepository.class), null, c172019, kind, emptyList19));
+        SingleInstanceFactory<?> singleInstanceFactory19 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier19, Reflection.getOrCreateKotlinClass(SwapRepository.class), null, c172919, kind, emptyList19));
         module.indexPrimaryType(singleInstanceFactory19);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory19);
         }
         new KoinDefinition(module, singleInstanceFactory19);
-        C172220 c172220 = C172220.INSTANCE;
+        C173120 c173120 = C173120.INSTANCE;
         StringQualifier rootScopeQualifier20 = companion.getRootScopeQualifier();
         emptyList20 = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory20 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier20, Reflection.getOrCreateKotlinClass(CancelRepository.class), null, c172220, kind, emptyList20));
+        SingleInstanceFactory<?> singleInstanceFactory20 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier20, Reflection.getOrCreateKotlinClass(CancelRepository.class), null, c173120, kind, emptyList20));
         module.indexPrimaryType(singleInstanceFactory20);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory20);
         }
         new KoinDefinition(module, singleInstanceFactory20);
-        C172321 c172321 = C172321.INSTANCE;
+        C173221 c173221 = C173221.INSTANCE;
         StringQualifier rootScopeQualifier21 = companion.getRootScopeQualifier();
         emptyList21 = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory21 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier21, Reflection.getOrCreateKotlinClass(DonationsRepository.class), null, c172321, kind, emptyList21));
+        SingleInstanceFactory<?> singleInstanceFactory21 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier21, Reflection.getOrCreateKotlinClass(DonationsRepository.class), null, c173221, kind, emptyList21));
         module.indexPrimaryType(singleInstanceFactory21);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory21);
         }
         new KoinDefinition(module, singleInstanceFactory21);
-        C172422 c172422 = C172422.INSTANCE;
+        C173322 c173322 = C173322.INSTANCE;
         StringQualifier rootScopeQualifier22 = companion.getRootScopeQualifier();
         emptyList22 = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory22 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier22, Reflection.getOrCreateKotlinClass(BoostRepository.class), null, c172422, kind, emptyList22));
+        SingleInstanceFactory<?> singleInstanceFactory22 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier22, Reflection.getOrCreateKotlinClass(BoostRepository.class), null, c173322, kind, emptyList22));
         module.indexPrimaryType(singleInstanceFactory22);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory22);
         }
         new KoinDefinition(module, singleInstanceFactory22);
-        C172523 c172523 = C172523.INSTANCE;
+        C173423 c173423 = C173423.INSTANCE;
         StringQualifier rootScopeQualifier23 = companion.getRootScopeQualifier();
         emptyList23 = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory23 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier23, Reflection.getOrCreateKotlinClass(AirdropRepository.class), null, c172523, kind, emptyList23));
+        SingleInstanceFactory<?> singleInstanceFactory23 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier23, Reflection.getOrCreateKotlinClass(AirdropRepository.class), null, c173423, kind, emptyList23));
         module.indexPrimaryType(singleInstanceFactory23);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory23);
         }
         new KoinDefinition(module, singleInstanceFactory23);
-        C172624 c172624 = C172624.INSTANCE;
+        C173524 c173524 = C173524.INSTANCE;
         StringQualifier rootScopeQualifier24 = companion.getRootScopeQualifier();
         emptyList24 = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory24 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier24, Reflection.getOrCreateKotlinClass(NftAvatarRepository.class), null, c172624, kind, emptyList24));
+        SingleInstanceFactory<?> singleInstanceFactory24 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier24, Reflection.getOrCreateKotlinClass(NftAvatarRepository.class), null, c173524, kind, emptyList24));
         module.indexPrimaryType(singleInstanceFactory24);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory24);
         }
         new KoinDefinition(module, singleInstanceFactory24);
-        C172725 c172725 = C172725.INSTANCE;
+        C173625 c173625 = C173625.INSTANCE;
         StringQualifier rootScopeQualifier25 = companion.getRootScopeQualifier();
         emptyList25 = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory25 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier25, Reflection.getOrCreateKotlinClass(WalletConnectRepository.class), null, c172725, kind, emptyList25));
+        SingleInstanceFactory<?> singleInstanceFactory25 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier25, Reflection.getOrCreateKotlinClass(WalletConnectRepository.class), null, c173625, kind, emptyList25));
         module.indexPrimaryType(singleInstanceFactory25);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory25);
         }
         new KoinDefinition(module, singleInstanceFactory25);
-        C172826 c172826 = C172826.INSTANCE;
+        C173726 c173726 = C173726.INSTANCE;
         StringQualifier rootScopeQualifier26 = companion.getRootScopeQualifier();
         emptyList26 = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory26 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier26, Reflection.getOrCreateKotlinClass(TonConfigRepository.class), null, c172826, kind, emptyList26));
+        SingleInstanceFactory<?> singleInstanceFactory26 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier26, Reflection.getOrCreateKotlinClass(TonConfigRepository.class), null, c173726, kind, emptyList26));
         module.indexPrimaryType(singleInstanceFactory26);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory26);
@@ -403,10 +403,10 @@ final class RepositoryModuleKt$repositoryModule$1 extends Lambda implements Func
     /* compiled from: RepositoryModule.kt */
     /* renamed from: com.iMe.storage.data.di.module.RepositoryModuleKt$repositoryModule$1$5 */
     /* loaded from: classes3.dex */
-    public static final class C17315 extends Lambda implements Function2<Scope, ParametersHolder, CatalogRepository> {
-        public static final C17315 INSTANCE = new C17315();
+    public static final class C17405 extends Lambda implements Function2<Scope, ParametersHolder, CatalogRepository> {
+        public static final C17405 INSTANCE = new C17405();
 
-        C17315() {
+        C17405() {
             super(2);
         }
 
@@ -422,10 +422,10 @@ final class RepositoryModuleKt$repositoryModule$1 extends Lambda implements Func
     /* compiled from: RepositoryModule.kt */
     /* renamed from: com.iMe.storage.data.di.module.RepositoryModuleKt$repositoryModule$1$6 */
     /* loaded from: classes3.dex */
-    public static final class C17326 extends Lambda implements Function2<Scope, ParametersHolder, GoogleServicesRepository> {
-        public static final C17326 INSTANCE = new C17326();
+    public static final class C17416 extends Lambda implements Function2<Scope, ParametersHolder, GoogleServicesRepository> {
+        public static final C17416 INSTANCE = new C17416();
 
-        C17326() {
+        C17416() {
             super(2);
         }
 
@@ -443,10 +443,10 @@ final class RepositoryModuleKt$repositoryModule$1 extends Lambda implements Func
     /* compiled from: RepositoryModule.kt */
     /* renamed from: com.iMe.storage.data.di.module.RepositoryModuleKt$repositoryModule$1$7 */
     /* loaded from: classes3.dex */
-    public static final class C17337 extends Lambda implements Function2<Scope, ParametersHolder, RemoteConfigRepository> {
-        public static final C17337 INSTANCE = new C17337();
+    public static final class C17427 extends Lambda implements Function2<Scope, ParametersHolder, RemoteConfigRepository> {
+        public static final C17427 INSTANCE = new C17427();
 
-        C17337() {
+        C17427() {
             super(2);
         }
 
@@ -462,10 +462,10 @@ final class RepositoryModuleKt$repositoryModule$1 extends Lambda implements Func
     /* compiled from: RepositoryModule.kt */
     /* renamed from: com.iMe.storage.data.di.module.RepositoryModuleKt$repositoryModule$1$8 */
     /* loaded from: classes3.dex */
-    public static final class C17348 extends Lambda implements Function2<Scope, ParametersHolder, DynamicLinksRepository> {
-        public static final C17348 INSTANCE = new C17348();
+    public static final class C17438 extends Lambda implements Function2<Scope, ParametersHolder, DynamicLinksRepository> {
+        public static final C17438 INSTANCE = new C17438();
 
-        C17348() {
+        C17438() {
             super(2);
         }
 
@@ -481,10 +481,10 @@ final class RepositoryModuleKt$repositoryModule$1 extends Lambda implements Func
     /* compiled from: RepositoryModule.kt */
     /* renamed from: com.iMe.storage.data.di.module.RepositoryModuleKt$repositoryModule$1$9 */
     /* loaded from: classes3.dex */
-    public static final class C17359 extends Lambda implements Function2<Scope, ParametersHolder, ReactionRepository> {
-        public static final C17359 INSTANCE = new C17359();
+    public static final class C17449 extends Lambda implements Function2<Scope, ParametersHolder, ReactionRepository> {
+        public static final C17449 INSTANCE = new C17449();
 
-        C17359() {
+        C17449() {
             super(2);
         }
 
@@ -500,10 +500,10 @@ final class RepositoryModuleKt$repositoryModule$1 extends Lambda implements Func
     /* compiled from: RepositoryModule.kt */
     /* renamed from: com.iMe.storage.data.di.module.RepositoryModuleKt$repositoryModule$1$10 */
     /* loaded from: classes3.dex */
-    public static final class C171110 extends Lambda implements Function2<Scope, ParametersHolder, KiklikoRepository> {
-        public static final C171110 INSTANCE = new C171110();
+    public static final class C172010 extends Lambda implements Function2<Scope, ParametersHolder, KiklikoRepository> {
+        public static final C172010 INSTANCE = new C172010();
 
-        C171110() {
+        C172010() {
             super(2);
         }
 
@@ -519,10 +519,10 @@ final class RepositoryModuleKt$repositoryModule$1 extends Lambda implements Func
     /* compiled from: RepositoryModule.kt */
     /* renamed from: com.iMe.storage.data.di.module.RepositoryModuleKt$repositoryModule$1$11 */
     /* loaded from: classes3.dex */
-    public static final class C171211 extends Lambda implements Function2<Scope, ParametersHolder, TwitterRepository> {
-        public static final C171211 INSTANCE = new C171211();
+    public static final class C172111 extends Lambda implements Function2<Scope, ParametersHolder, TwitterRepository> {
+        public static final C172111 INSTANCE = new C172111();
 
-        C171211() {
+        C172111() {
             super(2);
         }
 
@@ -536,12 +536,31 @@ final class RepositoryModuleKt$repositoryModule$1 extends Lambda implements Func
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: RepositoryModule.kt */
+    /* renamed from: com.iMe.storage.data.di.module.RepositoryModuleKt$repositoryModule$1$17 */
+    /* loaded from: classes3.dex */
+    public static final class C172717 extends Lambda implements Function2<Scope, ParametersHolder, PinCodeRepository> {
+        public static final C172717 INSTANCE = new C172717();
+
+        C172717() {
+            super(2);
+        }
+
+        @Override // kotlin.jvm.functions.Function2
+        public final PinCodeRepository invoke(Scope single, ParametersHolder it) {
+            Intrinsics.checkNotNullParameter(single, "$this$single");
+            Intrinsics.checkNotNullParameter(it, "it");
+            return new PinCodeRepositoryImpl((CryptoLocalWalletRepository) single.get(Reflection.getOrCreateKotlinClass(CryptoLocalWalletRepository.class), null, null), (CryptoPreferenceHelper) single.get(Reflection.getOrCreateKotlinClass(CryptoPreferenceHelper.class), null, null), (ApiErrorHandler) single.get(Reflection.getOrCreateKotlinClass(ApiErrorHandler.class), null, null), (FirebaseFunctionsErrorHandler) single.get(Reflection.getOrCreateKotlinClass(FirebaseFunctionsErrorHandler.class), null, null), (PinCodeApi) single.get(Reflection.getOrCreateKotlinClass(PinCodeApi.class), null, null), (SchedulersProvider) single.get(Reflection.getOrCreateKotlinClass(SchedulersProvider.class), null, null));
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    /* compiled from: RepositoryModule.kt */
     /* renamed from: com.iMe.storage.data.di.module.RepositoryModuleKt$repositoryModule$1$1 */
     /* loaded from: classes3.dex */
-    public static final class C17101 extends Lambda implements Function2<Scope, ParametersHolder, TranslationRepository> {
-        public static final C17101 INSTANCE = new C17101();
+    public static final class C17191 extends Lambda implements Function2<Scope, ParametersHolder, TranslationRepository> {
+        public static final C17191 INSTANCE = new C17191();
 
-        C17101() {
+        C17191() {
             super(2);
         }
 
@@ -557,10 +576,10 @@ final class RepositoryModuleKt$repositoryModule$1 extends Lambda implements Func
     /* compiled from: RepositoryModule.kt */
     /* renamed from: com.iMe.storage.data.di.module.RepositoryModuleKt$repositoryModule$1$12 */
     /* loaded from: classes3.dex */
-    public static final class C171312 extends Lambda implements Function2<Scope, ParametersHolder, CryptoWalletRepository> {
-        public static final C171312 INSTANCE = new C171312();
+    public static final class C172212 extends Lambda implements Function2<Scope, ParametersHolder, CryptoWalletRepository> {
+        public static final C172212 INSTANCE = new C172212();
 
-        C171312() {
+        C172212() {
             super(2);
         }
 
@@ -569,7 +588,7 @@ final class RepositoryModuleKt$repositoryModule$1 extends Lambda implements Func
             Intrinsics.checkNotNullParameter(single, "$this$single");
             Intrinsics.checkNotNullParameter(it, "it");
             ApiErrorHandler apiErrorHandler = (ApiErrorHandler) single.get(Reflection.getOrCreateKotlinClass(ApiErrorHandler.class), null, null);
-            return new CryptoWalletRepositoryImpl((CryptoWalletApi) single.get(Reflection.getOrCreateKotlinClass(CryptoWalletApi.class), null, null), (TelegramGateway) single.get(Reflection.getOrCreateKotlinClass(TelegramGateway.class), null, null), (FirebaseFunctionsErrorHandler) single.get(Reflection.getOrCreateKotlinClass(FirebaseFunctionsErrorHandler.class), null, null), (WalletTokenBalanceDao) single.get(Reflection.getOrCreateKotlinClass(WalletTokenBalanceDao.class), null, null), apiErrorHandler, (CryptoPreferenceHelper) single.get(Reflection.getOrCreateKotlinClass(CryptoPreferenceHelper.class), null, null));
+            return new CryptoWalletRepositoryImpl((CryptoWalletApi) single.get(Reflection.getOrCreateKotlinClass(CryptoWalletApi.class), null, null), (TelegramGateway) single.get(Reflection.getOrCreateKotlinClass(TelegramGateway.class), null, null), (FirebaseFunctionsErrorHandler) single.get(Reflection.getOrCreateKotlinClass(FirebaseFunctionsErrorHandler.class), null, null), (WalletTokensBalancesDao) single.get(Reflection.getOrCreateKotlinClass(WalletTokensBalancesDao.class), null, null), apiErrorHandler, (CryptoPreferenceHelper) single.get(Reflection.getOrCreateKotlinClass(CryptoPreferenceHelper.class), null, null));
         }
     }
 
@@ -577,10 +596,10 @@ final class RepositoryModuleKt$repositoryModule$1 extends Lambda implements Func
     /* compiled from: RepositoryModule.kt */
     /* renamed from: com.iMe.storage.data.di.module.RepositoryModuleKt$repositoryModule$1$13 */
     /* loaded from: classes3.dex */
-    public static final class C171413 extends Lambda implements Function2<Scope, ParametersHolder, BinanceInternalRepository> {
-        public static final C171413 INSTANCE = new C171413();
+    public static final class C172313 extends Lambda implements Function2<Scope, ParametersHolder, BinanceInternalRepository> {
+        public static final C172313 INSTANCE = new C172313();
 
-        C171413() {
+        C172313() {
             super(2);
         }
 
@@ -597,10 +616,10 @@ final class RepositoryModuleKt$repositoryModule$1 extends Lambda implements Func
     /* compiled from: RepositoryModule.kt */
     /* renamed from: com.iMe.storage.data.di.module.RepositoryModuleKt$repositoryModule$1$14 */
     /* loaded from: classes3.dex */
-    public static final class C171514 extends Lambda implements Function2<Scope, ParametersHolder, CryptoPermissionRepository> {
-        public static final C171514 INSTANCE = new C171514();
+    public static final class C172414 extends Lambda implements Function2<Scope, ParametersHolder, CryptoPermissionRepository> {
+        public static final C172414 INSTANCE = new C172414();
 
-        C171514() {
+        C172414() {
             super(2);
         }
 
@@ -619,10 +638,10 @@ final class RepositoryModuleKt$repositoryModule$1 extends Lambda implements Func
     /* compiled from: RepositoryModule.kt */
     /* renamed from: com.iMe.storage.data.di.module.RepositoryModuleKt$repositoryModule$1$15 */
     /* loaded from: classes3.dex */
-    public static final class C171615 extends Lambda implements Function2<Scope, ParametersHolder, AccountLevelRepository> {
-        public static final C171615 INSTANCE = new C171615();
+    public static final class C172515 extends Lambda implements Function2<Scope, ParametersHolder, AccountLevelRepository> {
+        public static final C172515 INSTANCE = new C172515();
 
-        C171615() {
+        C172515() {
             super(2);
         }
 
@@ -641,10 +660,10 @@ final class RepositoryModuleKt$repositoryModule$1 extends Lambda implements Func
     /* compiled from: RepositoryModule.kt */
     /* renamed from: com.iMe.storage.data.di.module.RepositoryModuleKt$repositoryModule$1$16 */
     /* loaded from: classes3.dex */
-    public static final class C171716 extends Lambda implements Function2<Scope, ParametersHolder, CryptoLocalWalletRepository> {
-        public static final C171716 INSTANCE = new C171716();
+    public static final class C172616 extends Lambda implements Function2<Scope, ParametersHolder, CryptoLocalWalletRepository> {
+        public static final C172616 INSTANCE = new C172616();
 
-        C171716() {
+        C172616() {
             super(2);
         }
 
@@ -658,35 +677,12 @@ final class RepositoryModuleKt$repositoryModule$1 extends Lambda implements Func
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: RepositoryModule.kt */
-    /* renamed from: com.iMe.storage.data.di.module.RepositoryModuleKt$repositoryModule$1$17 */
-    /* loaded from: classes3.dex */
-    public static final class C171817 extends Lambda implements Function2<Scope, ParametersHolder, PinCodeRepository> {
-        public static final C171817 INSTANCE = new C171817();
-
-        C171817() {
-            super(2);
-        }
-
-        @Override // kotlin.jvm.functions.Function2
-        public final PinCodeRepository invoke(Scope single, ParametersHolder it) {
-            Intrinsics.checkNotNullParameter(single, "$this$single");
-            Intrinsics.checkNotNullParameter(it, "it");
-            ApiErrorHandler apiErrorHandler = (ApiErrorHandler) single.get(Reflection.getOrCreateKotlinClass(ApiErrorHandler.class), null, null);
-            FirebaseFunctionsErrorHandler firebaseFunctionsErrorHandler = (FirebaseFunctionsErrorHandler) single.get(Reflection.getOrCreateKotlinClass(FirebaseFunctionsErrorHandler.class), null, null);
-            PinCodeApi pinCodeApi = (PinCodeApi) single.get(Reflection.getOrCreateKotlinClass(PinCodeApi.class), null, null);
-            CryptoPreferenceHelper cryptoPreferenceHelper = (CryptoPreferenceHelper) single.get(Reflection.getOrCreateKotlinClass(CryptoPreferenceHelper.class), null, null);
-            return new PinCodeRepositoryImpl(pinCodeApi, (SchedulersProvider) single.get(Reflection.getOrCreateKotlinClass(SchedulersProvider.class), null, null), (CryptoLocalWalletRepository) single.get(Reflection.getOrCreateKotlinClass(CryptoLocalWalletRepository.class), null, null), cryptoPreferenceHelper, firebaseFunctionsErrorHandler, apiErrorHandler);
-        }
-    }
-
-    /* JADX INFO: Access modifiers changed from: package-private */
-    /* compiled from: RepositoryModule.kt */
     /* renamed from: com.iMe.storage.data.di.module.RepositoryModuleKt$repositoryModule$1$18 */
     /* loaded from: classes3.dex */
-    public static final class C171918 extends Lambda implements Function2<Scope, ParametersHolder, SimplexRepository> {
-        public static final C171918 INSTANCE = new C171918();
+    public static final class C172818 extends Lambda implements Function2<Scope, ParametersHolder, SimplexRepository> {
+        public static final C172818 INSTANCE = new C172818();
 
-        C171918() {
+        C172818() {
             super(2);
         }
 
@@ -703,10 +699,10 @@ final class RepositoryModuleKt$repositoryModule$1 extends Lambda implements Func
     /* compiled from: RepositoryModule.kt */
     /* renamed from: com.iMe.storage.data.di.module.RepositoryModuleKt$repositoryModule$1$19 */
     /* loaded from: classes3.dex */
-    public static final class C172019 extends Lambda implements Function2<Scope, ParametersHolder, SwapRepository> {
-        public static final C172019 INSTANCE = new C172019();
+    public static final class C172919 extends Lambda implements Function2<Scope, ParametersHolder, SwapRepository> {
+        public static final C172919 INSTANCE = new C172919();
 
-        C172019() {
+        C172919() {
             super(2);
         }
 
@@ -724,10 +720,10 @@ final class RepositoryModuleKt$repositoryModule$1 extends Lambda implements Func
     /* compiled from: RepositoryModule.kt */
     /* renamed from: com.iMe.storage.data.di.module.RepositoryModuleKt$repositoryModule$1$2 */
     /* loaded from: classes3.dex */
-    public static final class C17212 extends Lambda implements Function2<Scope, ParametersHolder, WalletSessionRepository> {
-        public static final C17212 INSTANCE = new C17212();
+    public static final class C17302 extends Lambda implements Function2<Scope, ParametersHolder, WalletSessionRepository> {
+        public static final C17302 INSTANCE = new C17302();
 
-        C17212() {
+        C17302() {
             super(2);
         }
 
@@ -743,10 +739,10 @@ final class RepositoryModuleKt$repositoryModule$1 extends Lambda implements Func
     /* compiled from: RepositoryModule.kt */
     /* renamed from: com.iMe.storage.data.di.module.RepositoryModuleKt$repositoryModule$1$20 */
     /* loaded from: classes3.dex */
-    public static final class C172220 extends Lambda implements Function2<Scope, ParametersHolder, CancelRepository> {
-        public static final C172220 INSTANCE = new C172220();
+    public static final class C173120 extends Lambda implements Function2<Scope, ParametersHolder, CancelRepository> {
+        public static final C173120 INSTANCE = new C173120();
 
-        C172220() {
+        C173120() {
             super(2);
         }
 
@@ -763,10 +759,10 @@ final class RepositoryModuleKt$repositoryModule$1 extends Lambda implements Func
     /* compiled from: RepositoryModule.kt */
     /* renamed from: com.iMe.storage.data.di.module.RepositoryModuleKt$repositoryModule$1$21 */
     /* loaded from: classes3.dex */
-    public static final class C172321 extends Lambda implements Function2<Scope, ParametersHolder, DonationsRepository> {
-        public static final C172321 INSTANCE = new C172321();
+    public static final class C173221 extends Lambda implements Function2<Scope, ParametersHolder, DonationsRepository> {
+        public static final C173221 INSTANCE = new C173221();
 
-        C172321() {
+        C173221() {
             super(2);
         }
 
@@ -783,10 +779,10 @@ final class RepositoryModuleKt$repositoryModule$1 extends Lambda implements Func
     /* compiled from: RepositoryModule.kt */
     /* renamed from: com.iMe.storage.data.di.module.RepositoryModuleKt$repositoryModule$1$22 */
     /* loaded from: classes3.dex */
-    public static final class C172422 extends Lambda implements Function2<Scope, ParametersHolder, BoostRepository> {
-        public static final C172422 INSTANCE = new C172422();
+    public static final class C173322 extends Lambda implements Function2<Scope, ParametersHolder, BoostRepository> {
+        public static final C173322 INSTANCE = new C173322();
 
-        C172422() {
+        C173322() {
             super(2);
         }
 
@@ -794,9 +790,8 @@ final class RepositoryModuleKt$repositoryModule$1 extends Lambda implements Func
         public final BoostRepository invoke(Scope single, ParametersHolder it) {
             Intrinsics.checkNotNullParameter(single, "$this$single");
             Intrinsics.checkNotNullParameter(it, "it");
-            ApiErrorHandler apiErrorHandler = (ApiErrorHandler) single.get(Reflection.getOrCreateKotlinClass(ApiErrorHandler.class), null, null);
             FirebaseFunctionsErrorHandler firebaseFunctionsErrorHandler = (FirebaseFunctionsErrorHandler) single.get(Reflection.getOrCreateKotlinClass(FirebaseFunctionsErrorHandler.class), null, null);
-            return new BoostRepositoryImpl((BoostApi) single.get(Reflection.getOrCreateKotlinClass(BoostApi.class), null, null), (CryptoAccessManager) single.get(Reflection.getOrCreateKotlinClass(CryptoAccessManager.class), null, null), (WalletBoostDataSourceFactory) single.get(Reflection.getOrCreateKotlinClass(WalletBoostDataSourceFactory.class), null, null), firebaseFunctionsErrorHandler, apiErrorHandler);
+            return new BoostRepositoryImpl((BoostApi) single.get(Reflection.getOrCreateKotlinClass(BoostApi.class), null, null), (WalletBoostDataSourceFactory) single.get(Reflection.getOrCreateKotlinClass(WalletBoostDataSourceFactory.class), null, null), firebaseFunctionsErrorHandler, (ApiErrorHandler) single.get(Reflection.getOrCreateKotlinClass(ApiErrorHandler.class), null, null));
         }
     }
 
@@ -804,10 +799,10 @@ final class RepositoryModuleKt$repositoryModule$1 extends Lambda implements Func
     /* compiled from: RepositoryModule.kt */
     /* renamed from: com.iMe.storage.data.di.module.RepositoryModuleKt$repositoryModule$1$23 */
     /* loaded from: classes3.dex */
-    public static final class C172523 extends Lambda implements Function2<Scope, ParametersHolder, AirdropRepository> {
-        public static final C172523 INSTANCE = new C172523();
+    public static final class C173423 extends Lambda implements Function2<Scope, ParametersHolder, AirdropRepository> {
+        public static final C173423 INSTANCE = new C173423();
 
-        C172523() {
+        C173423() {
             super(2);
         }
 
@@ -824,10 +819,10 @@ final class RepositoryModuleKt$repositoryModule$1 extends Lambda implements Func
     /* compiled from: RepositoryModule.kt */
     /* renamed from: com.iMe.storage.data.di.module.RepositoryModuleKt$repositoryModule$1$24 */
     /* loaded from: classes3.dex */
-    public static final class C172624 extends Lambda implements Function2<Scope, ParametersHolder, NftAvatarRepository> {
-        public static final C172624 INSTANCE = new C172624();
+    public static final class C173524 extends Lambda implements Function2<Scope, ParametersHolder, NftAvatarRepository> {
+        public static final C173524 INSTANCE = new C173524();
 
-        C172624() {
+        C173524() {
             super(2);
         }
 
@@ -844,10 +839,10 @@ final class RepositoryModuleKt$repositoryModule$1 extends Lambda implements Func
     /* compiled from: RepositoryModule.kt */
     /* renamed from: com.iMe.storage.data.di.module.RepositoryModuleKt$repositoryModule$1$3 */
     /* loaded from: classes3.dex */
-    public static final class C17293 extends Lambda implements Function2<Scope, ParametersHolder, WalletRepository> {
-        public static final C17293 INSTANCE = new C17293();
+    public static final class C17383 extends Lambda implements Function2<Scope, ParametersHolder, WalletRepository> {
+        public static final C17383 INSTANCE = new C17383();
 
-        C17293() {
+        C17383() {
             super(2);
         }
 
@@ -856,10 +851,12 @@ final class RepositoryModuleKt$repositoryModule$1 extends Lambda implements Func
             Intrinsics.checkNotNullParameter(single, "$this$single");
             Intrinsics.checkNotNullParameter(it, "it");
             WalletApi walletApi = (WalletApi) single.get(Reflection.getOrCreateKotlinClass(WalletApi.class), null, null);
-            WalletTokenBalanceDao walletTokenBalanceDao = (WalletTokenBalanceDao) single.get(Reflection.getOrCreateKotlinClass(WalletTokenBalanceDao.class), null, null);
+            WalletTokensBalancesDao walletTokensBalancesDao = (WalletTokensBalancesDao) single.get(Reflection.getOrCreateKotlinClass(WalletTokensBalancesDao.class), null, null);
             FirebaseFunctionsErrorHandler firebaseFunctionsErrorHandler = (FirebaseFunctionsErrorHandler) single.get(Reflection.getOrCreateKotlinClass(FirebaseFunctionsErrorHandler.class), null, null);
             ApiErrorHandler apiErrorHandler = (ApiErrorHandler) single.get(Reflection.getOrCreateKotlinClass(ApiErrorHandler.class), null, null);
-            return new WalletRepositoryImpl(walletApi, (WalletTransferDataSourceFactory) single.get(Reflection.getOrCreateKotlinClass(WalletTransferDataSourceFactory.class), null, null), walletTokenBalanceDao, (SchedulersProvider) single.get(Reflection.getOrCreateKotlinClass(SchedulersProvider.class), null, null), firebaseFunctionsErrorHandler, apiErrorHandler, (TelegramGateway) single.get(Reflection.getOrCreateKotlinClass(TelegramGateway.class), null, null));
+            SchedulersProvider schedulersProvider = (SchedulersProvider) single.get(Reflection.getOrCreateKotlinClass(SchedulersProvider.class), null, null);
+            TelegramGateway telegramGateway = (TelegramGateway) single.get(Reflection.getOrCreateKotlinClass(TelegramGateway.class), null, null);
+            return new WalletRepositoryImpl((CryptoPreferenceHelper) single.get(Reflection.getOrCreateKotlinClass(CryptoPreferenceHelper.class), null, null), walletApi, (WalletTransferDataSourceFactory) single.get(Reflection.getOrCreateKotlinClass(WalletTransferDataSourceFactory.class), null, null), walletTokensBalancesDao, schedulersProvider, firebaseFunctionsErrorHandler, apiErrorHandler, telegramGateway);
         }
     }
 
@@ -867,10 +864,10 @@ final class RepositoryModuleKt$repositoryModule$1 extends Lambda implements Func
     /* compiled from: RepositoryModule.kt */
     /* renamed from: com.iMe.storage.data.di.module.RepositoryModuleKt$repositoryModule$1$4 */
     /* loaded from: classes3.dex */
-    public static final class C17304 extends Lambda implements Function2<Scope, ParametersHolder, PushNotificationRepository> {
-        public static final C17304 INSTANCE = new C17304();
+    public static final class C17394 extends Lambda implements Function2<Scope, ParametersHolder, PushNotificationRepository> {
+        public static final C17394 INSTANCE = new C17394();
 
-        C17304() {
+        C17394() {
             super(2);
         }
 
@@ -886,10 +883,10 @@ final class RepositoryModuleKt$repositoryModule$1 extends Lambda implements Func
     /* compiled from: RepositoryModule.kt */
     /* renamed from: com.iMe.storage.data.di.module.RepositoryModuleKt$repositoryModule$1$25 */
     /* loaded from: classes3.dex */
-    public static final class C172725 extends Lambda implements Function2<Scope, ParametersHolder, WalletConnectRepository> {
-        public static final C172725 INSTANCE = new C172725();
+    public static final class C173625 extends Lambda implements Function2<Scope, ParametersHolder, WalletConnectRepository> {
+        public static final C173625 INSTANCE = new C173625();
 
-        C172725() {
+        C173625() {
             super(2);
         }
 
@@ -905,10 +902,10 @@ final class RepositoryModuleKt$repositoryModule$1 extends Lambda implements Func
     /* compiled from: RepositoryModule.kt */
     /* renamed from: com.iMe.storage.data.di.module.RepositoryModuleKt$repositoryModule$1$26 */
     /* loaded from: classes3.dex */
-    public static final class C172826 extends Lambda implements Function2<Scope, ParametersHolder, TonConfigRepository> {
-        public static final C172826 INSTANCE = new C172826();
+    public static final class C173726 extends Lambda implements Function2<Scope, ParametersHolder, TonConfigRepository> {
+        public static final C173726 INSTANCE = new C173726();
 
-        C172826() {
+        C173726() {
             super(2);
         }
 

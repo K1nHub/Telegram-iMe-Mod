@@ -31,7 +31,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nRxExt.kt\nKotlin\n*S Kotlin\n*F\n+ 1 RxExt.kt\ncom/iMe/utils/extentions/rx/RxExtKt$subscribeWithErrorHandle$2\n+ 2 BuyCryptoProductPresenter.kt\ncom/iMe/ui/wallet/crypto/buy/BuyCryptoProductPresenter\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 4 ArraysJVM.kt\nkotlin/collections/ArraysKt__ArraysJVMKt\n*L\n1#1,111:1\n62#2,3:112\n65#2,6:118\n1045#3:115\n37#4,2:116\n*S KotlinDebug\n*F\n+ 1 BuyCryptoProductPresenter.kt\ncom/iMe/ui/wallet/crypto/buy/BuyCryptoProductPresenter\n*L\n64#1:115\n64#1:116,2\n*E\n"
+    value = "SMAP\nRxExt.kt\nKotlin\n*S Kotlin\n*F\n+ 1 RxExt.kt\ncom/iMe/utils/extentions/rx/RxExtKt$subscribeWithErrorHandle$2\n+ 2 BuyCryptoProductPresenter.kt\ncom/iMe/ui/wallet/crypto/buy/BuyCryptoProductPresenter\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 4 ArraysJVM.kt\nkotlin/collections/ArraysKt__ArraysJVMKt\n*L\n1#1,111:1\n60#2,3:112\n63#2,7:118\n1045#3:115\n37#4,2:116\n*S KotlinDebug\n*F\n+ 1 BuyCryptoProductPresenter.kt\ncom/iMe/ui/wallet/crypto/buy/BuyCryptoProductPresenter\n*L\n62#1:115\n62#1:116,2\n*E\n"
 .end annotation
 
 
@@ -57,7 +57,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 44
+    .line 47
     invoke-virtual {p0, p1}, Lcom/iMe/ui/wallet/crypto/buy/BuyCryptoProductPresenter$loadAvailableProducts$$inlined$subscribeWithErrorHandle$default$1;->invoke(Ljava/lang/Object;)V
 
     sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
@@ -80,7 +80,7 @@
 
     const-string v0, "it"
 
-    .line 45
+    .line 48
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     check-cast p1, Lcom/iMe/storage/domain/model/Result;
@@ -101,11 +101,11 @@
 
     iget-object v0, p0, Lcom/iMe/ui/wallet/crypto/buy/BuyCryptoProductPresenter$loadAvailableProducts$$inlined$subscribeWithErrorHandle$default$1;->this$0:Lcom/iMe/ui/wallet/crypto/buy/BuyCryptoProductPresenter;
 
-    invoke-static {v0}, Lcom/iMe/ui/wallet/crypto/buy/BuyCryptoProductPresenter;->access$getTokenInfo(Lcom/iMe/ui/wallet/crypto/buy/BuyCryptoProductPresenter;)Lcom/iMe/storage/domain/model/wallet/token/TokenInfo;
+    invoke-static {v0}, Lcom/iMe/ui/wallet/crypto/buy/BuyCryptoProductPresenter;->access$getInitToken$p(Lcom/iMe/ui/wallet/crypto/buy/BuyCryptoProductPresenter;)Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
 
     move-result-object v0
 
-    invoke-static {p1, v0}, Lcom/iMe/mapper/crypto/CryptoQuotesToCryptoBuyItemUiMappingKt;->mapToUI(Ljava/util/List;Lcom/iMe/storage/domain/model/wallet/token/TokenInfo;)Ljava/util/List;
+    invoke-static {p1, v0}, Lcom/iMe/mapper/crypto/CryptoQuotesToCryptoBuyItemUiMappingKt;->mapToUI(Ljava/util/List;Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;)Ljava/util/List;
 
     move-result-object p1
 
@@ -137,7 +137,7 @@
 
     goto :goto_0
 
-    .line 120
+    .line 121
     :cond_0
     instance-of v0, p1, Lcom/iMe/storage/domain/model/Result$Error;
 

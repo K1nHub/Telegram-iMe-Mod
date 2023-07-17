@@ -5,15 +5,15 @@ import java.io.DataInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import org.bouncycastle.util.Arrays;
-import org.bouncycastle.util.p042io.Streams;
+import org.bouncycastle.util.p041io.Streams;
 /* loaded from: classes4.dex */
 public class LMSPublicKeyParameters extends LMSKeyParameters {
 
     /* renamed from: I */
-    private final byte[] f1318I;
+    private final byte[] f1400I;
 
     /* renamed from: T1 */
-    private final byte[] f1319T1;
+    private final byte[] f1401T1;
     private final LMOtsParameters lmOtsType;
     private final LMSigParameters parameterSet;
 
@@ -21,8 +21,8 @@ public class LMSPublicKeyParameters extends LMSKeyParameters {
         super(false);
         this.parameterSet = lMSigParameters;
         this.lmOtsType = lMOtsParameters;
-        this.f1318I = Arrays.clone(bArr2);
-        this.f1319T1 = Arrays.clone(bArr);
+        this.f1400I = Arrays.clone(bArr2);
+        this.f1401T1 = Arrays.clone(bArr);
     }
 
     public static LMSPublicKeyParameters getInstance(Object obj) throws IOException {
@@ -73,8 +73,8 @@ public class LMSPublicKeyParameters extends LMSKeyParameters {
             return false;
         }
         LMSPublicKeyParameters lMSPublicKeyParameters = (LMSPublicKeyParameters) obj;
-        if (this.parameterSet.equals(lMSPublicKeyParameters.parameterSet) && this.lmOtsType.equals(lMSPublicKeyParameters.lmOtsType) && Arrays.areEqual(this.f1318I, lMSPublicKeyParameters.f1318I)) {
-            return Arrays.areEqual(this.f1319T1, lMSPublicKeyParameters.f1319T1);
+        if (this.parameterSet.equals(lMSPublicKeyParameters.parameterSet) && this.lmOtsType.equals(lMSPublicKeyParameters.lmOtsType) && Arrays.areEqual(this.f1400I, lMSPublicKeyParameters.f1400I)) {
+            return Arrays.areEqual(this.f1401T1, lMSPublicKeyParameters.f1401T1);
         }
         return false;
     }
@@ -85,10 +85,10 @@ public class LMSPublicKeyParameters extends LMSKeyParameters {
     }
 
     public int hashCode() {
-        return (((((this.parameterSet.hashCode() * 31) + this.lmOtsType.hashCode()) * 31) + Arrays.hashCode(this.f1318I)) * 31) + Arrays.hashCode(this.f1319T1);
+        return (((((this.parameterSet.hashCode() * 31) + this.lmOtsType.hashCode()) * 31) + Arrays.hashCode(this.f1400I)) * 31) + Arrays.hashCode(this.f1401T1);
     }
 
     byte[] toByteArray() {
-        return Composer.compose().u32str(this.parameterSet.getType()).u32str(this.lmOtsType.getType()).bytes(this.f1318I).bytes(this.f1319T1).build();
+        return Composer.compose().u32str(this.parameterSet.getType()).u32str(this.lmOtsType.getType()).bytes(this.f1400I).bytes(this.f1401T1).build();
     }
 }

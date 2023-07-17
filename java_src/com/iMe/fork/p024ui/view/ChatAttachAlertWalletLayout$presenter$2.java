@@ -1,11 +1,11 @@
 package com.iMe.fork.p024ui.view;
 
-import com.iMe.p031ui.wallet.home.old.WalletAttachAlertPresenter;
+import com.iMe.p031ui.wallet.home.attach.WalletAttachAlertPresenter;
 import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Lambda;
-import org.koin.p043mp.KoinPlatformTools;
+import org.koin.p042mp.KoinPlatformTools;
 /* compiled from: ChatAttachAlertWalletLayout.kt */
 /* renamed from: com.iMe.fork.ui.view.ChatAttachAlertWalletLayout$presenter$2 */
 /* loaded from: classes3.dex */
@@ -23,7 +23,7 @@ final class ChatAttachAlertWalletLayout$presenter$2 extends Lambda implements Fu
     @Override // kotlin.jvm.functions.Function0
     public final WalletAttachAlertPresenter invoke() {
         Lazy lazy;
-        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new C1532x5059aa3c(this.this$0, null, null));
+        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new C1543x5059aa3c(this.this$0, null, null));
         return (WalletAttachAlertPresenter) lazy.getValue();
     }
 }

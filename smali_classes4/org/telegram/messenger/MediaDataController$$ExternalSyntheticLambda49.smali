@@ -16,11 +16,9 @@
 
 .field public final synthetic f$4:Z
 
-.field public final synthetic f$5:Z
-
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/messenger/MediaDataController;JJLjava/util/ArrayList;ZZ)V
+.method public synthetic constructor <init>(Lorg/telegram/messenger/MediaDataController;JJLjava/util/ArrayList;Z)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,15 +33,13 @@
 
     iput-boolean p7, p0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda49;->f$4:Z
 
-    iput-boolean p8, p0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda49;->f$5:Z
-
     return-void
 .end method
 
 
 # virtual methods
 .method public final run()V
-    .locals 8
+    .locals 7
 
     iget-object v0, p0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda49;->f$0:Lorg/telegram/messenger/MediaDataController;
 
@@ -55,9 +51,7 @@
 
     iget-boolean v6, p0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda49;->f$4:Z
 
-    iget-boolean v7, p0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda49;->f$5:Z
-
-    invoke-static/range {v0 .. v7}, Lorg/telegram/messenger/MediaDataController;->$r8$lambda$R-rzMAUpv8VJaonSArwvOCe3VLQ(Lorg/telegram/messenger/MediaDataController;JJLjava/util/ArrayList;ZZ)V
+    invoke-static/range {v0 .. v6}, Lorg/telegram/messenger/MediaDataController;->$r8$lambda$cVZ971__zYluCjDwfyMTTYJHBNk(Lorg/telegram/messenger/MediaDataController;JJLjava/util/ArrayList;Z)V
 
     return-void
 .end method

@@ -255,6 +255,36 @@
     return-object p0
 .end method
 
+.method public static listOfNotNull(Ljava/lang/Object;)Ljava/util/List;
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<T:",
+            "Ljava/lang/Object;",
+            ">(TT;)",
+            "Ljava/util/List<",
+            "TT;>;"
+        }
+    .end annotation
+
+    if-eqz p0, :cond_0
+
+    .line 120
+    invoke-static {p0}, Lkotlin/collections/CollectionsKt;->listOf(Ljava/lang/Object;)Ljava/util/List;
+
+    move-result-object p0
+
+    goto :goto_0
+
+    :cond_0
+    invoke-static {}, Lkotlin/collections/CollectionsKt;->emptyList()Ljava/util/List;
+
+    move-result-object p0
+
+    :goto_0
+    return-object p0
+.end method
+
 .method public static varargs listOfNotNull([Ljava/lang/Object;)Ljava/util/List;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;

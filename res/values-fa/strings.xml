@@ -181,9 +181,6 @@
     <string name="chat_attach_alert_bot_buttons">دکمه‌های ربات</string>
     <string name="chat_avatar_previewer_mention_by_name">اشاره کردن بر اساس نام</string>
     <string name="chat_avatar_previewer_user_messages">پیام‌های کاربر</string>
-    <string name="chat_bookmarks">بوکمارک‌ها</string>
-    <string name="chat_bookmarks_empty">بدون بوکمارک</string>
-    <string name="chat_bookmarks_empty_subtitle">بوکمارک در چت‌ها ندارید</string>
     <string name="chat_drafts_empty">بدون پیش‌نویس</string>
     <string name="chat_drafts_empty_subtitle">پیام پیش‌نویس در چت‌ها ندارید</string>
     <string name="chat_long_action_translate">ترجمه</string>
@@ -194,7 +191,6 @@
     <string name="chat_menu_language_settings">تنظیمات زبان</string>
     <string name="chat_message_forward_media">هدایت رسانه</string>
     <string name="chat_message_forward_text">هدایت متن</string>
-    <string name="chat_message_popup_option_add_to_bookmarks">ذخیره در بوکمارک‌ها</string>
     <string name="chat_message_popup_option_copy_image">کپی عکس</string>
     <string name="chat_message_popup_option_copy_part">کپی بخش</string>
     <string name="chat_message_popup_option_copy_text">کپی متن</string>
@@ -202,8 +198,6 @@
     <string name="chat_message_popup_option_forward_viber">هدایت به Viber</string>
     <string name="chat_message_popup_option_forward_whatsapp">هدایت به WhatsApp</string>
     <string name="chat_message_popup_option_forward_whatsapp_business">هدایت به WA Business</string>
-    <string name="chat_message_popup_option_remove_all_bookmarks">حذف تمام بوکمارک‌ها</string>
-    <string name="chat_message_popup_option_remove_from_bookmarks">حذف از بوکمارک‌ها</string>
     <string name="chat_message_spoiler_less">کمتر</string>
     <string name="chat_message_spoiler_more">بیشتر</string>
     <string name="chat_multi_panel_empty_cache_toast">حافظه کش در این چت وجود ندارد</string>
@@ -550,11 +544,6 @@
     <string name="loading_participants_error">خطای بارگیری شرکت‌کننده‌ها، بعداً دوباره امتحان کنید</string>
     <string name="main_camera_popup_text">دوربین اصلی</string>
     <string name="main_list">لیست اصلی</string>
-    <string name="management">مدیریت</string>
-    <string name="management_bookmarks_delete_all_alert_message">از حذف تمام بوکمارک‌ها از تمام چت‌ها اطمینان دارید؟ چت‌هایتان حذف نخواهد شد.</string>
-    <string name="management_bookmarks_delete_selected_alert_message">از حذف تمام بوکمارک‌ها از چت‌های انتخاب‌شده اطمینان دارید؟ چت‌هایتان حذف نخواهد شد.</string>
-    <string name="management_drafts">پیش‌نویس‌ها</string>
-    <string name="management_drafts_delete_selected_alert_message">از حذف تمام بوکمارک‌ها از تمام پیش‌نویس‌ها اطمینان دارید؟ چت‌هایتان حذف نخواهد شد.</string>
     <string name="material_clock_toggle_content_description">انتخاب .ق.ظ. یا ب.ظ.</string>
     <string name="material_hour_selection">انتخاب ساعت</string>
     <string name="material_hour_suffix">ساعت %1$s</string>
@@ -926,6 +915,7 @@
     <string name="sorting_settings_tab_bots_item_title">ربات‌ها</string>
     <string name="sorting_settings_tab_channels_item_title">کانال‌ها</string>
     <string name="sorting_settings_tab_deleted_users">حساب‌های حذف‌شده</string>
+    <string name="sorting_settings_tab_drafts">پیش‌نویس‌ها</string>
     <string name="sorting_settings_tab_groups_item_title">چت‌های گروهی</string>
     <string name="sorting_settings_tab_live_chats">چت‌های زنده</string>
     <string name="sorting_settings_tab_mentioned_chats">چت‌های اشاره شده</string>
@@ -1479,7 +1469,7 @@
 می‌توانید فقط یک حساب کیف پول رمزارز فعال در کیف پول iMe داشته باشید. بنابراین، وقتی سایر کاربران مبالغی به شناسه تلگرام شما انتقال می‌دهند، تمام مبالغ به‌طورخودکار به آخرین نشانی لینک‌شده واریز می‌شود.‏"</string>
     <string name="wallet_dashboard_create_start_dialog_description">"کیف پول غیرامانی برای رمزارزها و توکن‌ها.
 
-نگهداری، خرید، سوآپ و انتقال را در شبکه‌های اتریوم، BNB Chain و پالیگان انجام دهید.
+در شبکه های اتریوم، بیت کوین، BNB Chain، Polygon، Fantom، Tron و TON، فروشگاه، خرید، مبادله و انتقال انجام دهید.
 
 با فشار دادن بعدی، موافقت خود را با
 %s

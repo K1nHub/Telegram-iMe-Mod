@@ -7,6 +7,10 @@ public final class SetsKt extends SetsKt___SetsKt {
         return SetsKt__SetsKt.emptySet();
     }
 
+    public static /* bridge */ /* synthetic */ <T> Set<T> optimizeReadOnlySet(Set<? extends T> set) {
+        return SetsKt__SetsKt.optimizeReadOnlySet(set);
+    }
+
     public static /* bridge */ /* synthetic */ <T> Set<T> setOf(T t) {
         return SetsKt__SetsJVMKt.setOf(t);
     }

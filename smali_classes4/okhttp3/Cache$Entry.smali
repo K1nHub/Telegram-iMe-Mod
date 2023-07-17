@@ -116,7 +116,7 @@
 .method public constructor <init>(Lokhttp3/Response;)V
     .locals 2
 
-    const-string v0, "response"
+    const-string/jumbo v0, "response"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -217,7 +217,7 @@
         }
     .end annotation
 
-    const-string v0, "rawSource"
+    const-string/jumbo v0, "rawSource"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -769,11 +769,11 @@
 .method public final matches(Lokhttp3/Request;Lokhttp3/Response;)Z
     .locals 2
 
-    const-string v0, "request"
+    const-string/jumbo v0, "request"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "response"
+    const-string/jumbo v0, "response"
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 

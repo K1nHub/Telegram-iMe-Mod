@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/Components/LinkActionView;->lambda$new$11(Landroid/content/Context;Lorg/telegram/ui/ActionBar/BottomSheet;Lorg/telegram/ui/ActionBar/BaseFragment;Landroid/view/View;)V
+    value = Lorg/telegram/ui/Components/LinkActionView;->lambda$new$12(Landroid/content/Context;Lorg/telegram/ui/ActionBar/BottomSheet;Lorg/telegram/ui/ActionBar/BaseFragment;Landroid/view/View;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -31,7 +31,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/LinkActionView;Landroid/view/View;Landroid/widget/FrameLayout;Landroid/view/ViewTreeObserver$OnPreDrawListener;)V
     .locals 0
 
-    .line 571
+    .line 573
     iput-object p1, p0, Lorg/telegram/ui/Components/LinkActionView$3;->this$0:Lorg/telegram/ui/Components/LinkActionView;
 
     iput-object p2, p0, Lorg/telegram/ui/Components/LinkActionView$3;->val$dimView:Landroid/view/View;
@@ -50,14 +50,14 @@
 .method public onDismiss()V
     .locals 3
 
-    .line 574
+    .line 576
     iget-object v0, p0, Lorg/telegram/ui/Components/LinkActionView$3;->this$0:Lorg/telegram/ui/Components/LinkActionView;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Lorg/telegram/ui/Components/LinkActionView;->access$502(Lorg/telegram/ui/Components/LinkActionView;Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;)Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
 
-    .line 575
+    .line 577
     iget-object v0, p0, Lorg/telegram/ui/Components/LinkActionView$3;->val$dimView:Landroid/view/View;
 
     invoke-virtual {v0}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
@@ -66,7 +66,7 @@
 
     invoke-virtual {v0}, Landroid/view/ViewPropertyAnimator;->cancel()V
 
-    .line 576
+    .line 578
     iget-object v0, p0, Lorg/telegram/ui/Components/LinkActionView$3;->val$dimView:Landroid/view/View;
 
     invoke-virtual {v0}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;

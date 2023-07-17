@@ -34,20 +34,20 @@
 .method constructor <init>(Lcom/iMe/ui/chat/ChatView$$State;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
     .locals 1
 
-    .line 446
+    .line 473
     const-class p1, Lmoxy/viewstate/strategy/OneExecutionStateStrategy;
 
     const-string v0, "showSuccessPaymentProcessedDialog"
 
     invoke-direct {p0, v0, p1}, Lmoxy/viewstate/ViewCommand;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
-    .line 448
+    .line 475
     iput-object p2, p0, Lcom/iMe/ui/chat/ChatView$$State$ShowSuccessPaymentProcessedDialogCommand;->title:Ljava/lang/String;
 
-    .line 449
+    .line 476
     iput-object p3, p0, Lcom/iMe/ui/chat/ChatView$$State$ShowSuccessPaymentProcessedDialogCommand;->message:Ljava/lang/String;
 
-    .line 450
+    .line 477
     iput-object p4, p0, Lcom/iMe/ui/chat/ChatView$$State$ShowSuccessPaymentProcessedDialogCommand;->btnText:Ljava/lang/String;
 
     return-void
@@ -58,7 +58,7 @@
 .method public apply(Lcom/iMe/ui/chat/ChatView;)V
     .locals 3
 
-    .line 455
+    .line 482
     iget-object v0, p0, Lcom/iMe/ui/chat/ChatView$$State$ShowSuccessPaymentProcessedDialogCommand;->title:Ljava/lang/String;
 
     iget-object v1, p0, Lcom/iMe/ui/chat/ChatView$$State$ShowSuccessPaymentProcessedDialogCommand;->message:Ljava/lang/String;
@@ -73,7 +73,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 438
+    .line 465
     check-cast p1, Lcom/iMe/ui/chat/ChatView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/chat/ChatView$$State$ShowSuccessPaymentProcessedDialogCommand;->apply(Lcom/iMe/ui/chat/ChatView;)V

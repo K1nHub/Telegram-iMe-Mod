@@ -53,7 +53,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 22
+    .line 23
     check-cast p1, Lcom/iMe/ui/custom/state/GlobalStateLayout;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/adapter/provider/GlobalStateProvider$convert$1;->invoke(Lcom/iMe/ui/custom/state/GlobalStateLayout;)V
@@ -70,7 +70,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 23
+    .line 24
     iget-object v0, p0, Lcom/iMe/ui/adapter/provider/GlobalStateProvider$convert$1;->this$0:Lcom/iMe/ui/adapter/provider/GlobalStateProvider;
 
     invoke-virtual {v0}, Lcom/iMe/ui/adapter/provider/GlobalStateProvider;->isMatchParentHeight()Z
@@ -79,20 +79,20 @@
 
     if-eqz v0, :cond_0
 
-    .line 24
+    .line 25
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v0
 
     const/4 v1, -0x1
 
-    .line 25
+    .line 26
     iput v1, v0, Landroid/view/ViewGroup$LayoutParams;->height:I
 
-    .line 24
+    .line 25
     invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 28
+    .line 29
     :cond_0
     iget-object v0, p0, Lcom/iMe/ui/adapter/provider/GlobalStateProvider$convert$1;->$item:Lcom/iMe/model/common/GlobalStateItem;
 
@@ -102,7 +102,7 @@
 
     invoke-virtual {p1, v0}, Lcom/iMe/ui/custom/state/GlobalStateLayout;->setInternalState(Lcom/iMe/model/state/GlobalState;)V
 
-    .line 29
+    .line 30
     iget-object v0, p0, Lcom/iMe/ui/adapter/provider/GlobalStateProvider$convert$1;->this$0:Lcom/iMe/ui/adapter/provider/GlobalStateProvider;
 
     invoke-virtual {v0}, Lcom/iMe/ui/adapter/provider/GlobalStateProvider;->getOnRetryButtonClickAction()Lkotlin/jvm/functions/Function0;
@@ -110,6 +110,15 @@
     move-result-object v0
 
     invoke-virtual {p1, v0}, Lcom/iMe/ui/custom/state/GlobalStateLayout;->setRetryButtonClickListener(Lkotlin/jvm/functions/Function0;)V
+
+    .line 31
+    iget-object v0, p0, Lcom/iMe/ui/adapter/provider/GlobalStateProvider$convert$1;->this$0:Lcom/iMe/ui/adapter/provider/GlobalStateProvider;
+
+    invoke-virtual {v0}, Lcom/iMe/ui/adapter/provider/GlobalStateProvider;->getOnEmptyButtonClickAction()Lkotlin/jvm/functions/Function0;
+
+    move-result-object v0
+
+    invoke-virtual {p1, v0}, Lcom/iMe/ui/custom/state/GlobalStateLayout;->setEmptyButtonClickListener(Lkotlin/jvm/functions/Function0;)V
 
     return-void
 .end method

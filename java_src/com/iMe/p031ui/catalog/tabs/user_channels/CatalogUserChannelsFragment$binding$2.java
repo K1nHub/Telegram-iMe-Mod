@@ -7,7 +7,7 @@ import org.telegram.messenger.databinding.ForkFragmentCatalogUserChannelsBinding
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: CatalogUserChannelsFragment.kt */
 /* renamed from: com.iMe.ui.catalog.tabs.user_channels.CatalogUserChannelsFragment$binding$2 */
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public final class CatalogUserChannelsFragment$binding$2 extends Lambda implements Function0<ForkFragmentCatalogUserChannelsBinding> {
     final /* synthetic */ CatalogUserChannelsFragment this$0;
 

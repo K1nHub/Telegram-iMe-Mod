@@ -59,11 +59,7 @@
     .line 66
     iget-object v0, p0, Lcom/iMe/storage/data/utils/system/AndroidResourceManager;->telegramGateway:Lcom/iMe/storage/domain/gateway/TelegramGateway;
 
-    invoke-interface {v0}, Lcom/iMe/storage/domain/gateway/TelegramGateway;->getCurrentLocaleInformation()Lcom/iMe/storage/domain/model/telegram/TelegramLocaleInformation;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/iMe/storage/domain/model/telegram/TelegramLocaleInformation;->getSupportedLanguage()Ljava/lang/String;
+    invoke-interface {v0}, Lcom/iMe/storage/domain/gateway/TelegramGateway;->getCurrentLanguage()Ljava/lang/String;
 
     move-result-object v0
 
@@ -145,11 +141,7 @@
     .line 52
     iget-object v0, p0, Lcom/iMe/storage/data/utils/system/AndroidResourceManager;->telegramGateway:Lcom/iMe/storage/domain/gateway/TelegramGateway;
 
-    invoke-interface {v0}, Lcom/iMe/storage/domain/gateway/TelegramGateway;->getCurrentLocaleInformation()Lcom/iMe/storage/domain/model/telegram/TelegramLocaleInformation;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/iMe/storage/domain/model/telegram/TelegramLocaleInformation;->getSupportedLanguage()Ljava/lang/String;
+    invoke-interface {v0}, Lcom/iMe/storage/domain/gateway/TelegramGateway;->getCurrentLanguage()Ljava/lang/String;
 
     move-result-object v0
 

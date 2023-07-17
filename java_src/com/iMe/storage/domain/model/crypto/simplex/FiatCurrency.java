@@ -22,7 +22,7 @@ public enum FiatCurrency implements Currency {
     }
 
     @Override // com.iMe.storage.domain.model.crypto.simplex.Currency
-    public int getSymbol() {
+    public int getSymbolResId() {
         return this.currencySymbol;
     }
 }

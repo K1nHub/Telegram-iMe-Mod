@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter$$ExternalSyntheticLambda2;->f$0:Lkotlin/jvm/functions/Function1;
 
-    invoke-static {v0, p1}, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->$r8$lambda$0PY73oA9H4q1RuwWNXSYGr-ITjw(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lio/reactivex/ObservableSource;
+    invoke-static {v0, p1}, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->$r8$lambda$-3LW5Zzq5nQKTpn-8HzfMN4IWKc(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lio/reactivex/ObservableSource;
 
     move-result-object p1
 

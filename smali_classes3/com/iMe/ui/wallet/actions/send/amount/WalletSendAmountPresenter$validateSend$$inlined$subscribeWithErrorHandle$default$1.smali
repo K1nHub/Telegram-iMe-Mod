@@ -30,7 +30,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nRxExt.kt\nKotlin\n*S Kotlin\n*F\n+ 1 RxExt.kt\ncom/iMe/utils/extentions/rx/RxExtKt$subscribeWithErrorHandle$2\n+ 2 WalletSendAmountPresenter.kt\ncom/iMe/ui/wallet/actions/send/amount/WalletSendAmountPresenter\n*L\n1#1,111:1\n170#2,14:112\n*E\n"
+    value = "SMAP\nRxExt.kt\nKotlin\n*S Kotlin\n*F\n+ 1 RxExt.kt\ncom/iMe/utils/extentions/rx/RxExtKt$subscribeWithErrorHandle$2\n+ 2 WalletSendAmountPresenter.kt\ncom/iMe/ui/wallet/actions/send/amount/WalletSendAmountPresenter\n*L\n1#1,111:1\n177#2,14:112\n*E\n"
 .end annotation
 
 
@@ -60,7 +60,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 44
+    .line 47
     invoke-virtual {p0, p1}, Lcom/iMe/ui/wallet/actions/send/amount/WalletSendAmountPresenter$validateSend$$inlined$subscribeWithErrorHandle$default$1;->invoke(Ljava/lang/Object;)V
 
     sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
@@ -82,7 +82,7 @@
 
     const-string v0, "it"
 
-    .line 45
+    .line 48
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     check-cast p1, Lcom/iMe/storage/domain/model/Result;
@@ -90,7 +90,7 @@
     .line 113
     instance-of v0, p1, Lcom/iMe/storage/domain/model/Result$Success;
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_a
 
     .line 114
     iget-object v0, p0, Lcom/iMe/ui/wallet/actions/send/amount/WalletSendAmountPresenter$validateSend$$inlined$subscribeWithErrorHandle$default$1;->this$0:Lcom/iMe/ui/wallet/actions/send/amount/WalletSendAmountPresenter;
@@ -134,7 +134,7 @@
     move v0, v2
 
     :goto_0
-    if-nez v0, :cond_a
+    if-nez v0, :cond_9
 
     check-cast p1, Lcom/iMe/storage/domain/model/Result$Success;
 
@@ -200,61 +200,23 @@
 
     .line 116
     :cond_3
-    iget-object p1, p0, Lcom/iMe/ui/wallet/actions/send/amount/WalletSendAmountPresenter$validateSend$$inlined$subscribeWithErrorHandle$default$1;->this$0:Lcom/iMe/ui/wallet/actions/send/amount/WalletSendAmountPresenter;
-
-    invoke-virtual {p1}, Lcom/iMe/ui/wallet/actions/send/amount/WalletSendAmountPresenter;->getSelectedTokenCode()Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
-
-    move-result-object p1
-
-    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;->isUnknown()Z
-
-    move-result p1
-
-    if-eqz p1, :cond_4
-
-    iget-object p1, p0, Lcom/iMe/ui/wallet/actions/send/amount/WalletSendAmountPresenter$validateSend$$inlined$subscribeWithErrorHandle$default$1;->this$0:Lcom/iMe/ui/wallet/actions/send/amount/WalletSendAmountPresenter;
-
-    invoke-virtual {p1}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
-
-    move-result-object p1
-
-    check-cast p1, Lcom/iMe/ui/wallet/actions/send/amount/WalletSendAmountView;
-
-    iget-object v0, p0, Lcom/iMe/ui/wallet/actions/send/amount/WalletSendAmountPresenter$validateSend$$inlined$subscribeWithErrorHandle$default$1;->this$0:Lcom/iMe/ui/wallet/actions/send/amount/WalletSendAmountPresenter;
-
-    invoke-static {v0}, Lcom/iMe/ui/wallet/actions/send/amount/WalletSendAmountPresenter;->access$getResourceManager$p(Lcom/iMe/ui/wallet/actions/send/amount/WalletSendAmountPresenter;)Lcom/iMe/storage/domain/utils/system/ResourceManager;
-
-    move-result-object v0
-
-    sget v1, Lorg/telegram/messenger/R$string;->wallet_amount_send_invalid_eth_address:I
-
-    invoke-interface {v0, v1}, Lcom/iMe/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-interface {p1, v0}, Lcom/iMe/ui/base/mvp/base/BaseView;->showToast(Ljava/lang/String;)V
-
-    goto/16 :goto_4
-
-    .line 117
-    :cond_4
     iget-object p1, p0, Lcom/iMe/ui/wallet/actions/send/amount/WalletSendAmountPresenter$validateSend$$inlined$subscribeWithErrorHandle$default$1;->$amount$inlined:Ljava/lang/String;
 
     invoke-interface {p1}, Ljava/lang/CharSequence;->length()I
 
     move-result p1
 
-    if-nez p1, :cond_5
+    if-nez p1, :cond_4
 
     move p1, v1
 
     goto :goto_1
 
-    :cond_5
+    :cond_4
     move p1, v2
 
     :goto_1
-    if-eqz p1, :cond_6
+    if-eqz p1, :cond_5
 
     iget-object p1, p0, Lcom/iMe/ui/wallet/actions/send/amount/WalletSendAmountPresenter$validateSend$$inlined$subscribeWithErrorHandle$default$1;->this$0:Lcom/iMe/ui/wallet/actions/send/amount/WalletSendAmountPresenter;
 
@@ -280,8 +242,8 @@
 
     goto/16 :goto_4
 
-    .line 118
-    :cond_6
+    .line 117
+    :cond_5
     iget-object p1, p0, Lcom/iMe/ui/wallet/actions/send/amount/WalletSendAmountPresenter$validateSend$$inlined$subscribeWithErrorHandle$default$1;->$amount$inlined:Ljava/lang/String;
 
     invoke-static {p1}, Ljava/lang/Double;->parseDouble(Ljava/lang/String;)D
@@ -292,15 +254,15 @@
 
     cmpg-double p1, v3, v5
 
-    if-nez p1, :cond_7
+    if-nez p1, :cond_6
 
     goto :goto_2
 
-    :cond_7
+    :cond_6
     move v1, v2
 
     :goto_2
-    if-eqz v1, :cond_8
+    if-eqz v1, :cond_7
 
     iget-object p1, p0, Lcom/iMe/ui/wallet/actions/send/amount/WalletSendAmountPresenter$validateSend$$inlined$subscribeWithErrorHandle$default$1;->this$0:Lcom/iMe/ui/wallet/actions/send/amount/WalletSendAmountPresenter;
 
@@ -326,8 +288,8 @@
 
     goto :goto_4
 
-    .line 119
-    :cond_8
+    .line 118
+    :cond_7
     iget-object p1, p0, Lcom/iMe/ui/wallet/actions/send/amount/WalletSendAmountPresenter$validateSend$$inlined$subscribeWithErrorHandle$default$1;->this$0:Lcom/iMe/ui/wallet/actions/send/amount/WalletSendAmountPresenter;
 
     iget-object v0, p0, Lcom/iMe/ui/wallet/actions/send/amount/WalletSendAmountPresenter$validateSend$$inlined$subscribeWithErrorHandle$default$1;->$amount$inlined:Ljava/lang/String;
@@ -336,7 +298,7 @@
 
     move-result p1
 
-    if-eqz p1, :cond_9
+    if-eqz p1, :cond_8
 
     iget-object p1, p0, Lcom/iMe/ui/wallet/actions/send/amount/WalletSendAmountPresenter$validateSend$$inlined$subscribeWithErrorHandle$default$1;->this$0:Lcom/iMe/ui/wallet/actions/send/amount/WalletSendAmountPresenter;
 
@@ -344,8 +306,8 @@
 
     goto :goto_4
 
-    .line 120
-    :cond_9
+    .line 119
+    :cond_8
     iget-object p1, p0, Lcom/iMe/ui/wallet/actions/send/amount/WalletSendAmountPresenter$validateSend$$inlined$subscribeWithErrorHandle$default$1;->this$0:Lcom/iMe/ui/wallet/actions/send/amount/WalletSendAmountPresenter;
 
     iget-object v0, p0, Lcom/iMe/ui/wallet/actions/send/amount/WalletSendAmountPresenter$validateSend$$inlined$subscribeWithErrorHandle$default$1;->$amount$inlined:Ljava/lang/String;
@@ -355,7 +317,7 @@
     goto :goto_4
 
     .line 114
-    :cond_a
+    :cond_9
     :goto_3
     iget-object p1, p0, Lcom/iMe/ui/wallet/actions/send/amount/WalletSendAmountPresenter$validateSend$$inlined$subscribeWithErrorHandle$default$1;->this$0:Lcom/iMe/ui/wallet/actions/send/amount/WalletSendAmountPresenter;
 
@@ -382,10 +344,10 @@
     goto :goto_4
 
     .line 122
-    :cond_b
+    :cond_a
     instance-of v0, p1, Lcom/iMe/storage/domain/model/Result$Error;
 
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_b
 
     iget-object v0, p0, Lcom/iMe/ui/wallet/actions/send/amount/WalletSendAmountPresenter$validateSend$$inlined$subscribeWithErrorHandle$default$1;->this$0:Lcom/iMe/ui/wallet/actions/send/amount/WalletSendAmountPresenter;
 
@@ -405,7 +367,7 @@
 
     invoke-interface {v0, p1, v1}, Lcom/iMe/ui/base/mvp/base/BaseView;->showErrorToast(Lcom/iMe/storage/domain/model/Result$Error;Lcom/iMe/storage/domain/utils/system/ResourceManager;)V
 
-    :cond_c
+    :cond_b
     :goto_4
     return-void
 .end method

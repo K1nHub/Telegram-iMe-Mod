@@ -4,41 +4,60 @@ import kotlin.jvm.internal.Intrinsics;
 /* compiled from: TokenBalanceResponse.kt */
 /* loaded from: classes3.dex */
 public final class TokenBalanceResponse {
-    private final String coinCode;
-    private final String networkType;
-    private final Float ratePercentageChange24h;
-    private final double rateToDollars;
+    private final Double ratePercentageChange24h;
+    private final FiatValueResponse rateToFiat;
+    private final TokenDetailedResponse token;
     private final double total;
-    private final float totalInDollars;
+    private final FiatValueResponse totalInFiat;
 
-    public final String component1() {
-        return this.coinCode;
+    public static /* synthetic */ TokenBalanceResponse copy$default(TokenBalanceResponse tokenBalanceResponse, double d, FiatValueResponse fiatValueResponse, FiatValueResponse fiatValueResponse2, Double d2, TokenDetailedResponse tokenDetailedResponse, int i, Object obj) {
+        if ((i & 1) != 0) {
+            d = tokenBalanceResponse.total;
+        }
+        double d3 = d;
+        if ((i & 2) != 0) {
+            fiatValueResponse = tokenBalanceResponse.totalInFiat;
+        }
+        FiatValueResponse fiatValueResponse3 = fiatValueResponse;
+        if ((i & 4) != 0) {
+            fiatValueResponse2 = tokenBalanceResponse.rateToFiat;
+        }
+        FiatValueResponse fiatValueResponse4 = fiatValueResponse2;
+        if ((i & 8) != 0) {
+            d2 = tokenBalanceResponse.ratePercentageChange24h;
+        }
+        Double d4 = d2;
+        if ((i & 16) != 0) {
+            tokenDetailedResponse = tokenBalanceResponse.token;
+        }
+        return tokenBalanceResponse.copy(d3, fiatValueResponse3, fiatValueResponse4, d4, tokenDetailedResponse);
     }
 
-    public final double component2() {
+    public final double component1() {
         return this.total;
     }
 
-    public final float component3() {
-        return this.totalInDollars;
+    public final FiatValueResponse component2() {
+        return this.totalInFiat;
     }
 
-    public final double component4() {
-        return this.rateToDollars;
+    public final FiatValueResponse component3() {
+        return this.rateToFiat;
     }
 
-    public final Float component5() {
+    public final Double component4() {
         return this.ratePercentageChange24h;
     }
 
-    public final String component6() {
-        return this.networkType;
+    public final TokenDetailedResponse component5() {
+        return this.token;
     }
 
-    public final TokenBalanceResponse copy(String coinCode, double d, float f, double d2, Float f2, String networkType) {
-        Intrinsics.checkNotNullParameter(coinCode, "coinCode");
-        Intrinsics.checkNotNullParameter(networkType, "networkType");
-        return new TokenBalanceResponse(coinCode, d, f, d2, f2, networkType);
+    public final TokenBalanceResponse copy(double d, FiatValueResponse totalInFiat, FiatValueResponse rateToFiat, Double d2, TokenDetailedResponse token) {
+        Intrinsics.checkNotNullParameter(totalInFiat, "totalInFiat");
+        Intrinsics.checkNotNullParameter(rateToFiat, "rateToFiat");
+        Intrinsics.checkNotNullParameter(token, "token");
+        return new TokenBalanceResponse(d, totalInFiat, rateToFiat, d2, token);
     }
 
     public boolean equals(Object obj) {
@@ -47,53 +66,49 @@ public final class TokenBalanceResponse {
         }
         if (obj instanceof TokenBalanceResponse) {
             TokenBalanceResponse tokenBalanceResponse = (TokenBalanceResponse) obj;
-            return Intrinsics.areEqual(this.coinCode, tokenBalanceResponse.coinCode) && Double.compare(this.total, tokenBalanceResponse.total) == 0 && Float.compare(this.totalInDollars, tokenBalanceResponse.totalInDollars) == 0 && Double.compare(this.rateToDollars, tokenBalanceResponse.rateToDollars) == 0 && Intrinsics.areEqual(this.ratePercentageChange24h, tokenBalanceResponse.ratePercentageChange24h) && Intrinsics.areEqual(this.networkType, tokenBalanceResponse.networkType);
+            return Double.compare(this.total, tokenBalanceResponse.total) == 0 && Intrinsics.areEqual(this.totalInFiat, tokenBalanceResponse.totalInFiat) && Intrinsics.areEqual(this.rateToFiat, tokenBalanceResponse.rateToFiat) && Intrinsics.areEqual(this.ratePercentageChange24h, tokenBalanceResponse.ratePercentageChange24h) && Intrinsics.areEqual(this.token, tokenBalanceResponse.token);
         }
         return false;
     }
 
     public int hashCode() {
-        int hashCode = ((((((this.coinCode.hashCode() * 31) + Double.doubleToLongBits(this.total)) * 31) + Float.floatToIntBits(this.totalInDollars)) * 31) + Double.doubleToLongBits(this.rateToDollars)) * 31;
-        Float f = this.ratePercentageChange24h;
-        return ((hashCode + (f == null ? 0 : f.hashCode())) * 31) + this.networkType.hashCode();
+        int doubleToLongBits = ((((Double.doubleToLongBits(this.total) * 31) + this.totalInFiat.hashCode()) * 31) + this.rateToFiat.hashCode()) * 31;
+        Double d = this.ratePercentageChange24h;
+        return ((doubleToLongBits + (d == null ? 0 : d.hashCode())) * 31) + this.token.hashCode();
     }
 
     public String toString() {
-        return "TokenBalanceResponse(coinCode=" + this.coinCode + ", total=" + this.total + ", totalInDollars=" + this.totalInDollars + ", rateToDollars=" + this.rateToDollars + ", ratePercentageChange24h=" + this.ratePercentageChange24h + ", networkType=" + this.networkType + ')';
+        return "TokenBalanceResponse(total=" + this.total + ", totalInFiat=" + this.totalInFiat + ", rateToFiat=" + this.rateToFiat + ", ratePercentageChange24h=" + this.ratePercentageChange24h + ", token=" + this.token + ')';
     }
 
-    public TokenBalanceResponse(String coinCode, double d, float f, double d2, Float f2, String networkType) {
-        Intrinsics.checkNotNullParameter(coinCode, "coinCode");
-        Intrinsics.checkNotNullParameter(networkType, "networkType");
-        this.coinCode = coinCode;
+    public TokenBalanceResponse(double d, FiatValueResponse totalInFiat, FiatValueResponse rateToFiat, Double d2, TokenDetailedResponse token) {
+        Intrinsics.checkNotNullParameter(totalInFiat, "totalInFiat");
+        Intrinsics.checkNotNullParameter(rateToFiat, "rateToFiat");
+        Intrinsics.checkNotNullParameter(token, "token");
         this.total = d;
-        this.totalInDollars = f;
-        this.rateToDollars = d2;
-        this.ratePercentageChange24h = f2;
-        this.networkType = networkType;
-    }
-
-    public final String getCoinCode() {
-        return this.coinCode;
+        this.totalInFiat = totalInFiat;
+        this.rateToFiat = rateToFiat;
+        this.ratePercentageChange24h = d2;
+        this.token = token;
     }
 
     public final double getTotal() {
         return this.total;
     }
 
-    public final float getTotalInDollars() {
-        return this.totalInDollars;
+    public final FiatValueResponse getTotalInFiat() {
+        return this.totalInFiat;
     }
 
-    public final double getRateToDollars() {
-        return this.rateToDollars;
+    public final FiatValueResponse getRateToFiat() {
+        return this.rateToFiat;
     }
 
-    public final Float getRatePercentageChange24h() {
+    public final Double getRatePercentageChange24h() {
         return this.ratePercentageChange24h;
     }
 
-    public final String getNetworkType() {
-        return this.networkType;
+    public final TokenDetailedResponse getToken() {
+        return this.token;
     }
 }

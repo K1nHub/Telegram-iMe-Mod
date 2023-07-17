@@ -3,6 +3,7 @@ package com.iMe.feature.twitter;
 import com.chad.library.adapter.base.entity.node.BaseNode;
 import com.iMe.model.dialog.DialogModel;
 import com.iMe.p031ui.base.mvp.LoadMoreView;
+import com.iMe.p031ui.base.mvp.base.BaseView;
 import com.iMe.storage.domain.model.Result;
 import com.iMe.storage.domain.utils.system.ResourceManager;
 import io.reactivex.disposables.Disposable;
@@ -13,6 +14,11 @@ import moxy.viewstate.strategy.AddToEndSingleStrategy;
 import moxy.viewstate.strategy.OneExecutionStateStrategy;
 /* loaded from: classes3.dex */
 public class TwitterView$$State extends MvpViewState<TwitterView> implements TwitterView {
+    @Override // com.iMe.p031ui.base.mvp.base.BaseView
+    public /* synthetic */ void removeSelfFromStackImmediately() {
+        BaseView.CC.$default$removeSelfFromStackImmediately(this);
+    }
+
     @Override // com.iMe.p031ui.base.mvp.LoadMoreView
     public /* synthetic */ void resetLoadMore() {
         LoadMoreView.CC.$default$resetLoadMore(this);

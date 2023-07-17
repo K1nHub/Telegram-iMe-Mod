@@ -18,7 +18,7 @@
 .method constructor <init>(Lorg/telegram/ui/DialogsActivity$42;Landroid/content/Context;)V
     .locals 0
 
-    .line 7141
+    .line 7140
     invoke-direct {p0, p2}, Lorg/telegram/ui/Components/BlurredRecyclerView;-><init>(Landroid/content/Context;)V
 
     return-void

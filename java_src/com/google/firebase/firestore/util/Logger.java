@@ -19,7 +19,7 @@ public class Logger {
     private static void doLog(Level level, String str, String str2, Object... objArr) {
         if (level.ordinal() >= logLevel.ordinal()) {
             String str3 = String.format("(%s) [%s]: ", "23.0.4", str) + String.format(str2, objArr);
-            int i = C10371.$SwitchMap$com$google$firebase$firestore$util$Logger$Level[level.ordinal()];
+            int i = C10421.$SwitchMap$com$google$firebase$firestore$util$Logger$Level[level.ordinal()];
             if (i == 1) {
                 Log.i("Firestore", str3);
             } else if (i == 2) {
@@ -33,7 +33,7 @@ public class Logger {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.google.firebase.firestore.util.Logger$1 */
     /* loaded from: classes3.dex */
-    public static /* synthetic */ class C10371 {
+    public static /* synthetic */ class C10421 {
         static final /* synthetic */ int[] $SwitchMap$com$google$firebase$firestore$util$Logger$Level;
 
         static {

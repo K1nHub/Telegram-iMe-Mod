@@ -22,7 +22,7 @@
     .end annotation
 
     .annotation runtime Lretrofit2/http/POST;
-        value = "getAccountInfo"
+        value = "getNotOwnWallets"
     .end annotation
 .end method
 
@@ -66,7 +66,7 @@
     .end annotation
 
     .annotation runtime Lretrofit2/http/POST;
-        value = "manageCryptoPermissions"
+        value = "changePermission"
     .end annotation
 .end method
 

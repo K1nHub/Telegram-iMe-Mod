@@ -27,7 +27,7 @@
 .method constructor <init>(Lorg/telegram/ui/DialogsActivity;)V
     .locals 0
 
-    .line 5719
+    .line 5702
     iput-object p1, p0, Lorg/telegram/ui/DialogsActivity$23;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -46,7 +46,7 @@
 
     if-ne p2, v0, :cond_2
 
-    .line 5729
+    .line 5712
     invoke-virtual {p3}, Landroid/view/KeyEvent;->getAction()I
 
     move-result p2
@@ -55,7 +55,7 @@
 
     if-nez p2, :cond_1
 
-    .line 5730
+    .line 5713
     iget-object p2, p0, Lorg/telegram/ui/DialogsActivity$23;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/DialogsActivity;->access$2900(Lorg/telegram/ui/DialogsActivity;)Lorg/telegram/ui/Components/EditTextBoldCursor;
@@ -78,7 +78,7 @@
 
     goto :goto_1
 
-    .line 5731
+    .line 5714
     :cond_1
     invoke-virtual {p3}, Landroid/view/KeyEvent;->getAction()I
 
@@ -102,7 +102,7 @@
 
     if-nez p2, :cond_2
 
-    .line 5732
+    .line 5715
     iget-object p2, p0, Lorg/telegram/ui/DialogsActivity$23;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/DialogsActivity;->access$2700(Lorg/telegram/ui/DialogsActivity;)Ljava/util/ArrayList;
@@ -127,7 +127,7 @@
 
     check-cast p2, Lorg/telegram/ui/Components/GroupCreateSpan;
 
-    .line 5733
+    .line 5716
     iget-object p3, p0, Lorg/telegram/ui/DialogsActivity$23;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-virtual {p2}, Lorg/telegram/ui/Components/GroupCreateSpan;->getDialogId()J
@@ -138,19 +138,19 @@
 
     invoke-virtual {p3, v1, v2, v3}, Lorg/telegram/ui/DialogsActivity;->addOrRemoveSelectedDialog(JLandroid/view/View;)Z
 
-    .line 5734
+    .line 5717
     iget-object p3, p0, Lorg/telegram/ui/DialogsActivity$23;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-virtual {p2}, Lorg/telegram/ui/Components/GroupCreateSpan;->getDialogId()J
 
     move-result-wide v1
 
-    invoke-static {p3, v1, v2, p1}, Lorg/telegram/ui/DialogsActivity;->access$29300(Lorg/telegram/ui/DialogsActivity;JZ)V
+    invoke-static {p3, v1, v2, p1}, Lorg/telegram/ui/DialogsActivity;->access$28800(Lorg/telegram/ui/DialogsActivity;JZ)V
 
-    .line 5735
+    .line 5718
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$23;->this$0:Lorg/telegram/ui/DialogsActivity;
 
-    invoke-static {p1}, Lorg/telegram/ui/DialogsActivity;->access$29400(Lorg/telegram/ui/DialogsActivity;)V
+    invoke-static {p1}, Lorg/telegram/ui/DialogsActivity;->access$28900(Lorg/telegram/ui/DialogsActivity;)V
 
     return v0
 

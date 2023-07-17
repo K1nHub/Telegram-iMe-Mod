@@ -65,7 +65,7 @@ public class CollectionsKt___CollectionsKt extends CollectionsKt___CollectionsJv
         }
     }
 
-    public static final <T> T first(Iterable<? extends T> iterable) {
+    public static <T> T first(Iterable<? extends T> iterable) {
         Intrinsics.checkNotNullParameter(iterable, "<this>");
         if (iterable instanceof List) {
             return (T) CollectionsKt.first((List<? extends Object>) iterable);
@@ -128,22 +128,6 @@ public class CollectionsKt___CollectionsKt extends CollectionsKt___CollectionsJv
         return list.indexOf(t);
     }
 
-    public static <T> T last(Iterable<? extends T> iterable) {
-        Intrinsics.checkNotNullParameter(iterable, "<this>");
-        if (iterable instanceof List) {
-            return (T) CollectionsKt.last((List<? extends Object>) iterable);
-        }
-        Iterator<? extends T> it = iterable.iterator();
-        if (!it.hasNext()) {
-            throw new NoSuchElementException("Collection is empty.");
-        }
-        T next = it.next();
-        while (it.hasNext()) {
-            next = it.next();
-        }
-        return next;
-    }
-
     public static <T> T last(List<? extends T> list) {
         int lastIndex;
         Intrinsics.checkNotNullParameter(list, "<this>");
@@ -152,6 +136,26 @@ public class CollectionsKt___CollectionsKt extends CollectionsKt___CollectionsJv
         }
         lastIndex = CollectionsKt__CollectionsKt.getLastIndex(list);
         return list.get(lastIndex);
+    }
+
+    public static <T> T lastOrNull(Iterable<? extends T> iterable) {
+        Intrinsics.checkNotNullParameter(iterable, "<this>");
+        if (iterable instanceof List) {
+            List list = (List) iterable;
+            if (list.isEmpty()) {
+                return null;
+            }
+            return (T) list.get(list.size() - 1);
+        }
+        Iterator<? extends T> it = iterable.iterator();
+        if (it.hasNext()) {
+            T next = it.next();
+            while (it.hasNext()) {
+                next = it.next();
+            }
+            return next;
+        }
+        return null;
     }
 
     public static <T> T lastOrNull(List<? extends T> list) {
@@ -245,7 +249,7 @@ public class CollectionsKt___CollectionsKt extends CollectionsKt___CollectionsJv
                     list = toList(iterable);
                     return list;
                 } else if (i == 1) {
-                    listOf = CollectionsKt__CollectionsJVMKt.listOf(first(iterable));
+                    listOf = CollectionsKt__CollectionsJVMKt.listOf(CollectionsKt.first(iterable));
                     return listOf;
                 }
             }
@@ -278,7 +282,7 @@ public class CollectionsKt___CollectionsKt extends CollectionsKt___CollectionsJv
                 list2 = toList(list);
                 return list2;
             } else if (i == 1) {
-                listOf = CollectionsKt__CollectionsJVMKt.listOf(CollectionsKt.last((List<? extends Object>) list));
+                listOf = CollectionsKt__CollectionsJVMKt.listOf(CollectionsKt.last(list));
                 return listOf;
             } else {
                 ArrayList arrayList = new ArrayList(i);

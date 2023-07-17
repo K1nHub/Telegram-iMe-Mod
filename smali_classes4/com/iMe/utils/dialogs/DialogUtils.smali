@@ -58,6 +58,14 @@
     return-void
 .end method
 
+.method public static synthetic $r8$lambda$WZqrvXSE8H6qO-PHMYfxJn723rU(Lcom/iMe/fork/utils/Callbacks$Callback;Landroid/content/DialogInterface;I)V
+    .locals 0
+
+    invoke-static {p0, p1, p2}, Lcom/iMe/utils/dialogs/DialogUtils;->createFormattedDialog$lambda$5$lambda$3(Lcom/iMe/fork/utils/Callbacks$Callback;Landroid/content/DialogInterface;I)V
+
+    return-void
+.end method
+
 .method public static synthetic $r8$lambda$_vEVNryX5sAcH__kqIB2IpMF6dg(Lcom/iMe/fork/utils/Callbacks$Callback1;ILorg/telegram/ui/ActionBar/AlertDialog$Builder;Landroid/view/View;)V
     .locals 0
 
@@ -70,6 +78,14 @@
     .locals 0
 
     invoke-static {p0, p1}, Lcom/iMe/utils/dialogs/DialogUtils;->createEditTextAlert$lambda$22$lambda$17$lambda$16(Lorg/telegram/ui/Components/EditTextBoldCursor;Lcom/iMe/fork/utils/Callbacks$Callback1;)V
+
+    return-void
+.end method
+
+.method public static synthetic $r8$lambda$iegsZNzpRA4alpdP_FoglH9bVh4(Lcom/iMe/fork/utils/Callbacks$Callback;Landroid/content/DialogInterface;I)V
+    .locals 0
+
+    invoke-static {p0, p1, p2}, Lcom/iMe/utils/dialogs/DialogUtils;->createFormattedDialog$lambda$5$lambda$4(Lcom/iMe/fork/utils/Callbacks$Callback;Landroid/content/DialogInterface;I)V
 
     return-void
 .end method
@@ -163,9 +179,9 @@
 
     move-result-object p0
 
-    new-instance p1, Lcom/iMe/utils/dialogs/DialogUtils$$ExternalSyntheticLambda5;
+    new-instance p1, Lcom/iMe/utils/dialogs/DialogUtils$$ExternalSyntheticLambda7;
 
-    invoke-direct {p1, p2}, Lcom/iMe/utils/dialogs/DialogUtils$$ExternalSyntheticLambda5;-><init>(Lcom/iMe/fork/utils/Callbacks$Callback;)V
+    invoke-direct {p1, p2}, Lcom/iMe/utils/dialogs/DialogUtils$$ExternalSyntheticLambda7;-><init>(Lcom/iMe/fork/utils/Callbacks$Callback;)V
 
     invoke-virtual {v0, p0, p1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
@@ -375,9 +391,9 @@
     invoke-virtual {v7, v8, v5}, Lorg/telegram/ui/Cells/RadioColorCell;->setTextAndValue(Ljava/lang/CharSequence;Z)V
 
     .line 88
-    new-instance v5, Lcom/iMe/utils/dialogs/DialogUtils$$ExternalSyntheticLambda9;
+    new-instance v5, Lcom/iMe/utils/dialogs/DialogUtils$$ExternalSyntheticLambda11;
 
-    invoke-direct {v5, p2, v4, v0}, Lcom/iMe/utils/dialogs/DialogUtils$$ExternalSyntheticLambda9;-><init>(Lcom/iMe/fork/utils/Callbacks$Callback1;ILorg/telegram/ui/ActionBar/AlertDialog$Builder;)V
+    invoke-direct {v5, p2, v4, v0}, Lcom/iMe/utils/dialogs/DialogUtils$$ExternalSyntheticLambda11;-><init>(Lcom/iMe/fork/utils/Callbacks$Callback1;ILorg/telegram/ui/ActionBar/AlertDialog$Builder;)V
 
     invoke-virtual {v7, v5}, Landroid/widget/FrameLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
@@ -556,9 +572,9 @@
 
     move-result-object p0
 
-    new-instance p2, Lcom/iMe/utils/dialogs/DialogUtils$$ExternalSyntheticLambda4;
+    new-instance p2, Lcom/iMe/utils/dialogs/DialogUtils$$ExternalSyntheticLambda6;
 
-    invoke-direct {p2, p4}, Lcom/iMe/utils/dialogs/DialogUtils$$ExternalSyntheticLambda4;-><init>(Lcom/iMe/fork/utils/Callbacks$Callback;)V
+    invoke-direct {p2, p4}, Lcom/iMe/utils/dialogs/DialogUtils$$ExternalSyntheticLambda6;-><init>(Lcom/iMe/fork/utils/Callbacks$Callback;)V
 
     invoke-virtual {v0, p0, p2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setNegativeButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
@@ -808,9 +824,9 @@
     invoke-virtual {v1, v4}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setSelection(I)V
 
     .line 125
-    new-instance v4, Lcom/iMe/utils/dialogs/DialogUtils$$ExternalSyntheticLambda10;
+    new-instance v4, Lcom/iMe/utils/dialogs/DialogUtils$$ExternalSyntheticLambda12;
 
-    invoke-direct {v4, v1, p2}, Lcom/iMe/utils/dialogs/DialogUtils$$ExternalSyntheticLambda10;-><init>(Lorg/telegram/ui/Components/EditTextBoldCursor;Lcom/iMe/fork/utils/Callbacks$Callback1;)V
+    invoke-direct {v4, v1, p2}, Lcom/iMe/utils/dialogs/DialogUtils$$ExternalSyntheticLambda12;-><init>(Lorg/telegram/ui/Components/EditTextBoldCursor;Lcom/iMe/fork/utils/Callbacks$Callback1;)V
 
     invoke-static {v1, v3, v4}, Lcom/iMe/utils/extentions/common/ViewExtKt;->onAction(Landroid/widget/EditText;ILcom/iMe/fork/utils/Callbacks$Callback;)V
 
@@ -853,9 +869,9 @@
 
     move-result-object p0
 
-    new-instance v2, Lcom/iMe/utils/dialogs/DialogUtils$$ExternalSyntheticLambda6;
+    new-instance v2, Lcom/iMe/utils/dialogs/DialogUtils$$ExternalSyntheticLambda8;
 
-    invoke-direct {v2, p3, v0}, Lcom/iMe/utils/dialogs/DialogUtils$$ExternalSyntheticLambda6;-><init>(Lcom/iMe/fork/utils/Callbacks$Callback;Lorg/telegram/ui/ActionBar/AlertDialog$Builder;)V
+    invoke-direct {v2, p3, v0}, Lcom/iMe/utils/dialogs/DialogUtils$$ExternalSyntheticLambda8;-><init>(Lcom/iMe/fork/utils/Callbacks$Callback;Lorg/telegram/ui/ActionBar/AlertDialog$Builder;)V
 
     invoke-virtual {v0, p0, v2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setNegativeButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
@@ -864,16 +880,16 @@
 
     move-result-object p0
 
-    new-instance p3, Lcom/iMe/utils/dialogs/DialogUtils$$ExternalSyntheticLambda7;
+    new-instance p3, Lcom/iMe/utils/dialogs/DialogUtils$$ExternalSyntheticLambda9;
 
-    invoke-direct {p3, v1, p2, v0}, Lcom/iMe/utils/dialogs/DialogUtils$$ExternalSyntheticLambda7;-><init>(Lorg/telegram/ui/Components/EditTextBoldCursor;Lcom/iMe/fork/utils/Callbacks$Callback1;Lorg/telegram/ui/ActionBar/AlertDialog$Builder;)V
+    invoke-direct {p3, v1, p2, v0}, Lcom/iMe/utils/dialogs/DialogUtils$$ExternalSyntheticLambda9;-><init>(Lorg/telegram/ui/Components/EditTextBoldCursor;Lcom/iMe/fork/utils/Callbacks$Callback1;Lorg/telegram/ui/ActionBar/AlertDialog$Builder;)V
 
     invoke-virtual {v0, p0, p3}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
     .line 151
-    new-instance p0, Lcom/iMe/utils/dialogs/DialogUtils$$ExternalSyntheticLambda8;
+    new-instance p0, Lcom/iMe/utils/dialogs/DialogUtils$$ExternalSyntheticLambda10;
 
-    invoke-direct {p0, p1, v1}, Lcom/iMe/utils/dialogs/DialogUtils$$ExternalSyntheticLambda8;-><init>(Lcom/iMe/model/dialog/EditTextDialogModel;Lorg/telegram/ui/Components/EditTextBoldCursor;)V
+    invoke-direct {p0, p1, v1}, Lcom/iMe/utils/dialogs/DialogUtils$$ExternalSyntheticLambda10;-><init>(Lcom/iMe/model/dialog/EditTextDialogModel;Lorg/telegram/ui/Components/EditTextBoldCursor;)V
 
     invoke-virtual {v0, p0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setOnPreDismissListener(Landroid/content/DialogInterface$OnDismissListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
@@ -1075,6 +1091,125 @@
 
     .line 153
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->hideKeyboard(Landroid/view/View;)V
+
+    :cond_0
+    return-void
+.end method
+
+.method public static final createFormattedDialog(Landroid/content/Context;Lcom/iMe/model/dialog/DialogModel;Lcom/iMe/fork/utils/Callbacks$Callback;Lcom/iMe/fork/utils/Callbacks$Callback;)Lorg/telegram/ui/ActionBar/AlertDialog;
+    .locals 2
+
+    const-string v0, "context"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "model"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 48
+    new-instance v0, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
+
+    invoke-direct {v0, p0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
+
+    .line 49
+    invoke-virtual {p1}, Lcom/iMe/model/dialog/DialogModel;->getTitle()Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-virtual {v0, p0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
+
+    .line 50
+    invoke-virtual {p1}, Lcom/iMe/model/dialog/DialogModel;->getMessage()Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-static {p0}, Lorg/telegram/messenger/AndroidUtilities;->replaceTags(Ljava/lang/String;)Landroid/text/SpannableStringBuilder;
+
+    move-result-object p0
+
+    invoke-virtual {v0, p0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setMessage(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
+
+    .line 51
+    invoke-virtual {p1}, Lcom/iMe/model/dialog/DialogModel;->getNegativeButtonText()Ljava/lang/String;
+
+    move-result-object p0
+
+    new-instance v1, Lcom/iMe/utils/dialogs/DialogUtils$$ExternalSyntheticLambda4;
+
+    invoke-direct {v1, p3}, Lcom/iMe/utils/dialogs/DialogUtils$$ExternalSyntheticLambda4;-><init>(Lcom/iMe/fork/utils/Callbacks$Callback;)V
+
+    invoke-virtual {v0, p0, v1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setNegativeButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
+
+    .line 52
+    invoke-virtual {p1}, Lcom/iMe/model/dialog/DialogModel;->getPositiveButtonText()Ljava/lang/String;
+
+    move-result-object p0
+
+    new-instance p1, Lcom/iMe/utils/dialogs/DialogUtils$$ExternalSyntheticLambda5;
+
+    invoke-direct {p1, p2}, Lcom/iMe/utils/dialogs/DialogUtils$$ExternalSyntheticLambda5;-><init>(Lcom/iMe/fork/utils/Callbacks$Callback;)V
+
+    invoke-virtual {v0, p0, p1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
+
+    .line 53
+    invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->create()Lorg/telegram/ui/ActionBar/AlertDialog;
+
+    move-result-object p0
+
+    const-string p1, "Builder(context).apply {\u2026invoke() }\n    }.create()"
+
+    invoke-static {p0, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    return-object p0
+.end method
+
+.method public static synthetic createFormattedDialog$default(Landroid/content/Context;Lcom/iMe/model/dialog/DialogModel;Lcom/iMe/fork/utils/Callbacks$Callback;Lcom/iMe/fork/utils/Callbacks$Callback;ILjava/lang/Object;)Lorg/telegram/ui/ActionBar/AlertDialog;
+    .locals 1
+
+    and-int/lit8 p5, p4, 0x4
+
+    const/4 v0, 0x0
+
+    if-eqz p5, :cond_0
+
+    move-object p2, v0
+
+    :cond_0
+    and-int/lit8 p4, p4, 0x8
+
+    if-eqz p4, :cond_1
+
+    move-object p3, v0
+
+    .line 43
+    :cond_1
+    invoke-static {p0, p1, p2, p3}, Lcom/iMe/utils/dialogs/DialogUtils;->createFormattedDialog(Landroid/content/Context;Lcom/iMe/model/dialog/DialogModel;Lcom/iMe/fork/utils/Callbacks$Callback;Lcom/iMe/fork/utils/Callbacks$Callback;)Lorg/telegram/ui/ActionBar/AlertDialog;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method private static final createFormattedDialog$lambda$5$lambda$3(Lcom/iMe/fork/utils/Callbacks$Callback;Landroid/content/DialogInterface;I)V
+    .locals 0
+
+    if-eqz p0, :cond_0
+
+    .line 51
+    invoke-interface {p0}, Lcom/iMe/fork/utils/Callbacks$Callback;->invoke()V
+
+    :cond_0
+    return-void
+.end method
+
+.method private static final createFormattedDialog$lambda$5$lambda$4(Lcom/iMe/fork/utils/Callbacks$Callback;Landroid/content/DialogInterface;I)V
+    .locals 0
+
+    if-eqz p0, :cond_0
+
+    .line 52
+    invoke-interface {p0}, Lcom/iMe/fork/utils/Callbacks$Callback;->invoke()V
 
     :cond_0
     return-void

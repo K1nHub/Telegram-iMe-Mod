@@ -47,10 +47,10 @@ final class FeatureModuleKt$socialfeature$1 extends Lambda implements Function1<
     /* compiled from: FeatureModule.kt */
     /* renamed from: com.iMe.di.module.FeatureModuleKt$socialfeature$1$1 */
     /* loaded from: classes3.dex */
-    public static final class C12911 extends Lambda implements Function2<Scope, ParametersHolder, AuthViewModel> {
-        public static final C12911 INSTANCE = new C12911();
+    public static final class C12971 extends Lambda implements Function2<Scope, ParametersHolder, AuthViewModel> {
+        public static final C12971 INSTANCE = new C12971();
 
-        C12911() {
+        C12971() {
             super(2);
         }
 
@@ -72,10 +72,10 @@ final class FeatureModuleKt$socialfeature$1 extends Lambda implements Function1<
     /* compiled from: FeatureModule.kt */
     /* renamed from: com.iMe.di.module.FeatureModuleKt$socialfeature$1$2 */
     /* loaded from: classes3.dex */
-    public static final class C12922 extends Lambda implements Function2<Scope, ParametersHolder, SocialWebViewModel> {
-        public static final C12922 INSTANCE = new C12922();
+    public static final class C12982 extends Lambda implements Function2<Scope, ParametersHolder, SocialWebViewModel> {
+        public static final C12982 INSTANCE = new C12982();
 
-        C12922() {
+        C12982() {
             super(2);
         }
 
@@ -96,52 +96,52 @@ final class FeatureModuleKt$socialfeature$1 extends Lambda implements Function1<
         List emptyList5;
         List emptyList6;
         Intrinsics.checkNotNullParameter(module, "$this$module");
-        C12911 c12911 = C12911.INSTANCE;
+        C12971 c12971 = C12971.INSTANCE;
         ScopeRegistry.Companion companion = ScopeRegistry.Companion;
         StringQualifier rootScopeQualifier = companion.getRootScopeQualifier();
         Kind kind = Kind.Factory;
         emptyList = CollectionsKt__CollectionsKt.emptyList();
-        InstanceFactory<?> factoryInstanceFactory = new FactoryInstanceFactory<>(new BeanDefinition(rootScopeQualifier, Reflection.getOrCreateKotlinClass(AuthViewModel.class), null, c12911, kind, emptyList));
+        InstanceFactory<?> factoryInstanceFactory = new FactoryInstanceFactory<>(new BeanDefinition(rootScopeQualifier, Reflection.getOrCreateKotlinClass(AuthViewModel.class), null, c12971, kind, emptyList));
         module.indexPrimaryType(factoryInstanceFactory);
         new KoinDefinition(module, factoryInstanceFactory);
-        C12922 c12922 = C12922.INSTANCE;
+        C12982 c12982 = C12982.INSTANCE;
         StringQualifier rootScopeQualifier2 = companion.getRootScopeQualifier();
         emptyList2 = CollectionsKt__CollectionsKt.emptyList();
-        InstanceFactory<?> factoryInstanceFactory2 = new FactoryInstanceFactory<>(new BeanDefinition(rootScopeQualifier2, Reflection.getOrCreateKotlinClass(SocialWebViewModel.class), null, c12922, kind, emptyList2));
+        InstanceFactory<?> factoryInstanceFactory2 = new FactoryInstanceFactory<>(new BeanDefinition(rootScopeQualifier2, Reflection.getOrCreateKotlinClass(SocialWebViewModel.class), null, c12982, kind, emptyList2));
         module.indexPrimaryType(factoryInstanceFactory2);
         new KoinDefinition(module, factoryInstanceFactory2);
-        C12933 c12933 = C12933.INSTANCE;
+        C12993 c12993 = C12993.INSTANCE;
         StringQualifier rootScopeQualifier3 = companion.getRootScopeQualifier();
         Kind kind2 = Kind.Singleton;
         emptyList3 = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier3, Reflection.getOrCreateKotlinClass(SocialRepository.class), null, c12933, kind2, emptyList3));
+        SingleInstanceFactory<?> singleInstanceFactory = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier3, Reflection.getOrCreateKotlinClass(SocialRepository.class), null, c12993, kind2, emptyList3));
         module.indexPrimaryType(singleInstanceFactory);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory);
         }
         new KoinDefinition(module, singleInstanceFactory);
-        C12944 c12944 = C12944.INSTANCE;
+        C13004 c13004 = C13004.INSTANCE;
         StringQualifier rootScopeQualifier4 = companion.getRootScopeQualifier();
         emptyList4 = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory2 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier4, Reflection.getOrCreateKotlinClass(AuthUseCase.class), null, c12944, kind2, emptyList4));
+        SingleInstanceFactory<?> singleInstanceFactory2 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier4, Reflection.getOrCreateKotlinClass(AuthUseCase.class), null, c13004, kind2, emptyList4));
         module.indexPrimaryType(singleInstanceFactory2);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory2);
         }
         new KoinDefinition(module, singleInstanceFactory2);
-        C12955 c12955 = C12955.INSTANCE;
+        C13015 c13015 = C13015.INSTANCE;
         StringQualifier rootScopeQualifier5 = companion.getRootScopeQualifier();
         emptyList5 = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory3 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier5, Reflection.getOrCreateKotlinClass(SocialUseCase.class), null, c12955, kind2, emptyList5));
+        SingleInstanceFactory<?> singleInstanceFactory3 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier5, Reflection.getOrCreateKotlinClass(SocialUseCase.class), null, c13015, kind2, emptyList5));
         module.indexPrimaryType(singleInstanceFactory3);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory3);
         }
         new KoinDefinition(module, singleInstanceFactory3);
-        C12966 c12966 = C12966.INSTANCE;
+        C13026 c13026 = C13026.INSTANCE;
         StringQualifier rootScopeQualifier6 = companion.getRootScopeQualifier();
         emptyList6 = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory4 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier6, Reflection.getOrCreateKotlinClass(GroupMembershipUseCase.class), null, c12966, kind2, emptyList6));
+        SingleInstanceFactory<?> singleInstanceFactory4 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier6, Reflection.getOrCreateKotlinClass(GroupMembershipUseCase.class), null, c13026, kind2, emptyList6));
         module.indexPrimaryType(singleInstanceFactory4);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory4);
@@ -153,10 +153,10 @@ final class FeatureModuleKt$socialfeature$1 extends Lambda implements Function1<
     /* compiled from: FeatureModule.kt */
     /* renamed from: com.iMe.di.module.FeatureModuleKt$socialfeature$1$4 */
     /* loaded from: classes3.dex */
-    public static final class C12944 extends Lambda implements Function2<Scope, ParametersHolder, AuthUseCase> {
-        public static final C12944 INSTANCE = new C12944();
+    public static final class C13004 extends Lambda implements Function2<Scope, ParametersHolder, AuthUseCase> {
+        public static final C13004 INSTANCE = new C13004();
 
-        C12944() {
+        C13004() {
             super(2);
         }
 
@@ -172,10 +172,10 @@ final class FeatureModuleKt$socialfeature$1 extends Lambda implements Function1<
     /* compiled from: FeatureModule.kt */
     /* renamed from: com.iMe.di.module.FeatureModuleKt$socialfeature$1$5 */
     /* loaded from: classes3.dex */
-    public static final class C12955 extends Lambda implements Function2<Scope, ParametersHolder, SocialUseCase> {
-        public static final C12955 INSTANCE = new C12955();
+    public static final class C13015 extends Lambda implements Function2<Scope, ParametersHolder, SocialUseCase> {
+        public static final C13015 INSTANCE = new C13015();
 
-        C12955() {
+        C13015() {
             super(2);
         }
 
@@ -191,10 +191,10 @@ final class FeatureModuleKt$socialfeature$1 extends Lambda implements Function1<
     /* compiled from: FeatureModule.kt */
     /* renamed from: com.iMe.di.module.FeatureModuleKt$socialfeature$1$6 */
     /* loaded from: classes3.dex */
-    public static final class C12966 extends Lambda implements Function2<Scope, ParametersHolder, GroupMembershipUseCase> {
-        public static final C12966 INSTANCE = new C12966();
+    public static final class C13026 extends Lambda implements Function2<Scope, ParametersHolder, GroupMembershipUseCase> {
+        public static final C13026 INSTANCE = new C13026();
 
-        C12966() {
+        C13026() {
             super(2);
         }
 
@@ -210,10 +210,10 @@ final class FeatureModuleKt$socialfeature$1 extends Lambda implements Function1<
     /* compiled from: FeatureModule.kt */
     /* renamed from: com.iMe.di.module.FeatureModuleKt$socialfeature$1$3 */
     /* loaded from: classes3.dex */
-    public static final class C12933 extends Lambda implements Function2<Scope, ParametersHolder, SocialRepository> {
-        public static final C12933 INSTANCE = new C12933();
+    public static final class C12993 extends Lambda implements Function2<Scope, ParametersHolder, SocialRepository> {
+        public static final C12993 INSTANCE = new C12993();
 
-        C12933() {
+        C12993() {
             super(2);
         }
 

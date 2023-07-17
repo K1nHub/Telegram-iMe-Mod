@@ -266,7 +266,7 @@
     .line 56
     sget v41, Lorg/telegram/messenger/R$color;->dialog_type_group:I
 
-    const/16 v1, 0x9
+    const/16 v1, 0x8
 
     new-array v2, v1, [Lcom/iMe/fork/enums/MultiPanelButton;
 
@@ -292,16 +292,9 @@
 
     aput-object v23, v2, v4
 
-    .line 65
-    sget-object v4, Lcom/iMe/fork/enums/MultiPanelButton;->BOOKMARKS:Lcom/iMe/fork/enums/MultiPanelButton;
+    const/4 v4, 0x7
 
-    const/4 v5, 0x7
-
-    aput-object v4, v2, v5
-
-    const/16 v6, 0x8
-
-    aput-object v25, v2, v6
+    aput-object v25, v2, v4
 
     .line 57
     invoke-static {v2}, Lkotlin/collections/CollectionsKt;->listOf([Ljava/lang/Object;)Ljava/util/List;
@@ -314,16 +307,16 @@
 
     aput-object v27, v2, v18
 
-    .line 71
-    sget-object v7, Lcom/iMe/fork/enums/ChatAttachAlertButton;->POLL:Lcom/iMe/fork/enums/ChatAttachAlertButton;
+    .line 70
+    sget-object v5, Lcom/iMe/fork/enums/ChatAttachAlertButton;->POLL:Lcom/iMe/fork/enums/ChatAttachAlertButton;
 
-    aput-object v7, v2, v20
+    aput-object v5, v2, v20
 
     aput-object v28, v2, v22
 
     aput-object v29, v2, v24
 
-    .line 68
+    .line 67
     invoke-static {v2}, Lkotlin/collections/CollectionsKt;->listOf([Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object v43
@@ -339,23 +332,23 @@
 
     sput-object v0, Lcom/iMe/fork/enums/DialogType;->GROUP:Lcom/iMe/fork/enums/DialogType;
 
-    .line 76
+    .line 75
     new-instance v0, Lcom/iMe/fork/enums/DialogType;
 
-    .line 77
+    .line 76
     sget v47, Lorg/telegram/messenger/R$string;->multi_panel_settings_section_header_channels:I
 
-    .line 83
+    .line 82
     sget v53, Lorg/telegram/messenger/R$drawable;->fork_topic_channel:I
 
-    .line 84
+    .line 83
     sget v54, Lorg/telegram/messenger/R$color;->dialog_type_channel:I
 
     new-array v1, v1, [Lcom/iMe/fork/enums/MultiPanelButton;
 
     aput-object v15, v1, v16
 
-    .line 87
+    .line 86
     sget-object v2, Lcom/iMe/fork/enums/MultiPanelButton;->SUBSCRIBERS:Lcom/iMe/fork/enums/MultiPanelButton;
 
     aput-object v2, v1, v18
@@ -372,11 +365,9 @@
 
     aput-object v23, v1, v2
 
-    aput-object v4, v1, v5
+    aput-object v25, v1, v4
 
-    aput-object v25, v1, v6
-
-    .line 85
+    .line 84
     invoke-static {v1}, Lkotlin/collections/CollectionsKt;->listOf([Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object v55
@@ -387,13 +378,13 @@
 
     aput-object v27, v1, v18
 
-    aput-object v7, v1, v20
+    aput-object v5, v1, v20
 
     aput-object v28, v1, v22
 
     aput-object v29, v1, v24
 
-    .line 96
+    .line 94
     invoke-static {v1}, Lkotlin/collections/CollectionsKt;->listOf([Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object v56
@@ -414,45 +405,45 @@
 
     move-object/from16 v44, v0
 
-    .line 76
+    .line 75
     invoke-direct/range {v44 .. v56}, Lcom/iMe/fork/enums/DialogType;-><init>(Ljava/lang/String;IIIIIIIIILjava/util/List;Ljava/util/List;)V
 
     sput-object v0, Lcom/iMe/fork/enums/DialogType;->CHANNEL:Lcom/iMe/fork/enums/DialogType;
 
-    .line 104
+    .line 102
     new-instance v0, Lcom/iMe/fork/enums/DialogType;
 
-    .line 105
+    .line 103
     sget v34, Lorg/telegram/messenger/R$string;->multi_panel_settings_section_header_bots:I
 
-    .line 106
+    .line 104
     sget v35, Lorg/telegram/messenger/R$string;->pull_to_go_to_next_unread_bot:I
 
-    .line 107
+    .line 105
     sget v36, Lorg/telegram/messenger/R$string;->release_to_go_to_next_unread_bot:I
 
-    .line 108
+    .line 106
     sget v37, Lorg/telegram/messenger/R$string;->pull_to_go_to_unread_archived_bots:I
 
-    .line 109
+    .line 107
     sget v38, Lorg/telegram/messenger/R$string;->release_to_go_to_unread_archived_bots:I
 
-    .line 110
+    .line 108
     sget v39, Lorg/telegram/messenger/R$string;->no_unread_bots:I
 
-    .line 111
+    .line 109
     sget v40, Lorg/telegram/messenger/R$drawable;->msg_folders_bots:I
 
-    .line 112
+    .line 110
     sget v41, Lorg/telegram/messenger/R$color;->dialog_type_bot:I
 
-    new-array v1, v5, [Lcom/iMe/fork/enums/MultiPanelButton;
+    new-array v1, v4, [Lcom/iMe/fork/enums/MultiPanelButton;
 
     aput-object v15, v1, v16
 
     aput-object v17, v1, v18
 
-    .line 116
+    .line 114
     sget-object v2, Lcom/iMe/fork/enums/MultiPanelButton;->STOP_BOT:Lcom/iMe/fork/enums/MultiPanelButton;
 
     aput-object v2, v1, v20
@@ -467,7 +458,7 @@
 
     aput-object v25, v1, v2
 
-    .line 113
+    .line 111
     invoke-static {v1}, Lkotlin/collections/CollectionsKt;->listOf([Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object v42
@@ -478,13 +469,13 @@
 
     aput-object v27, v1, v18
 
-    aput-object v7, v1, v20
+    aput-object v5, v1, v20
 
     aput-object v28, v1, v22
 
     aput-object v29, v1, v24
 
-    .line 122
+    .line 120
     invoke-static {v1}, Lkotlin/collections/CollectionsKt;->listOf([Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object v43
@@ -495,7 +486,7 @@
 
     move-object/from16 v31, v0
 
-    .line 104
+    .line 102
     invoke-direct/range {v31 .. v43}, Lcom/iMe/fork/enums/DialogType;-><init>(Ljava/lang/String;IIIIIIIIILjava/util/List;Ljava/util/List;)V
 
     sput-object v0, Lcom/iMe/fork/enums/DialogType;->BOT:Lcom/iMe/fork/enums/DialogType;

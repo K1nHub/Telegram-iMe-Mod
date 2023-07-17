@@ -4,16 +4,16 @@ import androidx.collection.SparseArrayCompat;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 import kotlin.jvm.internal.Intrinsics;
-import p034j$.util.Iterator;
-import p034j$.util.function.Consumer;
+import p033j$.util.Iterator;
+import p033j$.util.function.Consumer;
 /* compiled from: NavGraph.kt */
 /* loaded from: classes.dex */
-public final class NavGraph$iterator$1 implements Iterator<NavDestination>, p034j$.util.Iterator, p034j$.util.Iterator {
+public final class NavGraph$iterator$1 implements Iterator<NavDestination>, p033j$.util.Iterator, p033j$.util.Iterator {
     private int index = -1;
     final /* synthetic */ NavGraph this$0;
     private boolean wentToNext;
 
-    @Override // p034j$.util.Iterator
+    @Override // p033j$.util.Iterator
     public /* synthetic */ void forEachRemaining(Consumer consumer) {
         Iterator.CC.$default$forEachRemaining(this, consumer);
     }
@@ -23,12 +23,12 @@ public final class NavGraph$iterator$1 implements Iterator<NavDestination>, p034
         this.this$0 = navGraph;
     }
 
-    @Override // java.util.Iterator, p034j$.util.Iterator
+    @Override // java.util.Iterator, p033j$.util.Iterator
     public boolean hasNext() {
         return this.index + 1 < this.this$0.getNodes().size();
     }
 
-    @Override // java.util.Iterator, p034j$.util.Iterator
+    @Override // java.util.Iterator, p033j$.util.Iterator
     public NavDestination next() {
         if (!hasNext()) {
             throw new NoSuchElementException();
@@ -42,7 +42,7 @@ public final class NavGraph$iterator$1 implements Iterator<NavDestination>, p034
         return valueAt;
     }
 
-    @Override // java.util.Iterator, p034j$.util.Iterator
+    @Override // java.util.Iterator, p033j$.util.Iterator
     public void remove() {
         if (!this.wentToNext) {
             throw new IllegalStateException("You must call next() before you can remove an element".toString());

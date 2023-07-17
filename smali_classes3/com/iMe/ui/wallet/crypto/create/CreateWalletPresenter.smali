@@ -4,6 +4,12 @@
 
 
 # annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter$Companion;
+    }
+.end annotation
+
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Lcom/iMe/ui/base/mvp/base/BasePresenter<",
@@ -13,7 +19,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nCreateWalletPresenter.kt\nKotlin\n*S Kotlin\n*F\n+ 1 CreateWalletPresenter.kt\ncom/iMe/ui/wallet/crypto/create/CreateWalletPresenter\n+ 2 RxExt.kt\ncom/iMe/utils/extentions/rx/RxExtKt\n+ 3 ObservableExt.kt\ncom/iMe/storage/domain/utils/extentions/ObservableExtKt\n*L\n1#1,223:1\n39#2,8:224\n39#2,8:232\n39#2,8:240\n39#2,8:249\n14#3:248\n*S KotlinDebug\n*F\n+ 1 CreateWalletPresenter.kt\ncom/iMe/ui/wallet/crypto/create/CreateWalletPresenter\n*L\n61#1:224,8\n111#1:232,8\n153#1:240,8\n195#1:249,8\n181#1:248\n*E\n"
+    value = "SMAP\nCreateWalletPresenter.kt\nKotlin\n*S Kotlin\n*F\n+ 1 CreateWalletPresenter.kt\ncom/iMe/ui/wallet/crypto/create/CreateWalletPresenter\n+ 2 RxExt.kt\ncom/iMe/utils/extentions/rx/RxExtKt\n+ 3 ObservableExt.kt\ncom/iMe/storage/domain/utils/extentions/ObservableExtKt\n+ 4 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,231:1\n42#2,12:232\n42#2,12:244\n42#2,12:257\n42#2,12:269\n14#3:256\n1549#4:281\n1620#4,3:282\n*S KotlinDebug\n*F\n+ 1 CreateWalletPresenter.kt\ncom/iMe/ui/wallet/crypto/create/CreateWalletPresenter\n*L\n81#1:232,12\n100#1:244,12\n141#1:257,12\n188#1:269,12\n127#1:256\n214#1:281\n214#1:282,3\n*E\n"
 .end annotation
 
 .annotation runtime Lmoxy/InjectViewState;
@@ -47,18 +53,34 @@
     .end annotation
 .end field
 
+.field private selectedWordsCount:I
+
 .field private final walletInteractor:Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;
+
+.field private final wordsCountItems$delegate:Lkotlin/Lazy;
 
 
 # direct methods
-.method public static synthetic $r8$lambda$cl3zsLjp_R5vOzCdBVkvcgchiFg(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lio/reactivex/ObservableSource;
+.method public static synthetic $r8$lambda$V54cbOOTnPmhHk9nb9kXSExyAF4(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lio/reactivex/ObservableSource;
     .locals 0
 
-    invoke-static {p0, p1}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter;->subscribeToQueryChanges$lambda$3(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lio/reactivex/ObservableSource;
+    invoke-static {p0, p1}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter;->subscribeToQueryChanges$lambda$6(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lio/reactivex/ObservableSource;
 
     move-result-object p0
 
     return-object p0
+.end method
+
+.method static constructor <clinit>()V
+    .locals 2
+
+    new-instance v0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter$Companion;
+
+    const/4 v1, 0x0
+
+    invoke-direct {v0, v1}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter$Companion;-><init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
+
+    return-void
 .end method
 
 .method public constructor <init>(Lcom/iMe/model/wallet/crypto/create/CreateWalletScreenType;Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;Lcom/iMe/storage/domain/utils/system/ResourceManager;Lcom/iMe/storage/domain/utils/rx/RxEventBus;Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;)V
@@ -96,34 +118,34 @@
 
     invoke-static {p8, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 38
+    .line 40
     invoke-direct {p0}, Lcom/iMe/ui/base/mvp/base/BasePresenter;-><init>()V
 
-    .line 30
+    .line 32
     iput-object p1, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter;->screenType:Lcom/iMe/model/wallet/crypto/create/CreateWalletScreenType;
 
-    .line 31
+    .line 33
     iput-object p2, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter;->cryptoAccessManager:Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;
 
-    .line 32
+    .line 34
     iput-object p3, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter;->cryptoPreferenceHelper:Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
 
-    .line 33
+    .line 35
     iput-object p4, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter;->cryptoWalletInteractor:Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;
 
-    .line 34
+    .line 36
     iput-object p5, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
-    .line 35
+    .line 37
     iput-object p6, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter;->rxEventsBus:Lcom/iMe/storage/domain/utils/rx/RxEventBus;
 
-    .line 36
+    .line 38
     iput-object p7, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter;->schedulersProvider:Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
-    .line 37
+    .line 39
     iput-object p8, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter;->walletInteractor:Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;
 
-    .line 41
+    .line 43
     invoke-static {}, Lio/reactivex/subjects/PublishSubject;->create()Lio/reactivex/subjects/PublishSubject;
 
     move-result-object p1
@@ -134,10 +156,28 @@
 
     iput-object p1, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter;->searchQuerySubject:Lio/reactivex/subjects/PublishSubject;
 
+    .line 44
+    new-instance p1, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter$wordsCountItems$2;
+
+    invoke-direct {p1, p0}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter$wordsCountItems$2;-><init>(Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter;)V
+
+    invoke-static {p1}, Lkotlin/LazyKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter;->wordsCountItems$delegate:Lkotlin/Lazy;
+
     const-string p1, ""
 
-    .line 42
+    .line 45
     iput-object p1, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter;->lastSearchQuery:Ljava/lang/String;
+
+    .line 46
+    invoke-direct {p0}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter;->getInitialWordsCount()I
+
+    move-result p1
+
+    iput p1, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter;->selectedWordsCount:I
 
     return-void
 .end method
@@ -145,7 +185,7 @@
 .method public static final synthetic access$confirmBackUpCreated(Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter;)V
     .locals 0
 
-    .line 28
+    .line 30
     invoke-direct {p0}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter;->confirmBackUpCreated()V
 
     return-void
@@ -154,7 +194,7 @@
 .method public static final synthetic access$getCryptoPreferenceHelper$p(Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter;)Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
     .locals 0
 
-    .line 28
+    .line 30
     iget-object p0, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter;->cryptoPreferenceHelper:Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
 
     return-object p0
@@ -163,7 +203,7 @@
 .method public static final synthetic access$getCryptoWalletInteractor$p(Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter;)Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;
     .locals 0
 
-    .line 28
+    .line 30
     iget-object p0, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter;->cryptoWalletInteractor:Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;
 
     return-object p0
@@ -172,7 +212,7 @@
 .method public static final synthetic access$getLastSearchQuery$p(Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter;)Ljava/lang/String;
     .locals 0
 
-    .line 28
+    .line 30
     iget-object p0, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter;->lastSearchQuery:Ljava/lang/String;
 
     return-object p0
@@ -181,17 +221,8 @@
 .method public static final synthetic access$getResourceManager$p(Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter;)Lcom/iMe/storage/domain/utils/system/ResourceManager;
     .locals 0
 
-    .line 28
+    .line 30
     iget-object p0, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
-
-    return-object p0
-.end method
-
-.method public static final synthetic access$getSchedulersProvider$p(Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter;)Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
-    .locals 0
-
-    .line 28
-    iget-object p0, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter;->schedulersProvider:Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
     return-object p0
 .end method
@@ -199,8 +230,19 @@
 .method public static final synthetic access$getScreenType$p(Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter;)Lcom/iMe/model/wallet/crypto/create/CreateWalletScreenType;
     .locals 0
 
-    .line 28
+    .line 30
     iget-object p0, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter;->screenType:Lcom/iMe/model/wallet/crypto/create/CreateWalletScreenType;
+
+    return-object p0
+.end method
+
+.method public static final synthetic access$initWordsCountItems(Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter;)Ljava/util/List;
+    .locals 0
+
+    .line 30
+    invoke-direct {p0}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter;->initWordsCountItems()Ljava/util/List;
+
+    move-result-object p0
 
     return-object p0
 .end method
@@ -208,7 +250,7 @@
 .method public static final synthetic access$setLastSearchQuery$p(Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter;Ljava/lang/String;)V
     .locals 0
 
-    .line 28
+    .line 30
     iput-object p1, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter;->lastSearchQuery:Ljava/lang/String;
 
     return-void
@@ -217,14 +259,14 @@
 .method private final confirmBackUpCreated()V
     .locals 2
 
-    .line 217
+    .line 201
     iget-object v0, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter;->rxEventsBus:Lcom/iMe/storage/domain/utils/rx/RxEventBus;
 
     sget-object v1, Lcom/iMe/storage/domain/utils/rx/event/DomainRxEvents$SuccessSaveBackup;->INSTANCE:Lcom/iMe/storage/domain/utils/rx/event/DomainRxEvents$SuccessSaveBackup;
 
     invoke-virtual {v0, v1}, Lcom/iMe/storage/domain/utils/rx/RxEventBus;->publish(Lcom/iMe/storage/domain/utils/rx/event/RxEvent;)V
 
-    .line 218
+    .line 202
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
     move-result-object v0
@@ -236,44 +278,228 @@
     return-void
 .end method
 
-.method private final setupScreen()V
+.method private final getInitialWordsCount()I
     .locals 2
 
-    .line 166
+    .line 206
     iget-object v0, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter;->screenType:Lcom/iMe/model/wallet/crypto/create/CreateWalletScreenType;
 
-    .line 167
-    instance-of v0, v0, Lcom/iMe/model/wallet/crypto/create/CreateWalletScreenType$SecretWords;
+    instance-of v1, v0, Lcom/iMe/model/wallet/crypto/create/CreateWalletScreenType$SecretWords;
 
-    if-eqz v0, :cond_0
+    if-eqz v1, :cond_0
 
-    invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
+    check-cast v0, Lcom/iMe/model/wallet/crypto/create/CreateWalletScreenType$SecretWords;
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    :goto_0
+    if-eqz v0, :cond_1
+
+    invoke-virtual {v0}, Lcom/iMe/model/wallet/crypto/create/CreateWalletScreenType$SecretWords;->getWordsCount()I
+
+    move-result v0
+
+    goto :goto_1
+
+    :cond_1
+    const/16 v0, 0x18
+
+    :goto_1
+    return v0
+.end method
+
+.method private final getSelectWordsCountDialogModel()Lcom/iMe/model/dialog/RadioCellsListDialogModel;
+    .locals 10
+
+    .line 213
+    iget-object v0, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
+
+    sget v1, Lorg/telegram/messenger/R$string;->wallet_import_change_words_count_dialog_title:I
+
+    invoke-interface {v0, v1}, Lcom/iMe/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
+
+    move-result-object v3
+
+    .line 214
+    invoke-direct {p0}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter;->getWordsCountItems()Ljava/util/List;
 
     move-result-object v0
 
-    check-cast v0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletView;
+    .line 1549
+    new-instance v5, Ljava/util/ArrayList;
 
-    iget-object v1, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter;->screenType:Lcom/iMe/model/wallet/crypto/create/CreateWalletScreenType;
+    const/16 v1, 0xa
 
-    check-cast v1, Lcom/iMe/model/wallet/crypto/create/CreateWalletScreenType$SecretWords;
+    invoke-static {v0, v1}, Lkotlin/collections/CollectionsKt;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
 
-    invoke-virtual {v1}, Lcom/iMe/model/wallet/crypto/create/CreateWalletScreenType$SecretWords;->getAddress()Ljava/lang/String;
+    move-result v1
+
+    invoke-direct {v5, v1}, Ljava/util/ArrayList;-><init>(I)V
+
+    .line 1620
+    invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+
+    move-result-object v0
+
+    :goto_0
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_1
+
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v1
 
-    invoke-interface {v0, v1}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletView;->setWalletAddress(Ljava/lang/String;)V
+    .line 1621
+    check-cast v1, Ljava/lang/Number;
+
+    invoke-virtual {v1}, Ljava/lang/Number;->intValue()I
+
+    move-result v1
+
+    .line 215
+    iget-object v2, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
+
+    .line 216
+    sget v4, Lorg/telegram/messenger/R$string;->wallet_import_words_count:I
+
+    const/4 v6, 0x1
+
+    new-array v7, v6, [Ljava/lang/Object;
+
+    .line 217
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v8
+
+    const/4 v9, 0x0
+
+    aput-object v8, v7, v9
+
+    .line 215
+    invoke-interface {v2, v4, v7}, Lcom/iMe/storage/domain/utils/system/ResourceManager;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v2
+
+    .line 218
+    iget v4, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter;->selectedWordsCount:I
+
+    if-ne v4, v1, :cond_0
+
+    goto :goto_1
 
     :cond_0
-    return-void
+    move v6, v9
+
+    :goto_1
+    invoke-static {v6}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v1
+
+    .line 215
+    invoke-static {v2, v1}, Lkotlin/TuplesKt;->to(Ljava/lang/Object;Ljava/lang/Object;)Lkotlin/Pair;
+
+    move-result-object v1
+
+    .line 1621
+    invoke-interface {v5, v1}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
+
+    goto :goto_0
+
+    .line 220
+    :cond_1
+    iget-object v0, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
+
+    sget v1, Lorg/telegram/messenger/R$string;->common_cancel:I
+
+    invoke-interface {v0, v1}, Lcom/iMe/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
+
+    move-result-object v6
+
+    const/4 v7, 0x2
+
+    const/4 v8, 0x0
+
+    .line 212
+    new-instance v0, Lcom/iMe/model/dialog/RadioCellsListDialogModel;
+
+    const/4 v4, 0x0
+
+    move-object v2, v0
+
+    invoke-direct/range {v2 .. v8}, Lcom/iMe/model/dialog/RadioCellsListDialogModel;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/util/List;Ljava/lang/String;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+
+    return-object v0
+.end method
+
+.method private final getWordsCountItems()Ljava/util/List;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/List<",
+            "Ljava/lang/Integer;",
+            ">;"
+        }
+    .end annotation
+
+    .line 44
+    iget-object v0, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter;->wordsCountItems$delegate:Lkotlin/Lazy;
+
+    invoke-interface {v0}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/util/List;
+
+    return-object v0
+.end method
+
+.method private final initWordsCountItems()Ljava/util/List;
+    .locals 3
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/List<",
+            "Ljava/lang/Integer;",
+            ">;"
+        }
+    .end annotation
+
+    .line 209
+    new-instance v0, Lkotlin/ranges/IntRange;
+
+    const/16 v1, 0xc
+
+    const/16 v2, 0x18
+
+    invoke-direct {v0, v1, v2}, Lkotlin/ranges/IntRange;-><init>(II)V
+
+    const/4 v1, 0x3
+
+    invoke-static {v0, v1}, Lkotlin/ranges/RangesKt;->step(Lkotlin/ranges/IntProgression;I)Lkotlin/ranges/IntProgression;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lkotlin/collections/CollectionsKt;->toMutableList(Ljava/lang/Iterable;)Ljava/util/List;
+
+    move-result-object v0
+
+    return-object v0
 .end method
 
 .method private final subscribeToQueryChanges()V
     .locals 5
 
-    .line 144
+    .line 179
     iget-object v0, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter;->searchQuerySubject:Lio/reactivex/subjects/PublishSubject;
 
-    .line 145
+    .line 180
     sget-object v1, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;
 
     const-wide/16 v2, 0xc8
@@ -282,12 +508,12 @@
 
     move-result-object v0
 
-    .line 146
+    .line 181
     invoke-virtual {v0}, Lio/reactivex/Observable;->distinctUntilChanged()Lio/reactivex/Observable;
 
     move-result-object v0
 
-    .line 147
+    .line 182
     iget-object v1, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter;->schedulersProvider:Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
     invoke-interface {v1}, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;->io()Lio/reactivex/Scheduler;
@@ -298,20 +524,20 @@
 
     move-result-object v0
 
-    .line 148
+    .line 183
     new-instance v1, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter$subscribeToQueryChanges$1;
 
     invoke-direct {v1, p0}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter$subscribeToQueryChanges$1;-><init>(Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter;)V
 
-    new-instance v2, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter$$ExternalSyntheticLambda0;
+    new-instance v2, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter$$ExternalSyntheticLambda1;
 
-    invoke-direct {v2, v1}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter$$ExternalSyntheticLambda0;-><init>(Lkotlin/jvm/functions/Function1;)V
+    invoke-direct {v2, v1}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter$$ExternalSyntheticLambda1;-><init>(Lkotlin/jvm/functions/Function1;)V
 
     invoke-virtual {v0, v2}, Lio/reactivex/Observable;->switchMap(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
 
     move-result-object v0
 
-    .line 152
+    .line 187
     iget-object v1, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter;->schedulersProvider:Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
     invoke-interface {v1}, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;->ui()Lio/reactivex/Scheduler;
@@ -324,10 +550,10 @@
 
     const-string v1, "private fun subscribeToQ\u2026     .autoDispose()\n    }"
 
-    .line 148
+    .line 183
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 44
+    .line 47
     new-instance v1, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter$subscribeToQueryChanges$$inlined$subscribeWithErrorHandle$default$1;
 
     invoke-direct {v1, p0}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter$subscribeToQueryChanges$$inlined$subscribeWithErrorHandle$default$1;-><init>(Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter;)V
@@ -342,37 +568,37 @@
 
     invoke-direct {v1, v3}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter$subscribeToQueryChanges$$inlined$subscribeWithErrorHandle$default$2;-><init>(Lcom/iMe/ui/base/mvp/base/BaseView;)V
 
-    .line 46
+    .line 49
     new-instance v4, Lcom/iMe/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
 
     invoke-direct {v4, v1}, Lcom/iMe/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;-><init>(Lkotlin/jvm/functions/Function1;)V
 
-    .line 44
+    .line 47
     invoke-virtual {v0, v2, v4}, Lio/reactivex/Observable;->subscribe(Lio/reactivex/functions/Consumer;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
 
     move-result-object v0
 
-    const-string v1, "viewState: BaseView? = n\u2026  onError.invoke()\n    })"
+    const-string v1, "viewState: BaseView? = n\u2026Error.invoke()\n        })"
 
-    .line 46
+    .line 49
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     const/4 v1, 0x1
 
-    .line 162
+    .line 197
     invoke-static {p0, v0, v3, v1, v3}, Lcom/iMe/ui/base/mvp/base/BasePresenter;->autoDispose$default(Lcom/iMe/ui/base/mvp/base/BasePresenter;Lio/reactivex/disposables/Disposable;Lio/reactivex/disposables/CompositeDisposable;ILjava/lang/Object;)V
 
     return-void
 .end method
 
-.method private static final subscribeToQueryChanges$lambda$3(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lio/reactivex/ObservableSource;
+.method private static final subscribeToQueryChanges$lambda$6(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lio/reactivex/ObservableSource;
     .locals 1
 
     const-string v0, "$tmp0"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 148
+    .line 183
     invoke-interface {p0, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
@@ -382,278 +608,159 @@
     return-object p0
 .end method
 
-.method private final validateSeedInternal(Lio/reactivex/Observable;Ljava/lang/String;Ljava/lang/String;Z)V
-    .locals 4
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lio/reactivex/Observable<",
-            "Lcom/iMe/storage/domain/model/Result<",
-            "Ljava/lang/Boolean;",
-            ">;>;",
-            "Ljava/lang/String;",
-            "Ljava/lang/String;",
-            "Z)V"
-        }
-    .end annotation
-
-    .line 178
-    iget-object v0, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter;->screenType:Lcom/iMe/model/wallet/crypto/create/CreateWalletScreenType;
-
-    instance-of v0, v0, Lcom/iMe/model/wallet/crypto/create/CreateWalletScreenType$Import;
-
-    if-nez v0, :cond_0
-
-    return-void
-
-    .line 180
-    :cond_0
-    iget-object v0, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter;->schedulersProvider:Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
-
-    invoke-interface {v0}, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;->ui()Lio/reactivex/Scheduler;
-
-    move-result-object v0
-
-    invoke-virtual {p1, v0}, Lio/reactivex/Observable;->observeOn(Lio/reactivex/Scheduler;)Lio/reactivex/Observable;
-
-    move-result-object p1
-
-    const-string v0, "validationObservable\n   \u2026(schedulersProvider.ui())"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    .line 14
-    new-instance v0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter$validateSeedInternal$$inlined$flatMapSuccess$1;
-
-    invoke-direct {v0, p4, p0, p2}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter$validateSeedInternal$$inlined$flatMapSuccess$1;-><init>(ZLcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter;Ljava/lang/String;)V
-
-    new-instance v1, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter$inlined$sam$i$io_reactivex_functions_Function$0;
-
-    invoke-direct {v1, v0}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter$inlined$sam$i$io_reactivex_functions_Function$0;-><init>(Lkotlin/jvm/functions/Function1;)V
-
-    invoke-virtual {p1, v1}, Lio/reactivex/Observable;->flatMap(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
-
-    move-result-object p1
-
-    const-string v0, "crossinline body: (T) ->\u2026e.empty()\n        }\n    }"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    .line 194
-    invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
-
-    move-result-object v0
-
-    const-string v1, "viewState"
-
-    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    check-cast v0, Lcom/iMe/ui/base/mvp/base/BaseView;
-
-    const/4 v1, 0x0
-
-    const/4 v2, 0x2
-
-    const/4 v3, 0x0
-
-    invoke-static {p1, v0, v1, v2, v3}, Lcom/iMe/utils/extentions/rx/RxExtKt;->withLoadingDialog$default(Lio/reactivex/Observable;Lcom/iMe/ui/base/mvp/base/BaseView;ZILjava/lang/Object;)Lio/reactivex/Observable;
-
-    move-result-object p1
-
-    .line 195
-    invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/iMe/ui/base/mvp/base/BaseView;
-
-    .line 44
-    new-instance v1, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter$validateSeedInternal$$inlined$subscribeWithErrorHandle$default$1;
-
-    invoke-direct {v1, p0, p4, p2, p3}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter$validateSeedInternal$$inlined$subscribeWithErrorHandle$default$1;-><init>(Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter;ZLjava/lang/String;Ljava/lang/String;)V
-
-    new-instance p2, Lcom/iMe/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
-
-    invoke-direct {p2, v1}, Lcom/iMe/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;-><init>(Lkotlin/jvm/functions/Function1;)V
-
-    new-instance p3, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter$validateSeedInternal$$inlined$subscribeWithErrorHandle$default$2;
-
-    invoke-direct {p3, v0}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter$validateSeedInternal$$inlined$subscribeWithErrorHandle$default$2;-><init>(Lcom/iMe/ui/base/mvp/base/BaseView;)V
-
-    .line 46
-    new-instance p4, Lcom/iMe/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
-
-    invoke-direct {p4, p3}, Lcom/iMe/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;-><init>(Lkotlin/jvm/functions/Function1;)V
-
-    .line 44
-    invoke-virtual {p1, p2, p4}, Lio/reactivex/Observable;->subscribe(Lio/reactivex/functions/Consumer;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
-
-    move-result-object p1
-
-    const-string p2, "viewState: BaseView? = n\u2026  onError.invoke()\n    })"
-
-    .line 46
-    invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const/4 p2, 0x1
-
-    .line 213
-    invoke-static {p0, p1, v3, p2, v3}, Lcom/iMe/ui/base/mvp/base/BasePresenter;->autoDispose$default(Lcom/iMe/ui/base/mvp/base/BasePresenter;Lio/reactivex/disposables/Disposable;Lio/reactivex/disposables/CompositeDisposable;ILjava/lang/Object;)V
-
-    return-void
-.end method
-
 
 # virtual methods
 .method public final onCreateNewEmptyWalletClick()V
-    .locals 7
+    .locals 4
 
-    .line 103
+    .line 95
     iget-object v0, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter;->cryptoAccessManager:Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;
 
     invoke-interface {v0}, Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;->getWalletPassword()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 104
-    invoke-interface {v0}, Ljava/lang/CharSequence;->length()I
-
-    move-result v1
-
-    const/4 v2, 0x1
-
-    const/4 v3, 0x0
-
-    if-nez v1, :cond_0
-
-    move v1, v2
-
-    goto :goto_0
-
-    :cond_0
-    move v1, v3
-
-    :goto_0
-    if-eqz v1, :cond_1
-
-    .line 105
-    invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletView;
-
-    invoke-interface {v0}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletView;->createNewWallet()V
-
-    goto :goto_1
-
-    .line 107
-    :cond_1
+    .line 96
     iget-object v1, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter;->cryptoWalletInteractor:Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;
 
-    .line 108
-    iget-object v4, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter;->cryptoPreferenceHelper:Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
+    .line 97
+    iget-object v2, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter;->cryptoPreferenceHelper:Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
 
-    invoke-interface {v4}, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;->getCurrentBlockchainType()Lcom/iMe/storage/domain/model/crypto/BlockchainType;
+    invoke-interface {v2}, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;->getCurrentBlockchainType()Lcom/iMe/storage/domain/model/crypto/BlockchainType;
 
-    move-result-object v4
+    move-result-object v2
 
-    invoke-virtual {v1, v4}, Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;->createLocalWallet(Lcom/iMe/storage/domain/model/crypto/BlockchainType;)Lio/reactivex/Observable;
-
-    move-result-object v1
-
-    .line 109
-    iget-object v4, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter;->schedulersProvider:Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
-
-    invoke-interface {v4}, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;->ui()Lio/reactivex/Scheduler;
-
-    move-result-object v4
-
-    invoke-virtual {v1, v4}, Lio/reactivex/Observable;->observeOn(Lio/reactivex/Scheduler;)Lio/reactivex/Observable;
+    invoke-virtual {v1, v2}, Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;->createLocalWallet(Lcom/iMe/storage/domain/model/crypto/BlockchainType;)Lio/reactivex/Observable;
 
     move-result-object v1
 
-    const-string v4, "cryptoWalletInteractor\n \u2026(schedulersProvider.ui())"
+    .line 98
+    iget-object v2, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter;->schedulersProvider:Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
-    invoke-static {v1, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-interface {v2}, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;->ui()Lio/reactivex/Scheduler;
 
-    .line 110
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Lio/reactivex/Observable;->observeOn(Lio/reactivex/Scheduler;)Lio/reactivex/Observable;
+
+    move-result-object v1
+
+    const-string v2, "cryptoWalletInteractor\n \u2026(schedulersProvider.ui())"
+
+    invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 99
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
-    move-result-object v4
+    move-result-object v2
 
-    const-string v5, "viewState"
+    check-cast v2, Lcom/iMe/ui/wallet/crypto/create/CreateWalletView;
 
-    invoke-static {v4, v5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    new-instance v3, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter$$ExternalSyntheticLambda0;
 
-    check-cast v4, Lcom/iMe/ui/base/mvp/base/BaseView;
+    invoke-direct {v3, v2}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter$$ExternalSyntheticLambda0;-><init>(Lcom/iMe/ui/wallet/crypto/create/CreateWalletView;)V
 
-    const/4 v5, 0x2
-
-    const/4 v6, 0x0
-
-    invoke-static {v1, v4, v3, v5, v6}, Lcom/iMe/utils/extentions/rx/RxExtKt;->withLoadingDialog$default(Lio/reactivex/Observable;Lcom/iMe/ui/base/mvp/base/BaseView;ZILjava/lang/Object;)Lio/reactivex/Observable;
+    invoke-static {v1, v3}, Lcom/iMe/utils/extentions/rx/RxExtKt;->withLoadingUpdate(Lio/reactivex/Observable;Lcom/iMe/fork/utils/Callbacks$Callback1;)Lio/reactivex/Observable;
 
     move-result-object v1
 
-    .line 111
+    .line 100
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
-    move-result-object v3
+    move-result-object v2
 
-    check-cast v3, Lcom/iMe/ui/base/mvp/base/BaseView;
+    check-cast v2, Lcom/iMe/ui/base/mvp/base/BaseView;
 
-    .line 44
-    new-instance v4, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter$onCreateNewEmptyWalletClick$$inlined$subscribeWithErrorHandle$default$1;
+    .line 47
+    new-instance v3, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter$onCreateNewEmptyWalletClick$$inlined$subscribeWithErrorHandle$default$1;
 
-    invoke-direct {v4, p0, v0}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter$onCreateNewEmptyWalletClick$$inlined$subscribeWithErrorHandle$default$1;-><init>(Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter;Ljava/lang/String;)V
+    invoke-direct {v3, v0, p0}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter$onCreateNewEmptyWalletClick$$inlined$subscribeWithErrorHandle$default$1;-><init>(Ljava/lang/String;Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter;)V
 
     new-instance v0, Lcom/iMe/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
 
-    invoke-direct {v0, v4}, Lcom/iMe/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+    invoke-direct {v0, v3}, Lcom/iMe/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;-><init>(Lkotlin/jvm/functions/Function1;)V
 
-    new-instance v4, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter$onCreateNewEmptyWalletClick$$inlined$subscribeWithErrorHandle$default$2;
+    new-instance v3, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter$onCreateNewEmptyWalletClick$$inlined$subscribeWithErrorHandle$default$2;
 
-    invoke-direct {v4, v3}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter$onCreateNewEmptyWalletClick$$inlined$subscribeWithErrorHandle$default$2;-><init>(Lcom/iMe/ui/base/mvp/base/BaseView;)V
+    invoke-direct {v3, v2}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter$onCreateNewEmptyWalletClick$$inlined$subscribeWithErrorHandle$default$2;-><init>(Lcom/iMe/ui/base/mvp/base/BaseView;)V
 
-    .line 46
-    new-instance v3, Lcom/iMe/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
+    .line 49
+    new-instance v2, Lcom/iMe/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
 
-    invoke-direct {v3, v4}, Lcom/iMe/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+    invoke-direct {v2, v3}, Lcom/iMe/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;-><init>(Lkotlin/jvm/functions/Function1;)V
 
-    .line 44
-    invoke-virtual {v1, v0, v3}, Lio/reactivex/Observable;->subscribe(Lio/reactivex/functions/Consumer;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
+    .line 47
+    invoke-virtual {v1, v0, v2}, Lio/reactivex/Observable;->subscribe(Lio/reactivex/functions/Consumer;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
 
     move-result-object v0
 
-    const-string v1, "viewState: BaseView? = n\u2026  onError.invoke()\n    })"
+    const-string v1, "viewState: BaseView? = n\u2026Error.invoke()\n        })"
 
-    .line 46
+    .line 49
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 121
-    invoke-static {p0, v0, v6, v2, v6}, Lcom/iMe/ui/base/mvp/base/BasePresenter;->autoDispose$default(Lcom/iMe/ui/base/mvp/base/BasePresenter;Lio/reactivex/disposables/Disposable;Lio/reactivex/disposables/CompositeDisposable;ILjava/lang/Object;)V
+    const/4 v1, 0x0
 
-    :goto_1
+    const/4 v2, 0x1
+
+    .line 114
+    invoke-static {p0, v0, v1, v2, v1}, Lcom/iMe/ui/base/mvp/base/BasePresenter;->autoDispose$default(Lcom/iMe/ui/base/mvp/base/BasePresenter;Lio/reactivex/disposables/Disposable;Lio/reactivex/disposables/CompositeDisposable;ILjava/lang/Object;)V
+
     return-void
 .end method
 
 .method protected onFirstViewAttach()V
     .locals 0
 
-    .line 135
-    invoke-direct {p0}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter;->setupScreen()V
-
-    .line 136
+    .line 171
     invoke-direct {p0}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter;->subscribeToQueryChanges()V
 
     return-void
 .end method
 
-.method public final onSecretWordsCheckCompleted()V
-    .locals 7
+.method public final onSavePdfClick()V
+    .locals 3
 
-    .line 47
+    .line 61
+    iget-object v0, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter;->screenType:Lcom/iMe/model/wallet/crypto/create/CreateWalletScreenType;
+
+    instance-of v0, v0, Lcom/iMe/model/wallet/crypto/create/CreateWalletScreenType$SecretWords;
+
+    if-eqz v0, :cond_0
+
+    .line 62
+    invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletView;
+
+    iget-object v1, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter;->screenType:Lcom/iMe/model/wallet/crypto/create/CreateWalletScreenType;
+
+    check-cast v1, Lcom/iMe/model/wallet/crypto/create/CreateWalletScreenType$SecretWords;
+
+    invoke-virtual {v1}, Lcom/iMe/model/wallet/crypto/create/CreateWalletScreenType$SecretWords;->getAddress()Ljava/lang/String;
+
+    move-result-object v1
+
+    iget-object v2, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter;->screenType:Lcom/iMe/model/wallet/crypto/create/CreateWalletScreenType;
+
+    check-cast v2, Lcom/iMe/model/wallet/crypto/create/CreateWalletScreenType$SecretWords;
+
+    invoke-virtual {v2}, Lcom/iMe/model/wallet/crypto/create/CreateWalletScreenType$SecretWords;->getSecretWords()Ljava/util/List;
+
+    move-result-object v2
+
+    invoke-interface {v0, v1, v2}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletView;->generateAndOpenPdf(Ljava/lang/String;Ljava/util/List;)V
+
+    :cond_0
+    return-void
+.end method
+
+.method public final onSecretWordsCheckCompleted()V
+    .locals 6
+
+    .line 67
     iget-object v0, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter;->screenType:Lcom/iMe/model/wallet/crypto/create/CreateWalletScreenType;
 
     instance-of v1, v0, Lcom/iMe/model/wallet/crypto/create/CreateWalletScreenType$WordsCheck;
@@ -662,7 +769,7 @@
 
     return-void
 
-    .line 50
+    .line 70
     :cond_0
     check-cast v0, Lcom/iMe/model/wallet/crypto/create/CreateWalletScreenType$WordsCheck;
 
@@ -676,8 +783,6 @@
 
     const/4 v1, 0x1
 
-    const/4 v2, 0x0
-
     if-lez v0, :cond_1
 
     move v0, v1
@@ -685,111 +790,111 @@
     goto :goto_0
 
     :cond_1
-    move v0, v2
+    const/4 v0, 0x0
 
     :goto_0
     if-eqz v0, :cond_3
 
-    .line 51
+    .line 71
     iget-object v0, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter;->cryptoWalletInteractor:Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;
 
-    .line 53
+    .line 73
+    iget-object v2, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter;->screenType:Lcom/iMe/model/wallet/crypto/create/CreateWalletScreenType;
+
+    check-cast v2, Lcom/iMe/model/wallet/crypto/create/CreateWalletScreenType$WordsCheck;
+
+    invoke-virtual {v2}, Lcom/iMe/model/wallet/crypto/create/CreateWalletScreenType$WordsCheck;->getSecretWords()Ljava/util/List;
+
+    move-result-object v2
+
+    invoke-static {v2}, Lcom/iMe/storage/data/utils/extentions/StringExtKt;->joinBySpace(Ljava/util/List;)Ljava/lang/String;
+
+    move-result-object v2
+
+    .line 74
     iget-object v3, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter;->screenType:Lcom/iMe/model/wallet/crypto/create/CreateWalletScreenType;
 
     check-cast v3, Lcom/iMe/model/wallet/crypto/create/CreateWalletScreenType$WordsCheck;
 
-    invoke-virtual {v3}, Lcom/iMe/model/wallet/crypto/create/CreateWalletScreenType$WordsCheck;->getSecretWords()Ljava/util/List;
+    invoke-virtual {v3}, Lcom/iMe/model/wallet/crypto/create/CreateWalletScreenType$WordsCheck;->getPassword()Ljava/lang/String;
 
     move-result-object v3
 
-    invoke-static {v3}, Lcom/iMe/storage/data/utils/extentions/StringExtKt;->joinBySpace(Ljava/util/List;)Ljava/lang/String;
+    .line 75
+    iget-object v4, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter;->cryptoAccessManager:Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;
 
-    move-result-object v3
+    invoke-interface {v4}, Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;->isAnyWalletCreated()Z
 
-    .line 54
+    move-result v4
+
+    if-eqz v4, :cond_2
+
+    const-string v4, ""
+
+    goto :goto_1
+
+    .line 76
+    :cond_2
     iget-object v4, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter;->screenType:Lcom/iMe/model/wallet/crypto/create/CreateWalletScreenType;
 
     check-cast v4, Lcom/iMe/model/wallet/crypto/create/CreateWalletScreenType$WordsCheck;
 
-    invoke-virtual {v4}, Lcom/iMe/model/wallet/crypto/create/CreateWalletScreenType$WordsCheck;->getPassword()Ljava/lang/String;
+    invoke-virtual {v4}, Lcom/iMe/model/wallet/crypto/create/CreateWalletScreenType$WordsCheck;->getPin()Ljava/lang/String;
 
     move-result-object v4
 
-    .line 55
-    iget-object v5, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter;->cryptoAccessManager:Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;
+    .line 77
+    :goto_1
+    iget-object v5, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter;->cryptoPreferenceHelper:Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
 
-    invoke-interface {v5}, Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;->isAnyWalletCreated()Z
-
-    move-result v5
-
-    if-eqz v5, :cond_2
-
-    const-string v5, ""
-
-    goto :goto_1
-
-    .line 56
-    :cond_2
-    iget-object v5, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter;->screenType:Lcom/iMe/model/wallet/crypto/create/CreateWalletScreenType;
-
-    check-cast v5, Lcom/iMe/model/wallet/crypto/create/CreateWalletScreenType$WordsCheck;
-
-    invoke-virtual {v5}, Lcom/iMe/model/wallet/crypto/create/CreateWalletScreenType$WordsCheck;->getPin()Ljava/lang/String;
+    invoke-interface {v5}, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;->getCurrentBlockchainType()Lcom/iMe/storage/domain/model/crypto/BlockchainType;
 
     move-result-object v5
 
-    .line 57
-    :goto_1
-    iget-object v6, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter;->cryptoPreferenceHelper:Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
-
-    invoke-interface {v6}, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;->getCurrentBlockchainType()Lcom/iMe/storage/domain/model/crypto/BlockchainType;
-
-    move-result-object v6
-
-    .line 52
-    invoke-virtual {v0, v3, v4, v5, v6}, Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;->importWallet(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/domain/model/crypto/BlockchainType;)Lio/reactivex/Observable;
+    .line 72
+    invoke-virtual {v0, v2, v3, v4, v5}, Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;->importWallet(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/domain/model/crypto/BlockchainType;)Lio/reactivex/Observable;
 
     move-result-object v0
 
-    .line 59
-    iget-object v3, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter;->schedulersProvider:Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
+    .line 79
+    iget-object v2, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter;->schedulersProvider:Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
-    invoke-interface {v3}, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;->ui()Lio/reactivex/Scheduler;
+    invoke-interface {v2}, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;->ui()Lio/reactivex/Scheduler;
 
-    move-result-object v3
+    move-result-object v2
 
-    invoke-virtual {v0, v3}, Lio/reactivex/Observable;->observeOn(Lio/reactivex/Scheduler;)Lio/reactivex/Observable;
+    invoke-virtual {v0, v2}, Lio/reactivex/Observable;->observeOn(Lio/reactivex/Scheduler;)Lio/reactivex/Observable;
 
     move-result-object v0
 
-    const-string v3, "cryptoWalletInteractor\n \u2026(schedulersProvider.ui())"
+    const-string v2, "cryptoWalletInteractor\n \u2026(schedulersProvider.ui())"
 
-    .line 56
-    invoke-static {v0, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    .line 76
+    invoke-static {v0, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 60
+    .line 80
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
-    move-result-object v3
+    move-result-object v2
 
-    const-string v4, "viewState"
+    check-cast v2, Lcom/iMe/ui/wallet/crypto/create/CreateWalletView;
 
-    invoke-static {v3, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    new-instance v3, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter$$ExternalSyntheticLambda0;
 
-    check-cast v3, Lcom/iMe/ui/base/mvp/base/BaseView;
+    invoke-direct {v3, v2}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter$$ExternalSyntheticLambda0;-><init>(Lcom/iMe/ui/wallet/crypto/create/CreateWalletView;)V
 
-    invoke-static {v0, v3, v2}, Lcom/iMe/utils/extentions/rx/RxExtKt;->withLoadingDialog(Lio/reactivex/Observable;Lcom/iMe/ui/base/mvp/base/BaseView;Z)Lio/reactivex/Observable;
+    invoke-static {v0, v3}, Lcom/iMe/utils/extentions/rx/RxExtKt;->withLoadingUpdate(Lio/reactivex/Observable;Lcom/iMe/fork/utils/Callbacks$Callback1;)Lio/reactivex/Observable;
 
     move-result-object v0
 
-    .line 61
+    .line 81
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
     move-result-object v2
 
     check-cast v2, Lcom/iMe/ui/base/mvp/base/BaseView;
 
-    .line 44
+    .line 47
     new-instance v3, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter$onSecretWordsCheckCompleted$$inlined$subscribeWithErrorHandle$default$1;
 
     invoke-direct {v3, p0}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter$onSecretWordsCheckCompleted$$inlined$subscribeWithErrorHandle$default$1;-><init>(Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter;)V
@@ -802,33 +907,94 @@
 
     invoke-direct {v3, v2}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter$onSecretWordsCheckCompleted$$inlined$subscribeWithErrorHandle$default$2;-><init>(Lcom/iMe/ui/base/mvp/base/BaseView;)V
 
-    .line 46
+    .line 49
     new-instance v2, Lcom/iMe/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
 
     invoke-direct {v2, v3}, Lcom/iMe/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;-><init>(Lkotlin/jvm/functions/Function1;)V
 
-    .line 44
+    .line 47
     invoke-virtual {v0, v4, v2}, Lio/reactivex/Observable;->subscribe(Lio/reactivex/functions/Consumer;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
 
     move-result-object v0
 
-    const-string v2, "viewState: BaseView? = n\u2026  onError.invoke()\n    })"
+    const-string v2, "viewState: BaseView? = n\u2026Error.invoke()\n        })"
 
-    .line 46
+    .line 49
     invoke-static {v0, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     const/4 v2, 0x0
 
-    .line 68
+    .line 88
     invoke-static {p0, v0, v2, v1, v2}, Lcom/iMe/ui/base/mvp/base/BasePresenter;->autoDispose$default(Lcom/iMe/ui/base/mvp/base/BasePresenter;Lio/reactivex/disposables/Disposable;Lio/reactivex/disposables/CompositeDisposable;ILjava/lang/Object;)V
 
     goto :goto_2
 
-    .line 70
+    .line 90
     :cond_3
     invoke-direct {p0}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter;->confirmBackUpCreated()V
 
     :goto_2
+    return-void
+.end method
+
+.method public final onSelectWordsCountClick()V
+    .locals 2
+
+    .line 52
+    invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletView;
+
+    invoke-direct {p0}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter;->getSelectWordsCountDialogModel()Lcom/iMe/model/dialog/RadioCellsListDialogModel;
+
+    move-result-object v1
+
+    invoke-interface {v0, v1}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletView;->showSelectWordsCountDialog(Lcom/iMe/model/dialog/RadioCellsListDialogModel;)V
+
+    return-void
+.end method
+
+.method public final onWordsCountSelected(I)V
+    .locals 1
+
+    .line 56
+    invoke-direct {p0}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter;->getWordsCountItems()Ljava/util/List;
+
+    move-result-object v0
+
+    invoke-static {v0, p1}, Lkotlin/collections/CollectionsKt;->getOrNull(Ljava/util/List;I)Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Ljava/lang/Integer;
+
+    if-eqz p1, :cond_0
+
+    invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
+
+    move-result p1
+
+    goto :goto_0
+
+    :cond_0
+    const/16 p1, 0x18
+
+    :goto_0
+    iput p1, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter;->selectedWordsCount:I
+
+    .line 57
+    invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
+
+    move-result-object p1
+
+    check-cast p1, Lcom/iMe/ui/wallet/crypto/create/CreateWalletView;
+
+    iget v0, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter;->selectedWordsCount:I
+
+    invoke-interface {p1, v0}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletView;->onWordsCountSelected(I)V
+
     return-void
 .end method
 
@@ -839,10 +1005,10 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 126
+    .line 118
     iput-object p1, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter;->lastSearchQuery:Ljava/lang/String;
 
-    .line 127
+    .line 119
     iget-object v0, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter;->searchQuerySubject:Lio/reactivex/subjects/PublishSubject;
 
     invoke-virtual {v0, p1}, Lio/reactivex/subjects/PublishSubject;->onNext(Ljava/lang/Object;)V
@@ -857,128 +1023,139 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 75
+    .line 123
     iget-object v0, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter;->screenType:Lcom/iMe/model/wallet/crypto/create/CreateWalletScreenType;
 
-    instance-of v1, v0, Lcom/iMe/model/wallet/crypto/create/CreateWalletScreenType$Import;
+    instance-of v0, v0, Lcom/iMe/model/wallet/crypto/create/CreateWalletScreenType$Import;
 
-    if-eqz v1, :cond_0
+    if-nez v0, :cond_0
 
-    check-cast v0, Lcom/iMe/model/wallet/crypto/create/CreateWalletScreenType$Import;
+    return-void
 
-    goto :goto_0
-
+    .line 124
     :cond_0
-    const/4 v0, 0x0
+    iget-object v0, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter;->cryptoAccessManager:Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;
 
-    :goto_0
-    if-eqz v0, :cond_4
-
-    .line 76
-    invoke-virtual {v0}, Lcom/iMe/model/wallet/crypto/create/CreateWalletScreenType$Import;->getPassword()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-interface {v1}, Ljava/lang/CharSequence;->length()I
-
-    move-result v1
-
-    const/4 v2, 0x1
-
-    const/4 v3, 0x0
-
-    if-lez v1, :cond_1
-
-    move v1, v2
-
-    goto :goto_1
-
-    :cond_1
-    move v1, v3
-
-    .line 77
-    :goto_1
-    invoke-virtual {v0}, Lcom/iMe/model/wallet/crypto/create/CreateWalletScreenType$Import;->getAddress()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-interface {v4}, Ljava/lang/CharSequence;->length()I
-
-    move-result v4
-
-    if-lez v4, :cond_2
-
-    goto :goto_2
-
-    :cond_2
-    move v2, v3
-
-    :goto_2
-    if-eqz v2, :cond_3
-
-    .line 79
-    iget-object v2, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter;->walletInteractor:Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;
-
-    .line 81
-    invoke-virtual {v0}, Lcom/iMe/model/wallet/crypto/create/CreateWalletScreenType$Import;->getAddress()Ljava/lang/String;
+    invoke-interface {v0}, Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;->getWalletPassword()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 82
+    invoke-interface {v0}, Ljava/lang/CharSequence;->length()I
+
+    move-result v0
+
+    const/4 v1, 0x1
+
+    if-lez v0, :cond_1
+
+    move v0, v1
+
+    goto :goto_0
+
+    :cond_1
+    const/4 v0, 0x0
+
+    .line 125
+    :goto_0
+    iget-object v2, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter;->walletInteractor:Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;
+
+    .line 126
     iget-object v3, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter;->cryptoPreferenceHelper:Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
 
     invoke-interface {v3}, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;->getCurrentBlockchainType()Lcom/iMe/storage/domain/model/crypto/BlockchainType;
 
     move-result-object v3
 
-    .line 79
-    invoke-virtual {v2, p1, v0, v3}, Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;->isValidRestoredAddress(Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/domain/model/crypto/BlockchainType;)Lio/reactivex/Observable;
-
-    move-result-object v0
-
-    .line 85
-    iget-object v2, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
-
-    sget v3, Lorg/telegram/messenger/R$string;->wallet_restore_address_eth_error:I
-
-    invoke-interface {v2, v3}, Lcom/iMe/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
+    invoke-virtual {v2, p1, v3}, Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;->isValidSeed(Ljava/lang/String;Lcom/iMe/storage/domain/model/crypto/BlockchainType;)Lio/reactivex/Observable;
 
     move-result-object v2
 
-    .line 78
-    invoke-direct {p0, v0, p1, v2, v1}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter;->validateSeedInternal(Lio/reactivex/Observable;Ljava/lang/String;Ljava/lang/String;Z)V
+    .line 14
+    new-instance v3, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter$validateSeed$$inlined$flatMapSuccess$1;
 
-    goto :goto_3
+    invoke-direct {v3, v0, p0, p1}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter$validateSeed$$inlined$flatMapSuccess$1;-><init>(ZLcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter;Ljava/lang/String;)V
 
-    .line 90
-    :cond_3
-    iget-object v0, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter;->walletInteractor:Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;
+    new-instance v4, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter$inlined$sam$i$io_reactivex_functions_Function$0;
 
-    .line 92
-    iget-object v2, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter;->cryptoPreferenceHelper:Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
+    invoke-direct {v4, v3}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter$inlined$sam$i$io_reactivex_functions_Function$0;-><init>(Lkotlin/jvm/functions/Function1;)V
 
-    invoke-interface {v2}, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;->getCurrentBlockchainType()Lcom/iMe/storage/domain/model/crypto/BlockchainType;
+    invoke-virtual {v2, v4}, Lio/reactivex/Observable;->flatMap(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
 
     move-result-object v2
 
-    .line 90
-    invoke-virtual {v0, p1, v2}, Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;->isValidSeed(Ljava/lang/String;Lcom/iMe/storage/domain/model/crypto/BlockchainType;)Lio/reactivex/Observable;
+    const-string v3, "crossinline body: (T) ->\u2026e.empty()\n        }\n    }"
 
-    move-result-object v0
+    invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 95
-    iget-object v2, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
+    .line 139
+    iget-object v3, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter;->schedulersProvider:Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
-    sget v3, Lorg/telegram/messenger/R$string;->wallet_restore_eth_error:I
+    invoke-interface {v3}, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;->ui()Lio/reactivex/Scheduler;
 
-    invoke-interface {v2, v3}, Lcom/iMe/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Lio/reactivex/Observable;->observeOn(Lio/reactivex/Scheduler;)Lio/reactivex/Observable;
 
     move-result-object v2
 
-    .line 89
-    invoke-direct {p0, v0, p1, v2, v1}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter;->validateSeedInternal(Lio/reactivex/Observable;Ljava/lang/String;Ljava/lang/String;Z)V
+    const-string v3, "walletInteractor\n       \u2026(schedulersProvider.ui())"
 
-    :cond_4
-    :goto_3
+    invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 140
+    invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
+
+    move-result-object v3
+
+    check-cast v3, Lcom/iMe/ui/wallet/crypto/create/CreateWalletView;
+
+    new-instance v4, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter$$ExternalSyntheticLambda0;
+
+    invoke-direct {v4, v3}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter$$ExternalSyntheticLambda0;-><init>(Lcom/iMe/ui/wallet/crypto/create/CreateWalletView;)V
+
+    invoke-static {v2, v4}, Lcom/iMe/utils/extentions/rx/RxExtKt;->withLoadingUpdate(Lio/reactivex/Observable;Lcom/iMe/fork/utils/Callbacks$Callback1;)Lio/reactivex/Observable;
+
+    move-result-object v2
+
+    .line 141
+    invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
+
+    move-result-object v3
+
+    check-cast v3, Lcom/iMe/ui/base/mvp/base/BaseView;
+
+    .line 47
+    new-instance v4, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter$validateSeed$$inlined$subscribeWithErrorHandle$default$1;
+
+    invoke-direct {v4, p0, v0, p1}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter$validateSeed$$inlined$subscribeWithErrorHandle$default$1;-><init>(Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter;ZLjava/lang/String;)V
+
+    new-instance p1, Lcom/iMe/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
+
+    invoke-direct {p1, v4}, Lcom/iMe/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    new-instance v0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter$validateSeed$$inlined$subscribeWithErrorHandle$default$2;
+
+    invoke-direct {v0, v3}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter$validateSeed$$inlined$subscribeWithErrorHandle$default$2;-><init>(Lcom/iMe/ui/base/mvp/base/BaseView;)V
+
+    .line 49
+    new-instance v3, Lcom/iMe/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
+
+    invoke-direct {v3, v0}, Lcom/iMe/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    .line 47
+    invoke-virtual {v2, p1, v3}, Lio/reactivex/Observable;->subscribe(Lio/reactivex/functions/Consumer;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
+
+    move-result-object p1
+
+    const-string v0, "viewState: BaseView? = n\u2026Error.invoke()\n        })"
+
+    .line 49
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const/4 v0, 0x0
+
+    .line 163
+    invoke-static {p0, p1, v0, v1, v0}, Lcom/iMe/ui/base/mvp/base/BasePresenter;->autoDispose$default(Lcom/iMe/ui/base/mvp/base/BasePresenter;Lio/reactivex/disposables/Disposable;Lio/reactivex/disposables/CompositeDisposable;ILjava/lang/Object;)V
+
     return-void
 .end method

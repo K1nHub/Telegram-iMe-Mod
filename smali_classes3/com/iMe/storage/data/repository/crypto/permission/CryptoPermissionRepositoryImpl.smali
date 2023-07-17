@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nCryptoPermissionRepositoryImpl.kt\nKotlin\n*S Kotlin\n*F\n+ 1 CryptoPermissionRepositoryImpl.kt\ncom/iMe/storage/data/repository/crypto/permission/CryptoPermissionRepositoryImpl\n+ 2 FirebaseExt.kt\ncom/iMe/storage/data/utils/extentions/FirebaseExtKt\n+ 3 RxExt.kt\ncom/iMe/storage/data/utils/extentions/RxExtKt\n+ 4 ResultExt.kt\ncom/iMe/storage/domain/utils/extentions/ResultExtKt\n+ 5 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,102:1\n70#2:103\n70#2:105\n70#2:107\n70#2:111\n70#2:117\n26#3:104\n26#3:106\n26#3:108\n18#3:110\n26#3:112\n26#3:118\n11#4:109\n1549#5:113\n1620#5,3:114\n*S KotlinDebug\n*F\n+ 1 CryptoPermissionRepositoryImpl.kt\ncom/iMe/storage/data/repository/crypto/permission/CryptoPermissionRepositoryImpl\n*L\n40#1:103\n51#1:105\n57#1:107\n69#1:111\n90#1:117\n41#1:104\n52#1:106\n58#1:108\n65#1:110\n74#1:112\n98#1:118\n65#1:109\n87#1:113\n87#1:114,3\n*E\n"
+    value = "SMAP\nCryptoPermissionRepositoryImpl.kt\nKotlin\n*S Kotlin\n*F\n+ 1 CryptoPermissionRepositoryImpl.kt\ncom/iMe/storage/data/repository/crypto/permission/CryptoPermissionRepositoryImpl\n+ 2 FirebaseExt.kt\ncom/iMe/storage/data/utils/extentions/FirebaseExtKt\n+ 3 RxExt.kt\ncom/iMe/storage/data/utils/extentions/RxExtKt\n+ 4 ResultExt.kt\ncom/iMe/storage/domain/utils/extentions/ResultExtKt\n+ 5 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,99:1\n70#2:100\n70#2:102\n70#2:104\n70#2:108\n70#2:114\n26#3:101\n26#3:103\n26#3:105\n18#3:107\n26#3:109\n26#3:115\n11#4:106\n1549#5:110\n1620#5,3:111\n*S KotlinDebug\n*F\n+ 1 CryptoPermissionRepositoryImpl.kt\ncom/iMe/storage/data/repository/crypto/permission/CryptoPermissionRepositoryImpl\n*L\n39#1:100\n50#1:102\n56#1:104\n68#1:108\n87#1:114\n40#1:101\n51#1:103\n57#1:105\n64#1:107\n73#1:109\n95#1:115\n64#1:106\n84#1:110\n84#1:111,3\n*E\n"
 .end annotation
 
 
@@ -48,22 +48,22 @@
 
     invoke-static {p5, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 27
+    .line 26
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 28
+    .line 27
     iput-object p1, p0, Lcom/iMe/storage/data/repository/crypto/permission/CryptoPermissionRepositoryImpl;->permissionApi:Lcom/iMe/storage/data/network/api/own/PermissionApi;
 
-    .line 29
+    .line 28
     iput-object p2, p0, Lcom/iMe/storage/data/repository/crypto/permission/CryptoPermissionRepositoryImpl;->cryptoWalletApi:Lcom/iMe/storage/data/network/api/own/CryptoWalletApi;
 
-    .line 30
+    .line 29
     iput-object p3, p0, Lcom/iMe/storage/data/repository/crypto/permission/CryptoPermissionRepositoryImpl;->cryptoPreferenceHelper:Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
 
-    .line 31
+    .line 30
     iput-object p4, p0, Lcom/iMe/storage/data/repository/crypto/permission/CryptoPermissionRepositoryImpl;->firebaseErrorHandler:Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;
 
-    .line 32
+    .line 31
     iput-object p5, p0, Lcom/iMe/storage/data/repository/crypto/permission/CryptoPermissionRepositoryImpl;->errorHandler:Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler;
 
     return-void
@@ -72,7 +72,7 @@
 .method public static final synthetic access$getCryptoPreferenceHelper$p(Lcom/iMe/storage/data/repository/crypto/permission/CryptoPermissionRepositoryImpl;)Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
     .locals 0
 
-    .line 27
+    .line 26
     iget-object p0, p0, Lcom/iMe/storage/data/repository/crypto/permission/CryptoPermissionRepositoryImpl;->cryptoPreferenceHelper:Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
 
     return-object p0
@@ -98,10 +98,10 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 55
+    .line 54
     iget-object v0, p0, Lcom/iMe/storage/data/repository/crypto/permission/CryptoPermissionRepositoryImpl;->permissionApi:Lcom/iMe/storage/data/network/api/own/PermissionApi;
 
-    .line 56
+    .line 55
     new-instance v1, Lcom/iMe/storage/data/network/model/request/crypto/wallet/GetAccountInfoRequest;
 
     invoke-direct {v1, p1}, Lcom/iMe/storage/data/network/model/request/crypto/wallet/GetAccountInfoRequest;-><init>(Ljava/lang/String;)V
@@ -110,7 +110,7 @@
 
     move-result-object p1
 
-    .line 57
+    .line 56
     iget-object v0, p0, Lcom/iMe/storage/data/repository/crypto/permission/CryptoPermissionRepositoryImpl;->firebaseErrorHandler:Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;
 
     .line 70
@@ -130,7 +130,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 58
+    .line 57
     iget-object v0, p0, Lcom/iMe/storage/data/repository/crypto/permission/CryptoPermissionRepositoryImpl;->errorHandler:Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler;
 
     .line 26
@@ -160,12 +160,12 @@
             "(Z)",
             "Lio/reactivex/Observable<",
             "Lcom/iMe/storage/domain/model/Result<",
-            "Lcom/iMe/storage/domain/model/crypto/CryptoWalletInfo;",
+            "Lcom/iMe/storage/domain/model/crypto/CryptoWalletsInfo;",
             ">;>;"
         }
     .end annotation
 
-    .line 61
+    .line 60
     iget-object v0, p0, Lcom/iMe/storage/data/repository/crypto/permission/CryptoPermissionRepositoryImpl;->cryptoPreferenceHelper:Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
 
     invoke-interface {v0}, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;->getWalletInfoMetadata()Lcom/iMe/storage/data/locale/prefs/model/CryptoWalletInformationMetadata;
@@ -174,8 +174,8 @@
 
     if-nez p1, :cond_1
 
-    .line 64
-    invoke-virtual {v0}, Lcom/iMe/storage/data/locale/prefs/model/CryptoWalletInformationMetadata;->getWalletInfo()Lcom/iMe/storage/domain/model/crypto/CryptoWalletInfo;
+    .line 63
+    invoke-virtual {v0}, Lcom/iMe/storage/data/locale/prefs/model/CryptoWalletInformationMetadata;->getWalletInfo()Lcom/iMe/storage/domain/model/crypto/CryptoWalletsInfo;
 
     move-result-object p1
 
@@ -183,9 +183,9 @@
 
     goto :goto_0
 
-    .line 65
+    .line 64
     :cond_0
-    invoke-virtual {v0}, Lcom/iMe/storage/data/locale/prefs/model/CryptoWalletInformationMetadata;->getWalletInfo()Lcom/iMe/storage/domain/model/crypto/CryptoWalletInfo;
+    invoke-virtual {v0}, Lcom/iMe/storage/data/locale/prefs/model/CryptoWalletInformationMetadata;->getWalletInfo()Lcom/iMe/storage/domain/model/crypto/CryptoWalletsInfo;
 
     move-result-object p1
 
@@ -207,23 +207,23 @@
 
     goto :goto_1
 
-    .line 64
+    .line 63
     :cond_1
     :goto_0
     invoke-static {}, Lio/reactivex/Observable;->empty()Lio/reactivex/Observable;
 
     move-result-object p1
 
-    .line 67
+    .line 66
     :goto_1
     iget-object v0, p0, Lcom/iMe/storage/data/repository/crypto/permission/CryptoPermissionRepositoryImpl;->cryptoWalletApi:Lcom/iMe/storage/data/network/api/own/CryptoWalletApi;
 
-    .line 68
+    .line 67
     invoke-interface {v0}, Lcom/iMe/storage/data/network/api/own/CryptoWalletApi;->getCryptoWalletInfo()Lio/reactivex/Observable;
 
     move-result-object v0
 
-    .line 69
+    .line 68
     iget-object v1, p0, Lcom/iMe/storage/data/repository/crypto/permission/CryptoPermissionRepositoryImpl;->firebaseErrorHandler:Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;
 
     .line 70
@@ -243,7 +243,7 @@
 
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 63
+    .line 62
     invoke-static {p1, v0}, Lio/reactivex/Observable;->concat(Lio/reactivex/ObservableSource;Lio/reactivex/ObservableSource;)Lio/reactivex/Observable;
 
     move-result-object p1
@@ -252,7 +252,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 74
+    .line 73
     iget-object v0, p0, Lcom/iMe/storage/data/repository/crypto/permission/CryptoPermissionRepositoryImpl;->errorHandler:Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler;
 
     .line 26
@@ -275,13 +275,11 @@
     return-object p1
 .end method
 
-.method public managePermissionSettings(Lcom/iMe/storage/domain/model/wallet/token/TokenCode;ZLjava/util/List;)Lio/reactivex/Observable;
+.method public managePermissionSettings(ZLjava/util/List;)Lio/reactivex/Observable;
     .locals 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "(",
-            "Lcom/iMe/storage/domain/model/wallet/token/TokenCode;",
-            "Z",
+            "(Z",
             "Ljava/util/List<",
             "Ljava/lang/Long;",
             ">;)",
@@ -292,35 +290,26 @@
         }
     .end annotation
 
-    const-string v0, "type"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
     const-string v0, "whitelistUsers"
 
-    invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 82
+    .line 80
     iget-object v0, p0, Lcom/iMe/storage/data/repository/crypto/permission/CryptoPermissionRepositoryImpl;->permissionApi:Lcom/iMe/storage/data/network/api/own/PermissionApi;
-
-    .line 85
-    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;->getName()Ljava/lang/String;
-
-    move-result-object p1
 
     .line 1549
     new-instance v1, Ljava/util/ArrayList;
 
     const/16 v2, 0xa
 
-    invoke-static {p3, v2}, Lkotlin/collections/CollectionsKt;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
+    invoke-static {p2, v2}, Lkotlin/collections/CollectionsKt;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
 
     move-result v2
 
     invoke-direct {v1, v2}, Ljava/util/ArrayList;-><init>(I)V
 
     .line 1620
-    invoke-interface {p3}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+    invoke-interface {p2}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v2
 
@@ -342,7 +331,7 @@
 
     move-result-wide v3
 
-    .line 87
+    .line 84
     invoke-static {v3, v4}, Ljava/lang/String;->valueOf(J)Ljava/lang/String;
 
     move-result-object v3
@@ -352,30 +341,30 @@
 
     goto :goto_0
 
-    .line 84
+    .line 82
     :cond_0
     new-instance v2, Lcom/iMe/storage/data/network/model/request/crypto/permission/ManageCryptoPermissionRequest;
 
-    invoke-direct {v2, v1, p2, p1}, Lcom/iMe/storage/data/network/model/request/crypto/permission/ManageCryptoPermissionRequest;-><init>(Ljava/util/List;ZLjava/lang/String;)V
+    invoke-direct {v2, v1, p1}, Lcom/iMe/storage/data/network/model/request/crypto/permission/ManageCryptoPermissionRequest;-><init>(Ljava/util/List;Z)V
 
-    .line 83
+    .line 81
     invoke-interface {v0, v2}, Lcom/iMe/storage/data/network/api/own/PermissionApi;->manageCryptoPermissions(Lcom/iMe/storage/data/network/model/request/crypto/permission/ManageCryptoPermissionRequest;)Lio/reactivex/Observable;
 
-    move-result-object p1
+    move-result-object v0
 
-    .line 90
-    iget-object v0, p0, Lcom/iMe/storage/data/repository/crypto/permission/CryptoPermissionRepositoryImpl;->firebaseErrorHandler:Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;
+    .line 87
+    iget-object v1, p0, Lcom/iMe/storage/data/repository/crypto/permission/CryptoPermissionRepositoryImpl;->firebaseErrorHandler:Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;
 
     .line 70
-    new-instance v1, Lcom/iMe/storage/data/repository/crypto/permission/CryptoPermissionRepositoryImpl$managePermissionSettings$$inlined$mapSuccess$1;
+    new-instance v2, Lcom/iMe/storage/data/repository/crypto/permission/CryptoPermissionRepositoryImpl$managePermissionSettings$$inlined$mapSuccess$1;
 
-    invoke-direct {v1, v0, p0, p2, p3}, Lcom/iMe/storage/data/repository/crypto/permission/CryptoPermissionRepositoryImpl$managePermissionSettings$$inlined$mapSuccess$1;-><init>(Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;Lcom/iMe/storage/data/repository/crypto/permission/CryptoPermissionRepositoryImpl;ZLjava/util/List;)V
+    invoke-direct {v2, v1, p0, p1, p2}, Lcom/iMe/storage/data/repository/crypto/permission/CryptoPermissionRepositoryImpl$managePermissionSettings$$inlined$mapSuccess$1;-><init>(Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;Lcom/iMe/storage/data/repository/crypto/permission/CryptoPermissionRepositoryImpl;ZLjava/util/List;)V
 
-    new-instance p2, Lcom/iMe/storage/data/utils/extentions/FirebaseExtKt$sam$i$io_reactivex_functions_Function$0;
+    new-instance p1, Lcom/iMe/storage/data/utils/extentions/FirebaseExtKt$sam$i$io_reactivex_functions_Function$0;
 
-    invoke-direct {p2, v1}, Lcom/iMe/storage/data/utils/extentions/FirebaseExtKt$sam$i$io_reactivex_functions_Function$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+    invoke-direct {p1, v2}, Lcom/iMe/storage/data/utils/extentions/FirebaseExtKt$sam$i$io_reactivex_functions_Function$0;-><init>(Lkotlin/jvm/functions/Function1;)V
 
-    invoke-virtual {p1, p2}, Lio/reactivex/Observable;->map(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
+    invoke-virtual {v0, p1}, Lio/reactivex/Observable;->map(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
 
     move-result-object p1
 
@@ -383,17 +372,17 @@
 
     invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 98
+    .line 95
     iget-object p2, p0, Lcom/iMe/storage/data/repository/crypto/permission/CryptoPermissionRepositoryImpl;->errorHandler:Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler;
 
     .line 26
-    new-instance p3, Lcom/iMe/storage/data/repository/crypto/permission/CryptoPermissionRepositoryImpl$managePermissionSettings$$inlined$handleError$1;
+    new-instance v0, Lcom/iMe/storage/data/repository/crypto/permission/CryptoPermissionRepositoryImpl$managePermissionSettings$$inlined$handleError$1;
 
-    invoke-direct {p3, p2}, Lcom/iMe/storage/data/repository/crypto/permission/CryptoPermissionRepositoryImpl$managePermissionSettings$$inlined$handleError$1;-><init>(Lcom/iMe/storage/data/network/handlers/ErrorHandler;)V
+    invoke-direct {v0, p2}, Lcom/iMe/storage/data/repository/crypto/permission/CryptoPermissionRepositoryImpl$managePermissionSettings$$inlined$handleError$1;-><init>(Lcom/iMe/storage/data/network/handlers/ErrorHandler;)V
 
     new-instance p2, Lcom/iMe/storage/data/utils/extentions/RxExtKt$sam$i$io_reactivex_functions_Function$0;
 
-    invoke-direct {p2, p3}, Lcom/iMe/storage/data/utils/extentions/RxExtKt$sam$i$io_reactivex_functions_Function$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+    invoke-direct {p2, v0}, Lcom/iMe/storage/data/utils/extentions/RxExtKt$sam$i$io_reactivex_functions_Function$0;-><init>(Lkotlin/jvm/functions/Function1;)V
 
     invoke-virtual {p1, p2}, Lio/reactivex/Observable;->onErrorReturn(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
 
@@ -429,10 +418,10 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 38
+    .line 37
     iget-object v0, p0, Lcom/iMe/storage/data/repository/crypto/permission/CryptoPermissionRepositoryImpl;->permissionApi:Lcom/iMe/storage/data/network/api/own/PermissionApi;
 
-    .line 39
+    .line 38
     new-instance v1, Lcom/iMe/storage/data/network/model/request/crypto/wallet/RequestPermissionRequest;
 
     invoke-virtual {p2}, Ljava/lang/Enum;->name()Ljava/lang/String;
@@ -445,7 +434,7 @@
 
     move-result-object p1
 
-    .line 40
+    .line 39
     iget-object p2, p0, Lcom/iMe/storage/data/repository/crypto/permission/CryptoPermissionRepositoryImpl;->firebaseErrorHandler:Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;
 
     .line 70
@@ -465,7 +454,7 @@
 
     invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 41
+    .line 40
     iget-object p2, p0, Lcom/iMe/storage/data/repository/crypto/permission/CryptoPermissionRepositoryImpl;->errorHandler:Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler;
 
     .line 26
