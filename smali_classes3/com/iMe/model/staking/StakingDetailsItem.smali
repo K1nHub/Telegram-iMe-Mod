@@ -39,7 +39,7 @@
 
 .field private final endsAtISO:Ljava/lang/String;
 
-.field private final feeTokenTicker:Ljava/lang/String;
+.field private final feeTokenItem:Lcom/iMe/model/wallet/crypto/TokenItem;
 
 .field private final formattedAPR:Ljava/lang/String;
 
@@ -61,8 +61,6 @@
 
 .field private final name:Ljava/lang/String;
 
-.field private final networkType:Lcom/iMe/storage/domain/model/crypto/NetworkType;
-
 .field private final prematureWithdrawalFeePercentage:D
 
 .field private final safeWithdrawalDuration:J
@@ -73,7 +71,7 @@
 
 .field private final startsAtISO:Ljava/lang/String;
 
-.field private final tokenTicker:Ljava/lang/String;
+.field private final tokenItem:Lcom/iMe/model/wallet/crypto/TokenItem;
 
 .field private final website:Ljava/lang/String;
 
@@ -91,7 +89,7 @@
     return-void
 .end method
 
-.method public constructor <init>(JLjava/lang/String;Ljava/lang/String;Lcom/iMe/storage/domain/model/crypto/NetworkType;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/math/BigDecimal;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/math/BigDecimal;Ljava/math/BigDecimal;DZZDDDJLcom/iMe/model/staking/StakingAnnualPercentageMode;ZLcom/iMe/storage/domain/model/crypto/level/AccountLevel;Ljava/lang/String;JD)V
+.method public constructor <init>(JLjava/lang/String;Ljava/lang/String;Lcom/iMe/model/wallet/crypto/TokenItem;Ljava/lang/String;Lcom/iMe/model/wallet/crypto/TokenItem;Ljava/lang/String;Ljava/lang/String;Ljava/math/BigDecimal;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/math/BigDecimal;Ljava/math/BigDecimal;DZZDDDJLcom/iMe/model/staking/StakingAnnualPercentageMode;ZLcom/iMe/storage/domain/model/crypto/level/AccountLevel;Ljava/lang/String;JD)V
     .locals 16
 
     move-object/from16 v0, p0
@@ -124,9 +122,9 @@
 
     move-object/from16 v14, p16
 
-    move-object/from16 v15, p17
+    move-object/from16 v15, p29
 
-    move-object/from16 v0, p30
+    move-object/from16 v0, p31
 
     const-string v0, "name"
 
@@ -136,7 +134,7 @@
 
     invoke-static {v2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "networkType"
+    const-string v0, "tokenItem"
 
     invoke-static {v3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -144,188 +142,177 @@
 
     invoke-static {v4, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "tokenTicker"
+    const-string v0, "feeTokenItem"
 
     invoke-static {v5, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "feeTokenTicker"
+    const-string v0, "formattedAPR"
 
     invoke-static {v6, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "formattedAPR"
+    const-string v0, "formattedAPY"
 
     invoke-static {v7, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "formattedAPY"
+    const-string v0, "compoundAccrualThreshold"
 
     invoke-static {v8, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "compoundAccrualThreshold"
+    const-string v0, "startsAt"
 
     invoke-static {v9, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "startsAt"
+    const-string v0, "startsAtISO"
 
     invoke-static {v10, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "startsAtISO"
+    const-string v0, "endsAt"
 
     invoke-static {v11, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "endsAt"
+    const-string v0, "endsAtISO"
 
     invoke-static {v12, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "endsAtISO"
+    const-string v0, "impact"
 
     invoke-static {v13, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "impact"
+    const-string v0, "debt"
 
     invoke-static {v14, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "debt"
-
-    invoke-static {v15, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
     const-string v0, "annualPercentageMode"
-
-    move-object/from16 v15, p30
 
     invoke-static {v15, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     const-string v0, "minimalRank"
 
-    move-object/from16 v15, p32
+    move-object/from16 v15, p31
 
     invoke-static {v15, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     const-string v0, "website"
 
-    move-object/from16 v15, p33
+    move-object/from16 v15, p32
 
     invoke-static {v15, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 9
+    .line 10
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     move-object/from16 v0, p0
 
     move-wide/from16 v14, p1
 
-    .line 11
+    .line 12
     iput-wide v14, v0, Lcom/iMe/model/staking/StakingDetailsItem;->id:J
 
-    .line 12
+    .line 13
     iput-object v1, v0, Lcom/iMe/model/staking/StakingDetailsItem;->name:Ljava/lang/String;
 
-    .line 13
+    .line 14
     iput-object v2, v0, Lcom/iMe/model/staking/StakingDetailsItem;->author:Ljava/lang/String;
 
-    .line 14
-    iput-object v3, v0, Lcom/iMe/model/staking/StakingDetailsItem;->networkType:Lcom/iMe/storage/domain/model/crypto/NetworkType;
-
     .line 15
-    iput-object v4, v0, Lcom/iMe/model/staking/StakingDetailsItem;->contract:Ljava/lang/String;
+    iput-object v3, v0, Lcom/iMe/model/staking/StakingDetailsItem;->tokenItem:Lcom/iMe/model/wallet/crypto/TokenItem;
 
     .line 16
-    iput-object v5, v0, Lcom/iMe/model/staking/StakingDetailsItem;->tokenTicker:Ljava/lang/String;
+    iput-object v4, v0, Lcom/iMe/model/staking/StakingDetailsItem;->contract:Ljava/lang/String;
 
     .line 17
-    iput-object v6, v0, Lcom/iMe/model/staking/StakingDetailsItem;->feeTokenTicker:Ljava/lang/String;
+    iput-object v5, v0, Lcom/iMe/model/staking/StakingDetailsItem;->feeTokenItem:Lcom/iMe/model/wallet/crypto/TokenItem;
 
     .line 18
-    iput-object v7, v0, Lcom/iMe/model/staking/StakingDetailsItem;->formattedAPR:Ljava/lang/String;
+    iput-object v6, v0, Lcom/iMe/model/staking/StakingDetailsItem;->formattedAPR:Ljava/lang/String;
 
     .line 19
-    iput-object v8, v0, Lcom/iMe/model/staking/StakingDetailsItem;->formattedAPY:Ljava/lang/String;
+    iput-object v7, v0, Lcom/iMe/model/staking/StakingDetailsItem;->formattedAPY:Ljava/lang/String;
 
     .line 20
-    iput-object v9, v0, Lcom/iMe/model/staking/StakingDetailsItem;->compoundAccrualThreshold:Ljava/math/BigDecimal;
+    iput-object v8, v0, Lcom/iMe/model/staking/StakingDetailsItem;->compoundAccrualThreshold:Ljava/math/BigDecimal;
 
     .line 21
-    iput-object v10, v0, Lcom/iMe/model/staking/StakingDetailsItem;->startsAt:Ljava/lang/String;
+    iput-object v9, v0, Lcom/iMe/model/staking/StakingDetailsItem;->startsAt:Ljava/lang/String;
 
     .line 22
-    iput-object v11, v0, Lcom/iMe/model/staking/StakingDetailsItem;->startsAtISO:Ljava/lang/String;
+    iput-object v10, v0, Lcom/iMe/model/staking/StakingDetailsItem;->startsAtISO:Ljava/lang/String;
 
     .line 23
-    iput-object v12, v0, Lcom/iMe/model/staking/StakingDetailsItem;->endsAt:Ljava/lang/String;
+    iput-object v11, v0, Lcom/iMe/model/staking/StakingDetailsItem;->endsAt:Ljava/lang/String;
 
     .line 24
-    iput-object v13, v0, Lcom/iMe/model/staking/StakingDetailsItem;->endsAtISO:Ljava/lang/String;
-
-    move-object/from16 v1, p16
+    iput-object v12, v0, Lcom/iMe/model/staking/StakingDetailsItem;->endsAtISO:Ljava/lang/String;
 
     .line 25
-    iput-object v1, v0, Lcom/iMe/model/staking/StakingDetailsItem;->impact:Ljava/math/BigDecimal;
+    iput-object v13, v0, Lcom/iMe/model/staking/StakingDetailsItem;->impact:Ljava/math/BigDecimal;
 
-    move-object/from16 v1, p17
+    move-object/from16 v1, p16
 
     .line 26
     iput-object v1, v0, Lcom/iMe/model/staking/StakingDetailsItem;->debt:Ljava/math/BigDecimal;
 
-    move-wide/from16 v1, p18
+    move-wide/from16 v1, p17
 
     .line 27
     iput-wide v1, v0, Lcom/iMe/model/staking/StakingDetailsItem;->availableForClaim:D
 
-    move/from16 v1, p20
+    move/from16 v1, p19
 
     .line 28
     iput-boolean v1, v0, Lcom/iMe/model/staking/StakingDetailsItem;->canWithdrawSafely:Z
 
-    move/from16 v1, p21
+    move/from16 v1, p20
 
     .line 29
     iput-boolean v1, v0, Lcom/iMe/model/staking/StakingDetailsItem;->canWithdrawImmediately:Z
 
-    move-wide/from16 v1, p22
+    move-wide/from16 v1, p21
 
     .line 30
     iput-wide v1, v0, Lcom/iMe/model/staking/StakingDetailsItem;->prematureWithdrawalFeePercentage:D
 
-    move-wide/from16 v1, p24
+    move-wide/from16 v1, p23
 
     .line 31
     iput-wide v1, v0, Lcom/iMe/model/staking/StakingDetailsItem;->immediateWithdrawalFeePercentage:D
 
-    move-wide/from16 v1, p26
+    move-wide/from16 v1, p25
 
     .line 32
     iput-wide v1, v0, Lcom/iMe/model/staking/StakingDetailsItem;->safeWithdrawalFeePercentage:D
 
-    move-wide/from16 v1, p28
+    move-wide/from16 v1, p27
 
     .line 33
     iput-wide v1, v0, Lcom/iMe/model/staking/StakingDetailsItem;->safeWithdrawalDuration:J
 
-    move-object/from16 v1, p30
+    move-object/from16 v1, p29
 
     .line 34
     iput-object v1, v0, Lcom/iMe/model/staking/StakingDetailsItem;->annualPercentageMode:Lcom/iMe/model/staking/StakingAnnualPercentageMode;
 
-    move/from16 v1, p31
+    move/from16 v1, p30
 
     .line 35
     iput-boolean v1, v0, Lcom/iMe/model/staking/StakingDetailsItem;->hasEnoughFunds:Z
 
-    move-object/from16 v1, p32
-
-    move-object/from16 v2, p33
+    move-object/from16 v1, p31
 
     .line 36
     iput-object v1, v0, Lcom/iMe/model/staking/StakingDetailsItem;->minimalRank:Lcom/iMe/storage/domain/model/crypto/level/AccountLevel;
 
-    .line 37
-    iput-object v2, v0, Lcom/iMe/model/staking/StakingDetailsItem;->website:Ljava/lang/String;
+    move-object/from16 v1, p32
 
-    move-wide/from16 v1, p34
+    .line 37
+    iput-object v1, v0, Lcom/iMe/model/staking/StakingDetailsItem;->website:Ljava/lang/String;
+
+    move-wide/from16 v1, p33
 
     .line 38
     iput-wide v1, v0, Lcom/iMe/model/staking/StakingDetailsItem;->incomePeriod:J
 
-    move-wide/from16 v1, p36
+    move-wide/from16 v1, p35
 
     .line 39
     iput-wide v1, v0, Lcom/iMe/model/staking/StakingDetailsItem;->incomePercent:D
@@ -333,12 +320,12 @@
     return-void
 .end method
 
-.method public static synthetic copy$default(Lcom/iMe/model/staking/StakingDetailsItem;JLjava/lang/String;Ljava/lang/String;Lcom/iMe/storage/domain/model/crypto/NetworkType;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/math/BigDecimal;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/math/BigDecimal;Ljava/math/BigDecimal;DZZDDDJLcom/iMe/model/staking/StakingAnnualPercentageMode;ZLcom/iMe/storage/domain/model/crypto/level/AccountLevel;Ljava/lang/String;JDILjava/lang/Object;)Lcom/iMe/model/staking/StakingDetailsItem;
+.method public static synthetic copy$default(Lcom/iMe/model/staking/StakingDetailsItem;JLjava/lang/String;Ljava/lang/String;Lcom/iMe/model/wallet/crypto/TokenItem;Ljava/lang/String;Lcom/iMe/model/wallet/crypto/TokenItem;Ljava/lang/String;Ljava/lang/String;Ljava/math/BigDecimal;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/math/BigDecimal;Ljava/math/BigDecimal;DZZDDDJLcom/iMe/model/staking/StakingAnnualPercentageMode;ZLcom/iMe/storage/domain/model/crypto/level/AccountLevel;Ljava/lang/String;JDILjava/lang/Object;)Lcom/iMe/model/staking/StakingDetailsItem;
     .locals 17
 
     move-object/from16 v0, p0
 
-    move/from16 v1, p38
+    move/from16 v1, p37
 
     and-int/lit8 v2, v1, 0x1
 
@@ -380,7 +367,7 @@
 
     if-eqz v6, :cond_3
 
-    iget-object v6, v0, Lcom/iMe/model/staking/StakingDetailsItem;->networkType:Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    iget-object v6, v0, Lcom/iMe/model/staking/StakingDetailsItem;->tokenItem:Lcom/iMe/model/wallet/crypto/TokenItem;
 
     goto :goto_3
 
@@ -404,7 +391,7 @@
 
     if-eqz v8, :cond_5
 
-    iget-object v8, v0, Lcom/iMe/model/staking/StakingDetailsItem;->tokenTicker:Ljava/lang/String;
+    iget-object v8, v0, Lcom/iMe/model/staking/StakingDetailsItem;->feeTokenItem:Lcom/iMe/model/wallet/crypto/TokenItem;
 
     goto :goto_5
 
@@ -416,7 +403,7 @@
 
     if-eqz v9, :cond_6
 
-    iget-object v9, v0, Lcom/iMe/model/staking/StakingDetailsItem;->feeTokenTicker:Ljava/lang/String;
+    iget-object v9, v0, Lcom/iMe/model/staking/StakingDetailsItem;->formattedAPR:Ljava/lang/String;
 
     goto :goto_6
 
@@ -428,7 +415,7 @@
 
     if-eqz v10, :cond_7
 
-    iget-object v10, v0, Lcom/iMe/model/staking/StakingDetailsItem;->formattedAPR:Ljava/lang/String;
+    iget-object v10, v0, Lcom/iMe/model/staking/StakingDetailsItem;->formattedAPY:Ljava/lang/String;
 
     goto :goto_7
 
@@ -440,7 +427,7 @@
 
     if-eqz v11, :cond_8
 
-    iget-object v11, v0, Lcom/iMe/model/staking/StakingDetailsItem;->formattedAPY:Ljava/lang/String;
+    iget-object v11, v0, Lcom/iMe/model/staking/StakingDetailsItem;->compoundAccrualThreshold:Ljava/math/BigDecimal;
 
     goto :goto_8
 
@@ -452,7 +439,7 @@
 
     if-eqz v12, :cond_9
 
-    iget-object v12, v0, Lcom/iMe/model/staking/StakingDetailsItem;->compoundAccrualThreshold:Ljava/math/BigDecimal;
+    iget-object v12, v0, Lcom/iMe/model/staking/StakingDetailsItem;->startsAt:Ljava/lang/String;
 
     goto :goto_9
 
@@ -464,7 +451,7 @@
 
     if-eqz v13, :cond_a
 
-    iget-object v13, v0, Lcom/iMe/model/staking/StakingDetailsItem;->startsAt:Ljava/lang/String;
+    iget-object v13, v0, Lcom/iMe/model/staking/StakingDetailsItem;->startsAtISO:Ljava/lang/String;
 
     goto :goto_a
 
@@ -476,7 +463,7 @@
 
     if-eqz v14, :cond_b
 
-    iget-object v14, v0, Lcom/iMe/model/staking/StakingDetailsItem;->startsAtISO:Ljava/lang/String;
+    iget-object v14, v0, Lcom/iMe/model/staking/StakingDetailsItem;->endsAt:Ljava/lang/String;
 
     goto :goto_b
 
@@ -488,7 +475,7 @@
 
     if-eqz v15, :cond_c
 
-    iget-object v15, v0, Lcom/iMe/model/staking/StakingDetailsItem;->endsAt:Ljava/lang/String;
+    iget-object v15, v0, Lcom/iMe/model/staking/StakingDetailsItem;->endsAtISO:Ljava/lang/String;
 
     goto :goto_c
 
@@ -502,7 +489,7 @@
 
     if-eqz v15, :cond_d
 
-    iget-object v15, v0, Lcom/iMe/model/staking/StakingDetailsItem;->endsAtISO:Ljava/lang/String;
+    iget-object v15, v0, Lcom/iMe/model/staking/StakingDetailsItem;->impact:Ljava/math/BigDecimal;
 
     goto :goto_d
 
@@ -516,7 +503,7 @@
 
     if-eqz v15, :cond_e
 
-    iget-object v15, v0, Lcom/iMe/model/staking/StakingDetailsItem;->impact:Ljava/math/BigDecimal;
+    iget-object v15, v0, Lcom/iMe/model/staking/StakingDetailsItem;->debt:Ljava/math/BigDecimal;
 
     goto :goto_e
 
@@ -528,171 +515,171 @@
 
     and-int v16, v1, v16
 
+    move-object/from16 p13, v14
+
     move-object/from16 p16, v15
 
     if-eqz v16, :cond_f
 
-    iget-object v15, v0, Lcom/iMe/model/staking/StakingDetailsItem;->debt:Ljava/math/BigDecimal;
+    iget-wide v14, v0, Lcom/iMe/model/staking/StakingDetailsItem;->availableForClaim:D
 
     goto :goto_f
 
     :cond_f
-    move-object/from16 v15, p17
+    move-wide/from16 v14, p17
 
     :goto_f
     const/high16 v16, 0x10000
 
     and-int v16, v1, v16
 
-    move-object/from16 p13, v14
-
-    move-object/from16 p17, v15
+    move-wide/from16 p17, v14
 
     if-eqz v16, :cond_10
 
-    iget-wide v14, v0, Lcom/iMe/model/staking/StakingDetailsItem;->availableForClaim:D
+    iget-boolean v14, v0, Lcom/iMe/model/staking/StakingDetailsItem;->canWithdrawSafely:Z
 
     goto :goto_10
 
     :cond_10
-    move-wide/from16 v14, p18
+    move/from16 v14, p19
 
     :goto_10
-    const/high16 v16, 0x20000
+    const/high16 v15, 0x20000
 
-    and-int v16, v1, v16
+    and-int/2addr v15, v1
 
-    move-wide/from16 p18, v14
+    if-eqz v15, :cond_11
 
-    if-eqz v16, :cond_11
-
-    iget-boolean v14, v0, Lcom/iMe/model/staking/StakingDetailsItem;->canWithdrawSafely:Z
+    iget-boolean v15, v0, Lcom/iMe/model/staking/StakingDetailsItem;->canWithdrawImmediately:Z
 
     goto :goto_11
 
     :cond_11
-    move/from16 v14, p20
+    move/from16 v15, p20
 
     :goto_11
-    const/high16 v15, 0x40000
+    const/high16 v16, 0x40000
 
-    and-int/2addr v15, v1
+    and-int v16, v1, v16
 
-    if-eqz v15, :cond_12
+    move/from16 p19, v14
 
-    iget-boolean v15, v0, Lcom/iMe/model/staking/StakingDetailsItem;->canWithdrawImmediately:Z
+    move/from16 p20, v15
+
+    if-eqz v16, :cond_12
+
+    iget-wide v14, v0, Lcom/iMe/model/staking/StakingDetailsItem;->prematureWithdrawalFeePercentage:D
 
     goto :goto_12
 
     :cond_12
-    move/from16 v15, p21
+    move-wide/from16 v14, p21
 
     :goto_12
     const/high16 v16, 0x80000
 
     and-int v16, v1, v16
 
-    move/from16 p20, v14
-
-    move/from16 p21, v15
+    move-wide/from16 p21, v14
 
     if-eqz v16, :cond_13
 
-    iget-wide v14, v0, Lcom/iMe/model/staking/StakingDetailsItem;->prematureWithdrawalFeePercentage:D
+    iget-wide v14, v0, Lcom/iMe/model/staking/StakingDetailsItem;->immediateWithdrawalFeePercentage:D
 
     goto :goto_13
 
     :cond_13
-    move-wide/from16 v14, p22
+    move-wide/from16 v14, p23
 
     :goto_13
     const/high16 v16, 0x100000
 
     and-int v16, v1, v16
 
-    move-wide/from16 p22, v14
+    move-wide/from16 p23, v14
 
     if-eqz v16, :cond_14
 
-    iget-wide v14, v0, Lcom/iMe/model/staking/StakingDetailsItem;->immediateWithdrawalFeePercentage:D
+    iget-wide v14, v0, Lcom/iMe/model/staking/StakingDetailsItem;->safeWithdrawalFeePercentage:D
 
     goto :goto_14
 
     :cond_14
-    move-wide/from16 v14, p24
+    move-wide/from16 v14, p25
 
     :goto_14
     const/high16 v16, 0x200000
 
     and-int v16, v1, v16
 
-    move-wide/from16 p24, v14
+    move-wide/from16 p25, v14
 
     if-eqz v16, :cond_15
 
-    iget-wide v14, v0, Lcom/iMe/model/staking/StakingDetailsItem;->safeWithdrawalFeePercentage:D
+    iget-wide v14, v0, Lcom/iMe/model/staking/StakingDetailsItem;->safeWithdrawalDuration:J
 
     goto :goto_15
 
     :cond_15
-    move-wide/from16 v14, p26
+    move-wide/from16 v14, p27
 
     :goto_15
     const/high16 v16, 0x400000
 
     and-int v16, v1, v16
 
-    move-wide/from16 p26, v14
+    move-wide/from16 p27, v14
 
     if-eqz v16, :cond_16
 
-    iget-wide v14, v0, Lcom/iMe/model/staking/StakingDetailsItem;->safeWithdrawalDuration:J
+    iget-object v14, v0, Lcom/iMe/model/staking/StakingDetailsItem;->annualPercentageMode:Lcom/iMe/model/staking/StakingAnnualPercentageMode;
 
     goto :goto_16
 
     :cond_16
-    move-wide/from16 v14, p28
+    move-object/from16 v14, p29
 
     :goto_16
-    const/high16 v16, 0x800000
+    const/high16 v15, 0x800000
 
-    and-int v16, v1, v16
+    and-int/2addr v15, v1
 
-    move-wide/from16 p28, v14
+    if-eqz v15, :cond_17
 
-    if-eqz v16, :cond_17
-
-    iget-object v14, v0, Lcom/iMe/model/staking/StakingDetailsItem;->annualPercentageMode:Lcom/iMe/model/staking/StakingAnnualPercentageMode;
+    iget-boolean v15, v0, Lcom/iMe/model/staking/StakingDetailsItem;->hasEnoughFunds:Z
 
     goto :goto_17
 
     :cond_17
-    move-object/from16 v14, p30
+    move/from16 v15, p30
 
     :goto_17
-    const/high16 v15, 0x1000000
+    const/high16 v16, 0x1000000
 
-    and-int/2addr v15, v1
+    and-int v16, v1, v16
 
-    if-eqz v15, :cond_18
+    move/from16 p30, v15
 
-    iget-boolean v15, v0, Lcom/iMe/model/staking/StakingDetailsItem;->hasEnoughFunds:Z
+    if-eqz v16, :cond_18
+
+    iget-object v15, v0, Lcom/iMe/model/staking/StakingDetailsItem;->minimalRank:Lcom/iMe/storage/domain/model/crypto/level/AccountLevel;
 
     goto :goto_18
 
     :cond_18
-    move/from16 v15, p31
+    move-object/from16 v15, p31
 
     :goto_18
     const/high16 v16, 0x2000000
 
     and-int v16, v1, v16
 
-    move/from16 p31, v15
+    move-object/from16 p31, v15
 
     if-eqz v16, :cond_19
 
-    iget-object v15, v0, Lcom/iMe/model/staking/StakingDetailsItem;->minimalRank:Lcom/iMe/storage/domain/model/crypto/level/AccountLevel;
+    iget-object v15, v0, Lcom/iMe/model/staking/StakingDetailsItem;->website:Ljava/lang/String;
 
     goto :goto_19
 
@@ -704,52 +691,36 @@
 
     and-int v16, v1, v16
 
+    move-object/from16 p29, v14
+
     move-object/from16 p32, v15
 
     if-eqz v16, :cond_1a
 
-    iget-object v15, v0, Lcom/iMe/model/staking/StakingDetailsItem;->website:Ljava/lang/String;
+    iget-wide v14, v0, Lcom/iMe/model/staking/StakingDetailsItem;->incomePeriod:J
 
     goto :goto_1a
 
     :cond_1a
-    move-object/from16 v15, p33
+    move-wide/from16 v14, p33
 
     :goto_1a
     const/high16 v16, 0x8000000
 
-    and-int v16, v1, v16
+    and-int v1, v1, v16
 
-    move-object/from16 p30, v14
+    move-wide/from16 p33, v14
 
-    move-object/from16 p33, v15
+    if-eqz v1, :cond_1b
 
-    if-eqz v16, :cond_1b
-
-    iget-wide v14, v0, Lcom/iMe/model/staking/StakingDetailsItem;->incomePeriod:J
+    iget-wide v14, v0, Lcom/iMe/model/staking/StakingDetailsItem;->incomePercent:D
 
     goto :goto_1b
 
     :cond_1b
-    move-wide/from16 v14, p34
+    move-wide/from16 v14, p35
 
     :goto_1b
-    const/high16 v16, 0x10000000
-
-    and-int v1, v1, v16
-
-    move-wide/from16 p34, v14
-
-    if-eqz v1, :cond_1c
-
-    iget-wide v14, v0, Lcom/iMe/model/staking/StakingDetailsItem;->incomePercent:D
-
-    goto :goto_1c
-
-    :cond_1c
-    move-wide/from16 v14, p36
-
-    :goto_1c
     move-wide/from16 p1, v2
 
     move-object/from16 p3, v4
@@ -772,9 +743,9 @@
 
     move-object/from16 p12, v13
 
-    move-wide/from16 p36, v14
+    move-wide/from16 p35, v14
 
-    invoke-virtual/range {p0 .. p37}, Lcom/iMe/model/staking/StakingDetailsItem;->copy(JLjava/lang/String;Ljava/lang/String;Lcom/iMe/storage/domain/model/crypto/NetworkType;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/math/BigDecimal;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/math/BigDecimal;Ljava/math/BigDecimal;DZZDDDJLcom/iMe/model/staking/StakingAnnualPercentageMode;ZLcom/iMe/storage/domain/model/crypto/level/AccountLevel;Ljava/lang/String;JD)Lcom/iMe/model/staking/StakingDetailsItem;
+    invoke-virtual/range {p0 .. p36}, Lcom/iMe/model/staking/StakingDetailsItem;->copy(JLjava/lang/String;Ljava/lang/String;Lcom/iMe/model/wallet/crypto/TokenItem;Ljava/lang/String;Lcom/iMe/model/wallet/crypto/TokenItem;Ljava/lang/String;Ljava/lang/String;Ljava/math/BigDecimal;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/math/BigDecimal;Ljava/math/BigDecimal;DZZDDDJLcom/iMe/model/staking/StakingAnnualPercentageMode;ZLcom/iMe/storage/domain/model/crypto/level/AccountLevel;Ljava/lang/String;JD)Lcom/iMe/model/staking/StakingDetailsItem;
 
     move-result-object v0
 
@@ -791,15 +762,7 @@
     return-wide v0
 .end method
 
-.method public final component10()Ljava/math/BigDecimal;
-    .locals 1
-
-    iget-object v0, p0, Lcom/iMe/model/staking/StakingDetailsItem;->compoundAccrualThreshold:Ljava/math/BigDecimal;
-
-    return-object v0
-.end method
-
-.method public final component11()Ljava/lang/String;
+.method public final component10()Ljava/lang/String;
     .locals 1
 
     iget-object v0, p0, Lcom/iMe/model/staking/StakingDetailsItem;->startsAt:Ljava/lang/String;
@@ -807,7 +770,7 @@
     return-object v0
 .end method
 
-.method public final component12()Ljava/lang/String;
+.method public final component11()Ljava/lang/String;
     .locals 1
 
     iget-object v0, p0, Lcom/iMe/model/staking/StakingDetailsItem;->startsAtISO:Ljava/lang/String;
@@ -815,7 +778,7 @@
     return-object v0
 .end method
 
-.method public final component13()Ljava/lang/String;
+.method public final component12()Ljava/lang/String;
     .locals 1
 
     iget-object v0, p0, Lcom/iMe/model/staking/StakingDetailsItem;->endsAt:Ljava/lang/String;
@@ -823,7 +786,7 @@
     return-object v0
 .end method
 
-.method public final component14()Ljava/lang/String;
+.method public final component13()Ljava/lang/String;
     .locals 1
 
     iget-object v0, p0, Lcom/iMe/model/staking/StakingDetailsItem;->endsAtISO:Ljava/lang/String;
@@ -831,7 +794,7 @@
     return-object v0
 .end method
 
-.method public final component15()Ljava/math/BigDecimal;
+.method public final component14()Ljava/math/BigDecimal;
     .locals 1
 
     iget-object v0, p0, Lcom/iMe/model/staking/StakingDetailsItem;->impact:Ljava/math/BigDecimal;
@@ -839,7 +802,7 @@
     return-object v0
 .end method
 
-.method public final component16()Ljava/math/BigDecimal;
+.method public final component15()Ljava/math/BigDecimal;
     .locals 1
 
     iget-object v0, p0, Lcom/iMe/model/staking/StakingDetailsItem;->debt:Ljava/math/BigDecimal;
@@ -847,7 +810,7 @@
     return-object v0
 .end method
 
-.method public final component17()D
+.method public final component16()D
     .locals 2
 
     iget-wide v0, p0, Lcom/iMe/model/staking/StakingDetailsItem;->availableForClaim:D
@@ -855,7 +818,7 @@
     return-wide v0
 .end method
 
-.method public final component18()Z
+.method public final component17()Z
     .locals 1
 
     iget-boolean v0, p0, Lcom/iMe/model/staking/StakingDetailsItem;->canWithdrawSafely:Z
@@ -863,12 +826,20 @@
     return v0
 .end method
 
-.method public final component19()Z
+.method public final component18()Z
     .locals 1
 
     iget-boolean v0, p0, Lcom/iMe/model/staking/StakingDetailsItem;->canWithdrawImmediately:Z
 
     return v0
+.end method
+
+.method public final component19()D
+    .locals 2
+
+    iget-wide v0, p0, Lcom/iMe/model/staking/StakingDetailsItem;->prematureWithdrawalFeePercentage:D
+
+    return-wide v0
 .end method
 
 .method public final component2()Ljava/lang/String;
@@ -882,7 +853,7 @@
 .method public final component20()D
     .locals 2
 
-    iget-wide v0, p0, Lcom/iMe/model/staking/StakingDetailsItem;->prematureWithdrawalFeePercentage:D
+    iget-wide v0, p0, Lcom/iMe/model/staking/StakingDetailsItem;->immediateWithdrawalFeePercentage:D
 
     return-wide v0
 .end method
@@ -890,20 +861,12 @@
 .method public final component21()D
     .locals 2
 
-    iget-wide v0, p0, Lcom/iMe/model/staking/StakingDetailsItem;->immediateWithdrawalFeePercentage:D
-
-    return-wide v0
-.end method
-
-.method public final component22()D
-    .locals 2
-
     iget-wide v0, p0, Lcom/iMe/model/staking/StakingDetailsItem;->safeWithdrawalFeePercentage:D
 
     return-wide v0
 .end method
 
-.method public final component23()J
+.method public final component22()J
     .locals 2
 
     iget-wide v0, p0, Lcom/iMe/model/staking/StakingDetailsItem;->safeWithdrawalDuration:J
@@ -911,7 +874,7 @@
     return-wide v0
 .end method
 
-.method public final component24()Lcom/iMe/model/staking/StakingAnnualPercentageMode;
+.method public final component23()Lcom/iMe/model/staking/StakingAnnualPercentageMode;
     .locals 1
 
     iget-object v0, p0, Lcom/iMe/model/staking/StakingDetailsItem;->annualPercentageMode:Lcom/iMe/model/staking/StakingAnnualPercentageMode;
@@ -919,7 +882,7 @@
     return-object v0
 .end method
 
-.method public final component25()Z
+.method public final component24()Z
     .locals 1
 
     iget-boolean v0, p0, Lcom/iMe/model/staking/StakingDetailsItem;->hasEnoughFunds:Z
@@ -927,7 +890,7 @@
     return v0
 .end method
 
-.method public final component26()Lcom/iMe/storage/domain/model/crypto/level/AccountLevel;
+.method public final component25()Lcom/iMe/storage/domain/model/crypto/level/AccountLevel;
     .locals 1
 
     iget-object v0, p0, Lcom/iMe/model/staking/StakingDetailsItem;->minimalRank:Lcom/iMe/storage/domain/model/crypto/level/AccountLevel;
@@ -935,7 +898,7 @@
     return-object v0
 .end method
 
-.method public final component27()Ljava/lang/String;
+.method public final component26()Ljava/lang/String;
     .locals 1
 
     iget-object v0, p0, Lcom/iMe/model/staking/StakingDetailsItem;->website:Ljava/lang/String;
@@ -943,7 +906,7 @@
     return-object v0
 .end method
 
-.method public final component28()J
+.method public final component27()J
     .locals 2
 
     iget-wide v0, p0, Lcom/iMe/model/staking/StakingDetailsItem;->incomePeriod:J
@@ -951,7 +914,7 @@
     return-wide v0
 .end method
 
-.method public final component29()D
+.method public final component28()D
     .locals 2
 
     iget-wide v0, p0, Lcom/iMe/model/staking/StakingDetailsItem;->incomePercent:D
@@ -967,10 +930,10 @@
     return-object v0
 .end method
 
-.method public final component4()Lcom/iMe/storage/domain/model/crypto/NetworkType;
+.method public final component4()Lcom/iMe/model/wallet/crypto/TokenItem;
     .locals 1
 
-    iget-object v0, p0, Lcom/iMe/model/staking/StakingDetailsItem;->networkType:Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    iget-object v0, p0, Lcom/iMe/model/staking/StakingDetailsItem;->tokenItem:Lcom/iMe/model/wallet/crypto/TokenItem;
 
     return-object v0
 .end method
@@ -983,10 +946,10 @@
     return-object v0
 .end method
 
-.method public final component6()Ljava/lang/String;
+.method public final component6()Lcom/iMe/model/wallet/crypto/TokenItem;
     .locals 1
 
-    iget-object v0, p0, Lcom/iMe/model/staking/StakingDetailsItem;->tokenTicker:Ljava/lang/String;
+    iget-object v0, p0, Lcom/iMe/model/staking/StakingDetailsItem;->feeTokenItem:Lcom/iMe/model/wallet/crypto/TokenItem;
 
     return-object v0
 .end method
@@ -994,7 +957,7 @@
 .method public final component7()Ljava/lang/String;
     .locals 1
 
-    iget-object v0, p0, Lcom/iMe/model/staking/StakingDetailsItem;->feeTokenTicker:Ljava/lang/String;
+    iget-object v0, p0, Lcom/iMe/model/staking/StakingDetailsItem;->formattedAPR:Ljava/lang/String;
 
     return-object v0
 .end method
@@ -1002,21 +965,21 @@
 .method public final component8()Ljava/lang/String;
     .locals 1
 
-    iget-object v0, p0, Lcom/iMe/model/staking/StakingDetailsItem;->formattedAPR:Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method public final component9()Ljava/lang/String;
-    .locals 1
-
     iget-object v0, p0, Lcom/iMe/model/staking/StakingDetailsItem;->formattedAPY:Ljava/lang/String;
 
     return-object v0
 .end method
 
-.method public final copy(JLjava/lang/String;Ljava/lang/String;Lcom/iMe/storage/domain/model/crypto/NetworkType;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/math/BigDecimal;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/math/BigDecimal;Ljava/math/BigDecimal;DZZDDDJLcom/iMe/model/staking/StakingAnnualPercentageMode;ZLcom/iMe/storage/domain/model/crypto/level/AccountLevel;Ljava/lang/String;JD)Lcom/iMe/model/staking/StakingDetailsItem;
-    .locals 39
+.method public final component9()Ljava/math/BigDecimal;
+    .locals 1
+
+    iget-object v0, p0, Lcom/iMe/model/staking/StakingDetailsItem;->compoundAccrualThreshold:Ljava/math/BigDecimal;
+
+    return-object v0
+.end method
+
+.method public final copy(JLjava/lang/String;Ljava/lang/String;Lcom/iMe/model/wallet/crypto/TokenItem;Ljava/lang/String;Lcom/iMe/model/wallet/crypto/TokenItem;Ljava/lang/String;Ljava/lang/String;Ljava/math/BigDecimal;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/math/BigDecimal;Ljava/math/BigDecimal;DZZDDDJLcom/iMe/model/staking/StakingAnnualPercentageMode;ZLcom/iMe/storage/domain/model/crypto/level/AccountLevel;Ljava/lang/String;JD)Lcom/iMe/model/staking/StakingDetailsItem;
+    .locals 38
 
     move-wide/from16 v1, p1
 
@@ -1048,33 +1011,31 @@
 
     move-object/from16 v16, p16
 
-    move-object/from16 v17, p17
+    move-wide/from16 v17, p17
 
-    move-wide/from16 v18, p18
+    move/from16 v19, p19
 
     move/from16 v20, p20
 
-    move/from16 v21, p21
+    move-wide/from16 v21, p21
 
-    move-wide/from16 v22, p22
+    move-wide/from16 v23, p23
 
-    move-wide/from16 v24, p24
+    move-wide/from16 v25, p25
 
-    move-wide/from16 v26, p26
+    move-wide/from16 v27, p27
 
-    move-wide/from16 v28, p28
+    move-object/from16 v29, p29
 
-    move-object/from16 v30, p30
+    move/from16 v30, p30
 
-    move/from16 v31, p31
+    move-object/from16 v31, p31
 
     move-object/from16 v32, p32
 
-    move-object/from16 v33, p33
+    move-wide/from16 v33, p33
 
-    move-wide/from16 v34, p34
-
-    move-wide/from16 v36, p36
+    move-wide/from16 v35, p35
 
     const-string v0, "name"
 
@@ -1088,7 +1049,7 @@
 
     invoke-static {v1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "networkType"
+    const-string v0, "tokenItem"
 
     move-object/from16 v1, p5
 
@@ -1100,99 +1061,93 @@
 
     invoke-static {v1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "tokenTicker"
+    const-string v0, "feeTokenItem"
 
     move-object/from16 v1, p7
 
     invoke-static {v1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "feeTokenTicker"
+    const-string v0, "formattedAPR"
 
     move-object/from16 v1, p8
 
     invoke-static {v1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "formattedAPR"
+    const-string v0, "formattedAPY"
 
     move-object/from16 v1, p9
 
     invoke-static {v1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "formattedAPY"
+    const-string v0, "compoundAccrualThreshold"
 
     move-object/from16 v1, p10
 
     invoke-static {v1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "compoundAccrualThreshold"
+    const-string v0, "startsAt"
 
     move-object/from16 v1, p11
 
     invoke-static {v1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "startsAt"
+    const-string v0, "startsAtISO"
 
     move-object/from16 v1, p12
 
     invoke-static {v1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "startsAtISO"
+    const-string v0, "endsAt"
 
     move-object/from16 v1, p13
 
     invoke-static {v1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "endsAt"
+    const-string v0, "endsAtISO"
 
     move-object/from16 v1, p14
 
     invoke-static {v1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "endsAtISO"
+    const-string v0, "impact"
 
     move-object/from16 v1, p15
 
     invoke-static {v1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "impact"
+    const-string v0, "debt"
 
     move-object/from16 v1, p16
 
     invoke-static {v1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "debt"
-
-    move-object/from16 v1, p17
-
-    invoke-static {v1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
     const-string v0, "annualPercentageMode"
 
-    move-object/from16 v1, p30
+    move-object/from16 v1, p29
 
     invoke-static {v1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     const-string v0, "minimalRank"
 
-    move-object/from16 v1, p32
+    move-object/from16 v1, p31
 
     invoke-static {v1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     const-string v0, "website"
 
-    move-object/from16 v1, p33
+    move-object/from16 v1, p32
 
     invoke-static {v1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    new-instance v38, Lcom/iMe/model/staking/StakingDetailsItem;
+    new-instance v37, Lcom/iMe/model/staking/StakingDetailsItem;
 
-    move-object/from16 v0, v38
+    move-object/from16 v0, v37
 
     move-wide/from16 v1, p1
 
-    invoke-direct/range {v0 .. v37}, Lcom/iMe/model/staking/StakingDetailsItem;-><init>(JLjava/lang/String;Ljava/lang/String;Lcom/iMe/storage/domain/model/crypto/NetworkType;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/math/BigDecimal;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/math/BigDecimal;Ljava/math/BigDecimal;DZZDDDJLcom/iMe/model/staking/StakingAnnualPercentageMode;ZLcom/iMe/storage/domain/model/crypto/level/AccountLevel;Ljava/lang/String;JD)V
+    invoke-direct/range {v0 .. v36}, Lcom/iMe/model/staking/StakingDetailsItem;-><init>(JLjava/lang/String;Ljava/lang/String;Lcom/iMe/model/wallet/crypto/TokenItem;Ljava/lang/String;Lcom/iMe/model/wallet/crypto/TokenItem;Ljava/lang/String;Ljava/lang/String;Ljava/math/BigDecimal;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/math/BigDecimal;Ljava/math/BigDecimal;DZZDDDJLcom/iMe/model/staking/StakingAnnualPercentageMode;ZLcom/iMe/storage/domain/model/crypto/level/AccountLevel;Ljava/lang/String;JD)V
 
-    return-object v38
+    return-object v37
 .end method
 
 .method public describeContents()I
@@ -1261,11 +1216,15 @@
     return v2
 
     :cond_4
-    iget-object v1, p0, Lcom/iMe/model/staking/StakingDetailsItem;->networkType:Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    iget-object v1, p0, Lcom/iMe/model/staking/StakingDetailsItem;->tokenItem:Lcom/iMe/model/wallet/crypto/TokenItem;
 
-    iget-object v3, p1, Lcom/iMe/model/staking/StakingDetailsItem;->networkType:Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    iget-object v3, p1, Lcom/iMe/model/staking/StakingDetailsItem;->tokenItem:Lcom/iMe/model/wallet/crypto/TokenItem;
 
-    if-eq v1, v3, :cond_5
+    invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_5
 
     return v2
 
@@ -1283,9 +1242,9 @@
     return v2
 
     :cond_6
-    iget-object v1, p0, Lcom/iMe/model/staking/StakingDetailsItem;->tokenTicker:Ljava/lang/String;
+    iget-object v1, p0, Lcom/iMe/model/staking/StakingDetailsItem;->feeTokenItem:Lcom/iMe/model/wallet/crypto/TokenItem;
 
-    iget-object v3, p1, Lcom/iMe/model/staking/StakingDetailsItem;->tokenTicker:Ljava/lang/String;
+    iget-object v3, p1, Lcom/iMe/model/staking/StakingDetailsItem;->feeTokenItem:Lcom/iMe/model/wallet/crypto/TokenItem;
 
     invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
@@ -1296,9 +1255,9 @@
     return v2
 
     :cond_7
-    iget-object v1, p0, Lcom/iMe/model/staking/StakingDetailsItem;->feeTokenTicker:Ljava/lang/String;
+    iget-object v1, p0, Lcom/iMe/model/staking/StakingDetailsItem;->formattedAPR:Ljava/lang/String;
 
-    iget-object v3, p1, Lcom/iMe/model/staking/StakingDetailsItem;->feeTokenTicker:Ljava/lang/String;
+    iget-object v3, p1, Lcom/iMe/model/staking/StakingDetailsItem;->formattedAPR:Ljava/lang/String;
 
     invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
@@ -1309,9 +1268,9 @@
     return v2
 
     :cond_8
-    iget-object v1, p0, Lcom/iMe/model/staking/StakingDetailsItem;->formattedAPR:Ljava/lang/String;
+    iget-object v1, p0, Lcom/iMe/model/staking/StakingDetailsItem;->formattedAPY:Ljava/lang/String;
 
-    iget-object v3, p1, Lcom/iMe/model/staking/StakingDetailsItem;->formattedAPR:Ljava/lang/String;
+    iget-object v3, p1, Lcom/iMe/model/staking/StakingDetailsItem;->formattedAPY:Ljava/lang/String;
 
     invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
@@ -1322,9 +1281,9 @@
     return v2
 
     :cond_9
-    iget-object v1, p0, Lcom/iMe/model/staking/StakingDetailsItem;->formattedAPY:Ljava/lang/String;
+    iget-object v1, p0, Lcom/iMe/model/staking/StakingDetailsItem;->compoundAccrualThreshold:Ljava/math/BigDecimal;
 
-    iget-object v3, p1, Lcom/iMe/model/staking/StakingDetailsItem;->formattedAPY:Ljava/lang/String;
+    iget-object v3, p1, Lcom/iMe/model/staking/StakingDetailsItem;->compoundAccrualThreshold:Ljava/math/BigDecimal;
 
     invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
@@ -1335,9 +1294,9 @@
     return v2
 
     :cond_a
-    iget-object v1, p0, Lcom/iMe/model/staking/StakingDetailsItem;->compoundAccrualThreshold:Ljava/math/BigDecimal;
+    iget-object v1, p0, Lcom/iMe/model/staking/StakingDetailsItem;->startsAt:Ljava/lang/String;
 
-    iget-object v3, p1, Lcom/iMe/model/staking/StakingDetailsItem;->compoundAccrualThreshold:Ljava/math/BigDecimal;
+    iget-object v3, p1, Lcom/iMe/model/staking/StakingDetailsItem;->startsAt:Ljava/lang/String;
 
     invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
@@ -1348,9 +1307,9 @@
     return v2
 
     :cond_b
-    iget-object v1, p0, Lcom/iMe/model/staking/StakingDetailsItem;->startsAt:Ljava/lang/String;
+    iget-object v1, p0, Lcom/iMe/model/staking/StakingDetailsItem;->startsAtISO:Ljava/lang/String;
 
-    iget-object v3, p1, Lcom/iMe/model/staking/StakingDetailsItem;->startsAt:Ljava/lang/String;
+    iget-object v3, p1, Lcom/iMe/model/staking/StakingDetailsItem;->startsAtISO:Ljava/lang/String;
 
     invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
@@ -1361,9 +1320,9 @@
     return v2
 
     :cond_c
-    iget-object v1, p0, Lcom/iMe/model/staking/StakingDetailsItem;->startsAtISO:Ljava/lang/String;
+    iget-object v1, p0, Lcom/iMe/model/staking/StakingDetailsItem;->endsAt:Ljava/lang/String;
 
-    iget-object v3, p1, Lcom/iMe/model/staking/StakingDetailsItem;->startsAtISO:Ljava/lang/String;
+    iget-object v3, p1, Lcom/iMe/model/staking/StakingDetailsItem;->endsAt:Ljava/lang/String;
 
     invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
@@ -1374,9 +1333,9 @@
     return v2
 
     :cond_d
-    iget-object v1, p0, Lcom/iMe/model/staking/StakingDetailsItem;->endsAt:Ljava/lang/String;
+    iget-object v1, p0, Lcom/iMe/model/staking/StakingDetailsItem;->endsAtISO:Ljava/lang/String;
 
-    iget-object v3, p1, Lcom/iMe/model/staking/StakingDetailsItem;->endsAt:Ljava/lang/String;
+    iget-object v3, p1, Lcom/iMe/model/staking/StakingDetailsItem;->endsAtISO:Ljava/lang/String;
 
     invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
@@ -1387,9 +1346,9 @@
     return v2
 
     :cond_e
-    iget-object v1, p0, Lcom/iMe/model/staking/StakingDetailsItem;->endsAtISO:Ljava/lang/String;
+    iget-object v1, p0, Lcom/iMe/model/staking/StakingDetailsItem;->impact:Ljava/math/BigDecimal;
 
-    iget-object v3, p1, Lcom/iMe/model/staking/StakingDetailsItem;->endsAtISO:Ljava/lang/String;
+    iget-object v3, p1, Lcom/iMe/model/staking/StakingDetailsItem;->impact:Ljava/math/BigDecimal;
 
     invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
@@ -1400,9 +1359,9 @@
     return v2
 
     :cond_f
-    iget-object v1, p0, Lcom/iMe/model/staking/StakingDetailsItem;->impact:Ljava/math/BigDecimal;
+    iget-object v1, p0, Lcom/iMe/model/staking/StakingDetailsItem;->debt:Ljava/math/BigDecimal;
 
-    iget-object v3, p1, Lcom/iMe/model/staking/StakingDetailsItem;->impact:Ljava/math/BigDecimal;
+    iget-object v3, p1, Lcom/iMe/model/staking/StakingDetailsItem;->debt:Ljava/math/BigDecimal;
 
     invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
@@ -1413,19 +1372,6 @@
     return v2
 
     :cond_10
-    iget-object v1, p0, Lcom/iMe/model/staking/StakingDetailsItem;->debt:Ljava/math/BigDecimal;
-
-    iget-object v3, p1, Lcom/iMe/model/staking/StakingDetailsItem;->debt:Ljava/math/BigDecimal;
-
-    invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_11
-
-    return v2
-
-    :cond_11
     iget-wide v3, p0, Lcom/iMe/model/staking/StakingDetailsItem;->availableForClaim:D
 
     iget-wide v5, p1, Lcom/iMe/model/staking/StakingDetailsItem;->availableForClaim:D
@@ -1434,32 +1380,45 @@
 
     move-result v1
 
-    if-eqz v1, :cond_12
+    if-eqz v1, :cond_11
+
+    return v2
+
+    :cond_11
+    iget-boolean v1, p0, Lcom/iMe/model/staking/StakingDetailsItem;->canWithdrawSafely:Z
+
+    iget-boolean v3, p1, Lcom/iMe/model/staking/StakingDetailsItem;->canWithdrawSafely:Z
+
+    if-eq v1, v3, :cond_12
 
     return v2
 
     :cond_12
-    iget-boolean v1, p0, Lcom/iMe/model/staking/StakingDetailsItem;->canWithdrawSafely:Z
+    iget-boolean v1, p0, Lcom/iMe/model/staking/StakingDetailsItem;->canWithdrawImmediately:Z
 
-    iget-boolean v3, p1, Lcom/iMe/model/staking/StakingDetailsItem;->canWithdrawSafely:Z
+    iget-boolean v3, p1, Lcom/iMe/model/staking/StakingDetailsItem;->canWithdrawImmediately:Z
 
     if-eq v1, v3, :cond_13
 
     return v2
 
     :cond_13
-    iget-boolean v1, p0, Lcom/iMe/model/staking/StakingDetailsItem;->canWithdrawImmediately:Z
+    iget-wide v3, p0, Lcom/iMe/model/staking/StakingDetailsItem;->prematureWithdrawalFeePercentage:D
 
-    iget-boolean v3, p1, Lcom/iMe/model/staking/StakingDetailsItem;->canWithdrawImmediately:Z
+    iget-wide v5, p1, Lcom/iMe/model/staking/StakingDetailsItem;->prematureWithdrawalFeePercentage:D
 
-    if-eq v1, v3, :cond_14
+    invoke-static {v3, v4, v5, v6}, Ljava/lang/Double;->compare(DD)I
+
+    move-result v1
+
+    if-eqz v1, :cond_14
 
     return v2
 
     :cond_14
-    iget-wide v3, p0, Lcom/iMe/model/staking/StakingDetailsItem;->prematureWithdrawalFeePercentage:D
+    iget-wide v3, p0, Lcom/iMe/model/staking/StakingDetailsItem;->immediateWithdrawalFeePercentage:D
 
-    iget-wide v5, p1, Lcom/iMe/model/staking/StakingDetailsItem;->prematureWithdrawalFeePercentage:D
+    iget-wide v5, p1, Lcom/iMe/model/staking/StakingDetailsItem;->immediateWithdrawalFeePercentage:D
 
     invoke-static {v3, v4, v5, v6}, Ljava/lang/Double;->compare(DD)I
 
@@ -1470,9 +1429,9 @@
     return v2
 
     :cond_15
-    iget-wide v3, p0, Lcom/iMe/model/staking/StakingDetailsItem;->immediateWithdrawalFeePercentage:D
+    iget-wide v3, p0, Lcom/iMe/model/staking/StakingDetailsItem;->safeWithdrawalFeePercentage:D
 
-    iget-wide v5, p1, Lcom/iMe/model/staking/StakingDetailsItem;->immediateWithdrawalFeePercentage:D
+    iget-wide v5, p1, Lcom/iMe/model/staking/StakingDetailsItem;->safeWithdrawalFeePercentage:D
 
     invoke-static {v3, v4, v5, v6}, Ljava/lang/Double;->compare(DD)I
 
@@ -1483,57 +1442,44 @@
     return v2
 
     :cond_16
-    iget-wide v3, p0, Lcom/iMe/model/staking/StakingDetailsItem;->safeWithdrawalFeePercentage:D
-
-    iget-wide v5, p1, Lcom/iMe/model/staking/StakingDetailsItem;->safeWithdrawalFeePercentage:D
-
-    invoke-static {v3, v4, v5, v6}, Ljava/lang/Double;->compare(DD)I
-
-    move-result v1
-
-    if-eqz v1, :cond_17
-
-    return v2
-
-    :cond_17
     iget-wide v3, p0, Lcom/iMe/model/staking/StakingDetailsItem;->safeWithdrawalDuration:J
 
     iget-wide v5, p1, Lcom/iMe/model/staking/StakingDetailsItem;->safeWithdrawalDuration:J
 
     cmp-long v1, v3, v5
 
-    if-eqz v1, :cond_18
+    if-eqz v1, :cond_17
+
+    return v2
+
+    :cond_17
+    iget-object v1, p0, Lcom/iMe/model/staking/StakingDetailsItem;->annualPercentageMode:Lcom/iMe/model/staking/StakingAnnualPercentageMode;
+
+    iget-object v3, p1, Lcom/iMe/model/staking/StakingDetailsItem;->annualPercentageMode:Lcom/iMe/model/staking/StakingAnnualPercentageMode;
+
+    if-eq v1, v3, :cond_18
 
     return v2
 
     :cond_18
-    iget-object v1, p0, Lcom/iMe/model/staking/StakingDetailsItem;->annualPercentageMode:Lcom/iMe/model/staking/StakingAnnualPercentageMode;
+    iget-boolean v1, p0, Lcom/iMe/model/staking/StakingDetailsItem;->hasEnoughFunds:Z
 
-    iget-object v3, p1, Lcom/iMe/model/staking/StakingDetailsItem;->annualPercentageMode:Lcom/iMe/model/staking/StakingAnnualPercentageMode;
+    iget-boolean v3, p1, Lcom/iMe/model/staking/StakingDetailsItem;->hasEnoughFunds:Z
 
     if-eq v1, v3, :cond_19
 
     return v2
 
     :cond_19
-    iget-boolean v1, p0, Lcom/iMe/model/staking/StakingDetailsItem;->hasEnoughFunds:Z
+    iget-object v1, p0, Lcom/iMe/model/staking/StakingDetailsItem;->minimalRank:Lcom/iMe/storage/domain/model/crypto/level/AccountLevel;
 
-    iget-boolean v3, p1, Lcom/iMe/model/staking/StakingDetailsItem;->hasEnoughFunds:Z
+    iget-object v3, p1, Lcom/iMe/model/staking/StakingDetailsItem;->minimalRank:Lcom/iMe/storage/domain/model/crypto/level/AccountLevel;
 
     if-eq v1, v3, :cond_1a
 
     return v2
 
     :cond_1a
-    iget-object v1, p0, Lcom/iMe/model/staking/StakingDetailsItem;->minimalRank:Lcom/iMe/storage/domain/model/crypto/level/AccountLevel;
-
-    iget-object v3, p1, Lcom/iMe/model/staking/StakingDetailsItem;->minimalRank:Lcom/iMe/storage/domain/model/crypto/level/AccountLevel;
-
-    if-eq v1, v3, :cond_1b
-
-    return v2
-
-    :cond_1b
     iget-object v1, p0, Lcom/iMe/model/staking/StakingDetailsItem;->website:Ljava/lang/String;
 
     iget-object v3, p1, Lcom/iMe/model/staking/StakingDetailsItem;->website:Ljava/lang/String;
@@ -1542,22 +1488,22 @@
 
     move-result v1
 
-    if-nez v1, :cond_1c
+    if-nez v1, :cond_1b
 
     return v2
 
-    :cond_1c
+    :cond_1b
     iget-wide v3, p0, Lcom/iMe/model/staking/StakingDetailsItem;->incomePeriod:J
 
     iget-wide v5, p1, Lcom/iMe/model/staking/StakingDetailsItem;->incomePeriod:J
 
     cmp-long v1, v3, v5
 
-    if-eqz v1, :cond_1d
+    if-eqz v1, :cond_1c
 
     return v2
 
-    :cond_1d
+    :cond_1c
     iget-wide v3, p0, Lcom/iMe/model/staking/StakingDetailsItem;->incomePercent:D
 
     iget-wide v5, p1, Lcom/iMe/model/staking/StakingDetailsItem;->incomePercent:D
@@ -1566,11 +1512,11 @@
 
     move-result p1
 
-    if-eqz p1, :cond_1e
+    if-eqz p1, :cond_1d
 
     return v2
 
-    :cond_1e
+    :cond_1d
     return v0
 .end method
 
@@ -1586,7 +1532,7 @@
 .method public final getAuthor()Ljava/lang/String;
     .locals 1
 
-    .line 13
+    .line 14
     iget-object v0, p0, Lcom/iMe/model/staking/StakingDetailsItem;->author:Ljava/lang/String;
 
     return-object v0
@@ -1631,8 +1577,31 @@
 .method public final getContract()Ljava/lang/String;
     .locals 1
 
-    .line 15
+    .line 16
     iget-object v0, p0, Lcom/iMe/model/staking/StakingDetailsItem;->contract:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public final getContractUrl()Ljava/lang/String;
+    .locals 2
+
+    .line 43
+    iget-object v0, p0, Lcom/iMe/model/staking/StakingDetailsItem;->tokenItem:Lcom/iMe/model/wallet/crypto/TokenItem;
+
+    invoke-virtual {v0}, Lcom/iMe/model/wallet/crypto/TokenItem;->getNetworkId()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcom/iMe/storage/data/utils/crypto/NetworksHelper;->getNetworkById(Ljava/lang/String;)Lcom/iMe/storage/domain/model/crypto/Network;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lcom/iMe/model/staking/StakingDetailsItem;->contract:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Lcom/iMe/storage/domain/model/crypto/Network;->getAddressUrl(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
 
     return-object v0
 .end method
@@ -1664,11 +1633,11 @@
     return-object v0
 .end method
 
-.method public final getFeeTokenTicker()Ljava/lang/String;
+.method public final getFeeTokenItem()Lcom/iMe/model/wallet/crypto/TokenItem;
     .locals 1
 
     .line 17
-    iget-object v0, p0, Lcom/iMe/model/staking/StakingDetailsItem;->feeTokenTicker:Ljava/lang/String;
+    iget-object v0, p0, Lcom/iMe/model/staking/StakingDetailsItem;->feeTokenItem:Lcom/iMe/model/wallet/crypto/TokenItem;
 
     return-object v0
 .end method
@@ -1703,7 +1672,7 @@
 .method public final getId()J
     .locals 2
 
-    .line 11
+    .line 12
     iget-wide v0, p0, Lcom/iMe/model/staking/StakingDetailsItem;->id:J
 
     return-wide v0
@@ -1757,17 +1726,8 @@
 .method public final getName()Ljava/lang/String;
     .locals 1
 
-    .line 12
+    .line 13
     iget-object v0, p0, Lcom/iMe/model/staking/StakingDetailsItem;->name:Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method public final getNetworkType()Lcom/iMe/storage/domain/model/crypto/NetworkType;
-    .locals 1
-
-    .line 14
-    iget-object v0, p0, Lcom/iMe/model/staking/StakingDetailsItem;->networkType:Lcom/iMe/storage/domain/model/crypto/NetworkType;
 
     return-object v0
 .end method
@@ -1817,11 +1777,11 @@
     return-object v0
 .end method
 
-.method public final getTokenTicker()Ljava/lang/String;
+.method public final getTokenItem()Lcom/iMe/model/wallet/crypto/TokenItem;
     .locals 1
 
-    .line 16
-    iget-object v0, p0, Lcom/iMe/model/staking/StakingDetailsItem;->tokenTicker:Ljava/lang/String;
+    .line 15
+    iget-object v0, p0, Lcom/iMe/model/staking/StakingDetailsItem;->tokenItem:Lcom/iMe/model/wallet/crypto/TokenItem;
 
     return-object v0
 .end method
@@ -1866,9 +1826,9 @@
 
     mul-int/lit8 v0, v0, 0x1f
 
-    iget-object v1, p0, Lcom/iMe/model/staking/StakingDetailsItem;->networkType:Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    iget-object v1, p0, Lcom/iMe/model/staking/StakingDetailsItem;->tokenItem:Lcom/iMe/model/wallet/crypto/TokenItem;
 
-    invoke-virtual {v1}, Ljava/lang/Enum;->hashCode()I
+    invoke-virtual {v1}, Lcom/iMe/model/wallet/crypto/TokenItem;->hashCode()I
 
     move-result v1
 
@@ -1886,19 +1846,9 @@
 
     mul-int/lit8 v0, v0, 0x1f
 
-    iget-object v1, p0, Lcom/iMe/model/staking/StakingDetailsItem;->tokenTicker:Ljava/lang/String;
+    iget-object v1, p0, Lcom/iMe/model/staking/StakingDetailsItem;->feeTokenItem:Lcom/iMe/model/wallet/crypto/TokenItem;
 
-    invoke-virtual {v1}, Ljava/lang/String;->hashCode()I
-
-    move-result v1
-
-    add-int/2addr v0, v1
-
-    mul-int/lit8 v0, v0, 0x1f
-
-    iget-object v1, p0, Lcom/iMe/model/staking/StakingDetailsItem;->feeTokenTicker:Ljava/lang/String;
-
-    invoke-virtual {v1}, Ljava/lang/String;->hashCode()I
+    invoke-virtual {v1}, Lcom/iMe/model/wallet/crypto/TokenItem;->hashCode()I
 
     move-result v1
 
@@ -2166,11 +2116,11 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v1, ", networkType="
+    const-string v1, ", tokenItem="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v1, p0, Lcom/iMe/model/staking/StakingDetailsItem;->networkType:Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    iget-object v1, p0, Lcom/iMe/model/staking/StakingDetailsItem;->tokenItem:Lcom/iMe/model/wallet/crypto/TokenItem;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
@@ -2182,21 +2132,13 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v1, ", tokenTicker="
+    const-string v1, ", feeTokenItem="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v1, p0, Lcom/iMe/model/staking/StakingDetailsItem;->tokenTicker:Ljava/lang/String;
+    iget-object v1, p0, Lcom/iMe/model/staking/StakingDetailsItem;->feeTokenItem:Lcom/iMe/model/wallet/crypto/TokenItem;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v1, ", feeTokenTicker="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v1, p0, Lcom/iMe/model/staking/StakingDetailsItem;->feeTokenTicker:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     const-string v1, ", formattedAPR="
 
@@ -2388,41 +2330,33 @@
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 2
 
-    const-string p2, "out"
+    const-string v0, "out"
 
-    invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     iget-wide v0, p0, Lcom/iMe/model/staking/StakingDetailsItem;->id:J
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Parcel;->writeLong(J)V
 
-    iget-object p2, p0, Lcom/iMe/model/staking/StakingDetailsItem;->name:Ljava/lang/String;
+    iget-object v0, p0, Lcom/iMe/model/staking/StakingDetailsItem;->name:Ljava/lang/String;
 
-    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
+    invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    iget-object p2, p0, Lcom/iMe/model/staking/StakingDetailsItem;->author:Ljava/lang/String;
+    iget-object v0, p0, Lcom/iMe/model/staking/StakingDetailsItem;->author:Ljava/lang/String;
 
-    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
+    invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    iget-object p2, p0, Lcom/iMe/model/staking/StakingDetailsItem;->networkType:Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    iget-object v0, p0, Lcom/iMe/model/staking/StakingDetailsItem;->tokenItem:Lcom/iMe/model/wallet/crypto/TokenItem;
 
-    invoke-virtual {p2}, Ljava/lang/Enum;->name()Ljava/lang/String;
+    invoke-virtual {v0, p1, p2}, Lcom/iMe/model/wallet/crypto/TokenItem;->writeToParcel(Landroid/os/Parcel;I)V
 
-    move-result-object p2
+    iget-object v0, p0, Lcom/iMe/model/staking/StakingDetailsItem;->contract:Ljava/lang/String;
 
-    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
+    invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    iget-object p2, p0, Lcom/iMe/model/staking/StakingDetailsItem;->contract:Ljava/lang/String;
+    iget-object v0, p0, Lcom/iMe/model/staking/StakingDetailsItem;->feeTokenItem:Lcom/iMe/model/wallet/crypto/TokenItem;
 
-    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
-
-    iget-object p2, p0, Lcom/iMe/model/staking/StakingDetailsItem;->tokenTicker:Ljava/lang/String;
-
-    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
-
-    iget-object p2, p0, Lcom/iMe/model/staking/StakingDetailsItem;->feeTokenTicker:Ljava/lang/String;
-
-    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
+    invoke-virtual {v0, p1, p2}, Lcom/iMe/model/wallet/crypto/TokenItem;->writeToParcel(Landroid/os/Parcel;I)V
 
     iget-object p2, p0, Lcom/iMe/model/staking/StakingDetailsItem;->formattedAPR:Ljava/lang/String;
 

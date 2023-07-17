@@ -26,7 +26,7 @@
 .method constructor <init>(Lcom/iMe/ui/wallet/crypto/create/CreateWalletView$$State;)V
     .locals 1
 
-    .line 271
+    .line 376
     const-class p1, Lmoxy/viewstate/strategy/OneExecutionStateStrategy;
 
     const-string v0, "onSuccessConfirmBackUp"
@@ -41,7 +41,7 @@
 .method public apply(Lcom/iMe/ui/wallet/crypto/create/CreateWalletView;)V
     .locals 0
 
-    .line 276
+    .line 381
     invoke-interface {p1}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletView;->onSuccessConfirmBackUp()V
 
     return-void
@@ -50,7 +50,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 269
+    .line 374
     check-cast p1, Lcom/iMe/ui/wallet/crypto/create/CreateWalletView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletView$$State$OnSuccessConfirmBackUpCommand;->apply(Lcom/iMe/ui/wallet/crypto/create/CreateWalletView;)V

@@ -24,7 +24,7 @@
 .method constructor <init>(ILjava/lang/Runnable;)V
     .locals 0
 
-    .line 596
+    .line 599
     iput p1, p0, Lorg/telegram/messenger/AndroidUtilities$1;->val$colorKey:I
 
     iput-object p2, p0, Lorg/telegram/messenger/AndroidUtilities$1;->val$runnable:Ljava/lang/Runnable;
@@ -39,12 +39,12 @@
 .method public onClick(Landroid/view/View;)V
     .locals 0
 
-    .line 609
+    .line 612
     iget-object p1, p0, Lorg/telegram/messenger/AndroidUtilities$1;->val$runnable:Ljava/lang/Runnable;
 
     if-eqz p1, :cond_0
 
-    .line 610
+    .line 613
     invoke-interface {p1}, Ljava/lang/Runnable;->run()V
 
     :cond_0
@@ -54,20 +54,20 @@
 .method public updateDrawState(Landroid/text/TextPaint;)V
     .locals 1
 
-    .line 600
+    .line 603
     invoke-super {p0, p1}, Landroid/text/style/ClickableSpan;->updateDrawState(Landroid/text/TextPaint;)V
 
     const/4 v0, 0x0
 
-    .line 601
+    .line 604
     invoke-virtual {p1, v0}, Landroid/text/TextPaint;->setUnderlineText(Z)V
 
-    .line 602
+    .line 605
     iget v0, p0, Lorg/telegram/messenger/AndroidUtilities$1;->val$colorKey:I
 
     if-ltz v0, :cond_0
 
-    .line 603
+    .line 606
     invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v0

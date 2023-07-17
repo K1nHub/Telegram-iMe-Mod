@@ -4,15 +4,15 @@ import com.iMe.fork.utils.Callbacks$Callback;
 import com.iMe.model.dialog.DialogModel;
 import com.iMe.model.wallet.crypto.swap.SwapFeeScreenArgs;
 import com.iMe.model.wallet.crypto.swap.SwapUiState;
-import com.iMe.model.wallet.select.SelectableToken;
-import com.iMe.model.wallet.select.SelectableType;
 import com.iMe.model.wallet.swap.SwapSide;
 import com.iMe.navigation.wallet.coordinator.args.TokenBuyCoordinatorArgs;
 import com.iMe.p031ui.base.mvp.base.BaseView;
 import com.iMe.p031ui.wallet.swap.process.WalletSwapProcessFragment;
+import com.iMe.p031ui.wallet.swap.token.WalletSelectTokenFragment;
 import com.iMe.storage.domain.model.Result;
 import com.iMe.storage.domain.model.binancepay.OutputConvertToken;
-import com.iMe.storage.domain.model.crypto.NetworkType;
+import com.iMe.storage.domain.model.crypto.Network;
+import com.iMe.storage.domain.model.wallet.token.TokenDetailed;
 import com.iMe.storage.domain.utils.system.ResourceManager;
 import io.reactivex.disposables.Disposable;
 import java.util.List;
@@ -30,6 +30,11 @@ public class WalletSwapProcessView$$State extends MvpViewState<WalletSwapProcess
         BaseView.CC.$default$finishScreen(this);
     }
 
+    @Override // com.iMe.p031ui.base.mvp.base.BaseView
+    public /* synthetic */ void removeSelfFromStackImmediately() {
+        BaseView.CC.$default$removeSelfFromStackImmediately(this);
+    }
+
     @Override // com.iMe.p031ui.wallet.swap.process.WalletSwapProcessView
     public void setupScreenForSwap(String str, String str2, int i, boolean z, WalletSwapProcessFragment.NetworkSwitchType networkSwitchType) {
         SetupScreenForSwapCommand setupScreenForSwapCommand = new SetupScreenForSwapCommand(this, str, str2, i, z, networkSwitchType);
@@ -44,14 +49,14 @@ public class WalletSwapProcessView$$State extends MvpViewState<WalletSwapProcess
     }
 
     @Override // com.iMe.p031ui.wallet.swap.process.WalletSwapProcessView
-    public void onTokenSelected(SwapSide swapSide, SelectableToken selectableToken, int i, int i2, NetworkType networkType) {
-        OnTokenSelectedCommand onTokenSelectedCommand = new OnTokenSelectedCommand(this, swapSide, selectableToken, i, i2, networkType);
+    public void onTokenSelected(SwapSide swapSide, TokenDetailed tokenDetailed, int i) {
+        OnTokenSelectedCommand onTokenSelectedCommand = new OnTokenSelectedCommand(this, swapSide, tokenDetailed, i);
         this.viewCommands.beforeApply(onTokenSelectedCommand);
         if (hasNotView().booleanValue()) {
             return;
         }
         for (View view : this.views) {
-            view.onTokenSelected(swapSide, selectableToken, i, i2, networkType);
+            view.onTokenSelected(swapSide, tokenDetailed, i);
         }
         this.viewCommands.afterApply(onTokenSelectedCommand);
     }
@@ -83,16 +88,16 @@ public class WalletSwapProcessView$$State extends MvpViewState<WalletSwapProcess
     }
 
     @Override // com.iMe.p031ui.wallet.swap.process.WalletSwapProcessView
-    public void setupNetworkType(NetworkType networkType, SwapSide swapSide) {
-        SetupNetworkTypeCommand setupNetworkTypeCommand = new SetupNetworkTypeCommand(this, networkType, swapSide);
-        this.viewCommands.beforeApply(setupNetworkTypeCommand);
+    public void setupNetwork(Network network, SwapSide swapSide) {
+        SetupNetworkCommand setupNetworkCommand = new SetupNetworkCommand(this, network, swapSide);
+        this.viewCommands.beforeApply(setupNetworkCommand);
         if (hasNotView().booleanValue()) {
             return;
         }
         for (View view : this.views) {
-            view.setupNetworkType(networkType, swapSide);
+            view.setupNetwork(network, swapSide);
         }
-        this.viewCommands.afterApply(setupNetworkTypeCommand);
+        this.viewCommands.afterApply(setupNetworkCommand);
     }
 
     @Override // com.iMe.p031ui.wallet.swap.process.WalletSwapProcessView
@@ -174,27 +179,27 @@ public class WalletSwapProcessView$$State extends MvpViewState<WalletSwapProcess
     }
 
     @Override // com.iMe.p031ui.wallet.swap.process.WalletSwapProcessView
-    public void openSelectTokenDialog(SwapSide swapSide, SelectableToken selectableToken, List<? extends SelectableToken> list, NetworkType networkType, SelectableType selectableType, boolean z, Function1<? super SelectableToken, Unit> function1) {
-        OpenSelectTokenDialogCommand openSelectTokenDialogCommand = new OpenSelectTokenDialogCommand(this, swapSide, selectableToken, list, networkType, selectableType, z, function1);
+    public void openSelectTokenDialog(TokenDetailed tokenDetailed, WalletSelectTokenFragment.ScreenType screenType, String str, boolean z, Function1<? super TokenDetailed, Unit> function1) {
+        OpenSelectTokenDialogCommand openSelectTokenDialogCommand = new OpenSelectTokenDialogCommand(this, tokenDetailed, screenType, str, z, function1);
         this.viewCommands.beforeApply(openSelectTokenDialogCommand);
         if (hasNotView().booleanValue()) {
             return;
         }
         for (View view : this.views) {
-            view.openSelectTokenDialog(swapSide, selectableToken, list, networkType, selectableType, z, function1);
+            view.openSelectTokenDialog(tokenDetailed, screenType, str, z, function1);
         }
         this.viewCommands.afterApply(openSelectTokenDialogCommand);
     }
 
     @Override // com.iMe.p031ui.wallet.swap.process.WalletSwapProcessView
-    public void showMinMaxInputValues(SelectableToken selectableToken, OutputConvertToken outputConvertToken) {
-        ShowMinMaxInputValuesCommand showMinMaxInputValuesCommand = new ShowMinMaxInputValuesCommand(this, selectableToken, outputConvertToken);
+    public void showMinMaxInputValues(TokenDetailed tokenDetailed, OutputConvertToken outputConvertToken) {
+        ShowMinMaxInputValuesCommand showMinMaxInputValuesCommand = new ShowMinMaxInputValuesCommand(this, tokenDetailed, outputConvertToken);
         this.viewCommands.beforeApply(showMinMaxInputValuesCommand);
         if (hasNotView().booleanValue()) {
             return;
         }
         for (View view : this.views) {
-            view.showMinMaxInputValues(selectableToken, outputConvertToken);
+            view.showMinMaxInputValues(tokenDetailed, outputConvertToken);
         }
         this.viewCommands.afterApply(showMinMaxInputValuesCommand);
     }
@@ -252,14 +257,14 @@ public class WalletSwapProcessView$$State extends MvpViewState<WalletSwapProcess
     }
 
     @Override // com.iMe.p031ui.base.mvp.SwitchNetworkView
-    public void showChooseNetworkDialog(NetworkType networkType, List<? extends NetworkType> list, Function1<? super NetworkType, Unit> function1) {
-        ShowChooseNetworkDialogCommand showChooseNetworkDialogCommand = new ShowChooseNetworkDialogCommand(this, networkType, list, function1);
+    public void showChooseNetworkDialog(Network network, List<Network> list, Function1<? super Network, Unit> function1) {
+        ShowChooseNetworkDialogCommand showChooseNetworkDialogCommand = new ShowChooseNetworkDialogCommand(this, network, list, function1);
         this.viewCommands.beforeApply(showChooseNetworkDialogCommand);
         if (hasNotView().booleanValue()) {
             return;
         }
         for (View view : this.views) {
-            view.showChooseNetworkDialog(networkType, list, function1);
+            view.showChooseNetworkDialog(network, list, function1);
         }
         this.viewCommands.afterApply(showChooseNetworkDialogCommand);
     }
@@ -293,24 +298,20 @@ public class WalletSwapProcessView$$State extends MvpViewState<WalletSwapProcess
     /* renamed from: com.iMe.ui.wallet.swap.process.WalletSwapProcessView$$State$OnTokenSelectedCommand */
     /* loaded from: classes4.dex */
     public class OnTokenSelectedCommand extends ViewCommand<WalletSwapProcessView> {
-        public final int maxInputDigits;
-        public final NetworkType networkType;
         public final SwapSide side;
-        public final SelectableToken token;
+        public final TokenDetailed token;
         public final int tokenDecimal;
 
-        OnTokenSelectedCommand(WalletSwapProcessView$$State walletSwapProcessView$$State, SwapSide swapSide, SelectableToken selectableToken, int i, int i2, NetworkType networkType) {
+        OnTokenSelectedCommand(WalletSwapProcessView$$State walletSwapProcessView$$State, SwapSide swapSide, TokenDetailed tokenDetailed, int i) {
             super("onTokenSelected", AddToEndSingleStrategy.class);
             this.side = swapSide;
-            this.token = selectableToken;
-            this.maxInputDigits = i;
-            this.tokenDecimal = i2;
-            this.networkType = networkType;
+            this.token = tokenDetailed;
+            this.tokenDecimal = i;
         }
 
         @Override // moxy.viewstate.ViewCommand
         public void apply(WalletSwapProcessView walletSwapProcessView) {
-            walletSwapProcessView.onTokenSelected(this.side, this.token, this.maxInputDigits, this.tokenDecimal, this.networkType);
+            walletSwapProcessView.onTokenSelected(this.side, this.token, this.tokenDecimal);
         }
     }
 
@@ -349,21 +350,21 @@ public class WalletSwapProcessView$$State extends MvpViewState<WalletSwapProcess
     }
 
     /* compiled from: WalletSwapProcessView$$State.java */
-    /* renamed from: com.iMe.ui.wallet.swap.process.WalletSwapProcessView$$State$SetupNetworkTypeCommand */
+    /* renamed from: com.iMe.ui.wallet.swap.process.WalletSwapProcessView$$State$SetupNetworkCommand */
     /* loaded from: classes4.dex */
-    public class SetupNetworkTypeCommand extends ViewCommand<WalletSwapProcessView> {
-        public final NetworkType networkType;
+    public class SetupNetworkCommand extends ViewCommand<WalletSwapProcessView> {
+        public final Network network;
         public final SwapSide side;
 
-        SetupNetworkTypeCommand(WalletSwapProcessView$$State walletSwapProcessView$$State, NetworkType networkType, SwapSide swapSide) {
-            super("setupNetworkType", AddToEndSingleStrategy.class);
-            this.networkType = networkType;
+        SetupNetworkCommand(WalletSwapProcessView$$State walletSwapProcessView$$State, Network network, SwapSide swapSide) {
+            super("setupNetwork", AddToEndSingleStrategy.class);
+            this.network = network;
             this.side = swapSide;
         }
 
         @Override // moxy.viewstate.ViewCommand
         public void apply(WalletSwapProcessView walletSwapProcessView) {
-            walletSwapProcessView.setupNetworkType(this.networkType, this.side);
+            walletSwapProcessView.setupNetwork(this.network, this.side);
         }
     }
 
@@ -466,28 +467,24 @@ public class WalletSwapProcessView$$State extends MvpViewState<WalletSwapProcess
     /* renamed from: com.iMe.ui.wallet.swap.process.WalletSwapProcessView$$State$OpenSelectTokenDialogCommand */
     /* loaded from: classes4.dex */
     public class OpenSelectTokenDialogCommand extends ViewCommand<WalletSwapProcessView> {
-        public final Function1<? super SelectableToken, Unit> action;
-        public final NetworkType networkType;
+        public final Function1<? super TokenDetailed, Unit> action;
+        public final String networkId;
         public final boolean onlyPositiveBalance;
-        public final SelectableToken selectedToken;
-        public final SwapSide side;
-        public final List<? extends SelectableToken> tokens;
-        public final SelectableType type;
+        public final WalletSelectTokenFragment.ScreenType selectTokensScreenType;
+        public final TokenDetailed selectedToken;
 
-        OpenSelectTokenDialogCommand(WalletSwapProcessView$$State walletSwapProcessView$$State, SwapSide swapSide, SelectableToken selectableToken, List<? extends SelectableToken> list, NetworkType networkType, SelectableType selectableType, boolean z, Function1<? super SelectableToken, Unit> function1) {
+        OpenSelectTokenDialogCommand(WalletSwapProcessView$$State walletSwapProcessView$$State, TokenDetailed tokenDetailed, WalletSelectTokenFragment.ScreenType screenType, String str, boolean z, Function1<? super TokenDetailed, Unit> function1) {
             super("openSelectTokenDialog", OneExecutionStateStrategy.class);
-            this.side = swapSide;
-            this.selectedToken = selectableToken;
-            this.tokens = list;
-            this.networkType = networkType;
-            this.type = selectableType;
+            this.selectedToken = tokenDetailed;
+            this.selectTokensScreenType = screenType;
+            this.networkId = str;
             this.onlyPositiveBalance = z;
             this.action = function1;
         }
 
         @Override // moxy.viewstate.ViewCommand
         public void apply(WalletSwapProcessView walletSwapProcessView) {
-            walletSwapProcessView.openSelectTokenDialog(this.side, this.selectedToken, this.tokens, this.networkType, this.type, this.onlyPositiveBalance, this.action);
+            walletSwapProcessView.openSelectTokenDialog(this.selectedToken, this.selectTokensScreenType, this.networkId, this.onlyPositiveBalance, this.action);
         }
     }
 
@@ -496,11 +493,11 @@ public class WalletSwapProcessView$$State extends MvpViewState<WalletSwapProcess
     /* loaded from: classes4.dex */
     public class ShowMinMaxInputValuesCommand extends ViewCommand<WalletSwapProcessView> {
         public final OutputConvertToken information;
-        public final SelectableToken token;
+        public final TokenDetailed token;
 
-        ShowMinMaxInputValuesCommand(WalletSwapProcessView$$State walletSwapProcessView$$State, SelectableToken selectableToken, OutputConvertToken outputConvertToken) {
+        ShowMinMaxInputValuesCommand(WalletSwapProcessView$$State walletSwapProcessView$$State, TokenDetailed tokenDetailed, OutputConvertToken outputConvertToken) {
             super("showMinMaxInputValues", OneExecutionStateStrategy.class);
-            this.token = selectableToken;
+            this.token = tokenDetailed;
             this.information = outputConvertToken;
         }
 
@@ -585,20 +582,20 @@ public class WalletSwapProcessView$$State extends MvpViewState<WalletSwapProcess
     /* renamed from: com.iMe.ui.wallet.swap.process.WalletSwapProcessView$$State$ShowChooseNetworkDialogCommand */
     /* loaded from: classes4.dex */
     public class ShowChooseNetworkDialogCommand extends ViewCommand<WalletSwapProcessView> {
-        public final Function1<? super NetworkType, Unit> action;
-        public final List<? extends NetworkType> availableNetworks;
-        public final NetworkType networkType;
+        public final Function1<? super Network, Unit> action;
+        public final List<Network> availableNetworks;
+        public final Network network;
 
-        ShowChooseNetworkDialogCommand(WalletSwapProcessView$$State walletSwapProcessView$$State, NetworkType networkType, List<? extends NetworkType> list, Function1<? super NetworkType, Unit> function1) {
+        ShowChooseNetworkDialogCommand(WalletSwapProcessView$$State walletSwapProcessView$$State, Network network, List<Network> list, Function1<? super Network, Unit> function1) {
             super("showChooseNetworkDialog", OneExecutionStateStrategy.class);
-            this.networkType = networkType;
+            this.network = network;
             this.availableNetworks = list;
             this.action = function1;
         }
 
         @Override // moxy.viewstate.ViewCommand
         public void apply(WalletSwapProcessView walletSwapProcessView) {
-            walletSwapProcessView.showChooseNetworkDialog(this.networkType, this.availableNetworks, this.action);
+            walletSwapProcessView.showChooseNetworkDialog(this.network, this.availableNetworks, this.action);
         }
     }
 }

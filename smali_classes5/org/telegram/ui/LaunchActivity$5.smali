@@ -32,7 +32,7 @@
 .method constructor <init>(Lorg/telegram/ui/LaunchActivity;Landroid/content/Context;)V
     .locals 0
 
-    .line 765
+    .line 805
     iput-object p1, p0, Lorg/telegram/ui/LaunchActivity$5;->this$0:Lorg/telegram/ui/LaunchActivity;
 
     invoke-direct {p0, p2}, Lorg/telegram/ui/ActionBar/DrawerLayoutContainer;-><init>(Landroid/content/Context;)V
@@ -43,7 +43,7 @@
 .method private synthetic lambda$onLayout$0()V
     .locals 2
 
-    .line 793
+    .line 833
     iget-object v0, p0, Lorg/telegram/ui/LaunchActivity$5;->this$0:Lorg/telegram/ui/LaunchActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/LaunchActivity;->access$700(Lorg/telegram/ui/LaunchActivity;)Lorg/telegram/ui/SelectAnimatedEmojiDialog$SelectAnimatedEmojiDialogWindow;
@@ -52,7 +52,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 794
+    .line 834
     iget-object v0, p0, Lorg/telegram/ui/LaunchActivity$5;->this$0:Lorg/telegram/ui/LaunchActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/LaunchActivity;->access$700(Lorg/telegram/ui/LaunchActivity;)Lorg/telegram/ui/SelectAnimatedEmojiDialog$SelectAnimatedEmojiDialogWindow;
@@ -61,7 +61,7 @@
 
     invoke-virtual {v0}, Lorg/telegram/ui/SelectAnimatedEmojiDialog$SelectAnimatedEmojiDialogWindow;->dismiss()V
 
-    .line 795
+    .line 835
     iget-object v0, p0, Lorg/telegram/ui/LaunchActivity$5;->this$0:Lorg/telegram/ui/LaunchActivity;
 
     const/4 v1, 0x0
@@ -77,10 +77,10 @@
 .method public closeDrawer()V
     .locals 2
 
-    .line 804
+    .line 844
     invoke-super {p0}, Lorg/telegram/ui/ActionBar/DrawerLayoutContainer;->closeDrawer()V
 
-    .line 805
+    .line 845
     iget-object v0, p0, Lorg/telegram/ui/LaunchActivity$5;->this$0:Lorg/telegram/ui/LaunchActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/LaunchActivity;->access$700(Lorg/telegram/ui/LaunchActivity;)Lorg/telegram/ui/SelectAnimatedEmojiDialog$SelectAnimatedEmojiDialogWindow;
@@ -89,7 +89,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 806
+    .line 846
     iget-object v0, p0, Lorg/telegram/ui/LaunchActivity$5;->this$0:Lorg/telegram/ui/LaunchActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/LaunchActivity;->access$700(Lorg/telegram/ui/LaunchActivity;)Lorg/telegram/ui/SelectAnimatedEmojiDialog$SelectAnimatedEmojiDialogWindow;
@@ -98,7 +98,7 @@
 
     invoke-virtual {v0}, Lorg/telegram/ui/SelectAnimatedEmojiDialog$SelectAnimatedEmojiDialogWindow;->dismiss()V
 
-    .line 807
+    .line 847
     iget-object v0, p0, Lorg/telegram/ui/LaunchActivity$5;->this$0:Lorg/telegram/ui/LaunchActivity;
 
     const/4 v1, 0x0
@@ -112,10 +112,10 @@
 .method public closeDrawer(Z)V
     .locals 1
 
-    .line 813
+    .line 853
     invoke-super {p0, p1}, Lorg/telegram/ui/ActionBar/DrawerLayoutContainer;->closeDrawer(Z)V
 
-    .line 814
+    .line 854
     iget-object p1, p0, Lorg/telegram/ui/LaunchActivity$5;->this$0:Lorg/telegram/ui/LaunchActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/LaunchActivity;->access$700(Lorg/telegram/ui/LaunchActivity;)Lorg/telegram/ui/SelectAnimatedEmojiDialog$SelectAnimatedEmojiDialogWindow;
@@ -124,7 +124,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 815
+    .line 855
     iget-object p1, p0, Lorg/telegram/ui/LaunchActivity$5;->this$0:Lorg/telegram/ui/LaunchActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/LaunchActivity;->access$700(Lorg/telegram/ui/LaunchActivity;)Lorg/telegram/ui/SelectAnimatedEmojiDialog$SelectAnimatedEmojiDialogWindow;
@@ -133,7 +133,7 @@
 
     invoke-virtual {p1}, Lorg/telegram/ui/SelectAnimatedEmojiDialog$SelectAnimatedEmojiDialogWindow;->dismiss()V
 
-    .line 816
+    .line 856
     iget-object p1, p0, Lorg/telegram/ui/LaunchActivity$5;->this$0:Lorg/telegram/ui/LaunchActivity;
 
     const/4 v0, 0x0
@@ -147,12 +147,12 @@
 .method public onDrawerAnimationEnd(Z)V
     .locals 1
 
-    .line 773
+    .line 813
     invoke-super {p0, p1}, Lorg/telegram/ui/ActionBar/DrawerLayoutContainer;->onDrawerAnimationEnd(Z)V
 
     if-nez p1, :cond_0
 
-    .line 774
+    .line 814
     iget-object p1, p0, Lorg/telegram/ui/LaunchActivity$5;->this$0:Lorg/telegram/ui/LaunchActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/LaunchActivity;->access$600(Lorg/telegram/ui/LaunchActivity;)Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;
@@ -171,7 +171,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 775
+    .line 815
     iget-object p1, p0, Lorg/telegram/ui/LaunchActivity$5;->this$0:Lorg/telegram/ui/LaunchActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/LaunchActivity;->access$600(Lorg/telegram/ui/LaunchActivity;)Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;
@@ -182,7 +182,7 @@
 
     iput-boolean v0, p1, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;->isCreateGroupExpanded:Z
 
-    .line 776
+    .line 816
     iget-object p1, p0, Lorg/telegram/ui/LaunchActivity$5;->this$0:Lorg/telegram/ui/LaunchActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/LaunchActivity;->access$600(Lorg/telegram/ui/LaunchActivity;)Lorg/telegram/ui/Adapters/DrawerLayoutAdapter;
@@ -198,10 +198,10 @@
 .method protected onLayout(ZIIII)V
     .locals 0
 
-    .line 787
+    .line 827
     invoke-super/range {p0 .. p5}, Lorg/telegram/ui/ActionBar/DrawerLayoutContainer;->onLayout(ZIIII)V
 
-    .line 788
+    .line 828
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/DrawerLayoutContainer;->getDrawerPosition()F
 
     move-result p1
@@ -221,20 +221,20 @@
     :cond_0
     const/4 p1, 0x0
 
-    .line 791
+    .line 831
     :goto_0
     iget-boolean p2, p0, Lorg/telegram/ui/LaunchActivity$5;->wasPortrait:Z
 
     if-eq p1, p2, :cond_1
 
-    .line 792
+    .line 832
     new-instance p2, Lorg/telegram/ui/LaunchActivity$5$$ExternalSyntheticLambda0;
 
     invoke-direct {p2, p0}, Lorg/telegram/ui/LaunchActivity$5$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/LaunchActivity$5;)V
 
     invoke-virtual {p0, p2}, Landroid/widget/FrameLayout;->post(Ljava/lang/Runnable;)Z
 
-    .line 798
+    .line 838
     iput-boolean p1, p0, Lorg/telegram/ui/LaunchActivity$5;->wasPortrait:Z
 
     :cond_1

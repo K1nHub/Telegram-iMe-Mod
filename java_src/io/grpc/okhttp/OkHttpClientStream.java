@@ -27,7 +27,7 @@ public class OkHttpClientStream extends AbstractClientStream {
     private String authority;
 
     /* renamed from: id */
-    private volatile int f435id;
+    private volatile int f517id;
     private final MethodDescriptor<?, ?> method;
     private Object outboundFlowState;
     private final Sink sink;
@@ -39,7 +39,7 @@ public class OkHttpClientStream extends AbstractClientStream {
     /* JADX INFO: Access modifiers changed from: package-private */
     public OkHttpClientStream(MethodDescriptor<?, ?> methodDescriptor, Metadata metadata, ExceptionHandlingFrameWriter exceptionHandlingFrameWriter, OkHttpClientTransport okHttpClientTransport, OutboundFlowController outboundFlowController, Object obj, int i, int i2, String str, String str2, StatsTraceContext statsTraceContext, TransportTracer transportTracer, CallOptions callOptions, boolean z) {
         super(new OkHttpWritableBufferAllocator(), statsTraceContext, transportTracer, metadata, callOptions, z && methodDescriptor.isSafe());
-        this.f435id = -1;
+        this.f517id = -1;
         this.sink = new Sink();
         this.useGet = false;
         this.statsTraceCtx = (StatsTraceContext) Preconditions.checkNotNull(statsTraceContext, "statsTraceCtx");
@@ -68,7 +68,7 @@ public class OkHttpClientStream extends AbstractClientStream {
 
     /* renamed from: id */
     public int m682id() {
-        return this.f435id;
+        return this.f517id;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -193,15 +193,15 @@ public class OkHttpClientStream extends AbstractClientStream {
         }
 
         public void start(int i) {
-            Preconditions.checkState(OkHttpClientStream.this.f435id == -1, "the stream has been started with id %s", i);
-            OkHttpClientStream.this.f435id = i;
+            Preconditions.checkState(OkHttpClientStream.this.f517id == -1, "the stream has been started with id %s", i);
+            OkHttpClientStream.this.f517id = i;
             OkHttpClientStream.this.state.onStreamAllocated();
             if (this.canStart) {
-                this.frameWriter.synStream(OkHttpClientStream.this.useGet, false, OkHttpClientStream.this.f435id, 0, this.requestHeaders);
+                this.frameWriter.synStream(OkHttpClientStream.this.useGet, false, OkHttpClientStream.this.f517id, 0, this.requestHeaders);
                 OkHttpClientStream.this.statsTraceCtx.clientOutboundHeaders();
                 this.requestHeaders = null;
                 if (this.pendingData.size() > 0) {
-                    this.outboundFlow.data(this.pendingDataHasEndOfStream, OkHttpClientStream.this.f435id, this.pendingData, this.flushPendingData);
+                    this.outboundFlow.data(this.pendingDataHasEndOfStream, OkHttpClientStream.this.f517id, this.pendingData, this.flushPendingData);
                 }
                 this.canStart = false;
             }

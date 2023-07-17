@@ -24,11 +24,11 @@
     return-void
 .end method
 
-.method public static $default$onUnpin(Lorg/telegram/ui/ChatActivity$ChatActivityDelegate;ZZZZLorg/telegram/ui/ChatActivity;Ljava/util/ArrayList;Ljava/util/HashMap;)V
+.method public static $default$onUnpin(Lorg/telegram/ui/ChatActivity$ChatActivityDelegate;ZZZLorg/telegram/ui/ChatActivity;Ljava/util/ArrayList;Ljava/util/HashMap;)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "(ZZZZ",
+            "(ZZZ",
             "Lorg/telegram/ui/ChatActivity;",
             "Ljava/util/ArrayList<",
             "Ljava/lang/Integer;",

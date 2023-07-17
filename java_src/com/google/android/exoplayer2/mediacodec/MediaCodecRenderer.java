@@ -8,7 +8,7 @@ import android.media.metrics.LogSessionId;
 import android.os.Bundle;
 import android.os.SystemClock;
 import com.google.android.exoplayer2.BaseRenderer;
-import com.google.android.exoplayer2.C0475C;
+import com.google.android.exoplayer2.C0480C;
 import com.google.android.exoplayer2.ExoPlaybackException;
 import com.google.android.exoplayer2.Format;
 import com.google.android.exoplayer2.FormatHolder;
@@ -293,12 +293,12 @@ public abstract class MediaCodecRenderer extends BaseRenderer {
         this.outputBufferInfo = new MediaCodec.BufferInfo();
         this.currentPlaybackSpeed = 1.0f;
         this.targetPlaybackSpeed = 1.0f;
-        this.renderTimeLimitMs = C0475C.TIME_UNSET;
+        this.renderTimeLimitMs = C0480C.TIME_UNSET;
         this.pendingOutputStreamStartPositionsUs = new long[10];
         this.pendingOutputStreamOffsetsUs = new long[10];
         this.pendingOutputStreamSwitchTimesUs = new long[10];
-        this.outputStreamStartPositionUs = C0475C.TIME_UNSET;
-        setOutputStreamOffsetUs(C0475C.TIME_UNSET);
+        this.outputStreamStartPositionUs = C0480C.TIME_UNSET;
+        setOutputStreamOffsetUs(C0480C.TIME_UNSET);
         batchBuffer.ensureSpaceForWrite(0);
         batchBuffer.data.order(ByteOrder.nativeOrder());
         this.codecOperatingRate = -1.0f;
@@ -306,9 +306,9 @@ public abstract class MediaCodecRenderer extends BaseRenderer {
         this.codecReconfigurationState = 0;
         this.inputIndex = -1;
         this.outputIndex = -1;
-        this.codecHotswapDeadlineMs = C0475C.TIME_UNSET;
-        this.largestQueuedPresentationTimeUs = C0475C.TIME_UNSET;
-        this.lastBufferInStreamPresentationTimeUs = C0475C.TIME_UNSET;
+        this.codecHotswapDeadlineMs = C0480C.TIME_UNSET;
+        this.largestQueuedPresentationTimeUs = C0480C.TIME_UNSET;
+        this.lastBufferInStreamPresentationTimeUs = C0480C.TIME_UNSET;
         this.codecDrainState = 0;
         this.codecDrainAction = 0;
     }
@@ -421,8 +421,8 @@ public abstract class MediaCodecRenderer extends BaseRenderer {
     /* JADX INFO: Access modifiers changed from: protected */
     @Override // com.google.android.exoplayer2.BaseRenderer
     public void onStreamChanged(Format[] formatArr, long j, long j2) throws ExoPlaybackException {
-        if (this.outputStreamOffsetUs == C0475C.TIME_UNSET) {
-            Assertions.checkState(this.outputStreamStartPositionUs == C0475C.TIME_UNSET);
+        if (this.outputStreamOffsetUs == C0480C.TIME_UNSET) {
+            Assertions.checkState(this.outputStreamStartPositionUs == C0480C.TIME_UNSET);
             this.outputStreamStartPositionUs = j;
             setOutputStreamOffsetUs(j2);
             return;
@@ -476,8 +476,8 @@ public abstract class MediaCodecRenderer extends BaseRenderer {
     @Override // com.google.android.exoplayer2.BaseRenderer
     public void onDisabled() {
         this.inputFormat = null;
-        this.outputStreamStartPositionUs = C0475C.TIME_UNSET;
-        setOutputStreamOffsetUs(C0475C.TIME_UNSET);
+        this.outputStreamStartPositionUs = C0480C.TIME_UNSET;
+        setOutputStreamOffsetUs(C0480C.TIME_UNSET);
         this.pendingOutputStreamOffsetCount = 0;
         flushOrReleaseCodec();
     }
@@ -631,7 +631,7 @@ public abstract class MediaCodecRenderer extends BaseRenderer {
     public void resetCodecStateForFlush() {
         resetInputBuffer();
         resetOutputBuffer();
-        this.codecHotswapDeadlineMs = C0475C.TIME_UNSET;
+        this.codecHotswapDeadlineMs = C0480C.TIME_UNSET;
         this.codecReceivedEos = false;
         this.codecReceivedBuffers = false;
         this.codecNeedsAdaptationWorkaroundBuffer = false;
@@ -639,8 +639,8 @@ public abstract class MediaCodecRenderer extends BaseRenderer {
         this.isDecodeOnlyOutputBuffer = false;
         this.isLastOutputBuffer = false;
         this.decodeOnlyPresentationTimestamps.clear();
-        this.largestQueuedPresentationTimeUs = C0475C.TIME_UNSET;
-        this.lastBufferInStreamPresentationTimeUs = C0475C.TIME_UNSET;
+        this.largestQueuedPresentationTimeUs = C0480C.TIME_UNSET;
+        this.lastBufferInStreamPresentationTimeUs = C0480C.TIME_UNSET;
         C2Mp3TimestampTracker c2Mp3TimestampTracker = this.c2Mp3TimestampTracker;
         if (c2Mp3TimestampTracker != null) {
             c2Mp3TimestampTracker.reset();
@@ -881,7 +881,7 @@ public abstract class MediaCodecRenderer extends BaseRenderer {
     }
 
     private boolean shouldContinueRendering(long j) {
-        return this.renderTimeLimitMs == C0475C.TIME_UNSET || SystemClock.elapsedRealtime() - j < this.renderTimeLimitMs;
+        return this.renderTimeLimitMs == C0480C.TIME_UNSET || SystemClock.elapsedRealtime() - j < this.renderTimeLimitMs;
     }
 
     private boolean hasOutputBuffer() {
@@ -1099,7 +1099,7 @@ public abstract class MediaCodecRenderer extends BaseRenderer {
 
     @Override // com.google.android.exoplayer2.Renderer
     public boolean isReady() {
-        return this.inputFormat != null && (isSourceReady() || hasOutputBuffer() || (this.codecHotswapDeadlineMs != C0475C.TIME_UNSET && SystemClock.elapsedRealtime() < this.codecHotswapDeadlineMs));
+        return this.inputFormat != null && (isSourceReady() || hasOutputBuffer() || (this.codecHotswapDeadlineMs != C0480C.TIME_UNSET && SystemClock.elapsedRealtime() < this.codecHotswapDeadlineMs));
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -1226,7 +1226,7 @@ public abstract class MediaCodecRenderer extends BaseRenderer {
                     MediaCodec.BufferInfo bufferInfo4 = this.outputBufferInfo;
                     if (bufferInfo4.presentationTimeUs == 0 && (bufferInfo4.flags & 4) != 0) {
                         long j3 = this.largestQueuedPresentationTimeUs;
-                        if (j3 != C0475C.TIME_UNSET) {
+                        if (j3 != C0480C.TIME_UNSET) {
                             bufferInfo4.presentationTimeUs = j3;
                         }
                     }
@@ -1318,7 +1318,7 @@ public abstract class MediaCodecRenderer extends BaseRenderer {
 
     private void setOutputStreamOffsetUs(long j) {
         this.outputStreamOffsetUs = j;
-        if (j != C0475C.TIME_UNSET) {
+        if (j != C0480C.TIME_UNSET) {
             onOutputStreamOffsetUsChanged(j);
         }
     }
@@ -1337,7 +1337,7 @@ public abstract class MediaCodecRenderer extends BaseRenderer {
         if (drmSession2 == null || drmSession == null || !drmSession2.getSchemeUuid().equals(drmSession.getSchemeUuid()) || Util.SDK_INT < 23) {
             return true;
         }
-        UUID uuid = C0475C.PLAYREADY_UUID;
+        UUID uuid = C0480C.PLAYREADY_UUID;
         if (uuid.equals(drmSession.getSchemeUuid()) || uuid.equals(drmSession2.getSchemeUuid()) || (frameworkCryptoConfig = getFrameworkCryptoConfig(drmSession2)) == null) {
             return true;
         }

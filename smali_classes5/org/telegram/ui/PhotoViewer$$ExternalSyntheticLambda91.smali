@@ -2,42 +2,32 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/ui/Components/NumberPicker$Formatter;
+.implements Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$OnDispatchKeyEventListener;
 
 
-# static fields
-.field public static final synthetic INSTANCE:Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda91;
+# instance fields
+.field public final synthetic f$0:Lorg/telegram/ui/PhotoViewer;
 
 
 # direct methods
-.method static synthetic constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda91;
-
-    invoke-direct {v0}, Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda91;-><init>()V
-
-    sput-object v0, Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda91;->INSTANCE:Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda91;
-
-    return-void
-.end method
-
-.method private synthetic constructor <init>()V
+.method public synthetic constructor <init>(Lorg/telegram/ui/PhotoViewer;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda91;->f$0:Lorg/telegram/ui/PhotoViewer;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final format(I)Ljava/lang/String;
-    .locals 0
+.method public final onDispatchKeyEvent(Landroid/view/KeyEvent;)V
+    .locals 1
 
-    invoke-static {p1}, Lorg/telegram/ui/PhotoViewer;->$r8$lambda$QM47VG8ibbRLTrJG2nK_NkRVbP4(I)Ljava/lang/String;
+    iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda91;->f$0:Lorg/telegram/ui/PhotoViewer;
 
-    move-result-object p1
+    invoke-static {v0, p1}, Lorg/telegram/ui/PhotoViewer;->$r8$lambda$KFY1RrB3Mpb685XuG8zEBJ6FmfM(Lorg/telegram/ui/PhotoViewer;Landroid/view/KeyEvent;)V
 
-    return-object p1
+    return-void
 .end method

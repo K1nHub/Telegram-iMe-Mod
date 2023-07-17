@@ -109,7 +109,7 @@
 
     const-string v9, " "
 
-    const-string v10, "remove from speaking "
+    const-string/jumbo v10, "remove from speaking "
 
     const-string v11, "GroupCall"
 

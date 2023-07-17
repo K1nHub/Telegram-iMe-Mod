@@ -1,6 +1,6 @@
 package com.google.android.exoplayer2.extractor.jpeg;
 
-import com.google.android.exoplayer2.C0475C;
+import com.google.android.exoplayer2.C0480C;
 import com.google.android.exoplayer2.Format;
 import com.google.android.exoplayer2.extractor.Extractor;
 import com.google.android.exoplayer2.extractor.ExtractorInput;
@@ -215,7 +215,7 @@ public final class JpegExtractor implements Extractor {
     private void endReadingWithImageTrack() {
         outputImageTrack(new Metadata.Entry[0]);
         ((ExtractorOutput) Assertions.checkNotNull(this.extractorOutput)).endTracks();
-        this.extractorOutput.seekMap(new SeekMap.Unseekable(C0475C.TIME_UNSET));
+        this.extractorOutput.seekMap(new SeekMap.Unseekable(C0480C.TIME_UNSET));
         this.state = 6;
     }
 

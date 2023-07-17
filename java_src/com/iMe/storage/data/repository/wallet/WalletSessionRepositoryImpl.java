@@ -66,11 +66,12 @@ public final class WalletSessionRepositoryImpl implements WalletSessionRepositor
 
     @Override // com.iMe.storage.domain.repository.wallet.WalletSessionRepository
     public Observable<Result<SessionTokens>> refreshToken() {
+        WalletApi walletApi = this.walletApi;
         String refreshToken = this.authManager.getRefreshToken();
         if (refreshToken == null) {
             refreshToken = "";
         }
-        Observable<R> map = this.walletApi.refreshToken(new RefreshTokenRequest(refreshToken, null, 2, null)).map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new WalletSessionRepositoryImpl$refreshToken$$inlined$mapSuccess$1(this.firebaseErrorHandler, this)));
+        Observable<R> map = walletApi.refreshToken(new RefreshTokenRequest(refreshToken, null, 2, null)).map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new WalletSessionRepositoryImpl$refreshToken$$inlined$mapSuccess$1(this.firebaseErrorHandler, this)));
         Intrinsics.checkNotNullExpressionValue(map, "errorHandler: FirebaseFu…response).toError()\n    }");
         Observable<Result<SessionTokens>> onErrorReturn = map.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new WalletSessionRepositoryImpl$refreshToken$$inlined$handleError$1(this.errorHandler)));
         Intrinsics.checkNotNullExpressionValue(onErrorReturn, "errorHandler: ErrorHandl…ndleError(it).toError() }");

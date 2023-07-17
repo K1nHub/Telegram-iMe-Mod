@@ -34,43 +34,31 @@
 .method private constructor <init>()V
     .locals 8
 
-    .line 45
+    .line 46
     sget-object v1, Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocol;->ONEINCH:Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocol;
 
-    .line 46
+    .line 47
     sget v2, Lcom/iMe/storage/R$drawable;->fork_ic_1_inch_92:I
 
-    .line 47
+    .line 48
     sget v3, Lcom/iMe/storage/R$string;->wallet_swap_protocols_1inch_name:I
 
-    .line 48
+    .line 49
     sget v4, Lcom/iMe/storage/R$string;->wallet_swap_protocols_1inch_description:I
 
-    .line 49
+    .line 50
     sget v5, Lcom/iMe/storage/R$string;->wallet_swap_protocols_1inch_long_description:I
 
-    const/4 v0, 0x3
+    const-string v0, "BINANCE_SMART_CHAIN"
 
-    new-array v0, v0, [Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    const-string v6, "ETHEREUM"
 
-    .line 50
-    sget-object v6, Lcom/iMe/storage/domain/model/crypto/NetworkType;->BINANCE_SMART_CHAIN:Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    const-string v7, "POLYGON"
 
-    const/4 v7, 0x0
+    .line 51
+    filled-new-array {v0, v6, v7}, [Ljava/lang/String;
 
-    aput-object v6, v0, v7
-
-    sget-object v6, Lcom/iMe/storage/domain/model/crypto/NetworkType;->ETHEREUM:Lcom/iMe/storage/domain/model/crypto/NetworkType;
-
-    const/4 v7, 0x1
-
-    aput-object v6, v0, v7
-
-    sget-object v6, Lcom/iMe/storage/domain/model/crypto/NetworkType;->POLYGON:Lcom/iMe/storage/domain/model/crypto/NetworkType;
-
-    const/4 v7, 0x2
-
-    aput-object v6, v0, v7
+    move-result-object v0
 
     invoke-static {v0}, Lkotlin/collections/CollectionsKt;->listOf([Ljava/lang/Object;)Ljava/util/List;
 
@@ -80,7 +68,7 @@
 
     move-object v0, p0
 
-    .line 44
+    .line 45
     invoke-direct/range {v0 .. v7}, Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocolInfo;-><init>(Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocol;IIIILjava/util/List;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
 
     return-void

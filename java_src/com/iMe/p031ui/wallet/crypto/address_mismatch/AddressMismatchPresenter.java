@@ -8,18 +8,18 @@ import com.iMe.storage.domain.utils.p030rx.RxEventBus;
 import com.iMe.storage.domain.utils.p030rx.SchedulersProvider;
 import com.iMe.storage.domain.utils.p030rx.event.DomainRxEvents;
 import com.iMe.storage.domain.utils.system.ResourceManager;
-import com.iMe.utils.extentions.p033rx.RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
+import com.iMe.utils.extentions.p032rx.RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
 import io.reactivex.Observable;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Consumer;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import moxy.InjectViewState;
-import org.telegram.messenger.C3295R;
+import org.telegram.messenger.C3417R;
 /* compiled from: AddressMismatchPresenter.kt */
 @InjectViewState
 /* renamed from: com.iMe.ui.wallet.crypto.address_mismatch.AddressMismatchPresenter */
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class AddressMismatchPresenter extends BasePresenter<AddressMismatchView> {
     private final CryptoPreferenceHelper cryptoPreferenceHelper;
     private final CryptoWalletInteractor cryptoWalletInteractor;
@@ -41,7 +41,7 @@ public final class AddressMismatchPresenter extends BasePresenter<AddressMismatc
     }
 
     public final DialogModel getDeleteWalletDialogModel() {
-        return new DialogModel(this.resourceManager.getString(C3295R.string.wallet_enter_eth_password_delete_wallet_dialog_title), this.resourceManager.getString(C3295R.string.wallet_enter_eth_password_delete_wallet_dialog_description), this.resourceManager.getString(C3295R.string.common_cancel), this.resourceManager.getString(C3295R.string.wallet_enter_eth_password_delete_wallet_dialog_submit_btn));
+        return new DialogModel(this.resourceManager.getString(C3417R.string.wallet_enter_eth_password_delete_wallet_dialog_title), this.resourceManager.getString(C3417R.string.wallet_enter_eth_password_delete_wallet_dialog_description), this.resourceManager.getString(C3417R.string.common_cancel), this.resourceManager.getString(C3417R.string.wallet_enter_eth_password_delete_wallet_dialog_submit_btn));
     }
 
     public static /* synthetic */ void deleteActiveWallet$default(AddressMismatchPresenter addressMismatchPresenter, long j, int i, Object obj) {
@@ -93,6 +93,6 @@ public final class AddressMismatchPresenter extends BasePresenter<AddressMismatc
         RxEventBus rxEventBus = this.rxEventBus;
         Observable observeOn = rxEventBus.getPublisher().ofType(DomainRxEvents.CryptoEvent.class).observeOn(rxEventBus.getSchedulersProvider().mo698ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "publisher\n              …(schedulersProvider.ui())");
-        Intrinsics.checkNotNullExpressionValue(observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2120x4b3c3661(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2121x4b3c3662(null))), "viewState: BaseView? = n…  onError.invoke()\n    })");
+        Intrinsics.checkNotNullExpressionValue(observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2124x4b3c3661(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2125x4b3c3662(null))), "viewState: BaseView? = n…Error.invoke()\n        })");
     }
 }

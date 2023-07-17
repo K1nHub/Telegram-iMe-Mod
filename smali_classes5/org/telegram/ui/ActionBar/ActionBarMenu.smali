@@ -1779,6 +1779,14 @@
 
     if-eqz v3, :cond_1
 
+    move-object v3, v2
+
+    check-cast v3, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
+
+    iget-boolean v3, v3, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->isRippleVisible:Z
+
+    if-eqz v3, :cond_1
+
     .line 49
     iget-boolean v3, p0, Lorg/telegram/ui/ActionBar/ActionBarMenu;->isActionMode:Z
 

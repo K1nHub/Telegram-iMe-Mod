@@ -28,10 +28,10 @@
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 0
 
-    .line 307
+    .line 318
     invoke-direct {p0, p1}, Landroid/widget/ImageView;-><init>(Landroid/content/Context;)V
 
-    .line 302
+    .line 313
     new-instance p1, Landroid/graphics/Path;
 
     invoke-direct {p1}, Landroid/graphics/Path;-><init>()V
@@ -40,7 +40,7 @@
 
     const/4 p1, 0x5
 
-    .line 303
+    .line 314
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p1
@@ -49,7 +49,7 @@
 
     const/16 p1, 0x2a
 
-    .line 304
+    .line 315
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p1
@@ -62,12 +62,12 @@
 .method private updatePath()V
     .locals 7
 
-    .line 348
+    .line 359
     iget-object v0, p0, Lorg/telegram/ui/Cells/AppIconsSelectorCell$AdaptiveIconImageView;->path:Landroid/graphics/Path;
 
     invoke-virtual {v0}, Landroid/graphics/Path;->rewind()V
 
-    .line 349
+    .line 360
     iget-object v0, p0, Lorg/telegram/ui/Cells/AppIconsSelectorCell$AdaptiveIconImageView;->path:Landroid/graphics/Path;
 
     invoke-virtual {p0}, Landroid/widget/ImageView;->getWidth()I
@@ -140,15 +140,15 @@
 .method public draw(Landroid/graphics/Canvas;)V
     .locals 6
 
-    .line 335
+    .line 346
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 336
+    .line 347
     iget-object v0, p0, Lorg/telegram/ui/Cells/AppIconsSelectorCell$AdaptiveIconImageView;->path:Landroid/graphics/Path;
 
     invoke-virtual {p1, v0}, Landroid/graphics/Canvas;->clipPath(Landroid/graphics/Path;)Z
 
-    .line 337
+    .line 348
     iget v0, p0, Lorg/telegram/ui/Cells/AppIconsSelectorCell$AdaptiveIconImageView;->backgroundOuterPadding:I
 
     int-to-float v0, v0
@@ -199,18 +199,18 @@
 
     invoke-virtual {p1, v0, v2, v1, v4}, Landroid/graphics/Canvas;->scale(FFFF)V
 
-    .line 338
+    .line 349
     invoke-super {p0, p1}, Landroid/widget/ImageView;->draw(Landroid/graphics/Canvas;)V
 
-    .line 339
+    .line 350
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 341
+    .line 352
     iget-object v0, p0, Lorg/telegram/ui/Cells/AppIconsSelectorCell$AdaptiveIconImageView;->foreground:Landroid/graphics/drawable/Drawable;
 
     if-eqz v0, :cond_0
 
-    .line 342
+    .line 353
     iget v1, p0, Lorg/telegram/ui/Cells/AppIconsSelectorCell$AdaptiveIconImageView;->outerPadding:I
 
     neg-int v2, v1
@@ -235,7 +235,7 @@
 
     invoke-virtual {v0, v2, v1, v3, v4}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 343
+    .line 354
     iget-object v0, p0, Lorg/telegram/ui/Cells/AppIconsSelectorCell$AdaptiveIconImageView;->foreground:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
@@ -247,10 +247,10 @@
 .method protected onSizeChanged(IIII)V
     .locals 0
 
-    .line 317
+    .line 328
     invoke-super {p0, p1, p2, p3, p4}, Landroid/widget/ImageView;->onSizeChanged(IIII)V
 
-    .line 318
+    .line 329
     invoke-direct {p0}, Lorg/telegram/ui/Cells/AppIconsSelectorCell$AdaptiveIconImageView;->updatePath()V
 
     return-void
@@ -259,7 +259,7 @@
 .method public setBackgroundOuterPadding(I)V
     .locals 0
 
-    .line 330
+    .line 341
     iput p1, p0, Lorg/telegram/ui/Cells/AppIconsSelectorCell$AdaptiveIconImageView;->backgroundOuterPadding:I
 
     return-void
@@ -268,7 +268,7 @@
 .method public setForeground(I)V
     .locals 1
 
-    .line 311
+    .line 322
     invoke-virtual {p0}, Landroid/widget/ImageView;->getContext()Landroid/content/Context;
 
     move-result-object v0
@@ -279,7 +279,7 @@
 
     iput-object p1, p0, Lorg/telegram/ui/Cells/AppIconsSelectorCell$AdaptiveIconImageView;->foreground:Landroid/graphics/drawable/Drawable;
 
-    .line 312
+    .line 323
     invoke-virtual {p0}, Landroid/widget/ImageView;->invalidate()V
 
     return-void
@@ -288,7 +288,7 @@
 .method public setOuterPadding(I)V
     .locals 0
 
-    .line 326
+    .line 337
     iput p1, p0, Lorg/telegram/ui/Cells/AppIconsSelectorCell$AdaptiveIconImageView;->outerPadding:I
 
     return-void
@@ -297,7 +297,7 @@
 .method public setPadding(I)V
     .locals 0
 
-    .line 322
+    .line 333
     invoke-virtual {p0, p1, p1, p1, p1}, Landroid/widget/ImageView;->setPadding(IIII)V
 
     return-void

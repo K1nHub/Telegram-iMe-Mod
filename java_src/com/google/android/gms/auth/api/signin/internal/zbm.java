@@ -159,7 +159,7 @@ public final class zbm {
 
     public static PendingResult zbf(GoogleApiClient googleApiClient, Context context, boolean z) {
         zba.m775d("Revoking access", new Object[0]);
-        String savedRefreshToken = C0693Storage.getInstance(context).getSavedRefreshToken();
+        String savedRefreshToken = C0698Storage.getInstance(context).getSavedRefreshToken();
         zbh(context);
         if (z) {
             return zbb.zba(savedRefreshToken);

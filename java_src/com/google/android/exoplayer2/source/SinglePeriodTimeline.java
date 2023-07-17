@@ -1,7 +1,7 @@
 package com.google.android.exoplayer2.source;
 
 import android.net.Uri;
-import com.google.android.exoplayer2.C0475C;
+import com.google.android.exoplayer2.C0480C;
 import com.google.android.exoplayer2.MediaItem;
 import com.google.android.exoplayer2.Timeline;
 import com.google.android.exoplayer2.util.Assertions;
@@ -44,11 +44,11 @@ public final class SinglePeriodTimeline extends Timeline {
 
     @Deprecated
     public SinglePeriodTimeline(long j, long j2, long j3, long j4, boolean z, boolean z2, boolean z3, Object obj, Object obj2) {
-        this((long) C0475C.TIME_UNSET, (long) C0475C.TIME_UNSET, (long) C0475C.TIME_UNSET, j, j2, j3, j4, z, z2, z3, obj, obj2);
+        this((long) C0480C.TIME_UNSET, (long) C0480C.TIME_UNSET, (long) C0480C.TIME_UNSET, j, j2, j3, j4, z, z2, z3, obj, obj2);
     }
 
     public SinglePeriodTimeline(long j, long j2, long j3, long j4, boolean z, boolean z2, boolean z3, Object obj, MediaItem mediaItem) {
-        this(C0475C.TIME_UNSET, C0475C.TIME_UNSET, C0475C.TIME_UNSET, j, j2, j3, j4, z, z2, false, obj, mediaItem, z3 ? mediaItem.liveConfiguration : null);
+        this(C0480C.TIME_UNSET, C0480C.TIME_UNSET, C0480C.TIME_UNSET, j, j2, j3, j4, z, z2, false, obj, mediaItem, z3 ? mediaItem.liveConfiguration : null);
     }
 
     /* JADX WARN: Illegal instructions before constructor call */

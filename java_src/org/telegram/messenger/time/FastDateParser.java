@@ -18,8 +18,8 @@ import java.util.TreeMap;
 import java.util.concurrent.ConcurrentMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import p034j$.util.DesugarTimeZone;
-import p034j$.util.concurrent.ConcurrentHashMap;
+import p033j$.util.DesugarTimeZone;
+import p033j$.util.concurrent.ConcurrentHashMap;
 /* loaded from: classes4.dex */
 public class FastDateParser implements DateParser, Serializable {
     private static final long serialVersionUID = 2;
@@ -519,7 +519,7 @@ public class FastDateParser implements DateParser, Serializable {
     public static class TimeZoneStrategy extends Strategy {
 
         /* renamed from: ID */
-        private static final int f1417ID = 0;
+        private static final int f1499ID = 0;
         private static final int LONG_DST = 3;
         private static final int LONG_STD = 1;
         private static final int SHORT_DST = 4;

@@ -2,8 +2,11 @@ package com.iMe.storage.domain.interactor.crypto;
 
 import com.iMe.storage.domain.model.Result;
 import com.iMe.storage.domain.model.crypto.Wallet;
+import com.iMe.storage.domain.utils.extentions.ObservableExtKt$sam$i$io_reactivex_functions_Function$0;
 import io.reactivex.Observable;
 import io.reactivex.ObservableSource;
+import java.util.List;
+import kotlin.collections.CollectionsKt__CollectionsKt;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Lambda;
@@ -20,7 +23,8 @@ public final class CryptoWalletInteractor$importWallet$$inlined$flatMapSuccess$1
 
     @Override // kotlin.jvm.functions.Function1
     public final ObservableSource<? extends Result<? extends Wallet>> invoke(Result<? extends Wallet> result) {
-        Observable linkWalletAddressWithCheck;
+        List listOfNotNull;
+        Observable linkWalletsWithCheck;
         Intrinsics.checkNotNullParameter(result, "result");
         if (!(result instanceof Result.Success)) {
             if (result instanceof Result.Error) {
@@ -31,9 +35,10 @@ public final class CryptoWalletInteractor$importWallet$$inlined$flatMapSuccess$1
             return Observable.empty();
         }
         CryptoWalletInteractor cryptoWalletInteractor = this.this$0;
-        Wallet data = result.getData();
-        Intrinsics.checkNotNull(data);
-        linkWalletAddressWithCheck = cryptoWalletInteractor.linkWalletAddressWithCheck(data);
-        return linkWalletAddressWithCheck;
+        listOfNotNull = CollectionsKt__CollectionsKt.listOfNotNull(result.getData());
+        linkWalletsWithCheck = cryptoWalletInteractor.linkWalletsWithCheck(listOfNotNull);
+        Observable map = linkWalletsWithCheck.map(new ObservableExtKt$sam$i$io_reactivex_functions_Function$0(new C1973xca6e8af7()));
+        Intrinsics.checkNotNullExpressionValue(map, "crossinline body: (T) ->…ult as? R\n        }\n    }");
+        return map;
     }
 }

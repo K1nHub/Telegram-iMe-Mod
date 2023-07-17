@@ -1,30 +1,30 @@
 package com.iMe.i_staking.response;
 
 import com.iMe.bots.data.model.database.BotsDbModel$$ExternalSyntheticBackport0;
+import com.iMe.storage.data.network.model.response.wallet.TokenDetailedResponse;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: StakingOperationResponse.kt */
 /* loaded from: classes3.dex */
 public final class StakingOperationResponse {
     private final StakingOperationCostResponse amount;
-    private final StakingTokenResponse approvedToken;
+    private final TokenDetailedResponse approvedToken;
     private final String failReason;
     private final StakingOperationCostResponse fee;
 
     /* renamed from: id */
-    private final long f263id;
+    private final long f345id;
     private final String issuedAt;
     private final String issuer;
-    private final String network;
     private final Boolean safe;
     private final String settledAt;
     private final int stakingId;
     private final String status;
-    private final String token;
+    private final TokenDetailedResponse token;
     private final String transaction;
     private final String type;
 
     public final long component1() {
-        return this.f263id;
+        return this.f345id;
     }
 
     public final StakingOperationCostResponse component10() {
@@ -39,16 +39,12 @@ public final class StakingOperationResponse {
         return this.safe;
     }
 
-    public final StakingTokenResponse component13() {
+    public final TokenDetailedResponse component13() {
         return this.approvedToken;
     }
 
-    public final String component14() {
+    public final TokenDetailedResponse component14() {
         return this.token;
-    }
-
-    public final String component15() {
-        return this.network;
     }
 
     public final int component2() {
@@ -83,15 +79,14 @@ public final class StakingOperationResponse {
         return this.failReason;
     }
 
-    public final StakingOperationResponse copy(long j, int i, String transaction, String type, String status, String issuer, String issuedAt, String str, String str2, StakingOperationCostResponse stakingOperationCostResponse, StakingOperationCostResponse stakingOperationCostResponse2, Boolean bool, StakingTokenResponse stakingTokenResponse, String token, String network) {
+    public final StakingOperationResponse copy(long j, int i, String transaction, String type, String status, String issuer, String issuedAt, String str, String str2, StakingOperationCostResponse stakingOperationCostResponse, StakingOperationCostResponse stakingOperationCostResponse2, Boolean bool, TokenDetailedResponse tokenDetailedResponse, TokenDetailedResponse token) {
         Intrinsics.checkNotNullParameter(transaction, "transaction");
         Intrinsics.checkNotNullParameter(type, "type");
         Intrinsics.checkNotNullParameter(status, "status");
         Intrinsics.checkNotNullParameter(issuer, "issuer");
         Intrinsics.checkNotNullParameter(issuedAt, "issuedAt");
         Intrinsics.checkNotNullParameter(token, "token");
-        Intrinsics.checkNotNullParameter(network, "network");
-        return new StakingOperationResponse(j, i, transaction, type, status, issuer, issuedAt, str, str2, stakingOperationCostResponse, stakingOperationCostResponse2, bool, stakingTokenResponse, token, network);
+        return new StakingOperationResponse(j, i, transaction, type, status, issuer, issuedAt, str, str2, stakingOperationCostResponse, stakingOperationCostResponse2, bool, tokenDetailedResponse, token);
     }
 
     public boolean equals(Object obj) {
@@ -100,13 +95,13 @@ public final class StakingOperationResponse {
         }
         if (obj instanceof StakingOperationResponse) {
             StakingOperationResponse stakingOperationResponse = (StakingOperationResponse) obj;
-            return this.f263id == stakingOperationResponse.f263id && this.stakingId == stakingOperationResponse.stakingId && Intrinsics.areEqual(this.transaction, stakingOperationResponse.transaction) && Intrinsics.areEqual(this.type, stakingOperationResponse.type) && Intrinsics.areEqual(this.status, stakingOperationResponse.status) && Intrinsics.areEqual(this.issuer, stakingOperationResponse.issuer) && Intrinsics.areEqual(this.issuedAt, stakingOperationResponse.issuedAt) && Intrinsics.areEqual(this.settledAt, stakingOperationResponse.settledAt) && Intrinsics.areEqual(this.failReason, stakingOperationResponse.failReason) && Intrinsics.areEqual(this.amount, stakingOperationResponse.amount) && Intrinsics.areEqual(this.fee, stakingOperationResponse.fee) && Intrinsics.areEqual(this.safe, stakingOperationResponse.safe) && Intrinsics.areEqual(this.approvedToken, stakingOperationResponse.approvedToken) && Intrinsics.areEqual(this.token, stakingOperationResponse.token) && Intrinsics.areEqual(this.network, stakingOperationResponse.network);
+            return this.f345id == stakingOperationResponse.f345id && this.stakingId == stakingOperationResponse.stakingId && Intrinsics.areEqual(this.transaction, stakingOperationResponse.transaction) && Intrinsics.areEqual(this.type, stakingOperationResponse.type) && Intrinsics.areEqual(this.status, stakingOperationResponse.status) && Intrinsics.areEqual(this.issuer, stakingOperationResponse.issuer) && Intrinsics.areEqual(this.issuedAt, stakingOperationResponse.issuedAt) && Intrinsics.areEqual(this.settledAt, stakingOperationResponse.settledAt) && Intrinsics.areEqual(this.failReason, stakingOperationResponse.failReason) && Intrinsics.areEqual(this.amount, stakingOperationResponse.amount) && Intrinsics.areEqual(this.fee, stakingOperationResponse.fee) && Intrinsics.areEqual(this.safe, stakingOperationResponse.safe) && Intrinsics.areEqual(this.approvedToken, stakingOperationResponse.approvedToken) && Intrinsics.areEqual(this.token, stakingOperationResponse.token);
         }
         return false;
     }
 
     public int hashCode() {
-        int m706m = ((((((((((((BotsDbModel$$ExternalSyntheticBackport0.m706m(this.f263id) * 31) + this.stakingId) * 31) + this.transaction.hashCode()) * 31) + this.type.hashCode()) * 31) + this.status.hashCode()) * 31) + this.issuer.hashCode()) * 31) + this.issuedAt.hashCode()) * 31;
+        int m706m = ((((((((((((BotsDbModel$$ExternalSyntheticBackport0.m706m(this.f345id) * 31) + this.stakingId) * 31) + this.transaction.hashCode()) * 31) + this.type.hashCode()) * 31) + this.status.hashCode()) * 31) + this.issuer.hashCode()) * 31) + this.issuedAt.hashCode()) * 31;
         String str = this.settledAt;
         int hashCode = (m706m + (str == null ? 0 : str.hashCode())) * 31;
         String str2 = this.failReason;
@@ -117,23 +112,22 @@ public final class StakingOperationResponse {
         int hashCode4 = (hashCode3 + (stakingOperationCostResponse2 == null ? 0 : stakingOperationCostResponse2.hashCode())) * 31;
         Boolean bool = this.safe;
         int hashCode5 = (hashCode4 + (bool == null ? 0 : bool.hashCode())) * 31;
-        StakingTokenResponse stakingTokenResponse = this.approvedToken;
-        return ((((hashCode5 + (stakingTokenResponse != null ? stakingTokenResponse.hashCode() : 0)) * 31) + this.token.hashCode()) * 31) + this.network.hashCode();
+        TokenDetailedResponse tokenDetailedResponse = this.approvedToken;
+        return ((hashCode5 + (tokenDetailedResponse != null ? tokenDetailedResponse.hashCode() : 0)) * 31) + this.token.hashCode();
     }
 
     public String toString() {
-        return "StakingOperationResponse(id=" + this.f263id + ", stakingId=" + this.stakingId + ", transaction=" + this.transaction + ", type=" + this.type + ", status=" + this.status + ", issuer=" + this.issuer + ", issuedAt=" + this.issuedAt + ", settledAt=" + this.settledAt + ", failReason=" + this.failReason + ", amount=" + this.amount + ", fee=" + this.fee + ", safe=" + this.safe + ", approvedToken=" + this.approvedToken + ", token=" + this.token + ", network=" + this.network + ')';
+        return "StakingOperationResponse(id=" + this.f345id + ", stakingId=" + this.stakingId + ", transaction=" + this.transaction + ", type=" + this.type + ", status=" + this.status + ", issuer=" + this.issuer + ", issuedAt=" + this.issuedAt + ", settledAt=" + this.settledAt + ", failReason=" + this.failReason + ", amount=" + this.amount + ", fee=" + this.fee + ", safe=" + this.safe + ", approvedToken=" + this.approvedToken + ", token=" + this.token + ')';
     }
 
-    public StakingOperationResponse(long j, int i, String transaction, String type, String status, String issuer, String issuedAt, String str, String str2, StakingOperationCostResponse stakingOperationCostResponse, StakingOperationCostResponse stakingOperationCostResponse2, Boolean bool, StakingTokenResponse stakingTokenResponse, String token, String network) {
+    public StakingOperationResponse(long j, int i, String transaction, String type, String status, String issuer, String issuedAt, String str, String str2, StakingOperationCostResponse stakingOperationCostResponse, StakingOperationCostResponse stakingOperationCostResponse2, Boolean bool, TokenDetailedResponse tokenDetailedResponse, TokenDetailedResponse token) {
         Intrinsics.checkNotNullParameter(transaction, "transaction");
         Intrinsics.checkNotNullParameter(type, "type");
         Intrinsics.checkNotNullParameter(status, "status");
         Intrinsics.checkNotNullParameter(issuer, "issuer");
         Intrinsics.checkNotNullParameter(issuedAt, "issuedAt");
         Intrinsics.checkNotNullParameter(token, "token");
-        Intrinsics.checkNotNullParameter(network, "network");
-        this.f263id = j;
+        this.f345id = j;
         this.stakingId = i;
         this.transaction = transaction;
         this.type = type;
@@ -145,13 +139,12 @@ public final class StakingOperationResponse {
         this.amount = stakingOperationCostResponse;
         this.fee = stakingOperationCostResponse2;
         this.safe = bool;
-        this.approvedToken = stakingTokenResponse;
+        this.approvedToken = tokenDetailedResponse;
         this.token = token;
-        this.network = network;
     }
 
     public final long getId() {
-        return this.f263id;
+        return this.f345id;
     }
 
     public final int getStakingId() {
@@ -198,15 +191,11 @@ public final class StakingOperationResponse {
         return this.safe;
     }
 
-    public final StakingTokenResponse getApprovedToken() {
+    public final TokenDetailedResponse getApprovedToken() {
         return this.approvedToken;
     }
 
-    public final String getToken() {
+    public final TokenDetailedResponse getToken() {
         return this.token;
-    }
-
-    public final String getNetwork() {
-        return this.network;
     }
 }

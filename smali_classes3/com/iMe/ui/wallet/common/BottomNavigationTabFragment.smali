@@ -1,5 +1,5 @@
 .class public abstract Lcom/iMe/ui/wallet/common/BottomNavigationTabFragment;
-.super Lcom/iMe/ui/base/WalletAuthFragment;
+.super Lcom/iMe/ui/base/wallet_auth/WalletAuthBaseFragment;
 .source "BottomNavigationTabFragment.kt"
 
 
@@ -12,7 +12,7 @@
     .locals 0
 
     .line 6
-    invoke-direct {p0}, Lcom/iMe/ui/base/WalletAuthFragment;-><init>()V
+    invoke-direct {p0}, Lcom/iMe/ui/base/wallet_auth/WalletAuthBaseFragment;-><init>()V
 
     return-void
 .end method
@@ -66,7 +66,7 @@
     .locals 2
 
     .line 20
-    invoke-super {p0}, Lcom/iMe/ui/base/WalletAuthFragment;->onResume()V
+    invoke-super {p0}, Lcom/iMe/ui/base/wallet_auth/WalletAuthBaseFragment;->onResume()V
 
     .line 21
     iget-object v0, p0, Lcom/iMe/ui/wallet/common/BottomNavigationTabFragment;->bottomNavigationDelegate:Lcom/iMe/ui/wallet/common/BottomNavigationDelegate;
@@ -98,7 +98,7 @@
     return-void
 .end method
 
-.method public shouldAskPinCode()Z
+.method protected shouldAskPinCode()Z
     .locals 1
 
     const/4 v0, 0x0

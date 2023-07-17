@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/ChatActivityEnterView;Landroid/content/Context;Lorg/telegram/ui/ChatActivity;Lorg/telegram/messenger/MessagesController;Lorg/telegram/tgnet/TLRPC$ChatFull;Lorg/telegram/tgnet/TLRPC$TL_channels_sendAsPeers;Lorg/telegram/ui/Components/SenderSelectPopup$OnSelectCallback;Landroid/view/ViewGroup;)V
     .locals 7
 
-    .line 3629
+    .line 3631
     iput-object p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$21;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
     iput-object p8, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$21;->val$fl:Landroid/view/ViewGroup;
@@ -53,7 +53,7 @@
 .method public dismiss()V
     .locals 3
 
-    .line 3632
+    .line 3634
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$21;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$17300(Lorg/telegram/ui/Components/ChatActivityEnterView;)Lorg/telegram/ui/Components/SenderSelectPopup;
@@ -62,19 +62,19 @@
 
     if-eq v0, p0, :cond_0
 
-    .line 3633
+    .line 3635
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$21;->val$fl:Landroid/view/ViewGroup;
 
     iget-object v1, p0, Lorg/telegram/ui/Components/SenderSelectPopup;->dimView:Landroid/view/View;
 
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->removeView(Landroid/view/View;)V
 
-    .line 3634
+    .line 3636
     invoke-super {p0}, Lorg/telegram/ui/Components/SenderSelectPopup;->dismiss()V
 
     return-void
 
-    .line 3638
+    .line 3640
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$21;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
@@ -82,7 +82,7 @@
 
     invoke-static {v0, v1}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$17302(Lorg/telegram/ui/Components/ChatActivityEnterView;Lorg/telegram/ui/Components/SenderSelectPopup;)Lorg/telegram/ui/Components/SenderSelectPopup;
 
-    .line 3640
+    .line 3642
     iget-boolean v0, p0, Lorg/telegram/ui/Components/SenderSelectPopup;->runningCustomSprings:Z
 
     if-nez v0, :cond_1
@@ -91,10 +91,10 @@
 
     new-array v0, v0, [Landroidx/dynamicanimation/animation/SpringAnimation;
 
-    .line 3641
+    .line 3643
     invoke-virtual {p0, v0}, Lorg/telegram/ui/Components/SenderSelectPopup;->startDismissAnimation([Landroidx/dynamicanimation/animation/SpringAnimation;)V
 
-    .line 3642
+    .line 3644
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$21;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$15500(Lorg/telegram/ui/Components/ChatActivityEnterView;)Lorg/telegram/ui/Components/SenderSelectView;
@@ -109,7 +109,7 @@
 
     goto :goto_1
 
-    .line 3644
+    .line 3646
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/Components/SenderSelectPopup;->springAnimations:Ljava/util/List;
 
@@ -130,18 +130,18 @@
 
     check-cast v1, Landroidx/dynamicanimation/animation/SpringAnimation;
 
-    .line 3645
+    .line 3647
     invoke-virtual {v1}, Landroidx/dynamicanimation/animation/DynamicAnimation;->cancel()V
 
     goto :goto_0
 
-    .line 3647
+    .line 3649
     :cond_2
     iget-object v0, p0, Lorg/telegram/ui/Components/SenderSelectPopup;->springAnimations:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->clear()V
 
-    .line 3648
+    .line 3650
     invoke-super {p0}, Lorg/telegram/ui/Components/SenderSelectPopup;->dismiss()V
 
     :goto_1

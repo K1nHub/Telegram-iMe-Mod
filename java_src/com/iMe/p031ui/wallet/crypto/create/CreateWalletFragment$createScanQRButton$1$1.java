@@ -1,6 +1,5 @@
 package com.iMe.p031ui.wallet.crypto.create;
 
-import android.os.Build;
 import android.view.View;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
@@ -29,7 +28,7 @@ public final class CreateWalletFragment$createScanQRButton$1$1 extends Lambda im
     /* renamed from: invoke  reason: avoid collision after fix types in other method */
     public final void invoke2(View it) {
         Intrinsics.checkNotNullParameter(it, "it");
-        if (Build.VERSION.SDK_INT < 23 || this.this$0.getParentActivity().checkSelfPermission("android.permission.CAMERA") == 0) {
+        if (this.this$0.getParentActivity().checkSelfPermission("android.permission.CAMERA") == 0) {
             this.this$0.openQRScan();
         } else {
             this.this$0.getParentActivity().requestPermissions(new String[]{"android.permission.CAMERA"}, 34);

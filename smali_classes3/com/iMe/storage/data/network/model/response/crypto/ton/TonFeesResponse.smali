@@ -8,11 +8,11 @@
 
 .field private final fee:D
 
-.field private final feeInDollars:F
+.field private final feeInDollars:D
 
 
 # direct methods
-.method public constructor <init>(FDF)V
+.method public constructor <init>(FDD)V
     .locals 0
 
     .line 3
@@ -25,36 +25,46 @@
     iput-wide p2, p0, Lcom/iMe/storage/data/network/model/response/crypto/ton/TonFeesResponse;->fee:D
 
     .line 6
-    iput p4, p0, Lcom/iMe/storage/data/network/model/response/crypto/ton/TonFeesResponse;->feeInDollars:F
+    iput-wide p4, p0, Lcom/iMe/storage/data/network/model/response/crypto/ton/TonFeesResponse;->feeInDollars:D
 
     return-void
 .end method
 
-.method public static synthetic copy$default(Lcom/iMe/storage/data/network/model/response/crypto/ton/TonFeesResponse;FDFILjava/lang/Object;)Lcom/iMe/storage/data/network/model/response/crypto/ton/TonFeesResponse;
-    .locals 0
+.method public static synthetic copy$default(Lcom/iMe/storage/data/network/model/response/crypto/ton/TonFeesResponse;FDDILjava/lang/Object;)Lcom/iMe/storage/data/network/model/response/crypto/ton/TonFeesResponse;
+    .locals 2
 
-    and-int/lit8 p6, p5, 0x1
+    and-int/lit8 p7, p6, 0x1
 
-    if-eqz p6, :cond_0
+    if-eqz p7, :cond_0
 
     iget p1, p0, Lcom/iMe/storage/data/network/model/response/crypto/ton/TonFeesResponse;->duration:F
 
     :cond_0
-    and-int/lit8 p6, p5, 0x2
+    and-int/lit8 p7, p6, 0x2
 
-    if-eqz p6, :cond_1
+    if-eqz p7, :cond_1
 
     iget-wide p2, p0, Lcom/iMe/storage/data/network/model/response/crypto/ton/TonFeesResponse;->fee:D
 
     :cond_1
-    and-int/lit8 p5, p5, 0x4
+    move-wide v0, p2
 
-    if-eqz p5, :cond_2
+    and-int/lit8 p2, p6, 0x4
 
-    iget p4, p0, Lcom/iMe/storage/data/network/model/response/crypto/ton/TonFeesResponse;->feeInDollars:F
+    if-eqz p2, :cond_2
+
+    iget-wide p4, p0, Lcom/iMe/storage/data/network/model/response/crypto/ton/TonFeesResponse;->feeInDollars:D
 
     :cond_2
-    invoke-virtual {p0, p1, p2, p3, p4}, Lcom/iMe/storage/data/network/model/response/crypto/ton/TonFeesResponse;->copy(FDF)Lcom/iMe/storage/data/network/model/response/crypto/ton/TonFeesResponse;
+    move-wide p6, p4
+
+    move-object p2, p0
+
+    move p3, p1
+
+    move-wide p4, v0
+
+    invoke-virtual/range {p2 .. p7}, Lcom/iMe/storage/data/network/model/response/crypto/ton/TonFeesResponse;->copy(FDD)Lcom/iMe/storage/data/network/model/response/crypto/ton/TonFeesResponse;
 
     move-result-object p0
 
@@ -79,22 +89,30 @@
     return-wide v0
 .end method
 
-.method public final component3()F
-    .locals 1
+.method public final component3()D
+    .locals 2
 
-    iget v0, p0, Lcom/iMe/storage/data/network/model/response/crypto/ton/TonFeesResponse;->feeInDollars:F
+    iget-wide v0, p0, Lcom/iMe/storage/data/network/model/response/crypto/ton/TonFeesResponse;->feeInDollars:D
 
-    return v0
+    return-wide v0
 .end method
 
-.method public final copy(FDF)Lcom/iMe/storage/data/network/model/response/crypto/ton/TonFeesResponse;
-    .locals 1
+.method public final copy(FDD)Lcom/iMe/storage/data/network/model/response/crypto/ton/TonFeesResponse;
+    .locals 7
 
-    new-instance v0, Lcom/iMe/storage/data/network/model/response/crypto/ton/TonFeesResponse;
+    new-instance v6, Lcom/iMe/storage/data/network/model/response/crypto/ton/TonFeesResponse;
 
-    invoke-direct {v0, p1, p2, p3, p4}, Lcom/iMe/storage/data/network/model/response/crypto/ton/TonFeesResponse;-><init>(FDF)V
+    move-object v0, v6
 
-    return-object v0
+    move v1, p1
+
+    move-wide v2, p2
+
+    move-wide v4, p4
+
+    invoke-direct/range {v0 .. v5}, Lcom/iMe/storage/data/network/model/response/crypto/ton/TonFeesResponse;-><init>(FDD)V
+
+    return-object v6
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
@@ -144,11 +162,11 @@
     return v2
 
     :cond_3
-    iget v1, p0, Lcom/iMe/storage/data/network/model/response/crypto/ton/TonFeesResponse;->feeInDollars:F
+    iget-wide v3, p0, Lcom/iMe/storage/data/network/model/response/crypto/ton/TonFeesResponse;->feeInDollars:D
 
-    iget p1, p1, Lcom/iMe/storage/data/network/model/response/crypto/ton/TonFeesResponse;->feeInDollars:F
+    iget-wide v5, p1, Lcom/iMe/storage/data/network/model/response/crypto/ton/TonFeesResponse;->feeInDollars:D
 
-    invoke-static {v1, p1}, Ljava/lang/Float;->compare(FF)I
+    invoke-static {v3, v4, v5, v6}, Ljava/lang/Double;->compare(DD)I
 
     move-result p1
 
@@ -178,13 +196,13 @@
     return-wide v0
 .end method
 
-.method public final getFeeInDollars()F
-    .locals 1
+.method public final getFeeInDollars()D
+    .locals 2
 
     .line 6
-    iget v0, p0, Lcom/iMe/storage/data/network/model/response/crypto/ton/TonFeesResponse;->feeInDollars:F
+    iget-wide v0, p0, Lcom/iMe/storage/data/network/model/response/crypto/ton/TonFeesResponse;->feeInDollars:D
 
-    return v0
+    return-wide v0
 .end method
 
 .method public hashCode()I
@@ -208,9 +226,9 @@
 
     mul-int/lit8 v0, v0, 0x1f
 
-    iget v1, p0, Lcom/iMe/storage/data/network/model/response/crypto/ton/TonFeesResponse;->feeInDollars:F
+    iget-wide v1, p0, Lcom/iMe/storage/data/network/model/response/crypto/ton/TonFeesResponse;->feeInDollars:D
 
-    invoke-static {v1}, Ljava/lang/Float;->floatToIntBits(F)I
+    invoke-static {v1, v2}, Lcom/iMe/i_staking/response/StakingDetailedMetadataResponse$$ExternalSyntheticBackport0;->m(D)I
 
     move-result v1
 
@@ -246,9 +264,9 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget v1, p0, Lcom/iMe/storage/data/network/model/response/crypto/ton/TonFeesResponse;->feeInDollars:F
+    iget-wide v1, p0, Lcom/iMe/storage/data/network/model/response/crypto/ton/TonFeesResponse;->feeInDollars:D
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
 
     const/16 v1, 0x29
 

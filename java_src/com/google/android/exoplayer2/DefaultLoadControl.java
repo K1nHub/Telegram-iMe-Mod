@@ -195,7 +195,7 @@ public class DefaultLoadControl implements LoadControl {
     public boolean shouldStartPlayback(long j, float f, boolean z, long j2) {
         long playoutDurationForMediaDuration = Util.getPlayoutDurationForMediaDuration(j, f);
         long j3 = z ? this.bufferForPlaybackAfterRebufferUs : this.bufferForPlaybackUs;
-        if (j2 != C0475C.TIME_UNSET) {
+        if (j2 != C0480C.TIME_UNSET) {
             j3 = Math.min(j2 / 2, j3);
         }
         return j3 <= 0 || playoutDurationForMediaDuration >= j3 || (!this.prioritizeTimeOverSizeThresholds && this.allocator.getTotalBytesAllocated() >= this.targetBufferBytes);

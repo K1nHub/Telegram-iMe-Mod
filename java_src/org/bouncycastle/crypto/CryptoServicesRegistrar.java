@@ -5,13 +5,13 @@ import java.math.BigInteger;
 import java.security.SecureRandom;
 import java.util.HashMap;
 import java.util.Map;
-import org.bouncycastle.asn1.p040x9.X9ECParameters;
+import org.bouncycastle.asn1.p039x9.X9ECParameters;
 import org.bouncycastle.crypto.params.DHParameters;
 import org.bouncycastle.crypto.params.DHValidationParameters;
 import org.bouncycastle.crypto.params.DSAParameters;
 import org.bouncycastle.crypto.params.DSAValidationParameters;
 import org.bouncycastle.util.encoders.Hex;
-import p034j$.util.DesugarCollections;
+import p033j$.util.DesugarCollections;
 /* loaded from: classes4.dex */
 public final class CryptoServicesRegistrar {
     private static final Object cacheLock;

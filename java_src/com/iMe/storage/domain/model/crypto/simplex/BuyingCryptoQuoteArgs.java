@@ -1,6 +1,5 @@
 package com.iMe.storage.domain.model.crypto.simplex;
 
-import com.iMe.storage.domain.model.crypto.NetworkType;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: BuyingCryptoQuoteArgs.kt */
 /* loaded from: classes3.dex */
@@ -8,10 +7,10 @@ public final class BuyingCryptoQuoteArgs {
     private final float amount;
     private final Currency digitalCurrency;
     private final Currency fiatCurrency;
-    private final NetworkType networkType;
+    private final String networkId;
     private final Currency requestedCurrency;
 
-    public static /* synthetic */ BuyingCryptoQuoteArgs copy$default(BuyingCryptoQuoteArgs buyingCryptoQuoteArgs, Currency currency, Currency currency2, Currency currency3, float f, NetworkType networkType, int i, Object obj) {
+    public static /* synthetic */ BuyingCryptoQuoteArgs copy$default(BuyingCryptoQuoteArgs buyingCryptoQuoteArgs, Currency currency, Currency currency2, Currency currency3, float f, String str, int i, Object obj) {
         if ((i & 1) != 0) {
             currency = buyingCryptoQuoteArgs.digitalCurrency;
         }
@@ -28,9 +27,9 @@ public final class BuyingCryptoQuoteArgs {
         }
         float f2 = f;
         if ((i & 16) != 0) {
-            networkType = buyingCryptoQuoteArgs.networkType;
+            str = buyingCryptoQuoteArgs.networkId;
         }
-        return buyingCryptoQuoteArgs.copy(currency, currency4, currency5, f2, networkType);
+        return buyingCryptoQuoteArgs.copy(currency, currency4, currency5, f2, str);
     }
 
     public final Currency component1() {
@@ -49,16 +48,16 @@ public final class BuyingCryptoQuoteArgs {
         return this.amount;
     }
 
-    public final NetworkType component5() {
-        return this.networkType;
+    public final String component5() {
+        return this.networkId;
     }
 
-    public final BuyingCryptoQuoteArgs copy(Currency digitalCurrency, Currency fiatCurrency, Currency requestedCurrency, float f, NetworkType networkType) {
+    public final BuyingCryptoQuoteArgs copy(Currency digitalCurrency, Currency fiatCurrency, Currency requestedCurrency, float f, String networkId) {
         Intrinsics.checkNotNullParameter(digitalCurrency, "digitalCurrency");
         Intrinsics.checkNotNullParameter(fiatCurrency, "fiatCurrency");
         Intrinsics.checkNotNullParameter(requestedCurrency, "requestedCurrency");
-        Intrinsics.checkNotNullParameter(networkType, "networkType");
-        return new BuyingCryptoQuoteArgs(digitalCurrency, fiatCurrency, requestedCurrency, f, networkType);
+        Intrinsics.checkNotNullParameter(networkId, "networkId");
+        return new BuyingCryptoQuoteArgs(digitalCurrency, fiatCurrency, requestedCurrency, f, networkId);
     }
 
     public boolean equals(Object obj) {
@@ -67,29 +66,29 @@ public final class BuyingCryptoQuoteArgs {
         }
         if (obj instanceof BuyingCryptoQuoteArgs) {
             BuyingCryptoQuoteArgs buyingCryptoQuoteArgs = (BuyingCryptoQuoteArgs) obj;
-            return Intrinsics.areEqual(this.digitalCurrency, buyingCryptoQuoteArgs.digitalCurrency) && Intrinsics.areEqual(this.fiatCurrency, buyingCryptoQuoteArgs.fiatCurrency) && Intrinsics.areEqual(this.requestedCurrency, buyingCryptoQuoteArgs.requestedCurrency) && Float.compare(this.amount, buyingCryptoQuoteArgs.amount) == 0 && this.networkType == buyingCryptoQuoteArgs.networkType;
+            return Intrinsics.areEqual(this.digitalCurrency, buyingCryptoQuoteArgs.digitalCurrency) && Intrinsics.areEqual(this.fiatCurrency, buyingCryptoQuoteArgs.fiatCurrency) && Intrinsics.areEqual(this.requestedCurrency, buyingCryptoQuoteArgs.requestedCurrency) && Float.compare(this.amount, buyingCryptoQuoteArgs.amount) == 0 && Intrinsics.areEqual(this.networkId, buyingCryptoQuoteArgs.networkId);
         }
         return false;
     }
 
     public int hashCode() {
-        return (((((((this.digitalCurrency.hashCode() * 31) + this.fiatCurrency.hashCode()) * 31) + this.requestedCurrency.hashCode()) * 31) + Float.floatToIntBits(this.amount)) * 31) + this.networkType.hashCode();
+        return (((((((this.digitalCurrency.hashCode() * 31) + this.fiatCurrency.hashCode()) * 31) + this.requestedCurrency.hashCode()) * 31) + Float.floatToIntBits(this.amount)) * 31) + this.networkId.hashCode();
     }
 
     public String toString() {
-        return "BuyingCryptoQuoteArgs(digitalCurrency=" + this.digitalCurrency + ", fiatCurrency=" + this.fiatCurrency + ", requestedCurrency=" + this.requestedCurrency + ", amount=" + this.amount + ", networkType=" + this.networkType + ')';
+        return "BuyingCryptoQuoteArgs(digitalCurrency=" + this.digitalCurrency + ", fiatCurrency=" + this.fiatCurrency + ", requestedCurrency=" + this.requestedCurrency + ", amount=" + this.amount + ", networkId=" + this.networkId + ')';
     }
 
-    public BuyingCryptoQuoteArgs(Currency digitalCurrency, Currency fiatCurrency, Currency requestedCurrency, float f, NetworkType networkType) {
+    public BuyingCryptoQuoteArgs(Currency digitalCurrency, Currency fiatCurrency, Currency requestedCurrency, float f, String networkId) {
         Intrinsics.checkNotNullParameter(digitalCurrency, "digitalCurrency");
         Intrinsics.checkNotNullParameter(fiatCurrency, "fiatCurrency");
         Intrinsics.checkNotNullParameter(requestedCurrency, "requestedCurrency");
-        Intrinsics.checkNotNullParameter(networkType, "networkType");
+        Intrinsics.checkNotNullParameter(networkId, "networkId");
         this.digitalCurrency = digitalCurrency;
         this.fiatCurrency = fiatCurrency;
         this.requestedCurrency = requestedCurrency;
         this.amount = f;
-        this.networkType = networkType;
+        this.networkId = networkId;
     }
 
     public final Currency getDigitalCurrency() {
@@ -108,7 +107,7 @@ public final class BuyingCryptoQuoteArgs {
         return this.amount;
     }
 
-    public final NetworkType getNetworkType() {
-        return this.networkType;
+    public final String getNetworkId() {
+        return this.networkId;
     }
 }

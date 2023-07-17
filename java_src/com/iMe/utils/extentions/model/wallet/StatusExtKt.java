@@ -3,7 +3,7 @@ package com.iMe.utils.extentions.model.wallet;
 import com.iMe.storage.data.network.model.response.base.Status;
 import kotlin.NoWhenBranchMatchedException;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.p044ui.ActionBar.Theme;
+import org.telegram.p043ui.ActionBar.Theme;
 /* compiled from: StatusExt.kt */
 /* loaded from: classes4.dex */
 public final class StatusExtKt {
@@ -35,7 +35,7 @@ public final class StatusExtKt {
         }
     }
 
-    public static final int colorKey(Status status) {
+    public static final int getColorKey(Status status) {
         Intrinsics.checkNotNullParameter(status, "<this>");
         int i = WhenMappings.$EnumSwitchMapping$0[status.ordinal()];
         if (i != 1) {

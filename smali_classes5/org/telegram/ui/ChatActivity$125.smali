@@ -18,7 +18,7 @@
 .method constructor <init>(Lorg/telegram/ui/ChatActivity;Landroid/content/Context;)V
     .locals 0
 
-    .line 27722
+    .line 27543
     invoke-direct {p0, p2}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
     return-void
@@ -29,7 +29,7 @@
 .method protected onMeasure(II)V
     .locals 3
 
-    .line 27725
+    .line 27546
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getMode(I)I
 
     move-result v0
@@ -44,7 +44,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 27726
+    .line 27547
     invoke-virtual {p0}, Landroid/widget/TextView;->getLayout()Landroid/text/Layout;
 
     move-result-object p1
@@ -53,7 +53,7 @@
 
     move v1, v0
 
-    .line 27728
+    .line 27549
     :goto_0
     invoke-virtual {p1}, Landroid/text/Layout;->getLineCount()I
 
@@ -61,7 +61,7 @@
 
     if-ge v0, v2, :cond_0
 
-    .line 27729
+    .line 27550
     invoke-virtual {p1, v0}, Landroid/text/Layout;->getLineWidth(I)F
 
     move-result v2
@@ -76,7 +76,7 @@
 
     goto :goto_0
 
-    .line 27731
+    .line 27552
     :cond_0
     invoke-virtual {p0}, Landroid/widget/TextView;->getPaddingLeft()I
 
@@ -96,7 +96,7 @@
 
     move-result p1
 
-    .line 27733
+    .line 27554
     :cond_1
     invoke-super {p0, p1, p2}, Landroid/widget/TextView;->onMeasure(II)V
 

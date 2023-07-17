@@ -111,16 +111,20 @@ public abstract class AccountItem extends NoChildNode {
     /* loaded from: classes3.dex */
     public static final class Token extends AccountItem {
         private TokenBalance balance;
+        private final boolean isBalanceHidden;
         private final boolean isQuotationVisible;
 
-        public static /* synthetic */ Token copy$default(Token token, TokenBalance tokenBalance, boolean z, int i, Object obj) {
+        public static /* synthetic */ Token copy$default(Token token, TokenBalance tokenBalance, boolean z, boolean z2, int i, Object obj) {
             if ((i & 1) != 0) {
                 tokenBalance = token.getBalance();
             }
             if ((i & 2) != 0) {
                 z = token.isQuotationVisible;
             }
-            return token.copy(tokenBalance, z);
+            if ((i & 4) != 0) {
+                z2 = token.isBalanceHidden;
+            }
+            return token.copy(tokenBalance, z, z2);
         }
 
         public final TokenBalance component1() {
@@ -131,9 +135,13 @@ public abstract class AccountItem extends NoChildNode {
             return this.isQuotationVisible;
         }
 
-        public final Token copy(TokenBalance balance, boolean z) {
+        public final boolean component3() {
+            return this.isBalanceHidden;
+        }
+
+        public final Token copy(TokenBalance balance, boolean z, boolean z2) {
             Intrinsics.checkNotNullParameter(balance, "balance");
-            return new Token(balance, z);
+            return new Token(balance, z, z2);
         }
 
         public boolean equals(Object obj) {
@@ -142,7 +150,7 @@ public abstract class AccountItem extends NoChildNode {
             }
             if (obj instanceof Token) {
                 Token token = (Token) obj;
-                return Intrinsics.areEqual(getBalance(), token.getBalance()) && this.isQuotationVisible == token.isQuotationVisible;
+                return Intrinsics.areEqual(getBalance(), token.getBalance()) && this.isQuotationVisible == token.isQuotationVisible && this.isBalanceHidden == token.isBalanceHidden;
             }
             return false;
         }
@@ -155,11 +163,13 @@ public abstract class AccountItem extends NoChildNode {
             if (z != 0) {
                 i = 1;
             }
-            return hashCode + i;
+            int i2 = (hashCode + i) * 31;
+            boolean z2 = this.isBalanceHidden;
+            return i2 + (z2 ? 1 : z2 ? 1 : 0);
         }
 
         public String toString() {
-            return "Token(balance=" + getBalance() + ", isQuotationVisible=" + this.isQuotationVisible + ')';
+            return "Token(balance=" + getBalance() + ", isQuotationVisible=" + this.isQuotationVisible + ", isBalanceHidden=" + this.isBalanceHidden + ')';
         }
 
         @Override // com.iMe.model.wallet.home.AccountItem
@@ -177,12 +187,17 @@ public abstract class AccountItem extends NoChildNode {
             return this.isQuotationVisible;
         }
 
+        public final boolean isBalanceHidden() {
+            return this.isBalanceHidden;
+        }
+
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public Token(TokenBalance balance, boolean z) {
+        public Token(TokenBalance balance, boolean z, boolean z2) {
             super(balance, null);
             Intrinsics.checkNotNullParameter(balance, "balance");
             this.balance = balance;
             this.isQuotationVisible = z;
+            this.isBalanceHidden = z2;
         }
     }
 }

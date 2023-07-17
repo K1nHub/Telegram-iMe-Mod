@@ -1,7 +1,9 @@
 package com.iMe.p031ui.wallet.staking.operations;
 
 import com.iMe.p031ui.base.mvp.base.BasePresenter;
-import com.iMe.storage.domain.model.crypto.NetworkType;
+import com.iMe.storage.data.utils.crypto.NetworksHelper;
+import com.iMe.storage.domain.model.crypto.BlockchainType;
+import com.iMe.storage.domain.model.crypto.Network;
 import com.iMe.storage.domain.storage.CryptoPreferenceHelper;
 import com.iMe.storage.domain.utils.p030rx.RxEventBus;
 import java.util.List;
@@ -14,25 +16,25 @@ import moxy.InjectViewState;
 /* loaded from: classes4.dex */
 public final class StakingOperationsPresenter extends BasePresenter<StakingOperationsView> {
     private final RxEventBus rxEventBus;
-    private NetworkType selectedNetworkType;
+    private Network selectedNetwork;
 
     public StakingOperationsPresenter(CryptoPreferenceHelper cryptoPreferenceHelper, RxEventBus rxEventBus) {
-        NetworkType networkType;
+        Network network;
         Intrinsics.checkNotNullParameter(cryptoPreferenceHelper, "cryptoPreferenceHelper");
         Intrinsics.checkNotNullParameter(rxEventBus, "rxEventBus");
         this.rxEventBus = rxEventBus;
-        if (cryptoPreferenceHelper.getNetworkType().isEVM()) {
-            networkType = cryptoPreferenceHelper.getNetworkType();
+        if (cryptoPreferenceHelper.getNetwork().getBlockchainType() == BlockchainType.EVM) {
+            network = cryptoPreferenceHelper.getNetwork();
         } else {
-            networkType = (NetworkType) CollectionsKt.first((List<? extends Object>) NetworkType.Companion.getEVMNetworks());
+            network = (Network) CollectionsKt.first((List<? extends Object>) NetworksHelper.INSTANCE.getEVMNetworks());
         }
-        this.selectedNetworkType = networkType;
+        this.selectedNetwork = network;
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
     @Override // moxy.MvpPresenter
     public void onFirstViewAttach() {
-        ((StakingOperationsView) getViewState()).setupNetworkType(this.selectedNetworkType);
+        ((StakingOperationsView) getViewState()).setupNetwork(this.selectedNetwork);
     }
 
     public final void setupNavigationRouter() {
@@ -44,6 +46,6 @@ public final class StakingOperationsPresenter extends BasePresenter<StakingOpera
     }
 
     public final void startChooseNetworkDialog() {
-        ((StakingOperationsView) getViewState()).showChooseNetworkDialog(this.selectedNetworkType, NetworkType.Companion.getEVMNetworks(), new StakingOperationsPresenter$startChooseNetworkDialog$1(this));
+        ((StakingOperationsView) getViewState()).showChooseNetworkDialog(this.selectedNetwork, NetworksHelper.INSTANCE.getEVMNetworks(), new StakingOperationsPresenter$startChooseNetworkDialog$1(this));
     }
 }

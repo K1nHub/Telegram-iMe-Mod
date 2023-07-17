@@ -30,7 +30,7 @@
 .method constructor <init>(Lorg/telegram/ui/ContactsActivity;)V
     .locals 0
 
-    .line 647
+    .line 646
     iput-object p1, p0, Lorg/telegram/ui/ContactsActivity$2;->this$0:Lorg/telegram/ui/ContactsActivity;
 
     invoke-direct {p0}, Lorg/telegram/ui/ActionBar/ActionBar$ActionBarMenuOnItemClick;-><init>()V
@@ -41,7 +41,7 @@
 .method private synthetic lambda$onItemClick$0()V
     .locals 1
 
-    .line 658
+    .line 657
     iget-object v0, p0, Lorg/telegram/ui/ContactsActivity$2;->this$0:Lorg/telegram/ui/ContactsActivity;
 
     iget-object v0, v0, Lorg/telegram/ui/ContactsActivity;->presenter:Lcom/iMe/ui/contacts/ContactsPresenter;
@@ -60,7 +60,7 @@
 
     if-ne p1, v0, :cond_0
 
-    .line 651
+    .line 650
     iget-object v1, p0, Lorg/telegram/ui/ContactsActivity$2;->this$0:Lorg/telegram/ui/ContactsActivity;
 
     invoke-static {v1}, Lorg/telegram/ui/ContactsActivity;->access$100(Lorg/telegram/ui/ContactsActivity;)Lorg/telegram/ui/ActionBar/ActionBar;
@@ -81,7 +81,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 652
+    .line 651
     iget-object p1, p0, Lorg/telegram/ui/ContactsActivity$2;->this$0:Lorg/telegram/ui/ContactsActivity;
 
     iget-object p1, p1, Lorg/telegram/ui/ContactsActivity;->presenter:Lcom/iMe/ui/contacts/ContactsPresenter;
@@ -90,25 +90,25 @@
 
     goto :goto_2
 
-    .line 653
+    .line 652
     :cond_0
     sget v1, Lcom/iMe/common/IdFabric$Menu;->CONTACTS_PRIVACY_SETTINGS:I
 
     if-ne p1, v1, :cond_1
 
-    .line 654
+    .line 653
     new-instance p1, Landroid/os/Bundle;
 
     invoke-direct {p1}, Landroid/os/Bundle;-><init>()V
 
-    .line 655
+    .line 654
     sget v0, Lcom/iMe/common/IdFabric$CustomType;->CONTACTS_PRIVACY_SETTINGS:I
 
     const-string v1, "custom_screen_type"
 
     invoke-virtual {p1, v1, v0}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
-    .line 656
+    .line 655
     iget-object v0, p0, Lorg/telegram/ui/ContactsActivity$2;->this$0:Lorg/telegram/ui/ContactsActivity;
 
     new-instance v1, Lorg/telegram/ui/PrivacySettingsActivity;
@@ -119,13 +119,13 @@
 
     goto :goto_2
 
-    .line 657
+    .line 656
     :cond_1
     sget v1, Lcom/iMe/common/IdFabric$Menu;->DELETE:I
 
     if-ne p1, v1, :cond_2
 
-    .line 658
+    .line 657
     iget-object p1, p0, Lorg/telegram/ui/ContactsActivity$2;->this$0:Lorg/telegram/ui/ContactsActivity;
 
     new-instance v0, Lorg/telegram/ui/ContactsActivity$2$$ExternalSyntheticLambda0;
@@ -139,7 +139,7 @@
     :cond_2
     if-ne p1, v0, :cond_3
 
-    .line 661
+    .line 660
     iget-object p1, p0, Lorg/telegram/ui/ContactsActivity$2;->this$0:Lorg/telegram/ui/ContactsActivity;
 
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->finishFragment()V
@@ -151,17 +151,17 @@
 
     if-ne p1, v0, :cond_6
 
-    .line 663
+    .line 662
     invoke-static {}, Lorg/telegram/messenger/SharedConfig;->toggleSortContactsByName()V
 
-    .line 664
+    .line 663
     iget-object p1, p0, Lorg/telegram/ui/ContactsActivity$2;->this$0:Lorg/telegram/ui/ContactsActivity;
 
     sget-boolean v1, Lorg/telegram/messenger/SharedConfig;->sortContactsByName:Z
 
     invoke-static {p1, v1}, Lorg/telegram/ui/ContactsActivity;->access$402(Lorg/telegram/ui/ContactsActivity;Z)Z
 
-    .line 665
+    .line 664
     iget-object p1, p0, Lorg/telegram/ui/ContactsActivity$2;->this$0:Lorg/telegram/ui/ContactsActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ContactsActivity;->access$500(Lorg/telegram/ui/ContactsActivity;)Lorg/telegram/ui/Adapters/ContactsAdapter;
@@ -186,7 +186,7 @@
 
     invoke-virtual {p1, v0, v1}, Lorg/telegram/ui/Adapters/ContactsAdapter;->setSortType(IZ)V
 
-    .line 666
+    .line 665
     iget-object p1, p0, Lorg/telegram/ui/ContactsActivity$2;->this$0:Lorg/telegram/ui/ContactsActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ContactsActivity;->access$600(Lorg/telegram/ui/ContactsActivity;)Lorg/telegram/ui/ActionBar/ActionBarMenuItem;

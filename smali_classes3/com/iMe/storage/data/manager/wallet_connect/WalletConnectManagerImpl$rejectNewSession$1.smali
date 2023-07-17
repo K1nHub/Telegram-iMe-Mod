@@ -52,7 +52,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 161
+    .line 160
     invoke-virtual {p0}, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl$rejectNewSession$1;->invoke()V
 
     sget-object v0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
@@ -63,7 +63,7 @@
 .method public final invoke()V
     .locals 3
 
-    .line 162
+    .line 161
     iget-object v0, p0, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl$rejectNewSession$1;->this$0:Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;
 
     invoke-static {v0}, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;->access$getWcClients$p(Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;)Ljava/util/Map;
@@ -92,13 +92,13 @@
 
     const/4 v2, 0x1
 
-    .line 163
+    .line 162
     invoke-static {v0, v1, v2, v1}, Lcom/trustwallet/walletconnect/WCClient;->rejectSession$default(Lcom/trustwallet/walletconnect/WCClient;Ljava/lang/String;ILjava/lang/Object;)Z
 
-    .line 164
+    .line 163
     invoke-virtual {v0}, Lcom/trustwallet/walletconnect/WCClient;->disconnect()Z
 
-    .line 166
+    .line 165
     :cond_0
     iget-object v0, p0, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl$rejectNewSession$1;->this$0:Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;
 
@@ -118,7 +118,7 @@
 
     invoke-interface {v0, v2}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 167
+    .line 166
     iget-object v0, p0, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl$rejectNewSession$1;->this$0:Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;
 
     invoke-static {v0, v1}, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;->access$setPendingSessionStoreItem$p(Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;Lcom/trustwallet/walletconnect/WCSessionStoreItem;)V

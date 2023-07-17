@@ -50,7 +50,7 @@
 
     sput-object v0, Lio/reactivex/internal/schedulers/IoScheduler;->KEEP_ALIVE_UNIT:Ljava/util/concurrent/TimeUnit;
 
-    const-string v0, "rx2.io-keep-alive-time"
+    const-string/jumbo v0, "rx2.io-keep-alive-time"
 
     const-wide/16 v1, 0x3c
 
@@ -81,7 +81,7 @@
     .line 57
     invoke-virtual {v0}, Lio/reactivex/internal/schedulers/NewThreadWorker;->dispose()V
 
-    const-string v0, "rx2.io-priority"
+    const-string/jumbo v0, "rx2.io-priority"
 
     const/4 v1, 0x5
 

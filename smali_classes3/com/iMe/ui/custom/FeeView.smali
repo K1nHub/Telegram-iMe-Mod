@@ -229,11 +229,11 @@
 
     move-result-object v0
 
-    invoke-virtual {p1}, Lcom/iMe/ui/custom/FeeView$ChooseFeeType$Default;->getFeeTokenInfo()Lcom/iMe/storage/domain/model/wallet/token/TokenInfo;
+    invoke-virtual {p1}, Lcom/iMe/ui/custom/FeeView$ChooseFeeType$Default;->getFeeToken()Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
 
     move-result-object v1
 
-    invoke-static {v0, v1}, Lcom/iMe/mapper/crypto/FeeUiMappingKt;->mapToUiFees(Lcom/iMe/storage/domain/model/crypto/TransactionParams;Lcom/iMe/storage/domain/model/wallet/token/TokenInfo;)Ljava/util/List;
+    invoke-static {v0, v1}, Lcom/iMe/mapper/crypto/FeeUiMappingKt;->mapToUiFees(Lcom/iMe/storage/domain/model/crypto/TransactionParams;Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;)Ljava/util/List;
 
     move-result-object v0
 
@@ -363,15 +363,19 @@
 
     move-result-object v5
 
-    invoke-virtual {p1}, Lcom/iMe/model/wallet/crypto/send/fee/GasPriceItem;->getFeeTokenInfo()Lcom/iMe/storage/domain/model/wallet/token/TokenInfo;
+    invoke-virtual {p1}, Lcom/iMe/model/wallet/crypto/send/fee/GasPriceItem;->getFeeToken()Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
 
     move-result-object v6
 
-    invoke-virtual {v6}, Lcom/iMe/storage/domain/model/wallet/token/TokenInfo;->getDecimals()I
+    invoke-virtual {v6}, Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;->getDecimals()I
 
     move-result v6
 
-    invoke-static {v5, v6}, Lcom/iMe/utils/formatter/BalanceFormatter;->formatBalance(Ljava/lang/Number;I)Ljava/lang/String;
+    invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v6
+
+    invoke-static {v5, v6}, Lcom/iMe/utils/formatter/BalanceFormatter;->formatBalance(Ljava/lang/Number;Ljava/lang/Integer;)Ljava/lang/String;
 
     move-result-object v5
 
@@ -380,19 +384,11 @@
     aput-object v5, v4, v6
 
     .line 114
-    invoke-direct {p0}, Lcom/iMe/ui/custom/FeeView;->getResourceManager()Lcom/iMe/storage/domain/utils/system/ResourceManager;
+    invoke-virtual {p1}, Lcom/iMe/model/wallet/crypto/send/fee/GasPriceItem;->getFeeToken()Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
 
     move-result-object v5
 
-    invoke-virtual {p1}, Lcom/iMe/model/wallet/crypto/send/fee/GasPriceItem;->getFeeTokenInfo()Lcom/iMe/storage/domain/model/wallet/token/TokenInfo;
-
-    move-result-object v7
-
-    invoke-virtual {v7}, Lcom/iMe/storage/domain/model/wallet/token/TokenInfo;->getShortName()I
-
-    move-result v7
-
-    invoke-interface {v5, v7}, Lcom/iMe/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
+    invoke-virtual {v5}, Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;->getTicker()Ljava/lang/String;
 
     move-result-object v5
 
@@ -405,21 +401,33 @@
 
     move-result-object v5
 
-    invoke-virtual {v5}, Lcom/iMe/storage/domain/model/crypto/send/GasPriceInfo;->getFeeInDollars()F
-
-    move-result v5
-
-    invoke-static {v5}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+    invoke-virtual {v5}, Lcom/iMe/storage/domain/model/crypto/send/GasPriceInfo;->getFeeInFiat()Lcom/iMe/storage/domain/model/wallet/token/FiatValue;
 
     move-result-object v5
 
-    sget-object v8, Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Fiat$USD;->INSTANCE:Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Fiat$USD;
+    invoke-virtual {v5}, Lcom/iMe/storage/domain/model/wallet/token/FiatValue;->getValue()D
 
-    invoke-virtual {v8}, Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Fiat;->getDecimals()I
+    move-result-wide v8
+
+    invoke-static {v8, v9}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
+
+    move-result-object v5
+
+    sget-object v8, Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;->Companion:Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed$Companion;
+
+    invoke-virtual {v8}, Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed$Companion;->getUSD()Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
+
+    move-result-object v9
+
+    invoke-virtual {v9}, Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;->getDecimals()I
 
     move-result v9
 
-    invoke-static {v5, v9}, Lcom/iMe/utils/formatter/BalanceFormatter;->formatBalance(Ljava/lang/Number;I)Ljava/lang/String;
+    invoke-static {v9}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v9
+
+    invoke-static {v5, v9}, Lcom/iMe/utils/formatter/BalanceFormatter;->formatBalance(Ljava/lang/Number;Ljava/lang/Integer;)Ljava/lang/String;
 
     move-result-object v5
 
@@ -428,15 +436,11 @@
     aput-object v5, v4, v9
 
     .line 116
-    invoke-direct {p0}, Lcom/iMe/ui/custom/FeeView;->getResourceManager()Lcom/iMe/storage/domain/utils/system/ResourceManager;
+    invoke-virtual {v8}, Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed$Companion;->getUSD()Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
 
     move-result-object v5
 
-    invoke-virtual {v8}, Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Fiat;->getShortName()I
-
-    move-result v8
-
-    invoke-interface {v5, v8}, Lcom/iMe/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
+    invoke-virtual {v5}, Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;->getTicker()Ljava/lang/String;
 
     move-result-object v5
 

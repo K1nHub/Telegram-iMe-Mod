@@ -18,7 +18,7 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 43
+    .line 40
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -37,10 +37,8 @@
 .method public final getByIndex(I)Lcom/iMe/model/wallet/crypto/create/WalletCreationType$Initial;
     .locals 1
 
-    const/4 v0, 0x1
-
-    .line 52
-    invoke-virtual {p0, v0}, Lcom/iMe/model/wallet/crypto/create/WalletCreationType$Initial$Companion;->getValuesOrdered(Z)Ljava/util/List;
+    .line 45
+    invoke-virtual {p0}, Lcom/iMe/model/wallet/crypto/create/WalletCreationType$Initial$Companion;->getValuesOrdered()Ljava/util/List;
 
     move-result-object v0
 
@@ -58,54 +56,37 @@
     return-object p1
 .end method
 
-.method public final getValuesOrdered(Z)Ljava/util/List;
+.method public final getValuesOrdered()Ljava/util/List;
     .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "(Z)",
+            "()",
             "Ljava/util/List<",
             "Lcom/iMe/model/wallet/crypto/create/WalletCreationType$Initial;",
             ">;"
         }
     .end annotation
 
-    const/4 v0, 0x3
+    const/4 v0, 0x2
 
     new-array v0, v0, [Lcom/iMe/model/wallet/crypto/create/WalletCreationType$Initial;
 
-    .line 46
+    .line 42
     sget-object v1, Lcom/iMe/model/wallet/crypto/create/WalletCreationType$Initial$Create;->INSTANCE:Lcom/iMe/model/wallet/crypto/create/WalletCreationType$Initial$Create;
 
     const/4 v2, 0x0
 
     aput-object v1, v0, v2
 
-    .line 47
     sget-object v1, Lcom/iMe/model/wallet/crypto/create/WalletCreationType$Initial$Import;->INSTANCE:Lcom/iMe/model/wallet/crypto/create/WalletCreationType$Initial$Import;
 
     const/4 v2, 0x1
 
     aput-object v1, v0, v2
 
-    if-eqz p1, :cond_0
-
-    .line 48
-    sget-object p1, Lcom/iMe/model/wallet/crypto/create/WalletCreationType$Initial$Restore;->INSTANCE:Lcom/iMe/model/wallet/crypto/create/WalletCreationType$Initial$Restore;
-
-    goto :goto_0
-
-    :cond_0
-    const/4 p1, 0x0
-
-    :goto_0
-    const/4 v1, 0x2
-
-    aput-object p1, v0, v1
-
-    .line 45
     invoke-static {v0}, Lkotlin/collections/CollectionsKt;->listOfNotNull([Ljava/lang/Object;)Ljava/util/List;
 
-    move-result-object p1
+    move-result-object v0
 
-    return-object p1
+    return-object v0
 .end method

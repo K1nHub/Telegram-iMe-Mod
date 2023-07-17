@@ -3,7 +3,7 @@ package com.iMe.p031ui.adapter.provider;
 import com.iMe.storage.domain.utils.system.ResourceManager;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Lambda;
-import org.telegram.messenger.C3295R;
+import org.telegram.messenger.C3417R;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: StakingOperationProvider.kt */
 /* renamed from: com.iMe.ui.adapter.provider.StakingOperationProvider$networkIconCornerSize$2 */
@@ -23,6 +23,6 @@ public final class StakingOperationProvider$networkIconCornerSize$2 extends Lamb
     public final Float invoke() {
         ResourceManager resourceManager;
         resourceManager = this.this$0.resourceManager;
-        return Float.valueOf(resourceManager.getDimens(C3295R.dimen.icon_size_default) / 2);
+        return Float.valueOf(resourceManager.getDimens(C3417R.dimen.icon_size_default) / 2);
     }
 }

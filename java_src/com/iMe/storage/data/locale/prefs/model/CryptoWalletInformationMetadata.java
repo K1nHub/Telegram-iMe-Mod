@@ -1,14 +1,14 @@
 package com.iMe.storage.data.locale.prefs.model;
 
 import com.iMe.bots.data.model.database.BotsDbModel$$ExternalSyntheticBackport0;
-import com.iMe.storage.domain.model.crypto.CryptoWalletInfo;
+import com.iMe.storage.domain.model.crypto.CryptoWalletsInfo;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: CryptoWalletInformationMetadata.kt */
 /* loaded from: classes3.dex */
 public final class CryptoWalletInformationMetadata {
     private final long lastUpdateMillis;
-    private final CryptoWalletInfo walletInfo;
+    private final CryptoWalletsInfo walletInfo;
 
     public CryptoWalletInformationMetadata() {
         this(0L, null, 3, null);
@@ -27,24 +27,24 @@ public final class CryptoWalletInformationMetadata {
 
     public int hashCode() {
         int m706m = BotsDbModel$$ExternalSyntheticBackport0.m706m(this.lastUpdateMillis) * 31;
-        CryptoWalletInfo cryptoWalletInfo = this.walletInfo;
-        return m706m + (cryptoWalletInfo == null ? 0 : cryptoWalletInfo.hashCode());
+        CryptoWalletsInfo cryptoWalletsInfo = this.walletInfo;
+        return m706m + (cryptoWalletsInfo == null ? 0 : cryptoWalletsInfo.hashCode());
     }
 
     public String toString() {
         return "CryptoWalletInformationMetadata(lastUpdateMillis=" + this.lastUpdateMillis + ", walletInfo=" + this.walletInfo + ')';
     }
 
-    public CryptoWalletInformationMetadata(long j, CryptoWalletInfo cryptoWalletInfo) {
+    public CryptoWalletInformationMetadata(long j, CryptoWalletsInfo cryptoWalletsInfo) {
         this.lastUpdateMillis = j;
-        this.walletInfo = cryptoWalletInfo;
+        this.walletInfo = cryptoWalletsInfo;
     }
 
-    public /* synthetic */ CryptoWalletInformationMetadata(long j, CryptoWalletInfo cryptoWalletInfo, int i, DefaultConstructorMarker defaultConstructorMarker) {
-        this((i & 1) != 0 ? 0L : j, (i & 2) != 0 ? null : cryptoWalletInfo);
+    public /* synthetic */ CryptoWalletInformationMetadata(long j, CryptoWalletsInfo cryptoWalletsInfo, int i, DefaultConstructorMarker defaultConstructorMarker) {
+        this((i & 1) != 0 ? 0L : j, (i & 2) != 0 ? null : cryptoWalletsInfo);
     }
 
-    public final CryptoWalletInfo getWalletInfo() {
+    public final CryptoWalletsInfo getWalletInfo() {
         return this.walletInfo;
     }
 }

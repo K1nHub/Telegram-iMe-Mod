@@ -4,31 +4,119 @@
 
 
 # virtual methods
-.method public abstract getCryptoWalletInfo()Lio/reactivex/Observable;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Lio/reactivex/Observable<",
-            "Lcom/iMe/storage/data/network/model/response/base/ApiBaseResponse<",
-            "Lcom/iMe/storage/data/network/model/response/crypto/wallet/CryptoWalletInfoResponse;",
-            ">;>;"
-        }
-    .end annotation
-
-    .annotation runtime Lretrofit2/http/POST;
-        value = "getCryptoWalletAccountInfo"
-    .end annotation
-.end method
-
-.method public abstract linkWallet(Lcom/iMe/storage/data/network/model/request/crypto/wallet/LinkWalletAddressRequest;)Lio/reactivex/Observable;
-    .param p1    # Lcom/iMe/storage/data/network/model/request/crypto/wallet/LinkWalletAddressRequest;
+.method public abstract getBTCCryptoTransferData(Lcom/iMe/storage/data/network/model/request/crypto/wallet/PrepareTransferRequest;)Lio/reactivex/Observable;
+    .param p1    # Lcom/iMe/storage/data/network/model/request/crypto/wallet/PrepareTransferRequest;
         .annotation runtime Lretrofit2/http/Body;
         .end annotation
     .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lcom/iMe/storage/data/network/model/request/crypto/wallet/LinkWalletAddressRequest;",
+            "Lcom/iMe/storage/data/network/model/request/crypto/wallet/PrepareTransferRequest;",
+            ")",
+            "Lio/reactivex/Observable<",
+            "Lcom/iMe/storage/data/network/model/response/base/ApiBaseResponse<",
+            "Lcom/iMe/storage/data/network/model/response/crypto/wallet/CryptoTransferDataResponse$BTC;",
+            ">;>;"
+        }
+    .end annotation
+
+    .annotation runtime Lretrofit2/http/POST;
+        value = "prepareTransferTx"
+    .end annotation
+.end method
+
+.method public abstract getCryptoWalletInfo()Lio/reactivex/Observable;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Lio/reactivex/Observable<",
+            "Lcom/iMe/storage/data/network/model/response/base/ApiBaseResponse<",
+            "Lcom/iMe/storage/data/network/model/response/crypto/wallet/CryptoWalletsInfoResponse;",
+            ">;>;"
+        }
+    .end annotation
+
+    .annotation runtime Lretrofit2/http/POST;
+        value = "getOwnWallets"
+    .end annotation
+.end method
+
+.method public abstract getEVMCryptoTransferData(Lcom/iMe/storage/data/network/model/request/crypto/wallet/PrepareTransferRequest;)Lio/reactivex/Observable;
+    .param p1    # Lcom/iMe/storage/data/network/model/request/crypto/wallet/PrepareTransferRequest;
+        .annotation runtime Lretrofit2/http/Body;
+        .end annotation
+    .end param
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lcom/iMe/storage/data/network/model/request/crypto/wallet/PrepareTransferRequest;",
+            ")",
+            "Lio/reactivex/Observable<",
+            "Lcom/iMe/storage/data/network/model/response/base/ApiBaseResponse<",
+            "Lcom/iMe/storage/data/network/model/response/crypto/wallet/CryptoTransferDataResponse$EVM;",
+            ">;>;"
+        }
+    .end annotation
+
+    .annotation runtime Lretrofit2/http/POST;
+        value = "prepareTransferTx"
+    .end annotation
+.end method
+
+.method public abstract getTONCryptoTransferData(Lcom/iMe/storage/data/network/model/request/crypto/wallet/PrepareTransferRequest;)Lio/reactivex/Observable;
+    .param p1    # Lcom/iMe/storage/data/network/model/request/crypto/wallet/PrepareTransferRequest;
+        .annotation runtime Lretrofit2/http/Body;
+        .end annotation
+    .end param
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lcom/iMe/storage/data/network/model/request/crypto/wallet/PrepareTransferRequest;",
+            ")",
+            "Lio/reactivex/Observable<",
+            "Lcom/iMe/storage/data/network/model/response/base/ApiBaseResponse<",
+            "Lcom/iMe/storage/data/network/model/response/crypto/wallet/CryptoTransferDataResponse$TON;",
+            ">;>;"
+        }
+    .end annotation
+
+    .annotation runtime Lretrofit2/http/POST;
+        value = "prepareTransferTx"
+    .end annotation
+.end method
+
+.method public abstract getTRONCryptoTransferData(Lcom/iMe/storage/data/network/model/request/crypto/wallet/PrepareTransferRequest;)Lio/reactivex/Observable;
+    .param p1    # Lcom/iMe/storage/data/network/model/request/crypto/wallet/PrepareTransferRequest;
+        .annotation runtime Lretrofit2/http/Body;
+        .end annotation
+    .end param
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lcom/iMe/storage/data/network/model/request/crypto/wallet/PrepareTransferRequest;",
+            ")",
+            "Lio/reactivex/Observable<",
+            "Lcom/iMe/storage/data/network/model/response/base/ApiBaseResponse<",
+            "Lcom/iMe/storage/data/network/model/response/crypto/wallet/CryptoTransferDataResponse$TRON;",
+            ">;>;"
+        }
+    .end annotation
+
+    .annotation runtime Lretrofit2/http/POST;
+        value = "prepareTransferTx"
+    .end annotation
+.end method
+
+.method public abstract linkWallet(Lcom/iMe/storage/data/network/model/request/crypto/wallet/LinkWalletsRequest;)Lio/reactivex/Observable;
+    .param p1    # Lcom/iMe/storage/data/network/model/request/crypto/wallet/LinkWalletsRequest;
+        .annotation runtime Lretrofit2/http/Body;
+        .end annotation
+    .end param
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lcom/iMe/storage/data/network/model/request/crypto/wallet/LinkWalletsRequest;",
             ")",
             "Lio/reactivex/Observable<",
             "Lcom/iMe/storage/data/network/model/response/base/ApiBaseResponse<",
@@ -38,7 +126,7 @@
     .end annotation
 
     .annotation runtime Lretrofit2/http/POST;
-        value = "linkWalletAddress"
+        value = "linkWallets"
     .end annotation
 .end method
 
@@ -82,6 +170,6 @@
     .end annotation
 
     .annotation runtime Lretrofit2/http/POST;
-        value = "unlinkWalletAddress"
+        value = "unlinkWallet"
     .end annotation
 .end method

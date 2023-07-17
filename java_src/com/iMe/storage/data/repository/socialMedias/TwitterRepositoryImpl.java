@@ -84,9 +84,9 @@ public final class TwitterRepositoryImpl implements TwitterRepository {
     @Override // com.iMe.storage.domain.repository.socialMedia.TwitterRepository
     public Observable<Result<List<TwitterUserInfo>>> searchUsersByUsername(String usernameQuery, int i) {
         Intrinsics.checkNotNullParameter(usernameQuery, "usernameQuery");
-        Observable<R> map = this.twitterApi.searchUsersByUsername(new TwitterSearchByUsernameRequest(usernameQuery, i)).map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new C1926x2fcdcf3(this.firebaseErrorHandler)));
+        Observable<R> map = this.twitterApi.searchUsersByUsername(new TwitterSearchByUsernameRequest(usernameQuery, i)).map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new C1933x2fcdcf3(this.firebaseErrorHandler)));
         Intrinsics.checkNotNullExpressionValue(map, "errorHandler: FirebaseFu…response).toError()\n    }");
-        Observable<Result<List<TwitterUserInfo>>> onErrorReturn = map.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new C1925x3fa67a0e(this.errorHandler)));
+        Observable<Result<List<TwitterUserInfo>>> onErrorReturn = map.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new C1932x3fa67a0e(this.errorHandler)));
         Intrinsics.checkNotNullExpressionValue(onErrorReturn, "errorHandler: ErrorHandl…ndleError(it).toError() }");
         return onErrorReturn;
     }

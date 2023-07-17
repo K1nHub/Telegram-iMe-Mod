@@ -26,7 +26,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nWalletConnectManagerImpl.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WalletConnectManagerImpl.kt\ncom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl$updateSessionsChain$1\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,429:1\n1855#2,2:430\n*S KotlinDebug\n*F\n+ 1 WalletConnectManagerImpl.kt\ncom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl$updateSessionsChain$1\n*L\n337#1:430,2\n*E\n"
+    value = "SMAP\nWalletConnectManagerImpl.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WalletConnectManagerImpl.kt\ncom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl$updateSessionsChain$1\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,424:1\n1855#2,2:425\n*S KotlinDebug\n*F\n+ 1 WalletConnectManagerImpl.kt\ncom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl$updateSessionsChain$1\n*L\n332#1:425,2\n*E\n"
 .end annotation
 
 
@@ -52,7 +52,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 336
+    .line 331
     invoke-virtual {p0}, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl$updateSessionsChain$1;->invoke()V
 
     sget-object v0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
@@ -63,7 +63,7 @@
 .method public final invoke()V
     .locals 6
 
-    .line 337
+    .line 332
     iget-object v0, p0, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl$updateSessionsChain$1;->this$0:Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;
 
     invoke-static {v0}, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;->access$getWcClients$p(Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;)Ljava/util/Map;
@@ -94,14 +94,14 @@
 
     check-cast v2, Lcom/trustwallet/walletconnect/WCClient;
 
-    .line 339
+    .line 334
     invoke-static {v1}, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;->access$getWallet(Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;)Lcom/iMe/storage/domain/model/crypto/Wallet$EVM;
 
     move-result-object v3
 
     if-eqz v3, :cond_0
 
-    invoke-virtual {v3}, Lcom/iMe/storage/domain/model/crypto/Wallet$EVM;->getAddress()Ljava/lang/String;
+    invoke-virtual {v3}, Lcom/iMe/storage/domain/model/crypto/Wallet$MultiCoinWallet;->getAddress()Ljava/lang/String;
 
     move-result-object v3
 
@@ -120,16 +120,20 @@
 
     move-result-object v3
 
-    .line 340
+    .line 335
     invoke-static {v1}, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;->access$getCryptoPreferenceHelper$p(Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;)Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
 
     move-result-object v4
 
-    invoke-interface {v4}, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;->getNetworkType()Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    invoke-interface {v4}, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;->getNetwork()Lcom/iMe/storage/domain/model/crypto/Network;
 
     move-result-object v4
 
-    invoke-virtual {v4}, Lcom/iMe/storage/domain/model/crypto/NetworkType;->getChainId()J
+    invoke-virtual {v4}, Lcom/iMe/storage/domain/model/crypto/Network;->getChainId()Ljava/lang/Long;
+
+    move-result-object v4
+
+    invoke-static {v4}, Lcom/iMe/storage/data/utils/extentions/NumberExtKt;->orZero(Ljava/lang/Long;)J
 
     move-result-wide v4
 
@@ -141,7 +145,7 @@
 
     const/4 v5, 0x1
 
-    .line 338
+    .line 333
     invoke-virtual {v2, v3, v4, v5}, Lcom/trustwallet/walletconnect/WCClient;->updateSession(Ljava/util/List;Ljava/lang/Integer;Z)Z
 
     goto :goto_0

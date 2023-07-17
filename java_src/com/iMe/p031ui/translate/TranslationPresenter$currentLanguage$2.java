@@ -21,6 +21,6 @@ public final class TranslationPresenter$currentLanguage$2 extends Lambda impleme
     public final String invoke() {
         TelegramGateway telegramGateway;
         telegramGateway = this.this$0.telegramGateway;
-        return telegramGateway.getCurrentLocaleInformation().getSupportedLanguage();
+        return telegramGateway.getCurrentLanguage();
     }
 }

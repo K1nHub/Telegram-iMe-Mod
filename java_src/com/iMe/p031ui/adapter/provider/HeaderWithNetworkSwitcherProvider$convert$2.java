@@ -28,6 +28,6 @@ final class HeaderWithNetworkSwitcherProvider$convert$2 extends Lambda implement
     /* renamed from: invoke  reason: avoid collision after fix types in other method */
     public final void invoke2(NetworkTypeView applyForView) {
         Intrinsics.checkNotNullParameter(applyForView, "$this$applyForView");
-        applyForView.setNetworkType(this.$item.getNetworkType());
+        applyForView.setNetwork(this.$item.getNetworkType());
     }
 }

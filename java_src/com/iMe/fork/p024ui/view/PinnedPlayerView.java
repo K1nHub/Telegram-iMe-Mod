@@ -13,7 +13,7 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import com.google.android.exoplayer2.C0475C;
+import com.google.android.exoplayer2.C0480C;
 import com.google.android.exoplayer2.ExoPlayer;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.iMe.common.IdFabric$Menu;
@@ -22,7 +22,7 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.Collections;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3295R;
+import org.telegram.messenger.C3417R;
 import org.telegram.messenger.DialogObject;
 import org.telegram.messenger.DownloadController;
 import org.telegram.messenger.FileLoader;
@@ -40,25 +40,25 @@ import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.audioinfo.AudioInfo;
-import org.telegram.p044ui.ActionBar.ActionBarMenuItem;
-import org.telegram.p044ui.ActionBar.ActionBarMenuSubItem;
-import org.telegram.p044ui.ActionBar.ActionBarPopupWindow;
-import org.telegram.p044ui.ActionBar.INavigationLayout;
-import org.telegram.p044ui.ActionBar.SimpleTextView;
-import org.telegram.p044ui.ActionBar.Theme;
-import org.telegram.p044ui.ChatActivity;
-import org.telegram.p044ui.Components.AudioPlayerAlert;
-import org.telegram.p044ui.Components.BackupImageView;
-import org.telegram.p044ui.Components.BulletinFactory;
-import org.telegram.p044ui.Components.LayoutHelper;
-import org.telegram.p044ui.Components.LineProgressView;
-import org.telegram.p044ui.Components.PlayPauseDrawable;
-import org.telegram.p044ui.Components.RLottieDrawable;
-import org.telegram.p044ui.Components.RLottieImageView;
-import org.telegram.p044ui.Components.SeekBarView;
-import org.telegram.p044ui.DialogsActivity;
-import org.telegram.p044ui.LaunchActivity;
-import org.telegram.p044ui.TopicsFragment;
+import org.telegram.p043ui.ActionBar.ActionBarMenuItem;
+import org.telegram.p043ui.ActionBar.ActionBarMenuSubItem;
+import org.telegram.p043ui.ActionBar.ActionBarPopupWindow;
+import org.telegram.p043ui.ActionBar.INavigationLayout;
+import org.telegram.p043ui.ActionBar.SimpleTextView;
+import org.telegram.p043ui.ActionBar.Theme;
+import org.telegram.p043ui.ChatActivity;
+import org.telegram.p043ui.Components.AudioPlayerAlert;
+import org.telegram.p043ui.Components.BackupImageView;
+import org.telegram.p043ui.Components.BulletinFactory;
+import org.telegram.p043ui.Components.LayoutHelper;
+import org.telegram.p043ui.Components.LineProgressView;
+import org.telegram.p043ui.Components.PlayPauseDrawable;
+import org.telegram.p043ui.Components.RLottieDrawable;
+import org.telegram.p043ui.Components.RLottieImageView;
+import org.telegram.p043ui.Components.SeekBarView;
+import org.telegram.p043ui.DialogsActivity;
+import org.telegram.p043ui.LaunchActivity;
+import org.telegram.p043ui.TopicsFragment;
 import org.telegram.tgnet.TLRPC$Document;
 import org.telegram.tgnet.TLRPC$PhotoSize;
 import org.telegram.tgnet.TLRPC$TL_photoSize;
@@ -140,7 +140,7 @@ public class PinnedPlayerView extends FrameLayout implements NotificationCenter.
                 long j;
                 float f;
                 long duration = MediaController.getInstance().getDuration();
-                if (duration == 0 || duration == C0475C.TIME_UNSET) {
+                if (duration == 0 || duration == C0480C.TIME_UNSET) {
                     PinnedPlayerView.this.lastRewindingTime = System.currentTimeMillis();
                     return;
                 }
@@ -181,7 +181,7 @@ public class PinnedPlayerView extends FrameLayout implements NotificationCenter.
         this.TAG = DownloadController.getInstance(getCurrentAccount()).generateObserverTag();
         this.actionBarLayout = iNavigationLayout;
         this.launchActivity = launchActivity;
-        int i = C3295R.raw.sun_outline;
+        int i = C3417R.raw.sun_outline;
         this.toggleThemeDrawable = new RLottieDrawable(i, "" + i, AndroidUtilities.m54dp(28), AndroidUtilities.m54dp(28), true, null);
         int themedColor = getThemedColor(Theme.key_player_button);
         float scaledTouchSlop = (float) ViewConfiguration.get(context).getScaledTouchSlop();
@@ -194,7 +194,7 @@ public class PinnedPlayerView extends FrameLayout implements NotificationCenter.
         FrameLayout frameLayout = new FrameLayout(context);
         this.header = frameLayout;
         AudioPlayerAlert.ClippingTextViewSwitcher clippingTextViewSwitcher = new AudioPlayerAlert.ClippingTextViewSwitcher(context) { // from class: com.iMe.fork.ui.view.PinnedPlayerView.2
-            @Override // org.telegram.p044ui.Components.AudioPlayerAlert.ClippingTextViewSwitcher
+            @Override // org.telegram.p043ui.Components.AudioPlayerAlert.ClippingTextViewSwitcher
             protected TextView createTextView() {
                 TextView textView = new TextView(context);
                 textView.setTextColor(PinnedPlayerView.this.getThemedColor(Theme.key_player_actionBarTitle));
@@ -208,7 +208,7 @@ public class PinnedPlayerView extends FrameLayout implements NotificationCenter.
         this.titleTextView = clippingTextViewSwitcher;
         frameLayout.addView(clippingTextViewSwitcher, LayoutHelper.createFrame(-1, -2, 51, 20, 20, 114, 0));
         AudioPlayerAlert.ClippingTextViewSwitcher clippingTextViewSwitcher2 = new AudioPlayerAlert.ClippingTextViewSwitcher(context) { // from class: com.iMe.fork.ui.view.PinnedPlayerView.3
-            @Override // org.telegram.p044ui.Components.AudioPlayerAlert.ClippingTextViewSwitcher
+            @Override // org.telegram.p043ui.Components.AudioPlayerAlert.ClippingTextViewSwitcher
             protected TextView createTextView() {
                 TextView textView = new TextView(context);
                 textView.setTextColor(PinnedPlayerView.this.getThemedColor(Theme.key_player_time));
@@ -223,7 +223,7 @@ public class PinnedPlayerView extends FrameLayout implements NotificationCenter.
         this.authorTextView = clippingTextViewSwitcher2;
         frameLayout.addView(clippingTextViewSwitcher2, LayoutHelper.createFrame(-1, -2, 51, 14, 47, 114, 0));
         AudioPlayerAlert.CoverContainer coverContainer = new AudioPlayerAlert.CoverContainer(this, context) { // from class: com.iMe.fork.ui.view.PinnedPlayerView.4
-            @Override // org.telegram.p044ui.Components.AudioPlayerAlert.CoverContainer
+            @Override // org.telegram.p043ui.Components.AudioPlayerAlert.CoverContainer
             protected void onImageUpdated(ImageReceiver imageReceiver) {
             }
         };
@@ -231,7 +231,7 @@ public class PinnedPlayerView extends FrameLayout implements NotificationCenter.
         frameLayout.addView(coverContainer, LayoutHelper.createFrame(44, 44, 53, 0, 20, 62, 0));
         ActionBarMenuItem actionBarMenuItem = new ActionBarMenuItem(context, null, 0, themedColor, false, pinnedPlayerResourcesProvider);
         this.pinnedPlayerOptionButton = actionBarMenuItem;
-        int i2 = C3295R.C3297drawable.ic_ab_other;
+        int i2 = C3417R.C3419drawable.ic_ab_other;
         actionBarMenuItem.setIcon(i2);
         actionBarMenuItem.setLongClickEnabled(false);
         actionBarMenuItem.setShowSubmenuByMove(false);
@@ -244,17 +244,17 @@ public class PinnedPlayerView extends FrameLayout implements NotificationCenter.
         });
         actionBarMenuItem.setShowedFromBottom(true);
         actionBarMenuItem.setDelegate(new ActionBarMenuItem.ActionBarMenuItemDelegate() { // from class: com.iMe.fork.ui.view.PinnedPlayerView$$ExternalSyntheticLambda8
-            @Override // org.telegram.p044ui.ActionBar.ActionBarMenuItem.ActionBarMenuItemDelegate
+            @Override // org.telegram.p043ui.ActionBar.ActionBarMenuItem.ActionBarMenuItemDelegate
             public final void onItemClick(int i3) {
                 PinnedPlayerView.this.onSubItemClick(i3);
             }
         });
         int i3 = IdFabric$Menu.UNPIN_PLAYER;
-        int i4 = C3295R.C3297drawable.chats_unpin;
-        int i5 = C3295R.string.DialogUnpin;
+        int i4 = C3417R.C3419drawable.chats_unpin;
+        int i5 = C3417R.string.DialogUnpin;
         actionBarMenuItem.addSubItem(i3, i4, LocaleController.getString("DialogUnpin", i5));
         int i6 = IdFabric$Menu.PINNED_PLAYER_TOGGLE_COMPACT;
-        actionBarMenuItem.addSubItem(i6, C3295R.C3297drawable.msg_calls_minimize, LocaleController.getString("VoipGroupMinimizeStream", C3295R.string.VoipGroupMinimizeStream));
+        actionBarMenuItem.addSubItem(i6, C3417R.C3419drawable.msg_calls_minimize, LocaleController.getString("VoipGroupMinimizeStream", C3417R.string.VoipGroupMinimizeStream));
         int i7 = IdFabric$Menu.PINNED_PLAYER_TOGGLE_THEME;
         this.toggleThemeItem = actionBarMenuItem.addSubItem(i7, 0, (CharSequence) null);
         frameLayout.addView(actionBarMenuItem, LayoutHelper.createFrame(48, 48, 53, 0, 18, 4, 0));
@@ -262,16 +262,16 @@ public class PinnedPlayerView extends FrameLayout implements NotificationCenter.
         };
         this.seekBarView = seekBarView;
         seekBarView.setDelegate(new SeekBarView.SeekBarViewDelegate() { // from class: com.iMe.fork.ui.view.PinnedPlayerView.6
-            @Override // org.telegram.p044ui.Components.SeekBarView.SeekBarViewDelegate
+            @Override // org.telegram.p043ui.Components.SeekBarView.SeekBarViewDelegate
             public /* synthetic */ int getStepsCount() {
                 return SeekBarView.SeekBarViewDelegate.CC.$default$getStepsCount(this);
             }
 
-            @Override // org.telegram.p044ui.Components.SeekBarView.SeekBarViewDelegate
+            @Override // org.telegram.p043ui.Components.SeekBarView.SeekBarViewDelegate
             public void onSeekBarPressed(boolean z) {
             }
 
-            @Override // org.telegram.p044ui.Components.SeekBarView.SeekBarViewDelegate
+            @Override // org.telegram.p043ui.Components.SeekBarView.SeekBarViewDelegate
             public void onSeekBarDrag(boolean z, float f) {
                 if (z) {
                     MediaController.getInstance().seekToProgress(MediaController.getInstance().getPlayingMessageObject(), f);
@@ -283,9 +283,9 @@ public class PinnedPlayerView extends FrameLayout implements NotificationCenter.
                 PinnedPlayerView.this.updateProgress(playingMessageObject);
             }
 
-            @Override // org.telegram.p044ui.Components.SeekBarView.SeekBarViewDelegate
+            @Override // org.telegram.p043ui.Components.SeekBarView.SeekBarViewDelegate
             public CharSequence getContentDescription() {
-                return LocaleController.formatString("AccDescrPlayerDuration", C3295R.string.AccDescrPlayerDuration, LocaleController.formatPluralString("Minutes", PinnedPlayerView.this.lastTime / 60, new Object[0]) + ' ' + LocaleController.formatPluralString("Seconds", PinnedPlayerView.this.lastTime % 60, new Object[0]), LocaleController.formatPluralString("Minutes", PinnedPlayerView.this.lastDuration / 60, new Object[0]) + ' ' + LocaleController.formatPluralString("Seconds", PinnedPlayerView.this.lastDuration % 60, new Object[0]));
+                return LocaleController.formatString("AccDescrPlayerDuration", C3417R.string.AccDescrPlayerDuration, LocaleController.formatPluralString("Minutes", PinnedPlayerView.this.lastTime / 60, new Object[0]) + ' ' + LocaleController.formatPluralString("Seconds", PinnedPlayerView.this.lastTime % 60, new Object[0]), LocaleController.formatPluralString("Minutes", PinnedPlayerView.this.lastDuration / 60, new Object[0]) + ' ' + LocaleController.formatPluralString("Seconds", PinnedPlayerView.this.lastDuration % 60, new Object[0]));
             }
         });
         seekBarView.setReportChanges(true);
@@ -333,23 +333,23 @@ public class PinnedPlayerView extends FrameLayout implements NotificationCenter.
         });
         actionBarMenuItem2.setShowedFromBottom(true);
         actionBarMenuItem2.setDelegate(new ActionBarMenuItem.ActionBarMenuItemDelegate() { // from class: com.iMe.fork.ui.view.PinnedPlayerView$$ExternalSyntheticLambda9
-            @Override // org.telegram.p044ui.ActionBar.ActionBarMenuItem.ActionBarMenuItemDelegate
+            @Override // org.telegram.p043ui.ActionBar.ActionBarMenuItem.ActionBarMenuItemDelegate
             public final void onItemClick(int i8) {
                 PinnedPlayerView.this.lambda$new$2(i8);
             }
         });
-        this.repeatSongItem = actionBarMenuItem2.addSubItem(3, C3295R.C3297drawable.player_new_repeatone, LocaleController.getString("RepeatSong", C3295R.string.RepeatSong));
-        this.repeatListItem = actionBarMenuItem2.addSubItem(4, C3295R.C3297drawable.player_new_repeatall, LocaleController.getString("RepeatList", C3295R.string.RepeatList));
-        this.shuffleListItem = actionBarMenuItem2.addSubItem(2, C3295R.C3297drawable.player_new_shuffle, LocaleController.getString("ShuffleList", C3295R.string.ShuffleList));
-        this.reverseOrderItem = actionBarMenuItem2.addSubItem(1, C3295R.C3297drawable.player_new_order, LocaleController.getString("ReverseOrder", C3295R.string.ReverseOrder));
+        this.repeatSongItem = actionBarMenuItem2.addSubItem(3, C3417R.C3419drawable.player_new_repeatone, LocaleController.getString("RepeatSong", C3417R.string.RepeatSong));
+        this.repeatListItem = actionBarMenuItem2.addSubItem(4, C3417R.C3419drawable.player_new_repeatall, LocaleController.getString("RepeatList", C3417R.string.RepeatList));
+        this.shuffleListItem = actionBarMenuItem2.addSubItem(2, C3417R.C3419drawable.player_new_shuffle, LocaleController.getString("ShuffleList", C3417R.string.ShuffleList));
+        this.reverseOrderItem = actionBarMenuItem2.addSubItem(1, C3417R.C3419drawable.player_new_order, LocaleController.getString("ReverseOrder", C3417R.string.ReverseOrder));
         frameLayout2.addView(actionBarMenuItem2, LayoutHelper.createFrame(48, 48, 51));
-        C15418 c15418 = new C15418(context, scaledTouchSlop);
-        this.prevButton = c15418;
-        c15418.setScaleType(ImageView.ScaleType.CENTER);
-        int i8 = C3295R.raw.player_prev;
-        c15418.setAnimation(i8, 20, 20);
-        c15418.setContentDescription(LocaleController.getString("AccDescrPrevious", C3295R.string.AccDescrPrevious));
-        frameLayout2.addView(c15418, LayoutHelper.createFrame(48, 48, 51));
+        C15528 c15528 = new C15528(context, scaledTouchSlop);
+        this.prevButton = c15528;
+        c15528.setScaleType(ImageView.ScaleType.CENTER);
+        int i8 = C3417R.raw.player_prev;
+        c15528.setAnimation(i8, 20, 20);
+        c15528.setContentDescription(LocaleController.getString("AccDescrPrevious", C3417R.string.AccDescrPrevious));
+        frameLayout2.addView(c15528, LayoutHelper.createFrame(48, 48, 51));
         ImageView imageView = new ImageView(context);
         this.playButton = imageView;
         imageView.setScaleType(ImageView.ScaleType.CENTER);
@@ -359,30 +359,30 @@ public class PinnedPlayerView extends FrameLayout implements NotificationCenter.
         playPauseDrawable.setPause(!MediaController.getInstance().isMessagePaused(), false);
         imageView.setOnClickListener(PinnedPlayerView$$ExternalSyntheticLambda3.INSTANCE);
         frameLayout2.addView(imageView, LayoutHelper.createFrame(48, 48, 51));
-        C15449 c15449 = new C15449(context, scaledTouchSlop);
-        this.nextButton = c15449;
-        c15449.setScaleType(ImageView.ScaleType.CENTER);
-        c15449.setAnimation(i8, 20, 20);
-        c15449.setRotation(180.0f);
-        c15449.setContentDescription(LocaleController.getString("Next", C3295R.string.Next));
-        frameLayout2.addView(c15449, LayoutHelper.createFrame(48, 48, 51));
+        C15559 c15559 = new C15559(context, scaledTouchSlop);
+        this.nextButton = c15559;
+        c15559.setScaleType(ImageView.ScaleType.CENTER);
+        c15559.setAnimation(i8, 20, 20);
+        c15559.setRotation(180.0f);
+        c15559.setContentDescription(LocaleController.getString("Next", C3417R.string.Next));
+        frameLayout2.addView(c15559, LayoutHelper.createFrame(48, 48, 51));
         ActionBarMenuItem actionBarMenuItem3 = new ActionBarMenuItem(context, null, 0, themedColor, false, pinnedPlayerResourcesProvider);
         this.optionsButton = actionBarMenuItem3;
-        View[] viewArr = {actionBarMenuItem2, c15418, imageView, c15449, actionBarMenuItem3};
+        View[] viewArr = {actionBarMenuItem2, c15528, imageView, c15559, actionBarMenuItem3};
         actionBarMenuItem3.setLongClickEnabled(false);
         actionBarMenuItem3.setShowSubmenuByMove(false);
         actionBarMenuItem3.setIcon(i2);
         actionBarMenuItem3.setSubMenuOpenSide(2);
         actionBarMenuItem3.addSubItem(i3, i4, LocaleController.getString("DialogUnpin", i5));
-        actionBarMenuItem3.addSubItem(i6, C3295R.C3297drawable.pip_video_expand, LocaleController.getString("VoipGroupExpandStream", C3295R.string.VoipGroupExpandStream));
+        actionBarMenuItem3.addSubItem(i6, C3417R.C3419drawable.pip_video_expand, LocaleController.getString("VoipGroupExpandStream", C3417R.string.VoipGroupExpandStream));
         this.toggleThemeItem2 = actionBarMenuItem3.addSubItem(i7, 0, (CharSequence) null);
         this.compactMenuGap = actionBarMenuItem3.addColoredGap();
         actionBarMenuItem3.getPopupLayout().setFitItems(true);
-        actionBarMenuItem3.addSubItem(1, C3295R.C3297drawable.msg_forward, LocaleController.getString("Forward", C3295R.string.Forward));
-        actionBarMenuItem3.addSubItem(IdFabric$Menu.MESSAGE_FORWARD_CLOUD, C3295R.C3297drawable.fork_forward_cloud, LocaleController.getInternalString(C3295R.string.chat_message_popup_option_forward_cloud));
-        actionBarMenuItem3.addSubItem(2, C3295R.C3297drawable.msg_shareout, LocaleController.getString("ShareFile", C3295R.string.ShareFile));
-        actionBarMenuItem3.addSubItem(5, C3295R.C3297drawable.msg_download, LocaleController.getString("SaveToMusic", C3295R.string.SaveToMusic));
-        actionBarMenuItem3.addSubItem(4, C3295R.C3297drawable.msg_message, LocaleController.getString("ShowInChat", C3295R.string.ShowInChat));
+        actionBarMenuItem3.addSubItem(1, C3417R.C3419drawable.msg_forward, LocaleController.getString("Forward", C3417R.string.Forward));
+        actionBarMenuItem3.addSubItem(IdFabric$Menu.MESSAGE_FORWARD_CLOUD, C3417R.C3419drawable.fork_forward_cloud, LocaleController.getInternalString(C3417R.string.chat_message_popup_option_forward_cloud));
+        actionBarMenuItem3.addSubItem(2, C3417R.C3419drawable.msg_shareout, LocaleController.getString("ShareFile", C3417R.string.ShareFile));
+        actionBarMenuItem3.addSubItem(5, C3417R.C3419drawable.msg_download, LocaleController.getString("SaveToMusic", C3417R.string.SaveToMusic));
+        actionBarMenuItem3.addSubItem(4, C3417R.C3419drawable.msg_message, LocaleController.getString("ShowInChat", C3417R.string.ShowInChat));
         actionBarMenuItem3.setShowedFromBottom(true);
         actionBarMenuItem3.setOnClickListener(new View.OnClickListener() { // from class: com.iMe.fork.ui.view.PinnedPlayerView$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
@@ -391,12 +391,12 @@ public class PinnedPlayerView extends FrameLayout implements NotificationCenter.
             }
         });
         actionBarMenuItem3.setDelegate(new ActionBarMenuItem.ActionBarMenuItemDelegate() { // from class: com.iMe.fork.ui.view.PinnedPlayerView$$ExternalSyntheticLambda8
-            @Override // org.telegram.p044ui.ActionBar.ActionBarMenuItem.ActionBarMenuItemDelegate
+            @Override // org.telegram.p043ui.ActionBar.ActionBarMenuItem.ActionBarMenuItemDelegate
             public final void onItemClick(int i32) {
                 PinnedPlayerView.this.onSubItemClick(i32);
             }
         });
-        actionBarMenuItem3.setContentDescription(LocaleController.getString("AccDescrMoreOptions", C3295R.string.AccDescrMoreOptions));
+        actionBarMenuItem3.setContentDescription(LocaleController.getString("AccDescrMoreOptions", C3417R.string.AccDescrMoreOptions));
         frameLayout2.addView(actionBarMenuItem3, LayoutHelper.createFrame(48, 48, 51));
         linearLayout.addView(frameLayout2, LayoutHelper.createLinear(-1, 66));
         addView(linearLayout);
@@ -440,7 +440,7 @@ public class PinnedPlayerView extends FrameLayout implements NotificationCenter.
 
     /* renamed from: com.iMe.fork.ui.view.PinnedPlayerView$8 */
     /* loaded from: classes3.dex */
-    class C15418 extends RLottieImageView {
+    class C15528 extends RLottieImageView {
         private final Runnable backSeek;
         long lastTime;
         long lastUpdateTime;
@@ -452,16 +452,16 @@ public class PinnedPlayerView extends FrameLayout implements NotificationCenter.
         final /* synthetic */ float val$touchSlop;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C15418(Context context, float f) {
+        C15528(Context context, float f) {
             super(context);
             this.val$touchSlop = f;
             this.pressedCount = 0;
             this.pressedRunnable = new Runnable() { // from class: com.iMe.fork.ui.view.PinnedPlayerView.8.1
                 @Override // java.lang.Runnable
                 public void run() {
-                    C15418 c15418 = C15418.this;
-                    int i = c15418.pressedCount + 1;
-                    c15418.pressedCount = i;
+                    C15528 c15528 = C15528.this;
+                    int i = c15528.pressedCount + 1;
+                    c15528.pressedCount = i;
                     if (i != 1) {
                         if (i == 2) {
                             AndroidUtilities.runOnUIThread(this, ExoPlayer.DEFAULT_DETACH_SURFACE_TIMEOUT_MS);
@@ -471,9 +471,9 @@ public class PinnedPlayerView extends FrameLayout implements NotificationCenter.
                     }
                     PinnedPlayerView.this.rewindingState = -1;
                     PinnedPlayerView.this.rewindingProgress = MediaController.getInstance().getPlayingMessageObject().audioProgress;
-                    C15418.this.lastTime = System.currentTimeMillis();
+                    C15528.this.lastTime = System.currentTimeMillis();
                     AndroidUtilities.runOnUIThread(this, ExoPlayer.DEFAULT_DETACH_SURFACE_TIMEOUT_MS);
-                    AndroidUtilities.runOnUIThread(C15418.this.backSeek);
+                    AndroidUtilities.runOnUIThread(C15528.this.backSeek);
                 }
             };
             this.backSeek = new Runnable() { // from class: com.iMe.fork.ui.view.PinnedPlayerView.8.2
@@ -481,14 +481,14 @@ public class PinnedPlayerView extends FrameLayout implements NotificationCenter.
                 public void run() {
                     float f2;
                     long duration = MediaController.getInstance().getDuration();
-                    if (duration != 0 && duration != C0475C.TIME_UNSET) {
+                    if (duration != 0 && duration != C0480C.TIME_UNSET) {
                         float f3 = PinnedPlayerView.this.rewindingProgress;
                         long currentTimeMillis = System.currentTimeMillis();
-                        C15418 c15418 = C15418.this;
-                        long j = currentTimeMillis - c15418.lastTime;
-                        c15418.lastTime = currentTimeMillis;
-                        long j2 = currentTimeMillis - c15418.lastUpdateTime;
-                        int i = c15418.pressedCount;
+                        C15528 c15528 = C15528.this;
+                        long j = currentTimeMillis - c15528.lastTime;
+                        c15528.lastTime = currentTimeMillis;
+                        long j2 = currentTimeMillis - c15528.lastUpdateTime;
+                        int i = c15528.pressedCount;
                         float f4 = ((f3 * f2) - ((float) (j * (i == 1 ? 3L : i == 2 ? 6L : 12L)))) / ((float) duration);
                         if (f4 < BitmapDescriptorFactory.HUE_RED) {
                             f4 = 0.0f;
@@ -499,11 +499,11 @@ public class PinnedPlayerView extends FrameLayout implements NotificationCenter.
                             PinnedPlayerView.this.updateProgress(playingMessageObject);
                         }
                         if (PinnedPlayerView.this.rewindingState == -1) {
-                            C15418 c154182 = C15418.this;
-                            if (c154182.pressedCount > 0) {
+                            C15528 c155282 = C15528.this;
+                            if (c155282.pressedCount > 0) {
                                 if (j2 > 200 || PinnedPlayerView.this.rewindingProgress == BitmapDescriptorFactory.HUE_RED) {
-                                    C15418 c154183 = C15418.this;
-                                    c154183.lastUpdateTime = currentTimeMillis;
+                                    C15528 c155283 = C15528.this;
+                                    c155283.lastUpdateTime = currentTimeMillis;
                                     if (PinnedPlayerView.this.rewindingProgress == BitmapDescriptorFactory.HUE_RED) {
                                         MediaController.getInstance().seekToProgress(MediaController.getInstance().getPlayingMessageObject(), BitmapDescriptorFactory.HUE_RED);
                                         MediaController.getInstance().pauseByRewind();
@@ -511,18 +511,18 @@ public class PinnedPlayerView extends FrameLayout implements NotificationCenter.
                                         MediaController.getInstance().seekToProgress(MediaController.getInstance().getPlayingMessageObject(), f4);
                                     }
                                 }
-                                C15418 c154184 = C15418.this;
-                                if (c154184.pressedCount <= 0 || PinnedPlayerView.this.rewindingProgress <= BitmapDescriptorFactory.HUE_RED) {
+                                C15528 c155284 = C15528.this;
+                                if (c155284.pressedCount <= 0 || PinnedPlayerView.this.rewindingProgress <= BitmapDescriptorFactory.HUE_RED) {
                                     return;
                                 }
-                                AndroidUtilities.runOnUIThread(C15418.this.backSeek, 16L);
+                                AndroidUtilities.runOnUIThread(C15528.this.backSeek, 16L);
                                 return;
                             }
                             return;
                         }
                         return;
                     }
-                    C15418.this.lastTime = System.currentTimeMillis();
+                    C15528.this.lastTime = System.currentTimeMillis();
                 }
             };
         }
@@ -643,7 +643,7 @@ public class PinnedPlayerView extends FrameLayout implements NotificationCenter.
             Le0:
                 return r1
             */
-            throw new UnsupportedOperationException("Method not decompiled: com.iMe.fork.p024ui.view.PinnedPlayerView.C15418.onTouchEvent(android.view.MotionEvent):boolean");
+            throw new UnsupportedOperationException("Method not decompiled: com.iMe.fork.p024ui.view.PinnedPlayerView.C15528.onTouchEvent(android.view.MotionEvent):boolean");
         }
 
         @Override // android.view.View
@@ -667,7 +667,7 @@ public class PinnedPlayerView extends FrameLayout implements NotificationCenter.
 
     /* renamed from: com.iMe.fork.ui.view.PinnedPlayerView$9 */
     /* loaded from: classes3.dex */
-    class C15449 extends RLottieImageView {
+    class C15559 extends RLottieImageView {
         boolean pressed;
         private final Runnable pressedRunnable;
         float startX;
@@ -675,7 +675,7 @@ public class PinnedPlayerView extends FrameLayout implements NotificationCenter.
         final /* synthetic */ float val$touchSlop;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C15449(Context context, float f) {
+        C15559(Context context, float f) {
             super(context);
             this.val$touchSlop = f;
             this.pressedRunnable = new Runnable() { // from class: com.iMe.fork.ui.view.PinnedPlayerView.9.1
@@ -694,8 +694,8 @@ public class PinnedPlayerView extends FrameLayout implements NotificationCenter.
                         MediaController.getInstance().setPlaybackSpeed(true, 13.0f);
                         return;
                     }
-                    C15449 c15449 = C15449.this;
-                    c15449.pressed = true;
+                    C15559 c15559 = C15559.this;
+                    c15559.pressed = true;
                     PinnedPlayerView.this.rewindingState = 1;
                     if (MediaController.getInstance().isMessagePaused()) {
                         PinnedPlayerView.this.startForwardRewindingSeek();
@@ -824,7 +824,7 @@ public class PinnedPlayerView extends FrameLayout implements NotificationCenter.
             Le0:
                 return r1
             */
-            throw new UnsupportedOperationException("Method not decompiled: com.iMe.fork.p024ui.view.PinnedPlayerView.C15449.onTouchEvent(android.view.MotionEvent):boolean");
+            throw new UnsupportedOperationException("Method not decompiled: com.iMe.fork.p024ui.view.PinnedPlayerView.C15559.onTouchEvent(android.view.MotionEvent):boolean");
         }
 
         @Override // android.view.View
@@ -903,10 +903,10 @@ public class PinnedPlayerView extends FrameLayout implements NotificationCenter.
             updateCover(playingMessageObject, !z2);
             if (MediaController.getInstance().isMessagePaused()) {
                 this.playPauseDrawable.setPause(false);
-                this.playButton.setContentDescription(LocaleController.getString("AccActionPlay", C3295R.string.AccActionPlay));
+                this.playButton.setContentDescription(LocaleController.getString("AccActionPlay", C3417R.string.AccActionPlay));
             } else {
                 this.playPauseDrawable.setPause(true);
-                this.playButton.setContentDescription(LocaleController.getString("AccActionPause", C3295R.string.AccActionPause));
+                this.playButton.setContentDescription(LocaleController.getString("AccActionPause", C3417R.string.AccActionPause));
             }
             String musicTitle = playingMessageObject.getMusicTitle();
             String musicAuthor = playingMessageObject.getMusicAuthor();
@@ -1088,10 +1088,10 @@ public class PinnedPlayerView extends FrameLayout implements NotificationCenter.
         RLottieDrawable rLottieDrawable = this.toggleThemeDrawable;
         rLottieDrawable.setCurrentFrame(isCurrentThemeDark ? rLottieDrawable.getFramesCount() - 1 : 0, false);
         if (isCurrentThemeDark) {
-            i = C3295R.string.ThemeDay;
+            i = C3417R.string.ThemeDay;
             str = "ThemeDay";
         } else {
-            i = C3295R.string.ThemeNight;
+            i = C3417R.string.ThemeNight;
             str = "ThemeNight";
         }
         String string = LocaleController.getString(str, i);
@@ -1306,29 +1306,29 @@ public class PinnedPlayerView extends FrameLayout implements NotificationCenter.
         int i = SharedConfig.repeatMode;
         if (i != 0 && i != 1) {
             if (i == 2) {
-                this.repeatButton.setIcon(C3295R.C3297drawable.player_new_repeatone);
+                this.repeatButton.setIcon(C3417R.C3419drawable.player_new_repeatone);
                 ActionBarMenuItem actionBarMenuItem = this.repeatButton;
                 int i2 = Theme.key_player_buttonActive;
                 actionBarMenuItem.setTag(Integer.valueOf(i2));
                 this.repeatButton.setIconColor(getThemedColor(i2));
                 Theme.setSelectorDrawableColor(this.repeatButton.getBackground(), 436207615 & getThemedColor(i2), true);
-                this.repeatButton.setContentDescription(LocaleController.getString("AccDescrRepeatOne", C3295R.string.AccDescrRepeatOne));
+                this.repeatButton.setContentDescription(LocaleController.getString("AccDescrRepeatOne", C3417R.string.AccDescrRepeatOne));
                 return;
             }
             return;
         }
         if (SharedConfig.shuffleMusic) {
             if (i == 0) {
-                this.repeatButton.setIcon(C3295R.C3297drawable.player_new_shuffle);
+                this.repeatButton.setIcon(C3417R.C3419drawable.player_new_shuffle);
             } else {
-                this.repeatButton.setIcon(C3295R.C3297drawable.player_new_repeat_shuffle);
+                this.repeatButton.setIcon(C3417R.C3419drawable.player_new_repeat_shuffle);
             }
         } else if (!SharedConfig.playOrderReversed) {
-            this.repeatButton.setIcon(C3295R.C3297drawable.player_new_repeatall);
+            this.repeatButton.setIcon(C3417R.C3419drawable.player_new_repeatall);
         } else if (i == 0) {
-            this.repeatButton.setIcon(C3295R.C3297drawable.player_new_order);
+            this.repeatButton.setIcon(C3417R.C3419drawable.player_new_order);
         } else {
-            this.repeatButton.setIcon(C3295R.C3297drawable.player_new_repeat_reverse);
+            this.repeatButton.setIcon(C3417R.C3419drawable.player_new_repeat_reverse);
         }
         if (i == 0 && !SharedConfig.shuffleMusic && !SharedConfig.playOrderReversed) {
             ActionBarMenuItem actionBarMenuItem2 = this.repeatButton;
@@ -1336,7 +1336,7 @@ public class PinnedPlayerView extends FrameLayout implements NotificationCenter.
             actionBarMenuItem2.setTag(Integer.valueOf(i3));
             this.repeatButton.setIconColor(getThemedColor(i3));
             Theme.setSelectorDrawableColor(this.repeatButton.getBackground(), getThemedColor(Theme.key_listSelector), true);
-            this.repeatButton.setContentDescription(LocaleController.getString("AccDescrRepeatOff", C3295R.string.AccDescrRepeatOff));
+            this.repeatButton.setContentDescription(LocaleController.getString("AccDescrRepeatOff", C3417R.string.AccDescrRepeatOff));
             return;
         }
         ActionBarMenuItem actionBarMenuItem3 = this.repeatButton;
@@ -1346,14 +1346,14 @@ public class PinnedPlayerView extends FrameLayout implements NotificationCenter.
         Theme.setSelectorDrawableColor(this.repeatButton.getBackground(), 436207615 & getThemedColor(i4), true);
         if (i == 0) {
             if (SharedConfig.shuffleMusic) {
-                this.repeatButton.setContentDescription(LocaleController.getString("ShuffleList", C3295R.string.ShuffleList));
+                this.repeatButton.setContentDescription(LocaleController.getString("ShuffleList", C3417R.string.ShuffleList));
                 return;
             } else {
-                this.repeatButton.setContentDescription(LocaleController.getString("ReverseOrder", C3295R.string.ReverseOrder));
+                this.repeatButton.setContentDescription(LocaleController.getString("ReverseOrder", C3417R.string.ReverseOrder));
                 return;
             }
         }
-        this.repeatButton.setContentDescription(LocaleController.getString("AccDescrRepeatList", C3295R.string.AccDescrRepeatList));
+        this.repeatButton.setContentDescription(LocaleController.getString("AccDescrRepeatList", C3417R.string.AccDescrRepeatList));
     }
 
     /* JADX INFO: Access modifiers changed from: private */

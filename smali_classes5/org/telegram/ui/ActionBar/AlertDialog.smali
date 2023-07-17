@@ -2028,15 +2028,6 @@
     return-object v0
 .end method
 
-.method public getMessageTextView()Landroid/widget/TextView;
-    .locals 1
-
-    .line 94
-    iget-object v0, p0, Lorg/telegram/ui/ActionBar/AlertDialog;->messageTextView:Landroid/widget/TextView;
-
-    return-object v0
-.end method
-
 .method public getThemeDescriptions()Ljava/util/ArrayList;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;

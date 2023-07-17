@@ -7,7 +7,7 @@ import android.os.Looper;
 import android.os.Message;
 import android.os.SystemClock;
 import android.util.Pair;
-import com.google.android.exoplayer2.C0475C;
+import com.google.android.exoplayer2.C0480C;
 import com.google.android.exoplayer2.analytics.PlayerId;
 import com.google.android.exoplayer2.decoder.CryptoConfig;
 import com.google.android.exoplayer2.drm.DrmInitData;
@@ -336,7 +336,7 @@ public class DefaultDrmSession implements DrmSession {
     }
 
     private long getLicenseDurationRemainingSec() {
-        if (C0475C.WIDEVINE_UUID.equals(this.uuid)) {
+        if (C0480C.WIDEVINE_UUID.equals(this.uuid)) {
             Pair pair = (Pair) Assertions.checkNotNull(WidevineUtil.getLicenseDurationRemainingSec(this));
             return Math.min(((Long) pair.first).longValue(), ((Long) pair.second).longValue());
         }
@@ -506,7 +506,7 @@ public class DefaultDrmSession implements DrmSession {
                     unexpectedDrmSessionException = new UnexpectedDrmSessionException(mediaDrmCallbackException.getCause());
                 }
                 long retryDelayMsFor = DefaultDrmSession.this.loadErrorHandlingPolicy.getRetryDelayMsFor(new LoadErrorHandlingPolicy.LoadErrorInfo(loadEventInfo, mediaLoadData, unexpectedDrmSessionException, requestTask.errorCount));
-                if (retryDelayMsFor == C0475C.TIME_UNSET) {
+                if (retryDelayMsFor == C0480C.TIME_UNSET) {
                     return false;
                 }
                 synchronized (this) {

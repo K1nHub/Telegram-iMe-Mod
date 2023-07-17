@@ -48,7 +48,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 87
+    .line 132
     invoke-virtual {p0}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$qrCodeBottomSheet$2;->invoke()Lorg/telegram/ui/Components/QRCodeBottomSheet;
 
     move-result-object v0
@@ -59,7 +59,7 @@
 .method public final invoke()Lorg/telegram/ui/Components/QRCodeBottomSheet;
     .locals 1
 
-    .line 87
+    .line 132
     iget-object v0, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$qrCodeBottomSheet$2;->this$0:Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;
 
     invoke-static {v0}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->access$createQRCodeBottomSheet(Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;)Lorg/telegram/ui/Components/QRCodeBottomSheet;

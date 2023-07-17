@@ -2,8 +2,8 @@ package com.iMe.fork.p024ui.view;
 
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Lambda;
-import org.telegram.p044ui.ActionBar.AlertDialog;
-import org.telegram.p044ui.Components.ChatAttachAlert;
+import org.telegram.p043ui.ActionBar.AlertDialog;
+import org.telegram.p043ui.Components.ChatAttachAlert;
 /* compiled from: ChatAttachAlertWalletLayout.kt */
 /* renamed from: com.iMe.fork.ui.view.ChatAttachAlertWalletLayout$progressDialog$2 */
 /* loaded from: classes3.dex */

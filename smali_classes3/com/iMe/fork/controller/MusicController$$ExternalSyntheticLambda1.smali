@@ -33,7 +33,7 @@
 
     iget-object v1, p0, Lcom/iMe/fork/controller/MusicController$$ExternalSyntheticLambda1;->f$1:Lcom/iMe/storage/domain/model/music/PlaylistModel;
 
-    invoke-static {v0, v1}, Lcom/iMe/fork/controller/MusicController;->$r8$lambda$U09xvAevqeVfWUr8Tp6KFsRxnCE(Lcom/iMe/fork/controller/MusicController;Lcom/iMe/storage/domain/model/music/PlaylistModel;)V
+    invoke-static {v0, v1}, Lcom/iMe/fork/controller/MusicController;->$r8$lambda$0zxUmEEyOfEQXFs0Bx6mv1vc_kk(Lcom/iMe/fork/controller/MusicController;Lcom/iMe/storage/domain/model/music/PlaylistModel;)V
 
     return-void
 .end method

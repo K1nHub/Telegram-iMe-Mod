@@ -2,14 +2,14 @@ package com.iMe.p031ui.wallet.actions.send.amount;
 
 import com.iMe.fork.utils.Callbacks$Callback1;
 import com.iMe.model.dialog.DialogModel;
-import com.iMe.model.wallet.select.SelectableToken;
-import com.iMe.model.wallet.select.SelectableType;
 import com.iMe.navigation.wallet.coordinator.args.TokenBuyCoordinatorArgs;
 import com.iMe.p031ui.base.mvp.base.BaseView;
 import com.iMe.p031ui.wallet.actions.send.amount.WalletSendAmountPresenter;
+import com.iMe.p031ui.wallet.swap.token.WalletSelectTokenFragment;
 import com.iMe.storage.domain.model.Result;
-import com.iMe.storage.domain.model.crypto.NetworkType;
+import com.iMe.storage.domain.model.crypto.Network;
 import com.iMe.storage.domain.model.wallet.token.TokenBalance;
+import com.iMe.storage.domain.model.wallet.token.TokenDetailed;
 import com.iMe.storage.domain.utils.system.ResourceManager;
 import io.reactivex.disposables.Disposable;
 import java.util.List;
@@ -23,6 +23,11 @@ public class WalletSendAmountView$$State extends MvpViewState<WalletSendAmountVi
     @Override // com.iMe.p031ui.base.mvp.base.BaseView
     public /* synthetic */ void finishScreen() {
         BaseView.CC.$default$finishScreen(this);
+    }
+
+    @Override // com.iMe.p031ui.base.mvp.base.BaseView
+    public /* synthetic */ void removeSelfFromStackImmediately() {
+        BaseView.CC.$default$removeSelfFromStackImmediately(this);
     }
 
     @Override // com.iMe.p031ui.wallet.actions.send.amount.WalletSendAmountView
@@ -78,27 +83,27 @@ public class WalletSendAmountView$$State extends MvpViewState<WalletSendAmountVi
     }
 
     @Override // com.iMe.p031ui.wallet.actions.send.amount.WalletSendAmountView
-    public void showSelectTokenDialog(SelectableType selectableType, List<? extends SelectableToken> list, NetworkType networkType, boolean z, Callbacks$Callback1<SelectableToken> callbacks$Callback1) {
-        ShowSelectTokenDialogCommand showSelectTokenDialogCommand = new ShowSelectTokenDialogCommand(this, selectableType, list, networkType, z, callbacks$Callback1);
+    public void showSelectTokenDialog(WalletSelectTokenFragment.ScreenType screenType, String str, boolean z, Callbacks$Callback1<TokenDetailed> callbacks$Callback1) {
+        ShowSelectTokenDialogCommand showSelectTokenDialogCommand = new ShowSelectTokenDialogCommand(this, screenType, str, z, callbacks$Callback1);
         this.viewCommands.beforeApply(showSelectTokenDialogCommand);
         if (hasNotView().booleanValue()) {
             return;
         }
         for (View view : this.views) {
-            view.showSelectTokenDialog(selectableType, list, networkType, z, callbacks$Callback1);
+            view.showSelectTokenDialog(screenType, str, z, callbacks$Callback1);
         }
         this.viewCommands.afterApply(showSelectTokenDialogCommand);
     }
 
     @Override // com.iMe.p031ui.wallet.actions.send.amount.WalletSendAmountView
-    public void showChooseNetworkDialog(List<? extends NetworkType> list, NetworkType networkType, Callbacks$Callback1<NetworkType> callbacks$Callback1) {
-        ShowChooseNetworkDialogCommand showChooseNetworkDialogCommand = new ShowChooseNetworkDialogCommand(this, list, networkType, callbacks$Callback1);
+    public void showChooseNetworkDialog(List<Network> list, Network network, Callbacks$Callback1<Network> callbacks$Callback1) {
+        ShowChooseNetworkDialogCommand showChooseNetworkDialogCommand = new ShowChooseNetworkDialogCommand(this, list, network, callbacks$Callback1);
         this.viewCommands.beforeApply(showChooseNetworkDialogCommand);
         if (hasNotView().booleanValue()) {
             return;
         }
         for (View view : this.views) {
-            view.showChooseNetworkDialog(list, networkType, callbacks$Callback1);
+            view.showChooseNetworkDialog(list, network, callbacks$Callback1);
         }
         this.viewCommands.afterApply(showChooseNetworkDialogCommand);
     }
@@ -220,7 +225,7 @@ public class WalletSendAmountView$$State extends MvpViewState<WalletSendAmountVi
         this.viewCommands.afterApply(showErrorToastCommand);
     }
 
-    @Override // com.iMe.p031ui.wallet.home.p032v2.tabs.binancepay.replenish.WalletBinancePayReplenishView
+    @Override // com.iMe.p031ui.wallet.home.tabs.binancepay.replenish.WalletBinancePayReplenishView
     public void setupReplenishAddress() {
         SetupReplenishAddressCommand setupReplenishAddressCommand = new SetupReplenishAddressCommand(this);
         this.viewCommands.beforeApply(setupReplenishAddressCommand);
@@ -299,24 +304,22 @@ public class WalletSendAmountView$$State extends MvpViewState<WalletSendAmountVi
     /* renamed from: com.iMe.ui.wallet.actions.send.amount.WalletSendAmountView$$State$ShowSelectTokenDialogCommand */
     /* loaded from: classes3.dex */
     public class ShowSelectTokenDialogCommand extends ViewCommand<WalletSendAmountView> {
-        public final Callbacks$Callback1<SelectableToken> action;
-        public final NetworkType networkType;
+        public final Callbacks$Callback1<TokenDetailed> action;
+        public final String networkId;
         public final boolean onlyPositiveBalance;
-        public final List<? extends SelectableToken> tokens;
-        public final SelectableType type;
+        public final WalletSelectTokenFragment.ScreenType selectTokensScreenType;
 
-        ShowSelectTokenDialogCommand(WalletSendAmountView$$State walletSendAmountView$$State, SelectableType selectableType, List<? extends SelectableToken> list, NetworkType networkType, boolean z, Callbacks$Callback1<SelectableToken> callbacks$Callback1) {
+        ShowSelectTokenDialogCommand(WalletSendAmountView$$State walletSendAmountView$$State, WalletSelectTokenFragment.ScreenType screenType, String str, boolean z, Callbacks$Callback1<TokenDetailed> callbacks$Callback1) {
             super("showSelectTokenDialog", OneExecutionStateStrategy.class);
-            this.type = selectableType;
-            this.tokens = list;
-            this.networkType = networkType;
+            this.selectTokensScreenType = screenType;
+            this.networkId = str;
             this.onlyPositiveBalance = z;
             this.action = callbacks$Callback1;
         }
 
         @Override // moxy.viewstate.ViewCommand
         public void apply(WalletSendAmountView walletSendAmountView) {
-            walletSendAmountView.showSelectTokenDialog(this.type, this.tokens, this.networkType, this.onlyPositiveBalance, this.action);
+            walletSendAmountView.showSelectTokenDialog(this.selectTokensScreenType, this.networkId, this.onlyPositiveBalance, this.action);
         }
     }
 
@@ -324,14 +327,14 @@ public class WalletSendAmountView$$State extends MvpViewState<WalletSendAmountVi
     /* renamed from: com.iMe.ui.wallet.actions.send.amount.WalletSendAmountView$$State$ShowChooseNetworkDialogCommand */
     /* loaded from: classes3.dex */
     public class ShowChooseNetworkDialogCommand extends ViewCommand<WalletSendAmountView> {
-        public final Callbacks$Callback1<NetworkType> action;
-        public final List<? extends NetworkType> availableNetworks;
-        public final NetworkType networkType;
+        public final Callbacks$Callback1<Network> action;
+        public final List<Network> availableNetworks;
+        public final Network networkType;
 
-        ShowChooseNetworkDialogCommand(WalletSendAmountView$$State walletSendAmountView$$State, List<? extends NetworkType> list, NetworkType networkType, Callbacks$Callback1<NetworkType> callbacks$Callback1) {
+        ShowChooseNetworkDialogCommand(WalletSendAmountView$$State walletSendAmountView$$State, List<Network> list, Network network, Callbacks$Callback1<Network> callbacks$Callback1) {
             super("showChooseNetworkDialog", OneExecutionStateStrategy.class);
             this.availableNetworks = list;
-            this.networkType = networkType;
+            this.networkType = network;
             this.action = callbacks$Callback1;
         }
 

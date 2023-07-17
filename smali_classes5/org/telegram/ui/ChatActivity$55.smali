@@ -30,7 +30,7 @@
 .method constructor <init>(Lorg/telegram/ui/ChatActivity;Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
     .locals 0
 
-    .line 9599
+    .line 9537
     iput-object p1, p0, Lorg/telegram/ui/ChatActivity$55;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-direct {p0, p2, p3}, Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
@@ -43,10 +43,10 @@
 .method protected dispatchDraw(Landroid/graphics/Canvas;)V
     .locals 13
 
-    .line 9614
+    .line 9552
     invoke-super {p0, p1}, Landroid/widget/TextView;->dispatchDraw(Landroid/graphics/Canvas;)V
 
-    .line 9615
+    .line 9553
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$55;->lastLayout:Landroid/text/Layout;
 
     invoke-virtual {p0}, Landroid/widget/TextView;->getLayout()Landroid/text/Layout;
@@ -57,7 +57,7 @@
 
     const/4 v0, 0x7
 
-    .line 9616
+    .line 9554
     iget-object v1, p0, Lorg/telegram/ui/ChatActivity$55;->stack:Lorg/telegram/ui/Components/AnimatedEmojiSpan$EmojiGroupedSpans;
 
     const/4 v2, 0x1
@@ -80,7 +80,7 @@
 
     iput-object v0, p0, Lorg/telegram/ui/ChatActivity$55;->stack:Lorg/telegram/ui/Components/AnimatedEmojiSpan$EmojiGroupedSpans;
 
-    .line 9618
+    .line 9556
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$55;->this$0:Lorg/telegram/ui/ChatActivity;
 
@@ -90,7 +90,7 @@
 
     move-result v0
 
-    .line 9619
+    .line 9557
     iget v1, p0, Lorg/telegram/ui/ChatActivity$55;->lastColor:I
 
     if-ne v1, v0, :cond_1
@@ -99,7 +99,7 @@
 
     if-nez v1, :cond_2
 
-    .line 9620
+    .line 9558
     :cond_1
     new-instance v1, Landroid/graphics/PorterDuffColorFilter;
 
@@ -109,10 +109,10 @@
 
     iput-object v1, p0, Lorg/telegram/ui/ChatActivity$55;->colorFilter:Landroid/graphics/PorterDuffColorFilter;
 
-    .line 9621
+    .line 9559
     iput v0, p0, Lorg/telegram/ui/ChatActivity$55;->lastColor:I
 
-    .line 9623
+    .line 9561
     :cond_2
     invoke-virtual {p0}, Landroid/widget/TextView;->getLayout()Landroid/text/Layout;
 
@@ -144,17 +144,17 @@
 .method protected onDetachedFromWindow()V
     .locals 1
 
-    .line 9607
+    .line 9545
     invoke-super {p0}, Landroid/widget/TextView;->onDetachedFromWindow()V
 
-    .line 9608
+    .line 9546
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$55;->stack:Lorg/telegram/ui/Components/AnimatedEmojiSpan$EmojiGroupedSpans;
 
     invoke-static {p0, v0}, Lorg/telegram/ui/Components/AnimatedEmojiSpan;->release(Landroid/view/View;Lorg/telegram/ui/Components/AnimatedEmojiSpan$EmojiGroupedSpans;)V
 
     const/4 v0, 0x0
 
-    .line 9609
+    .line 9547
     iput-object v0, p0, Lorg/telegram/ui/ChatActivity$55;->lastLayout:Landroid/text/Layout;
 
     return-void

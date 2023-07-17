@@ -155,7 +155,7 @@ public abstract class BaseQuickAdapter<T, VH extends BaseViewHolder> extends Rec
         return this.data;
     }
 
-    public final void setData$TMessagesProj_release(List<T> list) {
+    public final void setData$TMessagesProj_HA_public(List<T> list) {
         Intrinsics.checkNotNullParameter(list, "<set-?>");
         this.data = list;
     }
@@ -181,11 +181,11 @@ public abstract class BaseQuickAdapter<T, VH extends BaseViewHolder> extends Rec
         return baseLoadMoreModule;
     }
 
-    public final BaseLoadMoreModule getMLoadMoreModule$TMessagesProj_release() {
+    public final BaseLoadMoreModule getMLoadMoreModule$TMessagesProj_HA_public() {
         return this.mLoadMoreModule;
     }
 
-    public final RecyclerView getMRecyclerView$TMessagesProj_release() {
+    public final RecyclerView getMRecyclerView$TMessagesProj_HA_public() {
         return this.mRecyclerView;
     }
 
@@ -229,7 +229,7 @@ public abstract class BaseQuickAdapter<T, VH extends BaseViewHolder> extends Rec
                 VH createBaseViewHolder = createBaseViewHolder(baseLoadMoreModule.getLoadMoreView().getRootView(parent));
                 BaseLoadMoreModule baseLoadMoreModule2 = this.mLoadMoreModule;
                 Intrinsics.checkNotNull(baseLoadMoreModule2);
-                baseLoadMoreModule2.setupViewHolder$TMessagesProj_release(createBaseViewHolder);
+                baseLoadMoreModule2.setupViewHolder$TMessagesProj_HA_public(createBaseViewHolder);
                 return createBaseViewHolder;
             case 268436275:
                 LinearLayout linearLayout4 = this.mFooterLayout;
@@ -282,7 +282,7 @@ public abstract class BaseQuickAdapter<T, VH extends BaseViewHolder> extends Rec
                 bindViewClickListener(onCreateDefViewHolder, i);
                 BaseDraggableModule baseDraggableModule = this.mDraggableModule;
                 if (baseDraggableModule != null) {
-                    baseDraggableModule.initView$TMessagesProj_release(onCreateDefViewHolder);
+                    baseDraggableModule.initView$TMessagesProj_HA_public(onCreateDefViewHolder);
                 }
                 onItemViewHolderCreated(onCreateDefViewHolder, i);
                 return onCreateDefViewHolder;
@@ -336,11 +336,11 @@ public abstract class BaseQuickAdapter<T, VH extends BaseViewHolder> extends Rec
         try {
             BaseUpFetchModule baseUpFetchModule = this.mUpFetchModule;
             if (baseUpFetchModule != null) {
-                baseUpFetchModule.autoUpFetch$TMessagesProj_release(i);
+                baseUpFetchModule.autoUpFetch$TMessagesProj_HA_public(i);
             }
             BaseLoadMoreModule baseLoadMoreModule = this.mLoadMoreModule;
             if (baseLoadMoreModule != null) {
-                baseLoadMoreModule.autoLoadMore$TMessagesProj_release(i);
+                baseLoadMoreModule.autoLoadMore$TMessagesProj_HA_public(i);
             }
             switch (holder.getItemViewType()) {
                 case 268435729:
@@ -373,11 +373,11 @@ public abstract class BaseQuickAdapter<T, VH extends BaseViewHolder> extends Rec
             }
             BaseUpFetchModule baseUpFetchModule = this.mUpFetchModule;
             if (baseUpFetchModule != null) {
-                baseUpFetchModule.autoUpFetch$TMessagesProj_release(i);
+                baseUpFetchModule.autoUpFetch$TMessagesProj_HA_public(i);
             }
             BaseLoadMoreModule baseLoadMoreModule = this.mLoadMoreModule;
             if (baseLoadMoreModule != null) {
-                baseLoadMoreModule.autoLoadMore$TMessagesProj_release(i);
+                baseLoadMoreModule.autoLoadMore$TMessagesProj_HA_public(i);
             }
             switch (holder.getItemViewType()) {
                 case 268435729:
@@ -830,7 +830,7 @@ public abstract class BaseQuickAdapter<T, VH extends BaseViewHolder> extends Rec
         this.data = list;
         BaseLoadMoreModule baseLoadMoreModule = this.mLoadMoreModule;
         if (baseLoadMoreModule != null) {
-            baseLoadMoreModule.reset$TMessagesProj_release();
+            baseLoadMoreModule.reset$TMessagesProj_HA_public();
         }
         this.mLastPosition = -1;
         notifyDataSetChanged();

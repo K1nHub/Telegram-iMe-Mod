@@ -13,7 +13,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nWalletSendRecipientPresenter.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WalletSendRecipientPresenter.kt\ncom/iMe/ui/wallet/actions/send/recipient/WalletSendRecipientPresenter\n+ 2 RxExt.kt\ncom/iMe/utils/extentions/rx/RxExtKt\n*L\n1#1,79:1\n39#2,8:80\n*S KotlinDebug\n*F\n+ 1 WalletSendRecipientPresenter.kt\ncom/iMe/ui/wallet/actions/send/recipient/WalletSendRecipientPresenter\n*L\n64#1:80,8\n*E\n"
+    value = "SMAP\nWalletSendRecipientPresenter.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WalletSendRecipientPresenter.kt\ncom/iMe/ui/wallet/actions/send/recipient/WalletSendRecipientPresenter\n+ 2 RxExt.kt\ncom/iMe/utils/extentions/rx/RxExtKt\n*L\n1#1,83:1\n42#2,12:84\n*S KotlinDebug\n*F\n+ 1 WalletSendRecipientPresenter.kt\ncom/iMe/ui/wallet/actions/send/recipient/WalletSendRecipientPresenter\n*L\n68#1:84,12\n*E\n"
 .end annotation
 
 .annotation runtime Lmoxy/InjectViewState;
@@ -21,13 +21,11 @@
 
 
 # instance fields
-.field private final cryptoPreferenceHelper:Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
-
 .field private final cryptoRecipientManager:Lcom/iMe/manager/crypto/recipient/CryptoRecipientManager;
 
 .field private final cryptoWalletInteractor:Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;
 
-.field private final networkType:Lcom/iMe/storage/domain/model/crypto/NetworkType;
+.field private final currentNetworkType:Lcom/iMe/storage/domain/model/crypto/Network;
 
 .field private final resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
@@ -35,14 +33,14 @@
 
 
 # direct methods
-.method public constructor <init>(Lcom/iMe/storage/domain/model/crypto/NetworkType;Lcom/iMe/storage/domain/utils/system/ResourceManager;Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;Lcom/iMe/manager/crypto/recipient/CryptoRecipientManager;Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;)V
+.method public constructor <init>(Ljava/lang/String;Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;Lcom/iMe/storage/domain/utils/system/ResourceManager;Lcom/iMe/manager/crypto/recipient/CryptoRecipientManager;Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;)V
     .locals 1
 
-    const-string v0, "resourceManager"
+    const-string v0, "cryptoPreferenceHelper"
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "cryptoPreferenceHelper"
+    const-string v0, "resourceManager"
 
     invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -58,26 +56,60 @@
 
     invoke-static {p6, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 26
+    .line 27
     invoke-direct {p0}, Lcom/iMe/ui/base/mvp/base/BasePresenter;-><init>()V
 
-    .line 20
-    iput-object p1, p0, Lcom/iMe/ui/wallet/actions/send/recipient/WalletSendRecipientPresenter;->networkType:Lcom/iMe/storage/domain/model/crypto/NetworkType;
-
-    .line 21
-    iput-object p2, p0, Lcom/iMe/ui/wallet/actions/send/recipient/WalletSendRecipientPresenter;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
-
-    .line 22
-    iput-object p3, p0, Lcom/iMe/ui/wallet/actions/send/recipient/WalletSendRecipientPresenter;->cryptoPreferenceHelper:Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
-
     .line 23
-    iput-object p4, p0, Lcom/iMe/ui/wallet/actions/send/recipient/WalletSendRecipientPresenter;->cryptoRecipientManager:Lcom/iMe/manager/crypto/recipient/CryptoRecipientManager;
+    iput-object p3, p0, Lcom/iMe/ui/wallet/actions/send/recipient/WalletSendRecipientPresenter;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     .line 24
-    iput-object p5, p0, Lcom/iMe/ui/wallet/actions/send/recipient/WalletSendRecipientPresenter;->cryptoWalletInteractor:Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;
+    iput-object p4, p0, Lcom/iMe/ui/wallet/actions/send/recipient/WalletSendRecipientPresenter;->cryptoRecipientManager:Lcom/iMe/manager/crypto/recipient/CryptoRecipientManager;
 
     .line 25
+    iput-object p5, p0, Lcom/iMe/ui/wallet/actions/send/recipient/WalletSendRecipientPresenter;->cryptoWalletInteractor:Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;
+
+    .line 26
     iput-object p6, p0, Lcom/iMe/ui/wallet/actions/send/recipient/WalletSendRecipientPresenter;->schedulersProvider:Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
+
+    if-eqz p1, :cond_1
+
+    .line 30
+    invoke-interface {p1}, Ljava/lang/CharSequence;->length()I
+
+    move-result p3
+
+    if-nez p3, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    const/4 p3, 0x0
+
+    goto :goto_1
+
+    :cond_1
+    :goto_0
+    const/4 p3, 0x1
+
+    :goto_1
+    if-eqz p3, :cond_2
+
+    .line 31
+    invoke-interface {p2}, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;->getNetwork()Lcom/iMe/storage/domain/model/crypto/Network;
+
+    move-result-object p1
+
+    goto :goto_2
+
+    .line 33
+    :cond_2
+    invoke-static {p1}, Lcom/iMe/storage/data/utils/crypto/NetworksHelper;->getNetworkById(Ljava/lang/String;)Lcom/iMe/storage/domain/model/crypto/Network;
+
+    move-result-object p1
+
+    .line 30
+    :goto_2
+    iput-object p1, p0, Lcom/iMe/ui/wallet/actions/send/recipient/WalletSendRecipientPresenter;->currentNetworkType:Lcom/iMe/storage/domain/model/crypto/Network;
 
     return-void
 .end method
@@ -85,7 +117,7 @@
 .method public static final synthetic access$getResourceManager$p(Lcom/iMe/ui/wallet/actions/send/recipient/WalletSendRecipientPresenter;)Lcom/iMe/storage/domain/utils/system/ResourceManager;
     .locals 0
 
-    .line 18
+    .line 19
     iget-object p0, p0, Lcom/iMe/ui/wallet/actions/send/recipient/WalletSendRecipientPresenter;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     return-object p0
@@ -96,12 +128,10 @@
 
     if-eqz p2, :cond_0
 
-    .line 56
-    invoke-virtual {p0}, Lcom/iMe/ui/wallet/actions/send/recipient/WalletSendRecipientPresenter;->getCurrentNetworkType()Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    .line 60
+    iget-object p2, p0, Lcom/iMe/ui/wallet/actions/send/recipient/WalletSendRecipientPresenter;->currentNetworkType:Lcom/iMe/storage/domain/model/crypto/Network;
 
-    move-result-object p2
-
-    invoke-virtual {p2}, Lcom/iMe/storage/domain/model/crypto/NetworkType;->getBlockchainType()Lcom/iMe/storage/domain/model/crypto/BlockchainType;
+    invoke-virtual {p2}, Lcom/iMe/storage/domain/model/crypto/Network;->getBlockchainType()Lcom/iMe/storage/domain/model/crypto/BlockchainType;
 
     move-result-object p2
 
@@ -109,25 +139,23 @@
 
     goto :goto_0
 
-    .line 60
+    .line 64
     :cond_0
-    invoke-virtual {p0}, Lcom/iMe/ui/wallet/actions/send/recipient/WalletSendRecipientPresenter;->getCurrentNetworkType()Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    iget-object p2, p0, Lcom/iMe/ui/wallet/actions/send/recipient/WalletSendRecipientPresenter;->currentNetworkType:Lcom/iMe/storage/domain/model/crypto/Network;
+
+    invoke-virtual {p2}, Lcom/iMe/storage/domain/model/crypto/Network;->getBlockchainType()Lcom/iMe/storage/domain/model/crypto/BlockchainType;
 
     move-result-object p2
 
-    invoke-virtual {p2}, Lcom/iMe/storage/domain/model/crypto/NetworkType;->getBlockchainType()Lcom/iMe/storage/domain/model/crypto/BlockchainType;
-
-    move-result-object p2
-
-    .line 61
+    .line 65
     iget-object v0, p0, Lcom/iMe/ui/wallet/actions/send/recipient/WalletSendRecipientPresenter;->cryptoWalletInteractor:Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;
 
-    .line 58
+    .line 62
     invoke-static {p1, p2, v0}, Lcom/iMe/utils/helper/wallet/CryptoHelper;->extractAddress(Ljava/lang/String;Lcom/iMe/storage/domain/model/crypto/BlockchainType;Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;)Lio/reactivex/Observable;
 
     move-result-object p1
 
-    .line 63
+    .line 67
     iget-object p2, p0, Lcom/iMe/ui/wallet/actions/send/recipient/WalletSendRecipientPresenter;->schedulersProvider:Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
     invoke-interface {p2}, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;->ui()Lio/reactivex/Scheduler;
@@ -144,7 +172,7 @@
 
     const/4 p2, 0x0
 
-    .line 44
+    .line 47
     new-instance v0, Lcom/iMe/ui/wallet/actions/send/recipient/WalletSendRecipientPresenter$validateRecipientAddress$$inlined$subscribeWithErrorHandle$default$1;
 
     invoke-direct {v0, p0}, Lcom/iMe/ui/wallet/actions/send/recipient/WalletSendRecipientPresenter$validateRecipientAddress$$inlined$subscribeWithErrorHandle$default$1;-><init>(Lcom/iMe/ui/wallet/actions/send/recipient/WalletSendRecipientPresenter;)V
@@ -157,19 +185,19 @@
 
     invoke-direct {v0, p2}, Lcom/iMe/ui/wallet/actions/send/recipient/WalletSendRecipientPresenter$validateRecipientAddress$$inlined$subscribeWithErrorHandle$default$2;-><init>(Lcom/iMe/ui/base/mvp/base/BaseView;)V
 
-    .line 46
+    .line 49
     new-instance p2, Lcom/iMe/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
 
     invoke-direct {p2, v0}, Lcom/iMe/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;-><init>(Lkotlin/jvm/functions/Function1;)V
 
-    .line 44
+    .line 47
     invoke-virtual {p1, v1, p2}, Lio/reactivex/Observable;->subscribe(Lio/reactivex/functions/Consumer;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
 
     move-result-object p1
 
-    const-string p2, "viewState: BaseView? = n\u2026  onError.invoke()\n    })"
+    const-string p2, "viewState: BaseView? = n\u2026Error.invoke()\n        })"
 
-    .line 46
+    .line 49
     invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     :goto_0
@@ -178,21 +206,12 @@
 
 
 # virtual methods
-.method public final getCurrentNetworkType()Lcom/iMe/storage/domain/model/crypto/NetworkType;
+.method public final getCurrentNetworkType()Lcom/iMe/storage/domain/model/crypto/Network;
     .locals 1
 
     .line 30
-    iget-object v0, p0, Lcom/iMe/ui/wallet/actions/send/recipient/WalletSendRecipientPresenter;->networkType:Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    iget-object v0, p0, Lcom/iMe/ui/wallet/actions/send/recipient/WalletSendRecipientPresenter;->currentNetworkType:Lcom/iMe/storage/domain/model/crypto/Network;
 
-    if-nez v0, :cond_0
-
-    iget-object v0, p0, Lcom/iMe/ui/wallet/actions/send/recipient/WalletSendRecipientPresenter;->cryptoPreferenceHelper:Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
-
-    invoke-interface {v0}, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;->getNetworkType()Lcom/iMe/storage/domain/model/crypto/NetworkType;
-
-    move-result-object v0
-
-    :cond_0
     return-object v0
 .end method
 
@@ -217,12 +236,12 @@
 .method public onDestroy()V
     .locals 1
 
-    .line 47
+    .line 51
     iget-object v0, p0, Lcom/iMe/ui/wallet/actions/send/recipient/WalletSendRecipientPresenter;->cryptoRecipientManager:Lcom/iMe/manager/crypto/recipient/CryptoRecipientManager;
 
     invoke-virtual {v0}, Lcom/iMe/manager/crypto/recipient/CryptoRecipientManager;->onDetachViewState()V
 
-    .line 48
+    .line 52
     invoke-super {p0}, Lcom/iMe/ui/base/mvp/base/BasePresenter;->onDestroy()V
 
     return-void
@@ -231,7 +250,7 @@
 .method protected onFirstViewAttach()V
     .locals 3
 
-    .line 43
+    .line 47
     iget-object v0, p0, Lcom/iMe/ui/wallet/actions/send/recipient/WalletSendRecipientPresenter;->cryptoRecipientManager:Lcom/iMe/manager/crypto/recipient/CryptoRecipientManager;
 
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
@@ -256,7 +275,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 35
+    .line 39
     invoke-static {p1}, Lkotlin/text/StringsKt;->trim(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
 
     move-result-object p1

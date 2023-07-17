@@ -26,7 +26,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nStakingOperationsFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 StakingOperationsFragment.kt\ncom/iMe/ui/wallet/staking/operations/StakingOperationsFragment$presenter$2\n+ 2 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n*L\n1#1,212:1\n56#2,6:213\n*S KotlinDebug\n*F\n+ 1 StakingOperationsFragment.kt\ncom/iMe/ui/wallet/staking/operations/StakingOperationsFragment$presenter$2\n*L\n45#1:213,6\n*E\n"
+    value = "SMAP\nStakingOperationsFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 StakingOperationsFragment.kt\ncom/iMe/ui/wallet/staking/operations/StakingOperationsFragment$presenter$2\n+ 2 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n*L\n1#1,215:1\n56#2,6:216\n*S KotlinDebug\n*F\n+ 1 StakingOperationsFragment.kt\ncom/iMe/ui/wallet/staking/operations/StakingOperationsFragment$presenter$2\n*L\n45#1:216,6\n*E\n"
 .end annotation
 
 

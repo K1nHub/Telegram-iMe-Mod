@@ -2,12 +2,12 @@ package com.iMe.i_staking.mapper;
 
 import com.iMe.i_staking.response.StakingMetadataResponse;
 import com.iMe.i_staking.response.StakingProgrammesResponse;
-import com.iMe.storage.domain.model.crypto.NetworkType;
+import com.iMe.storage.data.mapper.wallet.TokenMappingKt;
 import com.iMe.storage.domain.model.crypto.level.AccountLevel;
 import com.iMe.storage.domain.model.staking.StakingMetadata;
 import com.iMe.storage.domain.model.staking.StakingProgrammes;
 import com.iMe.storage.domain.model.staking.StakingStats;
-import com.iMe.storage.domain.model.staking.StakingToken;
+import com.iMe.storage.domain.model.wallet.token.TokenDetailed;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
@@ -32,14 +32,14 @@ public final class StakingMetadataMapperKt {
     public static final StakingMetadata mapToDomain(StakingMetadataResponse stakingMetadataResponse) {
         Intrinsics.checkNotNullParameter(stakingMetadataResponse, "<this>");
         long id = stakingMetadataResponse.getId();
-        NetworkType map = NetworkType.Companion.map(stakingMetadataResponse.getNet());
+        String net2 = stakingMetadataResponse.getNet();
         String name = stakingMetadataResponse.getName();
         String author = stakingMetadataResponse.getAuthor();
         String contract = stakingMetadataResponse.getContract();
         String startsAt = stakingMetadataResponse.getStartsAt();
         String endsAt = stakingMetadataResponse.getEndsAt();
-        StakingToken mapToDomain = StakingTokenMapperKt.mapToDomain(stakingMetadataResponse.getToken());
-        StakingToken mapToDomain2 = StakingTokenMapperKt.mapToDomain(stakingMetadataResponse.getFeeToken());
+        TokenDetailed mapToDomain = TokenMappingKt.mapToDomain(stakingMetadataResponse.getToken());
+        TokenDetailed mapToDomain2 = TokenMappingKt.mapToDomain(stakingMetadataResponse.getFeeToken());
         double apy = stakingMetadataResponse.getApy();
         double apr = stakingMetadataResponse.getApr();
         long incomePeriod = stakingMetadataResponse.getIncomePeriod();
@@ -55,6 +55,6 @@ public final class StakingMetadataMapperKt {
         if (minimalRank == null) {
             minimalRank = "";
         }
-        return new StakingMetadata(id, map, name, author, contract, startsAt, endsAt, mapToDomain, mapToDomain2, apy, apr, incomePeriod, incomePercent, prematureWithdrawalFee, immediateWithdrawalFee, safeWithdrawalFee, safeWithdrawalDuration, compoundAccrualThreshold, mapToDomain3, companion.map(minimalRank), stakingMetadataResponse.getWebsite());
+        return new StakingMetadata(id, net2, name, author, contract, startsAt, endsAt, mapToDomain, mapToDomain2, apy, apr, incomePeriod, incomePercent, prematureWithdrawalFee, immediateWithdrawalFee, safeWithdrawalFee, safeWithdrawalDuration, compoundAccrualThreshold, mapToDomain3, companion.map(minimalRank), stakingMetadataResponse.getWebsite());
     }
 }

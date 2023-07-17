@@ -121,13 +121,13 @@ public class Platform {
                             return SSLSocket.class.getMethod("getApplicationProtocol", new Class[0]);
                         }
                     }));
-                } catch (IllegalAccessException | InvocationTargetException | KeyManagementException | NoSuchAlgorithmException | PrivilegedActionException unused3) {
-                    Class<?> cls2 = Class.forName("org.eclipse.jetty.alpn.ALPN");
-                    Class<?> cls3 = Class.forName("org.eclipse.jetty.alpn.ALPN$Provider");
-                    return new JdkWithJettyBootPlatform(cls2.getMethod("put", SSLSocket.class, cls3), cls2.getMethod("get", SSLSocket.class), cls2.getMethod("remove", SSLSocket.class), Class.forName("org.eclipse.jetty.alpn.ALPN$ClientProvider"), Class.forName("org.eclipse.jetty.alpn.ALPN$ServerProvider"), provider);
+                } catch (ClassNotFoundException | NoSuchMethodException unused3) {
+                    return new Platform(provider);
                 }
-            } catch (ClassNotFoundException | NoSuchMethodException unused4) {
-                return new Platform(provider);
+            } catch (IllegalAccessException | InvocationTargetException | KeyManagementException | NoSuchAlgorithmException | PrivilegedActionException unused4) {
+                Class<?> cls2 = Class.forName("org.eclipse.jetty.alpn.ALPN");
+                Class<?> cls3 = Class.forName("org.eclipse.jetty.alpn.ALPN$Provider");
+                return new JdkWithJettyBootPlatform(cls2.getMethod("put", SSLSocket.class, cls3), cls2.getMethod("get", SSLSocket.class), cls2.getMethod("remove", SSLSocket.class), Class.forName("org.eclipse.jetty.alpn.ALPN$ClientProvider"), Class.forName("org.eclipse.jetty.alpn.ALPN$ServerProvider"), provider);
             }
         } catch (NoSuchAlgorithmException e) {
             throw new RuntimeException(e);

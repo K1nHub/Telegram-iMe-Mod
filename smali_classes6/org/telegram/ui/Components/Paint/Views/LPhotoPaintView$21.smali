@@ -33,7 +33,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;)V
     .locals 0
 
-    .line 3161
+    .line 3170
     iput-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$21;->this$0:Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -44,7 +44,7 @@
 .method private synthetic lambda$onClearEmojiRecent$0(Landroid/content/DialogInterface;I)V
     .locals 0
 
-    .line 3280
+    .line 3289
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$21;->this$0:Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->access$4400(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;)Lorg/telegram/ui/Components/EmojiView;
@@ -171,7 +171,7 @@
 .method public onBackspace()Z
     .locals 4
 
-    .line 3166
+    .line 3175
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$21;->this$0:Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->access$500(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;)Lorg/telegram/ui/Components/Paint/Views/EntityView;
@@ -188,7 +188,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 3167
+    .line 3176
     invoke-virtual {v0}, Landroid/widget/EditText;->length()I
 
     move-result v2
@@ -197,7 +197,7 @@
 
     goto :goto_0
 
-    .line 3170
+    .line 3179
     :cond_0
     new-instance v2, Landroid/view/KeyEvent;
 
@@ -219,7 +219,7 @@
 .method public onClearEmojiRecent()V
     .locals 3
 
-    .line 3277
+    .line 3286
     new-instance v0, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
     iget-object v1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$21;->this$0:Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;
@@ -236,7 +236,7 @@
 
     invoke-direct {v0, v1, v2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
-    .line 3278
+    .line 3287
     sget v1, Lorg/telegram/messenger/R$string;->ClearRecentEmojiTitle:I
 
     const-string v2, "ClearRecentEmojiTitle"
@@ -247,7 +247,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 3279
+    .line 3288
     sget v1, Lorg/telegram/messenger/R$string;->ClearRecentEmojiText:I
 
     const-string v2, "ClearRecentEmojiText"
@@ -258,7 +258,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setMessage(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 3280
+    .line 3289
     sget v1, Lorg/telegram/messenger/R$string;->ClearButton:I
 
     const-string v2, "ClearButton"
@@ -273,7 +273,7 @@
 
     invoke-virtual {v0, v1, v2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 3281
+    .line 3290
     sget v1, Lorg/telegram/messenger/R$string;->Cancel:I
 
     const-string v2, "Cancel"
@@ -286,7 +286,7 @@
 
     invoke-virtual {v0, v1, v2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setNegativeButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 3282
+    .line 3291
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->show()Lorg/telegram/ui/ActionBar/AlertDialog;
 
     return-void
@@ -295,7 +295,7 @@
 .method public onCustomEmojiSelected(JLorg/telegram/tgnet/TLRPC$Document;Ljava/lang/String;Z)V
     .locals 3
 
-    .line 3247
+    .line 3256
     iget-object p5, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$21;->this$0:Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;
 
     invoke-static {p5}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->access$500(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;)Lorg/telegram/ui/Components/Paint/Views/EntityView;
@@ -312,7 +312,7 @@
 
     return-void
 
-    .line 3251
+    .line 3260
     :cond_0
     invoke-virtual {p5}, Landroid/widget/EditText;->getSelectionEnd()I
 
@@ -324,7 +324,7 @@
 
     move v0, v1
 
-    .line 3257
+    .line 3266
     :cond_1
     :try_start_0
     new-instance v2, Landroid/text/SpannableString;
@@ -333,7 +333,7 @@
 
     if-eqz p3, :cond_2
 
-    .line 3260
+    .line 3269
     new-instance p1, Lorg/telegram/ui/Components/AnimatedEmojiSpan;
 
     invoke-virtual {p5}, Landroid/widget/EditText;->getPaint()Landroid/text/TextPaint;
@@ -348,7 +348,7 @@
 
     goto :goto_0
 
-    .line 3262
+    .line 3271
     :cond_2
     new-instance p3, Lorg/telegram/ui/Components/AnimatedEmojiSpan;
 
@@ -364,7 +364,7 @@
 
     move-object p1, p3
 
-    .line 3264
+    .line 3273
     :goto_0
     invoke-virtual {v2}, Landroid/text/SpannableString;->length()I
 
@@ -374,7 +374,7 @@
 
     invoke-virtual {v2, p1, v1, p2, p3}, Landroid/text/SpannableString;->setSpan(Ljava/lang/Object;III)V
 
-    .line 3265
+    .line 3274
     invoke-virtual {p5}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
 
     move-result-object p1
@@ -385,14 +385,14 @@
 
     invoke-virtual {p5, p1}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
-    .line 3266
+    .line 3275
     invoke-virtual {v2}, Landroid/text/SpannableString;->length()I
 
     move-result p1
 
     add-int/2addr v0, p1
 
-    .line 3267
+    .line 3276
     invoke-virtual {p5, v0, v0}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setSelection(II)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
@@ -408,7 +408,7 @@
     :catch_0
     move-exception p1
 
-    .line 3269
+    .line 3278
     :try_start_1
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
     :try_end_1
@@ -417,7 +417,7 @@
     :goto_1
     return-void
 
-    .line 3272
+    .line 3281
     :goto_2
     throw p1
 .end method
@@ -425,7 +425,7 @@
 .method public onEmojiSelected(Ljava/lang/String;)V
     .locals 6
 
-    .line 3220
+    .line 3229
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$21;->this$0:Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->access$500(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;)Lorg/telegram/ui/Components/Paint/Views/EntityView;
@@ -438,7 +438,7 @@
 
     return-void
 
-    .line 3223
+    .line 3232
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$21;->this$0:Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;
 
@@ -448,7 +448,7 @@
 
     check-cast v0, Lorg/telegram/ui/Components/Paint/Views/TextPaintView;
 
-    .line 3224
+    .line 3233
     invoke-virtual {v0}, Lorg/telegram/ui/Components/Paint/Views/TextPaintView;->getEditText()Lorg/telegram/ui/Components/Paint/Views/EditTextOutline;
 
     move-result-object v1
@@ -457,7 +457,7 @@
 
     return-void
 
-    .line 3228
+    .line 3237
     :cond_1
     invoke-virtual {v1}, Landroid/widget/EditText;->getSelectionEnd()I
 
@@ -469,7 +469,7 @@
 
     move v2, v3
 
-    .line 3234
+    .line 3243
     :cond_2
     :try_start_0
     invoke-virtual {v0}, Lorg/telegram/ui/Components/Paint/Views/TextPaintView;->getFontMetricsInt()Landroid/graphics/Paint$FontMetricsInt;
@@ -490,7 +490,7 @@
 
     move-result-object p1
 
-    .line 3235
+    .line 3244
     invoke-virtual {v1}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
 
     move-result-object v0
@@ -501,14 +501,14 @@
 
     invoke-virtual {v1, v0}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
-    .line 3236
+    .line 3245
     invoke-interface {p1}, Ljava/lang/CharSequence;->length()I
 
     move-result p1
 
     add-int/2addr v2, p1
 
-    .line 3237
+    .line 3246
     invoke-virtual {v1, v2, v2}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setSelection(II)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
@@ -524,7 +524,7 @@
     :catch_0
     move-exception p1
 
-    .line 3239
+    .line 3248
     :try_start_1
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
     :try_end_1
@@ -533,7 +533,7 @@
     :goto_0
     return-void
 
-    .line 3242
+    .line 3251
     :goto_1
     throw p1
 .end method

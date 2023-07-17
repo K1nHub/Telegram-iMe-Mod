@@ -22,7 +22,7 @@
         "Lkotlin/jvm/functions/Function1<",
         "Lcom/iMe/storage/domain/model/Result<",
         "+",
-        "Lcom/iMe/storage/domain/model/crypto/CryptoWalletInfo;",
+        "Lcom/iMe/storage/domain/model/crypto/CryptoWalletsInfo;",
         ">;",
         "Lio/reactivex/ObservableSource<",
         "+",
@@ -34,7 +34,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nObservableExt.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ObservableExt.kt\ncom/iMe/storage/domain/utils/extentions/ObservableExtKt$flatMapSuccess$1\n+ 2 CryptoWalletInteractor.kt\ncom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor\n+ 3 ResultExt.kt\ncom/iMe/storage/domain/utils/extentions/ResultExtKt\n+ 4 RxExt.kt\ncom/iMe/storage/data/utils/extentions/RxExtKt\n*L\n1#1,80:1\n99#2:81\n11#3:82\n18#4:83\n*S KotlinDebug\n*F\n+ 1 CryptoWalletInteractor.kt\ncom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor\n*L\n99#1:82\n99#1:83\n*E\n"
+    value = "SMAP\nObservableExt.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ObservableExt.kt\ncom/iMe/storage/domain/utils/extentions/ObservableExtKt$flatMapSuccess$1\n+ 2 CryptoWalletInteractor.kt\ncom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor\n+ 3 ResultExt.kt\ncom/iMe/storage/domain/utils/extentions/ResultExtKt\n+ 4 RxExt.kt\ncom/iMe/storage/data/utils/extentions/RxExtKt\n*L\n1#1,92:1\n96#2:93\n11#3:94\n18#4:95\n*S KotlinDebug\n*F\n+ 1 CryptoWalletInteractor.kt\ncom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor\n*L\n96#1:94\n96#1:95\n*E\n"
 .end annotation
 
 
@@ -64,7 +64,7 @@
             "(",
             "Lcom/iMe/storage/domain/model/Result<",
             "+",
-            "Lcom/iMe/storage/domain/model/crypto/CryptoWalletInfo;",
+            "Lcom/iMe/storage/domain/model/crypto/CryptoWalletsInfo;",
             ">;)",
             "Lio/reactivex/ObservableSource<",
             "+",
@@ -86,18 +86,18 @@
 
     if-eqz v0, :cond_2
 
-    .line 81
+    .line 93
     invoke-virtual {p1}, Lcom/iMe/storage/domain/model/Result;->getData()Ljava/lang/Object;
 
     move-result-object p1
 
-    check-cast p1, Lcom/iMe/storage/domain/model/crypto/CryptoWalletInfo;
+    check-cast p1, Lcom/iMe/storage/domain/model/crypto/CryptoWalletsInfo;
 
     if-eqz p1, :cond_0
 
     iget-object v0, p0, Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor$getLinkedCryptoWalletAddress$$inlined$flatMapSuccess$1;->$blockchainType$inlined:Lcom/iMe/storage/domain/model/crypto/BlockchainType;
 
-    invoke-virtual {p1, v0}, Lcom/iMe/storage/domain/model/crypto/CryptoWalletInfo;->getAddressByBlockchain(Lcom/iMe/storage/domain/model/crypto/BlockchainType;)Ljava/lang/String;
+    invoke-virtual {p1, v0}, Lcom/iMe/storage/domain/model/crypto/CryptoWalletsInfo;->getAddressByBlockchain(Lcom/iMe/storage/domain/model/crypto/BlockchainType;)Ljava/lang/String;
 
     move-result-object v1
 

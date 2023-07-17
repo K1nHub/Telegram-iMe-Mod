@@ -57,7 +57,7 @@
 
     iget v5, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda65;->f$5:I
 
-    invoke-static/range {v0 .. v5}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$1EjNaqcQD5bxEolyHT_VY3ORTZM(Lorg/telegram/messenger/MessagesController;ILorg/telegram/tgnet/TLRPC$messages_Messages;ZZI)V
+    invoke-static/range {v0 .. v5}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$-nH7GNuPH1HQiAtODvAxxE3jJe8(Lorg/telegram/messenger/MessagesController;ILorg/telegram/tgnet/TLRPC$messages_Messages;ZZI)V
 
     return-void
 .end method

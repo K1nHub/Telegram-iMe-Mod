@@ -17,6 +17,11 @@ public class DebugView$$State extends MvpViewState<DebugView> implements DebugVi
         BaseView.CC.$default$finishScreen(this);
     }
 
+    @Override // com.iMe.p031ui.base.mvp.base.BaseView
+    public /* synthetic */ void removeSelfFromStackImmediately() {
+        BaseView.CC.$default$removeSelfFromStackImmediately(this);
+    }
+
     @Override // com.iMe.p031ui.debug.DebugView
     public void showConfirmSwitchEnvironmentDialog(DialogModel dialogModel, Callbacks$Callback callbacks$Callback) {
         ShowConfirmSwitchEnvironmentDialogCommand showConfirmSwitchEnvironmentDialogCommand = new ShowConfirmSwitchEnvironmentDialogCommand(this, dialogModel, callbacks$Callback);

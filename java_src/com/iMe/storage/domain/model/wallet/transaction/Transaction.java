@@ -1,10 +1,11 @@
 package com.iMe.storage.domain.model.wallet.transaction;
 
 import com.iMe.storage.data.network.model.response.base.Status;
-import com.iMe.storage.domain.model.crypto.NetworkType;
+import com.iMe.storage.data.utils.crypto.NetworksHelper;
+import com.iMe.storage.domain.model.crypto.Network;
 import com.iMe.storage.domain.model.wallet.swap.TradeType;
 import com.iMe.storage.domain.model.wallet.token.FiatCode;
-import com.iMe.storage.domain.model.wallet.token.TokenCode;
+import com.iMe.storage.domain.model.wallet.token.TokenDetailed;
 import java.math.BigDecimal;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
@@ -15,34 +16,34 @@ public abstract class Transaction {
     private final String createdAt;
     private final TransactionDirection direction;
     private final BigDecimal feeAmount;
-    private final TokenCode feeTokenCode;
+    private final TokenDetailed feeToken;
 
     /* renamed from: id */
-    private final String f359id;
+    private final String f432id;
     private final TransactionProcessingType processingType;
     private final Status status;
-    private final TokenCode tokenCode;
+    private final TokenDetailed token;
     private final TransactionType type;
 
-    public /* synthetic */ Transaction(String str, BigDecimal bigDecimal, TransactionType transactionType, TransactionDirection transactionDirection, String str2, TokenCode tokenCode, Status status, TransactionProcessingType transactionProcessingType, BigDecimal bigDecimal2, TokenCode tokenCode2, DefaultConstructorMarker defaultConstructorMarker) {
-        this(str, bigDecimal, transactionType, transactionDirection, str2, tokenCode, status, transactionProcessingType, bigDecimal2, tokenCode2);
+    public /* synthetic */ Transaction(String str, BigDecimal bigDecimal, TransactionType transactionType, TransactionDirection transactionDirection, String str2, TokenDetailed tokenDetailed, Status status, TransactionProcessingType transactionProcessingType, BigDecimal bigDecimal2, TokenDetailed tokenDetailed2, DefaultConstructorMarker defaultConstructorMarker) {
+        this(str, bigDecimal, transactionType, transactionDirection, str2, tokenDetailed, status, transactionProcessingType, bigDecimal2, tokenDetailed2);
     }
 
-    private Transaction(String str, BigDecimal bigDecimal, TransactionType transactionType, TransactionDirection transactionDirection, String str2, TokenCode tokenCode, Status status, TransactionProcessingType transactionProcessingType, BigDecimal bigDecimal2, TokenCode tokenCode2) {
-        this.f359id = str;
+    private Transaction(String str, BigDecimal bigDecimal, TransactionType transactionType, TransactionDirection transactionDirection, String str2, TokenDetailed tokenDetailed, Status status, TransactionProcessingType transactionProcessingType, BigDecimal bigDecimal2, TokenDetailed tokenDetailed2) {
+        this.f432id = str;
         this.amount = bigDecimal;
         this.type = transactionType;
         this.direction = transactionDirection;
         this.createdAt = str2;
-        this.tokenCode = tokenCode;
+        this.token = tokenDetailed;
         this.status = status;
         this.processingType = transactionProcessingType;
         this.feeAmount = bigDecimal2;
-        this.feeTokenCode = tokenCode2;
+        this.feeToken = tokenDetailed2;
     }
 
     public String getId() {
-        return this.f359id;
+        return this.f432id;
     }
 
     public BigDecimal getAmount() {
@@ -61,8 +62,8 @@ public abstract class Transaction {
         return this.createdAt;
     }
 
-    public TokenCode getTokenCode() {
-        return this.tokenCode;
+    public TokenDetailed getToken() {
+        return this.token;
     }
 
     public Status getStatus() {
@@ -77,8 +78,8 @@ public abstract class Transaction {
         return this.feeAmount;
     }
 
-    public TokenCode getFeeTokenCode() {
-        return this.feeTokenCode;
+    public TokenDetailed getFeeToken() {
+        return this.feeToken;
     }
 
     /* compiled from: Transaction.kt */
@@ -88,21 +89,21 @@ public abstract class Transaction {
         private final String createdAt;
         private final TransactionDirection direction;
         private final BigDecimal feeAmount;
-        private final TokenCode feeTokenCode;
+        private final TokenDetailed feeToken;
 
         /* renamed from: id */
-        private final String f372id;
+        private final String f445id;
         private final TransactionProcessingType processingType;
         private final Status status;
-        private final TokenCode tokenCode;
+        private final TokenDetailed token;
         private final TransactionType type;
 
         public final String component1() {
             return getId();
         }
 
-        public final TokenCode component10() {
-            return getFeeTokenCode();
+        public final TokenDetailed component10() {
+            return getFeeToken();
         }
 
         public final BigDecimal component2() {
@@ -121,8 +122,8 @@ public abstract class Transaction {
             return getCreatedAt();
         }
 
-        public final TokenCode component6() {
-            return getTokenCode();
+        public final TokenDetailed component6() {
+            return getToken();
         }
 
         public final Status component7() {
@@ -137,18 +138,18 @@ public abstract class Transaction {
             return getFeeAmount();
         }
 
-        public final Unsupported copy(String id, BigDecimal amount, TransactionType type, TransactionDirection direction, String createdAt, TokenCode tokenCode, Status status, TransactionProcessingType processingType, BigDecimal feeAmount, TokenCode feeTokenCode) {
+        public final Unsupported copy(String id, BigDecimal amount, TransactionType type, TransactionDirection direction, String createdAt, TokenDetailed token, Status status, TransactionProcessingType processingType, BigDecimal feeAmount, TokenDetailed feeToken) {
             Intrinsics.checkNotNullParameter(id, "id");
             Intrinsics.checkNotNullParameter(amount, "amount");
             Intrinsics.checkNotNullParameter(type, "type");
             Intrinsics.checkNotNullParameter(direction, "direction");
             Intrinsics.checkNotNullParameter(createdAt, "createdAt");
-            Intrinsics.checkNotNullParameter(tokenCode, "tokenCode");
+            Intrinsics.checkNotNullParameter(token, "token");
             Intrinsics.checkNotNullParameter(status, "status");
             Intrinsics.checkNotNullParameter(processingType, "processingType");
             Intrinsics.checkNotNullParameter(feeAmount, "feeAmount");
-            Intrinsics.checkNotNullParameter(feeTokenCode, "feeTokenCode");
-            return new Unsupported(id, amount, type, direction, createdAt, tokenCode, status, processingType, feeAmount, feeTokenCode);
+            Intrinsics.checkNotNullParameter(feeToken, "feeToken");
+            return new Unsupported(id, amount, type, direction, createdAt, token, status, processingType, feeAmount, feeToken);
         }
 
         public boolean equals(Object obj) {
@@ -157,22 +158,22 @@ public abstract class Transaction {
             }
             if (obj instanceof Unsupported) {
                 Unsupported unsupported = (Unsupported) obj;
-                return Intrinsics.areEqual(getId(), unsupported.getId()) && Intrinsics.areEqual(getAmount(), unsupported.getAmount()) && getType() == unsupported.getType() && getDirection() == unsupported.getDirection() && Intrinsics.areEqual(getCreatedAt(), unsupported.getCreatedAt()) && getTokenCode() == unsupported.getTokenCode() && getStatus() == unsupported.getStatus() && getProcessingType() == unsupported.getProcessingType() && Intrinsics.areEqual(getFeeAmount(), unsupported.getFeeAmount()) && getFeeTokenCode() == unsupported.getFeeTokenCode();
+                return Intrinsics.areEqual(getId(), unsupported.getId()) && Intrinsics.areEqual(getAmount(), unsupported.getAmount()) && getType() == unsupported.getType() && getDirection() == unsupported.getDirection() && Intrinsics.areEqual(getCreatedAt(), unsupported.getCreatedAt()) && Intrinsics.areEqual(getToken(), unsupported.getToken()) && getStatus() == unsupported.getStatus() && getProcessingType() == unsupported.getProcessingType() && Intrinsics.areEqual(getFeeAmount(), unsupported.getFeeAmount()) && Intrinsics.areEqual(getFeeToken(), unsupported.getFeeToken());
             }
             return false;
         }
 
         public int hashCode() {
-            return (((((((((((((((((getId().hashCode() * 31) + getAmount().hashCode()) * 31) + getType().hashCode()) * 31) + getDirection().hashCode()) * 31) + getCreatedAt().hashCode()) * 31) + getTokenCode().hashCode()) * 31) + getStatus().hashCode()) * 31) + getProcessingType().hashCode()) * 31) + getFeeAmount().hashCode()) * 31) + getFeeTokenCode().hashCode();
+            return (((((((((((((((((getId().hashCode() * 31) + getAmount().hashCode()) * 31) + getType().hashCode()) * 31) + getDirection().hashCode()) * 31) + getCreatedAt().hashCode()) * 31) + getToken().hashCode()) * 31) + getStatus().hashCode()) * 31) + getProcessingType().hashCode()) * 31) + getFeeAmount().hashCode()) * 31) + getFeeToken().hashCode();
         }
 
         public String toString() {
-            return "Unsupported(id=" + getId() + ", amount=" + getAmount() + ", type=" + getType() + ", direction=" + getDirection() + ", createdAt=" + getCreatedAt() + ", tokenCode=" + getTokenCode() + ", status=" + getStatus() + ", processingType=" + getProcessingType() + ", feeAmount=" + getFeeAmount() + ", feeTokenCode=" + getFeeTokenCode() + ')';
+            return "Unsupported(id=" + getId() + ", amount=" + getAmount() + ", type=" + getType() + ", direction=" + getDirection() + ", createdAt=" + getCreatedAt() + ", token=" + getToken() + ", status=" + getStatus() + ", processingType=" + getProcessingType() + ", feeAmount=" + getFeeAmount() + ", feeToken=" + getFeeToken() + ')';
         }
 
         @Override // com.iMe.storage.domain.model.wallet.transaction.Transaction
         public String getId() {
-            return this.f372id;
+            return this.f445id;
         }
 
         @Override // com.iMe.storage.domain.model.wallet.transaction.Transaction
@@ -196,8 +197,8 @@ public abstract class Transaction {
         }
 
         @Override // com.iMe.storage.domain.model.wallet.transaction.Transaction
-        public TokenCode getTokenCode() {
-            return this.tokenCode;
+        public TokenDetailed getToken() {
+            return this.token;
         }
 
         @Override // com.iMe.storage.domain.model.wallet.transaction.Transaction
@@ -216,33 +217,33 @@ public abstract class Transaction {
         }
 
         @Override // com.iMe.storage.domain.model.wallet.transaction.Transaction
-        public TokenCode getFeeTokenCode() {
-            return this.feeTokenCode;
+        public TokenDetailed getFeeToken() {
+            return this.feeToken;
         }
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public Unsupported(String id, BigDecimal amount, TransactionType type, TransactionDirection direction, String createdAt, TokenCode tokenCode, Status status, TransactionProcessingType processingType, BigDecimal feeAmount, TokenCode feeTokenCode) {
-            super(id, amount, type, direction, createdAt, tokenCode, status, processingType, feeAmount, feeTokenCode, null);
+        public Unsupported(String id, BigDecimal amount, TransactionType type, TransactionDirection direction, String createdAt, TokenDetailed token, Status status, TransactionProcessingType processingType, BigDecimal feeAmount, TokenDetailed feeToken) {
+            super(id, amount, type, direction, createdAt, token, status, processingType, feeAmount, feeToken, null);
             Intrinsics.checkNotNullParameter(id, "id");
             Intrinsics.checkNotNullParameter(amount, "amount");
             Intrinsics.checkNotNullParameter(type, "type");
             Intrinsics.checkNotNullParameter(direction, "direction");
             Intrinsics.checkNotNullParameter(createdAt, "createdAt");
-            Intrinsics.checkNotNullParameter(tokenCode, "tokenCode");
+            Intrinsics.checkNotNullParameter(token, "token");
             Intrinsics.checkNotNullParameter(status, "status");
             Intrinsics.checkNotNullParameter(processingType, "processingType");
             Intrinsics.checkNotNullParameter(feeAmount, "feeAmount");
-            Intrinsics.checkNotNullParameter(feeTokenCode, "feeTokenCode");
-            this.f372id = id;
+            Intrinsics.checkNotNullParameter(feeToken, "feeToken");
+            this.f445id = id;
             this.amount = amount;
             this.type = type;
             this.direction = direction;
             this.createdAt = createdAt;
-            this.tokenCode = tokenCode;
+            this.token = token;
             this.status = status;
             this.processingType = processingType;
             this.feeAmount = feeAmount;
-            this.feeTokenCode = feeTokenCode;
+            this.feeToken = feeToken;
         }
     }
 
@@ -253,22 +254,22 @@ public abstract class Transaction {
         private final String createdAt;
         private final TransactionDirection direction;
         private final BigDecimal feeAmount;
-        private final TokenCode feeTokenCode;
+        private final TokenDetailed feeToken;
 
         /* renamed from: id */
-        private final String f371id;
+        private final String f444id;
         private final TransactionProcessingType processingType;
         private final String recipientUserId;
         private final Status status;
-        private final TokenCode tokenCode;
+        private final TokenDetailed token;
         private final TransactionType type;
 
         public final String component1() {
             return getId();
         }
 
-        public final TokenCode component10() {
-            return getFeeTokenCode();
+        public final TokenDetailed component10() {
+            return getFeeToken();
         }
 
         public final String component11() {
@@ -291,8 +292,8 @@ public abstract class Transaction {
             return getCreatedAt();
         }
 
-        public final TokenCode component6() {
-            return getTokenCode();
+        public final TokenDetailed component6() {
+            return getToken();
         }
 
         public final Status component7() {
@@ -307,19 +308,19 @@ public abstract class Transaction {
             return getFeeAmount();
         }
 
-        public final Transfer copy(String id, BigDecimal amount, TransactionType type, TransactionDirection direction, String createdAt, TokenCode tokenCode, Status status, TransactionProcessingType processingType, BigDecimal feeAmount, TokenCode feeTokenCode, String recipientUserId) {
+        public final Transfer copy(String id, BigDecimal amount, TransactionType type, TransactionDirection direction, String createdAt, TokenDetailed token, Status status, TransactionProcessingType processingType, BigDecimal feeAmount, TokenDetailed feeToken, String recipientUserId) {
             Intrinsics.checkNotNullParameter(id, "id");
             Intrinsics.checkNotNullParameter(amount, "amount");
             Intrinsics.checkNotNullParameter(type, "type");
             Intrinsics.checkNotNullParameter(direction, "direction");
             Intrinsics.checkNotNullParameter(createdAt, "createdAt");
-            Intrinsics.checkNotNullParameter(tokenCode, "tokenCode");
+            Intrinsics.checkNotNullParameter(token, "token");
             Intrinsics.checkNotNullParameter(status, "status");
             Intrinsics.checkNotNullParameter(processingType, "processingType");
             Intrinsics.checkNotNullParameter(feeAmount, "feeAmount");
-            Intrinsics.checkNotNullParameter(feeTokenCode, "feeTokenCode");
+            Intrinsics.checkNotNullParameter(feeToken, "feeToken");
             Intrinsics.checkNotNullParameter(recipientUserId, "recipientUserId");
-            return new Transfer(id, amount, type, direction, createdAt, tokenCode, status, processingType, feeAmount, feeTokenCode, recipientUserId);
+            return new Transfer(id, amount, type, direction, createdAt, token, status, processingType, feeAmount, feeToken, recipientUserId);
         }
 
         public boolean equals(Object obj) {
@@ -328,22 +329,22 @@ public abstract class Transaction {
             }
             if (obj instanceof Transfer) {
                 Transfer transfer = (Transfer) obj;
-                return Intrinsics.areEqual(getId(), transfer.getId()) && Intrinsics.areEqual(getAmount(), transfer.getAmount()) && getType() == transfer.getType() && getDirection() == transfer.getDirection() && Intrinsics.areEqual(getCreatedAt(), transfer.getCreatedAt()) && getTokenCode() == transfer.getTokenCode() && getStatus() == transfer.getStatus() && getProcessingType() == transfer.getProcessingType() && Intrinsics.areEqual(getFeeAmount(), transfer.getFeeAmount()) && getFeeTokenCode() == transfer.getFeeTokenCode() && Intrinsics.areEqual(this.recipientUserId, transfer.recipientUserId);
+                return Intrinsics.areEqual(getId(), transfer.getId()) && Intrinsics.areEqual(getAmount(), transfer.getAmount()) && getType() == transfer.getType() && getDirection() == transfer.getDirection() && Intrinsics.areEqual(getCreatedAt(), transfer.getCreatedAt()) && Intrinsics.areEqual(getToken(), transfer.getToken()) && getStatus() == transfer.getStatus() && getProcessingType() == transfer.getProcessingType() && Intrinsics.areEqual(getFeeAmount(), transfer.getFeeAmount()) && Intrinsics.areEqual(getFeeToken(), transfer.getFeeToken()) && Intrinsics.areEqual(this.recipientUserId, transfer.recipientUserId);
             }
             return false;
         }
 
         public int hashCode() {
-            return (((((((((((((((((((getId().hashCode() * 31) + getAmount().hashCode()) * 31) + getType().hashCode()) * 31) + getDirection().hashCode()) * 31) + getCreatedAt().hashCode()) * 31) + getTokenCode().hashCode()) * 31) + getStatus().hashCode()) * 31) + getProcessingType().hashCode()) * 31) + getFeeAmount().hashCode()) * 31) + getFeeTokenCode().hashCode()) * 31) + this.recipientUserId.hashCode();
+            return (((((((((((((((((((getId().hashCode() * 31) + getAmount().hashCode()) * 31) + getType().hashCode()) * 31) + getDirection().hashCode()) * 31) + getCreatedAt().hashCode()) * 31) + getToken().hashCode()) * 31) + getStatus().hashCode()) * 31) + getProcessingType().hashCode()) * 31) + getFeeAmount().hashCode()) * 31) + getFeeToken().hashCode()) * 31) + this.recipientUserId.hashCode();
         }
 
         public String toString() {
-            return "Transfer(id=" + getId() + ", amount=" + getAmount() + ", type=" + getType() + ", direction=" + getDirection() + ", createdAt=" + getCreatedAt() + ", tokenCode=" + getTokenCode() + ", status=" + getStatus() + ", processingType=" + getProcessingType() + ", feeAmount=" + getFeeAmount() + ", feeTokenCode=" + getFeeTokenCode() + ", recipientUserId=" + this.recipientUserId + ')';
+            return "Transfer(id=" + getId() + ", amount=" + getAmount() + ", type=" + getType() + ", direction=" + getDirection() + ", createdAt=" + getCreatedAt() + ", token=" + getToken() + ", status=" + getStatus() + ", processingType=" + getProcessingType() + ", feeAmount=" + getFeeAmount() + ", feeToken=" + getFeeToken() + ", recipientUserId=" + this.recipientUserId + ')';
         }
 
         @Override // com.iMe.storage.domain.model.wallet.transaction.Transaction
         public String getId() {
-            return this.f371id;
+            return this.f444id;
         }
 
         @Override // com.iMe.storage.domain.model.wallet.transaction.Transaction
@@ -367,8 +368,8 @@ public abstract class Transaction {
         }
 
         @Override // com.iMe.storage.domain.model.wallet.transaction.Transaction
-        public TokenCode getTokenCode() {
-            return this.tokenCode;
+        public TokenDetailed getToken() {
+            return this.token;
         }
 
         @Override // com.iMe.storage.domain.model.wallet.transaction.Transaction
@@ -387,8 +388,8 @@ public abstract class Transaction {
         }
 
         @Override // com.iMe.storage.domain.model.wallet.transaction.Transaction
-        public TokenCode getFeeTokenCode() {
-            return this.feeTokenCode;
+        public TokenDetailed getFeeToken() {
+            return this.feeToken;
         }
 
         public final String getRecipientUserId() {
@@ -396,29 +397,29 @@ public abstract class Transaction {
         }
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public Transfer(String id, BigDecimal amount, TransactionType type, TransactionDirection direction, String createdAt, TokenCode tokenCode, Status status, TransactionProcessingType processingType, BigDecimal feeAmount, TokenCode feeTokenCode, String recipientUserId) {
-            super(id, amount, type, direction, createdAt, tokenCode, status, processingType, feeAmount, feeTokenCode, null);
+        public Transfer(String id, BigDecimal amount, TransactionType type, TransactionDirection direction, String createdAt, TokenDetailed token, Status status, TransactionProcessingType processingType, BigDecimal feeAmount, TokenDetailed feeToken, String recipientUserId) {
+            super(id, amount, type, direction, createdAt, token, status, processingType, feeAmount, feeToken, null);
             Intrinsics.checkNotNullParameter(id, "id");
             Intrinsics.checkNotNullParameter(amount, "amount");
             Intrinsics.checkNotNullParameter(type, "type");
             Intrinsics.checkNotNullParameter(direction, "direction");
             Intrinsics.checkNotNullParameter(createdAt, "createdAt");
-            Intrinsics.checkNotNullParameter(tokenCode, "tokenCode");
+            Intrinsics.checkNotNullParameter(token, "token");
             Intrinsics.checkNotNullParameter(status, "status");
             Intrinsics.checkNotNullParameter(processingType, "processingType");
             Intrinsics.checkNotNullParameter(feeAmount, "feeAmount");
-            Intrinsics.checkNotNullParameter(feeTokenCode, "feeTokenCode");
+            Intrinsics.checkNotNullParameter(feeToken, "feeToken");
             Intrinsics.checkNotNullParameter(recipientUserId, "recipientUserId");
-            this.f371id = id;
+            this.f444id = id;
             this.amount = amount;
             this.type = type;
             this.direction = direction;
             this.createdAt = createdAt;
-            this.tokenCode = tokenCode;
+            this.token = token;
             this.status = status;
             this.processingType = processingType;
             this.feeAmount = feeAmount;
-            this.feeTokenCode = feeTokenCode;
+            this.feeToken = feeToken;
             this.recipientUserId = recipientUserId;
         }
     }
@@ -430,22 +431,22 @@ public abstract class Transaction {
         private final String createdAt;
         private final TransactionDirection direction;
         private final BigDecimal feeAmount;
-        private final TokenCode feeTokenCode;
+        private final TokenDetailed feeToken;
 
         /* renamed from: id */
-        private final String f368id;
+        private final String f441id;
         private final String invitedUserId;
         private final TransactionProcessingType processingType;
         private final Status status;
-        private final TokenCode tokenCode;
+        private final TokenDetailed token;
         private final TransactionType type;
 
         public final String component1() {
             return getId();
         }
 
-        public final TokenCode component10() {
-            return getFeeTokenCode();
+        public final TokenDetailed component10() {
+            return getFeeToken();
         }
 
         public final String component11() {
@@ -468,8 +469,8 @@ public abstract class Transaction {
             return getCreatedAt();
         }
 
-        public final TokenCode component6() {
-            return getTokenCode();
+        public final TokenDetailed component6() {
+            return getToken();
         }
 
         public final Status component7() {
@@ -484,19 +485,19 @@ public abstract class Transaction {
             return getFeeAmount();
         }
 
-        public final Referral copy(String id, BigDecimal amount, TransactionType type, TransactionDirection direction, String createdAt, TokenCode tokenCode, Status status, TransactionProcessingType processingType, BigDecimal feeAmount, TokenCode feeTokenCode, String invitedUserId) {
+        public final Referral copy(String id, BigDecimal amount, TransactionType type, TransactionDirection direction, String createdAt, TokenDetailed token, Status status, TransactionProcessingType processingType, BigDecimal feeAmount, TokenDetailed feeToken, String invitedUserId) {
             Intrinsics.checkNotNullParameter(id, "id");
             Intrinsics.checkNotNullParameter(amount, "amount");
             Intrinsics.checkNotNullParameter(type, "type");
             Intrinsics.checkNotNullParameter(direction, "direction");
             Intrinsics.checkNotNullParameter(createdAt, "createdAt");
-            Intrinsics.checkNotNullParameter(tokenCode, "tokenCode");
+            Intrinsics.checkNotNullParameter(token, "token");
             Intrinsics.checkNotNullParameter(status, "status");
             Intrinsics.checkNotNullParameter(processingType, "processingType");
             Intrinsics.checkNotNullParameter(feeAmount, "feeAmount");
-            Intrinsics.checkNotNullParameter(feeTokenCode, "feeTokenCode");
+            Intrinsics.checkNotNullParameter(feeToken, "feeToken");
             Intrinsics.checkNotNullParameter(invitedUserId, "invitedUserId");
-            return new Referral(id, amount, type, direction, createdAt, tokenCode, status, processingType, feeAmount, feeTokenCode, invitedUserId);
+            return new Referral(id, amount, type, direction, createdAt, token, status, processingType, feeAmount, feeToken, invitedUserId);
         }
 
         public boolean equals(Object obj) {
@@ -505,22 +506,22 @@ public abstract class Transaction {
             }
             if (obj instanceof Referral) {
                 Referral referral = (Referral) obj;
-                return Intrinsics.areEqual(getId(), referral.getId()) && Intrinsics.areEqual(getAmount(), referral.getAmount()) && getType() == referral.getType() && getDirection() == referral.getDirection() && Intrinsics.areEqual(getCreatedAt(), referral.getCreatedAt()) && getTokenCode() == referral.getTokenCode() && getStatus() == referral.getStatus() && getProcessingType() == referral.getProcessingType() && Intrinsics.areEqual(getFeeAmount(), referral.getFeeAmount()) && getFeeTokenCode() == referral.getFeeTokenCode() && Intrinsics.areEqual(this.invitedUserId, referral.invitedUserId);
+                return Intrinsics.areEqual(getId(), referral.getId()) && Intrinsics.areEqual(getAmount(), referral.getAmount()) && getType() == referral.getType() && getDirection() == referral.getDirection() && Intrinsics.areEqual(getCreatedAt(), referral.getCreatedAt()) && Intrinsics.areEqual(getToken(), referral.getToken()) && getStatus() == referral.getStatus() && getProcessingType() == referral.getProcessingType() && Intrinsics.areEqual(getFeeAmount(), referral.getFeeAmount()) && Intrinsics.areEqual(getFeeToken(), referral.getFeeToken()) && Intrinsics.areEqual(this.invitedUserId, referral.invitedUserId);
             }
             return false;
         }
 
         public int hashCode() {
-            return (((((((((((((((((((getId().hashCode() * 31) + getAmount().hashCode()) * 31) + getType().hashCode()) * 31) + getDirection().hashCode()) * 31) + getCreatedAt().hashCode()) * 31) + getTokenCode().hashCode()) * 31) + getStatus().hashCode()) * 31) + getProcessingType().hashCode()) * 31) + getFeeAmount().hashCode()) * 31) + getFeeTokenCode().hashCode()) * 31) + this.invitedUserId.hashCode();
+            return (((((((((((((((((((getId().hashCode() * 31) + getAmount().hashCode()) * 31) + getType().hashCode()) * 31) + getDirection().hashCode()) * 31) + getCreatedAt().hashCode()) * 31) + getToken().hashCode()) * 31) + getStatus().hashCode()) * 31) + getProcessingType().hashCode()) * 31) + getFeeAmount().hashCode()) * 31) + getFeeToken().hashCode()) * 31) + this.invitedUserId.hashCode();
         }
 
         public String toString() {
-            return "Referral(id=" + getId() + ", amount=" + getAmount() + ", type=" + getType() + ", direction=" + getDirection() + ", createdAt=" + getCreatedAt() + ", tokenCode=" + getTokenCode() + ", status=" + getStatus() + ", processingType=" + getProcessingType() + ", feeAmount=" + getFeeAmount() + ", feeTokenCode=" + getFeeTokenCode() + ", invitedUserId=" + this.invitedUserId + ')';
+            return "Referral(id=" + getId() + ", amount=" + getAmount() + ", type=" + getType() + ", direction=" + getDirection() + ", createdAt=" + getCreatedAt() + ", token=" + getToken() + ", status=" + getStatus() + ", processingType=" + getProcessingType() + ", feeAmount=" + getFeeAmount() + ", feeToken=" + getFeeToken() + ", invitedUserId=" + this.invitedUserId + ')';
         }
 
         @Override // com.iMe.storage.domain.model.wallet.transaction.Transaction
         public String getId() {
-            return this.f368id;
+            return this.f441id;
         }
 
         @Override // com.iMe.storage.domain.model.wallet.transaction.Transaction
@@ -544,8 +545,8 @@ public abstract class Transaction {
         }
 
         @Override // com.iMe.storage.domain.model.wallet.transaction.Transaction
-        public TokenCode getTokenCode() {
-            return this.tokenCode;
+        public TokenDetailed getToken() {
+            return this.token;
         }
 
         @Override // com.iMe.storage.domain.model.wallet.transaction.Transaction
@@ -564,8 +565,8 @@ public abstract class Transaction {
         }
 
         @Override // com.iMe.storage.domain.model.wallet.transaction.Transaction
-        public TokenCode getFeeTokenCode() {
-            return this.feeTokenCode;
+        public TokenDetailed getFeeToken() {
+            return this.feeToken;
         }
 
         public final String getInvitedUserId() {
@@ -573,29 +574,29 @@ public abstract class Transaction {
         }
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public Referral(String id, BigDecimal amount, TransactionType type, TransactionDirection direction, String createdAt, TokenCode tokenCode, Status status, TransactionProcessingType processingType, BigDecimal feeAmount, TokenCode feeTokenCode, String invitedUserId) {
-            super(id, amount, type, direction, createdAt, tokenCode, status, processingType, feeAmount, feeTokenCode, null);
+        public Referral(String id, BigDecimal amount, TransactionType type, TransactionDirection direction, String createdAt, TokenDetailed token, Status status, TransactionProcessingType processingType, BigDecimal feeAmount, TokenDetailed feeToken, String invitedUserId) {
+            super(id, amount, type, direction, createdAt, token, status, processingType, feeAmount, feeToken, null);
             Intrinsics.checkNotNullParameter(id, "id");
             Intrinsics.checkNotNullParameter(amount, "amount");
             Intrinsics.checkNotNullParameter(type, "type");
             Intrinsics.checkNotNullParameter(direction, "direction");
             Intrinsics.checkNotNullParameter(createdAt, "createdAt");
-            Intrinsics.checkNotNullParameter(tokenCode, "tokenCode");
+            Intrinsics.checkNotNullParameter(token, "token");
             Intrinsics.checkNotNullParameter(status, "status");
             Intrinsics.checkNotNullParameter(processingType, "processingType");
             Intrinsics.checkNotNullParameter(feeAmount, "feeAmount");
-            Intrinsics.checkNotNullParameter(feeTokenCode, "feeTokenCode");
+            Intrinsics.checkNotNullParameter(feeToken, "feeToken");
             Intrinsics.checkNotNullParameter(invitedUserId, "invitedUserId");
-            this.f368id = id;
+            this.f441id = id;
             this.amount = amount;
             this.type = type;
             this.direction = direction;
             this.createdAt = createdAt;
-            this.tokenCode = tokenCode;
+            this.token = token;
             this.status = status;
             this.processingType = processingType;
             this.feeAmount = feeAmount;
-            this.feeTokenCode = feeTokenCode;
+            this.feeToken = feeToken;
             this.invitedUserId = invitedUserId;
         }
     }
@@ -607,21 +608,21 @@ public abstract class Transaction {
         private final String createdAt;
         private final TransactionDirection direction;
         private final BigDecimal feeAmount;
-        private final TokenCode feeTokenCode;
+        private final TokenDetailed feeToken;
 
         /* renamed from: id */
-        private final String f367id;
+        private final String f440id;
         private final TransactionProcessingType processingType;
         private final Status status;
-        private final TokenCode tokenCode;
+        private final TokenDetailed token;
         private final TransactionType type;
 
         public final String component1() {
             return getId();
         }
 
-        public final TokenCode component10() {
-            return getFeeTokenCode();
+        public final TokenDetailed component10() {
+            return getFeeToken();
         }
 
         public final BigDecimal component2() {
@@ -640,8 +641,8 @@ public abstract class Transaction {
             return getCreatedAt();
         }
 
-        public final TokenCode component6() {
-            return getTokenCode();
+        public final TokenDetailed component6() {
+            return getToken();
         }
 
         public final Status component7() {
@@ -656,18 +657,18 @@ public abstract class Transaction {
             return getFeeAmount();
         }
 
-        public final Purchase copy(String id, BigDecimal amount, TransactionType type, TransactionDirection direction, String createdAt, TokenCode tokenCode, Status status, TransactionProcessingType processingType, BigDecimal feeAmount, TokenCode feeTokenCode) {
+        public final Purchase copy(String id, BigDecimal amount, TransactionType type, TransactionDirection direction, String createdAt, TokenDetailed token, Status status, TransactionProcessingType processingType, BigDecimal feeAmount, TokenDetailed feeToken) {
             Intrinsics.checkNotNullParameter(id, "id");
             Intrinsics.checkNotNullParameter(amount, "amount");
             Intrinsics.checkNotNullParameter(type, "type");
             Intrinsics.checkNotNullParameter(direction, "direction");
             Intrinsics.checkNotNullParameter(createdAt, "createdAt");
-            Intrinsics.checkNotNullParameter(tokenCode, "tokenCode");
+            Intrinsics.checkNotNullParameter(token, "token");
             Intrinsics.checkNotNullParameter(status, "status");
             Intrinsics.checkNotNullParameter(processingType, "processingType");
             Intrinsics.checkNotNullParameter(feeAmount, "feeAmount");
-            Intrinsics.checkNotNullParameter(feeTokenCode, "feeTokenCode");
-            return new Purchase(id, amount, type, direction, createdAt, tokenCode, status, processingType, feeAmount, feeTokenCode);
+            Intrinsics.checkNotNullParameter(feeToken, "feeToken");
+            return new Purchase(id, amount, type, direction, createdAt, token, status, processingType, feeAmount, feeToken);
         }
 
         public boolean equals(Object obj) {
@@ -676,22 +677,22 @@ public abstract class Transaction {
             }
             if (obj instanceof Purchase) {
                 Purchase purchase = (Purchase) obj;
-                return Intrinsics.areEqual(getId(), purchase.getId()) && Intrinsics.areEqual(getAmount(), purchase.getAmount()) && getType() == purchase.getType() && getDirection() == purchase.getDirection() && Intrinsics.areEqual(getCreatedAt(), purchase.getCreatedAt()) && getTokenCode() == purchase.getTokenCode() && getStatus() == purchase.getStatus() && getProcessingType() == purchase.getProcessingType() && Intrinsics.areEqual(getFeeAmount(), purchase.getFeeAmount()) && getFeeTokenCode() == purchase.getFeeTokenCode();
+                return Intrinsics.areEqual(getId(), purchase.getId()) && Intrinsics.areEqual(getAmount(), purchase.getAmount()) && getType() == purchase.getType() && getDirection() == purchase.getDirection() && Intrinsics.areEqual(getCreatedAt(), purchase.getCreatedAt()) && Intrinsics.areEqual(getToken(), purchase.getToken()) && getStatus() == purchase.getStatus() && getProcessingType() == purchase.getProcessingType() && Intrinsics.areEqual(getFeeAmount(), purchase.getFeeAmount()) && Intrinsics.areEqual(getFeeToken(), purchase.getFeeToken());
             }
             return false;
         }
 
         public int hashCode() {
-            return (((((((((((((((((getId().hashCode() * 31) + getAmount().hashCode()) * 31) + getType().hashCode()) * 31) + getDirection().hashCode()) * 31) + getCreatedAt().hashCode()) * 31) + getTokenCode().hashCode()) * 31) + getStatus().hashCode()) * 31) + getProcessingType().hashCode()) * 31) + getFeeAmount().hashCode()) * 31) + getFeeTokenCode().hashCode();
+            return (((((((((((((((((getId().hashCode() * 31) + getAmount().hashCode()) * 31) + getType().hashCode()) * 31) + getDirection().hashCode()) * 31) + getCreatedAt().hashCode()) * 31) + getToken().hashCode()) * 31) + getStatus().hashCode()) * 31) + getProcessingType().hashCode()) * 31) + getFeeAmount().hashCode()) * 31) + getFeeToken().hashCode();
         }
 
         public String toString() {
-            return "Purchase(id=" + getId() + ", amount=" + getAmount() + ", type=" + getType() + ", direction=" + getDirection() + ", createdAt=" + getCreatedAt() + ", tokenCode=" + getTokenCode() + ", status=" + getStatus() + ", processingType=" + getProcessingType() + ", feeAmount=" + getFeeAmount() + ", feeTokenCode=" + getFeeTokenCode() + ')';
+            return "Purchase(id=" + getId() + ", amount=" + getAmount() + ", type=" + getType() + ", direction=" + getDirection() + ", createdAt=" + getCreatedAt() + ", token=" + getToken() + ", status=" + getStatus() + ", processingType=" + getProcessingType() + ", feeAmount=" + getFeeAmount() + ", feeToken=" + getFeeToken() + ')';
         }
 
         @Override // com.iMe.storage.domain.model.wallet.transaction.Transaction
         public String getId() {
-            return this.f367id;
+            return this.f440id;
         }
 
         @Override // com.iMe.storage.domain.model.wallet.transaction.Transaction
@@ -715,8 +716,8 @@ public abstract class Transaction {
         }
 
         @Override // com.iMe.storage.domain.model.wallet.transaction.Transaction
-        public TokenCode getTokenCode() {
-            return this.tokenCode;
+        public TokenDetailed getToken() {
+            return this.token;
         }
 
         @Override // com.iMe.storage.domain.model.wallet.transaction.Transaction
@@ -735,33 +736,33 @@ public abstract class Transaction {
         }
 
         @Override // com.iMe.storage.domain.model.wallet.transaction.Transaction
-        public TokenCode getFeeTokenCode() {
-            return this.feeTokenCode;
+        public TokenDetailed getFeeToken() {
+            return this.feeToken;
         }
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public Purchase(String id, BigDecimal amount, TransactionType type, TransactionDirection direction, String createdAt, TokenCode tokenCode, Status status, TransactionProcessingType processingType, BigDecimal feeAmount, TokenCode feeTokenCode) {
-            super(id, amount, type, direction, createdAt, tokenCode, status, processingType, feeAmount, feeTokenCode, null);
+        public Purchase(String id, BigDecimal amount, TransactionType type, TransactionDirection direction, String createdAt, TokenDetailed token, Status status, TransactionProcessingType processingType, BigDecimal feeAmount, TokenDetailed feeToken) {
+            super(id, amount, type, direction, createdAt, token, status, processingType, feeAmount, feeToken, null);
             Intrinsics.checkNotNullParameter(id, "id");
             Intrinsics.checkNotNullParameter(amount, "amount");
             Intrinsics.checkNotNullParameter(type, "type");
             Intrinsics.checkNotNullParameter(direction, "direction");
             Intrinsics.checkNotNullParameter(createdAt, "createdAt");
-            Intrinsics.checkNotNullParameter(tokenCode, "tokenCode");
+            Intrinsics.checkNotNullParameter(token, "token");
             Intrinsics.checkNotNullParameter(status, "status");
             Intrinsics.checkNotNullParameter(processingType, "processingType");
             Intrinsics.checkNotNullParameter(feeAmount, "feeAmount");
-            Intrinsics.checkNotNullParameter(feeTokenCode, "feeTokenCode");
-            this.f367id = id;
+            Intrinsics.checkNotNullParameter(feeToken, "feeToken");
+            this.f440id = id;
             this.amount = amount;
             this.type = type;
             this.direction = direction;
             this.createdAt = createdAt;
-            this.tokenCode = tokenCode;
+            this.token = token;
             this.status = status;
             this.processingType = processingType;
             this.feeAmount = feeAmount;
-            this.feeTokenCode = feeTokenCode;
+            this.feeToken = feeToken;
         }
     }
 
@@ -772,21 +773,21 @@ public abstract class Transaction {
         private final String createdAt;
         private final TransactionDirection direction;
         private final BigDecimal feeAmount;
-        private final TokenCode feeTokenCode;
+        private final TokenDetailed feeToken;
 
         /* renamed from: id */
-        private final String f366id;
+        private final String f439id;
         private final TransactionProcessingType processingType;
         private final Status status;
-        private final TokenCode tokenCode;
+        private final TokenDetailed token;
         private final TransactionType type;
 
         public final String component1() {
             return getId();
         }
 
-        public final TokenCode component10() {
-            return getFeeTokenCode();
+        public final TokenDetailed component10() {
+            return getFeeToken();
         }
 
         public final BigDecimal component2() {
@@ -805,8 +806,8 @@ public abstract class Transaction {
             return getCreatedAt();
         }
 
-        public final TokenCode component6() {
-            return getTokenCode();
+        public final TokenDetailed component6() {
+            return getToken();
         }
 
         public final Status component7() {
@@ -821,18 +822,18 @@ public abstract class Transaction {
             return getFeeAmount();
         }
 
-        public final Lottery copy(String id, BigDecimal amount, TransactionType type, TransactionDirection direction, String createdAt, TokenCode tokenCode, Status status, TransactionProcessingType processingType, BigDecimal feeAmount, TokenCode feeTokenCode) {
+        public final Lottery copy(String id, BigDecimal amount, TransactionType type, TransactionDirection direction, String createdAt, TokenDetailed token, Status status, TransactionProcessingType processingType, BigDecimal feeAmount, TokenDetailed feeToken) {
             Intrinsics.checkNotNullParameter(id, "id");
             Intrinsics.checkNotNullParameter(amount, "amount");
             Intrinsics.checkNotNullParameter(type, "type");
             Intrinsics.checkNotNullParameter(direction, "direction");
             Intrinsics.checkNotNullParameter(createdAt, "createdAt");
-            Intrinsics.checkNotNullParameter(tokenCode, "tokenCode");
+            Intrinsics.checkNotNullParameter(token, "token");
             Intrinsics.checkNotNullParameter(status, "status");
             Intrinsics.checkNotNullParameter(processingType, "processingType");
             Intrinsics.checkNotNullParameter(feeAmount, "feeAmount");
-            Intrinsics.checkNotNullParameter(feeTokenCode, "feeTokenCode");
-            return new Lottery(id, amount, type, direction, createdAt, tokenCode, status, processingType, feeAmount, feeTokenCode);
+            Intrinsics.checkNotNullParameter(feeToken, "feeToken");
+            return new Lottery(id, amount, type, direction, createdAt, token, status, processingType, feeAmount, feeToken);
         }
 
         public boolean equals(Object obj) {
@@ -841,22 +842,22 @@ public abstract class Transaction {
             }
             if (obj instanceof Lottery) {
                 Lottery lottery = (Lottery) obj;
-                return Intrinsics.areEqual(getId(), lottery.getId()) && Intrinsics.areEqual(getAmount(), lottery.getAmount()) && getType() == lottery.getType() && getDirection() == lottery.getDirection() && Intrinsics.areEqual(getCreatedAt(), lottery.getCreatedAt()) && getTokenCode() == lottery.getTokenCode() && getStatus() == lottery.getStatus() && getProcessingType() == lottery.getProcessingType() && Intrinsics.areEqual(getFeeAmount(), lottery.getFeeAmount()) && getFeeTokenCode() == lottery.getFeeTokenCode();
+                return Intrinsics.areEqual(getId(), lottery.getId()) && Intrinsics.areEqual(getAmount(), lottery.getAmount()) && getType() == lottery.getType() && getDirection() == lottery.getDirection() && Intrinsics.areEqual(getCreatedAt(), lottery.getCreatedAt()) && Intrinsics.areEqual(getToken(), lottery.getToken()) && getStatus() == lottery.getStatus() && getProcessingType() == lottery.getProcessingType() && Intrinsics.areEqual(getFeeAmount(), lottery.getFeeAmount()) && Intrinsics.areEqual(getFeeToken(), lottery.getFeeToken());
             }
             return false;
         }
 
         public int hashCode() {
-            return (((((((((((((((((getId().hashCode() * 31) + getAmount().hashCode()) * 31) + getType().hashCode()) * 31) + getDirection().hashCode()) * 31) + getCreatedAt().hashCode()) * 31) + getTokenCode().hashCode()) * 31) + getStatus().hashCode()) * 31) + getProcessingType().hashCode()) * 31) + getFeeAmount().hashCode()) * 31) + getFeeTokenCode().hashCode();
+            return (((((((((((((((((getId().hashCode() * 31) + getAmount().hashCode()) * 31) + getType().hashCode()) * 31) + getDirection().hashCode()) * 31) + getCreatedAt().hashCode()) * 31) + getToken().hashCode()) * 31) + getStatus().hashCode()) * 31) + getProcessingType().hashCode()) * 31) + getFeeAmount().hashCode()) * 31) + getFeeToken().hashCode();
         }
 
         public String toString() {
-            return "Lottery(id=" + getId() + ", amount=" + getAmount() + ", type=" + getType() + ", direction=" + getDirection() + ", createdAt=" + getCreatedAt() + ", tokenCode=" + getTokenCode() + ", status=" + getStatus() + ", processingType=" + getProcessingType() + ", feeAmount=" + getFeeAmount() + ", feeTokenCode=" + getFeeTokenCode() + ')';
+            return "Lottery(id=" + getId() + ", amount=" + getAmount() + ", type=" + getType() + ", direction=" + getDirection() + ", createdAt=" + getCreatedAt() + ", token=" + getToken() + ", status=" + getStatus() + ", processingType=" + getProcessingType() + ", feeAmount=" + getFeeAmount() + ", feeToken=" + getFeeToken() + ')';
         }
 
         @Override // com.iMe.storage.domain.model.wallet.transaction.Transaction
         public String getId() {
-            return this.f366id;
+            return this.f439id;
         }
 
         @Override // com.iMe.storage.domain.model.wallet.transaction.Transaction
@@ -880,8 +881,8 @@ public abstract class Transaction {
         }
 
         @Override // com.iMe.storage.domain.model.wallet.transaction.Transaction
-        public TokenCode getTokenCode() {
-            return this.tokenCode;
+        public TokenDetailed getToken() {
+            return this.token;
         }
 
         @Override // com.iMe.storage.domain.model.wallet.transaction.Transaction
@@ -900,33 +901,33 @@ public abstract class Transaction {
         }
 
         @Override // com.iMe.storage.domain.model.wallet.transaction.Transaction
-        public TokenCode getFeeTokenCode() {
-            return this.feeTokenCode;
+        public TokenDetailed getFeeToken() {
+            return this.feeToken;
         }
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public Lottery(String id, BigDecimal amount, TransactionType type, TransactionDirection direction, String createdAt, TokenCode tokenCode, Status status, TransactionProcessingType processingType, BigDecimal feeAmount, TokenCode feeTokenCode) {
-            super(id, amount, type, direction, createdAt, tokenCode, status, processingType, feeAmount, feeTokenCode, null);
+        public Lottery(String id, BigDecimal amount, TransactionType type, TransactionDirection direction, String createdAt, TokenDetailed token, Status status, TransactionProcessingType processingType, BigDecimal feeAmount, TokenDetailed feeToken) {
+            super(id, amount, type, direction, createdAt, token, status, processingType, feeAmount, feeToken, null);
             Intrinsics.checkNotNullParameter(id, "id");
             Intrinsics.checkNotNullParameter(amount, "amount");
             Intrinsics.checkNotNullParameter(type, "type");
             Intrinsics.checkNotNullParameter(direction, "direction");
             Intrinsics.checkNotNullParameter(createdAt, "createdAt");
-            Intrinsics.checkNotNullParameter(tokenCode, "tokenCode");
+            Intrinsics.checkNotNullParameter(token, "token");
             Intrinsics.checkNotNullParameter(status, "status");
             Intrinsics.checkNotNullParameter(processingType, "processingType");
             Intrinsics.checkNotNullParameter(feeAmount, "feeAmount");
-            Intrinsics.checkNotNullParameter(feeTokenCode, "feeTokenCode");
-            this.f366id = id;
+            Intrinsics.checkNotNullParameter(feeToken, "feeToken");
+            this.f439id = id;
             this.amount = amount;
             this.type = type;
             this.direction = direction;
             this.createdAt = createdAt;
-            this.tokenCode = tokenCode;
+            this.token = token;
             this.status = status;
             this.processingType = processingType;
             this.feeAmount = feeAmount;
-            this.feeTokenCode = feeTokenCode;
+            this.feeToken = feeToken;
         }
     }
 
@@ -937,21 +938,21 @@ public abstract class Transaction {
         private final String createdAt;
         private final TransactionDirection direction;
         private final BigDecimal feeAmount;
-        private final TokenCode feeTokenCode;
+        private final TokenDetailed feeToken;
 
         /* renamed from: id */
-        private final String f370id;
+        private final String f443id;
         private final TransactionProcessingType processingType;
         private final Status status;
-        private final TokenCode tokenCode;
+        private final TokenDetailed token;
         private final TransactionType type;
 
         public final String component1() {
             return getId();
         }
 
-        public final TokenCode component10() {
-            return getFeeTokenCode();
+        public final TokenDetailed component10() {
+            return getFeeToken();
         }
 
         public final BigDecimal component2() {
@@ -970,8 +971,8 @@ public abstract class Transaction {
             return getCreatedAt();
         }
 
-        public final TokenCode component6() {
-            return getTokenCode();
+        public final TokenDetailed component6() {
+            return getToken();
         }
 
         public final Status component7() {
@@ -986,18 +987,18 @@ public abstract class Transaction {
             return getFeeAmount();
         }
 
-        public final Registration copy(String id, BigDecimal amount, TransactionType type, TransactionDirection direction, String createdAt, TokenCode tokenCode, Status status, TransactionProcessingType processingType, BigDecimal feeAmount, TokenCode feeTokenCode) {
+        public final Registration copy(String id, BigDecimal amount, TransactionType type, TransactionDirection direction, String createdAt, TokenDetailed token, Status status, TransactionProcessingType processingType, BigDecimal feeAmount, TokenDetailed feeToken) {
             Intrinsics.checkNotNullParameter(id, "id");
             Intrinsics.checkNotNullParameter(amount, "amount");
             Intrinsics.checkNotNullParameter(type, "type");
             Intrinsics.checkNotNullParameter(direction, "direction");
             Intrinsics.checkNotNullParameter(createdAt, "createdAt");
-            Intrinsics.checkNotNullParameter(tokenCode, "tokenCode");
+            Intrinsics.checkNotNullParameter(token, "token");
             Intrinsics.checkNotNullParameter(status, "status");
             Intrinsics.checkNotNullParameter(processingType, "processingType");
             Intrinsics.checkNotNullParameter(feeAmount, "feeAmount");
-            Intrinsics.checkNotNullParameter(feeTokenCode, "feeTokenCode");
-            return new Registration(id, amount, type, direction, createdAt, tokenCode, status, processingType, feeAmount, feeTokenCode);
+            Intrinsics.checkNotNullParameter(feeToken, "feeToken");
+            return new Registration(id, amount, type, direction, createdAt, token, status, processingType, feeAmount, feeToken);
         }
 
         public boolean equals(Object obj) {
@@ -1006,22 +1007,22 @@ public abstract class Transaction {
             }
             if (obj instanceof Registration) {
                 Registration registration = (Registration) obj;
-                return Intrinsics.areEqual(getId(), registration.getId()) && Intrinsics.areEqual(getAmount(), registration.getAmount()) && getType() == registration.getType() && getDirection() == registration.getDirection() && Intrinsics.areEqual(getCreatedAt(), registration.getCreatedAt()) && getTokenCode() == registration.getTokenCode() && getStatus() == registration.getStatus() && getProcessingType() == registration.getProcessingType() && Intrinsics.areEqual(getFeeAmount(), registration.getFeeAmount()) && getFeeTokenCode() == registration.getFeeTokenCode();
+                return Intrinsics.areEqual(getId(), registration.getId()) && Intrinsics.areEqual(getAmount(), registration.getAmount()) && getType() == registration.getType() && getDirection() == registration.getDirection() && Intrinsics.areEqual(getCreatedAt(), registration.getCreatedAt()) && Intrinsics.areEqual(getToken(), registration.getToken()) && getStatus() == registration.getStatus() && getProcessingType() == registration.getProcessingType() && Intrinsics.areEqual(getFeeAmount(), registration.getFeeAmount()) && Intrinsics.areEqual(getFeeToken(), registration.getFeeToken());
             }
             return false;
         }
 
         public int hashCode() {
-            return (((((((((((((((((getId().hashCode() * 31) + getAmount().hashCode()) * 31) + getType().hashCode()) * 31) + getDirection().hashCode()) * 31) + getCreatedAt().hashCode()) * 31) + getTokenCode().hashCode()) * 31) + getStatus().hashCode()) * 31) + getProcessingType().hashCode()) * 31) + getFeeAmount().hashCode()) * 31) + getFeeTokenCode().hashCode();
+            return (((((((((((((((((getId().hashCode() * 31) + getAmount().hashCode()) * 31) + getType().hashCode()) * 31) + getDirection().hashCode()) * 31) + getCreatedAt().hashCode()) * 31) + getToken().hashCode()) * 31) + getStatus().hashCode()) * 31) + getProcessingType().hashCode()) * 31) + getFeeAmount().hashCode()) * 31) + getFeeToken().hashCode();
         }
 
         public String toString() {
-            return "Registration(id=" + getId() + ", amount=" + getAmount() + ", type=" + getType() + ", direction=" + getDirection() + ", createdAt=" + getCreatedAt() + ", tokenCode=" + getTokenCode() + ", status=" + getStatus() + ", processingType=" + getProcessingType() + ", feeAmount=" + getFeeAmount() + ", feeTokenCode=" + getFeeTokenCode() + ')';
+            return "Registration(id=" + getId() + ", amount=" + getAmount() + ", type=" + getType() + ", direction=" + getDirection() + ", createdAt=" + getCreatedAt() + ", token=" + getToken() + ", status=" + getStatus() + ", processingType=" + getProcessingType() + ", feeAmount=" + getFeeAmount() + ", feeToken=" + getFeeToken() + ')';
         }
 
         @Override // com.iMe.storage.domain.model.wallet.transaction.Transaction
         public String getId() {
-            return this.f370id;
+            return this.f443id;
         }
 
         @Override // com.iMe.storage.domain.model.wallet.transaction.Transaction
@@ -1045,8 +1046,8 @@ public abstract class Transaction {
         }
 
         @Override // com.iMe.storage.domain.model.wallet.transaction.Transaction
-        public TokenCode getTokenCode() {
-            return this.tokenCode;
+        public TokenDetailed getToken() {
+            return this.token;
         }
 
         @Override // com.iMe.storage.domain.model.wallet.transaction.Transaction
@@ -1065,33 +1066,33 @@ public abstract class Transaction {
         }
 
         @Override // com.iMe.storage.domain.model.wallet.transaction.Transaction
-        public TokenCode getFeeTokenCode() {
-            return this.feeTokenCode;
+        public TokenDetailed getFeeToken() {
+            return this.feeToken;
         }
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public Registration(String id, BigDecimal amount, TransactionType type, TransactionDirection direction, String createdAt, TokenCode tokenCode, Status status, TransactionProcessingType processingType, BigDecimal feeAmount, TokenCode feeTokenCode) {
-            super(id, amount, type, direction, createdAt, tokenCode, status, processingType, feeAmount, feeTokenCode, null);
+        public Registration(String id, BigDecimal amount, TransactionType type, TransactionDirection direction, String createdAt, TokenDetailed token, Status status, TransactionProcessingType processingType, BigDecimal feeAmount, TokenDetailed feeToken) {
+            super(id, amount, type, direction, createdAt, token, status, processingType, feeAmount, feeToken, null);
             Intrinsics.checkNotNullParameter(id, "id");
             Intrinsics.checkNotNullParameter(amount, "amount");
             Intrinsics.checkNotNullParameter(type, "type");
             Intrinsics.checkNotNullParameter(direction, "direction");
             Intrinsics.checkNotNullParameter(createdAt, "createdAt");
-            Intrinsics.checkNotNullParameter(tokenCode, "tokenCode");
+            Intrinsics.checkNotNullParameter(token, "token");
             Intrinsics.checkNotNullParameter(status, "status");
             Intrinsics.checkNotNullParameter(processingType, "processingType");
             Intrinsics.checkNotNullParameter(feeAmount, "feeAmount");
-            Intrinsics.checkNotNullParameter(feeTokenCode, "feeTokenCode");
-            this.f370id = id;
+            Intrinsics.checkNotNullParameter(feeToken, "feeToken");
+            this.f443id = id;
             this.amount = amount;
             this.type = type;
             this.direction = direction;
             this.createdAt = createdAt;
-            this.tokenCode = tokenCode;
+            this.token = token;
             this.status = status;
             this.processingType = processingType;
             this.feeAmount = feeAmount;
-            this.feeTokenCode = feeTokenCode;
+            this.feeToken = feeToken;
         }
     }
 
@@ -1102,21 +1103,21 @@ public abstract class Transaction {
         private final String createdAt;
         private final TransactionDirection direction;
         private final BigDecimal feeAmount;
-        private final TokenCode feeTokenCode;
+        private final TokenDetailed feeToken;
 
         /* renamed from: id */
-        private final String f369id;
+        private final String f442id;
         private final TransactionProcessingType processingType;
         private final Status status;
-        private final TokenCode tokenCode;
+        private final TokenDetailed token;
         private final TransactionType type;
 
         public final String component1() {
             return getId();
         }
 
-        public final TokenCode component10() {
-            return getFeeTokenCode();
+        public final TokenDetailed component10() {
+            return getFeeToken();
         }
 
         public final BigDecimal component2() {
@@ -1135,8 +1136,8 @@ public abstract class Transaction {
             return getCreatedAt();
         }
 
-        public final TokenCode component6() {
-            return getTokenCode();
+        public final TokenDetailed component6() {
+            return getToken();
         }
 
         public final Status component7() {
@@ -1151,18 +1152,18 @@ public abstract class Transaction {
             return getFeeAmount();
         }
 
-        public final Refund copy(String id, BigDecimal amount, TransactionType type, TransactionDirection direction, String createdAt, TokenCode tokenCode, Status status, TransactionProcessingType processingType, BigDecimal feeAmount, TokenCode feeTokenCode) {
+        public final Refund copy(String id, BigDecimal amount, TransactionType type, TransactionDirection direction, String createdAt, TokenDetailed token, Status status, TransactionProcessingType processingType, BigDecimal feeAmount, TokenDetailed feeToken) {
             Intrinsics.checkNotNullParameter(id, "id");
             Intrinsics.checkNotNullParameter(amount, "amount");
             Intrinsics.checkNotNullParameter(type, "type");
             Intrinsics.checkNotNullParameter(direction, "direction");
             Intrinsics.checkNotNullParameter(createdAt, "createdAt");
-            Intrinsics.checkNotNullParameter(tokenCode, "tokenCode");
+            Intrinsics.checkNotNullParameter(token, "token");
             Intrinsics.checkNotNullParameter(status, "status");
             Intrinsics.checkNotNullParameter(processingType, "processingType");
             Intrinsics.checkNotNullParameter(feeAmount, "feeAmount");
-            Intrinsics.checkNotNullParameter(feeTokenCode, "feeTokenCode");
-            return new Refund(id, amount, type, direction, createdAt, tokenCode, status, processingType, feeAmount, feeTokenCode);
+            Intrinsics.checkNotNullParameter(feeToken, "feeToken");
+            return new Refund(id, amount, type, direction, createdAt, token, status, processingType, feeAmount, feeToken);
         }
 
         public boolean equals(Object obj) {
@@ -1171,22 +1172,22 @@ public abstract class Transaction {
             }
             if (obj instanceof Refund) {
                 Refund refund = (Refund) obj;
-                return Intrinsics.areEqual(getId(), refund.getId()) && Intrinsics.areEqual(getAmount(), refund.getAmount()) && getType() == refund.getType() && getDirection() == refund.getDirection() && Intrinsics.areEqual(getCreatedAt(), refund.getCreatedAt()) && getTokenCode() == refund.getTokenCode() && getStatus() == refund.getStatus() && getProcessingType() == refund.getProcessingType() && Intrinsics.areEqual(getFeeAmount(), refund.getFeeAmount()) && getFeeTokenCode() == refund.getFeeTokenCode();
+                return Intrinsics.areEqual(getId(), refund.getId()) && Intrinsics.areEqual(getAmount(), refund.getAmount()) && getType() == refund.getType() && getDirection() == refund.getDirection() && Intrinsics.areEqual(getCreatedAt(), refund.getCreatedAt()) && Intrinsics.areEqual(getToken(), refund.getToken()) && getStatus() == refund.getStatus() && getProcessingType() == refund.getProcessingType() && Intrinsics.areEqual(getFeeAmount(), refund.getFeeAmount()) && Intrinsics.areEqual(getFeeToken(), refund.getFeeToken());
             }
             return false;
         }
 
         public int hashCode() {
-            return (((((((((((((((((getId().hashCode() * 31) + getAmount().hashCode()) * 31) + getType().hashCode()) * 31) + getDirection().hashCode()) * 31) + getCreatedAt().hashCode()) * 31) + getTokenCode().hashCode()) * 31) + getStatus().hashCode()) * 31) + getProcessingType().hashCode()) * 31) + getFeeAmount().hashCode()) * 31) + getFeeTokenCode().hashCode();
+            return (((((((((((((((((getId().hashCode() * 31) + getAmount().hashCode()) * 31) + getType().hashCode()) * 31) + getDirection().hashCode()) * 31) + getCreatedAt().hashCode()) * 31) + getToken().hashCode()) * 31) + getStatus().hashCode()) * 31) + getProcessingType().hashCode()) * 31) + getFeeAmount().hashCode()) * 31) + getFeeToken().hashCode();
         }
 
         public String toString() {
-            return "Refund(id=" + getId() + ", amount=" + getAmount() + ", type=" + getType() + ", direction=" + getDirection() + ", createdAt=" + getCreatedAt() + ", tokenCode=" + getTokenCode() + ", status=" + getStatus() + ", processingType=" + getProcessingType() + ", feeAmount=" + getFeeAmount() + ", feeTokenCode=" + getFeeTokenCode() + ')';
+            return "Refund(id=" + getId() + ", amount=" + getAmount() + ", type=" + getType() + ", direction=" + getDirection() + ", createdAt=" + getCreatedAt() + ", token=" + getToken() + ", status=" + getStatus() + ", processingType=" + getProcessingType() + ", feeAmount=" + getFeeAmount() + ", feeToken=" + getFeeToken() + ')';
         }
 
         @Override // com.iMe.storage.domain.model.wallet.transaction.Transaction
         public String getId() {
-            return this.f369id;
+            return this.f442id;
         }
 
         @Override // com.iMe.storage.domain.model.wallet.transaction.Transaction
@@ -1210,8 +1211,8 @@ public abstract class Transaction {
         }
 
         @Override // com.iMe.storage.domain.model.wallet.transaction.Transaction
-        public TokenCode getTokenCode() {
-            return this.tokenCode;
+        public TokenDetailed getToken() {
+            return this.token;
         }
 
         @Override // com.iMe.storage.domain.model.wallet.transaction.Transaction
@@ -1230,33 +1231,33 @@ public abstract class Transaction {
         }
 
         @Override // com.iMe.storage.domain.model.wallet.transaction.Transaction
-        public TokenCode getFeeTokenCode() {
-            return this.feeTokenCode;
+        public TokenDetailed getFeeToken() {
+            return this.feeToken;
         }
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public Refund(String id, BigDecimal amount, TransactionType type, TransactionDirection direction, String createdAt, TokenCode tokenCode, Status status, TransactionProcessingType processingType, BigDecimal feeAmount, TokenCode feeTokenCode) {
-            super(id, amount, type, direction, createdAt, tokenCode, status, processingType, feeAmount, feeTokenCode, null);
+        public Refund(String id, BigDecimal amount, TransactionType type, TransactionDirection direction, String createdAt, TokenDetailed token, Status status, TransactionProcessingType processingType, BigDecimal feeAmount, TokenDetailed feeToken) {
+            super(id, amount, type, direction, createdAt, token, status, processingType, feeAmount, feeToken, null);
             Intrinsics.checkNotNullParameter(id, "id");
             Intrinsics.checkNotNullParameter(amount, "amount");
             Intrinsics.checkNotNullParameter(type, "type");
             Intrinsics.checkNotNullParameter(direction, "direction");
             Intrinsics.checkNotNullParameter(createdAt, "createdAt");
-            Intrinsics.checkNotNullParameter(tokenCode, "tokenCode");
+            Intrinsics.checkNotNullParameter(token, "token");
             Intrinsics.checkNotNullParameter(status, "status");
             Intrinsics.checkNotNullParameter(processingType, "processingType");
             Intrinsics.checkNotNullParameter(feeAmount, "feeAmount");
-            Intrinsics.checkNotNullParameter(feeTokenCode, "feeTokenCode");
-            this.f369id = id;
+            Intrinsics.checkNotNullParameter(feeToken, "feeToken");
+            this.f442id = id;
             this.amount = amount;
             this.type = type;
             this.direction = direction;
             this.createdAt = createdAt;
-            this.tokenCode = tokenCode;
+            this.token = token;
             this.status = status;
             this.processingType = processingType;
             this.feeAmount = feeAmount;
-            this.feeTokenCode = feeTokenCode;
+            this.feeToken = feeToken;
         }
     }
 
@@ -1267,20 +1268,19 @@ public abstract class Transaction {
         private final String createdAt;
         private final TransactionDirection direction;
         private final BigDecimal feeAmount;
-        private final TokenCode feeTokenCode;
+        private final TokenDetailed feeToken;
 
         /* renamed from: id */
-        private final String f360id;
-        private final NetworkType networkType;
+        private final String f433id;
         private final TransactionProcessingType processingType;
         private final Status status;
-        private final TokenCode tokenCode;
+        private final TokenDetailed token;
         private final String txHash;
         private final TransactionType type;
 
         @Override // com.iMe.storage.domain.model.wallet.transaction.Transaction
         public String getId() {
-            return this.f360id;
+            return this.f433id;
         }
 
         @Override // com.iMe.storage.domain.model.wallet.transaction.Transaction
@@ -1304,8 +1304,8 @@ public abstract class Transaction {
         }
 
         @Override // com.iMe.storage.domain.model.wallet.transaction.Transaction
-        public TokenCode getTokenCode() {
-            return this.tokenCode;
+        public TokenDetailed getToken() {
+            return this.token;
         }
 
         @Override // com.iMe.storage.domain.model.wallet.transaction.Transaction
@@ -1324,45 +1324,43 @@ public abstract class Transaction {
         }
 
         @Override // com.iMe.storage.domain.model.wallet.transaction.Transaction
-        public TokenCode getFeeTokenCode() {
-            return this.feeTokenCode;
+        public TokenDetailed getFeeToken() {
+            return this.feeToken;
         }
 
         public String getTxHash() {
             return this.txHash;
         }
 
-        public NetworkType getNetworkType() {
-            return this.networkType;
-        }
-
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public Crypto(String id, BigDecimal amount, TransactionType type, TransactionDirection direction, String createdAt, TokenCode tokenCode, Status status, TransactionProcessingType processingType, BigDecimal feeAmount, TokenCode feeTokenCode, String txHash, NetworkType networkType) {
-            super(id, amount, type, direction, createdAt, tokenCode, status, processingType, feeAmount, feeTokenCode, null);
+        public Crypto(String id, BigDecimal amount, TransactionType type, TransactionDirection direction, String createdAt, TokenDetailed token, Status status, TransactionProcessingType processingType, BigDecimal feeAmount, TokenDetailed feeToken, String txHash) {
+            super(id, amount, type, direction, createdAt, token, status, processingType, feeAmount, feeToken, null);
             Intrinsics.checkNotNullParameter(id, "id");
             Intrinsics.checkNotNullParameter(amount, "amount");
             Intrinsics.checkNotNullParameter(type, "type");
             Intrinsics.checkNotNullParameter(direction, "direction");
             Intrinsics.checkNotNullParameter(createdAt, "createdAt");
-            Intrinsics.checkNotNullParameter(tokenCode, "tokenCode");
+            Intrinsics.checkNotNullParameter(token, "token");
             Intrinsics.checkNotNullParameter(status, "status");
             Intrinsics.checkNotNullParameter(processingType, "processingType");
             Intrinsics.checkNotNullParameter(feeAmount, "feeAmount");
-            Intrinsics.checkNotNullParameter(feeTokenCode, "feeTokenCode");
+            Intrinsics.checkNotNullParameter(feeToken, "feeToken");
             Intrinsics.checkNotNullParameter(txHash, "txHash");
-            Intrinsics.checkNotNullParameter(networkType, "networkType");
-            this.f360id = id;
+            this.f433id = id;
             this.amount = amount;
             this.type = type;
             this.direction = direction;
             this.createdAt = createdAt;
-            this.tokenCode = tokenCode;
+            this.token = token;
             this.status = status;
             this.processingType = processingType;
             this.feeAmount = feeAmount;
-            this.feeTokenCode = feeTokenCode;
+            this.feeToken = feeToken;
             this.txHash = txHash;
-            this.networkType = networkType;
+        }
+
+        public final Network getNetwork() {
+            return NetworksHelper.getNetworkById(getToken().getNetworkId());
         }
 
         /* compiled from: Transaction.kt */
@@ -1372,18 +1370,17 @@ public abstract class Transaction {
             private final String createdAt;
             private final TransactionDirection direction;
             private final BigDecimal feeAmount;
-            private final TokenCode feeTokenCode;
+            private final TokenDetailed feeToken;
 
             /* renamed from: id */
-            private final String f362id;
-            private final NetworkType networkType;
+            private final String f435id;
             private final TransactionProcessingType processingType;
             private final String receiverAccountId;
             private final String recipientAddress;
             private final String senderAccountId;
             private final String senderAddress;
             private final Status status;
-            private final TokenCode tokenCode;
+            private final TokenDetailed token;
             private final String txHash;
             private final TransactionType type;
 
@@ -1391,8 +1388,8 @@ public abstract class Transaction {
                 return getId();
             }
 
-            public final TokenCode component10() {
-                return getFeeTokenCode();
+            public final TokenDetailed component10() {
+                return getFeeToken();
             }
 
             public final String component11() {
@@ -1407,15 +1404,11 @@ public abstract class Transaction {
                 return getRecipientAddress();
             }
 
-            public final NetworkType component14() {
-                return getNetworkType();
-            }
-
-            public final String component15() {
+            public final String component14() {
                 return this.senderAccountId;
             }
 
-            public final String component16() {
+            public final String component15() {
                 return this.receiverAccountId;
             }
 
@@ -1435,8 +1428,8 @@ public abstract class Transaction {
                 return getCreatedAt();
             }
 
-            public final TokenCode component6() {
-                return getTokenCode();
+            public final TokenDetailed component6() {
+                return getToken();
             }
 
             public final Status component7() {
@@ -1451,24 +1444,23 @@ public abstract class Transaction {
                 return getFeeAmount();
             }
 
-            public final Donation copy(String id, BigDecimal amount, TransactionType type, TransactionDirection direction, String createdAt, TokenCode tokenCode, Status status, TransactionProcessingType processingType, BigDecimal feeAmount, TokenCode feeTokenCode, String txHash, String senderAddress, String recipientAddress, NetworkType networkType, String senderAccountId, String receiverAccountId) {
+            public final Donation copy(String id, BigDecimal amount, TransactionType type, TransactionDirection direction, String createdAt, TokenDetailed token, Status status, TransactionProcessingType processingType, BigDecimal feeAmount, TokenDetailed feeToken, String txHash, String senderAddress, String recipientAddress, String senderAccountId, String receiverAccountId) {
                 Intrinsics.checkNotNullParameter(id, "id");
                 Intrinsics.checkNotNullParameter(amount, "amount");
                 Intrinsics.checkNotNullParameter(type, "type");
                 Intrinsics.checkNotNullParameter(direction, "direction");
                 Intrinsics.checkNotNullParameter(createdAt, "createdAt");
-                Intrinsics.checkNotNullParameter(tokenCode, "tokenCode");
+                Intrinsics.checkNotNullParameter(token, "token");
                 Intrinsics.checkNotNullParameter(status, "status");
                 Intrinsics.checkNotNullParameter(processingType, "processingType");
                 Intrinsics.checkNotNullParameter(feeAmount, "feeAmount");
-                Intrinsics.checkNotNullParameter(feeTokenCode, "feeTokenCode");
+                Intrinsics.checkNotNullParameter(feeToken, "feeToken");
                 Intrinsics.checkNotNullParameter(txHash, "txHash");
                 Intrinsics.checkNotNullParameter(senderAddress, "senderAddress");
                 Intrinsics.checkNotNullParameter(recipientAddress, "recipientAddress");
-                Intrinsics.checkNotNullParameter(networkType, "networkType");
                 Intrinsics.checkNotNullParameter(senderAccountId, "senderAccountId");
                 Intrinsics.checkNotNullParameter(receiverAccountId, "receiverAccountId");
-                return new Donation(id, amount, type, direction, createdAt, tokenCode, status, processingType, feeAmount, feeTokenCode, txHash, senderAddress, recipientAddress, networkType, senderAccountId, receiverAccountId);
+                return new Donation(id, amount, type, direction, createdAt, token, status, processingType, feeAmount, feeToken, txHash, senderAddress, recipientAddress, senderAccountId, receiverAccountId);
             }
 
             public boolean equals(Object obj) {
@@ -1477,22 +1469,22 @@ public abstract class Transaction {
                 }
                 if (obj instanceof Donation) {
                     Donation donation = (Donation) obj;
-                    return Intrinsics.areEqual(getId(), donation.getId()) && Intrinsics.areEqual(getAmount(), donation.getAmount()) && getType() == donation.getType() && getDirection() == donation.getDirection() && Intrinsics.areEqual(getCreatedAt(), donation.getCreatedAt()) && getTokenCode() == donation.getTokenCode() && getStatus() == donation.getStatus() && getProcessingType() == donation.getProcessingType() && Intrinsics.areEqual(getFeeAmount(), donation.getFeeAmount()) && getFeeTokenCode() == donation.getFeeTokenCode() && Intrinsics.areEqual(getTxHash(), donation.getTxHash()) && Intrinsics.areEqual(getSenderAddress(), donation.getSenderAddress()) && Intrinsics.areEqual(getRecipientAddress(), donation.getRecipientAddress()) && getNetworkType() == donation.getNetworkType() && Intrinsics.areEqual(this.senderAccountId, donation.senderAccountId) && Intrinsics.areEqual(this.receiverAccountId, donation.receiverAccountId);
+                    return Intrinsics.areEqual(getId(), donation.getId()) && Intrinsics.areEqual(getAmount(), donation.getAmount()) && getType() == donation.getType() && getDirection() == donation.getDirection() && Intrinsics.areEqual(getCreatedAt(), donation.getCreatedAt()) && Intrinsics.areEqual(getToken(), donation.getToken()) && getStatus() == donation.getStatus() && getProcessingType() == donation.getProcessingType() && Intrinsics.areEqual(getFeeAmount(), donation.getFeeAmount()) && Intrinsics.areEqual(getFeeToken(), donation.getFeeToken()) && Intrinsics.areEqual(getTxHash(), donation.getTxHash()) && Intrinsics.areEqual(getSenderAddress(), donation.getSenderAddress()) && Intrinsics.areEqual(getRecipientAddress(), donation.getRecipientAddress()) && Intrinsics.areEqual(this.senderAccountId, donation.senderAccountId) && Intrinsics.areEqual(this.receiverAccountId, donation.receiverAccountId);
                 }
                 return false;
             }
 
             public int hashCode() {
-                return (((((((((((((((((((((((((((((getId().hashCode() * 31) + getAmount().hashCode()) * 31) + getType().hashCode()) * 31) + getDirection().hashCode()) * 31) + getCreatedAt().hashCode()) * 31) + getTokenCode().hashCode()) * 31) + getStatus().hashCode()) * 31) + getProcessingType().hashCode()) * 31) + getFeeAmount().hashCode()) * 31) + getFeeTokenCode().hashCode()) * 31) + getTxHash().hashCode()) * 31) + getSenderAddress().hashCode()) * 31) + getRecipientAddress().hashCode()) * 31) + getNetworkType().hashCode()) * 31) + this.senderAccountId.hashCode()) * 31) + this.receiverAccountId.hashCode();
+                return (((((((((((((((((((((((((((getId().hashCode() * 31) + getAmount().hashCode()) * 31) + getType().hashCode()) * 31) + getDirection().hashCode()) * 31) + getCreatedAt().hashCode()) * 31) + getToken().hashCode()) * 31) + getStatus().hashCode()) * 31) + getProcessingType().hashCode()) * 31) + getFeeAmount().hashCode()) * 31) + getFeeToken().hashCode()) * 31) + getTxHash().hashCode()) * 31) + getSenderAddress().hashCode()) * 31) + getRecipientAddress().hashCode()) * 31) + this.senderAccountId.hashCode()) * 31) + this.receiverAccountId.hashCode();
             }
 
             public String toString() {
-                return "Donation(id=" + getId() + ", amount=" + getAmount() + ", type=" + getType() + ", direction=" + getDirection() + ", createdAt=" + getCreatedAt() + ", tokenCode=" + getTokenCode() + ", status=" + getStatus() + ", processingType=" + getProcessingType() + ", feeAmount=" + getFeeAmount() + ", feeTokenCode=" + getFeeTokenCode() + ", txHash=" + getTxHash() + ", senderAddress=" + getSenderAddress() + ", recipientAddress=" + getRecipientAddress() + ", networkType=" + getNetworkType() + ", senderAccountId=" + this.senderAccountId + ", receiverAccountId=" + this.receiverAccountId + ')';
+                return "Donation(id=" + getId() + ", amount=" + getAmount() + ", type=" + getType() + ", direction=" + getDirection() + ", createdAt=" + getCreatedAt() + ", token=" + getToken() + ", status=" + getStatus() + ", processingType=" + getProcessingType() + ", feeAmount=" + getFeeAmount() + ", feeToken=" + getFeeToken() + ", txHash=" + getTxHash() + ", senderAddress=" + getSenderAddress() + ", recipientAddress=" + getRecipientAddress() + ", senderAccountId=" + this.senderAccountId + ", receiverAccountId=" + this.receiverAccountId + ')';
             }
 
             @Override // com.iMe.storage.domain.model.wallet.transaction.Transaction.Crypto.Transfer, com.iMe.storage.domain.model.wallet.transaction.Transaction.Crypto, com.iMe.storage.domain.model.wallet.transaction.Transaction
             public String getId() {
-                return this.f362id;
+                return this.f435id;
             }
 
             @Override // com.iMe.storage.domain.model.wallet.transaction.Transaction.Crypto.Transfer, com.iMe.storage.domain.model.wallet.transaction.Transaction.Crypto, com.iMe.storage.domain.model.wallet.transaction.Transaction
@@ -1516,8 +1508,8 @@ public abstract class Transaction {
             }
 
             @Override // com.iMe.storage.domain.model.wallet.transaction.Transaction.Crypto.Transfer, com.iMe.storage.domain.model.wallet.transaction.Transaction.Crypto, com.iMe.storage.domain.model.wallet.transaction.Transaction
-            public TokenCode getTokenCode() {
-                return this.tokenCode;
+            public TokenDetailed getToken() {
+                return this.token;
             }
 
             @Override // com.iMe.storage.domain.model.wallet.transaction.Transaction.Crypto.Transfer, com.iMe.storage.domain.model.wallet.transaction.Transaction.Crypto, com.iMe.storage.domain.model.wallet.transaction.Transaction
@@ -1536,8 +1528,8 @@ public abstract class Transaction {
             }
 
             @Override // com.iMe.storage.domain.model.wallet.transaction.Transaction.Crypto.Transfer, com.iMe.storage.domain.model.wallet.transaction.Transaction.Crypto, com.iMe.storage.domain.model.wallet.transaction.Transaction
-            public TokenCode getFeeTokenCode() {
-                return this.feeTokenCode;
+            public TokenDetailed getFeeToken() {
+                return this.feeToken;
             }
 
             @Override // com.iMe.storage.domain.model.wallet.transaction.Transaction.Crypto.Transfer, com.iMe.storage.domain.model.wallet.transaction.Transaction.Crypto
@@ -1555,11 +1547,6 @@ public abstract class Transaction {
                 return this.recipientAddress;
             }
 
-            @Override // com.iMe.storage.domain.model.wallet.transaction.Transaction.Crypto.Transfer, com.iMe.storage.domain.model.wallet.transaction.Transaction.Crypto
-            public NetworkType getNetworkType() {
-                return this.networkType;
-            }
-
             public final String getSenderAccountId() {
                 return this.senderAccountId;
             }
@@ -1569,38 +1556,36 @@ public abstract class Transaction {
             }
 
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-            public Donation(String id, BigDecimal amount, TransactionType type, TransactionDirection direction, String createdAt, TokenCode tokenCode, Status status, TransactionProcessingType processingType, BigDecimal feeAmount, TokenCode feeTokenCode, String txHash, String senderAddress, String recipientAddress, NetworkType networkType, String senderAccountId, String receiverAccountId) {
-                super(id, amount, type, direction, createdAt, tokenCode, status, processingType, feeAmount, feeTokenCode, txHash, networkType, senderAddress, recipientAddress, null);
+            public Donation(String id, BigDecimal amount, TransactionType type, TransactionDirection direction, String createdAt, TokenDetailed token, Status status, TransactionProcessingType processingType, BigDecimal feeAmount, TokenDetailed feeToken, String txHash, String senderAddress, String recipientAddress, String senderAccountId, String receiverAccountId) {
+                super(id, amount, type, direction, createdAt, token, status, processingType, feeAmount, feeToken, txHash, senderAddress, recipientAddress, null);
                 Intrinsics.checkNotNullParameter(id, "id");
                 Intrinsics.checkNotNullParameter(amount, "amount");
                 Intrinsics.checkNotNullParameter(type, "type");
                 Intrinsics.checkNotNullParameter(direction, "direction");
                 Intrinsics.checkNotNullParameter(createdAt, "createdAt");
-                Intrinsics.checkNotNullParameter(tokenCode, "tokenCode");
+                Intrinsics.checkNotNullParameter(token, "token");
                 Intrinsics.checkNotNullParameter(status, "status");
                 Intrinsics.checkNotNullParameter(processingType, "processingType");
                 Intrinsics.checkNotNullParameter(feeAmount, "feeAmount");
-                Intrinsics.checkNotNullParameter(feeTokenCode, "feeTokenCode");
+                Intrinsics.checkNotNullParameter(feeToken, "feeToken");
                 Intrinsics.checkNotNullParameter(txHash, "txHash");
                 Intrinsics.checkNotNullParameter(senderAddress, "senderAddress");
                 Intrinsics.checkNotNullParameter(recipientAddress, "recipientAddress");
-                Intrinsics.checkNotNullParameter(networkType, "networkType");
                 Intrinsics.checkNotNullParameter(senderAccountId, "senderAccountId");
                 Intrinsics.checkNotNullParameter(receiverAccountId, "receiverAccountId");
-                this.f362id = id;
+                this.f435id = id;
                 this.amount = amount;
                 this.type = type;
                 this.direction = direction;
                 this.createdAt = createdAt;
-                this.tokenCode = tokenCode;
+                this.token = token;
                 this.status = status;
                 this.processingType = processingType;
                 this.feeAmount = feeAmount;
-                this.feeTokenCode = feeTokenCode;
+                this.feeToken = feeToken;
                 this.txHash = txHash;
                 this.senderAddress = senderAddress;
                 this.recipientAddress = recipientAddress;
-                this.networkType = networkType;
                 this.senderAccountId = senderAccountId;
                 this.receiverAccountId = receiverAccountId;
             }
@@ -1613,23 +1598,22 @@ public abstract class Transaction {
             private final String createdAt;
             private final TransactionDirection direction;
             private final BigDecimal feeAmount;
-            private final TokenCode feeTokenCode;
+            private final TokenDetailed feeToken;
 
             /* renamed from: id */
-            private final String f365id;
-            private final NetworkType networkType;
+            private final String f438id;
             private final String payloadMessage;
             private final TransactionProcessingType processingType;
             private final String recipientAddress;
             private final String senderAddress;
             private final Status status;
-            private final TokenCode tokenCode;
+            private final TokenDetailed token;
             private final String txHash;
             private final TransactionType type;
 
             @Override // com.iMe.storage.domain.model.wallet.transaction.Transaction.Crypto, com.iMe.storage.domain.model.wallet.transaction.Transaction
             public String getId() {
-                return this.f365id;
+                return this.f438id;
             }
 
             @Override // com.iMe.storage.domain.model.wallet.transaction.Transaction.Crypto, com.iMe.storage.domain.model.wallet.transaction.Transaction
@@ -1653,8 +1637,8 @@ public abstract class Transaction {
             }
 
             @Override // com.iMe.storage.domain.model.wallet.transaction.Transaction.Crypto, com.iMe.storage.domain.model.wallet.transaction.Transaction
-            public TokenCode getTokenCode() {
-                return this.tokenCode;
+            public TokenDetailed getToken() {
+                return this.token;
             }
 
             @Override // com.iMe.storage.domain.model.wallet.transaction.Transaction.Crypto, com.iMe.storage.domain.model.wallet.transaction.Transaction
@@ -1673,18 +1657,13 @@ public abstract class Transaction {
             }
 
             @Override // com.iMe.storage.domain.model.wallet.transaction.Transaction.Crypto, com.iMe.storage.domain.model.wallet.transaction.Transaction
-            public TokenCode getFeeTokenCode() {
-                return this.feeTokenCode;
+            public TokenDetailed getFeeToken() {
+                return this.feeToken;
             }
 
             @Override // com.iMe.storage.domain.model.wallet.transaction.Transaction.Crypto
             public String getTxHash() {
                 return this.txHash;
-            }
-
-            @Override // com.iMe.storage.domain.model.wallet.transaction.Transaction.Crypto
-            public NetworkType getNetworkType() {
-                return this.networkType;
             }
 
             public String getSenderAddress() {
@@ -1700,34 +1679,32 @@ public abstract class Transaction {
             }
 
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-            public Transfer(String id, BigDecimal amount, TransactionType type, TransactionDirection direction, String createdAt, TokenCode tokenCode, Status status, TransactionProcessingType processingType, BigDecimal feeAmount, TokenCode feeTokenCode, String txHash, NetworkType networkType, String senderAddress, String recipientAddress, String str) {
-                super(id, amount, type, direction, createdAt, tokenCode, status, processingType, feeAmount, feeTokenCode, txHash, networkType);
+            public Transfer(String id, BigDecimal amount, TransactionType type, TransactionDirection direction, String createdAt, TokenDetailed token, Status status, TransactionProcessingType processingType, BigDecimal feeAmount, TokenDetailed feeToken, String txHash, String senderAddress, String recipientAddress, String str) {
+                super(id, amount, type, direction, createdAt, token, status, processingType, feeAmount, feeToken, txHash);
                 Intrinsics.checkNotNullParameter(id, "id");
                 Intrinsics.checkNotNullParameter(amount, "amount");
                 Intrinsics.checkNotNullParameter(type, "type");
                 Intrinsics.checkNotNullParameter(direction, "direction");
                 Intrinsics.checkNotNullParameter(createdAt, "createdAt");
-                Intrinsics.checkNotNullParameter(tokenCode, "tokenCode");
+                Intrinsics.checkNotNullParameter(token, "token");
                 Intrinsics.checkNotNullParameter(status, "status");
                 Intrinsics.checkNotNullParameter(processingType, "processingType");
                 Intrinsics.checkNotNullParameter(feeAmount, "feeAmount");
-                Intrinsics.checkNotNullParameter(feeTokenCode, "feeTokenCode");
+                Intrinsics.checkNotNullParameter(feeToken, "feeToken");
                 Intrinsics.checkNotNullParameter(txHash, "txHash");
-                Intrinsics.checkNotNullParameter(networkType, "networkType");
                 Intrinsics.checkNotNullParameter(senderAddress, "senderAddress");
                 Intrinsics.checkNotNullParameter(recipientAddress, "recipientAddress");
-                this.f365id = id;
+                this.f438id = id;
                 this.amount = amount;
                 this.type = type;
                 this.direction = direction;
                 this.createdAt = createdAt;
-                this.tokenCode = tokenCode;
+                this.token = token;
                 this.status = status;
                 this.processingType = processingType;
                 this.feeAmount = feeAmount;
-                this.feeTokenCode = feeTokenCode;
+                this.feeToken = feeToken;
                 this.txHash = txHash;
-                this.networkType = networkType;
                 this.senderAddress = senderAddress;
                 this.recipientAddress = recipientAddress;
                 this.payloadMessage = str;
@@ -1741,14 +1718,13 @@ public abstract class Transaction {
             private final String createdAt;
             private final TransactionDirection direction;
             private final BigDecimal feeAmount;
-            private final TokenCode feeTokenCode;
+            private final TokenDetailed feeToken;
 
             /* renamed from: id */
-            private final String f361id;
-            private final NetworkType networkType;
+            private final String f434id;
             private final TransactionProcessingType processingType;
             private final Status status;
-            private final TokenCode tokenCode;
+            private final TokenDetailed token;
             private final String txHash;
             private final TransactionType type;
 
@@ -1756,16 +1732,12 @@ public abstract class Transaction {
                 return getId();
             }
 
-            public final TokenCode component10() {
-                return getFeeTokenCode();
+            public final TokenDetailed component10() {
+                return getFeeToken();
             }
 
             public final String component11() {
                 return getTxHash();
-            }
-
-            public final NetworkType component12() {
-                return getNetworkType();
             }
 
             public final BigDecimal component2() {
@@ -1784,8 +1756,8 @@ public abstract class Transaction {
                 return getCreatedAt();
             }
 
-            public final TokenCode component6() {
-                return getTokenCode();
+            public final TokenDetailed component6() {
+                return getToken();
             }
 
             public final Status component7() {
@@ -1800,20 +1772,19 @@ public abstract class Transaction {
                 return getFeeAmount();
             }
 
-            public final Approve copy(String id, BigDecimal amount, TransactionType type, TransactionDirection direction, String createdAt, TokenCode tokenCode, Status status, TransactionProcessingType processingType, BigDecimal feeAmount, TokenCode feeTokenCode, String txHash, NetworkType networkType) {
+            public final Approve copy(String id, BigDecimal amount, TransactionType type, TransactionDirection direction, String createdAt, TokenDetailed token, Status status, TransactionProcessingType processingType, BigDecimal feeAmount, TokenDetailed feeToken, String txHash) {
                 Intrinsics.checkNotNullParameter(id, "id");
                 Intrinsics.checkNotNullParameter(amount, "amount");
                 Intrinsics.checkNotNullParameter(type, "type");
                 Intrinsics.checkNotNullParameter(direction, "direction");
                 Intrinsics.checkNotNullParameter(createdAt, "createdAt");
-                Intrinsics.checkNotNullParameter(tokenCode, "tokenCode");
+                Intrinsics.checkNotNullParameter(token, "token");
                 Intrinsics.checkNotNullParameter(status, "status");
                 Intrinsics.checkNotNullParameter(processingType, "processingType");
                 Intrinsics.checkNotNullParameter(feeAmount, "feeAmount");
-                Intrinsics.checkNotNullParameter(feeTokenCode, "feeTokenCode");
+                Intrinsics.checkNotNullParameter(feeToken, "feeToken");
                 Intrinsics.checkNotNullParameter(txHash, "txHash");
-                Intrinsics.checkNotNullParameter(networkType, "networkType");
-                return new Approve(id, amount, type, direction, createdAt, tokenCode, status, processingType, feeAmount, feeTokenCode, txHash, networkType);
+                return new Approve(id, amount, type, direction, createdAt, token, status, processingType, feeAmount, feeToken, txHash);
             }
 
             public boolean equals(Object obj) {
@@ -1822,22 +1793,22 @@ public abstract class Transaction {
                 }
                 if (obj instanceof Approve) {
                     Approve approve = (Approve) obj;
-                    return Intrinsics.areEqual(getId(), approve.getId()) && Intrinsics.areEqual(getAmount(), approve.getAmount()) && getType() == approve.getType() && getDirection() == approve.getDirection() && Intrinsics.areEqual(getCreatedAt(), approve.getCreatedAt()) && getTokenCode() == approve.getTokenCode() && getStatus() == approve.getStatus() && getProcessingType() == approve.getProcessingType() && Intrinsics.areEqual(getFeeAmount(), approve.getFeeAmount()) && getFeeTokenCode() == approve.getFeeTokenCode() && Intrinsics.areEqual(getTxHash(), approve.getTxHash()) && getNetworkType() == approve.getNetworkType();
+                    return Intrinsics.areEqual(getId(), approve.getId()) && Intrinsics.areEqual(getAmount(), approve.getAmount()) && getType() == approve.getType() && getDirection() == approve.getDirection() && Intrinsics.areEqual(getCreatedAt(), approve.getCreatedAt()) && Intrinsics.areEqual(getToken(), approve.getToken()) && getStatus() == approve.getStatus() && getProcessingType() == approve.getProcessingType() && Intrinsics.areEqual(getFeeAmount(), approve.getFeeAmount()) && Intrinsics.areEqual(getFeeToken(), approve.getFeeToken()) && Intrinsics.areEqual(getTxHash(), approve.getTxHash());
                 }
                 return false;
             }
 
             public int hashCode() {
-                return (((((((((((((((((((((getId().hashCode() * 31) + getAmount().hashCode()) * 31) + getType().hashCode()) * 31) + getDirection().hashCode()) * 31) + getCreatedAt().hashCode()) * 31) + getTokenCode().hashCode()) * 31) + getStatus().hashCode()) * 31) + getProcessingType().hashCode()) * 31) + getFeeAmount().hashCode()) * 31) + getFeeTokenCode().hashCode()) * 31) + getTxHash().hashCode()) * 31) + getNetworkType().hashCode();
+                return (((((((((((((((((((getId().hashCode() * 31) + getAmount().hashCode()) * 31) + getType().hashCode()) * 31) + getDirection().hashCode()) * 31) + getCreatedAt().hashCode()) * 31) + getToken().hashCode()) * 31) + getStatus().hashCode()) * 31) + getProcessingType().hashCode()) * 31) + getFeeAmount().hashCode()) * 31) + getFeeToken().hashCode()) * 31) + getTxHash().hashCode();
             }
 
             public String toString() {
-                return "Approve(id=" + getId() + ", amount=" + getAmount() + ", type=" + getType() + ", direction=" + getDirection() + ", createdAt=" + getCreatedAt() + ", tokenCode=" + getTokenCode() + ", status=" + getStatus() + ", processingType=" + getProcessingType() + ", feeAmount=" + getFeeAmount() + ", feeTokenCode=" + getFeeTokenCode() + ", txHash=" + getTxHash() + ", networkType=" + getNetworkType() + ')';
+                return "Approve(id=" + getId() + ", amount=" + getAmount() + ", type=" + getType() + ", direction=" + getDirection() + ", createdAt=" + getCreatedAt() + ", token=" + getToken() + ", status=" + getStatus() + ", processingType=" + getProcessingType() + ", feeAmount=" + getFeeAmount() + ", feeToken=" + getFeeToken() + ", txHash=" + getTxHash() + ')';
             }
 
             @Override // com.iMe.storage.domain.model.wallet.transaction.Transaction.Crypto, com.iMe.storage.domain.model.wallet.transaction.Transaction
             public String getId() {
-                return this.f361id;
+                return this.f434id;
             }
 
             @Override // com.iMe.storage.domain.model.wallet.transaction.Transaction.Crypto, com.iMe.storage.domain.model.wallet.transaction.Transaction
@@ -1861,8 +1832,8 @@ public abstract class Transaction {
             }
 
             @Override // com.iMe.storage.domain.model.wallet.transaction.Transaction.Crypto, com.iMe.storage.domain.model.wallet.transaction.Transaction
-            public TokenCode getTokenCode() {
-                return this.tokenCode;
+            public TokenDetailed getToken() {
+                return this.token;
             }
 
             @Override // com.iMe.storage.domain.model.wallet.transaction.Transaction.Crypto, com.iMe.storage.domain.model.wallet.transaction.Transaction
@@ -1881,8 +1852,8 @@ public abstract class Transaction {
             }
 
             @Override // com.iMe.storage.domain.model.wallet.transaction.Transaction.Crypto, com.iMe.storage.domain.model.wallet.transaction.Transaction
-            public TokenCode getFeeTokenCode() {
-                return this.feeTokenCode;
+            public TokenDetailed getFeeToken() {
+                return this.feeToken;
             }
 
             @Override // com.iMe.storage.domain.model.wallet.transaction.Transaction.Crypto
@@ -1890,38 +1861,31 @@ public abstract class Transaction {
                 return this.txHash;
             }
 
-            @Override // com.iMe.storage.domain.model.wallet.transaction.Transaction.Crypto
-            public NetworkType getNetworkType() {
-                return this.networkType;
-            }
-
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-            public Approve(String id, BigDecimal amount, TransactionType type, TransactionDirection direction, String createdAt, TokenCode tokenCode, Status status, TransactionProcessingType processingType, BigDecimal feeAmount, TokenCode feeTokenCode, String txHash, NetworkType networkType) {
-                super(id, amount, type, direction, createdAt, tokenCode, status, processingType, feeAmount, feeTokenCode, txHash, networkType);
+            public Approve(String id, BigDecimal amount, TransactionType type, TransactionDirection direction, String createdAt, TokenDetailed token, Status status, TransactionProcessingType processingType, BigDecimal feeAmount, TokenDetailed feeToken, String txHash) {
+                super(id, amount, type, direction, createdAt, token, status, processingType, feeAmount, feeToken, txHash);
                 Intrinsics.checkNotNullParameter(id, "id");
                 Intrinsics.checkNotNullParameter(amount, "amount");
                 Intrinsics.checkNotNullParameter(type, "type");
                 Intrinsics.checkNotNullParameter(direction, "direction");
                 Intrinsics.checkNotNullParameter(createdAt, "createdAt");
-                Intrinsics.checkNotNullParameter(tokenCode, "tokenCode");
+                Intrinsics.checkNotNullParameter(token, "token");
                 Intrinsics.checkNotNullParameter(status, "status");
                 Intrinsics.checkNotNullParameter(processingType, "processingType");
                 Intrinsics.checkNotNullParameter(feeAmount, "feeAmount");
-                Intrinsics.checkNotNullParameter(feeTokenCode, "feeTokenCode");
+                Intrinsics.checkNotNullParameter(feeToken, "feeToken");
                 Intrinsics.checkNotNullParameter(txHash, "txHash");
-                Intrinsics.checkNotNullParameter(networkType, "networkType");
-                this.f361id = id;
+                this.f434id = id;
                 this.amount = amount;
                 this.type = type;
                 this.direction = direction;
                 this.createdAt = createdAt;
-                this.tokenCode = tokenCode;
+                this.token = token;
                 this.status = status;
                 this.processingType = processingType;
                 this.feeAmount = feeAmount;
-                this.feeTokenCode = feeTokenCode;
+                this.feeToken = feeToken;
                 this.txHash = txHash;
-                this.networkType = networkType;
             }
         }
 
@@ -1932,11 +1896,10 @@ public abstract class Transaction {
             private final String createdAt;
             private final TransactionDirection direction;
             private final BigDecimal feeAmount;
-            private final TokenCode feeTokenCode;
+            private final TokenDetailed feeToken;
 
             /* renamed from: id */
-            private final String f363id;
-            private final NetworkType networkType;
+            private final String f436id;
             private final String orderId;
             private final TransactionProcessingType processingType;
             private final String recipientAddress;
@@ -1944,7 +1907,7 @@ public abstract class Transaction {
             private final BigDecimal spentAmount;
             private final FiatCode spentFiatCode;
             private final Status status;
-            private final TokenCode tokenCode;
+            private final TokenDetailed token;
             private final String txHash;
             private final TransactionType type;
 
@@ -1952,35 +1915,31 @@ public abstract class Transaction {
                 return getId();
             }
 
-            public final TokenCode component10() {
-                return getFeeTokenCode();
+            public final TokenDetailed component10() {
+                return getFeeToken();
             }
 
             public final String component11() {
                 return getTxHash();
             }
 
-            public final NetworkType component12() {
-                return getNetworkType();
-            }
-
-            public final String component13() {
+            public final String component12() {
                 return this.senderAddress;
             }
 
-            public final String component14() {
+            public final String component13() {
                 return this.recipientAddress;
             }
 
-            public final String component15() {
+            public final String component14() {
                 return this.orderId;
             }
 
-            public final BigDecimal component16() {
+            public final BigDecimal component15() {
                 return this.spentAmount;
             }
 
-            public final FiatCode component17() {
+            public final FiatCode component16() {
                 return this.spentFiatCode;
             }
 
@@ -2000,8 +1959,8 @@ public abstract class Transaction {
                 return getCreatedAt();
             }
 
-            public final TokenCode component6() {
-                return getTokenCode();
+            public final TokenDetailed component6() {
+                return getToken();
             }
 
             public final Status component7() {
@@ -2016,25 +1975,24 @@ public abstract class Transaction {
                 return getFeeAmount();
             }
 
-            public final SimplexPurchase copy(String id, BigDecimal amount, TransactionType type, TransactionDirection direction, String createdAt, TokenCode tokenCode, Status status, TransactionProcessingType processingType, BigDecimal feeAmount, TokenCode feeTokenCode, String txHash, NetworkType networkType, String senderAddress, String recipientAddress, String orderId, BigDecimal spentAmount, FiatCode spentFiatCode) {
+            public final SimplexPurchase copy(String id, BigDecimal amount, TransactionType type, TransactionDirection direction, String createdAt, TokenDetailed token, Status status, TransactionProcessingType processingType, BigDecimal feeAmount, TokenDetailed feeToken, String txHash, String senderAddress, String recipientAddress, String orderId, BigDecimal spentAmount, FiatCode spentFiatCode) {
                 Intrinsics.checkNotNullParameter(id, "id");
                 Intrinsics.checkNotNullParameter(amount, "amount");
                 Intrinsics.checkNotNullParameter(type, "type");
                 Intrinsics.checkNotNullParameter(direction, "direction");
                 Intrinsics.checkNotNullParameter(createdAt, "createdAt");
-                Intrinsics.checkNotNullParameter(tokenCode, "tokenCode");
+                Intrinsics.checkNotNullParameter(token, "token");
                 Intrinsics.checkNotNullParameter(status, "status");
                 Intrinsics.checkNotNullParameter(processingType, "processingType");
                 Intrinsics.checkNotNullParameter(feeAmount, "feeAmount");
-                Intrinsics.checkNotNullParameter(feeTokenCode, "feeTokenCode");
+                Intrinsics.checkNotNullParameter(feeToken, "feeToken");
                 Intrinsics.checkNotNullParameter(txHash, "txHash");
-                Intrinsics.checkNotNullParameter(networkType, "networkType");
                 Intrinsics.checkNotNullParameter(senderAddress, "senderAddress");
                 Intrinsics.checkNotNullParameter(recipientAddress, "recipientAddress");
                 Intrinsics.checkNotNullParameter(orderId, "orderId");
                 Intrinsics.checkNotNullParameter(spentAmount, "spentAmount");
                 Intrinsics.checkNotNullParameter(spentFiatCode, "spentFiatCode");
-                return new SimplexPurchase(id, amount, type, direction, createdAt, tokenCode, status, processingType, feeAmount, feeTokenCode, txHash, networkType, senderAddress, recipientAddress, orderId, spentAmount, spentFiatCode);
+                return new SimplexPurchase(id, amount, type, direction, createdAt, token, status, processingType, feeAmount, feeToken, txHash, senderAddress, recipientAddress, orderId, spentAmount, spentFiatCode);
             }
 
             public boolean equals(Object obj) {
@@ -2043,22 +2001,22 @@ public abstract class Transaction {
                 }
                 if (obj instanceof SimplexPurchase) {
                     SimplexPurchase simplexPurchase = (SimplexPurchase) obj;
-                    return Intrinsics.areEqual(getId(), simplexPurchase.getId()) && Intrinsics.areEqual(getAmount(), simplexPurchase.getAmount()) && getType() == simplexPurchase.getType() && getDirection() == simplexPurchase.getDirection() && Intrinsics.areEqual(getCreatedAt(), simplexPurchase.getCreatedAt()) && getTokenCode() == simplexPurchase.getTokenCode() && getStatus() == simplexPurchase.getStatus() && getProcessingType() == simplexPurchase.getProcessingType() && Intrinsics.areEqual(getFeeAmount(), simplexPurchase.getFeeAmount()) && getFeeTokenCode() == simplexPurchase.getFeeTokenCode() && Intrinsics.areEqual(getTxHash(), simplexPurchase.getTxHash()) && getNetworkType() == simplexPurchase.getNetworkType() && Intrinsics.areEqual(this.senderAddress, simplexPurchase.senderAddress) && Intrinsics.areEqual(this.recipientAddress, simplexPurchase.recipientAddress) && Intrinsics.areEqual(this.orderId, simplexPurchase.orderId) && Intrinsics.areEqual(this.spentAmount, simplexPurchase.spentAmount) && Intrinsics.areEqual(this.spentFiatCode, simplexPurchase.spentFiatCode);
+                    return Intrinsics.areEqual(getId(), simplexPurchase.getId()) && Intrinsics.areEqual(getAmount(), simplexPurchase.getAmount()) && getType() == simplexPurchase.getType() && getDirection() == simplexPurchase.getDirection() && Intrinsics.areEqual(getCreatedAt(), simplexPurchase.getCreatedAt()) && Intrinsics.areEqual(getToken(), simplexPurchase.getToken()) && getStatus() == simplexPurchase.getStatus() && getProcessingType() == simplexPurchase.getProcessingType() && Intrinsics.areEqual(getFeeAmount(), simplexPurchase.getFeeAmount()) && Intrinsics.areEqual(getFeeToken(), simplexPurchase.getFeeToken()) && Intrinsics.areEqual(getTxHash(), simplexPurchase.getTxHash()) && Intrinsics.areEqual(this.senderAddress, simplexPurchase.senderAddress) && Intrinsics.areEqual(this.recipientAddress, simplexPurchase.recipientAddress) && Intrinsics.areEqual(this.orderId, simplexPurchase.orderId) && Intrinsics.areEqual(this.spentAmount, simplexPurchase.spentAmount) && Intrinsics.areEqual(this.spentFiatCode, simplexPurchase.spentFiatCode);
                 }
                 return false;
             }
 
             public int hashCode() {
-                return (((((((((((((((((((((((((((((((getId().hashCode() * 31) + getAmount().hashCode()) * 31) + getType().hashCode()) * 31) + getDirection().hashCode()) * 31) + getCreatedAt().hashCode()) * 31) + getTokenCode().hashCode()) * 31) + getStatus().hashCode()) * 31) + getProcessingType().hashCode()) * 31) + getFeeAmount().hashCode()) * 31) + getFeeTokenCode().hashCode()) * 31) + getTxHash().hashCode()) * 31) + getNetworkType().hashCode()) * 31) + this.senderAddress.hashCode()) * 31) + this.recipientAddress.hashCode()) * 31) + this.orderId.hashCode()) * 31) + this.spentAmount.hashCode()) * 31) + this.spentFiatCode.hashCode();
+                return (((((((((((((((((((((((((((((getId().hashCode() * 31) + getAmount().hashCode()) * 31) + getType().hashCode()) * 31) + getDirection().hashCode()) * 31) + getCreatedAt().hashCode()) * 31) + getToken().hashCode()) * 31) + getStatus().hashCode()) * 31) + getProcessingType().hashCode()) * 31) + getFeeAmount().hashCode()) * 31) + getFeeToken().hashCode()) * 31) + getTxHash().hashCode()) * 31) + this.senderAddress.hashCode()) * 31) + this.recipientAddress.hashCode()) * 31) + this.orderId.hashCode()) * 31) + this.spentAmount.hashCode()) * 31) + this.spentFiatCode.hashCode();
             }
 
             public String toString() {
-                return "SimplexPurchase(id=" + getId() + ", amount=" + getAmount() + ", type=" + getType() + ", direction=" + getDirection() + ", createdAt=" + getCreatedAt() + ", tokenCode=" + getTokenCode() + ", status=" + getStatus() + ", processingType=" + getProcessingType() + ", feeAmount=" + getFeeAmount() + ", feeTokenCode=" + getFeeTokenCode() + ", txHash=" + getTxHash() + ", networkType=" + getNetworkType() + ", senderAddress=" + this.senderAddress + ", recipientAddress=" + this.recipientAddress + ", orderId=" + this.orderId + ", spentAmount=" + this.spentAmount + ", spentFiatCode=" + this.spentFiatCode + ')';
+                return "SimplexPurchase(id=" + getId() + ", amount=" + getAmount() + ", type=" + getType() + ", direction=" + getDirection() + ", createdAt=" + getCreatedAt() + ", token=" + getToken() + ", status=" + getStatus() + ", processingType=" + getProcessingType() + ", feeAmount=" + getFeeAmount() + ", feeToken=" + getFeeToken() + ", txHash=" + getTxHash() + ", senderAddress=" + this.senderAddress + ", recipientAddress=" + this.recipientAddress + ", orderId=" + this.orderId + ", spentAmount=" + this.spentAmount + ", spentFiatCode=" + this.spentFiatCode + ')';
             }
 
             @Override // com.iMe.storage.domain.model.wallet.transaction.Transaction.Crypto, com.iMe.storage.domain.model.wallet.transaction.Transaction
             public String getId() {
-                return this.f363id;
+                return this.f436id;
             }
 
             @Override // com.iMe.storage.domain.model.wallet.transaction.Transaction.Crypto, com.iMe.storage.domain.model.wallet.transaction.Transaction
@@ -2082,8 +2040,8 @@ public abstract class Transaction {
             }
 
             @Override // com.iMe.storage.domain.model.wallet.transaction.Transaction.Crypto, com.iMe.storage.domain.model.wallet.transaction.Transaction
-            public TokenCode getTokenCode() {
-                return this.tokenCode;
+            public TokenDetailed getToken() {
+                return this.token;
             }
 
             @Override // com.iMe.storage.domain.model.wallet.transaction.Transaction.Crypto, com.iMe.storage.domain.model.wallet.transaction.Transaction
@@ -2102,18 +2060,13 @@ public abstract class Transaction {
             }
 
             @Override // com.iMe.storage.domain.model.wallet.transaction.Transaction.Crypto, com.iMe.storage.domain.model.wallet.transaction.Transaction
-            public TokenCode getFeeTokenCode() {
-                return this.feeTokenCode;
+            public TokenDetailed getFeeToken() {
+                return this.feeToken;
             }
 
             @Override // com.iMe.storage.domain.model.wallet.transaction.Transaction.Crypto
             public String getTxHash() {
                 return this.txHash;
-            }
-
-            @Override // com.iMe.storage.domain.model.wallet.transaction.Transaction.Crypto
-            public NetworkType getNetworkType() {
-                return this.networkType;
             }
 
             public final String getSenderAddress() {
@@ -2137,37 +2090,35 @@ public abstract class Transaction {
             }
 
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-            public SimplexPurchase(String id, BigDecimal amount, TransactionType type, TransactionDirection direction, String createdAt, TokenCode tokenCode, Status status, TransactionProcessingType processingType, BigDecimal feeAmount, TokenCode feeTokenCode, String txHash, NetworkType networkType, String senderAddress, String recipientAddress, String orderId, BigDecimal spentAmount, FiatCode spentFiatCode) {
-                super(id, amount, type, direction, createdAt, tokenCode, status, processingType, feeAmount, feeTokenCode, txHash, networkType);
+            public SimplexPurchase(String id, BigDecimal amount, TransactionType type, TransactionDirection direction, String createdAt, TokenDetailed token, Status status, TransactionProcessingType processingType, BigDecimal feeAmount, TokenDetailed feeToken, String txHash, String senderAddress, String recipientAddress, String orderId, BigDecimal spentAmount, FiatCode spentFiatCode) {
+                super(id, amount, type, direction, createdAt, token, status, processingType, feeAmount, feeToken, txHash);
                 Intrinsics.checkNotNullParameter(id, "id");
                 Intrinsics.checkNotNullParameter(amount, "amount");
                 Intrinsics.checkNotNullParameter(type, "type");
                 Intrinsics.checkNotNullParameter(direction, "direction");
                 Intrinsics.checkNotNullParameter(createdAt, "createdAt");
-                Intrinsics.checkNotNullParameter(tokenCode, "tokenCode");
+                Intrinsics.checkNotNullParameter(token, "token");
                 Intrinsics.checkNotNullParameter(status, "status");
                 Intrinsics.checkNotNullParameter(processingType, "processingType");
                 Intrinsics.checkNotNullParameter(feeAmount, "feeAmount");
-                Intrinsics.checkNotNullParameter(feeTokenCode, "feeTokenCode");
+                Intrinsics.checkNotNullParameter(feeToken, "feeToken");
                 Intrinsics.checkNotNullParameter(txHash, "txHash");
-                Intrinsics.checkNotNullParameter(networkType, "networkType");
                 Intrinsics.checkNotNullParameter(senderAddress, "senderAddress");
                 Intrinsics.checkNotNullParameter(recipientAddress, "recipientAddress");
                 Intrinsics.checkNotNullParameter(orderId, "orderId");
                 Intrinsics.checkNotNullParameter(spentAmount, "spentAmount");
                 Intrinsics.checkNotNullParameter(spentFiatCode, "spentFiatCode");
-                this.f363id = id;
+                this.f436id = id;
                 this.amount = amount;
                 this.type = type;
                 this.direction = direction;
                 this.createdAt = createdAt;
-                this.tokenCode = tokenCode;
+                this.token = token;
                 this.status = status;
                 this.processingType = processingType;
                 this.feeAmount = feeAmount;
-                this.feeTokenCode = feeTokenCode;
+                this.feeToken = feeToken;
                 this.txHash = txHash;
-                this.networkType = networkType;
                 this.senderAddress = senderAddress;
                 this.recipientAddress = recipientAddress;
                 this.orderId = orderId;
@@ -2183,18 +2134,17 @@ public abstract class Transaction {
             private final String createdAt;
             private final TransactionDirection direction;
             private final BigDecimal feeAmount;
-            private final TokenCode feeTokenCode;
+            private final TokenDetailed feeToken;
 
             /* renamed from: id */
-            private final String f364id;
+            private final String f437id;
             private final BigDecimal inputAmount;
-            private final TokenCode inputTokenCode;
-            private final NetworkType networkType;
+            private final TokenDetailed inputToken;
             private final BigDecimal outputAmount;
-            private final TokenCode outputTokenCode;
+            private final TokenDetailed outputToken;
             private final TransactionProcessingType processingType;
             private final Status status;
-            private final TokenCode tokenCode;
+            private final TokenDetailed token;
             private final TradeType tradeType;
             private final String txHash;
             private final TransactionType type;
@@ -2203,35 +2153,31 @@ public abstract class Transaction {
                 return getId();
             }
 
-            public final TokenCode component10() {
-                return getFeeTokenCode();
+            public final TokenDetailed component10() {
+                return getFeeToken();
             }
 
             public final String component11() {
                 return getTxHash();
             }
 
-            public final NetworkType component12() {
-                return getNetworkType();
+            public final TokenDetailed component12() {
+                return this.inputToken;
             }
 
-            public final TokenCode component13() {
-                return this.inputTokenCode;
+            public final TokenDetailed component13() {
+                return this.outputToken;
             }
 
-            public final TokenCode component14() {
-                return this.outputTokenCode;
-            }
-
-            public final TradeType component15() {
+            public final TradeType component14() {
                 return this.tradeType;
             }
 
-            public final BigDecimal component16() {
+            public final BigDecimal component15() {
                 return this.inputAmount;
             }
 
-            public final BigDecimal component17() {
+            public final BigDecimal component16() {
                 return this.outputAmount;
             }
 
@@ -2251,8 +2197,8 @@ public abstract class Transaction {
                 return getCreatedAt();
             }
 
-            public final TokenCode component6() {
-                return getTokenCode();
+            public final TokenDetailed component6() {
+                return getToken();
             }
 
             public final Status component7() {
@@ -2267,25 +2213,24 @@ public abstract class Transaction {
                 return getFeeAmount();
             }
 
-            public final Swap copy(String id, BigDecimal amount, TransactionType type, TransactionDirection direction, String createdAt, TokenCode tokenCode, Status status, TransactionProcessingType processingType, BigDecimal feeAmount, TokenCode feeTokenCode, String txHash, NetworkType networkType, TokenCode inputTokenCode, TokenCode outputTokenCode, TradeType tradeType, BigDecimal inputAmount, BigDecimal outputAmount) {
+            public final Swap copy(String id, BigDecimal amount, TransactionType type, TransactionDirection direction, String createdAt, TokenDetailed token, Status status, TransactionProcessingType processingType, BigDecimal feeAmount, TokenDetailed feeToken, String txHash, TokenDetailed inputToken, TokenDetailed outputToken, TradeType tradeType, BigDecimal inputAmount, BigDecimal outputAmount) {
                 Intrinsics.checkNotNullParameter(id, "id");
                 Intrinsics.checkNotNullParameter(amount, "amount");
                 Intrinsics.checkNotNullParameter(type, "type");
                 Intrinsics.checkNotNullParameter(direction, "direction");
                 Intrinsics.checkNotNullParameter(createdAt, "createdAt");
-                Intrinsics.checkNotNullParameter(tokenCode, "tokenCode");
+                Intrinsics.checkNotNullParameter(token, "token");
                 Intrinsics.checkNotNullParameter(status, "status");
                 Intrinsics.checkNotNullParameter(processingType, "processingType");
                 Intrinsics.checkNotNullParameter(feeAmount, "feeAmount");
-                Intrinsics.checkNotNullParameter(feeTokenCode, "feeTokenCode");
+                Intrinsics.checkNotNullParameter(feeToken, "feeToken");
                 Intrinsics.checkNotNullParameter(txHash, "txHash");
-                Intrinsics.checkNotNullParameter(networkType, "networkType");
-                Intrinsics.checkNotNullParameter(inputTokenCode, "inputTokenCode");
-                Intrinsics.checkNotNullParameter(outputTokenCode, "outputTokenCode");
+                Intrinsics.checkNotNullParameter(inputToken, "inputToken");
+                Intrinsics.checkNotNullParameter(outputToken, "outputToken");
                 Intrinsics.checkNotNullParameter(tradeType, "tradeType");
                 Intrinsics.checkNotNullParameter(inputAmount, "inputAmount");
                 Intrinsics.checkNotNullParameter(outputAmount, "outputAmount");
-                return new Swap(id, amount, type, direction, createdAt, tokenCode, status, processingType, feeAmount, feeTokenCode, txHash, networkType, inputTokenCode, outputTokenCode, tradeType, inputAmount, outputAmount);
+                return new Swap(id, amount, type, direction, createdAt, token, status, processingType, feeAmount, feeToken, txHash, inputToken, outputToken, tradeType, inputAmount, outputAmount);
             }
 
             public boolean equals(Object obj) {
@@ -2294,22 +2239,22 @@ public abstract class Transaction {
                 }
                 if (obj instanceof Swap) {
                     Swap swap = (Swap) obj;
-                    return Intrinsics.areEqual(getId(), swap.getId()) && Intrinsics.areEqual(getAmount(), swap.getAmount()) && getType() == swap.getType() && getDirection() == swap.getDirection() && Intrinsics.areEqual(getCreatedAt(), swap.getCreatedAt()) && getTokenCode() == swap.getTokenCode() && getStatus() == swap.getStatus() && getProcessingType() == swap.getProcessingType() && Intrinsics.areEqual(getFeeAmount(), swap.getFeeAmount()) && getFeeTokenCode() == swap.getFeeTokenCode() && Intrinsics.areEqual(getTxHash(), swap.getTxHash()) && getNetworkType() == swap.getNetworkType() && this.inputTokenCode == swap.inputTokenCode && this.outputTokenCode == swap.outputTokenCode && this.tradeType == swap.tradeType && Intrinsics.areEqual(this.inputAmount, swap.inputAmount) && Intrinsics.areEqual(this.outputAmount, swap.outputAmount);
+                    return Intrinsics.areEqual(getId(), swap.getId()) && Intrinsics.areEqual(getAmount(), swap.getAmount()) && getType() == swap.getType() && getDirection() == swap.getDirection() && Intrinsics.areEqual(getCreatedAt(), swap.getCreatedAt()) && Intrinsics.areEqual(getToken(), swap.getToken()) && getStatus() == swap.getStatus() && getProcessingType() == swap.getProcessingType() && Intrinsics.areEqual(getFeeAmount(), swap.getFeeAmount()) && Intrinsics.areEqual(getFeeToken(), swap.getFeeToken()) && Intrinsics.areEqual(getTxHash(), swap.getTxHash()) && Intrinsics.areEqual(this.inputToken, swap.inputToken) && Intrinsics.areEqual(this.outputToken, swap.outputToken) && this.tradeType == swap.tradeType && Intrinsics.areEqual(this.inputAmount, swap.inputAmount) && Intrinsics.areEqual(this.outputAmount, swap.outputAmount);
                 }
                 return false;
             }
 
             public int hashCode() {
-                return (((((((((((((((((((((((((((((((getId().hashCode() * 31) + getAmount().hashCode()) * 31) + getType().hashCode()) * 31) + getDirection().hashCode()) * 31) + getCreatedAt().hashCode()) * 31) + getTokenCode().hashCode()) * 31) + getStatus().hashCode()) * 31) + getProcessingType().hashCode()) * 31) + getFeeAmount().hashCode()) * 31) + getFeeTokenCode().hashCode()) * 31) + getTxHash().hashCode()) * 31) + getNetworkType().hashCode()) * 31) + this.inputTokenCode.hashCode()) * 31) + this.outputTokenCode.hashCode()) * 31) + this.tradeType.hashCode()) * 31) + this.inputAmount.hashCode()) * 31) + this.outputAmount.hashCode();
+                return (((((((((((((((((((((((((((((getId().hashCode() * 31) + getAmount().hashCode()) * 31) + getType().hashCode()) * 31) + getDirection().hashCode()) * 31) + getCreatedAt().hashCode()) * 31) + getToken().hashCode()) * 31) + getStatus().hashCode()) * 31) + getProcessingType().hashCode()) * 31) + getFeeAmount().hashCode()) * 31) + getFeeToken().hashCode()) * 31) + getTxHash().hashCode()) * 31) + this.inputToken.hashCode()) * 31) + this.outputToken.hashCode()) * 31) + this.tradeType.hashCode()) * 31) + this.inputAmount.hashCode()) * 31) + this.outputAmount.hashCode();
             }
 
             public String toString() {
-                return "Swap(id=" + getId() + ", amount=" + getAmount() + ", type=" + getType() + ", direction=" + getDirection() + ", createdAt=" + getCreatedAt() + ", tokenCode=" + getTokenCode() + ", status=" + getStatus() + ", processingType=" + getProcessingType() + ", feeAmount=" + getFeeAmount() + ", feeTokenCode=" + getFeeTokenCode() + ", txHash=" + getTxHash() + ", networkType=" + getNetworkType() + ", inputTokenCode=" + this.inputTokenCode + ", outputTokenCode=" + this.outputTokenCode + ", tradeType=" + this.tradeType + ", inputAmount=" + this.inputAmount + ", outputAmount=" + this.outputAmount + ')';
+                return "Swap(id=" + getId() + ", amount=" + getAmount() + ", type=" + getType() + ", direction=" + getDirection() + ", createdAt=" + getCreatedAt() + ", token=" + getToken() + ", status=" + getStatus() + ", processingType=" + getProcessingType() + ", feeAmount=" + getFeeAmount() + ", feeToken=" + getFeeToken() + ", txHash=" + getTxHash() + ", inputToken=" + this.inputToken + ", outputToken=" + this.outputToken + ", tradeType=" + this.tradeType + ", inputAmount=" + this.inputAmount + ", outputAmount=" + this.outputAmount + ')';
             }
 
             @Override // com.iMe.storage.domain.model.wallet.transaction.Transaction.Crypto, com.iMe.storage.domain.model.wallet.transaction.Transaction
             public String getId() {
-                return this.f364id;
+                return this.f437id;
             }
 
             @Override // com.iMe.storage.domain.model.wallet.transaction.Transaction.Crypto, com.iMe.storage.domain.model.wallet.transaction.Transaction
@@ -2333,8 +2278,8 @@ public abstract class Transaction {
             }
 
             @Override // com.iMe.storage.domain.model.wallet.transaction.Transaction.Crypto, com.iMe.storage.domain.model.wallet.transaction.Transaction
-            public TokenCode getTokenCode() {
-                return this.tokenCode;
+            public TokenDetailed getToken() {
+                return this.token;
             }
 
             @Override // com.iMe.storage.domain.model.wallet.transaction.Transaction.Crypto, com.iMe.storage.domain.model.wallet.transaction.Transaction
@@ -2353,8 +2298,8 @@ public abstract class Transaction {
             }
 
             @Override // com.iMe.storage.domain.model.wallet.transaction.Transaction.Crypto, com.iMe.storage.domain.model.wallet.transaction.Transaction
-            public TokenCode getFeeTokenCode() {
-                return this.feeTokenCode;
+            public TokenDetailed getFeeToken() {
+                return this.feeToken;
             }
 
             @Override // com.iMe.storage.domain.model.wallet.transaction.Transaction.Crypto
@@ -2362,17 +2307,12 @@ public abstract class Transaction {
                 return this.txHash;
             }
 
-            @Override // com.iMe.storage.domain.model.wallet.transaction.Transaction.Crypto
-            public NetworkType getNetworkType() {
-                return this.networkType;
+            public final TokenDetailed getInputToken() {
+                return this.inputToken;
             }
 
-            public final TokenCode getInputTokenCode() {
-                return this.inputTokenCode;
-            }
-
-            public final TokenCode getOutputTokenCode() {
-                return this.outputTokenCode;
+            public final TokenDetailed getOutputToken() {
+                return this.outputToken;
             }
 
             public final TradeType getTradeType() {
@@ -2388,39 +2328,37 @@ public abstract class Transaction {
             }
 
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-            public Swap(String id, BigDecimal amount, TransactionType type, TransactionDirection direction, String createdAt, TokenCode tokenCode, Status status, TransactionProcessingType processingType, BigDecimal feeAmount, TokenCode feeTokenCode, String txHash, NetworkType networkType, TokenCode inputTokenCode, TokenCode outputTokenCode, TradeType tradeType, BigDecimal inputAmount, BigDecimal outputAmount) {
-                super(id, amount, type, direction, createdAt, tokenCode, status, processingType, feeAmount, feeTokenCode, txHash, networkType);
+            public Swap(String id, BigDecimal amount, TransactionType type, TransactionDirection direction, String createdAt, TokenDetailed token, Status status, TransactionProcessingType processingType, BigDecimal feeAmount, TokenDetailed feeToken, String txHash, TokenDetailed inputToken, TokenDetailed outputToken, TradeType tradeType, BigDecimal inputAmount, BigDecimal outputAmount) {
+                super(id, amount, type, direction, createdAt, token, status, processingType, feeAmount, feeToken, txHash);
                 Intrinsics.checkNotNullParameter(id, "id");
                 Intrinsics.checkNotNullParameter(amount, "amount");
                 Intrinsics.checkNotNullParameter(type, "type");
                 Intrinsics.checkNotNullParameter(direction, "direction");
                 Intrinsics.checkNotNullParameter(createdAt, "createdAt");
-                Intrinsics.checkNotNullParameter(tokenCode, "tokenCode");
+                Intrinsics.checkNotNullParameter(token, "token");
                 Intrinsics.checkNotNullParameter(status, "status");
                 Intrinsics.checkNotNullParameter(processingType, "processingType");
                 Intrinsics.checkNotNullParameter(feeAmount, "feeAmount");
-                Intrinsics.checkNotNullParameter(feeTokenCode, "feeTokenCode");
+                Intrinsics.checkNotNullParameter(feeToken, "feeToken");
                 Intrinsics.checkNotNullParameter(txHash, "txHash");
-                Intrinsics.checkNotNullParameter(networkType, "networkType");
-                Intrinsics.checkNotNullParameter(inputTokenCode, "inputTokenCode");
-                Intrinsics.checkNotNullParameter(outputTokenCode, "outputTokenCode");
+                Intrinsics.checkNotNullParameter(inputToken, "inputToken");
+                Intrinsics.checkNotNullParameter(outputToken, "outputToken");
                 Intrinsics.checkNotNullParameter(tradeType, "tradeType");
                 Intrinsics.checkNotNullParameter(inputAmount, "inputAmount");
                 Intrinsics.checkNotNullParameter(outputAmount, "outputAmount");
-                this.f364id = id;
+                this.f437id = id;
                 this.amount = amount;
                 this.type = type;
                 this.direction = direction;
                 this.createdAt = createdAt;
-                this.tokenCode = tokenCode;
+                this.token = token;
                 this.status = status;
                 this.processingType = processingType;
                 this.feeAmount = feeAmount;
-                this.feeTokenCode = feeTokenCode;
+                this.feeToken = feeToken;
                 this.txHash = txHash;
-                this.networkType = networkType;
-                this.inputTokenCode = inputTokenCode;
-                this.outputTokenCode = outputTokenCode;
+                this.inputToken = inputToken;
+                this.outputToken = outputToken;
                 this.tradeType = tradeType;
                 this.inputAmount = inputAmount;
                 this.outputAmount = outputAmount;

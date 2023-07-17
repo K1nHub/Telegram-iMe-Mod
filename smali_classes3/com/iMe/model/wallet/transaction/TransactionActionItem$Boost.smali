@@ -34,7 +34,7 @@
 .method private constructor <init>()V
     .locals 6
 
-    .line 20
+    .line 18
     sget v1, Lorg/telegram/messenger/R$string;->wallet_transaction_details_action_boost:I
 
     sget v2, Lorg/telegram/messenger/R$drawable;->fork_ic_speed_up_transaction:I

@@ -56,25 +56,25 @@
 
     invoke-static {p6, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 66
+    .line 65
     invoke-direct {p0, p2, p1}, Lcom/iMe/model/wallet/notification/PushNotificationModel;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 60
+    .line 59
     iput-object p1, p0, Lcom/iMe/model/wallet/notification/PushNotificationModel$BinancePayRequestCreated;->type:Ljava/lang/String;
 
-    .line 61
+    .line 60
     iput-object p2, p0, Lcom/iMe/model/wallet/notification/PushNotificationModel$BinancePayRequestCreated;->userId:Ljava/lang/String;
 
-    .line 62
+    .line 61
     iput-object p3, p0, Lcom/iMe/model/wallet/notification/PushNotificationModel$BinancePayRequestCreated;->amount:Ljava/lang/String;
 
-    .line 63
+    .line 62
     iput-object p4, p0, Lcom/iMe/model/wallet/notification/PushNotificationModel$BinancePayRequestCreated;->assetCode:Ljava/lang/String;
 
-    .line 64
+    .line 63
     iput-object p5, p0, Lcom/iMe/model/wallet/notification/PushNotificationModel$BinancePayRequestCreated;->assetName:Ljava/lang/String;
 
-    .line 65
+    .line 64
     iput-object p6, p0, Lcom/iMe/model/wallet/notification/PushNotificationModel$BinancePayRequestCreated;->payerUserId:Ljava/lang/String;
 
     return-void
@@ -375,7 +375,7 @@
 .method public final getAmount()Ljava/lang/String;
     .locals 1
 
-    .line 62
+    .line 61
     iget-object v0, p0, Lcom/iMe/model/wallet/notification/PushNotificationModel$BinancePayRequestCreated;->amount:Ljava/lang/String;
 
     return-object v0
@@ -384,7 +384,7 @@
 .method public final getAssetCode()Ljava/lang/String;
     .locals 1
 
-    .line 63
+    .line 62
     iget-object v0, p0, Lcom/iMe/model/wallet/notification/PushNotificationModel$BinancePayRequestCreated;->assetCode:Ljava/lang/String;
 
     return-object v0
@@ -393,7 +393,7 @@
 .method public final getAssetName()Ljava/lang/String;
     .locals 1
 
-    .line 64
+    .line 63
     iget-object v0, p0, Lcom/iMe/model/wallet/notification/PushNotificationModel$BinancePayRequestCreated;->assetName:Ljava/lang/String;
 
     return-object v0
@@ -402,14 +402,14 @@
 .method public getMessage()Ljava/lang/String;
     .locals 4
 
-    .line 69
+    .line 68
     sget v0, Lorg/telegram/messenger/R$string;->push_notification_wallet_binance_pay_request_created_description:I
 
     const/4 v1, 0x3
 
     new-array v1, v1, [Ljava/lang/Object;
 
-    .line 70
+    .line 69
     iget-object v2, p0, Lcom/iMe/model/wallet/notification/PushNotificationModel$BinancePayRequestCreated;->amount:Ljava/lang/String;
 
     invoke-static {v2}, Ljava/lang/Double;->parseDouble(Ljava/lang/String;)D
@@ -420,13 +420,21 @@
 
     move-result-object v2
 
-    sget-object v3, Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Crypto$Ethereum$BNB;->INSTANCE:Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Crypto$Ethereum$BNB;
+    sget-object v3, Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;->Companion:Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed$Companion;
 
-    invoke-virtual {v3}, Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Crypto$Ethereum;->getDecimals()I
+    invoke-virtual {v3}, Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed$Companion;->getBNB()Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;->getDecimals()I
 
     move-result v3
 
-    invoke-static {v2, v3}, Lcom/iMe/utils/formatter/BalanceFormatter;->formatBalance(Ljava/lang/Number;I)Ljava/lang/String;
+    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v3
+
+    invoke-static {v2, v3}, Lcom/iMe/utils/formatter/BalanceFormatter;->formatBalance(Ljava/lang/Number;Ljava/lang/Integer;)Ljava/lang/String;
 
     move-result-object v2
 
@@ -434,14 +442,14 @@
 
     aput-object v2, v1, v3
 
-    .line 71
+    .line 70
     iget-object v2, p0, Lcom/iMe/model/wallet/notification/PushNotificationModel$BinancePayRequestCreated;->assetCode:Ljava/lang/String;
 
     const/4 v3, 0x1
 
     aput-object v2, v1, v3
 
-    .line 72
+    .line 71
     invoke-virtual {p0}, Lcom/iMe/model/wallet/notification/PushNotificationModel$BinancePayRequestCreated;->getUserId()Ljava/lang/String;
 
     move-result-object v2
@@ -450,8 +458,8 @@
 
     aput-object v2, v1, v3
 
-    .line 68
-    invoke-virtual {p0, v0, v1}, Lcom/iMe/model/wallet/notification/PushNotificationModel;->getString$TMessagesProj_release(I[Ljava/lang/Object;)Ljava/lang/String;
+    .line 67
+    invoke-virtual {p0, v0, v1}, Lcom/iMe/model/wallet/notification/PushNotificationModel;->getString$TMessagesProj_HA_public(I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -461,7 +469,7 @@
 .method public final getPayerUserId()Ljava/lang/String;
     .locals 1
 
-    .line 65
+    .line 64
     iget-object v0, p0, Lcom/iMe/model/wallet/notification/PushNotificationModel$BinancePayRequestCreated;->payerUserId:Ljava/lang/String;
 
     return-object v0
@@ -470,7 +478,7 @@
 .method public getType()Ljava/lang/String;
     .locals 1
 
-    .line 60
+    .line 59
     iget-object v0, p0, Lcom/iMe/model/wallet/notification/PushNotificationModel$BinancePayRequestCreated;->type:Ljava/lang/String;
 
     return-object v0
@@ -479,7 +487,7 @@
 .method public getUserId()Ljava/lang/String;
     .locals 1
 
-    .line 61
+    .line 60
     iget-object v0, p0, Lcom/iMe/model/wallet/notification/PushNotificationModel$BinancePayRequestCreated;->userId:Ljava/lang/String;
 
     return-object v0

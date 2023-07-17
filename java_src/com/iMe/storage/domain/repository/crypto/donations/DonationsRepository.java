@@ -1,9 +1,9 @@
 package com.iMe.storage.domain.repository.crypto.donations;
 
 import com.iMe.storage.domain.model.Result;
-import com.iMe.storage.domain.model.crypto.NetworkType;
 import com.iMe.storage.domain.model.crypto.donations.DonationTransferMetadata;
 import com.iMe.storage.domain.model.crypto.send.TransferArgs;
+import com.iMe.storage.domain.model.wallet.token.Token;
 import com.iMe.storage.domain.model.wallet.token.TokenBalance;
 import com.iMe.storage.domain.model.wallet.transaction.Transaction;
 import io.reactivex.Observable;
@@ -15,13 +15,13 @@ public interface DonationsRepository {
 
     Observable<Result<Boolean>> enableDonationFor(long j, String str, boolean z);
 
-    Observable<Result<DonationTransferMetadata>> getDataForDonation(long j, String str, NetworkType networkType);
+    Observable<Result<DonationTransferMetadata>> getDataForDonation(long j, String str, Token token);
 
     Observable<Result<String>> getDonationAddress(long j);
 
-    Observable<Result<List<Transaction>>> getDonationTransactionHistory(long j, String str, int i, NetworkType networkType);
+    Observable<Result<List<Transaction>>> getDonationTransactionHistory(long j, String str, int i, String str2);
 
-    Observable<Result<TokenBalance>> getDonationWalletBalance(long j, NetworkType networkType);
+    Observable<Result<TokenBalance>> getDonationWalletBalance(long j, String str);
 
     Observable<Result<Boolean>> isDonationsEnabled(long j);
 

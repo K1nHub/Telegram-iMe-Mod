@@ -4,8 +4,6 @@
 
 
 # instance fields
-.field private volatile _bookmarksDao:Lcom/iMe/storage/data/locale/db/dao/main/BookmarksDao;
-
 .field private volatile _dialogTranslationSettingsDao:Lcom/iMe/storage/data/locale/db/dao/main/DialogTranslationSettingsDao;
 
 .field private volatile _filtersDao:Lcom/iMe/storage/data/locale/db/dao/main/FiltersDao;
@@ -27,7 +25,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 50
+    .line 48
     invoke-direct {p0}, Lcom/iMe/storage/data/locale/db/database/AppMainDatabase;-><init>()V
 
     return-void
@@ -36,7 +34,7 @@
 .method static synthetic access$000(Lcom/iMe/storage/data/locale/db/database/AppMainDatabase_Impl;)Ljava/util/List;
     .locals 0
 
-    .line 50
+    .line 48
     iget-object p0, p0, Landroidx/room/RoomDatabase;->mCallbacks:Ljava/util/List;
 
     return-object p0
@@ -45,7 +43,7 @@
 .method static synthetic access$100(Lcom/iMe/storage/data/locale/db/database/AppMainDatabase_Impl;)Ljava/util/List;
     .locals 0
 
-    .line 50
+    .line 48
     iget-object p0, p0, Landroidx/room/RoomDatabase;->mCallbacks:Ljava/util/List;
 
     return-object p0
@@ -54,7 +52,7 @@
 .method static synthetic access$1000(Lcom/iMe/storage/data/locale/db/database/AppMainDatabase_Impl;)Ljava/util/List;
     .locals 0
 
-    .line 50
+    .line 48
     iget-object p0, p0, Landroidx/room/RoomDatabase;->mCallbacks:Ljava/util/List;
 
     return-object p0
@@ -63,7 +61,7 @@
 .method static synthetic access$200(Lcom/iMe/storage/data/locale/db/database/AppMainDatabase_Impl;)Ljava/util/List;
     .locals 0
 
-    .line 50
+    .line 48
     iget-object p0, p0, Landroidx/room/RoomDatabase;->mCallbacks:Ljava/util/List;
 
     return-object p0
@@ -72,7 +70,7 @@
 .method static synthetic access$300(Lcom/iMe/storage/data/locale/db/database/AppMainDatabase_Impl;)Ljava/util/List;
     .locals 0
 
-    .line 50
+    .line 48
     iget-object p0, p0, Landroidx/room/RoomDatabase;->mCallbacks:Ljava/util/List;
 
     return-object p0
@@ -81,7 +79,7 @@
 .method static synthetic access$400(Lcom/iMe/storage/data/locale/db/database/AppMainDatabase_Impl;)Ljava/util/List;
     .locals 0
 
-    .line 50
+    .line 48
     iget-object p0, p0, Landroidx/room/RoomDatabase;->mCallbacks:Ljava/util/List;
 
     return-object p0
@@ -90,7 +88,7 @@
 .method static synthetic access$500(Lcom/iMe/storage/data/locale/db/database/AppMainDatabase_Impl;)Ljava/util/List;
     .locals 0
 
-    .line 50
+    .line 48
     iget-object p0, p0, Landroidx/room/RoomDatabase;->mCallbacks:Ljava/util/List;
 
     return-object p0
@@ -99,7 +97,7 @@
 .method static synthetic access$602(Lcom/iMe/storage/data/locale/db/database/AppMainDatabase_Impl;Landroidx/sqlite/db/SupportSQLiteDatabase;)Landroidx/sqlite/db/SupportSQLiteDatabase;
     .locals 0
 
-    .line 50
+    .line 48
     iput-object p1, p0, Landroidx/room/RoomDatabase;->mDatabase:Landroidx/sqlite/db/SupportSQLiteDatabase;
 
     return-object p1
@@ -108,7 +106,7 @@
 .method static synthetic access$700(Lcom/iMe/storage/data/locale/db/database/AppMainDatabase_Impl;Landroidx/sqlite/db/SupportSQLiteDatabase;)V
     .locals 0
 
-    .line 50
+    .line 48
     invoke-virtual {p0, p1}, Landroidx/room/RoomDatabase;->internalInitInvalidationTracker(Landroidx/sqlite/db/SupportSQLiteDatabase;)V
 
     return-void
@@ -117,7 +115,7 @@
 .method static synthetic access$800(Lcom/iMe/storage/data/locale/db/database/AppMainDatabase_Impl;)Ljava/util/List;
     .locals 0
 
-    .line 50
+    .line 48
     iget-object p0, p0, Landroidx/room/RoomDatabase;->mCallbacks:Ljava/util/List;
 
     return-object p0
@@ -126,7 +124,7 @@
 .method static synthetic access$900(Lcom/iMe/storage/data/locale/db/database/AppMainDatabase_Impl;)Ljava/util/List;
     .locals 0
 
-    .line 50
+    .line 48
     iget-object p0, p0, Landroidx/room/RoomDatabase;->mCallbacks:Ljava/util/List;
 
     return-object p0
@@ -134,71 +132,22 @@
 
 
 # virtual methods
-.method public bookmarksDao()Lcom/iMe/storage/data/locale/db/dao/main/BookmarksDao;
-    .locals 1
-
-    .line 418
-    iget-object v0, p0, Lcom/iMe/storage/data/locale/db/database/AppMainDatabase_Impl;->_bookmarksDao:Lcom/iMe/storage/data/locale/db/dao/main/BookmarksDao;
-
-    if-eqz v0, :cond_0
-
-    .line 419
-    iget-object v0, p0, Lcom/iMe/storage/data/locale/db/database/AppMainDatabase_Impl;->_bookmarksDao:Lcom/iMe/storage/data/locale/db/dao/main/BookmarksDao;
-
-    return-object v0
-
-    .line 421
-    :cond_0
-    monitor-enter p0
-
-    .line 422
-    :try_start_0
-    iget-object v0, p0, Lcom/iMe/storage/data/locale/db/database/AppMainDatabase_Impl;->_bookmarksDao:Lcom/iMe/storage/data/locale/db/dao/main/BookmarksDao;
-
-    if-nez v0, :cond_1
-
-    .line 423
-    new-instance v0, Lcom/iMe/storage/data/locale/db/dao/main/BookmarksDao_Impl;
-
-    invoke-direct {v0, p0}, Lcom/iMe/storage/data/locale/db/dao/main/BookmarksDao_Impl;-><init>(Landroidx/room/RoomDatabase;)V
-
-    iput-object v0, p0, Lcom/iMe/storage/data/locale/db/database/AppMainDatabase_Impl;->_bookmarksDao:Lcom/iMe/storage/data/locale/db/dao/main/BookmarksDao;
-
-    .line 425
-    :cond_1
-    iget-object v0, p0, Lcom/iMe/storage/data/locale/db/database/AppMainDatabase_Impl;->_bookmarksDao:Lcom/iMe/storage/data/locale/db/dao/main/BookmarksDao;
-
-    monitor-exit p0
-
-    return-object v0
-
-    :catchall_0
-    move-exception v0
-
-    .line 426
-    monitor-exit p0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v0
-.end method
-
 .method protected createInvalidationTracker()Landroidx/room/InvalidationTracker;
-    .locals 12
+    .locals 11
 
-    .line 289
+    .line 270
     new-instance v0, Ljava/util/HashMap;
 
     const/4 v1, 0x0
 
     invoke-direct {v0, v1}, Ljava/util/HashMap;-><init>(I)V
 
-    .line 290
+    .line 271
     new-instance v2, Ljava/util/HashMap;
 
     invoke-direct {v2, v1}, Ljava/util/HashMap;-><init>(I)V
 
-    .line 291
+    .line 272
     new-instance v1, Landroidx/room/InvalidationTracker;
 
     const-string v3, "FilterSettingsDb"
@@ -211,15 +160,13 @@
 
     const-string v7, "TemplatesDb"
 
-    const-string v8, "BookmarksDb"
+    const-string v8, "PlaylistsDb"
 
-    const-string v9, "PlaylistsDb"
+    const-string v9, "HistoryDialogDb"
 
-    const-string v10, "HistoryDialogDb"
+    const-string v10, "HiddenChatsDb"
 
-    const-string v11, "HiddenChatsDb"
-
-    filled-new-array/range {v3 .. v11}, [Ljava/lang/String;
+    filled-new-array/range {v3 .. v10}, [Ljava/lang/String;
 
     move-result-object v3
 
@@ -239,22 +186,22 @@
         }
     .end annotation
 
-    .line 71
+    .line 67
     new-instance v0, Landroidx/room/RoomOpenHelper;
 
     new-instance v1, Lcom/iMe/storage/data/locale/db/database/AppMainDatabase_Impl$1;
 
-    const/16 v2, 0x10
+    const/16 v2, 0x11
 
     invoke-direct {v1, p0, v2}, Lcom/iMe/storage/data/locale/db/database/AppMainDatabase_Impl$1;-><init>(Lcom/iMe/storage/data/locale/db/database/AppMainDatabase_Impl;I)V
 
-    const-string v2, "32c7fe2134632796b25f227e56e9ec33"
+    const-string v2, "d26c30a66c211afebfa310894b978450"
 
-    const-string v3, "8f3ed9e68890c5246d28e6a12503815c"
+    const-string v3, "0a634f93cb59203e2d7d49f349826b7d"
 
     invoke-direct {v0, p1, v1, v2, v3}, Landroidx/room/RoomOpenHelper;-><init>(Landroidx/room/DatabaseConfiguration;Landroidx/room/RoomOpenHelper$Delegate;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 279
+    .line 260
     iget-object v1, p1, Landroidx/room/DatabaseConfiguration;->context:Landroid/content/Context;
 
     invoke-static {v1}, Landroidx/sqlite/db/SupportSQLiteOpenHelper$Configuration;->builder(Landroid/content/Context;)Landroidx/sqlite/db/SupportSQLiteOpenHelper$Configuration$Builder;
@@ -263,22 +210,22 @@
 
     iget-object v2, p1, Landroidx/room/DatabaseConfiguration;->name:Ljava/lang/String;
 
-    .line 280
+    .line 261
     invoke-virtual {v1, v2}, Landroidx/sqlite/db/SupportSQLiteOpenHelper$Configuration$Builder;->name(Ljava/lang/String;)Landroidx/sqlite/db/SupportSQLiteOpenHelper$Configuration$Builder;
 
     move-result-object v1
 
-    .line 281
+    .line 262
     invoke-virtual {v1, v0}, Landroidx/sqlite/db/SupportSQLiteOpenHelper$Configuration$Builder;->callback(Landroidx/sqlite/db/SupportSQLiteOpenHelper$Callback;)Landroidx/sqlite/db/SupportSQLiteOpenHelper$Configuration$Builder;
 
     move-result-object v0
 
-    .line 282
+    .line 263
     invoke-virtual {v0}, Landroidx/sqlite/db/SupportSQLiteOpenHelper$Configuration$Builder;->build()Landroidx/sqlite/db/SupportSQLiteOpenHelper$Configuration;
 
     move-result-object v0
 
-    .line 283
+    .line 264
     iget-object p1, p1, Landroidx/room/DatabaseConfiguration;->sqliteOpenHelperFactory:Landroidx/sqlite/db/SupportSQLiteOpenHelper$Factory;
 
     invoke-interface {p1, v0}, Landroidx/sqlite/db/SupportSQLiteOpenHelper$Factory;->create(Landroidx/sqlite/db/SupportSQLiteOpenHelper$Configuration;)Landroidx/sqlite/db/SupportSQLiteOpenHelper;
@@ -291,34 +238,34 @@
 .method public dialogTranslationSettingsDao()Lcom/iMe/storage/data/locale/db/dao/main/DialogTranslationSettingsDao;
     .locals 1
 
-    .line 362
+    .line 341
     iget-object v0, p0, Lcom/iMe/storage/data/locale/db/database/AppMainDatabase_Impl;->_dialogTranslationSettingsDao:Lcom/iMe/storage/data/locale/db/dao/main/DialogTranslationSettingsDao;
 
     if-eqz v0, :cond_0
 
-    .line 363
+    .line 342
     iget-object v0, p0, Lcom/iMe/storage/data/locale/db/database/AppMainDatabase_Impl;->_dialogTranslationSettingsDao:Lcom/iMe/storage/data/locale/db/dao/main/DialogTranslationSettingsDao;
 
     return-object v0
 
-    .line 365
+    .line 344
     :cond_0
     monitor-enter p0
 
-    .line 366
+    .line 345
     :try_start_0
     iget-object v0, p0, Lcom/iMe/storage/data/locale/db/database/AppMainDatabase_Impl;->_dialogTranslationSettingsDao:Lcom/iMe/storage/data/locale/db/dao/main/DialogTranslationSettingsDao;
 
     if-nez v0, :cond_1
 
-    .line 367
+    .line 346
     new-instance v0, Lcom/iMe/storage/data/locale/db/dao/main/DialogTranslationSettingsDao_Impl;
 
     invoke-direct {v0, p0}, Lcom/iMe/storage/data/locale/db/dao/main/DialogTranslationSettingsDao_Impl;-><init>(Landroidx/room/RoomDatabase;)V
 
     iput-object v0, p0, Lcom/iMe/storage/data/locale/db/database/AppMainDatabase_Impl;->_dialogTranslationSettingsDao:Lcom/iMe/storage/data/locale/db/dao/main/DialogTranslationSettingsDao;
 
-    .line 369
+    .line 348
     :cond_1
     iget-object v0, p0, Lcom/iMe/storage/data/locale/db/database/AppMainDatabase_Impl;->_dialogTranslationSettingsDao:Lcom/iMe/storage/data/locale/db/dao/main/DialogTranslationSettingsDao;
 
@@ -329,7 +276,7 @@
     :catchall_0
     move-exception v0
 
-    .line 370
+    .line 349
     monitor-exit p0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -340,34 +287,34 @@
 .method public filtersDao()Lcom/iMe/storage/data/locale/db/dao/main/FiltersDao;
     .locals 1
 
-    .line 348
+    .line 327
     iget-object v0, p0, Lcom/iMe/storage/data/locale/db/database/AppMainDatabase_Impl;->_filtersDao:Lcom/iMe/storage/data/locale/db/dao/main/FiltersDao;
 
     if-eqz v0, :cond_0
 
-    .line 349
+    .line 328
     iget-object v0, p0, Lcom/iMe/storage/data/locale/db/database/AppMainDatabase_Impl;->_filtersDao:Lcom/iMe/storage/data/locale/db/dao/main/FiltersDao;
 
     return-object v0
 
-    .line 351
+    .line 330
     :cond_0
     monitor-enter p0
 
-    .line 352
+    .line 331
     :try_start_0
     iget-object v0, p0, Lcom/iMe/storage/data/locale/db/database/AppMainDatabase_Impl;->_filtersDao:Lcom/iMe/storage/data/locale/db/dao/main/FiltersDao;
 
     if-nez v0, :cond_1
 
-    .line 353
+    .line 332
     new-instance v0, Lcom/iMe/storage/data/locale/db/dao/main/FiltersDao_Impl;
 
     invoke-direct {v0, p0}, Lcom/iMe/storage/data/locale/db/dao/main/FiltersDao_Impl;-><init>(Landroidx/room/RoomDatabase;)V
 
     iput-object v0, p0, Lcom/iMe/storage/data/locale/db/database/AppMainDatabase_Impl;->_filtersDao:Lcom/iMe/storage/data/locale/db/dao/main/FiltersDao;
 
-    .line 355
+    .line 334
     :cond_1
     iget-object v0, p0, Lcom/iMe/storage/data/locale/db/database/AppMainDatabase_Impl;->_filtersDao:Lcom/iMe/storage/data/locale/db/dao/main/FiltersDao;
 
@@ -378,7 +325,7 @@
     :catchall_0
     move-exception v0
 
-    .line 356
+    .line 335
     monitor-exit p0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -417,7 +364,7 @@
 
     new-array p1, p1, [Landroidx/room/migration/Migration;
 
-    .line 343
+    .line 322
     invoke-static {p1}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object p1
@@ -438,7 +385,7 @@
         }
     .end annotation
 
-    .line 336
+    .line 315
     new-instance v0, Ljava/util/HashSet;
 
     invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
@@ -460,12 +407,12 @@
         }
     .end annotation
 
-    .line 321
+    .line 301
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-    .line 322
+    .line 302
     const-class v1, Lcom/iMe/storage/data/locale/db/dao/main/FiltersDao;
 
     invoke-static {}, Lcom/iMe/storage/data/locale/db/dao/main/FiltersDao_Impl;->getRequiredConverters()Ljava/util/List;
@@ -474,7 +421,7 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 323
+    .line 303
     const-class v1, Lcom/iMe/storage/data/locale/db/dao/main/DialogTranslationSettingsDao;
 
     invoke-static {}, Lcom/iMe/storage/data/locale/db/dao/main/DialogTranslationSettingsDao_Impl;->getRequiredConverters()Ljava/util/List;
@@ -483,7 +430,7 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 324
+    .line 304
     const-class v1, Lcom/iMe/storage/data/locale/db/dao/main/TopicsDao;
 
     invoke-static {}, Lcom/iMe/storage/data/locale/db/dao/main/TopicsDao_Impl;->getRequiredConverters()Ljava/util/List;
@@ -492,7 +439,7 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 325
+    .line 305
     const-class v1, Lcom/iMe/storage/data/locale/db/dao/main/TemplatesDao;
 
     invoke-static {}, Lcom/iMe/storage/data/locale/db/dao/main/TemplatesDao_Impl;->getRequiredConverters()Ljava/util/List;
@@ -501,7 +448,7 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 326
+    .line 306
     const-class v1, Lcom/iMe/storage/data/locale/db/dao/minor/wallet/WalletConnectSessionsDao;
 
     invoke-static {}, Lcom/iMe/storage/data/locale/db/dao/minor/wallet/WalletConnectSessionsDao_Impl;->getRequiredConverters()Ljava/util/List;
@@ -510,16 +457,7 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 327
-    const-class v1, Lcom/iMe/storage/data/locale/db/dao/main/BookmarksDao;
-
-    invoke-static {}, Lcom/iMe/storage/data/locale/db/dao/main/BookmarksDao_Impl;->getRequiredConverters()Ljava/util/List;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 328
+    .line 307
     const-class v1, Lcom/iMe/storage/data/locale/db/dao/main/PlaylistsDao;
 
     invoke-static {}, Lcom/iMe/storage/data/locale/db/dao/main/PlaylistsDao_Impl;->getRequiredConverters()Ljava/util/List;
@@ -528,7 +466,7 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 329
+    .line 308
     const-class v1, Lcom/iMe/storage/data/locale/db/dao/main/HistoryDialogDao;
 
     invoke-static {}, Lcom/iMe/storage/data/locale/db/dao/main/HistoryDialogDao_Impl;->getRequiredConverters()Ljava/util/List;
@@ -537,7 +475,7 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 330
+    .line 309
     const-class v1, Lcom/iMe/storage/data/locale/db/dao/main/HiddenChatsDao;
 
     invoke-static {}, Lcom/iMe/storage/data/locale/db/dao/main/HiddenChatsDao_Impl;->getRequiredConverters()Ljava/util/List;
@@ -552,34 +490,34 @@
 .method public hiddenChatsDao()Lcom/iMe/storage/data/locale/db/dao/main/HiddenChatsDao;
     .locals 1
 
-    .line 460
+    .line 425
     iget-object v0, p0, Lcom/iMe/storage/data/locale/db/database/AppMainDatabase_Impl;->_hiddenChatsDao:Lcom/iMe/storage/data/locale/db/dao/main/HiddenChatsDao;
 
     if-eqz v0, :cond_0
 
-    .line 461
+    .line 426
     iget-object v0, p0, Lcom/iMe/storage/data/locale/db/database/AppMainDatabase_Impl;->_hiddenChatsDao:Lcom/iMe/storage/data/locale/db/dao/main/HiddenChatsDao;
 
     return-object v0
 
-    .line 463
+    .line 428
     :cond_0
     monitor-enter p0
 
-    .line 464
+    .line 429
     :try_start_0
     iget-object v0, p0, Lcom/iMe/storage/data/locale/db/database/AppMainDatabase_Impl;->_hiddenChatsDao:Lcom/iMe/storage/data/locale/db/dao/main/HiddenChatsDao;
 
     if-nez v0, :cond_1
 
-    .line 465
+    .line 430
     new-instance v0, Lcom/iMe/storage/data/locale/db/dao/main/HiddenChatsDao_Impl;
 
     invoke-direct {v0, p0}, Lcom/iMe/storage/data/locale/db/dao/main/HiddenChatsDao_Impl;-><init>(Landroidx/room/RoomDatabase;)V
 
     iput-object v0, p0, Lcom/iMe/storage/data/locale/db/database/AppMainDatabase_Impl;->_hiddenChatsDao:Lcom/iMe/storage/data/locale/db/dao/main/HiddenChatsDao;
 
-    .line 467
+    .line 432
     :cond_1
     iget-object v0, p0, Lcom/iMe/storage/data/locale/db/database/AppMainDatabase_Impl;->_hiddenChatsDao:Lcom/iMe/storage/data/locale/db/dao/main/HiddenChatsDao;
 
@@ -590,7 +528,7 @@
     :catchall_0
     move-exception v0
 
-    .line 468
+    .line 433
     monitor-exit p0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -601,34 +539,34 @@
 .method public historyDialogDao()Lcom/iMe/storage/data/locale/db/dao/main/HistoryDialogDao;
     .locals 1
 
-    .line 446
+    .line 411
     iget-object v0, p0, Lcom/iMe/storage/data/locale/db/database/AppMainDatabase_Impl;->_historyDialogDao:Lcom/iMe/storage/data/locale/db/dao/main/HistoryDialogDao;
 
     if-eqz v0, :cond_0
 
-    .line 447
+    .line 412
     iget-object v0, p0, Lcom/iMe/storage/data/locale/db/database/AppMainDatabase_Impl;->_historyDialogDao:Lcom/iMe/storage/data/locale/db/dao/main/HistoryDialogDao;
 
     return-object v0
 
-    .line 449
+    .line 414
     :cond_0
     monitor-enter p0
 
-    .line 450
+    .line 415
     :try_start_0
     iget-object v0, p0, Lcom/iMe/storage/data/locale/db/database/AppMainDatabase_Impl;->_historyDialogDao:Lcom/iMe/storage/data/locale/db/dao/main/HistoryDialogDao;
 
     if-nez v0, :cond_1
 
-    .line 451
+    .line 416
     new-instance v0, Lcom/iMe/storage/data/locale/db/dao/main/HistoryDialogDao_Impl;
 
     invoke-direct {v0, p0}, Lcom/iMe/storage/data/locale/db/dao/main/HistoryDialogDao_Impl;-><init>(Landroidx/room/RoomDatabase;)V
 
     iput-object v0, p0, Lcom/iMe/storage/data/locale/db/database/AppMainDatabase_Impl;->_historyDialogDao:Lcom/iMe/storage/data/locale/db/dao/main/HistoryDialogDao;
 
-    .line 453
+    .line 418
     :cond_1
     iget-object v0, p0, Lcom/iMe/storage/data/locale/db/database/AppMainDatabase_Impl;->_historyDialogDao:Lcom/iMe/storage/data/locale/db/dao/main/HistoryDialogDao;
 
@@ -639,7 +577,7 @@
     :catchall_0
     move-exception v0
 
-    .line 454
+    .line 419
     monitor-exit p0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -650,34 +588,34 @@
 .method public playlistsDao()Lcom/iMe/storage/data/locale/db/dao/main/PlaylistsDao;
     .locals 1
 
-    .line 432
+    .line 397
     iget-object v0, p0, Lcom/iMe/storage/data/locale/db/database/AppMainDatabase_Impl;->_playlistsDao:Lcom/iMe/storage/data/locale/db/dao/main/PlaylistsDao;
 
     if-eqz v0, :cond_0
 
-    .line 433
+    .line 398
     iget-object v0, p0, Lcom/iMe/storage/data/locale/db/database/AppMainDatabase_Impl;->_playlistsDao:Lcom/iMe/storage/data/locale/db/dao/main/PlaylistsDao;
 
     return-object v0
 
-    .line 435
+    .line 400
     :cond_0
     monitor-enter p0
 
-    .line 436
+    .line 401
     :try_start_0
     iget-object v0, p0, Lcom/iMe/storage/data/locale/db/database/AppMainDatabase_Impl;->_playlistsDao:Lcom/iMe/storage/data/locale/db/dao/main/PlaylistsDao;
 
     if-nez v0, :cond_1
 
-    .line 437
+    .line 402
     new-instance v0, Lcom/iMe/storage/data/locale/db/dao/main/PlaylistsDao_Impl;
 
     invoke-direct {v0, p0}, Lcom/iMe/storage/data/locale/db/dao/main/PlaylistsDao_Impl;-><init>(Landroidx/room/RoomDatabase;)V
 
     iput-object v0, p0, Lcom/iMe/storage/data/locale/db/database/AppMainDatabase_Impl;->_playlistsDao:Lcom/iMe/storage/data/locale/db/dao/main/PlaylistsDao;
 
-    .line 439
+    .line 404
     :cond_1
     iget-object v0, p0, Lcom/iMe/storage/data/locale/db/database/AppMainDatabase_Impl;->_playlistsDao:Lcom/iMe/storage/data/locale/db/dao/main/PlaylistsDao;
 
@@ -688,7 +626,7 @@
     :catchall_0
     move-exception v0
 
-    .line 440
+    .line 405
     monitor-exit p0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -699,34 +637,34 @@
 .method public templatesDao()Lcom/iMe/storage/data/locale/db/dao/main/TemplatesDao;
     .locals 1
 
-    .line 390
+    .line 369
     iget-object v0, p0, Lcom/iMe/storage/data/locale/db/database/AppMainDatabase_Impl;->_templatesDao:Lcom/iMe/storage/data/locale/db/dao/main/TemplatesDao;
 
     if-eqz v0, :cond_0
 
-    .line 391
+    .line 370
     iget-object v0, p0, Lcom/iMe/storage/data/locale/db/database/AppMainDatabase_Impl;->_templatesDao:Lcom/iMe/storage/data/locale/db/dao/main/TemplatesDao;
 
     return-object v0
 
-    .line 393
+    .line 372
     :cond_0
     monitor-enter p0
 
-    .line 394
+    .line 373
     :try_start_0
     iget-object v0, p0, Lcom/iMe/storage/data/locale/db/database/AppMainDatabase_Impl;->_templatesDao:Lcom/iMe/storage/data/locale/db/dao/main/TemplatesDao;
 
     if-nez v0, :cond_1
 
-    .line 395
+    .line 374
     new-instance v0, Lcom/iMe/storage/data/locale/db/dao/main/TemplatesDao_Impl;
 
     invoke-direct {v0, p0}, Lcom/iMe/storage/data/locale/db/dao/main/TemplatesDao_Impl;-><init>(Landroidx/room/RoomDatabase;)V
 
     iput-object v0, p0, Lcom/iMe/storage/data/locale/db/database/AppMainDatabase_Impl;->_templatesDao:Lcom/iMe/storage/data/locale/db/dao/main/TemplatesDao;
 
-    .line 397
+    .line 376
     :cond_1
     iget-object v0, p0, Lcom/iMe/storage/data/locale/db/database/AppMainDatabase_Impl;->_templatesDao:Lcom/iMe/storage/data/locale/db/dao/main/TemplatesDao;
 
@@ -737,7 +675,7 @@
     :catchall_0
     move-exception v0
 
-    .line 398
+    .line 377
     monitor-exit p0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -748,34 +686,34 @@
 .method public topicsDao()Lcom/iMe/storage/data/locale/db/dao/main/TopicsDao;
     .locals 1
 
-    .line 376
+    .line 355
     iget-object v0, p0, Lcom/iMe/storage/data/locale/db/database/AppMainDatabase_Impl;->_topicsDao:Lcom/iMe/storage/data/locale/db/dao/main/TopicsDao;
 
     if-eqz v0, :cond_0
 
-    .line 377
+    .line 356
     iget-object v0, p0, Lcom/iMe/storage/data/locale/db/database/AppMainDatabase_Impl;->_topicsDao:Lcom/iMe/storage/data/locale/db/dao/main/TopicsDao;
 
     return-object v0
 
-    .line 379
+    .line 358
     :cond_0
     monitor-enter p0
 
-    .line 380
+    .line 359
     :try_start_0
     iget-object v0, p0, Lcom/iMe/storage/data/locale/db/database/AppMainDatabase_Impl;->_topicsDao:Lcom/iMe/storage/data/locale/db/dao/main/TopicsDao;
 
     if-nez v0, :cond_1
 
-    .line 381
+    .line 360
     new-instance v0, Lcom/iMe/storage/data/locale/db/dao/main/TopicsDao_Impl;
 
     invoke-direct {v0, p0}, Lcom/iMe/storage/data/locale/db/dao/main/TopicsDao_Impl;-><init>(Landroidx/room/RoomDatabase;)V
 
     iput-object v0, p0, Lcom/iMe/storage/data/locale/db/database/AppMainDatabase_Impl;->_topicsDao:Lcom/iMe/storage/data/locale/db/dao/main/TopicsDao;
 
-    .line 383
+    .line 362
     :cond_1
     iget-object v0, p0, Lcom/iMe/storage/data/locale/db/database/AppMainDatabase_Impl;->_topicsDao:Lcom/iMe/storage/data/locale/db/dao/main/TopicsDao;
 
@@ -786,7 +724,7 @@
     :catchall_0
     move-exception v0
 
-    .line 384
+    .line 363
     monitor-exit p0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -797,34 +735,34 @@
 .method public walletConnectSessionsDao()Lcom/iMe/storage/data/locale/db/dao/minor/wallet/WalletConnectSessionsDao;
     .locals 1
 
-    .line 404
+    .line 383
     iget-object v0, p0, Lcom/iMe/storage/data/locale/db/database/AppMainDatabase_Impl;->_walletConnectSessionsDao:Lcom/iMe/storage/data/locale/db/dao/minor/wallet/WalletConnectSessionsDao;
 
     if-eqz v0, :cond_0
 
-    .line 405
+    .line 384
     iget-object v0, p0, Lcom/iMe/storage/data/locale/db/database/AppMainDatabase_Impl;->_walletConnectSessionsDao:Lcom/iMe/storage/data/locale/db/dao/minor/wallet/WalletConnectSessionsDao;
 
     return-object v0
 
-    .line 407
+    .line 386
     :cond_0
     monitor-enter p0
 
-    .line 408
+    .line 387
     :try_start_0
     iget-object v0, p0, Lcom/iMe/storage/data/locale/db/database/AppMainDatabase_Impl;->_walletConnectSessionsDao:Lcom/iMe/storage/data/locale/db/dao/minor/wallet/WalletConnectSessionsDao;
 
     if-nez v0, :cond_1
 
-    .line 409
+    .line 388
     new-instance v0, Lcom/iMe/storage/data/locale/db/dao/minor/wallet/WalletConnectSessionsDao_Impl;
 
     invoke-direct {v0, p0}, Lcom/iMe/storage/data/locale/db/dao/minor/wallet/WalletConnectSessionsDao_Impl;-><init>(Landroidx/room/RoomDatabase;)V
 
     iput-object v0, p0, Lcom/iMe/storage/data/locale/db/database/AppMainDatabase_Impl;->_walletConnectSessionsDao:Lcom/iMe/storage/data/locale/db/dao/minor/wallet/WalletConnectSessionsDao;
 
-    .line 411
+    .line 390
     :cond_1
     iget-object v0, p0, Lcom/iMe/storage/data/locale/db/database/AppMainDatabase_Impl;->_walletConnectSessionsDao:Lcom/iMe/storage/data/locale/db/dao/minor/wallet/WalletConnectSessionsDao;
 
@@ -835,7 +773,7 @@
     :catchall_0
     move-exception v0
 
-    .line 412
+    .line 391
     monitor-exit p0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0

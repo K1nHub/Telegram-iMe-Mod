@@ -3,7 +3,7 @@ package kotlin.random.jdk8;
 import java.util.Random;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.random.AbstractPlatformRandom;
-import p034j$.util.concurrent.ThreadLocalRandom;
+import p033j$.util.concurrent.ThreadLocalRandom;
 /* compiled from: PlatformThreadLocalRandom.kt */
 /* loaded from: classes4.dex */
 public final class PlatformThreadLocalRandom extends AbstractPlatformRandom {

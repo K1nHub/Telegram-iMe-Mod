@@ -48,7 +48,7 @@
 .method public final invoke()Landroid/widget/TextView;
     .locals 1
 
-    .line 60
+    .line 56
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet$cancelButton$2;->this$0:Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;
 
     invoke-static {v0}, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;->access$initCancelButton(Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;)Landroid/widget/TextView;
@@ -61,7 +61,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 60
+    .line 56
     invoke-virtual {p0}, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet$cancelButton$2;->invoke()Landroid/widget/TextView;
 
     move-result-object v0

@@ -20,8 +20,6 @@ import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.disposables.Disposable;
 import kotlin.Lazy;
 import kotlin.LazyKt;
-import kotlin.Unit;
-import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.PropertyReference1Impl;
 import kotlin.jvm.internal.Reflection;
@@ -30,8 +28,8 @@ import moxy.MvpDelegate;
 import moxy.MvpDelegateHolder;
 import org.koin.core.Koin;
 import org.koin.core.component.KoinComponent;
-import org.telegram.p044ui.ActionBar.AlertDialog;
-import org.telegram.p044ui.ActionBar.BaseFragment;
+import org.telegram.p043ui.ActionBar.AlertDialog;
+import org.telegram.p043ui.ActionBar.BaseFragment;
 /* compiled from: MvpFragment.kt */
 /* renamed from: com.iMe.ui.base.mvp.MvpFragment */
 /* loaded from: classes.dex */
@@ -62,32 +60,6 @@ public abstract class MvpFragment extends BaseFragment implements MvpDelegateHol
         return (HintUtils) this.hintUtils$delegate.getValue(this, $$delegatedProperties[0]);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void postViewAction$lambda$0(Function0 tmp0) {
-        Intrinsics.checkNotNullParameter(tmp0, "$tmp0");
-        tmp0.invoke();
-    }
-
-    public final void postViewAction(final Function0<Unit> action) {
-        Intrinsics.checkNotNullParameter(action, "action");
-        getMvpBaseDelegate().getViewHandler().post(new Runnable() { // from class: com.iMe.ui.base.mvp.MvpFragment$$ExternalSyntheticLambda1
-            @Override // java.lang.Runnable
-            public final void run() {
-                MvpFragment.postViewAction$lambda$0(Function0.this);
-            }
-        });
-    }
-
-    public static /* synthetic */ void postViewActionDelayed$default(MvpFragment mvpFragment, long j, Callbacks$Callback callbacks$Callback, int i, Object obj) {
-        if (obj != null) {
-            throw new UnsupportedOperationException("Super calls with default arguments not supported in this target, function: postViewActionDelayed");
-        }
-        if ((i & 1) != 0) {
-            j = 150;
-        }
-        mvpFragment.postViewActionDelayed(j, callbacks$Callback);
-    }
-
     public final void postViewActionDelayed(long j, final Callbacks$Callback action) {
         Intrinsics.checkNotNullParameter(action, "action");
         getMvpBaseDelegate().getViewHandler().postDelayed(new Runnable() { // from class: com.iMe.ui.base.mvp.MvpFragment$$ExternalSyntheticLambda0
@@ -109,7 +81,7 @@ public abstract class MvpFragment extends BaseFragment implements MvpDelegateHol
         return getMvpBaseDelegate().getMvpDelegate();
     }
 
-    @Override // org.telegram.p044ui.ActionBar.BaseFragment
+    @Override // org.telegram.p043ui.ActionBar.BaseFragment
     public View createView(Context context) {
         Intrinsics.checkNotNullParameter(context, "context");
         getMvpBaseDelegate().getResettableLazyManager().reset();
@@ -123,45 +95,45 @@ public abstract class MvpFragment extends BaseFragment implements MvpDelegateHol
         return fragmentView;
     }
 
-    @Override // org.telegram.p044ui.ActionBar.BaseFragment
+    @Override // org.telegram.p043ui.ActionBar.BaseFragment
     public void onViewCreated() {
         onViewReady();
     }
 
-    @Override // org.telegram.p044ui.ActionBar.BaseFragment
+    @Override // org.telegram.p043ui.ActionBar.BaseFragment
     public void onBecomeFullyVisible() {
         super.onBecomeFullyVisible();
     }
 
-    @Override // org.telegram.p044ui.ActionBar.BaseFragment
+    @Override // org.telegram.p043ui.ActionBar.BaseFragment
     public void onBecomeFullyHidden() {
         super.onBecomeFullyHidden();
     }
 
-    @Override // org.telegram.p044ui.ActionBar.BaseFragment
+    @Override // org.telegram.p043ui.ActionBar.BaseFragment
     public void onPause() {
         super.onPause();
         getMvpBaseDelegate().onPause();
     }
 
-    @Override // org.telegram.p044ui.ActionBar.BaseFragment
+    @Override // org.telegram.p043ui.ActionBar.BaseFragment
     public void onResume() {
         super.onResume();
         getMvpBaseDelegate().onResume();
     }
 
-    @Override // org.telegram.p044ui.ActionBar.BaseFragment
+    @Override // org.telegram.p043ui.ActionBar.BaseFragment
     public void onDestroyView() {
         getMvpBaseDelegate().onDestroyView();
     }
 
-    @Override // org.telegram.p044ui.ActionBar.BaseFragment
+    @Override // org.telegram.p043ui.ActionBar.BaseFragment
     public void onTransitionAnimationStart(boolean z, boolean z2) {
         getHintUtils().hideHint();
         super.onTransitionAnimationStart(z, z2);
     }
 
-    @Override // org.telegram.p044ui.ActionBar.BaseFragment
+    @Override // org.telegram.p043ui.ActionBar.BaseFragment
     public void onFragmentDestroy() {
         this.subscriptions.clear();
         getMvpBaseDelegate().onDetachedFromWindow();
@@ -181,7 +153,12 @@ public abstract class MvpFragment extends BaseFragment implements MvpDelegateHol
         finishFragment();
     }
 
-    @Override // org.telegram.p044ui.ActionBar.BaseFragment
+    @Override // com.iMe.p031ui.base.mvp.base.BaseView
+    public void removeSelfFromStackImmediately() {
+        removeSelfFromStack(true);
+    }
+
+    @Override // org.telegram.p043ui.ActionBar.BaseFragment
     public void saveSelfArgs(Bundle bundle) {
         super.saveSelfArgs(bundle);
         MvpDelegate<MvpFragment> mvpDelegate = getMvpBaseDelegate().getMvpDelegate();

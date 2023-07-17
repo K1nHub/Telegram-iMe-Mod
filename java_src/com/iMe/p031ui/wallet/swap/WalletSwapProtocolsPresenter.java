@@ -9,10 +9,9 @@ import com.iMe.model.wallet.swap.DexProtocolItem;
 import com.iMe.p031ui.base.mvp.base.BasePresenter;
 import com.iMe.storage.domain.manager.binancepay.BinancePayManager;
 import com.iMe.storage.domain.model.binancepay.BinanceUserInfo;
-import com.iMe.storage.domain.model.crypto.NetworkType;
 import com.iMe.storage.domain.model.wallet.swap.CentralizedExchangesInfo;
 import com.iMe.storage.domain.model.wallet.swap.SwapProtocolInfo;
-import com.iMe.storage.domain.model.wallet.token.TokenCode;
+import com.iMe.storage.domain.model.wallet.token.TokenDetailed;
 import com.iMe.storage.domain.storage.CryptoPreferenceHelper;
 import com.iMe.storage.domain.utils.p030rx.RxEventBus;
 import com.iMe.storage.domain.utils.system.ResourceManager;
@@ -25,7 +24,7 @@ import kotlin.collections.CollectionsKt__IterablesKt;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.SpreadBuilder;
 import moxy.InjectViewState;
-import org.telegram.messenger.C3295R;
+import org.telegram.messenger.C3417R;
 /* compiled from: WalletSwapProtocolsPresenter.kt */
 @InjectViewState
 /* renamed from: com.iMe.ui.wallet.swap.WalletSwapProtocolsPresenter */
@@ -65,36 +64,28 @@ public final class WalletSwapProtocolsPresenter extends BasePresenter<WalletSwap
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    public final void startSwapScreenFlow(SwapProtocolInfo swapProtocolInfo, TokenCode tokenCode) {
-        boolean z;
+    public final void startSwapScreenFlow(SwapProtocolInfo swapProtocolInfo, TokenDetailed tokenDetailed) {
         Intrinsics.checkNotNullParameter(swapProtocolInfo, "swapProtocolInfo");
-        List<NetworkType> supportedNetworks = swapProtocolInfo.getSupportedNetworks();
-        NetworkType networkType = null;
-        if (tokenCode != null) {
-            Iterator<T> it = supportedNetworks.iterator();
+        List<String> supportedNetworksIds = swapProtocolInfo.getSupportedNetworksIds();
+        String str = null;
+        if (tokenDetailed != null) {
+            Iterator<T> it = supportedNetworksIds.iterator();
             while (true) {
                 if (!it.hasNext()) {
                     break;
                 }
                 Object next = it.next();
-                if (((NetworkType) next) == this.cryptoPreferenceHelper.getNetworkType()) {
-                    z = true;
-                    continue;
-                } else {
-                    z = false;
-                    continue;
-                }
-                if (z) {
-                    networkType = next;
+                if (Intrinsics.areEqual((String) next, this.cryptoPreferenceHelper.getNetworkId())) {
+                    str = next;
                     break;
                 }
             }
-            networkType = networkType;
-            if (networkType == null) {
-                networkType = (NetworkType) CollectionsKt.firstOrNull(supportedNetworks);
+            str = str;
+            if (str == null) {
+                str = (String) CollectionsKt.firstOrNull(supportedNetworksIds);
             }
         }
-        ((WalletSwapProtocolsView) getViewState()).openSwapScreen(swapProtocolInfo, networkType);
+        ((WalletSwapProtocolsView) getViewState()).openSwapScreen(swapProtocolInfo, str);
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -108,11 +99,11 @@ public final class WalletSwapProtocolsPresenter extends BasePresenter<WalletSwap
         int collectionSizeOrDefault2;
         int collectionSizeOrDefault3;
         List<? extends BaseNode> listOf;
-        List<SwapProtocolInfo> supportedExchanges = SwapProtocolInfo.Companion.getSupportedExchanges();
+        List<SwapProtocolInfo.Oneinch> supportedExchanges = SwapProtocolInfo.Companion.getSupportedExchanges();
         collectionSizeOrDefault = CollectionsKt__IterablesKt.collectionSizeOrDefault(supportedExchanges, 10);
         ArrayList arrayList = new ArrayList(collectionSizeOrDefault);
-        for (SwapProtocolInfo swapProtocolInfo : supportedExchanges) {
-            arrayList.add(new DexProtocolItem(swapProtocolInfo, true));
+        for (SwapProtocolInfo.Oneinch oneinch : supportedExchanges) {
+            arrayList.add(new DexProtocolItem(oneinch, true));
         }
         DexProtocolItem[] dexProtocolItemArr = (DexProtocolItem[]) arrayList.toArray(new DexProtocolItem[0]);
         List<SwapProtocolInfo.Symbiosis> supportedCrossChainExchanges = SwapProtocolInfo.Companion.getSupportedCrossChainExchanges();
@@ -129,11 +120,11 @@ public final class WalletSwapProtocolsPresenter extends BasePresenter<WalletSwap
             arrayList3.add(new CexProtocolItem(centralizedExchangesInfo, true));
         }
         SpreadBuilder spreadBuilder = new SpreadBuilder(6);
-        spreadBuilder.add(new HeaderItem(this.resourceManager.getString(C3295R.string.wallet_swap_protocols_header_title)));
+        spreadBuilder.add(new HeaderItem(this.resourceManager.getString(C3417R.string.wallet_swap_protocols_header_title)));
         spreadBuilder.addSpread(dexProtocolItemArr);
-        spreadBuilder.add(new HeaderItem(this.resourceManager.getString(C3295R.string.wallet_swap_protocols_cross_chain_header_title)));
+        spreadBuilder.add(new HeaderItem(this.resourceManager.getString(C3417R.string.wallet_swap_protocols_cross_chain_header_title)));
         spreadBuilder.addSpread(dexProtocolItemArr2);
-        spreadBuilder.add(new HeaderItem(this.resourceManager.getString(C3295R.string.wallet_swap_centralized_exchanges_header_title)));
+        spreadBuilder.add(new HeaderItem(this.resourceManager.getString(C3417R.string.wallet_swap_centralized_exchanges_header_title)));
         spreadBuilder.addSpread((CexProtocolItem[]) arrayList3.toArray(new CexProtocolItem[0]));
         listOf = CollectionsKt__CollectionsKt.listOf((Object[]) spreadBuilder.toArray(new NoChildNode[spreadBuilder.size()]));
         ((WalletSwapProtocolsView) getViewState()).showExchangesProviders(listOf);

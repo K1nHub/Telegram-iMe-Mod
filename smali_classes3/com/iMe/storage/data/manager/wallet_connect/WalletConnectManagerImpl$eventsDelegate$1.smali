@@ -21,7 +21,7 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 58
+    .line 57
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -69,10 +69,10 @@
     return-void
 .end method
 
-.method public synthetic onWalletChangeNetwork(JLcom/trustwallet/walletconnect/WCSessionStoreItem;Lcom/iMe/storage/domain/model/crypto/NetworkType;)V
+.method public synthetic onWalletChangeNetwork(JLcom/trustwallet/walletconnect/WCSessionStoreItem;Ljava/lang/String;)V
     .locals 0
 
-    invoke-static {p0, p1, p2, p3, p4}, Lcom/iMe/storage/domain/manager/wallet_connect/WalletConnectEventsDelegate$-CC;->$default$onWalletChangeNetwork(Lcom/iMe/storage/domain/manager/wallet_connect/WalletConnectEventsDelegate;JLcom/trustwallet/walletconnect/WCSessionStoreItem;Lcom/iMe/storage/domain/model/crypto/NetworkType;)V
+    invoke-static {p0, p1, p2, p3, p4}, Lcom/iMe/storage/domain/manager/wallet_connect/WalletConnectEventsDelegate$-CC;->$default$onWalletChangeNetwork(Lcom/iMe/storage/domain/manager/wallet_connect/WalletConnectEventsDelegate;JLcom/trustwallet/walletconnect/WCSessionStoreItem;Ljava/lang/String;)V
 
     return-void
 .end method

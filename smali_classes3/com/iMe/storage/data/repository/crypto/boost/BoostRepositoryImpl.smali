@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nBoostRepositoryImpl.kt\nKotlin\n*S Kotlin\n*F\n+ 1 BoostRepositoryImpl.kt\ncom/iMe/storage/data/repository/crypto/boost/BoostRepositoryImpl\n+ 2 FirebaseExt.kt\ncom/iMe/storage/data/utils/extentions/FirebaseExtKt\n+ 3 RxExt.kt\ncom/iMe/storage/data/utils/extentions/RxExtKt\n*L\n1#1,58:1\n70#2:59\n70#2:61\n26#3:60\n26#3:62\n*S KotlinDebug\n*F\n+ 1 BoostRepositoryImpl.kt\ncom/iMe/storage/data/repository/crypto/boost/BoostRepositoryImpl\n*L\n33#1:59\n52#1:61\n36#1:60\n53#1:62\n*E\n"
+    value = "SMAP\nBoostRepositoryImpl.kt\nKotlin\n*S Kotlin\n*F\n+ 1 BoostRepositoryImpl.kt\ncom/iMe/storage/data/repository/crypto/boost/BoostRepositoryImpl\n+ 2 FirebaseExt.kt\ncom/iMe/storage/data/utils/extentions/FirebaseExtKt\n+ 3 RxExt.kt\ncom/iMe/storage/data/utils/extentions/RxExtKt\n*L\n1#1,56:1\n70#2:57\n70#2:59\n26#3:58\n26#3:60\n*S KotlinDebug\n*F\n+ 1 BoostRepositoryImpl.kt\ncom/iMe/storage/data/repository/crypto/boost/BoostRepositoryImpl\n*L\n31#1:57\n50#1:59\n34#1:58\n51#1:60\n*E\n"
 .end annotation
 
 
@@ -17,65 +17,47 @@
 
 .field private final boostDataSourceFactory:Lcom/iMe/storage/data/datasource/boost/WalletBoostDataSourceFactory;
 
-.field private final cryptoAccessManager:Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;
-
 .field private final errorHandler:Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler;
 
 .field private final firebaseErrorHandler:Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;
 
 
 # direct methods
-.method public constructor <init>(Lcom/iMe/storage/data/network/api/own/BoostApi;Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;Lcom/iMe/storage/data/datasource/boost/WalletBoostDataSourceFactory;Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler;)V
+.method public constructor <init>(Lcom/iMe/storage/data/network/api/own/BoostApi;Lcom/iMe/storage/data/datasource/boost/WalletBoostDataSourceFactory;Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler;)V
     .locals 1
 
     const-string v0, "boostApi"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "cryptoAccessManager"
+    const-string v0, "boostDataSourceFactory"
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "boostDataSourceFactory"
+    const-string v0, "firebaseErrorHandler"
 
     invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "firebaseErrorHandler"
+    const-string v0, "errorHandler"
 
     invoke-static {p4, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "errorHandler"
-
-    invoke-static {p5, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    .line 18
+    .line 17
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 19
+    .line 18
     iput-object p1, p0, Lcom/iMe/storage/data/repository/crypto/boost/BoostRepositoryImpl;->boostApi:Lcom/iMe/storage/data/network/api/own/BoostApi;
 
+    .line 19
+    iput-object p2, p0, Lcom/iMe/storage/data/repository/crypto/boost/BoostRepositoryImpl;->boostDataSourceFactory:Lcom/iMe/storage/data/datasource/boost/WalletBoostDataSourceFactory;
+
     .line 20
-    iput-object p2, p0, Lcom/iMe/storage/data/repository/crypto/boost/BoostRepositoryImpl;->cryptoAccessManager:Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;
+    iput-object p3, p0, Lcom/iMe/storage/data/repository/crypto/boost/BoostRepositoryImpl;->firebaseErrorHandler:Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;
 
     .line 21
-    iput-object p3, p0, Lcom/iMe/storage/data/repository/crypto/boost/BoostRepositoryImpl;->boostDataSourceFactory:Lcom/iMe/storage/data/datasource/boost/WalletBoostDataSourceFactory;
-
-    .line 22
-    iput-object p4, p0, Lcom/iMe/storage/data/repository/crypto/boost/BoostRepositoryImpl;->firebaseErrorHandler:Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;
-
-    .line 23
-    iput-object p5, p0, Lcom/iMe/storage/data/repository/crypto/boost/BoostRepositoryImpl;->errorHandler:Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler;
+    iput-object p4, p0, Lcom/iMe/storage/data/repository/crypto/boost/BoostRepositoryImpl;->errorHandler:Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler;
 
     return-void
-.end method
-
-.method public static final synthetic access$getCryptoAccessManager$p(Lcom/iMe/storage/data/repository/crypto/boost/BoostRepositoryImpl;)Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;
-    .locals 0
-
-    .line 18
-    iget-object p0, p0, Lcom/iMe/storage/data/repository/crypto/boost/BoostRepositoryImpl;->cryptoAccessManager:Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;
-
-    return-object p0
 .end method
 
 
@@ -103,20 +85,20 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 45
-    new-instance v0, Lcom/iMe/storage/data/network/model/request/crypto/cancel/SendEthereumCancelOrBoostTransactionRequest;
+    .line 43
+    new-instance v0, Lcom/iMe/storage/data/network/model/request/crypto/cancel/SendCancelOrBoostTransactionRequest;
 
-    invoke-direct {v0, p1, p2}, Lcom/iMe/storage/data/network/model/request/crypto/cancel/SendEthereumCancelOrBoostTransactionRequest;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct {v0, p1, p2}, Lcom/iMe/storage/data/network/model/request/crypto/cancel/SendCancelOrBoostTransactionRequest;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 50
+    .line 48
     iget-object p1, p0, Lcom/iMe/storage/data/repository/crypto/boost/BoostRepositoryImpl;->boostApi:Lcom/iMe/storage/data/network/api/own/BoostApi;
 
-    .line 51
-    invoke-interface {p1, v0}, Lcom/iMe/storage/data/network/api/own/BoostApi;->sendEthereumSpeedUpTransaction(Lcom/iMe/storage/data/network/model/request/crypto/cancel/SendEthereumCancelOrBoostTransactionRequest;)Lio/reactivex/Observable;
+    .line 49
+    invoke-interface {p1, v0}, Lcom/iMe/storage/data/network/api/own/BoostApi;->sendEthereumSpeedUpTransaction(Lcom/iMe/storage/data/network/model/request/crypto/cancel/SendCancelOrBoostTransactionRequest;)Lio/reactivex/Observable;
 
     move-result-object p1
 
-    .line 52
+    .line 50
     iget-object p2, p0, Lcom/iMe/storage/data/repository/crypto/boost/BoostRepositoryImpl;->firebaseErrorHandler:Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;
 
     .line 70
@@ -136,7 +118,7 @@
 
     invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 53
+    .line 51
     iget-object p2, p0, Lcom/iMe/storage/data/repository/crypto/boost/BoostRepositoryImpl;->errorHandler:Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler;
 
     .line 26
@@ -177,26 +159,26 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
+    .line 27
+    new-instance v0, Lcom/iMe/storage/data/network/model/request/crypto/cancel/PrepareSpeedUpOrCancelTransactionRequest;
+
+    invoke-direct {v0, p1}, Lcom/iMe/storage/data/network/model/request/crypto/cancel/PrepareSpeedUpOrCancelTransactionRequest;-><init>(Ljava/lang/String;)V
+
     .line 29
-    new-instance v0, Lcom/iMe/storage/data/network/model/request/crypto/cancel/GetDataForCancelOrBoostCryptoTransactionRequest;
-
-    invoke-direct {v0, p1}, Lcom/iMe/storage/data/network/model/request/crypto/cancel/GetDataForCancelOrBoostCryptoTransactionRequest;-><init>(Ljava/lang/String;)V
-
-    .line 31
     iget-object p1, p0, Lcom/iMe/storage/data/repository/crypto/boost/BoostRepositoryImpl;->boostApi:Lcom/iMe/storage/data/network/api/own/BoostApi;
 
-    .line 32
-    invoke-interface {p1, v0}, Lcom/iMe/storage/data/network/api/own/BoostApi;->getDataForSpeedUpCryptoTransaction(Lcom/iMe/storage/data/network/model/request/crypto/cancel/GetDataForCancelOrBoostCryptoTransactionRequest;)Lio/reactivex/Observable;
+    .line 30
+    invoke-interface {p1, v0}, Lcom/iMe/storage/data/network/api/own/BoostApi;->getSpeedUpTransactionData(Lcom/iMe/storage/data/network/model/request/crypto/cancel/PrepareSpeedUpOrCancelTransactionRequest;)Lio/reactivex/Observable;
 
     move-result-object p1
 
-    .line 33
+    .line 31
     iget-object v0, p0, Lcom/iMe/storage/data/repository/crypto/boost/BoostRepositoryImpl;->firebaseErrorHandler:Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;
 
     .line 70
     new-instance v1, Lcom/iMe/storage/data/repository/crypto/boost/BoostRepositoryImpl$getCryptoBoostMetadata$$inlined$mapSuccess$1;
 
-    invoke-direct {v1, v0, p0}, Lcom/iMe/storage/data/repository/crypto/boost/BoostRepositoryImpl$getCryptoBoostMetadata$$inlined$mapSuccess$1;-><init>(Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;Lcom/iMe/storage/data/repository/crypto/boost/BoostRepositoryImpl;)V
+    invoke-direct {v1, v0}, Lcom/iMe/storage/data/repository/crypto/boost/BoostRepositoryImpl$getCryptoBoostMetadata$$inlined$mapSuccess$1;-><init>(Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;)V
 
     new-instance v0, Lcom/iMe/storage/data/utils/extentions/FirebaseExtKt$sam$i$io_reactivex_functions_Function$0;
 
@@ -210,7 +192,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 36
+    .line 34
     iget-object v0, p0, Lcom/iMe/storage/data/repository/crypto/boost/BoostRepositoryImpl;->errorHandler:Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler;
 
     .line 26
@@ -251,15 +233,15 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 40
+    .line 38
     iget-object v0, p0, Lcom/iMe/storage/data/repository/crypto/boost/BoostRepositoryImpl;->boostDataSourceFactory:Lcom/iMe/storage/data/datasource/boost/WalletBoostDataSourceFactory;
 
-    .line 41
+    .line 39
     invoke-virtual {v0, p1}, Lcom/iMe/storage/data/datasource/boost/WalletBoostDataSourceFactory;->getDataSource(Lcom/iMe/storage/domain/model/crypto/send/TransactionArgs;)Lcom/iMe/storage/data/datasource/base/SignTransactionDatasource;
 
     move-result-object v0
 
-    .line 42
+    .line 40
     invoke-interface {v0, p1}, Lcom/iMe/storage/data/datasource/base/SignTransactionDatasource;->sign(Ljava/lang/Object;)Lio/reactivex/Observable;
 
     move-result-object p1

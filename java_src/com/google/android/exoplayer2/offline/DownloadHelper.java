@@ -6,7 +6,7 @@ import android.os.Handler;
 import android.os.HandlerThread;
 import android.os.Message;
 import android.util.SparseIntArray;
-import com.google.android.exoplayer2.C0475C;
+import com.google.android.exoplayer2.C0480C;
 import com.google.android.exoplayer2.ExoPlaybackException;
 import com.google.android.exoplayer2.Format;
 import com.google.android.exoplayer2.MediaItem;
@@ -841,7 +841,7 @@ public final class DownloadHelper {
         @Override // com.google.android.exoplayer2.upstream.BandwidthMeter
         public /* synthetic */ long getTimeToFirstByteEstimateUs() {
             long j;
-            j = C0475C.TIME_UNSET;
+            j = C0480C.TIME_UNSET;
             return j;
         }
 

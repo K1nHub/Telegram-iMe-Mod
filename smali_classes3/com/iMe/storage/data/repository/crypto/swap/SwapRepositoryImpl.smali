@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nSwapRepositoryImpl.kt\nKotlin\n*S Kotlin\n*F\n+ 1 SwapRepositoryImpl.kt\ncom/iMe/storage/data/repository/crypto/swap/SwapRepositoryImpl\n+ 2 FirebaseExt.kt\ncom/iMe/storage/data/utils/extentions/FirebaseExtKt\n+ 3 RxExt.kt\ncom/iMe/storage/data/utils/extentions/RxExtKt\n*L\n1#1,114:1\n70#2:115\n70#2:117\n70#2:121\n26#3:116\n26#3:118\n26#3:119\n26#3:120\n26#3:122\n*S KotlinDebug\n*F\n+ 1 SwapRepositoryImpl.kt\ncom/iMe/storage/data/repository/crypto/swap/SwapRepositoryImpl\n*L\n47#1:115\n66#1:117\n106#1:121\n52#1:116\n69#1:118\n76#1:119\n83#1:120\n109#1:122\n*E\n"
+    value = "SMAP\nSwapRepositoryImpl.kt\nKotlin\n*S Kotlin\n*F\n+ 1 SwapRepositoryImpl.kt\ncom/iMe/storage/data/repository/crypto/swap/SwapRepositoryImpl\n+ 2 FirebaseExt.kt\ncom/iMe/storage/data/utils/extentions/FirebaseExtKt\n+ 3 RxExt.kt\ncom/iMe/storage/data/utils/extentions/RxExtKt\n+ 4 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,115:1\n70#2:116\n70#2:122\n70#2:126\n26#3:117\n26#3:123\n26#3:124\n26#3:125\n26#3:127\n1549#4:118\n1620#4,3:119\n*S KotlinDebug\n*F\n+ 1 SwapRepositoryImpl.kt\ncom/iMe/storage/data/repository/crypto/swap/SwapRepositoryImpl\n*L\n58#1:116\n76#1:122\n108#1:126\n61#1:117\n79#1:123\n85#1:124\n91#1:125\n111#1:127\n73#1:118\n73#1:119,3\n*E\n"
 .end annotation
 
 
@@ -48,22 +48,22 @@
 
     invoke-static {p5, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 26
+    .line 29
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 27
+    .line 30
     iput-object p1, p0, Lcom/iMe/storage/data/repository/crypto/swap/SwapRepositoryImpl;->swapApi:Lcom/iMe/storage/data/network/api/own/SwapApi;
 
-    .line 28
+    .line 31
     iput-object p2, p0, Lcom/iMe/storage/data/repository/crypto/swap/SwapRepositoryImpl;->swapDataSourceFactory:Lcom/iMe/storage/data/datasource/swap/WalletSwapDataSourceFactory;
 
-    .line 29
+    .line 32
     iput-object p3, p0, Lcom/iMe/storage/data/repository/crypto/swap/SwapRepositoryImpl;->approveDataSourceFactory:Lcom/iMe/storage/data/datasource/approve/WalletApproveDataSourceFactory;
 
-    .line 30
+    .line 33
     iput-object p4, p0, Lcom/iMe/storage/data/repository/crypto/swap/SwapRepositoryImpl;->firebaseErrorHandler:Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;
 
-    .line 31
+    .line 34
     iput-object p5, p0, Lcom/iMe/storage/data/repository/crypto/swap/SwapRepositoryImpl;->errorHandler:Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler;
 
     return-void
@@ -89,28 +89,24 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 73
+    .line 82
     iget-object v0, p0, Lcom/iMe/storage/data/repository/crypto/swap/SwapRepositoryImpl;->approveDataSourceFactory:Lcom/iMe/storage/data/datasource/approve/WalletApproveDataSourceFactory;
 
-    .line 74
-    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/crypto/swap/ApproveArgs;->getToken()Lcom/iMe/storage/domain/model/wallet/token/TokenInfo;
+    .line 83
+    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/crypto/swap/ApproveArgs;->getBlockchainType()Lcom/iMe/storage/domain/model/crypto/BlockchainType;
 
     move-result-object v1
 
-    invoke-virtual {v1}, Lcom/iMe/storage/domain/model/wallet/token/TokenInfo;->getCode()Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Lcom/iMe/storage/data/datasource/approve/WalletApproveDataSourceFactory;->getDataSource(Lcom/iMe/storage/domain/model/wallet/token/TokenCode;)Lcom/iMe/storage/data/datasource/approve/WalletApproveDataSource;
+    invoke-virtual {v0, v1}, Lcom/iMe/storage/data/datasource/approve/WalletApproveDataSourceFactory;->getDataSource(Lcom/iMe/storage/domain/model/crypto/BlockchainType;)Lcom/iMe/storage/data/datasource/approve/WalletApproveDataSource;
 
     move-result-object v0
 
-    .line 75
+    .line 84
     invoke-interface {v0, p1}, Lcom/iMe/storage/data/datasource/approve/WalletApproveDataSource;->approve(Lcom/iMe/storage/domain/model/crypto/send/TransactionArgs;)Lio/reactivex/Observable;
 
     move-result-object p1
 
-    .line 76
+    .line 85
     iget-object v0, p0, Lcom/iMe/storage/data/repository/crypto/swap/SwapRepositoryImpl;->errorHandler:Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler;
 
     .line 26
@@ -133,14 +129,16 @@
     return-object p1
 .end method
 
-.method public getApproveTokensInfo(Lcom/iMe/storage/domain/model/crypto/NetworkType;Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocol;)Lio/reactivex/Observable;
-    .locals 1
+.method public getApproveTokensInfo(Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocol;Ljava/lang/String;Ljava/util/List;)Lio/reactivex/Observable;
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lcom/iMe/storage/domain/model/crypto/NetworkType;",
             "Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocol;",
-            ")",
+            "Ljava/lang/String;",
+            "Ljava/util/List<",
+            "Lcom/iMe/storage/domain/model/wallet/token/Token;",
+            ">;)",
             "Lio/reactivex/Observable<",
             "Lcom/iMe/storage/domain/model/Result<",
             "Ljava/util/List<",
@@ -149,48 +147,88 @@
         }
     .end annotation
 
-    const-string v0, "networkType"
+    const-string v0, "protocol"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "protocol"
+    const-string v0, "networkId"
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 60
+    const-string v0, "tokens"
+
+    invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 68
+    iget-object v0, p0, Lcom/iMe/storage/data/repository/crypto/swap/SwapRepositoryImpl;->swapApi:Lcom/iMe/storage/data/network/api/own/SwapApi;
+
+    .line 71
     invoke-virtual {p1}, Ljava/lang/Enum;->name()Ljava/lang/String;
 
     move-result-object p1
 
-    .line 61
-    invoke-virtual {p2}, Ljava/lang/Enum;->name()Ljava/lang/String;
+    .line 1549
+    new-instance v1, Ljava/util/ArrayList;
 
-    move-result-object p2
+    const/16 v2, 0xa
 
-    .line 59
-    new-instance v0, Lcom/iMe/storage/data/network/model/request/crypto/swap/NetworkAndProtocolSwapRequest;
+    invoke-static {p3, v2}, Lkotlin/collections/CollectionsKt;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
 
-    invoke-direct {v0, p2, p1}, Lcom/iMe/storage/data/network/model/request/crypto/swap/NetworkAndProtocolSwapRequest;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+    move-result v2
 
-    .line 64
-    iget-object p1, p0, Lcom/iMe/storage/data/repository/crypto/swap/SwapRepositoryImpl;->swapApi:Lcom/iMe/storage/data/network/api/own/SwapApi;
+    invoke-direct {v1, v2}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 65
-    invoke-interface {p1, v0}, Lcom/iMe/storage/data/network/api/own/SwapApi;->getApproveTokensInfo(Lcom/iMe/storage/data/network/model/request/crypto/swap/NetworkAndProtocolSwapRequest;)Lio/reactivex/Observable;
+    .line 1620
+    invoke-interface {p3}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+
+    move-result-object p3
+
+    :goto_0
+    invoke-interface {p3}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_0
+
+    invoke-interface {p3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v2
+
+    .line 1621
+    check-cast v2, Lcom/iMe/storage/domain/model/wallet/token/Token;
+
+    .line 73
+    invoke-static {v2}, Lcom/iMe/storage/data/mapper/wallet/TokenMappingKt;->mapToRequest(Lcom/iMe/storage/domain/model/wallet/token/Token;)Lcom/iMe/storage/data/network/model/request/wallet/TokenRequest;
+
+    move-result-object v2
+
+    .line 1621
+    invoke-interface {v1, v2}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
+
+    goto :goto_0
+
+    .line 70
+    :cond_0
+    new-instance p3, Lcom/iMe/storage/data/network/model/request/crypto/swap/TokensApprovalInfoRequest;
+
+    invoke-direct {p3, p1, p2, v1}, Lcom/iMe/storage/data/network/model/request/crypto/swap/TokensApprovalInfoRequest;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/util/List;)V
+
+    .line 69
+    invoke-interface {v0, p3}, Lcom/iMe/storage/data/network/api/own/SwapApi;->getTokensApprovalInfo(Lcom/iMe/storage/data/network/model/request/crypto/swap/TokensApprovalInfoRequest;)Lio/reactivex/Observable;
 
     move-result-object p1
 
-    .line 66
+    .line 76
     iget-object p2, p0, Lcom/iMe/storage/data/repository/crypto/swap/SwapRepositoryImpl;->firebaseErrorHandler:Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;
 
     .line 70
-    new-instance v0, Lcom/iMe/storage/data/repository/crypto/swap/SwapRepositoryImpl$getApproveTokensInfo$$inlined$mapSuccess$1;
+    new-instance p3, Lcom/iMe/storage/data/repository/crypto/swap/SwapRepositoryImpl$getApproveTokensInfo$$inlined$mapSuccess$1;
 
-    invoke-direct {v0, p2}, Lcom/iMe/storage/data/repository/crypto/swap/SwapRepositoryImpl$getApproveTokensInfo$$inlined$mapSuccess$1;-><init>(Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;)V
+    invoke-direct {p3, p2}, Lcom/iMe/storage/data/repository/crypto/swap/SwapRepositoryImpl$getApproveTokensInfo$$inlined$mapSuccess$1;-><init>(Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;)V
 
     new-instance p2, Lcom/iMe/storage/data/utils/extentions/FirebaseExtKt$sam$i$io_reactivex_functions_Function$0;
 
-    invoke-direct {p2, v0}, Lcom/iMe/storage/data/utils/extentions/FirebaseExtKt$sam$i$io_reactivex_functions_Function$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+    invoke-direct {p2, p3}, Lcom/iMe/storage/data/utils/extentions/FirebaseExtKt$sam$i$io_reactivex_functions_Function$0;-><init>(Lkotlin/jvm/functions/Function1;)V
 
     invoke-virtual {p1, p2}, Lio/reactivex/Observable;->map(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
 
@@ -200,17 +238,17 @@
 
     invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 69
+    .line 79
     iget-object p2, p0, Lcom/iMe/storage/data/repository/crypto/swap/SwapRepositoryImpl;->errorHandler:Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler;
 
     .line 26
-    new-instance v0, Lcom/iMe/storage/data/repository/crypto/swap/SwapRepositoryImpl$getApproveTokensInfo$$inlined$handleError$1;
+    new-instance p3, Lcom/iMe/storage/data/repository/crypto/swap/SwapRepositoryImpl$getApproveTokensInfo$$inlined$handleError$1;
 
-    invoke-direct {v0, p2}, Lcom/iMe/storage/data/repository/crypto/swap/SwapRepositoryImpl$getApproveTokensInfo$$inlined$handleError$1;-><init>(Lcom/iMe/storage/data/network/handlers/ErrorHandler;)V
+    invoke-direct {p3, p2}, Lcom/iMe/storage/data/repository/crypto/swap/SwapRepositoryImpl$getApproveTokensInfo$$inlined$handleError$1;-><init>(Lcom/iMe/storage/data/network/handlers/ErrorHandler;)V
 
     new-instance p2, Lcom/iMe/storage/data/utils/extentions/RxExtKt$sam$i$io_reactivex_functions_Function$0;
 
-    invoke-direct {p2, v0}, Lcom/iMe/storage/data/utils/extentions/RxExtKt$sam$i$io_reactivex_functions_Function$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+    invoke-direct {p2, p3}, Lcom/iMe/storage/data/utils/extentions/RxExtKt$sam$i$io_reactivex_functions_Function$0;-><init>(Lkotlin/jvm/functions/Function1;)V
 
     invoke-virtual {p1, p2}, Lio/reactivex/Observable;->onErrorReturn(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
 
@@ -223,64 +261,82 @@
     return-object p1
 .end method
 
-.method public getAvailableTokensToSwap(Lcom/iMe/storage/domain/model/crypto/NetworkType;Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocol;)Lio/reactivex/Observable;
-    .locals 1
+.method public getAvailableTokensToSwap(Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocol;Lcom/iMe/storage/domain/model/wallet/transaction/TransactionDirection;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Integer;)Lio/reactivex/Observable;
+    .locals 8
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lcom/iMe/storage/domain/model/crypto/NetworkType;",
             "Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocol;",
+            "Lcom/iMe/storage/domain/model/wallet/transaction/TransactionDirection;",
+            "Ljava/lang/String;",
+            "Ljava/lang/String;",
+            "Ljava/lang/String;",
+            "Ljava/lang/Integer;",
             ")",
             "Lio/reactivex/Observable<",
             "Lcom/iMe/storage/domain/model/Result<",
-            "Ljava/util/List<",
-            "Lcom/iMe/storage/domain/model/wallet/token/TokenInfo;",
+            "Lcom/iMe/storage/domain/model/common/CursoredData<",
+            "Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;",
             ">;>;>;"
         }
     .end annotation
 
-    const-string v0, "networkType"
+    const-string v0, "protocol"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "protocol"
+    const-string v0, "direction"
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 41
-    invoke-virtual {p1}, Ljava/lang/Enum;->name()Ljava/lang/String;
+    const-string v0, "networkId"
 
-    move-result-object p1
-
-    .line 42
-    invoke-virtual {p2}, Ljava/lang/Enum;->name()Ljava/lang/String;
-
-    move-result-object p2
-
-    .line 40
-    new-instance v0, Lcom/iMe/storage/data/network/model/request/crypto/swap/NetworkAndProtocolSwapRequest;
-
-    invoke-direct {v0, p2, p1}, Lcom/iMe/storage/data/network/model/request/crypto/swap/NetworkAndProtocolSwapRequest;-><init>(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 45
-    iget-object p1, p0, Lcom/iMe/storage/data/repository/crypto/swap/SwapRepositoryImpl;->swapApi:Lcom/iMe/storage/data/network/api/own/SwapApi;
-
-    .line 46
-    invoke-interface {p1, v0}, Lcom/iMe/storage/data/network/api/own/SwapApi;->getAvailableTokensToSwap(Lcom/iMe/storage/data/network/model/request/crypto/swap/NetworkAndProtocolSwapRequest;)Lio/reactivex/Observable;
-
-    move-result-object p1
+    invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 47
+    iget-object v0, p0, Lcom/iMe/storage/data/repository/crypto/swap/SwapRepositoryImpl;->swapApi:Lcom/iMe/storage/data/network/api/own/SwapApi;
+
+    .line 51
+    invoke-virtual {p1}, Ljava/lang/Enum;->name()Ljava/lang/String;
+
+    move-result-object v2
+
+    .line 52
+    invoke-virtual {p2}, Ljava/lang/Enum;->name()Ljava/lang/String;
+
+    move-result-object v5
+
+    .line 49
+    new-instance p1, Lcom/iMe/storage/data/network/model/request/crypto/swap/AvailableTokensToSwapRequest;
+
+    move-object v1, p1
+
+    move-object v3, p3
+
+    move-object v4, p4
+
+    move-object v6, p5
+
+    move-object v7, p6
+
+    invoke-direct/range {v1 .. v7}, Lcom/iMe/storage/data/network/model/request/crypto/swap/AvailableTokensToSwapRequest;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Integer;)V
+
+    .line 48
+    invoke-interface {v0, p1}, Lcom/iMe/storage/data/network/api/own/SwapApi;->getAvailableTokensToSwap(Lcom/iMe/storage/data/network/model/request/crypto/swap/AvailableTokensToSwapRequest;)Lio/reactivex/Observable;
+
+    move-result-object p1
+
+    .line 58
     iget-object p2, p0, Lcom/iMe/storage/data/repository/crypto/swap/SwapRepositoryImpl;->firebaseErrorHandler:Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;
 
     .line 70
-    new-instance v0, Lcom/iMe/storage/data/repository/crypto/swap/SwapRepositoryImpl$getAvailableTokensToSwap$$inlined$mapSuccess$1;
+    new-instance p3, Lcom/iMe/storage/data/repository/crypto/swap/SwapRepositoryImpl$getAvailableTokensToSwap$$inlined$mapSuccess$1;
 
-    invoke-direct {v0, p2}, Lcom/iMe/storage/data/repository/crypto/swap/SwapRepositoryImpl$getAvailableTokensToSwap$$inlined$mapSuccess$1;-><init>(Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;)V
+    invoke-direct {p3, p2}, Lcom/iMe/storage/data/repository/crypto/swap/SwapRepositoryImpl$getAvailableTokensToSwap$$inlined$mapSuccess$1;-><init>(Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;)V
 
     new-instance p2, Lcom/iMe/storage/data/utils/extentions/FirebaseExtKt$sam$i$io_reactivex_functions_Function$0;
 
-    invoke-direct {p2, v0}, Lcom/iMe/storage/data/utils/extentions/FirebaseExtKt$sam$i$io_reactivex_functions_Function$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+    invoke-direct {p2, p3}, Lcom/iMe/storage/data/utils/extentions/FirebaseExtKt$sam$i$io_reactivex_functions_Function$0;-><init>(Lkotlin/jvm/functions/Function1;)V
 
     invoke-virtual {p1, p2}, Lio/reactivex/Observable;->map(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
 
@@ -290,17 +346,17 @@
 
     invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 52
+    .line 61
     iget-object p2, p0, Lcom/iMe/storage/data/repository/crypto/swap/SwapRepositoryImpl;->errorHandler:Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler;
 
     .line 26
-    new-instance v0, Lcom/iMe/storage/data/repository/crypto/swap/SwapRepositoryImpl$getAvailableTokensToSwap$$inlined$handleError$1;
+    new-instance p3, Lcom/iMe/storage/data/repository/crypto/swap/SwapRepositoryImpl$getAvailableTokensToSwap$$inlined$handleError$1;
 
-    invoke-direct {v0, p2}, Lcom/iMe/storage/data/repository/crypto/swap/SwapRepositoryImpl$getAvailableTokensToSwap$$inlined$handleError$1;-><init>(Lcom/iMe/storage/data/network/handlers/ErrorHandler;)V
+    invoke-direct {p3, p2}, Lcom/iMe/storage/data/repository/crypto/swap/SwapRepositoryImpl$getAvailableTokensToSwap$$inlined$handleError$1;-><init>(Lcom/iMe/storage/data/network/handlers/ErrorHandler;)V
 
     new-instance p2, Lcom/iMe/storage/data/utils/extentions/RxExtKt$sam$i$io_reactivex_functions_Function$0;
 
-    invoke-direct {p2, v0}, Lcom/iMe/storage/data/utils/extentions/RxExtKt$sam$i$io_reactivex_functions_Function$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+    invoke-direct {p2, p3}, Lcom/iMe/storage/data/utils/extentions/RxExtKt$sam$i$io_reactivex_functions_Function$0;-><init>(Lkotlin/jvm/functions/Function1;)V
 
     invoke-virtual {p1, p2}, Lio/reactivex/Observable;->onErrorReturn(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
 
@@ -313,20 +369,17 @@
     return-object p1
 .end method
 
-.method public getQuoteToSwap(Lcom/iMe/storage/domain/model/wallet/token/TokenCode;Lcom/iMe/storage/domain/model/wallet/token/TokenCode;Ljava/lang/String;Lcom/iMe/storage/domain/model/wallet/swap/TradeType;FLcom/iMe/storage/domain/model/crypto/NetworkType;Lcom/iMe/storage/domain/model/crypto/NetworkType;Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocol;)Lio/reactivex/Observable;
-    .locals 14
+.method public getQuoteToSwap(Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocol;Lcom/iMe/storage/domain/model/wallet/token/Token;Lcom/iMe/storage/domain/model/wallet/token/Token;Ljava/lang/String;Lcom/iMe/storage/domain/model/wallet/swap/TradeType;F)Lio/reactivex/Observable;
+    .locals 9
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lcom/iMe/storage/domain/model/wallet/token/TokenCode;",
-            "Lcom/iMe/storage/domain/model/wallet/token/TokenCode;",
+            "Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocol;",
+            "Lcom/iMe/storage/domain/model/wallet/token/Token;",
+            "Lcom/iMe/storage/domain/model/wallet/token/Token;",
             "Ljava/lang/String;",
             "Lcom/iMe/storage/domain/model/wallet/swap/TradeType;",
-            "F",
-            "Lcom/iMe/storage/domain/model/crypto/NetworkType;",
-            "Lcom/iMe/storage/domain/model/crypto/NetworkType;",
-            "Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocol;",
-            ")",
+            "F)",
             "Lio/reactivex/Observable<",
             "Lcom/iMe/storage/domain/model/Result<",
             "Lcom/iMe/storage/domain/model/crypto/swap/CryptoSwapMetadata;",
@@ -334,156 +387,107 @@
         }
     .end annotation
 
-    move-object v0, p0
+    const-string v0, "protocol"
 
-    const-string v1, "inputToken"
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    move-object v2, p1
+    const-string v0, "inputToken"
 
-    invoke-static {p1, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v1, "outputToken"
+    const-string v0, "outputToken"
 
-    move-object/from16 v3, p2
+    invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-static {v3, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    const-string v0, "amount"
 
-    const-string v1, "amount"
+    invoke-static {p4, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    move-object/from16 v5, p3
+    const-string v0, "tradeType"
 
-    invoke-static {v5, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string v1, "tradeType"
-
-    move-object/from16 v4, p4
-
-    invoke-static {v4, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string v1, "inputNetworkType"
-
-    move-object/from16 v6, p6
-
-    invoke-static {v6, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string v1, "protocol"
-
-    move-object/from16 v7, p8
-
-    invoke-static {v7, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    .line 94
-    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;->getName()Ljava/lang/String;
-
-    move-result-object v1
-
-    .line 95
-    invoke-virtual/range {p2 .. p2}, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;->getName()Ljava/lang/String;
-
-    move-result-object v8
+    invoke-static {p5, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 97
-    invoke-virtual/range {p4 .. p4}, Lcom/iMe/storage/domain/model/wallet/swap/TradeType;->getValue()I
-
-    move-result v9
+    iget-object v0, p0, Lcom/iMe/storage/data/repository/crypto/swap/SwapRepositoryImpl;->swapApi:Lcom/iMe/storage/data/network/api/own/SwapApi;
 
     .line 99
-    invoke-virtual/range {p6 .. p6}, Ljava/lang/Enum;->name()Ljava/lang/String;
-
-    move-result-object v10
-
-    if-eqz p7, :cond_0
+    new-instance v8, Lcom/iMe/storage/data/network/model/request/crypto/swap/GetQuoteToSwapRequest;
 
     .line 100
-    invoke-virtual/range {p7 .. p7}, Ljava/lang/Enum;->name()Ljava/lang/String;
+    invoke-virtual {p1}, Ljava/lang/Enum;->name()Ljava/lang/String;
 
     move-result-object v2
 
-    goto :goto_0
-
-    :cond_0
-    const/4 v2, 0x0
-
-    :goto_0
-    move-object v11, v2
-
     .line 101
-    invoke-virtual/range {p8 .. p8}, Ljava/lang/Enum;->name()Ljava/lang/String;
+    invoke-static {p2}, Lcom/iMe/storage/data/mapper/wallet/TokenMappingKt;->mapToRequest(Lcom/iMe/storage/domain/model/wallet/token/Token;)Lcom/iMe/storage/data/network/model/request/wallet/TokenRequest;
 
-    move-result-object v12
+    move-result-object v3
 
-    .line 93
-    new-instance v13, Lcom/iMe/storage/data/network/model/request/crypto/swap/GetQuoteToSwapRequest;
+    .line 102
+    invoke-static {p3}, Lcom/iMe/storage/data/mapper/wallet/TokenMappingKt;->mapToRequest(Lcom/iMe/storage/domain/model/wallet/token/Token;)Lcom/iMe/storage/data/network/model/request/wallet/TokenRequest;
 
-    move-object v2, v13
-
-    move-object v3, v1
-
-    move-object v4, v8
-
-    move-object/from16 v5, p3
-
-    move v6, v9
-
-    move/from16 v7, p5
-
-    move-object v8, v12
-
-    move-object v9, v10
-
-    move-object v10, v11
-
-    invoke-direct/range {v2 .. v10}, Lcom/iMe/storage/data/network/model/request/crypto/swap/GetQuoteToSwapRequest;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;IFLjava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    move-result-object v4
 
     .line 104
-    iget-object v1, v0, Lcom/iMe/storage/data/repository/crypto/swap/SwapRepositoryImpl;->swapApi:Lcom/iMe/storage/data/network/api/own/SwapApi;
+    invoke-virtual {p5}, Lcom/iMe/storage/domain/model/wallet/swap/TradeType;->getValue()I
 
-    .line 105
-    invoke-interface {v1, v13}, Lcom/iMe/storage/data/network/api/own/SwapApi;->getQuoteToSwap(Lcom/iMe/storage/data/network/model/request/crypto/swap/GetQuoteToSwapRequest;)Lio/reactivex/Observable;
+    move-result v6
 
-    move-result-object v1
+    move-object v1, v8
 
-    .line 106
-    iget-object v2, v0, Lcom/iMe/storage/data/repository/crypto/swap/SwapRepositoryImpl;->firebaseErrorHandler:Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;
+    move-object v5, p4
+
+    move v7, p6
+
+    .line 99
+    invoke-direct/range {v1 .. v7}, Lcom/iMe/storage/data/network/model/request/crypto/swap/GetQuoteToSwapRequest;-><init>(Ljava/lang/String;Lcom/iMe/storage/data/network/model/request/wallet/TokenRequest;Lcom/iMe/storage/data/network/model/request/wallet/TokenRequest;Ljava/lang/String;IF)V
+
+    .line 98
+    invoke-interface {v0, v8}, Lcom/iMe/storage/data/network/api/own/SwapApi;->getQuoteToSwap(Lcom/iMe/storage/data/network/model/request/crypto/swap/GetQuoteToSwapRequest;)Lio/reactivex/Observable;
+
+    move-result-object p1
+
+    .line 108
+    iget-object p2, p0, Lcom/iMe/storage/data/repository/crypto/swap/SwapRepositoryImpl;->firebaseErrorHandler:Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;
 
     .line 70
-    new-instance v3, Lcom/iMe/storage/data/repository/crypto/swap/SwapRepositoryImpl$getQuoteToSwap$$inlined$mapSuccess$1;
+    new-instance p3, Lcom/iMe/storage/data/repository/crypto/swap/SwapRepositoryImpl$getQuoteToSwap$$inlined$mapSuccess$1;
 
-    invoke-direct {v3, v2}, Lcom/iMe/storage/data/repository/crypto/swap/SwapRepositoryImpl$getQuoteToSwap$$inlined$mapSuccess$1;-><init>(Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;)V
+    invoke-direct {p3, p2}, Lcom/iMe/storage/data/repository/crypto/swap/SwapRepositoryImpl$getQuoteToSwap$$inlined$mapSuccess$1;-><init>(Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;)V
 
-    new-instance v2, Lcom/iMe/storage/data/utils/extentions/FirebaseExtKt$sam$i$io_reactivex_functions_Function$0;
+    new-instance p2, Lcom/iMe/storage/data/utils/extentions/FirebaseExtKt$sam$i$io_reactivex_functions_Function$0;
 
-    invoke-direct {v2, v3}, Lcom/iMe/storage/data/utils/extentions/FirebaseExtKt$sam$i$io_reactivex_functions_Function$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+    invoke-direct {p2, p3}, Lcom/iMe/storage/data/utils/extentions/FirebaseExtKt$sam$i$io_reactivex_functions_Function$0;-><init>(Lkotlin/jvm/functions/Function1;)V
 
-    invoke-virtual {v1, v2}, Lio/reactivex/Observable;->map(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
+    invoke-virtual {p1, p2}, Lio/reactivex/Observable;->map(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
 
-    move-result-object v1
+    move-result-object p1
 
-    const-string v2, "errorHandler: FirebaseFu\u2026response).toError()\n    }"
+    const-string p2, "errorHandler: FirebaseFu\u2026response).toError()\n    }"
 
-    invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 109
-    iget-object v2, v0, Lcom/iMe/storage/data/repository/crypto/swap/SwapRepositoryImpl;->errorHandler:Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler;
+    .line 111
+    iget-object p2, p0, Lcom/iMe/storage/data/repository/crypto/swap/SwapRepositoryImpl;->errorHandler:Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler;
 
     .line 26
-    new-instance v3, Lcom/iMe/storage/data/repository/crypto/swap/SwapRepositoryImpl$getQuoteToSwap$$inlined$handleError$1;
+    new-instance p3, Lcom/iMe/storage/data/repository/crypto/swap/SwapRepositoryImpl$getQuoteToSwap$$inlined$handleError$1;
 
-    invoke-direct {v3, v2}, Lcom/iMe/storage/data/repository/crypto/swap/SwapRepositoryImpl$getQuoteToSwap$$inlined$handleError$1;-><init>(Lcom/iMe/storage/data/network/handlers/ErrorHandler;)V
+    invoke-direct {p3, p2}, Lcom/iMe/storage/data/repository/crypto/swap/SwapRepositoryImpl$getQuoteToSwap$$inlined$handleError$1;-><init>(Lcom/iMe/storage/data/network/handlers/ErrorHandler;)V
 
-    new-instance v2, Lcom/iMe/storage/data/utils/extentions/RxExtKt$sam$i$io_reactivex_functions_Function$0;
+    new-instance p2, Lcom/iMe/storage/data/utils/extentions/RxExtKt$sam$i$io_reactivex_functions_Function$0;
 
-    invoke-direct {v2, v3}, Lcom/iMe/storage/data/utils/extentions/RxExtKt$sam$i$io_reactivex_functions_Function$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+    invoke-direct {p2, p3}, Lcom/iMe/storage/data/utils/extentions/RxExtKt$sam$i$io_reactivex_functions_Function$0;-><init>(Lkotlin/jvm/functions/Function1;)V
 
-    invoke-virtual {v1, v2}, Lio/reactivex/Observable;->onErrorReturn(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
+    invoke-virtual {p1, p2}, Lio/reactivex/Observable;->onErrorReturn(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
 
-    move-result-object v1
+    move-result-object p1
 
-    const-string v2, "errorHandler: ErrorHandl\u2026ndleError(it).toError() }"
+    const-string p2, "errorHandler: ErrorHandl\u2026ndleError(it).toError() }"
 
-    invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    return-object v1
+    return-object p1
 .end method
 
 .method public swap(Lcom/iMe/storage/domain/model/crypto/swap/SwapArgs;)Lio/reactivex/Observable;
@@ -504,10 +508,10 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 80
+    .line 88
     iget-object v0, p0, Lcom/iMe/storage/data/repository/crypto/swap/SwapRepositoryImpl;->swapDataSourceFactory:Lcom/iMe/storage/data/datasource/swap/WalletSwapDataSourceFactory;
 
-    .line 81
+    .line 89
     invoke-virtual {p1}, Lcom/iMe/storage/domain/model/crypto/swap/SwapArgs;->getSwapProtocol()Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocol;
 
     move-result-object v1
@@ -516,12 +520,12 @@
 
     move-result-object v0
 
-    .line 82
+    .line 90
     invoke-interface {v0, p1}, Lcom/iMe/storage/data/datasource/swap/WalletSwapDataSource;->swap(Lcom/iMe/storage/domain/model/crypto/send/TransactionArgs;)Lio/reactivex/Observable;
 
     move-result-object p1
 
-    .line 83
+    .line 91
     iget-object v0, p0, Lcom/iMe/storage/data/repository/crypto/swap/SwapRepositoryImpl;->errorHandler:Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler;
 
     .line 26

@@ -1,24 +1,25 @@
 package com.iMe.model.wallet.crypto.buy;
 
 import com.iMe.model.common.NoChildNode;
+import com.iMe.storage.data.utils.extentions.NumberExtKt;
 import com.iMe.storage.domain.model.billing.CryptoProduct;
 import com.iMe.storage.domain.model.crypto.simplex.BuyingCryptoQuote;
-import com.iMe.storage.domain.model.wallet.token.TokenInfo;
+import com.iMe.storage.domain.model.wallet.token.TokenDetailed;
 import com.iMe.storage.domain.utils.system.ResourceManager;
 import com.iMe.utils.formatter.BalanceFormatter;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3295R;
+import org.telegram.messenger.C3417R;
 /* compiled from: CryptoBuyItem.kt */
 /* loaded from: classes3.dex */
 public final class CryptoBuyItem extends NoChildNode {
     private final CryptoProduct product;
     private final BuyingCryptoQuote quote;
-    private final TokenInfo tokenInfo;
+    private final TokenDetailed token;
 
-    public static /* synthetic */ CryptoBuyItem copy$default(CryptoBuyItem cryptoBuyItem, TokenInfo tokenInfo, CryptoProduct cryptoProduct, BuyingCryptoQuote buyingCryptoQuote, int i, Object obj) {
+    public static /* synthetic */ CryptoBuyItem copy$default(CryptoBuyItem cryptoBuyItem, TokenDetailed tokenDetailed, CryptoProduct cryptoProduct, BuyingCryptoQuote buyingCryptoQuote, int i, Object obj) {
         if ((i & 1) != 0) {
-            tokenInfo = cryptoBuyItem.tokenInfo;
+            tokenDetailed = cryptoBuyItem.token;
         }
         if ((i & 2) != 0) {
             cryptoProduct = cryptoBuyItem.product;
@@ -26,11 +27,11 @@ public final class CryptoBuyItem extends NoChildNode {
         if ((i & 4) != 0) {
             buyingCryptoQuote = cryptoBuyItem.quote;
         }
-        return cryptoBuyItem.copy(tokenInfo, cryptoProduct, buyingCryptoQuote);
+        return cryptoBuyItem.copy(tokenDetailed, cryptoProduct, buyingCryptoQuote);
     }
 
-    public final TokenInfo component1() {
-        return this.tokenInfo;
+    public final TokenDetailed component1() {
+        return this.token;
     }
 
     public final CryptoProduct component2() {
@@ -41,10 +42,9 @@ public final class CryptoBuyItem extends NoChildNode {
         return this.quote;
     }
 
-    public final CryptoBuyItem copy(TokenInfo tokenInfo, CryptoProduct product, BuyingCryptoQuote buyingCryptoQuote) {
-        Intrinsics.checkNotNullParameter(tokenInfo, "tokenInfo");
+    public final CryptoBuyItem copy(TokenDetailed tokenDetailed, CryptoProduct product, BuyingCryptoQuote buyingCryptoQuote) {
         Intrinsics.checkNotNullParameter(product, "product");
-        return new CryptoBuyItem(tokenInfo, product, buyingCryptoQuote);
+        return new CryptoBuyItem(tokenDetailed, product, buyingCryptoQuote);
     }
 
     public boolean equals(Object obj) {
@@ -53,27 +53,28 @@ public final class CryptoBuyItem extends NoChildNode {
         }
         if (obj instanceof CryptoBuyItem) {
             CryptoBuyItem cryptoBuyItem = (CryptoBuyItem) obj;
-            return Intrinsics.areEqual(this.tokenInfo, cryptoBuyItem.tokenInfo) && this.product == cryptoBuyItem.product && Intrinsics.areEqual(this.quote, cryptoBuyItem.quote);
+            return Intrinsics.areEqual(this.token, cryptoBuyItem.token) && this.product == cryptoBuyItem.product && Intrinsics.areEqual(this.quote, cryptoBuyItem.quote);
         }
         return false;
     }
 
     public int hashCode() {
-        int hashCode = ((this.tokenInfo.hashCode() * 31) + this.product.hashCode()) * 31;
+        TokenDetailed tokenDetailed = this.token;
+        int hashCode = (((tokenDetailed == null ? 0 : tokenDetailed.hashCode()) * 31) + this.product.hashCode()) * 31;
         BuyingCryptoQuote buyingCryptoQuote = this.quote;
-        return hashCode + (buyingCryptoQuote == null ? 0 : buyingCryptoQuote.hashCode());
+        return hashCode + (buyingCryptoQuote != null ? buyingCryptoQuote.hashCode() : 0);
     }
 
     public String toString() {
-        return "CryptoBuyItem(tokenInfo=" + this.tokenInfo + ", product=" + this.product + ", quote=" + this.quote + ')';
+        return "CryptoBuyItem(token=" + this.token + ", product=" + this.product + ", quote=" + this.quote + ')';
     }
 
-    public /* synthetic */ CryptoBuyItem(TokenInfo tokenInfo, CryptoProduct cryptoProduct, BuyingCryptoQuote buyingCryptoQuote, int i, DefaultConstructorMarker defaultConstructorMarker) {
-        this(tokenInfo, cryptoProduct, (i & 4) != 0 ? null : buyingCryptoQuote);
+    public /* synthetic */ CryptoBuyItem(TokenDetailed tokenDetailed, CryptoProduct cryptoProduct, BuyingCryptoQuote buyingCryptoQuote, int i, DefaultConstructorMarker defaultConstructorMarker) {
+        this(tokenDetailed, cryptoProduct, (i & 4) != 0 ? null : buyingCryptoQuote);
     }
 
-    public final TokenInfo getTokenInfo() {
-        return this.tokenInfo;
+    public final TokenDetailed getToken() {
+        return this.token;
     }
 
     public final CryptoProduct getProduct() {
@@ -84,10 +85,9 @@ public final class CryptoBuyItem extends NoChildNode {
         return this.quote;
     }
 
-    public CryptoBuyItem(TokenInfo tokenInfo, CryptoProduct product, BuyingCryptoQuote buyingCryptoQuote) {
-        Intrinsics.checkNotNullParameter(tokenInfo, "tokenInfo");
+    public CryptoBuyItem(TokenDetailed tokenDetailed, CryptoProduct product, BuyingCryptoQuote buyingCryptoQuote) {
         Intrinsics.checkNotNullParameter(product, "product");
-        this.tokenInfo = tokenInfo;
+        this.token = tokenDetailed;
         this.product = product;
         this.quote = buyingCryptoQuote;
     }
@@ -95,19 +95,30 @@ public final class CryptoBuyItem extends NoChildNode {
     public final String getAmount(ResourceManager resourceManager) {
         Intrinsics.checkNotNullParameter(resourceManager, "resourceManager");
         if (this.product.isCustom()) {
-            return resourceManager.getString(C3295R.string.wallet_crypto_buy_custom_price_dialog_toolbar_title);
+            return resourceManager.getString(C3417R.string.wallet_crypto_buy_custom_price_dialog_toolbar_title);
         }
         BuyingCryptoQuote buyingCryptoQuote = this.quote;
         if (buyingCryptoQuote != null) {
             if (!(buyingCryptoQuote.getCryptoMoneyAmount() == -1.0f)) {
-                return BalanceFormatter.formatBalance(Float.valueOf(this.quote.getCryptoMoneyAmount()), this.tokenInfo.getDecimals()) + ' ' + resourceManager.getString(this.tokenInfo.getShortName());
+                StringBuilder sb = new StringBuilder();
+                Float valueOf = Float.valueOf(this.quote.getCryptoMoneyAmount());
+                TokenDetailed tokenDetailed = this.token;
+                sb.append(BalanceFormatter.formatBalance(valueOf, Integer.valueOf(NumberExtKt.orZero(tokenDetailed != null ? Integer.valueOf(tokenDetailed.getDecimals()) : null))));
+                sb.append(' ');
+                TokenDetailed tokenDetailed2 = this.token;
+                String ticker = tokenDetailed2 != null ? tokenDetailed2.getTicker() : null;
+                if (ticker == null) {
+                    ticker = "";
+                }
+                sb.append(ticker);
+                return sb.toString();
             }
         }
-        return resourceManager.getString(C3295R.string.common_dash);
+        return resourceManager.getString(C3417R.string.common_dash);
     }
 
     public final String getPrice(ResourceManager resourceManager) {
         Intrinsics.checkNotNullParameter(resourceManager, "resourceManager");
-        return this.product.isCustom() ? resourceManager.getString(C3295R.string.wallet_crypto_buy_max_price) : BalanceFormatter.formatFiatBalance$default(BalanceFormatter.INSTANCE, Float.valueOf(this.product.getPriceInDollars()), resourceManager, null, 4, null);
+        return this.product.isCustom() ? resourceManager.getString(C3417R.string.wallet_crypto_buy_max_price) : BalanceFormatter.formatFiatBalance$default(BalanceFormatter.INSTANCE, Float.valueOf(this.product.getPriceInDollars()), null, 2, null);
     }
 }

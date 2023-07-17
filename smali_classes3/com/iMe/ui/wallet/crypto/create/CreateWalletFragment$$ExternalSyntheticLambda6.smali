@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/ui/Components/RecyclerListView$OnItemClickListener;
+.implements Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$OnDispatchKeyEventListener;
 
 
 # instance fields
@@ -22,12 +22,12 @@
 
 
 # virtual methods
-.method public final onItemClick(Landroid/view/View;I)V
+.method public final onDispatchKeyEvent(Landroid/view/KeyEvent;)V
     .locals 1
 
     iget-object v0, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$$ExternalSyntheticLambda6;->f$0:Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;
 
-    invoke-static {v0, p1, p2}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->$r8$lambda$AvsNN8sHvqgoAgWlV3EaMEYsUyE(Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;Landroid/view/View;I)V
+    invoke-static {v0, p1}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->$r8$lambda$TAosflM81DlaKj9eLpJqvPMUK6w(Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;Landroid/view/KeyEvent;)V
 
     return-void
 .end method

@@ -60,7 +60,7 @@ public final class PurchaseHelper$purchase$2 extends Lambda implements Function1
             String str3 = purchase.sku;
             Intrinsics.checkNotNullExpressionValue(str3, "purchase.sku");
             long j = purchase.time;
-            int i = purchase.state.f1355id;
+            int i = purchase.state.f1437id;
             String str4 = purchase.token;
             Intrinsics.checkNotNullExpressionValue(str4, "purchase.token");
             list3.add(new ShopProduct(price, price2, true, new ShopProduct.Receipt(str, str2, str3, j, i, str4)));

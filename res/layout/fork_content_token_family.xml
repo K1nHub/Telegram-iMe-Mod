@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <TextView android:textSize="@dimen/text_size_extra_upper" android:id="@id/text_title" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin_normal" android:layout_marginTop="@dimen/margin_normal" android:layout_marginRight="@dimen/margin_normal" android:layout_marginHorizontal="@dimen/margin_normal" />
+        <TextView android:textSize="@dimen/text_size_normal" android:id="@id/text_description" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin_normal" android:layout_marginTop="@dimen/margin_small" android:layout_marginRight="@dimen/margin_normal" android:layout_marginHorizontal="@dimen/margin_normal" />
+        <androidx.recyclerview.widget.RecyclerView android:id="@id/recycler_tokens" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin_normal_20" />
+        <com.iMe.ui.custom.DividerView android:id="@id/divider" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin_small" />
+        <TextView android:textSize="@dimen/text_size_normal" android:gravity="center" android:id="@id/button_done" android:layout_width="fill_parent" android:layout_height="48.0dip" android:textAllCaps="true" />
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

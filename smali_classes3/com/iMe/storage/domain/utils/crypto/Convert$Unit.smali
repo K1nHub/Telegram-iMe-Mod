@@ -49,16 +49,18 @@
 
 
 # instance fields
-.field private name:Ljava/lang/String;
+.field private final factor:I
 
-.field private weiFactor:Ljava/math/BigDecimal;
+.field private final name:Ljava/lang/String;
+
+.field private final weiFactor:Ljava/math/BigDecimal;
 
 
 # direct methods
 .method static constructor <clinit>()V
     .locals 16
 
-    .line 38
+    .line 41
     new-instance v0, Lcom/iMe/storage/domain/utils/crypto/Convert$Unit;
 
     const-string v1, "WEI"
@@ -71,7 +73,7 @@
 
     sput-object v0, Lcom/iMe/storage/domain/utils/crypto/Convert$Unit;->WEI:Lcom/iMe/storage/domain/utils/crypto/Convert$Unit;
 
-    .line 39
+    .line 42
     new-instance v1, Lcom/iMe/storage/domain/utils/crypto/Convert$Unit;
 
     const-string v3, "KWEI"
@@ -86,7 +88,7 @@
 
     sput-object v1, Lcom/iMe/storage/domain/utils/crypto/Convert$Unit;->KWEI:Lcom/iMe/storage/domain/utils/crypto/Convert$Unit;
 
-    .line 40
+    .line 43
     new-instance v3, Lcom/iMe/storage/domain/utils/crypto/Convert$Unit;
 
     const-string v5, "MWEI"
@@ -101,7 +103,7 @@
 
     sput-object v3, Lcom/iMe/storage/domain/utils/crypto/Convert$Unit;->MWEI:Lcom/iMe/storage/domain/utils/crypto/Convert$Unit;
 
-    .line 41
+    .line 44
     new-instance v5, Lcom/iMe/storage/domain/utils/crypto/Convert$Unit;
 
     const-string v8, "WEI8"
@@ -114,7 +116,7 @@
 
     sput-object v5, Lcom/iMe/storage/domain/utils/crypto/Convert$Unit;->WEI8:Lcom/iMe/storage/domain/utils/crypto/Convert$Unit;
 
-    .line 42
+    .line 45
     new-instance v8, Lcom/iMe/storage/domain/utils/crypto/Convert$Unit;
 
     const-string v10, "GWEI"
@@ -129,7 +131,7 @@
 
     sput-object v8, Lcom/iMe/storage/domain/utils/crypto/Convert$Unit;->GWEI:Lcom/iMe/storage/domain/utils/crypto/Convert$Unit;
 
-    .line 43
+    .line 46
     new-instance v10, Lcom/iMe/storage/domain/utils/crypto/Convert$Unit;
 
     const-string v13, "SZABO"
@@ -144,7 +146,7 @@
 
     sput-object v10, Lcom/iMe/storage/domain/utils/crypto/Convert$Unit;->SZABO:Lcom/iMe/storage/domain/utils/crypto/Convert$Unit;
 
-    .line 44
+    .line 47
     new-instance v6, Lcom/iMe/storage/domain/utils/crypto/Convert$Unit;
 
     const-string v12, "FINNEY"
@@ -157,7 +159,7 @@
 
     sput-object v6, Lcom/iMe/storage/domain/utils/crypto/Convert$Unit;->FINNEY:Lcom/iMe/storage/domain/utils/crypto/Convert$Unit;
 
-    .line 45
+    .line 48
     new-instance v12, Lcom/iMe/storage/domain/utils/crypto/Convert$Unit;
 
     const-string v13, "ETHER"
@@ -172,7 +174,7 @@
 
     sput-object v12, Lcom/iMe/storage/domain/utils/crypto/Convert$Unit;->ETHER:Lcom/iMe/storage/domain/utils/crypto/Convert$Unit;
 
-    .line 46
+    .line 49
     new-instance v7, Lcom/iMe/storage/domain/utils/crypto/Convert$Unit;
 
     const-string v9, "KETHER"
@@ -185,7 +187,7 @@
 
     sput-object v7, Lcom/iMe/storage/domain/utils/crypto/Convert$Unit;->KETHER:Lcom/iMe/storage/domain/utils/crypto/Convert$Unit;
 
-    .line 47
+    .line 50
     new-instance v9, Lcom/iMe/storage/domain/utils/crypto/Convert$Unit;
 
     const-string v13, "METHER"
@@ -198,7 +200,7 @@
 
     sput-object v9, Lcom/iMe/storage/domain/utils/crypto/Convert$Unit;->METHER:Lcom/iMe/storage/domain/utils/crypto/Convert$Unit;
 
-    .line 48
+    .line 51
     new-instance v11, Lcom/iMe/storage/domain/utils/crypto/Convert$Unit;
 
     const-string v13, "GETHER"
@@ -257,7 +259,7 @@
 
     aput-object v11, v4, v15
 
-    .line 37
+    .line 40
     sput-object v4, Lcom/iMe/storage/domain/utils/crypto/Convert$Unit;->$VALUES:[Lcom/iMe/storage/domain/utils/crypto/Convert$Unit;
 
     return-void
@@ -288,13 +290,16 @@
         }
     .end annotation
 
-    .line 53
+    .line 57
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    .line 54
+    .line 58
     iput-object p3, p0, Lcom/iMe/storage/domain/utils/crypto/Convert$Unit;->name:Ljava/lang/String;
 
-    .line 55
+    .line 59
+    iput p4, p0, Lcom/iMe/storage/domain/utils/crypto/Convert$Unit;->factor:I
+
+    .line 60
     sget-object p1, Ljava/math/BigDecimal;->TEN:Ljava/math/BigDecimal;
 
     invoke-virtual {p1, p4}, Ljava/math/BigDecimal;->pow(I)Ljava/math/BigDecimal;
@@ -319,7 +324,7 @@
 
     if-eqz p0, :cond_1
 
-    .line 69
+    .line 65
     invoke-static {}, Lcom/iMe/storage/domain/utils/crypto/Convert$Unit;->values()[Lcom/iMe/storage/domain/utils/crypto/Convert$Unit;
 
     move-result-object v0
@@ -333,7 +338,7 @@
 
     aget-object v3, v0, v2
 
-    .line 70
+    .line 66
     iget-object v4, v3, Lcom/iMe/storage/domain/utils/crypto/Convert$Unit;->name:Ljava/lang/String;
 
     invoke-virtual {p0, v4}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
@@ -349,7 +354,7 @@
 
     goto :goto_0
 
-    .line 75
+    .line 71
     :cond_1
     invoke-static {p0}, Lcom/iMe/storage/domain/utils/crypto/Convert$Unit;->valueOf(Ljava/lang/String;)Lcom/iMe/storage/domain/utils/crypto/Convert$Unit;
 
@@ -369,7 +374,7 @@
         }
     .end annotation
 
-    .line 37
+    .line 40
     const-class v0, Lcom/iMe/storage/domain/utils/crypto/Convert$Unit;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -384,7 +389,7 @@
 .method public static values()[Lcom/iMe/storage/domain/utils/crypto/Convert$Unit;
     .locals 1
 
-    .line 37
+    .line 40
     sget-object v0, Lcom/iMe/storage/domain/utils/crypto/Convert$Unit;->$VALUES:[Lcom/iMe/storage/domain/utils/crypto/Convert$Unit;
 
     invoke-virtual {v0}, [Lcom/iMe/storage/domain/utils/crypto/Convert$Unit;->clone()Ljava/lang/Object;
@@ -398,10 +403,19 @@
 
 
 # virtual methods
+.method public getFactor()I
+    .locals 1
+
+    .line 79
+    iget v0, p0, Lcom/iMe/storage/domain/utils/crypto/Convert$Unit;->factor:I
+
+    return v0
+.end method
+
 .method public getWeiFactor()Ljava/math/BigDecimal;
     .locals 1
 
-    .line 59
+    .line 75
     iget-object v0, p0, Lcom/iMe/storage/domain/utils/crypto/Convert$Unit;->weiFactor:Ljava/math/BigDecimal;
 
     return-object v0
@@ -410,7 +424,7 @@
 .method public toString()Ljava/lang/String;
     .locals 1
 
-    .line 64
+    .line 84
     iget-object v0, p0, Lcom/iMe/storage/domain/utils/crypto/Convert$Unit;->name:Ljava/lang/String;
 
     return-object v0

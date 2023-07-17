@@ -1,7 +1,7 @@
 package com.iMe.p031ui.dialogs;
 
 import kotlin.jvm.internal.DefaultConstructorMarker;
-import org.telegram.messenger.C3295R;
+import org.telegram.messenger.C3417R;
 /* JADX WARN: Enum visitor error
 jadx.core.utils.exceptions.JadxRuntimeException: Init of enum ARCHIVE_ALBUMS uses external variables
 	at jadx.core.dex.visitors.EnumVisitor.createEnumFieldByConstructor(EnumVisitor.java:444)
@@ -23,7 +23,6 @@ public final class EmptyCellType {
     public static final EmptyCellType ALBUMS;
     public static final EmptyCellType ARCHIVE;
     public static final EmptyCellType ARCHIVE_ALBUMS;
-    public static final EmptyCellType BOOKMARKS;
     public static final Companion Companion;
     public static final EmptyCellType DRAFTS;
     public static final int FORK_TYPE_EXTRA = 100;
@@ -37,7 +36,7 @@ public final class EmptyCellType {
     private final int titleResId;
 
     private static final /* synthetic */ EmptyCellType[] $values() {
-        return new EmptyCellType[]{ARCHIVE_ALBUMS, ARCHIVE, ALBUMS, MUSIC_ALBUMS, MUSIC_CHANNELS, MUSIC_BOTS, MUSIC_DEVICE, BOOKMARKS, DRAFTS, HIDDEN_CHATS};
+        return new EmptyCellType[]{ARCHIVE_ALBUMS, ARCHIVE, ALBUMS, MUSIC_ALBUMS, MUSIC_CHANNELS, MUSIC_BOTS, MUSIC_DEVICE, DRAFTS, HIDDEN_CHATS};
     }
 
     public static EmptyCellType valueOf(String str) {
@@ -67,18 +66,17 @@ public final class EmptyCellType {
     }
 
     static {
-        int i = C3295R.raw.filter_no_chats;
-        int i2 = C3295R.string.cloud_albums_empty_title;
-        ARCHIVE_ALBUMS = new EmptyCellType("ARCHIVE_ALBUMS", 0, i, i2, C3295R.string.cloud_albums_empty_subtitle_archibe);
-        ARCHIVE = new EmptyCellType("ARCHIVE", 1, i, C3295R.string.archive_empty_title, C3295R.string.archive_empty_subtitle);
-        ALBUMS = new EmptyCellType("ALBUMS", 2, i, i2, C3295R.string.cloud_albums_empty_subtitle);
-        MUSIC_ALBUMS = new EmptyCellType("MUSIC_ALBUMS", 3, i, C3295R.string.music_albums_empty_title, C3295R.string.music_albums_empty_subtitle);
-        MUSIC_CHANNELS = new EmptyCellType("MUSIC_CHANNELS", 4, i, C3295R.string.music_channels_empty_title, C3295R.string.music_channels_empty_subtitle);
-        MUSIC_BOTS = new EmptyCellType("MUSIC_BOTS", 5, i, C3295R.string.music_bots_empty_title, C3295R.string.music_bots_empty_subtitle);
-        MUSIC_DEVICE = new EmptyCellType("MUSIC_DEVICE", 6, i, C3295R.string.music_device_empty_title, C3295R.string.music_device_empty_subtitle);
-        BOOKMARKS = new EmptyCellType("BOOKMARKS", 7, i, C3295R.string.chat_bookmarks_empty, C3295R.string.chat_bookmarks_empty_subtitle);
-        DRAFTS = new EmptyCellType("DRAFTS", 8, i, C3295R.string.chat_drafts_empty, C3295R.string.chat_drafts_empty_subtitle);
-        HIDDEN_CHATS = new EmptyCellType("HIDDEN_CHATS", 9, i, C3295R.string.hidden_chats_empty, C3295R.string.hidden_chats_empty_title);
+        int i = C3417R.raw.filter_no_chats;
+        int i2 = C3417R.string.cloud_albums_empty_title;
+        ARCHIVE_ALBUMS = new EmptyCellType("ARCHIVE_ALBUMS", 0, i, i2, C3417R.string.cloud_albums_empty_subtitle_archibe);
+        ARCHIVE = new EmptyCellType("ARCHIVE", 1, i, C3417R.string.archive_empty_title, C3417R.string.archive_empty_subtitle);
+        ALBUMS = new EmptyCellType("ALBUMS", 2, i, i2, C3417R.string.cloud_albums_empty_subtitle);
+        MUSIC_ALBUMS = new EmptyCellType("MUSIC_ALBUMS", 3, i, C3417R.string.music_albums_empty_title, C3417R.string.music_albums_empty_subtitle);
+        MUSIC_CHANNELS = new EmptyCellType("MUSIC_CHANNELS", 4, i, C3417R.string.music_channels_empty_title, C3417R.string.music_channels_empty_subtitle);
+        MUSIC_BOTS = new EmptyCellType("MUSIC_BOTS", 5, i, C3417R.string.music_bots_empty_title, C3417R.string.music_bots_empty_subtitle);
+        MUSIC_DEVICE = new EmptyCellType("MUSIC_DEVICE", 6, i, C3417R.string.music_device_empty_title, C3417R.string.music_device_empty_subtitle);
+        DRAFTS = new EmptyCellType("DRAFTS", 7, i, C3417R.string.chat_drafts_empty, C3417R.string.chat_drafts_empty_subtitle);
+        HIDDEN_CHATS = new EmptyCellType("HIDDEN_CHATS", 8, i, C3417R.string.hidden_chats_empty, C3417R.string.hidden_chats_empty_title);
         $VALUES = $values();
         Companion = new Companion(null);
     }

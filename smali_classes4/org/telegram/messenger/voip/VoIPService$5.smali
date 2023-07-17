@@ -37,7 +37,7 @@
 .method constructor <init>(Lorg/telegram/messenger/voip/VoIPService;Ljava/lang/String;Z)V
     .locals 0
 
-    .line 562
+    .line 572
     iput-object p1, p0, Lorg/telegram/messenger/voip/VoIPService$5;->this$0:Lorg/telegram/messenger/voip/VoIPService;
 
     iput-object p2, p0, Lorg/telegram/messenger/voip/VoIPService$5;->val$endpointId:Ljava/lang/String;
@@ -52,7 +52,7 @@
 .method private synthetic lambda$onFrame$0(Ljava/lang/String;Lorg/webrtc/VideoSink;Z)V
     .locals 3
 
-    .line 568
+    .line 578
     iget-object v0, p0, Lorg/telegram/messenger/voip/VoIPService$5;->this$0:Lorg/telegram/messenger/voip/VoIPService;
 
     invoke-static {v0}, Lorg/telegram/messenger/voip/VoIPService;->access$2100(Lorg/telegram/messenger/voip/VoIPService;)Ljava/util/HashMap;
@@ -65,7 +65,7 @@
 
     check-cast v0, Lorg/telegram/tgnet/TLRPC$TL_groupCallParticipant;
 
-    .line 569
+    .line 579
     iget-object v1, p0, Lorg/telegram/messenger/voip/VoIPService$5;->this$0:Lorg/telegram/messenger/voip/VoIPService;
 
     invoke-static {v1}, Lorg/telegram/messenger/voip/VoIPService;->access$2200(Lorg/telegram/messenger/voip/VoIPService;)Ljava/util/HashMap;
@@ -80,14 +80,14 @@
 
     if-eqz v1, :cond_0
 
-    .line 570
+    .line 580
     invoke-static {v1}, Lorg/telegram/messenger/voip/VoIPService$ProxyVideoSink;->access$2300(Lorg/telegram/messenger/voip/VoIPService$ProxyVideoSink;)Lorg/webrtc/VideoSink;
 
     move-result-object v2
 
     if-ne v2, p2, :cond_0
 
-    .line 571
+    .line 581
     iget-object p2, p0, Lorg/telegram/messenger/voip/VoIPService$5;->this$0:Lorg/telegram/messenger/voip/VoIPService;
 
     invoke-static {p2}, Lorg/telegram/messenger/voip/VoIPService;->access$2400(Lorg/telegram/messenger/voip/VoIPService;)Landroid/util/LruCache;
@@ -96,7 +96,7 @@
 
     invoke-virtual {p2, p1, v1}, Landroid/util/LruCache;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 572
+    .line 582
     iget-object p2, p0, Lorg/telegram/messenger/voip/VoIPService$5;->this$0:Lorg/telegram/messenger/voip/VoIPService;
 
     invoke-static {p2}, Lorg/telegram/messenger/voip/VoIPService;->access$2200(Lorg/telegram/messenger/voip/VoIPService;)Ljava/util/HashMap;
@@ -107,7 +107,7 @@
 
     const/4 p1, 0x0
 
-    .line 573
+    .line 583
     invoke-virtual {v1, p1}, Lorg/telegram/messenger/voip/VoIPService$ProxyVideoSink;->setTarget(Lorg/webrtc/VideoSink;)V
 
     :cond_0
@@ -117,16 +117,16 @@
 
     if-eqz p3, :cond_1
 
-    .line 577
+    .line 587
     iput p1, v0, Lorg/telegram/tgnet/TLRPC$TL_groupCallParticipant;->hasPresentationFrame:I
 
     goto :goto_0
 
-    .line 579
+    .line 589
     :cond_1
     iput p1, v0, Lorg/telegram/tgnet/TLRPC$TL_groupCallParticipant;->hasCameraFrame:I
 
-    .line 582
+    .line 592
     :cond_2
     :goto_0
     iget-object p1, p0, Lorg/telegram/messenger/voip/VoIPService$5;->this$0:Lorg/telegram/messenger/voip/VoIPService;
@@ -135,7 +135,7 @@
 
     if-eqz p1, :cond_3
 
-    .line 583
+    .line 593
     invoke-virtual {p1}, Lorg/telegram/messenger/ChatObject$Call;->updateVisibleParticipants()V
 
     :cond_3
@@ -149,7 +149,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 566
+    .line 576
     invoke-virtual {p1}, Lorg/webrtc/VideoFrame;->getBuffer()Lorg/webrtc/VideoFrame$Buffer;
 
     move-result-object v0
@@ -170,7 +170,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 567
+    .line 577
     iget-object p1, p0, Lorg/telegram/messenger/voip/VoIPService$5;->val$endpointId:Ljava/lang/String;
 
     iget-boolean v0, p0, Lorg/telegram/messenger/voip/VoIPService$5;->val$screencast:Z

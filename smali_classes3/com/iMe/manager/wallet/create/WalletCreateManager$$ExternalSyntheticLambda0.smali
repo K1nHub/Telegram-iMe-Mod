@@ -33,7 +33,7 @@
 
     iget-object v1, p0, Lcom/iMe/manager/wallet/create/WalletCreateManager$$ExternalSyntheticLambda0;->f$1:Ljava/util/List;
 
-    invoke-static {v0, v1, p1, p2}, Lcom/iMe/manager/wallet/create/WalletCreateManager;->$r8$lambda$fRx-yz5SAEd1Fb9ofBAZaBA44ts(Lcom/iMe/manager/wallet/create/WalletCreateManager;Ljava/util/List;Landroid/content/DialogInterface;I)V
+    invoke-static {v0, v1, p1, p2}, Lcom/iMe/manager/wallet/create/WalletCreateManager;->$r8$lambda$Iq8vAV1fo7o6l1d42NiTQH4mLxM(Lcom/iMe/manager/wallet/create/WalletCreateManager;Ljava/util/List;Landroid/content/DialogInterface;I)V
 
     return-void
 .end method

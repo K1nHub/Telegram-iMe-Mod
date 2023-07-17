@@ -28,6 +28,6 @@ final class ProduceKt$awaitClose$4$1 extends Lambda implements Function1<Throwab
     public final void invoke2(Throwable th) {
         CancellableContinuation<Unit> cancellableContinuation = this.$cont;
         Result.Companion companion = Result.Companion;
-        cancellableContinuation.resumeWith(Result.m1576constructorimpl(Unit.INSTANCE));
+        cancellableContinuation.resumeWith(Result.m1601constructorimpl(Unit.INSTANCE));
     }
 }

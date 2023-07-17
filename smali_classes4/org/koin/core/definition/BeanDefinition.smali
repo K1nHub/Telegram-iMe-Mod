@@ -92,7 +92,7 @@
         }
     .end annotation
 
-    const-string v0, "scopeQualifier"
+    const-string/jumbo v0, "scopeQualifier"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -108,7 +108,7 @@
 
     invoke-static {p5, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "secondaryTypes"
+    const-string/jumbo v0, "secondaryTypes"
 
     invoke-static {p6, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 

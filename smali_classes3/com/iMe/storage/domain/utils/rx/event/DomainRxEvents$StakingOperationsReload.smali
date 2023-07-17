@@ -18,34 +18,34 @@
 
 
 # instance fields
-.field private final networkType:Lcom/iMe/storage/domain/model/crypto/NetworkType;
+.field private final networkId:Ljava/lang/String;
 
 
 # direct methods
-.method public constructor <init>(Lcom/iMe/storage/domain/model/crypto/NetworkType;)V
+.method public constructor <init>(Ljava/lang/String;)V
     .locals 1
 
-    const-string v0, "networkType"
+    const-string v0, "networkId"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     const/4 v0, 0x0
 
-    .line 27
+    .line 40
     invoke-direct {p0, v0}, Lcom/iMe/storage/domain/utils/rx/event/DomainRxEvents;-><init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
 
-    iput-object p1, p0, Lcom/iMe/storage/domain/utils/rx/event/DomainRxEvents$StakingOperationsReload;->networkType:Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    iput-object p1, p0, Lcom/iMe/storage/domain/utils/rx/event/DomainRxEvents$StakingOperationsReload;->networkId:Ljava/lang/String;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final getNetworkType()Lcom/iMe/storage/domain/model/crypto/NetworkType;
+.method public final getNetworkId()Ljava/lang/String;
     .locals 1
 
-    .line 27
-    iget-object v0, p0, Lcom/iMe/storage/domain/utils/rx/event/DomainRxEvents$StakingOperationsReload;->networkType:Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    .line 40
+    iget-object v0, p0, Lcom/iMe/storage/domain/utils/rx/event/DomainRxEvents$StakingOperationsReload;->networkId:Ljava/lang/String;
 
     return-object v0
 .end method

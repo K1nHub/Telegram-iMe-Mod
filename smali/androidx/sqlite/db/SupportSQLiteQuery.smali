@@ -1,6 +1,6 @@
 .class public interface abstract Landroidx/sqlite/db/SupportSQLiteQuery;
 .super Ljava/lang/Object;
-.source "SupportSQLiteQuery.java"
+.source "SupportSQLiteQuery.kt"
 
 
 # virtual methods

@@ -33,7 +33,7 @@ public class FileUploadOperation {
     private boolean isLastPart;
 
     /* renamed from: iv */
-    private byte[] f1364iv;
+    private byte[] f1446iv;
     private byte[] ivChange;
     private byte[] key;
     protected long lastProgressUpdateTime;
@@ -59,6 +59,7 @@ public class FileUploadOperation {
     private int uploadChunkSize = 65536;
     private SparseIntArray requestTokens = new SparseIntArray();
     private SparseArray<UploadCachedResult> cachedResults = new SparseArray<>();
+    private boolean[] recalculatedEstimatedSize = {false, false};
 
     /* loaded from: classes4.dex */
     public interface FileUploadOperationDelegate {
@@ -75,7 +76,7 @@ public class FileUploadOperation {
         private long bytesOffset;
 
         /* renamed from: iv */
-        private byte[] f1365iv;
+        private byte[] f1447iv;
 
         private UploadCachedResult() {
         }
@@ -163,7 +164,7 @@ public class FileUploadOperation {
             this.uploadedBytesCount = 0L;
             this.saveInfoTimes = 0;
             this.key = null;
-            this.f1364iv = null;
+            this.f1446iv = null;
             this.ivChange = null;
             this.currentUploadRequetsCount = 0;
             this.lastSavedPartNum = 0;
@@ -225,32 +226,91 @@ public class FileUploadOperation {
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    public void checkNewDataAvailable(final long j, final long j2) {
+    public void checkNewDataAvailable(final long j, final long j2, final Float f) {
         Utilities.stageQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.FileUploadOperation$$ExternalSyntheticLambda3
             @Override // java.lang.Runnable
             public final void run() {
-                FileUploadOperation.this.lambda$checkNewDataAvailable$3(j2, j);
+                FileUploadOperation.this.lambda$checkNewDataAvailable$3(f, j2, j);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$checkNewDataAvailable$3(long j, long j2) {
-        if (this.estimatedSize != 0 && j != 0) {
-            this.estimatedSize = 0L;
-            this.totalFileSize = j;
-            calcTotalPartsCount();
-            if (!this.uploadFirstPartLater && this.started) {
-                storeFileUploadInfo();
-            }
-        }
-        if (j <= 0) {
-            j = j2;
-        }
-        this.availableSize = j;
-        if (this.currentUploadRequetsCount < this.maxRequestsCount) {
-            startUploadRequest();
-        }
+    /* JADX WARN: Removed duplicated region for block: B:20:0x003a  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+        To view partially-correct add '--show-bad-code' argument
+    */
+    public /* synthetic */ void lambda$checkNewDataAvailable$3(java.lang.Float r7, long r8, long r10) {
+        /*
+            r6 = this;
+            r0 = 0
+            if (r7 == 0) goto L43
+            long r2 = r6.estimatedSize
+            int r2 = (r2 > r0 ? 1 : (r2 == r0 ? 0 : -1))
+            if (r2 == 0) goto L43
+            int r2 = (r8 > r0 ? 1 : (r8 == r0 ? 0 : -1))
+            if (r2 != 0) goto L43
+            float r2 = r7.floatValue()
+            r3 = 1061158912(0x3f400000, float:0.75)
+            int r2 = (r2 > r3 ? 1 : (r2 == r3 ? 0 : -1))
+            r3 = 0
+            r4 = 1
+            if (r2 <= 0) goto L23
+            boolean[] r2 = r6.recalculatedEstimatedSize
+            boolean r5 = r2[r3]
+            if (r5 != 0) goto L23
+            r2[r3] = r4
+            r3 = r4
+        L23:
+            float r2 = r7.floatValue()
+            r5 = 1064514355(0x3f733333, float:0.95)
+            int r2 = (r2 > r5 ? 1 : (r2 == r5 ? 0 : -1))
+            if (r2 <= 0) goto L37
+            boolean[] r2 = r6.recalculatedEstimatedSize
+            boolean r5 = r2[r4]
+            if (r5 != 0) goto L37
+            r2[r4] = r4
+            goto L38
+        L37:
+            r4 = r3
+        L38:
+            if (r4 == 0) goto L43
+            float r2 = (float) r10
+            float r7 = r7.floatValue()
+            float r2 = r2 / r7
+            long r2 = (long) r2
+            r6.estimatedSize = r2
+        L43:
+            long r2 = r6.estimatedSize
+            int r7 = (r2 > r0 ? 1 : (r2 == r0 ? 0 : -1))
+            if (r7 == 0) goto L5f
+            int r7 = (r8 > r0 ? 1 : (r8 == r0 ? 0 : -1))
+            if (r7 == 0) goto L5f
+            r6.estimatedSize = r0
+            r6.totalFileSize = r8
+            r6.calcTotalPartsCount()
+            boolean r7 = r6.uploadFirstPartLater
+            if (r7 != 0) goto L5f
+            boolean r7 = r6.started
+            if (r7 == 0) goto L5f
+            r6.storeFileUploadInfo()
+        L5f:
+            int r7 = (r8 > r0 ? 1 : (r8 == r0 ? 0 : -1))
+            if (r7 <= 0) goto L64
+            goto L65
+        L64:
+            r8 = r10
+        L65:
+            r6.availableSize = r8
+            int r7 = r6.currentUploadRequetsCount
+            int r8 = r6.maxRequestsCount
+            if (r7 >= r8) goto L70
+            r6.startUploadRequest()
+        L70:
+            return
+        */
+        throw new UnsupportedOperationException("Method not decompiled: org.telegram.messenger.FileUploadOperation.lambda$checkNewDataAvailable$3(java.lang.Float, long, long):void");
     }
 
     private void storeFileUploadInfo() {
@@ -260,7 +320,7 @@ public class FileUploadOperation {
         edit.putLong(this.fileKey + "_id", this.currentFileId);
         edit.remove(this.fileKey + "_uploaded");
         if (this.isEncrypted) {
-            edit.putString(this.fileKey + "_iv", Utilities.bytesToHex(this.f1364iv));
+            edit.putString(this.fileKey + "_iv", Utilities.bytesToHex(this.f1446iv));
             edit.putString(this.fileKey + "_ivc", Utilities.bytesToHex(this.ivChange));
             edit.putString(this.fileKey + "_key", Utilities.bytesToHex(this.key));
         }

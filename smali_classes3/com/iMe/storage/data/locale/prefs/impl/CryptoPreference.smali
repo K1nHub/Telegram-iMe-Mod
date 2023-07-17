@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nCryptoPreference.kt\nKotlin\n*S Kotlin\n*F\n+ 1 CryptoPreference.kt\ncom/iMe/storage/data/locale/prefs/impl/CryptoPreference\n+ 2 GsonExt.kt\ncom/iMe/storage/data/utils/extentions/GsonExtKt\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 4 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n+ 5 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,264:1\n25#2,2:265\n25#2,2:267\n25#2,2:269\n25#2,2:271\n25#2,2:273\n25#2,2:275\n25#2,2:277\n25#2,2:279\n25#2,2:281\n25#2,2:283\n1002#3,2:285\n1855#3,2:289\n1855#3,2:291\n13579#4,2:287\n1#5:293\n*S KotlinDebug\n*F\n+ 1 CryptoPreference.kt\ncom/iMe/storage/data/locale/prefs/impl/CryptoPreference\n*L\n46#1:265,2\n67#1:267,2\n79#1:269,2\n110#1:271,2\n116#1:273,2\n122#1:275,2\n128#1:277,2\n140#1:279,2\n170#1:281,2\n187#1:283,2\n191#1:285,2\n218#1:289,2\n249#1:291,2\n202#1:287,2\n*E\n"
+    value = "SMAP\nCryptoPreference.kt\nKotlin\n*S Kotlin\n*F\n+ 1 CryptoPreference.kt\ncom/iMe/storage/data/locale/prefs/impl/CryptoPreference\n+ 2 GsonExt.kt\ncom/iMe/storage/data/utils/extentions/GsonExtKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 4 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,319:1\n25#2,2:320\n25#2,2:322\n25#2,2:324\n25#2,2:326\n25#2,2:329\n25#2,2:331\n25#2,2:333\n25#2,2:335\n25#2,2:337\n25#2,2:339\n25#2,2:341\n1#3:328\n1045#4:343\n1855#4,2:344\n766#4:346\n857#4,2:347\n1855#4,2:349\n1855#4,2:351\n*S KotlinDebug\n*F\n+ 1 CryptoPreference.kt\ncom/iMe/storage/data/locale/prefs/impl/CryptoPreference\n*L\n49#1:320,2\n88#1:322,2\n100#1:324,2\n127#1:326,2\n163#1:329,2\n169#1:331,2\n175#1:333,2\n181#1:335,2\n193#1:337,2\n223#1:339,2\n240#1:341,2\n245#1:343\n255#1:344,2\n272#1:346\n272#1:347,2\n273#1:349,2\n304#1:351,2\n*E\n"
 .end annotation
 
 
@@ -66,18 +66,18 @@
 
     const-string v0, "ime_crypto_prefs"
 
-    .line 26
+    .line 29
     invoke-direct {p0, v0, p2, p1}, Lcom/iMe/storage/data/locale/prefs/impl/BasePreference;-><init>(Ljava/lang/String;Lcom/iMe/storage/domain/gateway/TelegramGateway;Landroid/content/Context;)V
 
-    .line 25
+    .line 28
     iput-object p3, p0, Lcom/iMe/storage/data/locale/prefs/impl/CryptoPreference;->gson:Lcom/google/gson/Gson;
 
     const-string p1, ""
 
-    .line 29
+    .line 32
     iput-object p1, p0, Lcom/iMe/storage/data/locale/prefs/impl/CryptoPreference;->tempOneActionGuid:Ljava/lang/String;
 
-    .line 52
+    .line 55
     new-instance p1, Lcom/iMe/storage/domain/model/PreferenceBlockchainMappedData;
 
     invoke-virtual {p0}, Lcom/iMe/storage/data/locale/prefs/impl/BasePreference;->getMPref()Landroid/content/SharedPreferences;
@@ -92,7 +92,7 @@
 
     iput-object p1, p0, Lcom/iMe/storage/data/locale/prefs/impl/CryptoPreference;->walletPublicAddresses:Lcom/iMe/storage/domain/model/PreferenceBlockchainMappedData;
 
-    .line 55
+    .line 58
     new-instance p1, Lcom/iMe/storage/domain/model/PreferenceBlockchainMappedData;
 
     invoke-virtual {p0}, Lcom/iMe/storage/data/locale/prefs/impl/BasePreference;->getMPref()Landroid/content/SharedPreferences;
@@ -107,7 +107,7 @@
 
     iput-object p1, p0, Lcom/iMe/storage/data/locale/prefs/impl/CryptoPreference;->walletSeeds:Lcom/iMe/storage/domain/model/PreferenceBlockchainMappedData;
 
-    .line 58
+    .line 61
     new-instance p1, Lcom/iMe/storage/domain/model/PreferenceBlockchainMappedData;
 
     invoke-virtual {p0}, Lcom/iMe/storage/data/locale/prefs/impl/BasePreference;->getMPref()Landroid/content/SharedPreferences;
@@ -128,7 +128,7 @@
 .method private final getActualGuid()Ljava/lang/String;
     .locals 2
 
-    .line 261
+    .line 316
     iget-object v0, p0, Lcom/iMe/storage/data/locale/prefs/impl/CryptoPreference;->tempOneActionGuid:Ljava/lang/String;
 
     invoke-interface {v0}, Ljava/lang/CharSequence;->length()I
@@ -160,7 +160,7 @@
 .method public getAccountLevelMetadata()Lcom/iMe/storage/data/locale/prefs/model/AccountLevelMetadata;
     .locals 4
 
-    .line 79
+    .line 100
     iget-object v0, p0, Lcom/iMe/storage/data/locale/prefs/impl/CryptoPreference;->gson:Lcom/google/gson/Gson;
 
     invoke-virtual {p0}, Lcom/iMe/storage/data/locale/prefs/impl/BasePreference;->getMPref()Landroid/content/SharedPreferences;
@@ -202,7 +202,7 @@
 .method public getAirdropMetadata()Lcom/iMe/storage/data/locale/prefs/model/WalletAirdropMetadata;
     .locals 5
 
-    .line 110
+    .line 163
     iget-object v0, p0, Lcom/iMe/storage/data/locale/prefs/impl/CryptoPreference;->gson:Lcom/google/gson/Gson;
 
     invoke-virtual {p0}, Lcom/iMe/storage/data/locale/prefs/impl/BasePreference;->getMPref()Landroid/content/SharedPreferences;
@@ -245,9 +245,9 @@
 
     .line 25
     :cond_0
-    new-instance v2, Lcom/iMe/storage/data/locale/prefs/impl/CryptoPreference$special$$inlined$fromJsonTokenType$4;
+    new-instance v2, Lcom/iMe/storage/data/locale/prefs/impl/CryptoPreference$special$$inlined$fromJsonTokenType$5;
 
-    invoke-direct {v2}, Lcom/iMe/storage/data/locale/prefs/impl/CryptoPreference$special$$inlined$fromJsonTokenType$4;-><init>()V
+    invoke-direct {v2}, Lcom/iMe/storage/data/locale/prefs/impl/CryptoPreference$special$$inlined$fromJsonTokenType$5;-><init>()V
 
     invoke-virtual {v2}, Lcom/google/gson/reflect/TypeToken;->getType()Ljava/lang/reflect/Type;
 
@@ -266,7 +266,7 @@
 .method public getAuthSession()Lcom/iMe/storage/data/locale/prefs/model/auth/AuthTokensMetadata;
     .locals 5
 
-    .line 116
+    .line 169
     iget-object v0, p0, Lcom/iMe/storage/data/locale/prefs/impl/CryptoPreference;->gson:Lcom/google/gson/Gson;
 
     invoke-virtual {p0}, Lcom/iMe/storage/data/locale/prefs/impl/BasePreference;->getMPref()Landroid/content/SharedPreferences;
@@ -274,56 +274,6 @@
     move-result-object v1
 
     const-string v2, "auth_session"
-
-    const/4 v3, 0x0
-
-    const/4 v4, 0x2
-
-    invoke-static {p0, v2, v3, v4, v3}, Lcom/iMe/storage/domain/storage/BasePreferenceHelper$-CC;->withTgAccount$default(Lcom/iMe/storage/domain/storage/BasePreferenceHelper;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    const-string v3, "{}"
-
-    invoke-interface {v1, v2, v3}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v1
-
-    if-nez v1, :cond_0
-
-    const-string v1, ""
-
-    .line 25
-    :cond_0
-    new-instance v2, Lcom/iMe/storage/data/locale/prefs/impl/CryptoPreference$special$$inlined$fromJsonTokenType$5;
-
-    invoke-direct {v2}, Lcom/iMe/storage/data/locale/prefs/impl/CryptoPreference$special$$inlined$fromJsonTokenType$5;-><init>()V
-
-    invoke-virtual {v2}, Lcom/google/gson/reflect/TypeToken;->getType()Ljava/lang/reflect/Type;
-
-    move-result-object v2
-
-    .line 26
-    invoke-virtual {v0, v1, v2}, Lcom/google/gson/Gson;->fromJson(Ljava/lang/String;Ljava/lang/reflect/Type;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/iMe/storage/data/locale/prefs/model/auth/AuthTokensMetadata;
-
-    return-object v0
-.end method
-
-.method public getBinanceAuthSession()Lcom/iMe/storage/data/locale/prefs/model/binancepay/BinanceAuthTokensMetadata;
-    .locals 5
-
-    .line 122
-    iget-object v0, p0, Lcom/iMe/storage/data/locale/prefs/impl/CryptoPreference;->gson:Lcom/google/gson/Gson;
-
-    invoke-virtual {p0}, Lcom/iMe/storage/data/locale/prefs/impl/BasePreference;->getMPref()Landroid/content/SharedPreferences;
-
-    move-result-object v1
-
-    const-string v2, "binance_session"
 
     const/4 v3, 0x0
 
@@ -358,6 +308,56 @@
 
     move-result-object v0
 
+    check-cast v0, Lcom/iMe/storage/data/locale/prefs/model/auth/AuthTokensMetadata;
+
+    return-object v0
+.end method
+
+.method public getBinanceAuthSession()Lcom/iMe/storage/data/locale/prefs/model/binancepay/BinanceAuthTokensMetadata;
+    .locals 5
+
+    .line 175
+    iget-object v0, p0, Lcom/iMe/storage/data/locale/prefs/impl/CryptoPreference;->gson:Lcom/google/gson/Gson;
+
+    invoke-virtual {p0}, Lcom/iMe/storage/data/locale/prefs/impl/BasePreference;->getMPref()Landroid/content/SharedPreferences;
+
+    move-result-object v1
+
+    const-string v2, "binance_session"
+
+    const/4 v3, 0x0
+
+    const/4 v4, 0x2
+
+    invoke-static {p0, v2, v3, v4, v3}, Lcom/iMe/storage/domain/storage/BasePreferenceHelper$-CC;->withTgAccount$default(Lcom/iMe/storage/domain/storage/BasePreferenceHelper;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v2
+
+    const-string v3, "{}"
+
+    invoke-interface {v1, v2, v3}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+
+    if-nez v1, :cond_0
+
+    const-string v1, ""
+
+    .line 25
+    :cond_0
+    new-instance v2, Lcom/iMe/storage/data/locale/prefs/impl/CryptoPreference$special$$inlined$fromJsonTokenType$7;
+
+    invoke-direct {v2}, Lcom/iMe/storage/data/locale/prefs/impl/CryptoPreference$special$$inlined$fromJsonTokenType$7;-><init>()V
+
+    invoke-virtual {v2}, Lcom/google/gson/reflect/TypeToken;->getType()Ljava/lang/reflect/Type;
+
+    move-result-object v2
+
+    .line 26
+    invoke-virtual {v0, v1, v2}, Lcom/google/gson/Gson;->fromJson(Ljava/lang/String;Ljava/lang/reflect/Type;)Ljava/lang/Object;
+
+    move-result-object v0
+
     check-cast v0, Lcom/iMe/storage/data/locale/prefs/model/binancepay/BinanceAuthTokensMetadata;
 
     return-object v0
@@ -366,7 +366,7 @@
 .method public getBinanceOnlyPositiveTokens()Z
     .locals 4
 
-    .line 134
+    .line 187
     invoke-virtual {p0}, Lcom/iMe/storage/data/locale/prefs/impl/BasePreference;->getMPref()Landroid/content/SharedPreferences;
 
     move-result-object v0
@@ -393,7 +393,7 @@
 .method public getBinanceTokensOrderType()Lcom/iMe/storage/domain/model/wallet/token/TokenOrderType;
     .locals 5
 
-    .line 146
+    .line 199
     sget-object v0, Lcom/iMe/storage/domain/model/wallet/token/TokenOrderType;->Companion:Lcom/iMe/storage/domain/model/wallet/token/TokenOrderType$Companion;
 
     invoke-virtual {p0}, Lcom/iMe/storage/data/locale/prefs/impl/BasePreference;->getMPref()Landroid/content/SharedPreferences;
@@ -432,10 +432,18 @@
     return-object v0
 .end method
 
-.method public getBinanceTokensSettings()Lcom/iMe/storage/data/locale/prefs/model/WalletCryptoTokensSettingsMetadata;
+.method public getBinanceTokensSettings()Ljava/util/List;
     .locals 5
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/List<",
+            "Lcom/iMe/storage/data/locale/prefs/model/TokenDisplaySettings$Binance;",
+            ">;"
+        }
+    .end annotation
 
-    .line 140
+    .line 193
     iget-object v0, p0, Lcom/iMe/storage/data/locale/prefs/impl/CryptoPreference;->gson:Lcom/google/gson/Gson;
 
     invoke-virtual {p0}, Lcom/iMe/storage/data/locale/prefs/impl/BasePreference;->getMPref()Landroid/content/SharedPreferences;
@@ -443,6 +451,56 @@
     move-result-object v1
 
     const-string v2, "binance_tokens_settings"
+
+    const/4 v3, 0x0
+
+    const/4 v4, 0x2
+
+    invoke-static {p0, v2, v3, v4, v3}, Lcom/iMe/storage/domain/storage/BasePreferenceHelper$-CC;->withTgAccount$default(Lcom/iMe/storage/domain/storage/BasePreferenceHelper;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v2
+
+    const-string v3, "[]"
+
+    invoke-interface {v1, v2, v3}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+
+    if-nez v1, :cond_0
+
+    const-string v1, ""
+
+    .line 25
+    :cond_0
+    new-instance v2, Lcom/iMe/storage/data/locale/prefs/impl/CryptoPreference$special$$inlined$fromJsonTokenType$9;
+
+    invoke-direct {v2}, Lcom/iMe/storage/data/locale/prefs/impl/CryptoPreference$special$$inlined$fromJsonTokenType$9;-><init>()V
+
+    invoke-virtual {v2}, Lcom/google/gson/reflect/TypeToken;->getType()Ljava/lang/reflect/Type;
+
+    move-result-object v2
+
+    .line 26
+    invoke-virtual {v0, v1, v2}, Lcom/google/gson/Gson;->fromJson(Ljava/lang/String;Ljava/lang/reflect/Type;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/util/List;
+
+    return-object v0
+.end method
+
+.method public getBinanceUserInfo()Lcom/iMe/storage/data/locale/prefs/model/binancepay/BinanceUserInfoMetadata;
+    .locals 5
+
+    .line 181
+    iget-object v0, p0, Lcom/iMe/storage/data/locale/prefs/impl/CryptoPreference;->gson:Lcom/google/gson/Gson;
+
+    invoke-virtual {p0}, Lcom/iMe/storage/data/locale/prefs/impl/BasePreference;->getMPref()Landroid/content/SharedPreferences;
+
+    move-result-object v1
+
+    const-string v2, "binance_user_info"
 
     const/4 v3, 0x0
 
@@ -477,86 +535,9 @@
 
     move-result-object v0
 
-    check-cast v0, Lcom/iMe/storage/data/locale/prefs/model/WalletCryptoTokensSettingsMetadata;
-
-    return-object v0
-.end method
-
-.method public getBinanceUserInfo()Lcom/iMe/storage/data/locale/prefs/model/binancepay/BinanceUserInfoMetadata;
-    .locals 5
-
-    .line 128
-    iget-object v0, p0, Lcom/iMe/storage/data/locale/prefs/impl/CryptoPreference;->gson:Lcom/google/gson/Gson;
-
-    invoke-virtual {p0}, Lcom/iMe/storage/data/locale/prefs/impl/BasePreference;->getMPref()Landroid/content/SharedPreferences;
-
-    move-result-object v1
-
-    const-string v2, "binance_user_info"
-
-    const/4 v3, 0x0
-
-    const/4 v4, 0x2
-
-    invoke-static {p0, v2, v3, v4, v3}, Lcom/iMe/storage/domain/storage/BasePreferenceHelper$-CC;->withTgAccount$default(Lcom/iMe/storage/domain/storage/BasePreferenceHelper;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    const-string v3, "{}"
-
-    invoke-interface {v1, v2, v3}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v1
-
-    if-nez v1, :cond_0
-
-    const-string v1, ""
-
-    .line 25
-    :cond_0
-    new-instance v2, Lcom/iMe/storage/data/locale/prefs/impl/CryptoPreference$special$$inlined$fromJsonTokenType$7;
-
-    invoke-direct {v2}, Lcom/iMe/storage/data/locale/prefs/impl/CryptoPreference$special$$inlined$fromJsonTokenType$7;-><init>()V
-
-    invoke-virtual {v2}, Lcom/google/gson/reflect/TypeToken;->getType()Ljava/lang/reflect/Type;
-
-    move-result-object v2
-
-    .line 26
-    invoke-virtual {v0, v1, v2}, Lcom/google/gson/Gson;->fromJson(Ljava/lang/String;Ljava/lang/reflect/Type;)Ljava/lang/Object;
-
-    move-result-object v0
-
     check-cast v0, Lcom/iMe/storage/data/locale/prefs/model/binancepay/BinanceUserInfoMetadata;
 
     return-object v0
-.end method
-
-.method public getCryptoHiddenBalance()Z
-    .locals 4
-
-    .line 73
-    invoke-virtual {p0}, Lcom/iMe/storage/data/locale/prefs/impl/BasePreference;->getMPref()Landroid/content/SharedPreferences;
-
-    move-result-object v0
-
-    const-string v1, "hidden_balance"
-
-    const/4 v2, 0x0
-
-    const/4 v3, 0x2
-
-    invoke-static {p0, v1, v2, v3, v2}, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper$-CC;->withGuid$default(Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v1
-
-    const/4 v2, 0x0
-
-    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
-
-    move-result v0
-
-    return v0
 .end method
 
 .method public synthetic getCurrentBlockchainType()Lcom/iMe/storage/domain/model/crypto/BlockchainType;
@@ -572,7 +553,7 @@
 .method public getLastLoggedInGuid()Ljava/lang/String;
     .locals 4
 
-    .line 40
+    .line 43
     invoke-virtual {p0}, Lcom/iMe/storage/data/locale/prefs/impl/BasePreference;->getMPref()Landroid/content/SharedPreferences;
 
     move-result-object v0
@@ -604,60 +585,130 @@
     return-object v2
 .end method
 
-.method public getNetworkType()Lcom/iMe/storage/domain/model/crypto/NetworkType;
-    .locals 5
+.method public getLastNetworksUpdateTime()J
+    .locals 4
 
-    .line 85
-    sget-object v0, Lcom/iMe/storage/domain/model/crypto/NetworkType;->Companion:Lcom/iMe/storage/domain/model/crypto/NetworkType$Companion;
-
+    .line 139
     invoke-virtual {p0}, Lcom/iMe/storage/data/locale/prefs/impl/BasePreference;->getMPref()Landroid/content/SharedPreferences;
+
+    move-result-object v0
+
+    const-string v1, "last_networks_update_time"
+
+    const/4 v2, 0x0
+
+    const/4 v3, 0x2
+
+    invoke-static {p0, v1, v2, v3, v2}, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper$-CC;->withGuid$default(Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Object;)Ljava/lang/String;
 
     move-result-object v1
 
-    const-string v2, "network_type"
+    const-wide/16 v2, 0x0
 
-    const/4 v3, 0x0
+    invoke-interface {v0, v1, v2, v3}, Landroid/content/SharedPreferences;->getLong(Ljava/lang/String;J)J
 
-    const/4 v4, 0x2
+    move-result-wide v0
 
-    invoke-static {p0, v2, v3, v4, v3}, Lcom/iMe/storage/domain/storage/BasePreferenceHelper$-CC;->withTgAccount$default(Lcom/iMe/storage/domain/storage/BasePreferenceHelper;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Object;)Ljava/lang/String;
+    return-wide v0
+.end method
+
+.method public getNetwork()Lcom/iMe/storage/domain/model/crypto/Network;
+    .locals 4
+
+    .line 116
+    invoke-virtual {p0}, Lcom/iMe/storage/data/locale/prefs/impl/BasePreference;->getMPref()Landroid/content/SharedPreferences;
+
+    move-result-object v0
+
+    const-string v1, "network_type"
+
+    const/4 v2, 0x0
+
+    const/4 v3, 0x2
+
+    .line 117
+    invoke-static {p0, v1, v2, v3, v2}, Lcom/iMe/storage/domain/storage/BasePreferenceHelper$-CC;->withTgAccount$default(Lcom/iMe/storage/domain/storage/BasePreferenceHelper;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v1
+
+    .line 118
+    sget-object v2, Lcom/iMe/storage/data/utils/crypto/NetworksHelper;->INSTANCE:Lcom/iMe/storage/data/utils/crypto/NetworksHelper;
+
+    invoke-virtual {v2}, Lcom/iMe/storage/data/utils/crypto/NetworksHelper;->getDefault()Lcom/iMe/storage/domain/model/crypto/Network;
 
     move-result-object v2
 
-    sget-object v3, Lcom/iMe/storage/domain/model/crypto/NetworkType;->BINANCE_SMART_CHAIN:Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    invoke-virtual {v2}, Lcom/iMe/storage/domain/model/crypto/Network;->getId()Ljava/lang/String;
 
-    invoke-virtual {v3}, Ljava/lang/Enum;->name()Ljava/lang/String;
+    move-result-object v2
 
-    move-result-object v4
+    .line 116
+    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
-    invoke-interface {v1, v2, v4}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    move-result-object v0
 
-    move-result-object v1
-
-    if-nez v1, :cond_0
-
-    .line 86
-    invoke-virtual {v3}, Ljava/lang/Enum;->name()Ljava/lang/String;
-
-    move-result-object v1
-
-    :cond_0
-    const-string v2, "mPref.getString(withTgAc\u2026.BINANCE_SMART_CHAIN.name"
-
-    .line 85
-    invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-virtual {v0, v1}, Lcom/iMe/storage/domain/model/crypto/NetworkType$Companion;->map(Ljava/lang/String;)Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    .line 115
+    invoke-static {v0}, Lcom/iMe/storage/data/utils/crypto/NetworksHelper;->getNetworkById(Ljava/lang/String;)Lcom/iMe/storage/domain/model/crypto/Network;
 
     move-result-object v0
 
     return-object v0
 .end method
 
+.method public getNetworkId()Ljava/lang/String;
+    .locals 4
+
+    .line 106
+    invoke-virtual {p0}, Lcom/iMe/storage/data/locale/prefs/impl/BasePreference;->getMPref()Landroid/content/SharedPreferences;
+
+    move-result-object v0
+
+    const-string v1, "network_type"
+
+    const/4 v2, 0x0
+
+    const/4 v3, 0x2
+
+    .line 107
+    invoke-static {p0, v1, v2, v3, v2}, Lcom/iMe/storage/domain/storage/BasePreferenceHelper$-CC;->withTgAccount$default(Lcom/iMe/storage/domain/storage/BasePreferenceHelper;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v1
+
+    .line 108
+    sget-object v2, Lcom/iMe/storage/data/utils/crypto/NetworksHelper;->INSTANCE:Lcom/iMe/storage/data/utils/crypto/NetworksHelper;
+
+    invoke-virtual {v2}, Lcom/iMe/storage/data/utils/crypto/NetworksHelper;->getDefault()Lcom/iMe/storage/domain/model/crypto/Network;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Lcom/iMe/storage/domain/model/crypto/Network;->getId()Ljava/lang/String;
+
+    move-result-object v3
+
+    .line 106
+    invoke-interface {v0, v1, v3}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    if-nez v0, :cond_0
+
+    .line 109
+    invoke-virtual {v2}, Lcom/iMe/storage/data/utils/crypto/NetworksHelper;->getDefault()Lcom/iMe/storage/domain/model/crypto/Network;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/iMe/storage/domain/model/crypto/Network;->getId()Ljava/lang/String;
+
+    move-result-object v0
+
+    :cond_0
+    return-object v0
+.end method
+
 .method public getOldWalletPublicAddress()Ljava/lang/String;
     .locals 4
 
-    .line 239
+    .line 294
     invoke-virtual {p0}, Lcom/iMe/storage/data/locale/prefs/impl/BasePreference;->getMPref()Landroid/content/SharedPreferences;
 
     move-result-object v0
@@ -692,7 +743,7 @@
 .method public getOldWalletSeed()Ljava/lang/String;
     .locals 4
 
-    .line 242
+    .line 297
     invoke-virtual {p0}, Lcom/iMe/storage/data/locale/prefs/impl/BasePreference;->getMPref()Landroid/content/SharedPreferences;
 
     move-result-object v0
@@ -727,7 +778,7 @@
 .method public getOnlyPositiveTokens()Z
     .locals 4
 
-    .line 92
+    .line 145
     invoke-virtual {p0}, Lcom/iMe/storage/data/locale/prefs/impl/BasePreference;->getMPref()Landroid/content/SharedPreferences;
 
     move-result-object v0
@@ -754,7 +805,7 @@
 .method public getPrefsVersion()I
     .locals 4
 
-    .line 34
+    .line 37
     invoke-virtual {p0}, Lcom/iMe/storage/data/locale/prefs/impl/BasePreference;->getMPref()Landroid/content/SharedPreferences;
 
     move-result-object v0
@@ -781,7 +832,7 @@
 .method public getStakingProgrammesOrderType()Lcom/iMe/storage/domain/model/wallet/staking/StakingOrderType;
     .locals 5
 
-    .line 104
+    .line 157
     sget-object v0, Lcom/iMe/storage/domain/model/wallet/staking/StakingOrderType;->Companion:Lcom/iMe/storage/domain/model/wallet/staking/StakingOrderType$Companion;
 
     invoke-virtual {p0}, Lcom/iMe/storage/data/locale/prefs/impl/BasePreference;->getMPref()Landroid/content/SharedPreferences;
@@ -820,10 +871,91 @@
     return-object v0
 .end method
 
+.method public getSupportedNetworks()Ljava/util/List;
+    .locals 5
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/List<",
+            "Lcom/iMe/storage/domain/model/crypto/Network;",
+            ">;"
+        }
+    .end annotation
+
+    .line 126
+    iget-object v0, p0, Lcom/iMe/storage/data/locale/prefs/impl/CryptoPreference;->gson:Lcom/google/gson/Gson;
+
+    .line 128
+    invoke-virtual {p0}, Lcom/iMe/storage/data/locale/prefs/impl/BasePreference;->getMPref()Landroid/content/SharedPreferences;
+
+    move-result-object v1
+
+    const-string v2, "supported_networks"
+
+    const/4 v3, 0x0
+
+    const/4 v4, 0x2
+
+    .line 129
+    invoke-static {p0, v2, v3, v4, v3}, Lcom/iMe/storage/domain/storage/BasePreferenceHelper$-CC;->withTgAccount$default(Lcom/iMe/storage/domain/storage/BasePreferenceHelper;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v2
+
+    const-string v3, "[]"
+
+    .line 128
+    invoke-interface {v1, v2, v3}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+
+    if-nez v1, :cond_0
+
+    const-string v1, ""
+
+    .line 25
+    :cond_0
+    new-instance v2, Lcom/iMe/storage/data/locale/prefs/impl/CryptoPreference$special$$inlined$fromJsonTokenType$4;
+
+    invoke-direct {v2}, Lcom/iMe/storage/data/locale/prefs/impl/CryptoPreference$special$$inlined$fromJsonTokenType$4;-><init>()V
+
+    invoke-virtual {v2}, Lcom/google/gson/reflect/TypeToken;->getType()Ljava/lang/reflect/Type;
+
+    move-result-object v2
+
+    .line 26
+    invoke-virtual {v0, v1, v2}, Lcom/google/gson/Gson;->fromJson(Ljava/lang/String;Ljava/lang/reflect/Type;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/util/Collection;
+
+    .line 133
+    invoke-interface {v0}, Ljava/util/Collection;->isEmpty()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_1
+
+    sget-object v0, Lcom/iMe/storage/data/utils/crypto/NetworksHelper;->INSTANCE:Lcom/iMe/storage/data/utils/crypto/NetworksHelper;
+
+    invoke-virtual {v0}, Lcom/iMe/storage/data/utils/crypto/NetworksHelper;->getDefault()Lcom/iMe/storage/domain/model/crypto/Network;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lkotlin/collections/CollectionsKt;->listOf(Ljava/lang/Object;)Ljava/util/List;
+
+    move-result-object v0
+
+    :cond_1
+    check-cast v0, Ljava/util/List;
+
+    return-object v0
+.end method
+
 .method public getTokensOrderType()Lcom/iMe/storage/domain/model/wallet/token/TokenOrderType;
     .locals 5
 
-    .line 98
+    .line 151
     sget-object v0, Lcom/iMe/storage/domain/model/wallet/token/TokenOrderType;->Companion:Lcom/iMe/storage/domain/model/wallet/token/TokenOrderType$Companion;
 
     invoke-virtual {p0}, Lcom/iMe/storage/data/locale/prefs/impl/BasePreference;->getMPref()Landroid/content/SharedPreferences;
@@ -862,59 +994,66 @@
     return-object v0
 .end method
 
-.method public getTokensSettings(Lcom/iMe/storage/domain/model/crypto/NetworkType;)Lcom/iMe/storage/data/locale/prefs/model/WalletCryptoTokensSettingsMetadata;
+.method public getTokensSettings(Ljava/lang/String;)Ljava/util/List;
     .locals 3
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/lang/String;",
+            ")",
+            "Ljava/util/List<",
+            "Lcom/iMe/storage/data/locale/prefs/model/TokenDisplaySettings$Crypto;",
+            ">;"
+        }
+    .end annotation
 
-    const-string v0, "networkType"
+    const-string v0, "networkId"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 185
-    invoke-virtual {p1}, Ljava/lang/Enum;->name()Ljava/lang/String;
+    const-string v0, "tokens_settings"
+
+    .line 238
+    invoke-virtual {p0, p1, v0}, Lcom/iMe/storage/data/locale/prefs/impl/BasePreference;->withPrefix(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p1
+
+    const/4 v0, 0x0
+
+    const/4 v1, 0x2
+
+    invoke-static {p0, p1, v0, v1, v0}, Lcom/iMe/storage/domain/storage/BasePreferenceHelper$-CC;->withTgAccount$default(Lcom/iMe/storage/domain/storage/BasePreferenceHelper;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p1
+
+    .line 239
+    invoke-virtual {p0}, Lcom/iMe/storage/data/locale/prefs/impl/BasePreference;->getMPref()Landroid/content/SharedPreferences;
 
     move-result-object v0
 
-    const-string v1, "tokens_settings"
+    invoke-interface {v0, p1}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z
 
-    invoke-virtual {p0, v0, v1}, Lcom/iMe/storage/data/locale/prefs/impl/BasePreference;->withPrefix(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    move-result v0
 
-    move-result-object v0
+    if-eqz v0, :cond_1
 
-    const/4 v1, 0x0
+    .line 240
+    iget-object v0, p0, Lcom/iMe/storage/data/locale/prefs/impl/CryptoPreference;->gson:Lcom/google/gson/Gson;
 
-    const/4 v2, 0x2
-
-    invoke-static {p0, v0, v1, v2, v1}, Lcom/iMe/storage/domain/storage/BasePreferenceHelper$-CC;->withTgAccount$default(Lcom/iMe/storage/domain/storage/BasePreferenceHelper;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v0
-
-    .line 186
+    .line 241
     invoke-virtual {p0}, Lcom/iMe/storage/data/locale/prefs/impl/BasePreference;->getMPref()Landroid/content/SharedPreferences;
 
     move-result-object v1
 
-    invoke-interface {v1, v0}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z
+    const-string v2, "[]"
 
-    move-result v1
+    invoke-interface {v1, p1, v2}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
-    if-eqz v1, :cond_1
+    move-result-object p1
 
-    .line 187
-    iget-object p1, p0, Lcom/iMe/storage/data/locale/prefs/impl/CryptoPreference;->gson:Lcom/google/gson/Gson;
+    if-nez p1, :cond_0
 
-    invoke-virtual {p0}, Lcom/iMe/storage/data/locale/prefs/impl/BasePreference;->getMPref()Landroid/content/SharedPreferences;
-
-    move-result-object v1
-
-    const-string v2, "{}"
-
-    invoke-interface {v1, v0, v2}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    if-nez v0, :cond_0
-
-    const-string v0, ""
+    const-string p1, ""
 
     .line 25
     :cond_0
@@ -927,51 +1066,42 @@
     move-result-object v1
 
     .line 26
-    invoke-virtual {p1, v0, v1}, Lcom/google/gson/Gson;->fromJson(Ljava/lang/String;Ljava/lang/reflect/Type;)Ljava/lang/Object;
+    invoke-virtual {v0, p1, v1}, Lcom/google/gson/Gson;->fromJson(Ljava/lang/String;Ljava/lang/reflect/Type;)Ljava/lang/Object;
 
     move-result-object p1
 
-    check-cast p1, Lcom/iMe/storage/data/locale/prefs/model/WalletCryptoTokensSettingsMetadata;
+    check-cast p1, Ljava/util/Collection;
+
+    .line 242
+    invoke-static {p1}, Lkotlin/collections/CollectionsKt;->toMutableList(Ljava/util/Collection;)Ljava/util/List;
+
+    move-result-object p1
 
     goto :goto_0
 
-    .line 189
+    .line 244
     :cond_1
-    sget-object v0, Lcom/iMe/storage/data/locale/prefs/model/WalletCryptoTokensSettingsMetadata;->Companion:Lcom/iMe/storage/data/locale/prefs/model/WalletCryptoTokensSettingsMetadata$Companion;
+    new-instance p1, Ljava/util/ArrayList;
 
-    invoke-virtual {v0, p1}, Lcom/iMe/storage/data/locale/prefs/model/WalletCryptoTokensSettingsMetadata$Companion;->getDefaultTokensSettings(Lcom/iMe/storage/domain/model/crypto/NetworkType;)Lcom/iMe/storage/data/locale/prefs/model/WalletCryptoTokensSettingsMetadata;
+    invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
+
+    .line 1045
+    :goto_0
+    new-instance v0, Lcom/iMe/storage/data/locale/prefs/impl/CryptoPreference$getTokensSettings$$inlined$sortedBy$1;
+
+    invoke-direct {v0}, Lcom/iMe/storage/data/locale/prefs/impl/CryptoPreference$getTokensSettings$$inlined$sortedBy$1;-><init>()V
+
+    invoke-static {p1, v0}, Lkotlin/collections/CollectionsKt;->sortedWith(Ljava/lang/Iterable;Ljava/util/Comparator;)Ljava/util/List;
 
     move-result-object p1
 
-    .line 191
-    :goto_0
-    invoke-virtual {p1}, Lcom/iMe/storage/data/locale/prefs/model/WalletCryptoTokensSettingsMetadata;->getStates()Ljava/util/List;
-
-    move-result-object v0
-
-    .line 1002
-    invoke-interface {v0}, Ljava/util/List;->size()I
-
-    move-result v1
-
-    const/4 v2, 0x1
-
-    if-le v1, v2, :cond_2
-
-    new-instance v1, Lcom/iMe/storage/data/locale/prefs/impl/CryptoPreference$getTokensSettings$lambda$1$$inlined$sortBy$1;
-
-    invoke-direct {v1}, Lcom/iMe/storage/data/locale/prefs/impl/CryptoPreference$getTokensSettings$lambda$1$$inlined$sortBy$1;-><init>()V
-
-    invoke-static {v0, v1}, Lkotlin/collections/CollectionsKt;->sortWith(Ljava/util/List;Ljava/util/Comparator;)V
-
-    :cond_2
     return-object p1
 .end method
 
 .method public getTonConfigJsonString()Ljava/lang/String;
     .locals 4
 
-    .line 164
+    .line 217
     invoke-virtual {p0}, Lcom/iMe/storage/data/locale/prefs/impl/BasePreference;->getMPref()Landroid/content/SharedPreferences;
 
     move-result-object v0
@@ -1014,7 +1144,7 @@
         }
     .end annotation
 
-    .line 57
+    .line 60
     iget-object v0, p0, Lcom/iMe/storage/data/locale/prefs/impl/CryptoPreference;->walletCreationDates:Lcom/iMe/storage/domain/model/PreferenceBlockchainMappedData;
 
     return-object v0
@@ -1023,7 +1153,7 @@
 .method public getWalletInfoMetadata()Lcom/iMe/storage/data/locale/prefs/model/CryptoWalletInformationMetadata;
     .locals 4
 
-    .line 67
+    .line 88
     iget-object v0, p0, Lcom/iMe/storage/data/locale/prefs/impl/CryptoPreference;->gson:Lcom/google/gson/Gson;
 
     invoke-virtual {p0}, Lcom/iMe/storage/data/locale/prefs/impl/BasePreference;->getMPref()Landroid/content/SharedPreferences;
@@ -1065,7 +1195,7 @@
 .method public getWalletPassword()Ljava/lang/String;
     .locals 4
 
-    .line 61
+    .line 64
     invoke-virtual {p0}, Lcom/iMe/storage/data/locale/prefs/impl/BasePreference;->getMPref()Landroid/content/SharedPreferences;
 
     move-result-object v0
@@ -1097,6 +1227,60 @@
     return-object v2
 .end method
 
+.method public getWalletPinCodeBadTriesCount()I
+    .locals 4
+
+    .line 70
+    invoke-virtual {p0}, Lcom/iMe/storage/data/locale/prefs/impl/BasePreference;->getMPref()Landroid/content/SharedPreferences;
+
+    move-result-object v0
+
+    const-string v1, "wallet_pin_code_bad_tries_count"
+
+    const/4 v2, 0x0
+
+    const/4 v3, 0x2
+
+    invoke-static {p0, v1, v2, v3, v2}, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper$-CC;->withGuid$default(Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v1
+
+    const/4 v2, 0x0
+
+    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getInt(Ljava/lang/String;I)I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public getWalletPinCodeTimeoutUntil()J
+    .locals 4
+
+    .line 76
+    invoke-virtual {p0}, Lcom/iMe/storage/data/locale/prefs/impl/BasePreference;->getMPref()Landroid/content/SharedPreferences;
+
+    move-result-object v0
+
+    const-string v1, "wallet_pin_code_timeout_until"
+
+    const/4 v2, 0x0
+
+    const/4 v3, 0x2
+
+    invoke-static {p0, v1, v2, v3, v2}, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper$-CC;->withGuid$default(Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v1
+
+    const-wide/16 v2, 0x0
+
+    invoke-interface {v0, v1, v2, v3}, Landroid/content/SharedPreferences;->getLong(Ljava/lang/String;J)J
+
+    move-result-wide v0
+
+    return-wide v0
+.end method
+
 .method public getWalletPublicAddresses()Lcom/iMe/storage/domain/model/PreferenceBlockchainMappedData;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
@@ -1108,7 +1292,7 @@
         }
     .end annotation
 
-    .line 51
+    .line 54
     iget-object v0, p0, Lcom/iMe/storage/data/locale/prefs/impl/CryptoPreference;->walletPublicAddresses:Lcom/iMe/storage/domain/model/PreferenceBlockchainMappedData;
 
     return-object v0
@@ -1125,24 +1309,24 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 170
+    .line 223
     iget-object v0, p0, Lcom/iMe/storage/data/locale/prefs/impl/CryptoPreference;->gson:Lcom/google/gson/Gson;
 
-    .line 171
+    .line 224
     invoke-virtual {p0}, Lcom/iMe/storage/data/locale/prefs/impl/BasePreference;->getMPref()Landroid/content/SharedPreferences;
 
     move-result-object v1
 
     const-string v2, "wallet_seed"
 
-    .line 172
+    .line 225
     invoke-virtual {p0, v2, p1}, Lcom/iMe/storage/data/locale/prefs/impl/CryptoPreference;->withGuid(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 
     const-string v2, "[]"
 
-    .line 171
+    .line 224
     invoke-interface {v1, p1, v2}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
@@ -1170,12 +1354,12 @@
 
     check-cast p1, Ljava/util/Map;
 
-    .line 175
+    .line 228
     invoke-virtual {p2}, Ljava/lang/Enum;->name()Ljava/lang/String;
 
     move-result-object p2
 
-    .line 170
+    .line 223
     invoke-interface {p1, p2}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p1
@@ -1204,16 +1388,43 @@
         }
     .end annotation
 
-    .line 54
+    .line 57
     iget-object v0, p0, Lcom/iMe/storage/data/locale/prefs/impl/CryptoPreference;->walletSeeds:Lcom/iMe/storage/domain/model/PreferenceBlockchainMappedData;
 
     return-object v0
 .end method
 
+.method public isBalanceHidden()Z
+    .locals 4
+
+    .line 94
+    invoke-virtual {p0}, Lcom/iMe/storage/data/locale/prefs/impl/BasePreference;->getMPref()Landroid/content/SharedPreferences;
+
+    move-result-object v0
+
+    const-string v1, "hidden_balance"
+
+    const/4 v2, 0x0
+
+    const/4 v3, 0x2
+
+    invoke-static {p0, v1, v2, v3, v2}, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper$-CC;->withGuid$default(Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v1
+
+    const/4 v2, 0x0
+
+    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
+
+    move-result v0
+
+    return v0
+.end method
+
 .method public isBannersVisible()Z
     .locals 4
 
-    .line 152
+    .line 205
     invoke-virtual {p0}, Lcom/iMe/storage/data/locale/prefs/impl/BasePreference;->getMPref()Landroid/content/SharedPreferences;
 
     move-result-object v0
@@ -1237,10 +1448,37 @@
     return v0
 .end method
 
+.method public isLocalEncryptionCompleted()Z
+    .locals 4
+
+    .line 82
+    invoke-virtual {p0}, Lcom/iMe/storage/data/locale/prefs/impl/BasePreference;->getMPref()Landroid/content/SharedPreferences;
+
+    move-result-object v0
+
+    const-string v1, "remote_pin_code_migration_completed"
+
+    const/4 v2, 0x0
+
+    const/4 v3, 0x2
+
+    invoke-static {p0, v1, v2, v3, v2}, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper$-CC;->withGuid$default(Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v1
+
+    const/4 v2, 0x0
+
+    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
+
+    move-result v0
+
+    return v0
+.end method
+
 .method public isQuotationsVisible()Z
     .locals 4
 
-    .line 158
+    .line 211
     invoke-virtual {p0}, Lcom/iMe/storage/data/locale/prefs/impl/BasePreference;->getMPref()Landroid/content/SharedPreferences;
 
     move-result-object v0
@@ -1265,9 +1503,9 @@
 .end method
 
 .method public resetAllTokensSettings()V
-    .locals 8
+    .locals 6
 
-    .line 200
+    .line 253
     invoke-virtual {p0}, Lcom/iMe/storage/data/locale/prefs/impl/BasePreference;->getMPref()Landroid/content/SharedPreferences;
 
     move-result-object v0
@@ -1282,50 +1520,54 @@
 
     const/4 v3, 0x2
 
-    .line 201
+    .line 254
     invoke-static {p0, v1, v2, v3, v2}, Lcom/iMe/storage/domain/storage/BasePreferenceHelper$-CC;->withTgAccount$default(Lcom/iMe/storage/domain/storage/BasePreferenceHelper;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Object;)Ljava/lang/String;
 
     move-result-object v1
 
     invoke-interface {v0, v1}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    .line 202
-    invoke-static {}, Lcom/iMe/storage/domain/model/crypto/NetworkType;->values()[Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    .line 255
+    sget-object v1, Lcom/iMe/storage/domain/model/crypto/NetworkType;->INSTANCE:Lcom/iMe/storage/domain/model/crypto/NetworkType;
+
+    invoke-virtual {v1}, Lcom/iMe/storage/domain/model/crypto/NetworkType;->getValues()Ljava/util/List;
 
     move-result-object v1
 
-    .line 13579
-    array-length v4, v1
+    .line 1855
+    invoke-interface {v1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
-    const/4 v5, 0x0
+    move-result-object v1
 
     :goto_0
-    if-ge v5, v4, :cond_0
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
-    aget-object v6, v1, v5
+    move-result v4
 
-    .line 203
-    invoke-virtual {v6}, Ljava/lang/Enum;->name()Ljava/lang/String;
+    if-eqz v4, :cond_0
 
-    move-result-object v6
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    const-string v7, "tokens_settings"
+    move-result-object v4
 
-    invoke-virtual {p0, v6, v7}, Lcom/iMe/storage/data/locale/prefs/impl/BasePreference;->withPrefix(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    check-cast v4, Ljava/lang/String;
 
-    move-result-object v6
+    const-string v5, "tokens_settings"
 
-    invoke-static {p0, v6, v2, v3, v2}, Lcom/iMe/storage/domain/storage/BasePreferenceHelper$-CC;->withTgAccount$default(Lcom/iMe/storage/domain/storage/BasePreferenceHelper;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Object;)Ljava/lang/String;
+    .line 256
+    invoke-virtual {p0, v4, v5}, Lcom/iMe/storage/data/locale/prefs/impl/BasePreference;->withPrefix(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v4
 
-    invoke-interface {v0, v6}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+    invoke-static {p0, v4, v2, v3, v2}, Lcom/iMe/storage/domain/storage/BasePreferenceHelper$-CC;->withTgAccount$default(Lcom/iMe/storage/domain/storage/BasePreferenceHelper;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Object;)Ljava/lang/String;
 
-    add-int/lit8 v5, v5, 0x1
+    move-result-object v4
+
+    invoke-interface {v0, v4}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
     goto :goto_0
 
-    .line 205
+    .line 258
     :cond_0
     invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->apply()V
 
@@ -1335,7 +1577,7 @@
 .method public resetBinanceAccount()V
     .locals 4
 
-    .line 232
+    .line 287
     invoke-virtual {p0}, Lcom/iMe/storage/data/locale/prefs/impl/BasePreference;->getMPref()Landroid/content/SharedPreferences;
 
     move-result-object v0
@@ -1350,7 +1592,7 @@
 
     const/4 v3, 0x2
 
-    .line 233
+    .line 288
     invoke-static {p0, v1, v2, v3, v2}, Lcom/iMe/storage/domain/storage/BasePreferenceHelper$-CC;->withTgAccount$default(Lcom/iMe/storage/domain/storage/BasePreferenceHelper;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Object;)Ljava/lang/String;
 
     move-result-object v1
@@ -1359,14 +1601,14 @@
 
     const-string v1, "binance_user_info"
 
-    .line 234
+    .line 289
     invoke-static {p0, v1, v2, v3, v2}, Lcom/iMe/storage/domain/storage/BasePreferenceHelper$-CC;->withTgAccount$default(Lcom/iMe/storage/domain/storage/BasePreferenceHelper;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Object;)Ljava/lang/String;
 
     move-result-object v1
 
     invoke-interface {v0, v1}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    .line 235
+    .line 290
     invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->apply()V
 
     return-void
@@ -1375,7 +1617,7 @@
 .method public resetBinanceTokensSettings()V
     .locals 4
 
-    .line 225
+    .line 280
     invoke-virtual {p0}, Lcom/iMe/storage/data/locale/prefs/impl/BasePreference;->getMPref()Landroid/content/SharedPreferences;
 
     move-result-object v0
@@ -1390,7 +1632,7 @@
 
     const/4 v3, 0x2
 
-    .line 226
+    .line 281
     invoke-static {p0, v1, v2, v3, v2}, Lcom/iMe/storage/domain/storage/BasePreferenceHelper$-CC;->withTgAccount$default(Lcom/iMe/storage/domain/storage/BasePreferenceHelper;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Object;)Ljava/lang/String;
 
     move-result-object v1
@@ -1399,14 +1641,14 @@
 
     const-string v1, "binance_tokens_settings"
 
-    .line 227
+    .line 282
     invoke-static {p0, v1, v2, v3, v2}, Lcom/iMe/storage/domain/storage/BasePreferenceHelper$-CC;->withTgAccount$default(Lcom/iMe/storage/domain/storage/BasePreferenceHelper;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Object;)Ljava/lang/String;
 
     move-result-object v1
 
     invoke-interface {v0, v1}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    .line 228
+    .line 283
     invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->apply()V
 
     return-void
@@ -1415,7 +1657,7 @@
 .method public resetOldWalletData()V
     .locals 5
 
-    .line 245
+    .line 300
     invoke-virtual {p0}, Lcom/iMe/storage/data/locale/prefs/impl/BasePreference;->getMPref()Landroid/content/SharedPreferences;
 
     move-result-object v0
@@ -1428,12 +1670,12 @@
 
     const-string v2, "wallet_seed"
 
-    .line 248
+    .line 303
     filled-new-array {v1, v2}, [Ljava/lang/String;
 
     move-result-object v1
 
-    .line 246
+    .line 301
     invoke-static {v1}, Lkotlin/collections/CollectionsKt;->listOf([Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object v1
@@ -1460,7 +1702,7 @@
 
     const/4 v4, 0x0
 
-    .line 249
+    .line 304
     invoke-static {p0, v2, v4, v3, v4}, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper$-CC;->withGuid$default(Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Object;)Ljava/lang/String;
 
     move-result-object v2
@@ -1469,7 +1711,7 @@
 
     goto :goto_0
 
-    .line 250
+    .line 305
     :cond_0
     invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->apply()V
 
@@ -1477,13 +1719,13 @@
 .end method
 
 .method public resetTokensSettingsByBlockchainType(Lcom/iMe/storage/domain/model/crypto/BlockchainType;)V
-    .locals 5
+    .locals 7
 
     const-string v0, "blockchainType"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 216
+    .line 269
     invoke-virtual {p0}, Lcom/iMe/storage/data/locale/prefs/impl/BasePreference;->getMPref()Landroid/content/SharedPreferences;
 
     move-result-object v0
@@ -1498,40 +1740,87 @@
 
     const/4 v3, 0x2
 
-    .line 217
+    .line 270
     invoke-static {p0, v1, v2, v3, v2}, Lcom/iMe/storage/domain/storage/BasePreferenceHelper$-CC;->withTgAccount$default(Lcom/iMe/storage/domain/storage/BasePreferenceHelper;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Object;)Ljava/lang/String;
 
     move-result-object v1
 
     invoke-interface {v0, v1}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    .line 218
-    sget-object v1, Lcom/iMe/storage/domain/model/crypto/NetworkType;->Companion:Lcom/iMe/storage/domain/model/crypto/NetworkType$Companion;
+    .line 271
+    invoke-virtual {p0}, Lcom/iMe/storage/data/locale/prefs/impl/CryptoPreference;->getSupportedNetworks()Ljava/util/List;
 
-    invoke-virtual {v1, p1}, Lcom/iMe/storage/domain/model/crypto/NetworkType$Companion;->getNetworksByBlockchain(Lcom/iMe/storage/domain/model/crypto/BlockchainType;)Ljava/util/List;
+    move-result-object v1
 
-    move-result-object p1
+    .line 766
+    new-instance v4, Ljava/util/ArrayList;
+
+    invoke-direct {v4}, Ljava/util/ArrayList;-><init>()V
+
+    .line 857
+    invoke-interface {v1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    :cond_0
+    :goto_0
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v5
+
+    if-eqz v5, :cond_2
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v5
+
+    move-object v6, v5
+
+    check-cast v6, Lcom/iMe/storage/domain/model/crypto/Network;
+
+    .line 272
+    invoke-virtual {v6}, Lcom/iMe/storage/domain/model/crypto/Network;->getBlockchainType()Lcom/iMe/storage/domain/model/crypto/BlockchainType;
+
+    move-result-object v6
+
+    if-ne v6, p1, :cond_1
+
+    const/4 v6, 0x1
+
+    goto :goto_1
+
+    :cond_1
+    const/4 v6, 0x0
+
+    :goto_1
+    if-eqz v6, :cond_0
+
+    .line 857
+    invoke-interface {v4, v5}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
+
+    goto :goto_0
 
     .line 1855
-    invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+    :cond_2
+    invoke-interface {v4}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object p1
 
-    :goto_0
+    :goto_2
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_0
+    if-eqz v1, :cond_3
 
     invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v1
 
-    check-cast v1, Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    check-cast v1, Lcom/iMe/storage/domain/model/crypto/Network;
 
-    .line 219
-    invoke-virtual {v1}, Ljava/lang/Enum;->name()Ljava/lang/String;
+    .line 274
+    invoke-virtual {v1}, Lcom/iMe/storage/domain/model/crypto/Network;->getId()Ljava/lang/String;
 
     move-result-object v1
 
@@ -1547,79 +1836,37 @@
 
     invoke-interface {v0, v1}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    goto :goto_0
+    goto :goto_2
 
-    .line 221
-    :cond_0
+    .line 276
+    :cond_3
     invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->apply()V
 
     return-void
 .end method
 
-.method public resetTokensSettingsByNetwork(Lcom/iMe/storage/domain/model/crypto/NetworkType;)V
-    .locals 4
-
-    const-string v0, "networkType"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    .line 209
-    invoke-virtual {p0}, Lcom/iMe/storage/data/locale/prefs/impl/BasePreference;->getMPref()Landroid/content/SharedPreferences;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
-
-    move-result-object v0
-
-    const-string v1, "tokens_only_positive"
-
-    const/4 v2, 0x0
-
-    const/4 v3, 0x2
-
-    .line 210
-    invoke-static {p0, v1, v2, v3, v2}, Lcom/iMe/storage/domain/storage/BasePreferenceHelper$-CC;->withTgAccount$default(Lcom/iMe/storage/domain/storage/BasePreferenceHelper;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-interface {v0, v1}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
-
-    .line 211
-    invoke-virtual {p1}, Ljava/lang/Enum;->name()Ljava/lang/String;
-
-    move-result-object p1
-
-    const-string v1, "tokens_settings"
-
-    invoke-virtual {p0, p1, v1}, Lcom/iMe/storage/data/locale/prefs/impl/BasePreference;->withPrefix(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-static {p0, p1, v2, v3, v2}, Lcom/iMe/storage/domain/storage/BasePreferenceHelper$-CC;->withTgAccount$default(Lcom/iMe/storage/domain/storage/BasePreferenceHelper;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Object;)Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-interface {v0, p1}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
-
-    .line 212
-    invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->apply()V
-
-    return-void
-.end method
-
-.method public saveTokensSettings(Lcom/iMe/storage/data/locale/prefs/model/WalletCryptoTokensSettingsMetadata;Lcom/iMe/storage/domain/model/crypto/NetworkType;)V
+.method public saveTokensSettings(Ljava/util/List;Ljava/lang/String;)V
     .locals 3
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/List<",
+            "Lcom/iMe/storage/data/locale/prefs/model/TokenDisplaySettings$Crypto;",
+            ">;",
+            "Ljava/lang/String;",
+            ")V"
+        }
+    .end annotation
 
     const-string v0, "settings"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "networkType"
+    const-string v0, "networkId"
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 196
+    .line 249
     invoke-virtual {p0}, Lcom/iMe/storage/data/locale/prefs/impl/BasePreference;->getMPref()Landroid/content/SharedPreferences;
 
     move-result-object v0
@@ -1627,10 +1874,6 @@
     invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
     move-result-object v0
-
-    invoke-virtual {p2}, Ljava/lang/Enum;->name()Ljava/lang/String;
-
-    move-result-object p2
 
     const-string v1, "tokens_settings"
 
@@ -1668,7 +1911,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 81
+    .line 102
     invoke-virtual {p0}, Lcom/iMe/storage/data/locale/prefs/impl/BasePreference;->getMPref()Landroid/content/SharedPreferences;
 
     move-result-object v0
@@ -1701,7 +1944,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 112
+    .line 165
     invoke-virtual {p0}, Lcom/iMe/storage/data/locale/prefs/impl/BasePreference;->getMPref()Landroid/content/SharedPreferences;
 
     move-result-object v0
@@ -1746,7 +1989,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 118
+    .line 171
     invoke-virtual {p0}, Lcom/iMe/storage/data/locale/prefs/impl/BasePreference;->getMPref()Landroid/content/SharedPreferences;
 
     move-result-object v0
@@ -1780,10 +2023,41 @@
     return-void
 .end method
 
+.method public setBalanceHidden(Z)V
+    .locals 4
+
+    .line 96
+    invoke-virtual {p0}, Lcom/iMe/storage/data/locale/prefs/impl/BasePreference;->getMPref()Landroid/content/SharedPreferences;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
+
+    move-result-object v0
+
+    const-string v1, "hidden_balance"
+
+    const/4 v2, 0x0
+
+    const/4 v3, 0x2
+
+    invoke-static {p0, v1, v2, v3, v2}, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper$-CC;->withGuid$default(Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-interface {v0, v1, p1}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
+
+    move-result-object p1
+
+    invoke-interface {p1}, Landroid/content/SharedPreferences$Editor;->apply()V
+
+    return-void
+.end method
+
 .method public setBannersVisible(Z)V
     .locals 4
 
-    .line 154
+    .line 207
     invoke-virtual {p0}, Lcom/iMe/storage/data/locale/prefs/impl/BasePreference;->getMPref()Landroid/content/SharedPreferences;
 
     move-result-object v0
@@ -1818,7 +2092,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 124
+    .line 177
     invoke-virtual {p0}, Lcom/iMe/storage/data/locale/prefs/impl/BasePreference;->getMPref()Landroid/content/SharedPreferences;
 
     move-result-object v0
@@ -1855,7 +2129,7 @@
 .method public setBinanceOnlyPositiveTokens(Z)V
     .locals 4
 
-    .line 136
+    .line 189
     invoke-virtual {p0}, Lcom/iMe/storage/data/locale/prefs/impl/BasePreference;->getMPref()Landroid/content/SharedPreferences;
 
     move-result-object v0
@@ -1890,7 +2164,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 148
+    .line 201
     invoke-virtual {p0}, Lcom/iMe/storage/data/locale/prefs/impl/BasePreference;->getMPref()Landroid/content/SharedPreferences;
 
     move-result-object v0
@@ -1922,14 +2196,22 @@
     return-void
 .end method
 
-.method public setBinanceTokensSettings(Lcom/iMe/storage/data/locale/prefs/model/WalletCryptoTokensSettingsMetadata;)V
+.method public setBinanceTokensSettings(Ljava/util/List;)V
     .locals 4
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/List<",
+            "Lcom/iMe/storage/data/locale/prefs/model/TokenDisplaySettings$Binance;",
+            ">;)V"
+        }
+    .end annotation
 
     const-string v0, "value"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 142
+    .line 195
     invoke-virtual {p0}, Lcom/iMe/storage/data/locale/prefs/impl/BasePreference;->getMPref()Landroid/content/SharedPreferences;
 
     move-result-object v0
@@ -1970,7 +2252,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 130
+    .line 183
     invoke-virtual {p0}, Lcom/iMe/storage/data/locale/prefs/impl/BasePreference;->getMPref()Landroid/content/SharedPreferences;
 
     move-result-object v0
@@ -2004,37 +2286,6 @@
     return-void
 .end method
 
-.method public setCryptoHiddenBalance(Z)V
-    .locals 4
-
-    .line 75
-    invoke-virtual {p0}, Lcom/iMe/storage/data/locale/prefs/impl/BasePreference;->getMPref()Landroid/content/SharedPreferences;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
-
-    move-result-object v0
-
-    const-string v1, "hidden_balance"
-
-    const/4 v2, 0x0
-
-    const/4 v3, 0x2
-
-    invoke-static {p0, v1, v2, v3, v2}, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper$-CC;->withGuid$default(Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-interface {v0, v1, p1}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
-
-    move-result-object p1
-
-    invoke-interface {p1}, Landroid/content/SharedPreferences$Editor;->apply()V
-
-    return-void
-.end method
-
 .method public setLastLoggedInGuid(Ljava/lang/String;)V
     .locals 4
 
@@ -2042,7 +2293,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 42
+    .line 45
     invoke-virtual {p0}, Lcom/iMe/storage/data/locale/prefs/impl/BasePreference;->getMPref()Landroid/content/SharedPreferences;
 
     move-result-object v0
@@ -2070,14 +2321,76 @@
     return-void
 .end method
 
-.method public setNetworkType(Lcom/iMe/storage/domain/model/crypto/NetworkType;)V
+.method public setLastNetworksUpdateTime(J)V
+    .locals 4
+
+    .line 141
+    invoke-virtual {p0}, Lcom/iMe/storage/data/locale/prefs/impl/BasePreference;->getMPref()Landroid/content/SharedPreferences;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
+
+    move-result-object v0
+
+    const-string v1, "last_networks_update_time"
+
+    const/4 v2, 0x0
+
+    const/4 v3, 0x2
+
+    invoke-static {p0, v1, v2, v3, v2}, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper$-CC;->withGuid$default(Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-interface {v0, v1, p1, p2}, Landroid/content/SharedPreferences$Editor;->putLong(Ljava/lang/String;J)Landroid/content/SharedPreferences$Editor;
+
+    move-result-object p1
+
+    invoke-interface {p1}, Landroid/content/SharedPreferences$Editor;->apply()V
+
+    return-void
+.end method
+
+.method public setLocalEncryptionCompleted(Z)V
+    .locals 4
+
+    .line 84
+    invoke-virtual {p0}, Lcom/iMe/storage/data/locale/prefs/impl/BasePreference;->getMPref()Landroid/content/SharedPreferences;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
+
+    move-result-object v0
+
+    const-string v1, "remote_pin_code_migration_completed"
+
+    const/4 v2, 0x0
+
+    const/4 v3, 0x2
+
+    invoke-static {p0, v1, v2, v3, v2}, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper$-CC;->withGuid$default(Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-interface {v0, v1, p1}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
+
+    move-result-object p1
+
+    invoke-interface {p1}, Landroid/content/SharedPreferences$Editor;->apply()V
+
+    return-void
+.end method
+
+.method public setNetwork(Lcom/iMe/storage/domain/model/crypto/Network;)V
     .locals 4
 
     const-string v0, "value"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 88
+    .line 122
     invoke-virtual {p0}, Lcom/iMe/storage/data/locale/prefs/impl/BasePreference;->getMPref()Landroid/content/SharedPreferences;
 
     move-result-object v0
@@ -2096,9 +2409,44 @@
 
     move-result-object v1
 
-    invoke-virtual {p1}, Ljava/lang/Enum;->name()Ljava/lang/String;
+    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/crypto/Network;->getId()Ljava/lang/String;
 
     move-result-object p1
+
+    invoke-interface {v0, v1, p1}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+
+    move-result-object p1
+
+    invoke-interface {p1}, Landroid/content/SharedPreferences$Editor;->apply()V
+
+    return-void
+.end method
+
+.method public setNetworkId(Ljava/lang/String;)V
+    .locals 4
+
+    const-string v0, "value"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 111
+    invoke-virtual {p0}, Lcom/iMe/storage/data/locale/prefs/impl/BasePreference;->getMPref()Landroid/content/SharedPreferences;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
+
+    move-result-object v0
+
+    const-string v1, "network_type"
+
+    const/4 v2, 0x0
+
+    const/4 v3, 0x2
+
+    invoke-static {p0, v1, v2, v3, v2}, Lcom/iMe/storage/domain/storage/BasePreferenceHelper$-CC;->withTgAccount$default(Lcom/iMe/storage/domain/storage/BasePreferenceHelper;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v1
 
     invoke-interface {v0, v1, p1}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
@@ -2112,7 +2460,7 @@
 .method public setOnlyPositiveTokens(Z)V
     .locals 4
 
-    .line 94
+    .line 147
     invoke-virtual {p0}, Lcom/iMe/storage/data/locale/prefs/impl/BasePreference;->getMPref()Landroid/content/SharedPreferences;
 
     move-result-object v0
@@ -2143,7 +2491,7 @@
 .method public setPrefsVersion(I)V
     .locals 4
 
-    .line 36
+    .line 39
     invoke-virtual {p0}, Lcom/iMe/storage/data/locale/prefs/impl/BasePreference;->getMPref()Landroid/content/SharedPreferences;
 
     move-result-object v0
@@ -2174,7 +2522,7 @@
 .method public setQuotationsVisible(Z)V
     .locals 4
 
-    .line 160
+    .line 213
     invoke-virtual {p0}, Lcom/iMe/storage/data/locale/prefs/impl/BasePreference;->getMPref()Landroid/content/SharedPreferences;
 
     move-result-object v0
@@ -2209,7 +2557,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 106
+    .line 159
     invoke-virtual {p0}, Lcom/iMe/storage/data/locale/prefs/impl/BasePreference;->getMPref()Landroid/content/SharedPreferences;
 
     move-result-object v0
@@ -2241,6 +2589,55 @@
     return-void
 .end method
 
+.method public setSupportedNetworks(Ljava/util/List;)V
+    .locals 4
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/List<",
+            "Lcom/iMe/storage/domain/model/crypto/Network;",
+            ">;)V"
+        }
+    .end annotation
+
+    const-string v0, "value"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 135
+    invoke-virtual {p0}, Lcom/iMe/storage/data/locale/prefs/impl/BasePreference;->getMPref()Landroid/content/SharedPreferences;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
+
+    move-result-object v0
+
+    const-string v1, "supported_networks"
+
+    const/4 v2, 0x0
+
+    const/4 v3, 0x2
+
+    invoke-static {p0, v1, v2, v3, v2}, Lcom/iMe/storage/domain/storage/BasePreferenceHelper$-CC;->withTgAccount$default(Lcom/iMe/storage/domain/storage/BasePreferenceHelper;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v1
+
+    iget-object v2, p0, Lcom/iMe/storage/data/locale/prefs/impl/CryptoPreference;->gson:Lcom/google/gson/Gson;
+
+    invoke-virtual {v2, p1}, Lcom/google/gson/Gson;->toJson(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-interface {v0, v1, p1}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+
+    move-result-object p1
+
+    invoke-interface {p1}, Landroid/content/SharedPreferences$Editor;->apply()V
+
+    return-void
+.end method
+
 .method public setTokensOrderType(Lcom/iMe/storage/domain/model/wallet/token/TokenOrderType;)V
     .locals 4
 
@@ -2248,7 +2645,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 100
+    .line 153
     invoke-virtual {p0}, Lcom/iMe/storage/data/locale/prefs/impl/BasePreference;->getMPref()Landroid/content/SharedPreferences;
 
     move-result-object v0
@@ -2287,7 +2684,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 166
+    .line 219
     invoke-virtual {p0}, Lcom/iMe/storage/data/locale/prefs/impl/BasePreference;->getMPref()Landroid/content/SharedPreferences;
 
     move-result-object v0
@@ -2322,7 +2719,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 69
+    .line 90
     invoke-virtual {p0}, Lcom/iMe/storage/data/locale/prefs/impl/BasePreference;->getMPref()Landroid/content/SharedPreferences;
 
     move-result-object v0
@@ -2355,7 +2752,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 63
+    .line 66
     invoke-virtual {p0}, Lcom/iMe/storage/data/locale/prefs/impl/BasePreference;->getMPref()Landroid/content/SharedPreferences;
 
     move-result-object v0
@@ -2383,6 +2780,68 @@
     return-void
 .end method
 
+.method public setWalletPinCodeBadTriesCount(I)V
+    .locals 4
+
+    .line 72
+    invoke-virtual {p0}, Lcom/iMe/storage/data/locale/prefs/impl/BasePreference;->getMPref()Landroid/content/SharedPreferences;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
+
+    move-result-object v0
+
+    const-string v1, "wallet_pin_code_bad_tries_count"
+
+    const/4 v2, 0x0
+
+    const/4 v3, 0x2
+
+    invoke-static {p0, v1, v2, v3, v2}, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper$-CC;->withGuid$default(Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-interface {v0, v1, p1}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
+
+    move-result-object p1
+
+    invoke-interface {p1}, Landroid/content/SharedPreferences$Editor;->apply()V
+
+    return-void
+.end method
+
+.method public setWalletPinCodeTimeoutUntil(J)V
+    .locals 4
+
+    .line 78
+    invoke-virtual {p0}, Lcom/iMe/storage/data/locale/prefs/impl/BasePreference;->getMPref()Landroid/content/SharedPreferences;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
+
+    move-result-object v0
+
+    const-string v1, "wallet_pin_code_timeout_until"
+
+    const/4 v2, 0x0
+
+    const/4 v3, 0x2
+
+    invoke-static {p0, v1, v2, v3, v2}, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper$-CC;->withGuid$default(Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-interface {v0, v1, p1, p2}, Landroid/content/SharedPreferences$Editor;->putLong(Ljava/lang/String;J)Landroid/content/SharedPreferences$Editor;
+
+    move-result-object p1
+
+    invoke-interface {p1}, Landroid/content/SharedPreferences$Editor;->apply()V
+
+    return-void
+.end method
+
 .method public setWalletsGuid(Ljava/util/List;)V
     .locals 4
     .annotation system Ldalvik/annotation/Signature;
@@ -2398,7 +2857,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 48
+    .line 51
     invoke-virtual {p0}, Lcom/iMe/storage/data/locale/prefs/impl/BasePreference;->getMPref()Landroid/content/SharedPreferences;
 
     move-result-object v0
@@ -2443,7 +2902,7 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 255
+    .line 310
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

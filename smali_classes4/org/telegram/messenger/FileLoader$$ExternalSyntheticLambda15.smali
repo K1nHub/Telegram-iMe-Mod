@@ -16,9 +16,11 @@
 
 .field public final synthetic f$4:J
 
+.field public final synthetic f$5:Ljava/lang/Float;
+
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/messenger/FileLoader;ZLjava/lang/String;JJ)V
+.method public synthetic constructor <init>(Lorg/telegram/messenger/FileLoader;ZLjava/lang/String;JJLjava/lang/Float;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -33,13 +35,15 @@
 
     iput-wide p6, p0, Lorg/telegram/messenger/FileLoader$$ExternalSyntheticLambda15;->f$4:J
 
+    iput-object p8, p0, Lorg/telegram/messenger/FileLoader$$ExternalSyntheticLambda15;->f$5:Ljava/lang/Float;
+
     return-void
 .end method
 
 
 # virtual methods
 .method public final run()V
-    .locals 7
+    .locals 8
 
     iget-object v0, p0, Lorg/telegram/messenger/FileLoader$$ExternalSyntheticLambda15;->f$0:Lorg/telegram/messenger/FileLoader;
 
@@ -51,7 +55,9 @@
 
     iget-wide v5, p0, Lorg/telegram/messenger/FileLoader$$ExternalSyntheticLambda15;->f$4:J
 
-    invoke-static/range {v0 .. v6}, Lorg/telegram/messenger/FileLoader;->$r8$lambda$kTtK_2qosLhqwtwnJAzZgIsg64U(Lorg/telegram/messenger/FileLoader;ZLjava/lang/String;JJ)V
+    iget-object v7, p0, Lorg/telegram/messenger/FileLoader$$ExternalSyntheticLambda15;->f$5:Ljava/lang/Float;
+
+    invoke-static/range {v0 .. v7}, Lorg/telegram/messenger/FileLoader;->$r8$lambda$QDBEv6woYTex4jBYVplNDIpPvag(Lorg/telegram/messenger/FileLoader;ZLjava/lang/String;JJLjava/lang/Float;)V
 
     return-void
 .end method

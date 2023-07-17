@@ -13,12 +13,12 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.iMe.common.IdFabric$ViewTypes;
+import com.iMe.fork.p024ui.view.EmptyView;
 import com.iMe.fork.utils.Callbacks$Callback1;
 import com.iMe.model.translation.TranslationLanguageUiModel;
 import com.iMe.p031ui.contacts.view.TextCellWithRightImage;
@@ -35,16 +35,15 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt__StringsJVMKt;
 import kotlin.text.StringsKt__StringsKt;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3295R;
+import org.telegram.messenger.C3417R;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.SharedConfig;
-import org.telegram.p044ui.ActionBar.BottomSheet;
-import org.telegram.p044ui.ActionBar.Theme;
-import org.telegram.p044ui.Components.LayoutHelper;
-import org.telegram.p044ui.Components.RLottieImageView;
-import org.telegram.p044ui.Components.RecyclerListView;
-import org.telegram.p044ui.Components.SearchField;
+import org.telegram.p043ui.ActionBar.BottomSheet;
+import org.telegram.p043ui.ActionBar.Theme;
+import org.telegram.p043ui.Components.LayoutHelper;
+import org.telegram.p043ui.Components.RecyclerListView;
+import org.telegram.p043ui.Components.SearchField;
 /* compiled from: SelectLanguageBottomSheet.kt */
 /* renamed from: com.iMe.fork.ui.dialog.SelectLanguageBottomSheet */
 /* loaded from: classes3.dex */
@@ -71,7 +70,7 @@ public final class SelectLanguageBottomSheet extends BottomSheet {
         new Companion(null);
     }
 
-    @Override // org.telegram.p044ui.ActionBar.BottomSheet
+    @Override // org.telegram.p043ui.ActionBar.BottomSheet
     protected boolean canDismissWithSwipe() {
         return false;
     }
@@ -160,7 +159,7 @@ public final class SelectLanguageBottomSheet extends BottomSheet {
         final Context context = getContext();
         final Theme.ResourcesProvider resourcesProvider = this.resourcesProvider;
         ?? r2 = new SearchField(context, resourcesProvider) { // from class: com.iMe.fork.ui.dialog.SelectLanguageBottomSheet$initSearchView$1
-            @Override // org.telegram.p044ui.Components.SearchField
+            @Override // org.telegram.p043ui.Components.SearchField
             public void onTextChange(String str) {
                 boolean isBlank;
                 boolean z;
@@ -187,7 +186,7 @@ public final class SelectLanguageBottomSheet extends BottomSheet {
                 SelectLanguageBottomSheet.this.getListAdapter().notifyDataSetChanged();
             }
         };
-        r2.setHint(LocaleController.getInternalString(C3295R.string.translation_search_language));
+        r2.setHint(LocaleController.getInternalString(C3417R.string.translation_search_language));
         return r2;
     }
 
@@ -199,7 +198,7 @@ public final class SelectLanguageBottomSheet extends BottomSheet {
         textView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
         textView.setGravity(17);
         textView.setBackground(Theme.createSelectorWithBackgroundDrawable(Theme.getColor(Theme.key_dialogBackground), Theme.getColor(Theme.key_listSelector)));
-        textView.setText(LocaleController.getString("Cancel", C3295R.string.Cancel));
+        textView.setText(LocaleController.getString("Cancel", C3417R.string.Cancel));
         textView.setTextColor(Theme.getColor(Theme.key_dialogTextBlue2));
         textView.setOnClickListener(new View.OnClickListener() { // from class: com.iMe.fork.ui.dialog.SelectLanguageBottomSheet$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
@@ -221,7 +220,7 @@ public final class SelectLanguageBottomSheet extends BottomSheet {
     public final SelectLanguageBottomSheet$initListView$1 initListView() {
         final Context context = getContext();
         ?? r1 = new RecyclerListView(context) { // from class: com.iMe.fork.ui.dialog.SelectLanguageBottomSheet$initListView$1
-            @Override // org.telegram.p044ui.Components.RecyclerListView, androidx.recyclerview.widget.RecyclerView, android.view.View, android.view.ViewParent
+            @Override // org.telegram.p043ui.Components.RecyclerListView, androidx.recyclerview.widget.RecyclerView, android.view.View, android.view.ViewParent
             public void requestLayout() {
                 if (SelectLanguageBottomSheet.this.ignoreLayout) {
                     return;
@@ -256,7 +255,7 @@ public final class SelectLanguageBottomSheet extends BottomSheet {
             }
         });
         listView.setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: com.iMe.fork.ui.dialog.SelectLanguageBottomSheet$$ExternalSyntheticLambda1
-            @Override // org.telegram.p044ui.Components.RecyclerListView.OnItemClickListener
+            @Override // org.telegram.p043ui.Components.RecyclerListView.OnItemClickListener
             public final void onItemClick(View view, int i) {
                 SelectLanguageBottomSheet.setupListeners$lambda$7$lambda$6(SelectLanguageBottomSheet.this, view, i);
             }
@@ -556,7 +555,7 @@ public final class SelectLanguageBottomSheet extends BottomSheet {
         public ListAdapter() {
         }
 
-        @Override // org.telegram.p044ui.Components.RecyclerListView.SelectionAdapter
+        @Override // org.telegram.p043ui.Components.RecyclerListView.SelectionAdapter
         public boolean isEnabled(RecyclerView.ViewHolder viewHolder) {
             return (viewHolder == null || viewHolder.getItemViewType() != IdFabric$ViewTypes.TEXT_CELL_WITH_RIGHT_IMAGE || SelectLanguageBottomSheet.this.isSelectedLanguagePosition(viewHolder.getAdapterPosition())) ? false : true;
         }
@@ -574,18 +573,17 @@ public final class SelectLanguageBottomSheet extends BottomSheet {
             return SelectLanguageBottomSheet.this.getCurrentItemsList().isEmpty() ? IdFabric$ViewTypes.EMPTY_VIEW : IdFabric$ViewTypes.TEXT_CELL_WITH_RIGHT_IMAGE;
         }
 
-        /* JADX WARN: Multi-variable type inference failed */
-        /* JADX WARN: Type inference failed for: r3v4, types: [android.widget.LinearLayout, com.iMe.fork.ui.dialog.SelectLanguageBottomSheet$EmptyView] */
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
         public RecyclerListView.Holder onCreateViewHolder(ViewGroup parent, int i) {
-            TextCellWithRightImage textCellWithRightImage;
+            FrameLayout textCellWithRightImage;
             Intrinsics.checkNotNullParameter(parent, "parent");
             if (i == IdFabric$ViewTypes.EMPTY_VIEW) {
                 Context context = SelectLanguageBottomSheet.this.getContext();
                 Intrinsics.checkNotNullExpressionValue(context, "context");
-                ?? emptyView = new EmptyView(context);
-                emptyView.setLayoutParams(LayoutHelper.createRecycler(-1, ImageReceiver.DEFAULT_CROSSFADE_DURATION));
-                textCellWithRightImage = emptyView;
+                String internalString = LocaleController.getInternalString(C3417R.string.translation_search_language_empty);
+                Intrinsics.checkNotNullExpressionValue(internalString, "getInternalString(R.stri…on_search_language_empty)");
+                textCellWithRightImage = new EmptyView(context, internalString);
+                textCellWithRightImage.setLayoutParams(LayoutHelper.createRecycler(-1, ImageReceiver.DEFAULT_CROSSFADE_DURATION));
             } else {
                 Context context2 = SelectLanguageBottomSheet.this.getContext();
                 Intrinsics.checkNotNullExpressionValue(context2, "context");
@@ -608,46 +606,12 @@ public final class SelectLanguageBottomSheet extends BottomSheet {
                 SelectLanguageBottomSheet selectLanguageBottomSheet = SelectLanguageBottomSheet.this;
                 textCellWithRightImage.setText(((TranslationLanguageUiModel) selectLanguageBottomSheet.getCurrentItemsList().get(i)).getDisplayLanguage(), z);
                 textCellWithRightImage.setRightIconVisible(selectLanguageBottomSheet.isSelectedLanguagePosition(i));
-                textCellWithRightImage.setRightIcon(C3295R.C3297drawable.ic_ab_done, Theme.getColor(Theme.key_chats_actionBackground));
+                textCellWithRightImage.setRightIcon(C3417R.C3419drawable.ic_ab_done, Theme.getColor(Theme.key_chats_actionBackground));
             } else if (itemViewType == IdFabric$ViewTypes.EMPTY_VIEW) {
                 View view2 = holder.itemView;
-                Intrinsics.checkNotNull(view2, "null cannot be cast to non-null type com.iMe.fork.ui.dialog.SelectLanguageBottomSheet.EmptyView");
+                Intrinsics.checkNotNull(view2, "null cannot be cast to non-null type com.iMe.fork.ui.view.EmptyView");
                 ((EmptyView) view2).getAnimationView().playAnimation();
             }
-        }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    /* compiled from: SelectLanguageBottomSheet.kt */
-    /* renamed from: com.iMe.fork.ui.dialog.SelectLanguageBottomSheet$EmptyView */
-    /* loaded from: classes3.dex */
-    public static final class EmptyView extends LinearLayout {
-        private final RLottieImageView animationView;
-
-        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public EmptyView(Context context) {
-            super(context);
-            Intrinsics.checkNotNullParameter(context, "context");
-            RLottieImageView rLottieImageView = new RLottieImageView(context);
-            rLottieImageView.setAutoRepeat(true);
-            rLottieImageView.setAnimation(C3295R.raw.fork_catalog_empty, 100, 100);
-            ViewExtKt.setHorizontalPadding(rLottieImageView, 32);
-            this.animationView = rLottieImageView;
-            setOrientation(1);
-            setGravity(17);
-            addView(rLottieImageView);
-            TextView textView = new TextView(context);
-            textView.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteBlackText));
-            textView.setTextSize(1, 16.0f);
-            ViewExtKt.withMediumTypeface(textView);
-            textView.setGravity(17);
-            textView.setText(LocaleController.getInternalString(C3295R.string.translation_search_language_empty));
-            textView.setPadding(32, 32, 32, 32);
-            addView(textView);
-        }
-
-        public final RLottieImageView getAnimationView() {
-            return this.animationView;
         }
     }
 

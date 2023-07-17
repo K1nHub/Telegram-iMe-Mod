@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/PasscodeActivity$$ExternalSyntheticLambda16;->f$0:Lorg/telegram/ui/CodeNumberField;
 
-    invoke-static {v0}, Lorg/telegram/ui/PasscodeActivity;->$r8$lambda$Qho4k5DhQDS-myQdbiJMwikeQek(Lorg/telegram/ui/CodeNumberField;)V
+    invoke-static {v0}, Lorg/telegram/ui/PasscodeActivity;->$r8$lambda$DMLTAWNUK3sUb3tEyRaTaElhq_c(Lorg/telegram/ui/CodeNumberField;)V
 
     return-void
 .end method

@@ -41,10 +41,6 @@
 .method public final map(Ljava/lang/String;)Lcom/iMe/storage/domain/model/wallet/swap/SwapMethod;
     .locals 5
 
-    const-string v0, "method"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
     .line 56
     invoke-static {}, Lcom/iMe/storage/domain/model/wallet/swap/SwapMethod;->values()[Lcom/iMe/storage/domain/model/wallet/swap/SwapMethod;
 

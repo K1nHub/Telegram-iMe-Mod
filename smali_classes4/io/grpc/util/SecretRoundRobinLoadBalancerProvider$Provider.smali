@@ -22,7 +22,7 @@
 .method public getPolicyName()Ljava/lang/String;
     .locals 1
 
-    const-string v0, "round_robin"
+    const-string/jumbo v0, "round_robin"
 
     return-object v0
 .end method

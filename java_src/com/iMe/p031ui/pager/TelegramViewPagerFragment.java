@@ -41,17 +41,17 @@ import kotlin.math.MathKt__MathJVMKt;
 import kotlin.ranges.RangesKt___RangesKt;
 import kotlin.reflect.KProperty;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3295R;
+import org.telegram.messenger.C3417R;
 import org.telegram.messenger.ImageReceiver;
-import org.telegram.p044ui.ActionBar.BaseFragment;
-import org.telegram.p044ui.ActionBar.C3361ActionBar;
-import org.telegram.p044ui.ActionBar.Theme;
-import org.telegram.p044ui.ActionBar.ThemeDescription;
-import org.telegram.p044ui.Components.AnimationProperties;
-import org.telegram.p044ui.Components.FragmentContextView;
-import org.telegram.p044ui.Components.LayoutHelper;
-import org.telegram.p044ui.Components.RecyclerListView;
-import org.telegram.p044ui.Components.ScrollSlidingTextTabStrip;
+import org.telegram.p043ui.ActionBar.BaseFragment;
+import org.telegram.p043ui.ActionBar.C3484ActionBar;
+import org.telegram.p043ui.ActionBar.Theme;
+import org.telegram.p043ui.ActionBar.ThemeDescription;
+import org.telegram.p043ui.Components.AnimationProperties;
+import org.telegram.p043ui.Components.FragmentContextView;
+import org.telegram.p043ui.Components.LayoutHelper;
+import org.telegram.p043ui.Components.RecyclerListView;
+import org.telegram.p043ui.Components.ScrollSlidingTextTabStrip;
 /* compiled from: TelegramViewPagerFragment.kt */
 /* renamed from: com.iMe.ui.pager.TelegramViewPagerFragment */
 /* loaded from: classes3.dex */
@@ -73,7 +73,7 @@ public abstract class TelegramViewPagerFragment extends MvpFragment {
             super("animationValue");
         }
 
-        @Override // org.telegram.p044ui.Components.AnimationProperties.FloatProperty
+        @Override // org.telegram.p043ui.Components.AnimationProperties.FloatProperty
         public void setValue(TelegramViewPagerFragment obj, float f) {
             Intrinsics.checkNotNullParameter(obj, "obj");
             obj.setScrollY(f);
@@ -156,30 +156,30 @@ public abstract class TelegramViewPagerFragment extends MvpFragment {
         return contentView;
     }
 
-    @Override // org.telegram.p044ui.ActionBar.BaseFragment
+    @Override // org.telegram.p043ui.ActionBar.BaseFragment
     public boolean canBeginSlide() {
         return getScrollSlidingTextTabStrip().getCurrentTabId() == getScrollSlidingTextTabStrip().getFirstTabId();
     }
 
-    @Override // org.telegram.p044ui.ActionBar.BaseFragment
+    @Override // org.telegram.p043ui.ActionBar.BaseFragment
     public boolean isSwipeBackEnabled(MotionEvent event) {
         Intrinsics.checkNotNullParameter(event, "event");
         return canBeginSlide();
     }
 
-    @Override // org.telegram.p044ui.ActionBar.BaseFragment
+    @Override // org.telegram.p043ui.ActionBar.BaseFragment
     public ArrayList<ThemeDescription> getThemeDescriptions() {
         ArrayList<ThemeDescription> arrayListOf;
         View view = this.fragmentView;
         int i = ThemeDescription.FLAG_BACKGROUND;
         final FloatingActionButton floatingActionButton = getFloatingActionButton();
         arrayListOf = CollectionsKt__CollectionsKt.arrayListOf(new ThemeDescription(view, i, null, null, null, new ThemeDescription.ThemeDescriptionDelegate() { // from class: com.iMe.ui.pager.TelegramViewPagerFragment$$ExternalSyntheticLambda2
-            @Override // org.telegram.p044ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
+            @Override // org.telegram.p043ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
             public final void didSetColor() {
                 FloatingActionButton.this.updateColors();
             }
 
-            @Override // org.telegram.p044ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
+            @Override // org.telegram.p043ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
             public /* synthetic */ void onAnimationProgress(float f) {
                 ThemeDescription.ThemeDescriptionDelegate.CC.$default$onAnimationProgress(this, f);
             }
@@ -204,17 +204,17 @@ public abstract class TelegramViewPagerFragment extends MvpFragment {
         ScrollSlidingTextTabStrip scrollSlidingTextTabStrip = new ScrollSlidingTextTabStrip(getParentActivity());
         scrollSlidingTextTabStrip.setInitialTabId(getInitialTabId());
         scrollSlidingTextTabStrip.setDelegate(new ScrollSlidingTextTabStrip.ScrollSlidingTabStripDelegate() { // from class: com.iMe.ui.pager.TelegramViewPagerFragment$initTabLayout$1$1
-            @Override // org.telegram.p044ui.Components.ScrollSlidingTextTabStrip.ScrollSlidingTabStripDelegate
+            @Override // org.telegram.p043ui.Components.ScrollSlidingTextTabStrip.ScrollSlidingTabStripDelegate
             public /* synthetic */ void onSamePageSelected() {
                 ScrollSlidingTextTabStrip.ScrollSlidingTabStripDelegate.CC.$default$onSamePageSelected(this);
             }
 
-            @Override // org.telegram.p044ui.Components.ScrollSlidingTextTabStrip.ScrollSlidingTabStripDelegate
+            @Override // org.telegram.p043ui.Components.ScrollSlidingTextTabStrip.ScrollSlidingTabStripDelegate
             public void onTabSelected(int i) {
                 TelegramViewPagerFragment.this.updateFab(i);
             }
 
-            @Override // org.telegram.p044ui.Components.ScrollSlidingTextTabStrip.ScrollSlidingTabStripDelegate
+            @Override // org.telegram.p043ui.Components.ScrollSlidingTextTabStrip.ScrollSlidingTabStripDelegate
             public void onPageSelected(int i, boolean z) {
                 if (TelegramViewPagerFragment.this.getViewPages()[0].getSelectedType() == i) {
                     return;
@@ -225,7 +225,7 @@ public abstract class TelegramViewPagerFragment extends MvpFragment {
                 TelegramViewPagerFragment.this.animatingForward = z;
             }
 
-            @Override // org.telegram.p044ui.Components.ScrollSlidingTextTabStrip.ScrollSlidingTabStripDelegate
+            @Override // org.telegram.p043ui.Components.ScrollSlidingTextTabStrip.ScrollSlidingTabStripDelegate
             public void onPageScrolled(float f) {
                 int i = (f > 1.0f ? 1 : (f == 1.0f ? 0 : -1));
                 if (i == 0) {
@@ -272,16 +272,16 @@ public abstract class TelegramViewPagerFragment extends MvpFragment {
     }
 
     private final void setupActionBar() {
-        C3361ActionBar c3361ActionBar = this.actionBar;
-        c3361ActionBar.setOccupyStatusBar(!AndroidUtilities.isTablet());
-        c3361ActionBar.setBackButtonImage(C3295R.C3297drawable.ic_ab_back);
-        c3361ActionBar.setTitle(getToolbarTitle());
-        c3361ActionBar.setExtraHeight(AndroidUtilities.m55dp(getAdditionalActionBarHeight() + 44.0f));
-        c3361ActionBar.setAllowOverlayTitle(false);
-        c3361ActionBar.setAddToContainer(false);
-        c3361ActionBar.setClipContent(true);
-        c3361ActionBar.setActionBarMenuOnItemClick(new C3361ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.ui.pager.TelegramViewPagerFragment$setupActionBar$1$1
-            @Override // org.telegram.p044ui.ActionBar.C3361ActionBar.ActionBarMenuOnItemClick
+        C3484ActionBar c3484ActionBar = this.actionBar;
+        c3484ActionBar.setOccupyStatusBar(!AndroidUtilities.isTablet());
+        c3484ActionBar.setBackButtonImage(C3417R.C3419drawable.ic_ab_back);
+        c3484ActionBar.setTitle(getToolbarTitle());
+        c3484ActionBar.setExtraHeight(AndroidUtilities.m55dp(getAdditionalActionBarHeight() + 44.0f));
+        c3484ActionBar.setAllowOverlayTitle(false);
+        c3484ActionBar.setAddToContainer(false);
+        c3484ActionBar.setClipContent(true);
+        c3484ActionBar.setActionBarMenuOnItemClick(new C3484ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.ui.pager.TelegramViewPagerFragment$setupActionBar$1$1
+            @Override // org.telegram.p043ui.ActionBar.C3484ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
                     TelegramViewPagerFragment.this.finishFragment();
@@ -291,10 +291,10 @@ public abstract class TelegramViewPagerFragment extends MvpFragment {
             }
         });
         ViewExtKt.visible$default(getScrollSlidingTextTabStrip(), false, 1, null);
-        ViewParent parent = c3361ActionBar.getParent();
+        ViewParent parent = c3484ActionBar.getParent();
         ViewGroup viewGroup = parent instanceof ViewGroup ? (ViewGroup) parent : null;
         if (viewGroup != null) {
-            viewGroup.removeView(c3361ActionBar);
+            viewGroup.removeView(c3484ActionBar);
         }
     }
 
@@ -441,7 +441,7 @@ public abstract class TelegramViewPagerFragment extends MvpFragment {
             final TelegramViewPagerFragment telegramViewPagerFragment = this.this$0;
             final ?? r1 = new RecyclerListView(context) { // from class: com.iMe.ui.pager.TelegramViewPagerFragment$ViewPage$initListView$1
                 /* JADX INFO: Access modifiers changed from: protected */
-                @Override // org.telegram.p044ui.Components.RecyclerListView, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+                @Override // org.telegram.p043ui.Components.RecyclerListView, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
                 public void onLayout(boolean z, int i, int i2, int i3, int i4) {
                     super.onLayout(z, i, i2, i3, i4);
                     TelegramViewPagerFragment.this.checkScroll(this);
@@ -458,7 +458,7 @@ public abstract class TelegramViewPagerFragment extends MvpFragment {
                     Intrinsics.checkNotNullParameter(recyclerView, "recyclerView");
                     if (i != 1) {
                         int i2 = (int) (-((BaseFragment) TelegramViewPagerFragment.this).actionBar.getTranslationY());
-                        int currentActionBarHeight = C3361ActionBar.getCurrentActionBarHeight();
+                        int currentActionBarHeight = C3484ActionBar.getCurrentActionBarHeight();
                         if (i2 == 0 || i2 == currentActionBarHeight) {
                             return;
                         }
@@ -476,8 +476,8 @@ public abstract class TelegramViewPagerFragment extends MvpFragment {
                     if (recyclerView == TelegramViewPagerFragment.this.getViewPages()[0].getListView()) {
                         float translationY = ((BaseFragment) TelegramViewPagerFragment.this).actionBar.getTranslationY();
                         float f = translationY - i2;
-                        if (f < (-C3361ActionBar.getCurrentActionBarHeight())) {
-                            f = -C3361ActionBar.getCurrentActionBarHeight();
+                        if (f < (-C3484ActionBar.getCurrentActionBarHeight())) {
+                            f = -C3484ActionBar.getCurrentActionBarHeight();
                         } else if (f > BitmapDescriptorFactory.HUE_RED) {
                             f = 0.0f;
                         }
@@ -489,35 +489,35 @@ public abstract class TelegramViewPagerFragment extends MvpFragment {
                 }
             });
             r1.setOnItemClickListener(new RecyclerListView.OnItemClickListenerExtended() { // from class: com.iMe.ui.pager.TelegramViewPagerFragment$ViewPage$$ExternalSyntheticLambda0
-                @Override // org.telegram.p044ui.Components.RecyclerListView.OnItemClickListenerExtended
+                @Override // org.telegram.p043ui.Components.RecyclerListView.OnItemClickListenerExtended
                 public /* synthetic */ boolean hasDoubleTap(View view, int i) {
                     return RecyclerListView.OnItemClickListenerExtended.CC.$default$hasDoubleTap(this, view, i);
                 }
 
-                @Override // org.telegram.p044ui.Components.RecyclerListView.OnItemClickListenerExtended
+                @Override // org.telegram.p043ui.Components.RecyclerListView.OnItemClickListenerExtended
                 public /* synthetic */ void onDoubleTap(View view, int i, float f, float f2) {
                     RecyclerListView.OnItemClickListenerExtended.CC.$default$onDoubleTap(this, view, i, f, f2);
                 }
 
-                @Override // org.telegram.p044ui.Components.RecyclerListView.OnItemClickListenerExtended
+                @Override // org.telegram.p043ui.Components.RecyclerListView.OnItemClickListenerExtended
                 public final void onItemClick(View view, int i, float f, float f2) {
                     TelegramViewPagerFragment.ViewPage.initListView$lambda$2$lambda$0(TelegramViewPagerFragment.this, view, i, f, f2);
                 }
             });
             r1.setOnItemLongClickListener(new RecyclerListView.OnItemLongClickListenerExtended() { // from class: com.iMe.ui.pager.TelegramViewPagerFragment$ViewPage$$ExternalSyntheticLambda1
-                @Override // org.telegram.p044ui.Components.RecyclerListView.OnItemLongClickListenerExtended
+                @Override // org.telegram.p043ui.Components.RecyclerListView.OnItemLongClickListenerExtended
                 public final boolean onItemClick(View view, int i, float f, float f2) {
                     boolean initListView$lambda$2$lambda$1;
                     initListView$lambda$2$lambda$1 = TelegramViewPagerFragment.ViewPage.initListView$lambda$2$lambda$1(TelegramViewPagerFragment$ViewPage$initListView$1.this, telegramViewPagerFragment2, view, i, f, f2);
                     return initListView$lambda$2$lambda$1;
                 }
 
-                @Override // org.telegram.p044ui.Components.RecyclerListView.OnItemLongClickListenerExtended
+                @Override // org.telegram.p043ui.Components.RecyclerListView.OnItemLongClickListenerExtended
                 public /* synthetic */ void onLongClickRelease() {
                     RecyclerListView.OnItemLongClickListenerExtended.CC.$default$onLongClickRelease(this);
                 }
 
-                @Override // org.telegram.p044ui.Components.RecyclerListView.OnItemLongClickListenerExtended
+                @Override // org.telegram.p043ui.Components.RecyclerListView.OnItemLongClickListenerExtended
                 public /* synthetic */ void onMove(float f, float f2) {
                     RecyclerListView.OnItemLongClickListenerExtended.CC.$default$onMove(this, f, f2);
                 }

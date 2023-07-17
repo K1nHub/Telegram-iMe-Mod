@@ -4,18 +4,18 @@ public final class zzjy extends zzgg {
     @zzhs
 
     /* renamed from: x */
-    private Integer f151x;
+    private Integer f233x;
     @zzhs
 
     /* renamed from: y */
-    private Integer f152y;
+    private Integer f234y;
 
     public final Integer zzht() {
-        return this.f151x;
+        return this.f233x;
     }
 
     public final Integer zzhu() {
-        return this.f152y;
+        return this.f234y;
     }
 
     @Override // com.google.android.gms.internal.firebase_ml.zzgg

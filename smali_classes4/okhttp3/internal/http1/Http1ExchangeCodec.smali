@@ -564,7 +564,7 @@
 .method public createRequestBody(Lokhttp3/Request;J)Lokio/Sink;
     .locals 2
 
-    const-string v0, "request"
+    const-string/jumbo v0, "request"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -671,7 +671,7 @@
 .method public openResponseBodySource(Lokhttp3/Response;)Lokio/Source;
     .locals 4
 
-    const-string v0, "response"
+    const-string/jumbo v0, "response"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -928,7 +928,7 @@
 .method public reportedContentLength(Lokhttp3/Response;)J
     .locals 2
 
-    const-string v0, "response"
+    const-string/jumbo v0, "response"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -968,7 +968,7 @@
 .method public final skipConnectBody(Lokhttp3/Response;)V
     .locals 4
 
-    const-string v0, "response"
+    const-string/jumbo v0, "response"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -1011,7 +1011,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "requestLine"
+    const-string/jumbo v0, "requestLine"
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -1130,7 +1130,7 @@
 .method public writeRequestHeaders(Lokhttp3/Request;)V
     .locals 3
 
-    const-string v0, "request"
+    const-string/jumbo v0, "request"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 

@@ -12,7 +12,7 @@ public class EncodedImage implements RefCounted {
     public final FrameType frameType;
 
     /* renamed from: qp */
-    public final Integer f1772qp;
+    public final Integer f1854qp;
     private final RefCountDelegate refCountDelegate;
     public final int rotation;
 
@@ -63,7 +63,7 @@ public class EncodedImage implements RefCounted {
         this.captureTimeNs = j;
         this.frameType = frameType;
         this.rotation = i3;
-        this.f1772qp = num;
+        this.f1854qp = num;
         this.refCountDelegate = new RefCountDelegate(runnable);
     }
 
@@ -99,7 +99,7 @@ public class EncodedImage implements RefCounted {
 
     @CalledByNative
     private Integer getQp() {
-        return this.f1772qp;
+        return this.f1854qp;
     }
 
     public static Builder builder() {
@@ -115,7 +115,7 @@ public class EncodedImage implements RefCounted {
         private FrameType frameType;
 
         /* renamed from: qp */
-        private Integer f1773qp;
+        private Integer f1855qp;
         private Runnable releaseCallback;
         private int rotation;
 
@@ -160,12 +160,12 @@ public class EncodedImage implements RefCounted {
         }
 
         public Builder setQp(Integer num) {
-            this.f1773qp = num;
+            this.f1855qp = num;
             return this;
         }
 
         public EncodedImage createEncodedImage() {
-            return new EncodedImage(this.buffer, this.releaseCallback, this.encodedWidth, this.encodedHeight, this.captureTimeNs, this.frameType, this.rotation, this.f1773qp);
+            return new EncodedImage(this.buffer, this.releaseCallback, this.encodedWidth, this.encodedHeight, this.captureTimeNs, this.frameType, this.rotation, this.f1855qp);
         }
     }
 }

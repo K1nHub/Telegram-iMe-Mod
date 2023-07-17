@@ -20,9 +20,9 @@
 
 .field private final bannerSnapHelper:Landroidx/recyclerview/widget/PagerSnapHelper;
 
-.field private final bannersDiffCallback:Lcom/iMe/ui/wallet/home/v2/adapter/diff/BannerSlideDiffCallback;
+.field private final bannersDiffCallback:Lcom/iMe/ui/wallet/home/adapter/diff/BannerSlideDiffCallback;
 
-.field private final bannersRecycleAdapter:Lcom/iMe/ui/wallet/home/v2/adapter/BannersRecycleAdapter;
+.field private final bannersRecycleAdapter:Lcom/iMe/ui/wallet/home/adapter/BannersRecycleAdapter;
 
 .field private final itemViewType:I
 
@@ -30,7 +30,7 @@
 
 
 # direct methods
-.method public constructor <init>(Lcom/iMe/ui/wallet/home/v2/adapter/BannersRecycleAdapter;)V
+.method public constructor <init>(Lcom/iMe/ui/wallet/home/adapter/BannersRecycleAdapter;)V
     .locals 1
 
     const-string v0, "bannersRecycleAdapter"
@@ -41,7 +41,7 @@
     invoke-direct {p0}, Lcom/chad/library/adapter/base/provider/BaseNodeProvider;-><init>()V
 
     .line 23
-    iput-object p1, p0, Lcom/iMe/ui/adapter/provider/BannerProvider;->bannersRecycleAdapter:Lcom/iMe/ui/wallet/home/v2/adapter/BannersRecycleAdapter;
+    iput-object p1, p0, Lcom/iMe/ui/adapter/provider/BannerProvider;->bannersRecycleAdapter:Lcom/iMe/ui/wallet/home/adapter/BannersRecycleAdapter;
 
     .line 30
     sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->BANNERS:I
@@ -61,11 +61,11 @@
     iput-object p1, p0, Lcom/iMe/ui/adapter/provider/BannerProvider;->bannerSnapHelper:Landroidx/recyclerview/widget/PagerSnapHelper;
 
     .line 35
-    new-instance p1, Lcom/iMe/ui/wallet/home/v2/adapter/diff/BannerSlideDiffCallback;
+    new-instance p1, Lcom/iMe/ui/wallet/home/adapter/diff/BannerSlideDiffCallback;
 
-    invoke-direct {p1}, Lcom/iMe/ui/wallet/home/v2/adapter/diff/BannerSlideDiffCallback;-><init>()V
+    invoke-direct {p1}, Lcom/iMe/ui/wallet/home/adapter/diff/BannerSlideDiffCallback;-><init>()V
 
-    iput-object p1, p0, Lcom/iMe/ui/adapter/provider/BannerProvider;->bannersDiffCallback:Lcom/iMe/ui/wallet/home/v2/adapter/diff/BannerSlideDiffCallback;
+    iput-object p1, p0, Lcom/iMe/ui/adapter/provider/BannerProvider;->bannersDiffCallback:Lcom/iMe/ui/wallet/home/adapter/diff/BannerSlideDiffCallback;
 
     return-void
 .end method
@@ -88,11 +88,11 @@
     return-object p0
 .end method
 
-.method public static final synthetic access$getBannersDiffCallback$p(Lcom/iMe/ui/adapter/provider/BannerProvider;)Lcom/iMe/ui/wallet/home/v2/adapter/diff/BannerSlideDiffCallback;
+.method public static final synthetic access$getBannersDiffCallback$p(Lcom/iMe/ui/adapter/provider/BannerProvider;)Lcom/iMe/ui/wallet/home/adapter/diff/BannerSlideDiffCallback;
     .locals 0
 
     .line 22
-    iget-object p0, p0, Lcom/iMe/ui/adapter/provider/BannerProvider;->bannersDiffCallback:Lcom/iMe/ui/wallet/home/v2/adapter/diff/BannerSlideDiffCallback;
+    iget-object p0, p0, Lcom/iMe/ui/adapter/provider/BannerProvider;->bannersDiffCallback:Lcom/iMe/ui/wallet/home/adapter/diff/BannerSlideDiffCallback;
 
     return-object p0
 .end method
@@ -153,11 +153,11 @@
     return-object v0
 .end method
 
-.method public final getBannersRecycleAdapter()Lcom/iMe/ui/wallet/home/v2/adapter/BannersRecycleAdapter;
+.method public final getBannersRecycleAdapter()Lcom/iMe/ui/wallet/home/adapter/BannersRecycleAdapter;
     .locals 1
 
     .line 23
-    iget-object v0, p0, Lcom/iMe/ui/adapter/provider/BannerProvider;->bannersRecycleAdapter:Lcom/iMe/ui/wallet/home/v2/adapter/BannersRecycleAdapter;
+    iget-object v0, p0, Lcom/iMe/ui/adapter/provider/BannerProvider;->bannersRecycleAdapter:Lcom/iMe/ui/wallet/home/adapter/BannersRecycleAdapter;
 
     return-object v0
 .end method

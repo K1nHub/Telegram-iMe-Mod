@@ -46,15 +46,15 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt__StringNumberConversionsKt;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.C3295R;
+import org.telegram.messenger.C3417R;
 import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.Utilities;
-import org.telegram.p044ui.ActionBar.BottomSheet;
-import org.telegram.p044ui.ActionBar.Theme;
-import org.telegram.p044ui.Components.CombinedDrawable;
-import org.telegram.p044ui.Components.LayoutHelper;
-import org.telegram.p044ui.Components.RecyclerListView;
+import org.telegram.p043ui.ActionBar.BottomSheet;
+import org.telegram.p043ui.ActionBar.Theme;
+import org.telegram.p043ui.Components.CombinedDrawable;
+import org.telegram.p043ui.Components.LayoutHelper;
+import org.telegram.p043ui.Components.RecyclerListView;
 import timber.log.Timber;
 /* compiled from: SelectedFilesBottomSheet.kt */
 /* renamed from: com.iMe.fork.ui.dialog.SelectedFilesBottomSheet */
@@ -80,7 +80,7 @@ public final class SelectedFilesBottomSheet extends BottomSheet {
         new Companion(null);
     }
 
-    @Override // org.telegram.p044ui.ActionBar.BottomSheet
+    @Override // org.telegram.p043ui.ActionBar.BottomSheet
     protected boolean canDismissWithSwipe() {
         return false;
     }
@@ -172,7 +172,7 @@ public final class SelectedFilesBottomSheet extends BottomSheet {
         textView.setEllipsize(TextUtils.TruncateAt.END);
         textView.setGravity(16);
         textView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
-        textView.setText(LocaleController.getInternalString(C3295R.string.multiple_files_sending_selected));
+        textView.setText(LocaleController.getInternalString(C3417R.string.multiple_files_sending_selected));
         textView.setTextColor(getThemedColor(Theme.key_dialogTextBlack));
         textView.setTextSize(1, 20.0f);
         textView.setLinkTextColor(getThemedColor(Theme.key_dialogTextLink));
@@ -187,7 +187,7 @@ public final class SelectedFilesBottomSheet extends BottomSheet {
         textView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
         textView.setGravity(17);
         textView.setBackground(Theme.createSelectorWithBackgroundDrawable(getThemedColor(Theme.key_dialogBackground), getThemedColor(Theme.key_listSelector)));
-        textView.setText(LocaleController.getString("Save", C3295R.string.Save));
+        textView.setText(LocaleController.getString("Save", C3417R.string.Save));
         textView.setTextColor(getThemedColor(Theme.key_dialogTextBlue2));
         return textView;
     }
@@ -197,7 +197,7 @@ public final class SelectedFilesBottomSheet extends BottomSheet {
     public final SelectedFilesBottomSheet$initListView$1 initListView() {
         final Context context = getContext();
         ?? r1 = new RecyclerListView(context) { // from class: com.iMe.fork.ui.dialog.SelectedFilesBottomSheet$initListView$1
-            @Override // org.telegram.p044ui.Components.RecyclerListView, androidx.recyclerview.widget.RecyclerView, android.view.View, android.view.ViewParent
+            @Override // org.telegram.p043ui.Components.RecyclerListView, androidx.recyclerview.widget.RecyclerView, android.view.View, android.view.ViewParent
             public void requestLayout() {
                 if (SelectedFilesBottomSheet.this.ignoreLayout) {
                     return;
@@ -259,7 +259,7 @@ public final class SelectedFilesBottomSheet extends BottomSheet {
             }
         });
         listView.setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: com.iMe.fork.ui.dialog.SelectedFilesBottomSheet$$ExternalSyntheticLambda4
-            @Override // org.telegram.p044ui.Components.RecyclerListView.OnItemClickListener
+            @Override // org.telegram.p043ui.Components.RecyclerListView.OnItemClickListener
             public final void onItemClick(View view, int i) {
                 SelectedFilesBottomSheet.setupListeners$lambda$8$lambda$7(SelectedFilesBottomSheet.this, view, i);
             }
@@ -285,7 +285,7 @@ public final class SelectedFilesBottomSheet extends BottomSheet {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final void openFile$lambda$16(final FileItem fileItem, final SelectedFilesBottomSheet this$0) {
-        Object m1576constructorimpl;
+        Object m1601constructorimpl;
         Intrinsics.checkNotNullParameter(fileItem, "$fileItem");
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         File checkDirectory = FileLoader.checkDirectory(3);
@@ -312,22 +312,22 @@ public final class SelectedFilesBottomSheet extends BottomSheet {
                 openInputStream.close();
                 fileOutputStream.close();
             }
-            m1576constructorimpl = Result.m1576constructorimpl(Unit.INSTANCE);
+            m1601constructorimpl = Result.m1601constructorimpl(Unit.INSTANCE);
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            m1576constructorimpl = Result.m1576constructorimpl(ResultKt.createFailure(th));
+            m1601constructorimpl = Result.m1601constructorimpl(ResultKt.createFailure(th));
         }
-        final Throwable m1577exceptionOrNullimpl = Result.m1577exceptionOrNullimpl(m1576constructorimpl);
-        if (m1577exceptionOrNullimpl != null) {
+        final Throwable m1602exceptionOrNullimpl = Result.m1602exceptionOrNullimpl(m1601constructorimpl);
+        if (m1602exceptionOrNullimpl != null) {
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: com.iMe.fork.ui.dialog.SelectedFilesBottomSheet$$ExternalSyntheticLambda3
                 @Override // java.lang.Runnable
                 public final void run() {
-                    SelectedFilesBottomSheet.openFile$lambda$16$lambda$13$lambda$12(m1577exceptionOrNullimpl);
+                    SelectedFilesBottomSheet.openFile$lambda$16$lambda$13$lambda$12(m1602exceptionOrNullimpl);
                 }
             });
         }
-        if (Result.m1579isSuccessimpl(m1576constructorimpl)) {
-            Unit unit = (Unit) m1576constructorimpl;
+        if (Result.m1604isSuccessimpl(m1601constructorimpl)) {
+            Unit unit = (Unit) m1601constructorimpl;
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: com.iMe.fork.ui.dialog.SelectedFilesBottomSheet$$ExternalSyntheticLambda2
                 @Override // java.lang.Runnable
                 public final void run() {
@@ -572,7 +572,7 @@ public final class SelectedFilesBottomSheet extends BottomSheet {
     public final class FilesAdapter extends RecyclerListView.SelectionAdapter {
         private Function1<? super Integer, Unit> onItemDeleteClick = SelectedFilesBottomSheet$FilesAdapter$onItemDeleteClick$1.INSTANCE;
 
-        @Override // org.telegram.p044ui.Components.RecyclerListView.SelectionAdapter
+        @Override // org.telegram.p043ui.Components.RecyclerListView.SelectionAdapter
         public boolean isEnabled(RecyclerView.ViewHolder holder) {
             Intrinsics.checkNotNullParameter(holder, "holder");
             return true;
@@ -686,7 +686,7 @@ public final class SelectedFilesBottomSheet extends BottomSheet {
         public final ImageView initImageView() {
             ImageView imageView = new ImageView(getContext());
             SelectedFilesBottomSheet selectedFilesBottomSheet = this.this$0;
-            CombinedDrawable createCircleDrawableWithIcon = Theme.createCircleDrawableWithIcon(AndroidUtilities.m54dp(44), C3295R.C3297drawable.msg_round_file_s);
+            CombinedDrawable createCircleDrawableWithIcon = Theme.createCircleDrawableWithIcon(AndroidUtilities.m54dp(44), C3417R.C3419drawable.msg_round_file_s);
             Theme.setCombinedDrawableColor(createCircleDrawableWithIcon, selectedFilesBottomSheet.getThemedColor(Theme.key_chat_outMediaIcon), false);
             Theme.setCombinedDrawableColor(createCircleDrawableWithIcon, selectedFilesBottomSheet.getThemedColor(Theme.key_chat_inMediaIcon), true);
             imageView.setImageDrawable(createCircleDrawableWithIcon);
@@ -719,9 +719,9 @@ public final class SelectedFilesBottomSheet extends BottomSheet {
             ImageView imageView = new ImageView(getContext());
             SelectedFilesBottomSheet selectedFilesBottomSheet = this.this$0;
             imageView.setColorFilter(new PorterDuffColorFilter(selectedFilesBottomSheet.getThemedColor(Theme.key_chat_replyPanelClose), PorterDuff.Mode.MULTIPLY));
-            imageView.setContentDescription(LocaleController.getString("Delete", C3295R.string.Delete));
+            imageView.setContentDescription(LocaleController.getString("Delete", C3417R.string.Delete));
             imageView.setScaleType(ImageView.ScaleType.CENTER);
-            imageView.setImageResource(C3295R.C3297drawable.input_clear);
+            imageView.setImageResource(C3417R.C3419drawable.input_clear);
             imageView.setBackground(Theme.createSelectorDrawable(selectedFilesBottomSheet.getThemedColor(Theme.key_listSelector), 3));
             return imageView;
         }

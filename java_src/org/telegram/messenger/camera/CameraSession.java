@@ -248,9 +248,9 @@ public class CameraSession {
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:28:0x0050  */
-    /* JADX WARN: Removed duplicated region for block: B:31:0x0056  */
-    /* JADX WARN: Removed duplicated region for block: B:32:0x0061  */
+    /* JADX WARN: Removed duplicated region for block: B:28:0x0051  */
+    /* JADX WARN: Removed duplicated region for block: B:31:0x0057  */
+    /* JADX WARN: Removed duplicated region for block: B:32:0x0062  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
@@ -262,7 +262,7 @@ public class CameraSession {
             if (r0 != 0) goto L5
             return
         L5:
-            r7.updateCameraInfo()     // Catch: java.lang.Throwable -> L7e
+            r7.updateCameraInfo()     // Catch: java.lang.Throwable -> L7f
             boolean r0 = r7.destroyed
             if (r0 == 0) goto Le
             r0 = 0
@@ -279,69 +279,69 @@ public class CameraSession {
             java.lang.String r3 = "samsung"
             boolean r1 = r3.equals(r1)
             r3 = 0
-            if (r1 == 0) goto L32
+            if (r1 == 0) goto L33
             java.lang.String r1 = android.os.Build.PRODUCT
             java.lang.String r4 = "sf2wifixx"
             boolean r1 = r4.equals(r1)
-            if (r1 == 0) goto L32
-            goto L69
-        L32:
+            if (r1 == 0) goto L33
+            goto L6a
+        L33:
             int r1 = r7.displayOrientation
             r4 = 90
-            if (r1 == 0) goto L40
-            if (r1 == r2) goto L48
+            if (r1 == 0) goto L41
+            if (r1 == r2) goto L49
             r5 = 2
-            if (r1 == r5) goto L45
+            if (r1 == r5) goto L46
             r5 = 3
-            if (r1 == r5) goto L42
-        L40:
+            if (r1 == r5) goto L43
+        L41:
             r1 = r3
-            goto L49
-        L42:
+            goto L4a
+        L43:
             r1 = 270(0x10e, float:3.78E-43)
-            goto L49
-        L45:
+            goto L4a
+        L46:
             r1 = 180(0xb4, float:2.52E-43)
-            goto L49
-        L48:
-            r1 = r4
+            goto L4a
         L49:
+            r1 = r4
+        L4a:
             android.hardware.Camera$CameraInfo r5 = r7.info
             int r6 = r5.orientation
             int r6 = r6 % r4
-            if (r6 == 0) goto L52
+            if (r6 == 0) goto L53
             r5.orientation = r3
-        L52:
+        L53:
             int r3 = r5.facing
-            if (r3 != r2) goto L61
+            if (r3 != r2) goto L62
             int r2 = r5.orientation
             int r2 = r2 + r1
             int r2 = r2 % 360
             int r1 = 360 - r2
             int r1 = r1 % 360
             r3 = r1
-            goto L69
-        L61:
+            goto L6a
+        L62:
             int r2 = r5.orientation
             int r2 = r2 - r1
             int r2 = r2 + 360
             int r2 = r2 % 360
             r3 = r2
-        L69:
+        L6a:
             r7.currentOrientation = r3
-            if (r0 == 0) goto L70
-            r0.setDisplayOrientation(r3)     // Catch: java.lang.Throwable -> L70
-        L70:
+            if (r0 == 0) goto L71
+            r0.setDisplayOrientation(r3)     // Catch: java.lang.Throwable -> L71
+        L71:
             int r0 = r7.currentOrientation
             int r1 = r7.displayOrientation
             int r0 = r0 - r1
             r7.diffOrientation = r0
-            if (r0 >= 0) goto L7d
+            if (r0 >= 0) goto L7e
             int r0 = r0 + 360
             r7.diffOrientation = r0
-        L7d:
-            return
         L7e:
+            return
+        L7f:
             r0 = move-exception
             org.telegram.messenger.FileLog.m49e(r0)
             return

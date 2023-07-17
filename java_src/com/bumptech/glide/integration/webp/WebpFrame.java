@@ -6,7 +6,7 @@ import androidx.annotation.Keep;
 /* loaded from: classes.dex */
 public class WebpFrame {
     static final int FRAME_DURATION_MS_FOR_MIN = 100;
-    static final int MIN_FRAME_DURATION_MS = 20;
+    static final int MIN_FRAME_DURATION_MS = 11;
     boolean blendPreviousFrame;
     int delay;
     boolean disposeBackgroundColor;
@@ -44,7 +44,7 @@ public class WebpFrame {
     }
 
     private void fixFrameDuration() {
-        if (this.delay < 20) {
+        if (this.delay < 11) {
             this.delay = 100;
         }
     }

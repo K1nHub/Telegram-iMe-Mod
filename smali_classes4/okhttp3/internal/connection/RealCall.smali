@@ -387,7 +387,7 @@
 
     move-result-object v0
 
-    const-string v1, "response.body().close()"
+    const-string/jumbo v1, "response.body().close()"
 
     invoke-virtual {v0, v1}, Lokhttp3/internal/platform/Platform;->getStackTraceForCloseable(Ljava/lang/String;)Ljava/lang/Object;
 
@@ -810,7 +810,7 @@
 .method public enqueue(Lokhttp3/Callback;)V
     .locals 3
 
-    const-string v0, "responseCallback"
+    const-string/jumbo v0, "responseCallback"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -863,7 +863,7 @@
 .method public final enterNetworkInterceptorExchange(Lokhttp3/Request;Z)V
     .locals 2
 
-    const-string v0, "request"
+    const-string/jumbo v0, "request"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -1111,7 +1111,7 @@
 
     :cond_1
     :try_start_1
-    const-string p1, "released"
+    const-string/jumbo p1, "released"
 
     .line 420
     new-instance v0, Ljava/lang/IllegalStateException;
@@ -1541,7 +1541,7 @@
     throw v0
 
     :cond_3
-    const-string p1, "released"
+    const-string/jumbo p1, "released"
 
     .line 249
     new-instance v0, Ljava/lang/IllegalStateException;

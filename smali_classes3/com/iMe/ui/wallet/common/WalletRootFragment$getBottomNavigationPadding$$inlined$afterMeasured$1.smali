@@ -17,7 +17,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nViewExt.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ViewExt.kt\ncom/iMe/utils/extentions/common/ViewExtKt$afterMeasured$1\n+ 2 WalletRootFragment.kt\ncom/iMe/ui/wallet/common/WalletRootFragment\n+ 3 View.kt\nandroidx/core/view/ViewKt\n*L\n1#1,360:1\n91#2:361\n92#2:364\n368#3:362\n350#3:363\n*S KotlinDebug\n*F\n+ 1 WalletRootFragment.kt\ncom/iMe/ui/wallet/common/WalletRootFragment\n*L\n91#1:362\n91#1:363\n*E\n"
+    value = "SMAP\nViewExt.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ViewExt.kt\ncom/iMe/utils/extentions/common/ViewExtKt$afterMeasured$1\n+ 2 WalletRootFragment.kt\ncom/iMe/ui/wallet/common/WalletRootFragment\n+ 3 View.kt\nandroidx/core/view/ViewKt\n*L\n1#1,361:1\n95#2:362\n96#2:365\n368#3:363\n350#3:364\n*S KotlinDebug\n*F\n+ 1 WalletRootFragment.kt\ncom/iMe/ui/wallet/common/WalletRootFragment\n*L\n95#1:363\n95#1:364\n*E\n"
 .end annotation
 
 
@@ -35,7 +35,7 @@
 
     iput-object p2, p0, Lcom/iMe/ui/wallet/common/WalletRootFragment$getBottomNavigationPadding$$inlined$afterMeasured$1;->$action$inlined:Lkotlin/jvm/functions/Function1;
 
-    .line 247
+    .line 245
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -46,7 +46,7 @@
 .method public onGlobalLayout()V
     .locals 6
 
-    .line 249
+    .line 247
     iget-object v0, p0, Lcom/iMe/ui/wallet/common/WalletRootFragment$getBottomNavigationPadding$$inlined$afterMeasured$1;->$this_afterMeasured:Landroid/view/View;
 
     invoke-virtual {v0}, Landroid/view/View;->getMeasuredWidth()I
@@ -63,7 +63,7 @@
 
     if-lez v0, :cond_4
 
-    .line 250
+    .line 248
     iget-object v0, p0, Lcom/iMe/ui/wallet/common/WalletRootFragment$getBottomNavigationPadding$$inlined$afterMeasured$1;->$this_afterMeasured:Landroid/view/View;
 
     invoke-virtual {v0}, Landroid/view/View;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
@@ -72,10 +72,10 @@
 
     invoke-virtual {v0, p0}, Landroid/view/ViewTreeObserver;->removeOnGlobalLayoutListener(Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;)V
 
-    .line 251
+    .line 249
     iget-object v0, p0, Lcom/iMe/ui/wallet/common/WalletRootFragment$getBottomNavigationPadding$$inlined$afterMeasured$1;->$this_afterMeasured:Landroid/view/View;
 
-    .line 361
+    .line 362
     iget-object v1, p0, Lcom/iMe/ui/wallet/common/WalletRootFragment$getBottomNavigationPadding$$inlined$afterMeasured$1;->$action$inlined:Lkotlin/jvm/functions/Function1;
 
     invoke-virtual {v0}, Landroid/view/View;->getHeight()I
@@ -136,7 +136,7 @@
     :cond_3
     add-int/2addr v2, v4
 
-    .line 361
+    .line 362
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v0

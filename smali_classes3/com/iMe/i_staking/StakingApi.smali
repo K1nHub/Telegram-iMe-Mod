@@ -44,7 +44,7 @@
     .end annotation
 
     .annotation runtime Lretrofit2/http/POST;
-        value = "staking/programmes/find"
+        value = "staking/programmes/v2/find"
     .end annotation
 .end method
 
@@ -66,7 +66,7 @@
     .end annotation
 
     .annotation runtime Lretrofit2/http/POST;
-        value = "staking/operations/list"
+        value = "staking/operations/v2/list"
     .end annotation
 .end method
 
@@ -88,7 +88,7 @@
     .end annotation
 
     .annotation runtime Lretrofit2/http/POST;
-        value = "staking/programmes/listOwn"
+        value = "staking/programmes/v2/listOwn"
     .end annotation
 .end method
 
@@ -110,7 +110,7 @@
     .end annotation
 
     .annotation runtime Lretrofit2/http/POST;
-        value = "staking/programmes/list"
+        value = "staking/programmes/v2/list"
     .end annotation
 .end method
 
@@ -148,7 +148,7 @@
     .end annotation
 
     .annotation runtime Lretrofit2/http/POST;
-        value = "staking/approval/execute"
+        value = "staking/approval/v2/execute"
     .end annotation
 .end method
 
@@ -192,7 +192,7 @@
     .end annotation
 
     .annotation runtime Lretrofit2/http/POST;
-        value = "staking/claim/execute"
+        value = "staking/claim/v2/execute"
     .end annotation
 .end method
 
@@ -236,7 +236,7 @@
     .end annotation
 
     .annotation runtime Lretrofit2/http/POST;
-        value = "staking/deposit/execute"
+        value = "staking/deposit/v2/execute"
     .end annotation
 .end method
 
@@ -280,7 +280,7 @@
     .end annotation
 
     .annotation runtime Lretrofit2/http/POST;
-        value = "staking/withdrawal/execute"
+        value = "staking/withdrawal/v2/execute"
     .end annotation
 .end method
 

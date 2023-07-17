@@ -1,7 +1,7 @@
 package com.iMe.p031ui.base.mvp;
 
 import com.iMe.p031ui.base.mvp.base.BaseView;
-import com.iMe.storage.domain.model.crypto.NetworkType;
+import com.iMe.storage.domain.model.crypto.Network;
 import java.util.List;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
@@ -12,8 +12,8 @@ import moxy.viewstate.strategy.alias.OneExecution;
 /* renamed from: com.iMe.ui.base.mvp.SwitchNetworkView */
 /* loaded from: classes.dex */
 public interface SwitchNetworkView extends BaseView {
-    void setupNetworkType(NetworkType networkType);
+    void setupNetwork(Network network);
 
     @OneExecution
-    void showChooseNetworkDialog(NetworkType networkType, List<? extends NetworkType> list, Function1<? super NetworkType, Unit> function1);
+    void showChooseNetworkDialog(Network network, List<Network> list, Function1<? super Network, Unit> function1);
 }

@@ -178,9 +178,6 @@ Botni tezda qo'shish uchun shu erni bosing"</string>
     <string name="chat_attach_alert_bot_buttons">Bot tugmalari</string>
     <string name="chat_avatar_previewer_mention_by_name">"Ism bo'yicha eslatib o'tish"</string>
     <string name="chat_avatar_previewer_user_messages">Foydalanuvchi xabarlari</string>
-    <string name="chat_bookmarks">Xatcho‘plar</string>
-    <string name="chat_bookmarks_empty">Xatcho‘plar yo‘q</string>
-    <string name="chat_bookmarks_empty_subtitle">Sizda chatlarda xatcho‘plar yo‘q</string>
     <string name="chat_drafts_empty">Hech qanday qoralama yoʻq</string>
     <string name="chat_drafts_empty_subtitle">Chatlarda qoralamalaringiz yo‘q</string>
     <string name="chat_long_action_translate">Tarjima qilish</string>
@@ -191,7 +188,6 @@ Botni tezda qo'shish uchun shu erni bosing"</string>
     <string name="chat_menu_language_settings">Til sozlamalari</string>
     <string name="chat_message_forward_media">"Media yo'naltirish"</string>
     <string name="chat_message_forward_text">"Matnni yo'naltirish"</string>
-    <string name="chat_message_popup_option_add_to_bookmarks">"Xatcho'plarga saqlash"</string>
     <string name="chat_message_popup_option_copy_image">Rasmni nusxalash</string>
     <string name="chat_message_popup_option_copy_part">Nusxalash qismi</string>
     <string name="chat_message_popup_option_copy_text">Matnni nusxalash</string>
@@ -199,8 +195,6 @@ Botni tezda qo'shish uchun shu erni bosing"</string>
     <string name="chat_message_popup_option_forward_viber">Viber-ga uzatish</string>
     <string name="chat_message_popup_option_forward_whatsapp">WhatsApp-ga uzatish</string>
     <string name="chat_message_popup_option_forward_whatsapp_business">WA Business-ga uzatish</string>
-    <string name="chat_message_popup_option_remove_all_bookmarks">"BARCHA XATCHO'PLARNI O'CHIRISH"</string>
-    <string name="chat_message_popup_option_remove_from_bookmarks">"Xatcho'plardan olib tashlash"</string>
     <string name="chat_message_spoiler_less">KAMROQ</string>
     <string name="chat_message_spoiler_more">"KO'PROQ"</string>
     <string name="chat_multi_panel_empty_cache_toast">"Ushbu chatda kesh yo'q"</string>
@@ -548,11 +542,6 @@ skanerlang"</string>
     <string name="loading_participants_error">"A'zoni yuklashda xatolik yuz berdi, keyinroq qayta urinib ko'ring"</string>
     <string name="main_camera_popup_text">Orqa kamera</string>
     <string name="main_list">"Asosiy ro'yxat"</string>
-    <string name="management">Boshqaruv</string>
-    <string name="management_bookmarks_delete_all_alert_message">"Haqiqatan ham barcha chatlardagi xatcho‘plarni o‘chirib tashlamoqchimisiz? Sizning chatlaringiz o'chirilmaydi."</string>
-    <string name="management_bookmarks_delete_selected_alert_message">"Tanlangan chatlardagi barcha xatcho‘plarni o‘chirib tashlamoqchimisiz? Sizning chatlaringiz o'chirilmaydi."</string>
-    <string name="management_drafts">Qoralamalar</string>
-    <string name="management_drafts_delete_selected_alert_message">"Tanlangan chatlardagi barcha qoralamalarni oʻchirib tashlamoqchimisiz? Sizning chatlaringiz o'chirilmaydi."</string>
     <string name="material_clock_toggle_content_description">Tushdan oldin yoki keyinligini tanlang</string>
     <string name="material_hour_selection">Soatni tanlang</string>
     <string name="material_hour_suffix">%1$s soat</string>
@@ -926,6 +915,7 @@ Siz har doim \"Papkalar\" bo'limida sozlamalarni o'zgartirishingiz mumkin (Chatn
     <string name="sorting_settings_tab_bots_item_title">Botlar</string>
     <string name="sorting_settings_tab_channels_item_title">Kanallar</string>
     <string name="sorting_settings_tab_deleted_users">"O'chirilgan hisoblar"</string>
+    <string name="sorting_settings_tab_drafts">Qoralamalar</string>
     <string name="sorting_settings_tab_groups_item_title">Guruhlar</string>
     <string name="sorting_settings_tab_live_chats">Jonli suhbatlar</string>
     <string name="sorting_settings_tab_mentioned_chats">Eslatmalar</string>
@@ -1283,8 +1273,8 @@ Quyida **%d**, **%d** va **%d** soʻzlarini kiriting:"</string>
     <string name="wallet_banner_slide_gate_description">Sizning kriptovalyutaga kirish eshigingiz</string>
     <string name="wallet_banner_slide_gate_long_description">"LIME va boshqa kriptovalyutalar bilan almashish komissiyalari past bo'lgan savdo."</string>
     <string name="wallet_banner_slide_gate_title">Gate.io</string>
-    <string name="wallet_banner_slide_multi_networks_description">Ethereum, BNB Chain, Polygon, Fantom, TON, NFT</string>
-    <string name="wallet_banner_slide_multi_networks_long_description">Bitta hamyonda turli platformalar tokenlaridan qulay foydalanish uchun Ethereum, BNB Chain, Polygon, Fantom, TON va NFT tarmoqlarini almashtirish.</string>
+    <string name="wallet_banner_slide_multi_networks_description">Bitcoin, Ethereum, BNB Chain, Polygon, Fantom, Tron, TON, NFT</string>
+    <string name="wallet_banner_slide_multi_networks_long_description">Bitta hamyonda turli platformalar tokenlaridan qulay foydalanish uchun Bitcoin, Ethereum, BNB Chain, Polygon, Fantom, Tron, TON va NFT tarmoqlarini almashtirish.</string>
     <string name="wallet_banner_slide_multi_networks_title">MULTI-TARMOQ</string>
     <string name="wallet_banner_slide_non_custodial_description">Hamyonga faqat siz kira olasiz</string>
     <string name="wallet_banner_slide_non_custodial_long_description">Siz hamyoningizga kira oladigan yagona odamsiz. Hamyonni tiklash yoki import qilish uchun parolni saqlang.</string>
@@ -1295,7 +1285,7 @@ Quyida **%d**, **%d** va **%d** soʻzlarini kiriting:"</string>
     <string name="wallet_banner_slide_staking_description">Depozitlarni yaratish</string>
     <string name="wallet_banner_slide_staking_long_description">Aktivlaringiz siz uchun ishlashi uchun LIME va hamkor tokenlarida depozitlar yarating.</string>
     <string name="wallet_banner_slide_staking_title">Staking</string>
-    <string name="wallet_banner_slide_swap_description">Uniswap, PancakeSwap, 1inch</string>
+    <string name="wallet_banner_slide_swap_description">1inch, Symbiosis</string>
     <string name="wallet_banner_slide_swap_long_description">Aqlli shartnomalar asosida markazlashtirilmagan almashinuv protokollari yordamida kriptovalyutalar va tokenlarni bir-biriga almashtiring.</string>
     <string name="wallet_banner_slide_swap_title">ALMASHISH</string>
     <string name="wallet_binance_logout_confirm_dialog_description">Haqiqatan ham tizimdan chiqmoqchimisiz?</string>
@@ -1492,7 +1482,7 @@ Eslatma:
 Sizda iMe Wallet-da faqat bitta faol Ethereum hisob qaydnomasi bo'lishi mumkin. Shuning uchun, boshqa foydalanuvchilar sizning Telegram ID mablag' o'tkazganda, barcha mablag'lar avtomatik ravishda oxirgi bog'langan manzilga o'tkaziladi."</string>
     <string name="wallet_dashboard_create_start_dialog_description">"Kriptovalyutalar va tokenlar uchun qamoqqa olinmaydigan hamyon.
 
-Ethereum va BNB Chain tarmoqlarida saqlang, sotib oling, almashtiring va pul o'tkazmalarini amalga oshiring.
+Ethereum, Bitcoin, BNB Chain, Polygon, Fantom, Tron va TON tarmoqlarida saqlang, sotib oling, almashtiring va pul o'tkazmalarini amalga oshiring.
 
 KEYINGI tugmasini bosish orqali siz rozilik bildirasiz
 %s

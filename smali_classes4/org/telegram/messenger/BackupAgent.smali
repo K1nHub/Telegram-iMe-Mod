@@ -49,9 +49,9 @@
     .line 25
     new-instance v0, Landroid/app/backup/SharedPreferencesBackupHelper;
 
-    const-string v1, "saved_tokens"
+    const-string/jumbo v1, "saved_tokens"
 
-    const-string v2, "saved_tokens_login"
+    const-string/jumbo v2, "saved_tokens_login"
 
     filled-new-array {v1, v2}, [Ljava/lang/String;
 

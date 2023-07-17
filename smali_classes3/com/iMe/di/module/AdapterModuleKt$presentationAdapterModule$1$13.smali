@@ -28,7 +28,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nAdapterModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 AdapterModule.kt\ncom/iMe/di/module/AdapterModuleKt$presentationAdapterModule$1$13\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,118:1\n129#2,5:119\n*S KotlinDebug\n*F\n+ 1 AdapterModule.kt\ncom/iMe/di/module/AdapterModuleKt$presentationAdapterModule$1$13\n*L\n89#1:119,5\n*E\n"
+    value = "SMAP\nAdapterModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 AdapterModule.kt\ncom/iMe/di/module/AdapterModuleKt$presentationAdapterModule$1$13\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,120:1\n129#2,5:121\n*S KotlinDebug\n*F\n+ 1 AdapterModule.kt\ncom/iMe/di/module/AdapterModuleKt$presentationAdapterModule$1$13\n*L\n90#1:121,5\n*E\n"
 .end annotation
 
 
@@ -85,7 +85,7 @@
 
     move-result-object p2
 
-    .line 89
+    .line 90
     check-cast p2, Lcom/iMe/ui/adapter/provider/GlobalStateProvider;
 
     .line 133
@@ -99,7 +99,7 @@
 
     move-result-object v1
 
-    .line 89
+    .line 90
     check-cast v1, Lcom/iMe/ui/adapter/provider/TwitterUserProvider;
 
     .line 133
@@ -113,7 +113,7 @@
 
     move-result-object p1
 
-    .line 89
+    .line 90
     check-cast p1, Lcom/iMe/ui/adapter/provider/TwitterInviteProvider;
 
     new-instance v0, Lcom/iMe/feature/twitter/search/adapter/TwitterUsersRecycleAdapter;
@@ -126,7 +126,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 89
+    .line 90
     check-cast p1, Lorg/koin/core/scope/Scope;
 
     check-cast p2, Lorg/koin/core/parameter/ParametersHolder;

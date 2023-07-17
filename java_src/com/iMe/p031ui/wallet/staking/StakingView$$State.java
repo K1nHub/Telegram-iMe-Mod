@@ -17,6 +17,11 @@ public class StakingView$$State extends MvpViewState<StakingView> implements Sta
         BaseView.CC.$default$finishScreen(this);
     }
 
+    @Override // com.iMe.p031ui.base.mvp.base.BaseView
+    public /* synthetic */ void removeSelfFromStackImmediately() {
+        BaseView.CC.$default$removeSelfFromStackImmediately(this);
+    }
+
     @Override // com.iMe.p031ui.wallet.staking.StakingView
     public void onTabSelected(int i) {
         OnTabSelectedCommand onTabSelectedCommand = new OnTabSelectedCommand(this, i);

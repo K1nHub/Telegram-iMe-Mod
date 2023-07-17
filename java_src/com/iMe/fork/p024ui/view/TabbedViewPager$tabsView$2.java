@@ -2,7 +2,7 @@ package com.iMe.fork.p024ui.view;
 
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Lambda;
-import org.telegram.p044ui.Components.ViewPagerFixed;
+import org.telegram.p043ui.Components.ViewPagerFixed;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: TabbedViewPager.kt */
 /* renamed from: com.iMe.fork.ui.view.TabbedViewPager$tabsView$2 */

@@ -1,49 +1,48 @@
 package com.iMe.storage.data.network.model.request.crypto.wallet;
 
-import com.iMe.storage.domain.model.crypto.NetworkType;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: UnlinkWalletAddressRequest.kt */
 /* loaded from: classes3.dex */
 public final class UnlinkWalletAddressRequest {
-    private final NetworkType networkType;
+    private final String platform;
 
-    public static /* synthetic */ UnlinkWalletAddressRequest copy$default(UnlinkWalletAddressRequest unlinkWalletAddressRequest, NetworkType networkType, int i, Object obj) {
+    public static /* synthetic */ UnlinkWalletAddressRequest copy$default(UnlinkWalletAddressRequest unlinkWalletAddressRequest, String str, int i, Object obj) {
         if ((i & 1) != 0) {
-            networkType = unlinkWalletAddressRequest.networkType;
+            str = unlinkWalletAddressRequest.platform;
         }
-        return unlinkWalletAddressRequest.copy(networkType);
+        return unlinkWalletAddressRequest.copy(str);
     }
 
-    public final NetworkType component1() {
-        return this.networkType;
+    public final String component1() {
+        return this.platform;
     }
 
-    public final UnlinkWalletAddressRequest copy(NetworkType networkType) {
-        Intrinsics.checkNotNullParameter(networkType, "networkType");
-        return new UnlinkWalletAddressRequest(networkType);
+    public final UnlinkWalletAddressRequest copy(String platform) {
+        Intrinsics.checkNotNullParameter(platform, "platform");
+        return new UnlinkWalletAddressRequest(platform);
     }
 
     public boolean equals(Object obj) {
         if (this == obj) {
             return true;
         }
-        return (obj instanceof UnlinkWalletAddressRequest) && this.networkType == ((UnlinkWalletAddressRequest) obj).networkType;
+        return (obj instanceof UnlinkWalletAddressRequest) && Intrinsics.areEqual(this.platform, ((UnlinkWalletAddressRequest) obj).platform);
     }
 
     public int hashCode() {
-        return this.networkType.hashCode();
+        return this.platform.hashCode();
     }
 
     public String toString() {
-        return "UnlinkWalletAddressRequest(networkType=" + this.networkType + ')';
+        return "UnlinkWalletAddressRequest(platform=" + this.platform + ')';
     }
 
-    public UnlinkWalletAddressRequest(NetworkType networkType) {
-        Intrinsics.checkNotNullParameter(networkType, "networkType");
-        this.networkType = networkType;
+    public UnlinkWalletAddressRequest(String platform) {
+        Intrinsics.checkNotNullParameter(platform, "platform");
+        this.platform = platform;
     }
 
-    public final NetworkType getNetworkType() {
-        return this.networkType;
+    public final String getPlatform() {
+        return this.platform;
     }
 }

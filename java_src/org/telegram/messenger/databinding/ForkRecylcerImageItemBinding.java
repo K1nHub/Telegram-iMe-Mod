@@ -1,12 +1,14 @@
 package org.telegram.messenger.databinding;
 
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
-import org.telegram.messenger.C3295R;
+import org.telegram.messenger.C3417R;
 /* loaded from: classes4.dex */
 public final class ForkRecylcerImageItemBinding implements ViewBinding {
     public final ForkRecylcerErrorBlockBinding errorBlock;
@@ -26,15 +28,27 @@ public final class ForkRecylcerImageItemBinding implements ViewBinding {
         return this.rootView;
     }
 
+    public static ForkRecylcerImageItemBinding inflate(LayoutInflater layoutInflater) {
+        return inflate(layoutInflater, null, false);
+    }
+
+    public static ForkRecylcerImageItemBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
+        View inflate = layoutInflater.inflate(C3417R.layout.fork_recylcer_image_item, viewGroup, false);
+        if (z) {
+            viewGroup.addView(inflate);
+        }
+        return bind(inflate);
+    }
+
     public static ForkRecylcerImageItemBinding bind(View view) {
-        int i = C3295R.C3298id.errorBlock;
+        int i = C3417R.C3420id.errorBlock;
         View findChildViewById = ViewBindings.findChildViewById(view, i);
         if (findChildViewById != null) {
             ForkRecylcerErrorBlockBinding bind = ForkRecylcerErrorBlockBinding.bind(findChildViewById);
-            int i2 = C3295R.C3298id.imageView;
+            int i2 = C3417R.C3420id.imageView;
             ImageView imageView = (ImageView) ViewBindings.findChildViewById(view, i2);
             if (imageView != null) {
-                i2 = C3295R.C3298id.progressBar;
+                i2 = C3417R.C3420id.progressBar;
                 ProgressBar progressBar = (ProgressBar) ViewBindings.findChildViewById(view, i2);
                 if (progressBar != null) {
                     return new ForkRecylcerImageItemBinding((FrameLayout) view, bind, imageView, progressBar);

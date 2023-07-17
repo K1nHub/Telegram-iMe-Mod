@@ -24,12 +24,12 @@ import kotlin.jvm.internal.Reflection;
 import kotlin.reflect.KProperty;
 import moxy.ktx.MoxyKtxDelegate;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3295R;
+import org.telegram.messenger.C3417R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.databinding.ForkContentWalletConnectSessionDetailsBinding;
-import org.telegram.p044ui.ActionBar.AlertDialog;
-import org.telegram.p044ui.ActionBar.BaseFragment;
-import org.telegram.p044ui.ActionBar.Theme;
+import org.telegram.p043ui.ActionBar.AlertDialog;
+import org.telegram.p043ui.ActionBar.BaseFragment;
+import org.telegram.p043ui.ActionBar.Theme;
 /* compiled from: WalletConnectSessionDetailsBottomSheetDialog.kt */
 /* renamed from: com.iMe.ui.wallet.crypto.wallet_connect.session_details.WalletConnectSessionDetailsBottomSheetDialog */
 /* loaded from: classes4.dex */
@@ -41,7 +41,7 @@ public final class WalletConnectSessionDetailsBottomSheetDialog extends MvpBotto
     private final MoxyKtxDelegate presenter$delegate;
     private final Lazy resourceManager$delegate;
 
-    @Override // org.telegram.p044ui.ActionBar.BottomSheet
+    @Override // org.telegram.p043ui.ActionBar.BottomSheet
     protected boolean canDismissWithSwipe() {
         return false;
     }
@@ -51,7 +51,7 @@ public final class WalletConnectSessionDetailsBottomSheetDialog extends MvpBotto
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
-    public WalletConnectSessionDetailsBottomSheetDialog(com.iMe.model.wallet.crypto.wallet_connect.WalletConnectSessionItem r5, org.telegram.p044ui.ActionBar.BaseFragment r6, kotlin.jvm.functions.Function0<kotlin.Unit> r7) {
+    public WalletConnectSessionDetailsBottomSheetDialog(com.iMe.model.wallet.crypto.wallet_connect.WalletConnectSessionItem r5, org.telegram.p043ui.ActionBar.BaseFragment r6, kotlin.jvm.functions.Function0<kotlin.Unit> r7) {
         /*
             r4 = this;
             java.lang.String r0 = "item"
@@ -84,7 +84,7 @@ public final class WalletConnectSessionDetailsBottomSheetDialog extends MvpBotto
             java.lang.String r2 = r2.toString()
             r5.<init>(r0, r2, r7)
             r4.presenter$delegate = r5
-            org.koin.mp.KoinPlatformTools r5 = org.koin.p043mp.KoinPlatformTools.INSTANCE
+            org.koin.mp.KoinPlatformTools r5 = org.koin.p042mp.KoinPlatformTools.INSTANCE
             kotlin.LazyThreadSafetyMode r5 = r5.defaultLazyMode()
             com.iMe.ui.wallet.crypto.wallet_connect.session_details.WalletConnectSessionDetailsBottomSheetDialog$special$$inlined$inject$default$1 r7 = new com.iMe.ui.wallet.crypto.wallet_connect.session_details.WalletConnectSessionDetailsBottomSheetDialog$special$$inlined$inject$default$1
             r0 = 0
@@ -134,11 +134,11 @@ public final class WalletConnectSessionDetailsBottomSheetDialog extends MvpBotto
         Intrinsics.checkNotNullParameter(network, "network");
         ForkContentWalletConnectSessionDetailsBinding binding = getBinding();
         binding.viewHeader.setupViewData(iconUrl, name, url);
-        binding.viewConnectedCell.setupViewData(getResourceManager().getString(C3295R.string.wallet_connect_session_details_connected), connectedDate, C3295R.C3297drawable.msg_calendar2, true);
-        binding.viewAddressCell.setupViewData(getResourceManager().getString(C3295R.string.wallet_connect_session_details_address), address, C3295R.C3297drawable.fork_ic_nav_wallet_24, true);
+        binding.viewConnectedCell.setupViewData(getResourceManager().getString(C3417R.string.wallet_connect_session_details_connected), connectedDate, C3417R.C3419drawable.msg_calendar2, true);
+        binding.viewAddressCell.setupViewData(getResourceManager().getString(C3417R.string.wallet_connect_session_details_address), address, C3417R.C3419drawable.fork_ic_nav_wallet_24, true);
         DetailsIconCellView viewNetworkCell = binding.viewNetworkCell;
         Intrinsics.checkNotNullExpressionValue(viewNetworkCell, "viewNetworkCell");
-        DetailsIconCellView.setupViewData$default(viewNetworkCell, getResourceManager().getString(C3295R.string.wallet_connect_session_details_network), network, C3295R.C3297drawable.msg_language, false, 8, null);
+        DetailsIconCellView.setupViewData$default(viewNetworkCell, getResourceManager().getString(C3417R.string.wallet_connect_session_details_network), network, C3417R.C3419drawable.msg_language, false, 8, null);
     }
 
     private final void setupColors() {
@@ -151,7 +151,7 @@ public final class WalletConnectSessionDetailsBottomSheetDialog extends MvpBotto
     }
 
     private final void setupTexts() {
-        getBinding().buttonDisconnect.setText(LocaleController.getString("Disconnect", C3295R.string.Disconnect));
+        getBinding().buttonDisconnect.setText(LocaleController.getString("Disconnect", C3417R.string.Disconnect));
     }
 
     private final void setupListeners() {

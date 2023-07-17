@@ -79,16 +79,26 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    goto :goto_3
+    goto :goto_4
 
     .line 10
     :cond_3
-    iget-object p0, p0, Lorg/telegram/tgnet/TLRPC$User;->first_name:Ljava/lang/String;
+    iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$User;->first_name:Ljava/lang/String;
 
-    const-string v0, "first_name"
+    if-nez v0, :cond_4
+
+    iget-object p0, p0, Lorg/telegram/tgnet/TLRPC$User;->last_name:Ljava/lang/String;
+
+    goto :goto_3
+
+    :cond_4
+    move-object p0, v0
+
+    :goto_3
+    const-string v0, "first_name ?: last_name"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    :goto_3
+    :goto_4
     return-object p0
 .end method

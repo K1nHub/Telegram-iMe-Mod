@@ -168,7 +168,7 @@
 
     move-result-object v8
 
-    const-string v4, "remove"
+    const-string/jumbo v4, "remove"
 
     new-array v2, v2, [Ljava/lang/Class;
 
@@ -193,7 +193,7 @@
 
     invoke-static {v8, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v3, "removeMethod"
+    const-string/jumbo v3, "removeMethod"
 
     invoke-static {v9, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -201,7 +201,7 @@
 
     invoke-static {v10, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v3, "serverProviderClass"
+    const-string/jumbo v3, "serverProviderClass"
 
     invoke-static {v11, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 

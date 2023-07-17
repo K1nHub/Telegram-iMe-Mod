@@ -639,7 +639,7 @@
 
     invoke-direct {p2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string p3, "reserved bit set: "
+    const-string/jumbo p3, "reserved bit set: "
 
     invoke-virtual {p2, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1054,7 +1054,7 @@
     monitor-enter p0
 
     :try_start_0
-    const-string v0, "requestHeaders"
+    const-string/jumbo v0, "requestHeaders"
 
     invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 

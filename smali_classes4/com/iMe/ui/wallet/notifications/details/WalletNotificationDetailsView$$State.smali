@@ -11,7 +11,6 @@
     value = {
         Lcom/iMe/ui/wallet/notifications/details/WalletNotificationDetailsView$$State$SetupMessageClickableLinkCommand;,
         Lcom/iMe/ui/wallet/notifications/details/WalletNotificationDetailsView$$State$ShowClickableTextDialogCommand;,
-        Lcom/iMe/ui/wallet/notifications/details/WalletNotificationDetailsView$$State$ActionMakeTransferCommand;,
         Lcom/iMe/ui/wallet/notifications/details/WalletNotificationDetailsView$$State$ActionOpenProfileScreenCommand;,
         Lcom/iMe/ui/wallet/notifications/details/WalletNotificationDetailsView$$State$ActionCopyToClipboardCommand;,
         Lcom/iMe/ui/wallet/notifications/details/WalletNotificationDetailsView$$State$SetupScreenWithDataCommand;
@@ -97,95 +96,6 @@
     iget-object p1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
 
     invoke-virtual {p1, v0}, Lmoxy/viewstate/ViewCommands;->afterApply(Lmoxy/viewstate/ViewCommand;)V
-
-    return-void
-.end method
-
-.method public actionMakeTransfer(Lcom/iMe/storage/domain/model/wallet/token/TokenCode;Ljava/lang/String;ZLjava/lang/String;Lcom/iMe/storage/domain/model/crypto/NetworkType;)V
-    .locals 15
-
-    move-object v7, p0
-
-    .line 68
-    new-instance v8, Lcom/iMe/ui/wallet/notifications/details/WalletNotificationDetailsView$$State$ActionMakeTransferCommand;
-
-    move-object v0, v8
-
-    move-object v1, p0
-
-    move-object/from16 v2, p1
-
-    move-object/from16 v3, p2
-
-    move/from16 v4, p3
-
-    move-object/from16 v5, p4
-
-    move-object/from16 v6, p5
-
-    invoke-direct/range {v0 .. v6}, Lcom/iMe/ui/wallet/notifications/details/WalletNotificationDetailsView$$State$ActionMakeTransferCommand;-><init>(Lcom/iMe/ui/wallet/notifications/details/WalletNotificationDetailsView$$State;Lcom/iMe/storage/domain/model/wallet/token/TokenCode;Ljava/lang/String;ZLjava/lang/String;Lcom/iMe/storage/domain/model/crypto/NetworkType;)V
-
-    .line 69
-    iget-object v0, v7, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
-
-    invoke-virtual {v0, v8}, Lmoxy/viewstate/ViewCommands;->beforeApply(Lmoxy/viewstate/ViewCommand;)V
-
-    .line 71
-    invoke-virtual {p0}, Lmoxy/viewstate/MvpViewState;->hasNotView()Ljava/lang/Boolean;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    return-void
-
-    .line 75
-    :cond_0
-    iget-object v0, v7, Lmoxy/viewstate/MvpViewState;->views:Ljava/util/Set;
-
-    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
-
-    move-result-object v0
-
-    :goto_0
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_1
-
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v1
-
-    move-object v9, v1
-
-    check-cast v9, Lcom/iMe/ui/wallet/notifications/details/WalletNotificationDetailsView;
-
-    move-object/from16 v10, p1
-
-    move-object/from16 v11, p2
-
-    move/from16 v12, p3
-
-    move-object/from16 v13, p4
-
-    move-object/from16 v14, p5
-
-    .line 76
-    invoke-interface/range {v9 .. v14}, Lcom/iMe/manager/wallet/WalletLinkClickableView;->actionMakeTransfer(Lcom/iMe/storage/domain/model/wallet/token/TokenCode;Ljava/lang/String;ZLjava/lang/String;Lcom/iMe/storage/domain/model/crypto/NetworkType;)V
-
-    goto :goto_0
-
-    .line 79
-    :cond_1
-    iget-object v0, v7, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
-
-    invoke-virtual {v0, v8}, Lmoxy/viewstate/ViewCommands;->afterApply(Lmoxy/viewstate/ViewCommand;)V
 
     return-void
 .end method

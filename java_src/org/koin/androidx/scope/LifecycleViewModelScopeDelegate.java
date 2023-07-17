@@ -24,7 +24,7 @@ public final class LifecycleViewModelScopeDelegate {
     /* compiled from: LifecycleViewModelScopeDelegate.kt */
     /* renamed from: org.koin.androidx.scope.LifecycleViewModelScopeDelegate$2 */
     /* loaded from: classes4.dex */
-    public final class C31832 implements DefaultLifecycleObserver {
+    public final class C33042 implements DefaultLifecycleObserver {
         final /* synthetic */ ScopeHandlerViewModel $scopeViewModel;
         final /* synthetic */ LifecycleViewModelScopeDelegate this$0;
 

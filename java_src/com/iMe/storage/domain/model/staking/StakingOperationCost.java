@@ -1,23 +1,24 @@
 package com.iMe.storage.domain.model.staking;
 
+import com.iMe.storage.domain.model.wallet.token.TokenDetailed;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: StakingOperationCost.kt */
 /* loaded from: classes3.dex */
 public final class StakingOperationCost {
-    private final StakingToken token;
+    private final TokenDetailed token;
     private final StakingValues value;
 
-    public static /* synthetic */ StakingOperationCost copy$default(StakingOperationCost stakingOperationCost, StakingToken stakingToken, StakingValues stakingValues, int i, Object obj) {
+    public static /* synthetic */ StakingOperationCost copy$default(StakingOperationCost stakingOperationCost, TokenDetailed tokenDetailed, StakingValues stakingValues, int i, Object obj) {
         if ((i & 1) != 0) {
-            stakingToken = stakingOperationCost.token;
+            tokenDetailed = stakingOperationCost.token;
         }
         if ((i & 2) != 0) {
             stakingValues = stakingOperationCost.value;
         }
-        return stakingOperationCost.copy(stakingToken, stakingValues);
+        return stakingOperationCost.copy(tokenDetailed, stakingValues);
     }
 
-    public final StakingToken component1() {
+    public final TokenDetailed component1() {
         return this.token;
     }
 
@@ -25,7 +26,7 @@ public final class StakingOperationCost {
         return this.value;
     }
 
-    public final StakingOperationCost copy(StakingToken token, StakingValues value) {
+    public final StakingOperationCost copy(TokenDetailed token, StakingValues value) {
         Intrinsics.checkNotNullParameter(token, "token");
         Intrinsics.checkNotNullParameter(value, "value");
         return new StakingOperationCost(token, value);
@@ -50,14 +51,14 @@ public final class StakingOperationCost {
         return "StakingOperationCost(token=" + this.token + ", value=" + this.value + ')';
     }
 
-    public StakingOperationCost(StakingToken token, StakingValues value) {
+    public StakingOperationCost(TokenDetailed token, StakingValues value) {
         Intrinsics.checkNotNullParameter(token, "token");
         Intrinsics.checkNotNullParameter(value, "value");
         this.token = token;
         this.value = value;
     }
 
-    public final StakingToken getToken() {
+    public final TokenDetailed getToken() {
         return this.token;
     }
 

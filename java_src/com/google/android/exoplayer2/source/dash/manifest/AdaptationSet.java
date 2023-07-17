@@ -9,13 +9,13 @@ public class AdaptationSet {
     public final List<Descriptor> essentialProperties;
 
     /* renamed from: id */
-    public final int f130id;
+    public final int f212id;
     public final List<Representation> representations;
     public final List<Descriptor> supplementalProperties;
     public final int type;
 
     public AdaptationSet(int i, int i2, List<Representation> list, List<Descriptor> list2, List<Descriptor> list3, List<Descriptor> list4) {
-        this.f130id = i;
+        this.f212id = i;
         this.type = i2;
         this.representations = Collections.unmodifiableList(list);
         this.accessibilityDescriptors = Collections.unmodifiableList(list2);

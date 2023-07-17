@@ -1,16 +1,15 @@
 package com.iMe.navigation.wallet.coordinator.args;
 
-import com.iMe.storage.domain.model.crypto.NetworkType;
 import com.iMe.storage.domain.model.wallet.swap.SwapProtocol;
-import com.iMe.storage.domain.model.wallet.token.TokenCode;
+import com.iMe.storage.domain.model.wallet.token.TokenDetailed;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: TokenBuyCoordinatorArgs.kt */
 /* loaded from: classes3.dex */
 public final class TokenBuyCoordinatorArgs {
-    private final NetworkType networkType;
+    private final String networkId;
     private final SwapProtocol swapProtocol;
-    private final TokenCode tokenCode;
+    private final TokenDetailed token;
 
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -18,42 +17,43 @@ public final class TokenBuyCoordinatorArgs {
         }
         if (obj instanceof TokenBuyCoordinatorArgs) {
             TokenBuyCoordinatorArgs tokenBuyCoordinatorArgs = (TokenBuyCoordinatorArgs) obj;
-            return this.tokenCode == tokenBuyCoordinatorArgs.tokenCode && this.swapProtocol == tokenBuyCoordinatorArgs.swapProtocol && this.networkType == tokenBuyCoordinatorArgs.networkType;
+            return Intrinsics.areEqual(this.token, tokenBuyCoordinatorArgs.token) && this.swapProtocol == tokenBuyCoordinatorArgs.swapProtocol && Intrinsics.areEqual(this.networkId, tokenBuyCoordinatorArgs.networkId);
         }
         return false;
     }
 
     public int hashCode() {
-        int hashCode = ((this.tokenCode.hashCode() * 31) + this.swapProtocol.hashCode()) * 31;
-        NetworkType networkType = this.networkType;
-        return hashCode + (networkType == null ? 0 : networkType.hashCode());
+        TokenDetailed tokenDetailed = this.token;
+        int hashCode = (tokenDetailed == null ? 0 : tokenDetailed.hashCode()) * 31;
+        SwapProtocol swapProtocol = this.swapProtocol;
+        int hashCode2 = (hashCode + (swapProtocol == null ? 0 : swapProtocol.hashCode())) * 31;
+        String str = this.networkId;
+        return hashCode2 + (str != null ? str.hashCode() : 0);
     }
 
     public String toString() {
-        return "TokenBuyCoordinatorArgs(tokenCode=" + this.tokenCode + ", swapProtocol=" + this.swapProtocol + ", networkType=" + this.networkType + ')';
+        return "TokenBuyCoordinatorArgs(token=" + this.token + ", swapProtocol=" + this.swapProtocol + ", networkId=" + this.networkId + ')';
     }
 
-    public TokenBuyCoordinatorArgs(TokenCode tokenCode, SwapProtocol swapProtocol, NetworkType networkType) {
-        Intrinsics.checkNotNullParameter(tokenCode, "tokenCode");
-        Intrinsics.checkNotNullParameter(swapProtocol, "swapProtocol");
-        this.tokenCode = tokenCode;
+    public TokenBuyCoordinatorArgs(TokenDetailed tokenDetailed, SwapProtocol swapProtocol, String str) {
+        this.token = tokenDetailed;
         this.swapProtocol = swapProtocol;
-        this.networkType = networkType;
+        this.networkId = str;
     }
 
-    public /* synthetic */ TokenBuyCoordinatorArgs(TokenCode tokenCode, SwapProtocol swapProtocol, NetworkType networkType, int i, DefaultConstructorMarker defaultConstructorMarker) {
-        this(tokenCode, swapProtocol, (i & 4) != 0 ? null : networkType);
+    public /* synthetic */ TokenBuyCoordinatorArgs(TokenDetailed tokenDetailed, SwapProtocol swapProtocol, String str, int i, DefaultConstructorMarker defaultConstructorMarker) {
+        this(tokenDetailed, swapProtocol, (i & 4) != 0 ? null : str);
     }
 
-    public final TokenCode getTokenCode() {
-        return this.tokenCode;
+    public final TokenDetailed getToken() {
+        return this.token;
     }
 
     public final SwapProtocol getSwapProtocol() {
         return this.swapProtocol;
     }
 
-    public final NetworkType getNetworkType() {
-        return this.networkType;
+    public final String getNetworkId() {
+        return this.networkId;
     }
 }

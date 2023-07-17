@@ -126,7 +126,7 @@
 
     move-object/from16 v0, p0
 
-    const-string v1, "response"
+    const-string/jumbo v1, "response"
 
     move-object/from16 v2, p2
 

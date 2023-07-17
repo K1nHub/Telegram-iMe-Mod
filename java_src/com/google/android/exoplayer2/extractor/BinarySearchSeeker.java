@@ -1,6 +1,6 @@
 package com.google.android.exoplayer2.extractor;
 
-import com.google.android.exoplayer2.C0475C;
+import com.google.android.exoplayer2.C0480C;
 import com.google.android.exoplayer2.extractor.SeekMap;
 import com.google.android.exoplayer2.util.Assertions;
 import com.google.android.exoplayer2.util.Util;
@@ -211,7 +211,7 @@ public abstract class BinarySearchSeeker {
 
     /* loaded from: classes.dex */
     public static final class TimestampSearchResult {
-        public static final TimestampSearchResult NO_TIMESTAMP_IN_RANGE_RESULT = new TimestampSearchResult(-3, C0475C.TIME_UNSET, -1);
+        public static final TimestampSearchResult NO_TIMESTAMP_IN_RANGE_RESULT = new TimestampSearchResult(-3, C0480C.TIME_UNSET, -1);
         public static final int TYPE_NO_TIMESTAMP = -3;
         public static final int TYPE_POSITION_OVERESTIMATED = -1;
         public static final int TYPE_POSITION_UNDERESTIMATED = -2;
@@ -242,7 +242,7 @@ public abstract class BinarySearchSeeker {
         }
 
         public static TimestampSearchResult targetFoundResult(long j) {
-            return new TimestampSearchResult(0, C0475C.TIME_UNSET, j);
+            return new TimestampSearchResult(0, C0480C.TIME_UNSET, j);
         }
     }
 

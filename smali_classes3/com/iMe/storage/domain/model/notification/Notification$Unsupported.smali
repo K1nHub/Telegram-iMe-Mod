@@ -21,7 +21,7 @@
 
 .field private isRead:Z
 
-.field private final networkType:Lcom/iMe/storage/domain/model/crypto/NetworkType;
+.field private final networkId:Ljava/lang/String;
 
 .field private final type:Lcom/iMe/storage/domain/model/notification/NotificationType;
 
@@ -29,7 +29,7 @@
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;ZLcom/iMe/storage/domain/model/notification/NotificationType;Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/domain/model/crypto/NetworkType;)V
+.method public constructor <init>(Ljava/lang/String;ZLcom/iMe/storage/domain/model/notification/NotificationType;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
     .locals 9
 
     const-string v0, "id"
@@ -48,7 +48,7 @@
 
     invoke-static {p5, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "networkType"
+    const-string v0, "networkId"
 
     invoke-static {p6, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -68,31 +68,31 @@
 
     move-object v7, p6
 
-    .line 155
-    invoke-direct/range {v1 .. v8}, Lcom/iMe/storage/domain/model/notification/Notification;-><init>(Ljava/lang/String;ZLcom/iMe/storage/domain/model/notification/NotificationType;Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/domain/model/crypto/NetworkType;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
+    .line 153
+    invoke-direct/range {v1 .. v8}, Lcom/iMe/storage/domain/model/notification/Notification;-><init>(Ljava/lang/String;ZLcom/iMe/storage/domain/model/notification/NotificationType;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
 
-    .line 149
+    .line 147
     iput-object p1, p0, Lcom/iMe/storage/domain/model/notification/Notification$Unsupported;->id:Ljava/lang/String;
 
-    .line 150
+    .line 148
     iput-boolean p2, p0, Lcom/iMe/storage/domain/model/notification/Notification$Unsupported;->isRead:Z
 
-    .line 151
+    .line 149
     iput-object p3, p0, Lcom/iMe/storage/domain/model/notification/Notification$Unsupported;->type:Lcom/iMe/storage/domain/model/notification/NotificationType;
 
-    .line 152
+    .line 150
     iput-object p4, p0, Lcom/iMe/storage/domain/model/notification/Notification$Unsupported;->date:Ljava/lang/String;
 
-    .line 153
+    .line 151
     iput-object p5, p0, Lcom/iMe/storage/domain/model/notification/Notification$Unsupported;->userId:Ljava/lang/String;
 
-    .line 154
-    iput-object p6, p0, Lcom/iMe/storage/domain/model/notification/Notification$Unsupported;->networkType:Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    .line 152
+    iput-object p6, p0, Lcom/iMe/storage/domain/model/notification/Notification$Unsupported;->networkId:Ljava/lang/String;
 
     return-void
 .end method
 
-.method public static synthetic copy$default(Lcom/iMe/storage/domain/model/notification/Notification$Unsupported;Ljava/lang/String;ZLcom/iMe/storage/domain/model/notification/NotificationType;Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/domain/model/crypto/NetworkType;ILjava/lang/Object;)Lcom/iMe/storage/domain/model/notification/Notification$Unsupported;
+.method public static synthetic copy$default(Lcom/iMe/storage/domain/model/notification/Notification$Unsupported;Ljava/lang/String;ZLcom/iMe/storage/domain/model/notification/NotificationType;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Object;)Lcom/iMe/storage/domain/model/notification/Notification$Unsupported;
     .locals 4
 
     and-int/lit8 p8, p7, 0x1
@@ -152,7 +152,7 @@
 
     if-eqz p2, :cond_5
 
-    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/notification/Notification$Unsupported;->getNetworkType()Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/notification/Notification$Unsupported;->getNetworkId()Ljava/lang/String;
 
     move-result-object p6
 
@@ -173,7 +173,7 @@
 
     move-object p8, v3
 
-    invoke-virtual/range {p2 .. p8}, Lcom/iMe/storage/domain/model/notification/Notification$Unsupported;->copy(Ljava/lang/String;ZLcom/iMe/storage/domain/model/notification/NotificationType;Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/domain/model/crypto/NetworkType;)Lcom/iMe/storage/domain/model/notification/Notification$Unsupported;
+    invoke-virtual/range {p2 .. p8}, Lcom/iMe/storage/domain/model/notification/Notification$Unsupported;->copy(Ljava/lang/String;ZLcom/iMe/storage/domain/model/notification/NotificationType;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lcom/iMe/storage/domain/model/notification/Notification$Unsupported;
 
     move-result-object p0
 
@@ -232,17 +232,17 @@
     return-object v0
 .end method
 
-.method public final component6()Lcom/iMe/storage/domain/model/crypto/NetworkType;
+.method public final component6()Ljava/lang/String;
     .locals 1
 
-    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/notification/Notification$Unsupported;->getNetworkType()Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/notification/Notification$Unsupported;->getNetworkId()Ljava/lang/String;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public final copy(Ljava/lang/String;ZLcom/iMe/storage/domain/model/notification/NotificationType;Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/domain/model/crypto/NetworkType;)Lcom/iMe/storage/domain/model/notification/Notification$Unsupported;
+.method public final copy(Ljava/lang/String;ZLcom/iMe/storage/domain/model/notification/NotificationType;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lcom/iMe/storage/domain/model/notification/Notification$Unsupported;
     .locals 8
 
     const-string v0, "id"
@@ -261,7 +261,7 @@
 
     invoke-static {p5, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "networkType"
+    const-string v0, "networkId"
 
     invoke-static {p6, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -281,7 +281,7 @@
 
     move-object v7, p6
 
-    invoke-direct/range {v1 .. v7}, Lcom/iMe/storage/domain/model/notification/Notification$Unsupported;-><init>(Ljava/lang/String;ZLcom/iMe/storage/domain/model/notification/NotificationType;Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/domain/model/crypto/NetworkType;)V
+    invoke-direct/range {v1 .. v7}, Lcom/iMe/storage/domain/model/notification/Notification$Unsupported;-><init>(Ljava/lang/String;ZLcom/iMe/storage/domain/model/notification/NotificationType;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
     return-object v0
 .end method
@@ -384,15 +384,19 @@
     return v2
 
     :cond_6
-    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/notification/Notification$Unsupported;->getNetworkType()Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/notification/Notification$Unsupported;->getNetworkId()Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/notification/Notification$Unsupported;->getNetworkType()Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/notification/Notification$Unsupported;->getNetworkId()Ljava/lang/String;
 
     move-result-object p1
 
-    if-eq v1, p1, :cond_7
+    invoke-static {v1, p1}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result p1
+
+    if-nez p1, :cond_7
 
     return v2
 
@@ -403,7 +407,7 @@
 .method public getDate()Ljava/lang/String;
     .locals 1
 
-    .line 152
+    .line 150
     iget-object v0, p0, Lcom/iMe/storage/domain/model/notification/Notification$Unsupported;->date:Ljava/lang/String;
 
     return-object v0
@@ -412,17 +416,17 @@
 .method public getId()Ljava/lang/String;
     .locals 1
 
-    .line 149
+    .line 147
     iget-object v0, p0, Lcom/iMe/storage/domain/model/notification/Notification$Unsupported;->id:Ljava/lang/String;
 
     return-object v0
 .end method
 
-.method public getNetworkType()Lcom/iMe/storage/domain/model/crypto/NetworkType;
+.method public getNetworkId()Ljava/lang/String;
     .locals 1
 
-    .line 154
-    iget-object v0, p0, Lcom/iMe/storage/domain/model/notification/Notification$Unsupported;->networkType:Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    .line 152
+    iget-object v0, p0, Lcom/iMe/storage/domain/model/notification/Notification$Unsupported;->networkId:Ljava/lang/String;
 
     return-object v0
 .end method
@@ -430,7 +434,7 @@
 .method public getType()Lcom/iMe/storage/domain/model/notification/NotificationType;
     .locals 1
 
-    .line 151
+    .line 149
     iget-object v0, p0, Lcom/iMe/storage/domain/model/notification/Notification$Unsupported;->type:Lcom/iMe/storage/domain/model/notification/NotificationType;
 
     return-object v0
@@ -439,7 +443,7 @@
 .method public getUserId()Ljava/lang/String;
     .locals 1
 
-    .line 153
+    .line 151
     iget-object v0, p0, Lcom/iMe/storage/domain/model/notification/Notification$Unsupported;->userId:Ljava/lang/String;
 
     return-object v0
@@ -507,11 +511,11 @@
 
     mul-int/lit8 v0, v0, 0x1f
 
-    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/notification/Notification$Unsupported;->getNetworkType()Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/notification/Notification$Unsupported;->getNetworkId()Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-virtual {v1}, Ljava/lang/Enum;->hashCode()I
+    invoke-virtual {v1}, Ljava/lang/String;->hashCode()I
 
     move-result v1
 
@@ -523,7 +527,7 @@
 .method public isRead()Z
     .locals 1
 
-    .line 150
+    .line 148
     iget-boolean v0, p0, Lcom/iMe/storage/domain/model/notification/Notification$Unsupported;->isRead:Z
 
     return v0
@@ -532,7 +536,7 @@
 .method public setRead(Z)V
     .locals 0
 
-    .line 150
+    .line 148
     iput-boolean p1, p0, Lcom/iMe/storage/domain/model/notification/Notification$Unsupported;->isRead:Z
 
     return-void
@@ -595,15 +599,15 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v1, ", networkType="
+    const-string v1, ", networkId="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/notification/Notification$Unsupported;->getNetworkType()Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/notification/Notification$Unsupported;->getNetworkId()Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     const/16 v1, 0x29
 

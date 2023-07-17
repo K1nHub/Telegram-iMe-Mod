@@ -18,6 +18,11 @@ public class WalletAppearanceSettingsView$$State extends MvpViewState<WalletAppe
         BaseView.CC.$default$finishScreen(this);
     }
 
+    @Override // com.iMe.p031ui.base.mvp.base.BaseView
+    public /* synthetic */ void removeSelfFromStackImmediately() {
+        BaseView.CC.$default$removeSelfFromStackImmediately(this);
+    }
+
     @Override // com.iMe.p031ui.wallet.settings.appearance.WalletAppearanceSettingsView
     public void setupSettingsItems(List<InterfaceSettingItem> list) {
         SetupSettingsItemsCommand setupSettingsItemsCommand = new SetupSettingsItemsCommand(this, list);

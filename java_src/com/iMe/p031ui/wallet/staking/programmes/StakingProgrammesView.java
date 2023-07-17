@@ -6,6 +6,7 @@ import com.iMe.p031ui.base.mvp.LoadMoreView;
 import com.iMe.p031ui.base.mvp.base.BaseView;
 import com.iMe.storage.domain.model.crypto.level.AccountLevel;
 import com.iMe.storage.domain.model.wallet.staking.StakingOrderType;
+import com.iMe.storage.domain.model.wallet.token.TokenDetailed;
 import java.util.List;
 import moxy.viewstate.strategy.alias.AddToEndSingle;
 import moxy.viewstate.strategy.alias.OneExecution;
@@ -21,7 +22,7 @@ public interface StakingProgrammesView extends BaseView, LoadMoreView<BaseNode> 
     @AddToEndSingle
     void renderItems(List<BaseNode> list);
 
-    void showLevelRequiredDialog(AccountLevel accountLevel);
+    void showLevelRequiredDialog(AccountLevel accountLevel, TokenDetailed tokenDetailed);
 
     void showSelectStakingOrderTypeDialog(StakingOrderType stakingOrderType);
 }

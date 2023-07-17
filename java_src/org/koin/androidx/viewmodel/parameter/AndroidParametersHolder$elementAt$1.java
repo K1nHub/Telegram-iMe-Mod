@@ -9,7 +9,7 @@ final class AndroidParametersHolder$elementAt$1 extends Lambda implements Functi
     final /* synthetic */ KClass<?> $clazz;
 
     /* renamed from: $i */
-    final /* synthetic */ int f1351$i;
+    final /* synthetic */ int f1433$i;
     final /* synthetic */ AndroidParametersHolder this$0;
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -17,7 +17,7 @@ final class AndroidParametersHolder$elementAt$1 extends Lambda implements Functi
     public AndroidParametersHolder$elementAt$1(AndroidParametersHolder androidParametersHolder, int i, KClass<?> kClass) {
         super(0);
         this.this$0 = androidParametersHolder;
-        this.f1351$i = i;
+        this.f1433$i = i;
         this.$clazz = kClass;
     }
 
@@ -25,7 +25,7 @@ final class AndroidParametersHolder$elementAt$1 extends Lambda implements Functi
     @Override // kotlin.jvm.functions.Function0
     public final T invoke() {
         ?? elementAt;
-        elementAt = super/*org.koin.core.parameter.ParametersHolder*/.elementAt(this.f1351$i, this.$clazz);
+        elementAt = super/*org.koin.core.parameter.ParametersHolder*/.elementAt(this.f1433$i, this.$clazz);
         return elementAt;
     }
 }

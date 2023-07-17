@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Lorg/telegram/ui/Components/FiltersListBottomSheet$FiltersListBottomSheetDelegate;
 
 
 # instance fields
@@ -22,12 +22,12 @@
 
 
 # virtual methods
-.method public final run()V
+.method public final didSelectFilter(Lorg/telegram/messenger/MessagesController$DialogFilter;)V
     .locals 1
 
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$49$$ExternalSyntheticLambda3;->f$0:Lorg/telegram/ui/DialogsActivity$49;
 
-    invoke-static {v0}, Lorg/telegram/ui/DialogsActivity$49;->$r8$lambda$fUqYgSXIW-5URAsIGvgz863ttFQ(Lorg/telegram/ui/DialogsActivity$49;)V
+    invoke-static {v0, p1}, Lorg/telegram/ui/DialogsActivity$49;->$r8$lambda$QoCSjECHpriAVdtror45kIF8yyI(Lorg/telegram/ui/DialogsActivity$49;Lorg/telegram/messenger/MessagesController$DialogFilter;)V
 
     return-void
 .end method

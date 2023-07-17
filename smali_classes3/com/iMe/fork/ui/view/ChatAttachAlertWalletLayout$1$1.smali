@@ -24,7 +24,7 @@
 
     iput-object p1, p0, Lcom/iMe/fork/ui/view/ChatAttachAlertWalletLayout$1$1;->this$0:Lcom/iMe/fork/ui/view/ChatAttachAlertWalletLayout;
 
-    .line 104
+    .line 103
     invoke-direct {p0}, Landroidx/recyclerview/widget/DefaultItemAnimator;-><init>()V
 
     return-void
@@ -39,14 +39,14 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 106
+    .line 105
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getAdapterPosition()I
 
     move-result p1
 
     if-nez p1, :cond_0
 
-    .line 107
+    .line 106
     iget-object p1, p0, Lcom/iMe/fork/ui/view/ChatAttachAlertWalletLayout$1$1;->this$0:Lcom/iMe/fork/ui/view/ChatAttachAlertWalletLayout;
 
     invoke-static {p1}, Lcom/iMe/fork/ui/view/ChatAttachAlertWalletLayout;->access$getParentAlert$p$s-1876542046(Lcom/iMe/fork/ui/view/ChatAttachAlertWalletLayout;)Lorg/telegram/ui/Components/ChatAttachAlert;

@@ -5,7 +5,7 @@ import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Lambda;
-import org.koin.p043mp.KoinPlatformTools;
+import org.koin.p042mp.KoinPlatformTools;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: WalletRootFragment.kt */
 /* renamed from: com.iMe.ui.wallet.common.WalletRootFragment$airdropPresenter$2 */
@@ -24,7 +24,7 @@ public final class WalletRootFragment$airdropPresenter$2 extends Lambda implemen
     @Override // kotlin.jvm.functions.Function0
     public final WalletAirdropPresenter invoke() {
         Lazy lazy;
-        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new C2115xe282b63a(this.this$0, null, null));
+        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new C2119xe282b63a(this.this$0, null, null));
         return (WalletAirdropPresenter) lazy.getValue();
     }
 }

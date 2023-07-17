@@ -1804,9 +1804,13 @@
     .line 1916
     iget-object v0, p0, Lorg/telegram/ui/LocationActivity;->map:Lorg/telegram/messenger/IMapsProvider$IMap;
 
+    if-eqz v0, :cond_2
+
+    iget-object v0, p0, Lorg/telegram/ui/LocationActivity;->myLocation:Landroid/location/Location;
+
     if-nez v0, :cond_0
 
-    return-void
+    goto :goto_1
 
     :cond_0
     const/4 v0, 0x2
@@ -1915,6 +1919,8 @@
 
     iput-object p1, p0, Lorg/telegram/ui/LocationActivity;->proximityCircle:Lorg/telegram/messenger/IMapsProvider$ICircle;
 
+    :cond_2
+    :goto_1
     return-void
 .end method
 

@@ -7,11 +7,17 @@
 
 
 # annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Lcom/iMe/storage/data/datasource/approve/WalletApproveDataSourceFactory$WhenMappings;
+    }
+.end annotation
+
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Object;",
         "Lcom/iMe/storage/data/datasource/base/DataSourceFactory<",
-        "Lcom/iMe/storage/domain/model/wallet/token/TokenCode;",
+        "Lcom/iMe/storage/domain/model/crypto/BlockchainType;",
         "Lcom/iMe/storage/data/datasource/approve/WalletApproveDataSource;",
         ">;"
     }
@@ -41,20 +47,27 @@
 
 
 # virtual methods
-.method public getDataSource(Lcom/iMe/storage/domain/model/wallet/token/TokenCode;)Lcom/iMe/storage/data/datasource/approve/WalletApproveDataSource;
+.method public getDataSource(Lcom/iMe/storage/domain/model/crypto/BlockchainType;)Lcom/iMe/storage/data/datasource/approve/WalletApproveDataSource;
     .locals 2
 
     const-string v0, "arg"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
+    .line 13
+    sget-object v0, Lcom/iMe/storage/data/datasource/approve/WalletApproveDataSourceFactory$WhenMappings;->$EnumSwitchMapping$0:[I
+
+    invoke-virtual {p1}, Ljava/lang/Enum;->ordinal()I
+
+    move-result v1
+
+    aget v0, v0, v1
+
+    const/4 v1, 0x1
+
+    if-ne v0, v1, :cond_0
+
     .line 14
-    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;->isCryptoTokens()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
     iget-object p1, p0, Lcom/iMe/storage/data/datasource/approve/WalletApproveDataSourceFactory;->ethApproveDataSource:Lcom/iMe/storage/data/datasource/approve/WalletApproveDataSource;
 
     return-object p1

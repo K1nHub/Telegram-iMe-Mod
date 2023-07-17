@@ -51,17 +51,17 @@
         }
     .end annotation
 
-    .line 265
+    .line 285
     const-class p1, Lmoxy/viewstate/strategy/OneExecutionStateStrategy;
 
     const-string/jumbo v0, "showErrorToast"
 
     invoke-direct {p0, v0, p1}, Lmoxy/viewstate/ViewCommand;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
-    .line 267
+    .line 287
     iput-object p2, p0, Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorView$$State$ShowErrorToastCommand;->result:Lcom/iMe/storage/domain/model/Result$Error;
 
-    .line 268
+    .line 288
     iput-object p3, p0, Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorView$$State$ShowErrorToastCommand;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     return-void
@@ -72,7 +72,7 @@
 .method public apply(Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorView;)V
     .locals 2
 
-    .line 273
+    .line 293
     iget-object v0, p0, Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorView$$State$ShowErrorToastCommand;->result:Lcom/iMe/storage/domain/model/Result$Error;
 
     iget-object v1, p0, Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorView$$State$ShowErrorToastCommand;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
@@ -85,7 +85,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 259
+    .line 279
     check-cast p1, Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorView$$State$ShowErrorToastCommand;->apply(Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorView;)V

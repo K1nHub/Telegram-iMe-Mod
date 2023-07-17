@@ -29,7 +29,7 @@
 
     check-cast p1, Ljava/util/ArrayList;
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/DialogsActivity;->$r8$lambda$l3j3Gkh-kGnVYTijYEd7pEklpAo(Lorg/telegram/ui/DialogsActivity;Ljava/util/ArrayList;)V
+    invoke-static {v0, p1}, Lorg/telegram/ui/DialogsActivity;->$r8$lambda$gWQENE9WTWLu5VlYbRrKLje9_6A(Lorg/telegram/ui/DialogsActivity;Ljava/util/ArrayList;)V
 
     return-void
 .end method

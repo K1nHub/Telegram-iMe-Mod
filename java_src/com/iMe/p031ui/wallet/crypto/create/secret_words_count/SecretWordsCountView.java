@@ -6,9 +6,7 @@ import moxy.viewstate.strategy.alias.OneExecution;
 /* compiled from: SecretWordsCountView.kt */
 @OneExecution
 /* renamed from: com.iMe.ui.wallet.crypto.create.secret_words_count.SecretWordsCountView */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public interface SecretWordsCountView extends BaseView {
-    void onItemSelected(int i);
-
     void setupAdapter(List<Integer> list);
 }

@@ -2,7 +2,7 @@ package com.google.android.exoplayer2.metadata.scte35;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import com.google.android.exoplayer2.C0475C;
+import com.google.android.exoplayer2.C0480C;
 import com.google.android.exoplayer2.util.ParsableByteArray;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -90,9 +90,9 @@ public final class SpliceScheduleCommand extends SpliceCommand {
             if (z5) {
                 arrayList = arrayList2;
                 z = false;
-                j = C0475C.TIME_UNSET;
+                j = C0480C.TIME_UNSET;
                 z2 = false;
-                j2 = C0475C.TIME_UNSET;
+                j2 = C0480C.TIME_UNSET;
                 i = 0;
                 i2 = 0;
                 i3 = 0;
@@ -102,7 +102,7 @@ public final class SpliceScheduleCommand extends SpliceCommand {
                 boolean z6 = (readUnsignedByte & 128) != 0;
                 boolean z7 = (readUnsignedByte & 64) != 0;
                 boolean z8 = (readUnsignedByte & 32) != 0;
-                long readUnsignedInt2 = z7 ? parsableByteArray.readUnsignedInt() : C0475C.TIME_UNSET;
+                long readUnsignedInt2 = z7 ? parsableByteArray.readUnsignedInt() : C0480C.TIME_UNSET;
                 if (!z7) {
                     int readUnsignedByte2 = parsableByteArray.readUnsignedByte();
                     ArrayList arrayList3 = new ArrayList(readUnsignedByte2);
@@ -118,7 +118,7 @@ public final class SpliceScheduleCommand extends SpliceCommand {
                     z4 = z9;
                 } else {
                     z4 = false;
-                    j3 = C0475C.TIME_UNSET;
+                    j3 = C0480C.TIME_UNSET;
                 }
                 int readUnsignedShort = parsableByteArray.readUnsignedShort();
                 int readUnsignedByte4 = parsableByteArray.readUnsignedByte();

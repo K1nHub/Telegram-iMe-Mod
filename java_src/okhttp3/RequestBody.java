@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.nio.charset.Charset;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
-import kotlin.p035io.CloseableKt;
+import kotlin.p034io.CloseableKt;
 import kotlin.text.Charsets;
 import okhttp3.MediaType;
 import okhttp3.internal.Util;

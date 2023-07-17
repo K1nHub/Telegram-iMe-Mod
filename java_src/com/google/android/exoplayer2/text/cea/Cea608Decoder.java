@@ -6,7 +6,7 @@ import android.text.SpannableStringBuilder;
 import android.text.style.ForegroundColorSpan;
 import android.text.style.StyleSpan;
 import android.text.style.UnderlineSpan;
-import com.google.android.exoplayer2.C0475C;
+import com.google.android.exoplayer2.C0480C;
 import com.google.android.exoplayer2.extractor.p015ts.PsExtractor;
 import com.google.android.exoplayer2.text.Cue;
 import com.google.android.exoplayer2.text.Subtitle;
@@ -171,7 +171,7 @@ public final class Cea608Decoder extends CeaDecoder {
         setCaptionMode(0);
         resetCueBuilders();
         this.isInCaptionService = true;
-        this.lastCueUpdateUs = C0475C.TIME_UNSET;
+        this.lastCueUpdateUs = C0480C.TIME_UNSET;
     }
 
     @Override // com.google.android.exoplayer2.text.cea.CeaDecoder, com.google.android.exoplayer2.decoder.Decoder
@@ -188,7 +188,7 @@ public final class Cea608Decoder extends CeaDecoder {
         this.repeatableControlCc2 = (byte) 0;
         this.currentChannel = 0;
         this.isInCaptionService = true;
-        this.lastCueUpdateUs = C0475C.TIME_UNSET;
+        this.lastCueUpdateUs = C0480C.TIME_UNSET;
     }
 
     /* JADX WARN: Can't rename method to resolve collision */
@@ -203,7 +203,7 @@ public final class Cea608Decoder extends CeaDecoder {
             return null;
         }
         this.cues = Collections.emptyList();
-        this.lastCueUpdateUs = C0475C.TIME_UNSET;
+        this.lastCueUpdateUs = C0480C.TIME_UNSET;
         availableOutputBuffer.setContent(getPositionUs(), createSubtitle(), Long.MAX_VALUE);
         return availableOutputBuffer;
     }
@@ -645,6 +645,6 @@ public final class Cea608Decoder extends CeaDecoder {
     }
 
     private boolean shouldClearStuckCaptions() {
-        return (this.validDataChannelTimeoutUs == C0475C.TIME_UNSET || this.lastCueUpdateUs == C0475C.TIME_UNSET || getPositionUs() - this.lastCueUpdateUs < this.validDataChannelTimeoutUs) ? false : true;
+        return (this.validDataChannelTimeoutUs == C0480C.TIME_UNSET || this.lastCueUpdateUs == C0480C.TIME_UNSET || getPositionUs() - this.lastCueUpdateUs < this.validDataChannelTimeoutUs) ? false : true;
     }
 }

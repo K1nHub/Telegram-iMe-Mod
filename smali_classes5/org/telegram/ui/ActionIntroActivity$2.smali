@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/ActionIntroActivity;Landroid/content/Context;)V
     .locals 0
 
-    .line 251
+    .line 249
     iput-object p1, p0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-direct {p0, p2}, Landroid/view/ViewGroup;-><init>(Landroid/content/Context;)V
@@ -41,7 +41,7 @@
 
     move/from16 v2, p5
 
-    .line 399
+    .line 397
     iget-object v3, v0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {v3}, Lorg/telegram/ui/ActionIntroActivity;->access$1100(Lorg/telegram/ui/ActionIntroActivity;)Lorg/telegram/ui/ActionBar/ActionBar;
@@ -52,7 +52,7 @@
 
     if-eqz v3, :cond_0
 
-    .line 400
+    .line 398
     iget-object v3, v0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {v3}, Lorg/telegram/ui/ActionIntroActivity;->access$1300(Lorg/telegram/ui/ActionIntroActivity;)Lorg/telegram/ui/ActionBar/ActionBar;
@@ -76,7 +76,7 @@
 
     sub-int v5, v2, p3
 
-    .line 407
+    .line 405
     iget-object v6, v0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-virtual {v6}, Lorg/telegram/ui/ActionIntroActivity;->isForkIntro()Z
@@ -117,7 +117,7 @@
 
     if-eqz v6, :cond_8
 
-    .line 408
+    .line 406
     iget-object v6, v0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {v6}, Lorg/telegram/ui/ActionIntroActivity;->access$200(Lorg/telegram/ui/ActionIntroActivity;)I
@@ -140,7 +140,7 @@
 
     goto/16 :goto_1
 
-    .line 434
+    .line 432
     :cond_1
     iget-object v6, v0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
@@ -154,7 +154,7 @@
 
     if-le v1, v2, :cond_2
 
-    .line 436
+    .line 434
     iget-object v1, v0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {v1}, Lorg/telegram/ui/ActionIntroActivity;->access$300(Lorg/telegram/ui/ActionIntroActivity;)Lorg/telegram/ui/Components/RLottieImageView;
@@ -169,7 +169,7 @@
 
     div-int/lit8 v1, v1, 0x2
 
-    .line 437
+    .line 435
     iget-object v2, v0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {v2}, Lorg/telegram/ui/ActionIntroActivity;->access$300(Lorg/telegram/ui/ActionIntroActivity;)Lorg/telegram/ui/Components/RLottieImageView;
@@ -214,7 +214,7 @@
 
     float-to-int v5, v5
 
-    .line 440
+    .line 438
     iget-object v6, v0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {v6}, Lorg/telegram/ui/ActionIntroActivity;->access$400(Lorg/telegram/ui/ActionIntroActivity;)Landroid/widget/TextView;
@@ -249,7 +249,7 @@
 
     mul-float v1, v1, v22
 
-    .line 441
+    .line 439
     iget-object v3, v0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {v3}, Lorg/telegram/ui/ActionIntroActivity;->access$500(Lorg/telegram/ui/ActionIntroActivity;)Landroid/widget/TextView;
@@ -276,7 +276,7 @@
 
     float-to-int v5, v5
 
-    .line 443
+    .line 441
     iget-object v6, v0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {v6}, Lorg/telegram/ui/ActionIntroActivity;->access$500(Lorg/telegram/ui/ActionIntroActivity;)Landroid/widget/TextView;
@@ -309,7 +309,7 @@
 
     invoke-virtual {v6, v3, v5, v7, v8}, Landroid/widget/TextView;->layout(IIII)V
 
-    .line 444
+    .line 442
     iget-object v3, v0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {v3}, Lorg/telegram/ui/ActionIntroActivity;->access$600(Lorg/telegram/ui/ActionIntroActivity;)Landroid/widget/TextView;
@@ -334,7 +334,7 @@
 
     float-to-int v2, v4
 
-    .line 446
+    .line 444
     iget-object v3, v0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {v3}, Lorg/telegram/ui/ActionIntroActivity;->access$600(Lorg/telegram/ui/ActionIntroActivity;)Landroid/widget/TextView;
@@ -369,7 +369,7 @@
 
     goto/16 :goto_3
 
-    .line 449
+    .line 447
     :cond_2
     sget-object v1, Lorg/telegram/messenger/AndroidUtilities;->displaySize:Landroid/graphics/Point;
 
@@ -387,7 +387,7 @@
 
     float-to-int v2, v2
 
-    .line 451
+    .line 449
     iget-object v6, v0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {v6}, Lorg/telegram/ui/ActionIntroActivity;->access$300(Lorg/telegram/ui/ActionIntroActivity;)Lorg/telegram/ui/Components/RLottieImageView;
@@ -424,7 +424,7 @@
 
     float-to-int v2, v2
 
-    .line 453
+    .line 451
     iget-object v6, v0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {v6}, Lorg/telegram/ui/ActionIntroActivity;->access$400(Lorg/telegram/ui/ActionIntroActivity;)Landroid/widget/TextView;
@@ -468,7 +468,7 @@
 
     float-to-int v2, v2
 
-    .line 457
+    .line 455
     iget-object v6, v0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {v6}, Lorg/telegram/ui/ActionIntroActivity;->access$300(Lorg/telegram/ui/ActionIntroActivity;)Lorg/telegram/ui/Components/RLottieImageView;
@@ -505,7 +505,7 @@
 
     float-to-int v2, v2
 
-    .line 459
+    .line 457
     iget-object v6, v0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {v6}, Lorg/telegram/ui/ActionIntroActivity;->access$400(Lorg/telegram/ui/ActionIntroActivity;)Landroid/widget/TextView;
@@ -541,7 +541,7 @@
     :goto_0
     float-to-int v1, v1
 
-    .line 462
+    .line 460
     invoke-virtual/range {p0 .. p0}, Landroid/view/ViewGroup;->getMeasuredWidth()I
 
     move-result v2
@@ -560,7 +560,7 @@
 
     div-int/lit8 v2, v2, 0x2
 
-    .line 463
+    .line 461
     iget-object v4, v0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {v4}, Lorg/telegram/ui/ActionIntroActivity;->access$500(Lorg/telegram/ui/ActionIntroActivity;)Landroid/widget/TextView;
@@ -593,7 +593,7 @@
 
     invoke-virtual {v4, v2, v1, v6, v7}, Landroid/widget/TextView;->layout(IIII)V
 
-    .line 464
+    .line 462
     iget-object v1, v0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {v1}, Lorg/telegram/ui/ActionIntroActivity;->access$600(Lorg/telegram/ui/ActionIntroActivity;)Landroid/widget/TextView;
@@ -614,7 +614,7 @@
 
     float-to-int v1, v1
 
-    .line 466
+    .line 464
     iget-object v2, v0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {v2}, Lorg/telegram/ui/ActionIntroActivity;->access$600(Lorg/telegram/ui/ActionIntroActivity;)Landroid/widget/TextView;
@@ -652,7 +652,7 @@
     :cond_4
     if-le v1, v2, :cond_5
 
-    .line 470
+    .line 468
     iget-object v1, v0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {v1}, Lorg/telegram/ui/ActionIntroActivity;->access$300(Lorg/telegram/ui/ActionIntroActivity;)Lorg/telegram/ui/Components/RLottieImageView;
@@ -667,7 +667,7 @@
 
     div-int/lit8 v1, v1, 0x2
 
-    .line 471
+    .line 469
     iget-object v2, v0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {v2}, Lorg/telegram/ui/ActionIntroActivity;->access$300(Lorg/telegram/ui/ActionIntroActivity;)Lorg/telegram/ui/Components/RLottieImageView;
@@ -710,7 +710,7 @@
 
     float-to-int v5, v10
 
-    .line 474
+    .line 472
     iget-object v6, v0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {v6}, Lorg/telegram/ui/ActionIntroActivity;->access$400(Lorg/telegram/ui/ActionIntroActivity;)Landroid/widget/TextView;
@@ -747,7 +747,7 @@
 
     float-to-int v5, v9
 
-    .line 477
+    .line 475
     iget-object v6, v0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {v6}, Lorg/telegram/ui/ActionIntroActivity;->access$500(Lorg/telegram/ui/ActionIntroActivity;)Landroid/widget/TextView;
@@ -782,7 +782,7 @@
 
     mul-float v1, v1, v22
 
-    .line 478
+    .line 476
     iget-object v3, v0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {v3}, Lorg/telegram/ui/ActionIntroActivity;->access$600(Lorg/telegram/ui/ActionIntroActivity;)Landroid/widget/TextView;
@@ -807,7 +807,7 @@
 
     float-to-int v2, v4
 
-    .line 480
+    .line 478
     iget-object v3, v0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {v3}, Lorg/telegram/ui/ActionIntroActivity;->access$600(Lorg/telegram/ui/ActionIntroActivity;)Landroid/widget/TextView;
@@ -849,7 +849,7 @@
 
     float-to-int v2, v13
 
-    .line 483
+    .line 481
     iget-object v5, v0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {v5}, Lorg/telegram/ui/ActionIntroActivity;->access$300(Lorg/telegram/ui/ActionIntroActivity;)Lorg/telegram/ui/Components/RLottieImageView;
@@ -884,7 +884,7 @@
 
     float-to-int v2, v12
 
-    .line 485
+    .line 483
     iget-object v5, v0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {v5}, Lorg/telegram/ui/ActionIntroActivity;->access$400(Lorg/telegram/ui/ActionIntroActivity;)Landroid/widget/TextView;
@@ -919,7 +919,7 @@
 
     float-to-int v2, v11
 
-    .line 487
+    .line 485
     iget-object v5, v0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {v5}, Lorg/telegram/ui/ActionIntroActivity;->access$500(Lorg/telegram/ui/ActionIntroActivity;)Landroid/widget/TextView;
@@ -950,7 +950,7 @@
 
     invoke-virtual {v5, v4, v2, v6, v7}, Landroid/widget/TextView;->layout(IIII)V
 
-    .line 488
+    .line 486
     iget-object v2, v0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {v2}, Lorg/telegram/ui/ActionIntroActivity;->access$600(Lorg/telegram/ui/ActionIntroActivity;)Landroid/widget/TextView;
@@ -969,7 +969,7 @@
 
     float-to-int v1, v1
 
-    .line 490
+    .line 488
     iget-object v2, v0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {v2}, Lorg/telegram/ui/ActionIntroActivity;->access$600(Lorg/telegram/ui/ActionIntroActivity;)Landroid/widget/TextView;
@@ -1008,7 +1008,7 @@
     :goto_1
     if-le v1, v2, :cond_7
 
-    .line 410
+    .line 408
     iget-object v1, v0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {v1}, Lorg/telegram/ui/ActionIntroActivity;->access$300(Lorg/telegram/ui/ActionIntroActivity;)Lorg/telegram/ui/Components/RLottieImageView;
@@ -1027,7 +1027,7 @@
 
     mul-float v18, v18, v2
 
-    .line 411
+    .line 409
     iget-object v3, v0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {v3}, Lorg/telegram/ui/ActionIntroActivity;->access$300(Lorg/telegram/ui/ActionIntroActivity;)Lorg/telegram/ui/Components/RLottieImageView;
@@ -1046,7 +1046,7 @@
 
     div-int/lit8 v3, v3, 0x2
 
-    .line 412
+    .line 410
     iget-object v4, v0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {v4}, Lorg/telegram/ui/ActionIntroActivity;->access$300(Lorg/telegram/ui/ActionIntroActivity;)Lorg/telegram/ui/Components/RLottieImageView;
@@ -1089,7 +1089,7 @@
 
     float-to-int v5, v5
 
-    .line 415
+    .line 413
     iget-object v6, v0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {v6}, Lorg/telegram/ui/ActionIntroActivity;->access$400(Lorg/telegram/ui/ActionIntroActivity;)Landroid/widget/TextView;
@@ -1126,7 +1126,7 @@
 
     float-to-int v5, v5
 
-    .line 418
+    .line 416
     iget-object v6, v0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {v6}, Lorg/telegram/ui/ActionIntroActivity;->access$500(Lorg/telegram/ui/ActionIntroActivity;)Landroid/widget/TextView;
@@ -1161,7 +1161,7 @@
 
     mul-float v2, v2, v22
 
-    .line 419
+    .line 417
     iget-object v3, v0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {v3}, Lorg/telegram/ui/ActionIntroActivity;->access$600(Lorg/telegram/ui/ActionIntroActivity;)Landroid/widget/TextView;
@@ -1186,7 +1186,7 @@
 
     float-to-int v2, v4
 
-    .line 421
+    .line 419
     iget-object v3, v0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {v3}, Lorg/telegram/ui/ActionIntroActivity;->access$600(Lorg/telegram/ui/ActionIntroActivity;)Landroid/widget/TextView;
@@ -1230,7 +1230,7 @@
 
     float-to-int v2, v7
 
-    .line 424
+    .line 422
     iget-object v5, v0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {v5}, Lorg/telegram/ui/ActionIntroActivity;->access$300(Lorg/telegram/ui/ActionIntroActivity;)Lorg/telegram/ui/Components/RLottieImageView;
@@ -1245,7 +1245,7 @@
 
     div-int/lit8 v5, v5, 0x2
 
-    .line 425
+    .line 423
     iget-object v6, v0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {v6}, Lorg/telegram/ui/ActionIntroActivity;->access$300(Lorg/telegram/ui/ActionIntroActivity;)Lorg/telegram/ui/Components/RLottieImageView;
@@ -1282,7 +1282,7 @@
 
     float-to-int v2, v14
 
-    .line 427
+    .line 425
     iget-object v5, v0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {v5}, Lorg/telegram/ui/ActionIntroActivity;->access$400(Lorg/telegram/ui/ActionIntroActivity;)Landroid/widget/TextView;
@@ -1319,7 +1319,7 @@
 
     float-to-int v2, v2
 
-    .line 429
+    .line 427
     iget-object v5, v0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {v5}, Lorg/telegram/ui/ActionIntroActivity;->access$500(Lorg/telegram/ui/ActionIntroActivity;)Landroid/widget/TextView;
@@ -1350,7 +1350,7 @@
 
     invoke-virtual {v5, v4, v2, v6, v7}, Landroid/widget/TextView;->layout(IIII)V
 
-    .line 430
+    .line 428
     iget-object v2, v0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {v2}, Lorg/telegram/ui/ActionIntroActivity;->access$600(Lorg/telegram/ui/ActionIntroActivity;)Landroid/widget/TextView;
@@ -1371,7 +1371,7 @@
 
     float-to-int v1, v1
 
-    .line 432
+    .line 430
     iget-object v2, v0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {v2}, Lorg/telegram/ui/ActionIntroActivity;->access$600(Lorg/telegram/ui/ActionIntroActivity;)Landroid/widget/TextView;
@@ -1406,7 +1406,7 @@
 
     goto/16 :goto_3
 
-    .line 494
+    .line 492
     :cond_8
     iget-object v6, v0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
@@ -1425,7 +1425,7 @@
     :pswitch_0
     if-le v1, v2, :cond_9
 
-    .line 573
+    .line 571
     iget-object v1, v0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {v1}, Lorg/telegram/ui/ActionIntroActivity;->access$300(Lorg/telegram/ui/ActionIntroActivity;)Lorg/telegram/ui/Components/RLottieImageView;
@@ -1444,7 +1444,7 @@
 
     mul-float v18, v18, v2
 
-    .line 574
+    .line 572
     iget-object v3, v0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {v3}, Lorg/telegram/ui/ActionIntroActivity;->access$300(Lorg/telegram/ui/ActionIntroActivity;)Lorg/telegram/ui/Components/RLottieImageView;
@@ -1463,7 +1463,7 @@
 
     div-int/lit8 v3, v3, 0x2
 
-    .line 575
+    .line 573
     iget-object v4, v0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {v4}, Lorg/telegram/ui/ActionIntroActivity;->access$300(Lorg/telegram/ui/ActionIntroActivity;)Lorg/telegram/ui/Components/RLottieImageView;
@@ -1506,7 +1506,7 @@
 
     float-to-int v5, v5
 
-    .line 578
+    .line 576
     iget-object v6, v0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {v6}, Lorg/telegram/ui/ActionIntroActivity;->access$400(Lorg/telegram/ui/ActionIntroActivity;)Landroid/widget/TextView;
@@ -1543,7 +1543,7 @@
 
     float-to-int v5, v5
 
-    .line 581
+    .line 579
     iget-object v6, v0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {v6}, Lorg/telegram/ui/ActionIntroActivity;->access$500(Lorg/telegram/ui/ActionIntroActivity;)Landroid/widget/TextView;
@@ -1578,7 +1578,7 @@
 
     mul-float v2, v2, v22
 
-    .line 582
+    .line 580
     iget-object v3, v0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {v3}, Lorg/telegram/ui/ActionIntroActivity;->access$600(Lorg/telegram/ui/ActionIntroActivity;)Landroid/widget/TextView;
@@ -1603,7 +1603,7 @@
 
     float-to-int v2, v4
 
-    .line 584
+    .line 582
     iget-object v3, v0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {v3}, Lorg/telegram/ui/ActionIntroActivity;->access$600(Lorg/telegram/ui/ActionIntroActivity;)Landroid/widget/TextView;
@@ -1647,7 +1647,7 @@
 
     float-to-int v1, v1
 
-    .line 587
+    .line 585
     iget-object v2, v0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {v2}, Lorg/telegram/ui/ActionIntroActivity;->access$300(Lorg/telegram/ui/ActionIntroActivity;)Lorg/telegram/ui/Components/RLottieImageView;
@@ -1662,7 +1662,7 @@
 
     div-int/lit8 v2, v2, 0x2
 
-    .line 588
+    .line 586
     iget-object v6, v0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {v6}, Lorg/telegram/ui/ActionIntroActivity;->access$300(Lorg/telegram/ui/ActionIntroActivity;)Lorg/telegram/ui/Components/RLottieImageView;
@@ -1695,7 +1695,7 @@
 
     invoke-virtual {v6, v2, v1, v7, v8}, Landroid/widget/ImageView;->layout(IIII)V
 
-    .line 589
+    .line 587
     iget-object v2, v0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {v2}, Lorg/telegram/ui/ActionIntroActivity;->access$300(Lorg/telegram/ui/ActionIntroActivity;)Lorg/telegram/ui/Components/RLottieImageView;
@@ -1716,7 +1716,7 @@
 
     add-int/2addr v1, v2
 
-    .line 590
+    .line 588
     iget-object v2, v0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {v2}, Lorg/telegram/ui/ActionIntroActivity;->access$400(Lorg/telegram/ui/ActionIntroActivity;)Landroid/widget/TextView;
@@ -1749,7 +1749,7 @@
 
     int-to-float v1, v1
 
-    .line 591
+    .line 589
     iget-object v2, v0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {v2}, Lorg/telegram/ui/ActionIntroActivity;->access$400(Lorg/telegram/ui/ActionIntroActivity;)Landroid/widget/TextView;
@@ -1772,7 +1772,7 @@
 
     float-to-int v1, v1
 
-    .line 592
+    .line 590
     iget-object v2, v0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {v2}, Lorg/telegram/ui/ActionIntroActivity;->access$500(Lorg/telegram/ui/ActionIntroActivity;)Landroid/widget/TextView;
@@ -1803,7 +1803,7 @@
 
     invoke-virtual {v2, v4, v1, v6, v7}, Landroid/widget/TextView;->layout(IIII)V
 
-    .line 593
+    .line 591
     iget-object v1, v0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {v1}, Lorg/telegram/ui/ActionIntroActivity;->access$600(Lorg/telegram/ui/ActionIntroActivity;)Landroid/widget/TextView;
@@ -1818,7 +1818,7 @@
 
     div-int/lit8 v3, v3, 0x2
 
-    .line 594
+    .line 592
     iget-object v1, v0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {v1}, Lorg/telegram/ui/ActionIntroActivity;->access$600(Lorg/telegram/ui/ActionIntroActivity;)Landroid/widget/TextView;
@@ -1839,7 +1839,7 @@
 
     sub-int/2addr v5, v1
 
-    .line 595
+    .line 593
     iget-object v1, v0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {v1}, Lorg/telegram/ui/ActionIntroActivity;->access$600(Lorg/telegram/ui/ActionIntroActivity;)Landroid/widget/TextView;
@@ -1874,7 +1874,7 @@
 
     goto/16 :goto_3
 
-    .line 522
+    .line 520
     :pswitch_1
     iget-object v6, v0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
@@ -1884,7 +1884,7 @@
 
     if-eqz v6, :cond_a
 
-    .line 526
+    .line 524
     iget-object v1, v0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {v1}, Lorg/telegram/ui/ActionIntroActivity;->access$300(Lorg/telegram/ui/ActionIntroActivity;)Lorg/telegram/ui/Components/RLottieImageView;
@@ -1923,7 +1923,7 @@
 
     float-to-int v2, v2
 
-    .line 528
+    .line 526
     iget-object v5, v0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {v5}, Lorg/telegram/ui/ActionIntroActivity;->access$400(Lorg/telegram/ui/ActionIntroActivity;)Landroid/widget/TextView;
@@ -1958,7 +1958,7 @@
 
     float-to-int v2, v15
 
-    .line 531
+    .line 529
     invoke-virtual/range {p0 .. p0}, Landroid/view/ViewGroup;->getMeasuredWidth()I
 
     move-result v4
@@ -1977,7 +1977,7 @@
 
     div-int/lit8 v4, v4, 0x2
 
-    .line 532
+    .line 530
     iget-object v5, v0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {v5}, Lorg/telegram/ui/ActionIntroActivity;->access$800(Lorg/telegram/ui/ActionIntroActivity;)Landroid/widget/LinearLayout;
@@ -2010,7 +2010,7 @@
 
     invoke-virtual {v5, v4, v2, v6, v7}, Landroid/widget/LinearLayout;->layout(IIII)V
 
-    .line 533
+    .line 531
     iget-object v2, v0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {v2}, Lorg/telegram/ui/ActionIntroActivity;->access$600(Lorg/telegram/ui/ActionIntroActivity;)Landroid/widget/TextView;
@@ -2029,7 +2029,7 @@
 
     float-to-int v1, v1
 
-    .line 535
+    .line 533
     iget-object v2, v0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {v2}, Lorg/telegram/ui/ActionIntroActivity;->access$600(Lorg/telegram/ui/ActionIntroActivity;)Landroid/widget/TextView;
@@ -2067,7 +2067,7 @@
     :cond_a
     if-le v1, v2, :cond_b
 
-    .line 537
+    .line 535
     iget-object v1, v0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {v1}, Lorg/telegram/ui/ActionIntroActivity;->access$300(Lorg/telegram/ui/ActionIntroActivity;)Lorg/telegram/ui/Components/RLottieImageView;
@@ -2082,7 +2082,7 @@
 
     div-int/lit8 v1, v1, 0x2
 
-    .line 538
+    .line 536
     iget-object v2, v0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {v2}, Lorg/telegram/ui/ActionIntroActivity;->access$300(Lorg/telegram/ui/ActionIntroActivity;)Lorg/telegram/ui/Components/RLottieImageView;
@@ -2127,7 +2127,7 @@
 
     float-to-int v5, v5
 
-    .line 541
+    .line 539
     iget-object v6, v0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {v6}, Lorg/telegram/ui/ActionIntroActivity;->access$400(Lorg/telegram/ui/ActionIntroActivity;)Landroid/widget/TextView;
@@ -2162,7 +2162,7 @@
 
     mul-float v1, v1, v22
 
-    .line 542
+    .line 540
     iget-object v3, v0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {v3}, Lorg/telegram/ui/ActionIntroActivity;->access$800(Lorg/telegram/ui/ActionIntroActivity;)Landroid/widget/LinearLayout;
@@ -2189,7 +2189,7 @@
 
     float-to-int v5, v5
 
-    .line 544
+    .line 542
     iget-object v6, v0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {v6}, Lorg/telegram/ui/ActionIntroActivity;->access$800(Lorg/telegram/ui/ActionIntroActivity;)Landroid/widget/LinearLayout;
@@ -2222,7 +2222,7 @@
 
     invoke-virtual {v6, v3, v5, v7, v8}, Landroid/widget/LinearLayout;->layout(IIII)V
 
-    .line 545
+    .line 543
     iget-object v3, v0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {v3}, Lorg/telegram/ui/ActionIntroActivity;->access$600(Lorg/telegram/ui/ActionIntroActivity;)Landroid/widget/TextView;
@@ -2247,7 +2247,7 @@
 
     float-to-int v2, v4
 
-    .line 547
+    .line 545
     iget-object v3, v0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {v3}, Lorg/telegram/ui/ActionIntroActivity;->access$600(Lorg/telegram/ui/ActionIntroActivity;)Landroid/widget/TextView;
@@ -2282,7 +2282,7 @@
 
     goto/16 :goto_3
 
-    .line 550
+    .line 548
     :cond_b
     sget-object v1, Lorg/telegram/messenger/AndroidUtilities;->displaySize:Landroid/graphics/Point;
 
@@ -2300,7 +2300,7 @@
 
     float-to-int v2, v2
 
-    .line 552
+    .line 550
     iget-object v6, v0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {v6}, Lorg/telegram/ui/ActionIntroActivity;->access$300(Lorg/telegram/ui/ActionIntroActivity;)Lorg/telegram/ui/Components/RLottieImageView;
@@ -2337,7 +2337,7 @@
 
     float-to-int v2, v2
 
-    .line 554
+    .line 552
     iget-object v6, v0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {v6}, Lorg/telegram/ui/ActionIntroActivity;->access$400(Lorg/telegram/ui/ActionIntroActivity;)Landroid/widget/TextView;
@@ -2381,7 +2381,7 @@
 
     float-to-int v2, v2
 
-    .line 558
+    .line 556
     iget-object v6, v0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {v6}, Lorg/telegram/ui/ActionIntroActivity;->access$300(Lorg/telegram/ui/ActionIntroActivity;)Lorg/telegram/ui/Components/RLottieImageView;
@@ -2418,7 +2418,7 @@
 
     float-to-int v2, v2
 
-    .line 560
+    .line 558
     iget-object v6, v0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {v6}, Lorg/telegram/ui/ActionIntroActivity;->access$400(Lorg/telegram/ui/ActionIntroActivity;)Landroid/widget/TextView;
@@ -2454,7 +2454,7 @@
     :goto_2
     float-to-int v1, v1
 
-    .line 563
+    .line 561
     invoke-virtual/range {p0 .. p0}, Landroid/view/ViewGroup;->getMeasuredWidth()I
 
     move-result v2
@@ -2473,7 +2473,7 @@
 
     div-int/lit8 v2, v2, 0x2
 
-    .line 564
+    .line 562
     iget-object v4, v0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {v4}, Lorg/telegram/ui/ActionIntroActivity;->access$800(Lorg/telegram/ui/ActionIntroActivity;)Landroid/widget/LinearLayout;
@@ -2506,7 +2506,7 @@
 
     invoke-virtual {v4, v2, v1, v6, v7}, Landroid/widget/LinearLayout;->layout(IIII)V
 
-    .line 565
+    .line 563
     iget-object v1, v0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {v1}, Lorg/telegram/ui/ActionIntroActivity;->access$600(Lorg/telegram/ui/ActionIntroActivity;)Landroid/widget/TextView;
@@ -2527,7 +2527,7 @@
 
     float-to-int v1, v1
 
-    .line 567
+    .line 565
     iget-object v2, v0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {v2}, Lorg/telegram/ui/ActionIntroActivity;->access$600(Lorg/telegram/ui/ActionIntroActivity;)Landroid/widget/TextView;
@@ -2571,7 +2571,7 @@
 
     mul-float/2addr v2, v1
 
-    .line 665
+    .line 663
     iget-object v4, v0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {v4}, Lorg/telegram/ui/ActionIntroActivity;->access$300(Lorg/telegram/ui/ActionIntroActivity;)Lorg/telegram/ui/Components/RLottieImageView;
@@ -2590,7 +2590,7 @@
 
     div-int/lit8 v2, v2, 0x2
 
-    .line 666
+    .line 664
     invoke-virtual/range {p0 .. p0}, Landroid/view/ViewGroup;->getWidth()I
 
     move-result v4
@@ -2617,7 +2617,7 @@
 
     float-to-int v4, v4
 
-    .line 667
+    .line 665
     iget-object v5, v0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {v5}, Lorg/telegram/ui/ActionIntroActivity;->access$300(Lorg/telegram/ui/ActionIntroActivity;)Lorg/telegram/ui/Components/RLottieImageView;
@@ -2660,7 +2660,7 @@
 
     float-to-int v5, v7
 
-    .line 670
+    .line 668
     iget-object v6, v0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {v6}, Lorg/telegram/ui/ActionIntroActivity;->access$400(Lorg/telegram/ui/ActionIntroActivity;)Landroid/widget/TextView;
@@ -2699,7 +2699,7 @@
 
     float-to-int v5, v5
 
-    .line 673
+    .line 671
     iget-object v6, v0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {v6}, Lorg/telegram/ui/ActionIntroActivity;->access$500(Lorg/telegram/ui/ActionIntroActivity;)Landroid/widget/TextView;
@@ -2734,7 +2734,7 @@
 
     mul-float v2, v2, v22
 
-    .line 674
+    .line 672
     iget-object v4, v0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {v4}, Lorg/telegram/ui/ActionIntroActivity;->access$600(Lorg/telegram/ui/ActionIntroActivity;)Landroid/widget/TextView;
@@ -2761,7 +2761,7 @@
 
     float-to-int v1, v1
 
-    .line 676
+    .line 674
     iget-object v5, v0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {v5}, Lorg/telegram/ui/ActionIntroActivity;->access$600(Lorg/telegram/ui/ActionIntroActivity;)Landroid/widget/TextView;
@@ -2794,7 +2794,7 @@
 
     invoke-virtual {v5, v4, v1, v6, v7}, Landroid/widget/TextView;->layout(IIII)V
 
-    .line 678
+    .line 676
     iget-object v4, v0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {v4}, Lorg/telegram/ui/ActionIntroActivity;->access$900(Lorg/telegram/ui/ActionIntroActivity;)Landroid/widget/TextView;
@@ -2815,7 +2815,7 @@
 
     float-to-int v2, v3
 
-    .line 679
+    .line 677
     iget-object v3, v0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {v3}, Lorg/telegram/ui/ActionIntroActivity;->access$900(Lorg/telegram/ui/ActionIntroActivity;)Landroid/widget/TextView;
@@ -2834,7 +2834,7 @@
 
     sub-int/2addr v1, v3
 
-    .line 680
+    .line 678
     iget-object v3, v0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {v3}, Lorg/telegram/ui/ActionIntroActivity;->access$900(Lorg/telegram/ui/ActionIntroActivity;)Landroid/widget/TextView;
@@ -2878,7 +2878,7 @@
 
     float-to-int v1, v1
 
-    .line 683
+    .line 681
     iget-object v2, v0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {v2}, Lorg/telegram/ui/ActionIntroActivity;->access$300(Lorg/telegram/ui/ActionIntroActivity;)Lorg/telegram/ui/Components/RLottieImageView;
@@ -2893,7 +2893,7 @@
 
     div-int/lit8 v2, v2, 0x2
 
-    .line 684
+    .line 682
     iget-object v6, v0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {v6}, Lorg/telegram/ui/ActionIntroActivity;->access$300(Lorg/telegram/ui/ActionIntroActivity;)Lorg/telegram/ui/Components/RLottieImageView;
@@ -2926,7 +2926,7 @@
 
     invoke-virtual {v6, v2, v1, v7, v8}, Landroid/widget/ImageView;->layout(IIII)V
 
-    .line 685
+    .line 683
     iget-object v2, v0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {v2}, Lorg/telegram/ui/ActionIntroActivity;->access$300(Lorg/telegram/ui/ActionIntroActivity;)Lorg/telegram/ui/Components/RLottieImageView;
@@ -2947,7 +2947,7 @@
 
     add-int/2addr v1, v2
 
-    .line 686
+    .line 684
     iget-object v2, v0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {v2}, Lorg/telegram/ui/ActionIntroActivity;->access$400(Lorg/telegram/ui/ActionIntroActivity;)Landroid/widget/TextView;
@@ -2980,7 +2980,7 @@
 
     int-to-float v1, v1
 
-    .line 687
+    .line 685
     iget-object v2, v0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {v2}, Lorg/telegram/ui/ActionIntroActivity;->access$400(Lorg/telegram/ui/ActionIntroActivity;)Landroid/widget/TextView;
@@ -3003,7 +3003,7 @@
 
     float-to-int v1, v1
 
-    .line 688
+    .line 686
     iget-object v2, v0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {v2}, Lorg/telegram/ui/ActionIntroActivity;->access$500(Lorg/telegram/ui/ActionIntroActivity;)Landroid/widget/TextView;
@@ -3034,7 +3034,7 @@
 
     invoke-virtual {v2, v4, v1, v6, v7}, Landroid/widget/TextView;->layout(IIII)V
 
-    .line 689
+    .line 687
     iget-object v1, v0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {v1}, Lorg/telegram/ui/ActionIntroActivity;->access$600(Lorg/telegram/ui/ActionIntroActivity;)Landroid/widget/TextView;
@@ -3049,7 +3049,7 @@
 
     div-int/lit8 v1, v1, 0x2
 
-    .line 690
+    .line 688
     iget-object v2, v0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {v2}, Lorg/telegram/ui/ActionIntroActivity;->access$600(Lorg/telegram/ui/ActionIntroActivity;)Landroid/widget/TextView;
@@ -3070,7 +3070,7 @@
 
     sub-int/2addr v5, v2
 
-    .line 691
+    .line 689
     iget-object v2, v0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {v2}, Lorg/telegram/ui/ActionIntroActivity;->access$600(Lorg/telegram/ui/ActionIntroActivity;)Landroid/widget/TextView;
@@ -3103,7 +3103,7 @@
 
     invoke-virtual {v2, v1, v5, v4, v6}, Landroid/widget/TextView;->layout(IIII)V
 
-    .line 693
+    .line 691
     iget-object v1, v0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {v1}, Lorg/telegram/ui/ActionIntroActivity;->access$900(Lorg/telegram/ui/ActionIntroActivity;)Landroid/widget/TextView;
@@ -3118,7 +3118,7 @@
 
     div-int/lit8 v3, v3, 0x2
 
-    .line 694
+    .line 692
     iget-object v1, v0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {v1}, Lorg/telegram/ui/ActionIntroActivity;->access$900(Lorg/telegram/ui/ActionIntroActivity;)Landroid/widget/TextView;
@@ -3139,7 +3139,7 @@
 
     sub-int/2addr v5, v1
 
-    .line 695
+    .line 693
     iget-object v1, v0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {v1}, Lorg/telegram/ui/ActionIntroActivity;->access$900(Lorg/telegram/ui/ActionIntroActivity;)Landroid/widget/TextView;
@@ -3185,7 +3185,7 @@
 
     mul-float/2addr v2, v1
 
-    .line 630
+    .line 628
     iget-object v5, v0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {v5}, Lorg/telegram/ui/ActionIntroActivity;->access$300(Lorg/telegram/ui/ActionIntroActivity;)Lorg/telegram/ui/Components/RLottieImageView;
@@ -3204,7 +3204,7 @@
 
     div-int/lit8 v2, v2, 0x2
 
-    .line 631
+    .line 629
     iget-object v5, v0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {v5}, Lorg/telegram/ui/ActionIntroActivity;->access$300(Lorg/telegram/ui/ActionIntroActivity;)Lorg/telegram/ui/Components/RLottieImageView;
@@ -3235,7 +3235,7 @@
 
     invoke-virtual {v5, v4, v2, v8, v9}, Landroid/widget/ImageView;->layout(IIII)V
 
-    .line 632
+    .line 630
     iget-object v5, v0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {v5}, Lorg/telegram/ui/ActionIntroActivity;->access$300(Lorg/telegram/ui/ActionIntroActivity;)Lorg/telegram/ui/Components/RLottieImageView;
@@ -3256,7 +3256,7 @@
 
     add-int/2addr v2, v5
 
-    .line 633
+    .line 631
     iget-object v5, v0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {v5}, Lorg/telegram/ui/ActionIntroActivity;->access$900(Lorg/telegram/ui/ActionIntroActivity;)Landroid/widget/TextView;
@@ -3297,7 +3297,7 @@
 
     float-to-int v5, v7
 
-    .line 636
+    .line 634
     iget-object v7, v0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {v7}, Lorg/telegram/ui/ActionIntroActivity;->access$400(Lorg/telegram/ui/ActionIntroActivity;)Landroid/widget/TextView;
@@ -3336,7 +3336,7 @@
 
     float-to-int v5, v5
 
-    .line 639
+    .line 637
     iget-object v7, v0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {v7}, Lorg/telegram/ui/ActionIntroActivity;->access$500(Lorg/telegram/ui/ActionIntroActivity;)Landroid/widget/TextView;
@@ -3371,7 +3371,7 @@
 
     mul-float v2, v2, v22
 
-    .line 640
+    .line 638
     iget-object v5, v0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {v5}, Lorg/telegram/ui/ActionIntroActivity;->access$600(Lorg/telegram/ui/ActionIntroActivity;)Landroid/widget/TextView;
@@ -3396,7 +3396,7 @@
 
     float-to-int v1, v1
 
-    .line 642
+    .line 640
     iget-object v3, v0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {v3}, Lorg/telegram/ui/ActionIntroActivity;->access$600(Lorg/telegram/ui/ActionIntroActivity;)Landroid/widget/TextView;
@@ -3429,7 +3429,7 @@
 
     invoke-virtual {v3, v2, v1, v5, v7}, Landroid/widget/TextView;->layout(IIII)V
 
-    .line 644
+    .line 642
     invoke-virtual/range {p0 .. p0}, Landroid/view/ViewGroup;->getMeasuredHeight()I
 
     move-result v1
@@ -3452,7 +3452,7 @@
 
     sub-int/2addr v1, v2
 
-    .line 645
+    .line 643
     iget-object v2, v0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {v2}, Lorg/telegram/ui/ActionIntroActivity;->access$1000(Lorg/telegram/ui/ActionIntroActivity;)Landroid/widget/TextView;
@@ -3496,7 +3496,7 @@
 
     float-to-int v2, v2
 
-    .line 648
+    .line 646
     iget-object v5, v0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {v5}, Lorg/telegram/ui/ActionIntroActivity;->access$300(Lorg/telegram/ui/ActionIntroActivity;)Lorg/telegram/ui/Components/RLottieImageView;
@@ -3533,7 +3533,7 @@
 
     float-to-int v2, v2
 
-    .line 650
+    .line 648
     iget-object v5, v0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {v5}, Lorg/telegram/ui/ActionIntroActivity;->access$400(Lorg/telegram/ui/ActionIntroActivity;)Landroid/widget/TextView;
@@ -3570,7 +3570,7 @@
 
     float-to-int v2, v2
 
-    .line 652
+    .line 650
     iget-object v5, v0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {v5}, Lorg/telegram/ui/ActionIntroActivity;->access$900(Lorg/telegram/ui/ActionIntroActivity;)Landroid/widget/TextView;
@@ -3607,7 +3607,7 @@
 
     float-to-int v2, v2
 
-    .line 654
+    .line 652
     iget-object v5, v0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {v5}, Lorg/telegram/ui/ActionIntroActivity;->access$500(Lorg/telegram/ui/ActionIntroActivity;)Landroid/widget/TextView;
@@ -3638,7 +3638,7 @@
 
     invoke-virtual {v5, v4, v2, v7, v8}, Landroid/widget/TextView;->layout(IIII)V
 
-    .line 655
+    .line 653
     iget-object v2, v0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {v2}, Lorg/telegram/ui/ActionIntroActivity;->access$600(Lorg/telegram/ui/ActionIntroActivity;)Landroid/widget/TextView;
@@ -3659,7 +3659,7 @@
 
     float-to-int v1, v1
 
-    .line 657
+    .line 655
     iget-object v2, v0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {v2}, Lorg/telegram/ui/ActionIntroActivity;->access$600(Lorg/telegram/ui/ActionIntroActivity;)Landroid/widget/TextView;
@@ -3692,7 +3692,7 @@
 
     invoke-virtual {v2, v3, v1, v5, v7}, Landroid/widget/TextView;->layout(IIII)V
 
-    .line 658
+    .line 656
     invoke-virtual/range {p0 .. p0}, Landroid/view/ViewGroup;->getMeasuredHeight()I
 
     move-result v1
@@ -3715,7 +3715,7 @@
 
     sub-int/2addr v1, v2
 
-    .line 659
+    .line 657
     iget-object v2, v0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {v2}, Lorg/telegram/ui/ActionIntroActivity;->access$1000(Lorg/telegram/ui/ActionIntroActivity;)Landroid/widget/TextView;
@@ -3751,7 +3751,7 @@
     :pswitch_4
     if-le v1, v2, :cond_f
 
-    .line 602
+    .line 600
     iget-object v1, v0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {v1}, Lorg/telegram/ui/ActionIntroActivity;->access$300(Lorg/telegram/ui/ActionIntroActivity;)Lorg/telegram/ui/Components/RLottieImageView;
@@ -3770,7 +3770,7 @@
 
     mul-float v18, v18, v2
 
-    .line 603
+    .line 601
     iget-object v3, v0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {v3}, Lorg/telegram/ui/ActionIntroActivity;->access$300(Lorg/telegram/ui/ActionIntroActivity;)Lorg/telegram/ui/Components/RLottieImageView;
@@ -3789,7 +3789,7 @@
 
     div-int/lit8 v3, v3, 0x2
 
-    .line 604
+    .line 602
     iget-object v4, v0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {v4}, Lorg/telegram/ui/ActionIntroActivity;->access$300(Lorg/telegram/ui/ActionIntroActivity;)Lorg/telegram/ui/Components/RLottieImageView;
@@ -3832,7 +3832,7 @@
 
     float-to-int v5, v5
 
-    .line 607
+    .line 605
     iget-object v6, v0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {v6}, Lorg/telegram/ui/ActionIntroActivity;->access$400(Lorg/telegram/ui/ActionIntroActivity;)Landroid/widget/TextView;
@@ -3869,7 +3869,7 @@
 
     float-to-int v5, v5
 
-    .line 610
+    .line 608
     iget-object v6, v0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {v6}, Lorg/telegram/ui/ActionIntroActivity;->access$500(Lorg/telegram/ui/ActionIntroActivity;)Landroid/widget/TextView;
@@ -3904,7 +3904,7 @@
 
     mul-float v2, v2, v22
 
-    .line 611
+    .line 609
     iget-object v3, v0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {v3}, Lorg/telegram/ui/ActionIntroActivity;->access$600(Lorg/telegram/ui/ActionIntroActivity;)Landroid/widget/TextView;
@@ -3929,7 +3929,7 @@
 
     float-to-int v2, v4
 
-    .line 613
+    .line 611
     iget-object v3, v0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {v3}, Lorg/telegram/ui/ActionIntroActivity;->access$600(Lorg/telegram/ui/ActionIntroActivity;)Landroid/widget/TextView;
@@ -3973,7 +3973,7 @@
 
     float-to-int v2, v7
 
-    .line 616
+    .line 614
     iget-object v5, v0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {v5}, Lorg/telegram/ui/ActionIntroActivity;->access$300(Lorg/telegram/ui/ActionIntroActivity;)Lorg/telegram/ui/Components/RLottieImageView;
@@ -3988,7 +3988,7 @@
 
     div-int/lit8 v5, v5, 0x2
 
-    .line 617
+    .line 615
     iget-object v6, v0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {v6}, Lorg/telegram/ui/ActionIntroActivity;->access$300(Lorg/telegram/ui/ActionIntroActivity;)Lorg/telegram/ui/Components/RLottieImageView;
@@ -4027,7 +4027,7 @@
 
     float-to-int v2, v2
 
-    .line 619
+    .line 617
     iget-object v5, v0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {v5}, Lorg/telegram/ui/ActionIntroActivity;->access$400(Lorg/telegram/ui/ActionIntroActivity;)Landroid/widget/TextView;
@@ -4064,7 +4064,7 @@
 
     float-to-int v2, v2
 
-    .line 621
+    .line 619
     iget-object v5, v0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {v5}, Lorg/telegram/ui/ActionIntroActivity;->access$500(Lorg/telegram/ui/ActionIntroActivity;)Landroid/widget/TextView;
@@ -4095,7 +4095,7 @@
 
     invoke-virtual {v5, v4, v2, v6, v7}, Landroid/widget/TextView;->layout(IIII)V
 
-    .line 622
+    .line 620
     iget-object v2, v0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {v2}, Lorg/telegram/ui/ActionIntroActivity;->access$600(Lorg/telegram/ui/ActionIntroActivity;)Landroid/widget/TextView;
@@ -4114,7 +4114,7 @@
 
     float-to-int v1, v1
 
-    .line 624
+    .line 622
     iget-object v2, v0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {v2}, Lorg/telegram/ui/ActionIntroActivity;->access$600(Lorg/telegram/ui/ActionIntroActivity;)Landroid/widget/TextView;
@@ -4152,7 +4152,7 @@
     :pswitch_5
     if-le v1, v2, :cond_10
 
-    .line 497
+    .line 495
     iget-object v1, v0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {v1}, Lorg/telegram/ui/ActionIntroActivity;->access$300(Lorg/telegram/ui/ActionIntroActivity;)Lorg/telegram/ui/Components/RLottieImageView;
@@ -4167,7 +4167,7 @@
 
     div-int/lit8 v1, v1, 0x2
 
-    .line 498
+    .line 496
     iget-object v2, v0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {v2}, Lorg/telegram/ui/ActionIntroActivity;->access$300(Lorg/telegram/ui/ActionIntroActivity;)Lorg/telegram/ui/Components/RLottieImageView;
@@ -4210,7 +4210,7 @@
 
     float-to-int v5, v10
 
-    .line 501
+    .line 499
     iget-object v6, v0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {v6}, Lorg/telegram/ui/ActionIntroActivity;->access$400(Lorg/telegram/ui/ActionIntroActivity;)Landroid/widget/TextView;
@@ -4247,7 +4247,7 @@
 
     float-to-int v5, v9
 
-    .line 504
+    .line 502
     iget-object v6, v0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {v6}, Lorg/telegram/ui/ActionIntroActivity;->access$500(Lorg/telegram/ui/ActionIntroActivity;)Landroid/widget/TextView;
@@ -4282,7 +4282,7 @@
 
     mul-float v1, v1, v22
 
-    .line 505
+    .line 503
     iget-object v3, v0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {v3}, Lorg/telegram/ui/ActionIntroActivity;->access$600(Lorg/telegram/ui/ActionIntroActivity;)Landroid/widget/TextView;
@@ -4307,7 +4307,7 @@
 
     float-to-int v2, v4
 
-    .line 507
+    .line 505
     iget-object v3, v0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {v3}, Lorg/telegram/ui/ActionIntroActivity;->access$600(Lorg/telegram/ui/ActionIntroActivity;)Landroid/widget/TextView;
@@ -4349,7 +4349,7 @@
 
     float-to-int v2, v13
 
-    .line 510
+    .line 508
     iget-object v5, v0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {v5}, Lorg/telegram/ui/ActionIntroActivity;->access$300(Lorg/telegram/ui/ActionIntroActivity;)Lorg/telegram/ui/Components/RLottieImageView;
@@ -4384,7 +4384,7 @@
 
     float-to-int v2, v12
 
-    .line 512
+    .line 510
     iget-object v5, v0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {v5}, Lorg/telegram/ui/ActionIntroActivity;->access$400(Lorg/telegram/ui/ActionIntroActivity;)Landroid/widget/TextView;
@@ -4419,7 +4419,7 @@
 
     float-to-int v2, v11
 
-    .line 514
+    .line 512
     iget-object v5, v0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {v5}, Lorg/telegram/ui/ActionIntroActivity;->access$500(Lorg/telegram/ui/ActionIntroActivity;)Landroid/widget/TextView;
@@ -4450,7 +4450,7 @@
 
     invoke-virtual {v5, v4, v2, v6, v7}, Landroid/widget/TextView;->layout(IIII)V
 
-    .line 515
+    .line 513
     iget-object v2, v0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {v2}, Lorg/telegram/ui/ActionIntroActivity;->access$600(Lorg/telegram/ui/ActionIntroActivity;)Landroid/widget/TextView;
@@ -4469,7 +4469,7 @@
 
     float-to-int v1, v1
 
-    .line 517
+    .line 515
     iget-object v2, v0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {v2}, Lorg/telegram/ui/ActionIntroActivity;->access$600(Lorg/telegram/ui/ActionIntroActivity;)Landroid/widget/TextView;
@@ -4520,17 +4520,17 @@
 .method protected onMeasure(II)V
     .locals 12
 
-    .line 255
+    .line 253
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result p1
 
-    .line 256
+    .line 254
     invoke-static {p2}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result v0
 
-    .line 258
+    .line 256
     iget-object v1, p0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {v1}, Lorg/telegram/ui/ActionIntroActivity;->access$000(Lorg/telegram/ui/ActionIntroActivity;)Lorg/telegram/ui/ActionBar/ActionBar;
@@ -4541,7 +4541,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 259
+    .line 257
     iget-object v1, p0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {v1}, Lorg/telegram/ui/ActionIntroActivity;->access$100(Lorg/telegram/ui/ActionIntroActivity;)Lorg/telegram/ui/ActionBar/ActionBar;
@@ -4554,7 +4554,7 @@
 
     invoke-virtual {v1, v3, p2}, Landroid/widget/FrameLayout;->measure(II)V
 
-    .line 262
+    .line 260
     :cond_0
     iget-object p2, p0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
@@ -4578,7 +4578,7 @@
 
     if-eqz p2, :cond_7
 
-    .line 263
+    .line 261
     iget-object p2, p0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/ActionIntroActivity;->access$200(Lorg/telegram/ui/ActionIntroActivity;)I
@@ -4601,7 +4601,7 @@
 
     goto/16 :goto_0
 
-    .line 274
+    .line 272
     :cond_1
     iget-object p2, p0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
@@ -4615,7 +4615,7 @@
 
     if-le p1, v0, :cond_2
 
-    .line 276
+    .line 274
     iget-object p2, p0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/ActionIntroActivity;->access$300(Lorg/telegram/ui/ActionIntroActivity;)Lorg/telegram/ui/Components/RLottieImageView;
@@ -4644,7 +4644,7 @@
 
     invoke-virtual {p2, v4, v1}, Landroid/widget/ImageView;->measure(II)V
 
-    .line 277
+    .line 275
     iget-object p2, p0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/ActionIntroActivity;->access$400(Lorg/telegram/ui/ActionIntroActivity;)Landroid/widget/TextView;
@@ -4665,7 +4665,7 @@
 
     invoke-virtual {p2, v3, v4}, Landroid/widget/TextView;->measure(II)V
 
-    .line 278
+    .line 276
     iget-object p2, p0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/ActionIntroActivity;->access$500(Lorg/telegram/ui/ActionIntroActivity;)Landroid/widget/TextView;
@@ -4682,7 +4682,7 @@
 
     invoke-virtual {p2, v3, v4}, Landroid/widget/TextView;->measure(II)V
 
-    .line 279
+    .line 277
     iget-object p2, p0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/ActionIntroActivity;->access$600(Lorg/telegram/ui/ActionIntroActivity;)Landroid/widget/TextView;
@@ -4705,7 +4705,7 @@
 
     goto/16 :goto_2
 
-    .line 281
+    .line 279
     :cond_2
     iget-object p2, p0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
@@ -4729,7 +4729,7 @@
 
     invoke-virtual {p2, v1, v3}, Landroid/widget/ImageView;->measure(II)V
 
-    .line 282
+    .line 280
     iget-object p2, p0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/ActionIntroActivity;->access$400(Lorg/telegram/ui/ActionIntroActivity;)Landroid/widget/TextView;
@@ -4746,7 +4746,7 @@
 
     invoke-virtual {p2, v1, v3}, Landroid/widget/TextView;->measure(II)V
 
-    .line 283
+    .line 281
     iget-object p2, p0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/ActionIntroActivity;->access$500(Lorg/telegram/ui/ActionIntroActivity;)Landroid/widget/TextView;
@@ -4763,7 +4763,7 @@
 
     invoke-virtual {p2, v1, v3}, Landroid/widget/TextView;->measure(II)V
 
-    .line 284
+    .line 282
     iget-object p2, p0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/ActionIntroActivity;->access$600(Lorg/telegram/ui/ActionIntroActivity;)Landroid/widget/TextView;
@@ -4789,7 +4789,7 @@
     :cond_3
     if-le p1, v0, :cond_4
 
-    .line 288
+    .line 286
     iget-object p2, p0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/ActionIntroActivity;->access$300(Lorg/telegram/ui/ActionIntroActivity;)Lorg/telegram/ui/Components/RLottieImageView;
@@ -4818,7 +4818,7 @@
 
     invoke-virtual {p2, v4, v1}, Landroid/widget/ImageView;->measure(II)V
 
-    .line 289
+    .line 287
     iget-object p2, p0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/ActionIntroActivity;->access$400(Lorg/telegram/ui/ActionIntroActivity;)Landroid/widget/TextView;
@@ -4839,7 +4839,7 @@
 
     invoke-virtual {p2, v3, v4}, Landroid/widget/TextView;->measure(II)V
 
-    .line 290
+    .line 288
     iget-object p2, p0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/ActionIntroActivity;->access$500(Lorg/telegram/ui/ActionIntroActivity;)Landroid/widget/TextView;
@@ -4856,7 +4856,7 @@
 
     invoke-virtual {p2, v3, v4}, Landroid/widget/TextView;->measure(II)V
 
-    .line 291
+    .line 289
     iget-object p2, p0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/ActionIntroActivity;->access$600(Lorg/telegram/ui/ActionIntroActivity;)Landroid/widget/TextView;
@@ -4879,7 +4879,7 @@
 
     goto/16 :goto_2
 
-    .line 293
+    .line 291
     :cond_4
     iget-object p2, p0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
@@ -4903,7 +4903,7 @@
 
     invoke-virtual {p2, v1, v3}, Landroid/widget/ImageView;->measure(II)V
 
-    .line 294
+    .line 292
     iget-object p2, p0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/ActionIntroActivity;->access$400(Lorg/telegram/ui/ActionIntroActivity;)Landroid/widget/TextView;
@@ -4920,7 +4920,7 @@
 
     invoke-virtual {p2, v1, v3}, Landroid/widget/TextView;->measure(II)V
 
-    .line 295
+    .line 293
     iget-object p2, p0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/ActionIntroActivity;->access$500(Lorg/telegram/ui/ActionIntroActivity;)Landroid/widget/TextView;
@@ -4937,7 +4937,7 @@
 
     invoke-virtual {p2, v1, v3}, Landroid/widget/TextView;->measure(II)V
 
-    .line 296
+    .line 294
     iget-object p2, p0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/ActionIntroActivity;->access$600(Lorg/telegram/ui/ActionIntroActivity;)Landroid/widget/TextView;
@@ -4960,7 +4960,7 @@
 
     goto/16 :goto_2
 
-    .line 264
+    .line 262
     :cond_5
     :goto_0
     iget-object p2, p0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
@@ -4991,7 +4991,7 @@
 
     if-le p1, v0, :cond_6
 
-    .line 266
+    .line 264
     iget-object p2, p0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/ActionIntroActivity;->access$400(Lorg/telegram/ui/ActionIntroActivity;)Landroid/widget/TextView;
@@ -5014,7 +5014,7 @@
 
     invoke-virtual {p2, v3, v4}, Landroid/widget/TextView;->measure(II)V
 
-    .line 267
+    .line 265
     iget-object p2, p0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/ActionIntroActivity;->access$500(Lorg/telegram/ui/ActionIntroActivity;)Landroid/widget/TextView;
@@ -5031,7 +5031,7 @@
 
     invoke-virtual {p2, v3, v4}, Landroid/widget/TextView;->measure(II)V
 
-    .line 268
+    .line 266
     iget-object p2, p0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/ActionIntroActivity;->access$600(Lorg/telegram/ui/ActionIntroActivity;)Landroid/widget/TextView;
@@ -5054,7 +5054,7 @@
 
     goto/16 :goto_2
 
-    .line 270
+    .line 268
     :cond_6
     iget-object p2, p0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
@@ -5072,7 +5072,7 @@
 
     invoke-virtual {p2, v1, v3}, Landroid/widget/TextView;->measure(II)V
 
-    .line 271
+    .line 269
     iget-object p2, p0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/ActionIntroActivity;->access$500(Lorg/telegram/ui/ActionIntroActivity;)Landroid/widget/TextView;
@@ -5089,7 +5089,7 @@
 
     invoke-virtual {p2, v1, v3}, Landroid/widget/TextView;->measure(II)V
 
-    .line 272
+    .line 270
     iget-object p2, p0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/ActionIntroActivity;->access$600(Lorg/telegram/ui/ActionIntroActivity;)Landroid/widget/TextView;
@@ -5112,7 +5112,7 @@
 
     goto/16 :goto_2
 
-    .line 300
+    .line 298
     :cond_7
     iget-object p2, p0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
@@ -5130,7 +5130,7 @@
 
     goto/16 :goto_2
 
-    .line 316
+    .line 314
     :pswitch_0
     iget-object p2, p0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
@@ -5140,7 +5140,7 @@
 
     if-eqz p2, :cond_8
 
-    .line 317
+    .line 315
     iget-object p2, p0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/ActionIntroActivity;->access$300(Lorg/telegram/ui/ActionIntroActivity;)Lorg/telegram/ui/Components/RLottieImageView;
@@ -5165,7 +5165,7 @@
 
     invoke-virtual {p2, v1, v3}, Landroid/widget/ImageView;->measure(II)V
 
-    .line 318
+    .line 316
     iget-object p2, p0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/ActionIntroActivity;->access$400(Lorg/telegram/ui/ActionIntroActivity;)Landroid/widget/TextView;
@@ -5182,7 +5182,7 @@
 
     invoke-virtual {p2, v1, v3}, Landroid/widget/TextView;->measure(II)V
 
-    .line 319
+    .line 317
     iget-object p2, p0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/ActionIntroActivity;->access$800(Lorg/telegram/ui/ActionIntroActivity;)Landroid/widget/LinearLayout;
@@ -5199,7 +5199,7 @@
 
     invoke-virtual {p2, v1, v0}, Landroid/widget/LinearLayout;->measure(II)V
 
-    .line 320
+    .line 318
     iget-object p2, p0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/ActionIntroActivity;->access$600(Lorg/telegram/ui/ActionIntroActivity;)Landroid/widget/TextView;
@@ -5220,7 +5220,7 @@
 
     invoke-virtual {p2, v0, v1}, Landroid/widget/TextView;->measure(II)V
 
-    .line 321
+    .line 319
     iget-object p2, p0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/ActionIntroActivity;->access$300(Lorg/telegram/ui/ActionIntroActivity;)Lorg/telegram/ui/Components/RLottieImageView;
@@ -5292,7 +5292,7 @@
     :cond_8
     if-le p1, v0, :cond_9
 
-    .line 323
+    .line 321
     iget-object p2, p0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/ActionIntroActivity;->access$300(Lorg/telegram/ui/ActionIntroActivity;)Lorg/telegram/ui/Components/RLottieImageView;
@@ -5321,7 +5321,7 @@
 
     invoke-virtual {p2, v4, v1}, Landroid/widget/ImageView;->measure(II)V
 
-    .line 324
+    .line 322
     iget-object p2, p0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/ActionIntroActivity;->access$400(Lorg/telegram/ui/ActionIntroActivity;)Landroid/widget/TextView;
@@ -5342,7 +5342,7 @@
 
     invoke-virtual {p2, v3, v4}, Landroid/widget/TextView;->measure(II)V
 
-    .line 325
+    .line 323
     iget-object p2, p0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/ActionIntroActivity;->access$800(Lorg/telegram/ui/ActionIntroActivity;)Landroid/widget/LinearLayout;
@@ -5359,7 +5359,7 @@
 
     invoke-virtual {p2, v3, v4}, Landroid/widget/LinearLayout;->measure(II)V
 
-    .line 326
+    .line 324
     iget-object p2, p0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/ActionIntroActivity;->access$600(Lorg/telegram/ui/ActionIntroActivity;)Landroid/widget/TextView;
@@ -5382,7 +5382,7 @@
 
     goto/16 :goto_2
 
-    .line 328
+    .line 326
     :cond_9
     iget-object p2, p0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
@@ -5406,7 +5406,7 @@
 
     invoke-virtual {p2, v1, v3}, Landroid/widget/ImageView;->measure(II)V
 
-    .line 329
+    .line 327
     iget-object p2, p0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/ActionIntroActivity;->access$400(Lorg/telegram/ui/ActionIntroActivity;)Landroid/widget/TextView;
@@ -5423,7 +5423,7 @@
 
     invoke-virtual {p2, v1, v3}, Landroid/widget/TextView;->measure(II)V
 
-    .line 330
+    .line 328
     iget-object p2, p0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/ActionIntroActivity;->access$800(Lorg/telegram/ui/ActionIntroActivity;)Landroid/widget/LinearLayout;
@@ -5440,7 +5440,7 @@
 
     invoke-virtual {p2, v1, v3}, Landroid/widget/LinearLayout;->measure(II)V
 
-    .line 331
+    .line 329
     iget-object p2, p0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/ActionIntroActivity;->access$600(Lorg/telegram/ui/ActionIntroActivity;)Landroid/widget/TextView;
@@ -5463,7 +5463,7 @@
 
     goto/16 :goto_2
 
-    .line 377
+    .line 375
     :pswitch_1
     iget-object p2, p0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
@@ -5493,7 +5493,7 @@
 
     if-le p1, v0, :cond_a
 
-    .line 380
+    .line 378
     iget-object p2, p0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/ActionIntroActivity;->access$900(Lorg/telegram/ui/ActionIntroActivity;)Landroid/widget/TextView;
@@ -5516,7 +5516,7 @@
 
     invoke-virtual {p2, v3, v4}, Landroid/widget/TextView;->measure(II)V
 
-    .line 381
+    .line 379
     iget-object p2, p0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/ActionIntroActivity;->access$400(Lorg/telegram/ui/ActionIntroActivity;)Landroid/widget/TextView;
@@ -5537,7 +5537,7 @@
 
     invoke-virtual {p2, v3, v4}, Landroid/widget/TextView;->measure(II)V
 
-    .line 382
+    .line 380
     iget-object p2, p0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/ActionIntroActivity;->access$500(Lorg/telegram/ui/ActionIntroActivity;)Landroid/widget/TextView;
@@ -5554,7 +5554,7 @@
 
     invoke-virtual {p2, v3, v4}, Landroid/widget/TextView;->measure(II)V
 
-    .line 383
+    .line 381
     iget-object p2, p0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/ActionIntroActivity;->access$600(Lorg/telegram/ui/ActionIntroActivity;)Landroid/widget/TextView;
@@ -5577,7 +5577,7 @@
 
     goto/16 :goto_2
 
-    .line 385
+    .line 383
     :cond_a
     iget-object p2, p0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
@@ -5595,7 +5595,7 @@
 
     invoke-virtual {p2, v1, v3}, Landroid/widget/TextView;->measure(II)V
 
-    .line 386
+    .line 384
     iget-object p2, p0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/ActionIntroActivity;->access$500(Lorg/telegram/ui/ActionIntroActivity;)Landroid/widget/TextView;
@@ -5612,7 +5612,7 @@
 
     invoke-virtual {p2, v1, v3}, Landroid/widget/TextView;->measure(II)V
 
-    .line 387
+    .line 385
     iget-object p2, p0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/ActionIntroActivity;->access$900(Lorg/telegram/ui/ActionIntroActivity;)Landroid/widget/TextView;
@@ -5629,7 +5629,7 @@
 
     invoke-virtual {p2, v1, v3}, Landroid/widget/TextView;->measure(II)V
 
-    .line 388
+    .line 386
     iget-object p2, p0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/ActionIntroActivity;->access$600(Lorg/telegram/ui/ActionIntroActivity;)Landroid/widget/TextView;
@@ -5661,7 +5661,7 @@
     :pswitch_2
     if-le p1, v0, :cond_b
 
-    .line 360
+    .line 358
     iget-object p2, p0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/ActionIntroActivity;->access$300(Lorg/telegram/ui/ActionIntroActivity;)Lorg/telegram/ui/Components/RLottieImageView;
@@ -5692,7 +5692,7 @@
 
     invoke-virtual {p2, v4, v9}, Landroid/widget/ImageView;->measure(II)V
 
-    .line 361
+    .line 359
     iget-object p2, p0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/ActionIntroActivity;->access$900(Lorg/telegram/ui/ActionIntroActivity;)Landroid/widget/TextView;
@@ -5709,7 +5709,7 @@
 
     invoke-virtual {p2, v3, v4}, Landroid/widget/TextView;->measure(II)V
 
-    .line 362
+    .line 360
     iget-object p2, p0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/ActionIntroActivity;->access$400(Lorg/telegram/ui/ActionIntroActivity;)Landroid/widget/TextView;
@@ -5730,7 +5730,7 @@
 
     invoke-virtual {p2, v3, v4}, Landroid/widget/TextView;->measure(II)V
 
-    .line 363
+    .line 361
     iget-object p2, p0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/ActionIntroActivity;->access$500(Lorg/telegram/ui/ActionIntroActivity;)Landroid/widget/TextView;
@@ -5747,7 +5747,7 @@
 
     invoke-virtual {p2, v3, v4}, Landroid/widget/TextView;->measure(II)V
 
-    .line 364
+    .line 362
     iget-object p2, p0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/ActionIntroActivity;->access$1000(Lorg/telegram/ui/ActionIntroActivity;)Landroid/widget/TextView;
@@ -5764,7 +5764,7 @@
 
     invoke-virtual {p2, v3, v4}, Landroid/widget/TextView;->measure(II)V
 
-    .line 365
+    .line 363
     iget-object p2, p0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/ActionIntroActivity;->access$600(Lorg/telegram/ui/ActionIntroActivity;)Landroid/widget/TextView;
@@ -5787,7 +5787,7 @@
 
     goto/16 :goto_2
 
-    .line 367
+    .line 365
     :cond_b
     iget-object p2, p0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
@@ -5813,7 +5813,7 @@
 
     invoke-virtual {p2, v1, v3}, Landroid/widget/ImageView;->measure(II)V
 
-    .line 368
+    .line 366
     iget-object p2, p0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/ActionIntroActivity;->access$400(Lorg/telegram/ui/ActionIntroActivity;)Landroid/widget/TextView;
@@ -5830,7 +5830,7 @@
 
     invoke-virtual {p2, v1, v3}, Landroid/widget/TextView;->measure(II)V
 
-    .line 369
+    .line 367
     iget-object p2, p0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/ActionIntroActivity;->access$900(Lorg/telegram/ui/ActionIntroActivity;)Landroid/widget/TextView;
@@ -5847,7 +5847,7 @@
 
     invoke-virtual {p2, v1, v3}, Landroid/widget/TextView;->measure(II)V
 
-    .line 370
+    .line 368
     iget-object p2, p0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/ActionIntroActivity;->access$500(Lorg/telegram/ui/ActionIntroActivity;)Landroid/widget/TextView;
@@ -5864,7 +5864,7 @@
 
     invoke-virtual {p2, v1, v3}, Landroid/widget/TextView;->measure(II)V
 
-    .line 371
+    .line 369
     iget-object p2, p0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/ActionIntroActivity;->access$1000(Lorg/telegram/ui/ActionIntroActivity;)Landroid/widget/TextView;
@@ -5881,7 +5881,7 @@
 
     invoke-virtual {p2, v1, v3}, Landroid/widget/TextView;->measure(II)V
 
-    .line 372
+    .line 370
     iget-object p2, p0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/ActionIntroActivity;->access$600(Lorg/telegram/ui/ActionIntroActivity;)Landroid/widget/TextView;
@@ -5904,7 +5904,7 @@
 
     goto/16 :goto_2
 
-    .line 338
+    .line 336
     :pswitch_3
     iget-object p2, p0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
@@ -5916,7 +5916,7 @@
 
     if-ne p2, v1, :cond_c
 
-    .line 339
+    .line 337
     iget-object p2, p0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/ActionIntroActivity;->access$300(Lorg/telegram/ui/ActionIntroActivity;)Lorg/telegram/ui/Components/RLottieImageView;
@@ -5945,7 +5945,7 @@
 
     goto :goto_1
 
-    .line 341
+    .line 339
     :cond_c
     iget-object p2, p0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
@@ -5976,7 +5976,7 @@
     :goto_1
     if-le p1, v0, :cond_d
 
-    .line 344
+    .line 342
     iget-object p2, p0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/ActionIntroActivity;->access$400(Lorg/telegram/ui/ActionIntroActivity;)Landroid/widget/TextView;
@@ -5999,7 +5999,7 @@
 
     invoke-virtual {p2, v3, v4}, Landroid/widget/TextView;->measure(II)V
 
-    .line 345
+    .line 343
     iget-object p2, p0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/ActionIntroActivity;->access$500(Lorg/telegram/ui/ActionIntroActivity;)Landroid/widget/TextView;
@@ -6016,7 +6016,7 @@
 
     invoke-virtual {p2, v3, v4}, Landroid/widget/TextView;->measure(II)V
 
-    .line 346
+    .line 344
     iget-object p2, p0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/ActionIntroActivity;->access$600(Lorg/telegram/ui/ActionIntroActivity;)Landroid/widget/TextView;
@@ -6039,7 +6039,7 @@
 
     goto/16 :goto_2
 
-    .line 348
+    .line 346
     :cond_d
     iget-object p2, p0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
@@ -6057,7 +6057,7 @@
 
     invoke-virtual {p2, v3, v4}, Landroid/widget/TextView;->measure(II)V
 
-    .line 349
+    .line 347
     iget-object p2, p0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/ActionIntroActivity;->access$500(Lorg/telegram/ui/ActionIntroActivity;)Landroid/widget/TextView;
@@ -6074,7 +6074,7 @@
 
     invoke-virtual {p2, v3, v4}, Landroid/widget/TextView;->measure(II)V
 
-    .line 350
+    .line 348
     iget-object p2, p0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/ActionIntroActivity;->access$200(Lorg/telegram/ui/ActionIntroActivity;)I
@@ -6083,7 +6083,7 @@
 
     if-ne p2, v1, :cond_e
 
-    .line 351
+    .line 349
     iget-object p2, p0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/ActionIntroActivity;->access$600(Lorg/telegram/ui/ActionIntroActivity;)Landroid/widget/TextView;
@@ -6112,7 +6112,7 @@
 
     goto/16 :goto_2
 
-    .line 353
+    .line 351
     :cond_e
     iget-object p2, p0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
@@ -6145,7 +6145,7 @@
     :pswitch_4
     if-le p1, v0, :cond_f
 
-    .line 303
+    .line 301
     iget-object p2, p0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/ActionIntroActivity;->access$300(Lorg/telegram/ui/ActionIntroActivity;)Lorg/telegram/ui/Components/RLottieImageView;
@@ -6174,7 +6174,7 @@
 
     invoke-virtual {p2, v4, v1}, Landroid/widget/ImageView;->measure(II)V
 
-    .line 304
+    .line 302
     iget-object p2, p0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/ActionIntroActivity;->access$400(Lorg/telegram/ui/ActionIntroActivity;)Landroid/widget/TextView;
@@ -6195,7 +6195,7 @@
 
     invoke-virtual {p2, v3, v4}, Landroid/widget/TextView;->measure(II)V
 
-    .line 305
+    .line 303
     iget-object p2, p0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/ActionIntroActivity;->access$500(Lorg/telegram/ui/ActionIntroActivity;)Landroid/widget/TextView;
@@ -6212,7 +6212,7 @@
 
     invoke-virtual {p2, v3, v4}, Landroid/widget/TextView;->measure(II)V
 
-    .line 306
+    .line 304
     iget-object p2, p0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/ActionIntroActivity;->access$600(Lorg/telegram/ui/ActionIntroActivity;)Landroid/widget/TextView;
@@ -6235,7 +6235,7 @@
 
     goto :goto_2
 
-    .line 308
+    .line 306
     :cond_f
     iget-object p2, p0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
@@ -6259,7 +6259,7 @@
 
     invoke-virtual {p2, v1, v3}, Landroid/widget/ImageView;->measure(II)V
 
-    .line 309
+    .line 307
     iget-object p2, p0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/ActionIntroActivity;->access$400(Lorg/telegram/ui/ActionIntroActivity;)Landroid/widget/TextView;
@@ -6276,7 +6276,7 @@
 
     invoke-virtual {p2, v1, v3}, Landroid/widget/TextView;->measure(II)V
 
-    .line 310
+    .line 308
     iget-object p2, p0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/ActionIntroActivity;->access$500(Lorg/telegram/ui/ActionIntroActivity;)Landroid/widget/TextView;
@@ -6293,7 +6293,7 @@
 
     invoke-virtual {p2, v1, v3}, Landroid/widget/TextView;->measure(II)V
 
-    .line 311
+    .line 309
     iget-object p2, p0, Lorg/telegram/ui/ActionIntroActivity$2;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/ActionIntroActivity;->access$600(Lorg/telegram/ui/ActionIntroActivity;)Landroid/widget/TextView;
@@ -6320,7 +6320,7 @@
 
     invoke-virtual {p2, v1, v2}, Landroid/widget/TextView;->measure(II)V
 
-    .line 394
+    .line 392
     :goto_2
     invoke-virtual {p0, p1, v0}, Landroid/view/ViewGroup;->setMeasuredDimension(II)V
 

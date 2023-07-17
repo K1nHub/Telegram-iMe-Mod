@@ -599,7 +599,7 @@
 
     move-result v1
 
-    const-string v2, "s/"
+    const-string/jumbo v2, "s/"
 
     const-string v5, "iv"
 
@@ -881,7 +881,7 @@
 
     if-nez v1, :cond_1
 
-    const-string v1, "resolve"
+    const-string/jumbo v1, "resolve"
 
     invoke-virtual {p0, v1}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
 

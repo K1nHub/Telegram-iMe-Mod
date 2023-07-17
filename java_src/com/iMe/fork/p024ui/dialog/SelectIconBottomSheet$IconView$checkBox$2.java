@@ -3,7 +3,7 @@ package com.iMe.fork.p024ui.dialog;
 import com.iMe.fork.p024ui.dialog.SelectIconBottomSheet;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Lambda;
-import org.telegram.p044ui.Components.CheckBox2;
+import org.telegram.p043ui.Components.CheckBox2;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: SelectIconBottomSheet.kt */
 /* renamed from: com.iMe.fork.ui.dialog.SelectIconBottomSheet$IconView$checkBox$2 */

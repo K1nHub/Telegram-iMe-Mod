@@ -72,7 +72,7 @@
 
     const-class v1, Ljava/lang/Object;
 
-    const-string v2, "result"
+    const-string/jumbo v2, "result"
 
     invoke-static {v0, v1, v2}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->newUpdater(Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/String;)Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
 

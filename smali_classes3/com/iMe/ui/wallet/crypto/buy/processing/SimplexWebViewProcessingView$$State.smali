@@ -11,8 +11,7 @@
     value = {
         Lcom/iMe/ui/wallet/crypto/buy/processing/SimplexWebViewProcessingView$$State$ShowErrorToastCommand;,
         Lcom/iMe/ui/wallet/crypto/buy/processing/SimplexWebViewProcessingView$$State$ShowLoadingDialogCommand;,
-        Lcom/iMe/ui/wallet/crypto/buy/processing/SimplexWebViewProcessingView$$State$ShowToastCommand;,
-        Lcom/iMe/ui/wallet/crypto/buy/processing/SimplexWebViewProcessingView$$State$RedirectAndShowResultCommand;
+        Lcom/iMe/ui/wallet/crypto/buy/processing/SimplexWebViewProcessingView$$State$ShowToastCommand;
     }
 .end annotation
 
@@ -46,63 +45,10 @@
     return-void
 .end method
 
-.method public redirectAndShowResult(Lcom/iMe/model/wallet/crypto/simplex/PaymentResult;)V
-    .locals 3
+.method public synthetic removeSelfFromStackImmediately()V
+    .locals 0
 
-    .line 18
-    new-instance v0, Lcom/iMe/ui/wallet/crypto/buy/processing/SimplexWebViewProcessingView$$State$RedirectAndShowResultCommand;
-
-    invoke-direct {v0, p0, p1}, Lcom/iMe/ui/wallet/crypto/buy/processing/SimplexWebViewProcessingView$$State$RedirectAndShowResultCommand;-><init>(Lcom/iMe/ui/wallet/crypto/buy/processing/SimplexWebViewProcessingView$$State;Lcom/iMe/model/wallet/crypto/simplex/PaymentResult;)V
-
-    .line 19
-    iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
-
-    invoke-virtual {v1, v0}, Lmoxy/viewstate/ViewCommands;->beforeApply(Lmoxy/viewstate/ViewCommand;)V
-
-    .line 21
-    invoke-virtual {p0}, Lmoxy/viewstate/MvpViewState;->hasNotView()Ljava/lang/Boolean;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    return-void
-
-    .line 25
-    :cond_0
-    iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->views:Ljava/util/Set;
-
-    invoke-interface {v1}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
-
-    move-result-object v1
-
-    :goto_0
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_1
-
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Lcom/iMe/ui/wallet/crypto/buy/processing/SimplexWebViewProcessingView;
-
-    .line 26
-    invoke-interface {v2, p1}, Lcom/iMe/ui/wallet/crypto/buy/processing/SimplexWebViewProcessingView;->redirectAndShowResult(Lcom/iMe/model/wallet/crypto/simplex/PaymentResult;)V
-
-    goto :goto_0
-
-    .line 29
-    :cond_1
-    iget-object p1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
-
-    invoke-virtual {p1, v0}, Lmoxy/viewstate/ViewCommands;->afterApply(Lmoxy/viewstate/ViewCommand;)V
+    invoke-static {p0}, Lcom/iMe/ui/base/mvp/base/BaseView$-CC;->$default$removeSelfFromStackImmediately(Lcom/iMe/ui/base/mvp/base/BaseView;)V
 
     return-void
 .end method

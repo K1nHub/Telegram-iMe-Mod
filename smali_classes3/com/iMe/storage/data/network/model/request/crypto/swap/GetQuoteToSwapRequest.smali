@@ -8,13 +8,9 @@
 
 .field private final defiProtocol:Ljava/lang/String;
 
-.field private final inputCryptoTokenCode:Ljava/lang/String;
+.field private final inputToken:Lcom/iMe/storage/data/network/model/request/wallet/TokenRequest;
 
-.field private final networkType:Ljava/lang/String;
-
-.field private final outputCryptoTokenCode:Ljava/lang/String;
-
-.field private final outputNetworkType:Ljava/lang/String;
+.field private final outputToken:Lcom/iMe/storage/data/network/model/request/wallet/TokenRequest;
 
 .field private final slippageTolerance:F
 
@@ -22,183 +18,123 @@
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;IFLjava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+.method public constructor <init>(Ljava/lang/String;Lcom/iMe/storage/data/network/model/request/wallet/TokenRequest;Lcom/iMe/storage/data/network/model/request/wallet/TokenRequest;Ljava/lang/String;IF)V
     .locals 1
-
-    const-string v0, "inputCryptoTokenCode"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string v0, "outputCryptoTokenCode"
-
-    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string v0, "amount"
-
-    invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     const-string v0, "defiProtocol"
 
-    invoke-static {p6, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "networkType"
+    const-string v0, "inputToken"
 
-    invoke-static {p7, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 3
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const-string v0, "outputToken"
 
-    .line 4
-    iput-object p1, p0, Lcom/iMe/storage/data/network/model/request/crypto/swap/GetQuoteToSwapRequest;->inputCryptoTokenCode:Ljava/lang/String;
+    invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "amount"
+
+    invoke-static {p4, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 5
-    iput-object p2, p0, Lcom/iMe/storage/data/network/model/request/crypto/swap/GetQuoteToSwapRequest;->outputCryptoTokenCode:Ljava/lang/String;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 6
-    iput-object p3, p0, Lcom/iMe/storage/data/network/model/request/crypto/swap/GetQuoteToSwapRequest;->amount:Ljava/lang/String;
+    iput-object p1, p0, Lcom/iMe/storage/data/network/model/request/crypto/swap/GetQuoteToSwapRequest;->defiProtocol:Ljava/lang/String;
 
     .line 7
-    iput p4, p0, Lcom/iMe/storage/data/network/model/request/crypto/swap/GetQuoteToSwapRequest;->tradeType:I
+    iput-object p2, p0, Lcom/iMe/storage/data/network/model/request/crypto/swap/GetQuoteToSwapRequest;->inputToken:Lcom/iMe/storage/data/network/model/request/wallet/TokenRequest;
 
     .line 8
-    iput p5, p0, Lcom/iMe/storage/data/network/model/request/crypto/swap/GetQuoteToSwapRequest;->slippageTolerance:F
+    iput-object p3, p0, Lcom/iMe/storage/data/network/model/request/crypto/swap/GetQuoteToSwapRequest;->outputToken:Lcom/iMe/storage/data/network/model/request/wallet/TokenRequest;
 
     .line 9
-    iput-object p6, p0, Lcom/iMe/storage/data/network/model/request/crypto/swap/GetQuoteToSwapRequest;->defiProtocol:Ljava/lang/String;
+    iput-object p4, p0, Lcom/iMe/storage/data/network/model/request/crypto/swap/GetQuoteToSwapRequest;->amount:Ljava/lang/String;
 
     .line 10
-    iput-object p7, p0, Lcom/iMe/storage/data/network/model/request/crypto/swap/GetQuoteToSwapRequest;->networkType:Ljava/lang/String;
+    iput p5, p0, Lcom/iMe/storage/data/network/model/request/crypto/swap/GetQuoteToSwapRequest;->tradeType:I
 
     .line 11
-    iput-object p8, p0, Lcom/iMe/storage/data/network/model/request/crypto/swap/GetQuoteToSwapRequest;->outputNetworkType:Ljava/lang/String;
+    iput p6, p0, Lcom/iMe/storage/data/network/model/request/crypto/swap/GetQuoteToSwapRequest;->slippageTolerance:F
 
     return-void
 .end method
 
-.method public static synthetic copy$default(Lcom/iMe/storage/data/network/model/request/crypto/swap/GetQuoteToSwapRequest;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;IFLjava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Object;)Lcom/iMe/storage/data/network/model/request/crypto/swap/GetQuoteToSwapRequest;
-    .locals 9
+.method public static synthetic copy$default(Lcom/iMe/storage/data/network/model/request/crypto/swap/GetQuoteToSwapRequest;Ljava/lang/String;Lcom/iMe/storage/data/network/model/request/wallet/TokenRequest;Lcom/iMe/storage/data/network/model/request/wallet/TokenRequest;Ljava/lang/String;IFILjava/lang/Object;)Lcom/iMe/storage/data/network/model/request/crypto/swap/GetQuoteToSwapRequest;
+    .locals 4
 
-    move-object v0, p0
+    and-int/lit8 p8, p7, 0x1
 
-    move/from16 v1, p9
+    if-eqz p8, :cond_0
 
-    and-int/lit8 v2, v1, 0x1
-
-    if-eqz v2, :cond_0
-
-    iget-object v2, v0, Lcom/iMe/storage/data/network/model/request/crypto/swap/GetQuoteToSwapRequest;->inputCryptoTokenCode:Ljava/lang/String;
-
-    goto :goto_0
+    iget-object p1, p0, Lcom/iMe/storage/data/network/model/request/crypto/swap/GetQuoteToSwapRequest;->defiProtocol:Ljava/lang/String;
 
     :cond_0
-    move-object v2, p1
+    and-int/lit8 p8, p7, 0x2
 
-    :goto_0
-    and-int/lit8 v3, v1, 0x2
+    if-eqz p8, :cond_1
 
-    if-eqz v3, :cond_1
-
-    iget-object v3, v0, Lcom/iMe/storage/data/network/model/request/crypto/swap/GetQuoteToSwapRequest;->outputCryptoTokenCode:Ljava/lang/String;
-
-    goto :goto_1
+    iget-object p2, p0, Lcom/iMe/storage/data/network/model/request/crypto/swap/GetQuoteToSwapRequest;->inputToken:Lcom/iMe/storage/data/network/model/request/wallet/TokenRequest;
 
     :cond_1
-    move-object v3, p2
+    move-object p8, p2
 
-    :goto_1
-    and-int/lit8 v4, v1, 0x4
+    and-int/lit8 p2, p7, 0x4
 
-    if-eqz v4, :cond_2
+    if-eqz p2, :cond_2
 
-    iget-object v4, v0, Lcom/iMe/storage/data/network/model/request/crypto/swap/GetQuoteToSwapRequest;->amount:Ljava/lang/String;
-
-    goto :goto_2
+    iget-object p3, p0, Lcom/iMe/storage/data/network/model/request/crypto/swap/GetQuoteToSwapRequest;->outputToken:Lcom/iMe/storage/data/network/model/request/wallet/TokenRequest;
 
     :cond_2
-    move-object v4, p3
+    move-object v0, p3
 
-    :goto_2
-    and-int/lit8 v5, v1, 0x8
+    and-int/lit8 p2, p7, 0x8
 
-    if-eqz v5, :cond_3
+    if-eqz p2, :cond_3
 
-    iget v5, v0, Lcom/iMe/storage/data/network/model/request/crypto/swap/GetQuoteToSwapRequest;->tradeType:I
-
-    goto :goto_3
+    iget-object p4, p0, Lcom/iMe/storage/data/network/model/request/crypto/swap/GetQuoteToSwapRequest;->amount:Ljava/lang/String;
 
     :cond_3
-    move v5, p4
+    move-object v1, p4
 
-    :goto_3
-    and-int/lit8 v6, v1, 0x10
+    and-int/lit8 p2, p7, 0x10
 
-    if-eqz v6, :cond_4
+    if-eqz p2, :cond_4
 
-    iget v6, v0, Lcom/iMe/storage/data/network/model/request/crypto/swap/GetQuoteToSwapRequest;->slippageTolerance:F
-
-    goto :goto_4
+    iget p5, p0, Lcom/iMe/storage/data/network/model/request/crypto/swap/GetQuoteToSwapRequest;->tradeType:I
 
     :cond_4
-    move v6, p5
+    move v2, p5
 
-    :goto_4
-    and-int/lit8 v7, v1, 0x20
+    and-int/lit8 p2, p7, 0x20
 
-    if-eqz v7, :cond_5
+    if-eqz p2, :cond_5
 
-    iget-object v7, v0, Lcom/iMe/storage/data/network/model/request/crypto/swap/GetQuoteToSwapRequest;->defiProtocol:Ljava/lang/String;
-
-    goto :goto_5
+    iget p6, p0, Lcom/iMe/storage/data/network/model/request/crypto/swap/GetQuoteToSwapRequest;->slippageTolerance:F
 
     :cond_5
-    move-object v7, p6
+    move v3, p6
 
-    :goto_5
-    and-int/lit8 v8, v1, 0x40
+    move-object p2, p0
 
-    if-eqz v8, :cond_6
+    move-object p3, p1
 
-    iget-object v8, v0, Lcom/iMe/storage/data/network/model/request/crypto/swap/GetQuoteToSwapRequest;->networkType:Ljava/lang/String;
+    move-object p4, p8
 
-    goto :goto_6
+    move-object p5, v0
 
-    :cond_6
-    move-object/from16 v8, p7
+    move-object p6, v1
 
-    :goto_6
-    and-int/lit16 v1, v1, 0x80
+    move p7, v2
 
-    if-eqz v1, :cond_7
+    move p8, v3
 
-    iget-object v1, v0, Lcom/iMe/storage/data/network/model/request/crypto/swap/GetQuoteToSwapRequest;->outputNetworkType:Ljava/lang/String;
+    invoke-virtual/range {p2 .. p8}, Lcom/iMe/storage/data/network/model/request/crypto/swap/GetQuoteToSwapRequest;->copy(Ljava/lang/String;Lcom/iMe/storage/data/network/model/request/wallet/TokenRequest;Lcom/iMe/storage/data/network/model/request/wallet/TokenRequest;Ljava/lang/String;IF)Lcom/iMe/storage/data/network/model/request/crypto/swap/GetQuoteToSwapRequest;
 
-    goto :goto_7
+    move-result-object p0
 
-    :cond_7
-    move-object/from16 v1, p8
-
-    :goto_7
-    move-object p1, v2
-
-    move-object p2, v3
-
-    move-object p3, v4
-
-    move p4, v5
-
-    move p5, v6
-
-    move-object p6, v7
-
-    move-object/from16 p7, v8
-
-    move-object/from16 p8, v1
-
-    invoke-virtual/range {p0 .. p8}, Lcom/iMe/storage/data/network/model/request/crypto/swap/GetQuoteToSwapRequest;->copy(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;IFLjava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lcom/iMe/storage/data/network/model/request/crypto/swap/GetQuoteToSwapRequest;
-
-    move-result-object v0
-
-    return-object v0
+    return-object p0
 .end method
 
 
@@ -206,20 +142,28 @@
 .method public final component1()Ljava/lang/String;
     .locals 1
 
-    iget-object v0, p0, Lcom/iMe/storage/data/network/model/request/crypto/swap/GetQuoteToSwapRequest;->inputCryptoTokenCode:Ljava/lang/String;
+    iget-object v0, p0, Lcom/iMe/storage/data/network/model/request/crypto/swap/GetQuoteToSwapRequest;->defiProtocol:Ljava/lang/String;
 
     return-object v0
 .end method
 
-.method public final component2()Ljava/lang/String;
+.method public final component2()Lcom/iMe/storage/data/network/model/request/wallet/TokenRequest;
     .locals 1
 
-    iget-object v0, p0, Lcom/iMe/storage/data/network/model/request/crypto/swap/GetQuoteToSwapRequest;->outputCryptoTokenCode:Ljava/lang/String;
+    iget-object v0, p0, Lcom/iMe/storage/data/network/model/request/crypto/swap/GetQuoteToSwapRequest;->inputToken:Lcom/iMe/storage/data/network/model/request/wallet/TokenRequest;
 
     return-object v0
 .end method
 
-.method public final component3()Ljava/lang/String;
+.method public final component3()Lcom/iMe/storage/data/network/model/request/wallet/TokenRequest;
+    .locals 1
+
+    iget-object v0, p0, Lcom/iMe/storage/data/network/model/request/crypto/swap/GetQuoteToSwapRequest;->outputToken:Lcom/iMe/storage/data/network/model/request/wallet/TokenRequest;
+
+    return-object v0
+.end method
+
+.method public final component4()Ljava/lang/String;
     .locals 1
 
     iget-object v0, p0, Lcom/iMe/storage/data/network/model/request/crypto/swap/GetQuoteToSwapRequest;->amount:Ljava/lang/String;
@@ -227,7 +171,7 @@
     return-object v0
 .end method
 
-.method public final component4()I
+.method public final component5()I
     .locals 1
 
     iget v0, p0, Lcom/iMe/storage/data/network/model/request/crypto/swap/GetQuoteToSwapRequest;->tradeType:I
@@ -235,7 +179,7 @@
     return v0
 .end method
 
-.method public final component5()F
+.method public final component6()F
     .locals 1
 
     iget v0, p0, Lcom/iMe/storage/data/network/model/request/crypto/swap/GetQuoteToSwapRequest;->slippageTolerance:F
@@ -243,74 +187,42 @@
     return v0
 .end method
 
-.method public final component6()Ljava/lang/String;
-    .locals 1
-
-    iget-object v0, p0, Lcom/iMe/storage/data/network/model/request/crypto/swap/GetQuoteToSwapRequest;->defiProtocol:Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method public final component7()Ljava/lang/String;
-    .locals 1
-
-    iget-object v0, p0, Lcom/iMe/storage/data/network/model/request/crypto/swap/GetQuoteToSwapRequest;->networkType:Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method public final component8()Ljava/lang/String;
-    .locals 1
-
-    iget-object v0, p0, Lcom/iMe/storage/data/network/model/request/crypto/swap/GetQuoteToSwapRequest;->outputNetworkType:Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method public final copy(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;IFLjava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lcom/iMe/storage/data/network/model/request/crypto/swap/GetQuoteToSwapRequest;
-    .locals 10
-
-    const-string v0, "inputCryptoTokenCode"
-
-    move-object v2, p1
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string v0, "outputCryptoTokenCode"
-
-    move-object v3, p2
-
-    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string v0, "amount"
-
-    move-object v4, p3
-
-    invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+.method public final copy(Ljava/lang/String;Lcom/iMe/storage/data/network/model/request/wallet/TokenRequest;Lcom/iMe/storage/data/network/model/request/wallet/TokenRequest;Ljava/lang/String;IF)Lcom/iMe/storage/data/network/model/request/crypto/swap/GetQuoteToSwapRequest;
+    .locals 8
 
     const-string v0, "defiProtocol"
 
-    move-object/from16 v7, p6
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-static {v7, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    const-string v0, "inputToken"
 
-    const-string v0, "networkType"
+    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    move-object/from16 v8, p7
+    const-string v0, "outputToken"
 
-    invoke-static {v8, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "amount"
+
+    invoke-static {p4, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     new-instance v0, Lcom/iMe/storage/data/network/model/request/crypto/swap/GetQuoteToSwapRequest;
 
     move-object v1, v0
 
-    move v5, p4
+    move-object v2, p1
+
+    move-object v3, p2
+
+    move-object v4, p3
+
+    move-object v5, p4
 
     move v6, p5
 
-    move-object/from16 v9, p8
+    move v7, p6
 
-    invoke-direct/range {v1 .. v9}, Lcom/iMe/storage/data/network/model/request/crypto/swap/GetQuoteToSwapRequest;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;IFLjava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct/range {v1 .. v7}, Lcom/iMe/storage/data/network/model/request/crypto/swap/GetQuoteToSwapRequest;-><init>(Ljava/lang/String;Lcom/iMe/storage/data/network/model/request/wallet/TokenRequest;Lcom/iMe/storage/data/network/model/request/wallet/TokenRequest;Ljava/lang/String;IF)V
 
     return-object v0
 .end method
@@ -336,9 +248,9 @@
     :cond_1
     check-cast p1, Lcom/iMe/storage/data/network/model/request/crypto/swap/GetQuoteToSwapRequest;
 
-    iget-object v1, p0, Lcom/iMe/storage/data/network/model/request/crypto/swap/GetQuoteToSwapRequest;->inputCryptoTokenCode:Ljava/lang/String;
+    iget-object v1, p0, Lcom/iMe/storage/data/network/model/request/crypto/swap/GetQuoteToSwapRequest;->defiProtocol:Ljava/lang/String;
 
-    iget-object v3, p1, Lcom/iMe/storage/data/network/model/request/crypto/swap/GetQuoteToSwapRequest;->inputCryptoTokenCode:Ljava/lang/String;
+    iget-object v3, p1, Lcom/iMe/storage/data/network/model/request/crypto/swap/GetQuoteToSwapRequest;->defiProtocol:Ljava/lang/String;
 
     invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
@@ -349,9 +261,9 @@
     return v2
 
     :cond_2
-    iget-object v1, p0, Lcom/iMe/storage/data/network/model/request/crypto/swap/GetQuoteToSwapRequest;->outputCryptoTokenCode:Ljava/lang/String;
+    iget-object v1, p0, Lcom/iMe/storage/data/network/model/request/crypto/swap/GetQuoteToSwapRequest;->inputToken:Lcom/iMe/storage/data/network/model/request/wallet/TokenRequest;
 
-    iget-object v3, p1, Lcom/iMe/storage/data/network/model/request/crypto/swap/GetQuoteToSwapRequest;->outputCryptoTokenCode:Ljava/lang/String;
+    iget-object v3, p1, Lcom/iMe/storage/data/network/model/request/crypto/swap/GetQuoteToSwapRequest;->inputToken:Lcom/iMe/storage/data/network/model/request/wallet/TokenRequest;
 
     invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
@@ -362,9 +274,9 @@
     return v2
 
     :cond_3
-    iget-object v1, p0, Lcom/iMe/storage/data/network/model/request/crypto/swap/GetQuoteToSwapRequest;->amount:Ljava/lang/String;
+    iget-object v1, p0, Lcom/iMe/storage/data/network/model/request/crypto/swap/GetQuoteToSwapRequest;->outputToken:Lcom/iMe/storage/data/network/model/request/wallet/TokenRequest;
 
-    iget-object v3, p1, Lcom/iMe/storage/data/network/model/request/crypto/swap/GetQuoteToSwapRequest;->amount:Ljava/lang/String;
+    iget-object v3, p1, Lcom/iMe/storage/data/network/model/request/crypto/swap/GetQuoteToSwapRequest;->outputToken:Lcom/iMe/storage/data/network/model/request/wallet/TokenRequest;
 
     invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
@@ -375,74 +287,48 @@
     return v2
 
     :cond_4
-    iget v1, p0, Lcom/iMe/storage/data/network/model/request/crypto/swap/GetQuoteToSwapRequest;->tradeType:I
+    iget-object v1, p0, Lcom/iMe/storage/data/network/model/request/crypto/swap/GetQuoteToSwapRequest;->amount:Ljava/lang/String;
 
-    iget v3, p1, Lcom/iMe/storage/data/network/model/request/crypto/swap/GetQuoteToSwapRequest;->tradeType:I
+    iget-object v3, p1, Lcom/iMe/storage/data/network/model/request/crypto/swap/GetQuoteToSwapRequest;->amount:Ljava/lang/String;
 
-    if-eq v1, v3, :cond_5
+    invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_5
 
     return v2
 
     :cond_5
-    iget v1, p0, Lcom/iMe/storage/data/network/model/request/crypto/swap/GetQuoteToSwapRequest;->slippageTolerance:F
+    iget v1, p0, Lcom/iMe/storage/data/network/model/request/crypto/swap/GetQuoteToSwapRequest;->tradeType:I
 
-    iget v3, p1, Lcom/iMe/storage/data/network/model/request/crypto/swap/GetQuoteToSwapRequest;->slippageTolerance:F
+    iget v3, p1, Lcom/iMe/storage/data/network/model/request/crypto/swap/GetQuoteToSwapRequest;->tradeType:I
 
-    invoke-static {v1, v3}, Ljava/lang/Float;->compare(FF)I
-
-    move-result v1
-
-    if-eqz v1, :cond_6
+    if-eq v1, v3, :cond_6
 
     return v2
 
     :cond_6
-    iget-object v1, p0, Lcom/iMe/storage/data/network/model/request/crypto/swap/GetQuoteToSwapRequest;->defiProtocol:Ljava/lang/String;
+    iget v1, p0, Lcom/iMe/storage/data/network/model/request/crypto/swap/GetQuoteToSwapRequest;->slippageTolerance:F
 
-    iget-object v3, p1, Lcom/iMe/storage/data/network/model/request/crypto/swap/GetQuoteToSwapRequest;->defiProtocol:Ljava/lang/String;
+    iget p1, p1, Lcom/iMe/storage/data/network/model/request/crypto/swap/GetQuoteToSwapRequest;->slippageTolerance:F
 
-    invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v1, p1}, Ljava/lang/Float;->compare(FF)I
 
-    move-result v1
+    move-result p1
 
-    if-nez v1, :cond_7
+    if-eqz p1, :cond_7
 
     return v2
 
     :cond_7
-    iget-object v1, p0, Lcom/iMe/storage/data/network/model/request/crypto/swap/GetQuoteToSwapRequest;->networkType:Ljava/lang/String;
-
-    iget-object v3, p1, Lcom/iMe/storage/data/network/model/request/crypto/swap/GetQuoteToSwapRequest;->networkType:Ljava/lang/String;
-
-    invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_8
-
-    return v2
-
-    :cond_8
-    iget-object v1, p0, Lcom/iMe/storage/data/network/model/request/crypto/swap/GetQuoteToSwapRequest;->outputNetworkType:Ljava/lang/String;
-
-    iget-object p1, p1, Lcom/iMe/storage/data/network/model/request/crypto/swap/GetQuoteToSwapRequest;->outputNetworkType:Ljava/lang/String;
-
-    invoke-static {v1, p1}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result p1
-
-    if-nez p1, :cond_9
-
-    return v2
-
-    :cond_9
     return v0
 .end method
 
 .method public final getAmount()Ljava/lang/String;
     .locals 1
 
-    .line 6
+    .line 9
     iget-object v0, p0, Lcom/iMe/storage/data/network/model/request/crypto/swap/GetQuoteToSwapRequest;->amount:Ljava/lang/String;
 
     return-object v0
@@ -451,44 +337,26 @@
 .method public final getDefiProtocol()Ljava/lang/String;
     .locals 1
 
-    .line 9
+    .line 6
     iget-object v0, p0, Lcom/iMe/storage/data/network/model/request/crypto/swap/GetQuoteToSwapRequest;->defiProtocol:Ljava/lang/String;
 
     return-object v0
 .end method
 
-.method public final getInputCryptoTokenCode()Ljava/lang/String;
+.method public final getInputToken()Lcom/iMe/storage/data/network/model/request/wallet/TokenRequest;
     .locals 1
 
-    .line 4
-    iget-object v0, p0, Lcom/iMe/storage/data/network/model/request/crypto/swap/GetQuoteToSwapRequest;->inputCryptoTokenCode:Ljava/lang/String;
+    .line 7
+    iget-object v0, p0, Lcom/iMe/storage/data/network/model/request/crypto/swap/GetQuoteToSwapRequest;->inputToken:Lcom/iMe/storage/data/network/model/request/wallet/TokenRequest;
 
     return-object v0
 .end method
 
-.method public final getNetworkType()Ljava/lang/String;
+.method public final getOutputToken()Lcom/iMe/storage/data/network/model/request/wallet/TokenRequest;
     .locals 1
 
-    .line 10
-    iget-object v0, p0, Lcom/iMe/storage/data/network/model/request/crypto/swap/GetQuoteToSwapRequest;->networkType:Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method public final getOutputCryptoTokenCode()Ljava/lang/String;
-    .locals 1
-
-    .line 5
-    iget-object v0, p0, Lcom/iMe/storage/data/network/model/request/crypto/swap/GetQuoteToSwapRequest;->outputCryptoTokenCode:Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method public final getOutputNetworkType()Ljava/lang/String;
-    .locals 1
-
-    .line 11
-    iget-object v0, p0, Lcom/iMe/storage/data/network/model/request/crypto/swap/GetQuoteToSwapRequest;->outputNetworkType:Ljava/lang/String;
+    .line 8
+    iget-object v0, p0, Lcom/iMe/storage/data/network/model/request/crypto/swap/GetQuoteToSwapRequest;->outputToken:Lcom/iMe/storage/data/network/model/request/wallet/TokenRequest;
 
     return-object v0
 .end method
@@ -496,7 +364,7 @@
 .method public final getSlippageTolerance()F
     .locals 1
 
-    .line 8
+    .line 11
     iget v0, p0, Lcom/iMe/storage/data/network/model/request/crypto/swap/GetQuoteToSwapRequest;->slippageTolerance:F
 
     return v0
@@ -505,7 +373,7 @@
 .method public final getTradeType()I
     .locals 1
 
-    .line 7
+    .line 10
     iget v0, p0, Lcom/iMe/storage/data/network/model/request/crypto/swap/GetQuoteToSwapRequest;->tradeType:I
 
     return v0
@@ -514,7 +382,7 @@
 .method public hashCode()I
     .locals 2
 
-    iget-object v0, p0, Lcom/iMe/storage/data/network/model/request/crypto/swap/GetQuoteToSwapRequest;->inputCryptoTokenCode:Ljava/lang/String;
+    iget-object v0, p0, Lcom/iMe/storage/data/network/model/request/crypto/swap/GetQuoteToSwapRequest;->defiProtocol:Ljava/lang/String;
 
     invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
 
@@ -522,9 +390,19 @@
 
     mul-int/lit8 v0, v0, 0x1f
 
-    iget-object v1, p0, Lcom/iMe/storage/data/network/model/request/crypto/swap/GetQuoteToSwapRequest;->outputCryptoTokenCode:Ljava/lang/String;
+    iget-object v1, p0, Lcom/iMe/storage/data/network/model/request/crypto/swap/GetQuoteToSwapRequest;->inputToken:Lcom/iMe/storage/data/network/model/request/wallet/TokenRequest;
 
-    invoke-virtual {v1}, Ljava/lang/String;->hashCode()I
+    invoke-virtual {v1}, Lcom/iMe/storage/data/network/model/request/wallet/TokenRequest;->hashCode()I
+
+    move-result v1
+
+    add-int/2addr v0, v1
+
+    mul-int/lit8 v0, v0, 0x1f
+
+    iget-object v1, p0, Lcom/iMe/storage/data/network/model/request/crypto/swap/GetQuoteToSwapRequest;->outputToken:Lcom/iMe/storage/data/network/model/request/wallet/TokenRequest;
+
+    invoke-virtual {v1}, Lcom/iMe/storage/data/network/model/request/wallet/TokenRequest;->hashCode()I
 
     move-result v1
 
@@ -556,44 +434,6 @@
 
     add-int/2addr v0, v1
 
-    mul-int/lit8 v0, v0, 0x1f
-
-    iget-object v1, p0, Lcom/iMe/storage/data/network/model/request/crypto/swap/GetQuoteToSwapRequest;->defiProtocol:Ljava/lang/String;
-
-    invoke-virtual {v1}, Ljava/lang/String;->hashCode()I
-
-    move-result v1
-
-    add-int/2addr v0, v1
-
-    mul-int/lit8 v0, v0, 0x1f
-
-    iget-object v1, p0, Lcom/iMe/storage/data/network/model/request/crypto/swap/GetQuoteToSwapRequest;->networkType:Ljava/lang/String;
-
-    invoke-virtual {v1}, Ljava/lang/String;->hashCode()I
-
-    move-result v1
-
-    add-int/2addr v0, v1
-
-    mul-int/lit8 v0, v0, 0x1f
-
-    iget-object v1, p0, Lcom/iMe/storage/data/network/model/request/crypto/swap/GetQuoteToSwapRequest;->outputNetworkType:Ljava/lang/String;
-
-    if-nez v1, :cond_0
-
-    const/4 v1, 0x0
-
-    goto :goto_0
-
-    :cond_0
-    invoke-virtual {v1}, Ljava/lang/String;->hashCode()I
-
-    move-result v1
-
-    :goto_0
-    add-int/2addr v0, v1
-
     return v0
 .end method
 
@@ -604,21 +444,29 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v1, "GetQuoteToSwapRequest(inputCryptoTokenCode="
+    const-string v1, "GetQuoteToSwapRequest(defiProtocol="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v1, p0, Lcom/iMe/storage/data/network/model/request/crypto/swap/GetQuoteToSwapRequest;->inputCryptoTokenCode:Ljava/lang/String;
+    iget-object v1, p0, Lcom/iMe/storage/data/network/model/request/crypto/swap/GetQuoteToSwapRequest;->defiProtocol:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v1, ", outputCryptoTokenCode="
+    const-string v1, ", inputToken="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v1, p0, Lcom/iMe/storage/data/network/model/request/crypto/swap/GetQuoteToSwapRequest;->outputCryptoTokenCode:Ljava/lang/String;
+    iget-object v1, p0, Lcom/iMe/storage/data/network/model/request/crypto/swap/GetQuoteToSwapRequest;->inputToken:Lcom/iMe/storage/data/network/model/request/wallet/TokenRequest;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", outputToken="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v1, p0, Lcom/iMe/storage/data/network/model/request/crypto/swap/GetQuoteToSwapRequest;->outputToken:Lcom/iMe/storage/data/network/model/request/wallet/TokenRequest;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     const-string v1, ", amount="
 
@@ -643,30 +491,6 @@
     iget v1, p0, Lcom/iMe/storage/data/network/model/request/crypto/swap/GetQuoteToSwapRequest;->slippageTolerance:F
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
-
-    const-string v1, ", defiProtocol="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v1, p0, Lcom/iMe/storage/data/network/model/request/crypto/swap/GetQuoteToSwapRequest;->defiProtocol:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v1, ", networkType="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v1, p0, Lcom/iMe/storage/data/network/model/request/crypto/swap/GetQuoteToSwapRequest;->networkType:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v1, ", outputNetworkType="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v1, p0, Lcom/iMe/storage/data/network/model/request/crypto/swap/GetQuoteToSwapRequest;->outputNetworkType:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     const/16 v1, 0x29
 

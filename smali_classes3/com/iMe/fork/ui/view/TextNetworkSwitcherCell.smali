@@ -354,7 +354,7 @@
 
     move-result-object v0
 
-    invoke-virtual {v0}, Landroid/widget/TextView;->invalidate()V
+    invoke-virtual {v0}, Landroid/widget/FrameLayout;->invalidate()V
 
     return-void
 .end method
@@ -388,10 +388,10 @@
     return-void
 .end method
 
-.method public final setNetworkType(Lcom/iMe/storage/domain/model/crypto/NetworkType;)V
+.method public final setNetworkType(Lcom/iMe/storage/domain/model/crypto/Network;)V
     .locals 1
 
-    const-string v0, "networkType"
+    const-string v0, "network"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -400,7 +400,7 @@
 
     move-result-object v0
 
-    invoke-virtual {v0, p1}, Lcom/iMe/ui/custom/NetworkTypeView;->setNetworkType(Lcom/iMe/storage/domain/model/crypto/NetworkType;)V
+    invoke-virtual {v0, p1}, Lcom/iMe/ui/custom/NetworkTypeView;->setNetwork(Lcom/iMe/storage/domain/model/crypto/Network;)V
 
     return-void
 .end method
@@ -417,7 +417,7 @@
 
     move-result-object v0
 
-    invoke-virtual {v0, p1}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    invoke-virtual {v0, p1}, Landroid/widget/FrameLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     return-void
 .end method

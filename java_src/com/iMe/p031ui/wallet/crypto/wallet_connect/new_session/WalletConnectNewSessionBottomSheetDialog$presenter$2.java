@@ -7,7 +7,7 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Lambda;
 import org.koin.core.parameter.ParametersHolder;
 import org.koin.core.parameter.ParametersHolderKt;
-import org.koin.p043mp.KoinPlatformTools;
+import org.koin.p042mp.KoinPlatformTools;
 /* compiled from: WalletConnectNewSessionBottomSheetDialog.kt */
 /* renamed from: com.iMe.ui.wallet.crypto.wallet_connect.new_session.WalletConnectNewSessionBottomSheetDialog$presenter$2 */
 /* loaded from: classes4.dex */
@@ -27,11 +27,11 @@ final class WalletConnectNewSessionBottomSheetDialog$presenter$2 extends Lambda 
     /* compiled from: WalletConnectNewSessionBottomSheetDialog.kt */
     /* renamed from: com.iMe.ui.wallet.crypto.wallet_connect.new_session.WalletConnectNewSessionBottomSheetDialog$presenter$2$1 */
     /* loaded from: classes4.dex */
-    public static final class C22191 extends Lambda implements Function0<ParametersHolder> {
+    public static final class C22351 extends Lambda implements Function0<ParametersHolder> {
         final /* synthetic */ WCSessionStoreItem $sessionItem;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C22191(WCSessionStoreItem wCSessionStoreItem) {
+        C22351(WCSessionStoreItem wCSessionStoreItem) {
             super(0);
             this.$sessionItem = wCSessionStoreItem;
         }
@@ -46,7 +46,7 @@ final class WalletConnectNewSessionBottomSheetDialog$presenter$2 extends Lambda 
     @Override // kotlin.jvm.functions.Function0
     public final WalletConnectNewSessionPresenter invoke() {
         Lazy lazy;
-        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new C2217x4b6b59e9(this.this$0, null, new C22191(this.$sessionItem)));
+        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new C2233x4b6b59e9(this.this$0, null, new C22351(this.$sessionItem)));
         return (WalletConnectNewSessionPresenter) lazy.getValue();
     }
 }

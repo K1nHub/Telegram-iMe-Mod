@@ -68,10 +68,10 @@ public final class DevViewModel$onCreate$1 extends SuspendLambda implements Func
     /* compiled from: DevViewModel.kt */
     /* renamed from: com.iMe.feature.devTools.DevViewModel$onCreate$1$1 */
     /* loaded from: classes3.dex */
-    public static final class C14321 extends Lambda implements Function1<SimpleContext<DevState>, DevState> {
-        public static final C14321 INSTANCE = new C14321();
+    public static final class C14431 extends Lambda implements Function1<SimpleContext<DevState>, DevState> {
+        public static final C14431 INSTANCE = new C14431();
 
-        C14321() {
+        C14431() {
             super(1);
         }
 
@@ -86,10 +86,10 @@ public final class DevViewModel$onCreate$1 extends SuspendLambda implements Func
     /* compiled from: DevViewModel.kt */
     /* renamed from: com.iMe.feature.devTools.DevViewModel$onCreate$1$2 */
     /* loaded from: classes3.dex */
-    public static final class C14332 extends Lambda implements Function1<SimpleContext<DevState>, DevState> {
-        public static final C14332 INSTANCE = new C14332();
+    public static final class C14442 extends Lambda implements Function1<SimpleContext<DevState>, DevState> {
+        public static final C14442 INSTANCE = new C14442();
 
-        C14332() {
+        C14442() {
             super(1);
         }
 
@@ -104,11 +104,11 @@ public final class DevViewModel$onCreate$1 extends SuspendLambda implements Func
     /* compiled from: DevViewModel.kt */
     /* renamed from: com.iMe.feature.devTools.DevViewModel$onCreate$1$3 */
     /* loaded from: classes3.dex */
-    public static final class C14343 extends Lambda implements Function1<SimpleContext<DevState>, DevState> {
+    public static final class C14453 extends Lambda implements Function1<SimpleContext<DevState>, DevState> {
         final /* synthetic */ String $repoName;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C14343(String str) {
+        C14453(String str) {
             super(1);
             this.$repoName = str;
         }
@@ -124,10 +124,10 @@ public final class DevViewModel$onCreate$1 extends SuspendLambda implements Func
     /* compiled from: DevViewModel.kt */
     /* renamed from: com.iMe.feature.devTools.DevViewModel$onCreate$1$4 */
     /* loaded from: classes3.dex */
-    public static final class C14354 extends Lambda implements Function1<SimpleContext<DevState>, DevState> {
-        public static final C14354 INSTANCE = new C14354();
+    public static final class C14464 extends Lambda implements Function1<SimpleContext<DevState>, DevState> {
+        public static final C14464 INSTANCE = new C14464();
 
-        C14354() {
+        C14464() {
             super(1);
         }
 
@@ -142,10 +142,10 @@ public final class DevViewModel$onCreate$1 extends SuspendLambda implements Func
     /* compiled from: DevViewModel.kt */
     /* renamed from: com.iMe.feature.devTools.DevViewModel$onCreate$1$5 */
     /* loaded from: classes3.dex */
-    public static final class C14365 extends Lambda implements Function1<SimpleContext<DevState>, DevState> {
-        public static final C14365 INSTANCE = new C14365();
+    public static final class C14475 extends Lambda implements Function1<SimpleContext<DevState>, DevState> {
+        public static final C14475 INSTANCE = new C14475();
 
-        C14365() {
+        C14475() {
             super(1);
         }
 

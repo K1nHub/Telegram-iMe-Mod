@@ -271,7 +271,7 @@
     .line 118
     iput-object v1, v0, Lio/grpc/internal/RetriableStream;->headers:Lio/grpc/Metadata;
 
-    const-string v1, "retryPolicyProvider"
+    const-string/jumbo v1, "retryPolicyProvider"
 
     move-object/from16 v2, p10
 

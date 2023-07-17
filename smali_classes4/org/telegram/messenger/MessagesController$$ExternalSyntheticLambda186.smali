@@ -51,7 +51,7 @@
 
     iget-boolean v4, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda186;->f$4:Z
 
-    invoke-static {v0, v1, v2, v3, v4}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$PfQU4gfXqmEaClpo5YjaNoK0VpM(Lorg/telegram/messenger/MessagesController;Lorg/telegram/tgnet/TLRPC$TL_error;Lorg/telegram/ui/ActionBar/BaseFragment;Lorg/telegram/tgnet/TLRPC$TL_channels_editAdmin;Z)V
+    invoke-static {v0, v1, v2, v3, v4}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$xkVJc-SxNN6xDhjvQlRD-aiHT_8(Lorg/telegram/messenger/MessagesController;Lorg/telegram/tgnet/TLRPC$TL_error;Lorg/telegram/ui/ActionBar/BaseFragment;Lorg/telegram/tgnet/TLRPC$TL_channels_editAdmin;Z)V
 
     return-void
 .end method

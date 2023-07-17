@@ -69,7 +69,7 @@
 
     iget-object v7, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda144;->f$7:Lorg/telegram/tgnet/TLRPC$InputUser;
 
-    invoke-static/range {v0 .. v7}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$GZwmePFum6Nhi8HgeJxT0WbhsqA(Lorg/telegram/messenger/MessagesController;Lorg/telegram/messenger/MessagesController$ErrorDelegate;Lorg/telegram/tgnet/TLRPC$TL_error;Lorg/telegram/ui/ActionBar/BaseFragment;Lorg/telegram/tgnet/TLObject;ZZLorg/telegram/tgnet/TLRPC$InputUser;)V
+    invoke-static/range {v0 .. v7}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$KSfDFs8jyW0ZEmHGz-Dpg2WrXaw(Lorg/telegram/messenger/MessagesController;Lorg/telegram/messenger/MessagesController$ErrorDelegate;Lorg/telegram/tgnet/TLRPC$TL_error;Lorg/telegram/ui/ActionBar/BaseFragment;Lorg/telegram/tgnet/TLObject;ZZLorg/telegram/tgnet/TLRPC$InputUser;)V
 
     return-void
 .end method

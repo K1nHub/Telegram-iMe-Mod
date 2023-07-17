@@ -6,7 +6,7 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Lambda;
 import org.koin.core.parameter.ParametersHolder;
 import org.koin.core.parameter.ParametersHolderKt;
-import org.koin.p043mp.KoinPlatformTools;
+import org.koin.p042mp.KoinPlatformTools;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: WalletSwapProcessFragment.kt */
 /* renamed from: com.iMe.ui.wallet.swap.process.WalletSwapProcessFragment$presenter$2 */
@@ -25,11 +25,11 @@ public final class WalletSwapProcessFragment$presenter$2 extends Lambda implemen
     /* compiled from: WalletSwapProcessFragment.kt */
     /* renamed from: com.iMe.ui.wallet.swap.process.WalletSwapProcessFragment$presenter$2$1 */
     /* loaded from: classes4.dex */
-    public static final class C23751 extends Lambda implements Function0<ParametersHolder> {
+    public static final class C24211 extends Lambda implements Function0<ParametersHolder> {
         final /* synthetic */ WalletSwapProcessFragment this$0;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C23751(WalletSwapProcessFragment walletSwapProcessFragment) {
+        C24211(WalletSwapProcessFragment walletSwapProcessFragment) {
             super(0);
             this.this$0 = walletSwapProcessFragment;
         }
@@ -45,7 +45,7 @@ public final class WalletSwapProcessFragment$presenter$2 extends Lambda implemen
     public final WalletSwapProcessPresenter invoke() {
         Lazy lazy;
         WalletSwapProcessFragment walletSwapProcessFragment = this.this$0;
-        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new C2373x3ddaec8b(walletSwapProcessFragment, null, new C23751(walletSwapProcessFragment)));
+        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new C2419x3ddaec8b(walletSwapProcessFragment, null, new C24211(walletSwapProcessFragment)));
         return (WalletSwapProcessPresenter) lazy.getValue();
     }
 }

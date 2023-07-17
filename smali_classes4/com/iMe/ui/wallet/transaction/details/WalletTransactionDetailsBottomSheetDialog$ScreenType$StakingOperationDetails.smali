@@ -17,31 +17,31 @@
 # instance fields
 .field private final item:Lcom/iMe/model/wallet/transaction/StakingOperationItem;
 
-.field private final networkType:Lcom/iMe/storage/domain/model/crypto/NetworkType;
+.field private final network:Lcom/iMe/storage/domain/model/crypto/Network;
 
 
 # direct methods
-.method public constructor <init>(Lcom/iMe/model/wallet/transaction/StakingOperationItem;Lcom/iMe/storage/domain/model/crypto/NetworkType;)V
+.method public constructor <init>(Lcom/iMe/model/wallet/transaction/StakingOperationItem;Lcom/iMe/storage/domain/model/crypto/Network;)V
     .locals 1
 
     const-string v0, "item"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "networkType"
+    const-string v0, "network"
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     const/4 v0, 0x0
 
-    .line 305
+    .line 313
     invoke-direct {p0, v0}, Lcom/iMe/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$ScreenType;-><init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
 
-    .line 303
+    .line 311
     iput-object p1, p0, Lcom/iMe/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$ScreenType$StakingOperationDetails;->item:Lcom/iMe/model/wallet/transaction/StakingOperationItem;
 
-    .line 304
-    iput-object p2, p0, Lcom/iMe/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$ScreenType$StakingOperationDetails;->networkType:Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    .line 312
+    iput-object p2, p0, Lcom/iMe/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$ScreenType$StakingOperationDetails;->network:Lcom/iMe/storage/domain/model/crypto/Network;
 
     return-void
 .end method
@@ -82,11 +82,15 @@
     return v2
 
     :cond_2
-    iget-object v1, p0, Lcom/iMe/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$ScreenType$StakingOperationDetails;->networkType:Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    iget-object v1, p0, Lcom/iMe/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$ScreenType$StakingOperationDetails;->network:Lcom/iMe/storage/domain/model/crypto/Network;
 
-    iget-object p1, p1, Lcom/iMe/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$ScreenType$StakingOperationDetails;->networkType:Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    iget-object p1, p1, Lcom/iMe/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$ScreenType$StakingOperationDetails;->network:Lcom/iMe/storage/domain/model/crypto/Network;
 
-    if-eq v1, p1, :cond_3
+    invoke-static {v1, p1}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result p1
+
+    if-nez p1, :cond_3
 
     return v2
 
@@ -97,17 +101,17 @@
 .method public final getItem()Lcom/iMe/model/wallet/transaction/StakingOperationItem;
     .locals 1
 
-    .line 303
+    .line 311
     iget-object v0, p0, Lcom/iMe/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$ScreenType$StakingOperationDetails;->item:Lcom/iMe/model/wallet/transaction/StakingOperationItem;
 
     return-object v0
 .end method
 
-.method public final getNetworkType()Lcom/iMe/storage/domain/model/crypto/NetworkType;
+.method public final getNetwork()Lcom/iMe/storage/domain/model/crypto/Network;
     .locals 1
 
-    .line 304
-    iget-object v0, p0, Lcom/iMe/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$ScreenType$StakingOperationDetails;->networkType:Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    .line 312
+    iget-object v0, p0, Lcom/iMe/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$ScreenType$StakingOperationDetails;->network:Lcom/iMe/storage/domain/model/crypto/Network;
 
     return-object v0
 .end method
@@ -123,9 +127,9 @@
 
     mul-int/lit8 v0, v0, 0x1f
 
-    iget-object v1, p0, Lcom/iMe/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$ScreenType$StakingOperationDetails;->networkType:Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    iget-object v1, p0, Lcom/iMe/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$ScreenType$StakingOperationDetails;->network:Lcom/iMe/storage/domain/model/crypto/Network;
 
-    invoke-virtual {v1}, Ljava/lang/Enum;->hashCode()I
+    invoke-virtual {v1}, Lcom/iMe/storage/domain/model/crypto/Network;->hashCode()I
 
     move-result v1
 
@@ -149,11 +153,11 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    const-string v1, ", networkType="
+    const-string v1, ", network="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v1, p0, Lcom/iMe/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$ScreenType$StakingOperationDetails;->networkType:Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    iget-object v1, p0, Lcom/iMe/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$ScreenType$StakingOperationDetails;->network:Lcom/iMe/storage/domain/model/crypto/Network;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 

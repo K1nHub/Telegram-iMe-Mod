@@ -34,7 +34,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nObservableExt.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ObservableExt.kt\ncom/iMe/storage/domain/utils/extentions/ObservableExtKt$flatMapSuccess$1\n+ 2 WalletAirdropDialogPresenter.kt\ncom/iMe/ui/wallet/airdrop/dialog/WalletAirdropDialogPresenter\n*L\n1#1,80:1\n53#2:81\n*E\n"
+    value = "SMAP\nObservableExt.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ObservableExt.kt\ncom/iMe/storage/domain/utils/extentions/ObservableExtKt$flatMapSuccess$1\n+ 2 WalletAirdropDialogPresenter.kt\ncom/iMe/ui/wallet/airdrop/dialog/WalletAirdropDialogPresenter\n*L\n1#1,92:1\n53#2:93\n*E\n"
 .end annotation
 
 

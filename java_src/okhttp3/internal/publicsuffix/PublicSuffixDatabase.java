@@ -15,7 +15,7 @@ import kotlin.collections.CollectionsKt__CollectionsJVMKt;
 import kotlin.collections.CollectionsKt___CollectionsKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
-import kotlin.p035io.CloseableKt;
+import kotlin.p034io.CloseableKt;
 import kotlin.sequences.Sequence;
 import kotlin.sequences.SequencesKt___SequencesKt;
 import kotlin.text.StringsKt__StringsKt;
@@ -67,7 +67,7 @@ public final class PublicSuffixDatabase {
         List<String> split$default;
         List<String> dropLast;
         split$default = StringsKt__StringsKt.split$default((CharSequence) str, new char[]{'.'}, false, 0, 6, (Object) null);
-        if (Intrinsics.areEqual((String) CollectionsKt.last((List<? extends Object>) split$default), "")) {
+        if (Intrinsics.areEqual((String) CollectionsKt.last(split$default), "")) {
             dropLast = CollectionsKt___CollectionsKt.dropLast(split$default, 1);
             return dropLast;
         }

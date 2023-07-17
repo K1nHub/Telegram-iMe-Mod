@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/iMe/fork/ui/view/FloatingActionButton;-><init>(Landroid/content/Context;)V
+    value = Lcom/iMe/fork/ui/view/FloatingActionButton;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -14,11 +14,17 @@
 .end annotation
 
 
+# instance fields
+.field final synthetic this$0:Lcom/iMe/fork/ui/view/FloatingActionButton;
+
+
 # direct methods
-.method constructor <init>()V
+.method constructor <init>(Lcom/iMe/fork/ui/view/FloatingActionButton;)V
     .locals 0
 
-    .line 31
+    iput-object p1, p0, Lcom/iMe/fork/ui/view/FloatingActionButton$2;->this$0:Lcom/iMe/fork/ui/view/FloatingActionButton;
+
+    .line 52
     invoke-direct {p0}, Landroid/view/ViewOutlineProvider;-><init>()V
 
     return-void
@@ -37,20 +43,22 @@
 
     invoke-static {p2, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const/16 p1, 0x38
+    .line 54
+    iget-object p1, p0, Lcom/iMe/fork/ui/view/FloatingActionButton$2;->this$0:Lcom/iMe/fork/ui/view/FloatingActionButton;
 
-    .line 34
-    invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result v0
-
-    invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {p1}, Lcom/iMe/fork/ui/view/FloatingActionButton;->access$getButtonSize(Lcom/iMe/fork/ui/view/FloatingActionButton;)I
 
     move-result p1
 
+    iget-object v0, p0, Lcom/iMe/fork/ui/view/FloatingActionButton$2;->this$0:Lcom/iMe/fork/ui/view/FloatingActionButton;
+
+    invoke-static {v0}, Lcom/iMe/fork/ui/view/FloatingActionButton;->access$getButtonSize(Lcom/iMe/fork/ui/view/FloatingActionButton;)I
+
+    move-result v0
+
     const/4 v1, 0x0
 
-    invoke-virtual {p2, v1, v1, v0, p1}, Landroid/graphics/Outline;->setOval(IIII)V
+    invoke-virtual {p2, v1, v1, p1, v0}, Landroid/graphics/Outline;->setOval(IIII)V
 
     return-void
 .end method

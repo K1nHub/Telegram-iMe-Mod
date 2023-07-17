@@ -147,7 +147,7 @@
 
     iput-object p1, p0, Lio/grpc/internal/KeepAliveManager;->keepAlivePinger:Lio/grpc/internal/KeepAliveManager$KeepAlivePinger;
 
-    const-string p1, "scheduler"
+    const-string/jumbo p1, "scheduler"
 
     .line 142
     invoke-static {p2, p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;

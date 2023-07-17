@@ -27,7 +27,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nSelectableHeaderProvider.kt\nKotlin\n*S Kotlin\n*F\n+ 1 SelectableHeaderProvider.kt\ncom/iMe/ui/adapter/provider/SelectableHeaderProvider$convert$1$1\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,62:1\n1549#2:63\n1620#2,3:64\n*S KotlinDebug\n*F\n+ 1 SelectableHeaderProvider.kt\ncom/iMe/ui/adapter/provider/SelectableHeaderProvider$convert$1$1\n*L\n40#1:63\n40#1:64,3\n*E\n"
+    value = "SMAP\nSelectableHeaderProvider.kt\nKotlin\n*S Kotlin\n*F\n+ 1 SelectableHeaderProvider.kt\ncom/iMe/ui/adapter/provider/SelectableHeaderProvider$convert$1$1\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,71:1\n1549#2:72\n1620#2,3:73\n1#3:76\n*S KotlinDebug\n*F\n+ 1 SelectableHeaderProvider.kt\ncom/iMe/ui/adapter/provider/SelectableHeaderProvider$convert$1$1\n*L\n44#1:72\n44#1:73,3\n*E\n"
 .end annotation
 
 
@@ -61,7 +61,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 38
+    .line 42
     check-cast p1, Landroid/view/View;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/adapter/provider/SelectableHeaderProvider$convert$1$1;->invoke(Landroid/view/View;)V
@@ -72,13 +72,13 @@
 .end method
 
 .method public final invoke(Landroid/view/View;)V
-    .locals 6
+    .locals 8
 
     const-string v0, "it"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 39
+    .line 43
     iget-object p1, p0, Lcom/iMe/ui/adapter/provider/SelectableHeaderProvider$convert$1$1;->this$0:Lcom/iMe/ui/adapter/provider/SelectableHeaderProvider;
 
     invoke-static {p1}, Lcom/iMe/ui/adapter/provider/SelectableHeaderProvider;->access$getPopupWindow$p(Lcom/iMe/ui/adapter/provider/SelectableHeaderProvider;)Landroidx/appcompat/widget/ListPopupWindow;
@@ -87,7 +87,7 @@
 
     if-nez p1, :cond_1
 
-    .line 40
+    .line 44
     iget-object p1, p0, Lcom/iMe/ui/adapter/provider/SelectableHeaderProvider$convert$1$1;->$item:Lcom/iMe/model/wallet/home/SelectableHeaderItem;
 
     invoke-virtual {p1}, Lcom/iMe/model/wallet/home/SelectableHeaderItem;->getOptions()Ljava/util/List;
@@ -97,15 +97,15 @@
     iget-object v0, p0, Lcom/iMe/ui/adapter/provider/SelectableHeaderProvider$convert$1$1;->this$0:Lcom/iMe/ui/adapter/provider/SelectableHeaderProvider;
 
     .line 1549
-    new-instance v1, Ljava/util/ArrayList;
+    new-instance v2, Ljava/util/ArrayList;
 
-    const/16 v2, 0xa
+    const/16 v1, 0xa
 
-    invoke-static {p1, v2}, Lkotlin/collections/CollectionsKt;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
+    invoke-static {p1, v1}, Lkotlin/collections/CollectionsKt;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
 
-    move-result v2
+    move-result v3
 
-    invoke-direct {v1, v2}, Ljava/util/ArrayList;-><init>(I)V
+    invoke-direct {v2, v3}, Ljava/util/ArrayList;-><init>(I)V
 
     .line 1620
     invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
@@ -115,77 +115,89 @@
     :goto_0
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v2
+    move-result v3
 
-    if-eqz v2, :cond_0
+    if-eqz v3, :cond_0
 
     invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v2
+    move-result-object v3
 
     .line 1621
-    check-cast v2, Ljava/lang/Number;
+    check-cast v3, Ljava/lang/Number;
 
-    invoke-virtual {v2}, Ljava/lang/Number;->intValue()I
+    invoke-virtual {v3}, Ljava/lang/Number;->intValue()I
 
-    move-result v2
+    move-result v3
 
-    .line 40
+    .line 44
     invoke-static {v0}, Lcom/iMe/ui/adapter/provider/SelectableHeaderProvider;->access$getResourceManager$p(Lcom/iMe/ui/adapter/provider/SelectableHeaderProvider;)Lcom/iMe/storage/domain/utils/system/ResourceManager;
+
+    move-result-object v4
+
+    invoke-interface {v4, v3}, Lcom/iMe/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
 
     move-result-object v3
 
-    invoke-interface {v3, v2}, Lcom/iMe/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
-
-    move-result-object v2
-
     .line 1621
-    invoke-interface {v1, v2}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
+    invoke-interface {v2, v3}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
 
-    .line 41
+    .line 45
     :cond_0
     iget-object p1, p0, Lcom/iMe/ui/adapter/provider/SelectableHeaderProvider$convert$1$1;->this$0:Lcom/iMe/ui/adapter/provider/SelectableHeaderProvider;
 
     iget-object v0, p0, Lcom/iMe/ui/adapter/provider/SelectableHeaderProvider$convert$1$1;->$helper:Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
-    sget v2, Lorg/telegram/messenger/R$id;->text_wallet_header:I
-
-    invoke-virtual {v0, v2}, Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;->getView(I)Landroid/view/View;
-
-    move-result-object v0
-
-    new-instance v2, Lcom/iMe/ui/adapter/provider/SelectableHeaderProvider$convert$1$1$1;
-
-    iget-object v3, p0, Lcom/iMe/ui/adapter/provider/SelectableHeaderProvider$convert$1$1;->$helper:Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
-
-    iget-object v4, p0, Lcom/iMe/ui/adapter/provider/SelectableHeaderProvider$convert$1$1;->$item:Lcom/iMe/model/wallet/home/SelectableHeaderItem;
-
-    iget-object v5, p0, Lcom/iMe/ui/adapter/provider/SelectableHeaderProvider$convert$1$1;->this$0:Lcom/iMe/ui/adapter/provider/SelectableHeaderProvider;
-
-    invoke-direct {v2, v3, v4, v5}, Lcom/iMe/ui/adapter/provider/SelectableHeaderProvider$convert$1$1$1;-><init>(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;Lcom/iMe/model/wallet/home/SelectableHeaderItem;Lcom/iMe/ui/adapter/provider/SelectableHeaderProvider;)V
-
-    invoke-static {v0, v1, v2}, Lcom/iMe/utils/dialogs/PopupFactoryKt;->createPopupWithOptions(Landroid/view/View;Ljava/util/List;Lkotlin/jvm/functions/Function2;)Landroidx/appcompat/widget/ListPopupWindow;
-
-    move-result-object v0
-
-    invoke-static {p1, v0}, Lcom/iMe/ui/adapter/provider/SelectableHeaderProvider;->access$setPopupWindow$p(Lcom/iMe/ui/adapter/provider/SelectableHeaderProvider;Landroidx/appcompat/widget/ListPopupWindow;)V
-
     .line 46
-    iget-object p1, p0, Lcom/iMe/ui/adapter/provider/SelectableHeaderProvider$convert$1$1;->this$0:Lcom/iMe/ui/adapter/provider/SelectableHeaderProvider;
+    sget v3, Lorg/telegram/messenger/R$id;->text_wallet_header:I
 
-    invoke-static {p1}, Lcom/iMe/ui/adapter/provider/SelectableHeaderProvider;->access$getPopupWindow$p(Lcom/iMe/ui/adapter/provider/SelectableHeaderProvider;)Landroidx/appcompat/widget/ListPopupWindow;
+    invoke-virtual {v0, v3}, Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;->getView(I)Landroid/view/View;
 
-    move-result-object p1
+    move-result-object v0
 
-    if-eqz p1, :cond_3
+    .line 49
+    invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    invoke-virtual {p1}, Landroidx/appcompat/widget/ListPopupWindow;->show()V
+    move-result v1
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v3
+
+    const/4 v4, 0x0
+
+    .line 47
+    new-instance v5, Lcom/iMe/ui/adapter/provider/SelectableHeaderProvider$convert$1$1$1;
+
+    iget-object v1, p0, Lcom/iMe/ui/adapter/provider/SelectableHeaderProvider$convert$1$1;->$helper:Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
+
+    iget-object v6, p0, Lcom/iMe/ui/adapter/provider/SelectableHeaderProvider$convert$1$1;->$item:Lcom/iMe/model/wallet/home/SelectableHeaderItem;
+
+    iget-object v7, p0, Lcom/iMe/ui/adapter/provider/SelectableHeaderProvider$convert$1$1;->this$0:Lcom/iMe/ui/adapter/provider/SelectableHeaderProvider;
+
+    invoke-direct {v5, v1, v6, v7}, Lcom/iMe/ui/adapter/provider/SelectableHeaderProvider$convert$1$1$1;-><init>(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;Lcom/iMe/model/wallet/home/SelectableHeaderItem;Lcom/iMe/ui/adapter/provider/SelectableHeaderProvider;)V
+
+    const/4 v6, 0x4
+
+    const/4 v7, 0x0
+
+    move-object v1, v0
+
+    invoke-static/range {v1 .. v7}, Lcom/iMe/utils/dialogs/PopupFactoryKt;->createPopupWithOptions$default(Landroid/view/View;Ljava/util/List;Ljava/lang/Integer;Ljava/lang/Integer;Lkotlin/jvm/functions/Function2;ILjava/lang/Object;)Landroidx/appcompat/widget/ListPopupWindow;
+
+    move-result-object v0
+
+    .line 55
+    invoke-virtual {v0}, Landroidx/appcompat/widget/ListPopupWindow;->show()V
+
+    .line 45
+    invoke-static {p1, v0}, Lcom/iMe/ui/adapter/provider/SelectableHeaderProvider;->access$setPopupWindow$p(Lcom/iMe/ui/adapter/provider/SelectableHeaderProvider;Landroidx/appcompat/widget/ListPopupWindow;)V
 
     goto :goto_1
 
-    .line 48
+    .line 57
     :cond_1
     iget-object p1, p0, Lcom/iMe/ui/adapter/provider/SelectableHeaderProvider$convert$1$1;->this$0:Lcom/iMe/ui/adapter/provider/SelectableHeaderProvider;
 
@@ -197,7 +209,7 @@
 
     invoke-virtual {p1}, Landroidx/appcompat/widget/ListPopupWindow;->dismiss()V
 
-    .line 49
+    .line 58
     :cond_2
     iget-object p1, p0, Lcom/iMe/ui/adapter/provider/SelectableHeaderProvider$convert$1$1;->this$0:Lcom/iMe/ui/adapter/provider/SelectableHeaderProvider;
 
@@ -205,7 +217,6 @@
 
     invoke-static {p1, v0}, Lcom/iMe/ui/adapter/provider/SelectableHeaderProvider;->access$setPopupWindow$p(Lcom/iMe/ui/adapter/provider/SelectableHeaderProvider;Landroidx/appcompat/widget/ListPopupWindow;)V
 
-    :cond_3
     :goto_1
     return-void
 .end method

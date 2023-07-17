@@ -23,14 +23,14 @@ public final class TransactionDirection {
     public static final Companion Companion;
 
     /* renamed from: IN */
-    public static final TransactionDirection f373IN = new TransactionDirection("IN", 0, "+", R$string.transaction_direction_in_title);
+    public static final TransactionDirection f446IN = new TransactionDirection("IN", 0, "+", R$string.transaction_direction_in_title);
     public static final TransactionDirection OUT;
     public static final TransactionDirection SELF;
     private final String symbol;
     private int title;
 
     private static final /* synthetic */ TransactionDirection[] $values() {
-        return new TransactionDirection[]{f373IN, OUT, SELF};
+        return new TransactionDirection[]{f446IN, OUT, SELF};
     }
 
     public static TransactionDirection valueOf(String str) {
@@ -93,7 +93,7 @@ public final class TransactionDirection {
                 }
                 i++;
             }
-            return transactionDirection == null ? TransactionDirection.f373IN : transactionDirection;
+            return transactionDirection == null ? TransactionDirection.f446IN : transactionDirection;
         }
     }
 }

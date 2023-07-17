@@ -152,16 +152,16 @@ public abstract class AbstractSendChannel<E> implements SendChannel<E> {
 
     @Override // kotlinx.coroutines.channels.SendChannel
     /* renamed from: trySend-JP2dKIU  reason: not valid java name */
-    public final Object mo1589trySendJP2dKIU(E e) {
+    public final Object mo1614trySendJP2dKIU(E e) {
         Object offerInternal = offerInternal(e);
         if (offerInternal == AbstractChannelKt.OFFER_SUCCESS) {
-            return ChannelResult.Companion.m1601successJP2dKIU(Unit.INSTANCE);
+            return ChannelResult.Companion.m1626successJP2dKIU(Unit.INSTANCE);
         }
         if (offerInternal == AbstractChannelKt.OFFER_FAILED) {
             Closed<?> closedForSend = getClosedForSend();
-            return closedForSend == null ? ChannelResult.Companion.m1600failurePtdJZtk() : ChannelResult.Companion.m1599closedJP2dKIU(helpCloseAndGetSendException(closedForSend));
+            return closedForSend == null ? ChannelResult.Companion.m1625failurePtdJZtk() : ChannelResult.Companion.m1624closedJP2dKIU(helpCloseAndGetSendException(closedForSend));
         } else if (offerInternal instanceof Closed) {
-            return ChannelResult.Companion.m1599closedJP2dKIU(helpCloseAndGetSendException((Closed) offerInternal));
+            return ChannelResult.Companion.m1624closedJP2dKIU(helpCloseAndGetSendException((Closed) offerInternal));
         } else {
             throw new IllegalStateException(("trySend returned " + offerInternal).toString());
         }
@@ -181,11 +181,11 @@ public abstract class AbstractSendChannel<E> implements SendChannel<E> {
         if (function1 != null && (callUndeliveredElementCatchingException$default = OnUndeliveredElementKt.callUndeliveredElementCatchingException$default(function1, e, null, 2, null)) != null) {
             ExceptionsKt__ExceptionsKt.addSuppressed(callUndeliveredElementCatchingException$default, sendException);
             Result.Companion companion = Result.Companion;
-            continuation.resumeWith(Result.m1576constructorimpl(ResultKt.createFailure(callUndeliveredElementCatchingException$default)));
+            continuation.resumeWith(Result.m1601constructorimpl(ResultKt.createFailure(callUndeliveredElementCatchingException$default)));
             return;
         }
         Result.Companion companion2 = Result.Companion;
-        continuation.resumeWith(Result.m1576constructorimpl(ResultKt.createFailure(sendException)));
+        continuation.resumeWith(Result.m1601constructorimpl(ResultKt.createFailure(sendException)));
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -287,26 +287,26 @@ public abstract class AbstractSendChannel<E> implements SendChannel<E> {
     }
 
     private final void helpClose(Closed<?> closed) {
-        Object m1603constructorimpl$default = InlineList.m1603constructorimpl$default(null, 1, null);
+        Object m1628constructorimpl$default = InlineList.m1628constructorimpl$default(null, 1, null);
         while (true) {
             LockFreeLinkedListNode prevNode = closed.getPrevNode();
             Receive receive = prevNode instanceof Receive ? (Receive) prevNode : null;
             if (receive == null) {
                 break;
-            } else if (!receive.mo1605remove()) {
+            } else if (!receive.mo1630remove()) {
                 receive.helpRemove();
             } else {
-                m1603constructorimpl$default = InlineList.m1604plusFjFbRPM(m1603constructorimpl$default, receive);
+                m1628constructorimpl$default = InlineList.m1629plusFjFbRPM(m1628constructorimpl$default, receive);
             }
         }
-        if (m1603constructorimpl$default != null) {
-            if (m1603constructorimpl$default instanceof ArrayList) {
-                ArrayList arrayList = (ArrayList) m1603constructorimpl$default;
+        if (m1628constructorimpl$default != null) {
+            if (m1628constructorimpl$default instanceof ArrayList) {
+                ArrayList arrayList = (ArrayList) m1628constructorimpl$default;
                 for (int size = arrayList.size() - 1; -1 < size; size--) {
                     ((Receive) arrayList.get(size)).resumeReceiveClosed(closed);
                 }
             } else {
-                ((Receive) m1603constructorimpl$default).resumeReceiveClosed(closed);
+                ((Receive) m1628constructorimpl$default).resumeReceiveClosed(closed);
             }
         }
         onClosedIdempotent(closed);
@@ -340,7 +340,7 @@ public abstract class AbstractSendChannel<E> implements SendChannel<E> {
             Object offerInternal = offerInternal(e);
             if (offerInternal == AbstractChannelKt.OFFER_SUCCESS) {
                 Result.Companion companion = Result.Companion;
-                orCreateCancellableContinuation.resumeWith(Result.m1576constructorimpl(Unit.INSTANCE));
+                orCreateCancellableContinuation.resumeWith(Result.m1601constructorimpl(Unit.INSTANCE));
                 break;
             } else if (offerInternal != AbstractChannelKt.OFFER_FAILED) {
                 if (offerInternal instanceof Closed) {

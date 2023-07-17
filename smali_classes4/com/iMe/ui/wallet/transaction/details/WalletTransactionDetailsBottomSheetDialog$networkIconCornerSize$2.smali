@@ -48,7 +48,7 @@
 .method public final invoke()Ljava/lang/Float;
     .locals 2
 
-    .line 57
+    .line 65
     iget-object v0, p0, Lcom/iMe/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$networkIconCornerSize$2;->this$0:Lcom/iMe/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog;
 
     invoke-virtual {v0}, Landroid/app/Dialog;->getContext()Landroid/content/Context;
@@ -81,7 +81,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 57
+    .line 65
     invoke-virtual {p0}, Lcom/iMe/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$networkIconCornerSize$2;->invoke()Ljava/lang/Float;
 
     move-result-object v0

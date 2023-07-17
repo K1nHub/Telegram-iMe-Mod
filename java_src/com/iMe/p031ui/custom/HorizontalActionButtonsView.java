@@ -13,8 +13,8 @@ import java.util.ArrayList;
 import java.util.List;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3295R;
-import org.telegram.p044ui.ActionBar.Theme;
+import org.telegram.messenger.C3417R;
+import org.telegram.p043ui.ActionBar.Theme;
 /* compiled from: HorizontalActionButtonsView.kt */
 /* renamed from: com.iMe.ui.custom.HorizontalActionButtonsView */
 /* loaded from: classes3.dex */
@@ -47,13 +47,13 @@ public final class HorizontalActionButtonsView extends LinearLayout {
             AppCompatTextView appCompatTextView = new AppCompatTextView(getContext());
             appCompatTextView.setGravity(1);
             Resources resources = appCompatTextView.getResources();
-            int i = C3295R.dimen.margin_half_small;
+            int i = C3417R.dimen.margin_half_small;
             ViewExtKt.setPaddingHorizontal(appCompatTextView, resources.getDimensionPixelOffset(i));
-            ViewExtKt.setPaddingVertical(appCompatTextView, appCompatTextView.getResources().getDimensionPixelOffset(C3295R.dimen.margin_normal_2));
+            ViewExtKt.setPaddingVertical(appCompatTextView, appCompatTextView.getResources().getDimensionPixelOffset(C3417R.dimen.margin_normal_2));
             com.iMe.utils.extentions.common.ViewExtKt.singleLine(appCompatTextView);
             appCompatTextView.setEllipsize(TextUtils.TruncateAt.END);
             appCompatTextView.setText(horizontalActionButtonItem.getText());
-            appCompatTextView.setTextSize(0, appCompatTextView.getResources().getDimension(C3295R.dimen.text_size_normal));
+            appCompatTextView.setTextSize(0, appCompatTextView.getResources().getDimension(C3417R.dimen.text_size_normal));
             appCompatTextView.setCompoundDrawablesWithIntrinsicBounds(0, horizontalActionButtonItem.getIconResId(), 0, 0);
             appCompatTextView.setCompoundDrawablePadding(appCompatTextView.getResources().getDimensionPixelOffset(i));
             appCompatTextView.setOnClickListener(new View.OnClickListener() { // from class: com.iMe.ui.custom.HorizontalActionButtonsView$$ExternalSyntheticLambda0

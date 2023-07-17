@@ -11,7 +11,7 @@ public final class CampaignItem extends NoChildNode {
     private final String description;
 
     /* renamed from: id */
-    private final long f264id;
+    private final long f346id;
     private final boolean isVerified;
     private final String language;
     private final long membersCount;
@@ -33,7 +33,7 @@ public final class CampaignItem extends NoChildNode {
     }
 
     public final long component3() {
-        return this.f264id;
+        return this.f346id;
     }
 
     public final boolean component4() {
@@ -77,14 +77,14 @@ public final class CampaignItem extends NoChildNode {
         }
         if (obj instanceof CampaignItem) {
             CampaignItem campaignItem = (CampaignItem) obj;
-            return Intrinsics.areEqual(this.category, campaignItem.category) && Intrinsics.areEqual(this.description, campaignItem.description) && this.f264id == campaignItem.f264id && this.isVerified == campaignItem.isVerified && Intrinsics.areEqual(this.language, campaignItem.language) && this.membersCount == campaignItem.membersCount && Intrinsics.areEqual(this.photo, campaignItem.photo) && Intrinsics.areEqual(this.shortname, campaignItem.shortname) && Intrinsics.areEqual(this.tags, campaignItem.tags) && Intrinsics.areEqual(this.title, campaignItem.title);
+            return Intrinsics.areEqual(this.category, campaignItem.category) && Intrinsics.areEqual(this.description, campaignItem.description) && this.f346id == campaignItem.f346id && this.isVerified == campaignItem.isVerified && Intrinsics.areEqual(this.language, campaignItem.language) && this.membersCount == campaignItem.membersCount && Intrinsics.areEqual(this.photo, campaignItem.photo) && Intrinsics.areEqual(this.shortname, campaignItem.shortname) && Intrinsics.areEqual(this.tags, campaignItem.tags) && Intrinsics.areEqual(this.title, campaignItem.title);
         }
         return false;
     }
 
     /* JADX WARN: Multi-variable type inference failed */
     public int hashCode() {
-        int hashCode = ((((this.category.hashCode() * 31) + this.description.hashCode()) * 31) + BotsDbModel$$ExternalSyntheticBackport0.m706m(this.f264id)) * 31;
+        int hashCode = ((((this.category.hashCode() * 31) + this.description.hashCode()) * 31) + BotsDbModel$$ExternalSyntheticBackport0.m706m(this.f346id)) * 31;
         boolean z = this.isVerified;
         int i = z;
         if (z != 0) {
@@ -94,7 +94,7 @@ public final class CampaignItem extends NoChildNode {
     }
 
     public String toString() {
-        return "CampaignItem(category=" + this.category + ", description=" + this.description + ", id=" + this.f264id + ", isVerified=" + this.isVerified + ", language=" + this.language + ", membersCount=" + this.membersCount + ", photo=" + this.photo + ", shortname=" + this.shortname + ", tags=" + this.tags + ", title=" + this.title + ')';
+        return "CampaignItem(category=" + this.category + ", description=" + this.description + ", id=" + this.f346id + ", isVerified=" + this.isVerified + ", language=" + this.language + ", membersCount=" + this.membersCount + ", photo=" + this.photo + ", shortname=" + this.shortname + ", tags=" + this.tags + ", title=" + this.title + ')';
     }
 
     public final String getCategory() {
@@ -106,7 +106,7 @@ public final class CampaignItem extends NoChildNode {
     }
 
     public final long getId() {
-        return this.f264id;
+        return this.f346id;
     }
 
     public final boolean isVerified() {
@@ -147,7 +147,7 @@ public final class CampaignItem extends NoChildNode {
         Intrinsics.checkNotNullParameter(title, "title");
         this.category = category;
         this.description = description;
-        this.f264id = j;
+        this.f346id = j;
         this.isVerified = z;
         this.language = language;
         this.membersCount = j2;

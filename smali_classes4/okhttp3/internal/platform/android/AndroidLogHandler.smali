@@ -47,7 +47,7 @@
 .method public publish(Ljava/util/logging/LogRecord;)V
     .locals 5
 
-    const-string v0, "record"
+    const-string/jumbo v0, "record"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -58,7 +58,7 @@
 
     move-result-object v1
 
-    const-string v2, "record.loggerName"
+    const-string/jumbo v2, "record.loggerName"
 
     invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -70,7 +70,7 @@
 
     move-result-object v3
 
-    const-string v4, "record.message"
+    const-string/jumbo v4, "record.message"
 
     invoke-static {v3, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 

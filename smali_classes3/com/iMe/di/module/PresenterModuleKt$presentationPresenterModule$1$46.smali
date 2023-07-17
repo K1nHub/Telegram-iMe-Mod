@@ -22,13 +22,13 @@
         "Lkotlin/jvm/functions/Function2<",
         "Lorg/koin/core/scope/Scope;",
         "Lorg/koin/core/parameter/ParametersHolder;",
-        "Lcom/iMe/ui/wallet/swap/fee/WalletSwapFeePresenter;",
+        "Lcom/iMe/ui/wallet/swap/WalletSwapProtocolsPresenter;",
         ">;"
     }
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nPresenterModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$46\n+ 2 ParametersHolder.kt\norg/koin/core/parameter/ParametersHolder\n+ 3 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,432:1\n44#2:433\n129#3,5:434\n*S KotlinDebug\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$46\n*L\n305#1:433\n306#1:434,5\n*E\n"
+    value = "SMAP\nPresenterModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$46\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,552:1\n129#2,5:553\n129#2,5:558\n*S KotlinDebug\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$46\n*L\n389#1:553,5\n390#1:558,5\n*E\n"
 .end annotation
 
 
@@ -61,92 +61,92 @@
 
 
 # virtual methods
-.method public final invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/iMe/ui/wallet/swap/fee/WalletSwapFeePresenter;
+.method public final invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/iMe/ui/wallet/swap/WalletSwapProtocolsPresenter;
     .locals 4
 
     const-string v0, "$this$factory"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "<name for destructuring parameter 0>"
+    const-string v0, "it"
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 44
-    const-class v0, Lcom/iMe/model/wallet/crypto/swap/SwapFeeScreenArgs;
+    .line 133
+    const-class p2, Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
-    invoke-static {v0}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
-
-    move-result-object v0
-
-    const/4 v1, 0x0
-
-    invoke-virtual {p2, v1, v0}, Lorg/koin/core/parameter/ParametersHolder;->elementAt(ILkotlin/reflect/KClass;)Ljava/lang/Object;
+    invoke-static {p2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
 
     move-result-object p2
 
-    check-cast p2, Lcom/iMe/model/wallet/crypto/swap/SwapFeeScreenArgs;
+    const/4 v0, 0x0
+
+    invoke-virtual {p1, p2, v0, v0}, Lorg/koin/core/scope/Scope;->get(Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
+
+    move-result-object p2
+
+    .line 389
+    check-cast p2, Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     .line 133
-    const-class v0, Lcom/iMe/storage/domain/utils/system/ResourceManager;
+    const-class v1, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
 
-    invoke-static {v0}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
+    invoke-static {v1}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
 
-    move-result-object v0
+    move-result-object v1
 
-    const/4 v1, 0x0
+    invoke-virtual {p1, v1, v0, v0}, Lorg/koin/core/scope/Scope;->get(Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
 
-    invoke-virtual {p1, v0, v1, v1}, Lorg/koin/core/scope/Scope;->get(Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
+    move-result-object v1
 
-    move-result-object v0
-
-    .line 306
-    check-cast v0, Lcom/iMe/storage/domain/utils/system/ResourceManager;
+    .line 389
+    check-cast v1, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
 
     .line 133
-    const-class v2, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
+    const-class v2, Lcom/iMe/storage/domain/utils/rx/RxEventBus;
 
     invoke-static {v2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
 
     move-result-object v2
 
-    invoke-virtual {p1, v2, v1, v1}, Lorg/koin/core/scope/Scope;->get(Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
+    invoke-virtual {p1, v2, v0, v0}, Lorg/koin/core/scope/Scope;->get(Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
 
     move-result-object v2
 
-    .line 306
-    check-cast v2, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
+    .line 389
+    check-cast v2, Lcom/iMe/storage/domain/utils/rx/RxEventBus;
 
     .line 133
-    const-class v3, Lcom/iMe/storage/domain/interactor/crypto/swap/SwapInteractor;
+    const-class v3, Lcom/iMe/storage/domain/manager/binancepay/BinancePayManager;
 
     invoke-static {v3}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
 
     move-result-object v3
 
-    invoke-virtual {p1, v3, v1, v1}, Lorg/koin/core/scope/Scope;->get(Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
+    invoke-virtual {p1, v3, v0, v0}, Lorg/koin/core/scope/Scope;->get(Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
 
     move-result-object p1
 
-    .line 306
-    check-cast p1, Lcom/iMe/storage/domain/interactor/crypto/swap/SwapInteractor;
+    .line 390
+    check-cast p1, Lcom/iMe/storage/domain/manager/binancepay/BinancePayManager;
 
-    new-instance v1, Lcom/iMe/ui/wallet/swap/fee/WalletSwapFeePresenter;
+    .line 388
+    new-instance v0, Lcom/iMe/ui/wallet/swap/WalletSwapProtocolsPresenter;
 
-    invoke-direct {v1, p2, p1, v2, v0}, Lcom/iMe/ui/wallet/swap/fee/WalletSwapFeePresenter;-><init>(Lcom/iMe/model/wallet/crypto/swap/SwapFeeScreenArgs;Lcom/iMe/storage/domain/interactor/crypto/swap/SwapInteractor;Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;Lcom/iMe/storage/domain/utils/system/ResourceManager;)V
+    invoke-direct {v0, p2, v1, p1, v2}, Lcom/iMe/ui/wallet/swap/WalletSwapProtocolsPresenter;-><init>(Lcom/iMe/storage/domain/utils/system/ResourceManager;Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;Lcom/iMe/storage/domain/manager/binancepay/BinancePayManager;Lcom/iMe/storage/domain/utils/rx/RxEventBus;)V
 
-    return-object v1
+    return-object v0
 .end method
 
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 305
+    .line 387
     check-cast p1, Lorg/koin/core/scope/Scope;
 
     check-cast p2, Lorg/koin/core/parameter/ParametersHolder;
 
-    invoke-virtual {p0, p1, p2}, Lcom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$46;->invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/iMe/ui/wallet/swap/fee/WalletSwapFeePresenter;
+    invoke-virtual {p0, p1, p2}, Lcom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$46;->invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/iMe/ui/wallet/swap/WalletSwapProtocolsPresenter;
 
     move-result-object p1
 

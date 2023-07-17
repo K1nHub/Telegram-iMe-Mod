@@ -17,6 +17,8 @@
 # instance fields
 .field private final amount:D
 
+.field private final decimals:I
+
 .field private final isUnencrypted:Z
 
 .field private final message:Ljava/lang/String;
@@ -25,16 +27,10 @@
 
 .field private final sendMode:I
 
-.field private final weiConvertUnit:Lcom/iMe/storage/domain/utils/crypto/Convert$Unit;
-
 
 # direct methods
-.method public constructor <init>(DLcom/iMe/storage/domain/utils/crypto/Convert$Unit;Ljava/lang/String;Ljava/lang/String;IZ)V
+.method public constructor <init>(DILjava/lang/String;Ljava/lang/String;IZ)V
     .locals 1
-
-    const-string v0, "weiConvertUnit"
-
-    invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     const-string v0, "recipientAddress"
 
@@ -42,31 +38,31 @@
 
     const/4 v0, 0x0
 
-    .line 33
-    invoke-direct {p0, p1, p2, p3, v0}, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs;-><init>(DLcom/iMe/storage/domain/utils/crypto/Convert$Unit;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
+    .line 32
+    invoke-direct {p0, p1, p2, p3, v0}, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs;-><init>(DILkotlin/jvm/internal/DefaultConstructorMarker;)V
 
-    .line 27
+    .line 26
     iput-wide p1, p0, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TON;->amount:D
 
-    .line 28
-    iput-object p3, p0, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TON;->weiConvertUnit:Lcom/iMe/storage/domain/utils/crypto/Convert$Unit;
+    .line 27
+    iput p3, p0, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TON;->decimals:I
 
-    .line 29
+    .line 28
     iput-object p4, p0, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TON;->recipientAddress:Ljava/lang/String;
 
-    .line 30
+    .line 29
     iput-object p5, p0, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TON;->message:Ljava/lang/String;
 
-    .line 31
+    .line 30
     iput p6, p0, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TON;->sendMode:I
 
-    .line 32
+    .line 31
     iput-boolean p7, p0, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TON;->isUnencrypted:Z
 
     return-void
 .end method
 
-.method public synthetic constructor <init>(DLcom/iMe/storage/domain/utils/crypto/Convert$Unit;Ljava/lang/String;Ljava/lang/String;IZILkotlin/jvm/internal/DefaultConstructorMarker;)V
+.method public synthetic constructor <init>(DILjava/lang/String;Ljava/lang/String;IZILkotlin/jvm/internal/DefaultConstructorMarker;)V
     .locals 9
 
     and-int/lit8 v0, p8, 0x20
@@ -87,7 +83,7 @@
 
     move-wide v2, p1
 
-    move-object v4, p3
+    move v4, p3
 
     move-object v5, p4
 
@@ -95,13 +91,13 @@
 
     move v7, p6
 
-    .line 26
-    invoke-direct/range {v1 .. v8}, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TON;-><init>(DLcom/iMe/storage/domain/utils/crypto/Convert$Unit;Ljava/lang/String;Ljava/lang/String;IZ)V
+    .line 25
+    invoke-direct/range {v1 .. v8}, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TON;-><init>(DILjava/lang/String;Ljava/lang/String;IZ)V
 
     return-void
 .end method
 
-.method public static synthetic copy$default(Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TON;DLcom/iMe/storage/domain/utils/crypto/Convert$Unit;Ljava/lang/String;Ljava/lang/String;IZILjava/lang/Object;)Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TON;
+.method public static synthetic copy$default(Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TON;DILjava/lang/String;Ljava/lang/String;IZILjava/lang/Object;)Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TON;
     .locals 8
 
     move-object v0, p0
@@ -124,14 +120,14 @@
 
     if-eqz v3, :cond_1
 
-    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TON;->getWeiConvertUnit()Lcom/iMe/storage/domain/utils/crypto/Convert$Unit;
+    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TON;->getDecimals()I
 
-    move-result-object v3
+    move-result v3
 
     goto :goto_1
 
     :cond_1
-    move-object v3, p3
+    move v3, p3
 
     :goto_1
     and-int/lit8 v4, p8, 0x4
@@ -184,7 +180,7 @@
     :goto_5
     move-wide p1, v1
 
-    move-object p3, v3
+    move p3, v3
 
     move-object p4, v4
 
@@ -194,7 +190,7 @@
 
     move p7, v7
 
-    invoke-virtual/range {p0 .. p7}, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TON;->copy(DLcom/iMe/storage/domain/utils/crypto/Convert$Unit;Ljava/lang/String;Ljava/lang/String;IZ)Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TON;
+    invoke-virtual/range {p0 .. p7}, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TON;->copy(DILjava/lang/String;Ljava/lang/String;IZ)Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TON;
 
     move-result-object v0
 
@@ -213,14 +209,14 @@
     return-wide v0
 .end method
 
-.method protected final component2()Lcom/iMe/storage/domain/utils/crypto/Convert$Unit;
+.method protected final component2()I
     .locals 1
 
-    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TON;->getWeiConvertUnit()Lcom/iMe/storage/domain/utils/crypto/Convert$Unit;
+    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TON;->getDecimals()I
 
-    move-result-object v0
+    move-result v0
 
-    return-object v0
+    return v0
 .end method
 
 .method public final component3()Ljava/lang/String;
@@ -255,14 +251,8 @@
     return v0
 .end method
 
-.method public final copy(DLcom/iMe/storage/domain/utils/crypto/Convert$Unit;Ljava/lang/String;Ljava/lang/String;IZ)Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TON;
+.method public final copy(DILjava/lang/String;Ljava/lang/String;IZ)Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TON;
     .locals 9
-
-    const-string v0, "weiConvertUnit"
-
-    move-object v4, p3
-
-    invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     const-string v0, "recipientAddress"
 
@@ -276,13 +266,15 @@
 
     move-wide v2, p1
 
+    move v4, p3
+
     move-object v6, p5
 
     move v7, p6
 
     move/from16 v8, p7
 
-    invoke-direct/range {v1 .. v8}, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TON;-><init>(DLcom/iMe/storage/domain/utils/crypto/Convert$Unit;Ljava/lang/String;Ljava/lang/String;IZ)V
+    invoke-direct/range {v1 .. v8}, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TON;-><init>(DILjava/lang/String;Ljava/lang/String;IZ)V
 
     return-object v0
 .end method
@@ -325,13 +317,13 @@
     return v2
 
     :cond_2
-    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TON;->getWeiConvertUnit()Lcom/iMe/storage/domain/utils/crypto/Convert$Unit;
+    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TON;->getDecimals()I
 
-    move-result-object v1
+    move-result v1
 
-    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TON;->getWeiConvertUnit()Lcom/iMe/storage/domain/utils/crypto/Convert$Unit;
+    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TON;->getDecimals()I
 
-    move-result-object v3
+    move-result v3
 
     if-eq v1, v3, :cond_3
 
@@ -388,16 +380,25 @@
 .method public getAmount()D
     .locals 2
 
-    .line 27
+    .line 26
     iget-wide v0, p0, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TON;->amount:D
 
     return-wide v0
 .end method
 
+.method protected getDecimals()I
+    .locals 1
+
+    .line 27
+    iget v0, p0, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TON;->decimals:I
+
+    return v0
+.end method
+
 .method public final getMessage()Ljava/lang/String;
     .locals 1
 
-    .line 30
+    .line 29
     iget-object v0, p0, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TON;->message:Ljava/lang/String;
 
     return-object v0
@@ -406,7 +407,7 @@
 .method public final getRecipientAddress()Ljava/lang/String;
     .locals 1
 
-    .line 29
+    .line 28
     iget-object v0, p0, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TON;->recipientAddress:Ljava/lang/String;
 
     return-object v0
@@ -415,19 +416,10 @@
 .method public final getSendMode()I
     .locals 1
 
-    .line 31
+    .line 30
     iget v0, p0, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TON;->sendMode:I
 
     return v0
-.end method
-
-.method protected getWeiConvertUnit()Lcom/iMe/storage/domain/utils/crypto/Convert$Unit;
-    .locals 1
-
-    .line 28
-    iget-object v0, p0, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TON;->weiConvertUnit:Lcom/iMe/storage/domain/utils/crypto/Convert$Unit;
-
-    return-object v0
 .end method
 
 .method public hashCode()I
@@ -443,11 +435,7 @@
 
     mul-int/lit8 v0, v0, 0x1f
 
-    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TON;->getWeiConvertUnit()Lcom/iMe/storage/domain/utils/crypto/Convert$Unit;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/Enum;->hashCode()I
+    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TON;->getDecimals()I
 
     move-result v1
 
@@ -504,7 +492,7 @@
 .method public final isUnencrypted()Z
     .locals 1
 
-    .line 32
+    .line 31
     iget-boolean v0, p0, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TON;->isUnencrypted:Z
 
     return v0
@@ -527,15 +515,15 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
 
-    const-string v1, ", weiConvertUnit="
+    const-string v1, ", decimals="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TON;->getWeiConvertUnit()Lcom/iMe/storage/domain/utils/crypto/Convert$Unit;
+    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TON;->getDecimals()I
 
-    move-result-object v1
+    move-result v1
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     const-string v1, ", recipientAddress="
 

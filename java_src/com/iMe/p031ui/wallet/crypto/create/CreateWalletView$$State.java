@@ -1,5 +1,6 @@
 package com.iMe.p031ui.wallet.crypto.create;
 
+import com.iMe.model.dialog.RadioCellsListDialogModel;
 import com.iMe.p031ui.base.mvp.base.BaseView;
 import com.iMe.storage.domain.model.Result;
 import com.iMe.storage.domain.model.crypto.Wallet;
@@ -18,6 +19,24 @@ public class CreateWalletView$$State extends MvpViewState<CreateWalletView> impl
         BaseView.CC.$default$finishScreen(this);
     }
 
+    @Override // com.iMe.p031ui.base.mvp.base.BaseView
+    public /* synthetic */ void removeSelfFromStackImmediately() {
+        BaseView.CC.$default$removeSelfFromStackImmediately(this);
+    }
+
+    @Override // com.iMe.p031ui.wallet.crypto.create.CreateWalletView
+    public void updateLoadingState(boolean z) {
+        UpdateLoadingStateCommand updateLoadingStateCommand = new UpdateLoadingStateCommand(this, z);
+        this.viewCommands.beforeApply(updateLoadingStateCommand);
+        if (hasNotView().booleanValue()) {
+            return;
+        }
+        for (View view : this.views) {
+            view.updateLoadingState(z);
+        }
+        this.viewCommands.afterApply(updateLoadingStateCommand);
+    }
+
     @Override // com.iMe.p031ui.wallet.crypto.create.CreateWalletView
     public void showWordsSuggestions(List<String> list) {
         ShowWordsSuggestionsCommand showWordsSuggestionsCommand = new ShowWordsSuggestionsCommand(this, list);
@@ -32,55 +51,68 @@ public class CreateWalletView$$State extends MvpViewState<CreateWalletView> impl
     }
 
     @Override // com.iMe.p031ui.wallet.crypto.create.CreateWalletView
-    public void setWalletAddress(String str) {
-        SetWalletAddressCommand setWalletAddressCommand = new SetWalletAddressCommand(this, str);
-        this.viewCommands.beforeApply(setWalletAddressCommand);
+    public void onWordsCountSelected(int i) {
+        OnWordsCountSelectedCommand onWordsCountSelectedCommand = new OnWordsCountSelectedCommand(this, i);
+        this.viewCommands.beforeApply(onWordsCountSelectedCommand);
         if (hasNotView().booleanValue()) {
             return;
         }
         for (View view : this.views) {
-            view.setWalletAddress(str);
+            view.onWordsCountSelected(i);
         }
-        this.viewCommands.afterApply(setWalletAddressCommand);
+        this.viewCommands.afterApply(onWordsCountSelectedCommand);
     }
 
     @Override // com.iMe.p031ui.wallet.crypto.create.CreateWalletView
-    public void onSuccessEnterSeed(String str) {
-        OnSuccessEnterSeedCommand onSuccessEnterSeedCommand = new OnSuccessEnterSeedCommand(this, str);
+    public void onSuccessEnterSeed(String str, String str2) {
+        OnSuccessEnterSeedCommand onSuccessEnterSeedCommand = new OnSuccessEnterSeedCommand(this, str, str2);
         this.viewCommands.beforeApply(onSuccessEnterSeedCommand);
         if (hasNotView().booleanValue()) {
             return;
         }
         for (View view : this.views) {
-            view.onSuccessEnterSeed(str);
+            view.onSuccessEnterSeed(str, str2);
         }
         this.viewCommands.afterApply(onSuccessEnterSeedCommand);
     }
 
     @Override // com.iMe.p031ui.wallet.crypto.create.CreateWalletView
-    public void createNewWallet() {
-        CreateNewWalletCommand createNewWalletCommand = new CreateNewWalletCommand(this);
+    public void showSelectWordsCountDialog(RadioCellsListDialogModel radioCellsListDialogModel) {
+        ShowSelectWordsCountDialogCommand showSelectWordsCountDialogCommand = new ShowSelectWordsCountDialogCommand(this, radioCellsListDialogModel);
+        this.viewCommands.beforeApply(showSelectWordsCountDialogCommand);
+        if (hasNotView().booleanValue()) {
+            return;
+        }
+        for (View view : this.views) {
+            view.showSelectWordsCountDialog(radioCellsListDialogModel);
+        }
+        this.viewCommands.afterApply(showSelectWordsCountDialogCommand);
+    }
+
+    @Override // com.iMe.p031ui.wallet.crypto.create.CreateWalletView
+    public void createNewWallet(Wallet wallet2, String str) {
+        CreateNewWalletCommand createNewWalletCommand = new CreateNewWalletCommand(this, wallet2, str);
         this.viewCommands.beforeApply(createNewWalletCommand);
         if (hasNotView().booleanValue()) {
             return;
         }
         for (View view : this.views) {
-            view.createNewWallet();
+            view.createNewWallet(wallet2, str);
         }
         this.viewCommands.afterApply(createNewWalletCommand);
     }
 
     @Override // com.iMe.p031ui.wallet.crypto.create.CreateWalletView
-    public void createNewWalletWithPassword(Wallet wallet2, String str) {
-        CreateNewWalletWithPasswordCommand createNewWalletWithPasswordCommand = new CreateNewWalletWithPasswordCommand(this, wallet2, str);
-        this.viewCommands.beforeApply(createNewWalletWithPasswordCommand);
+    public void addNewWallet(Wallet wallet2, String str) {
+        AddNewWalletCommand addNewWalletCommand = new AddNewWalletCommand(this, wallet2, str);
+        this.viewCommands.beforeApply(addNewWalletCommand);
         if (hasNotView().booleanValue()) {
             return;
         }
         for (View view : this.views) {
-            view.createNewWalletWithPassword(wallet2, str);
+            view.addNewWallet(wallet2, str);
         }
-        this.viewCommands.afterApply(createNewWalletWithPasswordCommand);
+        this.viewCommands.afterApply(addNewWalletCommand);
     }
 
     @Override // com.iMe.p031ui.wallet.crypto.create.CreateWalletView
@@ -94,6 +126,19 @@ public class CreateWalletView$$State extends MvpViewState<CreateWalletView> impl
             view.onSuccessConfirmBackUp();
         }
         this.viewCommands.afterApply(onSuccessConfirmBackUpCommand);
+    }
+
+    @Override // com.iMe.p031ui.wallet.crypto.create.CreateWalletView
+    public void generateAndOpenPdf(String str, List<String> list) {
+        GenerateAndOpenPdfCommand generateAndOpenPdfCommand = new GenerateAndOpenPdfCommand(this, str, list);
+        this.viewCommands.beforeApply(generateAndOpenPdfCommand);
+        if (hasNotView().booleanValue()) {
+            return;
+        }
+        for (View view : this.views) {
+            view.generateAndOpenPdf(str, list);
+        }
+        this.viewCommands.afterApply(generateAndOpenPdfCommand);
     }
 
     @Override // com.iMe.p031ui.base.mvp.base.BaseView
@@ -136,6 +181,23 @@ public class CreateWalletView$$State extends MvpViewState<CreateWalletView> impl
     }
 
     /* compiled from: CreateWalletView$$State.java */
+    /* renamed from: com.iMe.ui.wallet.crypto.create.CreateWalletView$$State$UpdateLoadingStateCommand */
+    /* loaded from: classes3.dex */
+    public class UpdateLoadingStateCommand extends ViewCommand<CreateWalletView> {
+        public final boolean isLoading;
+
+        UpdateLoadingStateCommand(CreateWalletView$$State createWalletView$$State, boolean z) {
+            super("updateLoadingState", AddToEndSingleStrategy.class);
+            this.isLoading = z;
+        }
+
+        @Override // moxy.viewstate.ViewCommand
+        public void apply(CreateWalletView createWalletView) {
+            createWalletView.updateLoadingState(this.isLoading);
+        }
+    }
+
+    /* compiled from: CreateWalletView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.create.CreateWalletView$$State$ShowWordsSuggestionsCommand */
     /* loaded from: classes3.dex */
     public class ShowWordsSuggestionsCommand extends ViewCommand<CreateWalletView> {
@@ -153,19 +215,19 @@ public class CreateWalletView$$State extends MvpViewState<CreateWalletView> impl
     }
 
     /* compiled from: CreateWalletView$$State.java */
-    /* renamed from: com.iMe.ui.wallet.crypto.create.CreateWalletView$$State$SetWalletAddressCommand */
+    /* renamed from: com.iMe.ui.wallet.crypto.create.CreateWalletView$$State$OnWordsCountSelectedCommand */
     /* loaded from: classes3.dex */
-    public class SetWalletAddressCommand extends ViewCommand<CreateWalletView> {
-        public final String address;
+    public class OnWordsCountSelectedCommand extends ViewCommand<CreateWalletView> {
+        public final int wordsCount;
 
-        SetWalletAddressCommand(CreateWalletView$$State createWalletView$$State, String str) {
-            super("setWalletAddress", AddToEndSingleStrategy.class);
-            this.address = str;
+        OnWordsCountSelectedCommand(CreateWalletView$$State createWalletView$$State, int i) {
+            super("onWordsCountSelected", AddToEndSingleStrategy.class);
+            this.wordsCount = i;
         }
 
         @Override // moxy.viewstate.ViewCommand
         public void apply(CreateWalletView createWalletView) {
-            createWalletView.setWalletAddress(this.address);
+            createWalletView.onWordsCountSelected(this.wordsCount);
         }
     }
 
@@ -173,16 +235,35 @@ public class CreateWalletView$$State extends MvpViewState<CreateWalletView> impl
     /* renamed from: com.iMe.ui.wallet.crypto.create.CreateWalletView$$State$OnSuccessEnterSeedCommand */
     /* loaded from: classes3.dex */
     public class OnSuccessEnterSeedCommand extends ViewCommand<CreateWalletView> {
+        public final String password;
         public final String seed;
 
-        OnSuccessEnterSeedCommand(CreateWalletView$$State createWalletView$$State, String str) {
-            super("onSuccessEnterSeed", AddToEndSingleStrategy.class);
+        OnSuccessEnterSeedCommand(CreateWalletView$$State createWalletView$$State, String str, String str2) {
+            super("onSuccessEnterSeed", OneExecutionStateStrategy.class);
             this.seed = str;
+            this.password = str2;
         }
 
         @Override // moxy.viewstate.ViewCommand
         public void apply(CreateWalletView createWalletView) {
-            createWalletView.onSuccessEnterSeed(this.seed);
+            createWalletView.onSuccessEnterSeed(this.seed, this.password);
+        }
+    }
+
+    /* compiled from: CreateWalletView$$State.java */
+    /* renamed from: com.iMe.ui.wallet.crypto.create.CreateWalletView$$State$ShowSelectWordsCountDialogCommand */
+    /* loaded from: classes3.dex */
+    public class ShowSelectWordsCountDialogCommand extends ViewCommand<CreateWalletView> {
+        public final RadioCellsListDialogModel dialogModel;
+
+        ShowSelectWordsCountDialogCommand(CreateWalletView$$State createWalletView$$State, RadioCellsListDialogModel radioCellsListDialogModel) {
+            super("showSelectWordsCountDialog", OneExecutionStateStrategy.class);
+            this.dialogModel = radioCellsListDialogModel;
+        }
+
+        @Override // moxy.viewstate.ViewCommand
+        public void apply(CreateWalletView createWalletView) {
+            createWalletView.showSelectWordsCountDialog(this.dialogModel);
         }
     }
 
@@ -190,34 +271,41 @@ public class CreateWalletView$$State extends MvpViewState<CreateWalletView> impl
     /* renamed from: com.iMe.ui.wallet.crypto.create.CreateWalletView$$State$CreateNewWalletCommand */
     /* loaded from: classes3.dex */
     public class CreateNewWalletCommand extends ViewCommand<CreateWalletView> {
-        CreateNewWalletCommand(CreateWalletView$$State createWalletView$$State) {
-            super("createNewWallet", OneExecutionStateStrategy.class);
-        }
-
-        @Override // moxy.viewstate.ViewCommand
-        public void apply(CreateWalletView createWalletView) {
-            createWalletView.createNewWallet();
-        }
-    }
-
-    /* compiled from: CreateWalletView$$State.java */
-    /* renamed from: com.iMe.ui.wallet.crypto.create.CreateWalletView$$State$CreateNewWalletWithPasswordCommand */
-    /* loaded from: classes3.dex */
-    public class CreateNewWalletWithPasswordCommand extends ViewCommand<CreateWalletView> {
         public final String password;
 
         /* renamed from: wallet  reason: collision with root package name */
-        public final Wallet f1844wallet;
+        public final Wallet f1928wallet;
 
-        CreateNewWalletWithPasswordCommand(CreateWalletView$$State createWalletView$$State, Wallet wallet2, String str) {
-            super("createNewWalletWithPassword", OneExecutionStateStrategy.class);
-            this.f1844wallet = wallet2;
+        CreateNewWalletCommand(CreateWalletView$$State createWalletView$$State, Wallet wallet2, String str) {
+            super("createNewWallet", OneExecutionStateStrategy.class);
+            this.f1928wallet = wallet2;
             this.password = str;
         }
 
         @Override // moxy.viewstate.ViewCommand
         public void apply(CreateWalletView createWalletView) {
-            createWalletView.createNewWalletWithPassword(this.f1844wallet, this.password);
+            createWalletView.createNewWallet(this.f1928wallet, this.password);
+        }
+    }
+
+    /* compiled from: CreateWalletView$$State.java */
+    /* renamed from: com.iMe.ui.wallet.crypto.create.CreateWalletView$$State$AddNewWalletCommand */
+    /* loaded from: classes3.dex */
+    public class AddNewWalletCommand extends ViewCommand<CreateWalletView> {
+        public final String password;
+
+        /* renamed from: wallet  reason: collision with root package name */
+        public final Wallet f1927wallet;
+
+        AddNewWalletCommand(CreateWalletView$$State createWalletView$$State, Wallet wallet2, String str) {
+            super("addNewWallet", OneExecutionStateStrategy.class);
+            this.f1927wallet = wallet2;
+            this.password = str;
+        }
+
+        @Override // moxy.viewstate.ViewCommand
+        public void apply(CreateWalletView createWalletView) {
+            createWalletView.addNewWallet(this.f1927wallet, this.password);
         }
     }
 
@@ -232,6 +320,25 @@ public class CreateWalletView$$State extends MvpViewState<CreateWalletView> impl
         @Override // moxy.viewstate.ViewCommand
         public void apply(CreateWalletView createWalletView) {
             createWalletView.onSuccessConfirmBackUp();
+        }
+    }
+
+    /* compiled from: CreateWalletView$$State.java */
+    /* renamed from: com.iMe.ui.wallet.crypto.create.CreateWalletView$$State$GenerateAndOpenPdfCommand */
+    /* loaded from: classes3.dex */
+    public class GenerateAndOpenPdfCommand extends ViewCommand<CreateWalletView> {
+        public final List<String> secretWords;
+        public final String walletAddress;
+
+        GenerateAndOpenPdfCommand(CreateWalletView$$State createWalletView$$State, String str, List<String> list) {
+            super("generateAndOpenPdf", OneExecutionStateStrategy.class);
+            this.walletAddress = str;
+            this.secretWords = list;
+        }
+
+        @Override // moxy.viewstate.ViewCommand
+        public void apply(CreateWalletView createWalletView) {
+            createWalletView.generateAndOpenPdf(this.walletAddress, this.secretWords);
         }
     }
 

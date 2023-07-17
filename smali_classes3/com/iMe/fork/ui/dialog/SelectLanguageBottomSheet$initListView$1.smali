@@ -24,7 +24,7 @@
 
     iput-object p1, p0, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet$initListView$1;->this$0:Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;
 
-    .line 116
+    .line 112
     invoke-direct {p0, p2}, Lorg/telegram/ui/Components/RecyclerListView;-><init>(Landroid/content/Context;)V
 
     return-void
@@ -35,7 +35,7 @@
 .method public requestLayout()V
     .locals 1
 
-    .line 118
+    .line 114
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet$initListView$1;->this$0:Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;
 
     invoke-static {v0}, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;->access$getIgnoreLayout$p(Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;)Z
@@ -46,7 +46,7 @@
 
     return-void
 
-    .line 121
+    .line 117
     :cond_0
     invoke-super {p0}, Lorg/telegram/ui/Components/RecyclerListView;->requestLayout()V
 

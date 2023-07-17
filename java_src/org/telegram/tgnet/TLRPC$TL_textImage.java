@@ -5,23 +5,23 @@ public class TLRPC$TL_textImage extends TLRPC$RichText {
     public long document_id;
 
     /* renamed from: h */
-    public int f1563h;
+    public int f1645h;
 
     /* renamed from: w */
-    public int f1564w;
+    public int f1646w;
 
     @Override // org.telegram.tgnet.TLObject
     public void readParams(AbstractSerializedData abstractSerializedData, boolean z) {
         this.document_id = abstractSerializedData.readInt64(z);
-        this.f1564w = abstractSerializedData.readInt32(z);
-        this.f1563h = abstractSerializedData.readInt32(z);
+        this.f1646w = abstractSerializedData.readInt32(z);
+        this.f1645h = abstractSerializedData.readInt32(z);
     }
 
     @Override // org.telegram.tgnet.TLObject
     public void serializeToStream(AbstractSerializedData abstractSerializedData) {
         abstractSerializedData.writeInt32(constructor);
         abstractSerializedData.writeInt64(this.document_id);
-        abstractSerializedData.writeInt32(this.f1564w);
-        abstractSerializedData.writeInt32(this.f1563h);
+        abstractSerializedData.writeInt32(this.f1646w);
+        abstractSerializedData.writeInt32(this.f1645h);
     }
 }

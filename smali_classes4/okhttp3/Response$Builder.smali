@@ -71,7 +71,7 @@
 .method public constructor <init>(Lokhttp3/Response;)V
     .locals 2
 
-    const-string v0, "response"
+    const-string/jumbo v0, "response"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -547,7 +547,7 @@
     :cond_3
     new-instance v1, Ljava/lang/IllegalStateException;
 
-    const-string v2, "request == null"
+    const-string/jumbo v2, "request == null"
 
     invoke-virtual {v2}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
@@ -740,7 +740,7 @@
 .method public request(Lokhttp3/Request;)Lokhttp3/Response$Builder;
     .locals 1
 
-    const-string v0, "request"
+    const-string/jumbo v0, "request"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 

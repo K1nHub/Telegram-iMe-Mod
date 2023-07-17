@@ -75,7 +75,7 @@
 
     const/4 v2, 0x0
 
-    const-string v3, "refid"
+    const-string/jumbo v3, "refid"
 
     invoke-direct {v0, v1, v2, v3}, Lcom/trustwallet/walletconnect/models/binance/WCBinanceCancelOrder$MessageKey;-><init>(Ljava/lang/String;ILjava/lang/String;)V
 
@@ -88,7 +88,7 @@
 
     const/4 v2, 0x1
 
-    const-string v3, "sender"
+    const-string/jumbo v3, "sender"
 
     invoke-direct {v0, v1, v2, v3}, Lcom/trustwallet/walletconnect/models/binance/WCBinanceCancelOrder$MessageKey;-><init>(Ljava/lang/String;ILjava/lang/String;)V
 

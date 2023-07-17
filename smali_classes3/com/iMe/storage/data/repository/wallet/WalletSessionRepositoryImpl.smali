@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nWalletSessionRepositoryImpl.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WalletSessionRepositoryImpl.kt\ncom/iMe/storage/data/repository/wallet/WalletSessionRepositoryImpl\n+ 2 RxExt.kt\ncom/iMe/storage/data/utils/extentions/RxExtKt\n+ 3 FirebaseExt.kt\ncom/iMe/storage/data/utils/extentions/FirebaseExtKt\n*L\n1#1,55:1\n18#2:56\n26#2:58\n26#2:60\n70#3:57\n70#3:59\n*S KotlinDebug\n*F\n+ 1 WalletSessionRepositoryImpl.kt\ncom/iMe/storage/data/repository/wallet/WalletSessionRepositoryImpl\n*L\n29#1:56\n42#1:58\n53#1:60\n37#1:57\n48#1:59\n*E\n"
+    value = "SMAP\nWalletSessionRepositoryImpl.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WalletSessionRepositoryImpl.kt\ncom/iMe/storage/data/repository/wallet/WalletSessionRepositoryImpl\n+ 2 RxExt.kt\ncom/iMe/storage/data/utils/extentions/RxExtKt\n+ 3 FirebaseExt.kt\ncom/iMe/storage/data/utils/extentions/FirebaseExtKt\n*L\n1#1,55:1\n18#2:56\n26#2:58\n26#2:60\n70#3:57\n70#3:59\n*S KotlinDebug\n*F\n+ 1 WalletSessionRepositoryImpl.kt\ncom/iMe/storage/data/repository/wallet/WalletSessionRepositoryImpl\n*L\n31#1:56\n44#1:58\n54#1:60\n39#1:57\n49#1:59\n*E\n"
 .end annotation
 
 
@@ -42,19 +42,19 @@
 
     invoke-static {p4, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 19
+    .line 20
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 20
+    .line 21
     iput-object p1, p0, Lcom/iMe/storage/data/repository/wallet/WalletSessionRepositoryImpl;->walletApi:Lcom/iMe/storage/data/network/api/own/WalletApi;
 
-    .line 21
+    .line 22
     iput-object p2, p0, Lcom/iMe/storage/data/repository/wallet/WalletSessionRepositoryImpl;->errorHandler:Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler;
 
-    .line 22
+    .line 23
     iput-object p3, p0, Lcom/iMe/storage/data/repository/wallet/WalletSessionRepositoryImpl;->authManager:Lcom/iMe/storage/domain/manager/auth/AuthManager;
 
-    .line 23
+    .line 24
     iput-object p4, p0, Lcom/iMe/storage/data/repository/wallet/WalletSessionRepositoryImpl;->firebaseErrorHandler:Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;
 
     return-void
@@ -63,7 +63,7 @@
 .method public static final synthetic access$getAuthManager$p(Lcom/iMe/storage/data/repository/wallet/WalletSessionRepositoryImpl;)Lcom/iMe/storage/domain/manager/auth/AuthManager;
     .locals 0
 
-    .line 19
+    .line 20
     iget-object p0, p0, Lcom/iMe/storage/data/repository/wallet/WalletSessionRepositoryImpl;->authManager:Lcom/iMe/storage/domain/manager/auth/AuthManager;
 
     return-object p0
@@ -74,7 +74,7 @@
 .method public getCurrentAccount()Lcom/iMe/storage/domain/model/wallet/User;
     .locals 1
 
-    .line 26
+    .line 28
     iget-object v0, p0, Lcom/iMe/storage/data/repository/wallet/WalletSessionRepositoryImpl;->authManager:Lcom/iMe/storage/domain/manager/auth/AuthManager;
 
     invoke-interface {v0}, Lcom/iMe/storage/domain/manager/auth/AuthManager;->getUser()Lcom/iMe/storage/domain/model/wallet/User;
@@ -95,7 +95,7 @@
         }
     .end annotation
 
-    .line 29
+    .line 31
     iget-object p1, p0, Lcom/iMe/storage/data/repository/wallet/WalletSessionRepositoryImpl;->authManager:Lcom/iMe/storage/domain/manager/auth/AuthManager;
 
     invoke-interface {p1}, Lcom/iMe/storage/domain/manager/auth/AuthManager;->getAccessToken()Ljava/lang/String;
@@ -137,10 +137,10 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 46
+    .line 47
     iget-object v0, p0, Lcom/iMe/storage/data/repository/wallet/WalletSessionRepositoryImpl;->walletApi:Lcom/iMe/storage/data/network/api/own/WalletApi;
 
-    .line 47
+    .line 48
     new-instance v1, Lcom/iMe/storage/data/network/model/request/wallet/SessionTokensRequest;
 
     const/4 v2, 0x0
@@ -153,7 +153,7 @@
 
     move-result-object p1
 
-    .line 48
+    .line 49
     iget-object v0, p0, Lcom/iMe/storage/data/repository/wallet/WalletSessionRepositoryImpl;->firebaseErrorHandler:Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;
 
     .line 70
@@ -173,7 +173,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 53
+    .line 54
     iget-object v0, p0, Lcom/iMe/storage/data/repository/wallet/WalletSessionRepositoryImpl;->errorHandler:Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler;
 
     .line 26
@@ -199,7 +199,7 @@
 .method public logout()Lio/reactivex/Completable;
     .locals 2
 
-    .line 31
+    .line 34
     iget-object v0, p0, Lcom/iMe/storage/data/repository/wallet/WalletSessionRepositoryImpl;->authManager:Lcom/iMe/storage/domain/manager/auth/AuthManager;
 
     new-instance v1, Lcom/iMe/storage/data/repository/wallet/WalletSessionRepositoryImpl$$ExternalSyntheticLambda0;
@@ -229,35 +229,34 @@
         }
     .end annotation
 
-    .line 34
-    iget-object v0, p0, Lcom/iMe/storage/data/repository/wallet/WalletSessionRepositoryImpl;->authManager:Lcom/iMe/storage/domain/manager/auth/AuthManager;
+    .line 37
+    iget-object v0, p0, Lcom/iMe/storage/data/repository/wallet/WalletSessionRepositoryImpl;->walletApi:Lcom/iMe/storage/data/network/api/own/WalletApi;
 
-    invoke-interface {v0}, Lcom/iMe/storage/domain/manager/auth/AuthManager;->getRefreshToken()Ljava/lang/String;
+    .line 38
+    new-instance v1, Lcom/iMe/storage/data/network/model/request/wallet/RefreshTokenRequest;
 
-    move-result-object v0
+    iget-object v2, p0, Lcom/iMe/storage/data/repository/wallet/WalletSessionRepositoryImpl;->authManager:Lcom/iMe/storage/domain/manager/auth/AuthManager;
 
-    if-nez v0, :cond_0
+    invoke-interface {v2}, Lcom/iMe/storage/domain/manager/auth/AuthManager;->getRefreshToken()Ljava/lang/String;
 
-    const-string v0, ""
+    move-result-object v2
 
-    .line 35
+    if-nez v2, :cond_0
+
+    const-string v2, ""
+
     :cond_0
-    iget-object v1, p0, Lcom/iMe/storage/data/repository/wallet/WalletSessionRepositoryImpl;->walletApi:Lcom/iMe/storage/data/network/api/own/WalletApi;
-
-    .line 36
-    new-instance v2, Lcom/iMe/storage/data/network/model/request/wallet/RefreshTokenRequest;
-
     const/4 v3, 0x2
 
     const/4 v4, 0x0
 
-    invoke-direct {v2, v0, v4, v3, v4}, Lcom/iMe/storage/data/network/model/request/wallet/RefreshTokenRequest;-><init>(Ljava/lang/String;Ljava/lang/String;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+    invoke-direct {v1, v2, v4, v3, v4}, Lcom/iMe/storage/data/network/model/request/wallet/RefreshTokenRequest;-><init>(Ljava/lang/String;Ljava/lang/String;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
 
-    invoke-interface {v1, v2}, Lcom/iMe/storage/data/network/api/own/WalletApi;->refreshToken(Lcom/iMe/storage/data/network/model/request/wallet/RefreshTokenRequest;)Lio/reactivex/Observable;
+    invoke-interface {v0, v1}, Lcom/iMe/storage/data/network/api/own/WalletApi;->refreshToken(Lcom/iMe/storage/data/network/model/request/wallet/RefreshTokenRequest;)Lio/reactivex/Observable;
 
     move-result-object v0
 
-    .line 37
+    .line 39
     iget-object v1, p0, Lcom/iMe/storage/data/repository/wallet/WalletSessionRepositoryImpl;->firebaseErrorHandler:Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;
 
     .line 70
@@ -277,7 +276,7 @@
 
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 42
+    .line 44
     iget-object v1, p0, Lcom/iMe/storage/data/repository/wallet/WalletSessionRepositoryImpl;->errorHandler:Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler;
 
     .line 26

@@ -3,7 +3,7 @@ package com.iMe.utils.extentions.model.filter;
 import com.iMe.storage.domain.model.filters.FilterFab;
 import kotlin.NoWhenBranchMatchedException;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3295R;
+import org.telegram.messenger.C3417R;
 /* compiled from: FilterFabExt.kt */
 /* loaded from: classes4.dex */
 public final class FilterFabExtKt {
@@ -51,6 +51,10 @@ public final class FilterFabExtKt {
                 iArr[FilterFab.CREATE_ALBUM.ordinal()] = 9;
             } catch (NoSuchFieldError unused9) {
             }
+            try {
+                iArr[FilterFab.CLEAR_DRAFTS.ordinal()] = 10;
+            } catch (NoSuchFieldError unused10) {
+            }
             $EnumSwitchMapping$0 = iArr;
         }
     }
@@ -59,23 +63,25 @@ public final class FilterFabExtKt {
         Intrinsics.checkNotNullParameter(filterFab, "<this>");
         switch (WhenMappings.$EnumSwitchMapping$0[filterFab.ordinal()]) {
             case 1:
-                return z ? C3295R.C3297drawable.fork_fab_create_chat : C3295R.C3297drawable.fork_mini_fab_create_chat;
+                return z ? C3417R.C3419drawable.fork_fab_create_chat : C3417R.C3419drawable.fork_mini_fab_create_chat;
             case 2:
-                return z ? C3295R.C3297drawable.fork_fab_archive : C3295R.C3297drawable.fork_mini_fab_archive;
+                return z ? C3417R.C3419drawable.fork_fab_archive : C3417R.C3419drawable.fork_mini_fab_archive;
             case 3:
-                return z ? C3295R.C3297drawable.fork_fab_cloud : C3295R.C3297drawable.fork_mini_fab_cloud;
+                return z ? C3417R.C3419drawable.fork_fab_cloud : C3417R.C3419drawable.fork_mini_fab_cloud;
             case 4:
-                return z ? C3295R.C3297drawable.fork_fab_mark_all_read : C3295R.C3297drawable.fork_mini_fab_mark_all_read;
+                return z ? C3417R.C3419drawable.fork_fab_mark_all_read : C3417R.C3419drawable.fork_mini_fab_mark_all_read;
             case 5:
-                return z ? C3295R.C3297drawable.fork_fab_wallet : C3295R.C3297drawable.fork_mini_fab_wallet;
+                return z ? C3417R.C3419drawable.fork_fab_wallet : C3417R.C3419drawable.fork_mini_fab_wallet;
             case 6:
-                return z ? C3295R.C3297drawable.fork_fab_contacts : C3295R.C3297drawable.fork_mini_fab_contacts;
+                return z ? C3417R.C3419drawable.fork_fab_contacts : C3417R.C3419drawable.fork_mini_fab_contacts;
             case 7:
-                return z ? C3295R.C3297drawable.fork_fab_music : C3295R.C3297drawable.fork_mini_fab_music;
+                return z ? C3417R.C3419drawable.fork_fab_music : C3417R.C3419drawable.fork_mini_fab_music;
             case 8:
-                return z ? C3295R.C3297drawable.fork_fab_albums : C3295R.C3297drawable.fork_mini_fab_albums;
+                return z ? C3417R.C3419drawable.fork_fab_albums : C3417R.C3419drawable.fork_mini_fab_albums;
             case 9:
-                return C3295R.C3297drawable.msg_add;
+                return C3417R.C3419drawable.msg_add;
+            case 10:
+                return C3417R.C3419drawable.msg_clear;
             default:
                 throw new NoWhenBranchMatchedException();
         }
@@ -85,23 +91,25 @@ public final class FilterFabExtKt {
         Intrinsics.checkNotNullParameter(filterFab, "<this>");
         switch (WhenMappings.$EnumSwitchMapping$0[filterFab.ordinal()]) {
             case 1:
-                return C3295R.string.folder_fab_settings_fab_create_chat;
+                return C3417R.string.folder_fab_settings_fab_create_chat;
             case 2:
-                return C3295R.string.folder_fab_settings_fab_archive;
+                return C3417R.string.folder_fab_settings_fab_archive;
             case 3:
-                return C3295R.string.folder_fab_settings_fab_cloud;
+                return C3417R.string.folder_fab_settings_fab_cloud;
             case 4:
-                return C3295R.string.folder_fab_settings_fab_mark_all_read;
+                return C3417R.string.folder_fab_settings_fab_mark_all_read;
             case 5:
-                return C3295R.string.folder_fab_settings_fab_wallet;
+                return C3417R.string.folder_fab_settings_fab_wallet;
             case 6:
-                return C3295R.string.folder_fab_settings_fab_contacts;
+                return C3417R.string.folder_fab_settings_fab_contacts;
             case 7:
-                return C3295R.string.cloud_filter_music;
+                return C3417R.string.cloud_filter_music;
             case 8:
-                return C3295R.string.music_albums_tab;
+                return C3417R.string.music_albums_tab;
             case 9:
-                return C3295R.string.cloud_albums_intro_button;
+                return C3417R.string.cloud_albums_intro_button;
+            case 10:
+                return C3417R.string.AreYouSureClearDraftsTitle;
             default:
                 throw new NoWhenBranchMatchedException();
         }

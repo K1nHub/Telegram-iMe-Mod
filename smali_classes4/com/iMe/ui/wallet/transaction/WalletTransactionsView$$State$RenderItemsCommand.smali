@@ -46,14 +46,14 @@
         }
     .end annotation
 
-    .line 299
+    .line 315
     const-class p1, Lmoxy/viewstate/strategy/AddToEndSingleStrategy;
 
-    const-string v0, "renderItems"
+    const-string/jumbo v0, "renderItems"
 
     invoke-direct {p0, v0, p1}, Lmoxy/viewstate/ViewCommand;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
-    .line 301
+    .line 317
     iput-object p2, p0, Lcom/iMe/ui/wallet/transaction/WalletTransactionsView$$State$RenderItemsCommand;->items:Ljava/util/List;
 
     return-void
@@ -64,7 +64,7 @@
 .method public apply(Lcom/iMe/ui/wallet/transaction/WalletTransactionsView;)V
     .locals 1
 
-    .line 306
+    .line 322
     iget-object v0, p0, Lcom/iMe/ui/wallet/transaction/WalletTransactionsView$$State$RenderItemsCommand;->items:Ljava/util/List;
 
     invoke-interface {p1, v0}, Lcom/iMe/ui/wallet/transaction/WalletTransactionsView;->renderItems(Ljava/util/List;)V
@@ -75,7 +75,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 295
+    .line 311
     check-cast p1, Lcom/iMe/ui/wallet/transaction/WalletTransactionsView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/wallet/transaction/WalletTransactionsView$$State$RenderItemsCommand;->apply(Lcom/iMe/ui/wallet/transaction/WalletTransactionsView;)V

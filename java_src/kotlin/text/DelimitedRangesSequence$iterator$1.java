@@ -6,11 +6,11 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.markers.KMappedMarker;
 import kotlin.ranges.IntRange;
 import kotlin.ranges.RangesKt___RangesKt;
-import p034j$.util.Iterator;
-import p034j$.util.function.Consumer;
+import p033j$.util.Iterator;
+import p033j$.util.function.Consumer;
 /* compiled from: Strings.kt */
 /* loaded from: classes4.dex */
-public final class DelimitedRangesSequence$iterator$1 implements Iterator<IntRange>, KMappedMarker, p034j$.util.Iterator {
+public final class DelimitedRangesSequence$iterator$1 implements Iterator<IntRange>, KMappedMarker, p033j$.util.Iterator {
     private int counter;
     private int currentStartIndex;
     private IntRange nextItem;
@@ -18,12 +18,12 @@ public final class DelimitedRangesSequence$iterator$1 implements Iterator<IntRan
     private int nextState = -1;
     final /* synthetic */ DelimitedRangesSequence this$0;
 
-    @Override // p034j$.util.Iterator
+    @Override // p033j$.util.Iterator
     public /* synthetic */ void forEachRemaining(Consumer consumer) {
         Iterator.CC.$default$forEachRemaining(this, consumer);
     }
 
-    @Override // java.util.Iterator, p034j$.util.Iterator
+    @Override // java.util.Iterator, p033j$.util.Iterator
     public void remove() {
         throw new UnsupportedOperationException("Operation is not supported for read-only collection");
     }
@@ -130,7 +130,7 @@ public final class DelimitedRangesSequence$iterator$1 implements Iterator<IntRan
         throw new UnsupportedOperationException("Method not decompiled: kotlin.text.DelimitedRangesSequence$iterator$1.calcNext():void");
     }
 
-    @Override // java.util.Iterator, p034j$.util.Iterator
+    @Override // java.util.Iterator, p033j$.util.Iterator
     public IntRange next() {
         if (this.nextState == -1) {
             calcNext();
@@ -145,7 +145,7 @@ public final class DelimitedRangesSequence$iterator$1 implements Iterator<IntRan
         return intRange;
     }
 
-    @Override // java.util.Iterator, p034j$.util.Iterator
+    @Override // java.util.Iterator, p033j$.util.Iterator
     public boolean hasNext() {
         if (this.nextState == -1) {
             calcNext();

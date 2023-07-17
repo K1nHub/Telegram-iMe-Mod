@@ -140,7 +140,7 @@
 
     move-result-object v0
 
-    const-string v1, "remote_addr"
+    const-string/jumbo v1, "remote_addr"
 
     invoke-virtual {p1, v1, v0}, Lio/grpc/internal/InsightBuilder;->appendKeyValue(Ljava/lang/String;Ljava/lang/Object;)Lio/grpc/internal/InsightBuilder;
 

@@ -2,9 +2,7 @@ package com.iMe.model.wallet.notification;
 
 import com.iMe.model.wallet.transaction.ClickableItem;
 import com.iMe.model.wallet.transaction.LinkedTextType;
-import com.iMe.storage.domain.model.crypto.NetworkType;
 import com.iMe.storage.domain.model.notification.Notification;
-import com.iMe.storage.domain.model.wallet.token.TokenCode;
 import com.iMe.storage.domain.utils.system.ResourceManager;
 import com.iMe.utils.extentions.model.wallet.NotificationExtKt;
 import kotlin.jvm.internal.Intrinsics;
@@ -110,19 +108,13 @@ public final class NotificationItem implements ClickableItem {
     @Override // com.iMe.model.wallet.transaction.ClickableItem
     public String getLinkedText() {
         Notification notification = this.notification;
-        return notification instanceof Notification.CryptoTransfer.C1981In ? ((Notification.CryptoTransfer.C1981In) notification).getFromAddress() : notification instanceof Notification.CryptoTransfer.Out ? ((Notification.CryptoTransfer.Out) notification).getToAddress() : notification instanceof Notification.Donation.C1982In ? ((Notification.Donation.C1982In) notification).getFromAddress() : notification instanceof Notification.Donation.Out ? ((Notification.Donation.Out) notification).getToAddress() : "";
+        return notification instanceof Notification.CryptoTransfer.C1986In ? ((Notification.CryptoTransfer.C1986In) notification).getFromAddress() : notification instanceof Notification.CryptoTransfer.Out ? ((Notification.CryptoTransfer.Out) notification).getToAddress() : notification instanceof Notification.Donation.C1987In ? ((Notification.Donation.C1987In) notification).getFromAddress() : notification instanceof Notification.Donation.Out ? ((Notification.Donation.Out) notification).getToAddress() : "";
     }
 
     @Override // com.iMe.model.wallet.transaction.ClickableItem
     public String getRecipientAddress() {
         Notification notification = this.notification;
-        return notification instanceof Notification.CryptoTransfer.C1981In ? ((Notification.CryptoTransfer.C1981In) notification).getFromAddress() : notification instanceof Notification.CryptoTransfer.Out ? ((Notification.CryptoTransfer.Out) notification).getToAddress() : notification instanceof Notification.Donation.C1982In ? ((Notification.Donation.C1982In) notification).getFromAddress() : notification instanceof Notification.Donation.Out ? ((Notification.Donation.Out) notification).getToAddress() : "";
-    }
-
-    @Override // com.iMe.model.wallet.transaction.ClickableItem
-    public TokenCode getTokenCode() {
-        Notification notification = this.notification;
-        return notification instanceof Notification.CryptoTransfer ? ((Notification.CryptoTransfer) notification).getTokenCode() : notification instanceof Notification.Donation ? ((Notification.Donation) notification).getTokenCode() : notification instanceof Notification.Simplex ? ((Notification.Simplex) notification).getTokenCode() : notification instanceof Notification.Approve ? ((Notification.Approve) notification).getTokenCode() : TokenCode.UNKNOWN;
+        return notification instanceof Notification.CryptoTransfer.C1986In ? ((Notification.CryptoTransfer.C1986In) notification).getFromAddress() : notification instanceof Notification.CryptoTransfer.Out ? ((Notification.CryptoTransfer.Out) notification).getToAddress() : notification instanceof Notification.Donation.C1987In ? ((Notification.Donation.C1987In) notification).getFromAddress() : notification instanceof Notification.Donation.Out ? ((Notification.Donation.Out) notification).getToAddress() : "";
     }
 
     @Override // com.iMe.model.wallet.transaction.ClickableItem
@@ -131,7 +123,7 @@ public final class NotificationItem implements ClickableItem {
     }
 
     @Override // com.iMe.model.wallet.transaction.ClickableItem
-    public NetworkType getNetworkType() {
-        return this.notification.getNetworkType();
+    public String getNetworkId() {
+        return this.notification.getNetworkId();
     }
 }

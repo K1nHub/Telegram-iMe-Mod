@@ -7,14 +7,14 @@ import com.iMe.utils.dialogs.DialogUtils;
 import java.util.List;
 import kotlin.collections.CollectionsKt__CollectionsKt;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3295R;
+import org.telegram.messenger.C3417R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.messenger.VideoEditedInfo;
-import org.telegram.p044ui.ActionBar.BaseFragment;
-import org.telegram.p044ui.Components.ChatActivityEnterView;
-import org.telegram.p044ui.PhotoViewer;
+import org.telegram.p043ui.ActionBar.BaseFragment;
+import org.telegram.p043ui.Components.ChatActivityEnterView;
+import org.telegram.p043ui.PhotoViewer;
 /* compiled from: MediaEditManager.kt */
 /* loaded from: classes3.dex */
 public final class MediaEditManager$openStickerEditor$1$1 extends PhotoViewer.EmptyPhotoViewerProvider {
@@ -23,12 +23,12 @@ public final class MediaEditManager$openStickerEditor$1$1 extends PhotoViewer.Em
     final /* synthetic */ MediaController.PhotoEntry $photoEntry;
     final /* synthetic */ MediaEditManager this$0;
 
-    @Override // org.telegram.p044ui.PhotoViewer.EmptyPhotoViewerProvider, org.telegram.p044ui.PhotoViewer.PhotoViewerProvider
+    @Override // org.telegram.p043ui.PhotoViewer.EmptyPhotoViewerProvider, org.telegram.p043ui.PhotoViewer.PhotoViewerProvider
     public boolean allowCaption() {
         return false;
     }
 
-    @Override // org.telegram.p044ui.PhotoViewer.EmptyPhotoViewerProvider, org.telegram.p044ui.PhotoViewer.PhotoViewerProvider
+    @Override // org.telegram.p043ui.PhotoViewer.EmptyPhotoViewerProvider, org.telegram.p043ui.PhotoViewer.PhotoViewerProvider
     public boolean canScrollAway() {
         return false;
     }
@@ -41,7 +41,7 @@ public final class MediaEditManager$openStickerEditor$1$1 extends PhotoViewer.Em
         this.$isVideo = z;
     }
 
-    @Override // org.telegram.p044ui.PhotoViewer.EmptyPhotoViewerProvider, org.telegram.p044ui.PhotoViewer.PhotoViewerProvider
+    @Override // org.telegram.p043ui.PhotoViewer.EmptyPhotoViewerProvider, org.telegram.p043ui.PhotoViewer.PhotoViewerProvider
     public void sendButtonPressed(int i, VideoEditedInfo videoEditedInfo, final boolean z, final int i2, boolean z2, final String str, boolean z3) {
         ChatActivityEnterView.ChatActivityEnterViewDelegate chatActivityEnterViewDelegate;
         BaseFragment baseFragment;
@@ -67,8 +67,8 @@ public final class MediaEditManager$openStickerEditor$1$1 extends PhotoViewer.Em
             baseFragment2 = this.this$0.parentFragment;
             Activity parentActivity = baseFragment2.getParentActivity();
             Intrinsics.checkNotNullExpressionValue(parentActivity, "parentFragment.parentActivity");
-            String internalString = LocaleController.getInternalString(C3295R.string.sticker_edit_send_as);
-            listOf = CollectionsKt__CollectionsKt.listOf((Object[]) new String[]{LocaleController.getString("AttachGif", C3295R.string.AttachGif), LocaleController.getString("AttachVideo", C3295R.string.AttachVideo)});
+            String internalString = LocaleController.getInternalString(C3417R.string.sticker_edit_send_as);
+            listOf = CollectionsKt__CollectionsKt.listOf((Object[]) new String[]{LocaleController.getString("AttachGif", C3417R.string.AttachGif), LocaleController.getString("AttachVideo", C3417R.string.AttachVideo)});
             ListDialogModel listDialogModel = new ListDialogModel(internalString, null, null, listOf, null, null);
             final MediaEditManager mediaEditManager = this.this$0;
             baseFragment.showDialog(DialogUtils.createDialogWithSelectableList(parentActivity, listDialogModel, new Callbacks$Callback1() { // from class: com.iMe.manager.common.MediaEditManager$openStickerEditor$1$1$$ExternalSyntheticLambda0

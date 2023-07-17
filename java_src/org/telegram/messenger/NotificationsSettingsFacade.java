@@ -1,7 +1,7 @@
 package org.telegram.messenger;
 
 import android.content.SharedPreferences;
-import org.telegram.p044ui.NotificationsSoundActivity;
+import org.telegram.p043ui.NotificationsSoundActivity;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC$Dialog;
 import org.telegram.tgnet.TLRPC$NotificationSound;
@@ -183,12 +183,12 @@ public class NotificationsSettingsFacade {
             editor.remove(str2);
         } else if (tLRPC$NotificationSound instanceof TLRPC$TL_notificationSoundRingtone) {
             TLRPC$TL_notificationSoundRingtone tLRPC$TL_notificationSoundRingtone = (TLRPC$TL_notificationSoundRingtone) tLRPC$NotificationSound;
-            editor.putLong(str2, tLRPC$TL_notificationSoundRingtone.f1547id);
+            editor.putLong(str2, tLRPC$TL_notificationSoundRingtone.f1629id);
             MediaDataController.getInstance(this.currentAccount).checkRingtones(true);
             if (z && i3 != 0) {
                 editor.putBoolean("custom_" + j, true);
             }
-            MediaDataController.getInstance(this.currentAccount).ringtoneDataStore.getDocument(tLRPC$TL_notificationSoundRingtone.f1547id);
+            MediaDataController.getInstance(this.currentAccount).ringtoneDataStore.getDocument(tLRPC$TL_notificationSoundRingtone.f1629id);
         }
     }
 

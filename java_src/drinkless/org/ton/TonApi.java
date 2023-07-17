@@ -183,7 +183,7 @@ public class TonApi {
 
     /* renamed from: drinkless.org.ton.TonApi$Ok */
     /* loaded from: classes4.dex */
-    public static class C2463Ok extends Object {
+    public static class C2584Ok extends Object {
         public static final int CONSTRUCTOR = -722616727;
 
         @Override // drinkless.org.ton.TonApi.Object
@@ -1114,7 +1114,7 @@ public class TonApi {
         public byte[] data;
 
         /* renamed from: id */
-        public long f428id;
+        public long f510id;
 
         @Override // drinkless.org.ton.TonApi.Object
         public int getConstructor() {
@@ -1125,7 +1125,7 @@ public class TonApi {
         }
 
         public UpdateSendLiteServerQuery(long id, byte[] data) {
-            this.f428id = id;
+            this.f510id = id;
             this.data = data;
         }
     }
@@ -1154,7 +1154,7 @@ public class TonApi {
         public byte[] account;
 
         /* renamed from: lt */
-        public long f395lt;
+        public long f477lt;
 
         @Override // drinkless.org.ton.TonApi.Object
         public int getConstructor() {
@@ -1166,7 +1166,7 @@ public class TonApi {
 
         public BlocksAccountTransactionId(byte[] account, long lt) {
             this.account = account;
-            this.f395lt = lt;
+            this.f477lt = lt;
         }
     }
 
@@ -1179,7 +1179,7 @@ public class TonApi {
         public byte[] stateProof;
 
         /* renamed from: to */
-        public TonBlockIdExt f396to;
+        public TonBlockIdExt f478to;
         public boolean toKeyBlock;
 
         @Override // drinkless.org.ton.TonApi.Object
@@ -1193,7 +1193,7 @@ public class TonApi {
         public BlocksBlockLinkBack(boolean toKeyBlock, TonBlockIdExt from, TonBlockIdExt to, byte[] destProof, byte[] proof, byte[] stateProof) {
             this.toKeyBlock = toKeyBlock;
             this.from = from;
-            this.f396to = to;
+            this.f478to = to;
             this.destProof = destProof;
             this.proof = proof;
             this.stateProof = stateProof;
@@ -1205,7 +1205,7 @@ public class TonApi {
         public static final int CONSTRUCTOR = -402531429;
 
         /* renamed from: id */
-        public TonBlockIdExt f397id;
+        public TonBlockIdExt f479id;
         public BlocksSignature[] signatures;
 
         @Override // drinkless.org.ton.TonApi.Object
@@ -1217,7 +1217,7 @@ public class TonApi {
         }
 
         public BlocksBlockSignatures(TonBlockIdExt id, BlocksSignature[] signatures) {
-            this.f397id = id;
+            this.f479id = id;
             this.signatures = signatures;
         }
     }
@@ -1235,7 +1235,7 @@ public class TonApi {
         public int globalId;
 
         /* renamed from: id */
-        public TonBlockIdExt f402id;
+        public TonBlockIdExt f484id;
         public boolean isKeyBlock;
         public int minRefMcSeqno;
         public TonBlockIdExt[] prevBlocks;
@@ -1256,7 +1256,7 @@ public class TonApi {
         }
 
         public BlocksHeader(TonBlockIdExt id, int globalId, int version, int flags, boolean afterMerge, boolean afterSplit, boolean beforeSplit, boolean wantMerge, boolean wantSplit, int validatorListHashShort, int catchainSeqno, int minRefMcSeqno, boolean isKeyBlock, int prevKeyBlockSeqno, long startLt, long endLt, long genUtime, int vertSeqno, TonBlockIdExt[] prevBlocks) {
-            this.f402id = id;
+            this.f484id = id;
             this.globalId = globalId;
             this.version = version;
             this.flags = flags;
@@ -1305,7 +1305,7 @@ public class TonApi {
         public static final int CONSTRUCTOR = -1495263895;
 
         /* renamed from: id */
-        public TonBlockIdExt f405id;
+        public TonBlockIdExt f487id;
         public byte[] proof;
 
         @Override // drinkless.org.ton.TonApi.Object
@@ -1317,7 +1317,7 @@ public class TonApi {
         }
 
         public BlocksShardBlockLink(TonBlockIdExt id, byte[] proof) {
-            this.f405id = id;
+            this.f487id = id;
             this.proof = proof;
         }
     }
@@ -1389,7 +1389,7 @@ public class TonApi {
         public static final int CONSTRUCTOR = -1922305900;
 
         /* renamed from: id */
-        public TonBlockIdExt f407id;
+        public TonBlockIdExt f489id;
         public boolean incomplete;
         public int reqCount;
         public BlocksShortTxId[] transactions;
@@ -1403,7 +1403,7 @@ public class TonApi {
         }
 
         public BlocksTransactions(TonBlockIdExt id, int reqCount, boolean incomplete, BlocksShortTxId[] transactions) {
-            this.f407id = id;
+            this.f489id = id;
             this.reqCount = reqCount;
             this.incomplete = incomplete;
             this.transactions = transactions;
@@ -1606,7 +1606,7 @@ public class TonApi {
         public byte[] hash;
 
         /* renamed from: lt */
-        public long f409lt;
+        public long f491lt;
 
         @Override // drinkless.org.ton.TonApi.Object
         public int getConstructor() {
@@ -1617,7 +1617,7 @@ public class TonApi {
         }
 
         public InternalTransactionId(long lt, byte[] hash) {
-            this.f409lt = lt;
+            this.f491lt = lt;
             this.hash = hash;
         }
     }
@@ -1651,7 +1651,7 @@ public class TonApi {
         public byte[] hash;
 
         /* renamed from: lt */
-        public long f406lt;
+        public long f488lt;
         public int mode;
 
         @Override // drinkless.org.ton.TonApi.Object
@@ -1665,7 +1665,7 @@ public class TonApi {
         public BlocksShortTxId(int mode, byte[] account, long lt, byte[] hash) {
             this.mode = mode;
             this.account = account;
-            this.f406lt = lt;
+            this.f488lt = lt;
             this.hash = hash;
         }
     }
@@ -1989,10 +1989,10 @@ public class TonApi {
         public static final int CONSTRUCTOR = -1188426504;
 
         /* renamed from: A */
-        public long f414A;
+        public long f496A;
 
         /* renamed from: B */
-        public long f415B;
+        public long f497B;
         public long expireAt;
         public long minA;
         public long minB;
@@ -2013,8 +2013,8 @@ public class TonApi {
             this.minA = minA;
             this.minB = minB;
             this.expireAt = expireAt;
-            this.f414A = A;
-            this.f415B = B;
+            this.f496A = A;
+            this.f497B = B;
         }
     }
 
@@ -2023,10 +2023,10 @@ public class TonApi {
         public static final int CONSTRUCTOR = 887226867;
 
         /* renamed from: A */
-        public long f412A;
+        public long f494A;
 
         /* renamed from: B */
-        public long f413B;
+        public long f495B;
         public long expireAt;
         public long minA;
         public long minB;
@@ -2047,8 +2047,8 @@ public class TonApi {
             this.minA = minA;
             this.minB = minB;
             this.expireAt = expireAt;
-            this.f412A = A;
-            this.f413B = B;
+            this.f494A = A;
+            this.f495B = B;
         }
     }
 
@@ -2057,10 +2057,10 @@ public class TonApi {
         public static final int CONSTRUCTOR = 664671303;
 
         /* renamed from: A */
-        public long f416A;
+        public long f498A;
 
         /* renamed from: B */
-        public long f417B;
+        public long f499B;
 
         @Override // drinkless.org.ton.TonApi.Object
         public int getConstructor() {
@@ -2071,8 +2071,8 @@ public class TonApi {
         }
 
         public PchanStatePayout(long A, long B) {
-            this.f416A = A;
-            this.f417B = B;
+            this.f498A = A;
+            this.f499B = B;
         }
     }
 
@@ -2103,7 +2103,7 @@ public class TonApi {
         public byte[] bodyHash;
 
         /* renamed from: id */
-        public long f421id;
+        public long f503id;
         public byte[] initState;
         public long validUntil;
 
@@ -2116,7 +2116,7 @@ public class TonApi {
         }
 
         public QueryInfo(long id, long validUntil, byte[] bodyHash, byte[] body, byte[] initState) {
-            this.f421id = id;
+            this.f503id = id;
             this.validUntil = validUntil;
             this.bodyHash = bodyHash;
             this.body = body;
@@ -2319,7 +2319,7 @@ public class TonApi {
         public static final int CONSTRUCTOR = 1134270012;
 
         /* renamed from: id */
-        public long f426id;
+        public long f508id;
 
         @Override // drinkless.org.ton.TonApi.Object
         public int getConstructor() {
@@ -2330,7 +2330,7 @@ public class TonApi {
         }
 
         public SmcInfo(long id) {
-            this.f426id = id;
+            this.f508id = id;
         }
     }
 
@@ -2661,7 +2661,7 @@ public class TonApi {
         public static final int CONSTRUCTOR = 1915102018;
 
         /* renamed from: id */
-        public TonBlockIdExt f398id;
+        public TonBlockIdExt f480id;
 
         @Override // drinkless.org.ton.TonApi.Object
         public int getConstructor() {
@@ -2672,7 +2672,7 @@ public class TonApi {
         }
 
         public BlocksGetBlockHeader(TonBlockIdExt id) {
-            this.f398id = id;
+            this.f480id = id;
         }
     }
 
@@ -2700,7 +2700,7 @@ public class TonApi {
         public TonBlockIdExt from;
 
         /* renamed from: id */
-        public TonBlockIdExt f399id;
+        public TonBlockIdExt f481id;
         public int mode;
 
         @Override // drinkless.org.ton.TonApi.Object
@@ -2712,7 +2712,7 @@ public class TonApi {
         }
 
         public BlocksGetShardBlockProof(TonBlockIdExt id, int mode, TonBlockIdExt from) {
-            this.f399id = id;
+            this.f481id = id;
             this.mode = mode;
             this.from = from;
         }
@@ -2723,7 +2723,7 @@ public class TonApi {
         public static final int CONSTRUCTOR = 2072773677;
 
         /* renamed from: id */
-        public TonBlockIdExt f400id;
+        public TonBlockIdExt f482id;
 
         @Override // drinkless.org.ton.TonApi.Object
         public int getConstructor() {
@@ -2734,7 +2734,7 @@ public class TonApi {
         }
 
         public BlocksGetShards(TonBlockIdExt id) {
-            this.f400id = id;
+            this.f482id = id;
         }
     }
 
@@ -2745,7 +2745,7 @@ public class TonApi {
         public int count;
 
         /* renamed from: id */
-        public TonBlockIdExt f401id;
+        public TonBlockIdExt f483id;
         public int mode;
 
         @Override // drinkless.org.ton.TonApi.Object
@@ -2757,7 +2757,7 @@ public class TonApi {
         }
 
         public BlocksGetTransactions(TonBlockIdExt id, int mode, int count, BlocksAccountTransactionId after) {
-            this.f401id = id;
+            this.f483id = id;
             this.mode = mode;
             this.count = count;
             this.after = after;
@@ -2769,10 +2769,10 @@ public class TonApi {
         public static final int CONSTRUCTOR = 1418484659;
 
         /* renamed from: id */
-        public TonBlockId f403id;
+        public TonBlockId f485id;
 
         /* renamed from: lt */
-        public long f404lt;
+        public long f486lt;
         public int mode;
         public int utime;
 
@@ -2786,8 +2786,8 @@ public class TonApi {
 
         public BlocksLookupBlock(int mode, TonBlockId id, long lt, int utime) {
             this.mode = mode;
-            this.f403id = id;
-            this.f404lt = lt;
+            this.f485id = id;
+            this.f486lt = lt;
             this.utime = utime;
         }
     }
@@ -3081,7 +3081,7 @@ public class TonApi {
         public static final int CONSTRUCTOR = 35124362;
 
         /* renamed from: id */
-        public TonBlockIdExt f408id;
+        public TonBlockIdExt f490id;
         public int mode;
         public int param;
 
@@ -3095,7 +3095,7 @@ public class TonApi {
 
         public GetConfigParam(int mode, TonBlockIdExt id, int param) {
             this.mode = mode;
-            this.f408id = id;
+            this.f490id = id;
             this.param = param;
         }
     }
@@ -3330,7 +3330,7 @@ public class TonApi {
         public Error error;
 
         /* renamed from: id */
-        public long f410id;
+        public long f492id;
 
         @Override // drinkless.org.ton.TonApi.Object
         public int getConstructor() {
@@ -3341,7 +3341,7 @@ public class TonApi {
         }
 
         public OnLiteServerQueryError(long id, Error error) {
-            this.f410id = id;
+            this.f492id = id;
             this.error = error;
         }
     }
@@ -3352,7 +3352,7 @@ public class TonApi {
         public byte[] bytes;
 
         /* renamed from: id */
-        public long f411id;
+        public long f493id;
 
         @Override // drinkless.org.ton.TonApi.Object
         public int getConstructor() {
@@ -3363,7 +3363,7 @@ public class TonApi {
         }
 
         public OnLiteServerQueryResult(long id, byte[] bytes) {
-            this.f411id = id;
+            this.f493id = id;
             this.bytes = bytes;
         }
     }
@@ -3503,7 +3503,7 @@ public class TonApi {
         public static final int CONSTRUCTOR = -957002175;
 
         /* renamed from: id */
-        public long f418id;
+        public long f500id;
         public boolean ignoreChksig;
 
         @Override // drinkless.org.ton.TonApi.Object
@@ -3515,7 +3515,7 @@ public class TonApi {
         }
 
         public QueryEstimateFees(long id, boolean ignoreChksig) {
-            this.f418id = id;
+            this.f500id = id;
             this.ignoreChksig = ignoreChksig;
         }
     }
@@ -3525,7 +3525,7 @@ public class TonApi {
         public static final int CONSTRUCTOR = -1211985313;
 
         /* renamed from: id */
-        public long f419id;
+        public long f501id;
 
         @Override // drinkless.org.ton.TonApi.Object
         public int getConstructor() {
@@ -3536,7 +3536,7 @@ public class TonApi {
         }
 
         public QueryForget(long id) {
-            this.f419id = id;
+            this.f501id = id;
         }
     }
 
@@ -3545,7 +3545,7 @@ public class TonApi {
         public static final int CONSTRUCTOR = -799333669;
 
         /* renamed from: id */
-        public long f420id;
+        public long f502id;
 
         @Override // drinkless.org.ton.TonApi.Object
         public int getConstructor() {
@@ -3556,7 +3556,7 @@ public class TonApi {
         }
 
         public QueryGetInfo(long id) {
-            this.f420id = id;
+            this.f502id = id;
         }
     }
 
@@ -3565,7 +3565,7 @@ public class TonApi {
         public static final int CONSTRUCTOR = 925242739;
 
         /* renamed from: id */
-        public long f422id;
+        public long f504id;
 
         @Override // drinkless.org.ton.TonApi.Object
         public int getConstructor() {
@@ -3576,7 +3576,7 @@ public class TonApi {
         }
 
         public QuerySend(long id) {
-            this.f422id = id;
+            this.f504id = id;
         }
     }
 
@@ -3807,7 +3807,7 @@ public class TonApi {
         public static final int CONSTRUCTOR = -2115626088;
 
         /* renamed from: id */
-        public long f423id;
+        public long f505id;
 
         @Override // drinkless.org.ton.TonApi.Object
         public int getConstructor() {
@@ -3818,7 +3818,7 @@ public class TonApi {
         }
 
         public SmcGetCode(long id) {
-            this.f423id = id;
+            this.f505id = id;
         }
     }
 
@@ -3827,7 +3827,7 @@ public class TonApi {
         public static final int CONSTRUCTOR = -427601079;
 
         /* renamed from: id */
-        public long f424id;
+        public long f506id;
 
         @Override // drinkless.org.ton.TonApi.Object
         public int getConstructor() {
@@ -3838,7 +3838,7 @@ public class TonApi {
         }
 
         public SmcGetData(long id) {
-            this.f424id = id;
+            this.f506id = id;
         }
     }
 
@@ -3865,7 +3865,7 @@ public class TonApi {
         public static final int CONSTRUCTOR = -214390293;
 
         /* renamed from: id */
-        public long f425id;
+        public long f507id;
 
         @Override // drinkless.org.ton.TonApi.Object
         public int getConstructor() {
@@ -3876,7 +3876,7 @@ public class TonApi {
         }
 
         public SmcGetState(long id) {
-            this.f425id = id;
+            this.f507id = id;
         }
     }
 
@@ -3903,7 +3903,7 @@ public class TonApi {
         public static final int CONSTRUCTOR = -255261270;
 
         /* renamed from: id */
-        public long f427id;
+        public long f509id;
         public SmcMethodId method;
         public TvmStackEntry[] stack;
 
@@ -3916,7 +3916,7 @@ public class TonApi {
         }
 
         public SmcRunGetMethod(long id, SmcMethodId method, TvmStackEntry[] stack) {
-            this.f427id = id;
+            this.f509id = id;
             this.method = method;
             this.stack = stack;
         }
@@ -3946,7 +3946,7 @@ public class TonApi {
         public Function function;
 
         /* renamed from: id */
-        public TonBlockIdExt f429id;
+        public TonBlockIdExt f511id;
 
         @Override // drinkless.org.ton.TonApi.Object
         public int getConstructor() {
@@ -3957,7 +3957,7 @@ public class TonApi {
         }
 
         public WithBlock(TonBlockIdExt id, Function function) {
-            this.f429id = id;
+            this.f511id = id;
             this.function = function;
         }
     }

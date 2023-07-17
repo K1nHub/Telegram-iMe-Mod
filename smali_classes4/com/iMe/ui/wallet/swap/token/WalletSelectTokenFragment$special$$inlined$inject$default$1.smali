@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment;-><init>(Lcom/iMe/model/wallet/select/SelectableType;Lcom/iMe/model/wallet/select/SelectableToken;Ljava/util/List;Lcom/iMe/storage/domain/model/crypto/NetworkType;ZLcom/iMe/fork/utils/Callbacks$Callback1;)V
+    value = Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment;-><init>(Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;Ljava/lang/String;Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment$ScreenType;ZLcom/iMe/fork/utils/Callbacks$Callback1;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;

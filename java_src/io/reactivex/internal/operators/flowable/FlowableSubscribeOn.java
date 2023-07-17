@@ -118,17 +118,17 @@ public final class FlowableSubscribeOn<T> extends AbstractFlowableWithUpstream<T
         public static final class Request implements Runnable {
 
             /* renamed from: n */
-            final long f448n;
+            final long f530n;
             final Subscription upstream;
 
             Request(Subscription subscription, long j) {
                 this.upstream = subscription;
-                this.f448n = j;
+                this.f530n = j;
             }
 
             @Override // java.lang.Runnable
             public void run() {
-                this.upstream.request(this.f448n);
+                this.upstream.request(this.f530n);
             }
         }
     }

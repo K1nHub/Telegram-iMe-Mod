@@ -4,10 +4,10 @@ package com.facebook.flipper.plugins.inspector;
 public final class DescriptorMapping {
     public static final DescriptorMapping INSTANCE = new DescriptorMapping();
 
-    public final DescriptorMapping withDefaults() {
-        return this;
+    private DescriptorMapping() {
     }
 
-    private DescriptorMapping() {
+    public static final DescriptorMapping withDefaults() {
+        return INSTANCE;
     }
 }

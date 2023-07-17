@@ -20,13 +20,13 @@
     value = {
         "Lkotlin/jvm/internal/Lambda;",
         "Lkotlin/jvm/functions/Function0<",
-        "Lcom/iMe/ui/wallet/home/old/WalletAttachAlertPresenter;",
+        "Lcom/iMe/ui/wallet/home/attach/WalletAttachAlertPresenter;",
         ">;"
     }
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nChatAttachAlertWalletLayout.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ChatAttachAlertWalletLayout.kt\ncom/iMe/fork/ui/view/ChatAttachAlertWalletLayout$presenter$2\n+ 2 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n*L\n1#1,537:1\n56#2,6:538\n*S KotlinDebug\n*F\n+ 1 ChatAttachAlertWalletLayout.kt\ncom/iMe/fork/ui/view/ChatAttachAlertWalletLayout$presenter$2\n*L\n70#1:538,6\n*E\n"
+    value = "SMAP\nChatAttachAlertWalletLayout.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ChatAttachAlertWalletLayout.kt\ncom/iMe/fork/ui/view/ChatAttachAlertWalletLayout$presenter$2\n+ 2 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n*L\n1#1,542:1\n56#2,6:543\n*S KotlinDebug\n*F\n+ 1 ChatAttachAlertWalletLayout.kt\ncom/iMe/fork/ui/view/ChatAttachAlertWalletLayout$presenter$2\n*L\n69#1:543,6\n*E\n"
 .end annotation
 
 
@@ -49,10 +49,10 @@
 
 
 # virtual methods
-.method public final invoke()Lcom/iMe/ui/wallet/home/old/WalletAttachAlertPresenter;
+.method public final invoke()Lcom/iMe/ui/wallet/home/attach/WalletAttachAlertPresenter;
     .locals 4
 
-    .line 70
+    .line 69
     iget-object v0, p0, Lcom/iMe/fork/ui/view/ChatAttachAlertWalletLayout$presenter$2;->this$0:Lcom/iMe/fork/ui/view/ChatAttachAlertWalletLayout;
 
     .line 58
@@ -73,12 +73,12 @@
 
     move-result-object v0
 
-    .line 70
+    .line 69
     invoke-interface {v0}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lcom/iMe/ui/wallet/home/old/WalletAttachAlertPresenter;
+    check-cast v0, Lcom/iMe/ui/wallet/home/attach/WalletAttachAlertPresenter;
 
     return-object v0
 .end method
@@ -86,8 +86,8 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 70
-    invoke-virtual {p0}, Lcom/iMe/fork/ui/view/ChatAttachAlertWalletLayout$presenter$2;->invoke()Lcom/iMe/ui/wallet/home/old/WalletAttachAlertPresenter;
+    .line 69
+    invoke-virtual {p0}, Lcom/iMe/fork/ui/view/ChatAttachAlertWalletLayout$presenter$2;->invoke()Lcom/iMe/ui/wallet/home/attach/WalletAttachAlertPresenter;
 
     move-result-object v0
 

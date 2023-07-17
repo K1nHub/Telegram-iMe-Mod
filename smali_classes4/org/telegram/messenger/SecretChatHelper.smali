@@ -5056,7 +5056,7 @@
 
     invoke-direct {p2}, Lorg/telegram/tgnet/TLRPC$TL_photoSizeEmpty;-><init>()V
 
-    const-string p3, "s"
+    const-string/jumbo p3, "s"
 
     .line 555
     iput-object p3, p2, Lorg/telegram/tgnet/TLRPC$PhotoSize;->type:Ljava/lang/String;
@@ -7215,7 +7215,7 @@
 
     const/16 v15, 0x64
 
-    const-string v12, "s"
+    const-string/jumbo v12, "s"
 
     if-eqz v8, :cond_11
 

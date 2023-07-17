@@ -15,7 +15,7 @@
 
 
 # instance fields
-.field private final feeTokenInfo:Lcom/iMe/storage/domain/model/wallet/token/TokenInfo;
+.field private final feeToken:Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
 
 .field private final model:Lcom/iMe/model/dialog/DialogModel;
 
@@ -36,14 +36,14 @@
 
 
 # direct methods
-.method public constructor <init>(Lcom/iMe/model/dialog/DialogModel;Lcom/iMe/storage/domain/model/crypto/TransactionParams;Lcom/iMe/storage/domain/model/wallet/token/TokenInfo;Lcom/iMe/model/wallet/crypto/send/fee/GasPriceItem;Lkotlin/jvm/functions/Function1;)V
+.method public constructor <init>(Lcom/iMe/model/dialog/DialogModel;Lcom/iMe/storage/domain/model/crypto/TransactionParams;Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;Lcom/iMe/model/wallet/crypto/send/fee/GasPriceItem;Lkotlin/jvm/functions/Function1;)V
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Lcom/iMe/model/dialog/DialogModel;",
             "Lcom/iMe/storage/domain/model/crypto/TransactionParams;",
-            "Lcom/iMe/storage/domain/model/wallet/token/TokenInfo;",
+            "Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;",
             "Lcom/iMe/model/wallet/crypto/send/fee/GasPriceItem;",
             "Lkotlin/jvm/functions/Function1<",
             "-",
@@ -61,7 +61,7 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "feeTokenInfo"
+    const-string v0, "feeToken"
 
     invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -85,7 +85,7 @@
     iput-object p2, p0, Lcom/iMe/ui/custom/FeeView$ChooseFeeType$Default;->transactionParams:Lcom/iMe/storage/domain/model/crypto/TransactionParams;
 
     .line 167
-    iput-object p3, p0, Lcom/iMe/ui/custom/FeeView$ChooseFeeType$Default;->feeTokenInfo:Lcom/iMe/storage/domain/model/wallet/token/TokenInfo;
+    iput-object p3, p0, Lcom/iMe/ui/custom/FeeView$ChooseFeeType$Default;->feeToken:Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
 
     .line 168
     iput-object p4, p0, Lcom/iMe/ui/custom/FeeView$ChooseFeeType$Default;->selectedFee:Lcom/iMe/model/wallet/crypto/send/fee/GasPriceItem;
@@ -98,11 +98,11 @@
 
 
 # virtual methods
-.method public final getFeeTokenInfo()Lcom/iMe/storage/domain/model/wallet/token/TokenInfo;
+.method public final getFeeToken()Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
     .locals 1
 
     .line 167
-    iget-object v0, p0, Lcom/iMe/ui/custom/FeeView$ChooseFeeType$Default;->feeTokenInfo:Lcom/iMe/storage/domain/model/wallet/token/TokenInfo;
+    iget-object v0, p0, Lcom/iMe/ui/custom/FeeView$ChooseFeeType$Default;->feeToken:Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
 
     return-object v0
 .end method

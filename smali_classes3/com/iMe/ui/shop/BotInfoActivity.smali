@@ -206,7 +206,7 @@
 .end method
 
 .method private final displayBotItem(Lcom/iMe/bots/domain/model/ShopItem;)V
-    .locals 10
+    .locals 9
 
     const/4 v0, 0x0
 
@@ -239,23 +239,15 @@
 
     move-result-object v4
 
-    invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
-
-    move-result-object v5
-
-    const-string v1, "parentActivity"
-
-    invoke-static {v5, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    const/4 v5, 0x0
 
     const/4 v6, 0x0
 
-    const/4 v7, 0x0
+    const/4 v7, 0x6
 
-    const/16 v8, 0xc
+    const/4 v8, 0x0
 
-    const/4 v9, 0x0
-
-    invoke-static/range {v3 .. v9}, Lcom/iMe/utils/extentions/common/ImageViewExtKt;->loadFrom$default(Landroid/widget/ImageView;Ljava/lang/String;Landroid/content/Context;Landroid/graphics/drawable/Drawable;ZILjava/lang/Object;)V
+    invoke-static/range {v3 .. v8}, Lcom/iMe/utils/extentions/common/ImageViewExtKt;->loadFrom$default(Landroid/widget/ImageView;Ljava/lang/String;Ljava/lang/Integer;ZILjava/lang/Object;)V
 
     .line 165
     :cond_1

@@ -33,7 +33,7 @@
 
     iget-object v1, p0, Lorg/telegram/ui/PasscodeActivity$$ExternalSyntheticLambda9;->f$1:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    invoke-static {v0, v1, p1}, Lorg/telegram/ui/PasscodeActivity;->$r8$lambda$LyTFMNU-s4XwRHNPHmjGawvVLRs(Lorg/telegram/ui/PasscodeActivity;Ljava/util/concurrent/atomic/AtomicBoolean;Landroid/view/View;)V
+    invoke-static {v0, v1, p1}, Lorg/telegram/ui/PasscodeActivity;->$r8$lambda$HnPsnbaDlFkzEL1fRwu71j_Fcdc(Lorg/telegram/ui/PasscodeActivity;Ljava/util/concurrent/atomic/AtomicBoolean;Landroid/view/View;)V
 
     return-void
 .end method

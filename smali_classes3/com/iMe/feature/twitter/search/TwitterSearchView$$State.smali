@@ -58,71 +58,10 @@
 .method public onLoadMoreComplete()V
     .locals 3
 
-    .line 198
+    .line 214
     new-instance v0, Lcom/iMe/feature/twitter/search/TwitterSearchView$$State$OnLoadMoreCompleteCommand;
 
     invoke-direct {v0, p0}, Lcom/iMe/feature/twitter/search/TwitterSearchView$$State$OnLoadMoreCompleteCommand;-><init>(Lcom/iMe/feature/twitter/search/TwitterSearchView$$State;)V
-
-    .line 199
-    iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
-
-    invoke-virtual {v1, v0}, Lmoxy/viewstate/ViewCommands;->beforeApply(Lmoxy/viewstate/ViewCommand;)V
-
-    .line 201
-    invoke-virtual {p0}, Lmoxy/viewstate/MvpViewState;->hasNotView()Ljava/lang/Boolean;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    return-void
-
-    .line 205
-    :cond_0
-    iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->views:Ljava/util/Set;
-
-    invoke-interface {v1}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
-
-    move-result-object v1
-
-    :goto_0
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_1
-
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Lcom/iMe/feature/twitter/search/TwitterSearchView;
-
-    .line 206
-    invoke-interface {v2}, Lcom/iMe/ui/base/mvp/LoadMoreView;->onLoadMoreComplete()V
-
-    goto :goto_0
-
-    .line 209
-    :cond_1
-    iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
-
-    invoke-virtual {v1, v0}, Lmoxy/viewstate/ViewCommands;->afterApply(Lmoxy/viewstate/ViewCommand;)V
-
-    return-void
-.end method
-
-.method public onLoadMoreError()V
-    .locals 3
-
-    .line 214
-    new-instance v0, Lcom/iMe/feature/twitter/search/TwitterSearchView$$State$OnLoadMoreErrorCommand;
-
-    invoke-direct {v0, p0}, Lcom/iMe/feature/twitter/search/TwitterSearchView$$State$OnLoadMoreErrorCommand;-><init>(Lcom/iMe/feature/twitter/search/TwitterSearchView$$State;)V
 
     .line 215
     iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
@@ -164,7 +103,7 @@
     check-cast v2, Lcom/iMe/feature/twitter/search/TwitterSearchView;
 
     .line 222
-    invoke-interface {v2}, Lcom/iMe/ui/base/mvp/LoadMoreView;->onLoadMoreError()V
+    invoke-interface {v2}, Lcom/iMe/ui/base/mvp/LoadMoreView;->onLoadMoreComplete()V
 
     goto :goto_0
 
@@ -177,20 +116,20 @@
     return-void
 .end method
 
-.method public onRecipientSelected(Ljava/lang/String;Ljava/lang/String;Z)V
+.method public onLoadMoreError()V
     .locals 3
 
-    .line 246
-    new-instance v0, Lcom/iMe/feature/twitter/search/TwitterSearchView$$State$OnRecipientSelectedCommand;
+    .line 230
+    new-instance v0, Lcom/iMe/feature/twitter/search/TwitterSearchView$$State$OnLoadMoreErrorCommand;
 
-    invoke-direct {v0, p0, p1, p2, p3}, Lcom/iMe/feature/twitter/search/TwitterSearchView$$State$OnRecipientSelectedCommand;-><init>(Lcom/iMe/feature/twitter/search/TwitterSearchView$$State;Ljava/lang/String;Ljava/lang/String;Z)V
+    invoke-direct {v0, p0}, Lcom/iMe/feature/twitter/search/TwitterSearchView$$State$OnLoadMoreErrorCommand;-><init>(Lcom/iMe/feature/twitter/search/TwitterSearchView$$State;)V
 
-    .line 247
+    .line 231
     iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
 
     invoke-virtual {v1, v0}, Lmoxy/viewstate/ViewCommands;->beforeApply(Lmoxy/viewstate/ViewCommand;)V
 
-    .line 249
+    .line 233
     invoke-virtual {p0}, Lmoxy/viewstate/MvpViewState;->hasNotView()Ljava/lang/Boolean;
 
     move-result-object v1
@@ -203,7 +142,7 @@
 
     return-void
 
-    .line 253
+    .line 237
     :cond_0
     iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->views:Ljava/util/Set;
 
@@ -224,12 +163,73 @@
 
     check-cast v2, Lcom/iMe/feature/twitter/search/TwitterSearchView;
 
-    .line 254
+    .line 238
+    invoke-interface {v2}, Lcom/iMe/ui/base/mvp/LoadMoreView;->onLoadMoreError()V
+
+    goto :goto_0
+
+    .line 241
+    :cond_1
+    iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
+
+    invoke-virtual {v1, v0}, Lmoxy/viewstate/ViewCommands;->afterApply(Lmoxy/viewstate/ViewCommand;)V
+
+    return-void
+.end method
+
+.method public onRecipientSelected(Ljava/lang/String;Ljava/lang/String;Z)V
+    .locals 3
+
+    .line 262
+    new-instance v0, Lcom/iMe/feature/twitter/search/TwitterSearchView$$State$OnRecipientSelectedCommand;
+
+    invoke-direct {v0, p0, p1, p2, p3}, Lcom/iMe/feature/twitter/search/TwitterSearchView$$State$OnRecipientSelectedCommand;-><init>(Lcom/iMe/feature/twitter/search/TwitterSearchView$$State;Ljava/lang/String;Ljava/lang/String;Z)V
+
+    .line 263
+    iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
+
+    invoke-virtual {v1, v0}, Lmoxy/viewstate/ViewCommands;->beforeApply(Lmoxy/viewstate/ViewCommand;)V
+
+    .line 265
+    invoke-virtual {p0}, Lmoxy/viewstate/MvpViewState;->hasNotView()Ljava/lang/Boolean;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    return-void
+
+    .line 269
+    :cond_0
+    iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->views:Ljava/util/Set;
+
+    invoke-interface {v1}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    :goto_0
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_1
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lcom/iMe/feature/twitter/search/TwitterSearchView;
+
+    .line 270
     invoke-interface {v2, p1, p2, p3}, Lcom/iMe/manager/crypto/recipient/CryptoRecipientView;->onRecipientSelected(Ljava/lang/String;Ljava/lang/String;Z)V
 
     goto :goto_0
 
-    .line 257
+    .line 273
     :cond_1
     iget-object p1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
 
@@ -302,17 +302,17 @@
 .method public openChatScreen(J)V
     .locals 3
 
-    .line 312
+    .line 328
     new-instance v0, Lcom/iMe/feature/twitter/search/TwitterSearchView$$State$OpenChatScreenCommand;
 
     invoke-direct {v0, p0, p1, p2}, Lcom/iMe/feature/twitter/search/TwitterSearchView$$State$OpenChatScreenCommand;-><init>(Lcom/iMe/feature/twitter/search/TwitterSearchView$$State;J)V
 
-    .line 313
+    .line 329
     iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
 
     invoke-virtual {v1, v0}, Lmoxy/viewstate/ViewCommands;->beforeApply(Lmoxy/viewstate/ViewCommand;)V
 
-    .line 315
+    .line 331
     invoke-virtual {p0}, Lmoxy/viewstate/MvpViewState;->hasNotView()Ljava/lang/Boolean;
 
     move-result-object v1
@@ -325,7 +325,7 @@
 
     return-void
 
-    .line 319
+    .line 335
     :cond_0
     iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->views:Ljava/util/Set;
 
@@ -346,16 +346,24 @@
 
     check-cast v2, Lcom/iMe/feature/twitter/search/TwitterSearchView;
 
-    .line 320
+    .line 336
     invoke-interface {v2, p1, p2}, Lcom/iMe/manager/crypto/recipient/CryptoRecipientView;->openChatScreen(J)V
 
     goto :goto_0
 
-    .line 323
+    .line 339
     :cond_1
     iget-object p1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
 
     invoke-virtual {p1, v0}, Lmoxy/viewstate/ViewCommands;->afterApply(Lmoxy/viewstate/ViewCommand;)V
+
+    return-void
+.end method
+
+.method public synthetic removeSelfFromStackImmediately()V
+    .locals 0
+
+    invoke-static {p0}, Lcom/iMe/ui/base/mvp/base/BaseView$-CC;->$default$removeSelfFromStackImmediately(Lcom/iMe/ui/base/mvp/base/BaseView;)V
 
     return-void
 .end method
@@ -440,17 +448,17 @@
 .method public showErrorDialog(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
     .locals 3
 
-    .line 279
+    .line 295
     new-instance v0, Lcom/iMe/feature/twitter/search/TwitterSearchView$$State$ShowErrorDialogCommand;
 
     invoke-direct {v0, p0, p1, p2, p3}, Lcom/iMe/feature/twitter/search/TwitterSearchView$$State$ShowErrorDialogCommand;-><init>(Lcom/iMe/feature/twitter/search/TwitterSearchView$$State;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 280
+    .line 296
     iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
 
     invoke-virtual {v1, v0}, Lmoxy/viewstate/ViewCommands;->beforeApply(Lmoxy/viewstate/ViewCommand;)V
 
-    .line 282
+    .line 298
     invoke-virtual {p0}, Lmoxy/viewstate/MvpViewState;->hasNotView()Ljava/lang/Boolean;
 
     move-result-object v1
@@ -463,7 +471,7 @@
 
     return-void
 
-    .line 286
+    .line 302
     :cond_0
     iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->views:Ljava/util/Set;
 
@@ -484,12 +492,12 @@
 
     check-cast v2, Lcom/iMe/feature/twitter/search/TwitterSearchView;
 
-    .line 287
+    .line 303
     invoke-interface {v2, p1, p2, p3}, Lcom/iMe/manager/crypto/recipient/CryptoRecipientView;->showErrorDialog(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
     goto :goto_0
 
-    .line 290
+    .line 306
     :cond_1
     iget-object p1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
 
@@ -695,17 +703,17 @@
 .method public showRequestPermissionDialog(Ljava/lang/String;Lcom/iMe/model/dialog/DialogModel;Lcom/iMe/fork/utils/Callbacks$Callback;)V
     .locals 3
 
-    .line 263
+    .line 279
     new-instance v0, Lcom/iMe/feature/twitter/search/TwitterSearchView$$State$ShowRequestPermissionDialogCommand;
 
     invoke-direct {v0, p0, p1, p2, p3}, Lcom/iMe/feature/twitter/search/TwitterSearchView$$State$ShowRequestPermissionDialogCommand;-><init>(Lcom/iMe/feature/twitter/search/TwitterSearchView$$State;Ljava/lang/String;Lcom/iMe/model/dialog/DialogModel;Lcom/iMe/fork/utils/Callbacks$Callback;)V
 
-    .line 264
+    .line 280
     iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
 
     invoke-virtual {v1, v0}, Lmoxy/viewstate/ViewCommands;->beforeApply(Lmoxy/viewstate/ViewCommand;)V
 
-    .line 266
+    .line 282
     invoke-virtual {p0}, Lmoxy/viewstate/MvpViewState;->hasNotView()Ljava/lang/Boolean;
 
     move-result-object v1
@@ -718,7 +726,7 @@
 
     return-void
 
-    .line 270
+    .line 286
     :cond_0
     iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->views:Ljava/util/Set;
 
@@ -739,12 +747,12 @@
 
     check-cast v2, Lcom/iMe/feature/twitter/search/TwitterSearchView;
 
-    .line 271
+    .line 287
     invoke-interface {v2, p1, p2, p3}, Lcom/iMe/manager/crypto/recipient/CryptoRecipientView;->showRequestPermissionDialog(Ljava/lang/String;Lcom/iMe/model/dialog/DialogModel;Lcom/iMe/fork/utils/Callbacks$Callback;)V
 
     goto :goto_0
 
-    .line 274
+    .line 290
     :cond_1
     iget-object p1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
 
@@ -756,17 +764,17 @@
 .method public showRequestPermissionSuccessDialog(Ljava/lang/String;Ljava/lang/String;Lcom/iMe/fork/utils/Callbacks$Callback;)V
     .locals 3
 
-    .line 296
+    .line 312
     new-instance v0, Lcom/iMe/feature/twitter/search/TwitterSearchView$$State$ShowRequestPermissionSuccessDialogCommand;
 
     invoke-direct {v0, p0, p1, p2, p3}, Lcom/iMe/feature/twitter/search/TwitterSearchView$$State$ShowRequestPermissionSuccessDialogCommand;-><init>(Lcom/iMe/feature/twitter/search/TwitterSearchView$$State;Ljava/lang/String;Ljava/lang/String;Lcom/iMe/fork/utils/Callbacks$Callback;)V
 
-    .line 297
+    .line 313
     iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
 
     invoke-virtual {v1, v0}, Lmoxy/viewstate/ViewCommands;->beforeApply(Lmoxy/viewstate/ViewCommand;)V
 
-    .line 299
+    .line 315
     invoke-virtual {p0}, Lmoxy/viewstate/MvpViewState;->hasNotView()Ljava/lang/Boolean;
 
     move-result-object v1
@@ -779,7 +787,7 @@
 
     return-void
 
-    .line 303
+    .line 319
     :cond_0
     iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->views:Ljava/util/Set;
 
@@ -800,12 +808,12 @@
 
     check-cast v2, Lcom/iMe/feature/twitter/search/TwitterSearchView;
 
-    .line 304
+    .line 320
     invoke-interface {v2, p1, p2, p3}, Lcom/iMe/manager/crypto/recipient/CryptoRecipientView;->showRequestPermissionSuccessDialog(Ljava/lang/String;Ljava/lang/String;Lcom/iMe/fork/utils/Callbacks$Callback;)V
 
     goto :goto_0
 
-    .line 307
+    .line 323
     :cond_1
     iget-object p1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
 

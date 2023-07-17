@@ -20,7 +20,7 @@
     value = {
         "Lkotlin/jvm/internal/Lambda;",
         "Lkotlin/jvm/functions/Function1<",
-        "Lcom/iMe/storage/domain/model/crypto/NetworkType;",
+        "Lcom/iMe/storage/domain/model/crypto/Network;",
         "Lkotlin/Unit;",
         ">;"
     }
@@ -49,29 +49,29 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 62
-    check-cast p1, Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    .line 59
+    check-cast p1, Lcom/iMe/storage/domain/model/crypto/Network;
 
-    invoke-virtual {p0, p1}, Lcom/iMe/ui/wallet/transaction/WalletTransactionsPresenter$startChooseNetworkDialog$1;->invoke(Lcom/iMe/storage/domain/model/crypto/NetworkType;)V
+    invoke-virtual {p0, p1}, Lcom/iMe/ui/wallet/transaction/WalletTransactionsPresenter$startChooseNetworkDialog$1;->invoke(Lcom/iMe/storage/domain/model/crypto/Network;)V
 
     sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     return-object p1
 .end method
 
-.method public final invoke(Lcom/iMe/storage/domain/model/crypto/NetworkType;)V
+.method public final invoke(Lcom/iMe/storage/domain/model/crypto/Network;)V
     .locals 7
 
-    const-string v0, "newNetworkType"
+    const-string v0, "newNetwork"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 66
+    .line 63
     iget-object v0, p0, Lcom/iMe/ui/wallet/transaction/WalletTransactionsPresenter$startChooseNetworkDialog$1;->this$0:Lcom/iMe/ui/wallet/transaction/WalletTransactionsPresenter;
 
-    invoke-static {v0, p1}, Lcom/iMe/ui/wallet/transaction/WalletTransactionsPresenter;->access$setSelectedNetworkType$p(Lcom/iMe/ui/wallet/transaction/WalletTransactionsPresenter;Lcom/iMe/storage/domain/model/crypto/NetworkType;)V
+    invoke-static {v0, p1}, Lcom/iMe/ui/wallet/transaction/WalletTransactionsPresenter;->access$setSelectedNetwork$p(Lcom/iMe/ui/wallet/transaction/WalletTransactionsPresenter;Lcom/iMe/storage/domain/model/crypto/Network;)V
 
-    .line 67
+    .line 64
     iget-object p1, p0, Lcom/iMe/ui/wallet/transaction/WalletTransactionsPresenter$startChooseNetworkDialog$1;->this$0:Lcom/iMe/ui/wallet/transaction/WalletTransactionsPresenter;
 
     invoke-virtual {p1}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
@@ -82,13 +82,13 @@
 
     iget-object v0, p0, Lcom/iMe/ui/wallet/transaction/WalletTransactionsPresenter$startChooseNetworkDialog$1;->this$0:Lcom/iMe/ui/wallet/transaction/WalletTransactionsPresenter;
 
-    invoke-static {v0}, Lcom/iMe/ui/wallet/transaction/WalletTransactionsPresenter;->access$getSelectedNetworkType$p(Lcom/iMe/ui/wallet/transaction/WalletTransactionsPresenter;)Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    invoke-static {v0}, Lcom/iMe/ui/wallet/transaction/WalletTransactionsPresenter;->access$getSelectedNetwork$p(Lcom/iMe/ui/wallet/transaction/WalletTransactionsPresenter;)Lcom/iMe/storage/domain/model/crypto/Network;
 
     move-result-object v0
 
-    invoke-interface {p1, v0}, Lcom/iMe/ui/base/mvp/SwitchNetworkView;->setupNetworkType(Lcom/iMe/storage/domain/model/crypto/NetworkType;)V
+    invoke-interface {p1, v0}, Lcom/iMe/ui/base/mvp/SwitchNetworkView;->setupNetwork(Lcom/iMe/storage/domain/model/crypto/Network;)V
 
-    .line 68
+    .line 65
     iget-object v1, p0, Lcom/iMe/ui/wallet/transaction/WalletTransactionsPresenter$startChooseNetworkDialog$1;->this$0:Lcom/iMe/ui/wallet/transaction/WalletTransactionsPresenter;
 
     const/4 v2, 0x1

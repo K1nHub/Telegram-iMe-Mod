@@ -6,7 +6,7 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Lambda;
-import org.telegram.p044ui.Cells.UserCell;
+import org.telegram.p043ui.Cells.UserCell;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: TwitterUserProvider.kt */
 /* renamed from: com.iMe.ui.adapter.provider.TwitterUserProvider$convert$1 */

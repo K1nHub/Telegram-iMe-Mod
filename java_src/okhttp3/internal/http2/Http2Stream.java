@@ -26,7 +26,7 @@ public final class Http2Stream {
     private final ArrayDeque<Headers> headersQueue;
 
     /* renamed from: id */
-    private final int f1235id;
+    private final int f1317id;
     private long readBytesAcknowledged;
     private long readBytesTotal;
     private final StreamTimeout readTimeout;
@@ -42,7 +42,7 @@ public final class Http2Stream {
 
     public Http2Stream(int i, Http2Connection connection, boolean z, boolean z2, Headers headers) {
         Intrinsics.checkNotNullParameter(connection, "connection");
-        this.f1235id = i;
+        this.f1317id = i;
         this.connection = connection;
         this.writeBytesMaximum = connection.getPeerSettings().getInitialWindowSize();
         ArrayDeque<Headers> arrayDeque = new ArrayDeque<>();
@@ -62,7 +62,7 @@ public final class Http2Stream {
     }
 
     public final int getId() {
-        return this.f1235id;
+        return this.f1317id;
     }
 
     public final Http2Connection getConnection() {
@@ -134,7 +134,7 @@ public final class Http2Stream {
     }
 
     public final boolean isLocallyInitiated() {
-        return this.connection.getClient$okhttp() == ((this.f1235id & 1) == 1);
+        return this.connection.getClient$okhttp() == ((this.f1317id & 1) == 1);
     }
 
     public final synchronized Headers takeHeaders() throws IOException {
@@ -167,8 +167,8 @@ public final class Http2Stream {
         return this.writeTimeout;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:11:0x0011 A[Catch: all -> 0x0023, TRY_LEAVE, TryCatch #0 {, blocks: (B:3:0x0001, B:5:0x0005, B:11:0x0011, B:15:0x0017, B:16:0x0022), top: B:20:0x0001 }] */
-    /* JADX WARN: Removed duplicated region for block: B:15:0x0017 A[Catch: all -> 0x0023, TRY_ENTER, TryCatch #0 {, blocks: (B:3:0x0001, B:5:0x0005, B:11:0x0011, B:15:0x0017, B:16:0x0022), top: B:20:0x0001 }] */
+    /* JADX WARN: Removed duplicated region for block: B:11:0x0011 A[Catch: all -> 0x0024, TRY_LEAVE, TryCatch #0 {, blocks: (B:3:0x0001, B:5:0x0005, B:11:0x0011, B:15:0x0017, B:16:0x0023), top: B:20:0x0001 }] */
+    /* JADX WARN: Removed duplicated region for block: B:15:0x0017 A[Catch: all -> 0x0024, TRY_ENTER, TryCatch #0 {, blocks: (B:3:0x0001, B:5:0x0005, B:11:0x0011, B:15:0x0017, B:16:0x0023), top: B:20:0x0001 }] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
@@ -177,9 +177,9 @@ public final class Http2Stream {
         /*
             r2 = this;
             monitor-enter(r2)
-            boolean r0 = r2.hasResponseHeaders     // Catch: java.lang.Throwable -> L23
+            boolean r0 = r2.hasResponseHeaders     // Catch: java.lang.Throwable -> L24
             if (r0 != 0) goto Le
-            boolean r0 = r2.isLocallyInitiated()     // Catch: java.lang.Throwable -> L23
+            boolean r0 = r2.isLocallyInitiated()     // Catch: java.lang.Throwable -> L24
             if (r0 == 0) goto Lc
             goto Le
         Lc:
@@ -189,17 +189,17 @@ public final class Http2Stream {
             r0 = 1
         Lf:
             if (r0 == 0) goto L17
-            kotlin.Unit r0 = kotlin.Unit.INSTANCE     // Catch: java.lang.Throwable -> L23
+            kotlin.Unit r0 = kotlin.Unit.INSTANCE     // Catch: java.lang.Throwable -> L24
             monitor-exit(r2)
             okhttp3.internal.http2.Http2Stream$FramingSink r0 = r2.sink
             return r0
         L17:
             java.lang.String r0 = "reply before requesting the sink"
-            java.lang.IllegalStateException r1 = new java.lang.IllegalStateException     // Catch: java.lang.Throwable -> L23
-            java.lang.String r0 = r0.toString()     // Catch: java.lang.Throwable -> L23
-            r1.<init>(r0)     // Catch: java.lang.Throwable -> L23
-            throw r1     // Catch: java.lang.Throwable -> L23
-        L23:
+            java.lang.IllegalStateException r1 = new java.lang.IllegalStateException     // Catch: java.lang.Throwable -> L24
+            java.lang.String r0 = r0.toString()     // Catch: java.lang.Throwable -> L24
+            r1.<init>(r0)     // Catch: java.lang.Throwable -> L24
+            throw r1     // Catch: java.lang.Throwable -> L24
+        L24:
             r0 = move-exception
             monitor-exit(r2)
             throw r0
@@ -210,14 +210,14 @@ public final class Http2Stream {
     public final void close(ErrorCode rstStatusCode, IOException iOException) throws IOException {
         Intrinsics.checkNotNullParameter(rstStatusCode, "rstStatusCode");
         if (closeInternal(rstStatusCode, iOException)) {
-            this.connection.writeSynReset$okhttp(this.f1235id, rstStatusCode);
+            this.connection.writeSynReset$okhttp(this.f1317id, rstStatusCode);
         }
     }
 
     public final void closeLater(ErrorCode errorCode) {
         Intrinsics.checkNotNullParameter(errorCode, "errorCode");
         if (closeInternal(errorCode, null)) {
-            this.connection.writeSynResetLater$okhttp(this.f1235id, errorCode);
+            this.connection.writeSynResetLater$okhttp(this.f1317id, errorCode);
         }
     }
 
@@ -545,7 +545,7 @@ public final class Http2Stream {
                 this.errorException = iOException;
                 notifyAll();
                 Unit unit = Unit.INSTANCE;
-                this.connection.removeStream$okhttp(this.f1235id);
+                this.connection.removeStream$okhttp(this.f1317id);
                 return true;
             }
         }
@@ -574,7 +574,7 @@ public final class Http2Stream {
             } else if (isOpen) {
                 return;
             } else {
-                this.connection.removeStream$okhttp(this.f1235id);
+                this.connection.removeStream$okhttp(this.f1317id);
                 return;
             }
         }
@@ -662,7 +662,7 @@ public final class Http2Stream {
             monitor-exit(r2)
             if (r3 != 0) goto L6c
             okhttp3.internal.http2.Http2Connection r3 = r2.connection
-            int r4 = r2.f1235id
+            int r4 = r2.f1317id
             r3.removeStream$okhttp(r4)
         L6c:
             return

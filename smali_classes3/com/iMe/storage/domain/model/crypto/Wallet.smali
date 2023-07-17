@@ -8,6 +8,7 @@
     value = {
         Lcom/iMe/storage/domain/model/crypto/Wallet$BTC;,
         Lcom/iMe/storage/domain/model/crypto/Wallet$EVM;,
+        Lcom/iMe/storage/domain/model/crypto/Wallet$MultiCoinWallet;,
         Lcom/iMe/storage/domain/model/crypto/Wallet$TON;,
         Lcom/iMe/storage/domain/model/crypto/Wallet$TRON;
     }
@@ -26,16 +27,16 @@
 .method private constructor <init>(Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/domain/model/crypto/BlockchainType;)V
     .locals 0
 
-    .line 12
+    .line 13
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 13
+    .line 14
     iput-object p1, p0, Lcom/iMe/storage/domain/model/crypto/Wallet;->guid:Ljava/lang/String;
 
-    .line 14
+    .line 15
     iput-object p2, p0, Lcom/iMe/storage/domain/model/crypto/Wallet;->mnemonic:Ljava/lang/String;
 
-    .line 15
+    .line 16
     iput-object p3, p0, Lcom/iMe/storage/domain/model/crypto/Wallet;->blockchainType:Lcom/iMe/storage/domain/model/crypto/BlockchainType;
 
     return-void
@@ -54,10 +55,10 @@
 .method public abstract getAddress()Ljava/lang/String;
 .end method
 
-.method public final getBlockchainType()Lcom/iMe/storage/domain/model/crypto/BlockchainType;
+.method public getBlockchainType()Lcom/iMe/storage/domain/model/crypto/BlockchainType;
     .locals 1
 
-    .line 15
+    .line 16
     iget-object v0, p0, Lcom/iMe/storage/domain/model/crypto/Wallet;->blockchainType:Lcom/iMe/storage/domain/model/crypto/BlockchainType;
 
     return-object v0
@@ -66,7 +67,7 @@
 .method public getGuid()Ljava/lang/String;
     .locals 1
 
-    .line 13
+    .line 14
     iget-object v0, p0, Lcom/iMe/storage/domain/model/crypto/Wallet;->guid:Ljava/lang/String;
 
     return-object v0
@@ -75,11 +76,14 @@
 .method public getMnemonic()Ljava/lang/String;
     .locals 1
 
-    .line 14
+    .line 15
     iget-object v0, p0, Lcom/iMe/storage/domain/model/crypto/Wallet;->mnemonic:Ljava/lang/String;
 
     return-object v0
 .end method
 
 .method public abstract getPrivateKeyBytes()[B
+.end method
+
+.method public abstract getPublicKey()Ljava/lang/String;
 .end method

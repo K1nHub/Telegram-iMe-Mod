@@ -1,7 +1,7 @@
 package com.google.android.exoplayer2.source.rtsp.reader;
 
 import android.util.Log;
-import com.google.android.exoplayer2.C0475C;
+import com.google.android.exoplayer2.C0480C;
 import com.google.android.exoplayer2.extractor.ExtractorOutput;
 import com.google.android.exoplayer2.extractor.TrackOutput;
 import com.google.android.exoplayer2.source.rtsp.RtpPacket;
@@ -14,7 +14,7 @@ public final class RtpPcmReader implements RtpPayloadReader {
     private static final String TAG = "RtpPcmReader";
     private final RtpPayloadFormat payloadFormat;
     private TrackOutput trackOutput;
-    private long firstReceivedTimestamp = C0475C.TIME_UNSET;
+    private long firstReceivedTimestamp = C0480C.TIME_UNSET;
     private long startTimeOffsetUs = 0;
     private int previousSequenceNumber = -1;
 

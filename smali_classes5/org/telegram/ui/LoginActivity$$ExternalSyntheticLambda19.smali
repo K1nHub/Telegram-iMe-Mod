@@ -8,26 +8,14 @@
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/ui/LoginActivity;
 
-.field public final synthetic f$1:I
-
-.field public final synthetic f$2:Z
-
-.field public final synthetic f$3:Z
-
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/LoginActivity;IZZ)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/LoginActivity;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/LoginActivity$$ExternalSyntheticLambda19;->f$0:Lorg/telegram/ui/LoginActivity;
-
-    iput p2, p0, Lorg/telegram/ui/LoginActivity$$ExternalSyntheticLambda19;->f$1:I
-
-    iput-boolean p3, p0, Lorg/telegram/ui/LoginActivity$$ExternalSyntheticLambda19;->f$2:Z
-
-    iput-boolean p4, p0, Lorg/telegram/ui/LoginActivity$$ExternalSyntheticLambda19;->f$3:Z
 
     return-void
 .end method
@@ -35,17 +23,11 @@
 
 # virtual methods
 .method public final run()V
-    .locals 4
+    .locals 1
 
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$$ExternalSyntheticLambda19;->f$0:Lorg/telegram/ui/LoginActivity;
 
-    iget v1, p0, Lorg/telegram/ui/LoginActivity$$ExternalSyntheticLambda19;->f$1:I
-
-    iget-boolean v2, p0, Lorg/telegram/ui/LoginActivity$$ExternalSyntheticLambda19;->f$2:Z
-
-    iget-boolean v3, p0, Lorg/telegram/ui/LoginActivity$$ExternalSyntheticLambda19;->f$3:Z
-
-    invoke-static {v0, v1, v2, v3}, Lorg/telegram/ui/LoginActivity;->$r8$lambda$ydUT3Vc1ETPX0b4lt0H3NbMD9dY(Lorg/telegram/ui/LoginActivity;IZZ)V
+    invoke-static {v0}, Lorg/telegram/ui/LoginActivity;->$r8$lambda$Z5kLAJUuGm3ecArG2zZU7KA7hT0(Lorg/telegram/ui/LoginActivity;)V
 
     return-void
 .end method

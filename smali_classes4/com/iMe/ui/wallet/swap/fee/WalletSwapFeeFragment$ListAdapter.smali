@@ -300,7 +300,7 @@
 .end method
 
 .method public onBindViewHolder(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;I)V
-    .locals 9
+    .locals 8
 
     const-string v0, "holder"
 
@@ -430,29 +430,27 @@
 
     move-result-object v6
 
-    sget-object v7, Lcom/iMe/storage/domain/model/wallet/token/TokenInfo;->Companion:Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Companion;
-
     invoke-static {v1}, Lcom/iMe/ui/wallet/swap/fee/WalletSwapFeeFragment;->access$getPresenter(Lcom/iMe/ui/wallet/swap/fee/WalletSwapFeeFragment;)Lcom/iMe/ui/wallet/swap/fee/WalletSwapFeePresenter;
 
-    move-result-object v8
+    move-result-object v7
 
-    invoke-virtual {v8}, Lcom/iMe/ui/wallet/swap/fee/WalletSwapFeePresenter;->getMetadata()Lcom/iMe/storage/domain/model/crypto/swap/CryptoSwapMetadata;
+    invoke-virtual {v7}, Lcom/iMe/ui/wallet/swap/fee/WalletSwapFeePresenter;->getMetadata()Lcom/iMe/storage/domain/model/crypto/swap/CryptoSwapMetadata;
 
-    move-result-object v8
+    move-result-object v7
 
-    invoke-virtual {v8}, Lcom/iMe/storage/domain/model/crypto/swap/CryptoSwapMetadata;->getFeeTokenCode()Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
+    invoke-virtual {v7}, Lcom/iMe/storage/domain/model/crypto/swap/CryptoSwapMetadata;->getFeeToken()Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
 
-    move-result-object v8
+    move-result-object v7
 
-    invoke-virtual {v7, v8}, Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Companion;->map(Lcom/iMe/storage/domain/model/wallet/token/TokenCode;)Lcom/iMe/storage/domain/model/wallet/token/TokenInfo;
+    invoke-virtual {v7}, Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;->getDecimals()I
 
-    move-result-object v8
+    move-result v7
 
-    invoke-virtual {v8}, Lcom/iMe/storage/domain/model/wallet/token/TokenInfo;->getDecimals()I
+    invoke-static {v7}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result v8
+    move-result-object v7
 
-    invoke-static {v6, v8}, Lcom/iMe/utils/formatter/BalanceFormatter;->formatBalance(Ljava/lang/Number;I)Ljava/lang/String;
+    invoke-static {v6, v7}, Lcom/iMe/utils/formatter/BalanceFormatter;->formatBalance(Ljava/lang/Number;Ljava/lang/Integer;)Ljava/lang/String;
 
     move-result-object v6
 
@@ -461,71 +459,67 @@
     const/4 v5, 0x2
 
     .line 190
-    invoke-static {v1}, Lcom/iMe/ui/wallet/swap/fee/WalletSwapFeeFragment;->access$getResourceManager(Lcom/iMe/ui/wallet/swap/fee/WalletSwapFeeFragment;)Lcom/iMe/storage/domain/utils/system/ResourceManager;
-
-    move-result-object v6
-
     invoke-static {v1}, Lcom/iMe/ui/wallet/swap/fee/WalletSwapFeeFragment;->access$getPresenter(Lcom/iMe/ui/wallet/swap/fee/WalletSwapFeeFragment;)Lcom/iMe/ui/wallet/swap/fee/WalletSwapFeePresenter;
 
-    move-result-object v8
+    move-result-object v1
 
-    invoke-virtual {v8}, Lcom/iMe/ui/wallet/swap/fee/WalletSwapFeePresenter;->getMetadata()Lcom/iMe/storage/domain/model/crypto/swap/CryptoSwapMetadata;
+    invoke-virtual {v1}, Lcom/iMe/ui/wallet/swap/fee/WalletSwapFeePresenter;->getMetadata()Lcom/iMe/storage/domain/model/crypto/swap/CryptoSwapMetadata;
 
-    move-result-object v8
+    move-result-object v1
 
-    invoke-virtual {v8}, Lcom/iMe/storage/domain/model/crypto/swap/CryptoSwapMetadata;->getFeeTokenCode()Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
+    invoke-virtual {v1}, Lcom/iMe/storage/domain/model/crypto/swap/CryptoSwapMetadata;->getFeeToken()Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
 
-    move-result-object v8
+    move-result-object v1
 
-    invoke-virtual {v7, v8}, Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Companion;->map(Lcom/iMe/storage/domain/model/wallet/token/TokenCode;)Lcom/iMe/storage/domain/model/wallet/token/TokenInfo;
+    invoke-virtual {v1}, Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;->getTicker()Ljava/lang/String;
 
-    move-result-object v7
+    move-result-object v1
 
-    invoke-virtual {v7}, Lcom/iMe/storage/domain/model/wallet/token/TokenInfo;->getShortName()I
+    aput-object v1, v4, v5
 
-    move-result v7
+    const/4 v1, 0x3
 
-    invoke-interface {v6, v7}, Lcom/iMe/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
+    .line 191
+    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/crypto/send/GasPriceInfo;->getFeeInFiat()Lcom/iMe/storage/domain/model/wallet/token/FiatValue;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/wallet/token/FiatValue;->getValue()D
+
+    move-result-wide v5
+
+    invoke-static {v5, v6}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
+
+    move-result-object p1
+
+    sget-object v5, Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;->Companion:Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed$Companion;
+
+    invoke-virtual {v5}, Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed$Companion;->getUSD()Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
 
     move-result-object v6
 
-    aput-object v6, v4, v5
+    invoke-virtual {v6}, Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;->getDecimals()I
 
-    const/4 v5, 0x3
+    move-result v6
 
-    .line 191
-    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/crypto/send/GasPriceInfo;->getFeeInDollars()F
+    invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result p1
+    move-result-object v6
 
-    invoke-static {p1}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
-
-    move-result-object p1
-
-    sget-object v6, Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Fiat$USD;->INSTANCE:Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Fiat$USD;
-
-    invoke-virtual {v6}, Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Fiat;->getDecimals()I
-
-    move-result v7
-
-    invoke-static {p1, v7}, Lcom/iMe/utils/formatter/BalanceFormatter;->formatBalance(Ljava/lang/Number;I)Ljava/lang/String;
+    invoke-static {p1, v6}, Lcom/iMe/utils/formatter/BalanceFormatter;->formatBalance(Ljava/lang/Number;Ljava/lang/Integer;)Ljava/lang/String;
 
     move-result-object p1
 
-    aput-object p1, v4, v5
+    aput-object p1, v4, v1
 
     const/4 p1, 0x4
 
     .line 192
-    invoke-static {v1}, Lcom/iMe/ui/wallet/swap/fee/WalletSwapFeeFragment;->access$getResourceManager(Lcom/iMe/ui/wallet/swap/fee/WalletSwapFeeFragment;)Lcom/iMe/storage/domain/utils/system/ResourceManager;
+    invoke-virtual {v5}, Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed$Companion;->getUSD()Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
 
     move-result-object v1
 
-    invoke-virtual {v6}, Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Fiat;->getShortName()I
-
-    move-result v5
-
-    invoke-interface {v1, v5}, Lcom/iMe/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
+    invoke-virtual {v1}, Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;->getTicker()Ljava/lang/String;
 
     move-result-object v1
 

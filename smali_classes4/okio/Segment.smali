@@ -245,7 +245,7 @@
 .method public final push(Lokio/Segment;)Lokio/Segment;
     .locals 1
 
-    const-string v0, "segment"
+    const-string/jumbo v0, "segment"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 

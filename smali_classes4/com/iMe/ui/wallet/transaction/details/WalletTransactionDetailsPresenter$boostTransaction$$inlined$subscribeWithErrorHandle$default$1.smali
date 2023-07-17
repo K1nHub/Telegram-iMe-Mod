@@ -60,7 +60,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 44
+    .line 47
     invoke-virtual {p0, p1}, Lcom/iMe/ui/wallet/transaction/details/WalletTransactionDetailsPresenter$boostTransaction$$inlined$subscribeWithErrorHandle$default$1;->invoke(Ljava/lang/Object;)V
 
     sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
@@ -82,7 +82,7 @@
 
     const-string v0, "it"
 
-    .line 45
+    .line 48
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     check-cast p1, Lcom/iMe/storage/domain/model/Result;

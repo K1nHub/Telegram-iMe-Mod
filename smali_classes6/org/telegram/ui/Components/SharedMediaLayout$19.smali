@@ -27,7 +27,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/SharedMediaLayout;Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;)V
     .locals 0
 
-    .line 2881
+    .line 2879
     iput-object p1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$19;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
     iput-object p2, p0, Lorg/telegram/ui/Components/SharedMediaLayout$19;->val$finalMediaPage:Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;
@@ -42,7 +42,7 @@
 .method public onAnimationUpdate(Landroid/animation/ValueAnimator;)V
     .locals 1
 
-    .line 2884
+    .line 2882
     iget-object v0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$19;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
@@ -57,7 +57,7 @@
 
     invoke-static {v0, p1}, Lorg/telegram/ui/Components/SharedMediaLayout;->access$4702(Lorg/telegram/ui/Components/SharedMediaLayout;F)F
 
-    .line 2885
+    .line 2883
     iget-object p1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$19;->val$finalMediaPage:Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;->access$100(Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;)Lorg/telegram/ui/Components/BlurredRecyclerView;

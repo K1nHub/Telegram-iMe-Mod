@@ -5,7 +5,7 @@ import moxy.viewstate.strategy.alias.AddToEndSingle;
 /* compiled from: CatalogView.kt */
 @AddToEndSingle
 /* renamed from: com.iMe.ui.catalog.tabs.CatalogView */
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public interface CatalogView extends BaseView {
     void onSetupNavigationRouter();
 

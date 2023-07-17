@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/iMe/storage/data/repository/wallet/WalletRepositoryImpl;->getWalletBalance(ZLcom/iMe/storage/domain/model/crypto/NetworkType;)Lio/reactivex/Observable;
+    value = Lcom/iMe/storage/data/repository/wallet/WalletRepositoryImpl;->getWalletBalance(ZLjava/lang/String;)Lio/reactivex/Observable;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;

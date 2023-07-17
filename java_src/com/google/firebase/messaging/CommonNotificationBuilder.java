@@ -33,7 +33,7 @@ public final class CommonNotificationBuilder {
     public static class DisplayNotificationInfo {
 
         /* renamed from: id */
-        public final int f199id = 0;
+        public final int f281id = 0;
         public final NotificationCompat.Builder notificationBuilder;
         public final String tag;
 

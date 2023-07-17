@@ -60,40 +60,28 @@ public final class TelegramPreferenceMigrationManager {
                     edit.apply();
                 } else {
                     switch (i) {
-                        case 5:
-                            if (preferences.contains(TelegramPreferenceKeys.Global.selectedDrawerItems())) {
-                                Set<DrawerSwitchableItem> set = SharedConfig.selectedDrawerItems;
-                                set.add(DrawerSwitchableItem.MANAGEMENT);
-                                SharedConfig.setSelectedDrawerItems(set);
-                                break;
-                            } else {
-                                continue;
-                            }
                         case 6:
                             if (preferences.contains(TelegramPreferenceKeys.Global.selectedDrawerItems())) {
                                 preferences.edit().remove("forwardingOptionsHintShown").apply();
-                                Set<DrawerSwitchableItem> set2 = SharedConfig.selectedDrawerItems;
-                                set2.add(DrawerSwitchableItem.MANAGEMENT);
-                                SharedConfig.setSelectedDrawerItems(set2);
                                 break;
                             } else {
                                 continue;
                             }
                         case 7:
                             if (preferences.contains(TelegramPreferenceKeys.Global.selectedDrawerItems())) {
-                                Set<DrawerSwitchableItem> set3 = SharedConfig.selectedDrawerItems;
-                                set3.add(DrawerSwitchableItem.CATALOG);
-                                SharedConfig.setSelectedDrawerItems(set3);
+                                Set<DrawerSwitchableItem> set = SharedConfig.selectedDrawerItems;
+                                set.add(DrawerSwitchableItem.CATALOG);
+                                SharedConfig.setSelectedDrawerItems(set);
                                 break;
                             } else {
                                 continue;
                             }
                         case 8:
                             if (preferences.contains(TelegramPreferenceKeys.Global.selectedPhotoViewerMenuItems())) {
-                                Set<PhotoViewerMenuItem> set4 = SharedConfig.selectedPhotoViewerMenuItems;
-                                set4.add(PhotoViewerMenuItem.COPY_IMAGE);
-                                set4.add(PhotoViewerMenuItem.CLEAR_CACHE);
-                                SharedConfig.setSelectedPhotoViewerMenuItems(set4);
+                                Set<PhotoViewerMenuItem> set2 = SharedConfig.selectedPhotoViewerMenuItems;
+                                set2.add(PhotoViewerMenuItem.COPY_IMAGE);
+                                set2.add(PhotoViewerMenuItem.CLEAR_CACHE);
+                                SharedConfig.setSelectedPhotoViewerMenuItems(set2);
                                 break;
                             } else {
                                 continue;
@@ -114,9 +102,9 @@ public final class TelegramPreferenceMigrationManager {
                     }
                 }
             } else if (preferences.contains(TelegramPreferenceKeys.Global.selectedDrawerItems())) {
-                Set<DrawerSwitchableItem> set5 = SharedConfig.selectedDrawerItems;
-                set5.add(DrawerSwitchableItem.ALBUMS);
-                SharedConfig.setSelectedDrawerItems(set5);
+                Set<DrawerSwitchableItem> set3 = SharedConfig.selectedDrawerItems;
+                set3.add(DrawerSwitchableItem.ALBUMS);
+                SharedConfig.setSelectedDrawerItems(set3);
             }
             preferences.edit().putInt("iMe_globalPreferencesVersion", i).apply();
         }
@@ -372,7 +360,7 @@ public final class TelegramPreferenceMigrationManager {
                 case 9:
                     if (preferences.contains(TelegramPreferenceKeys.User.isSortingChatsEnabled())) {
                         FiltersController companion5 = FiltersController.Companion.getInstance(i);
-                        sortedWith = CollectionsKt___CollectionsKt.sortedWith(companion5.getSortingTabs(), new Comparator() { // from class: com.iMe.common.TelegramPreferenceMigrationManager$migrateUserPreferences$lambda$34$$inlined$sortedBy$1
+                        sortedWith = CollectionsKt___CollectionsKt.sortedWith(companion5.getSortingTabs(), new Comparator() { // from class: com.iMe.common.TelegramPreferenceMigrationManager$migrateUserPreferences$lambda$32$$inlined$sortedBy$1
                             @Override // java.util.Comparator
                             public final int compare(T t, T t2) {
                                 int compareValues;
@@ -395,7 +383,7 @@ public final class TelegramPreferenceMigrationManager {
                         }
                         mutableList = CollectionsKt___CollectionsKt.toMutableList((Collection) arrayList3);
                         companion5.setSortingTabs(mutableList);
-                        sortedWith2 = CollectionsKt___CollectionsKt.sortedWith(companion5.getArchiveSortingTabs(), new Comparator() { // from class: com.iMe.common.TelegramPreferenceMigrationManager$migrateUserPreferences$lambda$34$$inlined$sortedBy$2
+                        sortedWith2 = CollectionsKt___CollectionsKt.sortedWith(companion5.getArchiveSortingTabs(), new Comparator() { // from class: com.iMe.common.TelegramPreferenceMigrationManager$migrateUserPreferences$lambda$32$$inlined$sortedBy$2
                             @Override // java.util.Comparator
                             public final int compare(T t, T t2) {
                                 int compareValues;

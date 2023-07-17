@@ -63,7 +63,7 @@ public final class WalletAppearanceSettingsPresenter extends BasePresenter<Walle
         InterfaceSettingItem[] interfaceSettingItemArr = new InterfaceSettingItem[2];
         interfaceSettingItemArr[0] = new InterfaceSettingItem.Banners(this.cryptoPreferenceHelper.isBannersVisible());
         interfaceSettingItemArr[1] = this.cryptoAccessManager.isCurrentBlockchainWalletCreated() ? new InterfaceSettingItem.Quotations(this.cryptoPreferenceHelper.isQuotationsVisible()) : null;
-        listOfNotNull = CollectionsKt__CollectionsKt.listOfNotNull(interfaceSettingItemArr);
+        listOfNotNull = CollectionsKt__CollectionsKt.listOfNotNull((Object[]) interfaceSettingItemArr);
         mutableList = CollectionsKt___CollectionsKt.toMutableList((Collection) listOfNotNull);
         ((WalletAppearanceSettingsView) getViewState()).setupSettingsItems(mutableList);
     }

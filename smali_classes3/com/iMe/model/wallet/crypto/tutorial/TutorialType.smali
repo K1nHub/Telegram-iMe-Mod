@@ -6,26 +6,44 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/iMe/model/wallet/crypto/tutorial/TutorialType$Backup;,
-        Lcom/iMe/model/wallet/crypto/tutorial/TutorialType$Intro;
+        Lcom/iMe/model/wallet/crypto/tutorial/TutorialType$WalletCreated;,
+        Lcom/iMe/model/wallet/crypto/tutorial/TutorialType$WalletIntro;
     }
 .end annotation
 
 
+# instance fields
+.field private final lastPageButtonTextResId:I
+
+
 # direct methods
-.method private constructor <init>()V
+.method private constructor <init>(I)V
     .locals 0
 
-    .line 5
+    .line 7
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 8
+    iput p1, p0, Lcom/iMe/model/wallet/crypto/tutorial/TutorialType;->lastPageButtonTextResId:I
 
     return-void
 .end method
 
-.method public synthetic constructor <init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
+.method public synthetic constructor <init>(ILkotlin/jvm/internal/DefaultConstructorMarker;)V
     .locals 0
 
-    invoke-direct {p0}, Lcom/iMe/model/wallet/crypto/tutorial/TutorialType;-><init>()V
+    invoke-direct {p0, p1}, Lcom/iMe/model/wallet/crypto/tutorial/TutorialType;-><init>(I)V
 
     return-void
+.end method
+
+
+# virtual methods
+.method public final getLastPageButtonTextResId()I
+    .locals 1
+
+    .line 8
+    iget v0, p0, Lcom/iMe/model/wallet/crypto/tutorial/TutorialType;->lastPageButtonTextResId:I
+
+    return v0
 .end method

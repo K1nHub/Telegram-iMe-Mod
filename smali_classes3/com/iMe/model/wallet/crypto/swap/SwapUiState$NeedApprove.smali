@@ -17,11 +17,11 @@
 # instance fields
 .field private final chooseFeeType:Lcom/iMe/ui/custom/FeeView$ChooseFeeType;
 
-.field private final token:Lcom/iMe/model/wallet/select/SelectableToken;
+.field private final token:Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
 
 
 # direct methods
-.method public constructor <init>(Lcom/iMe/ui/custom/FeeView$ChooseFeeType;Lcom/iMe/model/wallet/select/SelectableToken;)V
+.method public constructor <init>(Lcom/iMe/ui/custom/FeeView$ChooseFeeType;Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;)V
     .locals 1
 
     const-string v0, "chooseFeeType"
@@ -35,7 +35,7 @@
 
     iput-object p1, p0, Lcom/iMe/model/wallet/crypto/swap/SwapUiState$NeedApprove;->chooseFeeType:Lcom/iMe/ui/custom/FeeView$ChooseFeeType;
 
-    iput-object p2, p0, Lcom/iMe/model/wallet/crypto/swap/SwapUiState$NeedApprove;->token:Lcom/iMe/model/wallet/select/SelectableToken;
+    iput-object p2, p0, Lcom/iMe/model/wallet/crypto/swap/SwapUiState$NeedApprove;->token:Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
 
     return-void
 .end method
@@ -51,11 +51,11 @@
     return-object v0
 .end method
 
-.method public final getToken()Lcom/iMe/model/wallet/select/SelectableToken;
+.method public final getToken()Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
     .locals 1
 
     .line 10
-    iget-object v0, p0, Lcom/iMe/model/wallet/crypto/swap/SwapUiState$NeedApprove;->token:Lcom/iMe/model/wallet/select/SelectableToken;
+    iget-object v0, p0, Lcom/iMe/model/wallet/crypto/swap/SwapUiState$NeedApprove;->token:Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
 
     return-object v0
 .end method

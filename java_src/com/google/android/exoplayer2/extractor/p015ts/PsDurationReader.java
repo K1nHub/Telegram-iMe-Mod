@@ -1,6 +1,6 @@
 package com.google.android.exoplayer2.extractor.p015ts;
 
-import com.google.android.exoplayer2.C0475C;
+import com.google.android.exoplayer2.C0480C;
 import com.google.android.exoplayer2.audio.SilenceSkippingAudioProcessor;
 import com.google.android.exoplayer2.extractor.ExtractorInput;
 import com.google.android.exoplayer2.extractor.PositionHolder;
@@ -19,9 +19,9 @@ public final class PsDurationReader {
     private boolean isFirstScrValueRead;
     private boolean isLastScrValueRead;
     private final TimestampAdjuster scrTimestampAdjuster = new TimestampAdjuster(0);
-    private long firstScrValue = C0475C.TIME_UNSET;
-    private long lastScrValue = C0475C.TIME_UNSET;
-    private long durationUs = C0475C.TIME_UNSET;
+    private long firstScrValue = C0480C.TIME_UNSET;
+    private long lastScrValue = C0480C.TIME_UNSET;
+    private long durationUs = C0480C.TIME_UNSET;
     private final ParsableByteArray packetBuffer = new ParsableByteArray();
 
     public boolean isDurationReadFinished() {
@@ -36,21 +36,21 @@ public final class PsDurationReader {
         if (!this.isLastScrValueRead) {
             return readLastScrValue(extractorInput, positionHolder);
         }
-        if (this.lastScrValue == C0475C.TIME_UNSET) {
+        if (this.lastScrValue == C0480C.TIME_UNSET) {
             return finishReadDuration(extractorInput);
         }
         if (!this.isFirstScrValueRead) {
             return readFirstScrValue(extractorInput, positionHolder);
         }
         long j = this.firstScrValue;
-        if (j == C0475C.TIME_UNSET) {
+        if (j == C0480C.TIME_UNSET) {
             return finishReadDuration(extractorInput);
         }
         long adjustTsTimestamp = this.scrTimestampAdjuster.adjustTsTimestamp(this.lastScrValue) - this.scrTimestampAdjuster.adjustTsTimestamp(j);
         this.durationUs = adjustTsTimestamp;
         if (adjustTsTimestamp < 0) {
             Log.m796w(TAG, "Invalid duration: " + this.durationUs + ". Using TIME_UNSET instead.");
-            this.durationUs = C0475C.TIME_UNSET;
+            this.durationUs = C0480C.TIME_UNSET;
         }
         return finishReadDuration(extractorInput);
     }
@@ -62,12 +62,12 @@ public final class PsDurationReader {
     public static long readScrValueFromPack(ParsableByteArray parsableByteArray) {
         int position = parsableByteArray.getPosition();
         if (parsableByteArray.bytesLeft() < 9) {
-            return C0475C.TIME_UNSET;
+            return C0480C.TIME_UNSET;
         }
         byte[] bArr = new byte[9];
         parsableByteArray.readBytes(bArr, 0, 9);
         parsableByteArray.setPosition(position);
-        return !checkMarkerBits(bArr) ? C0475C.TIME_UNSET : readScrValueFromPackHeader(bArr);
+        return !checkMarkerBits(bArr) ? C0480C.TIME_UNSET : readScrValueFromPackHeader(bArr);
     }
 
     private int finishReadDuration(ExtractorInput extractorInput) {
@@ -98,12 +98,12 @@ public final class PsDurationReader {
             if (peekIntAtPosition(parsableByteArray.getData(), position) == 442) {
                 parsableByteArray.setPosition(position + 4);
                 long readScrValueFromPack = readScrValueFromPack(parsableByteArray);
-                if (readScrValueFromPack != C0475C.TIME_UNSET) {
+                if (readScrValueFromPack != C0480C.TIME_UNSET) {
                     return readScrValueFromPack;
                 }
             }
         }
-        return C0475C.TIME_UNSET;
+        return C0480C.TIME_UNSET;
     }
 
     private int readLastScrValue(ExtractorInput extractorInput, PositionHolder positionHolder) throws IOException {
@@ -128,12 +128,12 @@ public final class PsDurationReader {
             if (peekIntAtPosition(parsableByteArray.getData(), limit) == 442) {
                 parsableByteArray.setPosition(limit + 4);
                 long readScrValueFromPack = readScrValueFromPack(parsableByteArray);
-                if (readScrValueFromPack != C0475C.TIME_UNSET) {
+                if (readScrValueFromPack != C0480C.TIME_UNSET) {
                     return readScrValueFromPack;
                 }
             }
         }
-        return C0475C.TIME_UNSET;
+        return C0480C.TIME_UNSET;
     }
 
     private int peekIntAtPosition(byte[] bArr, int i) {

@@ -22,13 +22,13 @@
         "Lkotlin/jvm/functions/Function2<",
         "Lorg/koin/core/scope/Scope;",
         "Lorg/koin/core/parameter/ParametersHolder;",
-        "Lcom/iMe/ui/wallet/home/v2/WalletHomePresenter;",
+        "Lcom/iMe/ui/wallet/home/WalletHomePresenter;",
         ">;"
     }
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nPresenterModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$10\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,432:1\n129#2,5:433\n*S KotlinDebug\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$10\n*L\n155#1:433,5\n*E\n"
+    value = "SMAP\nPresenterModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$10\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,552:1\n129#2,5:553\n*S KotlinDebug\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$10\n*L\n165#1:553,5\n*E\n"
 .end annotation
 
 
@@ -61,7 +61,7 @@
 
 
 # virtual methods
-.method public final invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/iMe/ui/wallet/home/v2/WalletHomePresenter;
+.method public final invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/iMe/ui/wallet/home/WalletHomePresenter;
     .locals 2
 
     const-string v0, "$this$factory"
@@ -72,8 +72,8 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 155
-    new-instance p2, Lcom/iMe/ui/wallet/home/v2/WalletHomePresenter;
+    .line 165
+    new-instance p2, Lcom/iMe/ui/wallet/home/WalletHomePresenter;
 
     .line 133
     const-class v0, Lcom/iMe/storage/domain/utils/rx/RxEventBus;
@@ -90,8 +90,8 @@
 
     check-cast p1, Lcom/iMe/storage/domain/utils/rx/RxEventBus;
 
-    .line 155
-    invoke-direct {p2, p1}, Lcom/iMe/ui/wallet/home/v2/WalletHomePresenter;-><init>(Lcom/iMe/storage/domain/utils/rx/RxEventBus;)V
+    .line 165
+    invoke-direct {p2, p1}, Lcom/iMe/ui/wallet/home/WalletHomePresenter;-><init>(Lcom/iMe/storage/domain/utils/rx/RxEventBus;)V
 
     return-object p2
 .end method
@@ -99,12 +99,12 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 155
+    .line 165
     check-cast p1, Lorg/koin/core/scope/Scope;
 
     check-cast p2, Lorg/koin/core/parameter/ParametersHolder;
 
-    invoke-virtual {p0, p1, p2}, Lcom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$10;->invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/iMe/ui/wallet/home/v2/WalletHomePresenter;
+    invoke-virtual {p0, p1, p2}, Lcom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$10;->invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/iMe/ui/wallet/home/WalletHomePresenter;
 
     move-result-object p1
 

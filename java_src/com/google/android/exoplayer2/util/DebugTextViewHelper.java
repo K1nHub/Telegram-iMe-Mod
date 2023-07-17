@@ -74,7 +74,7 @@ public class DebugTextViewHelper {
         if (videoFormat == null || videoDecoderCounters == null) {
             return "";
         }
-        return "\n" + videoFormat.sampleMimeType + "(id:" + videoFormat.f100id + " r:" + videoFormat.width + "x" + videoFormat.height + getPixelAspectRatioString(videoFormat.pixelWidthHeightRatio) + getDecoderCountersBufferCountString(videoDecoderCounters) + " vfpo: " + getVideoFrameProcessingOffsetAverageString(videoDecoderCounters.totalVideoFrameProcessingOffsetUs, videoDecoderCounters.videoFrameProcessingOffsetCount) + ")";
+        return "\n" + videoFormat.sampleMimeType + "(id:" + videoFormat.f182id + " r:" + videoFormat.width + "x" + videoFormat.height + getPixelAspectRatioString(videoFormat.pixelWidthHeightRatio) + getDecoderCountersBufferCountString(videoDecoderCounters) + " vfpo: " + getVideoFrameProcessingOffsetAverageString(videoDecoderCounters.totalVideoFrameProcessingOffsetUs, videoDecoderCounters.videoFrameProcessingOffsetCount) + ")";
     }
 
     protected String getAudioString() {
@@ -83,7 +83,7 @@ public class DebugTextViewHelper {
         if (audioFormat == null || audioDecoderCounters == null) {
             return "";
         }
-        return "\n" + audioFormat.sampleMimeType + "(id:" + audioFormat.f100id + " hz:" + audioFormat.sampleRate + " ch:" + audioFormat.channelCount + getDecoderCountersBufferCountString(audioDecoderCounters) + ")";
+        return "\n" + audioFormat.sampleMimeType + "(id:" + audioFormat.f182id + " hz:" + audioFormat.sampleRate + " ch:" + audioFormat.channelCount + getDecoderCountersBufferCountString(audioDecoderCounters) + ")";
     }
 
     private static String getDecoderCountersBufferCountString(DecoderCounters decoderCounters) {

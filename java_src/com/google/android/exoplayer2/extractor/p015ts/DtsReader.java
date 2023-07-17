@@ -1,6 +1,6 @@
 package com.google.android.exoplayer2.extractor.p015ts;
 
-import com.google.android.exoplayer2.C0475C;
+import com.google.android.exoplayer2.C0480C;
 import com.google.android.exoplayer2.Format;
 import com.google.android.exoplayer2.audio.DtsUtil;
 import com.google.android.exoplayer2.extractor.ExtractorOutput;
@@ -25,7 +25,7 @@ public final class DtsReader implements ElementaryStreamReader {
     private int syncBytes;
     private final ParsableByteArray headerScratchBytes = new ParsableByteArray(new byte[18]);
     private int state = 0;
-    private long timeUs = C0475C.TIME_UNSET;
+    private long timeUs = C0480C.TIME_UNSET;
 
     @Override // com.google.android.exoplayer2.extractor.p015ts.ElementaryStreamReader
     public void packetFinished() {
@@ -40,7 +40,7 @@ public final class DtsReader implements ElementaryStreamReader {
         this.state = 0;
         this.bytesRead = 0;
         this.syncBytes = 0;
-        this.timeUs = C0475C.TIME_UNSET;
+        this.timeUs = C0480C.TIME_UNSET;
     }
 
     @Override // com.google.android.exoplayer2.extractor.p015ts.ElementaryStreamReader
@@ -52,7 +52,7 @@ public final class DtsReader implements ElementaryStreamReader {
 
     @Override // com.google.android.exoplayer2.extractor.p015ts.ElementaryStreamReader
     public void packetStarted(long j, int i) {
-        if (j != C0475C.TIME_UNSET) {
+        if (j != C0480C.TIME_UNSET) {
             this.timeUs = j;
         }
     }
@@ -72,7 +72,7 @@ public final class DtsReader implements ElementaryStreamReader {
                         int i3 = this.sampleSize;
                         if (i2 == i3) {
                             long j = this.timeUs;
-                            if (j != C0475C.TIME_UNSET) {
+                            if (j != C0480C.TIME_UNSET) {
                                 this.output.sampleMetadata(j, 1, i3, 0, null);
                                 this.timeUs += this.sampleDurationUs;
                             }

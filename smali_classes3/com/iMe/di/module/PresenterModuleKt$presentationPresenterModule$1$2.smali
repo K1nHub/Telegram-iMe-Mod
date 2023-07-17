@@ -22,13 +22,13 @@
         "Lkotlin/jvm/functions/Function2<",
         "Lorg/koin/core/scope/Scope;",
         "Lorg/koin/core/parameter/ParametersHolder;",
-        "Lcom/iMe/ui/wallet/home/old/WalletAttachAlertPresenter;",
+        "Lcom/iMe/ui/wallet/home/attach/WalletAttachAlertPresenter;",
         ">;"
     }
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nPresenterModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$2\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,432:1\n129#2,5:433\n129#2,5:438\n*S KotlinDebug\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$2\n*L\n118#1:433,5\n119#1:438,5\n*E\n"
+    value = "SMAP\nPresenterModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$2\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,552:1\n129#2,5:553\n129#2,5:558\n*S KotlinDebug\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$2\n*L\n123#1:553,5\n124#1:558,5\n*E\n"
 .end annotation
 
 
@@ -61,7 +61,7 @@
 
 
 # virtual methods
-.method public final invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/iMe/ui/wallet/home/old/WalletAttachAlertPresenter;
+.method public final invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/iMe/ui/wallet/home/attach/WalletAttachAlertPresenter;
     .locals 8
 
     const-string v0, "$this$factory"
@@ -85,7 +85,7 @@
 
     move-result-object p2
 
-    .line 118
+    .line 123
     move-object v6, p2
 
     check-cast v6, Lcom/iMe/storage/domain/utils/system/ResourceManager;
@@ -101,7 +101,7 @@
 
     move-result-object p2
 
-    .line 118
+    .line 123
     move-object v5, p2
 
     check-cast v5, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
@@ -117,7 +117,7 @@
 
     move-result-object p2
 
-    .line 118
+    .line 123
     move-object v3, p2
 
     check-cast v3, Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;
@@ -133,7 +133,7 @@
 
     move-result-object p2
 
-    .line 119
+    .line 124
     move-object v4, p2
 
     check-cast v4, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
@@ -149,7 +149,7 @@
 
     move-result-object p2
 
-    .line 119
+    .line 124
     move-object v2, p2
 
     check-cast v2, Lcom/iMe/storage/domain/interactor/wallet/WalletInteractor;
@@ -165,17 +165,17 @@
 
     move-result-object p1
 
-    .line 119
+    .line 124
     move-object v7, p1
 
     check-cast v7, Lcom/iMe/manager/crypto/recipient/CryptoRecipientManager;
 
-    .line 117
-    new-instance p1, Lcom/iMe/ui/wallet/home/old/WalletAttachAlertPresenter;
+    .line 122
+    new-instance p1, Lcom/iMe/ui/wallet/home/attach/WalletAttachAlertPresenter;
 
     move-object v1, p1
 
-    invoke-direct/range {v1 .. v7}, Lcom/iMe/ui/wallet/home/old/WalletAttachAlertPresenter;-><init>(Lcom/iMe/storage/domain/interactor/wallet/WalletInteractor;Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;Lcom/iMe/storage/domain/utils/system/ResourceManager;Lcom/iMe/manager/crypto/recipient/CryptoRecipientManager;)V
+    invoke-direct/range {v1 .. v7}, Lcom/iMe/ui/wallet/home/attach/WalletAttachAlertPresenter;-><init>(Lcom/iMe/storage/domain/interactor/wallet/WalletInteractor;Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;Lcom/iMe/storage/domain/utils/system/ResourceManager;Lcom/iMe/manager/crypto/recipient/CryptoRecipientManager;)V
 
     return-object p1
 .end method
@@ -183,12 +183,12 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 116
+    .line 121
     check-cast p1, Lorg/koin/core/scope/Scope;
 
     check-cast p2, Lorg/koin/core/parameter/ParametersHolder;
 
-    invoke-virtual {p0, p1, p2}, Lcom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$2;->invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/iMe/ui/wallet/home/old/WalletAttachAlertPresenter;
+    invoke-virtual {p0, p1, p2}, Lcom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$2;->invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/iMe/ui/wallet/home/attach/WalletAttachAlertPresenter;
 
     move-result-object p1
 

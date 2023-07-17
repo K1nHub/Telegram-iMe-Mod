@@ -6,11 +6,12 @@ import android.view.LayoutInflater;
 import android.widget.FrameLayout;
 import androidx.appcompat.widget.AppCompatImageView;
 import androidx.appcompat.widget.AppCompatTextView;
+import com.iMe.utils.extentions.common.ImageViewExtKt;
 import com.iMe.utils.extentions.common.ViewExtKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.databinding.ForkContentDetailsIconCellBinding;
-import org.telegram.p044ui.ActionBar.Theme;
+import org.telegram.p043ui.ActionBar.Theme;
 /* compiled from: DetailsIconCellView.kt */
 /* renamed from: com.iMe.ui.custom.DetailsIconCellView */
 /* loaded from: classes3.dex */
@@ -62,19 +63,34 @@ public final class DetailsIconCellView extends FrameLayout {
         divider.setVisibility(z ? 0 : 8);
     }
 
+    public final void setupViewData(String titleText, String valueText, String iconUrl, boolean z) {
+        Intrinsics.checkNotNullParameter(titleText, "titleText");
+        Intrinsics.checkNotNullParameter(valueText, "valueText");
+        Intrinsics.checkNotNullParameter(iconUrl, "iconUrl");
+        ForkContentDetailsIconCellBinding forkContentDetailsIconCellBinding = this.binding;
+        forkContentDetailsIconCellBinding.textTitle.setText(titleText);
+        forkContentDetailsIconCellBinding.textValue.setText(valueText);
+        AppCompatImageView imageIcon = forkContentDetailsIconCellBinding.imageIcon;
+        Intrinsics.checkNotNullExpressionValue(imageIcon, "imageIcon");
+        ImageViewExtKt.loadFrom$default(imageIcon, iconUrl, null, false, 2, null);
+        DividerView divider = forkContentDetailsIconCellBinding.divider;
+        Intrinsics.checkNotNullExpressionValue(divider, "divider");
+        divider.setVisibility(z ? 0 : 8);
+    }
+
     public final void setupColors() {
         ForkContentDetailsIconCellBinding forkContentDetailsIconCellBinding = this.binding;
         forkContentDetailsIconCellBinding.textTitle.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteGrayText));
-        AppCompatTextView setupColors$lambda$3$lambda$1 = forkContentDetailsIconCellBinding.textValue;
-        setupColors$lambda$3$lambda$1.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteBlackText));
-        Intrinsics.checkNotNullExpressionValue(setupColors$lambda$3$lambda$1, "setupColors$lambda$3$lambda$1");
-        ViewExtKt.withMediumTypeface(setupColors$lambda$3$lambda$1);
-        AppCompatImageView setupColors$lambda$3$lambda$2 = forkContentDetailsIconCellBinding.imageIcon;
+        AppCompatTextView setupColors$lambda$4$lambda$2 = forkContentDetailsIconCellBinding.textValue;
+        setupColors$lambda$4$lambda$2.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteBlackText));
+        Intrinsics.checkNotNullExpressionValue(setupColors$lambda$4$lambda$2, "setupColors$lambda$4$lambda$2");
+        ViewExtKt.withMediumTypeface(setupColors$lambda$4$lambda$2);
+        AppCompatImageView setupColors$lambda$4$lambda$3 = forkContentDetailsIconCellBinding.imageIcon;
         if (this.isIconTinted) {
-            Intrinsics.checkNotNullExpressionValue(setupColors$lambda$3$lambda$2, "setupColors$lambda$3$lambda$2");
-            ViewExtKt.setImageColor(setupColors$lambda$3$lambda$2, Theme.getColor(Theme.key_windowBackgroundWhiteGrayIcon));
+            Intrinsics.checkNotNullExpressionValue(setupColors$lambda$4$lambda$3, "setupColors$lambda$4$lambda$3");
+            ViewExtKt.setImageColor(setupColors$lambda$4$lambda$3, Theme.getColor(Theme.key_windowBackgroundWhiteGrayIcon));
         } else {
-            setupColors$lambda$3$lambda$2.clearColorFilter();
+            setupColors$lambda$4$lambda$3.clearColorFilter();
         }
         forkContentDetailsIconCellBinding.divider.setBackgroundColor(Theme.getColor(Theme.key_divider));
     }

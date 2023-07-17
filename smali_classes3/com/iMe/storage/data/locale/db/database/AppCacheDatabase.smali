@@ -27,5 +27,5 @@
 .method public abstract socialNetworkDao()Lcom/iMe/storage/data/locale/db/dao/minor/social/SocialNetworkDao;
 .end method
 
-.method public abstract walletTokenBalanceDao()Lcom/iMe/storage/data/locale/db/dao/minor/wallet/WalletTokenBalanceDao;
+.method public abstract walletTokenBalanceDao()Lcom/iMe/storage/data/locale/db/dao/minor/wallet/WalletTokensBalancesDao;
 .end method

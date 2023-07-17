@@ -159,7 +159,7 @@
     return-object p1
 
     :cond_3
-    const-string v1, "selectProtocol"
+    const-string/jumbo v1, "selectProtocol"
 
     .line 566
     invoke-virtual {p1, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -170,7 +170,7 @@
 
     if-nez v1, :cond_4
 
-    const-string v1, "select"
+    const-string/jumbo v1, "select"
 
     invoke-virtual {p1, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -261,7 +261,7 @@
 
     if-nez v0, :cond_8
 
-    const-string v0, "selected"
+    const-string/jumbo v0, "selected"
 
     invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 

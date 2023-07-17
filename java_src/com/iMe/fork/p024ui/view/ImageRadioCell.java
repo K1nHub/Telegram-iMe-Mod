@@ -10,16 +10,18 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.appcompat.widget.AppCompatImageView;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
+import com.iMe.utils.extentions.common.ImageViewExtKt;
 import com.iMe.utils.extentions.common.ViewExtKt;
 import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.C3417R;
 import org.telegram.messenger.LocaleController;
-import org.telegram.p044ui.ActionBar.Theme;
-import org.telegram.p044ui.Components.LayoutHelper;
-import org.telegram.p044ui.Components.RadioButton;
+import org.telegram.p043ui.ActionBar.Theme;
+import org.telegram.p043ui.Components.LayoutHelper;
+import org.telegram.p043ui.Components.RadioButton;
 /* compiled from: ImageRadioCell.kt */
 /* renamed from: com.iMe.fork.ui.view.ImageRadioCell */
 /* loaded from: classes3.dex */
@@ -80,6 +82,11 @@ public final class ImageRadioCell extends FrameLayout {
         AppCompatImageView imageView = getImageView();
         Intrinsics.checkNotNull(num);
         imageView.setImageResource(num.intValue());
+    }
+
+    public final void setImageUrl(String imageUrl) {
+        Intrinsics.checkNotNullParameter(imageUrl, "imageUrl");
+        ImageViewExtKt.loadFrom$default(getImageView(), imageUrl, Integer.valueOf(C3417R.C3419drawable.fork_bg_white_circle), false, 4, null);
     }
 
     public final void setTextColor(int i) {

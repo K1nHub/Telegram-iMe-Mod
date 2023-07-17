@@ -33,7 +33,7 @@
 
     iget-boolean v1, p0, Lcom/iMe/utils/extentions/rx/RxExtKt$$ExternalSyntheticLambda1;->f$1:Z
 
-    invoke-static {v0, v1}, Lcom/iMe/utils/extentions/rx/RxExtKt;->$r8$lambda$dQwMDLE2UfPptnz6SRCHj5XvvkE(Lcom/iMe/ui/base/mvp/base/BaseView;Z)V
+    invoke-static {v0, v1}, Lcom/iMe/utils/extentions/rx/RxExtKt;->$r8$lambda$J9ByJDMGMvgJe87kV6Srs2DzIK8(Lcom/iMe/ui/base/mvp/base/BaseView;Z)V
 
     return-void
 .end method

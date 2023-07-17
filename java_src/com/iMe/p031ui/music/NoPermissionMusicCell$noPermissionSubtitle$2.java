@@ -4,9 +4,9 @@ import android.app.Activity;
 import android.widget.TextView;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Lambda;
-import org.telegram.messenger.C3295R;
+import org.telegram.messenger.C3417R;
 import org.telegram.messenger.LocaleController;
-import org.telegram.p044ui.ActionBar.Theme;
+import org.telegram.p043ui.ActionBar.Theme;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: NoPermissionMusicCell.kt */
 /* renamed from: com.iMe.ui.music.NoPermissionMusicCell$noPermissionSubtitle$2 */
@@ -30,7 +30,7 @@ public final class NoPermissionMusicCell$noPermissionSubtitle$2 extends Lambda i
         TextView textView = new TextView(this.$context);
         NoPermissionMusicCell noPermissionMusicCell = this.this$0;
         textView.setGravity(17);
-        textView.setText(LocaleController.getInternalString(C3295R.string.music_device_no_permission_subtitle));
+        textView.setText(LocaleController.getInternalString(C3417R.string.music_device_no_permission_subtitle));
         i = noPermissionMusicCell.subtitleColor;
         textView.setTextColor(Theme.getColor(i));
         textView.setTextSize(1, 14.0f);

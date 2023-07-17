@@ -8,7 +8,7 @@ import com.iMe.storage.domain.model.catalog.CatalogLanguage;
 import com.iMe.storage.domain.storage.PreferenceHelper;
 import com.iMe.storage.domain.utils.p030rx.SchedulersProvider;
 import com.iMe.storage.domain.utils.system.ResourceManager;
-import com.iMe.utils.extentions.p033rx.RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
+import com.iMe.utils.extentions.p032rx.RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
 import io.reactivex.Observable;
 import io.reactivex.disposables.Disposable;
 import java.util.List;
@@ -17,7 +17,7 @@ import kotlin.LazyKt__LazyJVMKt;
 import kotlin.collections.CollectionsKt__CollectionsKt;
 import kotlin.jvm.internal.Intrinsics;
 import moxy.InjectViewState;
-import org.telegram.messenger.C3295R;
+import org.telegram.messenger.C3417R;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
@@ -26,7 +26,7 @@ import org.telegram.tgnet.TLRPC$Chat;
 /* compiled from: CatalogRootPresenter.kt */
 @InjectViewState
 /* renamed from: com.iMe.ui.catalog.CatalogRootPresenter */
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public final class CatalogRootPresenter extends BasePresenter<CatalogRootView> implements NotificationCenter.NotificationCenterDelegate {
     private final CatalogInteractor catalogInteractor;
     private List<? extends LocaleController.LocaleInfo> languages;
@@ -52,7 +52,7 @@ public final class CatalogRootPresenter extends BasePresenter<CatalogRootView> i
         this.telegramControllersGateway = telegramControllersGateway;
         lazy = LazyKt__LazyJVMKt.lazy(new CatalogRootPresenter$notificationCenter$2(this));
         this.notificationCenter$delegate = lazy;
-        this.selectedTabId = C3295R.C3298id.catalog_root_bottom_navigation_channels;
+        this.selectedTabId = C3417R.C3420id.catalog_root_bottom_navigation_channels;
         emptyList = CollectionsKt__CollectionsKt.emptyList();
         this.languages = emptyList;
     }
@@ -91,7 +91,7 @@ public final class CatalogRootPresenter extends BasePresenter<CatalogRootView> i
     /* JADX INFO: Access modifiers changed from: protected */
     @Override // moxy.MvpPresenter
     public void onFirstViewAttach() {
-        selectTab(C3295R.C3298id.catalog_root_bottom_navigation_channels);
+        selectTab(C3417R.C3420id.catalog_root_bottom_navigation_channels);
         getNotificationCenter().addObserver(this, NotificationCenter.needDeleteDialog);
     }
 
@@ -126,16 +126,16 @@ public final class CatalogRootPresenter extends BasePresenter<CatalogRootView> i
     private final void loadLanguages() {
         Observable<Result<List<CatalogLanguage>>> observeOn = this.catalogInteractor.getLanguages().observeOn(this.schedulersProvider.mo698ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "catalogInteractor\n      …(schedulersProvider.ui())");
-        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1999xc92b31a1(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2000xc92b31a2(null)));
-        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
+        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2003xc92b31a1(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2004xc92b31a2(null)));
+        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…Error.invoke()\n        })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public final LocaleController.LocaleInfo getAllLanguagesLocaleInfo() {
         LocaleController.LocaleInfo localeInfo = new LocaleController.LocaleInfo();
-        localeInfo.name = this.resourceManager.getString(C3295R.string.catalog_all);
-        localeInfo.nameEnglish = this.resourceManager.getString(C3295R.string.catalog_all_languages);
+        localeInfo.name = this.resourceManager.getString(C3417R.string.catalog_all);
+        localeInfo.nameEnglish = this.resourceManager.getString(C3417R.string.catalog_all_languages);
         localeInfo.serverIndex = -1;
         return localeInfo;
     }

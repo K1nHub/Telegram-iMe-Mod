@@ -14,7 +14,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nEnvironment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Environment.kt\ncom/iMe/storage/domain/model/common/Environment$Companion\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 3 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n+ 4 ArraysJVM.kt\nkotlin/collections/ArraysKt__ArraysJVMKt\n*L\n1#1,18:1\n1#2:19\n11335#3:20\n11670#3,3:21\n37#4,2:24\n*S KotlinDebug\n*F\n+ 1 Environment.kt\ncom/iMe/storage/domain/model/common/Environment$Companion\n*L\n16#1:20\n16#1:21,3\n16#1:24,2\n*E\n"
+    value = "SMAP\nEnvironment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Environment.kt\ncom/iMe/storage/domain/model/common/Environment$Companion\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 3 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n+ 4 ArraysJVM.kt\nkotlin/collections/ArraysKt__ArraysJVMKt\n*L\n1#1,17:1\n1#2:18\n11335#3:19\n11670#3,3:20\n37#4,2:23\n*S KotlinDebug\n*F\n+ 1 Environment.kt\ncom/iMe/storage/domain/model/common/Environment$Companion\n*L\n15#1:19\n15#1:20,3\n15#1:23,2\n*E\n"
 .end annotation
 
 
@@ -22,7 +22,7 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 11
+    .line 10
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -41,7 +41,7 @@
 .method public final getNames()[Ljava/lang/String;
     .locals 6
 
-    .line 16
+    .line 15
     invoke-static {}, Lcom/iMe/storage/domain/model/common/Environment;->values()[Lcom/iMe/storage/domain/model/common/Environment;
 
     move-result-object v0
@@ -65,7 +65,7 @@
 
     aget-object v5, v0, v4
 
-    .line 16
+    .line 15
     invoke-virtual {v5}, Ljava/lang/Enum;->name()Ljava/lang/String;
 
     move-result-object v5
@@ -97,7 +97,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 13
+    .line 12
     invoke-static {}, Lcom/iMe/storage/domain/model/common/Environment;->values()[Lcom/iMe/storage/domain/model/common/Environment;
 
     move-result-object v0

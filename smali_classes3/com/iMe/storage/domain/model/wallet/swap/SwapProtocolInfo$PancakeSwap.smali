@@ -34,24 +34,24 @@
 .method private constructor <init>()V
     .locals 8
 
-    .line 36
+    .line 37
     sget-object v1, Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocol;->PANCAKESWAP:Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocol;
 
-    .line 37
+    .line 38
     sget v2, Lcom/iMe/storage/R$drawable;->fork_ic_pancake_swap_92:I
 
-    .line 38
+    .line 39
     sget v3, Lcom/iMe/storage/R$string;->wallet_swap_protocols_pancake_swap_name:I
 
-    .line 39
+    .line 40
     sget v4, Lcom/iMe/storage/R$string;->wallet_swap_protocols_pancake_swap_description:I
 
-    .line 40
+    .line 41
     sget v5, Lcom/iMe/storage/R$string;->wallet_swap_protocols_pancake_swap_long_description:I
 
-    .line 41
-    sget-object v0, Lcom/iMe/storage/domain/model/crypto/NetworkType;->BINANCE_SMART_CHAIN:Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    const-string v0, "BINANCE_SMART_CHAIN"
 
+    .line 42
     invoke-static {v0}, Lkotlin/collections/CollectionsKt;->listOf(Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object v6
@@ -60,7 +60,7 @@
 
     move-object v0, p0
 
-    .line 35
+    .line 36
     invoke-direct/range {v0 .. v7}, Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocolInfo;-><init>(Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocol;IIIILjava/util/List;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
 
     return-void

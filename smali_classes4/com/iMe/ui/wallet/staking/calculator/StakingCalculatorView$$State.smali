@@ -33,7 +33,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 18
+    .line 19
     invoke-direct {p0}, Lmoxy/viewstate/MvpViewState;-><init>()V
 
     return-void
@@ -52,17 +52,17 @@
 .method public openDepositScreen(Lcom/iMe/model/staking/StakingDetailsItem;D)V
     .locals 3
 
-    .line 53
+    .line 54
     new-instance v0, Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorView$$State$OpenDepositScreenCommand;
 
     invoke-direct {v0, p0, p1, p2, p3}, Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorView$$State$OpenDepositScreenCommand;-><init>(Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorView$$State;Lcom/iMe/model/staking/StakingDetailsItem;D)V
 
-    .line 54
+    .line 55
     iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
 
     invoke-virtual {v1, v0}, Lmoxy/viewstate/ViewCommands;->beforeApply(Lmoxy/viewstate/ViewCommand;)V
 
-    .line 56
+    .line 57
     invoke-virtual {p0}, Lmoxy/viewstate/MvpViewState;->hasNotView()Ljava/lang/Boolean;
 
     move-result-object v1
@@ -75,7 +75,7 @@
 
     return-void
 
-    .line 60
+    .line 61
     :cond_0
     iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->views:Ljava/util/Set;
 
@@ -96,12 +96,12 @@
 
     check-cast v2, Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorView;
 
-    .line 61
+    .line 62
     invoke-interface {v2, p1, p2, p3}, Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorView;->openDepositScreen(Lcom/iMe/model/staking/StakingDetailsItem;D)V
 
     goto :goto_0
 
-    .line 64
+    .line 65
     :cond_1
     iget-object p1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
 
@@ -110,20 +110,28 @@
     return-void
 .end method
 
+.method public synthetic removeSelfFromStackImmediately()V
+    .locals 0
+
+    invoke-static {p0}, Lcom/iMe/ui/base/mvp/base/BaseView$-CC;->$default$removeSelfFromStackImmediately(Lcom/iMe/ui/base/mvp/base/BaseView;)V
+
+    return-void
+.end method
+
 .method public showBalance(Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;)V
     .locals 3
 
-    .line 21
+    .line 22
     new-instance v0, Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorView$$State$ShowBalanceCommand;
 
     invoke-direct {v0, p0, p1}, Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorView$$State$ShowBalanceCommand;-><init>(Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorView$$State;Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;)V
 
-    .line 22
+    .line 23
     iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
 
     invoke-virtual {v1, v0}, Lmoxy/viewstate/ViewCommands;->beforeApply(Lmoxy/viewstate/ViewCommand;)V
 
-    .line 24
+    .line 25
     invoke-virtual {p0}, Lmoxy/viewstate/MvpViewState;->hasNotView()Ljava/lang/Boolean;
 
     move-result-object v1
@@ -136,7 +144,7 @@
 
     return-void
 
-    .line 28
+    .line 29
     :cond_0
     iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->views:Ljava/util/Set;
 
@@ -157,12 +165,12 @@
 
     check-cast v2, Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorView;
 
-    .line 29
+    .line 30
     invoke-interface {v2, p1}, Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorView;->showBalance(Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;)V
 
     goto :goto_0
 
-    .line 32
+    .line 33
     :cond_1
     iget-object p1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
 
@@ -185,17 +193,17 @@
         }
     .end annotation
 
-    .line 117
+    .line 118
     new-instance v0, Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorView$$State$ShowErrorToastCommand;
 
     invoke-direct {v0, p0, p1, p2}, Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorView$$State$ShowErrorToastCommand;-><init>(Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorView$$State;Lcom/iMe/storage/domain/model/Result$Error;Lcom/iMe/storage/domain/utils/system/ResourceManager;)V
 
-    .line 118
+    .line 119
     iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
 
     invoke-virtual {v1, v0}, Lmoxy/viewstate/ViewCommands;->beforeApply(Lmoxy/viewstate/ViewCommand;)V
 
-    .line 120
+    .line 121
     invoke-virtual {p0}, Lmoxy/viewstate/MvpViewState;->hasNotView()Ljava/lang/Boolean;
 
     move-result-object v1
@@ -208,7 +216,7 @@
 
     return-void
 
-    .line 124
+    .line 125
     :cond_0
     iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->views:Ljava/util/Set;
 
@@ -229,12 +237,12 @@
 
     check-cast v2, Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorView;
 
-    .line 125
+    .line 126
     invoke-interface {v2, p1, p2}, Lcom/iMe/ui/base/mvp/base/BaseView;->showErrorToast(Lcom/iMe/storage/domain/model/Result$Error;Lcom/iMe/storage/domain/utils/system/ResourceManager;)V
 
     goto :goto_0
 
-    .line 128
+    .line 129
     :cond_1
     iget-object p1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
 
@@ -243,20 +251,20 @@
     return-void
 .end method
 
-.method public showLevelRequiredDialog(Lcom/iMe/storage/domain/model/crypto/level/AccountLevel;)V
+.method public showLevelRequiredDialog(Lcom/iMe/storage/domain/model/crypto/level/AccountLevel;Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;)V
     .locals 3
 
-    .line 69
+    .line 70
     new-instance v0, Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorView$$State$ShowLevelRequiredDialogCommand;
 
-    invoke-direct {v0, p0, p1}, Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorView$$State$ShowLevelRequiredDialogCommand;-><init>(Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorView$$State;Lcom/iMe/storage/domain/model/crypto/level/AccountLevel;)V
+    invoke-direct {v0, p0, p1, p2}, Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorView$$State$ShowLevelRequiredDialogCommand;-><init>(Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorView$$State;Lcom/iMe/storage/domain/model/crypto/level/AccountLevel;Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;)V
 
-    .line 70
+    .line 71
     iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
 
     invoke-virtual {v1, v0}, Lmoxy/viewstate/ViewCommands;->beforeApply(Lmoxy/viewstate/ViewCommand;)V
 
-    .line 72
+    .line 73
     invoke-virtual {p0}, Lmoxy/viewstate/MvpViewState;->hasNotView()Ljava/lang/Boolean;
 
     move-result-object v1
@@ -269,7 +277,7 @@
 
     return-void
 
-    .line 76
+    .line 77
     :cond_0
     iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->views:Ljava/util/Set;
 
@@ -290,12 +298,12 @@
 
     check-cast v2, Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorView;
 
-    .line 77
-    invoke-interface {v2, p1}, Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorView;->showLevelRequiredDialog(Lcom/iMe/storage/domain/model/crypto/level/AccountLevel;)V
+    .line 78
+    invoke-interface {v2, p1, p2}, Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorView;->showLevelRequiredDialog(Lcom/iMe/storage/domain/model/crypto/level/AccountLevel;Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;)V
 
     goto :goto_0
 
-    .line 80
+    .line 81
     :cond_1
     iget-object p1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
 
@@ -307,17 +315,17 @@
 .method public showLoadingDialog(ZZLio/reactivex/disposables/Disposable;)V
     .locals 3
 
-    .line 101
+    .line 102
     new-instance v0, Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorView$$State$ShowLoadingDialogCommand;
 
     invoke-direct {v0, p0, p1, p2, p3}, Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorView$$State$ShowLoadingDialogCommand;-><init>(Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorView$$State;ZZLio/reactivex/disposables/Disposable;)V
 
-    .line 102
+    .line 103
     iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
 
     invoke-virtual {v1, v0}, Lmoxy/viewstate/ViewCommands;->beforeApply(Lmoxy/viewstate/ViewCommand;)V
 
-    .line 104
+    .line 105
     invoke-virtual {p0}, Lmoxy/viewstate/MvpViewState;->hasNotView()Ljava/lang/Boolean;
 
     move-result-object v1
@@ -330,7 +338,7 @@
 
     return-void
 
-    .line 108
+    .line 109
     :cond_0
     iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->views:Ljava/util/Set;
 
@@ -351,12 +359,12 @@
 
     check-cast v2, Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorView;
 
-    .line 109
+    .line 110
     invoke-interface {v2, p1, p2, p3}, Lcom/iMe/ui/base/mvp/base/BaseView;->showLoadingDialog(ZZLio/reactivex/disposables/Disposable;)V
 
     goto :goto_0
 
-    .line 112
+    .line 113
     :cond_1
     iget-object p1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
 
@@ -368,17 +376,17 @@
 .method public showToast(Ljava/lang/String;)V
     .locals 3
 
-    .line 85
+    .line 86
     new-instance v0, Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorView$$State$ShowToastCommand;
 
     invoke-direct {v0, p0, p1}, Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorView$$State$ShowToastCommand;-><init>(Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorView$$State;Ljava/lang/String;)V
 
-    .line 86
+    .line 87
     iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
 
     invoke-virtual {v1, v0}, Lmoxy/viewstate/ViewCommands;->beforeApply(Lmoxy/viewstate/ViewCommand;)V
 
-    .line 88
+    .line 89
     invoke-virtual {p0}, Lmoxy/viewstate/MvpViewState;->hasNotView()Ljava/lang/Boolean;
 
     move-result-object v1
@@ -391,7 +399,7 @@
 
     return-void
 
-    .line 92
+    .line 93
     :cond_0
     iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->views:Ljava/util/Set;
 
@@ -412,12 +420,12 @@
 
     check-cast v2, Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorView;
 
-    .line 93
+    .line 94
     invoke-interface {v2, p1}, Lcom/iMe/ui/base/mvp/base/BaseView;->showToast(Ljava/lang/String;)V
 
     goto :goto_0
 
-    .line 96
+    .line 97
     :cond_1
     iget-object p1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
 
@@ -429,17 +437,17 @@
 .method public updateStakingCalculatorViews()V
     .locals 3
 
-    .line 37
+    .line 38
     new-instance v0, Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorView$$State$UpdateStakingCalculatorViewsCommand;
 
     invoke-direct {v0, p0}, Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorView$$State$UpdateStakingCalculatorViewsCommand;-><init>(Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorView$$State;)V
 
-    .line 38
+    .line 39
     iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
 
     invoke-virtual {v1, v0}, Lmoxy/viewstate/ViewCommands;->beforeApply(Lmoxy/viewstate/ViewCommand;)V
 
-    .line 40
+    .line 41
     invoke-virtual {p0}, Lmoxy/viewstate/MvpViewState;->hasNotView()Ljava/lang/Boolean;
 
     move-result-object v1
@@ -452,7 +460,7 @@
 
     return-void
 
-    .line 44
+    .line 45
     :cond_0
     iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->views:Ljava/util/Set;
 
@@ -473,12 +481,12 @@
 
     check-cast v2, Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorView;
 
-    .line 45
+    .line 46
     invoke-interface {v2}, Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorView;->updateStakingCalculatorViews()V
 
     goto :goto_0
 
-    .line 48
+    .line 49
     :cond_1
     iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
 

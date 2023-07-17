@@ -25,9 +25,8 @@ public final class StakingStatsResponse {
         return this.debt;
     }
 
-    public final StakingStatsResponse copy(boolean z, StakingValuesResponse debt) {
-        Intrinsics.checkNotNullParameter(debt, "debt");
-        return new StakingStatsResponse(z, debt);
+    public final StakingStatsResponse copy(boolean z, StakingValuesResponse stakingValuesResponse) {
+        return new StakingStatsResponse(z, stakingValuesResponse);
     }
 
     public boolean equals(Object obj) {
@@ -51,17 +50,18 @@ public final class StakingStatsResponse {
         if (z) {
             r0 = 1;
         }
-        return (r0 * 31) + this.debt.hashCode();
+        int i = r0 * 31;
+        StakingValuesResponse stakingValuesResponse = this.debt;
+        return i + (stakingValuesResponse == null ? 0 : stakingValuesResponse.hashCode());
     }
 
     public String toString() {
         return "StakingStatsResponse(participated=" + this.participated + ", debt=" + this.debt + ')';
     }
 
-    public StakingStatsResponse(boolean z, StakingValuesResponse debt) {
-        Intrinsics.checkNotNullParameter(debt, "debt");
+    public StakingStatsResponse(boolean z, StakingValuesResponse stakingValuesResponse) {
         this.participated = z;
-        this.debt = debt;
+        this.debt = stakingValuesResponse;
     }
 
     public final boolean getParticipated() {

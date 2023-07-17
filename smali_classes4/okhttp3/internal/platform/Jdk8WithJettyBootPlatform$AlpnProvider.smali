@@ -192,7 +192,7 @@
     return-object p1
 
     :cond_4
-    const-string v2, "selectProtocol"
+    const-string/jumbo v2, "selectProtocol"
 
     .line 102
     invoke-static {v0, v2}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
@@ -203,7 +203,7 @@
 
     if-nez v2, :cond_5
 
-    const-string v2, "select"
+    const-string/jumbo v2, "select"
 
     invoke-static {v0, v2}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
@@ -303,7 +303,7 @@
 
     if-nez v1, :cond_9
 
-    const-string v1, "selected"
+    const-string/jumbo v1, "selected"
 
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 

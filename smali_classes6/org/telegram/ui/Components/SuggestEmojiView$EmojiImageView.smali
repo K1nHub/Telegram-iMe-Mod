@@ -28,10 +28,10 @@
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 3
 
-    .line 842
+    .line 860
     invoke-direct {p0, p1}, Landroid/view/View;-><init>(Landroid/content/Context;)V
 
-    .line 839
+    .line 857
     new-instance p1, Lorg/telegram/ui/Components/AnimatedFloat;
 
     new-instance v0, Landroid/view/animation/OvershootInterpolator;
@@ -52,7 +52,7 @@
 .method static synthetic access$800(Lorg/telegram/ui/Components/SuggestEmojiView$EmojiImageView;Ljava/lang/String;)V
     .locals 0
 
-    .line 833
+    .line 851
     invoke-direct {p0, p1}, Lorg/telegram/ui/Components/SuggestEmojiView$EmojiImageView;->setEmoji(Ljava/lang/String;)V
 
     return-void
@@ -61,7 +61,7 @@
 .method static synthetic access$900(Lorg/telegram/ui/Components/SuggestEmojiView$EmojiImageView;)Ljava/lang/String;
     .locals 0
 
-    .line 833
+    .line 851
     iget-object p0, p0, Lorg/telegram/ui/Components/SuggestEmojiView$EmojiImageView;->emoji:Ljava/lang/String;
 
     return-object p0
@@ -70,14 +70,14 @@
 .method private setEmoji(Ljava/lang/String;)V
     .locals 4
 
-    .line 856
+    .line 874
     iput-object p1, p0, Lorg/telegram/ui/Components/SuggestEmojiView$EmojiImageView;->emoji:Ljava/lang/String;
 
     if-eqz p1, :cond_1
 
     const-string v0, "animated_"
 
-    .line 857
+    .line 875
     invoke-virtual {p1, v0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v0
@@ -86,7 +86,7 @@
 
     const/16 v0, 0x9
 
-    .line 859
+    .line 877
     :try_start_0
     invoke-virtual {p1, v0}, Ljava/lang/String;->substring(I)Ljava/lang/String;
 
@@ -96,7 +96,7 @@
 
     move-result-wide v0
 
-    .line 860
+    .line 878
     iget-object p1, p0, Lorg/telegram/ui/Components/SuggestEmojiView$EmojiImageView;->drawable:Landroid/graphics/drawable/Drawable;
 
     instance-of v2, p1, Lorg/telegram/ui/Components/AnimatedEmojiDrawable;
@@ -113,7 +113,7 @@
 
     if-eqz p1, :cond_2
 
-    .line 861
+    .line 879
     :cond_0
     sget p1, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
@@ -132,12 +132,12 @@
     :catch_0
     const/4 p1, 0x0
 
-    .line 864
+    .line 882
     invoke-virtual {p0, p1}, Lorg/telegram/ui/Components/SuggestEmojiView$EmojiImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
     goto :goto_0
 
-    .line 867
+    .line 885
     :cond_1
     invoke-static {p1}, Lorg/telegram/messenger/Emoji;->getEmojiBigDrawable(Ljava/lang/String;)Landroid/graphics/drawable/Drawable;
 
@@ -155,14 +155,14 @@
 .method public attach()V
     .locals 2
 
-    .line 921
+    .line 939
     iget-object v0, p0, Lorg/telegram/ui/Components/SuggestEmojiView$EmojiImageView;->drawable:Landroid/graphics/drawable/Drawable;
 
     instance-of v1, v0, Lorg/telegram/ui/Components/AnimatedEmojiDrawable;
 
     if-eqz v1, :cond_0
 
-    .line 922
+    .line 940
     check-cast v0, Lorg/telegram/ui/Components/AnimatedEmojiDrawable;
 
     invoke-virtual {v0, p0}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable;->addView(Landroid/view/View;)V
@@ -170,7 +170,7 @@
     :cond_0
     const/4 v0, 0x1
 
-    .line 924
+    .line 942
     iput-boolean v0, p0, Lorg/telegram/ui/Components/SuggestEmojiView$EmojiImageView;->attached:Z
 
     return-void
@@ -179,14 +179,14 @@
 .method public detach()V
     .locals 2
 
-    .line 915
+    .line 933
     iget-object v0, p0, Lorg/telegram/ui/Components/SuggestEmojiView$EmojiImageView;->drawable:Landroid/graphics/drawable/Drawable;
 
     instance-of v1, v0, Lorg/telegram/ui/Components/AnimatedEmojiDrawable;
 
     if-eqz v1, :cond_0
 
-    .line 916
+    .line 934
     check-cast v0, Lorg/telegram/ui/Components/AnimatedEmojiDrawable;
 
     invoke-virtual {v0, p0}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable;->removeView(Landroid/view/View;)V
@@ -194,7 +194,7 @@
     :cond_0
     const/4 v0, 0x0
 
-    .line 918
+    .line 936
     iput-boolean v0, p0, Lorg/telegram/ui/Components/SuggestEmojiView$EmojiImageView;->attached:Z
 
     return-void
@@ -203,7 +203,7 @@
 .method protected dispatchDraw(Landroid/graphics/Canvas;)V
     .locals 9
 
-    .line 889
+    .line 907
     iget-object v0, p0, Lorg/telegram/ui/Components/SuggestEmojiView$EmojiImageView;->pressed:Lorg/telegram/ui/Components/AnimatedFloat;
 
     invoke-virtual {p0}, Landroid/view/View;->isPressed()Z
@@ -236,19 +236,19 @@
 
     add-float/2addr v2, v0
 
-    .line 890
+    .line 908
     iget-object v0, p0, Lorg/telegram/ui/Components/SuggestEmojiView$EmojiImageView;->drawable:Landroid/graphics/drawable/Drawable;
 
     if-eqz v0, :cond_2
 
-    .line 891
+    .line 909
     invoke-virtual {p0}, Landroid/view/View;->getWidth()I
 
     move-result v0
 
     div-int/lit8 v0, v0, 0x2
 
-    .line 892
+    .line 910
     invoke-virtual {p0}, Landroid/view/View;->getHeight()I
 
     move-result v1
@@ -267,7 +267,7 @@
 
     div-int/lit8 v1, v1, 0x2
 
-    .line 893
+    .line 911
     iget-object v3, p0, Lorg/telegram/ui/Components/SuggestEmojiView$EmojiImageView;->drawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {p0}, Landroid/view/View;->getPaddingLeft()I
@@ -304,17 +304,17 @@
 
     int-to-float v1, v1
 
-    .line 894
+    .line 912
     invoke-virtual {p1, v2, v2, v0, v1}, Landroid/graphics/Canvas;->scale(FFFF)V
 
-    .line 895
+    .line 913
     iget-object v0, p0, Lorg/telegram/ui/Components/SuggestEmojiView$EmojiImageView;->drawable:Landroid/graphics/drawable/Drawable;
 
     instance-of v1, v0, Lorg/telegram/ui/Components/AnimatedEmojiDrawable;
 
     if-eqz v1, :cond_1
 
-    .line 896
+    .line 914
     check-cast v0, Lorg/telegram/ui/Components/AnimatedEmojiDrawable;
 
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
@@ -323,7 +323,7 @@
 
     invoke-virtual {v0, v1, v2}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable;->setTime(J)V
 
-    .line 898
+    .line 916
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/Components/SuggestEmojiView$EmojiImageView;->drawable:Landroid/graphics/drawable/Drawable;
 
@@ -336,10 +336,10 @@
 .method protected onAttachedToWindow()V
     .locals 0
 
-    .line 904
+    .line 922
     invoke-super {p0}, Landroid/view/View;->onAttachedToWindow()V
 
-    .line 905
+    .line 923
     invoke-virtual {p0}, Lorg/telegram/ui/Components/SuggestEmojiView$EmojiImageView;->attach()V
 
     return-void
@@ -348,10 +348,10 @@
 .method protected onDetachedFromWindow()V
     .locals 0
 
-    .line 910
+    .line 928
     invoke-super {p0}, Landroid/view/View;->onDetachedFromWindow()V
 
-    .line 911
+    .line 929
     invoke-virtual {p0}, Lorg/telegram/ui/Components/SuggestEmojiView$EmojiImageView;->detach()V
 
     return-void
@@ -362,7 +362,7 @@
 
     const/4 p1, 0x3
 
-    .line 848
+    .line 866
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p2
@@ -385,7 +385,7 @@
 
     const/16 p1, 0x2c
 
-    .line 850
+    .line 868
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p1
@@ -398,7 +398,7 @@
 
     const/16 v0, 0x34
 
-    .line 851
+    .line 869
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
@@ -407,7 +407,7 @@
 
     move-result p2
 
-    .line 849
+    .line 867
     invoke-super {p0, p1, p2}, Landroid/view/View;->onMeasure(II)V
 
     return-void
@@ -416,23 +416,23 @@
 .method public setImageDrawable(Landroid/graphics/drawable/Drawable;)V
     .locals 2
 
-    .line 872
+    .line 890
     iget-object v0, p0, Lorg/telegram/ui/Components/SuggestEmojiView$EmojiImageView;->drawable:Landroid/graphics/drawable/Drawable;
 
     instance-of v1, v0, Lorg/telegram/ui/Components/AnimatedEmojiDrawable;
 
     if-eqz v1, :cond_0
 
-    .line 873
+    .line 891
     check-cast v0, Lorg/telegram/ui/Components/AnimatedEmojiDrawable;
 
     invoke-virtual {v0, p0}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable;->removeView(Landroid/view/View;)V
 
-    .line 875
+    .line 893
     :cond_0
     iput-object p1, p0, Lorg/telegram/ui/Components/SuggestEmojiView$EmojiImageView;->drawable:Landroid/graphics/drawable/Drawable;
 
-    .line 876
+    .line 894
     instance-of v0, p1, Lorg/telegram/ui/Components/AnimatedEmojiDrawable;
 
     if-eqz v0, :cond_1
@@ -441,7 +441,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 877
+    .line 895
     check-cast p1, Lorg/telegram/ui/Components/AnimatedEmojiDrawable;
 
     invoke-virtual {p1, p0}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable;->addView(Landroid/view/View;)V
@@ -453,10 +453,10 @@
 .method public setPressed(Z)V
     .locals 0
 
-    .line 883
+    .line 901
     invoke-super {p0, p1}, Landroid/view/View;->setPressed(Z)V
 
-    .line 884
+    .line 902
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
     return-void

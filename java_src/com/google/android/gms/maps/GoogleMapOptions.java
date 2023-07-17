@@ -75,72 +75,72 @@ public final class GoogleMapOptions extends AbstractSafeParcelable implements Re
         if (context == null || attributeSet == null) {
             return null;
         }
-        TypedArray obtainAttributes = context.getResources().obtainAttributes(attributeSet, C0705R.styleable.MapAttrs);
+        TypedArray obtainAttributes = context.getResources().obtainAttributes(attributeSet, C0710R.styleable.MapAttrs);
         GoogleMapOptions googleMapOptions = new GoogleMapOptions();
-        int i = C0705R.styleable.MapAttrs_mapType;
+        int i = C0710R.styleable.MapAttrs_mapType;
         if (obtainAttributes.hasValue(i)) {
             googleMapOptions.mapType(obtainAttributes.getInt(i, -1));
         }
-        int i2 = C0705R.styleable.MapAttrs_zOrderOnTop;
+        int i2 = C0710R.styleable.MapAttrs_zOrderOnTop;
         if (obtainAttributes.hasValue(i2)) {
             googleMapOptions.zOrderOnTop(obtainAttributes.getBoolean(i2, false));
         }
-        int i3 = C0705R.styleable.MapAttrs_useViewLifecycle;
+        int i3 = C0710R.styleable.MapAttrs_useViewLifecycle;
         if (obtainAttributes.hasValue(i3)) {
             googleMapOptions.useViewLifecycleInFragment(obtainAttributes.getBoolean(i3, false));
         }
-        int i4 = C0705R.styleable.MapAttrs_uiCompass;
+        int i4 = C0710R.styleable.MapAttrs_uiCompass;
         if (obtainAttributes.hasValue(i4)) {
             googleMapOptions.compassEnabled(obtainAttributes.getBoolean(i4, true));
         }
-        int i5 = C0705R.styleable.MapAttrs_uiRotateGestures;
+        int i5 = C0710R.styleable.MapAttrs_uiRotateGestures;
         if (obtainAttributes.hasValue(i5)) {
             googleMapOptions.rotateGesturesEnabled(obtainAttributes.getBoolean(i5, true));
         }
-        int i6 = C0705R.styleable.MapAttrs_uiScrollGesturesDuringRotateOrZoom;
+        int i6 = C0710R.styleable.MapAttrs_uiScrollGesturesDuringRotateOrZoom;
         if (obtainAttributes.hasValue(i6)) {
             googleMapOptions.scrollGesturesEnabledDuringRotateOrZoom(obtainAttributes.getBoolean(i6, true));
         }
-        int i7 = C0705R.styleable.MapAttrs_uiScrollGestures;
+        int i7 = C0710R.styleable.MapAttrs_uiScrollGestures;
         if (obtainAttributes.hasValue(i7)) {
             googleMapOptions.scrollGesturesEnabled(obtainAttributes.getBoolean(i7, true));
         }
-        int i8 = C0705R.styleable.MapAttrs_uiTiltGestures;
+        int i8 = C0710R.styleable.MapAttrs_uiTiltGestures;
         if (obtainAttributes.hasValue(i8)) {
             googleMapOptions.tiltGesturesEnabled(obtainAttributes.getBoolean(i8, true));
         }
-        int i9 = C0705R.styleable.MapAttrs_uiZoomGestures;
+        int i9 = C0710R.styleable.MapAttrs_uiZoomGestures;
         if (obtainAttributes.hasValue(i9)) {
             googleMapOptions.zoomGesturesEnabled(obtainAttributes.getBoolean(i9, true));
         }
-        int i10 = C0705R.styleable.MapAttrs_uiZoomControls;
+        int i10 = C0710R.styleable.MapAttrs_uiZoomControls;
         if (obtainAttributes.hasValue(i10)) {
             googleMapOptions.zoomControlsEnabled(obtainAttributes.getBoolean(i10, true));
         }
-        int i11 = C0705R.styleable.MapAttrs_liteMode;
+        int i11 = C0710R.styleable.MapAttrs_liteMode;
         if (obtainAttributes.hasValue(i11)) {
             googleMapOptions.liteMode(obtainAttributes.getBoolean(i11, false));
         }
-        int i12 = C0705R.styleable.MapAttrs_uiMapToolbar;
+        int i12 = C0710R.styleable.MapAttrs_uiMapToolbar;
         if (obtainAttributes.hasValue(i12)) {
             googleMapOptions.mapToolbarEnabled(obtainAttributes.getBoolean(i12, true));
         }
-        int i13 = C0705R.styleable.MapAttrs_ambientEnabled;
+        int i13 = C0710R.styleable.MapAttrs_ambientEnabled;
         if (obtainAttributes.hasValue(i13)) {
             googleMapOptions.ambientEnabled(obtainAttributes.getBoolean(i13, false));
         }
-        int i14 = C0705R.styleable.MapAttrs_cameraMinZoomPreference;
+        int i14 = C0710R.styleable.MapAttrs_cameraMinZoomPreference;
         if (obtainAttributes.hasValue(i14)) {
             googleMapOptions.minZoomPreference(obtainAttributes.getFloat(i14, Float.NEGATIVE_INFINITY));
         }
         if (obtainAttributes.hasValue(i14)) {
-            googleMapOptions.maxZoomPreference(obtainAttributes.getFloat(C0705R.styleable.MapAttrs_cameraMaxZoomPreference, Float.POSITIVE_INFINITY));
+            googleMapOptions.maxZoomPreference(obtainAttributes.getFloat(C0710R.styleable.MapAttrs_cameraMaxZoomPreference, Float.POSITIVE_INFINITY));
         }
-        int i15 = C0705R.styleable.MapAttrs_backgroundColor;
+        int i15 = C0710R.styleable.MapAttrs_backgroundColor;
         if (obtainAttributes.hasValue(i15)) {
             googleMapOptions.backgroundColor(Integer.valueOf(obtainAttributes.getColor(i15, zza.intValue())));
         }
-        int i16 = C0705R.styleable.MapAttrs_mapId;
+        int i16 = C0710R.styleable.MapAttrs_mapId;
         if (obtainAttributes.hasValue(i16) && (string = obtainAttributes.getString(i16)) != null && !string.isEmpty()) {
             googleMapOptions.mapId(string);
         }
@@ -154,22 +154,22 @@ public final class GoogleMapOptions extends AbstractSafeParcelable implements Re
         if (context == null || attributeSet == null) {
             return null;
         }
-        TypedArray obtainAttributes = context.getResources().obtainAttributes(attributeSet, C0705R.styleable.MapAttrs);
-        int i = C0705R.styleable.MapAttrs_cameraTargetLat;
+        TypedArray obtainAttributes = context.getResources().obtainAttributes(attributeSet, C0710R.styleable.MapAttrs);
+        int i = C0710R.styleable.MapAttrs_cameraTargetLat;
         float f = obtainAttributes.hasValue(i) ? obtainAttributes.getFloat(i, BitmapDescriptorFactory.HUE_RED) : 0.0f;
-        int i2 = C0705R.styleable.MapAttrs_cameraTargetLng;
+        int i2 = C0710R.styleable.MapAttrs_cameraTargetLng;
         LatLng latLng = new LatLng(f, obtainAttributes.hasValue(i2) ? obtainAttributes.getFloat(i2, BitmapDescriptorFactory.HUE_RED) : 0.0f);
         CameraPosition.Builder builder = CameraPosition.builder();
         builder.target(latLng);
-        int i3 = C0705R.styleable.MapAttrs_cameraZoom;
+        int i3 = C0710R.styleable.MapAttrs_cameraZoom;
         if (obtainAttributes.hasValue(i3)) {
             builder.zoom(obtainAttributes.getFloat(i3, BitmapDescriptorFactory.HUE_RED));
         }
-        int i4 = C0705R.styleable.MapAttrs_cameraBearing;
+        int i4 = C0710R.styleable.MapAttrs_cameraBearing;
         if (obtainAttributes.hasValue(i4)) {
             builder.bearing(obtainAttributes.getFloat(i4, BitmapDescriptorFactory.HUE_RED));
         }
-        int i5 = C0705R.styleable.MapAttrs_cameraTilt;
+        int i5 = C0710R.styleable.MapAttrs_cameraTilt;
         if (obtainAttributes.hasValue(i5)) {
             builder.tilt(obtainAttributes.getFloat(i5, BitmapDescriptorFactory.HUE_RED));
         }
@@ -181,14 +181,14 @@ public final class GoogleMapOptions extends AbstractSafeParcelable implements Re
         if (context == null || attributeSet == null) {
             return null;
         }
-        TypedArray obtainAttributes = context.getResources().obtainAttributes(attributeSet, C0705R.styleable.MapAttrs);
-        int i = C0705R.styleable.MapAttrs_latLngBoundsSouthWestLatitude;
+        TypedArray obtainAttributes = context.getResources().obtainAttributes(attributeSet, C0710R.styleable.MapAttrs);
+        int i = C0710R.styleable.MapAttrs_latLngBoundsSouthWestLatitude;
         Float valueOf = obtainAttributes.hasValue(i) ? Float.valueOf(obtainAttributes.getFloat(i, BitmapDescriptorFactory.HUE_RED)) : null;
-        int i2 = C0705R.styleable.MapAttrs_latLngBoundsSouthWestLongitude;
+        int i2 = C0710R.styleable.MapAttrs_latLngBoundsSouthWestLongitude;
         Float valueOf2 = obtainAttributes.hasValue(i2) ? Float.valueOf(obtainAttributes.getFloat(i2, BitmapDescriptorFactory.HUE_RED)) : null;
-        int i3 = C0705R.styleable.MapAttrs_latLngBoundsNorthEastLatitude;
+        int i3 = C0710R.styleable.MapAttrs_latLngBoundsNorthEastLatitude;
         Float valueOf3 = obtainAttributes.hasValue(i3) ? Float.valueOf(obtainAttributes.getFloat(i3, BitmapDescriptorFactory.HUE_RED)) : null;
-        int i4 = C0705R.styleable.MapAttrs_latLngBoundsNorthEastLongitude;
+        int i4 = C0710R.styleable.MapAttrs_latLngBoundsNorthEastLongitude;
         Float valueOf4 = obtainAttributes.hasValue(i4) ? Float.valueOf(obtainAttributes.getFloat(i4, BitmapDescriptorFactory.HUE_RED)) : null;
         obtainAttributes.recycle();
         if (valueOf == null || valueOf2 == null || valueOf3 == null || valueOf4 == null) {

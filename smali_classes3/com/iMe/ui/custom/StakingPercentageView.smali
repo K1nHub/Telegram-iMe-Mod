@@ -37,10 +37,18 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$EW9L39Ucanal9EwXZsqgwYUSzGs(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
+.method public static synthetic $r8$lambda$2a9C4R18NBQduwHK93UW0YTRgUU(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lcom/iMe/ui/custom/StakingPercentageView;->setupProgressListener$lambda$5(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
+    invoke-static {p0, p1}, Lcom/iMe/ui/custom/StakingPercentageView;->setupProgressListener$lambda$6(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
+
+    return-void
+.end method
+
+.method public static synthetic $r8$lambda$w2Zfp-Ei4JJFTX_srDhh5vK-Xos(Lcom/iMe/fork/utils/Callbacks$Callback;Landroid/view/View;)V
+    .locals 0
+
+    invoke-static {p0, p1}, Lcom/iMe/ui/custom/StakingPercentageView;->setupViewData$lambda$1$lambda$0(Lcom/iMe/fork/utils/Callbacks$Callback;Landroid/view/View;)V
 
     return-void
 .end method
@@ -298,9 +306,9 @@
 
     invoke-direct {v1, p0}, Lcom/iMe/ui/custom/StakingPercentageView$setupProgressListener$1;-><init>(Lcom/iMe/ui/custom/StakingPercentageView;)V
 
-    new-instance v2, Lcom/iMe/ui/custom/StakingPercentageView$$ExternalSyntheticLambda0;
+    new-instance v2, Lcom/iMe/ui/custom/StakingPercentageView$$ExternalSyntheticLambda1;
 
-    invoke-direct {v2, v1}, Lcom/iMe/ui/custom/StakingPercentageView$$ExternalSyntheticLambda0;-><init>(Lkotlin/jvm/functions/Function1;)V
+    invoke-direct {v2, v1}, Lcom/iMe/ui/custom/StakingPercentageView$$ExternalSyntheticLambda1;-><init>(Lkotlin/jvm/functions/Function1;)V
 
     invoke-virtual {v0, v2}, Lio/reactivex/Observable;->subscribe(Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
 
@@ -318,7 +326,7 @@
     return-void
 .end method
 
-.method private static final setupProgressListener$lambda$5(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
+.method private static final setupProgressListener$lambda$6(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
     .locals 1
 
     const-string v0, "$tmp0"
@@ -366,6 +374,19 @@
     move-result-object v0
 
     invoke-virtual {p0, v0}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;)V
+
+    return-void
+.end method
+
+.method private static final setupViewData$lambda$1$lambda$0(Lcom/iMe/fork/utils/Callbacks$Callback;Landroid/view/View;)V
+    .locals 0
+
+    const-string p1, "$onInfoClickAction"
+
+    invoke-static {p0, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 54
+    invoke-interface {p0}, Lcom/iMe/fork/utils/Callbacks$Callback;->invoke()V
 
     return-void
 .end method
@@ -458,7 +479,7 @@
     .line 71
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setTextColor(I)V
 
-    const-string v2, "setupColors$lambda$4$lambda$1"
+    const-string v2, "setupColors$lambda$5$lambda$2"
 
     .line 77
     invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
@@ -490,7 +511,7 @@
     .line 80
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setTextColor(I)V
 
-    const-string v2, "setupColors$lambda$4$lambda$2"
+    const-string v2, "setupColors$lambda$5$lambda$3"
 
     .line 86
     invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
@@ -500,7 +521,7 @@
     .line 88
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkContentStakingCompoundBinding;->imageInfo:Landroidx/appcompat/widget/AppCompatImageView;
 
-    const-string v2, "setupColors$lambda$4$lambda$3"
+    const-string v2, "setupColors$lambda$5$lambda$4"
 
     .line 89
     invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
@@ -570,11 +591,11 @@
 
     invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    new-instance v2, Lcom/iMe/ui/custom/StakingPercentageView$setupViewData$1$1;
+    new-instance v2, Lcom/iMe/ui/custom/StakingPercentageView$$ExternalSyntheticLambda0;
 
-    invoke-direct {v2, p2}, Lcom/iMe/ui/custom/StakingPercentageView$setupViewData$1$1;-><init>(Lcom/iMe/fork/utils/Callbacks$Callback;)V
+    invoke-direct {v2, p2}, Lcom/iMe/ui/custom/StakingPercentageView$$ExternalSyntheticLambda0;-><init>(Lcom/iMe/fork/utils/Callbacks$Callback;)V
 
-    invoke-static {v1, v2}, Lcom/iMe/utils/extentions/common/ViewExtKt;->setMixedClickListener(Landroid/view/View;Lkotlin/jvm/functions/Function1;)V
+    invoke-static {v1, v2}, Lcom/iMe/utils/extentions/common/ViewExtKt;->setMixedClickListener(Landroid/view/View;Lcom/iMe/fork/utils/Callbacks$Callback1;)V
 
     if-nez p1, :cond_0
 

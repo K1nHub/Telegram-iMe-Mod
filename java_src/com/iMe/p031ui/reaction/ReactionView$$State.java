@@ -17,6 +17,11 @@ public class ReactionView$$State extends MvpViewState<ReactionView> implements R
         BaseView.CC.$default$finishScreen(this);
     }
 
+    @Override // com.iMe.p031ui.base.mvp.base.BaseView
+    public /* synthetic */ void removeSelfFromStackImmediately() {
+        BaseView.CC.$default$removeSelfFromStackImmediately(this);
+    }
+
     @Override // com.iMe.p031ui.reaction.ReactionView
     public void messageCreated() {
         MessageCreatedCommand messageCreatedCommand = new MessageCreatedCommand(this);

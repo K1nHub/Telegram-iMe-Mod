@@ -18,10 +18,12 @@ final class SwapProtocolInfo$Companion$allExchanges$2 extends Lambda implements 
     @Override // kotlin.jvm.functions.Function0
     public final List<? extends SwapProtocolInfo> invoke() {
         List plus;
+        List invisibleExchanges;
         List<? extends SwapProtocolInfo> plus2;
         SwapProtocolInfo.Companion companion = SwapProtocolInfo.Companion;
         plus = CollectionsKt___CollectionsKt.plus((Collection) companion.getSupportedExchanges(), (Iterable) companion.getSupportedCrossChainExchanges());
-        plus2 = CollectionsKt___CollectionsKt.plus((Collection) plus, (Iterable) companion.getInvisibleExchanges());
+        invisibleExchanges = companion.getInvisibleExchanges();
+        plus2 = CollectionsKt___CollectionsKt.plus((Collection) plus, (Iterable) invisibleExchanges);
         return plus2;
     }
 }

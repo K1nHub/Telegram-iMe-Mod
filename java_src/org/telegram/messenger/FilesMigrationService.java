@@ -22,14 +22,14 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.Objects;
 import org.telegram.messenger.FilesMigrationService;
-import org.telegram.p044ui.ActionBar.BaseFragment;
-import org.telegram.p044ui.ActionBar.BottomSheet;
-import org.telegram.p044ui.ActionBar.Theme;
-import org.telegram.p044ui.Components.LayoutHelper;
-import org.telegram.p044ui.Components.StickerImageView;
-import p034j$.util.function.Consumer;
-import p034j$.util.stream.Stream;
-import p034j$.wrappers.C$r8$wrapper$java$util$stream$Stream$VWRP;
+import org.telegram.p043ui.ActionBar.BaseFragment;
+import org.telegram.p043ui.ActionBar.BottomSheet;
+import org.telegram.p043ui.ActionBar.Theme;
+import org.telegram.p043ui.Components.LayoutHelper;
+import org.telegram.p043ui.Components.StickerImageView;
+import p033j$.util.function.Consumer;
+import p033j$.util.stream.Stream;
+import p033j$.wrappers.C$r8$wrapper$java$util$stream$Stream$VWRP;
 /* loaded from: classes4.dex */
 public class FilesMigrationService extends Service {
     public static FilesMigrationBottomSheet filesMigrationBottomSheet = null;
@@ -52,9 +52,9 @@ public class FilesMigrationService extends Service {
     @Override // android.app.Service
     public int onStartCommand(Intent intent, int i, int i2) {
         NotificationsController.checkOtherNotificationsChannel();
-        Notification build = new Notification.Builder(this, NotificationsController.OTHER_NOTIFICATIONS_CHANNEL).setContentTitle(getText(C3295R.string.MigratingFiles)).setAutoCancel(false).setSmallIcon(C3295R.C3297drawable.notification).setSmallIcon(C3295R.C3297drawable.fork_notification).build();
+        Notification build = new Notification.Builder(this, NotificationsController.OTHER_NOTIFICATIONS_CHANNEL).setContentTitle(getText(C3417R.string.MigratingFiles)).setAutoCancel(false).setSmallIcon(C3417R.C3419drawable.notification).setSmallIcon(C3417R.C3419drawable.fork_notification).build();
         isRunning = true;
-        new C32401().start();
+        new C33621().start();
         startForeground(301, build);
         return super.onStartCommand(intent, i, i2);
     }
@@ -62,8 +62,8 @@ public class FilesMigrationService extends Service {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.messenger.FilesMigrationService$1 */
     /* loaded from: classes4.dex */
-    public class C32401 extends Thread {
-        C32401() {
+    public class C33621 extends Thread {
+        C33621() {
         }
 
         @Override // java.lang.Thread, java.lang.Runnable
@@ -72,7 +72,7 @@ public class FilesMigrationService extends Service {
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.FilesMigrationService$1$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    FilesMigrationService.C32401.this.lambda$run$0();
+                    FilesMigrationService.C33621.this.lambda$run$0();
                 }
             });
         }
@@ -132,12 +132,12 @@ public class FilesMigrationService extends Service {
                 try {
                     Stream convert = C$r8$wrapper$java$util$stream$Stream$VWRP.convert(Files.list(file.toPath()));
                     convert.forEach(new Consumer() { // from class: org.telegram.messenger.FilesMigrationService$$ExternalSyntheticLambda1
-                        @Override // p034j$.util.function.Consumer
+                        @Override // p033j$.util.function.Consumer
                         public final void accept(Object obj) {
                             FilesMigrationService.this.lambda$moveDirectory$0(file2, (Path) obj);
                         }
 
-                        @Override // p034j$.util.function.Consumer
+                        @Override // p033j$.util.function.Consumer
                         public /* synthetic */ Consumer andThen(Consumer consumer) {
                             return Objects.requireNonNull(consumer);
                         }
@@ -190,7 +190,7 @@ public class FilesMigrationService extends Service {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$updateProgress$1(int i) {
-        ((NotificationManager) getSystemService("notification")).notify(301, new Notification.Builder(this, NotificationsController.OTHER_NOTIFICATIONS_CHANNEL).setContentTitle(getText(C3295R.string.MigratingFiles)).setContentText(String.format("%s/%s", Integer.valueOf(i), Integer.valueOf(this.totalFilesCount))).setSmallIcon(C3295R.C3297drawable.notification).setSmallIcon(C3295R.C3297drawable.fork_notification).setAutoCancel(false).setProgress(this.totalFilesCount, i, false).build());
+        ((NotificationManager) getSystemService("notification")).notify(301, new Notification.Builder(this, NotificationsController.OTHER_NOTIFICATIONS_CHANNEL).setContentTitle(getText(C3417R.string.MigratingFiles)).setContentText(String.format("%s/%s", Integer.valueOf(i), Integer.valueOf(this.totalFilesCount))).setSmallIcon(C3417R.C3419drawable.notification).setSmallIcon(C3417R.C3419drawable.fork_notification).setAutoCancel(false).setProgress(this.totalFilesCount, i, false).build());
     }
 
     public static void checkBottomSheet(BaseFragment baseFragment) {
@@ -233,12 +233,12 @@ public class FilesMigrationService extends Service {
     public static class FilesMigrationBottomSheet extends BottomSheet {
         BaseFragment fragment;
 
-        @Override // org.telegram.p044ui.ActionBar.BottomSheet
+        @Override // org.telegram.p043ui.ActionBar.BottomSheet
         protected boolean canDismissWithSwipe() {
             return false;
         }
 
-        @Override // org.telegram.p044ui.ActionBar.BottomSheet
+        @Override // org.telegram.p043ui.ActionBar.BottomSheet
         protected boolean canDismissWithTouchOutside() {
             return false;
         }
@@ -260,20 +260,20 @@ public class FilesMigrationService extends Service {
             textView.setTextColor(Theme.getColor(i));
             textView.setTextSize(1, 20.0f);
             textView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
-            textView.setText(LocaleController.getString("MigrateOldFolderTitle", C3295R.string.MigrateOldFolderTitle));
+            textView.setText(LocaleController.getString("MigrateOldFolderTitle", C3417R.string.MigrateOldFolderTitle));
             linearLayout.addView(textView, LayoutHelper.createFrame(-1, -2, 0, 21, 30, 21, 0));
             TextView textView2 = new TextView(parentActivity);
             textView2.setGravity(8388611);
             textView2.setTextSize(1, 15.0f);
             textView2.setTextColor(Theme.getColor(i));
-            textView2.setText(AndroidUtilities.replaceTags(LocaleController.getString("MigrateOldFolderDescription", C3295R.string.MigrateOldFolderDescription)));
+            textView2.setText(AndroidUtilities.replaceTags(LocaleController.getString("MigrateOldFolderDescription", C3417R.string.MigrateOldFolderDescription)));
             linearLayout.addView(textView2, LayoutHelper.createFrame(-1, -2, 0, 21, 15, 21, 16));
             TextView textView3 = new TextView(parentActivity);
             textView3.setPadding(AndroidUtilities.m54dp(34), 0, AndroidUtilities.m54dp(34), 0);
             textView3.setGravity(17);
             textView3.setTextSize(1, 14.0f);
             textView3.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
-            textView3.setText(LocaleController.getString("MigrateOldFolderButton", C3295R.string.MigrateOldFolderButton));
+            textView3.setText(LocaleController.getString("MigrateOldFolderButton", C3417R.string.MigrateOldFolderButton));
             textView3.setTextColor(Theme.getColor(Theme.key_featuredStickers_buttonText));
             textView3.setBackground(Theme.AdaptiveRipple.filledRectByKey(Theme.key_featuredStickers_addButton, 6.0f));
             linearLayout.addView(textView3, LayoutHelper.createFrame(-1, 48, 0, 16, 15, 16, 16));
@@ -315,7 +315,7 @@ public class FilesMigrationService extends Service {
             dismiss();
         }
 
-        @Override // org.telegram.p044ui.ActionBar.BottomSheet, android.app.Dialog, android.content.DialogInterface
+        @Override // org.telegram.p043ui.ActionBar.BottomSheet, android.app.Dialog, android.content.DialogInterface
         public void dismiss() {
             super.dismiss();
             FilesMigrationService.filesMigrationBottomSheet = null;

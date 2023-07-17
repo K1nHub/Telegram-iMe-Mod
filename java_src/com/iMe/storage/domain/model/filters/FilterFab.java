@@ -6,7 +6,6 @@ import com.iMe.storage.data.utils.extentions.GsonExtKt;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
-import kotlin.NoWhenBranchMatchedException;
 import kotlin.collections.CollectionsKt__CollectionsKt;
 import kotlin.collections.CollectionsKt__IterablesKt;
 import kotlin.collections.CollectionsKt___CollectionsKt;
@@ -23,7 +22,8 @@ public enum FilterFab {
     CONTACTS,
     MUSIC,
     ALBUMS,
-    CREATE_ALBUM;
+    CREATE_ALBUM,
+    CLEAR_DRAFTS;
     
     public static final Companion Companion = new Companion(null);
 
@@ -35,40 +35,36 @@ public enum FilterFab {
         static {
             int[] iArr = new int[FilterFab.values().length];
             try {
-                iArr[FilterFab.CREATE_CHAT.ordinal()] = 1;
+                iArr[FilterFab.ARCHIVE.ordinal()] = 1;
             } catch (NoSuchFieldError unused) {
             }
             try {
-                iArr[FilterFab.ARCHIVE.ordinal()] = 2;
+                iArr[FilterFab.CLOUD.ordinal()] = 2;
             } catch (NoSuchFieldError unused2) {
             }
             try {
-                iArr[FilterFab.CLOUD.ordinal()] = 3;
+                iArr[FilterFab.MARK_ALL_READ.ordinal()] = 3;
             } catch (NoSuchFieldError unused3) {
             }
             try {
-                iArr[FilterFab.MARK_ALL_READ.ordinal()] = 4;
+                iArr[FilterFab.WALLET.ordinal()] = 4;
             } catch (NoSuchFieldError unused4) {
             }
             try {
-                iArr[FilterFab.WALLET.ordinal()] = 5;
+                iArr[FilterFab.CONTACTS.ordinal()] = 5;
             } catch (NoSuchFieldError unused5) {
             }
             try {
-                iArr[FilterFab.CONTACTS.ordinal()] = 6;
+                iArr[FilterFab.MUSIC.ordinal()] = 6;
             } catch (NoSuchFieldError unused6) {
             }
             try {
-                iArr[FilterFab.MUSIC.ordinal()] = 7;
+                iArr[FilterFab.ALBUMS.ordinal()] = 7;
             } catch (NoSuchFieldError unused7) {
             }
             try {
-                iArr[FilterFab.ALBUMS.ordinal()] = 8;
+                iArr[FilterFab.CREATE_ALBUM.ordinal()] = 8;
             } catch (NoSuchFieldError unused8) {
-            }
-            try {
-                iArr[FilterFab.CREATE_ALBUM.ordinal()] = 9;
-            } catch (NoSuchFieldError unused9) {
             }
             $EnumSwitchMapping$0 = iArr;
         }
@@ -85,25 +81,23 @@ public enum FilterFab {
     public final String getOldPreferenceId() {
         switch (WhenMappings.$EnumSwitchMapping$0[ordinal()]) {
             case 1:
-                return "fab_create";
-            case 2:
                 return "fab_archive";
-            case 3:
+            case 2:
                 return "fab_cloud";
-            case 4:
+            case 3:
                 return "fab_mark_all_read";
-            case 5:
+            case 4:
                 return "fab_wallet";
-            case 6:
+            case 5:
                 return "fab_contacts";
-            case 7:
+            case 6:
                 return "fab_music";
-            case 8:
+            case 7:
                 return "fab_albums";
-            case 9:
+            case 8:
                 return "fab_create_album";
             default:
-                throw new NoWhenBranchMatchedException();
+                return "fab_create";
         }
     }
 
@@ -143,7 +137,7 @@ public enum FilterFab {
             int length = values.length;
             for (int i = 0; i < length; i++) {
                 FilterFab filterFab = values[i];
-                if (filterFab != FilterFab.CREATE_ALBUM) {
+                if ((filterFab == FilterFab.CREATE_ALBUM || filterFab == FilterFab.CLEAR_DRAFTS) ? false : true) {
                     arrayList.add(filterFab);
                 }
             }

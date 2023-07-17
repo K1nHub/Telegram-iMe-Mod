@@ -34,7 +34,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nObservableExt.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ObservableExt.kt\ncom/iMe/storage/domain/utils/extentions/ObservableExtKt$flatMapSuccess$1\n+ 2 DexWalletSwapDataSourceImpl.kt\ncom/iMe/storage/data/datasource/swap/impl/DexWalletSwapDataSourceImpl\n+ 3 FirebaseExt.kt\ncom/iMe/storage/data/utils/extentions/FirebaseExtKt\n*L\n1#1,80:1\n35#2,13:81\n70#3:94\n*S KotlinDebug\n*F\n+ 1 DexWalletSwapDataSourceImpl.kt\ncom/iMe/storage/data/datasource/swap/impl/DexWalletSwapDataSourceImpl\n*L\n47#1:94\n*E\n"
+    value = "SMAP\nObservableExt.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ObservableExt.kt\ncom/iMe/storage/domain/utils/extentions/ObservableExtKt$flatMapSuccess$1\n+ 2 DexWalletSwapDataSourceImpl.kt\ncom/iMe/storage/data/datasource/swap/impl/DexWalletSwapDataSourceImpl\n+ 3 FirebaseExt.kt\ncom/iMe/storage/data/utils/extentions/FirebaseExtKt\n*L\n1#1,92:1\n35#2,13:93\n70#3:106\n*S KotlinDebug\n*F\n+ 1 DexWalletSwapDataSourceImpl.kt\ncom/iMe/storage/data/datasource/swap/impl/DexWalletSwapDataSourceImpl\n*L\n47#1:106\n*E\n"
 .end annotation
 
 
@@ -62,7 +62,7 @@
 
 # virtual methods
 .method public final invoke(Lcom/iMe/storage/domain/model/Result;)Lio/reactivex/ObservableSource;
-    .locals 9
+    .locals 8
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -86,23 +86,21 @@
     .line 16
     instance-of v0, p1, Lcom/iMe/storage/domain/model/Result$Success;
 
-    const/4 v1, 0x0
+    if-eqz v0, :cond_1
 
-    if-eqz v0, :cond_2
-
-    .line 81
+    .line 93
     iget-object v0, p0, Lcom/iMe/storage/data/datasource/swap/impl/DexWalletSwapDataSourceImpl$swap$$inlined$flatMapSuccess$1;->this$0:Lcom/iMe/storage/data/datasource/swap/impl/DexWalletSwapDataSourceImpl;
 
     invoke-static {v0}, Lcom/iMe/storage/data/datasource/swap/impl/DexWalletSwapDataSourceImpl;->access$getSwapApi$p(Lcom/iMe/storage/data/datasource/swap/impl/DexWalletSwapDataSourceImpl;)Lcom/iMe/storage/data/network/api/own/SwapApi;
 
     move-result-object v0
 
-    .line 83
-    iget-object v2, p0, Lcom/iMe/storage/data/datasource/swap/impl/DexWalletSwapDataSourceImpl$swap$$inlined$flatMapSuccess$1;->$args$inlined:Lcom/iMe/storage/domain/model/crypto/send/TransactionArgs;
+    .line 95
+    iget-object v1, p0, Lcom/iMe/storage/data/datasource/swap/impl/DexWalletSwapDataSourceImpl$swap$$inlined$flatMapSuccess$1;->$args$inlined:Lcom/iMe/storage/domain/model/crypto/send/TransactionArgs;
 
-    check-cast v2, Lcom/iMe/storage/domain/model/crypto/swap/SwapArgs$Dex;
+    check-cast v1, Lcom/iMe/storage/domain/model/crypto/swap/SwapArgs$Dex;
 
-    .line 85
+    .line 97
     invoke-virtual {p1}, Lcom/iMe/storage/domain/model/Result;->getData()Ljava/lang/Object;
 
     move-result-object p1
@@ -114,58 +112,45 @@
     const-string p1, ""
 
     :cond_0
-    move-object v4, p1
+    move-object v3, p1
 
-    .line 86
-    invoke-virtual {v2}, Lcom/iMe/storage/domain/model/crypto/swap/SwapArgs$Dex;->getQuoteId()Ljava/lang/String;
+    .line 98
+    invoke-virtual {v1}, Lcom/iMe/storage/domain/model/crypto/swap/SwapArgs$Dex;->getQuoteId()Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v4
 
-    .line 87
-    invoke-virtual {v2}, Lcom/iMe/storage/domain/model/crypto/swap/SwapArgs$Dex;->getNetworkType()Lcom/iMe/storage/domain/model/crypto/NetworkType;
-
-    move-result-object p1
-
-    invoke-virtual {p1}, Ljava/lang/Enum;->name()Ljava/lang/String;
-
-    move-result-object v7
-
-    .line 88
-    invoke-virtual {v2}, Lcom/iMe/storage/domain/model/crypto/swap/SwapArgs$Dex;->getOutputNetworkType()Lcom/iMe/storage/domain/model/crypto/NetworkType;
-
-    move-result-object p1
-
-    if-eqz p1, :cond_1
-
-    invoke-virtual {p1}, Ljava/lang/Enum;->name()Ljava/lang/String;
-
-    move-result-object v1
-
-    :cond_1
-    move-object v8, v1
-
-    .line 89
-    invoke-virtual {v2}, Lcom/iMe/storage/domain/model/crypto/swap/SwapArgs$Dex;->getSwapProtocol()Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocol;
-
-    move-result-object p1
-
-    invoke-virtual {p1}, Ljava/lang/Enum;->name()Ljava/lang/String;
+    .line 99
+    invoke-virtual {v1}, Lcom/iMe/storage/domain/model/crypto/swap/SwapArgs$Dex;->getNetworkId()Ljava/lang/String;
 
     move-result-object v6
 
-    .line 84
+    .line 100
+    invoke-virtual {v1}, Lcom/iMe/storage/domain/model/crypto/swap/SwapArgs$Dex;->getOutputNetworkId()Ljava/lang/String;
+
+    move-result-object v7
+
+    .line 101
+    invoke-virtual {v1}, Lcom/iMe/storage/domain/model/crypto/swap/SwapArgs$Dex;->getSwapProtocol()Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocol;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Ljava/lang/Enum;->name()Ljava/lang/String;
+
+    move-result-object v5
+
+    .line 96
     new-instance p1, Lcom/iMe/storage/data/network/model/request/crypto/swap/SendCryptoSwapTransactionRequest;
 
-    move-object v3, p1
+    move-object v2, p1
 
-    invoke-direct/range {v3 .. v8}, Lcom/iMe/storage/data/network/model/request/crypto/swap/SendCryptoSwapTransactionRequest;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct/range {v2 .. v7}, Lcom/iMe/storage/data/network/model/request/crypto/swap/SendCryptoSwapTransactionRequest;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 82
+    .line 94
     invoke-interface {v0, p1}, Lcom/iMe/storage/data/network/api/own/SwapApi;->sendCryptoSwapTransaction(Lcom/iMe/storage/data/network/model/request/crypto/swap/SendCryptoSwapTransactionRequest;)Lio/reactivex/Observable;
 
     move-result-object p1
 
-    .line 93
+    .line 105
     iget-object v0, p0, Lcom/iMe/storage/data/datasource/swap/impl/DexWalletSwapDataSourceImpl$swap$$inlined$flatMapSuccess$1;->this$0:Lcom/iMe/storage/data/datasource/swap/impl/DexWalletSwapDataSourceImpl;
 
     invoke-static {v0}, Lcom/iMe/storage/data/datasource/swap/impl/DexWalletSwapDataSourceImpl;->access$getFirebaseErrorHandler$p(Lcom/iMe/storage/data/datasource/swap/impl/DexWalletSwapDataSourceImpl;)Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;
@@ -192,10 +177,10 @@
     goto :goto_0
 
     .line 17
-    :cond_2
+    :cond_1
     instance-of v0, p1, Lcom/iMe/storage/domain/model/Result$Error;
 
-    if-eqz v0, :cond_3
+    if-eqz v0, :cond_2
 
     sget-object v0, Lcom/iMe/storage/domain/model/Result;->Companion:Lcom/iMe/storage/domain/model/Result$Companion;
 
@@ -205,9 +190,11 @@
 
     move-result-object p1
 
-    const/4 v2, 0x2
+    const/4 v1, 0x2
 
-    invoke-static {v0, p1, v1, v2, v1}, Lcom/iMe/storage/domain/model/Result$Companion;->error$default(Lcom/iMe/storage/domain/model/Result$Companion;Lcom/iMe/storage/data/network/model/error/ErrorModel;Ljava/lang/Object;ILjava/lang/Object;)Lcom/iMe/storage/domain/model/Result;
+    const/4 v2, 0x0
+
+    invoke-static {v0, p1, v2, v1, v2}, Lcom/iMe/storage/domain/model/Result$Companion;->error$default(Lcom/iMe/storage/domain/model/Result$Companion;Lcom/iMe/storage/data/network/model/error/ErrorModel;Ljava/lang/Object;ILjava/lang/Object;)Lcom/iMe/storage/domain/model/Result;
 
     move-result-object p1
 
@@ -222,7 +209,7 @@
     goto :goto_0
 
     .line 18
-    :cond_3
+    :cond_2
     invoke-static {}, Lio/reactivex/Observable;->empty()Lio/reactivex/Observable;
 
     move-result-object p1

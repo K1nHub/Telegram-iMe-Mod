@@ -15,7 +15,7 @@ import moxy.MvpDelegate;
 import moxy.MvpDelegateHolder;
 import org.koin.core.Koin;
 import org.koin.core.component.KoinComponent;
-import org.telegram.p044ui.ActionBar.AlertDialog;
+import org.telegram.p043ui.ActionBar.AlertDialog;
 /* compiled from: MvpAlertDialog.kt */
 /* renamed from: com.iMe.ui.base.mvp.MvpAlertDialog */
 /* loaded from: classes.dex */
@@ -23,6 +23,11 @@ public abstract class MvpAlertDialog extends AlertDialog implements MvpDelegateH
     private final MvpBaseDelegate<MvpAlertDialog> mvpBaseDelegate;
 
     public abstract View onCreateView(Bundle bundle);
+
+    @Override // com.iMe.p031ui.base.mvp.base.BaseView
+    public /* synthetic */ void removeSelfFromStackImmediately() {
+        BaseView.CC.$default$removeSelfFromStackImmediately(this);
+    }
 
     @Override // com.iMe.p031ui.base.mvp.base.BaseView
     public /* synthetic */ void showErrorToast(Result.Error error, ResourceManager resourceManager) {
@@ -78,7 +83,7 @@ public abstract class MvpAlertDialog extends AlertDialog implements MvpDelegateH
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    @Override // org.telegram.p044ui.ActionBar.AlertDialog, android.app.Dialog
+    @Override // org.telegram.p043ui.ActionBar.AlertDialog, android.app.Dialog
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         setCustomView(onCreateView(bundle));

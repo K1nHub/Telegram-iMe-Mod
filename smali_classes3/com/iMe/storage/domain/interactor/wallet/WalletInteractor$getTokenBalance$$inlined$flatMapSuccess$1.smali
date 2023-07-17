@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/iMe/storage/domain/interactor/wallet/WalletInteractor;->getTokenBalance(Lcom/iMe/storage/domain/model/wallet/token/TokenCode;ZLcom/iMe/storage/domain/model/crypto/NetworkType;)Lio/reactivex/Observable;
+    value = Lcom/iMe/storage/domain/interactor/wallet/WalletInteractor;->getTokenBalance(Lcom/iMe/storage/domain/model/wallet/token/Token;ZLjava/lang/String;)Lio/reactivex/Observable;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -36,7 +36,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nObservableExt.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ObservableExt.kt\ncom/iMe/storage/domain/utils/extentions/ObservableExtKt$flatMapSuccess$1\n+ 2 WalletInteractor.kt\ncom/iMe/storage/domain/interactor/wallet/WalletInteractor\n+ 3 ResultExt.kt\ncom/iMe/storage/domain/utils/extentions/ResultExtKt\n+ 4 RxExt.kt\ncom/iMe/storage/data/utils/extentions/RxExtKt\n*L\n1#1,80:1\n52#2,2:81\n11#3:83\n18#4:84\n*S KotlinDebug\n*F\n+ 1 WalletInteractor.kt\ncom/iMe/storage/domain/interactor/wallet/WalletInteractor\n*L\n53#1:83\n53#1:84\n*E\n"
+    value = "SMAP\nObservableExt.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ObservableExt.kt\ncom/iMe/storage/domain/utils/extentions/ObservableExtKt$flatMapSuccess$1\n+ 2 WalletInteractor.kt\ncom/iMe/storage/domain/interactor/wallet/WalletInteractor\n+ 3 ResultExt.kt\ncom/iMe/storage/domain/utils/extentions/ResultExtKt\n+ 4 RxExt.kt\ncom/iMe/storage/data/utils/extentions/RxExtKt\n*L\n1#1,92:1\n119#2,2:93\n11#3:95\n18#4:96\n*S KotlinDebug\n*F\n+ 1 WalletInteractor.kt\ncom/iMe/storage/domain/interactor/wallet/WalletInteractor\n*L\n120#1:95\n120#1:96\n*E\n"
 .end annotation
 
 
@@ -82,7 +82,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 81
+    .line 93
     invoke-virtual {p1}, Lcom/iMe/storage/domain/model/Result;->getData()Ljava/lang/Object;
 
     move-result-object v0
@@ -107,7 +107,7 @@
 
     goto :goto_0
 
-    .line 82
+    .line 94
     :cond_0
     invoke-virtual {p1}, Lcom/iMe/storage/domain/model/Result;->getData()Ljava/lang/Object;
 

@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/iMe/navigation/wallet/coordinator/PinCodeCoordinator;->start(Lorg/telegram/ui/ActionBar/INavigationLayout;Lcom/iMe/ui/base/WalletAuthFragment;Lcom/iMe/navigation/wallet/coordinator/PinCodeCoordinator$Args;Z)V
+    value = Lcom/iMe/navigation/wallet/coordinator/PinCodeCoordinator;->start(Lorg/telegram/ui/ActionBar/INavigationLayout;Lcom/iMe/ui/base/wallet_auth/WalletAuthBaseFragment;Lcom/iMe/navigation/wallet/coordinator/PinCodeCoordinator$Args;Z)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -29,14 +29,14 @@
 
 
 # instance fields
-.field final synthetic $nextFragment:Lcom/iMe/ui/base/WalletAuthFragment;
+.field final synthetic $nextFragment:Lcom/iMe/ui/base/wallet_auth/WalletAuthBaseFragment;
 
 
 # direct methods
-.method constructor <init>(Lcom/iMe/ui/base/WalletAuthFragment;)V
+.method constructor <init>(Lcom/iMe/ui/base/wallet_auth/WalletAuthBaseFragment;)V
     .locals 0
 
-    iput-object p1, p0, Lcom/iMe/navigation/wallet/coordinator/PinCodeCoordinator$start$1;->$nextFragment:Lcom/iMe/ui/base/WalletAuthFragment;
+    iput-object p1, p0, Lcom/iMe/navigation/wallet/coordinator/PinCodeCoordinator$start$1;->$nextFragment:Lcom/iMe/ui/base/wallet_auth/WalletAuthBaseFragment;
 
     const/4 p1, 0x2
 
@@ -50,7 +50,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 29
+    .line 30
     check-cast p1, Lcom/iMe/model/wallet/crypto/pin/EnterPinCodeResult;
 
     check-cast p2, Lcom/iMe/ui/base/mvp/MvpFragment;
@@ -73,20 +73,20 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 31
+    .line 32
     instance-of p1, p1, Lcom/iMe/model/wallet/crypto/pin/EnterPinCodeResult$Success;
 
     if-eqz p1, :cond_1
 
-    .line 32
-    iget-object p1, p0, Lcom/iMe/navigation/wallet/coordinator/PinCodeCoordinator$start$1;->$nextFragment:Lcom/iMe/ui/base/WalletAuthFragment;
+    .line 33
+    iget-object p1, p0, Lcom/iMe/navigation/wallet/coordinator/PinCodeCoordinator$start$1;->$nextFragment:Lcom/iMe/ui/base/wallet_auth/WalletAuthBaseFragment;
 
     const/4 v0, 0x1
 
     invoke-virtual {p2, p1, v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;Z)Z
 
-    .line 33
-    iget-object p1, p0, Lcom/iMe/navigation/wallet/coordinator/PinCodeCoordinator$start$1;->$nextFragment:Lcom/iMe/ui/base/WalletAuthFragment;
+    .line 34
+    iget-object p1, p0, Lcom/iMe/navigation/wallet/coordinator/PinCodeCoordinator$start$1;->$nextFragment:Lcom/iMe/ui/base/wallet_auth/WalletAuthBaseFragment;
 
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
@@ -110,14 +110,14 @@
 
     if-eqz p1, :cond_1
 
-    .line 34
+    .line 35
     invoke-interface {p1}, Lkotlin/Lazy;->isInitialized()Z
 
     move-result p2
 
     if-eqz p2, :cond_1
 
-    .line 35
+    .line 36
     invoke-interface {p1}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
 
     move-result-object p1

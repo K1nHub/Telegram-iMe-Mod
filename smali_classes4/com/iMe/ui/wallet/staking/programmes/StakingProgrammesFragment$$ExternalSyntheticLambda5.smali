@@ -8,14 +8,18 @@
 # instance fields
 .field public final synthetic f$0:Lcom/iMe/ui/wallet/staking/programmes/StakingProgrammesFragment;
 
+.field public final synthetic f$1:Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
+
 
 # direct methods
-.method public synthetic constructor <init>(Lcom/iMe/ui/wallet/staking/programmes/StakingProgrammesFragment;)V
+.method public synthetic constructor <init>(Lcom/iMe/ui/wallet/staking/programmes/StakingProgrammesFragment;Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lcom/iMe/ui/wallet/staking/programmes/StakingProgrammesFragment$$ExternalSyntheticLambda5;->f$0:Lcom/iMe/ui/wallet/staking/programmes/StakingProgrammesFragment;
+
+    iput-object p2, p0, Lcom/iMe/ui/wallet/staking/programmes/StakingProgrammesFragment$$ExternalSyntheticLambda5;->f$1:Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
 
     return-void
 .end method
@@ -23,11 +27,13 @@
 
 # virtual methods
 .method public final invoke()V
-    .locals 1
+    .locals 2
 
     iget-object v0, p0, Lcom/iMe/ui/wallet/staking/programmes/StakingProgrammesFragment$$ExternalSyntheticLambda5;->f$0:Lcom/iMe/ui/wallet/staking/programmes/StakingProgrammesFragment;
 
-    invoke-static {v0}, Lcom/iMe/ui/wallet/staking/programmes/StakingProgrammesFragment;->$r8$lambda$QPDjF_jIoTGNrQ5jwlvxUndX5G0(Lcom/iMe/ui/wallet/staking/programmes/StakingProgrammesFragment;)V
+    iget-object v1, p0, Lcom/iMe/ui/wallet/staking/programmes/StakingProgrammesFragment$$ExternalSyntheticLambda5;->f$1:Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
+
+    invoke-static {v0, v1}, Lcom/iMe/ui/wallet/staking/programmes/StakingProgrammesFragment;->$r8$lambda$TLjy4BmUglto5bjrWfyyA_fKNuE(Lcom/iMe/ui/wallet/staking/programmes/StakingProgrammesFragment;Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;)V
 
     return-void
 .end method

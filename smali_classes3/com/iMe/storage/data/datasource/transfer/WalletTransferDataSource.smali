@@ -18,14 +18,13 @@
 
 
 # virtual methods
-.method public abstract getTransferMetadata(Lcom/iMe/storage/domain/model/wallet/token/TokenCode;Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/domain/model/crypto/NetworkType;)Lio/reactivex/Observable;
+.method public abstract getTransferMetadata(Lcom/iMe/storage/domain/model/wallet/token/Token;Ljava/lang/String;Ljava/lang/String;)Lio/reactivex/Observable;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lcom/iMe/storage/domain/model/wallet/token/TokenCode;",
+            "Lcom/iMe/storage/domain/model/wallet/token/Token;",
             "Ljava/lang/String;",
             "Ljava/lang/String;",
-            "Lcom/iMe/storage/domain/model/crypto/NetworkType;",
             ")",
             "Lio/reactivex/Observable<",
             "Lcom/iMe/storage/domain/model/Result<",

@@ -12,24 +12,7 @@
 
 
 # virtual methods
-.method public abstract openCustomPriceDialog(Lcom/iMe/model/wallet/crypto/buy/CryptoBuyItem;)V
-.end method
-
-.method public abstract showConfirmDialog(Lcom/iMe/model/wallet/crypto/buy/CryptoBuyItem;Lcom/iMe/model/dialog/DialogModel;)V
-.end method
-
-.method public abstract showErrorPurchase(Ljava/lang/String;)V
-.end method
-
-.method public abstract showProcessingUrl(Ljava/lang/String;)V
-    .annotation runtime Lmoxy/viewstate/strategy/alias/AddToEndSingle;
-    .end annotation
-.end method
-
 .method public abstract showRefreshLoading(Z)V
-.end method
-
-.method public abstract showSuccessPurchase()V
 .end method
 
 .method public abstract showUiItems(Ljava/util/List;)V

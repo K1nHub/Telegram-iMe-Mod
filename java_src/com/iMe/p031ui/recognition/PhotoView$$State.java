@@ -16,6 +16,11 @@ public class PhotoView$$State extends MvpViewState<PhotoView> implements PhotoVi
         BaseView.CC.$default$finishScreen(this);
     }
 
+    @Override // com.iMe.p031ui.base.mvp.base.BaseView
+    public /* synthetic */ void removeSelfFromStackImmediately() {
+        BaseView.CC.$default$removeSelfFromStackImmediately(this);
+    }
+
     @Override // com.iMe.p031ui.recognition.PhotoView
     public void showTranslateDialog(String str) {
         ShowTranslateDialogCommand showTranslateDialogCommand = new ShowTranslateDialogCommand(this, str);

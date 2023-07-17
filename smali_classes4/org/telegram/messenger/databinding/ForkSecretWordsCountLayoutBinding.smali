@@ -7,15 +7,7 @@
 
 
 # instance fields
-.field public final recycleActions:Landroidx/recyclerview/widget/RecyclerView;
-
-.field public final root:Landroid/widget/LinearLayout;
-
 .field private final rootView:Landroid/widget/LinearLayout;
-
-.field public final textActionCancel:Landroidx/appcompat/widget/AppCompatTextView;
-
-.field public final textTitle:Landroidx/appcompat/widget/AppCompatTextView;
 
 
 # direct methods
@@ -27,18 +19,6 @@
 
     .line 47
     iput-object p1, p0, Lorg/telegram/messenger/databinding/ForkSecretWordsCountLayoutBinding;->rootView:Landroid/widget/LinearLayout;
-
-    .line 49
-    iput-object p3, p0, Lorg/telegram/messenger/databinding/ForkSecretWordsCountLayoutBinding;->recycleActions:Landroidx/recyclerview/widget/RecyclerView;
-
-    .line 50
-    iput-object p4, p0, Lorg/telegram/messenger/databinding/ForkSecretWordsCountLayoutBinding;->root:Landroid/widget/LinearLayout;
-
-    .line 51
-    iput-object p5, p0, Lorg/telegram/messenger/databinding/ForkSecretWordsCountLayoutBinding;->textActionCancel:Landroidx/appcompat/widget/AppCompatTextView;
-
-    .line 52
-    iput-object p6, p0, Lorg/telegram/messenger/databinding/ForkSecretWordsCountLayoutBinding;->textTitle:Landroidx/appcompat/widget/AppCompatTextView;
 
     return-void
 .end method

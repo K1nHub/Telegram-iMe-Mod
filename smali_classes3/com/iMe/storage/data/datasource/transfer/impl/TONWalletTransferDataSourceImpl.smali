@@ -15,15 +15,15 @@
 # instance fields
 .field private final cryptoAccessManager:Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;
 
-.field private final firebaseErrorHandler:Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;
+.field private final cryptoWalletApi:Lcom/iMe/storage/data/network/api/own/CryptoWalletApi;
 
-.field private final tonApi:Lcom/iMe/storage/data/network/api/own/TonApi;
+.field private final firebaseErrorHandler:Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;
 
 .field private final tonController:Lcom/iMe/storage/domain/manager/ton/TonController;
 
 
 # direct methods
-.method public constructor <init>(Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;Lcom/iMe/storage/data/network/api/own/TonApi;Lcom/iMe/storage/domain/manager/ton/TonController;)V
+.method public constructor <init>(Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;Lcom/iMe/storage/data/network/api/own/CryptoWalletApi;Lcom/iMe/storage/domain/manager/ton/TonController;)V
     .locals 1
 
     const-string v0, "cryptoAccessManager"
@@ -34,7 +34,7 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "tonApi"
+    const-string v0, "cryptoWalletApi"
 
     invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -42,19 +42,19 @@
 
     invoke-static {p4, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 24
+    .line 23
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 25
+    .line 24
     iput-object p1, p0, Lcom/iMe/storage/data/datasource/transfer/impl/TONWalletTransferDataSourceImpl;->cryptoAccessManager:Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;
 
-    .line 26
+    .line 25
     iput-object p2, p0, Lcom/iMe/storage/data/datasource/transfer/impl/TONWalletTransferDataSourceImpl;->firebaseErrorHandler:Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;
 
-    .line 27
-    iput-object p3, p0, Lcom/iMe/storage/data/datasource/transfer/impl/TONWalletTransferDataSourceImpl;->tonApi:Lcom/iMe/storage/data/network/api/own/TonApi;
+    .line 26
+    iput-object p3, p0, Lcom/iMe/storage/data/datasource/transfer/impl/TONWalletTransferDataSourceImpl;->cryptoWalletApi:Lcom/iMe/storage/data/network/api/own/CryptoWalletApi;
 
-    .line 28
+    .line 27
     iput-object p4, p0, Lcom/iMe/storage/data/datasource/transfer/impl/TONWalletTransferDataSourceImpl;->tonController:Lcom/iMe/storage/domain/manager/ton/TonController;
 
     return-void
@@ -62,15 +62,14 @@
 
 
 # virtual methods
-.method public getTransferMetadata(Lcom/iMe/storage/domain/model/wallet/token/TokenCode;Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/domain/model/crypto/NetworkType;)Lio/reactivex/Observable;
-    .locals 1
+.method public getTransferMetadata(Lcom/iMe/storage/domain/model/wallet/token/Token;Ljava/lang/String;Ljava/lang/String;)Lio/reactivex/Observable;
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lcom/iMe/storage/domain/model/wallet/token/TokenCode;",
+            "Lcom/iMe/storage/domain/model/wallet/token/Token;",
             "Ljava/lang/String;",
             "Ljava/lang/String;",
-            "Lcom/iMe/storage/domain/model/crypto/NetworkType;",
             ")",
             "Lio/reactivex/Observable<",
             "Lcom/iMe/storage/domain/model/Result<",
@@ -79,22 +78,18 @@
         }
     .end annotation
 
-    const-string v0, "tokenCode"
+    const-string v0, "token"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "networkType"
-
-    invoke-static {p4, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
     .line 37
-    iget-object p4, p0, Lcom/iMe/storage/data/datasource/transfer/impl/TONWalletTransferDataSourceImpl;->tonApi:Lcom/iMe/storage/data/network/api/own/TonApi;
+    iget-object v0, p0, Lcom/iMe/storage/data/datasource/transfer/impl/TONWalletTransferDataSourceImpl;->cryptoWalletApi:Lcom/iMe/storage/data/network/api/own/CryptoWalletApi;
 
     .line 39
-    new-instance v0, Lcom/iMe/storage/data/network/model/request/crypto/ton/GetParamsForTonCryptoTransferRequest;
+    new-instance v1, Lcom/iMe/storage/data/network/model/request/crypto/wallet/PrepareTransferRequest;
 
     .line 40
-    invoke-virtual {p1}, Ljava/lang/Enum;->name()Ljava/lang/String;
+    invoke-static {p1}, Lcom/iMe/storage/data/mapper/wallet/TokenMappingKt;->mapToRequest(Lcom/iMe/storage/domain/model/wallet/token/Token;)Lcom/iMe/storage/data/network/model/request/wallet/TokenRequest;
 
     move-result-object p1
 
@@ -109,10 +104,10 @@
     move-result-object p3
 
     .line 39
-    invoke-direct {v0, p1, p2, p3}, Lcom/iMe/storage/data/network/model/request/crypto/ton/GetParamsForTonCryptoTransferRequest;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct {v1, p1, p2, p3}, Lcom/iMe/storage/data/network/model/request/crypto/wallet/PrepareTransferRequest;-><init>(Lcom/iMe/storage/data/network/model/request/wallet/TokenRequest;Ljava/lang/String;Ljava/lang/String;)V
 
     .line 38
-    invoke-interface {p4, v0}, Lcom/iMe/storage/data/network/api/own/TonApi;->getParamsForCryptoTransfer(Lcom/iMe/storage/data/network/model/request/crypto/ton/GetParamsForTonCryptoTransferRequest;)Lio/reactivex/Observable;
+    invoke-interface {v0, v1}, Lcom/iMe/storage/data/network/api/own/CryptoWalletApi;->getTONCryptoTransferData(Lcom/iMe/storage/data/network/model/request/crypto/wallet/PrepareTransferRequest;)Lio/reactivex/Observable;
 
     move-result-object p1
 
@@ -181,7 +176,7 @@
 .method public bridge synthetic sign(Ljava/lang/Object;)Lio/reactivex/Observable;
     .locals 0
 
-    .line 24
+    .line 23
     check-cast p1, Lcom/iMe/storage/domain/model/crypto/send/TransactionArgs;
 
     invoke-virtual {p0, p1}, Lcom/iMe/storage/data/datasource/transfer/impl/TONWalletTransferDataSourceImpl;->sign(Lcom/iMe/storage/domain/model/crypto/send/TransactionArgs;)Lio/reactivex/Observable;

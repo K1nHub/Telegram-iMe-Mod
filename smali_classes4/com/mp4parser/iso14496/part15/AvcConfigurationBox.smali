@@ -127,7 +127,7 @@
 
     const-string v1, "1"
 
-    const-string v2, "setAvcLevelIndication"
+    const-string/jumbo v2, "setAvcLevelIndication"
 
     const-string v3, "com.mp4parser.iso14496.part15.AvcConfigurationBox"
 
@@ -155,7 +155,7 @@
 
     const-string v1, "1"
 
-    const-string v2, "setLengthSizeMinusOne"
+    const-string/jumbo v2, "setLengthSizeMinusOne"
 
     const-string v3, "com.mp4parser.iso14496.part15.AvcConfigurationBox"
 
@@ -189,7 +189,7 @@
 
     const-string v4, "java.util.List"
 
-    const-string v5, "sequenceParameterSets"
+    const-string/jumbo v5, "sequenceParameterSets"
 
     const-string v6, ""
 
@@ -211,7 +211,7 @@
 
     const-string v1, "1"
 
-    const-string v2, "setPictureParameterSets"
+    const-string/jumbo v2, "setPictureParameterSets"
 
     const-string v3, "com.mp4parser.iso14496.part15.AvcConfigurationBox"
 
@@ -263,7 +263,7 @@
 
     const-string v1, "1"
 
-    const-string v2, "setChromaFormat"
+    const-string/jumbo v2, "setChromaFormat"
 
     const-string v3, "com.mp4parser.iso14496.part15.AvcConfigurationBox"
 
@@ -315,7 +315,7 @@
 
     const-string v1, "1"
 
-    const-string v2, "setBitDepthLumaMinus8"
+    const-string/jumbo v2, "setBitDepthLumaMinus8"
 
     const-string v3, "com.mp4parser.iso14496.part15.AvcConfigurationBox"
 
@@ -367,7 +367,7 @@
 
     const-string v1, "1"
 
-    const-string v2, "setBitDepthChromaMinus8"
+    const-string/jumbo v2, "setBitDepthChromaMinus8"
 
     const-string v3, "com.mp4parser.iso14496.part15.AvcConfigurationBox"
 
@@ -449,7 +449,7 @@
 
     const-string v4, "java.util.List"
 
-    const-string v5, "sequenceParameterSetExts"
+    const-string/jumbo v5, "sequenceParameterSetExts"
 
     const-string v6, ""
 
@@ -491,7 +491,7 @@
 
     const-string v1, "1"
 
-    const-string v2, "setHasExts"
+    const-string/jumbo v2, "setHasExts"
 
     const-string v3, "com.mp4parser.iso14496.part15.AvcConfigurationBox"
 
@@ -767,7 +767,7 @@
 
     const-string v1, "1"
 
-    const-string v2, "setConfigurationVersion"
+    const-string/jumbo v2, "setConfigurationVersion"
 
     const-string v3, "com.mp4parser.iso14496.part15.AvcConfigurationBox"
 
@@ -795,7 +795,7 @@
 
     const-string v1, "1"
 
-    const-string v2, "setAvcProfileIndication"
+    const-string/jumbo v2, "setAvcProfileIndication"
 
     const-string v3, "com.mp4parser.iso14496.part15.AvcConfigurationBox"
 
@@ -823,7 +823,7 @@
 
     const-string v1, "1"
 
-    const-string v2, "setProfileCompatibility"
+    const-string/jumbo v2, "setProfileCompatibility"
 
     const-string v3, "com.mp4parser.iso14496.part15.AvcConfigurationBox"
 

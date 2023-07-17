@@ -45,7 +45,7 @@ public final class SelectedContactsDataStore {
         asSequence = SequencesKt__SequencesKt.asSequence(new LongIterator() { // from class: com.iMe.manager.contacts.SelectedContactsDataStore$getSelectedIdsAsList$1
             private int index;
 
-            @Override // java.util.Iterator, p034j$.util.Iterator
+            @Override // java.util.Iterator, p033j$.util.Iterator
             public boolean hasNext() {
                 return this.index < SelectedContactsDataStore.this.getSelectedContactsId().size();
             }

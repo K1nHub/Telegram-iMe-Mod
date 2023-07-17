@@ -20,9 +20,9 @@ public final class WalletRepositoryImpl$activateWallet$$inlined$mapSuccess$1 ext
     @Override // kotlin.jvm.functions.Function1
     public final Result<Boolean> invoke(ApiBaseResponse<Object> response) {
         Intrinsics.checkNotNullParameter(response, "response");
-        if (response.isSuccess()) {
-            return Result.Companion.success(Boolean.TRUE);
+        if (!response.isSuccess()) {
+            return Result.Companion.error$default(Result.Companion, this.$errorHandler.handleError((ApiBaseResponse<?>) response), null, 2, null);
         }
-        return Result.Companion.error$default(Result.Companion, this.$errorHandler.handleError((ApiBaseResponse<?>) response), null, 2, null);
+        return Result.Companion.success(Boolean.TRUE);
     }
 }

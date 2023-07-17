@@ -15,10 +15,10 @@ public class LMSigParameters {
     private final ASN1ObjectIdentifier digestOid;
 
     /* renamed from: h */
-    private final int f1322h;
+    private final int f1404h;
 
     /* renamed from: m */
-    private final int f1323m;
+    private final int f1405m;
     private final int type;
 
     static {
@@ -46,8 +46,8 @@ public class LMSigParameters {
 
     protected LMSigParameters(int i, int i2, int i3, ASN1ObjectIdentifier aSN1ObjectIdentifier) {
         this.type = i;
-        this.f1323m = i2;
-        this.f1322h = i3;
+        this.f1405m = i2;
+        this.f1404h = i3;
         this.digestOid = aSN1ObjectIdentifier;
     }
 
@@ -61,11 +61,11 @@ public class LMSigParameters {
     }
 
     public int getH() {
-        return this.f1322h;
+        return this.f1404h;
     }
 
     public int getM() {
-        return this.f1323m;
+        return this.f1405m;
     }
 
     public int getType() {

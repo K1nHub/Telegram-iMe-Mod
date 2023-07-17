@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nTRONWalletTransferDataSourceImpl.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TRONWalletTransferDataSourceImpl.kt\ncom/iMe/storage/data/datasource/transfer/impl/TRONWalletTransferDataSourceImpl\n+ 2 FirebaseExt.kt\ncom/iMe/storage/data/utils/extentions/FirebaseExtKt\n+ 3 ObservableExt.kt\ncom/iMe/storage/domain/utils/extentions/ObservableExtKt\n+ 4 ResultExt.kt\ncom/iMe/storage/domain/utils/extentions/ResultExtKt\n+ 5 RxExt.kt\ncom/iMe/storage/data/utils/extentions/RxExtKt\n*L\n1#1,119:1\n70#2:120\n14#3:121\n7#4:122\n11#4:124\n18#5:123\n18#5:125\n*S KotlinDebug\n*F\n+ 1 TRONWalletTransferDataSourceImpl.kt\ncom/iMe/storage/data/datasource/transfer/impl/TRONWalletTransferDataSourceImpl\n*L\n55#1:120\n58#1:121\n70#1:122\n79#1:124\n70#1:123\n79#1:125\n*E\n"
+    value = "SMAP\nTRONWalletTransferDataSourceImpl.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TRONWalletTransferDataSourceImpl.kt\ncom/iMe/storage/data/datasource/transfer/impl/TRONWalletTransferDataSourceImpl\n+ 2 FirebaseExt.kt\ncom/iMe/storage/data/utils/extentions/FirebaseExtKt\n+ 3 ObservableExt.kt\ncom/iMe/storage/domain/utils/extentions/ObservableExtKt\n+ 4 ResultExt.kt\ncom/iMe/storage/domain/utils/extentions/ResultExtKt\n+ 5 RxExt.kt\ncom/iMe/storage/data/utils/extentions/RxExtKt\n*L\n1#1,111:1\n70#2:112\n14#3:113\n7#4:114\n11#4:116\n18#5:115\n18#5:117\n*S KotlinDebug\n*F\n+ 1 TRONWalletTransferDataSourceImpl.kt\ncom/iMe/storage/data/datasource/transfer/impl/TRONWalletTransferDataSourceImpl\n*L\n47#1:112\n50#1:113\n62#1:114\n71#1:116\n62#1:115\n71#1:117\n*E\n"
 .end annotation
 
 
@@ -19,11 +19,9 @@
 
 .field private final firebaseErrorHandler:Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;
 
-.field private final walletApi:Lcom/iMe/storage/data/network/api/own/WalletApi;
-
 
 # direct methods
-.method public constructor <init>(Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;Lcom/iMe/storage/data/network/api/own/CryptoWalletApi;Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;Lcom/iMe/storage/data/network/api/own/WalletApi;)V
+.method public constructor <init>(Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;Lcom/iMe/storage/data/network/api/own/CryptoWalletApi;Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;)V
     .locals 1
 
     const-string v0, "firebaseErrorHandler"
@@ -38,24 +36,17 @@
 
     invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "walletApi"
-
-    invoke-static {p4, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    .line 31
+    .line 30
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 32
+    .line 31
     iput-object p1, p0, Lcom/iMe/storage/data/datasource/transfer/impl/TRONWalletTransferDataSourceImpl;->firebaseErrorHandler:Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;
 
-    .line 33
+    .line 32
     iput-object p2, p0, Lcom/iMe/storage/data/datasource/transfer/impl/TRONWalletTransferDataSourceImpl;->cryptoWalletApi:Lcom/iMe/storage/data/network/api/own/CryptoWalletApi;
 
-    .line 34
+    .line 33
     iput-object p3, p0, Lcom/iMe/storage/data/datasource/transfer/impl/TRONWalletTransferDataSourceImpl;->cryptoAccessManager:Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;
-
-    .line 35
-    iput-object p4, p0, Lcom/iMe/storage/data/datasource/transfer/impl/TRONWalletTransferDataSourceImpl;->walletApi:Lcom/iMe/storage/data/network/api/own/WalletApi;
 
     return-void
 .end method
@@ -63,7 +54,7 @@
 .method public static final synthetic access$getCryptoWalletApi$p(Lcom/iMe/storage/data/datasource/transfer/impl/TRONWalletTransferDataSourceImpl;)Lcom/iMe/storage/data/network/api/own/CryptoWalletApi;
     .locals 0
 
-    .line 31
+    .line 30
     iget-object p0, p0, Lcom/iMe/storage/data/datasource/transfer/impl/TRONWalletTransferDataSourceImpl;->cryptoWalletApi:Lcom/iMe/storage/data/network/api/own/CryptoWalletApi;
 
     return-object p0
@@ -72,7 +63,7 @@
 .method public static final synthetic access$getFirebaseErrorHandler$p(Lcom/iMe/storage/data/datasource/transfer/impl/TRONWalletTransferDataSourceImpl;)Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;
     .locals 0
 
-    .line 31
+    .line 30
     iget-object p0, p0, Lcom/iMe/storage/data/datasource/transfer/impl/TRONWalletTransferDataSourceImpl;->firebaseErrorHandler:Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;
 
     return-object p0
@@ -81,12 +72,12 @@
 .method private final createTransactionByType(Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TRON;Ljava/lang/String;)Lwallet/core/jni/proto/Tron$Transaction;
     .locals 4
 
-    .line 87
+    .line 79
     invoke-static {}, Lwallet/core/jni/proto/Tron$Transaction;->newBuilder()Lwallet/core/jni/proto/Tron$Transaction$Builder;
 
     move-result-object v0
 
-    .line 89
+    .line 81
     invoke-virtual {p1}, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TRON;->getContractAddress()Ljava/lang/String;
 
     move-result-object v1
@@ -113,12 +104,12 @@
     :goto_1
     if-eqz v1, :cond_2
 
-    .line 90
+    .line 82
     invoke-static {}, Lwallet/core/jni/proto/Tron$TransferContract;->newBuilder()Lwallet/core/jni/proto/Tron$TransferContract$Builder;
 
     move-result-object v1
 
-    .line 91
+    .line 83
     invoke-virtual {p1}, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs;->getConvertedAmount()Ljava/math/BigInteger;
 
     move-result-object v2
@@ -131,7 +122,7 @@
 
     move-result-object v1
 
-    .line 92
+    .line 84
     invoke-virtual {p1}, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TRON;->getRecipientAddress()Ljava/lang/String;
 
     move-result-object v2
@@ -140,30 +131,30 @@
 
     move-result-object v1
 
-    .line 93
+    .line 85
     invoke-virtual {v1, p2}, Lwallet/core/jni/proto/Tron$TransferContract$Builder;->setOwnerAddress(Ljava/lang/String;)Lwallet/core/jni/proto/Tron$TransferContract$Builder;
 
     move-result-object p2
 
-    .line 94
+    .line 86
     invoke-virtual {p2}, Lcom/google/protobuf/GeneratedMessageLite$Builder;->build()Lcom/google/protobuf/GeneratedMessageLite;
 
     move-result-object p2
 
     check-cast p2, Lwallet/core/jni/proto/Tron$TransferContract;
 
-    .line 90
+    .line 82
     invoke-virtual {v0, p2}, Lwallet/core/jni/proto/Tron$Transaction$Builder;->setTransfer(Lwallet/core/jni/proto/Tron$TransferContract;)Lwallet/core/jni/proto/Tron$Transaction$Builder;
 
     goto :goto_2
 
-    .line 96
+    .line 88
     :cond_2
     invoke-static {}, Lwallet/core/jni/proto/Tron$TransferTRC20Contract;->newBuilder()Lwallet/core/jni/proto/Tron$TransferTRC20Contract$Builder;
 
     move-result-object v1
 
-    .line 97
+    .line 89
     invoke-virtual {p1}, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs;->getConvertedAmount()Ljava/math/BigInteger;
 
     move-result-object v2
@@ -176,7 +167,7 @@
 
     move-result-object v1
 
-    .line 98
+    .line 90
     invoke-virtual {p1}, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TRON;->getRecipientAddress()Ljava/lang/String;
 
     move-result-object v2
@@ -185,7 +176,7 @@
 
     move-result-object v1
 
-    .line 99
+    .line 91
     invoke-virtual {p1}, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TRON;->getContractAddress()Ljava/lang/String;
 
     move-result-object v2
@@ -194,28 +185,28 @@
 
     move-result-object v1
 
-    .line 100
+    .line 92
     invoke-virtual {v1, p2}, Lwallet/core/jni/proto/Tron$TransferTRC20Contract$Builder;->setOwnerAddress(Ljava/lang/String;)Lwallet/core/jni/proto/Tron$TransferTRC20Contract$Builder;
 
     move-result-object p2
 
-    .line 101
+    .line 93
     invoke-virtual {p2}, Lcom/google/protobuf/GeneratedMessageLite$Builder;->build()Lcom/google/protobuf/GeneratedMessageLite;
 
     move-result-object p2
 
     check-cast p2, Lwallet/core/jni/proto/Tron$TransferTRC20Contract;
 
-    .line 96
+    .line 88
     invoke-virtual {v0, p2}, Lwallet/core/jni/proto/Tron$Transaction$Builder;->setTransferTrc20Contract(Lwallet/core/jni/proto/Tron$TransferTRC20Contract;)Lwallet/core/jni/proto/Tron$Transaction$Builder;
 
-    .line 105
+    .line 97
     :goto_2
     invoke-static {}, Lwallet/core/jni/proto/Tron$BlockHeader;->newBuilder()Lwallet/core/jni/proto/Tron$BlockHeader$Builder;
 
     move-result-object p2
 
-    .line 106
+    .line 98
     invoke-virtual {p1}, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TRON;->getBlockHeader()Lcom/iMe/storage/domain/model/crypto/TronBlockHeader;
 
     move-result-object v1
@@ -228,7 +219,7 @@
 
     move-result-object p2
 
-    .line 107
+    .line 99
     invoke-virtual {p1}, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TRON;->getBlockHeader()Lcom/iMe/storage/domain/model/crypto/TronBlockHeader;
 
     move-result-object v1
@@ -245,7 +236,7 @@
 
     move-result-object p2
 
-    .line 108
+    .line 100
     invoke-virtual {p1}, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TRON;->getBlockHeader()Lcom/iMe/storage/domain/model/crypto/TronBlockHeader;
 
     move-result-object v1
@@ -262,7 +253,7 @@
 
     move-result-object p2
 
-    .line 109
+    .line 101
     invoke-virtual {p1}, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TRON;->getBlockHeader()Lcom/iMe/storage/domain/model/crypto/TronBlockHeader;
 
     move-result-object v1
@@ -279,7 +270,7 @@
 
     move-result-object p2
 
-    .line 110
+    .line 102
     invoke-virtual {p1}, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TRON;->getBlockHeader()Lcom/iMe/storage/domain/model/crypto/TronBlockHeader;
 
     move-result-object v1
@@ -292,7 +283,7 @@
 
     move-result-object p2
 
-    .line 111
+    .line 103
     invoke-virtual {p1}, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TRON;->getBlockHeader()Lcom/iMe/storage/domain/model/crypto/TronBlockHeader;
 
     move-result-object v1
@@ -305,19 +296,19 @@
 
     move-result-object p2
 
-    .line 112
+    .line 104
     invoke-virtual {p2}, Lcom/google/protobuf/GeneratedMessageLite$Builder;->build()Lcom/google/protobuf/GeneratedMessageLite;
 
     move-result-object p2
 
     check-cast p2, Lwallet/core/jni/proto/Tron$BlockHeader;
 
-    .line 104
+    .line 96
     invoke-virtual {v0, p2}, Lwallet/core/jni/proto/Tron$Transaction$Builder;->setBlockHeader(Lwallet/core/jni/proto/Tron$BlockHeader;)Lwallet/core/jni/proto/Tron$Transaction$Builder;
 
     move-result-object p2
 
-    .line 114
+    .line 106
     invoke-virtual {p1}, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TRON;->getFeeLimit()Ljava/math/BigInteger;
 
     move-result-object p1
@@ -330,7 +321,7 @@
 
     move-result-object p1
 
-    .line 115
+    .line 107
     invoke-virtual {p1}, Lcom/google/protobuf/GeneratedMessageLite$Builder;->build()Lcom/google/protobuf/GeneratedMessageLite;
 
     move-result-object p1
@@ -346,15 +337,14 @@
 
 
 # virtual methods
-.method public getTransferMetadata(Lcom/iMe/storage/domain/model/wallet/token/TokenCode;Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/domain/model/crypto/NetworkType;)Lio/reactivex/Observable;
+.method public getTransferMetadata(Lcom/iMe/storage/domain/model/wallet/token/Token;Ljava/lang/String;Ljava/lang/String;)Lio/reactivex/Observable;
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lcom/iMe/storage/domain/model/wallet/token/TokenCode;",
+            "Lcom/iMe/storage/domain/model/wallet/token/Token;",
             "Ljava/lang/String;",
             "Ljava/lang/String;",
-            "Lcom/iMe/storage/domain/model/crypto/NetworkType;",
             ")",
             "Lio/reactivex/Observable<",
             "Lcom/iMe/storage/domain/model/Result<",
@@ -363,39 +353,30 @@
         }
     .end annotation
 
-    const-string v0, "tokenCode"
+    const-string v0, "token"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "networkType"
+    .line 39
+    iget-object v0, p0, Lcom/iMe/storage/data/datasource/transfer/impl/TRONWalletTransferDataSourceImpl;->cryptoWalletApi:Lcom/iMe/storage/data/network/api/own/CryptoWalletApi;
 
-    invoke-static {p4, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    .line 41
+    new-instance v1, Lcom/iMe/storage/data/network/model/request/crypto/wallet/PrepareTransferRequest;
 
-    .line 46
-    iget-object v0, p0, Lcom/iMe/storage/data/datasource/transfer/impl/TRONWalletTransferDataSourceImpl;->walletApi:Lcom/iMe/storage/data/network/api/own/WalletApi;
-
-    .line 48
-    new-instance v1, Lcom/iMe/storage/data/network/model/request/crypto/wallet/GetDataForCryptoTransferRequest;
-
-    .line 49
-    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;->getName()Ljava/lang/String;
+    .line 42
+    invoke-static {p1}, Lcom/iMe/storage/data/mapper/wallet/TokenMappingKt;->mapToRequest(Lcom/iMe/storage/domain/model/wallet/token/Token;)Lcom/iMe/storage/data/network/model/request/wallet/TokenRequest;
 
     move-result-object p1
 
-    .line 52
-    invoke-virtual {p4}, Ljava/lang/Enum;->name()Ljava/lang/String;
+    .line 41
+    invoke-direct {v1, p1, p2, p3}, Lcom/iMe/storage/data/network/model/request/crypto/wallet/PrepareTransferRequest;-><init>(Lcom/iMe/storage/data/network/model/request/wallet/TokenRequest;Ljava/lang/String;Ljava/lang/String;)V
 
-    move-result-object p4
+    .line 40
+    invoke-interface {v0, v1}, Lcom/iMe/storage/data/network/api/own/CryptoWalletApi;->getTRONCryptoTransferData(Lcom/iMe/storage/data/network/model/request/crypto/wallet/PrepareTransferRequest;)Lio/reactivex/Observable;
 
-    .line 48
-    invoke-direct {v1, p1, p2, p3, p4}, Lcom/iMe/storage/data/network/model/request/crypto/wallet/GetDataForCryptoTransferRequest;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    move-result-object p1
 
     .line 47
-    invoke-interface {v0, v1}, Lcom/iMe/storage/data/network/api/own/WalletApi;->getTRONCryptoTransferData(Lcom/iMe/storage/data/network/model/request/crypto/wallet/GetDataForCryptoTransferRequest;)Lio/reactivex/Observable;
-
-    move-result-object p1
-
-    .line 55
     iget-object p2, p0, Lcom/iMe/storage/data/datasource/transfer/impl/TRONWalletTransferDataSourceImpl;->firebaseErrorHandler:Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;
 
     .line 70
@@ -436,12 +417,12 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 67
+    .line 59
     instance-of v0, p1, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TRON;
 
     if-eqz v0, :cond_1
 
-    .line 69
+    .line 61
     iget-object v0, p0, Lcom/iMe/storage/data/datasource/transfer/impl/TRONWalletTransferDataSourceImpl;->cryptoAccessManager:Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;
 
     invoke-interface {v0}, Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;->getTRONWallet()Lcom/iMe/storage/domain/model/crypto/Wallet$TRON;
@@ -452,7 +433,7 @@
 
     if-nez v0, :cond_0
 
-    .line 70
+    .line 62
     new-instance p1, Lcom/iMe/storage/data/network/model/error/ErrorModel;
 
     const/4 v0, 0x3
@@ -479,9 +460,9 @@
 
     return-object p1
 
-    .line 71
+    .line 63
     :cond_0
-    invoke-virtual {v0}, Lcom/iMe/storage/domain/model/crypto/Wallet$TRON;->getPrivateKeyBytes()[B
+    invoke-virtual {v0}, Lcom/iMe/storage/domain/model/crypto/Wallet$MultiCoinWallet;->getPrivateKeyBytes()[B
 
     move-result-object v2
 
@@ -489,15 +470,15 @@
 
     move-result-object v2
 
-    .line 73
+    .line 65
     invoke-static {}, Lwallet/core/jni/proto/Tron$SigningInput;->newBuilder()Lwallet/core/jni/proto/Tron$SigningInput$Builder;
 
     move-result-object v3
 
-    .line 74
+    .line 66
     check-cast p1, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TRON;
 
-    invoke-virtual {v0}, Lcom/iMe/storage/domain/model/crypto/Wallet$TRON;->getAddress()Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/iMe/storage/domain/model/crypto/Wallet$MultiCoinWallet;->getAddress()Ljava/lang/String;
 
     move-result-object v0
 
@@ -509,19 +490,19 @@
 
     move-result-object p1
 
-    .line 75
+    .line 67
     invoke-virtual {p1, v2}, Lwallet/core/jni/proto/Tron$SigningInput$Builder;->setPrivateKey(Lcom/google/protobuf/ByteString;)Lwallet/core/jni/proto/Tron$SigningInput$Builder;
 
     move-result-object p1
 
-    .line 76
+    .line 68
     invoke-virtual {p1}, Lcom/google/protobuf/GeneratedMessageLite$Builder;->build()Lcom/google/protobuf/GeneratedMessageLite;
 
     move-result-object p1
 
     check-cast p1, Lwallet/core/jni/proto/Tron$SigningInput;
 
-    .line 77
+    .line 69
     sget-object v0, Lwallet/core/jni/CoinType;->TRON:Lwallet/core/jni/CoinType;
 
     invoke-static {}, Lwallet/core/jni/proto/Tron$SigningOutput;->parser()Lcom/google/protobuf/Parser;
@@ -534,7 +515,7 @@
 
     check-cast p1, Lwallet/core/jni/proto/Tron$SigningOutput;
 
-    .line 79
+    .line 71
     invoke-virtual {p1}, Lwallet/core/jni/proto/Tron$SigningOutput;->getJson()Ljava/lang/String;
 
     move-result-object p1
@@ -573,7 +554,7 @@
 
     return-object p1
 
-    .line 67
+    .line 59
     :cond_1
     new-instance p1, Ljava/lang/IllegalStateException;
 
@@ -587,7 +568,7 @@
 .method public bridge synthetic sign(Ljava/lang/Object;)Lio/reactivex/Observable;
     .locals 0
 
-    .line 31
+    .line 30
     check-cast p1, Lcom/iMe/storage/domain/model/crypto/send/TransactionArgs;
 
     invoke-virtual {p0, p1}, Lcom/iMe/storage/data/datasource/transfer/impl/TRONWalletTransferDataSourceImpl;->sign(Lcom/iMe/storage/domain/model/crypto/send/TransactionArgs;)Lio/reactivex/Observable;
@@ -615,7 +596,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 58
+    .line 50
     invoke-virtual {p0, p1}, Lcom/iMe/storage/data/datasource/transfer/impl/TRONWalletTransferDataSourceImpl;->sign(Lcom/iMe/storage/domain/model/crypto/send/TransactionArgs;)Lio/reactivex/Observable;
 
     move-result-object p1

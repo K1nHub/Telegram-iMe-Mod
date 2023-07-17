@@ -33,7 +33,7 @@
 
     iget-object v1, p0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter$$ExternalSyntheticLambda6;->f$1:Lorg/telegram/ui/Components/LinkActionView;
 
-    invoke-static {v0, v1, p1}, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->$r8$lambda$0ooaDm8n26_nmhqGJWP-6HaDRvw(Lorg/telegram/ui/ManageLinksActivity$ListAdapter;Lorg/telegram/ui/Components/LinkActionView;Landroid/view/View;)V
+    invoke-static {v0, v1, p1}, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->$r8$lambda$7W-dn_GReaFZLT-aUxIakcuu8A0(Lorg/telegram/ui/ManageLinksActivity$ListAdapter;Lorg/telegram/ui/Components/LinkActionView;Landroid/view/View;)V
 
     return-void
 .end method

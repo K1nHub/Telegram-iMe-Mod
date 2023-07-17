@@ -27,7 +27,7 @@
 
 .field private isRead:Z
 
-.field private final networkType:Lcom/iMe/storage/domain/model/crypto/NetworkType;
+.field private final networkId:Ljava/lang/String;
 
 .field private final payerUserId:Ljava/lang/String;
 
@@ -39,7 +39,7 @@
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;ZLcom/iMe/storage/domain/model/notification/NotificationType;Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/domain/model/crypto/NetworkType;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/domain/model/binancepay/BinanceTransactionStatus;)V
+.method public constructor <init>(Ljava/lang/String;ZLcom/iMe/storage/domain/model/notification/NotificationType;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/domain/model/binancepay/BinanceTransactionStatus;)V
     .locals 17
 
     move-object/from16 v8, p0
@@ -80,7 +80,7 @@
 
     invoke-static {v12, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "networkType"
+    const-string v0, "networkId"
 
     invoke-static {v13, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -122,54 +122,54 @@
 
     move-object/from16 v7, v16
 
-    .line 84
-    invoke-direct/range {v0 .. v7}, Lcom/iMe/storage/domain/model/notification/Notification;-><init>(Ljava/lang/String;ZLcom/iMe/storage/domain/model/notification/NotificationType;Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/domain/model/crypto/NetworkType;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
+    .line 82
+    invoke-direct/range {v0 .. v7}, Lcom/iMe/storage/domain/model/notification/Notification;-><init>(Ljava/lang/String;ZLcom/iMe/storage/domain/model/notification/NotificationType;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
 
-    .line 73
+    .line 71
     iput-object v9, v8, Lcom/iMe/storage/domain/model/notification/Notification$BinancePayRequestStatusUpdated;->id:Ljava/lang/String;
 
     move/from16 v0, p2
 
-    .line 74
+    .line 72
     iput-boolean v0, v8, Lcom/iMe/storage/domain/model/notification/Notification$BinancePayRequestStatusUpdated;->isRead:Z
 
-    .line 75
+    .line 73
     iput-object v10, v8, Lcom/iMe/storage/domain/model/notification/Notification$BinancePayRequestStatusUpdated;->type:Lcom/iMe/storage/domain/model/notification/NotificationType;
 
-    .line 76
+    .line 74
     iput-object v11, v8, Lcom/iMe/storage/domain/model/notification/Notification$BinancePayRequestStatusUpdated;->date:Ljava/lang/String;
 
-    .line 77
+    .line 75
     iput-object v12, v8, Lcom/iMe/storage/domain/model/notification/Notification$BinancePayRequestStatusUpdated;->userId:Ljava/lang/String;
 
-    .line 78
-    iput-object v13, v8, Lcom/iMe/storage/domain/model/notification/Notification$BinancePayRequestStatusUpdated;->networkType:Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    .line 76
+    iput-object v13, v8, Lcom/iMe/storage/domain/model/notification/Notification$BinancePayRequestStatusUpdated;->networkId:Ljava/lang/String;
 
-    .line 79
+    .line 77
     iput-object v14, v8, Lcom/iMe/storage/domain/model/notification/Notification$BinancePayRequestStatusUpdated;->amount:Ljava/lang/String;
 
-    .line 80
+    .line 78
     iput-object v15, v8, Lcom/iMe/storage/domain/model/notification/Notification$BinancePayRequestStatusUpdated;->assetCode:Ljava/lang/String;
 
     move-object/from16 v0, p9
 
-    .line 81
+    .line 79
     iput-object v0, v8, Lcom/iMe/storage/domain/model/notification/Notification$BinancePayRequestStatusUpdated;->assetName:Ljava/lang/String;
 
     move-object/from16 v0, p10
 
-    .line 82
+    .line 80
     iput-object v0, v8, Lcom/iMe/storage/domain/model/notification/Notification$BinancePayRequestStatusUpdated;->payerUserId:Ljava/lang/String;
 
     move-object/from16 v0, p11
 
-    .line 83
+    .line 81
     iput-object v0, v8, Lcom/iMe/storage/domain/model/notification/Notification$BinancePayRequestStatusUpdated;->status:Lcom/iMe/storage/domain/model/binancepay/BinanceTransactionStatus;
 
     return-void
 .end method
 
-.method public static synthetic copy$default(Lcom/iMe/storage/domain/model/notification/Notification$BinancePayRequestStatusUpdated;Ljava/lang/String;ZLcom/iMe/storage/domain/model/notification/NotificationType;Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/domain/model/crypto/NetworkType;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/domain/model/binancepay/BinanceTransactionStatus;ILjava/lang/Object;)Lcom/iMe/storage/domain/model/notification/Notification$BinancePayRequestStatusUpdated;
+.method public static synthetic copy$default(Lcom/iMe/storage/domain/model/notification/Notification$BinancePayRequestStatusUpdated;Ljava/lang/String;ZLcom/iMe/storage/domain/model/notification/NotificationType;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/domain/model/binancepay/BinanceTransactionStatus;ILjava/lang/Object;)Lcom/iMe/storage/domain/model/notification/Notification$BinancePayRequestStatusUpdated;
     .locals 12
 
     move-object v0, p0
@@ -250,7 +250,7 @@
 
     if-eqz v7, :cond_5
 
-    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/notification/Notification$BinancePayRequestStatusUpdated;->getNetworkType()Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/notification/Notification$BinancePayRequestStatusUpdated;->getNetworkId()Ljava/lang/String;
 
     move-result-object v7
 
@@ -342,7 +342,7 @@
 
     move-object/from16 p11, v1
 
-    invoke-virtual/range {p0 .. p11}, Lcom/iMe/storage/domain/model/notification/Notification$BinancePayRequestStatusUpdated;->copy(Ljava/lang/String;ZLcom/iMe/storage/domain/model/notification/NotificationType;Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/domain/model/crypto/NetworkType;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/domain/model/binancepay/BinanceTransactionStatus;)Lcom/iMe/storage/domain/model/notification/Notification$BinancePayRequestStatusUpdated;
+    invoke-virtual/range {p0 .. p11}, Lcom/iMe/storage/domain/model/notification/Notification$BinancePayRequestStatusUpdated;->copy(Ljava/lang/String;ZLcom/iMe/storage/domain/model/notification/NotificationType;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/domain/model/binancepay/BinanceTransactionStatus;)Lcom/iMe/storage/domain/model/notification/Notification$BinancePayRequestStatusUpdated;
 
     move-result-object v0
 
@@ -417,10 +417,10 @@
     return-object v0
 .end method
 
-.method public final component6()Lcom/iMe/storage/domain/model/crypto/NetworkType;
+.method public final component6()Ljava/lang/String;
     .locals 1
 
-    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/notification/Notification$BinancePayRequestStatusUpdated;->getNetworkType()Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/notification/Notification$BinancePayRequestStatusUpdated;->getNetworkId()Ljava/lang/String;
 
     move-result-object v0
 
@@ -451,7 +451,7 @@
     return-object v0
 .end method
 
-.method public final copy(Ljava/lang/String;ZLcom/iMe/storage/domain/model/notification/NotificationType;Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/domain/model/crypto/NetworkType;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/domain/model/binancepay/BinanceTransactionStatus;)Lcom/iMe/storage/domain/model/notification/Notification$BinancePayRequestStatusUpdated;
+.method public final copy(Ljava/lang/String;ZLcom/iMe/storage/domain/model/notification/NotificationType;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/domain/model/binancepay/BinanceTransactionStatus;)Lcom/iMe/storage/domain/model/notification/Notification$BinancePayRequestStatusUpdated;
     .locals 13
 
     const-string v0, "id"
@@ -478,7 +478,7 @@
 
     invoke-static {v6, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "networkType"
+    const-string v0, "networkId"
 
     move-object/from16 v7, p6
 
@@ -520,7 +520,7 @@
 
     move v3, p2
 
-    invoke-direct/range {v1 .. v12}, Lcom/iMe/storage/domain/model/notification/Notification$BinancePayRequestStatusUpdated;-><init>(Ljava/lang/String;ZLcom/iMe/storage/domain/model/notification/NotificationType;Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/domain/model/crypto/NetworkType;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/domain/model/binancepay/BinanceTransactionStatus;)V
+    invoke-direct/range {v1 .. v12}, Lcom/iMe/storage/domain/model/notification/Notification$BinancePayRequestStatusUpdated;-><init>(Ljava/lang/String;ZLcom/iMe/storage/domain/model/notification/NotificationType;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/domain/model/binancepay/BinanceTransactionStatus;)V
 
     return-object v0
 .end method
@@ -623,15 +623,19 @@
     return v2
 
     :cond_6
-    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/notification/Notification$BinancePayRequestStatusUpdated;->getNetworkType()Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/notification/Notification$BinancePayRequestStatusUpdated;->getNetworkId()Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/notification/Notification$BinancePayRequestStatusUpdated;->getNetworkType()Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/notification/Notification$BinancePayRequestStatusUpdated;->getNetworkId()Ljava/lang/String;
 
     move-result-object v3
 
-    if-eq v1, v3, :cond_7
+    invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_7
 
     return v2
 
@@ -703,7 +707,7 @@
 .method public final getAmount()Ljava/lang/String;
     .locals 1
 
-    .line 79
+    .line 77
     iget-object v0, p0, Lcom/iMe/storage/domain/model/notification/Notification$BinancePayRequestStatusUpdated;->amount:Ljava/lang/String;
 
     return-object v0
@@ -712,7 +716,7 @@
 .method public final getAssetCode()Ljava/lang/String;
     .locals 1
 
-    .line 80
+    .line 78
     iget-object v0, p0, Lcom/iMe/storage/domain/model/notification/Notification$BinancePayRequestStatusUpdated;->assetCode:Ljava/lang/String;
 
     return-object v0
@@ -721,7 +725,7 @@
 .method public final getAssetName()Ljava/lang/String;
     .locals 1
 
-    .line 81
+    .line 79
     iget-object v0, p0, Lcom/iMe/storage/domain/model/notification/Notification$BinancePayRequestStatusUpdated;->assetName:Ljava/lang/String;
 
     return-object v0
@@ -730,7 +734,7 @@
 .method public getDate()Ljava/lang/String;
     .locals 1
 
-    .line 76
+    .line 74
     iget-object v0, p0, Lcom/iMe/storage/domain/model/notification/Notification$BinancePayRequestStatusUpdated;->date:Ljava/lang/String;
 
     return-object v0
@@ -739,17 +743,17 @@
 .method public getId()Ljava/lang/String;
     .locals 1
 
-    .line 73
+    .line 71
     iget-object v0, p0, Lcom/iMe/storage/domain/model/notification/Notification$BinancePayRequestStatusUpdated;->id:Ljava/lang/String;
 
     return-object v0
 .end method
 
-.method public getNetworkType()Lcom/iMe/storage/domain/model/crypto/NetworkType;
+.method public getNetworkId()Ljava/lang/String;
     .locals 1
 
-    .line 78
-    iget-object v0, p0, Lcom/iMe/storage/domain/model/notification/Notification$BinancePayRequestStatusUpdated;->networkType:Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    .line 76
+    iget-object v0, p0, Lcom/iMe/storage/domain/model/notification/Notification$BinancePayRequestStatusUpdated;->networkId:Ljava/lang/String;
 
     return-object v0
 .end method
@@ -757,7 +761,7 @@
 .method public final getPayerUserId()Ljava/lang/String;
     .locals 1
 
-    .line 82
+    .line 80
     iget-object v0, p0, Lcom/iMe/storage/domain/model/notification/Notification$BinancePayRequestStatusUpdated;->payerUserId:Ljava/lang/String;
 
     return-object v0
@@ -766,7 +770,7 @@
 .method public final getStatus()Lcom/iMe/storage/domain/model/binancepay/BinanceTransactionStatus;
     .locals 1
 
-    .line 83
+    .line 81
     iget-object v0, p0, Lcom/iMe/storage/domain/model/notification/Notification$BinancePayRequestStatusUpdated;->status:Lcom/iMe/storage/domain/model/binancepay/BinanceTransactionStatus;
 
     return-object v0
@@ -775,7 +779,7 @@
 .method public getType()Lcom/iMe/storage/domain/model/notification/NotificationType;
     .locals 1
 
-    .line 75
+    .line 73
     iget-object v0, p0, Lcom/iMe/storage/domain/model/notification/Notification$BinancePayRequestStatusUpdated;->type:Lcom/iMe/storage/domain/model/notification/NotificationType;
 
     return-object v0
@@ -784,7 +788,7 @@
 .method public getUserId()Ljava/lang/String;
     .locals 1
 
-    .line 77
+    .line 75
     iget-object v0, p0, Lcom/iMe/storage/domain/model/notification/Notification$BinancePayRequestStatusUpdated;->userId:Ljava/lang/String;
 
     return-object v0
@@ -852,11 +856,11 @@
 
     mul-int/lit8 v0, v0, 0x1f
 
-    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/notification/Notification$BinancePayRequestStatusUpdated;->getNetworkType()Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/notification/Notification$BinancePayRequestStatusUpdated;->getNetworkId()Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-virtual {v1}, Ljava/lang/Enum;->hashCode()I
+    invoke-virtual {v1}, Ljava/lang/String;->hashCode()I
 
     move-result v1
 
@@ -918,7 +922,7 @@
 .method public isRead()Z
     .locals 1
 
-    .line 74
+    .line 72
     iget-boolean v0, p0, Lcom/iMe/storage/domain/model/notification/Notification$BinancePayRequestStatusUpdated;->isRead:Z
 
     return v0
@@ -927,7 +931,7 @@
 .method public setRead(Z)V
     .locals 0
 
-    .line 74
+    .line 72
     iput-boolean p1, p0, Lcom/iMe/storage/domain/model/notification/Notification$BinancePayRequestStatusUpdated;->isRead:Z
 
     return-void
@@ -990,15 +994,15 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v1, ", networkType="
+    const-string v1, ", networkId="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/notification/Notification$BinancePayRequestStatusUpdated;->getNetworkType()Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/notification/Notification$BinancePayRequestStatusUpdated;->getNetworkId()Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     const-string v1, ", amount="
 

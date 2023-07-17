@@ -7,7 +7,7 @@ import org.telegram.messenger.databinding.ForkFragmentBlockchainsManagementBindi
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: BlockchainsManagementFragment.kt */
 /* renamed from: com.iMe.ui.wallet.crypto.settings.blockchains.BlockchainsManagementFragment$binding$2 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class BlockchainsManagementFragment$binding$2 extends Lambda implements Function0<ForkFragmentBlockchainsManagementBinding> {
     final /* synthetic */ BlockchainsManagementFragment this$0;
 

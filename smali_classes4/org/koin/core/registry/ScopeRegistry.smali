@@ -160,7 +160,7 @@
 .method public final deleteScope$koin_core(Lorg/koin/core/scope/Scope;)V
     .locals 1
 
-    const-string v0, "scope"
+    const-string/jumbo v0, "scope"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 

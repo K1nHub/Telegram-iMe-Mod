@@ -5,7 +5,7 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Lambda;
-import org.telegram.p044ui.ActionBar.BaseFragment;
+import org.telegram.p043ui.ActionBar.BaseFragment;
 /*  JADX ERROR: JadxRuntimeException in pass: ClassModifier
     jadx.core.utils.exceptions.JadxRuntimeException: Not class type: T extends org.telegram.ui.ActionBar.BaseFragment
     	at jadx.core.dex.info.ClassInfo.checkClassType(ClassInfo.java:53)
@@ -55,11 +55,11 @@ public final class TabbedFragmentPage<T extends BaseFragment> extends AbstractTa
     /* compiled from: TabbedFragmentPage.kt */
     /* renamed from: com.iMe.fork.utils.TabbedFragmentPage$1 */
     /* loaded from: classes3.dex */
-    public static final class C15461 extends Lambda implements Function0<View> {
+    public static final class C15571 extends Lambda implements Function0<View> {
         final /* synthetic */ T $fragment;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C15461(T t) {
+        C15571(T t) {
             super(0);
             this.$fragment = t;
         }
@@ -83,7 +83,7 @@ public final class TabbedFragmentPage<T extends BaseFragment> extends AbstractTa
     }
 
     public /* synthetic */ TabbedFragmentPage(String str, int i, BaseFragment baseFragment, Function0 function0, int i2, DefaultConstructorMarker defaultConstructorMarker) {
-        this(str, (i2 & 2) != 0 ? -1 : i, baseFragment, (i2 & 8) != 0 ? new C15461(baseFragment) : function0);
+        this(str, (i2 & 2) != 0 ? -1 : i, baseFragment, (i2 & 8) != 0 ? new C15571(baseFragment) : function0);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */

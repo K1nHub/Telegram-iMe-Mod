@@ -1,35 +1,36 @@
 package com.iMe.i_staking.response;
 
+import com.iMe.storage.data.network.model.response.wallet.FiatValueResponse;
 import java.math.BigDecimal;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: StakingValuesResponse.kt */
 /* loaded from: classes3.dex */
 public final class StakingValuesResponse {
+    private final FiatValueResponse asFiat;
     private final BigDecimal asToken;
-    private final BigDecimal asUsd;
 
-    public static /* synthetic */ StakingValuesResponse copy$default(StakingValuesResponse stakingValuesResponse, BigDecimal bigDecimal, BigDecimal bigDecimal2, int i, Object obj) {
+    public static /* synthetic */ StakingValuesResponse copy$default(StakingValuesResponse stakingValuesResponse, BigDecimal bigDecimal, FiatValueResponse fiatValueResponse, int i, Object obj) {
         if ((i & 1) != 0) {
             bigDecimal = stakingValuesResponse.asToken;
         }
         if ((i & 2) != 0) {
-            bigDecimal2 = stakingValuesResponse.asUsd;
+            fiatValueResponse = stakingValuesResponse.asFiat;
         }
-        return stakingValuesResponse.copy(bigDecimal, bigDecimal2);
+        return stakingValuesResponse.copy(bigDecimal, fiatValueResponse);
     }
 
     public final BigDecimal component1() {
         return this.asToken;
     }
 
-    public final BigDecimal component2() {
-        return this.asUsd;
+    public final FiatValueResponse component2() {
+        return this.asFiat;
     }
 
-    public final StakingValuesResponse copy(BigDecimal asToken, BigDecimal asUsd) {
+    public final StakingValuesResponse copy(BigDecimal asToken, FiatValueResponse asFiat) {
         Intrinsics.checkNotNullParameter(asToken, "asToken");
-        Intrinsics.checkNotNullParameter(asUsd, "asUsd");
-        return new StakingValuesResponse(asToken, asUsd);
+        Intrinsics.checkNotNullParameter(asFiat, "asFiat");
+        return new StakingValuesResponse(asToken, asFiat);
     }
 
     public boolean equals(Object obj) {
@@ -38,31 +39,31 @@ public final class StakingValuesResponse {
         }
         if (obj instanceof StakingValuesResponse) {
             StakingValuesResponse stakingValuesResponse = (StakingValuesResponse) obj;
-            return Intrinsics.areEqual(this.asToken, stakingValuesResponse.asToken) && Intrinsics.areEqual(this.asUsd, stakingValuesResponse.asUsd);
+            return Intrinsics.areEqual(this.asToken, stakingValuesResponse.asToken) && Intrinsics.areEqual(this.asFiat, stakingValuesResponse.asFiat);
         }
         return false;
     }
 
     public int hashCode() {
-        return (this.asToken.hashCode() * 31) + this.asUsd.hashCode();
+        return (this.asToken.hashCode() * 31) + this.asFiat.hashCode();
     }
 
     public String toString() {
-        return "StakingValuesResponse(asToken=" + this.asToken + ", asUsd=" + this.asUsd + ')';
+        return "StakingValuesResponse(asToken=" + this.asToken + ", asFiat=" + this.asFiat + ')';
     }
 
-    public StakingValuesResponse(BigDecimal asToken, BigDecimal asUsd) {
+    public StakingValuesResponse(BigDecimal asToken, FiatValueResponse asFiat) {
         Intrinsics.checkNotNullParameter(asToken, "asToken");
-        Intrinsics.checkNotNullParameter(asUsd, "asUsd");
+        Intrinsics.checkNotNullParameter(asFiat, "asFiat");
         this.asToken = asToken;
-        this.asUsd = asUsd;
+        this.asFiat = asFiat;
     }
 
     public final BigDecimal getAsToken() {
         return this.asToken;
     }
 
-    public final BigDecimal getAsUsd() {
-        return this.asUsd;
+    public final FiatValueResponse getAsFiat() {
+        return this.asFiat;
     }
 }

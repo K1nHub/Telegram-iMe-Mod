@@ -39,8 +39,8 @@ import org.koin.java.KoinJavaComponent;
 import org.solovyev.android.checkout.Billing;
 import org.telegram.messenger.PushListenerController;
 import org.telegram.messenger.voip.VideoCapturerDevice;
-import org.telegram.p044ui.Components.ForegroundDetector;
-import org.telegram.p044ui.LauncherIconController;
+import org.telegram.p043ui.Components.ForegroundDetector;
+import org.telegram.p043ui.LauncherIconController;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC$User;
 import timber.log.Timber;
@@ -54,6 +54,8 @@ public class ApplicationLoader extends Application implements BillingProvider {
     private static ConnectivityManager connectivityManager = null;
     public static volatile NetworkInfo currentNetworkInfo = null;
     public static volatile boolean externalInterfacePaused = true;
+    public static boolean isCheckForUpdateCanceled = false;
+    public static boolean isCheckForUpdateInProgress = false;
     public static volatile boolean isScreenOn = false;
     private static int lastKnownNetworkType = -1;
     private static long lastNetworkCheckTypeTime = 0;
@@ -333,7 +335,7 @@ public class ApplicationLoader extends Application implements BillingProvider {
         try {
             ConnectionsManager.native_setJava(false);
             new ForegroundDetector(this) { // from class: org.telegram.messenger.ApplicationLoader.3
-                @Override // org.telegram.p044ui.Components.ForegroundDetector, android.app.Application.ActivityLifecycleCallbacks
+                @Override // org.telegram.p043ui.Components.ForegroundDetector, android.app.Application.ActivityLifecycleCallbacks
                 public void onActivityStarted(Activity activity) {
                     boolean isBackground = isBackground();
                     super.onActivityStarted(activity);

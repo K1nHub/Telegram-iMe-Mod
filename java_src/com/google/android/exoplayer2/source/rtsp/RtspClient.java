@@ -3,7 +3,7 @@ package com.google.android.exoplayer2.source.rtsp;
 import android.net.Uri;
 import android.os.Handler;
 import android.util.SparseArray;
-import com.google.android.exoplayer2.C0475C;
+import com.google.android.exoplayer2.C0480C;
 import com.google.android.exoplayer2.ParserException;
 import com.google.android.exoplayer2.source.rtsp.RtspClient;
 import com.google.android.exoplayer2.source.rtsp.RtspHeaders;
@@ -60,7 +60,7 @@ public final class RtspClient implements Closeable {
     private final SparseArray<RtspRequest> pendingRequests = new SparseArray<>();
     private final MessageSender messageSender = new MessageSender();
     private RtspMessageChannel messageChannel = new RtspMessageChannel(new MessageListener());
-    private long pendingSeekPositionUs = C0475C.TIME_UNSET;
+    private long pendingSeekPositionUs = C0480C.TIME_UNSET;
     private int rtspState = -1;
 
     /* loaded from: classes.dex */
@@ -496,7 +496,7 @@ public final class RtspClient implements Closeable {
                 rtspClient.keepAliveMonitor = new KeepAliveMonitor(30000L);
                 RtspClient.this.keepAliveMonitor.start();
             }
-            RtspClient.this.pendingSeekPositionUs = C0475C.TIME_UNSET;
+            RtspClient.this.pendingSeekPositionUs = C0480C.TIME_UNSET;
             RtspClient.this.playbackEventListener.onPlaybackStarted(Util.msToUs(rtspPlayResponse.sessionTiming.startTimeMs), rtspPlayResponse.trackTimingList);
         }
 
@@ -504,7 +504,7 @@ public final class RtspClient implements Closeable {
             Assertions.checkState(RtspClient.this.rtspState == 2);
             RtspClient.this.rtspState = 1;
             RtspClient.this.hasPendingPauseRequest = false;
-            if (RtspClient.this.pendingSeekPositionUs != C0475C.TIME_UNSET) {
+            if (RtspClient.this.pendingSeekPositionUs != C0480C.TIME_UNSET) {
                 RtspClient rtspClient = RtspClient.this;
                 rtspClient.startPlayback(Util.usToMs(rtspClient.pendingSeekPositionUs));
             }

@@ -24,17 +24,17 @@
 
     move-object/from16 v8, p2
 
-    .line 547
+    .line 528
     invoke-direct {v0, v8}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
 
     const/4 v9, 0x1
 
-    .line 548
+    .line 529
     invoke-virtual {v0, v9}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
     const/4 v10, 0x6
 
-    .line 549
+    .line 530
     invoke-static {v10}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
@@ -47,7 +47,7 @@
 
     invoke-virtual {v0, v2, v11, v3, v11}, Landroid/widget/LinearLayout;->setPadding(IIII)V
 
-    .line 551
+    .line 532
     iget v2, v1, Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;->type:I
 
     invoke-static/range {p1 .. p1}, Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;->access$600(Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;)I
@@ -60,10 +60,10 @@
 
     iput-object v2, v1, Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;->limitParams:Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet$LimitParams;
 
-    .line 552
+    .line 533
     iget v4, v2, Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet$LimitParams;->icon:I
 
-    .line 554
+    .line 535
     invoke-static/range {p1 .. p1}, Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;->access$800(Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;)I
 
     move-result v2
@@ -74,21 +74,21 @@
 
     iget-boolean v2, v2, Lorg/telegram/messenger/MessagesController;->premiumLocked:Z
 
-    .line 555
+    .line 536
     iget v3, v1, Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;->type:I
 
     const/16 v12, 0xb
 
     if-ne v3, v12, :cond_7
 
-    .line 557
+    .line 538
     invoke-static/range {p1 .. p1}, Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;->access$000(Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;)Z
 
     move-result v2
 
     if-nez v2, :cond_3
 
-    .line 558
+    .line 539
     invoke-static/range {p1 .. p1}, Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;->access$900(Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;)Lorg/telegram/tgnet/TLRPC$Chat;
 
     move-result-object v2
@@ -99,7 +99,7 @@
 
     if-eqz v2, :cond_1
 
-    .line 559
+    .line 540
     invoke-static/range {p1 .. p1}, Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;->access$400(Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;)Ljava/util/ArrayList;
 
     move-result-object v2
@@ -110,7 +110,7 @@
 
     if-ne v2, v9, :cond_0
 
-    .line 560
+    .line 541
     sget v2, Lorg/telegram/messenger/R$string;->InviteChannelRestrictedUsers2One:I
 
     new-array v3, v9, [Ljava/lang/Object;
@@ -139,7 +139,7 @@
 
     goto/16 :goto_0
 
-    .line 562
+    .line 543
     :cond_0
     invoke-static/range {p1 .. p1}, Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;->access$400(Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;)Ljava/util/ArrayList;
 
@@ -173,7 +173,7 @@
 
     goto/16 :goto_0
 
-    .line 565
+    .line 546
     :cond_1
     invoke-static/range {p1 .. p1}, Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;->access$400(Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;)Ljava/util/ArrayList;
 
@@ -185,7 +185,7 @@
 
     if-ne v2, v9, :cond_2
 
-    .line 566
+    .line 547
     sget v2, Lorg/telegram/messenger/R$string;->InviteRestrictedUsers2One:I
 
     new-array v3, v9, [Ljava/lang/Object;
@@ -214,7 +214,7 @@
 
     goto/16 :goto_0
 
-    .line 568
+    .line 549
     :cond_2
     invoke-static/range {p1 .. p1}, Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;->access$400(Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;)Ljava/util/ArrayList;
 
@@ -248,7 +248,7 @@
 
     goto/16 :goto_0
 
-    .line 572
+    .line 553
     :cond_3
     invoke-static/range {p1 .. p1}, Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;->access$900(Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;)Lorg/telegram/tgnet/TLRPC$Chat;
 
@@ -260,7 +260,7 @@
 
     if-eqz v2, :cond_5
 
-    .line 573
+    .line 554
     invoke-static/range {p1 .. p1}, Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;->access$400(Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;)Ljava/util/ArrayList;
 
     move-result-object v2
@@ -271,7 +271,7 @@
 
     if-ne v2, v9, :cond_4
 
-    .line 574
+    .line 555
     sget v2, Lorg/telegram/messenger/R$string;->InviteChannelRestrictedUsersOne:I
 
     new-array v3, v9, [Ljava/lang/Object;
@@ -300,7 +300,7 @@
 
     goto :goto_0
 
-    .line 576
+    .line 557
     :cond_4
     invoke-static/range {p1 .. p1}, Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;->access$400(Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;)Ljava/util/ArrayList;
 
@@ -334,7 +334,7 @@
 
     goto :goto_0
 
-    .line 579
+    .line 560
     :cond_5
     invoke-static/range {p1 .. p1}, Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;->access$400(Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;)Ljava/util/ArrayList;
 
@@ -346,7 +346,7 @@
 
     if-ne v2, v9, :cond_6
 
-    .line 580
+    .line 561
     sget v2, Lorg/telegram/messenger/R$string;->InviteRestrictedUsersOne:I
 
     new-array v3, v9, [Ljava/lang/Object;
@@ -375,7 +375,7 @@
 
     goto :goto_0
 
-    .line 582
+    .line 563
     :cond_6
     invoke-static/range {p1 .. p1}, Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;->access$400(Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;)Ljava/util/ArrayList;
 
@@ -417,7 +417,7 @@
     :cond_7
     if-eqz v2, :cond_8
 
-    .line 588
+    .line 569
     iget-object v3, v1, Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;->limitParams:Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet$LimitParams;
 
     iget-object v3, v3, Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet$LimitParams;->descriptionStrLocked:Ljava/lang/String;
@@ -429,7 +429,7 @@
 
     goto :goto_3
 
-    .line 590
+    .line 571
     :cond_8
     invoke-static/range {p1 .. p1}, Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;->access$1000(Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;)I
 
@@ -468,21 +468,21 @@
 
     goto :goto_1
 
-    .line 593
+    .line 574
     :goto_3
     iget-object v2, v1, Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;->limitParams:Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet$LimitParams;
 
     iget v15, v2, Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet$LimitParams;->defaultLimit:I
 
-    .line 594
+    .line 575
     iget v6, v2, Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet$LimitParams;->premiumLimit:I
 
-    .line 595
+    .line 576
     invoke-static/range {p1 .. p1}, Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;->access$1200(Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;)I
 
     move-result v2
 
-    .line 598
+    .line 579
     iget v5, v1, Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;->type:I
 
     const/4 v7, 0x3
@@ -491,7 +491,7 @@
 
     if-ne v5, v7, :cond_b
 
-    .line 599
+    .line 580
     invoke-static/range {p1 .. p1}, Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;->access$1300(Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;)I
 
     move-result v2
@@ -513,19 +513,19 @@
     :cond_b
     if-ne v5, v3, :cond_c
 
-    .line 601
+    .line 582
     invoke-static {}, Lorg/telegram/messenger/UserConfig;->getActivatedAccountsCount()I
 
     move-result v2
 
-    .line 603
+    .line 584
     :cond_c
     :goto_4
     iget v5, v1, Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;->type:I
 
     if-nez v5, :cond_10
 
-    .line 605
+    .line 586
     invoke-static/range {p1 .. p1}, Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;->access$1400(Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;)I
 
     move-result v2
@@ -538,7 +538,7 @@
 
     move-result-object v2
 
-    .line 606
+    .line 587
     invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
 
     move-result v5
@@ -550,7 +550,7 @@
     :goto_5
     if-ge v9, v5, :cond_f
 
-    .line 607
+    .line 588
     invoke-virtual {v2, v9}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v16
@@ -559,14 +559,14 @@
 
     check-cast v12, Lorg/telegram/tgnet/TLRPC$Dialog;
 
-    .line 608
+    .line 589
     instance-of v11, v12, Lorg/telegram/tgnet/TLRPC$TL_dialogFolder;
 
     if-eqz v11, :cond_d
 
     goto :goto_6
 
-    .line 611
+    .line 592
     :cond_d
     iget-boolean v11, v12, Lorg/telegram/tgnet/TLRPC$Dialog;->pinned:Z
 
@@ -587,7 +587,7 @@
     :cond_f
     move v2, v7
 
-    .line 618
+    .line 599
     :cond_10
     invoke-static/range {p1 .. p1}, Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;->access$1500(Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;)I
 
@@ -616,7 +616,7 @@
 
     move v2, v15
 
-    .line 625
+    .line 606
     :cond_12
     iget v5, v1, Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;->type:I
 
@@ -663,7 +663,7 @@
 
     move v5, v6
 
-    .line 634
+    .line 615
     :goto_9
     new-instance v11, Lorg/telegram/ui/Components/Premium/LimitPreviewView;
 
@@ -677,17 +677,17 @@
 
     iput-object v11, v1, Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;->limitPreviewView:Lorg/telegram/ui/Components/Premium/LimitPreviewView;
 
-    .line 635
+    .line 616
     invoke-virtual {v11, v9}, Lorg/telegram/ui/Components/Premium/LimitPreviewView;->setBagePosition(F)V
 
-    .line 636
+    .line 617
     iget-object v2, v1, Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;->limitPreviewView:Lorg/telegram/ui/Components/Premium/LimitPreviewView;
 
     iget v3, v1, Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;->type:I
 
     invoke-virtual {v2, v3}, Lorg/telegram/ui/Components/Premium/LimitPreviewView;->setType(I)V
 
-    .line 637
+    .line 618
     iget-object v2, v1, Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;->limitPreviewView:Lorg/telegram/ui/Components/Premium/LimitPreviewView;
 
     iget-object v2, v2, Lorg/telegram/ui/Components/Premium/LimitPreviewView;->defaultCount:Landroid/widget/TextView;
@@ -698,14 +698,14 @@
 
     if-eqz v13, :cond_16
 
-    .line 639
+    .line 620
     iget-object v2, v1, Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;->limitPreviewView:Lorg/telegram/ui/Components/Premium/LimitPreviewView;
 
     invoke-virtual {v2}, Lorg/telegram/ui/Components/Premium/LimitPreviewView;->setPremiumLocked()V
 
     goto :goto_b
 
-    .line 641
+    .line 622
     :cond_16
     invoke-static/range {p1 .. p1}, Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;->access$1600(Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;)I
 
@@ -727,7 +727,7 @@
 
     if-eqz v2, :cond_19
 
-    .line 642
+    .line 623
     :cond_17
     iget-object v2, v1, Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;->limitPreviewView:Lorg/telegram/ui/Components/Premium/LimitPreviewView;
 
@@ -735,12 +735,12 @@
 
     invoke-virtual {v2, v3}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 643
+    .line 624
     iget v2, v1, Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;->type:I
 
     if-ne v2, v10, :cond_18
 
-    .line 644
+    .line 625
     iget-object v2, v1, Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;->limitPreviewView:Lorg/telegram/ui/Components/Premium/LimitPreviewView;
 
     iget-object v2, v2, Lorg/telegram/ui/Components/Premium/LimitPreviewView;->defaultCount:Landroid/widget/TextView;
@@ -751,7 +751,7 @@
 
     goto :goto_a
 
-    .line 646
+    .line 627
     :cond_18
     iget-object v2, v1, Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;->limitPreviewView:Lorg/telegram/ui/Components/Premium/LimitPreviewView;
 
@@ -763,7 +763,7 @@
 
     invoke-virtual {v2, v4}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 648
+    .line 629
     :goto_a
     iget-object v2, v1, Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;->limitPreviewView:Lorg/telegram/ui/Components/Premium/LimitPreviewView;
 
@@ -773,7 +773,7 @@
 
     invoke-virtual {v2, v4}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 652
+    .line 633
     :cond_19
     :goto_b
     iget v2, v1, Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;->type:I
@@ -786,13 +786,13 @@
 
     if-ne v2, v4, :cond_1b
 
-    .line 653
+    .line 634
     :cond_1a
     iget-object v2, v1, Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;->limitPreviewView:Lorg/telegram/ui/Components/Premium/LimitPreviewView;
 
     invoke-virtual {v2}, Lorg/telegram/ui/Components/Premium/LimitPreviewView;->setDelayedAnimation()V
 
-    .line 657
+    .line 638
     :cond_1b
     iget-object v2, v1, Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;->limitPreviewView:Lorg/telegram/ui/Components/Premium/LimitPreviewView;
 
@@ -818,35 +818,35 @@
 
     invoke-virtual {v0, v2, v4}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 659
+    .line 640
     new-instance v2, Landroid/widget/TextView;
 
     invoke-direct {v2, v8}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
     const-string v4, "fonts/rmedium.ttf"
 
-    .line 660
+    .line 641
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->getTypeface(Ljava/lang/String;)Landroid/graphics/Typeface;
 
     move-result-object v4
 
     invoke-virtual {v2, v4}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
-    .line 661
+    .line 642
     iget v4, v1, Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;->type:I
 
     const/16 v5, 0xb
 
     if-ne v4, v5, :cond_1d
 
-    .line 662
+    .line 643
     invoke-static/range {p1 .. p1}, Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;->access$000(Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;)Z
 
     move-result v4
 
     if-eqz v4, :cond_1c
 
-    .line 663
+    .line 644
     sget v4, Lorg/telegram/messenger/R$string;->ChannelInviteViaLink:I
 
     const-string v5, "ChannelInviteViaLink"
@@ -859,7 +859,7 @@
 
     goto :goto_c
 
-    .line 665
+    .line 646
     :cond_1c
     sget v4, Lorg/telegram/messenger/R$string;->ChannelInviteViaLinkRestricted:I
 
@@ -876,7 +876,7 @@
     :cond_1d
     if-ne v4, v10, :cond_1e
 
-    .line 668
+    .line 649
     sget v4, Lorg/telegram/messenger/R$string;->FileTooLarge:I
 
     const-string v5, "FileTooLarge"
@@ -889,7 +889,7 @@
 
     goto :goto_c
 
-    .line 670
+    .line 651
     :cond_1e
     sget v4, Lorg/telegram/messenger/R$string;->LimitReached:I
 
@@ -906,10 +906,10 @@
 
     const/4 v5, 0x1
 
-    .line 672
+    .line 653
     invoke-virtual {v2, v5, v4}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 673
+    .line 654
     sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
 
     invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -940,19 +940,19 @@
 
     const/16 v22, 0xa
 
-    .line 674
+    .line 655
     invoke-static/range {v16 .. v22}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(IIIIIII)Landroid/widget/LinearLayout$LayoutParams;
 
     move-result-object v3
 
     invoke-virtual {v0, v2, v3}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 676
+    .line 657
     new-instance v2, Landroid/widget/TextView;
 
     invoke-direct {v2, v8}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
-    .line 677
+    .line 658
     invoke-static {v14}, Lorg/telegram/messenger/AndroidUtilities;->replaceTags(Ljava/lang/String;)Landroid/text/SpannableStringBuilder;
 
     move-result-object v3
@@ -963,13 +963,13 @@
 
     const/4 v5, 0x1
 
-    .line 678
+    .line 659
     invoke-virtual {v2, v5, v3}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 679
+    .line 660
     invoke-virtual {v2, v5}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 680
+    .line 661
     invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v3
@@ -990,14 +990,14 @@
 
     const/16 v10, 0x18
 
-    .line 681
+    .line 662
     invoke-static/range {v4 .. v10}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(IIIIIII)Landroid/widget/LinearLayout$LayoutParams;
 
     move-result-object v3
 
     invoke-virtual {v0, v2, v3}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 683
+    .line 664
     invoke-virtual/range {p1 .. p1}, Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;->updatePremiumButtonText()V
 
     return-void

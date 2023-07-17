@@ -18,13 +18,21 @@
 
 .field private appUpdate:Lorg/telegram/tgnet/TLRPC$TL_help_appUpdate;
 
+.field private final changelogTextView:Landroid/widget/TextView;
+
 .field private linearLayout:Landroid/widget/LinearLayout;
 
 .field private location:[I
 
+.field private messageTextView:Landroid/widget/TextView;
+
 .field private scrollOffsetY:I
 
 .field private scrollView:Landroidx/core/widget/NestedScrollView;
+
+.field private final setChangelogRunnable:Ljava/lang/Runnable;
+
+.field private final setStickerRunnable:Ljava/lang/Runnable;
 
 .field private shadow:Landroid/view/View;
 
@@ -32,456 +40,361 @@
 
 .field private shadowDrawable:Landroid/graphics/drawable/Drawable;
 
+.field private final stickerImageView:Lorg/telegram/ui/Components/BackupImageView;
+
+.field private textView:Landroid/widget/TextView;
+
 
 # direct methods
-.method public static synthetic $r8$lambda$Ec_n2Ko6Hg9ZZ70gVv2vh1xFpmo(Lorg/telegram/ui/Components/UpdateAppAlertDialog;Landroid/view/View;)V
+.method public static synthetic $r8$lambda$6ze9duavlrYJsgnxtSq3OVIPo00(Lorg/telegram/ui/Components/UpdateAppAlertDialog;Lorg/telegram/ui/Components/BackupImageView;)V
     .locals 0
 
-    invoke-direct {p0, p1}, Lorg/telegram/ui/Components/UpdateAppAlertDialog;->lambda$new$0(Landroid/view/View;)V
+    invoke-direct {p0, p1}, Lorg/telegram/ui/Components/UpdateAppAlertDialog;->lambda$new$0(Lorg/telegram/ui/Components/BackupImageView;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$iWt6wiHetSsFroTsHnr4U-PRsrQ(Lorg/telegram/ui/Components/UpdateAppAlertDialog;Landroid/view/View;)V
+.method public static synthetic $r8$lambda$CM_xv7LFjcRIksWQEQb0ddpYrAs(Lorg/telegram/ui/Components/UpdateAppAlertDialog;Landroid/widget/TextView;)V
     .locals 0
 
-    invoke-direct {p0, p1}, Lorg/telegram/ui/Components/UpdateAppAlertDialog;->lambda$new$1(Landroid/view/View;)V
+    invoke-direct {p0, p1}, Lorg/telegram/ui/Components/UpdateAppAlertDialog;->lambda$new$1(Landroid/widget/TextView;)V
 
     return-void
 .end method
 
-.method public constructor <init>(Landroid/content/Context;Lorg/telegram/tgnet/TLRPC$TL_help_appUpdate;I)V
+.method public static synthetic $r8$lambda$buFb1SoW61bfv5pVtMLobP5IQUk(Lorg/telegram/ui/Components/UpdateAppAlertDialog;Landroid/view/View;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lorg/telegram/ui/Components/UpdateAppAlertDialog;->lambda$new$3(Landroid/view/View;)V
+
+    return-void
+.end method
+
+.method public static synthetic $r8$lambda$r0ZMXKgENhTg5gS2eBw-rAgIniY(Lorg/telegram/ui/Components/UpdateAppAlertDialog;Landroid/view/View;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lorg/telegram/ui/Components/UpdateAppAlertDialog;->lambda$new$2(Landroid/view/View;)V
+
+    return-void
+.end method
+
+.method public constructor <init>(Landroid/content/Context;Lorg/telegram/tgnet/TLRPC$TL_help_appUpdate;ILandroid/widget/FrameLayout;)V
     .locals 20
 
     move-object/from16 v0, p0
 
     move-object/from16 v1, p1
 
-    move-object/from16 v2, p2
+    move-object/from16 v2, p4
 
     const/4 v3, 0x0
 
-    .line 138
+    .line 179
     invoke-direct {v0, v1, v3}, Lorg/telegram/ui/ActionBar/BottomSheet;-><init>(Landroid/content/Context;Z)V
 
     const/4 v4, 0x2
 
-    new-array v5, v4, [I
+    new-array v4, v4, [I
 
-    .line 59
-    iput-object v5, v0, Lorg/telegram/ui/Components/UpdateAppAlertDialog;->location:[I
+    .line 100
+    iput-object v4, v0, Lorg/telegram/ui/Components/UpdateAppAlertDialog;->location:[I
 
-    .line 139
-    iput-object v2, v0, Lorg/telegram/ui/Components/UpdateAppAlertDialog;->appUpdate:Lorg/telegram/tgnet/TLRPC$TL_help_appUpdate;
-
-    move/from16 v5, p3
-
-    .line 140
-    iput v5, v0, Lorg/telegram/ui/Components/UpdateAppAlertDialog;->accountNum:I
-
-    .line 141
-    invoke-virtual {v0, v3}, Landroid/app/Dialog;->setCanceledOnTouchOutside(Z)V
-
-    .line 143
-    invoke-virtual {v0, v3}, Lorg/telegram/ui/ActionBar/BottomSheet;->setApplyTopPadding(Z)V
-
-    .line 144
-    invoke-virtual {v0, v3}, Lorg/telegram/ui/ActionBar/BottomSheet;->setApplyBottomPadding(Z)V
-
-    .line 146
-    invoke-virtual/range {p1 .. p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v5
-
-    sget v6, Lorg/telegram/messenger/R$drawable;->sheet_shadow_round:I
-
-    invoke-virtual {v5, v6}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Landroid/graphics/drawable/Drawable;->mutate()Landroid/graphics/drawable/Drawable;
-
-    move-result-object v5
-
-    iput-object v5, v0, Lorg/telegram/ui/Components/UpdateAppAlertDialog;->shadowDrawable:Landroid/graphics/drawable/Drawable;
-
-    .line 147
-    new-instance v6, Landroid/graphics/PorterDuffColorFilter;
-
-    sget v7, Lorg/telegram/ui/ActionBar/Theme;->key_dialogBackground:I
-
-    invoke-static {v7}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
-
-    move-result v7
-
-    sget-object v8, Landroid/graphics/PorterDuff$Mode;->MULTIPLY:Landroid/graphics/PorterDuff$Mode;
-
-    invoke-direct {v6, v7, v8}, Landroid/graphics/PorterDuffColorFilter;-><init>(ILandroid/graphics/PorterDuff$Mode;)V
-
-    invoke-virtual {v5, v6}, Landroid/graphics/drawable/Drawable;->setColorFilter(Landroid/graphics/ColorFilter;)V
-
-    .line 149
-    new-instance v5, Lorg/telegram/ui/Components/UpdateAppAlertDialog$1;
-
-    invoke-direct {v5, v0, v1}, Lorg/telegram/ui/Components/UpdateAppAlertDialog$1;-><init>(Lorg/telegram/ui/Components/UpdateAppAlertDialog;Landroid/content/Context;)V
-
-    .line 177
-    invoke-virtual {v5, v3}, Landroid/widget/FrameLayout;->setWillNotDraw(Z)V
-
-    .line 178
-    iput-object v5, v0, Lorg/telegram/ui/ActionBar/BottomSheet;->containerView:Landroid/view/ViewGroup;
+    move-object/from16 v4, p2
 
     .line 180
-    new-instance v6, Lorg/telegram/ui/Components/UpdateAppAlertDialog$2;
+    iput-object v4, v0, Lorg/telegram/ui/Components/UpdateAppAlertDialog;->appUpdate:Lorg/telegram/tgnet/TLRPC$TL_help_appUpdate;
 
-    invoke-direct {v6, v0, v1}, Lorg/telegram/ui/Components/UpdateAppAlertDialog$2;-><init>(Lorg/telegram/ui/Components/UpdateAppAlertDialog;Landroid/content/Context;)V
+    move/from16 v4, p3
 
-    iput-object v6, v0, Lorg/telegram/ui/Components/UpdateAppAlertDialog;->scrollView:Landroidx/core/widget/NestedScrollView;
+    .line 181
+    iput v4, v0, Lorg/telegram/ui/Components/UpdateAppAlertDialog;->accountNum:I
 
-    const/4 v7, 0x1
+    .line 182
+    invoke-virtual {v0, v3}, Landroid/app/Dialog;->setCanceledOnTouchOutside(Z)V
 
-    .line 225
-    invoke-virtual {v6, v7}, Landroidx/core/widget/NestedScrollView;->setFillViewport(Z)V
+    .line 184
+    invoke-virtual {v0, v3}, Lorg/telegram/ui/ActionBar/BottomSheet;->setApplyTopPadding(Z)V
 
-    .line 226
-    iget-object v6, v0, Lorg/telegram/ui/Components/UpdateAppAlertDialog;->scrollView:Landroidx/core/widget/NestedScrollView;
+    .line 185
+    invoke-virtual {v0, v3}, Lorg/telegram/ui/ActionBar/BottomSheet;->setApplyBottomPadding(Z)V
 
-    invoke-virtual {v6, v3}, Landroid/widget/FrameLayout;->setWillNotDraw(Z)V
+    .line 187
+    invoke-virtual/range {p1 .. p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
-    .line 227
-    iget-object v6, v0, Lorg/telegram/ui/Components/UpdateAppAlertDialog;->scrollView:Landroidx/core/widget/NestedScrollView;
+    move-result-object v4
 
-    invoke-virtual {v6, v3}, Landroid/widget/FrameLayout;->setClipToPadding(Z)V
+    sget v5, Lorg/telegram/messenger/R$drawable;->sheet_shadow_round:I
 
-    .line 228
-    iget-object v6, v0, Lorg/telegram/ui/Components/UpdateAppAlertDialog;->scrollView:Landroidx/core/widget/NestedScrollView;
+    invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
-    invoke-virtual {v6, v3}, Landroid/widget/FrameLayout;->setVerticalScrollBarEnabled(Z)V
+    move-result-object v4
 
-    .line 229
-    iget-object v6, v0, Lorg/telegram/ui/Components/UpdateAppAlertDialog;->scrollView:Landroidx/core/widget/NestedScrollView;
+    invoke-virtual {v4}, Landroid/graphics/drawable/Drawable;->mutate()Landroid/graphics/drawable/Drawable;
+
+    move-result-object v4
+
+    iput-object v4, v0, Lorg/telegram/ui/Components/UpdateAppAlertDialog;->shadowDrawable:Landroid/graphics/drawable/Drawable;
+
+    .line 188
+    new-instance v5, Landroid/graphics/PorterDuffColorFilter;
+
+    sget v6, Lorg/telegram/ui/ActionBar/Theme;->key_dialogBackground:I
+
+    invoke-static {v6}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
+
+    move-result v6
+
+    sget-object v7, Landroid/graphics/PorterDuff$Mode;->MULTIPLY:Landroid/graphics/PorterDuff$Mode;
+
+    invoke-direct {v5, v6, v7}, Landroid/graphics/PorterDuffColorFilter;-><init>(ILandroid/graphics/PorterDuff$Mode;)V
+
+    invoke-virtual {v4, v5}, Landroid/graphics/drawable/Drawable;->setColorFilter(Landroid/graphics/ColorFilter;)V
+
+    .line 190
+    new-instance v4, Lorg/telegram/ui/Components/UpdateAppAlertDialog$1;
+
+    invoke-direct {v4, v0, v1}, Lorg/telegram/ui/Components/UpdateAppAlertDialog$1;-><init>(Lorg/telegram/ui/Components/UpdateAppAlertDialog;Landroid/content/Context;)V
+
+    .line 218
+    invoke-virtual {v4, v3}, Landroid/widget/FrameLayout;->setWillNotDraw(Z)V
+
+    .line 219
+    iput-object v4, v0, Lorg/telegram/ui/ActionBar/BottomSheet;->containerView:Landroid/view/ViewGroup;
+
+    .line 221
+    new-instance v5, Lorg/telegram/ui/Components/UpdateAppAlertDialog$2;
+
+    invoke-direct {v5, v0, v1}, Lorg/telegram/ui/Components/UpdateAppAlertDialog$2;-><init>(Lorg/telegram/ui/Components/UpdateAppAlertDialog;Landroid/content/Context;)V
+
+    iput-object v5, v0, Lorg/telegram/ui/Components/UpdateAppAlertDialog;->scrollView:Landroidx/core/widget/NestedScrollView;
+
+    const/4 v6, 0x1
+
+    .line 266
+    invoke-virtual {v5, v6}, Landroidx/core/widget/NestedScrollView;->setFillViewport(Z)V
+
+    .line 267
+    iget-object v5, v0, Lorg/telegram/ui/Components/UpdateAppAlertDialog;->scrollView:Landroidx/core/widget/NestedScrollView;
+
+    invoke-virtual {v5, v3}, Landroid/widget/FrameLayout;->setWillNotDraw(Z)V
+
+    .line 268
+    iget-object v5, v0, Lorg/telegram/ui/Components/UpdateAppAlertDialog;->scrollView:Landroidx/core/widget/NestedScrollView;
+
+    invoke-virtual {v5, v3}, Landroid/widget/FrameLayout;->setClipToPadding(Z)V
+
+    .line 269
+    iget-object v5, v0, Lorg/telegram/ui/Components/UpdateAppAlertDialog;->scrollView:Landroidx/core/widget/NestedScrollView;
+
+    invoke-virtual {v5, v3}, Landroid/widget/FrameLayout;->setVerticalScrollBarEnabled(Z)V
+
+    .line 270
+    iget-object v5, v0, Lorg/telegram/ui/Components/UpdateAppAlertDialog;->scrollView:Landroidx/core/widget/NestedScrollView;
+
+    const/4 v7, -0x1
 
     const/4 v8, -0x1
 
-    const/4 v9, -0x1
+    const/16 v9, 0x33
 
-    const/16 v10, 0x33
+    const/4 v10, 0x0
 
     const/4 v11, 0x0
 
     const/4 v12, 0x0
 
-    const/4 v13, 0x0
+    const/16 v13, 0x82
 
-    const/16 v14, 0x82
+    invoke-static/range {v7 .. v13}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
 
-    invoke-static/range {v8 .. v14}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
+    move-result-object v7
 
-    move-result-object v8
+    invoke-virtual {v4, v5, v7}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    invoke-virtual {v5, v6, v8}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    .line 272
+    new-instance v5, Landroid/widget/LinearLayout;
 
-    .line 231
-    new-instance v6, Landroid/widget/LinearLayout;
+    invoke-direct {v5, v1}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
 
-    invoke-direct {v6, v1}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
+    iput-object v5, v0, Lorg/telegram/ui/Components/UpdateAppAlertDialog;->linearLayout:Landroid/widget/LinearLayout;
 
-    iput-object v6, v0, Lorg/telegram/ui/Components/UpdateAppAlertDialog;->linearLayout:Landroid/widget/LinearLayout;
+    .line 273
+    invoke-virtual {v5, v6}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
-    .line 232
-    invoke-virtual {v6, v7}, Landroid/widget/LinearLayout;->setOrientation(I)V
+    .line 274
+    iget-object v5, v0, Lorg/telegram/ui/Components/UpdateAppAlertDialog;->scrollView:Landroidx/core/widget/NestedScrollView;
 
-    .line 233
-    iget-object v6, v0, Lorg/telegram/ui/Components/UpdateAppAlertDialog;->scrollView:Landroidx/core/widget/NestedScrollView;
+    iget-object v7, v0, Lorg/telegram/ui/Components/UpdateAppAlertDialog;->linearLayout:Landroid/widget/LinearLayout;
 
-    iget-object v8, v0, Lorg/telegram/ui/Components/UpdateAppAlertDialog;->linearLayout:Landroid/widget/LinearLayout;
+    const/4 v9, -0x2
 
-    const/4 v10, -0x2
+    const/16 v10, 0x33
 
-    const/16 v11, 0x33
+    invoke-static {v8, v9, v10}, Lorg/telegram/ui/Components/LayoutHelper;->createScroll(III)Landroid/widget/FrameLayout$LayoutParams;
 
-    invoke-static {v9, v10, v11}, Lorg/telegram/ui/Components/LayoutHelper;->createScroll(III)Landroid/widget/FrameLayout$LayoutParams;
+    move-result-object v9
 
-    move-result-object v10
+    invoke-virtual {v5, v7, v9}, Landroidx/core/widget/NestedScrollView;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    invoke-virtual {v6, v8, v10}, Landroidx/core/widget/NestedScrollView;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    .line 277
+    new-instance v5, Lorg/telegram/ui/Components/BackupImageView;
 
-    .line 235
-    iget-object v6, v0, Lorg/telegram/ui/Components/UpdateAppAlertDialog;->appUpdate:Lorg/telegram/tgnet/TLRPC$TL_help_appUpdate;
+    invoke-direct {v5, v1}, Lorg/telegram/ui/Components/BackupImageView;-><init>(Landroid/content/Context;)V
 
-    iget-object v6, v6, Lorg/telegram/tgnet/TLRPC$TL_help_appUpdate;->sticker:Lorg/telegram/tgnet/TLRPC$Document;
+    iput-object v5, v0, Lorg/telegram/ui/Components/UpdateAppAlertDialog;->stickerImageView:Lorg/telegram/ui/Components/BackupImageView;
 
-    if-eqz v6, :cond_1
+    .line 278
+    new-instance v7, Lorg/telegram/ui/Components/UpdateAppAlertDialog$$ExternalSyntheticLambda3;
 
-    .line 236
-    new-instance v6, Lorg/telegram/ui/Components/BackupImageView;
+    invoke-direct {v7, v0, v5}, Lorg/telegram/ui/Components/UpdateAppAlertDialog$$ExternalSyntheticLambda3;-><init>(Lorg/telegram/ui/Components/UpdateAppAlertDialog;Lorg/telegram/ui/Components/BackupImageView;)V
 
-    invoke-direct {v6, v1}, Lorg/telegram/ui/Components/BackupImageView;-><init>(Landroid/content/Context;)V
+    iput-object v7, v0, Lorg/telegram/ui/Components/UpdateAppAlertDialog;->setStickerRunnable:Ljava/lang/Runnable;
 
-    .line 237
-    iget-object v8, v0, Lorg/telegram/ui/Components/UpdateAppAlertDialog;->appUpdate:Lorg/telegram/tgnet/TLRPC$TL_help_appUpdate;
+    .line 289
+    iget-object v7, v0, Lorg/telegram/ui/Components/UpdateAppAlertDialog;->linearLayout:Landroid/widget/LinearLayout;
 
-    iget-object v8, v8, Lorg/telegram/tgnet/TLRPC$TL_help_appUpdate;->sticker:Lorg/telegram/tgnet/TLRPC$Document;
-
-    iget-object v8, v8, Lorg/telegram/tgnet/TLRPC$Document;->thumbs:Ljava/util/ArrayList;
-
-    sget v10, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundGray:I
-
-    const/high16 v12, 0x3f800000    # 1.0f
-
-    invoke-static {v8, v10, v12}, Lorg/telegram/messenger/DocumentObject;->getSvgThumb(Ljava/util/ArrayList;IF)Lorg/telegram/messenger/SvgHelper$SvgDrawable;
-
-    move-result-object v15
-
-    .line 238
-    iget-object v8, v0, Lorg/telegram/ui/Components/UpdateAppAlertDialog;->appUpdate:Lorg/telegram/tgnet/TLRPC$TL_help_appUpdate;
-
-    iget-object v8, v8, Lorg/telegram/tgnet/TLRPC$TL_help_appUpdate;->sticker:Lorg/telegram/tgnet/TLRPC$Document;
-
-    iget-object v8, v8, Lorg/telegram/tgnet/TLRPC$Document;->thumbs:Ljava/util/ArrayList;
-
-    const/16 v10, 0x5a
-
-    invoke-static {v8, v10}, Lorg/telegram/messenger/FileLoader;->getClosestPhotoSizeWithSize(Ljava/util/ArrayList;I)Lorg/telegram/tgnet/TLRPC$PhotoSize;
-
-    move-result-object v8
-
-    .line 239
-    iget-object v10, v0, Lorg/telegram/ui/Components/UpdateAppAlertDialog;->appUpdate:Lorg/telegram/tgnet/TLRPC$TL_help_appUpdate;
-
-    iget-object v10, v10, Lorg/telegram/tgnet/TLRPC$TL_help_appUpdate;->sticker:Lorg/telegram/tgnet/TLRPC$Document;
-
-    invoke-static {v8, v10}, Lorg/telegram/messenger/ImageLocation;->getForDocument(Lorg/telegram/tgnet/TLRPC$PhotoSize;Lorg/telegram/tgnet/TLRPC$Document;)Lorg/telegram/messenger/ImageLocation;
-
-    move-result-object v8
-
-    if-eqz v15, :cond_0
-
-    .line 242
-    iget-object v8, v0, Lorg/telegram/ui/Components/UpdateAppAlertDialog;->appUpdate:Lorg/telegram/tgnet/TLRPC$TL_help_appUpdate;
-
-    iget-object v8, v8, Lorg/telegram/tgnet/TLRPC$TL_help_appUpdate;->sticker:Lorg/telegram/tgnet/TLRPC$Document;
-
-    invoke-static {v8}, Lorg/telegram/messenger/ImageLocation;->getForDocument(Lorg/telegram/tgnet/TLRPC$Document;)Lorg/telegram/messenger/ImageLocation;
-
-    move-result-object v13
-
-    const/16 v16, 0x0
-
-    const-string v14, "250_250"
-
-    const-string v17, "update"
-
-    move-object v12, v6
-
-    invoke-virtual/range {v12 .. v17}, Lorg/telegram/ui/Components/BackupImageView;->setImage(Lorg/telegram/messenger/ImageLocation;Ljava/lang/String;Landroid/graphics/drawable/Drawable;ILjava/lang/Object;)V
-
-    goto :goto_0
-
-    .line 244
-    :cond_0
-    iget-object v10, v0, Lorg/telegram/ui/Components/UpdateAppAlertDialog;->appUpdate:Lorg/telegram/tgnet/TLRPC$TL_help_appUpdate;
-
-    iget-object v10, v10, Lorg/telegram/tgnet/TLRPC$TL_help_appUpdate;->sticker:Lorg/telegram/tgnet/TLRPC$Document;
-
-    invoke-static {v10}, Lorg/telegram/messenger/ImageLocation;->getForDocument(Lorg/telegram/tgnet/TLRPC$Document;)Lorg/telegram/messenger/ImageLocation;
-
-    move-result-object v13
-
-    const/16 v16, 0x0
-
-    const/16 v17, 0x0
-
-    const-string v14, "250_250"
-
-    const-string v18, "update"
-
-    move-object v12, v6
-
-    move-object v15, v8
-
-    invoke-virtual/range {v12 .. v18}, Lorg/telegram/ui/Components/BackupImageView;->setImage(Lorg/telegram/messenger/ImageLocation;Ljava/lang/String;Lorg/telegram/messenger/ImageLocation;Ljava/lang/String;ILjava/lang/Object;)V
-
-    .line 246
-    :goto_0
-    iget-object v8, v0, Lorg/telegram/ui/Components/UpdateAppAlertDialog;->linearLayout:Landroid/widget/LinearLayout;
+    const/16 v11, 0xa0
 
     const/16 v12, 0xa0
 
-    const/16 v13, 0xa0
+    const/16 v13, 0x31
 
-    const/16 v14, 0x31
+    const/16 v14, 0x11
 
-    const/16 v15, 0x11
+    const/16 v15, 0x8
 
-    const/16 v16, 0x8
+    const/16 v16, 0x11
 
-    const/16 v17, 0x11
+    const/16 v17, 0x0
 
-    const/16 v18, 0x0
+    invoke-static/range {v11 .. v17}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(IIIIIII)Landroid/widget/LinearLayout$LayoutParams;
 
-    invoke-static/range {v12 .. v18}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(IIIIIII)Landroid/widget/LinearLayout$LayoutParams;
+    move-result-object v9
 
-    move-result-object v10
+    invoke-virtual {v7, v5, v9}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    invoke-virtual {v8, v6, v10}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    .line 292
+    new-instance v5, Landroid/widget/TextView;
 
-    .line 249
-    :cond_1
-    new-instance v6, Landroid/widget/TextView;
+    invoke-direct {v5, v1}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
-    invoke-direct {v6, v1}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
+    iput-object v5, v0, Lorg/telegram/ui/Components/UpdateAppAlertDialog;->textView:Landroid/widget/TextView;
 
-    const-string v8, "fonts/rmedium.ttf"
+    const-string v7, "fonts/rmedium.ttf"
 
-    .line 250
-    invoke-static {v8}, Lorg/telegram/messenger/AndroidUtilities;->getTypeface(Ljava/lang/String;)Landroid/graphics/Typeface;
+    .line 293
+    invoke-static {v7}, Lorg/telegram/messenger/AndroidUtilities;->getTypeface(Ljava/lang/String;)Landroid/graphics/Typeface;
 
-    move-result-object v8
+    move-result-object v7
 
-    invoke-virtual {v6, v8}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
+    invoke-virtual {v5, v7}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
-    const/high16 v8, 0x41a00000    # 20.0f
+    const/high16 v7, 0x41a00000    # 20.0f
 
-    .line 251
-    invoke-virtual {v6, v7, v8}, Landroid/widget/TextView;->setTextSize(IF)V
+    .line 294
+    invoke-virtual {v5, v6, v7}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 252
-    sget v8, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextBlack:I
+    .line 295
+    sget v7, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextBlack:I
 
-    invoke-static {v8}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
+    invoke-static {v7}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
-    move-result v10
+    move-result v9
 
-    invoke-virtual {v6, v10}, Landroid/widget/TextView;->setTextColor(I)V
+    invoke-virtual {v5, v9}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 253
-    invoke-virtual {v6, v7}, Landroid/widget/TextView;->setSingleLine(Z)V
+    .line 296
+    invoke-virtual {v5, v6}, Landroid/widget/TextView;->setSingleLine(Z)V
 
-    .line 254
-    sget-object v10, Landroid/text/TextUtils$TruncateAt;->END:Landroid/text/TextUtils$TruncateAt;
+    .line 297
+    sget-object v9, Landroid/text/TextUtils$TruncateAt;->END:Landroid/text/TextUtils$TruncateAt;
 
-    invoke-virtual {v6, v10}, Landroid/widget/TextView;->setEllipsize(Landroid/text/TextUtils$TruncateAt;)V
+    invoke-virtual {v5, v9}, Landroid/widget/TextView;->setEllipsize(Landroid/text/TextUtils$TruncateAt;)V
 
-    .line 255
-    sget v10, Lorg/telegram/messenger/R$string;->AppUpdate:I
+    .line 298
+    sget v9, Lorg/telegram/messenger/R$string;->AppUpdate:I
 
-    const-string v12, "AppUpdate"
+    const-string v11, "AppUpdate"
 
-    invoke-static {v12, v10}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v11, v9}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
-    move-result-object v10
+    move-result-object v9
 
-    invoke-virtual {v6, v10}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v5, v9}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 256
-    iget-object v10, v0, Lorg/telegram/ui/Components/UpdateAppAlertDialog;->linearLayout:Landroid/widget/LinearLayout;
+    .line 299
+    iget-object v9, v0, Lorg/telegram/ui/Components/UpdateAppAlertDialog;->linearLayout:Landroid/widget/LinearLayout;
+
+    const/4 v11, -0x2
 
     const/4 v12, -0x2
 
-    const/4 v13, -0x2
+    const/16 v14, 0x17
 
-    const/16 v14, 0x31
+    const/16 v15, 0x10
 
-    const/16 v15, 0x17
+    const/16 v16, 0x17
 
-    const/16 v16, 0x10
+    invoke-static/range {v11 .. v17}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(IIIIIII)Landroid/widget/LinearLayout$LayoutParams;
 
-    const/16 v17, 0x17
+    move-result-object v11
 
-    const/16 v18, 0x0
+    invoke-virtual {v9, v5, v11}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    invoke-static/range {v12 .. v18}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(IIIIIII)Landroid/widget/LinearLayout$LayoutParams;
-
-    move-result-object v12
-
-    invoke-virtual {v10, v6, v12}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
-
-    .line 258
-    new-instance v6, Landroid/widget/TextView;
+    .line 301
+    new-instance v5, Landroid/widget/TextView;
 
     invoke-virtual/range {p0 .. p0}, Landroid/app/Dialog;->getContext()Landroid/content/Context;
 
-    move-result-object v10
+    move-result-object v9
 
-    invoke-direct {v6, v10}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
+    invoke-direct {v5, v9}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
-    .line 259
-    sget v10, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextGray3:I
+    iput-object v5, v0, Lorg/telegram/ui/Components/UpdateAppAlertDialog;->messageTextView:Landroid/widget/TextView;
 
-    invoke-static {v10}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
+    .line 302
+    sget v9, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextGray3:I
 
-    move-result v10
+    invoke-static {v9}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
-    invoke-virtual {v6, v10}, Landroid/widget/TextView;->setTextColor(I)V
+    move-result v9
 
-    const/high16 v10, 0x41600000    # 14.0f
+    invoke-virtual {v5, v9}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 260
-    invoke-virtual {v6, v7, v10}, Landroid/widget/TextView;->setTextSize(IF)V
+    const/high16 v9, 0x41600000    # 14.0f
 
-    .line 261
-    new-instance v12, Lorg/telegram/messenger/AndroidUtilities$LinkMovementMethodMy;
+    .line 303
+    invoke-virtual {v5, v6, v9}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    invoke-direct {v12}, Lorg/telegram/messenger/AndroidUtilities$LinkMovementMethodMy;-><init>()V
+    .line 304
+    new-instance v11, Lorg/telegram/messenger/AndroidUtilities$LinkMovementMethodMy;
 
-    invoke-virtual {v6, v12}, Landroid/widget/TextView;->setMovementMethod(Landroid/text/method/MovementMethod;)V
+    invoke-direct {v11}, Lorg/telegram/messenger/AndroidUtilities$LinkMovementMethodMy;-><init>()V
 
-    .line 262
-    sget v12, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextLink:I
+    invoke-virtual {v5, v11}, Landroid/widget/TextView;->setMovementMethod(Landroid/text/method/MovementMethod;)V
 
-    invoke-static {v12}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
+    .line 305
+    sget v11, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextLink:I
 
-    move-result v13
+    invoke-static {v11}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
-    invoke-virtual {v6, v13}, Landroid/widget/TextView;->setLinkTextColor(I)V
+    move-result v12
 
-    .line 263
-    sget v13, Lorg/telegram/messenger/R$string;->AppUpdateVersionAndSize:I
+    invoke-virtual {v5, v12}, Landroid/widget/TextView;->setLinkTextColor(I)V
 
-    new-array v4, v4, [Ljava/lang/Object;
+    const/16 v12, 0x31
 
-    iget-object v14, v0, Lorg/telegram/ui/Components/UpdateAppAlertDialog;->appUpdate:Lorg/telegram/tgnet/TLRPC$TL_help_appUpdate;
+    .line 309
+    invoke-virtual {v5, v12}, Landroid/widget/TextView;->setGravity(I)V
 
-    iget-object v15, v14, Lorg/telegram/tgnet/TLRPC$TL_help_appUpdate;->version:Ljava/lang/String;
-
-    aput-object v15, v4, v3
-
-    iget-object v14, v14, Lorg/telegram/tgnet/TLRPC$TL_help_appUpdate;->document:Lorg/telegram/tgnet/TLRPC$Document;
-
-    iget-wide v14, v14, Lorg/telegram/tgnet/TLRPC$Document;->size:J
-
-    invoke-static {v14, v15}, Lorg/telegram/messenger/AndroidUtilities;->formatFileSize(J)Ljava/lang/String;
-
-    move-result-object v14
-
-    aput-object v14, v4, v7
-
-    const-string v14, "AppUpdateVersionAndSize"
-
-    invoke-static {v14, v13, v4}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-virtual {v6, v4}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
-
-    const/16 v4, 0x31
-
-    .line 264
-    invoke-virtual {v6, v4}, Landroid/widget/TextView;->setGravity(I)V
-
-    .line 265
-    iget-object v4, v0, Lorg/telegram/ui/Components/UpdateAppAlertDialog;->linearLayout:Landroid/widget/LinearLayout;
+    .line 310
+    iget-object v12, v0, Lorg/telegram/ui/Components/UpdateAppAlertDialog;->linearLayout:Landroid/widget/LinearLayout;
 
     const/4 v13, -0x2
 
     const/4 v14, -0x2
 
     const/16 v15, 0x31
-
-    const/16 v16, 0x17
-
-    const/16 v17, 0x0
 
     const/16 v18, 0x17
 
@@ -491,209 +404,209 @@
 
     move-result-object v13
 
-    invoke-virtual {v4, v6, v13}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v12, v5, v13}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 267
-    new-instance v4, Landroid/widget/TextView;
+    .line 312
+    new-instance v5, Landroid/widget/TextView;
 
     invoke-virtual/range {p0 .. p0}, Landroid/app/Dialog;->getContext()Landroid/content/Context;
 
-    move-result-object v6
+    move-result-object v12
 
-    invoke-direct {v4, v6}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
+    invoke-direct {v5, v12}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
-    .line 268
-    invoke-static {v8}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
+    iput-object v5, v0, Lorg/telegram/ui/Components/UpdateAppAlertDialog;->changelogTextView:Landroid/widget/TextView;
 
-    move-result v6
+    .line 313
+    invoke-static {v7}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
-    invoke-virtual {v4, v6}, Landroid/widget/TextView;->setTextColor(I)V
+    move-result v7
 
-    .line 269
-    invoke-virtual {v4, v7, v10}, Landroid/widget/TextView;->setTextSize(IF)V
+    invoke-virtual {v5, v7}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 270
-    new-instance v6, Lorg/telegram/messenger/AndroidUtilities$LinkMovementMethodMy;
+    .line 314
+    invoke-virtual {v5, v6, v9}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    invoke-direct {v6}, Lorg/telegram/messenger/AndroidUtilities$LinkMovementMethodMy;-><init>()V
+    .line 315
+    new-instance v7, Lorg/telegram/messenger/AndroidUtilities$LinkMovementMethodMy;
 
-    invoke-virtual {v4, v6}, Landroid/widget/TextView;->setMovementMethod(Landroid/text/method/MovementMethod;)V
+    invoke-direct {v7}, Lorg/telegram/messenger/AndroidUtilities$LinkMovementMethodMy;-><init>()V
 
-    .line 271
-    invoke-static {v12}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
+    invoke-virtual {v5, v7}, Landroid/widget/TextView;->setMovementMethod(Landroid/text/method/MovementMethod;)V
 
-    move-result v6
+    .line 316
+    invoke-static {v11}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
-    invoke-virtual {v4, v6}, Landroid/widget/TextView;->setLinkTextColor(I)V
+    move-result v7
 
-    .line 272
-    iget-object v6, v0, Lorg/telegram/ui/Components/UpdateAppAlertDialog;->appUpdate:Lorg/telegram/tgnet/TLRPC$TL_help_appUpdate;
+    invoke-virtual {v5, v7}, Landroid/widget/TextView;->setLinkTextColor(I)V
 
-    iget-object v6, v6, Lorg/telegram/tgnet/TLRPC$TL_help_appUpdate;->text:Ljava/lang/String;
+    .line 320
+    new-instance v7, Lorg/telegram/ui/Components/UpdateAppAlertDialog$$ExternalSyntheticLambda2;
 
-    invoke-static {v6}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+    invoke-direct {v7, v0, v5}, Lorg/telegram/ui/Components/UpdateAppAlertDialog$$ExternalSyntheticLambda2;-><init>(Lorg/telegram/ui/Components/UpdateAppAlertDialog;Landroid/widget/TextView;)V
 
-    move-result v6
+    iput-object v7, v0, Lorg/telegram/ui/Components/UpdateAppAlertDialog;->setChangelogRunnable:Ljava/lang/Runnable;
 
-    if-eqz v6, :cond_2
+    .line 326
+    invoke-virtual {v5, v10}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 273
-    sget v2, Lorg/telegram/messenger/R$string;->AppUpdateChangelogEmpty:I
+    .line 327
+    iget-object v7, v0, Lorg/telegram/ui/Components/UpdateAppAlertDialog;->linearLayout:Landroid/widget/LinearLayout;
 
-    const-string v6, "AppUpdateChangelogEmpty"
-
-    invoke-static {v6, v2}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->replaceTags(Ljava/lang/String;)Landroid/text/SpannableStringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v4, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
-
-    goto :goto_1
-
-    .line 275
-    :cond_2
-    new-instance v6, Landroid/text/SpannableStringBuilder;
-
-    iget-object v8, v0, Lorg/telegram/ui/Components/UpdateAppAlertDialog;->appUpdate:Lorg/telegram/tgnet/TLRPC$TL_help_appUpdate;
-
-    iget-object v8, v8, Lorg/telegram/tgnet/TLRPC$TL_help_appUpdate;->text:Ljava/lang/String;
-
-    invoke-direct {v6, v8}, Landroid/text/SpannableStringBuilder;-><init>(Ljava/lang/CharSequence;)V
-
-    .line 276
-    iget-object v13, v2, Lorg/telegram/tgnet/TLRPC$TL_help_appUpdate;->entities:Ljava/util/ArrayList;
-
-    const/4 v14, 0x0
-
-    const/4 v15, 0x0
-
-    const/16 v16, 0x0
-
-    const/16 v17, 0x0
-
-    move-object v12, v6
-
-    invoke-static/range {v12 .. v17}, Lorg/telegram/messenger/MessageObject;->addEntitiesToText(Ljava/lang/CharSequence;Ljava/util/ArrayList;ZZZZ)Z
-
-    .line 277
-    invoke-virtual {v4, v6}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
-
-    .line 279
-    :goto_1
-    invoke-virtual {v4, v11}, Landroid/widget/TextView;->setGravity(I)V
-
-    .line 280
-    iget-object v2, v0, Lorg/telegram/ui/Components/UpdateAppAlertDialog;->linearLayout:Landroid/widget/LinearLayout;
+    const/4 v9, -0x2
 
     const/4 v10, -0x2
 
-    const/4 v11, -0x2
+    const/16 v11, 0x33
 
-    const/16 v12, 0x33
+    const/16 v12, 0x17
 
-    const/16 v13, 0x17
+    const/16 v13, 0xf
 
-    const/16 v14, 0xf
+    const/16 v14, 0x17
 
-    const/16 v15, 0x17
+    const/4 v15, 0x0
 
-    const/16 v16, 0x0
+    invoke-static/range {v9 .. v15}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(IIIIIII)Landroid/widget/LinearLayout$LayoutParams;
 
-    invoke-static/range {v10 .. v16}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(IIIIIII)Landroid/widget/LinearLayout$LayoutParams;
+    move-result-object v9
 
-    move-result-object v6
+    invoke-virtual {v7, v5, v9}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    invoke-virtual {v2, v4, v6}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
-
-    .line 282
-    new-instance v2, Landroid/widget/FrameLayout$LayoutParams;
+    .line 329
+    new-instance v5, Landroid/widget/FrameLayout$LayoutParams;
 
     invoke-static {}, Lorg/telegram/messenger/AndroidUtilities;->getShadowHeight()I
 
-    move-result v4
+    move-result v7
 
-    const/16 v6, 0x53
+    const/16 v9, 0x53
 
-    invoke-direct {v2, v9, v4, v6}, Landroid/widget/FrameLayout$LayoutParams;-><init>(III)V
+    invoke-direct {v5, v8, v7, v9}, Landroid/widget/FrameLayout$LayoutParams;-><init>(III)V
 
-    const/16 v4, 0x82
+    const/16 v7, 0x82
 
-    .line 283
-    invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    .line 330
+    invoke-static {v7}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result v4
+    move-result v7
 
-    iput v4, v2, Landroid/widget/FrameLayout$LayoutParams;->bottomMargin:I
+    iput v7, v5, Landroid/widget/FrameLayout$LayoutParams;->bottomMargin:I
 
-    .line 284
-    new-instance v4, Landroid/view/View;
+    .line 331
+    new-instance v7, Landroid/view/View;
 
-    invoke-direct {v4, v1}, Landroid/view/View;-><init>(Landroid/content/Context;)V
+    invoke-direct {v7, v1}, Landroid/view/View;-><init>(Landroid/content/Context;)V
 
-    iput-object v4, v0, Lorg/telegram/ui/Components/UpdateAppAlertDialog;->shadow:Landroid/view/View;
+    iput-object v7, v0, Lorg/telegram/ui/Components/UpdateAppAlertDialog;->shadow:Landroid/view/View;
 
-    .line 285
-    sget v6, Lorg/telegram/ui/ActionBar/Theme;->key_dialogShadowLine:I
+    .line 332
+    sget v8, Lorg/telegram/ui/ActionBar/Theme;->key_dialogShadowLine:I
 
-    invoke-static {v6}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
+    invoke-static {v8}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
-    move-result v6
+    move-result v8
 
-    invoke-virtual {v4, v6}, Landroid/view/View;->setBackgroundColor(I)V
+    invoke-virtual {v7, v8}, Landroid/view/View;->setBackgroundColor(I)V
 
-    .line 286
-    iget-object v4, v0, Lorg/telegram/ui/Components/UpdateAppAlertDialog;->shadow:Landroid/view/View;
+    .line 333
+    iget-object v7, v0, Lorg/telegram/ui/Components/UpdateAppAlertDialog;->shadow:Landroid/view/View;
 
-    const/4 v6, 0x0
+    const/4 v8, 0x0
 
-    invoke-virtual {v4, v6}, Landroid/view/View;->setAlpha(F)V
+    invoke-virtual {v7, v8}, Landroid/view/View;->setAlpha(F)V
 
-    .line 287
-    iget-object v4, v0, Lorg/telegram/ui/Components/UpdateAppAlertDialog;->shadow:Landroid/view/View;
+    .line 334
+    iget-object v7, v0, Lorg/telegram/ui/Components/UpdateAppAlertDialog;->shadow:Landroid/view/View;
 
-    invoke-static {v7}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v6
+    move-result-object v8
 
-    invoke-virtual {v4, v6}, Landroid/view/View;->setTag(Ljava/lang/Object;)V
+    invoke-virtual {v7, v8}, Landroid/view/View;->setTag(Ljava/lang/Object;)V
 
-    .line 288
-    iget-object v4, v0, Lorg/telegram/ui/Components/UpdateAppAlertDialog;->shadow:Landroid/view/View;
+    .line 335
+    iget-object v7, v0, Lorg/telegram/ui/Components/UpdateAppAlertDialog;->shadow:Landroid/view/View;
 
-    invoke-virtual {v5, v4, v2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v4, v7, v5}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 290
-    new-instance v2, Lorg/telegram/ui/Components/UpdateAppAlertDialog$BottomSheetCell;
+    .line 337
+    new-instance v5, Lorg/telegram/ui/Components/UpdateAppAlertDialog$BottomSheetCell;
 
-    invoke-direct {v2, v0, v1, v3}, Lorg/telegram/ui/Components/UpdateAppAlertDialog$BottomSheetCell;-><init>(Lorg/telegram/ui/Components/UpdateAppAlertDialog;Landroid/content/Context;Z)V
+    invoke-direct {v5, v0, v1, v3}, Lorg/telegram/ui/Components/UpdateAppAlertDialog$BottomSheetCell;-><init>(Lorg/telegram/ui/Components/UpdateAppAlertDialog;Landroid/content/Context;Z)V
 
-    .line 291
-    sget v4, Lorg/telegram/messenger/R$string;->AppUpdateDownloadNow:I
+    .line 338
+    sget v7, Lorg/telegram/messenger/R$string;->AppUpdateDownloadNow:I
 
-    new-array v6, v3, [Ljava/lang/Object;
+    new-array v8, v3, [Ljava/lang/Object;
 
-    const-string v8, "AppUpdateDownloadNow"
+    const-string v9, "AppUpdateDownloadNow"
 
-    invoke-static {v8, v4, v6}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v9, v7, v8}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v7
 
-    invoke-virtual {v2, v4, v3}, Lorg/telegram/ui/Components/UpdateAppAlertDialog$BottomSheetCell;->setText(Ljava/lang/CharSequence;Z)V
+    invoke-virtual {v5, v7, v3}, Lorg/telegram/ui/Components/UpdateAppAlertDialog$BottomSheetCell;->setText(Ljava/lang/CharSequence;Z)V
 
-    .line 292
-    invoke-static {v2}, Lorg/telegram/ui/Components/UpdateAppAlertDialog$BottomSheetCell;->access$700(Lorg/telegram/ui/Components/UpdateAppAlertDialog$BottomSheetCell;)Landroid/view/View;
+    .line 339
+    invoke-static {v5}, Lorg/telegram/ui/Components/UpdateAppAlertDialog$BottomSheetCell;->access$700(Lorg/telegram/ui/Components/UpdateAppAlertDialog$BottomSheetCell;)Landroid/view/View;
 
-    move-result-object v4
+    move-result-object v7
 
-    new-instance v6, Lorg/telegram/ui/Components/UpdateAppAlertDialog$$ExternalSyntheticLambda0;
+    new-instance v8, Lorg/telegram/ui/Components/UpdateAppAlertDialog$$ExternalSyntheticLambda1;
 
-    invoke-direct {v6, v0}, Lorg/telegram/ui/Components/UpdateAppAlertDialog$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/Components/UpdateAppAlertDialog;)V
+    invoke-direct {v8, v0}, Lorg/telegram/ui/Components/UpdateAppAlertDialog$$ExternalSyntheticLambda1;-><init>(Lorg/telegram/ui/Components/UpdateAppAlertDialog;)V
 
-    invoke-virtual {v4, v6}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    invoke-virtual {v7, v8}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+
+    const/4 v9, -0x1
+
+    const/16 v10, 0x32
+
+    const/16 v11, 0x53
+
+    const/4 v12, 0x0
+
+    const/4 v13, 0x0
+
+    const/4 v14, 0x0
+
+    const/16 v15, 0x32
+
+    .line 343
+    invoke-static/range {v9 .. v15}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
+
+    move-result-object v7
+
+    invoke-virtual {v4, v5, v7}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+
+    .line 345
+    new-instance v7, Lorg/telegram/ui/Components/UpdateAppAlertDialog$BottomSheetCell;
+
+    invoke-direct {v7, v0, v1, v6}, Lorg/telegram/ui/Components/UpdateAppAlertDialog$BottomSheetCell;-><init>(Lorg/telegram/ui/Components/UpdateAppAlertDialog;Landroid/content/Context;Z)V
+
+    .line 346
+    sget v1, Lorg/telegram/messenger/R$string;->AppUpdateRemindMeLater:I
+
+    const-string v6, "AppUpdateRemindMeLater"
+
+    invoke-static {v6, v1}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v7, v1, v3}, Lorg/telegram/ui/Components/UpdateAppAlertDialog$BottomSheetCell;->setText(Ljava/lang/CharSequence;Z)V
+
+    .line 347
+    invoke-static {v7}, Lorg/telegram/ui/Components/UpdateAppAlertDialog$BottomSheetCell;->access$700(Lorg/telegram/ui/Components/UpdateAppAlertDialog$BottomSheetCell;)Landroid/view/View;
+
+    move-result-object v1
+
+    new-instance v3, Lorg/telegram/ui/Components/UpdateAppAlertDialog$$ExternalSyntheticLambda0;
+
+    invoke-direct {v3, v0}, Lorg/telegram/ui/Components/UpdateAppAlertDialog$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/Components/UpdateAppAlertDialog;)V
+
+    invoke-virtual {v1, v3}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     const/4 v8, -0x1
 
@@ -703,70 +616,107 @@
 
     const/4 v11, 0x0
 
+    .line 348
+    invoke-static/range {v8 .. v14}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
+
+    move-result-object v1
+
+    invoke-virtual {v4, v7, v1}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+
+    .line 350
+    invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/Components/UpdateAppAlertDialog;->updateUI()V
+
+    if-eqz v2, :cond_0
+
+    const/4 v8, -0x1
+
+    const/16 v9, 0x32
+
+    const/16 v10, 0x53
+
+    const/16 v11, 0x17
+
     const/4 v12, 0x0
 
-    const/4 v13, 0x0
+    const/16 v13, 0x17
 
-    const/16 v14, 0x32
+    const/16 v14, 0xf
 
-    .line 296
+    .line 352
     invoke-static/range {v8 .. v14}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
+
+    move-result-object v1
+
+    invoke-virtual {v4, v2, v1}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+
+    .line 353
+    iget-object v1, v0, Lorg/telegram/ui/Components/UpdateAppAlertDialog;->scrollView:Landroidx/core/widget/NestedScrollView;
+
+    invoke-virtual {v1}, Landroid/widget/FrameLayout;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+
+    move-result-object v1
+
+    check-cast v1, Landroid/widget/FrameLayout$LayoutParams;
+
+    .line 354
+    iget v3, v1, Landroid/widget/FrameLayout$LayoutParams;->bottomMargin:I
+
+    invoke-virtual {v5}, Landroid/widget/FrameLayout;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v4
 
-    invoke-virtual {v5, v2, v4}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    iget v4, v4, Landroid/view/ViewGroup$LayoutParams;->height:I
 
-    .line 298
-    new-instance v2, Lorg/telegram/ui/Components/UpdateAppAlertDialog$BottomSheetCell;
+    sub-int/2addr v3, v4
 
-    invoke-direct {v2, v0, v1, v7}, Lorg/telegram/ui/Components/UpdateAppAlertDialog$BottomSheetCell;-><init>(Lorg/telegram/ui/Components/UpdateAppAlertDialog;Landroid/content/Context;Z)V
+    iput v3, v1, Landroid/widget/FrameLayout$LayoutParams;->bottomMargin:I
 
-    .line 299
-    sget v1, Lorg/telegram/messenger/R$string;->AppUpdateRemindMeLater:I
+    .line 355
+    invoke-virtual {v7}, Landroid/widget/FrameLayout;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
-    const-string v4, "AppUpdateRemindMeLater"
+    move-result-object v4
 
-    invoke-static {v4, v1}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    iget v4, v4, Landroid/view/ViewGroup$LayoutParams;->height:I
 
-    move-result-object v1
+    sub-int/2addr v3, v4
 
-    invoke-virtual {v2, v1, v3}, Lorg/telegram/ui/Components/UpdateAppAlertDialog$BottomSheetCell;->setText(Ljava/lang/CharSequence;Z)V
+    iput v3, v1, Landroid/widget/FrameLayout$LayoutParams;->bottomMargin:I
 
-    .line 300
-    invoke-static {v2}, Lorg/telegram/ui/Components/UpdateAppAlertDialog$BottomSheetCell;->access$700(Lorg/telegram/ui/Components/UpdateAppAlertDialog$BottomSheetCell;)Landroid/view/View;
+    .line 356
+    invoke-virtual/range {p4 .. p4}, Landroid/widget/FrameLayout;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
-    move-result-object v1
+    move-result-object v2
 
-    new-instance v3, Lorg/telegram/ui/Components/UpdateAppAlertDialog$$ExternalSyntheticLambda1;
+    iget v2, v2, Landroid/view/ViewGroup$LayoutParams;->height:I
 
-    invoke-direct {v3, v0}, Lorg/telegram/ui/Components/UpdateAppAlertDialog$$ExternalSyntheticLambda1;-><init>(Lorg/telegram/ui/Components/UpdateAppAlertDialog;)V
+    add-int/2addr v3, v2
 
-    invoke-virtual {v1, v3}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    iput v3, v1, Landroid/widget/FrameLayout$LayoutParams;->bottomMargin:I
 
-    const/4 v6, -0x1
+    .line 357
+    iget-object v2, v0, Lorg/telegram/ui/Components/UpdateAppAlertDialog;->scrollView:Landroidx/core/widget/NestedScrollView;
 
-    const/16 v7, 0x32
+    invoke-virtual {v2, v1}, Landroid/widget/FrameLayout;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    const/16 v8, 0x53
+    .line 358
+    iget-object v1, v0, Lorg/telegram/ui/Components/UpdateAppAlertDialog;->shadow:Landroid/view/View;
 
-    const/4 v9, 0x0
+    invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->removeFromParent(Landroid/view/View;)V
 
-    const/4 v10, 0x0
+    .line 359
+    invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->removeFromParent(Landroid/view/View;)V
 
-    .line 301
-    invoke-static/range {v6 .. v12}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
+    .line 360
+    invoke-static {v7}, Lorg/telegram/messenger/AndroidUtilities;->removeFromParent(Landroid/view/View;)V
 
-    move-result-object v1
-
-    invoke-virtual {v5, v2, v1}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
-
+    :cond_0
     return-void
 .end method
 
 .method static synthetic access$002(Lorg/telegram/ui/Components/UpdateAppAlertDialog;Z)Z
     .locals 0
 
-    .line 36
+    .line 39
     iput-boolean p1, p0, Lorg/telegram/ui/Components/UpdateAppAlertDialog;->animationInProgress:Z
 
     return p1
@@ -775,7 +725,7 @@
 .method static synthetic access$200(Lorg/telegram/ui/Components/UpdateAppAlertDialog;)V
     .locals 0
 
-    .line 36
+    .line 39
     invoke-direct {p0}, Lorg/telegram/ui/Components/UpdateAppAlertDialog;->updateLayout()V
 
     return-void
@@ -784,7 +734,7 @@
 .method static synthetic access$300(Lorg/telegram/ui/Components/UpdateAppAlertDialog;)I
     .locals 0
 
-    .line 36
+    .line 39
     iget p0, p0, Lorg/telegram/ui/Components/UpdateAppAlertDialog;->scrollOffsetY:I
 
     return p0
@@ -793,7 +743,7 @@
 .method static synthetic access$400(Lorg/telegram/ui/Components/UpdateAppAlertDialog;)I
     .locals 0
 
-    .line 36
+    .line 39
     iget p0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->backgroundPaddingTop:I
 
     return p0
@@ -802,7 +752,7 @@
 .method static synthetic access$500(Lorg/telegram/ui/Components/UpdateAppAlertDialog;)Landroid/graphics/drawable/Drawable;
     .locals 0
 
-    .line 36
+    .line 39
     iget-object p0, p0, Lorg/telegram/ui/Components/UpdateAppAlertDialog;->shadowDrawable:Landroid/graphics/drawable/Drawable;
 
     return-object p0
@@ -811,7 +761,7 @@
 .method static synthetic access$600(Lorg/telegram/ui/Components/UpdateAppAlertDialog;)Landroid/widget/LinearLayout;
     .locals 0
 
-    .line 36
+    .line 39
     iget-object p0, p0, Lorg/telegram/ui/Components/UpdateAppAlertDialog;->linearLayout:Landroid/widget/LinearLayout;
 
     return-object p0
@@ -820,7 +770,7 @@
 .method static synthetic access$800(Lorg/telegram/ui/Components/UpdateAppAlertDialog;)Landroid/animation/AnimatorSet;
     .locals 0
 
-    .line 36
+    .line 39
     iget-object p0, p0, Lorg/telegram/ui/Components/UpdateAppAlertDialog;->shadowAnimation:Landroid/animation/AnimatorSet;
 
     return-object p0
@@ -829,7 +779,7 @@
 .method static synthetic access$802(Lorg/telegram/ui/Components/UpdateAppAlertDialog;Landroid/animation/AnimatorSet;)Landroid/animation/AnimatorSet;
     .locals 0
 
-    .line 36
+    .line 39
     iput-object p1, p0, Lorg/telegram/ui/Components/UpdateAppAlertDialog;->shadowAnimation:Landroid/animation/AnimatorSet;
 
     return-object p1
@@ -838,16 +788,140 @@
 .method static synthetic access$900(Lorg/telegram/ui/Components/UpdateAppAlertDialog;)Landroid/view/View;
     .locals 0
 
-    .line 36
+    .line 39
     iget-object p0, p0, Lorg/telegram/ui/Components/UpdateAppAlertDialog;->shadow:Landroid/view/View;
 
     return-object p0
 .end method
 
-.method private synthetic lambda$new$0(Landroid/view/View;)V
+.method private synthetic lambda$new$0(Lorg/telegram/ui/Components/BackupImageView;)V
+    .locals 14
+
+    .line 279
+    iget-object v0, p0, Lorg/telegram/ui/Components/UpdateAppAlertDialog;->appUpdate:Lorg/telegram/tgnet/TLRPC$TL_help_appUpdate;
+
+    iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$TL_help_appUpdate;->sticker:Lorg/telegram/tgnet/TLRPC$Document;
+
+    iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$Document;->thumbs:Ljava/util/ArrayList;
+
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundGray:I
+
+    const/high16 v2, 0x3f800000    # 1.0f
+
+    invoke-static {v0, v1, v2}, Lorg/telegram/messenger/DocumentObject;->getSvgThumb(Ljava/util/ArrayList;IF)Lorg/telegram/messenger/SvgHelper$SvgDrawable;
+
+    move-result-object v6
+
+    .line 280
+    iget-object v0, p0, Lorg/telegram/ui/Components/UpdateAppAlertDialog;->appUpdate:Lorg/telegram/tgnet/TLRPC$TL_help_appUpdate;
+
+    iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$TL_help_appUpdate;->sticker:Lorg/telegram/tgnet/TLRPC$Document;
+
+    iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$Document;->thumbs:Ljava/util/ArrayList;
+
+    const/16 v1, 0x5a
+
+    invoke-static {v0, v1}, Lorg/telegram/messenger/FileLoader;->getClosestPhotoSizeWithSize(Ljava/util/ArrayList;I)Lorg/telegram/tgnet/TLRPC$PhotoSize;
+
+    move-result-object v0
+
+    .line 281
+    iget-object v1, p0, Lorg/telegram/ui/Components/UpdateAppAlertDialog;->appUpdate:Lorg/telegram/tgnet/TLRPC$TL_help_appUpdate;
+
+    iget-object v1, v1, Lorg/telegram/tgnet/TLRPC$TL_help_appUpdate;->sticker:Lorg/telegram/tgnet/TLRPC$Document;
+
+    invoke-static {v0, v1}, Lorg/telegram/messenger/ImageLocation;->getForDocument(Lorg/telegram/tgnet/TLRPC$PhotoSize;Lorg/telegram/tgnet/TLRPC$Document;)Lorg/telegram/messenger/ImageLocation;
+
+    move-result-object v10
+
+    if-eqz v6, :cond_0
+
+    .line 284
+    iget-object v0, p0, Lorg/telegram/ui/Components/UpdateAppAlertDialog;->appUpdate:Lorg/telegram/tgnet/TLRPC$TL_help_appUpdate;
+
+    iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$TL_help_appUpdate;->sticker:Lorg/telegram/tgnet/TLRPC$Document;
+
+    invoke-static {v0}, Lorg/telegram/messenger/ImageLocation;->getForDocument(Lorg/telegram/tgnet/TLRPC$Document;)Lorg/telegram/messenger/ImageLocation;
+
+    move-result-object v4
+
+    const/4 v7, 0x0
+
+    const-string v5, "250_250"
+
+    const-string v8, "update"
+
+    move-object v3, p1
+
+    invoke-virtual/range {v3 .. v8}, Lorg/telegram/ui/Components/BackupImageView;->setImage(Lorg/telegram/messenger/ImageLocation;Ljava/lang/String;Landroid/graphics/drawable/Drawable;ILjava/lang/Object;)V
+
+    goto :goto_0
+
+    .line 286
+    :cond_0
+    iget-object v0, p0, Lorg/telegram/ui/Components/UpdateAppAlertDialog;->appUpdate:Lorg/telegram/tgnet/TLRPC$TL_help_appUpdate;
+
+    iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$TL_help_appUpdate;->sticker:Lorg/telegram/tgnet/TLRPC$Document;
+
+    invoke-static {v0}, Lorg/telegram/messenger/ImageLocation;->getForDocument(Lorg/telegram/tgnet/TLRPC$Document;)Lorg/telegram/messenger/ImageLocation;
+
+    move-result-object v8
+
+    const/4 v11, 0x0
+
+    const/4 v12, 0x0
+
+    const-string v9, "250_250"
+
+    const-string v13, "update"
+
+    move-object v7, p1
+
+    invoke-virtual/range {v7 .. v13}, Lorg/telegram/ui/Components/BackupImageView;->setImage(Lorg/telegram/messenger/ImageLocation;Ljava/lang/String;Lorg/telegram/messenger/ImageLocation;Ljava/lang/String;ILjava/lang/Object;)V
+
+    :goto_0
+    return-void
+.end method
+
+.method private synthetic lambda$new$1(Landroid/widget/TextView;)V
+    .locals 7
+
+    .line 321
+    new-instance v6, Landroid/text/SpannableStringBuilder;
+
+    iget-object v0, p0, Lorg/telegram/ui/Components/UpdateAppAlertDialog;->appUpdate:Lorg/telegram/tgnet/TLRPC$TL_help_appUpdate;
+
+    iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$TL_help_appUpdate;->text:Ljava/lang/String;
+
+    invoke-direct {v6, v0}, Landroid/text/SpannableStringBuilder;-><init>(Ljava/lang/CharSequence;)V
+
+    .line 322
+    iget-object v0, p0, Lorg/telegram/ui/Components/UpdateAppAlertDialog;->appUpdate:Lorg/telegram/tgnet/TLRPC$TL_help_appUpdate;
+
+    iget-object v1, v0, Lorg/telegram/tgnet/TLRPC$TL_help_appUpdate;->entities:Ljava/util/ArrayList;
+
+    const/4 v2, 0x0
+
+    const/4 v3, 0x0
+
+    const/4 v4, 0x0
+
+    const/4 v5, 0x0
+
+    move-object v0, v6
+
+    invoke-static/range {v0 .. v5}, Lorg/telegram/messenger/MessageObject;->addEntitiesToText(Ljava/lang/CharSequence;Ljava/util/ArrayList;ZZZZ)Z
+
+    .line 323
+    invoke-virtual {p1, v6}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    return-void
+.end method
+
+.method private synthetic lambda$new$2(Landroid/view/View;)V
     .locals 3
 
-    .line 293
+    .line 340
     iget p1, p0, Lorg/telegram/ui/Components/UpdateAppAlertDialog;->accountNum:I
 
     invoke-static {p1}, Lorg/telegram/messenger/FileLoader;->getInstance(I)Lorg/telegram/messenger/FileLoader;
@@ -864,16 +938,16 @@
 
     invoke-virtual {p1, v0, v1, v2, v2}, Lorg/telegram/messenger/FileLoader;->loadFile(Lorg/telegram/tgnet/TLRPC$Document;Ljava/lang/Object;II)V
 
-    .line 294
+    .line 341
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BottomSheet;->dismiss()V
 
     return-void
 .end method
 
-.method private synthetic lambda$new$1(Landroid/view/View;)V
+.method private synthetic lambda$new$3(Landroid/view/View;)V
     .locals 0
 
-    .line 300
+    .line 347
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BottomSheet;->dismiss()V
 
     return-void
@@ -884,7 +958,7 @@
 
     if-eqz p2, :cond_0
 
-    .line 305
+    .line 366
     iget-object p1, p0, Lorg/telegram/ui/Components/UpdateAppAlertDialog;->shadow:Landroid/view/View;
 
     invoke-virtual {p1}, Landroid/view/View;->getTag()Ljava/lang/Object;
@@ -904,7 +978,7 @@
 
     if-nez p1, :cond_6
 
-    .line 306
+    .line 367
     :cond_1
     iget-object p1, p0, Lorg/telegram/ui/Components/UpdateAppAlertDialog;->shadow:Landroid/view/View;
 
@@ -928,21 +1002,21 @@
 
     if-eqz p2, :cond_3
 
-    .line 308
+    .line 369
     iget-object v1, p0, Lorg/telegram/ui/Components/UpdateAppAlertDialog;->shadow:Landroid/view/View;
 
     invoke-virtual {v1, p1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 310
+    .line 371
     :cond_3
     iget-object v1, p0, Lorg/telegram/ui/Components/UpdateAppAlertDialog;->shadowAnimation:Landroid/animation/AnimatorSet;
 
     if-eqz v1, :cond_4
 
-    .line 311
+    .line 372
     invoke-virtual {v1}, Landroid/animation/AnimatorSet;->cancel()V
 
-    .line 313
+    .line 374
     :cond_4
     new-instance v1, Landroid/animation/AnimatorSet;
 
@@ -952,7 +1026,7 @@
 
     new-array v2, v0, [Landroid/animation/Animator;
 
-    .line 314
+    .line 375
     iget-object v3, p0, Lorg/telegram/ui/Components/UpdateAppAlertDialog;->shadow:Landroid/view/View;
 
     sget-object v4, Landroid/view/View;->ALPHA:Landroid/util/Property;
@@ -979,14 +1053,14 @@
 
     invoke-virtual {v1, v2}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
 
-    .line 315
+    .line 376
     iget-object p1, p0, Lorg/telegram/ui/Components/UpdateAppAlertDialog;->shadowAnimation:Landroid/animation/AnimatorSet;
 
     const-wide/16 v0, 0x96
 
     invoke-virtual {p1, v0, v1}, Landroid/animation/AnimatorSet;->setDuration(J)Landroid/animation/AnimatorSet;
 
-    .line 316
+    .line 377
     iget-object p1, p0, Lorg/telegram/ui/Components/UpdateAppAlertDialog;->shadowAnimation:Landroid/animation/AnimatorSet;
 
     new-instance v0, Lorg/telegram/ui/Components/UpdateAppAlertDialog$3;
@@ -995,7 +1069,7 @@
 
     invoke-virtual {p1, v0}, Landroid/animation/AnimatorSet;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 334
+    .line 395
     iget-object p1, p0, Lorg/telegram/ui/Components/UpdateAppAlertDialog;->shadowAnimation:Landroid/animation/AnimatorSet;
 
     invoke-virtual {p1}, Landroid/animation/AnimatorSet;->start()V
@@ -1007,7 +1081,7 @@
 .method private updateLayout()V
     .locals 6
 
-    .line 339
+    .line 400
     iget-object v0, p0, Lorg/telegram/ui/Components/UpdateAppAlertDialog;->linearLayout:Landroid/widget/LinearLayout;
 
     const/4 v1, 0x0
@@ -1016,12 +1090,12 @@
 
     move-result-object v0
 
-    .line 340
+    .line 401
     iget-object v2, p0, Lorg/telegram/ui/Components/UpdateAppAlertDialog;->location:[I
 
     invoke-virtual {v0, v2}, Landroid/view/View;->getLocationInWindow([I)V
 
-    .line 341
+    .line 402
     iget-object v0, p0, Lorg/telegram/ui/Components/UpdateAppAlertDialog;->location:[I
 
     const/4 v2, 0x1
@@ -1036,12 +1110,12 @@
 
     sub-int/2addr v0, v3
 
-    .line 342
+    .line 403
     invoke-static {v0, v1}, Ljava/lang/Math;->max(II)I
 
     move-result v0
 
-    .line 343
+    .line 404
     iget-object v3, p0, Lorg/telegram/ui/Components/UpdateAppAlertDialog;->location:[I
 
     aget v3, v3, v2
@@ -1084,25 +1158,25 @@
 
     if-gtz v3, :cond_0
 
-    .line 344
+    .line 405
     invoke-direct {p0, v1, v1}, Lorg/telegram/ui/Components/UpdateAppAlertDialog;->runShadowAnimation(IZ)V
 
     goto :goto_0
 
-    .line 346
+    .line 407
     :cond_0
     invoke-direct {p0, v1, v2}, Lorg/telegram/ui/Components/UpdateAppAlertDialog;->runShadowAnimation(IZ)V
 
-    .line 348
+    .line 409
     :goto_0
     iget v1, p0, Lorg/telegram/ui/Components/UpdateAppAlertDialog;->scrollOffsetY:I
 
     if-eq v1, v0, :cond_1
 
-    .line 349
+    .line 410
     iput v0, p0, Lorg/telegram/ui/Components/UpdateAppAlertDialog;->scrollOffsetY:I
 
-    .line 350
+    .line 411
     iget-object v0, p0, Lorg/telegram/ui/Components/UpdateAppAlertDialog;->scrollView:Landroidx/core/widget/NestedScrollView;
 
     invoke-virtual {v0}, Landroid/widget/FrameLayout;->invalidate()V
@@ -1119,4 +1193,159 @@
     const/4 v0, 0x0
 
     return v0
+.end method
+
+.method public updateUI()V
+    .locals 9
+
+    .line 52
+    sget-object v0, Lorg/telegram/messenger/SharedConfig;->pendingAppUpdate:Lorg/telegram/tgnet/TLRPC$TL_help_appUpdate;
+
+    iput-object v0, p0, Lorg/telegram/ui/Components/UpdateAppAlertDialog;->appUpdate:Lorg/telegram/tgnet/TLRPC$TL_help_appUpdate;
+
+    .line 53
+    iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$TL_help_appUpdate;->sticker:Lorg/telegram/tgnet/TLRPC$Document;
+
+    const/16 v1, 0x8
+
+    const/4 v2, 0x0
+
+    if-eqz v0, :cond_0
+
+    .line 54
+    iget-object v0, p0, Lorg/telegram/ui/Components/UpdateAppAlertDialog;->stickerImageView:Lorg/telegram/ui/Components/BackupImageView;
+
+    invoke-virtual {v0, v2}, Landroid/view/View;->setVisibility(I)V
+
+    .line 55
+    iget-object v0, p0, Lorg/telegram/ui/Components/UpdateAppAlertDialog;->setStickerRunnable:Ljava/lang/Runnable;
+
+    invoke-interface {v0}, Ljava/lang/Runnable;->run()V
+
+    goto :goto_0
+
+    .line 57
+    :cond_0
+    iget-object v0, p0, Lorg/telegram/ui/Components/UpdateAppAlertDialog;->stickerImageView:Lorg/telegram/ui/Components/BackupImageView;
+
+    invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
+
+    .line 59
+    :goto_0
+    iget-object v0, p0, Lorg/telegram/ui/Components/UpdateAppAlertDialog;->textView:Landroid/widget/TextView;
+
+    invoke-virtual {v0}, Landroid/widget/TextView;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/widget/LinearLayout$LayoutParams;
+
+    .line 60
+    iget-object v3, p0, Lorg/telegram/ui/Components/UpdateAppAlertDialog;->appUpdate:Lorg/telegram/tgnet/TLRPC$TL_help_appUpdate;
+
+    iget-object v3, v3, Lorg/telegram/tgnet/TLRPC$TL_help_appUpdate;->sticker:Lorg/telegram/tgnet/TLRPC$Document;
+
+    if-eqz v3, :cond_1
+
+    const/16 v3, 0x10
+
+    goto :goto_1
+
+    :cond_1
+    move v3, v2
+
+    :goto_1
+    invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v3
+
+    iput v3, v0, Landroid/widget/LinearLayout$LayoutParams;->topMargin:I
+
+    .line 61
+    iget-object v3, p0, Lorg/telegram/ui/Components/UpdateAppAlertDialog;->textView:Landroid/widget/TextView;
+
+    invoke-virtual {v3, v0}, Landroid/widget/TextView;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
+
+    .line 62
+    iget-object v0, p0, Lorg/telegram/ui/Components/UpdateAppAlertDialog;->appUpdate:Lorg/telegram/tgnet/TLRPC$TL_help_appUpdate;
+
+    iget-object v3, v0, Lorg/telegram/tgnet/TLRPC$TL_help_appUpdate;->document:Lorg/telegram/tgnet/TLRPC$Document;
+
+    iget v3, v3, Lorg/telegram/tgnet/TLRPC$Document;->date:I
+
+    if-eqz v3, :cond_2
+
+    .line 63
+    iget-object v4, p0, Lorg/telegram/ui/Components/UpdateAppAlertDialog;->messageTextView:Landroid/widget/TextView;
+
+    sget v5, Lorg/telegram/messenger/R$string;->AppUpdateVersionAndSize:I
+
+    const/4 v6, 0x2
+
+    new-array v6, v6, [Ljava/lang/Object;
+
+    iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$TL_help_appUpdate;->version:Ljava/lang/String;
+
+    aput-object v0, v6, v2
+
+    const/4 v0, 0x1
+
+    int-to-long v7, v3
+
+    invoke-static {v7, v8}, Lorg/telegram/messenger/LocaleController;->formatSeenDate(J)Ljava/lang/String;
+
+    move-result-object v3
+
+    aput-object v3, v6, v0
+
+    const-string v0, "AppUpdateVersionAndSize"
+
+    invoke-static {v0, v5, v6}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {v4, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    goto :goto_2
+
+    .line 65
+    :cond_2
+    iget-object v3, p0, Lorg/telegram/ui/Components/UpdateAppAlertDialog;->messageTextView:Landroid/widget/TextView;
+
+    iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$TL_help_appUpdate;->version:Ljava/lang/String;
+
+    invoke-virtual {v3, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    .line 67
+    :goto_2
+    iget-object v0, p0, Lorg/telegram/ui/Components/UpdateAppAlertDialog;->appUpdate:Lorg/telegram/tgnet/TLRPC$TL_help_appUpdate;
+
+    iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$TL_help_appUpdate;->text:Ljava/lang/String;
+
+    invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_3
+
+    .line 68
+    iget-object v0, p0, Lorg/telegram/ui/Components/UpdateAppAlertDialog;->changelogTextView:Landroid/widget/TextView;
+
+    invoke-virtual {v0, v2}, Landroid/widget/TextView;->setVisibility(I)V
+
+    .line 69
+    iget-object v0, p0, Lorg/telegram/ui/Components/UpdateAppAlertDialog;->setChangelogRunnable:Ljava/lang/Runnable;
+
+    invoke-interface {v0}, Ljava/lang/Runnable;->run()V
+
+    goto :goto_3
+
+    .line 71
+    :cond_3
+    iget-object v0, p0, Lorg/telegram/ui/Components/UpdateAppAlertDialog;->changelogTextView:Landroid/widget/TextView;
+
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setVisibility(I)V
+
+    :goto_3
+    return-void
 .end method

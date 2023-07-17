@@ -2,7 +2,7 @@ package com.iMe.fork.p024ui.fragment;
 
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Lambda;
-import org.telegram.p044ui.Components.EmojiView;
+import org.telegram.p043ui.Components.EmojiView;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: CreateReactionButtonsActivity.kt */
 /* renamed from: com.iMe.fork.ui.fragment.CreateReactionButtonsActivity$emojiView$2 */

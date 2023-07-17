@@ -2610,7 +2610,7 @@
         }
     .end annotation
 
-    const-string v0, "scheduler is null"
+    const-string/jumbo v0, "scheduler is null"
 
     .line 1921
     invoke-static {p4, v0}, Lio/reactivex/internal/functions/ObjectHelper;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
@@ -2644,7 +2644,7 @@
         }
     .end annotation
 
-    const-string v0, "scheduler is null"
+    const-string/jumbo v0, "scheduler is null"
 
     .line 1957
     invoke-static {p1, v0}, Lio/reactivex/internal/functions/ObjectHelper;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
@@ -2977,7 +2977,7 @@
     .line 2242
     invoke-static {p4, v0}, Lio/reactivex/internal/functions/ObjectHelper;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
-    const-string v0, "scheduler is null"
+    const-string/jumbo v0, "scheduler is null"
 
     .line 2243
     invoke-static {p5, v0}, Lio/reactivex/internal/functions/ObjectHelper;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
@@ -3183,7 +3183,7 @@
     .line 2351
     invoke-static {v9, v0}, Lio/reactivex/internal/functions/ObjectHelper;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
-    const-string v0, "scheduler is null"
+    const-string/jumbo v0, "scheduler is null"
 
     .line 2352
     invoke-static {v10, v0}, Lio/reactivex/internal/functions/ObjectHelper;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
@@ -5435,7 +5435,7 @@
     .line 13805
     invoke-static {p3, v0}, Lio/reactivex/internal/functions/ObjectHelper;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
-    const-string v0, "scheduler is null"
+    const-string/jumbo v0, "scheduler is null"
 
     .line 13806
     invoke-static {p5, v0}, Lio/reactivex/internal/functions/ObjectHelper;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
@@ -5547,7 +5547,7 @@
     .line 3977
     invoke-static {p2, v0}, Lio/reactivex/internal/functions/ObjectHelper;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
-    const-string v0, "scheduler is null"
+    const-string/jumbo v0, "scheduler is null"
 
     .line 3978
     invoke-static {p3, v0}, Lio/reactivex/internal/functions/ObjectHelper;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
@@ -5670,7 +5670,7 @@
         }
     .end annotation
 
-    const-string v0, "resourceSupplier is null"
+    const-string/jumbo v0, "resourceSupplier is null"
 
     .line 4063
     invoke-static {p0, v0}, Lio/reactivex/internal/functions/ObjectHelper;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
@@ -7698,7 +7698,7 @@
     .line 5771
     invoke-static {v7, v0}, Lio/reactivex/internal/functions/ObjectHelper;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
-    const-string v0, "scheduler is null"
+    const-string/jumbo v0, "scheduler is null"
 
     move-object/from16 v8, p6
 
@@ -7902,7 +7902,7 @@
     .line 5916
     invoke-static {p3, v0}, Lio/reactivex/internal/functions/ObjectHelper;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
-    const-string v0, "scheduler is null"
+    const-string/jumbo v0, "scheduler is null"
 
     move-object/from16 v8, p4
 
@@ -9535,7 +9535,7 @@
     .line 7402
     invoke-static {p3, v0}, Lio/reactivex/internal/functions/ObjectHelper;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
-    const-string v0, "scheduler is null"
+    const-string/jumbo v0, "scheduler is null"
 
     .line 7403
     invoke-static {p4, v0}, Lio/reactivex/internal/functions/ObjectHelper;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
@@ -9703,7 +9703,7 @@
     .line 7559
     invoke-static {p3, v0}, Lio/reactivex/internal/functions/ObjectHelper;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
-    const-string v0, "scheduler is null"
+    const-string/jumbo v0, "scheduler is null"
 
     .line 7560
     invoke-static {p4, v0}, Lio/reactivex/internal/functions/ObjectHelper;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
@@ -9956,7 +9956,7 @@
         }
     .end annotation
 
-    const-string v0, "selector is null"
+    const-string/jumbo v0, "selector is null"
 
     .line 7769
     invoke-static {p1, v0}, Lio/reactivex/internal/functions/ObjectHelper;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
@@ -11414,7 +11414,7 @@
     .line 8994
     invoke-static {p1, v0}, Lio/reactivex/internal/functions/ObjectHelper;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
-    const-string v0, "resultSelector is null"
+    const-string/jumbo v0, "resultSelector is null"
 
     .line 8995
     invoke-static {p2, v0}, Lio/reactivex/internal/functions/ObjectHelper;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
@@ -11903,12 +11903,12 @@
     .line 9434
     invoke-static {p2, v0}, Lio/reactivex/internal/functions/ObjectHelper;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
-    const-string v0, "rightEnd is null"
+    const-string/jumbo v0, "rightEnd is null"
 
     .line 9435
     invoke-static {p3, v0}, Lio/reactivex/internal/functions/ObjectHelper;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
-    const-string v0, "resultSelector is null"
+    const-string/jumbo v0, "resultSelector is null"
 
     .line 9436
     invoke-static {p4, v0}, Lio/reactivex/internal/functions/ObjectHelper;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
@@ -12039,12 +12039,12 @@
     .line 9541
     invoke-static {p2, v0}, Lio/reactivex/internal/functions/ObjectHelper;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
-    const-string v0, "rightEnd is null"
+    const-string/jumbo v0, "rightEnd is null"
 
     .line 9542
     invoke-static {p3, v0}, Lio/reactivex/internal/functions/ObjectHelper;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
-    const-string v0, "resultSelector is null"
+    const-string/jumbo v0, "resultSelector is null"
 
     .line 9543
     invoke-static {p4, v0}, Lio/reactivex/internal/functions/ObjectHelper;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
@@ -12405,7 +12405,7 @@
         }
     .end annotation
 
-    const-string v0, "scheduler is null"
+    const-string/jumbo v0, "scheduler is null"
 
     .line 9990
     invoke-static {p1, v0}, Lio/reactivex/internal/functions/ObjectHelper;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
@@ -12507,7 +12507,7 @@
         }
     .end annotation
 
-    const-string v0, "resumeFunction is null"
+    const-string/jumbo v0, "resumeFunction is null"
 
     .line 10049
     invoke-static {p1, v0}, Lio/reactivex/internal/functions/ObjectHelper;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
@@ -12659,7 +12659,7 @@
         }
     .end annotation
 
-    const-string v0, "selector is null"
+    const-string/jumbo v0, "selector is null"
 
     .line 10256
     invoke-static {p1, v0}, Lio/reactivex/internal/functions/ObjectHelper;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
@@ -12706,7 +12706,7 @@
         }
     .end annotation
 
-    const-string v0, "reducer is null"
+    const-string/jumbo v0, "reducer is null"
 
     .line 10291
     invoke-static {p1, v0}, Lio/reactivex/internal/functions/ObjectHelper;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
@@ -12737,12 +12737,12 @@
         }
     .end annotation
 
-    const-string v0, "seed is null"
+    const-string/jumbo v0, "seed is null"
 
     .line 10348
     invoke-static {p1, v0}, Lio/reactivex/internal/functions/ObjectHelper;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
-    const-string v0, "reducer is null"
+    const-string/jumbo v0, "reducer is null"
 
     .line 10349
     invoke-static {p2, v0}, Lio/reactivex/internal/functions/ObjectHelper;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
@@ -12775,12 +12775,12 @@
         }
     .end annotation
 
-    const-string v0, "seedSupplier is null"
+    const-string/jumbo v0, "seedSupplier is null"
 
     .line 10388
     invoke-static {p1, v0}, Lio/reactivex/internal/functions/ObjectHelper;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
-    const-string v0, "reducer is null"
+    const-string/jumbo v0, "reducer is null"
 
     .line 10389
     invoke-static {p2, v0}, Lio/reactivex/internal/functions/ObjectHelper;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
@@ -12958,7 +12958,7 @@
         }
     .end annotation
 
-    const-string v0, "selector is null"
+    const-string/jumbo v0, "selector is null"
 
     .line 10538
     invoke-static {p1, v0}, Lio/reactivex/internal/functions/ObjectHelper;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
@@ -12993,7 +12993,7 @@
         }
     .end annotation
 
-    const-string v0, "selector is null"
+    const-string/jumbo v0, "selector is null"
 
     .line 10571
     invoke-static {p1, v0}, Lio/reactivex/internal/functions/ObjectHelper;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
@@ -13078,7 +13078,7 @@
         }
     .end annotation
 
-    const-string v0, "selector is null"
+    const-string/jumbo v0, "selector is null"
 
     .line 10651
     invoke-static {p1, v0}, Lio/reactivex/internal/functions/ObjectHelper;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
@@ -13093,7 +13093,7 @@
     .line 10653
     invoke-static {p5, v0}, Lio/reactivex/internal/functions/ObjectHelper;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
-    const-string v0, "scheduler is null"
+    const-string/jumbo v0, "scheduler is null"
 
     .line 10654
     invoke-static {p6, v0}, Lio/reactivex/internal/functions/ObjectHelper;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
@@ -13141,12 +13141,12 @@
         }
     .end annotation
 
-    const-string v0, "selector is null"
+    const-string/jumbo v0, "selector is null"
 
     .line 10690
     invoke-static {p1, v0}, Lio/reactivex/internal/functions/ObjectHelper;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
-    const-string v0, "scheduler is null"
+    const-string/jumbo v0, "scheduler is null"
 
     .line 10691
     invoke-static {p3, v0}, Lio/reactivex/internal/functions/ObjectHelper;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
@@ -13235,7 +13235,7 @@
         }
     .end annotation
 
-    const-string v0, "selector is null"
+    const-string/jumbo v0, "selector is null"
 
     .line 10758
     invoke-static {p1, v0}, Lio/reactivex/internal/functions/ObjectHelper;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
@@ -13245,7 +13245,7 @@
     .line 10759
     invoke-static {p4, v0}, Lio/reactivex/internal/functions/ObjectHelper;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
-    const-string v0, "scheduler is null"
+    const-string/jumbo v0, "scheduler is null"
 
     .line 10760
     invoke-static {p5, v0}, Lio/reactivex/internal/functions/ObjectHelper;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
@@ -13282,12 +13282,12 @@
         }
     .end annotation
 
-    const-string v0, "selector is null"
+    const-string/jumbo v0, "selector is null"
 
     .line 10789
     invoke-static {p1, v0}, Lio/reactivex/internal/functions/ObjectHelper;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
-    const-string v0, "scheduler is null"
+    const-string/jumbo v0, "scheduler is null"
 
     .line 10790
     invoke-static {p2, v0}, Lio/reactivex/internal/functions/ObjectHelper;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
@@ -13406,7 +13406,7 @@
     .line 10889
     invoke-static {p4, v0}, Lio/reactivex/internal/functions/ObjectHelper;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
-    const-string v0, "scheduler is null"
+    const-string/jumbo v0, "scheduler is null"
 
     .line 10890
     invoke-static {p5, v0}, Lio/reactivex/internal/functions/ObjectHelper;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
@@ -13500,7 +13500,7 @@
     .line 10975
     invoke-static {p3, v0}, Lio/reactivex/internal/functions/ObjectHelper;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
-    const-string v0, "scheduler is null"
+    const-string/jumbo v0, "scheduler is null"
 
     .line 10976
     invoke-static {p4, v0}, Lio/reactivex/internal/functions/ObjectHelper;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
@@ -13525,7 +13525,7 @@
         }
     .end annotation
 
-    const-string v0, "scheduler is null"
+    const-string/jumbo v0, "scheduler is null"
 
     .line 11002
     invoke-static {p1, v0}, Lio/reactivex/internal/functions/ObjectHelper;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
@@ -13848,7 +13848,7 @@
     .line 11330
     invoke-static {p3, v0}, Lio/reactivex/internal/functions/ObjectHelper;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
-    const-string v0, "scheduler is null"
+    const-string/jumbo v0, "scheduler is null"
 
     .line 11331
     invoke-static {p4, v0}, Lio/reactivex/internal/functions/ObjectHelper;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
@@ -13895,7 +13895,7 @@
     .line 11366
     invoke-static {p3, v0}, Lio/reactivex/internal/functions/ObjectHelper;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
-    const-string v0, "scheduler is null"
+    const-string/jumbo v0, "scheduler is null"
 
     .line 11367
     invoke-static {p4, v0}, Lio/reactivex/internal/functions/ObjectHelper;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
@@ -13970,7 +13970,7 @@
         }
     .end annotation
 
-    const-string v0, "sampler is null"
+    const-string/jumbo v0, "sampler is null"
 
     .line 11392
     invoke-static {p1, v0}, Lio/reactivex/internal/functions/ObjectHelper;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
@@ -14003,7 +14003,7 @@
         }
     .end annotation
 
-    const-string v0, "sampler is null"
+    const-string/jumbo v0, "sampler is null"
 
     .line 11424
     invoke-static {p1, v0}, Lio/reactivex/internal/functions/ObjectHelper;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
@@ -14096,7 +14096,7 @@
         }
     .end annotation
 
-    const-string v0, "seedSupplier is null"
+    const-string/jumbo v0, "seedSupplier is null"
 
     .line 11536
     invoke-static {p1, v0}, Lio/reactivex/internal/functions/ObjectHelper;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
@@ -14500,7 +14500,7 @@
     .line 11909
     invoke-static {p3, v0}, Lio/reactivex/internal/functions/ObjectHelper;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
-    const-string v0, "scheduler is null"
+    const-string/jumbo v0, "scheduler is null"
 
     .line 11910
     invoke-static {p4, v0}, Lio/reactivex/internal/functions/ObjectHelper;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
@@ -15125,7 +15125,7 @@
         }
     .end annotation
 
-    const-string v0, "scheduler is null"
+    const-string/jumbo v0, "scheduler is null"
 
     .line 12343
     invoke-static {p1, v0}, Lio/reactivex/internal/functions/ObjectHelper;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
@@ -15863,7 +15863,7 @@
     .line 12922
     invoke-static {v6, v0}, Lio/reactivex/internal/functions/ObjectHelper;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
-    const-string v0, "scheduler is null"
+    const-string/jumbo v0, "scheduler is null"
 
     move-object/from16 v7, p6
 
@@ -16289,7 +16289,7 @@
     .line 13204
     invoke-static {p3, v0}, Lio/reactivex/internal/functions/ObjectHelper;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
-    const-string v0, "scheduler is null"
+    const-string/jumbo v0, "scheduler is null"
 
     .line 13205
     invoke-static {p4, v0}, Lio/reactivex/internal/functions/ObjectHelper;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
@@ -16438,7 +16438,7 @@
     .line 13391
     invoke-static {p3, v0}, Lio/reactivex/internal/functions/ObjectHelper;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
-    const-string v0, "scheduler is null"
+    const-string/jumbo v0, "scheduler is null"
 
     .line 13392
     invoke-static {p4, v0}, Lio/reactivex/internal/functions/ObjectHelper;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
@@ -16632,7 +16632,7 @@
     .line 13544
     invoke-static {p1, v0}, Lio/reactivex/internal/functions/ObjectHelper;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
-    const-string v0, "scheduler is null"
+    const-string/jumbo v0, "scheduler is null"
 
     .line 13545
     invoke-static {p2, v0}, Lio/reactivex/internal/functions/ObjectHelper;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
@@ -17013,7 +17013,7 @@
     .line 13903
     invoke-static {p1, v0}, Lio/reactivex/internal/functions/ObjectHelper;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
-    const-string v0, "scheduler is null"
+    const-string/jumbo v0, "scheduler is null"
 
     .line 13904
     invoke-static {p2, v0}, Lio/reactivex/internal/functions/ObjectHelper;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
@@ -17698,7 +17698,7 @@
         }
     .end annotation
 
-    const-string v0, "scheduler is null"
+    const-string/jumbo v0, "scheduler is null"
 
     .line 14468
     invoke-static {p1, v0}, Lio/reactivex/internal/functions/ObjectHelper;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
@@ -17929,7 +17929,7 @@
     .line 14647
     invoke-static {v11, v0}, Lio/reactivex/internal/functions/ObjectHelper;->verifyPositive(ILjava/lang/String;)I
 
-    const-string v0, "scheduler is null"
+    const-string/jumbo v0, "scheduler is null"
 
     move-object/from16 v8, p6
 
@@ -18195,7 +18195,7 @@
     .line 14882
     invoke-static {v11, v0}, Lio/reactivex/internal/functions/ObjectHelper;->verifyPositive(ILjava/lang/String;)I
 
-    const-string v0, "scheduler is null"
+    const-string/jumbo v0, "scheduler is null"
 
     move-object/from16 v8, p4
 

@@ -538,9 +538,9 @@ to: %2$s"</string>
     <string name="AppIconPremium">Premium</string>
     <string name="AppIconTurbo">Turbo</string>
     <string name="AppIconVintage">Vintage</string>
-    <string name="AppName">Telegram</string>
+    <string name="AppName">iMe</string>
     <string name="AppNameBeta">Telegram Beta</string>
-    <string name="AppUpdate">Update Telegram</string>
+    <string name="AppUpdate">Update iMe</string>
     <string name="AppUpdateChangelogEmpty">"**What's new?**
 
 • Bug fixes and improvements."</string>
@@ -6809,7 +6809,33 @@ To get the reward, you need to:"</string>
     <string name="app_name">Responses</string>
     <string name="app_restart_error">We were unable to open the app ourselves. Try it yourself.</string>
     <string name="app_update_dialog_description">Update the application to use this functionality</string>
+    <string name="app_update_not_found">The latest version of the application is already installed</string>
     <string name="appbar_scrolling_view_behavior">com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior</string>
+    <string name="appcenter_distribute_dialog_actioned_on_disabled_toast">Distribute was disabled</string>
+    <string name="appcenter_distribute_download_progress_number_format">%1$d MB of %2$d MB</string>
+    <string name="appcenter_distribute_downloading_error">Failed to download app update</string>
+    <string name="appcenter_distribute_downloading_mandatory_update">Downloading update</string>
+    <string name="appcenter_distribute_downloading_update">@string/appcenter_distribute_downloading_mandatory_update</string>
+    <string name="appcenter_distribute_downloading_version">Downloading version %1$s (%2$d)</string>
+    <string name="appcenter_distribute_install">Install</string>
+    <string name="appcenter_distribute_install_completed_message">%1$s %2$s (%3$d) has been installed.</string>
+    <string name="appcenter_distribute_install_completed_title">App update installed</string>
+    <string name="appcenter_distribute_install_error">Failed to install app update</string>
+    <string name="appcenter_distribute_install_ready_message">%1$s %2$s (%3$d) has been downloaded and is ready to be installed.</string>
+    <string name="appcenter_distribute_install_ready_title">App update downloaded</string>
+    <string name="appcenter_distribute_notification_category">App updates</string>
+    <string name="appcenter_distribute_unknown_sources_dialog_message">For security, your device is set to block installation of apps obtained from unknown sources.</string>
+    <string name="appcenter_distribute_unknown_sources_dialog_settings">Settings</string>
+    <string name="appcenter_distribute_update_dialog_download">Download</string>
+    <string name="appcenter_distribute_update_dialog_message_mandatory">The developers of this app require you to update to %1$s %2$s (%3$d).</string>
+    <string name="appcenter_distribute_update_dialog_message_optional">%1$s %2$s (%3$d) is available to download and install.</string>
+    <string name="appcenter_distribute_update_dialog_postpone">Ask me in a day</string>
+    <string name="appcenter_distribute_update_dialog_title">App update available</string>
+    <string name="appcenter_distribute_update_dialog_view_release_notes">View release notes</string>
+    <string name="appcenter_distribute_update_failed_dialog_ignore">Ignore</string>
+    <string name="appcenter_distribute_update_failed_dialog_message">This release was either side-loaded or downloaded using a browser in private mode.</string>
+    <string name="appcenter_distribute_update_failed_dialog_reinstall">Reinstall app</string>
+    <string name="appcenter_distribute_update_failed_dialog_title">In-app updates disabled</string>
     <string name="archive_content_is_hidden">The content is hidden</string>
     <string name="archive_empty_subtitle">This is where the chats you sent to the archive are stored</string>
     <string name="archive_empty_title">Archive is empty</string>
@@ -7027,11 +7053,8 @@ Click here to add bot quickly"</string>
     <string name="chat_attach_alert_bot_buttons">Bot buttons</string>
     <string name="chat_avatar_previewer_mention_by_name">Mention by name</string>
     <string name="chat_avatar_previewer_user_messages">"User's messages"</string>
-    <string name="chat_bookmarks">Bookmarks</string>
-    <string name="chat_bookmarks_empty">No bookmarks</string>
-    <string name="chat_bookmarks_empty_subtitle">"You don't have bookmarks in chats"</string>
     <string name="chat_drafts_empty">No drafts</string>
-    <string name="chat_drafts_empty_subtitle">"You don't have draft messages in chats"</string>
+    <string name="chat_drafts_empty_subtitle">"You don't have draft messages in chats."</string>
     <string name="chat_long_action_translate">Translate</string>
     <string name="chat_menu_auto_translate_settings_item">Translation settings</string>
     <string name="chat_menu_convert_to_album">Convert to Album</string>
@@ -7041,7 +7064,6 @@ Click here to add bot quickly"</string>
     <string name="chat_menu_quote">Quote</string>
     <string name="chat_message_forward_media">Forward media</string>
     <string name="chat_message_forward_text">Forward text</string>
-    <string name="chat_message_popup_option_add_to_bookmarks">Save to bookmarks</string>
     <string name="chat_message_popup_option_copy_image">Copy image</string>
     <string name="chat_message_popup_option_copy_part">Copy part</string>
     <string name="chat_message_popup_option_copy_text">Copy text</string>
@@ -7049,8 +7071,6 @@ Click here to add bot quickly"</string>
     <string name="chat_message_popup_option_forward_viber">Forward to Viber</string>
     <string name="chat_message_popup_option_forward_whatsapp">Forward to WhatsApp</string>
     <string name="chat_message_popup_option_forward_whatsapp_business">Forward to WA Business</string>
-    <string name="chat_message_popup_option_remove_all_bookmarks">REMOVE ALL BOOKMARKS</string>
-    <string name="chat_message_popup_option_remove_from_bookmarks">Remove from bookmarks</string>
     <string name="chat_message_spoiler_less">LESS</string>
     <string name="chat_message_spoiler_more">MORE</string>
     <string name="chat_multi_panel_empty_cache_toast">Cache is missing in this chat</string>
@@ -7181,7 +7201,7 @@ Settings > Tools > Chats > Templates"</string>
     <string name="collection_tab_all">All</string>
     <string name="collection_tab_categories">Categories</string>
     <string name="collection_tab_my">My</string>
-    <string name="com.crashlytics.android.build_id">68ca7691c16c406eb18246d96a74f94b</string>
+    <string name="com.crashlytics.android.build_id">e8911c79675549e78216f04ed8a6d486</string>
     <string name="combine_messages_disable">Do not combine messages</string>
     <string name="combine_messages_enable">Combine messages</string>
     <string name="combine_messages_send_without_combine">Send without combining</string>
@@ -7191,6 +7211,7 @@ Settings > Tools > Chats > Templates"</string>
     <string name="common_confirm">Confirm</string>
     <string name="common_create">Create</string>
     <string name="common_dash">—</string>
+    <string name="common_done">Done</string>
     <string name="common_empty_balance_state_description">Your wallet has no tokens with a positive balance on this network</string>
     <string name="common_empty_state_description">Unfortunately, the data is not presented yet</string>
     <string name="common_empty_state_title">Empty here...</string>
@@ -7659,7 +7680,7 @@ and we will try to find his Telegram account"</string>
     <string name="gcm_defaultSenderId">444157464191</string>
     <string name="gif_sticker_preview_choose_alert_message">Do you want to preview stickers and GIFs before sending it in chat? You can always configure this option in the interface settings.</string>
     <string name="google_api_key">AIzaSyDFc-hXz0kN_vaEF31KDWeGoX1nKDLZpiM</string>
-    <string name="google_app_id">1:444157464191:android:dd047cf092fd1ad8</string>
+    <string name="google_app_id">1:444157464191:android:f0774a8183f85b2d20b94a</string>
     <string name="google_assistant_verification_channel_name">Assistant verifier</string>
     <string name="google_assistant_verification_notification_title">Google Assistant sending message</string>
     <string name="google_crash_reporting_api_key">AIzaSyDFc-hXz0kN_vaEF31KDWeGoX1nKDLZpiM</string>
@@ -7719,11 +7740,6 @@ and we will try to find his Telegram account"</string>
     <string name="login_token_help">Scan QR code from another device to log in</string>
     <string name="main_camera_popup_text">Rear camera</string>
     <string name="main_list">Main list</string>
-    <string name="management">Management</string>
-    <string name="management_bookmarks_delete_all_alert_message">Are you sure you want to delete all bookmarks from all chats? Your chats will not be deleted.</string>
-    <string name="management_bookmarks_delete_selected_alert_message">Are you sure you want to delete all bookmarks from selected chats? Your chats will not be deleted.</string>
-    <string name="management_drafts">Drafts</string>
-    <string name="management_drafts_delete_selected_alert_message">Are you sure you want to delete all drafts from selected chats? Your chats will not be deleted.</string>
     <string name="material_clock_display_divider">:</string>
     <string name="material_clock_toggle_content_description">Select AM or PM</string>
     <string name="material_hour_selection">Select hour</string>
@@ -7917,6 +7933,7 @@ Add music to the Playlist"</string>
     <string name="pinned_messages_show_pin_panel_bottom_button">Return the panel to the chat</string>
     <string name="plural_info_votes">info_votes</string>
     <string name="plural_messages_pinned">MessagesPinned</string>
+    <string name="plural_wallet_tokens_management_verified">wallet_tokens_management_verified</string>
     <string name="premium_settings_animate_stickers">Enable exclusive enlarged stickers featuring additional effects for Premium users.</string>
     <string name="premium_settings_not_premium_animate_avatars">Enable video avatars animated in chat list and chats for Premium users.</string>
     <string name="premium_settings_not_premium_show_badge">Enable the profile badge displaying for Premium users.</string>
@@ -8135,6 +8152,8 @@ Please log out or link the Twitter account again."</string>
     <string name="settings_tools_chat_profile_id_telegram_bot_api">Bot API</string>
     <string name="settings_tools_chat_profile_id_telegram_description">"Select Telegram API for standard ID displaying.
 If you select Bot API option, a \"-\" will be added to the beginning of the ID for groups and a \"-100\" to supergroups and channels."</string>
+    <string name="settings_tools_chat_profile_id_telegram_enable_panel">Enable panel</string>
+    <string name="settings_tools_chat_profile_id_telegram_hint">Enable this if you want the account id to be displayed in the chat profile</string>
     <string name="settings_tools_chat_profile_id_telegram_telegram_api">Telegram API</string>
     <string name="settings_tools_cloud">Cloud</string>
     <string name="settings_tools_cloud_albums">Albums</string>
@@ -8201,6 +8220,7 @@ You can always edit it in Folder section (Chat sorting)."</string>
     <string name="sorting_settings_tab_bots_item_title">Bots</string>
     <string name="sorting_settings_tab_channels_item_title">Channels</string>
     <string name="sorting_settings_tab_deleted_users">Deleted accounts</string>
+    <string name="sorting_settings_tab_drafts">Drafts</string>
     <string name="sorting_settings_tab_groups_item_title">Group chats</string>
     <string name="sorting_settings_tab_live_chats">Live chats</string>
     <string name="sorting_settings_tab_mentioned_chats">Mentioned chats</string>
@@ -8363,6 +8383,13 @@ Your balance will be updated after the transaction is confirmed in the blockchai
     <string name="swipe_to_next_unread_dialog_hint">Turn this ON if you want to you to scroll your chats without going back to your chat list. When you reach the bottom of a chat, pull up to go to the next unread chat.</string>
     <string name="swipe_to_next_unread_dialog_types">Chat types</string>
     <string name="text_recognition_bottom_sheet_title">Photo → Text</string>
+    <string name="token_lists_description">This parameter indicates on the token security. The more sources of verification a token has, the more secure it is considered. If a token does not have any source of verification, then be more careful when importing and working with this asset.</string>
+    <string name="token_lists_title">Verified token list</string>
+    <string name="token_search_coin">You can not delete the main coin of a network</string>
+    <string name="token_search_empty_result_add_token">Add custom token</string>
+    <string name="token_search_empty_start_subtitle">Enter token name, ticker or exact address in the search pole</string>
+    <string name="token_search_empty_start_title">Tokens search</string>
+    <string name="token_search_hint">Search for a token</string>
     <string name="topic">Topic</string>
     <string name="topic_add_archived_chats_hint">Select chats from the archived list that will appear in this topic.</string>
     <string name="topic_add_main_chats_hint">Select chats from the main list that will appear in this topic.</string>
@@ -8621,8 +8648,8 @@ Please enter the words **%d**, **%d** and **%d** below:"</string>
     <string name="wallet_banner_slide_gate_description">Your Gateway to Cryptocurrency</string>
     <string name="wallet_banner_slide_gate_long_description">Trade LIME and other cryptocurrencies with low exchange fees.</string>
     <string name="wallet_banner_slide_gate_title">Gate.io</string>
-    <string name="wallet_banner_slide_multi_networks_description">Ethereum, BNB Chain, Polygon, Fantom, TON, NFT</string>
-    <string name="wallet_banner_slide_multi_networks_long_description">Switching Ethereum, BNB Chain, Polygon, Fantom, TON and NFT networks for convenient use of tokens of different platforms in one wallet.</string>
+    <string name="wallet_banner_slide_multi_networks_description">Bitcoin, Ethereum, BNB Chain, Polygon, Fantom, Tron, TON, NFT</string>
+    <string name="wallet_banner_slide_multi_networks_long_description">Switching Bitcoin, Ethereum, BNB Chain, Polygon, Fantom, Tron, TON and NFT networks for convenient use of tokens of different platforms in one wallet.</string>
     <string name="wallet_banner_slide_multi_networks_title">MULTI-NETWORKING</string>
     <string name="wallet_banner_slide_non_custodial_description">Only you have access to the wallet</string>
     <string name="wallet_banner_slide_non_custodial_long_description">You are the only who have access to your wallet. Save the passphrase to be able to restore or import your wallet.</string>
@@ -8633,7 +8660,7 @@ Please enter the words **%d**, **%d** and **%d** below:"</string>
     <string name="wallet_banner_slide_staking_description">Create deposits</string>
     <string name="wallet_banner_slide_staking_long_description">Create deposits in LIME and partner tokens to make your assets work for you.</string>
     <string name="wallet_banner_slide_staking_title">Staking</string>
-    <string name="wallet_banner_slide_swap_description">Uniswap, PancakeSwap, 1inch</string>
+    <string name="wallet_banner_slide_swap_description">1inch, Symbiosis</string>
     <string name="wallet_banner_slide_swap_long_description">Swap cryptocurrencies and tokens for each other using decentralized exchange protocols powered by smart contracts.</string>
     <string name="wallet_banner_slide_swap_title">EXCHANGE</string>
     <string name="wallet_binance_attach_title">Binance Pay</string>
@@ -8776,6 +8803,39 @@ All operations are carried out on the blockchain without the participation of pe
     <string name="wallet_create_eth_pin_code_description">This will provide additional security and convenience for logging into the wallet.</string>
     <string name="wallet_create_eth_pin_code_title">Come up with a PIN</string>
     <string name="wallet_create_eth_pin_code_toolbar_title">PIN</string>
+    <string name="wallet_creation_backup">Backup copy</string>
+    <string name="wallet_creation_intro_description">"After creating a crypto wallet, be sure to
+write down your seed phrase in settings and
+store it carefully.
+
+You can restore your wallet if you lose 
+your smartphone or when you log in from
+a new device with your seed-phrase. You can also import your wallet address from another 
+crypto wallet app."</string>
+    <string name="wallet_creation_intro_information_description">"To use the previously linked crypto wallet
+address, restore your account using the
+seed phrase.
+
+If you create a new account, the data of
+the old iMe Wallet account will be over-
+written and a new crypto wallet address
+will be linked to your Telegram ID.
+
+Note:
+You can only have one active crypto wallet
+in iMe Wallet. Therefore, when
+other users transfer funds to your 
+Telegram ID, all funds will be automatically
+credited to the last linked address."</string>
+    <string name="wallet_creation_intro_information_title">Wallet information</string>
+    <string name="wallet_creation_intro_linked_wallet">Currently linked wallet</string>
+    <string name="wallet_creation_intro_new_wallet_confirmation_description">The wallet is already linked to your account, you can import the same wallet address with your seed phrase or create the new one.</string>
+    <string name="wallet_creation_intro_new_wallet_confirmation_title">Warning</string>
+    <string name="wallet_creation_intro_privacy">"By continuing, you agree
+with the *Terms of Service*"</string>
+    <string name="wallet_creation_intro_title">iMe - self-custodial wallet</string>
+    <string name="wallet_creation_intro_title_create">Create wallet</string>
+    <string name="wallet_creation_intro_title_import">Import wallet</string>
     <string name="wallet_crypto_blockchains_active_wallets">Active wallets</string>
     <string name="wallet_crypto_blockchains_bitcoin_subtitle">Bitcoin</string>
     <string name="wallet_crypto_blockchains_bitcoin_title">Bitcoin</string>
@@ -8825,6 +8885,10 @@ All operations are carried out on the blockchain without the participation of pe
     <string name="wallet_crypto_wallet_not_created_dialog_description">To use this functionality, please create a crypto wallet</string>
     <string name="wallet_crypto_wallet_not_created_dialog_positive_btn">Create</string>
     <string name="wallet_crypto_wallet_not_created_dialog_title">Crypto Wallet is not created</string>
+    <string name="wallet_custom_tokens_empty_description">You can search for tokens or add them manually</string>
+    <string name="wallet_custom_tokens_empty_title">You have no custom tokens added</string>
+    <string name="wallet_custom_tokens_subtitle">Imported tokens list</string>
+    <string name="wallet_custom_tokens_title">Custom tokens</string>
     <string name="wallet_dashboard_account_title">%s Account</string>
     <string name="wallet_dashboard_activate_wallet">Activate %s wallet</string>
     <string name="wallet_dashboard_balance_24h_rate">%1$.2f%% / 24h</string>
@@ -8844,7 +8908,7 @@ Note:
 You can only have one active crypto wallet account in iMe Wallet. Therefore, when other users transfer funds to your Telegram ID, all funds will be automatically credited to the last linked address."</string>
     <string name="wallet_dashboard_create_start_dialog_description">"Non-custodial wallet for cryptocurrencies and tokens.
 
-Store, buy, swap and make transfers on Ethereum, BNB Chain, Polygon, Fantom and TON networks.
+Store, buy, swap and make transfers on Ethereum, Bitcoin, BNB Chain, Polygon, Fantom, Tron and TON networks.
 
 By pressing NEXT, you agree with
 %s
@@ -8944,6 +9008,7 @@ Only you have access to your wallet, private keys and funds on your accounts."</
     <string name="wallet_gate_select_pair_title">Select the trading pair</string>
     <string name="wallet_home_crypto_account">Account</string>
     <string name="wallet_home_crypto_account_telegram_id">Telegram ID: %d</string>
+    <string name="wallet_home_crypto_add_tokens">Add tokens</string>
     <string name="wallet_home_crypto_select_tokens">Select tokens</string>
     <string name="wallet_home_crypto_tokens_settings_only_positive">Positive balances</string>
     <string name="wallet_home_crypto_tokens_settings_toolbar_title">Tokens</string>
@@ -8993,6 +9058,8 @@ Only you have access to your wallet, private keys and funds on your accounts."</
     <string name="wallet_network_type_bitcoin">Bitcoin</string>
     <string name="wallet_network_type_bitcoin_short_name">Bitcoin</string>
     <string name="wallet_network_type_bsc_short_name">BNB Chain</string>
+    <string name="wallet_network_type_dialog_search_empty">There are no matching networks</string>
+    <string name="wallet_network_type_dialog_search_hint">Search network</string>
     <string name="wallet_network_type_dialog_title">Select network</string>
     <string name="wallet_network_type_erc20">Ethereum</string>
     <string name="wallet_network_type_eth_short_name">ETH</string>
@@ -9010,6 +9077,7 @@ Only you have access to your wallet, private keys and funds on your accounts."</
     <string name="wallet_notifications_toolbar_title">Notifications</string>
     <string name="wallet_operation_deposit">Deposit</string>
     <string name="wallet_operation_earn">Earn</string>
+    <string name="wallet_pin_code_change_success">PIN-code was changed successfully</string>
     <string name="wallet_receive_dialog_btn_text">Share Wallet Address</string>
     <string name="wallet_receive_dialog_title">Your Wallet Address</string>
     <string name="wallet_recipient_address_bsc_hint">Type BNB Chain address</string>
@@ -9124,11 +9192,47 @@ Slippage is a change in price between the moment you place your swap order and i
     <string name="wallet_token_details_internal_point_website">https://imem.app</string>
     <string name="wallet_token_details_lime_description_website">https://telegra.ph/Lime-02-10</string>
     <string name="wallet_token_details_site_action">Website</string>
+    <string name="wallet_token_details_token_information">Token information</string>
     <string name="wallet_token_details_transactions">Transactions</string>
     <string name="wallet_token_details_transactions_all">All</string>
     <string name="wallet_token_details_transactions_incoming">Incoming</string>
     <string name="wallet_token_details_transactions_outgoing">Outgoing</string>
     <string name="wallet_token_details_transactions_swap">Swap</string>
+    <string name="wallet_token_family_description">This token exists on multiple blockchains. Select one or more variants.</string>
+    <string name="wallet_token_family_title" formatted="false">%1s (%2s)</string>
+    <string name="wallet_token_settings_add_custom_tokens">Add custom tokens</string>
+    <string name="wallet_token_settings_displayed_tokens">Token selection</string>
+    <string name="wallet_tokens_management_add_success">Token was added successfully</string>
+    <string name="wallet_tokens_management_decimals">Decimals</string>
+    <string name="wallet_tokens_management_delete_description">Are you sure you want to delete this custom token?</string>
+    <string name="wallet_tokens_management_delete_success">Token was deleted successfully</string>
+    <string name="wallet_tokens_management_delete_title">Delete</string>
+    <string name="wallet_tokens_management_enable_description">"This token exists in our database, there is no need to add it manually.
+
+Do you want this token to be displayed in iMe Wallet?"</string>
+    <string name="wallet_tokens_management_enable_title">Token information</string>
+    <string name="wallet_tokens_management_icon">Icon</string>
+    <string name="wallet_tokens_management_import_confirmation_description">"Are you sure you want to import this custom token?
+
+Custom tokens can be set up in crypto account settings."</string>
+    <string name="wallet_tokens_management_import_confirmation_import">Import</string>
+    <string name="wallet_tokens_management_import_confirmation_title">Import Confirmation</string>
+    <string name="wallet_tokens_management_import_token">Import token</string>
+    <string name="wallet_tokens_management_name">Name</string>
+    <string name="wallet_tokens_management_symbol">Symbol</string>
+    <string name="wallet_tokens_management_title_details">Token details</string>
+    <string name="wallet_tokens_management_title_import">Import token</string>
+    <string name="wallet_tokens_management_token_address">Token address</string>
+    <string name="wallet_tokens_management_token_address_invalid">Invalid token address format</string>
+    <string name="wallet_tokens_management_token_information">Token information</string>
+    <string name="wallet_tokens_management_token_not_found">Information about this token not found</string>
+    <string name="wallet_tokens_management_token_safety">Token safety</string>
+    <string name="wallet_tokens_management_verified_few">Verified in %d token lists</string>
+    <string name="wallet_tokens_management_verified_many">Verified in %d token lists</string>
+    <string name="wallet_tokens_management_verified_one">Verified in %d token list</string>
+    <string name="wallet_tokens_management_verified_other">Verified in %d token lists</string>
+    <string name="wallet_tokens_management_verified_two">Verified in %d token lists</string>
+    <string name="wallet_tokens_management_verified_zero">Not verified</string>
     <string name="wallet_ton_address_v3r2">v3R2</string>
     <string name="wallet_transaction_details_action_boost">Speed up the transaction</string>
     <string name="wallet_transaction_details_action_cancel">Cancel transaction</string>

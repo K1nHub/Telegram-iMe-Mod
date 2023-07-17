@@ -27,7 +27,7 @@
 
     const/4 v0, 0x0
 
-    .line 23
+    .line 28
     invoke-direct {p0, v0}, Lcom/iMe/storage/domain/utils/rx/event/DomainRxEvents;-><init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
 
     iput-wide p1, p0, Lcom/iMe/storage/domain/utils/rx/event/DomainRxEvents$DonationAddressUpdated;->chatId:J
@@ -40,7 +40,7 @@
 .method public final getChatId()J
     .locals 2
 
-    .line 23
+    .line 28
     iget-wide v0, p0, Lcom/iMe/storage/domain/utils/rx/event/DomainRxEvents$DonationAddressUpdated;->chatId:J
 
     return-wide v0

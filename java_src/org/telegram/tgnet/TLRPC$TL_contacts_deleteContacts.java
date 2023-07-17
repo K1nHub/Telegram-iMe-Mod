@@ -6,7 +6,7 @@ public class TLRPC$TL_contacts_deleteContacts extends TLObject {
     public static int constructor = 157945344;
 
     /* renamed from: id */
-    public ArrayList<TLRPC$InputUser> f1481id = new ArrayList<>();
+    public ArrayList<TLRPC$InputUser> f1563id = new ArrayList<>();
 
     @Override // org.telegram.tgnet.TLObject
     public TLObject deserializeResponse(AbstractSerializedData abstractSerializedData, int i, boolean z) {
@@ -17,10 +17,10 @@ public class TLRPC$TL_contacts_deleteContacts extends TLObject {
     public void serializeToStream(AbstractSerializedData abstractSerializedData) {
         abstractSerializedData.writeInt32(constructor);
         abstractSerializedData.writeInt32(481674261);
-        int size = this.f1481id.size();
+        int size = this.f1563id.size();
         abstractSerializedData.writeInt32(size);
         for (int i = 0; i < size; i++) {
-            this.f1481id.get(i).serializeToStream(abstractSerializedData);
+            this.f1563id.get(i).serializeToStream(abstractSerializedData);
         }
     }
 }

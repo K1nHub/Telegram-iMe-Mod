@@ -1,6 +1,5 @@
 package com.iMe.p031ui.wallet.crypto.buy.customPrice;
 
-import com.iMe.model.dialog.DialogModel;
 import com.iMe.p031ui.base.mvp.base.BaseView;
 import com.iMe.storage.domain.model.Result;
 import com.iMe.storage.domain.model.crypto.simplex.Currency;
@@ -18,17 +17,9 @@ public class CryptoBuyCustomPriceView$$State extends MvpViewState<CryptoBuyCusto
         BaseView.CC.$default$finishScreen(this);
     }
 
-    @Override // com.iMe.p031ui.wallet.crypto.buy.customPrice.CryptoBuyCustomPriceView
-    public void showConfirmDialog(float f, Currency currency, DialogModel dialogModel) {
-        ShowConfirmDialogCommand showConfirmDialogCommand = new ShowConfirmDialogCommand(this, f, currency, dialogModel);
-        this.viewCommands.beforeApply(showConfirmDialogCommand);
-        if (hasNotView().booleanValue()) {
-            return;
-        }
-        for (View view : this.views) {
-            view.showConfirmDialog(f, currency, dialogModel);
-        }
-        this.viewCommands.afterApply(showConfirmDialogCommand);
+    @Override // com.iMe.p031ui.base.mvp.base.BaseView
+    public /* synthetic */ void removeSelfFromStackImmediately() {
+        BaseView.CC.$default$removeSelfFromStackImmediately(this);
     }
 
     @Override // com.iMe.p031ui.wallet.crypto.buy.customPrice.CryptoBuyCustomPriceView
@@ -42,45 +33,6 @@ public class CryptoBuyCustomPriceView$$State extends MvpViewState<CryptoBuyCusto
             view.configureExchangeState(f, f2, currency, currency2);
         }
         this.viewCommands.afterApply(configureExchangeStateCommand);
-    }
-
-    @Override // com.iMe.p031ui.wallet.crypto.buy.customPrice.CryptoBuyCustomPriceView
-    public void showExchangedValue(float f) {
-        ShowExchangedValueCommand showExchangedValueCommand = new ShowExchangedValueCommand(this, f);
-        this.viewCommands.beforeApply(showExchangedValueCommand);
-        if (hasNotView().booleanValue()) {
-            return;
-        }
-        for (View view : this.views) {
-            view.showExchangedValue(f);
-        }
-        this.viewCommands.afterApply(showExchangedValueCommand);
-    }
-
-    @Override // com.iMe.p031ui.wallet.crypto.buy.customPrice.CryptoBuyCustomPriceView
-    public void showInputError(String str) {
-        ShowInputErrorCommand showInputErrorCommand = new ShowInputErrorCommand(this, str);
-        this.viewCommands.beforeApply(showInputErrorCommand);
-        if (hasNotView().booleanValue()) {
-            return;
-        }
-        for (View view : this.views) {
-            view.showInputError(str);
-        }
-        this.viewCommands.afterApply(showInputErrorCommand);
-    }
-
-    @Override // com.iMe.p031ui.wallet.crypto.buy.customPrice.CryptoBuyCustomPriceView
-    public void resetInputError() {
-        ResetInputErrorCommand resetInputErrorCommand = new ResetInputErrorCommand(this);
-        this.viewCommands.beforeApply(resetInputErrorCommand);
-        if (hasNotView().booleanValue()) {
-            return;
-        }
-        for (View view : this.views) {
-            view.resetInputError();
-        }
-        this.viewCommands.afterApply(resetInputErrorCommand);
     }
 
     @Override // com.iMe.p031ui.base.mvp.base.BaseView
@@ -123,27 +75,6 @@ public class CryptoBuyCustomPriceView$$State extends MvpViewState<CryptoBuyCusto
     }
 
     /* compiled from: CryptoBuyCustomPriceView$$State.java */
-    /* renamed from: com.iMe.ui.wallet.crypto.buy.customPrice.CryptoBuyCustomPriceView$$State$ShowConfirmDialogCommand */
-    /* loaded from: classes3.dex */
-    public class ShowConfirmDialogCommand extends ViewCommand<CryptoBuyCustomPriceView> {
-        public final float amount;
-        public final Currency currency;
-        public final DialogModel dialogModel;
-
-        ShowConfirmDialogCommand(CryptoBuyCustomPriceView$$State cryptoBuyCustomPriceView$$State, float f, Currency currency, DialogModel dialogModel) {
-            super("showConfirmDialog", OneExecutionStateStrategy.class);
-            this.amount = f;
-            this.currency = currency;
-            this.dialogModel = dialogModel;
-        }
-
-        @Override // moxy.viewstate.ViewCommand
-        public void apply(CryptoBuyCustomPriceView cryptoBuyCustomPriceView) {
-            cryptoBuyCustomPriceView.showConfirmDialog(this.amount, this.currency, this.dialogModel);
-        }
-    }
-
-    /* compiled from: CryptoBuyCustomPriceView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.buy.customPrice.CryptoBuyCustomPriceView$$State$ConfigureExchangeStateCommand */
     /* loaded from: classes3.dex */
     public class ConfigureExchangeStateCommand extends ViewCommand<CryptoBuyCustomPriceView> {
@@ -163,54 +94,6 @@ public class CryptoBuyCustomPriceView$$State extends MvpViewState<CryptoBuyCusto
         @Override // moxy.viewstate.ViewCommand
         public void apply(CryptoBuyCustomPriceView cryptoBuyCustomPriceView) {
             cryptoBuyCustomPriceView.configureExchangeState(this.fromAmount, this.toAmount, this.fromCurrency, this.toCurrency);
-        }
-    }
-
-    /* compiled from: CryptoBuyCustomPriceView$$State.java */
-    /* renamed from: com.iMe.ui.wallet.crypto.buy.customPrice.CryptoBuyCustomPriceView$$State$ShowExchangedValueCommand */
-    /* loaded from: classes3.dex */
-    public class ShowExchangedValueCommand extends ViewCommand<CryptoBuyCustomPriceView> {
-        public final float value;
-
-        ShowExchangedValueCommand(CryptoBuyCustomPriceView$$State cryptoBuyCustomPriceView$$State, float f) {
-            super("showExchangedValue", AddToEndSingleStrategy.class);
-            this.value = f;
-        }
-
-        @Override // moxy.viewstate.ViewCommand
-        public void apply(CryptoBuyCustomPriceView cryptoBuyCustomPriceView) {
-            cryptoBuyCustomPriceView.showExchangedValue(this.value);
-        }
-    }
-
-    /* compiled from: CryptoBuyCustomPriceView$$State.java */
-    /* renamed from: com.iMe.ui.wallet.crypto.buy.customPrice.CryptoBuyCustomPriceView$$State$ShowInputErrorCommand */
-    /* loaded from: classes3.dex */
-    public class ShowInputErrorCommand extends ViewCommand<CryptoBuyCustomPriceView> {
-        public final String errorText;
-
-        ShowInputErrorCommand(CryptoBuyCustomPriceView$$State cryptoBuyCustomPriceView$$State, String str) {
-            super("showInputError", OneExecutionStateStrategy.class);
-            this.errorText = str;
-        }
-
-        @Override // moxy.viewstate.ViewCommand
-        public void apply(CryptoBuyCustomPriceView cryptoBuyCustomPriceView) {
-            cryptoBuyCustomPriceView.showInputError(this.errorText);
-        }
-    }
-
-    /* compiled from: CryptoBuyCustomPriceView$$State.java */
-    /* renamed from: com.iMe.ui.wallet.crypto.buy.customPrice.CryptoBuyCustomPriceView$$State$ResetInputErrorCommand */
-    /* loaded from: classes3.dex */
-    public class ResetInputErrorCommand extends ViewCommand<CryptoBuyCustomPriceView> {
-        ResetInputErrorCommand(CryptoBuyCustomPriceView$$State cryptoBuyCustomPriceView$$State) {
-            super("resetInputError", AddToEndSingleStrategy.class);
-        }
-
-        @Override // moxy.viewstate.ViewCommand
-        public void apply(CryptoBuyCustomPriceView cryptoBuyCustomPriceView) {
-            cryptoBuyCustomPriceView.resetInputError();
         }
     }
 

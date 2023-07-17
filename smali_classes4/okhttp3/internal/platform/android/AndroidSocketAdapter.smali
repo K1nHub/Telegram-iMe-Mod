@@ -116,7 +116,7 @@
 
     aput-object v2, v1, v3
 
-    const-string v2, "setHostname"
+    const-string/jumbo v2, "setHostname"
 
     invoke-virtual {p1, v2, v1}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
 
@@ -142,7 +142,7 @@
 
     aput-object v1, v0, v3
 
-    const-string v1, "setAlpnProtocols"
+    const-string/jumbo v1, "setAlpnProtocols"
 
     invoke-virtual {p1, v1, v0}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
 

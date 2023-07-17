@@ -30,7 +30,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nRxExt.kt\nKotlin\n*S Kotlin\n*F\n+ 1 RxExt.kt\ncom/iMe/utils/extentions/rx/RxExtKt$subscribeWithErrorHandle$2\n+ 2 WalletSwapFeePresenter.kt\ncom/iMe/ui/wallet/swap/fee/WalletSwapFeePresenter\n*L\n1#1,111:1\n112#2,12:112\n*E\n"
+    value = "SMAP\nRxExt.kt\nKotlin\n*S Kotlin\n*F\n+ 1 RxExt.kt\ncom/iMe/utils/extentions/rx/RxExtKt$subscribeWithErrorHandle$2\n+ 2 WalletSwapFeePresenter.kt\ncom/iMe/ui/wallet/swap/fee/WalletSwapFeePresenter\n*L\n1#1,111:1\n107#2,18:112\n*E\n"
 .end annotation
 
 
@@ -56,7 +56,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 44
+    .line 47
     invoke-virtual {p0, p1}, Lcom/iMe/ui/wallet/swap/fee/WalletSwapFeePresenter$subscribeToChangeEvents$$inlined$subscribeWithErrorHandle$default$1;->invoke(Ljava/lang/Object;)V
 
     sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
@@ -78,7 +78,7 @@
 
     const-string v0, "it"
 
-    .line 45
+    .line 48
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     check-cast p1, Lcom/iMe/storage/domain/model/Result;
@@ -106,6 +106,7 @@
 
     new-instance v1, Lcom/iMe/model/wallet/crypto/send/fee/GasPriceItem;
 
+    .line 116
     invoke-virtual {v0}, Lcom/iMe/ui/wallet/swap/fee/WalletSwapFeePresenter;->getSelectedFee()Lcom/iMe/model/wallet/crypto/send/fee/GasPriceItem;
 
     move-result-object v2
@@ -114,22 +115,18 @@
 
     move-result-object v2
 
-    sget-object v3, Lcom/iMe/storage/domain/model/wallet/token/TokenInfo;->Companion:Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Companion;
-
+    .line 117
     invoke-virtual {p1}, Lcom/iMe/storage/domain/model/Result$Success;->getData()Ljava/lang/Object;
-
-    move-result-object v4
-
-    check-cast v4, Lcom/iMe/storage/domain/model/crypto/swap/CryptoSwapMetadata;
-
-    invoke-virtual {v4}, Lcom/iMe/storage/domain/model/crypto/swap/CryptoSwapMetadata;->getFeeTokenCode()Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
-
-    move-result-object v4
-
-    invoke-virtual {v3, v4}, Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Companion;->map(Lcom/iMe/storage/domain/model/wallet/token/TokenCode;)Lcom/iMe/storage/domain/model/wallet/token/TokenInfo;
 
     move-result-object v3
 
+    check-cast v3, Lcom/iMe/storage/domain/model/crypto/swap/CryptoSwapMetadata;
+
+    invoke-virtual {v3}, Lcom/iMe/storage/domain/model/crypto/swap/CryptoSwapMetadata;->getFeeToken()Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
+
+    move-result-object v3
+
+    .line 118
     invoke-virtual {p1}, Lcom/iMe/storage/domain/model/Result$Success;->getData()Ljava/lang/Object;
 
     move-result-object p1
@@ -154,11 +151,12 @@
 
     move-result-object p1
 
-    invoke-direct {v1, v2, v3, p1}, Lcom/iMe/model/wallet/crypto/send/fee/GasPriceItem;-><init>(Lcom/iMe/storage/domain/model/crypto/send/TransactionSpeedLevel;Lcom/iMe/storage/domain/model/wallet/token/TokenInfo;Lcom/iMe/storage/domain/model/crypto/send/GasPriceInfo;)V
+    .line 115
+    invoke-direct {v1, v2, v3, p1}, Lcom/iMe/model/wallet/crypto/send/fee/GasPriceItem;-><init>(Lcom/iMe/storage/domain/model/crypto/send/TransactionSpeedLevel;Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;Lcom/iMe/storage/domain/model/crypto/send/GasPriceInfo;)V
 
     invoke-virtual {v0, v1}, Lcom/iMe/ui/wallet/swap/fee/WalletSwapFeePresenter;->setSelectedFee(Lcom/iMe/model/wallet/crypto/send/fee/GasPriceItem;)V
 
-    .line 116
+    .line 120
     iget-object p1, p0, Lcom/iMe/ui/wallet/swap/fee/WalletSwapFeePresenter$subscribeToChangeEvents$$inlined$subscribeWithErrorHandle$default$1;->this$0:Lcom/iMe/ui/wallet/swap/fee/WalletSwapFeePresenter;
 
     invoke-virtual {p1}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
@@ -171,13 +169,13 @@
 
     goto :goto_0
 
-    .line 118
+    .line 123
     :cond_0
     instance-of v0, p1, Lcom/iMe/storage/domain/model/Result$Error;
 
     if-eqz v0, :cond_1
 
-    .line 119
+    .line 124
     iget-object v0, p0, Lcom/iMe/ui/wallet/swap/fee/WalletSwapFeePresenter$subscribeToChangeEvents$$inlined$subscribeWithErrorHandle$default$1;->this$0:Lcom/iMe/ui/wallet/swap/fee/WalletSwapFeePresenter;
 
     invoke-virtual {v0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;

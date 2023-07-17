@@ -23,7 +23,7 @@ import okhttp3.Request;
 import okhttp3.Response;
 import org.koin.core.Koin;
 import org.koin.core.component.KoinComponent;
-import org.koin.p043mp.KoinPlatformTools;
+import org.koin.p042mp.KoinPlatformTools;
 import timber.log.Timber;
 /* compiled from: ApiErrorInterceptor.kt */
 /* loaded from: classes3.dex */
@@ -60,16 +60,20 @@ public final class ApiErrorInterceptor implements Interceptor, KoinComponent {
             } catch (NoSuchFieldError unused4) {
             }
             try {
-                iArr[GlobalApiErrorCode.ERR_BEARER_AUTH_REQUIRED.ordinal()] = 5;
+                iArr[GlobalApiErrorCode.JWT_VALIDATION_FAILED.ordinal()] = 5;
             } catch (NoSuchFieldError unused5) {
             }
             try {
-                iArr[GlobalApiErrorCode.ERR_BEARER_AUTH_MALFORMED.ordinal()] = 6;
+                iArr[GlobalApiErrorCode.ERR_BEARER_AUTH_REQUIRED.ordinal()] = 6;
             } catch (NoSuchFieldError unused6) {
             }
             try {
-                iArr[GlobalApiErrorCode.REFRESH_TOKEN_ABSENT.ordinal()] = 7;
+                iArr[GlobalApiErrorCode.ERR_BEARER_AUTH_MALFORMED.ordinal()] = 7;
             } catch (NoSuchFieldError unused7) {
+            }
+            try {
+                iArr[GlobalApiErrorCode.REFRESH_TOKEN_ABSENT.ordinal()] = 8;
+            } catch (NoSuchFieldError unused8) {
             }
             $EnumSwitchMapping$0 = iArr;
         }
@@ -159,6 +163,7 @@ public final class ApiErrorInterceptor implements Interceptor, KoinComponent {
                     case 4:
                     case 5:
                     case 6:
+                    case 7:
                         String refreshToken = getAuthManager().getRefreshToken();
                         if (refreshToken == null) {
                             refreshToken = "";
@@ -176,7 +181,7 @@ public final class ApiErrorInterceptor implements Interceptor, KoinComponent {
                             forceWalletLogout();
                             break;
                         }
-                    case 7:
+                    case 8:
                         forceWalletLogout();
                         break;
                 }

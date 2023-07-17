@@ -11,18 +11,18 @@ import com.iMe.storage.domain.utils.p030rx.RxEventBus;
 import com.iMe.storage.domain.utils.p030rx.SchedulersProvider;
 import com.iMe.storage.domain.utils.p030rx.event.DomainRxEvents;
 import com.iMe.storage.domain.utils.system.ResourceManager;
-import com.iMe.utils.extentions.p033rx.RxExtKt;
-import com.iMe.utils.extentions.p033rx.RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
+import com.iMe.utils.extentions.p032rx.RxExtKt;
+import com.iMe.utils.extentions.p032rx.RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
 import io.reactivex.Observable;
 import io.reactivex.disposables.Disposable;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import moxy.InjectViewState;
-import org.telegram.messenger.C3295R;
+import org.telegram.messenger.C3417R;
 /* compiled from: EnterWalletPasswordPresenter.kt */
 @InjectViewState
 /* renamed from: com.iMe.ui.wallet.crypto.enter.password.EnterWalletPasswordPresenter */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class EnterWalletPasswordPresenter extends BasePresenter<EnterWalletPasswordView> {
     private final CryptoAccessManager cryptoAccessManager;
     private final CryptoPreferenceHelper cryptoPreferenceHelper;
@@ -55,7 +55,7 @@ public final class EnterWalletPasswordPresenter extends BasePresenter<EnterWalle
             ((EnterWalletPasswordView) getViewState()).showRestoreWalletScreen(this.cryptoAccessManager.getLastLoggedInAddress(this.cryptoPreferenceHelper.getCurrentBlockchainType()));
         } else if (i != 1) {
         } else {
-            ((EnterWalletPasswordView) getViewState()).showDeleteWalletDialog(new DialogModel(this.resourceManager.getString(C3295R.string.wallet_enter_eth_password_delete_wallet_dialog_title), this.resourceManager.getString(C3295R.string.wallet_enter_eth_password_delete_wallet_dialog_description), this.resourceManager.getString(C3295R.string.common_cancel), this.resourceManager.getString(C3295R.string.wallet_enter_eth_password_delete_wallet_dialog_submit_btn)));
+            ((EnterWalletPasswordView) getViewState()).showDeleteWalletDialog(new DialogModel(this.resourceManager.getString(C3417R.string.wallet_enter_eth_password_delete_wallet_dialog_title), this.resourceManager.getString(C3417R.string.wallet_enter_eth_password_delete_wallet_dialog_description), this.resourceManager.getString(C3417R.string.common_cancel), this.resourceManager.getString(C3417R.string.wallet_enter_eth_password_delete_wallet_dialog_submit_btn)));
         }
     }
 
@@ -63,18 +63,18 @@ public final class EnterWalletPasswordPresenter extends BasePresenter<EnterWalle
         Intrinsics.checkNotNullParameter(password, "password");
         Observable<Result<Boolean>> observeOn = this.cryptoWalletInteractor.isValidPasswordForWallet(password, this.cryptoPreferenceHelper.getCurrentBlockchainType()).observeOn(this.schedulersProvider.mo698ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "cryptoWalletInteractor\n …(schedulersProvider.ui())");
-        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2167x376f1f3c(this, password)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2168x376f1f3d((BaseView) getViewState())));
-        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
+        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2161x376f1f3c(this, password)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2162x376f1f3d((BaseView) getViewState())));
+        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…Error.invoke()\n        })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
 
     public final void deleteWallets() {
-        Observable observeOn = CryptoWalletInteractor.deleteAllWallets$default(this.cryptoWalletInteractor, false, 1, null).observeOn(this.schedulersProvider.mo698ui());
+        Observable<Result<Boolean>> observeOn = this.cryptoWalletInteractor.deleteAllWallets().observeOn(this.schedulersProvider.mo698ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "cryptoWalletInteractor\n …(schedulersProvider.ui())");
         T viewState = getViewState();
         Intrinsics.checkNotNullExpressionValue(viewState, "viewState");
-        Disposable subscribe = RxExtKt.withLoadingDialog$default(observeOn, (BaseView) viewState, false, 2, (Object) null).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2163x3099948a(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2164x3099948b((BaseView) getViewState())));
-        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
+        Disposable subscribe = RxExtKt.withLoadingDialog$default((Observable) observeOn, (BaseView) viewState, false, 2, (Object) null).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2157x3099948a(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2158x3099948b((BaseView) getViewState())));
+        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…Error.invoke()\n        })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
 
@@ -83,14 +83,14 @@ public final class EnterWalletPasswordPresenter extends BasePresenter<EnterWalle
         RxEventBus rxEventBus = this.rxEventBus;
         Observable observeOn = rxEventBus.getPublisher().ofType(DomainRxEvents.CryptoEvent.class).observeOn(rxEventBus.getSchedulersProvider().mo698ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "publisher\n              …(schedulersProvider.ui())");
-        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2165x3b75c083(onEventAction)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2166x3b75c084(null)));
-        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
+        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2159x3b75c083(onEventAction)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2160x3b75c084(null)));
+        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…Error.invoke()\n        })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
 
     /* compiled from: EnterWalletPasswordPresenter.kt */
     /* renamed from: com.iMe.ui.wallet.crypto.enter.password.EnterWalletPasswordPresenter$Companion */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

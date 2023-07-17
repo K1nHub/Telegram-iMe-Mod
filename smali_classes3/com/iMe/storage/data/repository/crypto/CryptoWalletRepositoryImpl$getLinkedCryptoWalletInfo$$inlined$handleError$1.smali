@@ -23,7 +23,7 @@
         "Ljava/lang/Throwable;",
         "Lcom/iMe/storage/domain/model/Result<",
         "+",
-        "Lcom/iMe/storage/domain/model/crypto/CryptoWalletInfo;",
+        "Lcom/iMe/storage/domain/model/crypto/CryptoWalletsInfo;",
         ">;>;"
     }
 .end annotation
@@ -60,7 +60,7 @@
             "Ljava/lang/Throwable;",
             ")",
             "Lcom/iMe/storage/domain/model/Result<",
-            "Lcom/iMe/storage/domain/model/crypto/CryptoWalletInfo;",
+            "Lcom/iMe/storage/domain/model/crypto/CryptoWalletsInfo;",
             ">;"
         }
     .end annotation

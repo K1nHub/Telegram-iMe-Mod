@@ -1,8 +1,7 @@
 package com.iMe.utils.formatter;
 
 import com.iMe.model.wallet.BalanceFormatterInfo;
-import com.iMe.storage.domain.model.wallet.token.TokenInfo;
-import com.iMe.storage.domain.utils.system.ResourceManager;
+import com.iMe.storage.domain.model.wallet.token.TokenDetailed;
 import com.iMe.utils.extentions.common.StringExtKt;
 import java.text.DecimalFormatSymbols;
 import java.text.NumberFormat;
@@ -44,52 +43,40 @@ public final class BalanceFormatter {
 
     public final String formatPercents(Number percentage, int i) {
         Intrinsics.checkNotNullParameter(percentage, "percentage");
-        return formatBalance(percentage, i);
+        return formatBalance(percentage, Integer.valueOf(i));
     }
 
-    public static /* synthetic */ String formatFiatBalance$default(BalanceFormatter balanceFormatter, Number number, ResourceManager resourceManager, Integer num, int i, Object obj) {
-        if ((i & 4) != 0) {
+    public static /* synthetic */ String formatFiatBalance$default(BalanceFormatter balanceFormatter, Number number, Integer num, int i, Object obj) {
+        if ((i & 2) != 0) {
             num = null;
         }
-        return balanceFormatter.formatFiatBalance(number, resourceManager, num);
+        return balanceFormatter.formatFiatBalance(number, num);
     }
 
-    public final String formatFiatBalance(Number balance, ResourceManager resourceManager, Integer num) {
+    public final String formatFiatBalance(Number balance, Integer num) {
         Intrinsics.checkNotNullParameter(balance, "balance");
-        Intrinsics.checkNotNullParameter(resourceManager, "resourceManager");
-        StringBuilder sb = new StringBuilder();
-        sb.append(formatBalance(balance, num != null ? num.intValue() : TokenInfo.Fiat.USD.INSTANCE.getDecimals()));
-        sb.append(' ');
-        sb.append(resourceManager.getString(TokenInfo.Fiat.USD.INSTANCE.getShortName()));
-        return sb.toString();
+        return formatBalance(balance, num) + ' ' + TokenDetailed.Companion.getUSD().getTicker();
     }
 
-    public final String formatShortFiatBalance(Number balance, ResourceManager resourceManager) {
+    public final String formatShortFiatBalance(Number balance) {
         Intrinsics.checkNotNullParameter(balance, "balance");
-        Intrinsics.checkNotNullParameter(resourceManager, "resourceManager");
-        return AndroidUtilities.formatWholeNumber(balance.intValue()) + ' ' + resourceManager.getString(TokenInfo.Fiat.USD.INSTANCE.getShortName());
+        return AndroidUtilities.formatWholeNumber(balance.intValue()) + ' ' + TokenDetailed.Companion.getUSD().getTicker();
     }
 
-    public final String formatTokenBalance(Number balance, String tokenTicker, ResourceManager resourceManager) {
+    public final String formatTokenBalance(Number balance, TokenDetailed token) {
         Intrinsics.checkNotNullParameter(balance, "balance");
-        Intrinsics.checkNotNullParameter(tokenTicker, "tokenTicker");
-        Intrinsics.checkNotNullParameter(resourceManager, "resourceManager");
-        return formatTokenBalance(balance, TokenInfo.Companion.map(tokenTicker), resourceManager);
+        Intrinsics.checkNotNullParameter(token, "token");
+        return formatBalance(balance, Integer.valueOf(token.getDecimals())) + ' ' + token.getTicker();
     }
 
-    public final String formatTokenBalance(Number balance, TokenInfo tokenInfo, ResourceManager resourceManager) {
-        Intrinsics.checkNotNullParameter(balance, "balance");
-        Intrinsics.checkNotNullParameter(tokenInfo, "tokenInfo");
-        Intrinsics.checkNotNullParameter(resourceManager, "resourceManager");
-        return formatBalance(balance, tokenInfo.getDecimals()) + ' ' + resourceManager.getString(tokenInfo.getShortName());
-    }
-
-    public static final String formatBalance(Number balance, int i) {
+    public static final String formatBalance(Number balance, Integer num) {
         Intrinsics.checkNotNullParameter(balance, "balance");
         BalanceFormatterInfo currentLocaleFormatter = INSTANCE.getCurrentLocaleFormatter();
         NumberFormat numberFormat = currentLocaleFormatter.getNumberFormat();
-        numberFormat.setMinimumFractionDigits(i);
-        numberFormat.setMaximumFractionDigits(i);
+        if (num != null) {
+            numberFormat.setMinimumFractionDigits(num.intValue());
+            numberFormat.setMaximumFractionDigits(num.intValue());
+        }
         String format = numberFormat.format(balance);
         Intrinsics.checkNotNullExpressionValue(format, "currentLocaleFormatter.n…         .format(balance)");
         return StringExtKt.stripZeros(format, currentLocaleFormatter.getDecimalSeparator());

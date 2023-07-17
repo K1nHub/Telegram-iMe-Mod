@@ -32,17 +32,17 @@
 .method constructor <init>(Lcom/iMe/feature/profile/ProfileView$$State;Lcom/iMe/model/dialog/DialogModel;J)V
     .locals 1
 
-    .line 441
+    .line 457
     const-class p1, Lmoxy/viewstate/strategy/OneExecutionStateStrategy;
 
     const-string v0, "showLinkConfirmationDialog"
 
     invoke-direct {p0, v0, p1}, Lmoxy/viewstate/ViewCommand;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
-    .line 443
+    .line 459
     iput-object p2, p0, Lcom/iMe/feature/profile/ProfileView$$State$ShowLinkConfirmationDialogCommand;->dialogModel:Lcom/iMe/model/dialog/DialogModel;
 
-    .line 444
+    .line 460
     iput-wide p3, p0, Lcom/iMe/feature/profile/ProfileView$$State$ShowLinkConfirmationDialogCommand;->socialId:J
 
     return-void
@@ -53,7 +53,7 @@
 .method public apply(Lcom/iMe/feature/profile/ProfileView;)V
     .locals 3
 
-    .line 449
+    .line 465
     iget-object v0, p0, Lcom/iMe/feature/profile/ProfileView$$State$ShowLinkConfirmationDialogCommand;->dialogModel:Lcom/iMe/model/dialog/DialogModel;
 
     iget-wide v1, p0, Lcom/iMe/feature/profile/ProfileView$$State$ShowLinkConfirmationDialogCommand;->socialId:J
@@ -66,7 +66,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 435
+    .line 451
     check-cast p1, Lcom/iMe/feature/profile/ProfileView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/feature/profile/ProfileView$$State$ShowLinkConfirmationDialogCommand;->apply(Lcom/iMe/feature/profile/ProfileView;)V

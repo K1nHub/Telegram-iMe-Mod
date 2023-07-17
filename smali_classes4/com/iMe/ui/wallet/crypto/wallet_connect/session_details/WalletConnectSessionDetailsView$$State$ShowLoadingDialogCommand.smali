@@ -34,20 +34,20 @@
 .method constructor <init>(Lcom/iMe/ui/wallet/crypto/wallet_connect/session_details/WalletConnectSessionDetailsView$$State;ZZLio/reactivex/disposables/Disposable;)V
     .locals 1
 
-    .line 168
+    .line 184
     const-class p1, Lmoxy/viewstate/strategy/OneExecutionStateStrategy;
 
     const-string/jumbo v0, "showLoadingDialog"
 
     invoke-direct {p0, v0, p1}, Lmoxy/viewstate/ViewCommand;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
-    .line 170
+    .line 186
     iput-boolean p2, p0, Lcom/iMe/ui/wallet/crypto/wallet_connect/session_details/WalletConnectSessionDetailsView$$State$ShowLoadingDialogCommand;->show:Z
 
-    .line 171
+    .line 187
     iput-boolean p3, p0, Lcom/iMe/ui/wallet/crypto/wallet_connect/session_details/WalletConnectSessionDetailsView$$State$ShowLoadingDialogCommand;->cancellable:Z
 
-    .line 172
+    .line 188
     iput-object p4, p0, Lcom/iMe/ui/wallet/crypto/wallet_connect/session_details/WalletConnectSessionDetailsView$$State$ShowLoadingDialogCommand;->actionToCancel:Lio/reactivex/disposables/Disposable;
 
     return-void
@@ -58,7 +58,7 @@
 .method public apply(Lcom/iMe/ui/wallet/crypto/wallet_connect/session_details/WalletConnectSessionDetailsView;)V
     .locals 3
 
-    .line 177
+    .line 193
     iget-boolean v0, p0, Lcom/iMe/ui/wallet/crypto/wallet_connect/session_details/WalletConnectSessionDetailsView$$State$ShowLoadingDialogCommand;->show:Z
 
     iget-boolean v1, p0, Lcom/iMe/ui/wallet/crypto/wallet_connect/session_details/WalletConnectSessionDetailsView$$State$ShowLoadingDialogCommand;->cancellable:Z
@@ -73,7 +73,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 160
+    .line 176
     check-cast p1, Lcom/iMe/ui/wallet/crypto/wallet_connect/session_details/WalletConnectSessionDetailsView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/wallet/crypto/wallet_connect/session_details/WalletConnectSessionDetailsView$$State$ShowLoadingDialogCommand;->apply(Lcom/iMe/ui/wallet/crypto/wallet_connect/session_details/WalletConnectSessionDetailsView;)V

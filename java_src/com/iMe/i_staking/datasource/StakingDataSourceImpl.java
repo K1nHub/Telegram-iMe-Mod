@@ -34,7 +34,7 @@ public final class StakingDataSourceImpl implements StakingDataSource {
     public Observable<Result<StakingOperation>> sendApprovalExecute(String wrappedAction, TransactionArgs args) {
         Intrinsics.checkNotNullParameter(wrappedAction, "wrappedAction");
         Intrinsics.checkNotNullParameter(args, "args");
-        Observable flatMap = sign(args).flatMap(new C1554xdf81e200(new C1547x96aeb888(this, wrappedAction)));
+        Observable flatMap = sign(args).flatMap(new C1565xdf81e200(new C1558x96aeb888(this, wrappedAction)));
         Intrinsics.checkNotNullExpressionValue(flatMap, "crossinline body: (T) ->…e.empty()\n        }\n    }");
         return flatMap;
     }
@@ -43,7 +43,7 @@ public final class StakingDataSourceImpl implements StakingDataSource {
     public Observable<Result<StakingOperation>> sendDepositExecute(String wrappedAction, TransactionArgs args) {
         Intrinsics.checkNotNullParameter(wrappedAction, "wrappedAction");
         Intrinsics.checkNotNullParameter(args, "args");
-        Observable flatMap = sign(args).flatMap(new C1554xdf81e200(new C1550x347fcced(this, wrappedAction)));
+        Observable flatMap = sign(args).flatMap(new C1565xdf81e200(new C1561x347fcced(this, wrappedAction)));
         Intrinsics.checkNotNullExpressionValue(flatMap, "crossinline body: (T) ->…e.empty()\n        }\n    }");
         return flatMap;
     }
@@ -52,7 +52,7 @@ public final class StakingDataSourceImpl implements StakingDataSource {
     public Observable<Result<StakingOperation>> sendClaimExecute(String wrappedAction, TransactionArgs args) {
         Intrinsics.checkNotNullParameter(wrappedAction, "wrappedAction");
         Intrinsics.checkNotNullParameter(args, "args");
-        Observable flatMap = sign(args).flatMap(new C1554xdf81e200(new StakingDataSourceImpl$sendClaimExecute$$inlined$flatMapSuccess$1(this, wrappedAction)));
+        Observable flatMap = sign(args).flatMap(new C1565xdf81e200(new StakingDataSourceImpl$sendClaimExecute$$inlined$flatMapSuccess$1(this, wrappedAction)));
         Intrinsics.checkNotNullExpressionValue(flatMap, "crossinline body: (T) ->…e.empty()\n        }\n    }");
         return flatMap;
     }
@@ -61,7 +61,7 @@ public final class StakingDataSourceImpl implements StakingDataSource {
     public Observable<Result<StakingOperation>> sendWithdrawExecute(String wrappedAction, TransactionArgs args) {
         Intrinsics.checkNotNullParameter(wrappedAction, "wrappedAction");
         Intrinsics.checkNotNullParameter(args, "args");
-        Observable flatMap = sign(args).flatMap(new C1554xdf81e200(new C1552x989508a1(this, wrappedAction)));
+        Observable flatMap = sign(args).flatMap(new C1565xdf81e200(new C1563x989508a1(this, wrappedAction)));
         Intrinsics.checkNotNullExpressionValue(flatMap, "crossinline body: (T) ->…e.empty()\n        }\n    }");
         return flatMap;
     }

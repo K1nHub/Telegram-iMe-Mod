@@ -58,7 +58,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 41
+    .line 47
     check-cast p1, Ljava/lang/Number;
 
     invoke-virtual {p1}, Ljava/lang/Number;->intValue()I
@@ -81,14 +81,14 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 42
+    .line 51
     iget-object v0, p0, Lcom/iMe/ui/adapter/provider/SelectableHeaderProvider$convert$1$1$1;->$helper:Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     sget v1, Lorg/telegram/messenger/R$id;->text_wallet_header:I
 
     invoke-virtual {v0, v1, p2}, Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;->setText(ILjava/lang/CharSequence;)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
-    .line 43
+    .line 52
     iget-object v0, p0, Lcom/iMe/ui/adapter/provider/SelectableHeaderProvider$convert$1$1$1;->$item:Lcom/iMe/model/wallet/home/SelectableHeaderItem;
 
     invoke-virtual {v0}, Lcom/iMe/model/wallet/home/SelectableHeaderItem;->getOnSelected()Lkotlin/jvm/functions/Function2;
@@ -101,7 +101,7 @@
 
     invoke-interface {v0, p1, p2}, Lkotlin/jvm/functions/Function2;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 44
+    .line 53
     iget-object p1, p0, Lcom/iMe/ui/adapter/provider/SelectableHeaderProvider$convert$1$1$1;->this$0:Lcom/iMe/ui/adapter/provider/SelectableHeaderProvider;
 
     const/4 p2, 0x0

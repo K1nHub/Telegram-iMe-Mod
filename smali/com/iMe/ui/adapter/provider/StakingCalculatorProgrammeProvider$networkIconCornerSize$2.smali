@@ -48,7 +48,7 @@
 .method public final invoke()Ljava/lang/Float;
     .locals 2
 
-    .line 28
+    .line 35
     iget-object v0, p0, Lcom/iMe/ui/adapter/provider/StakingCalculatorProgrammeProvider$networkIconCornerSize$2;->this$0:Lcom/iMe/ui/adapter/provider/StakingCalculatorProgrammeProvider;
 
     invoke-static {v0}, Lcom/iMe/ui/adapter/provider/StakingCalculatorProgrammeProvider;->access$getResourceManager$p(Lcom/iMe/ui/adapter/provider/StakingCalculatorProgrammeProvider;)Lcom/iMe/storage/domain/utils/system/ResourceManager;
@@ -77,7 +77,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 28
+    .line 35
     invoke-virtual {p0}, Lcom/iMe/ui/adapter/provider/StakingCalculatorProgrammeProvider$networkIconCornerSize$2;->invoke()Ljava/lang/Float;
 
     move-result-object v0

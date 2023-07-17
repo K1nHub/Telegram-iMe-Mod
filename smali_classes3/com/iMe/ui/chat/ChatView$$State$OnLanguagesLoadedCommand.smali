@@ -46,14 +46,14 @@
         }
     .end annotation
 
-    .line 264
+    .line 280
     const-class p1, Lmoxy/viewstate/strategy/AddToEndSingleStrategy;
 
     const-string v0, "onLanguagesLoaded"
 
     invoke-direct {p0, v0, p1}, Lmoxy/viewstate/ViewCommand;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
-    .line 266
+    .line 282
     iput-object p2, p0, Lcom/iMe/ui/chat/ChatView$$State$OnLanguagesLoadedCommand;->textLanguages:Ljava/util/List;
 
     return-void
@@ -64,7 +64,7 @@
 .method public apply(Lcom/iMe/ui/chat/ChatView;)V
     .locals 1
 
-    .line 271
+    .line 287
     iget-object v0, p0, Lcom/iMe/ui/chat/ChatView$$State$OnLanguagesLoadedCommand;->textLanguages:Ljava/util/List;
 
     invoke-interface {p1, v0}, Lcom/iMe/ui/chat/ChatView;->onLanguagesLoaded(Ljava/util/List;)V
@@ -75,7 +75,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 260
+    .line 276
     check-cast p1, Lcom/iMe/ui/chat/ChatView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/chat/ChatView$$State$OnLanguagesLoadedCommand;->apply(Lcom/iMe/ui/chat/ChatView;)V

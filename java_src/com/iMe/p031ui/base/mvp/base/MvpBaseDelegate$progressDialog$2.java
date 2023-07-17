@@ -2,7 +2,7 @@ package com.iMe.p031ui.base.mvp.base;
 
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Lambda;
-import org.telegram.p044ui.ActionBar.AlertDialog;
+import org.telegram.p043ui.ActionBar.AlertDialog;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: MvpBaseDelegate.kt */
 /* renamed from: com.iMe.ui.base.mvp.base.MvpBaseDelegate$progressDialog$2 */

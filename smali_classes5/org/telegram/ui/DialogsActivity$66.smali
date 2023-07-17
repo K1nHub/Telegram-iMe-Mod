@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/DialogsActivity;->didReceivedNotification(II[Ljava/lang/Object;)V
+    value = Lorg/telegram/ui/DialogsActivity;->setFloatingProgressVisible(ZZ)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -17,17 +17,17 @@
 # instance fields
 .field final synthetic this$0:Lorg/telegram/ui/DialogsActivity;
 
-.field final synthetic val$localView:Landroid/view/View;
+.field final synthetic val$visible:Z
 
 
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/DialogsActivity;Landroid/view/View;)V
+.method constructor <init>(Lorg/telegram/ui/DialogsActivity;Z)V
     .locals 0
 
-    .line 12971
+    .line 13327
     iput-object p1, p0, Lorg/telegram/ui/DialogsActivity$66;->this$0:Lorg/telegram/ui/DialogsActivity;
 
-    iput-object p2, p0, Lorg/telegram/ui/DialogsActivity$66;->val$localView:Landroid/view/View;
+    iput-boolean p2, p0, Lorg/telegram/ui/DialogsActivity$66;->val$visible:Z
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
 
@@ -39,35 +39,96 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 12974
-    iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$66;->val$localView:Landroid/view/View;
+    .line 13336
+    iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$66;->this$0:Lorg/telegram/ui/DialogsActivity;
 
-    invoke-virtual {p1}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
+    invoke-static {v0}, Lorg/telegram/ui/DialogsActivity;->access$38800(Lorg/telegram/ui/DialogsActivity;)Landroid/animation/AnimatorSet;
 
-    move-result-object p1
+    move-result-object v0
+
+    if-ne p1, v0, :cond_2
+
+    .line 13337
+    iget-boolean p1, p0, Lorg/telegram/ui/DialogsActivity$66;->val$visible:Z
+
+    const/16 v0, 0x8
 
     if-eqz p1, :cond_0
 
-    .line 12975
-    iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$66;->val$localView:Landroid/view/View;
+    .line 13338
+    iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$66;->this$0:Lorg/telegram/ui/DialogsActivity;
 
-    invoke-virtual {p1}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
+    invoke-static {p1}, Lorg/telegram/ui/DialogsActivity;->access$25700(Lorg/telegram/ui/DialogsActivity;)Lorg/telegram/ui/Components/RLottieImageView;
 
     move-result-object p1
 
-    check-cast p1, Landroid/view/ViewGroup;
+    if-eqz p1, :cond_1
 
-    iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$66;->val$localView:Landroid/view/View;
+    .line 13339
+    iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$66;->this$0:Lorg/telegram/ui/DialogsActivity;
 
-    invoke-virtual {p1, v0}, Landroid/view/ViewGroup;->removeView(Landroid/view/View;)V
+    invoke-static {p1}, Lorg/telegram/ui/DialogsActivity;->access$25700(Lorg/telegram/ui/DialogsActivity;)Lorg/telegram/ui/Components/RLottieImageView;
 
-    .line 12977
+    move-result-object p1
+
+    invoke-virtual {p1, v0}, Landroid/widget/ImageView;->setVisibility(I)V
+
+    goto :goto_0
+
+    .line 13342
     :cond_0
+    iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$66;->this$0:Lorg/telegram/ui/DialogsActivity;
+
+    invoke-static {p1}, Lorg/telegram/ui/DialogsActivity;->access$25700(Lorg/telegram/ui/DialogsActivity;)Lorg/telegram/ui/Components/RLottieImageView;
+
+    move-result-object p1
+
+    if-eqz p1, :cond_1
+
+    .line 13343
+    iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$66;->this$0:Lorg/telegram/ui/DialogsActivity;
+
+    invoke-static {p1}, Lorg/telegram/ui/DialogsActivity;->access$38700(Lorg/telegram/ui/DialogsActivity;)Lorg/telegram/ui/Components/RadialProgressView;
+
+    move-result-object p1
+
+    invoke-virtual {p1, v0}, Landroid/view/View;->setVisibility(I)V
+
+    .line 13346
+    :cond_1
+    :goto_0
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$66;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     const/4 v0, 0x0
 
-    iput-object v0, p1, Lorg/telegram/ui/DialogsActivity;->databaseMigrationHint:Landroid/view/View;
+    invoke-static {p1, v0}, Lorg/telegram/ui/DialogsActivity;->access$38802(Lorg/telegram/ui/DialogsActivity;Landroid/animation/AnimatorSet;)Landroid/animation/AnimatorSet;
+
+    :cond_2
+    return-void
+.end method
+
+.method public onAnimationStart(Landroid/animation/Animator;)V
+    .locals 1
+
+    .line 13330
+    iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$66;->this$0:Lorg/telegram/ui/DialogsActivity;
+
+    invoke-static {p1}, Lorg/telegram/ui/DialogsActivity;->access$38700(Lorg/telegram/ui/DialogsActivity;)Lorg/telegram/ui/Components/RadialProgressView;
+
+    move-result-object p1
+
+    const/4 v0, 0x0
+
+    invoke-virtual {p1, v0}, Landroid/view/View;->setVisibility(I)V
+
+    .line 13331
+    iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$66;->this$0:Lorg/telegram/ui/DialogsActivity;
+
+    invoke-static {p1}, Lorg/telegram/ui/DialogsActivity;->access$25700(Lorg/telegram/ui/DialogsActivity;)Lorg/telegram/ui/Components/RLottieImageView;
+
+    move-result-object p1
+
+    invoke-virtual {p1, v0}, Landroid/widget/ImageView;->setVisibility(I)V
 
     return-void
 .end method

@@ -11,8 +11,6 @@ import androidx.room.util.TableInfo;
 import androidx.sqlite.p011db.SupportSQLiteDatabase;
 import androidx.sqlite.p011db.SupportSQLiteOpenHelper;
 import com.google.android.gms.measurement.api.AppMeasurementSdk;
-import com.iMe.storage.data.locale.p027db.dao.main.BookmarksDao;
-import com.iMe.storage.data.locale.p027db.dao.main.BookmarksDao_Impl;
 import com.iMe.storage.data.locale.p027db.dao.main.DialogTranslationSettingsDao;
 import com.iMe.storage.data.locale.p027db.dao.main.DialogTranslationSettingsDao_Impl;
 import com.iMe.storage.data.locale.p027db.dao.main.FiltersDao;
@@ -38,7 +36,6 @@ import java.util.Set;
 /* renamed from: com.iMe.storage.data.locale.db.database.AppMainDatabase_Impl */
 /* loaded from: classes3.dex */
 public final class AppMainDatabase_Impl extends AppMainDatabase {
-    private volatile BookmarksDao _bookmarksDao;
     private volatile DialogTranslationSettingsDao _dialogTranslationSettingsDao;
     private volatile FiltersDao _filtersDao;
     private volatile HiddenChatsDao _hiddenChatsDao;
@@ -50,7 +47,7 @@ public final class AppMainDatabase_Impl extends AppMainDatabase {
 
     @Override // androidx.room.RoomDatabase
     protected SupportSQLiteOpenHelper createOpenHelper(DatabaseConfiguration configuration) {
-        return configuration.sqliteOpenHelperFactory.create(SupportSQLiteOpenHelper.Configuration.builder(configuration.context).name(configuration.name).callback(new RoomOpenHelper(configuration, new RoomOpenHelper.Delegate(16) { // from class: com.iMe.storage.data.locale.db.database.AppMainDatabase_Impl.1
+        return configuration.sqliteOpenHelperFactory.create(SupportSQLiteOpenHelper.Configuration.builder(configuration.context).name(configuration.name).callback(new RoomOpenHelper(configuration, new RoomOpenHelper.Delegate(17) { // from class: com.iMe.storage.data.locale.db.database.AppMainDatabase_Impl.1
             @Override // androidx.room.RoomOpenHelper.Delegate
             public void onPostMigrate(SupportSQLiteDatabase _db) {
             }
@@ -62,12 +59,11 @@ public final class AppMainDatabase_Impl extends AppMainDatabase {
                 _db.execSQL("CREATE TABLE IF NOT EXISTS `TopicDb` (`topicId` INTEGER NOT NULL, `name` TEXT, `icon` TEXT, `order` INTEGER NOT NULL, `presets` TEXT NOT NULL, `dialogs` TEXT NOT NULL, `userId` INTEGER NOT NULL, PRIMARY KEY(`userId`, `topicId`))");
                 _db.execSQL("CREATE TABLE IF NOT EXISTS `WalletConnectSessionDb` (`tgUserId` INTEGER NOT NULL, `sessionTopic` TEXT NOT NULL, `sessionVersion` TEXT NOT NULL, `sessionBridge` TEXT NOT NULL, `sessionKey` TEXT NOT NULL, `chainId` INTEGER NOT NULL, `peerId` TEXT NOT NULL, `remotePeerId` TEXT NOT NULL, `remotePeerMetaName` TEXT NOT NULL, `remotePeerMetaUrl` TEXT NOT NULL, `remotePeerMetaDescription` TEXT, `remotePeerMetaIcons` TEXT NOT NULL, `isAutoSign` INTEGER NOT NULL, `date` INTEGER NOT NULL, PRIMARY KEY(`tgUserId`, `sessionKey`))");
                 _db.execSQL("CREATE TABLE IF NOT EXISTS `TemplatesDb` (`userId` INTEGER NOT NULL, `messageId` INTEGER NOT NULL, `groupId` INTEGER NOT NULL, `templateName` TEXT NOT NULL, `creationDate` INTEGER NOT NULL, `usageRating` INTEGER NOT NULL, `sent` INTEGER NOT NULL, PRIMARY KEY(`userId`, `messageId`))");
-                _db.execSQL("CREATE TABLE IF NOT EXISTS `BookmarksDb` (`messageIds` TEXT NOT NULL, `dialogId` INTEGER NOT NULL, `userId` INTEGER NOT NULL, PRIMARY KEY(`dialogId`, `userId`))");
                 _db.execSQL("CREATE TABLE IF NOT EXISTS `PlaylistsDb` (`messageIds` TEXT NOT NULL, `dialogId` INTEGER NOT NULL, `userId` INTEGER NOT NULL, PRIMARY KEY(`dialogId`, `userId`))");
                 _db.execSQL("CREATE TABLE IF NOT EXISTS `HistoryDialogDb` (`userId` INTEGER NOT NULL, `dialogId` INTEGER NOT NULL, `creationDate` INTEGER NOT NULL, `isPinned` INTEGER NOT NULL, PRIMARY KEY(`userId`, `dialogId`))");
                 _db.execSQL("CREATE TABLE IF NOT EXISTS `HiddenChatsDb` (`userId` INTEGER NOT NULL, `dialogId` INTEGER NOT NULL, PRIMARY KEY(`userId`, `dialogId`))");
                 _db.execSQL("CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)");
-                _db.execSQL("INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '32c7fe2134632796b25f227e56e9ec33')");
+                _db.execSQL("INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'd26c30a66c211afebfa310894b978450')");
             }
 
             @Override // androidx.room.RoomOpenHelper.Delegate
@@ -77,7 +73,6 @@ public final class AppMainDatabase_Impl extends AppMainDatabase {
                 _db.execSQL("DROP TABLE IF EXISTS `TopicDb`");
                 _db.execSQL("DROP TABLE IF EXISTS `WalletConnectSessionDb`");
                 _db.execSQL("DROP TABLE IF EXISTS `TemplatesDb`");
-                _db.execSQL("DROP TABLE IF EXISTS `BookmarksDb`");
                 _db.execSQL("DROP TABLE IF EXISTS `PlaylistsDb`");
                 _db.execSQL("DROP TABLE IF EXISTS `HistoryDialogDb`");
                 _db.execSQL("DROP TABLE IF EXISTS `HiddenChatsDb`");
@@ -190,46 +185,37 @@ public final class AppMainDatabase_Impl extends AppMainDatabase {
                 hashMap6.put("messageIds", new TableInfo.Column("messageIds", "TEXT", true, 0, null, 1));
                 hashMap6.put("dialogId", new TableInfo.Column("dialogId", "INTEGER", true, 1, null, 1));
                 hashMap6.put("userId", new TableInfo.Column("userId", "INTEGER", true, 2, null, 1));
-                TableInfo tableInfo6 = new TableInfo("BookmarksDb", hashMap6, new HashSet(0), new HashSet(0));
-                TableInfo read6 = TableInfo.read(_db, "BookmarksDb");
+                TableInfo tableInfo6 = new TableInfo("PlaylistsDb", hashMap6, new HashSet(0), new HashSet(0));
+                TableInfo read6 = TableInfo.read(_db, "PlaylistsDb");
                 if (!tableInfo6.equals(read6)) {
-                    return new RoomOpenHelper.ValidationResult(false, "BookmarksDb(com.iMe.storage.data.locale.db.model.bookmarks.BookmarksDb).\n Expected:\n" + tableInfo6 + "\n Found:\n" + read6);
+                    return new RoomOpenHelper.ValidationResult(false, "PlaylistsDb(com.iMe.storage.data.locale.db.model.music.PlaylistsDb).\n Expected:\n" + tableInfo6 + "\n Found:\n" + read6);
                 }
-                HashMap hashMap7 = new HashMap(3);
-                hashMap7.put("messageIds", new TableInfo.Column("messageIds", "TEXT", true, 0, null, 1));
-                hashMap7.put("dialogId", new TableInfo.Column("dialogId", "INTEGER", true, 1, null, 1));
-                hashMap7.put("userId", new TableInfo.Column("userId", "INTEGER", true, 2, null, 1));
-                TableInfo tableInfo7 = new TableInfo("PlaylistsDb", hashMap7, new HashSet(0), new HashSet(0));
-                TableInfo read7 = TableInfo.read(_db, "PlaylistsDb");
+                HashMap hashMap7 = new HashMap(4);
+                hashMap7.put("userId", new TableInfo.Column("userId", "INTEGER", true, 1, null, 1));
+                hashMap7.put("dialogId", new TableInfo.Column("dialogId", "INTEGER", true, 2, null, 1));
+                hashMap7.put("creationDate", new TableInfo.Column("creationDate", "INTEGER", true, 0, null, 1));
+                hashMap7.put("isPinned", new TableInfo.Column("isPinned", "INTEGER", true, 0, null, 1));
+                TableInfo tableInfo7 = new TableInfo("HistoryDialogDb", hashMap7, new HashSet(0), new HashSet(0));
+                TableInfo read7 = TableInfo.read(_db, "HistoryDialogDb");
                 if (!tableInfo7.equals(read7)) {
-                    return new RoomOpenHelper.ValidationResult(false, "PlaylistsDb(com.iMe.storage.data.locale.db.model.music.PlaylistsDb).\n Expected:\n" + tableInfo7 + "\n Found:\n" + read7);
+                    return new RoomOpenHelper.ValidationResult(false, "HistoryDialogDb(com.iMe.storage.data.locale.db.model.recent_chats.HistoryDialogDb).\n Expected:\n" + tableInfo7 + "\n Found:\n" + read7);
                 }
-                HashMap hashMap8 = new HashMap(4);
+                HashMap hashMap8 = new HashMap(2);
                 hashMap8.put("userId", new TableInfo.Column("userId", "INTEGER", true, 1, null, 1));
                 hashMap8.put("dialogId", new TableInfo.Column("dialogId", "INTEGER", true, 2, null, 1));
-                hashMap8.put("creationDate", new TableInfo.Column("creationDate", "INTEGER", true, 0, null, 1));
-                hashMap8.put("isPinned", new TableInfo.Column("isPinned", "INTEGER", true, 0, null, 1));
-                TableInfo tableInfo8 = new TableInfo("HistoryDialogDb", hashMap8, new HashSet(0), new HashSet(0));
-                TableInfo read8 = TableInfo.read(_db, "HistoryDialogDb");
+                TableInfo tableInfo8 = new TableInfo("HiddenChatsDb", hashMap8, new HashSet(0), new HashSet(0));
+                TableInfo read8 = TableInfo.read(_db, "HiddenChatsDb");
                 if (!tableInfo8.equals(read8)) {
-                    return new RoomOpenHelper.ValidationResult(false, "HistoryDialogDb(com.iMe.storage.data.locale.db.model.recent_chats.HistoryDialogDb).\n Expected:\n" + tableInfo8 + "\n Found:\n" + read8);
-                }
-                HashMap hashMap9 = new HashMap(2);
-                hashMap9.put("userId", new TableInfo.Column("userId", "INTEGER", true, 1, null, 1));
-                hashMap9.put("dialogId", new TableInfo.Column("dialogId", "INTEGER", true, 2, null, 1));
-                TableInfo tableInfo9 = new TableInfo("HiddenChatsDb", hashMap9, new HashSet(0), new HashSet(0));
-                TableInfo read9 = TableInfo.read(_db, "HiddenChatsDb");
-                if (!tableInfo9.equals(read9)) {
-                    return new RoomOpenHelper.ValidationResult(false, "HiddenChatsDb(com.iMe.storage.data.locale.db.model.hidden_chats.HiddenChatsDb).\n Expected:\n" + tableInfo9 + "\n Found:\n" + read9);
+                    return new RoomOpenHelper.ValidationResult(false, "HiddenChatsDb(com.iMe.storage.data.locale.db.model.hidden_chats.HiddenChatsDb).\n Expected:\n" + tableInfo8 + "\n Found:\n" + read8);
                 }
                 return new RoomOpenHelper.ValidationResult(true, null);
             }
-        }, "32c7fe2134632796b25f227e56e9ec33", "8f3ed9e68890c5246d28e6a12503815c")).build());
+        }, "d26c30a66c211afebfa310894b978450", "0a634f93cb59203e2d7d49f349826b7d")).build());
     }
 
     @Override // androidx.room.RoomDatabase
     protected InvalidationTracker createInvalidationTracker() {
-        return new InvalidationTracker(this, new HashMap(0), new HashMap(0), "FilterSettingsDb", "DialogTranslationSettingsDb", "TopicDb", "WalletConnectSessionDb", "TemplatesDb", "BookmarksDb", "PlaylistsDb", "HistoryDialogDb", "HiddenChatsDb");
+        return new InvalidationTracker(this, new HashMap(0), new HashMap(0), "FilterSettingsDb", "DialogTranslationSettingsDb", "TopicDb", "WalletConnectSessionDb", "TemplatesDb", "PlaylistsDb", "HistoryDialogDb", "HiddenChatsDb");
     }
 
     @Override // androidx.room.RoomDatabase
@@ -240,7 +226,6 @@ public final class AppMainDatabase_Impl extends AppMainDatabase {
         hashMap.put(TopicsDao.class, TopicsDao_Impl.getRequiredConverters());
         hashMap.put(TemplatesDao.class, TemplatesDao_Impl.getRequiredConverters());
         hashMap.put(WalletConnectSessionsDao.class, WalletConnectSessionsDao_Impl.getRequiredConverters());
-        hashMap.put(BookmarksDao.class, BookmarksDao_Impl.getRequiredConverters());
         hashMap.put(PlaylistsDao.class, PlaylistsDao_Impl.getRequiredConverters());
         hashMap.put(HistoryDialogDao.class, HistoryDialogDao_Impl.getRequiredConverters());
         hashMap.put(HiddenChatsDao.class, HiddenChatsDao_Impl.getRequiredConverters());
@@ -330,21 +315,6 @@ public final class AppMainDatabase_Impl extends AppMainDatabase {
             walletConnectSessionsDao = this._walletConnectSessionsDao;
         }
         return walletConnectSessionsDao;
-    }
-
-    @Override // com.iMe.storage.data.locale.p027db.database.AppMainDatabase
-    public BookmarksDao bookmarksDao() {
-        BookmarksDao bookmarksDao;
-        if (this._bookmarksDao != null) {
-            return this._bookmarksDao;
-        }
-        synchronized (this) {
-            if (this._bookmarksDao == null) {
-                this._bookmarksDao = new BookmarksDao_Impl(this);
-            }
-            bookmarksDao = this._bookmarksDao;
-        }
-        return bookmarksDao;
     }
 
     @Override // com.iMe.storage.data.locale.p027db.database.AppMainDatabase

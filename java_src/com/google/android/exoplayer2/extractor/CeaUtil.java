@@ -1,6 +1,6 @@
 package com.google.android.exoplayer2.extractor;
 
-import com.google.android.exoplayer2.C0475C;
+import com.google.android.exoplayer2.C0480C;
 import com.google.android.exoplayer2.util.Log;
 import com.google.android.exoplayer2.util.ParsableByteArray;
 /* loaded from: classes.dex */
@@ -53,7 +53,7 @@ public final class CeaUtil {
             for (TrackOutput trackOutput : trackOutputArr) {
                 parsableByteArray.setPosition(position);
                 trackOutput.sampleData(parsableByteArray, i);
-                if (j != C0475C.TIME_UNSET) {
+                if (j != C0480C.TIME_UNSET) {
                     trackOutput.sampleMetadata(j, 1, i, 0, null);
                 }
             }

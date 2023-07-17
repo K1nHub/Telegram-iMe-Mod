@@ -28,23 +28,23 @@ public enum NotificationLite {
     static final class ErrorNotification implements Serializable {
 
         /* renamed from: e */
-        final Throwable f478e;
+        final Throwable f560e;
 
         ErrorNotification(Throwable th) {
-            this.f478e = th;
+            this.f560e = th;
         }
 
         public String toString() {
-            return "NotificationLite.Error[" + this.f478e + "]";
+            return "NotificationLite.Error[" + this.f560e + "]";
         }
 
         public int hashCode() {
-            return this.f478e.hashCode();
+            return this.f560e.hashCode();
         }
 
         public boolean equals(Object obj) {
             if (obj instanceof ErrorNotification) {
-                return ObjectHelper.equals(this.f478e, ((ErrorNotification) obj).f478e);
+                return ObjectHelper.equals(this.f560e, ((ErrorNotification) obj).f560e);
             }
             return false;
         }
@@ -109,7 +109,7 @@ public enum NotificationLite {
     }
 
     public static Throwable getError(Object obj) {
-        return ((ErrorNotification) obj).f478e;
+        return ((ErrorNotification) obj).f560e;
     }
 
     public static Subscription getSubscription(Object obj) {
@@ -125,7 +125,7 @@ public enum NotificationLite {
             subscriber.onComplete();
             return true;
         } else if (obj instanceof ErrorNotification) {
-            subscriber.onError(((ErrorNotification) obj).f478e);
+            subscriber.onError(((ErrorNotification) obj).f560e);
             return true;
         } else {
             subscriber.onNext(obj);
@@ -138,7 +138,7 @@ public enum NotificationLite {
             observer.onComplete();
             return true;
         } else if (obj instanceof ErrorNotification) {
-            observer.onError(((ErrorNotification) obj).f478e);
+            observer.onError(((ErrorNotification) obj).f560e);
             return true;
         } else {
             observer.onNext(obj);
@@ -151,7 +151,7 @@ public enum NotificationLite {
             subscriber.onComplete();
             return true;
         } else if (obj instanceof ErrorNotification) {
-            subscriber.onError(((ErrorNotification) obj).f478e);
+            subscriber.onError(((ErrorNotification) obj).f560e);
             return true;
         } else if (obj instanceof SubscriptionNotification) {
             subscriber.onSubscribe(((SubscriptionNotification) obj).upstream);
@@ -167,7 +167,7 @@ public enum NotificationLite {
             observer.onComplete();
             return true;
         } else if (obj instanceof ErrorNotification) {
-            observer.onError(((ErrorNotification) obj).f478e);
+            observer.onError(((ErrorNotification) obj).f560e);
             return true;
         } else if (obj instanceof DisposableNotification) {
             observer.onSubscribe(((DisposableNotification) obj).upstream);

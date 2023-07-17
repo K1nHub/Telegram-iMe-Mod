@@ -65,22 +65,22 @@
 
     const/4 v0, 0x0
 
-    .line 37
+    .line 43
     invoke-direct {p0, p2, p1, p3, v0}, Lcom/iMe/storage/domain/model/crypto/TransactionParams;-><init>(Lcom/iMe/storage/domain/model/crypto/send/GasPriceInfo;Lcom/iMe/storage/domain/model/crypto/send/GasPriceInfo;Lcom/iMe/storage/domain/model/crypto/send/GasPriceInfo;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
 
-    .line 32
+    .line 38
     iput-object p1, p0, Lcom/iMe/storage/domain/model/crypto/TransactionParams$Bitcoin;->medium:Lcom/iMe/storage/domain/model/crypto/send/GasPriceInfo;
 
-    .line 33
+    .line 39
     iput-object p2, p0, Lcom/iMe/storage/domain/model/crypto/TransactionParams$Bitcoin;->fastest:Lcom/iMe/storage/domain/model/crypto/send/GasPriceInfo;
 
-    .line 34
+    .line 40
     iput-object p3, p0, Lcom/iMe/storage/domain/model/crypto/TransactionParams$Bitcoin;->low:Lcom/iMe/storage/domain/model/crypto/send/GasPriceInfo;
 
-    .line 35
+    .line 41
     iput-object p4, p0, Lcom/iMe/storage/domain/model/crypto/TransactionParams$Bitcoin;->utxos:Ljava/util/List;
 
-    .line 36
+    .line 42
     iput-object p5, p0, Lcom/iMe/storage/domain/model/crypto/TransactionParams$Bitcoin;->changeAddress:Ljava/lang/String;
 
     return-void
@@ -365,7 +365,7 @@
 .method public final getChangeAddress()Ljava/lang/String;
     .locals 1
 
-    .line 36
+    .line 42
     iget-object v0, p0, Lcom/iMe/storage/domain/model/crypto/TransactionParams$Bitcoin;->changeAddress:Ljava/lang/String;
 
     return-object v0
@@ -374,7 +374,7 @@
 .method public getFastest()Lcom/iMe/storage/domain/model/crypto/send/GasPriceInfo;
     .locals 1
 
-    .line 33
+    .line 39
     iget-object v0, p0, Lcom/iMe/storage/domain/model/crypto/TransactionParams$Bitcoin;->fastest:Lcom/iMe/storage/domain/model/crypto/send/GasPriceInfo;
 
     return-object v0
@@ -383,7 +383,7 @@
 .method public getLow()Lcom/iMe/storage/domain/model/crypto/send/GasPriceInfo;
     .locals 1
 
-    .line 34
+    .line 40
     iget-object v0, p0, Lcom/iMe/storage/domain/model/crypto/TransactionParams$Bitcoin;->low:Lcom/iMe/storage/domain/model/crypto/send/GasPriceInfo;
 
     return-object v0
@@ -392,7 +392,7 @@
 .method public getMedium()Lcom/iMe/storage/domain/model/crypto/send/GasPriceInfo;
     .locals 1
 
-    .line 32
+    .line 38
     iget-object v0, p0, Lcom/iMe/storage/domain/model/crypto/TransactionParams$Bitcoin;->medium:Lcom/iMe/storage/domain/model/crypto/send/GasPriceInfo;
 
     return-object v0
@@ -409,7 +409,7 @@
         }
     .end annotation
 
-    .line 35
+    .line 41
     iget-object v0, p0, Lcom/iMe/storage/domain/model/crypto/TransactionParams$Bitcoin;->utxos:Ljava/util/List;
 
     return-object v0

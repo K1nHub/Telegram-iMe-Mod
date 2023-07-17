@@ -42,7 +42,7 @@
     .line 197
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const-string v0, "runnable"
+    const-string/jumbo v0, "runnable"
 
     .line 198
     invoke-static {p1, v0}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;

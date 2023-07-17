@@ -7498,7 +7498,7 @@
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v3, "recover_database_"
+    const-string/jumbo v3, "recover_database_"
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -7737,7 +7737,7 @@
     .line 1303
     invoke-virtual {v10, v11}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
-    const-string v11, "scheduled_messages_v2"
+    const-string/jumbo v11, "scheduled_messages_v2"
 
     .line 1304
     invoke-virtual {v10, v11}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z

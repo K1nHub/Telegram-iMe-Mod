@@ -5,7 +5,7 @@ import io.reactivex.disposables.Disposable;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Lambda;
-import org.telegram.p044ui.Components.RecyclerListView;
+import org.telegram.p043ui.Components.RecyclerListView;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: GridBotsPageView.kt */
 /* renamed from: com.iMe.ui.shop.view.GridBotsPageView$subscribeToContent$2 */

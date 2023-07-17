@@ -18,7 +18,7 @@ import kotlin.collections.CollectionsKt__CollectionsKt;
 import kotlin.collections.CollectionsKt__IterablesKt;
 import kotlin.collections.MapsKt__MapsKt;
 import kotlin.jvm.internal.Intrinsics;
-import kotlin.p035io.FilesKt__FileReadWriteKt;
+import kotlin.p034io.FilesKt__FileReadWriteKt;
 /* compiled from: JsonResourceFactory.kt */
 /* loaded from: classes3.dex */
 public final class JsonResourceFactory implements ResourceFactory {

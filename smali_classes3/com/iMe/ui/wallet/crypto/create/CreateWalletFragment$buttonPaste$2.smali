@@ -48,7 +48,7 @@
 .method public final invoke()Lcom/iMe/ui/custom/backup/SecretWordsActionButton;
     .locals 1
 
-    .line 92
+    .line 137
     iget-object v0, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$buttonPaste$2;->this$0:Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;
 
     invoke-static {v0}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->access$createPasteButton(Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;)Lcom/iMe/ui/custom/backup/SecretWordsActionButton;
@@ -61,7 +61,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 92
+    .line 137
     invoke-virtual {p0}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$buttonPaste$2;->invoke()Lcom/iMe/ui/custom/backup/SecretWordsActionButton;
 
     move-result-object v0

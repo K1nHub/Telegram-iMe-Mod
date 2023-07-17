@@ -24,7 +24,7 @@
 
     iput-object p1, p0, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet$setupListeners$1$1;->this$0:Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;
 
-    .line 139
+    .line 135
     invoke-direct {p0}, Landroidx/recyclerview/widget/RecyclerView$OnScrollListener;-><init>()V
 
     return-void
@@ -39,7 +39,7 @@
 
     invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 141
+    .line 137
     iget-object p1, p0, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet$setupListeners$1$1;->this$0:Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;
 
     invoke-static {p1}, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;->access$updateLayout(Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;)V

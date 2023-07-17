@@ -13,27 +13,22 @@
 
 
 # virtual methods
-.method public abstract onTokenSelected(Lcom/iMe/model/wallet/swap/SwapSide;Lcom/iMe/model/wallet/select/SelectableToken;IILcom/iMe/storage/domain/model/crypto/NetworkType;)V
+.method public abstract onTokenSelected(Lcom/iMe/model/wallet/swap/SwapSide;Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;I)V
     .annotation runtime Lmoxy/viewstate/strategy/alias/AddToEndSingle;
     .end annotation
 .end method
 
-.method public abstract openSelectTokenDialog(Lcom/iMe/model/wallet/swap/SwapSide;Lcom/iMe/model/wallet/select/SelectableToken;Ljava/util/List;Lcom/iMe/storage/domain/model/crypto/NetworkType;Lcom/iMe/model/wallet/select/SelectableType;ZLkotlin/jvm/functions/Function1;)V
+.method public abstract openSelectTokenDialog(Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment$ScreenType;Ljava/lang/String;ZLkotlin/jvm/functions/Function1;)V
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lcom/iMe/model/wallet/swap/SwapSide;",
-            "Lcom/iMe/model/wallet/select/SelectableToken;",
-            "Ljava/util/List<",
-            "+",
-            "Lcom/iMe/model/wallet/select/SelectableToken;",
-            ">;",
-            "Lcom/iMe/storage/domain/model/crypto/NetworkType;",
-            "Lcom/iMe/model/wallet/select/SelectableType;",
+            "Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;",
+            "Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment$ScreenType;",
+            "Ljava/lang/String;",
             "Z",
             "Lkotlin/jvm/functions/Function1<",
             "-",
-            "Lcom/iMe/model/wallet/select/SelectableToken;",
+            "Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;",
             "Lkotlin/Unit;",
             ">;)V"
         }
@@ -48,7 +43,7 @@
     .end annotation
 .end method
 
-.method public abstract setupNetworkType(Lcom/iMe/storage/domain/model/crypto/NetworkType;Lcom/iMe/model/wallet/swap/SwapSide;)V
+.method public abstract setupNetwork(Lcom/iMe/storage/domain/model/crypto/Network;Lcom/iMe/model/wallet/swap/SwapSide;)V
     .annotation runtime Lmoxy/viewstate/strategy/alias/AddToEndSingle;
     .end annotation
 .end method
@@ -61,7 +56,7 @@
 .method public abstract showChangeNetworkHint()V
 .end method
 
-.method public abstract showMinMaxInputValues(Lcom/iMe/model/wallet/select/SelectableToken;Lcom/iMe/storage/domain/model/binancepay/OutputConvertToken;)V
+.method public abstract showMinMaxInputValues(Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;Lcom/iMe/storage/domain/model/binancepay/OutputConvertToken;)V
 .end method
 
 .method public abstract showNotEnoughMoneyBinanceErrorDialog()V

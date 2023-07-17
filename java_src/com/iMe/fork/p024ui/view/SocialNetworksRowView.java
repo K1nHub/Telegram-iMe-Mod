@@ -13,8 +13,8 @@ import com.iMe.fork.enums.DrawerSocialNetwork;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.p044ui.ActionBar.Theme;
-import org.telegram.p044ui.Components.LayoutHelper;
+import org.telegram.p043ui.ActionBar.Theme;
+import org.telegram.p043ui.Components.LayoutHelper;
 /* compiled from: SocialNetworksRowView.kt */
 /* renamed from: com.iMe.fork.ui.view.SocialNetworksRowView */
 /* loaded from: classes3.dex */

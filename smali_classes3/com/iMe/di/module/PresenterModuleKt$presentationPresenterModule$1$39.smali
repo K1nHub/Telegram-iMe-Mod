@@ -22,13 +22,9 @@
         "Lkotlin/jvm/functions/Function2<",
         "Lorg/koin/core/scope/Scope;",
         "Lorg/koin/core/parameter/ParametersHolder;",
-        "Lcom/iMe/ui/wallet/crypto/settings/blockchains/BlockchainsManagementPresenter;",
+        "Lcom/iMe/ui/wallet/crypto/create/secret_words_count/SecretWordsCountPresenter;",
         ">;"
     }
-.end annotation
-
-.annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nPresenterModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$39\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,432:1\n129#2,5:433\n129#2,5:438\n*S KotlinDebug\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$39\n*L\n279#1:433,5\n280#1:438,5\n*E\n"
 .end annotation
 
 
@@ -61,111 +57,34 @@
 
 
 # virtual methods
-.method public final invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/iMe/ui/wallet/crypto/settings/blockchains/BlockchainsManagementPresenter;
-    .locals 7
+.method public final invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/iMe/ui/wallet/crypto/create/secret_words_count/SecretWordsCountPresenter;
+    .locals 1
 
     const-string v0, "$this$factory"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "it"
+    const-string p1, "it"
 
-    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p2, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 278
-    new-instance p2, Lcom/iMe/ui/wallet/crypto/settings/blockchains/BlockchainsManagementPresenter;
+    .line 352
+    new-instance p1, Lcom/iMe/ui/wallet/crypto/create/secret_words_count/SecretWordsCountPresenter;
 
-    .line 133
-    const-class v0, Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;
+    invoke-direct {p1}, Lcom/iMe/ui/wallet/crypto/create/secret_words_count/SecretWordsCountPresenter;-><init>()V
 
-    invoke-static {v0}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
-
-    move-result-object v0
-
-    const/4 v1, 0x0
-
-    invoke-virtual {p1, v0, v1, v1}, Lorg/koin/core/scope/Scope;->get(Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v2, v0
-
-    check-cast v2, Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;
-
-    const-class v0, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
-
-    invoke-static {v0}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
-
-    move-result-object v0
-
-    invoke-virtual {p1, v0, v1, v1}, Lorg/koin/core/scope/Scope;->get(Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v3, v0
-
-    check-cast v3, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
-
-    const-class v0, Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;
-
-    invoke-static {v0}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
-
-    move-result-object v0
-
-    invoke-virtual {p1, v0, v1, v1}, Lorg/koin/core/scope/Scope;->get(Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v4, v0
-
-    check-cast v4, Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;
-
-    .line 133
-    const-class v0, Lcom/iMe/storage/domain/utils/system/ResourceManager;
-
-    invoke-static {v0}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
-
-    move-result-object v0
-
-    invoke-virtual {p1, v0, v1, v1}, Lorg/koin/core/scope/Scope;->get(Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v5, v0
-
-    check-cast v5, Lcom/iMe/storage/domain/utils/system/ResourceManager;
-
-    const-class v0, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
-
-    invoke-static {v0}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
-
-    move-result-object v0
-
-    invoke-virtual {p1, v0, v1, v1}, Lorg/koin/core/scope/Scope;->get(Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    move-object v6, p1
-
-    check-cast v6, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
-
-    move-object v1, p2
-
-    .line 278
-    invoke-direct/range {v1 .. v6}, Lcom/iMe/ui/wallet/crypto/settings/blockchains/BlockchainsManagementPresenter;-><init>(Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;Lcom/iMe/storage/domain/utils/system/ResourceManager;Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;)V
-
-    return-object p2
+    return-object p1
 .end method
 
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 277
+    .line 352
     check-cast p1, Lorg/koin/core/scope/Scope;
 
     check-cast p2, Lorg/koin/core/parameter/ParametersHolder;
 
-    invoke-virtual {p0, p1, p2}, Lcom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$39;->invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/iMe/ui/wallet/crypto/settings/blockchains/BlockchainsManagementPresenter;
+    invoke-virtual {p0, p1, p2}, Lcom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$39;->invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/iMe/ui/wallet/crypto/create/secret_words_count/SecretWordsCountPresenter;
 
     move-result-object p1
 

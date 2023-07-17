@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/ThemePreviewActivity$8;Lorg/telegram/messenger/MediaController$PhotoEntry;)V
     .locals 0
 
-    .line 920
+    .line 925
     iput-object p1, p0, Lorg/telegram/ui/ThemePreviewActivity$8$3;->this$1:Lorg/telegram/ui/ThemePreviewActivity$8;
 
     iput-object p2, p0, Lorg/telegram/ui/ThemePreviewActivity$8$3;->val$photoEntry:Lorg/telegram/messenger/MediaController$PhotoEntry;
@@ -39,14 +39,14 @@
 .method public sendButtonPressed(ILorg/telegram/messenger/VideoEditedInfo;ZIZLjava/lang/String;Z)V
     .locals 0
 
-    .line 923
+    .line 928
     iget-object p1, p0, Lorg/telegram/ui/ThemePreviewActivity$8$3;->val$photoEntry:Lorg/telegram/messenger/MediaController$PhotoEntry;
 
     iget-object p1, p1, Lorg/telegram/messenger/MediaController$MediaEditState;->imagePath:Ljava/lang/String;
 
     if-eqz p1, :cond_0
 
-    .line 924
+    .line 929
     new-instance p1, Ljava/io/File;
 
     const/4 p2, 0x4
@@ -77,12 +77,12 @@
 
     invoke-direct {p1, p2, p3}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
-    .line 925
+    .line 930
     invoke-static {}, Lorg/telegram/messenger/AndroidUtilities;->getRealScreenSize()Landroid/graphics/Point;
 
     move-result-object p2
 
-    .line 926
+    .line 931
     iget-object p3, p0, Lorg/telegram/ui/ThemePreviewActivity$8$3;->val$photoEntry:Lorg/telegram/messenger/MediaController$PhotoEntry;
 
     iget-object p3, p3, Lorg/telegram/messenger/MediaController$MediaEditState;->imagePath:Ljava/lang/String;
@@ -103,13 +103,13 @@
 
     move-result-object p2
 
-    .line 929
+    .line 934
     :try_start_0
     new-instance p3, Ljava/io/FileOutputStream;
 
     invoke-direct {p3, p1}, Ljava/io/FileOutputStream;-><init>(Ljava/io/File;)V
 
-    .line 931
+    .line 936
     sget-object p1, Landroid/graphics/Bitmap$CompressFormat;->JPEG:Landroid/graphics/Bitmap$CompressFormat;
 
     const/16 p4, 0x57
@@ -123,10 +123,10 @@
     :catch_0
     move-exception p1
 
-    .line 934
+    .line 939
     invoke-virtual {p1}, Ljava/io/FileNotFoundException;->printStackTrace()V
 
-    .line 936
+    .line 941
     :goto_0
     new-instance p1, Ljava/io/File;
 
@@ -136,7 +136,7 @@
 
     invoke-direct {p1, p3}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    .line 937
+    .line 942
     iget-object p3, p0, Lorg/telegram/ui/ThemePreviewActivity$8$3;->this$1:Lorg/telegram/ui/ThemePreviewActivity$8;
 
     iget-object p3, p3, Lorg/telegram/ui/ThemePreviewActivity$8;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
@@ -149,14 +149,14 @@
 
     invoke-static {p3, p4}, Lorg/telegram/ui/ThemePreviewActivity;->access$3202(Lorg/telegram/ui/ThemePreviewActivity;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 938
+    .line 943
     iget-object p1, p0, Lorg/telegram/ui/ThemePreviewActivity$8$3;->this$1:Lorg/telegram/ui/ThemePreviewActivity$8;
 
     iget-object p1, p1, Lorg/telegram/ui/ThemePreviewActivity$8;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
 
     invoke-static {p1, p2}, Lorg/telegram/ui/ThemePreviewActivity;->access$4702(Lorg/telegram/ui/ThemePreviewActivity;Landroid/graphics/Bitmap;)Landroid/graphics/Bitmap;
 
-    .line 939
+    .line 944
     iget-object p1, p0, Lorg/telegram/ui/ThemePreviewActivity$8$3;->this$1:Lorg/telegram/ui/ThemePreviewActivity$8;
 
     iget-object p1, p1, Lorg/telegram/ui/ThemePreviewActivity$8;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
@@ -165,7 +165,7 @@
 
     invoke-static {p1, p2}, Lorg/telegram/ui/ThemePreviewActivity;->access$4802(Lorg/telegram/ui/ThemePreviewActivity;I)I
 
-    .line 940
+    .line 945
     iget-object p1, p0, Lorg/telegram/ui/ThemePreviewActivity$8$3;->this$1:Lorg/telegram/ui/ThemePreviewActivity$8;
 
     iget-object p1, p1, Lorg/telegram/ui/ThemePreviewActivity$8;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
@@ -176,21 +176,21 @@
 
     invoke-virtual {p1}, Landroid/view/View;->requestLayout()V
 
-    .line 941
+    .line 946
     iget-object p1, p0, Lorg/telegram/ui/ThemePreviewActivity$8$3;->this$1:Lorg/telegram/ui/ThemePreviewActivity$8;
 
     iget-object p1, p1, Lorg/telegram/ui/ThemePreviewActivity$8;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
 
     invoke-static {p1, p2}, Lorg/telegram/ui/ThemePreviewActivity;->access$4900(Lorg/telegram/ui/ThemePreviewActivity;Z)V
 
-    .line 942
+    .line 947
     iget-object p1, p0, Lorg/telegram/ui/ThemePreviewActivity$8$3;->this$1:Lorg/telegram/ui/ThemePreviewActivity$8;
 
     iget-object p1, p1, Lorg/telegram/ui/ThemePreviewActivity$8;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
 
     invoke-static {p1, p6}, Lorg/telegram/ui/ThemePreviewActivity;->access$5002(Lorg/telegram/ui/ThemePreviewActivity;Landroid/graphics/Bitmap;)Landroid/graphics/Bitmap;
 
-    .line 943
+    .line 948
     iget-object p1, p0, Lorg/telegram/ui/ThemePreviewActivity$8$3;->this$1:Lorg/telegram/ui/ThemePreviewActivity$8;
 
     iget-object p1, p1, Lorg/telegram/ui/ThemePreviewActivity$8;->this$0:Lorg/telegram/ui/ThemePreviewActivity;

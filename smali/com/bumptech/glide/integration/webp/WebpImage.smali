@@ -136,7 +136,7 @@
     .line 82
     aget v1, p1, v0
 
-    const/16 v2, 0x14
+    const/16 v2, 0xb
 
     if-ge v1, v2, :cond_0
 

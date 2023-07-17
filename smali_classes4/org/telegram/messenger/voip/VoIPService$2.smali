@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/messenger/voip/VoIPService;)V
     .locals 0
 
-    .line 361
+    .line 365
     iput-object p1, p0, Lorg/telegram/messenger/voip/VoIPService$2;->this$0:Lorg/telegram/messenger/voip/VoIPService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public onServiceConnected(ILandroid/bluetooth/BluetoothProfile;)V
     .locals 4
 
-    .line 370
+    .line 374
     :try_start_0
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
@@ -46,7 +46,7 @@
 
     if-ge v0, v1, :cond_1
 
-    .line 371
+    .line 375
     invoke-interface {p2}, Landroid/bluetooth/BluetoothProfile;->getConnectedDevices()Ljava/util/List;
 
     move-result-object v0
@@ -68,7 +68,7 @@
 
     check-cast v1, Landroid/bluetooth/BluetoothDevice;
 
-    .line 372
+    .line 376
     invoke-interface {p2, v1}, Landroid/bluetooth/BluetoothProfile;->getConnectionState(Landroid/bluetooth/BluetoothDevice;)I
 
     move-result v2
@@ -79,7 +79,7 @@
 
     goto :goto_0
 
-    .line 375
+    .line 379
     :cond_0
     iget-object v0, p0, Lorg/telegram/messenger/voip/VoIPService$2;->this$0:Lorg/telegram/messenger/voip/VoIPService;
 
@@ -89,7 +89,7 @@
 
     iput-object v1, v0, Lorg/telegram/messenger/voip/VoIPService;->currentBluetoothDeviceName:Ljava/lang/String;
 
-    .line 379
+    .line 383
     :cond_1
     invoke-static {}, Landroid/bluetooth/BluetoothAdapter;->getDefaultAdapter()Landroid/bluetooth/BluetoothAdapter;
 
@@ -97,7 +97,7 @@
 
     invoke-virtual {v0, p1, p2}, Landroid/bluetooth/BluetoothAdapter;->closeProfileProxy(ILandroid/bluetooth/BluetoothProfile;)V
 
-    .line 380
+    .line 384
     iget-object p1, p0, Lorg/telegram/messenger/voip/VoIPService$2;->this$0:Lorg/telegram/messenger/voip/VoIPService;
 
     const/4 p2, 0x0
@@ -111,7 +111,7 @@
     :catchall_0
     move-exception p1
 
-    .line 382
+    .line 386
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :goto_1

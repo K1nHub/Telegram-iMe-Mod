@@ -7,7 +7,7 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Lambda;
 import org.koin.core.parameter.ParametersHolder;
 import org.koin.core.parameter.ParametersHolderKt;
-import org.koin.p043mp.KoinPlatformTools;
+import org.koin.p042mp.KoinPlatformTools;
 /* compiled from: TwitterSearchFragment.kt */
 /* loaded from: classes3.dex */
 final class TwitterSearchFragment$presenter$2 extends Lambda implements Function0<TwitterSearchPresenter> {
@@ -26,11 +26,11 @@ final class TwitterSearchFragment$presenter$2 extends Lambda implements Function
     /* compiled from: TwitterSearchFragment.kt */
     /* renamed from: com.iMe.feature.twitter.search.TwitterSearchFragment$presenter$2$1 */
     /* loaded from: classes3.dex */
-    public static final class C14751 extends Lambda implements Function0<ParametersHolder> {
+    public static final class C14861 extends Lambda implements Function0<ParametersHolder> {
         final /* synthetic */ BlockchainType $blockchainType;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C14751(BlockchainType blockchainType) {
+        C14861(BlockchainType blockchainType) {
             super(0);
             this.$blockchainType = blockchainType;
         }
@@ -45,7 +45,7 @@ final class TwitterSearchFragment$presenter$2 extends Lambda implements Function
     @Override // kotlin.jvm.functions.Function0
     public final TwitterSearchPresenter invoke() {
         Lazy lazy;
-        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new C1474xf65f4133(this.this$0, null, new C14751(this.$blockchainType)));
+        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new C1485xf65f4133(this.this$0, null, new C14861(this.$blockchainType)));
         return (TwitterSearchPresenter) lazy.getValue();
     }
 }

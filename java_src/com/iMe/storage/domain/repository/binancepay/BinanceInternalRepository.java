@@ -10,8 +10,6 @@ import com.iMe.storage.domain.model.binancepay.BinanceTokenInfo;
 import com.iMe.storage.domain.model.binancepay.BinanceTransaction;
 import com.iMe.storage.domain.model.binancepay.BinanceUserInfo;
 import com.iMe.storage.domain.model.binancepay.OutputConvertToken;
-import com.iMe.storage.domain.model.crypto.NetworkType;
-import com.iMe.storage.domain.model.wallet.token.TokenCode;
 import io.reactivex.Observable;
 import java.util.List;
 /* compiled from: BinanceInternalRepository.kt */
@@ -21,7 +19,7 @@ public interface BinanceInternalRepository {
 
     Observable<Result<BinanceCollectionOrder>> createCollection(long j, double d, String str);
 
-    Observable<Result<String>> getAddressForTokenReplenish(TokenCode tokenCode, NetworkType networkType);
+    Observable<Result<String>> getAddressForTokenReplenish(String str, String str2);
 
     Observable<Result<BinanceAuthTokens>> getAuthTokens(BinancePayAuthType binancePayAuthType, String str);
 
@@ -33,7 +31,7 @@ public interface BinanceInternalRepository {
 
     Observable<Result<List<BinanceTokenInfo>>> getTokensForConvert();
 
-    Observable<Result<List<BinanceTokenInfo>>> getTokensForReplenish(NetworkType networkType);
+    Observable<Result<List<BinanceTokenInfo>>> getTokensForReplenish(String str);
 
     Observable<Result<BinanceTransaction>> getTransaction(String str);
 

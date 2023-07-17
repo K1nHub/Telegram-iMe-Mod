@@ -26,7 +26,7 @@
 .method constructor <init>(Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessView$$State;)V
     .locals 1
 
-    .line 501
+    .line 509
     const-class p1, Lmoxy/viewstate/strategy/OneExecutionStateStrategy;
 
     const-string/jumbo v0, "showSuccessSwapAlert"
@@ -41,7 +41,7 @@
 .method public apply(Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessView;)V
     .locals 0
 
-    .line 506
+    .line 514
     invoke-interface {p1}, Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessView;->showSuccessSwapAlert()V
 
     return-void
@@ -50,7 +50,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 499
+    .line 507
     check-cast p1, Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessView$$State$ShowSuccessSwapAlertCommand;->apply(Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessView;)V

@@ -1,14 +1,14 @@
 package com.iMe.p031ui.wallet.transaction;
 
 import com.iMe.p031ui.wallet.transaction.WalletTransactionsFragment;
-import com.iMe.storage.domain.model.wallet.token.TokenCode;
+import com.iMe.storage.domain.model.wallet.token.Token;
 import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Lambda;
 import org.koin.core.parameter.ParametersHolder;
 import org.koin.core.parameter.ParametersHolderKt;
-import org.koin.p043mp.KoinPlatformTools;
+import org.koin.p042mp.KoinPlatformTools;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: WalletTransactionsFragment.kt */
 /* renamed from: com.iMe.ui.wallet.transaction.WalletTransactionsFragment$presenter$2 */
@@ -27,11 +27,11 @@ public final class WalletTransactionsFragment$presenter$2 extends Lambda impleme
     /* compiled from: WalletTransactionsFragment.kt */
     /* renamed from: com.iMe.ui.wallet.transaction.WalletTransactionsFragment$presenter$2$1 */
     /* loaded from: classes4.dex */
-    public static final class C24081 extends Lambda implements Function0<ParametersHolder> {
+    public static final class C24591 extends Lambda implements Function0<ParametersHolder> {
         final /* synthetic */ WalletTransactionsFragment this$0;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C24081(WalletTransactionsFragment walletTransactionsFragment) {
+        C24591(WalletTransactionsFragment walletTransactionsFragment) {
             super(0);
             this.this$0 = walletTransactionsFragment;
         }
@@ -39,10 +39,10 @@ public final class WalletTransactionsFragment$presenter$2 extends Lambda impleme
         @Override // kotlin.jvm.functions.Function0
         public final ParametersHolder invoke() {
             WalletTransactionsFragment.ScreenType screenType;
-            TokenCode tokenCode;
+            Token token;
             screenType = this.this$0.screenType;
-            tokenCode = this.this$0.tokenCode;
-            return ParametersHolderKt.parametersOf(screenType, tokenCode);
+            token = this.this$0.token;
+            return ParametersHolderKt.parametersOf(screenType, token);
         }
     }
 
@@ -51,7 +51,7 @@ public final class WalletTransactionsFragment$presenter$2 extends Lambda impleme
     public final WalletTransactionsPresenter invoke() {
         Lazy lazy;
         WalletTransactionsFragment walletTransactionsFragment = this.this$0;
-        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new C2407xe8acc4e0(walletTransactionsFragment, null, new C24081(walletTransactionsFragment)));
+        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new C2458xe8acc4e0(walletTransactionsFragment, null, new C24591(walletTransactionsFragment)));
         return (WalletTransactionsPresenter) lazy.getValue();
     }
 }

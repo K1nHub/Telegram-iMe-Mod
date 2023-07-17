@@ -187,7 +187,7 @@
     :cond_2
     new-instance p1, Ljava/lang/IllegalStateException;
 
-    const-string p2, "remotely-initiated streams should have headers"
+    const-string/jumbo p2, "remotely-initiated streams should have headers"
 
     invoke-virtual {p2}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
@@ -601,7 +601,7 @@
         }
     .end annotation
 
-    const-string v0, "rstStatusCode"
+    const-string/jumbo v0, "rstStatusCode"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -778,7 +778,7 @@
 
     :cond_2
     :try_start_1
-    const-string v0, "reply before requesting the sink"
+    const-string/jumbo v0, "reply before requesting the sink"
 
     .line 224
     new-instance v1, Ljava/lang/IllegalStateException;

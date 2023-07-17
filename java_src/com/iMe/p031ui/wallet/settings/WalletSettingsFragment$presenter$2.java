@@ -4,7 +4,7 @@ import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Lambda;
-import org.koin.p043mp.KoinPlatformTools;
+import org.koin.p042mp.KoinPlatformTools;
 /* compiled from: WalletSettingsFragment.kt */
 /* renamed from: com.iMe.ui.wallet.settings.WalletSettingsFragment$presenter$2 */
 /* loaded from: classes4.dex */
@@ -22,7 +22,7 @@ final class WalletSettingsFragment$presenter$2 extends Lambda implements Functio
     @Override // kotlin.jvm.functions.Function0
     public final WalletSettingsPresenter invoke() {
         Lazy lazy;
-        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new C2327xd32e4252(this.this$0, null, null));
+        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new C2373xd32e4252(this.this$0, null, null));
         return (WalletSettingsPresenter) lazy.getValue();
     }
 }

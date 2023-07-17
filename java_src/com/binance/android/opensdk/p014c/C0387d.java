@@ -5,7 +5,7 @@ import android.content.pm.PackageInfo;
 import android.content.pm.Signature;
 import android.content.pm.SigningInfo;
 import android.os.Build;
-import com.google.android.exoplayer2.C0475C;
+import com.google.android.exoplayer2.C0480C;
 import kotlin.collections.ArraysKt;
 import kotlin.jvm.internal.Intrinsics;
 /* renamed from: com.binance.android.opensdk.c.d */
@@ -32,7 +32,7 @@ public final class C0387d {
         Signature signature;
         try {
             if (Build.VERSION.SDK_INT >= 28) {
-                PackageInfo packageInfo = context.getPackageManager().getPackageInfo(str, C0475C.BUFFER_FLAG_FIRST_SAMPLE);
+                PackageInfo packageInfo = context.getPackageManager().getPackageInfo(str, C0480C.BUFFER_FLAG_FIRST_SAMPLE);
                 Intrinsics.checkExpressionValueIsNotNull(packageInfo, "context.packageManager.g…FICATES\n                )");
                 signature = m814a(packageInfo);
             } else {

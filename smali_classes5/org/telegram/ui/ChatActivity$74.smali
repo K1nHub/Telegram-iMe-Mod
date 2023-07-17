@@ -18,7 +18,7 @@
 .method constructor <init>(Lorg/telegram/ui/ChatActivity;)V
     .locals 0
 
-    .line 11497
+    .line 11404
     invoke-direct {p0}, Landroid/view/ViewOutlineProvider;-><init>()V
 
     return-void
@@ -29,7 +29,7 @@
 .method public getOutline(Landroid/view/View;Landroid/graphics/Outline;)V
     .locals 9
 
-    .line 11502
+    .line 11409
     sget v0, Lorg/telegram/messenger/R$id;->parent_tag:I
 
     invoke-virtual {p1, v0}, Landroid/view/View;->getTag(I)Ljava/lang/Object;
@@ -42,7 +42,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 11504
+    .line 11411
     invoke-virtual {v0}, Lorg/telegram/messenger/ImageReceiver;->getRoundRadius()[I
 
     move-result-object v0
@@ -54,7 +54,7 @@
 
     if-ge v1, v3, :cond_0
 
-    .line 11507
+    .line 11414
     aget v3, v0, v1
 
     invoke-static {v2, v3}, Ljava/lang/Math;->max(II)I
@@ -70,7 +70,7 @@
 
     const/4 v5, 0x0
 
-    .line 11509
+    .line 11416
     invoke-virtual {p1}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v6
@@ -87,7 +87,7 @@
 
     goto :goto_1
 
-    .line 11511
+    .line 11418
     :cond_1
     sget p1, Lorg/telegram/messenger/AndroidUtilities;->roundPlayingMessageSize:I
 

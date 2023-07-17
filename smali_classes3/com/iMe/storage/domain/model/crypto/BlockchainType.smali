@@ -36,6 +36,8 @@
 # instance fields
 .field private final backendName:Ljava/lang/String;
 
+.field private final coinType:Lwallet/core/jni/CoinType;
+
 .field private final iconResId:I
 
 .field private final subtitleResId:I
@@ -79,19 +81,22 @@
 .end method
 
 .method static constructor <clinit>()V
-    .locals 15
-
-    .line 13
-    new-instance v7, Lcom/iMe/storage/domain/model/crypto/BlockchainType;
+    .locals 17
 
     .line 15
-    sget v4, Lcom/iMe/storage/R$drawable;->fork_ic_evm_logo:I
-
-    .line 16
-    sget v5, Lcom/iMe/storage/R$string;->wallet_crypto_blockchains_evm_title:I
+    new-instance v8, Lcom/iMe/storage/domain/model/crypto/BlockchainType;
 
     .line 17
+    sget v4, Lcom/iMe/storage/R$drawable;->fork_ic_evm_logo:I
+
+    .line 18
+    sget v5, Lcom/iMe/storage/R$string;->wallet_crypto_blockchains_evm_title:I
+
+    .line 19
     sget v6, Lcom/iMe/storage/R$string;->wallet_crypto_blockchains_evm_subtitle:I
+
+    .line 20
+    sget-object v7, Lwallet/core/jni/CoinType;->ETHEREUM:Lwallet/core/jni/CoinType;
 
     const-string v1, "EVM"
 
@@ -99,49 +104,55 @@
 
     const-string v3, "ETHEREUM_VM"
 
-    move-object v0, v7
+    move-object v0, v8
 
-    .line 13
-    invoke-direct/range {v0 .. v6}, Lcom/iMe/storage/domain/model/crypto/BlockchainType;-><init>(Ljava/lang/String;ILjava/lang/String;III)V
+    .line 15
+    invoke-direct/range {v0 .. v7}, Lcom/iMe/storage/domain/model/crypto/BlockchainType;-><init>(Ljava/lang/String;ILjava/lang/String;IIILwallet/core/jni/CoinType;)V
 
-    sput-object v7, Lcom/iMe/storage/domain/model/crypto/BlockchainType;->EVM:Lcom/iMe/storage/domain/model/crypto/BlockchainType;
-
-    .line 19
-    new-instance v0, Lcom/iMe/storage/domain/model/crypto/BlockchainType;
-
-    .line 21
-    sget v12, Lcom/iMe/storage/R$drawable;->fork_ic_tron_logo:I
+    sput-object v8, Lcom/iMe/storage/domain/model/crypto/BlockchainType;->EVM:Lcom/iMe/storage/domain/model/crypto/BlockchainType;
 
     .line 22
-    sget v13, Lcom/iMe/storage/R$string;->wallet_crypto_blockchains_tron_title:I
+    new-instance v0, Lcom/iMe/storage/domain/model/crypto/BlockchainType;
 
-    .line 23
-    sget v14, Lcom/iMe/storage/R$string;->wallet_crypto_blockchains_tron_subtitle:I
+    .line 24
+    sget v13, Lcom/iMe/storage/R$drawable;->fork_ic_tron_logo:I
 
-    const-string v9, "TRON"
+    .line 25
+    sget v14, Lcom/iMe/storage/R$string;->wallet_crypto_blockchains_tron_title:I
 
-    const/4 v10, 0x1
+    .line 26
+    sget v15, Lcom/iMe/storage/R$string;->wallet_crypto_blockchains_tron_subtitle:I
 
-    const-string v11, "TRON_VM"
+    .line 27
+    sget-object v16, Lwallet/core/jni/CoinType;->TRON:Lwallet/core/jni/CoinType;
 
-    move-object v8, v0
+    const-string v10, "TRON"
 
-    .line 19
-    invoke-direct/range {v8 .. v14}, Lcom/iMe/storage/domain/model/crypto/BlockchainType;-><init>(Ljava/lang/String;ILjava/lang/String;III)V
+    const/4 v11, 0x1
+
+    const-string v12, "TRON_VM"
+
+    move-object v9, v0
+
+    .line 22
+    invoke-direct/range {v9 .. v16}, Lcom/iMe/storage/domain/model/crypto/BlockchainType;-><init>(Ljava/lang/String;ILjava/lang/String;IIILwallet/core/jni/CoinType;)V
 
     sput-object v0, Lcom/iMe/storage/domain/model/crypto/BlockchainType;->TRON:Lcom/iMe/storage/domain/model/crypto/BlockchainType;
 
-    .line 25
+    .line 29
     new-instance v0, Lcom/iMe/storage/domain/model/crypto/BlockchainType;
 
-    .line 27
+    .line 31
     sget v5, Lcom/iMe/storage/R$drawable;->fork_ic_ton_logo:I
 
-    .line 28
+    .line 32
     sget v6, Lcom/iMe/storage/R$string;->wallet_crypto_blockchains_ton_title:I
 
-    .line 29
+    .line 33
     sget v7, Lcom/iMe/storage/R$string;->wallet_crypto_blockchains_ton_subtitle:I
+
+    .line 34
+    sget-object v8, Lwallet/core/jni/CoinType;->TON:Lwallet/core/jni/CoinType;
 
     const-string v2, "TON"
 
@@ -151,33 +162,36 @@
 
     move-object v1, v0
 
-    .line 25
-    invoke-direct/range {v1 .. v7}, Lcom/iMe/storage/domain/model/crypto/BlockchainType;-><init>(Ljava/lang/String;ILjava/lang/String;III)V
+    .line 29
+    invoke-direct/range {v1 .. v8}, Lcom/iMe/storage/domain/model/crypto/BlockchainType;-><init>(Ljava/lang/String;ILjava/lang/String;IIILwallet/core/jni/CoinType;)V
 
     sput-object v0, Lcom/iMe/storage/domain/model/crypto/BlockchainType;->TON:Lcom/iMe/storage/domain/model/crypto/BlockchainType;
 
-    .line 31
+    .line 36
     new-instance v0, Lcom/iMe/storage/domain/model/crypto/BlockchainType;
 
-    .line 33
-    sget v12, Lcom/iMe/storage/R$drawable;->fork_ic_bitcoin_logo:I
+    .line 38
+    sget v13, Lcom/iMe/storage/R$drawable;->fork_ic_bitcoin_logo:I
 
-    .line 34
-    sget v13, Lcom/iMe/storage/R$string;->wallet_crypto_blockchains_bitcoin_title:I
+    .line 39
+    sget v14, Lcom/iMe/storage/R$string;->wallet_crypto_blockchains_bitcoin_title:I
 
-    .line 35
-    sget v14, Lcom/iMe/storage/R$string;->wallet_crypto_blockchains_bitcoin_subtitle:I
+    .line 40
+    sget v15, Lcom/iMe/storage/R$string;->wallet_crypto_blockchains_bitcoin_subtitle:I
 
-    const-string v9, "BITCOIN"
+    .line 41
+    sget-object v16, Lwallet/core/jni/CoinType;->BITCOIN:Lwallet/core/jni/CoinType;
 
-    const/4 v10, 0x3
+    const-string v10, "BITCOIN"
 
-    const-string v11, "BITCOIN"
+    const/4 v11, 0x3
 
-    move-object v8, v0
+    const-string v12, "BITCOIN"
 
-    .line 31
-    invoke-direct/range {v8 .. v14}, Lcom/iMe/storage/domain/model/crypto/BlockchainType;-><init>(Ljava/lang/String;ILjava/lang/String;III)V
+    move-object v9, v0
+
+    .line 36
+    invoke-direct/range {v9 .. v16}, Lcom/iMe/storage/domain/model/crypto/BlockchainType;-><init>(Ljava/lang/String;ILjava/lang/String;IIILwallet/core/jni/CoinType;)V
 
     sput-object v0, Lcom/iMe/storage/domain/model/crypto/BlockchainType;->BITCOIN:Lcom/iMe/storage/domain/model/crypto/BlockchainType;
 
@@ -198,30 +212,35 @@
     return-void
 .end method
 
-.method private constructor <init>(Ljava/lang/String;ILjava/lang/String;III)V
+.method private constructor <init>(Ljava/lang/String;ILjava/lang/String;IIILwallet/core/jni/CoinType;)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Ljava/lang/String;",
-            "III)V"
+            "III",
+            "Lwallet/core/jni/CoinType;",
+            ")V"
         }
     .end annotation
 
-    .line 7
+    .line 8
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    .line 8
+    .line 9
     iput-object p3, p0, Lcom/iMe/storage/domain/model/crypto/BlockchainType;->backendName:Ljava/lang/String;
 
-    .line 9
+    .line 10
     iput p4, p0, Lcom/iMe/storage/domain/model/crypto/BlockchainType;->iconResId:I
 
-    .line 10
+    .line 11
     iput p5, p0, Lcom/iMe/storage/domain/model/crypto/BlockchainType;->titleResId:I
 
-    .line 11
+    .line 12
     iput p6, p0, Lcom/iMe/storage/domain/model/crypto/BlockchainType;->subtitleResId:I
+
+    .line 13
+    iput-object p7, p0, Lcom/iMe/storage/domain/model/crypto/BlockchainType;->coinType:Lwallet/core/jni/CoinType;
 
     return-void
 .end method
@@ -271,8 +290,17 @@
 .method public final getBackendName()Ljava/lang/String;
     .locals 1
 
-    .line 8
+    .line 9
     iget-object v0, p0, Lcom/iMe/storage/domain/model/crypto/BlockchainType;->backendName:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public final getCoinType()Lwallet/core/jni/CoinType;
+    .locals 1
+
+    .line 13
+    iget-object v0, p0, Lcom/iMe/storage/domain/model/crypto/BlockchainType;->coinType:Lwallet/core/jni/CoinType;
 
     return-object v0
 .end method
@@ -280,7 +308,7 @@
 .method public final getIconResId()I
     .locals 1
 
-    .line 9
+    .line 10
     iget v0, p0, Lcom/iMe/storage/domain/model/crypto/BlockchainType;->iconResId:I
 
     return v0
@@ -289,7 +317,7 @@
 .method public final getSubtitleResId()I
     .locals 1
 
-    .line 11
+    .line 12
     iget v0, p0, Lcom/iMe/storage/domain/model/crypto/BlockchainType;->subtitleResId:I
 
     return v0
@@ -298,7 +326,7 @@
 .method public final getTitleResId()I
     .locals 1
 
-    .line 10
+    .line 11
     iget v0, p0, Lcom/iMe/storage/domain/model/crypto/BlockchainType;->titleResId:I
 
     return v0
@@ -307,7 +335,7 @@
 .method public final isBip39PhraseBased()Z
     .locals 1
 
-    .line 38
+    .line 44
     sget-object v0, Lcom/iMe/storage/domain/model/crypto/BlockchainType;->Companion:Lcom/iMe/storage/domain/model/crypto/BlockchainType$Companion;
 
     invoke-virtual {v0}, Lcom/iMe/storage/domain/model/crypto/BlockchainType$Companion;->getBip39PhraseBasedBlockchains()Ljava/util/List;

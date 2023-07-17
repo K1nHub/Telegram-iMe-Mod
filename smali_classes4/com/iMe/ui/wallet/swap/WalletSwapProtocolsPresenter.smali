@@ -34,7 +34,7 @@
 .method public constructor <init>(Lcom/iMe/storage/domain/utils/system/ResourceManager;Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;Lcom/iMe/storage/domain/manager/binancepay/BinancePayManager;Lcom/iMe/storage/domain/utils/rx/RxEventBus;)V
     .locals 1
 
-    const-string v0, "resourceManager"
+    const-string/jumbo v0, "resourceManager"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -46,7 +46,7 @@
 
     invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "rxEventBus"
+    const-string/jumbo v0, "rxEventBus"
 
     invoke-static {p4, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -108,7 +108,7 @@
     move-result-object v3
 
     .line 1621
-    check-cast v3, Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocolInfo;
+    check-cast v3, Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocolInfo$Oneinch;
 
     .line 58
     new-instance v5, Lcom/iMe/model/wallet/swap/DexProtocolItem;
@@ -414,7 +414,7 @@
     return-void
 .end method
 
-.method public final startSwapScreenFlow(Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocolInfo;Lcom/iMe/storage/domain/model/wallet/token/TokenCode;)V
+.method public final startSwapScreenFlow(Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocolInfo;Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;)V
     .locals 5
 
     const-string/jumbo v0, "swapProtocolInfo"
@@ -422,7 +422,7 @@
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 37
-    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocolInfo;->getSupportedNetworks()Ljava/util/List;
+    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocolInfo;->getSupportedNetworksIds()Ljava/util/List;
 
     move-result-object v0
 
@@ -430,7 +430,7 @@
 
     if-nez p2, :cond_0
 
-    goto :goto_1
+    goto :goto_0
 
     .line 40
     :cond_0
@@ -443,7 +443,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_3
+    if-eqz v2, :cond_2
 
     invoke-interface {p2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -451,32 +451,26 @@
 
     move-object v3, v2
 
-    check-cast v3, Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    check-cast v3, Ljava/lang/String;
 
     iget-object v4, p0, Lcom/iMe/ui/wallet/swap/WalletSwapProtocolsPresenter;->cryptoPreferenceHelper:Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
 
-    invoke-interface {v4}, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;->getNetworkType()Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    invoke-interface {v4}, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;->getNetworkId()Ljava/lang/String;
 
     move-result-object v4
 
-    if-ne v3, v4, :cond_2
+    invoke-static {v3, v4}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    const/4 v3, 0x1
+    move-result v3
 
-    goto :goto_0
-
-    :cond_2
-    const/4 v3, 0x0
-
-    :goto_0
     if-eqz v3, :cond_1
 
     move-object v1, v2
 
-    :cond_3
-    check-cast v1, Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    :cond_2
+    check-cast v1, Ljava/lang/String;
 
-    if-nez v1, :cond_4
+    if-nez v1, :cond_3
 
     invoke-static {v0}, Lkotlin/collections/CollectionsKt;->firstOrNull(Ljava/util/List;)Ljava/lang/Object;
 
@@ -484,18 +478,18 @@
 
     move-object v1, p2
 
-    check-cast v1, Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    check-cast v1, Ljava/lang/String;
 
     .line 41
-    :cond_4
-    :goto_1
+    :cond_3
+    :goto_0
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
     move-result-object p2
 
     check-cast p2, Lcom/iMe/ui/wallet/swap/WalletSwapProtocolsView;
 
-    invoke-interface {p2, p1, v1}, Lcom/iMe/ui/wallet/swap/WalletSwapProtocolsView;->openSwapScreen(Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocolInfo;Lcom/iMe/storage/domain/model/crypto/NetworkType;)V
+    invoke-interface {p2, p1, v1}, Lcom/iMe/ui/wallet/swap/WalletSwapProtocolsView;->openSwapScreen(Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocolInfo;Ljava/lang/String;)V
 
     return-void
 .end method

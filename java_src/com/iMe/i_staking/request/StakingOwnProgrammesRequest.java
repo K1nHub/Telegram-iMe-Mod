@@ -1,6 +1,5 @@
 package com.iMe.i_staking.request;
 
-import com.iMe.storage.domain.model.crypto.NetworkType;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: StakingOwnProgrammesRequest.kt */
@@ -8,13 +7,13 @@ import kotlin.jvm.internal.Intrinsics;
 public final class StakingOwnProgrammesRequest {
     private final Long lastItemId;
     private final Integer limit;
-    private final NetworkType networkType;
+    private final String networkType;
     private final StakingOrderStrategyRequest order;
     private final String status;
 
-    public static /* synthetic */ StakingOwnProgrammesRequest copy$default(StakingOwnProgrammesRequest stakingOwnProgrammesRequest, NetworkType networkType, Long l, Integer num, StakingOrderStrategyRequest stakingOrderStrategyRequest, String str, int i, Object obj) {
+    public static /* synthetic */ StakingOwnProgrammesRequest copy$default(StakingOwnProgrammesRequest stakingOwnProgrammesRequest, String str, Long l, Integer num, StakingOrderStrategyRequest stakingOrderStrategyRequest, String str2, int i, Object obj) {
         if ((i & 1) != 0) {
-            networkType = stakingOwnProgrammesRequest.networkType;
+            str = stakingOwnProgrammesRequest.networkType;
         }
         if ((i & 2) != 0) {
             l = stakingOwnProgrammesRequest.lastItemId;
@@ -29,12 +28,12 @@ public final class StakingOwnProgrammesRequest {
         }
         StakingOrderStrategyRequest stakingOrderStrategyRequest2 = stakingOrderStrategyRequest;
         if ((i & 16) != 0) {
-            str = stakingOwnProgrammesRequest.status;
+            str2 = stakingOwnProgrammesRequest.status;
         }
-        return stakingOwnProgrammesRequest.copy(networkType, l2, num2, stakingOrderStrategyRequest2, str);
+        return stakingOwnProgrammesRequest.copy(str, l2, num2, stakingOrderStrategyRequest2, str2);
     }
 
-    public final NetworkType component1() {
+    public final String component1() {
         return this.networkType;
     }
 
@@ -54,9 +53,9 @@ public final class StakingOwnProgrammesRequest {
         return this.status;
     }
 
-    public final StakingOwnProgrammesRequest copy(NetworkType networkType, Long l, Integer num, StakingOrderStrategyRequest stakingOrderStrategyRequest, String status) {
+    public final StakingOwnProgrammesRequest copy(String str, Long l, Integer num, StakingOrderStrategyRequest stakingOrderStrategyRequest, String status) {
         Intrinsics.checkNotNullParameter(status, "status");
-        return new StakingOwnProgrammesRequest(networkType, l, num, stakingOrderStrategyRequest, status);
+        return new StakingOwnProgrammesRequest(str, l, num, stakingOrderStrategyRequest, status);
     }
 
     public boolean equals(Object obj) {
@@ -65,14 +64,14 @@ public final class StakingOwnProgrammesRequest {
         }
         if (obj instanceof StakingOwnProgrammesRequest) {
             StakingOwnProgrammesRequest stakingOwnProgrammesRequest = (StakingOwnProgrammesRequest) obj;
-            return this.networkType == stakingOwnProgrammesRequest.networkType && Intrinsics.areEqual(this.lastItemId, stakingOwnProgrammesRequest.lastItemId) && Intrinsics.areEqual(this.limit, stakingOwnProgrammesRequest.limit) && Intrinsics.areEqual(this.order, stakingOwnProgrammesRequest.order) && Intrinsics.areEqual(this.status, stakingOwnProgrammesRequest.status);
+            return Intrinsics.areEqual(this.networkType, stakingOwnProgrammesRequest.networkType) && Intrinsics.areEqual(this.lastItemId, stakingOwnProgrammesRequest.lastItemId) && Intrinsics.areEqual(this.limit, stakingOwnProgrammesRequest.limit) && Intrinsics.areEqual(this.order, stakingOwnProgrammesRequest.order) && Intrinsics.areEqual(this.status, stakingOwnProgrammesRequest.status);
         }
         return false;
     }
 
     public int hashCode() {
-        NetworkType networkType = this.networkType;
-        int hashCode = (networkType == null ? 0 : networkType.hashCode()) * 31;
+        String str = this.networkType;
+        int hashCode = (str == null ? 0 : str.hashCode()) * 31;
         Long l = this.lastItemId;
         int hashCode2 = (hashCode + (l == null ? 0 : l.hashCode())) * 31;
         Integer num = this.limit;
@@ -85,20 +84,20 @@ public final class StakingOwnProgrammesRequest {
         return "StakingOwnProgrammesRequest(networkType=" + this.networkType + ", lastItemId=" + this.lastItemId + ", limit=" + this.limit + ", order=" + this.order + ", status=" + this.status + ')';
     }
 
-    public StakingOwnProgrammesRequest(NetworkType networkType, Long l, Integer num, StakingOrderStrategyRequest stakingOrderStrategyRequest, String status) {
+    public StakingOwnProgrammesRequest(String str, Long l, Integer num, StakingOrderStrategyRequest stakingOrderStrategyRequest, String status) {
         Intrinsics.checkNotNullParameter(status, "status");
-        this.networkType = networkType;
+        this.networkType = str;
         this.lastItemId = l;
         this.limit = num;
         this.order = stakingOrderStrategyRequest;
         this.status = status;
     }
 
-    public /* synthetic */ StakingOwnProgrammesRequest(NetworkType networkType, Long l, Integer num, StakingOrderStrategyRequest stakingOrderStrategyRequest, String str, int i, DefaultConstructorMarker defaultConstructorMarker) {
-        this((i & 1) != 0 ? null : networkType, (i & 2) != 0 ? null : l, (i & 4) != 0 ? null : num, (i & 8) != 0 ? null : stakingOrderStrategyRequest, str);
+    public /* synthetic */ StakingOwnProgrammesRequest(String str, Long l, Integer num, StakingOrderStrategyRequest stakingOrderStrategyRequest, String str2, int i, DefaultConstructorMarker defaultConstructorMarker) {
+        this((i & 1) != 0 ? null : str, (i & 2) != 0 ? null : l, (i & 4) != 0 ? null : num, (i & 8) != 0 ? null : stakingOrderStrategyRequest, str2);
     }
 
-    public final NetworkType getNetworkType() {
+    public final String getNetworkType() {
         return this.networkType;
     }
 

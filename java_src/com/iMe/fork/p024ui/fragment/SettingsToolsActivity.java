@@ -20,13 +20,13 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.PropertyReference1Impl;
 import kotlin.jvm.internal.Reflection;
 import kotlin.reflect.KProperty;
-import org.telegram.messenger.C3295R;
+import org.telegram.messenger.C3417R;
 import org.telegram.messenger.LocaleController;
-import org.telegram.p044ui.ActionBar.C3361ActionBar;
-import org.telegram.p044ui.ActionBar.Theme;
-import org.telegram.p044ui.ActionBar.ThemeDescription;
-import org.telegram.p044ui.Cells.TextCell;
-import org.telegram.p044ui.Components.RecyclerListView;
+import org.telegram.p043ui.ActionBar.C3484ActionBar;
+import org.telegram.p043ui.ActionBar.Theme;
+import org.telegram.p043ui.ActionBar.ThemeDescription;
+import org.telegram.p043ui.Cells.TextCell;
+import org.telegram.p043ui.Components.RecyclerListView;
 /* compiled from: SettingsToolsActivity.kt */
 /* renamed from: com.iMe.fork.ui.fragment.SettingsToolsActivity */
 /* loaded from: classes3.dex */
@@ -61,19 +61,19 @@ public final class SettingsToolsActivity extends MvpFragment {
         return rootView;
     }
 
-    @Override // com.iMe.p031ui.base.mvp.MvpFragment, org.telegram.p044ui.ActionBar.BaseFragment
+    @Override // com.iMe.p031ui.base.mvp.MvpFragment, org.telegram.p043ui.ActionBar.BaseFragment
     public void onResume() {
         super.onResume();
         getListAdapter().notifyDataSetChanged();
     }
 
-    @Override // org.telegram.p044ui.ActionBar.BaseFragment
+    @Override // org.telegram.p043ui.ActionBar.BaseFragment
     public ArrayList<ThemeDescription> getThemeDescriptions() {
         ArrayList<ThemeDescription> arrayListOf;
-        C3361ActionBar c3361ActionBar = this.actionBar;
+        C3484ActionBar c3484ActionBar = this.actionBar;
         int i = ThemeDescription.FLAG_BACKGROUND;
         int i2 = Theme.key_actionBarDefault;
-        arrayListOf = CollectionsKt__CollectionsKt.arrayListOf(new ThemeDescription(this.fragmentView, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, Theme.key_windowBackgroundGray), new ThemeDescription(c3361ActionBar, i, null, null, null, null, i2), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_ITEMSCOLOR, null, null, null, null, Theme.key_actionBarDefaultIcon), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_TITLECOLOR, null, null, null, null, Theme.key_actionBarDefaultTitle), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SELECTORCOLOR, null, null, null, null, Theme.key_actionBarDefaultSelector), new ThemeDescription(getListView(), ThemeDescription.FLAG_CELLBACKGROUNDCOLOR, new Class[]{TextCell.class}, null, null, null, Theme.key_windowBackgroundWhite), new ThemeDescription(getListView(), ThemeDescription.FLAG_LISTGLOWCOLOR, null, null, null, null, i2), new ThemeDescription(getListView(), ThemeDescription.FLAG_SELECTOR, null, null, null, null, Theme.key_listSelector), new ThemeDescription(getListView(), 0, new Class[]{View.class}, Theme.dividerPaint, null, null, Theme.key_divider), new ThemeDescription(getListView(), 0, new Class[]{TextCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_windowBackgroundWhiteBlackText));
+        arrayListOf = CollectionsKt__CollectionsKt.arrayListOf(new ThemeDescription(this.fragmentView, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, Theme.key_windowBackgroundGray), new ThemeDescription(c3484ActionBar, i, null, null, null, null, i2), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_ITEMSCOLOR, null, null, null, null, Theme.key_actionBarDefaultIcon), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_TITLECOLOR, null, null, null, null, Theme.key_actionBarDefaultTitle), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SELECTORCOLOR, null, null, null, null, Theme.key_actionBarDefaultSelector), new ThemeDescription(getListView(), ThemeDescription.FLAG_CELLBACKGROUNDCOLOR, new Class[]{TextCell.class}, null, null, null, Theme.key_windowBackgroundWhite), new ThemeDescription(getListView(), ThemeDescription.FLAG_LISTGLOWCOLOR, null, null, null, null, i2), new ThemeDescription(getListView(), ThemeDescription.FLAG_SELECTOR, null, null, null, null, Theme.key_listSelector), new ThemeDescription(getListView(), 0, new Class[]{View.class}, Theme.dividerPaint, null, null, Theme.key_divider), new ThemeDescription(getListView(), 0, new Class[]{TextCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_windowBackgroundWhiteBlackText));
         return arrayListOf;
     }
 
@@ -91,7 +91,7 @@ public final class SettingsToolsActivity extends MvpFragment {
         recyclerListView.setLayoutManager(new LinearLayoutManager(recyclerListView.getContext()));
         recyclerListView.setAdapter(getListAdapter());
         recyclerListView.setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: com.iMe.fork.ui.fragment.SettingsToolsActivity$$ExternalSyntheticLambda0
-            @Override // org.telegram.p044ui.Components.RecyclerListView.OnItemClickListener
+            @Override // org.telegram.p043ui.Components.RecyclerListView.OnItemClickListener
             public final void onItemClick(View view, int i) {
                 SettingsToolsActivity.initListView$lambda$3$lambda$2(SettingsToolsActivity.this, view, i);
             }
@@ -106,12 +106,12 @@ public final class SettingsToolsActivity extends MvpFragment {
     }
 
     private final void setupActionBar() {
-        C3361ActionBar c3361ActionBar = this.actionBar;
-        c3361ActionBar.setBackButtonImage(C3295R.C3297drawable.ic_ab_back);
-        c3361ActionBar.setAllowOverlayTitle(true);
-        c3361ActionBar.setTitle(LocaleController.getInternalString(C3295R.string.settings_tools));
-        c3361ActionBar.setActionBarMenuOnItemClick(new C3361ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.fork.ui.fragment.SettingsToolsActivity$setupActionBar$1$1
-            @Override // org.telegram.p044ui.ActionBar.C3361ActionBar.ActionBarMenuOnItemClick
+        C3484ActionBar c3484ActionBar = this.actionBar;
+        c3484ActionBar.setBackButtonImage(C3417R.C3419drawable.ic_ab_back);
+        c3484ActionBar.setAllowOverlayTitle(true);
+        c3484ActionBar.setTitle(LocaleController.getInternalString(C3417R.string.settings_tools));
+        c3484ActionBar.setActionBarMenuOnItemClick(new C3484ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.fork.ui.fragment.SettingsToolsActivity$setupActionBar$1$1
+            @Override // org.telegram.p043ui.ActionBar.C3484ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
                     SettingsToolsActivity.this.finishFragment();
@@ -125,7 +125,7 @@ public final class SettingsToolsActivity extends MvpFragment {
     /* renamed from: com.iMe.fork.ui.fragment.SettingsToolsActivity$ListAdapter */
     /* loaded from: classes3.dex */
     public final class ListAdapter extends RecyclerListView.SelectionAdapter {
-        @Override // org.telegram.p044ui.Components.RecyclerListView.SelectionAdapter
+        @Override // org.telegram.p043ui.Components.RecyclerListView.SelectionAdapter
         public boolean isEnabled(RecyclerView.ViewHolder viewHolder) {
             return true;
         }

@@ -65,6 +65,9 @@
 .method public abstract maybeShowDismissalAlert(Lorg/telegram/ui/PhotoViewer;Landroid/app/Activity;Ljava/lang/Runnable;)V
 .end method
 
+.method public abstract onAnimationStateChanged(Z)V
+.end method
+
 .method public abstract onBackPressed()V
 .end method
 
@@ -75,6 +78,9 @@
 .end method
 
 .method public abstract onTouch(Landroid/view/MotionEvent;)Z
+.end method
+
+.method public abstract setOffsetTranslationX(F)V
 .end method
 
 .method public abstract setOffsetTranslationY(FFIZ)V

@@ -21,54 +21,54 @@
 
     sput-object v0, Lcom/iMe/storage/common/AppConfiguration$Common;->INSTANCE:Lcom/iMe/storage/common/AppConfiguration$Common;
 
-    .line 20
+    .line 18
     new-instance v0, Lcom/google/firebase/FirebaseOptions$Builder;
 
     invoke-direct {v0}, Lcom/google/firebase/FirebaseOptions$Builder;-><init>()V
 
     const-string v1, "AIzaSyDFc-hXz0kN_vaEF31KDWeGoX1nKDLZpiM"
 
-    .line 21
+    .line 19
     invoke-virtual {v0, v1}, Lcom/google/firebase/FirebaseOptions$Builder;->setApiKey(Ljava/lang/String;)Lcom/google/firebase/FirebaseOptions$Builder;
 
     move-result-object v0
 
     const-string v1, "1:444157464191:android:dd047cf092fd1ad8"
 
-    .line 22
+    .line 20
     invoke-virtual {v0, v1}, Lcom/google/firebase/FirebaseOptions$Builder;->setApplicationId(Ljava/lang/String;)Lcom/google/firebase/FirebaseOptions$Builder;
 
     move-result-object v0
 
     const-string v1, "https://ime-messenger.firebaseio.com"
 
-    .line 23
+    .line 21
     invoke-virtual {v0, v1}, Lcom/google/firebase/FirebaseOptions$Builder;->setDatabaseUrl(Ljava/lang/String;)Lcom/google/firebase/FirebaseOptions$Builder;
 
     move-result-object v0
 
     const-string v1, "ime-messenger"
 
-    .line 24
+    .line 22
     invoke-virtual {v0, v1}, Lcom/google/firebase/FirebaseOptions$Builder;->setProjectId(Ljava/lang/String;)Lcom/google/firebase/FirebaseOptions$Builder;
 
     move-result-object v0
 
     const-string v1, "ime-messenger.appspot.com"
 
-    .line 25
+    .line 23
     invoke-virtual {v0, v1}, Lcom/google/firebase/FirebaseOptions$Builder;->setStorageBucket(Ljava/lang/String;)Lcom/google/firebase/FirebaseOptions$Builder;
 
     move-result-object v0
 
     const-string v1, "444157464191"
 
-    .line 26
+    .line 24
     invoke-virtual {v0, v1}, Lcom/google/firebase/FirebaseOptions$Builder;->setGcmSenderId(Ljava/lang/String;)Lcom/google/firebase/FirebaseOptions$Builder;
 
     move-result-object v0
 
-    .line 27
+    .line 25
     invoke-virtual {v0}, Lcom/google/firebase/FirebaseOptions$Builder;->build()Lcom/google/firebase/FirebaseOptions;
 
     move-result-object v0
@@ -79,54 +79,54 @@
 
     sput-object v0, Lcom/iMe/storage/common/AppConfiguration$Common;->prodGoogleServices:Lcom/google/firebase/FirebaseOptions;
 
-    .line 29
+    .line 27
     new-instance v0, Lcom/google/firebase/FirebaseOptions$Builder;
 
     invoke-direct {v0}, Lcom/google/firebase/FirebaseOptions$Builder;-><init>()V
 
     const-string v2, "AIzaSyA3wilu5mej209oqRYot2xCbjOOPb9rl8U"
 
-    .line 30
+    .line 28
     invoke-virtual {v0, v2}, Lcom/google/firebase/FirebaseOptions$Builder;->setApiKey(Ljava/lang/String;)Lcom/google/firebase/FirebaseOptions$Builder;
 
     move-result-object v0
 
     const-string v2, "1:272440335749:android:fcba4e2ff52c4dadd8b8ec"
 
-    .line 31
+    .line 29
     invoke-virtual {v0, v2}, Lcom/google/firebase/FirebaseOptions$Builder;->setApplicationId(Ljava/lang/String;)Lcom/google/firebase/FirebaseOptions$Builder;
 
     move-result-object v0
 
     const-string v2, "https://ime-messenger-stage.firebaseio.com"
 
-    .line 32
+    .line 30
     invoke-virtual {v0, v2}, Lcom/google/firebase/FirebaseOptions$Builder;->setDatabaseUrl(Ljava/lang/String;)Lcom/google/firebase/FirebaseOptions$Builder;
 
     move-result-object v0
 
     const-string v2, "ime-messenger-stage"
 
-    .line 33
+    .line 31
     invoke-virtual {v0, v2}, Lcom/google/firebase/FirebaseOptions$Builder;->setProjectId(Ljava/lang/String;)Lcom/google/firebase/FirebaseOptions$Builder;
 
     move-result-object v0
 
     const-string v2, "ime-messenger-stage.appspot.com"
 
-    .line 34
+    .line 32
     invoke-virtual {v0, v2}, Lcom/google/firebase/FirebaseOptions$Builder;->setStorageBucket(Ljava/lang/String;)Lcom/google/firebase/FirebaseOptions$Builder;
 
     move-result-object v0
 
     const-string v2, "272440335749"
 
-    .line 35
+    .line 33
     invoke-virtual {v0, v2}, Lcom/google/firebase/FirebaseOptions$Builder;->setGcmSenderId(Ljava/lang/String;)Lcom/google/firebase/FirebaseOptions$Builder;
 
     move-result-object v0
 
-    .line 36
+    .line 34
     invoke-virtual {v0}, Lcom/google/firebase/FirebaseOptions$Builder;->build()Lcom/google/firebase/FirebaseOptions;
 
     move-result-object v0
@@ -141,7 +141,7 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 14
+    .line 11
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -152,7 +152,7 @@
 .method public final getProdGoogleServices()Lcom/google/firebase/FirebaseOptions;
     .locals 1
 
-    .line 20
+    .line 18
     sget-object v0, Lcom/iMe/storage/common/AppConfiguration$Common;->prodGoogleServices:Lcom/google/firebase/FirebaseOptions;
 
     return-object v0
@@ -161,7 +161,7 @@
 .method public final getStageGoogleServices()Lcom/google/firebase/FirebaseOptions;
     .locals 1
 
-    .line 29
+    .line 27
     sget-object v0, Lcom/iMe/storage/common/AppConfiguration$Common;->stageGoogleServices:Lcom/google/firebase/FirebaseOptions;
 
     return-object v0

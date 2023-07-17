@@ -611,8 +611,8 @@ public final class ObservableWindowTimed<T> extends AbstractObservableWithUpstre
                             this.worker.schedule(new CompletionTask(create), this.timespan, this.unit);
                         }
                     } else {
-                        list.remove(subjectWork.f472w);
-                        subjectWork.f472w.onComplete();
+                        list.remove(subjectWork.f554w);
+                        subjectWork.f554w.onComplete();
                         if (list.isEmpty() && this.cancelled) {
                             this.terminated = true;
                         }
@@ -646,10 +646,10 @@ public final class ObservableWindowTimed<T> extends AbstractObservableWithUpstre
             final boolean open;
 
             /* renamed from: w */
-            final UnicastSubject<T> f472w;
+            final UnicastSubject<T> f554w;
 
             SubjectWork(UnicastSubject<T> unicastSubject, boolean z) {
-                this.f472w = unicastSubject;
+                this.f554w = unicastSubject;
                 this.open = z;
             }
         }
@@ -659,15 +659,15 @@ public final class ObservableWindowTimed<T> extends AbstractObservableWithUpstre
         public final class CompletionTask implements Runnable {
 
             /* renamed from: w */
-            private final UnicastSubject<T> f471w;
+            private final UnicastSubject<T> f553w;
 
             CompletionTask(UnicastSubject<T> unicastSubject) {
-                this.f471w = unicastSubject;
+                this.f553w = unicastSubject;
             }
 
             @Override // java.lang.Runnable
             public void run() {
-                WindowSkipObserver.this.complete(this.f471w);
+                WindowSkipObserver.this.complete(this.f553w);
             }
         }
     }

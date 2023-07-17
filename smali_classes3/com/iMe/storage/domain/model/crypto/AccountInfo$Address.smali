@@ -17,35 +17,39 @@
 # instance fields
 .field private final addressValue:Ljava/lang/String;
 
-.field private final hasAccess:Z
+.field private final blockchainType:Lcom/iMe/storage/domain/model/crypto/BlockchainType;
 
 .field private final isAddressSet:Z
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;ZZ)V
+.method public constructor <init>(Ljava/lang/String;ZLcom/iMe/storage/domain/model/crypto/BlockchainType;)V
     .locals 1
 
     const-string v0, "addressValue"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 10
+    const-string v0, "blockchainType"
+
+    invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 8
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 11
+    .line 9
     iput-object p1, p0, Lcom/iMe/storage/domain/model/crypto/AccountInfo$Address;->addressValue:Ljava/lang/String;
 
-    .line 12
+    .line 10
     iput-boolean p2, p0, Lcom/iMe/storage/domain/model/crypto/AccountInfo$Address;->isAddressSet:Z
 
-    .line 13
-    iput-boolean p3, p0, Lcom/iMe/storage/domain/model/crypto/AccountInfo$Address;->hasAccess:Z
+    .line 11
+    iput-object p3, p0, Lcom/iMe/storage/domain/model/crypto/AccountInfo$Address;->blockchainType:Lcom/iMe/storage/domain/model/crypto/BlockchainType;
 
     return-void
 .end method
 
-.method public static synthetic copy$default(Lcom/iMe/storage/domain/model/crypto/AccountInfo$Address;Ljava/lang/String;ZZILjava/lang/Object;)Lcom/iMe/storage/domain/model/crypto/AccountInfo$Address;
+.method public static synthetic copy$default(Lcom/iMe/storage/domain/model/crypto/AccountInfo$Address;Ljava/lang/String;ZLcom/iMe/storage/domain/model/crypto/BlockchainType;ILjava/lang/Object;)Lcom/iMe/storage/domain/model/crypto/AccountInfo$Address;
     .locals 0
 
     and-int/lit8 p5, p4, 0x1
@@ -66,10 +70,10 @@
 
     if-eqz p4, :cond_2
 
-    iget-boolean p3, p0, Lcom/iMe/storage/domain/model/crypto/AccountInfo$Address;->hasAccess:Z
+    iget-object p3, p0, Lcom/iMe/storage/domain/model/crypto/AccountInfo$Address;->blockchainType:Lcom/iMe/storage/domain/model/crypto/BlockchainType;
 
     :cond_2
-    invoke-virtual {p0, p1, p2, p3}, Lcom/iMe/storage/domain/model/crypto/AccountInfo$Address;->copy(Ljava/lang/String;ZZ)Lcom/iMe/storage/domain/model/crypto/AccountInfo$Address;
+    invoke-virtual {p0, p1, p2, p3}, Lcom/iMe/storage/domain/model/crypto/AccountInfo$Address;->copy(Ljava/lang/String;ZLcom/iMe/storage/domain/model/crypto/BlockchainType;)Lcom/iMe/storage/domain/model/crypto/AccountInfo$Address;
 
     move-result-object p0
 
@@ -94,24 +98,28 @@
     return v0
 .end method
 
-.method public final component3()Z
+.method public final component3()Lcom/iMe/storage/domain/model/crypto/BlockchainType;
     .locals 1
 
-    iget-boolean v0, p0, Lcom/iMe/storage/domain/model/crypto/AccountInfo$Address;->hasAccess:Z
+    iget-object v0, p0, Lcom/iMe/storage/domain/model/crypto/AccountInfo$Address;->blockchainType:Lcom/iMe/storage/domain/model/crypto/BlockchainType;
 
-    return v0
+    return-object v0
 .end method
 
-.method public final copy(Ljava/lang/String;ZZ)Lcom/iMe/storage/domain/model/crypto/AccountInfo$Address;
+.method public final copy(Ljava/lang/String;ZLcom/iMe/storage/domain/model/crypto/BlockchainType;)Lcom/iMe/storage/domain/model/crypto/AccountInfo$Address;
     .locals 1
 
     const-string v0, "addressValue"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
+    const-string v0, "blockchainType"
+
+    invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
     new-instance v0, Lcom/iMe/storage/domain/model/crypto/AccountInfo$Address;
 
-    invoke-direct {v0, p1, p2, p3}, Lcom/iMe/storage/domain/model/crypto/AccountInfo$Address;-><init>(Ljava/lang/String;ZZ)V
+    invoke-direct {v0, p1, p2, p3}, Lcom/iMe/storage/domain/model/crypto/AccountInfo$Address;-><init>(Ljava/lang/String;ZLcom/iMe/storage/domain/model/crypto/BlockchainType;)V
 
     return-object v0
 .end method
@@ -159,9 +167,9 @@
     return v2
 
     :cond_3
-    iget-boolean v1, p0, Lcom/iMe/storage/domain/model/crypto/AccountInfo$Address;->hasAccess:Z
+    iget-object v1, p0, Lcom/iMe/storage/domain/model/crypto/AccountInfo$Address;->blockchainType:Lcom/iMe/storage/domain/model/crypto/BlockchainType;
 
-    iget-boolean p1, p1, Lcom/iMe/storage/domain/model/crypto/AccountInfo$Address;->hasAccess:Z
+    iget-object p1, p1, Lcom/iMe/storage/domain/model/crypto/AccountInfo$Address;->blockchainType:Lcom/iMe/storage/domain/model/crypto/BlockchainType;
 
     if-eq v1, p1, :cond_4
 
@@ -174,23 +182,23 @@
 .method public final getAddressValue()Ljava/lang/String;
     .locals 1
 
-    .line 11
+    .line 9
     iget-object v0, p0, Lcom/iMe/storage/domain/model/crypto/AccountInfo$Address;->addressValue:Ljava/lang/String;
 
     return-object v0
 .end method
 
-.method public final getHasAccess()Z
+.method public final getBlockchainType()Lcom/iMe/storage/domain/model/crypto/BlockchainType;
     .locals 1
 
-    .line 13
-    iget-boolean v0, p0, Lcom/iMe/storage/domain/model/crypto/AccountInfo$Address;->hasAccess:Z
+    .line 11
+    iget-object v0, p0, Lcom/iMe/storage/domain/model/crypto/AccountInfo$Address;->blockchainType:Lcom/iMe/storage/domain/model/crypto/BlockchainType;
 
-    return v0
+    return-object v0
 .end method
 
 .method public hashCode()I
-    .locals 3
+    .locals 2
 
     iget-object v0, p0, Lcom/iMe/storage/domain/model/crypto/AccountInfo$Address;->addressValue:Ljava/lang/String;
 
@@ -202,28 +210,22 @@
 
     iget-boolean v1, p0, Lcom/iMe/storage/domain/model/crypto/AccountInfo$Address;->isAddressSet:Z
 
-    const/4 v2, 0x1
-
     if-eqz v1, :cond_0
 
-    move v1, v2
+    const/4 v1, 0x1
 
     :cond_0
     add-int/2addr v0, v1
 
     mul-int/lit8 v0, v0, 0x1f
 
-    iget-boolean v1, p0, Lcom/iMe/storage/domain/model/crypto/AccountInfo$Address;->hasAccess:Z
+    iget-object v1, p0, Lcom/iMe/storage/domain/model/crypto/AccountInfo$Address;->blockchainType:Lcom/iMe/storage/domain/model/crypto/BlockchainType;
 
-    if-eqz v1, :cond_1
+    invoke-virtual {v1}, Ljava/lang/Enum;->hashCode()I
 
-    goto :goto_0
+    move-result v1
 
-    :cond_1
-    move v2, v1
-
-    :goto_0
-    add-int/2addr v0, v2
+    add-int/2addr v0, v1
 
     return v0
 .end method
@@ -231,7 +233,7 @@
 .method public final isAddressSet()Z
     .locals 1
 
-    .line 12
+    .line 10
     iget-boolean v0, p0, Lcom/iMe/storage/domain/model/crypto/AccountInfo$Address;->isAddressSet:Z
 
     return v0
@@ -260,13 +262,13 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
-    const-string v1, ", hasAccess="
+    const-string v1, ", blockchainType="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-boolean v1, p0, Lcom/iMe/storage/domain/model/crypto/AccountInfo$Address;->hasAccess:Z
+    iget-object v1, p0, Lcom/iMe/storage/domain/model/crypto/AccountInfo$Address;->blockchainType:Lcom/iMe/storage/domain/model/crypto/BlockchainType;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     const/16 v1, 0x29
 

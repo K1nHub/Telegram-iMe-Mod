@@ -7,11 +7,11 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Lambda;
 import org.koin.core.parameter.ParametersHolder;
 import org.koin.core.parameter.ParametersHolderKt;
-import org.koin.p043mp.KoinPlatformTools;
+import org.koin.p042mp.KoinPlatformTools;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: EnterWalletPinFragment.kt */
 /* renamed from: com.iMe.ui.wallet.crypto.enter.pin.EnterWalletPinFragment$presenter$2 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class EnterWalletPinFragment$presenter$2 extends Lambda implements Function0<EnterWalletPinPresenter> {
     final /* synthetic */ EnterWalletPinFragment this$0;
 
@@ -25,12 +25,12 @@ public final class EnterWalletPinFragment$presenter$2 extends Lambda implements 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: EnterWalletPinFragment.kt */
     /* renamed from: com.iMe.ui.wallet.crypto.enter.pin.EnterWalletPinFragment$presenter$2$1 */
-    /* loaded from: classes3.dex */
-    public static final class C21721 extends Lambda implements Function0<ParametersHolder> {
+    /* loaded from: classes4.dex */
+    public static final class C21661 extends Lambda implements Function0<ParametersHolder> {
         final /* synthetic */ EnterWalletPinFragment this$0;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C21721(EnterWalletPinFragment enterWalletPinFragment) {
+        C21661(EnterWalletPinFragment enterWalletPinFragment) {
             super(0);
             this.this$0 = enterWalletPinFragment;
         }
@@ -48,7 +48,7 @@ public final class EnterWalletPinFragment$presenter$2 extends Lambda implements 
     public final EnterWalletPinPresenter invoke() {
         Lazy lazy;
         EnterWalletPinFragment enterWalletPinFragment = this.this$0;
-        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new C2169x2e9da3aa(enterWalletPinFragment, null, new C21721(enterWalletPinFragment)));
+        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new C2163x2e9da3aa(enterWalletPinFragment, null, new C21661(enterWalletPinFragment)));
         return (EnterWalletPinPresenter) lazy.getValue();
     }
 }

@@ -10,6 +10,12 @@
     return-void
 .end method
 
+.method public static $default$removeSelfFromStackImmediately(Lcom/iMe/ui/base/mvp/base/BaseView;)V
+    .locals 0
+
+    return-void
+.end method
+
 .method public static $default$showErrorToast(Lcom/iMe/ui/base/mvp/base/BaseView;Lcom/iMe/storage/domain/model/Result$Error;Lcom/iMe/storage/domain/utils/system/ResourceManager;)V
     .locals 1
     .param p0, "_this"    # Lcom/iMe/ui/base/mvp/base/BaseView;

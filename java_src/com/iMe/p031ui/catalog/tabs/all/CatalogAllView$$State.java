@@ -16,7 +16,7 @@ import moxy.viewstate.strategy.AddToEndSingleStrategy;
 import moxy.viewstate.strategy.OneExecutionStateStrategy;
 import org.telegram.tgnet.TLRPC$Chat;
 /* renamed from: com.iMe.ui.catalog.tabs.all.CatalogAllView$$State */
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public class CatalogAllView$$State extends MvpViewState<CatalogAllView> implements CatalogAllView {
     @Override // com.iMe.p031ui.base.mvp.base.BaseView
     public /* synthetic */ void finishScreen() {
@@ -26,6 +26,11 @@ public class CatalogAllView$$State extends MvpViewState<CatalogAllView> implemen
     @Override // com.iMe.p031ui.custom.state.GlobalStateView
     public /* synthetic */ void onLoadingState() {
         GlobalStateView.CC.$default$onLoadingState(this);
+    }
+
+    @Override // com.iMe.p031ui.base.mvp.base.BaseView
+    public /* synthetic */ void removeSelfFromStackImmediately() {
+        BaseView.CC.$default$removeSelfFromStackImmediately(this);
     }
 
     @Override // com.iMe.p031ui.base.mvp.LoadMoreView
@@ -230,7 +235,7 @@ public class CatalogAllView$$State extends MvpViewState<CatalogAllView> implemen
 
     /* compiled from: CatalogAllView$$State.java */
     /* renamed from: com.iMe.ui.catalog.tabs.all.CatalogAllView$$State$OnCategoriesLoadedCommand */
-    /* loaded from: classes.dex */
+    /* loaded from: classes3.dex */
     public class OnCategoriesLoadedCommand extends ViewCommand<CatalogAllView> {
         public final List<BaseNode> items;
 
@@ -247,7 +252,7 @@ public class CatalogAllView$$State extends MvpViewState<CatalogAllView> implemen
 
     /* compiled from: CatalogAllView$$State.java */
     /* renamed from: com.iMe.ui.catalog.tabs.all.CatalogAllView$$State$OnNestedLoadMoreItemsCommand */
-    /* loaded from: classes.dex */
+    /* loaded from: classes3.dex */
     public class OnNestedLoadMoreItemsCommand extends ViewCommand<CatalogAllView> {
         public final long categoryId;
         public final List<CampaignItem> items;
@@ -266,7 +271,7 @@ public class CatalogAllView$$State extends MvpViewState<CatalogAllView> implemen
 
     /* compiled from: CatalogAllView$$State.java */
     /* renamed from: com.iMe.ui.catalog.tabs.all.CatalogAllView$$State$OnNestedLoadMoreCompleteCommand */
-    /* loaded from: classes.dex */
+    /* loaded from: classes3.dex */
     public class OnNestedLoadMoreCompleteCommand extends ViewCommand<CatalogAllView> {
         public final long categoryId;
 
@@ -283,7 +288,7 @@ public class CatalogAllView$$State extends MvpViewState<CatalogAllView> implemen
 
     /* compiled from: CatalogAllView$$State.java */
     /* renamed from: com.iMe.ui.catalog.tabs.all.CatalogAllView$$State$OnNestedLoadMoreErrorCommand */
-    /* loaded from: classes.dex */
+    /* loaded from: classes3.dex */
     public class OnNestedLoadMoreErrorCommand extends ViewCommand<CatalogAllView> {
         public final long categoryId;
 
@@ -300,7 +305,7 @@ public class CatalogAllView$$State extends MvpViewState<CatalogAllView> implemen
 
     /* compiled from: CatalogAllView$$State.java */
     /* renamed from: com.iMe.ui.catalog.tabs.all.CatalogAllView$$State$OpenCampaignDetailsScreenCommand */
-    /* loaded from: classes.dex */
+    /* loaded from: classes3.dex */
     public class OpenCampaignDetailsScreenCommand extends ViewCommand<CatalogAllView> {
         public final CampaignItem campaign;
         public final TLRPC$Chat chat;
@@ -321,7 +326,7 @@ public class CatalogAllView$$State extends MvpViewState<CatalogAllView> implemen
 
     /* compiled from: CatalogAllView$$State.java */
     /* renamed from: com.iMe.ui.catalog.tabs.all.CatalogAllView$$State$ShowToastCommand */
-    /* loaded from: classes.dex */
+    /* loaded from: classes3.dex */
     public class ShowToastCommand extends ViewCommand<CatalogAllView> {
         public final String text;
 
@@ -338,7 +343,7 @@ public class CatalogAllView$$State extends MvpViewState<CatalogAllView> implemen
 
     /* compiled from: CatalogAllView$$State.java */
     /* renamed from: com.iMe.ui.catalog.tabs.all.CatalogAllView$$State$ShowLoadingDialogCommand */
-    /* loaded from: classes.dex */
+    /* loaded from: classes3.dex */
     public class ShowLoadingDialogCommand extends ViewCommand<CatalogAllView> {
         public final Disposable actionToCancel;
         public final boolean cancellable;
@@ -359,7 +364,7 @@ public class CatalogAllView$$State extends MvpViewState<CatalogAllView> implemen
 
     /* compiled from: CatalogAllView$$State.java */
     /* renamed from: com.iMe.ui.catalog.tabs.all.CatalogAllView$$State$ShowErrorToastCommand */
-    /* loaded from: classes.dex */
+    /* loaded from: classes3.dex */
     public class ShowErrorToastCommand<T> extends ViewCommand<CatalogAllView> {
         public final ResourceManager resourceManager;
         public final Result.Error<? extends T> result;
@@ -378,7 +383,7 @@ public class CatalogAllView$$State extends MvpViewState<CatalogAllView> implemen
 
     /* compiled from: CatalogAllView$$State.java */
     /* renamed from: com.iMe.ui.catalog.tabs.all.CatalogAllView$$State$OnNoInternetErrorStateCommand */
-    /* loaded from: classes.dex */
+    /* loaded from: classes3.dex */
     public class OnNoInternetErrorStateCommand extends ViewCommand<CatalogAllView> {
         OnNoInternetErrorStateCommand(CatalogAllView$$State catalogAllView$$State) {
             super("onNoInternetErrorState", AddToEndSingleStrategy.class);
@@ -392,7 +397,7 @@ public class CatalogAllView$$State extends MvpViewState<CatalogAllView> implemen
 
     /* compiled from: CatalogAllView$$State.java */
     /* renamed from: com.iMe.ui.catalog.tabs.all.CatalogAllView$$State$OnUnexpectedErrorStateCommand */
-    /* loaded from: classes.dex */
+    /* loaded from: classes3.dex */
     public class OnUnexpectedErrorStateCommand extends ViewCommand<CatalogAllView> {
         OnUnexpectedErrorStateCommand(CatalogAllView$$State catalogAllView$$State) {
             super("onUnexpectedErrorState", AddToEndSingleStrategy.class);
@@ -406,7 +411,7 @@ public class CatalogAllView$$State extends MvpViewState<CatalogAllView> implemen
 
     /* compiled from: CatalogAllView$$State.java */
     /* renamed from: com.iMe.ui.catalog.tabs.all.CatalogAllView$$State$OnEmptyStateCommand */
-    /* loaded from: classes.dex */
+    /* loaded from: classes3.dex */
     public class OnEmptyStateCommand extends ViewCommand<CatalogAllView> {
         OnEmptyStateCommand(CatalogAllView$$State catalogAllView$$State) {
             super("onEmptyState", AddToEndSingleStrategy.class);
@@ -420,7 +425,7 @@ public class CatalogAllView$$State extends MvpViewState<CatalogAllView> implemen
 
     /* compiled from: CatalogAllView$$State.java */
     /* renamed from: com.iMe.ui.catalog.tabs.all.CatalogAllView$$State$OnLoadMoreItemsCommand */
-    /* loaded from: classes.dex */
+    /* loaded from: classes3.dex */
     public class OnLoadMoreItemsCommand extends ViewCommand<CatalogAllView> {
         public final List<BaseNode> items;
 
@@ -437,7 +442,7 @@ public class CatalogAllView$$State extends MvpViewState<CatalogAllView> implemen
 
     /* compiled from: CatalogAllView$$State.java */
     /* renamed from: com.iMe.ui.catalog.tabs.all.CatalogAllView$$State$OnLoadMoreCompleteCommand */
-    /* loaded from: classes.dex */
+    /* loaded from: classes3.dex */
     public class OnLoadMoreCompleteCommand extends ViewCommand<CatalogAllView> {
         OnLoadMoreCompleteCommand(CatalogAllView$$State catalogAllView$$State) {
             super("onLoadMoreComplete", AddToEndSingleStrategy.class);
@@ -451,7 +456,7 @@ public class CatalogAllView$$State extends MvpViewState<CatalogAllView> implemen
 
     /* compiled from: CatalogAllView$$State.java */
     /* renamed from: com.iMe.ui.catalog.tabs.all.CatalogAllView$$State$OnLoadMoreErrorCommand */
-    /* loaded from: classes.dex */
+    /* loaded from: classes3.dex */
     public class OnLoadMoreErrorCommand extends ViewCommand<CatalogAllView> {
         OnLoadMoreErrorCommand(CatalogAllView$$State catalogAllView$$State) {
             super("onLoadMoreError", AddToEndSingleStrategy.class);
@@ -465,7 +470,7 @@ public class CatalogAllView$$State extends MvpViewState<CatalogAllView> implemen
 
     /* compiled from: CatalogAllView$$State.java */
     /* renamed from: com.iMe.ui.catalog.tabs.all.CatalogAllView$$State$ShowRefreshingCommand */
-    /* loaded from: classes.dex */
+    /* loaded from: classes3.dex */
     public class ShowRefreshingCommand extends ViewCommand<CatalogAllView> {
         public final boolean show;
 

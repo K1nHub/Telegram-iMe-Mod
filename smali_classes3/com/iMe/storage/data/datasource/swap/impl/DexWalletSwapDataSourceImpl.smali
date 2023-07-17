@@ -140,7 +140,7 @@
 
     .line 56
     :cond_0
-    invoke-virtual {v0}, Lcom/iMe/storage/domain/model/crypto/Wallet$EVM;->getPrivateKeyBytes()[B
+    invoke-virtual {v0}, Lcom/iMe/storage/domain/model/crypto/Wallet$MultiCoinWallet;->getPrivateKeyBytes()[B
 
     move-result-object v10
 
@@ -152,7 +152,7 @@
 
     move-result-object v2
 
-    invoke-virtual {v0}, Lcom/iMe/storage/domain/model/crypto/Wallet$EVM;->getAddress()Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/iMe/storage/domain/model/crypto/Wallet$MultiCoinWallet;->getAddress()Ljava/lang/String;
 
     move-result-object v0
 

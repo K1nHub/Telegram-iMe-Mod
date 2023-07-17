@@ -7,7 +7,7 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Lambda;
 import org.koin.core.parameter.ParametersHolder;
 import org.koin.core.parameter.ParametersHolderKt;
-import org.koin.p043mp.KoinPlatformTools;
+import org.koin.p042mp.KoinPlatformTools;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: WalletConnectTransactionBottomSheetDialog.kt */
 /* renamed from: com.iMe.ui.wallet.crypto.wallet_connect.transaction.WalletConnectTransactionBottomSheetDialog$presenter$2 */
@@ -26,11 +26,11 @@ public final class WalletConnectTransactionBottomSheetDialog$presenter$2 extends
     /* compiled from: WalletConnectTransactionBottomSheetDialog.kt */
     /* renamed from: com.iMe.ui.wallet.crypto.wallet_connect.transaction.WalletConnectTransactionBottomSheetDialog$presenter$2$1 */
     /* loaded from: classes4.dex */
-    public static final class C22291 extends Lambda implements Function0<ParametersHolder> {
+    public static final class C22451 extends Lambda implements Function0<ParametersHolder> {
         final /* synthetic */ WalletConnectTransactionBottomSheetDialog this$0;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C22291(WalletConnectTransactionBottomSheetDialog walletConnectTransactionBottomSheetDialog) {
+        C22451(WalletConnectTransactionBottomSheetDialog walletConnectTransactionBottomSheetDialog) {
             super(0);
             this.this$0 = walletConnectTransactionBottomSheetDialog;
         }
@@ -48,7 +48,7 @@ public final class WalletConnectTransactionBottomSheetDialog$presenter$2 extends
     public final WalletConnectTransactionPresenter invoke() {
         Lazy lazy;
         WalletConnectTransactionBottomSheetDialog walletConnectTransactionBottomSheetDialog = this.this$0;
-        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new C2226x15774caf(walletConnectTransactionBottomSheetDialog, null, new C22291(walletConnectTransactionBottomSheetDialog)));
+        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new C2242x15774caf(walletConnectTransactionBottomSheetDialog, null, new C22451(walletConnectTransactionBottomSheetDialog)));
         return (WalletConnectTransactionPresenter) lazy.getValue();
     }
 }

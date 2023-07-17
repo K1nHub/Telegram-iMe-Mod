@@ -112,10 +112,6 @@ public class Intrinsics {
         return d != null && d.doubleValue() == d2;
     }
 
-    public static boolean areEqual(Float f, float f2) {
-        return f != null && f.floatValue() == f2;
-    }
-
     public static void throwUndefinedForReified() {
         throwUndefinedForReified("This function has a reified type parameter and thus can only be inlined at compilation time, not called directly.");
     }

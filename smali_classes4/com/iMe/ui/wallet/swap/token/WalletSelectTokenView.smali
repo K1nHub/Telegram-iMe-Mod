@@ -5,15 +5,27 @@
 # interfaces
 .implements Lcom/iMe/ui/base/mvp/base/BaseView;
 .implements Lcom/iMe/ui/custom/state/GlobalStateView;
+.implements Lcom/iMe/ui/base/mvp/LoadMoreView;
 
 
 # annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Ljava/lang/Object;",
+        "Lcom/iMe/ui/base/mvp/base/BaseView;",
+        "Lcom/iMe/ui/custom/state/GlobalStateView;",
+        "Lcom/iMe/ui/base/mvp/LoadMoreView<",
+        "Lcom/iMe/model/wallet/select/SelectableTokenItem;",
+        ">;"
+    }
+.end annotation
+
 .annotation runtime Lmoxy/viewstate/strategy/alias/AddToEndSingle;
 .end annotation
 
 
 # virtual methods
-.method public abstract onTokensLoaded(Ljava/util/List;)V
+.method public abstract renderItems(Ljava/util/List;)V
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",

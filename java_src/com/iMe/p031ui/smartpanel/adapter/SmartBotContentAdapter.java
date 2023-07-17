@@ -26,9 +26,9 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.databinding.ForkBotsContentPageItemAdsBinding;
 import org.telegram.messenger.databinding.ForkBotsContentPageItemLabelBinding;
 import org.telegram.messenger.databinding.ForkBotsContentPageItemNormalBinding;
-import org.telegram.p044ui.ActionBar.Theme;
-import org.telegram.p044ui.Cells.ContextLinkCell;
-import org.telegram.p044ui.Components.RecyclerListView;
+import org.telegram.p043ui.ActionBar.Theme;
+import org.telegram.p043ui.Cells.ContextLinkCell;
+import org.telegram.p043ui.Components.RecyclerListView;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
@@ -150,7 +150,7 @@ public final class SmartBotContentAdapter extends RecyclerListView.SelectionAdap
     public final long getGifBotId() {
         TLRPC$User tLRPC$User = this.foundContextBot;
         if (tLRPC$User != null) {
-            return tLRPC$User.f1574id;
+            return tLRPC$User.f1656id;
         }
         return 0L;
     }
@@ -262,7 +262,7 @@ public final class SmartBotContentAdapter extends RecyclerListView.SelectionAdap
         }
     }
 
-    @Override // org.telegram.p044ui.Components.RecyclerListView.SelectionAdapter
+    @Override // org.telegram.p043ui.Components.RecyclerListView.SelectionAdapter
     public boolean isEnabled(RecyclerView.ViewHolder viewHolder) {
         boolean z = false;
         if (viewHolder != null && viewHolder.getItemViewType() == SmartPanelTabContent.Type.NORMAL_BOT_LABEL.getValue()) {
@@ -316,7 +316,7 @@ public final class SmartBotContentAdapter extends RecyclerListView.SelectionAdap
             this.searchingContextQuery = null;
             return;
         }
-        final String str3 = str + '_' + str2 + '_' + tLRPC$User.f1574id;
+        final String str3 = str + '_' + str2 + '_' + tLRPC$User.f1656id;
         final MessagesStorage messagesStorage = MessagesStorage.getInstance(this.currentAccount);
         RequestDelegate requestDelegate = new RequestDelegate() { // from class: com.iMe.ui.smartpanel.adapter.SmartBotContentAdapter$$ExternalSyntheticLambda1
             @Override // org.telegram.tgnet.RequestDelegate

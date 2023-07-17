@@ -6,8 +6,8 @@ import com.iMe.domain.contacts.ContactsInteractor;
 import com.iMe.p031ui.base.mvp.base.BasePresenter;
 import com.iMe.p031ui.base.mvp.base.BaseView;
 import com.iMe.storage.domain.utils.p030rx.SchedulersProvider;
-import com.iMe.utils.extentions.p033rx.RxExtKt;
-import com.iMe.utils.extentions.p033rx.RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
+import com.iMe.utils.extentions.p032rx.RxExtKt;
+import com.iMe.utils.extentions.p032rx.RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
 import io.reactivex.Completable;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Action;
@@ -40,8 +40,8 @@ public final class ContactsPresenter extends BasePresenter<ContactsView> {
             public final void run() {
                 ContactsPresenter.this.deleteAction();
             }
-        }, new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2039x3873914f((BaseView) getViewState(), this)));
-        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
+        }, new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2043x3873914f((BaseView) getViewState(), this)));
+        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…Error.invoke()\n        })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
 

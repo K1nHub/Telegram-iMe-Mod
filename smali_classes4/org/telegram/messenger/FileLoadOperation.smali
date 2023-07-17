@@ -7325,7 +7325,7 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v5, "save preload file part "
+    const-string/jumbo v5, "save preload file part "
 
     invoke-virtual {v1, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -7882,7 +7882,7 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v2, "save file part "
+    const-string/jumbo v2, "save file part "
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -10175,7 +10175,7 @@
 
     invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v11, "remote"
+    const-string/jumbo v11, "remote"
 
     invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -10329,7 +10329,7 @@
     :cond_1e
     iget-boolean v0, v7, Lorg/telegram/messenger/FileLoadOperation;->encryptFile:Z
 
-    const-string v4, "rws"
+    const-string/jumbo v4, "rws"
 
     if-eqz v0, :cond_22
 

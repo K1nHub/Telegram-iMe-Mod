@@ -30,14 +30,14 @@
 .method constructor <init>(Lcom/iMe/ui/recognition/PhotoView$$State;Ljava/lang/String;)V
     .locals 1
 
-    .line 195
+    .line 211
     const-class p1, Lmoxy/viewstate/strategy/AddToEndSingleStrategy;
 
     const-string v0, "showPhotoObjectsDialog"
 
     invoke-direct {p0, v0, p1}, Lmoxy/viewstate/ViewCommand;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
-    .line 197
+    .line 213
     iput-object p2, p0, Lcom/iMe/ui/recognition/PhotoView$$State$ShowPhotoObjectsDialogCommand;->recognizedInfo:Ljava/lang/String;
 
     return-void
@@ -48,7 +48,7 @@
 .method public apply(Lcom/iMe/ui/recognition/PhotoView;)V
     .locals 1
 
-    .line 202
+    .line 218
     iget-object v0, p0, Lcom/iMe/ui/recognition/PhotoView$$State$ShowPhotoObjectsDialogCommand;->recognizedInfo:Ljava/lang/String;
 
     invoke-interface {p1, v0}, Lcom/iMe/ui/recognition/PhotoView;->showPhotoObjectsDialog(Ljava/lang/String;)V
@@ -59,7 +59,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 191
+    .line 207
     check-cast p1, Lcom/iMe/ui/recognition/PhotoView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/recognition/PhotoView$$State$ShowPhotoObjectsDialogCommand;->apply(Lcom/iMe/ui/recognition/PhotoView;)V

@@ -12,7 +12,7 @@ import com.iMe.model.wallet.crypto.send.fee.GasPriceItem;
 import com.iMe.p031ui.base.mvp.MvpBottomSheet;
 import com.iMe.p031ui.custom.FeeView;
 import com.iMe.storage.domain.model.crypto.TransactionParams;
-import com.iMe.storage.domain.model.wallet.token.TokenInfo;
+import com.iMe.storage.domain.model.wallet.token.TokenDetailed;
 import com.iMe.storage.domain.utils.system.ResourceManager;
 import com.iMe.utils.dialogs.DialogsFactoryKt;
 import com.iMe.utils.extentions.common.ViewExtKt;
@@ -27,12 +27,12 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.koin.core.Koin;
 import org.koin.core.component.KoinComponent;
-import org.koin.p043mp.KoinPlatformTools;
-import org.telegram.messenger.C3295R;
+import org.koin.p042mp.KoinPlatformTools;
+import org.telegram.messenger.C3417R;
 import org.telegram.messenger.databinding.ForkContentFeeBinding;
-import org.telegram.p044ui.ActionBar.AlertDialog;
-import org.telegram.p044ui.ActionBar.BaseFragment;
-import org.telegram.p044ui.ActionBar.Theme;
+import org.telegram.p043ui.ActionBar.AlertDialog;
+import org.telegram.p043ui.ActionBar.BaseFragment;
+import org.telegram.p043ui.ActionBar.Theme;
 /* compiled from: FeeView.kt */
 /* renamed from: com.iMe.ui.custom.FeeView */
 /* loaded from: classes3.dex */
@@ -149,7 +149,7 @@ public final class FeeView extends FrameLayout implements KoinComponent {
     }
 
     private final void configureDefaultFeeChooser(final ChooseFeeType.Default r4) {
-        final List<GasPriceItem> mapToUiFees = FeeUiMappingKt.mapToUiFees(r4.getTransactionParams(), r4.getFeeTokenInfo());
+        final List<GasPriceItem> mapToUiFees = FeeUiMappingKt.mapToUiFees(r4.getTransactionParams(), r4.getFeeToken());
         ForkContentFeeBinding forkContentFeeBinding = this.binding;
         displayFee(r4.getSelectedFee());
         forkContentFeeBinding.getRoot().setOnClickListener(new View.OnClickListener() { // from class: com.iMe.ui.custom.FeeView$$ExternalSyntheticLambda1
@@ -173,11 +173,11 @@ public final class FeeView extends FrameLayout implements KoinComponent {
         ForkContentFeeBinding forkContentFeeBinding = this.binding;
         AppCompatTextView appCompatTextView = forkContentFeeBinding.textFeeValue;
         ResourceManager resourceManager = getResourceManager();
-        int i = C3295R.string.wallet_swap_process_fee_price_value;
-        Float valueOf = Float.valueOf(gasPriceItem.getInfo().getFeeInDollars());
-        TokenInfo.Fiat.USD usd = TokenInfo.Fiat.USD.INSTANCE;
-        appCompatTextView.setText(resourceManager.getString(i, BalanceFormatter.formatBalance(Double.valueOf(gasPriceItem.getInfo().getFee()), gasPriceItem.getFeeTokenInfo().getDecimals()), getResourceManager().getString(gasPriceItem.getFeeTokenInfo().getShortName()), BalanceFormatter.formatBalance(valueOf, usd.getDecimals()), getResourceManager().getString(usd.getShortName())));
-        forkContentFeeBinding.textTimeValue.setText(getResourceManager().getString(C3295R.string.wallet_swap_process_fee_duration_value, Integer.valueOf(gasPriceItem.getInfo().getDuration())));
+        int i = C3417R.string.wallet_swap_process_fee_price_value;
+        Double valueOf = Double.valueOf(gasPriceItem.getInfo().getFeeInFiat().getValue());
+        TokenDetailed.Companion companion = TokenDetailed.Companion;
+        appCompatTextView.setText(resourceManager.getString(i, BalanceFormatter.formatBalance(Double.valueOf(gasPriceItem.getInfo().getFee()), Integer.valueOf(gasPriceItem.getFeeToken().getDecimals())), gasPriceItem.getFeeToken().getTicker(), BalanceFormatter.formatBalance(valueOf, Integer.valueOf(companion.getUSD().getDecimals())), companion.getUSD().getTicker()));
+        forkContentFeeBinding.textTimeValue.setText(getResourceManager().getString(C3417R.string.wallet_swap_process_fee_duration_value, Integer.valueOf(gasPriceItem.getInfo().getDuration())));
     }
 
     private final void showFeeDialog(DialogModel dialogModel, List<GasPriceItem> list, int i, Function1<? super GasPriceItem, Unit> function1) {
@@ -201,8 +201,8 @@ public final class FeeView extends FrameLayout implements KoinComponent {
 
     private final void setupTexts() {
         ForkContentFeeBinding forkContentFeeBinding = this.binding;
-        forkContentFeeBinding.textFeeTitle.setText(getResourceManager().getString(C3295R.string.wallet_swap_process_fee_price));
-        forkContentFeeBinding.textTimeTitle.setText(getResourceManager().getString(C3295R.string.wallet_swap_process_fee_duration));
+        forkContentFeeBinding.textFeeTitle.setText(getResourceManager().getString(C3417R.string.wallet_swap_process_fee_price));
+        forkContentFeeBinding.textTimeTitle.setText(getResourceManager().getString(C3417R.string.wallet_swap_process_fee_duration));
     }
 
     /* compiled from: FeeView.kt */
@@ -245,7 +245,7 @@ public final class FeeView extends FrameLayout implements KoinComponent {
         /* renamed from: com.iMe.ui.custom.FeeView$ChooseFeeType$Default */
         /* loaded from: classes3.dex */
         public static final class Default extends ChooseFeeType {
-            private final TokenInfo feeTokenInfo;
+            private final TokenDetailed feeToken;
             private final DialogModel model;
             private final Function1<GasPriceItem, Unit> onFeeSelectedAction;
             private final GasPriceItem selectedFee;
@@ -259,8 +259,8 @@ public final class FeeView extends FrameLayout implements KoinComponent {
                 return this.transactionParams;
             }
 
-            public final TokenInfo getFeeTokenInfo() {
-                return this.feeTokenInfo;
+            public final TokenDetailed getFeeToken() {
+                return this.feeToken;
             }
 
             public final GasPriceItem getSelectedFee() {
@@ -273,16 +273,16 @@ public final class FeeView extends FrameLayout implements KoinComponent {
 
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             /* JADX WARN: Multi-variable type inference failed */
-            public Default(DialogModel model, TransactionParams transactionParams, TokenInfo feeTokenInfo, GasPriceItem selectedFee, Function1<? super GasPriceItem, Unit> onFeeSelectedAction) {
+            public Default(DialogModel model, TransactionParams transactionParams, TokenDetailed feeToken, GasPriceItem selectedFee, Function1<? super GasPriceItem, Unit> onFeeSelectedAction) {
                 super(null);
                 Intrinsics.checkNotNullParameter(model, "model");
                 Intrinsics.checkNotNullParameter(transactionParams, "transactionParams");
-                Intrinsics.checkNotNullParameter(feeTokenInfo, "feeTokenInfo");
+                Intrinsics.checkNotNullParameter(feeToken, "feeToken");
                 Intrinsics.checkNotNullParameter(selectedFee, "selectedFee");
                 Intrinsics.checkNotNullParameter(onFeeSelectedAction, "onFeeSelectedAction");
                 this.model = model;
                 this.transactionParams = transactionParams;
-                this.feeTokenInfo = feeTokenInfo;
+                this.feeToken = feeToken;
                 this.selectedFee = selectedFee;
                 this.onFeeSelectedAction = onFeeSelectedAction;
             }

@@ -1,22 +1,22 @@
 package com.iMe.p031ui.wallet.common;
 
 import android.view.View;
-import com.iMe.p031ui.base.WalletAuthFragment;
+import com.iMe.p031ui.base.wallet_auth.WalletAuthBaseFragment;
 import com.iMe.utils.extentions.common.ViewExtKt;
 /* compiled from: BottomNavigationTabFragment.kt */
 /* renamed from: com.iMe.ui.wallet.common.BottomNavigationTabFragment */
 /* loaded from: classes3.dex */
-public abstract class BottomNavigationTabFragment extends WalletAuthFragment {
+public abstract class BottomNavigationTabFragment extends WalletAuthBaseFragment {
     private BottomNavigationDelegate bottomNavigationDelegate;
 
     public abstract void handleBottomPadding(int i);
 
-    @Override // com.iMe.p031ui.base.WalletAuthFragment, com.iMe.p031ui.base.mvp.MvpFragment
+    @Override // com.iMe.p031ui.base.wallet_auth.WalletAuthBaseFragment, com.iMe.p031ui.base.mvp.MvpFragment
     public void onViewReady() {
     }
 
-    @Override // com.iMe.p031ui.base.WalletAuthFragment
-    public boolean shouldAskPinCode() {
+    @Override // com.iMe.p031ui.base.wallet_auth.WalletAuthBaseFragment
+    protected boolean shouldAskPinCode() {
         return false;
     }
 
@@ -28,7 +28,7 @@ public abstract class BottomNavigationTabFragment extends WalletAuthFragment {
         this.bottomNavigationDelegate = bottomNavigationDelegate;
     }
 
-    @Override // com.iMe.p031ui.base.WalletAuthFragment, com.iMe.p031ui.base.mvp.MvpFragment, org.telegram.p044ui.ActionBar.BaseFragment
+    @Override // com.iMe.p031ui.base.wallet_auth.WalletAuthBaseFragment, com.iMe.p031ui.base.mvp.MvpFragment, org.telegram.p043ui.ActionBar.BaseFragment
     public void onResume() {
         super.onResume();
         BottomNavigationDelegate bottomNavigationDelegate = this.bottomNavigationDelegate;
@@ -37,7 +37,7 @@ public abstract class BottomNavigationTabFragment extends WalletAuthFragment {
         }
     }
 
-    @Override // com.iMe.p031ui.base.mvp.MvpFragment, org.telegram.p044ui.ActionBar.BaseFragment
+    @Override // com.iMe.p031ui.base.mvp.MvpFragment, org.telegram.p043ui.ActionBar.BaseFragment
     public void onDestroyView() {
         super.onDestroyView();
         clearView();

@@ -537,7 +537,7 @@
 .method public final scheduledExecutorService(Ljava/util/concurrent/ScheduledExecutorService;)Lio/grpc/okhttp/OkHttpChannelBuilder;
     .locals 1
 
-    const-string v0, "scheduledExecutorService"
+    const-string/jumbo v0, "scheduledExecutorService"
 
     .line 342
     invoke-static {p1, v0}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;

@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet$$ExternalSyntheticLambda9;->f$0:Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;
 
-    invoke-static {v0, p1, p2}, Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;->$r8$lambda$JYOH-rXu_6BhtdVkwSIBnA-C3ww(Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+    invoke-static {v0, p1, p2}, Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;->$r8$lambda$kz1nyj4orftdWtkU3rk150jStTs(Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
 
     return-void
 .end method

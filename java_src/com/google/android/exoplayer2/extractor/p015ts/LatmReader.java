@@ -1,6 +1,6 @@
 package com.google.android.exoplayer2.extractor.p015ts;
 
-import com.google.android.exoplayer2.C0475C;
+import com.google.android.exoplayer2.C0480C;
 import com.google.android.exoplayer2.Format;
 import com.google.android.exoplayer2.ParserException;
 import com.google.android.exoplayer2.audio.AacUtil;
@@ -52,13 +52,13 @@ public final class LatmReader implements ElementaryStreamReader {
         ParsableByteArray parsableByteArray = new ParsableByteArray(1024);
         this.sampleDataBuffer = parsableByteArray;
         this.sampleBitArray = new ParsableBitArray(parsableByteArray.getData());
-        this.timeUs = C0475C.TIME_UNSET;
+        this.timeUs = C0480C.TIME_UNSET;
     }
 
     @Override // com.google.android.exoplayer2.extractor.p015ts.ElementaryStreamReader
     public void seek() {
         this.state = 0;
-        this.timeUs = C0475C.TIME_UNSET;
+        this.timeUs = C0480C.TIME_UNSET;
         this.streamMuxRead = false;
     }
 
@@ -71,7 +71,7 @@ public final class LatmReader implements ElementaryStreamReader {
 
     @Override // com.google.android.exoplayer2.extractor.p015ts.ElementaryStreamReader
     public void packetStarted(long j, int i) {
-        if (j != C0475C.TIME_UNSET) {
+        if (j != C0480C.TIME_UNSET) {
             this.timeUs = j;
         }
     }
@@ -242,7 +242,7 @@ public final class LatmReader implements ElementaryStreamReader {
         }
         this.output.sampleData(this.sampleDataBuffer, i);
         long j = this.timeUs;
-        if (j != C0475C.TIME_UNSET) {
+        if (j != C0480C.TIME_UNSET) {
             this.output.sampleMetadata(j, 1, i, 0, null);
             this.timeUs += this.sampleDurationUs;
         }

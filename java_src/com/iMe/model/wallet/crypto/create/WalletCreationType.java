@@ -7,12 +7,12 @@ import kotlin.collections.CollectionsKt;
 import kotlin.collections.CollectionsKt__CollectionsKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3295R;
+import org.telegram.messenger.C3417R;
 /* compiled from: WalletCreationType.kt */
 /* loaded from: classes3.dex */
 public abstract class WalletCreationType {
+    private final int buttonTextResId;
     private final int iconResId;
-    private final int stringResId;
 
     public /* synthetic */ WalletCreationType(int i, int i2, DefaultConstructorMarker defaultConstructorMarker) {
         this(i, i2);
@@ -22,27 +22,28 @@ public abstract class WalletCreationType {
 
     private WalletCreationType(int i, int i2) {
         this.iconResId = i;
-        this.stringResId = i2;
+        this.buttonTextResId = i2;
     }
 
     public int getIconResId() {
         return this.iconResId;
     }
 
-    public int getStringResId() {
-        return this.stringResId;
+    public int getButtonTextResId() {
+        return this.buttonTextResId;
     }
 
     /* compiled from: WalletCreationType.kt */
     /* loaded from: classes3.dex */
     public static abstract class Initial extends WalletCreationType {
         public static final Companion Companion = new Companion(null);
+        private final int buttonTextResId;
         private final int iconResId;
         private final int ordinal;
-        private final int stringResId;
+        private final int titleTextResId;
 
-        public /* synthetic */ Initial(int i, int i2, int i3, DefaultConstructorMarker defaultConstructorMarker) {
-            this(i, i2, i3);
+        public /* synthetic */ Initial(int i, int i2, int i3, int i4, DefaultConstructorMarker defaultConstructorMarker) {
+            this(i, i2, i3, i4);
         }
 
         @Override // com.iMe.model.wallet.crypto.create.WalletCreationType
@@ -51,25 +52,30 @@ public abstract class WalletCreationType {
         }
 
         @Override // com.iMe.model.wallet.crypto.create.WalletCreationType
-        public int getStringResId() {
-            return this.stringResId;
+        public int getButtonTextResId() {
+            return this.buttonTextResId;
+        }
+
+        public final int getTitleTextResId() {
+            return this.titleTextResId;
         }
 
         public final int getOrdinal() {
             return this.ordinal;
         }
 
-        private Initial(int i, int i2, int i3) {
+        private Initial(int i, int i2, int i3, int i4) {
             super(i, i2, null);
             this.iconResId = i;
-            this.stringResId = i2;
-            this.ordinal = i3;
+            this.buttonTextResId = i2;
+            this.titleTextResId = i3;
+            this.ordinal = i4;
         }
 
         @Override // com.iMe.model.wallet.crypto.create.WalletCreationType
         public String getActionText(ResourceManager resourceManager) {
             Intrinsics.checkNotNullParameter(resourceManager, "resourceManager");
-            return resourceManager.getString(getStringResId());
+            return resourceManager.getString(getButtonTextResId());
         }
 
         /* compiled from: WalletCreationType.kt */
@@ -78,7 +84,7 @@ public abstract class WalletCreationType {
             public static final Create INSTANCE = new Create();
 
             private Create() {
-                super(C3295R.C3297drawable.fork_ic_wallet_create, C3295R.string.wallet_dashboard_create_eth_wallet, 0, null);
+                super(C3417R.C3419drawable.fork_ic_wallet_create, C3417R.string.wallet_dashboard_create_eth_wallet, C3417R.string.wallet_creation_intro_title_create, 0, null);
             }
         }
 
@@ -88,17 +94,7 @@ public abstract class WalletCreationType {
             public static final Import INSTANCE = new Import();
 
             private Import() {
-                super(C3295R.C3297drawable.fork_ic_wallet_import, C3295R.string.wallet_dashboard_import_eth_wallet, 1, null);
-            }
-        }
-
-        /* compiled from: WalletCreationType.kt */
-        /* loaded from: classes3.dex */
-        public static final class Restore extends Initial {
-            public static final Restore INSTANCE = new Restore();
-
-            private Restore() {
-                super(C3295R.C3297drawable.fork_ic_wallet_restore, C3295R.string.wallet_dashboard_restore_eth_wallet, 2, null);
+                super(C3417R.C3419drawable.fork_ic_wallet_import, C3417R.string.wallet_dashboard_import_eth_wallet, C3417R.string.wallet_creation_intro_title_import, 1, null);
             }
         }
 
@@ -112,18 +108,14 @@ public abstract class WalletCreationType {
             private Companion() {
             }
 
-            public final List<Initial> getValuesOrdered(boolean z) {
+            public final List<Initial> getValuesOrdered() {
                 List<Initial> listOfNotNull;
-                Initial[] initialArr = new Initial[3];
-                initialArr[0] = Create.INSTANCE;
-                initialArr[1] = Import.INSTANCE;
-                initialArr[2] = z ? Restore.INSTANCE : null;
-                listOfNotNull = CollectionsKt__CollectionsKt.listOfNotNull(initialArr);
+                listOfNotNull = CollectionsKt__CollectionsKt.listOfNotNull((Object[]) new Initial[]{Create.INSTANCE, Import.INSTANCE});
                 return listOfNotNull;
             }
 
             public final Initial getByIndex(int i) {
-                Initial initial = (Initial) CollectionsKt.getOrNull(getValuesOrdered(true), i);
+                Initial initial = (Initial) CollectionsKt.getOrNull(getValuesOrdered(), i);
                 return initial == null ? Create.INSTANCE : initial;
             }
         }
@@ -136,7 +128,7 @@ public abstract class WalletCreationType {
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public Activate(BlockchainType blockchainType) {
-            super(C3295R.C3297drawable.fork_ic_wallet_create, C3295R.string.wallet_dashboard_activate_wallet, null);
+            super(C3417R.C3419drawable.fork_ic_wallet_create, C3417R.string.wallet_dashboard_activate_wallet, null);
             Intrinsics.checkNotNullParameter(blockchainType, "blockchainType");
             this.blockchainType = blockchainType;
         }
@@ -144,7 +136,7 @@ public abstract class WalletCreationType {
         @Override // com.iMe.model.wallet.crypto.create.WalletCreationType
         public String getActionText(ResourceManager resourceManager) {
             Intrinsics.checkNotNullParameter(resourceManager, "resourceManager");
-            return resourceManager.getString(getStringResId(), resourceManager.getString(this.blockchainType.getTitleResId()));
+            return resourceManager.getString(getButtonTextResId(), resourceManager.getString(this.blockchainType.getTitleResId()));
         }
     }
 }

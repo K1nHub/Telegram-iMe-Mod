@@ -1,9 +1,14 @@
 package com.iMe.storage.domain.model.crypto;
 
+import com.iMe.storage.data.manager.common.EnvironmentManager;
+import com.iMe.storage.domain.utils.extentions.CryptoExtKt;
 import drinkless.org.ton.TonApi;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
+import wallet.core.jni.CoinType;
+import wallet.core.jni.Derivation;
 import wallet.core.jni.HDWallet;
+import wallet.core.jni.PrivateKey;
 /* compiled from: Wallet.kt */
 /* loaded from: classes3.dex */
 public abstract class Wallet {
@@ -19,6 +24,8 @@ public abstract class Wallet {
 
     public abstract byte[] getPrivateKeyBytes();
 
+    public abstract String getPublicKey();
+
     private Wallet(String str, String str2, BlockchainType blockchainType) {
         this.guid = str;
         this.mnemonic = str2;
@@ -33,17 +40,82 @@ public abstract class Wallet {
         return this.mnemonic;
     }
 
-    public final BlockchainType getBlockchainType() {
+    public BlockchainType getBlockchainType() {
         return this.blockchainType;
     }
 
     /* compiled from: Wallet.kt */
     /* loaded from: classes3.dex */
-    public static final class EVM extends Wallet {
+    public static abstract class MultiCoinWallet extends Wallet {
         private final String address;
+        private final BlockchainType blockchainType;
+        private final CoinType coinType;
+        private final String guid;
+        private final byte[] privateKeyBytes;
+
+        public /* synthetic */ MultiCoinWallet(HDWallet hDWallet, String str, BlockchainType blockchainType, CoinType coinType, DefaultConstructorMarker defaultConstructorMarker) {
+            this(hDWallet, str, blockchainType, coinType);
+        }
+
+        @Override // com.iMe.storage.domain.model.crypto.Wallet
+        public String getGuid() {
+            return this.guid;
+        }
+
+        @Override // com.iMe.storage.domain.model.crypto.Wallet
+        public BlockchainType getBlockchainType() {
+            return this.blockchainType;
+        }
+
+        protected final CoinType getCoinType() {
+            return this.coinType;
+        }
+
+        /* JADX WARN: Illegal instructions before constructor call */
+        /*
+            Code decompiled incorrectly, please refer to instructions dump.
+            To view partially-correct add '--show-bad-code' argument
+        */
+        private MultiCoinWallet(wallet.core.jni.HDWallet r4, java.lang.String r5, com.iMe.storage.domain.model.crypto.BlockchainType r6, wallet.core.jni.CoinType r7) {
+            /*
+                r3 = this;
+                java.lang.String r0 = r4.mnemonic()
+                java.lang.String r1 = "hdWallet.mnemonic()"
+                kotlin.jvm.internal.Intrinsics.checkNotNullExpressionValue(r0, r1)
+                com.iMe.storage.domain.model.crypto.BlockchainType r1 = com.iMe.storage.domain.model.crypto.BlockchainType.EVM
+                r2 = 0
+                r3.<init>(r5, r0, r1, r2)
+                r3.guid = r5
+                r3.blockchainType = r6
+                r3.coinType = r7
+                java.lang.String r5 = r4.getAddressForCoin(r7)
+                java.lang.String r6 = "hdWallet.getAddressForCoin(coinType)"
+                kotlin.jvm.internal.Intrinsics.checkNotNullExpressionValue(r5, r6)
+                r3.address = r5
+                byte[] r4 = com.iMe.storage.domain.utils.extentions.CryptoExtKt.getPrivateKeyBytes(r4, r7)
+                r3.privateKeyBytes = r4
+                return
+            */
+            throw new UnsupportedOperationException("Method not decompiled: com.iMe.storage.domain.model.crypto.Wallet.MultiCoinWallet.<init>(wallet.core.jni.HDWallet, java.lang.String, com.iMe.storage.domain.model.crypto.BlockchainType, wallet.core.jni.CoinType):void");
+        }
+
+        @Override // com.iMe.storage.domain.model.crypto.Wallet
+        public String getAddress() {
+            return this.address;
+        }
+
+        @Override // com.iMe.storage.domain.model.crypto.Wallet
+        public byte[] getPrivateKeyBytes() {
+            return this.privateKeyBytes;
+        }
+    }
+
+    /* compiled from: Wallet.kt */
+    /* loaded from: classes3.dex */
+    public static final class EVM extends MultiCoinWallet {
         private final String guid;
         private final HDWallet hdWallet;
-        private final byte[] privateKeyBytes;
+        private final String publicKey;
 
         public static /* synthetic */ EVM copy$default(EVM evm, String str, HDWallet hDWallet, int i, Object obj) {
             if ((i & 1) != 0) {
@@ -88,7 +160,7 @@ public abstract class Wallet {
             return "EVM(guid=" + getGuid() + ", hdWallet=" + this.hdWallet + ')';
         }
 
-        @Override // com.iMe.storage.domain.model.crypto.Wallet
+        @Override // com.iMe.storage.domain.model.crypto.Wallet.MultiCoinWallet, com.iMe.storage.domain.model.crypto.Wallet
         public String getGuid() {
             return this.guid;
         }
@@ -97,56 +169,30 @@ public abstract class Wallet {
             return this.hdWallet;
         }
 
-        /* JADX WARN: Illegal instructions before constructor call */
-        /*
-            Code decompiled incorrectly, please refer to instructions dump.
-            To view partially-correct add '--show-bad-code' argument
-        */
-        public EVM(java.lang.String r4, wallet.core.jni.HDWallet r5) {
-            /*
-                r3 = this;
-                java.lang.String r0 = "guid"
-                kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r4, r0)
-                java.lang.String r0 = "hdWallet"
-                kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r5, r0)
-                java.lang.String r0 = r5.mnemonic()
-                java.lang.String r1 = "hdWallet.mnemonic()"
-                kotlin.jvm.internal.Intrinsics.checkNotNullExpressionValue(r0, r1)
-                com.iMe.storage.domain.model.crypto.BlockchainType r1 = com.iMe.storage.domain.model.crypto.BlockchainType.EVM
-                r2 = 0
-                r3.<init>(r4, r0, r1, r2)
-                r3.guid = r4
-                r3.hdWallet = r5
-                wallet.core.jni.CoinType r4 = wallet.core.jni.CoinType.ETHEREUM
-                java.lang.String r0 = r5.getAddressForCoin(r4)
-                java.lang.String r1 = "hdWallet.getAddressForCoin(CoinType.ETHEREUM)"
-                kotlin.jvm.internal.Intrinsics.checkNotNullExpressionValue(r0, r1)
-                r3.address = r0
-                byte[] r4 = com.iMe.storage.domain.utils.extentions.CryptoExtKt.getPrivateKeyBytes(r5, r4)
-                r3.privateKeyBytes = r4
-                return
-            */
-            throw new UnsupportedOperationException("Method not decompiled: com.iMe.storage.domain.model.crypto.Wallet.EVM.<init>(java.lang.String, wallet.core.jni.HDWallet):void");
+        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+        public EVM(String guid, HDWallet hdWallet) {
+            super(hdWallet, guid, BlockchainType.EVM, CoinType.ETHEREUM, null);
+            Intrinsics.checkNotNullParameter(guid, "guid");
+            Intrinsics.checkNotNullParameter(hdWallet, "hdWallet");
+            this.guid = guid;
+            this.hdWallet = hdWallet;
+            byte[] data = hdWallet.getKeyForCoin(getCoinType()).getPublicKeySecp256k1(true).data();
+            Intrinsics.checkNotNullExpressionValue(data, "hdWallet\n               …                  .data()");
+            this.publicKey = CryptoExtKt.toHexString$default(data, false, 1, null);
         }
 
         @Override // com.iMe.storage.domain.model.crypto.Wallet
-        public String getAddress() {
-            return this.address;
-        }
-
-        @Override // com.iMe.storage.domain.model.crypto.Wallet
-        public byte[] getPrivateKeyBytes() {
-            return this.privateKeyBytes;
+        public String getPublicKey() {
+            return this.publicKey;
         }
     }
 
     /* compiled from: Wallet.kt */
     /* loaded from: classes3.dex */
-    public static final class TRON extends Wallet {
-        private final String address;
+    public static final class TRON extends MultiCoinWallet {
         private final String guid;
         private final HDWallet hdWallet;
-        private final byte[] privateKeyBytes;
+        private final String publicKey;
 
         public static /* synthetic */ TRON copy$default(TRON tron, String str, HDWallet hDWallet, int i, Object obj) {
             if ((i & 1) != 0) {
@@ -191,7 +237,7 @@ public abstract class Wallet {
             return "TRON(guid=" + getGuid() + ", hdWallet=" + this.hdWallet + ')';
         }
 
-        @Override // com.iMe.storage.domain.model.crypto.Wallet
+        @Override // com.iMe.storage.domain.model.crypto.Wallet.MultiCoinWallet, com.iMe.storage.domain.model.crypto.Wallet
         public String getGuid() {
             return this.guid;
         }
@@ -200,44 +246,132 @@ public abstract class Wallet {
             return this.hdWallet;
         }
 
-        /* JADX WARN: Illegal instructions before constructor call */
-        /*
-            Code decompiled incorrectly, please refer to instructions dump.
-            To view partially-correct add '--show-bad-code' argument
-        */
-        public TRON(java.lang.String r4, wallet.core.jni.HDWallet r5) {
-            /*
-                r3 = this;
-                java.lang.String r0 = "guid"
-                kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r4, r0)
-                java.lang.String r0 = "hdWallet"
-                kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r5, r0)
-                java.lang.String r0 = r5.mnemonic()
-                java.lang.String r1 = "hdWallet.mnemonic()"
-                kotlin.jvm.internal.Intrinsics.checkNotNullExpressionValue(r0, r1)
-                com.iMe.storage.domain.model.crypto.BlockchainType r1 = com.iMe.storage.domain.model.crypto.BlockchainType.TRON
-                r2 = 0
-                r3.<init>(r4, r0, r1, r2)
-                r3.guid = r4
-                r3.hdWallet = r5
-                wallet.core.jni.CoinType r4 = wallet.core.jni.CoinType.TRON
-                java.lang.String r0 = r5.getAddressForCoin(r4)
-                java.lang.String r1 = "hdWallet.getAddressForCoin(CoinType.TRON)"
-                kotlin.jvm.internal.Intrinsics.checkNotNullExpressionValue(r0, r1)
-                r3.address = r0
-                byte[] r4 = com.iMe.storage.domain.utils.extentions.CryptoExtKt.getPrivateKeyBytes(r5, r4)
-                r3.privateKeyBytes = r4
-                return
-            */
-            throw new UnsupportedOperationException("Method not decompiled: com.iMe.storage.domain.model.crypto.Wallet.TRON.<init>(java.lang.String, wallet.core.jni.HDWallet):void");
+        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+        public TRON(String guid, HDWallet hdWallet) {
+            super(hdWallet, guid, BlockchainType.TRON, CoinType.TRON, null);
+            Intrinsics.checkNotNullParameter(guid, "guid");
+            Intrinsics.checkNotNullParameter(hdWallet, "hdWallet");
+            this.guid = guid;
+            this.hdWallet = hdWallet;
+            byte[] data = hdWallet.getKeyForCoin(getCoinType()).getPublicKeySecp256k1(false).data();
+            Intrinsics.checkNotNullExpressionValue(data, "hdWallet\n               …                  .data()");
+            this.publicKey = CryptoExtKt.toHexString(data, false);
         }
 
         @Override // com.iMe.storage.domain.model.crypto.Wallet
+        public String getPublicKey() {
+            return this.publicKey;
+        }
+    }
+
+    /* compiled from: Wallet.kt */
+    /* loaded from: classes3.dex */
+    public static final class BTC extends MultiCoinWallet {
+        private final String address;
+        private final String guid;
+        private final HDWallet hdWallet;
+        private final byte[] privateKeyBytes;
+        private final String publicKey;
+
+        public static /* synthetic */ BTC copy$default(BTC btc, String str, HDWallet hDWallet, int i, Object obj) {
+            if ((i & 1) != 0) {
+                str = btc.getGuid();
+            }
+            if ((i & 2) != 0) {
+                hDWallet = btc.hdWallet;
+            }
+            return btc.copy(str, hDWallet);
+        }
+
+        public final String component1() {
+            return getGuid();
+        }
+
+        public final HDWallet component2() {
+            return this.hdWallet;
+        }
+
+        public final BTC copy(String guid, HDWallet hdWallet) {
+            Intrinsics.checkNotNullParameter(guid, "guid");
+            Intrinsics.checkNotNullParameter(hdWallet, "hdWallet");
+            return new BTC(guid, hdWallet);
+        }
+
+        public boolean equals(Object obj) {
+            if (this == obj) {
+                return true;
+            }
+            if (obj instanceof BTC) {
+                BTC btc = (BTC) obj;
+                return Intrinsics.areEqual(getGuid(), btc.getGuid()) && Intrinsics.areEqual(this.hdWallet, btc.hdWallet);
+            }
+            return false;
+        }
+
+        public int hashCode() {
+            return (getGuid().hashCode() * 31) + this.hdWallet.hashCode();
+        }
+
+        public String toString() {
+            return "BTC(guid=" + getGuid() + ", hdWallet=" + this.hdWallet + ')';
+        }
+
+        @Override // com.iMe.storage.domain.model.crypto.Wallet.MultiCoinWallet, com.iMe.storage.domain.model.crypto.Wallet
+        public String getGuid() {
+            return this.guid;
+        }
+
+        public final HDWallet getHdWallet() {
+            return this.hdWallet;
+        }
+
+        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+        public BTC(String guid, HDWallet hdWallet) {
+            super(hdWallet, guid, BlockchainType.BITCOIN, CoinType.BITCOIN, null);
+            String addressDerivation;
+            PrivateKey keyDerivation;
+            PrivateKey keyDerivation2;
+            Intrinsics.checkNotNullParameter(guid, "guid");
+            Intrinsics.checkNotNullParameter(hdWallet, "hdWallet");
+            this.guid = guid;
+            this.hdWallet = hdWallet;
+            EnvironmentManager environmentManager = EnvironmentManager.INSTANCE;
+            if (environmentManager.isProductionActive()) {
+                addressDerivation = hdWallet.getAddressForCoin(getCoinType());
+            } else {
+                addressDerivation = hdWallet.getAddressDerivation(getCoinType(), Derivation.BITCOINTESTNET);
+            }
+            Intrinsics.checkNotNullExpressionValue(addressDerivation, "with(hdWallet) {\n       …)\n            }\n        }");
+            this.address = addressDerivation;
+            if (environmentManager.isProductionActive()) {
+                keyDerivation = hdWallet.getKeyForCoin(getCoinType());
+            } else {
+                keyDerivation = hdWallet.getKeyDerivation(getCoinType(), Derivation.BITCOINTESTNET);
+            }
+            byte[] data = keyDerivation.getPublicKeySecp256k1(true).data();
+            Intrinsics.checkNotNullExpressionValue(data, "hdWallet\n               …                  .data()");
+            this.publicKey = CryptoExtKt.toHexString(data, false);
+            if (environmentManager.isProductionActive()) {
+                keyDerivation2 = CryptoExtKt.getPrivateKey(hdWallet, getCoinType());
+            } else {
+                keyDerivation2 = hdWallet.getKeyDerivation(getCoinType(), Derivation.BITCOINTESTNET);
+            }
+            byte[] data2 = keyDerivation2.data();
+            Intrinsics.checkNotNullExpressionValue(data2, "with(hdWallet) {\n       …       }.data()\n        }");
+            this.privateKeyBytes = data2;
+        }
+
+        @Override // com.iMe.storage.domain.model.crypto.Wallet.MultiCoinWallet, com.iMe.storage.domain.model.crypto.Wallet
         public String getAddress() {
             return this.address;
         }
 
         @Override // com.iMe.storage.domain.model.crypto.Wallet
+        public String getPublicKey() {
+            return this.publicKey;
+        }
+
+        @Override // com.iMe.storage.domain.model.crypto.Wallet.MultiCoinWallet, com.iMe.storage.domain.model.crypto.Wallet
         public byte[] getPrivateKeyBytes() {
             return this.privateKeyBytes;
         }
@@ -251,6 +385,7 @@ public abstract class Wallet {
         private final TonApi.InputKeyRegular inputKey;
         private final String mnemonic;
         private final byte[] privateKeyBytes;
+        private final String publicKey;
 
         public static /* synthetic */ TON copy$default(TON ton, String str, String str2, String str3, TonApi.InputKeyRegular inputKeyRegular, int i, Object obj) {
             if ((i & 1) != 0) {
@@ -341,131 +476,13 @@ public abstract class Wallet {
             this.mnemonic = mnemonic;
             this.address = address;
             this.inputKey = inputKey;
+            this.publicKey = CryptoExtKt.getUnarmoredPublicKey(this);
             this.privateKeyBytes = new byte[0];
         }
 
         @Override // com.iMe.storage.domain.model.crypto.Wallet
-        public byte[] getPrivateKeyBytes() {
-            return this.privateKeyBytes;
-        }
-    }
-
-    /* compiled from: Wallet.kt */
-    /* loaded from: classes3.dex */
-    public static final class BTC extends Wallet {
-        private final String address;
-        private final String guid;
-        private final HDWallet hdWallet;
-        private final byte[] privateKeyBytes;
-
-        public static /* synthetic */ BTC copy$default(BTC btc, String str, HDWallet hDWallet, int i, Object obj) {
-            if ((i & 1) != 0) {
-                str = btc.getGuid();
-            }
-            if ((i & 2) != 0) {
-                hDWallet = btc.hdWallet;
-            }
-            return btc.copy(str, hDWallet);
-        }
-
-        public final String component1() {
-            return getGuid();
-        }
-
-        public final HDWallet component2() {
-            return this.hdWallet;
-        }
-
-        public final BTC copy(String guid, HDWallet hdWallet) {
-            Intrinsics.checkNotNullParameter(guid, "guid");
-            Intrinsics.checkNotNullParameter(hdWallet, "hdWallet");
-            return new BTC(guid, hdWallet);
-        }
-
-        public boolean equals(Object obj) {
-            if (this == obj) {
-                return true;
-            }
-            if (obj instanceof BTC) {
-                BTC btc = (BTC) obj;
-                return Intrinsics.areEqual(getGuid(), btc.getGuid()) && Intrinsics.areEqual(this.hdWallet, btc.hdWallet);
-            }
-            return false;
-        }
-
-        public int hashCode() {
-            return (getGuid().hashCode() * 31) + this.hdWallet.hashCode();
-        }
-
-        public String toString() {
-            return "BTC(guid=" + getGuid() + ", hdWallet=" + this.hdWallet + ')';
-        }
-
-        @Override // com.iMe.storage.domain.model.crypto.Wallet
-        public String getGuid() {
-            return this.guid;
-        }
-
-        public final HDWallet getHdWallet() {
-            return this.hdWallet;
-        }
-
-        /* JADX WARN: Illegal instructions before constructor call */
-        /*
-            Code decompiled incorrectly, please refer to instructions dump.
-            To view partially-correct add '--show-bad-code' argument
-        */
-        public BTC(java.lang.String r4, wallet.core.jni.HDWallet r5) {
-            /*
-                r3 = this;
-                java.lang.String r0 = "guid"
-                kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r4, r0)
-                java.lang.String r0 = "hdWallet"
-                kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r5, r0)
-                java.lang.String r0 = r5.mnemonic()
-                java.lang.String r1 = "hdWallet.mnemonic()"
-                kotlin.jvm.internal.Intrinsics.checkNotNullExpressionValue(r0, r1)
-                com.iMe.storage.domain.model.crypto.BlockchainType r1 = com.iMe.storage.domain.model.crypto.BlockchainType.BITCOIN
-                r2 = 0
-                r3.<init>(r4, r0, r1, r2)
-                r3.guid = r4
-                r3.hdWallet = r5
-                com.iMe.storage.data.manager.common.EnvironmentManager r4 = com.iMe.storage.data.manager.common.EnvironmentManager.INSTANCE
-                boolean r0 = r4.isProductionActive()
-                if (r0 == 0) goto L2c
-                wallet.core.jni.CoinType r0 = wallet.core.jni.CoinType.BITCOIN
-                java.lang.String r0 = r5.getAddressForCoin(r0)
-                goto L34
-            L2c:
-                wallet.core.jni.CoinType r0 = wallet.core.jni.CoinType.BITCOIN
-                wallet.core.jni.Derivation r1 = wallet.core.jni.Derivation.BITCOINTESTNET
-                java.lang.String r0 = r5.getAddressDerivation(r0, r1)
-            L34:
-                java.lang.String r1 = "with(hdWallet) {\n       …)\n            }\n        }"
-                kotlin.jvm.internal.Intrinsics.checkNotNullExpressionValue(r0, r1)
-                r3.address = r0
-                boolean r4 = r4.isProductionActive()
-                if (r4 == 0) goto L48
-                wallet.core.jni.CoinType r4 = wallet.core.jni.CoinType.BITCOIN
-                wallet.core.jni.PrivateKey r4 = com.iMe.storage.domain.utils.extentions.CryptoExtKt.getPrivateKey(r5, r4)
-                goto L50
-            L48:
-                wallet.core.jni.CoinType r4 = wallet.core.jni.CoinType.BITCOIN
-                wallet.core.jni.Derivation r0 = wallet.core.jni.Derivation.BITCOINTESTNET
-                wallet.core.jni.PrivateKey r4 = r5.getKeyDerivation(r4, r0)
-            L50:
-                byte[] r4 = r4.data()
-                java.lang.String r5 = "with(hdWallet) {\n       …       }.data()\n        }"
-                kotlin.jvm.internal.Intrinsics.checkNotNullExpressionValue(r4, r5)
-                r3.privateKeyBytes = r4
-                return
-            */
-            throw new UnsupportedOperationException("Method not decompiled: com.iMe.storage.domain.model.crypto.Wallet.BTC.<init>(java.lang.String, wallet.core.jni.HDWallet):void");
-        }
-
-        @Override // com.iMe.storage.domain.model.crypto.Wallet
-        public String getAddress() {
-            return this.address;
+        public String getPublicKey() {
+            return this.publicKey;
         }
 
         @Override // com.iMe.storage.domain.model.crypto.Wallet

@@ -30,14 +30,14 @@
 .method constructor <init>(Lcom/iMe/ui/wallet/crypto/buy/BuyCryptoProductView$$State;Z)V
     .locals 1
 
-    .line 272
+    .line 288
     const-class p1, Lmoxy/viewstate/strategy/OneExecutionStateStrategy;
 
     const-string v0, "showRefreshLoading"
 
     invoke-direct {p0, v0, p1}, Lmoxy/viewstate/ViewCommand;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
-    .line 274
+    .line 290
     iput-boolean p2, p0, Lcom/iMe/ui/wallet/crypto/buy/BuyCryptoProductView$$State$ShowRefreshLoadingCommand;->show:Z
 
     return-void
@@ -48,7 +48,7 @@
 .method public apply(Lcom/iMe/ui/wallet/crypto/buy/BuyCryptoProductView;)V
     .locals 1
 
-    .line 279
+    .line 295
     iget-boolean v0, p0, Lcom/iMe/ui/wallet/crypto/buy/BuyCryptoProductView$$State$ShowRefreshLoadingCommand;->show:Z
 
     invoke-interface {p1, v0}, Lcom/iMe/ui/wallet/crypto/buy/BuyCryptoProductView;->showRefreshLoading(Z)V
@@ -59,7 +59,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 268
+    .line 284
     check-cast p1, Lcom/iMe/ui/wallet/crypto/buy/BuyCryptoProductView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/wallet/crypto/buy/BuyCryptoProductView$$State$ShowRefreshLoadingCommand;->apply(Lcom/iMe/ui/wallet/crypto/buy/BuyCryptoProductView;)V

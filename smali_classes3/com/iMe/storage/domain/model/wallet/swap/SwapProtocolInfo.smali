@@ -39,7 +39,7 @@
         value = {
             "Lkotlin/Lazy<",
             "Ljava/util/List<",
-            "Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocolInfo$UniswapV3;",
+            "Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocolInfo;",
             ">;>;"
         }
     .end annotation
@@ -61,7 +61,7 @@
         value = {
             "Lkotlin/Lazy<",
             "Ljava/util/List<",
-            "Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocolInfo;",
+            "Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocolInfo$Oneinch;",
             ">;>;"
         }
     .end annotation
@@ -79,11 +79,11 @@
 
 .field private final name:I
 
-.field private final supportedNetworks:Ljava/util/List;
+.field private final supportedNetworksIds:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
-            "Lcom/iMe/storage/domain/model/crypto/NetworkType;",
+            "Ljava/lang/String;",
             ">;"
         }
     .end annotation
@@ -102,7 +102,7 @@
 
     sput-object v0, Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocolInfo;->Companion:Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocolInfo$Companion;
 
-    .line 72
+    .line 73
     sget-object v0, Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocolInfo$Companion$allExchanges$2;->INSTANCE:Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocolInfo$Companion$allExchanges$2;
 
     invoke-static {v0}, Lkotlin/LazyKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
@@ -112,6 +112,15 @@
     sput-object v0, Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocolInfo;->allExchanges$delegate:Lkotlin/Lazy;
 
     .line 74
+    sget-object v0, Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocolInfo$Companion$invisibleExchanges$2;->INSTANCE:Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocolInfo$Companion$invisibleExchanges$2;
+
+    invoke-static {v0}, Lkotlin/LazyKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
+
+    move-result-object v0
+
+    sput-object v0, Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocolInfo;->invisibleExchanges$delegate:Lkotlin/Lazy;
+
+    .line 76
     sget-object v0, Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocolInfo$Companion$supportedExchanges$2;->INSTANCE:Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocolInfo$Companion$supportedExchanges$2;
 
     invoke-static {v0}, Lkotlin/LazyKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
@@ -120,7 +129,7 @@
 
     sput-object v0, Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocolInfo;->supportedExchanges$delegate:Lkotlin/Lazy;
 
-    .line 75
+    .line 77
     sget-object v0, Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocolInfo$Companion$supportedCrossChainExchanges$2;->INSTANCE:Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocolInfo$Companion$supportedCrossChainExchanges$2;
 
     invoke-static {v0}, Lkotlin/LazyKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
@@ -128,15 +137,6 @@
     move-result-object v0
 
     sput-object v0, Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocolInfo;->supportedCrossChainExchanges$delegate:Lkotlin/Lazy;
-
-    .line 76
-    sget-object v0, Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocolInfo$Companion$invisibleExchanges$2;->INSTANCE:Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocolInfo$Companion$invisibleExchanges$2;
-
-    invoke-static {v0}, Lkotlin/LazyKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
-
-    move-result-object v0
-
-    sput-object v0, Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocolInfo;->invisibleExchanges$delegate:Lkotlin/Lazy;
 
     return-void
 .end method
@@ -149,32 +149,31 @@
             "Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocol;",
             "IIII",
             "Ljava/util/List<",
-            "+",
-            "Lcom/iMe/storage/domain/model/crypto/NetworkType;",
+            "Ljava/lang/String;",
             ">;)V"
         }
     .end annotation
 
-    .line 8
+    .line 9
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 9
+    .line 10
     iput-object p1, p0, Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocolInfo;->code:Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocol;
 
-    .line 10
+    .line 11
     iput p2, p0, Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocolInfo;->logo:I
 
-    .line 11
+    .line 12
     iput p3, p0, Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocolInfo;->name:I
 
-    .line 12
+    .line 13
     iput p4, p0, Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocolInfo;->description:I
 
-    .line 13
+    .line 14
     iput p5, p0, Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocolInfo;->longDescription:I
 
-    .line 14
-    iput-object p6, p0, Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocolInfo;->supportedNetworks:Ljava/util/List;
+    .line 15
+    iput-object p6, p0, Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocolInfo;->supportedNetworksIds:Ljava/util/List;
 
     return-void
 .end method
@@ -190,7 +189,7 @@
 .method public static final synthetic access$getAllExchanges$delegate$cp()Lkotlin/Lazy;
     .locals 1
 
-    .line 8
+    .line 9
     sget-object v0, Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocolInfo;->allExchanges$delegate:Lkotlin/Lazy;
 
     return-object v0
@@ -199,7 +198,7 @@
 .method public static final synthetic access$getInvisibleExchanges$delegate$cp()Lkotlin/Lazy;
     .locals 1
 
-    .line 8
+    .line 9
     sget-object v0, Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocolInfo;->invisibleExchanges$delegate:Lkotlin/Lazy;
 
     return-object v0
@@ -208,7 +207,7 @@
 .method public static final synthetic access$getSupportedCrossChainExchanges$delegate$cp()Lkotlin/Lazy;
     .locals 1
 
-    .line 8
+    .line 9
     sget-object v0, Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocolInfo;->supportedCrossChainExchanges$delegate:Lkotlin/Lazy;
 
     return-object v0
@@ -217,7 +216,7 @@
 .method public static final synthetic access$getSupportedExchanges$delegate$cp()Lkotlin/Lazy;
     .locals 1
 
-    .line 8
+    .line 9
     sget-object v0, Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocolInfo;->supportedExchanges$delegate:Lkotlin/Lazy;
 
     return-object v0
@@ -228,7 +227,7 @@
 .method public final getCode()Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocol;
     .locals 1
 
-    .line 9
+    .line 10
     iget-object v0, p0, Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocolInfo;->code:Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocol;
 
     return-object v0
@@ -237,7 +236,7 @@
 .method public final getDescription()I
     .locals 1
 
-    .line 12
+    .line 13
     iget v0, p0, Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocolInfo;->description:I
 
     return v0
@@ -246,7 +245,7 @@
 .method public final getLogo()I
     .locals 1
 
-    .line 10
+    .line 11
     iget v0, p0, Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocolInfo;->logo:I
 
     return v0
@@ -255,7 +254,7 @@
 .method public final getLongDescription()I
     .locals 1
 
-    .line 13
+    .line 14
     iget v0, p0, Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocolInfo;->longDescription:I
 
     return v0
@@ -264,25 +263,25 @@
 .method public final getName()I
     .locals 1
 
-    .line 11
+    .line 12
     iget v0, p0, Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocolInfo;->name:I
 
     return v0
 .end method
 
-.method public final getSupportedNetworks()Ljava/util/List;
+.method public final getSupportedNetworksIds()Ljava/util/List;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
             "Ljava/util/List<",
-            "Lcom/iMe/storage/domain/model/crypto/NetworkType;",
+            "Ljava/lang/String;",
             ">;"
         }
     .end annotation
 
-    .line 14
-    iget-object v0, p0, Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocolInfo;->supportedNetworks:Ljava/util/List;
+    .line 15
+    iget-object v0, p0, Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocolInfo;->supportedNetworksIds:Ljava/util/List;
 
     return-object v0
 .end method

@@ -27,35 +27,28 @@
         }
     .end annotation
 
-    .line 2790
+    .line 2796
     iput-object p1, p0, Lorg/telegram/ui/PaymentFormActivity$23$1;->this$1:Lorg/telegram/ui/PaymentFormActivity$23;
 
     invoke-direct {p0}, Lorg/json/JSONObject;-><init>()V
 
-    const-string v0, "gateway"
+    const-string v0, "protocolVersion"
 
-    const-string v1, "stripe"
+    const-string v1, "ECv2"
 
-    .line 2791
+    .line 2797
     invoke-virtual {p0, v0, v1}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
 
-    .line 2792
+    .line 2798
     iget-object p1, p1, Lorg/telegram/ui/PaymentFormActivity$23;->this$0:Lorg/telegram/ui/PaymentFormActivity;
 
-    invoke-static {p1}, Lorg/telegram/ui/PaymentFormActivity;->access$4200(Lorg/telegram/ui/PaymentFormActivity;)Ljava/lang/String;
+    invoke-static {p1}, Lorg/telegram/ui/PaymentFormActivity;->access$5000(Lorg/telegram/ui/PaymentFormActivity;)Ljava/lang/String;
 
     move-result-object p1
 
-    const-string v0, "stripe:publishableKey"
+    const-string v0, "publicKey"
 
     invoke-virtual {p0, v0, p1}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
-
-    const-string p1, "stripe:version"
-
-    const-string v0, "3.5.0"
-
-    .line 2793
-    invoke-virtual {p0, p1, v0}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
 
     return-void
 .end method

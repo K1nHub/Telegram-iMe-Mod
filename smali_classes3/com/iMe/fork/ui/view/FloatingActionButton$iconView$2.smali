@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/iMe/fork/ui/view/FloatingActionButton;-><init>(Landroid/content/Context;)V
+    value = Lcom/iMe/fork/ui/view/FloatingActionButton;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -48,7 +48,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 24
+    .line 29
     invoke-virtual {p0}, Lcom/iMe/fork/ui/view/FloatingActionButton$iconView$2;->invoke()Lorg/telegram/ui/Components/RLottieImageView;
 
     move-result-object v0
@@ -59,7 +59,7 @@
 .method public final invoke()Lorg/telegram/ui/Components/RLottieImageView;
     .locals 1
 
-    .line 24
+    .line 29
     iget-object v0, p0, Lcom/iMe/fork/ui/view/FloatingActionButton$iconView$2;->this$0:Lcom/iMe/fork/ui/view/FloatingActionButton;
 
     invoke-static {v0}, Lcom/iMe/fork/ui/view/FloatingActionButton;->access$initIconView(Lcom/iMe/fork/ui/view/FloatingActionButton;)Lorg/telegram/ui/Components/RLottieImageView;

@@ -11,7 +11,7 @@ import moxy.viewstate.ViewCommand;
 import moxy.viewstate.strategy.AddToEndSingleStrategy;
 import moxy.viewstate.strategy.OneExecutionStateStrategy;
 /* renamed from: com.iMe.ui.wallet.crypto.settings.WalletAccountSettingsView$$State */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class WalletAccountSettingsView$$State extends MvpViewState<WalletAccountSettingsView> implements WalletAccountSettingsView {
     @Override // com.iMe.p031ui.base.mvp.base.BaseView
     public /* synthetic */ void finishScreen() {
@@ -19,16 +19,16 @@ public class WalletAccountSettingsView$$State extends MvpViewState<WalletAccount
     }
 
     @Override // com.iMe.p031ui.wallet.crypto.settings.WalletAccountSettingsView
-    public void setupSettingsItems(List<WalletSettingsItem> list) {
-        SetupSettingsItemsCommand setupSettingsItemsCommand = new SetupSettingsItemsCommand(this, list);
-        this.viewCommands.beforeApply(setupSettingsItemsCommand);
+    public void renderSettingsItems(List<WalletSettingsItem> list) {
+        RenderSettingsItemsCommand renderSettingsItemsCommand = new RenderSettingsItemsCommand(this, list);
+        this.viewCommands.beforeApply(renderSettingsItemsCommand);
         if (hasNotView().booleanValue()) {
             return;
         }
         for (View view : this.views) {
-            view.setupSettingsItems(list);
+            view.renderSettingsItems(list);
         }
-        this.viewCommands.afterApply(setupSettingsItemsCommand);
+        this.viewCommands.afterApply(renderSettingsItemsCommand);
     }
 
     @Override // com.iMe.p031ui.wallet.crypto.settings.WalletAccountSettingsView
@@ -68,6 +68,19 @@ public class WalletAccountSettingsView$$State extends MvpViewState<WalletAccount
             view.openWalletConnectScreen();
         }
         this.viewCommands.afterApply(openWalletConnectScreenCommand);
+    }
+
+    @Override // com.iMe.p031ui.wallet.crypto.settings.WalletAccountSettingsView
+    public void openCustomTokensScreen() {
+        OpenCustomTokensScreenCommand openCustomTokensScreenCommand = new OpenCustomTokensScreenCommand(this);
+        this.viewCommands.beforeApply(openCustomTokensScreenCommand);
+        if (hasNotView().booleanValue()) {
+            return;
+        }
+        for (View view : this.views) {
+            view.openCustomTokensScreen();
+        }
+        this.viewCommands.afterApply(openCustomTokensScreenCommand);
     }
 
     @Override // com.iMe.p031ui.wallet.crypto.settings.WalletAccountSettingsView
@@ -122,26 +135,39 @@ public class WalletAccountSettingsView$$State extends MvpViewState<WalletAccount
         this.viewCommands.afterApply(showErrorToastCommand);
     }
 
+    @Override // com.iMe.p031ui.base.mvp.base.BaseView
+    public void removeSelfFromStackImmediately() {
+        RemoveSelfFromStackImmediatelyCommand removeSelfFromStackImmediatelyCommand = new RemoveSelfFromStackImmediatelyCommand(this);
+        this.viewCommands.beforeApply(removeSelfFromStackImmediatelyCommand);
+        if (hasNotView().booleanValue()) {
+            return;
+        }
+        for (View view : this.views) {
+            view.removeSelfFromStackImmediately();
+        }
+        this.viewCommands.afterApply(removeSelfFromStackImmediatelyCommand);
+    }
+
     /* compiled from: WalletAccountSettingsView$$State.java */
-    /* renamed from: com.iMe.ui.wallet.crypto.settings.WalletAccountSettingsView$$State$SetupSettingsItemsCommand */
-    /* loaded from: classes3.dex */
-    public class SetupSettingsItemsCommand extends ViewCommand<WalletAccountSettingsView> {
+    /* renamed from: com.iMe.ui.wallet.crypto.settings.WalletAccountSettingsView$$State$RenderSettingsItemsCommand */
+    /* loaded from: classes4.dex */
+    public class RenderSettingsItemsCommand extends ViewCommand<WalletAccountSettingsView> {
         public final List<WalletSettingsItem> items;
 
-        SetupSettingsItemsCommand(WalletAccountSettingsView$$State walletAccountSettingsView$$State, List<WalletSettingsItem> list) {
-            super("setupSettingsItems", AddToEndSingleStrategy.class);
+        RenderSettingsItemsCommand(WalletAccountSettingsView$$State walletAccountSettingsView$$State, List<WalletSettingsItem> list) {
+            super("renderSettingsItems", AddToEndSingleStrategy.class);
             this.items = list;
         }
 
         @Override // moxy.viewstate.ViewCommand
         public void apply(WalletAccountSettingsView walletAccountSettingsView) {
-            walletAccountSettingsView.setupSettingsItems(this.items);
+            walletAccountSettingsView.renderSettingsItems(this.items);
         }
     }
 
     /* compiled from: WalletAccountSettingsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.settings.WalletAccountSettingsView$$State$OpenBlockchainsScreenCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class OpenBlockchainsScreenCommand extends ViewCommand<WalletAccountSettingsView> {
         OpenBlockchainsScreenCommand(WalletAccountSettingsView$$State walletAccountSettingsView$$State) {
             super("openBlockchainsScreen", OneExecutionStateStrategy.class);
@@ -155,7 +181,7 @@ public class WalletAccountSettingsView$$State extends MvpViewState<WalletAccount
 
     /* compiled from: WalletAccountSettingsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.settings.WalletAccountSettingsView$$State$OpenPrivacySettingsScreenCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class OpenPrivacySettingsScreenCommand extends ViewCommand<WalletAccountSettingsView> {
         OpenPrivacySettingsScreenCommand(WalletAccountSettingsView$$State walletAccountSettingsView$$State) {
             super("openPrivacySettingsScreen", OneExecutionStateStrategy.class);
@@ -169,7 +195,7 @@ public class WalletAccountSettingsView$$State extends MvpViewState<WalletAccount
 
     /* compiled from: WalletAccountSettingsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.settings.WalletAccountSettingsView$$State$OpenWalletConnectScreenCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class OpenWalletConnectScreenCommand extends ViewCommand<WalletAccountSettingsView> {
         OpenWalletConnectScreenCommand(WalletAccountSettingsView$$State walletAccountSettingsView$$State) {
             super("openWalletConnectScreen", OneExecutionStateStrategy.class);
@@ -182,8 +208,22 @@ public class WalletAccountSettingsView$$State extends MvpViewState<WalletAccount
     }
 
     /* compiled from: WalletAccountSettingsView$$State.java */
+    /* renamed from: com.iMe.ui.wallet.crypto.settings.WalletAccountSettingsView$$State$OpenCustomTokensScreenCommand */
+    /* loaded from: classes4.dex */
+    public class OpenCustomTokensScreenCommand extends ViewCommand<WalletAccountSettingsView> {
+        OpenCustomTokensScreenCommand(WalletAccountSettingsView$$State walletAccountSettingsView$$State) {
+            super("openCustomTokensScreen", OneExecutionStateStrategy.class);
+        }
+
+        @Override // moxy.viewstate.ViewCommand
+        public void apply(WalletAccountSettingsView walletAccountSettingsView) {
+            walletAccountSettingsView.openCustomTokensScreen();
+        }
+    }
+
+    /* compiled from: WalletAccountSettingsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.settings.WalletAccountSettingsView$$State$OpenPinCodeSettingsScreenCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class OpenPinCodeSettingsScreenCommand extends ViewCommand<WalletAccountSettingsView> {
         OpenPinCodeSettingsScreenCommand(WalletAccountSettingsView$$State walletAccountSettingsView$$State) {
             super("openPinCodeSettingsScreen", OneExecutionStateStrategy.class);
@@ -197,7 +237,7 @@ public class WalletAccountSettingsView$$State extends MvpViewState<WalletAccount
 
     /* compiled from: WalletAccountSettingsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.settings.WalletAccountSettingsView$$State$ShowToastCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class ShowToastCommand extends ViewCommand<WalletAccountSettingsView> {
         public final String text;
 
@@ -214,7 +254,7 @@ public class WalletAccountSettingsView$$State extends MvpViewState<WalletAccount
 
     /* compiled from: WalletAccountSettingsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.settings.WalletAccountSettingsView$$State$ShowLoadingDialogCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class ShowLoadingDialogCommand extends ViewCommand<WalletAccountSettingsView> {
         public final Disposable actionToCancel;
         public final boolean cancellable;
@@ -235,7 +275,7 @@ public class WalletAccountSettingsView$$State extends MvpViewState<WalletAccount
 
     /* compiled from: WalletAccountSettingsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.settings.WalletAccountSettingsView$$State$ShowErrorToastCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class ShowErrorToastCommand<T> extends ViewCommand<WalletAccountSettingsView> {
         public final ResourceManager resourceManager;
         public final Result.Error<? extends T> result;
@@ -249,6 +289,20 @@ public class WalletAccountSettingsView$$State extends MvpViewState<WalletAccount
         @Override // moxy.viewstate.ViewCommand
         public void apply(WalletAccountSettingsView walletAccountSettingsView) {
             walletAccountSettingsView.showErrorToast(this.result, this.resourceManager);
+        }
+    }
+
+    /* compiled from: WalletAccountSettingsView$$State.java */
+    /* renamed from: com.iMe.ui.wallet.crypto.settings.WalletAccountSettingsView$$State$RemoveSelfFromStackImmediatelyCommand */
+    /* loaded from: classes4.dex */
+    public class RemoveSelfFromStackImmediatelyCommand extends ViewCommand<WalletAccountSettingsView> {
+        RemoveSelfFromStackImmediatelyCommand(WalletAccountSettingsView$$State walletAccountSettingsView$$State) {
+            super("removeSelfFromStackImmediately", OneExecutionStateStrategy.class);
+        }
+
+        @Override // moxy.viewstate.ViewCommand
+        public void apply(WalletAccountSettingsView walletAccountSettingsView) {
+            walletAccountSettingsView.removeSelfFromStackImmediately();
         }
     }
 }

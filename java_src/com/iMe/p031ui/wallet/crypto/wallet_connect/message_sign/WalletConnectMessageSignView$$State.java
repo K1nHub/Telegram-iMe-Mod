@@ -16,6 +16,11 @@ public class WalletConnectMessageSignView$$State extends MvpViewState<WalletConn
         BaseView.CC.$default$finishScreen(this);
     }
 
+    @Override // com.iMe.p031ui.base.mvp.base.BaseView
+    public /* synthetic */ void removeSelfFromStackImmediately() {
+        BaseView.CC.$default$removeSelfFromStackImmediately(this);
+    }
+
     @Override // com.iMe.p031ui.wallet.crypto.wallet_connect.message_sign.WalletConnectMessageSignView
     public void setupScreenWithData(String str, String str2, String str3) {
         SetupScreenWithDataCommand setupScreenWithDataCommand = new SetupScreenWithDataCommand(this, str, str2, str3);

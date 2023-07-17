@@ -1,7 +1,7 @@
 package com.iMe.p031ui.pager;
 
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.p044ui.Components.RecyclerListView;
+import org.telegram.p043ui.Components.RecyclerListView;
 /* compiled from: ViewPageData.kt */
 /* renamed from: com.iMe.ui.pager.ViewPageData */
 /* loaded from: classes3.dex */

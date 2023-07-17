@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/VoIPFragment;)V
     .locals 0
 
-    .line 1702
+    .line 1726
     iput-object p1, p0, Lorg/telegram/ui/VoIPFragment$16;->this$0:Lorg/telegram/ui/VoIPFragment;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,7 +35,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 1705
+    .line 1729
     iget-object p1, p0, Lorg/telegram/ui/VoIPFragment$16;->this$0:Lorg/telegram/ui/VoIPFragment;
 
     invoke-static {p1}, Lorg/telegram/ui/VoIPFragment;->access$4300(Lorg/telegram/ui/VoIPFragment;)Lorg/telegram/ui/Components/voip/VoIPFloatingLayout;
@@ -48,7 +48,7 @@
 
     if-nez p1, :cond_0
 
-    .line 1706
+    .line 1730
     iget-object p1, p0, Lorg/telegram/ui/VoIPFragment$16;->this$0:Lorg/telegram/ui/VoIPFragment;
 
     invoke-static {p1}, Lorg/telegram/ui/VoIPFragment;->access$4300(Lorg/telegram/ui/VoIPFragment;)Lorg/telegram/ui/Components/voip/VoIPFloatingLayout;

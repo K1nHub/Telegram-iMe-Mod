@@ -26,7 +26,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nCreateWalletFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 CreateWalletFragment.kt\ncom/iMe/ui/wallet/crypto/create/CreateWalletFragment$presenter$2\n+ 2 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n*L\n1#1,1337:1\n56#2,6:1338\n*S KotlinDebug\n*F\n+ 1 CreateWalletFragment.kt\ncom/iMe/ui/wallet/crypto/create/CreateWalletFragment$presenter$2\n*L\n69#1:1338,6\n*E\n"
+    value = "SMAP\nCreateWalletFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 CreateWalletFragment.kt\ncom/iMe/ui/wallet/crypto/create/CreateWalletFragment$presenter$2\n+ 2 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n*L\n1#1,1418:1\n56#2,6:1419\n*S KotlinDebug\n*F\n+ 1 CreateWalletFragment.kt\ncom/iMe/ui/wallet/crypto/create/CreateWalletFragment$presenter$2\n*L\n110#1:1419,6\n*E\n"
 .end annotation
 
 
@@ -52,7 +52,7 @@
 .method public final invoke()Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter;
     .locals 5
 
-    .line 69
+    .line 110
     iget-object v0, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$presenter$2;->this$0:Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;
 
     new-instance v1, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$presenter$2$1;
@@ -77,7 +77,7 @@
 
     move-result-object v0
 
-    .line 69
+    .line 110
     invoke-interface {v0}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
 
     move-result-object v0
@@ -90,7 +90,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 68
+    .line 109
     invoke-virtual {p0}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$presenter$2;->invoke()Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter;
 
     move-result-object v0

@@ -6,7 +6,7 @@
 # instance fields
 .field private final data:Ljava/lang/String;
 
-.field private final feeTokenCode:Ljava/lang/String;
+.field private final feeToken:Lcom/iMe/storage/data/network/model/response/wallet/TokenDetailedResponse;
 
 .field private final from:Ljava/lang/String;
 
@@ -20,7 +20,7 @@
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/data/network/model/response/crypto/wallet/TransactionParamsResponse$EVM;Ljava/lang/String;Ljava/lang/String;)V
+.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/data/network/model/response/crypto/wallet/TransactionParamsResponse$EVM;Ljava/lang/String;Lcom/iMe/storage/data/network/model/response/wallet/TokenDetailedResponse;)V
     .locals 1
 
     const-string v0, "from"
@@ -47,38 +47,38 @@
 
     invoke-static {p6, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "feeTokenCode"
+    const-string v0, "feeToken"
 
     invoke-static {p7, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 5
+    .line 6
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 6
+    .line 7
     iput-object p1, p0, Lcom/iMe/storage/data/network/model/response/crypto/wallet_connect/ParamsForCryptoTransactionResponse;->from:Ljava/lang/String;
 
-    .line 7
+    .line 8
     iput-object p2, p0, Lcom/iMe/storage/data/network/model/response/crypto/wallet_connect/ParamsForCryptoTransactionResponse;->to:Ljava/lang/String;
 
-    .line 8
+    .line 9
     iput-object p3, p0, Lcom/iMe/storage/data/network/model/response/crypto/wallet_connect/ParamsForCryptoTransactionResponse;->value:Ljava/lang/String;
 
-    .line 9
+    .line 10
     iput-object p4, p0, Lcom/iMe/storage/data/network/model/response/crypto/wallet_connect/ParamsForCryptoTransactionResponse;->data:Ljava/lang/String;
 
-    .line 10
+    .line 11
     iput-object p5, p0, Lcom/iMe/storage/data/network/model/response/crypto/wallet_connect/ParamsForCryptoTransactionResponse;->transactionParams:Lcom/iMe/storage/data/network/model/response/crypto/wallet/TransactionParamsResponse$EVM;
 
-    .line 11
+    .line 12
     iput-object p6, p0, Lcom/iMe/storage/data/network/model/response/crypto/wallet_connect/ParamsForCryptoTransactionResponse;->networkType:Ljava/lang/String;
 
-    .line 12
-    iput-object p7, p0, Lcom/iMe/storage/data/network/model/response/crypto/wallet_connect/ParamsForCryptoTransactionResponse;->feeTokenCode:Ljava/lang/String;
+    .line 13
+    iput-object p7, p0, Lcom/iMe/storage/data/network/model/response/crypto/wallet_connect/ParamsForCryptoTransactionResponse;->feeToken:Lcom/iMe/storage/data/network/model/response/wallet/TokenDetailedResponse;
 
     return-void
 .end method
 
-.method public static synthetic copy$default(Lcom/iMe/storage/data/network/model/response/crypto/wallet_connect/ParamsForCryptoTransactionResponse;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/data/network/model/response/crypto/wallet/TransactionParamsResponse$EVM;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Object;)Lcom/iMe/storage/data/network/model/response/crypto/wallet_connect/ParamsForCryptoTransactionResponse;
+.method public static synthetic copy$default(Lcom/iMe/storage/data/network/model/response/crypto/wallet_connect/ParamsForCryptoTransactionResponse;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/data/network/model/response/crypto/wallet/TransactionParamsResponse$EVM;Ljava/lang/String;Lcom/iMe/storage/data/network/model/response/wallet/TokenDetailedResponse;ILjava/lang/Object;)Lcom/iMe/storage/data/network/model/response/crypto/wallet_connect/ParamsForCryptoTransactionResponse;
     .locals 5
 
     and-int/lit8 p9, p8, 0x1
@@ -137,7 +137,7 @@
 
     if-eqz p2, :cond_6
 
-    iget-object p7, p0, Lcom/iMe/storage/data/network/model/response/crypto/wallet_connect/ParamsForCryptoTransactionResponse;->feeTokenCode:Ljava/lang/String;
+    iget-object p7, p0, Lcom/iMe/storage/data/network/model/response/crypto/wallet_connect/ParamsForCryptoTransactionResponse;->feeToken:Lcom/iMe/storage/data/network/model/response/wallet/TokenDetailedResponse;
 
     :cond_6
     move-object v4, p7
@@ -158,7 +158,7 @@
 
     move-object p9, v4
 
-    invoke-virtual/range {p2 .. p9}, Lcom/iMe/storage/data/network/model/response/crypto/wallet_connect/ParamsForCryptoTransactionResponse;->copy(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/data/network/model/response/crypto/wallet/TransactionParamsResponse$EVM;Ljava/lang/String;Ljava/lang/String;)Lcom/iMe/storage/data/network/model/response/crypto/wallet_connect/ParamsForCryptoTransactionResponse;
+    invoke-virtual/range {p2 .. p9}, Lcom/iMe/storage/data/network/model/response/crypto/wallet_connect/ParamsForCryptoTransactionResponse;->copy(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/data/network/model/response/crypto/wallet/TransactionParamsResponse$EVM;Ljava/lang/String;Lcom/iMe/storage/data/network/model/response/wallet/TokenDetailedResponse;)Lcom/iMe/storage/data/network/model/response/crypto/wallet_connect/ParamsForCryptoTransactionResponse;
 
     move-result-object p0
 
@@ -215,15 +215,15 @@
     return-object v0
 .end method
 
-.method public final component7()Ljava/lang/String;
+.method public final component7()Lcom/iMe/storage/data/network/model/response/wallet/TokenDetailedResponse;
     .locals 1
 
-    iget-object v0, p0, Lcom/iMe/storage/data/network/model/response/crypto/wallet_connect/ParamsForCryptoTransactionResponse;->feeTokenCode:Ljava/lang/String;
+    iget-object v0, p0, Lcom/iMe/storage/data/network/model/response/crypto/wallet_connect/ParamsForCryptoTransactionResponse;->feeToken:Lcom/iMe/storage/data/network/model/response/wallet/TokenDetailedResponse;
 
     return-object v0
 .end method
 
-.method public final copy(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/data/network/model/response/crypto/wallet/TransactionParamsResponse$EVM;Ljava/lang/String;Ljava/lang/String;)Lcom/iMe/storage/data/network/model/response/crypto/wallet_connect/ParamsForCryptoTransactionResponse;
+.method public final copy(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/data/network/model/response/crypto/wallet/TransactionParamsResponse$EVM;Ljava/lang/String;Lcom/iMe/storage/data/network/model/response/wallet/TokenDetailedResponse;)Lcom/iMe/storage/data/network/model/response/crypto/wallet_connect/ParamsForCryptoTransactionResponse;
     .locals 9
 
     const-string v0, "from"
@@ -262,7 +262,7 @@
 
     invoke-static {p6, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "feeTokenCode"
+    const-string v0, "feeToken"
 
     move-object/from16 v8, p7
 
@@ -272,7 +272,7 @@
 
     move-object v1, v0
 
-    invoke-direct/range {v1 .. v8}, Lcom/iMe/storage/data/network/model/response/crypto/wallet_connect/ParamsForCryptoTransactionResponse;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/data/network/model/response/crypto/wallet/TransactionParamsResponse$EVM;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct/range {v1 .. v8}, Lcom/iMe/storage/data/network/model/response/crypto/wallet_connect/ParamsForCryptoTransactionResponse;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/data/network/model/response/crypto/wallet/TransactionParamsResponse$EVM;Ljava/lang/String;Lcom/iMe/storage/data/network/model/response/wallet/TokenDetailedResponse;)V
 
     return-object v0
 .end method
@@ -376,9 +376,9 @@
     return v2
 
     :cond_7
-    iget-object v1, p0, Lcom/iMe/storage/data/network/model/response/crypto/wallet_connect/ParamsForCryptoTransactionResponse;->feeTokenCode:Ljava/lang/String;
+    iget-object v1, p0, Lcom/iMe/storage/data/network/model/response/crypto/wallet_connect/ParamsForCryptoTransactionResponse;->feeToken:Lcom/iMe/storage/data/network/model/response/wallet/TokenDetailedResponse;
 
-    iget-object p1, p1, Lcom/iMe/storage/data/network/model/response/crypto/wallet_connect/ParamsForCryptoTransactionResponse;->feeTokenCode:Ljava/lang/String;
+    iget-object p1, p1, Lcom/iMe/storage/data/network/model/response/crypto/wallet_connect/ParamsForCryptoTransactionResponse;->feeToken:Lcom/iMe/storage/data/network/model/response/wallet/TokenDetailedResponse;
 
     invoke-static {v1, p1}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
@@ -395,17 +395,17 @@
 .method public final getData()Ljava/lang/String;
     .locals 1
 
-    .line 9
+    .line 10
     iget-object v0, p0, Lcom/iMe/storage/data/network/model/response/crypto/wallet_connect/ParamsForCryptoTransactionResponse;->data:Ljava/lang/String;
 
     return-object v0
 .end method
 
-.method public final getFeeTokenCode()Ljava/lang/String;
+.method public final getFeeToken()Lcom/iMe/storage/data/network/model/response/wallet/TokenDetailedResponse;
     .locals 1
 
-    .line 12
-    iget-object v0, p0, Lcom/iMe/storage/data/network/model/response/crypto/wallet_connect/ParamsForCryptoTransactionResponse;->feeTokenCode:Ljava/lang/String;
+    .line 13
+    iget-object v0, p0, Lcom/iMe/storage/data/network/model/response/crypto/wallet_connect/ParamsForCryptoTransactionResponse;->feeToken:Lcom/iMe/storage/data/network/model/response/wallet/TokenDetailedResponse;
 
     return-object v0
 .end method
@@ -413,7 +413,7 @@
 .method public final getFrom()Ljava/lang/String;
     .locals 1
 
-    .line 6
+    .line 7
     iget-object v0, p0, Lcom/iMe/storage/data/network/model/response/crypto/wallet_connect/ParamsForCryptoTransactionResponse;->from:Ljava/lang/String;
 
     return-object v0
@@ -422,7 +422,7 @@
 .method public final getNetworkType()Ljava/lang/String;
     .locals 1
 
-    .line 11
+    .line 12
     iget-object v0, p0, Lcom/iMe/storage/data/network/model/response/crypto/wallet_connect/ParamsForCryptoTransactionResponse;->networkType:Ljava/lang/String;
 
     return-object v0
@@ -431,7 +431,7 @@
 .method public final getTo()Ljava/lang/String;
     .locals 1
 
-    .line 7
+    .line 8
     iget-object v0, p0, Lcom/iMe/storage/data/network/model/response/crypto/wallet_connect/ParamsForCryptoTransactionResponse;->to:Ljava/lang/String;
 
     return-object v0
@@ -440,7 +440,7 @@
 .method public final getTransactionParams()Lcom/iMe/storage/data/network/model/response/crypto/wallet/TransactionParamsResponse$EVM;
     .locals 1
 
-    .line 10
+    .line 11
     iget-object v0, p0, Lcom/iMe/storage/data/network/model/response/crypto/wallet_connect/ParamsForCryptoTransactionResponse;->transactionParams:Lcom/iMe/storage/data/network/model/response/crypto/wallet/TransactionParamsResponse$EVM;
 
     return-object v0
@@ -449,7 +449,7 @@
 .method public final getValue()Ljava/lang/String;
     .locals 1
 
-    .line 8
+    .line 9
     iget-object v0, p0, Lcom/iMe/storage/data/network/model/response/crypto/wallet_connect/ParamsForCryptoTransactionResponse;->value:Ljava/lang/String;
 
     return-object v0
@@ -516,9 +516,9 @@
 
     mul-int/lit8 v0, v0, 0x1f
 
-    iget-object v1, p0, Lcom/iMe/storage/data/network/model/response/crypto/wallet_connect/ParamsForCryptoTransactionResponse;->feeTokenCode:Ljava/lang/String;
+    iget-object v1, p0, Lcom/iMe/storage/data/network/model/response/crypto/wallet_connect/ParamsForCryptoTransactionResponse;->feeToken:Lcom/iMe/storage/data/network/model/response/wallet/TokenDetailedResponse;
 
-    invoke-virtual {v1}, Ljava/lang/String;->hashCode()I
+    invoke-virtual {v1}, Lcom/iMe/storage/data/network/model/response/wallet/TokenDetailedResponse;->hashCode()I
 
     move-result v1
 
@@ -582,13 +582,13 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v1, ", feeTokenCode="
+    const-string v1, ", feeToken="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v1, p0, Lcom/iMe/storage/data/network/model/response/crypto/wallet_connect/ParamsForCryptoTransactionResponse;->feeTokenCode:Ljava/lang/String;
+    iget-object v1, p0, Lcom/iMe/storage/data/network/model/response/crypto/wallet_connect/ParamsForCryptoTransactionResponse;->feeToken:Lcom/iMe/storage/data/network/model/response/wallet/TokenDetailedResponse;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     const/16 v1, 0x29
 

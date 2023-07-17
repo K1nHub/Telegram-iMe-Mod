@@ -48,33 +48,29 @@
 
     check-cast v0, Lcom/iMe/storage/domain/model/notification/Notification$CryptoTransfer$In;
 
-    invoke-virtual {v0}, Lcom/iMe/storage/domain/model/notification/Notification$CryptoTransfer$In;->getTokenCode()Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
+    invoke-virtual {v0}, Lcom/iMe/storage/domain/model/notification/Notification$CryptoTransfer$In;->getTokenCode()Ljava/lang/String;
 
-    move-result-object v1
-
-    invoke-virtual {v1}, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;->getName()Ljava/lang/String;
-
-    move-result-object v5
+    move-result-object v4
 
     .line 24
     invoke-virtual {v0}, Lcom/iMe/storage/domain/model/notification/Notification$CryptoTransfer$In;->getAmount()Ljava/lang/String;
 
-    move-result-object v8
+    move-result-object v7
 
     .line 25
     invoke-virtual {v0}, Lcom/iMe/storage/domain/model/notification/Notification$CryptoTransfer$In;->getToAddress()Ljava/lang/String;
 
-    move-result-object v7
+    move-result-object v6
 
     .line 26
     invoke-virtual {v0}, Lcom/iMe/storage/domain/model/notification/Notification$CryptoTransfer$In;->getFromAddress()Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v5
 
     .line 27
     invoke-virtual {p0}, Lcom/iMe/storage/domain/model/notification/Notification;->getUserId()Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v2
 
     .line 28
     invoke-virtual {p0}, Lcom/iMe/storage/domain/model/notification/Notification;->getType()Lcom/iMe/storage/domain/model/notification/NotificationType;
@@ -83,14 +79,14 @@
 
     invoke-virtual {p0}, Ljava/lang/Enum;->name()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v3
 
     .line 22
     new-instance v0, Lcom/iMe/model/wallet/notification/PushNotificationModel$CryptoTransfer$In;
 
-    move-object v2, v0
+    move-object v1, v0
 
-    invoke-direct/range {v2 .. v8}, Lcom/iMe/model/wallet/notification/PushNotificationModel$CryptoTransfer$In;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct/range {v1 .. v7}, Lcom/iMe/model/wallet/notification/PushNotificationModel$CryptoTransfer$In;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
     goto/16 :goto_0
 
@@ -105,33 +101,29 @@
 
     check-cast v0, Lcom/iMe/storage/domain/model/notification/Notification$CryptoTransfer$Out;
 
-    invoke-virtual {v0}, Lcom/iMe/storage/domain/model/notification/Notification$CryptoTransfer$Out;->getTokenCode()Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
+    invoke-virtual {v0}, Lcom/iMe/storage/domain/model/notification/Notification$CryptoTransfer$Out;->getTokenCode()Ljava/lang/String;
 
-    move-result-object v1
-
-    invoke-virtual {v1}, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;->getName()Ljava/lang/String;
-
-    move-result-object v6
+    move-result-object v5
 
     .line 32
     invoke-virtual {v0}, Lcom/iMe/storage/domain/model/notification/Notification$CryptoTransfer$Out;->getAmount()Ljava/lang/String;
 
-    move-result-object v9
+    move-result-object v8
 
     .line 33
     invoke-virtual {v0}, Lcom/iMe/storage/domain/model/notification/Notification$CryptoTransfer$Out;->getToAddress()Ljava/lang/String;
 
-    move-result-object v8
+    move-result-object v7
 
     .line 34
     invoke-virtual {v0}, Lcom/iMe/storage/domain/model/notification/Notification$CryptoTransfer$Out;->getFromAddress()Ljava/lang/String;
 
-    move-result-object v7
+    move-result-object v6
 
     .line 35
     invoke-virtual {p0}, Lcom/iMe/storage/domain/model/notification/Notification;->getUserId()Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v2
 
     .line 36
     invoke-virtual {p0}, Lcom/iMe/storage/domain/model/notification/Notification;->getType()Lcom/iMe/storage/domain/model/notification/NotificationType;
@@ -140,7 +132,7 @@
 
     invoke-virtual {v0}, Ljava/lang/Enum;->name()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v3
 
     .line 37
     check-cast p0, Lcom/iMe/storage/domain/model/notification/Notification$CryptoTransfer$Out;
@@ -151,14 +143,14 @@
 
     invoke-virtual {p0}, Ljava/lang/Enum;->name()Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v4
 
     .line 30
     new-instance v0, Lcom/iMe/model/wallet/notification/PushNotificationModel$CryptoTransfer$Out;
 
-    move-object v2, v0
+    move-object v1, v0
 
-    invoke-direct/range {v2 .. v9}, Lcom/iMe/model/wallet/notification/PushNotificationModel$CryptoTransfer$Out;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct/range {v1 .. v8}, Lcom/iMe/model/wallet/notification/PushNotificationModel$CryptoTransfer$Out;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
     goto/16 :goto_0
 
@@ -173,33 +165,29 @@
 
     check-cast v0, Lcom/iMe/storage/domain/model/notification/Notification$Donation$In;
 
-    invoke-virtual {v0}, Lcom/iMe/storage/domain/model/notification/Notification$Donation$In;->getTokenCode()Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
+    invoke-virtual {v0}, Lcom/iMe/storage/domain/model/notification/Notification$Donation$In;->getTokenCode()Ljava/lang/String;
 
-    move-result-object v1
-
-    invoke-virtual {v1}, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;->getName()Ljava/lang/String;
-
-    move-result-object v5
+    move-result-object v4
 
     .line 41
     invoke-virtual {v0}, Lcom/iMe/storage/domain/model/notification/Notification$Donation$In;->getAmount()Ljava/lang/String;
 
-    move-result-object v8
+    move-result-object v7
 
     .line 42
     invoke-virtual {v0}, Lcom/iMe/storage/domain/model/notification/Notification$Donation$In;->getToAddress()Ljava/lang/String;
 
-    move-result-object v7
+    move-result-object v6
 
     .line 43
     invoke-virtual {v0}, Lcom/iMe/storage/domain/model/notification/Notification$Donation$In;->getFromAddress()Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v5
 
     .line 44
     invoke-virtual {p0}, Lcom/iMe/storage/domain/model/notification/Notification;->getUserId()Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v2
 
     .line 45
     invoke-virtual {p0}, Lcom/iMe/storage/domain/model/notification/Notification;->getType()Lcom/iMe/storage/domain/model/notification/NotificationType;
@@ -208,14 +196,14 @@
 
     invoke-virtual {p0}, Ljava/lang/Enum;->name()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v3
 
     .line 39
     new-instance v0, Lcom/iMe/model/wallet/notification/PushNotificationModel$Donation$In;
 
-    move-object v2, v0
+    move-object v1, v0
 
-    invoke-direct/range {v2 .. v8}, Lcom/iMe/model/wallet/notification/PushNotificationModel$Donation$In;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct/range {v1 .. v7}, Lcom/iMe/model/wallet/notification/PushNotificationModel$Donation$In;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
     goto/16 :goto_0
 
@@ -230,33 +218,29 @@
 
     check-cast v0, Lcom/iMe/storage/domain/model/notification/Notification$Donation$Out;
 
-    invoke-virtual {v0}, Lcom/iMe/storage/domain/model/notification/Notification$Donation$Out;->getTokenCode()Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
+    invoke-virtual {v0}, Lcom/iMe/storage/domain/model/notification/Notification$Donation$Out;->getTokenCode()Ljava/lang/String;
 
-    move-result-object v1
-
-    invoke-virtual {v1}, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;->getName()Ljava/lang/String;
-
-    move-result-object v6
+    move-result-object v5
 
     .line 49
     invoke-virtual {v0}, Lcom/iMe/storage/domain/model/notification/Notification$Donation$Out;->getAmount()Ljava/lang/String;
 
-    move-result-object v9
+    move-result-object v8
 
     .line 50
     invoke-virtual {v0}, Lcom/iMe/storage/domain/model/notification/Notification$Donation$Out;->getToAddress()Ljava/lang/String;
 
-    move-result-object v8
+    move-result-object v7
 
     .line 51
     invoke-virtual {v0}, Lcom/iMe/storage/domain/model/notification/Notification$Donation$Out;->getFromAddress()Ljava/lang/String;
 
-    move-result-object v7
+    move-result-object v6
 
     .line 52
     invoke-virtual {p0}, Lcom/iMe/storage/domain/model/notification/Notification;->getUserId()Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v2
 
     .line 53
     invoke-virtual {p0}, Lcom/iMe/storage/domain/model/notification/Notification;->getType()Lcom/iMe/storage/domain/model/notification/NotificationType;
@@ -265,7 +249,7 @@
 
     invoke-virtual {v0}, Ljava/lang/Enum;->name()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v3
 
     .line 54
     check-cast p0, Lcom/iMe/storage/domain/model/notification/Notification$Donation$Out;
@@ -276,14 +260,14 @@
 
     invoke-virtual {p0}, Ljava/lang/Enum;->name()Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v4
 
     .line 47
     new-instance v0, Lcom/iMe/model/wallet/notification/PushNotificationModel$Donation$Out;
 
-    move-object v2, v0
+    move-object v1, v0
 
-    invoke-direct/range {v2 .. v9}, Lcom/iMe/model/wallet/notification/PushNotificationModel$Donation$Out;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct/range {v1 .. v8}, Lcom/iMe/model/wallet/notification/PushNotificationModel$Donation$Out;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
     goto/16 :goto_0
 
@@ -298,28 +282,24 @@
 
     check-cast v0, Lcom/iMe/storage/domain/model/notification/Notification$Simplex;
 
-    invoke-virtual {v0}, Lcom/iMe/storage/domain/model/notification/Notification$Simplex;->getTokenCode()Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
+    invoke-virtual {v0}, Lcom/iMe/storage/domain/model/notification/Notification$Simplex;->getTokenCode()Ljava/lang/String;
 
-    move-result-object v1
-
-    invoke-virtual {v1}, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;->getName()Ljava/lang/String;
-
-    move-result-object v6
+    move-result-object v5
 
     .line 58
     invoke-virtual {v0}, Lcom/iMe/storage/domain/model/notification/Notification$Simplex;->getAmount()Ljava/lang/String;
 
-    move-result-object v8
+    move-result-object v7
 
     .line 59
     invoke-virtual {v0}, Lcom/iMe/storage/domain/model/notification/Notification$Simplex;->getToAddress()Ljava/lang/String;
 
-    move-result-object v7
+    move-result-object v6
 
     .line 60
     invoke-virtual {p0}, Lcom/iMe/storage/domain/model/notification/Notification;->getUserId()Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v2
 
     .line 61
     invoke-virtual {p0}, Lcom/iMe/storage/domain/model/notification/Notification;->getType()Lcom/iMe/storage/domain/model/notification/NotificationType;
@@ -328,7 +308,7 @@
 
     invoke-virtual {v0}, Ljava/lang/Enum;->name()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v3
 
     .line 62
     check-cast p0, Lcom/iMe/storage/domain/model/notification/Notification$Simplex;
@@ -339,7 +319,7 @@
 
     invoke-virtual {v0}, Ljava/lang/Enum;->name()Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v4
 
     .line 63
     invoke-virtual {p0}, Lcom/iMe/storage/domain/model/notification/Notification$Simplex;->getSpentAmount()Ljava/math/BigDecimal;
@@ -348,7 +328,7 @@
 
     invoke-virtual {v0}, Ljava/math/BigDecimal;->toString()Ljava/lang/String;
 
-    move-result-object v10
+    move-result-object v9
 
     .line 64
     invoke-virtual {p0}, Lcom/iMe/storage/domain/model/notification/Notification$Simplex;->getSpentFiatCode()Lcom/iMe/storage/domain/model/wallet/token/FiatCode;
@@ -357,7 +337,7 @@
 
     invoke-virtual {p0}, Lcom/iMe/storage/domain/model/wallet/token/FiatCode;->getShortName()Ljava/lang/String;
 
-    move-result-object v9
+    move-result-object v8
 
     .line 56
     new-instance v0, Lcom/iMe/model/wallet/notification/PushNotificationModel$Simplex;
@@ -365,12 +345,12 @@
     const-string p0, "toString()"
 
     .line 63
-    invoke-static {v10, p0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v9, p0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    move-object v2, v0
+    move-object v1, v0
 
     .line 56
-    invoke-direct/range {v2 .. v10}, Lcom/iMe/model/wallet/notification/PushNotificationModel$Simplex;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct/range {v1 .. v9}, Lcom/iMe/model/wallet/notification/PushNotificationModel$Simplex;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
     goto/16 :goto_0
 
@@ -575,11 +555,7 @@
     move-result-object v5
 
     .line 94
-    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/notification/Notification$Approve;->getTokenCode()Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
-
-    move-result-object p0
-
-    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;->getName()Ljava/lang/String;
+    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/notification/Notification$Approve;->getTokenCode()Ljava/lang/String;
 
     move-result-object v4
 
@@ -613,11 +589,7 @@
     move-result-object v3
 
     .line 99
-    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/notification/Notification;->getNetworkType()Lcom/iMe/storage/domain/model/crypto/NetworkType;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/Enum;->name()Ljava/lang/String;
+    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/notification/Notification;->getNetworkId()Ljava/lang/String;
 
     move-result-object v4
 
@@ -695,11 +667,7 @@
     move-result-object v3
 
     .line 112
-    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/notification/Notification;->getNetworkType()Lcom/iMe/storage/domain/model/crypto/NetworkType;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/Enum;->name()Ljava/lang/String;
+    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/notification/Notification;->getNetworkId()Ljava/lang/String;
 
     move-result-object v4
 
@@ -770,11 +738,7 @@
     move-result-object v3
 
     .line 124
-    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/notification/Notification;->getNetworkType()Lcom/iMe/storage/domain/model/crypto/NetworkType;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/Enum;->name()Ljava/lang/String;
+    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/notification/Notification;->getNetworkId()Ljava/lang/String;
 
     move-result-object v4
 
@@ -835,11 +799,7 @@
     move-result-object v3
 
     .line 134
-    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/notification/Notification;->getNetworkType()Lcom/iMe/storage/domain/model/crypto/NetworkType;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/Enum;->name()Ljava/lang/String;
+    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/notification/Notification;->getNetworkId()Ljava/lang/String;
 
     move-result-object v4
 

@@ -8,11 +8,11 @@ import com.chad.library.adapter.base.provider.BaseNodeProvider;
 import com.chad.library.adapter.base.viewholder.BaseViewHolder;
 import com.iMe.common.IdFabric$ViewTypes;
 import com.iMe.model.wallet.home.BannerItem;
-import com.iMe.p031ui.wallet.home.p032v2.adapter.BannersRecycleAdapter;
-import com.iMe.p031ui.wallet.home.p032v2.adapter.diff.BannerSlideDiffCallback;
+import com.iMe.p031ui.wallet.home.adapter.BannersRecycleAdapter;
+import com.iMe.p031ui.wallet.home.adapter.diff.BannerSlideDiffCallback;
 import com.iMe.utils.extentions.common.BaseQuickAdapterExtKt;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3295R;
+import org.telegram.messenger.C3417R;
 /* compiled from: BannerProvider.kt */
 /* renamed from: com.iMe.ui.adapter.provider.BannerProvider */
 /* loaded from: classes.dex */
@@ -33,7 +33,7 @@ public final class BannerProvider extends BaseNodeProvider<BannerItem> {
         Intrinsics.checkNotNullParameter(bannersRecycleAdapter, "bannersRecycleAdapter");
         this.bannersRecycleAdapter = bannersRecycleAdapter;
         this.itemViewType = IdFabric$ViewTypes.BANNERS;
-        this.layoutId = C3295R.layout.fork_recycle_item_wallet_banners;
+        this.layoutId = C3417R.layout.fork_recycle_item_wallet_banners;
         this.bannerSnapHelper = new PagerSnapHelper();
         this.bannersDiffCallback = new BannerSlideDiffCallback();
     }
@@ -59,7 +59,7 @@ public final class BannerProvider extends BaseNodeProvider<BannerItem> {
     public final void onViewRecycled(BaseViewHolder holder) {
         Intrinsics.checkNotNullParameter(holder, "holder");
         if (BaseQuickAdapterExtKt.isViewType(holder, getItemViewType())) {
-            RecyclerView.LayoutManager layoutManager = ((RecyclerView) holder.getView(C3295R.C3298id.recycle_banners)).getLayoutManager();
+            RecyclerView.LayoutManager layoutManager = ((RecyclerView) holder.getView(C3417R.C3420id.recycle_banners)).getLayoutManager();
             this.bannerScrollState = layoutManager != null ? layoutManager.onSaveInstanceState() : null;
         }
     }
@@ -68,6 +68,6 @@ public final class BannerProvider extends BaseNodeProvider<BannerItem> {
     public void convert(BaseViewHolder helper, BannerItem item) {
         Intrinsics.checkNotNullParameter(helper, "helper");
         Intrinsics.checkNotNullParameter(item, "item");
-        BaseQuickAdapterExtKt.applyForView(BaseQuickAdapterExtKt.applyForView(helper, C3295R.C3298id.recycle_banners, new BannerProvider$convert$1(this, item)), C3295R.C3298id.banner_slide_indicator, new BannerProvider$convert$2(helper));
+        BaseQuickAdapterExtKt.applyForView(BaseQuickAdapterExtKt.applyForView(helper, C3417R.C3420id.recycle_banners, new BannerProvider$convert$1(this, item)), C3417R.C3420id.banner_slide_indicator, new BannerProvider$convert$2(helper));
     }
 }

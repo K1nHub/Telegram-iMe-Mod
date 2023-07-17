@@ -11,27 +11,27 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Objects;
 import java.util.SortedMap;
-import p034j$.util.Map;
-import p034j$.util.function.BiConsumer;
-import p034j$.util.function.BiFunction;
-import p034j$.util.function.Function;
+import p033j$.util.Map;
+import p033j$.util.function.BiConsumer;
+import p033j$.util.function.BiFunction;
+import p033j$.util.function.Function;
 /* loaded from: classes3.dex */
-public abstract class ImmutableMap<K, V> implements Map<K, V>, Serializable, p034j$.util.Map {
+public abstract class ImmutableMap<K, V> implements Map<K, V>, Serializable, p033j$.util.Map {
     private transient ImmutableSet<Map.Entry<K, V>> entrySet;
     private transient ImmutableSet<K> keySet;
     private transient ImmutableCollection<V> values;
 
-    @Override // p034j$.util.Map
+    @Override // p033j$.util.Map
     public /* synthetic */ Object compute(Object obj, BiFunction biFunction) {
         return Map.CC.$default$compute(this, obj, biFunction);
     }
 
-    @Override // p034j$.util.Map
+    @Override // p033j$.util.Map
     public /* synthetic */ Object computeIfAbsent(Object obj, Function function) {
         return Map.CC.$default$computeIfAbsent(this, obj, function);
     }
 
-    @Override // p034j$.util.Map
+    @Override // p033j$.util.Map
     public /* synthetic */ Object computeIfPresent(Object obj, BiFunction biFunction) {
         return Map.CC.$default$computeIfPresent(this, obj, biFunction);
     }
@@ -42,42 +42,42 @@ public abstract class ImmutableMap<K, V> implements Map<K, V>, Serializable, p03
 
     abstract ImmutableCollection<V> createValues();
 
-    @Override // p034j$.util.Map
+    @Override // p033j$.util.Map
     public /* synthetic */ void forEach(BiConsumer biConsumer) {
         Map.CC.$default$forEach(this, biConsumer);
     }
 
-    @Override // java.util.Map, p034j$.util.Map
+    @Override // java.util.Map, p033j$.util.Map
     public abstract V get(Object obj);
 
     abstract boolean isPartialView();
 
-    @Override // p034j$.util.Map
+    @Override // p033j$.util.Map
     public /* synthetic */ Object merge(Object obj, Object obj2, BiFunction biFunction) {
         return Map.CC.$default$merge(this, obj, obj2, biFunction);
     }
 
-    @Override // java.util.Map, p034j$.util.Map
+    @Override // java.util.Map, p033j$.util.Map
     public /* synthetic */ Object putIfAbsent(Object obj, Object obj2) {
         return Map.CC.$default$putIfAbsent(this, obj, obj2);
     }
 
-    @Override // java.util.Map, p034j$.util.Map
+    @Override // java.util.Map, p033j$.util.Map
     public /* synthetic */ boolean remove(Object obj, Object obj2) {
         return Map.CC.$default$remove(this, obj, obj2);
     }
 
-    @Override // java.util.Map, p034j$.util.Map
+    @Override // java.util.Map, p033j$.util.Map
     public /* synthetic */ Object replace(Object obj, Object obj2) {
         return Map.CC.$default$replace(this, obj, obj2);
     }
 
-    @Override // java.util.Map, p034j$.util.Map
+    @Override // java.util.Map, p033j$.util.Map
     public /* synthetic */ boolean replace(Object obj, Object obj2, Object obj3) {
         return Map.CC.$default$replace(this, obj, obj2, obj3);
     }
 
-    @Override // p034j$.util.Map
+    @Override // p033j$.util.Map
     public /* synthetic */ void replaceAll(BiFunction biFunction) {
         Map.CC.$default$replaceAll(this, biFunction);
     }
@@ -292,52 +292,52 @@ public abstract class ImmutableMap<K, V> implements Map<K, V>, Serializable, p03
         return builder.build();
     }
 
-    @Override // java.util.Map, p034j$.util.Map
+    @Override // java.util.Map, p033j$.util.Map
     @Deprecated
     public final V put(K k, V v) {
         throw new UnsupportedOperationException();
     }
 
-    @Override // java.util.Map, p034j$.util.Map
+    @Override // java.util.Map, p033j$.util.Map
     @Deprecated
     public final V remove(Object obj) {
         throw new UnsupportedOperationException();
     }
 
-    @Override // java.util.Map, p034j$.util.Map
+    @Override // java.util.Map, p033j$.util.Map
     @Deprecated
     public final void putAll(java.util.Map<? extends K, ? extends V> map) {
         throw new UnsupportedOperationException();
     }
 
-    @Override // java.util.Map, p034j$.util.Map
+    @Override // java.util.Map, p033j$.util.Map
     @Deprecated
     public final void clear() {
         throw new UnsupportedOperationException();
     }
 
-    @Override // java.util.Map, p034j$.util.Map
+    @Override // java.util.Map, p033j$.util.Map
     public boolean isEmpty() {
         return size() == 0;
     }
 
-    @Override // java.util.Map, p034j$.util.Map
+    @Override // java.util.Map, p033j$.util.Map
     public boolean containsKey(Object obj) {
         return get(obj) != null;
     }
 
-    @Override // java.util.Map, p034j$.util.Map
+    @Override // java.util.Map, p033j$.util.Map
     public boolean containsValue(Object obj) {
         return values().contains(obj);
     }
 
-    @Override // java.util.Map, p034j$.util.Map
+    @Override // java.util.Map, p033j$.util.Map
     public final V getOrDefault(Object obj, V v) {
         V v2 = get(obj);
         return v2 != null ? v2 : v;
     }
 
-    @Override // java.util.Map, p034j$.util.Map
+    @Override // java.util.Map, p033j$.util.Map
     public ImmutableSet<Map.Entry<K, V>> entrySet() {
         ImmutableSet<Map.Entry<K, V>> immutableSet = this.entrySet;
         if (immutableSet == null) {
@@ -348,7 +348,7 @@ public abstract class ImmutableMap<K, V> implements Map<K, V>, Serializable, p03
         return immutableSet;
     }
 
-    @Override // java.util.Map, p034j$.util.Map
+    @Override // java.util.Map, p033j$.util.Map
     public ImmutableSet<K> keySet() {
         ImmutableSet<K> immutableSet = this.keySet;
         if (immutableSet == null) {
@@ -359,7 +359,7 @@ public abstract class ImmutableMap<K, V> implements Map<K, V>, Serializable, p03
         return immutableSet;
     }
 
-    @Override // java.util.Map, p034j$.util.Map
+    @Override // java.util.Map, p033j$.util.Map
     public ImmutableCollection<V> values() {
         ImmutableCollection<V> immutableCollection = this.values;
         if (immutableCollection == null) {
@@ -370,12 +370,12 @@ public abstract class ImmutableMap<K, V> implements Map<K, V>, Serializable, p03
         return immutableCollection;
     }
 
-    @Override // java.util.Map, p034j$.util.Map
+    @Override // java.util.Map, p033j$.util.Map
     public boolean equals(Object obj) {
         return Maps.equalsImpl(this, obj);
     }
 
-    @Override // java.util.Map, p034j$.util.Map
+    @Override // java.util.Map, p033j$.util.Map
     public int hashCode() {
         return Sets.hashCodeImpl(entrySet());
     }

@@ -1,5 +1,5 @@
 .class Lorg/telegram/ui/DialogsActivity$58;
-.super Landroid/widget/TextView;
+.super Landroid/widget/FrameLayout;
 .source "DialogsActivity.java"
 
 
@@ -14,38 +14,111 @@
 .end annotation
 
 
+# instance fields
+.field final synthetic val$checkBoxCell:Lorg/telegram/ui/Cells/CheckBoxCell;
+
+.field final synthetic val$revokeByDefaultCheckBox:Lorg/telegram/ui/Cells/CheckBoxCell;
+
+
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/DialogsActivity;Landroid/content/Context;)V
+.method constructor <init>(Lorg/telegram/ui/DialogsActivity;Landroid/content/Context;Lorg/telegram/ui/Cells/CheckBoxCell;Lorg/telegram/ui/Cells/CheckBoxCell;)V
     .locals 0
 
-    .line 11154
-    invoke-direct {p0, p2}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
+    .line 11098
+    iput-object p3, p0, Lorg/telegram/ui/DialogsActivity$58;->val$checkBoxCell:Lorg/telegram/ui/Cells/CheckBoxCell;
+
+    iput-object p4, p0, Lorg/telegram/ui/DialogsActivity$58;->val$revokeByDefaultCheckBox:Lorg/telegram/ui/Cells/CheckBoxCell;
+
+    invoke-direct {p0, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public setText(Ljava/lang/CharSequence;Landroid/widget/TextView$BufferType;)V
-    .locals 2
+.method protected onMeasure(II)V
+    .locals 1
 
-    .line 11157
-    invoke-virtual {p0}, Landroid/widget/TextView;->getPaint()Landroid/text/TextPaint;
+    .line 11101
+    invoke-super {p0, p1, p2}, Landroid/widget/FrameLayout;->onMeasure(II)V
 
-    move-result-object v0
+    .line 11102
+    invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
-    invoke-virtual {v0}, Landroid/text/TextPaint;->getFontMetricsInt()Landroid/graphics/Paint$FontMetricsInt;
+    move-result p1
 
-    move-result-object v0
+    invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
 
-    const/4 v1, 0x0
+    move-result p2
 
-    invoke-static {p1, v0, v1}, Lorg/telegram/messenger/Emoji;->replaceEmoji(Ljava/lang/CharSequence;Landroid/graphics/Paint$FontMetricsInt;Z)Ljava/lang/CharSequence;
+    iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$58;->val$checkBoxCell:Lorg/telegram/ui/Cells/CheckBoxCell;
 
-    move-result-object p1
+    invoke-virtual {v0}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
 
-    .line 11158
-    invoke-super {p0, p1, p2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;Landroid/widget/TextView$BufferType;)V
+    move-result v0
+
+    add-int/2addr p2, v0
+
+    iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$58;->val$revokeByDefaultCheckBox:Lorg/telegram/ui/Cells/CheckBoxCell;
+
+    invoke-virtual {v0}, Landroid/widget/FrameLayout;->getVisibility()I
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$58;->val$revokeByDefaultCheckBox:Lorg/telegram/ui/Cells/CheckBoxCell;
+
+    invoke-virtual {v0}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
+
+    move-result v0
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    :goto_0
+    add-int/2addr p2, v0
+
+    const/4 v0, 0x7
+
+    invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v0
+
+    add-int/2addr p2, v0
+
+    invoke-virtual {p0, p1, p2}, Landroid/widget/FrameLayout;->setMeasuredDimension(II)V
+
+    .line 11103
+    iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$58;->val$checkBoxCell:Lorg/telegram/ui/Cells/CheckBoxCell;
+
+    iget-object p2, p0, Lorg/telegram/ui/DialogsActivity$58;->val$revokeByDefaultCheckBox:Lorg/telegram/ui/Cells/CheckBoxCell;
+
+    invoke-virtual {p2}, Landroid/widget/FrameLayout;->getVisibility()I
+
+    move-result p2
+
+    if-nez p2, :cond_1
+
+    iget-object p2, p0, Lorg/telegram/ui/DialogsActivity$58;->val$revokeByDefaultCheckBox:Lorg/telegram/ui/Cells/CheckBoxCell;
+
+    invoke-virtual {p2}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
+
+    move-result p2
+
+    neg-int p2, p2
+
+    int-to-float p2, p2
+
+    goto :goto_1
+
+    :cond_1
+    const/4 p2, 0x0
+
+    :goto_1
+    invoke-virtual {p1, p2}, Landroid/widget/FrameLayout;->setTranslationY(F)V
 
     return-void
 .end method

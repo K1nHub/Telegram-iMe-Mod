@@ -23,15 +23,15 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 13
+    .line 17
     invoke-direct {p0}, Lcom/chad/library/adapter/base/provider/BaseNodeProvider;-><init>()V
 
-    .line 16
+    .line 20
     sget v0, Lcom/iMe/common/IdFabric$ViewTypes;->CATALOG_CAMPAIGN:I
 
     iput v0, p0, Lcom/iMe/ui/adapter/provider/CampaignProvider;->itemViewType:I
 
-    .line 17
+    .line 21
     sget v0, Lorg/telegram/messenger/R$layout;->fork_recycle_item_catalog_channel:I
 
     iput v0, p0, Lcom/iMe/ui/adapter/provider/CampaignProvider;->layoutId:I
@@ -42,7 +42,7 @@
 
 # virtual methods
 .method public convert(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;Lcom/iMe/model/catalog/CampaignItem;)V
-    .locals 5
+    .locals 9
 
     const-string v0, "helper"
 
@@ -52,7 +52,7 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 23
+    .line 27
     sget v0, Lorg/telegram/messenger/R$id;->card_channel:I
 
     const/4 v1, 0x0
@@ -61,14 +61,14 @@
 
     move-result-object p1
 
-    .line 24
+    .line 28
     sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
     invoke-static {p1, v0, v2}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setThemedCardBackground(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;II)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     move-result-object p1
 
-    .line 25
+    .line 29
     sget v0, Lorg/telegram/messenger/R$id;->text_name:I
 
     sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_chat_messagePanelText:I
@@ -77,7 +77,7 @@
 
     move-result-object p1
 
-    .line 26
+    .line 30
     sget v2, Lorg/telegram/messenger/R$id;->text_subscribers_count:I
 
     sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayText2:I
@@ -88,16 +88,16 @@
 
     const/4 v3, 0x1
 
-    new-array v4, v3, [I
+    new-array v3, v3, [I
 
-    aput v0, v4, v1
+    aput v0, v3, v1
 
-    .line 27
-    invoke-static {p1, v4}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setMediumTypeface(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;[I)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
+    .line 31
+    invoke-static {p1, v3}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setMediumTypeface(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;[I)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     move-result-object p1
 
-    .line 28
+    .line 32
     invoke-virtual {p2}, Lcom/iMe/model/catalog/CampaignItem;->getTitle()Ljava/lang/String;
 
     move-result-object v1
@@ -106,7 +106,7 @@
 
     move-result-object p1
 
-    .line 29
+    .line 33
     invoke-virtual {p2}, Lcom/iMe/model/catalog/CampaignItem;->getMembersCount()J
 
     move-result-wide v0
@@ -119,7 +119,7 @@
 
     move-result-object p1
 
-    .line 30
+    .line 34
     sget v0, Lorg/telegram/messenger/R$id;->image_verified:I
 
     invoke-virtual {p2}, Lcom/iMe/model/catalog/CampaignItem;->isVerified()Z
@@ -128,18 +128,24 @@
 
     invoke-static {p1, v0, v1}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setVisibleElseGone(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;IZ)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
-    move-result-object p1
+    move-result-object v2
 
-    .line 31
-    sget v0, Lorg/telegram/messenger/R$id;->image_avatar:I
+    .line 35
+    sget v3, Lorg/telegram/messenger/R$id;->image_avatar:I
 
     invoke-virtual {p2}, Lcom/iMe/model/catalog/CampaignItem;->getPhoto()Ljava/lang/String;
 
-    move-result-object p2
+    move-result-object v4
 
-    const/4 v1, 0x0
+    const/4 v5, 0x0
 
-    invoke-static {p1, v0, p2, v1, v3}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->loadImage(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;ILjava/lang/String;Ljava/lang/Integer;Z)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
+    const/4 v6, 0x0
+
+    const/16 v7, 0xc
+
+    const/4 v8, 0x0
+
+    invoke-static/range {v2 .. v8}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->loadImage$default(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;ILjava/lang/String;Ljava/lang/Integer;ZILjava/lang/Object;)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     return-void
 .end method
@@ -147,7 +153,7 @@
 .method public bridge synthetic convert(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;Ljava/lang/Object;)V
     .locals 0
 
-    .line 13
+    .line 17
     check-cast p2, Lcom/iMe/model/catalog/CampaignItem;
 
     invoke-virtual {p0, p1, p2}, Lcom/iMe/ui/adapter/provider/CampaignProvider;->convert(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;Lcom/iMe/model/catalog/CampaignItem;)V
@@ -158,7 +164,7 @@
 .method public getItemViewType()I
     .locals 1
 
-    .line 16
+    .line 20
     iget v0, p0, Lcom/iMe/ui/adapter/provider/CampaignProvider;->itemViewType:I
 
     return v0
@@ -167,7 +173,7 @@
 .method public getLayoutId()I
     .locals 1
 
-    .line 17
+    .line 21
     iget v0, p0, Lcom/iMe/ui/adapter/provider/CampaignProvider;->layoutId:I
 
     return v0

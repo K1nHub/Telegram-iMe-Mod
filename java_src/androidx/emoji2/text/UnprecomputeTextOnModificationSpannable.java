@@ -6,8 +6,8 @@ import android.text.Spannable;
 import android.text.SpannableString;
 import androidx.core.text.PrecomputedTextCompat;
 import java.util.stream.IntStream;
-import p034j$.wrappers.C$r8$wrapper$java$util$stream$IntStream$VWRP;
-import p034j$.wrappers.C$r8$wrapper$java$util$stream$IntStream$WRP;
+import p033j$.wrappers.C$r8$wrapper$java$util$stream$IntStream$VWRP;
+import p033j$.wrappers.C$r8$wrapper$java$util$stream$IntStream$WRP;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: classes.dex */
 public class UnprecomputeTextOnModificationSpannable implements Spannable {
@@ -105,23 +105,23 @@ public class UnprecomputeTextOnModificationSpannable implements Spannable {
     }
 
     @Override // java.lang.CharSequence
-    public p034j$.util.stream.IntStream chars() {
+    public p033j$.util.stream.IntStream chars() {
         return CharSequenceHelper_API24.chars(this.mDelegate);
     }
 
     @Override // java.lang.CharSequence
-    public p034j$.util.stream.IntStream codePoints() {
+    public p033j$.util.stream.IntStream codePoints() {
         return CharSequenceHelper_API24.codePoints(this.mDelegate);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     /* loaded from: classes.dex */
     public static class CharSequenceHelper_API24 {
-        static p034j$.util.stream.IntStream codePoints(CharSequence charSequence) {
+        static p033j$.util.stream.IntStream codePoints(CharSequence charSequence) {
             return C$r8$wrapper$java$util$stream$IntStream$VWRP.convert(charSequence.codePoints());
         }
 
-        static p034j$.util.stream.IntStream chars(CharSequence charSequence) {
+        static p033j$.util.stream.IntStream chars(CharSequence charSequence) {
             return C$r8$wrapper$java$util$stream$IntStream$VWRP.convert(charSequence.chars());
         }
     }

@@ -9,7 +9,7 @@ import kotlin.collections.CollectionsKt___CollectionsKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3295R;
+import org.telegram.messenger.C3417R;
 import org.telegram.messenger.LocaleController;
 /* compiled from: DrawerSwitchableItem.kt */
 /* renamed from: com.iMe.ui.drawer.DrawerSwitchableItem */
@@ -17,7 +17,6 @@ import org.telegram.messenger.LocaleController;
 public enum DrawerSwitchableItem {
     WALLET,
     CATALOG,
-    MANAGEMENT,
     MUSIC,
     CONTACTS,
     CALLS,
@@ -44,32 +43,28 @@ public enum DrawerSwitchableItem {
             } catch (NoSuchFieldError unused2) {
             }
             try {
-                iArr[DrawerSwitchableItem.MANAGEMENT.ordinal()] = 3;
+                iArr[DrawerSwitchableItem.MUSIC.ordinal()] = 3;
             } catch (NoSuchFieldError unused3) {
             }
             try {
-                iArr[DrawerSwitchableItem.MUSIC.ordinal()] = 4;
+                iArr[DrawerSwitchableItem.CONTACTS.ordinal()] = 4;
             } catch (NoSuchFieldError unused4) {
             }
             try {
-                iArr[DrawerSwitchableItem.CONTACTS.ordinal()] = 5;
+                iArr[DrawerSwitchableItem.CALLS.ordinal()] = 5;
             } catch (NoSuchFieldError unused5) {
             }
             try {
-                iArr[DrawerSwitchableItem.CALLS.ordinal()] = 6;
+                iArr[DrawerSwitchableItem.PEOPLE_NEARBY.ordinal()] = 6;
             } catch (NoSuchFieldError unused6) {
             }
             try {
-                iArr[DrawerSwitchableItem.PEOPLE_NEARBY.ordinal()] = 7;
+                iArr[DrawerSwitchableItem.CLOUD.ordinal()] = 7;
             } catch (NoSuchFieldError unused7) {
             }
             try {
-                iArr[DrawerSwitchableItem.CLOUD.ordinal()] = 8;
+                iArr[DrawerSwitchableItem.ALBUMS.ordinal()] = 8;
             } catch (NoSuchFieldError unused8) {
-            }
-            try {
-                iArr[DrawerSwitchableItem.ALBUMS.ordinal()] = 9;
-            } catch (NoSuchFieldError unused9) {
             }
             $EnumSwitchMapping$0 = iArr;
         }
@@ -94,41 +89,37 @@ public enum DrawerSwitchableItem {
     public final String title() {
         switch (WhenMappings.$EnumSwitchMapping$0[ordinal()]) {
             case 1:
-                String internalString = LocaleController.getInternalString(C3295R.string.drawer_wallet_item_title);
+                String internalString = LocaleController.getInternalString(C3417R.string.drawer_wallet_item_title);
                 Intrinsics.checkNotNullExpressionValue(internalString, "getInternalString(R.stri…drawer_wallet_item_title)");
                 return internalString;
             case 2:
-                String internalString2 = LocaleController.getInternalString(C3295R.string.drawer_catalog_item_title);
+                String internalString2 = LocaleController.getInternalString(C3417R.string.drawer_catalog_item_title);
                 Intrinsics.checkNotNullExpressionValue(internalString2, "getInternalString(R.stri…rawer_catalog_item_title)");
                 return internalString2;
             case 3:
-                String internalString3 = LocaleController.getInternalString(C3295R.string.management);
-                Intrinsics.checkNotNullExpressionValue(internalString3, "getInternalString(R.string.management)");
-                return internalString3;
-            case 4:
-                String string = LocaleController.getString("AttachMusic", C3295R.string.AttachMusic);
+                String string = LocaleController.getString("AttachMusic", C3417R.string.AttachMusic);
                 Intrinsics.checkNotNullExpressionValue(string, "getString(\"AttachMusic\", R.string.AttachMusic)");
                 return string;
-            case 5:
-                String string2 = LocaleController.getString("Contacts", C3295R.string.Contacts);
+            case 4:
+                String string2 = LocaleController.getString("Contacts", C3417R.string.Contacts);
                 Intrinsics.checkNotNullExpressionValue(string2, "getString(\"Contacts\", R.string.Contacts)");
                 return string2;
-            case 6:
-                String string3 = LocaleController.getString("Calls", C3295R.string.Calls);
+            case 5:
+                String string3 = LocaleController.getString("Calls", C3417R.string.Calls);
                 Intrinsics.checkNotNullExpressionValue(string3, "getString(\"Calls\", R.string.Calls)");
                 return string3;
-            case 7:
-                String string4 = LocaleController.getString("PeopleNearby", C3295R.string.PeopleNearby);
+            case 6:
+                String string4 = LocaleController.getString("PeopleNearby", C3417R.string.PeopleNearby);
                 Intrinsics.checkNotNullExpressionValue(string4, "getString(\"PeopleNearby\", R.string.PeopleNearby)");
                 return string4;
-            case 8:
-                String string5 = LocaleController.getString("SavedMessages", C3295R.string.SavedMessages);
+            case 7:
+                String string5 = LocaleController.getString("SavedMessages", C3417R.string.SavedMessages);
                 Intrinsics.checkNotNullExpressionValue(string5, "getString(\"SavedMessages\", R.string.SavedMessages)");
                 return string5;
-            case 9:
-                String internalString4 = LocaleController.getInternalString(C3295R.string.cloud_albums_toolbar_title);
-                Intrinsics.checkNotNullExpressionValue(internalString4, "getInternalString(R.stri…oud_albums_toolbar_title)");
-                return internalString4;
+            case 8:
+                String internalString3 = LocaleController.getInternalString(C3417R.string.cloud_albums_toolbar_title);
+                Intrinsics.checkNotNullExpressionValue(internalString3, "getInternalString(R.stri…oud_albums_toolbar_title)");
+                return internalString3;
             default:
                 throw new NoWhenBranchMatchedException();
         }

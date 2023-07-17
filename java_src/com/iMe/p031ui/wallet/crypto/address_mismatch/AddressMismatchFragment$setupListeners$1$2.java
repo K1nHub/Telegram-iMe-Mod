@@ -8,7 +8,7 @@ import kotlin.jvm.internal.Lambda;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: AddressMismatchFragment.kt */
 /* renamed from: com.iMe.ui.wallet.crypto.address_mismatch.AddressMismatchFragment$setupListeners$1$2 */
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class AddressMismatchFragment$setupListeners$1$2 extends Lambda implements Function1<View, Unit> {
     final /* synthetic */ AddressMismatchFragment this$0;
 

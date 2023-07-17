@@ -21,11 +21,11 @@ import kotlin.LazyKt__LazyJVMKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3295R;
+import org.telegram.messenger.C3417R;
 import org.telegram.messenger.Emoji;
 import org.telegram.messenger.LocaleController;
-import org.telegram.p044ui.ActionBar.Theme;
-import org.telegram.p044ui.Components.LayoutHelper;
+import org.telegram.p043ui.ActionBar.Theme;
+import org.telegram.p043ui.Components.LayoutHelper;
 /* compiled from: TopicView.kt */
 /* renamed from: com.iMe.ui.topics.TopicView */
 /* loaded from: classes3.dex */
@@ -104,13 +104,17 @@ public class TopicView extends FrameLayout {
         updateColors();
     }
 
+    public final void setHorizontalMargins(int i, int i2) {
+        ViewExtKt.setMargins$default(getOvalLayout(), i, 0, i2, 0, 10, null);
+    }
+
     public final void setTopic(TopicModel topic, boolean z) {
         Intrinsics.checkNotNullParameter(topic, "topic");
         this.topic = topic;
         this.isActive = z;
         if (topic.getTopicId() == -2) {
             TextView nameTextView = getNameTextView();
-            String internalString = LocaleController.getInternalString(C3295R.string.topics_title_notopic);
+            String internalString = LocaleController.getInternalString(C3417R.string.topics_title_notopic);
             Intrinsics.checkNotNullExpressionValue(internalString, "getInternalString(R.string.topics_title_notopic)");
             String upperCase = internalString.toUpperCase(Locale.ROOT);
             Intrinsics.checkNotNullExpressionValue(upperCase, "this as java.lang.String).toUpperCase(Locale.ROOT)");
@@ -170,9 +174,9 @@ public class TopicView extends FrameLayout {
         this.isActive = z2;
         TextView nameTextView = getNameTextView();
         if (z) {
-            i = C3295R.string.folder_fab_settings_fab_archive;
+            i = C3417R.string.folder_fab_settings_fab_archive;
         } else {
-            i = C3295R.string.main_list;
+            i = C3417R.string.main_list;
         }
         String internalString = LocaleController.getInternalString(i);
         Intrinsics.checkNotNullExpressionValue(internalString, "getInternalString(\n     …tring.main_list\n        )");
@@ -181,9 +185,9 @@ public class TopicView extends FrameLayout {
         nameTextView.setText(upperCase);
         ImageView iconView = getIconView();
         if (z) {
-            i2 = C3295R.C3297drawable.fork_custom_forward_switch_archive;
+            i2 = C3417R.C3419drawable.fork_custom_forward_switch_archive;
         } else {
-            i2 = C3295R.C3297drawable.fork_custom_forward_switch_main;
+            i2 = C3417R.C3419drawable.fork_custom_forward_switch_main;
         }
         iconView.setImageResource(i2);
         updateColors();
@@ -192,7 +196,7 @@ public class TopicView extends FrameLayout {
     public final void setMessagesContextMenu(boolean z, boolean z2) {
         int i;
         this.isActive = z2;
-        String title = z ? LocaleController.getInternalString(C3295R.string.settings_interface_message_header) : LocaleController.getString(C3295R.string.MediaTab);
+        String title = z ? LocaleController.getInternalString(C3417R.string.settings_interface_message_header) : LocaleController.getString(C3417R.string.MediaTab);
         TextView nameTextView = getNameTextView();
         Intrinsics.checkNotNullExpressionValue(title, "title");
         String upperCase = title.toUpperCase(Locale.ROOT);
@@ -200,9 +204,9 @@ public class TopicView extends FrameLayout {
         nameTextView.setText(upperCase);
         ImageView iconView = getIconView();
         if (z) {
-            i = C3295R.C3297drawable.fork_settings_chat;
+            i = C3417R.C3419drawable.fork_settings_chat;
         } else {
-            i = C3295R.C3297drawable.fork_cloud_filter_image;
+            i = C3417R.C3419drawable.fork_cloud_filter_image;
         }
         iconView.setImageResource(i);
         updateColors();

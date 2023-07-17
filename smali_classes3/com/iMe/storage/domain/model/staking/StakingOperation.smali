@@ -14,7 +14,7 @@
 # instance fields
 .field private final amount:Lcom/iMe/storage/domain/model/staking/StakingOperationCost;
 
-.field private final approvedToken:Lcom/iMe/storage/domain/model/staking/StakingToken;
+.field private final approvedToken:Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
 
 .field private final failReason:Ljava/lang/String;
 
@@ -26,8 +26,6 @@
 
 .field private final issuer:Ljava/lang/String;
 
-.field private final networkType:Lcom/iMe/storage/domain/model/crypto/NetworkType;
-
 .field private final safe:Ljava/lang/Boolean;
 
 .field private final settledAt:Ljava/lang/String;
@@ -36,7 +34,7 @@
 
 .field private final status:Lcom/iMe/storage/domain/model/staking/StakingOperationStatus;
 
-.field private final token:Ljava/lang/String;
+.field private final token:Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
 
 .field private final transaction:Ljava/lang/String;
 
@@ -44,8 +42,8 @@
 
 
 # direct methods
-.method public constructor <init>(JILjava/lang/String;Lcom/iMe/storage/domain/model/staking/StakingOperationType;Lcom/iMe/storage/domain/model/staking/StakingOperationStatus;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/domain/model/staking/StakingOperationCost;Lcom/iMe/storage/domain/model/staking/StakingOperationCost;Ljava/lang/Boolean;Lcom/iMe/storage/domain/model/staking/StakingToken;Ljava/lang/String;Lcom/iMe/storage/domain/model/crypto/NetworkType;)V
-    .locals 10
+.method public constructor <init>(JILjava/lang/String;Lcom/iMe/storage/domain/model/staking/StakingOperationType;Lcom/iMe/storage/domain/model/staking/StakingOperationStatus;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/domain/model/staking/StakingOperationCost;Lcom/iMe/storage/domain/model/staking/StakingOperationCost;Ljava/lang/Boolean;Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;)V
+    .locals 9
 
     move-object v0, p0
 
@@ -53,7 +51,7 @@
 
     move-object v2, p5
 
-    move-object/from16 v3, p6
+    move-object v3, p6
 
     move-object/from16 v4, p7
 
@@ -61,109 +59,100 @@
 
     move-object/from16 v6, p15
 
-    move-object/from16 v7, p16
+    const-string v7, "transaction"
 
-    const-string v8, "transaction"
+    invoke-static {p4, v7}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-static {p4, v8}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    const-string v7, "type"
 
-    const-string v8, "type"
+    invoke-static {p5, v7}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-static {p5, v8}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    const-string v7, "status"
 
-    const-string v8, "status"
+    invoke-static {p6, v7}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-static {v3, v8}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    const-string v7, "issuer"
 
-    const-string v8, "issuer"
+    invoke-static {v4, v7}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-static {v4, v8}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    const-string v7, "issuedAt"
 
-    const-string v8, "issuedAt"
+    invoke-static {v5, v7}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-static {v5, v8}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    const-string v7, "token"
 
-    const-string v8, "token"
+    invoke-static {v6, v7}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-static {v6, v8}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string v8, "networkType"
-
-    invoke-static {v7, v8}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    .line 9
+    .line 8
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    move-wide v8, p1
+    move-wide v7, p1
+
+    .line 9
+    iput-wide v7, v0, Lcom/iMe/storage/domain/model/staking/StakingOperation;->id:J
+
+    move v7, p3
 
     .line 10
-    iput-wide v8, v0, Lcom/iMe/storage/domain/model/staking/StakingOperation;->id:J
-
-    move v8, p3
+    iput v7, v0, Lcom/iMe/storage/domain/model/staking/StakingOperation;->stakingId:I
 
     .line 11
-    iput v8, v0, Lcom/iMe/storage/domain/model/staking/StakingOperation;->stakingId:I
-
-    .line 12
     iput-object v1, v0, Lcom/iMe/storage/domain/model/staking/StakingOperation;->transaction:Ljava/lang/String;
 
-    .line 13
+    .line 12
     iput-object v2, v0, Lcom/iMe/storage/domain/model/staking/StakingOperation;->type:Lcom/iMe/storage/domain/model/staking/StakingOperationType;
 
-    .line 14
+    .line 13
     iput-object v3, v0, Lcom/iMe/storage/domain/model/staking/StakingOperation;->status:Lcom/iMe/storage/domain/model/staking/StakingOperationStatus;
 
-    .line 15
+    .line 14
     iput-object v4, v0, Lcom/iMe/storage/domain/model/staking/StakingOperation;->issuer:Ljava/lang/String;
 
-    .line 16
+    .line 15
     iput-object v5, v0, Lcom/iMe/storage/domain/model/staking/StakingOperation;->issuedAt:Ljava/lang/String;
 
     move-object/from16 v1, p9
 
-    .line 17
+    .line 16
     iput-object v1, v0, Lcom/iMe/storage/domain/model/staking/StakingOperation;->settledAt:Ljava/lang/String;
 
     move-object/from16 v1, p10
 
-    .line 18
+    .line 17
     iput-object v1, v0, Lcom/iMe/storage/domain/model/staking/StakingOperation;->failReason:Ljava/lang/String;
 
     move-object/from16 v1, p11
 
-    .line 19
+    .line 18
     iput-object v1, v0, Lcom/iMe/storage/domain/model/staking/StakingOperation;->amount:Lcom/iMe/storage/domain/model/staking/StakingOperationCost;
 
     move-object/from16 v1, p12
 
-    .line 20
+    .line 19
     iput-object v1, v0, Lcom/iMe/storage/domain/model/staking/StakingOperation;->fee:Lcom/iMe/storage/domain/model/staking/StakingOperationCost;
 
     move-object/from16 v1, p13
 
-    .line 21
+    .line 20
     iput-object v1, v0, Lcom/iMe/storage/domain/model/staking/StakingOperation;->safe:Ljava/lang/Boolean;
 
     move-object/from16 v1, p14
 
+    .line 21
+    iput-object v1, v0, Lcom/iMe/storage/domain/model/staking/StakingOperation;->approvedToken:Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
+
     .line 22
-    iput-object v1, v0, Lcom/iMe/storage/domain/model/staking/StakingOperation;->approvedToken:Lcom/iMe/storage/domain/model/staking/StakingToken;
-
-    .line 23
-    iput-object v6, v0, Lcom/iMe/storage/domain/model/staking/StakingOperation;->token:Ljava/lang/String;
-
-    .line 24
-    iput-object v7, v0, Lcom/iMe/storage/domain/model/staking/StakingOperation;->networkType:Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    iput-object v6, v0, Lcom/iMe/storage/domain/model/staking/StakingOperation;->token:Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
 
     return-void
 .end method
 
-.method public static synthetic copy$default(Lcom/iMe/storage/domain/model/staking/StakingOperation;JILjava/lang/String;Lcom/iMe/storage/domain/model/staking/StakingOperationType;Lcom/iMe/storage/domain/model/staking/StakingOperationStatus;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/domain/model/staking/StakingOperationCost;Lcom/iMe/storage/domain/model/staking/StakingOperationCost;Ljava/lang/Boolean;Lcom/iMe/storage/domain/model/staking/StakingToken;Ljava/lang/String;Lcom/iMe/storage/domain/model/crypto/NetworkType;ILjava/lang/Object;)Lcom/iMe/storage/domain/model/staking/StakingOperation;
+.method public static synthetic copy$default(Lcom/iMe/storage/domain/model/staking/StakingOperation;JILjava/lang/String;Lcom/iMe/storage/domain/model/staking/StakingOperationType;Lcom/iMe/storage/domain/model/staking/StakingOperationStatus;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/domain/model/staking/StakingOperationCost;Lcom/iMe/storage/domain/model/staking/StakingOperationCost;Ljava/lang/Boolean;Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;ILjava/lang/Object;)Lcom/iMe/storage/domain/model/staking/StakingOperation;
     .locals 16
 
     move-object/from16 v0, p0
 
-    move/from16 v1, p17
+    move/from16 v1, p16
 
     and-int/lit8 v2, v1, 0x1
 
@@ -313,7 +302,7 @@
 
     if-eqz v15, :cond_c
 
-    iget-object v15, v0, Lcom/iMe/storage/domain/model/staking/StakingOperation;->approvedToken:Lcom/iMe/storage/domain/model/staking/StakingToken;
+    iget-object v15, v0, Lcom/iMe/storage/domain/model/staking/StakingOperation;->approvedToken:Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
 
     goto :goto_c
 
@@ -321,32 +310,18 @@
     move-object/from16 v15, p14
 
     :goto_c
-    move-object/from16 p14, v15
+    and-int/lit16 v1, v1, 0x2000
 
-    and-int/lit16 v15, v1, 0x2000
+    if-eqz v1, :cond_d
 
-    if-eqz v15, :cond_d
-
-    iget-object v15, v0, Lcom/iMe/storage/domain/model/staking/StakingOperation;->token:Ljava/lang/String;
+    iget-object v1, v0, Lcom/iMe/storage/domain/model/staking/StakingOperation;->token:Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
 
     goto :goto_d
 
     :cond_d
-    move-object/from16 v15, p15
+    move-object/from16 v1, p15
 
     :goto_d
-    and-int/lit16 v1, v1, 0x4000
-
-    if-eqz v1, :cond_e
-
-    iget-object v1, v0, Lcom/iMe/storage/domain/model/staking/StakingOperation;->networkType:Lcom/iMe/storage/domain/model/crypto/NetworkType;
-
-    goto :goto_e
-
-    :cond_e
-    move-object/from16 v1, p16
-
-    :goto_e
     move-wide/from16 p1, v2
 
     move/from16 p3, v4
@@ -371,11 +346,11 @@
 
     move-object/from16 p13, v14
 
-    move-object/from16 p15, v15
+    move-object/from16 p14, v15
 
-    move-object/from16 p16, v1
+    move-object/from16 p15, v1
 
-    invoke-virtual/range {p0 .. p16}, Lcom/iMe/storage/domain/model/staking/StakingOperation;->copy(JILjava/lang/String;Lcom/iMe/storage/domain/model/staking/StakingOperationType;Lcom/iMe/storage/domain/model/staking/StakingOperationStatus;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/domain/model/staking/StakingOperationCost;Lcom/iMe/storage/domain/model/staking/StakingOperationCost;Ljava/lang/Boolean;Lcom/iMe/storage/domain/model/staking/StakingToken;Ljava/lang/String;Lcom/iMe/storage/domain/model/crypto/NetworkType;)Lcom/iMe/storage/domain/model/staking/StakingOperation;
+    invoke-virtual/range {p0 .. p15}, Lcom/iMe/storage/domain/model/staking/StakingOperation;->copy(JILjava/lang/String;Lcom/iMe/storage/domain/model/staking/StakingOperationType;Lcom/iMe/storage/domain/model/staking/StakingOperationStatus;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/domain/model/staking/StakingOperationCost;Lcom/iMe/storage/domain/model/staking/StakingOperationCost;Ljava/lang/Boolean;Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;)Lcom/iMe/storage/domain/model/staking/StakingOperation;
 
     move-result-object v0
 
@@ -416,26 +391,18 @@
     return-object v0
 .end method
 
-.method public final component13()Lcom/iMe/storage/domain/model/staking/StakingToken;
+.method public final component13()Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
     .locals 1
 
-    iget-object v0, p0, Lcom/iMe/storage/domain/model/staking/StakingOperation;->approvedToken:Lcom/iMe/storage/domain/model/staking/StakingToken;
+    iget-object v0, p0, Lcom/iMe/storage/domain/model/staking/StakingOperation;->approvedToken:Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
 
     return-object v0
 .end method
 
-.method public final component14()Ljava/lang/String;
+.method public final component14()Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
     .locals 1
 
-    iget-object v0, p0, Lcom/iMe/storage/domain/model/staking/StakingOperation;->token:Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method public final component15()Lcom/iMe/storage/domain/model/crypto/NetworkType;
-    .locals 1
-
-    iget-object v0, p0, Lcom/iMe/storage/domain/model/staking/StakingOperation;->networkType:Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    iget-object v0, p0, Lcom/iMe/storage/domain/model/staking/StakingOperation;->token:Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
 
     return-object v0
 .end method
@@ -504,90 +471,70 @@
     return-object v0
 .end method
 
-.method public final copy(JILjava/lang/String;Lcom/iMe/storage/domain/model/staking/StakingOperationType;Lcom/iMe/storage/domain/model/staking/StakingOperationStatus;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/domain/model/staking/StakingOperationCost;Lcom/iMe/storage/domain/model/staking/StakingOperationCost;Ljava/lang/Boolean;Lcom/iMe/storage/domain/model/staking/StakingToken;Ljava/lang/String;Lcom/iMe/storage/domain/model/crypto/NetworkType;)Lcom/iMe/storage/domain/model/staking/StakingOperation;
-    .locals 18
-
-    move-wide/from16 v1, p1
-
-    move/from16 v3, p3
-
-    move-object/from16 v4, p4
-
-    move-object/from16 v5, p5
-
-    move-object/from16 v6, p6
-
-    move-object/from16 v7, p7
-
-    move-object/from16 v8, p8
-
-    move-object/from16 v9, p9
-
-    move-object/from16 v10, p10
-
-    move-object/from16 v11, p11
-
-    move-object/from16 v12, p12
-
-    move-object/from16 v13, p13
-
-    move-object/from16 v14, p14
-
-    move-object/from16 v15, p15
-
-    move-object/from16 v16, p16
+.method public final copy(JILjava/lang/String;Lcom/iMe/storage/domain/model/staking/StakingOperationType;Lcom/iMe/storage/domain/model/staking/StakingOperationStatus;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/domain/model/staking/StakingOperationCost;Lcom/iMe/storage/domain/model/staking/StakingOperationCost;Ljava/lang/Boolean;Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;)Lcom/iMe/storage/domain/model/staking/StakingOperation;
+    .locals 17
 
     const-string v0, "transaction"
 
-    move-object/from16 v1, p4
+    move-object/from16 v5, p4
 
-    invoke-static {v1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v5, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     const-string v0, "type"
 
-    move-object/from16 v1, p5
+    move-object/from16 v6, p5
 
-    invoke-static {v1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v6, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     const-string v0, "status"
 
-    move-object/from16 v1, p6
+    move-object/from16 v7, p6
 
-    invoke-static {v1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v7, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     const-string v0, "issuer"
 
-    move-object/from16 v1, p7
+    move-object/from16 v8, p7
 
-    invoke-static {v1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v8, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     const-string v0, "issuedAt"
 
-    move-object/from16 v1, p8
+    move-object/from16 v9, p8
 
-    invoke-static {v1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v9, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     const-string v0, "token"
 
-    move-object/from16 v1, p15
+    move-object/from16 v15, p15
 
-    invoke-static {v1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v15, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "networkType"
+    new-instance v0, Lcom/iMe/storage/domain/model/staking/StakingOperation;
 
-    move-object/from16 v1, p16
+    move-object v1, v0
 
-    invoke-static {v1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    move-wide/from16 v2, p1
 
-    new-instance v17, Lcom/iMe/storage/domain/model/staking/StakingOperation;
+    move/from16 v4, p3
 
-    move-object/from16 v0, v17
+    move-object/from16 v10, p9
 
-    move-wide/from16 v1, p1
+    move-object/from16 v11, p10
 
-    invoke-direct/range {v0 .. v16}, Lcom/iMe/storage/domain/model/staking/StakingOperation;-><init>(JILjava/lang/String;Lcom/iMe/storage/domain/model/staking/StakingOperationType;Lcom/iMe/storage/domain/model/staking/StakingOperationStatus;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/domain/model/staking/StakingOperationCost;Lcom/iMe/storage/domain/model/staking/StakingOperationCost;Ljava/lang/Boolean;Lcom/iMe/storage/domain/model/staking/StakingToken;Ljava/lang/String;Lcom/iMe/storage/domain/model/crypto/NetworkType;)V
+    move-object/from16 v12, p11
 
-    return-object v17
+    move-object/from16 v13, p12
+
+    move-object/from16 v14, p13
+
+    move-object/from16 v15, p14
+
+    move-object/from16 v16, p15
+
+    invoke-direct/range {v1 .. v16}, Lcom/iMe/storage/domain/model/staking/StakingOperation;-><init>(JILjava/lang/String;Lcom/iMe/storage/domain/model/staking/StakingOperationType;Lcom/iMe/storage/domain/model/staking/StakingOperationStatus;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/domain/model/staking/StakingOperationCost;Lcom/iMe/storage/domain/model/staking/StakingOperationCost;Ljava/lang/Boolean;Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;)V
+
+    return-object v0
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
@@ -753,9 +700,9 @@
     return v2
 
     :cond_d
-    iget-object v1, p0, Lcom/iMe/storage/domain/model/staking/StakingOperation;->approvedToken:Lcom/iMe/storage/domain/model/staking/StakingToken;
+    iget-object v1, p0, Lcom/iMe/storage/domain/model/staking/StakingOperation;->approvedToken:Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
 
-    iget-object v3, p1, Lcom/iMe/storage/domain/model/staking/StakingOperation;->approvedToken:Lcom/iMe/storage/domain/model/staking/StakingToken;
+    iget-object v3, p1, Lcom/iMe/storage/domain/model/staking/StakingOperation;->approvedToken:Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
 
     invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
@@ -766,45 +713,36 @@
     return v2
 
     :cond_e
-    iget-object v1, p0, Lcom/iMe/storage/domain/model/staking/StakingOperation;->token:Ljava/lang/String;
+    iget-object v1, p0, Lcom/iMe/storage/domain/model/staking/StakingOperation;->token:Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
 
-    iget-object v3, p1, Lcom/iMe/storage/domain/model/staking/StakingOperation;->token:Ljava/lang/String;
+    iget-object p1, p1, Lcom/iMe/storage/domain/model/staking/StakingOperation;->token:Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
 
-    invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v1, p1}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    move-result v1
+    move-result p1
 
-    if-nez v1, :cond_f
+    if-nez p1, :cond_f
 
     return v2
 
     :cond_f
-    iget-object v1, p0, Lcom/iMe/storage/domain/model/staking/StakingOperation;->networkType:Lcom/iMe/storage/domain/model/crypto/NetworkType;
-
-    iget-object p1, p1, Lcom/iMe/storage/domain/model/staking/StakingOperation;->networkType:Lcom/iMe/storage/domain/model/crypto/NetworkType;
-
-    if-eq v1, p1, :cond_10
-
-    return v2
-
-    :cond_10
     return v0
 .end method
 
 .method public final getAmount()Lcom/iMe/storage/domain/model/staking/StakingOperationCost;
     .locals 1
 
-    .line 19
+    .line 18
     iget-object v0, p0, Lcom/iMe/storage/domain/model/staking/StakingOperation;->amount:Lcom/iMe/storage/domain/model/staking/StakingOperationCost;
 
     return-object v0
 .end method
 
-.method public final getApprovedToken()Lcom/iMe/storage/domain/model/staking/StakingToken;
+.method public final getApprovedToken()Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
     .locals 1
 
-    .line 22
-    iget-object v0, p0, Lcom/iMe/storage/domain/model/staking/StakingOperation;->approvedToken:Lcom/iMe/storage/domain/model/staking/StakingToken;
+    .line 21
+    iget-object v0, p0, Lcom/iMe/storage/domain/model/staking/StakingOperation;->approvedToken:Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
 
     return-object v0
 .end method
@@ -812,7 +750,7 @@
 .method public final getCreatedAt()Ljava/lang/String;
     .locals 2
 
-    .line 29
+    .line 27
     iget-object v0, p0, Lcom/iMe/storage/domain/model/staking/StakingOperation;->status:Lcom/iMe/storage/domain/model/staking/StakingOperationStatus;
 
     sget-object v1, Lcom/iMe/storage/domain/model/staking/StakingOperationStatus;->PENDING:Lcom/iMe/storage/domain/model/staking/StakingOperationStatus;
@@ -838,7 +776,7 @@
 .method public final getFailReason()Ljava/lang/String;
     .locals 1
 
-    .line 18
+    .line 17
     iget-object v0, p0, Lcom/iMe/storage/domain/model/staking/StakingOperation;->failReason:Ljava/lang/String;
 
     return-object v0
@@ -847,7 +785,7 @@
 .method public final getFee()Lcom/iMe/storage/domain/model/staking/StakingOperationCost;
     .locals 1
 
-    .line 20
+    .line 19
     iget-object v0, p0, Lcom/iMe/storage/domain/model/staking/StakingOperation;->fee:Lcom/iMe/storage/domain/model/staking/StakingOperationCost;
 
     return-object v0
@@ -856,7 +794,7 @@
 .method public final getId()J
     .locals 2
 
-    .line 10
+    .line 9
     iget-wide v0, p0, Lcom/iMe/storage/domain/model/staking/StakingOperation;->id:J
 
     return-wide v0
@@ -865,7 +803,7 @@
 .method public final getIssuedAt()Ljava/lang/String;
     .locals 1
 
-    .line 16
+    .line 15
     iget-object v0, p0, Lcom/iMe/storage/domain/model/staking/StakingOperation;->issuedAt:Ljava/lang/String;
 
     return-object v0
@@ -874,17 +812,8 @@
 .method public final getIssuer()Ljava/lang/String;
     .locals 1
 
-    .line 15
+    .line 14
     iget-object v0, p0, Lcom/iMe/storage/domain/model/staking/StakingOperation;->issuer:Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method public final getNetworkType()Lcom/iMe/storage/domain/model/crypto/NetworkType;
-    .locals 1
-
-    .line 24
-    iget-object v0, p0, Lcom/iMe/storage/domain/model/staking/StakingOperation;->networkType:Lcom/iMe/storage/domain/model/crypto/NetworkType;
 
     return-object v0
 .end method
@@ -892,7 +821,7 @@
 .method public final getSafe()Ljava/lang/Boolean;
     .locals 1
 
-    .line 21
+    .line 20
     iget-object v0, p0, Lcom/iMe/storage/domain/model/staking/StakingOperation;->safe:Ljava/lang/Boolean;
 
     return-object v0
@@ -901,7 +830,7 @@
 .method public final getSettledAt()Ljava/lang/String;
     .locals 1
 
-    .line 17
+    .line 16
     iget-object v0, p0, Lcom/iMe/storage/domain/model/staking/StakingOperation;->settledAt:Ljava/lang/String;
 
     return-object v0
@@ -910,7 +839,7 @@
 .method public final getStakingId()I
     .locals 1
 
-    .line 11
+    .line 10
     iget v0, p0, Lcom/iMe/storage/domain/model/staking/StakingOperation;->stakingId:I
 
     return v0
@@ -919,17 +848,17 @@
 .method public final getStatus()Lcom/iMe/storage/domain/model/staking/StakingOperationStatus;
     .locals 1
 
-    .line 14
+    .line 13
     iget-object v0, p0, Lcom/iMe/storage/domain/model/staking/StakingOperation;->status:Lcom/iMe/storage/domain/model/staking/StakingOperationStatus;
 
     return-object v0
 .end method
 
-.method public final getToken()Ljava/lang/String;
+.method public final getToken()Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
     .locals 1
 
-    .line 23
-    iget-object v0, p0, Lcom/iMe/storage/domain/model/staking/StakingOperation;->token:Ljava/lang/String;
+    .line 22
+    iget-object v0, p0, Lcom/iMe/storage/domain/model/staking/StakingOperation;->token:Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
 
     return-object v0
 .end method
@@ -937,7 +866,7 @@
 .method public final getTokenTicker()Ljava/lang/String;
     .locals 3
 
-    .line 55
+    .line 53
     iget-object v0, p0, Lcom/iMe/storage/domain/model/staking/StakingOperation;->type:Lcom/iMe/storage/domain/model/staking/StakingOperationType;
 
     sget-object v1, Lcom/iMe/storage/domain/model/staking/StakingOperation$WhenMappings;->$EnumSwitchMapping$0:[I
@@ -954,30 +883,30 @@
 
     if-ne v0, v2, :cond_0
 
-    .line 56
-    iget-object v0, p0, Lcom/iMe/storage/domain/model/staking/StakingOperation;->approvedToken:Lcom/iMe/storage/domain/model/staking/StakingToken;
+    .line 54
+    iget-object v0, p0, Lcom/iMe/storage/domain/model/staking/StakingOperation;->approvedToken:Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
 
     if-eqz v0, :cond_1
 
-    invoke-virtual {v0}, Lcom/iMe/storage/domain/model/staking/StakingToken;->getTicker()Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;->getTicker()Ljava/lang/String;
 
     move-result-object v1
 
     goto :goto_0
 
-    .line 57
+    .line 55
     :cond_0
     iget-object v0, p0, Lcom/iMe/storage/domain/model/staking/StakingOperation;->amount:Lcom/iMe/storage/domain/model/staking/StakingOperationCost;
 
     if-eqz v0, :cond_1
 
-    invoke-virtual {v0}, Lcom/iMe/storage/domain/model/staking/StakingOperationCost;->getToken()Lcom/iMe/storage/domain/model/staking/StakingToken;
+    invoke-virtual {v0}, Lcom/iMe/storage/domain/model/staking/StakingOperationCost;->getToken()Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
 
     move-result-object v0
 
     if-eqz v0, :cond_1
 
-    invoke-virtual {v0}, Lcom/iMe/storage/domain/model/staking/StakingToken;->getTicker()Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;->getTicker()Ljava/lang/String;
 
     move-result-object v1
 
@@ -985,12 +914,7 @@
     :goto_0
     if-nez v1, :cond_2
 
-    .line 58
-    sget-object v0, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;->UNKNOWN:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
-
-    invoke-virtual {v0}, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;->getName()Ljava/lang/String;
-
-    move-result-object v1
+    const-string v1, ""
 
     :cond_2
     return-object v1
@@ -999,7 +923,7 @@
 .method public final getTransaction()Ljava/lang/String;
     .locals 1
 
-    .line 12
+    .line 11
     iget-object v0, p0, Lcom/iMe/storage/domain/model/staking/StakingOperation;->transaction:Ljava/lang/String;
 
     return-object v0
@@ -1008,7 +932,7 @@
 .method public final getTransactionDirection()Lcom/iMe/storage/domain/model/wallet/transaction/TransactionDirection;
     .locals 2
 
-    .line 47
+    .line 45
     iget-object v0, p0, Lcom/iMe/storage/domain/model/staking/StakingOperation;->type:Lcom/iMe/storage/domain/model/staking/StakingOperationType;
 
     sget-object v1, Lcom/iMe/storage/domain/model/staking/StakingOperation$WhenMappings;->$EnumSwitchMapping$0:[I
@@ -1037,7 +961,7 @@
 
     goto :goto_0
 
-    .line 51
+    .line 49
     :cond_0
     new-instance v0, Lkotlin/NoWhenBranchMatchedException;
 
@@ -1051,13 +975,13 @@
 
     goto :goto_1
 
-    .line 49
+    .line 47
     :cond_2
     sget-object v0, Lcom/iMe/storage/domain/model/wallet/transaction/TransactionDirection;->OUT:Lcom/iMe/storage/domain/model/wallet/transaction/TransactionDirection;
 
     goto :goto_1
 
-    .line 48
+    .line 46
     :cond_3
     sget-object v0, Lcom/iMe/storage/domain/model/wallet/transaction/TransactionDirection;->SELF:Lcom/iMe/storage/domain/model/wallet/transaction/TransactionDirection;
 
@@ -1068,7 +992,7 @@
 .method public final getTransactionStatus()Lcom/iMe/storage/data/network/model/response/base/Status;
     .locals 2
 
-    .line 40
+    .line 38
     iget-object v0, p0, Lcom/iMe/storage/domain/model/staking/StakingOperation;->status:Lcom/iMe/storage/domain/model/staking/StakingOperationStatus;
 
     sget-object v1, Lcom/iMe/storage/domain/model/staking/StakingOperation$WhenMappings;->$EnumSwitchMapping$1:[I
@@ -1091,7 +1015,7 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 43
+    .line 41
     sget-object v0, Lcom/iMe/storage/data/network/model/response/base/Status;->ERROR:Lcom/iMe/storage/data/network/model/response/base/Status;
 
     goto :goto_0
@@ -1103,13 +1027,13 @@
 
     throw v0
 
-    .line 42
+    .line 40
     :cond_1
     sget-object v0, Lcom/iMe/storage/data/network/model/response/base/Status;->OK:Lcom/iMe/storage/data/network/model/response/base/Status;
 
     goto :goto_0
 
-    .line 41
+    .line 39
     :cond_2
     sget-object v0, Lcom/iMe/storage/data/network/model/response/base/Status;->PENDING:Lcom/iMe/storage/data/network/model/response/base/Status;
 
@@ -1120,7 +1044,7 @@
 .method public final getTransactionType()Lcom/iMe/storage/domain/model/wallet/transaction/TransactionType;
     .locals 2
 
-    .line 34
+    .line 32
     iget-object v0, p0, Lcom/iMe/storage/domain/model/staking/StakingOperation;->type:Lcom/iMe/storage/domain/model/staking/StakingOperationType;
 
     sget-object v1, Lcom/iMe/storage/domain/model/staking/StakingOperation$WhenMappings;->$EnumSwitchMapping$0:[I
@@ -1135,12 +1059,12 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 35
+    .line 33
     sget-object v0, Lcom/iMe/storage/domain/model/wallet/transaction/TransactionType;->APPROVE_CRYPTO:Lcom/iMe/storage/domain/model/wallet/transaction/TransactionType;
 
     goto :goto_0
 
-    .line 36
+    .line 34
     :cond_0
     sget-object v0, Lcom/iMe/storage/domain/model/wallet/transaction/TransactionType;->TRANSFER_CRYPTO:Lcom/iMe/storage/domain/model/wallet/transaction/TransactionType;
 
@@ -1151,7 +1075,7 @@
 .method public final getType()Lcom/iMe/storage/domain/model/staking/StakingOperationType;
     .locals 1
 
-    .line 13
+    .line 12
     iget-object v0, p0, Lcom/iMe/storage/domain/model/staking/StakingOperation;->type:Lcom/iMe/storage/domain/model/staking/StakingOperationType;
 
     return-object v0
@@ -1316,14 +1240,14 @@
 
     mul-int/lit8 v0, v0, 0x1f
 
-    iget-object v1, p0, Lcom/iMe/storage/domain/model/staking/StakingOperation;->approvedToken:Lcom/iMe/storage/domain/model/staking/StakingToken;
+    iget-object v1, p0, Lcom/iMe/storage/domain/model/staking/StakingOperation;->approvedToken:Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
 
     if-nez v1, :cond_5
 
     goto :goto_5
 
     :cond_5
-    invoke-virtual {v1}, Lcom/iMe/storage/domain/model/staking/StakingToken;->hashCode()I
+    invoke-virtual {v1}, Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;->hashCode()I
 
     move-result v2
 
@@ -1332,19 +1256,9 @@
 
     mul-int/lit8 v0, v0, 0x1f
 
-    iget-object v1, p0, Lcom/iMe/storage/domain/model/staking/StakingOperation;->token:Ljava/lang/String;
+    iget-object v1, p0, Lcom/iMe/storage/domain/model/staking/StakingOperation;->token:Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
 
-    invoke-virtual {v1}, Ljava/lang/String;->hashCode()I
-
-    move-result v1
-
-    add-int/2addr v0, v1
-
-    mul-int/lit8 v0, v0, 0x1f
-
-    iget-object v1, p0, Lcom/iMe/storage/domain/model/staking/StakingOperation;->networkType:Lcom/iMe/storage/domain/model/crypto/NetworkType;
-
-    invoke-virtual {v1}, Ljava/lang/Enum;->hashCode()I
+    invoke-virtual {v1}, Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;->hashCode()I
 
     move-result v1
 
@@ -1460,7 +1374,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v1, p0, Lcom/iMe/storage/domain/model/staking/StakingOperation;->approvedToken:Lcom/iMe/storage/domain/model/staking/StakingToken;
+    iget-object v1, p0, Lcom/iMe/storage/domain/model/staking/StakingOperation;->approvedToken:Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
@@ -1468,15 +1382,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v1, p0, Lcom/iMe/storage/domain/model/staking/StakingOperation;->token:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v1, ", networkType="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v1, p0, Lcom/iMe/storage/domain/model/staking/StakingOperation;->networkType:Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    iget-object v1, p0, Lcom/iMe/storage/domain/model/staking/StakingOperation;->token:Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 

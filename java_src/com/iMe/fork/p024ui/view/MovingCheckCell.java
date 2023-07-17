@@ -19,10 +19,10 @@ import kotlin.collections.CollectionsKt__CollectionsKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3295R;
-import org.telegram.p044ui.ActionBar.Theme;
-import org.telegram.p044ui.Components.CheckBoxSquare;
-import org.telegram.p044ui.Components.LayoutHelper;
+import org.telegram.messenger.C3417R;
+import org.telegram.p043ui.ActionBar.Theme;
+import org.telegram.p043ui.Components.CheckBoxSquare;
+import org.telegram.p043ui.Components.LayoutHelper;
 /* compiled from: MovingCheckCell.kt */
 /* renamed from: com.iMe.fork.ui.view.MovingCheckCell */
 /* loaded from: classes3.dex */
@@ -115,13 +115,6 @@ public final class MovingCheckCell extends FrameLayout {
         updateLeftMargins();
     }
 
-    public static /* synthetic */ void setIcon$default(MovingCheckCell movingCheckCell, int i, int i2, PorterDuff.Mode mode, int i3, Object obj) {
-        if ((i3 & 4) != 0) {
-            mode = null;
-        }
-        movingCheckCell.setIcon(i, i2, mode);
-    }
-
     public final void setIcon(int i, int i2, PorterDuff.Mode mode) {
         ViewExtKt.visible$default(this.iconView, false, 1, null);
         if (i2 != -1 && mode != null) {
@@ -133,16 +126,16 @@ public final class MovingCheckCell extends FrameLayout {
         updateLeftMargins();
     }
 
-    private final void updateLeftMargins() {
-        List<View> listOf;
-        listOf = CollectionsKt__CollectionsKt.listOf((Object[]) new View[]{this.titleContainer, this.subtitleView});
-        for (View view : listOf) {
-            ViewGroup.LayoutParams layoutParams = view.getLayoutParams();
-            Intrinsics.checkNotNull(layoutParams, "null cannot be cast to non-null type android.widget.FrameLayout.LayoutParams");
-            FrameLayout.LayoutParams layoutParams2 = (FrameLayout.LayoutParams) layoutParams;
-            layoutParams2.leftMargin = AndroidUtilities.m54dp(108);
-            view.setLayoutParams(layoutParams2);
+    public final void setPinned(boolean z) {
+        int i;
+        ImageView imageView = this.moveIconView;
+        if (z) {
+            i = C3417R.C3419drawable.chats_pin;
+        } else {
+            i = C3417R.C3419drawable.list_reorder;
         }
+        imageView.setImageResource(i);
+        ViewExtKt.gone(this.checkBox, z);
     }
 
     @Override // android.widget.FrameLayout, android.view.View
@@ -165,7 +158,7 @@ public final class MovingCheckCell extends FrameLayout {
         imageView.setScaleType(ImageView.ScaleType.CENTER);
         imageView.setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_stickers_menu), PorterDuff.Mode.MULTIPLY));
         imageView.setClickable(true);
-        imageView.setImageResource(C3295R.C3297drawable.list_reorder);
+        imageView.setImageResource(C3417R.C3419drawable.list_reorder);
         return imageView;
     }
 
@@ -218,6 +211,18 @@ public final class MovingCheckCell extends FrameLayout {
 
     private final CheckBoxSquare initCheckBox() {
         return new CheckBoxSquare(getContext(), false);
+    }
+
+    private final void updateLeftMargins() {
+        List<View> listOf;
+        listOf = CollectionsKt__CollectionsKt.listOf((Object[]) new View[]{this.titleContainer, this.subtitleView});
+        for (View view : listOf) {
+            ViewGroup.LayoutParams layoutParams = view.getLayoutParams();
+            Intrinsics.checkNotNull(layoutParams, "null cannot be cast to non-null type android.widget.FrameLayout.LayoutParams");
+            FrameLayout.LayoutParams layoutParams2 = (FrameLayout.LayoutParams) layoutParams;
+            layoutParams2.leftMargin = AndroidUtilities.m54dp(108);
+            view.setLayoutParams(layoutParams2);
+        }
     }
 
     private final void setFullHeightTitleView(boolean z) {

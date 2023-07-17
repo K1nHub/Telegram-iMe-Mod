@@ -16,6 +16,11 @@ public class WalletConnectNewSessionView$$State extends MvpViewState<WalletConne
         BaseView.CC.$default$finishScreen(this);
     }
 
+    @Override // com.iMe.p031ui.base.mvp.base.BaseView
+    public /* synthetic */ void removeSelfFromStackImmediately() {
+        BaseView.CC.$default$removeSelfFromStackImmediately(this);
+    }
+
     @Override // com.iMe.p031ui.wallet.crypto.wallet_connect.new_session.WalletConnectNewSessionView
     public void setupScreenWithData(String str, String str2, String str3, String str4, String str5) {
         SetupScreenWithDataCommand setupScreenWithDataCommand = new SetupScreenWithDataCommand(this, str, str2, str3, str4, str5);

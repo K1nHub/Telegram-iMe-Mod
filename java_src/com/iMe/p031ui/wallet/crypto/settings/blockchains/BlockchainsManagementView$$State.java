@@ -2,6 +2,7 @@ package com.iMe.p031ui.wallet.crypto.settings.blockchains;
 
 import com.iMe.model.dialog.DialogModel;
 import com.iMe.model.wallet.crypto.settings.BlockchainWalletItem;
+import com.iMe.p031ui.base.mvp.base.BaseView;
 import com.iMe.storage.domain.model.Result;
 import com.iMe.storage.domain.model.crypto.Wallet;
 import com.iMe.storage.domain.utils.system.ResourceManager;
@@ -12,8 +13,13 @@ import moxy.viewstate.ViewCommand;
 import moxy.viewstate.strategy.AddToEndSingleStrategy;
 import moxy.viewstate.strategy.OneExecutionStateStrategy;
 /* renamed from: com.iMe.ui.wallet.crypto.settings.blockchains.BlockchainsManagementView$$State */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class BlockchainsManagementView$$State extends MvpViewState<BlockchainsManagementView> implements BlockchainsManagementView {
+    @Override // com.iMe.p031ui.base.mvp.base.BaseView
+    public /* synthetic */ void removeSelfFromStackImmediately() {
+        BaseView.CC.$default$removeSelfFromStackImmediately(this);
+    }
+
     @Override // com.iMe.p031ui.wallet.crypto.settings.blockchains.BlockchainsManagementView
     public void setupWalletsItems(List<BlockchainWalletItem> list) {
         SetupWalletsItemsCommand setupWalletsItemsCommand = new SetupWalletsItemsCommand(this, list);
@@ -133,7 +139,7 @@ public class BlockchainsManagementView$$State extends MvpViewState<BlockchainsMa
 
     /* compiled from: BlockchainsManagementView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.settings.blockchains.BlockchainsManagementView$$State$SetupWalletsItemsCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class SetupWalletsItemsCommand extends ViewCommand<BlockchainsManagementView> {
         public final List<BlockchainWalletItem> items;
 
@@ -150,7 +156,7 @@ public class BlockchainsManagementView$$State extends MvpViewState<BlockchainsMa
 
     /* compiled from: BlockchainsManagementView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.settings.blockchains.BlockchainsManagementView$$State$ShowResetAllWalletsConfirmationDialogCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class ShowResetAllWalletsConfirmationDialogCommand extends ViewCommand<BlockchainsManagementView> {
         public final DialogModel dialogModel;
 
@@ -167,7 +173,7 @@ public class BlockchainsManagementView$$State extends MvpViewState<BlockchainsMa
 
     /* compiled from: BlockchainsManagementView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.settings.blockchains.BlockchainsManagementView$$State$ShowWalletDetailsDialogCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class ShowWalletDetailsDialogCommand extends ViewCommand<BlockchainsManagementView> {
         public final DialogModel infoDialogModel;
         public final BlockchainWalletItem walletItem;
@@ -186,7 +192,7 @@ public class BlockchainsManagementView$$State extends MvpViewState<BlockchainsMa
 
     /* compiled from: BlockchainsManagementView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.settings.blockchains.BlockchainsManagementView$$State$ShowWalletInfoDialogCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class ShowWalletInfoDialogCommand extends ViewCommand<BlockchainsManagementView> {
         public final DialogModel dialogModel;
 
@@ -203,26 +209,26 @@ public class BlockchainsManagementView$$State extends MvpViewState<BlockchainsMa
 
     /* compiled from: BlockchainsManagementView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.settings.blockchains.BlockchainsManagementView$$State$OpenBackupScreenCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class OpenBackupScreenCommand extends ViewCommand<BlockchainsManagementView> {
 
         /* renamed from: wallet  reason: collision with root package name */
-        public final Wallet f1846wallet;
+        public final Wallet f1933wallet;
 
         OpenBackupScreenCommand(BlockchainsManagementView$$State blockchainsManagementView$$State, Wallet wallet2) {
             super("openBackupScreen", OneExecutionStateStrategy.class);
-            this.f1846wallet = wallet2;
+            this.f1933wallet = wallet2;
         }
 
         @Override // moxy.viewstate.ViewCommand
         public void apply(BlockchainsManagementView blockchainsManagementView) {
-            blockchainsManagementView.openBackupScreen(this.f1846wallet);
+            blockchainsManagementView.openBackupScreen(this.f1933wallet);
         }
     }
 
     /* compiled from: BlockchainsManagementView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.settings.blockchains.BlockchainsManagementView$$State$ShowToastCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class ShowToastCommand extends ViewCommand<BlockchainsManagementView> {
         public final String text;
 
@@ -239,7 +245,7 @@ public class BlockchainsManagementView$$State extends MvpViewState<BlockchainsMa
 
     /* compiled from: BlockchainsManagementView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.settings.blockchains.BlockchainsManagementView$$State$ShowLoadingDialogCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class ShowLoadingDialogCommand extends ViewCommand<BlockchainsManagementView> {
         public final Disposable actionToCancel;
         public final boolean cancellable;
@@ -260,7 +266,7 @@ public class BlockchainsManagementView$$State extends MvpViewState<BlockchainsMa
 
     /* compiled from: BlockchainsManagementView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.settings.blockchains.BlockchainsManagementView$$State$ShowErrorToastCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class ShowErrorToastCommand<T> extends ViewCommand<BlockchainsManagementView> {
         public final ResourceManager resourceManager;
         public final Result.Error<? extends T> result;
@@ -279,7 +285,7 @@ public class BlockchainsManagementView$$State extends MvpViewState<BlockchainsMa
 
     /* compiled from: BlockchainsManagementView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.settings.blockchains.BlockchainsManagementView$$State$FinishScreenCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class FinishScreenCommand extends ViewCommand<BlockchainsManagementView> {
         FinishScreenCommand(BlockchainsManagementView$$State blockchainsManagementView$$State) {
             super("finishScreen", OneExecutionStateStrategy.class);

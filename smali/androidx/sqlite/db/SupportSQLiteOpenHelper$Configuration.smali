@@ -1,6 +1,6 @@
-.class public Landroidx/sqlite/db/SupportSQLiteOpenHelper$Configuration;
+.class public final Landroidx/sqlite/db/SupportSQLiteOpenHelper$Configuration;
 .super Ljava/lang/Object;
-.source "SupportSQLiteOpenHelper.java"
+.source "SupportSQLiteOpenHelper.kt"
 
 
 # annotations
@@ -9,15 +9,20 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x9
+    accessFlags = 0x19
     name = "Configuration"
 .end annotation
 
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroidx/sqlite/db/SupportSQLiteOpenHelper$Configuration$Builder;
+        Landroidx/sqlite/db/SupportSQLiteOpenHelper$Configuration$Builder;,
+        Landroidx/sqlite/db/SupportSQLiteOpenHelper$Configuration$Companion;
     }
 .end annotation
+
+
+# static fields
+.field public static final Companion:Landroidx/sqlite/db/SupportSQLiteOpenHelper$Configuration$Companion;
 
 
 # instance fields
@@ -31,34 +36,57 @@
 
 
 # direct methods
-.method constructor <init>(Landroid/content/Context;Ljava/lang/String;Landroidx/sqlite/db/SupportSQLiteOpenHelper$Callback;Z)V
+.method static constructor <clinit>()V
+    .locals 2
+
+    new-instance v0, Landroidx/sqlite/db/SupportSQLiteOpenHelper$Configuration$Companion;
+
+    const/4 v1, 0x0
+
+    invoke-direct {v0, v1}, Landroidx/sqlite/db/SupportSQLiteOpenHelper$Configuration$Companion;-><init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
+
+    sput-object v0, Landroidx/sqlite/db/SupportSQLiteOpenHelper$Configuration;->Companion:Landroidx/sqlite/db/SupportSQLiteOpenHelper$Configuration$Companion;
+
+    return-void
+.end method
+
+.method public constructor <init>(Landroid/content/Context;Ljava/lang/String;Landroidx/sqlite/db/SupportSQLiteOpenHelper$Callback;ZZ)V
     .locals 0
 
-    .line 337
+    const-string p5, "context"
+
+    invoke-static {p1, p5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string p5, "callback"
+
+    invoke-static {p3, p5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 283
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 338
+    .line 289
     iput-object p1, p0, Landroidx/sqlite/db/SupportSQLiteOpenHelper$Configuration;->context:Landroid/content/Context;
 
-    .line 339
+    .line 294
     iput-object p2, p0, Landroidx/sqlite/db/SupportSQLiteOpenHelper$Configuration;->name:Ljava/lang/String;
 
-    .line 340
+    .line 299
     iput-object p3, p0, Landroidx/sqlite/db/SupportSQLiteOpenHelper$Configuration;->callback:Landroidx/sqlite/db/SupportSQLiteOpenHelper$Callback;
 
-    .line 341
+    .line 304
     iput-boolean p4, p0, Landroidx/sqlite/db/SupportSQLiteOpenHelper$Configuration;->useNoBackupDirectory:Z
 
     return-void
 .end method
 
-.method public static builder(Landroid/content/Context;)Landroidx/sqlite/db/SupportSQLiteOpenHelper$Configuration$Builder;
+.method public static final builder(Landroid/content/Context;)Landroidx/sqlite/db/SupportSQLiteOpenHelper$Configuration$Builder;
     .locals 1
 
-    .line 351
-    new-instance v0, Landroidx/sqlite/db/SupportSQLiteOpenHelper$Configuration$Builder;
+    sget-object v0, Landroidx/sqlite/db/SupportSQLiteOpenHelper$Configuration;->Companion:Landroidx/sqlite/db/SupportSQLiteOpenHelper$Configuration$Companion;
 
-    invoke-direct {v0, p0}, Landroidx/sqlite/db/SupportSQLiteOpenHelper$Configuration$Builder;-><init>(Landroid/content/Context;)V
+    invoke-virtual {v0, p0}, Landroidx/sqlite/db/SupportSQLiteOpenHelper$Configuration$Companion;->builder(Landroid/content/Context;)Landroidx/sqlite/db/SupportSQLiteOpenHelper$Configuration$Builder;
 
-    return-object v0
+    move-result-object p0
+
+    return-object p0
 .end method

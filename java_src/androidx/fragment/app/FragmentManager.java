@@ -70,7 +70,7 @@ import kotlin.collections.MapsKt__MapsKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.ranges.RangesKt___RangesKt;
-import p034j$.util.DesugarCollections;
+import p033j$.util.DesugarCollections;
 /* loaded from: classes.dex */
 public abstract class FragmentManager {
     private static boolean DEBUG = false;

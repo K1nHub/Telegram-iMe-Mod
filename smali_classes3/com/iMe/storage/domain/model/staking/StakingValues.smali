@@ -4,36 +4,36 @@
 
 
 # instance fields
-.field private final asToken:Ljava/math/BigDecimal;
+.field private final asFiat:Lcom/iMe/storage/domain/model/wallet/token/FiatValue;
 
-.field private final asUsd:Ljava/math/BigDecimal;
+.field private final asToken:Ljava/math/BigDecimal;
 
 
 # direct methods
-.method public constructor <init>(Ljava/math/BigDecimal;Ljava/math/BigDecimal;)V
+.method public constructor <init>(Ljava/math/BigDecimal;Lcom/iMe/storage/domain/model/wallet/token/FiatValue;)V
     .locals 1
 
     const-string v0, "asToken"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "asUsd"
+    const-string v0, "asFiat"
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 5
+    .line 6
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 6
+    .line 7
     iput-object p1, p0, Lcom/iMe/storage/domain/model/staking/StakingValues;->asToken:Ljava/math/BigDecimal;
 
-    .line 7
-    iput-object p2, p0, Lcom/iMe/storage/domain/model/staking/StakingValues;->asUsd:Ljava/math/BigDecimal;
+    .line 8
+    iput-object p2, p0, Lcom/iMe/storage/domain/model/staking/StakingValues;->asFiat:Lcom/iMe/storage/domain/model/wallet/token/FiatValue;
 
     return-void
 .end method
 
-.method public static synthetic copy$default(Lcom/iMe/storage/domain/model/staking/StakingValues;Ljava/math/BigDecimal;Ljava/math/BigDecimal;ILjava/lang/Object;)Lcom/iMe/storage/domain/model/staking/StakingValues;
+.method public static synthetic copy$default(Lcom/iMe/storage/domain/model/staking/StakingValues;Ljava/math/BigDecimal;Lcom/iMe/storage/domain/model/wallet/token/FiatValue;ILjava/lang/Object;)Lcom/iMe/storage/domain/model/staking/StakingValues;
     .locals 0
 
     and-int/lit8 p4, p3, 0x1
@@ -47,10 +47,10 @@
 
     if-eqz p3, :cond_1
 
-    iget-object p2, p0, Lcom/iMe/storage/domain/model/staking/StakingValues;->asUsd:Ljava/math/BigDecimal;
+    iget-object p2, p0, Lcom/iMe/storage/domain/model/staking/StakingValues;->asFiat:Lcom/iMe/storage/domain/model/wallet/token/FiatValue;
 
     :cond_1
-    invoke-virtual {p0, p1, p2}, Lcom/iMe/storage/domain/model/staking/StakingValues;->copy(Ljava/math/BigDecimal;Ljava/math/BigDecimal;)Lcom/iMe/storage/domain/model/staking/StakingValues;
+    invoke-virtual {p0, p1, p2}, Lcom/iMe/storage/domain/model/staking/StakingValues;->copy(Ljava/math/BigDecimal;Lcom/iMe/storage/domain/model/wallet/token/FiatValue;)Lcom/iMe/storage/domain/model/staking/StakingValues;
 
     move-result-object p0
 
@@ -67,28 +67,28 @@
     return-object v0
 .end method
 
-.method public final component2()Ljava/math/BigDecimal;
+.method public final component2()Lcom/iMe/storage/domain/model/wallet/token/FiatValue;
     .locals 1
 
-    iget-object v0, p0, Lcom/iMe/storage/domain/model/staking/StakingValues;->asUsd:Ljava/math/BigDecimal;
+    iget-object v0, p0, Lcom/iMe/storage/domain/model/staking/StakingValues;->asFiat:Lcom/iMe/storage/domain/model/wallet/token/FiatValue;
 
     return-object v0
 .end method
 
-.method public final copy(Ljava/math/BigDecimal;Ljava/math/BigDecimal;)Lcom/iMe/storage/domain/model/staking/StakingValues;
+.method public final copy(Ljava/math/BigDecimal;Lcom/iMe/storage/domain/model/wallet/token/FiatValue;)Lcom/iMe/storage/domain/model/staking/StakingValues;
     .locals 1
 
     const-string v0, "asToken"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "asUsd"
+    const-string v0, "asFiat"
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     new-instance v0, Lcom/iMe/storage/domain/model/staking/StakingValues;
 
-    invoke-direct {v0, p1, p2}, Lcom/iMe/storage/domain/model/staking/StakingValues;-><init>(Ljava/math/BigDecimal;Ljava/math/BigDecimal;)V
+    invoke-direct {v0, p1, p2}, Lcom/iMe/storage/domain/model/staking/StakingValues;-><init>(Ljava/math/BigDecimal;Lcom/iMe/storage/domain/model/wallet/token/FiatValue;)V
 
     return-object v0
 .end method
@@ -127,9 +127,9 @@
     return v2
 
     :cond_2
-    iget-object v1, p0, Lcom/iMe/storage/domain/model/staking/StakingValues;->asUsd:Ljava/math/BigDecimal;
+    iget-object v1, p0, Lcom/iMe/storage/domain/model/staking/StakingValues;->asFiat:Lcom/iMe/storage/domain/model/wallet/token/FiatValue;
 
-    iget-object p1, p1, Lcom/iMe/storage/domain/model/staking/StakingValues;->asUsd:Ljava/math/BigDecimal;
+    iget-object p1, p1, Lcom/iMe/storage/domain/model/staking/StakingValues;->asFiat:Lcom/iMe/storage/domain/model/wallet/token/FiatValue;
 
     invoke-static {v1, p1}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
@@ -143,20 +143,20 @@
     return v0
 .end method
 
-.method public final getAsToken()Ljava/math/BigDecimal;
+.method public final getAsFiat()Lcom/iMe/storage/domain/model/wallet/token/FiatValue;
     .locals 1
 
-    .line 6
-    iget-object v0, p0, Lcom/iMe/storage/domain/model/staking/StakingValues;->asToken:Ljava/math/BigDecimal;
+    .line 8
+    iget-object v0, p0, Lcom/iMe/storage/domain/model/staking/StakingValues;->asFiat:Lcom/iMe/storage/domain/model/wallet/token/FiatValue;
 
     return-object v0
 .end method
 
-.method public final getAsUsd()Ljava/math/BigDecimal;
+.method public final getAsToken()Ljava/math/BigDecimal;
     .locals 1
 
     .line 7
-    iget-object v0, p0, Lcom/iMe/storage/domain/model/staking/StakingValues;->asUsd:Ljava/math/BigDecimal;
+    iget-object v0, p0, Lcom/iMe/storage/domain/model/staking/StakingValues;->asToken:Ljava/math/BigDecimal;
 
     return-object v0
 .end method
@@ -172,9 +172,9 @@
 
     mul-int/lit8 v0, v0, 0x1f
 
-    iget-object v1, p0, Lcom/iMe/storage/domain/model/staking/StakingValues;->asUsd:Ljava/math/BigDecimal;
+    iget-object v1, p0, Lcom/iMe/storage/domain/model/staking/StakingValues;->asFiat:Lcom/iMe/storage/domain/model/wallet/token/FiatValue;
 
-    invoke-virtual {v1}, Ljava/math/BigDecimal;->hashCode()I
+    invoke-virtual {v1}, Lcom/iMe/storage/domain/model/wallet/token/FiatValue;->hashCode()I
 
     move-result v1
 
@@ -198,11 +198,11 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    const-string v1, ", asUsd="
+    const-string v1, ", asFiat="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v1, p0, Lcom/iMe/storage/domain/model/staking/StakingValues;->asUsd:Ljava/math/BigDecimal;
+    iget-object v1, p0, Lcom/iMe/storage/domain/model/staking/StakingValues;->asFiat:Lcom/iMe/storage/domain/model/wallet/token/FiatValue;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 

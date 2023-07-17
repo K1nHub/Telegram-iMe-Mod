@@ -45,9 +45,9 @@ public final class EthWalletApproveDataSourceImpl$approve$$inlined$flatMapSucces
         if (data == null) {
             data = "";
         }
-        Observable<ApiBaseResponse<TransactionResponse>> sendCryptoApproveTransaction = swapApi.sendCryptoApproveTransaction(new SendCryptoApproveTransactionRequest(data, ((ApproveArgs.Dex) this.$args$inlined).getProtocol().name(), ((ApproveArgs.Dex) this.$args$inlined).getNetworkType().name()));
+        Observable<ApiBaseResponse<TransactionResponse>> sendCryptoApproveTransaction = swapApi.sendCryptoApproveTransaction(new SendCryptoApproveTransactionRequest(data, ((ApproveArgs.Dex) this.$args$inlined).getProtocol().name(), ((ApproveArgs.Dex) this.$args$inlined).getNetworkId()));
         firebaseFunctionsErrorHandler = this.this$0.firebaseErrorHandler;
-        ObservableSource map = sendCryptoApproveTransaction.map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new C1610x90256d3c(firebaseFunctionsErrorHandler)));
+        ObservableSource map = sendCryptoApproveTransaction.map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new C1621x90256d3c(firebaseFunctionsErrorHandler)));
         Intrinsics.checkNotNullExpressionValue(map, "errorHandler: FirebaseFu…response).toError()\n    }");
         return map;
     }

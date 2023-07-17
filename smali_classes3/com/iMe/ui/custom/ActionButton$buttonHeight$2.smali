@@ -48,7 +48,7 @@
 .method public final invoke()Ljava/lang/Integer;
     .locals 1
 
-    .line 18
+    .line 23
     iget-object v0, p0, Lcom/iMe/ui/custom/ActionButton$buttonHeight$2;->this$0:Lcom/iMe/ui/custom/ActionButton;
 
     invoke-virtual {v0}, Lcom/iMe/ui/custom/ActionButton;->calculateButtonHeight()I
@@ -65,7 +65,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 18
+    .line 23
     invoke-virtual {p0}, Lcom/iMe/ui/custom/ActionButton$buttonHeight$2;->invoke()Ljava/lang/Integer;
 
     move-result-object v0

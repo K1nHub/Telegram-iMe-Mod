@@ -48,7 +48,7 @@
 .method public final invoke()Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$HintsAdapter;
     .locals 2
 
-    .line 79
+    .line 124
     new-instance v0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$HintsAdapter;
 
     iget-object v1, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$hintsAdapter$2;->this$0:Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;
@@ -61,7 +61,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 79
+    .line 124
     invoke-virtual {p0}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$hintsAdapter$2;->invoke()Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$HintsAdapter;
 
     move-result-object v0

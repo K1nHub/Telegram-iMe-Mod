@@ -6151,7 +6151,7 @@
 
     cmp-long v2, v13, v20
 
-    const-string v3, "remove from speaking "
+    const-string/jumbo v3, "remove from speaking "
 
     if-lez v2, :cond_c
 

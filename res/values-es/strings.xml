@@ -344,7 +344,7 @@
     <string name="Answer_zero">%1$d respuestas</string>
     <string name="ApkRestricted">La instalación de APK está restringida para esta aplicación. Puedes habilitarla en los ajustes del sistema.</string>
     <string name="AppFolderInfo">Explora la carpeta de la app</string>
-    <string name="AppUpdate">Actualizar Telegram</string>
+    <string name="AppNameBeta">Telegram Beta</string>
     <string name="AppUpdateChangelogEmpty">"**¿Qué hay de nuevo?**
 
 • Corrección de errores y mejoras."</string>
@@ -4625,6 +4625,25 @@ Para conseguir este premio debes:"</string>
     <string name="already_removing">Ya se ha iniciado otro proceso de eliminación, inténtelo de nuevo más tarde</string>
     <string name="app_restart_error">No hemos podido abrir la aplicación. Prueba a hacerlo tú.</string>
     <string name="app_update_dialog_description">Actualice la aplicación para usar esta funcionalidad</string>
+    <string name="appcenter_distribute_dialog_actioned_on_disabled_toast">Distribución deshabilitada</string>
+    <string name="appcenter_distribute_download_progress_number_format">%1$d MB de %2$d MB</string>
+    <string name="appcenter_distribute_downloading_mandatory_update">Descargando la actualización</string>
+    <string name="appcenter_distribute_install">Instalar</string>
+    <string name="appcenter_distribute_install_ready_message">%1$s %2$s (%3$d) se ha descargado y está listo para instalarlo.</string>
+    <string name="appcenter_distribute_install_ready_title">Actualización de la aplicación descargada</string>
+    <string name="appcenter_distribute_notification_category">Actualizaciones de aplicaciones</string>
+    <string name="appcenter_distribute_unknown_sources_dialog_message">Por seguridad, su dispositivo está configurado para bloquear la instalación de aplicaciones procedentes de orígenes desconocidos.</string>
+    <string name="appcenter_distribute_unknown_sources_dialog_settings">Configuración</string>
+    <string name="appcenter_distribute_update_dialog_download">Descargar</string>
+    <string name="appcenter_distribute_update_dialog_message_mandatory">Los desarrolladores de esta aplicación indican que debe actualizar a %1$s %2$s (%3$d).</string>
+    <string name="appcenter_distribute_update_dialog_message_optional">%1$s %2$s (%3$d) está disponible para descargarlo e instalarlo.</string>
+    <string name="appcenter_distribute_update_dialog_postpone">Preguntarme dentro de un día</string>
+    <string name="appcenter_distribute_update_dialog_title">Actualización de aplicación disponible</string>
+    <string name="appcenter_distribute_update_dialog_view_release_notes">Ver notas de la versión</string>
+    <string name="appcenter_distribute_update_failed_dialog_ignore">Ignorar</string>
+    <string name="appcenter_distribute_update_failed_dialog_message">Esta versión se cargó a un lado o se descargó usando un navegador en modo privado.</string>
+    <string name="appcenter_distribute_update_failed_dialog_reinstall">Reinstalar aplicación</string>
+    <string name="appcenter_distribute_update_failed_dialog_title">Actualizaciones en la aplicación deshabilitadas</string>
     <string name="archive_content_is_hidden">El contenido está oculto</string>
     <string name="archive_empty_subtitle">Aquí se almacenan los chats que enviaste al archivo.</string>
     <string name="archive_empty_title">Archivo está vacío</string>
@@ -4722,9 +4741,6 @@ Haz clic aquí para añadir un bot de forma rápida."</string>
     <string name="chat_attach_alert_bot_buttons">Botones de bot</string>
     <string name="chat_avatar_previewer_mention_by_name">Mencionar por nombre</string>
     <string name="chat_avatar_previewer_user_messages">Mensajes de usuario</string>
-    <string name="chat_bookmarks">Marcadores</string>
-    <string name="chat_bookmarks_empty">No hay marcadores</string>
-    <string name="chat_bookmarks_empty_subtitle">No tienes marcadores en los chats</string>
     <string name="chat_drafts_empty">No hay borradores</string>
     <string name="chat_drafts_empty_subtitle">No hay borradores de mensajes en los chats</string>
     <string name="chat_long_action_translate">Traducir</string>
@@ -4735,7 +4751,6 @@ Haz clic aquí para añadir un bot de forma rápida."</string>
     <string name="chat_menu_language_settings">Configuración del idioma</string>
     <string name="chat_message_forward_media">Reenviar medios</string>
     <string name="chat_message_forward_text">Reenviar texto</string>
-    <string name="chat_message_popup_option_add_to_bookmarks">Añadir a marcadores</string>
     <string name="chat_message_popup_option_copy_image">Copiar imagen</string>
     <string name="chat_message_popup_option_copy_part">Copiar una parte</string>
     <string name="chat_message_popup_option_copy_text">Copiar texto</string>
@@ -4743,8 +4758,6 @@ Haz clic aquí para añadir un bot de forma rápida."</string>
     <string name="chat_message_popup_option_forward_viber">Reenviar a Viber</string>
     <string name="chat_message_popup_option_forward_whatsapp">Reenviar a WhatsApp</string>
     <string name="chat_message_popup_option_forward_whatsapp_business">Reenviar a WA Business</string>
-    <string name="chat_message_popup_option_remove_all_bookmarks">ELIMINAR TODOS LOS MARCADORES</string>
-    <string name="chat_message_popup_option_remove_from_bookmarks">Eliminar de marcadores</string>
     <string name="chat_message_spoiler_less">MENOS</string>
     <string name="chat_message_spoiler_more">MÁS</string>
     <string name="chat_multi_panel_empty_cache_toast">No hay caché en este chat</string>
@@ -5118,11 +5131,6 @@ e intentaremos dar con su cuenta de Telegram"</string>
     <string name="loading_participants_error">Error de carga de los participantes, intente de nuevo más tarde</string>
     <string name="main_camera_popup_text">Cámara trasera</string>
     <string name="main_list">Lista principal</string>
-    <string name="management">Gestión</string>
-    <string name="management_bookmarks_delete_all_alert_message">¿Seguro que quieres eliminar todos los marcadores de todos los chats? Los chats no se eliminarán.</string>
-    <string name="management_bookmarks_delete_selected_alert_message">¿Seguro que quieres eliminar todos los marcadores de los chats seleccionados? Los chats no se eliminarán.</string>
-    <string name="management_drafts">Borradores</string>
-    <string name="management_drafts_delete_selected_alert_message">¿Seguro que quieres eliminar todos los borradores de los chats seleccionados? Los chats no se eliminarán.</string>
     <string name="material_clock_toggle_content_description">Selecciona AM o PM</string>
     <string name="material_hour_selection">Seleccionar hora</string>
     <string name="material_hour_suffix">%1$s en punto</string>
@@ -5502,6 +5510,7 @@ Puedes modificarlo en cualquier momento desde la sección Carpeta (Orden de los 
     <string name="sorting_settings_tab_bots_item_title">Bots</string>
     <string name="sorting_settings_tab_channels_item_title">Canales</string>
     <string name="sorting_settings_tab_deleted_users">Cuentas eliminadas</string>
+    <string name="sorting_settings_tab_drafts">Borradores</string>
     <string name="sorting_settings_tab_groups_item_title">Chats de grupos</string>
     <string name="sorting_settings_tab_live_chats">Chats en vivo</string>
     <string name="sorting_settings_tab_mentioned_chats">Chats mencionados</string>
@@ -5858,8 +5867,8 @@ Ingrese las palabras **%d**, **%d** y **%d** a continuación:"</string>
     <string name="wallet_banner_slide_gate_description">Tu guía para el mundo de las criptomonedas</string>
     <string name="wallet_banner_slide_gate_long_description">Opere con LIME y otras criptomonedas con tarifas de cambio bajas.</string>
     <string name="wallet_banner_slide_gate_title">Gate.io</string>
-    <string name="wallet_banner_slide_multi_networks_description">Ethereum, BNB Chain, Polygon, Fantom, TON, NFT</string>
-    <string name="wallet_banner_slide_multi_networks_long_description">Cambio de redes Ethereum, BNB Chain, Polygon, Fantom, TON y NFT para el uso conveniente de tokens de diferentes plataformas en una sola billetera.</string>
+    <string name="wallet_banner_slide_multi_networks_description">Bitcoin, Ethereum, BNB Chain, Polygon, Fantom, Tron, TON, NFT</string>
+    <string name="wallet_banner_slide_multi_networks_long_description">Cambio de redes Bitcoin, Ethereum, BNB Chain, Polygon, Fantom, Tron, TON y NFT para el uso conveniente de tokens de diferentes plataformas en una sola billetera.</string>
     <string name="wallet_banner_slide_multi_networks_title">MULTI-RED</string>
     <string name="wallet_banner_slide_non_custodial_description">Solo tú tienes acceso a la billetera</string>
     <string name="wallet_banner_slide_non_custodial_long_description">Eres el único que tiene acceso a tu billetera. Guarde la contraseña para poder restaurar o importar su billetera.</string>
@@ -5870,7 +5879,7 @@ Ingrese las palabras **%d**, **%d** y **%d** a continuación:"</string>
     <string name="wallet_banner_slide_staking_description">Crear depósitos</string>
     <string name="wallet_banner_slide_staking_long_description">Crea depósitos en LIME y tokens asociados para que tus activos se adapten a tus necesidades.</string>
     <string name="wallet_banner_slide_staking_title">Staking</string>
-    <string name="wallet_banner_slide_swap_description">Uniswap, PancakeSwap, 1inch</string>
+    <string name="wallet_banner_slide_swap_description">1inch, Symbiosis</string>
     <string name="wallet_banner_slide_swap_long_description">Cryptocurrencies y fichas entre sí Exchange mediante protocolos de intercambio descentralizados impulsados por contrato inteligente.</string>
     <string name="wallet_banner_slide_swap_title">INTERCAMBIO</string>
     <string name="wallet_binance_logout_confirm_dialog_description">¿Estás seguro de que quieres cerrar la sesión?</string>
@@ -6067,7 +6076,7 @@ Nota:
 Solo puedes tener una cuenta activa de Ethereum en iMe Wallet. Por lo tanto, cuando otros usuarios transfieran fondos a tu ID Telegram, todos los fondos se acreditarán automáticamente a la última dirección vinculada."</string>
     <string name="wallet_dashboard_create_start_dialog_description">"Billetera sin custodia para criptomonedas y tokens.
 
-Almacene, compre, intercambie y realice transferencias en las redes Ethereum y BNB Chain.
+Almacene, compre, intercambie y realice transferencias en las redes Ethereum, Bitcoin, BNB Chain, Polygon, Fantom, Tron y TON.
 
 Al presionar SIGUIENTE, acepta
 %s

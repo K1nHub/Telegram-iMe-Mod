@@ -1,35 +1,33 @@
 package com.iMe.storage.domain.model.crypto.wallet_connect;
 
 import com.iMe.storage.domain.model.crypto.TransactionParams;
+import com.iMe.storage.domain.model.wallet.token.TokenDetailed;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: WalletConnectProcessedTransaction.kt */
 /* loaded from: classes3.dex */
 public final class WalletConnectProcessedTransaction {
     private final String data;
-    private final String feeTokenCode;
+    private final TokenDetailed feeToken;
     private final String from;
-    private final String networkType;
 
     /* renamed from: to */
-    private final String f331to;
+    private final String f407to;
     private final TransactionParams.Ether transactionParams;
     private final String value;
 
-    public WalletConnectProcessedTransaction(String from, String to, String value, String data, TransactionParams.Ether transactionParams, String networkType, String feeTokenCode) {
+    public WalletConnectProcessedTransaction(String from, String to, String value, String data, TransactionParams.Ether transactionParams, TokenDetailed feeToken) {
         Intrinsics.checkNotNullParameter(from, "from");
         Intrinsics.checkNotNullParameter(to, "to");
         Intrinsics.checkNotNullParameter(value, "value");
         Intrinsics.checkNotNullParameter(data, "data");
         Intrinsics.checkNotNullParameter(transactionParams, "transactionParams");
-        Intrinsics.checkNotNullParameter(networkType, "networkType");
-        Intrinsics.checkNotNullParameter(feeTokenCode, "feeTokenCode");
+        Intrinsics.checkNotNullParameter(feeToken, "feeToken");
         this.from = from;
-        this.f331to = to;
+        this.f407to = to;
         this.value = value;
         this.data = data;
         this.transactionParams = transactionParams;
-        this.networkType = networkType;
-        this.feeTokenCode = feeTokenCode;
+        this.feeToken = feeToken;
     }
 
     public final String getFrom() {
@@ -37,7 +35,7 @@ public final class WalletConnectProcessedTransaction {
     }
 
     public final String getTo() {
-        return this.f331to;
+        return this.f407to;
     }
 
     public final String getValue() {
@@ -52,11 +50,7 @@ public final class WalletConnectProcessedTransaction {
         return this.transactionParams;
     }
 
-    public final String getNetworkType() {
-        return this.networkType;
-    }
-
-    public final String getFeeTokenCode() {
-        return this.feeTokenCode;
+    public final TokenDetailed getFeeToken() {
+        return this.feeToken;
     }
 }

@@ -2,44 +2,34 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Lcom/iMe/fork/utils/Callbacks$Callback1;
 
 
 # instance fields
-.field public final synthetic f$0:Lorg/telegram/ui/Components/LinkActionView;
-
-.field public final synthetic f$1:Landroid/content/Context;
-
-.field public final synthetic f$2:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;
+.field public final synthetic f$0:Lcom/iMe/fork/utils/Callbacks$Callback;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/Components/LinkActionView;Landroid/content/Context;Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;)V
+.method public synthetic constructor <init>(Lcom/iMe/fork/utils/Callbacks$Callback;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lorg/telegram/ui/Components/LinkActionView$$ExternalSyntheticLambda11;->f$0:Lorg/telegram/ui/Components/LinkActionView;
-
-    iput-object p2, p0, Lorg/telegram/ui/Components/LinkActionView$$ExternalSyntheticLambda11;->f$1:Landroid/content/Context;
-
-    iput-object p3, p0, Lorg/telegram/ui/Components/LinkActionView$$ExternalSyntheticLambda11;->f$2:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;
+    iput-object p1, p0, Lorg/telegram/ui/Components/LinkActionView$$ExternalSyntheticLambda11;->f$0:Lcom/iMe/fork/utils/Callbacks$Callback;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .locals 3
+.method public final invoke(Ljava/lang/Object;)V
+    .locals 1
 
-    iget-object v0, p0, Lorg/telegram/ui/Components/LinkActionView$$ExternalSyntheticLambda11;->f$0:Lorg/telegram/ui/Components/LinkActionView;
+    iget-object v0, p0, Lorg/telegram/ui/Components/LinkActionView$$ExternalSyntheticLambda11;->f$0:Lcom/iMe/fork/utils/Callbacks$Callback;
 
-    iget-object v1, p0, Lorg/telegram/ui/Components/LinkActionView$$ExternalSyntheticLambda11;->f$1:Landroid/content/Context;
+    check-cast p1, Landroid/view/View;
 
-    iget-object v2, p0, Lorg/telegram/ui/Components/LinkActionView$$ExternalSyntheticLambda11;->f$2:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;
-
-    invoke-static {v0, v1, v2}, Lorg/telegram/ui/Components/LinkActionView;->$r8$lambda$vxMpmhY0u33jdHimo-o8YGtKoX4(Lorg/telegram/ui/Components/LinkActionView;Landroid/content/Context;Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;)V
+    invoke-static {v0, p1}, Lorg/telegram/ui/Components/LinkActionView;->$r8$lambda$Q5BxiETFuwYAuRKtq88FuJ6bP7E(Lcom/iMe/fork/utils/Callbacks$Callback;Landroid/view/View;)V
 
     return-void
 .end method

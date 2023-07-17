@@ -83,7 +83,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 626
+    .line 648
     iget-boolean v0, p0, Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessPresenter$loadAvailableOppositeSwapTokensBinance$2;->$isWithLoading:Z
 
     if-eqz v0, :cond_0
@@ -117,7 +117,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 625
+    .line 647
     check-cast p1, Lio/reactivex/Observable;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessPresenter$loadAvailableOppositeSwapTokensBinance$2;->invoke(Lio/reactivex/Observable;)Lio/reactivex/ObservableSource;

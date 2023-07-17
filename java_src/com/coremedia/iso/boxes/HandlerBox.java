@@ -22,13 +22,13 @@ public class HandlerBox extends AbstractFullBox {
     private static final /* synthetic */ JoinPoint.StaticPart ajc$tjp_5 = null;
 
     /* renamed from: a */
-    private long f94a;
+    private long f176a;
 
     /* renamed from: b */
-    private long f95b;
+    private long f177b;
 
     /* renamed from: c */
-    private long f96c;
+    private long f178c;
     private String handlerType;
     private String name;
     private long shouldBeZeroButAppleWritesHereSomeValue;
@@ -107,9 +107,9 @@ public class HandlerBox extends AbstractFullBox {
         parseVersionAndFlags(byteBuffer);
         this.shouldBeZeroButAppleWritesHereSomeValue = IsoTypeReader.readUInt32(byteBuffer);
         this.handlerType = IsoTypeReader.read4cc(byteBuffer);
-        this.f94a = IsoTypeReader.readUInt32(byteBuffer);
-        this.f95b = IsoTypeReader.readUInt32(byteBuffer);
-        this.f96c = IsoTypeReader.readUInt32(byteBuffer);
+        this.f176a = IsoTypeReader.readUInt32(byteBuffer);
+        this.f177b = IsoTypeReader.readUInt32(byteBuffer);
+        this.f178c = IsoTypeReader.readUInt32(byteBuffer);
         if (byteBuffer.remaining() > 0) {
             String readString = IsoTypeReader.readString(byteBuffer, byteBuffer.remaining());
             this.name = readString;
@@ -130,9 +130,9 @@ public class HandlerBox extends AbstractFullBox {
         writeVersionAndFlags(byteBuffer);
         IsoTypeWriter.writeUInt32(byteBuffer, this.shouldBeZeroButAppleWritesHereSomeValue);
         byteBuffer.put(IsoFile.fourCCtoBytes(this.handlerType));
-        IsoTypeWriter.writeUInt32(byteBuffer, this.f94a);
-        IsoTypeWriter.writeUInt32(byteBuffer, this.f95b);
-        IsoTypeWriter.writeUInt32(byteBuffer, this.f96c);
+        IsoTypeWriter.writeUInt32(byteBuffer, this.f176a);
+        IsoTypeWriter.writeUInt32(byteBuffer, this.f177b);
+        IsoTypeWriter.writeUInt32(byteBuffer, this.f178c);
         String str = this.name;
         if (str != null) {
             byteBuffer.put(Utf8.convert(str));

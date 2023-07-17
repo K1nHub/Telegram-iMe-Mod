@@ -27,7 +27,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/ChatActivityEnterView;Ljava/lang/Class;Ljava/lang/String;)V
     .locals 0
 
-    .line 966
+    .line 968
     invoke-direct {p0, p2, p3}, Landroid/util/Property;-><init>(Ljava/lang/Class;Ljava/lang/String;)V
 
     return-void
@@ -38,7 +38,7 @@
 .method public get(Landroid/view/View;)Ljava/lang/Integer;
     .locals 0
 
-    .line 969
+    .line 971
     invoke-virtual {p1}, Landroid/view/View;->getTranslationY()F
 
     move-result p1
@@ -57,7 +57,7 @@
 .method public bridge synthetic get(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 966
+    .line 968
     check-cast p1, Landroid/view/View;
 
     invoke-virtual {p0, p1}, Lorg/telegram/ui/Components/ChatActivityEnterView$5;->get(Landroid/view/View;)Ljava/lang/Integer;
@@ -70,7 +70,7 @@
 .method public set(Landroid/view/View;Ljava/lang/Integer;)V
     .locals 0
 
-    .line 974
+    .line 976
     invoke-virtual {p2}, Ljava/lang/Integer;->intValue()I
 
     move-result p2
@@ -85,7 +85,7 @@
 .method public bridge synthetic set(Ljava/lang/Object;Ljava/lang/Object;)V
     .locals 0
 
-    .line 966
+    .line 968
     check-cast p1, Landroid/view/View;
 
     check-cast p2, Ljava/lang/Integer;

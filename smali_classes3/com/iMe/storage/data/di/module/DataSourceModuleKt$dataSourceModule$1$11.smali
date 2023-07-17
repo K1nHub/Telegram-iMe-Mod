@@ -28,7 +28,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nDataSourceModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DataSourceModule.kt\ncom/iMe/storage/data/di/module/DataSourceModuleKt$dataSourceModule$1$11\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,114:1\n129#2,5:115\n*S KotlinDebug\n*F\n+ 1 DataSourceModule.kt\ncom/iMe/storage/data/di/module/DataSourceModuleKt$dataSourceModule$1$11\n*L\n103#1:115,5\n*E\n"
+    value = "SMAP\nDataSourceModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DataSourceModule.kt\ncom/iMe/storage/data/di/module/DataSourceModuleKt$dataSourceModule$1$11\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,111:1\n129#2,5:112\n*S KotlinDebug\n*F\n+ 1 DataSourceModule.kt\ncom/iMe/storage/data/di/module/DataSourceModuleKt$dataSourceModule$1$11\n*L\n100#1:112,5\n*E\n"
 .end annotation
 
 
@@ -85,7 +85,7 @@
 
     move-result-object p2
 
-    .line 103
+    .line 100
     check-cast p2, Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;
 
     .line 133
@@ -99,7 +99,7 @@
 
     move-result-object v1
 
-    .line 103
+    .line 100
     check-cast v1, Lcom/iMe/storage/data/network/api/own/SwapApi;
 
     .line 133
@@ -113,7 +113,7 @@
 
     move-result-object p1
 
-    .line 103
+    .line 100
     check-cast p1, Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;
 
     new-instance v0, Lcom/iMe/storage/data/datasource/approve/impl/EthWalletApproveDataSourceImpl;
@@ -126,7 +126,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 102
+    .line 99
     check-cast p1, Lorg/koin/core/scope/Scope;
 
     check-cast p2, Lorg/koin/core/parameter/ParametersHolder;

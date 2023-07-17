@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/ThemePreviewActivity;)V
     .locals 0
 
-    .line 1279
+    .line 1284
     iput-object p1, p0, Lorg/telegram/ui/ThemePreviewActivity$12;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
 
     invoke-direct {p0}, Landroidx/recyclerview/widget/RecyclerView$OnScrollListener;-><init>()V
@@ -37,7 +37,7 @@
 
     if-nez p2, :cond_0
 
-    .line 1289
+    .line 1294
     iget-object p1, p0, Lorg/telegram/ui/ThemePreviewActivity$12;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
 
     const/4 p2, 0x0
@@ -51,7 +51,7 @@
 .method public onScrolled(Landroidx/recyclerview/widget/RecyclerView;II)V
     .locals 0
 
-    .line 1282
+    .line 1287
     iget-object p1, p0, Lorg/telegram/ui/ThemePreviewActivity$12;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ThemePreviewActivity;->access$1500(Lorg/telegram/ui/ThemePreviewActivity;)Lorg/telegram/ui/Components/RecyclerListView;
@@ -60,7 +60,7 @@
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/RecyclerListView;->invalidateViews()V
 
-    .line 1283
+    .line 1288
     iget-object p1, p0, Lorg/telegram/ui/ThemePreviewActivity$12;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
 
     const/4 p2, 0x1

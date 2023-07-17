@@ -60,12 +60,12 @@ public class EmojiViewView$$State extends MvpViewState<EmojiViewView> implements
         public final String page;
 
         /* renamed from: q */
-        public final String f375q;
+        public final String f448q;
         public final SearchResponse response;
 
         OnKiklikoSearchResultsLoadedCommand(EmojiViewView$$State emojiViewView$$State, String str, String str2, boolean z, SearchResponse searchResponse) {
             super("onKiklikoSearchResultsLoaded", AddToEndSingleStrategy.class);
-            this.f375q = str;
+            this.f448q = str;
             this.page = str2;
             this.byTag = z;
             this.response = searchResponse;
@@ -73,7 +73,7 @@ public class EmojiViewView$$State extends MvpViewState<EmojiViewView> implements
 
         @Override // moxy.viewstate.ViewCommand
         public void apply(EmojiViewView emojiViewView) {
-            emojiViewView.onKiklikoSearchResultsLoaded(this.f375q, this.page, this.byTag, this.response);
+            emojiViewView.onKiklikoSearchResultsLoaded(this.f448q, this.page, this.byTag, this.response);
         }
     }
 }

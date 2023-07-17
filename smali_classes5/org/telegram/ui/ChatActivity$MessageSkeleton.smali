@@ -26,7 +26,7 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 35855
+    .line 35649
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -35,7 +35,7 @@
 .method synthetic constructor <init>(Lorg/telegram/ui/ChatActivity$1;)V
     .locals 0
 
-    .line 35855
+    .line 35649
     invoke-direct {p0}, Lorg/telegram/ui/ChatActivity$MessageSkeleton;-><init>()V
 
     return-void

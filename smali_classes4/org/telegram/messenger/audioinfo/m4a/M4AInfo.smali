@@ -379,7 +379,7 @@
     goto :goto_0
 
     :sswitch_d
-    const-string v3, "rtng"
+    const-string/jumbo v3, "rtng"
 
     invoke-virtual {v1, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -966,8 +966,6 @@
     :cond_1d
     :goto_3
     return-void
-
-    nop
 
     :sswitch_data_0
     .sparse-switch

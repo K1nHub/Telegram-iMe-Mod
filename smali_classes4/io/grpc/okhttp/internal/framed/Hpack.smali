@@ -551,7 +551,7 @@
 
     new-instance v1, Lio/grpc/okhttp/internal/framed/Header;
 
-    const-string v2, "range"
+    const-string/jumbo v2, "range"
 
     invoke-direct {v1, v2, v3}, Lio/grpc/okhttp/internal/framed/Header;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
@@ -561,7 +561,7 @@
 
     new-instance v1, Lio/grpc/okhttp/internal/framed/Header;
 
-    const-string v2, "referer"
+    const-string/jumbo v2, "referer"
 
     invoke-direct {v1, v2, v3}, Lio/grpc/okhttp/internal/framed/Header;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
@@ -571,7 +571,7 @@
 
     new-instance v1, Lio/grpc/okhttp/internal/framed/Header;
 
-    const-string v2, "refresh"
+    const-string/jumbo v2, "refresh"
 
     invoke-direct {v1, v2, v3}, Lio/grpc/okhttp/internal/framed/Header;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
@@ -581,7 +581,7 @@
 
     new-instance v1, Lio/grpc/okhttp/internal/framed/Header;
 
-    const-string v2, "retry-after"
+    const-string/jumbo v2, "retry-after"
 
     invoke-direct {v1, v2, v3}, Lio/grpc/okhttp/internal/framed/Header;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
@@ -591,7 +591,7 @@
 
     new-instance v1, Lio/grpc/okhttp/internal/framed/Header;
 
-    const-string v2, "server"
+    const-string/jumbo v2, "server"
 
     invoke-direct {v1, v2, v3}, Lio/grpc/okhttp/internal/framed/Header;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
@@ -601,7 +601,7 @@
 
     new-instance v1, Lio/grpc/okhttp/internal/framed/Header;
 
-    const-string v2, "set-cookie"
+    const-string/jumbo v2, "set-cookie"
 
     invoke-direct {v1, v2, v3}, Lio/grpc/okhttp/internal/framed/Header;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 

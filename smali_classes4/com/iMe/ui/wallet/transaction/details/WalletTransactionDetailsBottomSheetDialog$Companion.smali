@@ -26,7 +26,7 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 309
+    .line 317
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -47,10 +47,10 @@
 
     if-eqz p4, :cond_0
 
-    .line 314
+    .line 322
     sget-object p3, Lcom/iMe/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$Companion$$ExternalSyntheticLambda0;->INSTANCE:Lcom/iMe/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$Companion$$ExternalSyntheticLambda0;
 
-    .line 311
+    .line 319
     :cond_0
     invoke-virtual {p0, p1, p2, p3}, Lcom/iMe/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$Companion;->newInstance(Lorg/telegram/ui/ActionBar/BaseFragment;Lcom/iMe/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$ScreenType;Lcom/iMe/fork/utils/Callbacks$Callback1;)Lcom/iMe/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog;
 
@@ -85,11 +85,11 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "screenType"
+    const-string/jumbo v0, "screenType"
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 316
+    .line 324
     new-instance v0, Lcom/iMe/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog;
 
     invoke-direct {v0, p1, p2, p3}, Lcom/iMe/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog;-><init>(Lorg/telegram/ui/ActionBar/BaseFragment;Lcom/iMe/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$ScreenType;Lcom/iMe/fork/utils/Callbacks$Callback1;)V

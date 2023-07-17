@@ -24,12 +24,12 @@
 .method constructor <init>(Lorg/telegram/ui/ThemePreviewActivity;Landroid/content/Context;)V
     .locals 0
 
-    .line 1887
+    .line 1892
     iput-object p1, p0, Lorg/telegram/ui/ThemePreviewActivity$17;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
 
     invoke-direct {p0, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    .line 1889
+    .line 1894
     new-instance p1, Landroid/graphics/RectF;
 
     invoke-direct {p1}, Landroid/graphics/RectF;-><init>()V
@@ -44,7 +44,7 @@
 .method protected onDraw(Landroid/graphics/Canvas;)V
     .locals 4
 
-    .line 1893
+    .line 1898
     iget-object v0, p0, Lorg/telegram/ui/ThemePreviewActivity$17;->rect:Landroid/graphics/RectF;
 
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
@@ -63,7 +63,7 @@
 
     invoke-virtual {v0, v3, v3, v1, v2}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 1894
+    .line 1899
     iget-object v0, p0, Lorg/telegram/ui/ThemePreviewActivity$17;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ThemePreviewActivity;->access$5600(Lorg/telegram/ui/ThemePreviewActivity;)Landroid/widget/FrameLayout;
@@ -78,7 +78,7 @@
 
     invoke-static {v0, v1}, Lorg/telegram/ui/ActionBar/Theme;->applyServiceShaderMatrixForView(Landroid/view/View;Landroid/view/View;)V
 
-    .line 1895
+    .line 1900
     iget-object v0, p0, Lorg/telegram/ui/ThemePreviewActivity$17;->rect:Landroid/graphics/RectF;
 
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
@@ -101,14 +101,14 @@
 
     invoke-virtual {p1, v0, v1, v2, v3}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
 
-    .line 1896
+    .line 1901
     invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->hasGradientService()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 1897
+    .line 1902
     iget-object v0, p0, Lorg/telegram/ui/ThemePreviewActivity$17;->rect:Landroid/graphics/RectF;
 
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredHeight()I

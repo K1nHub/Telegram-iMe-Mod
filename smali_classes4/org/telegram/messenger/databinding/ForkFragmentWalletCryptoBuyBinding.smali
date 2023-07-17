@@ -7,8 +7,6 @@
 
 
 # instance fields
-.field public final recycleCryptoBuy:Landroidx/recyclerview/widget/RecyclerView;
-
 .field private final rootView:Landroidx/swiperefreshlayout/widget/SwipeRefreshLayout;
 
 
@@ -21,9 +19,6 @@
 
     .line 27
     iput-object p1, p0, Lorg/telegram/messenger/databinding/ForkFragmentWalletCryptoBuyBinding;->rootView:Landroidx/swiperefreshlayout/widget/SwipeRefreshLayout;
-
-    .line 28
-    iput-object p2, p0, Lorg/telegram/messenger/databinding/ForkFragmentWalletCryptoBuyBinding;->recycleCryptoBuy:Landroidx/recyclerview/widget/RecyclerView;
 
     return-void
 .end method

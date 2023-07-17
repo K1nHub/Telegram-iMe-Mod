@@ -18,7 +18,7 @@
 .method constructor <init>(Lorg/telegram/ui/ActionBar/ActionBarLayout;)V
     .locals 0
 
-    .line 1460
+    .line 1484
     invoke-direct {p0}, Landroid/view/ViewOutlineProvider;-><init>()V
 
     return-void
@@ -29,7 +29,7 @@
 .method public getOutline(Landroid/view/View;Landroid/graphics/Outline;)V
     .locals 6
 
-    .line 1464
+    .line 1488
     sget v2, Lorg/telegram/messenger/AndroidUtilities;->statusBarHeight:I
 
     invoke-virtual {p1}, Landroid/view/View;->getMeasuredWidth()I

@@ -22,7 +22,7 @@
         "Lkotlin/jvm/functions/Function2<",
         "Lorg/koin/core/scope/Scope;",
         "Lorg/koin/core/parameter/ParametersHolder;",
-        "Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;",
+        "Lcom/iMe/storage/data/network/handlers/impl/DbErrorHandler;",
         ">;"
     }
 .end annotation
@@ -57,7 +57,7 @@
 
 
 # virtual methods
-.method public final invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;
+.method public final invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/iMe/storage/data/network/handlers/impl/DbErrorHandler;
     .locals 1
 
     const-string v0, "$this$single"
@@ -68,10 +68,10 @@
 
     invoke-static {p2, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 114
-    new-instance p1, Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;
+    .line 132
+    new-instance p1, Lcom/iMe/storage/data/network/handlers/impl/DbErrorHandler;
 
-    invoke-direct {p1}, Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;-><init>()V
+    invoke-direct {p1}, Lcom/iMe/storage/data/network/handlers/impl/DbErrorHandler;-><init>()V
 
     return-object p1
 .end method
@@ -79,12 +79,12 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 114
+    .line 132
     check-cast p1, Lorg/koin/core/scope/Scope;
 
     check-cast p2, Lorg/koin/core/parameter/ParametersHolder;
 
-    invoke-virtual {p0, p1, p2}, Lcom/iMe/storage/data/di/module/NetworkModuleKt$networkModule$1$40;->invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;
+    invoke-virtual {p0, p1, p2}, Lcom/iMe/storage/data/di/module/NetworkModuleKt$networkModule$1$40;->invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/iMe/storage/data/network/handlers/impl/DbErrorHandler;
 
     move-result-object p1
 

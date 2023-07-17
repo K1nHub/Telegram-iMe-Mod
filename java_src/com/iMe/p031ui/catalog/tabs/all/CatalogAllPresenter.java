@@ -15,8 +15,8 @@ import com.iMe.storage.domain.model.catalog.CategoryPreview;
 import com.iMe.storage.domain.model.catalog.ChatType;
 import com.iMe.storage.domain.utils.p030rx.SchedulersProvider;
 import com.iMe.storage.domain.utils.system.ResourceManager;
-import com.iMe.utils.extentions.p033rx.RxExtKt;
-import com.iMe.utils.extentions.p033rx.RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
+import com.iMe.utils.extentions.p032rx.RxExtKt;
+import com.iMe.utils.extentions.p032rx.RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
 import io.reactivex.Observable;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Consumer;
@@ -38,11 +38,11 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.ranges.RangesKt___RangesKt;
 import moxy.InjectViewState;
 import org.telegram.tgnet.TLRPC$Chat;
-import p034j$.util.Map;
+import p033j$.util.Map;
 /* compiled from: CatalogAllPresenter.kt */
 @InjectViewState
 /* renamed from: com.iMe.ui.catalog.tabs.all.CatalogAllPresenter */
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public final class CatalogAllPresenter extends BasePresenter<CatalogAllView> {
     private final CatalogInteractor catalogInteractor;
     private final List<CategoryPreview> categories;
@@ -86,8 +86,8 @@ public final class CatalogAllPresenter extends BasePresenter<CatalogAllView> {
         boolean z = str == null;
         Observable<Result<CategoriesPreviewsCursored>> observeOn = this.catalogInteractor.getCatalogPreview(this.chatType, str).observeOn(this.schedulersProvider.mo698ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "catalogInteractor\n      …(schedulersProvider.ui())");
-        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2007xc9c80334(this, z)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2008xc9c80335(null)));
-        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
+        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2011xc9c80334(this, z)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2012xc9c80335(null)));
+        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…Error.invoke()\n        })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
 
@@ -106,7 +106,7 @@ public final class CatalogAllPresenter extends BasePresenter<CatalogAllView> {
         Intrinsics.checkNotNullExpressionValue(observeOn, "telegramApi\n            …(schedulersProvider.ui())");
         T viewState = getViewState();
         Intrinsics.checkNotNullExpressionValue(viewState, "viewState");
-        Intrinsics.checkNotNullExpressionValue(RxExtKt.withLoadingDialog$default((Observable) observeOn, (BaseView) viewState, false, 2, (Object) null).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2011x8163b70b(this, campaign)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2012x8163b70c(null))), "viewState: BaseView? = n…  onError.invoke()\n    })");
+        Intrinsics.checkNotNullExpressionValue(RxExtKt.withLoadingDialog$default((Observable) observeOn, (BaseView) viewState, false, 2, (Object) null).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2015x8163b70b(this, campaign)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2016x8163b70c(null))), "viewState: BaseView? = n…Error.invoke()\n        })");
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -169,8 +169,8 @@ public final class CatalogAllPresenter extends BasePresenter<CatalogAllView> {
     public final void loadMoreChannels(long j, String str) {
         Observable<Result<CampaignsCursored>> observeOn = this.catalogInteractor.getCampaignsByCategoryId(j, this.chatType, str).observeOn(this.schedulersProvider.mo698ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "catalogInteractor\n      …(schedulersProvider.ui())");
-        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2009x585eb812(this, j)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2010x585eb813(null)));
-        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
+        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2013x585eb812(this, j)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2014x585eb813(null)));
+        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…Error.invoke()\n        })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
 

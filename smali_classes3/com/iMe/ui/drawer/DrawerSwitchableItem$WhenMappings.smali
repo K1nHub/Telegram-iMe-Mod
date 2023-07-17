@@ -59,7 +59,7 @@
 
     :catch_1
     :try_start_2
-    sget-object v1, Lcom/iMe/ui/drawer/DrawerSwitchableItem;->MANAGEMENT:Lcom/iMe/ui/drawer/DrawerSwitchableItem;
+    sget-object v1, Lcom/iMe/ui/drawer/DrawerSwitchableItem;->MUSIC:Lcom/iMe/ui/drawer/DrawerSwitchableItem;
 
     invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
@@ -73,7 +73,7 @@
 
     :catch_2
     :try_start_3
-    sget-object v1, Lcom/iMe/ui/drawer/DrawerSwitchableItem;->MUSIC:Lcom/iMe/ui/drawer/DrawerSwitchableItem;
+    sget-object v1, Lcom/iMe/ui/drawer/DrawerSwitchableItem;->CONTACTS:Lcom/iMe/ui/drawer/DrawerSwitchableItem;
 
     invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
@@ -87,7 +87,7 @@
 
     :catch_3
     :try_start_4
-    sget-object v1, Lcom/iMe/ui/drawer/DrawerSwitchableItem;->CONTACTS:Lcom/iMe/ui/drawer/DrawerSwitchableItem;
+    sget-object v1, Lcom/iMe/ui/drawer/DrawerSwitchableItem;->CALLS:Lcom/iMe/ui/drawer/DrawerSwitchableItem;
 
     invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
@@ -101,7 +101,7 @@
 
     :catch_4
     :try_start_5
-    sget-object v1, Lcom/iMe/ui/drawer/DrawerSwitchableItem;->CALLS:Lcom/iMe/ui/drawer/DrawerSwitchableItem;
+    sget-object v1, Lcom/iMe/ui/drawer/DrawerSwitchableItem;->PEOPLE_NEARBY:Lcom/iMe/ui/drawer/DrawerSwitchableItem;
 
     invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
@@ -115,7 +115,7 @@
 
     :catch_5
     :try_start_6
-    sget-object v1, Lcom/iMe/ui/drawer/DrawerSwitchableItem;->PEOPLE_NEARBY:Lcom/iMe/ui/drawer/DrawerSwitchableItem;
+    sget-object v1, Lcom/iMe/ui/drawer/DrawerSwitchableItem;->CLOUD:Lcom/iMe/ui/drawer/DrawerSwitchableItem;
 
     invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
@@ -129,7 +129,7 @@
 
     :catch_6
     :try_start_7
-    sget-object v1, Lcom/iMe/ui/drawer/DrawerSwitchableItem;->CLOUD:Lcom/iMe/ui/drawer/DrawerSwitchableItem;
+    sget-object v1, Lcom/iMe/ui/drawer/DrawerSwitchableItem;->ALBUMS:Lcom/iMe/ui/drawer/DrawerSwitchableItem;
 
     invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
@@ -142,20 +142,6 @@
     .catch Ljava/lang/NoSuchFieldError; {:try_start_7 .. :try_end_7} :catch_7
 
     :catch_7
-    :try_start_8
-    sget-object v1, Lcom/iMe/ui/drawer/DrawerSwitchableItem;->ALBUMS:Lcom/iMe/ui/drawer/DrawerSwitchableItem;
-
-    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
-
-    move-result v1
-
-    const/16 v2, 0x9
-
-    aput v2, v0, v1
-    :try_end_8
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_8 .. :try_end_8} :catch_8
-
-    :catch_8
     sput-object v0, Lcom/iMe/ui/drawer/DrawerSwitchableItem$WhenMappings;->$EnumSwitchMapping$0:[I
 
     return-void

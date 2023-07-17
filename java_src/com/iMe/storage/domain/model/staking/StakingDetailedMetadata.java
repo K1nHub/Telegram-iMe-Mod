@@ -1,8 +1,8 @@
 package com.iMe.storage.domain.model.staking;
 
 import com.iMe.bots.data.model.database.BotsDbModel$$ExternalSyntheticBackport0;
-import com.iMe.storage.domain.model.crypto.NetworkType;
 import com.iMe.storage.domain.model.crypto.level.AccountLevel;
+import com.iMe.storage.domain.model.wallet.token.TokenDetailed;
 import java.math.BigDecimal;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: StakingDetailedMetadata.kt */
@@ -14,28 +14,28 @@ public final class StakingDetailedMetadata {
     private final BigDecimal compoundAccrualThreshold;
     private final String contract;
     private final String endsAt;
-    private final StakingToken feeToken;
+    private final TokenDetailed feeToken;
     private final boolean hasEnoughFunds;
 
     /* renamed from: id */
-    private final long f350id;
+    private final long f426id;
     private final double immediateWithdrawalFee;
     private final double incomePercent;
     private final long incomePeriod;
     private final AccountLevel minimalRank;
     private final String name;
-    private final NetworkType networkType;
+    private final String networkId;
     private final double prematureWithdrawalFee;
     private final StakingRules rules;
     private final long safeWithdrawalDuration;
     private final double safeWithdrawalFee;
     private final String startsAt;
     private final StakingDetailedStats stats;
-    private final StakingToken token;
+    private final TokenDetailed token;
     private final String website;
 
     public final long component1() {
-        return this.f350id;
+        return this.f426id;
     }
 
     public final double component10() {
@@ -78,8 +78,8 @@ public final class StakingDetailedMetadata {
         return this.stats;
     }
 
-    public final NetworkType component2() {
-        return this.networkType;
+    public final String component2() {
+        return this.networkId;
     }
 
     public final StakingRules component20() {
@@ -118,16 +118,16 @@ public final class StakingDetailedMetadata {
         return this.endsAt;
     }
 
-    public final StakingToken component8() {
+    public final TokenDetailed component8() {
         return this.token;
     }
 
-    public final StakingToken component9() {
+    public final TokenDetailed component9() {
         return this.feeToken;
     }
 
-    public final StakingDetailedMetadata copy(long j, NetworkType networkType, String name, String author, String contract, String startsAt, String endsAt, StakingToken token, StakingToken feeToken, double d, double d2, long j2, double d3, double d4, double d5, double d6, long j3, BigDecimal compoundAccrualThreshold, StakingDetailedStats stats, StakingRules rules, boolean z, AccountLevel minimalRank, String website) {
-        Intrinsics.checkNotNullParameter(networkType, "networkType");
+    public final StakingDetailedMetadata copy(long j, String networkId, String name, String author, String contract, String startsAt, String endsAt, TokenDetailed token, TokenDetailed feeToken, double d, double d2, long j2, double d3, double d4, double d5, double d6, long j3, BigDecimal compoundAccrualThreshold, StakingDetailedStats stats, StakingRules rules, boolean z, AccountLevel minimalRank, String website) {
+        Intrinsics.checkNotNullParameter(networkId, "networkId");
         Intrinsics.checkNotNullParameter(name, "name");
         Intrinsics.checkNotNullParameter(author, "author");
         Intrinsics.checkNotNullParameter(contract, "contract");
@@ -140,7 +140,7 @@ public final class StakingDetailedMetadata {
         Intrinsics.checkNotNullParameter(rules, "rules");
         Intrinsics.checkNotNullParameter(minimalRank, "minimalRank");
         Intrinsics.checkNotNullParameter(website, "website");
-        return new StakingDetailedMetadata(j, networkType, name, author, contract, startsAt, endsAt, token, feeToken, d, d2, j2, d3, d4, d5, d6, j3, compoundAccrualThreshold, stats, rules, z, minimalRank, website);
+        return new StakingDetailedMetadata(j, networkId, name, author, contract, startsAt, endsAt, token, feeToken, d, d2, j2, d3, d4, d5, d6, j3, compoundAccrualThreshold, stats, rules, z, minimalRank, website);
     }
 
     public boolean equals(Object obj) {
@@ -149,14 +149,14 @@ public final class StakingDetailedMetadata {
         }
         if (obj instanceof StakingDetailedMetadata) {
             StakingDetailedMetadata stakingDetailedMetadata = (StakingDetailedMetadata) obj;
-            return this.f350id == stakingDetailedMetadata.f350id && this.networkType == stakingDetailedMetadata.networkType && Intrinsics.areEqual(this.name, stakingDetailedMetadata.name) && Intrinsics.areEqual(this.author, stakingDetailedMetadata.author) && Intrinsics.areEqual(this.contract, stakingDetailedMetadata.contract) && Intrinsics.areEqual(this.startsAt, stakingDetailedMetadata.startsAt) && Intrinsics.areEqual(this.endsAt, stakingDetailedMetadata.endsAt) && Intrinsics.areEqual(this.token, stakingDetailedMetadata.token) && Intrinsics.areEqual(this.feeToken, stakingDetailedMetadata.feeToken) && Double.compare(this.apy, stakingDetailedMetadata.apy) == 0 && Double.compare(this.apr, stakingDetailedMetadata.apr) == 0 && this.incomePeriod == stakingDetailedMetadata.incomePeriod && Double.compare(this.incomePercent, stakingDetailedMetadata.incomePercent) == 0 && Double.compare(this.prematureWithdrawalFee, stakingDetailedMetadata.prematureWithdrawalFee) == 0 && Double.compare(this.immediateWithdrawalFee, stakingDetailedMetadata.immediateWithdrawalFee) == 0 && Double.compare(this.safeWithdrawalFee, stakingDetailedMetadata.safeWithdrawalFee) == 0 && this.safeWithdrawalDuration == stakingDetailedMetadata.safeWithdrawalDuration && Intrinsics.areEqual(this.compoundAccrualThreshold, stakingDetailedMetadata.compoundAccrualThreshold) && Intrinsics.areEqual(this.stats, stakingDetailedMetadata.stats) && Intrinsics.areEqual(this.rules, stakingDetailedMetadata.rules) && this.hasEnoughFunds == stakingDetailedMetadata.hasEnoughFunds && this.minimalRank == stakingDetailedMetadata.minimalRank && Intrinsics.areEqual(this.website, stakingDetailedMetadata.website);
+            return this.f426id == stakingDetailedMetadata.f426id && Intrinsics.areEqual(this.networkId, stakingDetailedMetadata.networkId) && Intrinsics.areEqual(this.name, stakingDetailedMetadata.name) && Intrinsics.areEqual(this.author, stakingDetailedMetadata.author) && Intrinsics.areEqual(this.contract, stakingDetailedMetadata.contract) && Intrinsics.areEqual(this.startsAt, stakingDetailedMetadata.startsAt) && Intrinsics.areEqual(this.endsAt, stakingDetailedMetadata.endsAt) && Intrinsics.areEqual(this.token, stakingDetailedMetadata.token) && Intrinsics.areEqual(this.feeToken, stakingDetailedMetadata.feeToken) && Double.compare(this.apy, stakingDetailedMetadata.apy) == 0 && Double.compare(this.apr, stakingDetailedMetadata.apr) == 0 && this.incomePeriod == stakingDetailedMetadata.incomePeriod && Double.compare(this.incomePercent, stakingDetailedMetadata.incomePercent) == 0 && Double.compare(this.prematureWithdrawalFee, stakingDetailedMetadata.prematureWithdrawalFee) == 0 && Double.compare(this.immediateWithdrawalFee, stakingDetailedMetadata.immediateWithdrawalFee) == 0 && Double.compare(this.safeWithdrawalFee, stakingDetailedMetadata.safeWithdrawalFee) == 0 && this.safeWithdrawalDuration == stakingDetailedMetadata.safeWithdrawalDuration && Intrinsics.areEqual(this.compoundAccrualThreshold, stakingDetailedMetadata.compoundAccrualThreshold) && Intrinsics.areEqual(this.stats, stakingDetailedMetadata.stats) && Intrinsics.areEqual(this.rules, stakingDetailedMetadata.rules) && this.hasEnoughFunds == stakingDetailedMetadata.hasEnoughFunds && this.minimalRank == stakingDetailedMetadata.minimalRank && Intrinsics.areEqual(this.website, stakingDetailedMetadata.website);
         }
         return false;
     }
 
     /* JADX WARN: Multi-variable type inference failed */
     public int hashCode() {
-        int m706m = ((((((((((((((((((((((((((((((((((((((BotsDbModel$$ExternalSyntheticBackport0.m706m(this.f350id) * 31) + this.networkType.hashCode()) * 31) + this.name.hashCode()) * 31) + this.author.hashCode()) * 31) + this.contract.hashCode()) * 31) + this.startsAt.hashCode()) * 31) + this.endsAt.hashCode()) * 31) + this.token.hashCode()) * 31) + this.feeToken.hashCode()) * 31) + Double.doubleToLongBits(this.apy)) * 31) + Double.doubleToLongBits(this.apr)) * 31) + BotsDbModel$$ExternalSyntheticBackport0.m706m(this.incomePeriod)) * 31) + Double.doubleToLongBits(this.incomePercent)) * 31) + Double.doubleToLongBits(this.prematureWithdrawalFee)) * 31) + Double.doubleToLongBits(this.immediateWithdrawalFee)) * 31) + Double.doubleToLongBits(this.safeWithdrawalFee)) * 31) + BotsDbModel$$ExternalSyntheticBackport0.m706m(this.safeWithdrawalDuration)) * 31) + this.compoundAccrualThreshold.hashCode()) * 31) + this.stats.hashCode()) * 31) + this.rules.hashCode()) * 31;
+        int m706m = ((((((((((((((((((((((((((((((((((((((BotsDbModel$$ExternalSyntheticBackport0.m706m(this.f426id) * 31) + this.networkId.hashCode()) * 31) + this.name.hashCode()) * 31) + this.author.hashCode()) * 31) + this.contract.hashCode()) * 31) + this.startsAt.hashCode()) * 31) + this.endsAt.hashCode()) * 31) + this.token.hashCode()) * 31) + this.feeToken.hashCode()) * 31) + Double.doubleToLongBits(this.apy)) * 31) + Double.doubleToLongBits(this.apr)) * 31) + BotsDbModel$$ExternalSyntheticBackport0.m706m(this.incomePeriod)) * 31) + Double.doubleToLongBits(this.incomePercent)) * 31) + Double.doubleToLongBits(this.prematureWithdrawalFee)) * 31) + Double.doubleToLongBits(this.immediateWithdrawalFee)) * 31) + Double.doubleToLongBits(this.safeWithdrawalFee)) * 31) + BotsDbModel$$ExternalSyntheticBackport0.m706m(this.safeWithdrawalDuration)) * 31) + this.compoundAccrualThreshold.hashCode()) * 31) + this.stats.hashCode()) * 31) + this.rules.hashCode()) * 31;
         boolean z = this.hasEnoughFunds;
         int i = z;
         if (z != 0) {
@@ -166,11 +166,11 @@ public final class StakingDetailedMetadata {
     }
 
     public String toString() {
-        return "StakingDetailedMetadata(id=" + this.f350id + ", networkType=" + this.networkType + ", name=" + this.name + ", author=" + this.author + ", contract=" + this.contract + ", startsAt=" + this.startsAt + ", endsAt=" + this.endsAt + ", token=" + this.token + ", feeToken=" + this.feeToken + ", apy=" + this.apy + ", apr=" + this.apr + ", incomePeriod=" + this.incomePeriod + ", incomePercent=" + this.incomePercent + ", prematureWithdrawalFee=" + this.prematureWithdrawalFee + ", immediateWithdrawalFee=" + this.immediateWithdrawalFee + ", safeWithdrawalFee=" + this.safeWithdrawalFee + ", safeWithdrawalDuration=" + this.safeWithdrawalDuration + ", compoundAccrualThreshold=" + this.compoundAccrualThreshold + ", stats=" + this.stats + ", rules=" + this.rules + ", hasEnoughFunds=" + this.hasEnoughFunds + ", minimalRank=" + this.minimalRank + ", website=" + this.website + ')';
+        return "StakingDetailedMetadata(id=" + this.f426id + ", networkId=" + this.networkId + ", name=" + this.name + ", author=" + this.author + ", contract=" + this.contract + ", startsAt=" + this.startsAt + ", endsAt=" + this.endsAt + ", token=" + this.token + ", feeToken=" + this.feeToken + ", apy=" + this.apy + ", apr=" + this.apr + ", incomePeriod=" + this.incomePeriod + ", incomePercent=" + this.incomePercent + ", prematureWithdrawalFee=" + this.prematureWithdrawalFee + ", immediateWithdrawalFee=" + this.immediateWithdrawalFee + ", safeWithdrawalFee=" + this.safeWithdrawalFee + ", safeWithdrawalDuration=" + this.safeWithdrawalDuration + ", compoundAccrualThreshold=" + this.compoundAccrualThreshold + ", stats=" + this.stats + ", rules=" + this.rules + ", hasEnoughFunds=" + this.hasEnoughFunds + ", minimalRank=" + this.minimalRank + ", website=" + this.website + ')';
     }
 
-    public StakingDetailedMetadata(long j, NetworkType networkType, String name, String author, String contract, String startsAt, String endsAt, StakingToken token, StakingToken feeToken, double d, double d2, long j2, double d3, double d4, double d5, double d6, long j3, BigDecimal compoundAccrualThreshold, StakingDetailedStats stats, StakingRules rules, boolean z, AccountLevel minimalRank, String website) {
-        Intrinsics.checkNotNullParameter(networkType, "networkType");
+    public StakingDetailedMetadata(long j, String networkId, String name, String author, String contract, String startsAt, String endsAt, TokenDetailed token, TokenDetailed feeToken, double d, double d2, long j2, double d3, double d4, double d5, double d6, long j3, BigDecimal compoundAccrualThreshold, StakingDetailedStats stats, StakingRules rules, boolean z, AccountLevel minimalRank, String website) {
+        Intrinsics.checkNotNullParameter(networkId, "networkId");
         Intrinsics.checkNotNullParameter(name, "name");
         Intrinsics.checkNotNullParameter(author, "author");
         Intrinsics.checkNotNullParameter(contract, "contract");
@@ -183,8 +183,8 @@ public final class StakingDetailedMetadata {
         Intrinsics.checkNotNullParameter(rules, "rules");
         Intrinsics.checkNotNullParameter(minimalRank, "minimalRank");
         Intrinsics.checkNotNullParameter(website, "website");
-        this.f350id = j;
-        this.networkType = networkType;
+        this.f426id = j;
+        this.networkId = networkId;
         this.name = name;
         this.author = author;
         this.contract = contract;
@@ -209,11 +209,11 @@ public final class StakingDetailedMetadata {
     }
 
     public final long getId() {
-        return this.f350id;
+        return this.f426id;
     }
 
-    public final NetworkType getNetworkType() {
-        return this.networkType;
+    public final String getNetworkId() {
+        return this.networkId;
     }
 
     public final String getName() {
@@ -236,11 +236,11 @@ public final class StakingDetailedMetadata {
         return this.endsAt;
     }
 
-    public final StakingToken getToken() {
+    public final TokenDetailed getToken() {
         return this.token;
     }
 
-    public final StakingToken getFeeToken() {
+    public final TokenDetailed getFeeToken() {
         return this.feeToken;
     }
 

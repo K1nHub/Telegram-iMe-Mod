@@ -14,7 +14,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nAppMainDatabaseMigrations.kt\nKotlin\n*S Kotlin\n*F\n+ 1 AppMainDatabaseMigrations.kt\ncom/iMe/storage/data/locale/db/migration/AppMainDatabaseMigrations$MIGRATION_13_14$1\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,193:1\n1549#2:194\n1620#2,3:195\n*S KotlinDebug\n*F\n+ 1 AppMainDatabaseMigrations.kt\ncom/iMe/storage/data/locale/db/migration/AppMainDatabaseMigrations$MIGRATION_13_14$1\n*L\n154#1:194\n154#1:195,3\n*E\n"
+    value = "SMAP\nAppMainDatabaseMigrations.kt\nKotlin\n*S Kotlin\n*F\n+ 1 AppMainDatabaseMigrations.kt\ncom/iMe/storage/data/locale/db/migration/AppMainDatabaseMigrations$MIGRATION_13_14$1\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,200:1\n1549#2:201\n1620#2,3:202\n*S KotlinDebug\n*F\n+ 1 AppMainDatabaseMigrations.kt\ncom/iMe/storage/data/locale/db/migration/AppMainDatabaseMigrations$MIGRATION_13_14$1\n*L\n154#1:201\n154#1:202,3\n*E\n"
 .end annotation
 
 
@@ -58,10 +58,6 @@
     move-result-object v2
 
     if-eqz v2, :cond_3
-
-    const-string v3, "query(\"SELECT * FROM FilterSettingsDb\")"
-
-    invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 148
     :goto_0

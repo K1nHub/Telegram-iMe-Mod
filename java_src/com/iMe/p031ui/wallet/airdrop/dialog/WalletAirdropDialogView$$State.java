@@ -1,5 +1,6 @@
 package com.iMe.p031ui.wallet.airdrop.dialog;
 
+import com.iMe.p031ui.base.mvp.base.BaseView;
 import com.iMe.storage.domain.model.Result;
 import com.iMe.storage.domain.model.crypto.airdrop.AirdropStep;
 import com.iMe.storage.domain.utils.system.ResourceManager;
@@ -10,6 +11,11 @@ import moxy.viewstate.strategy.OneExecutionStateStrategy;
 /* renamed from: com.iMe.ui.wallet.airdrop.dialog.WalletAirdropDialogView$$State */
 /* loaded from: classes3.dex */
 public class WalletAirdropDialogView$$State extends MvpViewState<WalletAirdropDialogView> implements WalletAirdropDialogView {
+    @Override // com.iMe.p031ui.base.mvp.base.BaseView
+    public /* synthetic */ void removeSelfFromStackImmediately() {
+        BaseView.CC.$default$removeSelfFromStackImmediately(this);
+    }
+
     @Override // com.iMe.p031ui.wallet.airdrop.dialog.WalletAirdropDialogView
     public void configureDialogState(boolean z, boolean z2, AirdropStep airdropStep, int i) {
         ConfigureDialogStateCommand configureDialogStateCommand = new ConfigureDialogStateCommand(this, z, z2, airdropStep, i);

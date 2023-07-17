@@ -6,7 +6,7 @@ import android.view.ViewGroup;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import java.util.Objects;
-import org.telegram.messenger.C3295R;
+import org.telegram.messenger.C3417R;
 /* loaded from: classes4.dex */
 public final class ForkFragmentStakingProgrammesBinding implements ViewBinding {
     public final RecyclerView recycleStakingProgrammes;
@@ -27,7 +27,7 @@ public final class ForkFragmentStakingProgrammesBinding implements ViewBinding {
     }
 
     public static ForkFragmentStakingProgrammesBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3295R.layout.fork_fragment_staking_programmes, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3417R.layout.fork_fragment_staking_programmes, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }

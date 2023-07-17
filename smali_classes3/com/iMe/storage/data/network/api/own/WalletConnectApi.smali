@@ -22,7 +22,7 @@
     .end annotation
 
     .annotation runtime Lretrofit2/http/POST;
-        value = "wallet-connect/getParamsForCryptoTransaction"
+        value = "wallet-connect/prepareTx"
     .end annotation
 .end method
 
@@ -44,6 +44,6 @@
     .end annotation
 
     .annotation runtime Lretrofit2/http/POST;
-        value = "wallet-connect/sendCryptoTransaction"
+        value = "wallet-connect/sendTx"
     .end annotation
 .end method

@@ -10,15 +10,15 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt__StringsKt;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3295R;
+import org.telegram.messenger.C3417R;
 import org.telegram.messenger.LocaleController;
-import org.telegram.p044ui.ActionBar.BaseFragment;
-import org.telegram.p044ui.ActionBar.BottomSheet;
-import org.telegram.p044ui.ActionBar.Theme;
-import org.telegram.p044ui.ChatActivity;
-import org.telegram.p044ui.Components.EditTextBoldCursor;
-import org.telegram.p044ui.Components.LayoutHelper;
-import org.telegram.p044ui.Components.ReportAlert;
+import org.telegram.p043ui.ActionBar.BaseFragment;
+import org.telegram.p043ui.ActionBar.BottomSheet;
+import org.telegram.p043ui.ActionBar.Theme;
+import org.telegram.p043ui.ChatActivity;
+import org.telegram.p043ui.Components.EditTextBoldCursor;
+import org.telegram.p043ui.Components.LayoutHelper;
+import org.telegram.p043ui.Components.ReportAlert;
 /* compiled from: ClearOrDeleteCloudConfirmBottomSheet.kt */
 /* renamed from: com.iMe.fork.ui.dialog.ClearOrDeleteCloudConfirmBottomSheet */
 /* loaded from: classes3.dex */
@@ -54,9 +54,9 @@ public final class ClearOrDeleteCloudConfirmBottomSheet extends BottomSheet {
         }
         setApplyBottomPadding(false);
         if (z) {
-            setTitle(LocaleController.getString("ClearHistory", C3295R.string.ClearHistory), true);
+            setTitle(LocaleController.getString("ClearHistory", C3417R.string.ClearHistory), true);
         } else {
-            setTitle(LocaleController.getString("DeleteChatUser", C3295R.string.DeleteChatUser), true);
+            setTitle(LocaleController.getString("DeleteChatUser", C3417R.string.DeleteChatUser), true);
         }
         getRootLinear().addView(getInputEditText(), LayoutHelper.createLinear(-1, 36, 51, 21, 10, 21, 10));
         getRootLinear().addView(getDoneButton(), LayoutHelper.createFrame(-1, 50, 51));
@@ -76,7 +76,7 @@ public final class ClearOrDeleteCloudConfirmBottomSheet extends BottomSheet {
         return (ReportAlert.BottomSheetCell) this.doneButton$delegate.getValue();
     }
 
-    @Override // org.telegram.p044ui.ActionBar.BottomSheet
+    @Override // org.telegram.p043ui.ActionBar.BottomSheet
     public void dismissInternal() {
         super.dismissInternal();
         BaseFragment baseFragment = this.fragment;
@@ -99,7 +99,7 @@ public final class ClearOrDeleteCloudConfirmBottomSheet extends BottomSheet {
         editTextBoldCursor.setGravity(LocaleController.isRTL ? 5 : 3);
         editTextBoldCursor.setInputType(49152);
         editTextBoldCursor.setImeOptions(6);
-        editTextBoldCursor.setHint(LocaleController.getInternalString(C3295R.string.cloud_clear_or_delete_captcha_alert_message));
+        editTextBoldCursor.setHint(LocaleController.getInternalString(C3417R.string.cloud_clear_or_delete_captcha_alert_message));
         ViewExtKt.singleLine(editTextBoldCursor);
         editTextBoldCursor.setTextSize(1, 18.0f);
         editTextBoldCursor.setHintTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteHintText));
@@ -133,7 +133,7 @@ public final class ClearOrDeleteCloudConfirmBottomSheet extends BottomSheet {
                 ClearOrDeleteCloudConfirmBottomSheet.initDoneButton$lambda$4$lambda$3(ClearOrDeleteCloudConfirmBottomSheet.this, view);
             }
         });
-        bottomSheetCell.setText(LocaleController.getInternalString(C3295R.string.cloud_clear_or_delete_captcha_alert_positive_button));
+        bottomSheetCell.setText(LocaleController.getInternalString(C3417R.string.cloud_clear_or_delete_captcha_alert_positive_button));
         return bottomSheetCell;
     }
 

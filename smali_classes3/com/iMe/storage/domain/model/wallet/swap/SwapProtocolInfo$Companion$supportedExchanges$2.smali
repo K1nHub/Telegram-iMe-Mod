@@ -22,7 +22,7 @@
         "Lkotlin/jvm/functions/Function0<",
         "Ljava/util/List<",
         "+",
-        "Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocolInfo;",
+        "Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocolInfo$Oneinch;",
         ">;>;"
     }
 .end annotation
@@ -60,7 +60,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 74
+    .line 76
     invoke-virtual {p0}, Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocolInfo$Companion$supportedExchanges$2;->invoke()Ljava/util/List;
 
     move-result-object v0
@@ -69,40 +69,20 @@
 .end method
 
 .method public final invoke()Ljava/util/List;
-    .locals 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
             "Ljava/util/List<",
-            "Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocolInfo;",
+            "Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocolInfo$Oneinch;",
             ">;"
         }
     .end annotation
 
-    const/4 v0, 0x3
+    .line 76
+    sget-object v0, Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocolInfo$Oneinch;->INSTANCE:Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocolInfo$Oneinch;
 
-    new-array v0, v0, [Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocolInfo;
-
-    .line 74
-    sget-object v1, Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocolInfo$Uniswap;->INSTANCE:Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocolInfo$Uniswap;
-
-    const/4 v2, 0x0
-
-    aput-object v1, v0, v2
-
-    sget-object v1, Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocolInfo$PancakeSwap;->INSTANCE:Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocolInfo$PancakeSwap;
-
-    const/4 v2, 0x1
-
-    aput-object v1, v0, v2
-
-    sget-object v1, Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocolInfo$Oneinch;->INSTANCE:Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocolInfo$Oneinch;
-
-    const/4 v2, 0x2
-
-    aput-object v1, v0, v2
-
-    invoke-static {v0}, Lkotlin/collections/CollectionsKt;->listOf([Ljava/lang/Object;)Ljava/util/List;
+    invoke-static {v0}, Lkotlin/collections/CollectionsKt;->listOf(Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object v0
 

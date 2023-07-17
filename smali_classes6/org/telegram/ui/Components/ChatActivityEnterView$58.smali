@@ -26,7 +26,7 @@
 
     move-object v0, p1
 
-    .line 8972
+    .line 8988
     iput-object v0, v10, Lorg/telegram/ui/Components/ChatActivityEnterView$58;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
     move-object v0, p0
@@ -59,7 +59,7 @@
 .method public requestDisallowInterceptTouchEvent(Z)V
     .locals 1
 
-    .line 8980
+    .line 8996
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$58;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$15600(Lorg/telegram/ui/Components/ChatActivityEnterView;)Z
@@ -90,10 +90,10 @@
 .method public setTranslationY(F)V
     .locals 1
 
-    .line 8989
+    .line 9005
     invoke-super {p0, p1}, Lorg/telegram/ui/Components/EmojiView;->setTranslationY(F)V
 
-    .line 8990
+    .line 9006
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$58;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$400(Lorg/telegram/ui/Components/ChatActivityEnterView;)Landroid/animation/AnimatorSet;
@@ -110,7 +110,7 @@
 
     if-nez v0, :cond_0
 
-    .line 8991
+    .line 9007
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$58;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$300(Lorg/telegram/ui/Components/ChatActivityEnterView;)Lorg/telegram/ui/Components/ChatActivityEnterView$ChatActivityEnterViewDelegate;

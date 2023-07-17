@@ -35,6 +35,30 @@
 
 
 # direct methods
+.method public static synthetic $r8$lambda$EjzwJO-5ZawTxczjwP_UKAjy1u0(Lcom/iMe/fork/utils/Callbacks$Callback;Landroid/view/View;)V
+    .locals 0
+
+    invoke-static {p0, p1}, Lcom/iMe/ui/custom/ChooseRecipientOptionsView;->setupListeners$lambda$3$lambda$2(Lcom/iMe/fork/utils/Callbacks$Callback;Landroid/view/View;)V
+
+    return-void
+.end method
+
+.method public static synthetic $r8$lambda$GTxMjkUXWaIQ-i8tpt6Z75HmRZI(Lcom/iMe/fork/utils/Callbacks$Callback;Landroid/view/View;)V
+    .locals 0
+
+    invoke-static {p0, p1}, Lcom/iMe/ui/custom/ChooseRecipientOptionsView;->setupListeners$lambda$3$lambda$0(Lcom/iMe/fork/utils/Callbacks$Callback;Landroid/view/View;)V
+
+    return-void
+.end method
+
+.method public static synthetic $r8$lambda$NW1TiERAGSDiC5zNPi9t81xSn_A(Lcom/iMe/fork/utils/Callbacks$Callback;Landroid/view/View;)V
+    .locals 0
+
+    invoke-static {p0, p1}, Lcom/iMe/ui/custom/ChooseRecipientOptionsView;->setupListeners$lambda$3$lambda$1(Lcom/iMe/fork/utils/Callbacks$Callback;Landroid/view/View;)V
+
+    return-void
+.end method
+
 .method static constructor <clinit>()V
     .locals 2
 
@@ -385,6 +409,45 @@
     return-void
 .end method
 
+.method private static final setupListeners$lambda$3$lambda$0(Lcom/iMe/fork/utils/Callbacks$Callback;Landroid/view/View;)V
+    .locals 0
+
+    const-string p1, "$onContactsClickAction"
+
+    invoke-static {p0, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 51
+    invoke-interface {p0}, Lcom/iMe/fork/utils/Callbacks$Callback;->invoke()V
+
+    return-void
+.end method
+
+.method private static final setupListeners$lambda$3$lambda$1(Lcom/iMe/fork/utils/Callbacks$Callback;Landroid/view/View;)V
+    .locals 0
+
+    const-string p1, "$onTwitterClickAction"
+
+    invoke-static {p0, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 52
+    invoke-interface {p0}, Lcom/iMe/fork/utils/Callbacks$Callback;->invoke()V
+
+    return-void
+.end method
+
+.method private static final setupListeners$lambda$3$lambda$2(Lcom/iMe/fork/utils/Callbacks$Callback;Landroid/view/View;)V
+    .locals 0
+
+    const-string p1, "$onQRClickAction"
+
+    invoke-static {p0, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 53
+    invoke-interface {p0}, Lcom/iMe/fork/utils/Callbacks$Callback;->invoke()V
+
+    return-void
+.end method
+
 .method private final setupView()V
     .locals 1
 
@@ -426,7 +489,7 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    const-string v2, "setupViews$lambda$7$lambda$4"
+    const-string v2, "setupViews$lambda$10$lambda$7"
 
     .line 85
     invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
@@ -451,7 +514,7 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    const-string v2, "setupViews$lambda$7$lambda$5"
+    const-string v2, "setupViews$lambda$10$lambda$8"
 
     .line 89
     invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
@@ -476,7 +539,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    const-string v1, "setupViews$lambda$7$lambda$6"
+    const-string v1, "setupViews$lambda$10$lambda$9"
 
     .line 93
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
@@ -644,7 +707,7 @@
     .line 5
     check-cast v1, Landroid/widget/TextView;
 
-    const-string v2, "setupColors$lambda$3$lambda$2"
+    const-string v2, "setupColors$lambda$6$lambda$5"
 
     .line 64
     invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
@@ -688,11 +751,11 @@
 
     invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    new-instance v2, Lcom/iMe/ui/custom/ChooseRecipientOptionsView$setupListeners$1$1;
+    new-instance v2, Lcom/iMe/ui/custom/ChooseRecipientOptionsView$$ExternalSyntheticLambda1;
 
-    invoke-direct {v2, p1}, Lcom/iMe/ui/custom/ChooseRecipientOptionsView$setupListeners$1$1;-><init>(Lcom/iMe/fork/utils/Callbacks$Callback;)V
+    invoke-direct {v2, p1}, Lcom/iMe/ui/custom/ChooseRecipientOptionsView$$ExternalSyntheticLambda1;-><init>(Lcom/iMe/fork/utils/Callbacks$Callback;)V
 
-    invoke-static {v1, v2}, Lcom/iMe/utils/extentions/common/ViewExtKt;->setMixedClickListener(Landroid/view/View;Lkotlin/jvm/functions/Function1;)V
+    invoke-static {v1, v2}, Lcom/iMe/utils/extentions/common/ViewExtKt;->setMixedClickListener(Landroid/view/View;Lcom/iMe/fork/utils/Callbacks$Callback1;)V
 
     .line 52
     iget-object p1, v0, Lorg/telegram/messenger/databinding/ForkContentWalletChooseRecipientOptionsBinding;->frameTwitter:Landroid/widget/FrameLayout;
@@ -701,11 +764,11 @@
 
     invoke-static {p1, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    new-instance v1, Lcom/iMe/ui/custom/ChooseRecipientOptionsView$setupListeners$1$2;
+    new-instance v1, Lcom/iMe/ui/custom/ChooseRecipientOptionsView$$ExternalSyntheticLambda2;
 
-    invoke-direct {v1, p2}, Lcom/iMe/ui/custom/ChooseRecipientOptionsView$setupListeners$1$2;-><init>(Lcom/iMe/fork/utils/Callbacks$Callback;)V
+    invoke-direct {v1, p2}, Lcom/iMe/ui/custom/ChooseRecipientOptionsView$$ExternalSyntheticLambda2;-><init>(Lcom/iMe/fork/utils/Callbacks$Callback;)V
 
-    invoke-static {p1, v1}, Lcom/iMe/utils/extentions/common/ViewExtKt;->setMixedClickListener(Landroid/view/View;Lkotlin/jvm/functions/Function1;)V
+    invoke-static {p1, v1}, Lcom/iMe/utils/extentions/common/ViewExtKt;->setMixedClickListener(Landroid/view/View;Lcom/iMe/fork/utils/Callbacks$Callback1;)V
 
     .line 53
     iget-object p1, v0, Lorg/telegram/messenger/databinding/ForkContentWalletChooseRecipientOptionsBinding;->frameQr:Landroid/widget/FrameLayout;
@@ -714,11 +777,11 @@
 
     invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    new-instance p2, Lcom/iMe/ui/custom/ChooseRecipientOptionsView$setupListeners$1$3;
+    new-instance p2, Lcom/iMe/ui/custom/ChooseRecipientOptionsView$$ExternalSyntheticLambda0;
 
-    invoke-direct {p2, p3}, Lcom/iMe/ui/custom/ChooseRecipientOptionsView$setupListeners$1$3;-><init>(Lcom/iMe/fork/utils/Callbacks$Callback;)V
+    invoke-direct {p2, p3}, Lcom/iMe/ui/custom/ChooseRecipientOptionsView$$ExternalSyntheticLambda0;-><init>(Lcom/iMe/fork/utils/Callbacks$Callback;)V
 
-    invoke-static {p1, p2}, Lcom/iMe/utils/extentions/common/ViewExtKt;->setMixedClickListener(Landroid/view/View;Lkotlin/jvm/functions/Function1;)V
+    invoke-static {p1, p2}, Lcom/iMe/utils/extentions/common/ViewExtKt;->setMixedClickListener(Landroid/view/View;Lcom/iMe/fork/utils/Callbacks$Callback1;)V
 
     return-void
 .end method

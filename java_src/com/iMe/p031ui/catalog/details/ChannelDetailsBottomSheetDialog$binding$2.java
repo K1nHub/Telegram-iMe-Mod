@@ -4,11 +4,11 @@ import android.view.LayoutInflater;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Lambda;
 import org.telegram.messenger.databinding.ForkContentChannelDetailsBinding;
-import org.telegram.p044ui.ActionBar.BaseFragment;
+import org.telegram.p043ui.ActionBar.BaseFragment;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: ChannelDetailsBottomSheetDialog.kt */
 /* renamed from: com.iMe.ui.catalog.details.ChannelDetailsBottomSheetDialog$binding$2 */
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public final class ChannelDetailsBottomSheetDialog$binding$2 extends Lambda implements Function0<ForkContentChannelDetailsBinding> {
     final /* synthetic */ ChannelDetailsBottomSheetDialog this$0;
 

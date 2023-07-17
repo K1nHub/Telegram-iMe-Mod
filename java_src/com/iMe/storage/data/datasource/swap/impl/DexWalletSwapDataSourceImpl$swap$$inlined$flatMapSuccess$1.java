@@ -7,7 +7,6 @@ import com.iMe.storage.data.network.model.response.base.ApiBaseResponse;
 import com.iMe.storage.data.network.model.response.crypto.wallet.TransactionResponse;
 import com.iMe.storage.data.utils.extentions.FirebaseExtKt$sam$i$io_reactivex_functions_Function$0;
 import com.iMe.storage.domain.model.Result;
-import com.iMe.storage.domain.model.crypto.NetworkType;
 import com.iMe.storage.domain.model.crypto.send.TransactionArgs;
 import com.iMe.storage.domain.model.crypto.swap.SwapArgs;
 import io.reactivex.Observable;
@@ -47,11 +46,7 @@ public final class DexWalletSwapDataSourceImpl$swap$$inlined$flatMapSuccess$1 ex
         if (data == null) {
             data = "";
         }
-        String str = data;
-        String quoteId = dex.getQuoteId();
-        String name = dex.getNetworkType().name();
-        NetworkType outputNetworkType = dex.getOutputNetworkType();
-        Observable<ApiBaseResponse<TransactionResponse>> sendCryptoSwapTransaction = swapApi.sendCryptoSwapTransaction(new SendCryptoSwapTransactionRequest(str, quoteId, dex.getSwapProtocol().name(), name, outputNetworkType != null ? outputNetworkType.name() : null));
+        Observable<ApiBaseResponse<TransactionResponse>> sendCryptoSwapTransaction = swapApi.sendCryptoSwapTransaction(new SendCryptoSwapTransactionRequest(data, dex.getQuoteId(), dex.getSwapProtocol().name(), dex.getNetworkId(), dex.getOutputNetworkId()));
         firebaseFunctionsErrorHandler = this.this$0.firebaseErrorHandler;
         ObservableSource map = sendCryptoSwapTransaction.map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new DexWalletSwapDataSourceImpl$swap$lambda$2$$inlined$mapSuccess$1(firebaseFunctionsErrorHandler)));
         Intrinsics.checkNotNullExpressionValue(map, "errorHandler: FirebaseFu…response).toError()\n    }");

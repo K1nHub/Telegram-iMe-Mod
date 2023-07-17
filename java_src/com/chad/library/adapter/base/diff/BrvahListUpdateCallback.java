@@ -22,9 +22,9 @@ public final class BrvahListUpdateCallback implements ListUpdateCallback {
 
     @Override // androidx.recyclerview.widget.ListUpdateCallback
     public void onRemoved(int i, int i2) {
-        BaseLoadMoreModule mLoadMoreModule$TMessagesProj_release = this.mAdapter.getMLoadMoreModule$TMessagesProj_release();
+        BaseLoadMoreModule mLoadMoreModule$TMessagesProj_HA_public = this.mAdapter.getMLoadMoreModule$TMessagesProj_HA_public();
         boolean z = false;
-        if (mLoadMoreModule$TMessagesProj_release != null && mLoadMoreModule$TMessagesProj_release.hasLoadMoreView()) {
+        if (mLoadMoreModule$TMessagesProj_HA_public != null && mLoadMoreModule$TMessagesProj_HA_public.hasLoadMoreView()) {
             z = true;
         }
         if (z && this.mAdapter.getItemCount() == 0) {

@@ -34,13 +34,13 @@
 .method private constructor <init>()V
     .locals 6
 
-    .line 89
+    .line 92
     sget v2, Lorg/telegram/messenger/R$raw;->fork_state_empty_common:I
 
-    .line 90
+    .line 93
     sget v3, Lorg/telegram/messenger/R$string;->twitter_search_title:I
 
-    .line 91
+    .line 94
     sget v4, Lorg/telegram/messenger/R$string;->twitter_search_subtitle:I
 
     const-string v1, "empty_twitter_search_state"
@@ -49,7 +49,7 @@
 
     move-object v0, p0
 
-    .line 87
+    .line 90
     invoke-direct/range {v0 .. v5}, Lcom/iMe/model/state/GlobalState$Empty;-><init>(Ljava/lang/String;IIILkotlin/jvm/internal/DefaultConstructorMarker;)V
 
     return-void

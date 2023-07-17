@@ -11,8 +11,8 @@ import kotlin.LazyKt__LazyJVMKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.p044ui.ActionBar.Theme;
-import org.telegram.p044ui.Components.LayoutHelper;
+import org.telegram.p043ui.ActionBar.Theme;
+import org.telegram.p043ui.Components.LayoutHelper;
 /* compiled from: DonationSeeMoreButton.kt */
 /* renamed from: com.iMe.ui.custom.donation.DonationSeeMoreButton */
 /* loaded from: classes3.dex */

@@ -28,7 +28,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nPresenterModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$3\n+ 2 ParametersHolder.kt\norg/koin/core/parameter/ParametersHolder\n+ 3 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,432:1\n44#2:433\n129#3,5:434\n129#3,5:439\n*S KotlinDebug\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$3\n*L\n122#1:433\n124#1:434,5\n125#1:439,5\n*E\n"
+    value = "SMAP\nPresenterModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$3\n+ 2 ParametersHolder.kt\norg/koin/core/parameter/ParametersHolder\n+ 3 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,552:1\n44#2:553\n129#3,5:554\n129#3,5:559\n*S KotlinDebug\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$3\n*L\n127#1:553\n129#1:554,5\n130#1:559,5\n*E\n"
 .end annotation
 
 
@@ -73,7 +73,7 @@
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 44
-    const-class v0, Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    const-class v0, Ljava/lang/String;
 
     invoke-static {v0}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
 
@@ -87,7 +87,7 @@
 
     move-object v1, p2
 
-    check-cast v1, Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    check-cast v1, Ljava/lang/String;
 
     .line 133
     const-class p2, Lcom/iMe/storage/domain/utils/system/ResourceManager;
@@ -102,10 +102,10 @@
 
     move-result-object p2
 
-    .line 124
-    move-object v2, p2
+    .line 129
+    move-object v3, p2
 
-    check-cast v2, Lcom/iMe/storage/domain/utils/system/ResourceManager;
+    check-cast v3, Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     .line 133
     const-class p2, Lcom/iMe/manager/crypto/recipient/CryptoRecipientManager;
@@ -118,7 +118,7 @@
 
     move-result-object p2
 
-    .line 124
+    .line 129
     move-object v4, p2
 
     check-cast v4, Lcom/iMe/manager/crypto/recipient/CryptoRecipientManager;
@@ -134,10 +134,10 @@
 
     move-result-object p2
 
-    .line 125
-    move-object v3, p2
+    .line 130
+    move-object v2, p2
 
-    check-cast v3, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
+    check-cast v2, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
 
     .line 133
     const-class p2, Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;
@@ -150,7 +150,7 @@
 
     move-result-object p2
 
-    .line 125
+    .line 130
     move-object v5, p2
 
     check-cast v5, Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;
@@ -166,17 +166,17 @@
 
     move-result-object p1
 
-    .line 125
+    .line 130
     move-object v6, p1
 
     check-cast v6, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
-    .line 123
+    .line 128
     new-instance p1, Lcom/iMe/ui/wallet/actions/send/recipient/WalletSendRecipientPresenter;
 
     move-object v0, p1
 
-    invoke-direct/range {v0 .. v6}, Lcom/iMe/ui/wallet/actions/send/recipient/WalletSendRecipientPresenter;-><init>(Lcom/iMe/storage/domain/model/crypto/NetworkType;Lcom/iMe/storage/domain/utils/system/ResourceManager;Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;Lcom/iMe/manager/crypto/recipient/CryptoRecipientManager;Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;)V
+    invoke-direct/range {v0 .. v6}, Lcom/iMe/ui/wallet/actions/send/recipient/WalletSendRecipientPresenter;-><init>(Ljava/lang/String;Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;Lcom/iMe/storage/domain/utils/system/ResourceManager;Lcom/iMe/manager/crypto/recipient/CryptoRecipientManager;Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;)V
 
     return-object p1
 .end method
@@ -184,7 +184,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 122
+    .line 127
     check-cast p1, Lorg/koin/core/scope/Scope;
 
     check-cast p2, Lorg/koin/core/parameter/ParametersHolder;

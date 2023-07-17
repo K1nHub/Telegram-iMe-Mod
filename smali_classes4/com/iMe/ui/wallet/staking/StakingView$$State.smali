@@ -172,6 +172,14 @@
     return-void
 .end method
 
+.method public synthetic removeSelfFromStackImmediately()V
+    .locals 0
+
+    invoke-static {p0}, Lcom/iMe/ui/base/mvp/base/BaseView$-CC;->$default$removeSelfFromStackImmediately(Lcom/iMe/ui/base/mvp/base/BaseView;)V
+
+    return-void
+.end method
+
 .method public showErrorToast(Lcom/iMe/storage/domain/model/Result$Error;Lcom/iMe/storage/domain/utils/system/ResourceManager;)V
     .locals 3
     .annotation system Ldalvik/annotation/Signature;
@@ -308,17 +316,17 @@
 .method public showRefreshing(Z)V
     .locals 3
 
-    .line 164
+    .line 180
     new-instance v0, Lcom/iMe/ui/wallet/staking/StakingView$$State$ShowRefreshingCommand;
 
     invoke-direct {v0, p0, p1}, Lcom/iMe/ui/wallet/staking/StakingView$$State$ShowRefreshingCommand;-><init>(Lcom/iMe/ui/wallet/staking/StakingView$$State;Z)V
 
-    .line 165
+    .line 181
     iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
 
     invoke-virtual {v1, v0}, Lmoxy/viewstate/ViewCommands;->beforeApply(Lmoxy/viewstate/ViewCommand;)V
 
-    .line 167
+    .line 183
     invoke-virtual {p0}, Lmoxy/viewstate/MvpViewState;->hasNotView()Ljava/lang/Boolean;
 
     move-result-object v1
@@ -331,7 +339,7 @@
 
     return-void
 
-    .line 171
+    .line 187
     :cond_0
     iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->views:Ljava/util/Set;
 
@@ -352,12 +360,12 @@
 
     check-cast v2, Lcom/iMe/ui/wallet/staking/StakingView;
 
-    .line 172
+    .line 188
     invoke-interface {v2, p1}, Lcom/iMe/ui/base/mvp/SwipeRefreshView;->showRefreshing(Z)V
 
     goto :goto_0
 
-    .line 175
+    .line 191
     :cond_1
     iget-object p1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
 

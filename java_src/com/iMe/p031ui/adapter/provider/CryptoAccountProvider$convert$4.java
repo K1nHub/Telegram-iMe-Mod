@@ -1,11 +1,13 @@
 package com.iMe.p031ui.adapter.provider;
 
 import com.iMe.model.wallet.home.CryptoAccountItem;
+import com.iMe.utils.extentions.common.ViewExtKt;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Lambda;
-import org.telegram.p044ui.ActionBar.ActionBarMenuItem;
+import org.telegram.p043ui.ActionBar.ActionBarMenuItem;
+import org.telegram.p043ui.ActionBar.Theme;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: CryptoAccountProvider.kt */
 /* renamed from: com.iMe.ui.adapter.provider.CryptoAccountProvider$convert$4 */
@@ -31,6 +33,8 @@ public final class CryptoAccountProvider$convert$4 extends Lambda implements Fun
     /* renamed from: invoke  reason: avoid collision after fix types in other method */
     public final void invoke2(ActionBarMenuItem applyForView) {
         Intrinsics.checkNotNullParameter(applyForView, "$this$applyForView");
+        applyForView.setIconColor(Theme.getColor(Theme.key_windowBackgroundWhiteGrayIcon));
+        ViewExtKt.setCircleRippleBackground(applyForView);
         this.this$0.setupMenuItems(applyForView, this.$item.getNetworkType(), this.$item.getAddress());
     }
 }

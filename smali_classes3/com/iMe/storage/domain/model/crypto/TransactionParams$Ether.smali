@@ -15,7 +15,7 @@
 
 
 # instance fields
-.field private final chain:Lcom/iMe/storage/domain/model/crypto/Chain;
+.field private final chainId:J
 
 .field private final fastest:Lcom/iMe/storage/domain/model/crypto/send/GasPriceInfo;
 
@@ -27,7 +27,7 @@
 
 
 # direct methods
-.method public constructor <init>(Lcom/iMe/storage/domain/model/crypto/send/GasPriceInfo;Lcom/iMe/storage/domain/model/crypto/send/GasPriceInfo;Lcom/iMe/storage/domain/model/crypto/send/GasPriceInfo;Ljava/math/BigInteger;Lcom/iMe/storage/domain/model/crypto/Chain;)V
+.method public constructor <init>(Lcom/iMe/storage/domain/model/crypto/send/GasPriceInfo;Lcom/iMe/storage/domain/model/crypto/send/GasPriceInfo;Lcom/iMe/storage/domain/model/crypto/send/GasPriceInfo;Ljava/math/BigInteger;J)V
     .locals 1
 
     const-string v0, "medium"
@@ -37,10 +37,6 @@
     const-string v0, "nonce"
 
     invoke-static {p4, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string v0, "chain"
-
-    invoke-static {p5, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     const/4 v0, 0x0
 
@@ -60,35 +56,35 @@
     iput-object p4, p0, Lcom/iMe/storage/domain/model/crypto/TransactionParams$Ether;->nonce:Ljava/math/BigInteger;
 
     .line 19
-    iput-object p5, p0, Lcom/iMe/storage/domain/model/crypto/TransactionParams$Ether;->chain:Lcom/iMe/storage/domain/model/crypto/Chain;
+    iput-wide p5, p0, Lcom/iMe/storage/domain/model/crypto/TransactionParams$Ether;->chainId:J
 
     return-void
 .end method
 
-.method public static synthetic copy$default(Lcom/iMe/storage/domain/model/crypto/TransactionParams$Ether;Lcom/iMe/storage/domain/model/crypto/send/GasPriceInfo;Lcom/iMe/storage/domain/model/crypto/send/GasPriceInfo;Lcom/iMe/storage/domain/model/crypto/send/GasPriceInfo;Ljava/math/BigInteger;Lcom/iMe/storage/domain/model/crypto/Chain;ILjava/lang/Object;)Lcom/iMe/storage/domain/model/crypto/TransactionParams$Ether;
-    .locals 3
+.method public static synthetic copy$default(Lcom/iMe/storage/domain/model/crypto/TransactionParams$Ether;Lcom/iMe/storage/domain/model/crypto/send/GasPriceInfo;Lcom/iMe/storage/domain/model/crypto/send/GasPriceInfo;Lcom/iMe/storage/domain/model/crypto/send/GasPriceInfo;Ljava/math/BigInteger;JILjava/lang/Object;)Lcom/iMe/storage/domain/model/crypto/TransactionParams$Ether;
+    .locals 4
 
-    and-int/lit8 p7, p6, 0x1
+    and-int/lit8 p8, p7, 0x1
 
-    if-eqz p7, :cond_0
+    if-eqz p8, :cond_0
 
     invoke-virtual {p0}, Lcom/iMe/storage/domain/model/crypto/TransactionParams$Ether;->getMedium()Lcom/iMe/storage/domain/model/crypto/send/GasPriceInfo;
 
     move-result-object p1
 
     :cond_0
-    and-int/lit8 p7, p6, 0x2
+    and-int/lit8 p8, p7, 0x2
 
-    if-eqz p7, :cond_1
+    if-eqz p8, :cond_1
 
     invoke-virtual {p0}, Lcom/iMe/storage/domain/model/crypto/TransactionParams$Ether;->getFastest()Lcom/iMe/storage/domain/model/crypto/send/GasPriceInfo;
 
     move-result-object p2
 
     :cond_1
-    move-object p7, p2
+    move-object p8, p2
 
-    and-int/lit8 p2, p6, 0x4
+    and-int/lit8 p2, p7, 0x4
 
     if-eqz p2, :cond_2
 
@@ -99,7 +95,7 @@
     :cond_2
     move-object v0, p3
 
-    and-int/lit8 p2, p6, 0x8
+    and-int/lit8 p2, p7, 0x8
 
     if-eqz p2, :cond_3
 
@@ -108,28 +104,28 @@
     :cond_3
     move-object v1, p4
 
-    and-int/lit8 p2, p6, 0x10
+    and-int/lit8 p2, p7, 0x10
 
     if-eqz p2, :cond_4
 
-    iget-object p5, p0, Lcom/iMe/storage/domain/model/crypto/TransactionParams$Ether;->chain:Lcom/iMe/storage/domain/model/crypto/Chain;
+    iget-wide p5, p0, Lcom/iMe/storage/domain/model/crypto/TransactionParams$Ether;->chainId:J
 
     :cond_4
-    move-object v2, p5
+    move-wide v2, p5
 
     move-object p2, p0
 
     move-object p3, p1
 
-    move-object p4, p7
+    move-object p4, p8
 
     move-object p5, v0
 
     move-object p6, v1
 
-    move-object p7, v2
+    move-wide p7, v2
 
-    invoke-virtual/range {p2 .. p7}, Lcom/iMe/storage/domain/model/crypto/TransactionParams$Ether;->copy(Lcom/iMe/storage/domain/model/crypto/send/GasPriceInfo;Lcom/iMe/storage/domain/model/crypto/send/GasPriceInfo;Lcom/iMe/storage/domain/model/crypto/send/GasPriceInfo;Ljava/math/BigInteger;Lcom/iMe/storage/domain/model/crypto/Chain;)Lcom/iMe/storage/domain/model/crypto/TransactionParams$Ether;
+    invoke-virtual/range {p2 .. p8}, Lcom/iMe/storage/domain/model/crypto/TransactionParams$Ether;->copy(Lcom/iMe/storage/domain/model/crypto/send/GasPriceInfo;Lcom/iMe/storage/domain/model/crypto/send/GasPriceInfo;Lcom/iMe/storage/domain/model/crypto/send/GasPriceInfo;Ljava/math/BigInteger;J)Lcom/iMe/storage/domain/model/crypto/TransactionParams$Ether;
 
     move-result-object p0
 
@@ -176,16 +172,16 @@
     return-object v0
 .end method
 
-.method public final component5()Lcom/iMe/storage/domain/model/crypto/Chain;
-    .locals 1
+.method public final component5()J
+    .locals 2
 
-    iget-object v0, p0, Lcom/iMe/storage/domain/model/crypto/TransactionParams$Ether;->chain:Lcom/iMe/storage/domain/model/crypto/Chain;
+    iget-wide v0, p0, Lcom/iMe/storage/domain/model/crypto/TransactionParams$Ether;->chainId:J
 
-    return-object v0
+    return-wide v0
 .end method
 
-.method public final copy(Lcom/iMe/storage/domain/model/crypto/send/GasPriceInfo;Lcom/iMe/storage/domain/model/crypto/send/GasPriceInfo;Lcom/iMe/storage/domain/model/crypto/send/GasPriceInfo;Ljava/math/BigInteger;Lcom/iMe/storage/domain/model/crypto/Chain;)Lcom/iMe/storage/domain/model/crypto/TransactionParams$Ether;
-    .locals 7
+.method public final copy(Lcom/iMe/storage/domain/model/crypto/send/GasPriceInfo;Lcom/iMe/storage/domain/model/crypto/send/GasPriceInfo;Lcom/iMe/storage/domain/model/crypto/send/GasPriceInfo;Ljava/math/BigInteger;J)Lcom/iMe/storage/domain/model/crypto/TransactionParams$Ether;
+    .locals 8
 
     const-string v0, "medium"
 
@@ -194,10 +190,6 @@
     const-string v0, "nonce"
 
     invoke-static {p4, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string v0, "chain"
-
-    invoke-static {p5, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     new-instance v0, Lcom/iMe/storage/domain/model/crypto/TransactionParams$Ether;
 
@@ -211,15 +203,15 @@
 
     move-object v5, p4
 
-    move-object v6, p5
+    move-wide v6, p5
 
-    invoke-direct/range {v1 .. v6}, Lcom/iMe/storage/domain/model/crypto/TransactionParams$Ether;-><init>(Lcom/iMe/storage/domain/model/crypto/send/GasPriceInfo;Lcom/iMe/storage/domain/model/crypto/send/GasPriceInfo;Lcom/iMe/storage/domain/model/crypto/send/GasPriceInfo;Ljava/math/BigInteger;Lcom/iMe/storage/domain/model/crypto/Chain;)V
+    invoke-direct/range {v1 .. v7}, Lcom/iMe/storage/domain/model/crypto/TransactionParams$Ether;-><init>(Lcom/iMe/storage/domain/model/crypto/send/GasPriceInfo;Lcom/iMe/storage/domain/model/crypto/send/GasPriceInfo;Lcom/iMe/storage/domain/model/crypto/send/GasPriceInfo;Ljava/math/BigInteger;J)V
 
     return-object v0
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
-    .locals 4
+    .locals 7
 
     const/4 v0, 0x1
 
@@ -303,15 +295,13 @@
     return v2
 
     :cond_5
-    iget-object v1, p0, Lcom/iMe/storage/domain/model/crypto/TransactionParams$Ether;->chain:Lcom/iMe/storage/domain/model/crypto/Chain;
+    iget-wide v3, p0, Lcom/iMe/storage/domain/model/crypto/TransactionParams$Ether;->chainId:J
 
-    iget-object p1, p1, Lcom/iMe/storage/domain/model/crypto/TransactionParams$Ether;->chain:Lcom/iMe/storage/domain/model/crypto/Chain;
+    iget-wide v5, p1, Lcom/iMe/storage/domain/model/crypto/TransactionParams$Ether;->chainId:J
 
-    invoke-static {v1, p1}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+    cmp-long p1, v3, v5
 
-    move-result p1
-
-    if-nez p1, :cond_6
+    if-eqz p1, :cond_6
 
     return v2
 
@@ -319,13 +309,13 @@
     return v0
 .end method
 
-.method public final getChain()Lcom/iMe/storage/domain/model/crypto/Chain;
-    .locals 1
+.method public final getChainId()J
+    .locals 2
 
     .line 19
-    iget-object v0, p0, Lcom/iMe/storage/domain/model/crypto/TransactionParams$Ether;->chain:Lcom/iMe/storage/domain/model/crypto/Chain;
+    iget-wide v0, p0, Lcom/iMe/storage/domain/model/crypto/TransactionParams$Ether;->chainId:J
 
-    return-object v0
+    return-wide v0
 .end method
 
 .method public getFastest()Lcom/iMe/storage/domain/model/crypto/send/GasPriceInfo;
@@ -435,9 +425,9 @@
 
     mul-int/lit8 v0, v0, 0x1f
 
-    iget-object v1, p0, Lcom/iMe/storage/domain/model/crypto/TransactionParams$Ether;->chain:Lcom/iMe/storage/domain/model/crypto/Chain;
+    iget-wide v1, p0, Lcom/iMe/storage/domain/model/crypto/TransactionParams$Ether;->chainId:J
 
-    invoke-virtual {v1}, Ljava/lang/Object;->hashCode()I
+    invoke-static {v1, v2}, Lcom/iMe/bots/data/model/database/BotsDbModel$$ExternalSyntheticBackport0;->m(J)I
 
     move-result v1
 
@@ -447,7 +437,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .locals 2
+    .locals 3
 
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -491,13 +481,13 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    const-string v1, ", chain="
+    const-string v1, ", chainId="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v1, p0, Lcom/iMe/storage/domain/model/crypto/TransactionParams$Ether;->chain:Lcom/iMe/storage/domain/model/crypto/Chain;
+    iget-wide v1, p0, Lcom/iMe/storage/domain/model/crypto/TransactionParams$Ether;->chainId:J
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
     const/16 v1, 0x29
 

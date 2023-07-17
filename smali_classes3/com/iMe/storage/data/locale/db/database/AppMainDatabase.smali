@@ -7,7 +7,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 27
+    .line 25
     invoke-direct {p0}, Landroidx/room/RoomDatabase;-><init>()V
 
     return-void
@@ -15,9 +15,6 @@
 
 
 # virtual methods
-.method public abstract bookmarksDao()Lcom/iMe/storage/data/locale/db/dao/main/BookmarksDao;
-.end method
-
 .method public abstract dialogTranslationSettingsDao()Lcom/iMe/storage/data/locale/db/dao/main/DialogTranslationSettingsDao;
 .end method
 

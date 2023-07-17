@@ -110,7 +110,7 @@
 
     iput-object v0, p1, Lorg/telegram/messenger/ImageLocation;->photoSize:Lorg/telegram/tgnet/TLRPC$PhotoSize;
 
-    const-string v1, "s"
+    const-string/jumbo v1, "s"
 
     .line 201
     iput-object v1, v0, Lorg/telegram/tgnet/TLRPC$PhotoSize;->type:Ljava/lang/String;
@@ -1032,7 +1032,7 @@
 
     iput-object v0, p1, Lorg/telegram/messenger/ImageLocation;->photoSize:Lorg/telegram/tgnet/TLRPC$PhotoSize;
 
-    const-string v1, "s"
+    const-string/jumbo v1, "s"
 
     .line 169
     iput-object v1, v0, Lorg/telegram/tgnet/TLRPC$PhotoSize;->type:Ljava/lang/String;

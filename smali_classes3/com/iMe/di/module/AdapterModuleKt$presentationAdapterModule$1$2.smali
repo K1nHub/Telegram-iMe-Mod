@@ -28,7 +28,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nAdapterModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 AdapterModule.kt\ncom/iMe/di/module/AdapterModuleKt$presentationAdapterModule$1$2\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,118:1\n129#2,5:119\n*S KotlinDebug\n*F\n+ 1 AdapterModule.kt\ncom/iMe/di/module/AdapterModuleKt$presentationAdapterModule$1$2\n*L\n46#1:119,5\n*E\n"
+    value = "SMAP\nAdapterModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 AdapterModule.kt\ncom/iMe/di/module/AdapterModuleKt$presentationAdapterModule$1$2\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,120:1\n129#2,5:121\n*S KotlinDebug\n*F\n+ 1 AdapterModule.kt\ncom/iMe/di/module/AdapterModuleKt$presentationAdapterModule$1$2\n*L\n47#1:121,5\n*E\n"
 .end annotation
 
 
@@ -85,7 +85,7 @@
 
     move-result-object p2
 
-    .line 46
+    .line 47
     check-cast p2, Lcom/iMe/ui/adapter/provider/HeaderProvider;
 
     .line 133
@@ -99,7 +99,7 @@
 
     move-result-object v1
 
-    .line 46
+    .line 47
     check-cast v1, Lcom/iMe/ui/adapter/provider/CexProtocolProvider;
 
     .line 133
@@ -113,10 +113,10 @@
 
     move-result-object p1
 
-    .line 46
+    .line 47
     check-cast p1, Lcom/iMe/ui/adapter/provider/DexProtocolProvider;
 
-    .line 45
+    .line 46
     new-instance v0, Lcom/iMe/ui/wallet/swap/adapter/WalletSwapProtocolsRecycleAdapter;
 
     invoke-direct {v0, v1, p1, p2}, Lcom/iMe/ui/wallet/swap/adapter/WalletSwapProtocolsRecycleAdapter;-><init>(Lcom/iMe/ui/adapter/provider/CexProtocolProvider;Lcom/iMe/ui/adapter/provider/DexProtocolProvider;Lcom/iMe/ui/adapter/provider/HeaderProvider;)V
@@ -127,7 +127,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 44
+    .line 45
     check-cast p1, Lorg/koin/core/scope/Scope;
 
     check-cast p2, Lorg/koin/core/parameter/ParametersHolder;

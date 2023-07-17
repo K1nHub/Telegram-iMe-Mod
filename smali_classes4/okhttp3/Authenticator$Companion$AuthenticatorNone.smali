@@ -32,7 +32,7 @@
 .method public authenticate(Lokhttp3/Route;Lokhttp3/Response;)Lokhttp3/Request;
     .locals 0
 
-    const-string p1, "response"
+    const-string/jumbo p1, "response"
 
     invoke-static {p2, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 

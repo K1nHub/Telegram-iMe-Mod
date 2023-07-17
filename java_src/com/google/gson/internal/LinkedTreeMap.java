@@ -10,8 +10,8 @@ import java.util.Map;
 import java.util.NoSuchElementException;
 import java.util.Objects;
 import java.util.Set;
-import p034j$.util.Iterator;
-import p034j$.util.function.Consumer;
+import p033j$.util.Iterator;
+import p033j$.util.function.Consumer;
 /* loaded from: classes3.dex */
 public final class LinkedTreeMap<K, V> extends AbstractMap<K, V> implements Serializable {
     private static final Comparator<Comparable> NATURAL_ORDER = new Comparator<Comparable>() { // from class: com.google.gson.internal.LinkedTreeMap.1
@@ -453,12 +453,12 @@ public final class LinkedTreeMap<K, V> extends AbstractMap<K, V> implements Seri
 
     /* JADX INFO: Access modifiers changed from: private */
     /* loaded from: classes3.dex */
-    public abstract class LinkedTreeMapIterator<T> implements Iterator<T>, p034j$.util.Iterator {
+    public abstract class LinkedTreeMapIterator<T> implements Iterator<T>, p033j$.util.Iterator {
         int expectedModCount;
         Node<K, V> lastReturned = null;
         Node<K, V> next;
 
-        @Override // p034j$.util.Iterator
+        @Override // p033j$.util.Iterator
         public /* synthetic */ void forEachRemaining(Consumer consumer) {
             Iterator.CC.$default$forEachRemaining(this, consumer);
         }
@@ -468,7 +468,7 @@ public final class LinkedTreeMap<K, V> extends AbstractMap<K, V> implements Seri
             this.expectedModCount = LinkedTreeMap.this.modCount;
         }
 
-        @Override // java.util.Iterator, p034j$.util.Iterator
+        @Override // java.util.Iterator, p033j$.util.Iterator
         public final boolean hasNext() {
             return this.next != LinkedTreeMap.this.header;
         }
@@ -487,7 +487,7 @@ public final class LinkedTreeMap<K, V> extends AbstractMap<K, V> implements Seri
             return node;
         }
 
-        @Override // java.util.Iterator, p034j$.util.Iterator
+        @Override // java.util.Iterator, p033j$.util.Iterator
         public final void remove() {
             Node<K, V> node = this.lastReturned;
             if (node == null) {
@@ -516,7 +516,7 @@ public final class LinkedTreeMap<K, V> extends AbstractMap<K, V> implements Seri
                     LinkedTreeMap linkedTreeMap = LinkedTreeMap.this;
                 }
 
-                @Override // java.util.Iterator, p034j$.util.Iterator
+                @Override // java.util.Iterator, p033j$.util.Iterator
                 public Map.Entry<K, V> next() {
                     return nextNode();
                 }
@@ -561,7 +561,7 @@ public final class LinkedTreeMap<K, V> extends AbstractMap<K, V> implements Seri
                     LinkedTreeMap linkedTreeMap = LinkedTreeMap.this;
                 }
 
-                @Override // java.util.Iterator, p034j$.util.Iterator
+                @Override // java.util.Iterator, p033j$.util.Iterator
                 public K next() {
                     return nextNode().key;
                 }

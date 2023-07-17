@@ -23,11 +23,9 @@
 
 .field private final feeAmount:Ljava/math/BigDecimal;
 
-.field private final feeTokenCode:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
+.field private final feeToken:Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
 
 .field private final id:Ljava/lang/String;
-
-.field private final networkType:Lcom/iMe/storage/domain/model/crypto/NetworkType;
 
 .field private final orderId:Ljava/lang/String;
 
@@ -43,7 +41,7 @@
 
 .field private final status:Lcom/iMe/storage/data/network/model/response/base/Status;
 
-.field private final tokenCode:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
+.field private final token:Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
 
 .field private final txHash:Ljava/lang/String;
 
@@ -51,7 +49,7 @@
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;Ljava/math/BigDecimal;Lcom/iMe/storage/domain/model/wallet/transaction/TransactionType;Lcom/iMe/storage/domain/model/wallet/transaction/TransactionDirection;Ljava/lang/String;Lcom/iMe/storage/domain/model/wallet/token/TokenCode;Lcom/iMe/storage/data/network/model/response/base/Status;Lcom/iMe/storage/domain/model/wallet/transaction/TransactionProcessingType;Ljava/math/BigDecimal;Lcom/iMe/storage/domain/model/wallet/token/TokenCode;Ljava/lang/String;Lcom/iMe/storage/domain/model/crypto/NetworkType;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/math/BigDecimal;Lcom/iMe/storage/domain/model/wallet/token/FiatCode;)V
+.method public constructor <init>(Ljava/lang/String;Ljava/math/BigDecimal;Lcom/iMe/storage/domain/model/wallet/transaction/TransactionType;Lcom/iMe/storage/domain/model/wallet/transaction/TransactionDirection;Ljava/lang/String;Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;Lcom/iMe/storage/data/network/model/response/base/Status;Lcom/iMe/storage/domain/model/wallet/transaction/TransactionProcessingType;Ljava/math/BigDecimal;Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/math/BigDecimal;Lcom/iMe/storage/domain/model/wallet/token/FiatCode;)V
     .locals 16
 
     move-object/from16 v0, p0
@@ -86,8 +84,6 @@
 
     move-object/from16 v15, p15
 
-    move-object/from16 v0, p16
-
     const-string v0, "id"
 
     invoke-static {v1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
@@ -108,7 +104,7 @@
 
     invoke-static {v5, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "tokenCode"
+    const-string v0, "token"
 
     invoke-static {v6, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -124,7 +120,7 @@
 
     invoke-static {v9, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "feeTokenCode"
+    const-string v0, "feeToken"
 
     invoke-static {v10, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -132,40 +128,32 @@
 
     invoke-static {v11, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "networkType"
+    const-string v0, "senderAddress"
 
     invoke-static {v12, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "senderAddress"
+    const-string v0, "recipientAddress"
 
     invoke-static {v13, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "recipientAddress"
+    const-string v0, "orderId"
 
     invoke-static {v14, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "orderId"
-
-    invoke-static {v15, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
     const-string v0, "spentAmount"
-
-    move-object/from16 v15, p16
 
     invoke-static {v15, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     const-string v0, "spentFiatCode"
 
-    move-object/from16 v15, p17
+    move-object/from16 v15, p16
 
     invoke-static {v15, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 202
-    invoke-direct/range {p0 .. p12}, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto;-><init>(Ljava/lang/String;Ljava/math/BigDecimal;Lcom/iMe/storage/domain/model/wallet/transaction/TransactionType;Lcom/iMe/storage/domain/model/wallet/transaction/TransactionDirection;Ljava/lang/String;Lcom/iMe/storage/domain/model/wallet/token/TokenCode;Lcom/iMe/storage/data/network/model/response/base/Status;Lcom/iMe/storage/domain/model/wallet/transaction/TransactionProcessingType;Ljava/math/BigDecimal;Lcom/iMe/storage/domain/model/wallet/token/TokenCode;Ljava/lang/String;Lcom/iMe/storage/domain/model/crypto/NetworkType;)V
+    .line 201
+    invoke-direct/range {p0 .. p11}, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto;-><init>(Ljava/lang/String;Ljava/math/BigDecimal;Lcom/iMe/storage/domain/model/wallet/transaction/TransactionType;Lcom/iMe/storage/domain/model/wallet/transaction/TransactionDirection;Ljava/lang/String;Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;Lcom/iMe/storage/data/network/model/response/base/Status;Lcom/iMe/storage/domain/model/wallet/transaction/TransactionProcessingType;Ljava/math/BigDecimal;Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;Ljava/lang/String;)V
 
     move-object/from16 v0, p0
-
-    move-object/from16 v15, p16
 
     .line 185
     iput-object v1, v0, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$SimplexPurchase;->id:Ljava/lang/String;
@@ -183,7 +171,7 @@
     iput-object v5, v0, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$SimplexPurchase;->createdAt:Ljava/lang/String;
 
     .line 190
-    iput-object v6, v0, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$SimplexPurchase;->tokenCode:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
+    iput-object v6, v0, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$SimplexPurchase;->token:Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
 
     .line 191
     iput-object v7, v0, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$SimplexPurchase;->status:Lcom/iMe/storage/data/network/model/response/base/Status;
@@ -195,42 +183,37 @@
     iput-object v9, v0, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$SimplexPurchase;->feeAmount:Ljava/math/BigDecimal;
 
     .line 194
-    iput-object v10, v0, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$SimplexPurchase;->feeTokenCode:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
+    iput-object v10, v0, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$SimplexPurchase;->feeToken:Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
 
     .line 195
     iput-object v11, v0, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$SimplexPurchase;->txHash:Ljava/lang/String;
 
     .line 196
-    iput-object v12, v0, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$SimplexPurchase;->networkType:Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    iput-object v12, v0, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$SimplexPurchase;->senderAddress:Ljava/lang/String;
 
     .line 197
-    iput-object v13, v0, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$SimplexPurchase;->senderAddress:Ljava/lang/String;
+    iput-object v13, v0, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$SimplexPurchase;->recipientAddress:Ljava/lang/String;
 
     .line 198
-    iput-object v14, v0, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$SimplexPurchase;->recipientAddress:Ljava/lang/String;
+    iput-object v14, v0, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$SimplexPurchase;->orderId:Ljava/lang/String;
 
     move-object/from16 v1, p15
 
     .line 199
-    iput-object v1, v0, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$SimplexPurchase;->orderId:Ljava/lang/String;
+    iput-object v1, v0, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$SimplexPurchase;->spentAmount:Ljava/math/BigDecimal;
 
     .line 200
-    iput-object v15, v0, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$SimplexPurchase;->spentAmount:Ljava/math/BigDecimal;
-
-    move-object/from16 v1, p17
-
-    .line 201
-    iput-object v1, v0, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$SimplexPurchase;->spentFiatCode:Lcom/iMe/storage/domain/model/wallet/token/FiatCode;
+    iput-object v15, v0, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$SimplexPurchase;->spentFiatCode:Lcom/iMe/storage/domain/model/wallet/token/FiatCode;
 
     return-void
 .end method
 
-.method public static synthetic copy$default(Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$SimplexPurchase;Ljava/lang/String;Ljava/math/BigDecimal;Lcom/iMe/storage/domain/model/wallet/transaction/TransactionType;Lcom/iMe/storage/domain/model/wallet/transaction/TransactionDirection;Ljava/lang/String;Lcom/iMe/storage/domain/model/wallet/token/TokenCode;Lcom/iMe/storage/data/network/model/response/base/Status;Lcom/iMe/storage/domain/model/wallet/transaction/TransactionProcessingType;Ljava/math/BigDecimal;Lcom/iMe/storage/domain/model/wallet/token/TokenCode;Ljava/lang/String;Lcom/iMe/storage/domain/model/crypto/NetworkType;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/math/BigDecimal;Lcom/iMe/storage/domain/model/wallet/token/FiatCode;ILjava/lang/Object;)Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$SimplexPurchase;
+.method public static synthetic copy$default(Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$SimplexPurchase;Ljava/lang/String;Ljava/math/BigDecimal;Lcom/iMe/storage/domain/model/wallet/transaction/TransactionType;Lcom/iMe/storage/domain/model/wallet/transaction/TransactionDirection;Ljava/lang/String;Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;Lcom/iMe/storage/data/network/model/response/base/Status;Lcom/iMe/storage/domain/model/wallet/transaction/TransactionProcessingType;Ljava/math/BigDecimal;Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/math/BigDecimal;Lcom/iMe/storage/domain/model/wallet/token/FiatCode;ILjava/lang/Object;)Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$SimplexPurchase;
     .locals 17
 
     move-object/from16 v0, p0
 
-    move/from16 v1, p18
+    move/from16 v1, p17
 
     and-int/lit8 v2, v1, 0x1
 
@@ -306,7 +289,7 @@
 
     if-eqz v7, :cond_5
 
-    invoke-virtual/range {p0 .. p0}, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$SimplexPurchase;->getTokenCode()Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
+    invoke-virtual/range {p0 .. p0}, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$SimplexPurchase;->getToken()Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
 
     move-result-object v7
 
@@ -362,7 +345,7 @@
 
     if-eqz v11, :cond_9
 
-    invoke-virtual/range {p0 .. p0}, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$SimplexPurchase;->getFeeTokenCode()Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
+    invoke-virtual/range {p0 .. p0}, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$SimplexPurchase;->getFeeToken()Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
 
     move-result-object v11
 
@@ -390,9 +373,7 @@
 
     if-eqz v13, :cond_b
 
-    invoke-virtual/range {p0 .. p0}, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$SimplexPurchase;->getNetworkType()Lcom/iMe/storage/domain/model/crypto/NetworkType;
-
-    move-result-object v13
+    iget-object v13, v0, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$SimplexPurchase;->senderAddress:Ljava/lang/String;
 
     goto :goto_b
 
@@ -404,7 +385,7 @@
 
     if-eqz v14, :cond_c
 
-    iget-object v14, v0, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$SimplexPurchase;->senderAddress:Ljava/lang/String;
+    iget-object v14, v0, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$SimplexPurchase;->recipientAddress:Ljava/lang/String;
 
     goto :goto_c
 
@@ -416,7 +397,7 @@
 
     if-eqz v15, :cond_d
 
-    iget-object v15, v0, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$SimplexPurchase;->recipientAddress:Ljava/lang/String;
+    iget-object v15, v0, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$SimplexPurchase;->orderId:Ljava/lang/String;
 
     goto :goto_d
 
@@ -430,7 +411,7 @@
 
     if-eqz v15, :cond_e
 
-    iget-object v15, v0, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$SimplexPurchase;->orderId:Ljava/lang/String;
+    iget-object v15, v0, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$SimplexPurchase;->spentAmount:Ljava/math/BigDecimal;
 
     goto :goto_e
 
@@ -440,34 +421,18 @@
     :goto_e
     const v16, 0x8000
 
-    and-int v16, v1, v16
+    and-int v1, v1, v16
 
-    move-object/from16 p15, v15
+    if-eqz v1, :cond_f
 
-    if-eqz v16, :cond_f
-
-    iget-object v15, v0, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$SimplexPurchase;->spentAmount:Ljava/math/BigDecimal;
+    iget-object v1, v0, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$SimplexPurchase;->spentFiatCode:Lcom/iMe/storage/domain/model/wallet/token/FiatCode;
 
     goto :goto_f
 
     :cond_f
-    move-object/from16 v15, p16
+    move-object/from16 v1, p16
 
     :goto_f
-    const/high16 v16, 0x10000
-
-    and-int v1, v1, v16
-
-    if-eqz v1, :cond_10
-
-    iget-object v1, v0, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$SimplexPurchase;->spentFiatCode:Lcom/iMe/storage/domain/model/wallet/token/FiatCode;
-
-    goto :goto_10
-
-    :cond_10
-    move-object/from16 v1, p17
-
-    :goto_10
     move-object/from16 p1, v2
 
     move-object/from16 p2, v3
@@ -494,11 +459,11 @@
 
     move-object/from16 p13, v14
 
-    move-object/from16 p16, v15
+    move-object/from16 p15, v15
 
-    move-object/from16 p17, v1
+    move-object/from16 p16, v1
 
-    invoke-virtual/range {p0 .. p17}, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$SimplexPurchase;->copy(Ljava/lang/String;Ljava/math/BigDecimal;Lcom/iMe/storage/domain/model/wallet/transaction/TransactionType;Lcom/iMe/storage/domain/model/wallet/transaction/TransactionDirection;Ljava/lang/String;Lcom/iMe/storage/domain/model/wallet/token/TokenCode;Lcom/iMe/storage/data/network/model/response/base/Status;Lcom/iMe/storage/domain/model/wallet/transaction/TransactionProcessingType;Ljava/math/BigDecimal;Lcom/iMe/storage/domain/model/wallet/token/TokenCode;Ljava/lang/String;Lcom/iMe/storage/domain/model/crypto/NetworkType;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/math/BigDecimal;Lcom/iMe/storage/domain/model/wallet/token/FiatCode;)Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$SimplexPurchase;
+    invoke-virtual/range {p0 .. p16}, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$SimplexPurchase;->copy(Ljava/lang/String;Ljava/math/BigDecimal;Lcom/iMe/storage/domain/model/wallet/transaction/TransactionType;Lcom/iMe/storage/domain/model/wallet/transaction/TransactionDirection;Ljava/lang/String;Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;Lcom/iMe/storage/data/network/model/response/base/Status;Lcom/iMe/storage/domain/model/wallet/transaction/TransactionProcessingType;Ljava/math/BigDecimal;Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/math/BigDecimal;Lcom/iMe/storage/domain/model/wallet/token/FiatCode;)Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$SimplexPurchase;
 
     move-result-object v0
 
@@ -517,10 +482,10 @@
     return-object v0
 .end method
 
-.method public final component10()Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
+.method public final component10()Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
     .locals 1
 
-    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$SimplexPurchase;->getFeeTokenCode()Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
+    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$SimplexPurchase;->getFeeToken()Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
 
     move-result-object v0
 
@@ -537,17 +502,7 @@
     return-object v0
 .end method
 
-.method public final component12()Lcom/iMe/storage/domain/model/crypto/NetworkType;
-    .locals 1
-
-    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$SimplexPurchase;->getNetworkType()Lcom/iMe/storage/domain/model/crypto/NetworkType;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final component13()Ljava/lang/String;
+.method public final component12()Ljava/lang/String;
     .locals 1
 
     iget-object v0, p0, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$SimplexPurchase;->senderAddress:Ljava/lang/String;
@@ -555,7 +510,7 @@
     return-object v0
 .end method
 
-.method public final component14()Ljava/lang/String;
+.method public final component13()Ljava/lang/String;
     .locals 1
 
     iget-object v0, p0, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$SimplexPurchase;->recipientAddress:Ljava/lang/String;
@@ -563,7 +518,7 @@
     return-object v0
 .end method
 
-.method public final component15()Ljava/lang/String;
+.method public final component14()Ljava/lang/String;
     .locals 1
 
     iget-object v0, p0, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$SimplexPurchase;->orderId:Ljava/lang/String;
@@ -571,7 +526,7 @@
     return-object v0
 .end method
 
-.method public final component16()Ljava/math/BigDecimal;
+.method public final component15()Ljava/math/BigDecimal;
     .locals 1
 
     iget-object v0, p0, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$SimplexPurchase;->spentAmount:Ljava/math/BigDecimal;
@@ -579,7 +534,7 @@
     return-object v0
 .end method
 
-.method public final component17()Lcom/iMe/storage/domain/model/wallet/token/FiatCode;
+.method public final component16()Lcom/iMe/storage/domain/model/wallet/token/FiatCode;
     .locals 1
 
     iget-object v0, p0, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$SimplexPurchase;->spentFiatCode:Lcom/iMe/storage/domain/model/wallet/token/FiatCode;
@@ -627,10 +582,10 @@
     return-object v0
 .end method
 
-.method public final component6()Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
+.method public final component6()Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
     .locals 1
 
-    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$SimplexPurchase;->getTokenCode()Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
+    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$SimplexPurchase;->getToken()Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
 
     move-result-object v0
 
@@ -667,8 +622,8 @@
     return-object v0
 .end method
 
-.method public final copy(Ljava/lang/String;Ljava/math/BigDecimal;Lcom/iMe/storage/domain/model/wallet/transaction/TransactionType;Lcom/iMe/storage/domain/model/wallet/transaction/TransactionDirection;Ljava/lang/String;Lcom/iMe/storage/domain/model/wallet/token/TokenCode;Lcom/iMe/storage/data/network/model/response/base/Status;Lcom/iMe/storage/domain/model/wallet/transaction/TransactionProcessingType;Ljava/math/BigDecimal;Lcom/iMe/storage/domain/model/wallet/token/TokenCode;Ljava/lang/String;Lcom/iMe/storage/domain/model/crypto/NetworkType;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/math/BigDecimal;Lcom/iMe/storage/domain/model/wallet/token/FiatCode;)Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$SimplexPurchase;
-    .locals 20
+.method public final copy(Ljava/lang/String;Ljava/math/BigDecimal;Lcom/iMe/storage/domain/model/wallet/transaction/TransactionType;Lcom/iMe/storage/domain/model/wallet/transaction/TransactionDirection;Ljava/lang/String;Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;Lcom/iMe/storage/data/network/model/response/base/Status;Lcom/iMe/storage/domain/model/wallet/transaction/TransactionProcessingType;Ljava/math/BigDecimal;Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/math/BigDecimal;Lcom/iMe/storage/domain/model/wallet/token/FiatCode;)Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$SimplexPurchase;
+    .locals 19
 
     move-object/from16 v1, p1
 
@@ -702,11 +657,9 @@
 
     move-object/from16 v16, p16
 
-    move-object/from16 v17, p17
-
     const-string v0, "id"
 
-    move-object/from16 v18, v1
+    move-object/from16 v17, v1
 
     invoke-static {v1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -734,7 +687,7 @@
 
     invoke-static {v1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "tokenCode"
+    const-string v0, "token"
 
     move-object/from16 v1, p6
 
@@ -758,7 +711,7 @@
 
     invoke-static {v1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "feeTokenCode"
+    const-string v0, "feeToken"
 
     move-object/from16 v1, p10
 
@@ -770,51 +723,45 @@
 
     invoke-static {v1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "networkType"
+    const-string v0, "senderAddress"
 
     move-object/from16 v1, p12
 
     invoke-static {v1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "senderAddress"
+    const-string v0, "recipientAddress"
 
     move-object/from16 v1, p13
 
     invoke-static {v1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "recipientAddress"
+    const-string v0, "orderId"
 
     move-object/from16 v1, p14
 
     invoke-static {v1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "orderId"
+    const-string v0, "spentAmount"
 
     move-object/from16 v1, p15
 
     invoke-static {v1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "spentAmount"
+    const-string v0, "spentFiatCode"
 
     move-object/from16 v1, p16
 
     invoke-static {v1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "spentFiatCode"
+    new-instance v18, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$SimplexPurchase;
 
-    move-object/from16 v1, p17
+    move-object/from16 v0, v18
 
-    invoke-static {v1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    move-object/from16 v1, v17
 
-    new-instance v19, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$SimplexPurchase;
+    invoke-direct/range {v0 .. v16}, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$SimplexPurchase;-><init>(Ljava/lang/String;Ljava/math/BigDecimal;Lcom/iMe/storage/domain/model/wallet/transaction/TransactionType;Lcom/iMe/storage/domain/model/wallet/transaction/TransactionDirection;Ljava/lang/String;Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;Lcom/iMe/storage/data/network/model/response/base/Status;Lcom/iMe/storage/domain/model/wallet/transaction/TransactionProcessingType;Ljava/math/BigDecimal;Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/math/BigDecimal;Lcom/iMe/storage/domain/model/wallet/token/FiatCode;)V
 
-    move-object/from16 v0, v19
-
-    move-object/from16 v1, v18
-
-    invoke-direct/range {v0 .. v17}, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$SimplexPurchase;-><init>(Ljava/lang/String;Ljava/math/BigDecimal;Lcom/iMe/storage/domain/model/wallet/transaction/TransactionType;Lcom/iMe/storage/domain/model/wallet/transaction/TransactionDirection;Ljava/lang/String;Lcom/iMe/storage/domain/model/wallet/token/TokenCode;Lcom/iMe/storage/data/network/model/response/base/Status;Lcom/iMe/storage/domain/model/wallet/transaction/TransactionProcessingType;Ljava/math/BigDecimal;Lcom/iMe/storage/domain/model/wallet/token/TokenCode;Ljava/lang/String;Lcom/iMe/storage/domain/model/crypto/NetworkType;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/math/BigDecimal;Lcom/iMe/storage/domain/model/wallet/token/FiatCode;)V
-
-    return-object v19
+    return-object v18
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
@@ -915,15 +862,19 @@
     return v2
 
     :cond_6
-    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$SimplexPurchase;->getTokenCode()Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
+    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$SimplexPurchase;->getToken()Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
 
     move-result-object v1
 
-    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$SimplexPurchase;->getTokenCode()Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
+    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$SimplexPurchase;->getToken()Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
 
     move-result-object v3
 
-    if-eq v1, v3, :cond_7
+    invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_7
 
     return v2
 
@@ -971,15 +922,19 @@
     return v2
 
     :cond_a
-    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$SimplexPurchase;->getFeeTokenCode()Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
+    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$SimplexPurchase;->getFeeToken()Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
 
     move-result-object v1
 
-    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$SimplexPurchase;->getFeeTokenCode()Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
+    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$SimplexPurchase;->getFeeToken()Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
 
     move-result-object v3
 
-    if-eq v1, v3, :cond_b
+    invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_b
 
     return v2
 
@@ -1001,22 +956,22 @@
     return v2
 
     :cond_c
-    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$SimplexPurchase;->getNetworkType()Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    iget-object v1, p0, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$SimplexPurchase;->senderAddress:Ljava/lang/String;
 
-    move-result-object v1
+    iget-object v3, p1, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$SimplexPurchase;->senderAddress:Ljava/lang/String;
 
-    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$SimplexPurchase;->getNetworkType()Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    move-result-object v3
+    move-result v1
 
-    if-eq v1, v3, :cond_d
+    if-nez v1, :cond_d
 
     return v2
 
     :cond_d
-    iget-object v1, p0, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$SimplexPurchase;->senderAddress:Ljava/lang/String;
+    iget-object v1, p0, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$SimplexPurchase;->recipientAddress:Ljava/lang/String;
 
-    iget-object v3, p1, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$SimplexPurchase;->senderAddress:Ljava/lang/String;
+    iget-object v3, p1, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$SimplexPurchase;->recipientAddress:Ljava/lang/String;
 
     invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
@@ -1027,9 +982,9 @@
     return v2
 
     :cond_e
-    iget-object v1, p0, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$SimplexPurchase;->recipientAddress:Ljava/lang/String;
+    iget-object v1, p0, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$SimplexPurchase;->orderId:Ljava/lang/String;
 
-    iget-object v3, p1, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$SimplexPurchase;->recipientAddress:Ljava/lang/String;
+    iget-object v3, p1, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$SimplexPurchase;->orderId:Ljava/lang/String;
 
     invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
@@ -1040,9 +995,9 @@
     return v2
 
     :cond_f
-    iget-object v1, p0, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$SimplexPurchase;->orderId:Ljava/lang/String;
+    iget-object v1, p0, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$SimplexPurchase;->spentAmount:Ljava/math/BigDecimal;
 
-    iget-object v3, p1, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$SimplexPurchase;->orderId:Ljava/lang/String;
+    iget-object v3, p1, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$SimplexPurchase;->spentAmount:Ljava/math/BigDecimal;
 
     invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
@@ -1053,19 +1008,6 @@
     return v2
 
     :cond_10
-    iget-object v1, p0, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$SimplexPurchase;->spentAmount:Ljava/math/BigDecimal;
-
-    iget-object v3, p1, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$SimplexPurchase;->spentAmount:Ljava/math/BigDecimal;
-
-    invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_11
-
-    return v2
-
-    :cond_11
     iget-object v1, p0, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$SimplexPurchase;->spentFiatCode:Lcom/iMe/storage/domain/model/wallet/token/FiatCode;
 
     iget-object p1, p1, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$SimplexPurchase;->spentFiatCode:Lcom/iMe/storage/domain/model/wallet/token/FiatCode;
@@ -1074,11 +1016,11 @@
 
     move-result p1
 
-    if-nez p1, :cond_12
+    if-nez p1, :cond_11
 
     return v2
 
-    :cond_12
+    :cond_11
     return v0
 .end method
 
@@ -1118,11 +1060,11 @@
     return-object v0
 .end method
 
-.method public getFeeTokenCode()Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
+.method public getFeeToken()Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
     .locals 1
 
     .line 194
-    iget-object v0, p0, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$SimplexPurchase;->feeTokenCode:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
+    iget-object v0, p0, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$SimplexPurchase;->feeToken:Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
 
     return-object v0
 .end method
@@ -1136,19 +1078,10 @@
     return-object v0
 .end method
 
-.method public getNetworkType()Lcom/iMe/storage/domain/model/crypto/NetworkType;
-    .locals 1
-
-    .line 196
-    iget-object v0, p0, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$SimplexPurchase;->networkType:Lcom/iMe/storage/domain/model/crypto/NetworkType;
-
-    return-object v0
-.end method
-
 .method public final getOrderId()Ljava/lang/String;
     .locals 1
 
-    .line 199
+    .line 198
     iget-object v0, p0, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$SimplexPurchase;->orderId:Ljava/lang/String;
 
     return-object v0
@@ -1166,7 +1099,7 @@
 .method public final getRecipientAddress()Ljava/lang/String;
     .locals 1
 
-    .line 198
+    .line 197
     iget-object v0, p0, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$SimplexPurchase;->recipientAddress:Ljava/lang/String;
 
     return-object v0
@@ -1175,7 +1108,7 @@
 .method public final getSenderAddress()Ljava/lang/String;
     .locals 1
 
-    .line 197
+    .line 196
     iget-object v0, p0, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$SimplexPurchase;->senderAddress:Ljava/lang/String;
 
     return-object v0
@@ -1184,7 +1117,7 @@
 .method public final getSpentAmount()Ljava/math/BigDecimal;
     .locals 1
 
-    .line 200
+    .line 199
     iget-object v0, p0, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$SimplexPurchase;->spentAmount:Ljava/math/BigDecimal;
 
     return-object v0
@@ -1193,7 +1126,7 @@
 .method public final getSpentFiatCode()Lcom/iMe/storage/domain/model/wallet/token/FiatCode;
     .locals 1
 
-    .line 201
+    .line 200
     iget-object v0, p0, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$SimplexPurchase;->spentFiatCode:Lcom/iMe/storage/domain/model/wallet/token/FiatCode;
 
     return-object v0
@@ -1208,11 +1141,11 @@
     return-object v0
 .end method
 
-.method public getTokenCode()Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
+.method public getToken()Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
     .locals 1
 
     .line 190
-    iget-object v0, p0, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$SimplexPurchase;->tokenCode:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
+    iget-object v0, p0, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$SimplexPurchase;->token:Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
 
     return-object v0
 .end method
@@ -1296,11 +1229,11 @@
 
     mul-int/lit8 v0, v0, 0x1f
 
-    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$SimplexPurchase;->getTokenCode()Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
+    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$SimplexPurchase;->getToken()Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
 
     move-result-object v1
 
-    invoke-virtual {v1}, Ljava/lang/Enum;->hashCode()I
+    invoke-virtual {v1}, Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;->hashCode()I
 
     move-result v1
 
@@ -1344,11 +1277,11 @@
 
     mul-int/lit8 v0, v0, 0x1f
 
-    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$SimplexPurchase;->getFeeTokenCode()Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
+    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$SimplexPurchase;->getFeeToken()Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
 
     move-result-object v1
 
-    invoke-virtual {v1}, Ljava/lang/Enum;->hashCode()I
+    invoke-virtual {v1}, Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;->hashCode()I
 
     move-result v1
 
@@ -1361,18 +1294,6 @@
     move-result-object v1
 
     invoke-virtual {v1}, Ljava/lang/String;->hashCode()I
-
-    move-result v1
-
-    add-int/2addr v0, v1
-
-    mul-int/lit8 v0, v0, 0x1f
-
-    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$SimplexPurchase;->getNetworkType()Lcom/iMe/storage/domain/model/crypto/NetworkType;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/Enum;->hashCode()I
 
     move-result v1
 
@@ -1488,11 +1409,11 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v1, ", tokenCode="
+    const-string v1, ", token="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$SimplexPurchase;->getTokenCode()Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
+    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$SimplexPurchase;->getToken()Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
 
     move-result-object v1
 
@@ -1528,11 +1449,11 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    const-string v1, ", feeTokenCode="
+    const-string v1, ", feeToken="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$SimplexPurchase;->getFeeTokenCode()Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
+    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$SimplexPurchase;->getFeeToken()Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
 
     move-result-object v1
 
@@ -1547,16 +1468,6 @@
     move-result-object v1
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v1, ", networkType="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$SimplexPurchase;->getNetworkType()Lcom/iMe/storage/domain/model/crypto/NetworkType;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     const-string v1, ", senderAddress="
 

@@ -12,8 +12,8 @@ public final /* synthetic */ class CreateWalletFragment$$ExternalSyntheticLambda
 
     @Override // android.view.View.OnTouchListener
     public final boolean onTouch(View view, MotionEvent motionEvent) {
-        boolean createContainer$lambda$5$lambda$4;
-        createContainer$lambda$5$lambda$4 = CreateWalletFragment.createContainer$lambda$5$lambda$4(view, motionEvent);
-        return createContainer$lambda$5$lambda$4;
+        boolean createContainer$lambda$6$lambda$5;
+        createContainer$lambda$6$lambda$5 = CreateWalletFragment.createContainer$lambda$6$lambda$5(view, motionEvent);
+        return createContainer$lambda$6$lambda$5;
     }
 }

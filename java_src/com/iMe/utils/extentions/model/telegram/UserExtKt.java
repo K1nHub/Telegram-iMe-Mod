@@ -14,15 +14,17 @@ public final class UserExtKt {
     }
 
     public static final String getPrivacySafeName(TLRPC$User tLRPC$User) {
+        String str;
         Intrinsics.checkNotNullParameter(tLRPC$User, "<this>");
-        if (!tLRPC$User.contact) {
-            String first_name = tLRPC$User.first_name;
-            Intrinsics.checkNotNullExpressionValue(first_name, "first_name");
-            return first_name;
+        if (tLRPC$User.contact) {
+            String str2 = tLRPC$User.username;
+            str = str2 == null || str2.length() == 0 ? String.valueOf(tLRPC$User.f1656id) : tLRPC$User.username;
+            Intrinsics.checkNotNullExpressionValue(str, "if (username.isNullOrEmpty()) \"$id\" else username");
+        } else {
+            String str3 = tLRPC$User.first_name;
+            str = str3 == null ? tLRPC$User.last_name : str3;
+            Intrinsics.checkNotNullExpressionValue(str, "first_name ?: last_name");
         }
-        String str = tLRPC$User.username;
-        String valueOf = str == null || str.length() == 0 ? String.valueOf(tLRPC$User.f1574id) : tLRPC$User.username;
-        Intrinsics.checkNotNullExpressionValue(valueOf, "if (username.isNullOrEmpty()) \"$id\" else username");
-        return valueOf;
+        return str;
     }
 }

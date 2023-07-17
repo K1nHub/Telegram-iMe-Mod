@@ -27,7 +27,7 @@
 
 
 # virtual methods
-.method public abstract openStakingOperationDetails(Lcom/iMe/model/wallet/transaction/StakingOperationItem;Lcom/iMe/storage/domain/model/crypto/NetworkType;)V
+.method public abstract openStakingOperationDetails(Lcom/iMe/model/wallet/transaction/StakingOperationItem;Lcom/iMe/storage/domain/model/crypto/Network;)V
     .annotation runtime Lmoxy/viewstate/strategy/alias/OneExecution;
     .end annotation
 .end method

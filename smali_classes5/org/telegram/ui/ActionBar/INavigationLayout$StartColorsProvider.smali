@@ -27,10 +27,10 @@
 .method public constructor <init>()V
     .locals 3
 
-    .line 404
+    .line 408
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 405
+    .line 409
     new-instance v0, Landroid/util/SparseIntArray;
 
     invoke-direct {v0}, Landroid/util/SparseIntArray;-><init>()V
@@ -41,7 +41,7 @@
 
     new-array v0, v0, [I
 
-    .line 406
+    .line 410
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_chat_outBubble:I
 
     const/4 v2, 0x0
@@ -96,7 +96,7 @@
 .method public contains(I)Z
     .locals 1
 
-    .line 422
+    .line 426
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/INavigationLayout$StartColorsProvider;->colors:Landroid/util/SparseIntArray;
 
     invoke-virtual {v0, p1}, Landroid/util/SparseIntArray;->indexOfKey(I)I
@@ -119,7 +119,7 @@
 .method public getColor(I)I
     .locals 1
 
-    .line 417
+    .line 421
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/INavigationLayout$StartColorsProvider;->colors:Landroid/util/SparseIntArray;
 
     invoke-virtual {v0, p1}, Landroid/util/SparseIntArray;->get(I)I
@@ -142,7 +142,7 @@
 .method public getCurrentColor(I)I
     .locals 1
 
-    .line 427
+    .line 431
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/INavigationLayout$StartColorsProvider;->colors:Landroid/util/SparseIntArray;
 
     invoke-virtual {v0, p1}, Landroid/util/SparseIntArray;->get(I)I
@@ -185,12 +185,12 @@
 .method public saveColors(Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
     .locals 6
 
-    .line 431
+    .line 435
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/INavigationLayout$StartColorsProvider;->colors:Landroid/util/SparseIntArray;
 
     invoke-virtual {v0}, Landroid/util/SparseIntArray;->clear()V
 
-    .line 432
+    .line 436
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/INavigationLayout$StartColorsProvider;->keysToSave:[I
 
     array-length v1, v0
@@ -202,7 +202,7 @@
 
     aget v3, v0, v2
 
-    .line 433
+    .line 437
     iget-object v4, p0, Lorg/telegram/ui/ActionBar/INavigationLayout$StartColorsProvider;->colors:Landroid/util/SparseIntArray;
 
     invoke-interface {p1, v3}, Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;->getCurrentColor(I)I

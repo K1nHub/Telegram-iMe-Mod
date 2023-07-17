@@ -75,7 +75,7 @@ public final class FieldType {
     private final Class<?> elementType;
 
     /* renamed from: id */
-    private final int f225id;
+    private final int f307id;
     private final JavaType javaType;
     private final boolean primitiveScalar;
 
@@ -207,16 +207,16 @@ public final class FieldType {
         FieldType[] values = values();
         VALUES = new FieldType[values.length];
         for (FieldType fieldType52 : values) {
-            VALUES[fieldType52.f225id] = fieldType52;
+            VALUES[fieldType52.f307id] = fieldType52;
         }
     }
 
     private FieldType(String str, int i, int i2, Collection collection, JavaType javaType) {
         int i3;
-        this.f225id = i2;
+        this.f307id = i2;
         this.collection = collection;
         this.javaType = javaType;
-        int i4 = C11971.$SwitchMap$com$google$protobuf$FieldType$Collection[collection.ordinal()];
+        int i4 = C12021.$SwitchMap$com$google$protobuf$FieldType$Collection[collection.ordinal()];
         boolean z = true;
         if (i4 == 1) {
             this.elementType = javaType.getBoxedType();
@@ -225,12 +225,12 @@ public final class FieldType {
         } else {
             this.elementType = null;
         }
-        this.primitiveScalar = (collection != Collection.SCALAR || (i3 = C11971.$SwitchMap$com$google$protobuf$JavaType[javaType.ordinal()]) == 1 || i3 == 2 || i3 == 3) ? false : z;
+        this.primitiveScalar = (collection != Collection.SCALAR || (i3 = C12021.$SwitchMap$com$google$protobuf$JavaType[javaType.ordinal()]) == 1 || i3 == 2 || i3 == 3) ? false : z;
     }
 
     /* renamed from: com.google.protobuf.FieldType$1 */
     /* loaded from: classes3.dex */
-    static /* synthetic */ class C11971 {
+    static /* synthetic */ class C12021 {
         static final /* synthetic */ int[] $SwitchMap$com$google$protobuf$FieldType$Collection;
         static final /* synthetic */ int[] $SwitchMap$com$google$protobuf$JavaType;
 
@@ -268,7 +268,7 @@ public final class FieldType {
 
     /* renamed from: id */
     public int m707id() {
-        return this.f225id;
+        return this.f307id;
     }
 
     public JavaType getJavaType() {

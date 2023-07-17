@@ -27,7 +27,7 @@
 .method constructor <init>(JLcom/iMe/fork/utils/Callbacks$Callback1;)V
     .locals 0
 
-    .line 593
+    .line 586
     iput-wide p1, p0, Lorg/telegram/ui/ChatActivity$2;->val$dialogId:J
 
     iput-object p3, p0, Lorg/telegram/ui/ChatActivity$2;->val$callback:Lcom/iMe/fork/utils/Callbacks$Callback1;
@@ -50,7 +50,7 @@
         }
     .end annotation
 
-    .line 596
+    .line 589
     new-instance v0, Lorg/telegram/messenger/ForwardingMessagesParams;
 
     iget-wide v1, p0, Lorg/telegram/ui/ChatActivity$2;->val$dialogId:J
@@ -59,12 +59,12 @@
 
     const/4 p1, 0x1
 
-    .line 597
+    .line 590
     iput-boolean p1, v0, Lorg/telegram/messenger/ForwardingMessagesParams;->hideForwardSendersName:Z
 
     iput-boolean p1, v0, Lorg/telegram/messenger/ForwardingMessagesParams;->needForceHideForwardAuthor:Z
 
-    .line 598
+    .line 591
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$2;->val$callback:Lcom/iMe/fork/utils/Callbacks$Callback1;
 
     invoke-interface {p1, v0}, Lcom/iMe/fork/utils/Callbacks$Callback1;->invoke(Ljava/lang/Object;)V
@@ -80,10 +80,10 @@
     return-void
 .end method
 
-.method public synthetic onUnpin(ZZZZLorg/telegram/ui/ChatActivity;Ljava/util/ArrayList;Ljava/util/HashMap;)V
+.method public synthetic onUnpin(ZZZLorg/telegram/ui/ChatActivity;Ljava/util/ArrayList;Ljava/util/HashMap;)V
     .locals 0
 
-    invoke-static/range {p0 .. p7}, Lorg/telegram/ui/ChatActivity$ChatActivityDelegate$-CC;->$default$onUnpin(Lorg/telegram/ui/ChatActivity$ChatActivityDelegate;ZZZZLorg/telegram/ui/ChatActivity;Ljava/util/ArrayList;Ljava/util/HashMap;)V
+    invoke-static/range {p0 .. p6}, Lorg/telegram/ui/ChatActivity$ChatActivityDelegate$-CC;->$default$onUnpin(Lorg/telegram/ui/ChatActivity$ChatActivityDelegate;ZZZLorg/telegram/ui/ChatActivity;Ljava/util/ArrayList;Ljava/util/HashMap;)V
 
     return-void
 .end method

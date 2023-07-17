@@ -20,7 +20,7 @@
 .method public abstract getAppVersion()Ljava/lang/String;
 .end method
 
-.method public abstract getCurrentLocaleInformation()Lcom/iMe/storage/domain/model/telegram/TelegramLocaleInformation;
+.method public abstract getCurrentLanguage()Ljava/lang/String;
 .end method
 
 .method public abstract getDeviceId()Ljava/lang/String;

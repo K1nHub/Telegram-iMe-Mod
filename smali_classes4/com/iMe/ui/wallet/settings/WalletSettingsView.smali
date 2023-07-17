@@ -12,12 +12,12 @@
 
 
 # virtual methods
-.method public abstract setupSettingsItems(Ljava/util/List;)V
+.method public abstract renderSettingsItems(Ljava/util/List;)V
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Ljava/util/List<",
-            "Lcom/iMe/model/wallet/settings/SettingUiItem;",
+            "Lcom/iMe/model/wallet/crypto/settings/WalletSettingsItem;",
             ">;)V"
         }
     .end annotation

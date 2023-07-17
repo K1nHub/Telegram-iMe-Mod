@@ -79,6 +79,17 @@
     .end annotation
 .end field
 
+.field private static final simpleNames:Ljava/util/Map;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/Map<",
+            "Ljava/lang/String;",
+            "Ljava/lang/String;",
+            ">;"
+        }
+    .end annotation
+.end field
+
 
 # instance fields
 .field private final jClass:Ljava/lang/Class;
@@ -780,7 +791,10 @@
 
     goto :goto_3
 
+    .line 163
     :cond_4
+    sput-object v0, Lkotlin/jvm/internal/ClassReference;->simpleNames:Ljava/util/Map;
+
     return-void
 .end method
 
@@ -811,6 +825,15 @@
 
     .line 10
     sget-object v0, Lkotlin/jvm/internal/ClassReference;->FUNCTION_CLASSES:Ljava/util/Map;
+
+    return-object v0
+.end method
+
+.method public static final synthetic access$getSimpleNames$cp()Ljava/util/Map;
+    .locals 1
+
+    .line 10
+    sget-object v0, Lkotlin/jvm/internal/ClassReference;->simpleNames:Ljava/util/Map;
 
     return-object v0
 .end method
@@ -864,6 +887,23 @@
 
     .line 10
     iget-object v0, p0, Lkotlin/jvm/internal/ClassReference;->jClass:Ljava/lang/Class;
+
+    return-object v0
+.end method
+
+.method public getSimpleName()Ljava/lang/String;
+    .locals 2
+
+    .line 12
+    sget-object v0, Lkotlin/jvm/internal/ClassReference;->Companion:Lkotlin/jvm/internal/ClassReference$Companion;
+
+    invoke-virtual {p0}, Lkotlin/jvm/internal/ClassReference;->getJClass()Ljava/lang/Class;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Lkotlin/jvm/internal/ClassReference$Companion;->getClassSimpleName(Ljava/lang/Class;)Ljava/lang/String;
+
+    move-result-object v0
 
     return-object v0
 .end method

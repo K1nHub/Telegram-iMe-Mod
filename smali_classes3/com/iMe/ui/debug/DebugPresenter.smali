@@ -165,43 +165,19 @@
 .end method
 
 .method public final isStageEnvironment()Z
-    .locals 2
+    .locals 1
 
     .line 34
     sget-object v0, Lcom/iMe/storage/data/manager/common/EnvironmentManager;->INSTANCE:Lcom/iMe/storage/data/manager/common/EnvironmentManager;
 
     invoke-virtual {v0}, Lcom/iMe/storage/data/manager/common/EnvironmentManager;->getEnvironment()Lcom/iMe/storage/domain/model/common/Environment;
 
-    move-result-object v1
-
-    invoke-virtual {v1}, Lcom/iMe/storage/domain/model/common/Environment;->isStage()Z
-
-    move-result v1
-
-    if-nez v1, :cond_1
-
-    invoke-virtual {v0}, Lcom/iMe/storage/data/manager/common/EnvironmentManager;->getEnvironment()Lcom/iMe/storage/domain/model/common/Environment;
-
     move-result-object v0
 
-    invoke-virtual {v0}, Lcom/iMe/storage/domain/model/common/Environment;->isDevelopment()Z
+    invoke-virtual {v0}, Lcom/iMe/storage/domain/model/common/Environment;->isStageEnvironment()Z
 
     move-result v0
 
-    if-eqz v0, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_1
-
-    :cond_1
-    :goto_0
-    const/4 v0, 0x1
-
-    :goto_1
     return v0
 .end method
 

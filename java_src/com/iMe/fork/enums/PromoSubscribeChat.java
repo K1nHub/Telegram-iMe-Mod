@@ -1,6 +1,6 @@
 package com.iMe.fork.enums;
 
-import org.telegram.messenger.C3295R;
+import org.telegram.messenger.C3417R;
 /* JADX WARN: Enum visitor error
 jadx.core.utils.exceptions.JadxRuntimeException: Init of enum DISCUSSION_GROUP uses external variables
 	at jadx.core.dex.visitors.EnumVisitor.createEnumFieldByConstructor(EnumVisitor.java:444)
@@ -23,11 +23,11 @@ public final class PromoSubscribeChat {
     private final int descriptionResId;
 
     /* renamed from: id */
-    private final long f260id;
+    private final long f342id;
     private final int rightIconResId;
     private final String username;
-    public static final PromoSubscribeChat RU_NEWS_CHANNEL = new PromoSubscribeChat("RU_NEWS_CHANNEL", 0, -1233992278, "ime_ru", C3295R.string.dialog_promo_ru_news_channel_description, C3295R.C3297drawable.fork_promo_ru_news_channel);
-    public static final PromoSubscribeChat EN_NEWS_CHANNEL = new PromoSubscribeChat("EN_NEWS_CHANNEL", 1, -1348298652, "ime_en", C3295R.string.dialog_promo_en_news_channel_description, C3295R.C3297drawable.fork_promo_en_news_channel);
+    public static final PromoSubscribeChat RU_NEWS_CHANNEL = new PromoSubscribeChat("RU_NEWS_CHANNEL", 0, -1233992278, "ime_ru", C3417R.string.dialog_promo_ru_news_channel_description, C3417R.C3419drawable.fork_promo_ru_news_channel);
+    public static final PromoSubscribeChat EN_NEWS_CHANNEL = new PromoSubscribeChat("EN_NEWS_CHANNEL", 1, -1348298652, "ime_en", C3417R.string.dialog_promo_en_news_channel_description, C3417R.C3419drawable.fork_promo_en_news_channel);
 
     private static final /* synthetic */ PromoSubscribeChat[] $values() {
         return new PromoSubscribeChat[]{RU_NEWS_CHANNEL, EN_NEWS_CHANNEL, DISCUSSION_GROUP, LIME_GROUP};
@@ -42,7 +42,7 @@ public final class PromoSubscribeChat {
     }
 
     private PromoSubscribeChat(String str, int i, long j, String str2, int i2, int i3) {
-        this.f260id = j;
+        this.f342id = j;
         this.username = str2;
         this.descriptionResId = i2;
         this.rightIconResId = i3;
@@ -53,7 +53,7 @@ public final class PromoSubscribeChat {
     }
 
     public final long getId() {
-        return this.f260id;
+        return this.f342id;
     }
 
     public final int getRightIconResId() {
@@ -65,8 +65,8 @@ public final class PromoSubscribeChat {
     }
 
     static {
-        int i = C3295R.string.dialog_promo_discussion_group_description;
-        int i2 = C3295R.C3297drawable.fork_promo_discussion_group;
+        int i = C3417R.string.dialog_promo_discussion_group_description;
+        int i2 = C3417R.C3419drawable.fork_promo_discussion_group;
         DISCUSSION_GROUP = new PromoSubscribeChat("DISCUSSION_GROUP", 2, -1333667783L, "ime_ai", i, i2);
         LIME_GROUP = new PromoSubscribeChat("LIME_GROUP", 3, -1285458230L, "imelime", i, i2);
         $VALUES = $values();

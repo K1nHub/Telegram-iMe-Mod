@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/ThemePreviewActivity;)V
     .locals 0
 
-    .line 2183
+    .line 2188
     iput-object p1, p0, Lorg/telegram/ui/ThemePreviewActivity$24;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -58,12 +58,12 @@
 .method public onSeekBarDrag(ZF)V
     .locals 0
 
-    .line 2186
+    .line 2191
     iget-object p1, p0, Lorg/telegram/ui/ThemePreviewActivity$24;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
 
     invoke-static {p1, p2}, Lorg/telegram/ui/ThemePreviewActivity;->access$2602(Lorg/telegram/ui/ThemePreviewActivity;F)F
 
-    .line 2187
+    .line 2192
     iget-object p1, p0, Lorg/telegram/ui/ThemePreviewActivity$24;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ThemePreviewActivity;->access$6600(Lorg/telegram/ui/ThemePreviewActivity;)V

@@ -26,15 +26,15 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 57
+    .line 50
     sget v0, Lorg/telegram/messenger/R$drawable;->fork_ic_wallet_create:I
 
-    .line 58
+    .line 51
     sget v1, Lorg/telegram/messenger/R$string;->wallet_dashboard_activate_wallet:I
 
     const/4 v2, 0x0
 
-    .line 56
+    .line 49
     invoke-direct {p0, v0, v1, v2}, Lcom/iMe/model/wallet/crypto/create/WalletCreationType;-><init>(IILkotlin/jvm/internal/DefaultConstructorMarker;)V
 
     iput-object p1, p0, Lcom/iMe/model/wallet/crypto/create/WalletCreationType$Activate;->blockchainType:Lcom/iMe/storage/domain/model/crypto/BlockchainType;
@@ -51,8 +51,8 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 63
-    invoke-virtual {p0}, Lcom/iMe/model/wallet/crypto/create/WalletCreationType;->getStringResId()I
+    .line 56
+    invoke-virtual {p0}, Lcom/iMe/model/wallet/crypto/create/WalletCreationType;->getButtonTextResId()I
 
     move-result v0
 
@@ -60,7 +60,7 @@
 
     new-array v1, v1, [Ljava/lang/Object;
 
-    .line 64
+    .line 57
     iget-object v2, p0, Lcom/iMe/model/wallet/crypto/create/WalletCreationType$Activate;->blockchainType:Lcom/iMe/storage/domain/model/crypto/BlockchainType;
 
     invoke-virtual {v2}, Lcom/iMe/storage/domain/model/crypto/BlockchainType;->getTitleResId()I
@@ -75,7 +75,7 @@
 
     aput-object v2, v1, v3
 
-    .line 62
+    .line 55
     invoke-interface {p1, v0, v1}, Lcom/iMe/storage/domain/utils/system/ResourceManager;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p1

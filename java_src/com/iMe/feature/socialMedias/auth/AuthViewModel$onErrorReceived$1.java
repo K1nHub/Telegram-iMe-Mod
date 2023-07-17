@@ -13,10 +13,11 @@ import kotlin.jvm.internal.Lambda;
 import org.orbitmvi.orbit.syntax.simple.SimpleContext;
 import org.orbitmvi.orbit.syntax.simple.SimpleSyntax;
 import org.orbitmvi.orbit.syntax.simple.SimpleSyntaxExtensionsKt;
+/* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: AuthViewModel.kt */
 @DebugMetadata(m84c = "com.iMe.feature.socialMedias.auth.AuthViewModel$onErrorReceived$1", m83f = "AuthViewModel.kt", m82l = {46}, m81m = "invokeSuspend")
 /* loaded from: classes3.dex */
-final class AuthViewModel$onErrorReceived$1 extends SuspendLambda implements Function2<SimpleSyntax<AuthState, AuthSideEffects>, Continuation<? super Unit>, Object> {
+public final class AuthViewModel$onErrorReceived$1 extends SuspendLambda implements Function2<SimpleSyntax<AuthState, AuthSideEffects>, Continuation<? super Unit>, Object> {
     private /* synthetic */ Object L$0;
     int label;
 
@@ -41,10 +42,10 @@ final class AuthViewModel$onErrorReceived$1 extends SuspendLambda implements Fun
     /* compiled from: AuthViewModel.kt */
     /* renamed from: com.iMe.feature.socialMedias.auth.AuthViewModel$onErrorReceived$1$1 */
     /* loaded from: classes3.dex */
-    public static final class C14541 extends Lambda implements Function1<SimpleContext<AuthState>, AuthState> {
-        public static final C14541 INSTANCE = new C14541();
+    public static final class C14651 extends Lambda implements Function1<SimpleContext<AuthState>, AuthState> {
+        public static final C14651 INSTANCE = new C14651();
 
-        C14541() {
+        C14651() {
             super(1);
         }
 
@@ -62,9 +63,9 @@ final class AuthViewModel$onErrorReceived$1 extends SuspendLambda implements Fun
         int i = this.label;
         if (i == 0) {
             ResultKt.throwOnFailure(obj);
-            C14541 c14541 = C14541.INSTANCE;
+            C14651 c14651 = C14651.INSTANCE;
             this.label = 1;
-            if (SimpleSyntaxExtensionsKt.reduce((SimpleSyntax) this.L$0, c14541, this) == coroutine_suspended) {
+            if (SimpleSyntaxExtensionsKt.reduce((SimpleSyntax) this.L$0, c14651, this) == coroutine_suspended) {
                 return coroutine_suspended;
             }
         } else if (i != 1) {

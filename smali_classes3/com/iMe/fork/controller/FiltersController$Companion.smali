@@ -28,7 +28,7 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 286
+    .line 280
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -49,7 +49,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 290
+    .line 284
     invoke-interface {p0, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
@@ -64,7 +64,7 @@
 .method public final getInstance(I)Lcom/iMe/fork/controller/FiltersController;
     .locals 3
 
-    .line 290
+    .line 284
     invoke-static {}, Lcom/iMe/fork/controller/FiltersController;->access$getAccountInstances$cp()Lj$/util/concurrent/ConcurrentHashMap;
 
     move-result-object v0

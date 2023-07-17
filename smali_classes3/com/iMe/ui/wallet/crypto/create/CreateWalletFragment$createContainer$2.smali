@@ -24,7 +24,7 @@
 
     iput-object p1, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$createContainer$2;->this$0:Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;
 
-    .line 305
+    .line 401
     invoke-direct {p0, p2}, Landroid/view/ViewGroup;-><init>(Landroid/content/Context;)V
 
     return-void
@@ -35,7 +35,7 @@
 .method protected onLayout(ZIIII)V
     .locals 4
 
-    .line 327
+    .line 423
     iget-object p1, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$createContainer$2;->this$0:Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;
 
     invoke-static {p1}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->access$getActionBar$p$s1606076837(Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;)Lorg/telegram/ui/ActionBar/ActionBar;
@@ -64,7 +64,7 @@
 
     if-le p4, p5, :cond_0
 
-    .line 331
+    .line 427
     iget-object p4, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$createContainer$2;->this$0:Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;
 
     invoke-static {p4}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->access$getImageView(Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;)Lorg/telegram/ui/Components/RLottieImageView;
@@ -79,7 +79,7 @@
 
     div-int/2addr p4, p3
 
-    .line 332
+    .line 428
     iget-object p5, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$createContainer$2;->this$0:Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;
 
     invoke-static {p5}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->access$getImageView(Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;)Lorg/telegram/ui/Components/RLottieImageView;
@@ -126,7 +126,7 @@
 
     float-to-int v0, v0
 
-    .line 335
+    .line 431
     iget-object v1, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$createContainer$2;->this$0:Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;
 
     invoke-static {v1}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->access$getTitleTextView(Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;)Landroid/widget/TextView;
@@ -165,7 +165,7 @@
 
     float-to-int v0, v0
 
-    .line 338
+    .line 434
     iget-object v1, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$createContainer$2;->this$0:Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;
 
     invoke-static {v1}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->access$getDescriptionText(Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;)Landroid/widget/TextView;
@@ -202,10 +202,10 @@
 
     mul-float/2addr p1, v0
 
-    .line 339
+    .line 435
     iget-object v0, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$createContainer$2;->this$0:Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;
 
-    invoke-static {v0}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->access$getButtonTextView(Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;)Landroid/widget/TextView;
+    invoke-static {v0}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->access$getActionButton(Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;)Lcom/iMe/ui/custom/ActionButton;
 
     move-result-object v0
 
@@ -231,16 +231,16 @@
 
     float-to-int p3, p3
 
-    .line 341
+    .line 437
     iget-object p4, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$createContainer$2;->this$0:Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;
 
-    invoke-static {p4}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->access$getButtonTextView(Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;)Landroid/widget/TextView;
+    invoke-static {p4}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->access$getActionButton(Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;)Lcom/iMe/ui/custom/ActionButton;
 
     move-result-object p4
 
     iget-object v0, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$createContainer$2;->this$0:Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;
 
-    invoke-static {v0}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->access$getButtonTextView(Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;)Landroid/widget/TextView;
+    invoke-static {v0}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->access$getActionButton(Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;)Lcom/iMe/ui/custom/ActionButton;
 
     move-result-object v0
 
@@ -252,7 +252,7 @@
 
     iget-object v1, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$createContainer$2;->this$0:Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;
 
-    invoke-static {v1}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->access$getButtonTextView(Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;)Landroid/widget/TextView;
+    invoke-static {v1}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->access$getActionButton(Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;)Lcom/iMe/ui/custom/ActionButton;
 
     move-result-object v1
 
@@ -270,7 +270,7 @@
 
     float-to-int p1, p2
 
-    .line 344
+    .line 440
     iget-object p2, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$createContainer$2;->this$0:Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;
 
     invoke-static {p2}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->access$getDescriptionText2(Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;)Landroid/widget/TextView;
@@ -314,7 +314,7 @@
 
     float-to-int p4, p4
 
-    .line 347
+    .line 443
     iget-object p5, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$createContainer$2;->this$0:Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;
 
     invoke-static {p5}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->access$getImageView(Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;)Lorg/telegram/ui/Components/RLottieImageView;
@@ -351,7 +351,7 @@
 
     float-to-int p4, p4
 
-    .line 349
+    .line 445
     iget-object p5, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$createContainer$2;->this$0:Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;
 
     invoke-static {p5}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->access$getTitleTextView(Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;)Landroid/widget/TextView;
@@ -388,7 +388,7 @@
 
     float-to-int p4, p4
 
-    .line 351
+    .line 447
     iget-object p5, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$createContainer$2;->this$0:Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;
 
     invoke-static {p5}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->access$getDescriptionText(Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;)Landroid/widget/TextView;
@@ -419,10 +419,10 @@
 
     invoke-virtual {p5, v1, p4, v0, v2}, Landroid/widget/TextView;->layout(IIII)V
 
-    .line 352
+    .line 448
     iget-object p4, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$createContainer$2;->this$0:Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;
 
-    invoke-static {p4}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->access$getButtonTextView(Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;)Landroid/widget/TextView;
+    invoke-static {p4}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->access$getActionButton(Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;)Lcom/iMe/ui/custom/ActionButton;
 
     move-result-object p4
 
@@ -440,16 +440,16 @@
 
     float-to-int p3, p3
 
-    .line 354
+    .line 450
     iget-object p4, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$createContainer$2;->this$0:Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;
 
-    invoke-static {p4}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->access$getButtonTextView(Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;)Landroid/widget/TextView;
+    invoke-static {p4}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->access$getActionButton(Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;)Lcom/iMe/ui/custom/ActionButton;
 
     move-result-object p4
 
     iget-object p5, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$createContainer$2;->this$0:Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;
 
-    invoke-static {p5}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->access$getButtonTextView(Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;)Landroid/widget/TextView;
+    invoke-static {p5}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->access$getActionButton(Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;)Lcom/iMe/ui/custom/ActionButton;
 
     move-result-object p5
 
@@ -461,7 +461,7 @@
 
     iget-object v0, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$createContainer$2;->this$0:Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;
 
-    invoke-static {v0}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->access$getButtonTextView(Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;)Landroid/widget/TextView;
+    invoke-static {v0}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->access$getActionButton(Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;)Lcom/iMe/ui/custom/ActionButton;
 
     move-result-object v0
 
@@ -479,7 +479,7 @@
 
     float-to-int p1, p2
 
-    .line 356
+    .line 452
     iget-object p2, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$createContainer$2;->this$0:Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;
 
     invoke-static {p2}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->access$getDescriptionText2(Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;)Landroid/widget/TextView;
@@ -517,17 +517,17 @@
 .method protected onMeasure(II)V
     .locals 9
 
-    .line 307
+    .line 403
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result p1
 
-    .line 308
+    .line 404
     invoke-static {p2}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result v0
 
-    .line 309
+    .line 405
     iget-object v1, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$createContainer$2;->this$0:Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;
 
     invoke-static {v1}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->access$getActionBar$p$s1606076837(Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;)Lorg/telegram/ui/ActionBar/ActionBar;
@@ -550,7 +550,7 @@
 
     if-le p1, v0, :cond_0
 
-    .line 311
+    .line 407
     iget-object v4, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$createContainer$2;->this$0:Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;
 
     invoke-static {v4}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->access$getImageView(Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;)Lorg/telegram/ui/Components/RLottieImageView;
@@ -583,7 +583,7 @@
 
     invoke-virtual {v4, v6, v7}, Landroid/widget/ImageView;->measure(II)V
 
-    .line 312
+    .line 408
     iget-object v4, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$createContainer$2;->this$0:Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;
 
     invoke-static {v4}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->access$getTitleTextView(Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;)Landroid/widget/TextView;
@@ -606,7 +606,7 @@
 
     invoke-virtual {v4, v6, v7}, Landroid/widget/TextView;->measure(II)V
 
-    .line 313
+    .line 409
     iget-object v4, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$createContainer$2;->this$0:Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;
 
     invoke-static {v4}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->access$getDescriptionText(Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;)Landroid/widget/TextView;
@@ -623,7 +623,7 @@
 
     invoke-virtual {v4, v6, v7}, Landroid/widget/TextView;->measure(II)V
 
-    .line 314
+    .line 410
     iget-object v4, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$createContainer$2;->this$0:Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;
 
     invoke-static {v4}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->access$getDescriptionText2(Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;)Landroid/widget/TextView;
@@ -640,10 +640,10 @@
 
     invoke-virtual {v4, v6, v3}, Landroid/widget/TextView;->measure(II)V
 
-    .line 315
+    .line 411
     iget-object v3, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$createContainer$2;->this$0:Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;
 
-    invoke-static {v3}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->access$getButtonTextView(Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;)Landroid/widget/TextView;
+    invoke-static {v3}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->access$getActionButton(Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;)Lcom/iMe/ui/custom/ActionButton;
 
     move-result-object v3
 
@@ -663,7 +663,7 @@
 
     goto :goto_0
 
-    .line 317
+    .line 413
     :cond_0
     iget-object v4, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$createContainer$2;->this$0:Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;
 
@@ -689,7 +689,7 @@
 
     invoke-virtual {v4, v5, v6}, Landroid/widget/ImageView;->measure(II)V
 
-    .line 318
+    .line 414
     iget-object v4, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$createContainer$2;->this$0:Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;
 
     invoke-static {v4}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->access$getTitleTextView(Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;)Landroid/widget/TextView;
@@ -706,7 +706,7 @@
 
     invoke-virtual {v4, v5, v6}, Landroid/widget/TextView;->measure(II)V
 
-    .line 319
+    .line 415
     iget-object v4, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$createContainer$2;->this$0:Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;
 
     invoke-static {v4}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->access$getDescriptionText(Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;)Landroid/widget/TextView;
@@ -723,7 +723,7 @@
 
     invoke-virtual {v4, v5, v6}, Landroid/widget/TextView;->measure(II)V
 
-    .line 320
+    .line 416
     iget-object v4, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$createContainer$2;->this$0:Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;
 
     invoke-static {v4}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->access$getDescriptionText2(Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;)Landroid/widget/TextView;
@@ -740,10 +740,10 @@
 
     invoke-virtual {v4, v5, v3}, Landroid/widget/TextView;->measure(II)V
 
-    .line 321
+    .line 417
     iget-object v3, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$createContainer$2;->this$0:Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;
 
-    invoke-static {v3}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->access$getButtonTextView(Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;)Landroid/widget/TextView;
+    invoke-static {v3}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->access$getActionButton(Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;)Lcom/iMe/ui/custom/ActionButton;
 
     move-result-object v3
 
@@ -761,7 +761,7 @@
 
     invoke-virtual {v3, v1, p2}, Landroid/widget/TextView;->measure(II)V
 
-    .line 323
+    .line 419
     :goto_0
     invoke-virtual {p0, p1, v0}, Landroid/view/ViewGroup;->setMeasuredDimension(II)V
 

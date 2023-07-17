@@ -9,8 +9,10 @@ import com.iMe.navigation.wallet.coordinator.TokenBuyCoordinator;
 import com.iMe.navigation.wallet.coordinator.WalletFlowCoordinator;
 import com.iMe.p031ui.base.mvp.MvpFragment;
 import com.iMe.p031ui.wallet.common.WalletTabFragment;
+import com.iMe.storage.domain.interactor.wallet.WalletInteractor;
 import com.iMe.storage.domain.manager.crypto.CryptoAccessManager;
 import com.iMe.storage.domain.storage.CryptoPreferenceHelper;
+import com.iMe.storage.domain.utils.p030rx.SchedulersProvider;
 import com.iMe.storage.domain.utils.system.ResourceManager;
 import java.util.List;
 import kotlin.Unit;
@@ -45,10 +47,10 @@ final class NavigationModuleKt$presentationNavigationModule$1 extends Lambda imp
     /* compiled from: NavigationModule.kt */
     /* renamed from: com.iMe.di.module.NavigationModuleKt$presentationNavigationModule$1$1 */
     /* loaded from: classes3.dex */
-    public static final class C13361 extends Lambda implements Function2<Scope, ParametersHolder, NavigationRouter<MvpFragment>> {
-        public static final C13361 INSTANCE = new C13361();
+    public static final class C13441 extends Lambda implements Function2<Scope, ParametersHolder, NavigationRouter<MvpFragment>> {
+        public static final C13441 INSTANCE = new C13441();
 
-        C13361() {
+        C13441() {
             super(2);
         }
 
@@ -76,51 +78,51 @@ final class NavigationModuleKt$presentationNavigationModule$1 extends Lambda imp
         List emptyList6;
         Intrinsics.checkNotNullParameter(module, "$this$module");
         StringQualifier common_bottom_navigator = NavigationModuleKt.getCOMMON_BOTTOM_NAVIGATOR();
-        C13361 c13361 = C13361.INSTANCE;
+        C13441 c13441 = C13441.INSTANCE;
         ScopeRegistry.Companion companion = ScopeRegistry.Companion;
         StringQualifier rootScopeQualifier = companion.getRootScopeQualifier();
         Kind kind = Kind.Factory;
         emptyList = CollectionsKt__CollectionsKt.emptyList();
-        InstanceFactory<?> factoryInstanceFactory = new FactoryInstanceFactory<>(new BeanDefinition(rootScopeQualifier, Reflection.getOrCreateKotlinClass(NavigationRouter.class), common_bottom_navigator, c13361, kind, emptyList));
+        InstanceFactory<?> factoryInstanceFactory = new FactoryInstanceFactory<>(new BeanDefinition(rootScopeQualifier, Reflection.getOrCreateKotlinClass(NavigationRouter.class), common_bottom_navigator, c13441, kind, emptyList));
         module.indexPrimaryType(factoryInstanceFactory);
         new KoinDefinition(module, factoryInstanceFactory);
         StringQualifier common_tabs_navigator = NavigationModuleKt.getCOMMON_TABS_NAVIGATOR();
-        C13372 c13372 = C13372.INSTANCE;
+        C13452 c13452 = C13452.INSTANCE;
         StringQualifier rootScopeQualifier2 = companion.getRootScopeQualifier();
         emptyList2 = CollectionsKt__CollectionsKt.emptyList();
-        InstanceFactory<?> factoryInstanceFactory2 = new FactoryInstanceFactory<>(new BeanDefinition(rootScopeQualifier2, Reflection.getOrCreateKotlinClass(NavigationRouter.class), common_tabs_navigator, c13372, kind, emptyList2));
+        InstanceFactory<?> factoryInstanceFactory2 = new FactoryInstanceFactory<>(new BeanDefinition(rootScopeQualifier2, Reflection.getOrCreateKotlinClass(NavigationRouter.class), common_tabs_navigator, c13452, kind, emptyList2));
         module.indexPrimaryType(factoryInstanceFactory2);
         new KoinDefinition(module, factoryInstanceFactory2);
         StringQualifier wallet_root_navigator = NavigationModuleKt.getWALLET_ROOT_NAVIGATOR();
-        C13383 c13383 = C13383.INSTANCE;
+        C13463 c13463 = C13463.INSTANCE;
         StringQualifier rootScopeQualifier3 = companion.getRootScopeQualifier();
         emptyList3 = CollectionsKt__CollectionsKt.emptyList();
-        InstanceFactory<?> factoryInstanceFactory3 = new FactoryInstanceFactory<>(new BeanDefinition(rootScopeQualifier3, Reflection.getOrCreateKotlinClass(NavigationRouter.class), wallet_root_navigator, c13383, kind, emptyList3));
+        InstanceFactory<?> factoryInstanceFactory3 = new FactoryInstanceFactory<>(new BeanDefinition(rootScopeQualifier3, Reflection.getOrCreateKotlinClass(NavigationRouter.class), wallet_root_navigator, c13463, kind, emptyList3));
         module.indexPrimaryType(factoryInstanceFactory3);
         new KoinDefinition(module, factoryInstanceFactory3);
-        C13394 c13394 = C13394.INSTANCE;
+        C13474 c13474 = C13474.INSTANCE;
         StringQualifier rootScopeQualifier4 = companion.getRootScopeQualifier();
         Kind kind2 = Kind.Singleton;
         emptyList4 = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier4, Reflection.getOrCreateKotlinClass(WalletFlowCoordinator.class), null, c13394, kind2, emptyList4));
+        SingleInstanceFactory<?> singleInstanceFactory = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier4, Reflection.getOrCreateKotlinClass(WalletFlowCoordinator.class), null, c13474, kind2, emptyList4));
         module.indexPrimaryType(singleInstanceFactory);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory);
         }
         new KoinDefinition(module, singleInstanceFactory);
-        C13405 c13405 = C13405.INSTANCE;
+        C13485 c13485 = C13485.INSTANCE;
         StringQualifier rootScopeQualifier5 = companion.getRootScopeQualifier();
         emptyList5 = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory2 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier5, Reflection.getOrCreateKotlinClass(PinCodeCoordinator.class), null, c13405, kind2, emptyList5));
+        SingleInstanceFactory<?> singleInstanceFactory2 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier5, Reflection.getOrCreateKotlinClass(PinCodeCoordinator.class), null, c13485, kind2, emptyList5));
         module.indexPrimaryType(singleInstanceFactory2);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory2);
         }
         new KoinDefinition(module, singleInstanceFactory2);
-        C13416 c13416 = C13416.INSTANCE;
+        C13496 c13496 = C13496.INSTANCE;
         StringQualifier rootScopeQualifier6 = companion.getRootScopeQualifier();
         emptyList6 = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory3 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier6, Reflection.getOrCreateKotlinClass(TokenBuyCoordinator.class), null, c13416, kind2, emptyList6));
+        SingleInstanceFactory<?> singleInstanceFactory3 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier6, Reflection.getOrCreateKotlinClass(TokenBuyCoordinator.class), null, c13496, kind2, emptyList6));
         module.indexPrimaryType(singleInstanceFactory3);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory3);
@@ -132,10 +134,10 @@ final class NavigationModuleKt$presentationNavigationModule$1 extends Lambda imp
     /* compiled from: NavigationModule.kt */
     /* renamed from: com.iMe.di.module.NavigationModuleKt$presentationNavigationModule$1$3 */
     /* loaded from: classes3.dex */
-    public static final class C13383 extends Lambda implements Function2<Scope, ParametersHolder, NavigationRouter<WalletTabFragment>> {
-        public static final C13383 INSTANCE = new C13383();
+    public static final class C13463 extends Lambda implements Function2<Scope, ParametersHolder, NavigationRouter<WalletTabFragment>> {
+        public static final C13463 INSTANCE = new C13463();
 
-        C13383() {
+        C13463() {
             super(2);
         }
 
@@ -151,10 +153,10 @@ final class NavigationModuleKt$presentationNavigationModule$1 extends Lambda imp
     /* compiled from: NavigationModule.kt */
     /* renamed from: com.iMe.di.module.NavigationModuleKt$presentationNavigationModule$1$4 */
     /* loaded from: classes3.dex */
-    public static final class C13394 extends Lambda implements Function2<Scope, ParametersHolder, WalletFlowCoordinator> {
-        public static final C13394 INSTANCE = new C13394();
+    public static final class C13474 extends Lambda implements Function2<Scope, ParametersHolder, WalletFlowCoordinator> {
+        public static final C13474 INSTANCE = new C13474();
 
-        C13394() {
+        C13474() {
             super(2);
         }
 
@@ -162,7 +164,7 @@ final class NavigationModuleKt$presentationNavigationModule$1 extends Lambda imp
         public final WalletFlowCoordinator invoke(Scope single, ParametersHolder it) {
             Intrinsics.checkNotNullParameter(single, "$this$single");
             Intrinsics.checkNotNullParameter(it, "it");
-            return new WalletFlowCoordinator((CryptoAccessManager) single.get(Reflection.getOrCreateKotlinClass(CryptoAccessManager.class), null, null), (CryptoPreferenceHelper) single.get(Reflection.getOrCreateKotlinClass(CryptoPreferenceHelper.class), null, null), (PinCodeCoordinator) single.get(Reflection.getOrCreateKotlinClass(PinCodeCoordinator.class), null, null));
+            return new WalletFlowCoordinator((CryptoAccessManager) single.get(Reflection.getOrCreateKotlinClass(CryptoAccessManager.class), null, null), (CryptoPreferenceHelper) single.get(Reflection.getOrCreateKotlinClass(CryptoPreferenceHelper.class), null, null), (PinCodeCoordinator) single.get(Reflection.getOrCreateKotlinClass(PinCodeCoordinator.class), null, null), (ResourceManager) single.get(Reflection.getOrCreateKotlinClass(ResourceManager.class), null, null), (SchedulersProvider) single.get(Reflection.getOrCreateKotlinClass(SchedulersProvider.class), null, null), (WalletInteractor) single.get(Reflection.getOrCreateKotlinClass(WalletInteractor.class), null, null));
         }
     }
 
@@ -170,10 +172,10 @@ final class NavigationModuleKt$presentationNavigationModule$1 extends Lambda imp
     /* compiled from: NavigationModule.kt */
     /* renamed from: com.iMe.di.module.NavigationModuleKt$presentationNavigationModule$1$5 */
     /* loaded from: classes3.dex */
-    public static final class C13405 extends Lambda implements Function2<Scope, ParametersHolder, PinCodeCoordinator> {
-        public static final C13405 INSTANCE = new C13405();
+    public static final class C13485 extends Lambda implements Function2<Scope, ParametersHolder, PinCodeCoordinator> {
+        public static final C13485 INSTANCE = new C13485();
 
-        C13405() {
+        C13485() {
             super(2);
         }
 
@@ -189,10 +191,10 @@ final class NavigationModuleKt$presentationNavigationModule$1 extends Lambda imp
     /* compiled from: NavigationModule.kt */
     /* renamed from: com.iMe.di.module.NavigationModuleKt$presentationNavigationModule$1$6 */
     /* loaded from: classes3.dex */
-    public static final class C13416 extends Lambda implements Function2<Scope, ParametersHolder, TokenBuyCoordinator> {
-        public static final C13416 INSTANCE = new C13416();
+    public static final class C13496 extends Lambda implements Function2<Scope, ParametersHolder, TokenBuyCoordinator> {
+        public static final C13496 INSTANCE = new C13496();
 
-        C13416() {
+        C13496() {
             super(2);
         }
 
@@ -208,10 +210,10 @@ final class NavigationModuleKt$presentationNavigationModule$1 extends Lambda imp
     /* compiled from: NavigationModule.kt */
     /* renamed from: com.iMe.di.module.NavigationModuleKt$presentationNavigationModule$1$2 */
     /* loaded from: classes3.dex */
-    public static final class C13372 extends Lambda implements Function2<Scope, ParametersHolder, NavigationRouter<MvpFragment>> {
-        public static final C13372 INSTANCE = new C13372();
+    public static final class C13452 extends Lambda implements Function2<Scope, ParametersHolder, NavigationRouter<MvpFragment>> {
+        public static final C13452 INSTANCE = new C13452();
 
-        C13372() {
+        C13452() {
             super(2);
         }
 

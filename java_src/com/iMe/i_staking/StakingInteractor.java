@@ -2,7 +2,6 @@ package com.iMe.i_staking;
 
 import com.iMe.i_staking.repository.StakingRepository;
 import com.iMe.storage.domain.model.Result;
-import com.iMe.storage.domain.model.crypto.NetworkType;
 import com.iMe.storage.domain.model.staking.StakingApprovalInfo;
 import com.iMe.storage.domain.model.staking.StakingApprovalTokenType;
 import com.iMe.storage.domain.model.staking.StakingDetailedMetadata;
@@ -60,7 +59,7 @@ public final class StakingInteractor {
         return subscribeOn;
     }
 
-    public static /* synthetic */ Observable getStakingOperations$default(StakingInteractor stakingInteractor, Long l, StakingOperationType stakingOperationType, NetworkType networkType, String str, int i, Object obj) {
+    public static /* synthetic */ Observable getStakingOperations$default(StakingInteractor stakingInteractor, Long l, StakingOperationType stakingOperationType, String str, String str2, int i, Object obj) {
         if ((i & 1) != 0) {
             l = null;
         }
@@ -68,13 +67,13 @@ public final class StakingInteractor {
             stakingOperationType = null;
         }
         if ((i & 4) != 0) {
-            networkType = null;
+            str = null;
         }
-        return stakingInteractor.getStakingOperations(l, stakingOperationType, networkType, str);
+        return stakingInteractor.getStakingOperations(l, stakingOperationType, str, str2);
     }
 
-    public final Observable<Result<StakingOperationsPaged>> getStakingOperations(Long l, StakingOperationType stakingOperationType, NetworkType networkType, String str) {
-        Observable<Result<StakingOperationsPaged>> subscribeOn = this.stakingRepository.getStakingOperations(l, stakingOperationType, networkType, str).startWith((Observable<Result<StakingOperationsPaged>>) Result.Companion.loading$default(Result.Companion, null, 1, null)).subscribeOn(this.schedulersProvider.mo699io());
+    public final Observable<Result<StakingOperationsPaged>> getStakingOperations(Long l, StakingOperationType stakingOperationType, String str, String str2) {
+        Observable<Result<StakingOperationsPaged>> subscribeOn = this.stakingRepository.getStakingOperations(l, stakingOperationType, str, str2).startWith((Observable<Result<StakingOperationsPaged>>) Result.Companion.loading$default(Result.Companion, null, 1, null)).subscribeOn(this.schedulersProvider.mo699io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn, "stakingRepository\n      …(schedulersProvider.io())");
         return subscribeOn;
     }

@@ -8,6 +8,7 @@ import kotlin.jvm.internal.Intrinsics;
 /* loaded from: classes3.dex */
 public final class AppCacheDatabaseMigrations {
     public static final AppCacheDatabaseMigrations INSTANCE = new AppCacheDatabaseMigrations();
+    private static final AppCacheDatabaseMigrations$MIGRATION_10_11$1 MIGRATION_10_11;
     private static final AppCacheDatabaseMigrations$MIGRATION_2_3$1 MIGRATION_2_3;
     private static final AppCacheDatabaseMigrations$MIGRATION_3_4$1 MIGRATION_3_4;
     private static final AppCacheDatabaseMigrations$MIGRATION_4_5$1 MIGRATION_4_5;
@@ -28,6 +29,7 @@ public final class AppCacheDatabaseMigrations {
     /* JADX WARN: Type inference failed for: r4v0, types: [com.iMe.storage.data.locale.db.migration.AppCacheDatabaseMigrations$MIGRATION_6_7$1] */
     /* JADX WARN: Type inference failed for: r5v0, types: [com.iMe.storage.data.locale.db.migration.AppCacheDatabaseMigrations$MIGRATION_7_9$1] */
     /* JADX WARN: Type inference failed for: r6v0, types: [com.iMe.storage.data.locale.db.migration.AppCacheDatabaseMigrations$MIGRATION_9_10$1] */
+    /* JADX WARN: Type inference failed for: r7v0, types: [com.iMe.storage.data.locale.db.migration.AppCacheDatabaseMigrations$MIGRATION_10_11$1] */
     static {
         ?? r0 = new Migration() { // from class: com.iMe.storage.data.locale.db.migration.AppCacheDatabaseMigrations$MIGRATION_2_3$1
             @Override // androidx.room.migration.Migration
@@ -94,7 +96,16 @@ public final class AppCacheDatabaseMigrations {
             }
         };
         MIGRATION_9_10 = r6;
-        migrations = new Migration[]{r0, r1, r2, r3, r4, r5, r6};
+        ?? r7 = new Migration() { // from class: com.iMe.storage.data.locale.db.migration.AppCacheDatabaseMigrations$MIGRATION_10_11$1
+            @Override // androidx.room.migration.Migration
+            public void migrate(SupportSQLiteDatabase database) {
+                Intrinsics.checkNotNullParameter(database, "database");
+                database.execSQL("DROP TABLE WalletTokenBalanceDb");
+                database.execSQL("CREATE TABLE IF NOT EXISTS WalletTokenBalanceDb (tgUserId INTEGER NOT NULL, total REAL NOT NULL, totalInFiatValue REAL NOT NULL, totalInFiatSymbol TEXT NOT NULL, totalInFiatTicker TEXT NOT NULL, rateToFiatValue REAL NOT NULL, rateToFiatSymbol TEXT NOT NULL, rateToFiatTicker TEXT NOT NULL, ratePercentageChange24h REAL NOT NULL, address TEXT NOT NULL, networkId TEXT NOT NULL, avatarUrl TEXT NOT NULL, decimals INTEGER NOT NULL, ticker TEXT NOT NULL, isCoin INTEGER NOT NULL, name TEXT NOT NULL, website TEXT NOT NULL, PRIMARY KEY(tgUserId, ticker, networkId))");
+            }
+        };
+        MIGRATION_10_11 = r7;
+        migrations = new Migration[]{r0, r1, r2, r3, r4, r5, r6, r7};
     }
 
     public final Migration[] getMigrations() {

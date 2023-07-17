@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/Components/LinkActionView$$ExternalSyntheticLambda5;->f$0:Lorg/telegram/ui/Components/LinkActionView;
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/Components/LinkActionView;->$r8$lambda$GIToXdc7IZvryzAmmtgOo3ZOmGw(Lorg/telegram/ui/Components/LinkActionView;Landroid/view/View;)V
+    invoke-static {v0, p1}, Lorg/telegram/ui/Components/LinkActionView;->$r8$lambda$gK7hsKfVzx55yM5C4b_LsRCqmJU(Lorg/telegram/ui/Components/LinkActionView;Landroid/view/View;)V
 
     return-void
 .end method

@@ -460,7 +460,7 @@
 
     const/4 v1, 0x0
 
-    const-string v2, "rotation-degrees"
+    const-string/jumbo v2, "rotation-degrees"
 
     invoke-virtual {v0, v2, v1}, Landroid/media/MediaFormat;->setInteger(Ljava/lang/String;I)V
 

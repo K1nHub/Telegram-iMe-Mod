@@ -22,7 +22,7 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 17
+    .line 18
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -38,14 +38,14 @@
 
 
 # virtual methods
-.method public final map(Lcom/iMe/storage/domain/model/wallet/token/TokenCode;)Lcom/iMe/storage/domain/model/crypto/simplex/DigitalCurrency;
-    .locals 6
+.method public final map(Ljava/lang/String;)Lcom/iMe/storage/domain/model/crypto/simplex/DigitalCurrency;
+    .locals 5
 
-    const-string v0, "tokenCode"
+    const-string v0, "tokenTicker"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 19
+    .line 20
     invoke-static {}, Lcom/iMe/storage/domain/model/crypto/simplex/DigitalCurrency;->values()[Lcom/iMe/storage/domain/model/crypto/simplex/DigitalCurrency;
 
     move-result-object v0
@@ -63,11 +63,7 @@
 
     move-result-object v4
 
-    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;->getName()Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-static {v4, v5}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v4, p1}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v4
 

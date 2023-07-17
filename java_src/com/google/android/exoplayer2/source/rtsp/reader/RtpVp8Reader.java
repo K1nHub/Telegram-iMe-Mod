@@ -1,6 +1,6 @@
 package com.google.android.exoplayer2.source.rtsp.reader;
 
-import com.google.android.exoplayer2.C0475C;
+import com.google.android.exoplayer2.C0480C;
 import com.google.android.exoplayer2.Format;
 import com.google.android.exoplayer2.extractor.ExtractorOutput;
 import com.google.android.exoplayer2.extractor.TrackOutput;
@@ -19,10 +19,10 @@ final class RtpVp8Reader implements RtpPayloadReader {
     private boolean isOutputFormatSet;
     private final RtpPayloadFormat payloadFormat;
     private TrackOutput trackOutput;
-    private long firstReceivedTimestamp = C0475C.TIME_UNSET;
+    private long firstReceivedTimestamp = C0480C.TIME_UNSET;
     private int previousSequenceNumber = -1;
     private int fragmentedSampleSizeBytes = -1;
-    private long fragmentedSampleTimeUs = C0475C.TIME_UNSET;
+    private long fragmentedSampleTimeUs = C0480C.TIME_UNSET;
     private long startTimeOffsetUs = 0;
 
     public RtpVp8Reader(RtpPayloadFormat rtpPayloadFormat) {
@@ -38,7 +38,7 @@ final class RtpVp8Reader implements RtpPayloadReader {
 
     @Override // com.google.android.exoplayer2.source.rtsp.reader.RtpPayloadReader
     public void onReceivingFirstPacket(long j, int i) {
-        Assertions.checkState(this.firstReceivedTimestamp == C0475C.TIME_UNSET);
+        Assertions.checkState(this.firstReceivedTimestamp == C0480C.TIME_UNSET);
         this.firstReceivedTimestamp = j;
     }
 
@@ -121,7 +121,7 @@ final class RtpVp8Reader implements RtpPayloadReader {
         boolean z = this.isKeyFrame;
         ((TrackOutput) Assertions.checkNotNull(this.trackOutput)).sampleMetadata(j, z ? 1 : 0, this.fragmentedSampleSizeBytes, 0, null);
         this.fragmentedSampleSizeBytes = -1;
-        this.fragmentedSampleTimeUs = C0475C.TIME_UNSET;
+        this.fragmentedSampleTimeUs = C0480C.TIME_UNSET;
         this.gotFirstPacketOfVp8Frame = false;
     }
 }

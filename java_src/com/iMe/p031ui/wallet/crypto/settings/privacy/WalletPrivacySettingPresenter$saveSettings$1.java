@@ -8,7 +8,7 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Lambda;
 /* compiled from: WalletPrivacySettingPresenter.kt */
 /* renamed from: com.iMe.ui.wallet.crypto.settings.privacy.WalletPrivacySettingPresenter$saveSettings$1 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 final class WalletPrivacySettingPresenter$saveSettings$1 extends Lambda implements Function2<Result<? extends Boolean>, Result<? extends Boolean>, List<? extends Result<? extends Boolean>>> {
     public static final WalletPrivacySettingPresenter$saveSettings$1 INSTANCE = new WalletPrivacySettingPresenter$saveSettings$1();
 

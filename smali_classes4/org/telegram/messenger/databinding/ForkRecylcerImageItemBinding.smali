@@ -116,6 +116,47 @@
     throw v0
 .end method
 
+.method public static inflate(Landroid/view/LayoutInflater;)Lorg/telegram/messenger/databinding/ForkRecylcerImageItemBinding;
+    .locals 2
+
+    const/4 v0, 0x0
+
+    const/4 v1, 0x0
+
+    .line 49
+    invoke-static {p0, v0, v1}, Lorg/telegram/messenger/databinding/ForkRecylcerImageItemBinding;->inflate(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Z)Lorg/telegram/messenger/databinding/ForkRecylcerImageItemBinding;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public static inflate(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Z)Lorg/telegram/messenger/databinding/ForkRecylcerImageItemBinding;
+    .locals 2
+
+    .line 55
+    sget v0, Lorg/telegram/messenger/R$layout;->fork_recylcer_image_item:I
+
+    const/4 v1, 0x0
+
+    invoke-virtual {p0, v0, p1, v1}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
+
+    move-result-object p0
+
+    if-eqz p2, :cond_0
+
+    .line 57
+    invoke-virtual {p1, p0}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
+
+    .line 59
+    :cond_0
+    invoke-static {p0}, Lorg/telegram/messenger/databinding/ForkRecylcerImageItemBinding;->bind(Landroid/view/View;)Lorg/telegram/messenger/databinding/ForkRecylcerImageItemBinding;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
 
 # virtual methods
 .method public bridge synthetic getRoot()Landroid/view/View;

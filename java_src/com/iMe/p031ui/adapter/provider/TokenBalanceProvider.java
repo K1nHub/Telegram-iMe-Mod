@@ -5,23 +5,19 @@ import com.chad.library.adapter.base.viewholder.BaseViewHolder;
 import com.iMe.common.IdFabric$ViewTypes;
 import com.iMe.model.wallet.home.AccountItem;
 import com.iMe.storage.domain.model.wallet.token.TokenBalance;
-import com.iMe.storage.domain.model.wallet.token.TokenInfo;
-import com.iMe.storage.domain.storage.CryptoPreferenceHelper;
-import com.iMe.storage.domain.utils.extentions.model.TokenInfoExtKt;
+import com.iMe.storage.domain.model.wallet.token.TokenDetailed;
 import com.iMe.storage.domain.utils.system.ResourceManager;
 import com.iMe.utils.extentions.common.BaseQuickAdapterExtKt;
-import com.iMe.utils.extentions.model.wallet.PriceRateExtKt;
 import com.iMe.utils.extentions.model.wallet.TokenBalanceExtKt;
 import com.iMe.utils.formatter.MaskFormatter;
 import java.util.List;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3295R;
-import org.telegram.p044ui.ActionBar.Theme;
+import org.telegram.messenger.C3417R;
+import org.telegram.p043ui.ActionBar.Theme;
 /* compiled from: TokenBalanceProvider.kt */
 /* renamed from: com.iMe.ui.adapter.provider.TokenBalanceProvider */
 /* loaded from: classes.dex */
 public final class TokenBalanceProvider extends BaseNodeProvider<AccountItem.Token> {
-    private final CryptoPreferenceHelper cryptoPreferenceHelper;
     private final int itemViewType;
     private final int layoutId;
     private final ResourceManager resourceManager;
@@ -31,13 +27,11 @@ public final class TokenBalanceProvider extends BaseNodeProvider<AccountItem.Tok
         convert(baseViewHolder, (AccountItem.Token) obj, (List<? extends Object>) list);
     }
 
-    public TokenBalanceProvider(ResourceManager resourceManager, CryptoPreferenceHelper cryptoPreferenceHelper) {
+    public TokenBalanceProvider(ResourceManager resourceManager) {
         Intrinsics.checkNotNullParameter(resourceManager, "resourceManager");
-        Intrinsics.checkNotNullParameter(cryptoPreferenceHelper, "cryptoPreferenceHelper");
         this.resourceManager = resourceManager;
-        this.cryptoPreferenceHelper = cryptoPreferenceHelper;
         this.itemViewType = IdFabric$ViewTypes.TOKEN_BALANCE;
-        this.layoutId = C3295R.layout.fork_recycle_item_wallet_dashboard_account_balance;
+        this.layoutId = C3417R.layout.fork_recycle_item_wallet_dashboard_account_balance;
     }
 
     @Override // com.chad.library.adapter.base.provider.BaseItemProvider
@@ -54,28 +48,27 @@ public final class TokenBalanceProvider extends BaseNodeProvider<AccountItem.Tok
     public void convert(BaseViewHolder helper, AccountItem.Token item) {
         Intrinsics.checkNotNullParameter(helper, "helper");
         Intrinsics.checkNotNullParameter(item, "item");
-        int i = C3295R.C3298id.card_account_balance;
+        TokenBalance balance = item.getBalance();
+        int i = C3417R.C3420id.card_account_balance;
         BaseViewHolder themedCardBackground = BaseQuickAdapterExtKt.setThemedCardBackground(BaseQuickAdapterExtKt.setRippleForeground(helper, i, false), i, Theme.key_windowBackgroundWhite);
-        int i2 = C3295R.C3298id.constraint_trade_info;
+        int i2 = C3417R.C3420id.constraint_trade_info;
         BaseViewHolder themedRoundedBackground = BaseQuickAdapterExtKt.setThemedRoundedBackground(themedCardBackground, i2, Theme.key_chats_pinnedOverlay, 4.0f);
-        int i3 = C3295R.C3298id.text_account_title;
+        int i3 = C3417R.C3420id.text_account_title;
         BaseViewHolder themedTextColor = BaseQuickAdapterExtKt.setThemedTextColor(themedRoundedBackground, i3, Theme.key_chats_actionBackground);
-        int i4 = C3295R.C3298id.text_trade_pair;
-        int i5 = Theme.key_windowBackgroundWhiteGrayText2;
-        BaseViewHolder themedTextColor2 = BaseQuickAdapterExtKt.setThemedTextColor(themedTextColor, i4, i5);
-        int i6 = C3295R.C3298id.text_trade_price;
-        BaseViewHolder themedTextColor3 = BaseQuickAdapterExtKt.setThemedTextColor(themedTextColor2, i6, i5);
-        int i7 = C3295R.C3298id.text_account_balance_in_dollars;
-        BaseViewHolder themedTextColor4 = BaseQuickAdapterExtKt.setThemedTextColor(themedTextColor3, i7, i5);
-        int i8 = C3295R.C3298id.text_trade_percent;
-        BaseViewHolder themedTextColor5 = BaseQuickAdapterExtKt.setThemedTextColor(themedTextColor4, i8, PriceRateExtKt.getPriceDirection(item.getBalance().getPriceRate()).getColorKey());
-        int i9 = C3295R.C3298id.text_account_balance;
-        BaseViewHolder imageResource = BaseQuickAdapterExtKt.setMediumTypeface(BaseQuickAdapterExtKt.setThemedTextColor(themedTextColor5, i9, Theme.key_chat_messagePanelText), i9, i4, i8, i6, i7).setImageResource(C3295R.C3298id.image_coin_icon, TokenInfoExtKt.getLogo(item.getBalance().getInfo(), this.cryptoPreferenceHelper.getNetworkType()));
-        int i10 = C3295R.C3298id.image_price_direction;
-        BaseViewHolder themedImageColor = BaseQuickAdapterExtKt.setThemedImageColor(BaseQuickAdapterExtKt.setThemedImageColor(imageResource.setImageResource(i10, PriceRateExtKt.getPriceDirection(item.getBalance().getPriceRate()).getIcon()), i10, PriceRateExtKt.getPriceDirection(item.getBalance().getPriceRate()).getColorKey()), C3295R.C3298id.image_trade, i5);
+        int i4 = Theme.key_windowBackgroundWhiteGrayText2;
+        int i5 = C3417R.C3420id.text_trade_pair;
+        int i6 = C3417R.C3420id.text_trade_price;
+        int i7 = C3417R.C3420id.text_account_balance_in_dollars;
+        BaseViewHolder themedTextColor2 = BaseQuickAdapterExtKt.setThemedTextColor(themedTextColor, i4, i5, i6, i7);
+        int i8 = C3417R.C3420id.text_trade_percent;
+        BaseViewHolder themedTextColor3 = BaseQuickAdapterExtKt.setThemedTextColor(themedTextColor2, i8, TokenBalanceExtKt.getPriceDirection(balance).getColorKey());
+        int i9 = C3417R.C3420id.text_account_balance;
+        BaseViewHolder loadImage$default = BaseQuickAdapterExtKt.loadImage$default(BaseQuickAdapterExtKt.setMediumTypeface(BaseQuickAdapterExtKt.setThemedTextColor(themedTextColor3, i9, Theme.key_chat_messagePanelText), i9, i5, i8, i6, i7), C3417R.C3420id.image_coin_icon, balance.getToken().getAvatarUrl(), null, false, 12, null);
+        int i10 = C3417R.C3420id.image_price_direction;
+        BaseViewHolder themedImageColor = BaseQuickAdapterExtKt.setThemedImageColor(BaseQuickAdapterExtKt.setThemedImageColor(loadImage$default.setImageResource(i10, TokenBalanceExtKt.getPriceDirection(balance).getIcon()), i10, TokenBalanceExtKt.getPriceDirection(balance).getColorKey()), C3417R.C3420id.image_trade, i4);
         MaskFormatter maskFormatter = MaskFormatter.INSTANCE;
-        BaseViewHolder text = themedImageColor.setText(i9, maskFormatter.textOrMask(this.cryptoPreferenceHelper.getCryptoHiddenBalance(), TokenBalanceExtKt.getTotalBalance(item.getBalance()))).setText(i3, this.resourceManager.getString(item.getBalance().getInfo().getFullName()));
-        BaseQuickAdapterExtKt.applyForView(BaseQuickAdapterExtKt.setVisibleElseGone(text.setText(i4, this.resourceManager.getString(item.getBalance().getInfo().getShortName()) + " / " + this.resourceManager.getString(TokenInfo.Fiat.USD.INSTANCE.getFullName())).setText(i6, TokenBalanceExtKt.getDollarsRateText(item.getBalance(), this.resourceManager)).setText(i8, this.resourceManager.getString(C3295R.string.wallet_dashboard_balance_24h_rate, Float.valueOf(item.getBalance().getPriceRate().getRatePercentageChange24h()))).setText(i7, maskFormatter.textOrMask(this.cryptoPreferenceHelper.getCryptoHiddenBalance(), TokenBalanceExtKt.getDollarsBalanceText(item.getBalance(), this.resourceManager))), i2, item.isQuotationVisible()), C3295R.C3298id.text_coin_ticker, new TokenBalanceProvider$convert$1(item, this));
+        BaseViewHolder text = themedImageColor.setText(i9, maskFormatter.textOrMask(item.isBalanceHidden(), TokenBalanceExtKt.getTotalBalance(balance))).setText(i3, balance.getToken().getName());
+        BaseQuickAdapterExtKt.setVisibleElseGone(text.setText(i5, balance.getToken().getTicker() + " / " + TokenDetailed.Companion.getUSD().getName()).setText(i6, TokenBalanceExtKt.getDollarsRateText(balance)).setText(i8, this.resourceManager.getString(C3417R.string.wallet_dashboard_balance_24h_rate, Double.valueOf(balance.getRatePercentageChange24h()))).setText(i7, maskFormatter.textOrMask(item.isBalanceHidden(), TokenBalanceExtKt.getDollarsBalanceText(balance))).setText(C3417R.C3420id.text_coin_ticker, balance.getToken().getTicker()), i2, item.isQuotationVisible());
     }
 
     public void convert(BaseViewHolder helper, AccountItem.Token item, List<? extends Object> payloads) {
@@ -83,12 +76,12 @@ public final class TokenBalanceProvider extends BaseNodeProvider<AccountItem.Tok
         Intrinsics.checkNotNullParameter(item, "item");
         Intrinsics.checkNotNullParameter(payloads, "payloads");
         TokenBalance balance = item.getBalance();
-        int i = C3295R.C3298id.text_account_balance;
+        int i = C3417R.C3420id.text_account_balance;
         MaskFormatter maskFormatter = MaskFormatter.INSTANCE;
-        BaseViewHolder text = helper.setText(i, maskFormatter.textOrMask(this.cryptoPreferenceHelper.getCryptoHiddenBalance(), TokenBalanceExtKt.getTotalBalance(balance))).setText(C3295R.C3298id.text_account_balance_in_dollars, maskFormatter.textOrMask(this.cryptoPreferenceHelper.getCryptoHiddenBalance(), TokenBalanceExtKt.getDollarsBalanceText(balance, this.resourceManager)));
-        int i2 = C3295R.C3298id.image_price_direction;
-        BaseViewHolder imageResource = BaseQuickAdapterExtKt.setThemedImageColor(text.setImageResource(i2, PriceRateExtKt.getPriceDirection(balance.getPriceRate()).getIcon()), i2, PriceRateExtKt.getPriceDirection(balance.getPriceRate()).getColorKey()).setImageResource(C3295R.C3298id.image_coin_icon, TokenInfoExtKt.getLogo(balance.getInfo(), this.cryptoPreferenceHelper.getNetworkType()));
-        int i3 = C3295R.C3298id.text_trade_percent;
-        BaseQuickAdapterExtKt.setThemedTextColor(imageResource, i3, PriceRateExtKt.getPriceDirection(balance.getPriceRate()).getColorKey()).setText(C3295R.C3298id.text_trade_price, TokenBalanceExtKt.getDollarsRateText(balance, this.resourceManager)).setText(i3, this.resourceManager.getString(C3295R.string.wallet_dashboard_balance_24h_rate, Float.valueOf(balance.getPriceRate().getRatePercentageChange24h())));
+        BaseViewHolder text = helper.setText(i, maskFormatter.textOrMask(item.isBalanceHidden(), TokenBalanceExtKt.getTotalBalance(balance))).setText(C3417R.C3420id.text_account_balance_in_dollars, maskFormatter.textOrMask(item.isBalanceHidden(), TokenBalanceExtKt.getDollarsBalanceText(balance)));
+        int i2 = C3417R.C3420id.image_price_direction;
+        BaseViewHolder loadImage$default = BaseQuickAdapterExtKt.loadImage$default(BaseQuickAdapterExtKt.setThemedImageColor(text.setImageResource(i2, TokenBalanceExtKt.getPriceDirection(balance).getIcon()), i2, TokenBalanceExtKt.getPriceDirection(balance).getColorKey()), C3417R.C3420id.image_coin_icon, balance.getToken().getAvatarUrl(), null, false, 12, null);
+        int i3 = C3417R.C3420id.text_trade_percent;
+        BaseQuickAdapterExtKt.setThemedTextColor(loadImage$default, i3, TokenBalanceExtKt.getPriceDirection(balance).getColorKey()).setText(C3417R.C3420id.text_trade_price, TokenBalanceExtKt.getDollarsRateText(balance)).setText(i3, this.resourceManager.getString(C3417R.string.wallet_dashboard_balance_24h_rate, Double.valueOf(balance.getRatePercentageChange24h())));
     }
 }

@@ -46,7 +46,7 @@ public final class StakingDataSourceImpl$sendClaimExecute$$inlined$flatMapSucces
         }
         Observable<ApiBaseResponse<StakingOperationResponse>> sendClaimExecute = stakingApi.sendClaimExecute(new StakingTokenActionExecuteRequest(str, data));
         firebaseFunctionsErrorHandler = this.this$0.firebaseErrorHandler;
-        ObservableSource map = sendClaimExecute.map(new C1554xdf81e200(new C1549xc11af0c0(firebaseFunctionsErrorHandler)));
+        ObservableSource map = sendClaimExecute.map(new C1565xdf81e200(new C1560xc11af0c0(firebaseFunctionsErrorHandler)));
         Intrinsics.checkNotNullExpressionValue(map, "errorHandler: FirebaseFu…response).toError()\n    }");
         return map;
     }

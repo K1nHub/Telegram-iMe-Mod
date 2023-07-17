@@ -28,19 +28,19 @@
 .method public constructor <init>(Lorg/telegram/messenger/MessagesController;)V
     .locals 0
 
-    .line 339
+    .line 296
     iput-object p1, p0, Lorg/telegram/messenger/MessagesController$ChatlistUpdatesStat;->this$0:Lorg/telegram/messenger/MessagesController;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     const/4 p1, 0x0
 
-    .line 346
+    .line 303
     iput-boolean p1, p0, Lorg/telegram/messenger/MessagesController$ChatlistUpdatesStat;->loading:Z
 
     const/4 p1, 0x1
 
-    .line 340
+    .line 297
     iput-boolean p1, p0, Lorg/telegram/messenger/MessagesController$ChatlistUpdatesStat;->loading:Z
 
     return-void
@@ -49,24 +49,24 @@
 .method public constructor <init>(Lorg/telegram/messenger/MessagesController;Lorg/telegram/tgnet/TLRPC$TL_chatlists_chatlistUpdates;)V
     .locals 2
 
-    .line 342
+    .line 299
     iput-object p1, p0, Lorg/telegram/messenger/MessagesController$ChatlistUpdatesStat;->this$0:Lorg/telegram/messenger/MessagesController;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     const/4 p1, 0x0
 
-    .line 346
+    .line 303
     iput-boolean p1, p0, Lorg/telegram/messenger/MessagesController$ChatlistUpdatesStat;->loading:Z
 
-    .line 343
+    .line 300
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
 
     iput-wide v0, p0, Lorg/telegram/messenger/MessagesController$ChatlistUpdatesStat;->lastRequestTime:J
 
-    .line 344
+    .line 301
     iput-object p2, p0, Lorg/telegram/messenger/MessagesController$ChatlistUpdatesStat;->lastValue:Lorg/telegram/tgnet/TLRPC$TL_chatlists_chatlistUpdates;
 
     return-void

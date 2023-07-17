@@ -282,7 +282,7 @@
 
     new-instance v2, Lorg/telegram/messenger/EmuDetector$Property;
 
-    const-string v3, "ro.bootloader"
+    const-string/jumbo v3, "ro.bootloader"
 
     const-string/jumbo v5, "unknown"
 
@@ -294,7 +294,7 @@
 
     new-instance v2, Lorg/telegram/messenger/EmuDetector$Property;
 
-    const-string v3, "ro.bootmode"
+    const-string/jumbo v3, "ro.bootmode"
 
     invoke-direct {v2, v3, v5}, Lorg/telegram/messenger/EmuDetector$Property;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
@@ -304,7 +304,7 @@
 
     new-instance v2, Lorg/telegram/messenger/EmuDetector$Property;
 
-    const-string v3, "ro.hardware"
+    const-string/jumbo v3, "ro.hardware"
 
     invoke-direct {v2, v3, v0}, Lorg/telegram/messenger/EmuDetector$Property;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
@@ -314,7 +314,7 @@
 
     new-instance v0, Lorg/telegram/messenger/EmuDetector$Property;
 
-    const-string v2, "ro.kernel.android.qemud"
+    const-string/jumbo v2, "ro.kernel.android.qemud"
 
     invoke-direct {v0, v2, v4}, Lorg/telegram/messenger/EmuDetector$Property;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
@@ -324,7 +324,7 @@
 
     new-instance v0, Lorg/telegram/messenger/EmuDetector$Property;
 
-    const-string v2, "ro.kernel.qemu.gles"
+    const-string/jumbo v2, "ro.kernel.qemu.gles"
 
     invoke-direct {v0, v2, v4}, Lorg/telegram/messenger/EmuDetector$Property;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
@@ -334,7 +334,7 @@
 
     new-instance v0, Lorg/telegram/messenger/EmuDetector$Property;
 
-    const-string v2, "ro.kernel.qemu"
+    const-string/jumbo v2, "ro.kernel.qemu"
 
     const-string v3, "1"
 
@@ -346,7 +346,7 @@
 
     new-instance v0, Lorg/telegram/messenger/EmuDetector$Property;
 
-    const-string v2, "ro.product.device"
+    const-string/jumbo v2, "ro.product.device"
 
     const-string v3, "generic"
 
@@ -358,9 +358,9 @@
 
     new-instance v0, Lorg/telegram/messenger/EmuDetector$Property;
 
-    const-string v2, "ro.product.model"
+    const-string/jumbo v2, "ro.product.model"
 
-    const-string v3, "sdk"
+    const-string/jumbo v3, "sdk"
 
     invoke-direct {v0, v2, v3}, Lorg/telegram/messenger/EmuDetector$Property;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
@@ -370,7 +370,7 @@
 
     new-instance v0, Lorg/telegram/messenger/EmuDetector$Property;
 
-    const-string v2, "ro.product.name"
+    const-string/jumbo v2, "ro.product.name"
 
     invoke-direct {v0, v2, v3}, Lorg/telegram/messenger/EmuDetector$Property;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
@@ -380,7 +380,7 @@
 
     new-instance v0, Lorg/telegram/messenger/EmuDetector$Property;
 
-    const-string v2, "ro.serialno"
+    const-string/jumbo v2, "ro.serialno"
 
     invoke-direct {v0, v2, v4}, Lorg/telegram/messenger/EmuDetector$Property;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
@@ -725,7 +725,7 @@
 
     sget-object v0, Landroid/os/Build;->PRODUCT:Ljava/lang/String;
 
-    const-string v6, "sdk"
+    const-string/jumbo v6, "sdk"
 
     .line 218
     invoke-virtual {v0, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -741,7 +741,7 @@
 
     if-nez v6, :cond_1
 
-    const-string v6, "sdk_x86"
+    const-string/jumbo v6, "sdk_x86"
 
     .line 220
     invoke-virtual {v0, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z

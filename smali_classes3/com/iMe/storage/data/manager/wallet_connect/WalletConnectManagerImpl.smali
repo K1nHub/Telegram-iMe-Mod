@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nWalletConnectManagerImpl.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WalletConnectManagerImpl.kt\ncom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 RxEventBus.kt\ncom/iMe/storage/domain/utils/rx/RxEventBus\n*L\n1#1,429:1\n1855#2,2:430\n16#3,3:432\n*S KotlinDebug\n*F\n+ 1 WalletConnectManagerImpl.kt\ncom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl\n*L\n101#1:430,2\n328#1:432,3\n*E\n"
+    value = "SMAP\nWalletConnectManagerImpl.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WalletConnectManagerImpl.kt\ncom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 RxEventBus.kt\ncom/iMe/storage/domain/utils/rx/RxEventBus\n*L\n1#1,424:1\n1855#2,2:425\n16#3,3:427\n*S KotlinDebug\n*F\n+ 1 WalletConnectManagerImpl.kt\ncom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl\n*L\n100#1:425,2\n323#1:427,3\n*E\n"
 .end annotation
 
 
@@ -215,38 +215,38 @@
 
     invoke-static {p7, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 47
+    .line 46
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 48
+    .line 47
     iput-object p1, p0, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;->cryptoAccessManager:Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;
 
-    .line 49
+    .line 48
     iput-object p2, p0, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;->cryptoPreferenceHelper:Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
 
-    .line 50
+    .line 49
     iput-object p3, p0, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;->gson:Lcom/google/gson/Gson;
 
-    .line 51
+    .line 50
     iput-object p4, p0, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;->okHttpClient:Lokhttp3/OkHttpClient;
 
-    .line 52
+    .line 51
     iput-object p5, p0, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;->rxEventBus:Lcom/iMe/storage/domain/utils/rx/RxEventBus;
 
-    .line 53
+    .line 52
     iput-object p6, p0, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;->schedulersProvider:Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
-    .line 54
+    .line 53
     iput-object p7, p0, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;->walletConnectInteractor:Lcom/iMe/storage/domain/interactor/crypto/wallet_connect/WalletConnectInteractor;
 
-    .line 58
+    .line 57
     new-instance p1, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl$eventsDelegate$1;
 
     invoke-direct {p1}, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl$eventsDelegate$1;-><init>()V
 
     iput-object p1, p0, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;->eventsDelegate:Lcom/iMe/storage/domain/manager/wallet_connect/WalletConnectEventsDelegate;
 
-    .line 61
+    .line 60
     invoke-static {}, Lio/reactivex/subjects/PublishSubject;->create()Lio/reactivex/subjects/PublishSubject;
 
     move-result-object p1
@@ -257,7 +257,7 @@
 
     iput-object p1, p0, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;->errorsSubject:Lio/reactivex/subjects/PublishSubject;
 
-    .line 62
+    .line 61
     new-instance p1, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl$gsonBuilder$2;
 
     invoke-direct {p1, p0}, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl$gsonBuilder$2;-><init>(Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;)V
@@ -268,31 +268,31 @@
 
     iput-object p1, p0, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;->gsonBuilder$delegate:Lkotlin/Lazy;
 
-    .line 63
+    .line 62
     new-instance p1, Ljava/util/ArrayList;
 
     invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
 
     iput-object p1, p0, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;->sessionStoreItems:Ljava/util/List;
 
-    .line 64
+    .line 63
     new-instance p1, Ljava/util/LinkedHashMap;
 
     invoke-direct {p1}, Ljava/util/LinkedHashMap;-><init>()V
 
     iput-object p1, p0, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;->wcClients:Ljava/util/Map;
 
-    .line 65
+    .line 64
     new-instance p1, Lio/reactivex/disposables/CompositeDisposable;
 
     invoke-direct {p1}, Lio/reactivex/disposables/CompositeDisposable;-><init>()V
 
     iput-object p1, p0, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;->subscriptions:Lio/reactivex/disposables/CompositeDisposable;
 
-    .line 71
+    .line 70
     invoke-direct {p0}, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;->subscribeToErrors()V
 
-    .line 72
+    .line 71
     invoke-direct {p0}, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;->subscribeToRxEvents()V
 
     return-void
@@ -301,7 +301,7 @@
 .method public static final synthetic access$getCryptoAccessManager$p(Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;)Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;
     .locals 0
 
-    .line 47
+    .line 46
     iget-object p0, p0, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;->cryptoAccessManager:Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;
 
     return-object p0
@@ -310,7 +310,7 @@
 .method public static final synthetic access$getCryptoPreferenceHelper$p(Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;)Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
     .locals 0
 
-    .line 47
+    .line 46
     iget-object p0, p0, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;->cryptoPreferenceHelper:Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
 
     return-object p0
@@ -319,7 +319,7 @@
 .method public static final synthetic access$getErrorsSubject$p(Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;)Lio/reactivex/subjects/PublishSubject;
     .locals 0
 
-    .line 47
+    .line 46
     iget-object p0, p0, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;->errorsSubject:Lio/reactivex/subjects/PublishSubject;
 
     return-object p0
@@ -328,7 +328,7 @@
 .method public static final synthetic access$getGson$p(Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;)Lcom/google/gson/Gson;
     .locals 0
 
-    .line 47
+    .line 46
     iget-object p0, p0, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;->gson:Lcom/google/gson/Gson;
 
     return-object p0
@@ -337,7 +337,7 @@
 .method public static final synthetic access$getGsonBuilder(Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;)Lcom/google/gson/GsonBuilder;
     .locals 0
 
-    .line 47
+    .line 46
     invoke-direct {p0}, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;->getGsonBuilder()Lcom/google/gson/GsonBuilder;
 
     move-result-object p0
@@ -348,7 +348,7 @@
 .method public static final synthetic access$getOkHttpClient$p(Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;)Lokhttp3/OkHttpClient;
     .locals 0
 
-    .line 47
+    .line 46
     iget-object p0, p0, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;->okHttpClient:Lokhttp3/OkHttpClient;
 
     return-object p0
@@ -357,7 +357,7 @@
 .method public static final synthetic access$getSchedulersProvider$p(Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;)Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
     .locals 0
 
-    .line 47
+    .line 46
     iget-object p0, p0, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;->schedulersProvider:Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
     return-object p0
@@ -366,7 +366,7 @@
 .method public static final synthetic access$getSessionStoreItems$p(Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;)Ljava/util/List;
     .locals 0
 
-    .line 47
+    .line 46
     iget-object p0, p0, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;->sessionStoreItems:Ljava/util/List;
 
     return-object p0
@@ -375,7 +375,7 @@
 .method public static final synthetic access$getSubscriptions$p(Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;)Lio/reactivex/disposables/CompositeDisposable;
     .locals 0
 
-    .line 47
+    .line 46
     iget-object p0, p0, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;->subscriptions:Lio/reactivex/disposables/CompositeDisposable;
 
     return-object p0
@@ -384,7 +384,7 @@
 .method public static final synthetic access$getWallet(Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;)Lcom/iMe/storage/domain/model/crypto/Wallet$EVM;
     .locals 0
 
-    .line 47
+    .line 46
     invoke-direct {p0}, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;->getWallet()Lcom/iMe/storage/domain/model/crypto/Wallet$EVM;
 
     move-result-object p0
@@ -395,7 +395,7 @@
 .method public static final synthetic access$getWalletConnectInteractor$p(Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;)Lcom/iMe/storage/domain/interactor/crypto/wallet_connect/WalletConnectInteractor;
     .locals 0
 
-    .line 47
+    .line 46
     iget-object p0, p0, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;->walletConnectInteractor:Lcom/iMe/storage/domain/interactor/crypto/wallet_connect/WalletConnectInteractor;
 
     return-object p0
@@ -404,7 +404,7 @@
 .method public static final synthetic access$getWcClients$p(Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;)Ljava/util/Map;
     .locals 0
 
-    .line 47
+    .line 46
     iget-object p0, p0, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;->wcClients:Ljava/util/Map;
 
     return-object p0
@@ -413,7 +413,7 @@
 .method public static final synthetic access$mapSessionStoreItem(Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;Lcom/trustwallet/walletconnect/WCSessionStoreItem;)V
     .locals 0
 
-    .line 47
+    .line 46
     invoke-direct {p0, p1}, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;->mapSessionStoreItem(Lcom/trustwallet/walletconnect/WCSessionStoreItem;)V
 
     return-void
@@ -422,7 +422,7 @@
 .method public static final synthetic access$onErrorResult(Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;Lcom/iMe/storage/domain/model/Result$Error;)V
     .locals 0
 
-    .line 47
+    .line 46
     invoke-direct {p0, p1}, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;->onErrorResult(Lcom/iMe/storage/domain/model/Result$Error;)V
 
     return-void
@@ -431,7 +431,7 @@
 .method public static final synthetic access$onSessionRequest(Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;Lcom/trustwallet/walletconnect/WCClient;Lcom/trustwallet/walletconnect/models/WCPeerMeta;)V
     .locals 0
 
-    .line 47
+    .line 46
     invoke-direct {p0, p1, p2}, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;->onSessionRequest(Lcom/trustwallet/walletconnect/WCClient;Lcom/trustwallet/walletconnect/models/WCPeerMeta;)V
 
     return-void
@@ -440,7 +440,7 @@
 .method public static final synthetic access$onTransactionProcessing(Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;JLcom/trustwallet/walletconnect/WCSessionStoreItem;Lcom/trustwallet/walletconnect/models/ethereum/WCEthereumTransaction;Z)V
     .locals 0
 
-    .line 47
+    .line 46
     invoke-direct/range {p0 .. p5}, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;->onTransactionProcessing(JLcom/trustwallet/walletconnect/WCSessionStoreItem;Lcom/trustwallet/walletconnect/models/ethereum/WCEthereumTransaction;Z)V
 
     return-void
@@ -449,7 +449,7 @@
 .method public static final synthetic access$processError(Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;Ljava/lang/Throwable;)V
     .locals 0
 
-    .line 47
+    .line 46
     invoke-direct {p0, p1}, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;->processError(Ljava/lang/Throwable;)V
 
     return-void
@@ -458,7 +458,7 @@
 .method public static final synthetic access$setPendingSessionStoreItem$p(Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;Lcom/trustwallet/walletconnect/WCSessionStoreItem;)V
     .locals 0
 
-    .line 47
+    .line 46
     iput-object p1, p0, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;->pendingSessionStoreItem:Lcom/trustwallet/walletconnect/WCSessionStoreItem;
 
     return-void
@@ -467,7 +467,7 @@
 .method public static final synthetic access$setupClientListeners(Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;Lcom/trustwallet/walletconnect/WCClient;Lcom/trustwallet/walletconnect/WCSessionStoreItem;)V
     .locals 0
 
-    .line 47
+    .line 46
     invoke-direct {p0, p1, p2}, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;->setupClientListeners(Lcom/trustwallet/walletconnect/WCClient;Lcom/trustwallet/walletconnect/WCSessionStoreItem;)V
 
     return-void
@@ -476,7 +476,7 @@
 .method public static final synthetic access$updateSessionsChain(Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;)V
     .locals 0
 
-    .line 47
+    .line 46
     invoke-direct {p0}, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;->updateSessionsChain()V
 
     return-void
@@ -495,7 +495,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 155
+    .line 154
     invoke-interface {p0, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     return-void
@@ -508,7 +508,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 87
+    .line 86
     invoke-interface {p0, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     return-void
@@ -521,7 +521,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 94
+    .line 93
     invoke-interface {p0, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     return-void
@@ -538,7 +538,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 207
+    .line 206
     iget-object p0, p0, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;->sessionStoreItems:Ljava/util/List;
 
     new-instance v0, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl$disconnect$2$1;
@@ -557,7 +557,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 208
+    .line 207
     invoke-interface {p0, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     return-void
@@ -570,7 +570,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 219
+    .line 218
     invoke-virtual {p0}, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;->clear()V
 
     return-void
@@ -583,7 +583,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 220
+    .line 219
     invoke-interface {p0, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     return-void
@@ -592,7 +592,7 @@
 .method private final getGsonBuilder()Lcom/google/gson/GsonBuilder;
     .locals 2
 
-    .line 62
+    .line 61
     iget-object v0, p0, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;->gsonBuilder$delegate:Lkotlin/Lazy;
 
     invoke-interface {v0}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
@@ -611,7 +611,7 @@
 .method private final getWallet()Lcom/iMe/storage/domain/model/crypto/Wallet$EVM;
     .locals 2
 
-    .line 67
+    .line 66
     iget-object v0, p0, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;->cryptoAccessManager:Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;
 
     sget-object v1, Lcom/iMe/storage/domain/model/crypto/BlockchainType;->EVM:Lcom/iMe/storage/domain/model/crypto/BlockchainType;
@@ -628,12 +628,12 @@
 .method private final mapSessionStoreItem(Lcom/trustwallet/walletconnect/WCSessionStoreItem;)V
     .locals 3
 
-    .line 236
+    .line 235
     iget-object v0, p0, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;->sessionStoreItems:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 237
+    .line 236
     new-instance v0, Lcom/trustwallet/walletconnect/WCClient;
 
     invoke-direct {p0}, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;->getGsonBuilder()Lcom/google/gson/GsonBuilder;
@@ -644,10 +644,10 @@
 
     invoke-direct {v0, v1, v2}, Lcom/trustwallet/walletconnect/WCClient;-><init>(Lcom/google/gson/GsonBuilder;Lokhttp3/OkHttpClient;)V
 
-    .line 238
+    .line 237
     invoke-direct {p0, v0, p1}, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;->setupClientListeners(Lcom/trustwallet/walletconnect/WCClient;Lcom/trustwallet/walletconnect/WCSessionStoreItem;)V
 
-    .line 239
+    .line 238
     iget-object v1, p0, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;->wcClients:Ljava/util/Map;
 
     invoke-virtual {p1}, Lcom/trustwallet/walletconnect/WCSessionStoreItem;->getSession()Lcom/trustwallet/walletconnect/models/session/WCSession;
@@ -660,7 +660,7 @@
 
     invoke-interface {v1, v2, v0}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 240
+    .line 239
     new-instance v1, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl$mapSessionStoreItem$1$1$1;
 
     invoke-direct {v1, v0, p1}, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl$mapSessionStoreItem$1$1$1;-><init>(Lcom/trustwallet/walletconnect/WCClient;Lcom/trustwallet/walletconnect/WCSessionStoreItem;)V
@@ -682,7 +682,7 @@
         }
     .end annotation
 
-    .line 424
+    .line 419
     iget-object v0, p0, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;->errorsSubject:Lio/reactivex/subjects/PublishSubject;
 
     invoke-virtual {p1}, Lcom/iMe/storage/domain/model/Result$Error;->getError()Lcom/iMe/storage/data/network/model/error/ErrorModel;
@@ -708,15 +708,15 @@
 .method private final onSessionRequest(Lcom/trustwallet/walletconnect/WCClient;Lcom/trustwallet/walletconnect/models/WCPeerMeta;)V
     .locals 9
 
-    .line 348
+    .line 343
     iget-object v0, p0, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;->pendingSessionStoreItem:Lcom/trustwallet/walletconnect/WCSessionStoreItem;
 
     if-eqz v0, :cond_3
 
-    .line 350
+    .line 345
     new-instance v0, Lcom/trustwallet/walletconnect/WCSessionStoreItem;
 
-    .line 351
+    .line 346
     invoke-virtual {p1}, Lcom/trustwallet/walletconnect/WCClient;->getSession()Lcom/trustwallet/walletconnect/models/session/WCSession;
 
     move-result-object v2
@@ -725,21 +725,25 @@
 
     return-void
 
-    .line 352
+    .line 347
     :cond_0
     iget-object v1, p0, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;->cryptoPreferenceHelper:Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
 
-    invoke-interface {v1}, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;->getNetworkType()Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    invoke-interface {v1}, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;->getNetwork()Lcom/iMe/storage/domain/model/crypto/Network;
 
     move-result-object v1
 
-    invoke-virtual {v1}, Lcom/iMe/storage/domain/model/crypto/NetworkType;->getChainId()J
+    invoke-virtual {v1}, Lcom/iMe/storage/domain/model/crypto/Network;->getChainId()Ljava/lang/Long;
+
+    move-result-object v1
+
+    invoke-static {v1}, Lcom/iMe/storage/data/utils/extentions/NumberExtKt;->orZero(Ljava/lang/Long;)J
 
     move-result-wide v3
 
     long-to-int v3, v3
 
-    .line 353
+    .line 348
     invoke-virtual {p1}, Lcom/trustwallet/walletconnect/WCClient;->getPeerId()Ljava/lang/String;
 
     move-result-object v4
@@ -748,7 +752,7 @@
 
     return-void
 
-    .line 354
+    .line 349
     :cond_1
     invoke-virtual {p1}, Lcom/trustwallet/walletconnect/WCClient;->getRemotePeerId()Ljava/lang/String;
 
@@ -761,7 +765,7 @@
     :cond_2
     const/4 v7, 0x1
 
-    .line 357
+    .line 352
     new-instance v8, Ljava/util/Date;
 
     invoke-direct {v8}, Ljava/util/Date;-><init>()V
@@ -770,10 +774,10 @@
 
     move-object v6, p2
 
-    .line 350
+    .line 345
     invoke-direct/range {v1 .. v8}, Lcom/trustwallet/walletconnect/WCSessionStoreItem;-><init>(Lcom/trustwallet/walletconnect/models/session/WCSession;ILjava/lang/String;Ljava/lang/String;Lcom/trustwallet/walletconnect/models/WCPeerMeta;ZLjava/util/Date;)V
 
-    .line 359
+    .line 354
     invoke-virtual {p0}, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;->getEventsDelegate()Lcom/iMe/storage/domain/manager/wallet_connect/WalletConnectEventsDelegate;
 
     move-result-object p1
@@ -782,7 +786,7 @@
 
     goto :goto_0
 
-    .line 361
+    .line 356
     :cond_3
     new-instance p2, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl$onSessionRequest$1;
 
@@ -799,18 +803,18 @@
 
     move-object/from16 v6, p0
 
-    .line 377
+    .line 372
     iget-object v0, v6, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;->walletConnectInteractor:Lcom/iMe/storage/domain/interactor/crypto/wallet_connect/WalletConnectInteractor;
 
-    .line 379
+    .line 374
     new-instance v1, Lcom/iMe/storage/domain/model/crypto/wallet_connect/WalletConnectTransaction;
 
-    .line 380
+    .line 375
     invoke-virtual/range {p4 .. p4}, Lcom/trustwallet/walletconnect/models/ethereum/WCEthereumTransaction;->getFrom()Ljava/lang/String;
 
     move-result-object v8
 
-    .line 381
+    .line 376
     invoke-virtual/range {p4 .. p4}, Lcom/trustwallet/walletconnect/models/ethereum/WCEthereumTransaction;->getTo()Ljava/lang/String;
 
     move-result-object v2
@@ -822,7 +826,7 @@
     :cond_0
     move-object v9, v2
 
-    .line 382
+    .line 377
     invoke-virtual/range {p4 .. p4}, Lcom/trustwallet/walletconnect/models/ethereum/WCEthereumTransaction;->getValue()Ljava/lang/String;
 
     move-result-object v2
@@ -853,12 +857,12 @@
 
     invoke-static {v10, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 383
+    .line 378
     invoke-virtual/range {p4 .. p4}, Lcom/trustwallet/walletconnect/models/ethereum/WCEthereumTransaction;->getData()Ljava/lang/String;
 
     move-result-object v11
 
-    .line 384
+    .line 379
     invoke-virtual/range {p4 .. p4}, Lcom/trustwallet/walletconnect/models/ethereum/WCEthereumTransaction;->getGas()Ljava/lang/String;
 
     move-result-object v2
@@ -876,7 +880,7 @@
     :cond_2
     move-object v12, v3
 
-    .line 385
+    .line 380
     :goto_1
     invoke-virtual/range {p4 .. p4}, Lcom/trustwallet/walletconnect/models/ethereum/WCEthereumTransaction;->getGasPrice()Ljava/lang/String;
 
@@ -903,7 +907,7 @@
     :cond_3
     move-object v13, v3
 
-    .line 386
+    .line 381
     :goto_2
     invoke-virtual/range {p4 .. p4}, Lcom/trustwallet/walletconnect/models/ethereum/WCEthereumTransaction;->getNonce()Ljava/lang/String;
 
@@ -922,25 +926,25 @@
     :cond_4
     move-object v14, v3
 
-    .line 387
+    .line 382
     :goto_3
     iget-object v2, v6, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;->cryptoPreferenceHelper:Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
 
-    invoke-interface {v2}, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;->getNetworkType()Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    invoke-interface {v2}, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;->getNetworkId()Ljava/lang/String;
 
     move-result-object v15
 
     move-object v7, v1
 
-    .line 379
-    invoke-direct/range {v7 .. v15}, Lcom/iMe/storage/domain/model/crypto/wallet_connect/WalletConnectTransaction;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/math/BigInteger;Ljava/math/BigInteger;Ljava/math/BigInteger;Lcom/iMe/storage/domain/model/crypto/NetworkType;)V
+    .line 374
+    invoke-direct/range {v7 .. v15}, Lcom/iMe/storage/domain/model/crypto/wallet_connect/WalletConnectTransaction;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/math/BigInteger;Ljava/math/BigInteger;Ljava/math/BigInteger;Ljava/lang/String;)V
 
-    .line 378
+    .line 373
     invoke-virtual {v0, v1}, Lcom/iMe/storage/domain/interactor/crypto/wallet_connect/WalletConnectInteractor;->getWalletConnectParamsForCryptoTransaction(Lcom/iMe/storage/domain/model/crypto/wallet_connect/WalletConnectTransaction;)Lio/reactivex/Observable;
 
     move-result-object v0
 
-    .line 390
+    .line 385
     iget-object v1, v6, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;->schedulersProvider:Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
     invoke-interface {v1}, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;->ui()Lio/reactivex/Scheduler;
@@ -951,7 +955,7 @@
 
     move-result-object v7
 
-    .line 391
+    .line 386
     new-instance v8, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl$onTransactionProcessing$1$1;
 
     move-object v0, v8
@@ -966,32 +970,32 @@
 
     invoke-direct/range {v0 .. v5}, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl$onTransactionProcessing$1$1;-><init>(Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;JLcom/trustwallet/walletconnect/WCSessionStoreItem;Z)V
 
-    .line 392
+    .line 387
     new-instance v0, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl$$ExternalSyntheticLambda8;
 
     invoke-direct {v0, v8}, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl$$ExternalSyntheticLambda8;-><init>(Lkotlin/jvm/functions/Function1;)V
 
-    .line 391
+    .line 386
     new-instance v1, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl$onTransactionProcessing$1$2;
 
     invoke-direct {v1, v6}, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl$onTransactionProcessing$1$2;-><init>(Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;)V
 
-    .line 404
+    .line 399
     new-instance v2, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl$$ExternalSyntheticLambda10;
 
     invoke-direct {v2, v1}, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl$$ExternalSyntheticLambda10;-><init>(Lkotlin/jvm/functions/Function1;)V
 
-    .line 391
+    .line 386
     invoke-virtual {v7, v0, v2}, Lio/reactivex/Observable;->subscribe(Lio/reactivex/functions/Consumer;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
 
     move-result-object v0
 
     const-string v1, "private fun onTransactio\u2026riptions)\n        }\n    }"
 
-    .line 404
+    .line 399
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 406
+    .line 401
     iget-object v1, v6, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;->subscriptions:Lio/reactivex/disposables/CompositeDisposable;
 
     invoke-static {v0, v1}, Lcom/iMe/storage/data/utils/extentions/RxExtKt;->autoDispose(Lio/reactivex/disposables/Disposable;Lio/reactivex/disposables/CompositeDisposable;)V
@@ -1006,7 +1010,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 392
+    .line 387
     invoke-interface {p0, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     return-void
@@ -1019,7 +1023,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 404
+    .line 399
     invoke-interface {p0, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     return-void
@@ -1028,10 +1032,10 @@
 .method private final processError(Ljava/lang/Throwable;)V
     .locals 1
 
-    .line 419
+    .line 414
     invoke-static {p1}, Ltimber/log/Timber;->e(Ljava/lang/Throwable;)V
 
-    .line 420
+    .line 415
     invoke-virtual {p0}, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;->getEventsDelegate()Lcom/iMe/storage/domain/manager/wallet_connect/WalletConnectEventsDelegate;
 
     move-result-object v0
@@ -1052,7 +1056,7 @@
         }
     .end annotation
 
-    .line 412
+    .line 407
     :try_start_0
     invoke-interface {p1}, Lkotlin/jvm/functions/Function0;->invoke()Ljava/lang/Object;
     :try_end_0
@@ -1063,7 +1067,7 @@
     :catch_0
     move-exception p1
 
-    .line 414
+    .line 409
     iget-object v0, p0, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;->errorsSubject:Lio/reactivex/subjects/PublishSubject;
 
     invoke-virtual {v0, p1}, Lio/reactivex/subjects/PublishSubject;->onNext(Ljava/lang/Object;)V
@@ -1075,49 +1079,49 @@
 .method private final setupClientListeners(Lcom/trustwallet/walletconnect/WCClient;Lcom/trustwallet/walletconnect/WCSessionStoreItem;)V
     .locals 1
 
-    .line 247
+    .line 246
     new-instance v0, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl$setupClientListeners$1$1;
 
     invoke-direct {v0, p0, p2}, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl$setupClientListeners$1$1;-><init>(Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;Lcom/trustwallet/walletconnect/WCSessionStoreItem;)V
 
     invoke-virtual {p1, v0}, Lcom/trustwallet/walletconnect/WCClient;->setOnDisconnect(Lkotlin/jvm/functions/Function2;)V
 
-    .line 260
+    .line 259
     new-instance v0, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl$setupClientListeners$1$2;
 
     invoke-direct {v0, p2, p0, p1}, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl$setupClientListeners$1$2;-><init>(Lcom/trustwallet/walletconnect/WCSessionStoreItem;Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;Lcom/trustwallet/walletconnect/WCClient;)V
 
     invoke-virtual {p1, v0}, Lcom/trustwallet/walletconnect/WCClient;->setOnFailure(Lkotlin/jvm/functions/Function1;)V
 
-    .line 268
+    .line 267
     new-instance v0, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl$setupClientListeners$1$3;
 
     invoke-direct {v0, p0, p1}, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl$setupClientListeners$1$3;-><init>(Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;Lcom/trustwallet/walletconnect/WCClient;)V
 
     invoke-virtual {p1, v0}, Lcom/trustwallet/walletconnect/WCClient;->setOnSessionRequest(Lkotlin/jvm/functions/Function2;)V
 
-    .line 271
+    .line 270
     new-instance v0, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl$setupClientListeners$1$4;
 
     invoke-direct {v0, p0, p2}, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl$setupClientListeners$1$4;-><init>(Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;Lcom/trustwallet/walletconnect/WCSessionStoreItem;)V
 
     invoke-virtual {p1, v0}, Lcom/trustwallet/walletconnect/WCClient;->setOnEthSign(Lkotlin/jvm/functions/Function2;)V
 
-    .line 278
+    .line 277
     new-instance v0, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl$setupClientListeners$1$5;
 
     invoke-direct {v0, p0, p2}, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl$setupClientListeners$1$5;-><init>(Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;Lcom/trustwallet/walletconnect/WCSessionStoreItem;)V
 
     invoke-virtual {p1, v0}, Lcom/trustwallet/walletconnect/WCClient;->setOnEthSignTransaction(Lkotlin/jvm/functions/Function2;)V
 
-    .line 286
+    .line 285
     new-instance v0, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl$setupClientListeners$1$6;
 
     invoke-direct {v0, p0, p2}, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl$setupClientListeners$1$6;-><init>(Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;Lcom/trustwallet/walletconnect/WCSessionStoreItem;)V
 
     invoke-virtual {p1, v0}, Lcom/trustwallet/walletconnect/WCClient;->setOnEthSendTransaction(Lkotlin/jvm/functions/Function2;)V
 
-    .line 294
+    .line 293
     new-instance v0, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl$setupClientListeners$1$7;
 
     invoke-direct {v0, p0, p1, p2}, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl$setupClientListeners$1$7;-><init>(Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;Lcom/trustwallet/walletconnect/WCClient;Lcom/trustwallet/walletconnect/WCSessionStoreItem;)V
@@ -1130,15 +1134,15 @@
 .method private final subscribeToErrors()V
     .locals 3
 
-    .line 315
+    .line 310
     iget-object v0, p0, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;->errorsSubject:Lio/reactivex/subjects/PublishSubject;
 
-    .line 316
+    .line 311
     invoke-virtual {v0}, Lio/reactivex/Observable;->hide()Lio/reactivex/Observable;
 
     move-result-object v0
 
-    .line 317
+    .line 312
     sget-object v1, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl$subscribeToErrors$1;->INSTANCE:Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl$subscribeToErrors$1;
 
     new-instance v2, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl$$ExternalSyntheticLambda12;
@@ -1149,7 +1153,7 @@
 
     move-result-object v0
 
-    .line 318
+    .line 313
     sget-object v1, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl$subscribeToErrors$2;->INSTANCE:Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl$subscribeToErrors$2;
 
     new-instance v2, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl$$ExternalSyntheticLambda13;
@@ -1160,12 +1164,12 @@
 
     move-result-object v0
 
-    .line 314
+    .line 309
     invoke-static {v0}, Lio/reactivex/Observable;->merge(Lio/reactivex/ObservableSource;)Lio/reactivex/Observable;
 
     move-result-object v0
 
-    .line 320
+    .line 315
     iget-object v1, p0, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;->schedulersProvider:Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
     invoke-interface {v1}, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;->io()Lio/reactivex/Scheduler;
@@ -1176,7 +1180,7 @@
 
     move-result-object v0
 
-    .line 321
+    .line 316
     iget-object v1, p0, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;->schedulersProvider:Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
     invoke-interface {v1}, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;->ui()Lio/reactivex/Scheduler;
@@ -1187,7 +1191,7 @@
 
     move-result-object v0
 
-    .line 322
+    .line 317
     new-instance v1, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl$subscribeToErrors$3;
 
     invoke-direct {v1, p0}, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl$subscribeToErrors$3;-><init>(Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;)V
@@ -1204,7 +1208,7 @@
 
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 323
+    .line 318
     iget-object v1, p0, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;->subscriptions:Lio/reactivex/disposables/CompositeDisposable;
 
     invoke-static {v0, v1}, Lcom/iMe/storage/data/utils/extentions/RxExtKt;->autoDispose(Lio/reactivex/disposables/Disposable;Lio/reactivex/disposables/CompositeDisposable;)V
@@ -1219,7 +1223,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 317
+    .line 312
     invoke-interface {p0, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
@@ -1236,7 +1240,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 318
+    .line 313
     invoke-interface {p0, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
@@ -1253,7 +1257,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 322
+    .line 317
     invoke-interface {p0, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     return-void
@@ -1262,7 +1266,7 @@
 .method private final subscribeToRxEvents()V
     .locals 3
 
-    .line 327
+    .line 322
     iget-object v0, p0, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;->rxEventBus:Lcom/iMe/storage/domain/utils/rx/RxEventBus;
 
     .line 16
@@ -1294,7 +1298,7 @@
 
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 329
+    .line 324
     iget-object v1, p0, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;->schedulersProvider:Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
     invoke-interface {v1}, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;->io()Lio/reactivex/Scheduler;
@@ -1305,7 +1309,7 @@
 
     move-result-object v0
 
-    .line 330
+    .line 325
     iget-object v1, p0, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;->schedulersProvider:Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
     invoke-interface {v1}, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;->ui()Lio/reactivex/Scheduler;
@@ -1316,7 +1320,7 @@
 
     move-result-object v0
 
-    .line 331
+    .line 326
     new-instance v1, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl$subscribeToRxEvents$1;
 
     invoke-direct {v1, p0}, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl$subscribeToRxEvents$1;-><init>(Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;)V
@@ -1333,7 +1337,7 @@
 
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 332
+    .line 327
     iget-object v1, p0, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;->subscriptions:Lio/reactivex/disposables/CompositeDisposable;
 
     invoke-static {v0, v1}, Lcom/iMe/storage/data/utils/extentions/RxExtKt;->autoDispose(Lio/reactivex/disposables/Disposable;Lio/reactivex/disposables/CompositeDisposable;)V
@@ -1348,7 +1352,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 331
+    .line 326
     invoke-interface {p0, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     return-void
@@ -1357,7 +1361,7 @@
 .method private final updateSessionsChain()V
     .locals 1
 
-    .line 336
+    .line 331
     new-instance v0, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl$updateSessionsChain$1;
 
     invoke-direct {v0, p0}, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl$updateSessionsChain$1;-><init>(Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;)V
@@ -1376,7 +1380,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 137
+    .line 136
     iget-object v0, p0, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;->wcClients:Ljava/util/Map;
 
     invoke-virtual {p1}, Lcom/trustwallet/walletconnect/WCSessionStoreItem;->getSession()Lcom/trustwallet/walletconnect/models/session/WCSession;
@@ -1397,17 +1401,17 @@
 
     if-eqz v0, :cond_0
 
-    .line 138
+    .line 137
     invoke-direct {p0, v0, p1}, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;->setupClientListeners(Lcom/trustwallet/walletconnect/WCClient;Lcom/trustwallet/walletconnect/WCSessionStoreItem;)V
 
-    .line 139
+    .line 138
     new-instance v2, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl$approveNewSession$1$1;
 
     invoke-direct {v2, v0, p0}, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl$approveNewSession$1$1;-><init>(Lcom/trustwallet/walletconnect/WCClient;Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;)V
 
     invoke-direct {p0, v2}, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;->runWithErrorHandle(Lkotlin/jvm/functions/Function0;)V
 
-    .line 137
+    .line 136
     sget-object v0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     goto :goto_0
@@ -1420,19 +1424,19 @@
 
     return-void
 
-    .line 147
+    .line 146
     :cond_1
     iput-object v1, p0, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;->pendingSessionStoreItem:Lcom/trustwallet/walletconnect/WCSessionStoreItem;
 
-    .line 148
+    .line 147
     iget-object v0, p0, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;->walletConnectInteractor:Lcom/iMe/storage/domain/interactor/crypto/wallet_connect/WalletConnectInteractor;
 
-    .line 149
+    .line 148
     invoke-virtual {v0, p1}, Lcom/iMe/storage/domain/interactor/crypto/wallet_connect/WalletConnectInteractor;->insertWalletConnectSession(Lcom/trustwallet/walletconnect/WCSessionStoreItem;)Lio/reactivex/Completable;
 
     move-result-object p1
 
-    .line 150
+    .line 149
     iget-object v0, p0, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;->schedulersProvider:Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
     invoke-interface {v0}, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;->ui()Lio/reactivex/Scheduler;
@@ -1445,27 +1449,27 @@
 
     sget-object v0, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl$$ExternalSyntheticLambda2;->INSTANCE:Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl$$ExternalSyntheticLambda2;
 
-    .line 151
+    .line 150
     new-instance v1, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl$approveNewSession$3;
 
     invoke-direct {v1, p0}, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl$approveNewSession$3;-><init>(Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;)V
 
-    .line 155
+    .line 154
     new-instance v2, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl$$ExternalSyntheticLambda6;
 
     invoke-direct {v2, v1}, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl$$ExternalSyntheticLambda6;-><init>(Lkotlin/jvm/functions/Function1;)V
 
-    .line 151
+    .line 150
     invoke-virtual {p1, v0, v2}, Lio/reactivex/Completable;->subscribe(Lio/reactivex/functions/Action;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
 
     move-result-object p1
 
     const-string v0, "override fun approveNewS\u2026pose(subscriptions)\n    }"
 
-    .line 155
+    .line 154
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 157
+    .line 156
     iget-object v0, p0, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;->subscriptions:Lio/reactivex/disposables/CompositeDisposable;
 
     invoke-static {p1, v0}, Lcom/iMe/storage/data/utils/extentions/RxExtKt;->autoDispose(Lio/reactivex/disposables/Disposable;Lio/reactivex/disposables/CompositeDisposable;)V
@@ -1489,7 +1493,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 189
+    .line 188
     new-instance v0, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl$approveRequest$1;
 
     move-object v1, v0
@@ -1520,7 +1524,7 @@
 
     invoke-static {p4, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 172
+    .line 171
     new-instance v0, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl$approveSign$1;
 
     move-object v1, v0
@@ -1543,10 +1547,10 @@
 .method public clear()V
     .locals 4
 
-    .line 100
+    .line 99
     iget-object v0, p0, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;->wcClients:Ljava/util/Map;
 
-    .line 101
+    .line 100
     invoke-interface {v0}, Ljava/util/Map;->values()Ljava/util/Collection;
 
     move-result-object v1
@@ -1569,48 +1573,48 @@
 
     check-cast v2, Lcom/trustwallet/walletconnect/WCClient;
 
-    .line 103
+    .line 102
     sget-object v3, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl$clear$1$1$1$1;->INSTANCE:Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl$clear$1$1$1$1;
 
     invoke-virtual {v2, v3}, Lcom/trustwallet/walletconnect/WCClient;->setOnDisconnect(Lkotlin/jvm/functions/Function2;)V
 
-    .line 104
+    .line 103
     sget-object v3, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl$clear$1$1$1$2;->INSTANCE:Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl$clear$1$1$1$2;
 
     invoke-virtual {v2, v3}, Lcom/trustwallet/walletconnect/WCClient;->setOnFailure(Lkotlin/jvm/functions/Function1;)V
 
-    .line 105
+    .line 104
     sget-object v3, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl$clear$1$1$1$3;->INSTANCE:Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl$clear$1$1$1$3;
 
     invoke-virtual {v2, v3}, Lcom/trustwallet/walletconnect/WCClient;->setOnSessionRequest(Lkotlin/jvm/functions/Function2;)V
 
-    .line 106
+    .line 105
     sget-object v3, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl$clear$1$1$1$4;->INSTANCE:Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl$clear$1$1$1$4;
 
     invoke-virtual {v2, v3}, Lcom/trustwallet/walletconnect/WCClient;->setOnEthSign(Lkotlin/jvm/functions/Function2;)V
 
-    .line 107
+    .line 106
     sget-object v3, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl$clear$1$1$1$5;->INSTANCE:Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl$clear$1$1$1$5;
 
     invoke-virtual {v2, v3}, Lcom/trustwallet/walletconnect/WCClient;->setOnEthSignTransaction(Lkotlin/jvm/functions/Function2;)V
 
-    .line 108
+    .line 107
     sget-object v3, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl$clear$1$1$1$6;->INSTANCE:Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl$clear$1$1$1$6;
 
     invoke-virtual {v2, v3}, Lcom/trustwallet/walletconnect/WCClient;->setOnEthSendTransaction(Lkotlin/jvm/functions/Function2;)V
 
-    .line 109
+    .line 108
     sget-object v3, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl$clear$1$1$1$7;->INSTANCE:Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl$clear$1$1$1$7;
 
     invoke-virtual {v2, v3}, Lcom/trustwallet/walletconnect/WCClient;->setOnWalletChangeNetwork(Lkotlin/jvm/functions/Function2;)V
 
     goto :goto_0
 
-    .line 112
+    .line 111
     :cond_0
     invoke-interface {v0}, Ljava/util/Map;->clear()V
 
-    .line 114
+    .line 113
     iget-object v0, p0, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;->sessionStoreItems:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->clear()V
@@ -1625,7 +1629,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 118
+    .line 117
     new-instance v0, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl$connect$1;
 
     invoke-direct {v0, p0, p1}, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl$connect$1;-><init>(Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;Ljava/lang/String;)V
@@ -1638,7 +1642,7 @@
 .method public connectToStoredSessions()V
     .locals 4
 
-    .line 78
+    .line 77
     iget-object v0, p0, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;->cryptoAccessManager:Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;
 
     sget-object v1, Lcom/iMe/storage/domain/model/crypto/BlockchainType;->EVM:Lcom/iMe/storage/domain/model/crypto/BlockchainType;
@@ -1651,24 +1655,24 @@
 
     return-void
 
-    .line 81
+    .line 80
     :cond_0
     invoke-virtual {p0}, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;->clear()V
 
-    .line 82
+    .line 81
     iget-object v0, p0, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;->walletConnectInteractor:Lcom/iMe/storage/domain/interactor/crypto/wallet_connect/WalletConnectInteractor;
 
-    .line 83
+    .line 82
     invoke-virtual {v0}, Lcom/iMe/storage/domain/interactor/crypto/wallet_connect/WalletConnectInteractor;->getWalletConnectSavedSessionsFirst()Lio/reactivex/Flowable;
 
     move-result-object v0
 
-    .line 84
+    .line 83
     invoke-virtual {v0}, Lio/reactivex/Flowable;->singleOrError()Lio/reactivex/Single;
 
     move-result-object v0
 
-    .line 85
+    .line 84
     iget-object v1, p0, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;->schedulersProvider:Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
     invoke-interface {v1}, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;->io()Lio/reactivex/Scheduler;
@@ -1679,37 +1683,37 @@
 
     move-result-object v0
 
-    .line 86
+    .line 85
     new-instance v1, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl$connectToStoredSessions$1;
 
     invoke-direct {v1, p0}, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl$connectToStoredSessions$1;-><init>(Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;)V
 
-    .line 87
+    .line 86
     new-instance v2, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl$$ExternalSyntheticLambda3;
 
     invoke-direct {v2, v1}, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl$$ExternalSyntheticLambda3;-><init>(Lkotlin/jvm/functions/Function1;)V
 
-    .line 86
+    .line 85
     new-instance v1, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl$connectToStoredSessions$2;
 
     invoke-direct {v1, p0}, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl$connectToStoredSessions$2;-><init>(Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;)V
 
-    .line 94
+    .line 93
     new-instance v3, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl$$ExternalSyntheticLambda7;
 
     invoke-direct {v3, v1}, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl$$ExternalSyntheticLambda7;-><init>(Lkotlin/jvm/functions/Function1;)V
 
-    .line 86
+    .line 85
     invoke-virtual {v0, v2, v3}, Lio/reactivex/Single;->subscribe(Lio/reactivex/functions/Consumer;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
 
     move-result-object v0
 
     const-string v1, "override fun connectToSt\u2026pose(subscriptions)\n    }"
 
-    .line 94
+    .line 93
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 96
+    .line 95
     iget-object v1, p0, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;->subscriptions:Lio/reactivex/disposables/CompositeDisposable;
 
     invoke-static {v0, v1}, Lcom/iMe/storage/data/utils/extentions/RxExtKt;->autoDispose(Lio/reactivex/disposables/Disposable;Lio/reactivex/disposables/CompositeDisposable;)V
@@ -1724,22 +1728,22 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 197
+    .line 196
     new-instance v0, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl$disconnect$1;
 
     invoke-direct {v0, p0, p1}, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl$disconnect$1;-><init>(Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;Ljava/lang/String;)V
 
     invoke-direct {p0, v0}, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;->runWithErrorHandle(Lkotlin/jvm/functions/Function0;)V
 
-    .line 203
+    .line 202
     iget-object v0, p0, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;->walletConnectInteractor:Lcom/iMe/storage/domain/interactor/crypto/wallet_connect/WalletConnectInteractor;
 
-    .line 204
+    .line 203
     invoke-virtual {v0, p1}, Lcom/iMe/storage/domain/interactor/crypto/wallet_connect/WalletConnectInteractor;->deleteWalletConnectSession(Ljava/lang/String;)Lio/reactivex/Completable;
 
     move-result-object v0
 
-    .line 205
+    .line 204
     iget-object v1, p0, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;->schedulersProvider:Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
     invoke-interface {v1}, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;->ui()Lio/reactivex/Scheduler;
@@ -1750,7 +1754,7 @@
 
     move-result-object v0
 
-    .line 206
+    .line 205
     new-instance v1, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl$$ExternalSyntheticLambda1;
 
     invoke-direct {v1, p0, p1}, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl$$ExternalSyntheticLambda1;-><init>(Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;Ljava/lang/String;)V
@@ -1759,22 +1763,22 @@
 
     invoke-direct {p1, p0}, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl$disconnect$3;-><init>(Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;)V
 
-    .line 208
+    .line 207
     new-instance v2, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl$$ExternalSyntheticLambda9;
 
     invoke-direct {v2, p1}, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl$$ExternalSyntheticLambda9;-><init>(Lkotlin/jvm/functions/Function1;)V
 
-    .line 206
+    .line 205
     invoke-virtual {v0, v1, v2}, Lio/reactivex/Completable;->subscribe(Lio/reactivex/functions/Action;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
 
     move-result-object p1
 
     const-string v0, "override fun disconnect(\u2026pose(subscriptions)\n    }"
 
-    .line 208
+    .line 207
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 210
+    .line 209
     iget-object v0, p0, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;->subscriptions:Lio/reactivex/disposables/CompositeDisposable;
 
     invoke-static {p1, v0}, Lcom/iMe/storage/data/utils/extentions/RxExtKt;->autoDispose(Lio/reactivex/disposables/Disposable;Lio/reactivex/disposables/CompositeDisposable;)V
@@ -1785,22 +1789,22 @@
 .method public disconnectAll()V
     .locals 4
 
-    .line 214
+    .line 213
     new-instance v0, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl$disconnectAll$1;
 
     invoke-direct {v0, p0}, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl$disconnectAll$1;-><init>(Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;)V
 
     invoke-direct {p0, v0}, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;->runWithErrorHandle(Lkotlin/jvm/functions/Function0;)V
 
-    .line 215
+    .line 214
     iget-object v0, p0, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;->walletConnectInteractor:Lcom/iMe/storage/domain/interactor/crypto/wallet_connect/WalletConnectInteractor;
 
-    .line 216
+    .line 215
     invoke-virtual {v0}, Lcom/iMe/storage/domain/interactor/crypto/wallet_connect/WalletConnectInteractor;->deleteAllWalletConnectSessions()Lio/reactivex/Completable;
 
     move-result-object v0
 
-    .line 217
+    .line 216
     iget-object v1, p0, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;->schedulersProvider:Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
     invoke-interface {v1}, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;->ui()Lio/reactivex/Scheduler;
@@ -1811,7 +1815,7 @@
 
     move-result-object v0
 
-    .line 218
+    .line 217
     new-instance v1, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl$$ExternalSyntheticLambda0;
 
     invoke-direct {v1, p0}, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl$$ExternalSyntheticLambda0;-><init>(Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;)V
@@ -1820,22 +1824,22 @@
 
     invoke-direct {v2, p0}, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl$disconnectAll$3;-><init>(Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;)V
 
-    .line 220
+    .line 219
     new-instance v3, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl$$ExternalSyntheticLambda11;
 
     invoke-direct {v3, v2}, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl$$ExternalSyntheticLambda11;-><init>(Lkotlin/jvm/functions/Function1;)V
 
-    .line 218
+    .line 217
     invoke-virtual {v0, v1, v3}, Lio/reactivex/Completable;->subscribe(Lio/reactivex/functions/Action;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
 
     move-result-object v0
 
     const-string v1, "override fun disconnectA\u2026pose(subscriptions)\n    }"
 
-    .line 220
+    .line 219
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 222
+    .line 221
     iget-object v1, p0, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;->subscriptions:Lio/reactivex/disposables/CompositeDisposable;
 
     invoke-static {v0, v1}, Lcom/iMe/storage/data/utils/extentions/RxExtKt;->autoDispose(Lio/reactivex/disposables/Disposable;Lio/reactivex/disposables/CompositeDisposable;)V
@@ -1846,7 +1850,7 @@
 .method public getEventsDelegate()Lcom/iMe/storage/domain/manager/wallet_connect/WalletConnectEventsDelegate;
     .locals 1
 
-    .line 58
+    .line 57
     iget-object v0, p0, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;->eventsDelegate:Lcom/iMe/storage/domain/manager/wallet_connect/WalletConnectEventsDelegate;
 
     return-object v0
@@ -1855,10 +1859,10 @@
 .method public onDestroy()V
     .locals 1
 
-    .line 226
+    .line 225
     invoke-virtual {p0}, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;->clear()V
 
-    .line 227
+    .line 226
     iget-object v0, p0, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;->subscriptions:Lio/reactivex/disposables/CompositeDisposable;
 
     invoke-virtual {v0}, Lio/reactivex/disposables/CompositeDisposable;->clear()V
@@ -1873,7 +1877,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 161
+    .line 160
     new-instance v0, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl$rejectNewSession$1;
 
     invoke-direct {v0, p0, p1}, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl$rejectNewSession$1;-><init>(Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;Lcom/trustwallet/walletconnect/WCSessionStoreItem;)V
@@ -1890,7 +1894,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 193
+    .line 192
     new-instance v0, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl$rejectRequest$1;
 
     invoke-direct {v0, p0, p1, p2, p3}, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl$rejectRequest$1;-><init>(Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;Ljava/lang/String;J)V
@@ -1907,7 +1911,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 58
+    .line 57
     iput-object p1, p0, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;->eventsDelegate:Lcom/iMe/storage/domain/manager/wallet_connect/WalletConnectEventsDelegate;
 
     return-void

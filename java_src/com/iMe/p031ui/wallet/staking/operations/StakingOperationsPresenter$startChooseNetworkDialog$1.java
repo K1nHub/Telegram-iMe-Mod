@@ -1,6 +1,6 @@
 package com.iMe.p031ui.wallet.staking.operations;
 
-import com.iMe.storage.domain.model.crypto.NetworkType;
+import com.iMe.storage.domain.model.crypto.Network;
 import com.iMe.storage.domain.utils.p030rx.RxEventBus;
 import com.iMe.storage.domain.utils.p030rx.event.DomainRxEvents;
 import kotlin.Unit;
@@ -11,7 +11,7 @@ import kotlin.jvm.internal.Lambda;
 /* compiled from: StakingOperationsPresenter.kt */
 /* renamed from: com.iMe.ui.wallet.staking.operations.StakingOperationsPresenter$startChooseNetworkDialog$1 */
 /* loaded from: classes4.dex */
-public final class StakingOperationsPresenter$startChooseNetworkDialog$1 extends Lambda implements Function1<NetworkType, Unit> {
+public final class StakingOperationsPresenter$startChooseNetworkDialog$1 extends Lambda implements Function1<Network, Unit> {
     final /* synthetic */ StakingOperationsPresenter this$0;
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -22,22 +22,22 @@ public final class StakingOperationsPresenter$startChooseNetworkDialog$1 extends
     }
 
     @Override // kotlin.jvm.functions.Function1
-    public /* bridge */ /* synthetic */ Unit invoke(NetworkType networkType) {
-        invoke2(networkType);
+    public /* bridge */ /* synthetic */ Unit invoke(Network network) {
+        invoke2(network);
         return Unit.INSTANCE;
     }
 
     /* renamed from: invoke  reason: avoid collision after fix types in other method */
-    public final void invoke2(NetworkType networkType) {
+    public final void invoke2(Network networkType) {
         RxEventBus rxEventBus;
-        NetworkType networkType2;
-        NetworkType networkType3;
+        Network network;
+        Network network2;
         Intrinsics.checkNotNullParameter(networkType, "networkType");
-        this.this$0.selectedNetworkType = networkType;
+        this.this$0.selectedNetwork = networkType;
         rxEventBus = this.this$0.rxEventBus;
-        networkType2 = this.this$0.selectedNetworkType;
-        rxEventBus.publish(new DomainRxEvents.StakingOperationsReload(networkType2));
-        networkType3 = this.this$0.selectedNetworkType;
-        ((StakingOperationsView) this.this$0.getViewState()).setupNetworkType(networkType3);
+        network = this.this$0.selectedNetwork;
+        rxEventBus.publish(new DomainRxEvents.StakingOperationsReload(network.getId()));
+        network2 = this.this$0.selectedNetwork;
+        ((StakingOperationsView) this.this$0.getViewState()).setupNetwork(network2);
     }
 }

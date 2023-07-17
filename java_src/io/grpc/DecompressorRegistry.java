@@ -1,6 +1,6 @@
 package io.grpc;
 
-import com.google.android.exoplayer2.C0475C;
+import com.google.android.exoplayer2.C0480C;
 import com.google.common.base.Joiner;
 import com.google.common.base.Preconditions;
 import io.grpc.Codec;
@@ -42,7 +42,7 @@ public final class DecompressorRegistry {
         }
         linkedHashMap.put(messageEncoding, new DecompressorInfo(decompressor, z));
         this.decompressors = Collections.unmodifiableMap(linkedHashMap);
-        this.advertisedDecompressors = ACCEPT_ENCODING_JOINER.join(getAdvertisedMessageEncodings()).getBytes(Charset.forName(C0475C.ASCII_NAME));
+        this.advertisedDecompressors = ACCEPT_ENCODING_JOINER.join(getAdvertisedMessageEncodings()).getBytes(Charset.forName(C0480C.ASCII_NAME));
     }
 
     private DecompressorRegistry() {

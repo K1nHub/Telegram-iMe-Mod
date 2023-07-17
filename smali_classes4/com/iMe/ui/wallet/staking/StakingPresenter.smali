@@ -19,7 +19,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nStakingPresenter.kt\nKotlin\n*S Kotlin\n*F\n+ 1 StakingPresenter.kt\ncom/iMe/ui/wallet/staking/StakingPresenter\n+ 2 RxExt.kt\ncom/iMe/utils/extentions/rx/RxExtKt\n+ 3 RxEventBus.kt\ncom/iMe/storage/domain/utils/rx/RxEventBus\n*L\n1#1,114:1\n39#2,8:115\n39#2,8:126\n16#3,3:123\n*S KotlinDebug\n*F\n+ 1 StakingPresenter.kt\ncom/iMe/ui/wallet/staking/StakingPresenter\n*L\n80#1:115,8\n102#1:126,8\n101#1:123,3\n*E\n"
+    value = "SMAP\nStakingPresenter.kt\nKotlin\n*S Kotlin\n*F\n+ 1 StakingPresenter.kt\ncom/iMe/ui/wallet/staking/StakingPresenter\n+ 2 RxExt.kt\ncom/iMe/utils/extentions/rx/RxExtKt\n+ 3 RxEventBus.kt\ncom/iMe/storage/domain/utils/rx/RxEventBus\n*L\n1#1,114:1\n42#2,12:115\n42#2,12:130\n16#3,3:127\n*S KotlinDebug\n*F\n+ 1 StakingPresenter.kt\ncom/iMe/ui/wallet/staking/StakingPresenter\n*L\n80#1:115,12\n102#1:130,12\n101#1:127,3\n*E\n"
 .end annotation
 
 .annotation runtime Lmoxy/InjectViewState;
@@ -54,15 +54,15 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "resourceManager"
+    const-string/jumbo v0, "resourceManager"
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "rxEventBus"
+    const-string/jumbo v0, "rxEventBus"
 
     invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "schedulersProvider"
+    const-string/jumbo v0, "schedulersProvider"
 
     invoke-static {p4, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -171,7 +171,7 @@
 
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 44
+    .line 47
     new-instance v1, Lcom/iMe/ui/wallet/staking/StakingPresenter$listenEvents$$inlined$subscribeWithErrorHandle$default$1;
 
     invoke-direct {v1, p0}, Lcom/iMe/ui/wallet/staking/StakingPresenter$listenEvents$$inlined$subscribeWithErrorHandle$default$1;-><init>(Lcom/iMe/ui/wallet/staking/StakingPresenter;)V
@@ -186,19 +186,19 @@
 
     invoke-direct {v1, v3}, Lcom/iMe/ui/wallet/staking/StakingPresenter$listenEvents$$inlined$subscribeWithErrorHandle$default$2;-><init>(Lcom/iMe/ui/base/mvp/base/BaseView;)V
 
-    .line 46
+    .line 49
     new-instance v4, Lcom/iMe/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
 
     invoke-direct {v4, v1}, Lcom/iMe/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;-><init>(Lkotlin/jvm/functions/Function1;)V
 
-    .line 44
+    .line 47
     invoke-virtual {v0, v2, v4}, Lio/reactivex/Observable;->subscribe(Lio/reactivex/functions/Consumer;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
 
     move-result-object v0
 
-    const-string/jumbo v1, "viewState: BaseView? = n\u2026  onError.invoke()\n    })"
+    const-string/jumbo v1, "viewState: BaseView? = n\u2026Error.invoke()\n        })"
 
-    .line 46
+    .line 49
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     const/4 v1, 0x1
@@ -235,7 +235,7 @@
 
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 44
+    .line 47
     new-instance v1, Lcom/iMe/ui/wallet/staking/StakingPresenter$loadStakingTotalStats$$inlined$subscribeWithErrorHandle$default$1;
 
     invoke-direct {v1, p0, p1}, Lcom/iMe/ui/wallet/staking/StakingPresenter$loadStakingTotalStats$$inlined$subscribeWithErrorHandle$default$1;-><init>(Lcom/iMe/ui/wallet/staking/StakingPresenter;Z)V
@@ -250,19 +250,19 @@
 
     invoke-direct {v1, v2}, Lcom/iMe/ui/wallet/staking/StakingPresenter$loadStakingTotalStats$$inlined$subscribeWithErrorHandle$default$2;-><init>(Lcom/iMe/ui/base/mvp/base/BaseView;)V
 
-    .line 46
+    .line 49
     new-instance v3, Lcom/iMe/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
 
     invoke-direct {v3, v1}, Lcom/iMe/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;-><init>(Lkotlin/jvm/functions/Function1;)V
 
-    .line 44
+    .line 47
     invoke-virtual {v0, p1, v3}, Lio/reactivex/Observable;->subscribe(Lio/reactivex/functions/Consumer;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
 
     move-result-object p1
 
-    const-string/jumbo v0, "viewState: BaseView? = n\u2026  onError.invoke()\n    })"
+    const-string/jumbo v0, "viewState: BaseView? = n\u2026Error.invoke()\n        })"
 
-    .line 46
+    .line 49
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     const/4 v0, 0x1

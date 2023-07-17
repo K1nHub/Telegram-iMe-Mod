@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
-    <com.iMe.ui.custom.WrapContentViewPager android:id="@id/view_pager_tutorial" android:layout_width="fill_parent" android:layout_height="wrap_content" android:overScrollMode="never" />
-    <com.tbuonomo.viewpagerdotsindicator.DotsIndicator android:id="@id/dots_indicator_tutorial" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_below="@id/view_pager_tutorial" android:layout_centerHorizontal="true" app:dotsColor="@color/colorBlack" app:dotsCornerRadius="3.0dip" app:dotsSize="6.0dip" app:dotsSpacing="3.0dip" app:dotsWidthFactor="2.5" app:progressMode="false" app:selectedDotColor="@color/colorBlack" />
-    <com.iMe.ui.custom.ActionButton android:id="@id/button_action" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin_small" android:layout_marginBottom="@dimen/margin_big" android:layout_alignParentBottom="true" android:layout_centerHorizontal="true" android:layout_marginStart="@dimen/margin_normal" android:layout_marginEnd="@dimen/margin_normal" />
-</RelativeLayout>

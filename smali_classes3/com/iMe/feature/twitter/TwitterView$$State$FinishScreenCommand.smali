@@ -26,7 +26,7 @@
 .method constructor <init>(Lcom/iMe/feature/twitter/TwitterView$$State;)V
     .locals 1
 
-    .line 422
+    .line 438
     const-class p1, Lmoxy/viewstate/strategy/OneExecutionStateStrategy;
 
     const-string v0, "finishScreen"
@@ -41,7 +41,7 @@
 .method public apply(Lcom/iMe/feature/twitter/TwitterView;)V
     .locals 0
 
-    .line 427
+    .line 443
     invoke-interface {p1}, Lcom/iMe/ui/base/mvp/base/BaseView;->finishScreen()V
 
     return-void
@@ -50,7 +50,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 420
+    .line 436
     check-cast p1, Lcom/iMe/feature/twitter/TwitterView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/feature/twitter/TwitterView$$State$FinishScreenCommand;->apply(Lcom/iMe/feature/twitter/TwitterView;)V

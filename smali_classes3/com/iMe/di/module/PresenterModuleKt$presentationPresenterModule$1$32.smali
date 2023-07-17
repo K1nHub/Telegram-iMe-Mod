@@ -22,13 +22,13 @@
         "Lkotlin/jvm/functions/Function2<",
         "Lorg/koin/core/scope/Scope;",
         "Lorg/koin/core/parameter/ParametersHolder;",
-        "Lcom/iMe/ui/wallet/crypto/enter/password/EnterWalletPasswordPresenter;",
+        "Lcom/iMe/ui/wallet/crypto/settings/privacy/WalletPrivacySettingPresenter;",
         ">;"
     }
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nPresenterModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$32\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,432:1\n129#2,5:433\n129#2,5:438\n*S KotlinDebug\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$32\n*L\n251#1:433,5\n252#1:438,5\n*E\n"
+    value = "SMAP\nPresenterModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$32\n+ 2 ParametersHolder.kt\norg/koin/core/parameter/ParametersHolder\n+ 3 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,552:1\n44#2:553\n129#3,5:554\n129#3,5:559\n*S KotlinDebug\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$32\n*L\n304#1:553\n306#1:554,5\n307#1:559,5\n*E\n"
 .end annotation
 
 
@@ -61,19 +61,38 @@
 
 
 # virtual methods
-.method public final invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/iMe/ui/wallet/crypto/enter/password/EnterWalletPasswordPresenter;
-    .locals 8
+.method public final invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/iMe/ui/wallet/crypto/settings/privacy/WalletPrivacySettingPresenter;
+    .locals 6
 
     const-string v0, "$this$factory"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "it"
+    const-string v0, "<name for destructuring parameter 0>"
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
+    .line 44
+    const-class v0, Ljava/lang/Integer;
+
+    invoke-static {v0}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
+
+    move-result-object v0
+
+    const/4 v1, 0x0
+
+    invoke-virtual {p2, v1, v0}, Lorg/koin/core/parameter/ParametersHolder;->elementAt(ILkotlin/reflect/KClass;)Ljava/lang/Object;
+
+    move-result-object p2
+
+    check-cast p2, Ljava/lang/Number;
+
+    invoke-virtual {p2}, Ljava/lang/Number;->intValue()I
+
+    move-result v1
+
     .line 133
-    const-class p2, Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;
+    const-class p2, Lcom/iMe/storage/domain/interactor/crypto/permission/CryptoPermissionInteractor;
 
     invoke-static {p2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
 
@@ -85,26 +104,10 @@
 
     move-result-object p2
 
-    .line 251
+    .line 306
     move-object v3, p2
 
-    check-cast v3, Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;
-
-    .line 133
-    const-class p2, Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;
-
-    invoke-static {p2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
-
-    move-result-object p2
-
-    invoke-virtual {p1, p2, v0, v0}, Lorg/koin/core/scope/Scope;->get(Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
-
-    move-result-object p2
-
-    .line 251
-    move-object v5, p2
-
-    check-cast v5, Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;
+    check-cast v3, Lcom/iMe/storage/domain/interactor/crypto/permission/CryptoPermissionInteractor;
 
     .line 133
     const-class p2, Lcom/iMe/storage/domain/utils/system/ResourceManager;
@@ -117,26 +120,10 @@
 
     move-result-object p2
 
-    .line 251
-    move-object v2, p2
+    .line 306
+    move-object v5, p2
 
-    check-cast v2, Lcom/iMe/storage/domain/utils/system/ResourceManager;
-
-    .line 133
-    const-class p2, Lcom/iMe/storage/domain/utils/rx/RxEventBus;
-
-    invoke-static {p2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
-
-    move-result-object p2
-
-    invoke-virtual {p1, p2, v0, v0}, Lorg/koin/core/scope/Scope;->get(Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
-
-    move-result-object p2
-
-    .line 252
-    move-object v6, p2
-
-    check-cast v6, Lcom/iMe/storage/domain/utils/rx/RxEventBus;
+    check-cast v5, Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     .line 133
     const-class p2, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
@@ -149,13 +136,13 @@
 
     move-result-object p2
 
-    .line 252
-    move-object v7, p2
+    .line 307
+    move-object v4, p2
 
-    check-cast v7, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
+    check-cast v4, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
     .line 133
-    const-class p2, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
+    const-class p2, Lcom/iMe/storage/domain/interactor/crypto/level/AccountLevelInteractor;
 
     invoke-static {p2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
 
@@ -165,17 +152,17 @@
 
     move-result-object p1
 
-    .line 252
-    move-object v4, p1
+    .line 307
+    move-object v2, p1
 
-    check-cast v4, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
+    check-cast v2, Lcom/iMe/storage/domain/interactor/crypto/level/AccountLevelInteractor;
 
-    .line 250
-    new-instance p1, Lcom/iMe/ui/wallet/crypto/enter/password/EnterWalletPasswordPresenter;
+    .line 305
+    new-instance p1, Lcom/iMe/ui/wallet/crypto/settings/privacy/WalletPrivacySettingPresenter;
 
-    move-object v1, p1
+    move-object v0, p1
 
-    invoke-direct/range {v1 .. v7}, Lcom/iMe/ui/wallet/crypto/enter/password/EnterWalletPasswordPresenter;-><init>(Lcom/iMe/storage/domain/utils/system/ResourceManager;Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;Lcom/iMe/storage/domain/utils/rx/RxEventBus;Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;)V
+    invoke-direct/range {v0 .. v5}, Lcom/iMe/ui/wallet/crypto/settings/privacy/WalletPrivacySettingPresenter;-><init>(ILcom/iMe/storage/domain/interactor/crypto/level/AccountLevelInteractor;Lcom/iMe/storage/domain/interactor/crypto/permission/CryptoPermissionInteractor;Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;Lcom/iMe/storage/domain/utils/system/ResourceManager;)V
 
     return-object p1
 .end method
@@ -183,12 +170,12 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 249
+    .line 304
     check-cast p1, Lorg/koin/core/scope/Scope;
 
     check-cast p2, Lorg/koin/core/parameter/ParametersHolder;
 
-    invoke-virtual {p0, p1, p2}, Lcom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$32;->invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/iMe/ui/wallet/crypto/enter/password/EnterWalletPasswordPresenter;
+    invoke-virtual {p0, p1, p2}, Lcom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$32;->invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/iMe/ui/wallet/crypto/settings/privacy/WalletPrivacySettingPresenter;
 
     move-result-object p1
 

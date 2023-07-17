@@ -249,7 +249,7 @@
 .method private getFrameSignature(I)Lcom/bumptech/glide/load/Key;
     .locals 3
 
-    .line 368
+    .line 375
     new-instance v0, Lcom/bumptech/glide/integration/webp/decoder/WebpFrameLoader$WebpFrameCacheKey;
 
     new-instance v1, Lcom/bumptech/glide/signature/ObjectKey;
@@ -276,40 +276,40 @@
         }
     .end annotation
 
-    .line 357
+    .line 364
     invoke-virtual {p0}, Lcom/bumptech/glide/RequestManager;->asBitmap()Lcom/bumptech/glide/RequestBuilder;
 
     move-result-object p0
 
     sget-object v0, Lcom/bumptech/glide/load/engine/DiskCacheStrategy;->NONE:Lcom/bumptech/glide/load/engine/DiskCacheStrategy;
 
-    .line 358
+    .line 365
     invoke-static {v0}, Lcom/bumptech/glide/request/RequestOptions;->diskCacheStrategyOf(Lcom/bumptech/glide/load/engine/DiskCacheStrategy;)Lcom/bumptech/glide/request/RequestOptions;
 
     move-result-object v0
 
     const/4 v1, 0x1
 
-    .line 359
+    .line 366
     invoke-virtual {v0, v1}, Lcom/bumptech/glide/request/BaseRequestOptions;->useAnimationPool(Z)Lcom/bumptech/glide/request/BaseRequestOptions;
 
     move-result-object v0
 
     check-cast v0, Lcom/bumptech/glide/request/RequestOptions;
 
-    .line 360
+    .line 367
     invoke-virtual {v0, v1}, Lcom/bumptech/glide/request/BaseRequestOptions;->skipMemoryCache(Z)Lcom/bumptech/glide/request/BaseRequestOptions;
 
     move-result-object v0
 
     check-cast v0, Lcom/bumptech/glide/request/RequestOptions;
 
-    .line 361
+    .line 368
     invoke-virtual {v0, p1, p2}, Lcom/bumptech/glide/request/BaseRequestOptions;->override(II)Lcom/bumptech/glide/request/BaseRequestOptions;
 
     move-result-object p1
 
-    .line 358
+    .line 365
     invoke-virtual {p0, p1}, Lcom/bumptech/glide/RequestBuilder;->apply(Lcom/bumptech/glide/request/BaseRequestOptions;)Lcom/bumptech/glide/RequestBuilder;
 
     move-result-object p0
@@ -693,6 +693,19 @@
     return v0
 .end method
 
+.method getLoopCount()I
+    .locals 1
+
+    .line 166
+    iget-object v0, p0, Lcom/bumptech/glide/integration/webp/decoder/WebpFrameLoader;->webpDecoder:Lcom/bumptech/glide/integration/webp/decoder/WebpDecoder;
+
+    invoke-virtual {v0}, Lcom/bumptech/glide/integration/webp/decoder/WebpDecoder;->getTotalIterationCount()I
+
+    move-result v0
+
+    return v0
+.end method
+
 .method getSize()I
     .locals 2
 
@@ -789,7 +802,7 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_6
 
     .line 288
     invoke-direct {p0}, Lcom/bumptech/glide/integration/webp/decoder/WebpFrameLoader;->recycleFirstFrame()V
@@ -810,9 +823,10 @@
     add-int/lit8 p1, p1, -0x1
 
     :goto_1
-    if-ltz p1, :cond_4
+    if-ltz p1, :cond_5
 
-    .line 294
+    .line 296
+    :try_start_0
     iget-object v2, p0, Lcom/bumptech/glide/integration/webp/decoder/WebpFrameLoader;->callbacks:Ljava/util/List;
 
     invoke-interface {v2, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -821,17 +835,33 @@
 
     check-cast v2, Lcom/bumptech/glide/integration/webp/decoder/WebpFrameLoader$FrameCallback;
 
-    .line 295
-    invoke-interface {v2}, Lcom/bumptech/glide/integration/webp/decoder/WebpFrameLoader$FrameCallback;->onFrameReady()V
+    if-nez v2, :cond_4
 
+    goto :goto_2
+
+    .line 299
+    :cond_4
+    invoke-interface {v2}, Lcom/bumptech/glide/integration/webp/decoder/WebpFrameLoader$FrameCallback;->onFrameReady()V
+    :try_end_0
+    .catch Ljava/lang/IndexOutOfBoundsException; {:try_start_0 .. :try_end_0} :catch_0
+
+    goto :goto_2
+
+    :catch_0
+    move-exception v2
+
+    .line 301
+    invoke-virtual {v2}, Ljava/lang/IndexOutOfBoundsException;->printStackTrace()V
+
+    :goto_2
     add-int/lit8 p1, p1, -0x1
 
     goto :goto_1
 
-    :cond_4
-    if-eqz v0, :cond_5
+    :cond_5
+    if-eqz v0, :cond_6
 
-    .line 298
+    .line 305
     iget-object p1, p0, Lcom/bumptech/glide/integration/webp/decoder/WebpFrameLoader;->handler:Landroid/os/Handler;
 
     invoke-virtual {p1, v1, v0}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
@@ -840,8 +870,8 @@
 
     invoke-virtual {p1}, Landroid/os/Message;->sendToTarget()V
 
-    .line 302
-    :cond_5
+    .line 309
+    :cond_6
     invoke-direct {p0}, Lcom/bumptech/glide/integration/webp/decoder/WebpFrameLoader;->loadNextFrame()V
 
     return-void

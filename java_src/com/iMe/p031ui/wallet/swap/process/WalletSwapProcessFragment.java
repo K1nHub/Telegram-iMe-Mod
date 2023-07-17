@@ -12,30 +12,30 @@ import androidx.appcompat.widget.AppCompatImageView;
 import androidx.appcompat.widget.AppCompatTextView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.constraintlayout.widget.Group;
-import com.google.android.exoplayer2.C0475C;
+import com.google.android.exoplayer2.C0480C;
 import com.iMe.common.IdFabric$Menu;
+import com.iMe.fork.p024ui.dialog.SelectNetworkBottomSheet;
 import com.iMe.fork.utils.Callbacks$Callback;
 import com.iMe.fork.utils.Callbacks$Callback1;
 import com.iMe.model.dialog.DialogModel;
 import com.iMe.model.wallet.crypto.swap.SwapFeeScreenArgs;
 import com.iMe.model.wallet.crypto.swap.SwapUiState;
-import com.iMe.model.wallet.select.SelectableToken;
-import com.iMe.model.wallet.select.SelectableType;
 import com.iMe.model.wallet.swap.SwapSide;
 import com.iMe.navigation.wallet.coordinator.TokenBuyCoordinator;
 import com.iMe.navigation.wallet.coordinator.args.TokenBuyCoordinatorArgs;
-import com.iMe.p031ui.base.WalletAuthFragment;
+import com.iMe.p031ui.base.wallet_auth.WalletAuthBaseFragment;
 import com.iMe.p031ui.custom.ActionButton;
 import com.iMe.p031ui.custom.FeeView;
 import com.iMe.p031ui.custom.NetworkTypeView;
 import com.iMe.p031ui.wallet.swap.fee.WalletSwapFeeFragment;
 import com.iMe.p031ui.wallet.swap.token.WalletSelectTokenFragment;
+import com.iMe.storage.data.utils.crypto.NetworksHelper;
 import com.iMe.storage.domain.model.binancepay.OutputConvertToken;
+import com.iMe.storage.domain.model.crypto.Network;
 import com.iMe.storage.domain.model.crypto.NetworkType;
 import com.iMe.storage.domain.model.wallet.swap.SwapProtocol;
 import com.iMe.storage.domain.model.wallet.swap.SwapProtocolInfo;
-import com.iMe.storage.domain.model.wallet.token.TokenCode;
-import com.iMe.storage.domain.model.wallet.token.TokenInfo;
+import com.iMe.storage.domain.model.wallet.token.TokenDetailed;
 import com.iMe.storage.domain.utils.system.ResourceManager;
 import com.iMe.utils.dialogs.DialogUtils;
 import com.iMe.utils.dialogs.DialogsFactoryKt;
@@ -61,20 +61,20 @@ import kotlin.jvm.internal.Reflection;
 import kotlin.reflect.KProperty;
 import moxy.MvpDelegate;
 import moxy.ktx.MoxyKtxDelegate;
-import org.koin.p043mp.KoinPlatformTools;
+import org.koin.p042mp.KoinPlatformTools;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3295R;
+import org.telegram.messenger.C3417R;
 import org.telegram.messenger.databinding.ForkFragmentWalletSwapProcessBinding;
-import org.telegram.p044ui.ActionBar.ActionBarMenuItem;
-import org.telegram.p044ui.ActionBar.C3361ActionBar;
-import org.telegram.p044ui.ActionBar.INavigationLayout;
-import org.telegram.p044ui.ActionBar.Theme;
-import org.telegram.p044ui.ActionBar.ThemeDescription;
-import org.telegram.p044ui.Components.LayoutHelper;
+import org.telegram.p043ui.ActionBar.ActionBarMenuItem;
+import org.telegram.p043ui.ActionBar.C3484ActionBar;
+import org.telegram.p043ui.ActionBar.INavigationLayout;
+import org.telegram.p043ui.ActionBar.Theme;
+import org.telegram.p043ui.ActionBar.ThemeDescription;
+import org.telegram.p043ui.Components.LayoutHelper;
 /* compiled from: WalletSwapProcessFragment.kt */
 /* renamed from: com.iMe.ui.wallet.swap.process.WalletSwapProcessFragment */
 /* loaded from: classes4.dex */
-public final class WalletSwapProcessFragment extends WalletAuthFragment implements WalletSwapProcessView {
+public final class WalletSwapProcessFragment extends WalletAuthBaseFragment implements WalletSwapProcessView {
     static final /* synthetic */ KProperty<Object>[] $$delegatedProperties = {Reflection.property1(new PropertyReference1Impl(WalletSwapProcessFragment.class, "presenter", "getPresenter()Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessPresenter;", 0)), Reflection.property1(new PropertyReference1Impl(WalletSwapProcessFragment.class, "binding", "getBinding()Lorg/telegram/messenger/databinding/ForkFragmentWalletSwapProcessBinding;", 0)), Reflection.property1(new PropertyReference1Impl(WalletSwapProcessFragment.class, "networkTypeView", "getNetworkTypeView()Lcom/iMe/ui/custom/NetworkTypeView;", 0))};
     public static final Companion Companion = new Companion(null);
     private final ResettableLazy binding$delegate;
@@ -173,23 +173,23 @@ public final class WalletSwapProcessFragment extends WalletAuthFragment implemen
         setupColors();
         setupListeners();
         setupTexts();
-        getBinding().networkTypeInputView.setNetworkType(NetworkType.BINANCE_SMART_CHAIN);
-        getBinding().networkTypeOutputView.setNetworkType(NetworkType.POLYGON);
+        getBinding().networkTypeInputView.setNetwork(NetworksHelper.getBSCNetwork());
+        getBinding().networkTypeOutputView.setNetwork(NetworksHelper.getNetworkById(NetworkType.POLY));
         ConstraintLayout root = getBinding().getRoot();
         Intrinsics.checkNotNullExpressionValue(root, "binding.root");
         return root;
     }
 
-    @Override // org.telegram.p044ui.ActionBar.BaseFragment
+    @Override // org.telegram.p043ui.ActionBar.BaseFragment
     public ArrayList<ThemeDescription> getThemeDescriptions() {
         ArrayList<ThemeDescription> arrayListOf;
         arrayListOf = CollectionsKt__CollectionsKt.arrayListOf(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, Theme.key_actionBarDefault), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_ITEMSCOLOR, null, null, null, null, Theme.key_actionBarDefaultIcon), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_TITLECOLOR, null, null, null, null, Theme.key_actionBarDefaultTitle), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SELECTORCOLOR, null, null, null, null, Theme.key_actionBarDefaultSelector), new ThemeDescription(getBinding().getRoot(), ThemeDescription.FLAG_BACKGROUND, null, null, null, new ThemeDescription.ThemeDescriptionDelegate() { // from class: com.iMe.ui.wallet.swap.process.WalletSwapProcessFragment$$ExternalSyntheticLambda10
-            @Override // org.telegram.p044ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
+            @Override // org.telegram.p043ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
             public final void didSetColor() {
                 WalletSwapProcessFragment.getThemeDescriptions$lambda$0(WalletSwapProcessFragment.this);
             }
 
-            @Override // org.telegram.p044ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
+            @Override // org.telegram.p043ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
             public /* synthetic */ void onAnimationProgress(float f) {
                 ThemeDescription.ThemeDescriptionDelegate.CC.$default$onAnimationProgress(this, f);
             }
@@ -203,7 +203,7 @@ public final class WalletSwapProcessFragment extends WalletAuthFragment implemen
         this$0.setupColors();
     }
 
-    @Override // com.iMe.p031ui.base.mvp.MvpFragment, org.telegram.p044ui.ActionBar.BaseFragment
+    @Override // com.iMe.p031ui.base.mvp.MvpFragment, org.telegram.p043ui.ActionBar.BaseFragment
     public void onFragmentDestroy() {
         CountDownTimer countDownTimer = this.timer;
         if (countDownTimer != null) {
@@ -213,38 +213,40 @@ public final class WalletSwapProcessFragment extends WalletAuthFragment implemen
     }
 
     @Override // com.iMe.p031ui.base.mvp.SwitchNetworkView
-    public void showChooseNetworkDialog(NetworkType networkType, List<? extends NetworkType> availableNetworks, final Function1<? super NetworkType, Unit> action) {
-        Intrinsics.checkNotNullParameter(networkType, "networkType");
+    public void showChooseNetworkDialog(Network network, List<Network> availableNetworks, final Function1<? super Network, Unit> action) {
+        Intrinsics.checkNotNullParameter(network, "network");
         Intrinsics.checkNotNullParameter(availableNetworks, "availableNetworks");
         Intrinsics.checkNotNullParameter(action, "action");
+        SelectNetworkBottomSheet.Companion companion = SelectNetworkBottomSheet.Companion;
         Activity parentActivity = getParentActivity();
-        Intrinsics.checkNotNullExpressionValue(parentActivity, "parentActivity");
-        showDialog(DialogsFactoryKt.createSelectNetworkTypeDialog(parentActivity, availableNetworks, networkType, new Callbacks$Callback1() { // from class: com.iMe.ui.wallet.swap.process.WalletSwapProcessFragment$$ExternalSyntheticLambda7
+        Callbacks$Callback1<Network> callbacks$Callback1 = new Callbacks$Callback1() { // from class: com.iMe.ui.wallet.swap.process.WalletSwapProcessFragment$$ExternalSyntheticLambda6
             @Override // com.iMe.fork.utils.Callbacks$Callback1
             public final void invoke(Object obj) {
-                WalletSwapProcessFragment.showChooseNetworkDialog$lambda$1(Function1.this, (NetworkType) obj);
+                WalletSwapProcessFragment.showChooseNetworkDialog$lambda$1(Function1.this, (Network) obj);
             }
-        }));
+        };
+        Intrinsics.checkNotNullExpressionValue(parentActivity, "parentActivity");
+        showDialog(companion.newInstance(parentActivity, network, availableNetworks, callbacks$Callback1));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void showChooseNetworkDialog$lambda$1(Function1 action, NetworkType selectedNetworkType) {
+    public static final void showChooseNetworkDialog$lambda$1(Function1 action, Network selectedNetwork) {
         Intrinsics.checkNotNullParameter(action, "$action");
-        Intrinsics.checkNotNullExpressionValue(selectedNetworkType, "selectedNetworkType");
-        action.invoke(selectedNetworkType);
+        Intrinsics.checkNotNullExpressionValue(selectedNetwork, "selectedNetwork");
+        action.invoke(selectedNetwork);
     }
 
     @Override // com.iMe.p031ui.wallet.swap.process.WalletSwapProcessView
-    public void setupNetworkType(NetworkType networkType, SwapSide side) {
-        Intrinsics.checkNotNullParameter(networkType, "networkType");
+    public void setupNetwork(Network network, SwapSide side) {
+        Intrinsics.checkNotNullParameter(network, "network");
         Intrinsics.checkNotNullParameter(side, "side");
         int i = WhenMappings.$EnumSwitchMapping$0[side.ordinal()];
         if (i == 1) {
-            getNetworkTypeView().setNetworkType(networkType);
-            getBinding().networkTypeInputView.setNetworkType(networkType);
+            getNetworkTypeView().setNetwork(network);
+            getBinding().networkTypeInputView.setNetwork(network);
         } else if (i != 2) {
         } else {
-            getBinding().networkTypeOutputView.setNetworkType(networkType);
+            getBinding().networkTypeOutputView.setNetwork(network);
         }
     }
 
@@ -278,35 +280,34 @@ public final class WalletSwapProcessFragment extends WalletAuthFragment implemen
     }
 
     @Override // com.iMe.p031ui.wallet.swap.process.WalletSwapProcessView
-    public void onTokenSelected(SwapSide side, SelectableToken token, int i, int i2, NetworkType networkType) {
+    public void onTokenSelected(SwapSide side, TokenDetailed token, int i) {
         Intrinsics.checkNotNullParameter(side, "side");
         Intrinsics.checkNotNullParameter(token, "token");
-        Intrinsics.checkNotNullParameter(networkType, "networkType");
         ForkFragmentWalletSwapProcessBinding binding = getBinding();
-        int i3 = WhenMappings.$EnumSwitchMapping$0[side.ordinal()];
-        if (i3 == 1) {
+        int i2 = WhenMappings.$EnumSwitchMapping$0[side.ordinal()];
+        if (i2 == 1) {
             LinearLayout linearChooseFrom = binding.linearChooseFrom;
             Intrinsics.checkNotNullExpressionValue(linearChooseFrom, "linearChooseFrom");
             ViewExtKt.gone$default(linearChooseFrom, false, 1, null);
             AppCompatEditText onTokenSelected$lambda$5$lambda$3 = binding.editFromAmount;
             Intrinsics.checkNotNullExpressionValue(onTokenSelected$lambda$5$lambda$3, "onTokenSelected$lambda$5$lambda$3");
-            ViewExtKt.limitInputLength(onTokenSelected$lambda$5$lambda$3, i, i2);
+            ViewExtKt.limitInputLength$default(onTokenSelected$lambda$5$lambda$3, i, 0, 2, null);
             ViewExtKt.setAllowDecimals(onTokenSelected$lambda$5$lambda$3, true);
-            onTokenSelected$lambda$5$lambda$3.setHint(getResourceManager().getString(C3295R.string.wallet_amount_input_hint, token.getTicker()));
+            onTokenSelected$lambda$5$lambda$3.setHint(getResourceManager().getString(C3417R.string.wallet_amount_input_hint, token.getTicker()));
             AppCompatImageView imageTokenFrom = binding.imageTokenFrom;
             Intrinsics.checkNotNullExpressionValue(imageTokenFrom, "imageTokenFrom");
             ViewExtKt.loadImage(imageTokenFrom, token);
             Group groupFromSelectedToken = binding.groupFromSelectedToken;
             Intrinsics.checkNotNullExpressionValue(groupFromSelectedToken, "groupFromSelectedToken");
             ViewExtKt.visible$default(groupFromSelectedToken, false, 1, null);
-        } else if (i3 != 2) {
+        } else if (i2 != 2) {
         } else {
             LinearLayout linearChooseTo = binding.linearChooseTo;
             Intrinsics.checkNotNullExpressionValue(linearChooseTo, "linearChooseTo");
             ViewExtKt.gone$default(linearChooseTo, false, 1, null);
             AppCompatEditText onTokenSelected$lambda$5$lambda$4 = binding.editToAmount;
             Intrinsics.checkNotNullExpressionValue(onTokenSelected$lambda$5$lambda$4, "onTokenSelected$lambda$5$lambda$4");
-            ViewExtKt.limitInputLength(onTokenSelected$lambda$5$lambda$4, i, i2);
+            ViewExtKt.limitInputLength$default(onTokenSelected$lambda$5$lambda$4, i, 0, 2, null);
             ViewExtKt.setAllowDecimals(onTokenSelected$lambda$5$lambda$4, true);
             onTokenSelected$lambda$5$lambda$4.setText(token.getTicker());
             AppCompatImageView imageTokenTo = binding.imageTokenTo;
@@ -331,7 +332,7 @@ public final class WalletSwapProcessFragment extends WalletAuthFragment implemen
         ForkFragmentWalletSwapProcessBinding binding = getBinding();
         if (state instanceof SwapUiState.NeedApprove) {
             ActionButton actionButton = binding.buttonAction;
-            actionButton.setText(getResourceManager().getString(C3295R.string.wallet_swap_process_button_approve));
+            actionButton.setText(getResourceManager().getString(C3417R.string.wallet_swap_process_button_approve));
             actionButton.setOnClickListener(new View.OnClickListener() { // from class: com.iMe.ui.wallet.swap.process.WalletSwapProcessFragment$$ExternalSyntheticLambda1
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
@@ -339,9 +340,9 @@ public final class WalletSwapProcessFragment extends WalletAuthFragment implemen
                 }
             });
             SwapUiState.NeedApprove needApprove = (SwapUiState.NeedApprove) state;
-            SelectableToken token = needApprove.getToken();
+            TokenDetailed token = needApprove.getToken();
             binding.editToAmount.setText(token != null ? token.getTicker() : null);
-            binding.textToDescription.setText(getResourceManager().getString(C3295R.string.wallet_swap_process_to_description));
+            binding.textToDescription.setText(getResourceManager().getString(C3417R.string.wallet_swap_process_to_description));
             binding.feeView.init(this, needApprove.getChooseFeeType());
             FeeView feeView = binding.feeView;
             Intrinsics.checkNotNullExpressionValue(feeView, "feeView");
@@ -353,11 +354,11 @@ public final class WalletSwapProcessFragment extends WalletAuthFragment implemen
             ActionButton actionButton2 = binding.buttonAction;
             ScreenType screenType = this.screenType;
             if (screenType instanceof ScreenType.Binance) {
-                string = getResourceManager().getString(C3295R.string.binance_convert_button_calculate);
+                string = getResourceManager().getString(C3417R.string.binance_convert_button_calculate);
             } else if (!(screenType instanceof ScreenType.Crypto)) {
                 throw new NoWhenBranchMatchedException();
             } else {
-                string = getResourceManager().getString(C3295R.string.wallet_swap_process_button_calculate);
+                string = getResourceManager().getString(C3417R.string.wallet_swap_process_button_calculate);
             }
             actionButton2.setText(string);
             actionButton2.setOnClickListener(new View.OnClickListener() { // from class: com.iMe.ui.wallet.swap.process.WalletSwapProcessFragment$$ExternalSyntheticLambda2
@@ -366,9 +367,9 @@ public final class WalletSwapProcessFragment extends WalletAuthFragment implemen
                     WalletSwapProcessFragment.renderState$lambda$22$lambda$11$lambda$10(WalletSwapProcessFragment.this, view);
                 }
             });
-            SelectableToken token2 = ((SwapUiState.PrepareSwap) state).getToken();
+            TokenDetailed token2 = ((SwapUiState.PrepareSwap) state).getToken();
             binding.editToAmount.setText(token2 != null ? token2.getTicker() : null);
-            binding.textToDescription.setText(getResourceManager().getString(C3295R.string.wallet_swap_process_to_description));
+            binding.textToDescription.setText(getResourceManager().getString(C3417R.string.wallet_swap_process_to_description));
             FeeView feeView2 = binding.feeView;
             Intrinsics.checkNotNullExpressionValue(feeView2, "feeView");
             ViewExtKt.gone$default(feeView2, false, 1, null);
@@ -385,18 +386,18 @@ public final class WalletSwapProcessFragment extends WalletAuthFragment implemen
                 double outputAmount = binance.getQuote().getOutputAmount() / binance.getQuote().getInputAmount();
                 AppCompatTextView appCompatTextView = binding.textToDescription;
                 ResourceManager resourceManager = getResourceManager();
-                int i = C3295R.string.wallet_swap_process_fee_price_value;
+                int i = C3417R.string.wallet_swap_process_fee_price_value;
                 Float valueOf = Float.valueOf(1.0f);
-                TokenInfo.Crypto.Ethereum.BNB bnb = TokenInfo.Crypto.Ethereum.BNB.INSTANCE;
-                appCompatTextView.setText(resourceManager.getString(i, BalanceFormatter.formatBalance(valueOf, bnb.getDecimals()), binance.getQuote().getInputTokenShortName(), BalanceFormatter.formatBalance(Double.valueOf(outputAmount), bnb.getDecimals()), binance.getQuote().getOutputTokenShortName()));
+                TokenDetailed.Companion companion = TokenDetailed.Companion;
+                appCompatTextView.setText(resourceManager.getString(i, BalanceFormatter.formatBalance(valueOf, Integer.valueOf(companion.getBNB().getDecimals())), binance.getQuote().getInputTokenShortName(), BalanceFormatter.formatBalance(Double.valueOf(outputAmount), Integer.valueOf(companion.getBNB().getDecimals())), binance.getQuote().getOutputTokenShortName()));
                 AppCompatEditText appCompatEditText = binding.editToAmount;
-                appCompatEditText.setText(BalanceFormatter.formatBalance(Double.valueOf(binance.getQuote().getOutputAmount()), bnb.getDecimals()) + ' ' + binance.getQuote().getOutputToken());
+                appCompatEditText.setText(BalanceFormatter.formatBalance(Double.valueOf(binance.getQuote().getOutputAmount()), Integer.valueOf(companion.getBNB().getDecimals())) + ' ' + binance.getQuote().getOutputToken());
                 final ActionButton actionButton3 = binding.buttonAction;
                 CountDownTimer countDownTimer = new CountDownTimer() { // from class: com.iMe.ui.wallet.swap.process.WalletSwapProcessFragment$renderState$1$5$1
                     /* JADX INFO: Access modifiers changed from: package-private */
                     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                     {
-                        super(C0475C.DEFAULT_MAX_SEEK_TO_PREVIOUS_POSITION_MS, 1000L);
+                        super(C0480C.DEFAULT_MAX_SEEK_TO_PREVIOUS_POSITION_MS, 1000L);
                     }
 
                     @Override // android.os.CountDownTimer
@@ -405,7 +406,7 @@ public final class WalletSwapProcessFragment extends WalletAuthFragment implemen
                         ActionButton actionButton4 = ActionButton.this;
                         StringBuilder sb = new StringBuilder();
                         resourceManager2 = this.getResourceManager();
-                        sb.append(resourceManager2.getString(C3295R.string.wallet_swap_process_button_exchange));
+                        sb.append(resourceManager2.getString(C3417R.string.wallet_swap_process_button_exchange));
                         sb.append(" (");
                         sb.append((j + 1000) / 1000);
                         sb.append(')');
@@ -421,7 +422,7 @@ public final class WalletSwapProcessFragment extends WalletAuthFragment implemen
                 };
                 this.timer = countDownTimer;
                 countDownTimer.start();
-                actionButton3.setText(getResourceManager().getString(C3295R.string.wallet_swap_process_button_exchange));
+                actionButton3.setText(getResourceManager().getString(C3417R.string.wallet_swap_process_button_exchange));
                 actionButton3.setOnClickListener(new View.OnClickListener() { // from class: com.iMe.ui.wallet.swap.process.WalletSwapProcessFragment$$ExternalSyntheticLambda3
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
@@ -430,7 +431,7 @@ public final class WalletSwapProcessFragment extends WalletAuthFragment implemen
                 });
             } else if (swap instanceof SwapUiState.Swap.Crypto) {
                 ActionButton actionButton4 = binding.buttonAction;
-                actionButton4.setText(getResourceManager().getString(C3295R.string.wallet_swap_process_button_exchange));
+                actionButton4.setText(getResourceManager().getString(C3417R.string.wallet_swap_process_button_exchange));
                 actionButton4.setOnClickListener(new View.OnClickListener() { // from class: com.iMe.ui.wallet.swap.process.WalletSwapProcessFragment$$ExternalSyntheticLambda4
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
@@ -442,13 +443,13 @@ public final class WalletSwapProcessFragment extends WalletAuthFragment implemen
                 renderState$lambda$22$lambda$17.init(this, crypto.getChooseFeeType());
                 Intrinsics.checkNotNullExpressionValue(renderState$lambda$22$lambda$17, "renderState$lambda$22$lambda$17");
                 ViewExtKt.visible$default(renderState$lambda$22$lambda$17, false, 1, null);
-                binding.textToDescription.setText(getResourceManager().getString(C3295R.string.wallet_swap_process_fee_price_value, BalanceFormatter.formatBalance(Float.valueOf(1.0f), crypto.getMetadata().getInputTokenInfo().getDecimals()), getResourceManager().getString(crypto.getMetadata().getInputTokenInfo().getShortName()), BalanceFormatter.formatBalance(crypto.getMetadata().getExecutionPrice(), crypto.getMetadata().getOutputTokenInfo().getDecimals()), getResourceManager().getString(crypto.getMetadata().getOutputTokenInfo().getShortName())));
+                binding.textToDescription.setText(getResourceManager().getString(C3417R.string.wallet_swap_process_fee_price_value, BalanceFormatter.formatBalance(Float.valueOf(1.0f), Integer.valueOf(crypto.getMetadata().getInputToken().getDecimals())), crypto.getMetadata().getInputToken().getTicker(), BalanceFormatter.formatBalance(crypto.getMetadata().getExecutionPrice(), Integer.valueOf(crypto.getMetadata().getOutputToken().getDecimals())), crypto.getMetadata().getOutputToken().getTicker()));
                 AppCompatEditText appCompatEditText2 = binding.editToAmount;
-                appCompatEditText2.setText(BalanceFormatter.formatBalance(crypto.getMetadata().getAmountOut(), crypto.getMetadata().getOutputTokenInfo().getDecimals()) + ' ' + getResourceManager().getString(crypto.getMetadata().getOutputTokenInfo().getShortName()));
+                appCompatEditText2.setText(BalanceFormatter.formatBalance(crypto.getMetadata().getAmountOut(), Integer.valueOf(crypto.getMetadata().getOutputToken().getDecimals())) + ' ' + crypto.getMetadata().getOutputToken().getTicker());
             }
         } else if (state instanceof SwapUiState.ApproveInProgress) {
             ActionButton actionButton5 = binding.buttonAction;
-            actionButton5.setText(getResourceManager().getString(C3295R.string.wallet_swap_process_button_approving));
+            actionButton5.setText(getResourceManager().getString(C3417R.string.wallet_swap_process_button_approving));
             actionButton5.setOnClickListener(WalletSwapProcessFragment$$ExternalSyntheticLambda5.INSTANCE);
             FeeView feeView3 = binding.feeView;
             Intrinsics.checkNotNullExpressionValue(feeView3, "feeView");
@@ -458,7 +459,7 @@ public final class WalletSwapProcessFragment extends WalletAuthFragment implemen
             ViewExtKt.visible$default(textWhatIsApprove4, false, 1, null);
         } else if (state instanceof SwapUiState.Idle) {
             ActionButton actionButton6 = binding.buttonAction;
-            actionButton6.setText(getResourceManager().getString(C3295R.string.wallet_swap_process_button_calculate));
+            actionButton6.setText(getResourceManager().getString(C3417R.string.wallet_swap_process_button_calculate));
             actionButton6.setOnClickListener(new View.OnClickListener() { // from class: com.iMe.ui.wallet.swap.process.WalletSwapProcessFragment$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
@@ -471,8 +472,8 @@ public final class WalletSwapProcessFragment extends WalletAuthFragment implemen
             AppCompatEditText editToAmount = binding.editToAmount;
             Intrinsics.checkNotNullExpressionValue(editToAmount, "editToAmount");
             ViewExtKt.clearText(editToAmount);
-            binding.textFromDescription.setText(getResourceManager().getString(C3295R.string.wallet_swap_process_from_description));
-            binding.textToDescription.setText(getResourceManager().getString(C3295R.string.wallet_swap_process_to_description));
+            binding.textFromDescription.setText(getResourceManager().getString(C3417R.string.wallet_swap_process_from_description));
+            binding.textToDescription.setText(getResourceManager().getString(C3417R.string.wallet_swap_process_to_description));
             FeeView feeView4 = binding.feeView;
             Intrinsics.checkNotNullExpressionValue(feeView4, "feeView");
             ViewExtKt.gone$default(feeView4, false, 1, null);
@@ -535,12 +536,12 @@ public final class WalletSwapProcessFragment extends WalletAuthFragment implemen
 
     @Override // com.iMe.p031ui.wallet.swap.process.WalletSwapProcessView
     public void showNotEnoughMoneyBinanceErrorDialog() {
-        DialogsFactoryKt.showErrorAlert$default(this, getResourceManager().getString(C3295R.string.wallet_common_error_not_enough_money_title), getResourceManager().getString(C3295R.string.binance_convert_not_enough_money_error_description), getResourceManager().getString(C3295R.string.common_ok), null, 8, null);
+        DialogsFactoryKt.showErrorAlert$default(this, getResourceManager().getString(C3417R.string.wallet_common_error_not_enough_money_title), getResourceManager().getString(C3417R.string.binance_convert_not_enough_money_error_description), getResourceManager().getString(C3417R.string.common_ok), null, 8, null);
     }
 
     @Override // com.iMe.p031ui.wallet.swap.process.WalletSwapProcessView
     public void showSuccessSwapAlert() {
-        DialogsFactoryKt.showSuccessAlert$default(this, getResourceManager().getString(C3295R.string.wallet_swap_process_swap_success_title), getResourceManager().getString(C3295R.string.wallet_swap_process_swap_success_description), null, new Callbacks$Callback() { // from class: com.iMe.ui.wallet.swap.process.WalletSwapProcessFragment$$ExternalSyntheticLambda9
+        DialogsFactoryKt.showSuccessAlert$default(this, getResourceManager().getString(C3417R.string.wallet_swap_process_swap_success_title), getResourceManager().getString(C3417R.string.wallet_swap_process_swap_success_description), null, new Callbacks$Callback() { // from class: com.iMe.ui.wallet.swap.process.WalletSwapProcessFragment$$ExternalSyntheticLambda8
             @Override // com.iMe.fork.utils.Callbacks$Callback
             public final void invoke() {
                 WalletSwapProcessFragment.showSuccessSwapAlert$lambda$23(WalletSwapProcessFragment.this);
@@ -556,7 +557,7 @@ public final class WalletSwapProcessFragment extends WalletAuthFragment implemen
 
     @Override // com.iMe.p031ui.wallet.swap.process.WalletSwapProcessView
     public void showSuccessApproveAlert() {
-        DialogsFactoryKt.showSuccessAlert$default(this, getResourceManager().getString(C3295R.string.wallet_swap_process_approve_success_title), getResourceManager().getString(C3295R.string.wallet_swap_process_approve_success_description), null, null, 12, null);
+        DialogsFactoryKt.showSuccessAlert$default(this, getResourceManager().getString(C3417R.string.wallet_swap_process_approve_success_title), getResourceManager().getString(C3417R.string.wallet_swap_process_approve_success_description), null, null, 12, null);
     }
 
     @Override // com.iMe.p031ui.wallet.swap.process.WalletSwapProcessView
@@ -566,7 +567,7 @@ public final class WalletSwapProcessFragment extends WalletAuthFragment implemen
     }
 
     @Override // com.iMe.p031ui.wallet.swap.process.WalletSwapProcessView
-    public void showMinMaxInputValues(SelectableToken token, OutputConvertToken information) {
+    public void showMinMaxInputValues(TokenDetailed token, OutputConvertToken information) {
         Intrinsics.checkNotNullParameter(token, "token");
         Intrinsics.checkNotNullParameter(information, "information");
         ForkFragmentWalletSwapProcessBinding binding = getBinding();
@@ -575,29 +576,27 @@ public final class WalletSwapProcessFragment extends WalletAuthFragment implemen
         ViewExtKt.visible$default(textFromAdditionalDescription, false, 1, null);
         AppCompatTextView appCompatTextView = binding.textFromAdditionalDescription;
         ResourceManager resourceManager = getResourceManager();
-        int i = C3295R.string.binance_convert_min_max_convert_value;
+        int i = C3417R.string.binance_convert_min_max_convert_value;
         Double valueOf = Double.valueOf(information.getMinLimit());
-        TokenInfo.Crypto.Ethereum.BNB bnb = TokenInfo.Crypto.Ethereum.BNB.INSTANCE;
-        appCompatTextView.setText(resourceManager.getString(i, BalanceFormatter.formatBalance(valueOf, bnb.getDecimals()), token.getTicker(), BalanceFormatter.formatBalance(Double.valueOf(information.getMaxLimit()), bnb.getDecimals()), token.getTicker()));
+        TokenDetailed.Companion companion = TokenDetailed.Companion;
+        appCompatTextView.setText(resourceManager.getString(i, BalanceFormatter.formatBalance(valueOf, Integer.valueOf(companion.getBNB().getDecimals())), token.getTicker(), BalanceFormatter.formatBalance(Double.valueOf(information.getMaxLimit()), Integer.valueOf(companion.getBNB().getDecimals())), token.getTicker()));
     }
 
     @Override // com.iMe.p031ui.wallet.swap.process.WalletSwapProcessView
-    public void openSelectTokenDialog(SwapSide side, SelectableToken selectableToken, List<? extends SelectableToken> tokens, NetworkType networkType, SelectableType type, boolean z, final Function1<? super SelectableToken, Unit> action) {
-        Intrinsics.checkNotNullParameter(side, "side");
-        Intrinsics.checkNotNullParameter(tokens, "tokens");
-        Intrinsics.checkNotNullParameter(networkType, "networkType");
-        Intrinsics.checkNotNullParameter(type, "type");
+    public void openSelectTokenDialog(TokenDetailed tokenDetailed, WalletSelectTokenFragment.ScreenType selectTokensScreenType, String networkId, boolean z, final Function1<? super TokenDetailed, Unit> action) {
+        Intrinsics.checkNotNullParameter(selectTokensScreenType, "selectTokensScreenType");
+        Intrinsics.checkNotNullParameter(networkId, "networkId");
         Intrinsics.checkNotNullParameter(action, "action");
-        presentFragment(WalletSelectTokenFragment.Companion.newInstance(type, selectableToken, tokens, networkType, z, new Callbacks$Callback1() { // from class: com.iMe.ui.wallet.swap.process.WalletSwapProcessFragment$$ExternalSyntheticLambda6
+        presentFragment(WalletSelectTokenFragment.Companion.newInstance(selectTokensScreenType, tokenDetailed, networkId, z, new Callbacks$Callback1() { // from class: com.iMe.ui.wallet.swap.process.WalletSwapProcessFragment$$ExternalSyntheticLambda7
             @Override // com.iMe.fork.utils.Callbacks$Callback1
             public final void invoke(Object obj) {
-                WalletSwapProcessFragment.openSelectTokenDialog$lambda$25(Function1.this, (SelectableToken) obj);
+                WalletSwapProcessFragment.openSelectTokenDialog$lambda$25(Function1.this, (TokenDetailed) obj);
             }
         }));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void openSelectTokenDialog$lambda$25(Function1 action, SelectableToken token) {
+    public static final void openSelectTokenDialog$lambda$25(Function1 action, TokenDetailed token) {
         Intrinsics.checkNotNullParameter(action, "$action");
         Intrinsics.checkNotNullExpressionValue(token, "token");
         action.invoke(token);
@@ -620,7 +619,7 @@ public final class WalletSwapProcessFragment extends WalletAuthFragment implemen
         hintUtils.showChangeNetworkHint(parentLayout);
     }
 
-    @Override // org.telegram.p044ui.ActionBar.BaseFragment
+    @Override // org.telegram.p043ui.ActionBar.BaseFragment
     public void onTransitionAnimationEnd(boolean z, boolean z2) {
         if (z && !z2) {
             getPresenter().showChangeNetworkHintIfNeeded();
@@ -629,12 +628,11 @@ public final class WalletSwapProcessFragment extends WalletAuthFragment implemen
     }
 
     private final void setupActionBar() {
-        C3361ActionBar c3361ActionBar = this.actionBar;
-        c3361ActionBar.setBackButtonImage(C3295R.C3297drawable.ic_ab_back);
-        c3361ActionBar.setAllowOverlayTitle(true);
-        c3361ActionBar.createMenu();
-        c3361ActionBar.setActionBarMenuOnItemClick(new C3361ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.ui.wallet.swap.process.WalletSwapProcessFragment$setupActionBar$1$1
-            @Override // org.telegram.p044ui.ActionBar.C3361ActionBar.ActionBarMenuOnItemClick
+        C3484ActionBar c3484ActionBar = this.actionBar;
+        c3484ActionBar.setBackButtonImage(C3417R.C3419drawable.ic_ab_back);
+        c3484ActionBar.setAllowOverlayTitle(true);
+        c3484ActionBar.setActionBarMenuOnItemClick(new C3484ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.ui.wallet.swap.process.WalletSwapProcessFragment$setupActionBar$1$1
+            @Override // org.telegram.p043ui.ActionBar.C3484ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 WalletSwapProcessPresenter presenter;
                 if (i == -1) {
@@ -645,10 +643,11 @@ public final class WalletSwapProcessFragment extends WalletAuthFragment implemen
                 }
             }
         });
-        ActionBarMenuItem setupActionBar$lambda$28$lambda$27$lambda$26 = c3361ActionBar.createMenu().addItemWithWidth(IdFabric$Menu.NETWORK_SWITCH, 0, -2);
-        Intrinsics.checkNotNullExpressionValue(setupActionBar$lambda$28$lambda$27$lambda$26, "setupActionBar$lambda$28$lambda$27$lambda$26");
-        com.tbuonomo.viewpagerdotsindicator.ViewExtKt.setPaddingHorizontal(setupActionBar$lambda$28$lambda$27$lambda$26, AndroidUtilities.m54dp(14));
-        setupActionBar$lambda$28$lambda$27$lambda$26.addView(getNetworkTypeView(), LayoutHelper.createFrame(-2, -2, 8388629));
+        ActionBarMenuItem setupActionBar$lambda$27$lambda$26 = c3484ActionBar.createMenu().addItemWithWidth(IdFabric$Menu.NETWORK_SWITCH, 0, -2);
+        setupActionBar$lambda$27$lambda$26.disableRipple();
+        Intrinsics.checkNotNullExpressionValue(setupActionBar$lambda$27$lambda$26, "setupActionBar$lambda$27$lambda$26");
+        com.tbuonomo.viewpagerdotsindicator.ViewExtKt.setPaddingHorizontal(setupActionBar$lambda$27$lambda$26, AndroidUtilities.m54dp(14));
+        setupActionBar$lambda$27$lambda$26.addView(getNetworkTypeView(), LayoutHelper.createFrame(-2, -2, 8388629));
     }
 
     private final void setupColors() {
@@ -676,27 +675,27 @@ public final class WalletSwapProcessFragment extends WalletAuthFragment implemen
             appCompatTextView.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteGrayText4));
         }
         listOf3 = CollectionsKt__CollectionsKt.listOf((Object[]) new AppCompatTextView[]{binding.textToDescription, binding.textFromDescription});
-        for (AppCompatTextView setupColors$lambda$38$lambda$31 : listOf3) {
-            Intrinsics.checkNotNullExpressionValue(setupColors$lambda$38$lambda$31, "setupColors$lambda$38$lambda$31");
-            ViewExtKt.setGreyShadowBackground$default(setupColors$lambda$38$lambda$31, false, 1, null);
+        for (AppCompatTextView setupColors$lambda$37$lambda$30 : listOf3) {
+            Intrinsics.checkNotNullExpressionValue(setupColors$lambda$37$lambda$30, "setupColors$lambda$37$lambda$30");
+            ViewExtKt.setGreyShadowBackground$default(setupColors$lambda$37$lambda$30, false, 1, null);
         }
         listOf4 = CollectionsKt__CollectionsKt.listOf((Object[]) new ConstraintLayout[]{binding.constraintFromToken, binding.constraintToToken});
         for (ConstraintLayout constraintLayout2 : listOf4) {
             constraintLayout2.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundWhite));
         }
         listOf5 = CollectionsKt__CollectionsKt.listOf((Object[]) new AppCompatImageView[]{binding.imageFromIcon, binding.imageToIcon});
-        for (AppCompatImageView setupColors$lambda$38$lambda$33 : listOf5) {
-            Intrinsics.checkNotNullExpressionValue(setupColors$lambda$38$lambda$33, "setupColors$lambda$38$lambda$33");
-            ViewExtKt.setImageColor(setupColors$lambda$38$lambda$33, Theme.getColor(Theme.key_windowBackgroundWhiteBlueHeader));
+        for (AppCompatImageView setupColors$lambda$37$lambda$32 : listOf5) {
+            Intrinsics.checkNotNullExpressionValue(setupColors$lambda$37$lambda$32, "setupColors$lambda$37$lambda$32");
+            ViewExtKt.setImageColor(setupColors$lambda$37$lambda$32, Theme.getColor(Theme.key_windowBackgroundWhiteBlueHeader));
         }
         listOf6 = CollectionsKt__CollectionsKt.listOf((Object[]) new AppCompatTextView[]{binding.textSelectFromToken, binding.textSelectToToken, binding.textToToken, binding.textFromToken});
         for (AppCompatTextView appCompatTextView2 : listOf6) {
             appCompatTextView2.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteBlueHeader));
         }
         listOf7 = CollectionsKt__CollectionsKt.listOf((Object[]) new AppCompatTextView[]{binding.textToToken, binding.textFromToken});
-        for (AppCompatTextView setupColors$lambda$38$lambda$35 : listOf7) {
-            Intrinsics.checkNotNullExpressionValue(setupColors$lambda$38$lambda$35, "setupColors$lambda$38$lambda$35");
-            ViewExtKt.withMediumTypeface(setupColors$lambda$38$lambda$35);
+        for (AppCompatTextView setupColors$lambda$37$lambda$34 : listOf7) {
+            Intrinsics.checkNotNullExpressionValue(setupColors$lambda$37$lambda$34, "setupColors$lambda$37$lambda$34");
+            ViewExtKt.withMediumTypeface(setupColors$lambda$37$lambda$34);
         }
         listOf8 = CollectionsKt__CollectionsKt.listOf((Object[]) new AppCompatEditText[]{binding.editFromAmount, binding.editToAmount});
         for (AppCompatEditText appCompatEditText : listOf8) {
@@ -704,25 +703,25 @@ public final class WalletSwapProcessFragment extends WalletAuthFragment implemen
             appCompatEditText.setTextColor(Theme.getColor(Theme.key_chat_messagePanelText));
         }
         listOf9 = CollectionsKt__CollectionsKt.listOf((Object[]) new LinearLayout[]{binding.linearChooseTo, binding.linearChooseFrom});
-        for (LinearLayout setupColors$lambda$38$lambda$37 : listOf9) {
-            Intrinsics.checkNotNullExpressionValue(setupColors$lambda$38$lambda$37, "setupColors$lambda$38$lambda$37");
-            ViewExtKt.setRippleForeground$default(setupColors$lambda$38$lambda$37, false, 1, null);
+        for (LinearLayout setupColors$lambda$37$lambda$36 : listOf9) {
+            Intrinsics.checkNotNullExpressionValue(setupColors$lambda$37$lambda$36, "setupColors$lambda$37$lambda$36");
+            ViewExtKt.setRippleForeground$default(setupColors$lambda$37$lambda$36, false, 1, null);
         }
     }
 
     private final void setupTexts() {
         ForkFragmentWalletSwapProcessBinding binding = getBinding();
-        binding.textToDescription.setText(getResourceManager().getString(C3295R.string.wallet_swap_process_to_description));
-        binding.textFromDescription.setText(getResourceManager().getString(C3295R.string.wallet_swap_process_from_description));
+        binding.textToDescription.setText(getResourceManager().getString(C3417R.string.wallet_swap_process_to_description));
+        binding.textFromDescription.setText(getResourceManager().getString(C3417R.string.wallet_swap_process_from_description));
         AppCompatTextView appCompatTextView = binding.textSelectFromToken;
         ResourceManager resourceManager = getResourceManager();
-        int i = C3295R.string.wallet_swap_process_select_placeholder;
+        int i = C3417R.string.wallet_swap_process_select_placeholder;
         appCompatTextView.setText(resourceManager.getString(i));
         binding.textSelectToToken.setText(getResourceManager().getString(i));
-        binding.textToToken.setText(getResourceManager().getString(C3295R.string.wallet_swap_process_to_title));
-        binding.textFromToken.setText(getResourceManager().getString(C3295R.string.wallet_swap_process_from_title));
-        binding.buttonAction.setText(getResourceManager().getString(C3295R.string.wallet_swap_process_button_calculate));
-        binding.textWhatIsApprove.setText(getResourceManager().getString(C3295R.string.wallet_swap_process_what_is_approve));
+        binding.textToToken.setText(getResourceManager().getString(C3417R.string.wallet_swap_process_to_title));
+        binding.textFromToken.setText(getResourceManager().getString(C3417R.string.wallet_swap_process_from_title));
+        binding.buttonAction.setText(getResourceManager().getString(C3417R.string.wallet_swap_process_button_calculate));
+        binding.textWhatIsApprove.setText(getResourceManager().getString(C3417R.string.wallet_swap_process_what_is_approve));
     }
 
     private final void setupListeners() {
@@ -731,7 +730,7 @@ public final class WalletSwapProcessFragment extends WalletAuthFragment implemen
         ForkFragmentWalletSwapProcessBinding binding = getBinding();
         AppCompatEditText editFromAmount = binding.editFromAmount;
         Intrinsics.checkNotNullExpressionValue(editFromAmount, "editFromAmount");
-        editFromAmount.addTextChangedListener(new TextWatcher() { // from class: com.iMe.ui.wallet.swap.process.WalletSwapProcessFragment$setupListeners$lambda$43$$inlined$doAfterTextChanged$1
+        editFromAmount.addTextChangedListener(new TextWatcher() { // from class: com.iMe.ui.wallet.swap.process.WalletSwapProcessFragment$setupListeners$lambda$42$$inlined$doAfterTextChanged$1
             @Override // android.text.TextWatcher
             public void beforeTextChanged(CharSequence charSequence, int i, int i2, int i3) {
             }
@@ -777,16 +776,16 @@ public final class WalletSwapProcessFragment extends WalletAuthFragment implemen
     private final void showApproveConfirmationDialog() {
         Activity parentActivity = getParentActivity();
         Intrinsics.checkNotNullExpressionValue(parentActivity, "parentActivity");
-        showDialog(DialogUtils.createDialog$default(parentActivity, getPresenter().getApproveConfirmationDialogModel(), new Callbacks$Callback() { // from class: com.iMe.ui.wallet.swap.process.WalletSwapProcessFragment$$ExternalSyntheticLambda8
+        showDialog(DialogUtils.createDialog$default(parentActivity, getPresenter().getApproveConfirmationDialogModel(), new Callbacks$Callback() { // from class: com.iMe.ui.wallet.swap.process.WalletSwapProcessFragment$$ExternalSyntheticLambda9
             @Override // com.iMe.fork.utils.Callbacks$Callback
             public final void invoke() {
-                WalletSwapProcessFragment.showApproveConfirmationDialog$lambda$44(WalletSwapProcessFragment.this);
+                WalletSwapProcessFragment.showApproveConfirmationDialog$lambda$43(WalletSwapProcessFragment.this);
             }
         }, null, 8, null));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void showApproveConfirmationDialog$lambda$44(WalletSwapProcessFragment this$0) {
+    public static final void showApproveConfirmationDialog$lambda$43(WalletSwapProcessFragment this$0) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         this$0.getPresenter().approve();
     }
@@ -819,40 +818,40 @@ public final class WalletSwapProcessFragment extends WalletAuthFragment implemen
         /* renamed from: com.iMe.ui.wallet.swap.process.WalletSwapProcessFragment$ScreenType$Crypto */
         /* loaded from: classes4.dex */
         public static final class Crypto extends ScreenType {
-            private final NetworkType forcedNetworkType;
-            private final TokenCode fromToken;
+            private final String forcedNetworkId;
+            private final TokenDetailed fromToken;
             private final SwapProtocol swapProtocol;
             private final SwapProtocolInfo swapProtocolInfo;
-            private final TokenCode toToken;
+            private final TokenDetailed toToken;
 
-            public /* synthetic */ Crypto(SwapProtocol swapProtocol, TokenCode tokenCode, TokenCode tokenCode2, NetworkType networkType, int i, DefaultConstructorMarker defaultConstructorMarker) {
-                this(swapProtocol, (i & 2) != 0 ? null : tokenCode, (i & 4) != 0 ? null : tokenCode2, (i & 8) != 0 ? null : networkType);
+            public /* synthetic */ Crypto(SwapProtocol swapProtocol, TokenDetailed tokenDetailed, TokenDetailed tokenDetailed2, String str, int i, DefaultConstructorMarker defaultConstructorMarker) {
+                this(swapProtocol, (i & 2) != 0 ? null : tokenDetailed, (i & 4) != 0 ? null : tokenDetailed2, (i & 8) != 0 ? null : str);
             }
 
             public final SwapProtocol getSwapProtocol() {
                 return this.swapProtocol;
             }
 
-            public final TokenCode getFromToken() {
+            public final TokenDetailed getFromToken() {
                 return this.fromToken;
             }
 
-            public final TokenCode getToToken() {
+            public final TokenDetailed getToToken() {
                 return this.toToken;
             }
 
-            public final NetworkType getForcedNetworkType() {
-                return this.forcedNetworkType;
+            public final String getForcedNetworkId() {
+                return this.forcedNetworkId;
             }
 
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-            public Crypto(SwapProtocol swapProtocol, TokenCode tokenCode, TokenCode tokenCode2, NetworkType networkType) {
+            public Crypto(SwapProtocol swapProtocol, TokenDetailed tokenDetailed, TokenDetailed tokenDetailed2, String str) {
                 super(null);
                 Intrinsics.checkNotNullParameter(swapProtocol, "swapProtocol");
                 this.swapProtocol = swapProtocol;
-                this.fromToken = tokenCode;
-                this.toToken = tokenCode2;
-                this.forcedNetworkType = networkType;
+                this.fromToken = tokenDetailed;
+                this.toToken = tokenDetailed2;
+                this.forcedNetworkId = str;
                 this.swapProtocolInfo = SwapProtocolInfo.Companion.map(swapProtocol);
             }
 
@@ -868,29 +867,29 @@ public final class WalletSwapProcessFragment extends WalletAuthFragment implemen
         /* renamed from: com.iMe.ui.wallet.swap.process.WalletSwapProcessFragment$ScreenType$Binance */
         /* loaded from: classes4.dex */
         public static final class Binance extends ScreenType {
-            private final SelectableToken fromToken;
-            private final SelectableToken toToken;
+            private final TokenDetailed fromToken;
+            private final TokenDetailed toToken;
 
             public Binance() {
                 this(null, null, 3, null);
             }
 
-            public /* synthetic */ Binance(SelectableToken selectableToken, SelectableToken selectableToken2, int i, DefaultConstructorMarker defaultConstructorMarker) {
-                this((i & 1) != 0 ? null : selectableToken, (i & 2) != 0 ? null : selectableToken2);
+            public /* synthetic */ Binance(TokenDetailed tokenDetailed, TokenDetailed tokenDetailed2, int i, DefaultConstructorMarker defaultConstructorMarker) {
+                this((i & 1) != 0 ? null : tokenDetailed, (i & 2) != 0 ? null : tokenDetailed2);
             }
 
-            public final SelectableToken getFromToken() {
+            public final TokenDetailed getFromToken() {
                 return this.fromToken;
             }
 
-            public final SelectableToken getToToken() {
+            public final TokenDetailed getToToken() {
                 return this.toToken;
             }
 
-            public Binance(SelectableToken selectableToken, SelectableToken selectableToken2) {
+            public Binance(TokenDetailed tokenDetailed, TokenDetailed tokenDetailed2) {
                 super(null);
-                this.fromToken = selectableToken;
-                this.toToken = selectableToken2;
+                this.fromToken = tokenDetailed;
+                this.toToken = tokenDetailed2;
             }
         }
     }

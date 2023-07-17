@@ -12,10 +12,10 @@ import com.iMe.fork.enums.ChatAttachAlertButton;
 import com.iMe.utils.extentions.common.ViewExtKt;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.p044ui.ActionBar.Theme;
-import org.telegram.p044ui.Components.CheckBoxSquare;
-import org.telegram.p044ui.Components.LayoutHelper;
-import org.telegram.p044ui.Components.RLottieImageView;
+import org.telegram.p043ui.ActionBar.Theme;
+import org.telegram.p043ui.Components.CheckBoxSquare;
+import org.telegram.p043ui.Components.LayoutHelper;
+import org.telegram.p043ui.Components.RLottieImageView;
 /* compiled from: ChatAttachAlertButtonCell.kt */
 /* renamed from: com.iMe.fork.ui.view.ChatAttachAlertButtonCell */
 /* loaded from: classes3.dex */

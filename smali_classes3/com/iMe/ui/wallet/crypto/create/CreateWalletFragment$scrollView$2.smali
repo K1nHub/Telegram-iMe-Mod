@@ -48,7 +48,7 @@
 .method public final invoke()Landroid/widget/ScrollView;
     .locals 1
 
-    .line 83
+    .line 128
     iget-object v0, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$scrollView$2;->this$0:Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;
 
     invoke-static {v0}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->access$createScrollView(Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;)Landroid/widget/ScrollView;
@@ -61,7 +61,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 83
+    .line 128
     invoke-virtual {p0}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$scrollView$2;->invoke()Landroid/widget/ScrollView;
 
     move-result-object v0

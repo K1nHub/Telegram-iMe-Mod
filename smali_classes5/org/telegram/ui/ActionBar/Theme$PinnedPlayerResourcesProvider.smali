@@ -21,7 +21,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 254
+    .line 245
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -48,12 +48,12 @@
 .method public getColor(I)I
     .locals 3
 
-    .line 260
+    .line 251
     sget-boolean v0, Lorg/telegram/messenger/SharedConfig;->isPinnedPlayerThemeOverridden:Z
 
     if-eqz v0, :cond_2
 
-    .line 261
+    .line 252
     invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->access$000()Landroid/util/SparseIntArray;
 
     move-result-object v0
@@ -66,7 +66,7 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 263
+    .line 254
     invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->access$100()Landroid/util/SparseIntArray;
 
     move-result-object v2
@@ -77,7 +77,7 @@
 
     if-eq v2, v1, :cond_0
 
-    .line 265
+    .line 256
     invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->access$000()Landroid/util/SparseIntArray;
 
     move-result-object v0
@@ -89,7 +89,7 @@
     :cond_0
     if-ne v0, v1, :cond_1
 
-    .line 268
+    .line 259
     invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getDefaultColor(I)I
 
     move-result p1
@@ -99,7 +99,7 @@
     :cond_1
     return v0
 
-    .line 273
+    .line 264
     :cond_2
     invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 

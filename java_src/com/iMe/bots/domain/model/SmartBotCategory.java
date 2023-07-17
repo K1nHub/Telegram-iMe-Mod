@@ -7,7 +7,7 @@ import kotlin.jvm.internal.Intrinsics;
 public final class SmartBotCategory {
 
     /* renamed from: id */
-    private final String f250id;
+    private final String f332id;
     private final int priority;
     private final List<String> tags;
     private final String title;
@@ -15,7 +15,7 @@ public final class SmartBotCategory {
     /* JADX WARN: Multi-variable type inference failed */
     public static /* synthetic */ SmartBotCategory copy$default(SmartBotCategory smartBotCategory, String str, String str2, int i, List list, int i2, Object obj) {
         if ((i2 & 1) != 0) {
-            str = smartBotCategory.f250id;
+            str = smartBotCategory.f332id;
         }
         if ((i2 & 2) != 0) {
             str2 = smartBotCategory.title;
@@ -30,7 +30,7 @@ public final class SmartBotCategory {
     }
 
     public final String component1() {
-        return this.f250id;
+        return this.f332id;
     }
 
     public final String component2() {
@@ -58,31 +58,31 @@ public final class SmartBotCategory {
         }
         if (obj instanceof SmartBotCategory) {
             SmartBotCategory smartBotCategory = (SmartBotCategory) obj;
-            return Intrinsics.areEqual(this.f250id, smartBotCategory.f250id) && Intrinsics.areEqual(this.title, smartBotCategory.title) && this.priority == smartBotCategory.priority && Intrinsics.areEqual(this.tags, smartBotCategory.tags);
+            return Intrinsics.areEqual(this.f332id, smartBotCategory.f332id) && Intrinsics.areEqual(this.title, smartBotCategory.title) && this.priority == smartBotCategory.priority && Intrinsics.areEqual(this.tags, smartBotCategory.tags);
         }
         return false;
     }
 
     public int hashCode() {
-        return (((((this.f250id.hashCode() * 31) + this.title.hashCode()) * 31) + this.priority) * 31) + this.tags.hashCode();
+        return (((((this.f332id.hashCode() * 31) + this.title.hashCode()) * 31) + this.priority) * 31) + this.tags.hashCode();
     }
 
     public String toString() {
-        return "SmartBotCategory(id=" + this.f250id + ", title=" + this.title + ", priority=" + this.priority + ", tags=" + this.tags + ')';
+        return "SmartBotCategory(id=" + this.f332id + ", title=" + this.title + ", priority=" + this.priority + ", tags=" + this.tags + ')';
     }
 
     public SmartBotCategory(String id, String title, int i, List<String> tags) {
         Intrinsics.checkNotNullParameter(id, "id");
         Intrinsics.checkNotNullParameter(title, "title");
         Intrinsics.checkNotNullParameter(tags, "tags");
-        this.f250id = id;
+        this.f332id = id;
         this.title = title;
         this.priority = i;
         this.tags = tags;
     }
 
     public final String getId() {
-        return this.f250id;
+        return this.f332id;
     }
 
     public final String getTitle() {

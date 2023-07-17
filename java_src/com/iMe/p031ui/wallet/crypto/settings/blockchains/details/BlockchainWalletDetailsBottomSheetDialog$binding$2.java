@@ -4,10 +4,10 @@ import android.view.LayoutInflater;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Lambda;
 import org.telegram.messenger.databinding.ForkContentBlockchainsWalletDetailsBinding;
-import org.telegram.p044ui.ActionBar.BaseFragment;
+import org.telegram.p043ui.ActionBar.BaseFragment;
 /* compiled from: BlockchainWalletDetailsBottomSheetDialog.kt */
 /* renamed from: com.iMe.ui.wallet.crypto.settings.blockchains.details.BlockchainWalletDetailsBottomSheetDialog$binding$2 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 final class BlockchainWalletDetailsBottomSheetDialog$binding$2 extends Lambda implements Function0<ForkContentBlockchainsWalletDetailsBinding> {
     final /* synthetic */ BaseFragment $fragment;
 

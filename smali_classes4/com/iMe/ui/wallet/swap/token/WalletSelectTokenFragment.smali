@@ -1,5 +1,5 @@
 .class public final Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment;
-.super Lcom/iMe/ui/base/WalletAuthFragment;
+.super Lcom/iMe/ui/base/wallet_auth/WalletAuthBaseFragment;
 .source "WalletSelectTokenFragment.kt"
 
 # interfaces
@@ -9,12 +9,13 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment$Companion;
+        Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment$Companion;,
+        Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment$ScreenType;
     }
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nWalletSelectTokenFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WalletSelectTokenFragment.kt\ncom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment\n+ 2 Delegates.kt\nmoxy/ktx/DelegatesKt\n+ 3 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n*L\n1#1,130:1\n13#2,4:131\n56#3,6:135\n*S KotlinDebug\n*F\n+ 1 WalletSelectTokenFragment.kt\ncom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment\n*L\n36#1:131,4\n37#1:135,6\n*E\n"
+    value = "SMAP\nWalletSelectTokenFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WalletSelectTokenFragment.kt\ncom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment\n+ 2 Delegates.kt\nmoxy/ktx/DelegatesKt\n+ 3 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n*L\n1#1,220:1\n13#2,4:221\n56#3,6:225\n*S KotlinDebug\n*F\n+ 1 WalletSelectTokenFragment.kt\ncom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment\n*L\n42#1:221,4\n47#1:225,6\n*E\n"
 .end annotation
 
 
@@ -34,25 +35,13 @@
 
 
 # instance fields
-.field private final allTokens:Ljava/util/List;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/List<",
-            "Lcom/iMe/model/wallet/select/SelectableToken;",
-            ">;"
-        }
-    .end annotation
-.end field
-
 .field private final binding$delegate:Lcom/iMe/utils/extentions/delegate/ResettableLazy;
-
-.field private final networkType:Lcom/iMe/storage/domain/model/crypto/NetworkType;
 
 .field private final onTokenSelectedAction:Lcom/iMe/fork/utils/Callbacks$Callback1;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/iMe/fork/utils/Callbacks$Callback1<",
-            "Lcom/iMe/model/wallet/select/SelectableToken;",
+            "Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;",
             ">;"
         }
     .end annotation
@@ -60,18 +49,18 @@
 
 .field private final onlyPositiveBalance:Z
 
-.field private final selectedToken:Lcom/iMe/model/wallet/select/SelectableToken;
+.field private final presenter$delegate:Lmoxy/ktx/MoxyKtxDelegate;
+
+.field private final screenType:Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment$ScreenType;
 
 .field private final tokensAdapter$delegate:Lkotlin/Lazy;
 
-.field private final type:Lcom/iMe/model/wallet/select/SelectableType;
-
 
 # direct methods
-.method public static synthetic $r8$lambda$3traWfWyE3L4QUPGHsoIsJH90cA(Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
+.method public static synthetic $r8$lambda$Je9nAsXuBc7VI4d1D7t_UTnVFF8(Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment;)V
     .locals 0
 
-    invoke-static {p0, p1, p2, p3}, Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment;->setupRecycleView$lambda$5$lambda$4$lambda$3(Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
+    invoke-static {p0}, Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment;->setupLoadMore$lambda$10$lambda$9$lambda$8(Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment;)V
 
     return-void
 .end method
@@ -80,6 +69,14 @@
     .locals 0
 
     invoke-static {p0}, Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment;->getThemeDescriptions$lambda$0(Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment;)V
+
+    return-void
+.end method
+
+.method public static synthetic $r8$lambda$iQZD3TPd-MtoHst6MtKJ8x3aQF0(Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
+    .locals 0
+
+    invoke-static {p0, p1, p2, p3}, Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment;->setupRecycleView$lambda$7$lambda$6$lambda$5(Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
 
     return-void
 .end method
@@ -93,7 +90,7 @@
 
     new-array v1, v1, [Lkotlin/reflect/KProperty;
 
-    .line 36
+    .line 42
     new-instance v2, Lkotlin/jvm/internal/PropertyReference1Impl;
 
     const-string v3, "presenter"
@@ -110,7 +107,7 @@
 
     aput-object v2, v1, v5
 
-    .line 40
+    .line 50
     new-instance v2, Lkotlin/jvm/internal/PropertyReference1Impl;
 
     const-string v3, "binding"
@@ -140,77 +137,60 @@
     return-void
 .end method
 
-.method public constructor <init>(Lcom/iMe/model/wallet/select/SelectableType;Lcom/iMe/model/wallet/select/SelectableToken;Ljava/util/List;Lcom/iMe/storage/domain/model/crypto/NetworkType;ZLcom/iMe/fork/utils/Callbacks$Callback1;)V
+.method public constructor <init>(Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;Ljava/lang/String;Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment$ScreenType;ZLcom/iMe/fork/utils/Callbacks$Callback1;)V
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lcom/iMe/model/wallet/select/SelectableType;",
-            "Lcom/iMe/model/wallet/select/SelectableToken;",
-            "Ljava/util/List<",
-            "+",
-            "Lcom/iMe/model/wallet/select/SelectableToken;",
-            ">;",
-            "Lcom/iMe/storage/domain/model/crypto/NetworkType;",
+            "Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;",
+            "Ljava/lang/String;",
+            "Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment$ScreenType;",
             "Z",
             "Lcom/iMe/fork/utils/Callbacks$Callback1<",
-            "Lcom/iMe/model/wallet/select/SelectableToken;",
+            "Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;",
             ">;)V"
         }
     .end annotation
 
-    const-string/jumbo v0, "type"
+    const-string v0, "networkId"
 
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "allTokens"
+    const-string/jumbo v0, "screenType"
 
     invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "networkType"
-
-    invoke-static {p4, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
     const-string v0, "onTokenSelectedAction"
 
-    invoke-static {p6, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p5, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 33
-    invoke-direct {p0}, Lcom/iMe/ui/base/WalletAuthFragment;-><init>()V
-
-    .line 27
-    iput-object p1, p0, Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment;->type:Lcom/iMe/model/wallet/select/SelectableType;
-
-    .line 28
-    iput-object p2, p0, Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment;->selectedToken:Lcom/iMe/model/wallet/select/SelectableToken;
-
-    .line 29
-    iput-object p3, p0, Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment;->allTokens:Ljava/util/List;
-
-    .line 30
-    iput-object p4, p0, Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment;->networkType:Lcom/iMe/storage/domain/model/crypto/NetworkType;
-
-    .line 31
-    iput-boolean p5, p0, Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment;->onlyPositiveBalance:Z
-
-    .line 32
-    iput-object p6, p0, Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment;->onTokenSelectedAction:Lcom/iMe/fork/utils/Callbacks$Callback1;
+    .line 39
+    invoke-direct {p0}, Lcom/iMe/ui/base/wallet_auth/WalletAuthBaseFragment;-><init>()V
 
     .line 36
-    new-instance p1, Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment$presenter$2;
+    iput-object p3, p0, Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment;->screenType:Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment$ScreenType;
 
-    invoke-direct {p1, p0}, Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment$presenter$2;-><init>(Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment;)V
+    .line 37
+    iput-boolean p4, p0, Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment;->onlyPositiveBalance:Z
+
+    .line 38
+    iput-object p5, p0, Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment;->onTokenSelectedAction:Lcom/iMe/fork/utils/Callbacks$Callback1;
+
+    .line 42
+    new-instance p3, Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment$presenter$2;
+
+    invoke-direct {p3, p0, p1, p2}, Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment$presenter$2;-><init>(Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment;Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;Ljava/lang/String;)V
 
     .line 16
-    new-instance p2, Lmoxy/ktx/MoxyKtxDelegate;
+    new-instance p1, Lmoxy/ktx/MoxyKtxDelegate;
 
     invoke-interface {p0}, Lmoxy/MvpDelegateHolder;->getMvpDelegate()Lmoxy/MvpDelegate;
 
-    move-result-object p3
+    move-result-object p2
 
     const-string p4, "mvpDelegate"
 
-    invoke-static {p3, p4}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p2, p4}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
     new-instance p4, Ljava/lang/StringBuilder;
 
@@ -236,7 +216,10 @@
 
     move-result-object p4
 
-    invoke-direct {p2, p3, p4, p1}, Lmoxy/ktx/MoxyKtxDelegate;-><init>(Lmoxy/MvpDelegate;Ljava/lang/String;Lkotlin/jvm/functions/Function0;)V
+    invoke-direct {p1, p2, p4, p3}, Lmoxy/ktx/MoxyKtxDelegate;-><init>(Lmoxy/MvpDelegate;Ljava/lang/String;Lkotlin/jvm/functions/Function0;)V
+
+    .line 42
+    iput-object p1, p0, Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment;->presenter$delegate:Lmoxy/ktx/MoxyKtxDelegate;
 
     .line 58
     sget-object p1, Lorg/koin/mp/KoinPlatformTools;->INSTANCE:Lorg/koin/mp/KoinPlatformTools;
@@ -256,10 +239,10 @@
 
     move-result-object p1
 
-    .line 37
+    .line 47
     iput-object p1, p0, Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment;->tokensAdapter$delegate:Lkotlin/Lazy;
 
-    .line 40
+    .line 50
     new-instance p1, Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment$binding$2;
 
     invoke-direct {p1, p0}, Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment$binding$2;-><init>(Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment;)V
@@ -275,47 +258,31 @@
     return-void
 .end method
 
-.method public static final synthetic access$getAllTokens$p(Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment;)Ljava/util/List;
-    .locals 0
-
-    .line 26
-    iget-object p0, p0, Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment;->allTokens:Ljava/util/List;
-
-    return-object p0
-.end method
-
-.method public static final synthetic access$getNetworkType$p(Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment;)Lcom/iMe/storage/domain/model/crypto/NetworkType;
-    .locals 0
-
-    .line 26
-    iget-object p0, p0, Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment;->networkType:Lcom/iMe/storage/domain/model/crypto/NetworkType;
-
-    return-object p0
-.end method
-
 .method public static final synthetic access$getOnlyPositiveBalance$p(Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment;)Z
     .locals 0
 
-    .line 26
+    .line 33
     iget-boolean p0, p0, Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment;->onlyPositiveBalance:Z
 
     return p0
 .end method
 
-.method public static final synthetic access$getSelectedToken$p(Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment;)Lcom/iMe/model/wallet/select/SelectableToken;
+.method public static final synthetic access$getPresenter(Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment;)Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenPresenter;
     .locals 0
 
-    .line 26
-    iget-object p0, p0, Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment;->selectedToken:Lcom/iMe/model/wallet/select/SelectableToken;
+    .line 33
+    invoke-direct {p0}, Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment;->getPresenter()Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenPresenter;
+
+    move-result-object p0
 
     return-object p0
 .end method
 
-.method public static final synthetic access$getType$p(Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment;)Lcom/iMe/model/wallet/select/SelectableType;
+.method public static final synthetic access$getScreenType$p(Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment;)Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment$ScreenType;
     .locals 0
 
-    .line 26
-    iget-object p0, p0, Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment;->type:Lcom/iMe/model/wallet/select/SelectableType;
+    .line 33
+    iget-object p0, p0, Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment;->screenType:Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment$ScreenType;
 
     return-object p0
 .end method
@@ -323,7 +290,7 @@
 .method private final getBinding()Lorg/telegram/messenger/databinding/ForkFragmentWalletSelectTokenBinding;
     .locals 3
 
-    .line 40
+    .line 50
     iget-object v0, p0, Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment;->binding$delegate:Lcom/iMe/utils/extentions/delegate/ResettableLazy;
 
     sget-object v1, Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment;->$$delegatedProperties:[Lkotlin/reflect/KProperty;
@@ -341,6 +308,27 @@
     return-object v0
 .end method
 
+.method private final getPresenter()Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenPresenter;
+    .locals 3
+
+    .line 42
+    iget-object v0, p0, Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment;->presenter$delegate:Lmoxy/ktx/MoxyKtxDelegate;
+
+    sget-object v1, Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment;->$$delegatedProperties:[Lkotlin/reflect/KProperty;
+
+    const/4 v2, 0x0
+
+    aget-object v1, v1, v2
+
+    invoke-virtual {v0, p0, v1}, Lmoxy/ktx/MoxyKtxDelegate;->getValue(Ljava/lang/Object;Lkotlin/reflect/KProperty;)Lmoxy/MvpPresenter;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenPresenter;
+
+    return-object v0
+.end method
+
 .method private static final getThemeDescriptions$lambda$0(Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment;)V
     .locals 1
 
@@ -348,7 +336,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 57
+    .line 68
     invoke-direct {p0}, Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment;->getTokensAdapter()Lcom/iMe/ui/wallet/swap/token/adapter/WalletSelectTokenAdapter;
 
     move-result-object p0
@@ -361,7 +349,7 @@
 .method private final getTokensAdapter()Lcom/iMe/ui/wallet/swap/token/adapter/WalletSelectTokenAdapter;
     .locals 1
 
-    .line 37
+    .line 47
     iget-object v0, p0, Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment;->tokensAdapter$delegate:Lkotlin/Lazy;
 
     invoke-interface {v0}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
@@ -373,21 +361,17 @@
     return-object v0
 .end method
 
-.method public static final newInstance(Lcom/iMe/model/wallet/select/SelectableType;Lcom/iMe/model/wallet/select/SelectableToken;Ljava/util/List;Lcom/iMe/storage/domain/model/crypto/NetworkType;ZLcom/iMe/fork/utils/Callbacks$Callback1;)Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment;
-    .locals 7
+.method public static final newInstance(Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment$ScreenType;Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;Ljava/lang/String;ZLcom/iMe/fork/utils/Callbacks$Callback1;)Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment;
+    .locals 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lcom/iMe/model/wallet/select/SelectableType;",
-            "Lcom/iMe/model/wallet/select/SelectableToken;",
-            "Ljava/util/List<",
-            "+",
-            "Lcom/iMe/model/wallet/select/SelectableToken;",
-            ">;",
-            "Lcom/iMe/storage/domain/model/crypto/NetworkType;",
+            "Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment$ScreenType;",
+            "Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;",
+            "Ljava/lang/String;",
             "Z",
             "Lcom/iMe/fork/utils/Callbacks$Callback1<",
-            "Lcom/iMe/model/wallet/select/SelectableToken;",
+            "Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;",
             ">;)",
             "Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment;"
         }
@@ -401,13 +385,11 @@
 
     move-object v3, p2
 
-    move-object v4, p3
+    move v4, p3
 
-    move v5, p4
+    move-object v5, p4
 
-    move-object v6, p5
-
-    invoke-virtual/range {v0 .. v6}, Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment$Companion;->newInstance(Lcom/iMe/model/wallet/select/SelectableType;Lcom/iMe/model/wallet/select/SelectableToken;Ljava/util/List;Lcom/iMe/storage/domain/model/crypto/NetworkType;ZLcom/iMe/fork/utils/Callbacks$Callback1;)Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment;
+    invoke-virtual/range {v0 .. v5}, Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment$Companion;->newInstance(Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment$ScreenType;Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;Ljava/lang/String;ZLcom/iMe/fork/utils/Callbacks$Callback1;)Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment;
 
     move-result-object p0
 
@@ -415,18 +397,18 @@
 .end method
 
 .method private final setupActionBar()V
-    .locals 3
+    .locals 7
 
-    .line 79
+    .line 120
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
-    .line 80
+    .line 121
     sget v1, Lorg/telegram/messenger/R$drawable;->ic_ab_back:I
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBar;->setBackButtonImage(I)V
 
-    .line 81
-    invoke-virtual {p0}, Lcom/iMe/ui/base/WalletAuthFragment;->getResourceManager()Lcom/iMe/storage/domain/utils/system/ResourceManager;
+    .line 122
+    invoke-virtual {p0}, Lcom/iMe/ui/base/wallet_auth/WalletAuthBaseFragment;->getResourceManager()Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     move-result-object v1
 
@@ -440,13 +422,98 @@
 
     const/4 v1, 0x1
 
-    .line 82
+    .line 123
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBar;->setAllowOverlayTitle(Z)V
 
-    .line 83
-    new-instance v1, Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment$setupActionBar$1$1;
+    .line 124
+    iget-object v2, p0, Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment;->screenType:Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment$ScreenType;
 
-    invoke-direct {v1, p0}, Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment$setupActionBar$1$1;-><init>(Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment;)V
+    instance-of v2, v2, Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment$ScreenType$Swap;
+
+    if-eqz v2, :cond_0
+
+    .line 125
+    invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/ActionBar;->createMenu()Lorg/telegram/ui/ActionBar/ActionBarMenu;
+
+    move-result-object v2
+
+    .line 126
+    sget v3, Lcom/iMe/common/IdFabric$Menu;->SEARCH:I
+
+    sget v4, Lorg/telegram/messenger/R$drawable;->ic_ab_search:I
+
+    invoke-virtual {v2, v3, v4}, Lorg/telegram/ui/ActionBar/ActionBarMenu;->addItem(II)Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
+
+    move-result-object v2
+
+    .line 127
+    invoke-virtual {v2, v1}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->setIsSearchField(Z)Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
+
+    move-result-object v2
+
+    .line 128
+    new-instance v3, Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment$setupActionBar$1$1;
+
+    invoke-direct {v3, p0}, Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment$setupActionBar$1$1;-><init>(Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment;)V
+
+    invoke-virtual {v2, v3}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->setActionBarMenuItemSearchListener(Lorg/telegram/ui/ActionBar/ActionBarMenuItem$ActionBarMenuItemSearchListener;)Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
+
+    move-result-object v2
+
+    .line 137
+    invoke-virtual {v2}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->getSearchField()Lorg/telegram/ui/Components/EditTextBoldCursor;
+
+    move-result-object v3
+
+    new-array v1, v1, [Landroid/text/InputFilter$LengthFilter;
+
+    const/4 v4, 0x0
+
+    .line 138
+    new-instance v5, Landroid/text/InputFilter$LengthFilter;
+
+    const/16 v6, 0x80
+
+    invoke-direct {v5, v6}, Landroid/text/InputFilter$LengthFilter;-><init>(I)V
+
+    aput-object v5, v1, v4
+
+    invoke-virtual {v3, v1}, Landroid/widget/EditText;->setFilters([Landroid/text/InputFilter;)V
+
+    const/high16 v1, -0x80000000
+
+    .line 139
+    invoke-virtual {v3, v1}, Landroid/widget/EditText;->setImeOptions(I)V
+
+    .line 141
+    invoke-virtual {p0}, Lcom/iMe/ui/base/wallet_auth/WalletAuthBaseFragment;->getResourceManager()Lcom/iMe/storage/domain/utils/system/ResourceManager;
+
+    move-result-object v1
+
+    sget v3, Lorg/telegram/messenger/R$string;->token_search_hint:I
+
+    invoke-interface {v1, v3}, Lcom/iMe/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v2, v1}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->setSearchFieldHint(Ljava/lang/CharSequence;)V
+
+    .line 142
+    sget v1, Lorg/telegram/messenger/R$string;->Search:I
+
+    const-string v3, "Search"
+
+    invoke-static {v3, v1}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v2, v1}, Landroid/widget/FrameLayout;->setContentDescription(Ljava/lang/CharSequence;)V
+
+    .line 145
+    :cond_0
+    new-instance v1, Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment$setupActionBar$1$3;
+
+    invoke-direct {v1, p0}, Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment$setupActionBar$1$3;-><init>(Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment;)V
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBar;->setActionBarMenuOnItemClick(Lorg/telegram/ui/ActionBar/ActionBar$ActionBarMenuOnItemClick;)V
 
@@ -456,13 +523,14 @@
 .method private final setupColors()V
     .locals 2
 
-    .line 94
+    .line 156
     invoke-direct {p0}, Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment;->getBinding()Lorg/telegram/messenger/databinding/ForkFragmentWalletSelectTokenBinding;
 
     move-result-object v0
 
-    .line 95
-    iget-object v0, v0, Lorg/telegram/messenger/databinding/ForkFragmentWalletSelectTokenBinding;->globalStateLayout:Lcom/iMe/ui/custom/state/GlobalStateLayout;
+    invoke-virtual {v0}, Lorg/telegram/messenger/databinding/ForkFragmentWalletSelectTokenBinding;->getRoot()Lcom/iMe/ui/custom/state/GlobalStateLayout;
+
+    move-result-object v0
 
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
@@ -475,39 +543,112 @@
     return-void
 .end method
 
+.method private final setupListeners()V
+    .locals 2
+
+    .line 184
+    invoke-direct {p0}, Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment;->getBinding()Lorg/telegram/messenger/databinding/ForkFragmentWalletSelectTokenBinding;
+
+    move-result-object v0
+
+    iget-object v0, v0, Lorg/telegram/messenger/databinding/ForkFragmentWalletSelectTokenBinding;->globalStateLayout:Lcom/iMe/ui/custom/state/GlobalStateLayout;
+
+    new-instance v1, Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment$setupListeners$1;
+
+    invoke-direct {v1, p0}, Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment$setupListeners$1;-><init>(Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment;)V
+
+    invoke-virtual {v0, v1}, Lcom/iMe/ui/custom/state/GlobalStateLayout;->setRetryButtonClickListener(Lkotlin/jvm/functions/Function0;)V
+
+    return-void
+.end method
+
+.method private final setupLoadMore(Lcom/iMe/ui/wallet/swap/token/adapter/WalletSelectTokenAdapter;)V
+    .locals 2
+
+    .line 175
+    invoke-virtual {p1}, Lcom/chad/library/adapter/base/BaseQuickAdapter;->getLoadMoreModule()Lcom/chad/library/adapter/base/module/BaseLoadMoreModule;
+
+    move-result-object v0
+
+    const/4 v1, 0x5
+
+    .line 176
+    invoke-virtual {v0, v1}, Lcom/chad/library/adapter/base/module/BaseLoadMoreModule;->setPreLoadNumber(I)V
+
+    .line 177
+    new-instance v1, Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment$$ExternalSyntheticLambda1;
+
+    invoke-direct {v1, p0}, Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment$$ExternalSyntheticLambda1;-><init>(Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment;)V
+
+    invoke-virtual {v0, v1}, Lcom/chad/library/adapter/base/module/BaseLoadMoreModule;->setOnLoadMoreListener(Lcom/chad/library/adapter/base/listener/OnLoadMoreListener;)V
+
+    const/4 v0, 0x0
+
+    .line 178
+    invoke-virtual {p1, v0}, Lcom/chad/library/adapter/base/BaseQuickAdapter;->setAnimationEnable(Z)V
+
+    return-void
+.end method
+
+.method private static final setupLoadMore$lambda$10$lambda$9$lambda$8(Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment;)V
+    .locals 3
+
+    const-string/jumbo v0, "this$0"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 177
+    invoke-direct {p0}, Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment;->getPresenter()Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenPresenter;
+
+    move-result-object p0
+
+    const/4 v0, 0x0
+
+    const/4 v1, 0x1
+
+    const/4 v2, 0x0
+
+    invoke-static {p0, v0, v1, v2}, Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenPresenter;->searchByQuery$default(Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenPresenter;ZILjava/lang/Object;)V
+
+    return-void
+.end method
+
 .method private final setupRecycleView()V
     .locals 3
 
-    .line 100
+    .line 160
     invoke-direct {p0}, Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment;->getBinding()Lorg/telegram/messenger/databinding/ForkFragmentWalletSelectTokenBinding;
 
     move-result-object v0
 
     iget-object v0, v0, Lorg/telegram/messenger/databinding/ForkFragmentWalletSelectTokenBinding;->recycleTokens:Landroidx/recyclerview/widget/RecyclerView;
 
-    .line 101
+    .line 161
     invoke-direct {p0}, Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment;->getTokensAdapter()Lcom/iMe/ui/wallet/swap/token/adapter/WalletSelectTokenAdapter;
 
     move-result-object v1
 
-    .line 102
+    .line 162
     new-instance v2, Lcom/iMe/ui/wallet/swap/token/adapter/diff/SelectTokenDiffCallback;
 
     invoke-direct {v2}, Lcom/iMe/ui/wallet/swap/token/adapter/diff/SelectTokenDiffCallback;-><init>()V
 
     invoke-virtual {v1, v2}, Lcom/chad/library/adapter/base/BaseQuickAdapter;->setDiffCallback(Landroidx/recyclerview/widget/DiffUtil$ItemCallback;)V
 
-    .line 103
+    .line 163
     new-instance v2, Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment$$ExternalSyntheticLambda0;
 
     invoke-direct {v2, p0}, Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment$$ExternalSyntheticLambda0;-><init>(Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment;)V
 
     invoke-virtual {v1, v2}, Lcom/chad/library/adapter/base/BaseQuickAdapter;->setOnItemClickListener(Lcom/chad/library/adapter/base/listener/OnItemClickListener;)V
 
-    .line 101
+    .line 167
+    invoke-direct {p0, v1}, Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment;->setupLoadMore(Lcom/iMe/ui/wallet/swap/token/adapter/WalletSelectTokenAdapter;)V
+
+    .line 161
     invoke-virtual {v0, v1}, Landroidx/recyclerview/widget/RecyclerView;->setAdapter(Landroidx/recyclerview/widget/RecyclerView$Adapter;)V
 
-    .line 108
+    .line 169
     new-instance v1, Landroidx/recyclerview/widget/LinearLayoutManager;
 
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -521,7 +662,7 @@
     return-void
 .end method
 
-.method private static final setupRecycleView$lambda$5$lambda$4$lambda$3(Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
+.method private static final setupRecycleView$lambda$7$lambda$6$lambda$5(Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
     .locals 1
 
     const-string/jumbo v0, "this$0"
@@ -536,7 +677,7 @@
 
     invoke-static {p2, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 104
+    .line 164
     iget-object p1, p0, Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment;->onTokenSelectedAction:Lcom/iMe/fork/utils/Callbacks$Callback1;
 
     invoke-direct {p0}, Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment;->getTokensAdapter()Lcom/iMe/ui/wallet/swap/token/adapter/WalletSelectTokenAdapter;
@@ -549,13 +690,13 @@
 
     check-cast p2, Lcom/iMe/model/wallet/select/SelectableTokenItem;
 
-    invoke-virtual {p2}, Lcom/iMe/model/wallet/select/SelectableTokenItem;->getToken()Lcom/iMe/model/wallet/select/SelectableToken;
+    invoke-virtual {p2}, Lcom/iMe/model/wallet/select/SelectableTokenItem;->getToken()Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
 
     move-result-object p2
 
     invoke-interface {p1, p2}, Lcom/iMe/fork/utils/Callbacks$Callback1;->invoke(Ljava/lang/Object;)V
 
-    .line 105
+    .line 165
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->finishFragment()V
 
     return-void
@@ -580,7 +721,7 @@
 
     new-array v1, v1, [Lorg/telegram/ui/ActionBar/ThemeDescription;
 
-    .line 53
+    .line 64
     new-instance v10, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
@@ -605,7 +746,7 @@
 
     aput-object v10, v1, v2
 
-    .line 54
+    .line 65
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v12, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
@@ -630,7 +771,7 @@
 
     aput-object v2, v1, v3
 
-    .line 55
+    .line 66
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v5, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
@@ -651,7 +792,7 @@
 
     aput-object v2, v1, v3
 
-    .line 56
+    .line 67
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v5, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
@@ -668,7 +809,7 @@
 
     aput-object v2, v1, v3
 
-    .line 57
+    .line 68
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment;->getBinding()Lorg/telegram/messenger/databinding/ForkFragmentWalletSelectTokenBinding;
@@ -681,12 +822,12 @@
 
     sget v6, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_BACKGROUND:I
 
-    .line 52
-    new-instance v10, Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment$$ExternalSyntheticLambda1;
+    .line 63
+    new-instance v10, Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment$$ExternalSyntheticLambda2;
 
-    invoke-direct {v10, v0}, Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment$$ExternalSyntheticLambda1;-><init>(Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment;)V
+    invoke-direct {v10, v0}, Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment$$ExternalSyntheticLambda2;-><init>(Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment;)V
 
-    .line 57
+    .line 68
     sget v11, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
     move-object v4, v2
@@ -697,7 +838,7 @@
 
     aput-object v2, v1, v3
 
-    .line 52
+    .line 63
     invoke-static {v1}, Lkotlin/collections/CollectionsKt;->arrayListOf([Ljava/lang/Object;)Ljava/util/ArrayList;
 
     move-result-object v1
@@ -712,16 +853,19 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 45
+    .line 55
     invoke-direct {p0}, Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment;->setupActionBar()V
 
-    .line 46
+    .line 56
     invoke-direct {p0}, Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment;->setupColors()V
 
-    .line 47
+    .line 57
     invoke-direct {p0}, Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment;->setupRecycleView()V
 
-    .line 49
+    .line 58
+    invoke-direct {p0}, Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment;->setupListeners()V
+
+    .line 60
     invoke-direct {p0}, Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment;->getBinding()Lorg/telegram/messenger/databinding/ForkFragmentWalletSelectTokenBinding;
 
     move-result-object p1
@@ -737,10 +881,98 @@
     return-object p1
 .end method
 
-.method public synthetic onEmptyState()V
-    .locals 0
+.method public onEmptyState()V
+    .locals 3
 
-    invoke-static {p0}, Lcom/iMe/ui/custom/state/GlobalStateView$-CC;->$default$onEmptyState(Lcom/iMe/ui/custom/state/GlobalStateView;)V
+    .line 72
+    invoke-direct {p0}, Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment;->getBinding()Lorg/telegram/messenger/databinding/ForkFragmentWalletSelectTokenBinding;
+
+    move-result-object v0
+
+    iget-object v0, v0, Lorg/telegram/messenger/databinding/ForkFragmentWalletSelectTokenBinding;->globalStateLayout:Lcom/iMe/ui/custom/state/GlobalStateLayout;
+
+    const-string v1, "binding.globalStateLayout"
+
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const/4 v1, 0x0
+
+    const/4 v2, 0x1
+
+    invoke-static {v0, v1, v2, v1}, Lcom/iMe/ui/custom/state/GlobalStateLayout;->showEmpty$default(Lcom/iMe/ui/custom/state/GlobalStateLayout;Lcom/iMe/model/state/GlobalState$Empty;ILjava/lang/Object;)V
+
+    return-void
+.end method
+
+.method public onLoadMoreComplete()V
+    .locals 2
+
+    .line 104
+    invoke-direct {p0}, Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment;->getTokensAdapter()Lcom/iMe/ui/wallet/swap/token/adapter/WalletSelectTokenAdapter;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/chad/library/adapter/base/BaseQuickAdapter;->getLoadMoreModule()Lcom/chad/library/adapter/base/module/BaseLoadMoreModule;
+
+    move-result-object v0
+
+    const/4 v1, 0x1
+
+    invoke-virtual {v0, v1}, Lcom/chad/library/adapter/base/module/BaseLoadMoreModule;->loadMoreEnd(Z)V
+
+    return-void
+.end method
+
+.method public onLoadMoreError()V
+    .locals 1
+
+    .line 108
+    invoke-direct {p0}, Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment;->getTokensAdapter()Lcom/iMe/ui/wallet/swap/token/adapter/WalletSelectTokenAdapter;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/chad/library/adapter/base/BaseQuickAdapter;->getLoadMoreModule()Lcom/chad/library/adapter/base/module/BaseLoadMoreModule;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/chad/library/adapter/base/module/BaseLoadMoreModule;->loadMoreFail()V
+
+    return-void
+.end method
+
+.method public onLoadMoreItems(Ljava/util/List;)V
+    .locals 3
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/List<",
+            "Lcom/iMe/model/wallet/select/SelectableTokenItem;",
+            ">;)V"
+        }
+    .end annotation
+
+    const-string v0, "items"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 97
+    invoke-direct {p0}, Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment;->getTokensAdapter()Lcom/iMe/ui/wallet/swap/token/adapter/WalletSelectTokenAdapter;
+
+    move-result-object v0
+
+    .line 98
+    invoke-virtual {v0}, Lcom/chad/library/adapter/base/BaseQuickAdapter;->getLoadMoreModule()Lcom/chad/library/adapter/base/module/BaseLoadMoreModule;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Lcom/chad/library/adapter/base/module/BaseLoadMoreModule;->loadMoreComplete()V
+
+    const/4 v1, 0x0
+
+    const/4 v2, 0x2
+
+    .line 99
+    invoke-static {v0, p1, v1, v2, v1}, Lcom/chad/library/adapter/base/BaseQuickAdapter;->setDiffNewData$default(Lcom/chad/library/adapter/base/BaseQuickAdapter;Ljava/util/List;Ljava/lang/Runnable;ILjava/lang/Object;)V
 
     return-void
 .end method
@@ -748,7 +980,7 @@
 .method public onLoadingState()V
     .locals 1
 
-    .line 70
+    .line 76
     invoke-direct {p0}, Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment;->getBinding()Lorg/telegram/messenger/databinding/ForkFragmentWalletSelectTokenBinding;
 
     move-result-object v0
@@ -760,15 +992,37 @@
     return-void
 .end method
 
-.method public synthetic onNoInternetErrorState()V
-    .locals 0
+.method public onNoInternetErrorState()V
+    .locals 1
 
-    invoke-static {p0}, Lcom/iMe/ui/custom/state/GlobalStateView$-CC;->$default$onNoInternetErrorState(Lcom/iMe/ui/custom/state/GlobalStateView;)V
+    .line 80
+    invoke-direct {p0}, Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment;->getBinding()Lorg/telegram/messenger/databinding/ForkFragmentWalletSelectTokenBinding;
+
+    move-result-object v0
+
+    iget-object v0, v0, Lorg/telegram/messenger/databinding/ForkFragmentWalletSelectTokenBinding;->globalStateLayout:Lcom/iMe/ui/custom/state/GlobalStateLayout;
+
+    invoke-virtual {v0}, Lcom/iMe/ui/custom/state/GlobalStateLayout;->showNoInternetError()V
 
     return-void
 .end method
 
-.method public onTokensLoaded(Ljava/util/List;)V
+.method public onUnexpectedErrorState()V
+    .locals 1
+
+    .line 84
+    invoke-direct {p0}, Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment;->getBinding()Lorg/telegram/messenger/databinding/ForkFragmentWalletSelectTokenBinding;
+
+    move-result-object v0
+
+    iget-object v0, v0, Lorg/telegram/messenger/databinding/ForkFragmentWalletSelectTokenBinding;->globalStateLayout:Lcom/iMe/ui/custom/state/GlobalStateLayout;
+
+    invoke-virtual {v0}, Lcom/iMe/ui/custom/state/GlobalStateLayout;->showUnexpectedError()V
+
+    return-void
+.end method
+
+.method public renderItems(Ljava/util/List;)V
     .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -783,7 +1037,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 61
+    .line 88
     invoke-interface {p1}, Ljava/util/List;->isEmpty()Z
 
     move-result v0
@@ -792,7 +1046,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 62
+    .line 89
     invoke-direct {p0}, Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment;->getBinding()Lorg/telegram/messenger/databinding/ForkFragmentWalletSelectTokenBinding;
 
     move-result-object p1
@@ -809,7 +1063,7 @@
 
     goto :goto_0
 
-    .line 64
+    .line 91
     :cond_0
     invoke-direct {p0}, Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment;->getBinding()Lorg/telegram/messenger/databinding/ForkFragmentWalletSelectTokenBinding;
 
@@ -819,7 +1073,7 @@
 
     invoke-virtual {v0}, Lcom/iMe/ui/custom/state/GlobalStateLayout;->showContent()V
 
-    .line 65
+    .line 92
     invoke-direct {p0}, Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment;->getTokensAdapter()Lcom/iMe/ui/wallet/swap/token/adapter/WalletSelectTokenAdapter;
 
     move-result-object v0
@@ -836,10 +1090,10 @@
     return-void
 .end method
 
-.method public synthetic onUnexpectedErrorState()V
+.method public synthetic resetLoadMore()V
     .locals 0
 
-    invoke-static {p0}, Lcom/iMe/ui/custom/state/GlobalStateView$-CC;->$default$onUnexpectedErrorState(Lcom/iMe/ui/custom/state/GlobalStateView;)V
+    invoke-static {p0}, Lcom/iMe/ui/base/mvp/LoadMoreView$-CC;->$default$resetLoadMore(Lcom/iMe/ui/base/mvp/LoadMoreView;)V
 
     return-void
 .end method

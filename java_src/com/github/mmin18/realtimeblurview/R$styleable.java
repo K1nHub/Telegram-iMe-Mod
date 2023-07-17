@@ -1,6 +1,6 @@
 package com.github.mmin18.realtimeblurview;
 
-import com.iMe.android.R;
+import com.iMe.android.web.R;
 /* loaded from: classes.dex */
 public final class R$styleable {
     public static final int[] RealtimeBlurView = {R.attr.realtimeBlurRadius, R.attr.realtimeDownsampleFactor, R.attr.realtimeOverlayColor};

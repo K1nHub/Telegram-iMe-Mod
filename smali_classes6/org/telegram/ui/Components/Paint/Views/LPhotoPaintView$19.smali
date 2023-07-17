@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;Z)V
     .locals 0
 
-    .line 2947
+    .line 2956
     iput-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$19;->this$0:Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;
 
     iput-boolean p2, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$19;->val$ignore:Z
@@ -39,7 +39,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 2
 
-    .line 2950
+    .line 2959
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$19;->this$0:Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->access$4400(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;)Lorg/telegram/ui/Components/EmojiView;
@@ -50,19 +50,19 @@
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/EmojiView;->setTranslationY(F)V
 
-    .line 2951
+    .line 2960
     iget-boolean p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$19;->val$ignore:Z
 
     if-nez p1, :cond_0
 
-    .line 2952
+    .line 2961
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$19;->this$0:Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;
 
     const/high16 v1, 0x3f800000    # 1.0f
 
     invoke-static {p1, v0, v1}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->access$4500(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;FF)V
 
-    .line 2954
+    .line 2963
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$19;->this$0:Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;
 

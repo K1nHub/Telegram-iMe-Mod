@@ -13,7 +13,7 @@ import com.iMe.storage.domain.model.staking.StakingMetadata;
 import com.iMe.storage.domain.model.staking.StakingProgrammes;
 import com.iMe.storage.domain.model.wallet.staking.StakingOrderType;
 import com.iMe.storage.domain.utils.p030rx.SchedulersProvider;
-import com.iMe.utils.extentions.p033rx.RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
+import com.iMe.utils.extentions.p032rx.RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
 import io.reactivex.Observable;
 import io.reactivex.disposables.Disposable;
 import java.util.ArrayList;
@@ -60,8 +60,8 @@ public final class StakingCalculatorProgrammesPresenter extends BasePresenter<St
         }
         Observable<Result<StakingProgrammes>> observeOn = this.stakingInteractor.getStakingProgrammesList(StakingOrderType.DEFAULT, this.lastItemId).observeOn(this.schedulersProvider.mo698ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "stakingInteractor\n      …(schedulersProvider.ui())");
-        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2340x773d9f9f(this, z3, z)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2341x773d9fa0(null)));
-        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
+        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2386x773d9f9f(this, z3, z)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2387x773d9fa0(null)));
+        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…Error.invoke()\n        })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
 

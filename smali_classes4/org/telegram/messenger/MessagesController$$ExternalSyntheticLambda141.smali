@@ -105,7 +105,7 @@
 
     iget-object v13, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda141;->f$13:Ljava/util/HashMap;
 
-    invoke-static/range {v0 .. v13}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$F2ySfT3-uVttlWFeMRuy7iQaMt8(Lorg/telegram/messenger/MessagesController;Ljava/util/HashMap;Lorg/telegram/tgnet/TLRPC$messages_Dialogs;Lorg/telegram/tgnet/TLRPC$messages_Dialogs;Ljava/util/ArrayList;Ljava/util/ArrayList;Ljava/util/ArrayList;Landroid/util/SparseArray;Ljava/util/ArrayList;Ljava/util/HashMap;Ljava/util/HashSet;Ljava/lang/Runnable;Ljava/util/HashMap;Ljava/util/HashMap;)V
+    invoke-static/range {v0 .. v13}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$32nJQ6rBAj8WBuN7904FtzdX4Rk(Lorg/telegram/messenger/MessagesController;Ljava/util/HashMap;Lorg/telegram/tgnet/TLRPC$messages_Dialogs;Lorg/telegram/tgnet/TLRPC$messages_Dialogs;Ljava/util/ArrayList;Ljava/util/ArrayList;Ljava/util/ArrayList;Landroid/util/SparseArray;Ljava/util/ArrayList;Ljava/util/HashMap;Ljava/util/HashSet;Ljava/lang/Runnable;Ljava/util/HashMap;Ljava/util/HashMap;)V
 
     return-void
 .end method

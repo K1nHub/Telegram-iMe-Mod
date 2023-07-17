@@ -16,16 +16,16 @@ import com.iMe.model.common.ScreenType;
 import com.iMe.model.staking.StakingDetailsItem;
 import com.iMe.model.staking.StakingProgrammeItem;
 import com.iMe.model.wallet.details.TokenDetailsArgs;
-import com.iMe.p031ui.base.WalletAuthFragment;
 import com.iMe.p031ui.base.mvp.LoadMoreView;
-import com.iMe.p031ui.wallet.home.p032v2.details.WalletTokenDetailsFragment;
+import com.iMe.p031ui.base.wallet_auth.WalletAuthBaseFragment;
+import com.iMe.p031ui.wallet.home.details.WalletTokenDetailsFragment;
 import com.iMe.p031ui.wallet.staking.programmes.adapter.StakingProgrammesRecycleAdapter;
 import com.iMe.p031ui.wallet.staking.programmes.adapter.diff.StakingProgrammesDiffCallback;
 import com.iMe.p031ui.wallet.swap.WalletSwapProtocolsFragment;
 import com.iMe.storage.domain.model.crypto.level.AccountLevel;
 import com.iMe.storage.domain.model.staking.StakingTabType;
 import com.iMe.storage.domain.model.wallet.staking.StakingOrderType;
-import com.iMe.storage.domain.model.wallet.token.TokenCode;
+import com.iMe.storage.domain.model.wallet.token.TokenDetailed;
 import com.iMe.utils.dialogs.DialogsFactoryKt;
 import com.iMe.utils.extentions.delegate.ResettableLazy;
 import com.iMe.utils.extentions.delegate.ResettableLazyDelegateKt;
@@ -42,16 +42,16 @@ import kotlin.jvm.internal.Reflection;
 import kotlin.reflect.KProperty;
 import moxy.MvpDelegate;
 import moxy.ktx.MoxyKtxDelegate;
-import org.koin.p043mp.KoinPlatformTools;
-import org.telegram.messenger.C3295R;
+import org.koin.p042mp.KoinPlatformTools;
+import org.telegram.messenger.C3417R;
 import org.telegram.messenger.databinding.ForkFragmentStakingProgrammesBinding;
-import org.telegram.p044ui.ActionBar.Theme;
-import org.telegram.p044ui.ActionBar.ThemeDescription;
-import org.telegram.p044ui.ManageLinksActivity;
+import org.telegram.p043ui.ActionBar.Theme;
+import org.telegram.p043ui.ActionBar.ThemeDescription;
+import org.telegram.p043ui.ManageLinksActivity;
 /* compiled from: StakingProgrammesFragment.kt */
 /* renamed from: com.iMe.ui.wallet.staking.programmes.StakingProgrammesFragment */
 /* loaded from: classes4.dex */
-public final class StakingProgrammesFragment extends WalletAuthFragment implements StakingProgrammesView {
+public final class StakingProgrammesFragment extends WalletAuthBaseFragment implements StakingProgrammesView {
     static final /* synthetic */ KProperty<Object>[] $$delegatedProperties = {Reflection.property1(new PropertyReference1Impl(StakingProgrammesFragment.class, "presenter", "getPresenter()Lcom/iMe/ui/wallet/staking/programmes/StakingProgrammesPresenter;", 0)), Reflection.property1(new PropertyReference1Impl(StakingProgrammesFragment.class, "binding", "getBinding()Lorg/telegram/messenger/databinding/ForkFragmentStakingProgrammesBinding;", 0))};
     public static final Companion Companion = new Companion(null);
     private final ResettableLazy binding$delegate;
@@ -147,35 +147,37 @@ public final class StakingProgrammesFragment extends WalletAuthFragment implemen
     }
 
     @Override // com.iMe.p031ui.wallet.staking.programmes.StakingProgrammesView
-    public void showLevelRequiredDialog(AccountLevel minimalRank) {
+    public void showLevelRequiredDialog(AccountLevel minimalRank, final TokenDetailed token) {
         Intrinsics.checkNotNullParameter(minimalRank, "minimalRank");
+        Intrinsics.checkNotNullParameter(token, "token");
         DialogsFactoryKt.showStakingLevelRequiredDialog(this, getResourceManager(), minimalRank, new Callbacks$Callback() { // from class: com.iMe.ui.wallet.staking.programmes.StakingProgrammesFragment$$ExternalSyntheticLambda5
             @Override // com.iMe.fork.utils.Callbacks$Callback
             public final void invoke() {
-                StakingProgrammesFragment.showLevelRequiredDialog$lambda$2(StakingProgrammesFragment.this);
+                StakingProgrammesFragment.showLevelRequiredDialog$lambda$2(StakingProgrammesFragment.this, token);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void showLevelRequiredDialog$lambda$2(StakingProgrammesFragment this$0) {
+    public static final void showLevelRequiredDialog$lambda$2(StakingProgrammesFragment this$0, TokenDetailed token) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
-        this$0.presentFragment(WalletSwapProtocolsFragment.Companion.newInstance(ScreenType.FULLSCREEN, TokenCode.LIME));
+        Intrinsics.checkNotNullParameter(token, "$token");
+        this$0.presentFragment(WalletSwapProtocolsFragment.Companion.newInstance(ScreenType.FULLSCREEN, token));
     }
 
-    @Override // org.telegram.p044ui.ActionBar.BaseFragment
+    @Override // org.telegram.p043ui.ActionBar.BaseFragment
     public ArrayList<ThemeDescription> getThemeDescriptions() {
         ArrayList<ThemeDescription> arrayListOf;
         RecyclerView root = getBinding().getRoot();
         int i = ThemeDescription.FLAG_BACKGROUND;
         final StakingProgrammesRecycleAdapter stakingProgrammesRecycleAdapter = getStakingProgrammesRecycleAdapter();
         arrayListOf = CollectionsKt__CollectionsKt.arrayListOf(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, Theme.key_actionBarDefault), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_ITEMSCOLOR, null, null, null, null, Theme.key_actionBarDefaultIcon), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_TITLECOLOR, null, null, null, null, Theme.key_actionBarDefaultTitle), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SELECTORCOLOR, null, null, null, null, Theme.key_actionBarDefaultSelector), new ThemeDescription(root, i, null, null, null, new ThemeDescription.ThemeDescriptionDelegate() { // from class: com.iMe.ui.wallet.staking.programmes.StakingProgrammesFragment$$ExternalSyntheticLambda6
-            @Override // org.telegram.p044ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
+            @Override // org.telegram.p043ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
             public final void didSetColor() {
                 StakingProgrammesRecycleAdapter.this.notifyDataSetChanged();
             }
 
-            @Override // org.telegram.p044ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
+            @Override // org.telegram.p043ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
             public /* synthetic */ void onAnimationProgress(float f) {
                 ThemeDescription.ThemeDescriptionDelegate.CC.$default$onAnimationProgress(this, f);
             }
@@ -195,6 +197,7 @@ public final class StakingProgrammesFragment extends WalletAuthFragment implemen
         stakingProgrammesRecycleAdapter.getHeaderWithRightButtonProvider().setInfoButtonVisible(this.stakingTabType == StakingTabType.PARTICIPATED);
         stakingProgrammesRecycleAdapter.setDiffCallback(new StakingProgrammesDiffCallback());
         setupLoadMore(stakingProgrammesRecycleAdapter);
+        recyclerView.setItemAnimator(null);
         recyclerView.setAdapter(stakingProgrammesRecycleAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(getParentActivity()));
     }
@@ -260,15 +263,15 @@ public final class StakingProgrammesFragment extends WalletAuthFragment implemen
         Intrinsics.checkNotNullParameter(baseQuickAdapter, "<anonymous parameter 0>");
         Intrinsics.checkNotNullParameter(view, "view");
         int id = view.getId();
-        if (id == C3295R.C3298id.image_header_right_button) {
+        if (id == C3417R.C3420id.image_header_right_button) {
             this$0.getPresenter().showSelectStakingOrderTypeDialog();
-        } else if (id == C3295R.C3298id.image_info) {
+        } else if (id == C3417R.C3420id.image_info) {
             this$0.showStakingFiltersInfoDialog();
         }
     }
 
     private final void showStakingFiltersInfoDialog() {
-        showDialog(DialogsFactoryKt.createInfoBottomSheetDialog$default(this, getResourceManager().getString(C3295R.string.staking_programmes_filters_info_title), getResourceManager().getString(C3295R.string.staking_programmes_filters_info_description), getResourceManager().getString(C3295R.string.common_ok), null, 8, null));
+        showDialog(DialogsFactoryKt.createInfoBottomSheetDialog$default(this, getResourceManager().getString(C3417R.string.staking_programmes_filters_info_title), getResourceManager().getString(C3417R.string.staking_programmes_filters_info_description), getResourceManager().getString(C3417R.string.common_ok), null, 8, null));
     }
 
     /* compiled from: StakingProgrammesFragment.kt */

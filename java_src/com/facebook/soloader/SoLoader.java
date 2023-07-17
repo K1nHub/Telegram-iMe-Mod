@@ -5,9 +5,11 @@ import kotlin.jvm.internal.Intrinsics;
 /* compiled from: SoLoader.kt */
 /* loaded from: classes.dex */
 public final class SoLoader {
-    public static final SoLoader INSTANCE = new SoLoader();
+    static {
+        new SoLoader();
+    }
 
-    public final void init(Context context, boolean z) {
+    public static final void init(Context context, boolean z) {
         Intrinsics.checkNotNullParameter(context, "context");
     }
 

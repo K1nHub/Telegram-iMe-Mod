@@ -26,7 +26,7 @@
 .method constructor <init>(Lcom/iMe/feature/profile/ProfileView$$State;)V
     .locals 1
 
-    .line 326
+    .line 342
     const-class p1, Lmoxy/viewstate/strategy/OneExecutionStateStrategy;
 
     const-string v0, "updateSocialCell"
@@ -41,7 +41,7 @@
 .method public apply(Lcom/iMe/feature/profile/ProfileView;)V
     .locals 0
 
-    .line 331
+    .line 347
     invoke-interface {p1}, Lcom/iMe/feature/profile/ProfileView;->updateSocialCell()V
 
     return-void
@@ -50,7 +50,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 324
+    .line 340
     check-cast p1, Lcom/iMe/feature/profile/ProfileView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/feature/profile/ProfileView$$State$UpdateSocialCellCommand;->apply(Lcom/iMe/feature/profile/ProfileView;)V

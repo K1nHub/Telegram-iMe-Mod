@@ -108,6 +108,14 @@
     return-void
 .end method
 
+.method public synthetic removeSelfFromStackImmediately()V
+    .locals 0
+
+    invoke-static {p0}, Lcom/iMe/ui/base/mvp/base/BaseView$-CC;->$default$removeSelfFromStackImmediately(Lcom/iMe/ui/base/mvp/base/BaseView;)V
+
+    return-void
+.end method
+
 .method public showAirdropDialog()V
     .locals 3
 

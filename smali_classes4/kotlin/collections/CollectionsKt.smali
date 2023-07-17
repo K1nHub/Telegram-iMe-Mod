@@ -279,6 +279,25 @@
     return-object p0
 .end method
 
+.method public static bridge synthetic first(Ljava/lang/Iterable;)Ljava/lang/Object;
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<T:",
+            "Ljava/lang/Object;",
+            ">(",
+            "Ljava/lang/Iterable<",
+            "+TT;>;)TT;"
+        }
+    .end annotation
+
+    invoke-static {p0}, Lkotlin/collections/CollectionsKt___CollectionsKt;->first(Ljava/lang/Iterable;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
 .method public static bridge synthetic first(Ljava/util/List;)Ljava/lang/Object;
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
@@ -417,25 +436,6 @@
     return-object p0
 .end method
 
-.method public static bridge synthetic last(Ljava/lang/Iterable;)Ljava/lang/Object;
-    .locals 0
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "<T:",
-            "Ljava/lang/Object;",
-            ">(",
-            "Ljava/lang/Iterable<",
-            "+TT;>;)TT;"
-        }
-    .end annotation
-
-    invoke-static {p0}, Lkotlin/collections/CollectionsKt___CollectionsKt;->last(Ljava/lang/Iterable;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
 .method public static bridge synthetic last(Ljava/util/List;)Ljava/lang/Object;
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
@@ -449,6 +449,25 @@
     .end annotation
 
     invoke-static {p0}, Lkotlin/collections/CollectionsKt___CollectionsKt;->last(Ljava/util/List;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public static bridge synthetic lastOrNull(Ljava/lang/Iterable;)Ljava/lang/Object;
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<T:",
+            "Ljava/lang/Object;",
+            ">(",
+            "Ljava/lang/Iterable<",
+            "+TT;>;)TT;"
+        }
+    .end annotation
+
+    invoke-static {p0}, Lkotlin/collections/CollectionsKt___CollectionsKt;->lastOrNull(Ljava/lang/Iterable;)Ljava/lang/Object;
 
     move-result-object p0
 
@@ -506,6 +525,25 @@
     .end annotation
 
     invoke-static {p0}, Lkotlin/collections/CollectionsKt__CollectionsKt;->listOf([Ljava/lang/Object;)Ljava/util/List;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public static bridge synthetic listOfNotNull(Ljava/lang/Object;)Ljava/util/List;
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<T:",
+            "Ljava/lang/Object;",
+            ">(TT;)",
+            "Ljava/util/List<",
+            "TT;>;"
+        }
+    .end annotation
+
+    invoke-static {p0}, Lkotlin/collections/CollectionsKt__CollectionsKt;->listOfNotNull(Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object p0
 

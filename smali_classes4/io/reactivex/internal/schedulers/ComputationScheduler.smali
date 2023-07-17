@@ -50,7 +50,7 @@
 
     move-result v0
 
-    const-string v1, "rx2.computation-threads"
+    const-string/jumbo v1, "rx2.computation-threads"
 
     const/4 v2, 0x0
 
@@ -84,7 +84,7 @@
     .line 56
     invoke-virtual {v0}, Lio/reactivex/internal/schedulers/NewThreadWorker;->dispose()V
 
-    const-string v0, "rx2.computation-priority"
+    const-string/jumbo v0, "rx2.computation-priority"
 
     const/4 v1, 0x5
 

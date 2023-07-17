@@ -24,7 +24,7 @@
 
     iput-object p1, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$setupActionBar$1$2;->this$0:Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;
 
-    .line 865
+    .line 965
     invoke-direct {p0}, Lorg/telegram/ui/ActionBar/ActionBar$ActionBarMenuOnItemClick;-><init>()V
 
     return-void
@@ -39,14 +39,14 @@
 
     if-ne p1, v0, :cond_0
 
-    .line 868
+    .line 968
     iget-object p1, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$setupActionBar$1$2;->this$0:Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;
 
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->finishFragment()V
 
     goto :goto_0
 
-    .line 869
+    .line 969
     :cond_0
     sget v0, Lcom/iMe/common/IdFabric$Menu;->PDF:I
 
@@ -54,7 +54,11 @@
 
     iget-object p1, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$setupActionBar$1$2;->this$0:Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;
 
-    invoke-static {p1}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->access$generatePdf(Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;)V
+    invoke-static {p1}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->access$getPresenter(Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;)Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletPresenter;->onSavePdfClick()V
 
     :cond_1
     :goto_0

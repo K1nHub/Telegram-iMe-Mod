@@ -6,15 +6,15 @@ public class McElieceCCA2PublicKeyParameters extends McElieceCCA2KeyParameters {
     private GF2Matrix matrixG;
 
     /* renamed from: n */
-    private int f1331n;
+    private int f1413n;
 
     /* renamed from: t */
-    private int f1332t;
+    private int f1414t;
 
     public McElieceCCA2PublicKeyParameters(int i, int i2, GF2Matrix gF2Matrix, String str) {
         super(false, str);
-        this.f1331n = i;
-        this.f1332t = i2;
+        this.f1413n = i;
+        this.f1414t = i2;
         this.matrixG = new GF2Matrix(gF2Matrix);
     }
 
@@ -23,10 +23,10 @@ public class McElieceCCA2PublicKeyParameters extends McElieceCCA2KeyParameters {
     }
 
     public int getN() {
-        return this.f1331n;
+        return this.f1413n;
     }
 
     public int getT() {
-        return this.f1332t;
+        return this.f1414t;
     }
 }

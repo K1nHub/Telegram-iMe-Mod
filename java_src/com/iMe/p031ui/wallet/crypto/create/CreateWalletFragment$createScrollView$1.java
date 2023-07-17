@@ -16,9 +16,9 @@ import kotlin.Unit;
 import kotlin.collections.CollectionsKt__CollectionsKt;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.p044ui.ActionBar.BaseFragment;
-import org.telegram.p044ui.ActionBar.C3361ActionBar;
-import org.telegram.p044ui.ActionBar.SimpleTextView;
+import org.telegram.p043ui.ActionBar.BaseFragment;
+import org.telegram.p043ui.ActionBar.C3484ActionBar;
+import org.telegram.p043ui.ActionBar.SimpleTextView;
 /* compiled from: CreateWalletFragment.kt */
 /* renamed from: com.iMe.ui.wallet.crypto.create.CreateWalletFragment$createScrollView$1 */
 /* loaded from: classes3.dex */
@@ -43,11 +43,11 @@ public final class CreateWalletFragment$createScrollView$1 extends ScrollView {
     protected void onScrollChanged(int i, int i2, int i3, int i4) {
         TextView titleTextView;
         TextView titleTextView2;
-        C3361ActionBar c3361ActionBar;
+        C3484ActionBar c3484ActionBar;
         TextView titleTextView3;
         TextView titleTextView4;
         View actionBarBackground;
-        C3361ActionBar c3361ActionBar2;
+        C3484ActionBar c3484ActionBar2;
         super.onScrollChanged(i, i2, i3, i4);
         this.this$0.hideHint();
         titleTextView = this.this$0.getTitleTextView();
@@ -55,8 +55,8 @@ public final class CreateWalletFragment$createScrollView$1 extends ScrollView {
         int i5 = this.location[1];
         titleTextView2 = this.this$0.getTitleTextView();
         int measuredHeight = i5 + titleTextView2.getMeasuredHeight();
-        c3361ActionBar = ((BaseFragment) this.this$0).actionBar;
-        boolean z = measuredHeight < c3361ActionBar.getBottom();
+        c3484ActionBar = ((BaseFragment) this.this$0).actionBar;
+        boolean z = measuredHeight < c3484ActionBar.getBottom();
         titleTextView3 = this.this$0.getTitleTextView();
         if (z != (titleTextView3.getTag() == null)) {
             titleTextView4 = this.this$0.getTitleTextView();
@@ -76,8 +76,8 @@ public final class CreateWalletFragment$createScrollView$1 extends ScrollView {
             float[] fArr = new float[1];
             fArr[0] = z ? 1.0f : 0.0f;
             animatorArr[0] = ObjectAnimator.ofFloat(actionBarBackground, property, fArr);
-            c3361ActionBar2 = ((BaseFragment) createWalletFragment).actionBar;
-            SimpleTextView titleTextView5 = c3361ActionBar2.getTitleTextView();
+            c3484ActionBar2 = ((BaseFragment) createWalletFragment).actionBar;
+            SimpleTextView titleTextView5 = c3484ActionBar2.getTitleTextView();
             Property property2 = ScrollView.ALPHA;
             float[] fArr2 = new float[1];
             fArr2[0] = z ? 1.0f : 0.0f;

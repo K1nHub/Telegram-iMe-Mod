@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Set;
 import org.telegram.messenger.CacheByChatsController;
-import p034j$.util.concurrent.ConcurrentHashMap;
+import p033j$.util.concurrent.ConcurrentHashMap;
 /* loaded from: classes4.dex */
 public class AutoDeleteMediaTask {
     public static Set<String> usingFilePaths = Collections.newSetFromMap(new ConcurrentHashMap());

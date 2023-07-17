@@ -13,13 +13,13 @@ import retrofit2.http.POST;
 /* compiled from: PermissionApi.kt */
 /* loaded from: classes3.dex */
 public interface PermissionApi {
-    @POST("getAccountInfo")
+    @POST("getNotOwnWallets")
     Observable<ApiBaseResponse<AccountInfoResponse>> getAccountInfo(@Body GetAccountInfoRequest getAccountInfoRequest);
 
     @POST("manageAccessToMyData")
     Observable<ApiBaseResponse<Object>> manageAccessToMyData(@Body ManageAccessToMyDataRequest manageAccessToMyDataRequest);
 
-    @POST("manageCryptoPermissions")
+    @POST("changePermission")
     Observable<ApiBaseResponse<Object>> manageCryptoPermissions(@Body ManageCryptoPermissionRequest manageCryptoPermissionRequest);
 
     @POST("requestPermission")

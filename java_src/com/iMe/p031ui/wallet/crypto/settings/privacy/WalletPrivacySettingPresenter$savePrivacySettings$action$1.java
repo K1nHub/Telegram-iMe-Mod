@@ -8,7 +8,7 @@ import kotlin.jvm.internal.Lambda;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: WalletPrivacySettingPresenter.kt */
 /* renamed from: com.iMe.ui.wallet.crypto.settings.privacy.WalletPrivacySettingPresenter$savePrivacySettings$action$1 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class WalletPrivacySettingPresenter$savePrivacySettings$action$1 extends Lambda implements Function0<Unit> {
     final /* synthetic */ int $accountRankAllowType;
     final /* synthetic */ ArrayList<Long> $allowUsers;

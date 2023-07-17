@@ -26,10 +26,10 @@
 .method constructor <init>(Lcom/iMe/ui/wallet/transaction/WalletTransactionsView$$State;)V
     .locals 1
 
-    .line 468
+    .line 495
     const-class p1, Lmoxy/viewstate/strategy/AddToEndSingleStrategy;
 
-    const-string v0, "resetLoadMore"
+    const-string/jumbo v0, "resetLoadMore"
 
     invoke-direct {p0, v0, p1}, Lmoxy/viewstate/ViewCommand;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
@@ -41,7 +41,7 @@
 .method public apply(Lcom/iMe/ui/wallet/transaction/WalletTransactionsView;)V
     .locals 0
 
-    .line 473
+    .line 500
     invoke-interface {p1}, Lcom/iMe/ui/base/mvp/LoadMoreView;->resetLoadMore()V
 
     return-void
@@ -50,7 +50,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 466
+    .line 493
     check-cast p1, Lcom/iMe/ui/wallet/transaction/WalletTransactionsView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/wallet/transaction/WalletTransactionsView$$State$ResetLoadMoreCommand;->apply(Lcom/iMe/ui/wallet/transaction/WalletTransactionsView;)V

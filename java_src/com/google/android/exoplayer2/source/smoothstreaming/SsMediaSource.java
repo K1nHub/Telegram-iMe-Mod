@@ -4,7 +4,7 @@ import android.net.Uri;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.SystemClock;
-import com.google.android.exoplayer2.C0475C;
+import com.google.android.exoplayer2.C0480C;
 import com.google.android.exoplayer2.ExoPlayerLibraryInfo;
 import com.google.android.exoplayer2.MediaItem;
 import com.google.android.exoplayer2.drm.DefaultDrmSessionManagerProvider;
@@ -262,7 +262,7 @@ public final class SsMediaSource extends BaseMediaSource implements Loader.Callb
         Loader.LoadErrorAction createRetryAction;
         LoadEventInfo loadEventInfo = new LoadEventInfo(parsingLoadable.loadTaskId, parsingLoadable.dataSpec, parsingLoadable.getUri(), parsingLoadable.getResponseHeaders(), j, j2, parsingLoadable.bytesLoaded());
         long retryDelayMsFor = this.loadErrorHandlingPolicy.getRetryDelayMsFor(new LoadErrorHandlingPolicy.LoadErrorInfo(loadEventInfo, new MediaLoadData(parsingLoadable.type), iOException, i));
-        if (retryDelayMsFor == C0475C.TIME_UNSET) {
+        if (retryDelayMsFor == C0480C.TIME_UNSET) {
             createRetryAction = Loader.DONT_RETRY_FATAL;
         } else {
             createRetryAction = Loader.createRetryAction(false, retryDelayMsFor);
@@ -298,7 +298,7 @@ public final class SsMediaSource extends BaseMediaSource implements Loader.Callb
             SsManifest ssManifest2 = this.manifest;
             if (ssManifest2.isLive) {
                 long j4 = ssManifest2.dvrWindowLengthUs;
-                if (j4 != C0475C.TIME_UNSET && j4 > 0) {
+                if (j4 != C0480C.TIME_UNSET && j4 > 0) {
                     j2 = Math.max(j2, j - j4);
                 }
                 long j5 = j2;
@@ -307,10 +307,10 @@ public final class SsMediaSource extends BaseMediaSource implements Loader.Callb
                 if (msToUs < MIN_LIVE_DEFAULT_START_POSITION_US) {
                     msToUs = Math.min((long) MIN_LIVE_DEFAULT_START_POSITION_US, j6 / 2);
                 }
-                singlePeriodTimeline = new SinglePeriodTimeline((long) C0475C.TIME_UNSET, j6, j5, msToUs, true, true, true, (Object) this.manifest, this.mediaItem);
+                singlePeriodTimeline = new SinglePeriodTimeline((long) C0480C.TIME_UNSET, j6, j5, msToUs, true, true, true, (Object) this.manifest, this.mediaItem);
             } else {
                 long j7 = ssManifest2.durationUs;
-                long j8 = j7 != C0475C.TIME_UNSET ? j7 : j - j2;
+                long j8 = j7 != C0480C.TIME_UNSET ? j7 : j - j2;
                 singlePeriodTimeline = new SinglePeriodTimeline(j2 + j8, j8, j2, 0L, true, false, false, (Object) this.manifest, this.mediaItem);
             }
         }

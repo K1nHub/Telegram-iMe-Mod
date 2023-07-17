@@ -5,7 +5,7 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Lambda;
 /* compiled from: CatalogTabFragment.kt */
 /* renamed from: com.iMe.ui.catalog.tabs.CatalogTabFragment$onResume$1 */
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 final class CatalogTabFragment$onResume$1 extends Lambda implements Function1<Integer, Unit> {
     final /* synthetic */ CatalogTabFragment this$0;
 

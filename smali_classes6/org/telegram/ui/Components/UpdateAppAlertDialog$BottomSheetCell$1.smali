@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/UpdateAppAlertDialog$BottomSheetCell;)V
     .locals 0
 
-    .line 123
+    .line 164
     iput-object p1, p0, Lorg/telegram/ui/Components/UpdateAppAlertDialog$BottomSheetCell$1;->this$1:Lorg/telegram/ui/Components/UpdateAppAlertDialog$BottomSheetCell;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,7 +35,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 4
 
-    .line 126
+    .line 167
     iget-object p1, p0, Lorg/telegram/ui/Components/UpdateAppAlertDialog$BottomSheetCell$1;->this$1:Lorg/telegram/ui/Components/UpdateAppAlertDialog$BottomSheetCell;
 
     iget-object p1, p1, Lorg/telegram/ui/Components/UpdateAppAlertDialog$BottomSheetCell;->this$0:Lorg/telegram/ui/Components/UpdateAppAlertDialog;
@@ -44,7 +44,7 @@
 
     invoke-static {p1, v0}, Lorg/telegram/ui/Components/UpdateAppAlertDialog;->access$002(Lorg/telegram/ui/Components/UpdateAppAlertDialog;Z)Z
 
-    .line 127
+    .line 168
     iget-object p1, p0, Lorg/telegram/ui/Components/UpdateAppAlertDialog$BottomSheetCell$1;->this$1:Lorg/telegram/ui/Components/UpdateAppAlertDialog$BottomSheetCell;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/UpdateAppAlertDialog$BottomSheetCell;->access$100(Lorg/telegram/ui/Components/UpdateAppAlertDialog$BottomSheetCell;)[Landroid/widget/TextView;
@@ -53,7 +53,7 @@
 
     aget-object p1, p1, v0
 
-    .line 128
+    .line 169
     iget-object v1, p0, Lorg/telegram/ui/Components/UpdateAppAlertDialog$BottomSheetCell$1;->this$1:Lorg/telegram/ui/Components/UpdateAppAlertDialog$BottomSheetCell;
 
     invoke-static {v1}, Lorg/telegram/ui/Components/UpdateAppAlertDialog$BottomSheetCell;->access$100(Lorg/telegram/ui/Components/UpdateAppAlertDialog$BottomSheetCell;)[Landroid/widget/TextView;
@@ -72,7 +72,7 @@
 
     aput-object v2, v1, v0
 
-    .line 129
+    .line 170
     iget-object v0, p0, Lorg/telegram/ui/Components/UpdateAppAlertDialog$BottomSheetCell$1;->this$1:Lorg/telegram/ui/Components/UpdateAppAlertDialog$BottomSheetCell;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/UpdateAppAlertDialog$BottomSheetCell;->access$100(Lorg/telegram/ui/Components/UpdateAppAlertDialog$BottomSheetCell;)[Landroid/widget/TextView;

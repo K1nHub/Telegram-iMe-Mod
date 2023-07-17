@@ -30,14 +30,14 @@
 .method constructor <init>(Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessView$$State;Lcom/iMe/model/wallet/crypto/swap/SwapFeeScreenArgs;)V
     .locals 1
 
-    .line 543
+    .line 551
     const-class p1, Lmoxy/viewstate/strategy/OneExecutionStateStrategy;
 
     const-string v0, "openSwapFeeScreen"
 
     invoke-direct {p0, v0, p1}, Lmoxy/viewstate/ViewCommand;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
-    .line 545
+    .line 553
     iput-object p2, p0, Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessView$$State$OpenSwapFeeScreenCommand;->args:Lcom/iMe/model/wallet/crypto/swap/SwapFeeScreenArgs;
 
     return-void
@@ -48,7 +48,7 @@
 .method public apply(Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessView;)V
     .locals 1
 
-    .line 550
+    .line 558
     iget-object v0, p0, Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessView$$State$OpenSwapFeeScreenCommand;->args:Lcom/iMe/model/wallet/crypto/swap/SwapFeeScreenArgs;
 
     invoke-interface {p1, v0}, Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessView;->openSwapFeeScreen(Lcom/iMe/model/wallet/crypto/swap/SwapFeeScreenArgs;)V
@@ -59,7 +59,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 539
+    .line 547
     check-cast p1, Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessView$$State$OpenSwapFeeScreenCommand;->apply(Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessView;)V

@@ -3,30 +3,38 @@ package com.iMe.model.wallet.crypto.tutorial;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.p044ui.ActionBar.BaseFragment;
+import org.telegram.messenger.C3417R;
+import org.telegram.p043ui.ActionBar.BaseFragment;
 /* compiled from: TutorialType.kt */
 /* loaded from: classes3.dex */
 public abstract class TutorialType {
-    public /* synthetic */ TutorialType(DefaultConstructorMarker defaultConstructorMarker) {
-        this();
+    private final int lastPageButtonTextResId;
+
+    public /* synthetic */ TutorialType(int i, DefaultConstructorMarker defaultConstructorMarker) {
+        this(i);
     }
 
-    private TutorialType() {
+    private TutorialType(int i) {
+        this.lastPageButtonTextResId = i;
+    }
+
+    public final int getLastPageButtonTextResId() {
+        return this.lastPageButtonTextResId;
     }
 
     /* compiled from: TutorialType.kt */
     /* loaded from: classes3.dex */
-    public static final class Intro extends TutorialType {
-        public static final Intro INSTANCE = new Intro();
+    public static final class WalletCreated extends TutorialType {
+        public static final WalletCreated INSTANCE = new WalletCreated();
 
-        private Intro() {
-            super(null);
+        private WalletCreated() {
+            super(C3417R.string.common_done, null);
         }
     }
 
     /* compiled from: TutorialType.kt */
     /* loaded from: classes3.dex */
-    public static final class Backup extends TutorialType {
+    public static final class WalletIntro extends TutorialType {
         private final Function0<BaseFragment> onTutorialPassedFragmentCreator;
 
         public final Function0<BaseFragment> getOnTutorialPassedFragmentCreator() {
@@ -35,8 +43,8 @@ public abstract class TutorialType {
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         /* JADX WARN: Multi-variable type inference failed */
-        public Backup(Function0<? extends BaseFragment> onTutorialPassedFragmentCreator) {
-            super(null);
+        public WalletIntro(Function0<? extends BaseFragment> onTutorialPassedFragmentCreator) {
+            super(C3417R.string.wallet_creation_backup, null);
             Intrinsics.checkNotNullParameter(onTutorialPassedFragmentCreator, "onTutorialPassedFragmentCreator");
             this.onTutorialPassedFragmentCreator = onTutorialPassedFragmentCreator;
         }

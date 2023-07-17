@@ -16,7 +16,7 @@ public final class Track {
     public final Format format;
 
     /* renamed from: id */
-    public final int f109id;
+    public final int f191id;
     public final long movieTimescale;
     public final int nalUnitLengthFieldLength;
     private final TrackEncryptionBox[] sampleDescriptionEncryptionBoxes;
@@ -32,7 +32,7 @@ public final class Track {
     }
 
     public Track(int i, int i2, long j, long j2, long j3, Format format, int i3, TrackEncryptionBox[] trackEncryptionBoxArr, int i4, long[] jArr, long[] jArr2) {
-        this.f109id = i;
+        this.f191id = i;
         this.type = i2;
         this.timescale = j;
         this.movieTimescale = j2;
@@ -54,6 +54,6 @@ public final class Track {
     }
 
     public Track copyWithFormat(Format format) {
-        return new Track(this.f109id, this.type, this.timescale, this.movieTimescale, this.durationUs, format, this.sampleTransformation, this.sampleDescriptionEncryptionBoxes, this.nalUnitLengthFieldLength, this.editListDurations, this.editListMediaTimes);
+        return new Track(this.f191id, this.type, this.timescale, this.movieTimescale, this.durationUs, format, this.sampleTransformation, this.sampleDescriptionEncryptionBoxes, this.nalUnitLengthFieldLength, this.editListDurations, this.editListMediaTimes);
     }
 }

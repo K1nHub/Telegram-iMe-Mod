@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/iMe/storage/data/repository/crypto/donations/DonationsRepositoryImpl;->getDonationWalletBalance(JLcom/iMe/storage/domain/model/crypto/NetworkType;)Lio/reactivex/Observable;
+    value = Lcom/iMe/storage/data/repository/crypto/donations/DonationsRepositoryImpl;->getDonationWalletBalance(JLjava/lang/String;)Lio/reactivex/Observable;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -31,7 +31,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nFirebaseExt.kt\nKotlin\n*S Kotlin\n*F\n+ 1 FirebaseExt.kt\ncom/iMe/storage/data/utils/extentions/FirebaseExtKt$mapSuccess$1\n+ 2 DonationsRepositoryImpl.kt\ncom/iMe/storage/data/repository/crypto/donations/DonationsRepositoryImpl\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 4 ResultExt.kt\ncom/iMe/storage/domain/utils/extentions/ResultExtKt\n*L\n1#1,86:1\n82#2,3:87\n85#2:93\n86#2:95\n766#3:90\n857#3,2:91\n1045#3:94\n9#4:96\n7#4:97\n*S KotlinDebug\n*F\n+ 1 DonationsRepositoryImpl.kt\ncom/iMe/storage/data/repository/crypto/donations/DonationsRepositoryImpl\n+ 2 FirebaseExt.kt\ncom/iMe/storage/data/utils/extentions/FirebaseExtKt$mapSuccess$1\n*L\n84#1:90\n84#1:91,2\n85#1:94\n71#2:96\n72#2:97\n*E\n"
+    value = "SMAP\nFirebaseExt.kt\nKotlin\n*S Kotlin\n*F\n+ 1 FirebaseExt.kt\ncom/iMe/storage/data/utils/extentions/FirebaseExtKt$mapSuccess$1\n+ 2 DonationsRepositoryImpl.kt\ncom/iMe/storage/data/repository/crypto/donations/DonationsRepositoryImpl\n+ 3 ResultExt.kt\ncom/iMe/storage/domain/utils/extentions/ResultExtKt\n*L\n1#1,86:1\n82#2,3:87\n9#3:90\n7#3:91\n*S KotlinDebug\n*F\n+ 1 FirebaseExt.kt\ncom/iMe/storage/data/utils/extentions/FirebaseExtKt$mapSuccess$1\n*L\n71#1:90\n72#1:91\n*E\n"
 .end annotation
 
 
@@ -55,7 +55,7 @@
 
 # virtual methods
 .method public final invoke(Lcom/iMe/storage/data/network/model/response/base/ApiBaseResponse;)Lcom/iMe/storage/domain/model/Result;
-    .locals 4
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -77,7 +77,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_3
+    if-eqz v0, :cond_0
 
     .line 87
     invoke-virtual {p1}, Lcom/iMe/storage/data/network/model/response/base/ApiBaseResponse;->getPayload()Ljava/lang/Object;
@@ -91,67 +91,7 @@
 
     move-result-object p1
 
-    .line 766
-    new-instance v0, Ljava/util/ArrayList;
-
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
-
-    .line 857
-    invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
-
-    move-result-object p1
-
-    :cond_0
-    :goto_0
-    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_2
-
-    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v1
-
-    move-object v2, v1
-
-    check-cast v2, Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;
-
     .line 89
-    invoke-virtual {v2}, Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;->getCode()Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
-
-    move-result-object v2
-
-    sget-object v3, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;->UNKNOWN:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
-
-    if-eq v2, v3, :cond_1
-
-    const/4 v2, 0x1
-
-    goto :goto_1
-
-    :cond_1
-    const/4 v2, 0x0
-
-    :goto_1
-    if-eqz v2, :cond_0
-
-    .line 857
-    invoke-interface {v0, v1}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
-
-    goto :goto_0
-
-    .line 1045
-    :cond_2
-    new-instance p1, Lcom/iMe/storage/data/repository/crypto/donations/DonationsRepositoryImpl$getDonationWalletBalance$lambda$6$$inlined$sortedBy$1;
-
-    invoke-direct {p1}, Lcom/iMe/storage/data/repository/crypto/donations/DonationsRepositoryImpl$getDonationWalletBalance$lambda$6$$inlined$sortedBy$1;-><init>()V
-
-    invoke-static {v0, p1}, Lkotlin/collections/CollectionsKt;->sortedWith(Ljava/lang/Iterable;Ljava/util/Comparator;)Ljava/util/List;
-
-    move-result-object p1
-
-    .line 95
     invoke-static {p1}, Lkotlin/collections/CollectionsKt;->first(Ljava/util/List;)Ljava/lang/Object;
 
     move-result-object p1
@@ -165,10 +105,10 @@
 
     move-result-object p1
 
-    goto :goto_2
+    goto :goto_0
 
     .line 72
-    :cond_3
+    :cond_0
     iget-object v0, p0, Lcom/iMe/storage/data/repository/crypto/donations/DonationsRepositoryImpl$getDonationWalletBalance$$inlined$mapSuccess$1;->$errorHandler:Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;
 
     invoke-virtual {v0, p1}, Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;->handleError(Lcom/iMe/storage/data/network/model/response/base/ApiBaseResponse;)Lcom/iMe/storage/data/network/model/error/ErrorModel;
@@ -186,7 +126,7 @@
 
     move-result-object p1
 
-    :goto_2
+    :goto_0
     return-object p1
 .end method
 

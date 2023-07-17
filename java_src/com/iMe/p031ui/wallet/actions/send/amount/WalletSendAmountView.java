@@ -2,14 +2,14 @@ package com.iMe.p031ui.wallet.actions.send.amount;
 
 import com.iMe.fork.utils.Callbacks$Callback1;
 import com.iMe.model.dialog.DialogModel;
-import com.iMe.model.wallet.select.SelectableToken;
-import com.iMe.model.wallet.select.SelectableType;
 import com.iMe.navigation.wallet.coordinator.args.TokenBuyCoordinatorArgs;
 import com.iMe.p031ui.base.mvp.base.BaseView;
 import com.iMe.p031ui.wallet.actions.send.amount.WalletSendAmountPresenter;
-import com.iMe.p031ui.wallet.home.p032v2.tabs.binancepay.replenish.WalletBinancePayReplenishView;
-import com.iMe.storage.domain.model.crypto.NetworkType;
+import com.iMe.p031ui.wallet.home.tabs.binancepay.replenish.WalletBinancePayReplenishView;
+import com.iMe.p031ui.wallet.swap.token.WalletSelectTokenFragment;
+import com.iMe.storage.domain.model.crypto.Network;
 import com.iMe.storage.domain.model.wallet.token.TokenBalance;
+import com.iMe.storage.domain.model.wallet.token.TokenDetailed;
 import java.util.List;
 import moxy.viewstate.strategy.alias.AddToEndSingle;
 import moxy.viewstate.strategy.alias.OneExecution;
@@ -30,7 +30,7 @@ public interface WalletSendAmountView extends BaseView, WalletBinancePayReplenis
     @AddToEndSingle
     void showBalance(TokenBalance tokenBalance);
 
-    void showChooseNetworkDialog(List<? extends NetworkType> list, NetworkType networkType, Callbacks$Callback1<NetworkType> callbacks$Callback1);
+    void showChooseNetworkDialog(List<Network> list, Network network, Callbacks$Callback1<Network> callbacks$Callback1);
 
     void showNoEnoughMoneyErrorDialog(TokenBuyCoordinatorArgs tokenBuyCoordinatorArgs);
 
@@ -38,7 +38,7 @@ public interface WalletSendAmountView extends BaseView, WalletBinancePayReplenis
 
     void showRecipientWalletNotActivatedError();
 
-    void showSelectTokenDialog(SelectableType selectableType, List<? extends SelectableToken> list, NetworkType networkType, boolean z, Callbacks$Callback1<SelectableToken> callbacks$Callback1);
+    void showSelectTokenDialog(WalletSelectTokenFragment.ScreenType screenType, String str, boolean z, Callbacks$Callback1<TokenDetailed> callbacks$Callback1);
 
     void showSuccessSend(String str);
 

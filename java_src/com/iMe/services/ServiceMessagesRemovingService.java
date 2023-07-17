@@ -29,7 +29,7 @@ import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AccountInstance;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.C3295R;
+import org.telegram.messenger.C3417R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagesController;
@@ -167,7 +167,7 @@ public final class ServiceMessagesRemovingService extends Service implements Not
             Intrinsics.checkNotNull(obj7, "null cannot be cast to non-null type kotlin.Int");
             int intValue2 = ((Integer) obj7).intValue();
             if (this.isLoadingMessages && intValue2 == this.classGuid) {
-                stopServiceWithToast(C3295R.string.loading_messages_error);
+                stopServiceWithToast(C3417R.string.loading_messages_error);
             }
         } else if (i == NotificationCenter.didUpdateConnectionState) {
             onConnectionStateChanged();
@@ -233,7 +233,7 @@ public final class ServiceMessagesRemovingService extends Service implements Not
 
     private final void buildNotification() {
         if (this.builder == null) {
-            this.builder = ServiceNotificationsUtils.INSTANCE.createCancellableNotification("iMe_ServiceMessagesRemovingChannel", C3295R.C3297drawable.msg_delete_filled, StopServiceMessagesRemovingReceiver.class);
+            this.builder = ServiceNotificationsUtils.INSTANCE.createCancellableNotification("iMe_ServiceMessagesRemovingChannel", C3417R.C3419drawable.msg_delete_filled, StopServiceMessagesRemovingReceiver.class);
         }
     }
 
@@ -245,7 +245,7 @@ public final class ServiceMessagesRemovingService extends Service implements Not
             return;
         }
         boolean z2 = false;
-        if (((MessageObject) CollectionsKt.last((List<? extends Object>) list)).messageOwner.date < this.minDate) {
+        if (((MessageObject) CollectionsKt.last(list)).messageOwner.date < this.minDate) {
             List<MessageObject> list2 = this.messages;
             ArrayList arrayList = new ArrayList();
             for (Object obj : list) {
@@ -258,7 +258,7 @@ public final class ServiceMessagesRemovingService extends Service implements Not
             return;
         }
         CollectionsKt__MutableCollectionsKt.addAll(this.messages, list);
-        this.startLoadFromMessageId = ((MessageObject) CollectionsKt.last((List<? extends Object>) list)).messageOwner.f1457id;
+        this.startLoadFromMessageId = ((MessageObject) CollectionsKt.last(list)).messageOwner.f1539id;
         if (list.size() == 1) {
             TLRPC$Message tLRPC$Message = ((MessageObject) CollectionsKt.first((List<? extends Object>) list)).messageOwner;
             TLRPC$MessageAction tLRPC$MessageAction = tLRPC$Message.action;
@@ -272,7 +272,7 @@ public final class ServiceMessagesRemovingService extends Service implements Not
                 takeLast = CollectionsKt___CollectionsKt.takeLast(this.messages, 3);
                 if (!(takeLast instanceof Collection) || !takeLast.isEmpty()) {
                     for (MessageObject messageObject : takeLast) {
-                        if (messageObject.messageOwner.f1457id == tLRPC$Message.f1457id) {
+                        if (messageObject.messageOwner.f1539id == tLRPC$Message.f1539id) {
                             z = true;
                             continue;
                         } else {
@@ -357,7 +357,7 @@ public final class ServiceMessagesRemovingService extends Service implements Not
                 obj = new ArrayList();
                 linkedHashMap.put(valueOf, obj);
             }
-            ((List) obj).add(Integer.valueOf(messageObject.messageOwner.f1457id));
+            ((List) obj).add(Integer.valueOf(messageObject.messageOwner.f1539id));
         }
         mapCapacity = MapsKt__MapsJVMKt.mapCapacity(linkedHashMap.size());
         LinkedHashMap linkedHashMap2 = new LinkedHashMap(mapCapacity);
@@ -372,7 +372,7 @@ public final class ServiceMessagesRemovingService extends Service implements Not
         if (list2 == null || list2.isEmpty()) {
             List<Integer> list3 = this.serviceMessagesIdsByChatsIds.get(Long.valueOf(this.migratedChatId));
             if ((list3 == null || list3.isEmpty()) ? true : true) {
-                stopServiceWithToast(C3295R.string.no_service_messages);
+                stopServiceWithToast(C3417R.string.no_service_messages);
                 return;
             }
         }
@@ -382,7 +382,7 @@ public final class ServiceMessagesRemovingService extends Service implements Not
     private final void deleteNextServiceMessagesPart() {
         updateNotification(true, State.DELETING);
         if (deleteChatMessagesPartIfExist(this.chatId) && deleteChatMessagesPartIfExist(this.migratedChatId)) {
-            stopServiceWithToast(C3295R.string.deleting_messages_success);
+            stopServiceWithToast(C3417R.string.deleting_messages_success);
         }
     }
 
@@ -452,11 +452,11 @@ public final class ServiceMessagesRemovingService extends Service implements Not
         }
         int i = WhenMappings.$EnumSwitchMapping$0[state.ordinal()];
         if (i == 1) {
-            formatStringInternal = LocaleController.formatStringInternal(C3295R.string.loading_messages, Integer.valueOf(this.messages.size()));
+            formatStringInternal = LocaleController.formatStringInternal(C3417R.string.loading_messages, Integer.valueOf(this.messages.size()));
         } else if (i == 2) {
-            formatStringInternal = LocaleController.formatStringInternal(C3295R.string.deleting_messages, Integer.valueOf(this.deletedMessagesCount), Integer.valueOf(this.serviceMessagesCount));
+            formatStringInternal = LocaleController.formatStringInternal(C3417R.string.deleting_messages, Integer.valueOf(this.deletedMessagesCount), Integer.valueOf(this.serviceMessagesCount));
         } else {
-            formatStringInternal = LocaleController.getString("WaitingForNetwork", C3295R.string.WaitingForNetwork);
+            formatStringInternal = LocaleController.getString("WaitingForNetwork", C3417R.string.WaitingForNetwork);
         }
         NotificationCompat.Builder builder = this.builder;
         if (builder != null) {

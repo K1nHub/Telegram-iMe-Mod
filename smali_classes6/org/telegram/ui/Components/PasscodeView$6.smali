@@ -1,11 +1,11 @@
 .class Lorg/telegram/ui/Components/PasscodeView$6;
-.super Landroid/animation/AnimatorListenerAdapter;
+.super Landroid/widget/FrameLayout;
 .source "PasscodeView.java"
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/Components/PasscodeView;->shakeTextView(FI)V
+    value = Lorg/telegram/ui/Components/PasscodeView;-><init>(Landroid/content/Context;Lcom/iMe/fork/enums/LockedSection;Lorg/telegram/ui/ActionBar/BaseFragment;Landroid/util/AttributeSet;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -14,57 +14,28 @@
 .end annotation
 
 
-# instance fields
-.field final synthetic this$0:Lorg/telegram/ui/Components/PasscodeView;
-
-.field final synthetic val$num:I
-
-.field final synthetic val$x:F
-
-
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/Components/PasscodeView;IF)V
+.method constructor <init>(Lorg/telegram/ui/Components/PasscodeView;Landroid/content/Context;)V
     .locals 0
 
-    .line 1164
-    iput-object p1, p0, Lorg/telegram/ui/Components/PasscodeView$6;->this$0:Lorg/telegram/ui/Components/PasscodeView;
-
-    iput p2, p0, Lorg/telegram/ui/Components/PasscodeView$6;->val$num:I
-
-    iput p3, p0, Lorg/telegram/ui/Components/PasscodeView$6;->val$x:F
-
-    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
+    .line 1000
+    invoke-direct {p0, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onAnimationEnd(Landroid/animation/Animator;)V
-    .locals 2
+.method public onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
+    .locals 1
 
-    .line 1167
-    iget-object p1, p0, Lorg/telegram/ui/Components/PasscodeView$6;->this$0:Lorg/telegram/ui/Components/PasscodeView;
+    .line 1003
+    invoke-super {p0, p1}, Landroid/widget/FrameLayout;->onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
 
-    iget v0, p0, Lorg/telegram/ui/Components/PasscodeView$6;->val$num:I
+    const-string v0, "android.widget.Button"
 
-    const/4 v1, 0x5
-
-    if-ne v0, v1, :cond_0
-
-    const/4 v1, 0x0
-
-    goto :goto_0
-
-    :cond_0
-    iget v1, p0, Lorg/telegram/ui/Components/PasscodeView$6;->val$x:F
-
-    neg-float v1, v1
-
-    :goto_0
-    add-int/lit8 v0, v0, 0x1
-
-    invoke-static {p1, v1, v0}, Lorg/telegram/ui/Components/PasscodeView;->access$1400(Lorg/telegram/ui/Components/PasscodeView;FI)V
+    .line 1004
+    invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityNodeInfo;->setClassName(Ljava/lang/CharSequence;)V
 
     return-void
 .end method

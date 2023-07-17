@@ -27,7 +27,7 @@
 .method public final getBounds(Landroid/graphics/RectF;)V
     .locals 7
 
-    const-string v0, "rect"
+    const-string/jumbo v0, "rect"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 

@@ -51,7 +51,7 @@ public final class ObservableMap<T, U> extends AbstractObservableWithUpstream<T,
 
         @Override // io.reactivex.internal.fuseable.SimpleQueue
         public U poll() throws Exception {
-            T poll = this.f447qd.poll();
+            T poll = this.f529qd.poll();
             if (poll != null) {
                 return (U) ObjectHelper.requireNonNull(this.mapper.apply(poll), "The mapper function returned a null value.");
             }

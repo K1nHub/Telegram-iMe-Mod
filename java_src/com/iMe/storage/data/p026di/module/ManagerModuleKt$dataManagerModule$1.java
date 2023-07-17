@@ -68,10 +68,10 @@ final class ManagerModuleKt$dataManagerModule$1 extends Lambda implements Functi
     /* compiled from: ManagerModule.kt */
     /* renamed from: com.iMe.storage.data.di.module.ManagerModuleKt$dataManagerModule$1$1 */
     /* loaded from: classes3.dex */
-    public static final class C16571 extends Lambda implements Function2<Scope, ParametersHolder, TonController> {
-        public static final C16571 INSTANCE = new C16571();
+    public static final class C16671 extends Lambda implements Function2<Scope, ParametersHolder, TonController> {
+        public static final C16671 INSTANCE = new C16671();
 
-        C16571() {
+        C16671() {
             super(2);
         }
 
@@ -98,115 +98,115 @@ final class ManagerModuleKt$dataManagerModule$1 extends Lambda implements Functi
         List emptyList11;
         List emptyList12;
         Intrinsics.checkNotNullParameter(module, "$this$module");
-        C16571 c16571 = C16571.INSTANCE;
+        C16671 c16671 = C16671.INSTANCE;
         ScopeRegistry.Companion companion = ScopeRegistry.Companion;
         StringQualifier rootScopeQualifier = companion.getRootScopeQualifier();
         Kind kind = Kind.Singleton;
         emptyList = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier, Reflection.getOrCreateKotlinClass(TonController.class), null, c16571, kind, emptyList));
+        SingleInstanceFactory<?> singleInstanceFactory = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier, Reflection.getOrCreateKotlinClass(TonController.class), null, c16671, kind, emptyList));
         module.indexPrimaryType(singleInstanceFactory);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory);
         }
         new KoinDefinition(module, singleInstanceFactory);
         StringQualifier evm_blockchain_crypto_wallet_manager = ManagerModuleKt.getEVM_BLOCKCHAIN_CRYPTO_WALLET_MANAGER();
-        C16612 c16612 = C16612.INSTANCE;
+        C16712 c16712 = C16712.INSTANCE;
         StringQualifier rootScopeQualifier2 = companion.getRootScopeQualifier();
         emptyList2 = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory2 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier2, Reflection.getOrCreateKotlinClass(BlockchainCryptoWalletManager.class), evm_blockchain_crypto_wallet_manager, c16612, kind, emptyList2));
+        SingleInstanceFactory<?> singleInstanceFactory2 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier2, Reflection.getOrCreateKotlinClass(BlockchainCryptoWalletManager.class), evm_blockchain_crypto_wallet_manager, c16712, kind, emptyList2));
         module.indexPrimaryType(singleInstanceFactory2);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory2);
         }
         new KoinDefinition(module, singleInstanceFactory2);
         StringQualifier ton_blockchain_crypto_wallet_manager = ManagerModuleKt.getTON_BLOCKCHAIN_CRYPTO_WALLET_MANAGER();
-        C16623 c16623 = C16623.INSTANCE;
+        C16723 c16723 = C16723.INSTANCE;
         StringQualifier rootScopeQualifier3 = companion.getRootScopeQualifier();
         emptyList3 = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory3 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier3, Reflection.getOrCreateKotlinClass(BlockchainCryptoWalletManager.class), ton_blockchain_crypto_wallet_manager, c16623, kind, emptyList3));
+        SingleInstanceFactory<?> singleInstanceFactory3 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier3, Reflection.getOrCreateKotlinClass(BlockchainCryptoWalletManager.class), ton_blockchain_crypto_wallet_manager, c16723, kind, emptyList3));
         module.indexPrimaryType(singleInstanceFactory3);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory3);
         }
         new KoinDefinition(module, singleInstanceFactory3);
         StringQualifier tron_blockchain_crypto_wallet_manager = ManagerModuleKt.getTRON_BLOCKCHAIN_CRYPTO_WALLET_MANAGER();
-        C16634 c16634 = C16634.INSTANCE;
+        C16734 c16734 = C16734.INSTANCE;
         StringQualifier rootScopeQualifier4 = companion.getRootScopeQualifier();
         emptyList4 = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory4 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier4, Reflection.getOrCreateKotlinClass(BlockchainCryptoWalletManager.class), tron_blockchain_crypto_wallet_manager, c16634, kind, emptyList4));
+        SingleInstanceFactory<?> singleInstanceFactory4 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier4, Reflection.getOrCreateKotlinClass(BlockchainCryptoWalletManager.class), tron_blockchain_crypto_wallet_manager, c16734, kind, emptyList4));
         module.indexPrimaryType(singleInstanceFactory4);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory4);
         }
         new KoinDefinition(module, singleInstanceFactory4);
         StringQualifier btc_blockchain_crypto_wallet_manager = ManagerModuleKt.getBTC_BLOCKCHAIN_CRYPTO_WALLET_MANAGER();
-        C16645 c16645 = C16645.INSTANCE;
+        C16745 c16745 = C16745.INSTANCE;
         StringQualifier rootScopeQualifier5 = companion.getRootScopeQualifier();
         emptyList5 = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory5 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier5, Reflection.getOrCreateKotlinClass(BlockchainCryptoWalletManager.class), btc_blockchain_crypto_wallet_manager, c16645, kind, emptyList5));
+        SingleInstanceFactory<?> singleInstanceFactory5 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier5, Reflection.getOrCreateKotlinClass(BlockchainCryptoWalletManager.class), btc_blockchain_crypto_wallet_manager, c16745, kind, emptyList5));
         module.indexPrimaryType(singleInstanceFactory5);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory5);
         }
         new KoinDefinition(module, singleInstanceFactory5);
-        C16656 c16656 = C16656.INSTANCE;
+        C16756 c16756 = C16756.INSTANCE;
         StringQualifier rootScopeQualifier6 = companion.getRootScopeQualifier();
         emptyList6 = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory6 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier6, Reflection.getOrCreateKotlinClass(CryptoWalletsManager.class), null, c16656, kind, emptyList6));
+        SingleInstanceFactory<?> singleInstanceFactory6 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier6, Reflection.getOrCreateKotlinClass(CryptoWalletsManager.class), null, c16756, kind, emptyList6));
         module.indexPrimaryType(singleInstanceFactory6);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory6);
         }
         new KoinDefinition(module, singleInstanceFactory6);
-        C16667 c16667 = C16667.INSTANCE;
+        C16767 c16767 = C16767.INSTANCE;
         StringQualifier rootScopeQualifier7 = companion.getRootScopeQualifier();
         emptyList7 = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory7 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier7, Reflection.getOrCreateKotlinClass(CryptoAccessManager.class), null, c16667, kind, emptyList7));
+        SingleInstanceFactory<?> singleInstanceFactory7 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier7, Reflection.getOrCreateKotlinClass(CryptoAccessManager.class), null, c16767, kind, emptyList7));
         module.indexPrimaryType(singleInstanceFactory7);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory7);
         }
         new KoinDefinition(module, singleInstanceFactory7);
-        C16678 c16678 = C16678.INSTANCE;
+        C16778 c16778 = C16778.INSTANCE;
         StringQualifier rootScopeQualifier8 = companion.getRootScopeQualifier();
         emptyList8 = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory8 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier8, Reflection.getOrCreateKotlinClass(BinancePayManager.class), null, c16678, kind, emptyList8));
+        SingleInstanceFactory<?> singleInstanceFactory8 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier8, Reflection.getOrCreateKotlinClass(BinancePayManager.class), null, c16778, kind, emptyList8));
         module.indexPrimaryType(singleInstanceFactory8);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory8);
         }
         new KoinDefinition(module, singleInstanceFactory8);
-        C16689 c16689 = C16689.INSTANCE;
+        C16789 c16789 = C16789.INSTANCE;
         StringQualifier rootScopeQualifier9 = companion.getRootScopeQualifier();
         emptyList9 = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory9 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier9, Reflection.getOrCreateKotlinClass(AuthManager.class), null, c16689, kind, emptyList9));
+        SingleInstanceFactory<?> singleInstanceFactory9 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier9, Reflection.getOrCreateKotlinClass(AuthManager.class), null, c16789, kind, emptyList9));
         module.indexPrimaryType(singleInstanceFactory9);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory9);
         }
         new KoinDefinition(module, singleInstanceFactory9);
-        C165810 c165810 = C165810.INSTANCE;
+        C166810 c166810 = C166810.INSTANCE;
         StringQualifier rootScopeQualifier10 = companion.getRootScopeQualifier();
         emptyList10 = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory10 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier10, Reflection.getOrCreateKotlinClass(WalletConnectManager.class), null, c165810, kind, emptyList10));
+        SingleInstanceFactory<?> singleInstanceFactory10 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier10, Reflection.getOrCreateKotlinClass(WalletConnectManager.class), null, c166810, kind, emptyList10));
         module.indexPrimaryType(singleInstanceFactory10);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory10);
         }
         new KoinDefinition(module, singleInstanceFactory10);
-        C165911 c165911 = C165911.INSTANCE;
+        C166911 c166911 = C166911.INSTANCE;
         StringQualifier rootScopeQualifier11 = companion.getRootScopeQualifier();
         emptyList11 = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory11 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier11, Reflection.getOrCreateKotlinClass(UpdateManager.class), null, c165911, kind, emptyList11));
+        SingleInstanceFactory<?> singleInstanceFactory11 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier11, Reflection.getOrCreateKotlinClass(UpdateManager.class), null, c166911, kind, emptyList11));
         module.indexPrimaryType(singleInstanceFactory11);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory11);
         }
         new KoinDefinition(module, singleInstanceFactory11);
-        C166012 c166012 = C166012.INSTANCE;
+        C167012 c167012 = C167012.INSTANCE;
         StringQualifier rootScopeQualifier12 = companion.getRootScopeQualifier();
         emptyList12 = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory12 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier12, Reflection.getOrCreateKotlinClass(AppReviewManager.class), null, c166012, kind, emptyList12));
+        SingleInstanceFactory<?> singleInstanceFactory12 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier12, Reflection.getOrCreateKotlinClass(AppReviewManager.class), null, c167012, kind, emptyList12));
         module.indexPrimaryType(singleInstanceFactory12);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory12);
@@ -218,10 +218,10 @@ final class ManagerModuleKt$dataManagerModule$1 extends Lambda implements Functi
     /* compiled from: ManagerModule.kt */
     /* renamed from: com.iMe.storage.data.di.module.ManagerModuleKt$dataManagerModule$1$2 */
     /* loaded from: classes3.dex */
-    public static final class C16612 extends Lambda implements Function2<Scope, ParametersHolder, BlockchainCryptoWalletManager> {
-        public static final C16612 INSTANCE = new C16612();
+    public static final class C16712 extends Lambda implements Function2<Scope, ParametersHolder, BlockchainCryptoWalletManager> {
+        public static final C16712 INSTANCE = new C16712();
 
-        C16612() {
+        C16712() {
             super(2);
         }
 
@@ -237,10 +237,10 @@ final class ManagerModuleKt$dataManagerModule$1 extends Lambda implements Functi
     /* compiled from: ManagerModule.kt */
     /* renamed from: com.iMe.storage.data.di.module.ManagerModuleKt$dataManagerModule$1$3 */
     /* loaded from: classes3.dex */
-    public static final class C16623 extends Lambda implements Function2<Scope, ParametersHolder, BlockchainCryptoWalletManager> {
-        public static final C16623 INSTANCE = new C16623();
+    public static final class C16723 extends Lambda implements Function2<Scope, ParametersHolder, BlockchainCryptoWalletManager> {
+        public static final C16723 INSTANCE = new C16723();
 
-        C16623() {
+        C16723() {
             super(2);
         }
 
@@ -256,10 +256,10 @@ final class ManagerModuleKt$dataManagerModule$1 extends Lambda implements Functi
     /* compiled from: ManagerModule.kt */
     /* renamed from: com.iMe.storage.data.di.module.ManagerModuleKt$dataManagerModule$1$11 */
     /* loaded from: classes3.dex */
-    public static final class C165911 extends Lambda implements Function2<Scope, ParametersHolder, UpdateManager> {
-        public static final C165911 INSTANCE = new C165911();
+    public static final class C166911 extends Lambda implements Function2<Scope, ParametersHolder, UpdateManager> {
+        public static final C166911 INSTANCE = new C166911();
 
-        C165911() {
+        C166911() {
             super(2);
         }
 
@@ -278,10 +278,10 @@ final class ManagerModuleKt$dataManagerModule$1 extends Lambda implements Functi
     /* compiled from: ManagerModule.kt */
     /* renamed from: com.iMe.storage.data.di.module.ManagerModuleKt$dataManagerModule$1$12 */
     /* loaded from: classes3.dex */
-    public static final class C166012 extends Lambda implements Function2<Scope, ParametersHolder, AppReviewManager> {
-        public static final C166012 INSTANCE = new C166012();
+    public static final class C167012 extends Lambda implements Function2<Scope, ParametersHolder, AppReviewManager> {
+        public static final C167012 INSTANCE = new C167012();
 
-        C166012() {
+        C167012() {
             super(2);
         }
 
@@ -297,10 +297,10 @@ final class ManagerModuleKt$dataManagerModule$1 extends Lambda implements Functi
     /* compiled from: ManagerModule.kt */
     /* renamed from: com.iMe.storage.data.di.module.ManagerModuleKt$dataManagerModule$1$4 */
     /* loaded from: classes3.dex */
-    public static final class C16634 extends Lambda implements Function2<Scope, ParametersHolder, BlockchainCryptoWalletManager> {
-        public static final C16634 INSTANCE = new C16634();
+    public static final class C16734 extends Lambda implements Function2<Scope, ParametersHolder, BlockchainCryptoWalletManager> {
+        public static final C16734 INSTANCE = new C16734();
 
-        C16634() {
+        C16734() {
             super(2);
         }
 
@@ -316,10 +316,10 @@ final class ManagerModuleKt$dataManagerModule$1 extends Lambda implements Functi
     /* compiled from: ManagerModule.kt */
     /* renamed from: com.iMe.storage.data.di.module.ManagerModuleKt$dataManagerModule$1$5 */
     /* loaded from: classes3.dex */
-    public static final class C16645 extends Lambda implements Function2<Scope, ParametersHolder, BlockchainCryptoWalletManager> {
-        public static final C16645 INSTANCE = new C16645();
+    public static final class C16745 extends Lambda implements Function2<Scope, ParametersHolder, BlockchainCryptoWalletManager> {
+        public static final C16745 INSTANCE = new C16745();
 
-        C16645() {
+        C16745() {
             super(2);
         }
 
@@ -335,10 +335,10 @@ final class ManagerModuleKt$dataManagerModule$1 extends Lambda implements Functi
     /* compiled from: ManagerModule.kt */
     /* renamed from: com.iMe.storage.data.di.module.ManagerModuleKt$dataManagerModule$1$6 */
     /* loaded from: classes3.dex */
-    public static final class C16656 extends Lambda implements Function2<Scope, ParametersHolder, CryptoWalletsManager> {
-        public static final C16656 INSTANCE = new C16656();
+    public static final class C16756 extends Lambda implements Function2<Scope, ParametersHolder, CryptoWalletsManager> {
+        public static final C16756 INSTANCE = new C16756();
 
-        C16656() {
+        C16756() {
             super(2);
         }
 
@@ -354,10 +354,10 @@ final class ManagerModuleKt$dataManagerModule$1 extends Lambda implements Functi
     /* compiled from: ManagerModule.kt */
     /* renamed from: com.iMe.storage.data.di.module.ManagerModuleKt$dataManagerModule$1$7 */
     /* loaded from: classes3.dex */
-    public static final class C16667 extends Lambda implements Function2<Scope, ParametersHolder, CryptoAccessManager> {
-        public static final C16667 INSTANCE = new C16667();
+    public static final class C16767 extends Lambda implements Function2<Scope, ParametersHolder, CryptoAccessManager> {
+        public static final C16767 INSTANCE = new C16767();
 
-        C16667() {
+        C16767() {
             super(2);
         }
 
@@ -373,10 +373,10 @@ final class ManagerModuleKt$dataManagerModule$1 extends Lambda implements Functi
     /* compiled from: ManagerModule.kt */
     /* renamed from: com.iMe.storage.data.di.module.ManagerModuleKt$dataManagerModule$1$8 */
     /* loaded from: classes3.dex */
-    public static final class C16678 extends Lambda implements Function2<Scope, ParametersHolder, BinancePayManager> {
-        public static final C16678 INSTANCE = new C16678();
+    public static final class C16778 extends Lambda implements Function2<Scope, ParametersHolder, BinancePayManager> {
+        public static final C16778 INSTANCE = new C16778();
 
-        C16678() {
+        C16778() {
             super(2);
         }
 
@@ -392,10 +392,10 @@ final class ManagerModuleKt$dataManagerModule$1 extends Lambda implements Functi
     /* compiled from: ManagerModule.kt */
     /* renamed from: com.iMe.storage.data.di.module.ManagerModuleKt$dataManagerModule$1$10 */
     /* loaded from: classes3.dex */
-    public static final class C165810 extends Lambda implements Function2<Scope, ParametersHolder, WalletConnectManager> {
-        public static final C165810 INSTANCE = new C165810();
+    public static final class C166810 extends Lambda implements Function2<Scope, ParametersHolder, WalletConnectManager> {
+        public static final C166810 INSTANCE = new C166810();
 
-        C165810() {
+        C166810() {
             super(2);
         }
 
@@ -411,10 +411,10 @@ final class ManagerModuleKt$dataManagerModule$1 extends Lambda implements Functi
     /* compiled from: ManagerModule.kt */
     /* renamed from: com.iMe.storage.data.di.module.ManagerModuleKt$dataManagerModule$1$9 */
     /* loaded from: classes3.dex */
-    public static final class C16689 extends Lambda implements Function2<Scope, ParametersHolder, AuthManager> {
-        public static final C16689 INSTANCE = new C16689();
+    public static final class C16789 extends Lambda implements Function2<Scope, ParametersHolder, AuthManager> {
+        public static final C16789 INSTANCE = new C16789();
 
-        C16689() {
+        C16789() {
             super(2);
         }
 

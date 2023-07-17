@@ -1,6 +1,6 @@
 package com.iMe.p031ui.wallet.settings;
 
-import com.iMe.model.wallet.settings.SettingUiItem;
+import com.iMe.model.wallet.crypto.settings.WalletSettingsItem;
 import com.iMe.p031ui.base.mvp.base.BaseView;
 import com.iMe.storage.domain.model.Result;
 import com.iMe.storage.domain.utils.system.ResourceManager;
@@ -18,17 +18,22 @@ public class WalletSettingsView$$State extends MvpViewState<WalletSettingsView> 
         BaseView.CC.$default$finishScreen(this);
     }
 
+    @Override // com.iMe.p031ui.base.mvp.base.BaseView
+    public /* synthetic */ void removeSelfFromStackImmediately() {
+        BaseView.CC.$default$removeSelfFromStackImmediately(this);
+    }
+
     @Override // com.iMe.p031ui.wallet.settings.WalletSettingsView
-    public void setupSettingsItems(List<SettingUiItem> list) {
-        SetupSettingsItemsCommand setupSettingsItemsCommand = new SetupSettingsItemsCommand(this, list);
-        this.viewCommands.beforeApply(setupSettingsItemsCommand);
+    public void renderSettingsItems(List<WalletSettingsItem> list) {
+        RenderSettingsItemsCommand renderSettingsItemsCommand = new RenderSettingsItemsCommand(this, list);
+        this.viewCommands.beforeApply(renderSettingsItemsCommand);
         if (hasNotView().booleanValue()) {
             return;
         }
         for (View view : this.views) {
-            view.setupSettingsItems(list);
+            view.renderSettingsItems(list);
         }
-        this.viewCommands.afterApply(setupSettingsItemsCommand);
+        this.viewCommands.afterApply(renderSettingsItemsCommand);
     }
 
     @Override // com.iMe.p031ui.base.mvp.base.BaseView
@@ -71,19 +76,19 @@ public class WalletSettingsView$$State extends MvpViewState<WalletSettingsView> 
     }
 
     /* compiled from: WalletSettingsView$$State.java */
-    /* renamed from: com.iMe.ui.wallet.settings.WalletSettingsView$$State$SetupSettingsItemsCommand */
+    /* renamed from: com.iMe.ui.wallet.settings.WalletSettingsView$$State$RenderSettingsItemsCommand */
     /* loaded from: classes4.dex */
-    public class SetupSettingsItemsCommand extends ViewCommand<WalletSettingsView> {
-        public final List<SettingUiItem> items;
+    public class RenderSettingsItemsCommand extends ViewCommand<WalletSettingsView> {
+        public final List<WalletSettingsItem> items;
 
-        SetupSettingsItemsCommand(WalletSettingsView$$State walletSettingsView$$State, List<SettingUiItem> list) {
-            super("setupSettingsItems", AddToEndSingleStrategy.class);
+        RenderSettingsItemsCommand(WalletSettingsView$$State walletSettingsView$$State, List<WalletSettingsItem> list) {
+            super("renderSettingsItems", AddToEndSingleStrategy.class);
             this.items = list;
         }
 
         @Override // moxy.viewstate.ViewCommand
         public void apply(WalletSettingsView walletSettingsView) {
-            walletSettingsView.setupSettingsItems(this.items);
+            walletSettingsView.renderSettingsItems(this.items);
         }
     }
 

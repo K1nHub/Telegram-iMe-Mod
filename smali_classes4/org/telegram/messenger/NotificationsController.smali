@@ -20707,7 +20707,7 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v1, "set last online from other device = "
+    const-string/jumbo v1, "set last online from other device = "
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -21432,7 +21432,7 @@
 
     move-result-object v1
 
-    const-string v2, "repeat_messages"
+    const-string/jumbo v2, "repeat_messages"
 
     const/16 v3, 0x3c
 
@@ -30147,7 +30147,7 @@
 
     move-object/from16 p3, v7
 
-    const-string v7, "secret"
+    const-string/jumbo v7, "secret"
 
     move-object/from16 v18, v12
 
@@ -31354,6 +31354,8 @@
 
     :cond_48
     return-object v9
+
+    nop
 
     :array_0
     .array-data 8

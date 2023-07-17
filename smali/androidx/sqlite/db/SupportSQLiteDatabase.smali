@@ -1,6 +1,6 @@
 .class public interface abstract Landroidx/sqlite/db/SupportSQLiteDatabase;
 .super Ljava/lang/Object;
-.source "SupportSQLiteDatabase.java"
+.source "SupportSQLiteDatabase.kt"
 
 # interfaces
 .implements Ljava/io/Closeable;

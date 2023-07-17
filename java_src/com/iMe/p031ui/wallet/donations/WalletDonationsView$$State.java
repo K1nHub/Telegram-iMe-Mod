@@ -20,6 +20,11 @@ public class WalletDonationsView$$State extends MvpViewState<WalletDonationsView
         BaseView.CC.$default$finishScreen(this);
     }
 
+    @Override // com.iMe.p031ui.base.mvp.base.BaseView
+    public /* synthetic */ void removeSelfFromStackImmediately() {
+        BaseView.CC.$default$removeSelfFromStackImmediately(this);
+    }
+
     @Override // com.iMe.p031ui.wallet.donations.WalletDonationsView
     public void onDonationsAddressLoaded(String str) {
         OnDonationsAddressLoadedCommand onDonationsAddressLoadedCommand = new OnDonationsAddressLoadedCommand(this, str);

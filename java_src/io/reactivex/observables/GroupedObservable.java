@@ -9,4 +9,8 @@ public abstract class GroupedObservable<K, T> extends Observable<T> {
     public GroupedObservable(K k) {
         this.key = k;
     }
+
+    public K getKey() {
+        return this.key;
+    }
 }

@@ -20,6 +20,16 @@
 
 .field private final layoutId:I
 
+.field private onEmptyButtonClickAction:Lkotlin/jvm/functions/Function0;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lkotlin/jvm/functions/Function0<",
+            "Lkotlin/Unit;",
+            ">;"
+        }
+    .end annotation
+.end field
+
 .field private onRetryButtonClickAction:Lkotlin/jvm/functions/Function0;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -43,12 +53,17 @@
 
     iput-object v0, p0, Lcom/iMe/ui/adapter/provider/GlobalStateProvider;->onRetryButtonClickAction:Lkotlin/jvm/functions/Function0;
 
-    .line 17
+    .line 16
+    sget-object v0, Lcom/iMe/ui/adapter/provider/GlobalStateProvider$onEmptyButtonClickAction$1;->INSTANCE:Lcom/iMe/ui/adapter/provider/GlobalStateProvider$onEmptyButtonClickAction$1;
+
+    iput-object v0, p0, Lcom/iMe/ui/adapter/provider/GlobalStateProvider;->onEmptyButtonClickAction:Lkotlin/jvm/functions/Function0;
+
+    .line 18
     sget v0, Lcom/iMe/common/IdFabric$ViewTypes;->GLOBAL_STATE:I
 
     iput v0, p0, Lcom/iMe/ui/adapter/provider/GlobalStateProvider;->itemViewType:I
 
-    .line 18
+    .line 19
     sget v0, Lorg/telegram/messenger/R$layout;->fork_recycle_item_global_state:I
 
     iput v0, p0, Lcom/iMe/ui/adapter/provider/GlobalStateProvider;->layoutId:I
@@ -69,7 +84,7 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 22
+    .line 23
     sget v0, Lorg/telegram/messenger/R$id;->global_state_layout:I
 
     new-instance v1, Lcom/iMe/ui/adapter/provider/GlobalStateProvider$convert$1;
@@ -107,7 +122,7 @@
 
     invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 34
+    .line 36
     invoke-virtual {p0, p1, p2}, Lcom/iMe/ui/adapter/provider/GlobalStateProvider;->convert(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;Lcom/iMe/model/common/GlobalStateItem;)V
 
     return-void
@@ -138,7 +153,7 @@
 .method public getItemViewType()I
     .locals 1
 
-    .line 17
+    .line 18
     iget v0, p0, Lcom/iMe/ui/adapter/provider/GlobalStateProvider;->itemViewType:I
 
     return v0
@@ -147,10 +162,27 @@
 .method public getLayoutId()I
     .locals 1
 
-    .line 18
+    .line 19
     iget v0, p0, Lcom/iMe/ui/adapter/provider/GlobalStateProvider;->layoutId:I
 
     return v0
+.end method
+
+.method public final getOnEmptyButtonClickAction()Lkotlin/jvm/functions/Function0;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Lkotlin/jvm/functions/Function0<",
+            "Lkotlin/Unit;",
+            ">;"
+        }
+    .end annotation
+
+    .line 16
+    iget-object v0, p0, Lcom/iMe/ui/adapter/provider/GlobalStateProvider;->onEmptyButtonClickAction:Lkotlin/jvm/functions/Function0;
+
+    return-object v0
 .end method
 
 .method public final getOnRetryButtonClickAction()Lkotlin/jvm/functions/Function0;
@@ -184,6 +216,27 @@
 
     .line 14
     iput-boolean p1, p0, Lcom/iMe/ui/adapter/provider/GlobalStateProvider;->isMatchParentHeight:Z
+
+    return-void
+.end method
+
+.method public final setOnEmptyButtonClickAction(Lkotlin/jvm/functions/Function0;)V
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lkotlin/jvm/functions/Function0<",
+            "Lkotlin/Unit;",
+            ">;)V"
+        }
+    .end annotation
+
+    const-string v0, "<set-?>"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 16
+    iput-object p1, p0, Lcom/iMe/ui/adapter/provider/GlobalStateProvider;->onEmptyButtonClickAction:Lkotlin/jvm/functions/Function0;
 
     return-void
 .end method

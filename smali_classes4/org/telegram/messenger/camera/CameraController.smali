@@ -1793,7 +1793,7 @@
     const/16 v14, 0x2d0
 
     :cond_b
-    const-string v7, "samsung"
+    const-string/jumbo v7, "samsung"
 
     .line 206
     sget-object v15, Landroid/os/Build;->MANUFACTURER:Ljava/lang/String;
@@ -2375,7 +2375,7 @@
 
     if-eqz p1, :cond_5
 
-    const-string p1, "round camera session created"
+    const-string/jumbo p1, "round camera session created"
 
     .line 556
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V

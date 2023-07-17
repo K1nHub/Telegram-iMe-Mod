@@ -124,10 +124,10 @@
     return v0
 .end method
 
-.method public getSymbol()I
+.method public getSymbolResId()I
     .locals 1
 
-    .line 10
+    .line 12
     iget v0, p0, Lcom/iMe/storage/domain/model/crypto/simplex/FiatCurrency;->currencySymbol:I
 
     return v0

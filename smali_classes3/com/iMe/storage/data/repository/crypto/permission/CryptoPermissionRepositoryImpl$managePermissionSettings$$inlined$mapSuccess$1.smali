@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/iMe/storage/data/repository/crypto/permission/CryptoPermissionRepositoryImpl;->managePermissionSettings(Lcom/iMe/storage/domain/model/wallet/token/TokenCode;ZLjava/util/List;)Lio/reactivex/Observable;
+    value = Lcom/iMe/storage/data/repository/crypto/permission/CryptoPermissionRepositoryImpl;->managePermissionSettings(ZLjava/util/List;)Lio/reactivex/Observable;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -31,7 +31,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nFirebaseExt.kt\nKotlin\n*S Kotlin\n*F\n+ 1 FirebaseExt.kt\ncom/iMe/storage/data/utils/extentions/FirebaseExtKt$mapSuccess$1\n+ 2 CryptoPermissionRepositoryImpl.kt\ncom/iMe/storage/data/repository/crypto/permission/CryptoPermissionRepositoryImpl\n+ 3 ResultExt.kt\ncom/iMe/storage/domain/utils/extentions/ResultExtKt\n*L\n1#1,86:1\n91#2,6:87\n9#3:93\n7#3:94\n*S KotlinDebug\n*F\n+ 1 FirebaseExt.kt\ncom/iMe/storage/data/utils/extentions/FirebaseExtKt$mapSuccess$1\n*L\n71#1:93\n72#1:94\n*E\n"
+    value = "SMAP\nFirebaseExt.kt\nKotlin\n*S Kotlin\n*F\n+ 1 FirebaseExt.kt\ncom/iMe/storage/data/utils/extentions/FirebaseExtKt$mapSuccess$1\n+ 2 CryptoPermissionRepositoryImpl.kt\ncom/iMe/storage/data/repository/crypto/permission/CryptoPermissionRepositoryImpl\n+ 3 ResultExt.kt\ncom/iMe/storage/domain/utils/extentions/ResultExtKt\n*L\n1#1,86:1\n88#2,6:87\n9#3:93\n7#3:94\n*S KotlinDebug\n*F\n+ 1 FirebaseExt.kt\ncom/iMe/storage/data/utils/extentions/FirebaseExtKt$mapSuccess$1\n*L\n71#1:93\n72#1:94\n*E\n"
 .end annotation
 
 
@@ -67,7 +67,7 @@
 
 # virtual methods
 .method public final invoke(Lcom/iMe/storage/data/network/model/response/base/ApiBaseResponse;)Lcom/iMe/storage/domain/model/Result;
-    .locals 11
+    .locals 8
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -104,7 +104,7 @@
 
     move-result-object p1
 
-    invoke-virtual {p1}, Lcom/iMe/storage/data/locale/prefs/model/CryptoWalletInformationMetadata;->getWalletInfo()Lcom/iMe/storage/domain/model/crypto/CryptoWalletInfo;
+    invoke-virtual {p1}, Lcom/iMe/storage/data/locale/prefs/model/CryptoWalletInformationMetadata;->getWalletInfo()Lcom/iMe/storage/domain/model/crypto/CryptoWalletsInfo;
 
     move-result-object v2
 
@@ -112,24 +112,18 @@
 
     const/4 v3, 0x0
 
-    const/4 v4, 0x0
-
-    const/4 v5, 0x0
-
-    const/4 v6, 0x0
-
     .line 88
-    iget-boolean v7, p0, Lcom/iMe/storage/data/repository/crypto/permission/CryptoPermissionRepositoryImpl$managePermissionSettings$$inlined$mapSuccess$1;->$isAllowForEveryone$inlined:Z
+    iget-boolean v4, p0, Lcom/iMe/storage/data/repository/crypto/permission/CryptoPermissionRepositoryImpl$managePermissionSettings$$inlined$mapSuccess$1;->$isAllowForEveryone$inlined:Z
 
     .line 89
-    iget-object v8, p0, Lcom/iMe/storage/data/repository/crypto/permission/CryptoPermissionRepositoryImpl$managePermissionSettings$$inlined$mapSuccess$1;->$whitelistUsers$inlined:Ljava/util/List;
+    iget-object v5, p0, Lcom/iMe/storage/data/repository/crypto/permission/CryptoPermissionRepositoryImpl$managePermissionSettings$$inlined$mapSuccess$1;->$whitelistUsers$inlined:Ljava/util/List;
 
-    const/16 v9, 0xf
+    const/4 v6, 0x1
 
-    const/4 v10, 0x0
+    const/4 v7, 0x0
 
     .line 87
-    invoke-static/range {v2 .. v10}, Lcom/iMe/storage/domain/model/crypto/CryptoWalletInfo;->copy$default(Lcom/iMe/storage/domain/model/crypto/CryptoWalletInfo;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZLjava/util/List;ILjava/lang/Object;)Lcom/iMe/storage/domain/model/crypto/CryptoWalletInfo;
+    invoke-static/range {v2 .. v7}, Lcom/iMe/storage/domain/model/crypto/CryptoWalletsInfo;->copy$default(Lcom/iMe/storage/domain/model/crypto/CryptoWalletsInfo;Ljava/util/Map;ZLjava/util/List;ILjava/lang/Object;)Lcom/iMe/storage/domain/model/crypto/CryptoWalletsInfo;
 
     move-result-object v1
 
@@ -147,7 +141,7 @@
 
     move-result-wide v2
 
-    invoke-direct {v0, v2, v3, v1}, Lcom/iMe/storage/data/locale/prefs/model/CryptoWalletInformationMetadata;-><init>(JLcom/iMe/storage/domain/model/crypto/CryptoWalletInfo;)V
+    invoke-direct {v0, v2, v3, v1}, Lcom/iMe/storage/data/locale/prefs/model/CryptoWalletInformationMetadata;-><init>(JLcom/iMe/storage/domain/model/crypto/CryptoWalletsInfo;)V
 
     invoke-interface {p1, v0}, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;->setWalletInfoMetadata(Lcom/iMe/storage/data/locale/prefs/model/CryptoWalletInformationMetadata;)V
 

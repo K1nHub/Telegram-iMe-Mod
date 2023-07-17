@@ -27,7 +27,7 @@
         }
     .end annotation
 
-    .line 341
+    .line 337
     iput-object p1, p0, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet$ListAdapter;->this$0:Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;
 
     invoke-direct {p0}, Lorg/telegram/ui/Components/RecyclerListView$SelectionAdapter;-><init>()V
@@ -40,7 +40,7 @@
 .method public getItemCount()I
     .locals 1
 
-    .line 349
+    .line 345
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet$ListAdapter;->this$0:Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;
 
     invoke-static {v0}, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;->access$getCurrentItemsList(Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;)Ljava/util/List;
@@ -75,7 +75,7 @@
 .method public getItemViewType(I)I
     .locals 0
 
-    .line 352
+    .line 348
     iget-object p1, p0, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet$ListAdapter;->this$0:Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;
 
     invoke-static {p1}, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;->access$getCurrentItemsList(Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;)Ljava/util/List;
@@ -92,7 +92,7 @@
 
     goto :goto_0
 
-    .line 353
+    .line 349
     :cond_0
     sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_CELL_WITH_RIGHT_IMAGE:I
 
@@ -105,7 +105,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 346
+    .line 342
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getItemViewType()I
 
     move-result v0
@@ -114,7 +114,7 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 347
+    .line 343
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet$ListAdapter;->this$0:Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;
 
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getAdapterPosition()I
@@ -145,7 +145,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 366
+    .line 365
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet$ListAdapter;->this$0:Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;
 
     invoke-static {v0}, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;->access$getLastSelectionList(Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;)Ljava/util/List;
@@ -165,13 +165,13 @@
     :cond_0
     const/4 v0, 0x0
 
-    .line 367
+    .line 366
     :goto_0
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getItemViewType()I
 
     move-result v1
 
-    .line 368
+    .line 367
     sget v2, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_CELL_WITH_RIGHT_IMAGE:I
 
     if-ne v1, v2, :cond_1
@@ -186,7 +186,7 @@
 
     iget-object v1, p0, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet$ListAdapter;->this$0:Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;
 
-    .line 369
+    .line 368
     invoke-static {v1}, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;->access$getCurrentItemsList(Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;)Ljava/util/List;
 
     move-result-object v2
@@ -203,14 +203,14 @@
 
     invoke-virtual {p1, v2, v0}, Lorg/telegram/ui/Cells/TextCell;->setText(Ljava/lang/String;Z)V
 
-    .line 370
+    .line 369
     invoke-static {v1, p2}, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;->access$isSelectedLanguagePosition(Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;I)Z
 
     move-result p2
 
     invoke-virtual {p1, p2}, Lcom/iMe/ui/contacts/view/TextCellWithRightImage;->setRightIconVisible(Z)V
 
-    .line 371
+    .line 370
     sget p2, Lorg/telegram/messenger/R$drawable;->ic_ab_done:I
 
     sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_chats_actionBackground:I
@@ -223,7 +223,7 @@
 
     goto :goto_1
 
-    .line 373
+    .line 372
     :cond_1
     sget p2, Lcom/iMe/common/IdFabric$ViewTypes;->EMPTY_VIEW:I
 
@@ -231,13 +231,13 @@
 
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
-    const-string p2, "null cannot be cast to non-null type com.iMe.fork.ui.dialog.SelectLanguageBottomSheet.EmptyView"
+    const-string p2, "null cannot be cast to non-null type com.iMe.fork.ui.view.EmptyView"
 
     invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
-    check-cast p1, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet$EmptyView;
+    check-cast p1, Lcom/iMe/fork/ui/view/EmptyView;
 
-    invoke-virtual {p1}, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet$EmptyView;->getAnimationView()Lorg/telegram/ui/Components/RLottieImageView;
+    invoke-virtual {p1}, Lcom/iMe/fork/ui/view/EmptyView;->getAnimationView()Lorg/telegram/ui/Components/RLottieImageView;
 
     move-result-object p1
 
@@ -251,7 +251,7 @@
 .method public bridge synthetic onCreateViewHolder(Landroid/view/ViewGroup;I)Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
     .locals 0
 
-    .line 341
+    .line 337
     invoke-virtual {p0, p1, p2}, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet$ListAdapter;->onCreateViewHolder(Landroid/view/ViewGroup;I)Lorg/telegram/ui/Components/RecyclerListView$Holder;
 
     move-result-object p1
@@ -266,15 +266,16 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 358
+    .line 354
     sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->EMPTY_VIEW:I
 
     const-string v0, "context"
 
     if-ne p2, p1, :cond_0
 
-    new-instance p1, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet$EmptyView;
+    new-instance p1, Lcom/iMe/fork/ui/view/EmptyView;
 
+    .line 355
     iget-object p2, p0, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet$ListAdapter;->this$0:Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet;
 
     invoke-virtual {p2}, Landroid/app/Dialog;->getContext()Landroid/content/Context;
@@ -283,22 +284,34 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-direct {p1, p2}, Lcom/iMe/fork/ui/dialog/SelectLanguageBottomSheet$EmptyView;-><init>(Landroid/content/Context;)V
+    .line 356
+    sget v0, Lorg/telegram/messenger/R$string;->translation_search_language_empty:I
+
+    invoke-static {v0}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
+
+    move-result-object v0
+
+    const-string v1, "getInternalString(R.stri\u2026on_search_language_empty)"
+
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 354
+    invoke-direct {p1, p2, v0}, Lcom/iMe/fork/ui/view/EmptyView;-><init>(Landroid/content/Context;Ljava/lang/String;)V
 
     const/4 p2, -0x1
 
     const/16 v0, 0x96
 
-    .line 359
+    .line 358
     invoke-static {p2, v0}, Lorg/telegram/ui/Components/LayoutHelper;->createRecycler(II)Landroidx/recyclerview/widget/RecyclerView$LayoutParams;
 
     move-result-object p2
 
-    invoke-virtual {p1, p2}, Landroid/widget/LinearLayout;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {p1, p2}, Landroid/widget/FrameLayout;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
     goto :goto_0
 
-    .line 361
+    .line 360
     :cond_0
     new-instance p1, Lcom/iMe/ui/contacts/view/TextCellWithRightImage;
 
@@ -316,7 +329,7 @@
 
     invoke-direct {p1, p2, v0, v1}, Lcom/iMe/ui/contacts/view/TextCellWithRightImage;-><init>(Landroid/content/Context;IZ)V
 
-    .line 356
+    .line 352
     :goto_0
     new-instance p2, Lorg/telegram/ui/Components/RecyclerListView$Holder;
 

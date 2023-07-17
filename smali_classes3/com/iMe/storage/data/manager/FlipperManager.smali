@@ -65,12 +65,10 @@
 
     if-eqz v1, :cond_0
 
+    const/4 v1, 0x0
+
     .line 29
-    sget-object v1, Lcom/facebook/soloader/SoLoader;->INSTANCE:Lcom/facebook/soloader/SoLoader;
-
-    const/4 v2, 0x0
-
-    invoke-virtual {v1, p0, v2}, Lcom/facebook/soloader/SoLoader;->init(Landroid/content/Context;Z)V
+    invoke-static {p0, v1}, Lcom/facebook/soloader/SoLoader;->init(Landroid/content/Context;Z)V
 
     .line 30
     invoke-static {p0}, Lcom/facebook/flipper/android/AndroidFlipperClient;->getInstance(Landroid/content/Context;)Lcom/facebook/flipper/core/FlipperClient;
@@ -80,9 +78,7 @@
     .line 31
     new-instance v2, Lcom/facebook/flipper/plugins/inspector/InspectorFlipperPlugin;
 
-    sget-object v3, Lcom/facebook/flipper/plugins/inspector/DescriptorMapping;->INSTANCE:Lcom/facebook/flipper/plugins/inspector/DescriptorMapping;
-
-    invoke-virtual {v3}, Lcom/facebook/flipper/plugins/inspector/DescriptorMapping;->withDefaults()Lcom/facebook/flipper/plugins/inspector/DescriptorMapping;
+    invoke-static {}, Lcom/facebook/flipper/plugins/inspector/DescriptorMapping;->withDefaults()Lcom/facebook/flipper/plugins/inspector/DescriptorMapping;
 
     move-result-object v3
 

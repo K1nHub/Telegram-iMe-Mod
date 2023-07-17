@@ -21,6 +21,8 @@
 
 .field private final changeAddress:Ljava/lang/String;
 
+.field private final decimals:I
+
 .field private final recipientAddress:Ljava/lang/String;
 
 .field private final utxos:Ljava/util/List;
@@ -35,11 +37,11 @@
 
 
 # direct methods
-.method public constructor <init>(DLjava/lang/String;Ljava/util/List;Ljava/lang/String;Ljava/math/BigInteger;)V
-    .locals 2
+.method public constructor <init>(DILjava/lang/String;Ljava/util/List;Ljava/lang/String;Ljava/math/BigInteger;)V
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "(D",
+            "(DI",
             "Ljava/lang/String;",
             "Ljava/util/List<",
             "Lcom/iMe/storage/domain/model/crypto/send/BitcoinUnspentOutput;",
@@ -52,102 +54,144 @@
 
     const-string v0, "recipientAddress"
 
-    invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p4, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     const-string v0, "utxos"
 
-    invoke-static {p4, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p5, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     const-string v0, "changeAddress"
 
-    invoke-static {p5, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p6, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     const-string v0, "byteFee"
 
-    invoke-static {p6, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p7, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const/4 v0, 0x0
 
     .line 50
-    sget-object v0, Lcom/iMe/storage/domain/utils/crypto/Convert$Unit;->WEI8:Lcom/iMe/storage/domain/utils/crypto/Convert$Unit;
+    invoke-direct {p0, p1, p2, p3, v0}, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs;-><init>(DILkotlin/jvm/internal/DefaultConstructorMarker;)V
 
-    const/4 v1, 0x0
-
-    invoke-direct {p0, p1, p2, v0, v1}, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs;-><init>(DLcom/iMe/storage/domain/utils/crypto/Convert$Unit;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
-
-    .line 45
+    .line 44
     iput-wide p1, p0, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$BTC;->amount:D
 
+    .line 45
+    iput p3, p0, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$BTC;->decimals:I
+
     .line 46
-    iput-object p3, p0, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$BTC;->recipientAddress:Ljava/lang/String;
+    iput-object p4, p0, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$BTC;->recipientAddress:Ljava/lang/String;
 
     .line 47
-    iput-object p4, p0, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$BTC;->utxos:Ljava/util/List;
+    iput-object p5, p0, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$BTC;->utxos:Ljava/util/List;
 
     .line 48
-    iput-object p5, p0, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$BTC;->changeAddress:Ljava/lang/String;
+    iput-object p6, p0, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$BTC;->changeAddress:Ljava/lang/String;
 
     .line 49
-    iput-object p6, p0, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$BTC;->byteFee:Ljava/math/BigInteger;
+    iput-object p7, p0, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$BTC;->byteFee:Ljava/math/BigInteger;
 
     return-void
 .end method
 
-.method public static synthetic copy$default(Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$BTC;DLjava/lang/String;Ljava/util/List;Ljava/lang/String;Ljava/math/BigInteger;ILjava/lang/Object;)Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$BTC;
-    .locals 7
+.method public static synthetic copy$default(Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$BTC;DILjava/lang/String;Ljava/util/List;Ljava/lang/String;Ljava/math/BigInteger;ILjava/lang/Object;)Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$BTC;
+    .locals 8
 
-    and-int/lit8 p8, p7, 0x1
+    move-object v0, p0
 
-    if-eqz p8, :cond_0
+    and-int/lit8 v1, p8, 0x1
+
+    if-eqz v1, :cond_0
 
     invoke-virtual {p0}, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$BTC;->getAmount()D
 
-    move-result-wide p1
+    move-result-wide v1
+
+    goto :goto_0
 
     :cond_0
     move-wide v1, p1
 
-    and-int/lit8 p1, p7, 0x2
+    :goto_0
+    and-int/lit8 v3, p8, 0x2
 
-    if-eqz p1, :cond_1
+    if-eqz v3, :cond_1
 
-    iget-object p3, p0, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$BTC;->recipientAddress:Ljava/lang/String;
+    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$BTC;->getDecimals()I
+
+    move-result v3
+
+    goto :goto_1
 
     :cond_1
-    move-object v3, p3
+    move v3, p3
 
-    and-int/lit8 p1, p7, 0x4
+    :goto_1
+    and-int/lit8 v4, p8, 0x4
 
-    if-eqz p1, :cond_2
+    if-eqz v4, :cond_2
 
-    iget-object p4, p0, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$BTC;->utxos:Ljava/util/List;
+    iget-object v4, v0, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$BTC;->recipientAddress:Ljava/lang/String;
+
+    goto :goto_2
 
     :cond_2
     move-object v4, p4
 
-    and-int/lit8 p1, p7, 0x8
+    :goto_2
+    and-int/lit8 v5, p8, 0x8
 
-    if-eqz p1, :cond_3
+    if-eqz v5, :cond_3
 
-    iget-object p5, p0, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$BTC;->changeAddress:Ljava/lang/String;
+    iget-object v5, v0, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$BTC;->utxos:Ljava/util/List;
+
+    goto :goto_3
 
     :cond_3
     move-object v5, p5
 
-    and-int/lit8 p1, p7, 0x10
+    :goto_3
+    and-int/lit8 v6, p8, 0x10
 
-    if-eqz p1, :cond_4
+    if-eqz v6, :cond_4
 
-    iget-object p6, p0, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$BTC;->byteFee:Ljava/math/BigInteger;
+    iget-object v6, v0, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$BTC;->changeAddress:Ljava/lang/String;
+
+    goto :goto_4
 
     :cond_4
     move-object v6, p6
 
-    move-object v0, p0
+    :goto_4
+    and-int/lit8 v7, p8, 0x20
 
-    invoke-virtual/range {v0 .. v6}, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$BTC;->copy(DLjava/lang/String;Ljava/util/List;Ljava/lang/String;Ljava/math/BigInteger;)Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$BTC;
+    if-eqz v7, :cond_5
 
-    move-result-object p0
+    iget-object v7, v0, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$BTC;->byteFee:Ljava/math/BigInteger;
 
-    return-object p0
+    goto :goto_5
+
+    :cond_5
+    move-object v7, p7
+
+    :goto_5
+    move-wide p1, v1
+
+    move p3, v3
+
+    move-object p4, v4
+
+    move-object p5, v5
+
+    move-object p6, v6
+
+    move-object p7, v7
+
+    invoke-virtual/range {p0 .. p7}, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$BTC;->copy(DILjava/lang/String;Ljava/util/List;Ljava/lang/String;Ljava/math/BigInteger;)Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$BTC;
+
+    move-result-object v0
+
+    return-object v0
 .end method
 
 
@@ -162,7 +206,17 @@
     return-wide v0
 .end method
 
-.method public final component2()Ljava/lang/String;
+.method protected final component2()I
+    .locals 1
+
+    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$BTC;->getDecimals()I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public final component3()Ljava/lang/String;
     .locals 1
 
     iget-object v0, p0, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$BTC;->recipientAddress:Ljava/lang/String;
@@ -170,7 +224,7 @@
     return-object v0
 .end method
 
-.method public final component3()Ljava/util/List;
+.method public final component4()Ljava/util/List;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -186,7 +240,7 @@
     return-object v0
 .end method
 
-.method public final component4()Ljava/lang/String;
+.method public final component5()Ljava/lang/String;
     .locals 1
 
     iget-object v0, p0, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$BTC;->changeAddress:Ljava/lang/String;
@@ -194,7 +248,7 @@
     return-object v0
 .end method
 
-.method public final component5()Ljava/math/BigInteger;
+.method public final component6()Ljava/math/BigInteger;
     .locals 1
 
     iget-object v0, p0, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$BTC;->byteFee:Ljava/math/BigInteger;
@@ -202,11 +256,11 @@
     return-object v0
 .end method
 
-.method public final copy(DLjava/lang/String;Ljava/util/List;Ljava/lang/String;Ljava/math/BigInteger;)Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$BTC;
-    .locals 8
+.method public final copy(DILjava/lang/String;Ljava/util/List;Ljava/lang/String;Ljava/math/BigInteger;)Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$BTC;
+    .locals 9
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "(D",
+            "(DI",
             "Ljava/lang/String;",
             "Ljava/util/List<",
             "Lcom/iMe/storage/domain/model/crypto/send/BitcoinUnspentOutput;",
@@ -220,19 +274,27 @@
 
     const-string v0, "recipientAddress"
 
-    invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string v0, "utxos"
+    move-object v5, p4
 
     invoke-static {p4, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "changeAddress"
+    const-string v0, "utxos"
+
+    move-object v6, p5
 
     invoke-static {p5, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "byteFee"
+    const-string v0, "changeAddress"
+
+    move-object v7, p6
 
     invoke-static {p6, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "byteFee"
+
+    move-object/from16 v8, p7
+
+    invoke-static {v8, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     new-instance v0, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$BTC;
 
@@ -240,15 +302,9 @@
 
     move-wide v2, p1
 
-    move-object v4, p3
+    move v4, p3
 
-    move-object v5, p4
-
-    move-object v6, p5
-
-    move-object v7, p6
-
-    invoke-direct/range {v1 .. v7}, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$BTC;-><init>(DLjava/lang/String;Ljava/util/List;Ljava/lang/String;Ljava/math/BigInteger;)V
+    invoke-direct/range {v1 .. v8}, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$BTC;-><init>(DILjava/lang/String;Ljava/util/List;Ljava/lang/String;Ljava/math/BigInteger;)V
 
     return-object v0
 .end method
@@ -291,22 +347,22 @@
     return v2
 
     :cond_2
-    iget-object v1, p0, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$BTC;->recipientAddress:Ljava/lang/String;
-
-    iget-object v3, p1, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$BTC;->recipientAddress:Ljava/lang/String;
-
-    invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$BTC;->getDecimals()I
 
     move-result v1
 
-    if-nez v1, :cond_3
+    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$BTC;->getDecimals()I
+
+    move-result v3
+
+    if-eq v1, v3, :cond_3
 
     return v2
 
     :cond_3
-    iget-object v1, p0, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$BTC;->utxos:Ljava/util/List;
+    iget-object v1, p0, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$BTC;->recipientAddress:Ljava/lang/String;
 
-    iget-object v3, p1, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$BTC;->utxos:Ljava/util/List;
+    iget-object v3, p1, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$BTC;->recipientAddress:Ljava/lang/String;
 
     invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
@@ -317,9 +373,9 @@
     return v2
 
     :cond_4
-    iget-object v1, p0, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$BTC;->changeAddress:Ljava/lang/String;
+    iget-object v1, p0, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$BTC;->utxos:Ljava/util/List;
 
-    iget-object v3, p1, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$BTC;->changeAddress:Ljava/lang/String;
+    iget-object v3, p1, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$BTC;->utxos:Ljava/util/List;
 
     invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
@@ -330,6 +386,19 @@
     return v2
 
     :cond_5
+    iget-object v1, p0, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$BTC;->changeAddress:Ljava/lang/String;
+
+    iget-object v3, p1, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$BTC;->changeAddress:Ljava/lang/String;
+
+    invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_6
+
+    return v2
+
+    :cond_6
     iget-object v1, p0, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$BTC;->byteFee:Ljava/math/BigInteger;
 
     iget-object p1, p1, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$BTC;->byteFee:Ljava/math/BigInteger;
@@ -338,18 +407,18 @@
 
     move-result p1
 
-    if-nez p1, :cond_6
+    if-nez p1, :cond_7
 
     return v2
 
-    :cond_6
+    :cond_7
     return v0
 .end method
 
 .method public getAmount()D
     .locals 2
 
-    .line 45
+    .line 44
     iget-wide v0, p0, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$BTC;->amount:D
 
     return-wide v0
@@ -371,6 +440,15 @@
     iget-object v0, p0, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$BTC;->changeAddress:Ljava/lang/String;
 
     return-object v0
+.end method
+
+.method protected getDecimals()I
+    .locals 1
+
+    .line 45
+    iget v0, p0, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$BTC;->decimals:I
+
+    return v0
 .end method
 
 .method public final getRecipientAddress()Ljava/lang/String;
@@ -409,6 +487,14 @@
     invoke-static {v0, v1}, Lcom/iMe/i_staking/response/StakingDetailedMetadataResponse$$ExternalSyntheticBackport0;->m(D)I
 
     move-result v0
+
+    mul-int/lit8 v0, v0, 0x1f
+
+    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$BTC;->getDecimals()I
+
+    move-result v1
+
+    add-int/2addr v0, v1
 
     mul-int/lit8 v0, v0, 0x1f
 
@@ -469,6 +555,16 @@
     move-result-wide v1
 
     invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
+
+    const-string v1, ", decimals="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$BTC;->getDecimals()I
+
+    move-result v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     const-string v1, ", recipientAddress="
 

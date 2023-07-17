@@ -354,7 +354,7 @@
 .method private synthetic lambda$onBindViewHolder$2()V
     .locals 2
 
-    .line 903
+    .line 891
     iget-object v0, p0, Lorg/telegram/ui/Adapters/DialogsAdapter;->parentFragment:Lorg/telegram/ui/DialogsActivity;
 
     const/4 v1, 0x0
@@ -367,7 +367,7 @@
 .method private synthetic lambda$onBindViewHolder$3(Ljava/lang/Float;)V
     .locals 1
 
-    .line 904
+    .line 892
     iget-object v0, p0, Lorg/telegram/ui/Adapters/DialogsAdapter;->parentFragment:Lorg/telegram/ui/DialogsActivity;
 
     invoke-virtual {p1}, Ljava/lang/Float;->floatValue()F
@@ -568,22 +568,22 @@
 
     move-object/from16 v0, p0
 
-    .line 1332
+    .line 1320
     iget-object v1, v0, Lorg/telegram/ui/Adapters/DialogsAdapter;->itemInternals:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->clear()V
 
-    .line 1333
+    .line 1321
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/Adapters/DialogsAdapter;->updateHasHints()V
 
-    .line 1335
+    .line 1323
     iget v1, v0, Lorg/telegram/ui/Adapters/DialogsAdapter;->currentAccount:I
 
     invoke-static {v1}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
 
     move-result-object v1
 
-    .line 1336
+    .line 1324
     iget-object v2, v0, Lorg/telegram/ui/Adapters/DialogsAdapter;->parentFragment:Lorg/telegram/ui/DialogsActivity;
 
     iget v3, v0, Lorg/telegram/ui/Adapters/DialogsAdapter;->currentAccount:I
@@ -598,14 +598,14 @@
 
     move-result-object v2
 
-    .line 1338
+    .line 1326
     iget-boolean v3, v0, Lorg/telegram/ui/Adapters/DialogsAdapter;->isWalletBotHidden:Z
 
     const/4 v4, 0x0
 
     if-eqz v3, :cond_2
 
-    .line 1339
+    .line 1327
     invoke-static {}, Lcom/iMe/storage/common/AppConfiguration$Wallet;->getWalletBotId()J
 
     move-result-wide v5
@@ -616,7 +616,7 @@
 
     move v7, v4
 
-    .line 1342
+    .line 1330
     :goto_0
     invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
 
@@ -626,7 +626,7 @@
 
     if-ne v8, v3, :cond_1
 
-    .line 1343
+    .line 1331
     invoke-virtual {v2, v7}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v9
@@ -649,10 +649,10 @@
     :cond_1
     if-eq v8, v3, :cond_2
 
-    .line 1349
+    .line 1337
     invoke-virtual {v2, v8}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
 
-    .line 1353
+    .line 1341
     :cond_2
     invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
 
@@ -660,10 +660,10 @@
 
     iput v3, v0, Lorg/telegram/ui/Adapters/DialogsAdapter;->dialogsCount:I
 
-    .line 1354
+    .line 1342
     iput-boolean v4, v0, Lorg/telegram/ui/Adapters/DialogsAdapter;->isEmpty:Z
 
-    .line 1356
+    .line 1344
     iget-boolean v3, v0, Lorg/telegram/ui/Adapters/DialogsAdapter;->hasHints:Z
 
     const/16 v5, 0xa
@@ -690,7 +690,7 @@
 
     if-nez v3, :cond_8
 
-    .line 1357
+    .line 1345
     invoke-virtual {v1}, Lorg/telegram/messenger/MessagesController;->getAllFoldersDialogsCount()I
 
     move-result v3
@@ -741,7 +741,7 @@
 
     if-nez v3, :cond_7
 
-    .line 1358
+    .line 1346
     new-instance v3, Ljava/util/ArrayList;
 
     iget v8, v0, Lorg/telegram/ui/Adapters/DialogsAdapter;->currentAccount:I
@@ -756,7 +756,7 @@
 
     iput-object v3, v0, Lorg/telegram/ui/Adapters/DialogsAdapter;->onlineContacts:Ljava/util/ArrayList;
 
-    .line 1359
+    .line 1347
     iget v3, v0, Lorg/telegram/ui/Adapters/DialogsAdapter;->currentAccount:I
 
     invoke-static {v3}, Lorg/telegram/messenger/UserConfig;->getInstance(I)Lorg/telegram/messenger/UserConfig;
@@ -765,7 +765,7 @@
 
     iget-wide v8, v3, Lorg/telegram/messenger/UserConfig;->clientUserId:J
 
-    .line 1360
+    .line 1348
     iget-object v3, v0, Lorg/telegram/ui/Adapters/DialogsAdapter;->onlineContacts:Ljava/util/ArrayList;
 
     invoke-virtual {v3}, Ljava/util/ArrayList;->size()I
@@ -777,7 +777,7 @@
     :goto_1
     if-ge v10, v3, :cond_5
 
-    .line 1361
+    .line 1349
     iget-object v11, v0, Lorg/telegram/ui/Adapters/DialogsAdapter;->onlineContacts:Ljava/util/ArrayList;
 
     invoke-virtual {v11, v10}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -792,7 +792,7 @@
 
     if-eqz v13, :cond_3
 
-    .line 1362
+    .line 1350
     iget-object v13, v1, Lorg/telegram/messenger/MessagesController;->dialogs_dict:Landroidx/collection/LongSparseArray;
 
     invoke-virtual {v13, v11, v12}, Landroidx/collection/LongSparseArray;->get(J)Ljava/lang/Object;
@@ -801,7 +801,7 @@
 
     if-eqz v11, :cond_4
 
-    .line 1363
+    .line 1351
     :cond_3
     iget-object v11, v0, Lorg/telegram/ui/Adapters/DialogsAdapter;->onlineContacts:Ljava/util/ArrayList;
 
@@ -816,7 +816,7 @@
 
     goto :goto_1
 
-    .line 1368
+    .line 1356
     :cond_5
     iget-object v3, v0, Lorg/telegram/ui/Adapters/DialogsAdapter;->onlineContacts:Ljava/util/ArrayList;
 
@@ -826,27 +826,27 @@
 
     if-eqz v3, :cond_6
 
-    .line 1369
+    .line 1357
     iput-object v7, v0, Lorg/telegram/ui/Adapters/DialogsAdapter;->onlineContacts:Ljava/util/ArrayList;
 
     goto :goto_2
 
-    .line 1371
+    .line 1359
     :cond_6
     invoke-virtual {v0, v4}, Lorg/telegram/ui/Adapters/DialogsAdapter;->sortOnlineContacts(Z)V
 
     goto :goto_2
 
-    .line 1374
+    .line 1362
     :cond_7
     iput-object v7, v0, Lorg/telegram/ui/Adapters/DialogsAdapter;->onlineContacts:Ljava/util/ArrayList;
 
-    .line 1378
+    .line 1366
     :cond_8
     :goto_2
     iput-boolean v4, v0, Lorg/telegram/ui/Adapters/DialogsAdapter;->hasChatlistHint:Z
 
-    .line 1379
+    .line 1367
     iget v3, v0, Lorg/telegram/ui/Adapters/DialogsAdapter;->dialogsType:I
 
     const/16 v7, 0x8
@@ -857,7 +857,7 @@
 
     if-ne v3, v7, :cond_a
 
-    .line 1380
+    .line 1368
     :cond_9
     iget-object v9, v1, Lorg/telegram/messenger/MessagesController;->selectedDialogFilter:[Lorg/telegram/messenger/MessagesController$DialogFilter;
 
@@ -867,19 +867,19 @@
 
     if-eqz v3, :cond_a
 
-    .line 1381
+    .line 1369
     invoke-virtual {v3}, Lorg/telegram/messenger/MessagesController$DialogFilter;->isChatlist()Z
 
     move-result v9
 
     if-eqz v9, :cond_a
 
-    .line 1382
+    .line 1370
     iget v9, v3, Lorg/telegram/messenger/MessagesController$DialogFilter;->id:I
 
     invoke-virtual {v1, v9, v4}, Lorg/telegram/messenger/MessagesController;->checkChatlistFolderUpdate(IZ)V
 
-    .line 1383
+    .line 1371
     iget v3, v3, Lorg/telegram/messenger/MessagesController$DialogFilter;->id:I
 
     invoke-virtual {v1, v3}, Lorg/telegram/messenger/MessagesController;->getChatlistFolderUpdates(I)Lorg/telegram/tgnet/TLRPC$TL_chatlists_chatlistUpdates;
@@ -888,7 +888,7 @@
 
     if-eqz v3, :cond_a
 
-    .line 1384
+    .line 1372
     iget-object v9, v3, Lorg/telegram/tgnet/TLRPC$TL_chatlists_chatlistUpdates;->missing_peers:Ljava/util/ArrayList;
 
     invoke-virtual {v9}, Ljava/util/ArrayList;->size()I
@@ -897,10 +897,10 @@
 
     if-lez v9, :cond_a
 
-    .line 1385
+    .line 1373
     iput-boolean v6, v0, Lorg/telegram/ui/Adapters/DialogsAdapter;->hasChatlistHint:Z
 
-    .line 1386
+    .line 1374
     iget-object v9, v0, Lorg/telegram/ui/Adapters/DialogsAdapter;->itemInternals:Ljava/util/ArrayList;
 
     new-instance v10, Lorg/telegram/ui/Adapters/DialogsAdapter$ItemInternal;
@@ -909,13 +909,13 @@
 
     invoke-virtual {v9, v10}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1391
+    .line 1379
     :cond_a
     iget-object v3, v0, Lorg/telegram/ui/Adapters/DialogsAdapter;->requestPeerType:Lorg/telegram/tgnet/TLRPC$RequestPeerType;
 
     if-eqz v3, :cond_b
 
-    .line 1392
+    .line 1380
     iget-object v3, v0, Lorg/telegram/ui/Adapters/DialogsAdapter;->itemInternals:Ljava/util/ArrayList;
 
     new-instance v9, Lorg/telegram/ui/Adapters/DialogsAdapter$ItemInternal;
@@ -926,7 +926,7 @@
 
     invoke-virtual {v3, v9}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1395
+    .line 1383
     :cond_b
     iget-boolean v3, v0, Lorg/telegram/ui/Adapters/DialogsAdapter;->collapsedView:Z
 
@@ -940,7 +940,7 @@
 
     goto/16 :goto_10
 
-    .line 1407
+    .line 1395
     :cond_c
     iget v3, v0, Lorg/telegram/ui/Adapters/DialogsAdapter;->dialogsCount:I
 
@@ -958,15 +958,15 @@
 
     if-eqz v3, :cond_e
 
-    .line 1408
+    .line 1396
     iput-boolean v6, v0, Lorg/telegram/ui/Adapters/DialogsAdapter;->isEmpty:Z
 
-    .line 1409
+    .line 1397
     iget-object v3, v0, Lorg/telegram/ui/Adapters/DialogsAdapter;->requestPeerType:Lorg/telegram/tgnet/TLRPC$RequestPeerType;
 
     if-eqz v3, :cond_d
 
-    .line 1410
+    .line 1398
     iget-object v3, v0, Lorg/telegram/ui/Adapters/DialogsAdapter;->itemInternals:Ljava/util/ArrayList;
 
     new-instance v9, Lorg/telegram/ui/Adapters/DialogsAdapter$ItemInternal;
@@ -977,7 +977,7 @@
 
     goto :goto_3
 
-    .line 1412
+    .line 1400
     :cond_d
     iget-object v3, v0, Lorg/telegram/ui/Adapters/DialogsAdapter;->itemInternals:Ljava/util/ArrayList;
 
@@ -991,7 +991,7 @@
 
     invoke-virtual {v3, v9}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1414
+    .line 1402
     :goto_3
     iget-object v3, v0, Lorg/telegram/ui/Adapters/DialogsAdapter;->itemInternals:Ljava/util/ArrayList;
 
@@ -1001,7 +1001,7 @@
 
     invoke-virtual {v3, v9}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1415
+    .line 1403
     iget-object v3, v0, Lorg/telegram/ui/Adapters/DialogsAdapter;->itemInternals:Ljava/util/ArrayList;
 
     new-instance v9, Lorg/telegram/ui/Adapters/DialogsAdapter$ItemInternal;
@@ -1010,7 +1010,7 @@
 
     invoke-virtual {v3, v9}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1416
+    .line 1404
     iget-object v3, v0, Lorg/telegram/ui/Adapters/DialogsAdapter;->itemInternals:Ljava/util/ArrayList;
 
     new-instance v9, Lorg/telegram/ui/Adapters/DialogsAdapter$ItemInternal;
@@ -1021,7 +1021,7 @@
 
     goto/16 :goto_a
 
-    .line 1417
+    .line 1405
     :cond_e
     iget-object v3, v0, Lorg/telegram/ui/Adapters/DialogsAdapter;->onlineContacts:Ljava/util/ArrayList;
 
@@ -1039,20 +1039,20 @@
 
     if-eq v3, v7, :cond_13
 
-    .line 1418
+    .line 1406
     iget v3, v0, Lorg/telegram/ui/Adapters/DialogsAdapter;->dialogsCount:I
 
     if-nez v3, :cond_10
 
-    .line 1419
+    .line 1407
     iput-boolean v6, v0, Lorg/telegram/ui/Adapters/DialogsAdapter;->isEmpty:Z
 
-    .line 1420
+    .line 1408
     iget-object v3, v0, Lorg/telegram/ui/Adapters/DialogsAdapter;->requestPeerType:Lorg/telegram/tgnet/TLRPC$RequestPeerType;
 
     if-eqz v3, :cond_f
 
-    .line 1421
+    .line 1409
     iget-object v3, v0, Lorg/telegram/ui/Adapters/DialogsAdapter;->itemInternals:Ljava/util/ArrayList;
 
     new-instance v9, Lorg/telegram/ui/Adapters/DialogsAdapter$ItemInternal;
@@ -1063,7 +1063,7 @@
 
     goto :goto_4
 
-    .line 1423
+    .line 1411
     :cond_f
     iget-object v3, v0, Lorg/telegram/ui/Adapters/DialogsAdapter;->itemInternals:Ljava/util/ArrayList;
 
@@ -1077,7 +1077,7 @@
 
     invoke-virtual {v3, v9}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1425
+    .line 1413
     :goto_4
     iget-object v3, v0, Lorg/telegram/ui/Adapters/DialogsAdapter;->itemInternals:Ljava/util/ArrayList;
 
@@ -1087,7 +1087,7 @@
 
     invoke-virtual {v3, v9}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1426
+    .line 1414
     iget-object v3, v0, Lorg/telegram/ui/Adapters/DialogsAdapter;->itemInternals:Ljava/util/ArrayList;
 
     new-instance v9, Lorg/telegram/ui/Adapters/DialogsAdapter$ItemInternal;
@@ -1101,7 +1101,7 @@
     :cond_10
     move v3, v4
 
-    .line 1428
+    .line 1416
     :goto_5
     invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
 
@@ -1109,7 +1109,7 @@
 
     if-ge v3, v9, :cond_11
 
-    .line 1429
+    .line 1417
     iget-object v9, v0, Lorg/telegram/ui/Adapters/DialogsAdapter;->itemInternals:Ljava/util/ArrayList;
 
     new-instance v11, Lorg/telegram/ui/Adapters/DialogsAdapter$ItemInternal;
@@ -1128,7 +1128,7 @@
 
     goto :goto_5
 
-    .line 1431
+    .line 1419
     :cond_11
     iget-object v3, v0, Lorg/telegram/ui/Adapters/DialogsAdapter;->itemInternals:Ljava/util/ArrayList;
 
@@ -1138,7 +1138,7 @@
 
     invoke-virtual {v3, v9}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1432
+    .line 1420
     iget-object v3, v0, Lorg/telegram/ui/Adapters/DialogsAdapter;->itemInternals:Ljava/util/ArrayList;
 
     new-instance v9, Lorg/telegram/ui/Adapters/DialogsAdapter$ItemInternal;
@@ -1150,7 +1150,7 @@
     :goto_6
     move v3, v4
 
-    .line 1434
+    .line 1422
     :goto_7
     iget-object v9, v0, Lorg/telegram/ui/Adapters/DialogsAdapter;->onlineContacts:Ljava/util/ArrayList;
 
@@ -1160,7 +1160,7 @@
 
     if-ge v3, v9, :cond_12
 
-    .line 1435
+    .line 1423
     iget-object v9, v0, Lorg/telegram/ui/Adapters/DialogsAdapter;->itemInternals:Ljava/util/ArrayList;
 
     new-instance v11, Lorg/telegram/ui/Adapters/DialogsAdapter$ItemInternal;
@@ -1185,7 +1185,7 @@
 
     goto :goto_7
 
-    .line 1437
+    .line 1425
     :cond_12
     iget-object v3, v0, Lorg/telegram/ui/Adapters/DialogsAdapter;->itemInternals:Ljava/util/ArrayList;
 
@@ -1199,13 +1199,13 @@
 
     goto/16 :goto_b
 
-    .line 1439
+    .line 1427
     :cond_13
     iget-boolean v3, v0, Lorg/telegram/ui/Adapters/DialogsAdapter;->hasHints:Z
 
     if-eqz v3, :cond_15
 
-    .line 1440
+    .line 1428
     iget v3, v0, Lorg/telegram/ui/Adapters/DialogsAdapter;->currentAccount:I
 
     invoke-static {v3}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -1218,7 +1218,7 @@
 
     move-result v3
 
-    .line 1441
+    .line 1429
     iget-object v9, v0, Lorg/telegram/ui/Adapters/DialogsAdapter;->itemInternals:Ljava/util/ArrayList;
 
     new-instance v11, Lorg/telegram/ui/Adapters/DialogsAdapter$ItemInternal;
@@ -1232,7 +1232,7 @@
     :goto_8
     if-ge v9, v3, :cond_14
 
-    .line 1443
+    .line 1431
     iget-object v11, v0, Lorg/telegram/ui/Adapters/DialogsAdapter;->itemInternals:Ljava/util/ArrayList;
 
     new-instance v13, Lorg/telegram/ui/Adapters/DialogsAdapter$ItemInternal;
@@ -1263,7 +1263,7 @@
 
     goto :goto_8
 
-    .line 1445
+    .line 1433
     :cond_14
     iget-object v3, v0, Lorg/telegram/ui/Adapters/DialogsAdapter;->itemInternals:Ljava/util/ArrayList;
 
@@ -1277,13 +1277,13 @@
 
     goto :goto_a
 
-    .line 1446
+    .line 1434
     :cond_15
     iget-boolean v3, v0, Lorg/telegram/ui/Adapters/DialogsAdapter;->showArchiveHint:Z
 
     if-eqz v3, :cond_16
 
-    .line 1447
+    .line 1435
     iget-object v3, v0, Lorg/telegram/ui/Adapters/DialogsAdapter;->itemInternals:Ljava/util/ArrayList;
 
     new-instance v5, Lorg/telegram/ui/Adapters/DialogsAdapter$ItemInternal;
@@ -1294,7 +1294,7 @@
 
     invoke-virtual {v3, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1448
+    .line 1436
     iget-object v3, v0, Lorg/telegram/ui/Adapters/DialogsAdapter;->itemInternals:Ljava/util/ArrayList;
 
     new-instance v5, Lorg/telegram/ui/Adapters/DialogsAdapter$ItemInternal;
@@ -1305,7 +1305,7 @@
 
     goto :goto_a
 
-    .line 1449
+    .line 1437
     :cond_16
     iget v3, v0, Lorg/telegram/ui/Adapters/DialogsAdapter;->dialogsType:I
 
@@ -1320,7 +1320,7 @@
 
     if-ne v3, v5, :cond_19
 
-    .line 1453
+    .line 1441
     iget-object v3, v0, Lorg/telegram/ui/Adapters/DialogsAdapter;->itemInternals:Ljava/util/ArrayList;
 
     new-instance v5, Lorg/telegram/ui/Adapters/DialogsAdapter$ItemInternal;
@@ -1331,7 +1331,7 @@
 
     goto :goto_a
 
-    .line 1450
+    .line 1438
     :cond_18
     :goto_9
     iget-object v3, v0, Lorg/telegram/ui/Adapters/DialogsAdapter;->itemInternals:Ljava/util/ArrayList;
@@ -1342,7 +1342,7 @@
 
     invoke-virtual {v3, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1451
+    .line 1439
     iget-object v3, v0, Lorg/telegram/ui/Adapters/DialogsAdapter;->itemInternals:Ljava/util/ArrayList;
 
     new-instance v5, Lorg/telegram/ui/Adapters/DialogsAdapter$ItemInternal;
@@ -1357,7 +1357,7 @@
     :goto_a
     move v3, v4
 
-    .line 1456
+    .line 1444
     :goto_b
     iget-object v5, v0, Lorg/telegram/ui/Adapters/DialogsAdapter;->requestPeerType:Lorg/telegram/tgnet/TLRPC$RequestPeerType;
 
@@ -1374,7 +1374,7 @@
 
     if-lez v5, :cond_1b
 
-    .line 1457
+    .line 1445
     iget-object v5, v0, Lorg/telegram/ui/Adapters/DialogsAdapter;->itemInternals:Ljava/util/ArrayList;
 
     new-instance v9, Lorg/telegram/ui/Adapters/DialogsAdapter$ItemInternal;
@@ -1390,7 +1390,7 @@
 
     move v3, v4
 
-    .line 1461
+    .line 1449
     :goto_c
     invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
 
@@ -1398,7 +1398,7 @@
 
     if-ge v3, v5, :cond_1d
 
-    .line 1462
+    .line 1450
     iget v5, v0, Lorg/telegram/ui/Adapters/DialogsAdapter;->dialogsType:I
 
     if-ne v5, v10, :cond_1c
@@ -1411,7 +1411,7 @@
 
     if-eqz v5, :cond_1c
 
-    .line 1463
+    .line 1451
     iget-object v5, v0, Lorg/telegram/ui/Adapters/DialogsAdapter;->itemInternals:Ljava/util/ArrayList;
 
     new-instance v9, Lorg/telegram/ui/Adapters/DialogsAdapter$ItemInternal;
@@ -1430,7 +1430,7 @@
 
     goto :goto_d
 
-    .line 1465
+    .line 1453
     :cond_1c
     iget-object v5, v0, Lorg/telegram/ui/Adapters/DialogsAdapter;->itemInternals:Ljava/util/ArrayList;
 
@@ -1451,7 +1451,7 @@
 
     goto :goto_c
 
-    .line 1468
+    .line 1456
     :cond_1d
     iget-boolean v2, v0, Lorg/telegram/ui/Adapters/DialogsAdapter;->forceShowEmptyCell:Z
 
@@ -1463,19 +1463,17 @@
 
     if-eq v2, v7, :cond_1e
 
-    iget v3, v0, Lorg/telegram/ui/Adapters/DialogsAdapter;->folderId:I
-
-    if-eq v3, v10, :cond_1e
-
-    iget v3, v0, Lorg/telegram/ui/Adapters/DialogsAdapter;->initialDialogsType:I
-
-    const/16 v5, 0x190
-
-    if-eq v3, v5, :cond_1e
-
     sget v3, Lorg/telegram/ui/DialogsActivity;->DIALOGS_TYPE_ALBUMS:I
 
     if-eq v2, v3, :cond_1e
+
+    sget v3, Lorg/telegram/ui/DialogsActivity;->DIALOGS_TYPE_DRAFTS:I
+
+    if-eq v2, v3, :cond_1e
+
+    iget v2, v0, Lorg/telegram/ui/Adapters/DialogsAdapter;->folderId:I
+
+    if-eq v2, v10, :cond_1e
 
     iget v2, v0, Lorg/telegram/ui/Adapters/DialogsAdapter;->currentAccount:I
 
@@ -1491,12 +1489,12 @@
 
     if-nez v2, :cond_1e
 
-    .line 1469
+    .line 1457
     iget v2, v0, Lorg/telegram/ui/Adapters/DialogsAdapter;->dialogsCount:I
 
     if-eqz v2, :cond_22
 
-    .line 1470
+    .line 1458
     iget-object v2, v0, Lorg/telegram/ui/Adapters/DialogsAdapter;->itemInternals:Ljava/util/ArrayList;
 
     new-instance v3, Lorg/telegram/ui/Adapters/DialogsAdapter$ItemInternal;
@@ -1507,21 +1505,21 @@
 
     goto :goto_e
 
-    .line 1472
+    .line 1460
     :cond_1e
     iget v2, v0, Lorg/telegram/ui/Adapters/DialogsAdapter;->dialogsCount:I
 
     if-nez v2, :cond_20
 
-    .line 1473
+    .line 1461
     iput-boolean v6, v0, Lorg/telegram/ui/Adapters/DialogsAdapter;->isEmpty:Z
 
-    .line 1474
+    .line 1462
     iget-object v2, v0, Lorg/telegram/ui/Adapters/DialogsAdapter;->requestPeerType:Lorg/telegram/tgnet/TLRPC$RequestPeerType;
 
     if-eqz v2, :cond_1f
 
-    .line 1475
+    .line 1463
     iget-object v2, v0, Lorg/telegram/ui/Adapters/DialogsAdapter;->itemInternals:Ljava/util/ArrayList;
 
     new-instance v3, Lorg/telegram/ui/Adapters/DialogsAdapter$ItemInternal;
@@ -1532,7 +1530,7 @@
 
     goto :goto_e
 
-    .line 1477
+    .line 1465
     :cond_1f
     iget-object v2, v0, Lorg/telegram/ui/Adapters/DialogsAdapter;->itemInternals:Ljava/util/ArrayList;
 
@@ -1550,7 +1548,7 @@
 
     goto :goto_e
 
-    .line 1480
+    .line 1468
     :cond_20
     iget v3, v0, Lorg/telegram/ui/Adapters/DialogsAdapter;->folderId:I
 
@@ -1582,7 +1580,7 @@
 
     if-nez v2, :cond_21
 
-    .line 1481
+    .line 1469
     iget-object v2, v0, Lorg/telegram/ui/Adapters/DialogsAdapter;->itemInternals:Ljava/util/ArrayList;
 
     new-instance v3, Lorg/telegram/ui/Adapters/DialogsAdapter$ItemInternal;
@@ -1591,7 +1589,7 @@
 
     invoke-virtual {v2, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1483
+    .line 1471
     :cond_21
     iget-object v2, v0, Lorg/telegram/ui/Adapters/DialogsAdapter;->itemInternals:Ljava/util/ArrayList;
 
@@ -1603,7 +1601,7 @@
 
     invoke-virtual {v2, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1487
+    .line 1475
     :cond_22
     :goto_e
     iget-object v2, v1, Lorg/telegram/messenger/MessagesController;->hiddenUndoChats:Ljava/util/ArrayList;
@@ -1614,7 +1612,7 @@
 
     if-nez v2, :cond_24
 
-    .line 1488
+    .line 1476
     :goto_f
     iget-object v2, v0, Lorg/telegram/ui/Adapters/DialogsAdapter;->itemInternals:Ljava/util/ArrayList;
 
@@ -1624,7 +1622,7 @@
 
     if-ge v4, v2, :cond_24
 
-    .line 1489
+    .line 1477
     iget-object v2, v0, Lorg/telegram/ui/Adapters/DialogsAdapter;->itemInternals:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v4}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -1633,7 +1631,7 @@
 
     check-cast v2, Lorg/telegram/ui/Adapters/DialogsAdapter$ItemInternal;
 
-    .line 1490
+    .line 1478
     iget v3, v2, Lorg/telegram/ui/Components/ListView/AdapterWithDiffUtils$Item;->viewType:I
 
     if-nez v3, :cond_23
@@ -1650,7 +1648,7 @@
 
     if-eqz v2, :cond_23
 
-    .line 1491
+    .line 1479
     iget-object v2, v0, Lorg/telegram/ui/Adapters/DialogsAdapter;->itemInternals:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v4}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
@@ -1669,7 +1667,7 @@
     :goto_10
     move v1, v4
 
-    .line 1396
+    .line 1384
     :goto_11
     invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
 
@@ -1677,7 +1675,7 @@
 
     if-ge v1, v3, :cond_27
 
-    .line 1397
+    .line 1385
     iget v3, v0, Lorg/telegram/ui/Adapters/DialogsAdapter;->dialogsType:I
 
     if-ne v3, v10, :cond_26
@@ -1690,7 +1688,7 @@
 
     if-eqz v3, :cond_26
 
-    .line 1398
+    .line 1386
     iget-object v3, v0, Lorg/telegram/ui/Adapters/DialogsAdapter;->itemInternals:Ljava/util/ArrayList;
 
     new-instance v5, Lorg/telegram/ui/Adapters/DialogsAdapter$ItemInternal;
@@ -1712,7 +1710,7 @@
     :cond_26
     const/16 v7, 0xe
 
-    .line 1400
+    .line 1388
     iget-object v3, v0, Lorg/telegram/ui/Adapters/DialogsAdapter;->itemInternals:Ljava/util/ArrayList;
 
     new-instance v5, Lorg/telegram/ui/Adapters/DialogsAdapter$ItemInternal;
@@ -1741,7 +1739,7 @@
 .method public canClickButtonInside()Z
     .locals 1
 
-    .line 1106
+    .line 1094
     iget-object v0, p0, Lorg/telegram/ui/Adapters/DialogsAdapter;->selectedDialogs:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->isEmpty()Z
@@ -1752,7 +1750,7 @@
 .end method
 
 .method public dialogsEmptyType()I
-    .locals 4
+    .locals 3
 
     .line 761
     iget v0, p0, Lorg/telegram/ui/Adapters/DialogsAdapter;->dialogsType:I
@@ -1782,42 +1780,13 @@
 
     return v0
 
+    .line 764
     :cond_1
-    const/16 v1, 0x191
+    sget v1, Lorg/telegram/ui/DialogsActivity;->DIALOGS_TYPE_DRAFTS:I
 
-    const/4 v2, 0x3
-
-    if-ne v0, v1, :cond_3
+    if-ne v0, v1, :cond_2
 
     .line 765
-    iget v0, p0, Lorg/telegram/ui/Adapters/DialogsAdapter;->currentAccount:I
-
-    invoke-static {v0}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
-
-    move-result-object v0
-
-    iget-boolean v0, v0, Lorg/telegram/messenger/MessagesController;->isManagementBookmarksLoading:Z
-
-    if-eqz v0, :cond_2
-
-    return v2
-
-    .line 768
-    :cond_2
-    sget-object v0, Lcom/iMe/ui/dialogs/EmptyCellType;->BOOKMARKS:Lcom/iMe/ui/dialogs/EmptyCellType;
-
-    invoke-virtual {v0}, Lcom/iMe/ui/dialogs/EmptyCellType;->id()I
-
-    move-result v0
-
-    return v0
-
-    :cond_3
-    const/16 v1, 0x192
-
-    if-ne v0, v1, :cond_4
-
-    .line 771
     sget-object v0, Lcom/iMe/ui/dialogs/EmptyCellType;->DRAFTS:Lcom/iMe/ui/dialogs/EmptyCellType;
 
     invoke-virtual {v0}, Lcom/iMe/ui/dialogs/EmptyCellType;->id()I
@@ -1826,15 +1795,15 @@
 
     return v0
 
-    .line 773
-    :cond_4
+    .line 767
+    :cond_2
     iget v1, p0, Lorg/telegram/ui/Adapters/DialogsAdapter;->folderId:I
 
-    const/4 v3, 0x2
+    const/4 v2, 0x2
 
-    if-ne v1, v3, :cond_5
+    if-ne v1, v2, :cond_3
 
-    .line 774
+    .line 768
     sget-object v0, Lcom/iMe/ui/dialogs/EmptyCellType;->HIDDEN_CHATS:Lcom/iMe/ui/dialogs/EmptyCellType;
 
     invoke-virtual {v0}, Lcom/iMe/ui/dialogs/EmptyCellType;->id()I
@@ -1843,18 +1812,18 @@
 
     return v0
 
-    :cond_5
+    :cond_3
     const/4 v1, 0x7
 
-    if-eq v0, v1, :cond_a
+    if-eq v0, v1, :cond_8
 
     const/16 v1, 0x8
 
-    if-eq v0, v1, :cond_a
+    if-eq v0, v1, :cond_8
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_4
 
-    .line 777
+    .line 771
     iget v0, p0, Lorg/telegram/ui/Adapters/DialogsAdapter;->currentAccount:I
 
     invoke-static {v0}, Lcom/iMe/fork/controller/ForkTopicsController;->getInstance(I)Lcom/iMe/fork/controller/ForkTopicsController;
@@ -1869,24 +1838,24 @@
 
     move-result v0
 
-    if-eqz v0, :cond_6
+    if-eqz v0, :cond_4
 
     goto :goto_2
 
-    .line 783
-    :cond_6
+    .line 777
+    :cond_4
     iget v0, p0, Lorg/telegram/ui/Adapters/DialogsAdapter;->folderId:I
 
     const/4 v1, 0x1
 
-    if-ne v0, v1, :cond_8
+    if-ne v0, v1, :cond_6
 
-    .line 785
+    .line 779
     iget v0, p0, Lorg/telegram/ui/Adapters/DialogsAdapter;->dialogsType:I
 
-    if-nez v0, :cond_7
+    if-nez v0, :cond_5
 
-    .line 786
+    .line 780
     sget-object v0, Lcom/iMe/ui/dialogs/EmptyCellType;->ARCHIVE:Lcom/iMe/ui/dialogs/EmptyCellType;
 
     invoke-virtual {v0}, Lcom/iMe/ui/dialogs/EmptyCellType;->id()I
@@ -1895,25 +1864,25 @@
 
     return v0
 
-    :cond_7
-    return v3
+    :cond_5
+    return v2
 
-    .line 791
-    :cond_8
+    .line 785
+    :cond_6
     iget-object v0, p0, Lorg/telegram/ui/Adapters/DialogsAdapter;->onlineContacts:Ljava/util/ArrayList;
 
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_7
 
     goto :goto_1
 
-    :cond_9
+    :cond_7
     const/4 v1, 0x0
 
     :goto_1
     return v1
 
-    .line 778
-    :cond_a
+    .line 772
+    :cond_8
     :goto_2
     iget v0, p0, Lorg/telegram/ui/Adapters/DialogsAdapter;->currentAccount:I
 
@@ -1927,23 +1896,25 @@
 
     move-result v0
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_9
 
-    return v3
-
-    :cond_b
     return v2
+
+    :cond_9
+    const/4 v0, 0x3
+
+    return v0
 .end method
 
 .method public didDatabaseCleared()V
     .locals 1
 
-    .line 1077
+    .line 1065
     iget-object v0, p0, Lorg/telegram/ui/Adapters/DialogsAdapter;->preloader:Lorg/telegram/ui/Adapters/DialogsAdapter$DialogsPreloader;
 
     if-eqz v0, :cond_0
 
-    .line 1078
+    .line 1066
     invoke-virtual {v0}, Lorg/telegram/ui/Adapters/DialogsAdapter$DialogsPreloader;->clear()V
 
     :cond_0
@@ -2232,7 +2203,7 @@
 .method public getChatlistUpdate()Lorg/telegram/tgnet/TLRPC$TL_chatlists_chatlistUpdates;
     .locals 3
 
-    .line 1031
+    .line 1019
     iget-object v0, p0, Lorg/telegram/ui/Adapters/DialogsAdapter;->itemInternals:Ljava/util/ArrayList;
 
     const/4 v1, 0x0
@@ -2245,14 +2216,14 @@
 
     if-eqz v0, :cond_0
 
-    .line 1032
+    .line 1020
     iget v1, v0, Lorg/telegram/ui/Components/ListView/AdapterWithDiffUtils$Item;->viewType:I
 
     const/16 v2, 0x11
 
     if-ne v1, v2, :cond_0
 
-    .line 1033
+    .line 1021
     iget-object v0, v0, Lorg/telegram/ui/Adapters/DialogsAdapter$ItemInternal;->chatlistUpdates:Lorg/telegram/tgnet/TLRPC$TL_chatlists_chatlistUpdates;
 
     return-object v0
@@ -2266,7 +2237,7 @@
 .method public getCurrentCount()I
     .locals 1
 
-    .line 1248
+    .line 1236
     iget v0, p0, Lorg/telegram/ui/Adapters/DialogsAdapter;->currentCount:I
 
     return v0
@@ -2458,7 +2429,7 @@
 .method public getItemViewType(I)I
     .locals 1
 
-    .line 1044
+    .line 1032
     iget-object v0, p0, Lorg/telegram/ui/Adapters/DialogsAdapter;->itemInternals:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -2544,7 +2515,7 @@
 .method public moveDialogs(Lorg/telegram/ui/Components/RecyclerListView;II)V
     .locals 10
 
-    .line 1048
+    .line 1036
     iget-object v0, p0, Lorg/telegram/ui/Adapters/DialogsAdapter;->parentFragment:Lorg/telegram/ui/DialogsActivity;
 
     iget v1, p0, Lorg/telegram/ui/Adapters/DialogsAdapter;->currentAccount:I
@@ -2559,31 +2530,31 @@
 
     move-result-object v0
 
-    .line 1049
+    .line 1037
     invoke-virtual {p0, p2}, Lorg/telegram/ui/Adapters/DialogsAdapter;->fixPosition(I)I
 
     move-result p2
 
-    .line 1050
+    .line 1038
     invoke-virtual {p0, p3}, Lorg/telegram/ui/Adapters/DialogsAdapter;->fixPosition(I)I
 
     move-result p3
 
-    .line 1051
+    .line 1039
     invoke-virtual {v0, p2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v1
 
     check-cast v1, Lorg/telegram/tgnet/TLRPC$Dialog;
 
-    .line 1052
+    .line 1040
     invoke-virtual {v0, p3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v2
 
     check-cast v2, Lorg/telegram/tgnet/TLRPC$Dialog;
 
-    .line 1053
+    .line 1041
     iget v3, p0, Lorg/telegram/ui/Adapters/DialogsAdapter;->dialogsType:I
 
     const/16 v5, 0x8
@@ -2596,21 +2567,21 @@
 
     goto :goto_0
 
-    .line 1060
+    .line 1048
     :cond_0
     iget v3, v1, Lorg/telegram/tgnet/TLRPC$Dialog;->pinnedNum:I
 
-    .line 1061
+    .line 1049
     iget v5, v2, Lorg/telegram/tgnet/TLRPC$Dialog;->pinnedNum:I
 
     iput v5, v1, Lorg/telegram/tgnet/TLRPC$Dialog;->pinnedNum:I
 
-    .line 1062
+    .line 1050
     iput v3, v2, Lorg/telegram/tgnet/TLRPC$Dialog;->pinnedNum:I
 
     goto :goto_2
 
-    .line 1054
+    .line 1042
     :cond_1
     :goto_0
     iget v3, p0, Lorg/telegram/ui/Adapters/DialogsAdapter;->currentAccount:I
@@ -2635,7 +2606,7 @@
     :goto_1
     aget-object v3, v3, v5
 
-    .line 1055
+    .line 1043
     iget-object v5, v3, Lorg/telegram/messenger/MessagesController$DialogFilter;->pinnedDialogs:Lorg/telegram/messenger/support/LongSparseIntArray;
 
     iget-wide v6, v1, Lorg/telegram/tgnet/TLRPC$Dialog;->id:J
@@ -2644,7 +2615,7 @@
 
     move-result v5
 
-    .line 1056
+    .line 1044
     iget-object v6, v3, Lorg/telegram/messenger/MessagesController$DialogFilter;->pinnedDialogs:Lorg/telegram/messenger/support/LongSparseIntArray;
 
     iget-wide v7, v2, Lorg/telegram/tgnet/TLRPC$Dialog;->id:J
@@ -2653,27 +2624,27 @@
 
     move-result v6
 
-    .line 1057
+    .line 1045
     iget-object v7, v3, Lorg/telegram/messenger/MessagesController$DialogFilter;->pinnedDialogs:Lorg/telegram/messenger/support/LongSparseIntArray;
 
     iget-wide v8, v1, Lorg/telegram/tgnet/TLRPC$Dialog;->id:J
 
     invoke-virtual {v7, v8, v9, v6}, Lorg/telegram/messenger/support/LongSparseIntArray;->put(JI)V
 
-    .line 1058
+    .line 1046
     iget-object v1, v3, Lorg/telegram/messenger/MessagesController$DialogFilter;->pinnedDialogs:Lorg/telegram/messenger/support/LongSparseIntArray;
 
     iget-wide v2, v2, Lorg/telegram/tgnet/TLRPC$Dialog;->id:J
 
     invoke-virtual {v1, v2, v3, v5}, Lorg/telegram/messenger/support/LongSparseIntArray;->put(JI)V
 
-    .line 1064
+    .line 1052
     :goto_2
     invoke-static {v0, p2, p3}, Ljava/util/Collections;->swap(Ljava/util/List;II)V
 
     const/4 p2, 0x0
 
-    .line 1065
+    .line 1053
     invoke-virtual {p0, p1, v4, p2}, Lorg/telegram/ui/Adapters/DialogsAdapter;->updateList(Lorg/telegram/ui/Components/RecyclerListView;ZF)V
 
     return-void
@@ -2694,7 +2665,7 @@
 .method public notifyItemMoved(II)V
     .locals 0
 
-    .line 1069
+    .line 1057
     invoke-super {p0, p1, p2}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyItemMoved(II)V
 
     return-void
@@ -2709,7 +2680,7 @@
 
     move/from16 v2, p2
 
-    .line 797
+    .line 791
     invoke-virtual/range {p1 .. p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getItemViewType()I
 
     move-result v3
@@ -2750,15 +2721,15 @@
 
     packed-switch v3, :pswitch_data_0
 
-    goto/16 :goto_d
+    goto/16 :goto_c
 
-    .line 1008
+    .line 996
     :pswitch_0
     iget-object v3, v1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast v3, Lorg/telegram/ui/Cells/DialogsHintCell;
 
-    .line 1009
+    .line 997
     iget-object v4, v0, Lorg/telegram/ui/Adapters/DialogsAdapter;->itemInternals:Ljava/util/ArrayList;
 
     invoke-virtual {v4, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -2767,12 +2738,12 @@
 
     check-cast v4, Lorg/telegram/ui/Adapters/DialogsAdapter$ItemInternal;
 
-    .line 1010
+    .line 998
     iget-object v4, v4, Lorg/telegram/ui/Adapters/DialogsAdapter$ItemInternal;->chatlistUpdates:Lorg/telegram/tgnet/TLRPC$TL_chatlists_chatlistUpdates;
 
-    if-eqz v4, :cond_2c
+    if-eqz v4, :cond_2b
 
-    .line 1011
+    .line 999
     iget-object v4, v4, Lorg/telegram/tgnet/TLRPC$TL_chatlists_chatlistUpdates;->missing_peers:Ljava/util/ArrayList;
 
     invoke-virtual {v4}, Ljava/util/ArrayList;->size()I
@@ -2783,14 +2754,14 @@
 
     const-string v9, "FolderUpdatesTitle"
 
-    .line 1014
+    .line 1002
     invoke-static {v9, v4, v8}, Lorg/telegram/messenger/LocaleController;->formatPluralString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v8
 
     sget v9, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteValueText:I
 
-    .line 1013
+    .line 1001
     invoke-static {v8, v9, v6, v5}, Lorg/telegram/messenger/AndroidUtilities;->replaceSingleTag(Ljava/lang/String;IILjava/lang/Runnable;)Ljava/lang/CharSequence;
 
     move-result-object v5
@@ -2799,17 +2770,17 @@
 
     const-string v8, "FolderUpdatesSubtitle"
 
-    .line 1019
+    .line 1007
     invoke-static {v8, v4, v6}, Lorg/telegram/messenger/LocaleController;->formatPluralString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v4
 
-    .line 1012
+    .line 1000
     invoke-virtual {v3, v5, v4}, Lorg/telegram/ui/Cells/DialogsHintCell;->setText(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)V
 
-    goto/16 :goto_d
+    goto/16 :goto_c
 
-    .line 924
+    .line 912
     :pswitch_1
     iget-object v3, v1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
@@ -2819,22 +2790,22 @@
 
     invoke-virtual {v3, v4}, Lorg/telegram/ui/Cells/DialogsRequestedEmptyCell;->set(Lorg/telegram/tgnet/TLRPC$RequestPeerType;)V
 
-    goto/16 :goto_d
+    goto/16 :goto_c
 
-    .line 1003
+    .line 991
     :pswitch_2
     iget-object v3, v1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast v3, Lorg/telegram/ui/Cells/RequestPeerRequirementsCell;
 
-    .line 1004
+    .line 992
     iget-object v4, v0, Lorg/telegram/ui/Adapters/DialogsAdapter;->requestPeerType:Lorg/telegram/tgnet/TLRPC$RequestPeerType;
 
     invoke-virtual {v3, v4}, Lorg/telegram/ui/Cells/RequestPeerRequirementsCell;->set(Lorg/telegram/tgnet/TLRPC$RequestPeerType;)V
 
-    goto/16 :goto_d
+    goto/16 :goto_c
 
-    .line 956
+    .line 944
     :pswitch_3
     iget-object v3, v1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
@@ -2842,10 +2813,10 @@
 
     const/high16 v5, 0x41600000    # 14.0f
 
-    .line 957
+    .line 945
     invoke-virtual {v3, v5}, Lorg/telegram/ui/Cells/HeaderCell;->setTextSize(F)V
 
-    .line 958
+    .line 946
     sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayText:I
 
     invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -2854,7 +2825,7 @@
 
     invoke-virtual {v3, v5}, Lorg/telegram/ui/Cells/HeaderCell;->setTextColor(I)V
 
-    .line 959
+    .line 947
     sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_graySection:I
 
     invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -2863,7 +2834,7 @@
 
     invoke-virtual {v3, v5}, Landroid/widget/FrameLayout;->setBackgroundColor(I)V
 
-    .line 960
+    .line 948
     invoke-virtual {v0, v2}, Lorg/telegram/ui/Adapters/DialogsAdapter;->getItem(I)Lorg/telegram/tgnet/TLObject;
 
     move-result-object v5
@@ -2878,9 +2849,9 @@
 
     if-eq v5, v4, :cond_0
 
-    goto/16 :goto_d
+    goto/16 :goto_c
 
-    .line 968
+    .line 956
     :cond_0
     sget v4, Lorg/telegram/messenger/R$string;->FilterGroups:I
 
@@ -2892,9 +2863,9 @@
 
     invoke-virtual {v3, v4}, Lorg/telegram/ui/Cells/HeaderCell;->setText(Ljava/lang/CharSequence;)V
 
-    goto/16 :goto_d
+    goto/16 :goto_c
 
-    .line 965
+    .line 953
     :cond_1
     sget v4, Lorg/telegram/messenger/R$string;->MyGroups:I
 
@@ -2906,9 +2877,9 @@
 
     invoke-virtual {v3, v4}, Lorg/telegram/ui/Cells/HeaderCell;->setText(Ljava/lang/CharSequence;)V
 
-    goto/16 :goto_d
+    goto/16 :goto_c
 
-    .line 962
+    .line 950
     :cond_2
     sget v4, Lorg/telegram/messenger/R$string;->MyChannels:I
 
@@ -2920,30 +2891,30 @@
 
     invoke-virtual {v3, v4}, Lorg/telegram/ui/Cells/HeaderCell;->setText(Ljava/lang/CharSequence;)V
 
-    goto/16 :goto_d
+    goto/16 :goto_c
 
-    .line 987
+    .line 975
     :cond_3
     iget-object v3, v1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast v3, Lorg/telegram/ui/Cells/TextCell;
 
-    .line 988
+    .line 976
     sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlueText4:I
 
     invoke-virtual {v3, v4, v4}, Lorg/telegram/ui/Cells/TextCell;->setColors(II)V
 
-    .line 989
+    .line 977
     iget-object v4, v0, Lorg/telegram/ui/Adapters/DialogsAdapter;->requestPeerType:Lorg/telegram/tgnet/TLRPC$RequestPeerType;
 
     if-eqz v4, :cond_5
 
-    .line 990
+    .line 978
     instance-of v4, v4, Lorg/telegram/tgnet/TLRPC$TL_requestPeerTypeBroadcast;
 
     if-eqz v4, :cond_4
 
-    .line 991
+    .line 979
     sget v4, Lorg/telegram/messenger/R$string;->CreateChannelForThis:I
 
     const-string v5, "CreateChannelForThis"
@@ -2958,7 +2929,7 @@
 
     goto :goto_0
 
-    .line 993
+    .line 981
     :cond_4
     sget v4, Lorg/telegram/messenger/R$string;->CreateGroupForThis:I
 
@@ -2974,7 +2945,7 @@
 
     goto :goto_0
 
-    .line 996
+    .line 984
     :cond_5
     sget v4, Lorg/telegram/messenger/R$string;->CreateGroupForImport:I
 
@@ -2995,24 +2966,24 @@
     :cond_6
     invoke-virtual {v3, v4, v5, v6}, Lorg/telegram/ui/Cells/TextCell;->setTextAndIcon(Ljava/lang/String;IZ)V
 
-    .line 998
+    .line 986
     :goto_0
     invoke-virtual {v3}, Lorg/telegram/ui/Cells/TextCell;->setIsInDialogs()V
 
     const/16 v4, 0x4b
 
-    .line 999
+    .line 987
     invoke-virtual {v3, v4}, Lorg/telegram/ui/Cells/TextCell;->setOffsetFromImage(I)V
 
-    goto/16 :goto_d
+    goto/16 :goto_c
 
-    .line 974
+    .line 962
     :cond_7
     iget-object v3, v1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast v3, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;
 
-    .line 975
+    .line 963
     sget v4, Lorg/telegram/messenger/R$string;->TapOnThePencil:I
 
     const-string v6, "TapOnThePencil"
@@ -3023,12 +2994,12 @@
 
     invoke-virtual {v3, v4}, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;->setText(Ljava/lang/CharSequence;)V
 
-    .line 976
+    .line 964
     iget-object v4, v0, Lorg/telegram/ui/Adapters/DialogsAdapter;->arrowDrawable:Landroid/graphics/drawable/Drawable;
 
     if-nez v4, :cond_8
 
-    .line 977
+    .line 965
     iget-object v4, v0, Lorg/telegram/ui/Adapters/DialogsAdapter;->mContext:Landroid/content/Context;
 
     invoke-virtual {v4}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -3043,7 +3014,7 @@
 
     iput-object v4, v0, Lorg/telegram/ui/Adapters/DialogsAdapter;->arrowDrawable:Landroid/graphics/drawable/Drawable;
 
-    .line 978
+    .line 966
     new-instance v6, Landroid/graphics/PorterDuffColorFilter;
 
     sget v9, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayText4:I
@@ -3058,25 +3029,25 @@
 
     invoke-virtual {v4, v6}, Landroid/graphics/drawable/Drawable;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    .line 980
+    .line 968
     :cond_8
     invoke-virtual {v3}, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;->getTextView()Landroid/widget/TextView;
 
     move-result-object v3
 
-    .line 981
+    .line 969
     invoke-static {v8}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v4
 
     invoke-virtual {v3, v4}, Landroid/widget/TextView;->setCompoundDrawablePadding(I)V
 
-    .line 982
+    .line 970
     iget-object v4, v0, Lorg/telegram/ui/Adapters/DialogsAdapter;->arrowDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v3, v5, v5, v4, v5}, Landroid/widget/TextView;->setCompoundDrawablesWithIntrinsicBounds(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
 
-    .line 983
+    .line 971
     invoke-virtual {v3}, Landroid/widget/TextView;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v3
@@ -3085,15 +3056,15 @@
 
     iput v4, v3, Landroid/view/ViewGroup$LayoutParams;->width:I
 
-    goto/16 :goto_d
+    goto/16 :goto_c
 
-    .line 939
+    .line 927
     :cond_9
     iget-object v3, v1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast v3, Lorg/telegram/ui/Cells/HeaderCell;
 
-    .line 940
+    .line 928
     iget v4, v0, Lorg/telegram/ui/Adapters/DialogsAdapter;->dialogsType:I
 
     if-eq v4, v11, :cond_c
@@ -3106,7 +3077,7 @@
 
     goto :goto_2
 
-    .line 951
+    .line 939
     :cond_a
     iget v4, v0, Lorg/telegram/ui/Adapters/DialogsAdapter;->dialogsCount:I
 
@@ -3130,13 +3101,13 @@
 
     invoke-virtual {v3, v4}, Lorg/telegram/ui/Cells/HeaderCell;->setText(Ljava/lang/CharSequence;)V
 
-    goto/16 :goto_d
+    goto/16 :goto_c
 
     :cond_c
     :goto_2
     if-nez v2, :cond_d
 
-    .line 946
+    .line 934
     sget v4, Lorg/telegram/messenger/R$string;->ImportHeader:I
 
     const-string v5, "ImportHeader"
@@ -3147,9 +3118,9 @@
 
     invoke-virtual {v3, v4}, Lorg/telegram/ui/Cells/HeaderCell;->setText(Ljava/lang/CharSequence;)V
 
-    goto/16 :goto_d
+    goto/16 :goto_c
 
-    .line 948
+    .line 936
     :cond_d
     sget v4, Lorg/telegram/messenger/R$string;->ImportHeaderContacts:I
 
@@ -3161,36 +3132,36 @@
 
     invoke-virtual {v3, v4}, Lorg/telegram/ui/Cells/HeaderCell;->setText(Ljava/lang/CharSequence;)V
 
-    goto/16 :goto_d
+    goto/16 :goto_c
 
-    .line 933
+    .line 921
     :cond_e
     iget-object v3, v1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast v3, Lorg/telegram/ui/Cells/UserCell;
 
-    .line 934
+    .line 922
     invoke-virtual {v0, v2}, Lorg/telegram/ui/Adapters/DialogsAdapter;->getItem(I)Lorg/telegram/tgnet/TLObject;
 
     move-result-object v4
 
     check-cast v4, Lorg/telegram/tgnet/TLRPC$User;
 
-    .line 935
+    .line 923
     invoke-virtual {v3, v4, v5, v5, v6}, Lorg/telegram/ui/Cells/UserCell;->setData(Ljava/lang/Object;Ljava/lang/CharSequence;Ljava/lang/CharSequence;I)V
 
-    goto/16 :goto_d
+    goto/16 :goto_c
 
-    .line 899
+    .line 887
     :cond_f
     iget-object v3, v1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast v3, Lorg/telegram/ui/Cells/DialogsEmptyCell;
 
-    .line 900
+    .line 888
     iget v4, v0, Lorg/telegram/ui/Adapters/DialogsAdapter;->lastDialogsEmptyType:I
 
-    .line 901
+    .line 889
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/Adapters/DialogsAdapter;->dialogsEmptyType()I
 
     move-result v5
@@ -3201,16 +3172,16 @@
 
     invoke-virtual {v3, v5, v8}, Lorg/telegram/ui/Cells/DialogsEmptyCell;->setType(IZ)V
 
-    .line 902
+    .line 890
     iget v5, v0, Lorg/telegram/ui/Adapters/DialogsAdapter;->dialogsType:I
 
-    if-eq v5, v10, :cond_2c
+    if-eq v5, v10, :cond_2b
 
     const/16 v8, 0x8
 
-    if-eq v5, v8, :cond_2c
+    if-eq v5, v8, :cond_2b
 
-    if-nez v5, :cond_2c
+    if-nez v5, :cond_2b
 
     iget v5, v0, Lorg/telegram/ui/Adapters/DialogsAdapter;->currentAccount:I
 
@@ -3226,35 +3197,35 @@
 
     move-result v5
 
-    if-nez v5, :cond_2c
+    if-nez v5, :cond_2b
 
     invoke-direct/range {p0 .. p0}, Lorg/telegram/ui/Adapters/DialogsAdapter;->isArchive()Z
 
     move-result v5
 
-    if-nez v5, :cond_2c
+    if-nez v5, :cond_2b
 
     invoke-direct/range {p0 .. p0}, Lorg/telegram/ui/Adapters/DialogsAdapter;->isHiddenChats()Z
 
     move-result v5
 
-    if-nez v5, :cond_2c
+    if-nez v5, :cond_2b
 
-    .line 903
+    .line 891
     new-instance v5, Lorg/telegram/ui/Adapters/DialogsAdapter$$ExternalSyntheticLambda2;
 
     invoke-direct {v5, v0}, Lorg/telegram/ui/Adapters/DialogsAdapter$$ExternalSyntheticLambda2;-><init>(Lorg/telegram/ui/Adapters/DialogsAdapter;)V
 
     invoke-virtual {v3, v5}, Lorg/telegram/ui/Cells/DialogsEmptyCell;->setOnUtyanAnimationEndListener(Ljava/lang/Runnable;)V
 
-    .line 904
+    .line 892
     new-instance v5, Lorg/telegram/ui/Adapters/DialogsAdapter$$ExternalSyntheticLambda1;
 
     invoke-direct {v5, v0}, Lorg/telegram/ui/Adapters/DialogsAdapter$$ExternalSyntheticLambda1;-><init>(Lorg/telegram/ui/Adapters/DialogsAdapter;)V
 
     invoke-virtual {v3, v5}, Lorg/telegram/ui/Cells/DialogsEmptyCell;->setOnUtyanAnimationUpdateListener(Landroidx/core/util/Consumer;)V
 
-    .line 905
+    .line 893
     invoke-virtual {v3}, Lorg/telegram/ui/Cells/DialogsEmptyCell;->isUtyanAnimationTriggered()Z
 
     move-result v5
@@ -3265,19 +3236,19 @@
 
     if-nez v5, :cond_10
 
-    .line 906
+    .line 894
     iget-object v5, v0, Lorg/telegram/ui/Adapters/DialogsAdapter;->parentFragment:Lorg/telegram/ui/DialogsActivity;
 
     const/4 v8, 0x0
 
     invoke-virtual {v5, v8}, Lorg/telegram/ui/DialogsActivity;->setContactsAlpha(F)V
 
-    .line 907
+    .line 895
     iget-object v5, v0, Lorg/telegram/ui/Adapters/DialogsAdapter;->parentFragment:Lorg/telegram/ui/DialogsActivity;
 
     invoke-virtual {v5, v7}, Lorg/telegram/ui/DialogsActivity;->setScrollDisabled(Z)V
 
-    .line 909
+    .line 897
     :cond_10
     iget-object v5, v0, Lorg/telegram/ui/Adapters/DialogsAdapter;->onlineContacts:Ljava/util/ArrayList;
 
@@ -3285,58 +3256,58 @@
 
     if-nez v4, :cond_11
 
-    .line 910
+    .line 898
     invoke-virtual {v3}, Lorg/telegram/ui/Cells/DialogsEmptyCell;->isUtyanAnimationTriggered()Z
 
     move-result v4
 
-    if-nez v4, :cond_2c
+    if-nez v4, :cond_2b
 
-    .line 911
+    .line 899
     invoke-virtual {v3, v7}, Lorg/telegram/ui/Cells/DialogsEmptyCell;->startUtyanCollapseAnimation(Z)V
 
-    goto/16 :goto_d
+    goto/16 :goto_c
 
-    .line 913
+    .line 901
     :cond_11
     iget-boolean v4, v0, Lorg/telegram/ui/Adapters/DialogsAdapter;->forceUpdatingContacts:Z
 
     if-eqz v4, :cond_12
 
-    .line 914
+    .line 902
     iget v4, v0, Lorg/telegram/ui/Adapters/DialogsAdapter;->dialogsCount:I
 
-    if-nez v4, :cond_2c
+    if-nez v4, :cond_2b
 
-    .line 915
+    .line 903
     invoke-virtual {v3, v6}, Lorg/telegram/ui/Cells/DialogsEmptyCell;->startUtyanCollapseAnimation(Z)V
 
-    goto/16 :goto_d
+    goto/16 :goto_c
 
-    .line 917
+    .line 905
     :cond_12
     invoke-virtual {v3}, Lorg/telegram/ui/Cells/DialogsEmptyCell;->isUtyanAnimationTriggered()Z
 
     move-result v4
 
-    if-eqz v4, :cond_2c
+    if-eqz v4, :cond_2b
 
     iget v4, v0, Lorg/telegram/ui/Adapters/DialogsAdapter;->lastDialogsEmptyType:I
 
-    if-nez v4, :cond_2c
+    if-nez v4, :cond_2b
 
-    .line 918
+    .line 906
     invoke-virtual {v3}, Lorg/telegram/ui/Cells/DialogsEmptyCell;->startUtyanExpandAnimation()V
 
-    goto/16 :goto_d
+    goto/16 :goto_c
 
-    .line 928
+    .line 916
     :cond_13
     iget-object v3, v1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast v3, Lorg/telegram/ui/Cells/DialogMeUrlCell;
 
-    .line 929
+    .line 917
     invoke-virtual {v0, v2}, Lorg/telegram/ui/Adapters/DialogsAdapter;->getItem(I)Lorg/telegram/tgnet/TLObject;
 
     move-result-object v4
@@ -3345,9 +3316,9 @@
 
     invoke-virtual {v3, v4}, Lorg/telegram/ui/Cells/DialogMeUrlCell;->setRecentMeUrl(Lorg/telegram/tgnet/TLRPC$RecentMeUrl;)V
 
-    goto/16 :goto_d
+    goto/16 :goto_c
 
-    .line 799
+    .line 793
     :cond_14
     invoke-virtual {v0, v2}, Lorg/telegram/ui/Adapters/DialogsAdapter;->getItem(I)Lorg/telegram/tgnet/TLObject;
 
@@ -3357,21 +3328,21 @@
 
     add-int/lit8 v8, v2, 0x1
 
-    .line 800
+    .line 794
     invoke-virtual {v0, v8}, Lorg/telegram/ui/Adapters/DialogsAdapter;->getItem(I)Lorg/telegram/tgnet/TLObject;
 
     move-result-object v8
 
     check-cast v8, Lorg/telegram/tgnet/TLRPC$Dialog;
 
-    .line 801
+    .line 795
     iget v9, v0, Lorg/telegram/ui/Adapters/DialogsAdapter;->dialogsType:I
 
-    if-eq v9, v4, :cond_1c
+    if-eq v9, v4, :cond_1b
 
     const/16 v4, 0xf
 
-    if-eq v9, v4, :cond_1c
+    if-eq v9, v4, :cond_1b
 
     iget v4, v0, Lorg/telegram/ui/Adapters/DialogsAdapter;->initialDialogsType:I
 
@@ -3379,15 +3350,15 @@
 
     if-ne v4, v9, :cond_15
 
-    goto/16 :goto_7
+    goto/16 :goto_6
 
-    .line 870
+    .line 864
     :cond_15
     iget-object v4, v1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast v4, Lorg/telegram/ui/Cells/DialogCell;
 
-    .line 871
+    .line 865
     sget-boolean v5, Lorg/telegram/messenger/SharedConfig;->isDialogsCompactModeEnabled:Z
 
     invoke-virtual {v4, v5}, Lorg/telegram/ui/Cells/DialogCell;->setCompactMode(Z)V
@@ -3401,11 +3372,11 @@
     :cond_16
     move v5, v6
 
-    .line 872
+    .line 866
     :goto_3
     iput-boolean v5, v4, Lorg/telegram/ui/Cells/DialogCell;->useSeparator:Z
 
-    .line 873
+    .line 867
     iget-boolean v5, v3, Lorg/telegram/tgnet/TLRPC$Dialog;->pinned:Z
 
     if-eqz v5, :cond_17
@@ -3426,19 +3397,19 @@
     :goto_4
     iput-boolean v5, v4, Lorg/telegram/ui/Cells/DialogCell;->fullSeparator:Z
 
-    .line 874
+    .line 868
     iget v5, v0, Lorg/telegram/ui/Adapters/DialogsAdapter;->dialogsType:I
 
     if-nez v5, :cond_19
 
-    .line 875
+    .line 869
     invoke-static {}, Lorg/telegram/messenger/AndroidUtilities;->isTablet()Z
 
     move-result v5
 
     if-eqz v5, :cond_19
 
-    .line 876
+    .line 870
     iget-wide v8, v3, Lorg/telegram/tgnet/TLRPC$Dialog;->id:J
 
     iget-wide v10, v0, Lorg/telegram/ui/Adapters/DialogsAdapter;->openedDialogId:J
@@ -3457,7 +3428,7 @@
     :goto_5
     invoke-virtual {v4, v5}, Lorg/telegram/ui/Cells/DialogCell;->setDialogSelected(Z)V
 
-    .line 879
+    .line 873
     :cond_19
     iget-object v5, v0, Lorg/telegram/ui/Adapters/DialogsAdapter;->selectedDialogs:Ljava/util/ArrayList;
 
@@ -3473,130 +3444,70 @@
 
     invoke-virtual {v4, v5, v6}, Lorg/telegram/ui/Cells/DialogCell;->setChecked(ZZ)V
 
-    .line 881
+    .line 874
     iget v5, v0, Lorg/telegram/ui/Adapters/DialogsAdapter;->dialogsType:I
 
-    const/16 v8, 0x191
-
-    if-ne v5, v8, :cond_1a
-
-    .line 882
-    iget v5, v0, Lorg/telegram/ui/Adapters/DialogsAdapter;->currentAccount:I
-
-    invoke-static {v5}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
-
-    move-result-object v5
-
-    iget-object v5, v5, Lorg/telegram/messenger/MessagesController;->loadedBookmarkMessages:Ljava/util/HashMap;
-
-    iget-wide v8, v3, Lorg/telegram/tgnet/TLRPC$Dialog;->id:J
-
-    invoke-static {v8, v9}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v8
-
-    invoke-virtual {v5, v8}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v5
-
-    check-cast v5, Ljava/util/ArrayList;
-
-    invoke-virtual {v5, v6}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v5
-
-    move-object v12, v5
-
-    check-cast v12, Lorg/telegram/messenger/MessageObject;
-
-    .line 883
-    iget v5, v0, Lorg/telegram/ui/Adapters/DialogsAdapter;->dialogsType:I
-
-    invoke-virtual {v4, v5}, Lorg/telegram/ui/Cells/DialogCell;->setDialogsType(I)V
-
-    .line 884
-    invoke-virtual {v12}, Lorg/telegram/messenger/MessageObject;->getDialogId()J
-
-    move-result-wide v10
-
-    iget-object v5, v12, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
-
-    iget v13, v5, Lorg/telegram/tgnet/TLRPC$Message;->date:I
-
-    const/4 v14, 0x0
-
-    const/4 v15, 0x1
-
-    move-object v9, v4
-
-    invoke-virtual/range {v9 .. v15}, Lorg/telegram/ui/Cells/DialogCell;->setDialog(JLorg/telegram/messenger/MessageObject;IZZ)V
-
-    goto :goto_6
-
-    .line 886
-    :cond_1a
     iget v6, v0, Lorg/telegram/ui/Adapters/DialogsAdapter;->folderId:I
 
     invoke-virtual {v4, v3, v5, v6}, Lorg/telegram/ui/Cells/DialogCell;->setDialog(Lorg/telegram/tgnet/TLRPC$Dialog;II)V
 
-    .line 887
-    :goto_6
+    .line 875
     invoke-virtual {v4}, Lorg/telegram/ui/Cells/DialogCell;->checkHeight()V
 
-    .line 888
+    .line 876
     iget-boolean v5, v4, Lorg/telegram/ui/Cells/DialogCell;->collapsed:Z
 
     iget-boolean v6, v0, Lorg/telegram/ui/Adapters/DialogsAdapter;->collapsedView:Z
 
-    if-eq v5, v6, :cond_1b
+    if-eq v5, v6, :cond_1a
 
-    .line 889
+    .line 877
     iput-boolean v6, v4, Lorg/telegram/ui/Cells/DialogCell;->collapsed:Z
 
-    .line 890
+    .line 878
     invoke-virtual {v4}, Landroid/view/ViewGroup;->requestLayout()V
 
-    .line 892
-    :cond_1b
+    .line 880
+    :cond_1a
     iget-object v4, v0, Lorg/telegram/ui/Adapters/DialogsAdapter;->preloader:Lorg/telegram/ui/Adapters/DialogsAdapter$DialogsPreloader;
 
-    if-eqz v4, :cond_2c
+    if-eqz v4, :cond_2b
 
     const/16 v5, 0xa
 
-    if-ge v2, v5, :cond_2c
+    if-ge v2, v5, :cond_2b
 
-    .line 893
+    .line 881
     iget-wide v5, v3, Lorg/telegram/tgnet/TLRPC$Dialog;->id:J
 
     invoke-virtual {v4, v5, v6}, Lorg/telegram/ui/Adapters/DialogsAdapter$DialogsPreloader;->add(J)V
 
-    goto/16 :goto_d
+    goto/16 :goto_c
 
-    .line 802
-    :cond_1c
-    :goto_7
+    .line 796
+    :cond_1b
+    :goto_6
     iget-object v4, v1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast v4, Lorg/telegram/ui/Cells/ProfileSearchCell;
 
-    .line 803
+    .line 797
     invoke-virtual {v4}, Lorg/telegram/ui/Cells/ProfileSearchCell;->getDialogId()J
 
     move-result-wide v16
 
     const/4 v14, 0x0
 
-    .line 811
+    .line 805
     iget-wide v9, v3, Lorg/telegram/tgnet/TLRPC$Dialog;->id:J
 
     const-wide/16 v11, 0x0
 
     cmp-long v9, v9, v11
 
-    if-eqz v9, :cond_1d
+    if-eqz v9, :cond_1c
 
-    .line 812
+    .line 806
     iget v9, v0, Lorg/telegram/ui/Adapters/DialogsAdapter;->currentAccount:I
 
     invoke-static {v9}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -3615,14 +3526,14 @@
 
     move-result-object v9
 
-    if-eqz v9, :cond_1e
+    if-eqz v9, :cond_1d
 
-    .line 813
+    .line 807
     iget-object v10, v9, Lorg/telegram/tgnet/TLRPC$Chat;->migrated_to:Lorg/telegram/tgnet/TLRPC$InputChannel;
 
-    if-eqz v10, :cond_1e
+    if-eqz v10, :cond_1d
 
-    .line 814
+    .line 808
     iget v10, v0, Lorg/telegram/ui/Adapters/DialogsAdapter;->currentAccount:I
 
     invoke-static {v10}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -3641,32 +3552,32 @@
 
     move-result-object v10
 
-    if-eqz v10, :cond_1e
+    if-eqz v10, :cond_1d
 
     move-object v9, v10
 
-    goto :goto_8
+    goto :goto_7
 
-    :cond_1d
+    :cond_1c
     move-object v9, v5
 
-    :cond_1e
-    :goto_8
+    :cond_1d
+    :goto_7
     const-string v10, ""
 
-    if-eqz v9, :cond_26
+    if-eqz v9, :cond_25
 
-    .line 823
+    .line 817
     iget-object v5, v9, Lorg/telegram/tgnet/TLRPC$Chat;->title:Ljava/lang/String;
 
-    .line 825
+    .line 819
     iget v3, v0, Lorg/telegram/ui/Adapters/DialogsAdapter;->initialDialogsType:I
 
     sget v10, Lorg/telegram/ui/DialogsActivity;->DIALOGS_TYPE_ALBUMS:I
 
-    if-ne v3, v10, :cond_1f
+    if-ne v3, v10, :cond_1e
 
-    .line 826
+    .line 820
     sget v3, Lorg/telegram/messenger/R$string;->cloud_album:I
 
     invoke-static {v3}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
@@ -3677,50 +3588,50 @@
 
     move-result-object v3
 
-    :goto_9
+    :goto_8
     move-object v13, v3
 
     move-object v12, v5
 
     move-object v10, v9
 
-    goto/16 :goto_b
+    goto/16 :goto_a
 
-    .line 828
-    :cond_1f
+    .line 822
+    :cond_1e
     invoke-static {v9}, Lorg/telegram/messenger/ChatObject;->isChannel(Lorg/telegram/tgnet/TLRPC$Chat;)Z
 
     move-result v3
 
-    if-eqz v3, :cond_22
+    if-eqz v3, :cond_21
 
     iget-boolean v3, v9, Lorg/telegram/tgnet/TLRPC$Chat;->megagroup:Z
 
-    if-nez v3, :cond_22
+    if-nez v3, :cond_21
 
-    .line 829
+    .line 823
     iget v3, v9, Lorg/telegram/tgnet/TLRPC$Chat;->participants_count:I
 
-    if-eqz v3, :cond_20
+    if-eqz v3, :cond_1f
 
     const-string v10, "Subscribers"
 
-    .line 830
+    .line 824
     invoke-static {v10, v3}, Lorg/telegram/messenger/LocaleController;->formatPluralStringComma(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v3
 
-    goto :goto_9
+    goto :goto_8
 
-    .line 832
-    :cond_20
+    .line 826
+    :cond_1f
     invoke-static {v9}, Lorg/telegram/messenger/ChatObject;->isPublic(Lorg/telegram/tgnet/TLRPC$Chat;)Z
 
     move-result v3
 
-    if-nez v3, :cond_21
+    if-nez v3, :cond_20
 
-    .line 833
+    .line 827
     sget v3, Lorg/telegram/messenger/R$string;->ChannelPrivate:I
 
     const-string v10, "ChannelPrivate"
@@ -3733,10 +3644,10 @@
 
     move-result-object v3
 
-    goto :goto_9
+    goto :goto_8
 
-    .line 835
-    :cond_21
+    .line 829
+    :cond_20
     sget v3, Lorg/telegram/messenger/R$string;->ChannelPublic:I
 
     const-string v10, "ChannelPublic"
@@ -3749,30 +3660,30 @@
 
     move-result-object v3
 
-    goto :goto_9
+    goto :goto_8
 
-    .line 839
-    :cond_22
+    .line 833
+    :cond_21
     iget v3, v9, Lorg/telegram/tgnet/TLRPC$Chat;->participants_count:I
 
-    if-eqz v3, :cond_23
+    if-eqz v3, :cond_22
 
     const-string v10, "Members"
 
-    .line 840
+    .line 834
     invoke-static {v10, v3}, Lorg/telegram/messenger/LocaleController;->formatPluralStringComma(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v3
 
-    goto :goto_9
+    goto :goto_8
 
-    .line 842
-    :cond_23
+    .line 836
+    :cond_22
     iget-boolean v3, v9, Lorg/telegram/tgnet/TLRPC$Chat;->has_geo:Z
 
-    if-eqz v3, :cond_24
+    if-eqz v3, :cond_23
 
-    .line 843
+    .line 837
     sget v3, Lorg/telegram/messenger/R$string;->MegaLocation:I
 
     const-string v10, "MegaLocation"
@@ -3781,17 +3692,17 @@
 
     move-result-object v3
 
-    goto :goto_9
+    goto :goto_8
 
-    .line 844
-    :cond_24
+    .line 838
+    :cond_23
     invoke-static {v9}, Lorg/telegram/messenger/ChatObject;->isPublic(Lorg/telegram/tgnet/TLRPC$Chat;)Z
 
     move-result v3
 
-    if-nez v3, :cond_25
+    if-nez v3, :cond_24
 
-    .line 845
+    .line 839
     sget v3, Lorg/telegram/messenger/R$string;->MegaPrivate:I
 
     const-string v10, "MegaPrivate"
@@ -3804,10 +3715,10 @@
 
     move-result-object v3
 
-    goto :goto_9
+    goto :goto_8
 
-    .line 847
-    :cond_25
+    .line 841
+    :cond_24
     sget v3, Lorg/telegram/messenger/R$string;->MegaPublic:I
 
     const-string v10, "MegaPublic"
@@ -3820,10 +3731,10 @@
 
     move-result-object v3
 
-    goto :goto_9
+    goto :goto_8
 
-    .line 853
-    :cond_26
+    .line 847
+    :cond_25
     iget v9, v0, Lorg/telegram/ui/Adapters/DialogsAdapter;->currentAccount:I
 
     invoke-static {v9}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -3840,26 +3751,26 @@
 
     move-result-object v3
 
-    if-eqz v3, :cond_29
+    if-eqz v3, :cond_28
 
-    .line 856
+    .line 850
     invoke-static {v3}, Lorg/telegram/messenger/UserObject;->getUserName(Lorg/telegram/tgnet/TLRPC$User;)Ljava/lang/String;
 
     move-result-object v5
 
-    .line 857
+    .line 851
     invoke-static {v3}, Lorg/telegram/messenger/UserObject;->isReplyUser(Lorg/telegram/tgnet/TLRPC$User;)Z
 
     move-result v9
 
-    if-nez v9, :cond_28
+    if-nez v9, :cond_27
 
-    .line 858
+    .line 852
     iget-boolean v9, v3, Lorg/telegram/tgnet/TLRPC$User;->bot:Z
 
-    if-eqz v9, :cond_27
+    if-eqz v9, :cond_26
 
-    .line 859
+    .line 853
     sget v9, Lorg/telegram/messenger/R$string;->Bot:I
 
     const-string v10, "Bot"
@@ -3868,53 +3779,53 @@
 
     move-result-object v9
 
-    goto :goto_a
+    goto :goto_9
 
-    .line 861
-    :cond_27
+    .line 855
+    :cond_26
     iget v9, v0, Lorg/telegram/ui/Adapters/DialogsAdapter;->currentAccount:I
 
     invoke-static {v9, v3}, Lorg/telegram/messenger/LocaleController;->formatUserStatus(ILorg/telegram/tgnet/TLRPC$User;)Ljava/lang/String;
 
     move-result-object v9
 
-    :goto_a
+    :goto_9
     move-object v10, v3
 
     move-object v12, v5
 
     move-object v13, v9
 
-    goto :goto_b
+    goto :goto_a
 
-    :cond_28
+    :cond_27
     move-object v12, v5
 
     move-object v13, v10
 
     move-object v10, v3
 
-    goto :goto_b
+    goto :goto_a
 
-    :cond_29
+    :cond_28
     move-object v12, v5
 
     move-object v13, v10
 
     move-object v10, v12
 
-    :goto_b
-    if-eqz v8, :cond_2a
+    :goto_a
+    if-eqz v8, :cond_29
 
     move v3, v7
 
-    goto :goto_c
+    goto :goto_b
 
-    :cond_2a
+    :cond_29
     move v3, v6
 
-    .line 866
-    :goto_c
+    .line 860
+    :goto_b
     iput-boolean v3, v4, Lorg/telegram/ui/Cells/ProfileSearchCell;->useSeparator:Z
 
     const/4 v11, 0x0
@@ -3923,10 +3834,10 @@
 
     move-object v9, v4
 
-    .line 867
+    .line 861
     invoke-virtual/range {v9 .. v15}, Lorg/telegram/ui/Cells/ProfileSearchCell;->setData(Ljava/lang/Object;Lorg/telegram/tgnet/TLRPC$EncryptedChat;Ljava/lang/CharSequence;Ljava/lang/CharSequence;ZZ)V
 
-    .line 868
+    .line 862
     iget-object v3, v0, Lorg/telegram/ui/Adapters/DialogsAdapter;->selectedDialogs:Ljava/util/ArrayList;
 
     invoke-virtual {v4}, Lorg/telegram/ui/Cells/ProfileSearchCell;->getDialogId()J
@@ -3947,33 +3858,31 @@
 
     cmp-long v5, v16, v8
 
-    if-nez v5, :cond_2b
+    if-nez v5, :cond_2a
 
     move v6, v7
 
-    :cond_2b
+    :cond_2a
     invoke-virtual {v4, v3, v6}, Lorg/telegram/ui/Cells/ProfileSearchCell;->setChecked(ZZ)V
 
-    .line 1025
-    :cond_2c
-    :goto_d
+    .line 1013
+    :cond_2b
+    :goto_c
     iget v3, v0, Lorg/telegram/ui/Adapters/DialogsAdapter;->dialogsCount:I
 
     add-int/2addr v3, v7
 
-    if-lt v2, v3, :cond_2d
+    if-lt v2, v3, :cond_2c
 
-    .line 1026
+    .line 1014
     iget-object v1, v1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     const/high16 v2, 0x3f800000    # 1.0f
 
     invoke-virtual {v1, v2}, Landroid/view/View;->setAlpha(F)V
 
-    :cond_2d
+    :cond_2c
     return-void
-
-    nop
 
     :pswitch_data_0
     .packed-switch 0xe
@@ -4677,12 +4586,12 @@
 .method public pause()V
     .locals 1
 
-    .line 1089
+    .line 1077
     iget-object v0, p0, Lorg/telegram/ui/Adapters/DialogsAdapter;->preloader:Lorg/telegram/ui/Adapters/DialogsAdapter$DialogsPreloader;
 
     if-eqz v0, :cond_0
 
-    .line 1090
+    .line 1078
     invoke-virtual {v0}, Lorg/telegram/ui/Adapters/DialogsAdapter$DialogsPreloader;->pause()V
 
     :cond_0
@@ -4692,12 +4601,12 @@
 .method public resume()V
     .locals 1
 
-    .line 1083
+    .line 1071
     iget-object v0, p0, Lorg/telegram/ui/Adapters/DialogsAdapter;->preloader:Lorg/telegram/ui/Adapters/DialogsAdapter$DialogsPreloader;
 
     if-eqz v0, :cond_0
 
-    .line 1084
+    .line 1072
     invoke-virtual {v0}, Lorg/telegram/ui/Adapters/DialogsAdapter$DialogsPreloader;->resume()V
 
     :cond_0
@@ -4707,7 +4616,7 @@
 .method public setArchivedPullDrawable(Lorg/telegram/ui/Components/PullForegroundDrawable;)V
     .locals 0
 
-    .line 1073
+    .line 1061
     iput-object p1, p0, Lorg/telegram/ui/Adapters/DialogsAdapter;->pullForegroundDrawable:Lorg/telegram/ui/Components/PullForegroundDrawable;
 
     return-void
@@ -4716,14 +4625,14 @@
 .method public setCollapsedView(ZLorg/telegram/ui/Components/RecyclerListView;)V
     .locals 3
 
-    .line 1114
+    .line 1102
     iput-boolean p1, p0, Lorg/telegram/ui/Adapters/DialogsAdapter;->collapsedView:Z
 
     const/4 v0, 0x0
 
     move v1, v0
 
-    .line 1115
+    .line 1103
     :goto_0
     invoke-virtual {p2}, Landroid/view/ViewGroup;->getChildCount()I
 
@@ -4731,7 +4640,7 @@
 
     if-ge v1, v2, :cond_1
 
-    .line 1116
+    .line 1104
     invoke-virtual {p2, v1}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v2
@@ -4740,7 +4649,7 @@
 
     if-eqz v2, :cond_0
 
-    .line 1117
+    .line 1105
     invoke-virtual {p2, v1}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v2
@@ -4757,7 +4666,7 @@
     :cond_1
     move v1, v0
 
-    .line 1120
+    .line 1108
     :goto_1
     invoke-virtual {p2}, Landroidx/recyclerview/widget/RecyclerView;->getCachedChildCount()I
 
@@ -4765,7 +4674,7 @@
 
     if-ge v1, v2, :cond_3
 
-    .line 1121
+    .line 1109
     invoke-virtual {p2, v1}, Landroidx/recyclerview/widget/RecyclerView;->getCachedChildAt(I)Landroid/view/View;
 
     move-result-object v2
@@ -4774,7 +4683,7 @@
 
     if-eqz v2, :cond_2
 
-    .line 1122
+    .line 1110
     invoke-virtual {p2, v1}, Landroidx/recyclerview/widget/RecyclerView;->getCachedChildAt(I)Landroid/view/View;
 
     move-result-object v2
@@ -4791,7 +4700,7 @@
     :cond_3
     move v1, v0
 
-    .line 1125
+    .line 1113
     :goto_2
     invoke-virtual {p2}, Landroidx/recyclerview/widget/RecyclerView;->getHiddenChildCount()I
 
@@ -4799,7 +4708,7 @@
 
     if-ge v1, v2, :cond_5
 
-    .line 1126
+    .line 1114
     invoke-virtual {p2, v1}, Landroidx/recyclerview/widget/RecyclerView;->getHiddenChildAt(I)Landroid/view/View;
 
     move-result-object v2
@@ -4808,7 +4717,7 @@
 
     if-eqz v2, :cond_4
 
-    .line 1127
+    .line 1115
     invoke-virtual {p2, v1}, Landroidx/recyclerview/widget/RecyclerView;->getHiddenChildAt(I)Landroid/view/View;
 
     move-result-object v2
@@ -4822,7 +4731,7 @@
 
     goto :goto_2
 
-    .line 1130
+    .line 1118
     :cond_5
     :goto_3
     invoke-virtual {p2}, Landroidx/recyclerview/widget/RecyclerView;->getAttachedScrapChildCount()I
@@ -4831,7 +4740,7 @@
 
     if-ge v0, v1, :cond_7
 
-    .line 1131
+    .line 1119
     invoke-virtual {p2, v0}, Landroidx/recyclerview/widget/RecyclerView;->getAttachedScrapChildAt(I)Landroid/view/View;
 
     move-result-object v1
@@ -4840,7 +4749,7 @@
 
     if-eqz v1, :cond_6
 
-    .line 1132
+    .line 1120
     invoke-virtual {p2, v0}, Landroidx/recyclerview/widget/RecyclerView;->getAttachedScrapChildAt(I)Landroid/view/View;
 
     move-result-object v1
@@ -4908,7 +4817,7 @@
 .method public setForceShowEmptyCell(Z)V
     .locals 0
 
-    .line 1252
+    .line 1240
     iput-boolean p1, p0, Lorg/telegram/ui/Adapters/DialogsAdapter;->forceShowEmptyCell:Z
 
     return-void
@@ -4917,7 +4826,7 @@
 .method public setForceUpdatingContacts(Z)V
     .locals 0
 
-    .line 1039
+    .line 1027
     iput-boolean p1, p0, Lorg/telegram/ui/Adapters/DialogsAdapter;->forceUpdatingContacts:Z
 
     return-void
@@ -4937,7 +4846,7 @@
 
     const/4 v0, 0x1
 
-    .line 1110
+    .line 1098
     iput-boolean v0, p0, Lorg/telegram/ui/Adapters/DialogsAdapter;->isTransitionSupport:Z
 
     return-void

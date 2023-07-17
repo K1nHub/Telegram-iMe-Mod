@@ -5,7 +5,7 @@ public class TLRPC$TL_messages_getPollVotes extends TLObject {
     public int flags;
 
     /* renamed from: id */
-    public int f1528id;
+    public int f1610id;
     public int limit;
     public String offset;
     public byte[] option;
@@ -21,7 +21,7 @@ public class TLRPC$TL_messages_getPollVotes extends TLObject {
         abstractSerializedData.writeInt32(constructor);
         abstractSerializedData.writeInt32(this.flags);
         this.peer.serializeToStream(abstractSerializedData);
-        abstractSerializedData.writeInt32(this.f1528id);
+        abstractSerializedData.writeInt32(this.f1610id);
         if ((this.flags & 1) != 0) {
             abstractSerializedData.writeByteArray(this.option);
         }

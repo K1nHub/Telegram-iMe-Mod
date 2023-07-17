@@ -42,7 +42,7 @@ public final class CryptoLocalWalletRepositoryImpl implements CryptoLocalWalletR
     @Override // com.iMe.storage.domain.repository.crypto.CryptoLocalWalletRepository
     public Observable<Result<Wallet>> createWallet(BlockchainType blockchainType) {
         Intrinsics.checkNotNullParameter(blockchainType, "blockchainType");
-        Observable<Result<Wallet>> onErrorReturn = this.walletManager.createWallet(blockchainType).onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new C1861x26a9e708(this.errorHandler)));
+        Observable<Result<Wallet>> onErrorReturn = this.walletManager.createWallet(blockchainType).onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new C1869x26a9e708(this.errorHandler)));
         Intrinsics.checkNotNullExpressionValue(onErrorReturn, "errorHandler: ErrorHandl…ndleError(it).toError() }");
         return onErrorReturn;
     }
@@ -66,7 +66,7 @@ public final class CryptoLocalWalletRepositoryImpl implements CryptoLocalWalletR
             arrayList2.add(this.walletManager.unlockWallet(newGuid, oldGuid, CryptoExtKt.safeAesDecrypt(this.cryptoPreferenceHelper.getWalletSeedByGuid(oldGuid, blockchainType2), password), password, blockchainType2));
         }
         if (CollectionExtKt.isSingletonList(arrayList2)) {
-            Observable<Result<List<Wallet>>> map = ((Observable) CollectionsKt.first((List<? extends Object>) arrayList2)).map(new ObservableExtKt$sam$i$io_reactivex_functions_Function$0(new C1866x36424441(this, password)));
+            Observable<Result<List<Wallet>>> map = ((Observable) CollectionsKt.first((List<? extends Object>) arrayList2)).map(new ObservableExtKt$sam$i$io_reactivex_functions_Function$0(new C1874x36424441(this, password)));
             Intrinsics.checkNotNullExpressionValue(map, "crossinline body: (T) ->…ult as? R\n        }\n    }");
             return map;
         }
@@ -97,6 +97,16 @@ public final class CryptoLocalWalletRepositoryImpl implements CryptoLocalWalletR
     }
 
     @Override // com.iMe.storage.domain.repository.crypto.CryptoLocalWalletRepository
+    public Observable<Result<String>> getPasswordByPinCodeWithValidation(String pinCode, BlockchainType blockchainType) {
+        Intrinsics.checkNotNullParameter(pinCode, "pinCode");
+        Intrinsics.checkNotNullParameter(blockchainType, "blockchainType");
+        String safeAesDecrypt = CryptoExtKt.safeAesDecrypt(this.cryptoPreferenceHelper.getWalletPassword(), pinCode);
+        Observable map = isValidPasswordForWallet(safeAesDecrypt, blockchainType).map(new ObservableExtKt$sam$i$io_reactivex_functions_Function$0(new C1870x4459ea9d(safeAesDecrypt)));
+        Intrinsics.checkNotNullExpressionValue(map, "crossinline body: (T) ->…ult as? R\n        }\n    }");
+        return map;
+    }
+
+    @Override // com.iMe.storage.domain.repository.crypto.CryptoLocalWalletRepository
     public Observable<Result<Boolean>> isValidPasswordForWallet(String password, BlockchainType blockchainType) {
         Intrinsics.checkNotNullParameter(password, "password");
         Intrinsics.checkNotNullParameter(blockchainType, "blockchainType");
@@ -111,19 +121,9 @@ public final class CryptoLocalWalletRepositoryImpl implements CryptoLocalWalletR
     public Observable<Result<Boolean>> isValidSeed(String seed, BlockchainType blockchainType) {
         Intrinsics.checkNotNullParameter(seed, "seed");
         Intrinsics.checkNotNullParameter(blockchainType, "blockchainType");
-        Observable flatMap = this.walletManager.generateAddressByMnemonic(seed, blockchainType).flatMap(new ObservableExtKt$sam$i$io_reactivex_functions_Function$0(new C1865xf78a2b72(this, blockchainType)));
+        Observable flatMap = this.walletManager.generateAddressByMnemonic(seed, blockchainType).flatMap(new ObservableExtKt$sam$i$io_reactivex_functions_Function$0(new C1873xf78a2b72(this, blockchainType)));
         Intrinsics.checkNotNullExpressionValue(flatMap, "crossinline body: (T) ->…e.empty()\n        }\n    }");
         return flatMap;
-    }
-
-    @Override // com.iMe.storage.domain.repository.crypto.CryptoLocalWalletRepository
-    public Observable<Result<Boolean>> isValidRestoredAddress(String seed, String linkedAddress, BlockchainType blockchainType) {
-        Intrinsics.checkNotNullParameter(seed, "seed");
-        Intrinsics.checkNotNullParameter(linkedAddress, "linkedAddress");
-        Intrinsics.checkNotNullParameter(blockchainType, "blockchainType");
-        Observable map = this.walletManager.generateAddressByMnemonic(seed, blockchainType).map(new ObservableExtKt$sam$i$io_reactivex_functions_Function$0(new C1864x41e0c8d0(linkedAddress)));
-        Intrinsics.checkNotNullExpressionValue(map, "crossinline body: (T) ->…ult as? R\n        }\n    }");
-        return map;
     }
 
     @Override // com.iMe.storage.domain.repository.crypto.CryptoLocalWalletRepository
@@ -132,9 +132,9 @@ public final class CryptoLocalWalletRepositoryImpl implements CryptoLocalWalletR
         Intrinsics.checkNotNullParameter(seed, "seed");
         Intrinsics.checkNotNullParameter(password, "password");
         Intrinsics.checkNotNullParameter(blockchainType, "blockchainType");
-        Observable<R> map = this.walletManager.importWallet(guid, seed, password, blockchainType).map(new ObservableExtKt$sam$i$io_reactivex_functions_Function$0(new C1863x966593e2(this, password)));
+        Observable<R> map = this.walletManager.importWallet(guid, seed, password, blockchainType).map(new ObservableExtKt$sam$i$io_reactivex_functions_Function$0(new C1872x966593e2(this, password)));
         Intrinsics.checkNotNullExpressionValue(map, "crossinline body: (T) ->…ult as? R\n        }\n    }");
-        Observable<Result<Wallet>> onErrorReturn = map.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new C1862x1954a0ff(this.errorHandler)));
+        Observable<Result<Wallet>> onErrorReturn = map.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new C1871x1954a0ff(this.errorHandler)));
         Intrinsics.checkNotNullExpressionValue(onErrorReturn, "errorHandler: ErrorHandl…ndleError(it).toError() }");
         return onErrorReturn;
     }

@@ -34,7 +34,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nObservableExt.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ObservableExt.kt\ncom/iMe/storage/domain/utils/extentions/ObservableExtKt$flatMapSuccess$1\n+ 2 EthWalletApproveDataSourceImpl.kt\ncom/iMe/storage/data/datasource/approve/impl/EthWalletApproveDataSourceImpl\n+ 3 FirebaseExt.kt\ncom/iMe/storage/data/utils/extentions/FirebaseExtKt\n*L\n1#1,80:1\n31#2,9:81\n70#3:90\n*S KotlinDebug\n*F\n+ 1 EthWalletApproveDataSourceImpl.kt\ncom/iMe/storage/data/datasource/approve/impl/EthWalletApproveDataSourceImpl\n*L\n39#1:90\n*E\n"
+    value = "SMAP\nObservableExt.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ObservableExt.kt\ncom/iMe/storage/domain/utils/extentions/ObservableExtKt$flatMapSuccess$1\n+ 2 EthWalletApproveDataSourceImpl.kt\ncom/iMe/storage/data/datasource/approve/impl/EthWalletApproveDataSourceImpl\n+ 3 FirebaseExt.kt\ncom/iMe/storage/data/utils/extentions/FirebaseExtKt\n*L\n1#1,92:1\n31#2,9:93\n70#3:102\n*S KotlinDebug\n*F\n+ 1 EthWalletApproveDataSourceImpl.kt\ncom/iMe/storage/data/datasource/approve/impl/EthWalletApproveDataSourceImpl\n*L\n39#1:102\n*E\n"
 .end annotation
 
 
@@ -88,14 +88,14 @@
 
     if-eqz v0, :cond_1
 
-    .line 81
+    .line 93
     iget-object v0, p0, Lcom/iMe/storage/data/datasource/approve/impl/EthWalletApproveDataSourceImpl$approve$$inlined$flatMapSuccess$1;->this$0:Lcom/iMe/storage/data/datasource/approve/impl/EthWalletApproveDataSourceImpl;
 
     invoke-static {v0}, Lcom/iMe/storage/data/datasource/approve/impl/EthWalletApproveDataSourceImpl;->access$getSwapApi$p(Lcom/iMe/storage/data/datasource/approve/impl/EthWalletApproveDataSourceImpl;)Lcom/iMe/storage/data/network/api/own/SwapApi;
 
     move-result-object v0
 
-    .line 84
+    .line 96
     invoke-virtual {p1}, Lcom/iMe/storage/domain/model/Result;->getData()Ljava/lang/Object;
 
     move-result-object p1
@@ -106,21 +106,17 @@
 
     const-string p1, ""
 
-    .line 85
+    .line 97
     :cond_0
     iget-object v1, p0, Lcom/iMe/storage/data/datasource/approve/impl/EthWalletApproveDataSourceImpl$approve$$inlined$flatMapSuccess$1;->$args$inlined:Lcom/iMe/storage/domain/model/crypto/send/TransactionArgs;
 
     check-cast v1, Lcom/iMe/storage/domain/model/crypto/swap/ApproveArgs$Dex;
 
-    invoke-virtual {v1}, Lcom/iMe/storage/domain/model/crypto/swap/ApproveArgs$Dex;->getNetworkType()Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    invoke-virtual {v1}, Lcom/iMe/storage/domain/model/crypto/swap/ApproveArgs$Dex;->getNetworkId()Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-virtual {v1}, Ljava/lang/Enum;->name()Ljava/lang/String;
-
-    move-result-object v1
-
-    .line 86
+    .line 98
     iget-object v2, p0, Lcom/iMe/storage/data/datasource/approve/impl/EthWalletApproveDataSourceImpl$approve$$inlined$flatMapSuccess$1;->$args$inlined:Lcom/iMe/storage/domain/model/crypto/send/TransactionArgs;
 
     check-cast v2, Lcom/iMe/storage/domain/model/crypto/swap/ApproveArgs$Dex;
@@ -133,17 +129,17 @@
 
     move-result-object v2
 
-    .line 83
+    .line 95
     new-instance v3, Lcom/iMe/storage/data/network/model/request/crypto/swap/SendCryptoApproveTransactionRequest;
 
     invoke-direct {v3, p1, v2, v1}, Lcom/iMe/storage/data/network/model/request/crypto/swap/SendCryptoApproveTransactionRequest;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 82
+    .line 94
     invoke-interface {v0, v3}, Lcom/iMe/storage/data/network/api/own/SwapApi;->sendCryptoApproveTransaction(Lcom/iMe/storage/data/network/model/request/crypto/swap/SendCryptoApproveTransactionRequest;)Lio/reactivex/Observable;
 
     move-result-object p1
 
-    .line 89
+    .line 101
     iget-object v0, p0, Lcom/iMe/storage/data/datasource/approve/impl/EthWalletApproveDataSourceImpl$approve$$inlined$flatMapSuccess$1;->this$0:Lcom/iMe/storage/data/datasource/approve/impl/EthWalletApproveDataSourceImpl;
 
     invoke-static {v0}, Lcom/iMe/storage/data/datasource/approve/impl/EthWalletApproveDataSourceImpl;->access$getFirebaseErrorHandler$p(Lcom/iMe/storage/data/datasource/approve/impl/EthWalletApproveDataSourceImpl;)Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;

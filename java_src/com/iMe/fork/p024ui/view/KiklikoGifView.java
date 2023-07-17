@@ -15,8 +15,8 @@ import kotlin.LazyKt__LazyJVMKt;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.Utilities;
-import org.telegram.p044ui.ActionBar.Theme;
-import org.telegram.p044ui.Components.LayoutHelper;
+import org.telegram.p043ui.ActionBar.Theme;
+import org.telegram.p043ui.Components.LayoutHelper;
 /* compiled from: KiklikoGifView.kt */
 /* renamed from: com.iMe.fork.ui.view.KiklikoGifView */
 /* loaded from: classes3.dex */

@@ -2,34 +2,32 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lcom/iMe/fork/utils/Callbacks$Callback1;
+.implements Lcom/iMe/fork/utils/Callbacks$Callback;
 
 
 # instance fields
-.field public final synthetic f$0:Lcom/iMe/fork/utils/Callbacks$Callback;
+.field public final synthetic f$0:Lorg/telegram/ui/ActionBar/BaseFragment;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lcom/iMe/fork/utils/Callbacks$Callback;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/ActionBar/BaseFragment;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lcom/iMe/utils/dialogs/DialogsFactoryKt$$ExternalSyntheticLambda6;->f$0:Lcom/iMe/fork/utils/Callbacks$Callback;
+    iput-object p1, p0, Lcom/iMe/utils/dialogs/DialogsFactoryKt$$ExternalSyntheticLambda6;->f$0:Lorg/telegram/ui/ActionBar/BaseFragment;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;)V
+.method public final invoke()V
     .locals 1
 
-    iget-object v0, p0, Lcom/iMe/utils/dialogs/DialogsFactoryKt$$ExternalSyntheticLambda6;->f$0:Lcom/iMe/fork/utils/Callbacks$Callback;
+    iget-object v0, p0, Lcom/iMe/utils/dialogs/DialogsFactoryKt$$ExternalSyntheticLambda6;->f$0:Lorg/telegram/ui/ActionBar/BaseFragment;
 
-    check-cast p1, Ljava/lang/Integer;
-
-    invoke-static {v0, p1}, Lcom/iMe/utils/dialogs/DialogsFactoryKt;->$r8$lambda$gAV4b3DPBSmWgfgKk9h-_2oLXq0(Lcom/iMe/fork/utils/Callbacks$Callback;Ljava/lang/Integer;)V
+    invoke-static {v0}, Lcom/iMe/utils/dialogs/DialogsFactoryKt;->$r8$lambda$JI8RGfkJe8cdLn4DR0pQWA_x-x4(Lorg/telegram/ui/ActionBar/BaseFragment;)V
 
     return-void
 .end method

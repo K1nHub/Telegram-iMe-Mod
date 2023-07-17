@@ -9,7 +9,7 @@ import moxy.viewstate.strategy.alias.OneExecution;
 /* compiled from: WalletPrivacySettingsView.kt */
 @OneExecution
 /* renamed from: com.iMe.ui.wallet.crypto.settings.privacy.WalletPrivacySettingsView */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public interface WalletPrivacySettingsView extends BaseView {
     @AddToEndSingle
     void onSuccessLoadPrivacySettings(List<Long> list, int i, int i2);

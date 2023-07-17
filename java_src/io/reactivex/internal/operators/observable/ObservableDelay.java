@@ -36,13 +36,13 @@ public final class ObservableDelay<T> extends AbstractObservableWithUpstream<T, 
         Disposable upstream;
 
         /* renamed from: w */
-        final Scheduler.Worker f454w;
+        final Scheduler.Worker f536w;
 
         DelayObserver(Observer<? super T> observer, long j, TimeUnit timeUnit, Scheduler.Worker worker, boolean z) {
             this.downstream = observer;
             this.delay = j;
             this.unit = timeUnit;
-            this.f454w = worker;
+            this.f536w = worker;
             this.delayError = z;
         }
 
@@ -56,43 +56,43 @@ public final class ObservableDelay<T> extends AbstractObservableWithUpstream<T, 
 
         @Override // io.reactivex.Observer
         public void onNext(T t) {
-            this.f454w.schedule(new OnNext(t), this.delay, this.unit);
+            this.f536w.schedule(new OnNext(t), this.delay, this.unit);
         }
 
         @Override // io.reactivex.Observer
         public void onError(Throwable th) {
-            this.f454w.schedule(new OnError(th), this.delayError ? this.delay : 0L, this.unit);
+            this.f536w.schedule(new OnError(th), this.delayError ? this.delay : 0L, this.unit);
         }
 
         @Override // io.reactivex.Observer
         public void onComplete() {
-            this.f454w.schedule(new OnComplete(), this.delay, this.unit);
+            this.f536w.schedule(new OnComplete(), this.delay, this.unit);
         }
 
         @Override // io.reactivex.disposables.Disposable
         public void dispose() {
             this.upstream.dispose();
-            this.f454w.dispose();
+            this.f536w.dispose();
         }
 
         @Override // io.reactivex.disposables.Disposable
         public boolean isDisposed() {
-            return this.f454w.isDisposed();
+            return this.f536w.isDisposed();
         }
 
         /* loaded from: classes4.dex */
         final class OnNext implements Runnable {
 
             /* renamed from: t */
-            private final T f455t;
+            private final T f537t;
 
             OnNext(T t) {
-                this.f455t = t;
+                this.f537t = t;
             }
 
             @Override // java.lang.Runnable
             public void run() {
-                DelayObserver.this.downstream.onNext((T) this.f455t);
+                DelayObserver.this.downstream.onNext((T) this.f537t);
             }
         }
 
@@ -109,7 +109,7 @@ public final class ObservableDelay<T> extends AbstractObservableWithUpstream<T, 
                 try {
                     DelayObserver.this.downstream.onError(this.throwable);
                 } finally {
-                    DelayObserver.this.f454w.dispose();
+                    DelayObserver.this.f536w.dispose();
                 }
             }
         }
@@ -124,7 +124,7 @@ public final class ObservableDelay<T> extends AbstractObservableWithUpstream<T, 
                 try {
                     DelayObserver.this.downstream.onComplete();
                 } finally {
-                    DelayObserver.this.f454w.dispose();
+                    DelayObserver.this.f536w.dispose();
                 }
             }
         }

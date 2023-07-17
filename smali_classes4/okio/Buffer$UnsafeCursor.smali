@@ -419,7 +419,7 @@
     :cond_7
     new-instance v1, Ljava/lang/IllegalStateException;
 
-    const-string v2, "resizeBuffer() only permitted for read/write buffers"
+    const-string/jumbo v2, "resizeBuffer() only permitted for read/write buffers"
 
     invoke-virtual {v2}, Ljava/lang/Object;->toString()Ljava/lang/String;
 

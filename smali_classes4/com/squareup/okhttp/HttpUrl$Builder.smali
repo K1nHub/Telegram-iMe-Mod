@@ -768,7 +768,7 @@
     :cond_1
     new-instance v0, Ljava/lang/IllegalStateException;
 
-    const-string v1, "scheme == null"
+    const-string/jumbo v1, "scheme == null"
 
     invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
@@ -952,7 +952,7 @@
     :cond_2
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
-    const-string v0, "scheme == null"
+    const-string/jumbo v0, "scheme == null"
 
     invoke-direct {p1, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 

@@ -34,7 +34,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nObservableExt.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ObservableExt.kt\ncom/iMe/storage/domain/utils/extentions/ObservableExtKt$flatMapSuccess$1\n+ 2 StakingDataSourceImpl.kt\ncom/iMe/i_staking/datasource/StakingDataSourceImpl\n+ 3 FirebaseExt.kt\ncom/iMe/storage/data/utils/extentions/FirebaseExtKt\n*L\n1#1,80:1\n32#2,8:81\n70#3:89\n*S KotlinDebug\n*F\n+ 1 StakingDataSourceImpl.kt\ncom/iMe/i_staking/datasource/StakingDataSourceImpl\n*L\n39#1:89\n*E\n"
+    value = "SMAP\nObservableExt.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ObservableExt.kt\ncom/iMe/storage/domain/utils/extentions/ObservableExtKt$flatMapSuccess$1\n+ 2 StakingDataSourceImpl.kt\ncom/iMe/i_staking/datasource/StakingDataSourceImpl\n+ 3 FirebaseExt.kt\ncom/iMe/storage/data/utils/extentions/FirebaseExtKt\n*L\n1#1,92:1\n32#2,8:93\n70#3:101\n*S KotlinDebug\n*F\n+ 1 StakingDataSourceImpl.kt\ncom/iMe/i_staking/datasource/StakingDataSourceImpl\n*L\n39#1:101\n*E\n"
 .end annotation
 
 
@@ -88,20 +88,20 @@
 
     if-eqz v0, :cond_1
 
-    .line 81
+    .line 93
     iget-object v0, p0, Lcom/iMe/i_staking/datasource/StakingDataSourceImpl$sendApprovalExecute$$inlined$flatMapSuccess$1;->this$0:Lcom/iMe/i_staking/datasource/StakingDataSourceImpl;
 
     invoke-static {v0}, Lcom/iMe/i_staking/datasource/StakingDataSourceImpl;->access$getStakingApi$p(Lcom/iMe/i_staking/datasource/StakingDataSourceImpl;)Lcom/iMe/i_staking/StakingApi;
 
     move-result-object v0
 
-    .line 83
+    .line 95
     new-instance v1, Lcom/iMe/i_staking/request/StakingTokenActionExecuteRequest;
 
-    .line 84
+    .line 96
     iget-object v2, p0, Lcom/iMe/i_staking/datasource/StakingDataSourceImpl$sendApprovalExecute$$inlined$flatMapSuccess$1;->$wrappedAction$inlined:Ljava/lang/String;
 
-    .line 85
+    .line 97
     invoke-virtual {p1}, Lcom/iMe/storage/domain/model/Result;->getData()Ljava/lang/Object;
 
     move-result-object p1
@@ -112,16 +112,16 @@
 
     const-string p1, ""
 
-    .line 83
+    .line 95
     :cond_0
     invoke-direct {v1, v2, p1}, Lcom/iMe/i_staking/request/StakingTokenActionExecuteRequest;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 82
+    .line 94
     invoke-interface {v0, v1}, Lcom/iMe/i_staking/StakingApi;->sendApprovalExecute(Lcom/iMe/i_staking/request/StakingTokenActionExecuteRequest;)Lio/reactivex/Observable;
 
     move-result-object p1
 
-    .line 88
+    .line 100
     iget-object v0, p0, Lcom/iMe/i_staking/datasource/StakingDataSourceImpl$sendApprovalExecute$$inlined$flatMapSuccess$1;->this$0:Lcom/iMe/i_staking/datasource/StakingDataSourceImpl;
 
     invoke-static {v0}, Lcom/iMe/i_staking/datasource/StakingDataSourceImpl;->access$getFirebaseErrorHandler$p(Lcom/iMe/i_staking/datasource/StakingDataSourceImpl;)Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;

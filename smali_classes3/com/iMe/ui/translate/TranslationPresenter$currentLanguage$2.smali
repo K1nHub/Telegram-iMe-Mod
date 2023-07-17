@@ -66,11 +66,7 @@
 
     move-result-object v0
 
-    invoke-interface {v0}, Lcom/iMe/storage/domain/gateway/TelegramGateway;->getCurrentLocaleInformation()Lcom/iMe/storage/domain/model/telegram/TelegramLocaleInformation;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/iMe/storage/domain/model/telegram/TelegramLocaleInformation;->getSupportedLanguage()Ljava/lang/String;
+    invoke-interface {v0}, Lcom/iMe/storage/domain/gateway/TelegramGateway;->getCurrentLanguage()Ljava/lang/String;
 
     move-result-object v0
 

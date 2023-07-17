@@ -33,7 +33,7 @@
 
     iget-object v1, p0, Lcom/iMe/fork/controller/MusicController$$ExternalSyntheticLambda4;->f$1:Ljava/util/List;
 
-    invoke-static {v0, v1}, Lcom/iMe/fork/controller/MusicController;->$r8$lambda$J-pB4cvwn4GgCqyf8i84WaP3ZPE(Lcom/iMe/fork/controller/MusicController;Ljava/util/List;)V
+    invoke-static {v0, v1}, Lcom/iMe/fork/controller/MusicController;->$r8$lambda$6jhMoAYV2rorc5axrOFx6XOo8mg(Lcom/iMe/fork/controller/MusicController;Ljava/util/List;)V
 
     return-void
 .end method

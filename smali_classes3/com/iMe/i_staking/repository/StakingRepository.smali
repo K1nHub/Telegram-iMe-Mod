@@ -28,13 +28,13 @@
     .end annotation
 .end method
 
-.method public abstract getStakingOperations(Ljava/lang/Long;Lcom/iMe/storage/domain/model/staking/StakingOperationType;Lcom/iMe/storage/domain/model/crypto/NetworkType;Ljava/lang/String;)Lio/reactivex/Observable;
+.method public abstract getStakingOperations(Ljava/lang/Long;Lcom/iMe/storage/domain/model/staking/StakingOperationType;Ljava/lang/String;Ljava/lang/String;)Lio/reactivex/Observable;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Ljava/lang/Long;",
             "Lcom/iMe/storage/domain/model/staking/StakingOperationType;",
-            "Lcom/iMe/storage/domain/model/crypto/NetworkType;",
+            "Ljava/lang/String;",
             "Ljava/lang/String;",
             ")",
             "Lio/reactivex/Observable<",

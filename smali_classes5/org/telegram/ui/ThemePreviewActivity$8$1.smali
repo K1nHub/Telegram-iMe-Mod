@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/ThemePreviewActivity$8;Landroid/content/Context;Ljava/util/ArrayList;Ljava/lang/String;ZLjava/lang/String;Z)V
     .locals 7
 
-    .line 851
+    .line 856
     iput-object p1, p0, Lorg/telegram/ui/ThemePreviewActivity$8$1;->this$1:Lorg/telegram/ui/ThemePreviewActivity$8;
 
     move-object v0, p0
@@ -59,7 +59,7 @@
         }
     .end annotation
 
-    .line 854
+    .line 859
     invoke-virtual {p1}, Landroidx/collection/LongSparseArray;->size()I
 
     move-result p3
@@ -68,7 +68,7 @@
 
     if-ne p3, v0, :cond_0
 
-    .line 855
+    .line 860
     iget-object p3, p0, Lorg/telegram/ui/ThemePreviewActivity$8$1;->this$1:Lorg/telegram/ui/ThemePreviewActivity$8;
 
     iget-object p3, p3, Lorg/telegram/ui/ThemePreviewActivity$8;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
@@ -97,7 +97,7 @@
 
     goto :goto_0
 
-    .line 857
+    .line 862
     :cond_0
     iget-object p3, p0, Lorg/telegram/ui/ThemePreviewActivity$8$1;->this$1:Lorg/telegram/ui/ThemePreviewActivity$8;
 

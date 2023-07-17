@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nBinanceInternalRepositoryImpl.kt\nKotlin\n*S Kotlin\n*F\n+ 1 BinanceInternalRepositoryImpl.kt\ncom/iMe/storage/data/repository/binancepay/BinanceInternalRepositoryImpl\n+ 2 FirebaseExt.kt\ncom/iMe/storage/data/utils/extentions/FirebaseExtKt\n+ 3 RxExt.kt\ncom/iMe/storage/data/utils/extentions/RxExtKt\n+ 4 ResultExt.kt\ncom/iMe/storage/domain/utils/extentions/ResultExtKt\n*L\n1#1,206:1\n70#2:207\n70#2:209\n70#2:213\n70#2:215\n70#2:217\n70#2:219\n70#2:221\n70#2:223\n70#2:225\n70#2:227\n70#2:229\n70#2:231\n70#2:233\n70#2:235\n26#3:208\n26#3:210\n18#3:212\n26#3:214\n26#3:216\n26#3:218\n26#3:220\n26#3:222\n26#3:224\n26#3:226\n26#3:228\n26#3:230\n26#3:232\n26#3:234\n26#3:236\n9#4:211\n*S KotlinDebug\n*F\n+ 1 BinanceInternalRepositoryImpl.kt\ncom/iMe/storage/data/repository/binancepay/BinanceInternalRepositoryImpl\n*L\n47#1:207\n61#1:209\n78#1:213\n94#1:215\n103#1:217\n110#1:219\n117#1:221\n134#1:223\n146#1:225\n157#1:227\n164#1:229\n175#1:231\n189#1:233\n200#1:235\n52#1:208\n66#1:210\n68#1:212\n82#1:214\n95#1:216\n104#1:218\n111#1:220\n118#1:222\n135#1:224\n147#1:226\n158#1:228\n165#1:230\n176#1:232\n190#1:234\n201#1:236\n68#1:211\n*E\n"
+    value = "SMAP\nBinanceInternalRepositoryImpl.kt\nKotlin\n*S Kotlin\n*F\n+ 1 BinanceInternalRepositoryImpl.kt\ncom/iMe/storage/data/repository/binancepay/BinanceInternalRepositoryImpl\n+ 2 FirebaseExt.kt\ncom/iMe/storage/data/utils/extentions/FirebaseExtKt\n+ 3 RxExt.kt\ncom/iMe/storage/data/utils/extentions/RxExtKt\n+ 4 ResultExt.kt\ncom/iMe/storage/domain/utils/extentions/ResultExtKt\n*L\n1#1,202:1\n70#2:203\n70#2:205\n70#2:209\n70#2:211\n70#2:213\n70#2:215\n70#2:217\n70#2:219\n70#2:221\n70#2:223\n70#2:225\n70#2:227\n70#2:229\n70#2:231\n26#3:204\n26#3:206\n18#3:208\n26#3:210\n26#3:212\n26#3:214\n26#3:216\n26#3:218\n26#3:220\n26#3:222\n26#3:224\n26#3:226\n26#3:228\n26#3:230\n26#3:232\n9#4:207\n*S KotlinDebug\n*F\n+ 1 BinanceInternalRepositoryImpl.kt\ncom/iMe/storage/data/repository/binancepay/BinanceInternalRepositoryImpl\n*L\n55#1:203\n66#1:205\n84#1:209\n99#1:211\n109#1:213\n115#1:215\n121#1:217\n137#1:219\n148#1:221\n158#1:223\n164#1:225\n174#1:227\n187#1:229\n197#1:231\n60#1:204\n71#1:206\n73#1:208\n88#1:210\n100#1:212\n110#1:214\n116#1:216\n122#1:218\n138#1:220\n149#1:222\n159#1:224\n165#1:226\n175#1:228\n188#1:230\n198#1:232\n73#1:207\n*E\n"
 .end annotation
 
 
@@ -42,19 +42,19 @@
 
     invoke-static {p4, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 27
+    .line 38
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 28
+    .line 39
     iput-object p1, p0, Lcom/iMe/storage/data/repository/binancepay/BinanceInternalRepositoryImpl;->binanceInternalApi:Lcom/iMe/storage/data/network/api/own/BinanceInternalApi;
 
-    .line 29
+    .line 40
     iput-object p2, p0, Lcom/iMe/storage/data/repository/binancepay/BinanceInternalRepositoryImpl;->cryptoPreferenceHelper:Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
 
-    .line 30
+    .line 41
     iput-object p3, p0, Lcom/iMe/storage/data/repository/binancepay/BinanceInternalRepositoryImpl;->firebaseErrorHandler:Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;
 
-    .line 31
+    .line 42
     iput-object p4, p0, Lcom/iMe/storage/data/repository/binancepay/BinanceInternalRepositoryImpl;->errorHandler:Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler;
 
     return-void
@@ -63,7 +63,7 @@
 .method public static final synthetic access$getCryptoPreferenceHelper$p(Lcom/iMe/storage/data/repository/binancepay/BinanceInternalRepositoryImpl;)Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
     .locals 0
 
-    .line 27
+    .line 38
     iget-object p0, p0, Lcom/iMe/storage/data/repository/binancepay/BinanceInternalRepositoryImpl;->cryptoPreferenceHelper:Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
 
     return-object p0
@@ -89,20 +89,20 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 194
-    new-instance v0, Lcom/iMe/storage/data/network/model/request/binance/BinanceConfirmConvertQuoteRequest;
+    .line 191
+    iget-object v0, p0, Lcom/iMe/storage/data/repository/binancepay/BinanceInternalRepositoryImpl;->binanceInternalApi:Lcom/iMe/storage/data/network/api/own/BinanceInternalApi;
 
-    invoke-direct {v0, p1}, Lcom/iMe/storage/data/network/model/request/binance/BinanceConfirmConvertQuoteRequest;-><init>(Ljava/lang/String;)V
+    .line 193
+    new-instance v1, Lcom/iMe/storage/data/network/model/request/binance/BinanceConfirmConvertQuoteRequest;
 
-    .line 198
-    iget-object p1, p0, Lcom/iMe/storage/data/repository/binancepay/BinanceInternalRepositoryImpl;->binanceInternalApi:Lcom/iMe/storage/data/network/api/own/BinanceInternalApi;
+    invoke-direct {v1, p1}, Lcom/iMe/storage/data/network/model/request/binance/BinanceConfirmConvertQuoteRequest;-><init>(Ljava/lang/String;)V
 
-    .line 199
-    invoke-interface {p1, v0}, Lcom/iMe/storage/data/network/api/own/BinanceInternalApi;->confirmConvertQuote(Lcom/iMe/storage/data/network/model/request/binance/BinanceConfirmConvertQuoteRequest;)Lio/reactivex/Observable;
+    .line 192
+    invoke-interface {v0, v1}, Lcom/iMe/storage/data/network/api/own/BinanceInternalApi;->confirmConvertQuote(Lcom/iMe/storage/data/network/model/request/binance/BinanceConfirmConvertQuoteRequest;)Lio/reactivex/Observable;
 
     move-result-object p1
 
-    .line 200
+    .line 197
     iget-object v0, p0, Lcom/iMe/storage/data/repository/binancepay/BinanceInternalRepositoryImpl;->firebaseErrorHandler:Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;
 
     .line 70
@@ -122,7 +122,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 201
+    .line 198
     iget-object v0, p0, Lcom/iMe/storage/data/repository/binancepay/BinanceInternalRepositoryImpl;->errorHandler:Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler;
 
     .line 26
@@ -146,7 +146,7 @@
 .end method
 
 .method public createCollection(JDLjava/lang/String;)Lio/reactivex/Observable;
-    .locals 9
+    .locals 10
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(JD",
@@ -163,15 +163,18 @@
 
     invoke-static {p5, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 126
-    new-instance v0, Lcom/iMe/storage/data/network/model/request/binance/pay/BinancePayCreateCollectionRequest;
+    .line 129
+    iget-object v0, p0, Lcom/iMe/storage/data/repository/binancepay/BinanceInternalRepositoryImpl;->binanceInternalApi:Lcom/iMe/storage/data/network/api/own/BinanceInternalApi;
 
-    .line 127
+    .line 131
+    new-instance v9, Lcom/iMe/storage/data/network/model/request/binance/pay/BinancePayCreateCollectionRequest;
+
+    .line 132
     invoke-static {p1, p2}, Ljava/lang/String;->valueOf(J)Ljava/lang/String;
 
     move-result-object v2
 
-    .line 128
+    .line 133
     new-instance p1, Ljava/math/BigDecimal;
 
     invoke-static {p3, p4}, Ljava/lang/String;->valueOf(D)Ljava/lang/String;
@@ -200,22 +203,19 @@
 
     const/4 v8, 0x0
 
-    move-object v1, v0
+    move-object v1, v9
 
     move-object v4, p5
 
-    .line 126
+    .line 131
     invoke-direct/range {v1 .. v8}, Lcom/iMe/storage/data/network/model/request/binance/pay/BinancePayCreateCollectionRequest;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
 
-    .line 132
-    iget-object p1, p0, Lcom/iMe/storage/data/repository/binancepay/BinanceInternalRepositoryImpl;->binanceInternalApi:Lcom/iMe/storage/data/network/api/own/BinanceInternalApi;
-
-    .line 133
-    invoke-interface {p1, v0}, Lcom/iMe/storage/data/network/api/own/BinanceInternalApi;->createCollection(Lcom/iMe/storage/data/network/model/request/binance/pay/BinancePayCreateCollectionRequest;)Lio/reactivex/Observable;
+    .line 130
+    invoke-interface {v0, v9}, Lcom/iMe/storage/data/network/api/own/BinanceInternalApi;->createCollection(Lcom/iMe/storage/data/network/model/request/binance/pay/BinancePayCreateCollectionRequest;)Lio/reactivex/Observable;
 
     move-result-object p1
 
-    .line 134
+    .line 137
     iget-object p2, p0, Lcom/iMe/storage/data/repository/binancepay/BinanceInternalRepositoryImpl;->firebaseErrorHandler:Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;
 
     .line 70
@@ -235,7 +235,7 @@
 
     invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 135
+    .line 138
     iget-object p2, p0, Lcom/iMe/storage/data/repository/binancepay/BinanceInternalRepositoryImpl;->errorHandler:Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler;
 
     .line 26
@@ -258,13 +258,13 @@
     return-object p1
 .end method
 
-.method public getAddressForTokenReplenish(Lcom/iMe/storage/domain/model/wallet/token/TokenCode;Lcom/iMe/storage/domain/model/crypto/NetworkType;)Lio/reactivex/Observable;
-    .locals 1
+.method public getAddressForTokenReplenish(Ljava/lang/String;Ljava/lang/String;)Lio/reactivex/Observable;
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lcom/iMe/storage/domain/model/wallet/token/TokenCode;",
-            "Lcom/iMe/storage/domain/model/crypto/NetworkType;",
+            "Ljava/lang/String;",
+            "Ljava/lang/String;",
             ")",
             "Lio/reactivex/Observable<",
             "Lcom/iMe/storage/domain/model/Result<",
@@ -273,39 +273,28 @@
         }
     .end annotation
 
-    const-string v0, "tokenCode"
+    const-string v0, "tokenTicker"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "networkType"
+    const-string v0, "networkId"
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 139
-    new-instance v0, Lcom/iMe/storage/data/network/model/request/binance/BinanceGetTokenReplenishAddressRequest;
-
-    .line 140
-    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;->getName()Ljava/lang/String;
-
-    move-result-object p1
-
     .line 141
-    invoke-virtual {p2}, Ljava/lang/Enum;->name()Ljava/lang/String;
+    iget-object v0, p0, Lcom/iMe/storage/data/repository/binancepay/BinanceInternalRepositoryImpl;->binanceInternalApi:Lcom/iMe/storage/data/network/api/own/BinanceInternalApi;
 
-    move-result-object p2
+    .line 143
+    new-instance v1, Lcom/iMe/storage/data/network/model/request/binance/BinanceGetTokenReplenishAddressRequest;
 
-    .line 139
-    invoke-direct {v0, p1, p2}, Lcom/iMe/storage/data/network/model/request/binance/BinanceGetTokenReplenishAddressRequest;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct {v1, p1, p2}, Lcom/iMe/storage/data/network/model/request/binance/BinanceGetTokenReplenishAddressRequest;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 144
-    iget-object p1, p0, Lcom/iMe/storage/data/repository/binancepay/BinanceInternalRepositoryImpl;->binanceInternalApi:Lcom/iMe/storage/data/network/api/own/BinanceInternalApi;
-
-    .line 145
-    invoke-interface {p1, v0}, Lcom/iMe/storage/data/network/api/own/BinanceInternalApi;->getReplenishTokenAddress(Lcom/iMe/storage/data/network/model/request/binance/BinanceGetTokenReplenishAddressRequest;)Lio/reactivex/Observable;
+    .line 142
+    invoke-interface {v0, v1}, Lcom/iMe/storage/data/network/api/own/BinanceInternalApi;->getReplenishTokenAddress(Lcom/iMe/storage/data/network/model/request/binance/BinanceGetTokenReplenishAddressRequest;)Lio/reactivex/Observable;
 
     move-result-object p1
 
-    .line 146
+    .line 148
     iget-object p2, p0, Lcom/iMe/storage/data/repository/binancepay/BinanceInternalRepositoryImpl;->firebaseErrorHandler:Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;
 
     .line 70
@@ -325,7 +314,7 @@
 
     invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 147
+    .line 149
     iget-object p2, p0, Lcom/iMe/storage/data/repository/binancepay/BinanceInternalRepositoryImpl;->errorHandler:Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler;
 
     .line 26
@@ -349,7 +338,7 @@
 .end method
 
 .method public getAuthTokens(Lcom/iMe/storage/domain/model/binancepay/BinancePayAuthType;Ljava/lang/String;)Lio/reactivex/Observable;
-    .locals 1
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -371,26 +360,26 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 40
-    new-instance v0, Lcom/iMe/storage/data/network/model/request/binance/pay/BinancePayGetAuthTokensRequest;
+    .line 48
+    iget-object v0, p0, Lcom/iMe/storage/data/repository/binancepay/BinanceInternalRepositoryImpl;->binanceInternalApi:Lcom/iMe/storage/data/network/api/own/BinanceInternalApi;
 
-    .line 41
+    .line 50
+    new-instance v1, Lcom/iMe/storage/data/network/model/request/binance/pay/BinancePayGetAuthTokensRequest;
+
+    .line 51
     invoke-virtual {p1}, Ljava/lang/Enum;->name()Ljava/lang/String;
 
     move-result-object p1
 
-    .line 40
-    invoke-direct {v0, p1, p2}, Lcom/iMe/storage/data/network/model/request/binance/pay/BinancePayGetAuthTokensRequest;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+    .line 50
+    invoke-direct {v1, p1, p2}, Lcom/iMe/storage/data/network/model/request/binance/pay/BinancePayGetAuthTokensRequest;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 45
-    iget-object p1, p0, Lcom/iMe/storage/data/repository/binancepay/BinanceInternalRepositoryImpl;->binanceInternalApi:Lcom/iMe/storage/data/network/api/own/BinanceInternalApi;
-
-    .line 46
-    invoke-interface {p1, v0}, Lcom/iMe/storage/data/network/api/own/BinanceInternalApi;->getBinancePayAuthTokens(Lcom/iMe/storage/data/network/model/request/binance/pay/BinancePayGetAuthTokensRequest;)Lio/reactivex/Observable;
+    .line 49
+    invoke-interface {v0, v1}, Lcom/iMe/storage/data/network/api/own/BinanceInternalApi;->getBinancePayAuthTokens(Lcom/iMe/storage/data/network/model/request/binance/pay/BinancePayGetAuthTokensRequest;)Lio/reactivex/Observable;
 
     move-result-object p1
 
-    .line 47
+    .line 55
     iget-object p2, p0, Lcom/iMe/storage/data/repository/binancepay/BinanceInternalRepositoryImpl;->firebaseErrorHandler:Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;
 
     .line 70
@@ -410,7 +399,7 @@
 
     invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 52
+    .line 60
     iget-object p2, p0, Lcom/iMe/storage/data/repository/binancepay/BinanceInternalRepositoryImpl;->errorHandler:Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler;
 
     .line 26
@@ -446,15 +435,15 @@
         }
     .end annotation
 
-    .line 115
+    .line 119
     iget-object v0, p0, Lcom/iMe/storage/data/repository/binancepay/BinanceInternalRepositoryImpl;->binanceInternalApi:Lcom/iMe/storage/data/network/api/own/BinanceInternalApi;
 
-    .line 116
+    .line 120
     invoke-interface {v0}, Lcom/iMe/storage/data/network/api/own/BinanceInternalApi;->getAvailablePaymentTokens()Lio/reactivex/Observable;
 
     move-result-object v0
 
-    .line 117
+    .line 121
     iget-object v1, p0, Lcom/iMe/storage/data/repository/binancepay/BinanceInternalRepositoryImpl;->firebaseErrorHandler:Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;
 
     .line 70
@@ -474,7 +463,7 @@
 
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 118
+    .line 122
     iget-object v1, p0, Lcom/iMe/storage/data/repository/binancepay/BinanceInternalRepositoryImpl;->errorHandler:Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler;
 
     .line 26
@@ -498,7 +487,7 @@
 .end method
 
 .method public getConvertQuote(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lio/reactivex/Observable;
-    .locals 2
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -525,27 +514,27 @@
 
     invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
+    .line 178
+    iget-object v0, p0, Lcom/iMe/storage/data/repository/binancepay/BinanceInternalRepositoryImpl;->binanceInternalApi:Lcom/iMe/storage/data/network/api/own/BinanceInternalApi;
+
     .line 184
-    sget-object v0, Lcom/iMe/storage/domain/model/wallet/swap/TradeType;->EXACT_INPUT:Lcom/iMe/storage/domain/model/wallet/swap/TradeType;
+    sget-object v1, Lcom/iMe/storage/domain/model/wallet/swap/TradeType;->EXACT_INPUT:Lcom/iMe/storage/domain/model/wallet/swap/TradeType;
 
-    invoke-virtual {v0}, Lcom/iMe/storage/domain/model/wallet/swap/TradeType;->getValue()I
+    invoke-virtual {v1}, Lcom/iMe/storage/domain/model/wallet/swap/TradeType;->getValue()I
 
-    move-result v0
+    move-result v1
 
     .line 180
-    new-instance v1, Lcom/iMe/storage/data/network/model/request/binance/BinanceGetConvertQuoteRequest;
+    new-instance v2, Lcom/iMe/storage/data/network/model/request/binance/BinanceGetConvertQuoteRequest;
 
-    invoke-direct {v1, p1, p2, v0, p3}, Lcom/iMe/storage/data/network/model/request/binance/BinanceGetConvertQuoteRequest;-><init>(Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;)V
+    invoke-direct {v2, p1, p2, v1, p3}, Lcom/iMe/storage/data/network/model/request/binance/BinanceGetConvertQuoteRequest;-><init>(Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;)V
 
-    .line 187
-    iget-object p1, p0, Lcom/iMe/storage/data/repository/binancepay/BinanceInternalRepositoryImpl;->binanceInternalApi:Lcom/iMe/storage/data/network/api/own/BinanceInternalApi;
-
-    .line 188
-    invoke-interface {p1, v1}, Lcom/iMe/storage/data/network/api/own/BinanceInternalApi;->getConvertQuote(Lcom/iMe/storage/data/network/model/request/binance/BinanceGetConvertQuoteRequest;)Lio/reactivex/Observable;
+    .line 179
+    invoke-interface {v0, v2}, Lcom/iMe/storage/data/network/api/own/BinanceInternalApi;->getConvertQuote(Lcom/iMe/storage/data/network/model/request/binance/BinanceGetConvertQuoteRequest;)Lio/reactivex/Observable;
 
     move-result-object p1
 
-    .line 189
+    .line 187
     iget-object p2, p0, Lcom/iMe/storage/data/repository/binancepay/BinanceInternalRepositoryImpl;->firebaseErrorHandler:Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;
 
     .line 70
@@ -565,7 +554,7 @@
 
     invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 190
+    .line 188
     iget-object p2, p0, Lcom/iMe/storage/data/repository/binancepay/BinanceInternalRepositoryImpl;->errorHandler:Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler;
 
     .line 26
@@ -607,20 +596,20 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
+    .line 168
+    iget-object v0, p0, Lcom/iMe/storage/data/repository/binancepay/BinanceInternalRepositoryImpl;->binanceInternalApi:Lcom/iMe/storage/data/network/api/own/BinanceInternalApi;
+
+    .line 170
+    new-instance v1, Lcom/iMe/storage/data/network/model/request/binance/BinanceGetSwapSupportCoinsByAssetCodeRequest;
+
+    invoke-direct {v1, p1}, Lcom/iMe/storage/data/network/model/request/binance/BinanceGetSwapSupportCoinsByAssetCodeRequest;-><init>(Ljava/lang/String;)V
+
     .line 169
-    new-instance v0, Lcom/iMe/storage/data/network/model/request/binance/BinanceGetSwapSupportCoinsByAssetCodeRequest;
-
-    invoke-direct {v0, p1}, Lcom/iMe/storage/data/network/model/request/binance/BinanceGetSwapSupportCoinsByAssetCodeRequest;-><init>(Ljava/lang/String;)V
-
-    .line 173
-    iget-object p1, p0, Lcom/iMe/storage/data/repository/binancepay/BinanceInternalRepositoryImpl;->binanceInternalApi:Lcom/iMe/storage/data/network/api/own/BinanceInternalApi;
-
-    .line 174
-    invoke-interface {p1, v0}, Lcom/iMe/storage/data/network/api/own/BinanceInternalApi;->getConvertOppositeSupportTokensByAsset(Lcom/iMe/storage/data/network/model/request/binance/BinanceGetSwapSupportCoinsByAssetCodeRequest;)Lio/reactivex/Observable;
+    invoke-interface {v0, v1}, Lcom/iMe/storage/data/network/api/own/BinanceInternalApi;->getConvertOppositeSupportTokensByAsset(Lcom/iMe/storage/data/network/model/request/binance/BinanceGetSwapSupportCoinsByAssetCodeRequest;)Lio/reactivex/Observable;
 
     move-result-object p1
 
-    .line 175
+    .line 174
     iget-object v0, p0, Lcom/iMe/storage/data/repository/binancepay/BinanceInternalRepositoryImpl;->firebaseErrorHandler:Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;
 
     .line 70
@@ -640,7 +629,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 176
+    .line 175
     iget-object v0, p0, Lcom/iMe/storage/data/repository/binancepay/BinanceInternalRepositoryImpl;->errorHandler:Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler;
 
     .line 26
@@ -727,12 +716,12 @@
     return-object v0
 .end method
 
-.method public getTokensForReplenish(Lcom/iMe/storage/domain/model/crypto/NetworkType;)Lio/reactivex/Observable;
+.method public getTokensForReplenish(Ljava/lang/String;)Lio/reactivex/Observable;
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lcom/iMe/storage/domain/model/crypto/NetworkType;",
+            "Ljava/lang/String;",
             ")",
             "Lio/reactivex/Observable<",
             "Lcom/iMe/storage/domain/model/Result<",
@@ -742,30 +731,24 @@
         }
     .end annotation
 
-    const-string v0, "networkType"
+    const-string v0, "networkId"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 151
-    new-instance v0, Lcom/iMe/storage/data/network/model/request/binance/pay/BinanceGetAvailableTokensForReplenishRequest;
-
     .line 152
-    invoke-virtual {p1}, Ljava/lang/Enum;->name()Ljava/lang/String;
+    iget-object v0, p0, Lcom/iMe/storage/data/repository/binancepay/BinanceInternalRepositoryImpl;->binanceInternalApi:Lcom/iMe/storage/data/network/api/own/BinanceInternalApi;
+
+    .line 154
+    new-instance v1, Lcom/iMe/storage/data/network/model/request/binance/pay/BinanceGetAvailableTokensForReplenishRequest;
+
+    invoke-direct {v1, p1}, Lcom/iMe/storage/data/network/model/request/binance/pay/BinanceGetAvailableTokensForReplenishRequest;-><init>(Ljava/lang/String;)V
+
+    .line 153
+    invoke-interface {v0, v1}, Lcom/iMe/storage/data/network/api/own/BinanceInternalApi;->getTokensForReplenish(Lcom/iMe/storage/data/network/model/request/binance/pay/BinanceGetAvailableTokensForReplenishRequest;)Lio/reactivex/Observable;
 
     move-result-object p1
 
-    .line 151
-    invoke-direct {v0, p1}, Lcom/iMe/storage/data/network/model/request/binance/pay/BinanceGetAvailableTokensForReplenishRequest;-><init>(Ljava/lang/String;)V
-
-    .line 155
-    iget-object p1, p0, Lcom/iMe/storage/data/repository/binancepay/BinanceInternalRepositoryImpl;->binanceInternalApi:Lcom/iMe/storage/data/network/api/own/BinanceInternalApi;
-
-    .line 156
-    invoke-interface {p1, v0}, Lcom/iMe/storage/data/network/api/own/BinanceInternalApi;->getTokensForReplenish(Lcom/iMe/storage/data/network/model/request/binance/pay/BinanceGetAvailableTokensForReplenishRequest;)Lio/reactivex/Observable;
-
-    move-result-object p1
-
-    .line 157
+    .line 158
     iget-object v0, p0, Lcom/iMe/storage/data/repository/binancepay/BinanceInternalRepositoryImpl;->firebaseErrorHandler:Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;
 
     .line 70
@@ -785,7 +768,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 158
+    .line 159
     iget-object v0, p0, Lcom/iMe/storage/data/repository/binancepay/BinanceInternalRepositoryImpl;->errorHandler:Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler;
 
     .line 26
@@ -826,20 +809,20 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 99
-    new-instance v0, Lcom/iMe/storage/data/network/model/request/binance/pay/BinancePayGetTransactionRequest;
+    .line 103
+    iget-object v0, p0, Lcom/iMe/storage/data/repository/binancepay/BinanceInternalRepositoryImpl;->binanceInternalApi:Lcom/iMe/storage/data/network/api/own/BinanceInternalApi;
 
-    invoke-direct {v0, p1}, Lcom/iMe/storage/data/network/model/request/binance/pay/BinancePayGetTransactionRequest;-><init>(Ljava/lang/String;)V
+    .line 105
+    new-instance v1, Lcom/iMe/storage/data/network/model/request/binance/pay/BinancePayGetTransactionRequest;
 
-    .line 101
-    iget-object p1, p0, Lcom/iMe/storage/data/repository/binancepay/BinanceInternalRepositoryImpl;->binanceInternalApi:Lcom/iMe/storage/data/network/api/own/BinanceInternalApi;
+    invoke-direct {v1, p1}, Lcom/iMe/storage/data/network/model/request/binance/pay/BinancePayGetTransactionRequest;-><init>(Ljava/lang/String;)V
 
-    .line 102
-    invoke-interface {p1, v0}, Lcom/iMe/storage/data/network/api/own/BinanceInternalApi;->getTransaction(Lcom/iMe/storage/data/network/model/request/binance/pay/BinancePayGetTransactionRequest;)Lio/reactivex/Observable;
+    .line 104
+    invoke-interface {v0, v1}, Lcom/iMe/storage/data/network/api/own/BinanceInternalApi;->getTransaction(Lcom/iMe/storage/data/network/model/request/binance/pay/BinancePayGetTransactionRequest;)Lio/reactivex/Observable;
 
     move-result-object p1
 
-    .line 103
+    .line 109
     iget-object v0, p0, Lcom/iMe/storage/data/repository/binancepay/BinanceInternalRepositoryImpl;->firebaseErrorHandler:Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;
 
     .line 70
@@ -859,7 +842,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 104
+    .line 110
     iget-object v0, p0, Lcom/iMe/storage/data/repository/binancepay/BinanceInternalRepositoryImpl;->errorHandler:Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler;
 
     .line 26
@@ -883,7 +866,7 @@
 .end method
 
 .method public getTransactionHistory(ILjava/lang/String;Ljava/lang/String;)Lio/reactivex/Observable;
-    .locals 1
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I",
@@ -898,20 +881,20 @@
         }
     .end annotation
 
-    .line 86
-    new-instance v0, Lcom/iMe/storage/data/network/model/request/binance/pay/BinancePayGetTransactionHistoryRequest;
-
-    invoke-direct {v0, p1, p2, p3}, Lcom/iMe/storage/data/network/model/request/binance/pay/BinancePayGetTransactionHistoryRequest;-><init>(ILjava/lang/String;Ljava/lang/String;)V
-
-    .line 92
-    iget-object p1, p0, Lcom/iMe/storage/data/repository/binancepay/BinanceInternalRepositoryImpl;->binanceInternalApi:Lcom/iMe/storage/data/network/api/own/BinanceInternalApi;
+    .line 91
+    iget-object v0, p0, Lcom/iMe/storage/data/repository/binancepay/BinanceInternalRepositoryImpl;->binanceInternalApi:Lcom/iMe/storage/data/network/api/own/BinanceInternalApi;
 
     .line 93
-    invoke-interface {p1, v0}, Lcom/iMe/storage/data/network/api/own/BinanceInternalApi;->getTransactionHistory(Lcom/iMe/storage/data/network/model/request/binance/pay/BinancePayGetTransactionHistoryRequest;)Lio/reactivex/Observable;
+    new-instance v1, Lcom/iMe/storage/data/network/model/request/binance/pay/BinancePayGetTransactionHistoryRequest;
+
+    invoke-direct {v1, p1, p2, p3}, Lcom/iMe/storage/data/network/model/request/binance/pay/BinancePayGetTransactionHistoryRequest;-><init>(ILjava/lang/String;Ljava/lang/String;)V
+
+    .line 92
+    invoke-interface {v0, v1}, Lcom/iMe/storage/data/network/api/own/BinanceInternalApi;->getTransactionHistory(Lcom/iMe/storage/data/network/model/request/binance/pay/BinancePayGetTransactionHistoryRequest;)Lio/reactivex/Observable;
 
     move-result-object p1
 
-    .line 94
+    .line 99
     iget-object p2, p0, Lcom/iMe/storage/data/repository/binancepay/BinanceInternalRepositoryImpl;->firebaseErrorHandler:Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;
 
     .line 70
@@ -931,7 +914,7 @@
 
     invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 95
+    .line 100
     iget-object p2, p0, Lcom/iMe/storage/data/repository/binancepay/BinanceInternalRepositoryImpl;->errorHandler:Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler;
 
     .line 26
@@ -967,15 +950,15 @@
         }
     .end annotation
 
-    .line 108
+    .line 113
     iget-object v0, p0, Lcom/iMe/storage/data/repository/binancepay/BinanceInternalRepositoryImpl;->binanceInternalApi:Lcom/iMe/storage/data/network/api/own/BinanceInternalApi;
 
-    .line 109
+    .line 114
     invoke-interface {v0}, Lcom/iMe/storage/data/network/api/own/BinanceInternalApi;->getUserBalance()Lio/reactivex/Observable;
 
     move-result-object v0
 
-    .line 110
+    .line 115
     iget-object v1, p0, Lcom/iMe/storage/data/repository/binancepay/BinanceInternalRepositoryImpl;->firebaseErrorHandler:Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;
 
     .line 70
@@ -995,7 +978,7 @@
 
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 111
+    .line 116
     iget-object v1, p0, Lcom/iMe/storage/data/repository/binancepay/BinanceInternalRepositoryImpl;->errorHandler:Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler;
 
     .line 26
@@ -1030,24 +1013,17 @@
         }
     .end annotation
 
-    .line 56
-    iget-object v0, p0, Lcom/iMe/storage/data/repository/binancepay/BinanceInternalRepositoryImpl;->cryptoPreferenceHelper:Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
-
-    invoke-interface {v0}, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;->getBinanceUserInfo()Lcom/iMe/storage/data/locale/prefs/model/binancepay/BinanceUserInfoMetadata;
-
-    move-result-object v0
-
     if-eqz p1, :cond_0
 
-    .line 59
+    .line 64
     iget-object p1, p0, Lcom/iMe/storage/data/repository/binancepay/BinanceInternalRepositoryImpl;->binanceInternalApi:Lcom/iMe/storage/data/network/api/own/BinanceInternalApi;
 
-    .line 60
+    .line 65
     invoke-interface {p1}, Lcom/iMe/storage/data/network/api/own/BinanceInternalApi;->getUserInfo()Lio/reactivex/Observable;
 
     move-result-object p1
 
-    .line 61
+    .line 66
     iget-object v0, p0, Lcom/iMe/storage/data/repository/binancepay/BinanceInternalRepositoryImpl;->firebaseErrorHandler:Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;
 
     .line 70
@@ -1067,7 +1043,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 66
+    .line 71
     iget-object v0, p0, Lcom/iMe/storage/data/repository/binancepay/BinanceInternalRepositoryImpl;->errorHandler:Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler;
 
     .line 26
@@ -1089,9 +1065,15 @@
 
     goto :goto_0
 
-    .line 68
+    .line 73
     :cond_0
-    invoke-virtual {v0}, Lcom/iMe/storage/data/locale/prefs/model/binancepay/BinanceUserInfoMetadata;->getInfo()Lcom/iMe/storage/domain/model/binancepay/BinanceUserInfo;
+    iget-object p1, p0, Lcom/iMe/storage/data/repository/binancepay/BinanceInternalRepositoryImpl;->cryptoPreferenceHelper:Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
+
+    invoke-interface {p1}, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;->getBinanceUserInfo()Lcom/iMe/storage/data/locale/prefs/model/binancepay/BinanceUserInfoMetadata;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Lcom/iMe/storage/data/locale/prefs/model/binancepay/BinanceUserInfoMetadata;->getInfo()Lcom/iMe/storage/domain/model/binancepay/BinanceUserInfo;
 
     move-result-object p1
 
@@ -1120,7 +1102,7 @@
     :cond_1
     const/4 p1, 0x1
 
-    .line 69
+    .line 74
     invoke-virtual {p0, p1}, Lcom/iMe/storage/data/repository/binancepay/BinanceInternalRepositoryImpl;->getUserInfo(Z)Lio/reactivex/Observable;
 
     move-result-object p1
@@ -1148,20 +1130,20 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 74
-    new-instance v0, Lcom/iMe/storage/data/network/model/request/binance/pay/BinancePayLogoutRequest;
+    .line 78
+    iget-object v0, p0, Lcom/iMe/storage/data/repository/binancepay/BinanceInternalRepositoryImpl;->binanceInternalApi:Lcom/iMe/storage/data/network/api/own/BinanceInternalApi;
 
-    invoke-direct {v0, p1}, Lcom/iMe/storage/data/network/model/request/binance/pay/BinancePayLogoutRequest;-><init>(Ljava/lang/String;)V
+    .line 80
+    new-instance v1, Lcom/iMe/storage/data/network/model/request/binance/pay/BinancePayLogoutRequest;
 
-    .line 76
-    iget-object p1, p0, Lcom/iMe/storage/data/repository/binancepay/BinanceInternalRepositoryImpl;->binanceInternalApi:Lcom/iMe/storage/data/network/api/own/BinanceInternalApi;
+    invoke-direct {v1, p1}, Lcom/iMe/storage/data/network/model/request/binance/pay/BinancePayLogoutRequest;-><init>(Ljava/lang/String;)V
 
-    .line 77
-    invoke-interface {p1, v0}, Lcom/iMe/storage/data/network/api/own/BinanceInternalApi;->logout(Lcom/iMe/storage/data/network/model/request/binance/pay/BinancePayLogoutRequest;)Lio/reactivex/Observable;
+    .line 79
+    invoke-interface {v0, v1}, Lcom/iMe/storage/data/network/api/own/BinanceInternalApi;->logout(Lcom/iMe/storage/data/network/model/request/binance/pay/BinancePayLogoutRequest;)Lio/reactivex/Observable;
 
     move-result-object p1
 
-    .line 78
+    .line 84
     iget-object v0, p0, Lcom/iMe/storage/data/repository/binancepay/BinanceInternalRepositoryImpl;->firebaseErrorHandler:Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;
 
     .line 70
@@ -1181,7 +1163,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 82
+    .line 88
     iget-object v0, p0, Lcom/iMe/storage/data/repository/binancepay/BinanceInternalRepositoryImpl;->errorHandler:Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler;
 
     .line 26

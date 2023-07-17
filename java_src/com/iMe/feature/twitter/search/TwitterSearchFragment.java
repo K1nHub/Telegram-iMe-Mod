@@ -43,16 +43,16 @@ import kotlin.jvm.internal.Reflection;
 import kotlin.reflect.KProperty;
 import moxy.MvpDelegate;
 import moxy.ktx.MoxyKtxDelegate;
-import org.koin.p043mp.KoinPlatformTools;
-import org.telegram.messenger.C3295R;
+import org.koin.p042mp.KoinPlatformTools;
+import org.telegram.messenger.C3417R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.databinding.ForkFragmentTwitterSearchBinding;
-import org.telegram.p044ui.ActionBar.ActionBarMenuItem;
-import org.telegram.p044ui.ActionBar.C3361ActionBar;
-import org.telegram.p044ui.ActionBar.Theme;
-import org.telegram.p044ui.ActionBar.ThemeDescription;
-import org.telegram.p044ui.ChatActivity;
-import org.telegram.p044ui.Components.EditTextBoldCursor;
+import org.telegram.p043ui.ActionBar.ActionBarMenuItem;
+import org.telegram.p043ui.ActionBar.C3484ActionBar;
+import org.telegram.p043ui.ActionBar.Theme;
+import org.telegram.p043ui.ActionBar.ThemeDescription;
+import org.telegram.p043ui.ChatActivity;
+import org.telegram.p043ui.Components.EditTextBoldCursor;
 /* compiled from: TwitterSearchFragment.kt */
 /* loaded from: classes3.dex */
 public final class TwitterSearchFragment extends MvpFragment implements TwitterSearchView {
@@ -125,7 +125,7 @@ public final class TwitterSearchFragment extends MvpFragment implements TwitterS
         return root;
     }
 
-    @Override // org.telegram.p044ui.ActionBar.BaseFragment
+    @Override // org.telegram.p043ui.ActionBar.BaseFragment
     public void onTransitionAnimationEnd(boolean z, boolean z2) {
         ActionBarMenuItem actionBarMenuItem;
         if (!z || z2 || (actionBarMenuItem = this.searchItem) == null) {
@@ -207,7 +207,7 @@ public final class TwitterSearchFragment extends MvpFragment implements TwitterS
         Intrinsics.checkNotNullParameter(title, "title");
         Intrinsics.checkNotNullParameter(message, "message");
         Intrinsics.checkNotNullParameter(action, "action");
-        DialogsFactoryKt.showSuccessAlert(this, title, message, getResourceManager().getString(C3295R.string.common_ok), action);
+        DialogsFactoryKt.showSuccessAlert(this, title, message, getResourceManager().getString(C3417R.string.common_ok), action);
     }
 
     @Override // com.iMe.manager.crypto.recipient.CryptoRecipientView
@@ -215,16 +215,16 @@ public final class TwitterSearchFragment extends MvpFragment implements TwitterS
         presentFragment(ChatActivity.newInstanceForDialogId(j));
     }
 
-    @Override // org.telegram.p044ui.ActionBar.BaseFragment
+    @Override // org.telegram.p043ui.ActionBar.BaseFragment
     public ArrayList<ThemeDescription> getThemeDescriptions() {
         ArrayList<ThemeDescription> arrayListOf;
         arrayListOf = CollectionsKt__CollectionsKt.arrayListOf(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, Theme.key_actionBarDefault), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_ITEMSCOLOR, null, null, null, null, Theme.key_actionBarDefaultIcon), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_TITLECOLOR, null, null, null, null, Theme.key_actionBarDefaultTitle), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SELECTORCOLOR, null, null, null, null, Theme.key_actionBarDefaultSelector), new ThemeDescription(getBinding().getRoot(), ThemeDescription.FLAG_BACKGROUND, null, null, null, new ThemeDescription.ThemeDescriptionDelegate() { // from class: com.iMe.feature.twitter.search.TwitterSearchFragment$$ExternalSyntheticLambda4
-            @Override // org.telegram.p044ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
+            @Override // org.telegram.p043ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
             public final void didSetColor() {
                 TwitterSearchFragment.getThemeDescriptions$lambda$2(TwitterSearchFragment.this);
             }
 
-            @Override // org.telegram.p044ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
+            @Override // org.telegram.p043ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
             public /* synthetic */ void onAnimationProgress(float f) {
                 ThemeDescription.ThemeDescriptionDelegate.CC.$default$onAnimationProgress(this, f);
             }
@@ -240,23 +240,23 @@ public final class TwitterSearchFragment extends MvpFragment implements TwitterS
     }
 
     private final void setupActionBar() {
-        C3361ActionBar c3361ActionBar = this.actionBar;
-        c3361ActionBar.setBackButtonImage(C3295R.C3297drawable.ic_ab_back);
-        c3361ActionBar.setAllowOverlayTitle(true);
-        c3361ActionBar.setTitle(getResourceManager().getString(C3295R.string.wallet_binance_receive_choose_contact_title));
-        ActionBarMenuItem actionBarMenuItemSearchListener = c3361ActionBar.createMenu().addItem(IdFabric$Menu.SEARCH_TWITTER, C3295R.C3297drawable.ic_ab_search).setIsSearchField(true).setActionBarMenuItemSearchListener(new ActionBarMenuItem.ActionBarMenuItemSearchListener() { // from class: com.iMe.feature.twitter.search.TwitterSearchFragment$setupActionBar$1$1
-            @Override // org.telegram.p044ui.ActionBar.ActionBarMenuItem.ActionBarMenuItemSearchListener
+        C3484ActionBar c3484ActionBar = this.actionBar;
+        c3484ActionBar.setBackButtonImage(C3417R.C3419drawable.ic_ab_back);
+        c3484ActionBar.setAllowOverlayTitle(true);
+        c3484ActionBar.setTitle(getResourceManager().getString(C3417R.string.wallet_binance_receive_choose_contact_title));
+        ActionBarMenuItem actionBarMenuItemSearchListener = c3484ActionBar.createMenu().addItem(IdFabric$Menu.SEARCH, C3417R.C3419drawable.ic_ab_search).setIsSearchField(true).setActionBarMenuItemSearchListener(new ActionBarMenuItem.ActionBarMenuItemSearchListener() { // from class: com.iMe.feature.twitter.search.TwitterSearchFragment$setupActionBar$1$1
+            @Override // org.telegram.p043ui.ActionBar.ActionBarMenuItem.ActionBarMenuItemSearchListener
             public void onSearchExpand() {
             }
 
-            @Override // org.telegram.p044ui.ActionBar.ActionBarMenuItem.ActionBarMenuItemSearchListener
+            @Override // org.telegram.p043ui.ActionBar.ActionBarMenuItem.ActionBarMenuItemSearchListener
             public void onSearchCollapse() {
                 TwitterSearchPresenter presenter;
                 presenter = TwitterSearchFragment.this.getPresenter();
                 presenter.onQueryUpdate("");
             }
 
-            @Override // org.telegram.p044ui.ActionBar.ActionBarMenuItem.ActionBarMenuItemSearchListener
+            @Override // org.telegram.p043ui.ActionBar.ActionBarMenuItem.ActionBarMenuItemSearchListener
             public void onTextChanged(EditText editText) {
                 TwitterSearchPresenter presenter;
                 Intrinsics.checkNotNullParameter(editText, "editText");
@@ -267,11 +267,11 @@ public final class TwitterSearchFragment extends MvpFragment implements TwitterS
         EditTextBoldCursor searchField = actionBarMenuItemSearchListener.getSearchField();
         searchField.setFilters(new InputFilter.LengthFilter[]{new InputFilter.LengthFilter(15)});
         searchField.setImeOptions(Integer.MIN_VALUE);
-        actionBarMenuItemSearchListener.setSearchFieldHint(getResourceManager().getString(C3295R.string.twitter_search_hint));
-        actionBarMenuItemSearchListener.setContentDescription(LocaleController.getString("Search", C3295R.string.Search));
+        actionBarMenuItemSearchListener.setSearchFieldHint(getResourceManager().getString(C3417R.string.twitter_search_hint));
+        actionBarMenuItemSearchListener.setContentDescription(LocaleController.getString("Search", C3417R.string.Search));
         this.searchItem = actionBarMenuItemSearchListener;
-        c3361ActionBar.setActionBarMenuOnItemClick(new C3361ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.feature.twitter.search.TwitterSearchFragment$setupActionBar$1$3
-            @Override // org.telegram.p044ui.ActionBar.C3361ActionBar.ActionBarMenuOnItemClick
+        c3484ActionBar.setActionBarMenuOnItemClick(new C3484ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.feature.twitter.search.TwitterSearchFragment$setupActionBar$1$3
+            @Override // org.telegram.p043ui.ActionBar.C3484ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
                     TwitterSearchFragment.this.finishFragment();

@@ -30,14 +30,14 @@
 .method constructor <init>(Lcom/iMe/ui/wallet/transaction/details/WalletTransactionDetailsView$$State;J)V
     .locals 1
 
-    .line 396
+    .line 410
     const-class p1, Lmoxy/viewstate/strategy/OneExecutionStateStrategy;
 
     const-string v0, "openProfileScreen"
 
     invoke-direct {p0, v0, p1}, Lmoxy/viewstate/ViewCommand;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
-    .line 398
+    .line 412
     iput-wide p2, p0, Lcom/iMe/ui/wallet/transaction/details/WalletTransactionDetailsView$$State$OpenProfileScreenCommand;->id:J
 
     return-void
@@ -48,7 +48,7 @@
 .method public apply(Lcom/iMe/ui/wallet/transaction/details/WalletTransactionDetailsView;)V
     .locals 2
 
-    .line 403
+    .line 417
     iget-wide v0, p0, Lcom/iMe/ui/wallet/transaction/details/WalletTransactionDetailsView$$State$OpenProfileScreenCommand;->id:J
 
     invoke-interface {p1, v0, v1}, Lcom/iMe/ui/wallet/transaction/details/WalletTransactionDetailsView;->openProfileScreen(J)V
@@ -59,7 +59,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 392
+    .line 406
     check-cast p1, Lcom/iMe/ui/wallet/transaction/details/WalletTransactionDetailsView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/wallet/transaction/details/WalletTransactionDetailsView$$State$OpenProfileScreenCommand;->apply(Lcom/iMe/ui/wallet/transaction/details/WalletTransactionDetailsView;)V

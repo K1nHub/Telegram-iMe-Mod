@@ -34,20 +34,20 @@
 .method constructor <init>(Lcom/iMe/ui/wallet/crypto/wallet_connect/new_session/WalletConnectNewSessionView$$State;ZZLio/reactivex/disposables/Disposable;)V
     .locals 1
 
-    .line 165
+    .line 181
     const-class p1, Lmoxy/viewstate/strategy/OneExecutionStateStrategy;
 
     const-string/jumbo v0, "showLoadingDialog"
 
     invoke-direct {p0, v0, p1}, Lmoxy/viewstate/ViewCommand;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
-    .line 167
+    .line 183
     iput-boolean p2, p0, Lcom/iMe/ui/wallet/crypto/wallet_connect/new_session/WalletConnectNewSessionView$$State$ShowLoadingDialogCommand;->show:Z
 
-    .line 168
+    .line 184
     iput-boolean p3, p0, Lcom/iMe/ui/wallet/crypto/wallet_connect/new_session/WalletConnectNewSessionView$$State$ShowLoadingDialogCommand;->cancellable:Z
 
-    .line 169
+    .line 185
     iput-object p4, p0, Lcom/iMe/ui/wallet/crypto/wallet_connect/new_session/WalletConnectNewSessionView$$State$ShowLoadingDialogCommand;->actionToCancel:Lio/reactivex/disposables/Disposable;
 
     return-void
@@ -58,7 +58,7 @@
 .method public apply(Lcom/iMe/ui/wallet/crypto/wallet_connect/new_session/WalletConnectNewSessionView;)V
     .locals 3
 
-    .line 174
+    .line 190
     iget-boolean v0, p0, Lcom/iMe/ui/wallet/crypto/wallet_connect/new_session/WalletConnectNewSessionView$$State$ShowLoadingDialogCommand;->show:Z
 
     iget-boolean v1, p0, Lcom/iMe/ui/wallet/crypto/wallet_connect/new_session/WalletConnectNewSessionView$$State$ShowLoadingDialogCommand;->cancellable:Z
@@ -73,7 +73,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 157
+    .line 173
     check-cast p1, Lcom/iMe/ui/wallet/crypto/wallet_connect/new_session/WalletConnectNewSessionView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/wallet/crypto/wallet_connect/new_session/WalletConnectNewSessionView$$State$ShowLoadingDialogCommand;->apply(Lcom/iMe/ui/wallet/crypto/wallet_connect/new_session/WalletConnectNewSessionView;)V

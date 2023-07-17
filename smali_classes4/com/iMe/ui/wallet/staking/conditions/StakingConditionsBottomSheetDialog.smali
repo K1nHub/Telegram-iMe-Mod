@@ -430,148 +430,162 @@
     return-object p1
 .end method
 
-.method public setupScreenWithData(IILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-    .locals 13
+.method public setupScreenWithData(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    .locals 16
 
-    move-object/from16 v0, p3
+    move-object/from16 v0, p5
 
-    move-object/from16 v1, p4
+    move-object/from16 v1, p6
 
-    move-object/from16 v2, p5
+    move-object/from16 v2, p7
 
-    move-object/from16 v3, p6
+    move-object/from16 v3, p8
 
-    move-object/from16 v4, p7
+    move-object/from16 v4, p9
 
-    move-object/from16 v5, p8
+    move-object/from16 v5, p10
 
-    move-object/from16 v6, p9
+    const-string v6, "iconUrl"
 
-    move-object/from16 v7, p10
+    move-object/from16 v8, p1
 
-    const-string v8, "name"
+    invoke-static {v8, v6}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-static {v0, v8}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    const-string v6, "networkIconUrl"
 
-    const-string v8, "author"
+    move-object/from16 v10, p2
 
-    invoke-static {v1, v8}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v10, v6}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v8, "annualPercentage"
+    const-string v6, "name"
 
-    invoke-static {v2, v8}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    move-object/from16 v11, p3
 
-    const-string/jumbo v8, "startDate"
+    invoke-static {v11, v6}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-static {v3, v8}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    const-string v6, "author"
 
-    const-string v8, "completionDate"
+    move-object/from16 v12, p4
 
-    invoke-static {v4, v8}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v12, v6}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v8, "compoundThreshold"
+    const-string v6, "annualPercentage"
 
-    invoke-static {v5, v8}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v0, v6}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v8, "plannedWithdrawalFeeText"
+    const-string/jumbo v6, "startDate"
 
-    invoke-static {v6, v8}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v1, v6}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v8, "immediateWithdrawalFeeText"
+    const-string v6, "completionDate"
 
-    invoke-static {v7, v8}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v2, v6}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v8, "finishedFeeText"
+    const-string v6, "compoundThreshold"
 
-    move-object/from16 v9, p11
+    invoke-static {v3, v6}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-static {v9, v8}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    const-string v6, "plannedWithdrawalFeeText"
+
+    invoke-static {v4, v6}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v6, "immediateWithdrawalFeeText"
+
+    invoke-static {v5, v6}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v6, "finishedFeeText"
+
+    move-object/from16 v15, p11
+
+    invoke-static {v15, v6}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 58
-    invoke-direct {p0}, Lcom/iMe/ui/wallet/staking/conditions/StakingConditionsBottomSheetDialog;->getBinding()Lorg/telegram/messenger/databinding/ForkContentStakingConditionsBinding;
+    invoke-direct/range {p0 .. p0}, Lcom/iMe/ui/wallet/staking/conditions/StakingConditionsBottomSheetDialog;->getBinding()Lorg/telegram/messenger/databinding/ForkContentStakingConditionsBinding;
+
+    move-result-object v6
+
+    .line 59
+    iget-object v7, v6, Lorg/telegram/messenger/databinding/ForkContentStakingConditionsBinding;->viewHeader:Lcom/iMe/ui/custom/ImageHeaderView;
+
+    const-string/jumbo v9, "viewHeader"
+
+    invoke-static {v7, v9}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const/4 v9, 0x0
+
+    const/4 v13, 0x2
+
+    const/4 v14, 0x0
+
+    invoke-static/range {v7 .. v14}, Lcom/iMe/ui/custom/ImageHeaderView;->setupViewData$default(Lcom/iMe/ui/custom/ImageHeaderView;Ljava/lang/String;Ljava/lang/Integer;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Object;)V
+
+    .line 65
+    iget-object v7, v6, Lorg/telegram/messenger/databinding/ForkContentStakingConditionsBinding;->viewAnnualPercentageCell:Lcom/iMe/ui/custom/DetailsIconCellView;
+
+    .line 66
+    invoke-direct/range {p0 .. p0}, Lcom/iMe/ui/wallet/staking/conditions/StakingConditionsBottomSheetDialog;->getResourceManager()Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     move-result-object v8
 
-    .line 59
-    iget-object v10, v8, Lorg/telegram/messenger/databinding/ForkContentStakingConditionsBinding;->viewHeader:Lcom/iMe/ui/custom/ImageHeaderView;
+    sget v9, Lorg/telegram/messenger/R$string;->staking_details_apy_apr:I
 
-    .line 61
-    invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-interface {v8, v9}, Lcom/iMe/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
 
-    move-result-object v11
-
-    move v12, p1
-
-    .line 59
-    invoke-virtual {v10, p1, v11, v0, v1}, Lcom/iMe/ui/custom/ImageHeaderView;->setupViewData(ILjava/lang/Integer;Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 65
-    iget-object v0, v8, Lorg/telegram/messenger/databinding/ForkContentStakingConditionsBinding;->viewAnnualPercentageCell:Lcom/iMe/ui/custom/DetailsIconCellView;
-
-    .line 66
-    invoke-direct {p0}, Lcom/iMe/ui/wallet/staking/conditions/StakingConditionsBottomSheetDialog;->getResourceManager()Lcom/iMe/storage/domain/utils/system/ResourceManager;
-
-    move-result-object v1
-
-    sget v10, Lorg/telegram/messenger/R$string;->staking_details_apy_apr:I
-
-    invoke-interface {v1, v10}, Lcom/iMe/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
-
-    move-result-object v1
+    move-result-object v8
 
     .line 68
-    sget v10, Lorg/telegram/messenger/R$drawable;->fork_ic_percent:I
+    sget v9, Lorg/telegram/messenger/R$drawable;->fork_ic_percent:I
 
-    const/4 v11, 0x1
+    const/4 v10, 0x1
 
     .line 65
-    invoke-virtual {v0, v1, v2, v10, v11}, Lcom/iMe/ui/custom/DetailsIconCellView;->setupViewData(Ljava/lang/String;Ljava/lang/String;IZ)V
+    invoke-virtual {v7, v8, v0, v9, v10}, Lcom/iMe/ui/custom/DetailsIconCellView;->setupViewData(Ljava/lang/String;Ljava/lang/String;IZ)V
 
     .line 71
-    iget-object v0, v8, Lorg/telegram/messenger/databinding/ForkContentStakingConditionsBinding;->viewStartDateCell:Lcom/iMe/ui/custom/DetailsIconCellView;
+    iget-object v0, v6, Lorg/telegram/messenger/databinding/ForkContentStakingConditionsBinding;->viewStartDateCell:Lcom/iMe/ui/custom/DetailsIconCellView;
 
     .line 72
-    invoke-direct {p0}, Lcom/iMe/ui/wallet/staking/conditions/StakingConditionsBottomSheetDialog;->getResourceManager()Lcom/iMe/storage/domain/utils/system/ResourceManager;
+    invoke-direct/range {p0 .. p0}, Lcom/iMe/ui/wallet/staking/conditions/StakingConditionsBottomSheetDialog;->getResourceManager()Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
-    move-result-object v1
+    move-result-object v7
 
-    sget v2, Lorg/telegram/messenger/R$string;->staking_conditions_start:I
+    sget v8, Lorg/telegram/messenger/R$string;->staking_conditions_start:I
 
-    invoke-interface {v1, v2}, Lcom/iMe/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
+    invoke-interface {v7, v8}, Lcom/iMe/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v7
 
     .line 74
-    sget v2, Lorg/telegram/messenger/R$drawable;->fork_ic_start:I
+    sget v8, Lorg/telegram/messenger/R$drawable;->fork_ic_start:I
 
     .line 71
-    invoke-virtual {v0, v1, v3, v2, v11}, Lcom/iMe/ui/custom/DetailsIconCellView;->setupViewData(Ljava/lang/String;Ljava/lang/String;IZ)V
+    invoke-virtual {v0, v7, v1, v8, v10}, Lcom/iMe/ui/custom/DetailsIconCellView;->setupViewData(Ljava/lang/String;Ljava/lang/String;IZ)V
 
     .line 77
-    iget-object v0, v8, Lorg/telegram/messenger/databinding/ForkContentStakingConditionsBinding;->viewCompletionDateCell:Lcom/iMe/ui/custom/DetailsIconCellView;
+    iget-object v0, v6, Lorg/telegram/messenger/databinding/ForkContentStakingConditionsBinding;->viewCompletionDateCell:Lcom/iMe/ui/custom/DetailsIconCellView;
 
     .line 78
-    invoke-direct {p0}, Lcom/iMe/ui/wallet/staking/conditions/StakingConditionsBottomSheetDialog;->getResourceManager()Lcom/iMe/storage/domain/utils/system/ResourceManager;
+    invoke-direct/range {p0 .. p0}, Lcom/iMe/ui/wallet/staking/conditions/StakingConditionsBottomSheetDialog;->getResourceManager()Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     move-result-object v1
 
-    sget v2, Lorg/telegram/messenger/R$string;->staking_conditions_completion:I
+    sget v7, Lorg/telegram/messenger/R$string;->staking_conditions_completion:I
 
-    invoke-interface {v1, v2}, Lcom/iMe/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
+    invoke-interface {v1, v7}, Lcom/iMe/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
 
     move-result-object v1
 
     .line 80
-    sget v2, Lorg/telegram/messenger/R$drawable;->fork_ic_done_24:I
+    sget v7, Lorg/telegram/messenger/R$drawable;->fork_ic_done_24:I
 
     .line 77
-    invoke-virtual {v0, v1, v4, v2, v11}, Lcom/iMe/ui/custom/DetailsIconCellView;->setupViewData(Ljava/lang/String;Ljava/lang/String;IZ)V
+    invoke-virtual {v0, v1, v2, v7, v10}, Lcom/iMe/ui/custom/DetailsIconCellView;->setupViewData(Ljava/lang/String;Ljava/lang/String;IZ)V
 
     .line 83
-    iget-object v0, v8, Lorg/telegram/messenger/databinding/ForkContentStakingConditionsBinding;->viewThresholdCell:Lcom/iMe/ui/custom/DetailsIconCellView;
+    iget-object v0, v6, Lorg/telegram/messenger/databinding/ForkContentStakingConditionsBinding;->viewThresholdCell:Lcom/iMe/ui/custom/DetailsIconCellView;
 
     .line 84
-    invoke-direct {p0}, Lcom/iMe/ui/wallet/staking/conditions/StakingConditionsBottomSheetDialog;->getResourceManager()Lcom/iMe/storage/domain/utils/system/ResourceManager;
+    invoke-direct/range {p0 .. p0}, Lcom/iMe/ui/wallet/staking/conditions/StakingConditionsBottomSheetDialog;->getResourceManager()Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     move-result-object v1
 
@@ -585,13 +599,13 @@
     sget v2, Lorg/telegram/messenger/R$drawable;->fork_ic_donations_24:I
 
     .line 83
-    invoke-virtual {v0, v1, v5, v2, v11}, Lcom/iMe/ui/custom/DetailsIconCellView;->setupViewData(Ljava/lang/String;Ljava/lang/String;IZ)V
+    invoke-virtual {v0, v1, v3, v2, v10}, Lcom/iMe/ui/custom/DetailsIconCellView;->setupViewData(Ljava/lang/String;Ljava/lang/String;IZ)V
 
     .line 89
-    iget-object v0, v8, Lorg/telegram/messenger/databinding/ForkContentStakingConditionsBinding;->viewPlannedWithdrawalFeeCell:Lcom/iMe/ui/custom/DetailsIconCellView;
+    iget-object v0, v6, Lorg/telegram/messenger/databinding/ForkContentStakingConditionsBinding;->viewPlannedWithdrawalFeeCell:Lcom/iMe/ui/custom/DetailsIconCellView;
 
     .line 90
-    invoke-direct {p0}, Lcom/iMe/ui/wallet/staking/conditions/StakingConditionsBottomSheetDialog;->getResourceManager()Lcom/iMe/storage/domain/utils/system/ResourceManager;
+    invoke-direct/range {p0 .. p0}, Lcom/iMe/ui/wallet/staking/conditions/StakingConditionsBottomSheetDialog;->getResourceManager()Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     move-result-object v1
 
@@ -605,13 +619,13 @@
     sget v2, Lorg/telegram/messenger/R$drawable;->fork_ic_transactions_24:I
 
     .line 89
-    invoke-virtual {v0, v1, v6, v2, v11}, Lcom/iMe/ui/custom/DetailsIconCellView;->setupViewData(Ljava/lang/String;Ljava/lang/String;IZ)V
+    invoke-virtual {v0, v1, v4, v2, v10}, Lcom/iMe/ui/custom/DetailsIconCellView;->setupViewData(Ljava/lang/String;Ljava/lang/String;IZ)V
 
     .line 95
-    iget-object v0, v8, Lorg/telegram/messenger/databinding/ForkContentStakingConditionsBinding;->viewImmediateWithdrawalFeeCell:Lcom/iMe/ui/custom/DetailsIconCellView;
+    iget-object v0, v6, Lorg/telegram/messenger/databinding/ForkContentStakingConditionsBinding;->viewImmediateWithdrawalFeeCell:Lcom/iMe/ui/custom/DetailsIconCellView;
 
     .line 96
-    invoke-direct {p0}, Lcom/iMe/ui/wallet/staking/conditions/StakingConditionsBottomSheetDialog;->getResourceManager()Lcom/iMe/storage/domain/utils/system/ResourceManager;
+    invoke-direct/range {p0 .. p0}, Lcom/iMe/ui/wallet/staking/conditions/StakingConditionsBottomSheetDialog;->getResourceManager()Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     move-result-object v1
 
@@ -625,17 +639,17 @@
     sget v2, Lorg/telegram/messenger/R$drawable;->fork_ic_ask_transfer_24:I
 
     .line 95
-    invoke-virtual {v0, v1, v7, v2, v11}, Lcom/iMe/ui/custom/DetailsIconCellView;->setupViewData(Ljava/lang/String;Ljava/lang/String;IZ)V
+    invoke-virtual {v0, v1, v5, v2, v10}, Lcom/iMe/ui/custom/DetailsIconCellView;->setupViewData(Ljava/lang/String;Ljava/lang/String;IZ)V
 
     .line 101
-    iget-object v0, v8, Lorg/telegram/messenger/databinding/ForkContentStakingConditionsBinding;->viewFinishedFeeCell:Lcom/iMe/ui/custom/DetailsIconCellView;
+    iget-object v0, v6, Lorg/telegram/messenger/databinding/ForkContentStakingConditionsBinding;->viewFinishedFeeCell:Lcom/iMe/ui/custom/DetailsIconCellView;
 
     const-string/jumbo v1, "viewFinishedFeeCell"
 
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 102
-    invoke-direct {p0}, Lcom/iMe/ui/wallet/staking/conditions/StakingConditionsBottomSheetDialog;->getResourceManager()Lcom/iMe/storage/domain/utils/system/ResourceManager;
+    invoke-direct/range {p0 .. p0}, Lcom/iMe/ui/wallet/staking/conditions/StakingConditionsBottomSheetDialog;->getResourceManager()Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     move-result-object v1
 
@@ -654,9 +668,9 @@
 
     const/4 v5, 0x0
 
-    move-object p1, v0
+    move-object/from16 p1, v0
 
-    move-object p2, v1
+    move-object/from16 p2, v1
 
     move-object/from16 p3, p11
 

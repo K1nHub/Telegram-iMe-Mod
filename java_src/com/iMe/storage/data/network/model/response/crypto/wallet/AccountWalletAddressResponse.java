@@ -4,11 +4,11 @@ import kotlin.jvm.internal.Intrinsics;
 /* compiled from: AccountWalletAddressResponse.kt */
 /* loaded from: classes3.dex */
 public final class AccountWalletAddressResponse {
-    private final boolean hasAccess;
     private final boolean isSet;
+    private final String platform;
     private final String value;
 
-    public static /* synthetic */ AccountWalletAddressResponse copy$default(AccountWalletAddressResponse accountWalletAddressResponse, String str, boolean z, boolean z2, int i, Object obj) {
+    public static /* synthetic */ AccountWalletAddressResponse copy$default(AccountWalletAddressResponse accountWalletAddressResponse, String str, boolean z, String str2, int i, Object obj) {
         if ((i & 1) != 0) {
             str = accountWalletAddressResponse.value;
         }
@@ -16,9 +16,9 @@ public final class AccountWalletAddressResponse {
             z = accountWalletAddressResponse.isSet;
         }
         if ((i & 4) != 0) {
-            z2 = accountWalletAddressResponse.hasAccess;
+            str2 = accountWalletAddressResponse.platform;
         }
-        return accountWalletAddressResponse.copy(str, z, z2);
+        return accountWalletAddressResponse.copy(str, z, str2);
     }
 
     public final String component1() {
@@ -29,12 +29,13 @@ public final class AccountWalletAddressResponse {
         return this.isSet;
     }
 
-    public final boolean component3() {
-        return this.hasAccess;
+    public final String component3() {
+        return this.platform;
     }
 
-    public final AccountWalletAddressResponse copy(String str, boolean z, boolean z2) {
-        return new AccountWalletAddressResponse(str, z, z2);
+    public final AccountWalletAddressResponse copy(String str, boolean z, String platform) {
+        Intrinsics.checkNotNullParameter(platform, "platform");
+        return new AccountWalletAddressResponse(str, z, platform);
     }
 
     public boolean equals(Object obj) {
@@ -43,7 +44,7 @@ public final class AccountWalletAddressResponse {
         }
         if (obj instanceof AccountWalletAddressResponse) {
             AccountWalletAddressResponse accountWalletAddressResponse = (AccountWalletAddressResponse) obj;
-            return Intrinsics.areEqual(this.value, accountWalletAddressResponse.value) && this.isSet == accountWalletAddressResponse.isSet && this.hasAccess == accountWalletAddressResponse.hasAccess;
+            return Intrinsics.areEqual(this.value, accountWalletAddressResponse.value) && this.isSet == accountWalletAddressResponse.isSet && Intrinsics.areEqual(this.platform, accountWalletAddressResponse.platform);
         }
         return false;
     }
@@ -57,19 +58,18 @@ public final class AccountWalletAddressResponse {
         if (z != 0) {
             i = 1;
         }
-        int i2 = (hashCode + i) * 31;
-        boolean z2 = this.hasAccess;
-        return i2 + (z2 ? 1 : z2 ? 1 : 0);
+        return ((hashCode + i) * 31) + this.platform.hashCode();
     }
 
     public String toString() {
-        return "AccountWalletAddressResponse(value=" + this.value + ", isSet=" + this.isSet + ", hasAccess=" + this.hasAccess + ')';
+        return "AccountWalletAddressResponse(value=" + this.value + ", isSet=" + this.isSet + ", platform=" + this.platform + ')';
     }
 
-    public AccountWalletAddressResponse(String str, boolean z, boolean z2) {
+    public AccountWalletAddressResponse(String str, boolean z, String platform) {
+        Intrinsics.checkNotNullParameter(platform, "platform");
         this.value = str;
         this.isSet = z;
-        this.hasAccess = z2;
+        this.platform = platform;
     }
 
     public final String getValue() {
@@ -80,7 +80,7 @@ public final class AccountWalletAddressResponse {
         return this.isSet;
     }
 
-    public final boolean getHasAccess() {
-        return this.hasAccess;
+    public final String getPlatform() {
+        return this.platform;
     }
 }

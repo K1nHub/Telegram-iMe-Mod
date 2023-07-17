@@ -13,9 +13,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 import org.telegram.messenger.NotificationBadge;
-import org.telegram.p044ui.ActionBar.EmojiThemes;
-import org.telegram.p044ui.ActionBar.Theme;
-import org.telegram.p044ui.ChatBackgroundDrawable;
+import org.telegram.p043ui.ActionBar.EmojiThemes;
+import org.telegram.p043ui.ActionBar.Theme;
+import org.telegram.p043ui.ChatBackgroundDrawable;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.ResultCallback;
@@ -200,10 +200,10 @@ public class ChatThemeController extends BaseController {
             if (r7 != 0) goto Ld6
             if (r10 == 0) goto Lba
             java.lang.Object r7 = r0.get(r1)
-            org.telegram.ui.ActionBar.EmojiThemes r7 = (org.telegram.p044ui.ActionBar.EmojiThemes) r7
+            org.telegram.ui.ActionBar.EmojiThemes r7 = (org.telegram.p043ui.ActionBar.EmojiThemes) r7
             boolean r7 = r7.showAsDefaultStub
             if (r7 != 0) goto Lba
-            org.telegram.ui.ActionBar.EmojiThemes r7 = org.telegram.p044ui.ActionBar.EmojiThemes.createChatThemesDefault()
+            org.telegram.ui.ActionBar.EmojiThemes r7 = org.telegram.p043ui.ActionBar.EmojiThemes.createChatThemesDefault()
             r0.add(r1, r7)
         Lba:
             java.util.Iterator r7 = r0.iterator()
@@ -211,7 +211,7 @@ public class ChatThemeController extends BaseController {
             boolean r9 = r7.hasNext()
             if (r9 == 0) goto Lce
             java.lang.Object r9 = r7.next()
-            org.telegram.ui.ActionBar.EmojiThemes r9 = (org.telegram.p044ui.ActionBar.EmojiThemes) r9
+            org.telegram.ui.ActionBar.EmojiThemes r9 = (org.telegram.p043ui.ActionBar.EmojiThemes) r9
             r9.initColors()
             goto Lbe
         Lce:
@@ -315,7 +315,7 @@ public class ChatThemeController extends BaseController {
         if (str != null) {
             return TextUtils.equals(tLRPC$WallPaper2.uploadingImage, str);
         }
-        return tLRPC$WallPaper.f1582id == tLRPC$WallPaper2.f1582id && TextUtils.equals(ChatBackgroundDrawable.hash(tLRPC$WallPaper.settings), ChatBackgroundDrawable.hash(tLRPC$WallPaper2.settings));
+        return tLRPC$WallPaper.f1664id == tLRPC$WallPaper2.f1664id && TextUtils.equals(ChatBackgroundDrawable.hash(tLRPC$WallPaper.settings), ChatBackgroundDrawable.hash(tLRPC$WallPaper2.settings));
     }
 
     public void setDialogTheme(long j, String str, boolean z) {
@@ -411,7 +411,7 @@ public class ChatThemeController extends BaseController {
     public static void preloadAllWallpaperImages(boolean z) {
         for (EmojiThemes emojiThemes : allChatThemes) {
             TLRPC$TL_theme tlTheme = emojiThemes.getTlTheme(z ? 1 : 0);
-            if (tlTheme != null && !getPatternFile(tlTheme.f1565id).exists()) {
+            if (tlTheme != null && !getPatternFile(tlTheme.f1647id).exists()) {
                 emojiThemes.loadWallpaper(z ? 1 : 0, null);
             }
         }
@@ -421,7 +421,7 @@ public class ChatThemeController extends BaseController {
         for (EmojiThemes emojiThemes : allChatThemes) {
             TLRPC$TL_theme tlTheme = emojiThemes.getTlTheme(z ? 1 : 0);
             if (tlTheme != null) {
-                if (!themeIdWallpaperThumbMap.containsKey(Long.valueOf(tlTheme.f1565id))) {
+                if (!themeIdWallpaperThumbMap.containsKey(Long.valueOf(tlTheme.f1647id))) {
                     emojiThemes.loadWallpaperThumb(z ? 1 : 0, ChatThemeController$$ExternalSyntheticLambda10.INSTANCE);
                 }
             }
@@ -539,13 +539,13 @@ public class ChatThemeController extends BaseController {
         final boolean z = false;
         if (messageObject != null && (messageObject.messageOwner.action instanceof TLRPC$TL_messageActionSetChatWallPaper)) {
             tLRPC$TL_messages_setChatWallPaper.flags |= 2;
-            tLRPC$TL_messages_setChatWallPaper.f1543id = messageObject.getId();
+            tLRPC$TL_messages_setChatWallPaper.f1625id = messageObject.getId();
             TLRPC$UserFull userFull = MessagesController.getInstance(this.currentAccount).getUserFull(j);
             if (userFull != null) {
                 TLRPC$TL_messageActionSetChatWallPaper tLRPC$TL_messageActionSetChatWallPaper = (TLRPC$TL_messageActionSetChatWallPaper) messageObject.messageOwner.action;
                 TLRPC$TL_wallPaper tLRPC$TL_wallPaper = new TLRPC$TL_wallPaper();
                 TLRPC$WallPaper tLRPC$WallPaper = tLRPC$TL_messageActionSetChatWallPaper.wallpaper;
-                tLRPC$TL_wallPaper.f1582id = tLRPC$WallPaper.f1582id;
+                tLRPC$TL_wallPaper.f1664id = tLRPC$WallPaper.f1664id;
                 tLRPC$TL_wallPaper.document = tLRPC$WallPaper.document;
                 TLRPC$TL_wallPaperSettings tLRPC$TL_wallPaperSettings = new TLRPC$TL_wallPaperSettings();
                 tLRPC$TL_wallPaper.settings = tLRPC$TL_wallPaperSettings;
@@ -576,7 +576,7 @@ public class ChatThemeController extends BaseController {
                 userFull.wallpaper = tLRPC$TL_wallPaper2;
                 TLRPC$WallPaper tLRPC$WallPaper3 = tLRPC$TL_messageActionSetChatWallPaper.wallpaper;
                 tLRPC$TL_wallPaper2.pattern = tLRPC$WallPaper3.pattern;
-                tLRPC$TL_wallPaper2.f1582id = tLRPC$WallPaper3.f1582id;
+                tLRPC$TL_wallPaper2.f1664id = tLRPC$WallPaper3.f1664id;
                 tLRPC$TL_wallPaper2.document = tLRPC$WallPaper3.document;
                 int i5 = tLRPC$WallPaper3.flags;
                 tLRPC$TL_wallPaper2.flags = i5;

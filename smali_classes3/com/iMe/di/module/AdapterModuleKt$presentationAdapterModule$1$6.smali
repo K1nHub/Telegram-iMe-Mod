@@ -28,7 +28,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nAdapterModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 AdapterModule.kt\ncom/iMe/di/module/AdapterModuleKt$presentationAdapterModule$1$6\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,118:1\n129#2,5:119\n*S KotlinDebug\n*F\n+ 1 AdapterModule.kt\ncom/iMe/di/module/AdapterModuleKt$presentationAdapterModule$1$6\n*L\n69#1:119,5\n*E\n"
+    value = "SMAP\nAdapterModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 AdapterModule.kt\ncom/iMe/di/module/AdapterModuleKt$presentationAdapterModule$1$6\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,120:1\n129#2,5:121\n*S KotlinDebug\n*F\n+ 1 AdapterModule.kt\ncom/iMe/di/module/AdapterModuleKt$presentationAdapterModule$1$6\n*L\n70#1:121,5\n*E\n"
 .end annotation
 
 
@@ -72,7 +72,7 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 68
+    .line 69
     new-instance p2, Lcom/iMe/ui/wallet/crypto/buy/adapter/BuyCryptoProductRecycleAdapter;
 
     .line 133
@@ -102,7 +102,7 @@
 
     check-cast p1, Lcom/iMe/ui/adapter/provider/SimplexProductProvider;
 
-    .line 68
+    .line 69
     invoke-direct {p2, v0, p1}, Lcom/iMe/ui/wallet/crypto/buy/adapter/BuyCryptoProductRecycleAdapter;-><init>(Lcom/iMe/ui/adapter/provider/SimplexFooterProvider;Lcom/iMe/ui/adapter/provider/SimplexProductProvider;)V
 
     return-object p2
@@ -111,7 +111,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 67
+    .line 68
     check-cast p1, Lorg/koin/core/scope/Scope;
 
     check-cast p2, Lorg/koin/core/parameter/ParametersHolder;

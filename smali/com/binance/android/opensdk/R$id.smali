@@ -3,10 +3,10 @@
 
 
 # static fields
-.field public static final tvClose:I = 0x7f090434
+.field public static final tvClose:I = 0x7f090461
 
-.field public static final tvContent:I = 0x7f090435
+.field public static final tvContent:I = 0x7f090462
 
-.field public static final tvDownloadApp:I = 0x7f090436
+.field public static final tvDownloadApp:I = 0x7f090463
 
-.field public static final tvLoginWeb:I = 0x7f090437
+.field public static final tvLoginWeb:I = 0x7f090464

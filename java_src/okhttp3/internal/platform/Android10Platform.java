@@ -28,7 +28,7 @@ public final class Android10Platform extends Platform {
 
     public Android10Platform() {
         List listOfNotNull;
-        listOfNotNull = CollectionsKt__CollectionsKt.listOfNotNull(Android10SocketAdapter.Companion.buildIfSupported(), new DeferredSocketAdapter(AndroidSocketAdapter.Companion.getPlayProviderFactory()), new DeferredSocketAdapter(ConscryptSocketAdapter.Companion.getFactory()), new DeferredSocketAdapter(BouncyCastleSocketAdapter.Companion.getFactory()));
+        listOfNotNull = CollectionsKt__CollectionsKt.listOfNotNull((Object[]) new SocketAdapter[]{Android10SocketAdapter.Companion.buildIfSupported(), new DeferredSocketAdapter(AndroidSocketAdapter.Companion.getPlayProviderFactory()), new DeferredSocketAdapter(ConscryptSocketAdapter.Companion.getFactory()), new DeferredSocketAdapter(BouncyCastleSocketAdapter.Companion.getFactory())});
         ArrayList arrayList = new ArrayList();
         for (Object obj : listOfNotNull) {
             if (((SocketAdapter) obj).isSupported()) {

@@ -1,7 +1,7 @@
 package com.google.android.exoplayer2.text.ttml;
 
 import android.text.Layout;
-import com.google.android.exoplayer2.C0475C;
+import com.google.android.exoplayer2.C0480C;
 import com.google.android.exoplayer2.text.SimpleSubtitleDecoder;
 import com.google.android.exoplayer2.text.Subtitle;
 import com.google.android.exoplayer2.text.SubtitleDecoderException;
@@ -218,7 +218,7 @@ public final class TtmlDecoder extends SimpleSubtitleDecoder {
             } else if (XmlPullParserUtil.isStartTag(xmlPullParser, "region")) {
                 TtmlRegion parseRegionAttributes = parseRegionAttributes(xmlPullParser, cellResolution, ttsExtent);
                 if (parseRegionAttributes != null) {
-                    map2.put(parseRegionAttributes.f137id, parseRegionAttributes);
+                    map2.put(parseRegionAttributes.f219id, parseRegionAttributes);
                 }
             } else if (XmlPullParserUtil.isStartTag(xmlPullParser, TtmlNode.TAG_METADATA)) {
                 parseMetadata(xmlPullParser, map3);
@@ -338,9 +338,9 @@ public final class TtmlDecoder extends SimpleSubtitleDecoder {
         TtmlStyle parseStyleAttributes = parseStyleAttributes(xmlPullParser, null);
         String str = null;
         String str2 = "";
-        long j3 = C0475C.TIME_UNSET;
-        long j4 = C0475C.TIME_UNSET;
-        long j5 = C0475C.TIME_UNSET;
+        long j3 = C0480C.TIME_UNSET;
+        long j4 = C0480C.TIME_UNSET;
+        long j5 = C0480C.TIME_UNSET;
         String[] strArr = null;
         for (int i = 0; i < attributeCount; i++) {
             String attributeName = xmlPullParser.getAttributeName(i);
@@ -425,17 +425,17 @@ public final class TtmlDecoder extends SimpleSubtitleDecoder {
         }
         if (ttmlNode != null) {
             long j6 = ttmlNode.startTimeUs;
-            j = C0475C.TIME_UNSET;
-            if (j6 != C0475C.TIME_UNSET) {
-                if (j3 != C0475C.TIME_UNSET) {
+            j = C0480C.TIME_UNSET;
+            if (j6 != C0480C.TIME_UNSET) {
+                if (j3 != C0480C.TIME_UNSET) {
                     j3 += j6;
                 }
-                if (j4 != C0475C.TIME_UNSET) {
+                if (j4 != C0480C.TIME_UNSET) {
                     j4 += j6;
                 }
             }
         } else {
-            j = C0475C.TIME_UNSET;
+            j = C0480C.TIME_UNSET;
         }
         long j7 = j3;
         if (j4 == j) {

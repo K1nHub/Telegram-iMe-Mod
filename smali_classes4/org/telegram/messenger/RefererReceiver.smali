@@ -30,7 +30,7 @@
 
     move-result-object p2
 
-    const-string v0, "referrer"
+    const-string/jumbo v0, "referrer"
 
     invoke-virtual {p2, v0}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
 

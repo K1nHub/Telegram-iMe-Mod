@@ -2,46 +2,50 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/util/Comparator;
+.implements Lj$/util/function/Consumer;
 
 
-# static fields
-.field public static final synthetic INSTANCE:Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda251;
+# instance fields
+.field public final synthetic f$0:Lorg/telegram/messenger/MessagesController;
+
+.field public final synthetic f$1:J
 
 
 # direct methods
-.method static synthetic constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda251;
-
-    invoke-direct {v0}, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda251;-><init>()V
-
-    sput-object v0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda251;->INSTANCE:Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda251;
-
-    return-void
-.end method
-
-.method private synthetic constructor <init>()V
+.method public synthetic constructor <init>(Lorg/telegram/messenger/MessagesController;J)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda251;->f$0:Lorg/telegram/messenger/MessagesController;
+
+    iput-wide p2, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda251;->f$1:J
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final compare(Ljava/lang/Object;Ljava/lang/Object;)I
+.method public final accept(Ljava/lang/Object;)V
+    .locals 3
+
+    iget-object v0, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda251;->f$0:Lorg/telegram/messenger/MessagesController;
+
+    iget-wide v1, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda251;->f$1:J
+
+    check-cast p1, Ljava/util/ArrayList;
+
+    invoke-static {v0, v1, v2, p1}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$_VHelfBBAccQ8gASwxn3d-mobfg(Lorg/telegram/messenger/MessagesController;JLjava/util/ArrayList;)V
+
+    return-void
+.end method
+
+.method public synthetic andThen(Lj$/util/function/Consumer;)Lj$/util/function/Consumer;
     .locals 0
 
-    check-cast p1, Lorg/telegram/tgnet/TLRPC$Updates;
+    invoke-static {p0, p1}, Lj$/util/function/Consumer$-CC;->$default$andThen(Lj$/util/function/Consumer;Lj$/util/function/Consumer;)Lj$/util/function/Consumer;
 
-    check-cast p2, Lorg/telegram/tgnet/TLRPC$Updates;
+    move-result-object p1
 
-    invoke-static {p1, p2}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$hyw1gmDjp3_Ouplm6q9REWMP8Jk(Lorg/telegram/tgnet/TLRPC$Updates;Lorg/telegram/tgnet/TLRPC$Updates;)I
-
-    move-result p1
-
-    return p1
+    return-object p1
 .end method

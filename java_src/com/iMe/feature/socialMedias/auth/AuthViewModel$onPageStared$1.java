@@ -42,10 +42,10 @@ public final class AuthViewModel$onPageStared$1 extends SuspendLambda implements
     /* compiled from: AuthViewModel.kt */
     /* renamed from: com.iMe.feature.socialMedias.auth.AuthViewModel$onPageStared$1$1 */
     /* loaded from: classes3.dex */
-    public static final class C14571 extends Lambda implements Function1<SimpleContext<AuthState>, AuthState> {
-        public static final C14571 INSTANCE = new C14571();
+    public static final class C14681 extends Lambda implements Function1<SimpleContext<AuthState>, AuthState> {
+        public static final C14681 INSTANCE = new C14681();
 
-        C14571() {
+        C14681() {
             super(1);
         }
 
@@ -63,9 +63,9 @@ public final class AuthViewModel$onPageStared$1 extends SuspendLambda implements
         int i = this.label;
         if (i == 0) {
             ResultKt.throwOnFailure(obj);
-            C14571 c14571 = C14571.INSTANCE;
+            C14681 c14681 = C14681.INSTANCE;
             this.label = 1;
-            if (SimpleSyntaxExtensionsKt.reduce((SimpleSyntax) this.L$0, c14571, this) == coroutine_suspended) {
+            if (SimpleSyntaxExtensionsKt.reduce((SimpleSyntax) this.L$0, c14681, this) == coroutine_suspended) {
                 return coroutine_suspended;
             }
         } else if (i != 1) {

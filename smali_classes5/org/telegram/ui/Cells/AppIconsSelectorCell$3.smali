@@ -18,7 +18,7 @@
 .method constructor <init>(Lorg/telegram/ui/Cells/AppIconsSelectorCell;Landroid/content/Context;)V
     .locals 0
 
-    .line 122
+    .line 126
     invoke-direct {p0, p2}, Landroidx/recyclerview/widget/LinearSmoothScroller;-><init>(Landroid/content/Context;)V
 
     return-void
@@ -33,7 +33,7 @@
 
     const/16 p1, 0x10
 
-    .line 125
+    .line 129
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p1
@@ -46,7 +46,7 @@
 .method protected calculateSpeedPerPixel(Landroid/util/DisplayMetrics;)F
     .locals 1
 
-    .line 130
+    .line 134
     invoke-super {p0, p1}, Landroidx/recyclerview/widget/LinearSmoothScroller;->calculateSpeedPerPixel(Landroid/util/DisplayMetrics;)F
 
     move-result p1

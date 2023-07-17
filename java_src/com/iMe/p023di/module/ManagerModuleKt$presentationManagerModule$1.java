@@ -49,10 +49,10 @@ final class ManagerModuleKt$presentationManagerModule$1 extends Lambda implement
     /* compiled from: ManagerModule.kt */
     /* renamed from: com.iMe.di.module.ManagerModuleKt$presentationManagerModule$1$1 */
     /* loaded from: classes3.dex */
-    public static final class C13321 extends Lambda implements Function2<Scope, ParametersHolder, PushNotificationsManager> {
-        public static final C13321 INSTANCE = new C13321();
+    public static final class C13401 extends Lambda implements Function2<Scope, ParametersHolder, PushNotificationsManager> {
+        public static final C13401 INSTANCE = new C13401();
 
-        C13321() {
+        C13401() {
             super(2);
         }
 
@@ -77,30 +77,30 @@ final class ManagerModuleKt$presentationManagerModule$1 extends Lambda implement
         List emptyList3;
         List emptyList4;
         Intrinsics.checkNotNullParameter(module, "$this$module");
-        C13321 c13321 = C13321.INSTANCE;
+        C13401 c13401 = C13401.INSTANCE;
         ScopeRegistry.Companion companion = ScopeRegistry.Companion;
         StringQualifier rootScopeQualifier = companion.getRootScopeQualifier();
         Kind kind = Kind.Factory;
         emptyList = CollectionsKt__CollectionsKt.emptyList();
-        FactoryInstanceFactory factoryInstanceFactory = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier, Reflection.getOrCreateKotlinClass(PushNotificationsManager.class), null, c13321, kind, emptyList));
+        FactoryInstanceFactory factoryInstanceFactory = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier, Reflection.getOrCreateKotlinClass(PushNotificationsManager.class), null, c13401, kind, emptyList));
         module.indexPrimaryType(factoryInstanceFactory);
         new KoinDefinition(module, factoryInstanceFactory);
-        C13332 c13332 = C13332.INSTANCE;
+        C13412 c13412 = C13412.INSTANCE;
         StringQualifier rootScopeQualifier2 = companion.getRootScopeQualifier();
         emptyList2 = CollectionsKt__CollectionsKt.emptyList();
-        FactoryInstanceFactory factoryInstanceFactory2 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier2, Reflection.getOrCreateKotlinClass(CryptoRecipientManager.class), null, c13332, kind, emptyList2));
+        FactoryInstanceFactory factoryInstanceFactory2 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier2, Reflection.getOrCreateKotlinClass(CryptoRecipientManager.class), null, c13412, kind, emptyList2));
         module.indexPrimaryType(factoryInstanceFactory2);
         new KoinDefinition(module, factoryInstanceFactory2);
-        C13343 c13343 = C13343.INSTANCE;
+        C13423 c13423 = C13423.INSTANCE;
         StringQualifier rootScopeQualifier3 = companion.getRootScopeQualifier();
         emptyList3 = CollectionsKt__CollectionsKt.emptyList();
-        FactoryInstanceFactory factoryInstanceFactory3 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier3, Reflection.getOrCreateKotlinClass(BinancePayProcessManager.class), null, c13343, kind, emptyList3));
+        FactoryInstanceFactory factoryInstanceFactory3 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier3, Reflection.getOrCreateKotlinClass(BinancePayProcessManager.class), null, c13423, kind, emptyList3));
         module.indexPrimaryType(factoryInstanceFactory3);
         new KoinDefinition(module, factoryInstanceFactory3);
-        C13354 c13354 = C13354.INSTANCE;
+        C13434 c13434 = C13434.INSTANCE;
         StringQualifier rootScopeQualifier4 = companion.getRootScopeQualifier();
         emptyList4 = CollectionsKt__CollectionsKt.emptyList();
-        FactoryInstanceFactory factoryInstanceFactory4 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier4, Reflection.getOrCreateKotlinClass(WalletCreateManager.class), null, c13354, kind, emptyList4));
+        FactoryInstanceFactory factoryInstanceFactory4 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier4, Reflection.getOrCreateKotlinClass(WalletCreateManager.class), null, c13434, kind, emptyList4));
         module.indexPrimaryType(factoryInstanceFactory4);
         new KoinDefinition(module, factoryInstanceFactory4);
     }
@@ -109,10 +109,10 @@ final class ManagerModuleKt$presentationManagerModule$1 extends Lambda implement
     /* compiled from: ManagerModule.kt */
     /* renamed from: com.iMe.di.module.ManagerModuleKt$presentationManagerModule$1$4 */
     /* loaded from: classes3.dex */
-    public static final class C13354 extends Lambda implements Function2<Scope, ParametersHolder, WalletCreateManager> {
-        public static final C13354 INSTANCE = new C13354();
+    public static final class C13434 extends Lambda implements Function2<Scope, ParametersHolder, WalletCreateManager> {
+        public static final C13434 INSTANCE = new C13434();
 
-        C13354() {
+        C13434() {
             super(2);
         }
 
@@ -128,10 +128,10 @@ final class ManagerModuleKt$presentationManagerModule$1 extends Lambda implement
     /* compiled from: ManagerModule.kt */
     /* renamed from: com.iMe.di.module.ManagerModuleKt$presentationManagerModule$1$2 */
     /* loaded from: classes3.dex */
-    public static final class C13332 extends Lambda implements Function2<Scope, ParametersHolder, CryptoRecipientManager> {
-        public static final C13332 INSTANCE = new C13332();
+    public static final class C13412 extends Lambda implements Function2<Scope, ParametersHolder, CryptoRecipientManager> {
+        public static final C13412 INSTANCE = new C13412();
 
-        C13332() {
+        C13412() {
             super(2);
         }
 
@@ -148,10 +148,10 @@ final class ManagerModuleKt$presentationManagerModule$1 extends Lambda implement
     /* compiled from: ManagerModule.kt */
     /* renamed from: com.iMe.di.module.ManagerModuleKt$presentationManagerModule$1$3 */
     /* loaded from: classes3.dex */
-    public static final class C13343 extends Lambda implements Function2<Scope, ParametersHolder, BinancePayProcessManager> {
-        public static final C13343 INSTANCE = new C13343();
+    public static final class C13423 extends Lambda implements Function2<Scope, ParametersHolder, BinancePayProcessManager> {
+        public static final C13423 INSTANCE = new C13423();
 
-        C13343() {
+        C13423() {
             super(2);
         }
 

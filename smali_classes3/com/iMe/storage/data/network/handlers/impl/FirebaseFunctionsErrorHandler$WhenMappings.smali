@@ -297,7 +297,7 @@
 
     :catch_12
     :try_start_13
-    sget-object v1, Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;->ERR_STAKING_DEPOSIT_LOW_BALANCE:Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;
+    sget-object v1, Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;->ERR_TOKEN_NOT_FOUND:Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;
 
     invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
@@ -311,7 +311,7 @@
 
     :catch_13
     :try_start_14
-    sget-object v1, Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;->ERR_STAKING_DEPOSIT_TOO_LATE:Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;
+    sget-object v1, Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;->ERR_STAKING_DEPOSIT_LOW_BALANCE:Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;
 
     invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
@@ -325,7 +325,7 @@
 
     :catch_14
     :try_start_15
-    sget-object v1, Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;->ERR_STAKING_WITHDRAWAL_OVER_LIMIT:Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;
+    sget-object v1, Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;->ERR_STAKING_DEPOSIT_TOO_LATE:Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;
 
     invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
@@ -339,7 +339,7 @@
 
     :catch_15
     :try_start_16
-    sget-object v1, Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;->ERR_STAKING_CLAIM_OVERLAP:Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;
+    sget-object v1, Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;->ERR_STAKING_WITHDRAWAL_OVER_LIMIT:Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;
 
     invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
@@ -353,7 +353,7 @@
 
     :catch_16
     :try_start_17
-    sget-object v1, Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;->ERR_AIRDROP_PROMOTION_NOT_ACTIVE:Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;
+    sget-object v1, Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;->ERR_STAKING_CLAIM_OVERLAP:Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;
 
     invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
@@ -367,7 +367,7 @@
 
     :catch_17
     :try_start_18
-    sget-object v1, Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;->ERR_AIRDROP_PROMOTION_REQUEST_ID_NOT_FOUND:Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;
+    sget-object v1, Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;->ERR_AIRDROP_PROMOTION_NOT_ACTIVE:Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;
 
     invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
@@ -381,7 +381,7 @@
 
     :catch_18
     :try_start_19
-    sget-object v1, Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;->ERR_AIRDROP_PROMOTION_USER_ALREADY_PARTICIPATED:Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;
+    sget-object v1, Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;->ERR_AIRDROP_PROMOTION_REQUEST_ID_NOT_FOUND:Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;
 
     invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
@@ -395,7 +395,7 @@
 
     :catch_19
     :try_start_1a
-    sget-object v1, Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;->ERR_AIRDROP_PROMOTION_NO_TOKENS:Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;
+    sget-object v1, Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;->ERR_AIRDROP_PROMOTION_USER_ALREADY_PARTICIPATED:Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;
 
     invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
@@ -409,7 +409,7 @@
 
     :catch_1a
     :try_start_1b
-    sget-object v1, Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;->WRONG_TWITTER_ACCESS_TOKEN_ERROR:Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;
+    sget-object v1, Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;->ERR_AIRDROP_PROMOTION_NO_TOKENS:Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;
 
     invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
@@ -423,7 +423,7 @@
 
     :catch_1b
     :try_start_1c
-    sget-object v1, Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;->WRONG_TWITTER_REFRESH_TOKEN_ERROR:Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;
+    sget-object v1, Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;->WRONG_TWITTER_ACCESS_TOKEN_ERROR:Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;
 
     invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
@@ -437,7 +437,7 @@
 
     :catch_1c
     :try_start_1d
-    sget-object v1, Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;->TWITTER_USER_DISABLED_DIRECT_MESSAGES:Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;
+    sget-object v1, Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;->WRONG_TWITTER_REFRESH_TOKEN_ERROR:Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;
 
     invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
@@ -451,7 +451,7 @@
 
     :catch_1d
     :try_start_1e
-    sget-object v1, Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;->NO_OAUTH_ACCESS_GRANTED_ERROR:Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;
+    sget-object v1, Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;->TWITTER_USER_DISABLED_DIRECT_MESSAGES:Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;
 
     invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
@@ -464,6 +464,20 @@
     .catch Ljava/lang/NoSuchFieldError; {:try_start_1e .. :try_end_1e} :catch_1e
 
     :catch_1e
+    :try_start_1f
+    sget-object v1, Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;->NO_OAUTH_ACCESS_GRANTED_ERROR:Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;
+
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
+
+    move-result v1
+
+    const/16 v2, 0x20
+
+    aput v2, v0, v1
+    :try_end_1f
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_1f .. :try_end_1f} :catch_1f
+
+    :catch_1f
     sput-object v0, Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$WhenMappings;->$EnumSwitchMapping$0:[I
 
     return-void

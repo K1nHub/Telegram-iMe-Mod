@@ -15,10 +15,10 @@
 .method public static isEnabled(Lorg/telegram/ui/LauncherIconController$LauncherIcon;)Z
     .locals 2
 
-    .line 27
+    .line 30
     sget-object v0, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
-    .line 28
+    .line 31
     invoke-virtual {v0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 
     move-result-object v1
@@ -33,37 +33,49 @@
 
     const/4 v1, 0x1
 
-    if-eq v0, v1, :cond_1
+    if-eq v0, v1, :cond_2
 
-    if-nez v0, :cond_0
+    if-nez v0, :cond_1
 
-    .line 29
-    sget-object v0, Lorg/telegram/ui/LauncherIconController$LauncherIcon;->DEFAULT:Lorg/telegram/ui/LauncherIconController$LauncherIcon;
+    .line 32
+    invoke-static {}, Lorg/telegram/messenger/BuildVars;->isStandaloneApp()Z
 
-    if-ne p0, v0, :cond_0
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    sget-object v0, Lorg/telegram/ui/LauncherIconController$LauncherIcon;->ROCKET:Lorg/telegram/ui/LauncherIconController$LauncherIcon;
 
     goto :goto_0
 
     :cond_0
-    const/4 v1, 0x0
+    sget-object v0, Lorg/telegram/ui/LauncherIconController$LauncherIcon;->DEFAULT:Lorg/telegram/ui/LauncherIconController$LauncherIcon;
+
+    :goto_0
+    if-ne p0, v0, :cond_1
+
+    goto :goto_1
 
     :cond_1
-    :goto_0
+    const/4 v1, 0x0
+
+    :cond_2
+    :goto_1
     return v1
 .end method
 
 .method public static setIcon(Lorg/telegram/ui/LauncherIconController$LauncherIcon;)V
     .locals 8
 
-    .line 33
+    .line 36
     sget-object v0, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
-    .line 34
+    .line 37
     invoke-virtual {v0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 
     move-result-object v1
 
-    .line 35
+    .line 38
     invoke-static {}, Lorg/telegram/ui/LauncherIconController$LauncherIcon;->values()[Lorg/telegram/ui/LauncherIconController$LauncherIcon;
 
     move-result-object v2
@@ -77,14 +89,14 @@
 
     aget-object v5, v2, v4
 
-    .line 37
+    .line 40
     iget-boolean v6, v5, Lorg/telegram/ui/LauncherIconController$LauncherIcon;->premium:Z
 
     if-eqz v6, :cond_0
 
     goto :goto_2
 
-    .line 41
+    .line 44
     :cond_0
     invoke-virtual {v5, v0}, Lorg/telegram/ui/LauncherIconController$LauncherIcon;->getComponentName(Landroid/content/Context;)Landroid/content/ComponentName;
 
@@ -116,7 +128,7 @@
 .method public static tryFixLauncherIconIfNeeded()V
     .locals 5
 
-    .line 12
+    .line 15
     invoke-static {}, Lorg/telegram/ui/LauncherIconController$LauncherIcon;->values()[Lorg/telegram/ui/LauncherIconController$LauncherIcon;
 
     move-result-object v0
@@ -130,14 +142,14 @@
 
     aget-object v3, v0, v2
 
-    .line 14
+    .line 17
     iget-boolean v4, v3, Lorg/telegram/ui/LauncherIconController$LauncherIcon;->premium:Z
 
     if-eqz v4, :cond_0
 
     goto :goto_1
 
-    .line 18
+    .line 21
     :cond_0
     invoke-static {v3}, Lorg/telegram/ui/LauncherIconController;->isEnabled(Lorg/telegram/ui/LauncherIconController$LauncherIcon;)Z
 
@@ -153,7 +165,7 @@
 
     goto :goto_0
 
-    .line 23
+    .line 26
     :cond_2
     sget-object v0, Lorg/telegram/ui/LauncherIconController$LauncherIcon;->DEFAULT:Lorg/telegram/ui/LauncherIconController$LauncherIcon;
 

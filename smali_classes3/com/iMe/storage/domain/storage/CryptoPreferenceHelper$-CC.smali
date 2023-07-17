@@ -8,12 +8,12 @@
     .locals 1
     .param p0, "_this"    # Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
 
-    .line 47
-    invoke-interface {p0}, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;->getNetworkType()Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    .line 53
+    invoke-interface {p0}, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;->getNetwork()Lcom/iMe/storage/domain/model/crypto/Network;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lcom/iMe/storage/domain/model/crypto/NetworkType;->getBlockchainType()Lcom/iMe/storage/domain/model/crypto/BlockchainType;
+    invoke-virtual {v0}, Lcom/iMe/storage/domain/model/crypto/Network;->getBlockchainType()Lcom/iMe/storage/domain/model/crypto/BlockchainType;
 
     move-result-object v0
 
@@ -39,7 +39,7 @@
 
     const-string p2, ""
 
-    .line 65
+    .line 71
     :cond_0
     invoke-interface {p0, p1, p2}, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;->withGuid(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 

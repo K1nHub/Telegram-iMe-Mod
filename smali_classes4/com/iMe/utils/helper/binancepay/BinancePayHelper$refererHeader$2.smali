@@ -84,7 +84,7 @@
 
     new-array v0, v0, [Lkotlin/Pair;
 
-    const-string v1, "referer"
+    const-string/jumbo v1, "referer"
 
     const-string v2, "https://www.binance.com/"
 

@@ -9,8 +9,8 @@ import java.util.RandomAccess;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.markers.KMappedMarker;
-import p034j$.util.Iterator;
-import p034j$.util.function.Consumer;
+import p033j$.util.Iterator;
+import p033j$.util.function.Consumer;
 /* compiled from: AbstractList.kt */
 /* loaded from: classes4.dex */
 public abstract class AbstractList<E> extends AbstractCollection<E> implements List<E> {
@@ -106,15 +106,15 @@ public abstract class AbstractList<E> extends AbstractCollection<E> implements L
     /* JADX INFO: Access modifiers changed from: private */
     /* compiled from: AbstractList.kt */
     /* loaded from: classes4.dex */
-    public class IteratorImpl implements Iterator<E>, KMappedMarker, p034j$.util.Iterator {
+    public class IteratorImpl implements Iterator<E>, KMappedMarker, p033j$.util.Iterator {
         private int index;
 
-        @Override // p034j$.util.Iterator
+        @Override // p033j$.util.Iterator
         public /* synthetic */ void forEachRemaining(Consumer consumer) {
             Iterator.CC.$default$forEachRemaining(this, consumer);
         }
 
-        @Override // java.util.Iterator, p034j$.util.Iterator
+        @Override // java.util.Iterator, p033j$.util.Iterator
         public void remove() {
             throw new UnsupportedOperationException("Operation is not supported for read-only collection");
         }
@@ -130,12 +130,12 @@ public abstract class AbstractList<E> extends AbstractCollection<E> implements L
             this.index = i;
         }
 
-        @Override // java.util.Iterator, p034j$.util.Iterator
+        @Override // java.util.Iterator, p033j$.util.Iterator
         public boolean hasNext() {
             return this.index < AbstractList.this.size();
         }
 
-        @Override // java.util.Iterator, p034j$.util.Iterator
+        @Override // java.util.Iterator, p033j$.util.Iterator
         public E next() {
             if (!hasNext()) {
                 throw new NoSuchElementException();

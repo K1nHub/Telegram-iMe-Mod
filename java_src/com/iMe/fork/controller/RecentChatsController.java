@@ -34,15 +34,15 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.ranges.RangesKt___RangesKt;
 import org.koin.core.Koin;
 import org.koin.core.component.KoinComponent;
-import org.koin.p043mp.KoinPlatformTools;
+import org.koin.p042mp.KoinPlatformTools;
 import org.telegram.messenger.BaseController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.Utilities;
-import p034j$.util.Collection$EL;
-import p034j$.util.concurrent.ConcurrentHashMap;
-import p034j$.util.concurrent.ConcurrentMap$EL;
-import p034j$.util.function.Function;
-import p034j$.util.function.Predicate;
+import p033j$.util.Collection$EL;
+import p033j$.util.concurrent.ConcurrentHashMap;
+import p033j$.util.concurrent.ConcurrentMap$EL;
+import p033j$.util.function.Function;
+import p033j$.util.function.Predicate;
 /* compiled from: RecentChatsController.kt */
 /* loaded from: classes3.dex */
 public final class RecentChatsController extends BaseController implements KoinComponent {
@@ -316,23 +316,23 @@ public final class RecentChatsController extends BaseController implements KoinC
         Collection<HistoryDialogModel> values = this.historyDialogs.values();
         final RecentChatsController$clearRecentChatsHistory$1 recentChatsController$clearRecentChatsHistory$1 = RecentChatsController$clearRecentChatsHistory$1.INSTANCE;
         Collection$EL.removeIf(values, new Predicate() { // from class: com.iMe.fork.controller.RecentChatsController$$ExternalSyntheticLambda5
-            @Override // p034j$.util.function.Predicate
+            @Override // p033j$.util.function.Predicate
             public /* synthetic */ Predicate and(Predicate predicate) {
                 return Objects.requireNonNull(predicate);
             }
 
-            @Override // p034j$.util.function.Predicate
+            @Override // p033j$.util.function.Predicate
             public /* synthetic */ Predicate negate() {
                 return Predicate.CC.$default$negate(this);
             }
 
-            @Override // p034j$.util.function.Predicate
+            @Override // p033j$.util.function.Predicate
             /* renamed from: or */
             public /* synthetic */ Predicate mo23or(Predicate predicate) {
                 return Objects.requireNonNull(predicate);
             }
 
-            @Override // p034j$.util.function.Predicate
+            @Override // p033j$.util.function.Predicate
             public final boolean test(Object obj) {
                 boolean clearRecentChatsHistory$lambda$12;
                 clearRecentChatsHistory$lambda$12 = RecentChatsController.clearRecentChatsHistory$lambda$12(Function1.this, obj);
@@ -418,19 +418,19 @@ public final class RecentChatsController extends BaseController implements KoinC
             Integer valueOf = Integer.valueOf(i);
             final RecentChatsController$Companion$getInstance$1 recentChatsController$Companion$getInstance$1 = new RecentChatsController$Companion$getInstance$1(i);
             Object computeIfAbsent = ConcurrentMap$EL.computeIfAbsent(concurrentHashMap, valueOf, new Function() { // from class: com.iMe.fork.controller.RecentChatsController$Companion$$ExternalSyntheticLambda0
-                @Override // p034j$.util.function.Function
+                @Override // p033j$.util.function.Function
                 public /* synthetic */ Function andThen(Function function) {
                     return Objects.requireNonNull(function);
                 }
 
-                @Override // p034j$.util.function.Function
+                @Override // p033j$.util.function.Function
                 public final Object apply(Object obj) {
                     RecentChatsController instance$lambda$0;
                     instance$lambda$0 = RecentChatsController.Companion.getInstance$lambda$0(Function1.this, obj);
                     return instance$lambda$0;
                 }
 
-                @Override // p034j$.util.function.Function
+                @Override // p033j$.util.function.Function
                 public /* synthetic */ Function compose(Function function) {
                     return Objects.requireNonNull(function);
                 }

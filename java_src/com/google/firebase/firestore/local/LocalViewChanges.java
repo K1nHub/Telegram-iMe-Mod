@@ -16,7 +16,7 @@ public final class LocalViewChanges {
         ImmutableSortedSet immutableSortedSet = new ImmutableSortedSet(new ArrayList(), DocumentKey.comparator());
         ImmutableSortedSet immutableSortedSet2 = new ImmutableSortedSet(new ArrayList(), DocumentKey.comparator());
         for (DocumentViewChange documentViewChange : viewSnapshot.getChanges()) {
-            int i2 = C10121.f172x33862af7[documentViewChange.getType().ordinal()];
+            int i2 = C10171.f254x33862af7[documentViewChange.getType().ordinal()];
             if (i2 == 1) {
                 immutableSortedSet = immutableSortedSet.insert(documentViewChange.getDocument().getKey());
             } else if (i2 == 2) {
@@ -28,20 +28,20 @@ public final class LocalViewChanges {
 
     /* renamed from: com.google.firebase.firestore.local.LocalViewChanges$1 */
     /* loaded from: classes3.dex */
-    static /* synthetic */ class C10121 {
+    static /* synthetic */ class C10171 {
 
         /* renamed from: $SwitchMap$com$google$firebase$firestore$core$DocumentViewChange$Type */
-        static final /* synthetic */ int[] f172x33862af7;
+        static final /* synthetic */ int[] f254x33862af7;
 
         static {
             int[] iArr = new int[DocumentViewChange.Type.values().length];
-            f172x33862af7 = iArr;
+            f254x33862af7 = iArr;
             try {
                 iArr[DocumentViewChange.Type.ADDED.ordinal()] = 1;
             } catch (NoSuchFieldError unused) {
             }
             try {
-                f172x33862af7[DocumentViewChange.Type.REMOVED.ordinal()] = 2;
+                f254x33862af7[DocumentViewChange.Type.REMOVED.ordinal()] = 2;
             } catch (NoSuchFieldError unused2) {
             }
         }

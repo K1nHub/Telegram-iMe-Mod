@@ -42,15 +42,15 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.ranges.RangesKt___RangesKt;
 import org.koin.core.Koin;
 import org.koin.core.component.KoinComponent;
-import org.koin.p043mp.KoinPlatformTools;
+import org.koin.p042mp.KoinPlatformTools;
 import org.telegram.messenger.BaseController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.Utilities;
-import org.telegram.p044ui.ActionBar.BaseFragment;
-import org.telegram.p044ui.FilterCreateActivity;
-import p034j$.util.concurrent.ConcurrentHashMap;
-import p034j$.util.concurrent.ConcurrentMap$EL;
-import p034j$.util.function.Function;
+import org.telegram.p043ui.ActionBar.BaseFragment;
+import org.telegram.p043ui.FilterCreateActivity;
+import p033j$.util.concurrent.ConcurrentHashMap;
+import p033j$.util.concurrent.ConcurrentMap$EL;
+import p033j$.util.function.Function;
 /* compiled from: FiltersController.kt */
 /* loaded from: classes3.dex */
 public final class FiltersController extends BaseController implements KoinComponent {
@@ -284,7 +284,7 @@ public final class FiltersController extends BaseController implements KoinCompo
             for (MessagesController.DialogFilter dialogFilter : filters) {
                 dialogFilter.alwaysShow.clear();
                 dialogFilter.pinnedDialogs.clear();
-                Pair<List<Long>, List<Integer>> pair = archiveSortingPinnedChats.get(SortingFilter.Companion.getFilterByIdWithExtra(z, dialogFilter.f1373id).name());
+                Pair<List<Long>, List<Integer>> pair = archiveSortingPinnedChats.get(SortingFilter.Companion.getFilterByIdWithExtra(z, dialogFilter.f1455id).name());
                 if (pair != null) {
                     int i = 0;
                     for (Object obj : pair.getFirst()) {
@@ -418,13 +418,13 @@ public final class FiltersController extends BaseController implements KoinCompo
         Utilities.stageQueue.postRunnable(new Runnable() { // from class: com.iMe.fork.controller.FiltersController$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                FiltersController.addOrEditFilterSettings$lambda$14(FiltersController.this, settings);
+                FiltersController.addOrEditFilterSettings$lambda$13(FiltersController.this, settings);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void addOrEditFilterSettings$lambda$14(FiltersController this$0, FilterSettingsModel settings) {
+    public static final void addOrEditFilterSettings$lambda$13(FiltersController this$0, FilterSettingsModel settings) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         Intrinsics.checkNotNullParameter(settings, "$settings");
         this$0.filterSettings.put(Integer.valueOf(settings.getFilterId()), settings);
@@ -466,7 +466,7 @@ public final class FiltersController extends BaseController implements KoinCompo
                 arrayList.add(Long.valueOf(dialogFilter.pinnedDialogs.keyAt(i)));
                 arrayList2.add(Integer.valueOf(dialogFilter.pinnedDialogs.valueAt(i)));
             }
-            Pair m85to = TuplesKt.m85to(SortingFilter.Companion.getFilterByIdWithExtra(z, dialogFilter.f1373id).name(), TuplesKt.m85to(arrayList, arrayList2));
+            Pair m85to = TuplesKt.m85to(SortingFilter.Companion.getFilterByIdWithExtra(z, dialogFilter.f1455id).name(), TuplesKt.m85to(arrayList, arrayList2));
             linkedHashMap.put(m85to.getFirst(), m85to.getSecond());
         }
         mutableMap = MapsKt__MapsKt.toMutableMap(linkedHashMap);
@@ -502,7 +502,7 @@ public final class FiltersController extends BaseController implements KoinCompo
             sortingTabs.add(new SortingTabState(sortingFilter, companion.mapNamesToEnums(of), sharedPreferences.getInt(TelegramPreferenceKeys.User.buildSortingTabPositionKey(sortingFilter), sortingFilter.groupOrdinal()), sharedPreferences.getBoolean(TelegramPreferenceKeys.User.buildSortingTabEnabledKey(sortingFilter), sortingFilter.isEnabledByDefault())));
         }
         if (sortingTabs.size() > 1) {
-            CollectionsKt__MutableCollectionsJVMKt.sortWith(sortingTabs, new Comparator() { // from class: com.iMe.fork.controller.FiltersController$loadSortingTabsConfig$lambda$20$lambda$19$$inlined$sortBy$1
+            CollectionsKt__MutableCollectionsJVMKt.sortWith(sortingTabs, new Comparator() { // from class: com.iMe.fork.controller.FiltersController$loadSortingTabsConfig$lambda$19$lambda$18$$inlined$sortBy$1
                 @Override // java.util.Comparator
                 public final int compare(T t, T t2) {
                     int compareValues;
@@ -555,19 +555,19 @@ public final class FiltersController extends BaseController implements KoinCompo
             Integer valueOf = Integer.valueOf(i);
             final FiltersController$Companion$getInstance$1 filtersController$Companion$getInstance$1 = new FiltersController$Companion$getInstance$1(i);
             Object computeIfAbsent = ConcurrentMap$EL.computeIfAbsent(concurrentHashMap, valueOf, new Function() { // from class: com.iMe.fork.controller.FiltersController$Companion$$ExternalSyntheticLambda0
-                @Override // p034j$.util.function.Function
+                @Override // p033j$.util.function.Function
                 public /* synthetic */ Function andThen(Function function) {
                     return Objects.requireNonNull(function);
                 }
 
-                @Override // p034j$.util.function.Function
+                @Override // p033j$.util.function.Function
                 public final Object apply(Object obj) {
                     FiltersController instance$lambda$0;
                     instance$lambda$0 = FiltersController.Companion.getInstance$lambda$0(Function1.this, obj);
                     return instance$lambda$0;
                 }
 
-                @Override // p034j$.util.function.Function
+                @Override // p033j$.util.function.Function
                 public /* synthetic */ Function compose(Function function) {
                     return Objects.requireNonNull(function);
                 }

@@ -13,11 +13,8 @@
 .method public abstract getMessageText(Lcom/iMe/storage/domain/utils/system/ResourceManager;)Ljava/lang/String;
 .end method
 
-.method public abstract getNetworkType()Lcom/iMe/storage/domain/model/crypto/NetworkType;
+.method public abstract getNetworkId()Ljava/lang/String;
 .end method
 
 .method public abstract getRecipientAddress()Ljava/lang/String;
-.end method
-
-.method public abstract getTokenCode()Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
 .end method

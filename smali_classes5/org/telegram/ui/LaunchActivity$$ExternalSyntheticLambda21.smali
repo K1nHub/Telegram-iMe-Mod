@@ -5,27 +5,17 @@
 .implements Landroid/view/View$OnClickListener;
 
 
-# static fields
-.field public static final synthetic INSTANCE:Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda21;
+# instance fields
+.field public final synthetic f$0:Lorg/telegram/ui/LaunchActivity;
 
 
 # direct methods
-.method static synthetic constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda21;
-
-    invoke-direct {v0}, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda21;-><init>()V
-
-    sput-object v0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda21;->INSTANCE:Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda21;
-
-    return-void
-.end method
-
-.method private synthetic constructor <init>()V
+.method public synthetic constructor <init>(Lorg/telegram/ui/LaunchActivity;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda21;->f$0:Lorg/telegram/ui/LaunchActivity;
 
     return-void
 .end method
@@ -33,9 +23,11 @@
 
 # virtual methods
 .method public final onClick(Landroid/view/View;)V
-    .locals 0
+    .locals 1
 
-    invoke-static {p1}, Lorg/telegram/ui/LaunchActivity;->$r8$lambda$ipqT5gmo07FSK4CATSKXaT3jIDM(Landroid/view/View;)V
+    iget-object v0, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda21;->f$0:Lorg/telegram/ui/LaunchActivity;
+
+    invoke-static {v0, p1}, Lorg/telegram/ui/LaunchActivity;->$r8$lambda$xQkDi1hM0jv1niiNYBUQIvUzMK0(Lorg/telegram/ui/LaunchActivity;Landroid/view/View;)V
 
     return-void
 .end method

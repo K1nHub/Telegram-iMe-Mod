@@ -36,7 +36,7 @@
 
     const/4 v0, 0x0
 
-    .line 23
+    .line 22
     invoke-direct {p0, v0}, Lcom/iMe/common/AppRxEvents;-><init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
 
     return-void

@@ -13,7 +13,7 @@ import com.iMe.storage.domain.model.translation.Translation;
 import com.iMe.storage.domain.model.translation.TranslationLanguage;
 import com.iMe.storage.domain.utils.p030rx.SchedulersProvider;
 import com.iMe.storage.domain.utils.system.ResourceManager;
-import com.iMe.utils.extentions.p033rx.RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
+import com.iMe.utils.extentions.p032rx.RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
 import io.reactivex.Observable;
 import io.reactivex.disposables.Disposable;
 import java.util.ArrayList;
@@ -67,8 +67,8 @@ public final class TranslationPresenter extends BasePresenter<TranslationView> {
     public final void loadLanguages(boolean z) {
         Observable<Result<List<TranslationLanguage>>> observeOn = this.translationInteractor.languages().observeOn(this.schedulersProvider.mo698ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "translationInteractor\n  …(schedulersProvider.ui())");
-        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2077xba424fcb(this, z)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2078xba424fcc((BaseView) getViewState())));
-        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
+        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2081xba424fcb(this, z)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2082xba424fcc((BaseView) getViewState())));
+        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…Error.invoke()\n        })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
 
@@ -94,8 +94,8 @@ public final class TranslationPresenter extends BasePresenter<TranslationView> {
             Intrinsics.checkNotNull(languageCode);
             Observable<Result<Translation>> observeOn = translationInteractor.translate(text, languageCode, this.sourceLanguage.getLanguageCode()).observeOn(this.schedulersProvider.mo698ui());
             Intrinsics.checkNotNullExpressionValue(observeOn, "translationInteractor\n  …(schedulersProvider.ui())");
-            Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2079xa655ab44(this, text, z)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2080xa655ab45((BaseView) getViewState())));
-            Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
+            Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2083xa655ab44(this, text, z)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2084xa655ab45((BaseView) getViewState())));
+            Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…Error.invoke()\n        })");
             BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
             return;
         }
@@ -123,8 +123,8 @@ public final class TranslationPresenter extends BasePresenter<TranslationView> {
         Intrinsics.checkNotNull(languageCode);
         Observable<Result<Translation>> observeOn = translationInteractor.translate(text, languageCode, this.outLanguage.getLanguageCode()).observeOn(this.schedulersProvider.mo698ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "translationInteractor\n  …(schedulersProvider.ui())");
-        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2081x31d12e3f(this, text)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2082x31d12e40((BaseView) getViewState())));
-        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
+        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2085x31d12e3f(this, text)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2086x31d12e40((BaseView) getViewState())));
+        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…Error.invoke()\n        })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
 

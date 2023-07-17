@@ -7,11 +7,11 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Lambda;
 import org.koin.core.parameter.ParametersHolder;
 import org.koin.core.parameter.ParametersHolderKt;
-import org.koin.p043mp.KoinPlatformTools;
+import org.koin.p042mp.KoinPlatformTools;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: CatalogAllFragment.kt */
 /* renamed from: com.iMe.ui.catalog.tabs.all.CatalogAllFragment$presenter$2 */
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public final class CatalogAllFragment$presenter$2 extends Lambda implements Function0<CatalogAllPresenter> {
     final /* synthetic */ ChatType $chatType;
     final /* synthetic */ CatalogAllFragment this$0;
@@ -27,12 +27,12 @@ public final class CatalogAllFragment$presenter$2 extends Lambda implements Func
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: CatalogAllFragment.kt */
     /* renamed from: com.iMe.ui.catalog.tabs.all.CatalogAllFragment$presenter$2$1 */
-    /* loaded from: classes.dex */
-    public static final class C20061 extends Lambda implements Function0<ParametersHolder> {
+    /* loaded from: classes3.dex */
+    public static final class C20101 extends Lambda implements Function0<ParametersHolder> {
         final /* synthetic */ ChatType $chatType;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C20061(ChatType chatType) {
+        C20101(ChatType chatType) {
             super(0);
             this.$chatType = chatType;
         }
@@ -47,7 +47,7 @@ public final class CatalogAllFragment$presenter$2 extends Lambda implements Func
     @Override // kotlin.jvm.functions.Function0
     public final CatalogAllPresenter invoke() {
         Lazy lazy;
-        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new CatalogAllFragment$presenter$2$invoke$$inlined$inject$default$1(this.this$0, null, new C20061(this.$chatType)));
+        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new CatalogAllFragment$presenter$2$invoke$$inlined$inject$default$1(this.this$0, null, new C20101(this.$chatType)));
         return (CatalogAllPresenter) lazy.getValue();
     }
 }

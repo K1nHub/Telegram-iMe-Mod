@@ -211,11 +211,7 @@
     move-result-object v8
 
     .line 48
-    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/crypto/wallet_connect/WalletConnectTransaction;->getNetworkType()Lcom/iMe/storage/domain/model/crypto/NetworkType;
-
-    move-result-object p1
-
-    invoke-virtual {p1}, Ljava/lang/Enum;->name()Ljava/lang/String;
+    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/crypto/wallet_connect/WalletConnectTransaction;->getNetworkId()Ljava/lang/String;
 
     move-result-object v9
 

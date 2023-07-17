@@ -15,7 +15,7 @@ public final class TweetResponse {
     @SerializedName(TtmlNode.ATTR_ID)
 
     /* renamed from: id */
-    private final String f311id;
+    private final String f391id;
     @SerializedName("likedByMe")
     private final boolean likedByMe;
     @SerializedName("likes")
@@ -36,7 +36,7 @@ public final class TweetResponse {
     private final String userName;
 
     public final String component1() {
-        return this.f311id;
+        return this.f391id;
     }
 
     public final boolean component10() {
@@ -100,14 +100,14 @@ public final class TweetResponse {
         }
         if (obj instanceof TweetResponse) {
             TweetResponse tweetResponse = (TweetResponse) obj;
-            return Intrinsics.areEqual(this.f311id, tweetResponse.f311id) && this.likes == tweetResponse.likes && this.quotes == tweetResponse.quotes && this.retweets == tweetResponse.retweets && Intrinsics.areEqual(this.userName, tweetResponse.userName) && Intrinsics.areEqual(this.userFullName, tweetResponse.userFullName) && Intrinsics.areEqual(this.userId, tweetResponse.userId) && Intrinsics.areEqual(this.avatarUrl, tweetResponse.avatarUrl) && Intrinsics.areEqual(this.text, tweetResponse.text) && this.likedByMe == tweetResponse.likedByMe && this.createdAt == tweetResponse.createdAt && Intrinsics.areEqual(this.mediaInfo, tweetResponse.mediaInfo);
+            return Intrinsics.areEqual(this.f391id, tweetResponse.f391id) && this.likes == tweetResponse.likes && this.quotes == tweetResponse.quotes && this.retweets == tweetResponse.retweets && Intrinsics.areEqual(this.userName, tweetResponse.userName) && Intrinsics.areEqual(this.userFullName, tweetResponse.userFullName) && Intrinsics.areEqual(this.userId, tweetResponse.userId) && Intrinsics.areEqual(this.avatarUrl, tweetResponse.avatarUrl) && Intrinsics.areEqual(this.text, tweetResponse.text) && this.likedByMe == tweetResponse.likedByMe && this.createdAt == tweetResponse.createdAt && Intrinsics.areEqual(this.mediaInfo, tweetResponse.mediaInfo);
         }
         return false;
     }
 
     /* JADX WARN: Multi-variable type inference failed */
     public int hashCode() {
-        int hashCode = ((((((((((((((((this.f311id.hashCode() * 31) + this.likes) * 31) + this.quotes) * 31) + this.retweets) * 31) + this.userName.hashCode()) * 31) + this.userFullName.hashCode()) * 31) + this.userId.hashCode()) * 31) + this.avatarUrl.hashCode()) * 31) + this.text.hashCode()) * 31;
+        int hashCode = ((((((((((((((((this.f391id.hashCode() * 31) + this.likes) * 31) + this.quotes) * 31) + this.retweets) * 31) + this.userName.hashCode()) * 31) + this.userFullName.hashCode()) * 31) + this.userId.hashCode()) * 31) + this.avatarUrl.hashCode()) * 31) + this.text.hashCode()) * 31;
         boolean z = this.likedByMe;
         int i = z;
         if (z != 0) {
@@ -117,7 +117,7 @@ public final class TweetResponse {
     }
 
     public String toString() {
-        return "TweetResponse(id=" + this.f311id + ", likes=" + this.likes + ", quotes=" + this.quotes + ", retweets=" + this.retweets + ", userName=" + this.userName + ", userFullName=" + this.userFullName + ", userId=" + this.userId + ", avatarUrl=" + this.avatarUrl + ", text=" + this.text + ", likedByMe=" + this.likedByMe + ", createdAt=" + this.createdAt + ", mediaInfo=" + this.mediaInfo + ')';
+        return "TweetResponse(id=" + this.f391id + ", likes=" + this.likes + ", quotes=" + this.quotes + ", retweets=" + this.retweets + ", userName=" + this.userName + ", userFullName=" + this.userFullName + ", userId=" + this.userId + ", avatarUrl=" + this.avatarUrl + ", text=" + this.text + ", likedByMe=" + this.likedByMe + ", createdAt=" + this.createdAt + ", mediaInfo=" + this.mediaInfo + ')';
     }
 
     public TweetResponse(String id, int i, int i2, int i3, String userName, String userFullName, String userId, String avatarUrl, String text, boolean z, long j, List<MediaInfo> mediaInfo) {
@@ -128,7 +128,7 @@ public final class TweetResponse {
         Intrinsics.checkNotNullParameter(avatarUrl, "avatarUrl");
         Intrinsics.checkNotNullParameter(text, "text");
         Intrinsics.checkNotNullParameter(mediaInfo, "mediaInfo");
-        this.f311id = id;
+        this.f391id = id;
         this.likes = i;
         this.quotes = i2;
         this.retweets = i3;
@@ -143,7 +143,7 @@ public final class TweetResponse {
     }
 
     public final String getId() {
-        return this.f311id;
+        return this.f391id;
     }
 
     public final int getLikes() {

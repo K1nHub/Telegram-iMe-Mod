@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessPresenter;->loadBalanceBinance(Lcom/iMe/model/wallet/select/SelectableToken;)V
+    value = Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessPresenter;->loadBalanceBinance(Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -32,23 +32,23 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nRxExt.kt\nKotlin\n*S Kotlin\n*F\n+ 1 RxExt.kt\ncom/iMe/utils/extentions/rx/RxExtKt$subscribeWithErrorHandle$2\n+ 2 WalletSwapProcessPresenter.kt\ncom/iMe/ui/wallet/swap/process/WalletSwapProcessPresenter\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,111:1\n524#2,3:112\n527#2,9:116\n1#3:115\n*E\n"
+    value = "SMAP\nRxExt.kt\nKotlin\n*S Kotlin\n*F\n+ 1 RxExt.kt\ncom/iMe/utils/extentions/rx/RxExtKt$subscribeWithErrorHandle$2\n+ 2 WalletSwapProcessPresenter.kt\ncom/iMe/ui/wallet/swap/process/WalletSwapProcessPresenter\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,111:1\n559#2,3:112\n562#2,10:116\n1#3:115\n*E\n"
 .end annotation
 
 
 # instance fields
-.field final synthetic $token$inlined:Lcom/iMe/model/wallet/select/SelectableToken;
+.field final synthetic $token$inlined:Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
 
 .field final synthetic this$0:Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessPresenter;
 
 
 # direct methods
-.method public constructor <init>(Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessPresenter;Lcom/iMe/model/wallet/select/SelectableToken;)V
+.method public constructor <init>(Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessPresenter;Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;)V
     .locals 0
 
     iput-object p1, p0, Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessPresenter$loadBalanceBinance$$inlined$subscribeWithErrorHandle$default$1;->this$0:Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessPresenter;
 
-    iput-object p2, p0, Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessPresenter$loadBalanceBinance$$inlined$subscribeWithErrorHandle$default$1;->$token$inlined:Lcom/iMe/model/wallet/select/SelectableToken;
+    iput-object p2, p0, Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessPresenter$loadBalanceBinance$$inlined$subscribeWithErrorHandle$default$1;->$token$inlined:Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
 
     const/4 p1, 0x1
 
@@ -62,7 +62,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 44
+    .line 47
     invoke-virtual {p0, p1}, Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessPresenter$loadBalanceBinance$$inlined$subscribeWithErrorHandle$default$1;->invoke(Ljava/lang/Object;)V
 
     sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
@@ -86,7 +86,7 @@
 
     const-string v0, "it"
 
-    .line 45
+    .line 48
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     check-cast p1, Lcom/iMe/storage/domain/model/Result;
@@ -130,9 +130,9 @@
 
     move-result-object v2
 
-    iget-object v3, p0, Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessPresenter$loadBalanceBinance$$inlined$subscribeWithErrorHandle$default$1;->$token$inlined:Lcom/iMe/model/wallet/select/SelectableToken;
+    iget-object v3, p0, Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessPresenter$loadBalanceBinance$$inlined$subscribeWithErrorHandle$default$1;->$token$inlined:Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
 
-    invoke-virtual {v3}, Lcom/iMe/model/wallet/select/SelectableToken;->getId()Ljava/lang/String;
+    invoke-virtual {v3}, Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;->getTicker()Ljava/lang/String;
 
     move-result-object v3
 
@@ -186,7 +186,7 @@
 
     goto :goto_1
 
-    .line 120
+    .line 121
     :cond_2
     instance-of v0, p1, Lcom/iMe/storage/domain/model/Result$Loading;
 
@@ -204,9 +204,9 @@
 
     sget-object v1, Lcom/iMe/storage/domain/model/binancepay/BinanceTokenBalanceInfo;->Companion:Lcom/iMe/storage/domain/model/binancepay/BinanceTokenBalanceInfo$Companion;
 
-    iget-object v2, p0, Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessPresenter$loadBalanceBinance$$inlined$subscribeWithErrorHandle$default$1;->$token$inlined:Lcom/iMe/model/wallet/select/SelectableToken;
+    iget-object v2, p0, Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessPresenter$loadBalanceBinance$$inlined$subscribeWithErrorHandle$default$1;->$token$inlined:Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
 
-    invoke-virtual {v2}, Lcom/iMe/model/wallet/select/SelectableToken;->getTicker()Ljava/lang/String;
+    invoke-virtual {v2}, Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;->getTicker()Ljava/lang/String;
 
     move-result-object v2
 
@@ -222,7 +222,7 @@
 
     goto :goto_1
 
-    .line 121
+    .line 122
     :cond_3
     instance-of v0, p1, Lcom/iMe/storage/domain/model/Result$Error;
 

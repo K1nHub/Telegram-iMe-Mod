@@ -57,7 +57,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 72
+    .line 75
     check-cast p1, Ljava/lang/Throwable;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/contacts/ContactsPresenter$deleteSelectedContacts$$inlined$subscribeWithErrorHandle$2;->invoke(Ljava/lang/Throwable;)V
@@ -70,10 +70,10 @@
 .method public final invoke(Ljava/lang/Throwable;)V
     .locals 1
 
-    .line 75
+    .line 78
     invoke-static {p1}, Ltimber/log/Timber;->e(Ljava/lang/Throwable;)V
 
-    .line 76
+    .line 79
     iget-object v0, p0, Lcom/iMe/ui/contacts/ContactsPresenter$deleteSelectedContacts$$inlined$subscribeWithErrorHandle$2;->$viewState:Lcom/iMe/ui/base/mvp/base/BaseView;
 
     if-eqz v0, :cond_1

@@ -46,13 +46,13 @@ public final class ObservableCollectSingle<T, U> extends Single<U> implements Fu
         final SingleObserver<? super U> downstream;
 
         /* renamed from: u */
-        final U f453u;
+        final U f535u;
         Disposable upstream;
 
         CollectObserver(SingleObserver<? super U> singleObserver, U u, BiConsumer<? super U, ? super T> biConsumer) {
             this.downstream = singleObserver;
             this.collector = biConsumer;
-            this.f453u = u;
+            this.f535u = u;
         }
 
         @Override // io.reactivex.Observer
@@ -79,7 +79,7 @@ public final class ObservableCollectSingle<T, U> extends Single<U> implements Fu
                 return;
             }
             try {
-                this.collector.accept((U) this.f453u, t);
+                this.collector.accept((U) this.f535u, t);
             } catch (Throwable th) {
                 this.upstream.dispose();
                 onError(th);
@@ -102,7 +102,7 @@ public final class ObservableCollectSingle<T, U> extends Single<U> implements Fu
                 return;
             }
             this.done = true;
-            this.downstream.onSuccess((U) this.f453u);
+            this.downstream.onSuccess((U) this.f535u);
         }
     }
 }

@@ -20,7 +20,7 @@ import kotlin.Pair;
 import kotlin.TuplesKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
-import kotlin.p035io.FilesKt__FileReadWriteKt;
+import kotlin.p034io.FilesKt__FileReadWriteKt;
 import okhttp3.MediaType;
 import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
@@ -77,9 +77,9 @@ public final class GoogleServicesRepositoryImpl implements GoogleServicesReposit
     public Observable<Result<List<RecognizedImageModel>>> getPhotoObjects(Bitmap photo) {
         Intrinsics.checkNotNullParameter(photo, "photo");
         Pair<MultipartBody.Part, File> convertBitmapToMultipart = convertBitmapToMultipart(photo);
-        Observable<R> map = this.googleServicesApi.getPhotoObjects(convertBitmapToMultipart.component1()).map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new C1924xab083842(this.firebaseErrorHandler, convertBitmapToMultipart.component2())));
+        Observable<R> map = this.googleServicesApi.getPhotoObjects(convertBitmapToMultipart.component1()).map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new C1931xab083842(this.firebaseErrorHandler, convertBitmapToMultipart.component2())));
         Intrinsics.checkNotNullExpressionValue(map, "errorHandler: FirebaseFu…response).toError()\n    }");
-        Observable<Result<List<RecognizedImageModel>>> onErrorReturn = map.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new C1923x9906889f(this.errorHandler)));
+        Observable<Result<List<RecognizedImageModel>>> onErrorReturn = map.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new C1930x9906889f(this.errorHandler)));
         Intrinsics.checkNotNullExpressionValue(onErrorReturn, "errorHandler: ErrorHandl…ndleError(it).toError() }");
         return onErrorReturn;
     }

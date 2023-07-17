@@ -387,7 +387,7 @@
     :cond_8
     const/4 v1, -0x1
 
-    const-string v8, "s-maxage"
+    const-string/jumbo v8, "s-maxage"
 
     .line 362
     invoke-static {v8, v3, v6}, Lkotlin/text/StringsKt;->equals(Ljava/lang/String;Ljava/lang/String;Z)Z

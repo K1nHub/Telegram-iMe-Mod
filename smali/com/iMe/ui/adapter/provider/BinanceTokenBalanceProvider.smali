@@ -14,45 +14,27 @@
 
 
 # instance fields
-.field private final cryptoPreferenceHelper:Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
-
 .field private final itemViewType:I
 
 .field private final layoutId:I
 
-.field private final resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
-
 
 # direct methods
-.method public constructor <init>(Lcom/iMe/storage/domain/utils/system/ResourceManager;Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;)V
+.method public constructor <init>()V
     .locals 1
 
-    const-string v0, "resourceManager"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string v0, "cryptoPreferenceHelper"
-
-    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    .line 22
+    .line 19
     invoke-direct {p0}, Lcom/chad/library/adapter/base/provider/BaseNodeProvider;-><init>()V
 
-    .line 20
-    iput-object p1, p0, Lcom/iMe/ui/adapter/provider/BinanceTokenBalanceProvider;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
+    .line 22
+    sget v0, Lcom/iMe/common/IdFabric$ViewTypes;->TOKEN_BALANCE:I
 
-    .line 21
-    iput-object p2, p0, Lcom/iMe/ui/adapter/provider/BinanceTokenBalanceProvider;->cryptoPreferenceHelper:Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
+    iput v0, p0, Lcom/iMe/ui/adapter/provider/BinanceTokenBalanceProvider;->itemViewType:I
 
-    .line 25
-    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->TOKEN_BALANCE:I
+    .line 23
+    sget v0, Lorg/telegram/messenger/R$layout;->fork_recycle_item_wallet_dashboard_account_balance:I
 
-    iput p1, p0, Lcom/iMe/ui/adapter/provider/BinanceTokenBalanceProvider;->itemViewType:I
-
-    .line 26
-    sget p1, Lorg/telegram/messenger/R$layout;->fork_recycle_item_wallet_dashboard_account_balance:I
-
-    iput p1, p0, Lcom/iMe/ui/adapter/provider/BinanceTokenBalanceProvider;->layoutId:I
+    iput v0, p0, Lcom/iMe/ui/adapter/provider/BinanceTokenBalanceProvider;->layoutId:I
 
     return-void
 .end method
@@ -60,7 +42,7 @@
 
 # virtual methods
 .method public convert(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;Lcom/iMe/model/wallet/home/pay/BinanceBalanceItem;)V
-    .locals 8
+    .locals 9
 
     const-string v0, "helper"
 
@@ -70,191 +52,174 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
+    .line 28
+    invoke-virtual {p2}, Lcom/iMe/model/wallet/home/pay/BinanceBalanceItem;->getBalanceInfo()Lcom/iMe/storage/domain/model/binancepay/BinanceTokenBalanceInfo;
+
+    move-result-object v0
+
+    .line 30
+    sget v1, Lorg/telegram/messenger/R$id;->card_account_balance:I
+
+    const/4 v2, 0x0
+
+    invoke-static {p1, v1, v2}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setRippleForeground(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;IZ)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
+
+    move-result-object p1
+
+    .line 31
+    sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
+
+    invoke-static {p1, v1, v3}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setThemedCardBackground(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;II)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
+
+    move-result-object p1
+
     .line 32
-    sget v0, Lorg/telegram/messenger/R$id;->card_account_balance:I
+    sget v1, Lorg/telegram/messenger/R$id;->text_account_title:I
 
-    const/4 v1, 0x0
+    sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_chats_actionBackground:I
 
-    invoke-static {p1, v0, v1}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setRippleForeground(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;IZ)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
+    invoke-static {p1, v1, v3}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setThemedTextColor(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;II)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     move-result-object p1
 
     .line 33
-    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
+    sget v3, Lorg/telegram/messenger/R$id;->text_trade_pair:I
 
-    invoke-static {p1, v0, v2}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setThemedCardBackground(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;II)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
+    sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayText2:I
+
+    invoke-static {p1, v3, v4}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setThemedTextColor(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;II)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     move-result-object p1
 
     .line 34
-    sget v0, Lorg/telegram/messenger/R$id;->text_account_title:I
+    sget v5, Lorg/telegram/messenger/R$id;->text_trade_price:I
 
-    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_chats_actionBackground:I
-
-    invoke-static {p1, v0, v2}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setThemedTextColor(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;II)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
+    invoke-static {p1, v5, v4}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setThemedTextColor(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;II)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     move-result-object p1
 
     .line 35
-    sget v2, Lorg/telegram/messenger/R$id;->text_trade_pair:I
+    sget v6, Lorg/telegram/messenger/R$id;->text_account_balance_in_dollars:I
 
-    sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayText2:I
-
-    invoke-static {p1, v2, v3}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setThemedTextColor(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;II)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
+    invoke-static {p1, v6, v4}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setThemedTextColor(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;II)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     move-result-object p1
 
     .line 36
-    sget v4, Lorg/telegram/messenger/R$id;->text_trade_price:I
+    sget v4, Lorg/telegram/messenger/R$id;->text_account_balance:I
 
-    invoke-static {p1, v4, v3}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setThemedTextColor(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;II)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
+    sget v7, Lorg/telegram/ui/ActionBar/Theme;->key_chat_messagePanelText:I
+
+    invoke-static {p1, v4, v7}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setThemedTextColor(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;II)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     move-result-object p1
 
-    .line 37
-    sget v5, Lorg/telegram/messenger/R$id;->text_account_balance_in_dollars:I
+    const/4 v7, 0x5
 
-    invoke-static {p1, v5, v3}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setThemedTextColor(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;II)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
+    new-array v7, v7, [I
+
+    aput v4, v7, v2
+
+    const/4 v2, 0x1
+
+    aput v3, v7, v2
+
+    .line 37
+    sget v3, Lorg/telegram/messenger/R$id;->text_trade_percent:I
+
+    const/4 v8, 0x2
+
+    aput v3, v7, v8
+
+    const/4 v3, 0x3
+
+    aput v5, v7, v3
+
+    const/4 v3, 0x4
+
+    aput v6, v7, v3
+
+    invoke-static {p1, v7}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setMediumTypeface(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;[I)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     move-result-object p1
 
     .line 38
-    sget v3, Lorg/telegram/messenger/R$id;->text_account_balance:I
+    invoke-virtual {v0}, Lcom/iMe/storage/domain/model/binancepay/BinanceTokenBalanceInfo;->getAssetName()Ljava/lang/String;
 
-    sget v6, Lorg/telegram/ui/ActionBar/Theme;->key_chat_messagePanelText:I
+    move-result-object v3
 
-    invoke-static {p1, v3, v6}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setThemedTextColor(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;II)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
+    invoke-virtual {p1, v1, v3}, Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;->setText(ILjava/lang/CharSequence;)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     move-result-object p1
 
-    const/4 v6, 0x5
-
-    new-array v6, v6, [I
-
-    aput v3, v6, v1
-
-    const/4 v1, 0x1
-
-    aput v2, v6, v1
-
     .line 39
-    sget v2, Lorg/telegram/messenger/R$id;->text_trade_percent:I
+    sget-object v1, Lcom/iMe/utils/formatter/MaskFormatter;->INSTANCE:Lcom/iMe/utils/formatter/MaskFormatter;
 
-    const/4 v7, 0x2
+    invoke-virtual {p2}, Lcom/iMe/model/wallet/home/pay/BinanceBalanceItem;->isBalanceHidden()Z
 
-    aput v2, v6, v7
+    move-result v3
 
-    const/4 v2, 0x3
+    invoke-static {v0}, Lcom/iMe/utils/extentions/model/wallet/BinanceTokenBalanceExtKt;->getTotalBalanceText(Lcom/iMe/storage/domain/model/binancepay/BinanceTokenBalanceInfo;)Ljava/lang/String;
 
-    aput v4, v6, v2
+    move-result-object v5
 
-    const/4 v2, 0x4
+    invoke-virtual {v1, v3, v5}, Lcom/iMe/utils/formatter/MaskFormatter;->textOrMask(ZLjava/lang/String;)Ljava/lang/String;
 
-    aput v5, v6, v2
+    move-result-object v3
 
-    invoke-static {p1, v6}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setMediumTypeface(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;[I)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
+    invoke-virtual {p1, v4, v3}, Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;->setText(ILjava/lang/CharSequence;)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     move-result-object p1
 
     .line 40
-    invoke-virtual {p2}, Lcom/iMe/model/wallet/home/pay/BinanceBalanceItem;->getBalanceInfo()Lcom/iMe/storage/domain/model/binancepay/BinanceTokenBalanceInfo;
+    invoke-virtual {p2}, Lcom/iMe/model/wallet/home/pay/BinanceBalanceItem;->isBalanceHidden()Z
 
-    move-result-object v2
+    move-result p2
 
-    invoke-virtual {v2}, Lcom/iMe/storage/domain/model/binancepay/BinanceTokenBalanceInfo;->getAssetName()Ljava/lang/String;
+    invoke-static {v0}, Lcom/iMe/utils/extentions/model/wallet/BinanceTokenBalanceExtKt;->getDollarsBalanceText(Lcom/iMe/storage/domain/model/binancepay/BinanceTokenBalanceInfo;)Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v3
 
-    invoke-virtual {p1, v0, v2}, Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;->setText(ILjava/lang/CharSequence;)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
+    invoke-virtual {v1, p2, v3}, Lcom/iMe/utils/formatter/MaskFormatter;->textOrMask(ZLjava/lang/String;)Ljava/lang/String;
+
+    move-result-object p2
+
+    invoke-virtual {p1, v6, p2}, Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;->setText(ILjava/lang/CharSequence;)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     move-result-object p1
 
     .line 41
-    sget-object v0, Lcom/iMe/utils/formatter/MaskFormatter;->INSTANCE:Lcom/iMe/utils/formatter/MaskFormatter;
+    sget p2, Lorg/telegram/messenger/R$id;->text_coin_ticker:I
 
-    iget-object v2, p0, Lcom/iMe/ui/adapter/provider/BinanceTokenBalanceProvider;->cryptoPreferenceHelper:Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
+    invoke-virtual {v0}, Lcom/iMe/storage/domain/model/binancepay/BinanceTokenBalanceInfo;->getAssetShortName()Ljava/lang/String;
 
-    invoke-interface {v2}, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;->getCryptoHiddenBalance()Z
+    move-result-object v1
 
-    move-result v2
-
-    invoke-virtual {p2}, Lcom/iMe/model/wallet/home/pay/BinanceBalanceItem;->getBalanceInfo()Lcom/iMe/storage/domain/model/binancepay/BinanceTokenBalanceInfo;
-
-    move-result-object v4
-
-    invoke-static {v4}, Lcom/iMe/utils/extentions/model/wallet/BinanceTokenBalanceExtKt;->getTotalBalanceText(Lcom/iMe/storage/domain/model/binancepay/BinanceTokenBalanceInfo;)Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-virtual {v0, v2, v4}, Lcom/iMe/utils/formatter/MaskFormatter;->textOrMask(ZLjava/lang/String;)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {p1, v3, v2}, Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;->setText(ILjava/lang/CharSequence;)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
+    invoke-virtual {p1, p2, v1}, Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;->setText(ILjava/lang/CharSequence;)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     move-result-object p1
 
     .line 42
-    iget-object v2, p0, Lcom/iMe/ui/adapter/provider/BinanceTokenBalanceProvider;->cryptoPreferenceHelper:Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
+    sget p2, Lorg/telegram/messenger/R$id;->constraint_trade_info:I
 
-    invoke-interface {v2}, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;->getCryptoHiddenBalance()Z
-
-    move-result v2
-
-    invoke-virtual {p2}, Lcom/iMe/model/wallet/home/pay/BinanceBalanceItem;->getBalanceInfo()Lcom/iMe/storage/domain/model/binancepay/BinanceTokenBalanceInfo;
-
-    move-result-object v3
-
-    iget-object v4, p0, Lcom/iMe/ui/adapter/provider/BinanceTokenBalanceProvider;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
-
-    invoke-static {v3, v4}, Lcom/iMe/utils/extentions/model/wallet/BinanceTokenBalanceExtKt;->getDollarsBalanceText(Lcom/iMe/storage/domain/model/binancepay/BinanceTokenBalanceInfo;Lcom/iMe/storage/domain/utils/system/ResourceManager;)Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {v0, v2, v3}, Lcom/iMe/utils/formatter/MaskFormatter;->textOrMask(ZLjava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {p1, v5, v0}, Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;->setText(ILjava/lang/CharSequence;)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
+    invoke-virtual {p1, p2, v2}, Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;->setGone(IZ)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     move-result-object p1
 
     .line 43
-    sget v0, Lorg/telegram/messenger/R$id;->constraint_trade_info:I
+    sget p2, Lorg/telegram/messenger/R$id;->image_coin_icon:I
 
-    invoke-virtual {p1, v0, v1}, Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;->setGone(IZ)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
+    invoke-virtual {v0}, Lcom/iMe/storage/domain/model/binancepay/BinanceTokenBalanceInfo;->getLogoUrl()Ljava/lang/String;
 
-    move-result-object p1
+    move-result-object v0
 
-    .line 44
-    sget v0, Lorg/telegram/messenger/R$id;->image_coin_icon:I
+    sget-object v1, Lcom/iMe/utils/helper/binancepay/BinancePayHelper;->INSTANCE:Lcom/iMe/utils/helper/binancepay/BinancePayHelper;
 
-    invoke-virtual {p2}, Lcom/iMe/model/wallet/home/pay/BinanceBalanceItem;->getBalanceInfo()Lcom/iMe/storage/domain/model/binancepay/BinanceTokenBalanceInfo;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Lcom/iMe/storage/domain/model/binancepay/BinanceTokenBalanceInfo;->getLogoUrl()Ljava/lang/String;
+    invoke-virtual {v1}, Lcom/iMe/utils/helper/binancepay/BinancePayHelper;->getRefererHeader()Ljava/util/HashMap;
 
     move-result-object v1
 
-    sget-object v2, Lcom/iMe/utils/helper/binancepay/BinancePayHelper;->INSTANCE:Lcom/iMe/utils/helper/binancepay/BinancePayHelper;
-
-    invoke-virtual {v2}, Lcom/iMe/utils/helper/binancepay/BinancePayHelper;->getRefererHeader()Ljava/util/HashMap;
-
-    move-result-object v2
-
-    invoke-static {p1, v0, v1, v2}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->loadImage(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;ILjava/lang/String;Ljava/util/Map;)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
-
-    move-result-object p1
-
-    .line 45
-    sget v0, Lorg/telegram/messenger/R$id;->text_coin_ticker:I
-
-    new-instance v1, Lcom/iMe/ui/adapter/provider/BinanceTokenBalanceProvider$convert$1;
-
-    invoke-direct {v1, p2}, Lcom/iMe/ui/adapter/provider/BinanceTokenBalanceProvider$convert$1;-><init>(Lcom/iMe/model/wallet/home/pay/BinanceBalanceItem;)V
-
-    invoke-static {p1, v0, v1}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->applyForView(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;ILkotlin/jvm/functions/Function1;)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
+    invoke-static {p1, p2, v0, v1}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->loadImageWithHeaders(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;ILjava/lang/String;Ljava/util/Map;)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     return-void
 .end method
@@ -285,113 +250,96 @@
 
     invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 50
-    sget p3, Lorg/telegram/messenger/R$id;->text_account_title:I
-
+    .line 48
     invoke-virtual {p2}, Lcom/iMe/model/wallet/home/pay/BinanceBalanceItem;->getBalanceInfo()Lcom/iMe/storage/domain/model/binancepay/BinanceTokenBalanceInfo;
 
-    move-result-object v0
+    move-result-object p3
 
-    invoke-virtual {v0}, Lcom/iMe/storage/domain/model/binancepay/BinanceTokenBalanceInfo;->getAssetName()Ljava/lang/String;
+    .line 50
+    sget v0, Lorg/telegram/messenger/R$id;->text_account_title:I
 
-    move-result-object v0
+    invoke-virtual {p3}, Lcom/iMe/storage/domain/model/binancepay/BinanceTokenBalanceInfo;->getAssetName()Ljava/lang/String;
 
-    invoke-virtual {p1, p3, v0}, Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;->setText(ILjava/lang/CharSequence;)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
+    move-result-object v1
+
+    invoke-virtual {p1, v0, v1}, Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;->setText(ILjava/lang/CharSequence;)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     move-result-object p1
 
     .line 51
-    sget p3, Lorg/telegram/messenger/R$id;->text_account_balance:I
+    sget v0, Lorg/telegram/messenger/R$id;->text_account_balance:I
 
-    sget-object v0, Lcom/iMe/utils/formatter/MaskFormatter;->INSTANCE:Lcom/iMe/utils/formatter/MaskFormatter;
+    sget-object v1, Lcom/iMe/utils/formatter/MaskFormatter;->INSTANCE:Lcom/iMe/utils/formatter/MaskFormatter;
 
-    iget-object v1, p0, Lcom/iMe/ui/adapter/provider/BinanceTokenBalanceProvider;->cryptoPreferenceHelper:Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
+    invoke-virtual {p2}, Lcom/iMe/model/wallet/home/pay/BinanceBalanceItem;->isBalanceHidden()Z
 
-    invoke-interface {v1}, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;->getCryptoHiddenBalance()Z
+    move-result v2
 
-    move-result v1
+    invoke-static {p3}, Lcom/iMe/utils/extentions/model/wallet/BinanceTokenBalanceExtKt;->getTotalBalanceText(Lcom/iMe/storage/domain/model/binancepay/BinanceTokenBalanceInfo;)Ljava/lang/String;
 
-    invoke-virtual {p2}, Lcom/iMe/model/wallet/home/pay/BinanceBalanceItem;->getBalanceInfo()Lcom/iMe/storage/domain/model/binancepay/BinanceTokenBalanceInfo;
+    move-result-object v3
 
-    move-result-object v2
-
-    invoke-static {v2}, Lcom/iMe/utils/extentions/model/wallet/BinanceTokenBalanceExtKt;->getTotalBalanceText(Lcom/iMe/storage/domain/model/binancepay/BinanceTokenBalanceInfo;)Ljava/lang/String;
+    invoke-virtual {v1, v2, v3}, Lcom/iMe/utils/formatter/MaskFormatter;->textOrMask(ZLjava/lang/String;)Ljava/lang/String;
 
     move-result-object v2
 
-    invoke-virtual {v0, v1, v2}, Lcom/iMe/utils/formatter/MaskFormatter;->textOrMask(ZLjava/lang/String;)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {p1, p3, v1}, Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;->setText(ILjava/lang/CharSequence;)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
+    invoke-virtual {p1, v0, v2}, Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;->setText(ILjava/lang/CharSequence;)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     move-result-object p1
 
     .line 52
-    sget p3, Lorg/telegram/messenger/R$id;->text_account_balance_in_dollars:I
+    sget v0, Lorg/telegram/messenger/R$id;->text_account_balance_in_dollars:I
 
-    iget-object v1, p0, Lcom/iMe/ui/adapter/provider/BinanceTokenBalanceProvider;->cryptoPreferenceHelper:Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
+    invoke-virtual {p2}, Lcom/iMe/model/wallet/home/pay/BinanceBalanceItem;->isBalanceHidden()Z
 
-    invoke-interface {v1}, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;->getCryptoHiddenBalance()Z
+    move-result p2
 
-    move-result v1
-
-    invoke-virtual {p2}, Lcom/iMe/model/wallet/home/pay/BinanceBalanceItem;->getBalanceInfo()Lcom/iMe/storage/domain/model/binancepay/BinanceTokenBalanceInfo;
+    invoke-static {p3}, Lcom/iMe/utils/extentions/model/wallet/BinanceTokenBalanceExtKt;->getDollarsBalanceText(Lcom/iMe/storage/domain/model/binancepay/BinanceTokenBalanceInfo;)Ljava/lang/String;
 
     move-result-object v2
 
-    iget-object v3, p0, Lcom/iMe/ui/adapter/provider/BinanceTokenBalanceProvider;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
+    invoke-virtual {v1, p2, v2}, Lcom/iMe/utils/formatter/MaskFormatter;->textOrMask(ZLjava/lang/String;)Ljava/lang/String;
 
-    invoke-static {v2, v3}, Lcom/iMe/utils/extentions/model/wallet/BinanceTokenBalanceExtKt;->getDollarsBalanceText(Lcom/iMe/storage/domain/model/binancepay/BinanceTokenBalanceInfo;Lcom/iMe/storage/domain/utils/system/ResourceManager;)Ljava/lang/String;
+    move-result-object p2
 
-    move-result-object v2
-
-    invoke-virtual {v0, v1, v2}, Lcom/iMe/utils/formatter/MaskFormatter;->textOrMask(ZLjava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {p1, p3, v0}, Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;->setText(ILjava/lang/CharSequence;)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
+    invoke-virtual {p1, v0, p2}, Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;->setText(ILjava/lang/CharSequence;)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     move-result-object p1
 
     .line 53
-    sget p3, Lorg/telegram/messenger/R$id;->constraint_trade_info:I
+    sget p2, Lorg/telegram/messenger/R$id;->text_coin_ticker:I
 
-    const/4 v0, 0x1
+    invoke-virtual {p3}, Lcom/iMe/storage/domain/model/binancepay/BinanceTokenBalanceInfo;->getAssetShortName()Ljava/lang/String;
 
-    invoke-virtual {p1, p3, v0}, Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;->setGone(IZ)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
+    move-result-object v0
+
+    invoke-virtual {p1, p2, v0}, Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;->setText(ILjava/lang/CharSequence;)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     move-result-object p1
 
     .line 54
-    sget p3, Lorg/telegram/messenger/R$id;->image_coin_icon:I
+    sget p2, Lorg/telegram/messenger/R$id;->constraint_trade_info:I
 
-    invoke-virtual {p2}, Lcom/iMe/model/wallet/home/pay/BinanceBalanceItem;->getBalanceInfo()Lcom/iMe/storage/domain/model/binancepay/BinanceTokenBalanceInfo;
+    const/4 v0, 0x1
 
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/iMe/storage/domain/model/binancepay/BinanceTokenBalanceInfo;->getLogoUrl()Ljava/lang/String;
-
-    move-result-object v0
-
-    sget-object v1, Lcom/iMe/utils/helper/binancepay/BinancePayHelper;->INSTANCE:Lcom/iMe/utils/helper/binancepay/BinancePayHelper;
-
-    invoke-virtual {v1}, Lcom/iMe/utils/helper/binancepay/BinancePayHelper;->getRefererHeader()Ljava/util/HashMap;
-
-    move-result-object v1
-
-    invoke-static {p1, p3, v0, v1}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->loadImage(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;ILjava/lang/String;Ljava/util/Map;)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
+    invoke-virtual {p1, p2, v0}, Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;->setGone(IZ)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     move-result-object p1
 
     .line 55
-    sget p3, Lorg/telegram/messenger/R$id;->text_coin_ticker:I
+    sget p2, Lorg/telegram/messenger/R$id;->image_coin_icon:I
 
-    new-instance v0, Lcom/iMe/ui/adapter/provider/BinanceTokenBalanceProvider$convert$2;
+    invoke-virtual {p3}, Lcom/iMe/storage/domain/model/binancepay/BinanceTokenBalanceInfo;->getLogoUrl()Ljava/lang/String;
 
-    invoke-direct {v0, p2}, Lcom/iMe/ui/adapter/provider/BinanceTokenBalanceProvider$convert$2;-><init>(Lcom/iMe/model/wallet/home/pay/BinanceBalanceItem;)V
+    move-result-object p3
 
-    invoke-static {p1, p3, v0}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->applyForView(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;ILkotlin/jvm/functions/Function1;)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
+    sget-object v0, Lcom/iMe/utils/helper/binancepay/BinancePayHelper;->INSTANCE:Lcom/iMe/utils/helper/binancepay/BinancePayHelper;
+
+    invoke-virtual {v0}, Lcom/iMe/utils/helper/binancepay/BinancePayHelper;->getRefererHeader()Ljava/util/HashMap;
+
+    move-result-object v0
+
+    invoke-static {p1, p2, p3, v0}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->loadImageWithHeaders(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;ILjava/lang/String;Ljava/util/Map;)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     return-void
 .end method
@@ -421,7 +369,7 @@
 .method public getItemViewType()I
     .locals 1
 
-    .line 25
+    .line 22
     iget v0, p0, Lcom/iMe/ui/adapter/provider/BinanceTokenBalanceProvider;->itemViewType:I
 
     return v0
@@ -430,7 +378,7 @@
 .method public getLayoutId()I
     .locals 1
 
-    .line 26
+    .line 23
     iget v0, p0, Lcom/iMe/ui/adapter/provider/BinanceTokenBalanceProvider;->layoutId:I
 
     return v0

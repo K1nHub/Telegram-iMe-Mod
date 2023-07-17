@@ -27,13 +27,13 @@
 .method constructor <init>(Lcom/bumptech/glide/load/Key;I)V
     .locals 0
 
-    .line 376
+    .line 383
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 377
+    .line 384
     iput-object p1, p0, Lcom/bumptech/glide/integration/webp/decoder/WebpFrameLoader$WebpFrameCacheKey;->sourceKey:Lcom/bumptech/glide/load/Key;
 
-    .line 378
+    .line 385
     iput p2, p0, Lcom/bumptech/glide/integration/webp/decoder/WebpFrameLoader$WebpFrameCacheKey;->frameIndex:I
 
     return-void
@@ -44,17 +44,17 @@
 .method public equals(Ljava/lang/Object;)Z
     .locals 3
 
-    .line 383
+    .line 390
     instance-of v0, p1, Lcom/bumptech/glide/integration/webp/decoder/WebpFrameLoader$WebpFrameCacheKey;
 
     const/4 v1, 0x0
 
     if-eqz v0, :cond_0
 
-    .line 384
+    .line 391
     check-cast p1, Lcom/bumptech/glide/integration/webp/decoder/WebpFrameLoader$WebpFrameCacheKey;
 
-    .line 385
+    .line 392
     iget-object v0, p0, Lcom/bumptech/glide/integration/webp/decoder/WebpFrameLoader$WebpFrameCacheKey;->sourceKey:Lcom/bumptech/glide/load/Key;
 
     iget-object v2, p1, Lcom/bumptech/glide/integration/webp/decoder/WebpFrameLoader$WebpFrameCacheKey;->sourceKey:Lcom/bumptech/glide/load/Key;
@@ -80,7 +80,7 @@
 .method public hashCode()I
     .locals 2
 
-    .line 392
+    .line 399
     iget-object v0, p0, Lcom/bumptech/glide/integration/webp/decoder/WebpFrameLoader$WebpFrameCacheKey;->sourceKey:Lcom/bumptech/glide/load/Key;
 
     invoke-interface {v0}, Lcom/bumptech/glide/load/Key;->hashCode()I
@@ -89,7 +89,7 @@
 
     mul-int/lit8 v0, v0, 0x1f
 
-    .line 393
+    .line 400
     iget v1, p0, Lcom/bumptech/glide/integration/webp/decoder/WebpFrameLoader$WebpFrameCacheKey;->frameIndex:I
 
     add-int/2addr v0, v1
@@ -102,7 +102,7 @@
 
     const/16 v0, 0xc
 
-    .line 398
+    .line 405
     invoke-static {v0}, Ljava/nio/ByteBuffer;->allocate(I)Ljava/nio/ByteBuffer;
 
     move-result-object v0
@@ -117,10 +117,10 @@
 
     move-result-object v0
 
-    .line 399
+    .line 406
     invoke-virtual {p1, v0}, Ljava/security/MessageDigest;->update([B)V
 
-    .line 400
+    .line 407
     iget-object v0, p0, Lcom/bumptech/glide/integration/webp/decoder/WebpFrameLoader$WebpFrameCacheKey;->sourceKey:Lcom/bumptech/glide/load/Key;
 
     invoke-interface {v0, p1}, Lcom/bumptech/glide/load/Key;->updateDiskCacheKey(Ljava/security/MessageDigest;)V

@@ -68,13 +68,13 @@
 .method public constructor <init>(Lorg/telegram/ui/Components/ChatActivityEnterView;Landroid/content/Context;)V
     .locals 4
 
-    .line 10836
+    .line 10852
     iput-object p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$SlideTextView;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
-    .line 10837
+    .line 10853
     invoke-direct {p0, p2}, Landroid/view/View;-><init>(Landroid/content/Context;)V
 
-    .line 10759
+    .line 10775
     new-instance p2, Landroid/graphics/Paint;
 
     const/4 v0, 0x1
@@ -85,24 +85,24 @@
 
     const/4 p2, 0x0
 
-    .line 10772
+    .line 10788
     iput p2, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$SlideTextView;->xOffset:F
 
-    .line 10778
+    .line 10794
     new-instance p2, Landroid/graphics/Path;
 
     invoke-direct {p2}, Landroid/graphics/Path;-><init>()V
 
     iput-object p2, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$SlideTextView;->arrowPath:Landroid/graphics/Path;
 
-    .line 10784
+    .line 10800
     new-instance p2, Landroid/graphics/Rect;
 
     invoke-direct {p2}, Landroid/graphics/Rect;-><init>()V
 
     iput-object p2, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$SlideTextView;->cancelRect:Landroid/graphics/Rect;
 
-    .line 10838
+    .line 10854
     sget-object p2, Lorg/telegram/messenger/AndroidUtilities;->displaySize:Landroid/graphics/Point;
 
     iget p2, p2, Landroid/graphics/Point;->x:I
@@ -127,14 +127,14 @@
     :goto_0
     iput-boolean p2, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$SlideTextView;->smallSize:Z
 
-    .line 10839
+    .line 10855
     new-instance p2, Landroid/text/TextPaint;
 
     invoke-direct {p2, v0}, Landroid/text/TextPaint;-><init>(I)V
 
     iput-object p2, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$SlideTextView;->grayPaint:Landroid/text/TextPaint;
 
-    .line 10840
+    .line 10856
     iget-boolean v1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$SlideTextView;->smallSize:Z
 
     const/16 v3, 0xf
@@ -157,14 +157,14 @@
 
     invoke-virtual {p2, v1}, Landroid/text/TextPaint;->setTextSize(F)V
 
-    .line 10842
+    .line 10858
     new-instance p2, Landroid/text/TextPaint;
 
     invoke-direct {p2, v0}, Landroid/text/TextPaint;-><init>(I)V
 
     iput-object p2, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$SlideTextView;->bluePaint:Landroid/text/TextPaint;
 
-    .line 10843
+    .line 10859
     invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
@@ -173,7 +173,7 @@
 
     invoke-virtual {p2, v1}, Landroid/text/TextPaint;->setTextSize(F)V
 
-    .line 10845
+    .line 10861
     iget-object p2, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$SlideTextView;->bluePaint:Landroid/text/TextPaint;
 
     const-string v1, "fonts/rmedium.ttf"
@@ -184,7 +184,7 @@
 
     invoke-virtual {p2, v1}, Landroid/text/TextPaint;->setTypeface(Landroid/graphics/Typeface;)Landroid/graphics/Typeface;
 
-    .line 10847
+    .line 10863
     iget-object p2, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$SlideTextView;->arrowPaint:Landroid/graphics/Paint;
 
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_chat_messagePanelIcons:I
@@ -195,14 +195,14 @@
 
     invoke-virtual {p2, p1}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 10848
+    .line 10864
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$SlideTextView;->arrowPaint:Landroid/graphics/Paint;
 
     sget-object p2, Landroid/graphics/Paint$Style;->STROKE:Landroid/graphics/Paint$Style;
 
     invoke-virtual {p1, p2}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
 
-    .line 10849
+    .line 10865
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$SlideTextView;->arrowPaint:Landroid/graphics/Paint;
 
     iget-boolean p2, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$SlideTextView;->smallSize:Z
@@ -223,21 +223,21 @@
 
     invoke-virtual {p1, p2}, Landroid/graphics/Paint;->setStrokeWidth(F)V
 
-    .line 10850
+    .line 10866
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$SlideTextView;->arrowPaint:Landroid/graphics/Paint;
 
     sget-object p2, Landroid/graphics/Paint$Cap;->ROUND:Landroid/graphics/Paint$Cap;
 
     invoke-virtual {p1, p2}, Landroid/graphics/Paint;->setStrokeCap(Landroid/graphics/Paint$Cap;)V
 
-    .line 10851
+    .line 10867
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$SlideTextView;->arrowPaint:Landroid/graphics/Paint;
 
     sget-object p2, Landroid/graphics/Paint$Join;->ROUND:Landroid/graphics/Paint$Join;
 
     invoke-virtual {p1, p2}, Landroid/graphics/Paint;->setStrokeJoin(Landroid/graphics/Paint$Join;)V
 
-    .line 10853
+    .line 10869
     sget p1, Lorg/telegram/messenger/R$string;->SlideToCancel:I
 
     const-string p2, "SlideToCancel"
@@ -248,7 +248,7 @@
 
     iput-object p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$SlideTextView;->slideToCancelString:Ljava/lang/String;
 
-    .line 10854
+    .line 10870
     new-instance p1, Ljava/lang/StringBuilder;
 
     invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
@@ -279,7 +279,7 @@
 
     iput-object p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$SlideTextView;->slideToCancelString:Ljava/lang/String;
 
-    .line 10856
+    .line 10872
     sget p1, Lorg/telegram/messenger/R$string;->Cancel:I
 
     const-string p2, "Cancel"
@@ -294,7 +294,7 @@
 
     iput-object p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$SlideTextView;->cancelString:Ljava/lang/String;
 
-    .line 10858
+    .line 10874
     iget-object p2, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$SlideTextView;->slideToCancelString:Ljava/lang/String;
 
     invoke-virtual {p2, p1}, Ljava/lang/String;->indexOf(Ljava/lang/String;)I
@@ -303,7 +303,7 @@
 
     iput p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$SlideTextView;->cancelCharOffset:I
 
-    .line 10860
+    .line 10876
     invoke-virtual {p0}, Lorg/telegram/ui/Components/ChatActivityEnterView$SlideTextView;->updateColors()V
 
     return-void
@@ -314,10 +314,10 @@
 .method protected drawableStateChanged()V
     .locals 2
 
-    .line 10874
+    .line 10890
     invoke-super {p0}, Landroid/view/View;->drawableStateChanged()V
 
-    .line 10875
+    .line 10891
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$SlideTextView;->selectableBackground:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {p0}, Landroid/view/View;->getDrawableState()[I
@@ -334,7 +334,7 @@
     .annotation build Landroidx/annotation/Keep;
     .end annotation
 
-    .line 11018
+    .line 11034
     iget v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$SlideTextView;->slideToCancelWidth:F
 
     return v0
@@ -343,15 +343,15 @@
 .method public jumpDrawablesToCurrentState()V
     .locals 1
 
-    .line 10885
+    .line 10901
     invoke-super {p0}, Landroid/view/View;->jumpDrawablesToCurrentState()V
 
-    .line 10886
+    .line 10902
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$SlideTextView;->selectableBackground:Landroid/graphics/drawable/Drawable;
 
     if-eqz v0, :cond_0
 
-    .line 10887
+    .line 10903
     invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->jumpToCurrentState()V
 
     :cond_0
@@ -361,7 +361,7 @@
 .method public onCancelButtonPressed()V
     .locals 4
 
-    .line 10822
+    .line 10838
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$SlideTextView;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$6900(Lorg/telegram/ui/Components/ChatActivityEnterView;)Z
@@ -380,7 +380,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 10823
+    .line 10839
     invoke-static {}, Lorg/telegram/messenger/camera/CameraController;->getInstance()Lorg/telegram/messenger/camera/CameraController;
 
     move-result-object v0
@@ -393,7 +393,7 @@
 
     invoke-virtual {v0, v2}, Lorg/telegram/messenger/camera/CameraController;->cancelOnInitRunnable(Ljava/lang/Runnable;)V
 
-    .line 10824
+    .line 10840
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$SlideTextView;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$300(Lorg/telegram/ui/Components/ChatActivityEnterView;)Lorg/telegram/ui/Components/ChatActivityEnterView$ChatActivityEnterViewDelegate;
@@ -408,7 +408,7 @@
 
     goto :goto_0
 
-    .line 10826
+    .line 10842
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$SlideTextView;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
@@ -418,7 +418,7 @@
 
     invoke-interface {v0, v1}, Lorg/telegram/ui/Components/ChatActivityEnterView$ChatActivityEnterViewDelegate;->needStartRecordAudio(I)V
 
-    .line 10827
+    .line 10843
     invoke-static {}, Lorg/telegram/messenger/MediaController;->getInstance()Lorg/telegram/messenger/MediaController;
 
     move-result-object v0
@@ -427,13 +427,13 @@
 
     invoke-virtual {v0, v1, v1, v1, v2}, Lorg/telegram/messenger/MediaController;->stopRecording(IZILjava/lang/String;)V
 
-    .line 10829
+    .line 10845
     :goto_0
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$SlideTextView;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
     invoke-static {v0, v1}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$3302(Lorg/telegram/ui/Components/ChatActivityEnterView;Z)Z
 
-    .line 10830
+    .line 10846
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$SlideTextView;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
     const/4 v1, 0x2
@@ -450,7 +450,7 @@
 
     move-object/from16 v1, p1
 
-    .line 10921
+    .line 10937
     iget-object v2, v0, Lorg/telegram/ui/Components/ChatActivityEnterView$SlideTextView;->slideToLayout:Landroid/text/StaticLayout;
 
     if-eqz v2, :cond_e
@@ -461,7 +461,7 @@
 
     goto/16 :goto_9
 
-    .line 10924
+    .line 10940
     :cond_0
     invoke-virtual {v2}, Landroid/text/StaticLayout;->getWidth()I
 
@@ -475,7 +475,7 @@
 
     add-int/2addr v2, v4
 
-    .line 10926
+    .line 10942
     iget-object v4, v0, Lorg/telegram/ui/Components/ChatActivityEnterView$SlideTextView;->grayPaint:Landroid/text/TextPaint;
 
     iget-object v5, v0, Lorg/telegram/ui/Components/ChatActivityEnterView$SlideTextView;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
@@ -488,7 +488,7 @@
 
     invoke-virtual {v4, v5}, Landroid/text/TextPaint;->setColor(I)V
 
-    .line 10927
+    .line 10943
     iget-object v4, v0, Lorg/telegram/ui/Components/ChatActivityEnterView$SlideTextView;->grayPaint:Landroid/text/TextPaint;
 
     iget v5, v0, Lorg/telegram/ui/Components/ChatActivityEnterView$SlideTextView;->slideToAlpha:F
@@ -509,7 +509,7 @@
 
     invoke-virtual {v4, v5}, Landroid/text/TextPaint;->setAlpha(I)V
 
-    .line 10928
+    .line 10944
     iget-object v4, v0, Lorg/telegram/ui/Components/ChatActivityEnterView$SlideTextView;->bluePaint:Landroid/text/TextPaint;
 
     iget v5, v0, Lorg/telegram/ui/Components/ChatActivityEnterView$SlideTextView;->cancelAlpha:F
@@ -522,7 +522,7 @@
 
     invoke-virtual {v4, v5}, Landroid/text/TextPaint;->setAlpha(I)V
 
-    .line 10929
+    .line 10945
     iget-object v4, v0, Lorg/telegram/ui/Components/ChatActivityEnterView$SlideTextView;->arrowPaint:Landroid/graphics/Paint;
 
     iget-object v5, v0, Lorg/telegram/ui/Components/ChatActivityEnterView$SlideTextView;->grayPaint:Landroid/text/TextPaint;
@@ -533,7 +533,7 @@
 
     invoke-virtual {v4, v5}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 10931
+    .line 10947
     iget-boolean v4, v0, Lorg/telegram/ui/Components/ChatActivityEnterView$SlideTextView;->smallSize:Z
 
     const/4 v5, 0x1
@@ -544,7 +544,7 @@
 
     if-eqz v4, :cond_1
 
-    .line 10932
+    .line 10948
     invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v4
@@ -555,7 +555,7 @@
 
     goto :goto_0
 
-    .line 10934
+    .line 10950
     :cond_1
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
@@ -565,14 +565,14 @@
 
     sub-long/2addr v9, v11
 
-    .line 10935
+    .line 10951
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v11
 
     iput-wide v11, v0, Lorg/telegram/ui/Components/ChatActivityEnterView$SlideTextView;->lastUpdateTime:J
 
-    .line 10936
+    .line 10952
     iget v4, v0, Lorg/telegram/ui/Components/ChatActivityEnterView$SlideTextView;->cancelToProgress:F
 
     cmpl-float v4, v4, v8
@@ -587,7 +587,7 @@
 
     if-lez v4, :cond_3
 
-    .line 10937
+    .line 10953
     iget-boolean v4, v0, Lorg/telegram/ui/Components/ChatActivityEnterView$SlideTextView;->moveForward:Z
 
     const/high16 v11, 0x437a0000    # 250.0f
@@ -598,7 +598,7 @@
 
     if-eqz v4, :cond_2
 
-    .line 10938
+    .line 10954
     iget v4, v0, Lorg/telegram/ui/Components/ChatActivityEnterView$SlideTextView;->xOffset:F
 
     invoke-static {v12}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -617,7 +617,7 @@
 
     iput v4, v0, Lorg/telegram/ui/Components/ChatActivityEnterView$SlideTextView;->xOffset:F
 
-    .line 10939
+    .line 10955
     invoke-static {v13}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v9
@@ -628,7 +628,7 @@
 
     if-lez v4, :cond_3
 
-    .line 10940
+    .line 10956
     invoke-static {v13}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v4
@@ -637,12 +637,12 @@
 
     iput v4, v0, Lorg/telegram/ui/Components/ChatActivityEnterView$SlideTextView;->xOffset:F
 
-    .line 10941
+    .line 10957
     iput-boolean v6, v0, Lorg/telegram/ui/Components/ChatActivityEnterView$SlideTextView;->moveForward:Z
 
     goto :goto_0
 
-    .line 10944
+    .line 10960
     :cond_2
     iget v4, v0, Lorg/telegram/ui/Components/ChatActivityEnterView$SlideTextView;->xOffset:F
 
@@ -662,7 +662,7 @@
 
     iput v4, v0, Lorg/telegram/ui/Components/ChatActivityEnterView$SlideTextView;->xOffset:F
 
-    .line 10945
+    .line 10961
     invoke-static {v13}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v9
@@ -675,7 +675,7 @@
 
     if-gez v4, :cond_3
 
-    .line 10946
+    .line 10962
     invoke-static {v13}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v4
@@ -686,10 +686,10 @@
 
     iput v4, v0, Lorg/telegram/ui/Components/ChatActivityEnterView$SlideTextView;->xOffset:F
 
-    .line 10947
+    .line 10963
     iput-boolean v5, v0, Lorg/telegram/ui/Components/ChatActivityEnterView$SlideTextView;->moveForward:Z
 
-    .line 10953
+    .line 10969
     :cond_3
     :goto_0
     iget v4, v0, Lorg/telegram/ui/Components/ChatActivityEnterView$SlideTextView;->cancelCharOffset:I
@@ -701,7 +701,7 @@
     :cond_4
     move v5, v6
 
-    .line 10955
+    .line 10971
     :goto_1
     invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getMeasuredWidth()I
 
@@ -727,7 +727,7 @@
 
     add-int/2addr v4, v10
 
-    .line 10956
+    .line 10972
     invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v10
@@ -744,7 +744,7 @@
 
     if-eqz v5, :cond_5
 
-    .line 10957
+    .line 10973
     iget-object v11, v0, Lorg/telegram/ui/Components/ChatActivityEnterView$SlideTextView;->slideToLayout:Landroid/text/StaticLayout;
 
     iget v12, v0, Lorg/telegram/ui/Components/ChatActivityEnterView$SlideTextView;->cancelCharOffset:I
@@ -777,7 +777,7 @@
     :goto_3
     int-to-float v4, v4
 
-    .line 10959
+    .line 10975
     iget v13, v0, Lorg/telegram/ui/Components/ChatActivityEnterView$SlideTextView;->xOffset:F
 
     iget v14, v0, Lorg/telegram/ui/Components/ChatActivityEnterView$SlideTextView;->cancelToProgress:F
@@ -812,7 +812,7 @@
 
     goto :goto_4
 
-    .line 10961
+    .line 10977
     :cond_7
     iget v13, v0, Lorg/telegram/ui/Components/ChatActivityEnterView$SlideTextView;->cancelToProgress:F
 
@@ -824,7 +824,7 @@
 
     mul-float/2addr v13, v14
 
-    .line 10963
+    .line 10979
     :goto_4
     iget v14, v0, Lorg/telegram/ui/Components/ChatActivityEnterView$SlideTextView;->cancelToProgress:F
 
@@ -832,7 +832,7 @@
 
     if-eqz v14, :cond_a
 
-    .line 10964
+    .line 10980
     invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v14
@@ -853,10 +853,10 @@
 
     float-to-int v6, v14
 
-    .line 10965
+    .line 10981
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 10966
+    .line 10982
     iget-object v14, v0, Lorg/telegram/ui/Components/ChatActivityEnterView$SlideTextView;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
     invoke-static {v14}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$3500(Lorg/telegram/ui/Components/ChatActivityEnterView;)Lorg/telegram/ui/Components/ChatActivityEnterView$TimerView;
@@ -903,12 +903,12 @@
 
     invoke-virtual {v1, v14, v8, v15, v7}, Landroid/graphics/Canvas;->clipRect(FFFF)Z
 
-    .line 10967
+    .line 10983
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
     float-to-int v7, v4
 
-    .line 10968
+    .line 10984
     iget-boolean v14, v0, Lorg/telegram/ui/Components/ChatActivityEnterView$SlideTextView;->smallSize:Z
 
     if-eqz v14, :cond_9
@@ -933,24 +933,24 @@
 
     invoke-virtual {v1, v14, v13}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 10969
+    .line 10985
     iget-object v14, v0, Lorg/telegram/ui/Components/ChatActivityEnterView$SlideTextView;->arrowPath:Landroid/graphics/Path;
 
     iget-object v15, v0, Lorg/telegram/ui/Components/ChatActivityEnterView$SlideTextView;->arrowPaint:Landroid/graphics/Paint;
 
     invoke-virtual {v1, v14, v15}, Landroid/graphics/Canvas;->drawPath(Landroid/graphics/Path;Landroid/graphics/Paint;)V
 
-    .line 10970
+    .line 10986
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 10972
+    .line 10988
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
     add-int/2addr v7, v6
 
     int-to-float v6, v7
 
-    .line 10973
+    .line 10989
     invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getMeasuredHeight()I
 
     move-result v7
@@ -971,18 +971,18 @@
 
     invoke-virtual {v1, v6, v7}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 10974
+    .line 10990
     iget-object v6, v0, Lorg/telegram/ui/Components/ChatActivityEnterView$SlideTextView;->slideToLayout:Landroid/text/StaticLayout;
 
     invoke-virtual {v6, v1}, Landroid/text/StaticLayout;->draw(Landroid/graphics/Canvas;)V
 
-    .line 10975
+    .line 10991
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 10976
+    .line 10992
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 10980
+    .line 10996
     :cond_a
     invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getMeasuredHeight()I
 
@@ -1002,7 +1002,7 @@
 
     if-nez v5, :cond_b
 
-    .line 10982
+    .line 10998
     invoke-static {v12}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v7
@@ -1023,7 +1023,7 @@
     :cond_c
     int-to-float v4, v10
 
-    .line 10989
+    .line 11005
     :goto_7
     iget-object v5, v0, Lorg/telegram/ui/Components/ChatActivityEnterView$SlideTextView;->cancelRect:Landroid/graphics/Rect;
 
@@ -1057,7 +1057,7 @@
 
     invoke-virtual {v5, v7, v9, v10, v11}, Landroid/graphics/Rect;->set(IIII)V
 
-    .line 10990
+    .line 11006
     iget-object v5, v0, Lorg/telegram/ui/Components/ChatActivityEnterView$SlideTextView;->cancelRect:Landroid/graphics/Rect;
 
     invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -1074,17 +1074,17 @@
 
     invoke-virtual {v5, v7, v3}, Landroid/graphics/Rect;->inset(II)V
 
-    .line 10991
+    .line 11007
     iget v3, v0, Lorg/telegram/ui/Components/ChatActivityEnterView$SlideTextView;->cancelToProgress:F
 
     cmpl-float v3, v3, v8
 
     if-lez v3, :cond_d
 
-    .line 10992
+    .line 11008
     iget-object v3, v0, Lorg/telegram/ui/Components/ChatActivityEnterView$SlideTextView;->selectableBackground:Landroid/graphics/drawable/Drawable;
 
-    .line 10993
+    .line 11009
     invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v5
@@ -1101,7 +1101,7 @@
 
     sub-int/2addr v7, v2
 
-    .line 10994
+    .line 11010
     invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v8
@@ -1118,26 +1118,26 @@
 
     add-int/2addr v9, v2
 
-    .line 10992
+    .line 11008
     invoke-virtual {v3, v5, v7, v8, v9}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 10996
+    .line 11012
     iget-object v2, v0, Lorg/telegram/ui/Components/ChatActivityEnterView$SlideTextView;->selectableBackground:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v2, v1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 10998
+    .line 11014
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 10999
+    .line 11015
     invoke-virtual {v1, v4, v6}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 11000
+    .line 11016
     iget-object v2, v0, Lorg/telegram/ui/Components/ChatActivityEnterView$SlideTextView;->cancelLayout:Landroid/text/StaticLayout;
 
     invoke-virtual {v2, v1}, Landroid/text/StaticLayout;->draw(Landroid/graphics/Canvas;)V
 
-    .line 11001
+    .line 11017
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
     goto :goto_8
@@ -1145,10 +1145,10 @@
     :cond_d
     const/4 v1, 0x0
 
-    .line 11003
+    .line 11019
     invoke-virtual {v0, v1}, Landroid/view/View;->setPressed(Z)V
 
-    .line 11006
+    .line 11022
     :goto_8
     iget v1, v0, Lorg/telegram/ui/Components/ChatActivityEnterView$SlideTextView;->cancelToProgress:F
 
@@ -1158,7 +1158,7 @@
 
     if-eqz v1, :cond_e
 
-    .line 11007
+    .line 11023
     invoke-virtual/range {p0 .. p0}, Landroid/view/View;->invalidate()V
 
     :cond_e
@@ -1171,10 +1171,10 @@
 
     move-object/from16 v0, p0
 
-    .line 10894
+    .line 10910
     invoke-super/range {p0 .. p2}, Landroid/view/View;->onMeasure(II)V
 
-    .line 10895
+    .line 10911
     invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getMeasuredHeight()I
 
     move-result v1
@@ -1187,15 +1187,15 @@
 
     add-int/2addr v1, v2
 
-    .line 10896
+    .line 10912
     iget v2, v0, Lorg/telegram/ui/Components/ChatActivityEnterView$SlideTextView;->lastSize:I
 
     if-eq v2, v1, :cond_1
 
-    .line 10897
+    .line 10913
     iput v1, v0, Lorg/telegram/ui/Components/ChatActivityEnterView$SlideTextView;->lastSize:I
 
-    .line 10898
+    .line 10914
     iget-object v1, v0, Lorg/telegram/ui/Components/ChatActivityEnterView$SlideTextView;->grayPaint:Landroid/text/TextPaint;
 
     iget-object v2, v0, Lorg/telegram/ui/Components/ChatActivityEnterView$SlideTextView;->slideToCancelString:Ljava/lang/String;
@@ -1206,7 +1206,7 @@
 
     iput v1, v0, Lorg/telegram/ui/Components/ChatActivityEnterView$SlideTextView;->slideToCancelWidth:F
 
-    .line 10899
+    .line 10915
     iget-object v1, v0, Lorg/telegram/ui/Components/ChatActivityEnterView$SlideTextView;->bluePaint:Landroid/text/TextPaint;
 
     iget-object v2, v0, Lorg/telegram/ui/Components/ChatActivityEnterView$SlideTextView;->cancelString:Ljava/lang/String;
@@ -1217,33 +1217,33 @@
 
     iput v1, v0, Lorg/telegram/ui/Components/ChatActivityEnterView$SlideTextView;->cancelWidth:F
 
-    .line 10900
+    .line 10916
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v1
 
     iput-wide v1, v0, Lorg/telegram/ui/Components/ChatActivityEnterView$SlideTextView;->lastUpdateTime:J
 
-    .line 10902
+    .line 10918
     invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getMeasuredHeight()I
 
     move-result v1
 
     shr-int/lit8 v1, v1, 0x1
 
-    .line 10903
+    .line 10919
     iget-object v2, v0, Lorg/telegram/ui/Components/ChatActivityEnterView$SlideTextView;->arrowPath:Landroid/graphics/Path;
 
     invoke-virtual {v2}, Landroid/graphics/Path;->reset()V
 
-    .line 10904
+    .line 10920
     iget-boolean v2, v0, Lorg/telegram/ui/Components/ChatActivityEnterView$SlideTextView;->smallSize:Z
 
     const/4 v3, 0x0
 
     if-eqz v2, :cond_0
 
-    .line 10905
+    .line 10921
     iget-object v2, v0, Lorg/telegram/ui/Components/ChatActivityEnterView$SlideTextView;->arrowPath:Landroid/graphics/Path;
 
     const/high16 v4, 0x40200000    # 2.5f
@@ -1264,12 +1264,12 @@
 
     invoke-virtual {v2, v5, v7}, Landroid/graphics/Path;->setLastPoint(FF)V
 
-    .line 10906
+    .line 10922
     iget-object v2, v0, Lorg/telegram/ui/Components/ChatActivityEnterView$SlideTextView;->arrowPath:Landroid/graphics/Path;
 
     invoke-virtual {v2, v3, v1}, Landroid/graphics/Path;->lineTo(FF)V
 
-    .line 10907
+    .line 10923
     iget-object v2, v0, Lorg/telegram/ui/Components/ChatActivityEnterView$SlideTextView;->arrowPath:Landroid/graphics/Path;
 
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dpf2(F)F
@@ -1286,7 +1286,7 @@
 
     goto :goto_0
 
-    .line 10909
+    .line 10925
     :cond_0
     iget-object v2, v0, Lorg/telegram/ui/Components/ChatActivityEnterView$SlideTextView;->arrowPath:Landroid/graphics/Path;
 
@@ -1308,12 +1308,12 @@
 
     invoke-virtual {v2, v5, v7}, Landroid/graphics/Path;->setLastPoint(FF)V
 
-    .line 10910
+    .line 10926
     iget-object v2, v0, Lorg/telegram/ui/Components/ChatActivityEnterView$SlideTextView;->arrowPath:Landroid/graphics/Path;
 
     invoke-virtual {v2, v3, v1}, Landroid/graphics/Path;->lineTo(FF)V
 
-    .line 10911
+    .line 10927
     iget-object v2, v0, Lorg/telegram/ui/Components/ChatActivityEnterView$SlideTextView;->arrowPath:Landroid/graphics/Path;
 
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dpf2(F)F
@@ -1328,7 +1328,7 @@
 
     invoke-virtual {v2, v3, v1}, Landroid/graphics/Path;->lineTo(FF)V
 
-    .line 10914
+    .line 10930
     :goto_0
     new-instance v1, Landroid/text/StaticLayout;
 
@@ -1354,7 +1354,7 @@
 
     iput-object v1, v0, Lorg/telegram/ui/Components/ChatActivityEnterView$SlideTextView;->slideToLayout:Landroid/text/StaticLayout;
 
-    .line 10915
+    .line 10931
     new-instance v1, Landroid/text/StaticLayout;
 
     iget-object v13, v0, Lorg/telegram/ui/Components/ChatActivityEnterView$SlideTextView;->cancelString:Ljava/lang/String;
@@ -1386,7 +1386,7 @@
 .method public onTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 6
 
-    .line 10791
+    .line 10807
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v0
@@ -1405,11 +1405,11 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 10792
+    .line 10808
     :cond_0
     invoke-virtual {p0, v2}, Landroid/view/View;->setPressed(Z)V
 
-    .line 10794
+    .line 10810
     :cond_1
     iget v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$SlideTextView;->cancelToProgress:F
 
@@ -1427,7 +1427,7 @@
 
     goto :goto_0
 
-    .line 10797
+    .line 10813
     :cond_2
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
@@ -1435,21 +1435,21 @@
 
     float-to-int v0, v0
 
-    .line 10798
+    .line 10814
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
 
     move-result v3
 
     float-to-int v3, v3
 
-    .line 10799
+    .line 10815
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v4
 
     if-nez v4, :cond_5
 
-    .line 10800
+    .line 10816
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$SlideTextView;->cancelRect:Landroid/graphics/Rect;
 
     invoke-virtual {p1, v0, v3}, Landroid/graphics/Rect;->contains(II)Z
@@ -1460,14 +1460,14 @@
 
     if-eqz p1, :cond_4
 
-    .line 10802
+    .line 10818
     sget p1, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v2, 0x15
 
     if-lt p1, v2, :cond_3
 
-    .line 10803
+    .line 10819
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$SlideTextView;->selectableBackground:Landroid/graphics/drawable/Drawable;
 
     int-to-float v0, v0
@@ -1476,23 +1476,23 @@
 
     invoke-virtual {p1, v0, v2}, Landroid/graphics/drawable/Drawable;->setHotspot(FF)V
 
-    .line 10805
+    .line 10821
     :cond_3
     invoke-virtual {p0, v1}, Landroid/view/View;->setPressed(Z)V
 
-    .line 10807
+    .line 10823
     :cond_4
     iget-boolean p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$SlideTextView;->pressed:Z
 
     return p1
 
-    .line 10808
+    .line 10824
     :cond_5
     iget-boolean v4, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$SlideTextView;->pressed:Z
 
     if-eqz v4, :cond_8
 
-    .line 10809
+    .line 10825
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v4
@@ -1509,12 +1509,12 @@
 
     if-nez v4, :cond_6
 
-    .line 10810
+    .line 10826
     invoke-virtual {p0, v2}, Landroid/view/View;->setPressed(Z)V
 
     return v2
 
-    .line 10813
+    .line 10829
     :cond_6
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
@@ -1530,7 +1530,7 @@
 
     if-eqz p1, :cond_7
 
-    .line 10814
+    .line 10830
     invoke-virtual {p0}, Lorg/telegram/ui/Components/ChatActivityEnterView$SlideTextView;->onCancelButtonPressed()V
 
     :cond_7
@@ -1549,7 +1549,7 @@
     .annotation build Landroidx/annotation/Keep;
     .end annotation
 
-    .line 11013
+    .line 11029
     iput p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$SlideTextView;->cancelToProgress:F
 
     return-void
@@ -1558,7 +1558,7 @@
 .method public setSlideX(F)V
     .locals 0
 
-    .line 11022
+    .line 11038
     iput p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$SlideTextView;->slideProgress:F
 
     return-void
@@ -1567,7 +1567,7 @@
 .method public updateColors()V
     .locals 3
 
-    .line 10864
+    .line 10880
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$SlideTextView;->grayPaint:Landroid/text/TextPaint;
 
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$SlideTextView;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
@@ -1580,7 +1580,7 @@
 
     invoke-virtual {v0, v1}, Landroid/text/TextPaint;->setColor(I)V
 
-    .line 10865
+    .line 10881
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$SlideTextView;->bluePaint:Landroid/text/TextPaint;
 
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$SlideTextView;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
@@ -1593,7 +1593,7 @@
 
     invoke-virtual {v0, v1}, Landroid/text/TextPaint;->setColor(I)V
 
-    .line 10866
+    .line 10882
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$SlideTextView;->grayPaint:Landroid/text/TextPaint;
 
     invoke-virtual {v0}, Landroid/text/TextPaint;->getAlpha()I
@@ -1604,7 +1604,7 @@
 
     iput v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$SlideTextView;->slideToAlpha:F
 
-    .line 10867
+    .line 10883
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$SlideTextView;->bluePaint:Landroid/text/TextPaint;
 
     invoke-virtual {v0}, Landroid/text/TextPaint;->getAlpha()I
@@ -1617,7 +1617,7 @@
 
     const/16 v0, 0x3c
 
-    .line 10868
+    .line 10884
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
@@ -1642,7 +1642,7 @@
 
     iput-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$SlideTextView;->selectableBackground:Landroid/graphics/drawable/Drawable;
 
-    .line 10869
+    .line 10885
     invoke-virtual {v0, p0}, Landroid/graphics/drawable/Drawable;->setCallback(Landroid/graphics/drawable/Drawable$Callback;)V
 
     return-void
@@ -1651,7 +1651,7 @@
 .method public verifyDrawable(Landroid/graphics/drawable/Drawable;)Z
     .locals 1
 
-    .line 10880
+    .line 10896
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$SlideTextView;->selectableBackground:Landroid/graphics/drawable/Drawable;
 
     if-eq v0, p1, :cond_1

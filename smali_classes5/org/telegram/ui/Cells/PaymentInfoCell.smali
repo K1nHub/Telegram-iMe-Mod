@@ -14,343 +14,345 @@
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;)V
-    .locals 17
+.method public constructor <init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
+    .locals 18
 
     move-object/from16 v0, p0
 
     move-object/from16 v1, p1
 
+    move-object/from16 v2, p2
+
     .line 37
     invoke-direct/range {p0 .. p1}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
     .line 39
-    new-instance v2, Lorg/telegram/ui/Components/BackupImageView;
+    new-instance v3, Lorg/telegram/ui/Components/BackupImageView;
 
-    invoke-direct {v2, v1}, Lorg/telegram/ui/Components/BackupImageView;-><init>(Landroid/content/Context;)V
+    invoke-direct {v3, v1}, Lorg/telegram/ui/Components/BackupImageView;-><init>(Landroid/content/Context;)V
 
-    iput-object v2, v0, Lorg/telegram/ui/Cells/PaymentInfoCell;->imageView:Lorg/telegram/ui/Components/BackupImageView;
+    iput-object v3, v0, Lorg/telegram/ui/Cells/PaymentInfoCell;->imageView:Lorg/telegram/ui/Components/BackupImageView;
 
     .line 40
-    invoke-virtual {v2}, Lorg/telegram/ui/Components/BackupImageView;->getImageReceiver()Lorg/telegram/messenger/ImageReceiver;
+    invoke-virtual {v3}, Lorg/telegram/ui/Components/BackupImageView;->getImageReceiver()Lorg/telegram/messenger/ImageReceiver;
 
-    move-result-object v2
+    move-result-object v3
 
-    const/16 v3, 0x8
+    const/16 v4, 0x8
 
-    invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result v3
+    move-result v4
 
-    invoke-virtual {v2, v3}, Lorg/telegram/messenger/ImageReceiver;->setRoundRadius(I)V
+    invoke-virtual {v3, v4}, Lorg/telegram/messenger/ImageReceiver;->setRoundRadius(I)V
 
     .line 41
-    iget-object v2, v0, Lorg/telegram/ui/Cells/PaymentInfoCell;->imageView:Lorg/telegram/ui/Components/BackupImageView;
+    iget-object v3, v0, Lorg/telegram/ui/Cells/PaymentInfoCell;->imageView:Lorg/telegram/ui/Components/BackupImageView;
 
-    sget-boolean v3, Lorg/telegram/messenger/LocaleController;->isRTL:Z
+    sget-boolean v4, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
-    const/4 v4, 0x5
+    const/4 v5, 0x5
 
-    const/4 v5, 0x3
+    const/4 v6, 0x3
 
-    if-eqz v3, :cond_0
+    if-eqz v4, :cond_0
 
-    move v8, v4
+    move v9, v5
 
     goto :goto_0
 
     :cond_0
-    move v8, v5
+    move v9, v6
 
     :goto_0
-    const/16 v9, 0xa
-
     const/16 v10, 0xa
 
     const/16 v11, 0xa
 
-    const/4 v12, 0x0
+    const/16 v12, 0xa
 
-    const/16 v6, 0x64
+    const/4 v13, 0x0
 
     const/16 v7, 0x64
 
-    invoke-static/range {v6 .. v12}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
+    const/16 v8, 0x64
 
-    move-result-object v3
+    invoke-static/range {v7 .. v13}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
 
-    invoke-virtual {v0, v2, v3}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    move-result-object v4
+
+    invoke-virtual {v0, v3, v4}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     .line 43
-    new-instance v2, Landroid/widget/TextView;
+    new-instance v3, Landroid/widget/TextView;
 
-    invoke-direct {v2, v1}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
+    invoke-direct {v3, v1}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
-    iput-object v2, v0, Lorg/telegram/ui/Cells/PaymentInfoCell;->nameTextView:Landroid/widget/TextView;
+    iput-object v3, v0, Lorg/telegram/ui/Cells/PaymentInfoCell;->nameTextView:Landroid/widget/TextView;
 
     .line 44
-    sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
+    sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
 
-    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
+    invoke-static {v4, v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
-    move-result v6
+    move-result v7
 
-    invoke-virtual {v2, v6}, Landroid/widget/TextView;->setTextColor(I)V
+    invoke-virtual {v3, v7}, Landroid/widget/TextView;->setTextColor(I)V
 
     .line 45
-    iget-object v2, v0, Lorg/telegram/ui/Cells/PaymentInfoCell;->nameTextView:Landroid/widget/TextView;
+    iget-object v3, v0, Lorg/telegram/ui/Cells/PaymentInfoCell;->nameTextView:Landroid/widget/TextView;
 
-    const/high16 v6, 0x41800000    # 16.0f
+    const/high16 v7, 0x41800000    # 16.0f
 
-    const/4 v7, 0x1
+    const/4 v8, 0x1
 
-    invoke-virtual {v2, v7, v6}, Landroid/widget/TextView;->setTextSize(IF)V
+    invoke-virtual {v3, v8, v7}, Landroid/widget/TextView;->setTextSize(IF)V
 
     .line 46
-    iget-object v2, v0, Lorg/telegram/ui/Cells/PaymentInfoCell;->nameTextView:Landroid/widget/TextView;
+    iget-object v3, v0, Lorg/telegram/ui/Cells/PaymentInfoCell;->nameTextView:Landroid/widget/TextView;
 
-    invoke-virtual {v2, v7}, Landroid/widget/TextView;->setLines(I)V
+    invoke-virtual {v3, v8}, Landroid/widget/TextView;->setLines(I)V
 
     .line 47
-    iget-object v2, v0, Lorg/telegram/ui/Cells/PaymentInfoCell;->nameTextView:Landroid/widget/TextView;
+    iget-object v3, v0, Lorg/telegram/ui/Cells/PaymentInfoCell;->nameTextView:Landroid/widget/TextView;
 
-    const-string v6, "fonts/rmedium.ttf"
+    const-string v7, "fonts/rmedium.ttf"
 
-    invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->getTypeface(Ljava/lang/String;)Landroid/graphics/Typeface;
+    invoke-static {v7}, Lorg/telegram/messenger/AndroidUtilities;->getTypeface(Ljava/lang/String;)Landroid/graphics/Typeface;
 
-    move-result-object v6
+    move-result-object v7
 
-    invoke-virtual {v2, v6}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
+    invoke-virtual {v3, v7}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
     .line 48
-    iget-object v2, v0, Lorg/telegram/ui/Cells/PaymentInfoCell;->nameTextView:Landroid/widget/TextView;
+    iget-object v3, v0, Lorg/telegram/ui/Cells/PaymentInfoCell;->nameTextView:Landroid/widget/TextView;
 
-    invoke-virtual {v2, v7}, Landroid/widget/TextView;->setMaxLines(I)V
+    invoke-virtual {v3, v8}, Landroid/widget/TextView;->setMaxLines(I)V
 
     .line 49
-    iget-object v2, v0, Lorg/telegram/ui/Cells/PaymentInfoCell;->nameTextView:Landroid/widget/TextView;
+    iget-object v3, v0, Lorg/telegram/ui/Cells/PaymentInfoCell;->nameTextView:Landroid/widget/TextView;
 
-    invoke-virtual {v2, v7}, Landroid/widget/TextView;->setSingleLine(Z)V
+    invoke-virtual {v3, v8}, Landroid/widget/TextView;->setSingleLine(Z)V
 
     .line 50
-    iget-object v2, v0, Lorg/telegram/ui/Cells/PaymentInfoCell;->nameTextView:Landroid/widget/TextView;
+    iget-object v3, v0, Lorg/telegram/ui/Cells/PaymentInfoCell;->nameTextView:Landroid/widget/TextView;
 
-    sget-object v6, Landroid/text/TextUtils$TruncateAt;->END:Landroid/text/TextUtils$TruncateAt;
+    sget-object v7, Landroid/text/TextUtils$TruncateAt;->END:Landroid/text/TextUtils$TruncateAt;
 
-    invoke-virtual {v2, v6}, Landroid/widget/TextView;->setEllipsize(Landroid/text/TextUtils$TruncateAt;)V
+    invoke-virtual {v3, v7}, Landroid/widget/TextView;->setEllipsize(Landroid/text/TextUtils$TruncateAt;)V
 
     .line 51
-    iget-object v2, v0, Lorg/telegram/ui/Cells/PaymentInfoCell;->nameTextView:Landroid/widget/TextView;
+    iget-object v3, v0, Lorg/telegram/ui/Cells/PaymentInfoCell;->nameTextView:Landroid/widget/TextView;
 
-    sget-boolean v6, Lorg/telegram/messenger/LocaleController;->isRTL:Z
+    sget-boolean v7, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
-    if-eqz v6, :cond_1
+    if-eqz v7, :cond_1
 
-    move v6, v4
+    move v7, v5
 
     goto :goto_1
 
     :cond_1
-    move v6, v5
+    move v7, v6
 
     :goto_1
-    or-int/lit8 v6, v6, 0x30
+    or-int/lit8 v7, v7, 0x30
 
-    invoke-virtual {v2, v6}, Landroid/widget/TextView;->setGravity(I)V
+    invoke-virtual {v3, v7}, Landroid/widget/TextView;->setGravity(I)V
 
     .line 52
-    iget-object v2, v0, Lorg/telegram/ui/Cells/PaymentInfoCell;->nameTextView:Landroid/widget/TextView;
+    iget-object v3, v0, Lorg/telegram/ui/Cells/PaymentInfoCell;->nameTextView:Landroid/widget/TextView;
 
-    const/4 v8, -0x1
+    const/4 v9, -0x1
 
-    const/4 v9, -0x2
+    const/4 v10, -0x2
 
-    sget-boolean v6, Lorg/telegram/messenger/LocaleController;->isRTL:Z
+    sget-boolean v7, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
-    if-eqz v6, :cond_2
+    if-eqz v7, :cond_2
 
-    move v10, v4
+    move v11, v5
 
     goto :goto_2
 
     :cond_2
-    move v10, v5
+    move v11, v6
 
     :goto_2
-    or-int/lit8 v10, v10, 0x30
+    or-int/lit8 v11, v11, 0x30
 
-    const/16 v15, 0xa
+    const/16 v16, 0xa
 
-    const/16 v16, 0x7b
+    const/16 v17, 0x7b
 
-    if-eqz v6, :cond_3
+    if-eqz v7, :cond_3
 
-    move v11, v15
+    move/from16 v12, v16
 
     goto :goto_3
 
     :cond_3
-    move/from16 v11, v16
+    move/from16 v12, v17
 
     :goto_3
-    const/16 v12, 0x9
+    const/16 v13, 0x9
 
-    if-eqz v6, :cond_4
+    if-eqz v7, :cond_4
 
-    move/from16 v13, v16
+    move/from16 v14, v17
 
     goto :goto_4
 
     :cond_4
-    move v13, v15
+    move/from16 v14, v16
 
     :goto_4
-    const/4 v14, 0x0
+    const/4 v15, 0x0
 
-    invoke-static/range {v8 .. v14}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
+    invoke-static/range {v9 .. v15}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
 
-    move-result-object v6
+    move-result-object v7
 
-    invoke-virtual {v0, v2, v6}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v0, v3, v7}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     .line 54
-    new-instance v2, Landroid/widget/TextView;
+    new-instance v3, Landroid/widget/TextView;
 
-    invoke-direct {v2, v1}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
+    invoke-direct {v3, v1}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
-    iput-object v2, v0, Lorg/telegram/ui/Cells/PaymentInfoCell;->detailTextView:Landroid/widget/TextView;
+    iput-object v3, v0, Lorg/telegram/ui/Cells/PaymentInfoCell;->detailTextView:Landroid/widget/TextView;
 
     .line 55
-    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
+    invoke-static {v4, v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
-    move-result v3
+    move-result v4
 
-    invoke-virtual {v2, v3}, Landroid/widget/TextView;->setTextColor(I)V
+    invoke-virtual {v3, v4}, Landroid/widget/TextView;->setTextColor(I)V
 
     .line 56
-    iget-object v2, v0, Lorg/telegram/ui/Cells/PaymentInfoCell;->detailTextView:Landroid/widget/TextView;
+    iget-object v3, v0, Lorg/telegram/ui/Cells/PaymentInfoCell;->detailTextView:Landroid/widget/TextView;
 
-    const/high16 v3, 0x41600000    # 14.0f
+    const/high16 v4, 0x41600000    # 14.0f
 
-    invoke-virtual {v2, v7, v3}, Landroid/widget/TextView;->setTextSize(IF)V
+    invoke-virtual {v3, v8, v4}, Landroid/widget/TextView;->setTextSize(IF)V
 
     .line 57
-    iget-object v2, v0, Lorg/telegram/ui/Cells/PaymentInfoCell;->detailTextView:Landroid/widget/TextView;
+    iget-object v3, v0, Lorg/telegram/ui/Cells/PaymentInfoCell;->detailTextView:Landroid/widget/TextView;
 
-    invoke-virtual {v2, v5}, Landroid/widget/TextView;->setMaxLines(I)V
+    invoke-virtual {v3, v6}, Landroid/widget/TextView;->setMaxLines(I)V
 
     .line 58
-    iget-object v2, v0, Lorg/telegram/ui/Cells/PaymentInfoCell;->detailTextView:Landroid/widget/TextView;
+    iget-object v3, v0, Lorg/telegram/ui/Cells/PaymentInfoCell;->detailTextView:Landroid/widget/TextView;
 
-    sget-object v6, Landroid/text/TextUtils$TruncateAt;->END:Landroid/text/TextUtils$TruncateAt;
+    sget-object v7, Landroid/text/TextUtils$TruncateAt;->END:Landroid/text/TextUtils$TruncateAt;
 
-    invoke-virtual {v2, v6}, Landroid/widget/TextView;->setEllipsize(Landroid/text/TextUtils$TruncateAt;)V
+    invoke-virtual {v3, v7}, Landroid/widget/TextView;->setEllipsize(Landroid/text/TextUtils$TruncateAt;)V
 
     .line 59
-    iget-object v2, v0, Lorg/telegram/ui/Cells/PaymentInfoCell;->detailTextView:Landroid/widget/TextView;
+    iget-object v3, v0, Lorg/telegram/ui/Cells/PaymentInfoCell;->detailTextView:Landroid/widget/TextView;
 
-    sget-boolean v6, Lorg/telegram/messenger/LocaleController;->isRTL:Z
+    sget-boolean v7, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
-    if-eqz v6, :cond_5
+    if-eqz v7, :cond_5
 
-    move v6, v4
+    move v7, v5
 
     goto :goto_5
 
     :cond_5
-    move v6, v5
+    move v7, v6
 
     :goto_5
-    or-int/lit8 v6, v6, 0x30
+    or-int/lit8 v7, v7, 0x30
 
-    invoke-virtual {v2, v6}, Landroid/widget/TextView;->setGravity(I)V
+    invoke-virtual {v3, v7}, Landroid/widget/TextView;->setGravity(I)V
 
     .line 60
-    iget-object v2, v0, Lorg/telegram/ui/Cells/PaymentInfoCell;->detailTextView:Landroid/widget/TextView;
+    iget-object v3, v0, Lorg/telegram/ui/Cells/PaymentInfoCell;->detailTextView:Landroid/widget/TextView;
 
-    const/4 v8, -0x1
+    const/4 v9, -0x1
 
-    const/4 v9, -0x2
+    const/4 v10, -0x2
 
-    sget-boolean v6, Lorg/telegram/messenger/LocaleController;->isRTL:Z
+    sget-boolean v7, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
-    if-eqz v6, :cond_6
+    if-eqz v7, :cond_6
 
-    move v10, v4
+    move v11, v5
 
     goto :goto_6
 
     :cond_6
-    move v10, v5
+    move v11, v6
 
     :goto_6
-    or-int/lit8 v10, v10, 0x30
+    or-int/lit8 v11, v11, 0x30
 
-    if-eqz v6, :cond_7
+    if-eqz v7, :cond_7
 
-    move v11, v15
+    move/from16 v12, v16
 
     goto :goto_7
 
     :cond_7
-    move/from16 v11, v16
+    move/from16 v12, v17
 
     :goto_7
-    const/16 v12, 0x21
+    const/16 v13, 0x21
 
-    if-eqz v6, :cond_8
+    if-eqz v7, :cond_8
 
-    move/from16 v13, v16
+    move/from16 v14, v17
 
     goto :goto_8
 
     :cond_8
-    move v13, v15
+    move/from16 v14, v16
 
     :goto_8
-    const/4 v14, 0x0
+    const/4 v15, 0x0
 
-    invoke-static/range {v8 .. v14}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
+    invoke-static/range {v9 .. v15}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
 
-    move-result-object v6
+    move-result-object v7
 
-    invoke-virtual {v0, v2, v6}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v0, v3, v7}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     .line 62
-    new-instance v2, Landroid/widget/TextView;
+    new-instance v3, Landroid/widget/TextView;
 
-    invoke-direct {v2, v1}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
+    invoke-direct {v3, v1}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
-    iput-object v2, v0, Lorg/telegram/ui/Cells/PaymentInfoCell;->detailExTextView:Landroid/widget/TextView;
+    iput-object v3, v0, Lorg/telegram/ui/Cells/PaymentInfoCell;->detailExTextView:Landroid/widget/TextView;
 
     .line 63
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayText2:I
 
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
+    invoke-static {v1, v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result v1
 
-    invoke-virtual {v2, v1}, Landroid/widget/TextView;->setTextColor(I)V
+    invoke-virtual {v3, v1}, Landroid/widget/TextView;->setTextColor(I)V
 
     .line 64
     iget-object v1, v0, Lorg/telegram/ui/Cells/PaymentInfoCell;->detailExTextView:Landroid/widget/TextView;
 
-    invoke-virtual {v1, v7, v3}, Landroid/widget/TextView;->setTextSize(IF)V
+    invoke-virtual {v1, v8, v4}, Landroid/widget/TextView;->setTextSize(IF)V
 
     .line 65
     iget-object v1, v0, Lorg/telegram/ui/Cells/PaymentInfoCell;->detailExTextView:Landroid/widget/TextView;
 
-    invoke-virtual {v1, v7}, Landroid/widget/TextView;->setLines(I)V
+    invoke-virtual {v1, v8}, Landroid/widget/TextView;->setLines(I)V
 
     .line 66
     iget-object v1, v0, Lorg/telegram/ui/Cells/PaymentInfoCell;->detailExTextView:Landroid/widget/TextView;
 
-    invoke-virtual {v1, v7}, Landroid/widget/TextView;->setMaxLines(I)V
+    invoke-virtual {v1, v8}, Landroid/widget/TextView;->setMaxLines(I)V
 
     .line 67
     iget-object v1, v0, Lorg/telegram/ui/Cells/PaymentInfoCell;->detailExTextView:Landroid/widget/TextView;
 
-    invoke-virtual {v1, v7}, Landroid/widget/TextView;->setSingleLine(Z)V
+    invoke-virtual {v1, v8}, Landroid/widget/TextView;->setSingleLine(Z)V
 
     .line 68
     iget-object v1, v0, Lorg/telegram/ui/Cells/PaymentInfoCell;->detailExTextView:Landroid/widget/TextView;
@@ -366,12 +368,12 @@
 
     if-eqz v2, :cond_9
 
-    move v2, v4
+    move v2, v5
 
     goto :goto_9
 
     :cond_9
-    move v2, v5
+    move v2, v6
 
     :goto_9
     or-int/lit8 v2, v2, 0x30
@@ -381,9 +383,9 @@
     .line 70
     iget-object v1, v0, Lorg/telegram/ui/Cells/PaymentInfoCell;->detailExTextView:Landroid/widget/TextView;
 
-    const/4 v6, -0x1
+    const/4 v7, -0x1
 
-    const/4 v7, -0x2
+    const/4 v8, -0x2
 
     sget-boolean v2, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
@@ -392,36 +394,36 @@
     goto :goto_a
 
     :cond_a
-    move v4, v5
+    move v5, v6
 
     :goto_a
-    or-int/lit8 v8, v4, 0x30
+    or-int/lit8 v9, v5, 0x30
 
     if-eqz v2, :cond_b
 
-    move v9, v15
+    move/from16 v10, v16
 
     goto :goto_b
 
     :cond_b
-    move/from16 v9, v16
+    move/from16 v10, v17
 
     :goto_b
-    const/16 v10, 0x5a
+    const/16 v11, 0x5a
 
     if-eqz v2, :cond_c
 
-    move/from16 v11, v16
+    move/from16 v12, v17
 
     goto :goto_c
 
     :cond_c
-    move v11, v15
+    move/from16 v12, v16
 
     :goto_c
-    const/16 v12, 0x9
+    const/16 v13, 0x9
 
-    invoke-static/range {v6 .. v12}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
+    invoke-static/range {v7 .. v13}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object v2
 

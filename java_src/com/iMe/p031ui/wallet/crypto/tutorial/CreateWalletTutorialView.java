@@ -9,11 +9,9 @@ import moxy.viewstate.strategy.alias.OneExecution;
 /* compiled from: CreateWalletTutorialView.kt */
 @OneExecution
 /* renamed from: com.iMe.ui.wallet.crypto.tutorial.CreateWalletTutorialView */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public interface CreateWalletTutorialView extends BaseView {
-    void openPasscodeScreen();
-
-    void openTutorialPassedScreen(TutorialType.Backup backup);
+    void openTutorialPassedScreen(TutorialType.WalletIntro walletIntro);
 
     @AddToEndSingle
     void showTutorialPages(List<TutorialPage> list);

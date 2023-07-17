@@ -57,7 +57,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 37
+    .line 41
     check-cast p1, Landroid/widget/LinearLayout;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/adapter/provider/SelectableHeaderProvider$convert$1;->invoke(Landroid/widget/LinearLayout;)V
@@ -74,7 +74,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 38
+    .line 42
     new-instance v4, Lcom/iMe/ui/adapter/provider/SelectableHeaderProvider$convert$1$1;
 
     iget-object v0, p0, Lcom/iMe/ui/adapter/provider/SelectableHeaderProvider$convert$1;->this$0:Lcom/iMe/ui/adapter/provider/SelectableHeaderProvider;

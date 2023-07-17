@@ -62,7 +62,7 @@
         }
     .end annotation
 
-    const-string p1, "responseHeaders"
+    const-string/jumbo p1, "responseHeaders"
 
     invoke-static {p2, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -82,7 +82,7 @@
         }
     .end annotation
 
-    const-string p1, "requestHeaders"
+    const-string/jumbo p1, "requestHeaders"
 
     invoke-static {p2, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 

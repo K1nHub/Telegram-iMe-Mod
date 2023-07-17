@@ -23,42 +23,32 @@
 
 
 # instance fields
-.field public final maxInputDigits:I
-
-.field public final networkType:Lcom/iMe/storage/domain/model/crypto/NetworkType;
-
 .field public final side:Lcom/iMe/model/wallet/swap/SwapSide;
 
-.field public final token:Lcom/iMe/model/wallet/select/SelectableToken;
+.field public final token:Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
 
 .field public final tokenDecimal:I
 
 
 # direct methods
-.method constructor <init>(Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessView$$State;Lcom/iMe/model/wallet/swap/SwapSide;Lcom/iMe/model/wallet/select/SelectableToken;IILcom/iMe/storage/domain/model/crypto/NetworkType;)V
+.method constructor <init>(Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessView$$State;Lcom/iMe/model/wallet/swap/SwapSide;Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;I)V
     .locals 1
 
-    .line 410
+    .line 420
     const-class p1, Lmoxy/viewstate/strategy/AddToEndSingleStrategy;
 
     const-string v0, "onTokenSelected"
 
     invoke-direct {p0, v0, p1}, Lmoxy/viewstate/ViewCommand;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
-    .line 412
+    .line 422
     iput-object p2, p0, Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessView$$State$OnTokenSelectedCommand;->side:Lcom/iMe/model/wallet/swap/SwapSide;
 
-    .line 413
-    iput-object p3, p0, Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessView$$State$OnTokenSelectedCommand;->token:Lcom/iMe/model/wallet/select/SelectableToken;
+    .line 423
+    iput-object p3, p0, Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessView$$State$OnTokenSelectedCommand;->token:Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
 
-    .line 414
-    iput p4, p0, Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessView$$State$OnTokenSelectedCommand;->maxInputDigits:I
-
-    .line 415
-    iput p5, p0, Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessView$$State$OnTokenSelectedCommand;->tokenDecimal:I
-
-    .line 416
-    iput-object p6, p0, Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessView$$State$OnTokenSelectedCommand;->networkType:Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    .line 424
+    iput p4, p0, Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessView$$State$OnTokenSelectedCommand;->tokenDecimal:I
 
     return-void
 .end method
@@ -66,22 +56,16 @@
 
 # virtual methods
 .method public apply(Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessView;)V
-    .locals 6
+    .locals 3
 
-    .line 421
-    iget-object v1, p0, Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessView$$State$OnTokenSelectedCommand;->side:Lcom/iMe/model/wallet/swap/SwapSide;
+    .line 429
+    iget-object v0, p0, Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessView$$State$OnTokenSelectedCommand;->side:Lcom/iMe/model/wallet/swap/SwapSide;
 
-    iget-object v2, p0, Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessView$$State$OnTokenSelectedCommand;->token:Lcom/iMe/model/wallet/select/SelectableToken;
+    iget-object v1, p0, Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessView$$State$OnTokenSelectedCommand;->token:Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
 
-    iget v3, p0, Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessView$$State$OnTokenSelectedCommand;->maxInputDigits:I
+    iget v2, p0, Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessView$$State$OnTokenSelectedCommand;->tokenDecimal:I
 
-    iget v4, p0, Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessView$$State$OnTokenSelectedCommand;->tokenDecimal:I
-
-    iget-object v5, p0, Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessView$$State$OnTokenSelectedCommand;->networkType:Lcom/iMe/storage/domain/model/crypto/NetworkType;
-
-    move-object v0, p1
-
-    invoke-interface/range {v0 .. v5}, Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessView;->onTokenSelected(Lcom/iMe/model/wallet/swap/SwapSide;Lcom/iMe/model/wallet/select/SelectableToken;IILcom/iMe/storage/domain/model/crypto/NetworkType;)V
+    invoke-interface {p1, v0, v1, v2}, Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessView;->onTokenSelected(Lcom/iMe/model/wallet/swap/SwapSide;Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;I)V
 
     return-void
 .end method
@@ -89,7 +73,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 397
+    .line 412
     check-cast p1, Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessView$$State$OnTokenSelectedCommand;->apply(Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessView;)V

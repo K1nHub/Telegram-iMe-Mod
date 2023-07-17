@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/ChatActivityEnterView;)V
     .locals 0
 
-    .line 10487
+    .line 10503
     iput-object p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$67;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,14 +35,14 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 2
 
-    .line 10490
+    .line 10506
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$67;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
     const/4 v0, 0x0
 
     invoke-static {p1, v0}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$10102(Lorg/telegram/ui/Components/ChatActivityEnterView;Landroid/animation/Animator;)Landroid/animation/Animator;
 
-    .line 10491
+    .line 10507
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$67;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$1400(Lorg/telegram/ui/Components/ChatActivityEnterView;)Lorg/telegram/ui/Components/EmojiView;
@@ -51,7 +51,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 10492
+    .line 10508
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$67;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$1400(Lorg/telegram/ui/Components/ChatActivityEnterView;)Lorg/telegram/ui/Components/EmojiView;
@@ -70,7 +70,7 @@
 
     iput v1, p1, Landroid/view/ViewGroup$LayoutParams;->height:I
 
-    .line 10493
+    .line 10509
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$67;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$1400(Lorg/telegram/ui/Components/ChatActivityEnterView;)Lorg/telegram/ui/Components/EmojiView;

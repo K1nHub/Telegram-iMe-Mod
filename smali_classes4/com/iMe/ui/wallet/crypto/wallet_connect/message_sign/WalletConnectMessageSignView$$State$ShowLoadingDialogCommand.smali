@@ -34,20 +34,20 @@
 .method constructor <init>(Lcom/iMe/ui/wallet/crypto/wallet_connect/message_sign/WalletConnectMessageSignView$$State;ZZLio/reactivex/disposables/Disposable;)V
     .locals 1
 
-    .line 157
+    .line 173
     const-class p1, Lmoxy/viewstate/strategy/OneExecutionStateStrategy;
 
     const-string/jumbo v0, "showLoadingDialog"
 
     invoke-direct {p0, v0, p1}, Lmoxy/viewstate/ViewCommand;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
-    .line 159
+    .line 175
     iput-boolean p2, p0, Lcom/iMe/ui/wallet/crypto/wallet_connect/message_sign/WalletConnectMessageSignView$$State$ShowLoadingDialogCommand;->show:Z
 
-    .line 160
+    .line 176
     iput-boolean p3, p0, Lcom/iMe/ui/wallet/crypto/wallet_connect/message_sign/WalletConnectMessageSignView$$State$ShowLoadingDialogCommand;->cancellable:Z
 
-    .line 161
+    .line 177
     iput-object p4, p0, Lcom/iMe/ui/wallet/crypto/wallet_connect/message_sign/WalletConnectMessageSignView$$State$ShowLoadingDialogCommand;->actionToCancel:Lio/reactivex/disposables/Disposable;
 
     return-void
@@ -58,7 +58,7 @@
 .method public apply(Lcom/iMe/ui/wallet/crypto/wallet_connect/message_sign/WalletConnectMessageSignView;)V
     .locals 3
 
-    .line 166
+    .line 182
     iget-boolean v0, p0, Lcom/iMe/ui/wallet/crypto/wallet_connect/message_sign/WalletConnectMessageSignView$$State$ShowLoadingDialogCommand;->show:Z
 
     iget-boolean v1, p0, Lcom/iMe/ui/wallet/crypto/wallet_connect/message_sign/WalletConnectMessageSignView$$State$ShowLoadingDialogCommand;->cancellable:Z
@@ -73,7 +73,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 149
+    .line 165
     check-cast p1, Lcom/iMe/ui/wallet/crypto/wallet_connect/message_sign/WalletConnectMessageSignView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/wallet/crypto/wallet_connect/message_sign/WalletConnectMessageSignView$$State$ShowLoadingDialogCommand;->apply(Lcom/iMe/ui/wallet/crypto/wallet_connect/message_sign/WalletConnectMessageSignView;)V

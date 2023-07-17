@@ -48,7 +48,7 @@
 .method public final invoke()Landroid/widget/ImageView;
     .locals 1
 
-    .line 41
+    .line 42
     iget-object v0, p0, Lcom/iMe/ui/topics/TopicView$iconView$2;->this$0:Lcom/iMe/ui/topics/TopicView;
 
     invoke-static {v0}, Lcom/iMe/ui/topics/TopicView;->access$initIconView(Lcom/iMe/ui/topics/TopicView;)Landroid/widget/ImageView;
@@ -61,7 +61,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 41
+    .line 42
     invoke-virtual {p0}, Lcom/iMe/ui/topics/TopicView$iconView$2;->invoke()Landroid/widget/ImageView;
 
     move-result-object v0

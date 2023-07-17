@@ -62,7 +62,7 @@
 
     move-object v4, p6
 
-    const-string v5, "request"
+    const-string/jumbo v5, "request"
 
     invoke-static {p1, v5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -254,7 +254,7 @@
     :cond_0
     new-instance v0, Ljava/lang/IllegalStateException;
 
-    const-string v1, "response is not eligible for a body and must not be closed"
+    const-string/jumbo v1, "response is not eligible for a body and must not be closed"
 
     invoke-virtual {v1}, Ljava/lang/Object;->toString()Ljava/lang/String;
 

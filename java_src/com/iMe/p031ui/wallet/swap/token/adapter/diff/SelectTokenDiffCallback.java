@@ -11,7 +11,7 @@ public final class SelectTokenDiffCallback extends DiffUtil.ItemCallback<Selecta
     public boolean areItemsTheSame(SelectableTokenItem oldItem, SelectableTokenItem newItem) {
         Intrinsics.checkNotNullParameter(oldItem, "oldItem");
         Intrinsics.checkNotNullParameter(newItem, "newItem");
-        return Intrinsics.areEqual(oldItem.getToken().getId(), newItem.getToken().getId());
+        return Intrinsics.areEqual(oldItem.getToken().getAddress(), newItem.getToken().getAddress());
     }
 
     @Override // androidx.recyclerview.widget.DiffUtil.ItemCallback

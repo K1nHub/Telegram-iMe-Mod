@@ -22,13 +22,13 @@
         "Lkotlin/jvm/functions/Function2<",
         "Lorg/koin/core/scope/Scope;",
         "Lorg/koin/core/parameter/ParametersHolder;",
-        "Lcom/iMe/storage/data/network/api/google/RemoteConfigApi;",
+        "Lcom/iMe/storage/data/network/api/google/DynamicLinksApi;",
         ">;"
     }
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nNetworkModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 NetworkModule.kt\ncom/iMe/storage/data/di/module/NetworkModuleKt$networkModule$1$31\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,178:1\n129#2,5:179\n*S KotlinDebug\n*F\n+ 1 NetworkModule.kt\ncom/iMe/storage/data/di/module/NetworkModuleKt$networkModule$1$31\n*L\n100#1:179,5\n*E\n"
+    value = "SMAP\nNetworkModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 NetworkModule.kt\ncom/iMe/storage/data/di/module/NetworkModuleKt$networkModule$1$31\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,195:1\n129#2,5:196\n*S KotlinDebug\n*F\n+ 1 NetworkModule.kt\ncom/iMe/storage/data/di/module/NetworkModuleKt$networkModule$1$31\n*L\n118#1:196,5\n*E\n"
 .end annotation
 
 
@@ -61,7 +61,7 @@
 
 
 # virtual methods
-.method public final invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/iMe/storage/data/network/api/google/RemoteConfigApi;
+.method public final invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/iMe/storage/data/network/api/google/DynamicLinksApi;
     .locals 2
 
     const-string v0, "$this$single"
@@ -72,11 +72,11 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 100
-    new-instance p2, Lcom/iMe/storage/data/network/api/google/RemoteConfigApi;
+    .line 118
+    new-instance p2, Lcom/iMe/storage/data/network/api/google/DynamicLinksApi;
 
     .line 133
-    const-class v0, Lcom/google/firebase/remoteconfig/FirebaseRemoteConfig;
+    const-class v0, Lcom/google/firebase/dynamiclinks/FirebaseDynamicLinks;
 
     invoke-static {v0}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
 
@@ -88,10 +88,10 @@
 
     move-result-object p1
 
-    check-cast p1, Lcom/google/firebase/remoteconfig/FirebaseRemoteConfig;
+    check-cast p1, Lcom/google/firebase/dynamiclinks/FirebaseDynamicLinks;
 
-    .line 100
-    invoke-direct {p2, p1}, Lcom/iMe/storage/data/network/api/google/RemoteConfigApi;-><init>(Lcom/google/firebase/remoteconfig/FirebaseRemoteConfig;)V
+    .line 118
+    invoke-direct {p2, p1}, Lcom/iMe/storage/data/network/api/google/DynamicLinksApi;-><init>(Lcom/google/firebase/dynamiclinks/FirebaseDynamicLinks;)V
 
     return-object p2
 .end method
@@ -99,12 +99,12 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 100
+    .line 118
     check-cast p1, Lorg/koin/core/scope/Scope;
 
     check-cast p2, Lorg/koin/core/parameter/ParametersHolder;
 
-    invoke-virtual {p0, p1, p2}, Lcom/iMe/storage/data/di/module/NetworkModuleKt$networkModule$1$31;->invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/iMe/storage/data/network/api/google/RemoteConfigApi;
+    invoke-virtual {p0, p1, p2}, Lcom/iMe/storage/data/di/module/NetworkModuleKt$networkModule$1$31;->invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/iMe/storage/data/network/api/google/DynamicLinksApi;
 
     move-result-object p1
 

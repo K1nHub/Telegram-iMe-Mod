@@ -5,17 +5,19 @@ import com.iMe.common.TelegramConstants;
 import com.iMe.fork.utils.Callbacks$Callback;
 import com.iMe.fork.utils.Callbacks$Callback1;
 import com.iMe.gateway.TelegramControllersGateway;
-import com.iMe.mapper.wallet.select.SelectableMappingKt;
+import com.iMe.mapper.wallet.TokenUiMappingKt;
 import com.iMe.model.dialog.DialogModel;
+import com.iMe.model.wallet.crypto.TokenItem;
 import com.iMe.model.wallet.crypto.send.fee.GasPriceItem;
-import com.iMe.model.wallet.select.SelectableToken;
-import com.iMe.model.wallet.select.SelectableType;
 import com.iMe.model.wallet.transfer.TransferScreenArgs;
 import com.iMe.navigation.wallet.coordinator.args.TokenBuyCoordinatorArgs;
 import com.iMe.p031ui.base.mvp.base.BasePresenter;
 import com.iMe.p031ui.base.mvp.base.BaseView;
 import com.iMe.p031ui.custom.FeeView;
+import com.iMe.p031ui.wallet.swap.token.WalletSelectTokenFragment;
+import com.iMe.storage.data.utils.crypto.NetworksHelper;
 import com.iMe.storage.data.utils.extentions.DateExtKt;
+import com.iMe.storage.data.utils.extentions.NumberExtKt;
 import com.iMe.storage.domain.gateway.TelegramGateway;
 import com.iMe.storage.domain.interactor.binancepay.BinanceInternalInteractor;
 import com.iMe.storage.domain.interactor.crypto.CryptoWalletInteractor;
@@ -25,7 +27,7 @@ import com.iMe.storage.domain.manager.crypto.CryptoAccessManager;
 import com.iMe.storage.domain.model.Result;
 import com.iMe.storage.domain.model.binancepay.BinanceTokenInfo;
 import com.iMe.storage.domain.model.crypto.BlockchainType;
-import com.iMe.storage.domain.model.crypto.NetworkType;
+import com.iMe.storage.domain.model.crypto.Network;
 import com.iMe.storage.domain.model.crypto.TransactionParams;
 import com.iMe.storage.domain.model.crypto.donations.DonationTransferMetadata;
 import com.iMe.storage.domain.model.crypto.send.BitcoinUnspentOutput;
@@ -33,21 +35,20 @@ import com.iMe.storage.domain.model.crypto.send.CryptoTransferMetadata;
 import com.iMe.storage.domain.model.crypto.send.GasPriceInfo;
 import com.iMe.storage.domain.model.crypto.send.TransactionSpeedLevel;
 import com.iMe.storage.domain.model.crypto.send.TransferArgs;
+import com.iMe.storage.domain.model.wallet.swap.SwapProtocol;
+import com.iMe.storage.domain.model.wallet.token.Token;
 import com.iMe.storage.domain.model.wallet.token.TokenBalance;
-import com.iMe.storage.domain.model.wallet.token.TokenCode;
-import com.iMe.storage.domain.model.wallet.token.TokenInfo;
+import com.iMe.storage.domain.model.wallet.token.TokenDetailed;
 import com.iMe.storage.domain.storage.CryptoPreferenceHelper;
-import com.iMe.storage.domain.utils.crypto.Convert;
-import com.iMe.storage.domain.utils.extentions.model.TokenInfoExtKt;
+import com.iMe.storage.domain.utils.extentions.TokenExtKt;
 import com.iMe.storage.domain.utils.p030rx.RxEventBus;
 import com.iMe.storage.domain.utils.p030rx.SchedulersProvider;
 import com.iMe.storage.domain.utils.system.ResourceManager;
-import com.iMe.utils.extentions.p033rx.RxExtKt;
-import com.iMe.utils.extentions.p033rx.RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
+import com.iMe.utils.extentions.p032rx.RxExtKt;
+import com.iMe.utils.extentions.p032rx.RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
 import com.iMe.utils.formatter.BalanceFormatter;
 import com.iMe.utils.formatter.DateFormatter;
 import com.iMe.utils.helper.wallet.CryptoHelper;
-import com.iMe.utils.helper.wallet.SwapHelper;
 import io.reactivex.Observable;
 import io.reactivex.disposables.Disposable;
 import java.math.BigInteger;
@@ -58,13 +59,12 @@ import java.util.Locale;
 import kotlin.NoWhenBranchMatchedException;
 import kotlin.collections.CollectionsKt;
 import kotlin.collections.CollectionsKt__CollectionsKt;
-import kotlin.collections.CollectionsKt__IterablesKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt__StringsKt;
 import moxy.InjectViewState;
-import org.telegram.messenger.C3295R;
-import org.telegram.p044ui.ManageLinksActivity;
+import org.telegram.messenger.C3417R;
+import org.telegram.p043ui.ManageLinksActivity;
 import org.telegram.tgnet.TLRPC$Chat;
 import org.telegram.tgnet.TLRPC$MessageEntity;
 import org.telegram.tgnet.TLRPC$TL_messageEntityTextUrl;
@@ -75,7 +75,7 @@ import org.telegram.tgnet.TLRPC$User;
 /* loaded from: classes3.dex */
 public final class WalletSendAmountPresenter extends BasePresenter<WalletSendAmountView> {
     private final TransferScreenArgs args;
-    private List<? extends SelectableToken> availableTokensForBinanceReplenish;
+    private List<TokenDetailed> availableTokensForBinanceReplenish;
     private final BinanceInternalInteractor binanceInternalInteractor;
     private String comment;
     private final CryptoAccessManager cryptoAccessManager;
@@ -93,8 +93,8 @@ public final class WalletSendAmountPresenter extends BasePresenter<WalletSendAmo
     private String selectedAmount;
     private TLRPC$Chat selectedChat;
     private GasPriceItem selectedFee;
-    private NetworkType selectedNetworkType;
-    private SelectableToken selectedToken;
+    private Network selectedNetwork;
+    private TokenDetailed selectedToken;
     private String selectedTwitterUserAvatarUrl;
     private TLRPC$User selectedUser;
     private int sendMode;
@@ -116,7 +116,6 @@ public final class WalletSendAmountPresenter extends BasePresenter<WalletSendAmo
     /* loaded from: classes3.dex */
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
-        public static final /* synthetic */ int[] $EnumSwitchMapping$1;
 
         static {
             int[] iArr = new int[SendScreenState.values().length];
@@ -129,24 +128,6 @@ public final class WalletSendAmountPresenter extends BasePresenter<WalletSendAmo
             } catch (NoSuchFieldError unused2) {
             }
             $EnumSwitchMapping$0 = iArr;
-            int[] iArr2 = new int[BlockchainType.values().length];
-            try {
-                iArr2[BlockchainType.EVM.ordinal()] = 1;
-            } catch (NoSuchFieldError unused3) {
-            }
-            try {
-                iArr2[BlockchainType.TON.ordinal()] = 2;
-            } catch (NoSuchFieldError unused4) {
-            }
-            try {
-                iArr2[BlockchainType.TRON.ordinal()] = 3;
-            } catch (NoSuchFieldError unused5) {
-            }
-            try {
-                iArr2[BlockchainType.BITCOIN.ordinal()] = 4;
-            } catch (NoSuchFieldError unused6) {
-            }
-            $EnumSwitchMapping$1 = iArr2;
         }
     }
 
@@ -159,7 +140,7 @@ public final class WalletSendAmountPresenter extends BasePresenter<WalletSendAmo
     }
 
     public WalletSendAmountPresenter(int i, TransferScreenArgs args, WalletInteractor walletInteractor, DonationsInteractor donationsInteractor, BinanceInternalInteractor binanceInternalInteractor, TelegramGateway telegramGateway, TelegramControllersGateway telegramControllersGateway, ResourceManager resourceManager, CryptoAccessManager cryptoAccessManager, CryptoPreferenceHelper cryptoPreferenceHelper, CryptoWalletInteractor cryptoWalletInteractor, SchedulersProvider schedulersProvider, RxEventBus rxEventBus) {
-        List<? extends SelectableToken> emptyList;
+        List<TokenDetailed> emptyList;
         Intrinsics.checkNotNullParameter(args, "args");
         Intrinsics.checkNotNullParameter(walletInteractor, "walletInteractor");
         Intrinsics.checkNotNullParameter(donationsInteractor, "donationsInteractor");
@@ -185,11 +166,12 @@ public final class WalletSendAmountPresenter extends BasePresenter<WalletSendAmo
         this.cryptoWalletInteractor = cryptoWalletInteractor;
         this.schedulersProvider = schedulersProvider;
         this.rxEventBus = rxEventBus;
-        this.selectedNetworkType = getInitialNetworkType();
+        this.selectedNetwork = getInitialNetwork();
         this.selectedUser = resolveUserArg();
         this.selectedChat = resolveChatArg();
         this.selectedAddress = args.getAddress();
-        this.selectedToken = resolveTokenArg();
+        TokenItem tokenItem = args.getTokenItem();
+        this.selectedToken = tokenItem != null ? TokenUiMappingKt.mapToDomain(tokenItem) : null;
         this.selectedAmount = "";
         this.isAllowSendInformationToChat = true;
         this.comment = "";
@@ -200,11 +182,11 @@ public final class WalletSendAmountPresenter extends BasePresenter<WalletSendAmo
     }
 
     public final boolean isCommentAvailable() {
-        return this.selectedNetworkType.getBlockchainType() == BlockchainType.TON;
+        return this.selectedNetwork.getBlockchainType() == BlockchainType.TON;
     }
 
-    public final NetworkType getSelectedNetworkType() {
-        return this.selectedNetworkType;
+    public final Network getSelectedNetwork() {
+        return this.selectedNetwork;
     }
 
     public final TLRPC$User getSelectedUser() {
@@ -240,7 +222,7 @@ public final class WalletSendAmountPresenter extends BasePresenter<WalletSendAmo
         this.selectedAddress = str;
     }
 
-    public final SelectableToken getSelectedToken() {
+    public final TokenDetailed getSelectedToken() {
         return this.selectedToken;
     }
 
@@ -276,60 +258,52 @@ public final class WalletSendAmountPresenter extends BasePresenter<WalletSendAmo
         return this.screenType == ManageLinksActivity.BINANCE_REPLENISH_SCREEN_TYPE;
     }
 
+    private final String getSelectedTokenTicker() {
+        TokenDetailed tokenDetailed = this.selectedToken;
+        String ticker = tokenDetailed != null ? tokenDetailed.getTicker() : null;
+        return ticker == null ? "" : ticker;
+    }
+
     /* JADX WARN: Type inference failed for: r3v2, types: [java.lang.Object] */
     public final void startChooseNetworkDialog() {
-        List<NetworkType> networksByBlockchains;
-        List<BlockchainType> createdWalletsBlockchains = this.cryptoAccessManager.getCreatedWalletsBlockchains();
+        List<Network> networksByBlockchains;
+        List<BlockchainType> loggedIndWalletsBlockchains = this.cryptoAccessManager.getLoggedIndWalletsBlockchains();
         if (isBinanceReplenish()) {
-            List<NetworkType> binanceSupportedNetworks = NetworkType.Companion.getBinanceSupportedNetworks();
+            List<Network> binanceSupportedNetworks = NetworksHelper.INSTANCE.getBinanceSupportedNetworks();
             networksByBlockchains = new ArrayList<>();
             for (?? r3 : binanceSupportedNetworks) {
-                if (createdWalletsBlockchains.contains(((NetworkType) r3).getBlockchainType())) {
+                if (loggedIndWalletsBlockchains.contains(((Network) r3).getBlockchainType())) {
                     networksByBlockchains.add(r3);
                 }
             }
         } else {
-            networksByBlockchains = NetworkType.Companion.getNetworksByBlockchains(createdWalletsBlockchains);
+            networksByBlockchains = NetworksHelper.INSTANCE.getNetworksByBlockchains(loggedIndWalletsBlockchains);
         }
-        ((WalletSendAmountView) getViewState()).showChooseNetworkDialog(networksByBlockchains, this.selectedNetworkType, new Callbacks$Callback1() { // from class: com.iMe.ui.wallet.actions.send.amount.WalletSendAmountPresenter$$ExternalSyntheticLambda0
+        ((WalletSendAmountView) getViewState()).showChooseNetworkDialog(networksByBlockchains, this.selectedNetwork, new Callbacks$Callback1() { // from class: com.iMe.ui.wallet.actions.send.amount.WalletSendAmountPresenter$$ExternalSyntheticLambda0
             @Override // com.iMe.fork.utils.Callbacks$Callback1
             public final void invoke(Object obj) {
-                WalletSendAmountPresenter.startChooseNetworkDialog$lambda$1(WalletSendAmountPresenter.this, (NetworkType) obj);
+                WalletSendAmountPresenter.startChooseNetworkDialog$lambda$1(WalletSendAmountPresenter.this, (Network) obj);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void startChooseNetworkDialog$lambda$1(WalletSendAmountPresenter this$0, NetworkType newNetworkType) {
-        List<? extends SelectableToken> emptyList;
+    public static final void startChooseNetworkDialog$lambda$1(WalletSendAmountPresenter this$0, Network newNetwork) {
+        List<TokenDetailed> emptyList;
         Intrinsics.checkNotNullParameter(this$0, "this$0");
-        boolean z = this$0.selectedNetworkType.getBlockchainType() != newNetworkType.getBlockchainType();
-        Intrinsics.checkNotNullExpressionValue(newNetworkType, "newNetworkType");
-        this$0.selectedNetworkType = newNetworkType;
+        boolean z = this$0.selectedNetwork.getBlockchainType() != newNetwork.getBlockchainType();
+        Intrinsics.checkNotNullExpressionValue(newNetwork, "newNetwork");
+        this$0.selectedNetwork = newNetwork;
         if (this$0.isBinanceReplenish()) {
             emptyList = CollectionsKt__CollectionsKt.emptyList();
             this$0.availableTokensForBinanceReplenish = emptyList;
-            getBinanceAvailableTokensForReplenish$default(this$0, this$0.selectedNetworkType, null, 2, null);
+            getBinanceAvailableTokensForReplenish$default(this$0, this$0.selectedNetwork, null, 2, null);
         }
         this$0.resetScreenState(z);
     }
 
-    public final TokenCode getSelectedTokenCode() {
-        TokenCode.Companion companion = TokenCode.Companion;
-        SelectableToken selectableToken = this.selectedToken;
-        String id = selectableToken != null ? selectableToken.getId() : null;
-        if (id == null) {
-            id = "";
-        }
-        return companion.map(id);
-    }
-
     public final TokenBalance getSelectedTokenBalance() {
         return this.tokenBalance;
-    }
-
-    public final TokenInfo getSelectedTokenInfo() {
-        return TokenInfo.Companion.map(getSelectedTokenCode());
     }
 
     public final String getActionButtonTextByState() {
@@ -337,28 +311,28 @@ public final class WalletSendAmountPresenter extends BasePresenter<WalletSendAmo
         ResourceManager resourceManager = this.resourceManager;
         int i2 = WhenMappings.$EnumSwitchMapping$0[this.currentState.ordinal()];
         if (i2 == 1) {
-            i = C3295R.string.wallet_amount_button_txt;
+            i = C3417R.string.wallet_amount_button_txt;
         } else if (i2 != 2) {
             throw new NoWhenBranchMatchedException();
         } else {
-            i = C3295R.string.wallet_amount_button_calculate;
+            i = C3417R.string.wallet_amount_button_calculate;
         }
         return resourceManager.getString(i);
     }
 
-    public final void startSelectTokenFlow(final Callbacks$Callback1<SelectableToken> action) {
+    public final void startSelectTokenFlow(final Callbacks$Callback1<TokenDetailed> action) {
         Intrinsics.checkNotNullParameter(action, "action");
         if (isBinanceReplenish()) {
             if (!this.availableTokensForBinanceReplenish.isEmpty()) {
-                ((WalletSendAmountView) getViewState()).showSelectTokenDialog(SelectableType.INTERNAL, this.availableTokensForBinanceReplenish, this.selectedNetworkType, true, new Callbacks$Callback1() { // from class: com.iMe.ui.wallet.actions.send.amount.WalletSendAmountPresenter$$ExternalSyntheticLambda1
+                ((WalletSendAmountView) getViewState()).showSelectTokenDialog(new WalletSelectTokenFragment.ScreenType.Send(this.availableTokensForBinanceReplenish), this.selectedNetwork.getId(), true, new Callbacks$Callback1() { // from class: com.iMe.ui.wallet.actions.send.amount.WalletSendAmountPresenter$$ExternalSyntheticLambda1
                     @Override // com.iMe.fork.utils.Callbacks$Callback1
                     public final void invoke(Object obj) {
-                        WalletSendAmountPresenter.startSelectTokenFlow$lambda$2(WalletSendAmountPresenter.this, action, (SelectableToken) obj);
+                        WalletSendAmountPresenter.startSelectTokenFlow$lambda$2(WalletSendAmountPresenter.this, action, (TokenDetailed) obj);
                     }
                 });
                 return;
             } else {
-                getBinanceAvailableTokensForReplenish(this.selectedNetworkType, new Callbacks$Callback() { // from class: com.iMe.ui.wallet.actions.send.amount.WalletSendAmountPresenter$$ExternalSyntheticLambda3
+                getBinanceAvailableTokensForReplenish(this.selectedNetwork, new Callbacks$Callback() { // from class: com.iMe.ui.wallet.actions.send.amount.WalletSendAmountPresenter$$ExternalSyntheticLambda3
                     @Override // com.iMe.fork.utils.Callbacks$Callback
                     public final void invoke() {
                         WalletSendAmountPresenter.startSelectTokenFlow$lambda$3(WalletSendAmountPresenter.this, action);
@@ -367,22 +341,22 @@ public final class WalletSendAmountPresenter extends BasePresenter<WalletSendAmo
                 return;
             }
         }
-        ((WalletSendAmountView) getViewState()).showSelectTokenDialog(SelectableType.INTERNAL, getAvailableTransferTokensByNetwork(), this.selectedNetworkType, true, new Callbacks$Callback1() { // from class: com.iMe.ui.wallet.actions.send.amount.WalletSendAmountPresenter$$ExternalSyntheticLambda2
+        ((WalletSendAmountView) getViewState()).showSelectTokenDialog(new WalletSelectTokenFragment.ScreenType.Send(null, 1, null), this.selectedNetwork.getId(), true, new Callbacks$Callback1() { // from class: com.iMe.ui.wallet.actions.send.amount.WalletSendAmountPresenter$$ExternalSyntheticLambda2
             @Override // com.iMe.fork.utils.Callbacks$Callback1
             public final void invoke(Object obj) {
-                WalletSendAmountPresenter.startSelectTokenFlow$lambda$4(WalletSendAmountPresenter.this, action, (SelectableToken) obj);
+                WalletSendAmountPresenter.startSelectTokenFlow$lambda$4(WalletSendAmountPresenter.this, action, (TokenDetailed) obj);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void startSelectTokenFlow$lambda$2(WalletSendAmountPresenter this$0, Callbacks$Callback1 action, SelectableToken token) {
+    public static final void startSelectTokenFlow$lambda$2(WalletSendAmountPresenter this$0, Callbacks$Callback1 action, TokenDetailed token) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         Intrinsics.checkNotNullParameter(action, "$action");
         Intrinsics.checkNotNullParameter(token, "token");
         this$0.selectedToken = token;
-        this$0.loadBalance(this$0.getSelectedTokenCode());
-        this$0.getBinanceAddressesForReplenish(this$0.getSelectedTokenCode());
+        this$0.loadBalance(token);
+        this$0.getBinanceAddressesForReplenish(this$0.selectedToken);
         action.invoke(token);
     }
 
@@ -394,17 +368,17 @@ public final class WalletSendAmountPresenter extends BasePresenter<WalletSendAmo
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void startSelectTokenFlow$lambda$4(WalletSendAmountPresenter this$0, Callbacks$Callback1 action, SelectableToken token) {
+    public static final void startSelectTokenFlow$lambda$4(WalletSendAmountPresenter this$0, Callbacks$Callback1 action, TokenDetailed token) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         Intrinsics.checkNotNullParameter(action, "$action");
         Intrinsics.checkNotNullParameter(token, "token");
         this$0.selectedToken = token;
-        this$0.loadBalance(this$0.getSelectedTokenCode());
+        this$0.loadBalance(token);
         action.invoke(token);
     }
 
-    public final int getAvatarByNetworkType() {
-        return this.selectedNetworkType.getLogo();
+    public final String getAvatarByNetworkType() {
+        return this.selectedNetwork.getLogoUrl();
     }
 
     public final void validateSend(String rawAmount) {
@@ -412,9 +386,9 @@ public final class WalletSendAmountPresenter extends BasePresenter<WalletSendAmo
         Intrinsics.checkNotNullParameter(rawAmount, "rawAmount");
         trim = StringsKt__StringsKt.trim(rawAmount);
         String obj = trim.toString();
-        Observable<Result<Boolean>> observeOn = this.cryptoWalletInteractor.isValidAddress(this.selectedAddress, this.selectedNetworkType.getBlockchainType()).observeOn(this.schedulersProvider.mo698ui());
+        Observable<Result<Boolean>> observeOn = this.cryptoWalletInteractor.isValidAddress(this.selectedAddress, this.selectedNetwork.getBlockchainType()).observeOn(this.schedulersProvider.mo698ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "cryptoWalletInteractor\n …(schedulersProvider.ui())");
-        Intrinsics.checkNotNullExpressionValue(observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2099x61dc80d6(this, obj)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2100x61dc80d7(null))), "viewState: BaseView? = n…  onError.invoke()\n    })");
+        Intrinsics.checkNotNullExpressionValue(observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2103x61dc80d6(this, obj)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2104x61dc80d7(null))), "viewState: BaseView? = n…Error.invoke()\n        })");
     }
 
     public final void send(String amount) {
@@ -428,30 +402,24 @@ public final class WalletSendAmountPresenter extends BasePresenter<WalletSendAmo
                 sendDonation(TelegramConstants.INSTANCE.prepareChatIdForBotAPI(this.args.getChatId().longValue()), (TransferArgs.EVM) formatTransferArgs);
                 return;
             } else {
-                ((WalletSendAmountView) getViewState()).showToast(this.resourceManager.getString(C3295R.string.wallet_feature_not_available));
+                ((WalletSendAmountView) getViewState()).showToast(this.resourceManager.getString(C3417R.string.wallet_feature_not_available));
                 return;
             }
         }
-        ((WalletSendAmountView) getViewState()).showToast(this.resourceManager.getString(C3295R.string.wallet_feature_not_available));
+        ((WalletSendAmountView) getViewState()).showToast(this.resourceManager.getString(C3417R.string.wallet_feature_not_available));
     }
 
     public final void validateRecipientAddress(String address) {
         Intrinsics.checkNotNullParameter(address, "address");
-        Observable<Result<String>> observeOn = CryptoHelper.extractAddress(address, this.selectedNetworkType.getBlockchainType(), this.cryptoWalletInteractor).observeOn(this.schedulersProvider.mo698ui());
+        Observable<Result<String>> observeOn = CryptoHelper.extractAddress(address, this.selectedNetwork.getBlockchainType(), this.cryptoWalletInteractor).observeOn(this.schedulersProvider.mo698ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "extractAddress(\n        …(schedulersProvider.ui())");
-        Intrinsics.checkNotNullExpressionValue(observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2097x6b9f8be9(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2098x6b9f8bea(null))), "viewState: BaseView? = n…  onError.invoke()\n    })");
+        Intrinsics.checkNotNullExpressionValue(observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2101x6b9f8be9(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2102x6b9f8bea(null))), "viewState: BaseView? = n…Error.invoke()\n        })");
     }
 
     public final void resetStateIfNeed() {
-        SendScreenState sendScreenState;
-        if (getSelectedTokenCode().isCryptoTokens()) {
-            this.selectedAmount = "";
-            resetTransactionFee();
-            sendScreenState = SendScreenState.PREPARE;
-        } else {
-            sendScreenState = SendScreenState.SEND;
-        }
-        this.currentState = sendScreenState;
+        this.selectedAmount = "";
+        resetTransactionFee();
+        this.currentState = SendScreenState.PREPARE;
         ((WalletSendAmountView) getViewState()).setupScreenState(this.currentState);
     }
 
@@ -461,13 +429,12 @@ public final class WalletSendAmountPresenter extends BasePresenter<WalletSendAmo
             CryptoTransferMetadata cryptoTransferMetadata = this.cryptoTransferMetadata;
             Intrinsics.checkNotNull(cryptoTransferMetadata);
             TransactionParams transactionParams = cryptoTransferMetadata.getTransactionParams();
-            TokenInfo.Companion companion = TokenInfo.Companion;
             CryptoTransferMetadata cryptoTransferMetadata2 = this.cryptoTransferMetadata;
             Intrinsics.checkNotNull(cryptoTransferMetadata2);
-            TokenInfo map = companion.map(cryptoTransferMetadata2.getFeeTokenCode());
+            TokenDetailed feeToken = cryptoTransferMetadata2.getFeeToken();
             GasPriceItem gasPriceItem = this.selectedFee;
             Intrinsics.checkNotNull(gasPriceItem);
-            return new FeeView.ChooseFeeType.Default(feeDialogModel, transactionParams, map, gasPriceItem, new WalletSendAmountPresenter$getApproveFeeType$1(this));
+            return new FeeView.ChooseFeeType.Default(feeDialogModel, transactionParams, feeToken, gasPriceItem, new WalletSendAmountPresenter$getApproveFeeType$1(this));
         }
         return null;
     }
@@ -475,69 +442,69 @@ public final class WalletSendAmountPresenter extends BasePresenter<WalletSendAmo
     /* JADX INFO: Access modifiers changed from: protected */
     @Override // moxy.MvpPresenter
     public void onFirstViewAttach() {
-        if ((isWalletTransfer() || isDonationsTransfer() || isBinanceReplenish()) && !getSelectedTokenCode().isUnknown()) {
-            loadBalance(getSelectedTokenCode());
+        if (isWalletTransfer() || isDonationsTransfer() || isBinanceReplenish()) {
+            loadBalance(this.selectedToken);
             if (isBinanceReplenish()) {
-                getBinanceAddressesForReplenish(getSelectedTokenCode());
-                getBinanceAvailableTokensForReplenish$default(this, this.selectedNetworkType, null, 2, null);
+                getBinanceAddressesForReplenish(this.selectedToken);
+                getBinanceAvailableTokensForReplenish$default(this, this.selectedNetwork, null, 2, null);
             }
         }
     }
 
-    private final void getBinanceAddressesForReplenish(TokenCode tokenCode) {
-        Observable<Result<String>> observeOn = this.binanceInternalInteractor.getAddressForTokenReplenish(tokenCode, this.selectedNetworkType).observeOn(this.schedulersProvider.mo698ui());
+    private final void getBinanceAddressesForReplenish(TokenDetailed tokenDetailed) {
+        if (tokenDetailed == null) {
+            return;
+        }
+        Observable<Result<String>> observeOn = this.binanceInternalInteractor.getAddressForTokenReplenish(tokenDetailed.getTicker(), this.selectedNetwork.getId()).observeOn(this.schedulersProvider.mo698ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "binanceInternalInteracto…(schedulersProvider.ui())");
         T viewState = getViewState();
         Intrinsics.checkNotNullExpressionValue(viewState, "viewState");
-        Disposable subscribe = RxExtKt.withLoadingDialog$default((Observable) observeOn, (BaseView) viewState, false, 2, (Object) null).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2087xcbcd392d(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2088xcbcd392e((BaseView) getViewState())));
-        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
+        Disposable subscribe = RxExtKt.withLoadingDialog$default((Observable) observeOn, (BaseView) viewState, false, 2, (Object) null).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2091xcbcd392d(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2092xcbcd392e((BaseView) getViewState())));
+        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…Error.invoke()\n        })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
 
-    static /* synthetic */ void getBinanceAvailableTokensForReplenish$default(WalletSendAmountPresenter walletSendAmountPresenter, NetworkType networkType, Callbacks$Callback callbacks$Callback, int i, Object obj) {
+    static /* synthetic */ void getBinanceAvailableTokensForReplenish$default(WalletSendAmountPresenter walletSendAmountPresenter, Network network, Callbacks$Callback callbacks$Callback, int i, Object obj) {
         if ((i & 2) != 0) {
             callbacks$Callback = WalletSendAmountPresenter$$ExternalSyntheticLambda4.INSTANCE;
         }
-        walletSendAmountPresenter.getBinanceAvailableTokensForReplenish(networkType, callbacks$Callback);
+        walletSendAmountPresenter.getBinanceAvailableTokensForReplenish(network, callbacks$Callback);
     }
 
-    private final void getBinanceAvailableTokensForReplenish(NetworkType networkType, Callbacks$Callback callbacks$Callback) {
-        Observable<Result<List<BinanceTokenInfo>>> observeOn = this.binanceInternalInteractor.getTokensForReplenish(networkType).observeOn(this.schedulersProvider.mo698ui());
+    private final void getBinanceAvailableTokensForReplenish(Network network, Callbacks$Callback callbacks$Callback) {
+        Observable<Result<List<BinanceTokenInfo>>> observeOn = this.binanceInternalInteractor.getTokensForReplenish(network.getId()).observeOn(this.schedulersProvider.mo698ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "binanceInternalInteracto…(schedulersProvider.ui())");
         T viewState = getViewState();
         Intrinsics.checkNotNullExpressionValue(viewState, "viewState");
-        Disposable subscribe = RxExtKt.withLoadingDialog$default((Observable) observeOn, (BaseView) viewState, false, 2, (Object) null).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2089xebaea40e(this, callbacks$Callback)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2090xebaea40f((BaseView) getViewState())));
-        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
+        Disposable subscribe = RxExtKt.withLoadingDialog$default((Observable) observeOn, (BaseView) viewState, false, 2, (Object) null).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2093xebaea40e(this, callbacks$Callback)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2094xebaea40f((BaseView) getViewState())));
+        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…Error.invoke()\n        })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
 
     private final void calculateFeeForDonationsTransaction(long j, String str) {
-        Observable<Result<DonationTransferMetadata>> observeOn = this.donationsInteractor.getDataForDonation(j, str, this.selectedNetworkType).observeOn(this.schedulersProvider.mo698ui());
+        Token indexedToken;
+        DonationsInteractor donationsInteractor = this.donationsInteractor;
+        TokenDetailed tokenDetailed = this.selectedToken;
+        if (tokenDetailed == null || (indexedToken = TokenExtKt.toIndexedToken(tokenDetailed)) == null) {
+            return;
+        }
+        Observable<Result<DonationTransferMetadata>> observeOn = donationsInteractor.getDataForDonation(j, str, indexedToken).observeOn(this.schedulersProvider.mo698ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "donationsInteractor\n    …(schedulersProvider.ui())");
         T viewState = getViewState();
         Intrinsics.checkNotNullExpressionValue(viewState, "viewState");
-        Disposable subscribe = RxExtKt.withLoadingDialog$default((Observable) observeOn, (BaseView) viewState, false, 2, (Object) null).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2083x998569d4(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2084x998569d5((BaseView) getViewState())));
-        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
+        Disposable subscribe = RxExtKt.withLoadingDialog$default((Observable) observeOn, (BaseView) viewState, false, 2, (Object) null).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2087x998569d4(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2088x998569d5((BaseView) getViewState())));
+        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…Error.invoke()\n        })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
 
-    private final NetworkType getInitialNetworkType() {
-        NetworkType networkType = this.args.getNetworkType();
-        if (networkType == null) {
-            networkType = this.cryptoPreferenceHelper.getNetworkType();
+    private final Network getInitialNetwork() {
+        Network network;
+        if (this.args.getNetworkId() != null) {
+            network = NetworksHelper.getNetworkById(this.args.getNetworkId());
+        } else {
+            network = this.cryptoPreferenceHelper.getNetwork();
         }
-        return networkType.getBlockchainType() == BlockchainType.TON ? (isDonationsTransfer() || isBinanceReplenish()) ? (NetworkType) CollectionsKt.first((List<? extends Object>) NetworkType.Companion.getEVMNetworks()) : networkType : networkType;
-    }
-
-    private final SelectableToken resolveTokenArg() {
-        if (this.args.getCode() == null) {
-            return null;
-        }
-        if (!isSupportTokenOnNetwork(this.args.getCode())) {
-            ((WalletSendAmountView) getViewState()).showToast(this.resourceManager.getString(C3295R.string.wallet_amount_send_unsupported_token_on_network_error));
-            return null;
-        }
-        return SelectableMappingKt.mapToSelectable(TokenInfo.Companion.map(this.args.getCode().getName()), this.resourceManager, this.selectedNetworkType);
+        return network.getBlockchainType() == BlockchainType.TON ? (isDonationsTransfer() || isBinanceReplenish()) ? (Network) CollectionsKt.first((List<? extends Object>) NetworksHelper.INSTANCE.getEVMNetworks()) : network : network;
     }
 
     private final TLRPC$User resolveUserArg() {
@@ -552,10 +519,6 @@ public final class WalletSendAmountPresenter extends BasePresenter<WalletSendAmo
             return null;
         }
         return TelegramControllersGateway.CC.getMessagesController$default(this.telegramControllersGateway, 0, 1, null).getChat(this.args.getChatId());
-    }
-
-    private final boolean isSupportTokenOnNetwork(TokenCode tokenCode) {
-        return TokenCode.Companion.getTokensByNetwork(this.selectedNetworkType).contains(tokenCode);
     }
 
     private final void resetScreenState(boolean z) {
@@ -579,99 +542,74 @@ public final class WalletSendAmountPresenter extends BasePresenter<WalletSendAmo
         ((WalletSendAmountView) getViewState()).updateFeeView();
     }
 
-    private final List<SelectableToken> getAvailableTransferTokensByNetwork() {
-        int collectionSizeOrDefault;
-        List<TokenCode> tokensByNetwork = TokenCode.Companion.getTokensByNetwork(this.selectedNetworkType);
-        collectionSizeOrDefault = CollectionsKt__IterablesKt.collectionSizeOrDefault(tokensByNetwork, 10);
-        ArrayList arrayList = new ArrayList(collectionSizeOrDefault);
-        for (TokenCode tokenCode : tokensByNetwork) {
-            arrayList.add(SelectableMappingKt.mapToSelectable(TokenInfo.Companion.map(tokenCode), this.resourceManager, this.selectedNetworkType));
-        }
-        return arrayList;
-    }
-
     private final TransferArgs formatTransferArgs(String str) {
-        BigInteger price;
         BigInteger limit;
-        TransferArgs evm;
         GasPriceInfo info;
-        GasPriceInfo info2;
+        BigInteger price;
         BigInteger limit2;
+        GasPriceInfo info2;
         GasPriceInfo info3;
         BigInteger price2;
         GasPriceInfo info4;
         CryptoTransferMetadata cryptoTransferMetadata = this.cryptoTransferMetadata;
-        if (cryptoTransferMetadata != null && getSelectedTokenCode().isCryptoTokens() && (getSelectedTokenInfo() instanceof TokenInfo.Crypto.Ethereum)) {
-            int i = WhenMappings.$EnumSwitchMapping$1[this.selectedNetworkType.getBlockchainType().ordinal()];
-            if (i == 1) {
-                TransactionParams transactionParams = cryptoTransferMetadata.getTransactionParams();
-                TransactionParams.Ether ether = transactionParams instanceof TransactionParams.Ether ? (TransactionParams.Ether) transactionParams : null;
-                if (ether == null) {
-                    return null;
-                }
-                Convert.Unit weiFromToken = getWeiFromToken(getSelectedTokenInfo());
-                String str2 = this.selectedAddress;
-                double parseDouble = Double.parseDouble(str);
-                long id = ether.getChain().getId();
-                BigInteger nonce = ether.getNonce();
-                GasPriceItem gasPriceItem = this.selectedFee;
-                if (gasPriceItem == null || (info2 = gasPriceItem.getInfo()) == null || (price = info2.getPrice()) == null) {
-                    price = ether.getMedium().getPrice();
-                }
-                BigInteger bigInteger = price;
-                GasPriceItem gasPriceItem2 = this.selectedFee;
-                if (gasPriceItem2 == null || (info = gasPriceItem2.getInfo()) == null || (limit = info.getLimit()) == null) {
-                    limit = ether.getMedium().getLimit();
-                }
-                evm = new TransferArgs.EVM(parseDouble, weiFromToken, str2, id, nonce, bigInteger, limit, cryptoTransferMetadata.getContractAddress());
-            } else if (i == 2) {
-                return new TransferArgs.TON(Double.parseDouble(str), getWeiFromToken(getSelectedTokenInfo()), this.selectedAddress, this.comment, this.sendMode, false, 32, null);
-            } else {
-                if (i != 3) {
-                    if (i == 4) {
-                        TransactionParams transactionParams2 = cryptoTransferMetadata.getTransactionParams();
-                        TransactionParams.Bitcoin bitcoin = transactionParams2 instanceof TransactionParams.Bitcoin ? (TransactionParams.Bitcoin) transactionParams2 : null;
-                        if (bitcoin != null) {
-                            double parseDouble2 = Double.parseDouble(str);
-                            String str3 = this.selectedAddress;
-                            List<BitcoinUnspentOutput> utxos = bitcoin.getUtxos();
-                            String changeAddress = bitcoin.getChangeAddress();
-                            GasPriceItem gasPriceItem3 = this.selectedFee;
-                            if (gasPriceItem3 == null || (info4 = gasPriceItem3.getInfo()) == null || (price2 = info4.getPrice()) == null) {
-                                price2 = bitcoin.getMedium().getPrice();
-                            }
-                            return new TransferArgs.BTC(parseDouble2, str3, utxos, changeAddress, price2);
-                        }
-                        return null;
-                    }
-                    throw new NoWhenBranchMatchedException();
-                }
-                TransactionParams transactionParams3 = cryptoTransferMetadata.getTransactionParams();
-                TransactionParams.Tron tron = transactionParams3 instanceof TransactionParams.Tron ? (TransactionParams.Tron) transactionParams3 : null;
-                if (tron == null) {
-                    return null;
-                }
-                Convert.Unit weiFromToken2 = getWeiFromToken(getSelectedTokenInfo());
-                String str4 = this.selectedAddress;
-                double parseDouble3 = Double.parseDouble(str);
-                GasPriceItem gasPriceItem4 = this.selectedFee;
-                if (gasPriceItem4 == null || (info3 = gasPriceItem4.getInfo()) == null || (limit2 = info3.getLimit()) == null) {
-                    limit2 = tron.getMedium().getLimit();
-                }
-                evm = new TransferArgs.TRON(parseDouble3, weiFromToken2, str4, limit2, cryptoTransferMetadata.getContractAddress(), tron.getBlockHeader());
-            }
-            return evm;
+        if (cryptoTransferMetadata == null) {
+            return null;
         }
-        return null;
-    }
-
-    private final Convert.Unit getWeiFromToken(TokenInfo tokenInfo) {
-        return tokenInfo instanceof TokenInfo.Crypto.Ethereum ? TokenInfoExtKt.getWeiConvertUnit((TokenInfo.Crypto.Ethereum) tokenInfo, this.selectedNetworkType) : Convert.Unit.ETHER;
+        TransactionParams transactionParams = cryptoTransferMetadata.getTransactionParams();
+        if (transactionParams instanceof TransactionParams.Bitcoin) {
+            double parseDouble = Double.parseDouble(str);
+            TokenDetailed tokenDetailed = this.selectedToken;
+            int orZero = NumberExtKt.orZero(tokenDetailed != null ? Integer.valueOf(tokenDetailed.getDecimals()) : null);
+            String str2 = this.selectedAddress;
+            TransactionParams.Bitcoin bitcoin = (TransactionParams.Bitcoin) transactionParams;
+            List<BitcoinUnspentOutput> utxos = bitcoin.getUtxos();
+            String changeAddress = bitcoin.getChangeAddress();
+            GasPriceItem gasPriceItem = this.selectedFee;
+            if (gasPriceItem == null || (info4 = gasPriceItem.getInfo()) == null || (price2 = info4.getPrice()) == null) {
+                price2 = transactionParams.getMedium().getPrice();
+            }
+            return new TransferArgs.BTC(parseDouble, orZero, str2, utxos, changeAddress, price2);
+        } else if (transactionParams instanceof TransactionParams.Ether) {
+            double parseDouble2 = Double.parseDouble(str);
+            TokenDetailed tokenDetailed2 = this.selectedToken;
+            int orZero2 = NumberExtKt.orZero(tokenDetailed2 != null ? Integer.valueOf(tokenDetailed2.getDecimals()) : null);
+            String str3 = this.selectedAddress;
+            TransactionParams.Ether ether = (TransactionParams.Ether) transactionParams;
+            long chainId = ether.getChainId();
+            BigInteger nonce = ether.getNonce();
+            GasPriceItem gasPriceItem2 = this.selectedFee;
+            if (gasPriceItem2 == null || (info3 = gasPriceItem2.getInfo()) == null || (price = info3.getPrice()) == null) {
+                price = transactionParams.getMedium().getPrice();
+            }
+            BigInteger bigInteger = price;
+            GasPriceItem gasPriceItem3 = this.selectedFee;
+            if (gasPriceItem3 == null || (info2 = gasPriceItem3.getInfo()) == null || (limit2 = info2.getLimit()) == null) {
+                limit2 = transactionParams.getMedium().getLimit();
+            }
+            return new TransferArgs.EVM(parseDouble2, orZero2, str3, chainId, nonce, bigInteger, limit2, cryptoTransferMetadata.getToken().getAddress());
+        } else if (transactionParams instanceof TransactionParams.Ton) {
+            double parseDouble3 = Double.parseDouble(str);
+            TokenDetailed tokenDetailed3 = this.selectedToken;
+            return new TransferArgs.TON(parseDouble3, NumberExtKt.orZero(tokenDetailed3 != null ? Integer.valueOf(tokenDetailed3.getDecimals()) : null), this.selectedAddress, this.comment, this.sendMode, false, 32, null);
+        } else if (transactionParams instanceof TransactionParams.Tron) {
+            double parseDouble4 = Double.parseDouble(str);
+            TokenDetailed tokenDetailed4 = this.selectedToken;
+            int orZero3 = NumberExtKt.orZero(tokenDetailed4 != null ? Integer.valueOf(tokenDetailed4.getDecimals()) : null);
+            String str4 = this.selectedAddress;
+            GasPriceItem gasPriceItem4 = this.selectedFee;
+            if (gasPriceItem4 == null || (info = gasPriceItem4.getInfo()) == null || (limit = info.getLimit()) == null) {
+                limit = transactionParams.getMedium().getLimit();
+            }
+            TransactionParams.Tron tron = (TransactionParams.Tron) transactionParams;
+            return new TransferArgs.TRON(parseDouble4, orZero3, str4, limit, tron.getContractAddress(), tron.getBlockHeader());
+        } else {
+            throw new NoWhenBranchMatchedException();
+        }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     /* JADX WARN: Code restructure failed: missing block: B:20:0x0068, code lost:
-        if (r3.hasUser(r2.f1574id) != false) goto L24;
+        if (r3.hasUser(r2.f1656id) != false) goto L24;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -722,7 +660,7 @@ public final class WalletSendAmountPresenter extends BasePresenter<WalletSendAmo
             if (r2 == 0) goto L6b
             com.iMe.storage.domain.gateway.TelegramGateway r3 = r6.telegramGateway
             kotlin.jvm.internal.Intrinsics.checkNotNull(r2)
-            long r4 = r2.f1574id
+            long r4 = r2.f1656id
             boolean r2 = r3.hasUser(r4)
             if (r2 == 0) goto L6b
             goto L6c
@@ -737,7 +675,7 @@ public final class WalletSendAmountPresenter extends BasePresenter<WalletSendAmo
     }
 
     private final DialogModel getSendConfirmationDialogModel(String str) {
-        return new DialogModel(this.resourceManager.getString(C3295R.string.wallet_amount_confirm_alert_title), getConfirmMessage(str), this.resourceManager.getString(C3295R.string.common_cancel), this.resourceManager.getString(C3295R.string.wallet_amount_confirm_alert_ok_btn));
+        return new DialogModel(this.resourceManager.getString(C3417R.string.wallet_amount_confirm_alert_title), getConfirmMessage(str), this.resourceManager.getString(C3417R.string.common_cancel), this.resourceManager.getString(C3417R.string.wallet_amount_confirm_alert_ok_btn));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -753,26 +691,28 @@ public final class WalletSendAmountPresenter extends BasePresenter<WalletSendAmo
     }
 
     private final void calculateFeeForTransaction(String str, String str2) {
-        Observable<Result<CryptoTransferMetadata>> observeOn = this.walletInteractor.getCryptoTransferMetadata(getSelectedTokenCode(), str, str2, this.selectedNetworkType).observeOn(this.schedulersProvider.mo698ui());
-        Intrinsics.checkNotNullExpressionValue(observeOn, "walletInteractor\n       …(schedulersProvider.ui())");
-        T viewState = getViewState();
-        Intrinsics.checkNotNullExpressionValue(viewState, "viewState");
-        Disposable subscribe = RxExtKt.withLoadingDialog$default((Observable) observeOn, (BaseView) viewState, false, 2, (Object) null).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2085x2c16008d(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2086x2c16008e((BaseView) getViewState())));
-        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
-        BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
+        TokenDetailed tokenDetailed = this.selectedToken;
+        if (tokenDetailed != null) {
+            Observable<Result<CryptoTransferMetadata>> observeOn = this.walletInteractor.getCryptoTransferMetadata(new Token(tokenDetailed.getAddress(), tokenDetailed.getNetworkId()), str, str2, this.selectedNetwork).observeOn(this.schedulersProvider.mo698ui());
+            Intrinsics.checkNotNullExpressionValue(observeOn, "walletInteractor\n       …(schedulersProvider.ui())");
+            T viewState = getViewState();
+            Intrinsics.checkNotNullExpressionValue(viewState, "viewState");
+            Disposable subscribe = RxExtKt.withLoadingDialog$default((Observable) observeOn, (BaseView) viewState, false, 2, (Object) null).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2089x2c16008d(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2090x2c16008e((BaseView) getViewState())));
+            Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…Error.invoke()\n        })");
+            BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
+        }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public final void configureFees(CryptoTransferMetadata cryptoTransferMetadata) {
         this.cryptoTransferMetadata = cryptoTransferMetadata;
         TransactionSpeedLevel transactionSpeedLevel = TransactionSpeedLevel.MEDIUM;
-        TokenInfo.Companion companion = TokenInfo.Companion;
         Intrinsics.checkNotNull(cryptoTransferMetadata);
-        this.selectedFee = new GasPriceItem(transactionSpeedLevel, companion.map(cryptoTransferMetadata.getFeeTokenCode()), cryptoTransferMetadata.getTransactionParams().getMedium());
+        this.selectedFee = new GasPriceItem(transactionSpeedLevel, cryptoTransferMetadata.getFeeToken(), cryptoTransferMetadata.getTransactionParams().getMedium());
     }
 
     private final DialogModel getFeeDialogModel() {
-        return new DialogModel(this.resourceManager.getString(C3295R.string.wallet_amount_send_fee_dialog_title), null, null, this.resourceManager.getString(C3295R.string.common_cancel), 6, null);
+        return new DialogModel(this.resourceManager.getString(C3417R.string.wallet_amount_send_fee_dialog_title), null, null, this.resourceManager.getString(C3417R.string.common_cancel), 6, null);
     }
 
     private final void sendDonation(long j, TransferArgs.EVM evm) {
@@ -780,40 +720,62 @@ public final class WalletSendAmountPresenter extends BasePresenter<WalletSendAmo
         Intrinsics.checkNotNullExpressionValue(observeOn, "donationsInteractor\n    …(schedulersProvider.ui())");
         T viewState = getViewState();
         Intrinsics.checkNotNullExpressionValue(viewState, "viewState");
-        Disposable subscribe = RxExtKt.withLoadingDialog((Observable) observeOn, (BaseView) viewState, false).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2093xd0cb0852(this, evm)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2094xd0cb0853((BaseView) getViewState())));
-        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
+        Disposable subscribe = RxExtKt.withLoadingDialog((Observable) observeOn, (BaseView) viewState, false).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2097xd0cb0852(this, evm)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2098xd0cb0853((BaseView) getViewState())));
+        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…Error.invoke()\n        })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
 
     private final void transferTokens(TransferArgs transferArgs, boolean z) {
-        Observable<Result<Boolean>> observeOn = this.walletInteractor.sendTokens(getSelectedTokenCode(), transferArgs, this.selectedNetworkType.getBlockchainType()).observeOn(this.schedulersProvider.mo698ui());
+        Observable<Result<Boolean>> observeOn = this.walletInteractor.sendTokens(transferArgs, this.selectedNetwork.getBlockchainType()).observeOn(this.schedulersProvider.mo698ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "walletInteractor\n       …(schedulersProvider.ui())");
         T viewState = getViewState();
         Intrinsics.checkNotNullExpressionValue(viewState, "viewState");
-        Disposable subscribe = RxExtKt.withLoadingDialog((Observable) observeOn, (BaseView) viewState, false).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2095x2cfbccbd(this, z, transferArgs)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2096x2cfbccbe((BaseView) getViewState())));
-        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
+        Disposable subscribe = RxExtKt.withLoadingDialog((Observable) observeOn, (BaseView) viewState, false).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2099x2cfbccbd(this, z, transferArgs)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2100x2cfbccbe((BaseView) getViewState())));
+        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…Error.invoke()\n        })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public final void runNoEnoughMoneyFlow() {
-        ((WalletSendAmountView) getViewState()).showNoEnoughMoneyErrorDialog(new TokenBuyCoordinatorArgs(getSelectedTokenCode(), SwapHelper.resolveSwapProtocolByNetwork$default(SwapHelper.INSTANCE, null, 1, null), null, 4, null));
+        WalletSendAmountView walletSendAmountView = (WalletSendAmountView) getViewState();
+        TokenDetailed tokenDetailed = this.selectedToken;
+        if (tokenDetailed == null) {
+            return;
+        }
+        walletSendAmountView.showNoEnoughMoneyErrorDialog(new TokenBuyCoordinatorArgs(tokenDetailed, SwapProtocol.Companion.resolveByNetworkId(this.cryptoPreferenceHelper.getNetworkId()), null, 4, null));
     }
 
     private final String getConfirmMessage(String str) {
-        return this.resourceManager.getString(C3295R.string.wallet_amount_send_confirm_alert_description, BalanceFormatter.formatBalance(Double.valueOf(Double.parseDouble(str)), getSelectedTokenInfo().getDecimals()), this.resourceManager.getString(getSelectedTokenInfo().getShortName()));
+        ResourceManager resourceManager = this.resourceManager;
+        int i = C3417R.string.wallet_amount_send_confirm_alert_description;
+        Object[] objArr = new Object[2];
+        Double valueOf = Double.valueOf(Double.parseDouble(str));
+        TokenDetailed tokenDetailed = this.selectedToken;
+        objArr[0] = BalanceFormatter.formatBalance(valueOf, Integer.valueOf(NumberExtKt.orZero(tokenDetailed != null ? Integer.valueOf(tokenDetailed.getDecimals()) : null)));
+        objArr[1] = getSelectedTokenTicker();
+        return resourceManager.getString(i, objArr);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public final String getSuccessMessage(double d) {
-        return this.resourceManager.getString(C3295R.string.wallet_amount_success_send_description, BalanceFormatter.formatBalance(Double.valueOf(d), getSelectedTokenInfo().getDecimals()), this.resourceManager.getString(getSelectedTokenInfo().getShortName()));
+        ResourceManager resourceManager = this.resourceManager;
+        int i = C3417R.string.wallet_amount_success_send_description;
+        Object[] objArr = new Object[2];
+        Double valueOf = Double.valueOf(d);
+        TokenDetailed tokenDetailed = this.selectedToken;
+        objArr[0] = BalanceFormatter.formatBalance(valueOf, Integer.valueOf(NumberExtKt.orZero(tokenDetailed != null ? Integer.valueOf(tokenDetailed.getDecimals()) : null)));
+        objArr[1] = getSelectedTokenTicker();
+        return resourceManager.getString(i, objArr);
     }
 
-    private final void loadBalance(TokenCode tokenCode) {
-        Observable observeOn = WalletInteractor.getTokenBalance$default(this.walletInteractor, tokenCode, false, this.selectedNetworkType, 2, null).observeOn(this.schedulersProvider.mo698ui());
+    private final void loadBalance(TokenDetailed tokenDetailed) {
+        if (tokenDetailed == null) {
+            return;
+        }
+        Observable observeOn = WalletInteractor.getTokenBalance$default(this.walletInteractor, new Token(tokenDetailed.getAddress(), tokenDetailed.getNetworkId()), false, this.selectedNetwork.getId(), 2, null).observeOn(this.schedulersProvider.mo698ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "walletInteractor\n       …(schedulersProvider.ui())");
-        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2091xd63210e4(this, tokenCode)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2092xd63210e5((BaseView) getViewState())));
-        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
+        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2095xd63210e4(this, tokenDetailed)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2096xd63210e5((BaseView) getViewState())));
+        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…Error.invoke()\n        })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
 
@@ -825,7 +787,7 @@ public final class WalletSendAmountPresenter extends BasePresenter<WalletSendAmo
         String formatMessageToUser = formatMessageToUser(j, d, j2, DateExtKt.now());
         ArrayList<TLRPC$MessageEntity> arrayList = new ArrayList<>();
         TLRPC$TL_messageEntityTextUrl tLRPC$TL_messageEntityTextUrl = new TLRPC$TL_messageEntityTextUrl();
-        String string = this.resourceManager.getString(C3295R.string.wallet_amount_send_message_processing_name);
+        String string = this.resourceManager.getString(C3417R.string.wallet_amount_send_message_processing_name);
         tLRPC$TL_messageEntityTextUrl.url = "https://imem.app/download";
         tLRPC$TL_messageEntityTextUrl.length = string.length();
         indexOf$default = StringsKt__StringsKt.indexOf$default((CharSequence) formatMessageToUser, string, 0, false, 6, (Object) null);
@@ -837,7 +799,7 @@ public final class WalletSendAmountPresenter extends BasePresenter<WalletSendAmo
             String str = user.username;
             if (!(str == null || str.length() == 0)) {
                 TLRPC$TL_messageEntityTextUrl tLRPC$TL_messageEntityTextUrl2 = new TLRPC$TL_messageEntityTextUrl();
-                String string2 = this.resourceManager.getString(C3295R.string.wallet_amount_send_message_id);
+                String string2 = this.resourceManager.getString(C3417R.string.wallet_amount_send_message_id);
                 Constants.Telegram telegram = Constants.Telegram.INSTANCE;
                 String str2 = user.username;
                 Intrinsics.checkNotNullExpressionValue(str2, "user.username");
@@ -854,7 +816,7 @@ public final class WalletSendAmountPresenter extends BasePresenter<WalletSendAmo
             String str3 = user2.username;
             if (!(str3 == null || str3.length() == 0)) {
                 TLRPC$TL_messageEntityTextUrl tLRPC$TL_messageEntityTextUrl3 = new TLRPC$TL_messageEntityTextUrl();
-                String string3 = this.resourceManager.getString(C3295R.string.wallet_amount_send_message_id);
+                String string3 = this.resourceManager.getString(C3417R.string.wallet_amount_send_message_id);
                 Constants.Telegram telegram2 = Constants.Telegram.INSTANCE;
                 String str4 = user2.username;
                 Intrinsics.checkNotNullExpressionValue(str4, "user.username");
@@ -870,12 +832,20 @@ public final class WalletSendAmountPresenter extends BasePresenter<WalletSendAmo
 
     private final String formatMessageToUser(long j, double d, long j2, long j3) {
         ResourceManager resourceManager = this.resourceManager;
-        int i = C3295R.string.wallet_amount_send_message_payload;
+        int i = C3417R.string.wallet_amount_send_message_payload;
+        Object[] objArr = new Object[5];
+        Double valueOf = Double.valueOf(d);
+        TokenDetailed tokenDetailed = this.selectedToken;
+        objArr[0] = BalanceFormatter.formatBalance(valueOf, Integer.valueOf(NumberExtKt.orZero(tokenDetailed != null ? Integer.valueOf(tokenDetailed.getDecimals()) : null)));
+        objArr[1] = getSelectedTokenTicker();
+        objArr[2] = String.valueOf(j2);
+        objArr[3] = String.valueOf(j);
         DateFormatter.DateType dateType = DateFormatter.DateType.DATE_AND_TIME;
         Date date = new Date(j3);
         String language = Locale.US.getLanguage();
         Intrinsics.checkNotNullExpressionValue(language, "US.language");
-        return resourceManager.getString(i, BalanceFormatter.formatBalance(Double.valueOf(d), getSelectedTokenInfo().getDecimals()), this.resourceManager.getString(getSelectedTokenInfo().getShortName()), String.valueOf(j2), String.valueOf(j), DateFormatter.format(dateType, date, language));
+        objArr[4] = DateFormatter.format(dateType, date, language);
+        return resourceManager.getString(i, objArr);
     }
 
     /* JADX INFO: Access modifiers changed from: private */

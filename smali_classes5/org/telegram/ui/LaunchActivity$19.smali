@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/LaunchActivity;->lambda$runLinkRequest$62(Ljava/lang/String;Lorg/telegram/tgnet/TLRPC$TL_chatAdminRights;ZLjava/lang/String;ILorg/telegram/tgnet/TLRPC$Chat;Lorg/telegram/ui/DialogsActivity;Lorg/telegram/tgnet/TLRPC$User;JLjava/lang/String;)V
+    value = Lorg/telegram/ui/LaunchActivity;->lambda$runLinkRequest$64(Ljava/lang/String;Lorg/telegram/tgnet/TLRPC$TL_chatAdminRights;ZLjava/lang/String;ILorg/telegram/tgnet/TLRPC$Chat;Lorg/telegram/ui/DialogsActivity;Lorg/telegram/tgnet/TLRPC$User;JLjava/lang/String;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -27,7 +27,7 @@
 .method constructor <init>(Lorg/telegram/ui/LaunchActivity;Lorg/telegram/ui/DialogsActivity;I)V
     .locals 0
 
-    .line 4496
+    .line 4543
     iput-object p2, p0, Lorg/telegram/ui/LaunchActivity$19;->val$fragment:Lorg/telegram/ui/DialogsActivity;
 
     iput p3, p0, Lorg/telegram/ui/LaunchActivity$19;->val$intentAccount:I
@@ -48,12 +48,12 @@
 .method public didSetRights(ILorg/telegram/tgnet/TLRPC$TL_chatAdminRights;Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;Ljava/lang/String;)V
     .locals 0
 
-    .line 4499
+    .line 4546
     iget-object p1, p0, Lorg/telegram/ui/LaunchActivity$19;->val$fragment:Lorg/telegram/ui/DialogsActivity;
 
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->removeSelfFromStack()V
 
-    .line 4500
+    .line 4547
     iget p1, p0, Lorg/telegram/ui/LaunchActivity$19;->val$intentAccount:I
 
     invoke-static {p1}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;

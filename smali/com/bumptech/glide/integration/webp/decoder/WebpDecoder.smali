@@ -257,7 +257,7 @@
 .method private cacheFrameBitmap(ILandroid/graphics/Bitmap;)V
     .locals 4
 
-    .line 293
+    .line 297
     iget-object v0, p0, Lcom/bumptech/glide/integration/webp/decoder/WebpDecoder;->mFrameBitmapCache:Landroid/util/LruCache;
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -266,7 +266,7 @@
 
     invoke-virtual {v0, v1}, Landroid/util/LruCache;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 296
+    .line 300
     iget-object v0, p0, Lcom/bumptech/glide/integration/webp/decoder/WebpDecoder;->mBitmapProvider:Lcom/bumptech/glide/gifdecoder/GifDecoder$BitmapProvider;
 
     invoke-virtual {p2}, Landroid/graphics/Bitmap;->getWidth()I
@@ -287,22 +287,22 @@
 
     const/4 v1, 0x0
 
-    .line 297
+    .line 301
     invoke-virtual {v0, v1}, Landroid/graphics/Bitmap;->eraseColor(I)V
 
-    .line 298
+    .line 302
     invoke-virtual {p2}, Landroid/graphics/Bitmap;->getDensity()I
 
     move-result v2
 
     invoke-virtual {v0, v2}, Landroid/graphics/Bitmap;->setDensity(I)V
 
-    .line 300
+    .line 304
     new-instance v2, Landroid/graphics/Canvas;
 
     invoke-direct {v2, v0}, Landroid/graphics/Canvas;-><init>(Landroid/graphics/Bitmap;)V
 
-    .line 301
+    .line 305
     sget-object v3, Landroid/graphics/PorterDuff$Mode;->SRC:Landroid/graphics/PorterDuff$Mode;
 
     invoke-virtual {v2, v1, v3}, Landroid/graphics/Canvas;->drawColor(ILandroid/graphics/PorterDuff$Mode;)V
@@ -311,10 +311,10 @@
 
     const/4 v3, 0x0
 
-    .line 302
+    .line 306
     invoke-virtual {v2, p2, v1, v1, v3}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;FFLandroid/graphics/Paint;)V
 
-    .line 304
+    .line 308
     iget-object p2, p0, Lcom/bumptech/glide/integration/webp/decoder/WebpDecoder;->mFrameBitmapCache:Landroid/util/LruCache;
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -329,7 +329,7 @@
 .method private disposeToBackground(Landroid/graphics/Canvas;Lcom/bumptech/glide/integration/webp/WebpFrameInfo;)V
     .locals 9
 
-    .line 384
+    .line 388
     iget v0, p2, Lcom/bumptech/glide/integration/webp/WebpFrameInfo;->xOffset:I
 
     iget v1, p0, Lcom/bumptech/glide/integration/webp/decoder/WebpDecoder;->sampleSize:I
@@ -338,14 +338,14 @@
 
     int-to-float v4, v2
 
-    .line 385
+    .line 389
     iget v2, p2, Lcom/bumptech/glide/integration/webp/WebpFrameInfo;->yOffset:I
 
     div-int v3, v2, v1
 
     int-to-float v5, v3
 
-    .line 386
+    .line 390
     iget v3, p2, Lcom/bumptech/glide/integration/webp/WebpFrameInfo;->width:I
 
     add-int/2addr v0, v3
@@ -354,7 +354,7 @@
 
     int-to-float v6, v0
 
-    .line 387
+    .line 391
     iget p2, p2, Lcom/bumptech/glide/integration/webp/WebpFrameInfo;->height:I
 
     add-int/2addr v2, p2
@@ -363,7 +363,7 @@
 
     int-to-float v7, v2
 
-    .line 388
+    .line 392
     iget-object v8, p0, Lcom/bumptech/glide/integration/webp/decoder/WebpDecoder;->mTransparentFillPaint:Landroid/graphics/Paint;
 
     move-object v3, p1
@@ -376,7 +376,7 @@
 .method private isFullFrame(Lcom/bumptech/glide/integration/webp/WebpFrameInfo;)Z
     .locals 2
 
-    .line 419
+    .line 423
     iget v0, p1, Lcom/bumptech/glide/integration/webp/WebpFrameInfo;->xOffset:I
 
     if-nez v0, :cond_0
@@ -389,7 +389,7 @@
 
     iget-object v1, p0, Lcom/bumptech/glide/integration/webp/decoder/WebpDecoder;->mWebPImage:Lcom/bumptech/glide/integration/webp/WebpImage;
 
-    .line 421
+    .line 425
     invoke-virtual {v1}, Lcom/bumptech/glide/integration/webp/WebpImage;->getWidth()I
 
     move-result v1
@@ -400,7 +400,7 @@
 
     iget-object v0, p0, Lcom/bumptech/glide/integration/webp/decoder/WebpDecoder;->mWebPImage:Lcom/bumptech/glide/integration/webp/WebpImage;
 
-    .line 422
+    .line 426
     invoke-virtual {v0}, Lcom/bumptech/glide/integration/webp/WebpImage;->getHeight()I
 
     move-result v0
@@ -427,7 +427,7 @@
 
     return v0
 
-    .line 403
+    .line 407
     :cond_0
     iget-object v1, p0, Lcom/bumptech/glide/integration/webp/decoder/WebpDecoder;->mFrameInfos:[Lcom/bumptech/glide/integration/webp/WebpFrameInfo;
 
@@ -435,10 +435,10 @@
 
     sub-int/2addr p1, v0
 
-    .line 404
+    .line 408
     aget-object p1, v1, p1
 
-    .line 405
+    .line 409
     iget-boolean v1, v2, Lcom/bumptech/glide/integration/webp/WebpFrameInfo;->blendPreviousFrame:Z
 
     if-nez v1, :cond_1
@@ -451,7 +451,7 @@
 
     return v0
 
-    .line 408
+    .line 412
     :cond_1
     iget-boolean v1, p1, Lcom/bumptech/glide/integration/webp/WebpFrameInfo;->disposeBackgroundColor:Z
 
@@ -478,12 +478,12 @@
     :goto_0
     if-ltz p1, :cond_5
 
-    .line 355
+    .line 359
     iget-object v0, p0, Lcom/bumptech/glide/integration/webp/decoder/WebpDecoder;->mFrameInfos:[Lcom/bumptech/glide/integration/webp/WebpFrameInfo;
 
     aget-object v0, v0, p1
 
-    .line 356
+    .line 360
     iget-boolean v1, v0, Lcom/bumptech/glide/integration/webp/WebpFrameInfo;->disposeBackgroundColor:Z
 
     if-eqz v1, :cond_1
@@ -501,7 +501,7 @@
 
     return p1
 
-    .line 358
+    .line 362
     :cond_1
     :goto_1
     iget-object v1, p0, Lcom/bumptech/glide/integration/webp/decoder/WebpDecoder;->mFrameBitmapCache:Landroid/util/LruCache;
@@ -518,14 +518,14 @@
 
     if-eqz v1, :cond_3
 
-    .line 359
+    .line 363
     invoke-virtual {v1}, Landroid/graphics/Bitmap;->isRecycled()Z
 
     move-result v2
 
     if-nez v2, :cond_3
 
-    .line 360
+    .line 364
     invoke-virtual {p2}, Landroid/graphics/Canvas;->getDensity()I
 
     move-result v2
@@ -536,15 +536,15 @@
 
     const/4 v3, 0x0
 
-    .line 361
+    .line 365
     invoke-virtual {p2, v1, v3, v3, v2}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;FFLandroid/graphics/Paint;)V
 
-    .line 362
+    .line 366
     iget-boolean v1, v0, Lcom/bumptech/glide/integration/webp/WebpFrameInfo;->disposeBackgroundColor:Z
 
     if-eqz v1, :cond_2
 
-    .line 363
+    .line 367
     invoke-direct {p0, p2, v0}, Lcom/bumptech/glide/integration/webp/decoder/WebpDecoder;->disposeToBackground(Landroid/graphics/Canvas;Lcom/bumptech/glide/integration/webp/WebpFrameInfo;)V
 
     :cond_2
@@ -552,7 +552,7 @@
 
     return p1
 
-    .line 366
+    .line 370
     :cond_3
     invoke-direct {p0, p1}, Lcom/bumptech/glide/integration/webp/decoder/WebpDecoder;->isKeyFrame(I)Z
 
@@ -603,14 +603,21 @@
 
     div-int/2addr v0, v2
 
-    .line 276
+    if-eqz v1, :cond_1
+
+    if-nez v3, :cond_0
+
+    goto :goto_2
+
+    .line 280
+    :cond_0
     iget-object v2, p0, Lcom/bumptech/glide/integration/webp/decoder/WebpDecoder;->mWebPImage:Lcom/bumptech/glide/integration/webp/WebpImage;
 
     invoke-virtual {v2, p1}, Lcom/bumptech/glide/integration/webp/WebpImage;->getFrame(I)Lcom/bumptech/glide/integration/webp/WebpFrame;
 
     move-result-object v2
 
-    .line 278
+    .line 282
     :try_start_0
     iget-object v5, p0, Lcom/bumptech/glide/integration/webp/decoder/WebpDecoder;->mBitmapProvider:Lcom/bumptech/glide/gifdecoder/GifDecoder$BitmapProvider;
 
@@ -622,17 +629,17 @@
 
     const/4 v6, 0x0
 
-    .line 279
+    .line 283
     invoke-virtual {v5, v6}, Landroid/graphics/Bitmap;->eraseColor(I)V
 
-    .line 280
+    .line 284
     invoke-virtual {p2}, Landroid/graphics/Canvas;->getDensity()I
 
     move-result v6
 
     invoke-virtual {v5, v6}, Landroid/graphics/Bitmap;->setDensity(I)V
 
-    .line 281
+    .line 285
     invoke-virtual {v2, v1, v3, v5}, Lcom/bumptech/glide/integration/webp/WebpFrame;->renderFrame(IILandroid/graphics/Bitmap;)V
 
     int-to-float v1, v4
@@ -641,15 +648,16 @@
 
     const/4 v3, 0x0
 
-    .line 282
+    .line 286
     invoke-virtual {p2, v5, v1, v0, v3}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;FFLandroid/graphics/Paint;)V
 
-    .line 283
+    .line 287
     iget-object p2, p0, Lcom/bumptech/glide/integration/webp/decoder/WebpDecoder;->mBitmapProvider:Lcom/bumptech/glide/gifdecoder/GifDecoder$BitmapProvider;
 
     invoke-interface {p2, v5}, Lcom/bumptech/glide/gifdecoder/GifDecoder$BitmapProvider;->release(Landroid/graphics/Bitmap;)V
     :try_end_0
     .catch Ljava/lang/IllegalStateException; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     goto :goto_0
@@ -663,7 +671,7 @@
     :try_start_1
     const-string p2, "WebpDecoder"
 
-    .line 285
+    .line 289
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -682,7 +690,7 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 287
+    .line 291
     :goto_0
     invoke-virtual {v2}, Lcom/bumptech/glide/integration/webp/WebpFrame;->dispose()V
 
@@ -691,8 +699,12 @@
     :goto_1
     invoke-virtual {v2}, Lcom/bumptech/glide/integration/webp/WebpFrame;->dispose()V
 
-    .line 288
+    .line 292
     throw p1
+
+    :cond_1
+    :goto_2
+    return-void
 .end method
 
 
@@ -721,22 +733,22 @@
 .method public clear()V
     .locals 2
 
-    .line 314
+    .line 318
     iget-object v0, p0, Lcom/bumptech/glide/integration/webp/decoder/WebpDecoder;->mWebPImage:Lcom/bumptech/glide/integration/webp/WebpImage;
 
     invoke-virtual {v0}, Lcom/bumptech/glide/integration/webp/WebpImage;->dispose()V
 
     const/4 v0, 0x0
 
-    .line 315
+    .line 319
     iput-object v0, p0, Lcom/bumptech/glide/integration/webp/decoder/WebpDecoder;->mWebPImage:Lcom/bumptech/glide/integration/webp/WebpImage;
 
-    .line 316
+    .line 320
     iget-object v1, p0, Lcom/bumptech/glide/integration/webp/decoder/WebpDecoder;->mFrameBitmapCache:Landroid/util/LruCache;
 
     invoke-virtual {v1}, Landroid/util/LruCache;->evictAll()V
 
-    .line 317
+    .line 321
     iput-object v0, p0, Lcom/bumptech/glide/integration/webp/decoder/WebpDecoder;->rawData:Ljava/nio/ByteBuffer;
 
     return-void
@@ -1153,6 +1165,33 @@
     return-object v1
 .end method
 
+.method public getTotalIterationCount()I
+    .locals 1
+
+    .line 172
+    iget-object v0, p0, Lcom/bumptech/glide/integration/webp/decoder/WebpDecoder;->mWebPImage:Lcom/bumptech/glide/integration/webp/WebpImage;
+
+    invoke-virtual {v0}, Lcom/bumptech/glide/integration/webp/WebpImage;->getLoopCount()I
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    const/4 v0, 0x0
+
+    return v0
+
+    .line 175
+    :cond_0
+    iget-object v0, p0, Lcom/bumptech/glide/integration/webp/decoder/WebpDecoder;->mWebPImage:Lcom/bumptech/glide/integration/webp/WebpImage;
+
+    invoke-virtual {v0}, Lcom/bumptech/glide/integration/webp/WebpImage;->getLoopCount()I
+
+    move-result v0
+
+    return v0
+.end method
+
 .method public resetFrameIndex()V
     .locals 1
 
@@ -1169,7 +1208,7 @@
 
     const/4 v0, 0x1
 
-    .line 327
+    .line 331
     invoke-virtual {p0, p1, p2, v0}, Lcom/bumptech/glide/integration/webp/decoder/WebpDecoder;->setData(Lcom/bumptech/glide/gifdecoder/GifHeader;Ljava/nio/ByteBuffer;I)V
 
     return-void
@@ -1180,12 +1219,12 @@
 
     if-lez p3, :cond_0
 
-    .line 336
+    .line 340
     invoke-static {p3}, Ljava/lang/Integer;->highestOneBit(I)I
 
     move-result p1
 
-    .line 339
+    .line 343
     invoke-virtual {p2}, Ljava/nio/ByteBuffer;->asReadOnlyBuffer()Ljava/nio/ByteBuffer;
 
     move-result-object p2
@@ -1194,13 +1233,13 @@
 
     const/4 p3, 0x0
 
-    .line 340
+    .line 344
     invoke-virtual {p2, p3}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
 
-    .line 342
+    .line 346
     iput p1, p0, Lcom/bumptech/glide/integration/webp/decoder/WebpDecoder;->sampleSize:I
 
-    .line 343
+    .line 347
     iget-object p2, p0, Lcom/bumptech/glide/integration/webp/decoder/WebpDecoder;->mWebPImage:Lcom/bumptech/glide/integration/webp/WebpImage;
 
     invoke-virtual {p2}, Lcom/bumptech/glide/integration/webp/WebpImage;->getWidth()I
@@ -1211,7 +1250,7 @@
 
     iput p2, p0, Lcom/bumptech/glide/integration/webp/decoder/WebpDecoder;->downsampledWidth:I
 
-    .line 344
+    .line 348
     iget-object p2, p0, Lcom/bumptech/glide/integration/webp/decoder/WebpDecoder;->mWebPImage:Lcom/bumptech/glide/integration/webp/WebpImage;
 
     invoke-virtual {p2}, Lcom/bumptech/glide/integration/webp/WebpImage;->getHeight()I
@@ -1224,7 +1263,7 @@
 
     return-void
 
-    .line 333
+    .line 337
     :cond_0
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
@@ -1250,7 +1289,7 @@
 .method public setData(Lcom/bumptech/glide/gifdecoder/GifHeader;[B)V
     .locals 0
 
-    .line 322
+    .line 326
     invoke-static {p2}, Ljava/nio/ByteBuffer;->wrap([B)Ljava/nio/ByteBuffer;
 
     move-result-object p2

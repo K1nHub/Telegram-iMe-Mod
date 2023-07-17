@@ -1,7 +1,7 @@
 package com.google.android.exoplayer2.upstream.cache;
 
 import android.os.ConditionVariable;
-import com.google.android.exoplayer2.C0475C;
+import com.google.android.exoplayer2.C0480C;
 import com.google.android.exoplayer2.database.DatabaseIOException;
 import com.google.android.exoplayer2.database.DatabaseProvider;
 import com.google.android.exoplayer2.upstream.cache.Cache;
@@ -250,7 +250,7 @@ public final class SimpleCache implements Cache {
         if (!file.exists()) {
             createCacheDirectories(file);
         }
-        return SimpleCacheSpan.getCacheFile(file, cachedContent.f141id, j, System.currentTimeMillis());
+        return SimpleCacheSpan.getCacheFile(file, cachedContent.f223id, j, System.currentTimeMillis());
     }
 
     @Override // com.google.android.exoplayer2.upstream.cache.Cache
@@ -469,7 +469,7 @@ public final class SimpleCache implements Cache {
                 loadDirectory(file2, false, file2.listFiles(), map);
             } else if (!z || (!CachedContentIndex.isIndexFile(name) && !name.endsWith(UID_FILE_SUFFIX))) {
                 long j = -1;
-                long j2 = C0475C.TIME_UNSET;
+                long j2 = C0480C.TIME_UNSET;
                 CacheFileMetadata remove = map != null ? map.remove(name) : null;
                 if (remove != null) {
                     j = remove.length;

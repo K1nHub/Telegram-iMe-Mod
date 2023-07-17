@@ -29,7 +29,7 @@
 .method public static fromAction(Lio/reactivex/functions/Action;)Lio/reactivex/disposables/Disposable;
     .locals 1
 
-    const-string v0, "run is null"
+    const-string/jumbo v0, "run is null"
 
     .line 55
     invoke-static {p0, v0}, Lio/reactivex/internal/functions/ObjectHelper;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
@@ -45,7 +45,7 @@
 .method public static fromRunnable(Ljava/lang/Runnable;)Lio/reactivex/disposables/Disposable;
     .locals 1
 
-    const-string v0, "run is null"
+    const-string/jumbo v0, "run is null"
 
     .line 43
     invoke-static {p0, v0}, Lio/reactivex/internal/functions/ObjectHelper;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;

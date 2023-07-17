@@ -35,7 +35,7 @@ public final class JsonParser {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: io.grpc.internal.JsonParser$1 */
     /* loaded from: classes4.dex */
-    public static /* synthetic */ class C25521 {
+    public static /* synthetic */ class C26731 {
         static final /* synthetic */ int[] $SwitchMap$com$google$gson$stream$JsonToken;
 
         static {
@@ -70,7 +70,7 @@ public final class JsonParser {
 
     private static Object parseRecursive(JsonReader jsonReader) throws IOException {
         Preconditions.checkState(jsonReader.hasNext(), "unexpected end of JSON");
-        switch (C25521.$SwitchMap$com$google$gson$stream$JsonToken[jsonReader.peek().ordinal()]) {
+        switch (C26731.$SwitchMap$com$google$gson$stream$JsonToken[jsonReader.peek().ordinal()]) {
             case 1:
                 return parseJsonArray(jsonReader);
             case 2:

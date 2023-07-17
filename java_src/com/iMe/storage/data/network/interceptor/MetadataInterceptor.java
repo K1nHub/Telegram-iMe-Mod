@@ -15,7 +15,7 @@ import okhttp3.Request;
 import okhttp3.Response;
 import org.koin.core.Koin;
 import org.koin.core.component.KoinComponent;
-import org.koin.p043mp.KoinPlatformTools;
+import org.koin.p042mp.KoinPlatformTools;
 /* compiled from: MetadataInterceptor.kt */
 /* loaded from: classes3.dex */
 public final class MetadataInterceptor implements Interceptor, KoinComponent {
@@ -59,7 +59,7 @@ public final class MetadataInterceptor implements Interceptor, KoinComponent {
         Intrinsics.checkNotNullParameter(chain, "chain");
         boolean z = false;
         String token = getWalletSessionRepository().getCurrentAccountToken(false).blockingFirst();
-        Request.Builder header = chain.request().newBuilder().header("x-device-id", getTelegramGateway().getDeviceId()).header("accept-language", getTelegramGateway().getCurrentLocaleInformation().getSupportedLanguage()).header("x-app-version", getTelegramGateway().getAppVersion());
+        Request.Builder header = chain.request().newBuilder().header("x-device-id", getTelegramGateway().getDeviceId()).header("accept-language", getTelegramGateway().getCurrentLanguage()).header("x-app-version", getTelegramGateway().getAppVersion());
         String RELEASE = Build.VERSION.RELEASE;
         Intrinsics.checkNotNullExpressionValue(RELEASE, "RELEASE");
         Request.Builder header2 = header.header("x-device-operating-system-version", RELEASE).header("x-device-operating-system", "ANDROID");

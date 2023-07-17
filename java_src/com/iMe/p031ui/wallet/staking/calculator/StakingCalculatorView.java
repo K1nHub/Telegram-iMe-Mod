@@ -4,6 +4,7 @@ import com.iMe.model.staking.StakingDetailsItem;
 import com.iMe.p031ui.base.mvp.base.BaseView;
 import com.iMe.storage.domain.model.crypto.level.AccountLevel;
 import com.iMe.storage.domain.model.wallet.token.TokenBalance;
+import com.iMe.storage.domain.model.wallet.token.TokenDetailed;
 import moxy.viewstate.strategy.alias.AddToEndSingle;
 import moxy.viewstate.strategy.alias.OneExecution;
 /* compiled from: StakingCalculatorView.kt */
@@ -17,7 +18,7 @@ public interface StakingCalculatorView extends BaseView {
     void showBalance(TokenBalance tokenBalance);
 
     @OneExecution
-    void showLevelRequiredDialog(AccountLevel accountLevel);
+    void showLevelRequiredDialog(AccountLevel accountLevel, TokenDetailed tokenDetailed);
 
     void updateStakingCalculatorViews();
 }

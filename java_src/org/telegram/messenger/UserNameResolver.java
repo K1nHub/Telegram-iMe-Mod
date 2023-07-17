@@ -4,9 +4,9 @@ import android.text.TextUtils;
 import com.google.android.exoplayer2.util.Consumer;
 import java.util.ArrayList;
 import java.util.HashMap;
-import org.telegram.p044ui.ActionBar.BaseFragment;
-import org.telegram.p044ui.Components.BulletinFactory;
-import org.telegram.p044ui.LaunchActivity;
+import org.telegram.p043ui.ActionBar.BaseFragment;
+import org.telegram.p043ui.Components.BulletinFactory;
+import org.telegram.p043ui.LaunchActivity;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
@@ -92,7 +92,7 @@ public class UserNameResolver {
             if (str2 == null || !str2.contains("FLOOD_WAIT") || (lastFragment = LaunchActivity.getLastFragment()) == null) {
                 return;
             }
-            BulletinFactory.m29of(lastFragment).createErrorBulletin(LocaleController.getString("FloodWait", C3295R.string.FloodWait)).show();
+            BulletinFactory.m29of(lastFragment).createErrorBulletin(LocaleController.getString("FloodWait", C3417R.string.FloodWait)).show();
             return;
         }
         TLRPC$TL_contacts_resolvedPeer tLRPC$TL_contacts_resolvedPeer = (TLRPC$TL_contacts_resolvedPeer) tLObject;
@@ -115,7 +115,7 @@ public class UserNameResolver {
         this.resolvedCache.remove(tLRPC$User.username);
         String str2 = tLRPC$User2.username;
         if (str2 != null) {
-            this.resolvedCache.put(str2, new CachedPeer(tLRPC$User2.f1574id));
+            this.resolvedCache.put(str2, new CachedPeer(tLRPC$User2.f1656id));
         }
     }
 
@@ -127,7 +127,7 @@ public class UserNameResolver {
         this.resolvedCache.remove(tLRPC$Chat.username);
         String str2 = tLRPC$Chat2.username;
         if (str2 != null) {
-            this.resolvedCache.put(str2, new CachedPeer(-tLRPC$Chat2.f1433id));
+            this.resolvedCache.put(str2, new CachedPeer(-tLRPC$Chat2.f1515id));
         }
     }
 

@@ -70,7 +70,7 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    const-string v0, "service-config"
+    const-string/jumbo v0, "service-config"
 
     .line 39
     invoke-static {v0}, Lio/grpc/Attributes$Key;->create(Ljava/lang/String;)Lio/grpc/Attributes$Key;

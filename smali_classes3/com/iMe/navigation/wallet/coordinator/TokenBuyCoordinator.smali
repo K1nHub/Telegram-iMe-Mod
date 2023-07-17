@@ -29,13 +29,13 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 14
+    .line 15
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 15
+    .line 16
     iput-object p1, p0, Lcom/iMe/navigation/wallet/coordinator/TokenBuyCoordinator;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
-    .line 16
+    .line 17
     iput-object p2, p0, Lcom/iMe/navigation/wallet/coordinator/TokenBuyCoordinator;->cryptoPreferenceHelper:Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
 
     return-void
@@ -68,7 +68,7 @@
 
     move-object v3, p2
 
-    .line 39
+    .line 45
     invoke-static/range {v1 .. v6}, Lcom/iMe/navigation/wallet/coordinator/TokenBuyCoordinator;->start$default(Lcom/iMe/navigation/wallet/coordinator/TokenBuyCoordinator;Lorg/telegram/ui/ActionBar/INavigationLayout;Lcom/iMe/navigation/wallet/coordinator/args/TokenBuyCoordinatorArgs;ZILjava/lang/Object;)V
 
     return-void
@@ -83,7 +83,7 @@
 
     const/4 p3, 0x0
 
-    .line 21
+    .line 22
     :cond_0
     invoke-virtual {p0, p1, p2, p3}, Lcom/iMe/navigation/wallet/coordinator/TokenBuyCoordinator;->start(Lorg/telegram/ui/ActionBar/INavigationLayout;Lcom/iMe/navigation/wallet/coordinator/args/TokenBuyCoordinatorArgs;Z)V
 
@@ -103,35 +103,37 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 34
-    sget-object v0, Lcom/iMe/manager/common/FeatureAvailableManager$Token;->INSTANCE:Lcom/iMe/manager/common/FeatureAvailableManager$Token;
+    .line 40
+    invoke-virtual {p2}, Lcom/iMe/navigation/wallet/coordinator/args/TokenBuyCoordinatorArgs;->getToken()Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
 
-    invoke-virtual {p2}, Lcom/iMe/navigation/wallet/coordinator/args/TokenBuyCoordinatorArgs;->getTokenCode()Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
-
-    move-result-object v1
-
-    iget-object v2, p0, Lcom/iMe/navigation/wallet/coordinator/TokenBuyCoordinator;->cryptoPreferenceHelper:Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
-
-    invoke-interface {v2}, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;->getNetworkType()Lcom/iMe/storage/domain/model/crypto/NetworkType;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v1, v2}, Lcom/iMe/manager/common/FeatureAvailableManager$Token;->isPurchaseAvailable(Lcom/iMe/storage/domain/model/wallet/token/TokenCode;Lcom/iMe/storage/domain/model/crypto/NetworkType;)Z
-
-    move-result v0
+    move-result-object v0
 
     const-string v1, "actionBarLayout.lastFragment"
 
     if-eqz v0, :cond_0
 
-    .line 35
+    sget-object v0, Lcom/iMe/manager/common/FeatureAvailableManager$Token;->INSTANCE:Lcom/iMe/manager/common/FeatureAvailableManager$Token;
+
+    iget-object v2, p0, Lcom/iMe/navigation/wallet/coordinator/TokenBuyCoordinator;->cryptoPreferenceHelper:Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
+
+    invoke-interface {v2}, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;->getNetworkId()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v2}, Lcom/iMe/manager/common/FeatureAvailableManager$Token;->isPurchaseAvailable(Ljava/lang/String;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    .line 41
     invoke-interface {p1}, Lorg/telegram/ui/ActionBar/INavigationLayout;->getLastFragment()Lorg/telegram/ui/ActionBar/BaseFragment;
 
     move-result-object v0
 
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 36
+    .line 42
     iget-object v1, p0, Lcom/iMe/navigation/wallet/coordinator/TokenBuyCoordinator;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     sget v2, Lorg/telegram/messenger/R$string;->wallet_common_error_not_enough_money_title:I
@@ -140,7 +142,7 @@
 
     move-result-object v1
 
-    .line 37
+    .line 43
     iget-object v2, p0, Lcom/iMe/navigation/wallet/coordinator/TokenBuyCoordinator;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     sget v3, Lorg/telegram/messenger/R$string;->wallet_common_error_not_enough_money_description:I
@@ -149,7 +151,7 @@
 
     move-result-object v2
 
-    .line 38
+    .line 44
     iget-object v3, p0, Lcom/iMe/navigation/wallet/coordinator/TokenBuyCoordinator;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     sget v4, Lorg/telegram/messenger/R$string;->wallet_common_error_not_enough_money_btn_txt:I
@@ -158,7 +160,7 @@
 
     move-result-object v3
 
-    .line 35
+    .line 41
     new-instance v4, Lcom/iMe/navigation/wallet/coordinator/TokenBuyCoordinator$$ExternalSyntheticLambda0;
 
     invoke-direct {v4, p0, p1, p2}, Lcom/iMe/navigation/wallet/coordinator/TokenBuyCoordinator$$ExternalSyntheticLambda0;-><init>(Lcom/iMe/navigation/wallet/coordinator/TokenBuyCoordinator;Lorg/telegram/ui/ActionBar/INavigationLayout;Lcom/iMe/navigation/wallet/coordinator/args/TokenBuyCoordinatorArgs;)V
@@ -167,7 +169,7 @@
 
     goto :goto_0
 
-    .line 42
+    .line 48
     :cond_0
     invoke-interface {p1}, Lorg/telegram/ui/ActionBar/INavigationLayout;->getLastFragment()Lorg/telegram/ui/ActionBar/BaseFragment;
 
@@ -175,7 +177,7 @@
 
     invoke-static {v5, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 43
+    .line 49
     iget-object p1, p0, Lcom/iMe/navigation/wallet/coordinator/TokenBuyCoordinator;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     sget p2, Lorg/telegram/messenger/R$string;->wallet_common_error_not_enough_money_title:I
@@ -184,7 +186,7 @@
 
     move-result-object v6
 
-    .line 44
+    .line 50
     iget-object p1, p0, Lcom/iMe/navigation/wallet/coordinator/TokenBuyCoordinator;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     sget p2, Lorg/telegram/messenger/R$string;->wallet_common_error_not_enough_money_simple_description:I
@@ -193,7 +195,7 @@
 
     move-result-object v7
 
-    .line 45
+    .line 51
     iget-object p1, p0, Lcom/iMe/navigation/wallet/coordinator/TokenBuyCoordinator;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     sget p2, Lorg/telegram/messenger/R$string;->common_ok:I
@@ -208,7 +210,7 @@
 
     const/4 v11, 0x0
 
-    .line 42
+    .line 48
     invoke-static/range {v5 .. v11}, Lcom/iMe/utils/dialogs/DialogsFactoryKt;->showErrorAlert$default(Lorg/telegram/ui/ActionBar/BaseFragment;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Lcom/iMe/fork/utils/Callbacks$Callback;ILjava/lang/Object;)Landroid/app/Dialog;
 
     :goto_0
@@ -216,7 +218,7 @@
 .end method
 
 .method public final start(Lorg/telegram/ui/ActionBar/INavigationLayout;Lcom/iMe/navigation/wallet/coordinator/args/TokenBuyCoordinatorArgs;Z)V
-    .locals 8
+    .locals 5
 
     const-string v0, "actionBarLayout"
 
@@ -226,8 +228,8 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 22
-    invoke-virtual {p2}, Lcom/iMe/navigation/wallet/coordinator/args/TokenBuyCoordinatorArgs;->getNetworkType()Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    .line 23
+    invoke-virtual {p2}, Lcom/iMe/navigation/wallet/coordinator/args/TokenBuyCoordinatorArgs;->getNetworkId()Ljava/lang/String;
 
     move-result-object v0
 
@@ -235,93 +237,79 @@
 
     iget-object v0, p0, Lcom/iMe/navigation/wallet/coordinator/TokenBuyCoordinator;->cryptoPreferenceHelper:Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
 
-    invoke-interface {v0}, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;->getNetworkType()Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    invoke-interface {v0}, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;->getNetworkId()Ljava/lang/String;
 
     move-result-object v0
 
     .line 24
     :cond_0
+    invoke-virtual {p2}, Lcom/iMe/navigation/wallet/coordinator/args/TokenBuyCoordinatorArgs;->getToken()Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
+
+    move-result-object v1
+
+    if-eqz v1, :cond_2
+
     sget-object v1, Lcom/iMe/manager/common/FeatureAvailableManager$Token;->INSTANCE:Lcom/iMe/manager/common/FeatureAvailableManager$Token;
 
-    invoke-virtual {p2}, Lcom/iMe/navigation/wallet/coordinator/args/TokenBuyCoordinatorArgs;->getTokenCode()Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2, v0}, Lcom/iMe/manager/common/FeatureAvailableManager$Token;->isPurchaseViaSimplexAvailable(Lcom/iMe/storage/domain/model/wallet/token/TokenCode;Lcom/iMe/storage/domain/model/crypto/NetworkType;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_1
-
-    .line 25
-    sget-object v0, Lcom/iMe/ui/wallet/crypto/buy/BuyCryptoProductFragment;->Companion:Lcom/iMe/ui/wallet/crypto/buy/BuyCryptoProductFragment$Companion;
-
-    invoke-virtual {p2}, Lcom/iMe/navigation/wallet/coordinator/args/TokenBuyCoordinatorArgs;->getTokenCode()Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
-
-    move-result-object p2
-
-    invoke-virtual {v0, p2}, Lcom/iMe/ui/wallet/crypto/buy/BuyCryptoProductFragment$Companion;->newInstance(Lcom/iMe/storage/domain/model/wallet/token/TokenCode;)Lcom/iMe/ui/wallet/crypto/buy/BuyCryptoProductFragment;
-
-    move-result-object p2
-
-    goto :goto_0
-
-    .line 26
-    :cond_1
-    invoke-virtual {p2}, Lcom/iMe/navigation/wallet/coordinator/args/TokenBuyCoordinatorArgs;->getTokenCode()Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2, v0}, Lcom/iMe/manager/common/FeatureAvailableManager$Token;->isPurchaseViaSwapAvailable(Lcom/iMe/storage/domain/model/wallet/token/TokenCode;Lcom/iMe/storage/domain/model/crypto/NetworkType;)Z
+    invoke-virtual {v1, v0}, Lcom/iMe/manager/common/FeatureAvailableManager$Token;->isPurchaseAvailable(Ljava/lang/String;)Z
 
     move-result v0
 
     if-eqz v0, :cond_2
 
+    .line 25
+    sget-object v0, Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessFragment;->Companion:Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessFragment$Companion;
+
+    .line 26
+    new-instance v1, Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessFragment$ScreenType$Crypto;
+
     .line 27
-    new-instance v0, Lorg/telegram/ui/ActionIntroActivity;
-
-    const/16 v2, 0x67
-
-    invoke-virtual {p2}, Lcom/iMe/navigation/wallet/coordinator/args/TokenBuyCoordinatorArgs;->getTokenCode()Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
-
-    move-result-object v3
-
     invoke-virtual {p2}, Lcom/iMe/navigation/wallet/coordinator/args/TokenBuyCoordinatorArgs;->getSwapProtocol()Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocol;
+
+    move-result-object v2
+
+    if-nez v2, :cond_1
+
+    sget-object v2, Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocol;->ONEINCH:Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocol;
+
+    :cond_1
+    const/4 v3, 0x0
+
+    .line 29
+    invoke-virtual {p2}, Lcom/iMe/navigation/wallet/coordinator/args/TokenBuyCoordinatorArgs;->getToken()Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
 
     move-result-object v4
 
-    invoke-virtual {p2}, Lcom/iMe/navigation/wallet/coordinator/args/TokenBuyCoordinatorArgs;->getNetworkType()Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    .line 30
+    invoke-virtual {p2}, Lcom/iMe/navigation/wallet/coordinator/args/TokenBuyCoordinatorArgs;->getNetworkId()Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object p2
 
-    const/4 v6, 0x0
+    .line 26
+    invoke-direct {v1, v2, v3, v4, p2}, Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessFragment$ScreenType$Crypto;-><init>(Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocol;Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;Ljava/lang/String;)V
 
-    const/4 v7, 0x0
+    .line 25
+    invoke-virtual {v0, v1}, Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessFragment$Companion;->newInstance(Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessFragment$ScreenType;)Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessFragment;
 
-    move-object v1, v0
+    move-result-object p2
 
-    invoke-direct/range {v1 .. v7}, Lorg/telegram/ui/ActionIntroActivity;-><init>(ILcom/iMe/storage/domain/model/wallet/token/TokenCode;Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocol;Lcom/iMe/storage/domain/model/crypto/NetworkType;Lcom/iMe/model/wallet/home/BannerSlide;Lcom/iMe/fork/enums/LockedSection;)V
-
-    move-object p2, v0
+    .line 33
+    invoke-interface {p1, p2, p3}, Lorg/telegram/ui/ActionBar/INavigationLayout;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;Z)Z
 
     goto :goto_0
 
-    .line 28
+    .line 35
     :cond_2
-    sget-object v0, Lcom/iMe/ui/wallet/crypto/buy/BuyCryptoProductFragment;->Companion:Lcom/iMe/ui/wallet/crypto/buy/BuyCryptoProductFragment$Companion;
+    iget-object p1, p0, Lcom/iMe/navigation/wallet/coordinator/TokenBuyCoordinator;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
-    invoke-virtual {p2}, Lcom/iMe/navigation/wallet/coordinator/args/TokenBuyCoordinatorArgs;->getTokenCode()Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
+    sget p2, Lorg/telegram/messenger/R$string;->common_unexpected_error_title:I
 
-    move-result-object p2
+    invoke-interface {p1, p2}, Lcom/iMe/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
 
-    invoke-virtual {v0, p2}, Lcom/iMe/ui/wallet/crypto/buy/BuyCryptoProductFragment$Companion;->newInstance(Lcom/iMe/storage/domain/model/wallet/token/TokenCode;)Lcom/iMe/ui/wallet/crypto/buy/BuyCryptoProductFragment;
+    move-result-object p1
 
-    move-result-object p2
+    invoke-static {p1}, Lcom/iMe/utils/extentions/common/ContextExtKt;->toast(Ljava/lang/CharSequence;)V
 
-    .line 30
     :goto_0
-    invoke-interface {p1, p2, p3}, Lorg/telegram/ui/ActionBar/INavigationLayout;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;Z)Z
-
     return-void
 .end method

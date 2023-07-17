@@ -2076,7 +2076,7 @@
 
     invoke-direct {v15}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v10, "recived push notification chatId "
+    const-string/jumbo v10, "recived push notification chatId "
 
     invoke-virtual {v15, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -2123,7 +2123,7 @@
 
     :cond_19
     :try_start_1e
-    const-string v10, "schedule"
+    const-string/jumbo v10, "schedule"
 
     .line 312
     invoke-virtual {v11, v10}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
@@ -2135,7 +2135,7 @@
     if-eqz v10, :cond_1a
 
     :try_start_1f
-    const-string v10, "schedule"
+    const-string/jumbo v10, "schedule"
 
     .line 313
     invoke-virtual {v11, v10}, Lorg/json/JSONObject;->getInt(Ljava/lang/String;)I
@@ -2628,7 +2628,7 @@
     const/4 v3, 0x0
 
     :goto_13
-    const-string v7, "random_id"
+    const-string/jumbo v7, "random_id"
 
     .line 389
     invoke-virtual {v11, v7}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
@@ -2637,7 +2637,7 @@
 
     if-eqz v7, :cond_25
 
-    const-string v7, "random_id"
+    const-string/jumbo v7, "random_id"
 
     .line 390
     invoke-virtual {v11, v7}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
@@ -10352,8 +10352,6 @@
 
     :goto_42
     return-void
-
-    nop
 
     :sswitch_data_0
     .sparse-switch

@@ -8,15 +8,11 @@ import androidx.appcompat.widget.AppCompatTextView;
 import androidx.core.p010os.BundleKt;
 import com.iMe.fork.utils.Callbacks$Callback;
 import com.iMe.model.wallet.notification.NotificationItem;
-import com.iMe.model.wallet.transfer.TransferScreenArgs;
 import com.iMe.p031ui.base.mvp.MvpBottomSheet;
-import com.iMe.storage.domain.model.crypto.NetworkType;
-import com.iMe.storage.domain.model.wallet.token.TokenCode;
 import com.iMe.storage.domain.utils.system.ResourceManager;
 import com.iMe.utils.extentions.common.ContextExtKt;
 import com.iMe.utils.extentions.common.ViewExtKt;
 import com.iMe.utils.extentions.delegate.ResettableLazy;
-import com.iMe.utils.helper.wallet.WalletHelper;
 import kotlin.Lazy;
 import kotlin.TuplesKt;
 import kotlin.Unit;
@@ -27,13 +23,12 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.PropertyReference1Impl;
 import kotlin.jvm.internal.Reflection;
 import kotlin.reflect.KProperty;
-import org.telegram.messenger.C3295R;
+import org.telegram.messenger.C3417R;
 import org.telegram.messenger.databinding.ForkContentWalletNotificationDetailsLayoutBinding;
-import org.telegram.p044ui.ActionBar.AlertDialog;
-import org.telegram.p044ui.ActionBar.BaseFragment;
-import org.telegram.p044ui.ActionBar.Theme;
-import org.telegram.p044ui.ManageLinksActivity;
-import org.telegram.p044ui.ProfileActivity;
+import org.telegram.p043ui.ActionBar.AlertDialog;
+import org.telegram.p043ui.ActionBar.BaseFragment;
+import org.telegram.p043ui.ActionBar.Theme;
+import org.telegram.p043ui.ProfileActivity;
 /* compiled from: WalletNotificationDetailsBottomSheetDialog.kt */
 /* renamed from: com.iMe.ui.wallet.notifications.details.WalletNotificationDetailsBottomSheetDialog */
 /* loaded from: classes4.dex */
@@ -45,7 +40,7 @@ public final class WalletNotificationDetailsBottomSheetDialog extends MvpBottomS
     private final NotificationItem item;
     private final Lazy resourceManager$delegate;
 
-    @Override // org.telegram.p044ui.ActionBar.BottomSheet
+    @Override // org.telegram.p043ui.ActionBar.BottomSheet
     protected boolean canDismissWithSwipe() {
         return false;
     }
@@ -55,7 +50,7 @@ public final class WalletNotificationDetailsBottomSheetDialog extends MvpBottomS
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
-    public WalletNotificationDetailsBottomSheetDialog(org.telegram.p044ui.ActionBar.BaseFragment r5, com.iMe.model.wallet.notification.NotificationItem r6) {
+    public WalletNotificationDetailsBottomSheetDialog(org.telegram.p043ui.ActionBar.BaseFragment r5, com.iMe.model.wallet.notification.NotificationItem r6) {
         /*
             r4 = this;
             java.lang.String r0 = "fragment"
@@ -86,7 +81,7 @@ public final class WalletNotificationDetailsBottomSheetDialog extends MvpBottomS
             r2.append(r3)
             java.lang.String r2 = r2.toString()
             r6.<init>(r0, r2, r5)
-            org.koin.mp.KoinPlatformTools r5 = org.koin.p043mp.KoinPlatformTools.INSTANCE
+            org.koin.mp.KoinPlatformTools r5 = org.koin.p042mp.KoinPlatformTools.INSTANCE
             kotlin.LazyThreadSafetyMode r5 = r5.defaultLazyMode()
             com.iMe.ui.wallet.notifications.details.WalletNotificationDetailsBottomSheetDialog$special$$inlined$inject$default$1 r6 = new com.iMe.ui.wallet.notifications.details.WalletNotificationDetailsBottomSheetDialog$special$$inlined$inject$default$1
             r0 = 0
@@ -136,30 +131,6 @@ public final class WalletNotificationDetailsBottomSheetDialog extends MvpBottomS
         ContextExtKt.copyToClipboard$default(data, null, 2, null);
     }
 
-    @Override // com.iMe.manager.wallet.WalletLinkClickableView
-    public void actionMakeTransfer(final TokenCode code, String userId, boolean z, final String address, final NetworkType networkType) {
-        Intrinsics.checkNotNullParameter(code, "code");
-        Intrinsics.checkNotNullParameter(userId, "userId");
-        Intrinsics.checkNotNullParameter(address, "address");
-        Intrinsics.checkNotNullParameter(networkType, "networkType");
-        WalletHelper.runWithCheckIsCryptoWalletCreated(this.fragment, null, networkType.getBlockchainType(), new Callbacks$Callback() { // from class: com.iMe.ui.wallet.notifications.details.WalletNotificationDetailsBottomSheetDialog$$ExternalSyntheticLambda1
-            @Override // com.iMe.fork.utils.Callbacks$Callback
-            public final void invoke() {
-                WalletNotificationDetailsBottomSheetDialog.actionMakeTransfer$lambda$1(WalletNotificationDetailsBottomSheetDialog.this, code, address, networkType);
-            }
-        });
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void actionMakeTransfer$lambda$1(WalletNotificationDetailsBottomSheetDialog this$0, TokenCode code, String address, NetworkType networkType) {
-        Intrinsics.checkNotNullParameter(this$0, "this$0");
-        Intrinsics.checkNotNullParameter(code, "$code");
-        Intrinsics.checkNotNullParameter(address, "$address");
-        Intrinsics.checkNotNullParameter(networkType, "$networkType");
-        this$0.fragment.presentFragment(ManageLinksActivity.newInstanceForWalletTransfer(new TransferScreenArgs(code, address, null, null, networkType, 12, null)));
-        this$0.dismiss();
-    }
-
     @Override // com.iMe.p031ui.wallet.notifications.details.WalletNotificationDetailsView
     public void setupScreenWithData(String date, String category) {
         Intrinsics.checkNotNullParameter(date, "date");
@@ -178,7 +149,7 @@ public final class WalletNotificationDetailsBottomSheetDialog extends MvpBottomS
         setupMessageClickableLink$lambda$4.setText(message);
         if (clickableText.length() > 0) {
             Intrinsics.checkNotNullExpressionValue(setupMessageClickableLink$lambda$4, "setupMessageClickableLink$lambda$4");
-            ViewExtKt.setSubstringClickListener(setupMessageClickableLink$lambda$4, clickableText, new Callbacks$Callback() { // from class: com.iMe.ui.wallet.notifications.details.WalletNotificationDetailsBottomSheetDialog$$ExternalSyntheticLambda2
+            ViewExtKt.setSubstringClickListener(setupMessageClickableLink$lambda$4, clickableText, new Callbacks$Callback() { // from class: com.iMe.ui.wallet.notifications.details.WalletNotificationDetailsBottomSheetDialog$$ExternalSyntheticLambda1
                 @Override // com.iMe.fork.utils.Callbacks$Callback
                 public final void invoke() {
                     WalletNotificationDetailsBottomSheetDialog.setupMessageClickableLink$lambda$4$lambda$3(Function0.this);
@@ -232,7 +203,7 @@ public final class WalletNotificationDetailsBottomSheetDialog extends MvpBottomS
     }
 
     private final void setupTexts() {
-        getBinding().textActionCancel.setText(getResourceManager().getString(C3295R.string.common_ok));
+        getBinding().textActionCancel.setText(getResourceManager().getString(C3417R.string.common_ok));
     }
 
     private final void setupListeners() {

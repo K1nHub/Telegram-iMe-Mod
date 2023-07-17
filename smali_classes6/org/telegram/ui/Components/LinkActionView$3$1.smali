@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/LinkActionView$3;)V
     .locals 0
 
-    .line 576
+    .line 578
     iput-object p1, p0, Lorg/telegram/ui/Components/LinkActionView$3$1;->this$1:Lorg/telegram/ui/Components/LinkActionView$3;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,7 +35,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 579
+    .line 581
     iget-object p1, p0, Lorg/telegram/ui/Components/LinkActionView$3$1;->this$1:Lorg/telegram/ui/Components/LinkActionView$3;
 
     iget-object p1, p1, Lorg/telegram/ui/Components/LinkActionView$3;->val$dimView:Landroid/view/View;
@@ -46,7 +46,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 580
+    .line 582
     iget-object p1, p0, Lorg/telegram/ui/Components/LinkActionView$3$1;->this$1:Lorg/telegram/ui/Components/LinkActionView$3;
 
     iget-object v0, p1, Lorg/telegram/ui/Components/LinkActionView$3;->val$finalContainer:Landroid/widget/FrameLayout;
@@ -55,7 +55,7 @@
 
     invoke-virtual {v0, p1}, Landroid/widget/FrameLayout;->removeView(Landroid/view/View;)V
 
-    .line 582
+    .line 584
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/Components/LinkActionView$3$1;->this$1:Lorg/telegram/ui/Components/LinkActionView$3;
 

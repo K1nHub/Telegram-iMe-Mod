@@ -23,27 +23,27 @@
 
 
 # instance fields
-.field public final forcedNetworkType:Lcom/iMe/storage/domain/model/crypto/NetworkType;
+.field public final forcedNetworkId:Ljava/lang/String;
 
 .field public final item:Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocolInfo;
 
 
 # direct methods
-.method constructor <init>(Lcom/iMe/ui/wallet/swap/WalletSwapProtocolsView$$State;Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocolInfo;Lcom/iMe/storage/domain/model/crypto/NetworkType;)V
+.method constructor <init>(Lcom/iMe/ui/wallet/swap/WalletSwapProtocolsView$$State;Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocolInfo;Ljava/lang/String;)V
     .locals 1
 
-    .line 208
+    .line 223
     const-class p1, Lmoxy/viewstate/strategy/OneExecutionStateStrategy;
 
     const-string v0, "openSwapScreen"
 
     invoke-direct {p0, v0, p1}, Lmoxy/viewstate/ViewCommand;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
-    .line 210
+    .line 225
     iput-object p2, p0, Lcom/iMe/ui/wallet/swap/WalletSwapProtocolsView$$State$OpenSwapScreenCommand;->item:Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocolInfo;
 
-    .line 211
-    iput-object p3, p0, Lcom/iMe/ui/wallet/swap/WalletSwapProtocolsView$$State$OpenSwapScreenCommand;->forcedNetworkType:Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    .line 226
+    iput-object p3, p0, Lcom/iMe/ui/wallet/swap/WalletSwapProtocolsView$$State$OpenSwapScreenCommand;->forcedNetworkId:Ljava/lang/String;
 
     return-void
 .end method
@@ -53,12 +53,12 @@
 .method public apply(Lcom/iMe/ui/wallet/swap/WalletSwapProtocolsView;)V
     .locals 2
 
-    .line 216
+    .line 231
     iget-object v0, p0, Lcom/iMe/ui/wallet/swap/WalletSwapProtocolsView$$State$OpenSwapScreenCommand;->item:Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocolInfo;
 
-    iget-object v1, p0, Lcom/iMe/ui/wallet/swap/WalletSwapProtocolsView$$State$OpenSwapScreenCommand;->forcedNetworkType:Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    iget-object v1, p0, Lcom/iMe/ui/wallet/swap/WalletSwapProtocolsView$$State$OpenSwapScreenCommand;->forcedNetworkId:Ljava/lang/String;
 
-    invoke-interface {p1, v0, v1}, Lcom/iMe/ui/wallet/swap/WalletSwapProtocolsView;->openSwapScreen(Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocolInfo;Lcom/iMe/storage/domain/model/crypto/NetworkType;)V
+    invoke-interface {p1, v0, v1}, Lcom/iMe/ui/wallet/swap/WalletSwapProtocolsView;->openSwapScreen(Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocolInfo;Ljava/lang/String;)V
 
     return-void
 .end method
@@ -66,7 +66,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 202
+    .line 217
     check-cast p1, Lcom/iMe/ui/wallet/swap/WalletSwapProtocolsView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/wallet/swap/WalletSwapProtocolsView$$State$OpenSwapScreenCommand;->apply(Lcom/iMe/ui/wallet/swap/WalletSwapProtocolsView;)V

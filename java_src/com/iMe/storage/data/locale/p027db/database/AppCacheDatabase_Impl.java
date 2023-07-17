@@ -11,6 +11,7 @@ import androidx.room.util.TableInfo;
 import androidx.sqlite.p011db.SupportSQLiteDatabase;
 import androidx.sqlite.p011db.SupportSQLiteOpenHelper;
 import com.google.android.exoplayer2.text.ttml.TtmlNode;
+import com.google.android.gms.measurement.api.AppMeasurementSdk;
 import com.iMe.storage.data.locale.p027db.dao.minor.catalog.CatalogCategoryDao;
 import com.iMe.storage.data.locale.p027db.dao.minor.catalog.CatalogCategoryDao_Impl;
 import com.iMe.storage.data.locale.p027db.dao.minor.catalog.CatalogLanguageDao;
@@ -19,8 +20,8 @@ import com.iMe.storage.data.locale.p027db.dao.minor.cloud.AlbumsDao;
 import com.iMe.storage.data.locale.p027db.dao.minor.cloud.AlbumsDao_Impl;
 import com.iMe.storage.data.locale.p027db.dao.minor.social.SocialNetworkDao;
 import com.iMe.storage.data.locale.p027db.dao.minor.social.SocialNetworkDao_Impl;
-import com.iMe.storage.data.locale.p027db.dao.minor.wallet.WalletTokenBalanceDao;
-import com.iMe.storage.data.locale.p027db.dao.minor.wallet.WalletTokenBalanceDao_Impl;
+import com.iMe.storage.data.locale.p027db.dao.minor.wallet.WalletTokensBalancesDao;
+import com.iMe.storage.data.locale.p027db.dao.minor.wallet.WalletTokensBalancesDao_Impl;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -34,11 +35,11 @@ public final class AppCacheDatabase_Impl extends AppCacheDatabase {
     private volatile CatalogCategoryDao _catalogCategoryDao;
     private volatile CatalogLanguageDao _catalogLanguageDao;
     private volatile SocialNetworkDao _socialNetworkDao;
-    private volatile WalletTokenBalanceDao _walletTokenBalanceDao;
+    private volatile WalletTokensBalancesDao _walletTokensBalancesDao;
 
     @Override // androidx.room.RoomDatabase
     protected SupportSQLiteOpenHelper createOpenHelper(DatabaseConfiguration configuration) {
-        return configuration.sqliteOpenHelperFactory.create(SupportSQLiteOpenHelper.Configuration.builder(configuration.context).name(configuration.name).callback(new RoomOpenHelper(configuration, new RoomOpenHelper.Delegate(10) { // from class: com.iMe.storage.data.locale.db.database.AppCacheDatabase_Impl.1
+        return configuration.sqliteOpenHelperFactory.create(SupportSQLiteOpenHelper.Configuration.builder(configuration.context).name(configuration.name).callback(new RoomOpenHelper(configuration, new RoomOpenHelper.Delegate(11) { // from class: com.iMe.storage.data.locale.db.database.AppCacheDatabase_Impl.1
             @Override // androidx.room.RoomOpenHelper.Delegate
             public void onPostMigrate(SupportSQLiteDatabase _db) {
             }
@@ -48,10 +49,10 @@ public final class AppCacheDatabase_Impl extends AppCacheDatabase {
                 _db.execSQL("CREATE TABLE IF NOT EXISTS `CatalogCategoryDb` (`id` INTEGER NOT NULL, `title` TEXT NOT NULL, `total` INTEGER NOT NULL, PRIMARY KEY(`id`))");
                 _db.execSQL("CREATE TABLE IF NOT EXISTS `CatalogLanguageDb` (`id` INTEGER NOT NULL, `nativeTitle` TEXT NOT NULL, `title` TEXT NOT NULL, PRIMARY KEY(`id`))");
                 _db.execSQL("CREATE TABLE IF NOT EXISTS `CloudAlbumDb` (`userId` INTEGER NOT NULL, `albumId` INTEGER NOT NULL, PRIMARY KEY(`userId`, `albumId`))");
-                _db.execSQL("CREATE TABLE IF NOT EXISTS `WalletTokenBalanceDb` (`tgUserId` INTEGER NOT NULL, `coinCode` TEXT NOT NULL, `total` REAL NOT NULL, `totalInDollars` REAL NOT NULL, `rateToDollars` REAL NOT NULL, `ratePercentageChange24h` REAL NOT NULL, `networkType` TEXT NOT NULL, PRIMARY KEY(`tgUserId`, `coinCode`, `networkType`))");
+                _db.execSQL("CREATE TABLE IF NOT EXISTS `WalletTokenBalanceDb` (`tgUserId` INTEGER NOT NULL, `total` REAL NOT NULL, `totalInFiatValue` REAL NOT NULL, `totalInFiatSymbol` TEXT NOT NULL, `totalInFiatTicker` TEXT NOT NULL, `rateToFiatValue` REAL NOT NULL, `rateToFiatSymbol` TEXT NOT NULL, `rateToFiatTicker` TEXT NOT NULL, `ratePercentageChange24h` REAL NOT NULL, `address` TEXT NOT NULL, `networkId` TEXT NOT NULL, `avatarUrl` TEXT NOT NULL, `decimals` INTEGER NOT NULL, `ticker` TEXT NOT NULL, `isCoin` INTEGER NOT NULL, `name` TEXT NOT NULL, `website` TEXT NOT NULL, PRIMARY KEY(`tgUserId`, `ticker`, `networkId`))");
                 _db.execSQL("CREATE TABLE IF NOT EXISTS `social` (`profileId` INTEGER NOT NULL, `social` TEXT NOT NULL, `iconUrl` TEXT NOT NULL, `socialPosition` INTEGER NOT NULL, `socialElementId` TEXT NOT NULL, `socialElementAvatarUrl` TEXT NOT NULL, `socialUserName` TEXT NOT NULL, `socialWebUrl` TEXT NOT NULL, `isActive` INTEGER NOT NULL, `beforeConnectMessage` TEXT NOT NULL, PRIMARY KEY(`profileId`, `social`))");
                 _db.execSQL("CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)");
-                _db.execSQL("INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'ecaf2fd7b9ef0744a7de30d3137a52cb')");
+                _db.execSQL("INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '9018970c7b9d213d33ac9bd2b79bcb38')");
             }
 
             @Override // androidx.room.RoomOpenHelper.Delegate
@@ -124,14 +125,24 @@ public final class AppCacheDatabase_Impl extends AppCacheDatabase {
                 if (!tableInfo3.equals(read3)) {
                     return new RoomOpenHelper.ValidationResult(false, "CloudAlbumDb(com.iMe.storage.data.locale.db.model.cloud.CloudAlbumDb).\n Expected:\n" + tableInfo3 + "\n Found:\n" + read3);
                 }
-                HashMap hashMap4 = new HashMap(7);
+                HashMap hashMap4 = new HashMap(17);
                 hashMap4.put("tgUserId", new TableInfo.Column("tgUserId", "INTEGER", true, 1, null, 1));
-                hashMap4.put("coinCode", new TableInfo.Column("coinCode", "TEXT", true, 2, null, 1));
                 hashMap4.put("total", new TableInfo.Column("total", "REAL", true, 0, null, 1));
-                hashMap4.put("totalInDollars", new TableInfo.Column("totalInDollars", "REAL", true, 0, null, 1));
-                hashMap4.put("rateToDollars", new TableInfo.Column("rateToDollars", "REAL", true, 0, null, 1));
+                hashMap4.put("totalInFiatValue", new TableInfo.Column("totalInFiatValue", "REAL", true, 0, null, 1));
+                hashMap4.put("totalInFiatSymbol", new TableInfo.Column("totalInFiatSymbol", "TEXT", true, 0, null, 1));
+                hashMap4.put("totalInFiatTicker", new TableInfo.Column("totalInFiatTicker", "TEXT", true, 0, null, 1));
+                hashMap4.put("rateToFiatValue", new TableInfo.Column("rateToFiatValue", "REAL", true, 0, null, 1));
+                hashMap4.put("rateToFiatSymbol", new TableInfo.Column("rateToFiatSymbol", "TEXT", true, 0, null, 1));
+                hashMap4.put("rateToFiatTicker", new TableInfo.Column("rateToFiatTicker", "TEXT", true, 0, null, 1));
                 hashMap4.put("ratePercentageChange24h", new TableInfo.Column("ratePercentageChange24h", "REAL", true, 0, null, 1));
-                hashMap4.put("networkType", new TableInfo.Column("networkType", "TEXT", true, 3, null, 1));
+                hashMap4.put("address", new TableInfo.Column("address", "TEXT", true, 0, null, 1));
+                hashMap4.put("networkId", new TableInfo.Column("networkId", "TEXT", true, 3, null, 1));
+                hashMap4.put("avatarUrl", new TableInfo.Column("avatarUrl", "TEXT", true, 0, null, 1));
+                hashMap4.put("decimals", new TableInfo.Column("decimals", "INTEGER", true, 0, null, 1));
+                hashMap4.put("ticker", new TableInfo.Column("ticker", "TEXT", true, 2, null, 1));
+                hashMap4.put("isCoin", new TableInfo.Column("isCoin", "INTEGER", true, 0, null, 1));
+                hashMap4.put(AppMeasurementSdk.ConditionalUserProperty.NAME, new TableInfo.Column(AppMeasurementSdk.ConditionalUserProperty.NAME, "TEXT", true, 0, null, 1));
+                hashMap4.put("website", new TableInfo.Column("website", "TEXT", true, 0, null, 1));
                 TableInfo tableInfo4 = new TableInfo("WalletTokenBalanceDb", hashMap4, new HashSet(0), new HashSet(0));
                 TableInfo read4 = TableInfo.read(_db, "WalletTokenBalanceDb");
                 if (!tableInfo4.equals(read4)) {
@@ -155,7 +166,7 @@ public final class AppCacheDatabase_Impl extends AppCacheDatabase {
                 }
                 return new RoomOpenHelper.ValidationResult(true, null);
             }
-        }, "ecaf2fd7b9ef0744a7de30d3137a52cb", "a73aafb8d789016f1e2bc3b953587493")).build());
+        }, "9018970c7b9d213d33ac9bd2b79bcb38", "9186c31626db3f30a0e53d77316cf238")).build());
     }
 
     @Override // androidx.room.RoomDatabase
@@ -168,7 +179,7 @@ public final class AppCacheDatabase_Impl extends AppCacheDatabase {
         HashMap hashMap = new HashMap();
         hashMap.put(CatalogCategoryDao.class, CatalogCategoryDao_Impl.getRequiredConverters());
         hashMap.put(CatalogLanguageDao.class, CatalogLanguageDao_Impl.getRequiredConverters());
-        hashMap.put(WalletTokenBalanceDao.class, WalletTokenBalanceDao_Impl.getRequiredConverters());
+        hashMap.put(WalletTokensBalancesDao.class, WalletTokensBalancesDao_Impl.getRequiredConverters());
         hashMap.put(AlbumsDao.class, AlbumsDao_Impl.getRequiredConverters());
         hashMap.put(SocialNetworkDao.class, SocialNetworkDao_Impl.getRequiredConverters());
         return hashMap;
@@ -215,18 +226,18 @@ public final class AppCacheDatabase_Impl extends AppCacheDatabase {
     }
 
     @Override // com.iMe.storage.data.locale.p027db.database.AppCacheDatabase
-    public WalletTokenBalanceDao walletTokenBalanceDao() {
-        WalletTokenBalanceDao walletTokenBalanceDao;
-        if (this._walletTokenBalanceDao != null) {
-            return this._walletTokenBalanceDao;
+    public WalletTokensBalancesDao walletTokenBalanceDao() {
+        WalletTokensBalancesDao walletTokensBalancesDao;
+        if (this._walletTokensBalancesDao != null) {
+            return this._walletTokensBalancesDao;
         }
         synchronized (this) {
-            if (this._walletTokenBalanceDao == null) {
-                this._walletTokenBalanceDao = new WalletTokenBalanceDao_Impl(this);
+            if (this._walletTokensBalancesDao == null) {
+                this._walletTokensBalancesDao = new WalletTokensBalancesDao_Impl(this);
             }
-            walletTokenBalanceDao = this._walletTokenBalanceDao;
+            walletTokensBalancesDao = this._walletTokensBalancesDao;
         }
-        return walletTokenBalanceDao;
+        return walletTokensBalancesDao;
     }
 
     @Override // com.iMe.storage.data.locale.p027db.database.AppCacheDatabase

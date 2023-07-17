@@ -32,17 +32,17 @@
 .method constructor <init>(Lcom/iMe/feature/twitter/search/TwitterSearchView$$State;Lcom/iMe/model/twitter/TwitterUserItem;Ljava/lang/String;)V
     .locals 1
 
-    .line 380
+    .line 396
     const-class p1, Lmoxy/viewstate/strategy/AddToEndSingleStrategy;
 
     const-string v0, "onUserSelected"
 
     invoke-direct {p0, v0, p1}, Lmoxy/viewstate/ViewCommand;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
-    .line 382
+    .line 398
     iput-object p2, p0, Lcom/iMe/feature/twitter/search/TwitterSearchView$$State$OnUserSelectedCommand;->twitterUserItem:Lcom/iMe/model/twitter/TwitterUserItem;
 
-    .line 383
+    .line 399
     iput-object p3, p0, Lcom/iMe/feature/twitter/search/TwitterSearchView$$State$OnUserSelectedCommand;->address:Ljava/lang/String;
 
     return-void
@@ -53,7 +53,7 @@
 .method public apply(Lcom/iMe/feature/twitter/search/TwitterSearchView;)V
     .locals 2
 
-    .line 388
+    .line 404
     iget-object v0, p0, Lcom/iMe/feature/twitter/search/TwitterSearchView$$State$OnUserSelectedCommand;->twitterUserItem:Lcom/iMe/model/twitter/TwitterUserItem;
 
     iget-object v1, p0, Lcom/iMe/feature/twitter/search/TwitterSearchView$$State$OnUserSelectedCommand;->address:Ljava/lang/String;
@@ -66,7 +66,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 374
+    .line 390
     check-cast p1, Lcom/iMe/feature/twitter/search/TwitterSearchView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/feature/twitter/search/TwitterSearchView$$State$OnUserSelectedCommand;->apply(Lcom/iMe/feature/twitter/search/TwitterSearchView;)V

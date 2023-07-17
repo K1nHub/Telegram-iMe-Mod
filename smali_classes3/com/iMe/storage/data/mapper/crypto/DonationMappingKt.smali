@@ -18,15 +18,15 @@
 
     move-result-object v1
 
-    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/crypto/donations/DonationTransferMetadata;->getFeeTokenCode()Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
+    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/crypto/donations/DonationTransferMetadata;->getFeeToken()Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
 
     move-result-object v2
 
-    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/crypto/donations/DonationTransferMetadata;->getContractAddress()Ljava/lang/String;
+    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/crypto/donations/DonationTransferMetadata;->getToken()Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
 
     move-result-object p0
 
-    invoke-direct {v0, v1, v2, p0}, Lcom/iMe/storage/domain/model/crypto/send/CryptoTransferMetadata;-><init>(Lcom/iMe/storage/domain/model/crypto/TransactionParams;Lcom/iMe/storage/domain/model/wallet/token/TokenCode;Ljava/lang/String;)V
+    invoke-direct {v0, v1, v2, p0}, Lcom/iMe/storage/domain/model/crypto/send/CryptoTransferMetadata;-><init>(Lcom/iMe/storage/domain/model/crypto/TransactionParams;Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;)V
 
     return-object v0
 .end method
@@ -51,18 +51,20 @@
     move-result-object v1
 
     .line 11
-    sget-object v2, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;->Companion:Lcom/iMe/storage/domain/model/wallet/token/TokenCode$Companion;
+    invoke-virtual {p0}, Lcom/iMe/storage/data/network/model/response/crypto/donations/DataForDonationTransactionResponse;->getFeeToken()Lcom/iMe/storage/data/network/model/response/wallet/TokenDetailedResponse;
 
-    invoke-virtual {p0}, Lcom/iMe/storage/data/network/model/response/crypto/donations/DataForDonationTransactionResponse;->getFeeTokenCode()Ljava/lang/String;
+    move-result-object v2
 
-    move-result-object v3
-
-    invoke-virtual {v2, v3}, Lcom/iMe/storage/domain/model/wallet/token/TokenCode$Companion;->map(Ljava/lang/String;)Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
+    invoke-static {v2}, Lcom/iMe/storage/data/mapper/wallet/TokenMappingKt;->mapToDomain(Lcom/iMe/storage/data/network/model/response/wallet/TokenDetailedResponse;)Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
 
     move-result-object v2
 
     .line 12
-    invoke-virtual {p0}, Lcom/iMe/storage/data/network/model/response/crypto/donations/DataForDonationTransactionResponse;->getContractAddress()Ljava/lang/String;
+    invoke-virtual {p0}, Lcom/iMe/storage/data/network/model/response/crypto/donations/DataForDonationTransactionResponse;->getToken()Lcom/iMe/storage/data/network/model/response/wallet/TokenDetailedResponse;
+
+    move-result-object v3
+
+    invoke-static {v3}, Lcom/iMe/storage/data/mapper/wallet/TokenMappingKt;->mapToDomain(Lcom/iMe/storage/data/network/model/response/wallet/TokenDetailedResponse;)Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
 
     move-result-object v3
 
@@ -72,7 +74,7 @@
     move-result-object p0
 
     .line 9
-    invoke-direct {v0, v1, v2, v3, p0}, Lcom/iMe/storage/domain/model/crypto/donations/DonationTransferMetadata;-><init>(Lcom/iMe/storage/domain/model/crypto/TransactionParams$Ether;Lcom/iMe/storage/domain/model/wallet/token/TokenCode;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct {v0, v1, v2, v3, p0}, Lcom/iMe/storage/domain/model/crypto/donations/DonationTransferMetadata;-><init>(Lcom/iMe/storage/domain/model/crypto/TransactionParams$Ether;Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;Ljava/lang/String;)V
 
     return-object v0
 .end method

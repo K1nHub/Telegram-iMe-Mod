@@ -2,18 +2,24 @@ package com.iMe.navigation.wallet.coordinator;
 
 import com.iMe.fork.utils.Callbacks$Callback;
 import com.iMe.model.wallet.crypto.pin.EnterPinCodeScreenType;
-import com.iMe.p031ui.base.WalletAuthFragment;
+import com.iMe.p031ui.base.wallet_auth.WalletAuthBaseFragment;
 import com.iMe.p031ui.wallet.crypto.enter.pin.EnterWalletPinFragment;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.p044ui.ActionBar.BaseFragment;
-import org.telegram.p044ui.ActionBar.INavigationLayout;
+import org.telegram.p043ui.ActionBar.BaseFragment;
+import org.telegram.p043ui.ActionBar.INavigationLayout;
 /* compiled from: PinCodeCoordinator.kt */
 /* loaded from: classes3.dex */
 public final class PinCodeCoordinator {
+    public final void start(INavigationLayout actionBarLayout, WalletAuthBaseFragment nextFragment) {
+        Intrinsics.checkNotNullParameter(actionBarLayout, "actionBarLayout");
+        Intrinsics.checkNotNullParameter(nextFragment, "nextFragment");
+        start$default(this, actionBarLayout, nextFragment, null, false, 12, null);
+    }
+
     public static /* synthetic */ void lock$default(PinCodeCoordinator pinCodeCoordinator, INavigationLayout iNavigationLayout, EnterPinCodeScreenType enterPinCodeScreenType, int i, Object obj) {
         if ((i & 2) != 0) {
             enterPinCodeScreenType = EnterPinCodeScreenType.TOTAL_LOCK;
@@ -21,17 +27,17 @@ public final class PinCodeCoordinator {
         pinCodeCoordinator.lock(iNavigationLayout, enterPinCodeScreenType);
     }
 
-    public static /* synthetic */ void start$default(PinCodeCoordinator pinCodeCoordinator, INavigationLayout iNavigationLayout, WalletAuthFragment walletAuthFragment, Args args, boolean z, int i, Object obj) {
+    public static /* synthetic */ void start$default(PinCodeCoordinator pinCodeCoordinator, INavigationLayout iNavigationLayout, WalletAuthBaseFragment walletAuthBaseFragment, Args args, boolean z, int i, Object obj) {
         if ((i & 4) != 0) {
             args = new Args(EnterPinCodeScreenType.CHECK);
         }
         if ((i & 8) != 0) {
             z = false;
         }
-        pinCodeCoordinator.start(iNavigationLayout, walletAuthFragment, args, z);
+        pinCodeCoordinator.start(iNavigationLayout, walletAuthBaseFragment, args, z);
     }
 
-    public final void start(INavigationLayout actionBarLayout, WalletAuthFragment nextFragment, Args args, boolean z) {
+    public final void start(INavigationLayout actionBarLayout, WalletAuthBaseFragment nextFragment, Args args, boolean z) {
         Intrinsics.checkNotNullParameter(actionBarLayout, "actionBarLayout");
         Intrinsics.checkNotNullParameter(nextFragment, "nextFragment");
         Intrinsics.checkNotNullParameter(args, "args");

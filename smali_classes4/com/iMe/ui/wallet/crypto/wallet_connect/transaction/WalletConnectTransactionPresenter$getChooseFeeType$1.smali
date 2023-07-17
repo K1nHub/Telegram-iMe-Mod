@@ -35,9 +35,9 @@
 
     const/4 v1, 0x1
 
-    const-string v4, "selectFee"
+    const-string/jumbo v4, "selectFee"
 
-    const-string v5, "selectFee(Lcom/iMe/model/wallet/crypto/send/fee/GasPriceItem;)V"
+    const-string/jumbo v5, "selectFee(Lcom/iMe/model/wallet/crypto/send/fee/GasPriceItem;)V"
 
     const/4 v6, 0x0
 
@@ -55,7 +55,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 149
+    .line 152
     check-cast p1, Lcom/iMe/model/wallet/crypto/send/fee/GasPriceItem;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/wallet/crypto/wallet_connect/transaction/WalletConnectTransactionPresenter$getChooseFeeType$1;->invoke(Lcom/iMe/model/wallet/crypto/send/fee/GasPriceItem;)V
@@ -72,7 +72,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 149
+    .line 152
     iget-object v0, p0, Lkotlin/jvm/internal/CallableReference;->receiver:Ljava/lang/Object;
 
     check-cast v0, Lcom/iMe/ui/wallet/crypto/wallet_connect/transaction/WalletConnectTransactionPresenter;

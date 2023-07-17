@@ -15,12 +15,12 @@ public final class CollectionsKt extends CollectionsKt___CollectionsKt {
         return CollectionsKt__IterablesKt.collectionSizeOrDefault(iterable, i);
     }
 
-    public static /* bridge */ /* synthetic */ <T> List<T> distinct(Iterable<? extends T> iterable) {
-        return CollectionsKt___CollectionsKt.distinct(iterable);
-    }
-
     public static /* bridge */ /* synthetic */ <T> List<T> emptyList() {
         return CollectionsKt__CollectionsKt.emptyList();
+    }
+
+    public static /* bridge */ /* synthetic */ <T> T first(Iterable<? extends T> iterable) {
+        return (T) CollectionsKt___CollectionsKt.first(iterable);
     }
 
     public static /* bridge */ /* synthetic */ <T> T first(List<? extends T> list) {
@@ -49,20 +49,16 @@ public final class CollectionsKt extends CollectionsKt___CollectionsKt {
         return joinTo;
     }
 
-    public static /* bridge */ /* synthetic */ <T> T last(Iterable<? extends T> iterable) {
-        return (T) CollectionsKt___CollectionsKt.last(iterable);
+    public static /* bridge */ /* synthetic */ <T> T last(List<? extends T> list) {
+        return (T) CollectionsKt___CollectionsKt.last(list);
     }
 
-    public static /* bridge */ /* synthetic */ <T> T last(List<? extends T> list) {
-        return (T) CollectionsKt___CollectionsKt.last((List<? extends Object>) list);
+    public static /* bridge */ /* synthetic */ <T> T lastOrNull(Iterable<? extends T> iterable) {
+        return (T) CollectionsKt___CollectionsKt.lastOrNull(iterable);
     }
 
     public static /* bridge */ /* synthetic */ <T> T lastOrNull(List<? extends T> list) {
-        return (T) CollectionsKt___CollectionsKt.lastOrNull(list);
-    }
-
-    public static /* bridge */ /* synthetic */ <T> List<T> listOf(T t) {
-        return CollectionsKt__CollectionsJVMKt.listOf(t);
+        return (T) CollectionsKt___CollectionsKt.lastOrNull((List<? extends Object>) list);
     }
 
     public static /* bridge */ /* synthetic */ <T> List<T> listOf(T... tArr) {
@@ -75,14 +71,6 @@ public final class CollectionsKt extends CollectionsKt___CollectionsKt {
 
     public static /* bridge */ /* synthetic */ <T extends Comparable<? super T>> T minOrNull(Iterable<? extends T> iterable) {
         return (T) CollectionsKt___CollectionsKt.minOrNull(iterable);
-    }
-
-    public static /* bridge */ /* synthetic */ <T> List<T> plus(Collection<? extends T> collection, Iterable<? extends T> iterable) {
-        return CollectionsKt___CollectionsKt.plus((Collection) collection, (Iterable) iterable);
-    }
-
-    public static /* bridge */ /* synthetic */ <T> List<T> plus(Collection<? extends T> collection, T t) {
-        return CollectionsKt___CollectionsKt.plus(collection, t);
     }
 
     public static /* bridge */ /* synthetic */ <T> T random(Collection<? extends T> collection, Random random) {

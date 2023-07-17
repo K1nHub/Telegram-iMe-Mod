@@ -17,22 +17,22 @@ import kotlin.collections.CollectionsKt__IterablesKt;
 import kotlin.collections.CollectionsKt___CollectionsKt;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3295R;
+import org.telegram.messenger.C3417R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.UserConfig;
-import org.telegram.p044ui.ActionBar.BottomSheet;
-import org.telegram.p044ui.ActionBar.Theme;
-import org.telegram.p044ui.Cells.TextCheckBoxCell;
-import org.telegram.p044ui.Components.LayoutHelper;
+import org.telegram.p043ui.ActionBar.BottomSheet;
+import org.telegram.p043ui.ActionBar.Theme;
+import org.telegram.p043ui.Cells.TextCheckBoxCell;
+import org.telegram.p043ui.Components.LayoutHelper;
 /* compiled from: DrawerItemsSettingsBottomSheet.kt */
 /* renamed from: com.iMe.fork.ui.dialog.DrawerItemsSettingsBottomSheet */
 /* loaded from: classes3.dex */
 public final class DrawerItemsSettingsBottomSheet extends BottomSheet {
     private final Lazy rootView$delegate;
 
-    @Override // org.telegram.p044ui.ActionBar.BottomSheet
+    @Override // org.telegram.p043ui.ActionBar.BottomSheet
     protected boolean canDismissWithSwipe() {
         return false;
     }
@@ -56,7 +56,7 @@ public final class DrawerItemsSettingsBottomSheet extends BottomSheet {
     public final FrameLayout initRootView() {
         int collectionSizeOrDefault;
         FrameLayout frameLayout = new FrameLayout(getContext());
-        setTitle(LocaleController.getInternalString(C3295R.string.settings_interface_drawer_items), true);
+        setTitle(LocaleController.getInternalString(C3417R.string.settings_interface_drawer_items), true);
         ScrollView scrollView = new ScrollView(frameLayout.getContext());
         LinearLayout linearLayout = new LinearLayout(frameLayout.getContext());
         linearLayout.setOrientation(1);
@@ -84,7 +84,7 @@ public final class DrawerItemsSettingsBottomSheet extends BottomSheet {
         frameLayout.addView(view, LayoutHelper.createFrame(-1, 1, 80, 0, 0, 0, 52));
         TextView textView = new TextView(frameLayout.getContext());
         textView.setGravity(17);
-        String string = LocaleController.getString("Cancel", C3295R.string.Cancel);
+        String string = LocaleController.getString("Cancel", C3417R.string.Cancel);
         Intrinsics.checkNotNullExpressionValue(string, "getString(\"Cancel\", R.string.Cancel)");
         Locale locale = Locale.ROOT;
         String upperCase = string.toUpperCase(locale);
@@ -103,7 +103,7 @@ public final class DrawerItemsSettingsBottomSheet extends BottomSheet {
         });
         TextView textView2 = new TextView(frameLayout.getContext());
         textView2.setGravity(17);
-        String string2 = LocaleController.getString("Save", C3295R.string.Save);
+        String string2 = LocaleController.getString("Save", C3417R.string.Save);
         Intrinsics.checkNotNullExpressionValue(string2, "getString(\"Save\", R.string.Save)");
         String upperCase2 = string2.toUpperCase(locale);
         Intrinsics.checkNotNullExpressionValue(upperCase2, "this as java.lang.String).toUpperCase(Locale.ROOT)");

@@ -24,11 +24,11 @@ public final class WalletLinkClickableManager$setupClickableLink$1 extends Lambd
     /* compiled from: WalletLinkClickableManager.kt */
     /* renamed from: com.iMe.manager.wallet.WalletLinkClickableManager$setupClickableLink$1$1 */
     /* loaded from: classes3.dex */
-    public static final class C15941 extends Lambda implements Function1<Integer, Unit> {
+    public static final class C16051 extends Lambda implements Function1<Integer, Unit> {
         final /* synthetic */ WalletLinkClickableManager this$0;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C15941(WalletLinkClickableManager walletLinkClickableManager) {
+        C16051(WalletLinkClickableManager walletLinkClickableManager) {
             super(1);
             this.this$0 = walletLinkClickableManager;
         }
@@ -61,7 +61,7 @@ public final class WalletLinkClickableManager$setupClickableLink$1 extends Lambd
             String str = this.$clickableText;
             clickableItem = walletLinkClickableManager.clickableItem;
             alertOptionsByType = walletLinkClickableManager.getAlertOptionsByType(str, clickableItem.getLinkedTextType());
-            walletLinkClickableView.showClickableTextDialog(alertOptionsByType, new C15941(this.this$0));
+            walletLinkClickableView.showClickableTextDialog(alertOptionsByType, new C16051(this.this$0));
         }
     }
 }

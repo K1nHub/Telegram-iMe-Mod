@@ -1,15 +1,13 @@
 package com.iMe.p031ui.wallet.settings;
 
-import com.iMe.model.wallet.settings.SettingMenuItem;
-import com.iMe.model.wallet.settings.SettingUiItem;
+import com.iMe.model.wallet.crypto.settings.WalletSettingsItem;
 import com.iMe.p031ui.base.mvp.base.BasePresenter;
 import com.iMe.storage.domain.manager.crypto.CryptoAccessManager;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
-import kotlin.collections.CollectionsKt__CollectionsKt;
-import kotlin.collections.CollectionsKt__IterablesKt;
-import kotlin.collections.CollectionsKt___CollectionsKt;
+import com.iMe.storage.domain.utils.p030rx.RxEventBus;
+import com.iMe.storage.domain.utils.p030rx.event.DomainRxEvents;
+import com.iMe.utils.extentions.p032rx.RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
+import io.reactivex.Observable;
+import io.reactivex.disposables.Disposable;
 import kotlin.jvm.internal.Intrinsics;
 import moxy.InjectViewState;
 /* compiled from: WalletSettingsPresenter.kt */
@@ -18,33 +16,33 @@ import moxy.InjectViewState;
 /* loaded from: classes4.dex */
 public final class WalletSettingsPresenter extends BasePresenter<WalletSettingsView> {
     private final CryptoAccessManager cryptoAccessManager;
+    private final RxEventBus rxEventBus;
 
-    public WalletSettingsPresenter(CryptoAccessManager cryptoAccessManager) {
+    public WalletSettingsPresenter(CryptoAccessManager cryptoAccessManager, RxEventBus rxEventBus) {
         Intrinsics.checkNotNullParameter(cryptoAccessManager, "cryptoAccessManager");
+        Intrinsics.checkNotNullParameter(rxEventBus, "rxEventBus");
         this.cryptoAccessManager = cryptoAccessManager;
-    }
-
-    public final void loadSettingsMenu() {
-        List<SettingMenuItem> listOfNotNull;
-        int collectionSizeOrDefault;
-        List<SettingUiItem> mutableList;
-        SettingMenuItem[] settingMenuItemArr = new SettingMenuItem[3];
-        settingMenuItemArr[0] = this.cryptoAccessManager.isAnyWalletCreated() ? SettingMenuItem.CRYPTO_ACCOUNT : null;
-        settingMenuItemArr[1] = SettingMenuItem.INTERFACE;
-        settingMenuItemArr[2] = SettingMenuItem.HELP;
-        listOfNotNull = CollectionsKt__CollectionsKt.listOfNotNull(settingMenuItemArr);
-        collectionSizeOrDefault = CollectionsKt__IterablesKt.collectionSizeOrDefault(listOfNotNull, 10);
-        ArrayList arrayList = new ArrayList(collectionSizeOrDefault);
-        for (SettingMenuItem settingMenuItem : listOfNotNull) {
-            arrayList.add(new SettingUiItem(settingMenuItem));
-        }
-        mutableList = CollectionsKt___CollectionsKt.toMutableList((Collection) arrayList);
-        ((WalletSettingsView) getViewState()).setupSettingsItems(mutableList);
+        this.rxEventBus = rxEventBus;
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
     @Override // moxy.MvpPresenter
     public void onFirstViewAttach() {
-        loadSettingsMenu();
+        subscribeToRxEvents();
+        renderSettingsMenu();
+    }
+
+    private final void subscribeToRxEvents() {
+        RxEventBus rxEventBus = this.rxEventBus;
+        Observable observeOn = rxEventBus.getPublisher().ofType(DomainRxEvents.CryptoEvent.class).observeOn(rxEventBus.getSchedulersProvider().mo698ui());
+        Intrinsics.checkNotNullExpressionValue(observeOn, "publisher\n              …(schedulersProvider.ui())");
+        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2374x89eec84f(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2375x89eec850(null)));
+        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…Error.invoke()\n        })");
+        BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public final void renderSettingsMenu() {
+        ((WalletSettingsView) getViewState()).renderSettingsItems(WalletSettingsItem.Main.INSTANCE.getItems(!this.cryptoAccessManager.getAllWallets().isEmpty()));
     }
 }

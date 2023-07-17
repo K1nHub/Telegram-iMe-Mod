@@ -42,11 +42,11 @@ final class RealContainer$initialiseIfNeeded$1 extends SuspendLambda implements 
     /* compiled from: RealContainer.kt */
     /* renamed from: org.orbitmvi.orbit.internal.RealContainer$initialiseIfNeeded$1$1 */
     /* loaded from: classes4.dex */
-    public static final class C31841 extends Lambda implements Function0<Unit> {
+    public static final class C33051 extends Lambda implements Function0<Unit> {
         final /* synthetic */ RealContainer<STATE, SIDE_EFFECT> this$0;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C31841(RealContainer<STATE, SIDE_EFFECT> realContainer) {
+        C33051(RealContainer<STATE, SIDE_EFFECT> realContainer) {
             super(0);
             this.this$0 = realContainer;
         }
@@ -70,9 +70,9 @@ final class RealContainer$initialiseIfNeeded$1 extends SuspendLambda implements 
         int i = this.label;
         if (i == 0) {
             ResultKt.throwOnFailure(obj);
-            C31841 c31841 = new C31841(this.this$0);
+            C33051 c33051 = new C33051(this.this$0);
             this.label = 1;
-            if (ProduceKt.awaitClose((ProducerScope) this.L$0, c31841, this) == coroutine_suspended) {
+            if (ProduceKt.awaitClose((ProducerScope) this.L$0, c33051, this) == coroutine_suspended) {
                 return coroutine_suspended;
             }
         } else if (i != 1) {

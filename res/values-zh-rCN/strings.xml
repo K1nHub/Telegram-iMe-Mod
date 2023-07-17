@@ -362,7 +362,6 @@
     <string name="Answer_zero">%1$d答案</string>
     <string name="ApkRestricted">此应用已被限制安装 APK，您可以在系统设置中启用它。</string>
     <string name="AppFolderInfo">浏览APP的文件夹</string>
-    <string name="AppUpdate">更新Telegram</string>
     <string name="AppUpdateChangelogEmpty">"**What's new?**
 
 • Bug fixes and improvements."</string>
@@ -518,8 +517,6 @@
     <string name="AuthAnotherClientInfo1">从 *desktop.telegram.org* 下载电脑版 Telegram 。</string>
     <string name="AuthAnotherClientInfo2">运行 Telegram 桌面版获取二维码。</string>
     <string name="AuthAnotherClientInfo3">扫描二维码链接您的账号。</string>
-    <string name="AuthAnotherClientInfo4">Link *Telegram Desktop* or *Telegram Web* by scanning the QR.</string>
-    <string name="AuthAnotherClientInfo5">Go to *getdesktop.telegram.org* or *web.telegram.org* to get a QR code</string>
     <string name="AuthAnotherClientNotFound">没有发现认证令牌</string>
     <string name="AuthAnotherClientOk">成功授权</string>
     <string name="AuthAnotherClientScan">通过扫码的登陆</string>
@@ -1372,7 +1369,6 @@ deleted %1$s after they are sent."</string>
     <string name="DiceInfo2">将emoji **:dice:** 发送至任何聊天记录即可掷骰子</string>
     <string name="DidNotGetTheCode">未收到验证码？</string>
     <string name="DidNotGetTheCodePhone">Get code on this phone</string>
-    <string name="DidNotGetTheCodeSms">通过短信发送验证码</string>
     <string name="DirectShare">直接分享</string>
     <string name="DirectShareInfo">在系统分享菜单中显示最近的对话</string>
     <string name="Directions">方向</string>
@@ -4448,7 +4444,6 @@ Theme links must be longer than 5 characters and can use a-z, 0-9 and underscore
     <string name="UnsupportedMedia">您当前的 Telegram 版本无法查看此消息。请前往这里下载新版：https://telegram.org/update</string>
     <string name="Unvote">撤回投票</string>
     <string name="Update">升级</string>
-    <string name="UpdateApp">升级应用</string>
     <string name="UpdateAppAlert">抱歉，您的 Telegram 版本太低，无法处理此请求。 请升级 Telegram。</string>
     <string name="UpdateContactsMessage">Telegram 检测到很多未同步的联系人，您想现在将其同步吗？如果您使用的是自己的设备、SIM 卡和 Google 帐号，请选择“确定”。</string>
     <string name="UpdateContactsTitle">更新联系人？</string>
@@ -5025,6 +5020,25 @@ Do you still remember your password?"</string>
     <string name="already_removing">另一删除进程已开始，请稍后重试</string>
     <string name="app_restart_error">我们无法打开应用，请您自己试试。</string>
     <string name="app_update_dialog_description">请更新应用以使用此功能</string>
+    <string name="appcenter_distribute_dialog_actioned_on_disabled_toast">已禁用分发</string>
+    <string name="appcenter_distribute_download_progress_number_format">%1$d MB，共 %2$d MB</string>
+    <string name="appcenter_distribute_downloading_mandatory_update">正在下载更新</string>
+    <string name="appcenter_distribute_install">安装</string>
+    <string name="appcenter_distribute_install_ready_message">%1$s %2$s (%3$d) 已下载并可供安装。</string>
+    <string name="appcenter_distribute_install_ready_title">已下载应用更新</string>
+    <string name="appcenter_distribute_notification_category">应用更新</string>
+    <string name="appcenter_distribute_unknown_sources_dialog_message">为了安全起见，设备设置为阻止安装从未知来源获取的应用。</string>
+    <string name="appcenter_distribute_unknown_sources_dialog_settings">设置</string>
+    <string name="appcenter_distribute_update_dialog_download">下载</string>
+    <string name="appcenter_distribute_update_dialog_message_mandatory">此应用的开发人员要求用户更新为 %1$s %2$s (%3$d)。</string>
+    <string name="appcenter_distribute_update_dialog_message_optional">%1$s %2$s (%3$d) 可供下载和安装。</string>
+    <string name="appcenter_distribute_update_dialog_postpone">一天内询问我</string>
+    <string name="appcenter_distribute_update_dialog_title">可用的应用更新</string>
+    <string name="appcenter_distribute_update_dialog_view_release_notes">查看发行说明</string>
+    <string name="appcenter_distribute_update_failed_dialog_ignore">忽略</string>
+    <string name="appcenter_distribute_update_failed_dialog_message">此版本是侧载或者在浏览器的隐私模式中下载的。</string>
+    <string name="appcenter_distribute_update_failed_dialog_reinstall">重新安装应用程序</string>
+    <string name="appcenter_distribute_update_failed_dialog_title">禁用应用程序更新</string>
     <string name="archive_content_is_hidden">内容已隐藏</string>
     <string name="archive_empty_subtitle">您发送到归档的聊天记录便存储在这里</string>
     <string name="archive_empty_title">归档为空</string>
@@ -5120,9 +5134,6 @@ Do you still remember your password?"</string>
     <string name="chat_attach_alert_bot_buttons">机器人按钮</string>
     <string name="chat_avatar_previewer_mention_by_name">按名称提及</string>
     <string name="chat_avatar_previewer_user_messages">用户的消息</string>
-    <string name="chat_bookmarks">书签</string>
-    <string name="chat_bookmarks_empty">无书签</string>
-    <string name="chat_bookmarks_empty_subtitle">您的聊天中没有书签</string>
     <string name="chat_drafts_empty">无草稿</string>
     <string name="chat_drafts_empty_subtitle">您的聊天中没有草稿消息</string>
     <string name="chat_long_action_translate">翻译</string>
@@ -5133,7 +5144,6 @@ Do you still remember your password?"</string>
     <string name="chat_menu_language_settings">语言设置</string>
     <string name="chat_message_forward_media">转发媒体</string>
     <string name="chat_message_forward_text">转发文本</string>
-    <string name="chat_message_popup_option_add_to_bookmarks">添加至书签</string>
     <string name="chat_message_popup_option_copy_image">复制图像</string>
     <string name="chat_message_popup_option_copy_part">复制部分</string>
     <string name="chat_message_popup_option_copy_text">复制文本</string>
@@ -5141,8 +5151,6 @@ Do you still remember your password?"</string>
     <string name="chat_message_popup_option_forward_viber">转发到Viber</string>
     <string name="chat_message_popup_option_forward_whatsapp">转发到WhatsApp</string>
     <string name="chat_message_popup_option_forward_whatsapp_business">转发到WA Business</string>
-    <string name="chat_message_popup_option_remove_all_bookmarks">移除所有书签</string>
-    <string name="chat_message_popup_option_remove_from_bookmarks">从书签移除</string>
     <string name="chat_message_spoiler_less">更少</string>
     <string name="chat_message_spoiler_more">更多</string>
     <string name="chat_multi_panel_empty_cache_toast">此聊天缺少缓存</string>
@@ -5512,11 +5520,6 @@ Do you still remember your password?"</string>
     <string name="loading_participants_error">加载参与者时出错，请稍后重试</string>
     <string name="main_camera_popup_text">后置摄像头</string>
     <string name="main_list">主列表</string>
-    <string name="management">管理</string>
-    <string name="management_bookmarks_delete_all_alert_message">确定要将所有书签从所有聊天中删除吗？您的聊天不会被删除。</string>
-    <string name="management_bookmarks_delete_selected_alert_message">确定要将所有书签从所选聊天中删除吗？您的聊天不会被删除。</string>
-    <string name="management_drafts">草稿</string>
-    <string name="management_drafts_delete_selected_alert_message">确定要将所有草稿从所选聊天中删除吗？您的聊天不会被删除。</string>
     <string name="material_clock_toggle_content_description">选择上午或下午</string>
     <string name="material_hour_selection">选择小时</string>
     <string name="material_hour_suffix">%1$s 点</string>
@@ -5892,6 +5895,7 @@ Do you still remember your password?"</string>
     <string name="sorting_settings_tab_bots_item_title">机器人</string>
     <string name="sorting_settings_tab_channels_item_title">频道</string>
     <string name="sorting_settings_tab_deleted_users">已删除的账户</string>
+    <string name="sorting_settings_tab_drafts">草稿</string>
     <string name="sorting_settings_tab_groups_item_title">群聊</string>
     <string name="sorting_settings_tab_live_chats">实时聊天</string>
     <string name="sorting_settings_tab_mentioned_chats">提到的聊天</string>
@@ -6237,8 +6241,8 @@ iMe不收取任何额外费用。"</string>
     <string name="wallet_banner_slide_gate_description">您的加密货币门户</string>
     <string name="wallet_banner_slide_gate_long_description">交易LIME及其他加密货币，享受低廉兑换费用。</string>
     <string name="wallet_banner_slide_gate_title">Gate.io</string>
-    <string name="wallet_banner_slide_multi_networks_description">以太坊、BNB链、Polygon、Fantom、TON、NFT</string>
-    <string name="wallet_banner_slide_multi_networks_long_description">在以太坊、BNB链、Polygon和、Fantom、TON、NFT网络之间自由切换，只需一个钱包，即可便捷使用不同通证。</string>
+    <string name="wallet_banner_slide_multi_networks_description">Bitcoin、以太坊、BNB链、Polygon、Fantom、Tron、TON、NFT</string>
+    <string name="wallet_banner_slide_multi_networks_long_description">在以太坊、Bitcoin、BNB链、Polygon和、Fantom、Tron、TON、NFT网络之间自由切换，只需一个钱包，即可便捷使用不同通证。</string>
     <string name="wallet_banner_slide_multi_networks_title">多重网络</string>
     <string name="wallet_banner_slide_non_custodial_description">只有您可以访问钱包</string>
     <string name="wallet_banner_slide_non_custodial_long_description">您是唯一能够访问钱包的人。保存好口令，才能恢复或导入钱包。</string>
@@ -6249,7 +6253,7 @@ iMe不收取任何额外费用。"</string>
     <string name="wallet_banner_slide_staking_description">创建存款</string>
     <string name="wallet_banner_slide_staking_long_description">在LIME和合作伙伴通证中创建存款，让您的资产为您服务。</string>
     <string name="wallet_banner_slide_staking_title">权益质押</string>
-    <string name="wallet_banner_slide_swap_description">Uniswap、PancakeSwap、1inch</string>
+    <string name="wallet_banner_slide_swap_description">1inch, Symbiosis</string>
     <string name="wallet_banner_slide_swap_long_description">使用智能合约所支持的去中心化交易所协议互相交换加密货币和通证。</string>
     <string name="wallet_banner_slide_swap_title">兑换</string>
     <string name="wallet_binance_logout_confirm_dialog_description">确定要退出吗？</string>
@@ -6427,7 +6431,7 @@ iMe不收取任何额外费用。"</string>
     <string name="wallet_dashboard_create_eth_wallet_warning_dialog_description">%s 若要使用之前绑定的以太坊地址，请使用口令恢复您的账户。如果创建新的账户，旧iMe钱包账户中的数据将被覆盖，且新的以太坊地址会绑定到您的Telegram ID。注意：iMe钱包中仅允许拥有一个活跃的以太坊账户。因此，当其他用户转账到您的Telegram ID中时，所有资金都会自动记入最后绑定的地址。</string>
     <string name="wallet_dashboard_create_start_dialog_description">"用于加密货币和通证的非托管钱包。
 
-在以太坊和BNB链网络上存储、购买、交换和转账。
+在以太坊、比特币、BNB Chain、Polygon、Fantom、Tron 和 TON 网络上存储、购买、交换和转账。
 
 按下一步，即表明您同意
 %s

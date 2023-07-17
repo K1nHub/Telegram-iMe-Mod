@@ -11,10 +11,10 @@ import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.p044ui.ActionBar.Theme;
-import org.telegram.p044ui.Components.CheckBox2;
-import org.telegram.p044ui.Components.CheckBoxBase;
-import org.telegram.p044ui.Components.LayoutHelper;
+import org.telegram.p043ui.ActionBar.Theme;
+import org.telegram.p043ui.Components.CheckBox2;
+import org.telegram.p043ui.Components.CheckBoxBase;
+import org.telegram.p043ui.Components.LayoutHelper;
 /* compiled from: CircleCheckCell.kt */
 /* renamed from: com.iMe.fork.ui.view.CircleCheckCell */
 /* loaded from: classes3.dex */
@@ -136,7 +136,7 @@ public abstract class CircleCheckCell extends FrameLayout {
         checkBox2.setDrawUnchecked(false);
         checkBox2.setDrawBackgroundAsArc(4);
         checkBox2.setProgressDelegate(new CheckBoxBase.ProgressDelegate() { // from class: com.iMe.fork.ui.view.CircleCheckCell$$ExternalSyntheticLambda0
-            @Override // org.telegram.p044ui.Components.CheckBoxBase.ProgressDelegate
+            @Override // org.telegram.p043ui.Components.CheckBoxBase.ProgressDelegate
             public final void setProgress(float f) {
                 CircleCheckCell.initCheckBox$lambda$4$lambda$3(CheckBox2.this, this, f);
             }

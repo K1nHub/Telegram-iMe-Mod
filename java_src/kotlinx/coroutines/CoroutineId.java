@@ -12,21 +12,21 @@ public final class CoroutineId extends AbstractCoroutineContextElement implement
     public static final Key Key = new Key(null);
 
     /* renamed from: id */
-    private final long f1221id;
+    private final long f1303id;
 
     public boolean equals(Object obj) {
         if (this == obj) {
             return true;
         }
-        return (obj instanceof CoroutineId) && this.f1221id == ((CoroutineId) obj).f1221id;
+        return (obj instanceof CoroutineId) && this.f1303id == ((CoroutineId) obj).f1303id;
     }
 
     public int hashCode() {
-        return BotsDbModel$$ExternalSyntheticBackport0.m706m(this.f1221id);
+        return BotsDbModel$$ExternalSyntheticBackport0.m706m(this.f1303id);
     }
 
     public final long getId() {
-        return this.f1221id;
+        return this.f1303id;
     }
 
     /* compiled from: CoroutineContext.kt */
@@ -42,11 +42,11 @@ public final class CoroutineId extends AbstractCoroutineContextElement implement
 
     public CoroutineId(long j) {
         super(Key);
-        this.f1221id = j;
+        this.f1303id = j;
     }
 
     public String toString() {
-        return "CoroutineId(" + this.f1221id + ')';
+        return "CoroutineId(" + this.f1303id + ')';
     }
 
     @Override // kotlinx.coroutines.ThreadContextElement
@@ -67,7 +67,7 @@ public final class CoroutineId extends AbstractCoroutineContextElement implement
         sb.append(" @");
         sb.append(str);
         sb.append('#');
-        sb.append(this.f1221id);
+        sb.append(this.f1303id);
         String sb2 = sb.toString();
         Intrinsics.checkNotNullExpressionValue(sb2, "StringBuilder(capacity).…builderAction).toString()");
         currentThread.setName(sb2);

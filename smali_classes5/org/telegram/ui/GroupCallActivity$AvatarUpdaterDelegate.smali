@@ -67,12 +67,12 @@
 .method private constructor <init>(Lorg/telegram/ui/GroupCallActivity;J)V
     .locals 0
 
-    .line 8378
+    .line 8389
     iput-object p1, p0, Lorg/telegram/ui/GroupCallActivity$AvatarUpdaterDelegate;->this$0:Lorg/telegram/ui/GroupCallActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 8379
+    .line 8390
     iput-wide p2, p0, Lorg/telegram/ui/GroupCallActivity$AvatarUpdaterDelegate;->peerId:J
 
     return-void
@@ -81,7 +81,7 @@
 .method synthetic constructor <init>(Lorg/telegram/ui/GroupCallActivity;JLorg/telegram/ui/GroupCallActivity$1;)V
     .locals 0
 
-    .line 8369
+    .line 8380
     invoke-direct {p0, p1, p2, p3}, Lorg/telegram/ui/GroupCallActivity$AvatarUpdaterDelegate;-><init>(Lorg/telegram/ui/GroupCallActivity;J)V
 
     return-void
@@ -90,7 +90,7 @@
 .method static synthetic access$18600(Lorg/telegram/ui/GroupCallActivity$AvatarUpdaterDelegate;)Lorg/telegram/tgnet/TLRPC$FileLocation;
     .locals 0
 
-    .line 8369
+    .line 8380
     iget-object p0, p0, Lorg/telegram/ui/GroupCallActivity$AvatarUpdaterDelegate;->avatar:Lorg/telegram/tgnet/TLRPC$FileLocation;
 
     return-object p0
@@ -99,7 +99,7 @@
 .method static synthetic access$18700(Lorg/telegram/ui/GroupCallActivity$AvatarUpdaterDelegate;)Lorg/telegram/messenger/ImageLocation;
     .locals 0
 
-    .line 8369
+    .line 8380
     iget-object p0, p0, Lorg/telegram/ui/GroupCallActivity$AvatarUpdaterDelegate;->uploadingImageLocation:Lorg/telegram/messenger/ImageLocation;
 
     return-object p0
@@ -108,14 +108,14 @@
 .method private synthetic lambda$didUploadPhoto$0(Lorg/telegram/tgnet/TLRPC$TL_error;Lorg/telegram/tgnet/TLObject;Ljava/lang/String;)V
     .locals 11
 
-    .line 8404
+    .line 8415
     iget-object v0, p0, Lorg/telegram/ui/GroupCallActivity$AvatarUpdaterDelegate;->uploadingImageLocation:Lorg/telegram/messenger/ImageLocation;
 
     const/4 v1, 0x0
 
     if-eqz v0, :cond_0
 
-    .line 8405
+    .line 8416
     iget-object v0, p0, Lorg/telegram/ui/GroupCallActivity$AvatarUpdaterDelegate;->this$0:Lorg/telegram/ui/GroupCallActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/GroupCallActivity;->access$17100(Lorg/telegram/ui/GroupCallActivity;)Lorg/telegram/ui/Components/ProfileGalleryView;
@@ -126,7 +126,7 @@
 
     invoke-virtual {v0, v2}, Lorg/telegram/ui/Components/ProfileGalleryView;->removeUploadingImage(Lorg/telegram/messenger/ImageLocation;)V
 
-    .line 8406
+    .line 8417
     iput-object v1, p0, Lorg/telegram/ui/GroupCallActivity$AvatarUpdaterDelegate;->uploadingImageLocation:Lorg/telegram/messenger/ImageLocation;
 
     :cond_0
@@ -136,7 +136,7 @@
 
     if-nez p1, :cond_a
 
-    .line 8409
+    .line 8420
     iget-object p1, p0, Lorg/telegram/ui/GroupCallActivity$AvatarUpdaterDelegate;->this$0:Lorg/telegram/ui/GroupCallActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/GroupCallActivity;->access$200(Lorg/telegram/ui/GroupCallActivity;)Lorg/telegram/messenger/AccountInstance;
@@ -171,7 +171,7 @@
 
     if-nez p1, :cond_2
 
-    .line 8411
+    .line 8422
     iget-object p1, p0, Lorg/telegram/ui/GroupCallActivity$AvatarUpdaterDelegate;->this$0:Lorg/telegram/ui/GroupCallActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/GroupCallActivity;->access$200(Lorg/telegram/ui/GroupCallActivity;)Lorg/telegram/messenger/AccountInstance;
@@ -190,7 +190,7 @@
 
     return-void
 
-    .line 8415
+    .line 8426
     :cond_1
     iget-object v3, p0, Lorg/telegram/ui/GroupCallActivity$AvatarUpdaterDelegate;->this$0:Lorg/telegram/ui/GroupCallActivity;
 
@@ -206,7 +206,7 @@
 
     goto :goto_0
 
-    .line 8417
+    .line 8428
     :cond_2
     iget-object v3, p0, Lorg/telegram/ui/GroupCallActivity$AvatarUpdaterDelegate;->this$0:Lorg/telegram/ui/GroupCallActivity;
 
@@ -220,30 +220,30 @@
 
     invoke-virtual {v3, p1}, Lorg/telegram/messenger/UserConfig;->setCurrentUser(Lorg/telegram/tgnet/TLRPC$User;)V
 
-    .line 8419
+    .line 8430
     :goto_0
     check-cast p2, Lorg/telegram/tgnet/TLRPC$TL_photos_photo;
 
-    .line 8420
+    .line 8431
     iget-object v3, p2, Lorg/telegram/tgnet/TLRPC$TL_photos_photo;->photo:Lorg/telegram/tgnet/TLRPC$Photo;
 
     iget-object v3, v3, Lorg/telegram/tgnet/TLRPC$Photo;->sizes:Ljava/util/ArrayList;
 
     const/16 v4, 0x96
 
-    .line 8421
+    .line 8432
     invoke-static {v3, v4}, Lorg/telegram/messenger/FileLoader;->getClosestPhotoSizeWithSize(Ljava/util/ArrayList;I)Lorg/telegram/tgnet/TLRPC$PhotoSize;
 
     move-result-object v4
 
     const/16 v5, 0x320
 
-    .line 8422
+    .line 8433
     invoke-static {v3, v5}, Lorg/telegram/messenger/FileLoader;->getClosestPhotoSizeWithSize(Ljava/util/ArrayList;I)Lorg/telegram/tgnet/TLRPC$PhotoSize;
 
     move-result-object v3
 
-    .line 8423
+    .line 8434
     iget-object v5, p2, Lorg/telegram/tgnet/TLRPC$TL_photos_photo;->photo:Lorg/telegram/tgnet/TLRPC$Photo;
 
     iget-object v5, v5, Lorg/telegram/tgnet/TLRPC$Photo;->video_sizes:Ljava/util/ArrayList;
@@ -269,7 +269,7 @@
 
     check-cast v5, Lorg/telegram/tgnet/TLRPC$VideoSize;
 
-    .line 8425
+    .line 8436
     :goto_1
     new-instance v6, Lorg/telegram/tgnet/TLRPC$TL_userProfilePhoto;
 
@@ -277,7 +277,7 @@
 
     iput-object v6, p1, Lorg/telegram/tgnet/TLRPC$User;->photo:Lorg/telegram/tgnet/TLRPC$UserProfilePhoto;
 
-    .line 8426
+    .line 8437
     iget-object p2, p2, Lorg/telegram/tgnet/TLRPC$TL_photos_photo;->photo:Lorg/telegram/tgnet/TLRPC$Photo;
 
     iget-wide v7, p2, Lorg/telegram/tgnet/TLRPC$Photo;->id:J
@@ -286,7 +286,7 @@
 
     if-eqz v4, :cond_4
 
-    .line 8428
+    .line 8439
     iget-object p2, v4, Lorg/telegram/tgnet/TLRPC$PhotoSize;->location:Lorg/telegram/tgnet/TLRPC$FileLocation;
 
     iput-object p2, v6, Lorg/telegram/tgnet/TLRPC$UserProfilePhoto;->photo_small:Lorg/telegram/tgnet/TLRPC$FileLocation;
@@ -294,7 +294,7 @@
     :cond_4
     if-eqz v3, :cond_5
 
-    .line 8431
+    .line 8442
     iget-object p2, v3, Lorg/telegram/tgnet/TLRPC$PhotoSize;->location:Lorg/telegram/tgnet/TLRPC$FileLocation;
 
     iput-object p2, v6, Lorg/telegram/tgnet/TLRPC$UserProfilePhoto;->photo_big:Lorg/telegram/tgnet/TLRPC$FileLocation;
@@ -302,12 +302,12 @@
     :cond_5
     if-eqz v4, :cond_6
 
-    .line 8434
+    .line 8445
     iget-object p2, p0, Lorg/telegram/ui/GroupCallActivity$AvatarUpdaterDelegate;->avatar:Lorg/telegram/tgnet/TLRPC$FileLocation;
 
     if-eqz p2, :cond_6
 
-    .line 8435
+    .line 8446
     iget-object p2, p0, Lorg/telegram/ui/GroupCallActivity$AvatarUpdaterDelegate;->this$0:Lorg/telegram/ui/GroupCallActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/GroupCallActivity;->access$21300(Lorg/telegram/ui/GroupCallActivity;)I
@@ -322,7 +322,7 @@
 
     move-result-object p2
 
-    .line 8436
+    .line 8447
     iget-object v6, p0, Lorg/telegram/ui/GroupCallActivity$AvatarUpdaterDelegate;->this$0:Lorg/telegram/ui/GroupCallActivity;
 
     invoke-static {v6}, Lorg/telegram/ui/GroupCallActivity;->access$21400(Lorg/telegram/ui/GroupCallActivity;)I
@@ -339,10 +339,10 @@
 
     move-result-object v6
 
-    .line 8437
+    .line 8448
     invoke-virtual {v6, p2}, Ljava/io/File;->renameTo(Ljava/io/File;)Z
 
-    .line 8438
+    .line 8449
     new-instance p2, Ljava/lang/StringBuilder;
 
     invoke-direct {p2}, Ljava/lang/StringBuilder;-><init>()V
@@ -371,7 +371,7 @@
 
     move-result-object p2
 
-    .line 8439
+    .line 8450
     new-instance v8, Ljava/lang/StringBuilder;
 
     invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
@@ -396,7 +396,7 @@
 
     move-result-object v4
 
-    .line 8440
+    .line 8451
     invoke-static {}, Lorg/telegram/messenger/ImageLoader;->getInstance()Lorg/telegram/messenger/ImageLoader;
 
     move-result-object v6
@@ -410,12 +410,12 @@
     :cond_6
     if-eqz v3, :cond_7
 
-    .line 8443
+    .line 8454
     iget-object p2, p0, Lorg/telegram/ui/GroupCallActivity$AvatarUpdaterDelegate;->avatarBig:Lorg/telegram/tgnet/TLRPC$FileLocation;
 
     if-eqz p2, :cond_7
 
-    .line 8444
+    .line 8455
     iget-object p2, p0, Lorg/telegram/ui/GroupCallActivity$AvatarUpdaterDelegate;->this$0:Lorg/telegram/ui/GroupCallActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/GroupCallActivity;->access$21500(Lorg/telegram/ui/GroupCallActivity;)I
@@ -430,7 +430,7 @@
 
     move-result-object p2
 
-    .line 8445
+    .line 8456
     iget-object v3, p0, Lorg/telegram/ui/GroupCallActivity$AvatarUpdaterDelegate;->this$0:Lorg/telegram/ui/GroupCallActivity;
 
     invoke-static {v3}, Lorg/telegram/ui/GroupCallActivity;->access$21600(Lorg/telegram/ui/GroupCallActivity;)I
@@ -447,7 +447,7 @@
 
     move-result-object v3
 
-    .line 8446
+    .line 8457
     invoke-virtual {v3, p2}, Ljava/io/File;->renameTo(Ljava/io/File;)Z
 
     :cond_7
@@ -455,7 +455,7 @@
 
     if-eqz p3, :cond_8
 
-    .line 8449
+    .line 8460
     iget-object p2, p0, Lorg/telegram/ui/GroupCallActivity$AvatarUpdaterDelegate;->this$0:Lorg/telegram/ui/GroupCallActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/GroupCallActivity;->access$21700(Lorg/telegram/ui/GroupCallActivity;)I
@@ -472,15 +472,15 @@
 
     move-result-object p2
 
-    .line 8450
+    .line 8461
     new-instance v3, Ljava/io/File;
 
     invoke-direct {v3, p3}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    .line 8451
+    .line 8462
     invoke-virtual {v3, p2}, Ljava/io/File;->renameTo(Ljava/io/File;)Z
 
-    .line 8454
+    .line 8465
     :cond_8
     iget-object p2, p0, Lorg/telegram/ui/GroupCallActivity$AvatarUpdaterDelegate;->this$0:Lorg/telegram/ui/GroupCallActivity;
 
@@ -496,15 +496,15 @@
 
     invoke-virtual {p2, v3, v4}, Lorg/telegram/messenger/MessagesStorage;->clearUserPhotos(J)V
 
-    .line 8455
+    .line 8466
     new-instance p2, Ljava/util/ArrayList;
 
     invoke-direct {p2}, Ljava/util/ArrayList;-><init>()V
 
-    .line 8456
+    .line 8467
     invoke-virtual {p2, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 8457
+    .line 8468
     iget-object p1, p0, Lorg/telegram/ui/GroupCallActivity$AvatarUpdaterDelegate;->this$0:Lorg/telegram/ui/GroupCallActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/GroupCallActivity;->access$200(Lorg/telegram/ui/GroupCallActivity;)Lorg/telegram/messenger/AccountInstance;
@@ -517,7 +517,7 @@
 
     invoke-virtual {p1, p2, v1, v0, v2}, Lorg/telegram/messenger/MessagesStorage;->putUsersAndChats(Ljava/util/ArrayList;Ljava/util/ArrayList;ZZ)V
 
-    .line 8461
+    .line 8472
     iget-object p1, p0, Lorg/telegram/ui/GroupCallActivity$AvatarUpdaterDelegate;->this$0:Lorg/telegram/ui/GroupCallActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/GroupCallActivity;->access$200(Lorg/telegram/ui/GroupCallActivity;)Lorg/telegram/messenger/AccountInstance;
@@ -538,17 +538,17 @@
 
     move-result-object p1
 
-    .line 8462
+    .line 8473
     invoke-static {p1, v0}, Lorg/telegram/messenger/ImageLocation;->getForUser(Lorg/telegram/tgnet/TLRPC$User;I)Lorg/telegram/messenger/ImageLocation;
 
     move-result-object p2
 
-    .line 8463
+    .line 8474
     invoke-static {p1, v2}, Lorg/telegram/messenger/ImageLocation;->getForUser(Lorg/telegram/tgnet/TLRPC$User;I)Lorg/telegram/messenger/ImageLocation;
 
     move-result-object p1
 
-    .line 8464
+    .line 8475
     iget-object p3, p0, Lorg/telegram/ui/GroupCallActivity$AvatarUpdaterDelegate;->avatarBig:Lorg/telegram/tgnet/TLRPC$FileLocation;
 
     invoke-static {p3}, Lorg/telegram/messenger/ImageLocation;->getForLocal(Lorg/telegram/tgnet/TLRPC$FileLocation;)Lorg/telegram/messenger/ImageLocation;
@@ -557,14 +557,14 @@
 
     if-nez p3, :cond_9
 
-    .line 8466
+    .line 8477
     iget-object p1, p0, Lorg/telegram/ui/GroupCallActivity$AvatarUpdaterDelegate;->avatar:Lorg/telegram/tgnet/TLRPC$FileLocation;
 
     invoke-static {p1}, Lorg/telegram/messenger/ImageLocation;->getForLocal(Lorg/telegram/tgnet/TLRPC$FileLocation;)Lorg/telegram/messenger/ImageLocation;
 
     move-result-object p1
 
-    .line 8470
+    .line 8481
     :cond_9
     iget-object p3, p0, Lorg/telegram/ui/GroupCallActivity$AvatarUpdaterDelegate;->this$0:Lorg/telegram/ui/GroupCallActivity;
 
@@ -574,7 +574,7 @@
 
     invoke-virtual {p3, v0}, Lorg/telegram/ui/Components/ProfileGalleryView;->setCreateThumbFromParent(Z)V
 
-    .line 8471
+    .line 8482
     iget-object p3, p0, Lorg/telegram/ui/GroupCallActivity$AvatarUpdaterDelegate;->this$0:Lorg/telegram/ui/GroupCallActivity;
 
     invoke-static {p3}, Lorg/telegram/ui/GroupCallActivity;->access$17100(Lorg/telegram/ui/GroupCallActivity;)Lorg/telegram/ui/Components/ProfileGalleryView;
@@ -583,13 +583,13 @@
 
     invoke-virtual {p3, v1, p2, p1, v2}, Lorg/telegram/ui/Components/ProfileGalleryView;->initIfEmpty(Lorg/telegram/ui/Components/VectorAvatarThumbDrawable;Lorg/telegram/messenger/ImageLocation;Lorg/telegram/messenger/ImageLocation;Z)Z
 
-    .line 8472
+    .line 8483
     iput-object v1, p0, Lorg/telegram/ui/GroupCallActivity$AvatarUpdaterDelegate;->avatar:Lorg/telegram/tgnet/TLRPC$FileLocation;
 
-    .line 8473
+    .line 8484
     iput-object v1, p0, Lorg/telegram/ui/GroupCallActivity$AvatarUpdaterDelegate;->avatarBig:Lorg/telegram/tgnet/TLRPC$FileLocation;
 
-    .line 8474
+    .line 8485
     iget-object p1, p0, Lorg/telegram/ui/GroupCallActivity$AvatarUpdaterDelegate;->this$0:Lorg/telegram/ui/GroupCallActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/GroupCallActivity;->access$5700(Lorg/telegram/ui/GroupCallActivity;)Lorg/telegram/ui/Components/RecyclerListView;
@@ -600,10 +600,10 @@
 
     const/high16 p1, 0x3f800000    # 1.0f
 
-    .line 8475
+    .line 8486
     invoke-virtual {p0, p1}, Lorg/telegram/ui/GroupCallActivity$AvatarUpdaterDelegate;->updateAvatarUploadingProgress(F)V
 
-    .line 8478
+    .line 8489
     :cond_a
     iget-object p1, p0, Lorg/telegram/ui/GroupCallActivity$AvatarUpdaterDelegate;->this$0:Lorg/telegram/ui/GroupCallActivity;
 
@@ -629,7 +629,7 @@
 
     invoke-virtual {p1, p2, p3}, Lorg/telegram/messenger/NotificationCenter;->postNotificationName(I[Ljava/lang/Object;)V
 
-    .line 8479
+    .line 8490
     iget-object p1, p0, Lorg/telegram/ui/GroupCallActivity$AvatarUpdaterDelegate;->this$0:Lorg/telegram/ui/GroupCallActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/GroupCallActivity;->access$200(Lorg/telegram/ui/GroupCallActivity;)Lorg/telegram/messenger/AccountInstance;
@@ -646,7 +646,7 @@
 
     invoke-virtual {p1, p2, p3}, Lorg/telegram/messenger/NotificationCenter;->postNotificationName(I[Ljava/lang/Object;)V
 
-    .line 8480
+    .line 8491
     iget-object p1, p0, Lorg/telegram/ui/GroupCallActivity$AvatarUpdaterDelegate;->this$0:Lorg/telegram/ui/GroupCallActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/GroupCallActivity;->access$200(Lorg/telegram/ui/GroupCallActivity;)Lorg/telegram/messenger/AccountInstance;
@@ -665,7 +665,7 @@
 .method private synthetic lambda$didUploadPhoto$1(Ljava/lang/String;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
     .locals 1
 
-    .line 8403
+    .line 8414
     new-instance v0, Lorg/telegram/ui/GroupCallActivity$AvatarUpdaterDelegate$$ExternalSyntheticLambda2;
 
     invoke-direct {v0, p0, p3, p2, p1}, Lorg/telegram/ui/GroupCallActivity$AvatarUpdaterDelegate$$ExternalSyntheticLambda2;-><init>(Lorg/telegram/ui/GroupCallActivity$AvatarUpdaterDelegate;Lorg/telegram/tgnet/TLRPC$TL_error;Lorg/telegram/tgnet/TLObject;Ljava/lang/String;)V
@@ -678,14 +678,14 @@
 .method private synthetic lambda$didUploadPhoto$2()V
     .locals 6
 
-    .line 8484
+    .line 8495
     iget-object v0, p0, Lorg/telegram/ui/GroupCallActivity$AvatarUpdaterDelegate;->uploadingImageLocation:Lorg/telegram/messenger/ImageLocation;
 
     const/4 v1, 0x0
 
     if-eqz v0, :cond_0
 
-    .line 8485
+    .line 8496
     iget-object v0, p0, Lorg/telegram/ui/GroupCallActivity$AvatarUpdaterDelegate;->this$0:Lorg/telegram/ui/GroupCallActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/GroupCallActivity;->access$17100(Lorg/telegram/ui/GroupCallActivity;)Lorg/telegram/ui/Components/ProfileGalleryView;
@@ -696,10 +696,10 @@
 
     invoke-virtual {v0, v2}, Lorg/telegram/ui/Components/ProfileGalleryView;->removeUploadingImage(Lorg/telegram/messenger/ImageLocation;)V
 
-    .line 8486
+    .line 8497
     iput-object v1, p0, Lorg/telegram/ui/GroupCallActivity$AvatarUpdaterDelegate;->uploadingImageLocation:Lorg/telegram/messenger/ImageLocation;
 
-    .line 8489
+    .line 8500
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/GroupCallActivity$AvatarUpdaterDelegate;->this$0:Lorg/telegram/ui/GroupCallActivity;
 
@@ -725,19 +725,19 @@
 
     const/4 v2, 0x0
 
-    .line 8490
+    .line 8501
     invoke-static {v0, v2}, Lorg/telegram/messenger/ImageLocation;->getForChat(Lorg/telegram/tgnet/TLRPC$Chat;I)Lorg/telegram/messenger/ImageLocation;
 
     move-result-object v3
 
     const/4 v4, 0x1
 
-    .line 8491
+    .line 8502
     invoke-static {v0, v4}, Lorg/telegram/messenger/ImageLocation;->getForChat(Lorg/telegram/tgnet/TLRPC$Chat;I)Lorg/telegram/messenger/ImageLocation;
 
     move-result-object v0
 
-    .line 8492
+    .line 8503
     iget-object v5, p0, Lorg/telegram/ui/GroupCallActivity$AvatarUpdaterDelegate;->avatarBig:Lorg/telegram/tgnet/TLRPC$FileLocation;
 
     invoke-static {v5}, Lorg/telegram/messenger/ImageLocation;->getForLocal(Lorg/telegram/tgnet/TLRPC$FileLocation;)Lorg/telegram/messenger/ImageLocation;
@@ -746,14 +746,14 @@
 
     if-nez v5, :cond_1
 
-    .line 8494
+    .line 8505
     iget-object v0, p0, Lorg/telegram/ui/GroupCallActivity$AvatarUpdaterDelegate;->avatar:Lorg/telegram/tgnet/TLRPC$FileLocation;
 
     invoke-static {v0}, Lorg/telegram/messenger/ImageLocation;->getForLocal(Lorg/telegram/tgnet/TLRPC$FileLocation;)Lorg/telegram/messenger/ImageLocation;
 
     move-result-object v0
 
-    .line 8498
+    .line 8509
     :cond_1
     iget-object v5, p0, Lorg/telegram/ui/GroupCallActivity$AvatarUpdaterDelegate;->this$0:Lorg/telegram/ui/GroupCallActivity;
 
@@ -763,7 +763,7 @@
 
     invoke-virtual {v5, v2}, Lorg/telegram/ui/Components/ProfileGalleryView;->setCreateThumbFromParent(Z)V
 
-    .line 8499
+    .line 8510
     iget-object v2, p0, Lorg/telegram/ui/GroupCallActivity$AvatarUpdaterDelegate;->this$0:Lorg/telegram/ui/GroupCallActivity;
 
     invoke-static {v2}, Lorg/telegram/ui/GroupCallActivity;->access$17100(Lorg/telegram/ui/GroupCallActivity;)Lorg/telegram/ui/Components/ProfileGalleryView;
@@ -772,13 +772,13 @@
 
     invoke-virtual {v2, v1, v3, v0, v4}, Lorg/telegram/ui/Components/ProfileGalleryView;->initIfEmpty(Lorg/telegram/ui/Components/VectorAvatarThumbDrawable;Lorg/telegram/messenger/ImageLocation;Lorg/telegram/messenger/ImageLocation;Z)Z
 
-    .line 8500
+    .line 8511
     iput-object v1, p0, Lorg/telegram/ui/GroupCallActivity$AvatarUpdaterDelegate;->avatar:Lorg/telegram/tgnet/TLRPC$FileLocation;
 
-    .line 8501
+    .line 8512
     iput-object v1, p0, Lorg/telegram/ui/GroupCallActivity$AvatarUpdaterDelegate;->avatarBig:Lorg/telegram/tgnet/TLRPC$FileLocation;
 
-    .line 8502
+    .line 8513
     iget-object v0, p0, Lorg/telegram/ui/GroupCallActivity$AvatarUpdaterDelegate;->this$0:Lorg/telegram/ui/GroupCallActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/GroupCallActivity;->access$5700(Lorg/telegram/ui/GroupCallActivity;)Lorg/telegram/ui/Components/RecyclerListView;
@@ -789,7 +789,7 @@
 
     const/high16 v0, 0x3f800000    # 1.0f
 
-    .line 8503
+    .line 8514
     invoke-virtual {p0, v0}, Lorg/telegram/ui/GroupCallActivity$AvatarUpdaterDelegate;->updateAvatarUploadingProgress(F)V
 
     return-void
@@ -818,25 +818,25 @@
 
     goto :goto_0
 
-    .line 8507
+    .line 8518
     :cond_0
     iget-object v1, v1, Lorg/telegram/tgnet/TLRPC$PhotoSize;->location:Lorg/telegram/tgnet/TLRPC$FileLocation;
 
     iput-object v1, v0, Lorg/telegram/ui/GroupCallActivity$AvatarUpdaterDelegate;->avatar:Lorg/telegram/tgnet/TLRPC$FileLocation;
 
-    .line 8508
+    .line 8519
     iget-object v1, v2, Lorg/telegram/tgnet/TLRPC$PhotoSize;->location:Lorg/telegram/tgnet/TLRPC$FileLocation;
 
     iput-object v1, v0, Lorg/telegram/ui/GroupCallActivity$AvatarUpdaterDelegate;->avatarBig:Lorg/telegram/tgnet/TLRPC$FileLocation;
 
-    .line 8509
+    .line 8520
     invoke-static {v1}, Lorg/telegram/messenger/ImageLocation;->getForLocal(Lorg/telegram/tgnet/TLRPC$FileLocation;)Lorg/telegram/messenger/ImageLocation;
 
     move-result-object v1
 
     iput-object v1, v0, Lorg/telegram/ui/GroupCallActivity$AvatarUpdaterDelegate;->uploadingImageLocation:Lorg/telegram/messenger/ImageLocation;
 
-    .line 8510
+    .line 8521
     iget-object v1, v0, Lorg/telegram/ui/GroupCallActivity$AvatarUpdaterDelegate;->this$0:Lorg/telegram/ui/GroupCallActivity;
 
     invoke-static {v1}, Lorg/telegram/ui/GroupCallActivity;->access$17100(Lorg/telegram/ui/GroupCallActivity;)Lorg/telegram/ui/Components/ProfileGalleryView;
@@ -853,7 +853,7 @@
 
     invoke-virtual {v1, v2, v3}, Lorg/telegram/ui/Components/ProfileGalleryView;->addUploadingImage(Lorg/telegram/messenger/ImageLocation;Lorg/telegram/messenger/ImageLocation;)V
 
-    .line 8511
+    .line 8522
     iget-object v1, v0, Lorg/telegram/ui/GroupCallActivity$AvatarUpdaterDelegate;->this$0:Lorg/telegram/ui/GroupCallActivity;
 
     invoke-static {v1}, Lorg/telegram/ui/GroupCallActivity;->access$5700(Lorg/telegram/ui/GroupCallActivity;)Lorg/telegram/ui/Components/RecyclerListView;
@@ -864,7 +864,7 @@
 
     goto/16 :goto_1
 
-    .line 8386
+    .line 8397
     :cond_1
     :goto_0
     iget-wide v3, v0, Lorg/telegram/ui/GroupCallActivity$AvatarUpdaterDelegate;->peerId:J
@@ -875,17 +875,17 @@
 
     if-lez v3, :cond_5
 
-    .line 8387
+    .line 8398
     new-instance v1, Lorg/telegram/tgnet/TLRPC$TL_photos_uploadProfilePhoto;
 
     invoke-direct {v1}, Lorg/telegram/tgnet/TLRPC$TL_photos_uploadProfilePhoto;-><init>()V
 
     if-eqz v5, :cond_2
 
-    .line 8389
+    .line 8400
     iput-object v5, v1, Lorg/telegram/tgnet/TLRPC$TL_photos_uploadProfilePhoto;->file:Lorg/telegram/tgnet/TLRPC$InputFile;
 
-    .line 8390
+    .line 8401
     iget v2, v1, Lorg/telegram/tgnet/TLRPC$TL_photos_uploadProfilePhoto;->flags:I
 
     or-int/lit8 v2, v2, 0x1
@@ -895,10 +895,10 @@
     :cond_2
     if-eqz v6, :cond_3
 
-    .line 8393
+    .line 8404
     iput-object v6, v1, Lorg/telegram/tgnet/TLRPC$TL_photos_uploadProfilePhoto;->video:Lorg/telegram/tgnet/TLRPC$InputFile;
 
-    .line 8394
+    .line 8405
     iget v2, v1, Lorg/telegram/tgnet/TLRPC$TL_photos_uploadProfilePhoto;->flags:I
 
     or-int/lit8 v2, v2, 0x2
@@ -907,28 +907,28 @@
 
     move-wide/from16 v8, p4
 
-    .line 8395
+    .line 8406
     iput-wide v8, v1, Lorg/telegram/tgnet/TLRPC$TL_photos_uploadProfilePhoto;->video_start_ts:D
 
     or-int/lit8 v2, v2, 0x4
 
-    .line 8396
+    .line 8407
     iput v2, v1, Lorg/telegram/tgnet/TLRPC$TL_photos_uploadProfilePhoto;->flags:I
 
     :cond_3
     if-eqz v7, :cond_4
 
-    .line 8399
+    .line 8410
     iput-object v7, v1, Lorg/telegram/tgnet/TLRPC$TL_photos_uploadProfilePhoto;->video_emoji_markup:Lorg/telegram/tgnet/TLRPC$VideoSize;
 
-    .line 8400
+    .line 8411
     iget v2, v1, Lorg/telegram/tgnet/TLRPC$TL_photos_uploadProfilePhoto;->flags:I
 
     or-int/lit8 v2, v2, 0x10
 
     iput v2, v1, Lorg/telegram/tgnet/TLRPC$TL_photos_uploadProfilePhoto;->flags:I
 
-    .line 8403
+    .line 8414
     :cond_4
     iget-object v2, v0, Lorg/telegram/ui/GroupCallActivity$AvatarUpdaterDelegate;->this$0:Lorg/telegram/ui/GroupCallActivity;
 
@@ -955,7 +955,7 @@
 
     move-object/from16 v10, p6
 
-    .line 8483
+    .line 8494
     iget-object v3, v0, Lorg/telegram/ui/GroupCallActivity$AvatarUpdaterDelegate;->this$0:Lorg/telegram/ui/GroupCallActivity;
 
     invoke-static {v3}, Lorg/telegram/ui/GroupCallActivity;->access$200(Lorg/telegram/ui/GroupCallActivity;)Lorg/telegram/messenger/AccountInstance;
@@ -1031,7 +1031,7 @@
 .method public didUploadPhoto(Lorg/telegram/tgnet/TLRPC$InputFile;Lorg/telegram/tgnet/TLRPC$InputFile;DLjava/lang/String;Lorg/telegram/tgnet/TLRPC$PhotoSize;Lorg/telegram/tgnet/TLRPC$PhotoSize;ZLorg/telegram/tgnet/TLRPC$VideoSize;)V
     .locals 11
 
-    .line 8384
+    .line 8395
     new-instance v10, Lorg/telegram/ui/GroupCallActivity$AvatarUpdaterDelegate$$ExternalSyntheticLambda1;
 
     move-object v0, v10
@@ -1072,7 +1072,7 @@
 .method public onUploadProgressChanged(F)V
     .locals 2
 
-    .line 8523
+    .line 8534
     iget-object v0, p0, Lorg/telegram/ui/GroupCallActivity$AvatarUpdaterDelegate;->this$0:Lorg/telegram/ui/GroupCallActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/GroupCallActivity;->access$17100(Lorg/telegram/ui/GroupCallActivity;)Lorg/telegram/ui/Components/ProfileGalleryView;
@@ -1083,7 +1083,7 @@
 
     invoke-virtual {v0, v1, p1}, Lorg/telegram/ui/Components/ProfileGalleryView;->setUploadProgress(Lorg/telegram/messenger/ImageLocation;F)V
 
-    .line 8524
+    .line 8535
     invoke-virtual {p0, p1}, Lorg/telegram/ui/GroupCallActivity$AvatarUpdaterDelegate;->updateAvatarUploadingProgress(F)V
 
     return-void
@@ -1092,10 +1092,10 @@
 .method public updateAvatarUploadingProgress(F)V
     .locals 3
 
-    .line 8528
+    .line 8539
     iput p1, p0, Lorg/telegram/ui/GroupCallActivity$AvatarUpdaterDelegate;->uploadingProgress:F
 
-    .line 8529
+    .line 8540
     iget-object v0, p0, Lorg/telegram/ui/GroupCallActivity$AvatarUpdaterDelegate;->this$0:Lorg/telegram/ui/GroupCallActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/GroupCallActivity;->access$5700(Lorg/telegram/ui/GroupCallActivity;)Lorg/telegram/ui/Components/RecyclerListView;
@@ -1109,7 +1109,7 @@
     :cond_0
     const/4 v0, 0x0
 
-    .line 8532
+    .line 8543
     :goto_0
     iget-object v1, p0, Lorg/telegram/ui/GroupCallActivity$AvatarUpdaterDelegate;->this$0:Lorg/telegram/ui/GroupCallActivity;
 
@@ -1123,7 +1123,7 @@
 
     if-ge v0, v1, :cond_2
 
-    .line 8533
+    .line 8544
     iget-object v1, p0, Lorg/telegram/ui/GroupCallActivity$AvatarUpdaterDelegate;->this$0:Lorg/telegram/ui/GroupCallActivity;
 
     invoke-static {v1}, Lorg/telegram/ui/GroupCallActivity;->access$5700(Lorg/telegram/ui/GroupCallActivity;)Lorg/telegram/ui/Components/RecyclerListView;
@@ -1134,15 +1134,15 @@
 
     move-result-object v1
 
-    .line 8534
+    .line 8545
     instance-of v2, v1, Lorg/telegram/ui/Cells/GroupCallUserCell;
 
     if-eqz v2, :cond_1
 
-    .line 8535
+    .line 8546
     check-cast v1, Lorg/telegram/ui/Cells/GroupCallUserCell;
 
-    .line 8536
+    .line 8547
     invoke-virtual {v1}, Lorg/telegram/ui/Cells/GroupCallUserCell;->isSelfUser()Z
 
     move-result v2
@@ -1151,7 +1151,7 @@
 
     const/4 v2, 0x1
 
-    .line 8537
+    .line 8548
     invoke-virtual {v1, p1, v2}, Lorg/telegram/ui/Cells/GroupCallUserCell;->setUploadProgress(FZ)V
 
     :cond_1

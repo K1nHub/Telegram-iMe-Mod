@@ -24,7 +24,7 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 548
+    .line 680
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -33,43 +33,43 @@
 .method synthetic constructor <init>(Lorg/telegram/ui/Components/PasscodeView$1;)V
     .locals 0
 
-    .line 548
+    .line 680
     invoke-direct {p0}, Lorg/telegram/ui/Components/PasscodeView$InnerAnimator;-><init>()V
 
     return-void
 .end method
 
-.method static synthetic access$2600(Lorg/telegram/ui/Components/PasscodeView$InnerAnimator;)F
+.method static synthetic access$3100(Lorg/telegram/ui/Components/PasscodeView$InnerAnimator;)F
     .locals 0
 
-    .line 548
+    .line 680
     iget p0, p0, Lorg/telegram/ui/Components/PasscodeView$InnerAnimator;->startRadius:F
 
     return p0
 .end method
 
-.method static synthetic access$2602(Lorg/telegram/ui/Components/PasscodeView$InnerAnimator;F)F
+.method static synthetic access$3102(Lorg/telegram/ui/Components/PasscodeView$InnerAnimator;F)F
     .locals 0
 
-    .line 548
+    .line 680
     iput p1, p0, Lorg/telegram/ui/Components/PasscodeView$InnerAnimator;->startRadius:F
 
     return p1
 .end method
 
-.method static synthetic access$2700(Lorg/telegram/ui/Components/PasscodeView$InnerAnimator;)Landroid/animation/AnimatorSet;
+.method static synthetic access$3200(Lorg/telegram/ui/Components/PasscodeView$InnerAnimator;)Landroid/animation/AnimatorSet;
     .locals 0
 
-    .line 548
+    .line 680
     iget-object p0, p0, Lorg/telegram/ui/Components/PasscodeView$InnerAnimator;->animatorSet:Landroid/animation/AnimatorSet;
 
     return-object p0
 .end method
 
-.method static synthetic access$2702(Lorg/telegram/ui/Components/PasscodeView$InnerAnimator;Landroid/animation/AnimatorSet;)Landroid/animation/AnimatorSet;
+.method static synthetic access$3202(Lorg/telegram/ui/Components/PasscodeView$InnerAnimator;Landroid/animation/AnimatorSet;)Landroid/animation/AnimatorSet;
     .locals 0
 
-    .line 548
+    .line 680
     iput-object p1, p0, Lorg/telegram/ui/Components/PasscodeView$InnerAnimator;->animatorSet:Landroid/animation/AnimatorSet;
 
     return-object p1

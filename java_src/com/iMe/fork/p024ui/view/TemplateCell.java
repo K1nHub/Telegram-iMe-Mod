@@ -17,14 +17,14 @@ import kotlin.Unit;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3295R;
+import org.telegram.messenger.C3417R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.SharedConfig;
-import org.telegram.p044ui.ActionBar.Theme;
-import org.telegram.p044ui.Components.AvatarDrawable;
-import org.telegram.p044ui.Components.BackupImageView;
-import org.telegram.p044ui.Components.BotCommandsMenuView;
-import org.telegram.p044ui.Components.LayoutHelper;
+import org.telegram.p043ui.ActionBar.Theme;
+import org.telegram.p043ui.Components.AvatarDrawable;
+import org.telegram.p043ui.Components.BackupImageView;
+import org.telegram.p043ui.Components.BotCommandsMenuView;
+import org.telegram.p043ui.Components.LayoutHelper;
 /* compiled from: TemplateCell.kt */
 /* renamed from: com.iMe.fork.ui.view.TemplateCell */
 /* loaded from: classes3.dex */
@@ -117,10 +117,10 @@ public final class TemplateCell extends LinearLayout {
         TextView subtitleTextView = getSubtitleTextView();
         if (SharedConfig.selectedTemplatesSortingType != TemplatesSortingType.USAGE) {
             ViewExtKt.visible$default(subtitleTextView, false, 1, null);
-            subtitleTextView.setText(LocaleController.getInternalString(C3295R.string.chat_template_subtitle_created_at) + ' ' + LocaleController.formatDateCallLog(template.getCreationDate() / 1000));
+            subtitleTextView.setText(LocaleController.getInternalString(C3417R.string.chat_template_subtitle_created_at) + ' ' + LocaleController.formatDateCallLog(template.getCreationDate() / 1000));
         } else {
             subtitleTextView.setVisibility(template.getUsageRating() != 0 ? 0 : 8);
-            subtitleTextView.setText(LocaleController.getInternalString(C3295R.string.chat_template_subtitle_sent) + ' ' + LocaleController.formatPluralString("Times", template.getUsageRating(), new Object[0]));
+            subtitleTextView.setText(LocaleController.getInternalString(C3417R.string.chat_template_subtitle_sent) + ' ' + LocaleController.formatPluralString("Times", template.getUsageRating(), new Object[0]));
         }
         getGoToMessageButton().setOnClickListener(new View.OnClickListener() { // from class: com.iMe.fork.ui.view.TemplateCell$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
@@ -193,7 +193,7 @@ public final class TemplateCell extends LinearLayout {
         imageView.setScaleType(ImageView.ScaleType.CENTER);
         imageView.setBackground(Theme.createSelectorDrawable(Theme.getColor(Theme.key_listSelector)));
         imageView.setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_chat_messagePanelIcons), PorterDuff.Mode.MULTIPLY));
-        imageView.setImageResource(C3295R.C3297drawable.msg_message);
+        imageView.setImageResource(C3417R.C3419drawable.msg_message);
         return imageView;
     }
 
@@ -203,7 +203,7 @@ public final class TemplateCell extends LinearLayout {
         imageView.setScaleType(ImageView.ScaleType.CENTER);
         imageView.setBackground(Theme.createSelectorDrawable(Theme.getColor(Theme.key_listSelector)));
         imageView.setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_chat_messagePanelSend), PorterDuff.Mode.MULTIPLY));
-        imageView.setImageResource(C3295R.C3297drawable.ic_send);
+        imageView.setImageResource(C3417R.C3419drawable.ic_send);
         return imageView;
     }
 

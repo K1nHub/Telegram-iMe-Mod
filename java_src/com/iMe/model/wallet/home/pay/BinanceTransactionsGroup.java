@@ -4,13 +4,13 @@ import com.iMe.storage.domain.model.binancepay.BinanceTransaction;
 import com.iMe.storage.domain.model.binancepay.BinanceTransactionDirection;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3295R;
+import org.telegram.messenger.C3417R;
 /* compiled from: BinanceTransactionsGroup.kt */
 /* loaded from: classes3.dex */
 public abstract class BinanceTransactionsGroup {
 
     /* renamed from: id */
-    private final int f284id;
+    private final int f366id;
     private final int nameResId;
 
     public /* synthetic */ BinanceTransactionsGroup(int i, int i2, DefaultConstructorMarker defaultConstructorMarker) {
@@ -20,12 +20,12 @@ public abstract class BinanceTransactionsGroup {
     public abstract boolean checkTransaction(BinanceTransaction binanceTransaction);
 
     private BinanceTransactionsGroup(int i, int i2) {
-        this.f284id = i;
+        this.f366id = i;
         this.nameResId = i2;
     }
 
     public final int getId() {
-        return this.f284id;
+        return this.f366id;
     }
 
     public final int getNameResId() {
@@ -44,7 +44,7 @@ public abstract class BinanceTransactionsGroup {
         }
 
         private All() {
-            super(C3295R.C3298id.wallet_token_details_transactions_all, C3295R.string.wallet_token_details_transactions_all, null);
+            super(C3417R.C3420id.wallet_token_details_transactions_all, C3417R.string.wallet_token_details_transactions_all, null);
         }
     }
 
@@ -54,7 +54,7 @@ public abstract class BinanceTransactionsGroup {
         public static final Incoming INSTANCE = new Incoming();
 
         private Incoming() {
-            super(C3295R.C3298id.wallet_token_details_transactions_incoming, C3295R.string.wallet_token_details_transactions_incoming, null);
+            super(C3417R.C3420id.wallet_token_details_transactions_incoming, C3417R.string.wallet_token_details_transactions_incoming, null);
         }
 
         @Override // com.iMe.model.wallet.home.pay.BinanceTransactionsGroup
@@ -70,7 +70,7 @@ public abstract class BinanceTransactionsGroup {
         public static final Outgoing INSTANCE = new Outgoing();
 
         private Outgoing() {
-            super(C3295R.C3298id.wallet_token_details_transactions_outgoing, C3295R.string.wallet_token_details_transactions_outgoing, null);
+            super(C3417R.C3420id.wallet_token_details_transactions_outgoing, C3417R.string.wallet_token_details_transactions_outgoing, null);
         }
 
         @Override // com.iMe.model.wallet.home.pay.BinanceTransactionsGroup

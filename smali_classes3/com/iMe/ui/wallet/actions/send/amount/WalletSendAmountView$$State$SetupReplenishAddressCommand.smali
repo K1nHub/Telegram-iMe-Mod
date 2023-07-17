@@ -26,7 +26,7 @@
 .method constructor <init>(Lcom/iMe/ui/wallet/actions/send/amount/WalletSendAmountView$$State;)V
     .locals 1
 
-    .line 621
+    .line 643
     const-class p1, Lmoxy/viewstate/strategy/AddToEndSingleStrategy;
 
     const-string v0, "setupReplenishAddress"
@@ -41,8 +41,8 @@
 .method public apply(Lcom/iMe/ui/wallet/actions/send/amount/WalletSendAmountView;)V
     .locals 0
 
-    .line 626
-    invoke-interface {p1}, Lcom/iMe/ui/wallet/home/v2/tabs/binancepay/replenish/WalletBinancePayReplenishView;->setupReplenishAddress()V
+    .line 648
+    invoke-interface {p1}, Lcom/iMe/ui/wallet/home/tabs/binancepay/replenish/WalletBinancePayReplenishView;->setupReplenishAddress()V
 
     return-void
 .end method
@@ -50,7 +50,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 619
+    .line 641
     check-cast p1, Lcom/iMe/ui/wallet/actions/send/amount/WalletSendAmountView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/wallet/actions/send/amount/WalletSendAmountView$$State$SetupReplenishAddressCommand;->apply(Lcom/iMe/ui/wallet/actions/send/amount/WalletSendAmountView;)V

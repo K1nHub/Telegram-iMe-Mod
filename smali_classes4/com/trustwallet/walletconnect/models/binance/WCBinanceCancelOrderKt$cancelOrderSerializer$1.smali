@@ -90,7 +90,7 @@
 
     move-result-object v1
 
-    const-string v2, "refid"
+    const-string/jumbo v2, "refid"
 
     invoke-virtual {v0, v2, v1}, Lcom/google/gson/JsonObject;->addProperty(Ljava/lang/String;Ljava/lang/String;)V
 
@@ -105,7 +105,7 @@
 
     move-result-object v1
 
-    const-string v2, "sender"
+    const-string/jumbo v2, "sender"
 
     invoke-virtual {v0, v2, v1}, Lcom/google/gson/JsonObject;->addProperty(Ljava/lang/String;Ljava/lang/String;)V
 

@@ -1,5 +1,6 @@
 package com.iMe.storage.domain.model.staking;
 
+import com.iMe.storage.domain.model.wallet.token.TokenDetailed;
 import java.math.BigDecimal;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: StakingTransactionGas.kt */
@@ -8,9 +9,9 @@ public final class StakingTransactionGas {
     private final BigDecimal asNativeToken;
     private final BigDecimal asUsd;
     private final int duration;
-    private final StakingToken token;
+    private final TokenDetailed token;
 
-    public static /* synthetic */ StakingTransactionGas copy$default(StakingTransactionGas stakingTransactionGas, BigDecimal bigDecimal, BigDecimal bigDecimal2, int i, StakingToken stakingToken, int i2, Object obj) {
+    public static /* synthetic */ StakingTransactionGas copy$default(StakingTransactionGas stakingTransactionGas, BigDecimal bigDecimal, BigDecimal bigDecimal2, int i, TokenDetailed tokenDetailed, int i2, Object obj) {
         if ((i2 & 1) != 0) {
             bigDecimal = stakingTransactionGas.asNativeToken;
         }
@@ -21,9 +22,9 @@ public final class StakingTransactionGas {
             i = stakingTransactionGas.duration;
         }
         if ((i2 & 8) != 0) {
-            stakingToken = stakingTransactionGas.token;
+            tokenDetailed = stakingTransactionGas.token;
         }
-        return stakingTransactionGas.copy(bigDecimal, bigDecimal2, i, stakingToken);
+        return stakingTransactionGas.copy(bigDecimal, bigDecimal2, i, tokenDetailed);
     }
 
     public final BigDecimal component1() {
@@ -38,11 +39,11 @@ public final class StakingTransactionGas {
         return this.duration;
     }
 
-    public final StakingToken component4() {
+    public final TokenDetailed component4() {
         return this.token;
     }
 
-    public final StakingTransactionGas copy(BigDecimal asNativeToken, BigDecimal asUsd, int i, StakingToken token) {
+    public final StakingTransactionGas copy(BigDecimal asNativeToken, BigDecimal asUsd, int i, TokenDetailed token) {
         Intrinsics.checkNotNullParameter(asNativeToken, "asNativeToken");
         Intrinsics.checkNotNullParameter(asUsd, "asUsd");
         Intrinsics.checkNotNullParameter(token, "token");
@@ -68,7 +69,7 @@ public final class StakingTransactionGas {
         return "StakingTransactionGas(asNativeToken=" + this.asNativeToken + ", asUsd=" + this.asUsd + ", duration=" + this.duration + ", token=" + this.token + ')';
     }
 
-    public StakingTransactionGas(BigDecimal asNativeToken, BigDecimal asUsd, int i, StakingToken token) {
+    public StakingTransactionGas(BigDecimal asNativeToken, BigDecimal asUsd, int i, TokenDetailed token) {
         Intrinsics.checkNotNullParameter(asNativeToken, "asNativeToken");
         Intrinsics.checkNotNullParameter(asUsd, "asUsd");
         Intrinsics.checkNotNullParameter(token, "token");
@@ -90,7 +91,7 @@ public final class StakingTransactionGas {
         return this.duration;
     }
 
-    public final StakingToken getToken() {
+    public final TokenDetailed getToken() {
         return this.token;
     }
 }

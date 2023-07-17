@@ -11,7 +11,7 @@
     value = {
         "Ljava/lang/Object;",
         "Lcom/iMe/storage/data/datasource/base/DataSourceFactory<",
-        "Lcom/iMe/storage/domain/model/wallet/token/TokenCode;",
+        "Ljava/lang/String;",
         "Lcom/iMe/storage/data/datasource/cancel/WalletCancelDataSource;",
         ">;"
     }
@@ -41,15 +41,17 @@
 
 
 # virtual methods
-.method public getDataSource(Lcom/iMe/storage/domain/model/wallet/token/TokenCode;)Lcom/iMe/storage/data/datasource/cancel/WalletCancelDataSource;
+.method public getDataSource(Ljava/lang/String;)Lcom/iMe/storage/data/datasource/cancel/WalletCancelDataSource;
     .locals 2
 
     const-string v0, "arg"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 14
-    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;->isCryptoTokens()Z
+    .line 12
+    sget-object v0, Lcom/iMe/storage/data/utils/crypto/NetworksHelper;->INSTANCE:Lcom/iMe/storage/data/utils/crypto/NetworksHelper;
+
+    invoke-virtual {v0, p1}, Lcom/iMe/storage/data/utils/crypto/NetworksHelper;->isEVM(Ljava/lang/String;)Z
 
     move-result v0
 
@@ -62,12 +64,8 @@
     :cond_0
     new-instance v0, Ljava/lang/IllegalStateException;
 
-    .line 15
+    .line 13
     sget-object v1, Lcom/iMe/storage/data/datasource/base/DataSourceFactory;->Companion:Lcom/iMe/storage/data/datasource/base/DataSourceFactory$Companion;
-
-    invoke-virtual {p1}, Ljava/lang/Enum;->name()Ljava/lang/String;
-
-    move-result-object p1
 
     invoke-virtual {v1, p1}, Lcom/iMe/storage/data/datasource/base/DataSourceFactory$Companion;->unsupportedDataSource(Ljava/lang/String;)Ljava/lang/String;
 

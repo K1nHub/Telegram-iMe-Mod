@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/iMe/storage/domain/interactor/wallet/WalletInteractor;->getWalletBalance(ZLcom/iMe/storage/domain/model/crypto/NetworkType;)Lio/reactivex/Observable;
+    value = Lcom/iMe/storage/domain/interactor/wallet/WalletInteractor;->getWalletBalance(ZLjava/lang/String;)Lio/reactivex/Observable;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -38,7 +38,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nObservableExt.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ObservableExt.kt\ncom/iMe/storage/domain/utils/extentions/ObservableExtKt$flatMapError$1\n+ 2 WalletInteractor.kt\ncom/iMe/storage/domain/interactor/wallet/WalletInteractor\n*L\n1#1,80:1\n40#2,4:81\n*E\n"
+    value = "SMAP\nObservableExt.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ObservableExt.kt\ncom/iMe/storage/domain/utils/extentions/ObservableExtKt$flatMapError$1\n+ 2 WalletInteractor.kt\ncom/iMe/storage/domain/interactor/wallet/WalletInteractor\n*L\n1#1,92:1\n103#2,4:93\n*E\n"
 .end annotation
 
 
@@ -47,13 +47,13 @@
 
 .field final synthetic $force$inlined:Z
 
-.field final synthetic $networkType$inlined:Lcom/iMe/storage/domain/model/crypto/NetworkType;
+.field final synthetic $networkId$inlined:Ljava/lang/String;
 
 .field final synthetic this$0:Lcom/iMe/storage/domain/interactor/wallet/WalletInteractor;
 
 
 # direct methods
-.method public constructor <init>([Lcom/iMe/storage/data/network/model/error/IErrorStatus;Lcom/iMe/storage/domain/interactor/wallet/WalletInteractor;ZLcom/iMe/storage/domain/model/crypto/NetworkType;)V
+.method public constructor <init>([Lcom/iMe/storage/data/network/model/error/IErrorStatus;Lcom/iMe/storage/domain/interactor/wallet/WalletInteractor;ZLjava/lang/String;)V
     .locals 0
 
     iput-object p1, p0, Lcom/iMe/storage/domain/interactor/wallet/WalletInteractor$getWalletBalance$$inlined$flatMapError$1;->$errorStatus:[Lcom/iMe/storage/data/network/model/error/IErrorStatus;
@@ -62,7 +62,7 @@
 
     iput-boolean p3, p0, Lcom/iMe/storage/domain/interactor/wallet/WalletInteractor$getWalletBalance$$inlined$flatMapError$1;->$force$inlined:Z
 
-    iput-object p4, p0, Lcom/iMe/storage/domain/interactor/wallet/WalletInteractor$getWalletBalance$$inlined$flatMapError$1;->$networkType$inlined:Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    iput-object p4, p0, Lcom/iMe/storage/domain/interactor/wallet/WalletInteractor$getWalletBalance$$inlined$flatMapError$1;->$networkId$inlined:Ljava/lang/String;
 
     const/4 p1, 0x1
 
@@ -137,28 +137,28 @@
 
     invoke-virtual {p1}, Lcom/iMe/storage/domain/model/Result$Error;->getError()Lcom/iMe/storage/data/network/model/error/ErrorModel;
 
-    .line 81
+    .line 93
     iget-object p1, p0, Lcom/iMe/storage/domain/interactor/wallet/WalletInteractor$getWalletBalance$$inlined$flatMapError$1;->this$0:Lcom/iMe/storage/domain/interactor/wallet/WalletInteractor;
 
     invoke-static {p1}, Lcom/iMe/storage/domain/interactor/wallet/WalletInteractor;->access$getWalletRepository$p(Lcom/iMe/storage/domain/interactor/wallet/WalletInteractor;)Lcom/iMe/storage/domain/repository/wallet/WalletRepository;
 
     move-result-object p1
 
-    .line 82
+    .line 94
     invoke-interface {p1}, Lcom/iMe/storage/domain/repository/wallet/WalletRepository;->activateWallet()Lio/reactivex/Observable;
 
     move-result-object p1
 
-    .line 83
+    .line 95
     new-instance v0, Lcom/iMe/storage/domain/interactor/wallet/WalletInteractor$getWalletBalance$1$1;
 
     iget-object v1, p0, Lcom/iMe/storage/domain/interactor/wallet/WalletInteractor$getWalletBalance$$inlined$flatMapError$1;->this$0:Lcom/iMe/storage/domain/interactor/wallet/WalletInteractor;
 
     iget-boolean v2, p0, Lcom/iMe/storage/domain/interactor/wallet/WalletInteractor$getWalletBalance$$inlined$flatMapError$1;->$force$inlined:Z
 
-    iget-object v3, p0, Lcom/iMe/storage/domain/interactor/wallet/WalletInteractor$getWalletBalance$$inlined$flatMapError$1;->$networkType$inlined:Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    iget-object v3, p0, Lcom/iMe/storage/domain/interactor/wallet/WalletInteractor$getWalletBalance$$inlined$flatMapError$1;->$networkId$inlined:Ljava/lang/String;
 
-    invoke-direct {v0, v1, v2, v3}, Lcom/iMe/storage/domain/interactor/wallet/WalletInteractor$getWalletBalance$1$1;-><init>(Lcom/iMe/storage/domain/interactor/wallet/WalletInteractor;ZLcom/iMe/storage/domain/model/crypto/NetworkType;)V
+    invoke-direct {v0, v1, v2, v3}, Lcom/iMe/storage/domain/interactor/wallet/WalletInteractor$getWalletBalance$1$1;-><init>(Lcom/iMe/storage/domain/interactor/wallet/WalletInteractor;ZLjava/lang/String;)V
 
     new-instance v1, Lcom/iMe/storage/domain/interactor/wallet/WalletInteractor$sam$io_reactivex_functions_Function$0;
 
@@ -168,7 +168,7 @@
 
     move-result-object p1
 
-    .line 84
+    .line 96
     iget-object v0, p0, Lcom/iMe/storage/domain/interactor/wallet/WalletInteractor$getWalletBalance$$inlined$flatMapError$1;->this$0:Lcom/iMe/storage/domain/interactor/wallet/WalletInteractor;
 
     invoke-static {v0}, Lcom/iMe/storage/domain/interactor/wallet/WalletInteractor;->access$getSchedulersProvider$p(Lcom/iMe/storage/domain/interactor/wallet/WalletInteractor;)Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
@@ -183,9 +183,9 @@
 
     move-result-object p1
 
-    const-string v0, "fun getWalletBalance(for\u2026(schedulersProvider.io())"
+    const-string v0, "fun getWalletBalance(\n  \u2026(schedulersProvider.io())"
 
-    .line 83
+    .line 95
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     goto :goto_0

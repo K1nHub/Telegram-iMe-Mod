@@ -2,7 +2,7 @@ package com.iMe.fork.p024ui.dialog;
 
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Lambda;
-import org.telegram.p044ui.Cells.DrawerProfileCell;
+import org.telegram.p043ui.Cells.DrawerProfileCell;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: DrawerHeaderSettingsBottomSheet.kt */
 /* renamed from: com.iMe.fork.ui.dialog.DrawerHeaderSettingsBottomSheet$previewView$2 */

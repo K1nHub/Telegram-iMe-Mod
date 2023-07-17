@@ -4,6 +4,7 @@ import android.media.audiofx.AcousticEchoCanceler;
 import android.media.audiofx.AudioEffect;
 import android.media.audiofx.NoiseSuppressor;
 import android.os.Build;
+import com.stripe.android.BuildConfig;
 import java.util.UUID;
 import org.webrtc.Logging;
 /* loaded from: classes6.dex */
@@ -16,7 +17,7 @@ class WebRtcAudioEffects {
     private AcousticEchoCanceler aec;
 
     /* renamed from: ns */
-    private NoiseSuppressor f1781ns;
+    private NoiseSuppressor f1863ns;
     private boolean shouldEnableAec;
     private boolean shouldEnableNs;
 
@@ -59,7 +60,7 @@ class WebRtcAudioEffects {
             Logging.m16w(TAG, "Platform NS is not supported");
             this.shouldEnableNs = false;
             return false;
-        } else if (this.f1781ns != null && z != this.shouldEnableNs) {
+        } else if (this.f1863ns != null && z != this.shouldEnableNs) {
             Logging.m19e(TAG, "Platform NS state can't be modified while recording");
             return false;
         } else {
@@ -72,7 +73,7 @@ class WebRtcAudioEffects {
         Logging.m20d(TAG, "enable(audioSession=" + i + ")");
         boolean z = true;
         assertTrue(this.aec == null);
-        assertTrue(this.f1781ns == null);
+        assertTrue(this.f1863ns == null);
         if (isAcousticEchoCancelerSupported()) {
             AcousticEchoCanceler create = AcousticEchoCanceler.create(i);
             this.aec = create;
@@ -96,13 +97,13 @@ class WebRtcAudioEffects {
         }
         if (isNoiseSuppressorSupported()) {
             NoiseSuppressor create2 = NoiseSuppressor.create(i);
-            this.f1781ns = create2;
+            this.f1863ns = create2;
             if (create2 != null) {
                 boolean enabled2 = create2.getEnabled();
                 if (!this.shouldEnableNs || !isNoiseSuppressorSupported()) {
                     z = false;
                 }
-                if (this.f1781ns.setEnabled(z) != 0) {
+                if (this.f1863ns.setEnabled(z) != 0) {
                     Logging.m19e(TAG, "Failed to set the NoiseSuppressor state");
                 }
                 StringBuilder sb2 = new StringBuilder();
@@ -111,7 +112,7 @@ class WebRtcAudioEffects {
                 sb2.append(", enable: ");
                 sb2.append(z);
                 sb2.append(", is now: ");
-                sb2.append(this.f1781ns.getEnabled() ? "enabled" : "disabled");
+                sb2.append(this.f1863ns.getEnabled() ? "enabled" : "disabled");
                 Logging.m20d(TAG, sb2.toString());
                 return;
             }
@@ -120,16 +121,16 @@ class WebRtcAudioEffects {
     }
 
     public void release() {
-        Logging.m20d(TAG, "release");
+        Logging.m20d(TAG, BuildConfig.BUILD_TYPE);
         AcousticEchoCanceler acousticEchoCanceler = this.aec;
         if (acousticEchoCanceler != null) {
             acousticEchoCanceler.release();
             this.aec = null;
         }
-        NoiseSuppressor noiseSuppressor = this.f1781ns;
+        NoiseSuppressor noiseSuppressor = this.f1863ns;
         if (noiseSuppressor != null) {
             noiseSuppressor.release();
-            this.f1781ns = null;
+            this.f1863ns = null;
         }
     }
 

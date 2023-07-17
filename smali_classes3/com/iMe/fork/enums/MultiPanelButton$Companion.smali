@@ -14,7 +14,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nMultiPanelButton.kt\nKotlin\n*S Kotlin\n*F\n+ 1 MultiPanelButton.kt\ncom/iMe/fork/enums/MultiPanelButton$Companion\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,77:1\n1#2:78\n*E\n"
+    value = "SMAP\nMultiPanelButton.kt\nKotlin\n*S Kotlin\n*F\n+ 1 MultiPanelButton.kt\ncom/iMe/fork/enums/MultiPanelButton$Companion\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,71:1\n1#2:72\n*E\n"
 .end annotation
 
 
@@ -22,7 +22,7 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 73
+    .line 67
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -45,7 +45,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 74
+    .line 68
     invoke-static {}, Lcom/iMe/fork/enums/MultiPanelButton;->values()[Lcom/iMe/fork/enums/MultiPanelButton;
 
     move-result-object v0

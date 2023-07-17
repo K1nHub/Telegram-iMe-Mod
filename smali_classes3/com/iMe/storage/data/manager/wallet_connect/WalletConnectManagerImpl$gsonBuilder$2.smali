@@ -48,7 +48,7 @@
 .method public final invoke()Lcom/google/gson/GsonBuilder;
     .locals 1
 
-    .line 62
+    .line 61
     iget-object v0, p0, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl$gsonBuilder$2;->this$0:Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;
 
     invoke-static {v0}, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;->access$getGson$p(Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl;)Lcom/google/gson/Gson;
@@ -65,7 +65,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 62
+    .line 61
     invoke-virtual {p0}, Lcom/iMe/storage/data/manager/wallet_connect/WalletConnectManagerImpl$gsonBuilder$2;->invoke()Lcom/google/gson/GsonBuilder;
 
     move-result-object v0

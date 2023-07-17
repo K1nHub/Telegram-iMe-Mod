@@ -22,14 +22,14 @@
 .method constructor <init>(Lorg/telegram/ui/VoIPFragment;Landroid/content/Context;)V
     .locals 0
 
-    .line 677
+    .line 706
     invoke-direct {p0, p2}, Lorg/telegram/ui/Components/BackupImageView;-><init>(Landroid/content/Context;)V
 
     const/high16 p1, -0x1000000
 
     const/16 p2, 0x4c
 
-    .line 679
+    .line 708
     invoke-static {p1, p2}, Landroidx/core/graphics/ColorUtils;->setAlphaComponent(II)I
 
     move-result p1
@@ -44,10 +44,10 @@
 .method protected onDraw(Landroid/graphics/Canvas;)V
     .locals 1
 
-    .line 683
+    .line 712
     invoke-super {p0, p1}, Lorg/telegram/ui/Components/BackupImageView;->onDraw(Landroid/graphics/Canvas;)V
 
-    .line 684
+    .line 713
     iget v0, p0, Lorg/telegram/ui/VoIPFragment$3;->blackoutColor:I
 
     invoke-virtual {p1, v0}, Landroid/graphics/Canvas;->drawColor(I)V

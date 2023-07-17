@@ -20,7 +20,7 @@
     value = {
         "Lkotlin/jvm/internal/Lambda;",
         "Lkotlin/jvm/functions/Function1<",
-        "Lcom/iMe/storage/domain/model/crypto/NetworkType;",
+        "Lcom/iMe/storage/domain/model/crypto/Network;",
         "Lkotlin/Unit;",
         ">;"
     }
@@ -50,19 +50,19 @@
     .locals 0
 
     .line 58
-    check-cast p1, Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    check-cast p1, Lcom/iMe/storage/domain/model/crypto/Network;
 
-    invoke-virtual {p0, p1}, Lcom/iMe/ui/wallet/crypto/wallet_connect/WalletConnectPresenter$startChooseNetworkDialog$1;->invoke(Lcom/iMe/storage/domain/model/crypto/NetworkType;)V
+    invoke-virtual {p0, p1}, Lcom/iMe/ui/wallet/crypto/wallet_connect/WalletConnectPresenter$startChooseNetworkDialog$1;->invoke(Lcom/iMe/storage/domain/model/crypto/Network;)V
 
     sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     return-object p1
 .end method
 
-.method public final invoke(Lcom/iMe/storage/domain/model/crypto/NetworkType;)V
+.method public final invoke(Lcom/iMe/storage/domain/model/crypto/Network;)V
     .locals 1
 
-    const-string v0, "newNetworkType"
+    const-string v0, "newNetwork"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -73,7 +73,7 @@
 
     move-result-object v0
 
-    invoke-interface {v0, p1}, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;->setNetworkType(Lcom/iMe/storage/domain/model/crypto/NetworkType;)V
+    invoke-interface {v0, p1}, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;->setNetwork(Lcom/iMe/storage/domain/model/crypto/Network;)V
 
     .line 63
     iget-object p1, p0, Lcom/iMe/ui/wallet/crypto/wallet_connect/WalletConnectPresenter$startChooseNetworkDialog$1;->this$0:Lcom/iMe/ui/wallet/crypto/wallet_connect/WalletConnectPresenter;

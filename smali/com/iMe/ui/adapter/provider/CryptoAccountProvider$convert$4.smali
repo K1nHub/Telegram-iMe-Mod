@@ -53,7 +53,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 74
+    .line 72
     check-cast p1, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/adapter/provider/CryptoAccountProvider$convert$4;->invoke(Lorg/telegram/ui/ActionBar/ActionBarMenuItem;)V
@@ -70,12 +70,24 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
+    .line 73
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayIcon:I
+
+    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
+
+    move-result v0
+
+    invoke-virtual {p1, v0}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->setIconColor(I)V
+
+    .line 74
+    invoke-static {p1}, Lcom/iMe/utils/extentions/common/ViewExtKt;->setCircleRippleBackground(Landroid/view/View;)V
+
     .line 75
     iget-object v0, p0, Lcom/iMe/ui/adapter/provider/CryptoAccountProvider$convert$4;->this$0:Lcom/iMe/ui/adapter/provider/CryptoAccountProvider;
 
     iget-object v1, p0, Lcom/iMe/ui/adapter/provider/CryptoAccountProvider$convert$4;->$item:Lcom/iMe/model/wallet/home/CryptoAccountItem;
 
-    invoke-virtual {v1}, Lcom/iMe/model/wallet/home/CryptoAccountItem;->getNetworkType()Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    invoke-virtual {v1}, Lcom/iMe/model/wallet/home/CryptoAccountItem;->getNetworkType()Lcom/iMe/storage/domain/model/crypto/Network;
 
     move-result-object v1
 
@@ -85,7 +97,7 @@
 
     move-result-object v2
 
-    invoke-static {v0, p1, v1, v2}, Lcom/iMe/ui/adapter/provider/CryptoAccountProvider;->access$setupMenuItems(Lcom/iMe/ui/adapter/provider/CryptoAccountProvider;Lorg/telegram/ui/ActionBar/ActionBarMenuItem;Lcom/iMe/storage/domain/model/crypto/NetworkType;Ljava/lang/String;)V
+    invoke-static {v0, p1, v1, v2}, Lcom/iMe/ui/adapter/provider/CryptoAccountProvider;->access$setupMenuItems(Lcom/iMe/ui/adapter/provider/CryptoAccountProvider;Lorg/telegram/ui/ActionBar/ActionBarMenuItem;Lcom/iMe/storage/domain/model/crypto/Network;Ljava/lang/String;)V
 
     return-void
 .end method

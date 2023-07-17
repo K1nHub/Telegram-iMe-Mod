@@ -49,20 +49,28 @@
     return-void
 .end method
 
+.method public synthetic removeSelfFromStackImmediately()V
+    .locals 0
+
+    invoke-static {p0}, Lcom/iMe/ui/base/mvp/base/BaseView$-CC;->$default$removeSelfFromStackImmediately(Lcom/iMe/ui/base/mvp/base/BaseView;)V
+
+    return-void
+.end method
+
 .method public showAppUpdateDialog()V
     .locals 3
 
-    .line 147
+    .line 163
     new-instance v0, Lcom/iMe/ui/recognition/PhotoView$$State$ShowAppUpdateDialogCommand;
 
     invoke-direct {v0, p0}, Lcom/iMe/ui/recognition/PhotoView$$State$ShowAppUpdateDialogCommand;-><init>(Lcom/iMe/ui/recognition/PhotoView$$State;)V
 
-    .line 148
+    .line 164
     iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
 
     invoke-virtual {v1, v0}, Lmoxy/viewstate/ViewCommands;->beforeApply(Lmoxy/viewstate/ViewCommand;)V
 
-    .line 150
+    .line 166
     invoke-virtual {p0}, Lmoxy/viewstate/MvpViewState;->hasNotView()Ljava/lang/Boolean;
 
     move-result-object v1
@@ -75,7 +83,7 @@
 
     return-void
 
-    .line 154
+    .line 170
     :cond_0
     iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->views:Ljava/util/Set;
 
@@ -96,12 +104,12 @@
 
     check-cast v2, Lcom/iMe/ui/recognition/PhotoView;
 
-    .line 155
+    .line 171
     invoke-interface {v2}, Lcom/iMe/ui/base/mvp/AppUpdateRequiredView;->showAppUpdateDialog()V
 
     goto :goto_0
 
-    .line 158
+    .line 174
     :cond_1
     iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
 

@@ -1,5 +1,5 @@
 .class public final Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment$setupActionBar$1$1;
-.super Lorg/telegram/ui/ActionBar/ActionBar$ActionBarMenuOnItemClick;
+.super Lorg/telegram/ui/ActionBar/ActionBarMenuItem$ActionBarMenuItemSearchListener;
 .source "WalletSelectTokenFragment.kt"
 
 
@@ -24,26 +24,54 @@
 
     iput-object p1, p0, Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment$setupActionBar$1$1;->this$0:Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment;
 
-    .line 83
-    invoke-direct {p0}, Lorg/telegram/ui/ActionBar/ActionBar$ActionBarMenuOnItemClick;-><init>()V
+    .line 128
+    invoke-direct {p0}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem$ActionBarMenuItemSearchListener;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onItemClick(I)V
+.method public onSearchCollapse()V
+    .locals 2
+
+    .line 130
+    iget-object v0, p0, Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment$setupActionBar$1$1;->this$0:Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment;
+
+    invoke-static {v0}, Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment;->access$getPresenter(Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment;)Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenPresenter;
+
+    move-result-object v0
+
+    const-string v1, ""
+
+    invoke-virtual {v0, v1}, Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenPresenter;->onQueryUpdate(Ljava/lang/String;)V
+
+    return-void
+.end method
+
+.method public onTextChanged(Landroid/widget/EditText;)V
     .locals 1
 
-    const/4 v0, -0x1
+    const-string v0, "editText"
 
-    if-ne p1, v0, :cond_0
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 86
-    iget-object p1, p0, Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment$setupActionBar$1$1;->this$0:Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment;
+    .line 134
+    iget-object v0, p0, Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment$setupActionBar$1$1;->this$0:Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment;
 
-    invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->finishFragment()V
+    invoke-static {v0}, Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment;->access$getPresenter(Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenFragment;)Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenPresenter;
 
-    :cond_0
+    move-result-object v0
+
+    invoke-virtual {p1}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-virtual {v0, p1}, Lcom/iMe/ui/wallet/swap/token/WalletSelectTokenPresenter;->onQueryUpdate(Ljava/lang/String;)V
+
     return-void
 .end method

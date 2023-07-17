@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nDetailsIconCellView.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DetailsIconCellView.kt\ncom/iMe/ui/custom/DetailsIconCellView\n+ 2 View.kt\nandroidx/core/view/ViewKt\n*L\n1#1,75:1\n262#2,2:76\n*S KotlinDebug\n*F\n+ 1 DetailsIconCellView.kt\ncom/iMe/ui/custom/DetailsIconCellView\n*L\n42#1:76,2\n*E\n"
+    value = "SMAP\nDetailsIconCellView.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DetailsIconCellView.kt\ncom/iMe/ui/custom/DetailsIconCellView\n+ 2 View.kt\nandroidx/core/view/ViewKt\n*L\n1#1,90:1\n262#2,2:91\n262#2,2:93\n*S KotlinDebug\n*F\n+ 1 DetailsIconCellView.kt\ncom/iMe/ui/custom/DetailsIconCellView\n*L\n43#1:91,2\n57#1:93,2\n*E\n"
 .end annotation
 
 
@@ -47,15 +47,15 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 18
+    .line 19
     invoke-direct {p0, p1, p2, p3}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
     const/4 p2, 0x1
 
-    .line 21
+    .line 22
     iput-boolean p2, p0, Lcom/iMe/ui/custom/DetailsIconCellView;->isIconTinted:Z
 
-    .line 24
+    .line 25
     invoke-static {p1}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
 
     move-result-object p1
@@ -70,7 +70,7 @@
 
     iput-object p1, p0, Lcom/iMe/ui/custom/DetailsIconCellView;->binding:Lorg/telegram/messenger/databinding/ForkContentDetailsIconCellBinding;
 
-    .line 27
+    .line 28
     invoke-direct {p0}, Lcom/iMe/ui/custom/DetailsIconCellView;->setupView()V
 
     return-void
@@ -92,7 +92,7 @@
 
     const/4 p3, 0x0
 
-    .line 14
+    .line 15
     :cond_1
     invoke-direct {p0, p1, p2, p3}, Lcom/iMe/ui/custom/DetailsIconCellView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
@@ -102,10 +102,10 @@
 .method private final setupView()V
     .locals 1
 
-    .line 69
+    .line 84
     invoke-virtual {p0}, Lcom/iMe/ui/custom/DetailsIconCellView;->setupColors()V
 
-    .line 70
+    .line 85
     iget-object v0, p0, Lcom/iMe/ui/custom/DetailsIconCellView;->binding:Lorg/telegram/messenger/databinding/ForkContentDetailsIconCellBinding;
 
     invoke-virtual {v0}, Lorg/telegram/messenger/databinding/ForkContentDetailsIconCellBinding;->getRoot()Landroidx/constraintlayout/widget/ConstraintLayout;
@@ -126,7 +126,7 @@
 
     const/4 p4, 0x0
 
-    .line 32
+    .line 33
     :cond_0
     invoke-virtual {p0, p1, p2, p3, p4}, Lcom/iMe/ui/custom/DetailsIconCellView;->setupViewData(Ljava/lang/String;Ljava/lang/String;IZ)V
 
@@ -138,7 +138,7 @@
 .method public final setIconTinted(Z)V
     .locals 0
 
-    .line 21
+    .line 22
     iput-boolean p1, p0, Lcom/iMe/ui/custom/DetailsIconCellView;->isIconTinted:Z
 
     return-void
@@ -147,10 +147,10 @@
 .method public final setupColors()V
     .locals 3
 
-    .line 47
+    .line 62
     iget-object v0, p0, Lcom/iMe/ui/custom/DetailsIconCellView;->binding:Lorg/telegram/messenger/databinding/ForkContentDetailsIconCellBinding;
 
-    .line 48
+    .line 63
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkContentDetailsIconCellBinding;->textTitle:Landroidx/appcompat/widget/AppCompatTextView;
 
     sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayText:I
@@ -161,10 +161,10 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 49
+    .line 64
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkContentDetailsIconCellBinding;->textValue:Landroidx/appcompat/widget/AppCompatTextView;
 
-    .line 50
+    .line 65
     sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
 
     invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -173,24 +173,24 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setTextColor(I)V
 
-    const-string v2, "setupColors$lambda$3$lambda$1"
+    const-string v2, "setupColors$lambda$4$lambda$2"
 
-    .line 51
+    .line 66
     invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-static {v1}, Lcom/iMe/utils/extentions/common/ViewExtKt;->withMediumTypeface(Landroid/widget/TextView;)V
 
-    .line 53
+    .line 68
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkContentDetailsIconCellBinding;->imageIcon:Landroidx/appcompat/widget/AppCompatImageView;
 
-    .line 54
+    .line 69
     iget-boolean v2, p0, Lcom/iMe/ui/custom/DetailsIconCellView;->isIconTinted:Z
 
     if-eqz v2, :cond_0
 
-    const-string v2, "setupColors$lambda$3$lambda$2"
+    const-string v2, "setupColors$lambda$4$lambda$3"
 
-    .line 55
+    .line 70
     invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayIcon:I
@@ -203,11 +203,11 @@
 
     goto :goto_0
 
-    .line 57
+    .line 72
     :cond_0
     invoke-virtual {v1}, Landroid/widget/ImageView;->clearColorFilter()V
 
-    .line 60
+    .line 75
     :goto_0
     iget-object v0, v0, Lorg/telegram/messenger/databinding/ForkContentDetailsIconCellBinding;->divider:Lcom/iMe/ui/custom/DividerView;
 
@@ -233,25 +233,95 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 38
+    .line 39
     iget-object v0, p0, Lcom/iMe/ui/custom/DetailsIconCellView;->binding:Lorg/telegram/messenger/databinding/ForkContentDetailsIconCellBinding;
 
-    .line 39
+    .line 40
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkContentDetailsIconCellBinding;->textTitle:Landroidx/appcompat/widget/AppCompatTextView;
 
     invoke-virtual {v1, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 40
+    .line 41
     iget-object p1, v0, Lorg/telegram/messenger/databinding/ForkContentDetailsIconCellBinding;->textValue:Landroidx/appcompat/widget/AppCompatTextView;
 
     invoke-virtual {p1, p2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 41
+    .line 42
     iget-object p1, v0, Lorg/telegram/messenger/databinding/ForkContentDetailsIconCellBinding;->imageIcon:Landroidx/appcompat/widget/AppCompatImageView;
 
     invoke-virtual {p1, p3}, Landroidx/appcompat/widget/AppCompatImageView;->setImageResource(I)V
 
-    .line 42
+    .line 43
+    iget-object p1, v0, Lorg/telegram/messenger/databinding/ForkContentDetailsIconCellBinding;->divider:Lcom/iMe/ui/custom/DividerView;
+
+    const-string p2, "divider"
+
+    invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    if-eqz p4, :cond_0
+
+    const/4 p2, 0x0
+
+    goto :goto_0
+
+    :cond_0
+    const/16 p2, 0x8
+
+    .line 262
+    :goto_0
+    invoke-virtual {p1, p2}, Landroid/view/View;->setVisibility(I)V
+
+    return-void
+.end method
+
+.method public final setupViewData(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
+    .locals 7
+
+    const-string v0, "titleText"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "valueText"
+
+    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "iconUrl"
+
+    invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 53
+    iget-object v0, p0, Lcom/iMe/ui/custom/DetailsIconCellView;->binding:Lorg/telegram/messenger/databinding/ForkContentDetailsIconCellBinding;
+
+    .line 54
+    iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkContentDetailsIconCellBinding;->textTitle:Landroidx/appcompat/widget/AppCompatTextView;
+
+    invoke-virtual {v1, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    .line 55
+    iget-object p1, v0, Lorg/telegram/messenger/databinding/ForkContentDetailsIconCellBinding;->textValue:Landroidx/appcompat/widget/AppCompatTextView;
+
+    invoke-virtual {p1, p2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    .line 56
+    iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkContentDetailsIconCellBinding;->imageIcon:Landroidx/appcompat/widget/AppCompatImageView;
+
+    const-string p1, "imageIcon"
+
+    invoke-static {v1, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const/4 v3, 0x0
+
+    const/4 v4, 0x0
+
+    const/4 v5, 0x2
+
+    const/4 v6, 0x0
+
+    move-object v2, p3
+
+    invoke-static/range {v1 .. v6}, Lcom/iMe/utils/extentions/common/ImageViewExtKt;->loadFrom$default(Landroid/widget/ImageView;Ljava/lang/String;Ljava/lang/Integer;ZILjava/lang/Object;)V
+
+    .line 57
     iget-object p1, v0, Lorg/telegram/messenger/databinding/ForkContentDetailsIconCellBinding;->divider:Lcom/iMe/ui/custom/DividerView;
 
     const-string p2, "divider"

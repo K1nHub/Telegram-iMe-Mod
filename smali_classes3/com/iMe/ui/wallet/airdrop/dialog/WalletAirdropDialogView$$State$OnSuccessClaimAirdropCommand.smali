@@ -32,17 +32,17 @@
 .method constructor <init>(Lcom/iMe/ui/wallet/airdrop/dialog/WalletAirdropDialogView$$State;Ljava/lang/String;Ljava/lang/String;)V
     .locals 1
 
-    .line 177
+    .line 193
     const-class p1, Lmoxy/viewstate/strategy/OneExecutionStateStrategy;
 
     const-string v0, "onSuccessClaimAirdrop"
 
     invoke-direct {p0, v0, p1}, Lmoxy/viewstate/ViewCommand;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
-    .line 179
+    .line 195
     iput-object p2, p0, Lcom/iMe/ui/wallet/airdrop/dialog/WalletAirdropDialogView$$State$OnSuccessClaimAirdropCommand;->title:Ljava/lang/String;
 
-    .line 180
+    .line 196
     iput-object p3, p0, Lcom/iMe/ui/wallet/airdrop/dialog/WalletAirdropDialogView$$State$OnSuccessClaimAirdropCommand;->description:Ljava/lang/String;
 
     return-void
@@ -53,7 +53,7 @@
 .method public apply(Lcom/iMe/ui/wallet/airdrop/dialog/WalletAirdropDialogView;)V
     .locals 2
 
-    .line 185
+    .line 201
     iget-object v0, p0, Lcom/iMe/ui/wallet/airdrop/dialog/WalletAirdropDialogView$$State$OnSuccessClaimAirdropCommand;->title:Ljava/lang/String;
 
     iget-object v1, p0, Lcom/iMe/ui/wallet/airdrop/dialog/WalletAirdropDialogView$$State$OnSuccessClaimAirdropCommand;->description:Ljava/lang/String;
@@ -66,7 +66,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 171
+    .line 187
     check-cast p1, Lcom/iMe/ui/wallet/airdrop/dialog/WalletAirdropDialogView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/wallet/airdrop/dialog/WalletAirdropDialogView$$State$OnSuccessClaimAirdropCommand;->apply(Lcom/iMe/ui/wallet/airdrop/dialog/WalletAirdropDialogView;)V

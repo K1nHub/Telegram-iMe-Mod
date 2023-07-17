@@ -14,7 +14,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nWalletConnectSwitchNetworkBottomSheetDialog.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WalletConnectSwitchNetworkBottomSheetDialog.kt\ncom/iMe/ui/wallet/crypto/wallet_connect/network_change/WalletConnectSwitchNetworkBottomSheetDialog\n+ 2 Delegates.kt\nmoxy/ktx/DelegatesKt\n+ 3 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n*L\n1#1,141:1\n13#2,4:142\n56#3,6:146\n*S KotlinDebug\n*F\n+ 1 WalletConnectSwitchNetworkBottomSheetDialog.kt\ncom/iMe/ui/wallet/crypto/wallet_connect/network_change/WalletConnectSwitchNetworkBottomSheetDialog\n*L\n30#1:142,4\n33#1:146,6\n*E\n"
+    value = "SMAP\nWalletConnectSwitchNetworkBottomSheetDialog.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WalletConnectSwitchNetworkBottomSheetDialog.kt\ncom/iMe/ui/wallet/crypto/wallet_connect/network_change/WalletConnectSwitchNetworkBottomSheetDialog\n+ 2 Delegates.kt\nmoxy/ktx/DelegatesKt\n+ 3 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n*L\n1#1,139:1\n13#2,4:140\n56#3,6:144\n*S KotlinDebug\n*F\n+ 1 WalletConnectSwitchNetworkBottomSheetDialog.kt\ncom/iMe/ui/wallet/crypto/wallet_connect/network_change/WalletConnectSwitchNetworkBottomSheetDialog\n*L\n28#1:140,4\n31#1:144,6\n*E\n"
 .end annotation
 
 
@@ -49,7 +49,7 @@
 
     new-array v0, v0, [Lkotlin/reflect/KProperty;
 
-    .line 30
+    .line 28
     new-instance v1, Lkotlin/jvm/internal/PropertyReference1Impl;
 
     const-class v2, Lcom/iMe/ui/wallet/crypto/wallet_connect/network_change/WalletConnectSwitchNetworkBottomSheetDialog;
@@ -68,7 +68,7 @@
 
     aput-object v1, v0, v5
 
-    .line 36
+    .line 34
     new-instance v1, Lkotlin/jvm/internal/PropertyReference1Impl;
 
     const-class v2, Lcom/iMe/ui/wallet/crypto/wallet_connect/network_change/WalletConnectSwitchNetworkBottomSheetDialog;
@@ -100,14 +100,14 @@
     return-void
 .end method
 
-.method public constructor <init>(JLcom/iMe/model/wallet/crypto/wallet_connect/WalletConnectSessionItem;Lcom/iMe/storage/domain/model/crypto/NetworkType;Lorg/telegram/ui/ActionBar/BaseFragment;)V
+.method public constructor <init>(JLcom/iMe/model/wallet/crypto/wallet_connect/WalletConnectSessionItem;Ljava/lang/String;Lorg/telegram/ui/ActionBar/BaseFragment;)V
     .locals 8
 
-    const-string v0, "sessionItem"
+    const-string/jumbo v0, "sessionItem"
 
     invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "networkType"
+    const-string v0, "networkId"
 
     invoke-static {p4, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -115,7 +115,7 @@
 
     invoke-static {p5, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 27
+    .line 25
     invoke-virtual {p5}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object v0
@@ -128,7 +128,7 @@
 
     invoke-direct {p0, v0, v1}, Lcom/iMe/ui/base/mvp/MvpBottomSheet;-><init>(Landroid/content/Context;Z)V
 
-    .line 30
+    .line 28
     new-instance v0, Lcom/iMe/ui/wallet/crypto/wallet_connect/network_change/WalletConnectSwitchNetworkBottomSheetDialog$presenter$2;
 
     move-object v2, v0
@@ -141,7 +141,7 @@
 
     move-object v7, p4
 
-    invoke-direct/range {v2 .. v7}, Lcom/iMe/ui/wallet/crypto/wallet_connect/network_change/WalletConnectSwitchNetworkBottomSheetDialog$presenter$2;-><init>(Lcom/iMe/ui/wallet/crypto/wallet_connect/network_change/WalletConnectSwitchNetworkBottomSheetDialog;JLcom/iMe/model/wallet/crypto/wallet_connect/WalletConnectSessionItem;Lcom/iMe/storage/domain/model/crypto/NetworkType;)V
+    invoke-direct/range {v2 .. v7}, Lcom/iMe/ui/wallet/crypto/wallet_connect/network_change/WalletConnectSwitchNetworkBottomSheetDialog$presenter$2;-><init>(Lcom/iMe/ui/wallet/crypto/wallet_connect/network_change/WalletConnectSwitchNetworkBottomSheetDialog;JLcom/iMe/model/wallet/crypto/wallet_connect/WalletConnectSessionItem;Ljava/lang/String;)V
 
     .line 16
     new-instance p1, Lmoxy/ktx/MoxyKtxDelegate;
@@ -180,7 +180,7 @@
 
     invoke-direct {p1, p2, p3, v0}, Lmoxy/ktx/MoxyKtxDelegate;-><init>(Lmoxy/MvpDelegate;Ljava/lang/String;Lkotlin/jvm/functions/Function0;)V
 
-    .line 30
+    .line 28
     iput-object p1, p0, Lcom/iMe/ui/wallet/crypto/wallet_connect/network_change/WalletConnectSwitchNetworkBottomSheetDialog;->presenter$delegate:Lmoxy/ktx/MoxyKtxDelegate;
 
     .line 58
@@ -201,10 +201,10 @@
 
     move-result-object p1
 
-    .line 33
+    .line 31
     iput-object p1, p0, Lcom/iMe/ui/wallet/crypto/wallet_connect/network_change/WalletConnectSwitchNetworkBottomSheetDialog;->resourceManager$delegate:Lkotlin/Lazy;
 
-    .line 36
+    .line 34
     new-instance p1, Lcom/iMe/ui/wallet/crypto/wallet_connect/network_change/WalletConnectSwitchNetworkBottomSheetDialog$binding$2;
 
     invoke-direct {p1, p5}, Lcom/iMe/ui/wallet/crypto/wallet_connect/network_change/WalletConnectSwitchNetworkBottomSheetDialog$binding$2;-><init>(Lorg/telegram/ui/ActionBar/BaseFragment;)V
@@ -217,7 +217,7 @@
 
     const/4 p1, 0x0
 
-    .line 39
+    .line 37
     invoke-virtual {p0, p1}, Lorg/telegram/ui/ActionBar/BottomSheet;->setApplyBottomPadding(Z)V
 
     return-void
@@ -226,7 +226,7 @@
 .method public static final synthetic access$approveNetworkChange(Lcom/iMe/ui/wallet/crypto/wallet_connect/network_change/WalletConnectSwitchNetworkBottomSheetDialog;)V
     .locals 0
 
-    .line 22
+    .line 20
     invoke-direct {p0}, Lcom/iMe/ui/wallet/crypto/wallet_connect/network_change/WalletConnectSwitchNetworkBottomSheetDialog;->approveNetworkChange()V
 
     return-void
@@ -235,7 +235,7 @@
 .method public static final synthetic access$rejectNetworkChange(Lcom/iMe/ui/wallet/crypto/wallet_connect/network_change/WalletConnectSwitchNetworkBottomSheetDialog;)V
     .locals 0
 
-    .line 22
+    .line 20
     invoke-direct {p0}, Lcom/iMe/ui/wallet/crypto/wallet_connect/network_change/WalletConnectSwitchNetworkBottomSheetDialog;->rejectNetworkChange()V
 
     return-void
@@ -244,14 +244,14 @@
 .method private final approveNetworkChange()V
     .locals 1
 
-    .line 116
+    .line 114
     invoke-direct {p0}, Lcom/iMe/ui/wallet/crypto/wallet_connect/network_change/WalletConnectSwitchNetworkBottomSheetDialog;->getPresenter()Lcom/iMe/ui/wallet/crypto/wallet_connect/network_change/WalletConnectSwitchNetworkPresenter;
 
     move-result-object v0
 
     invoke-virtual {v0}, Lcom/iMe/ui/wallet/crypto/wallet_connect/network_change/WalletConnectSwitchNetworkPresenter;->approveNetworkChange()V
 
-    .line 117
+    .line 115
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BottomSheet;->dismiss()V
 
     return-void
@@ -260,7 +260,7 @@
 .method private final getBinding()Lorg/telegram/messenger/databinding/ForkContentWalletConnectSwitchNetworkBinding;
     .locals 3
 
-    .line 36
+    .line 34
     iget-object v0, p0, Lcom/iMe/ui/wallet/crypto/wallet_connect/network_change/WalletConnectSwitchNetworkBottomSheetDialog;->binding$delegate:Lcom/iMe/utils/extentions/delegate/ResettableLazy;
 
     sget-object v1, Lcom/iMe/ui/wallet/crypto/wallet_connect/network_change/WalletConnectSwitchNetworkBottomSheetDialog;->$$delegatedProperties:[Lkotlin/reflect/KProperty;
@@ -281,7 +281,7 @@
 .method private final getPresenter()Lcom/iMe/ui/wallet/crypto/wallet_connect/network_change/WalletConnectSwitchNetworkPresenter;
     .locals 3
 
-    .line 30
+    .line 28
     iget-object v0, p0, Lcom/iMe/ui/wallet/crypto/wallet_connect/network_change/WalletConnectSwitchNetworkBottomSheetDialog;->presenter$delegate:Lmoxy/ktx/MoxyKtxDelegate;
 
     sget-object v1, Lcom/iMe/ui/wallet/crypto/wallet_connect/network_change/WalletConnectSwitchNetworkBottomSheetDialog;->$$delegatedProperties:[Lkotlin/reflect/KProperty;
@@ -302,7 +302,7 @@
 .method private final getResourceManager()Lcom/iMe/storage/domain/utils/system/ResourceManager;
     .locals 1
 
-    .line 33
+    .line 31
     iget-object v0, p0, Lcom/iMe/ui/wallet/crypto/wallet_connect/network_change/WalletConnectSwitchNetworkBottomSheetDialog;->resourceManager$delegate:Lkotlin/Lazy;
 
     invoke-interface {v0}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
@@ -314,7 +314,7 @@
     return-object v0
 .end method
 
-.method public static final newInstance(JLcom/iMe/model/wallet/crypto/wallet_connect/WalletConnectSessionItem;Lcom/iMe/storage/domain/model/crypto/NetworkType;Lorg/telegram/ui/ActionBar/BaseFragment;)Lcom/iMe/ui/wallet/crypto/wallet_connect/network_change/WalletConnectSwitchNetworkBottomSheetDialog;
+.method public static final newInstance(JLcom/iMe/model/wallet/crypto/wallet_connect/WalletConnectSessionItem;Ljava/lang/String;Lorg/telegram/ui/ActionBar/BaseFragment;)Lcom/iMe/ui/wallet/crypto/wallet_connect/network_change/WalletConnectSwitchNetworkBottomSheetDialog;
     .locals 6
 
     sget-object v0, Lcom/iMe/ui/wallet/crypto/wallet_connect/network_change/WalletConnectSwitchNetworkBottomSheetDialog;->Companion:Lcom/iMe/ui/wallet/crypto/wallet_connect/network_change/WalletConnectSwitchNetworkBottomSheetDialog$Companion;
@@ -327,7 +327,7 @@
 
     move-object v5, p4
 
-    invoke-virtual/range {v0 .. v5}, Lcom/iMe/ui/wallet/crypto/wallet_connect/network_change/WalletConnectSwitchNetworkBottomSheetDialog$Companion;->newInstance(JLcom/iMe/model/wallet/crypto/wallet_connect/WalletConnectSessionItem;Lcom/iMe/storage/domain/model/crypto/NetworkType;Lorg/telegram/ui/ActionBar/BaseFragment;)Lcom/iMe/ui/wallet/crypto/wallet_connect/network_change/WalletConnectSwitchNetworkBottomSheetDialog;
+    invoke-virtual/range {v0 .. v5}, Lcom/iMe/ui/wallet/crypto/wallet_connect/network_change/WalletConnectSwitchNetworkBottomSheetDialog$Companion;->newInstance(JLcom/iMe/model/wallet/crypto/wallet_connect/WalletConnectSessionItem;Ljava/lang/String;Lorg/telegram/ui/ActionBar/BaseFragment;)Lcom/iMe/ui/wallet/crypto/wallet_connect/network_change/WalletConnectSwitchNetworkBottomSheetDialog;
 
     move-result-object p0
 
@@ -337,14 +337,14 @@
 .method private final rejectNetworkChange()V
     .locals 1
 
-    .line 121
+    .line 119
     invoke-direct {p0}, Lcom/iMe/ui/wallet/crypto/wallet_connect/network_change/WalletConnectSwitchNetworkBottomSheetDialog;->getPresenter()Lcom/iMe/ui/wallet/crypto/wallet_connect/network_change/WalletConnectSwitchNetworkPresenter;
 
     move-result-object v0
 
     invoke-virtual {v0}, Lcom/iMe/ui/wallet/crypto/wallet_connect/network_change/WalletConnectSwitchNetworkPresenter;->rejectNetworkChange()V
 
-    .line 122
+    .line 120
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BottomSheet;->dismiss()V
 
     return-void
@@ -353,30 +353,30 @@
 .method private final setupColors()V
     .locals 2
 
-    .line 86
+    .line 84
     invoke-direct {p0}, Lcom/iMe/ui/wallet/crypto/wallet_connect/network_change/WalletConnectSwitchNetworkBottomSheetDialog;->getBinding()Lorg/telegram/messenger/databinding/ForkContentWalletConnectSwitchNetworkBinding;
 
     move-result-object v0
 
-    .line 87
+    .line 85
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkContentWalletConnectSwitchNetworkBinding;->viewHeader:Lcom/iMe/ui/custom/ImageHeaderView;
 
     invoke-virtual {v1}, Lcom/iMe/ui/custom/ImageHeaderView;->setupColors()V
 
-    .line 88
+    .line 86
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkContentWalletConnectSwitchNetworkBinding;->viewNetworkCell:Lcom/iMe/ui/custom/DetailsIconCellView;
 
     invoke-virtual {v1}, Lcom/iMe/ui/custom/DetailsIconCellView;->setupColors()V
 
-    .line 89
+    .line 87
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkContentWalletConnectSwitchNetworkBinding;->buttonChangeNetwork:Lcom/iMe/ui/custom/BigActionButton;
 
     invoke-virtual {v1}, Lcom/iMe/ui/custom/ActionButton;->applyColors()V
 
-    .line 90
+    .line 88
     iget-object v0, v0, Lorg/telegram/messenger/databinding/ForkContentWalletConnectSwitchNetworkBinding;->buttonClose:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
-    .line 91
+    .line 89
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayIcon:I
 
     invoke-virtual {p0, v1}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(I)I
@@ -387,7 +387,7 @@
 
     const-string/jumbo v1, "setupColors$lambda$2$lambda$1"
 
-    .line 92
+    .line 90
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-static {v0}, Lcom/iMe/utils/extentions/common/ViewExtKt;->setCircleRippleBackground(Landroid/view/View;)V
@@ -398,12 +398,12 @@
 .method private final setupListeners()V
     .locals 13
 
-    .line 109
+    .line 107
     invoke-direct {p0}, Lcom/iMe/ui/wallet/crypto/wallet_connect/network_change/WalletConnectSwitchNetworkBottomSheetDialog;->getBinding()Lorg/telegram/messenger/databinding/ForkContentWalletConnectSwitchNetworkBinding;
 
     move-result-object v0
 
-    .line 110
+    .line 108
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkContentWalletConnectSwitchNetworkBinding;->buttonChangeNetwork:Lcom/iMe/ui/custom/BigActionButton;
 
     const-string v2, "buttonChangeNetwork"
@@ -422,7 +422,7 @@
 
     invoke-static/range {v1 .. v6}, Lcom/iMe/utils/extentions/common/ViewExtKt;->safeThrottledClick$default(Landroid/view/View;JLkotlin/jvm/functions/Function1;ILjava/lang/Object;)V
 
-    .line 111
+    .line 109
     iget-object v7, v0, Lorg/telegram/messenger/databinding/ForkContentWalletConnectSwitchNetworkBinding;->buttonClose:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
     const-string v0, "buttonClose"
@@ -447,19 +447,19 @@
 .method private final setupViews()V
     .locals 4
 
-    .line 98
+    .line 96
     invoke-direct {p0}, Lcom/iMe/ui/wallet/crypto/wallet_connect/network_change/WalletConnectSwitchNetworkBottomSheetDialog;->getBinding()Lorg/telegram/messenger/databinding/ForkContentWalletConnectSwitchNetworkBinding;
 
     move-result-object v0
 
-    .line 99
+    .line 97
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkContentWalletConnectSwitchNetworkBinding;->viewNetworkCell:Lcom/iMe/ui/custom/DetailsIconCellView;
 
     const/4 v2, 0x0
 
     invoke-virtual {v1, v2}, Lcom/iMe/ui/custom/DetailsIconCellView;->setIconTinted(Z)V
 
-    .line 100
+    .line 98
     iget-object v0, v0, Lorg/telegram/messenger/databinding/ForkContentWalletConnectSwitchNetworkBinding;->buttonChangeNetwork:Lcom/iMe/ui/custom/BigActionButton;
 
     invoke-direct {p0}, Lcom/iMe/ui/wallet/crypto/wallet_connect/network_change/WalletConnectSwitchNetworkBottomSheetDialog;->getResourceManager()Lcom/iMe/storage/domain/utils/system/ResourceManager;
@@ -474,17 +474,17 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 101
+    .line 99
     invoke-direct {p0}, Lcom/iMe/ui/wallet/crypto/wallet_connect/network_change/WalletConnectSwitchNetworkBottomSheetDialog;->getBinding()Lorg/telegram/messenger/databinding/ForkContentWalletConnectSwitchNetworkBinding;
 
     move-result-object v0
 
     iget-object v0, v0, Lorg/telegram/messenger/databinding/ForkContentWalletConnectSwitchNetworkBinding;->buttonClose:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
-    .line 102
+    .line 100
     invoke-virtual {v0, v2}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->setLongClickEnabled(Z)V
 
-    .line 103
+    .line 101
     sget v1, Lorg/telegram/messenger/R$drawable;->ic_close_white:I
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->setIcon(I)V
@@ -513,10 +513,10 @@
 .method public onBackPressed()V
     .locals 0
 
-    .line 77
+    .line 75
     invoke-direct {p0}, Lcom/iMe/ui/wallet/crypto/wallet_connect/network_change/WalletConnectSwitchNetworkBottomSheetDialog;->rejectNetworkChange()V
 
-    .line 78
+    .line 76
     invoke-super {p0}, Landroid/app/Dialog;->onBackPressed()V
 
     return-void
@@ -525,16 +525,16 @@
 .method public onCreateView(Landroid/os/Bundle;)Landroid/view/View;
     .locals 1
 
-    .line 45
+    .line 43
     invoke-direct {p0}, Lcom/iMe/ui/wallet/crypto/wallet_connect/network_change/WalletConnectSwitchNetworkBottomSheetDialog;->setupViews()V
 
-    .line 46
+    .line 44
     invoke-direct {p0}, Lcom/iMe/ui/wallet/crypto/wallet_connect/network_change/WalletConnectSwitchNetworkBottomSheetDialog;->setupColors()V
 
-    .line 47
+    .line 45
     invoke-direct {p0}, Lcom/iMe/ui/wallet/crypto/wallet_connect/network_change/WalletConnectSwitchNetworkBottomSheetDialog;->setupListeners()V
 
-    .line 49
+    .line 47
     invoke-direct {p0}, Lcom/iMe/ui/wallet/crypto/wallet_connect/network_change/WalletConnectSwitchNetworkBottomSheetDialog;->getBinding()Lorg/telegram/messenger/databinding/ForkContentWalletConnectSwitchNetworkBinding;
 
     move-result-object p1
@@ -550,7 +550,7 @@
     return-object p1
 .end method
 
-.method public setupScreenWithData(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;)V
+.method public setupScreenWithData(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
     .locals 7
 
     const-string v0, "iconUrl"
@@ -565,19 +565,23 @@
 
     invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
+    const-string v0, "networkLogoUrl"
+
+    invoke-static {p4, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
     const-string v0, "networkName"
 
     invoke-static {p5, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 60
+    .line 58
     invoke-direct {p0}, Lcom/iMe/ui/wallet/crypto/wallet_connect/network_change/WalletConnectSwitchNetworkBottomSheetDialog;->getBinding()Lorg/telegram/messenger/databinding/ForkContentWalletConnectSwitchNetworkBinding;
 
     move-result-object v0
 
-    .line 61
+    .line 59
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkContentWalletConnectSwitchNetworkBinding;->viewHeader:Lcom/iMe/ui/custom/ImageHeaderView;
 
-    .line 63
+    .line 61
     invoke-direct {p0}, Lcom/iMe/ui/wallet/crypto/wallet_connect/network_change/WalletConnectSwitchNetworkBottomSheetDialog;->getResourceManager()Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     move-result-object v2
@@ -596,13 +600,13 @@
 
     move-result-object p2
 
-    .line 61
+    .line 59
     invoke-virtual {v1, p1, p2, p3}, Lcom/iMe/ui/custom/ImageHeaderView;->setupViewData(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 66
+    .line 64
     iget-object p1, v0, Lorg/telegram/messenger/databinding/ForkContentWalletConnectSwitchNetworkBinding;->viewNetworkCell:Lcom/iMe/ui/custom/DetailsIconCellView;
 
-    .line 67
+    .line 65
     invoke-direct {p0}, Lcom/iMe/ui/wallet/crypto/wallet_connect/network_change/WalletConnectSwitchNetworkBottomSheetDialog;->getResourceManager()Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     move-result-object p2
@@ -613,8 +617,8 @@
 
     move-result-object p2
 
-    .line 66
-    invoke-virtual {p1, p2, p5, p4, v4}, Lcom/iMe/ui/custom/DetailsIconCellView;->setupViewData(Ljava/lang/String;Ljava/lang/String;IZ)V
+    .line 64
+    invoke-virtual {p1, p2, p5, p4, v4}, Lcom/iMe/ui/custom/DetailsIconCellView;->setupViewData(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
 
     return-void
 .end method

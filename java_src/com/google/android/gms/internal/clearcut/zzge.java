@@ -16,7 +16,7 @@ import org.telegram.messenger.ImageReceiver;
 public final class zzge {
 
     /* loaded from: classes.dex */
-    public static final class zza extends zzcg<zza, C6872zza> implements zzdq {
+    public static final class zza extends zzcg<zza, C6997zza> implements zzdq {
         private static volatile zzdz<zza> zzbg;
         private static final zza zzsm;
         private zzcn<String> zzsh = zzcg.zzbb();
@@ -27,12 +27,12 @@ public final class zzge {
 
         /* renamed from: com.google.android.gms.internal.clearcut.zzge$zza$zza  reason: collision with other inner class name */
         /* loaded from: classes.dex */
-        public static final class C6872zza extends zzcg.zza<zza, C6872zza> implements zzdq {
-            private C6872zza() {
+        public static final class C6997zza extends zzcg.zza<zza, C6997zza> implements zzdq {
+            private C6997zza() {
                 super(zza.zzsm);
             }
 
-            /* synthetic */ C6872zza(zzgf zzgfVar) {
+            /* synthetic */ C6997zza(zzgf zzgfVar) {
                 this();
             }
         }
@@ -55,7 +55,7 @@ public final class zzge {
                 case 1:
                     return new zza();
                 case 2:
-                    return new C6872zza(null);
+                    return new C6997zza(null);
                 case 3:
                     return zzcg.zza(zzsm, "\u0001\u0005\u0000\u0000\u0001\u0005\u0005\u0006\u0000\u0005\u0000\u0001\u001a\u0002\u001a\u0003\u0016\u0004\u0014\u0005\u0014", new Object[]{"zzsh", "zzsi", "zzsj", "zzsk", "zzsl"});
                 case 4:

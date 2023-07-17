@@ -9,7 +9,7 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Lambda;
 /* compiled from: CatalogAllPresenter.kt */
 /* renamed from: com.iMe.ui.catalog.tabs.all.CatalogAllPresenter$subscribeToLoadMoreEvents$2 */
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 final class CatalogAllPresenter$subscribeToLoadMoreEvents$2 extends Lambda implements Function1<GroupedObservable<String, Pair<? extends Long, ? extends String>>, Observable<Pair<? extends Long, ? extends String>>> {
     public static final CatalogAllPresenter$subscribeToLoadMoreEvents$2 INSTANCE = new CatalogAllPresenter$subscribeToLoadMoreEvents$2();
 

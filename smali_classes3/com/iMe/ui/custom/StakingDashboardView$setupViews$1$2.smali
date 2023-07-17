@@ -48,7 +48,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 183
+    .line 181
     invoke-virtual {p0}, Lcom/iMe/ui/custom/StakingDashboardView$setupViews$1$2;->invoke()V
 
     sget-object v0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
@@ -59,7 +59,7 @@
 .method public final invoke()V
     .locals 1
 
-    .line 191
+    .line 189
     iget-object v0, p0, Lcom/iMe/ui/custom/StakingDashboardView$setupViews$1$2;->this$0:Lcom/iMe/ui/custom/StakingDashboardView;
 
     invoke-static {v0}, Lcom/iMe/ui/custom/StakingDashboardView;->access$getOnHistoryClick$p(Lcom/iMe/ui/custom/StakingDashboardView;)Lcom/iMe/fork/utils/Callbacks$Callback;

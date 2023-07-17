@@ -11,7 +11,7 @@ import com.chad.library.adapter.base.listener.OnItemClickListener;
 import com.chad.library.adapter.base.listener.OnLoadMoreListener;
 import com.chad.library.adapter.base.module.BaseLoadMoreModule;
 import com.iMe.model.wallet.notification.NotificationItem;
-import com.iMe.p031ui.base.WalletAuthFragment;
+import com.iMe.p031ui.base.wallet_auth.WalletAuthBaseFragment;
 import com.iMe.p031ui.custom.state.GlobalStateLayout;
 import com.iMe.p031ui.wallet.notifications.adapter.WalletNotificationsRecycleAdapter;
 import com.iMe.p031ui.wallet.notifications.details.WalletNotificationDetailsBottomSheetDialog;
@@ -32,18 +32,18 @@ import kotlin.jvm.internal.Reflection;
 import kotlin.reflect.KProperty;
 import moxy.MvpDelegate;
 import moxy.ktx.MoxyKtxDelegate;
-import org.koin.p043mp.KoinPlatformTools;
-import org.telegram.messenger.C3295R;
+import org.koin.p042mp.KoinPlatformTools;
+import org.telegram.messenger.C3417R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.databinding.ForkFragmentWalletNotificationsBinding;
-import org.telegram.p044ui.ActionBar.ActionBarMenuItem;
-import org.telegram.p044ui.ActionBar.C3361ActionBar;
-import org.telegram.p044ui.ActionBar.Theme;
-import org.telegram.p044ui.ActionBar.ThemeDescription;
+import org.telegram.p043ui.ActionBar.ActionBarMenuItem;
+import org.telegram.p043ui.ActionBar.C3484ActionBar;
+import org.telegram.p043ui.ActionBar.Theme;
+import org.telegram.p043ui.ActionBar.ThemeDescription;
 /* compiled from: WalletNotificationsFragment.kt */
 /* renamed from: com.iMe.ui.wallet.notifications.WalletNotificationsFragment */
 /* loaded from: classes4.dex */
-public final class WalletNotificationsFragment extends WalletAuthFragment implements WalletNotificationsView {
+public final class WalletNotificationsFragment extends WalletAuthBaseFragment implements WalletNotificationsView {
     static final /* synthetic */ KProperty<Object>[] $$delegatedProperties = {Reflection.property1(new PropertyReference1Impl(WalletNotificationsFragment.class, "presenter", "getPresenter()Lcom/iMe/ui/wallet/notifications/WalletNotificationsPresenter;", 0)), Reflection.property1(new PropertyReference1Impl(WalletNotificationsFragment.class, "binding", "getBinding()Lorg/telegram/messenger/databinding/ForkFragmentWalletNotificationsBinding;", 0))};
     public static final Companion Companion = new Companion(null);
     private final ResettableLazy binding$delegate;
@@ -51,7 +51,7 @@ public final class WalletNotificationsFragment extends WalletAuthFragment implem
     private ActionBarMenuItem optionsMenuItem;
     private final MoxyKtxDelegate presenter$delegate;
 
-    @Override // org.telegram.p044ui.ActionBar.BaseFragment
+    @Override // org.telegram.p043ui.ActionBar.BaseFragment
     public boolean isSwipeBackEnabled(MotionEvent motionEvent) {
         return true;
     }
@@ -152,7 +152,7 @@ public final class WalletNotificationsFragment extends WalletAuthFragment implem
 
     @Override // com.iMe.p031ui.base.mvp.LoadMoreView
     public void resetLoadMore() {
-        getNotificationAdapter().getLoadMoreModule().reset$TMessagesProj_release();
+        getNotificationAdapter().getLoadMoreModule().reset$TMessagesProj_HA_public();
     }
 
     @Override // com.iMe.p031ui.custom.state.GlobalStateView
@@ -165,19 +165,19 @@ public final class WalletNotificationsFragment extends WalletAuthFragment implem
         getBinding().getRoot().setRefreshing(z);
     }
 
-    @Override // org.telegram.p044ui.ActionBar.BaseFragment
+    @Override // org.telegram.p043ui.ActionBar.BaseFragment
     public ArrayList<ThemeDescription> getThemeDescriptions() {
         ArrayList<ThemeDescription> arrayListOf;
         SwipeRefreshLayout root = getBinding().getRoot();
         int i = ThemeDescription.FLAG_BACKGROUND;
         int i2 = Theme.key_windowBackgroundWhite;
         arrayListOf = CollectionsKt__CollectionsKt.arrayListOf(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, Theme.key_actionBarDefault), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_ITEMSCOLOR, null, null, null, null, Theme.key_actionBarDefaultIcon), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_TITLECOLOR, null, null, null, null, Theme.key_actionBarDefaultTitle), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SELECTORCOLOR, null, null, null, null, Theme.key_actionBarDefaultSelector), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SUBMENUBACKGROUND, null, null, null, null, Theme.key_actionBarDefaultSubmenuBackground), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SUBMENUITEM, null, null, null, null, Theme.key_actionBarDefaultSubmenuItem), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SUBMENUITEM | ThemeDescription.FLAG_IMAGECOLOR, null, null, null, null, Theme.key_actionBarDefaultSubmenuItemIcon), new ThemeDescription(root, i, null, null, null, null, i2), new ThemeDescription(getBinding().globalStateLayout, ThemeDescription.FLAG_BACKGROUND, null, null, null, new ThemeDescription.ThemeDescriptionDelegate() { // from class: com.iMe.ui.wallet.notifications.WalletNotificationsFragment$$ExternalSyntheticLambda3
-            @Override // org.telegram.p044ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
+            @Override // org.telegram.p043ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
             public final void didSetColor() {
                 WalletNotificationsFragment.getThemeDescriptions$lambda$0(WalletNotificationsFragment.this);
             }
 
-            @Override // org.telegram.p044ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
+            @Override // org.telegram.p043ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
             public /* synthetic */ void onAnimationProgress(float f) {
                 ThemeDescription.ThemeDescriptionDelegate.CC.$default$onAnimationProgress(this, f);
             }
@@ -192,18 +192,18 @@ public final class WalletNotificationsFragment extends WalletAuthFragment implem
     }
 
     private final void setupActionBar() {
-        C3361ActionBar c3361ActionBar = this.actionBar;
-        c3361ActionBar.setBackButtonImage(C3295R.C3297drawable.ic_ab_back);
-        c3361ActionBar.setTitle(getResourceManager().getString(C3295R.string.wallet_notifications_toolbar_title));
-        c3361ActionBar.setAllowOverlayTitle(true);
-        ActionBarMenuItem setupActionBar$lambda$3$lambda$2$lambda$1 = c3361ActionBar.createMenu().addItem(0, C3295R.C3297drawable.ic_ab_other);
+        C3484ActionBar c3484ActionBar = this.actionBar;
+        c3484ActionBar.setBackButtonImage(C3417R.C3419drawable.ic_ab_back);
+        c3484ActionBar.setTitle(getResourceManager().getString(C3417R.string.wallet_notifications_toolbar_title));
+        c3484ActionBar.setAllowOverlayTitle(true);
+        ActionBarMenuItem setupActionBar$lambda$3$lambda$2$lambda$1 = c3484ActionBar.createMenu().addItem(0, C3417R.C3419drawable.ic_ab_other);
         Intrinsics.checkNotNullExpressionValue(setupActionBar$lambda$3$lambda$2$lambda$1, "setupActionBar$lambda$3$lambda$2$lambda$1");
         ViewExtKt.gone$default(setupActionBar$lambda$3$lambda$2$lambda$1, false, 1, null);
-        setupActionBar$lambda$3$lambda$2$lambda$1.setContentDescription(LocaleController.getString("AccDescrMoreOptions", C3295R.string.AccDescrMoreOptions));
-        setupActionBar$lambda$3$lambda$2$lambda$1.addSubItem(1, C3295R.C3297drawable.fork_ic_folder_tab_read_all_24, getResourceManager().getString(C3295R.string.dialogs_tab_popup_read_all));
+        setupActionBar$lambda$3$lambda$2$lambda$1.setContentDescription(LocaleController.getString("AccDescrMoreOptions", C3417R.string.AccDescrMoreOptions));
+        setupActionBar$lambda$3$lambda$2$lambda$1.addSubItem(1, C3417R.C3419drawable.fork_ic_folder_tab_read_all_24, getResourceManager().getString(C3417R.string.dialogs_tab_popup_read_all));
         this.optionsMenuItem = setupActionBar$lambda$3$lambda$2$lambda$1;
-        c3361ActionBar.setActionBarMenuOnItemClick(new C3361ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.ui.wallet.notifications.WalletNotificationsFragment$setupActionBar$1$2
-            @Override // org.telegram.p044ui.ActionBar.C3361ActionBar.ActionBarMenuOnItemClick
+        c3484ActionBar.setActionBarMenuOnItemClick(new C3484ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.ui.wallet.notifications.WalletNotificationsFragment$setupActionBar$1$2
+            @Override // org.telegram.p043ui.ActionBar.C3484ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 WalletNotificationsPresenter presenter;
                 WalletNotificationsRecycleAdapter notificationAdapter;
@@ -243,7 +243,7 @@ public final class WalletNotificationsFragment extends WalletAuthFragment implem
     /* JADX INFO: Access modifiers changed from: private */
     public static final void setupRecycleView$lambda$9$lambda$8$lambda$6$lambda$5(WalletNotificationsFragment this$0) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
-        NotificationItem notificationItem = (NotificationItem) CollectionsKt.lastOrNull(this$0.getNotificationAdapter().getData());
+        NotificationItem notificationItem = (NotificationItem) CollectionsKt.lastOrNull((List<? extends Object>) this$0.getNotificationAdapter().getData());
         if (notificationItem != null) {
             this$0.getPresenter().loadMoreNotification(notificationItem.getNotification().getId());
         }

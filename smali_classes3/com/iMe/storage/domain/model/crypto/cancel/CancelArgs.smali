@@ -15,36 +15,36 @@
 
 
 # instance fields
-.field private final token:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
+.field private final networkId:Ljava/lang/String;
 
 
 # direct methods
-.method private constructor <init>(Lcom/iMe/storage/domain/model/wallet/token/TokenCode;)V
+.method private constructor <init>(Ljava/lang/String;)V
     .locals 0
 
     .line 7
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lcom/iMe/storage/domain/model/crypto/cancel/CancelArgs;->token:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
+    iput-object p1, p0, Lcom/iMe/storage/domain/model/crypto/cancel/CancelArgs;->networkId:Ljava/lang/String;
 
     return-void
 .end method
 
-.method public synthetic constructor <init>(Lcom/iMe/storage/domain/model/wallet/token/TokenCode;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
+.method public synthetic constructor <init>(Ljava/lang/String;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
     .locals 0
 
-    invoke-direct {p0, p1}, Lcom/iMe/storage/domain/model/crypto/cancel/CancelArgs;-><init>(Lcom/iMe/storage/domain/model/wallet/token/TokenCode;)V
+    invoke-direct {p0, p1}, Lcom/iMe/storage/domain/model/crypto/cancel/CancelArgs;-><init>(Ljava/lang/String;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public getToken()Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
+.method public getNetworkId()Ljava/lang/String;
     .locals 1
 
     .line 7
-    iget-object v0, p0, Lcom/iMe/storage/domain/model/crypto/cancel/CancelArgs;->token:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
+    iget-object v0, p0, Lcom/iMe/storage/domain/model/crypto/cancel/CancelArgs;->networkId:Ljava/lang/String;
 
     return-object v0
 .end method

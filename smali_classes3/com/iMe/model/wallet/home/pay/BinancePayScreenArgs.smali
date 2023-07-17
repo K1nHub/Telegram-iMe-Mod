@@ -19,7 +19,7 @@
 
 
 # instance fields
-.field private final token:Lcom/iMe/model/wallet/select/SelectableToken;
+.field private final tokenItem:Lcom/iMe/model/wallet/crypto/TokenItem;
 
 .field private final userId:Ljava/lang/Long;
 
@@ -44,19 +44,19 @@
 
     const/4 v1, 0x3
 
-    invoke-direct {p0, v0, v0, v1, v0}, Lcom/iMe/model/wallet/home/pay/BinancePayScreenArgs;-><init>(Lcom/iMe/model/wallet/select/SelectableToken;Ljava/lang/Long;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+    invoke-direct {p0, v0, v0, v1, v0}, Lcom/iMe/model/wallet/home/pay/BinancePayScreenArgs;-><init>(Lcom/iMe/model/wallet/crypto/TokenItem;Ljava/lang/Long;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
 
     return-void
 .end method
 
-.method public constructor <init>(Lcom/iMe/model/wallet/select/SelectableToken;Ljava/lang/Long;)V
+.method public constructor <init>(Lcom/iMe/model/wallet/crypto/TokenItem;Ljava/lang/Long;)V
     .locals 0
 
     .line 7
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 9
-    iput-object p1, p0, Lcom/iMe/model/wallet/home/pay/BinancePayScreenArgs;->token:Lcom/iMe/model/wallet/select/SelectableToken;
+    iput-object p1, p0, Lcom/iMe/model/wallet/home/pay/BinancePayScreenArgs;->tokenItem:Lcom/iMe/model/wallet/crypto/TokenItem;
 
     .line 10
     iput-object p2, p0, Lcom/iMe/model/wallet/home/pay/BinancePayScreenArgs;->userId:Ljava/lang/Long;
@@ -64,7 +64,7 @@
     return-void
 .end method
 
-.method public synthetic constructor <init>(Lcom/iMe/model/wallet/select/SelectableToken;Ljava/lang/Long;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+.method public synthetic constructor <init>(Lcom/iMe/model/wallet/crypto/TokenItem;Ljava/lang/Long;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
     .locals 1
 
     and-int/lit8 p4, p3, 0x1
@@ -84,19 +84,19 @@
 
     .line 8
     :cond_1
-    invoke-direct {p0, p1, p2}, Lcom/iMe/model/wallet/home/pay/BinancePayScreenArgs;-><init>(Lcom/iMe/model/wallet/select/SelectableToken;Ljava/lang/Long;)V
+    invoke-direct {p0, p1, p2}, Lcom/iMe/model/wallet/home/pay/BinancePayScreenArgs;-><init>(Lcom/iMe/model/wallet/crypto/TokenItem;Ljava/lang/Long;)V
 
     return-void
 .end method
 
-.method public static synthetic copy$default(Lcom/iMe/model/wallet/home/pay/BinancePayScreenArgs;Lcom/iMe/model/wallet/select/SelectableToken;Ljava/lang/Long;ILjava/lang/Object;)Lcom/iMe/model/wallet/home/pay/BinancePayScreenArgs;
+.method public static synthetic copy$default(Lcom/iMe/model/wallet/home/pay/BinancePayScreenArgs;Lcom/iMe/model/wallet/crypto/TokenItem;Ljava/lang/Long;ILjava/lang/Object;)Lcom/iMe/model/wallet/home/pay/BinancePayScreenArgs;
     .locals 0
 
     and-int/lit8 p4, p3, 0x1
 
     if-eqz p4, :cond_0
 
-    iget-object p1, p0, Lcom/iMe/model/wallet/home/pay/BinancePayScreenArgs;->token:Lcom/iMe/model/wallet/select/SelectableToken;
+    iget-object p1, p0, Lcom/iMe/model/wallet/home/pay/BinancePayScreenArgs;->tokenItem:Lcom/iMe/model/wallet/crypto/TokenItem;
 
     :cond_0
     and-int/lit8 p3, p3, 0x2
@@ -106,7 +106,7 @@
     iget-object p2, p0, Lcom/iMe/model/wallet/home/pay/BinancePayScreenArgs;->userId:Ljava/lang/Long;
 
     :cond_1
-    invoke-virtual {p0, p1, p2}, Lcom/iMe/model/wallet/home/pay/BinancePayScreenArgs;->copy(Lcom/iMe/model/wallet/select/SelectableToken;Ljava/lang/Long;)Lcom/iMe/model/wallet/home/pay/BinancePayScreenArgs;
+    invoke-virtual {p0, p1, p2}, Lcom/iMe/model/wallet/home/pay/BinancePayScreenArgs;->copy(Lcom/iMe/model/wallet/crypto/TokenItem;Ljava/lang/Long;)Lcom/iMe/model/wallet/home/pay/BinancePayScreenArgs;
 
     move-result-object p0
 
@@ -115,10 +115,10 @@
 
 
 # virtual methods
-.method public final component1()Lcom/iMe/model/wallet/select/SelectableToken;
+.method public final component1()Lcom/iMe/model/wallet/crypto/TokenItem;
     .locals 1
 
-    iget-object v0, p0, Lcom/iMe/model/wallet/home/pay/BinancePayScreenArgs;->token:Lcom/iMe/model/wallet/select/SelectableToken;
+    iget-object v0, p0, Lcom/iMe/model/wallet/home/pay/BinancePayScreenArgs;->tokenItem:Lcom/iMe/model/wallet/crypto/TokenItem;
 
     return-object v0
 .end method
@@ -131,12 +131,12 @@
     return-object v0
 .end method
 
-.method public final copy(Lcom/iMe/model/wallet/select/SelectableToken;Ljava/lang/Long;)Lcom/iMe/model/wallet/home/pay/BinancePayScreenArgs;
+.method public final copy(Lcom/iMe/model/wallet/crypto/TokenItem;Ljava/lang/Long;)Lcom/iMe/model/wallet/home/pay/BinancePayScreenArgs;
     .locals 1
 
     new-instance v0, Lcom/iMe/model/wallet/home/pay/BinancePayScreenArgs;
 
-    invoke-direct {v0, p1, p2}, Lcom/iMe/model/wallet/home/pay/BinancePayScreenArgs;-><init>(Lcom/iMe/model/wallet/select/SelectableToken;Ljava/lang/Long;)V
+    invoke-direct {v0, p1, p2}, Lcom/iMe/model/wallet/home/pay/BinancePayScreenArgs;-><init>(Lcom/iMe/model/wallet/crypto/TokenItem;Ljava/lang/Long;)V
 
     return-object v0
 .end method
@@ -170,9 +170,9 @@
     :cond_1
     check-cast p1, Lcom/iMe/model/wallet/home/pay/BinancePayScreenArgs;
 
-    iget-object v1, p0, Lcom/iMe/model/wallet/home/pay/BinancePayScreenArgs;->token:Lcom/iMe/model/wallet/select/SelectableToken;
+    iget-object v1, p0, Lcom/iMe/model/wallet/home/pay/BinancePayScreenArgs;->tokenItem:Lcom/iMe/model/wallet/crypto/TokenItem;
 
-    iget-object v3, p1, Lcom/iMe/model/wallet/home/pay/BinancePayScreenArgs;->token:Lcom/iMe/model/wallet/select/SelectableToken;
+    iget-object v3, p1, Lcom/iMe/model/wallet/home/pay/BinancePayScreenArgs;->tokenItem:Lcom/iMe/model/wallet/crypto/TokenItem;
 
     invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
@@ -199,11 +199,11 @@
     return v0
 .end method
 
-.method public final getToken()Lcom/iMe/model/wallet/select/SelectableToken;
+.method public final getTokenItem()Lcom/iMe/model/wallet/crypto/TokenItem;
     .locals 1
 
     .line 9
-    iget-object v0, p0, Lcom/iMe/model/wallet/home/pay/BinancePayScreenArgs;->token:Lcom/iMe/model/wallet/select/SelectableToken;
+    iget-object v0, p0, Lcom/iMe/model/wallet/home/pay/BinancePayScreenArgs;->tokenItem:Lcom/iMe/model/wallet/crypto/TokenItem;
 
     return-object v0
 .end method
@@ -220,7 +220,7 @@
 .method public hashCode()I
     .locals 3
 
-    iget-object v0, p0, Lcom/iMe/model/wallet/home/pay/BinancePayScreenArgs;->token:Lcom/iMe/model/wallet/select/SelectableToken;
+    iget-object v0, p0, Lcom/iMe/model/wallet/home/pay/BinancePayScreenArgs;->tokenItem:Lcom/iMe/model/wallet/crypto/TokenItem;
 
     const/4 v1, 0x0
 
@@ -231,7 +231,7 @@
     goto :goto_0
 
     :cond_0
-    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
+    invoke-virtual {v0}, Lcom/iMe/model/wallet/crypto/TokenItem;->hashCode()I
 
     move-result v0
 
@@ -262,11 +262,11 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v1, "BinancePayScreenArgs(token="
+    const-string v1, "BinancePayScreenArgs(tokenItem="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v1, p0, Lcom/iMe/model/wallet/home/pay/BinancePayScreenArgs;->token:Lcom/iMe/model/wallet/select/SelectableToken;
+    iget-object v1, p0, Lcom/iMe/model/wallet/home/pay/BinancePayScreenArgs;->tokenItem:Lcom/iMe/model/wallet/crypto/TokenItem;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
@@ -290,30 +290,40 @@
 .end method
 
 .method public writeToParcel(Landroid/os/Parcel;I)V
-    .locals 2
+    .locals 3
 
     const-string v0, "out"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    iget-object v0, p0, Lcom/iMe/model/wallet/home/pay/BinancePayScreenArgs;->token:Lcom/iMe/model/wallet/select/SelectableToken;
+    iget-object v0, p0, Lcom/iMe/model/wallet/home/pay/BinancePayScreenArgs;->tokenItem:Lcom/iMe/model/wallet/crypto/TokenItem;
 
-    invoke-virtual {p1, v0, p2}, Landroid/os/Parcel;->writeParcelable(Landroid/os/Parcelable;I)V
+    const/4 v1, 0x0
 
-    iget-object p2, p0, Lcom/iMe/model/wallet/home/pay/BinancePayScreenArgs;->userId:Ljava/lang/Long;
+    const/4 v2, 0x1
 
-    if-nez p2, :cond_0
+    if-nez v0, :cond_0
 
-    const/4 p2, 0x0
-
-    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeInt(I)V
+    invoke-virtual {p1, v1}, Landroid/os/Parcel;->writeInt(I)V
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x1
+    invoke-virtual {p1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
+    invoke-virtual {v0, p1, p2}, Lcom/iMe/model/wallet/crypto/TokenItem;->writeToParcel(Landroid/os/Parcel;I)V
+
+    :goto_0
+    iget-object p2, p0, Lcom/iMe/model/wallet/home/pay/BinancePayScreenArgs;->userId:Ljava/lang/Long;
+
+    if-nez p2, :cond_1
+
+    invoke-virtual {p1, v1}, Landroid/os/Parcel;->writeInt(I)V
+
+    goto :goto_1
+
+    :cond_1
+    invoke-virtual {p1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
     invoke-virtual {p2}, Ljava/lang/Long;->longValue()J
 
@@ -321,6 +331,6 @@
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Parcel;->writeLong(J)V
 
-    :goto_0
+    :goto_1
     return-void
 .end method

@@ -1,50 +1,70 @@
 package com.iMe.storage.data.network.model.response.crypto.swap;
 
+import com.iMe.storage.data.network.model.response.wallet.TokenDetailedResponse;
 import java.util.List;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: AvailableSwapTokensResponse.kt */
 /* loaded from: classes3.dex */
 public final class AvailableSwapTokensResponse {
-    private final List<String> cryptoTokenCodes;
+    private final String cursor;
+    private final List<TokenDetailedResponse> tokens;
 
     /* JADX WARN: Multi-variable type inference failed */
-    public static /* synthetic */ AvailableSwapTokensResponse copy$default(AvailableSwapTokensResponse availableSwapTokensResponse, List list, int i, Object obj) {
+    public static /* synthetic */ AvailableSwapTokensResponse copy$default(AvailableSwapTokensResponse availableSwapTokensResponse, List list, String str, int i, Object obj) {
         if ((i & 1) != 0) {
-            list = availableSwapTokensResponse.cryptoTokenCodes;
+            list = availableSwapTokensResponse.tokens;
         }
-        return availableSwapTokensResponse.copy(list);
+        if ((i & 2) != 0) {
+            str = availableSwapTokensResponse.cursor;
+        }
+        return availableSwapTokensResponse.copy(list, str);
     }
 
-    public final List<String> component1() {
-        return this.cryptoTokenCodes;
+    public final List<TokenDetailedResponse> component1() {
+        return this.tokens;
     }
 
-    public final AvailableSwapTokensResponse copy(List<String> cryptoTokenCodes) {
-        Intrinsics.checkNotNullParameter(cryptoTokenCodes, "cryptoTokenCodes");
-        return new AvailableSwapTokensResponse(cryptoTokenCodes);
+    public final String component2() {
+        return this.cursor;
+    }
+
+    public final AvailableSwapTokensResponse copy(List<TokenDetailedResponse> tokens, String cursor) {
+        Intrinsics.checkNotNullParameter(tokens, "tokens");
+        Intrinsics.checkNotNullParameter(cursor, "cursor");
+        return new AvailableSwapTokensResponse(tokens, cursor);
     }
 
     public boolean equals(Object obj) {
         if (this == obj) {
             return true;
         }
-        return (obj instanceof AvailableSwapTokensResponse) && Intrinsics.areEqual(this.cryptoTokenCodes, ((AvailableSwapTokensResponse) obj).cryptoTokenCodes);
+        if (obj instanceof AvailableSwapTokensResponse) {
+            AvailableSwapTokensResponse availableSwapTokensResponse = (AvailableSwapTokensResponse) obj;
+            return Intrinsics.areEqual(this.tokens, availableSwapTokensResponse.tokens) && Intrinsics.areEqual(this.cursor, availableSwapTokensResponse.cursor);
+        }
+        return false;
     }
 
     public int hashCode() {
-        return this.cryptoTokenCodes.hashCode();
+        return (this.tokens.hashCode() * 31) + this.cursor.hashCode();
     }
 
     public String toString() {
-        return "AvailableSwapTokensResponse(cryptoTokenCodes=" + this.cryptoTokenCodes + ')';
+        return "AvailableSwapTokensResponse(tokens=" + this.tokens + ", cursor=" + this.cursor + ')';
     }
 
-    public AvailableSwapTokensResponse(List<String> cryptoTokenCodes) {
-        Intrinsics.checkNotNullParameter(cryptoTokenCodes, "cryptoTokenCodes");
-        this.cryptoTokenCodes = cryptoTokenCodes;
+    public AvailableSwapTokensResponse(List<TokenDetailedResponse> tokens, String cursor) {
+        Intrinsics.checkNotNullParameter(tokens, "tokens");
+        Intrinsics.checkNotNullParameter(cursor, "cursor");
+        this.tokens = tokens;
+        this.cursor = cursor;
     }
 
-    public final List<String> getCryptoTokenCodes() {
-        return this.cryptoTokenCodes;
+    public final List<TokenDetailedResponse> getTokens() {
+        return this.tokens;
+    }
+
+    public final String getCursor() {
+        return this.cursor;
     }
 }

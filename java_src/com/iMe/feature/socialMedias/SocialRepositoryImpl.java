@@ -68,9 +68,9 @@ public final class SocialRepositoryImpl implements SocialRepository {
             }
         });
         Intrinsics.checkNotNullExpressionValue(doOnComplete, "socialMediasApi\n        …ocialAuthResult.Logout) }");
-        Observable<R> map = doOnComplete.map(new C1452x2827ffdb(new SocialRepositoryImpl$logoutSocial$$inlined$mapSuccess$1(this.firebaseErrorHandler)));
+        Observable<R> map = doOnComplete.map(new C1463x2827ffdb(new SocialRepositoryImpl$logoutSocial$$inlined$mapSuccess$1(this.firebaseErrorHandler)));
         Intrinsics.checkNotNullExpressionValue(map, "errorHandler: FirebaseFu…response).toError()\n    }");
-        Observable<Result<Boolean>> onErrorReturn = map.onErrorReturn(new C1452x2827ffdb(new SocialRepositoryImpl$logoutSocial$$inlined$handleError$1(this.errorHandler)));
+        Observable<Result<Boolean>> onErrorReturn = map.onErrorReturn(new C1463x2827ffdb(new SocialRepositoryImpl$logoutSocial$$inlined$handleError$1(this.errorHandler)));
         Intrinsics.checkNotNullExpressionValue(onErrorReturn, "errorHandler: ErrorHandl…ndleError(it).toError() }");
         return onErrorReturn;
     }
@@ -115,9 +115,9 @@ public final class SocialRepositoryImpl implements SocialRepository {
     private final Observable<Result<SocialDomain>> getSocialFromNet(long j) {
         Observable<ApiBaseResponse<SocialNetworksRaw>> subscribeOn = this.socialMediasApi.getAllSocial(new SocialBodyRequest(String.valueOf(j), null, null, 6, null)).subscribeOn(Schedulers.m679io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn, "socialMediasApi\n        …scribeOn(Schedulers.io())");
-        Observable<R> map = subscribeOn.map(new C1452x2827ffdb(new SocialRepositoryImpl$getSocialFromNet$$inlined$mapSuccess$1(this.firebaseErrorHandler)));
+        Observable<R> map = subscribeOn.map(new C1463x2827ffdb(new SocialRepositoryImpl$getSocialFromNet$$inlined$mapSuccess$1(this.firebaseErrorHandler)));
         Intrinsics.checkNotNullExpressionValue(map, "errorHandler: FirebaseFu…response).toError()\n    }");
-        Observable<Result<SocialDomain>> onErrorReturn = map.onErrorReturn(new C1452x2827ffdb(new SocialRepositoryImpl$getSocialFromNet$$inlined$handleError$1(this.errorHandler)));
+        Observable<Result<SocialDomain>> onErrorReturn = map.onErrorReturn(new C1463x2827ffdb(new SocialRepositoryImpl$getSocialFromNet$$inlined$handleError$1(this.errorHandler)));
         Intrinsics.checkNotNullExpressionValue(onErrorReturn, "errorHandler: ErrorHandl…ndleError(it).toError() }");
         return onErrorReturn;
     }

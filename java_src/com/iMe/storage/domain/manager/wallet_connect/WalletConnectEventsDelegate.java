@@ -1,6 +1,5 @@
 package com.iMe.storage.domain.manager.wallet_connect;
 
-import com.iMe.storage.domain.model.crypto.NetworkType;
 import com.iMe.storage.domain.model.crypto.wallet_connect.WalletConnectProcessedTransaction;
 import com.trustwallet.walletconnect.WCSessionStoreItem;
 import com.trustwallet.walletconnect.models.ethereum.WCEthereumSignMessage;
@@ -26,9 +25,9 @@ public interface WalletConnectEventsDelegate {
             Intrinsics.checkNotNullParameter(transaction, "transaction");
         }
 
-        public static void $default$onWalletChangeNetwork(WalletConnectEventsDelegate walletConnectEventsDelegate, long j, WCSessionStoreItem sessionStoreItem, NetworkType networkType) {
+        public static void $default$onWalletChangeNetwork(WalletConnectEventsDelegate walletConnectEventsDelegate, long j, WCSessionStoreItem sessionStoreItem, String networkId) {
             Intrinsics.checkNotNullParameter(sessionStoreItem, "sessionStoreItem");
-            Intrinsics.checkNotNullParameter(networkType, "networkType");
+            Intrinsics.checkNotNullParameter(networkId, "networkId");
         }
 
         public static void $default$onWalletChangeUnsupportedNetwork(WalletConnectEventsDelegate walletConnectEventsDelegate) {
@@ -45,7 +44,7 @@ public interface WalletConnectEventsDelegate {
 
     void onTransactionProcessing(long j, WCSessionStoreItem wCSessionStoreItem, WalletConnectProcessedTransaction walletConnectProcessedTransaction, boolean z);
 
-    void onWalletChangeNetwork(long j, WCSessionStoreItem wCSessionStoreItem, NetworkType networkType);
+    void onWalletChangeNetwork(long j, WCSessionStoreItem wCSessionStoreItem, String str);
 
     void onWalletChangeUnsupportedNetwork();
 }

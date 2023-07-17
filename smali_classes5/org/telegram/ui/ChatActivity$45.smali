@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/ChatActivity;Landroid/content/Context;)V
     .locals 0
 
-    .line 8907
+    .line 8845
     iput-object p1, p0, Lorg/telegram/ui/ChatActivity$45;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-direct {p0, p2}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
@@ -37,15 +37,15 @@
 .method protected onDraw(Landroid/graphics/Canvas;)V
     .locals 4
 
-    .line 8912
+    .line 8850
     invoke-super {p0, p1}, Landroid/widget/TextView;->onDraw(Landroid/graphics/Canvas;)V
 
-    .line 8913
+    .line 8851
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$45;->cellFlickerDrawable:Lorg/telegram/ui/Components/voip/CellFlickerDrawable;
 
     if-nez v0, :cond_0
 
-    .line 8914
+    .line 8852
     new-instance v0, Lorg/telegram/ui/Components/voip/CellFlickerDrawable;
 
     invoke-direct {v0}, Lorg/telegram/ui/Components/voip/CellFlickerDrawable;-><init>()V
@@ -54,15 +54,15 @@
 
     const/4 v1, 0x0
 
-    .line 8915
+    .line 8853
     iput-boolean v1, v0, Lorg/telegram/ui/Components/voip/CellFlickerDrawable;->drawFrame:Z
 
     const/high16 v1, 0x40000000    # 2.0f
 
-    .line 8916
+    .line 8854
     iput v1, v0, Lorg/telegram/ui/Components/voip/CellFlickerDrawable;->repeatProgress:F
 
-    .line 8918
+    .line 8856
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$45;->cellFlickerDrawable:Lorg/telegram/ui/Components/voip/CellFlickerDrawable;
 
@@ -72,7 +72,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/voip/CellFlickerDrawable;->setParentWidth(I)V
 
-    .line 8919
+    .line 8857
     sget-object v0, Lorg/telegram/messenger/AndroidUtilities;->rectTmp:Landroid/graphics/RectF;
 
     invoke-virtual {p0}, Landroid/widget/TextView;->getMeasuredWidth()I
@@ -91,7 +91,7 @@
 
     invoke-virtual {v0, v3, v3, v1, v2}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 8920
+    .line 8858
     iget-object v1, p0, Lorg/telegram/ui/ChatActivity$45;->cellFlickerDrawable:Lorg/telegram/ui/Components/voip/CellFlickerDrawable;
 
     const/4 v2, 0x4
@@ -106,7 +106,7 @@
 
     invoke-virtual {v1, p1, v0, v2, v3}, Lorg/telegram/ui/Components/voip/CellFlickerDrawable;->draw(Landroid/graphics/Canvas;Landroid/graphics/RectF;FLandroid/view/View;)V
 
-    .line 8921
+    .line 8859
     invoke-virtual {p0}, Landroid/widget/TextView;->invalidate()V
 
     return-void
@@ -115,13 +115,13 @@
 .method public setVisibility(I)V
     .locals 1
 
-    .line 8926
+    .line 8864
     invoke-super {p0, p1}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 8928
+    .line 8866
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$45;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$17200(Lorg/telegram/ui/ChatActivity;)Lorg/telegram/ui/Components/BlurredFrameLayout;
+    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$16800(Lorg/telegram/ui/ChatActivity;)Lorg/telegram/ui/Components/BlurredFrameLayout;
 
     move-result-object v0
 
@@ -138,7 +138,7 @@
     :cond_0
     const/16 p1, 0x33
 
-    .line 8929
+    .line 8867
     :goto_0
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 

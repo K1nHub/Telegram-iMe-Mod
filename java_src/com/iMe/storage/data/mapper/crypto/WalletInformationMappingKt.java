@@ -1,32 +1,46 @@
 package com.iMe.storage.data.mapper.crypto;
 
-import com.iMe.storage.data.network.model.response.crypto.wallet.CryptoWalletInfoResponse;
-import com.iMe.storage.domain.model.crypto.CryptoWalletInfo;
+import com.iMe.storage.data.network.model.response.crypto.wallet.CryptoWalletsInfoResponse;
+import com.iMe.storage.data.network.model.response.crypto.wallet.RemoteWalletInfoResponse;
+import com.iMe.storage.domain.model.crypto.BlockchainType;
+import com.iMe.storage.domain.model.crypto.CryptoWalletsInfo;
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
 import java.util.List;
+import kotlin.Pair;
+import kotlin.TuplesKt;
 import kotlin.collections.CollectionsKt__IterablesKt;
+import kotlin.collections.MapsKt__MapsJVMKt;
 import kotlin.jvm.internal.Intrinsics;
+import kotlin.ranges.RangesKt___RangesKt;
+import kotlin.text.StringsKt__StringNumberConversionsKt;
 /* compiled from: WalletInformationMapping.kt */
 /* loaded from: classes3.dex */
 public final class WalletInformationMappingKt {
-    public static final CryptoWalletInfo mapToDomain(CryptoWalletInfoResponse cryptoWalletInfoResponse) {
+    public static final CryptoWalletsInfo mapToDomain(CryptoWalletsInfoResponse cryptoWalletsInfoResponse) {
         int collectionSizeOrDefault;
-        Intrinsics.checkNotNullParameter(cryptoWalletInfoResponse, "<this>");
-        String myEtherWalletAddress = cryptoWalletInfoResponse.getMyEtherWalletAddress();
-        String str = myEtherWalletAddress == null ? "" : myEtherWalletAddress;
-        String tonWalletAddress = cryptoWalletInfoResponse.getTonWalletAddress();
-        String str2 = tonWalletAddress == null ? "" : tonWalletAddress;
-        String tronWalletAddress = cryptoWalletInfoResponse.getTronWalletAddress();
-        String str3 = tronWalletAddress == null ? "" : tronWalletAddress;
-        String bitcoinWalletAddress = cryptoWalletInfoResponse.getBitcoinWalletAddress();
-        String str4 = bitcoinWalletAddress == null ? "" : bitcoinWalletAddress;
-        boolean isEtherWalletAddressOpened = cryptoWalletInfoResponse.isEtherWalletAddressOpened();
-        List<String> usersWithAccessToEtherWalletAddress = cryptoWalletInfoResponse.getUsersWithAccessToEtherWalletAddress();
-        collectionSizeOrDefault = CollectionsKt__IterablesKt.collectionSizeOrDefault(usersWithAccessToEtherWalletAddress, 10);
-        ArrayList arrayList = new ArrayList(collectionSizeOrDefault);
-        for (String str5 : usersWithAccessToEtherWalletAddress) {
-            arrayList.add(Long.valueOf(Long.parseLong(str5)));
+        int mapCapacity;
+        int coerceAtLeast;
+        Long longOrNull;
+        Intrinsics.checkNotNullParameter(cryptoWalletsInfoResponse, "<this>");
+        List<RemoteWalletInfoResponse> wallets = cryptoWalletsInfoResponse.getWallets();
+        collectionSizeOrDefault = CollectionsKt__IterablesKt.collectionSizeOrDefault(wallets, 10);
+        mapCapacity = MapsKt__MapsJVMKt.mapCapacity(collectionSizeOrDefault);
+        coerceAtLeast = RangesKt___RangesKt.coerceAtLeast(mapCapacity, 16);
+        LinkedHashMap linkedHashMap = new LinkedHashMap(coerceAtLeast);
+        for (RemoteWalletInfoResponse remoteWalletInfoResponse : wallets) {
+            Pair m85to = TuplesKt.m85to(BlockchainType.Companion.mapByBackendName(remoteWalletInfoResponse.getPlatform()), remoteWalletInfoResponse.getAddress());
+            linkedHashMap.put(m85to.getFirst(), m85to.getSecond());
         }
-        return new CryptoWalletInfo(str, str2, str3, str4, isEtherWalletAddressOpened, arrayList);
+        boolean isVisible = cryptoWalletsInfoResponse.isVisible();
+        List<String> allowedUsers = cryptoWalletsInfoResponse.getAllowedUsers();
+        ArrayList arrayList = new ArrayList();
+        for (String str : allowedUsers) {
+            longOrNull = StringsKt__StringNumberConversionsKt.toLongOrNull(str);
+            if (longOrNull != null) {
+                arrayList.add(longOrNull);
+            }
+        }
+        return new CryptoWalletsInfo(linkedHashMap, isVisible, arrayList);
     }
 }

@@ -32,17 +32,17 @@
 .method constructor <init>(Lcom/iMe/ui/debug/DebugView$$State;Lcom/iMe/model/dialog/DialogModel;Lcom/iMe/fork/utils/Callbacks$Callback;)V
     .locals 1
 
-    .line 118
+    .line 134
     const-class p1, Lmoxy/viewstate/strategy/OneExecutionStateStrategy;
 
     const-string v0, "showConfirmSwitchEnvironmentDialog"
 
     invoke-direct {p0, v0, p1}, Lmoxy/viewstate/ViewCommand;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
-    .line 120
+    .line 136
     iput-object p2, p0, Lcom/iMe/ui/debug/DebugView$$State$ShowConfirmSwitchEnvironmentDialogCommand;->model:Lcom/iMe/model/dialog/DialogModel;
 
-    .line 121
+    .line 137
     iput-object p3, p0, Lcom/iMe/ui/debug/DebugView$$State$ShowConfirmSwitchEnvironmentDialogCommand;->action:Lcom/iMe/fork/utils/Callbacks$Callback;
 
     return-void
@@ -53,7 +53,7 @@
 .method public apply(Lcom/iMe/ui/debug/DebugView;)V
     .locals 2
 
-    .line 126
+    .line 142
     iget-object v0, p0, Lcom/iMe/ui/debug/DebugView$$State$ShowConfirmSwitchEnvironmentDialogCommand;->model:Lcom/iMe/model/dialog/DialogModel;
 
     iget-object v1, p0, Lcom/iMe/ui/debug/DebugView$$State$ShowConfirmSwitchEnvironmentDialogCommand;->action:Lcom/iMe/fork/utils/Callbacks$Callback;
@@ -66,7 +66,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 112
+    .line 128
     check-cast p1, Lcom/iMe/ui/debug/DebugView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/debug/DebugView$$State$ShowConfirmSwitchEnvironmentDialogCommand;->apply(Lcom/iMe/ui/debug/DebugView;)V

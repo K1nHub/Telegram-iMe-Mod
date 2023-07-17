@@ -35,7 +35,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/ChatActivityEnterView;)V
     .locals 0
 
-    .line 411
+    .line 412
     iput-object p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$1;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -46,7 +46,7 @@
 .method private synthetic lambda$onShopClick$0()Lkotlin/Unit;
     .locals 2
 
-    .line 466
+    .line 467
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$1;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$600(Lorg/telegram/ui/Components/ChatActivityEnterView;)Lorg/telegram/ui/ChatActivity;
@@ -69,7 +69,7 @@
 .method public onBotsSettingsClick()V
     .locals 2
 
-    .line 473
+    .line 474
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$1;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$600(Lorg/telegram/ui/Components/ChatActivityEnterView;)Lorg/telegram/ui/ChatActivity;
@@ -98,7 +98,7 @@
         }
     .end annotation
 
-    .line 436
+    .line 437
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$1;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/ChatActivityEnterView;->messageEditText:Lorg/telegram/ui/Components/EditTextCaption;
@@ -107,7 +107,7 @@
 
     return-void
 
-    .line 439
+    .line 440
     :cond_0
     invoke-interface {p2, p3}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
@@ -115,7 +115,7 @@
 
     check-cast v0, Lorg/telegram/tgnet/TLRPC$BotInlineResult;
 
-    .line 440
+    .line 441
     iget-object v1, v0, Lorg/telegram/tgnet/TLRPC$BotInlineResult;->type:Ljava/lang/String;
 
     const-string v2, "gif"
@@ -134,13 +134,13 @@
 
     if-eqz v0, :cond_2
 
-    .line 441
+    .line 442
     :cond_1
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0, p2}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
 
-    .line 442
+    .line 443
     iget-object p2, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$1;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
     invoke-static {p2}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$300(Lorg/telegram/ui/Components/ChatActivityEnterView;)Lorg/telegram/ui/Components/ChatActivityEnterView$ChatActivityEnterViewDelegate;
@@ -156,7 +156,7 @@
 .method public onShopClick()V
     .locals 3
 
-    .line 465
+    .line 466
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$1;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$200(Lorg/telegram/ui/Components/ChatActivityEnterView;)I
@@ -185,7 +185,7 @@
 .method public onTextAnswerSelected(Lcom/iMe/ui/smartpanel/model/content/TabBotAnswerItem;I)V
     .locals 8
 
-    .line 414
+    .line 415
     invoke-virtual {p1}, Lcom/iMe/ui/smartpanel/model/content/TabBotAnswerItem;->getPhrase()Ljava/lang/String;
 
     move-result-object v0
@@ -198,7 +198,7 @@
 
     if-nez v0, :cond_0
 
-    .line 415
+    .line 416
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$1;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/ChatActivityEnterView;->messageEditText:Lorg/telegram/ui/Components/EditTextCaption;
@@ -209,7 +209,7 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
-    .line 416
+    .line 417
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$1;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/ChatActivityEnterView;->messageEditText:Lorg/telegram/ui/Components/EditTextCaption;
@@ -224,12 +224,12 @@
 
     invoke-virtual {v0, v2}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setSelection(I)V
 
-    .line 417
+    .line 418
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$1;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
     invoke-static {v0, v1}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$000(Lorg/telegram/ui/Components/ChatActivityEnterView;Z)V
 
-    .line 419
+    .line 420
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$1;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
@@ -239,7 +239,7 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/EditText;->append(Ljava/lang/CharSequence;)V
 
-    .line 420
+    .line 421
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$1;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/ChatActivityEnterView;->messageEditText:Lorg/telegram/ui/Components/EditTextCaption;
@@ -250,7 +250,7 @@
 
     const-wide/16 v2, 0x0
 
-    .line 424
+    .line 425
     iget-object v4, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$1;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
     invoke-static {v4}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$100(Lorg/telegram/ui/Components/ChatActivityEnterView;)J
@@ -263,7 +263,7 @@
 
     if-eqz v4, :cond_1
 
-    .line 425
+    .line 426
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$1;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$200(Lorg/telegram/ui/Components/ChatActivityEnterView;)I
@@ -291,10 +291,10 @@
     :cond_1
     if-eqz v0, :cond_2
 
-    .line 428
+    .line 429
     iget-wide v2, v0, Lorg/telegram/tgnet/TLRPC$User;->id:J
 
-    .line 431
+    .line 432
     :cond_2
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$1;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
@@ -352,7 +352,7 @@
 .method public onTranslationYChanged(F)V
     .locals 2
 
-    .line 453
+    .line 454
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$1;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$400(Lorg/telegram/ui/Components/ChatActivityEnterView;)Landroid/animation/AnimatorSet;
@@ -371,7 +371,7 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 454
+    .line 455
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$1;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$300(Lorg/telegram/ui/Components/ChatActivityEnterView;)Lorg/telegram/ui/Components/ChatActivityEnterView$ChatActivityEnterViewDelegate;
@@ -387,7 +387,7 @@
 .method public sendChosenGif(IJLjava/lang/String;)V
     .locals 1
 
-    .line 448
+    .line 449
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$1;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$300(Lorg/telegram/ui/Components/ChatActivityEnterView;)Lorg/telegram/ui/Components/ChatActivityEnterView$ChatActivityEnterViewDelegate;

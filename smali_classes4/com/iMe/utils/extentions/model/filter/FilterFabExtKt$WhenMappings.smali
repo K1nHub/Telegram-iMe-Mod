@@ -156,6 +156,20 @@
     .catch Ljava/lang/NoSuchFieldError; {:try_start_8 .. :try_end_8} :catch_8
 
     :catch_8
+    :try_start_9
+    sget-object v1, Lcom/iMe/storage/domain/model/filters/FilterFab;->CLEAR_DRAFTS:Lcom/iMe/storage/domain/model/filters/FilterFab;
+
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
+
+    move-result v1
+
+    const/16 v2, 0xa
+
+    aput v2, v0, v1
+    :try_end_9
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_9 .. :try_end_9} :catch_9
+
+    :catch_9
     sput-object v0, Lcom/iMe/utils/extentions/model/filter/FilterFabExtKt$WhenMappings;->$EnumSwitchMapping$0:[I
 
     return-void

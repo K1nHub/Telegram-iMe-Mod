@@ -21,19 +21,19 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 14
+    .line 15
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 15
+    .line 16
     iput-object p1, p0, Lcom/iMe/storage/domain/interactor/crypto/donations/DonationsInteractor;->donationsRepository:Lcom/iMe/storage/domain/repository/crypto/donations/DonationsRepository;
 
-    .line 16
+    .line 17
     iput-object p2, p0, Lcom/iMe/storage/domain/interactor/crypto/donations/DonationsInteractor;->schedulersProvider:Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
     return-void
 .end method
 
-.method public static synthetic getDonationTransactionHistory$default(Lcom/iMe/storage/domain/interactor/crypto/donations/DonationsInteractor;JLjava/lang/String;ILcom/iMe/storage/domain/model/crypto/NetworkType;ILjava/lang/Object;)Lio/reactivex/Observable;
+.method public static synthetic getDonationTransactionHistory$default(Lcom/iMe/storage/domain/interactor/crypto/donations/DonationsInteractor;JLjava/lang/String;ILjava/lang/String;ILjava/lang/Object;)Lio/reactivex/Observable;
     .locals 6
 
     and-int/lit8 p7, p6, 0x2
@@ -58,8 +58,16 @@
 
     if-eqz p3, :cond_2
 
-    .line 59
-    sget-object p5, Lcom/iMe/storage/domain/model/crypto/NetworkType;->BINANCE_SMART_CHAIN:Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    .line 55
+    sget-object p3, Lcom/iMe/storage/data/utils/crypto/NetworksHelper;->INSTANCE:Lcom/iMe/storage/data/utils/crypto/NetworksHelper;
+
+    invoke-virtual {p3}, Lcom/iMe/storage/data/utils/crypto/NetworksHelper;->getDefault()Lcom/iMe/storage/domain/model/crypto/Network;
+
+    move-result-object p3
+
+    invoke-virtual {p3}, Lcom/iMe/storage/domain/model/crypto/Network;->getId()Ljava/lang/String;
+
+    move-result-object p5
 
     :cond_2
     move-object v5, p5
@@ -68,27 +76,35 @@
 
     move-wide v1, p1
 
-    .line 55
-    invoke-virtual/range {v0 .. v5}, Lcom/iMe/storage/domain/interactor/crypto/donations/DonationsInteractor;->getDonationTransactionHistory(JLjava/lang/String;ILcom/iMe/storage/domain/model/crypto/NetworkType;)Lio/reactivex/Observable;
+    .line 51
+    invoke-virtual/range {v0 .. v5}, Lcom/iMe/storage/domain/interactor/crypto/donations/DonationsInteractor;->getDonationTransactionHistory(JLjava/lang/String;ILjava/lang/String;)Lio/reactivex/Observable;
 
     move-result-object p0
 
     return-object p0
 .end method
 
-.method public static synthetic getDonationWalletBalance$default(Lcom/iMe/storage/domain/interactor/crypto/donations/DonationsInteractor;JLcom/iMe/storage/domain/model/crypto/NetworkType;ILjava/lang/Object;)Lio/reactivex/Observable;
+.method public static synthetic getDonationWalletBalance$default(Lcom/iMe/storage/domain/interactor/crypto/donations/DonationsInteractor;JLjava/lang/String;ILjava/lang/Object;)Lio/reactivex/Observable;
     .locals 0
 
     and-int/lit8 p4, p4, 0x2
 
     if-eqz p4, :cond_0
 
-    .line 47
-    sget-object p3, Lcom/iMe/storage/domain/model/crypto/NetworkType;->BINANCE_SMART_CHAIN:Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    .line 44
+    sget-object p3, Lcom/iMe/storage/data/utils/crypto/NetworksHelper;->INSTANCE:Lcom/iMe/storage/data/utils/crypto/NetworksHelper;
 
-    .line 45
+    invoke-virtual {p3}, Lcom/iMe/storage/data/utils/crypto/NetworksHelper;->getDefault()Lcom/iMe/storage/domain/model/crypto/Network;
+
+    move-result-object p3
+
+    invoke-virtual {p3}, Lcom/iMe/storage/domain/model/crypto/Network;->getId()Ljava/lang/String;
+
+    move-result-object p3
+
+    .line 42
     :cond_0
-    invoke-virtual {p0, p1, p2, p3}, Lcom/iMe/storage/domain/interactor/crypto/donations/DonationsInteractor;->getDonationWalletBalance(JLcom/iMe/storage/domain/model/crypto/NetworkType;)Lio/reactivex/Observable;
+    invoke-virtual {p0, p1, p2, p3}, Lcom/iMe/storage/domain/interactor/crypto/donations/DonationsInteractor;->getDonationWalletBalance(JLjava/lang/String;)Lio/reactivex/Observable;
 
     move-result-object p0
 
@@ -153,15 +169,15 @@
 
     invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 22
+    .line 23
     iget-object v0, p0, Lcom/iMe/storage/domain/interactor/crypto/donations/DonationsInteractor;->donationsRepository:Lcom/iMe/storage/domain/repository/crypto/donations/DonationsRepository;
 
-    .line 23
+    .line 24
     invoke-interface {v0, p1, p2, p3, p4}, Lcom/iMe/storage/domain/repository/crypto/donations/DonationsRepository;->enableDonationFor(JLjava/lang/String;Z)Lio/reactivex/Observable;
 
     move-result-object p1
 
-    .line 24
+    .line 25
     iget-object p2, p0, Lcom/iMe/storage/domain/interactor/crypto/donations/DonationsInteractor;->schedulersProvider:Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
     invoke-interface {p2}, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;->io()Lio/reactivex/Scheduler;
@@ -179,13 +195,13 @@
     return-object p1
 .end method
 
-.method public final getDataForDonation(JLjava/lang/String;Lcom/iMe/storage/domain/model/crypto/NetworkType;)Lio/reactivex/Observable;
+.method public final getDataForDonation(JLjava/lang/String;Lcom/iMe/storage/domain/model/wallet/token/Token;)Lio/reactivex/Observable;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(J",
             "Ljava/lang/String;",
-            "Lcom/iMe/storage/domain/model/crypto/NetworkType;",
+            "Lcom/iMe/storage/domain/model/wallet/token/Token;",
             ")",
             "Lio/reactivex/Observable<",
             "Lcom/iMe/storage/domain/model/Result<",
@@ -198,19 +214,19 @@
 
     invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "networkType"
+    const-string v0, "token"
 
     invoke-static {p4, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 74
+    .line 68
     iget-object v0, p0, Lcom/iMe/storage/domain/interactor/crypto/donations/DonationsInteractor;->donationsRepository:Lcom/iMe/storage/domain/repository/crypto/donations/DonationsRepository;
 
-    .line 75
-    invoke-interface {v0, p1, p2, p3, p4}, Lcom/iMe/storage/domain/repository/crypto/donations/DonationsRepository;->getDataForDonation(JLjava/lang/String;Lcom/iMe/storage/domain/model/crypto/NetworkType;)Lio/reactivex/Observable;
+    .line 69
+    invoke-interface {v0, p1, p2, p3, p4}, Lcom/iMe/storage/domain/repository/crypto/donations/DonationsRepository;->getDataForDonation(JLjava/lang/String;Lcom/iMe/storage/domain/model/wallet/token/Token;)Lio/reactivex/Observable;
 
     move-result-object p1
 
-    .line 76
+    .line 70
     iget-object p2, p0, Lcom/iMe/storage/domain/interactor/crypto/donations/DonationsInteractor;->schedulersProvider:Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
     invoke-interface {p2}, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;->io()Lio/reactivex/Scheduler;
@@ -240,15 +256,15 @@
         }
     .end annotation
 
-    .line 40
+    .line 38
     iget-object v0, p0, Lcom/iMe/storage/domain/interactor/crypto/donations/DonationsInteractor;->donationsRepository:Lcom/iMe/storage/domain/repository/crypto/donations/DonationsRepository;
 
-    .line 41
+    .line 39
     invoke-interface {v0, p1, p2}, Lcom/iMe/storage/domain/repository/crypto/donations/DonationsRepository;->getDonationAddress(J)Lio/reactivex/Observable;
 
     move-result-object p1
 
-    .line 42
+    .line 40
     iget-object p2, p0, Lcom/iMe/storage/domain/interactor/crypto/donations/DonationsInteractor;->schedulersProvider:Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
     invoke-interface {p2}, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;->io()Lio/reactivex/Scheduler;
@@ -266,14 +282,14 @@
     return-object p1
 .end method
 
-.method public final getDonationTransactionHistory(JLjava/lang/String;ILcom/iMe/storage/domain/model/crypto/NetworkType;)Lio/reactivex/Observable;
+.method public final getDonationTransactionHistory(JLjava/lang/String;ILjava/lang/String;)Lio/reactivex/Observable;
     .locals 7
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(J",
             "Ljava/lang/String;",
             "I",
-            "Lcom/iMe/storage/domain/model/crypto/NetworkType;",
+            "Ljava/lang/String;",
             ")",
             "Lio/reactivex/Observable<",
             "Lcom/iMe/storage/domain/model/Result<",
@@ -283,11 +299,11 @@
         }
     .end annotation
 
-    const-string v0, "networkType"
+    const-string v0, "networkId"
 
     invoke-static {p5, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 61
+    .line 57
     iget-object v1, p0, Lcom/iMe/storage/domain/interactor/crypto/donations/DonationsInteractor;->donationsRepository:Lcom/iMe/storage/domain/repository/crypto/donations/DonationsRepository;
 
     move-wide v2, p1
@@ -298,12 +314,12 @@
 
     move-object v6, p5
 
-    .line 62
-    invoke-interface/range {v1 .. v6}, Lcom/iMe/storage/domain/repository/crypto/donations/DonationsRepository;->getDonationTransactionHistory(JLjava/lang/String;ILcom/iMe/storage/domain/model/crypto/NetworkType;)Lio/reactivex/Observable;
+    .line 58
+    invoke-interface/range {v1 .. v6}, Lcom/iMe/storage/domain/repository/crypto/donations/DonationsRepository;->getDonationTransactionHistory(JLjava/lang/String;ILjava/lang/String;)Lio/reactivex/Observable;
 
     move-result-object p1
 
-    .line 63
+    .line 59
     iget-object p2, p0, Lcom/iMe/storage/domain/interactor/crypto/donations/DonationsInteractor;->schedulersProvider:Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
     invoke-interface {p2}, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;->io()Lio/reactivex/Scheduler;
@@ -314,7 +330,7 @@
 
     move-result-object p1
 
-    .line 64
+    .line 60
     sget-object p2, Lcom/iMe/storage/domain/model/Result;->Companion:Lcom/iMe/storage/domain/model/Result$Companion;
 
     const/4 p3, 0x0
@@ -336,12 +352,12 @@
     return-object p1
 .end method
 
-.method public final getDonationWalletBalance(JLcom/iMe/storage/domain/model/crypto/NetworkType;)Lio/reactivex/Observable;
+.method public final getDonationWalletBalance(JLjava/lang/String;)Lio/reactivex/Observable;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(J",
-            "Lcom/iMe/storage/domain/model/crypto/NetworkType;",
+            "Ljava/lang/String;",
             ")",
             "Lio/reactivex/Observable<",
             "Lcom/iMe/storage/domain/model/Result<",
@@ -350,19 +366,19 @@
         }
     .end annotation
 
-    const-string v0, "networkType"
+    const-string v0, "networkId"
 
     invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 49
+    .line 46
     iget-object v0, p0, Lcom/iMe/storage/domain/interactor/crypto/donations/DonationsInteractor;->donationsRepository:Lcom/iMe/storage/domain/repository/crypto/donations/DonationsRepository;
 
-    .line 50
-    invoke-interface {v0, p1, p2, p3}, Lcom/iMe/storage/domain/repository/crypto/donations/DonationsRepository;->getDonationWalletBalance(JLcom/iMe/storage/domain/model/crypto/NetworkType;)Lio/reactivex/Observable;
+    .line 47
+    invoke-interface {v0, p1, p2, p3}, Lcom/iMe/storage/domain/repository/crypto/donations/DonationsRepository;->getDonationWalletBalance(JLjava/lang/String;)Lio/reactivex/Observable;
 
     move-result-object p1
 
-    .line 51
+    .line 48
     iget-object p2, p0, Lcom/iMe/storage/domain/interactor/crypto/donations/DonationsInteractor;->schedulersProvider:Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
     invoke-interface {p2}, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;->io()Lio/reactivex/Scheduler;
@@ -373,7 +389,7 @@
 
     move-result-object p1
 
-    .line 52
+    .line 49
     sget-object p2, Lcom/iMe/storage/domain/model/Result;->Companion:Lcom/iMe/storage/domain/model/Result$Companion;
 
     const/4 p3, 0x0
@@ -407,15 +423,15 @@
         }
     .end annotation
 
-    .line 34
+    .line 33
     iget-object v0, p0, Lcom/iMe/storage/domain/interactor/crypto/donations/DonationsInteractor;->donationsRepository:Lcom/iMe/storage/domain/repository/crypto/donations/DonationsRepository;
 
-    .line 35
+    .line 34
     invoke-interface {v0, p1, p2}, Lcom/iMe/storage/domain/repository/crypto/donations/DonationsRepository;->isDonationsEnabled(J)Lio/reactivex/Observable;
 
     move-result-object p1
 
-    .line 36
+    .line 35
     iget-object p2, p0, Lcom/iMe/storage/domain/interactor/crypto/donations/DonationsInteractor;->schedulersProvider:Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
     invoke-interface {p2}, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;->io()Lio/reactivex/Scheduler;
@@ -451,15 +467,15 @@
 
     invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 68
+    .line 63
     iget-object v0, p0, Lcom/iMe/storage/domain/interactor/crypto/donations/DonationsInteractor;->donationsRepository:Lcom/iMe/storage/domain/repository/crypto/donations/DonationsRepository;
 
-    .line 69
+    .line 64
     invoke-interface {v0, p1, p2, p3}, Lcom/iMe/storage/domain/repository/crypto/donations/DonationsRepository;->sendDonation(JLcom/iMe/storage/domain/model/crypto/send/TransferArgs;)Lio/reactivex/Observable;
 
     move-result-object p1
 
-    .line 70
+    .line 65
     iget-object p2, p0, Lcom/iMe/storage/domain/interactor/crypto/donations/DonationsInteractor;->schedulersProvider:Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
     invoke-interface {p2}, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;->io()Lio/reactivex/Scheduler;

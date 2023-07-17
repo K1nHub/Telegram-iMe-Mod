@@ -5,8 +5,8 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Lambda;
-import org.telegram.p044ui.ActionBar.Theme;
-import org.telegram.p044ui.Components.Switch;
+import org.telegram.p043ui.ActionBar.Theme;
+import org.telegram.p043ui.Components.Switch;
 /* compiled from: WalletAppearanceSettingsRecycleAdapter.kt */
 /* renamed from: com.iMe.ui.wallet.settings.appearance.adapter.WalletAppearanceSettingsRecycleAdapter$convert$1 */
 /* loaded from: classes4.dex */

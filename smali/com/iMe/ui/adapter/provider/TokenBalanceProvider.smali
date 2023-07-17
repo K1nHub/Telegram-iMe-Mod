@@ -14,8 +14,6 @@
 
 
 # instance fields
-.field private final cryptoPreferenceHelper:Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
-
 .field private final itemViewType:I
 
 .field private final layoutId:I
@@ -24,32 +22,25 @@
 
 
 # direct methods
-.method public constructor <init>(Lcom/iMe/storage/domain/utils/system/ResourceManager;Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;)V
+.method public constructor <init>(Lcom/iMe/storage/domain/utils/system/ResourceManager;)V
     .locals 1
 
     const-string v0, "resourceManager"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "cryptoPreferenceHelper"
-
-    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    .line 24
+    .line 27
     invoke-direct {p0}, Lcom/chad/library/adapter/base/provider/BaseNodeProvider;-><init>()V
 
-    .line 22
+    .line 26
     iput-object p1, p0, Lcom/iMe/ui/adapter/provider/TokenBalanceProvider;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
-    .line 23
-    iput-object p2, p0, Lcom/iMe/ui/adapter/provider/TokenBalanceProvider;->cryptoPreferenceHelper:Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
-
-    .line 27
+    .line 30
     sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->TOKEN_BALANCE:I
 
     iput p1, p0, Lcom/iMe/ui/adapter/provider/TokenBalanceProvider;->itemViewType:I
 
-    .line 28
+    .line 31
     sget p1, Lorg/telegram/messenger/R$layout;->fork_recycle_item_wallet_dashboard_account_balance:I
 
     iput p1, p0, Lcom/iMe/ui/adapter/provider/TokenBalanceProvider;->layoutId:I
@@ -57,417 +48,345 @@
     return-void
 .end method
 
-.method public static final synthetic access$getResourceManager$p(Lcom/iMe/ui/adapter/provider/TokenBalanceProvider;)Lcom/iMe/storage/domain/utils/system/ResourceManager;
-    .locals 0
-
-    .line 21
-    iget-object p0, p0, Lcom/iMe/ui/adapter/provider/TokenBalanceProvider;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
-
-    return-object p0
-.end method
-
 
 # virtual methods
 .method public convert(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;Lcom/iMe/model/wallet/home/AccountItem$Token;)V
-    .locals 13
+    .locals 23
 
-    const-string v0, "helper"
+    move-object/from16 v0, p1
 
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    const-string v1, "helper"
 
-    const-string v0, "item"
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    const-string v1, "item"
 
-    .line 34
-    sget v0, Lorg/telegram/messenger/R$id;->card_account_balance:I
+    move-object/from16 v2, p2
 
-    const/4 v1, 0x0
-
-    invoke-static {p1, v0, v1}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setRippleForeground(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;IZ)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
-
-    move-result-object p1
-
-    .line 35
-    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
-
-    invoke-static {p1, v0, v2}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setThemedCardBackground(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;II)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
-
-    move-result-object p1
+    invoke-static {v2, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 36
-    sget v0, Lorg/telegram/messenger/R$id;->constraint_trade_info:I
+    invoke-virtual/range {p2 .. p2}, Lcom/iMe/model/wallet/home/AccountItem$Token;->getBalance()Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;
 
-    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_chats_pinnedOverlay:I
-
-    const/high16 v3, 0x40800000    # 4.0f
-
-    invoke-static {p1, v0, v2, v3}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setThemedRoundedBackground(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;IIF)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
-
-    move-result-object p1
-
-    .line 37
-    sget v2, Lorg/telegram/messenger/R$id;->text_account_title:I
-
-    sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_chats_actionBackground:I
-
-    invoke-static {p1, v2, v3}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setThemedTextColor(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;II)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
-
-    move-result-object p1
+    move-result-object v1
 
     .line 38
-    sget v3, Lorg/telegram/messenger/R$id;->text_trade_pair:I
+    sget v3, Lorg/telegram/messenger/R$id;->card_account_balance:I
 
-    sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayText2:I
+    const/4 v4, 0x0
 
-    invoke-static {p1, v3, v4}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setThemedTextColor(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;II)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
+    invoke-static {v0, v3, v4}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setRippleForeground(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;IZ)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
-    move-result-object p1
+    move-result-object v0
 
     .line 39
-    sget v5, Lorg/telegram/messenger/R$id;->text_trade_price:I
+    sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
-    invoke-static {p1, v5, v4}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setThemedTextColor(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;II)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
+    invoke-static {v0, v3, v5}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setThemedCardBackground(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;II)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
-    move-result-object p1
+    move-result-object v0
 
     .line 40
-    sget v6, Lorg/telegram/messenger/R$id;->text_account_balance_in_dollars:I
+    sget v3, Lorg/telegram/messenger/R$id;->constraint_trade_info:I
 
-    invoke-static {p1, v6, v4}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setThemedTextColor(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;II)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
+    sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_chats_pinnedOverlay:I
 
-    move-result-object p1
+    const/high16 v6, 0x40800000    # 4.0f
+
+    invoke-static {v0, v3, v5, v6}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setThemedRoundedBackground(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;IIF)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
+
+    move-result-object v0
 
     .line 41
-    sget v7, Lorg/telegram/messenger/R$id;->text_trade_percent:I
+    sget v5, Lorg/telegram/messenger/R$id;->text_account_title:I
 
-    invoke-virtual {p2}, Lcom/iMe/model/wallet/home/AccountItem$Token;->getBalance()Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;
+    sget v6, Lorg/telegram/ui/ActionBar/Theme;->key_chats_actionBackground:I
 
-    move-result-object v8
+    invoke-static {v0, v5, v6}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setThemedTextColor(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;II)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
-    invoke-virtual {v8}, Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;->getPriceRate()Lcom/iMe/storage/domain/model/wallet/PriceRate;
-
-    move-result-object v8
-
-    invoke-static {v8}, Lcom/iMe/utils/extentions/model/wallet/PriceRateExtKt;->getPriceDirection(Lcom/iMe/storage/domain/model/wallet/PriceRate;)Lcom/iMe/model/wallet/home/PriceRateDirection;
-
-    move-result-object v8
-
-    invoke-virtual {v8}, Lcom/iMe/model/wallet/home/PriceRateDirection;->getColorKey()I
-
-    move-result v8
-
-    invoke-static {p1, v7, v8}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setThemedTextColor(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;II)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
-
-    move-result-object p1
+    move-result-object v0
 
     .line 42
-    sget v8, Lorg/telegram/messenger/R$id;->text_account_balance:I
+    sget v6, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayText2:I
 
-    sget v9, Lorg/telegram/ui/ActionBar/Theme;->key_chat_messagePanelText:I
+    const/4 v7, 0x3
 
-    invoke-static {p1, v8, v9}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setThemedTextColor(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;II)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
+    new-array v8, v7, [I
 
-    move-result-object p1
+    sget v9, Lorg/telegram/messenger/R$id;->text_trade_pair:I
 
-    const/4 v9, 0x5
+    aput v9, v8, v4
 
-    new-array v9, v9, [I
+    sget v10, Lorg/telegram/messenger/R$id;->text_trade_price:I
 
-    aput v8, v9, v1
+    const/4 v11, 0x1
 
-    const/4 v10, 0x1
+    aput v10, v8, v11
 
-    aput v3, v9, v10
+    sget v12, Lorg/telegram/messenger/R$id;->text_account_balance_in_dollars:I
 
-    const/4 v11, 0x2
+    const/4 v13, 0x2
 
-    aput v7, v9, v11
+    aput v12, v8, v13
 
-    const/4 v11, 0x3
+    invoke-static {v0, v6, v8}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setThemedTextColor(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;I[I)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
-    aput v5, v9, v11
-
-    const/4 v11, 0x4
-
-    aput v6, v9, v11
+    move-result-object v0
 
     .line 43
-    invoke-static {p1, v9}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setMediumTypeface(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;[I)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
+    sget v8, Lorg/telegram/messenger/R$id;->text_trade_percent:I
 
-    move-result-object p1
+    invoke-static {v1}, Lcom/iMe/utils/extentions/model/wallet/TokenBalanceExtKt;->getPriceDirection(Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;)Lcom/iMe/model/wallet/home/PriceRateDirection;
+
+    move-result-object v14
+
+    invoke-virtual {v14}, Lcom/iMe/model/wallet/home/PriceRateDirection;->getColorKey()I
+
+    move-result v14
+
+    invoke-static {v0, v8, v14}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setThemedTextColor(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;II)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
+
+    move-result-object v0
 
     .line 44
-    sget v9, Lorg/telegram/messenger/R$id;->image_coin_icon:I
+    sget v14, Lorg/telegram/messenger/R$id;->text_account_balance:I
 
-    invoke-virtual {p2}, Lcom/iMe/model/wallet/home/AccountItem$Token;->getBalance()Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;
+    sget v15, Lorg/telegram/ui/ActionBar/Theme;->key_chat_messagePanelText:I
 
-    move-result-object v11
+    invoke-static {v0, v14, v15}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setThemedTextColor(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;II)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
-    invoke-virtual {v11}, Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;->getInfo()Lcom/iMe/storage/domain/model/wallet/token/TokenInfo;
+    move-result-object v0
 
-    move-result-object v11
+    const/4 v15, 0x5
 
-    iget-object v12, p0, Lcom/iMe/ui/adapter/provider/TokenBalanceProvider;->cryptoPreferenceHelper:Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
+    new-array v15, v15, [I
 
-    invoke-interface {v12}, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;->getNetworkType()Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    aput v14, v15, v4
 
-    move-result-object v12
+    aput v9, v15, v11
 
-    invoke-static {v11, v12}, Lcom/iMe/storage/domain/utils/extentions/model/TokenInfoExtKt;->getLogo(Lcom/iMe/storage/domain/model/wallet/token/TokenInfo;Lcom/iMe/storage/domain/model/crypto/NetworkType;)I
+    aput v8, v15, v13
 
-    move-result v11
+    aput v10, v15, v7
 
-    invoke-virtual {p1, v9, v11}, Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;->setImageResource(II)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
+    const/4 v7, 0x4
 
-    move-result-object p1
+    aput v12, v15, v7
 
     .line 45
-    sget v9, Lorg/telegram/messenger/R$id;->image_price_direction:I
+    invoke-static {v0, v15}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setMediumTypeface(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;[I)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
-    invoke-virtual {p2}, Lcom/iMe/model/wallet/home/AccountItem$Token;->getBalance()Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;
-
-    move-result-object v11
-
-    invoke-virtual {v11}, Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;->getPriceRate()Lcom/iMe/storage/domain/model/wallet/PriceRate;
-
-    move-result-object v11
-
-    invoke-static {v11}, Lcom/iMe/utils/extentions/model/wallet/PriceRateExtKt;->getPriceDirection(Lcom/iMe/storage/domain/model/wallet/PriceRate;)Lcom/iMe/model/wallet/home/PriceRateDirection;
-
-    move-result-object v11
-
-    invoke-virtual {v11}, Lcom/iMe/model/wallet/home/PriceRateDirection;->getIcon()I
-
-    move-result v11
-
-    invoke-virtual {p1, v9, v11}, Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;->setImageResource(II)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
-
-    move-result-object p1
+    move-result-object v16
 
     .line 46
-    invoke-virtual {p2}, Lcom/iMe/model/wallet/home/AccountItem$Token;->getBalance()Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;
+    sget v17, Lorg/telegram/messenger/R$id;->image_coin_icon:I
 
-    move-result-object v11
+    invoke-virtual {v1}, Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;->getToken()Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
 
-    invoke-virtual {v11}, Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;->getPriceRate()Lcom/iMe/storage/domain/model/wallet/PriceRate;
+    move-result-object v0
 
-    move-result-object v11
+    invoke-virtual {v0}, Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;->getAvatarUrl()Ljava/lang/String;
 
-    invoke-static {v11}, Lcom/iMe/utils/extentions/model/wallet/PriceRateExtKt;->getPriceDirection(Lcom/iMe/storage/domain/model/wallet/PriceRate;)Lcom/iMe/model/wallet/home/PriceRateDirection;
+    move-result-object v18
 
-    move-result-object v11
+    const/16 v19, 0x0
 
-    invoke-virtual {v11}, Lcom/iMe/model/wallet/home/PriceRateDirection;->getColorKey()I
+    const/16 v20, 0x0
 
-    move-result v11
+    const/16 v21, 0xc
 
-    invoke-static {p1, v9, v11}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setThemedImageColor(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;II)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
+    const/16 v22, 0x0
 
-    move-result-object p1
+    invoke-static/range {v16 .. v22}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->loadImage$default(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;ILjava/lang/String;Ljava/lang/Integer;ZILjava/lang/Object;)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
+
+    move-result-object v0
 
     .line 47
-    sget v9, Lorg/telegram/messenger/R$id;->image_trade:I
+    sget v7, Lorg/telegram/messenger/R$id;->image_price_direction:I
 
-    invoke-static {p1, v9, v4}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setThemedImageColor(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;II)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
+    invoke-static {v1}, Lcom/iMe/utils/extentions/model/wallet/TokenBalanceExtKt;->getPriceDirection(Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;)Lcom/iMe/model/wallet/home/PriceRateDirection;
 
-    move-result-object p1
+    move-result-object v13
+
+    invoke-virtual {v13}, Lcom/iMe/model/wallet/home/PriceRateDirection;->getIcon()I
+
+    move-result v13
+
+    invoke-virtual {v0, v7, v13}, Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;->setImageResource(II)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
+
+    move-result-object v0
 
     .line 48
-    sget-object v4, Lcom/iMe/utils/formatter/MaskFormatter;->INSTANCE:Lcom/iMe/utils/formatter/MaskFormatter;
+    invoke-static {v1}, Lcom/iMe/utils/extentions/model/wallet/TokenBalanceExtKt;->getPriceDirection(Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;)Lcom/iMe/model/wallet/home/PriceRateDirection;
 
-    iget-object v9, p0, Lcom/iMe/ui/adapter/provider/TokenBalanceProvider;->cryptoPreferenceHelper:Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
+    move-result-object v13
 
-    invoke-interface {v9}, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;->getCryptoHiddenBalance()Z
+    invoke-virtual {v13}, Lcom/iMe/model/wallet/home/PriceRateDirection;->getColorKey()I
 
-    move-result v9
+    move-result v13
 
-    invoke-virtual {p2}, Lcom/iMe/model/wallet/home/AccountItem$Token;->getBalance()Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;
+    invoke-static {v0, v7, v13}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setThemedImageColor(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;II)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
-    move-result-object v11
-
-    invoke-static {v11}, Lcom/iMe/utils/extentions/model/wallet/TokenBalanceExtKt;->getTotalBalance(Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;)Ljava/lang/String;
-
-    move-result-object v11
-
-    invoke-virtual {v4, v9, v11}, Lcom/iMe/utils/formatter/MaskFormatter;->textOrMask(ZLjava/lang/String;)Ljava/lang/String;
-
-    move-result-object v9
-
-    invoke-virtual {p1, v8, v9}, Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;->setText(ILjava/lang/CharSequence;)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
-
-    move-result-object p1
+    move-result-object v0
 
     .line 49
-    iget-object v8, p0, Lcom/iMe/ui/adapter/provider/TokenBalanceProvider;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
+    sget v7, Lorg/telegram/messenger/R$id;->image_trade:I
 
-    invoke-virtual {p2}, Lcom/iMe/model/wallet/home/AccountItem$Token;->getBalance()Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;
+    invoke-static {v0, v7, v6}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setThemedImageColor(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;II)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
-    move-result-object v9
-
-    invoke-virtual {v9}, Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;->getInfo()Lcom/iMe/storage/domain/model/wallet/token/TokenInfo;
-
-    move-result-object v9
-
-    invoke-virtual {v9}, Lcom/iMe/storage/domain/model/wallet/token/TokenInfo;->getFullName()I
-
-    move-result v9
-
-    invoke-interface {v8, v9}, Lcom/iMe/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
-
-    move-result-object v8
-
-    invoke-virtual {p1, v2, v8}, Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;->setText(ILjava/lang/CharSequence;)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
-
-    move-result-object p1
+    move-result-object v0
 
     .line 50
-    new-instance v2, Ljava/lang/StringBuilder;
+    sget-object v6, Lcom/iMe/utils/formatter/MaskFormatter;->INSTANCE:Lcom/iMe/utils/formatter/MaskFormatter;
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-virtual/range {p2 .. p2}, Lcom/iMe/model/wallet/home/AccountItem$Token;->isBalanceHidden()Z
 
-    iget-object v8, p0, Lcom/iMe/ui/adapter/provider/TokenBalanceProvider;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
+    move-result v7
 
-    invoke-virtual {p2}, Lcom/iMe/model/wallet/home/AccountItem$Token;->getBalance()Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;
+    invoke-static {v1}, Lcom/iMe/utils/extentions/model/wallet/TokenBalanceExtKt;->getTotalBalance(Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;)Ljava/lang/String;
 
-    move-result-object v9
+    move-result-object v13
 
-    invoke-virtual {v9}, Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;->getInfo()Lcom/iMe/storage/domain/model/wallet/token/TokenInfo;
+    invoke-virtual {v6, v7, v13}, Lcom/iMe/utils/formatter/MaskFormatter;->textOrMask(ZLjava/lang/String;)Ljava/lang/String;
 
-    move-result-object v9
+    move-result-object v7
 
-    invoke-virtual {v9}, Lcom/iMe/storage/domain/model/wallet/token/TokenInfo;->getShortName()I
+    invoke-virtual {v0, v14, v7}, Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;->setText(ILjava/lang/CharSequence;)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
-    move-result v9
-
-    invoke-interface {v8, v9}, Lcom/iMe/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
-
-    move-result-object v8
-
-    invoke-virtual {v2, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v8, " / "
-
-    invoke-virtual {v2, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v8, p0, Lcom/iMe/ui/adapter/provider/TokenBalanceProvider;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
-
-    sget-object v9, Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Fiat$USD;->INSTANCE:Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Fiat$USD;
-
-    invoke-virtual {v9}, Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Fiat;->getFullName()I
-
-    move-result v9
-
-    invoke-interface {v8, v9}, Lcom/iMe/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
-
-    move-result-object v8
-
-    invoke-virtual {v2, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {p1, v3, v2}, Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;->setText(ILjava/lang/CharSequence;)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
-
-    move-result-object p1
+    move-result-object v0
 
     .line 51
-    invoke-virtual {p2}, Lcom/iMe/model/wallet/home/AccountItem$Token;->getBalance()Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;
+    invoke-virtual {v1}, Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;->getToken()Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
 
-    move-result-object v2
+    move-result-object v7
 
-    iget-object v3, p0, Lcom/iMe/ui/adapter/provider/TokenBalanceProvider;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
+    invoke-virtual {v7}, Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;->getName()Ljava/lang/String;
 
-    invoke-static {v2, v3}, Lcom/iMe/utils/extentions/model/wallet/TokenBalanceExtKt;->getDollarsRateText(Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;Lcom/iMe/storage/domain/utils/system/ResourceManager;)Ljava/lang/String;
+    move-result-object v7
 
-    move-result-object v2
+    invoke-virtual {v0, v5, v7}, Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;->setText(ILjava/lang/CharSequence;)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
-    invoke-virtual {p1, v5, v2}, Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;->setText(ILjava/lang/CharSequence;)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
-
-    move-result-object p1
+    move-result-object v0
 
     .line 52
-    iget-object v2, p0, Lcom/iMe/ui/adapter/provider/TokenBalanceProvider;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
+    new-instance v5, Ljava/lang/StringBuilder;
 
-    sget v3, Lorg/telegram/messenger/R$string;->wallet_dashboard_balance_24h_rate:I
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
 
-    new-array v5, v10, [Ljava/lang/Object;
+    invoke-virtual {v1}, Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;->getToken()Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
 
-    invoke-virtual {p2}, Lcom/iMe/model/wallet/home/AccountItem$Token;->getBalance()Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;
+    move-result-object v7
 
-    move-result-object v8
+    invoke-virtual {v7}, Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;->getTicker()Ljava/lang/String;
 
-    invoke-virtual {v8}, Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;->getPriceRate()Lcom/iMe/storage/domain/model/wallet/PriceRate;
+    move-result-object v7
 
-    move-result-object v8
+    invoke-virtual {v5, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v8}, Lcom/iMe/storage/domain/model/wallet/PriceRate;->getRatePercentageChange24h()F
+    const-string v7, " / "
 
-    move-result v8
+    invoke-virtual {v5, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-static {v8}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+    sget-object v7, Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;->Companion:Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed$Companion;
 
-    move-result-object v8
+    invoke-virtual {v7}, Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed$Companion;->getUSD()Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
 
-    aput-object v8, v5, v1
+    move-result-object v7
 
-    invoke-interface {v2, v3, v5}, Lcom/iMe/storage/domain/utils/system/ResourceManager;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual {v7}, Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;->getName()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v7
 
-    invoke-virtual {p1, v7, v1}, Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;->setText(ILjava/lang/CharSequence;)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
+    invoke-virtual {v5, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object p1
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-virtual {v0, v9, v5}, Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;->setText(ILjava/lang/CharSequence;)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
+
+    move-result-object v0
 
     .line 53
-    iget-object v1, p0, Lcom/iMe/ui/adapter/provider/TokenBalanceProvider;->cryptoPreferenceHelper:Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
+    invoke-static {v1}, Lcom/iMe/utils/extentions/model/wallet/TokenBalanceExtKt;->getDollarsRateText(Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;)Ljava/lang/String;
 
-    invoke-interface {v1}, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;->getCryptoHiddenBalance()Z
+    move-result-object v5
 
-    move-result v1
+    invoke-virtual {v0, v10, v5}, Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;->setText(ILjava/lang/CharSequence;)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
-    invoke-virtual {p2}, Lcom/iMe/model/wallet/home/AccountItem$Token;->getBalance()Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;
+    move-result-object v0
 
-    move-result-object v2
+    move-object/from16 v5, p0
 
-    iget-object v3, p0, Lcom/iMe/ui/adapter/provider/TokenBalanceProvider;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
+    .line 54
+    iget-object v7, v5, Lcom/iMe/ui/adapter/provider/TokenBalanceProvider;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
-    invoke-static {v2, v3}, Lcom/iMe/utils/extentions/model/wallet/TokenBalanceExtKt;->getDollarsBalanceText(Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;Lcom/iMe/storage/domain/utils/system/ResourceManager;)Ljava/lang/String;
+    sget v9, Lorg/telegram/messenger/R$string;->wallet_dashboard_balance_24h_rate:I
 
-    move-result-object v2
+    new-array v10, v11, [Ljava/lang/Object;
 
-    invoke-virtual {v4, v1, v2}, Lcom/iMe/utils/formatter/MaskFormatter;->textOrMask(ZLjava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v1}, Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;->getRatePercentageChange24h()D
+
+    move-result-wide v13
+
+    invoke-static {v13, v14}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
+
+    move-result-object v11
+
+    aput-object v11, v10, v4
+
+    invoke-interface {v7, v9, v10}, Lcom/iMe/storage/domain/utils/system/ResourceManager;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v0, v8, v4}, Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;->setText(ILjava/lang/CharSequence;)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
+
+    move-result-object v0
+
+    .line 55
+    invoke-virtual/range {p2 .. p2}, Lcom/iMe/model/wallet/home/AccountItem$Token;->isBalanceHidden()Z
+
+    move-result v4
+
+    invoke-static {v1}, Lcom/iMe/utils/extentions/model/wallet/TokenBalanceExtKt;->getDollarsBalanceText(Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;)Ljava/lang/String;
+
+    move-result-object v7
+
+    invoke-virtual {v6, v4, v7}, Lcom/iMe/utils/formatter/MaskFormatter;->textOrMask(ZLjava/lang/String;)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v0, v12, v4}, Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;->setText(ILjava/lang/CharSequence;)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
+
+    move-result-object v0
+
+    .line 56
+    sget v4, Lorg/telegram/messenger/R$id;->text_coin_ticker:I
+
+    invoke-virtual {v1}, Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;->getToken()Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
 
     move-result-object v1
 
-    invoke-virtual {p1, v6, v1}, Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;->setText(ILjava/lang/CharSequence;)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
+    invoke-virtual {v1}, Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;->getTicker()Ljava/lang/String;
 
-    move-result-object p1
+    move-result-object v1
 
-    .line 54
-    invoke-virtual {p2}, Lcom/iMe/model/wallet/home/AccountItem$Token;->isQuotationVisible()Z
+    invoke-virtual {v0, v4, v1}, Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;->setText(ILjava/lang/CharSequence;)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
+
+    move-result-object v0
+
+    .line 57
+    invoke-virtual/range {p2 .. p2}, Lcom/iMe/model/wallet/home/AccountItem$Token;->isQuotationVisible()Z
 
     move-result v1
 
-    invoke-static {p1, v0, v1}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setVisibleElseGone(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;IZ)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
-
-    move-result-object p1
-
-    .line 55
-    sget v0, Lorg/telegram/messenger/R$id;->text_coin_ticker:I
-
-    new-instance v1, Lcom/iMe/ui/adapter/provider/TokenBalanceProvider$convert$1;
-
-    invoke-direct {v1, p2, p0}, Lcom/iMe/ui/adapter/provider/TokenBalanceProvider$convert$1;-><init>(Lcom/iMe/model/wallet/home/AccountItem$Token;Lcom/iMe/ui/adapter/provider/TokenBalanceProvider;)V
-
-    invoke-static {p1, v0, v1}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->applyForView(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;ILkotlin/jvm/functions/Function1;)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
+    invoke-static {v0, v3, v1}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setVisibleElseGone(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;IZ)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     return-void
 .end method
 
 .method public convert(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;Lcom/iMe/model/wallet/home/AccountItem$Token;Ljava/util/List;)V
-    .locals 4
+    .locals 8
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -492,65 +411,55 @@
 
     invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 59
+    .line 62
     invoke-virtual {p2}, Lcom/iMe/model/wallet/home/AccountItem$Token;->getBalance()Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;
+
+    move-result-object p3
+
+    .line 64
+    sget v0, Lorg/telegram/messenger/R$id;->text_account_balance:I
+
+    sget-object v1, Lcom/iMe/utils/formatter/MaskFormatter;->INSTANCE:Lcom/iMe/utils/formatter/MaskFormatter;
+
+    invoke-virtual {p2}, Lcom/iMe/model/wallet/home/AccountItem$Token;->isBalanceHidden()Z
+
+    move-result v2
+
+    invoke-static {p3}, Lcom/iMe/utils/extentions/model/wallet/TokenBalanceExtKt;->getTotalBalance(Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v1, v2, v3}, Lcom/iMe/utils/formatter/MaskFormatter;->textOrMask(ZLjava/lang/String;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {p1, v0, v2}, Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;->setText(ILjava/lang/CharSequence;)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
+
+    move-result-object p1
+
+    .line 65
+    sget v0, Lorg/telegram/messenger/R$id;->text_account_balance_in_dollars:I
+
+    invoke-virtual {p2}, Lcom/iMe/model/wallet/home/AccountItem$Token;->isBalanceHidden()Z
+
+    move-result p2
+
+    invoke-static {p3}, Lcom/iMe/utils/extentions/model/wallet/TokenBalanceExtKt;->getDollarsBalanceText(Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v1, p2, v2}, Lcom/iMe/utils/formatter/MaskFormatter;->textOrMask(ZLjava/lang/String;)Ljava/lang/String;
 
     move-result-object p2
 
-    .line 61
-    sget p3, Lorg/telegram/messenger/R$id;->text_account_balance:I
-
-    sget-object v0, Lcom/iMe/utils/formatter/MaskFormatter;->INSTANCE:Lcom/iMe/utils/formatter/MaskFormatter;
-
-    iget-object v1, p0, Lcom/iMe/ui/adapter/provider/TokenBalanceProvider;->cryptoPreferenceHelper:Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
-
-    invoke-interface {v1}, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;->getCryptoHiddenBalance()Z
-
-    move-result v1
-
-    invoke-static {p2}, Lcom/iMe/utils/extentions/model/wallet/TokenBalanceExtKt;->getTotalBalance(Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v1, v2}, Lcom/iMe/utils/formatter/MaskFormatter;->textOrMask(ZLjava/lang/String;)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {p1, p3, v1}, Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;->setText(ILjava/lang/CharSequence;)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
+    invoke-virtual {p1, v0, p2}, Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;->setText(ILjava/lang/CharSequence;)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     move-result-object p1
 
-    .line 62
-    sget p3, Lorg/telegram/messenger/R$id;->text_account_balance_in_dollars:I
+    .line 66
+    sget p2, Lorg/telegram/messenger/R$id;->image_price_direction:I
 
-    iget-object v1, p0, Lcom/iMe/ui/adapter/provider/TokenBalanceProvider;->cryptoPreferenceHelper:Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
-
-    invoke-interface {v1}, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;->getCryptoHiddenBalance()Z
-
-    move-result v1
-
-    iget-object v2, p0, Lcom/iMe/ui/adapter/provider/TokenBalanceProvider;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
-
-    invoke-static {p2, v2}, Lcom/iMe/utils/extentions/model/wallet/TokenBalanceExtKt;->getDollarsBalanceText(Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;Lcom/iMe/storage/domain/utils/system/ResourceManager;)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v1, v2}, Lcom/iMe/utils/formatter/MaskFormatter;->textOrMask(ZLjava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {p1, p3, v0}, Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;->setText(ILjava/lang/CharSequence;)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
-
-    move-result-object p1
-
-    .line 63
-    sget p3, Lorg/telegram/messenger/R$id;->image_price_direction:I
-
-    invoke-virtual {p2}, Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;->getPriceRate()Lcom/iMe/storage/domain/model/wallet/PriceRate;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lcom/iMe/utils/extentions/model/wallet/PriceRateExtKt;->getPriceDirection(Lcom/iMe/storage/domain/model/wallet/PriceRate;)Lcom/iMe/model/wallet/home/PriceRateDirection;
+    invoke-static {p3}, Lcom/iMe/utils/extentions/model/wallet/TokenBalanceExtKt;->getPriceDirection(Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;)Lcom/iMe/model/wallet/home/PriceRateDirection;
 
     move-result-object v0
 
@@ -558,73 +467,65 @@
 
     move-result v0
 
-    invoke-virtual {p1, p3, v0}, Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;->setImageResource(II)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
-
-    move-result-object p1
-
-    .line 64
-    invoke-virtual {p2}, Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;->getPriceRate()Lcom/iMe/storage/domain/model/wallet/PriceRate;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lcom/iMe/utils/extentions/model/wallet/PriceRateExtKt;->getPriceDirection(Lcom/iMe/storage/domain/model/wallet/PriceRate;)Lcom/iMe/model/wallet/home/PriceRateDirection;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/iMe/model/wallet/home/PriceRateDirection;->getColorKey()I
-
-    move-result v0
-
-    invoke-static {p1, p3, v0}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setThemedImageColor(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;II)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
-
-    move-result-object p1
-
-    .line 65
-    sget p3, Lorg/telegram/messenger/R$id;->image_coin_icon:I
-
-    invoke-virtual {p2}, Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;->getInfo()Lcom/iMe/storage/domain/model/wallet/token/TokenInfo;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lcom/iMe/ui/adapter/provider/TokenBalanceProvider;->cryptoPreferenceHelper:Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
-
-    invoke-interface {v1}, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;->getNetworkType()Lcom/iMe/storage/domain/model/crypto/NetworkType;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Lcom/iMe/storage/domain/utils/extentions/model/TokenInfoExtKt;->getLogo(Lcom/iMe/storage/domain/model/wallet/token/TokenInfo;Lcom/iMe/storage/domain/model/crypto/NetworkType;)I
-
-    move-result v0
-
-    invoke-virtual {p1, p3, v0}, Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;->setImageResource(II)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
-
-    move-result-object p1
-
-    .line 66
-    sget p3, Lorg/telegram/messenger/R$id;->text_trade_percent:I
-
-    invoke-virtual {p2}, Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;->getPriceRate()Lcom/iMe/storage/domain/model/wallet/PriceRate;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lcom/iMe/utils/extentions/model/wallet/PriceRateExtKt;->getPriceDirection(Lcom/iMe/storage/domain/model/wallet/PriceRate;)Lcom/iMe/model/wallet/home/PriceRateDirection;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/iMe/model/wallet/home/PriceRateDirection;->getColorKey()I
-
-    move-result v0
-
-    invoke-static {p1, p3, v0}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setThemedTextColor(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;II)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
+    invoke-virtual {p1, p2, v0}, Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;->setImageResource(II)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     move-result-object p1
 
     .line 67
+    invoke-static {p3}, Lcom/iMe/utils/extentions/model/wallet/TokenBalanceExtKt;->getPriceDirection(Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;)Lcom/iMe/model/wallet/home/PriceRateDirection;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/iMe/model/wallet/home/PriceRateDirection;->getColorKey()I
+
+    move-result v0
+
+    invoke-static {p1, p2, v0}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setThemedImageColor(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;II)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
+
+    move-result-object v1
+
+    .line 68
+    sget v2, Lorg/telegram/messenger/R$id;->image_coin_icon:I
+
+    invoke-virtual {p3}, Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;->getToken()Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;->getAvatarUrl()Ljava/lang/String;
+
+    move-result-object v3
+
+    const/4 v4, 0x0
+
+    const/4 v5, 0x0
+
+    const/16 v6, 0xc
+
+    const/4 v7, 0x0
+
+    invoke-static/range {v1 .. v7}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->loadImage$default(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;ILjava/lang/String;Ljava/lang/Integer;ZILjava/lang/Object;)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
+
+    move-result-object p1
+
+    .line 69
+    sget p2, Lorg/telegram/messenger/R$id;->text_trade_percent:I
+
+    invoke-static {p3}, Lcom/iMe/utils/extentions/model/wallet/TokenBalanceExtKt;->getPriceDirection(Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;)Lcom/iMe/model/wallet/home/PriceRateDirection;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/iMe/model/wallet/home/PriceRateDirection;->getColorKey()I
+
+    move-result v0
+
+    invoke-static {p1, p2, v0}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setThemedTextColor(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;II)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
+
+    move-result-object p1
+
+    .line 70
     sget v0, Lorg/telegram/messenger/R$id;->text_trade_price:I
 
-    iget-object v1, p0, Lcom/iMe/ui/adapter/provider/TokenBalanceProvider;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
-
-    invoke-static {p2, v1}, Lcom/iMe/utils/extentions/model/wallet/TokenBalanceExtKt;->getDollarsRateText(Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;Lcom/iMe/storage/domain/utils/system/ResourceManager;)Ljava/lang/String;
+    invoke-static {p3}, Lcom/iMe/utils/extentions/model/wallet/TokenBalanceExtKt;->getDollarsRateText(Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -632,7 +533,7 @@
 
     move-result-object p1
 
-    .line 68
+    .line 71
     iget-object v0, p0, Lcom/iMe/ui/adapter/provider/TokenBalanceProvider;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     sget v1, Lorg/telegram/messenger/R$string;->wallet_dashboard_balance_24h_rate:I
@@ -641,27 +542,23 @@
 
     new-array v2, v2, [Ljava/lang/Object;
 
-    invoke-virtual {p2}, Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;->getPriceRate()Lcom/iMe/storage/domain/model/wallet/PriceRate;
+    invoke-virtual {p3}, Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;->getRatePercentageChange24h()D
 
-    move-result-object p2
+    move-result-wide v3
 
-    invoke-virtual {p2}, Lcom/iMe/storage/domain/model/wallet/PriceRate;->getRatePercentageChange24h()F
+    invoke-static {v3, v4}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
 
-    move-result p2
-
-    invoke-static {p2}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
-
-    move-result-object p2
+    move-result-object p3
 
     const/4 v3, 0x0
 
-    aput-object p2, v2, v3
+    aput-object p3, v2, v3
 
     invoke-interface {v0, v1, v2}, Lcom/iMe/storage/domain/utils/system/ResourceManager;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object p2
+    move-result-object p3
 
-    invoke-virtual {p1, p3, p2}, Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;->setText(ILjava/lang/CharSequence;)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
+    invoke-virtual {p1, p2, p3}, Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;->setText(ILjava/lang/CharSequence;)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     return-void
 .end method
@@ -669,7 +566,7 @@
 .method public bridge synthetic convert(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;Ljava/lang/Object;)V
     .locals 0
 
-    .line 21
+    .line 25
     check-cast p2, Lcom/iMe/model/wallet/home/AccountItem$Token;
 
     invoke-virtual {p0, p1, p2}, Lcom/iMe/ui/adapter/provider/TokenBalanceProvider;->convert(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;Lcom/iMe/model/wallet/home/AccountItem$Token;)V
@@ -680,7 +577,7 @@
 .method public bridge synthetic convert(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;Ljava/lang/Object;Ljava/util/List;)V
     .locals 0
 
-    .line 21
+    .line 25
     check-cast p2, Lcom/iMe/model/wallet/home/AccountItem$Token;
 
     invoke-virtual {p0, p1, p2, p3}, Lcom/iMe/ui/adapter/provider/TokenBalanceProvider;->convert(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;Lcom/iMe/model/wallet/home/AccountItem$Token;Ljava/util/List;)V
@@ -691,7 +588,7 @@
 .method public getItemViewType()I
     .locals 1
 
-    .line 27
+    .line 30
     iget v0, p0, Lcom/iMe/ui/adapter/provider/TokenBalanceProvider;->itemViewType:I
 
     return v0
@@ -700,7 +597,7 @@
 .method public getLayoutId()I
     .locals 1
 
-    .line 28
+    .line 31
     iget v0, p0, Lcom/iMe/ui/adapter/provider/TokenBalanceProvider;->layoutId:I
 
     return v0

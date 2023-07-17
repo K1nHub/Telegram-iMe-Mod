@@ -12,25 +12,25 @@ public class McElieceCCA2PrivateKeyParameters extends McElieceCCA2KeyParameters 
     private PolynomialGF2mSmallM goppaPoly;
 
     /* renamed from: h */
-    private GF2Matrix f1327h;
+    private GF2Matrix f1409h;
 
     /* renamed from: k */
-    private int f1328k;
+    private int f1410k;
 
     /* renamed from: n */
-    private int f1329n;
+    private int f1411n;
 
     /* renamed from: p */
-    private Permutation f1330p;
+    private Permutation f1412p;
 
     public McElieceCCA2PrivateKeyParameters(int i, int i2, GF2mField gF2mField, PolynomialGF2mSmallM polynomialGF2mSmallM, GF2Matrix gF2Matrix, Permutation permutation, String str) {
         super(true, str);
-        this.f1329n = i;
-        this.f1328k = i2;
+        this.f1411n = i;
+        this.f1410k = i2;
         this.field = gF2mField;
         this.goppaPoly = polynomialGF2mSmallM;
-        this.f1327h = gF2Matrix;
-        this.f1330p = permutation;
+        this.f1409h = gF2Matrix;
+        this.f1412p = permutation;
         new PolynomialRingGF2m(gF2mField, polynomialGF2mSmallM).getSquareRootMatrix();
     }
 
@@ -47,18 +47,18 @@ public class McElieceCCA2PrivateKeyParameters extends McElieceCCA2KeyParameters 
     }
 
     public GF2Matrix getH() {
-        return this.f1327h;
+        return this.f1409h;
     }
 
     public int getK() {
-        return this.f1328k;
+        return this.f1410k;
     }
 
     public int getN() {
-        return this.f1329n;
+        return this.f1411n;
     }
 
     public Permutation getP() {
-        return this.f1330p;
+        return this.f1412p;
     }
 }

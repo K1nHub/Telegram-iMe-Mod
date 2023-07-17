@@ -9,11 +9,16 @@ import moxy.viewstate.MvpViewState;
 import moxy.viewstate.ViewCommand;
 import moxy.viewstate.strategy.OneExecutionStateStrategy;
 /* renamed from: com.iMe.ui.wallet.crypto.create.secret_words_count.SecretWordsCountView$$State */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class SecretWordsCountView$$State extends MvpViewState<SecretWordsCountView> implements SecretWordsCountView {
     @Override // com.iMe.p031ui.base.mvp.base.BaseView
     public /* synthetic */ void finishScreen() {
         BaseView.CC.$default$finishScreen(this);
+    }
+
+    @Override // com.iMe.p031ui.base.mvp.base.BaseView
+    public /* synthetic */ void removeSelfFromStackImmediately() {
+        BaseView.CC.$default$removeSelfFromStackImmediately(this);
     }
 
     @Override // com.iMe.p031ui.wallet.crypto.create.secret_words_count.SecretWordsCountView
@@ -27,19 +32,6 @@ public class SecretWordsCountView$$State extends MvpViewState<SecretWordsCountVi
             view.setupAdapter(list);
         }
         this.viewCommands.afterApply(setupAdapterCommand);
-    }
-
-    @Override // com.iMe.p031ui.wallet.crypto.create.secret_words_count.SecretWordsCountView
-    public void onItemSelected(int i) {
-        OnItemSelectedCommand onItemSelectedCommand = new OnItemSelectedCommand(this, i);
-        this.viewCommands.beforeApply(onItemSelectedCommand);
-        if (hasNotView().booleanValue()) {
-            return;
-        }
-        for (View view : this.views) {
-            view.onItemSelected(i);
-        }
-        this.viewCommands.afterApply(onItemSelectedCommand);
     }
 
     @Override // com.iMe.p031ui.base.mvp.base.BaseView
@@ -83,7 +75,7 @@ public class SecretWordsCountView$$State extends MvpViewState<SecretWordsCountVi
 
     /* compiled from: SecretWordsCountView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.create.secret_words_count.SecretWordsCountView$$State$SetupAdapterCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class SetupAdapterCommand extends ViewCommand<SecretWordsCountView> {
         public final List<Integer> items;
 
@@ -99,25 +91,8 @@ public class SecretWordsCountView$$State extends MvpViewState<SecretWordsCountVi
     }
 
     /* compiled from: SecretWordsCountView$$State.java */
-    /* renamed from: com.iMe.ui.wallet.crypto.create.secret_words_count.SecretWordsCountView$$State$OnItemSelectedCommand */
-    /* loaded from: classes3.dex */
-    public class OnItemSelectedCommand extends ViewCommand<SecretWordsCountView> {
-        public final int wordsCount;
-
-        OnItemSelectedCommand(SecretWordsCountView$$State secretWordsCountView$$State, int i) {
-            super("onItemSelected", OneExecutionStateStrategy.class);
-            this.wordsCount = i;
-        }
-
-        @Override // moxy.viewstate.ViewCommand
-        public void apply(SecretWordsCountView secretWordsCountView) {
-            secretWordsCountView.onItemSelected(this.wordsCount);
-        }
-    }
-
-    /* compiled from: SecretWordsCountView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.create.secret_words_count.SecretWordsCountView$$State$ShowToastCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class ShowToastCommand extends ViewCommand<SecretWordsCountView> {
         public final String text;
 
@@ -134,7 +109,7 @@ public class SecretWordsCountView$$State extends MvpViewState<SecretWordsCountVi
 
     /* compiled from: SecretWordsCountView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.create.secret_words_count.SecretWordsCountView$$State$ShowLoadingDialogCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class ShowLoadingDialogCommand extends ViewCommand<SecretWordsCountView> {
         public final Disposable actionToCancel;
         public final boolean cancellable;
@@ -155,7 +130,7 @@ public class SecretWordsCountView$$State extends MvpViewState<SecretWordsCountVi
 
     /* compiled from: SecretWordsCountView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.create.secret_words_count.SecretWordsCountView$$State$ShowErrorToastCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class ShowErrorToastCommand<T> extends ViewCommand<SecretWordsCountView> {
         public final ResourceManager resourceManager;
         public final Result.Error<? extends T> result;

@@ -1,11 +1,11 @@
 package com.iMe.storage.data.datasource.cancel;
 
 import com.iMe.storage.data.datasource.base.DataSourceFactory;
-import com.iMe.storage.domain.model.wallet.token.TokenCode;
+import com.iMe.storage.data.utils.crypto.NetworksHelper;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: WalletCancelDataSourceFactory.kt */
 /* loaded from: classes3.dex */
-public final class WalletCancelDataSourceFactory implements DataSourceFactory<TokenCode, WalletCancelDataSource> {
+public final class WalletCancelDataSourceFactory implements DataSourceFactory<String, WalletCancelDataSource> {
     private final WalletCancelDataSource ethCancelDataSource;
 
     public WalletCancelDataSourceFactory(WalletCancelDataSource ethCancelDataSource) {
@@ -13,11 +13,11 @@ public final class WalletCancelDataSourceFactory implements DataSourceFactory<To
         this.ethCancelDataSource = ethCancelDataSource;
     }
 
-    public WalletCancelDataSource getDataSource(TokenCode arg) {
+    public WalletCancelDataSource getDataSource(String arg) {
         Intrinsics.checkNotNullParameter(arg, "arg");
-        if (arg.isCryptoTokens()) {
+        if (NetworksHelper.INSTANCE.isEVM(arg)) {
             return this.ethCancelDataSource;
         }
-        throw new IllegalStateException(DataSourceFactory.Companion.unsupportedDataSource(arg.name()).toString());
+        throw new IllegalStateException(DataSourceFactory.Companion.unsupportedDataSource(arg).toString());
     }
 }

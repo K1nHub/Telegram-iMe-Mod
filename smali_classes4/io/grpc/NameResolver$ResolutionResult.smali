@@ -246,7 +246,7 @@
 
     iget-object v1, p0, Lio/grpc/NameResolver$ResolutionResult;->serviceConfig:Lio/grpc/NameResolver$ConfigOrError;
 
-    const-string v2, "serviceConfig"
+    const-string/jumbo v2, "serviceConfig"
 
     .line 762
     invoke-virtual {v0, v2, v1}, Lcom/google/common/base/MoreObjects$ToStringHelper;->add(Ljava/lang/String;Ljava/lang/Object;)Lcom/google/common/base/MoreObjects$ToStringHelper;

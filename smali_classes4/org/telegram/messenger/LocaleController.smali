@@ -1045,7 +1045,7 @@
 
     const-string v54, "chr"
 
-    const-string v55, "rm"
+    const-string/jumbo v55, "rm"
 
     const-string v56, "pt"
 
@@ -1096,7 +1096,7 @@
 
     invoke-direct {v1, v2, v3}, Lorg/telegram/messenger/LocaleController;->addRules([Ljava/lang/String;Lorg/telegram/messenger/LocaleController$PluralRules;)V
 
-    const-string v2, "ru"
+    const-string/jumbo v2, "ru"
 
     const-string/jumbo v3, "uk"
 
@@ -1171,7 +1171,7 @@
 
     invoke-direct {v1, v2, v3}, Lorg/telegram/messenger/LocaleController;->addRules([Ljava/lang/String;Lorg/telegram/messenger/LocaleController$PluralRules;)V
 
-    const-string v2, "ro"
+    const-string/jumbo v2, "ro"
 
     const-string v3, "mo"
 
@@ -1292,7 +1292,7 @@
 
     const-string v5, "ga"
 
-    const-string v6, "se"
+    const-string/jumbo v6, "se"
 
     const-string/jumbo v7, "sma"
 
@@ -1370,7 +1370,7 @@
 
     const-string v14, "my"
 
-    const-string v15, "ses"
+    const-string/jumbo v15, "ses"
 
     const-string/jumbo v16, "sg"
 
@@ -10055,10 +10055,6 @@
 
     if-eq p0, v0, :cond_1
 
-    sget v0, Lorg/telegram/messenger/R$string;->AppNameBeta:I
-
-    if-eq p0, v0, :cond_1
-
     sget v0, Lorg/telegram/messenger/R$string;->DidNotGetTheCodeSms:I
 
     if-eq p0, v0, :cond_1
@@ -10120,6 +10116,10 @@
     if-eq p0, v0, :cond_1
 
     sget v0, Lorg/telegram/messenger/R$string;->TelegramVersion:I
+
+    if-eq p0, v0, :cond_1
+
+    sget v0, Lorg/telegram/messenger/R$string;->AppUpdate:I
 
     if-eq p0, v0, :cond_1
 
@@ -10745,7 +10745,7 @@
 
     iput-boolean v4, v5, Lorg/telegram/messenger/LocaleController$LocaleInfo;->isRtl:Z
 
-    const-string v4, "remote"
+    const-string/jumbo v4, "remote"
 
     .line 2438
     iput-object v4, v5, Lorg/telegram/messenger/LocaleController$LocaleInfo;->pathToFile:Ljava/lang/String;
@@ -10892,7 +10892,7 @@
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v5, "remove lang "
+    const-string/jumbo v5, "remove lang "
 
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -11264,7 +11264,7 @@
     goto :goto_3
 
     :cond_6
-    const-string p2, "saveRemoteLocaleStrings: currentLocaleInfo != localeInfo, do nothing"
+    const-string/jumbo p2, "saveRemoteLocaleStrings: currentLocaleInfo != localeInfo, do nothing"
 
     .line 2387
     invoke-static {p2}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
@@ -11371,7 +11371,7 @@
     goto :goto_0
 
     :cond_1
-    const-string v1, "remote"
+    const-string/jumbo v1, "remote"
 
     .line 914
     invoke-interface {v0, v1, v3}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
@@ -11527,7 +11527,7 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v1, "set as patched "
+    const-string/jumbo v1, "set as patched "
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -11728,7 +11728,7 @@
 
     move-result-object v3
 
-    const-string v4, "remote"
+    const-string/jumbo v4, "remote"
 
     invoke-interface {v0, v4, v3}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
@@ -11860,7 +11860,7 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v3, "reinstalling "
+    const-string/jumbo v3, "reinstalling "
 
     invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -12314,7 +12314,7 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v2, "reload locale because one of file doesn\'t exist "
+    const-string/jumbo v2, "reload locale because one of file doesn\'t exist "
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -12684,7 +12684,7 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v3, "reload locale because one of file is corrupted "
+    const-string/jumbo v3, "reload locale because one of file is corrupted "
 
     invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -13349,7 +13349,7 @@
 
     if-eqz v0, :cond_1
 
-    const-string v0, "reload locale because locale file is not enough"
+    const-string/jumbo v0, "reload locale because locale file is not enough"
 
     .line 645
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
@@ -15249,7 +15249,7 @@
 
     if-eqz v2, :cond_0
 
-    const-string v3, "remote"
+    const-string/jumbo v3, "remote"
 
     invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -15416,7 +15416,7 @@
 
     const-string/jumbo v13, "t"
 
-    const-string v14, "s"
+    const-string/jumbo v14, "s"
 
     const-string v15, "l"
 
@@ -15676,7 +15676,7 @@
 
     const-string/jumbo v4, "\u0449"
 
-    const-string v10, "sch"
+    const-string/jumbo v10, "sch"
 
     invoke-virtual {v2, v4, v10}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -20935,7 +20935,7 @@
 
     invoke-direct {p2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string p3, "saveRemoteLocaleStrings: unknown language "
+    const-string/jumbo p3, "saveRemoteLocaleStrings: unknown language "
 
     invoke-virtual {p2, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -20990,7 +20990,7 @@
 
     if-nez v3, :cond_5
 
-    const-string v2, "saveRemoteLocaleStrings: difference is straight from the beginning"
+    const-string/jumbo v2, "saveRemoteLocaleStrings: difference is straight from the beginning"
 
     .line 2300
     invoke-static {v2}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
@@ -21008,7 +21008,7 @@
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v4, "saveRemoteLocaleStrings: difference is from version "
+    const-string/jumbo v4, "saveRemoteLocaleStrings: difference is from version "
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -21314,7 +21314,7 @@
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v4, "save locale file to "
+    const-string/jumbo v4, "save locale file to "
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -21446,7 +21446,7 @@
 
     invoke-direct {p3}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v0, "saved locale file to "
+    const-string/jumbo v0, "saved locale file to "
 
     invoke-virtual {p3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -21495,7 +21495,7 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v2, "saveRemoteLocaleStrings: empty difference="
+    const-string/jumbo v2, "saveRemoteLocaleStrings: empty difference="
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

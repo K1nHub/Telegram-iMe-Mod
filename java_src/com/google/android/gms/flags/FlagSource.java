@@ -10,5 +10,5 @@ public @interface FlagSource {
     @KeepForSdk
 
     /* renamed from: G */
-    public static final int f149G = 0;
+    public static final int f231G = 0;
 }

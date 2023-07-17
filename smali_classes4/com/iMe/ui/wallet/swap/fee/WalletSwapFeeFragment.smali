@@ -1,5 +1,5 @@
 .class public final Lcom/iMe/ui/wallet/swap/fee/WalletSwapFeeFragment;
-.super Lcom/iMe/ui/base/WalletAuthFragment;
+.super Lcom/iMe/ui/base/wallet_auth/WalletAuthBaseFragment;
 .source "WalletSwapFeeFragment.kt"
 
 # interfaces
@@ -121,7 +121,7 @@
     .line 40
     new-instance v2, Lkotlin/jvm/internal/PropertyReference1Impl;
 
-    const-string v3, "rootView"
+    const-string/jumbo v3, "rootView"
 
     const-string v4, "getRootView()Landroid/widget/FrameLayout;"
 
@@ -173,7 +173,7 @@
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 33
-    invoke-direct {p0}, Lcom/iMe/ui/base/WalletAuthFragment;-><init>()V
+    invoke-direct {p0}, Lcom/iMe/ui/base/wallet_auth/WalletAuthBaseFragment;-><init>()V
 
     .line 36
     new-instance v0, Lcom/iMe/ui/wallet/swap/fee/WalletSwapFeeFragment$presenter$2;
@@ -347,7 +347,7 @@
     .locals 0
 
     .line 31
-    invoke-virtual {p0}, Lcom/iMe/ui/base/WalletAuthFragment;->getResourceManager()Lcom/iMe/storage/domain/utils/system/ResourceManager;
+    invoke-virtual {p0}, Lcom/iMe/ui/base/wallet_auth/WalletAuthBaseFragment;->getResourceManager()Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     move-result-object p0
 
@@ -587,7 +587,7 @@
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBar;->setBackButtonImage(I)V
 
     .line 106
-    invoke-virtual {p0}, Lcom/iMe/ui/base/WalletAuthFragment;->getResourceManager()Lcom/iMe/storage/domain/utils/system/ResourceManager;
+    invoke-virtual {p0}, Lcom/iMe/ui/base/wallet_auth/WalletAuthBaseFragment;->getResourceManager()Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     move-result-object v1
 
@@ -1191,7 +1191,7 @@
     .locals 0
 
     .line 59
-    invoke-super {p0}, Lcom/iMe/ui/base/WalletAuthFragment;->onResume()V
+    invoke-super {p0}, Lcom/iMe/ui/base/wallet_auth/WalletAuthBaseFragment;->onResume()V
 
     .line 60
     invoke-direct {p0}, Lcom/iMe/ui/wallet/swap/fee/WalletSwapFeeFragment;->updateRows()V

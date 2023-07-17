@@ -11,7 +11,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nTransactionExt.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TransactionExt.kt\ncom/iMe/utils/extentions/model/wallet/TransactionExtKt\n+ 2 AnyExt.kt\ncom/iMe/utils/extentions/common/AnyExtKt\n*L\n1#1,59:1\n10#2,2:60\n10#2,2:62\n*S KotlinDebug\n*F\n+ 1 TransactionExt.kt\ncom/iMe/utils/extentions/model/wallet/TransactionExtKt\n*L\n36#1:60,2\n55#1:62,2\n*E\n"
+    value = "SMAP\nTransactionExt.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TransactionExt.kt\ncom/iMe/utils/extentions/model/wallet/TransactionExtKt\n+ 2 AnyExt.kt\ncom/iMe/utils/extentions/common/AnyExtKt\n*L\n1#1,61:1\n10#2,2:62\n10#2,2:64\n*S KotlinDebug\n*F\n+ 1 TransactionExt.kt\ncom/iMe/utils/extentions/model/wallet/TransactionExtKt\n*L\n36#1:62,2\n56#1:64,2\n*E\n"
 .end annotation
 
 
@@ -23,7 +23,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 44
+    .line 45
     instance-of v0, p0, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Transfer;
 
     const/4 v1, 0x1
@@ -60,7 +60,7 @@
 
     goto/16 :goto_2
 
-    .line 45
+    .line 46
     :cond_2
     instance-of v0, p0, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Referral;
 
@@ -70,7 +70,7 @@
 
     goto :goto_2
 
-    .line 46
+    .line 47
     :cond_3
     instance-of v0, p0, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Lottery;
 
@@ -80,7 +80,7 @@
 
     goto :goto_2
 
-    .line 47
+    .line 48
     :cond_4
     instance-of v0, p0, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Registration;
 
@@ -90,7 +90,7 @@
 
     goto :goto_2
 
-    .line 48
+    .line 49
     :cond_5
     instance-of v0, p0, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Purchase;
 
@@ -100,7 +100,7 @@
 
     goto :goto_2
 
-    .line 49
+    .line 50
     :cond_6
     instance-of v0, p0, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$SimplexPurchase;
 
@@ -110,7 +110,7 @@
 
     goto :goto_2
 
-    .line 50
+    .line 51
     :cond_7
     instance-of v0, p0, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$Swap;
 
@@ -146,36 +146,36 @@
 
     if-eq p0, v0, :cond_8
 
-    .line 55
+    .line 56
     sget p0, Lorg/telegram/messenger/R$string;->wallet_transactions_type_uniswap_title:I
 
     goto :goto_2
 
-    .line 54
+    .line 55
     :cond_8
     sget p0, Lorg/telegram/messenger/R$string;->wallet_transactions_type_symbiosis_title:I
 
     goto :goto_2
 
-    .line 53
+    .line 54
     :cond_9
     sget p0, Lorg/telegram/messenger/R$string;->wallet_transactions_type_1inch_title:I
 
     goto :goto_2
 
-    .line 52
+    .line 53
     :cond_a
     sget p0, Lorg/telegram/messenger/R$string;->wallet_transactions_type_pancakeswap_title:I
 
     goto :goto_2
 
-    .line 51
+    .line 52
     :cond_b
     sget p0, Lorg/telegram/messenger/R$string;->wallet_transactions_type_uniswap_title:I
 
     goto :goto_2
 
-    .line 57
+    .line 59
     :cond_c
     instance-of v0, p0, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Refund;
 
@@ -185,7 +185,7 @@
 
     goto :goto_2
 
-    .line 58
+    .line 60
     :cond_d
     invoke-virtual {p0}, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction;->getDirection()Lcom/iMe/storage/domain/model/wallet/transaction/TransactionDirection;
 
@@ -200,32 +200,30 @@
 .end method
 
 .method public static final getFormattedAmount(Lcom/iMe/storage/domain/model/wallet/transaction/Transaction;)Ljava/lang/String;
-    .locals 2
+    .locals 1
 
     const-string v0, "<this>"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 14
+    .line 13
     invoke-virtual {p0}, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction;->getAmount()Ljava/math/BigDecimal;
 
     move-result-object v0
 
-    sget-object v1, Lcom/iMe/storage/domain/model/wallet/token/TokenInfo;->Companion:Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Companion;
-
-    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction;->getTokenCode()Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
+    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction;->getToken()Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
 
     move-result-object p0
 
-    invoke-virtual {v1, p0}, Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Companion;->map(Lcom/iMe/storage/domain/model/wallet/token/TokenCode;)Lcom/iMe/storage/domain/model/wallet/token/TokenInfo;
-
-    move-result-object p0
-
-    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/wallet/token/TokenInfo;->getDecimals()I
+    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;->getDecimals()I
 
     move-result p0
 
-    invoke-static {v0, p0}, Lcom/iMe/utils/formatter/BalanceFormatter;->formatBalance(Ljava/lang/Number;I)Ljava/lang/String;
+    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p0
+
+    invoke-static {v0, p0}, Lcom/iMe/utils/formatter/BalanceFormatter;->formatBalance(Ljava/lang/Number;Ljava/lang/Integer;)Ljava/lang/String;
 
     move-result-object p0
 
@@ -239,7 +237,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 18
+    .line 17
     invoke-virtual {p0}, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction;->getStatus()Lcom/iMe/storage/data/network/model/response/base/Status;
 
     move-result-object v0
@@ -252,7 +250,7 @@
 
     return p0
 
-    .line 21
+    .line 20
     :cond_0
     instance-of v0, p0, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$Donation;
 
@@ -282,7 +280,7 @@
 
     if-eq v0, v1, :cond_1
 
-    .line 24
+    .line 23
     invoke-virtual {p0}, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction;->getDirection()Lcom/iMe/storage/domain/model/wallet/transaction/TransactionDirection;
 
     move-result-object p0
@@ -293,13 +291,13 @@
 
     goto/16 :goto_5
 
-    .line 23
+    .line 22
     :cond_1
     sget p0, Lorg/telegram/messenger/R$drawable;->fork_ic_transaction_donate_out:I
 
     goto/16 :goto_5
 
-    .line 22
+    .line 21
     :cond_2
     sget p0, Lorg/telegram/messenger/R$drawable;->fork_ic_transaction_donate_in:I
 
@@ -472,7 +470,7 @@
 
     goto :goto_5
 
-    .line 38
+    .line 39
     :cond_12
     invoke-virtual {p0}, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction;->getDirection()Lcom/iMe/storage/domain/model/wallet/transaction/TransactionDirection;
 

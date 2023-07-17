@@ -4,13 +4,13 @@ import android.view.View;
 import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3295R;
+import org.telegram.messenger.C3417R;
 import org.telegram.messenger.LocaleController;
-import org.telegram.p044ui.ActionBar.ActionBarMenuSubItem;
-import org.telegram.p044ui.ActionBar.ActionBarPopupWindow;
-import org.telegram.p044ui.ActionBar.BaseFragment;
-import org.telegram.p044ui.ActionBar.INavigationLayout;
-import org.telegram.p044ui.ActionBar.Theme;
+import org.telegram.p043ui.ActionBar.ActionBarMenuSubItem;
+import org.telegram.p043ui.ActionBar.ActionBarPopupWindow;
+import org.telegram.p043ui.ActionBar.BaseFragment;
+import org.telegram.p043ui.ActionBar.INavigationLayout;
+import org.telegram.p043ui.ActionBar.Theme;
 /* compiled from: FragmentPreviewMenu.kt */
 /* renamed from: com.iMe.fork.ui.view.FragmentPreviewMenu */
 /* loaded from: classes3.dex */
@@ -35,7 +35,7 @@ public final class FragmentPreviewMenu extends ActionBarPopupWindow.ActionBarPop
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public FragmentPreviewMenu(INavigationLayout parentActionBarLayout, BaseFragment previewFragment, Theme.ResourcesProvider resourcesProvider) {
-        super(parentActionBarLayout.getView().getContext(), C3295R.C3297drawable.popup_fixed_alert, resourcesProvider);
+        super(parentActionBarLayout.getView().getContext(), C3417R.C3419drawable.popup_fixed_alert, resourcesProvider);
         Lazy lazy;
         Lazy lazy2;
         Intrinsics.checkNotNullParameter(parentActionBarLayout, "parentActionBarLayout");
@@ -64,7 +64,7 @@ public final class FragmentPreviewMenu extends ActionBarPopupWindow.ActionBarPop
     public final ActionBarMenuSubItem initOpenItem() {
         ActionBarMenuSubItem actionBarMenuSubItem = new ActionBarMenuSubItem(getContext(), true, false, this.resourcesProvider);
         actionBarMenuSubItem.setMinimumWidth(160);
-        actionBarMenuSubItem.setTextAndIcon(LocaleController.getString("Open", C3295R.string.Open), C3295R.C3297drawable.msg_message);
+        actionBarMenuSubItem.setTextAndIcon(LocaleController.getString("Open", C3417R.string.Open), C3417R.C3419drawable.msg_message);
         actionBarMenuSubItem.setOnClickListener(new View.OnClickListener() { // from class: com.iMe.fork.ui.view.FragmentPreviewMenu$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
@@ -87,7 +87,7 @@ public final class FragmentPreviewMenu extends ActionBarPopupWindow.ActionBarPop
     public final ActionBarMenuSubItem initCloseItem() {
         ActionBarMenuSubItem actionBarMenuSubItem = new ActionBarMenuSubItem(getContext(), false, true, this.resourcesProvider);
         actionBarMenuSubItem.setMinimumWidth(160);
-        actionBarMenuSubItem.setTextAndIcon(LocaleController.getString("Close", C3295R.string.Close), C3295R.C3297drawable.poll_remove);
+        actionBarMenuSubItem.setTextAndIcon(LocaleController.getString("Close", C3417R.string.Close), C3417R.C3419drawable.poll_remove);
         actionBarMenuSubItem.setOnClickListener(new View.OnClickListener() { // from class: com.iMe.fork.ui.view.FragmentPreviewMenu$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {

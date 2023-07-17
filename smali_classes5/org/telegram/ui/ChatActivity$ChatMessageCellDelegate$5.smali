@@ -32,7 +32,7 @@
 .method constructor <init>(Lorg/telegram/ui/ChatActivity$ChatMessageCellDelegate;Lorg/telegram/ui/Cells/ChatMessageCell;)V
     .locals 0
 
-    .line 33683
+    .line 33477
     iput-object p1, p0, Lorg/telegram/ui/ChatActivity$ChatMessageCellDelegate$5;->this$1:Lorg/telegram/ui/ChatActivity$ChatMessageCellDelegate;
 
     iput-object p2, p0, Lorg/telegram/ui/ChatActivity$ChatMessageCellDelegate$5;->val$cell:Lorg/telegram/ui/Cells/ChatMessageCell;
@@ -45,8 +45,8 @@
 .method private static synthetic lambda$end$0(Lorg/telegram/ui/ChatActivity;)V
     .locals 0
 
-    .line 33695
-    invoke-static {p0}, Lorg/telegram/ui/ChatActivity;->access$48400(Lorg/telegram/ui/ChatActivity;)V
+    .line 33489
+    invoke-static {p0}, Lorg/telegram/ui/ChatActivity;->access$48200(Lorg/telegram/ui/ChatActivity;)V
 
     return-void
 .end method
@@ -58,7 +58,7 @@
 
     if-nez p1, :cond_0
 
-    .line 33695
+    .line 33489
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$ChatMessageCellDelegate$5;->this$1:Lorg/telegram/ui/ChatActivity$ChatMessageCellDelegate;
 
     iget-object p1, p1, Lorg/telegram/ui/ChatActivity$ChatMessageCellDelegate;->this$0:Lorg/telegram/ui/ChatActivity;
@@ -78,7 +78,7 @@
 .method public init()V
     .locals 2
 
-    .line 33686
+    .line 33480
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$ChatMessageCellDelegate$5;->this$1:Lorg/telegram/ui/ChatActivity$ChatMessageCellDelegate;
 
     iget-object v0, v0, Lorg/telegram/ui/ChatActivity$ChatMessageCellDelegate;->this$0:Lorg/telegram/ui/ChatActivity;
@@ -93,27 +93,27 @@
 
     move-result v1
 
-    invoke-static {v0, v1}, Lorg/telegram/ui/ChatActivity;->access$48102(Lorg/telegram/ui/ChatActivity;I)I
+    invoke-static {v0, v1}, Lorg/telegram/ui/ChatActivity;->access$47902(Lorg/telegram/ui/ChatActivity;I)I
 
-    .line 33687
+    .line 33481
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$ChatMessageCellDelegate$5;->this$1:Lorg/telegram/ui/ChatActivity$ChatMessageCellDelegate;
 
     iget-object v0, v0, Lorg/telegram/ui/ChatActivity$ChatMessageCellDelegate;->this$0:Lorg/telegram/ui/ChatActivity;
 
     const/4 v1, 0x2
 
-    invoke-static {v0, v1}, Lorg/telegram/ui/ChatActivity;->access$48202(Lorg/telegram/ui/ChatActivity;I)I
+    invoke-static {v0, v1}, Lorg/telegram/ui/ChatActivity;->access$48002(Lorg/telegram/ui/ChatActivity;I)I
 
-    .line 33688
+    .line 33482
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$ChatMessageCellDelegate$5;->this$1:Lorg/telegram/ui/ChatActivity$ChatMessageCellDelegate;
 
     iget-object v0, v0, Lorg/telegram/ui/ChatActivity$ChatMessageCellDelegate;->this$0:Lorg/telegram/ui/ChatActivity;
 
     const/4 v1, 0x0
 
-    invoke-static {v0, v1}, Lorg/telegram/ui/ChatActivity;->access$48302(Lorg/telegram/ui/ChatActivity;Landroid/text/style/CharacterStyle;)Landroid/text/style/CharacterStyle;
+    invoke-static {v0, v1}, Lorg/telegram/ui/ChatActivity;->access$48102(Lorg/telegram/ui/ChatActivity;Landroid/text/style/CharacterStyle;)Landroid/text/style/CharacterStyle;
 
-    .line 33689
+    .line 33483
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$ChatMessageCellDelegate$5;->val$cell:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Cells/ChatMessageCell;->invalidate()V

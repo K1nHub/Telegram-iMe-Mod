@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/ProfileActivity;)V
     .locals 0
 
-    .line 4877
+    .line 4903
     iput-object p1, p0, Lorg/telegram/ui/ProfileActivity$29;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-direct {p0}, Landroidx/recyclerview/widget/RecyclerView$OnScrollListener;-><init>()V
@@ -39,7 +39,7 @@
 
     if-ne p2, p1, :cond_0
 
-    .line 4882
+    .line 4908
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$29;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -52,7 +52,7 @@
 
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->hideKeyboard(Landroid/view/View;)V
 
-    .line 4884
+    .line 4910
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$29;->this$0:Lorg/telegram/ui/ProfileActivity;
 
@@ -68,12 +68,12 @@
 
     if-eq p2, v0, :cond_1
 
-    .line 4885
+    .line 4911
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$29;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-static {v0, v1}, Lorg/telegram/ui/ProfileActivity;->access$14402(Lorg/telegram/ui/ProfileActivity;Z)Z
 
-    .line 4887
+    .line 4913
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$29;->this$0:Lorg/telegram/ui/ProfileActivity;
 
@@ -83,7 +83,7 @@
 
     if-eqz v0, :cond_4
 
-    .line 4888
+    .line 4914
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$29;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     if-eqz p2, :cond_2
@@ -96,9 +96,9 @@
     move p2, v1
 
     :goto_0
-    invoke-static {v0, p2}, Lorg/telegram/ui/ProfileActivity;->access$16702(Lorg/telegram/ui/ProfileActivity;Z)Z
+    invoke-static {v0, p2}, Lorg/telegram/ui/ProfileActivity;->access$16802(Lorg/telegram/ui/ProfileActivity;Z)Z
 
-    .line 4889
+    .line 4915
     iget-object p2, p0, Lorg/telegram/ui/ProfileActivity$29;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/ProfileActivity;->access$3100(Lorg/telegram/ui/ProfileActivity;)Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
@@ -107,7 +107,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$29;->this$0:Lorg/telegram/ui/ProfileActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/ProfileActivity;->access$16700(Lorg/telegram/ui/ProfileActivity;)Z
+    invoke-static {v0}, Lorg/telegram/ui/ProfileActivity;->access$16800(Lorg/telegram/ui/ProfileActivity;)Z
 
     move-result v0
 
@@ -129,7 +129,7 @@
     :goto_1
     invoke-virtual {p2, p1}, Landroid/widget/FrameLayout;->setEnabled(Z)V
 
-    .line 4891
+    .line 4917
     :cond_4
     iget-object p1, p0, Lorg/telegram/ui/ProfileActivity$29;->this$0:Lorg/telegram/ui/ProfileActivity;
 
@@ -153,34 +153,34 @@
 .method public onScrolled(Landroidx/recyclerview/widget/RecyclerView;II)V
     .locals 1
 
-    .line 4896
+    .line 4922
     iget-object p1, p0, Lorg/telegram/ui/ProfileActivity$29;->this$0:Lorg/telegram/ui/ProfileActivity;
 
-    invoke-static {p1}, Lorg/telegram/ui/ProfileActivity;->access$16800(Lorg/telegram/ui/ProfileActivity;)Lorg/telegram/ui/Components/HintView;
+    invoke-static {p1}, Lorg/telegram/ui/ProfileActivity;->access$16900(Lorg/telegram/ui/ProfileActivity;)Lorg/telegram/ui/Components/HintView;
 
     move-result-object p1
 
     if-eqz p1, :cond_0
 
-    .line 4897
+    .line 4923
     iget-object p1, p0, Lorg/telegram/ui/ProfileActivity$29;->this$0:Lorg/telegram/ui/ProfileActivity;
 
-    invoke-static {p1}, Lorg/telegram/ui/ProfileActivity;->access$16800(Lorg/telegram/ui/ProfileActivity;)Lorg/telegram/ui/Components/HintView;
+    invoke-static {p1}, Lorg/telegram/ui/ProfileActivity;->access$16900(Lorg/telegram/ui/ProfileActivity;)Lorg/telegram/ui/Components/HintView;
 
     move-result-object p1
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/HintView;->hide()V
 
-    .line 4899
+    .line 4925
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/ProfileActivity$29;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ProfileActivity;->access$11800(Lorg/telegram/ui/ProfileActivity;)V
 
-    .line 4900
+    .line 4926
     iget-object p1, p0, Lorg/telegram/ui/ProfileActivity$29;->this$0:Lorg/telegram/ui/ProfileActivity;
 
-    invoke-static {p1}, Lorg/telegram/ui/ProfileActivity;->access$16900(Lorg/telegram/ui/ProfileActivity;)Landroidx/collection/LongSparseArray;
+    invoke-static {p1}, Lorg/telegram/ui/ProfileActivity;->access$17000(Lorg/telegram/ui/ProfileActivity;)Landroidx/collection/LongSparseArray;
 
     move-result-object p1
 
@@ -190,7 +190,7 @@
 
     iget-object p1, p0, Lorg/telegram/ui/ProfileActivity$29;->this$0:Lorg/telegram/ui/ProfileActivity;
 
-    invoke-static {p1}, Lorg/telegram/ui/ProfileActivity;->access$17000(Lorg/telegram/ui/ProfileActivity;)Z
+    invoke-static {p1}, Lorg/telegram/ui/ProfileActivity;->access$17100(Lorg/telegram/ui/ProfileActivity;)Z
 
     move-result p1
 
@@ -216,12 +216,12 @@
 
     if-le p1, p3, :cond_1
 
-    .line 4901
+    .line 4927
     iget-object p1, p0, Lorg/telegram/ui/ProfileActivity$29;->this$0:Lorg/telegram/ui/ProfileActivity;
 
-    invoke-static {p1, p2}, Lorg/telegram/ui/ProfileActivity;->access$17100(Lorg/telegram/ui/ProfileActivity;Z)V
+    invoke-static {p1, p2}, Lorg/telegram/ui/ProfileActivity;->access$17200(Lorg/telegram/ui/ProfileActivity;Z)V
 
-    .line 4903
+    .line 4929
     :cond_1
     iget-object p1, p0, Lorg/telegram/ui/ProfileActivity$29;->this$0:Lorg/telegram/ui/ProfileActivity;
 

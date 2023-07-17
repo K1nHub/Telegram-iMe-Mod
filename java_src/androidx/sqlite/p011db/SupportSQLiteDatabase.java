@@ -6,6 +6,7 @@ import android.os.CancellationSignal;
 import android.util.Pair;
 import java.io.Closeable;
 import java.util.List;
+/* compiled from: SupportSQLiteDatabase.kt */
 /* renamed from: androidx.sqlite.db.SupportSQLiteDatabase */
 /* loaded from: classes.dex */
 public interface SupportSQLiteDatabase extends Closeable {

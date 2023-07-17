@@ -26,7 +26,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nWalletNotificationDetailsBottomSheetDialog.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WalletNotificationDetailsBottomSheetDialog.kt\ncom/iMe/ui/wallet/notifications/details/WalletNotificationDetailsBottomSheetDialog$presenter$2\n+ 2 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n*L\n1#1,156:1\n56#2,6:157\n*S KotlinDebug\n*F\n+ 1 WalletNotificationDetailsBottomSheetDialog.kt\ncom/iMe/ui/wallet/notifications/details/WalletNotificationDetailsBottomSheetDialog$presenter$2\n*L\n34#1:157,6\n*E\n"
+    value = "SMAP\nWalletNotificationDetailsBottomSheetDialog.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WalletNotificationDetailsBottomSheetDialog.kt\ncom/iMe/ui/wallet/notifications/details/WalletNotificationDetailsBottomSheetDialog$presenter$2\n+ 2 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n*L\n1#1,160:1\n56#2,6:161\n*S KotlinDebug\n*F\n+ 1 WalletNotificationDetailsBottomSheetDialog.kt\ncom/iMe/ui/wallet/notifications/details/WalletNotificationDetailsBottomSheetDialog$presenter$2\n*L\n38#1:161,6\n*E\n"
 .end annotation
 
 
@@ -52,7 +52,7 @@
 .method public final invoke()Lcom/iMe/ui/wallet/notifications/details/WalletNotificationDetailsPresenter;
     .locals 5
 
-    .line 34
+    .line 38
     iget-object v0, p0, Lcom/iMe/ui/wallet/notifications/details/WalletNotificationDetailsBottomSheetDialog$presenter$2;->this$0:Lcom/iMe/ui/wallet/notifications/details/WalletNotificationDetailsBottomSheetDialog;
 
     new-instance v1, Lcom/iMe/ui/wallet/notifications/details/WalletNotificationDetailsBottomSheetDialog$presenter$2$1;
@@ -77,7 +77,7 @@
 
     move-result-object v0
 
-    .line 34
+    .line 38
     invoke-interface {v0}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
 
     move-result-object v0
@@ -90,7 +90,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 34
+    .line 38
     invoke-virtual {p0}, Lcom/iMe/ui/wallet/notifications/details/WalletNotificationDetailsBottomSheetDialog$presenter$2;->invoke()Lcom/iMe/ui/wallet/notifications/details/WalletNotificationDetailsPresenter;
 
     move-result-object v0

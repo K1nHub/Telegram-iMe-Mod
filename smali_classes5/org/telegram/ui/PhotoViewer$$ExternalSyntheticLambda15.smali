@@ -2,32 +2,82 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Landroid/content/DialogInterface$OnClickListener;
+.implements Landroid/animation/ValueAnimator$AnimatorUpdateListener;
 
 
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/ui/PhotoViewer;
 
+.field public final synthetic f$1:Lorg/telegram/ui/Components/CubicBezierInterpolator;
+
+.field public final synthetic f$2:F
+
+.field public final synthetic f$3:F
+
+.field public final synthetic f$4:F
+
+.field public final synthetic f$5:F
+
+.field public final synthetic f$6:F
+
+.field public final synthetic f$7:F
+
+.field public final synthetic f$8:F
+
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/PhotoViewer;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/PhotoViewer;Lorg/telegram/ui/Components/CubicBezierInterpolator;FFFFFFF)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda15;->f$0:Lorg/telegram/ui/PhotoViewer;
 
+    iput-object p2, p0, Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda15;->f$1:Lorg/telegram/ui/Components/CubicBezierInterpolator;
+
+    iput p3, p0, Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda15;->f$2:F
+
+    iput p4, p0, Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda15;->f$3:F
+
+    iput p5, p0, Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda15;->f$4:F
+
+    iput p6, p0, Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda15;->f$5:F
+
+    iput p7, p0, Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda15;->f$6:F
+
+    iput p8, p0, Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda15;->f$7:F
+
+    iput p9, p0, Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda15;->f$8:F
+
     return-void
 .end method
 
 
 # virtual methods
-.method public final onClick(Landroid/content/DialogInterface;I)V
-    .locals 1
+.method public final onAnimationUpdate(Landroid/animation/ValueAnimator;)V
+    .locals 10
 
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda15;->f$0:Lorg/telegram/ui/PhotoViewer;
 
-    invoke-static {v0, p1, p2}, Lorg/telegram/ui/PhotoViewer;->$r8$lambda$Fhjwz-jJHZaTAdwgchI2W5n5JYg(Lorg/telegram/ui/PhotoViewer;Landroid/content/DialogInterface;I)V
+    iget-object v1, p0, Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda15;->f$1:Lorg/telegram/ui/Components/CubicBezierInterpolator;
+
+    iget v2, p0, Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda15;->f$2:F
+
+    iget v3, p0, Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda15;->f$3:F
+
+    iget v4, p0, Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda15;->f$4:F
+
+    iget v5, p0, Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda15;->f$5:F
+
+    iget v6, p0, Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda15;->f$6:F
+
+    iget v7, p0, Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda15;->f$7:F
+
+    iget v8, p0, Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda15;->f$8:F
+
+    move-object v9, p1
+
+    invoke-static/range {v0 .. v9}, Lorg/telegram/ui/PhotoViewer;->$r8$lambda$C8TAJBY5YokU5hmLGTXhx0fQmxQ(Lorg/telegram/ui/PhotoViewer;Lorg/telegram/ui/Components/CubicBezierInterpolator;FFFFFFFLandroid/animation/ValueAnimator;)V
 
     return-void
 .end method

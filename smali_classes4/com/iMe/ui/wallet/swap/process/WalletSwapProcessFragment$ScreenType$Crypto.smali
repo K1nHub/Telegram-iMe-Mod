@@ -15,19 +15,19 @@
 
 
 # instance fields
-.field private final forcedNetworkType:Lcom/iMe/storage/domain/model/crypto/NetworkType;
+.field private final forcedNetworkId:Ljava/lang/String;
 
-.field private final fromToken:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
+.field private final fromToken:Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
 
 .field private final swapProtocol:Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocol;
 
 .field private final swapProtocolInfo:Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocolInfo;
 
-.field private final toToken:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
+.field private final toToken:Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
 
 
 # direct methods
-.method public constructor <init>(Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocol;Lcom/iMe/storage/domain/model/wallet/token/TokenCode;Lcom/iMe/storage/domain/model/wallet/token/TokenCode;Lcom/iMe/storage/domain/model/crypto/NetworkType;)V
+.method public constructor <init>(Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocol;Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;Ljava/lang/String;)V
     .locals 1
 
     const-string/jumbo v0, "swapProtocol"
@@ -36,22 +36,22 @@
 
     const/4 v0, 0x0
 
-    .line 462
+    .line 483
     invoke-direct {p0, v0}, Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessFragment$ScreenType;-><init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
 
-    .line 458
+    .line 479
     iput-object p1, p0, Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessFragment$ScreenType$Crypto;->swapProtocol:Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocol;
 
-    .line 459
-    iput-object p2, p0, Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessFragment$ScreenType$Crypto;->fromToken:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
+    .line 480
+    iput-object p2, p0, Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessFragment$ScreenType$Crypto;->fromToken:Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
 
-    .line 460
-    iput-object p3, p0, Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessFragment$ScreenType$Crypto;->toToken:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
+    .line 481
+    iput-object p3, p0, Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessFragment$ScreenType$Crypto;->toToken:Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
 
-    .line 461
-    iput-object p4, p0, Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessFragment$ScreenType$Crypto;->forcedNetworkType:Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    .line 482
+    iput-object p4, p0, Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessFragment$ScreenType$Crypto;->forcedNetworkId:Ljava/lang/String;
 
-    .line 464
+    .line 485
     sget-object p2, Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocolInfo;->Companion:Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocolInfo$Companion;
 
     invoke-virtual {p2, p1}, Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocolInfo$Companion;->map(Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocol;)Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocolInfo;
@@ -63,7 +63,7 @@
     return-void
 .end method
 
-.method public synthetic constructor <init>(Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocol;Lcom/iMe/storage/domain/model/wallet/token/TokenCode;Lcom/iMe/storage/domain/model/wallet/token/TokenCode;Lcom/iMe/storage/domain/model/crypto/NetworkType;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+.method public synthetic constructor <init>(Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocol;Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;Ljava/lang/String;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
     .locals 1
 
     and-int/lit8 p6, p5, 0x2
@@ -88,29 +88,29 @@
 
     move-object p4, v0
 
-    .line 457
+    .line 478
     :cond_2
-    invoke-direct {p0, p1, p2, p3, p4}, Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessFragment$ScreenType$Crypto;-><init>(Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocol;Lcom/iMe/storage/domain/model/wallet/token/TokenCode;Lcom/iMe/storage/domain/model/wallet/token/TokenCode;Lcom/iMe/storage/domain/model/crypto/NetworkType;)V
+    invoke-direct {p0, p1, p2, p3, p4}, Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessFragment$ScreenType$Crypto;-><init>(Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocol;Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;Ljava/lang/String;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final getForcedNetworkType()Lcom/iMe/storage/domain/model/crypto/NetworkType;
+.method public final getForcedNetworkId()Ljava/lang/String;
     .locals 1
 
-    .line 461
-    iget-object v0, p0, Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessFragment$ScreenType$Crypto;->forcedNetworkType:Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    .line 482
+    iget-object v0, p0, Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessFragment$ScreenType$Crypto;->forcedNetworkId:Ljava/lang/String;
 
     return-object v0
 .end method
 
-.method public final getFromToken()Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
+.method public final getFromToken()Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
     .locals 1
 
-    .line 459
-    iget-object v0, p0, Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessFragment$ScreenType$Crypto;->fromToken:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
+    .line 480
+    iget-object v0, p0, Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessFragment$ScreenType$Crypto;->fromToken:Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
 
     return-object v0
 .end method
@@ -118,7 +118,7 @@
 .method public final getSwapProtocol()Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocol;
     .locals 1
 
-    .line 458
+    .line 479
     iget-object v0, p0, Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessFragment$ScreenType$Crypto;->swapProtocol:Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocol;
 
     return-object v0
@@ -127,17 +127,17 @@
 .method public final getSwapProtocolInfo()Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocolInfo;
     .locals 1
 
-    .line 464
+    .line 485
     iget-object v0, p0, Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessFragment$ScreenType$Crypto;->swapProtocolInfo:Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocolInfo;
 
     return-object v0
 .end method
 
-.method public final getToToken()Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
+.method public final getToToken()Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
     .locals 1
 
-    .line 460
-    iget-object v0, p0, Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessFragment$ScreenType$Crypto;->toToken:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
+    .line 481
+    iget-object v0, p0, Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessFragment$ScreenType$Crypto;->toToken:Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
 
     return-object v0
 .end method

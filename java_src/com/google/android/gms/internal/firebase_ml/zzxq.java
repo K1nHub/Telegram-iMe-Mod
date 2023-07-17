@@ -1,8 +1,8 @@
 package com.google.android.gms.internal.firebase_ml;
 
 import java.util.ListIterator;
-import p034j$.util.Iterator;
-import p034j$.util.function.Consumer;
+import p033j$.util.Iterator;
+import p033j$.util.function.Consumer;
 /* loaded from: classes.dex */
 final class zzxq implements ListIterator<String>, Iterator {
     private ListIterator<String> zzbww;
@@ -18,12 +18,12 @@ final class zzxq implements ListIterator<String>, Iterator {
         this.zzbww = zzvpVar.listIterator(i);
     }
 
-    @Override // p034j$.util.Iterator
+    @Override // p033j$.util.Iterator
     public /* synthetic */ void forEachRemaining(Consumer consumer) {
         Iterator.CC.$default$forEachRemaining(this, consumer);
     }
 
-    @Override // java.util.ListIterator, java.util.Iterator, p034j$.util.Iterator
+    @Override // java.util.ListIterator, java.util.Iterator, p033j$.util.Iterator
     public final boolean hasNext() {
         return this.zzbww.hasNext();
     }
@@ -43,7 +43,7 @@ final class zzxq implements ListIterator<String>, Iterator {
         return this.zzbww.previousIndex();
     }
 
-    @Override // java.util.ListIterator, java.util.Iterator, p034j$.util.Iterator
+    @Override // java.util.ListIterator, java.util.Iterator, p033j$.util.Iterator
     public final void remove() {
         throw new UnsupportedOperationException();
     }
@@ -63,7 +63,7 @@ final class zzxq implements ListIterator<String>, Iterator {
         return this.zzbww.previous();
     }
 
-    @Override // java.util.ListIterator, java.util.Iterator, p034j$.util.Iterator
+    @Override // java.util.ListIterator, java.util.Iterator, p033j$.util.Iterator
     public final /* synthetic */ Object next() {
         return this.zzbww.next();
     }

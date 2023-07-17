@@ -311,7 +311,7 @@
 
     move-result-object v1
 
-    const-string v2, "readyAsyncCalls.iterator()"
+    const-string/jumbo v2, "readyAsyncCalls.iterator()"
 
     invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 

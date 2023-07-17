@@ -46,14 +46,14 @@
         }
     .end annotation
 
-    .line 396
+    .line 412
     const-class p1, Lmoxy/viewstate/strategy/AddToEndSingleStrategy;
 
     const-string v0, "renderItems"
 
     invoke-direct {p0, v0, p1}, Lmoxy/viewstate/ViewCommand;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
-    .line 398
+    .line 414
     iput-object p2, p0, Lcom/iMe/feature/twitter/search/TwitterSearchView$$State$RenderItemsCommand;->items:Ljava/util/List;
 
     return-void
@@ -64,7 +64,7 @@
 .method public apply(Lcom/iMe/feature/twitter/search/TwitterSearchView;)V
     .locals 1
 
-    .line 403
+    .line 419
     iget-object v0, p0, Lcom/iMe/feature/twitter/search/TwitterSearchView$$State$RenderItemsCommand;->items:Ljava/util/List;
 
     invoke-interface {p1, v0}, Lcom/iMe/feature/twitter/search/TwitterSearchView;->renderItems(Ljava/util/List;)V
@@ -75,7 +75,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 392
+    .line 408
     check-cast p1, Lcom/iMe/feature/twitter/search/TwitterSearchView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/feature/twitter/search/TwitterSearchView$$State$RenderItemsCommand;->apply(Lcom/iMe/feature/twitter/search/TwitterSearchView;)V

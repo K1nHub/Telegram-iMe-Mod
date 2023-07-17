@@ -244,74 +244,21 @@
     return-void
 .end method
 
-.method public showAppUpdateDialog()V
-    .locals 3
+.method public synthetic removeSelfFromStackImmediately()V
+    .locals 0
 
-    .line 183
-    new-instance v0, Lcom/iMe/ui/chat/ChatView$$State$ShowAppUpdateDialogCommand;
-
-    invoke-direct {v0, p0}, Lcom/iMe/ui/chat/ChatView$$State$ShowAppUpdateDialogCommand;-><init>(Lcom/iMe/ui/chat/ChatView$$State;)V
-
-    .line 184
-    iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
-
-    invoke-virtual {v1, v0}, Lmoxy/viewstate/ViewCommands;->beforeApply(Lmoxy/viewstate/ViewCommand;)V
-
-    .line 186
-    invoke-virtual {p0}, Lmoxy/viewstate/MvpViewState;->hasNotView()Ljava/lang/Boolean;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    return-void
-
-    .line 190
-    :cond_0
-    iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->views:Ljava/util/Set;
-
-    invoke-interface {v1}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
-
-    move-result-object v1
-
-    :goto_0
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_1
-
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Lcom/iMe/ui/chat/ChatView;
-
-    .line 191
-    invoke-interface {v2}, Lcom/iMe/ui/base/mvp/AppUpdateRequiredView;->showAppUpdateDialog()V
-
-    goto :goto_0
-
-    .line 194
-    :cond_1
-    iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
-
-    invoke-virtual {v1, v0}, Lmoxy/viewstate/ViewCommands;->afterApply(Lmoxy/viewstate/ViewCommand;)V
+    invoke-static {p0}, Lcom/iMe/ui/base/mvp/base/BaseView$-CC;->$default$removeSelfFromStackImmediately(Lcom/iMe/ui/base/mvp/base/BaseView;)V
 
     return-void
 .end method
 
-.method public showConfirmPaymentDialog(Lcom/iMe/model/dialog/DialogModel;Lcom/iMe/fork/utils/Callbacks$Callback;)V
+.method public showAppUpdateDialog()V
     .locals 3
 
     .line 199
-    new-instance v0, Lcom/iMe/ui/chat/ChatView$$State$ShowConfirmPaymentDialogCommand;
+    new-instance v0, Lcom/iMe/ui/chat/ChatView$$State$ShowAppUpdateDialogCommand;
 
-    invoke-direct {v0, p0, p1, p2}, Lcom/iMe/ui/chat/ChatView$$State$ShowConfirmPaymentDialogCommand;-><init>(Lcom/iMe/ui/chat/ChatView$$State;Lcom/iMe/model/dialog/DialogModel;Lcom/iMe/fork/utils/Callbacks$Callback;)V
+    invoke-direct {v0, p0}, Lcom/iMe/ui/chat/ChatView$$State$ShowAppUpdateDialogCommand;-><init>(Lcom/iMe/ui/chat/ChatView$$State;)V
 
     .line 200
     iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
@@ -353,11 +300,72 @@
     check-cast v2, Lcom/iMe/ui/chat/ChatView;
 
     .line 207
-    invoke-interface {v2, p1, p2}, Lcom/iMe/manager/crypto/pay/BinancePayProcessView;->showConfirmPaymentDialog(Lcom/iMe/model/dialog/DialogModel;Lcom/iMe/fork/utils/Callbacks$Callback;)V
+    invoke-interface {v2}, Lcom/iMe/ui/base/mvp/AppUpdateRequiredView;->showAppUpdateDialog()V
 
     goto :goto_0
 
     .line 210
+    :cond_1
+    iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
+
+    invoke-virtual {v1, v0}, Lmoxy/viewstate/ViewCommands;->afterApply(Lmoxy/viewstate/ViewCommand;)V
+
+    return-void
+.end method
+
+.method public showConfirmPaymentDialog(Lcom/iMe/model/dialog/DialogModel;Lcom/iMe/fork/utils/Callbacks$Callback;)V
+    .locals 3
+
+    .line 215
+    new-instance v0, Lcom/iMe/ui/chat/ChatView$$State$ShowConfirmPaymentDialogCommand;
+
+    invoke-direct {v0, p0, p1, p2}, Lcom/iMe/ui/chat/ChatView$$State$ShowConfirmPaymentDialogCommand;-><init>(Lcom/iMe/ui/chat/ChatView$$State;Lcom/iMe/model/dialog/DialogModel;Lcom/iMe/fork/utils/Callbacks$Callback;)V
+
+    .line 216
+    iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
+
+    invoke-virtual {v1, v0}, Lmoxy/viewstate/ViewCommands;->beforeApply(Lmoxy/viewstate/ViewCommand;)V
+
+    .line 218
+    invoke-virtual {p0}, Lmoxy/viewstate/MvpViewState;->hasNotView()Ljava/lang/Boolean;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    return-void
+
+    .line 222
+    :cond_0
+    iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->views:Ljava/util/Set;
+
+    invoke-interface {v1}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    :goto_0
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_1
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lcom/iMe/ui/chat/ChatView;
+
+    .line 223
+    invoke-interface {v2, p1, p2}, Lcom/iMe/manager/crypto/pay/BinancePayProcessView;->showConfirmPaymentDialog(Lcom/iMe/model/dialog/DialogModel;Lcom/iMe/fork/utils/Callbacks$Callback;)V
+
+    goto :goto_0
+
+    .line 226
     :cond_1
     iget-object p1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
 
@@ -624,17 +632,17 @@
 .method public showSuccessPaymentProcessedDialog(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
     .locals 3
 
-    .line 215
+    .line 231
     new-instance v0, Lcom/iMe/ui/chat/ChatView$$State$ShowSuccessPaymentProcessedDialogCommand;
 
     invoke-direct {v0, p0, p1, p2, p3}, Lcom/iMe/ui/chat/ChatView$$State$ShowSuccessPaymentProcessedDialogCommand;-><init>(Lcom/iMe/ui/chat/ChatView$$State;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 216
+    .line 232
     iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
 
     invoke-virtual {v1, v0}, Lmoxy/viewstate/ViewCommands;->beforeApply(Lmoxy/viewstate/ViewCommand;)V
 
-    .line 218
+    .line 234
     invoke-virtual {p0}, Lmoxy/viewstate/MvpViewState;->hasNotView()Ljava/lang/Boolean;
 
     move-result-object v1
@@ -647,7 +655,7 @@
 
     return-void
 
-    .line 222
+    .line 238
     :cond_0
     iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->views:Ljava/util/Set;
 
@@ -668,12 +676,12 @@
 
     check-cast v2, Lcom/iMe/ui/chat/ChatView;
 
-    .line 223
+    .line 239
     invoke-interface {v2, p1, p2, p3}, Lcom/iMe/manager/crypto/pay/BinancePayProcessView;->showSuccessPaymentProcessedDialog(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
     goto :goto_0
 
-    .line 226
+    .line 242
     :cond_1
     iget-object p1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
 

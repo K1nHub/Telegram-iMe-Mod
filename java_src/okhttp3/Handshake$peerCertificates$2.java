@@ -6,10 +6,9 @@ import javax.net.ssl.SSLPeerUnverifiedException;
 import kotlin.collections.CollectionsKt__CollectionsKt;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Lambda;
-/* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: Handshake.kt */
 /* loaded from: classes4.dex */
-public final class Handshake$peerCertificates$2 extends Lambda implements Function0<List<? extends Certificate>> {
+final class Handshake$peerCertificates$2 extends Lambda implements Function0<List<? extends Certificate>> {
     final /* synthetic */ Function0 $peerCertificatesFn;
 
     /* JADX INFO: Access modifiers changed from: package-private */

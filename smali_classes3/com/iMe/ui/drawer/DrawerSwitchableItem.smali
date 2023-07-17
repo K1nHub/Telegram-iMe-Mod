@@ -35,8 +35,6 @@
 
 .field public static final Companion:Lcom/iMe/ui/drawer/DrawerSwitchableItem$Companion;
 
-.field public static final enum MANAGEMENT:Lcom/iMe/ui/drawer/DrawerSwitchableItem;
-
 .field public static final enum MUSIC:Lcom/iMe/ui/drawer/DrawerSwitchableItem;
 
 .field public static final enum PEOPLE_NEARBY:Lcom/iMe/ui/drawer/DrawerSwitchableItem;
@@ -48,7 +46,7 @@
 .method private static final synthetic $values()[Lcom/iMe/ui/drawer/DrawerSwitchableItem;
     .locals 3
 
-    const/16 v0, 0x9
+    const/16 v0, 0x8
 
     new-array v0, v0, [Lcom/iMe/ui/drawer/DrawerSwitchableItem;
 
@@ -64,45 +62,39 @@
 
     aput-object v1, v0, v2
 
-    sget-object v1, Lcom/iMe/ui/drawer/DrawerSwitchableItem;->MANAGEMENT:Lcom/iMe/ui/drawer/DrawerSwitchableItem;
+    sget-object v1, Lcom/iMe/ui/drawer/DrawerSwitchableItem;->MUSIC:Lcom/iMe/ui/drawer/DrawerSwitchableItem;
 
     const/4 v2, 0x2
 
     aput-object v1, v0, v2
 
-    sget-object v1, Lcom/iMe/ui/drawer/DrawerSwitchableItem;->MUSIC:Lcom/iMe/ui/drawer/DrawerSwitchableItem;
+    sget-object v1, Lcom/iMe/ui/drawer/DrawerSwitchableItem;->CONTACTS:Lcom/iMe/ui/drawer/DrawerSwitchableItem;
 
     const/4 v2, 0x3
 
     aput-object v1, v0, v2
 
-    sget-object v1, Lcom/iMe/ui/drawer/DrawerSwitchableItem;->CONTACTS:Lcom/iMe/ui/drawer/DrawerSwitchableItem;
+    sget-object v1, Lcom/iMe/ui/drawer/DrawerSwitchableItem;->CALLS:Lcom/iMe/ui/drawer/DrawerSwitchableItem;
 
     const/4 v2, 0x4
 
     aput-object v1, v0, v2
 
-    sget-object v1, Lcom/iMe/ui/drawer/DrawerSwitchableItem;->CALLS:Lcom/iMe/ui/drawer/DrawerSwitchableItem;
+    sget-object v1, Lcom/iMe/ui/drawer/DrawerSwitchableItem;->PEOPLE_NEARBY:Lcom/iMe/ui/drawer/DrawerSwitchableItem;
 
     const/4 v2, 0x5
 
     aput-object v1, v0, v2
 
-    sget-object v1, Lcom/iMe/ui/drawer/DrawerSwitchableItem;->PEOPLE_NEARBY:Lcom/iMe/ui/drawer/DrawerSwitchableItem;
+    sget-object v1, Lcom/iMe/ui/drawer/DrawerSwitchableItem;->CLOUD:Lcom/iMe/ui/drawer/DrawerSwitchableItem;
 
     const/4 v2, 0x6
 
     aput-object v1, v0, v2
 
-    sget-object v1, Lcom/iMe/ui/drawer/DrawerSwitchableItem;->CLOUD:Lcom/iMe/ui/drawer/DrawerSwitchableItem;
-
-    const/4 v2, 0x7
-
-    aput-object v1, v0, v2
-
     sget-object v1, Lcom/iMe/ui/drawer/DrawerSwitchableItem;->ALBUMS:Lcom/iMe/ui/drawer/DrawerSwitchableItem;
 
-    const/16 v2, 0x8
+    const/4 v2, 0x7
 
     aput-object v1, v0, v2
 
@@ -137,75 +129,64 @@
     .line 11
     new-instance v0, Lcom/iMe/ui/drawer/DrawerSwitchableItem;
 
-    const-string v1, "MANAGEMENT"
+    const-string v1, "MUSIC"
 
     const/4 v2, 0x2
 
     invoke-direct {v0, v1, v2}, Lcom/iMe/ui/drawer/DrawerSwitchableItem;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/iMe/ui/drawer/DrawerSwitchableItem;->MANAGEMENT:Lcom/iMe/ui/drawer/DrawerSwitchableItem;
+    sput-object v0, Lcom/iMe/ui/drawer/DrawerSwitchableItem;->MUSIC:Lcom/iMe/ui/drawer/DrawerSwitchableItem;
 
     .line 12
     new-instance v0, Lcom/iMe/ui/drawer/DrawerSwitchableItem;
 
-    const-string v1, "MUSIC"
+    const-string v1, "CONTACTS"
 
     const/4 v2, 0x3
 
     invoke-direct {v0, v1, v2}, Lcom/iMe/ui/drawer/DrawerSwitchableItem;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/iMe/ui/drawer/DrawerSwitchableItem;->MUSIC:Lcom/iMe/ui/drawer/DrawerSwitchableItem;
+    sput-object v0, Lcom/iMe/ui/drawer/DrawerSwitchableItem;->CONTACTS:Lcom/iMe/ui/drawer/DrawerSwitchableItem;
 
     .line 13
     new-instance v0, Lcom/iMe/ui/drawer/DrawerSwitchableItem;
 
-    const-string v1, "CONTACTS"
+    const-string v1, "CALLS"
 
     const/4 v2, 0x4
 
     invoke-direct {v0, v1, v2}, Lcom/iMe/ui/drawer/DrawerSwitchableItem;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/iMe/ui/drawer/DrawerSwitchableItem;->CONTACTS:Lcom/iMe/ui/drawer/DrawerSwitchableItem;
+    sput-object v0, Lcom/iMe/ui/drawer/DrawerSwitchableItem;->CALLS:Lcom/iMe/ui/drawer/DrawerSwitchableItem;
 
     .line 14
     new-instance v0, Lcom/iMe/ui/drawer/DrawerSwitchableItem;
 
-    const-string v1, "CALLS"
+    const-string v1, "PEOPLE_NEARBY"
 
     const/4 v2, 0x5
 
     invoke-direct {v0, v1, v2}, Lcom/iMe/ui/drawer/DrawerSwitchableItem;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/iMe/ui/drawer/DrawerSwitchableItem;->CALLS:Lcom/iMe/ui/drawer/DrawerSwitchableItem;
+    sput-object v0, Lcom/iMe/ui/drawer/DrawerSwitchableItem;->PEOPLE_NEARBY:Lcom/iMe/ui/drawer/DrawerSwitchableItem;
 
     .line 15
     new-instance v0, Lcom/iMe/ui/drawer/DrawerSwitchableItem;
 
-    const-string v1, "PEOPLE_NEARBY"
+    const-string v1, "CLOUD"
 
     const/4 v2, 0x6
 
     invoke-direct {v0, v1, v2}, Lcom/iMe/ui/drawer/DrawerSwitchableItem;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/iMe/ui/drawer/DrawerSwitchableItem;->PEOPLE_NEARBY:Lcom/iMe/ui/drawer/DrawerSwitchableItem;
+    sput-object v0, Lcom/iMe/ui/drawer/DrawerSwitchableItem;->CLOUD:Lcom/iMe/ui/drawer/DrawerSwitchableItem;
 
     .line 16
     new-instance v0, Lcom/iMe/ui/drawer/DrawerSwitchableItem;
 
-    const-string v1, "CLOUD"
-
-    const/4 v2, 0x7
-
-    invoke-direct {v0, v1, v2}, Lcom/iMe/ui/drawer/DrawerSwitchableItem;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lcom/iMe/ui/drawer/DrawerSwitchableItem;->CLOUD:Lcom/iMe/ui/drawer/DrawerSwitchableItem;
-
-    .line 17
-    new-instance v0, Lcom/iMe/ui/drawer/DrawerSwitchableItem;
-
     const-string v1, "ALBUMS"
 
-    const/16 v2, 0x8
+    const/4 v2, 0x7
 
     invoke-direct {v0, v1, v2}, Lcom/iMe/ui/drawer/DrawerSwitchableItem;-><init>(Ljava/lang/String;I)V
 
@@ -362,7 +343,7 @@
 .method public final title()Ljava/lang/String;
     .locals 2
 
-    .line 19
+    .line 18
     sget-object v0, Lcom/iMe/ui/drawer/DrawerSwitchableItem$WhenMappings;->$EnumSwitchMapping$0:[I
 
     invoke-virtual {p0}, Ljava/lang/Enum;->ordinal()I
@@ -373,7 +354,7 @@
 
     packed-switch v0, :pswitch_data_0
 
-    .line 28
+    .line 26
     new-instance v0, Lkotlin/NoWhenBranchMatchedException;
 
     invoke-direct {v0}, Lkotlin/NoWhenBranchMatchedException;-><init>()V
@@ -393,7 +374,7 @@
 
     goto :goto_0
 
-    .line 27
+    .line 25
     :pswitch_1
     sget v0, Lorg/telegram/messenger/R$string;->SavedMessages:I
 
@@ -409,7 +390,7 @@
 
     goto :goto_0
 
-    .line 26
+    .line 24
     :pswitch_2
     sget v0, Lorg/telegram/messenger/R$string;->PeopleNearby:I
 
@@ -425,7 +406,7 @@
 
     goto :goto_0
 
-    .line 25
+    .line 23
     :pswitch_3
     sget v0, Lorg/telegram/messenger/R$string;->Calls:I
 
@@ -441,7 +422,7 @@
 
     goto :goto_0
 
-    .line 24
+    .line 22
     :pswitch_4
     sget v0, Lorg/telegram/messenger/R$string;->Contacts:I
 
@@ -457,7 +438,7 @@
 
     goto :goto_0
 
-    .line 23
+    .line 21
     :pswitch_5
     sget v0, Lorg/telegram/messenger/R$string;->AttachMusic:I
 
@@ -473,22 +454,8 @@
 
     goto :goto_0
 
-    .line 22
+    .line 20
     :pswitch_6
-    sget v0, Lorg/telegram/messenger/R$string;->management:I
-
-    invoke-static {v0}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
-
-    move-result-object v0
-
-    const-string v1, "getInternalString(R.string.management)"
-
-    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    goto :goto_0
-
-    .line 21
-    :pswitch_7
     sget v0, Lorg/telegram/messenger/R$string;->drawer_catalog_item_title:I
 
     invoke-static {v0}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
@@ -501,8 +468,8 @@
 
     goto :goto_0
 
-    .line 20
-    :pswitch_8
+    .line 19
+    :pswitch_7
     sget v0, Lorg/telegram/messenger/R$string;->drawer_wallet_item_title:I
 
     invoke-static {v0}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
@@ -520,7 +487,6 @@
 
     :pswitch_data_0
     .packed-switch 0x1
-        :pswitch_8
         :pswitch_7
         :pswitch_6
         :pswitch_5

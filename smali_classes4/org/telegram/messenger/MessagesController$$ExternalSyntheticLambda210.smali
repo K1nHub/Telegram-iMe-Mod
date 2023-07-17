@@ -57,7 +57,7 @@
 
     iget-object v5, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda210;->f$5:Ljava/lang/String;
 
-    invoke-static/range {v0 .. v5}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$Gn2VXgnLzwcYKQl64W3_1oQUulk(Lorg/telegram/messenger/MessagesController;Lorg/telegram/tgnet/TLRPC$WallPaper;Lorg/telegram/tgnet/TLRPC$TL_wallPaperSettings;Lorg/telegram/ui/ActionBar/Theme$OverrideWallpaperInfo;Ljava/io/File;Ljava/lang/String;)V
+    invoke-static/range {v0 .. v5}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$09_5cWo4nsyXL6j8Ax1nJnyTgW8(Lorg/telegram/messenger/MessagesController;Lorg/telegram/tgnet/TLRPC$WallPaper;Lorg/telegram/tgnet/TLRPC$TL_wallPaperSettings;Lorg/telegram/ui/ActionBar/Theme$OverrideWallpaperInfo;Ljava/io/File;Ljava/lang/String;)V
 
     return-void
 .end method

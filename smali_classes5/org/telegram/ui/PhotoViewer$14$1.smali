@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/PhotoViewer$14;Landroid/content/Context;Ljava/lang/Object;Lorg/telegram/tgnet/TLObject;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
     .locals 0
 
-    .line 5419
+    .line 5420
     iput-object p1, p0, Lorg/telegram/ui/PhotoViewer$14$1;->this$1:Lorg/telegram/ui/PhotoViewer$14;
 
     invoke-direct {p0, p2, p3, p4, p5}, Lorg/telegram/ui/Components/StickersAlert;-><init>(Landroid/content/Context;Ljava/lang/Object;Lorg/telegram/tgnet/TLObject;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
@@ -35,10 +35,10 @@
 .method public dismiss()V
     .locals 2
 
-    .line 5422
+    .line 5423
     invoke-super {p0}, Lorg/telegram/ui/Components/StickersAlert;->dismiss()V
 
-    .line 5423
+    .line 5424
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$14$1;->this$1:Lorg/telegram/ui/PhotoViewer$14;
 
     iget-object v0, v0, Lorg/telegram/ui/PhotoViewer$14;->this$0:Lorg/telegram/ui/PhotoViewer;
@@ -49,7 +49,7 @@
 
     if-ne v0, p0, :cond_0
 
-    .line 5424
+    .line 5425
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$14$1;->this$1:Lorg/telegram/ui/PhotoViewer$14;
 
     iget-object v0, v0, Lorg/telegram/ui/PhotoViewer$14;->this$0:Lorg/telegram/ui/PhotoViewer;

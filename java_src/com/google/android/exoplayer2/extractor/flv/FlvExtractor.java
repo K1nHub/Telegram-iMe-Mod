@@ -1,6 +1,6 @@
 package com.google.android.exoplayer2.extractor.flv;
 
-import com.google.android.exoplayer2.C0475C;
+import com.google.android.exoplayer2.C0480C;
 import com.google.android.exoplayer2.extractor.Extractor;
 import com.google.android.exoplayer2.extractor.ExtractorInput;
 import com.google.android.exoplayer2.extractor.ExtractorOutput;
@@ -268,7 +268,7 @@ public final class FlvExtractor implements Extractor {
         if (this.outputSeekMap) {
             return;
         }
-        this.extractorOutput.seekMap(new SeekMap.Unseekable(C0475C.TIME_UNSET));
+        this.extractorOutput.seekMap(new SeekMap.Unseekable(C0480C.TIME_UNSET));
         this.outputSeekMap = true;
     }
 
@@ -276,7 +276,7 @@ public final class FlvExtractor implements Extractor {
         if (this.outputFirstSample) {
             return this.mediaTagTimestampOffsetUs + this.tagTimestampUs;
         }
-        if (this.metadataReader.getDurationUs() == C0475C.TIME_UNSET) {
+        if (this.metadataReader.getDurationUs() == C0480C.TIME_UNSET) {
             return 0L;
         }
         return this.tagTimestampUs;

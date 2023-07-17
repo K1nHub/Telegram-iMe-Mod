@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/PhotoViewer$PhotoViewerActionBarContainer;)V
     .locals 0
 
-    .line 683
+    .line 684
     iput-object p1, p0, Lorg/telegram/ui/PhotoViewer$PhotoViewerActionBarContainer$1;->this$0:Lorg/telegram/ui/PhotoViewer$PhotoViewerActionBarContainer;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,7 +35,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 686
+    .line 687
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$PhotoViewerActionBarContainer$1;->this$0:Lorg/telegram/ui/PhotoViewer$PhotoViewerActionBarContainer;
 
     invoke-static {v0}, Lorg/telegram/ui/PhotoViewer$PhotoViewerActionBarContainer;->access$100(Lorg/telegram/ui/PhotoViewer$PhotoViewerActionBarContainer;)Landroid/animation/AnimatorSet;
@@ -44,7 +44,7 @@
 
     if-ne v0, p1, :cond_0
 
-    .line 687
+    .line 688
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$PhotoViewerActionBarContainer$1;->this$0:Lorg/telegram/ui/PhotoViewer$PhotoViewerActionBarContainer;
 
     iget-object p1, p1, Lorg/telegram/ui/PhotoViewer$PhotoViewerActionBarContainer;->titleTextView:[Lorg/telegram/ui/ActionBar/SimpleTextView;
@@ -57,7 +57,7 @@
 
     invoke-virtual {p1, v0}, Landroid/view/View;->setVisibility(I)V
 
-    .line 688
+    .line 689
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$PhotoViewerActionBarContainer$1;->this$0:Lorg/telegram/ui/PhotoViewer$PhotoViewerActionBarContainer;
 
     const/4 v0, 0x0

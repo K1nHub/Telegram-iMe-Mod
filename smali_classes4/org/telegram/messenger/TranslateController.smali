@@ -347,7 +347,7 @@
 
     const-string v8, "pt"
 
-    const-string v9, "ru"
+    const-string/jumbo v9, "ru"
 
     const-string v10, "es"
 
@@ -464,7 +464,7 @@
 
     const-string v50, "km"
 
-    const-string v51, "rw"
+    const-string/jumbo v51, "rw"
 
     const-string v52, "ko"
 
@@ -518,9 +518,9 @@
 
     const-string v77, "pa"
 
-    const-string v78, "ro"
+    const-string/jumbo v78, "ro"
 
-    const-string v79, "ru"
+    const-string/jumbo v79, "ru"
 
     const-string/jumbo v80, "sm"
 
@@ -532,7 +532,7 @@
 
     const-string/jumbo v84, "sn"
 
-    const-string v85, "sd"
+    const-string/jumbo v85, "sd"
 
     const-string/jumbo v86, "si"
 
@@ -1757,7 +1757,7 @@
     :cond_0
     iget-object v2, v2, Lorg/telegram/messenger/LocaleController$LocaleInfo;->pathToFile:Ljava/lang/String;
 
-    const-string v3, "remote"
+    const-string/jumbo v3, "remote"
 
     invoke-virtual {v3, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 

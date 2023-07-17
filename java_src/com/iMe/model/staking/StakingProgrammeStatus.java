@@ -1,7 +1,7 @@
 package com.iMe.model.staking;
 
-import org.telegram.messenger.C3295R;
-import org.telegram.p044ui.ActionBar.Theme;
+import org.telegram.messenger.C3417R;
+import org.telegram.p043ui.ActionBar.Theme;
 /* JADX WARN: Enum visitor error
 jadx.core.utils.exceptions.JadxRuntimeException: Init of enum SHORT_OF_FUNDS uses external variables
 	at jadx.core.dex.visitors.EnumVisitor.createEnumFieldByConstructor(EnumVisitor.java:444)
@@ -23,8 +23,8 @@ public final class StakingProgrammeStatus {
     public static final StakingProgrammeStatus SHORT_OF_FUNDS;
     private final int colorKey;
     private final int textResId;
-    public static final StakingProgrammeStatus ACTIVE = new StakingProgrammeStatus("ACTIVE", 0, C3295R.string.staking_details_status_active, Theme.key_chat_inGreenCall);
-    public static final StakingProgrammeStatus WITHDRAWAL_AVAILABLE = new StakingProgrammeStatus("WITHDRAWAL_AVAILABLE", 1, C3295R.string.staking_details_status_withdrawal_available, Theme.key_windowBackgroundWhiteBlueText);
+    public static final StakingProgrammeStatus ACTIVE = new StakingProgrammeStatus("ACTIVE", 0, C3417R.string.staking_details_status_active, Theme.key_chat_inGreenCall);
+    public static final StakingProgrammeStatus WITHDRAWAL_AVAILABLE = new StakingProgrammeStatus("WITHDRAWAL_AVAILABLE", 1, C3417R.string.staking_details_status_withdrawal_available, Theme.key_windowBackgroundWhiteBlueText);
 
     private static final /* synthetic */ StakingProgrammeStatus[] $values() {
         return new StakingProgrammeStatus[]{ACTIVE, WITHDRAWAL_AVAILABLE, SHORT_OF_FUNDS, CLOSED};
@@ -52,10 +52,10 @@ public final class StakingProgrammeStatus {
     }
 
     static {
-        int i = C3295R.string.staking_details_status_short_of_funds;
+        int i = C3417R.string.staking_details_status_short_of_funds;
         int i2 = Theme.key_text_RedRegular;
         SHORT_OF_FUNDS = new StakingProgrammeStatus("SHORT_OF_FUNDS", 2, i, i2);
-        CLOSED = new StakingProgrammeStatus("CLOSED", 3, C3295R.string.staking_details_status_finished, i2);
+        CLOSED = new StakingProgrammeStatus("CLOSED", 3, C3417R.string.staking_details_status_finished, i2);
         $VALUES = $values();
     }
 }

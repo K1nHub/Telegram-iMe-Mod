@@ -572,7 +572,7 @@ public class NavController {
         if (mutableList.isEmpty()) {
             return;
         }
-        NavDestination destination = ((NavBackStackEntry) CollectionsKt.last((List<? extends Object>) mutableList)).getDestination();
+        NavDestination destination = ((NavBackStackEntry) CollectionsKt.last(mutableList)).getDestination();
         if (destination instanceof FloatingWindow) {
             reversed2 = CollectionsKt___CollectionsKt.reversed(mutableList);
             for (NavBackStackEntry navBackStackEntry : reversed2) {
@@ -963,8 +963,8 @@ public class NavController {
                 }
             }
             for (NavBackStackEntry navBackStackEntry2 : arrayList2) {
-                List list = (List) CollectionsKt.lastOrNull(arrayList);
-                if (Intrinsics.areEqual((list == null || (navBackStackEntry = (NavBackStackEntry) CollectionsKt.last((List<? extends Object>) list)) == null || (destination = navBackStackEntry.getDestination()) == null) ? null : destination.getNavigatorName(), navBackStackEntry2.getDestination().getNavigatorName())) {
+                List list = (List) CollectionsKt.lastOrNull((List<? extends Object>) arrayList);
+                if (Intrinsics.areEqual((list == null || (navBackStackEntry = (NavBackStackEntry) CollectionsKt.last(list)) == null || (destination = navBackStackEntry.getDestination()) == null) ? null : destination.getNavigatorName(), navBackStackEntry2.getDestination().getNavigatorName())) {
                     list.add(navBackStackEntry2);
                 } else {
                     mutableListOf = CollectionsKt__CollectionsKt.mutableListOf(navBackStackEntry2);

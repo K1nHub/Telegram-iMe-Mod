@@ -17,8 +17,8 @@ import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.p044ui.Components.LayoutHelper;
-import org.telegram.p044ui.Components.RecyclerListView;
+import org.telegram.p043ui.Components.LayoutHelper;
+import org.telegram.p043ui.Components.RecyclerListView;
 /* compiled from: RecentChatsBar.kt */
 /* renamed from: com.iMe.ui.recent_chats.RecentChatsBar */
 /* loaded from: classes3.dex */
@@ -125,13 +125,13 @@ public final class RecentChatsBar extends FrameLayout {
 
     private final void setupListeners() {
         getListView().setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: com.iMe.ui.recent_chats.RecentChatsBar$$ExternalSyntheticLambda0
-            @Override // org.telegram.p044ui.Components.RecyclerListView.OnItemClickListener
+            @Override // org.telegram.p043ui.Components.RecyclerListView.OnItemClickListener
             public final void onItemClick(View view, int i) {
                 RecentChatsBar.setupListeners$lambda$1(RecentChatsBar.this, view, i);
             }
         });
         getListView().setOnItemLongClickListener(new RecyclerListView.OnItemLongClickListenerExtended() { // from class: com.iMe.ui.recent_chats.RecentChatsBar$setupListeners$2
-            @Override // org.telegram.p044ui.Components.RecyclerListView.OnItemLongClickListenerExtended
+            @Override // org.telegram.p043ui.Components.RecyclerListView.OnItemLongClickListenerExtended
             public boolean onItemClick(View view, int i, float f, float f2) {
                 if (view != null) {
                     RecentChatsBar.this.getDelegate().onRecentChatLongClick((HistoryDialogModel) RecentChatsBar.this.data.get(i), view);
@@ -140,7 +140,7 @@ public final class RecentChatsBar extends FrameLayout {
                 return true;
             }
 
-            @Override // org.telegram.p044ui.Components.RecyclerListView.OnItemLongClickListenerExtended
+            @Override // org.telegram.p043ui.Components.RecyclerListView.OnItemLongClickListenerExtended
             public void onMove(float f, float f2) {
                 Point point = AndroidUtilities.displaySize;
                 if (point.x > point.y) {
@@ -148,7 +148,7 @@ public final class RecentChatsBar extends FrameLayout {
                 }
             }
 
-            @Override // org.telegram.p044ui.Components.RecyclerListView.OnItemLongClickListenerExtended
+            @Override // org.telegram.p043ui.Components.RecyclerListView.OnItemLongClickListenerExtended
             public void onLongClickRelease() {
                 Point point = AndroidUtilities.displaySize;
                 if (point.x > point.y) {
@@ -170,7 +170,7 @@ public final class RecentChatsBar extends FrameLayout {
     /* renamed from: com.iMe.ui.recent_chats.RecentChatsBar$ListAdapter */
     /* loaded from: classes3.dex */
     public final class ListAdapter extends RecyclerListView.SelectionAdapter {
-        @Override // org.telegram.p044ui.Components.RecyclerListView.SelectionAdapter
+        @Override // org.telegram.p043ui.Components.RecyclerListView.SelectionAdapter
         public boolean isEnabled(RecyclerView.ViewHolder viewHolder) {
             return true;
         }

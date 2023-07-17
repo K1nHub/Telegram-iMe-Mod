@@ -4,31 +4,24 @@ import android.content.Context;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.widget.FrameLayout;
+import androidx.appcompat.widget.AppCompatImageView;
 import androidx.appcompat.widget.AppCompatTextView;
 import androidx.constraintlayout.widget.ConstraintLayout;
-import com.iMe.storage.domain.model.crypto.NetworkType;
 import com.iMe.storage.domain.model.wallet.token.TokenBalance;
-import com.iMe.storage.domain.utils.extentions.model.TokenInfoExtKt;
-import com.iMe.storage.domain.utils.system.ResourceManager;
+import com.iMe.utils.extentions.common.ImageViewExtKt;
 import com.iMe.utils.extentions.common.ViewExtKt;
 import com.iMe.utils.extentions.model.wallet.TokenBalanceExtKt;
 import java.util.List;
-import kotlin.Lazy;
-import kotlin.LazyKt__LazyJVMKt;
 import kotlin.collections.CollectionsKt__CollectionsKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
-import org.koin.core.Koin;
-import org.koin.core.component.KoinComponent;
-import org.koin.p043mp.KoinPlatformTools;
 import org.telegram.messenger.databinding.ForkRecycleItemWalletTokenBalanceBinding;
-import org.telegram.p044ui.ActionBar.Theme;
+import org.telegram.p043ui.ActionBar.Theme;
 /* compiled from: DonationBalanceView.kt */
 /* renamed from: com.iMe.ui.custom.donation.DonationBalanceView */
 /* loaded from: classes3.dex */
-public final class DonationBalanceView extends FrameLayout implements KoinComponent {
+public final class DonationBalanceView extends FrameLayout {
     private ForkRecycleItemWalletTokenBalanceBinding binding;
-    private final Lazy resourceManager$delegate;
 
     /* JADX WARN: 'this' call moved to the top of the method (can break code semantics) */
     public DonationBalanceView(Context context) {
@@ -40,36 +33,26 @@ public final class DonationBalanceView extends FrameLayout implements KoinCompon
         this(context, (i2 & 2) != 0 ? null : attributeSet, (i2 & 4) != 0 ? 0 : i);
     }
 
-    @Override // org.koin.core.component.KoinComponent
-    public Koin getKoin() {
-        return KoinComponent.DefaultImpls.getKoin(this);
-    }
-
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public DonationBalanceView(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
-        Lazy lazy;
         Intrinsics.checkNotNullParameter(context, "context");
-        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new DonationBalanceView$special$$inlined$inject$default$1(this, null, null));
-        this.resourceManager$delegate = lazy;
         ForkRecycleItemWalletTokenBalanceBinding inflate = ForkRecycleItemWalletTokenBalanceBinding.inflate(LayoutInflater.from(context));
         Intrinsics.checkNotNullExpressionValue(inflate, "inflate(LayoutInflater.from(context))");
         this.binding = inflate;
         setupView();
     }
 
-    private final ResourceManager getResourceManager() {
-        return (ResourceManager) this.resourceManager$delegate.getValue();
-    }
-
     public final void setBalance(TokenBalance balance) {
         Intrinsics.checkNotNullParameter(balance, "balance");
         ForkRecycleItemWalletTokenBalanceBinding forkRecycleItemWalletTokenBalanceBinding = this.binding;
         forkRecycleItemWalletTokenBalanceBinding.textAccountBalance.setText(TokenBalanceExtKt.getTotalBalance(balance));
-        forkRecycleItemWalletTokenBalanceBinding.imageCoinIcon.setImageResource(TokenInfoExtKt.getLogo(balance.getInfo(), NetworkType.BINANCE_SMART_CHAIN));
-        forkRecycleItemWalletTokenBalanceBinding.textAccountTitle.setText(getResourceManager().getString(balance.getInfo().getFullName()));
-        forkRecycleItemWalletTokenBalanceBinding.textAccountBalanceInDollars.setText(TokenBalanceExtKt.getDollarsBalanceText(balance, getResourceManager()));
-        forkRecycleItemWalletTokenBalanceBinding.textCoinTicker.setTicker(balance.getInfo(), getResourceManager());
+        AppCompatImageView imageCoinIcon = forkRecycleItemWalletTokenBalanceBinding.imageCoinIcon;
+        Intrinsics.checkNotNullExpressionValue(imageCoinIcon, "imageCoinIcon");
+        ImageViewExtKt.loadFrom$default(imageCoinIcon, balance.getToken().getAvatarUrl(), null, false, 6, null);
+        forkRecycleItemWalletTokenBalanceBinding.textAccountTitle.setText(balance.getToken().getName());
+        forkRecycleItemWalletTokenBalanceBinding.textAccountBalanceInDollars.setText(TokenBalanceExtKt.getDollarsBalanceText(balance));
+        forkRecycleItemWalletTokenBalanceBinding.textCoinTicker.setText(balance.getToken().getTicker());
     }
 
     public final void setupColors() {

@@ -45,7 +45,7 @@
 
     move-object/from16 v0, p1
 
-    const-string v1, "responseHeaders"
+    const-string/jumbo v1, "responseHeaders"
 
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -250,7 +250,7 @@
     goto :goto_7
 
     :cond_8
-    const-string v12, "server_max_window_bits"
+    const-string/jumbo v12, "server_max_window_bits"
 
     .line 147
     invoke-static {v2, v12, v13}, Lkotlin/text/StringsKt;->equals(Ljava/lang/String;Ljava/lang/String;Z)Z
@@ -284,7 +284,7 @@
     goto :goto_6
 
     :cond_b
-    const-string v12, "server_no_context_takeover"
+    const-string/jumbo v12, "server_no_context_takeover"
 
     .line 152
     invoke-static {v2, v12, v13}, Lkotlin/text/StringsKt;->equals(Ljava/lang/String;Ljava/lang/String;Z)Z

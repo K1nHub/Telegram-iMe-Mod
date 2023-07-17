@@ -1018,6 +1018,11 @@
 
     if-eqz v1, :cond_8
 
+    .line 442
+    iget-object v4, v1, Lorg/telegram/ui/ActionBar/BaseFragment;->fragmentView:Landroid/view/View;
+
+    if-eqz v4, :cond_8
+
     .line 443
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
@@ -1143,8 +1148,6 @@
     iget-boolean v0, p0, Lorg/telegram/ui/ActionBar/DrawerLayoutContainer;->isTouchInPreview:Z
 
     if-eqz v0, :cond_8
-
-    if-eqz v1, :cond_8
 
     .line 465
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/DrawerLayoutContainer;->parentActionBarLayout:Lorg/telegram/ui/ActionBar/INavigationLayout;

@@ -856,7 +856,7 @@
 
     move-result-object p3
 
-    const-string p6, "randomUUID().toString()"
+    const-string/jumbo p6, "randomUUID().toString()"
 
     invoke-static {p3, p6}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -1043,7 +1043,7 @@
     :cond_2
     new-instance p1, Ljava/lang/IllegalStateException;
 
-    const-string v0, "session can\'t be null on message receive"
+    const-string/jumbo v0, "session can\'t be null on message receive"
 
     invoke-direct {p1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
@@ -1183,7 +1183,7 @@
     :cond_2
     new-instance p1, Ljava/lang/IllegalStateException;
 
-    const-string v0, "session can\'t be null on message send"
+    const-string/jumbo v0, "session can\'t be null on message send"
 
     invoke-direct {p1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
@@ -1259,7 +1259,7 @@
 
     if-eqz v1, :cond_1
 
-    const-string p1, "request"
+    const-string/jumbo p1, "request"
 
     .line 249
     invoke-static {v0, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
@@ -3287,7 +3287,7 @@
 .method public final connect(Lcom/trustwallet/walletconnect/models/session/WCSession;Lcom/trustwallet/walletconnect/models/WCPeerMeta;Ljava/lang/String;Ljava/lang/String;)V
     .locals 2
 
-    const-string v0, "session"
+    const-string/jumbo v0, "session"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -3458,7 +3458,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "reason"
+    const-string/jumbo v0, "reason"
 
     invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -3506,7 +3506,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "reason"
+    const-string/jumbo v0, "reason"
 
     invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -3858,7 +3858,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "response"
+    const-string/jumbo v0, "response"
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -3932,7 +3932,7 @@
     :cond_2
     new-instance p1, Ljava/lang/IllegalStateException;
 
-    const-string p2, "session can\'t be null on connection open"
+    const-string/jumbo p2, "session can\'t be null on connection open"
 
     invoke-direct {p1, p2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 

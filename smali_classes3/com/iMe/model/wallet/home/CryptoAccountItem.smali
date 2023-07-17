@@ -16,20 +16,20 @@
 
 .field private final address:Ljava/lang/String;
 
-.field private final networkType:Lcom/iMe/storage/domain/model/crypto/NetworkType;
+.field private final networkType:Lcom/iMe/storage/domain/model/crypto/Network;
 
 .field private final user:Lorg/telegram/tgnet/TLRPC$User;
 
 
 # direct methods
-.method public constructor <init>(Lorg/telegram/tgnet/TLRPC$User;Ljava/lang/String;Lcom/iMe/storage/domain/model/crypto/NetworkType;Ljava/util/List;)V
+.method public constructor <init>(Lorg/telegram/tgnet/TLRPC$User;Ljava/lang/String;Lcom/iMe/storage/domain/model/crypto/Network;Ljava/util/List;)V
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Lorg/telegram/tgnet/TLRPC$User;",
             "Ljava/lang/String;",
-            "Lcom/iMe/storage/domain/model/crypto/NetworkType;",
+            "Lcom/iMe/storage/domain/model/crypto/Network;",
             "Ljava/util/List<",
             "Lcom/iMe/model/wallet/home/HorizontalActionButtonItem;",
             ">;)V"
@@ -62,7 +62,7 @@
     iput-object p2, p0, Lcom/iMe/model/wallet/home/CryptoAccountItem;->address:Ljava/lang/String;
 
     .line 10
-    iput-object p3, p0, Lcom/iMe/model/wallet/home/CryptoAccountItem;->networkType:Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    iput-object p3, p0, Lcom/iMe/model/wallet/home/CryptoAccountItem;->networkType:Lcom/iMe/storage/domain/model/crypto/Network;
 
     .line 11
     iput-object p4, p0, Lcom/iMe/model/wallet/home/CryptoAccountItem;->actions:Ljava/util/List;
@@ -70,7 +70,7 @@
     return-void
 .end method
 
-.method public static synthetic copy$default(Lcom/iMe/model/wallet/home/CryptoAccountItem;Lorg/telegram/tgnet/TLRPC$User;Ljava/lang/String;Lcom/iMe/storage/domain/model/crypto/NetworkType;Ljava/util/List;ILjava/lang/Object;)Lcom/iMe/model/wallet/home/CryptoAccountItem;
+.method public static synthetic copy$default(Lcom/iMe/model/wallet/home/CryptoAccountItem;Lorg/telegram/tgnet/TLRPC$User;Ljava/lang/String;Lcom/iMe/storage/domain/model/crypto/Network;Ljava/util/List;ILjava/lang/Object;)Lcom/iMe/model/wallet/home/CryptoAccountItem;
     .locals 0
 
     and-int/lit8 p6, p5, 0x1
@@ -91,7 +91,7 @@
 
     if-eqz p6, :cond_2
 
-    iget-object p3, p0, Lcom/iMe/model/wallet/home/CryptoAccountItem;->networkType:Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    iget-object p3, p0, Lcom/iMe/model/wallet/home/CryptoAccountItem;->networkType:Lcom/iMe/storage/domain/model/crypto/Network;
 
     :cond_2
     and-int/lit8 p5, p5, 0x8
@@ -101,7 +101,7 @@
     iget-object p4, p0, Lcom/iMe/model/wallet/home/CryptoAccountItem;->actions:Ljava/util/List;
 
     :cond_3
-    invoke-virtual {p0, p1, p2, p3, p4}, Lcom/iMe/model/wallet/home/CryptoAccountItem;->copy(Lorg/telegram/tgnet/TLRPC$User;Ljava/lang/String;Lcom/iMe/storage/domain/model/crypto/NetworkType;Ljava/util/List;)Lcom/iMe/model/wallet/home/CryptoAccountItem;
+    invoke-virtual {p0, p1, p2, p3, p4}, Lcom/iMe/model/wallet/home/CryptoAccountItem;->copy(Lorg/telegram/tgnet/TLRPC$User;Ljava/lang/String;Lcom/iMe/storage/domain/model/crypto/Network;Ljava/util/List;)Lcom/iMe/model/wallet/home/CryptoAccountItem;
 
     move-result-object p0
 
@@ -126,10 +126,10 @@
     return-object v0
 .end method
 
-.method public final component3()Lcom/iMe/storage/domain/model/crypto/NetworkType;
+.method public final component3()Lcom/iMe/storage/domain/model/crypto/Network;
     .locals 1
 
-    iget-object v0, p0, Lcom/iMe/model/wallet/home/CryptoAccountItem;->networkType:Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    iget-object v0, p0, Lcom/iMe/model/wallet/home/CryptoAccountItem;->networkType:Lcom/iMe/storage/domain/model/crypto/Network;
 
     return-object v0
 .end method
@@ -150,14 +150,14 @@
     return-object v0
 .end method
 
-.method public final copy(Lorg/telegram/tgnet/TLRPC$User;Ljava/lang/String;Lcom/iMe/storage/domain/model/crypto/NetworkType;Ljava/util/List;)Lcom/iMe/model/wallet/home/CryptoAccountItem;
+.method public final copy(Lorg/telegram/tgnet/TLRPC$User;Ljava/lang/String;Lcom/iMe/storage/domain/model/crypto/Network;Ljava/util/List;)Lcom/iMe/model/wallet/home/CryptoAccountItem;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Lorg/telegram/tgnet/TLRPC$User;",
             "Ljava/lang/String;",
-            "Lcom/iMe/storage/domain/model/crypto/NetworkType;",
+            "Lcom/iMe/storage/domain/model/crypto/Network;",
             "Ljava/util/List<",
             "Lcom/iMe/model/wallet/home/HorizontalActionButtonItem;",
             ">;)",
@@ -183,7 +183,7 @@
 
     new-instance v0, Lcom/iMe/model/wallet/home/CryptoAccountItem;
 
-    invoke-direct {v0, p1, p2, p3, p4}, Lcom/iMe/model/wallet/home/CryptoAccountItem;-><init>(Lorg/telegram/tgnet/TLRPC$User;Ljava/lang/String;Lcom/iMe/storage/domain/model/crypto/NetworkType;Ljava/util/List;)V
+    invoke-direct {v0, p1, p2, p3, p4}, Lcom/iMe/model/wallet/home/CryptoAccountItem;-><init>(Lorg/telegram/tgnet/TLRPC$User;Ljava/lang/String;Lcom/iMe/storage/domain/model/crypto/Network;Ljava/util/List;)V
 
     return-object v0
 .end method
@@ -235,11 +235,15 @@
     return v2
 
     :cond_3
-    iget-object v1, p0, Lcom/iMe/model/wallet/home/CryptoAccountItem;->networkType:Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    iget-object v1, p0, Lcom/iMe/model/wallet/home/CryptoAccountItem;->networkType:Lcom/iMe/storage/domain/model/crypto/Network;
 
-    iget-object v3, p1, Lcom/iMe/model/wallet/home/CryptoAccountItem;->networkType:Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    iget-object v3, p1, Lcom/iMe/model/wallet/home/CryptoAccountItem;->networkType:Lcom/iMe/storage/domain/model/crypto/Network;
 
-    if-eq v1, v3, :cond_4
+    invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_4
 
     return v2
 
@@ -286,11 +290,11 @@
     return-object v0
 .end method
 
-.method public final getNetworkType()Lcom/iMe/storage/domain/model/crypto/NetworkType;
+.method public final getNetworkType()Lcom/iMe/storage/domain/model/crypto/Network;
     .locals 1
 
     .line 10
-    iget-object v0, p0, Lcom/iMe/model/wallet/home/CryptoAccountItem;->networkType:Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    iget-object v0, p0, Lcom/iMe/model/wallet/home/CryptoAccountItem;->networkType:Lcom/iMe/storage/domain/model/crypto/Network;
 
     return-object v0
 .end method
@@ -325,9 +329,9 @@
 
     mul-int/lit8 v0, v0, 0x1f
 
-    iget-object v1, p0, Lcom/iMe/model/wallet/home/CryptoAccountItem;->networkType:Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    iget-object v1, p0, Lcom/iMe/model/wallet/home/CryptoAccountItem;->networkType:Lcom/iMe/storage/domain/model/crypto/Network;
 
-    invoke-virtual {v1}, Ljava/lang/Enum;->hashCode()I
+    invoke-virtual {v1}, Lcom/iMe/storage/domain/model/crypto/Network;->hashCode()I
 
     move-result v1
 
@@ -373,7 +377,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v1, p0, Lcom/iMe/model/wallet/home/CryptoAccountItem;->networkType:Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    iget-object v1, p0, Lcom/iMe/model/wallet/home/CryptoAccountItem;->networkType:Lcom/iMe/storage/domain/model/crypto/Network;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 

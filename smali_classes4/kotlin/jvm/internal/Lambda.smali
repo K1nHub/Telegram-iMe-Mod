@@ -56,7 +56,7 @@
 
     move-result-object v0
 
-    const-string v1, "renderLambdaToString(this)"
+    const-string/jumbo v1, "renderLambdaToString(this)"
 
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 

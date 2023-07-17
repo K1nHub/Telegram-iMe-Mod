@@ -46,14 +46,14 @@
         }
     .end annotation
 
-    .line 171
+    .line 187
     const-class p1, Lmoxy/viewstate/strategy/AddToEndSingleStrategy;
 
     const-string/jumbo v0, "setupSessionsItems"
 
     invoke-direct {p0, v0, p1}, Lmoxy/viewstate/ViewCommand;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
-    .line 173
+    .line 189
     iput-object p2, p0, Lcom/iMe/ui/wallet/crypto/wallet_connect/WalletConnectView$$State$SetupSessionsItemsCommand;->items:Ljava/util/List;
 
     return-void
@@ -64,7 +64,7 @@
 .method public apply(Lcom/iMe/ui/wallet/crypto/wallet_connect/WalletConnectView;)V
     .locals 1
 
-    .line 178
+    .line 194
     iget-object v0, p0, Lcom/iMe/ui/wallet/crypto/wallet_connect/WalletConnectView$$State$SetupSessionsItemsCommand;->items:Ljava/util/List;
 
     invoke-interface {p1, v0}, Lcom/iMe/ui/wallet/crypto/wallet_connect/WalletConnectView;->setupSessionsItems(Ljava/util/List;)V
@@ -75,7 +75,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 167
+    .line 183
     check-cast p1, Lcom/iMe/ui/wallet/crypto/wallet_connect/WalletConnectView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/wallet/crypto/wallet_connect/WalletConnectView$$State$SetupSessionsItemsCommand;->apply(Lcom/iMe/ui/wallet/crypto/wallet_connect/WalletConnectView;)V

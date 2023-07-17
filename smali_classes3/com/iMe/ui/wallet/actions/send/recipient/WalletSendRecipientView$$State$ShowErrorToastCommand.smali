@@ -51,17 +51,17 @@
         }
     .end annotation
 
-    .line 321
+    .line 337
     const-class p1, Lmoxy/viewstate/strategy/OneExecutionStateStrategy;
 
     const-string v0, "showErrorToast"
 
     invoke-direct {p0, v0, p1}, Lmoxy/viewstate/ViewCommand;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
-    .line 323
+    .line 339
     iput-object p2, p0, Lcom/iMe/ui/wallet/actions/send/recipient/WalletSendRecipientView$$State$ShowErrorToastCommand;->result:Lcom/iMe/storage/domain/model/Result$Error;
 
-    .line 324
+    .line 340
     iput-object p3, p0, Lcom/iMe/ui/wallet/actions/send/recipient/WalletSendRecipientView$$State$ShowErrorToastCommand;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     return-void
@@ -72,7 +72,7 @@
 .method public apply(Lcom/iMe/ui/wallet/actions/send/recipient/WalletSendRecipientView;)V
     .locals 2
 
-    .line 329
+    .line 345
     iget-object v0, p0, Lcom/iMe/ui/wallet/actions/send/recipient/WalletSendRecipientView$$State$ShowErrorToastCommand;->result:Lcom/iMe/storage/domain/model/Result$Error;
 
     iget-object v1, p0, Lcom/iMe/ui/wallet/actions/send/recipient/WalletSendRecipientView$$State$ShowErrorToastCommand;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
@@ -85,7 +85,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 315
+    .line 331
     check-cast p1, Lcom/iMe/ui/wallet/actions/send/recipient/WalletSendRecipientView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/wallet/actions/send/recipient/WalletSendRecipientView$$State$ShowErrorToastCommand;->apply(Lcom/iMe/ui/wallet/actions/send/recipient/WalletSendRecipientView;)V

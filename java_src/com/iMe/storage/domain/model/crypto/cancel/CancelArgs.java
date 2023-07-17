@@ -2,48 +2,47 @@ package com.iMe.storage.domain.model.crypto.cancel;
 
 import com.iMe.storage.domain.model.crypto.send.TransactionArgs;
 import com.iMe.storage.domain.model.crypto.send.TransferArgs;
-import com.iMe.storage.domain.model.wallet.token.TokenCode;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: CancelArgs.kt */
 /* loaded from: classes3.dex */
 public abstract class CancelArgs implements TransactionArgs {
-    private final TokenCode token;
+    private final String networkId;
 
-    public /* synthetic */ CancelArgs(TokenCode tokenCode, DefaultConstructorMarker defaultConstructorMarker) {
-        this(tokenCode);
+    public /* synthetic */ CancelArgs(String str, DefaultConstructorMarker defaultConstructorMarker) {
+        this(str);
     }
 
-    private CancelArgs(TokenCode tokenCode) {
-        this.token = tokenCode;
+    private CancelArgs(String str) {
+        this.networkId = str;
     }
 
-    public TokenCode getToken() {
-        return this.token;
+    public String getNetworkId() {
+        return this.networkId;
     }
 
     /* compiled from: CancelArgs.kt */
     /* loaded from: classes3.dex */
     public static final class Ethereum extends CancelArgs {
+        private final String networkId;
         private final String oldTxHash;
-        private final TokenCode token;
         private final TransferArgs.EVM transferArgs;
 
-        public static /* synthetic */ Ethereum copy$default(Ethereum ethereum, TokenCode tokenCode, String str, TransferArgs.EVM evm, int i, Object obj) {
+        public static /* synthetic */ Ethereum copy$default(Ethereum ethereum, String str, String str2, TransferArgs.EVM evm, int i, Object obj) {
             if ((i & 1) != 0) {
-                tokenCode = ethereum.getToken();
+                str = ethereum.getNetworkId();
             }
             if ((i & 2) != 0) {
-                str = ethereum.oldTxHash;
+                str2 = ethereum.oldTxHash;
             }
             if ((i & 4) != 0) {
                 evm = ethereum.transferArgs;
             }
-            return ethereum.copy(tokenCode, str, evm);
+            return ethereum.copy(str, str2, evm);
         }
 
-        public final TokenCode component1() {
-            return getToken();
+        public final String component1() {
+            return getNetworkId();
         }
 
         public final String component2() {
@@ -54,11 +53,11 @@ public abstract class CancelArgs implements TransactionArgs {
             return this.transferArgs;
         }
 
-        public final Ethereum copy(TokenCode token, String oldTxHash, TransferArgs.EVM transferArgs) {
-            Intrinsics.checkNotNullParameter(token, "token");
+        public final Ethereum copy(String networkId, String oldTxHash, TransferArgs.EVM transferArgs) {
+            Intrinsics.checkNotNullParameter(networkId, "networkId");
             Intrinsics.checkNotNullParameter(oldTxHash, "oldTxHash");
             Intrinsics.checkNotNullParameter(transferArgs, "transferArgs");
-            return new Ethereum(token, oldTxHash, transferArgs);
+            return new Ethereum(networkId, oldTxHash, transferArgs);
         }
 
         public boolean equals(Object obj) {
@@ -67,22 +66,22 @@ public abstract class CancelArgs implements TransactionArgs {
             }
             if (obj instanceof Ethereum) {
                 Ethereum ethereum = (Ethereum) obj;
-                return getToken() == ethereum.getToken() && Intrinsics.areEqual(this.oldTxHash, ethereum.oldTxHash) && Intrinsics.areEqual(this.transferArgs, ethereum.transferArgs);
+                return Intrinsics.areEqual(getNetworkId(), ethereum.getNetworkId()) && Intrinsics.areEqual(this.oldTxHash, ethereum.oldTxHash) && Intrinsics.areEqual(this.transferArgs, ethereum.transferArgs);
             }
             return false;
         }
 
         public int hashCode() {
-            return (((getToken().hashCode() * 31) + this.oldTxHash.hashCode()) * 31) + this.transferArgs.hashCode();
+            return (((getNetworkId().hashCode() * 31) + this.oldTxHash.hashCode()) * 31) + this.transferArgs.hashCode();
         }
 
         public String toString() {
-            return "Ethereum(token=" + getToken() + ", oldTxHash=" + this.oldTxHash + ", transferArgs=" + this.transferArgs + ')';
+            return "Ethereum(networkId=" + getNetworkId() + ", oldTxHash=" + this.oldTxHash + ", transferArgs=" + this.transferArgs + ')';
         }
 
         @Override // com.iMe.storage.domain.model.crypto.cancel.CancelArgs
-        public TokenCode getToken() {
-            return this.token;
+        public String getNetworkId() {
+            return this.networkId;
         }
 
         public final String getOldTxHash() {
@@ -94,12 +93,12 @@ public abstract class CancelArgs implements TransactionArgs {
         }
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public Ethereum(TokenCode token, String oldTxHash, TransferArgs.EVM transferArgs) {
-            super(token, null);
-            Intrinsics.checkNotNullParameter(token, "token");
+        public Ethereum(String networkId, String oldTxHash, TransferArgs.EVM transferArgs) {
+            super(networkId, null);
+            Intrinsics.checkNotNullParameter(networkId, "networkId");
             Intrinsics.checkNotNullParameter(oldTxHash, "oldTxHash");
             Intrinsics.checkNotNullParameter(transferArgs, "transferArgs");
-            this.token = token;
+            this.networkId = networkId;
             this.oldTxHash = oldTxHash;
             this.transferArgs = transferArgs;
         }

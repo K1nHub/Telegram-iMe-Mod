@@ -30,16 +30,16 @@
 
     invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 12
+    .line 10
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 13
+    .line 11
     iput-object p1, p0, Lcom/iMe/model/wallet/notification/NotificationItem;->notification:Lcom/iMe/storage/domain/model/notification/Notification;
 
-    .line 14
+    .line 12
     iput-object p2, p0, Lcom/iMe/model/wallet/notification/NotificationItem;->message:Ljava/lang/String;
 
-    .line 15
+    .line 13
     iput-object p3, p0, Lcom/iMe/model/wallet/notification/NotificationItem;->category:Ljava/lang/String;
 
     return-void
@@ -190,7 +190,7 @@
 .method public final getCategory()Ljava/lang/String;
     .locals 1
 
-    .line 15
+    .line 13
     iget-object v0, p0, Lcom/iMe/model/wallet/notification/NotificationItem;->category:Ljava/lang/String;
 
     return-object v0
@@ -199,10 +199,10 @@
 .method public getLinkedText()Ljava/lang/String;
     .locals 2
 
-    .line 29
+    .line 27
     iget-object v0, p0, Lcom/iMe/model/wallet/notification/NotificationItem;->notification:Lcom/iMe/storage/domain/model/notification/Notification;
 
-    .line 30
+    .line 28
     instance-of v1, v0, Lcom/iMe/storage/domain/model/notification/Notification$CryptoTransfer$In;
 
     if-eqz v1, :cond_0
@@ -215,7 +215,7 @@
 
     goto :goto_0
 
-    .line 31
+    .line 29
     :cond_0
     instance-of v1, v0, Lcom/iMe/storage/domain/model/notification/Notification$CryptoTransfer$Out;
 
@@ -229,7 +229,7 @@
 
     goto :goto_0
 
-    .line 32
+    .line 30
     :cond_1
     instance-of v1, v0, Lcom/iMe/storage/domain/model/notification/Notification$Donation$In;
 
@@ -243,7 +243,7 @@
 
     goto :goto_0
 
-    .line 33
+    .line 31
     :cond_2
     instance-of v1, v0, Lcom/iMe/storage/domain/model/notification/Notification$Donation$Out;
 
@@ -267,7 +267,7 @@
 .method public getLinkedTextType()Lcom/iMe/model/wallet/transaction/LinkedTextType;
     .locals 1
 
-    .line 58
+    .line 46
     iget-object v0, p0, Lcom/iMe/model/wallet/notification/NotificationItem;->notification:Lcom/iMe/storage/domain/model/notification/Notification;
 
     invoke-static {v0}, Lcom/iMe/utils/extentions/model/wallet/NotificationExtKt;->isWithAddressType(Lcom/iMe/storage/domain/model/notification/Notification;)Z
@@ -280,7 +280,7 @@
 
     goto :goto_0
 
-    .line 59
+    .line 47
     :cond_0
     sget-object v0, Lcom/iMe/model/wallet/transaction/LinkedTextType;->NOTING:Lcom/iMe/model/wallet/transaction/LinkedTextType;
 
@@ -291,7 +291,7 @@
 .method public final getMessage()Ljava/lang/String;
     .locals 1
 
-    .line 14
+    .line 12
     iget-object v0, p0, Lcom/iMe/model/wallet/notification/NotificationItem;->message:Ljava/lang/String;
 
     return-object v0
@@ -304,19 +304,19 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 26
+    .line 24
     iget-object p1, p0, Lcom/iMe/model/wallet/notification/NotificationItem;->message:Ljava/lang/String;
 
     return-object p1
 .end method
 
-.method public getNetworkType()Lcom/iMe/storage/domain/model/crypto/NetworkType;
+.method public getNetworkId()Ljava/lang/String;
     .locals 1
 
-    .line 62
+    .line 50
     iget-object v0, p0, Lcom/iMe/model/wallet/notification/NotificationItem;->notification:Lcom/iMe/storage/domain/model/notification/Notification;
 
-    invoke-virtual {v0}, Lcom/iMe/storage/domain/model/notification/Notification;->getNetworkType()Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    invoke-virtual {v0}, Lcom/iMe/storage/domain/model/notification/Notification;->getNetworkId()Ljava/lang/String;
 
     move-result-object v0
 
@@ -326,7 +326,7 @@
 .method public final getNotification()Lcom/iMe/storage/domain/model/notification/Notification;
     .locals 1
 
-    .line 13
+    .line 11
     iget-object v0, p0, Lcom/iMe/model/wallet/notification/NotificationItem;->notification:Lcom/iMe/storage/domain/model/notification/Notification;
 
     return-object v0
@@ -335,10 +335,10 @@
 .method public getRecipientAddress()Ljava/lang/String;
     .locals 2
 
-    .line 39
+    .line 36
     iget-object v0, p0, Lcom/iMe/model/wallet/notification/NotificationItem;->notification:Lcom/iMe/storage/domain/model/notification/Notification;
 
-    .line 40
+    .line 37
     instance-of v1, v0, Lcom/iMe/storage/domain/model/notification/Notification$CryptoTransfer$In;
 
     if-eqz v1, :cond_0
@@ -351,7 +351,7 @@
 
     goto :goto_0
 
-    .line 41
+    .line 38
     :cond_0
     instance-of v1, v0, Lcom/iMe/storage/domain/model/notification/Notification$CryptoTransfer$Out;
 
@@ -365,7 +365,7 @@
 
     goto :goto_0
 
-    .line 42
+    .line 39
     :cond_1
     instance-of v1, v0, Lcom/iMe/storage/domain/model/notification/Notification$Donation$In;
 
@@ -379,7 +379,7 @@
 
     goto :goto_0
 
-    .line 43
+    .line 40
     :cond_2
     instance-of v1, v0, Lcom/iMe/storage/domain/model/notification/Notification$Donation$Out;
 
@@ -395,75 +395,6 @@
 
     :cond_3
     const-string v0, ""
-
-    :goto_0
-    return-object v0
-.end method
-
-.method public getTokenCode()Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
-    .locals 2
-
-    .line 48
-    iget-object v0, p0, Lcom/iMe/model/wallet/notification/NotificationItem;->notification:Lcom/iMe/storage/domain/model/notification/Notification;
-
-    .line 49
-    instance-of v1, v0, Lcom/iMe/storage/domain/model/notification/Notification$CryptoTransfer;
-
-    if-eqz v1, :cond_0
-
-    check-cast v0, Lcom/iMe/storage/domain/model/notification/Notification$CryptoTransfer;
-
-    invoke-virtual {v0}, Lcom/iMe/storage/domain/model/notification/Notification$CryptoTransfer;->getTokenCode()Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
-
-    move-result-object v0
-
-    goto :goto_0
-
-    .line 50
-    :cond_0
-    instance-of v1, v0, Lcom/iMe/storage/domain/model/notification/Notification$Donation;
-
-    if-eqz v1, :cond_1
-
-    check-cast v0, Lcom/iMe/storage/domain/model/notification/Notification$Donation;
-
-    invoke-virtual {v0}, Lcom/iMe/storage/domain/model/notification/Notification$Donation;->getTokenCode()Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
-
-    move-result-object v0
-
-    goto :goto_0
-
-    .line 51
-    :cond_1
-    instance-of v1, v0, Lcom/iMe/storage/domain/model/notification/Notification$Simplex;
-
-    if-eqz v1, :cond_2
-
-    check-cast v0, Lcom/iMe/storage/domain/model/notification/Notification$Simplex;
-
-    invoke-virtual {v0}, Lcom/iMe/storage/domain/model/notification/Notification$Simplex;->getTokenCode()Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
-
-    move-result-object v0
-
-    goto :goto_0
-
-    .line 52
-    :cond_2
-    instance-of v1, v0, Lcom/iMe/storage/domain/model/notification/Notification$Approve;
-
-    if-eqz v1, :cond_3
-
-    check-cast v0, Lcom/iMe/storage/domain/model/notification/Notification$Approve;
-
-    invoke-virtual {v0}, Lcom/iMe/storage/domain/model/notification/Notification$Approve;->getTokenCode()Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
-
-    move-result-object v0
-
-    goto :goto_0
-
-    .line 53
-    :cond_3
-    sget-object v0, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;->UNKNOWN:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
 
     :goto_0
     return-object v0
@@ -504,7 +435,7 @@
 .method public final isUnsupported()Z
     .locals 1
 
-    .line 20
+    .line 18
     iget-object v0, p0, Lcom/iMe/model/wallet/notification/NotificationItem;->notification:Lcom/iMe/storage/domain/model/notification/Notification;
 
     instance-of v0, v0, Lcom/iMe/storage/domain/model/notification/Notification$Unsupported;
@@ -519,7 +450,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 15
+    .line 13
     iput-object p1, p0, Lcom/iMe/model/wallet/notification/NotificationItem;->category:Ljava/lang/String;
 
     return-void
@@ -532,7 +463,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 14
+    .line 12
     iput-object p1, p0, Lcom/iMe/model/wallet/notification/NotificationItem;->message:Ljava/lang/String;
 
     return-void

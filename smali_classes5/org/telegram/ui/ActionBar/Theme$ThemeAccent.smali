@@ -74,24 +74,24 @@
 .method constructor <init>()V
     .locals 1
 
-    .line 1463
+    .line 1454
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     const/16 v0, 0x2d
 
-    .line 1445
+    .line 1436
     iput v0, p0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->backgroundRotation:I
 
     const-string v0, ""
 
-    .line 1446
+    .line 1437
     iput-object v0, p0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->patternSlug:Ljava/lang/String;
 
     const/4 v0, 0x3
 
     new-array v0, v0, [F
 
-    .line 1818
+    .line 1809
     iput-object v0, p0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->tempHSV:[F
 
     return-void
@@ -112,13 +112,13 @@
 
     move v5, v4
 
-    .line 1889
+    .line 1880
     :goto_0
     array-length v6, p2
 
     if-ge v1, v6, :cond_1
 
-    .line 1890
+    .line 1881
     aget v6, p2, v1
 
     invoke-virtual {p1, v6}, Landroid/util/SparseIntArray;->indexOfKey(I)I
@@ -129,7 +129,7 @@
 
     goto :goto_1
 
-    .line 1894
+    .line 1885
     :cond_0
     :try_start_0
     aget v6, p2, v1
@@ -138,21 +138,21 @@
 
     move-result v6
 
-    .line 1895
+    .line 1886
     invoke-static {v6}, Landroid/graphics/Color;->red(I)I
 
     move-result v7
 
     add-int/2addr v3, v7
 
-    .line 1896
+    .line 1887
     invoke-static {v6}, Landroid/graphics/Color;->green(I)I
 
     move-result v7
 
     add-int/2addr v4, v7
 
-    .line 1897
+    .line 1888
     invoke-static {v6}, Landroid/graphics/Color;->blue(I)I
 
     move-result v6
@@ -177,7 +177,7 @@
     :cond_2
     const/16 p1, 0xff
 
-    .line 1904
+    .line 1895
     div-int/2addr v3, v2
 
     div-int/2addr v4, v2
@@ -194,22 +194,22 @@
 .method private bubbleSelectedOverlay(II)I
     .locals 4
 
-    .line 1833
+    .line 1824
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->tempHSV:[F
 
     invoke-static {p2, v0}, Landroid/graphics/Color;->colorToHSV(I[F)V
 
-    .line 1834
+    .line 1825
     iget-object p2, p0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->tempHSV:[F
 
     const/4 v0, 0x0
 
     aget v1, p2, v0
 
-    .line 1835
+    .line 1826
     invoke-static {p1, p2}, Landroid/graphics/Color;->colorToHSV(I[F)V
 
-    .line 1836
+    .line 1827
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->tempHSV:[F
 
     const/4 p2, 0x1
@@ -222,10 +222,10 @@
 
     if-gtz v2, :cond_0
 
-    .line 1837
+    .line 1828
     aput v1, p1, v0
 
-    .line 1839
+    .line 1830
     :cond_0
     aget v0, p1, p2
 
@@ -245,7 +245,7 @@
 
     aput v0, p1, p2
 
-    .line 1840
+    .line 1831
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->tempHSV:[F
 
     const/4 p2, 0x2
@@ -268,7 +268,7 @@
 
     const/16 p1, 0x1e
 
-    .line 1841
+    .line 1832
     iget-object p2, p0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->tempHSV:[F
 
     invoke-static {p1, p2}, Landroid/graphics/Color;->HSVToColor(I[F)I
@@ -281,12 +281,12 @@
 .method private getHue(I)F
     .locals 1
 
-    .line 1829
+    .line 1820
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->tempHSV:[F
 
     invoke-static {p1, v0}, Landroid/graphics/Color;->colorToHSV(I[F)V
 
-    .line 1830
+    .line 1821
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->tempHSV:[F
 
     const/4 v0, 0x0
@@ -301,7 +301,7 @@
 
     const/high16 v0, 0x3e800000    # 0.25f
 
-    .line 1866
+    .line 1857
     invoke-static {p1, p2, v0}, Landroidx/core/graphics/ColorUtils;->blendARGB(IIF)I
 
     move-result p1
@@ -310,7 +310,7 @@
 
     invoke-static {p1, p2}, Landroid/graphics/Color;->colorToHSV(I[F)V
 
-    .line 1867
+    .line 1858
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->tempHSV:[F
 
     const/4 p2, 0x1
@@ -335,7 +335,7 @@
 
     aput v0, p1, p2
 
-    .line 1868
+    .line 1859
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->tempHSV:[F
 
     const/4 p2, 0x2
@@ -364,7 +364,7 @@
 
     const/16 p1, 0x33
 
-    .line 1869
+    .line 1860
     iget-object p2, p0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->tempHSV:[F
 
     invoke-static {p1, p2}, Landroid/graphics/Color;->HSVToColor(I[F)I
@@ -383,13 +383,13 @@
 
     return p1
 
-    .line 1875
+    .line 1866
     :cond_0
     iget-object p3, p0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->tempHSV:[F
 
     invoke-static {p2, p3}, Landroid/graphics/Color;->colorToHSV(I[F)V
 
-    .line 1876
+    .line 1867
     iget-object p2, p0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->tempHSV:[F
 
     const/4 p3, 0x1
@@ -422,7 +422,7 @@
 
     goto :goto_0
 
-    .line 1880
+    .line 1871
     :cond_1
     aget p1, p2, v2
 
@@ -436,7 +436,7 @@
 
     aput p1, p2, v2
 
-    .line 1881
+    .line 1872
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->tempHSV:[F
 
     aget p2, p1, p3
@@ -453,17 +453,17 @@
 
     goto :goto_1
 
-    .line 1877
+    .line 1868
     :cond_2
     :goto_0
     aput p1, p2, v2
 
     const p1, 0x3e4ccccd    # 0.2f
 
-    .line 1878
+    .line 1869
     aput p1, p2, p3
 
-    .line 1883
+    .line 1874
     :goto_1
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->tempHSV:[F
 
@@ -481,7 +481,7 @@
 
     const/16 p1, 0x5a
 
-    .line 1884
+    .line 1875
     iget-object p2, p0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->tempHSV:[F
 
     invoke-static {p1, p2}, Landroid/graphics/Color;->HSVToColor(I[F)I
@@ -494,22 +494,22 @@
 .method private textSelectionBackground(ZII)I
     .locals 4
 
-    .line 1844
+    .line 1835
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->tempHSV:[F
 
     invoke-static {p3, p1}, Landroid/graphics/Color;->colorToHSV(I[F)V
 
-    .line 1845
+    .line 1836
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->tempHSV:[F
 
     const/4 p3, 0x0
 
     aget v0, p1, p3
 
-    .line 1846
+    .line 1837
     invoke-static {p2, p1}, Landroid/graphics/Color;->colorToHSV(I[F)V
 
-    .line 1847
+    .line 1838
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->tempHSV:[F
 
     const/4 p2, 0x1
@@ -538,11 +538,11 @@
 
     if-gez v1, :cond_1
 
-    .line 1848
+    .line 1839
     :cond_0
     aput v0, p1, p3
 
-    .line 1850
+    .line 1841
     :cond_1
     aget p3, p1, p2
 
@@ -578,7 +578,7 @@
 
     aput p3, p1, p2
 
-    .line 1851
+    .line 1842
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->tempHSV:[F
 
     aget p2, p1, v0
@@ -599,7 +599,7 @@
 
     const/16 p1, 0x50
 
-    .line 1852
+    .line 1843
     iget-object p2, p0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->tempHSV:[F
 
     invoke-static {p1, p2}, Landroid/graphics/Color;->HSVToColor(I[F)I
@@ -612,22 +612,22 @@
 .method private textSelectionHandle(II)I
     .locals 6
 
-    .line 1855
+    .line 1846
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->tempHSV:[F
 
     invoke-static {p2, v0}, Landroid/graphics/Color;->colorToHSV(I[F)V
 
-    .line 1856
+    .line 1847
     iget-object p2, p0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->tempHSV:[F
 
     const/4 v0, 0x0
 
     aget v1, p2, v0
 
-    .line 1857
+    .line 1848
     invoke-static {p1, p2}, Landroid/graphics/Color;->colorToHSV(I[F)V
 
-    .line 1858
+    .line 1849
     iget-object p2, p0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->tempHSV:[F
 
     const/4 v2, 0x1
@@ -656,11 +656,11 @@
 
     if-gez v3, :cond_1
 
-    .line 1859
+    .line 1850
     :cond_0
     aput v1, p2, v0
 
-    .line 1861
+    .line 1852
     :cond_1
     aget v0, p2, v2
 
@@ -680,7 +680,7 @@
 
     aput v0, p2, v2
 
-    .line 1862
+    .line 1853
     iget-object p2, p0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->tempHSV:[F
 
     const/4 v0, 0x2
@@ -717,7 +717,7 @@
 
     const/16 p2, 0xff
 
-    .line 1863
+    .line 1854
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->tempHSV:[F
 
     invoke-static {p2, v0}, Landroid/graphics/Color;->HSVToColor(I[F)I
@@ -744,38 +744,38 @@
 
     const/4 v3, 0x1
 
-    .line 1498
+    .line 1489
     invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->access$900(I)[F
 
     move-result-object v4
 
     const/4 v5, 0x2
 
-    .line 1499
+    .line 1490
     invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->access$900(I)[F
 
     move-result-object v6
 
-    .line 1501
+    .line 1492
     iget-object v7, v0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->parentTheme:Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;
 
     iget v7, v7, Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;->accentBaseColor:I
 
     invoke-static {v7, v4}, Landroid/graphics/Color;->colorToHSV(I[F)V
 
-    .line 1502
+    .line 1493
     iget v7, v0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->accentColor:I
 
     invoke-static {v7, v6}, Landroid/graphics/Color;->colorToHSV(I[F)V
 
-    .line 1503
+    .line 1494
     iget-object v7, v0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->parentTheme:Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;
 
     invoke-virtual {v7}, Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;->isDark()Z
 
     move-result v7
 
-    .line 1505
+    .line 1496
     iget v8, v0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->accentColor:I
 
     iget-object v9, v0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->parentTheme:Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;
@@ -795,7 +795,7 @@
     :cond_0
     move v8, v11
 
-    .line 1506
+    .line 1497
     :goto_0
     invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->access$1000()[I
 
@@ -805,7 +805,7 @@
 
     if-ge v8, v9, :cond_5
 
-    .line 1508
+    .line 1499
     invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->access$1100()Ljava/util/HashSet;
 
     move-result-object v9
@@ -822,7 +822,7 @@
 
     goto :goto_2
 
-    .line 1511
+    .line 1502
     :cond_1
     invoke-virtual {v1, v8}, Landroid/util/SparseIntArray;->indexOfKey(I)I
 
@@ -830,7 +830,7 @@
 
     if-gez v9, :cond_3
 
-    .line 1514
+    .line 1505
     invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->access$100()Landroid/util/SparseIntArray;
 
     move-result-object v9
@@ -841,7 +841,7 @@
 
     if-ltz v9, :cond_2
 
-    .line 1515
+    .line 1506
     invoke-virtual {v1, v9}, Landroid/util/SparseIntArray;->indexOfKey(I)I
 
     move-result v9
@@ -850,7 +850,7 @@
 
     goto :goto_2
 
-    .line 1518
+    .line 1509
     :cond_2
     invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->access$1000()[I
 
@@ -860,13 +860,13 @@
 
     goto :goto_1
 
-    .line 1520
+    .line 1511
     :cond_3
     invoke-virtual {v1, v9}, Landroid/util/SparseIntArray;->valueAt(I)I
 
     move-result v9
 
-    .line 1522
+    .line 1513
     :goto_1
     invoke-static {v4, v6, v9, v7}, Lorg/telegram/ui/ActionBar/Theme;->changeColorAccent([F[FIZ)I
 
@@ -874,7 +874,7 @@
 
     if-eq v12, v9, :cond_4
 
-    .line 1524
+    .line 1515
     invoke-virtual {v2, v8, v12}, Landroid/util/SparseIntArray;->put(II)V
 
     :cond_4
@@ -883,7 +883,7 @@
 
     goto :goto_0
 
-    .line 1528
+    .line 1519
     :cond_5
     iget v8, v0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->myMessagesAccentColor:I
 
@@ -891,7 +891,7 @@
 
     if-nez v8, :cond_6
 
-    .line 1529
+    .line 1520
     iget v12, v0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->accentColor:I
 
     if-eqz v12, :cond_d
@@ -905,11 +905,11 @@
 
     goto :goto_3
 
-    .line 1530
+    .line 1521
     :cond_7
     iget v8, v0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->accentColor:I
 
-    .line 1531
+    .line 1522
     :goto_3
     sget v12, Lorg/telegram/ui/ActionBar/Theme;->key_chat_outBubble:I
 
@@ -919,37 +919,37 @@
 
     if-nez v13, :cond_8
 
-    .line 1533
+    .line 1524
     invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->access$1000()[I
 
     move-result-object v13
 
     aget v13, v13, v12
 
-    .line 1535
+    .line 1526
     :cond_8
     invoke-static {v4, v6, v13, v7}, Lorg/telegram/ui/ActionBar/Theme;->changeColorAccent([F[FIZ)I
 
     move-result v12
 
-    .line 1536
+    .line 1527
     invoke-static {v8, v12}, Lorg/telegram/messenger/AndroidUtilities;->getColorDistance(II)I
 
     move-result v12
 
-    .line 1537
+    .line 1528
     iget v14, v0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->myMessagesGradientAccentColor1:I
 
     invoke-static {v8, v14}, Lorg/telegram/messenger/AndroidUtilities;->getColorDistance(II)I
 
     move-result v14
 
-    .line 1540
+    .line 1531
     iget v15, v0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->myMessagesGradientAccentColor2:I
 
     if-eqz v15, :cond_b
 
-    .line 1541
+    .line 1532
     iget v15, v0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->myMessagesAccentColor:I
 
     iget v5, v0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->myMessagesGradientAccentColor1:I
@@ -958,24 +958,24 @@
 
     move-result v5
 
-    .line 1542
+    .line 1533
     iget v15, v0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->myMessagesGradientAccentColor2:I
 
     invoke-static {v5, v15}, Lorg/telegram/messenger/AndroidUtilities;->getAverageColor(II)I
 
     move-result v5
 
-    .line 1543
+    .line 1534
     iget v15, v0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->myMessagesGradientAccentColor3:I
 
     if-eqz v15, :cond_9
 
-    .line 1544
+    .line 1535
     invoke-static {v5, v15}, Lorg/telegram/messenger/AndroidUtilities;->getAverageColor(II)I
 
     move-result v5
 
-    .line 1546
+    .line 1537
     :cond_9
     invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->computePerceivedBrightness(I)F
 
@@ -994,7 +994,7 @@
 
     goto :goto_4
 
-    .line 1548
+    .line 1539
     :cond_b
     iget v5, v0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->myMessagesAccentColor:I
 
@@ -1020,7 +1020,7 @@
     :cond_c
     move v5, v11
 
-    .line 1555
+    .line 1546
     :goto_5
     invoke-static {v4, v13, v8}, Lorg/telegram/ui/ActionBar/Theme;->access$1300([FII)I
 
@@ -1034,7 +1034,7 @@
     :goto_6
     if-eqz v8, :cond_10
 
-    .line 1557
+    .line 1548
     iget-object v12, v0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->parentTheme:Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;
 
     iget v12, v12, Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;->accentBaseColor:I
@@ -1061,27 +1061,27 @@
     :goto_7
     if-nez v12, :cond_11
 
-    .line 1558
+    .line 1549
     iget v13, v0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->accentColor2:I
 
     if-eqz v13, :cond_1a
 
-    .line 1559
+    .line 1550
     :cond_11
     iget v13, v0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->accentColor2:I
 
     if-eqz v13, :cond_12
 
-    .line 1560
+    .line 1551
     invoke-static {v13, v6}, Landroid/graphics/Color;->colorToHSV(I[F)V
 
     goto :goto_8
 
-    .line 1562
+    .line 1553
     :cond_12
     invoke-static {v8, v6}, Landroid/graphics/Color;->colorToHSV(I[F)V
 
-    .line 1565
+    .line 1556
     :goto_8
     sget v13, Lorg/telegram/ui/ActionBar/Theme;->myMessagesStartIndex:I
 
@@ -1090,14 +1090,14 @@
 
     if-ge v13, v14, :cond_16
 
-    .line 1566
+    .line 1557
     invoke-virtual {v1, v13}, Landroid/util/SparseIntArray;->indexOfKey(I)I
 
     move-result v14
 
     if-gez v14, :cond_14
 
-    .line 1569
+    .line 1560
     invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->access$100()Landroid/util/SparseIntArray;
 
     move-result-object v14
@@ -1108,7 +1108,7 @@
 
     if-ltz v14, :cond_13
 
-    .line 1570
+    .line 1561
     invoke-virtual {v1, v14, v10}, Landroid/util/SparseIntArray;->get(II)I
 
     move-result v14
@@ -1117,7 +1117,7 @@
 
     goto :goto_b
 
-    .line 1573
+    .line 1564
     :cond_13
     invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->access$1000()[I
 
@@ -1127,13 +1127,13 @@
 
     goto :goto_a
 
-    .line 1575
+    .line 1566
     :cond_14
     invoke-virtual {v1, v14}, Landroid/util/SparseIntArray;->valueAt(I)I
 
     move-result v14
 
-    .line 1577
+    .line 1568
     :goto_a
     invoke-static {v4, v6, v14, v7}, Lorg/telegram/ui/ActionBar/Theme;->changeColorAccent([F[FIZ)I
 
@@ -1141,7 +1141,7 @@
 
     if-eq v15, v14, :cond_15
 
-    .line 1579
+    .line 1570
     invoke-virtual {v2, v13, v15}, Landroid/util/SparseIntArray;->put(II)V
 
     :cond_15
@@ -1153,10 +1153,10 @@
     :cond_16
     if-eqz v12, :cond_1a
 
-    .line 1584
+    .line 1575
     invoke-static {v8, v6}, Landroid/graphics/Color;->colorToHSV(I[F)V
 
-    .line 1585
+    .line 1576
     sget v8, Lorg/telegram/ui/ActionBar/Theme;->myMessagesBubblesStartIndex:I
 
     :goto_c
@@ -1164,14 +1164,14 @@
 
     if-ge v8, v12, :cond_1a
 
-    .line 1586
+    .line 1577
     invoke-virtual {v1, v8}, Landroid/util/SparseIntArray;->indexOfKey(I)I
 
     move-result v12
 
     if-gez v12, :cond_18
 
-    .line 1589
+    .line 1580
     invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->access$100()Landroid/util/SparseIntArray;
 
     move-result-object v12
@@ -1182,7 +1182,7 @@
 
     if-ltz v12, :cond_17
 
-    .line 1590
+    .line 1581
     invoke-virtual {v1, v12, v10}, Landroid/util/SparseIntArray;->get(II)I
 
     move-result v12
@@ -1191,7 +1191,7 @@
 
     goto :goto_e
 
-    .line 1593
+    .line 1584
     :cond_17
     invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->access$1000()[I
 
@@ -1201,13 +1201,13 @@
 
     goto :goto_d
 
-    .line 1595
+    .line 1586
     :cond_18
     invoke-virtual {v1, v12}, Landroid/util/SparseIntArray;->valueAt(I)I
 
     move-result v12
 
-    .line 1597
+    .line 1588
     :goto_d
     invoke-static {v4, v6, v12, v7}, Lorg/telegram/ui/ActionBar/Theme;->changeColorAccent([F[FIZ)I
 
@@ -1215,7 +1215,7 @@
 
     if-eq v13, v12, :cond_19
 
-    .line 1599
+    .line 1590
     invoke-virtual {v2, v8, v13}, Landroid/util/SparseIntArray;->put(II)V
 
     :cond_19
@@ -1227,41 +1227,41 @@
     :cond_1a
     if-nez v5, :cond_20
 
-    .line 1605
+    .line 1596
     iget v1, v0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->myMessagesGradientAccentColor1:I
 
     if-eqz v1, :cond_20
 
-    .line 1610
+    .line 1601
     iget v4, v0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->myMessagesGradientAccentColor2:I
 
     if-eqz v4, :cond_1d
 
-    .line 1611
+    .line 1602
     iget v4, v0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->myMessagesAccentColor:I
 
     invoke-static {v4, v1}, Lorg/telegram/messenger/AndroidUtilities;->getAverageColor(II)I
 
     move-result v1
 
-    .line 1612
+    .line 1603
     iget v4, v0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->myMessagesGradientAccentColor2:I
 
     invoke-static {v1, v4}, Lorg/telegram/messenger/AndroidUtilities;->getAverageColor(II)I
 
     move-result v1
 
-    .line 1613
+    .line 1604
     iget v4, v0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->myMessagesGradientAccentColor3:I
 
     if-eqz v4, :cond_1b
 
-    .line 1614
+    .line 1605
     invoke-static {v1, v4}, Lorg/telegram/messenger/AndroidUtilities;->getAverageColor(II)I
 
     move-result v1
 
-    .line 1616
+    .line 1607
     :cond_1b
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->computePerceivedBrightness(I)F
 
@@ -1280,7 +1280,7 @@
 
     goto :goto_f
 
-    .line 1618
+    .line 1609
     :cond_1d
     iget v4, v0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->myMessagesAccentColor:I
 
@@ -1306,287 +1306,287 @@
 
     move v1, v10
 
-    .line 1630
+    .line 1621
     :goto_10
     iget v8, v0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->accentColor2:I
 
     if-nez v8, :cond_1f
 
-    .line 1631
+    .line 1622
     sget v8, Lorg/telegram/ui/ActionBar/Theme;->key_chat_outAudioProgress:I
 
     invoke-virtual {v2, v8, v6}, Landroid/util/SparseIntArray;->put(II)V
 
-    .line 1632
+    .line 1623
     sget v8, Lorg/telegram/ui/ActionBar/Theme;->key_chat_outAudioSelectedProgress:I
 
     invoke-virtual {v2, v8, v6}, Landroid/util/SparseIntArray;->put(II)V
 
-    .line 1633
+    .line 1624
     sget v8, Lorg/telegram/ui/ActionBar/Theme;->key_chat_outAudioSeekbar:I
 
     invoke-virtual {v2, v8, v6}, Landroid/util/SparseIntArray;->put(II)V
 
-    .line 1634
+    .line 1625
     sget v8, Lorg/telegram/ui/ActionBar/Theme;->key_chat_outAudioCacheSeekbar:I
 
     invoke-virtual {v2, v8, v6}, Landroid/util/SparseIntArray;->put(II)V
 
-    .line 1635
+    .line 1626
     sget v8, Lorg/telegram/ui/ActionBar/Theme;->key_chat_outAudioSeekbarSelected:I
 
     invoke-virtual {v2, v8, v6}, Landroid/util/SparseIntArray;->put(II)V
 
-    .line 1636
+    .line 1627
     sget v8, Lorg/telegram/ui/ActionBar/Theme;->key_chat_outAudioSeekbarFill:I
 
     invoke-virtual {v2, v8, v1}, Landroid/util/SparseIntArray;->put(II)V
 
-    .line 1638
+    .line 1629
     sget v8, Lorg/telegram/ui/ActionBar/Theme;->key_chat_outVoiceSeekbar:I
 
     invoke-virtual {v2, v8, v6}, Landroid/util/SparseIntArray;->put(II)V
 
-    .line 1639
+    .line 1630
     sget v8, Lorg/telegram/ui/ActionBar/Theme;->key_chat_outVoiceSeekbarSelected:I
 
     invoke-virtual {v2, v8, v6}, Landroid/util/SparseIntArray;->put(II)V
 
-    .line 1640
+    .line 1631
     sget v6, Lorg/telegram/ui/ActionBar/Theme;->key_chat_outVoiceSeekbarFill:I
 
     invoke-virtual {v2, v6, v1}, Landroid/util/SparseIntArray;->put(II)V
 
-    .line 1642
+    .line 1633
     sget v6, Lorg/telegram/ui/ActionBar/Theme;->key_chat_messageLinkOut:I
 
     invoke-virtual {v2, v6, v1}, Landroid/util/SparseIntArray;->put(II)V
 
-    .line 1643
+    .line 1634
     sget v6, Lorg/telegram/ui/ActionBar/Theme;->key_chat_outForwardedNameText:I
 
     invoke-virtual {v2, v6, v1}, Landroid/util/SparseIntArray;->put(II)V
 
-    .line 1644
+    .line 1635
     sget v6, Lorg/telegram/ui/ActionBar/Theme;->key_chat_outViaBotNameText:I
 
     invoke-virtual {v2, v6, v1}, Landroid/util/SparseIntArray;->put(II)V
 
-    .line 1645
+    .line 1636
     sget v6, Lorg/telegram/ui/ActionBar/Theme;->key_chat_outReplyLine:I
 
     invoke-virtual {v2, v6, v1}, Landroid/util/SparseIntArray;->put(II)V
 
-    .line 1646
+    .line 1637
     sget v6, Lorg/telegram/ui/ActionBar/Theme;->key_chat_outReplyNameText:I
 
     invoke-virtual {v2, v6, v1}, Landroid/util/SparseIntArray;->put(II)V
 
-    .line 1648
+    .line 1639
     sget v6, Lorg/telegram/ui/ActionBar/Theme;->key_chat_outPreviewLine:I
 
     invoke-virtual {v2, v6, v1}, Landroid/util/SparseIntArray;->put(II)V
 
-    .line 1649
+    .line 1640
     sget v6, Lorg/telegram/ui/ActionBar/Theme;->key_chat_outSiteNameText:I
 
     invoke-virtual {v2, v6, v1}, Landroid/util/SparseIntArray;->put(II)V
 
-    .line 1650
+    .line 1641
     sget v6, Lorg/telegram/ui/ActionBar/Theme;->key_chat_outInstant:I
 
     invoke-virtual {v2, v6, v1}, Landroid/util/SparseIntArray;->put(II)V
 
-    .line 1651
+    .line 1642
     sget v6, Lorg/telegram/ui/ActionBar/Theme;->key_chat_outInstantSelected:I
 
     invoke-virtual {v2, v6, v1}, Landroid/util/SparseIntArray;->put(II)V
 
-    .line 1652
+    .line 1643
     sget v6, Lorg/telegram/ui/ActionBar/Theme;->key_chat_outPreviewInstantText:I
 
     invoke-virtual {v2, v6, v1}, Landroid/util/SparseIntArray;->put(II)V
 
-    .line 1654
+    .line 1645
     sget v6, Lorg/telegram/ui/ActionBar/Theme;->key_chat_outViews:I
 
     invoke-virtual {v2, v6, v1}, Landroid/util/SparseIntArray;->put(II)V
 
-    .line 1655
+    .line 1646
     sget v6, Lorg/telegram/ui/ActionBar/Theme;->key_chat_outViewsSelected:I
 
     invoke-virtual {v2, v6, v1}, Landroid/util/SparseIntArray;->put(II)V
 
-    .line 1657
+    .line 1648
     sget v6, Lorg/telegram/ui/ActionBar/Theme;->key_chat_outAudioTitleText:I
 
     invoke-virtual {v2, v6, v1}, Landroid/util/SparseIntArray;->put(II)V
 
-    .line 1658
+    .line 1649
     sget v6, Lorg/telegram/ui/ActionBar/Theme;->key_chat_outFileNameText:I
 
     invoke-virtual {v2, v6, v1}, Landroid/util/SparseIntArray;->put(II)V
 
-    .line 1659
+    .line 1650
     sget v6, Lorg/telegram/ui/ActionBar/Theme;->key_chat_outContactNameText:I
 
     invoke-virtual {v2, v6, v1}, Landroid/util/SparseIntArray;->put(II)V
 
-    .line 1661
+    .line 1652
     sget v6, Lorg/telegram/ui/ActionBar/Theme;->key_chat_outAudioPerformerText:I
 
     invoke-virtual {v2, v6, v1}, Landroid/util/SparseIntArray;->put(II)V
 
-    .line 1662
+    .line 1653
     sget v6, Lorg/telegram/ui/ActionBar/Theme;->key_chat_outAudioPerformerSelectedText:I
 
     invoke-virtual {v2, v6, v1}, Landroid/util/SparseIntArray;->put(II)V
 
-    .line 1664
+    .line 1655
     sget v6, Lorg/telegram/ui/ActionBar/Theme;->key_chat_outSentCheck:I
 
     invoke-virtual {v2, v6, v1}, Landroid/util/SparseIntArray;->put(II)V
 
-    .line 1665
+    .line 1656
     sget v6, Lorg/telegram/ui/ActionBar/Theme;->key_chat_outSentCheckSelected:I
 
     invoke-virtual {v2, v6, v1}, Landroid/util/SparseIntArray;->put(II)V
 
-    .line 1667
+    .line 1658
     sget v6, Lorg/telegram/ui/ActionBar/Theme;->key_chat_outSentCheckRead:I
 
     invoke-virtual {v2, v6, v1}, Landroid/util/SparseIntArray;->put(II)V
 
-    .line 1668
+    .line 1659
     sget v6, Lorg/telegram/ui/ActionBar/Theme;->key_chat_outSentCheckReadSelected:I
 
     invoke-virtual {v2, v6, v1}, Landroid/util/SparseIntArray;->put(II)V
 
-    .line 1670
+    .line 1661
     sget v6, Lorg/telegram/ui/ActionBar/Theme;->key_chat_outSentClock:I
 
     invoke-virtual {v2, v6, v1}, Landroid/util/SparseIntArray;->put(II)V
 
-    .line 1671
+    .line 1662
     sget v6, Lorg/telegram/ui/ActionBar/Theme;->key_chat_outSentClockSelected:I
 
     invoke-virtual {v2, v6, v1}, Landroid/util/SparseIntArray;->put(II)V
 
-    .line 1673
+    .line 1664
     sget v6, Lorg/telegram/ui/ActionBar/Theme;->key_chat_outMenu:I
 
     invoke-virtual {v2, v6, v1}, Landroid/util/SparseIntArray;->put(II)V
 
-    .line 1674
+    .line 1665
     sget v6, Lorg/telegram/ui/ActionBar/Theme;->key_chat_outMenuSelected:I
 
     invoke-virtual {v2, v6, v1}, Landroid/util/SparseIntArray;->put(II)V
 
-    .line 1676
+    .line 1667
     sget v6, Lorg/telegram/ui/ActionBar/Theme;->key_chat_outTimeText:I
 
     invoke-virtual {v2, v6, v1}, Landroid/util/SparseIntArray;->put(II)V
 
-    .line 1677
+    .line 1668
     sget v6, Lorg/telegram/ui/ActionBar/Theme;->key_chat_outTimeSelectedText:I
 
     invoke-virtual {v2, v6, v1}, Landroid/util/SparseIntArray;->put(II)V
 
-    .line 1679
+    .line 1670
     sget v6, Lorg/telegram/ui/ActionBar/Theme;->key_chat_outAudioDurationText:I
 
     invoke-virtual {v2, v6, v4}, Landroid/util/SparseIntArray;->put(II)V
 
-    .line 1680
+    .line 1671
     sget v6, Lorg/telegram/ui/ActionBar/Theme;->key_chat_outAudioDurationSelectedText:I
 
     invoke-virtual {v2, v6, v4}, Landroid/util/SparseIntArray;->put(II)V
 
-    .line 1682
+    .line 1673
     sget v6, Lorg/telegram/ui/ActionBar/Theme;->key_chat_outContactPhoneText:I
 
     invoke-virtual {v2, v6, v4}, Landroid/util/SparseIntArray;->put(II)V
 
-    .line 1683
+    .line 1674
     sget v6, Lorg/telegram/ui/ActionBar/Theme;->key_chat_outContactPhoneSelectedText:I
 
     invoke-virtual {v2, v6, v4}, Landroid/util/SparseIntArray;->put(II)V
 
-    .line 1685
+    .line 1676
     sget v6, Lorg/telegram/ui/ActionBar/Theme;->key_chat_outFileInfoText:I
 
     invoke-virtual {v2, v6, v4}, Landroid/util/SparseIntArray;->put(II)V
 
-    .line 1686
+    .line 1677
     sget v6, Lorg/telegram/ui/ActionBar/Theme;->key_chat_outFileInfoSelectedText:I
 
     invoke-virtual {v2, v6, v4}, Landroid/util/SparseIntArray;->put(II)V
 
-    .line 1688
+    .line 1679
     sget v6, Lorg/telegram/ui/ActionBar/Theme;->key_chat_outVenueInfoText:I
 
     invoke-virtual {v2, v6, v4}, Landroid/util/SparseIntArray;->put(II)V
 
-    .line 1689
+    .line 1680
     sget v6, Lorg/telegram/ui/ActionBar/Theme;->key_chat_outVenueInfoSelectedText:I
 
     invoke-virtual {v2, v6, v4}, Landroid/util/SparseIntArray;->put(II)V
 
-    .line 1692
+    .line 1683
     sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_chat_outLoader:I
 
     invoke-virtual {v2, v4, v1}, Landroid/util/SparseIntArray;->put(II)V
 
-    .line 1693
+    .line 1684
     sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_chat_outLoaderSelected:I
 
     invoke-virtual {v2, v4, v1}, Landroid/util/SparseIntArray;->put(II)V
 
-    .line 1694
+    .line 1685
     sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_chat_outFileProgress:I
 
     iget v6, v0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->myMessagesAccentColor:I
 
     invoke-virtual {v2, v4, v6}, Landroid/util/SparseIntArray;->put(II)V
 
-    .line 1695
+    .line 1686
     sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_chat_outFileProgressSelected:I
 
     iget v6, v0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->myMessagesAccentColor:I
 
     invoke-virtual {v2, v4, v6}, Landroid/util/SparseIntArray;->put(II)V
 
-    .line 1696
+    .line 1687
     sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_chat_outMediaIcon:I
 
     iget v6, v0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->myMessagesAccentColor:I
 
     invoke-virtual {v2, v4, v6}, Landroid/util/SparseIntArray;->put(II)V
 
-    .line 1697
+    .line 1688
     sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_chat_outMediaIconSelected:I
 
     iget v6, v0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->myMessagesAccentColor:I
 
     invoke-virtual {v2, v4, v6}, Landroid/util/SparseIntArray;->put(II)V
 
-    .line 1700
+    .line 1691
     :cond_1f
     sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_chat_outReplyMessageText:I
 
     invoke-virtual {v2, v4, v1}, Landroid/util/SparseIntArray;->put(II)V
 
-    .line 1701
+    .line 1692
     sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_chat_outReplyMediaMessageText:I
 
     invoke-virtual {v2, v4, v1}, Landroid/util/SparseIntArray;->put(II)V
 
-    .line 1702
+    .line 1693
     sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_chat_outReplyMediaMessageSelectedText:I
 
     invoke-virtual {v2, v4, v1}, Landroid/util/SparseIntArray;->put(II)V
 
-    .line 1703
+    .line 1694
     sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_chat_messageTextOut:I
 
     invoke-virtual {v2, v4, v1}, Landroid/util/SparseIntArray;->put(II)V
@@ -1594,7 +1594,7 @@
     :cond_20
     if-eqz v5, :cond_22
 
-    .line 1707
+    .line 1698
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_chat_outLoader:I
 
     invoke-virtual {v2, v1}, Landroid/util/SparseIntArray;->indexOfKey(I)I
@@ -1603,7 +1603,7 @@
 
     if-ltz v4, :cond_21
 
-    .line 1708
+    .line 1699
     invoke-virtual {v2, v1}, Landroid/util/SparseIntArray;->get(I)I
 
     move-result v1
@@ -1613,7 +1613,7 @@
     :cond_21
     move v1, v11
 
-    .line 1710
+    .line 1701
     :goto_11
     invoke-static {v10, v1}, Lorg/telegram/messenger/AndroidUtilities;->getColorDistance(II)I
 
@@ -1625,7 +1625,7 @@
 
     move v5, v11
 
-    .line 1714
+    .line 1705
     :cond_22
     iget v1, v0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->myMessagesAccentColor:I
 
@@ -1635,39 +1635,39 @@
 
     if-eqz v4, :cond_24
 
-    .line 1715
+    .line 1706
     sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_chat_outBubble:I
 
     invoke-virtual {v2, v4, v1}, Landroid/util/SparseIntArray;->put(II)V
 
-    .line 1716
+    .line 1707
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_chat_outBubbleGradient1:I
 
     iget v4, v0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->myMessagesGradientAccentColor1:I
 
     invoke-virtual {v2, v1, v4}, Landroid/util/SparseIntArray;->put(II)V
 
-    .line 1717
+    .line 1708
     iget v1, v0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->myMessagesGradientAccentColor2:I
 
     if-eqz v1, :cond_23
 
-    .line 1718
+    .line 1709
     sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_chat_outBubbleGradient2:I
 
     invoke-virtual {v2, v4, v1}, Landroid/util/SparseIntArray;->put(II)V
 
-    .line 1719
+    .line 1710
     iget v1, v0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->myMessagesGradientAccentColor3:I
 
     if-eqz v1, :cond_23
 
-    .line 1720
+    .line 1711
     sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_chat_outBubbleGradient3:I
 
     invoke-virtual {v2, v4, v1}, Landroid/util/SparseIntArray;->put(II)V
 
-    .line 1723
+    .line 1714
     :cond_23
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_chat_outBubbleGradientAnimated:I
 
@@ -1675,7 +1675,7 @@
 
     invoke-virtual {v2, v1, v4}, Landroid/util/SparseIntArray;->put(II)V
 
-    .line 1725
+    .line 1716
     :cond_24
     iget-wide v8, v0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->backgroundOverrideColor:J
 
@@ -1685,7 +1685,7 @@
 
     if-eqz v1, :cond_25
 
-    .line 1727
+    .line 1718
     sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_chat_wallpaper:I
 
     invoke-virtual {v2, v4, v1}, Landroid/util/SparseIntArray;->put(II)V
@@ -1697,12 +1697,12 @@
 
     if-eqz v1, :cond_26
 
-    .line 1729
+    .line 1720
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_chat_wallpaper:I
 
     invoke-virtual {v2, v1}, Landroid/util/SparseIntArray;->delete(I)V
 
-    .line 1731
+    .line 1722
     :cond_26
     :goto_12
     iget-wide v8, v0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->backgroundGradientOverrideColor1:J
@@ -1711,7 +1711,7 @@
 
     if-eqz v1, :cond_27
 
-    .line 1733
+    .line 1724
     sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_chat_wallpaper_gradient_to1:I
 
     invoke-virtual {v2, v4, v1}, Landroid/util/SparseIntArray;->put(II)V
@@ -1723,12 +1723,12 @@
 
     if-eqz v1, :cond_28
 
-    .line 1735
+    .line 1726
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_chat_wallpaper_gradient_to1:I
 
     invoke-virtual {v2, v1}, Landroid/util/SparseIntArray;->delete(I)V
 
-    .line 1737
+    .line 1728
     :cond_28
     :goto_13
     iget-wide v8, v0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->backgroundGradientOverrideColor2:J
@@ -1737,7 +1737,7 @@
 
     if-eqz v1, :cond_29
 
-    .line 1739
+    .line 1730
     sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_chat_wallpaper_gradient_to2:I
 
     invoke-virtual {v2, v4, v1}, Landroid/util/SparseIntArray;->put(II)V
@@ -1749,12 +1749,12 @@
 
     if-eqz v1, :cond_2a
 
-    .line 1741
+    .line 1732
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_chat_wallpaper_gradient_to2:I
 
     invoke-virtual {v2, v1}, Landroid/util/SparseIntArray;->delete(I)V
 
-    .line 1743
+    .line 1734
     :cond_2a
     :goto_14
     iget-wide v8, v0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->backgroundGradientOverrideColor3:J
@@ -1763,7 +1763,7 @@
 
     if-eqz v1, :cond_2b
 
-    .line 1745
+    .line 1736
     sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_chat_wallpaper_gradient_to3:I
 
     invoke-virtual {v2, v4, v1}, Landroid/util/SparseIntArray;->put(II)V
@@ -1775,12 +1775,12 @@
 
     if-eqz v1, :cond_2c
 
-    .line 1747
+    .line 1738
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_chat_wallpaper_gradient_to3:I
 
     invoke-virtual {v2, v1}, Landroid/util/SparseIntArray;->delete(I)V
 
-    .line 1749
+    .line 1740
     :cond_2c
     :goto_15
     iget v1, v0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->backgroundRotation:I
@@ -1789,12 +1789,12 @@
 
     if-eq v1, v4, :cond_2d
 
-    .line 1750
+    .line 1741
     sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_chat_wallpaper_gradient_rotation:I
 
     invoke-virtual {v2, v4, v1}, Landroid/util/SparseIntArray;->put(II)V
 
-    .line 1753
+    .line 1744
     :cond_2d
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_chat_outBubble:I
 
@@ -1804,12 +1804,12 @@
 
     if-nez v4, :cond_2e
 
-    .line 1755
+    .line 1746
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v4
 
-    .line 1757
+    .line 1748
     :cond_2e
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_chat_inBubble:I
 
@@ -1819,12 +1819,12 @@
 
     if-nez v6, :cond_2f
 
-    .line 1759
+    .line 1750
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v6
 
-    .line 1763
+    .line 1754
     :cond_2f
     iget-object v1, v0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->info:Lorg/telegram/tgnet/TLRPC$TL_theme;
 
@@ -1836,7 +1836,7 @@
 
     if-nez v7, :cond_32
 
-    .line 1764
+    .line 1755
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_chat_selectedBackground:I
 
     invoke-virtual {v2, v1}, Landroid/util/SparseIntArray;->delete(I)V
@@ -1845,7 +1845,7 @@
 
     new-array v1, v1, [I
 
-    .line 1765
+    .line 1756
     sget v8, Lorg/telegram/ui/ActionBar/Theme;->key_chat_wallpaper_gradient_to1:I
 
     aput v8, v1, v11
@@ -1868,7 +1868,7 @@
 
     new-array v1, v3, [I
 
-    .line 1767
+    .line 1758
     sget v8, Lorg/telegram/ui/ActionBar/Theme;->key_chat_wallpaper:I
 
     aput v8, v1, v11
@@ -1880,26 +1880,26 @@
     :cond_30
     if-nez v1, :cond_31
 
-    .line 1770
+    .line 1761
     iget v1, v0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->accentColor:I
 
-    .line 1773
+    .line 1764
     :cond_31
     invoke-direct {v0, v4, v1}, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->bubbleSelectedOverlay(II)I
 
     move-result v1
 
-    .line 1774
+    .line 1765
     sget v8, Lorg/telegram/ui/ActionBar/Theme;->key_chat_outBubbleSelectedOverlay:I
 
     invoke-virtual {v2, v8, v1}, Landroid/util/SparseIntArray;->put(II)V
 
-    .line 1775
+    .line 1766
     sget v8, Lorg/telegram/ui/ActionBar/Theme;->key_chat_outBubbleGradientSelectedOverlay:I
 
     invoke-virtual {v2, v8, v1}, Landroid/util/SparseIntArray;->put(II)V
 
-    .line 1776
+    .line 1767
     sget v8, Lorg/telegram/ui/ActionBar/Theme;->key_chat_outBubbleSelected:I
 
     invoke-static {v4, v1}, Lorg/telegram/ui/ActionBar/Theme;->blendOver(II)I
@@ -1908,19 +1908,19 @@
 
     invoke-virtual {v2, v8, v1}, Landroid/util/SparseIntArray;->put(II)V
 
-    .line 1778
+    .line 1769
     iget v1, v0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->accentColor:I
 
     invoke-direct {v0, v6, v1}, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->bubbleSelectedOverlay(II)I
 
     move-result v1
 
-    .line 1779
+    .line 1770
     sget v8, Lorg/telegram/ui/ActionBar/Theme;->key_chat_inBubbleSelectedOverlay:I
 
     invoke-virtual {v2, v8, v1}, Landroid/util/SparseIntArray;->put(II)V
 
-    .line 1780
+    .line 1771
     sget v8, Lorg/telegram/ui/ActionBar/Theme;->key_chat_inBubbleSelected:I
 
     invoke-static {v6, v1}, Lorg/telegram/ui/ActionBar/Theme;->blendOver(II)I
@@ -1932,7 +1932,7 @@
     :cond_32
     if-nez v7, :cond_33
 
-    .line 1784
+    .line 1775
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_chat_inTextSelectionHighlight:I
 
     iget v8, v0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->accentColor:I
@@ -1943,7 +1943,7 @@
 
     invoke-virtual {v2, v1, v8}, Landroid/util/SparseIntArray;->put(II)V
 
-    .line 1785
+    .line 1776
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_chat_outTextSelectionHighlight:I
 
     iget v8, v0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->accentColor:I
@@ -1954,7 +1954,7 @@
 
     invoke-virtual {v2, v1, v8}, Landroid/util/SparseIntArray;->put(II)V
 
-    .line 1786
+    .line 1777
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_chat_outTextSelectionCursor:I
 
     iget v8, v0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->accentColor:I
@@ -1965,7 +1965,7 @@
 
     invoke-virtual {v2, v1, v8}, Landroid/util/SparseIntArray;->put(II)V
 
-    .line 1789
+    .line 1780
     :cond_33
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlueText:I
 
@@ -1977,7 +1977,7 @@
 
     move-result v1
 
-    .line 1790
+    .line 1781
     sget v8, Lorg/telegram/ui/ActionBar/Theme;->key_chat_outBubbleLocationPlaceholder:I
 
     invoke-direct {v0, v1, v4, v7}, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->locationPlaceholderColor(FIZ)I
@@ -1986,7 +1986,7 @@
 
     invoke-virtual {v2, v8, v9}, Landroid/util/SparseIntArray;->put(II)V
 
-    .line 1791
+    .line 1782
     sget v8, Lorg/telegram/ui/ActionBar/Theme;->key_chat_inBubbleLocationPlaceholder:I
 
     invoke-direct {v0, v1, v6, v7}, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->locationPlaceholderColor(FIZ)I
@@ -1995,7 +1995,7 @@
 
     invoke-virtual {v2, v8, v1}, Landroid/util/SparseIntArray;->put(II)V
 
-    .line 1793
+    .line 1784
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_chat_messageLinkIn:I
 
     invoke-virtual {v2, v1}, Landroid/util/SparseIntArray;->get(I)I
@@ -2004,12 +2004,12 @@
 
     if-nez v8, :cond_34
 
-    .line 1795
+    .line 1786
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v8
 
-    .line 1797
+    .line 1788
     :cond_34
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_chat_messageLinkOut:I
 
@@ -2019,12 +2019,12 @@
 
     if-nez v9, :cond_35
 
-    .line 1799
+    .line 1790
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v9
 
-    .line 1801
+    .line 1792
     :cond_35
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_chat_linkSelectBackground:I
 
@@ -2034,7 +2034,7 @@
 
     invoke-virtual {v2, v1, v6}, Landroid/util/SparseIntArray;->put(II)V
 
-    .line 1802
+    .line 1793
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_chat_outLinkSelectBackground:I
 
     invoke-direct {v0, v9, v4, v7}, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->linkSelectionBackground(IIZ)I
@@ -2043,7 +2043,7 @@
 
     invoke-virtual {v2, v1, v4}, Landroid/util/SparseIntArray;->put(II)V
 
-    .line 1804
+    .line 1795
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefaultSubmenuBackground:I
 
     invoke-virtual {v2, v1}, Landroid/util/SparseIntArray;->get(I)I
@@ -2052,21 +2052,21 @@
 
     if-nez v4, :cond_36
 
-    .line 1806
+    .line 1797
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v4
 
-    .line 1808
+    .line 1799
     :cond_36
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefaultSubmenuSeparator:I
 
-    .line 1809
+    .line 1800
     invoke-static {v4}, Landroid/graphics/Color;->alpha(I)I
 
     move-result v6
 
-    .line 1810
+    .line 1801
     invoke-static {v4}, Landroid/graphics/Color;->red(I)I
 
     move-result v7
@@ -2077,7 +2077,7 @@
 
     move-result v7
 
-    .line 1811
+    .line 1802
     invoke-static {v4}, Landroid/graphics/Color;->green(I)I
 
     move-result v8
@@ -2088,7 +2088,7 @@
 
     move-result v8
 
-    .line 1812
+    .line 1803
     invoke-static {v4}, Landroid/graphics/Color;->blue(I)I
 
     move-result v4
@@ -2099,7 +2099,7 @@
 
     move-result v4
 
-    .line 1808
+    .line 1799
     invoke-static {v6, v7, v8, v4}, Landroid/graphics/Color;->argb(IIII)I
 
     move-result v4
@@ -2114,7 +2114,7 @@
 .method public getPathToWallpaper()Ljava/io/File;
     .locals 8
 
-    .line 1908
+    .line 1899
     iget v0, p0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->id:I
 
     const/4 v1, 0x2
@@ -2131,7 +2131,7 @@
 
     if-ge v0, v6, :cond_1
 
-    .line 1909
+    .line 1900
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->patternSlug:Ljava/lang/String;
 
     invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
@@ -2181,7 +2181,7 @@
     :cond_0
     return-object v5
 
-    .line 1911
+    .line 1902
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->patternSlug:Ljava/lang/String;
 
@@ -2238,15 +2238,15 @@
 
     move-object/from16 v1, p0
 
-    .line 1916
+    .line 1907
     invoke-static {}, Lorg/telegram/messenger/AndroidUtilities;->getSharingDirectory()Ljava/io/File;
 
     move-result-object v0
 
-    .line 1917
+    .line 1908
     invoke-virtual {v0}, Ljava/io/File;->mkdirs()Z
 
-    .line 1918
+    .line 1909
     new-instance v2, Ljava/io/File;
 
     sget-object v3, Ljava/util/Locale;->US:Ljava/util/Locale;
@@ -2283,7 +2283,7 @@
 
     invoke-direct {v2, v0, v3}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
-    .line 1920
+    .line 1911
     iget-object v0, v1, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->parentTheme:Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;
 
     iget-object v0, v0, Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;->assetName:Ljava/lang/String;
@@ -2294,15 +2294,15 @@
 
     move-result-object v0
 
-    .line 1921
+    .line 1912
     invoke-virtual {v0}, Landroid/util/SparseIntArray;->clone()Landroid/util/SparseIntArray;
 
     move-result-object v5
 
-    .line 1922
+    .line 1913
     invoke-virtual {v1, v0, v5}, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->fillAccentColors(Landroid/util/SparseIntArray;Landroid/util/SparseIntArray;)Z
 
-    .line 1926
+    .line 1917
     iget-object v0, v1, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->patternSlug:Ljava/lang/String;
 
     invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
@@ -2311,22 +2311,22 @@
 
     if-nez v0, :cond_c
 
-    .line 1927
+    .line 1918
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 1928
+    .line 1919
     iget-boolean v6, v1, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->patternMotion:Z
 
     if-eqz v6, :cond_0
 
     const-string v6, "motion"
 
-    .line 1929
+    .line 1920
     invoke-virtual {v0, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 1931
+    .line 1922
     :cond_0
     sget v6, Lorg/telegram/ui/ActionBar/Theme;->key_chat_wallpaper:I
 
@@ -2338,7 +2338,7 @@
 
     const/4 v6, -0x1
 
-    .line 1935
+    .line 1926
     :cond_1
     sget v9, Lorg/telegram/ui/ActionBar/Theme;->key_chat_wallpaper_gradient_to1:I
 
@@ -2350,7 +2350,7 @@
 
     move v9, v7
 
-    .line 1939
+    .line 1930
     :cond_2
     sget v10, Lorg/telegram/ui/ActionBar/Theme;->key_chat_wallpaper_gradient_to2:I
 
@@ -2362,7 +2362,7 @@
 
     move v10, v7
 
-    .line 1943
+    .line 1934
     :cond_3
     sget v11, Lorg/telegram/ui/ActionBar/Theme;->key_chat_wallpaper_gradient_to3:I
 
@@ -2374,7 +2374,7 @@
 
     move v11, v7
 
-    .line 1947
+    .line 1938
     :cond_4
     sget v12, Lorg/telegram/ui/ActionBar/Theme;->key_chat_wallpaper_gradient_rotation:I
 
@@ -2397,7 +2397,7 @@
 
     and-int/lit16 v15, v15, 0xff
 
-    .line 1951
+    .line 1942
     invoke-static {v15}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v15
@@ -2446,7 +2446,7 @@
 
     and-int/lit16 v3, v3, 0xff
 
-    .line 1952
+    .line 1943
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
@@ -2499,7 +2499,7 @@
 
     and-int/lit16 v15, v15, 0xff
 
-    .line 1953
+    .line 1944
     invoke-static {v15}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v15
@@ -2552,7 +2552,7 @@
 
     and-int/lit16 v13, v13, 0xff
 
-    .line 1954
+    .line 1945
     invoke-static {v13}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v13
@@ -2603,7 +2603,7 @@
 
     if-eqz v4, :cond_9
 
-    .line 1957
+    .line 1948
     new-instance v8, Ljava/lang/StringBuilder;
 
     invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
@@ -2628,7 +2628,7 @@
 
     goto :goto_3
 
-    .line 1959
+    .line 1950
     :cond_9
     new-instance v4, Ljava/lang/StringBuilder;
 
@@ -2653,7 +2653,7 @@
     :cond_a
     if-eqz v3, :cond_b
 
-    .line 1962
+    .line 1953
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -2670,7 +2670,7 @@
 
     move-result-object v3
 
-    .line 1963
+    .line 1954
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -2687,7 +2687,7 @@
 
     move-result-object v14
 
-    .line 1965
+    .line 1956
     :cond_b
     :goto_3
     new-instance v3, Ljava/lang/StringBuilder;
@@ -2726,14 +2726,14 @@
 
     move-result-object v3
 
-    .line 1966
+    .line 1957
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->length()I
 
     move-result v4
 
     if-lez v4, :cond_d
 
-    .line 1967
+    .line 1958
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -2759,14 +2759,14 @@
     :cond_c
     const/4 v3, 0x0
 
-    .line 1971
+    .line 1962
     :cond_d
     :goto_4
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 1972
+    .line 1963
     :goto_5
     invoke-virtual {v5}, Landroid/util/SparseIntArray;->size()I
 
@@ -2776,19 +2776,19 @@
 
     if-ge v7, v4, :cond_10
 
-    .line 1973
+    .line 1964
     invoke-virtual {v5, v7}, Landroid/util/SparseIntArray;->keyAt(I)I
 
     move-result v4
 
-    .line 1974
+    .line 1965
     invoke-virtual {v5, v7}, Landroid/util/SparseIntArray;->valueAt(I)I
 
     move-result v8
 
     if-eqz v3, :cond_e
 
-    .line 1976
+    .line 1967
     sget v9, Lorg/telegram/ui/ActionBar/Theme;->key_chat_wallpaper:I
 
     if-eq v9, v4, :cond_f
@@ -2807,7 +2807,7 @@
 
     goto :goto_6
 
-    .line 1980
+    .line 1971
     :cond_e
     invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -2825,7 +2825,7 @@
 
     goto :goto_5
 
-    .line 1984
+    .line 1975
     :cond_10
     :try_start_0
     new-instance v4, Ljava/io/FileOutputStream;
@@ -2835,7 +2835,7 @@
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_1
     .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
-    .line 1985
+    .line 1976
     :try_start_1
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -2847,14 +2847,14 @@
 
     invoke-virtual {v4, v0}, Ljava/io/FileOutputStream;->write([B)V
 
-    .line 1986
+    .line 1977
     invoke-static {v3}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v0
 
     if-nez v0, :cond_11
 
-    .line 1987
+    .line 1978
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -2880,7 +2880,7 @@
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 1994
+    .line 1985
     :cond_11
     :try_start_2
     invoke-virtual {v4}, Ljava/io/FileOutputStream;->close()V
@@ -2919,7 +2919,7 @@
 
     const/4 v3, 0x0
 
-    .line 1990
+    .line 1981
     :goto_7
     :try_start_3
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
@@ -2928,7 +2928,7 @@
 
     if-eqz v3, :cond_12
 
-    .line 1994
+    .line 1985
     :try_start_4
     invoke-virtual {v3}, Ljava/io/FileOutputStream;->close()V
     :try_end_4
@@ -2941,7 +2941,7 @@
 
     move-object v3, v0
 
-    .line 1997
+    .line 1988
     invoke-static {v3}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :cond_12
@@ -2956,7 +2956,7 @@
     :goto_9
     if-eqz v3, :cond_13
 
-    .line 1994
+    .line 1985
     :try_start_5
     invoke-virtual {v3}, Ljava/io/FileOutputStream;->close()V
     :try_end_5
@@ -2969,10 +2969,10 @@
 
     move-object v3, v0
 
-    .line 1997
+    .line 1988
     invoke-static {v3}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 1999
+    .line 1990
     :cond_13
     :goto_a
     throw v2

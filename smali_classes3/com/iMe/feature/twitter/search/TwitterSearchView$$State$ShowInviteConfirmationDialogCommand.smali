@@ -32,17 +32,17 @@
 .method constructor <init>(Lcom/iMe/feature/twitter/search/TwitterSearchView$$State;Lcom/iMe/model/dialog/DialogModel;J)V
     .locals 1
 
-    .line 362
+    .line 378
     const-class p1, Lmoxy/viewstate/strategy/OneExecutionStateStrategy;
 
     const-string v0, "showInviteConfirmationDialog"
 
     invoke-direct {p0, v0, p1}, Lmoxy/viewstate/ViewCommand;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
-    .line 364
+    .line 380
     iput-object p2, p0, Lcom/iMe/feature/twitter/search/TwitterSearchView$$State$ShowInviteConfirmationDialogCommand;->dialogModel:Lcom/iMe/model/dialog/DialogModel;
 
-    .line 365
+    .line 381
     iput-wide p3, p0, Lcom/iMe/feature/twitter/search/TwitterSearchView$$State$ShowInviteConfirmationDialogCommand;->twitterUserId:J
 
     return-void
@@ -53,7 +53,7 @@
 .method public apply(Lcom/iMe/feature/twitter/search/TwitterSearchView;)V
     .locals 3
 
-    .line 370
+    .line 386
     iget-object v0, p0, Lcom/iMe/feature/twitter/search/TwitterSearchView$$State$ShowInviteConfirmationDialogCommand;->dialogModel:Lcom/iMe/model/dialog/DialogModel;
 
     iget-wide v1, p0, Lcom/iMe/feature/twitter/search/TwitterSearchView$$State$ShowInviteConfirmationDialogCommand;->twitterUserId:J
@@ -66,7 +66,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 356
+    .line 372
     check-cast p1, Lcom/iMe/feature/twitter/search/TwitterSearchView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/feature/twitter/search/TwitterSearchView$$State$ShowInviteConfirmationDialogCommand;->apply(Lcom/iMe/feature/twitter/search/TwitterSearchView;)V

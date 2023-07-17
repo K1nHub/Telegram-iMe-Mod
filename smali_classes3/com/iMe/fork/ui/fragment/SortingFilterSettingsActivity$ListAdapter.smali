@@ -498,11 +498,13 @@
     invoke-virtual {p1, v2, v0}, Lcom/iMe/fork/ui/view/SortingFilterCell;->setState(Lcom/iMe/fork/models/SortingTabState;Z)V
 
     .line 276
-    invoke-virtual {v1}, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;->getCurrentArchive()Z
+    invoke-virtual {v2}, Lcom/iMe/fork/models/SortingTabState;->getType()Lcom/iMe/fork/enums/SortingFilter;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/iMe/fork/enums/SortingFilter;->isFabEditable()Z
 
     move-result v0
-
-    xor-int/lit8 v0, v0, 0x1
 
     invoke-virtual {p1, v0}, Lcom/iMe/fork/ui/view/SortingFilterCell;->setFabsVisible(Z)V
 

@@ -20,7 +20,7 @@ import com.google.android.exoplayer2.RendererConfiguration;
 import com.google.android.exoplayer2.Timeline;
 import com.google.android.exoplayer2.analytics.AnalyticsListener;
 import com.google.android.exoplayer2.audio.AudioAttributes;
-import com.google.android.exoplayer2.audio.ExecutorC0518x59586989;
+import com.google.android.exoplayer2.audio.ExecutorC0523x59586989;
 import com.google.android.exoplayer2.source.MediaSource;
 import com.google.android.exoplayer2.source.TrackGroup;
 import com.google.android.exoplayer2.source.TrackGroupArray;
@@ -2303,7 +2303,7 @@ public class DefaultTrackSelector extends MappingTrackSelector {
                 this.handler = handler;
                 Spatializer spatializer = this.spatializer;
                 Objects.requireNonNull(handler);
-                spatializer.addOnSpatializerStateChangedListener(new ExecutorC0518x59586989(handler), this.listener);
+                spatializer.addOnSpatializerStateChangedListener(new ExecutorC0523x59586989(handler), this.listener);
             }
         }
 

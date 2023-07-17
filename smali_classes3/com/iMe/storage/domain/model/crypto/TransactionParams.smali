@@ -8,6 +8,7 @@
     value = {
         Lcom/iMe/storage/domain/model/crypto/TransactionParams$Bitcoin;,
         Lcom/iMe/storage/domain/model/crypto/TransactionParams$Ether;,
+        Lcom/iMe/storage/domain/model/crypto/TransactionParams$Ton;,
         Lcom/iMe/storage/domain/model/crypto/TransactionParams$Tron;,
         Lcom/iMe/storage/domain/model/crypto/TransactionParams$WhenMappings;
     }
@@ -92,7 +93,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 47
+    .line 53
     instance-of v0, p0, Lcom/iMe/storage/domain/model/crypto/TransactionParams$Ether;
 
     if-eqz v0, :cond_3
@@ -117,7 +118,7 @@
 
     if-ne p1, v0, :cond_0
 
-    .line 50
+    .line 56
     invoke-virtual {p0}, Lcom/iMe/storage/domain/model/crypto/TransactionParams;->getFastest()Lcom/iMe/storage/domain/model/crypto/send/GasPriceInfo;
 
     move-result-object p1
@@ -137,7 +138,7 @@
 
     throw p1
 
-    .line 49
+    .line 55
     :cond_1
     invoke-virtual {p0}, Lcom/iMe/storage/domain/model/crypto/TransactionParams;->getMedium()Lcom/iMe/storage/domain/model/crypto/send/GasPriceInfo;
 
@@ -145,7 +146,7 @@
 
     goto :goto_0
 
-    .line 48
+    .line 54
     :cond_2
     invoke-virtual {p0}, Lcom/iMe/storage/domain/model/crypto/TransactionParams;->getLow()Lcom/iMe/storage/domain/model/crypto/send/GasPriceInfo;
 
@@ -159,7 +160,7 @@
 
     goto :goto_0
 
-    .line 52
+    .line 59
     :cond_3
     invoke-virtual {p0}, Lcom/iMe/storage/domain/model/crypto/TransactionParams;->getMedium()Lcom/iMe/storage/domain/model/crypto/send/GasPriceInfo;
 
@@ -181,7 +182,7 @@
         }
     .end annotation
 
-    .line 57
+    .line 64
     instance-of v0, p0, Lcom/iMe/storage/domain/model/crypto/TransactionParams$Ether;
 
     if-eqz v0, :cond_0
@@ -220,7 +221,7 @@
 
     goto :goto_0
 
-    .line 58
+    .line 65
     :cond_0
     invoke-virtual {p0}, Lcom/iMe/storage/domain/model/crypto/TransactionParams;->getMedium()Lcom/iMe/storage/domain/model/crypto/send/GasPriceInfo;
 

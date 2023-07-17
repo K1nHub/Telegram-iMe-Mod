@@ -16,14 +16,14 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.koin.core.Koin;
 import org.koin.core.component.KoinComponent;
-import org.koin.p043mp.KoinPlatformTools;
+import org.koin.p042mp.KoinPlatformTools;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BaseController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.Utilities;
-import p034j$.util.concurrent.ConcurrentHashMap;
-import p034j$.util.concurrent.ConcurrentMap$EL;
-import p034j$.util.function.Function;
+import p033j$.util.concurrent.ConcurrentHashMap;
+import p033j$.util.concurrent.ConcurrentMap$EL;
+import p033j$.util.function.Function;
 /* compiled from: AlbumsController.kt */
 /* loaded from: classes3.dex */
 public final class AlbumsController extends BaseController implements KoinComponent {
@@ -211,19 +211,19 @@ public final class AlbumsController extends BaseController implements KoinCompon
             Integer valueOf = Integer.valueOf(i);
             final AlbumsController$Companion$getInstance$1 albumsController$Companion$getInstance$1 = new AlbumsController$Companion$getInstance$1(i);
             Object computeIfAbsent = ConcurrentMap$EL.computeIfAbsent(concurrentHashMap, valueOf, new Function() { // from class: com.iMe.fork.controller.AlbumsController$Companion$$ExternalSyntheticLambda0
-                @Override // p034j$.util.function.Function
+                @Override // p033j$.util.function.Function
                 public /* synthetic */ Function andThen(Function function) {
                     return Objects.requireNonNull(function);
                 }
 
-                @Override // p034j$.util.function.Function
+                @Override // p033j$.util.function.Function
                 public final Object apply(Object obj) {
                     AlbumsController instance$lambda$0;
                     instance$lambda$0 = AlbumsController.Companion.getInstance$lambda$0(Function1.this, obj);
                     return instance$lambda$0;
                 }
 
-                @Override // p034j$.util.function.Function
+                @Override // p033j$.util.function.Function
                 public /* synthetic */ Function compose(Function function) {
                     return Objects.requireNonNull(function);
                 }

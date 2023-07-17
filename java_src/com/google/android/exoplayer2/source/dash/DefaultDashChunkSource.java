@@ -1,7 +1,7 @@
 package com.google.android.exoplayer2.source.dash;
 
 import android.os.SystemClock;
-import com.google.android.exoplayer2.C0475C;
+import com.google.android.exoplayer2.C0480C;
 import com.google.android.exoplayer2.Format;
 import com.google.android.exoplayer2.SeekParameters;
 import com.google.android.exoplayer2.analytics.PlayerId;
@@ -236,8 +236,8 @@ public class DefaultDashChunkSource implements DashChunkSource {
                 }
             }
             long j8 = updateSelectedBaseUrl.periodDurationUs;
-            long j9 = C0475C.TIME_UNSET;
-            int i4 = (j8 > C0475C.TIME_UNSET ? 1 : (j8 == C0475C.TIME_UNSET ? 0 : -1));
+            long j9 = C0480C.TIME_UNSET;
+            int i4 = (j8 > C0480C.TIME_UNSET ? 1 : (j8 == C0480C.TIME_UNSET ? 0 : -1));
             boolean z = i4 != 0;
             if (updateSelectedBaseUrl.getSegmentCount() == 0) {
                 chunkHolder.endOfStream = z;
@@ -374,13 +374,13 @@ public class DefaultDashChunkSource implements DashChunkSource {
         if (this.manifest.dynamic) {
             return Math.max(0L, Math.min(getNowPeriodTimeUs(j), this.representationHolders[0].getSegmentEndTimeUs(this.representationHolders[0].getLastAvailableSegmentNum(j))) - j2);
         }
-        return C0475C.TIME_UNSET;
+        return C0480C.TIME_UNSET;
     }
 
     private long getNowPeriodTimeUs(long j) {
         DashManifest dashManifest = this.manifest;
         long j2 = dashManifest.availabilityStartTimeMs;
-        return j2 == C0475C.TIME_UNSET ? C0475C.TIME_UNSET : j - Util.msToUs(j2 + dashManifest.getPeriod(this.periodIndex).startMs);
+        return j2 == C0480C.TIME_UNSET ? C0480C.TIME_UNSET : j - Util.msToUs(j2 + dashManifest.getPeriod(this.periodIndex).startMs);
     }
 
     protected Chunk newInitializationChunk(RepresentationHolder representationHolder, DataSource dataSource, Format format, int i, Object obj, RangedUri rangedUri, RangedUri rangedUri2) {
@@ -418,7 +418,7 @@ public class DefaultDashChunkSource implements DashChunkSource {
         long j4 = (i5 + j) - 1;
         long segmentEndTimeUs = representationHolder.getSegmentEndTimeUs(j4);
         long j5 = representationHolder.periodDurationUs;
-        return new ContainerMediaChunk(dataSource, DashUtil.buildDataSpec(representation, representationHolder.selectedBaseUrl.url, segmentUrl, representationHolder.isSegmentAvailableAtFullNetworkSpeed(j4, j3) ? 0 : 8), format, i2, obj, segmentStartTimeUs, segmentEndTimeUs, j2, (j5 == C0475C.TIME_UNSET || j5 > segmentEndTimeUs) ? -9223372036854775807L : j5, j, i5, -representation.presentationTimeOffsetUs, representationHolder.chunkExtractor);
+        return new ContainerMediaChunk(dataSource, DashUtil.buildDataSpec(representation, representationHolder.selectedBaseUrl.url, segmentUrl, representationHolder.isSegmentAvailableAtFullNetworkSpeed(j4, j3) ? 0 : 8), format, i2, obj, segmentStartTimeUs, segmentEndTimeUs, j2, (j5 == C0480C.TIME_UNSET || j5 > segmentEndTimeUs) ? -9223372036854775807L : j5, j, i5, -representation.presentationTimeOffsetUs, representationHolder.chunkExtractor);
     }
 
     private RepresentationHolder updateSelectedBaseUrl(int i) {
@@ -563,7 +563,7 @@ public class DefaultDashChunkSource implements DashChunkSource {
         }
 
         public boolean isSegmentAvailableAtFullNetworkSpeed(long j, long j2) {
-            return this.segmentIndex.isExplicit() || j2 == C0475C.TIME_UNSET || getSegmentEndTimeUs(j) <= j2;
+            return this.segmentIndex.isExplicit() || j2 == C0480C.TIME_UNSET || getSegmentEndTimeUs(j) <= j2;
         }
     }
 }

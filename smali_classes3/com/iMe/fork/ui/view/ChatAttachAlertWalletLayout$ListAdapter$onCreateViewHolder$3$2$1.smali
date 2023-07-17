@@ -48,7 +48,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 516
+    .line 520
     invoke-virtual {p0}, Lcom/iMe/fork/ui/view/ChatAttachAlertWalletLayout$ListAdapter$onCreateViewHolder$3$2$1;->invoke()V
 
     sget-object v0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
@@ -59,16 +59,16 @@
 .method public final invoke()V
     .locals 2
 
-    .line 516
+    .line 520
     iget-object v0, p0, Lcom/iMe/fork/ui/view/ChatAttachAlertWalletLayout$ListAdapter$onCreateViewHolder$3$2$1;->this$0:Lcom/iMe/fork/ui/view/ChatAttachAlertWalletLayout;
 
-    invoke-static {v0}, Lcom/iMe/fork/ui/view/ChatAttachAlertWalletLayout;->access$getPresenter(Lcom/iMe/fork/ui/view/ChatAttachAlertWalletLayout;)Lcom/iMe/ui/wallet/home/old/WalletAttachAlertPresenter;
+    invoke-static {v0}, Lcom/iMe/fork/ui/view/ChatAttachAlertWalletLayout;->access$getPresenter(Lcom/iMe/fork/ui/view/ChatAttachAlertWalletLayout;)Lcom/iMe/ui/wallet/home/attach/WalletAttachAlertPresenter;
 
     move-result-object v0
 
     const/4 v1, 0x1
 
-    invoke-virtual {v0, v1}, Lcom/iMe/ui/wallet/home/old/WalletAttachAlertPresenter;->getWalletData(Z)V
+    invoke-virtual {v0, v1}, Lcom/iMe/ui/wallet/home/attach/WalletAttachAlertPresenter;->getWalletData(Z)V
 
     return-void
 .end method

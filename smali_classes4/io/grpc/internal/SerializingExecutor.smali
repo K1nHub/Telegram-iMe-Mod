@@ -125,7 +125,7 @@
 
     const-class v2, Lio/grpc/internal/SerializingExecutor;
 
-    const-string v3, "runState"
+    const-string/jumbo v3, "runState"
 
     .line 50
     invoke-static {v2, v3}, Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;->newUpdater(Ljava/lang/Class;Ljava/lang/String;)Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;

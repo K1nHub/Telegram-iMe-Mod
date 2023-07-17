@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/ProfileActivity;Landroid/content/Context;)V
     .locals 0
 
-    .line 3583
+    .line 3595
     iput-object p1, p0, Lorg/telegram/ui/ProfileActivity$13;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-direct {p0, p2}, Landroidx/recyclerview/widget/LinearLayoutManager;-><init>(Landroid/content/Context;)V
@@ -35,7 +35,7 @@
 .method public scrollVerticallyBy(ILandroidx/recyclerview/widget/RecyclerView$Recycler;Landroidx/recyclerview/widget/RecyclerView$State;)I
     .locals 4
 
-    .line 3592
+    .line 3604
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$13;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ProfileActivity;->access$8300(Lorg/telegram/ui/ProfileActivity;)Landroidx/recyclerview/widget/LinearLayoutManager;
@@ -50,7 +50,7 @@
 
     if-eqz v0, :cond_4
 
-    .line 3593
+    .line 3605
     iget-object v2, p0, Lorg/telegram/ui/ProfileActivity$13;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-static {v2}, Lorg/telegram/ui/ProfileActivity;->access$14400(Lorg/telegram/ui/ProfileActivity;)Z
@@ -59,7 +59,7 @@
 
     if-nez v2, :cond_4
 
-    .line 3594
+    .line 3606
     invoke-virtual {v0}, Landroid/view/View;->getTop()I
 
     move-result v0
@@ -72,7 +72,7 @@
 
     sub-int/2addr v0, v2
 
-    .line 3595
+    .line 3607
     iget-object v2, p0, Lorg/telegram/ui/ProfileActivity$13;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-static {v2}, Lorg/telegram/ui/ProfileActivity;->access$7500(Lorg/telegram/ui/ProfileActivity;)Z
@@ -85,7 +85,7 @@
 
     if-le v0, p1, :cond_1
 
-    .line 3597
+    .line 3609
     iget-object p1, p0, Lorg/telegram/ui/ProfileActivity$13;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ProfileActivity;->access$1800(Lorg/telegram/ui/ProfileActivity;)Lorg/telegram/ui/Components/ProfileGalleryView;
@@ -134,7 +134,7 @@
 
     if-nez p1, :cond_2
 
-    .line 3598
+    .line 3610
     iget-object p1, p0, Lorg/telegram/ui/ProfileActivity$13;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ProfileActivity;->access$7700(Lorg/telegram/ui/ProfileActivity;)Lorg/telegram/tgnet/TLRPC$FileLocation;
@@ -150,7 +150,7 @@
 
     goto :goto_0
 
-    .line 3600
+    .line 3612
     :cond_1
     iget-object v2, p0, Lorg/telegram/ui/ProfileActivity$13;->this$0:Lorg/telegram/ui/ProfileActivity;
 
@@ -162,7 +162,7 @@
 
     if-lt p1, v0, :cond_3
 
-    .line 3603
+    .line 3615
     iget-object p1, p0, Lorg/telegram/ui/ProfileActivity$13;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-static {p1, v1}, Lorg/telegram/ui/ProfileActivity;->access$7502(Lorg/telegram/ui/ProfileActivity;Z)Z
@@ -173,7 +173,7 @@
 
     goto :goto_1
 
-    .line 3604
+    .line 3616
     :cond_3
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$13;->this$0:Lorg/telegram/ui/ProfileActivity;
 
@@ -187,7 +187,7 @@
 
     if-ne v0, v3, :cond_4
 
-    .line 3605
+    .line 3617
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$13;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ProfileActivity;->access$4200(Lorg/telegram/ui/ProfileActivity;)Z
@@ -196,10 +196,10 @@
 
     if-nez v0, :cond_4
 
-    .line 3606
+    .line 3618
     div-int/lit8 p1, p1, 0x2
 
-    .line 3611
+    .line 3623
     :cond_4
     :goto_1
     invoke-super {p0, p1, p2, p3}, Landroidx/recyclerview/widget/LinearLayoutManager;->scrollVerticallyBy(ILandroidx/recyclerview/widget/RecyclerView$Recycler;Landroidx/recyclerview/widget/RecyclerView$State;)I
@@ -212,7 +212,7 @@
 .method public supportsPredictiveItemAnimations()Z
     .locals 1
 
-    .line 3587
+    .line 3599
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$13;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ProfileActivity;->access$600(Lorg/telegram/ui/ProfileActivity;)Lorg/telegram/ui/Components/ImageUpdater;

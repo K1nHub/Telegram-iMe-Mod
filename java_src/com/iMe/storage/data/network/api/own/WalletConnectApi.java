@@ -11,9 +11,9 @@ import retrofit2.http.POST;
 /* compiled from: WalletConnectApi.kt */
 /* loaded from: classes3.dex */
 public interface WalletConnectApi {
-    @POST("wallet-connect/getParamsForCryptoTransaction")
+    @POST("wallet-connect/prepareTx")
     Observable<ApiBaseResponse<ParamsForCryptoTransactionResponse>> getWalletConnectParamsForCryptoTransaction(@Body GetParamsForCryptoTransactionRequest getParamsForCryptoTransactionRequest);
 
-    @POST("wallet-connect/sendCryptoTransaction")
+    @POST("wallet-connect/sendTx")
     Observable<ApiBaseResponse<TransactionResponse>> sendWalletConnectCryptoTransaction(@Body SendCryptoTransferTransactionRequest sendCryptoTransferTransactionRequest);
 }

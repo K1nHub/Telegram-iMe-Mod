@@ -28,7 +28,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nRepositoryModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 RepositoryModule.kt\ncom/iMe/storage/data/di/module/RepositoryModuleKt$repositoryModule$1$25\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,153:1\n129#2,5:154\n129#2,5:159\n*S KotlinDebug\n*F\n+ 1 RepositoryModule.kt\ncom/iMe/storage/data/di/module/RepositoryModuleKt$repositoryModule$1$25\n*L\n146#1:154,5\n147#1:159,5\n*E\n"
+    value = "SMAP\nRepositoryModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 RepositoryModule.kt\ncom/iMe/storage/data/di/module/RepositoryModuleKt$repositoryModule$1$25\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,157:1\n129#2,5:158\n129#2,5:163\n*S KotlinDebug\n*F\n+ 1 RepositoryModule.kt\ncom/iMe/storage/data/di/module/RepositoryModuleKt$repositoryModule$1$25\n*L\n150#1:158,5\n151#1:163,5\n*E\n"
 .end annotation
 
 
@@ -72,7 +72,7 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 145
+    .line 149
     new-instance p2, Lcom/iMe/storage/data/repository/crypto/wallet_connect/WalletConnectRepositoryImpl;
 
     .line 133
@@ -165,7 +165,7 @@
 
     move-object v1, p2
 
-    .line 145
+    .line 149
     invoke-direct/range {v1 .. v7}, Lcom/iMe/storage/data/repository/crypto/wallet_connect/WalletConnectRepositoryImpl;-><init>(Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler;Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;Lcom/iMe/storage/domain/gateway/TelegramGateway;Lcom/iMe/storage/data/network/api/own/WalletConnectApi;Lcom/iMe/storage/data/datasource/wallet_connect/WalletConnectDataSource;Lcom/iMe/storage/data/locale/db/dao/minor/wallet/WalletConnectSessionsDao;)V
 
     return-object p2
@@ -174,7 +174,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 144
+    .line 148
     check-cast p1, Lorg/koin/core/scope/Scope;
 
     check-cast p2, Lorg/koin/core/parameter/ParametersHolder;

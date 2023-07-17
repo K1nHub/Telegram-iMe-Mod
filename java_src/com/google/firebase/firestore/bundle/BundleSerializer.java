@@ -5,7 +5,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.Locale;
-import p034j$.util.DesugarTimeZone;
+import p033j$.util.DesugarTimeZone;
 /* loaded from: classes3.dex */
 public class BundleSerializer {
     private final SimpleDateFormat timestampFormat;

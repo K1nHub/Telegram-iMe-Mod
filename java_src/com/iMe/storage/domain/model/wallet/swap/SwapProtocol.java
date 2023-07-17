@@ -55,5 +55,10 @@ public enum SwapProtocol {
             }
             return swapProtocol == null ? SwapProtocol.UNKNOWN : swapProtocol;
         }
+
+        public final SwapProtocol resolveByNetworkId(String networkId) {
+            Intrinsics.checkNotNullParameter(networkId, "networkId");
+            return SwapProtocol.ONEINCH;
+        }
     }
 }

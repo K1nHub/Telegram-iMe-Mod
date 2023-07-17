@@ -100,7 +100,7 @@ public final class NetworkModuleKt {
             writeTimeout.addInterceptor(interceptor);
         }
         if (FlipperManager.isFlipperEnabled()) {
-            writeTimeout.addInterceptor(new FlipperOkhttpInterceptor(FlipperManager.INSTANCE.getNetworkFlipperPlugin()));
+            writeTimeout.addInterceptor(new FlipperOkhttpInterceptor(FlipperManager.INSTANCE.getNetworkFlipperPlugin(), null, 2, null));
         }
         return writeTimeout.build();
     }

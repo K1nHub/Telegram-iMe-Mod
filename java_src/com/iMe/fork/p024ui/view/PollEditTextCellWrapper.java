@@ -13,12 +13,12 @@ import kotlin.LazyKt__LazyJVMKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3295R;
+import org.telegram.messenger.C3417R;
 import org.telegram.messenger.LocaleController;
-import org.telegram.p044ui.ActionBar.Theme;
-import org.telegram.p044ui.Cells.PollEditTextCell;
-import org.telegram.p044ui.Components.EditTextBoldCursor;
-import org.telegram.p044ui.Components.LayoutHelper;
+import org.telegram.p043ui.ActionBar.Theme;
+import org.telegram.p043ui.Cells.PollEditTextCell;
+import org.telegram.p043ui.Components.EditTextBoldCursor;
+import org.telegram.p043ui.Components.LayoutHelper;
 /* compiled from: PollEditTextCellWrapper.kt */
 /* renamed from: com.iMe.fork.ui.view.PollEditTextCellWrapper */
 /* loaded from: classes3.dex */
@@ -159,7 +159,7 @@ public final class PollEditTextCellWrapper extends LinearLayout {
     /* JADX INFO: Access modifiers changed from: private */
     public final TextView initNoIconTextView() {
         TextView textView = new TextView(getContext());
-        textView.setText(LocaleController.getInternalString(C3295R.string.no_icon));
+        textView.setText(LocaleController.getInternalString(C3417R.string.no_icon));
         textView.setTextSize(1, 14.0f);
         return textView;
     }
@@ -168,7 +168,7 @@ public final class PollEditTextCellWrapper extends LinearLayout {
     public final ImageView initArrowImageView() {
         ImageView imageView = new ImageView(getContext());
         imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
-        imageView.setImageResource(C3295R.C3297drawable.arrow_more);
+        imageView.setImageResource(C3417R.C3419drawable.arrow_more);
         return imageView;
     }
 

@@ -12,13 +12,13 @@ final class zzeo extends zzfa<T> {
         this.zzb = obj;
     }
 
-    @Override // java.util.Iterator, p034j$.util.Iterator
+    @Override // java.util.Iterator, p033j$.util.Iterator
     public final boolean hasNext() {
         return !this.zza;
     }
 
     /* JADX WARN: Type inference failed for: r0v3, types: [T, java.lang.Object] */
-    @Override // java.util.Iterator, p034j$.util.Iterator
+    @Override // java.util.Iterator, p033j$.util.Iterator
     public final T next() {
         if (this.zza) {
             throw new NoSuchElementException();

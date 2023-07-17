@@ -962,7 +962,7 @@
 .method public static onSchedule(Ljava/lang/Runnable;)Ljava/lang/Runnable;
     .locals 1
 
-    const-string v0, "run is null"
+    const-string/jumbo v0, "run is null"
 
     .line 467
     invoke-static {p0, v0}, Lio/reactivex/internal/functions/ObjectHelper;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;

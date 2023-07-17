@@ -2,7 +2,7 @@ package com.iMe.p031ui.wallet.staking.operations;
 
 import com.iMe.p031ui.base.mvp.base.BaseView;
 import com.iMe.storage.domain.model.Result;
-import com.iMe.storage.domain.model.crypto.NetworkType;
+import com.iMe.storage.domain.model.crypto.Network;
 import com.iMe.storage.domain.utils.system.ResourceManager;
 import io.reactivex.disposables.Disposable;
 import java.util.List;
@@ -18,6 +18,11 @@ public class StakingOperationsView$$State extends MvpViewState<StakingOperations
     @Override // com.iMe.p031ui.base.mvp.base.BaseView
     public /* synthetic */ void finishScreen() {
         BaseView.CC.$default$finishScreen(this);
+    }
+
+    @Override // com.iMe.p031ui.base.mvp.base.BaseView
+    public /* synthetic */ void removeSelfFromStackImmediately() {
+        BaseView.CC.$default$removeSelfFromStackImmediately(this);
     }
 
     @Override // com.iMe.p031ui.wallet.staking.operations.StakingOperationsView
@@ -86,27 +91,27 @@ public class StakingOperationsView$$State extends MvpViewState<StakingOperations
     }
 
     @Override // com.iMe.p031ui.base.mvp.SwitchNetworkView
-    public void setupNetworkType(NetworkType networkType) {
-        SetupNetworkTypeCommand setupNetworkTypeCommand = new SetupNetworkTypeCommand(this, networkType);
-        this.viewCommands.beforeApply(setupNetworkTypeCommand);
+    public void setupNetwork(Network network) {
+        SetupNetworkCommand setupNetworkCommand = new SetupNetworkCommand(this, network);
+        this.viewCommands.beforeApply(setupNetworkCommand);
         if (hasNotView().booleanValue()) {
             return;
         }
         for (View view : this.views) {
-            view.setupNetworkType(networkType);
+            view.setupNetwork(network);
         }
-        this.viewCommands.afterApply(setupNetworkTypeCommand);
+        this.viewCommands.afterApply(setupNetworkCommand);
     }
 
     @Override // com.iMe.p031ui.base.mvp.SwitchNetworkView
-    public void showChooseNetworkDialog(NetworkType networkType, List<? extends NetworkType> list, Function1<? super NetworkType, Unit> function1) {
-        ShowChooseNetworkDialogCommand showChooseNetworkDialogCommand = new ShowChooseNetworkDialogCommand(this, networkType, list, function1);
+    public void showChooseNetworkDialog(Network network, List<Network> list, Function1<? super Network, Unit> function1) {
+        ShowChooseNetworkDialogCommand showChooseNetworkDialogCommand = new ShowChooseNetworkDialogCommand(this, network, list, function1);
         this.viewCommands.beforeApply(showChooseNetworkDialogCommand);
         if (hasNotView().booleanValue()) {
             return;
         }
         for (View view : this.views) {
-            view.showChooseNetworkDialog(networkType, list, function1);
+            view.showChooseNetworkDialog(network, list, function1);
         }
         this.viewCommands.afterApply(showChooseNetworkDialogCommand);
     }
@@ -200,19 +205,19 @@ public class StakingOperationsView$$State extends MvpViewState<StakingOperations
     }
 
     /* compiled from: StakingOperationsView$$State.java */
-    /* renamed from: com.iMe.ui.wallet.staking.operations.StakingOperationsView$$State$SetupNetworkTypeCommand */
+    /* renamed from: com.iMe.ui.wallet.staking.operations.StakingOperationsView$$State$SetupNetworkCommand */
     /* loaded from: classes4.dex */
-    public class SetupNetworkTypeCommand extends ViewCommand<StakingOperationsView> {
-        public final NetworkType networkType;
+    public class SetupNetworkCommand extends ViewCommand<StakingOperationsView> {
+        public final Network network;
 
-        SetupNetworkTypeCommand(StakingOperationsView$$State stakingOperationsView$$State, NetworkType networkType) {
-            super("setupNetworkType", AddToEndSingleStrategy.class);
-            this.networkType = networkType;
+        SetupNetworkCommand(StakingOperationsView$$State stakingOperationsView$$State, Network network) {
+            super("setupNetwork", AddToEndSingleStrategy.class);
+            this.network = network;
         }
 
         @Override // moxy.viewstate.ViewCommand
         public void apply(StakingOperationsView stakingOperationsView) {
-            stakingOperationsView.setupNetworkType(this.networkType);
+            stakingOperationsView.setupNetwork(this.network);
         }
     }
 
@@ -220,20 +225,20 @@ public class StakingOperationsView$$State extends MvpViewState<StakingOperations
     /* renamed from: com.iMe.ui.wallet.staking.operations.StakingOperationsView$$State$ShowChooseNetworkDialogCommand */
     /* loaded from: classes4.dex */
     public class ShowChooseNetworkDialogCommand extends ViewCommand<StakingOperationsView> {
-        public final Function1<? super NetworkType, Unit> action;
-        public final List<? extends NetworkType> availableNetworks;
-        public final NetworkType networkType;
+        public final Function1<? super Network, Unit> action;
+        public final List<Network> availableNetworks;
+        public final Network network;
 
-        ShowChooseNetworkDialogCommand(StakingOperationsView$$State stakingOperationsView$$State, NetworkType networkType, List<? extends NetworkType> list, Function1<? super NetworkType, Unit> function1) {
+        ShowChooseNetworkDialogCommand(StakingOperationsView$$State stakingOperationsView$$State, Network network, List<Network> list, Function1<? super Network, Unit> function1) {
             super("showChooseNetworkDialog", OneExecutionStateStrategy.class);
-            this.networkType = networkType;
+            this.network = network;
             this.availableNetworks = list;
             this.action = function1;
         }
 
         @Override // moxy.viewstate.ViewCommand
         public void apply(StakingOperationsView stakingOperationsView) {
-            stakingOperationsView.showChooseNetworkDialog(this.networkType, this.availableNetworks, this.action);
+            stakingOperationsView.showChooseNetworkDialog(this.network, this.availableNetworks, this.action);
         }
     }
 }

@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/LoginActivity;)V
     .locals 0
 
-    .line 291
+    .line 331
     iput-object p1, p0, Lorg/telegram/ui/LoginActivity$1;->this$0:Lorg/telegram/ui/LoginActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public onError()V
     .locals 3
 
-    .line 322
+    .line 362
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$1;->this$0:Lorg/telegram/ui/LoginActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/LoginActivity;->access$000(Lorg/telegram/ui/LoginActivity;)Lorg/telegram/ui/Components/QRCodeBottomSheet;
@@ -59,7 +59,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 323
+    .line 363
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$1;->this$0:Lorg/telegram/ui/LoginActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/LoginActivity;->access$000(Lorg/telegram/ui/LoginActivity;)Lorg/telegram/ui/Components/QRCodeBottomSheet;
@@ -68,7 +68,7 @@
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BottomSheet;->dismiss()V
 
-    .line 325
+    .line 365
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$1;->this$0:Lorg/telegram/ui/LoginActivity;
 
@@ -102,7 +102,7 @@
 .method public onTokenAuthorized(Lorg/telegram/tgnet/TLRPC$TL_auth_authorization;)V
     .locals 1
 
-    .line 306
+    .line 346
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$1;->this$0:Lorg/telegram/ui/LoginActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/LoginActivity;->access$000(Lorg/telegram/ui/LoginActivity;)Lorg/telegram/ui/Components/QRCodeBottomSheet;
@@ -123,7 +123,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 307
+    .line 347
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$1;->this$0:Lorg/telegram/ui/LoginActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/LoginActivity;->access$000(Lorg/telegram/ui/LoginActivity;)Lorg/telegram/ui/Components/QRCodeBottomSheet;
@@ -132,7 +132,7 @@
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BottomSheet;->dismiss()V
 
-    .line 309
+    .line 349
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$1;->this$0:Lorg/telegram/ui/LoginActivity;
 
@@ -144,7 +144,7 @@
 .method public onTokenGenerated(Ljava/lang/String;I)V
     .locals 2
 
-    .line 294
+    .line 334
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$1;->this$0:Lorg/telegram/ui/LoginActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/LoginActivity;->access$000(Lorg/telegram/ui/LoginActivity;)Lorg/telegram/ui/Components/QRCodeBottomSheet;
@@ -165,7 +165,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 295
+    .line 335
     iget-object p2, p0, Lorg/telegram/ui/LoginActivity$1;->this$0:Lorg/telegram/ui/LoginActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/LoginActivity;->access$000(Lorg/telegram/ui/LoginActivity;)Lorg/telegram/ui/Components/QRCodeBottomSheet;
@@ -176,7 +176,7 @@
 
     goto :goto_0
 
-    .line 296
+    .line 336
     :cond_0
     sget-object v0, Lcom/iMe/fork/enums/ExternalApp;->QUICK_LOGIN:Lcom/iMe/fork/enums/ExternalApp;
 
@@ -186,7 +186,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 297
+    .line 337
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "com.iMe.quicklogin.AUTHORIZE"
@@ -195,15 +195,15 @@
 
     const-string v1, "token"
 
-    .line 298
+    .line 338
     invoke-virtual {v0, v1, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
     const-string p1, "tokenLifeTime"
 
-    .line 299
+    .line 339
     invoke-virtual {v0, p1, p2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 300
+    .line 340
     iget-object p1, p0, Lorg/telegram/ui/LoginActivity$1;->this$0:Lorg/telegram/ui/LoginActivity;
 
     sget p2, Lcom/iMe/common/IdFabric$RequestCode;->QUICK_LOGIN_AUTHORIZE:I
@@ -218,7 +218,7 @@
 .method public onTwoStepVerificationNeeded()V
     .locals 1
 
-    .line 314
+    .line 354
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$1;->this$0:Lorg/telegram/ui/LoginActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/LoginActivity;->access$000(Lorg/telegram/ui/LoginActivity;)Lorg/telegram/ui/Components/QRCodeBottomSheet;
@@ -239,7 +239,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 315
+    .line 355
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$1;->this$0:Lorg/telegram/ui/LoginActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/LoginActivity;->access$000(Lorg/telegram/ui/LoginActivity;)Lorg/telegram/ui/Components/QRCodeBottomSheet;
@@ -248,7 +248,7 @@
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BottomSheet;->dismiss()V
 
-    .line 317
+    .line 357
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$1;->this$0:Lorg/telegram/ui/LoginActivity;
 

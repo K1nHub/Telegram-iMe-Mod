@@ -18,8 +18,6 @@
 
 .field public static final enum ALBUMS:Lcom/iMe/fork/enums/BackupComponent;
 
-.field public static final enum BOOKMARKS:Lcom/iMe/fork/enums/BackupComponent;
-
 .field public static final enum FILTERS:Lcom/iMe/fork/enums/BackupComponent;
 
 .field public static final enum HIDDEN_CHATS:Lcom/iMe/fork/enums/BackupComponent;
@@ -49,7 +47,7 @@
 .method private static final synthetic $values()[Lcom/iMe/fork/enums/BackupComponent;
     .locals 3
 
-    const/16 v0, 0xc
+    const/16 v0, 0xb
 
     new-array v0, v0, [Lcom/iMe/fork/enums/BackupComponent;
 
@@ -83,45 +81,39 @@
 
     aput-object v1, v0, v2
 
-    sget-object v1, Lcom/iMe/fork/enums/BackupComponent;->BOOKMARKS:Lcom/iMe/fork/enums/BackupComponent;
+    sget-object v1, Lcom/iMe/fork/enums/BackupComponent;->MUSIC:Lcom/iMe/fork/enums/BackupComponent;
 
     const/4 v2, 0x5
 
     aput-object v1, v0, v2
 
-    sget-object v1, Lcom/iMe/fork/enums/BackupComponent;->MUSIC:Lcom/iMe/fork/enums/BackupComponent;
+    sget-object v1, Lcom/iMe/fork/enums/BackupComponent;->TRANSLATION:Lcom/iMe/fork/enums/BackupComponent;
 
     const/4 v2, 0x6
 
     aput-object v1, v0, v2
 
-    sget-object v1, Lcom/iMe/fork/enums/BackupComponent;->TRANSLATION:Lcom/iMe/fork/enums/BackupComponent;
+    sget-object v1, Lcom/iMe/fork/enums/BackupComponent;->TEMPLATES:Lcom/iMe/fork/enums/BackupComponent;
 
     const/4 v2, 0x7
 
     aput-object v1, v0, v2
 
-    sget-object v1, Lcom/iMe/fork/enums/BackupComponent;->TEMPLATES:Lcom/iMe/fork/enums/BackupComponent;
+    sget-object v1, Lcom/iMe/fork/enums/BackupComponent;->TOPICS:Lcom/iMe/fork/enums/BackupComponent;
 
     const/16 v2, 0x8
 
     aput-object v1, v0, v2
 
-    sget-object v1, Lcom/iMe/fork/enums/BackupComponent;->TOPICS:Lcom/iMe/fork/enums/BackupComponent;
+    sget-object v1, Lcom/iMe/fork/enums/BackupComponent;->HIDDEN_CHATS:Lcom/iMe/fork/enums/BackupComponent;
 
     const/16 v2, 0x9
 
     aput-object v1, v0, v2
 
-    sget-object v1, Lcom/iMe/fork/enums/BackupComponent;->HIDDEN_CHATS:Lcom/iMe/fork/enums/BackupComponent;
-
-    const/16 v2, 0xa
-
-    aput-object v1, v0, v2
-
     sget-object v1, Lcom/iMe/fork/enums/BackupComponent;->RECENT_CHATS:Lcom/iMe/fork/enums/BackupComponent;
 
-    const/16 v2, 0xb
+    const/16 v2, 0xa
 
     aput-object v1, v0, v2
 
@@ -199,89 +191,76 @@
     .line 12
     new-instance v0, Lcom/iMe/fork/enums/BackupComponent;
 
-    sget v1, Lorg/telegram/messenger/R$string;->chat_bookmarks:I
+    sget v1, Lorg/telegram/messenger/R$string;->cloud_filter_music:I
 
-    const-string v2, "BOOKMARKS"
+    const-string v2, "MUSIC"
 
     const/4 v3, 0x5
 
     invoke-direct {v0, v2, v3, v1}, Lcom/iMe/fork/enums/BackupComponent;-><init>(Ljava/lang/String;II)V
 
-    sput-object v0, Lcom/iMe/fork/enums/BackupComponent;->BOOKMARKS:Lcom/iMe/fork/enums/BackupComponent;
-
-    .line 13
-    new-instance v0, Lcom/iMe/fork/enums/BackupComponent;
-
-    sget v1, Lorg/telegram/messenger/R$string;->cloud_filter_music:I
-
-    const-string v2, "MUSIC"
-
-    const/4 v3, 0x6
-
-    invoke-direct {v0, v2, v3, v1}, Lcom/iMe/fork/enums/BackupComponent;-><init>(Ljava/lang/String;II)V
-
     sput-object v0, Lcom/iMe/fork/enums/BackupComponent;->MUSIC:Lcom/iMe/fork/enums/BackupComponent;
 
-    .line 14
+    .line 13
     new-instance v0, Lcom/iMe/fork/enums/BackupComponent;
 
     sget v1, Lorg/telegram/messenger/R$string;->backup_component_translation:I
 
     const-string v2, "TRANSLATION"
 
-    const/4 v3, 0x7
+    const/4 v3, 0x6
 
     invoke-direct {v0, v2, v3, v1}, Lcom/iMe/fork/enums/BackupComponent;-><init>(Ljava/lang/String;II)V
 
     sput-object v0, Lcom/iMe/fork/enums/BackupComponent;->TRANSLATION:Lcom/iMe/fork/enums/BackupComponent;
 
-    .line 15
+    .line 14
     new-instance v0, Lcom/iMe/fork/enums/BackupComponent;
 
     sget v1, Lorg/telegram/messenger/R$string;->chat_templates:I
 
     const-string v2, "TEMPLATES"
 
-    const/16 v3, 0x8
+    const/4 v3, 0x7
 
     invoke-direct {v0, v2, v3, v1}, Lcom/iMe/fork/enums/BackupComponent;-><init>(Ljava/lang/String;II)V
 
     sput-object v0, Lcom/iMe/fork/enums/BackupComponent;->TEMPLATES:Lcom/iMe/fork/enums/BackupComponent;
 
-    .line 16
+    .line 15
     new-instance v0, Lcom/iMe/fork/enums/BackupComponent;
 
     sget v1, Lorg/telegram/messenger/R$string;->backup_component_topics:I
 
     const-string v2, "TOPICS"
 
-    const/16 v3, 0x9
+    const/16 v3, 0x8
 
     invoke-direct {v0, v2, v3, v1}, Lcom/iMe/fork/enums/BackupComponent;-><init>(Ljava/lang/String;II)V
 
     sput-object v0, Lcom/iMe/fork/enums/BackupComponent;->TOPICS:Lcom/iMe/fork/enums/BackupComponent;
 
-    .line 17
+    .line 16
     new-instance v0, Lcom/iMe/fork/enums/BackupComponent;
 
     sget v1, Lorg/telegram/messenger/R$string;->hidden_chats_title:I
 
     const-string v2, "HIDDEN_CHATS"
 
-    const/16 v3, 0xa
+    const/16 v3, 0x9
 
     invoke-direct {v0, v2, v3, v1}, Lcom/iMe/fork/enums/BackupComponent;-><init>(Ljava/lang/String;II)V
 
     sput-object v0, Lcom/iMe/fork/enums/BackupComponent;->HIDDEN_CHATS:Lcom/iMe/fork/enums/BackupComponent;
 
-    .line 18
+    .line 17
     new-instance v0, Lcom/iMe/fork/enums/BackupComponent;
 
     sget v1, Lorg/telegram/messenger/R$string;->settings_interface_recent_chats:I
 
     const-string v2, "RECENT_CHATS"
 
-    const/16 v3, 0xb
+    const/16 v3, 0xa
 
     invoke-direct {v0, v2, v3, v1}, Lcom/iMe/fork/enums/BackupComponent;-><init>(Ljava/lang/String;II)V
 

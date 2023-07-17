@@ -3,44 +3,50 @@ package com.iMe.p031ui.wallet.crypto.create.pin;
 import com.iMe.fork.controller.WalletFingerprintController;
 import com.iMe.gateway.TelegramControllersGateway;
 import com.iMe.model.common.ScreenStep;
+import com.iMe.model.wallet.crypto.create.WalletCreationType;
+import com.iMe.model.wallet.pin.CreatePinCodeScreenType;
 import com.iMe.model.wallet.pin.WalletPinScreenArgs;
 import com.iMe.p031ui.base.mvp.base.BasePresenter;
 import com.iMe.p031ui.base.mvp.base.BaseView;
 import com.iMe.storage.domain.interactor.crypto.CryptoWalletInteractor;
 import com.iMe.storage.domain.model.Result;
-import com.iMe.storage.domain.model.crypto.BlockchainType;
 import com.iMe.storage.domain.model.crypto.Wallet;
 import com.iMe.storage.domain.storage.CryptoPreferenceHelper;
 import com.iMe.storage.domain.utils.p030rx.SchedulersProvider;
 import com.iMe.storage.domain.utils.system.ResourceManager;
-import com.iMe.utils.extentions.p033rx.RxExtKt;
-import com.iMe.utils.extentions.p033rx.RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
+import com.iMe.utils.extentions.p032rx.RxExtKt;
+import com.iMe.utils.extentions.p032rx.RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
+import io.reactivex.Completable;
 import io.reactivex.Observable;
 import io.reactivex.disposables.Disposable;
+import io.reactivex.functions.Action;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import moxy.InjectViewState;
-import org.telegram.messenger.C3295R;
+import org.telegram.messenger.C3417R;
 import org.telegram.messenger.FingerprintController;
 /* compiled from: CreateWalletPinPresenter.kt */
 @InjectViewState
 /* renamed from: com.iMe.ui.wallet.crypto.create.pin.CreateWalletPinPresenter */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class CreateWalletPinPresenter extends BasePresenter<CreateWalletPinView> {
     private final CryptoPreferenceHelper cryptoPreferenceHelper;
     private final CryptoWalletInteractor cryptoWalletInteractor;
     private ScreenStep currentScreenStep;
-    private String guid;
-    private String password;
+    private final String password;
     private String pin;
     private final ResourceManager resourceManager;
     private final SchedulersProvider schedulersProvider;
-    private String seed;
+    private final CreatePinCodeScreenType screenType;
+    private final String seed;
     private final TelegramControllersGateway telegramControllersGateway;
+
+    /* renamed from: wallet  reason: collision with root package name */
+    private final Wallet f1931wallet;
 
     /* compiled from: CreateWalletPinPresenter.kt */
     /* renamed from: com.iMe.ui.wallet.crypto.create.pin.CreateWalletPinPresenter$WhenMappings */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
 
@@ -75,10 +81,11 @@ public final class CreateWalletPinPresenter extends BasePresenter<CreateWalletPi
         this.schedulersProvider = schedulersProvider;
         this.telegramControllersGateway = telegramControllersGateway;
         this.currentScreenStep = ScreenStep.FIRST_STEP;
-        this.pin = "";
         this.password = walletPinScreenArgs.getPassword();
-        this.guid = walletPinScreenArgs.getGuid();
         this.seed = walletPinScreenArgs.getSeed();
+        this.f1931wallet = walletPinScreenArgs.getWallet();
+        this.screenType = walletPinScreenArgs.getScreenType();
+        this.pin = "";
     }
 
     public final void setCurrentScreenStep(ScreenStep screenStep) {
@@ -101,24 +108,54 @@ public final class CreateWalletPinPresenter extends BasePresenter<CreateWalletPi
 
     private final void validatePin(String str) {
         if (Intrinsics.areEqual(this.pin, str)) {
-            Observable<Result<Wallet>> observeOn = getCreateWalletObservable().observeOn(this.schedulersProvider.mo698ui());
-            Intrinsics.checkNotNullExpressionValue(observeOn, "getCreateWalletObservabl…(schedulersProvider.ui())");
-            T viewState = getViewState();
-            Intrinsics.checkNotNullExpressionValue(viewState, "viewState");
-            Disposable subscribe = RxExtKt.withLoadingDialog((Observable) observeOn, (BaseView) viewState, false).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2159xe4b01fa6(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2160xe4b01fa7((BaseView) getViewState())));
-            Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
-            BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
-            return;
+            CreatePinCodeScreenType createPinCodeScreenType = this.screenType;
+            if (createPinCodeScreenType instanceof CreatePinCodeScreenType.Change) {
+                changePinCode();
+                return;
+            } else if (createPinCodeScreenType instanceof CreatePinCodeScreenType.Creation) {
+                createWallet(((CreatePinCodeScreenType.Creation) createPinCodeScreenType).getCreationType());
+                return;
+            } else {
+                return;
+            }
         }
-        onPinError(this.resourceManager.getString(C3295R.string.wallet_confirm_eth_pin_code_validation_not_match_error));
+        onPinError(this.resourceManager.getString(C3417R.string.wallet_confirm_eth_pin_code_validation_not_match_error));
     }
 
-    private final Observable<Result<Wallet>> getCreateWalletObservable() {
-        BlockchainType currentBlockchainType = this.cryptoPreferenceHelper.getCurrentBlockchainType();
-        if (this.guid.length() > 0) {
-            return this.cryptoWalletInteractor.recreateWallet(this.password, this.pin, currentBlockchainType);
+    private final void changePinCode() {
+        Completable observeOn = this.cryptoWalletInteractor.rewriteDataWithNewPin(this.pin).observeOn(this.schedulersProvider.mo698ui());
+        Intrinsics.checkNotNullExpressionValue(observeOn, "cryptoWalletInteractor\n …(schedulersProvider.ui())");
+        Disposable subscribe = observeOn.subscribe(new Action() { // from class: com.iMe.ui.wallet.crypto.create.pin.CreateWalletPinPresenter$changePinCode$$inlined$subscribeWithErrorHandle$default$1
+            @Override // io.reactivex.functions.Action
+            public final void run() {
+                CreateWalletPinPresenter.this.savePinEncrypted();
+                ((CreateWalletPinView) CreateWalletPinPresenter.this.getViewState()).onWalletPinCodeChangeSuccess();
+            }
+        }, new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2154x26757cda((BaseView) getViewState())));
+        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…Error.invoke()\n        })");
+        BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
+    }
+
+    private final void createWallet(WalletCreationType.Initial initial) {
+        if (Intrinsics.areEqual(initial, WalletCreationType.Initial.Create.INSTANCE)) {
+            savePinEncrypted();
+            CreateWalletPinView createWalletPinView = (CreateWalletPinView) getViewState();
+            String str = this.password;
+            String str2 = this.pin;
+            Wallet wallet2 = this.f1931wallet;
+            if (wallet2 == null) {
+                return;
+            }
+            createWalletPinView.onWalletCreateSuccess(str, str2, wallet2);
+        } else if (Intrinsics.areEqual(initial, WalletCreationType.Initial.Import.INSTANCE)) {
+            Observable<Result<Wallet>> observeOn = this.cryptoWalletInteractor.importWallet(this.seed, this.password, this.pin, this.cryptoPreferenceHelper.getCurrentBlockchainType()).observeOn(this.schedulersProvider.mo698ui());
+            Intrinsics.checkNotNullExpressionValue(observeOn, "cryptoWalletInteractor\n …(schedulersProvider.ui())");
+            T viewState = getViewState();
+            Intrinsics.checkNotNullExpressionValue(viewState, "viewState");
+            Disposable subscribe = RxExtKt.withLoadingDialog((Observable) observeOn, (BaseView) viewState, false).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2155x6a0c3914(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2156x6a0c3915((BaseView) getViewState())));
+            Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…Error.invoke()\n        })");
+            BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
         }
-        return this.seed.length() > 0 ? this.cryptoWalletInteractor.importWallet(this.seed, this.password, this.pin, currentBlockchainType) : this.cryptoWalletInteractor.createLocalWallet(currentBlockchainType);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -137,7 +174,7 @@ public final class CreateWalletPinPresenter extends BasePresenter<CreateWalletPi
     public final void onPinError(String str) {
         CreateWalletPinView createWalletPinView = (CreateWalletPinView) getViewState();
         createWalletPinView.showToast(str);
-        createWalletPinView.onCodeErrorShake();
+        createWalletPinView.onWalletPinCodeError();
     }
 
     private final boolean isValidPin(String str) {
@@ -146,7 +183,7 @@ public final class CreateWalletPinPresenter extends BasePresenter<CreateWalletPi
 
     /* compiled from: CreateWalletPinPresenter.kt */
     /* renamed from: com.iMe.ui.wallet.crypto.create.pin.CreateWalletPinPresenter$Companion */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

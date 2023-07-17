@@ -522,7 +522,7 @@
 .end method
 
 .method public getMessage()Ljava/lang/String;
-    .locals 8
+    .locals 7
 
     .line 45
     new-instance v0, Lcom/iMe/storage/domain/model/wallet/token/FiatCode;
@@ -537,87 +537,76 @@
 
     invoke-direct {v0, v1, v2, v3, v4}, Lcom/iMe/storage/domain/model/wallet/token/FiatCode;-><init>(Ljava/lang/String;IILkotlin/jvm/internal/DefaultConstructorMarker;)V
 
-    .line 46
-    sget-object v1, Lcom/iMe/storage/domain/model/wallet/token/TokenInfo;->Companion:Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Companion;
+    .line 47
+    sget v1, Lorg/telegram/messenger/R$string;->push_notification_wallet_simplex_payment:I
 
-    iget-object v4, p0, Lcom/iMe/model/wallet/notification/PushNotificationModel$Simplex;->cryptoCode:Ljava/lang/String;
+    const/4 v4, 0x5
 
-    invoke-virtual {v1, v4}, Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Companion;->map(Ljava/lang/String;)Lcom/iMe/storage/domain/model/wallet/token/TokenInfo;
-
-    move-result-object v1
+    new-array v4, v4, [Ljava/lang/Object;
 
     .line 48
-    sget v4, Lorg/telegram/messenger/R$string;->push_notification_wallet_simplex_payment:I
+    new-instance v5, Ljava/math/BigDecimal;
 
-    const/4 v5, 0x5
+    iget-object v6, p0, Lcom/iMe/model/wallet/notification/PushNotificationModel$Simplex;->amountToSpent:Ljava/lang/String;
 
-    new-array v5, v5, [Ljava/lang/Object;
-
-    .line 49
-    new-instance v6, Ljava/math/BigDecimal;
-
-    iget-object v7, p0, Lcom/iMe/model/wallet/notification/PushNotificationModel$Simplex;->amountToSpent:Ljava/lang/String;
-
-    invoke-direct {v6, v7}, Ljava/math/BigDecimal;-><init>(Ljava/lang/String;)V
+    invoke-direct {v5, v6}, Ljava/math/BigDecimal;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v0}, Lcom/iMe/storage/domain/model/wallet/token/FiatCode;->getDecimals()I
 
-    move-result v7
+    move-result v6
 
-    invoke-static {v6, v7}, Lcom/iMe/utils/formatter/BalanceFormatter;->formatBalance(Ljava/lang/Number;I)Ljava/lang/String;
+    invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v6
 
-    aput-object v6, v5, v2
+    invoke-static {v5, v6}, Lcom/iMe/utils/formatter/BalanceFormatter;->formatBalance(Ljava/lang/Number;Ljava/lang/Integer;)Ljava/lang/String;
 
-    .line 50
+    move-result-object v5
+
+    aput-object v5, v4, v2
+
+    .line 49
     invoke-virtual {v0}, Lcom/iMe/storage/domain/model/wallet/token/FiatCode;->getShortName()Ljava/lang/String;
 
     move-result-object v0
 
-    const/4 v6, 0x1
+    const/4 v5, 0x1
 
-    aput-object v0, v5, v6
+    aput-object v0, v4, v5
 
-    .line 49
+    .line 48
     new-instance v0, Ljava/math/BigDecimal;
 
-    .line 51
-    iget-object v6, p0, Lcom/iMe/model/wallet/notification/PushNotificationModel$Simplex;->amount:Ljava/lang/String;
+    .line 50
+    iget-object v5, p0, Lcom/iMe/model/wallet/notification/PushNotificationModel$Simplex;->amount:Ljava/lang/String;
 
-    invoke-direct {v0, v6}, Ljava/math/BigDecimal;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v5}, Ljava/math/BigDecimal;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v1}, Lcom/iMe/storage/domain/model/wallet/token/TokenInfo;->getDecimals()I
+    const/16 v5, 0x8
 
-    move-result v6
+    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    invoke-static {v0, v6}, Lcom/iMe/utils/formatter/BalanceFormatter;->formatBalance(Ljava/lang/Number;I)Ljava/lang/String;
+    move-result-object v5
+
+    invoke-static {v0, v5}, Lcom/iMe/utils/formatter/BalanceFormatter;->formatBalance(Ljava/lang/Number;Ljava/lang/Integer;)Ljava/lang/String;
 
     move-result-object v0
 
-    aput-object v0, v5, v3
+    aput-object v0, v4, v3
+
+    .line 51
+    iget-object v0, p0, Lcom/iMe/model/wallet/notification/PushNotificationModel$Simplex;->cryptoCode:Ljava/lang/String;
+
+    const/4 v3, 0x3
+
+    aput-object v0, v4, v3
 
     .line 52
-    invoke-virtual {v1}, Lcom/iMe/storage/domain/model/wallet/token/TokenInfo;->getShortName()I
-
-    move-result v0
-
-    new-array v1, v2, [Ljava/lang/Object;
-
-    invoke-virtual {p0, v0, v1}, Lcom/iMe/model/wallet/notification/PushNotificationModel;->getString$TMessagesProj_release(I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v0
-
-    const/4 v1, 0x3
-
-    aput-object v0, v5, v1
-
-    .line 53
     sget-object v0, Lcom/iMe/storage/data/network/model/response/base/Status;->Companion:Lcom/iMe/storage/data/network/model/response/base/Status$Companion;
 
-    iget-object v1, p0, Lcom/iMe/model/wallet/notification/PushNotificationModel$Simplex;->status:Ljava/lang/String;
+    iget-object v3, p0, Lcom/iMe/model/wallet/notification/PushNotificationModel$Simplex;->status:Ljava/lang/String;
 
-    invoke-virtual {v0, v1}, Lcom/iMe/storage/data/network/model/response/base/Status$Companion;->map(Ljava/lang/String;)Lcom/iMe/storage/data/network/model/response/base/Status;
+    invoke-virtual {v0, v3}, Lcom/iMe/storage/data/network/model/response/base/Status$Companion;->map(Ljava/lang/String;)Lcom/iMe/storage/data/network/model/response/base/Status;
 
     move-result-object v0
 
@@ -625,18 +614,18 @@
 
     move-result v0
 
-    new-array v1, v2, [Ljava/lang/Object;
+    new-array v2, v2, [Ljava/lang/Object;
 
-    invoke-virtual {p0, v0, v1}, Lcom/iMe/model/wallet/notification/PushNotificationModel;->getString$TMessagesProj_release(I[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual {p0, v0, v2}, Lcom/iMe/model/wallet/notification/PushNotificationModel;->getString$TMessagesProj_HA_public(I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
-    const/4 v1, 0x4
+    const/4 v2, 0x4
 
-    aput-object v0, v5, v1
+    aput-object v0, v4, v2
 
-    .line 47
-    invoke-virtual {p0, v4, v5}, Lcom/iMe/model/wallet/notification/PushNotificationModel;->getString$TMessagesProj_release(I[Ljava/lang/Object;)Ljava/lang/String;
+    .line 46
+    invoke-virtual {p0, v1, v4}, Lcom/iMe/model/wallet/notification/PushNotificationModel;->getString$TMessagesProj_HA_public(I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 

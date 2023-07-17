@@ -31,7 +31,7 @@
 .method public static bind(Landroid/view/View;)Lorg/telegram/messenger/databinding/ForkFragmentTwitterSearchBinding;
     .locals 1
 
-    const-string v0, "rootView"
+    const-string/jumbo v0, "rootView"
 
     .line 52
     invoke-static {p0, v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;

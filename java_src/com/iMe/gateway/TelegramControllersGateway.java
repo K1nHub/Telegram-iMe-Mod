@@ -71,16 +71,6 @@ public interface TelegramControllersGateway {
             }
             throw new UnsupportedOperationException("Super calls with default arguments not supported in this target, function: getNotificationCenterInstance");
         }
-
-        public static /* synthetic */ NotificationsController getNotificationsController$default(TelegramControllersGateway telegramControllersGateway, int i, int i2, Object obj) {
-            if (obj == null) {
-                if ((i2 & 1) != 0) {
-                    i = -1;
-                }
-                return telegramControllersGateway.getNotificationsController(i);
-            }
-            throw new UnsupportedOperationException("Super calls with default arguments not supported in this target, function: getNotificationsController");
-        }
     }
 
     /* compiled from: TelegramControllersGateway.kt */

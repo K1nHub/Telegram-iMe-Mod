@@ -46,14 +46,14 @@
         }
     .end annotation
 
-    .line 199
+    .line 279
     const-class p1, Lmoxy/viewstate/strategy/AddToEndSingleStrategy;
 
     const-string v0, "showWordsSuggestions"
 
     invoke-direct {p0, v0, p1}, Lmoxy/viewstate/ViewCommand;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
-    .line 201
+    .line 281
     iput-object p2, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletView$$State$ShowWordsSuggestionsCommand;->words:Ljava/util/List;
 
     return-void
@@ -64,7 +64,7 @@
 .method public apply(Lcom/iMe/ui/wallet/crypto/create/CreateWalletView;)V
     .locals 1
 
-    .line 206
+    .line 286
     iget-object v0, p0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletView$$State$ShowWordsSuggestionsCommand;->words:Ljava/util/List;
 
     invoke-interface {p1, v0}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletView;->showWordsSuggestions(Ljava/util/List;)V
@@ -75,7 +75,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 195
+    .line 275
     check-cast p1, Lcom/iMe/ui/wallet/crypto/create/CreateWalletView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletView$$State$ShowWordsSuggestionsCommand;->apply(Lcom/iMe/ui/wallet/crypto/create/CreateWalletView;)V

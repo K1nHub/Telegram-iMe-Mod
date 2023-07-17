@@ -24,12 +24,12 @@
 .method constructor <init>(Lorg/telegram/ui/ThemePreviewActivity;Landroid/content/Context;)V
     .locals 0
 
-    .line 2022
+    .line 2027
     iput-object p1, p0, Lorg/telegram/ui/ThemePreviewActivity$20;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
 
     invoke-direct {p0, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    .line 2024
+    .line 2029
     new-instance p1, Landroid/graphics/Paint;
 
     invoke-direct {p1}, Landroid/graphics/Paint;-><init>()V
@@ -44,14 +44,14 @@
 .method public onDraw(Landroid/graphics/Canvas;)V
     .locals 9
 
-    .line 2027
+    .line 2032
     sget-object v0, Lorg/telegram/ui/ActionBar/Theme;->chat_composeShadowDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->getIntrinsicHeight()I
 
     move-result v0
 
-    .line 2028
+    .line 2033
     sget-object v1, Lorg/telegram/ui/ActionBar/Theme;->chat_composeShadowDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
@@ -62,12 +62,12 @@
 
     invoke-virtual {v1, v3, v3, v2, v0}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 2029
+    .line 2034
     sget-object v1, Lorg/telegram/ui/ActionBar/Theme;->chat_composeShadowDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v1, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 2030
+    .line 2035
     iget-object v1, p0, Lorg/telegram/ui/ThemePreviewActivity$20;->paint:Landroid/graphics/Paint;
 
     iget-object v2, p0, Lorg/telegram/ui/ThemePreviewActivity$20;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
@@ -82,7 +82,7 @@
 
     int-to-float v5, v0
 
-    .line 2031
+    .line 2036
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
     move-result v0

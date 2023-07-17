@@ -12,7 +12,7 @@ public abstract class BasicFuseableObserver<T, R> implements Observer<T>, QueueD
     protected final Observer<? super R> downstream;
 
     /* renamed from: qd */
-    protected QueueDisposable<T> f447qd;
+    protected QueueDisposable<T> f529qd;
     protected int sourceMode;
     protected Disposable upstream;
 
@@ -32,7 +32,7 @@ public abstract class BasicFuseableObserver<T, R> implements Observer<T>, QueueD
         if (DisposableHelper.validate(this.upstream, disposable)) {
             this.upstream = disposable;
             if (disposable instanceof QueueDisposable) {
-                this.f447qd = (QueueDisposable) disposable;
+                this.f529qd = (QueueDisposable) disposable;
             }
             if (beforeDownstream()) {
                 this.downstream.onSubscribe(this);
@@ -69,7 +69,7 @@ public abstract class BasicFuseableObserver<T, R> implements Observer<T>, QueueD
 
     /* JADX INFO: Access modifiers changed from: protected */
     public final int transitiveBoundaryFusion(int i) {
-        QueueDisposable<T> queueDisposable = this.f447qd;
+        QueueDisposable<T> queueDisposable = this.f529qd;
         if (queueDisposable == null || (i & 4) != 0) {
             return 0;
         }
@@ -92,12 +92,12 @@ public abstract class BasicFuseableObserver<T, R> implements Observer<T>, QueueD
 
     @Override // io.reactivex.internal.fuseable.SimpleQueue
     public boolean isEmpty() {
-        return this.f447qd.isEmpty();
+        return this.f529qd.isEmpty();
     }
 
     @Override // io.reactivex.internal.fuseable.SimpleQueue
     public void clear() {
-        this.f447qd.clear();
+        this.f529qd.clear();
     }
 
     @Override // io.reactivex.internal.fuseable.SimpleQueue

@@ -1,7 +1,7 @@
 package org.telegram.messenger;
 
 import java.util.Comparator;
-import org.telegram.p044ui.Adapters.DialogsSearchAdapter;
+import org.telegram.p043ui.Adapters.DialogsSearchAdapter;
 /* loaded from: classes4.dex */
 public final /* synthetic */ class MessagesStorage$$ExternalSyntheticLambda219 implements Comparator {
     public static final /* synthetic */ MessagesStorage$$ExternalSyntheticLambda219 INSTANCE = new MessagesStorage$$ExternalSyntheticLambda219();

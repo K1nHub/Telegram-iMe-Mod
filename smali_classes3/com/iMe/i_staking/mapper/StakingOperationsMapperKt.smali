@@ -5,13 +5,13 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nStakingOperationsMapper.kt\nKotlin\n*S Kotlin\n*F\n+ 1 StakingOperationsMapper.kt\ncom/iMe/i_staking/mapper/StakingOperationsMapperKt\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,34:1\n1549#2:35\n1620#2,3:36\n*S KotlinDebug\n*F\n+ 1 StakingOperationsMapper.kt\ncom/iMe/i_staking/mapper/StakingOperationsMapperKt\n*L\n13#1:35\n13#1:36,3\n*E\n"
+    value = "SMAP\nStakingOperationsMapper.kt\nKotlin\n*S Kotlin\n*F\n+ 1 StakingOperationsMapper.kt\ncom/iMe/i_staking/mapper/StakingOperationsMapperKt\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,33:1\n1549#2:34\n1620#2,3:35\n*S KotlinDebug\n*F\n+ 1 StakingOperationsMapper.kt\ncom/iMe/i_staking/mapper/StakingOperationsMapperKt\n*L\n13#1:34\n13#1:35,3\n*E\n"
 .end annotation
 
 
 # direct methods
 .method public static final mapToDomain(Lcom/iMe/i_staking/response/StakingOperationResponse;)Lcom/iMe/storage/domain/model/staking/StakingOperation;
-    .locals 20
+    .locals 18
 
     const-string v0, "<this>"
 
@@ -25,141 +25,125 @@
     .line 19
     invoke-virtual/range {p0 .. p0}, Lcom/iMe/i_staking/response/StakingOperationResponse;->getId()J
 
-    move-result-wide v3
+    move-result-wide v2
 
     .line 20
     invoke-virtual/range {p0 .. p0}, Lcom/iMe/i_staking/response/StakingOperationResponse;->getStakingId()I
 
-    move-result v5
+    move-result v4
 
     .line 21
     invoke-virtual/range {p0 .. p0}, Lcom/iMe/i_staking/response/StakingOperationResponse;->getTransaction()Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v5
 
     .line 22
-    sget-object v2, Lcom/iMe/storage/domain/model/staking/StakingOperationType;->Companion:Lcom/iMe/storage/domain/model/staking/StakingOperationType$Companion;
+    sget-object v6, Lcom/iMe/storage/domain/model/staking/StakingOperationType;->Companion:Lcom/iMe/storage/domain/model/staking/StakingOperationType$Companion;
 
     invoke-virtual/range {p0 .. p0}, Lcom/iMe/i_staking/response/StakingOperationResponse;->getType()Ljava/lang/String;
 
     move-result-object v7
 
-    invoke-virtual {v2, v7}, Lcom/iMe/storage/domain/model/staking/StakingOperationType$Companion;->map(Ljava/lang/String;)Lcom/iMe/storage/domain/model/staking/StakingOperationType;
+    invoke-virtual {v6, v7}, Lcom/iMe/storage/domain/model/staking/StakingOperationType$Companion;->map(Ljava/lang/String;)Lcom/iMe/storage/domain/model/staking/StakingOperationType;
 
-    move-result-object v7
+    move-result-object v6
 
     .line 23
-    sget-object v2, Lcom/iMe/storage/domain/model/staking/StakingOperationStatus;->Companion:Lcom/iMe/storage/domain/model/staking/StakingOperationStatus$Companion;
+    sget-object v7, Lcom/iMe/storage/domain/model/staking/StakingOperationStatus;->Companion:Lcom/iMe/storage/domain/model/staking/StakingOperationStatus$Companion;
 
     invoke-virtual/range {p0 .. p0}, Lcom/iMe/i_staking/response/StakingOperationResponse;->getStatus()Ljava/lang/String;
 
     move-result-object v8
 
-    invoke-virtual {v2, v8}, Lcom/iMe/storage/domain/model/staking/StakingOperationStatus$Companion;->map(Ljava/lang/String;)Lcom/iMe/storage/domain/model/staking/StakingOperationStatus;
+    invoke-virtual {v7, v8}, Lcom/iMe/storage/domain/model/staking/StakingOperationStatus$Companion;->map(Ljava/lang/String;)Lcom/iMe/storage/domain/model/staking/StakingOperationStatus;
 
-    move-result-object v8
+    move-result-object v7
 
     .line 24
     invoke-virtual/range {p0 .. p0}, Lcom/iMe/i_staking/response/StakingOperationResponse;->getIssuer()Ljava/lang/String;
 
-    move-result-object v9
+    move-result-object v8
 
     .line 25
     invoke-virtual/range {p0 .. p0}, Lcom/iMe/i_staking/response/StakingOperationResponse;->getIssuedAt()Ljava/lang/String;
 
-    move-result-object v10
+    move-result-object v9
 
     .line 26
     invoke-virtual/range {p0 .. p0}, Lcom/iMe/i_staking/response/StakingOperationResponse;->getSettledAt()Ljava/lang/String;
 
-    move-result-object v11
+    move-result-object v10
 
     .line 27
     invoke-virtual/range {p0 .. p0}, Lcom/iMe/i_staking/response/StakingOperationResponse;->getFailReason()Ljava/lang/String;
 
-    move-result-object v12
+    move-result-object v11
 
     .line 28
     invoke-virtual/range {p0 .. p0}, Lcom/iMe/i_staking/response/StakingOperationResponse;->getAmount()Lcom/iMe/i_staking/response/StakingOperationCostResponse;
 
-    move-result-object v2
+    move-result-object v12
 
     const/4 v13, 0x0
 
-    if-eqz v2, :cond_0
+    if-eqz v12, :cond_0
 
-    invoke-static {v2}, Lcom/iMe/i_staking/mapper/StakingOperationCostMapperKt;->mapToDomain(Lcom/iMe/i_staking/response/StakingOperationCostResponse;)Lcom/iMe/storage/domain/model/staking/StakingOperationCost;
+    invoke-static {v12}, Lcom/iMe/i_staking/mapper/StakingOperationCostMapperKt;->mapToDomain(Lcom/iMe/i_staking/response/StakingOperationCostResponse;)Lcom/iMe/storage/domain/model/staking/StakingOperationCost;
 
-    move-result-object v2
-
-    move-object v14, v2
+    move-result-object v12
 
     goto :goto_0
 
     :cond_0
-    move-object v14, v13
+    move-object v12, v13
 
     .line 29
     :goto_0
     invoke-virtual/range {p0 .. p0}, Lcom/iMe/i_staking/response/StakingOperationResponse;->getFee()Lcom/iMe/i_staking/response/StakingOperationCostResponse;
 
-    move-result-object v2
+    move-result-object v14
 
-    if-eqz v2, :cond_1
+    if-eqz v14, :cond_1
 
-    invoke-static {v2}, Lcom/iMe/i_staking/mapper/StakingOperationCostMapperKt;->mapToDomain(Lcom/iMe/i_staking/response/StakingOperationCostResponse;)Lcom/iMe/storage/domain/model/staking/StakingOperationCost;
+    invoke-static {v14}, Lcom/iMe/i_staking/mapper/StakingOperationCostMapperKt;->mapToDomain(Lcom/iMe/i_staking/response/StakingOperationCostResponse;)Lcom/iMe/storage/domain/model/staking/StakingOperationCost;
 
-    move-result-object v2
-
-    move-object v15, v2
+    move-result-object v14
 
     goto :goto_1
 
     :cond_1
-    move-object v15, v13
+    move-object v14, v13
 
     .line 30
     :goto_1
     invoke-virtual/range {p0 .. p0}, Lcom/iMe/i_staking/response/StakingOperationResponse;->getSafe()Ljava/lang/Boolean;
 
-    move-result-object v16
+    move-result-object v15
 
     .line 31
-    invoke-virtual/range {p0 .. p0}, Lcom/iMe/i_staking/response/StakingOperationResponse;->getApprovedToken()Lcom/iMe/i_staking/response/StakingTokenResponse;
+    invoke-virtual/range {p0 .. p0}, Lcom/iMe/i_staking/response/StakingOperationResponse;->getApprovedToken()Lcom/iMe/storage/data/network/model/response/wallet/TokenDetailedResponse;
 
-    move-result-object v2
+    move-result-object v16
 
-    if-eqz v2, :cond_2
+    if-eqz v16, :cond_2
 
-    invoke-static {v2}, Lcom/iMe/i_staking/mapper/StakingTokenMapperKt;->mapToDomain(Lcom/iMe/i_staking/response/StakingTokenResponse;)Lcom/iMe/storage/domain/model/staking/StakingToken;
+    invoke-static/range {v16 .. v16}, Lcom/iMe/storage/data/mapper/wallet/TokenMappingKt;->mapToDomain(Lcom/iMe/storage/data/network/model/response/wallet/TokenDetailedResponse;)Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
 
-    move-result-object v2
-
-    move-object/from16 v19, v2
-
-    goto :goto_2
+    move-result-object v13
 
     :cond_2
-    move-object/from16 v19, v13
+    move-object/from16 v16, v13
 
     .line 32
-    :goto_2
-    invoke-virtual/range {p0 .. p0}, Lcom/iMe/i_staking/response/StakingOperationResponse;->getToken()Ljava/lang/String;
-
-    move-result-object v17
-
-    .line 33
-    sget-object v2, Lcom/iMe/storage/domain/model/crypto/NetworkType;->Companion:Lcom/iMe/storage/domain/model/crypto/NetworkType$Companion;
-
-    invoke-virtual/range {p0 .. p0}, Lcom/iMe/i_staking/response/StakingOperationResponse;->getNetwork()Ljava/lang/String;
+    invoke-virtual/range {p0 .. p0}, Lcom/iMe/i_staking/response/StakingOperationResponse;->getToken()Lcom/iMe/storage/data/network/model/response/wallet/TokenDetailedResponse;
 
     move-result-object v1
 
-    invoke-virtual {v2, v1}, Lcom/iMe/storage/domain/model/crypto/NetworkType$Companion;->map(Ljava/lang/String;)Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    invoke-static {v1}, Lcom/iMe/storage/data/mapper/wallet/TokenMappingKt;->mapToDomain(Lcom/iMe/storage/data/network/model/response/wallet/TokenDetailedResponse;)Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
 
-    move-result-object v18
+    move-result-object v17
 
-    move-object v2, v0
+    move-object v1, v0
 
     move-object v13, v14
 
@@ -167,10 +151,10 @@
 
     move-object/from16 v15, v16
 
-    move-object/from16 v16, v19
+    move-object/from16 v16, v17
 
     .line 18
-    invoke-direct/range {v2 .. v18}, Lcom/iMe/storage/domain/model/staking/StakingOperation;-><init>(JILjava/lang/String;Lcom/iMe/storage/domain/model/staking/StakingOperationType;Lcom/iMe/storage/domain/model/staking/StakingOperationStatus;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/domain/model/staking/StakingOperationCost;Lcom/iMe/storage/domain/model/staking/StakingOperationCost;Ljava/lang/Boolean;Lcom/iMe/storage/domain/model/staking/StakingToken;Ljava/lang/String;Lcom/iMe/storage/domain/model/crypto/NetworkType;)V
+    invoke-direct/range {v1 .. v16}, Lcom/iMe/storage/domain/model/staking/StakingOperation;-><init>(JILjava/lang/String;Lcom/iMe/storage/domain/model/staking/StakingOperationType;Lcom/iMe/storage/domain/model/staking/StakingOperationStatus;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/domain/model/staking/StakingOperationCost;Lcom/iMe/storage/domain/model/staking/StakingOperationCost;Ljava/lang/Boolean;Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;)V
 
     return-object v0
 .end method

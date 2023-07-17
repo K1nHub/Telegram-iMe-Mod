@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/GroupCallActivity;)V
     .locals 0
 
-    .line 3292
+    .line 3303
     iput-object p1, p0, Lorg/telegram/ui/GroupCallActivity$11;->this$0:Lorg/telegram/ui/GroupCallActivity;
 
     invoke-direct {p0}, Landroidx/recyclerview/widget/GridLayoutManager$SpanSizeLookup;-><init>()V
@@ -35,7 +35,7 @@
 .method public getSpanSize(I)I
     .locals 5
 
-    .line 3295
+    .line 3306
     sget-boolean v0, Lorg/telegram/ui/GroupCallActivity;->isLandscapeMode:Z
 
     const/4 v1, 0x6
@@ -51,7 +51,7 @@
     :cond_0
     move v0, v2
 
-    .line 3296
+    .line 3307
     :goto_0
     sget-boolean v3, Lorg/telegram/ui/GroupCallActivity;->isTabletMode:Z
 
@@ -81,7 +81,7 @@
 
     if-ge p1, v3, :cond_7
 
-    .line 3298
+    .line 3309
     iget-object v0, p0, Lorg/telegram/ui/GroupCallActivity$11;->this$0:Lorg/telegram/ui/GroupCallActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/GroupCallActivity;->access$6000(Lorg/telegram/ui/GroupCallActivity;)Lorg/telegram/ui/GroupCallActivity$ListAdapter;
@@ -104,7 +104,7 @@
 
     sub-int/2addr v0, v3
 
-    .line 3299
+    .line 3310
     iget-object v3, p0, Lorg/telegram/ui/GroupCallActivity$11;->this$0:Lorg/telegram/ui/GroupCallActivity;
 
     invoke-static {v3}, Lorg/telegram/ui/GroupCallActivity;->access$6000(Lorg/telegram/ui/GroupCallActivity;)Lorg/telegram/ui/GroupCallActivity$ListAdapter;
@@ -121,7 +121,7 @@
 
     if-ne p1, v3, :cond_3
 
-    .line 3300
+    .line 3311
     sget-boolean p1, Lorg/telegram/ui/GroupCallActivity;->isLandscapeMode:Z
 
     if-eqz p1, :cond_2
@@ -131,7 +131,7 @@
 
     goto :goto_1
 
-    .line 3302
+    .line 3313
     :cond_2
     rem-int/lit8 p1, v0, 0x2
 
@@ -140,7 +140,7 @@
     :cond_3
     move p1, v4
 
-    .line 3308
+    .line 3319
     :goto_1
     sget-boolean v3, Lorg/telegram/ui/GroupCallActivity;->isLandscapeMode:Z
 

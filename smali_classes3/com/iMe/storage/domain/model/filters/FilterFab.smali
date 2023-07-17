@@ -27,6 +27,8 @@
 
 .field public static final enum ARCHIVE:Lcom/iMe/storage/domain/model/filters/FilterFab;
 
+.field public static final enum CLEAR_DRAFTS:Lcom/iMe/storage/domain/model/filters/FilterFab;
+
 .field public static final enum CLOUD:Lcom/iMe/storage/domain/model/filters/FilterFab;
 
 .field public static final enum CONTACTS:Lcom/iMe/storage/domain/model/filters/FilterFab;
@@ -48,7 +50,7 @@
 .method private static final synthetic $values()[Lcom/iMe/storage/domain/model/filters/FilterFab;
     .locals 3
 
-    const/16 v0, 0x9
+    const/16 v0, 0xa
 
     new-array v0, v0, [Lcom/iMe/storage/domain/model/filters/FilterFab;
 
@@ -103,6 +105,12 @@
     sget-object v1, Lcom/iMe/storage/domain/model/filters/FilterFab;->CREATE_ALBUM:Lcom/iMe/storage/domain/model/filters/FilterFab;
 
     const/16 v2, 0x8
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lcom/iMe/storage/domain/model/filters/FilterFab;->CLEAR_DRAFTS:Lcom/iMe/storage/domain/model/filters/FilterFab;
+
+    const/16 v2, 0x9
 
     aput-object v1, v0, v2
 
@@ -210,6 +218,17 @@
     invoke-direct {v0, v1, v2}, Lcom/iMe/storage/domain/model/filters/FilterFab;-><init>(Ljava/lang/String;I)V
 
     sput-object v0, Lcom/iMe/storage/domain/model/filters/FilterFab;->CREATE_ALBUM:Lcom/iMe/storage/domain/model/filters/FilterFab;
+
+    .line 17
+    new-instance v0, Lcom/iMe/storage/domain/model/filters/FilterFab;
+
+    const-string v1, "CLEAR_DRAFTS"
+
+    const/16 v2, 0x9
+
+    invoke-direct {v0, v1, v2}, Lcom/iMe/storage/domain/model/filters/FilterFab;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lcom/iMe/storage/domain/model/filters/FilterFab;->CLEAR_DRAFTS:Lcom/iMe/storage/domain/model/filters/FilterFab;
 
     invoke-static {}, Lcom/iMe/storage/domain/model/filters/FilterFab;->$values()[Lcom/iMe/storage/domain/model/filters/FilterFab;
 
@@ -322,7 +341,7 @@
 .method public final getOldPreferenceId()Ljava/lang/String;
     .locals 2
 
-    .line 18
+    .line 19
     sget-object v0, Lcom/iMe/storage/domain/model/filters/FilterFab$WhenMappings;->$EnumSwitchMapping$0:[I
 
     invoke-virtual {p0}, Ljava/lang/Enum;->ordinal()I
@@ -333,12 +352,9 @@
 
     packed-switch v0, :pswitch_data_0
 
-    .line 27
-    new-instance v0, Lkotlin/NoWhenBranchMatchedException;
+    const-string v0, "fab_create"
 
-    invoke-direct {v0}, Lkotlin/NoWhenBranchMatchedException;-><init>()V
-
-    throw v0
+    goto :goto_0
 
     :pswitch_0
     const-string v0, "fab_create_album"
@@ -378,17 +394,11 @@
     :pswitch_7
     const-string v0, "fab_archive"
 
-    goto :goto_0
-
-    :pswitch_8
-    const-string v0, "fab_create"
-
     :goto_0
     return-object v0
 
     :pswitch_data_0
     .packed-switch 0x1
-        :pswitch_8
         :pswitch_7
         :pswitch_6
         :pswitch_5

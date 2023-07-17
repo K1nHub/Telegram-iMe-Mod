@@ -35,14 +35,14 @@ import kotlin.jvm.internal.Intrinsics;
 import me.zhanghai.android.materialratingbar.MaterialRatingBar;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.C3295R;
+import org.telegram.messenger.C3417R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.UserConfig;
-import org.telegram.p044ui.ActionBar.BaseFragment;
-import org.telegram.p044ui.ActionBar.C3361ActionBar;
-import org.telegram.p044ui.ActionBar.Theme;
-import org.telegram.p044ui.Components.SizeNotifierFrameLayout;
+import org.telegram.p043ui.ActionBar.BaseFragment;
+import org.telegram.p043ui.ActionBar.C3484ActionBar;
+import org.telegram.p043ui.ActionBar.Theme;
+import org.telegram.p043ui.Components.SizeNotifierFrameLayout;
 /* compiled from: BotInfoActivity.kt */
 /* renamed from: com.iMe.ui.shop.BotInfoActivity */
 /* loaded from: classes3.dex */
@@ -132,7 +132,7 @@ public final class BotInfoActivity extends BaseFragment {
         this.disposable = new CompositeDisposable();
     }
 
-    @Override // org.telegram.p044ui.ActionBar.BaseFragment
+    @Override // org.telegram.p043ui.ActionBar.BaseFragment
     public boolean onFragmentCreate() {
         super.onFragmentCreate();
         if (getArguments() != null) {
@@ -148,24 +148,24 @@ public final class BotInfoActivity extends BaseFragment {
         return true;
     }
 
-    @Override // org.telegram.p044ui.ActionBar.BaseFragment
+    @Override // org.telegram.p043ui.ActionBar.BaseFragment
     public void onFragmentDestroy() {
         this.disposable.clear();
         super.onFragmentDestroy();
     }
 
-    @Override // org.telegram.p044ui.ActionBar.BaseFragment
+    @Override // org.telegram.p043ui.ActionBar.BaseFragment
     public void onActivityResultFragment(int i, int i2, Intent intent) {
         if (intent != null) {
             ApplicationLoader.purchaseHelper.onActivityResult(i, i2, intent);
         }
     }
 
-    @Override // org.telegram.p044ui.ActionBar.BaseFragment
+    @Override // org.telegram.p043ui.ActionBar.BaseFragment
     public View createView(Context context) {
         this.rootContainer = new SizeNotifierFrameLayout(context);
         LayoutInflater from = LayoutInflater.from(context);
-        int i = C3295R.layout.fork_bots_description_content;
+        int i = C3417R.layout.fork_bots_description_content;
         SizeNotifierFrameLayout sizeNotifierFrameLayout = this.rootContainer;
         SizeNotifierFrameLayout fragmentView = null;
         if (sizeNotifierFrameLayout == null) {
@@ -174,11 +174,11 @@ public final class BotInfoActivity extends BaseFragment {
         }
         initViewIds(from.inflate(i, (ViewGroup) sizeNotifierFrameLayout, true));
         this.actionBar.createMenu();
-        this.actionBar.setBackButtonImage(C3295R.C3297drawable.ic_ab_back);
+        this.actionBar.setBackButtonImage(C3417R.C3419drawable.ic_ab_back);
         this.actionBar.setTitle(this.title);
         this.actionBar.setAllowOverlayTitle(true);
-        this.actionBar.setActionBarMenuOnItemClick(new C3361ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.ui.shop.BotInfoActivity$createView$1
-            @Override // org.telegram.p044ui.ActionBar.C3361ActionBar.ActionBarMenuOnItemClick
+        this.actionBar.setActionBarMenuOnItemClick(new C3484ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.ui.shop.BotInfoActivity$createView$1
+            @Override // org.telegram.p043ui.ActionBar.C3484ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i2) {
                 if (i2 == -1) {
                     BotInfoActivity.this.finishFragment();
@@ -203,29 +203,29 @@ public final class BotInfoActivity extends BaseFragment {
     }
 
     private final void initViewIds(View view) {
-        this.avatar = view != null ? (ImageView) view.findViewById(C3295R.C3298id.bot_avatar) : null;
-        this.botName = view != null ? (TextView) view.findViewById(C3295R.C3298id.bot_name) : null;
-        this.botDescription = view != null ? (TextView) view.findViewById(C3295R.C3298id.bot_description) : null;
-        this.tagsContainer = view != null ? (FlexboxLayout) view.findViewById(C3295R.C3298id.tags_container) : null;
-        this.ratingValue = view != null ? (TextView) view.findViewById(C3295R.C3298id.rating_number) : null;
-        this.ratingLabel = view != null ? (TextView) view.findViewById(C3295R.C3298id.rating_label) : null;
-        this.instalsLabel = view != null ? (TextView) view.findViewById(C3295R.C3298id.installs_label) : null;
-        this.themesLabel = view != null ? (TextView) view.findViewById(C3295R.C3298id.themes_label) : null;
-        this.developerLabel = view != null ? (TextView) view.findViewById(C3295R.C3298id.bot_developer) : null;
-        this.botCurrentLanguage = view != null ? (TextView) view.findViewById(C3295R.C3298id.bot_current_language) : null;
-        this.botAnalogLanguage = view != null ? (TextView) view.findViewById(C3295R.C3298id.bot_analog_language) : null;
-        this.phrasesLabel = view != null ? (TextView) view.findViewById(C3295R.C3298id.phrases_label) : null;
-        this.installsValue = view != null ? (TextView) view.findViewById(C3295R.C3298id.installs_counter) : null;
-        this.themesValue = view != null ? (TextView) view.findViewById(C3295R.C3298id.themes_counter) : null;
-        this.phrasesValue = view != null ? (TextView) view.findViewById(C3295R.C3298id.phrases_counter) : null;
-        this.dateAdded = view != null ? (TextView) view.findViewById(C3295R.C3298id.bot_date_added) : null;
-        this.dateUpdated = view != null ? (TextView) view.findViewById(C3295R.C3298id.bot_date_updated) : null;
-        this.ratingBar = view != null ? (MaterialRatingBar) view.findViewById(C3295R.C3298id.rating) : null;
-        this.button = view != null ? (TextView) view.findViewById(C3295R.C3298id.bot_info_button) : null;
-        this.rateLabel = view != null ? (TextView) view.findViewById(C3295R.C3298id.textRateBot) : null;
-        this.layoutContainer = view != null ? (ConstraintLayout) view.findViewById(C3295R.C3298id.layoutContainer) : null;
-        this.progressBar = view != null ? (ProgressBar) view.findViewById(C3295R.C3298id.progressBar) : null;
-        this.statsContainer = view != null ? view.findViewById(C3295R.C3298id.stats_container) : null;
+        this.avatar = view != null ? (ImageView) view.findViewById(C3417R.C3420id.bot_avatar) : null;
+        this.botName = view != null ? (TextView) view.findViewById(C3417R.C3420id.bot_name) : null;
+        this.botDescription = view != null ? (TextView) view.findViewById(C3417R.C3420id.bot_description) : null;
+        this.tagsContainer = view != null ? (FlexboxLayout) view.findViewById(C3417R.C3420id.tags_container) : null;
+        this.ratingValue = view != null ? (TextView) view.findViewById(C3417R.C3420id.rating_number) : null;
+        this.ratingLabel = view != null ? (TextView) view.findViewById(C3417R.C3420id.rating_label) : null;
+        this.instalsLabel = view != null ? (TextView) view.findViewById(C3417R.C3420id.installs_label) : null;
+        this.themesLabel = view != null ? (TextView) view.findViewById(C3417R.C3420id.themes_label) : null;
+        this.developerLabel = view != null ? (TextView) view.findViewById(C3417R.C3420id.bot_developer) : null;
+        this.botCurrentLanguage = view != null ? (TextView) view.findViewById(C3417R.C3420id.bot_current_language) : null;
+        this.botAnalogLanguage = view != null ? (TextView) view.findViewById(C3417R.C3420id.bot_analog_language) : null;
+        this.phrasesLabel = view != null ? (TextView) view.findViewById(C3417R.C3420id.phrases_label) : null;
+        this.installsValue = view != null ? (TextView) view.findViewById(C3417R.C3420id.installs_counter) : null;
+        this.themesValue = view != null ? (TextView) view.findViewById(C3417R.C3420id.themes_counter) : null;
+        this.phrasesValue = view != null ? (TextView) view.findViewById(C3417R.C3420id.phrases_counter) : null;
+        this.dateAdded = view != null ? (TextView) view.findViewById(C3417R.C3420id.bot_date_added) : null;
+        this.dateUpdated = view != null ? (TextView) view.findViewById(C3417R.C3420id.bot_date_updated) : null;
+        this.ratingBar = view != null ? (MaterialRatingBar) view.findViewById(C3417R.C3420id.rating) : null;
+        this.button = view != null ? (TextView) view.findViewById(C3417R.C3420id.bot_info_button) : null;
+        this.rateLabel = view != null ? (TextView) view.findViewById(C3417R.C3420id.textRateBot) : null;
+        this.layoutContainer = view != null ? (ConstraintLayout) view.findViewById(C3417R.C3420id.layoutContainer) : null;
+        this.progressBar = view != null ? (ProgressBar) view.findViewById(C3417R.C3420id.progressBar) : null;
+        this.statsContainer = view != null ? view.findViewById(C3417R.C3420id.stats_container) : null;
     }
 
     private final void showProgress(boolean z) {
@@ -291,10 +291,7 @@ public final class BotInfoActivity extends BaseFragment {
         }
         ImageView imageView = this.avatar;
         if (imageView != null) {
-            String avatar = shopItem.getAvatar();
-            Activity parentActivity = getParentActivity();
-            Intrinsics.checkNotNullExpressionValue(parentActivity, "parentActivity");
-            ImageViewExtKt.loadFrom$default(imageView, avatar, parentActivity, null, false, 12, null);
+            ImageViewExtKt.loadFrom$default(imageView, shopItem.getAvatar(), null, false, 6, null);
         }
         TextView textView2 = this.botName;
         if (textView2 != null) {
@@ -316,23 +313,23 @@ public final class BotInfoActivity extends BaseFragment {
         }
         TextView textView6 = this.ratingLabel;
         if (textView6 != null) {
-            textView6.setText(LocaleController.formatPluralStringInternal(C3295R.string.plural_info_votes, (int) shopItem.getReviews()));
+            textView6.setText(LocaleController.formatPluralStringInternal(C3417R.string.plural_info_votes, (int) shopItem.getReviews()));
         }
         TextView textView7 = this.themesLabel;
         if (textView7 != null) {
-            textView7.setText(LocaleController.getInternalString(C3295R.string.neurobots_store_bot_info_themes));
+            textView7.setText(LocaleController.getInternalString(C3417R.string.neurobots_store_bot_info_themes));
         }
         TextView textView8 = this.phrasesLabel;
         if (textView8 != null) {
-            textView8.setText(LocaleController.getInternalString(C3295R.string.neurobots_store_bot_info_phrases));
+            textView8.setText(LocaleController.getInternalString(C3417R.string.neurobots_store_bot_info_phrases));
         }
         TextView textView9 = this.developerLabel;
         if (textView9 != null) {
-            textView9.setText(LocaleController.getInternalString(C3295R.string.neurobots_store_bot_info_developer));
+            textView9.setText(LocaleController.getInternalString(C3417R.string.neurobots_store_bot_info_developer));
         }
         TextView textView10 = this.instalsLabel;
         if (textView10 != null) {
-            textView10.setText(LocaleController.getInternalString(C3295R.string.neurobots_store_bot_info_installs));
+            textView10.setText(LocaleController.getInternalString(C3417R.string.neurobots_store_bot_info_installs));
         }
         TextView textView11 = this.themesValue;
         if (textView11 != null) {
@@ -348,19 +345,19 @@ public final class BotInfoActivity extends BaseFragment {
         }
         TextView textView14 = this.rateLabel;
         if (textView14 != null) {
-            textView14.setText(LocaleController.getInternalString(C3295R.string.neurobots_store_bot_info_rate));
+            textView14.setText(LocaleController.getInternalString(C3417R.string.neurobots_store_bot_info_rate));
         }
         int i = WhenMappings.$EnumSwitchMapping$0[shopItem.getLanguage().ordinal()];
         if (i == 1) {
-            internalString = LocaleController.getInternalString(C3295R.string.neurobots_store_bot_info_supported_language_ru);
+            internalString = LocaleController.getInternalString(C3417R.string.neurobots_store_bot_info_supported_language_ru);
         } else if (i != 2) {
             throw new NoWhenBranchMatchedException();
         } else {
-            internalString = LocaleController.getInternalString(C3295R.string.neurobots_store_bot_info_supported_language_en);
+            internalString = LocaleController.getInternalString(C3417R.string.neurobots_store_bot_info_supported_language_en);
         }
         TextView textView15 = this.botCurrentLanguage;
         if (textView15 != null) {
-            textView15.setText(LocaleController.getInternalString(C3295R.string.neurobots_store_bot_info_supported_languages) + ": \n" + internalString);
+            textView15.setText(LocaleController.getInternalString(C3417R.string.neurobots_store_bot_info_supported_languages) + ": \n" + internalString);
         }
         TextView textView16 = this.botAnalogLanguage;
         if (textView16 != null) {
@@ -407,17 +404,17 @@ public final class BotInfoActivity extends BaseFragment {
         if (flexboxLayout != null) {
             flexboxLayout.removeAllViews();
         }
-        Activity parentActivity2 = getParentActivity();
-        if (parentActivity2 != null) {
+        Activity parentActivity = getParentActivity();
+        if (parentActivity != null) {
             TextView textView18 = this.dateAdded;
             if (textView18 != null) {
-                textView18.setText(LocaleController.getInternalString(C3295R.string.neurobots_store_bot_added) + ' ' + shopItem.getCreated());
+                textView18.setText(LocaleController.getInternalString(C3417R.string.neurobots_store_bot_added) + ' ' + shopItem.getCreated());
             }
             TextView textView19 = this.dateUpdated;
             if (textView19 != null) {
-                textView19.setText(LocaleController.getInternalString(C3295R.string.neurobots_store_bot_updated) + ' ' + shopItem.getUpdated());
+                textView19.setText(LocaleController.getInternalString(C3417R.string.neurobots_store_bot_updated) + ' ' + shopItem.getUpdated());
             }
-            int pxToDp = ContextExtKt.pxToDp(parentActivity2, 16);
+            int pxToDp = ContextExtKt.pxToDp(parentActivity, 16);
             List<SmartTag> tags = shopItem.getTags();
             ArrayList<SmartTag> arrayList = new ArrayList();
             for (Object obj : tags) {
@@ -426,7 +423,7 @@ public final class BotInfoActivity extends BaseFragment {
                 }
             }
             for (SmartTag smartTag : arrayList) {
-                TextView textView20 = new TextView(parentActivity2);
+                TextView textView20 = new TextView(parentActivity);
                 textView20.setText(smartTag.getTitle());
                 textView20.setTextColor(-1);
                 GradientDrawable gradientDrawable = new GradientDrawable();
@@ -455,19 +452,19 @@ public final class BotInfoActivity extends BaseFragment {
                         }
                         break;
                     case 2:
-                        price = LocaleController.getInternalString(C3295R.string.neurobots_store_bot_action_download);
+                        price = LocaleController.getInternalString(C3417R.string.neurobots_store_bot_action_download);
                         break;
                     case 3:
-                        price = LocaleController.getInternalString(C3295R.string.neurobots_store_bot_action_update);
+                        price = LocaleController.getInternalString(C3417R.string.neurobots_store_bot_action_update);
                         break;
                     case 4:
-                        price = LocaleController.getInternalString(C3295R.string.neurobots_store_bot_status_downloading);
+                        price = LocaleController.getInternalString(C3417R.string.neurobots_store_bot_status_downloading);
                         break;
                     case 5:
-                        price = LocaleController.getInternalString(C3295R.string.neurobots_store_bot_action_disable);
+                        price = LocaleController.getInternalString(C3417R.string.neurobots_store_bot_action_disable);
                         break;
                     case 6:
-                        price = LocaleController.getInternalString(C3295R.string.neurobots_store_bot_action_enable);
+                        price = LocaleController.getInternalString(C3417R.string.neurobots_store_bot_action_enable);
                         break;
                     default:
                         throw new NoWhenBranchMatchedException();

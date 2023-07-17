@@ -8,9 +8,11 @@ import moxy.viewstate.strategy.alias.OneExecution;
 /* compiled from: WalletAccountSettingsView.kt */
 @OneExecution
 /* renamed from: com.iMe.ui.wallet.crypto.settings.WalletAccountSettingsView */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public interface WalletAccountSettingsView extends BaseView {
     void openBlockchainsScreen();
+
+    void openCustomTokensScreen();
 
     void openPinCodeSettingsScreen();
 
@@ -19,5 +21,5 @@ public interface WalletAccountSettingsView extends BaseView {
     void openWalletConnectScreen();
 
     @AddToEndSingle
-    void setupSettingsItems(List<WalletSettingsItem> list);
+    void renderSettingsItems(List<WalletSettingsItem> list);
 }

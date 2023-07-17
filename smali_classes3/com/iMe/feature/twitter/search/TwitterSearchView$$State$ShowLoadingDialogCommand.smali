@@ -34,20 +34,20 @@
 .method constructor <init>(Lcom/iMe/feature/twitter/search/TwitterSearchView$$State;ZZLio/reactivex/disposables/Disposable;)V
     .locals 1
 
-    .line 430
+    .line 446
     const-class p1, Lmoxy/viewstate/strategy/OneExecutionStateStrategy;
 
     const-string v0, "showLoadingDialog"
 
     invoke-direct {p0, v0, p1}, Lmoxy/viewstate/ViewCommand;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
-    .line 432
+    .line 448
     iput-boolean p2, p0, Lcom/iMe/feature/twitter/search/TwitterSearchView$$State$ShowLoadingDialogCommand;->show:Z
 
-    .line 433
+    .line 449
     iput-boolean p3, p0, Lcom/iMe/feature/twitter/search/TwitterSearchView$$State$ShowLoadingDialogCommand;->cancellable:Z
 
-    .line 434
+    .line 450
     iput-object p4, p0, Lcom/iMe/feature/twitter/search/TwitterSearchView$$State$ShowLoadingDialogCommand;->actionToCancel:Lio/reactivex/disposables/Disposable;
 
     return-void
@@ -58,7 +58,7 @@
 .method public apply(Lcom/iMe/feature/twitter/search/TwitterSearchView;)V
     .locals 3
 
-    .line 439
+    .line 455
     iget-boolean v0, p0, Lcom/iMe/feature/twitter/search/TwitterSearchView$$State$ShowLoadingDialogCommand;->show:Z
 
     iget-boolean v1, p0, Lcom/iMe/feature/twitter/search/TwitterSearchView$$State$ShowLoadingDialogCommand;->cancellable:Z
@@ -73,7 +73,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 422
+    .line 438
     check-cast p1, Lcom/iMe/feature/twitter/search/TwitterSearchView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/feature/twitter/search/TwitterSearchView$$State$ShowLoadingDialogCommand;->apply(Lcom/iMe/feature/twitter/search/TwitterSearchView;)V

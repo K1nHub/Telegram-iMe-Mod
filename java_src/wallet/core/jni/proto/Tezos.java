@@ -396,7 +396,7 @@ public final class Tezos {
 
         /* loaded from: classes6.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<SigningInput, Builder> implements SigningInputOrBuilder {
-            /* synthetic */ Builder(C68541 c68541) {
+            /* synthetic */ Builder(C69791 c69791) {
                 this();
             }
 
@@ -475,7 +475,7 @@ public final class Tezos {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C68541.f1827xa1df5c61[method.ordinal()]) {
+            switch (C69791.f1909xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new SigningInput();
                 case 2:
@@ -522,40 +522,40 @@ public final class Tezos {
 
     /* renamed from: wallet.core.jni.proto.Tezos$1 */
     /* loaded from: classes6.dex */
-    static /* synthetic */ class C68541 {
+    static /* synthetic */ class C69791 {
 
         /* renamed from: $SwitchMap$com$google$protobuf$GeneratedMessageLite$MethodToInvoke */
-        static final /* synthetic */ int[] f1827xa1df5c61;
+        static final /* synthetic */ int[] f1909xa1df5c61;
 
         static {
             int[] iArr = new int[GeneratedMessageLite.MethodToInvoke.values().length];
-            f1827xa1df5c61 = iArr;
+            f1909xa1df5c61 = iArr;
             try {
                 iArr[GeneratedMessageLite.MethodToInvoke.NEW_MUTABLE_INSTANCE.ordinal()] = 1;
             } catch (NoSuchFieldError unused) {
             }
             try {
-                f1827xa1df5c61[GeneratedMessageLite.MethodToInvoke.NEW_BUILDER.ordinal()] = 2;
+                f1909xa1df5c61[GeneratedMessageLite.MethodToInvoke.NEW_BUILDER.ordinal()] = 2;
             } catch (NoSuchFieldError unused2) {
             }
             try {
-                f1827xa1df5c61[GeneratedMessageLite.MethodToInvoke.BUILD_MESSAGE_INFO.ordinal()] = 3;
+                f1909xa1df5c61[GeneratedMessageLite.MethodToInvoke.BUILD_MESSAGE_INFO.ordinal()] = 3;
             } catch (NoSuchFieldError unused3) {
             }
             try {
-                f1827xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_DEFAULT_INSTANCE.ordinal()] = 4;
+                f1909xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_DEFAULT_INSTANCE.ordinal()] = 4;
             } catch (NoSuchFieldError unused4) {
             }
             try {
-                f1827xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_PARSER.ordinal()] = 5;
+                f1909xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_PARSER.ordinal()] = 5;
             } catch (NoSuchFieldError unused5) {
             }
             try {
-                f1827xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_MEMOIZED_IS_INITIALIZED.ordinal()] = 6;
+                f1909xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_MEMOIZED_IS_INITIALIZED.ordinal()] = 6;
             } catch (NoSuchFieldError unused6) {
             }
             try {
-                f1827xa1df5c61[GeneratedMessageLite.MethodToInvoke.SET_MEMOIZED_IS_INITIALIZED.ordinal()] = 7;
+                f1909xa1df5c61[GeneratedMessageLite.MethodToInvoke.SET_MEMOIZED_IS_INITIALIZED.ordinal()] = 7;
             } catch (NoSuchFieldError unused7) {
             }
         }
@@ -645,7 +645,7 @@ public final class Tezos {
 
         /* loaded from: classes6.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<SigningOutput, Builder> implements SigningOutputOrBuilder {
-            /* synthetic */ Builder(C68541 c68541) {
+            /* synthetic */ Builder(C69791 c69791) {
                 this();
             }
 
@@ -673,7 +673,7 @@ public final class Tezos {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C68541.f1827xa1df5c61[method.ordinal()]) {
+            switch (C69791.f1909xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new SigningOutput();
                 case 2:
@@ -884,7 +884,7 @@ public final class Tezos {
 
         /* loaded from: classes6.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<OperationList, Builder> implements OperationListOrBuilder {
-            /* synthetic */ Builder(C68541 c68541) {
+            /* synthetic */ Builder(C69791 c69791) {
                 this();
             }
 
@@ -992,7 +992,7 @@ public final class Tezos {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C68541.f1827xa1df5c61[method.ordinal()]) {
+            switch (C69791.f1909xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new OperationList();
                 case 2:
@@ -1475,7 +1475,7 @@ public final class Tezos {
 
         /* loaded from: classes6.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<Operation, Builder> implements OperationOrBuilder {
-            /* synthetic */ Builder(C68541 c68541) {
+            /* synthetic */ Builder(C69791 c69791) {
                 this();
             }
 
@@ -1723,7 +1723,7 @@ public final class Tezos {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C68541.f1827xa1df5c61[method.ordinal()]) {
+            switch (C69791.f1909xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new Operation();
                 case 2:
@@ -1950,7 +1950,7 @@ public final class Tezos {
 
         /* loaded from: classes6.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<FA12Parameters, Builder> implements FA12ParametersOrBuilder {
-            /* synthetic */ Builder(C68541 c68541) {
+            /* synthetic */ Builder(C69791 c69791) {
                 this();
             }
 
@@ -2073,7 +2073,7 @@ public final class Tezos {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C68541.f1827xa1df5c61[method.ordinal()]) {
+            switch (C69791.f1909xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new FA12Parameters();
                 case 2:
@@ -2271,7 +2271,7 @@ public final class Tezos {
 
         /* loaded from: classes6.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<Txs, Builder> implements TxsOrBuilder {
-            /* synthetic */ Builder(C68541 c68541) {
+            /* synthetic */ Builder(C69791 c69791) {
                 this();
             }
 
@@ -2366,7 +2366,7 @@ public final class Tezos {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C68541.f1827xa1df5c61[method.ordinal()]) {
+            switch (C69791.f1909xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new Txs();
                 case 2:
@@ -2577,7 +2577,7 @@ public final class Tezos {
 
         /* loaded from: classes6.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<TxObject, Builder> implements TxObjectOrBuilder {
-            /* synthetic */ Builder(C68541 c68541) {
+            /* synthetic */ Builder(C69791 c69791) {
                 this();
             }
 
@@ -2685,7 +2685,7 @@ public final class Tezos {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C68541.f1827xa1df5c61[method.ordinal()]) {
+            switch (C69791.f1909xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new TxObject();
                 case 2:
@@ -2896,7 +2896,7 @@ public final class Tezos {
 
         /* loaded from: classes6.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<FA2Parameters, Builder> implements FA2ParametersOrBuilder {
-            /* synthetic */ Builder(C68541 c68541) {
+            /* synthetic */ Builder(C69791 c69791) {
                 this();
             }
 
@@ -3004,7 +3004,7 @@ public final class Tezos {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C68541.f1827xa1df5c61[method.ordinal()]) {
+            switch (C69791.f1909xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new FA2Parameters();
                 case 2:
@@ -3243,7 +3243,7 @@ public final class Tezos {
 
         /* loaded from: classes6.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<OperationParameters, Builder> implements OperationParametersOrBuilder {
-            /* synthetic */ Builder(C68541 c68541) {
+            /* synthetic */ Builder(C69791 c69791) {
                 this();
             }
 
@@ -3333,7 +3333,7 @@ public final class Tezos {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C68541.f1827xa1df5c61[method.ordinal()]) {
+            switch (C69791.f1909xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new OperationParameters();
                 case 2:
@@ -3525,7 +3525,7 @@ public final class Tezos {
 
         /* loaded from: classes6.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<TransactionOperationData, Builder> implements TransactionOperationDataOrBuilder {
-            /* synthetic */ Builder(C68541 c68541) {
+            /* synthetic */ Builder(C69791 c69791) {
                 this();
             }
 
@@ -3615,7 +3615,7 @@ public final class Tezos {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C68541.f1827xa1df5c61[method.ordinal()]) {
+            switch (C69791.f1909xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new TransactionOperationData();
                 case 2:
@@ -3744,7 +3744,7 @@ public final class Tezos {
 
         /* loaded from: classes6.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<RevealOperationData, Builder> implements RevealOperationDataOrBuilder {
-            /* synthetic */ Builder(C68541 c68541) {
+            /* synthetic */ Builder(C69791 c69791) {
                 this();
             }
 
@@ -3772,7 +3772,7 @@ public final class Tezos {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C68541.f1827xa1df5c61[method.ordinal()]) {
+            switch (C69791.f1909xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new RevealOperationData();
                 case 2:
@@ -3912,7 +3912,7 @@ public final class Tezos {
 
         /* loaded from: classes6.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<DelegationOperationData, Builder> implements DelegationOperationDataOrBuilder {
-            /* synthetic */ Builder(C68541 c68541) {
+            /* synthetic */ Builder(C69791 c69791) {
                 this();
             }
 
@@ -3951,7 +3951,7 @@ public final class Tezos {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C68541.f1827xa1df5c61[method.ordinal()]) {
+            switch (C69791.f1909xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new DelegationOperationData();
                 case 2:

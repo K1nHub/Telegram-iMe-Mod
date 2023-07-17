@@ -2,7 +2,7 @@ package com.google.android.exoplayer2.extractor.mp4;
 
 import android.util.Pair;
 import android.util.SparseArray;
-import com.google.android.exoplayer2.C0475C;
+import com.google.android.exoplayer2.C0480C;
 import com.google.android.exoplayer2.Format;
 import com.google.android.exoplayer2.ParserException;
 import com.google.android.exoplayer2.audio.Ac4Util;
@@ -160,9 +160,9 @@ public class FragmentedMp4Extractor implements Extractor {
         this.containerAtoms = new ArrayDeque<>();
         this.pendingMetadataSampleInfos = new ArrayDeque<>();
         this.trackBundles = new SparseArray<>();
-        this.durationUs = C0475C.TIME_UNSET;
-        this.pendingSeekTimeUs = C0475C.TIME_UNSET;
-        this.segmentIndexEarliestPresentationTimeUs = C0475C.TIME_UNSET;
+        this.durationUs = C0480C.TIME_UNSET;
+        this.pendingSeekTimeUs = C0480C.TIME_UNSET;
+        this.segmentIndexEarliestPresentationTimeUs = C0480C.TIME_UNSET;
         this.extractorOutput = ExtractorOutput.PLACEHOLDER;
         this.emsgTrackOutputs = new TrackOutput[0];
         this.ceaTrackOutputs = new TrackOutput[0];
@@ -377,7 +377,7 @@ public class FragmentedMp4Extractor implements Extractor {
             while (i < size2) {
                 TrackSampleTable trackSampleTable = parseTraks.get(i);
                 Track track = trackSampleTable.track;
-                this.trackBundles.put(track.f109id, new TrackBundle(this.extractorOutput.track(i, track.type), trackSampleTable, getDefaultSampleValues(sparseArray, track.f109id)));
+                this.trackBundles.put(track.f191id, new TrackBundle(this.extractorOutput.track(i, track.type), trackSampleTable, getDefaultSampleValues(sparseArray, track.f191id)));
                 this.durationUs = Math.max(this.durationUs, track.durationUs);
                 i++;
             }
@@ -388,7 +388,7 @@ public class FragmentedMp4Extractor implements Extractor {
         while (i < size2) {
             TrackSampleTable trackSampleTable2 = parseTraks.get(i);
             Track track2 = trackSampleTable2.track;
-            this.trackBundles.get(track2.f109id).reset(trackSampleTable2, getDefaultSampleValues(sparseArray, track2.f109id));
+            this.trackBundles.get(track2.f191id).reset(trackSampleTable2, getDefaultSampleValues(sparseArray, track2.f191id));
             i++;
         }
     }
@@ -409,12 +409,12 @@ public class FragmentedMp4Extractor implements Extractor {
                 this.trackBundles.valueAt(i).updateDrmInitData(drmInitDataFromAtoms);
             }
         }
-        if (this.pendingSeekTimeUs != C0475C.TIME_UNSET) {
+        if (this.pendingSeekTimeUs != C0480C.TIME_UNSET) {
             int size2 = this.trackBundles.size();
             for (int i2 = 0; i2 < size2; i2++) {
                 this.trackBundles.valueAt(i2).seek(this.pendingSeekTimeUs);
             }
-            this.pendingSeekTimeUs = C0475C.TIME_UNSET;
+            this.pendingSeekTimeUs = C0480C.TIME_UNSET;
         }
     }
 
@@ -470,7 +470,7 @@ public class FragmentedMp4Extractor implements Extractor {
             long readUnsignedInt2 = parsableByteArray.readUnsignedInt();
             scaleLargeTimestamp = Util.scaleLargeTimestamp(parsableByteArray.readUnsignedInt(), 1000000L, readUnsignedInt2);
             long j2 = this.segmentIndexEarliestPresentationTimeUs;
-            long j3 = j2 != C0475C.TIME_UNSET ? j2 + scaleLargeTimestamp : -9223372036854775807L;
+            long j3 = j2 != C0480C.TIME_UNSET ? j2 + scaleLargeTimestamp : -9223372036854775807L;
             str = str3;
             scaleLargeTimestamp2 = Util.scaleLargeTimestamp(parsableByteArray.readUnsignedInt(), 1000L, readUnsignedInt2);
             str2 = str4;
@@ -498,7 +498,7 @@ public class FragmentedMp4Extractor implements Extractor {
             parsableByteArray2.setPosition(0);
             trackOutput.sampleData(parsableByteArray2, bytesLeft);
         }
-        if (j == C0475C.TIME_UNSET) {
+        if (j == C0480C.TIME_UNSET) {
             this.pendingMetadataSampleInfos.addLast(new MetadataSampleInfo(scaleLargeTimestamp, true, bytesLeft));
             this.pendingMetadataSampleBytes += bytesLeft;
         } else if (!this.pendingMetadataSampleInfos.isEmpty()) {

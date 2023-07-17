@@ -7,9 +7,13 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.RequestBuilder;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.load.model.GlideUrl;
+import com.bumptech.glide.request.RequestListener;
 import com.bumptech.glide.request.target.CustomTarget;
 import com.bumptech.glide.request.transition.Transition;
 import com.iMe.fork.utils.Callbacks$Callback1;
+import com.iMe.utils.glide.GlideApp;
+import com.iMe.utils.glide.GlideRequest;
+import com.iMe.utils.glide.SvgSoftwareLayerSetter;
 import com.iMe.utils.helper.binancepay.BinancePayHelper;
 import java.util.Map;
 import kotlin.jvm.internal.Intrinsics;
@@ -40,10 +44,17 @@ public final class GlideHelper {
         INSTANCE.internalLoad(context, new GlideUrl(url), callback, z);
     }
 
+    public static final void loadImageAsDrawable(Context context, String url, Callbacks$Callback1<Drawable> callback, boolean z) {
+        Intrinsics.checkNotNullParameter(context, "context");
+        Intrinsics.checkNotNullParameter(url, "url");
+        Intrinsics.checkNotNullParameter(callback, "callback");
+        INSTANCE.internalLoadDrawable(context, new GlideUrl(url), callback, z);
+    }
+
     private final void internalLoad(Context context, GlideUrl glideUrl, final Callbacks$Callback1<Bitmap> callbacks$Callback1, boolean z) {
         RequestBuilder centerCrop = Glide.with(context).asBitmap().load(glideUrl).dontAnimate().centerCrop();
         if (z) {
-            centerCrop.circleCrop();
+            centerCrop = centerCrop.circleCrop();
         }
         centerCrop.diskCacheStrategy(DiskCacheStrategy.ALL).into((RequestBuilder) new CustomTarget<Bitmap>() { // from class: com.iMe.utils.helper.GlideHelper$internalLoad$2
             @Override // com.bumptech.glide.request.target.Target
@@ -56,6 +67,28 @@ public final class GlideHelper {
             }
 
             public void onResourceReady(Bitmap resource, Transition<? super Bitmap> transition) {
+                Intrinsics.checkNotNullParameter(resource, "resource");
+                callbacks$Callback1.invoke(resource);
+            }
+        });
+    }
+
+    private final void internalLoadDrawable(Context context, GlideUrl glideUrl, final Callbacks$Callback1<Drawable> callbacks$Callback1, boolean z) {
+        GlideRequest<Drawable> centerCrop = GlideApp.with(context).asDrawable().load((Object) glideUrl).addListener((RequestListener<Drawable>) new SvgSoftwareLayerSetter()).dontAnimate().centerCrop();
+        if (z) {
+            centerCrop = centerCrop.circleCrop();
+        }
+        centerCrop.diskCacheStrategy(DiskCacheStrategy.DATA).into((GlideRequest<Drawable>) new CustomTarget<Drawable>() { // from class: com.iMe.utils.helper.GlideHelper$internalLoadDrawable$2
+            @Override // com.bumptech.glide.request.target.Target
+            public void onLoadCleared(Drawable drawable) {
+            }
+
+            @Override // com.bumptech.glide.request.target.Target
+            public /* bridge */ /* synthetic */ void onResourceReady(Object obj, Transition transition) {
+                onResourceReady((Drawable) obj, (Transition<? super Drawable>) transition);
+            }
+
+            public void onResourceReady(Drawable resource, Transition<? super Drawable> transition) {
                 Intrinsics.checkNotNullParameter(resource, "resource");
                 callbacks$Callback1.invoke(resource);
             }

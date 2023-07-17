@@ -16,10 +16,10 @@ import kotlin.LazyKt__LazyJVMKt;
 import kotlin.collections.CollectionsKt__CollectionsKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3295R;
-import org.telegram.p044ui.ActionBar.ActionBarMenuSubItem;
-import org.telegram.p044ui.ActionBar.Theme;
-import org.telegram.p044ui.Components.RecyclerListView;
+import org.telegram.messenger.C3417R;
+import org.telegram.p043ui.ActionBar.ActionBarMenuSubItem;
+import org.telegram.p043ui.ActionBar.Theme;
+import org.telegram.p043ui.Components.RecyclerListView;
 /* compiled from: MessageMoreActionsView.kt */
 /* renamed from: com.iMe.fork.ui.view.MessageMoreActionsView */
 /* loaded from: classes3.dex */
@@ -51,7 +51,7 @@ public final class MessageMoreActionsView extends ActionBarMenuSubItem {
         lazy2 = LazyKt__LazyJVMKt.lazy(MessageMoreActionsView$optionItemHeight$2.INSTANCE);
         this.optionItemHeight$delegate = lazy2;
         setTextAndIcon(title, i);
-        setRightIcon(C3295R.C3297drawable.msg_arrowright);
+        setRightIcon(C3417R.C3419drawable.msg_arrowright);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -68,7 +68,7 @@ public final class MessageMoreActionsView extends ActionBarMenuSubItem {
         final Context context = getContext();
         RecyclerListView recyclerListView = new RecyclerListView(context) { // from class: com.iMe.fork.ui.view.MessageMoreActionsView$createListView$1
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // org.telegram.p044ui.Components.RecyclerListView, androidx.recyclerview.widget.RecyclerView, android.view.View
+            @Override // org.telegram.p043ui.Components.RecyclerListView, androidx.recyclerview.widget.RecyclerView, android.view.View
             public void onMeasure(int i, int i2) {
                 int gapItemHeight = MessageMoreActionsView.this.getGapItemHeight();
                 List<MessageMoreActionsView.SubMenuItem> items = MessageMoreActionsView.this.getItems();
@@ -103,7 +103,7 @@ public final class MessageMoreActionsView extends ActionBarMenuSubItem {
         public SubMenuItemsAdapter() {
         }
 
-        @Override // org.telegram.p044ui.Components.RecyclerListView.SelectionAdapter
+        @Override // org.telegram.p043ui.Components.RecyclerListView.SelectionAdapter
         public boolean isEnabled(RecyclerView.ViewHolder holder) {
             Intrinsics.checkNotNullParameter(holder, "holder");
             return holder.getItemViewType() != IdFabric$ViewTypes.SUB_ITEM_GAP;
@@ -164,7 +164,7 @@ public final class MessageMoreActionsView extends ActionBarMenuSubItem {
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // org.telegram.p044ui.ActionBar.ActionBarMenuSubItem, android.widget.FrameLayout, android.view.View
+        @Override // org.telegram.p043ui.ActionBar.ActionBarMenuSubItem, android.widget.FrameLayout, android.view.View
         public void onMeasure(int i, int i2) {
             super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(MessageMoreActionsView.this.getOptionItemHeight(), 1073741824));
         }

@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/ChatActivity;)V
     .locals 0
 
-    .line 15154
+    .line 15061
     iput-object p1, p0, Lorg/telegram/ui/ChatActivity$88;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,14 +35,14 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 15157
+    .line 15064
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$88;->this$0:Lorg/telegram/ui/ChatActivity;
 
     const/high16 v0, 0x3f800000    # 1.0f
 
-    invoke-static {p1, v0}, Lorg/telegram/ui/ChatActivity;->access$35502(Lorg/telegram/ui/ChatActivity;F)F
+    invoke-static {p1, v0}, Lorg/telegram/ui/ChatActivity;->access$35302(Lorg/telegram/ui/ChatActivity;F)F
 
-    .line 15158
+    .line 15065
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$88;->this$0:Lorg/telegram/ui/ChatActivity;
 
     iget-object p1, p1, Lorg/telegram/ui/ChatActivity;->contentView:Lorg/telegram/ui/ChatActivity$ChatActivityFragmentView;

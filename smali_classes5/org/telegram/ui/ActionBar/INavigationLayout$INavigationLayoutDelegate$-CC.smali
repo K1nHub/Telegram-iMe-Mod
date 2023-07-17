@@ -24,7 +24,7 @@
     .locals 2
     .param p0, "_this"    # Lorg/telegram/ui/ActionBar/INavigationLayout$INavigationLayoutDelegate;
 
-    .line 304
+    .line 308
     iget-object v0, p2, Lorg/telegram/ui/ActionBar/INavigationLayout$NavigationParams;->fragment:Lorg/telegram/ui/ActionBar/BaseFragment;
 
     iget-boolean v1, p2, Lorg/telegram/ui/ActionBar/INavigationLayout$NavigationParams;->removeLast:Z

@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/tgnet/RequestDelegate;
+.implements Lcom/iMe/fork/utils/Callbacks$Callback;
 
 
 # instance fields
@@ -22,12 +22,12 @@
 
 
 # virtual methods
-.method public final run(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+.method public final invoke()V
     .locals 1
 
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$17$$ExternalSyntheticLambda3;->f$0:Lorg/telegram/ui/ProfileActivity$17;
 
-    invoke-static {v0, p1, p2}, Lorg/telegram/ui/ProfileActivity$17;->$r8$lambda$-8PoXjMstqNyYGJ7KCfQOagHQFM(Lorg/telegram/ui/ProfileActivity$17;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+    invoke-static {v0}, Lorg/telegram/ui/ProfileActivity$17;->$r8$lambda$XRphpF1yU1EnSpx8NqkiAQlSxIY(Lorg/telegram/ui/ProfileActivity$17;)V
 
     return-void
 .end method

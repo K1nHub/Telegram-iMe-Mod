@@ -45,16 +45,4 @@ public class StringsKt__StringNumberConversionsJVMKt extends StringsKt__StringBu
             return null;
         }
     }
-
-    public static Float toFloatOrNull(String str) {
-        Intrinsics.checkNotNullParameter(str, "<this>");
-        try {
-            if (ScreenFloatValueRegEx.value.matches(str)) {
-                return Float.valueOf(Float.parseFloat(str));
-            }
-            return null;
-        } catch (NumberFormatException unused) {
-            return null;
-        }
-    }
 }

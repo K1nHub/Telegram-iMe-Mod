@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nSimplexRepositoryImpl.kt\nKotlin\n*S Kotlin\n*F\n+ 1 SimplexRepositoryImpl.kt\ncom/iMe/storage/data/repository/crypto/simplex/SimplexRepositoryImpl\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 FirebaseExt.kt\ncom/iMe/storage/data/utils/extentions/FirebaseExtKt\n+ 4 RxExt.kt\ncom/iMe/storage/data/utils/extentions/RxExtKt\n*L\n1#1,58:1\n1549#2:59\n1620#2,3:60\n70#3:63\n70#3:65\n26#4:64\n26#4:66\n*S KotlinDebug\n*F\n+ 1 SimplexRepositoryImpl.kt\ncom/iMe/storage/data/repository/crypto/simplex/SimplexRepositoryImpl\n*L\n29#1:59\n29#1:60,3\n33#1:63\n54#1:65\n34#1:64\n55#1:66\n*E\n"
+    value = "SMAP\nSimplexRepositoryImpl.kt\nKotlin\n*S Kotlin\n*F\n+ 1 SimplexRepositoryImpl.kt\ncom/iMe/storage/data/repository/crypto/simplex/SimplexRepositoryImpl\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 FirebaseExt.kt\ncom/iMe/storage/data/utils/extentions/FirebaseExtKt\n+ 4 RxExt.kt\ncom/iMe/storage/data/utils/extentions/RxExtKt\n*L\n1#1,57:1\n1549#2:58\n1620#2,3:59\n70#3:62\n70#3:64\n26#4:63\n26#4:65\n*S KotlinDebug\n*F\n+ 1 SimplexRepositoryImpl.kt\ncom/iMe/storage/data/repository/crypto/simplex/SimplexRepositoryImpl\n*L\n28#1:58\n28#1:59,3\n32#1:62\n53#1:64\n33#1:63\n54#1:65\n*E\n"
 .end annotation
 
 
@@ -36,16 +36,16 @@
 
     invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 22
+    .line 21
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 23
+    .line 22
     iput-object p1, p0, Lcom/iMe/storage/data/repository/crypto/simplex/SimplexRepositoryImpl;->simplexApi:Lcom/iMe/storage/data/network/api/own/SimplexApi;
 
-    .line 24
+    .line 23
     iput-object p2, p0, Lcom/iMe/storage/data/repository/crypto/simplex/SimplexRepositoryImpl;->firebaseErrorHandler:Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;
 
-    .line 25
+    .line 24
     iput-object p3, p0, Lcom/iMe/storage/data/repository/crypto/simplex/SimplexRepositoryImpl;->errorHandler:Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler;
 
     return-void
@@ -53,124 +53,6 @@
 
 
 # virtual methods
-.method public createBuyingCryptoPayment(Lcom/iMe/storage/domain/model/crypto/simplex/Currency;Lcom/iMe/storage/domain/model/crypto/simplex/Currency;FILjava/lang/String;Lcom/iMe/storage/domain/model/crypto/NetworkType;)Lio/reactivex/Observable;
-    .locals 9
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lcom/iMe/storage/domain/model/crypto/simplex/Currency;",
-            "Lcom/iMe/storage/domain/model/crypto/simplex/Currency;",
-            "FI",
-            "Ljava/lang/String;",
-            "Lcom/iMe/storage/domain/model/crypto/NetworkType;",
-            ")",
-            "Lio/reactivex/Observable<",
-            "Lcom/iMe/storage/domain/model/Result<",
-            "Lcom/iMe/storage/domain/model/crypto/simplex/BuyingCryptoPayment;",
-            ">;>;"
-        }
-    .end annotation
-
-    const-string v0, "digitalCurrency"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string v0, "fiatCurrency"
-
-    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string v0, "quoteId"
-
-    invoke-static {p5, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string v0, "networkType"
-
-    invoke-static {p6, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    .line 43
-    invoke-interface {p1}, Lcom/iMe/storage/domain/model/crypto/simplex/Currency;->getValue()Ljava/lang/String;
-
-    move-result-object v6
-
-    .line 44
-    invoke-interface {p2}, Lcom/iMe/storage/domain/model/crypto/simplex/Currency;->getValue()Ljava/lang/String;
-
-    move-result-object v4
-
-    .line 47
-    invoke-static {}, Lcom/iMe/storage/domain/utils/extentions/CryptoExtKt;->generateUuid()Ljava/lang/String;
-
-    move-result-object v3
-
-    .line 49
-    invoke-virtual {p6}, Ljava/lang/Enum;->name()Ljava/lang/String;
-
-    move-result-object v8
-
-    .line 42
-    new-instance p1, Lcom/iMe/storage/data/network/model/request/crypto/simplex/CreateBuyingCryptoPaymentRequest;
-
-    move-object v1, p1
-
-    move-object v2, p5
-
-    move v5, p4
-
-    move v7, p3
-
-    invoke-direct/range {v1 .. v8}, Lcom/iMe/storage/data/network/model/request/crypto/simplex/CreateBuyingCryptoPaymentRequest;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;FLjava/lang/String;)V
-
-    .line 52
-    iget-object p2, p0, Lcom/iMe/storage/data/repository/crypto/simplex/SimplexRepositoryImpl;->simplexApi:Lcom/iMe/storage/data/network/api/own/SimplexApi;
-
-    .line 53
-    invoke-interface {p2, p1}, Lcom/iMe/storage/data/network/api/own/SimplexApi;->createBuyingCryptoPaymentRequest(Lcom/iMe/storage/data/network/model/request/crypto/simplex/CreateBuyingCryptoPaymentRequest;)Lio/reactivex/Observable;
-
-    move-result-object p2
-
-    .line 54
-    iget-object p3, p0, Lcom/iMe/storage/data/repository/crypto/simplex/SimplexRepositoryImpl;->firebaseErrorHandler:Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;
-
-    .line 70
-    new-instance p4, Lcom/iMe/storage/data/repository/crypto/simplex/SimplexRepositoryImpl$createBuyingCryptoPayment$$inlined$mapSuccess$1;
-
-    invoke-direct {p4, p3, p1}, Lcom/iMe/storage/data/repository/crypto/simplex/SimplexRepositoryImpl$createBuyingCryptoPayment$$inlined$mapSuccess$1;-><init>(Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;Lcom/iMe/storage/data/network/model/request/crypto/simplex/CreateBuyingCryptoPaymentRequest;)V
-
-    new-instance p1, Lcom/iMe/storage/data/utils/extentions/FirebaseExtKt$sam$i$io_reactivex_functions_Function$0;
-
-    invoke-direct {p1, p4}, Lcom/iMe/storage/data/utils/extentions/FirebaseExtKt$sam$i$io_reactivex_functions_Function$0;-><init>(Lkotlin/jvm/functions/Function1;)V
-
-    invoke-virtual {p2, p1}, Lio/reactivex/Observable;->map(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
-
-    move-result-object p1
-
-    const-string p2, "errorHandler: FirebaseFu\u2026response).toError()\n    }"
-
-    invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    .line 55
-    iget-object p2, p0, Lcom/iMe/storage/data/repository/crypto/simplex/SimplexRepositoryImpl;->errorHandler:Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler;
-
-    .line 26
-    new-instance p3, Lcom/iMe/storage/data/repository/crypto/simplex/SimplexRepositoryImpl$createBuyingCryptoPayment$$inlined$handleError$1;
-
-    invoke-direct {p3, p2}, Lcom/iMe/storage/data/repository/crypto/simplex/SimplexRepositoryImpl$createBuyingCryptoPayment$$inlined$handleError$1;-><init>(Lcom/iMe/storage/data/network/handlers/ErrorHandler;)V
-
-    new-instance p2, Lcom/iMe/storage/data/utils/extentions/RxExtKt$sam$i$io_reactivex_functions_Function$0;
-
-    invoke-direct {p2, p3}, Lcom/iMe/storage/data/utils/extentions/RxExtKt$sam$i$io_reactivex_functions_Function$0;-><init>(Lkotlin/jvm/functions/Function1;)V
-
-    invoke-virtual {p1, p2}, Lio/reactivex/Observable;->onErrorReturn(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
-
-    move-result-object p1
-
-    const-string p2, "errorHandler: ErrorHandl\u2026ndleError(it).toError() }"
-
-    invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    return-object p1
-.end method
-
 .method public getBuyingCryptoQuote(Ljava/util/List;)Lio/reactivex/Observable;
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
@@ -221,7 +103,7 @@
     .line 1621
     check-cast v1, Lcom/iMe/storage/domain/model/crypto/simplex/BuyingCryptoQuoteArgs;
 
-    .line 29
+    .line 28
     invoke-static {v1}, Lcom/iMe/storage/data/mapper/crypto/SimplexMappingKt;->mapToRequest(Lcom/iMe/storage/domain/model/crypto/simplex/BuyingCryptoQuoteArgs;)Lcom/iMe/storage/data/network/model/request/crypto/simplex/GetBuyingCryptoQuoteRequest;
 
     move-result-object v1
@@ -231,11 +113,11 @@
 
     goto :goto_0
 
-    .line 31
+    .line 30
     :cond_0
     iget-object p1, p0, Lcom/iMe/storage/data/repository/crypto/simplex/SimplexRepositoryImpl;->simplexApi:Lcom/iMe/storage/data/network/api/own/SimplexApi;
 
-    .line 32
+    .line 31
     new-instance v1, Lcom/iMe/storage/data/network/model/request/crypto/simplex/GetBuyingCryptoQuoteRequestList;
 
     invoke-direct {v1, v0}, Lcom/iMe/storage/data/network/model/request/crypto/simplex/GetBuyingCryptoQuoteRequestList;-><init>(Ljava/util/List;)V
@@ -244,7 +126,7 @@
 
     move-result-object p1
 
-    .line 33
+    .line 32
     iget-object v0, p0, Lcom/iMe/storage/data/repository/crypto/simplex/SimplexRepositoryImpl;->firebaseErrorHandler:Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;
 
     .line 70
@@ -264,7 +146,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 34
+    .line 33
     iget-object v0, p0, Lcom/iMe/storage/data/repository/crypto/simplex/SimplexRepositoryImpl;->errorHandler:Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler;
 
     .line 26

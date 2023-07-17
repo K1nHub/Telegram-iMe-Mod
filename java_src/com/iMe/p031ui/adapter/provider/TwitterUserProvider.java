@@ -7,14 +7,14 @@ import com.iMe.model.twitter.TwitterUserItem;
 import com.iMe.utils.extentions.common.BaseQuickAdapterExtKt;
 import java.util.List;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3295R;
-import org.telegram.p044ui.Cells.UserCell;
+import org.telegram.messenger.C3417R;
+import org.telegram.p043ui.Cells.UserCell;
 /* compiled from: TwitterUserProvider.kt */
 /* renamed from: com.iMe.ui.adapter.provider.TwitterUserProvider */
 /* loaded from: classes.dex */
 public final class TwitterUserProvider extends BaseNodeProvider<TwitterUserItem> {
     private final int itemViewType = IdFabric$ViewTypes.TWITTER_USER;
-    private final int layoutId = C3295R.layout.fork_recycle_item_twitter_user;
+    private final int layoutId = C3417R.layout.fork_recycle_item_twitter_user;
     private UserCell userCell;
 
     @Override // com.chad.library.adapter.base.provider.BaseItemProvider
@@ -40,7 +40,7 @@ public final class TwitterUserProvider extends BaseNodeProvider<TwitterUserItem>
     public void convert(BaseViewHolder helper, TwitterUserItem item) {
         Intrinsics.checkNotNullParameter(helper, "helper");
         Intrinsics.checkNotNullParameter(item, "item");
-        int i = C3295R.C3298id.frame_container;
+        int i = C3417R.C3420id.frame_container;
         BaseQuickAdapterExtKt.applyForView(BaseQuickAdapterExtKt.setRippleBackground(helper, i, true), i, new TwitterUserProvider$convert$1(item, this));
     }
 

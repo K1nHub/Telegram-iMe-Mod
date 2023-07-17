@@ -21,8 +21,8 @@ import com.iMe.storage.domain.model.twitter.TwitterUserInfo;
 import com.iMe.storage.domain.storage.TwitterPreferenceHelper;
 import com.iMe.storage.domain.utils.p030rx.SchedulersProvider;
 import com.iMe.storage.domain.utils.system.ResourceManager;
-import com.iMe.utils.extentions.p033rx.RxExtKt;
-import com.iMe.utils.extentions.p033rx.RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
+import com.iMe.utils.extentions.p032rx.RxExtKt;
+import com.iMe.utils.extentions.p032rx.RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
 import io.reactivex.Observable;
 import io.reactivex.ObservableSource;
 import io.reactivex.disposables.Disposable;
@@ -41,7 +41,7 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt__StringNumberConversionsKt;
 import moxy.InjectViewState;
-import org.telegram.messenger.C3295R;
+import org.telegram.messenger.C3417R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.tgnet.TLRPC$User;
 /* compiled from: TwitterSearchPresenter.kt */
@@ -120,8 +120,8 @@ public final class TwitterSearchPresenter extends BasePresenter<TwitterSearchVie
         }
         Observable<Result<List<BaseNode>>> observeOn = getSearchObservable().observeOn(this.schedulersProvider.mo698ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "getSearchObservable()\n  …(schedulersProvider.ui())");
-        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1479x1f435055(this, z2, z)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1480x1f435056(null)));
-        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
+        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1490x1f435055(this, z2, z)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1491x1f435056(null)));
+        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…Error.invoke()\n        })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
 
@@ -136,12 +136,12 @@ public final class TwitterSearchPresenter extends BasePresenter<TwitterSearchVie
         Intrinsics.checkNotNullExpressionValue(observeOn, "twitterInteractor\n      …(schedulersProvider.ui())");
         T viewState = getViewState();
         Intrinsics.checkNotNullExpressionValue(viewState, "viewState");
-        Intrinsics.checkNotNullExpressionValue(RxExtKt.withLoadingDialog$default((Observable) observeOn, (BaseView) viewState, false, 2, (Object) null).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1477x18d788a(twitterUserItem, this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1478x18d788b(null))), "viewState: BaseView? = n…  onError.invoke()\n    })");
+        Intrinsics.checkNotNullExpressionValue(RxExtKt.withLoadingDialog$default((Observable) observeOn, (BaseView) viewState, false, 2, (Object) null).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1488x18d788a(twitterUserItem, this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1489x18d788b(null))), "viewState: BaseView? = n…Error.invoke()\n        })");
     }
 
     public final void onInviteClick(TwitterInviteItem twitterInviteItem) {
         Intrinsics.checkNotNullParameter(twitterInviteItem, "twitterInviteItem");
-        ((TwitterSearchView) getViewState()).showInviteConfirmationDialog(new DialogModel(this.resourceManager.getString(C3295R.string.twitter_search_invite_confirmation_title), this.resourceManager.getString(C3295R.string.twitter_search_invite_confirmation_description, twitterInviteItem.getNickname()), LocaleController.getString("Cancel", C3295R.string.Cancel), LocaleController.getString("Send", C3295R.string.Send)), twitterInviteItem.getId());
+        ((TwitterSearchView) getViewState()).showInviteConfirmationDialog(new DialogModel(this.resourceManager.getString(C3417R.string.twitter_search_invite_confirmation_title), this.resourceManager.getString(C3417R.string.twitter_search_invite_confirmation_description, twitterInviteItem.getNickname()), LocaleController.getString("Cancel", C3417R.string.Cancel), LocaleController.getString("Send", C3417R.string.Send)), twitterInviteItem.getId());
     }
 
     public final void sendInvite(long j) {
@@ -149,8 +149,8 @@ public final class TwitterSearchPresenter extends BasePresenter<TwitterSearchVie
         Intrinsics.checkNotNullExpressionValue(observeOn, "twitterInteractor\n      …(schedulersProvider.ui())");
         T viewState = getViewState();
         Intrinsics.checkNotNullExpressionValue(viewState, "viewState");
-        Disposable subscribe = RxExtKt.withLoadingDialog$default((Observable) observeOn, (BaseView) viewState, false, 2, (Object) null).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1481x2420976b(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1482x2420976c(null)));
-        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
+        Disposable subscribe = RxExtKt.withLoadingDialog$default((Observable) observeOn, (BaseView) viewState, false, 2, (Object) null).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1492x2420976b(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1493x2420976c(null)));
+        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…Error.invoke()\n        })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
 
@@ -174,7 +174,7 @@ public final class TwitterSearchPresenter extends BasePresenter<TwitterSearchVie
                 break;
             }
             obj = it.next();
-            long j = ((TwitterUserItem) obj).getUser().f1574id;
+            long j = ((TwitterUserItem) obj).getUser().f1656id;
             longOrNull = StringsKt__StringNumberConversionsKt.toLongOrNull(id);
             if (longOrNull != null && j == longOrNull.longValue()) {
                 z = true;
@@ -241,8 +241,8 @@ public final class TwitterSearchPresenter extends BasePresenter<TwitterSearchVie
             }
         }).subscribeOn(this.schedulersProvider.mo699io()).observeOn(this.schedulersProvider.mo698ui());
         Intrinsics.checkNotNullExpressionValue(observeOn3, "private fun subscribeToQ…     .autoDispose()\n    }");
-        Disposable subscribe = observeOn3.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1483x72bd2d8c(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1484x72bd2d8d(null)));
-        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
+        Disposable subscribe = observeOn3.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1494x72bd2d8c(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1495x72bd2d8d(null)));
+        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…Error.invoke()\n        })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
 
@@ -267,13 +267,13 @@ public final class TwitterSearchPresenter extends BasePresenter<TwitterSearchVie
     /* JADX INFO: Access modifiers changed from: private */
     public final Observable<Result<List<BaseNode>>> getSearchObservable() {
         Observable<Result<List<TwitterUserInfo>>> searchUsersByUsername = this.twitterInteractor.searchUsersByUsername(this.query, this.page);
-        final C1476x61014ef0 c1476x61014ef0 = new C1476x61014ef0(this);
-        Observable<R> flatMap = searchUsersByUsername.flatMap(new Function(c1476x61014ef0) { // from class: com.iMe.feature.twitter.search.TwitterSearchPresenter$inlined$sam$i$io_reactivex_functions_Function$0
+        final C1487x61014ef0 c1487x61014ef0 = new C1487x61014ef0(this);
+        Observable<R> flatMap = searchUsersByUsername.flatMap(new Function(c1487x61014ef0) { // from class: com.iMe.feature.twitter.search.TwitterSearchPresenter$inlined$sam$i$io_reactivex_functions_Function$0
             private final /* synthetic */ Function1 function;
 
             {
-                Intrinsics.checkNotNullParameter(c1476x61014ef0, "function");
-                this.function = c1476x61014ef0;
+                Intrinsics.checkNotNullParameter(c1487x61014ef0, "function");
+                this.function = c1487x61014ef0;
             }
 
             @Override // io.reactivex.functions.Function

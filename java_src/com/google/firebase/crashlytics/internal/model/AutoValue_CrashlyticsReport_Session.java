@@ -14,7 +14,7 @@ final class AutoValue_CrashlyticsReport_Session extends CrashlyticsReport.Sessio
     private final String identifier;
 
     /* renamed from: os */
-    private final CrashlyticsReport.Session.OperatingSystem f159os;
+    private final CrashlyticsReport.Session.OperatingSystem f241os;
     private final long startedAt;
     private final CrashlyticsReport.Session.User user;
 
@@ -26,7 +26,7 @@ final class AutoValue_CrashlyticsReport_Session extends CrashlyticsReport.Sessio
         this.crashed = z;
         this.app = application;
         this.user = user;
-        this.f159os = operatingSystem;
+        this.f241os = operatingSystem;
         this.device = device;
         this.events = immutableList;
         this.generatorType = i;
@@ -69,7 +69,7 @@ final class AutoValue_CrashlyticsReport_Session extends CrashlyticsReport.Sessio
 
     @Override // com.google.firebase.crashlytics.internal.model.CrashlyticsReport.Session
     public CrashlyticsReport.Session.OperatingSystem getOs() {
-        return this.f159os;
+        return this.f241os;
     }
 
     @Override // com.google.firebase.crashlytics.internal.model.CrashlyticsReport.Session
@@ -88,7 +88,7 @@ final class AutoValue_CrashlyticsReport_Session extends CrashlyticsReport.Sessio
     }
 
     public String toString() {
-        return "Session{generator=" + this.generator + ", identifier=" + this.identifier + ", startedAt=" + this.startedAt + ", endedAt=" + this.endedAt + ", crashed=" + this.crashed + ", app=" + this.app + ", user=" + this.user + ", os=" + this.f159os + ", device=" + this.device + ", events=" + this.events + ", generatorType=" + this.generatorType + "}";
+        return "Session{generator=" + this.generator + ", identifier=" + this.identifier + ", startedAt=" + this.startedAt + ", endedAt=" + this.endedAt + ", crashed=" + this.crashed + ", app=" + this.app + ", user=" + this.user + ", os=" + this.f241os + ", device=" + this.device + ", events=" + this.events + ", generatorType=" + this.generatorType + "}";
     }
 
     public boolean equals(Object obj) {
@@ -102,7 +102,7 @@ final class AutoValue_CrashlyticsReport_Session extends CrashlyticsReport.Sessio
         }
         if (obj instanceof CrashlyticsReport.Session) {
             CrashlyticsReport.Session session = (CrashlyticsReport.Session) obj;
-            return this.generator.equals(session.getGenerator()) && this.identifier.equals(session.getIdentifier()) && this.startedAt == session.getStartedAt() && ((l = this.endedAt) != null ? l.equals(session.getEndedAt()) : session.getEndedAt() == null) && this.crashed == session.isCrashed() && this.app.equals(session.getApp()) && ((user = this.user) != null ? user.equals(session.getUser()) : session.getUser() == null) && ((operatingSystem = this.f159os) != null ? operatingSystem.equals(session.getOs()) : session.getOs() == null) && ((device = this.device) != null ? device.equals(session.getDevice()) : session.getDevice() == null) && ((immutableList = this.events) != null ? immutableList.equals(session.getEvents()) : session.getEvents() == null) && this.generatorType == session.getGeneratorType();
+            return this.generator.equals(session.getGenerator()) && this.identifier.equals(session.getIdentifier()) && this.startedAt == session.getStartedAt() && ((l = this.endedAt) != null ? l.equals(session.getEndedAt()) : session.getEndedAt() == null) && this.crashed == session.isCrashed() && this.app.equals(session.getApp()) && ((user = this.user) != null ? user.equals(session.getUser()) : session.getUser() == null) && ((operatingSystem = this.f241os) != null ? operatingSystem.equals(session.getOs()) : session.getOs() == null) && ((device = this.device) != null ? device.equals(session.getDevice()) : session.getDevice() == null) && ((immutableList = this.events) != null ? immutableList.equals(session.getEvents()) : session.getEvents() == null) && this.generatorType == session.getGeneratorType();
         }
         return false;
     }
@@ -114,7 +114,7 @@ final class AutoValue_CrashlyticsReport_Session extends CrashlyticsReport.Sessio
         int hashCode2 = (((((hashCode ^ (l == null ? 0 : l.hashCode())) * 1000003) ^ (this.crashed ? 1231 : 1237)) * 1000003) ^ this.app.hashCode()) * 1000003;
         CrashlyticsReport.Session.User user = this.user;
         int hashCode3 = (hashCode2 ^ (user == null ? 0 : user.hashCode())) * 1000003;
-        CrashlyticsReport.Session.OperatingSystem operatingSystem = this.f159os;
+        CrashlyticsReport.Session.OperatingSystem operatingSystem = this.f241os;
         int hashCode4 = (hashCode3 ^ (operatingSystem == null ? 0 : operatingSystem.hashCode())) * 1000003;
         CrashlyticsReport.Session.Device device = this.device;
         int hashCode5 = (hashCode4 ^ (device == null ? 0 : device.hashCode())) * 1000003;
@@ -140,7 +140,7 @@ final class AutoValue_CrashlyticsReport_Session extends CrashlyticsReport.Sessio
         private String identifier;
 
         /* renamed from: os */
-        private CrashlyticsReport.Session.OperatingSystem f160os;
+        private CrashlyticsReport.Session.OperatingSystem f242os;
         private Long startedAt;
         private CrashlyticsReport.Session.User user;
 
@@ -156,7 +156,7 @@ final class AutoValue_CrashlyticsReport_Session extends CrashlyticsReport.Sessio
             this.crashed = Boolean.valueOf(session.isCrashed());
             this.app = session.getApp();
             this.user = session.getUser();
-            this.f160os = session.getOs();
+            this.f242os = session.getOs();
             this.device = session.getDevice();
             this.events = session.getEvents();
             this.generatorType = Integer.valueOf(session.getGeneratorType());
@@ -209,7 +209,7 @@ final class AutoValue_CrashlyticsReport_Session extends CrashlyticsReport.Sessio
 
         @Override // com.google.firebase.crashlytics.internal.model.CrashlyticsReport.Session.Builder
         public CrashlyticsReport.Session.Builder setOs(CrashlyticsReport.Session.OperatingSystem operatingSystem) {
-            this.f160os = operatingSystem;
+            this.f242os = operatingSystem;
             return this;
         }
 
@@ -255,7 +255,7 @@ final class AutoValue_CrashlyticsReport_Session extends CrashlyticsReport.Sessio
             if (!str.isEmpty()) {
                 throw new IllegalStateException("Missing required properties:" + str);
             }
-            return new AutoValue_CrashlyticsReport_Session(this.generator, this.identifier, this.startedAt.longValue(), this.endedAt, this.crashed.booleanValue(), this.app, this.user, this.f160os, this.device, this.events, this.generatorType.intValue());
+            return new AutoValue_CrashlyticsReport_Session(this.generator, this.identifier, this.startedAt.longValue(), this.endedAt, this.crashed.booleanValue(), this.app, this.user, this.f242os, this.device, this.events, this.generatorType.intValue());
         }
     }
 }

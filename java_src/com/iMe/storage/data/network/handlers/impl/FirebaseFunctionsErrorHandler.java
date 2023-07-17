@@ -32,7 +32,8 @@ public class FirebaseFunctionsErrorHandler implements ErrorHandler<ApiBaseRespon
         SWAP_INSUFFICIENT_RESERVES_IN_LIQUIDITY_POOL_OF_TOKENS,
         DONATIONS_NOT_CONFIGURED_YET,
         DONATIONS_ADDRESS_ALREADY_LINKED,
-        ETHER_WALLET_NOT_LINKED
+        ETHER_WALLET_NOT_LINKED,
+        ERR_TOKEN_NOT_FOUND
     }
 
     /* compiled from: FirebaseFunctionsErrorHandler.kt */
@@ -149,52 +150,56 @@ public class FirebaseFunctionsErrorHandler implements ErrorHandler<ApiBaseRespon
             } catch (NoSuchFieldError unused19) {
             }
             try {
-                iArr[GlobalApiErrorCode.ERR_STAKING_DEPOSIT_LOW_BALANCE.ordinal()] = 20;
+                iArr[GlobalApiErrorCode.ERR_TOKEN_NOT_FOUND.ordinal()] = 20;
             } catch (NoSuchFieldError unused20) {
             }
             try {
-                iArr[GlobalApiErrorCode.ERR_STAKING_DEPOSIT_TOO_LATE.ordinal()] = 21;
+                iArr[GlobalApiErrorCode.ERR_STAKING_DEPOSIT_LOW_BALANCE.ordinal()] = 21;
             } catch (NoSuchFieldError unused21) {
             }
             try {
-                iArr[GlobalApiErrorCode.ERR_STAKING_WITHDRAWAL_OVER_LIMIT.ordinal()] = 22;
+                iArr[GlobalApiErrorCode.ERR_STAKING_DEPOSIT_TOO_LATE.ordinal()] = 22;
             } catch (NoSuchFieldError unused22) {
             }
             try {
-                iArr[GlobalApiErrorCode.ERR_STAKING_CLAIM_OVERLAP.ordinal()] = 23;
+                iArr[GlobalApiErrorCode.ERR_STAKING_WITHDRAWAL_OVER_LIMIT.ordinal()] = 23;
             } catch (NoSuchFieldError unused23) {
             }
             try {
-                iArr[GlobalApiErrorCode.ERR_AIRDROP_PROMOTION_NOT_ACTIVE.ordinal()] = 24;
+                iArr[GlobalApiErrorCode.ERR_STAKING_CLAIM_OVERLAP.ordinal()] = 24;
             } catch (NoSuchFieldError unused24) {
             }
             try {
-                iArr[GlobalApiErrorCode.ERR_AIRDROP_PROMOTION_REQUEST_ID_NOT_FOUND.ordinal()] = 25;
+                iArr[GlobalApiErrorCode.ERR_AIRDROP_PROMOTION_NOT_ACTIVE.ordinal()] = 25;
             } catch (NoSuchFieldError unused25) {
             }
             try {
-                iArr[GlobalApiErrorCode.ERR_AIRDROP_PROMOTION_USER_ALREADY_PARTICIPATED.ordinal()] = 26;
+                iArr[GlobalApiErrorCode.ERR_AIRDROP_PROMOTION_REQUEST_ID_NOT_FOUND.ordinal()] = 26;
             } catch (NoSuchFieldError unused26) {
             }
             try {
-                iArr[GlobalApiErrorCode.ERR_AIRDROP_PROMOTION_NO_TOKENS.ordinal()] = 27;
+                iArr[GlobalApiErrorCode.ERR_AIRDROP_PROMOTION_USER_ALREADY_PARTICIPATED.ordinal()] = 27;
             } catch (NoSuchFieldError unused27) {
             }
             try {
-                iArr[GlobalApiErrorCode.WRONG_TWITTER_ACCESS_TOKEN_ERROR.ordinal()] = 28;
+                iArr[GlobalApiErrorCode.ERR_AIRDROP_PROMOTION_NO_TOKENS.ordinal()] = 28;
             } catch (NoSuchFieldError unused28) {
             }
             try {
-                iArr[GlobalApiErrorCode.WRONG_TWITTER_REFRESH_TOKEN_ERROR.ordinal()] = 29;
+                iArr[GlobalApiErrorCode.WRONG_TWITTER_ACCESS_TOKEN_ERROR.ordinal()] = 29;
             } catch (NoSuchFieldError unused29) {
             }
             try {
-                iArr[GlobalApiErrorCode.TWITTER_USER_DISABLED_DIRECT_MESSAGES.ordinal()] = 30;
+                iArr[GlobalApiErrorCode.WRONG_TWITTER_REFRESH_TOKEN_ERROR.ordinal()] = 30;
             } catch (NoSuchFieldError unused30) {
             }
             try {
-                iArr[GlobalApiErrorCode.NO_OAUTH_ACCESS_GRANTED_ERROR.ordinal()] = 31;
+                iArr[GlobalApiErrorCode.TWITTER_USER_DISABLED_DIRECT_MESSAGES.ordinal()] = 31;
             } catch (NoSuchFieldError unused31) {
+            }
+            try {
+                iArr[GlobalApiErrorCode.NO_OAUTH_ACCESS_GRANTED_ERROR.ordinal()] = 32;
+            } catch (NoSuchFieldError unused32) {
             }
             $EnumSwitchMapping$0 = iArr;
         }
@@ -261,39 +266,42 @@ public class FirebaseFunctionsErrorHandler implements ErrorHandler<ApiBaseRespon
                 iErrorStatus = CryptoErrorStatus.DONATIONS_ADDRESS_ALREADY_LINKED;
                 break;
             case 20:
-                iErrorStatus = ErrorStatus.NO_ENOUGH_MONEY;
+                iErrorStatus = CryptoErrorStatus.ERR_TOKEN_NOT_FOUND;
                 break;
             case 21:
-                iErrorStatus = StakingErrorStatus.ERR_STAKING_FINISHED;
+                iErrorStatus = ErrorStatus.NO_ENOUGH_MONEY;
                 break;
             case 22:
-                iErrorStatus = StakingErrorStatus.ERR_STAKING_WITHDRAWAL_OVER_LIMIT;
+                iErrorStatus = StakingErrorStatus.ERR_STAKING_FINISHED;
                 break;
             case 23:
-                iErrorStatus = StakingErrorStatus.ERR_STAKING_CLAIM_OVERLAP;
+                iErrorStatus = StakingErrorStatus.ERR_STAKING_WITHDRAWAL_OVER_LIMIT;
                 break;
             case 24:
-                iErrorStatus = AirdropErrorStatus.AIRDROP_NOT_ACTIVE;
+                iErrorStatus = StakingErrorStatus.ERR_STAKING_CLAIM_OVERLAP;
                 break;
             case 25:
-                iErrorStatus = AirdropErrorStatus.REQUEST_ID_NOT_FOUND;
+                iErrorStatus = AirdropErrorStatus.AIRDROP_NOT_ACTIVE;
                 break;
             case 26:
-                iErrorStatus = AirdropErrorStatus.USER_ALREADY_PARTICIPATED;
+                iErrorStatus = AirdropErrorStatus.REQUEST_ID_NOT_FOUND;
                 break;
             case 27:
-                iErrorStatus = AirdropErrorStatus.AIRDROP_NO_TOKENS;
+                iErrorStatus = AirdropErrorStatus.USER_ALREADY_PARTICIPATED;
                 break;
             case 28:
-                iErrorStatus = TwitterErrorStatus.WRONG_TWITTER_ACCESS_TOKEN_ERROR;
+                iErrorStatus = AirdropErrorStatus.AIRDROP_NO_TOKENS;
                 break;
             case 29:
-                iErrorStatus = TwitterErrorStatus.WRONG_TWITTER_REFRESH_TOKEN_ERROR;
+                iErrorStatus = TwitterErrorStatus.WRONG_TWITTER_ACCESS_TOKEN_ERROR;
                 break;
             case 30:
-                iErrorStatus = TwitterErrorStatus.TWITTER_USER_DISABLED_DIRECT_MESSAGES;
+                iErrorStatus = TwitterErrorStatus.WRONG_TWITTER_REFRESH_TOKEN_ERROR;
                 break;
             case 31:
+                iErrorStatus = TwitterErrorStatus.TWITTER_USER_DISABLED_DIRECT_MESSAGES;
+                break;
+            case 32:
                 iErrorStatus = TwitterErrorStatus.NO_OAUTH_ACCESS_GRANTED_ERROR;
                 break;
             default:

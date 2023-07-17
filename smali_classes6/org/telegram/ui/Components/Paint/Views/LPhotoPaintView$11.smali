@@ -24,12 +24,12 @@
 .method constructor <init>(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;Landroid/content/Context;)V
     .locals 0
 
-    .line 779
+    .line 778
     iput-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$11;->this$0:Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;
 
     invoke-direct {p0, p2}, Lorg/telegram/ui/Components/Paint/Views/PaintColorsListView;-><init>(Landroid/content/Context;)V
 
-    .line 780
+    .line 779
     new-instance p1, Landroid/graphics/Path;
 
     invoke-direct {p1}, Landroid/graphics/Path;-><init>()V
@@ -44,17 +44,17 @@
 .method public draw(Landroid/graphics/Canvas;)V
     .locals 7
 
-    .line 784
+    .line 783
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$11;->this$0:Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->access$1300(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;)Landroid/view/ViewGroup;
 
     move-result-object v0
 
-    .line 785
+    .line 784
     sget-object v1, Lorg/telegram/messenger/AndroidUtilities;->rectTmp:Landroid/graphics/RectF;
 
-    .line 786
+    .line 785
     invoke-virtual {v0}, Landroid/view/ViewGroup;->getLeft()I
 
     move-result v2
@@ -79,7 +79,7 @@
 
     int-to-float v2, v2
 
-    .line 787
+    .line 786
     invoke-virtual {v0}, Landroid/view/ViewGroup;->getTop()I
 
     move-result v3
@@ -102,7 +102,7 @@
 
     int-to-float v3, v3
 
-    .line 788
+    .line 787
     invoke-virtual {v0}, Landroid/view/ViewGroup;->getRight()I
 
     move-result v4
@@ -129,7 +129,7 @@
 
     int-to-float v4, v4
 
-    .line 789
+    .line 788
     invoke-virtual {v0}, Landroid/view/ViewGroup;->getBottom()I
 
     move-result v0
@@ -156,15 +156,15 @@
 
     int-to-float v0, v0
 
-    .line 785
+    .line 784
     invoke-virtual {v1, v2, v3, v4, v0}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 792
+    .line 791
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$11;->path:Landroid/graphics/Path;
 
     invoke-virtual {v0}, Landroid/graphics/Path;->rewind()V
 
-    .line 793
+    .line 792
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$11;->path:Landroid/graphics/Path;
 
     const/16 v2, 0x20
@@ -185,18 +185,18 @@
 
     invoke-virtual {v0, v1, v3, v2, v4}, Landroid/graphics/Path;->addRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Path$Direction;)V
 
-    .line 795
+    .line 794
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 796
+    .line 795
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$11;->path:Landroid/graphics/Path;
 
     invoke-virtual {p1, v0}, Landroid/graphics/Canvas;->clipPath(Landroid/graphics/Path;)Z
 
-    .line 797
+    .line 796
     invoke-super {p0, p1}, Landroidx/recyclerview/widget/RecyclerView;->draw(Landroid/graphics/Canvas;)V
 
-    .line 798
+    .line 797
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
     return-void

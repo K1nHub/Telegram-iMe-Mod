@@ -20,51 +20,33 @@
 
 # direct methods
 .method constructor <init>(Lorg/telegram/ui/PaymentFormActivity;)V
-    .locals 2
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lorg/json/JSONException;
         }
     .end annotation
 
-    .line 2785
+    .line 2794
     iput-object p1, p0, Lorg/telegram/ui/PaymentFormActivity$23;->this$0:Lorg/telegram/ui/PaymentFormActivity;
 
     invoke-direct {p0}, Lorg/json/JSONObject;-><init>()V
 
-    const-string v0, "type"
+    const-string p1, "type"
 
-    const-string v1, "PAYMENT_GATEWAY"
+    const-string v0, "DIRECT"
 
-    .line 2786
-    invoke-virtual {p0, v0, v1}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
+    .line 2795
+    invoke-virtual {p0, p1, v0}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
 
-    .line 2787
-    invoke-static {p1}, Lorg/telegram/ui/PaymentFormActivity;->access$5100(Lorg/telegram/ui/PaymentFormActivity;)Lorg/json/JSONObject;
-
-    move-result-object v0
-
-    const-string v1, "parameters"
-
-    if-eqz v0, :cond_0
-
-    .line 2788
-    invoke-static {p1}, Lorg/telegram/ui/PaymentFormActivity;->access$5100(Lorg/telegram/ui/PaymentFormActivity;)Lorg/json/JSONObject;
-
-    move-result-object p1
-
-    invoke-virtual {p0, v1, p1}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
-
-    goto :goto_0
-
-    .line 2790
-    :cond_0
+    .line 2796
     new-instance p1, Lorg/telegram/ui/PaymentFormActivity$23$1;
 
     invoke-direct {p1, p0}, Lorg/telegram/ui/PaymentFormActivity$23$1;-><init>(Lorg/telegram/ui/PaymentFormActivity$23;)V
 
-    invoke-virtual {p0, v1, p1}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
+    const-string v0, "parameters"
 
-    :goto_0
+    invoke-virtual {p0, v0, p1}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
+
     return-void
 .end method

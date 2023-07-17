@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/ProfileActivity;Landroid/view/ViewGroup;Landroid/view/ViewGroup;)V
     .locals 0
 
-    .line 4943
+    .line 4969
     iput-object p1, p0, Lorg/telegram/ui/ProfileActivity$31;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-direct {p0, p2, p3}, Lorg/telegram/ui/PinchToZoomHelper;-><init>(Landroid/view/ViewGroup;Landroid/view/ViewGroup;)V
@@ -41,7 +41,7 @@
 
     if-lez p4, :cond_5
 
-    .line 4967
+    .line 4993
     sget-object p4, Lorg/telegram/messenger/AndroidUtilities;->rectTmp:Landroid/graphics/RectF;
 
     iget-object p5, p0, Lorg/telegram/ui/ProfileActivity$31;->this$0:Lorg/telegram/ui/ProfileActivity;
@@ -86,10 +86,10 @@
 
     const/16 p6, 0x1f
 
-    .line 4968
+    .line 4994
     invoke-virtual {p1, p4, p5, p6}, Landroid/graphics/Canvas;->saveLayerAlpha(Landroid/graphics/RectF;II)I
 
-    .line 4970
+    .line 4996
     iget-object p4, p0, Lorg/telegram/ui/ProfileActivity$31;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-static {p4}, Lorg/telegram/ui/ProfileActivity;->access$12800(Lorg/telegram/ui/ProfileActivity;)Landroid/widget/FrameLayout;
@@ -98,22 +98,22 @@
 
     invoke-virtual {p4, p1}, Landroid/widget/FrameLayout;->draw(Landroid/graphics/Canvas;)V
 
-    .line 4972
+    .line 4998
     iget-object p4, p0, Lorg/telegram/ui/ProfileActivity$31;->this$0:Lorg/telegram/ui/ProfileActivity;
 
-    invoke-static {p4}, Lorg/telegram/ui/ProfileActivity;->access$17400(Lorg/telegram/ui/ProfileActivity;)Lorg/telegram/ui/ActionBar/ActionBar;
+    invoke-static {p4}, Lorg/telegram/ui/ProfileActivity;->access$17500(Lorg/telegram/ui/ProfileActivity;)Lorg/telegram/ui/ActionBar/ActionBar;
 
     move-result-object p4
 
     invoke-virtual {p4}, Lorg/telegram/ui/ActionBar/ActionBar;->getOccupyStatusBar()Z
 
-    .line 4979
+    .line 5005
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 4980
+    .line 5006
     iget-object p4, p0, Lorg/telegram/ui/ProfileActivity$31;->this$0:Lorg/telegram/ui/ProfileActivity;
 
-    invoke-static {p4}, Lorg/telegram/ui/ProfileActivity;->access$18000(Lorg/telegram/ui/ProfileActivity;)Lorg/telegram/ui/ActionBar/ActionBar;
+    invoke-static {p4}, Lorg/telegram/ui/ProfileActivity;->access$18100(Lorg/telegram/ui/ProfileActivity;)Lorg/telegram/ui/ActionBar/ActionBar;
 
     move-result-object p4
 
@@ -123,7 +123,7 @@
 
     iget-object p5, p0, Lorg/telegram/ui/ProfileActivity$31;->this$0:Lorg/telegram/ui/ProfileActivity;
 
-    invoke-static {p5}, Lorg/telegram/ui/ProfileActivity;->access$18100(Lorg/telegram/ui/ProfileActivity;)Lorg/telegram/ui/ActionBar/ActionBar;
+    invoke-static {p5}, Lorg/telegram/ui/ProfileActivity;->access$18200(Lorg/telegram/ui/ProfileActivity;)Lorg/telegram/ui/ActionBar/ActionBar;
 
     move-result-object p5
 
@@ -133,16 +133,16 @@
 
     invoke-virtual {p1, p4, p5}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 4981
+    .line 5007
     iget-object p4, p0, Lorg/telegram/ui/ProfileActivity$31;->this$0:Lorg/telegram/ui/ProfileActivity;
 
-    invoke-static {p4}, Lorg/telegram/ui/ProfileActivity;->access$18200(Lorg/telegram/ui/ProfileActivity;)Lorg/telegram/ui/ActionBar/ActionBar;
+    invoke-static {p4}, Lorg/telegram/ui/ProfileActivity;->access$18300(Lorg/telegram/ui/ProfileActivity;)Lorg/telegram/ui/ActionBar/ActionBar;
 
     move-result-object p4
 
     invoke-virtual {p4, p1}, Landroid/widget/FrameLayout;->draw(Landroid/graphics/Canvas;)V
 
-    .line 4982
+    .line 5008
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
     const/4 p4, 0x0
@@ -152,7 +152,7 @@
 
     if-ge p4, p5, :cond_4
 
-    .line 4985
+    .line 5011
     iget-object p5, p0, Lorg/telegram/ui/ProfileActivity$31;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-static {p5}, Lorg/telegram/ui/ProfileActivity;->access$13000(Lorg/telegram/ui/ProfileActivity;)Lorg/telegram/ui/Components/RLottieImageView;
@@ -228,7 +228,7 @@
 
     if-lez p5, :cond_3
 
-    .line 4986
+    .line 5012
     :cond_1
     iget-object p5, p0, Lorg/telegram/ui/ProfileActivity$31;->this$0:Lorg/telegram/ui/ProfileActivity;
 
@@ -245,7 +245,7 @@
 
     move-result-object p5
 
-    .line 4987
+    .line 5013
     :goto_1
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
@@ -255,7 +255,7 @@
 
     add-float/2addr v0, p6
 
-    .line 4989
+    .line 5015
     invoke-virtual {p5}, Landroid/view/View;->getX()F
 
     move-result p6
@@ -288,7 +288,7 @@
 
     invoke-virtual {p1, v0, v0, p6, v1}, Landroid/graphics/Canvas;->scale(FFFF)V
 
-    .line 4990
+    .line 5016
     invoke-virtual {p5}, Landroid/view/View;->getX()F
 
     move-result p6
@@ -299,10 +299,10 @@
 
     invoke-virtual {p1, p6, v0}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 4991
+    .line 5017
     invoke-virtual {p5, p1}, Landroid/view/View;->draw(Landroid/graphics/Canvas;)V
 
-    .line 4992
+    .line 5018
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
     :cond_3
@@ -310,7 +310,7 @@
 
     goto/16 :goto_0
 
-    .line 4995
+    .line 5021
     :cond_4
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
@@ -321,13 +321,13 @@
 .method protected invalidateViews()V
     .locals 2
 
-    .line 4949
+    .line 4975
     invoke-super {p0}, Lorg/telegram/ui/PinchToZoomHelper;->invalidateViews()V
 
-    .line 4950
+    .line 4976
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$31;->this$0:Lorg/telegram/ui/ProfileActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/ProfileActivity;->access$17300(Lorg/telegram/ui/ProfileActivity;)Landroid/view/View;
+    invoke-static {v0}, Lorg/telegram/ui/ProfileActivity;->access$17400(Lorg/telegram/ui/ProfileActivity;)Landroid/view/View;
 
     move-result-object v0
 
@@ -335,7 +335,7 @@
 
     const/4 v0, 0x0
 
-    .line 4951
+    .line 4977
     :goto_0
     iget-object v1, p0, Lorg/telegram/ui/ProfileActivity$31;->this$0:Lorg/telegram/ui/ProfileActivity;
 
@@ -349,7 +349,7 @@
 
     if-ge v0, v1, :cond_0
 
-    .line 4952
+    .line 4978
     iget-object v1, p0, Lorg/telegram/ui/ProfileActivity$31;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-static {v1}, Lorg/telegram/ui/ProfileActivity;->access$1800(Lorg/telegram/ui/ProfileActivity;)Lorg/telegram/ui/Components/ProfileGalleryView;
@@ -366,7 +366,7 @@
 
     goto :goto_0
 
-    .line 4954
+    .line 4980
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$31;->this$0:Lorg/telegram/ui/ProfileActivity;
 
@@ -376,7 +376,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 4955
+    .line 4981
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$31;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ProfileActivity;->access$13000(Lorg/telegram/ui/ProfileActivity;)Lorg/telegram/ui/Components/RLottieImageView;
@@ -385,7 +385,7 @@
 
     invoke-virtual {v0}, Landroid/widget/ImageView;->invalidate()V
 
-    .line 4958
+    .line 4984
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$31;->this$0:Lorg/telegram/ui/ProfileActivity;
 
@@ -395,7 +395,7 @@
 
     if-eqz v0, :cond_2
 
-    .line 4959
+    .line 4985
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$31;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ProfileActivity;->access$13100(Lorg/telegram/ui/ProfileActivity;)Landroid/widget/ImageView;
@@ -411,7 +411,7 @@
 .method protected zoomEnabled(Landroid/view/View;Lorg/telegram/messenger/ImageReceiver;)Z
     .locals 1
 
-    .line 5001
+    .line 5027
     invoke-super {p0, p1, p2}, Lorg/telegram/ui/PinchToZoomHelper;->zoomEnabled(Landroid/view/View;Lorg/telegram/messenger/ImageReceiver;)Z
 
     move-result p1
@@ -422,7 +422,7 @@
 
     return p2
 
-    .line 5004
+    .line 5030
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/ProfileActivity$31;->this$0:Lorg/telegram/ui/ProfileActivity;
 

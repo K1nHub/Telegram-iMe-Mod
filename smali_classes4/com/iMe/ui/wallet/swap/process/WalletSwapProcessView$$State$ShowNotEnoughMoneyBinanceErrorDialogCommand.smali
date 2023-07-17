@@ -26,7 +26,7 @@
 .method constructor <init>(Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessView$$State;)V
     .locals 1
 
-    .line 490
+    .line 498
     const-class p1, Lmoxy/viewstate/strategy/OneExecutionStateStrategy;
 
     const-string/jumbo v0, "showNotEnoughMoneyBinanceErrorDialog"
@@ -41,7 +41,7 @@
 .method public apply(Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessView;)V
     .locals 0
 
-    .line 495
+    .line 503
     invoke-interface {p1}, Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessView;->showNotEnoughMoneyBinanceErrorDialog()V
 
     return-void
@@ -50,7 +50,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 488
+    .line 496
     check-cast p1, Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessView$$State$ShowNotEnoughMoneyBinanceErrorDialogCommand;->apply(Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessView;)V

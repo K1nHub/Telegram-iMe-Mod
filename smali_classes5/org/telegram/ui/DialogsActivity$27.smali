@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/DialogsActivity;Landroid/content/Context;Lorg/telegram/ui/DialogsActivity;IIILorg/telegram/ui/Components/SearchViewPager$ChatPreviewDelegate;)V
     .locals 7
 
-    .line 5835
+    .line 5818
     iput-object p1, p0, Lorg/telegram/ui/DialogsActivity$27;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     move-object v0, p0
@@ -49,7 +49,7 @@
 .method protected includeDownloads()Z
     .locals 1
 
-    .line 5863
+    .line 5846
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$27;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     iget-object v0, v0, Lorg/telegram/ui/DialogsActivity;->rightSlidingDialogContainer:Lorg/telegram/ui/RightSlidingDialogContainer;
@@ -83,7 +83,7 @@
 .method protected onTabPageSelected(I)V
     .locals 2
 
-    .line 5838
+    .line 5821
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$27;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     const/4 v1, 0x2

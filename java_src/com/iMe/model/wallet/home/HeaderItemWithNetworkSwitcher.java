@@ -1,34 +1,34 @@
 package com.iMe.model.wallet.home;
 
 import com.iMe.model.common.NoChildNode;
-import com.iMe.storage.domain.model.crypto.NetworkType;
+import com.iMe.storage.domain.model.crypto.Network;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: HeaderItemWithNetworkSwitcher.kt */
 /* loaded from: classes3.dex */
 public final class HeaderItemWithNetworkSwitcher extends NoChildNode {
     private boolean isNetworkSwitcherVisible;
-    private NetworkType networkType;
+    private Network networkType;
     private String title;
 
-    public static /* synthetic */ HeaderItemWithNetworkSwitcher copy$default(HeaderItemWithNetworkSwitcher headerItemWithNetworkSwitcher, String str, NetworkType networkType, boolean z, int i, Object obj) {
+    public static /* synthetic */ HeaderItemWithNetworkSwitcher copy$default(HeaderItemWithNetworkSwitcher headerItemWithNetworkSwitcher, String str, Network network, boolean z, int i, Object obj) {
         if ((i & 1) != 0) {
             str = headerItemWithNetworkSwitcher.title;
         }
         if ((i & 2) != 0) {
-            networkType = headerItemWithNetworkSwitcher.networkType;
+            network = headerItemWithNetworkSwitcher.networkType;
         }
         if ((i & 4) != 0) {
             z = headerItemWithNetworkSwitcher.isNetworkSwitcherVisible;
         }
-        return headerItemWithNetworkSwitcher.copy(str, networkType, z);
+        return headerItemWithNetworkSwitcher.copy(str, network, z);
     }
 
     public final String component1() {
         return this.title;
     }
 
-    public final NetworkType component2() {
+    public final Network component2() {
         return this.networkType;
     }
 
@@ -36,7 +36,7 @@ public final class HeaderItemWithNetworkSwitcher extends NoChildNode {
         return this.isNetworkSwitcherVisible;
     }
 
-    public final HeaderItemWithNetworkSwitcher copy(String title, NetworkType networkType, boolean z) {
+    public final HeaderItemWithNetworkSwitcher copy(String title, Network networkType, boolean z) {
         Intrinsics.checkNotNullParameter(title, "title");
         Intrinsics.checkNotNullParameter(networkType, "networkType");
         return new HeaderItemWithNetworkSwitcher(title, networkType, z);
@@ -48,7 +48,7 @@ public final class HeaderItemWithNetworkSwitcher extends NoChildNode {
         }
         if (obj instanceof HeaderItemWithNetworkSwitcher) {
             HeaderItemWithNetworkSwitcher headerItemWithNetworkSwitcher = (HeaderItemWithNetworkSwitcher) obj;
-            return Intrinsics.areEqual(this.title, headerItemWithNetworkSwitcher.title) && this.networkType == headerItemWithNetworkSwitcher.networkType && this.isNetworkSwitcherVisible == headerItemWithNetworkSwitcher.isNetworkSwitcherVisible;
+            return Intrinsics.areEqual(this.title, headerItemWithNetworkSwitcher.title) && Intrinsics.areEqual(this.networkType, headerItemWithNetworkSwitcher.networkType) && this.isNetworkSwitcherVisible == headerItemWithNetworkSwitcher.isNetworkSwitcherVisible;
         }
         return false;
     }
@@ -68,8 +68,8 @@ public final class HeaderItemWithNetworkSwitcher extends NoChildNode {
         return "HeaderItemWithNetworkSwitcher(title=" + this.title + ", networkType=" + this.networkType + ", isNetworkSwitcherVisible=" + this.isNetworkSwitcherVisible + ')';
     }
 
-    public /* synthetic */ HeaderItemWithNetworkSwitcher(String str, NetworkType networkType, boolean z, int i, DefaultConstructorMarker defaultConstructorMarker) {
-        this(str, networkType, (i & 4) != 0 ? true : z);
+    public /* synthetic */ HeaderItemWithNetworkSwitcher(String str, Network network, boolean z, int i, DefaultConstructorMarker defaultConstructorMarker) {
+        this(str, network, (i & 4) != 0 ? true : z);
     }
 
     public final String getTitle() {
@@ -81,13 +81,13 @@ public final class HeaderItemWithNetworkSwitcher extends NoChildNode {
         this.title = str;
     }
 
-    public final NetworkType getNetworkType() {
+    public final Network getNetworkType() {
         return this.networkType;
     }
 
-    public final void setNetworkType(NetworkType networkType) {
-        Intrinsics.checkNotNullParameter(networkType, "<set-?>");
-        this.networkType = networkType;
+    public final void setNetworkType(Network network) {
+        Intrinsics.checkNotNullParameter(network, "<set-?>");
+        this.networkType = network;
     }
 
     public final boolean isNetworkSwitcherVisible() {
@@ -98,7 +98,7 @@ public final class HeaderItemWithNetworkSwitcher extends NoChildNode {
         this.isNetworkSwitcherVisible = z;
     }
 
-    public HeaderItemWithNetworkSwitcher(String title, NetworkType networkType, boolean z) {
+    public HeaderItemWithNetworkSwitcher(String title, Network networkType, boolean z) {
         Intrinsics.checkNotNullParameter(title, "title");
         Intrinsics.checkNotNullParameter(networkType, "networkType");
         this.title = title;

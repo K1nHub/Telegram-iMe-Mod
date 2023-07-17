@@ -14,7 +14,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nMusicController.kt\nKotlin\n*S Kotlin\n*F\n+ 1 MusicController.kt\ncom/iMe/fork/controller/MusicController\n+ 2 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n+ 3 Maps.kt\nkotlin/collections/MapsKt__MapsKt\n+ 4 _Sequences.kt\nkotlin/sequences/SequencesKt___SequencesKt\n+ 5 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,94:1\n56#2,6:95\n515#3:101\n500#3,6:102\n361#3,7:113\n658#4:108\n739#4,4:109\n1549#5:120\n1620#5,3:121\n*S KotlinDebug\n*F\n+ 1 MusicController.kt\ncom/iMe/fork/controller/MusicController\n*L\n19#1:95,6\n44#1:101\n44#1:102,6\n64#1:113,7\n52#1:108\n52#1:109,4\n65#1:120\n65#1:121,3\n*E\n"
+    value = "SMAP\nMusicController.kt\nKotlin\n*S Kotlin\n*F\n+ 1 MusicController.kt\ncom/iMe/fork/controller/MusicController\n+ 2 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n+ 3 Maps.kt\nkotlin/collections/MapsKt__MapsKt\n+ 4 _Sequences.kt\nkotlin/sequences/SequencesKt___SequencesKt\n+ 5 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,98:1\n56#2,6:99\n515#3:105\n500#3,6:106\n361#3,7:117\n658#4:112\n739#4,4:113\n1549#5:124\n1620#5,3:125\n*S KotlinDebug\n*F\n+ 1 MusicController.kt\ncom/iMe/fork/controller/MusicController\n*L\n19#1:99,6\n44#1:105\n44#1:106,6\n57#1:117,7\n52#1:112\n52#1:113,4\n58#1:124\n58#1:125,3\n*E\n"
 .end annotation
 
 
@@ -51,42 +51,42 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$1iRMBQACGBUyyKLQ91WH9cB7Z3A(Lcom/iMe/fork/controller/MusicController;Ljava/util/List;)V
+.method public static synthetic $r8$lambda$-5cGwFuQTjulPXHvEHBa_JMs4PM(Lcom/iMe/fork/controller/MusicController;Ljava/util/List;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lcom/iMe/fork/controller/MusicController;->removePlaylistMessage$lambda$10(Lcom/iMe/fork/controller/MusicController;Ljava/util/List;)V
+    invoke-static {p0, p1}, Lcom/iMe/fork/controller/MusicController;->removePlaylistMessage$lambda$9(Lcom/iMe/fork/controller/MusicController;Ljava/util/List;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$FqoAXloU5UgoT0Q7pubm92Zg2Xc(Lcom/iMe/fork/controller/MusicController;)V
+.method public static synthetic $r8$lambda$0zxUmEEyOfEQXFs0Bx6mv1vc_kk(Lcom/iMe/fork/controller/MusicController;Lcom/iMe/storage/domain/model/music/PlaylistModel;)V
     .locals 0
 
-    invoke-static {p0}, Lcom/iMe/fork/controller/MusicController;->setNewPlaylists$lambda$4(Lcom/iMe/fork/controller/MusicController;)V
+    invoke-static {p0, p1}, Lcom/iMe/fork/controller/MusicController;->addPlaylistMessage$lambda$6(Lcom/iMe/fork/controller/MusicController;Lcom/iMe/storage/domain/model/music/PlaylistModel;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$J-pB4cvwn4GgCqyf8i84WaP3ZPE(Lcom/iMe/fork/controller/MusicController;Ljava/util/List;)V
+.method public static synthetic $r8$lambda$6jhMoAYV2rorc5axrOFx6XOo8mg(Lcom/iMe/fork/controller/MusicController;Ljava/util/List;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lcom/iMe/fork/controller/MusicController;->addPlaylistMessage$lambda$8(Lcom/iMe/fork/controller/MusicController;Ljava/util/List;)V
+    invoke-static {p0, p1}, Lcom/iMe/fork/controller/MusicController;->addPlaylistMessage$lambda$7(Lcom/iMe/fork/controller/MusicController;Ljava/util/List;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$U09xvAevqeVfWUr8Tp6KFsRxnCE(Lcom/iMe/fork/controller/MusicController;Lcom/iMe/storage/domain/model/music/PlaylistModel;)V
+.method public static synthetic $r8$lambda$PZSZEQrNY3EnAK5JqIXyW09p8ng(Lcom/iMe/fork/controller/MusicController;Lcom/iMe/storage/domain/model/music/PlaylistModel;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lcom/iMe/fork/controller/MusicController;->removePlaylistMessage$lambda$9(Lcom/iMe/fork/controller/MusicController;Lcom/iMe/storage/domain/model/music/PlaylistModel;)V
+    invoke-static {p0, p1}, Lcom/iMe/fork/controller/MusicController;->removePlaylistMessage$lambda$8(Lcom/iMe/fork/controller/MusicController;Lcom/iMe/storage/domain/model/music/PlaylistModel;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$bL7Zf-RFh9P-33HvfzXRIoMFdtQ(Lcom/iMe/fork/controller/MusicController;Lcom/iMe/storage/domain/model/music/PlaylistModel;)V
+.method public static synthetic $r8$lambda$UmupjS_iVvpfxHpZCDd_0-si0gI(Lcom/iMe/fork/controller/MusicController;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lcom/iMe/fork/controller/MusicController;->addPlaylistMessage$lambda$7(Lcom/iMe/fork/controller/MusicController;Lcom/iMe/storage/domain/model/music/PlaylistModel;)V
+    invoke-static {p0}, Lcom/iMe/fork/controller/MusicController;->setNewPlaylists$lambda$10(Lcom/iMe/fork/controller/MusicController;)V
 
     return-void
 .end method
@@ -102,7 +102,7 @@
 
     sput-object v0, Lcom/iMe/fork/controller/MusicController;->Companion:Lcom/iMe/fork/controller/MusicController$Companion;
 
-    .line 89
+    .line 93
     new-instance v0, Lj$/util/concurrent/ConcurrentHashMap;
 
     const/4 v1, 0x5
@@ -167,7 +167,7 @@
     return-object v0
 .end method
 
-.method private static final addPlaylistMessage$lambda$7(Lcom/iMe/fork/controller/MusicController;Lcom/iMe/storage/domain/model/music/PlaylistModel;)V
+.method private static final addPlaylistMessage$lambda$6(Lcom/iMe/fork/controller/MusicController;Lcom/iMe/storage/domain/model/music/PlaylistModel;)V
     .locals 3
 
     const-string v0, "this$0"
@@ -178,7 +178,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 67
+    .line 60
     invoke-direct {p0}, Lcom/iMe/fork/controller/MusicController;->getDao()Lcom/iMe/storage/data/locale/db/dao/main/PlaylistsDao;
 
     move-result-object v0
@@ -198,7 +198,7 @@
     return-void
 .end method
 
-.method private static final addPlaylistMessage$lambda$8(Lcom/iMe/fork/controller/MusicController;Ljava/util/List;)V
+.method private static final addPlaylistMessage$lambda$7(Lcom/iMe/fork/controller/MusicController;Ljava/util/List;)V
     .locals 3
 
     const-string v0, "this$0"
@@ -209,7 +209,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 69
+    .line 62
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getNotificationCenter()Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object p0
@@ -262,7 +262,38 @@
     return-object p0
 .end method
 
-.method private static final removePlaylistMessage$lambda$10(Lcom/iMe/fork/controller/MusicController;Ljava/util/List;)V
+.method private static final removePlaylistMessage$lambda$8(Lcom/iMe/fork/controller/MusicController;Lcom/iMe/storage/domain/model/music/PlaylistModel;)V
+    .locals 3
+
+    const-string v0, "this$0"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "$playlist"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 72
+    invoke-direct {p0}, Lcom/iMe/fork/controller/MusicController;->getDao()Lcom/iMe/storage/data/locale/db/dao/main/PlaylistsDao;
+
+    move-result-object v0
+
+    invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getUserConfig()Lorg/telegram/messenger/UserConfig;
+
+    move-result-object p0
+
+    iget-wide v1, p0, Lorg/telegram/messenger/UserConfig;->clientUserId:J
+
+    invoke-static {p1, v1, v2}, Lcom/iMe/storage/data/mapper/music/PlaylistsMappingKt;->mapToDb(Lcom/iMe/storage/domain/model/music/PlaylistModel;J)Lcom/iMe/storage/data/locale/db/model/music/PlaylistsDb;
+
+    move-result-object p0
+
+    invoke-interface {v0, p0}, Lcom/iMe/storage/data/locale/db/dao/base/BaseDao;->insert(Ljava/lang/Object;)J
+
+    return-void
+.end method
+
+.method private static final removePlaylistMessage$lambda$9(Lcom/iMe/fork/controller/MusicController;Ljava/util/List;)V
     .locals 3
 
     const-string v0, "this$0"
@@ -273,7 +304,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 81
+    .line 74
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getNotificationCenter()Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object p0
@@ -299,45 +330,41 @@
     return-void
 .end method
 
-.method private static final removePlaylistMessage$lambda$9(Lcom/iMe/fork/controller/MusicController;Lcom/iMe/storage/domain/model/music/PlaylistModel;)V
-    .locals 3
+.method private final setNewPlaylists(Ljava/util/Map;)V
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/Map<",
+            "Ljava/lang/Long;",
+            "Lcom/iMe/storage/domain/model/music/PlaylistModel;",
+            ">;)V"
+        }
+    .end annotation
 
-    const-string v0, "this$0"
+    .line 84
+    iput-object p1, p0, Lcom/iMe/fork/controller/MusicController;->playlists:Ljava/util/Map;
 
-    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    .line 85
+    sget-object p1, Lorg/telegram/messenger/Utilities;->stageQueue:Lorg/telegram/messenger/DispatchQueue;
 
-    const-string v0, "$playlist"
+    new-instance v0, Lcom/iMe/fork/controller/MusicController$$ExternalSyntheticLambda0;
 
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-direct {v0, p0}, Lcom/iMe/fork/controller/MusicController$$ExternalSyntheticLambda0;-><init>(Lcom/iMe/fork/controller/MusicController;)V
 
-    .line 79
-    invoke-direct {p0}, Lcom/iMe/fork/controller/MusicController;->getDao()Lcom/iMe/storage/data/locale/db/dao/main/PlaylistsDao;
-
-    move-result-object v0
-
-    invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getUserConfig()Lorg/telegram/messenger/UserConfig;
-
-    move-result-object p0
-
-    iget-wide v1, p0, Lorg/telegram/messenger/UserConfig;->clientUserId:J
-
-    invoke-static {p1, v1, v2}, Lcom/iMe/storage/data/mapper/music/PlaylistsMappingKt;->mapToDb(Lcom/iMe/storage/domain/model/music/PlaylistModel;J)Lcom/iMe/storage/data/locale/db/model/music/PlaylistsDb;
-
-    move-result-object p0
-
-    invoke-interface {v0, p0}, Lcom/iMe/storage/data/locale/db/dao/base/BaseDao;->insert(Ljava/lang/Object;)J
+    invoke-virtual {p1, v0}, Lorg/telegram/messenger/DispatchQueue;->postRunnable(Ljava/lang/Runnable;)Z
 
     return-void
 .end method
 
-.method private static final setNewPlaylists$lambda$4(Lcom/iMe/fork/controller/MusicController;)V
+.method private static final setNewPlaylists$lambda$10(Lcom/iMe/fork/controller/MusicController;)V
     .locals 3
 
     const-string v0, "this$0"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 59
+    .line 86
     invoke-direct {p0}, Lcom/iMe/fork/controller/MusicController;->getDao()Lcom/iMe/storage/data/locale/db/dao/main/PlaylistsDao;
 
     move-result-object v0
@@ -381,7 +408,7 @@
 
     invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 64
+    .line 57
     iget-object v0, p0, Lcom/iMe/fork/controller/MusicController;->playlists:Ljava/util/Map;
 
     invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -395,7 +422,7 @@
 
     if-nez v2, :cond_0
 
-    .line 64
+    .line 57
     new-instance v2, Lcom/iMe/storage/domain/model/music/PlaylistModel;
 
     new-instance v3, Ljava/util/ArrayList;
@@ -407,11 +434,11 @@
     .line 364
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 64
+    .line 57
     :cond_0
     check-cast v2, Lcom/iMe/storage/domain/model/music/PlaylistModel;
 
-    .line 65
+    .line 58
     invoke-virtual {v2}, Lcom/iMe/storage/domain/model/music/PlaylistModel;->getMessageIds()Ljava/util/ArrayList;
 
     move-result-object p1
@@ -446,7 +473,7 @@
     .line 1621
     check-cast v1, Lorg/telegram/messenger/MessageObject;
 
-    .line 65
+    .line 58
     invoke-virtual {v1}, Lorg/telegram/messenger/MessageObject;->getId()I
 
     move-result v1
@@ -460,20 +487,20 @@
 
     goto :goto_0
 
-    .line 65
+    .line 58
     :cond_1
     invoke-virtual {p1, p2}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
 
-    .line 66
+    .line 59
     sget-object p1, Lorg/telegram/messenger/Utilities;->stageQueue:Lorg/telegram/messenger/DispatchQueue;
 
-    new-instance p2, Lcom/iMe/fork/controller/MusicController$$ExternalSyntheticLambda2;
+    new-instance p2, Lcom/iMe/fork/controller/MusicController$$ExternalSyntheticLambda1;
 
-    invoke-direct {p2, p0, v2}, Lcom/iMe/fork/controller/MusicController$$ExternalSyntheticLambda2;-><init>(Lcom/iMe/fork/controller/MusicController;Lcom/iMe/storage/domain/model/music/PlaylistModel;)V
+    invoke-direct {p2, p0, v2}, Lcom/iMe/fork/controller/MusicController$$ExternalSyntheticLambda1;-><init>(Lcom/iMe/fork/controller/MusicController;Lcom/iMe/storage/domain/model/music/PlaylistModel;)V
 
     invoke-virtual {p1, p2}, Lorg/telegram/messenger/DispatchQueue;->postRunnable(Ljava/lang/Runnable;)Z
 
-    .line 69
+    .line 62
     new-instance p1, Lcom/iMe/fork/controller/MusicController$$ExternalSyntheticLambda4;
 
     invoke-direct {p1, p0, p3}, Lcom/iMe/fork/controller/MusicController$$ExternalSyntheticLambda4;-><init>(Lcom/iMe/fork/controller/MusicController;Ljava/util/List;)V
@@ -505,7 +532,7 @@
         }
     .end annotation
 
-    .line 84
+    .line 77
     iget-object v0, p0, Lcom/iMe/fork/controller/MusicController;->playlists:Ljava/util/Map;
 
     invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -673,7 +700,7 @@
 
     invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 73
+    .line 66
     iget-object v0, p0, Lcom/iMe/fork/controller/MusicController;->playlists:Ljava/util/Map;
 
     invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -690,7 +717,7 @@
 
     return-void
 
-    .line 74
+    .line 67
     :cond_0
     invoke-virtual {v0}, Lcom/iMe/storage/domain/model/music/PlaylistModel;->getMessageIds()Ljava/util/ArrayList;
 
@@ -702,7 +729,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->removeAll(Ljava/util/Collection;)Z
 
-    .line 75
+    .line 68
     invoke-virtual {v0}, Lcom/iMe/storage/domain/model/music/PlaylistModel;->getMessageIds()Ljava/util/ArrayList;
 
     move-result-object v1
@@ -713,7 +740,7 @@
 
     if-eqz v1, :cond_1
 
-    .line 76
+    .line 69
     iget-object v1, p0, Lcom/iMe/fork/controller/MusicController;->playlists:Ljava/util/Map;
 
     invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -722,17 +749,17 @@
 
     invoke-interface {v1, p1}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 78
+    .line 71
     :cond_1
     sget-object p1, Lorg/telegram/messenger/Utilities;->stageQueue:Lorg/telegram/messenger/DispatchQueue;
 
-    new-instance p2, Lcom/iMe/fork/controller/MusicController$$ExternalSyntheticLambda1;
+    new-instance p2, Lcom/iMe/fork/controller/MusicController$$ExternalSyntheticLambda2;
 
-    invoke-direct {p2, p0, v0}, Lcom/iMe/fork/controller/MusicController$$ExternalSyntheticLambda1;-><init>(Lcom/iMe/fork/controller/MusicController;Lcom/iMe/storage/domain/model/music/PlaylistModel;)V
+    invoke-direct {p2, p0, v0}, Lcom/iMe/fork/controller/MusicController$$ExternalSyntheticLambda2;-><init>(Lcom/iMe/fork/controller/MusicController;Lcom/iMe/storage/domain/model/music/PlaylistModel;)V
 
     invoke-virtual {p1, p2}, Lorg/telegram/messenger/DispatchQueue;->postRunnable(Ljava/lang/Runnable;)Z
 
-    .line 81
+    .line 74
     new-instance p1, Lcom/iMe/fork/controller/MusicController$$ExternalSyntheticLambda3;
 
     invoke-direct {p1, p0, p3}, Lcom/iMe/fork/controller/MusicController$$ExternalSyntheticLambda3;-><init>(Lcom/iMe/fork/controller/MusicController;Ljava/util/List;)V
@@ -848,7 +875,7 @@
 
     move-result-object p1
 
-    invoke-virtual {p0, p1}, Lcom/iMe/fork/controller/MusicController;->setNewPlaylists(Ljava/util/Map;)V
+    invoke-direct {p0, p1}, Lcom/iMe/fork/controller/MusicController;->setNewPlaylists(Ljava/util/Map;)V
 
     :cond_3
     return-void
@@ -885,37 +912,6 @@
 
     .line 36
     invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->apply()V
-
-    return-void
-.end method
-
-.method public final setNewPlaylists(Ljava/util/Map;)V
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/util/Map<",
-            "Ljava/lang/Long;",
-            "Lcom/iMe/storage/domain/model/music/PlaylistModel;",
-            ">;)V"
-        }
-    .end annotation
-
-    const-string v0, "newBookmarks"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    .line 57
-    iput-object p1, p0, Lcom/iMe/fork/controller/MusicController;->playlists:Ljava/util/Map;
-
-    .line 58
-    sget-object p1, Lorg/telegram/messenger/Utilities;->stageQueue:Lorg/telegram/messenger/DispatchQueue;
-
-    new-instance v0, Lcom/iMe/fork/controller/MusicController$$ExternalSyntheticLambda0;
-
-    invoke-direct {v0, p0}, Lcom/iMe/fork/controller/MusicController$$ExternalSyntheticLambda0;-><init>(Lcom/iMe/fork/controller/MusicController;)V
-
-    invoke-virtual {p1, v0}, Lorg/telegram/messenger/DispatchQueue;->postRunnable(Ljava/lang/Runnable;)Z
 
     return-void
 .end method

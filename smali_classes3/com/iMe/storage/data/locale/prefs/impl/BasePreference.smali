@@ -157,25 +157,6 @@
     return-object v0
 .end method
 
-.method public isKeyContains(Ljava/lang/String;)Z
-    .locals 1
-
-    const-string v0, "key"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    .line 23
-    invoke-virtual {p0}, Lcom/iMe/storage/data/locale/prefs/impl/BasePreference;->getMPref()Landroid/content/SharedPreferences;
-
-    move-result-object v0
-
-    invoke-interface {v0, p1}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z
-
-    move-result p1
-
-    return p1
-.end method
-
 .method public remove(Ljava/lang/String;)V
     .locals 1
 

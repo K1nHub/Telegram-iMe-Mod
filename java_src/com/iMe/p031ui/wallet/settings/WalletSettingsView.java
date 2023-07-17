@@ -1,6 +1,6 @@
 package com.iMe.p031ui.wallet.settings;
 
-import com.iMe.model.wallet.settings.SettingUiItem;
+import com.iMe.model.wallet.crypto.settings.WalletSettingsItem;
 import com.iMe.p031ui.base.mvp.base.BaseView;
 import java.util.List;
 import moxy.viewstate.strategy.alias.AddToEndSingle;
@@ -9,5 +9,5 @@ import moxy.viewstate.strategy.alias.AddToEndSingle;
 /* renamed from: com.iMe.ui.wallet.settings.WalletSettingsView */
 /* loaded from: classes4.dex */
 public interface WalletSettingsView extends BaseView {
-    void setupSettingsItems(List<SettingUiItem> list);
+    void renderSettingsItems(List<WalletSettingsItem> list);
 }

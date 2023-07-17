@@ -8,7 +8,7 @@ import kotlin.random.Random;
 import kotlin.ranges.IntRange;
 import kotlin.ranges.RangesKt___RangesKt;
 import kotlin.text.StringsKt__StringsJVMKt;
-import org.telegram.p044ui.CountrySelectActivity;
+import org.telegram.p043ui.CountrySelectActivity;
 /* compiled from: TelegramTestAuthHelper.kt */
 /* loaded from: classes4.dex */
 public final class TelegramTestAuthHelper {

@@ -13,9 +13,8 @@ import androidx.room.InvalidationTracker;
 import java.util.Set;
 import java.util.concurrent.Executor;
 import java.util.concurrent.atomic.AtomicBoolean;
-/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: classes.dex */
-public class MultiInstanceInvalidationClient {
+class MultiInstanceInvalidationClient {
     final Context mAppContext;
     int mClientId;
     final Executor mExecutor;

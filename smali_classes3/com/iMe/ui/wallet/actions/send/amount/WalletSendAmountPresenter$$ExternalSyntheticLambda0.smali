@@ -27,9 +27,9 @@
 
     iget-object v0, p0, Lcom/iMe/ui/wallet/actions/send/amount/WalletSendAmountPresenter$$ExternalSyntheticLambda0;->f$0:Lcom/iMe/ui/wallet/actions/send/amount/WalletSendAmountPresenter;
 
-    check-cast p1, Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    check-cast p1, Lcom/iMe/storage/domain/model/crypto/Network;
 
-    invoke-static {v0, p1}, Lcom/iMe/ui/wallet/actions/send/amount/WalletSendAmountPresenter;->$r8$lambda$Kln56429H6MQRZfx3f6OZA0tZrc(Lcom/iMe/ui/wallet/actions/send/amount/WalletSendAmountPresenter;Lcom/iMe/storage/domain/model/crypto/NetworkType;)V
+    invoke-static {v0, p1}, Lcom/iMe/ui/wallet/actions/send/amount/WalletSendAmountPresenter;->$r8$lambda$CXjEQ7pF8_FJRh5-2a9uAkqt2ls(Lcom/iMe/ui/wallet/actions/send/amount/WalletSendAmountPresenter;Lcom/iMe/storage/domain/model/crypto/Network;)V
 
     return-void
 .end method

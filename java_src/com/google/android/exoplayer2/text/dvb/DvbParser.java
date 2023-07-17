@@ -175,32 +175,32 @@ final class DvbParser {
                 PageComposition pageComposition2 = subtitleService.pageComposition;
                 if (readBits2 == subtitleService.subtitlePageId && pageComposition2 != null) {
                     RegionComposition parseRegionComposition = parseRegionComposition(parsableBitArray, readBits3);
-                    if (pageComposition2.state == 0 && (regionComposition = subtitleService.regions.get(parseRegionComposition.f136id)) != null) {
+                    if (pageComposition2.state == 0 && (regionComposition = subtitleService.regions.get(parseRegionComposition.f218id)) != null) {
                         parseRegionComposition.mergeFrom(regionComposition);
                     }
-                    subtitleService.regions.put(parseRegionComposition.f136id, parseRegionComposition);
+                    subtitleService.regions.put(parseRegionComposition.f218id, parseRegionComposition);
                     break;
                 }
                 break;
             case 18:
                 if (readBits2 == subtitleService.subtitlePageId) {
                     ClutDefinition parseClutDefinition = parseClutDefinition(parsableBitArray, readBits3);
-                    subtitleService.cluts.put(parseClutDefinition.f134id, parseClutDefinition);
+                    subtitleService.cluts.put(parseClutDefinition.f216id, parseClutDefinition);
                     break;
                 } else if (readBits2 == subtitleService.ancillaryPageId) {
                     ClutDefinition parseClutDefinition2 = parseClutDefinition(parsableBitArray, readBits3);
-                    subtitleService.ancillaryCluts.put(parseClutDefinition2.f134id, parseClutDefinition2);
+                    subtitleService.ancillaryCluts.put(parseClutDefinition2.f216id, parseClutDefinition2);
                     break;
                 }
                 break;
             case 19:
                 if (readBits2 == subtitleService.subtitlePageId) {
                     ObjectData parseObjectData = parseObjectData(parsableBitArray);
-                    subtitleService.objects.put(parseObjectData.f135id, parseObjectData);
+                    subtitleService.objects.put(parseObjectData.f217id, parseObjectData);
                     break;
                 } else if (readBits2 == subtitleService.ancillaryPageId) {
                     ObjectData parseObjectData2 = parseObjectData(parsableBitArray);
-                    subtitleService.ancillaryObjects.put(parseObjectData2.f135id, parseObjectData2);
+                    subtitleService.ancillaryObjects.put(parseObjectData2.f217id, parseObjectData2);
                     break;
                 }
                 break;
@@ -762,7 +762,7 @@ final class DvbParser {
         public final int height;
 
         /* renamed from: id */
-        public final int f136id;
+        public final int f218id;
         public final int levelOfCompatibility;
         public final int pixelCode2Bit;
         public final int pixelCode4Bit;
@@ -771,7 +771,7 @@ final class DvbParser {
         public final int width;
 
         public RegionComposition(int i, boolean z, int i2, int i3, int i4, int i5, int i6, int i7, int i8, int i9, SparseArray<RegionObject> sparseArray) {
-            this.f136id = i;
+            this.f218id = i;
             this.fillFlag = z;
             this.width = i2;
             this.height = i3;
@@ -820,10 +820,10 @@ final class DvbParser {
         public final int[] clutEntries8Bit;
 
         /* renamed from: id */
-        public final int f134id;
+        public final int f216id;
 
         public ClutDefinition(int i, int[] iArr, int[] iArr2, int[] iArr3) {
-            this.f134id = i;
+            this.f216id = i;
             this.clutEntries2Bit = iArr;
             this.clutEntries4Bit = iArr2;
             this.clutEntries8Bit = iArr3;
@@ -836,12 +836,12 @@ final class DvbParser {
         public final byte[] bottomFieldData;
 
         /* renamed from: id */
-        public final int f135id;
+        public final int f217id;
         public final boolean nonModifyingColorFlag;
         public final byte[] topFieldData;
 
         public ObjectData(int i, boolean z, byte[] bArr, byte[] bArr2) {
-            this.f135id = i;
+            this.f217id = i;
             this.nonModifyingColorFlag = z;
             this.topFieldData = bArr;
             this.bottomFieldData = bArr2;

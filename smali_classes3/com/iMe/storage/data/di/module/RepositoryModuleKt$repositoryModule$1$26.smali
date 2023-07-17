@@ -28,7 +28,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nRepositoryModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 RepositoryModule.kt\ncom/iMe/storage/data/di/module/RepositoryModuleKt$repositoryModule$1$26\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,153:1\n129#2,5:154\n*S KotlinDebug\n*F\n+ 1 RepositoryModule.kt\ncom/iMe/storage/data/di/module/RepositoryModuleKt$repositoryModule$1$26\n*L\n150#1:154,5\n*E\n"
+    value = "SMAP\nRepositoryModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 RepositoryModule.kt\ncom/iMe/storage/data/di/module/RepositoryModuleKt$repositoryModule$1$26\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,157:1\n129#2,5:158\n*S KotlinDebug\n*F\n+ 1 RepositoryModule.kt\ncom/iMe/storage/data/di/module/RepositoryModuleKt$repositoryModule$1$26\n*L\n154#1:158,5\n*E\n"
 .end annotation
 
 
@@ -72,7 +72,7 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 150
+    .line 154
     new-instance p2, Lcom/iMe/storage/data/repository/crypto/ton/TonConfigRepositoryImpl;
 
     .line 133
@@ -90,7 +90,7 @@
 
     check-cast v0, Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler;
 
-    .line 150
+    .line 154
     invoke-static {}, Lcom/iMe/storage/data/di/module/NetworkModuleKt;->getTON_CONFIG_CLIENT()Lorg/koin/core/qualifier/StringQualifier;
 
     move-result-object v2
@@ -108,7 +108,7 @@
 
     check-cast p1, Lokhttp3/OkHttpClient;
 
-    .line 150
+    .line 154
     invoke-direct {p2, v0, p1}, Lcom/iMe/storage/data/repository/crypto/ton/TonConfigRepositoryImpl;-><init>(Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler;Lokhttp3/OkHttpClient;)V
 
     return-object p2
@@ -117,7 +117,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 150
+    .line 154
     check-cast p1, Lorg/koin/core/scope/Scope;
 
     check-cast p2, Lorg/koin/core/parameter/ParametersHolder;

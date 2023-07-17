@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="AppUpdate">Обновить iMe</string>
     <string name="AreYouSureClearHistorySavedMessages">Вы действительно хотите очистить **Облако**?</string>
     <string name="AreYouSureDeleteThisChatSavedMessages">Вы действительно хотите удалить **Облако**?</string>
     <string name="AskAQuestion">Задать вопрос Telegram</string>
@@ -91,14 +92,34 @@
     <string name="app_name">Responses</string>
     <string name="app_restart_error">Мы не смогли открыть приложение. Попробуйте сделать это самостоятельно.</string>
     <string name="app_update_dialog_description">Обновите приложение, чтобы использовать данную функциональность</string>
+    <string name="app_update_not_found">Установлена последняя версия приложения</string>
+    <string name="appcenter_distribute_dialog_actioned_on_disabled_toast">Распространение отключено</string>
+    <string name="appcenter_distribute_download_progress_number_format">%1$d из %2$d МБ</string>
+    <string name="appcenter_distribute_downloading_mandatory_update">Скачивается обновление</string>
+    <string name="appcenter_distribute_install">Установить</string>
+    <string name="appcenter_distribute_install_ready_message">Обновление %1$s %2$s (%3$d) скачано и готово к установке.</string>
+    <string name="appcenter_distribute_install_ready_title">Обновление для приложения скачано</string>
+    <string name="appcenter_distribute_notification_category">Обновления приложения</string>
+    <string name="appcenter_distribute_unknown_sources_dialog_message">В целях безопасности на вашем устройстве настроен запрет на установку приложений, полученных из неизвестных источников.</string>
+    <string name="appcenter_distribute_unknown_sources_dialog_settings">Настройки</string>
+    <string name="appcenter_distribute_update_dialog_download">Скачать</string>
+    <string name="appcenter_distribute_update_dialog_message_mandatory">Вышло обязательное обновление. Вам необходимо обновиться до %1$s %2$s (%3$d).</string>
+    <string name="appcenter_distribute_update_dialog_message_optional">Обновление %1$s %2$s (%3$d) доступно для скачивания и установки.</string>
+    <string name="appcenter_distribute_update_dialog_postpone">Спросить завтра</string>
+    <string name="appcenter_distribute_update_dialog_title">Доступно обновление</string>
+    <string name="appcenter_distribute_update_dialog_view_release_notes">Просмотреть заметки о выпуске</string>
+    <string name="appcenter_distribute_update_failed_dialog_ignore">Игнорировать</string>
+    <string name="appcenter_distribute_update_failed_dialog_message">Эта версия была либо загружена, либо загружена с помощью браузера в частном режиме.</string>
+    <string name="appcenter_distribute_update_failed_dialog_reinstall">Переустановить приложение</string>
+    <string name="appcenter_distribute_update_failed_dialog_title">Обновления в приложении отключены</string>
     <string name="archive_content_is_hidden">Контент скрыт</string>
     <string name="archive_empty_subtitle">Здесь хранятся чаты, отправленные вами в архив</string>
     <string name="archive_empty_title">Архив пуст</string>
     <string name="attach_menu_select_all">Выбрать все</string>
-    <string name="auth_dialog_description">"Получите бесплатный доступ ко всем функциям, предоставляемых Платформой iMe! Полный функционал доступен пользователям, которые соглашаются с Пользовательским Соглашением. 
+    <string name="auth_dialog_description">"Получите бесплатный доступ ко всем функциям, предоставляемых Платформой iMe! Полный функционал доступен пользователям, которые соглашаются с Политикой Конфиденциальности. 
 
 Продолжая, вы соглашаетесь
-с *Пользовательским Соглашением*"</string>
+с *Политикой Конфиденциальности*"</string>
     <string name="auth_dialog_title">Экосистема iMe</string>
     <string name="auth_login_terms_of_service">"Продолжая, вы соглашаетесь с
 *Пользовательским Соглашением*"</string>
@@ -290,11 +311,8 @@
     <string name="chat_attach_alert_bot_buttons">Кнопки ботов</string>
     <string name="chat_avatar_previewer_mention_by_name">Упомянуть по имени</string>
     <string name="chat_avatar_previewer_user_messages">Сообщения пользователя</string>
-    <string name="chat_bookmarks">Закладки</string>
-    <string name="chat_bookmarks_empty">Нет закладок</string>
-    <string name="chat_bookmarks_empty_subtitle">У вас нет закладок в чатах</string>
     <string name="chat_drafts_empty">Нет черновиков</string>
-    <string name="chat_drafts_empty_subtitle">У вас нет черновиков в чатах</string>
+    <string name="chat_drafts_empty_subtitle">У вас нет черновиков в чатах.</string>
     <string name="chat_long_action_translate">Перевести</string>
     <string name="chat_menu_auto_translate_settings_item">Настройки перевода</string>
     <string name="chat_menu_convert_to_album">Преобразовать в альбом</string>
@@ -304,7 +322,6 @@
     <string name="chat_menu_quote">Цитировать</string>
     <string name="chat_message_forward_media">Переслать медиа</string>
     <string name="chat_message_forward_text">Переслать текст</string>
-    <string name="chat_message_popup_option_add_to_bookmarks">Сохранить в закладки</string>
     <string name="chat_message_popup_option_copy_image">Копировать фото</string>
     <string name="chat_message_popup_option_copy_part">Копировать фрагмент</string>
     <string name="chat_message_popup_option_copy_text">Копировать текст</string>
@@ -312,8 +329,6 @@
     <string name="chat_message_popup_option_forward_viber">Переслать в Viber</string>
     <string name="chat_message_popup_option_forward_whatsapp">Переслать в WhatsApp</string>
     <string name="chat_message_popup_option_forward_whatsapp_business">Переслать в WA Business</string>
-    <string name="chat_message_popup_option_remove_all_bookmarks">УДАЛИТЬ ВСЕ ЗАКЛАДКИ</string>
-    <string name="chat_message_popup_option_remove_from_bookmarks">Удалить из закладок</string>
     <string name="chat_message_spoiler_less">МЕНЬШЕ</string>
     <string name="chat_message_spoiler_more">БОЛЬШЕ</string>
     <string name="chat_multi_panel_empty_cache_toast">В данном чате кеш отсутствует</string>
@@ -450,6 +465,7 @@
     <string name="common_close">Закрыть</string>
     <string name="common_confirm">Подтвердить</string>
     <string name="common_create">Создать</string>
+    <string name="common_done">Готово</string>
     <string name="common_empty_balance_state_description">В вашем кошельке нет токенов с положительным балансом в этой сети</string>
     <string name="common_empty_state_description">К сожалению, данные еще не представлены</string>
     <string name="common_empty_state_title">Здесь пусто...</string>
@@ -696,11 +712,6 @@
     <string name="login_token_help">Отсканируйте QR код из другого устройства для авторизации</string>
     <string name="main_camera_popup_text">Задняя камера</string>
     <string name="main_list">Основной список</string>
-    <string name="management">Менеджмент</string>
-    <string name="management_bookmarks_delete_all_alert_message">Вы уверены, что хотите удалить все закладки из всех чатов? Ваши чаты при этом не будут удалены.</string>
-    <string name="management_bookmarks_delete_selected_alert_message">Вы уверены, что хотите удалить все закладки из выбранных чатов? Ваши чаты при этом не будут удалены.</string>
-    <string name="management_drafts">Черновики</string>
-    <string name="management_drafts_delete_selected_alert_message">Вы уверены, что хотите удалить все черновики из выбранных чатов? Ваши чаты при этом не будут удалены.</string>
     <string name="material_clock_toggle_content_description">Выберите AM (до полудня) или PM (после полудня)</string>
     <string name="material_hour_selection">Выберите час</string>
     <string name="material_hour_suffix">%1$s ч.</string>
@@ -1140,6 +1151,7 @@
     <string name="sorting_settings_tab_bots_item_title">Боты</string>
     <string name="sorting_settings_tab_channels_item_title">Каналы</string>
     <string name="sorting_settings_tab_deleted_users">Удаленные аккаунты</string>
+    <string name="sorting_settings_tab_drafts">Черновики</string>
     <string name="sorting_settings_tab_groups_item_title">Группы</string>
     <string name="sorting_settings_tab_live_chats">Чаты с прямым эфиром</string>
     <string name="sorting_settings_tab_mentioned_chats">Упоминания</string>
@@ -1302,6 +1314,13 @@
     <string name="swipe_to_next_unread_dialog_hint">Включите это, если вы хотите читать ваши чаты, не возвращаясь в список чатов. Дойдя до последнего сообщения в чате, потяните экран вверх, чтобы перейти к следующему непрочитанному чату.</string>
     <string name="swipe_to_next_unread_dialog_types">Типы чатов</string>
     <string name="text_recognition_bottom_sheet_title">Фото → Текст</string>
+    <string name="token_lists_description">Данный параметр указывает на безопасность токена. Чем больше источников верификации имеет токен, тем более безопасным он считается. Если токен не имеет ни одного источника верификации, то будьте осторожны при импорте и работе с данным активом.</string>
+    <string name="token_lists_title">Верифицированный список токенов</string>
+    <string name="token_search_coin">Вы не можете удалить основную монету сети</string>
+    <string name="token_search_empty_result_add_token">Добавить кастомный токен</string>
+    <string name="token_search_empty_start_subtitle">Введите имя токена, тикер или точный адрес в поле ввода</string>
+    <string name="token_search_empty_start_title">Поиск токенов</string>
+    <string name="token_search_hint">Поиск токена</string>
     <string name="topic">Топик</string>
     <string name="topic_add_archived_chats_hint">Выберите чаты из архивного списка, которые вы хотите добавить в этот топик.</string>
     <string name="topic_add_main_chats_hint">Выберите чаты из основного списка, которые вы хотите добавить в этот топик.</string>
@@ -1550,8 +1569,8 @@
     <string name="wallet_banner_slide_gate_description">Ваш проводник в мир криптовалют</string>
     <string name="wallet_banner_slide_gate_long_description">Торгуйте LIME и другими валютами с низкими комиссиями криптовалютной биржи.</string>
     <string name="wallet_banner_slide_gate_title">Gate.io</string>
-    <string name="wallet_banner_slide_multi_networks_description">Ethereum, BNB Chain, Polygon, Fantom, TON, NFT</string>
-    <string name="wallet_banner_slide_multi_networks_long_description">Переключение сетей Ethereum, BNB Chain, Polygon, Fantom, TON и NFT для удобного использования токенов разных платформ в одном кошельке.</string>
+    <string name="wallet_banner_slide_multi_networks_description">Bitcoin, Ethereum, BNB Chain, Polygon, Fantom, Tron, TON, NFT</string>
+    <string name="wallet_banner_slide_multi_networks_long_description">Переключение сетей Bitcoin, Ethereum, BNB Chain, Polygon, Fantom, Tron, TON и NFT для удобного использования токенов разных платформ в одном кошельке.</string>
     <string name="wallet_banner_slide_multi_networks_title">МУЛЬТИСЕТЕВОЙ</string>
     <string name="wallet_banner_slide_non_custodial_description">Только вы имеете доступ к своему кошельку</string>
     <string name="wallet_banner_slide_non_custodial_long_description">Только вы имеете доступ к своему кошельку. Сохраните кодовую фразу, чтобы иметь возможность восстановления или импортирования своего кошелька.</string>
@@ -1562,7 +1581,7 @@
     <string name="wallet_banner_slide_staking_description">Создавайте депозиты</string>
     <string name="wallet_banner_slide_staking_long_description">Создавайте депозиты в LIME и партнерских токенах, чтобы ваши активы работали на вас.</string>
     <string name="wallet_banner_slide_staking_title">Стейкинг</string>
-    <string name="wallet_banner_slide_swap_description">Uniswap, PancakeSwap, 1inch</string>
+    <string name="wallet_banner_slide_swap_description">1inch, Symbiosis</string>
     <string name="wallet_banner_slide_swap_long_description">Обменивайте криптовалюты и токены между собой с помощью децентрализованных протоколов обмена, работающих через смарт-контракты.</string>
     <string name="wallet_banner_slide_swap_title">ОБМЕН</string>
     <string name="wallet_binance_logout_confirm_dialog_description">Вы уверены, что хотите выйти?</string>
@@ -1703,6 +1722,25 @@
     <string name="wallet_create_eth_pin_code_description">Это обеспечит дополнительную безопасность и удобство входа в кошелек.</string>
     <string name="wallet_create_eth_pin_code_title">Придумайте ПИН-код</string>
     <string name="wallet_create_eth_pin_code_toolbar_title">ПИН-код</string>
+    <string name="wallet_creation_backup">Резервная копия</string>
+    <string name="wallet_creation_intro_description">"После создания криптокошелька, убедитесь, что вы записали ваши секретные слова из настроек и бережно храните их.
+
+Вы можете восстановить ваш кошелек с помощью секретной фразы, если вы потеряли смартфон или авторизовались с нового устройства. Также, вы можете импортировать ваш адрес кошелька из другого криптокошелька."</string>
+    <string name="wallet_creation_intro_information_description">"Чтобы использовать предыдущий привязанный адрес криптокошелька, восстановите ваш аккаунт с помощью секретной фразы.
+
+Если вы создадите новый аккаунт, старые данные iMe Wallet будут перезаписаны, и новый адрес криптокошелька будет привязан к вашему Telegram ID.
+
+Примечание:
+Вы можете иметь только один активный криптокошелек в iMe Wallet. То есть, когда другие пользователи отправляют средства на ваш Telegram ID, все средства будут автоматически зачислены на последний привязанный адрес."</string>
+    <string name="wallet_creation_intro_information_title">Информация кошелька</string>
+    <string name="wallet_creation_intro_linked_wallet">Текущий привязанный кошелек</string>
+    <string name="wallet_creation_intro_new_wallet_confirmation_description">К вашему аккаунту уже привязан кошелек, вы можете импортировать тот же самый адрес с помощью вашей секретной фразы, или создать новый.</string>
+    <string name="wallet_creation_intro_new_wallet_confirmation_title">Предупреждение</string>
+    <string name="wallet_creation_intro_privacy">"Продолжая, вы соглашаетесь
+с *Политикой Конфиденциальности*"</string>
+    <string name="wallet_creation_intro_title">iMe - некастодиальный кошелек</string>
+    <string name="wallet_creation_intro_title_create">Создать кошелек</string>
+    <string name="wallet_creation_intro_title_import">Импортировать кошелек</string>
     <string name="wallet_crypto_blockchains_active_wallets">Активные кошельки</string>
     <string name="wallet_crypto_blockchains_bitcoin_subtitle">Bitcoin</string>
     <string name="wallet_crypto_blockchains_bitcoin_title">Bitcoin</string>
@@ -1754,6 +1792,10 @@
     <string name="wallet_crypto_wallet_not_created_dialog_description">Чтобы использовать эту функциональность, пожалуйста, создайте криптокошелек</string>
     <string name="wallet_crypto_wallet_not_created_dialog_positive_btn">Создать</string>
     <string name="wallet_crypto_wallet_not_created_dialog_title">Криптокошелек не создан</string>
+    <string name="wallet_custom_tokens_empty_description">Вы можете найти токены или добавить их вручную</string>
+    <string name="wallet_custom_tokens_empty_title">У вас не добавлены кастомные токены</string>
+    <string name="wallet_custom_tokens_subtitle">Список импортированных токенов</string>
+    <string name="wallet_custom_tokens_title">Кастомные токены</string>
     <string name="wallet_dashboard_account_title">Счет %s</string>
     <string name="wallet_dashboard_activate_wallet">Активировать %s кошелек</string>
     <string name="wallet_dashboard_balance_24h_rate">%1$.2f%% / 24ч</string>
@@ -1773,7 +1815,7 @@
 В iMe Wallet можно иметь только один активный аккаунт криптокошелька. Поэтому, при переводе средств другими пользователями на ваш ID Telegram, все средства будут автоматически зачисляться на последний привязанный адрес."</string>
     <string name="wallet_dashboard_create_start_dialog_description">"Некастодиальный кошелек для криптовалют и токенов.
 
-Храните, покупайте, обменивайте и совершайте переводы в сетях Ethereum, BNB Chain, Polygon, Fantom и TON.
+Храните, покупайте, обменивайте и совершайте переводы в сетях Ethereum, Bitcoin, BNB Chain, Polygon, Fantom, Tron и TON.
 
 Нажимая Далее, вы соглашаетесь с
 %s
@@ -1866,6 +1908,7 @@ iMe Wallet."</string>
     <string name="wallet_gate_select_pair_title">Выберите торговую пару</string>
     <string name="wallet_home_crypto_account">Аккаунт</string>
     <string name="wallet_home_crypto_account_telegram_id">ID Telegram: %d</string>
+    <string name="wallet_home_crypto_add_tokens">Добавить токены</string>
     <string name="wallet_home_crypto_select_tokens">Выберите токены</string>
     <string name="wallet_home_crypto_tokens_settings_only_positive">Положительные балансы</string>
     <string name="wallet_home_crypto_tokens_settings_toolbar_title">Токены</string>
@@ -1904,6 +1947,8 @@ iMe Wallet."</string>
     <string name="wallet_navigation_settings">Настройки</string>
     <string name="wallet_navigation_transactions">Транзакции</string>
     <string name="wallet_navigation_wallet">Кошелек</string>
+    <string name="wallet_network_type_dialog_search_empty">Подходящие сети отсутствуют</string>
+    <string name="wallet_network_type_dialog_search_hint">Поиск сети</string>
     <string name="wallet_network_type_dialog_title">Выберите сеть</string>
     <string name="wallet_network_type_hint">Сменить сеть</string>
     <string name="wallet_network_type_nft">NFT токены</string>
@@ -1911,6 +1956,7 @@ iMe Wallet."</string>
     <string name="wallet_notifications_toolbar_title">Уведомления</string>
     <string name="wallet_operation_deposit">Депозит</string>
     <string name="wallet_operation_earn">Доход</string>
+    <string name="wallet_pin_code_change_success">Пин-код был успешно изменен</string>
     <string name="wallet_receive_dialog_btn_text">Поделиться адресом кошелька</string>
     <string name="wallet_receive_dialog_title">Адрес вашего кошелька</string>
     <string name="wallet_recipient_address_bsc_hint">Введите адрес BNB Chain</string>
@@ -2019,11 +2065,47 @@ iMe Wallet."</string>
     <string name="wallet_token_details_eth_website">https://ethereum.org/ru/</string>
     <string name="wallet_token_details_lime_description_website">https://telegra.ph/Lime-01-08</string>
     <string name="wallet_token_details_site_action">Сайт</string>
+    <string name="wallet_token_details_token_information">Информация токена</string>
     <string name="wallet_token_details_transactions">Транзакции</string>
     <string name="wallet_token_details_transactions_all">Все</string>
     <string name="wallet_token_details_transactions_incoming">Входящие</string>
     <string name="wallet_token_details_transactions_outgoing">Исходящие</string>
     <string name="wallet_token_details_transactions_swap">Обмен</string>
+    <string name="wallet_token_family_description">Данный токен существует на нескольких блокчейнах. Выберите один или несколько вариантов.</string>
+    <string name="wallet_token_family_title" formatted="false">%1s (%2s)</string>
+    <string name="wallet_token_settings_add_custom_tokens">Добавить кастомные токены</string>
+    <string name="wallet_token_settings_displayed_tokens">Выбор токенов</string>
+    <string name="wallet_tokens_management_add_success">Токен был успешно добавлен</string>
+    <string name="wallet_tokens_management_decimals">Количество знаков</string>
+    <string name="wallet_tokens_management_delete_description">Вы уверены, что хотите удалить данный кастомный токен?</string>
+    <string name="wallet_tokens_management_delete_success">Токен был успешно удален</string>
+    <string name="wallet_tokens_management_delete_title">Удалить</string>
+    <string name="wallet_tokens_management_enable_description">"Данный токен присутствует в нашей базе данных, нет необходимости его добавлять вручную.
+
+Вы хотите, чтобы данный токен отображался в iMe Wallet?"</string>
+    <string name="wallet_tokens_management_enable_title">Информация токена</string>
+    <string name="wallet_tokens_management_icon">Иконка</string>
+    <string name="wallet_tokens_management_import_confirmation_description">"Вы уверены, что хотите импортировать данный кастомный токен?
+
+Управление кастомными токенами находится в настройках криптоаккаунта."</string>
+    <string name="wallet_tokens_management_import_confirmation_import">Импорт</string>
+    <string name="wallet_tokens_management_import_confirmation_title">Подтверждение импорта</string>
+    <string name="wallet_tokens_management_import_token">Импортировать токен</string>
+    <string name="wallet_tokens_management_name">Название</string>
+    <string name="wallet_tokens_management_symbol">Символ</string>
+    <string name="wallet_tokens_management_title_details">Детали токена</string>
+    <string name="wallet_tokens_management_title_import">Импортировать токен</string>
+    <string name="wallet_tokens_management_token_address">Адрес токена</string>
+    <string name="wallet_tokens_management_token_address_invalid">Неверный формат адреса токена</string>
+    <string name="wallet_tokens_management_token_information">Информация токена</string>
+    <string name="wallet_tokens_management_token_not_found">Информация о токене не найдена</string>
+    <string name="wallet_tokens_management_token_safety">Безопасность токена</string>
+    <string name="wallet_tokens_management_verified_few">Верифицирован в %d списках токенов</string>
+    <string name="wallet_tokens_management_verified_many">Верифицирован в %d списках токенов</string>
+    <string name="wallet_tokens_management_verified_one">Верифицирован в %d списке токенов</string>
+    <string name="wallet_tokens_management_verified_other">Верифицирован в %d списке токенов</string>
+    <string name="wallet_tokens_management_verified_two">Верифицирован в %d списках токенов</string>
+    <string name="wallet_tokens_management_verified_zero">Не верифицирован</string>
     <string name="wallet_transaction_details_action_boost">Ускорить транзакцию</string>
     <string name="wallet_transaction_details_action_cancel">Отменить транзакцию</string>
     <string name="wallet_transaction_details_action_copy_address">Копировать адрес</string>

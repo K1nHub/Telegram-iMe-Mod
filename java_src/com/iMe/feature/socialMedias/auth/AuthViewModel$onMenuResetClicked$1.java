@@ -39,10 +39,10 @@ public final class AuthViewModel$onMenuResetClicked$1 extends SuspendLambda impl
     /* compiled from: AuthViewModel.kt */
     /* renamed from: com.iMe.feature.socialMedias.auth.AuthViewModel$onMenuResetClicked$1$1 */
     /* loaded from: classes3.dex */
-    public static final class C14551 extends Lambda implements Function1<SimpleContext<AuthState>, AuthState> {
-        public static final C14551 INSTANCE = new C14551();
+    public static final class C14661 extends Lambda implements Function1<SimpleContext<AuthState>, AuthState> {
+        public static final C14661 INSTANCE = new C14661();
 
-        C14551() {
+        C14661() {
             super(1);
         }
 
@@ -101,7 +101,7 @@ public final class AuthViewModel$onMenuResetClicked$1 extends SuspendLambda impl
             java.lang.Object r7 = r6.L$0
             r1 = r7
             org.orbitmvi.orbit.syntax.simple.SimpleSyntax r1 = (org.orbitmvi.orbit.syntax.simple.SimpleSyntax) r1
-            com.iMe.feature.socialMedias.auth.AuthViewModel$onMenuResetClicked$1$1 r7 = com.iMe.feature.socialMedias.auth.AuthViewModel$onMenuResetClicked$1.C14551.INSTANCE
+            com.iMe.feature.socialMedias.auth.AuthViewModel$onMenuResetClicked$1$1 r7 = com.iMe.feature.socialMedias.auth.AuthViewModel$onMenuResetClicked$1.C14661.INSTANCE
             r6.L$0 = r1
             r6.label = r5
             java.lang.Object r7 = org.orbitmvi.orbit.syntax.simple.SimpleSyntaxExtensionsKt.reduce(r1, r7, r6)

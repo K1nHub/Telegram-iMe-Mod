@@ -1968,9 +1968,9 @@
 
     move-result v4
 
-    const-string v9, "setBackgroundResource"
+    const-string/jumbo v9, "setBackgroundResource"
 
-    const-string v10, "setEnabled"
+    const-string/jumbo v10, "setEnabled"
 
     if-eqz v4, :cond_34
 

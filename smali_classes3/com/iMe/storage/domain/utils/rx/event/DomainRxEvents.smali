@@ -9,6 +9,7 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
+        Lcom/iMe/storage/domain/utils/rx/event/DomainRxEvents$AllWalletsReset;,
         Lcom/iMe/storage/domain/utils/rx/event/DomainRxEvents$AppUpdateRequired;,
         Lcom/iMe/storage/domain/utils/rx/event/DomainRxEvents$BackupFlowStarted;,
         Lcom/iMe/storage/domain/utils/rx/event/DomainRxEvents$BinanceExpiredSession;,
@@ -19,15 +20,16 @@
         Lcom/iMe/storage/domain/utils/rx/event/DomainRxEvents$InterfaceSettingsChanged;,
         Lcom/iMe/storage/domain/utils/rx/event/DomainRxEvents$NetworkUpdated;,
         Lcom/iMe/storage/domain/utils/rx/event/DomainRxEvents$RefreshTransactions;,
+        Lcom/iMe/storage/domain/utils/rx/event/DomainRxEvents$SelectWalletCryptoTab;,
         Lcom/iMe/storage/domain/utils/rx/event/DomainRxEvents$StakingOperationsReload;,
         Lcom/iMe/storage/domain/utils/rx/event/DomainRxEvents$StakingProgrammesRefresh;,
         Lcom/iMe/storage/domain/utils/rx/event/DomainRxEvents$StakingTabRefreshStateChanged;,
-        Lcom/iMe/storage/domain/utils/rx/event/DomainRxEvents$SuccessCreateWallet;,
         Lcom/iMe/storage/domain/utils/rx/event/DomainRxEvents$SuccessRecreateWalletByPassword;,
-        Lcom/iMe/storage/domain/utils/rx/event/DomainRxEvents$SuccessResetWallet;,
-        Lcom/iMe/storage/domain/utils/rx/event/DomainRxEvents$SuccessRestoreWallet;,
         Lcom/iMe/storage/domain/utils/rx/event/DomainRxEvents$SuccessSaveBackup;,
-        Lcom/iMe/storage/domain/utils/rx/event/DomainRxEvents$TokensSettingsChanged;
+        Lcom/iMe/storage/domain/utils/rx/event/DomainRxEvents$TokensSettingsChanged;,
+        Lcom/iMe/storage/domain/utils/rx/event/DomainRxEvents$WalletCreated;,
+        Lcom/iMe/storage/domain/utils/rx/event/DomainRxEvents$WalletReset;,
+        Lcom/iMe/storage/domain/utils/rx/event/DomainRxEvents$WalletRestored;
     }
 .end annotation
 

@@ -28,7 +28,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nRepositoryModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 RepositoryModule.kt\ncom/iMe/storage/data/di/module/RepositoryModuleKt$repositoryModule$1$3\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,153:1\n129#2,5:154\n129#2,5:159\n129#2,5:164\n*S KotlinDebug\n*F\n+ 1 RepositoryModule.kt\ncom/iMe/storage/data/di/module/RepositoryModuleKt$repositoryModule$1$3\n*L\n67#1:154,5\n68#1:159,5\n69#1:164,5\n*E\n"
+    value = "SMAP\nRepositoryModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 RepositoryModule.kt\ncom/iMe/storage/data/di/module/RepositoryModuleKt$repositoryModule$1$3\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,157:1\n129#2,5:158\n129#2,5:163\n129#2,5:168\n*S KotlinDebug\n*F\n+ 1 RepositoryModule.kt\ncom/iMe/storage/data/di/module/RepositoryModuleKt$repositoryModule$1$3\n*L\n67#1:158,5\n68#1:163,5\n69#1:168,5\n*E\n"
 .end annotation
 
 
@@ -62,7 +62,7 @@
 
 # virtual methods
 .method public final invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/iMe/storage/domain/repository/wallet/WalletRepository;
-    .locals 9
+    .locals 10
 
     const-string v0, "$this$single"
 
@@ -86,12 +86,12 @@
     move-result-object p2
 
     .line 67
-    move-object v2, p2
+    move-object v3, p2
 
-    check-cast v2, Lcom/iMe/storage/data/network/api/own/WalletApi;
+    check-cast v3, Lcom/iMe/storage/data/network/api/own/WalletApi;
 
     .line 133
-    const-class p2, Lcom/iMe/storage/data/locale/db/dao/minor/wallet/WalletTokenBalanceDao;
+    const-class p2, Lcom/iMe/storage/data/locale/db/dao/minor/wallet/WalletTokensBalancesDao;
 
     invoke-static {p2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
 
@@ -102,9 +102,9 @@
     move-result-object p2
 
     .line 67
-    move-object v4, p2
+    move-object v5, p2
 
-    check-cast v4, Lcom/iMe/storage/data/locale/db/dao/minor/wallet/WalletTokenBalanceDao;
+    check-cast v5, Lcom/iMe/storage/data/locale/db/dao/minor/wallet/WalletTokensBalancesDao;
 
     .line 133
     const-class p2, Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;
@@ -118,9 +118,9 @@
     move-result-object p2
 
     .line 67
-    move-object v6, p2
+    move-object v7, p2
 
-    check-cast v6, Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;
+    check-cast v7, Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;
 
     .line 133
     const-class p2, Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler;
@@ -134,9 +134,9 @@
     move-result-object p2
 
     .line 68
-    move-object v7, p2
+    move-object v8, p2
 
-    check-cast v7, Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler;
+    check-cast v8, Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler;
 
     .line 133
     const-class p2, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
@@ -150,9 +150,9 @@
     move-result-object p2
 
     .line 68
-    move-object v5, p2
+    move-object v6, p2
 
-    check-cast v5, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
+    check-cast v6, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
     .line 133
     const-class p2, Lcom/iMe/storage/domain/gateway/TelegramGateway;
@@ -166,9 +166,9 @@
     move-result-object p2
 
     .line 68
-    move-object v8, p2
+    move-object v9, p2
 
-    check-cast v8, Lcom/iMe/storage/domain/gateway/TelegramGateway;
+    check-cast v9, Lcom/iMe/storage/domain/gateway/TelegramGateway;
 
     .line 133
     const-class p2, Lcom/iMe/storage/data/datasource/transfer/WalletTransferDataSourceFactory;
@@ -179,19 +179,35 @@
 
     invoke-virtual {p1, p2, v0, v0}, Lorg/koin/core/scope/Scope;->get(Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
 
+    move-result-object p2
+
+    .line 69
+    move-object v4, p2
+
+    check-cast v4, Lcom/iMe/storage/data/datasource/transfer/WalletTransferDataSourceFactory;
+
+    .line 133
+    const-class p2, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
+
+    invoke-static {p2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
+
+    move-result-object p2
+
+    invoke-virtual {p1, p2, v0, v0}, Lorg/koin/core/scope/Scope;->get(Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
+
     move-result-object p1
 
     .line 69
-    move-object v3, p1
+    move-object v2, p1
 
-    check-cast v3, Lcom/iMe/storage/data/datasource/transfer/WalletTransferDataSourceFactory;
+    check-cast v2, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
 
     .line 66
     new-instance p1, Lcom/iMe/storage/data/repository/wallet/WalletRepositoryImpl;
 
     move-object v1, p1
 
-    invoke-direct/range {v1 .. v8}, Lcom/iMe/storage/data/repository/wallet/WalletRepositoryImpl;-><init>(Lcom/iMe/storage/data/network/api/own/WalletApi;Lcom/iMe/storage/data/datasource/transfer/WalletTransferDataSourceFactory;Lcom/iMe/storage/data/locale/db/dao/minor/wallet/WalletTokenBalanceDao;Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler;Lcom/iMe/storage/domain/gateway/TelegramGateway;)V
+    invoke-direct/range {v1 .. v9}, Lcom/iMe/storage/data/repository/wallet/WalletRepositoryImpl;-><init>(Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;Lcom/iMe/storage/data/network/api/own/WalletApi;Lcom/iMe/storage/data/datasource/transfer/WalletTransferDataSourceFactory;Lcom/iMe/storage/data/locale/db/dao/minor/wallet/WalletTokensBalancesDao;Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler;Lcom/iMe/storage/domain/gateway/TelegramGateway;)V
 
     return-object p1
 .end method

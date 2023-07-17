@@ -18,15 +18,16 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.koin.core.Koin;
 import org.koin.core.component.KoinComponent;
-import org.koin.p043mp.KoinPlatformTools;
-import org.telegram.messenger.C3295R;
+import org.koin.p042mp.KoinPlatformTools;
+import org.telegram.messenger.C3417R;
 import org.telegram.messenger.ImageReceiver;
-import org.telegram.p044ui.ActionBar.Theme;
-import org.telegram.p044ui.Components.RLottieImageView;
+import org.telegram.p043ui.ActionBar.Theme;
+import org.telegram.p043ui.Components.RLottieImageView;
 /* compiled from: GlobalStateLayout.kt */
 /* renamed from: com.iMe.ui.custom.state.GlobalStateLayout */
 /* loaded from: classes3.dex */
 public final class GlobalStateLayout extends StatefulLayout implements KoinComponent {
+    private Function0<Unit> emptyButtonClickListener;
     private final Lazy resourceManager$delegate;
     private Function0<Unit> retryButtonClickListener;
 
@@ -55,6 +56,7 @@ public final class GlobalStateLayout extends StatefulLayout implements KoinCompo
         Lazy lazy;
         Intrinsics.checkNotNullParameter(context, "context");
         this.retryButtonClickListener = GlobalStateLayout$retryButtonClickListener$1.INSTANCE;
+        this.emptyButtonClickListener = GlobalStateLayout$emptyButtonClickListener$1.INSTANCE;
         lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new GlobalStateLayout$special$$inlined$inject$default$1(this, null, null));
         this.resourceManager$delegate = lazy;
         setupStates();
@@ -67,6 +69,15 @@ public final class GlobalStateLayout extends StatefulLayout implements KoinCompo
     public final void setRetryButtonClickListener(Function0<Unit> function0) {
         Intrinsics.checkNotNullParameter(function0, "<set-?>");
         this.retryButtonClickListener = function0;
+    }
+
+    public final Function0<Unit> getEmptyButtonClickListener() {
+        return this.emptyButtonClickListener;
+    }
+
+    public final void setEmptyButtonClickListener(Function0<Unit> function0) {
+        Intrinsics.checkNotNullParameter(function0, "<set-?>");
+        this.emptyButtonClickListener = function0;
     }
 
     private final ResourceManager getResourceManager() {
@@ -123,6 +134,10 @@ public final class GlobalStateLayout extends StatefulLayout implements KoinCompo
         setStateView(noInternet.getState(), getStateView(noInternet));
         GlobalState.Unexpected unexpected = GlobalState.Unexpected.INSTANCE;
         setStateView(unexpected.getState(), getStateView(unexpected));
+        GlobalState.Empty.TokenSearchResult tokenSearchResult = GlobalState.Empty.TokenSearchResult.INSTANCE;
+        setStateView(tokenSearchResult.getState(), getStateView(tokenSearchResult));
+        GlobalState.Empty.CustomTokens customTokens = GlobalState.Empty.CustomTokens.INSTANCE;
+        setStateView(customTokens.getState(), getStateView(customTokens));
         GlobalState.Empty.Common common = GlobalState.Empty.Common.INSTANCE;
         setStateView(common.getState(), hideActionButton(getStateView(common)));
         GlobalState.Empty.Balance balance = GlobalState.Empty.Balance.INSTANCE;
@@ -133,21 +148,23 @@ public final class GlobalStateLayout extends StatefulLayout implements KoinCompo
         setStateView(twitter.getState(), hideActionButton(getStateView(twitter)));
         GlobalState.Empty.TwitterSearch twitterSearch = GlobalState.Empty.TwitterSearch.INSTANCE;
         setStateView(twitterSearch.getState(), hideActionButton(getStateView(twitterSearch)));
+        GlobalState.Empty.TokenSearchStart tokenSearchStart = GlobalState.Empty.TokenSearchStart.INSTANCE;
+        setStateView(tokenSearchStart.getState(), hideActionButton(getStateView(tokenSearchStart)));
         GlobalState.Progress progress = GlobalState.Progress.INSTANCE;
         setStateView(progress.getState(), configureProgressState(hideActionButton(getStateView(progress))));
     }
 
     private final View configureProgressState(View view) {
-        RLottieImageView rLottieImageView = (RLottieImageView) view.findViewById(C3295R.C3298id.image_state_animation);
+        RLottieImageView rLottieImageView = (RLottieImageView) view.findViewById(C3417R.C3420id.image_state_animation);
         int i = Theme.key_chats_actionBackground;
         rLottieImageView.setLayerColor("Shape Layer 1", ViewExtKt.withAlpha(Theme.getColor(i), 55));
         rLottieImageView.setLayerColor("Shape Layer 2", Theme.getColor(i));
-        AppCompatTextView appCompatTextView = (AppCompatTextView) view.findViewById(C3295R.C3298id.text_state_title);
+        AppCompatTextView appCompatTextView = (AppCompatTextView) view.findViewById(C3417R.C3420id.text_state_title);
         if (appCompatTextView != null) {
             Intrinsics.checkNotNullExpressionValue(appCompatTextView, "findViewById<AppCompatTe…w>(R.id.text_state_title)");
             ViewExtKt.gone$default(appCompatTextView, false, 1, null);
         }
-        AppCompatTextView appCompatTextView2 = (AppCompatTextView) view.findViewById(C3295R.C3298id.text_state_description);
+        AppCompatTextView appCompatTextView2 = (AppCompatTextView) view.findViewById(C3417R.C3420id.text_state_description);
         if (appCompatTextView2 != null) {
             Intrinsics.checkNotNullExpressionValue(appCompatTextView2, "findViewById<AppCompatTe…d.text_state_description)");
             ViewExtKt.gone$default(appCompatTextView2, false, 1, null);
@@ -156,24 +173,24 @@ public final class GlobalStateLayout extends StatefulLayout implements KoinCompo
     }
 
     private final View getStateView(GlobalState globalState) {
-        View inflate = LayoutInflater.from(getContext()).inflate(C3295R.layout.fork_content_global_state_layout, (ViewGroup) null);
-        RLottieImageView rLottieImageView = (RLottieImageView) inflate.findViewById(C3295R.C3298id.image_state_animation);
+        View inflate = LayoutInflater.from(getContext()).inflate(C3417R.layout.fork_content_global_state_layout, (ViewGroup) null);
+        RLottieImageView rLottieImageView = (RLottieImageView) inflate.findViewById(C3417R.C3420id.image_state_animation);
         rLottieImageView.setAutoRepeat(true);
         rLottieImageView.setAnimation(globalState.getIcon(), ImageReceiver.DEFAULT_CROSSFADE_DURATION, ImageReceiver.DEFAULT_CROSSFADE_DURATION);
-        AppCompatTextView getStateView$lambda$6$lambda$3 = (AppCompatTextView) inflate.findViewById(C3295R.C3298id.text_state_title);
+        AppCompatTextView getStateView$lambda$6$lambda$3 = (AppCompatTextView) inflate.findViewById(C3417R.C3420id.text_state_title);
         getStateView$lambda$6$lambda$3.setText(getResourceManager().getString(globalState.getTitle()));
         getStateView$lambda$6$lambda$3.setTextColor(Theme.getColor(Theme.key_chat_messagePanelText));
         Intrinsics.checkNotNullExpressionValue(getStateView$lambda$6$lambda$3, "getStateView$lambda$6$lambda$3");
         ViewExtKt.withMediumTypeface(getStateView$lambda$6$lambda$3);
-        AppCompatTextView appCompatTextView = (AppCompatTextView) inflate.findViewById(C3295R.C3298id.text_state_description);
+        AppCompatTextView appCompatTextView = (AppCompatTextView) inflate.findViewById(C3417R.C3420id.text_state_description);
         appCompatTextView.setText(getResourceManager().getString(globalState.getDescription()));
         appCompatTextView.setTextColor(Theme.getColor(Theme.key_dialogTextGray2));
-        AppCompatButton getStateView$lambda$6$lambda$5 = (AppCompatButton) inflate.findViewById(C3295R.C3298id.button_retry);
-        getStateView$lambda$6$lambda$5.setText(getResourceManager().getString(C3295R.string.common_retry));
+        AppCompatButton getStateView$lambda$6$lambda$5 = (AppCompatButton) inflate.findViewById(C3417R.C3420id.button_retry);
+        getStateView$lambda$6$lambda$5.setText(getResourceManager().getString(Intrinsics.areEqual(globalState, GlobalState.Empty.TokenSearchResult.INSTANCE) ? true : Intrinsics.areEqual(globalState, GlobalState.Empty.CustomTokens.INSTANCE) ? C3417R.string.token_search_empty_result_add_token : C3417R.string.common_retry));
         Intrinsics.checkNotNullExpressionValue(getStateView$lambda$6$lambda$5, "getStateView$lambda$6$lambda$5");
         ViewExtKt.setRippleBackground$default(getStateView$lambda$6$lambda$5, false, 1, null);
         getStateView$lambda$6$lambda$5.setTextColor(Theme.getColor(Theme.key_chats_actionBackground));
-        ViewExtKt.safeThrottledClick$default(getStateView$lambda$6$lambda$5, 0L, new GlobalStateLayout$getStateView$1$4$1(this), 1, null);
+        ViewExtKt.safeThrottledClick$default(getStateView$lambda$6$lambda$5, 0L, new GlobalStateLayout$getStateView$1$4$1(globalState, this), 1, null);
         Intrinsics.checkNotNullExpressionValue(inflate, "from(context)\n          …          }\n            }");
         return inflate;
     }
@@ -181,7 +198,7 @@ public final class GlobalStateLayout extends StatefulLayout implements KoinCompo
     private final void startAnimation(String str) {
         View stateView;
         RLottieImageView rLottieImageView;
-        if (Intrinsics.areEqual(str, GlobalState.Content.INSTANCE.getState()) || (stateView = getStateView(str)) == null || (rLottieImageView = (RLottieImageView) stateView.findViewById(C3295R.C3298id.image_state_animation)) == null) {
+        if (Intrinsics.areEqual(str, GlobalState.Content.INSTANCE.getState()) || (stateView = getStateView(str)) == null || (rLottieImageView = (RLottieImageView) stateView.findViewById(C3417R.C3420id.image_state_animation)) == null) {
             return;
         }
         rLottieImageView.playAnimation();
@@ -190,14 +207,14 @@ public final class GlobalStateLayout extends StatefulLayout implements KoinCompo
     private final void stopAnimation(String str) {
         View stateView;
         RLottieImageView rLottieImageView;
-        if (Intrinsics.areEqual(str, GlobalState.Content.INSTANCE.getState()) || (stateView = getStateView(str)) == null || (rLottieImageView = (RLottieImageView) stateView.findViewById(C3295R.C3298id.image_state_animation)) == null) {
+        if (Intrinsics.areEqual(str, GlobalState.Content.INSTANCE.getState()) || (stateView = getStateView(str)) == null || (rLottieImageView = (RLottieImageView) stateView.findViewById(C3417R.C3420id.image_state_animation)) == null) {
             return;
         }
         rLottieImageView.stopAnimation();
     }
 
     private final View hideActionButton(View view) {
-        AppCompatButton appCompatButton = (AppCompatButton) view.findViewById(C3295R.C3298id.button_retry);
+        AppCompatButton appCompatButton = (AppCompatButton) view.findViewById(C3417R.C3420id.button_retry);
         if (appCompatButton != null) {
             ViewExtKt.gone$default(appCompatButton, false, 1, null);
         }

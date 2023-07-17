@@ -7,7 +7,7 @@ import org.telegram.messenger.databinding.ForkFragmentCatalogGlobalBinding;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: CatalogRootFragment.kt */
 /* renamed from: com.iMe.ui.catalog.CatalogRootFragment$binding$2 */
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public final class CatalogRootFragment$binding$2 extends Lambda implements Function0<ForkFragmentCatalogGlobalBinding> {
     final /* synthetic */ CatalogRootFragment this$0;
 

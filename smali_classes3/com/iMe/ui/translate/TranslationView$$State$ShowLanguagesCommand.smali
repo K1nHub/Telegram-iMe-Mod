@@ -50,17 +50,17 @@
         }
     .end annotation
 
-    .line 258
+    .line 274
     const-class p1, Lmoxy/viewstate/strategy/AddToEndSingleStrategy;
 
     const-string v0, "showLanguages"
 
     invoke-direct {p0, v0, p1}, Lmoxy/viewstate/ViewCommand;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
-    .line 260
+    .line 276
     iput-object p2, p0, Lcom/iMe/ui/translate/TranslationView$$State$ShowLanguagesCommand;->languages:Ljava/util/List;
 
-    .line 261
+    .line 277
     iput-object p3, p0, Lcom/iMe/ui/translate/TranslationView$$State$ShowLanguagesCommand;->selectedLanguageCode:Ljava/lang/String;
 
     return-void
@@ -71,7 +71,7 @@
 .method public apply(Lcom/iMe/ui/translate/TranslationView;)V
     .locals 2
 
-    .line 266
+    .line 282
     iget-object v0, p0, Lcom/iMe/ui/translate/TranslationView$$State$ShowLanguagesCommand;->languages:Ljava/util/List;
 
     iget-object v1, p0, Lcom/iMe/ui/translate/TranslationView$$State$ShowLanguagesCommand;->selectedLanguageCode:Ljava/lang/String;
@@ -84,7 +84,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 252
+    .line 268
     check-cast p1, Lcom/iMe/ui/translate/TranslationView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/translate/TranslationView$$State$ShowLanguagesCommand;->apply(Lcom/iMe/ui/translate/TranslationView;)V

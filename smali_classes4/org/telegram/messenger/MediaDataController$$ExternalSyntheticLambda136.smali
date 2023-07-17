@@ -18,9 +18,11 @@
 
 .field public final synthetic f$5:Z
 
+.field public final synthetic f$6:Lorg/telegram/messenger/MessagesStorage$BooleanCallback;
+
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/messenger/MediaDataController;ZLorg/telegram/tgnet/TLRPC$TL_messages_stickerSet;ILjava/lang/String;Z)V
+.method public synthetic constructor <init>(Lorg/telegram/messenger/MediaDataController;ZLorg/telegram/tgnet/TLRPC$TL_messages_stickerSet;ILjava/lang/String;ZLorg/telegram/messenger/MessagesStorage$BooleanCallback;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,13 +39,15 @@
 
     iput-boolean p6, p0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda136;->f$5:Z
 
+    iput-object p7, p0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda136;->f$6:Lorg/telegram/messenger/MessagesStorage$BooleanCallback;
+
     return-void
 .end method
 
 
 # virtual methods
 .method public final run()V
-    .locals 6
+    .locals 7
 
     iget-object v0, p0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda136;->f$0:Lorg/telegram/messenger/MediaDataController;
 
@@ -57,7 +61,9 @@
 
     iget-boolean v5, p0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda136;->f$5:Z
 
-    invoke-static/range {v0 .. v5}, Lorg/telegram/messenger/MediaDataController;->$r8$lambda$twCyEaEzsGApix80dx_T59-Mzv8(Lorg/telegram/messenger/MediaDataController;ZLorg/telegram/tgnet/TLRPC$TL_messages_stickerSet;ILjava/lang/String;Z)V
+    iget-object v6, p0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda136;->f$6:Lorg/telegram/messenger/MessagesStorage$BooleanCallback;
+
+    invoke-static/range {v0 .. v6}, Lorg/telegram/messenger/MediaDataController;->$r8$lambda$Z3-q1Vh0C0Jpho2nhCnw2ZqWmTk(Lorg/telegram/messenger/MediaDataController;ZLorg/telegram/tgnet/TLRPC$TL_messages_stickerSet;ILjava/lang/String;ZLorg/telegram/messenger/MessagesStorage$BooleanCallback;)V
 
     return-void
 .end method

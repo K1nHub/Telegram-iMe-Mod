@@ -5,7 +5,7 @@ import org.bouncycastle.asn1.ASN1BitString;
 import org.bouncycastle.asn1.ASN1ObjectIdentifier;
 import org.bouncycastle.asn1.ASN1OctetString;
 import org.bouncycastle.asn1.ASN1Primitive;
-import org.bouncycastle.asn1.p039bc.BCObjectIdentifiers;
+import org.bouncycastle.asn1.p038bc.BCObjectIdentifiers;
 import org.bouncycastle.asn1.pkcs.PKCSObjectIdentifiers;
 import org.bouncycastle.asn1.pkcs.PrivateKeyInfo;
 import org.bouncycastle.crypto.params.AsymmetricKeyParameter;

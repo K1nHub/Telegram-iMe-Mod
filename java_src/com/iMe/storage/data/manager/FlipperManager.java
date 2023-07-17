@@ -39,9 +39,9 @@ public final class FlipperManager {
         Intrinsics.checkNotNullParameter(applicationContext, "applicationContext");
         FlipperManager flipperManager = INSTANCE;
         if (isFlipperEnabled()) {
-            SoLoader.INSTANCE.init(applicationContext, false);
+            SoLoader.init(applicationContext, false);
             FlipperClient androidFlipperClient = AndroidFlipperClient.getInstance(applicationContext);
-            androidFlipperClient.addPlugin(new InspectorFlipperPlugin(applicationContext, DescriptorMapping.INSTANCE.withDefaults()));
+            androidFlipperClient.addPlugin(new InspectorFlipperPlugin(applicationContext, DescriptorMapping.withDefaults()));
             androidFlipperClient.addPlugin(new DatabasesFlipperPlugin(applicationContext));
             androidFlipperClient.addPlugin(new SharedPreferencesFlipperPlugin(applicationContext));
             androidFlipperClient.addPlugin(flipperManager.getNetworkFlipperPlugin());

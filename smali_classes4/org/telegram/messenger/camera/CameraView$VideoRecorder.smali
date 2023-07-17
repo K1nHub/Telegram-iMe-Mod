@@ -1734,7 +1734,7 @@
     .line 1805
     invoke-virtual {v7, v9, v3}, Landroid/media/MediaFormat;->setString(Ljava/lang/String;Ljava/lang/String;)V
 
-    const-string v9, "sample-rate"
+    const-string/jumbo v9, "sample-rate"
 
     .line 1806
     invoke-virtual {v7, v9, v5}, Landroid/media/MediaFormat;->setInteger(Ljava/lang/String;I)V
@@ -2319,8 +2319,6 @@
     invoke-direct {v2, v0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/Throwable;)V
 
     throw v2
-
-    nop
 
     :array_0
     .array-data 4

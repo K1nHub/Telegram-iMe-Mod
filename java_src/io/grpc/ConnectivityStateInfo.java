@@ -8,7 +8,7 @@ public final class ConnectivityStateInfo {
 
     public static ConnectivityStateInfo forNonError(ConnectivityState connectivityState) {
         Preconditions.checkArgument(connectivityState != ConnectivityState.TRANSIENT_FAILURE, "state is TRANSIENT_ERROR. Use forError() instead");
-        return new ConnectivityStateInfo(connectivityState, Status.f431OK);
+        return new ConnectivityStateInfo(connectivityState, Status.f513OK);
     }
 
     public static ConnectivityStateInfo forTransientFailure(Status status) {

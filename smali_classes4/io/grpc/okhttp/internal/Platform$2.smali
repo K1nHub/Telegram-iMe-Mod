@@ -75,7 +75,7 @@
 
     aput-object v3, v1, v2
 
-    const-string v2, "setApplicationProtocols"
+    const-string/jumbo v2, "setApplicationProtocols"
 
     invoke-virtual {v0, v2, v1}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
 

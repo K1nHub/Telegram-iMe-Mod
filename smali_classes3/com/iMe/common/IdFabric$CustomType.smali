@@ -59,152 +59,152 @@
 
     add-int/lit8 v0, v0, 0x1
 
-    .line 228
+    .line 227
     sput v0, Lcom/iMe/common/IdFabric$CustomType;->id:I
 
     add-int/lit8 v1, v0, 0x1
 
-    .line 229
+    .line 228
     sput v1, Lcom/iMe/common/IdFabric$CustomType;->id:I
 
     sput v0, Lcom/iMe/common/IdFabric$CustomType;->MEDIA_TAB_PLAYLIST:I
 
     add-int/lit8 v0, v1, 0x1
 
-    .line 230
+    .line 229
     sput v0, Lcom/iMe/common/IdFabric$CustomType;->id:I
 
     sput v1, Lcom/iMe/common/IdFabric$CustomType;->SHARED_MEDIA_LAYOUT_MUSIC:I
 
     add-int/lit8 v1, v0, 0x1
 
-    .line 231
+    .line 230
     sput v1, Lcom/iMe/common/IdFabric$CustomType;->id:I
 
     sput v0, Lcom/iMe/common/IdFabric$CustomType;->LOGIN_SEARCH_BY_TEL:I
 
     add-int/lit8 v0, v1, 0x1
 
-    .line 232
+    .line 231
     sput v0, Lcom/iMe/common/IdFabric$CustomType;->id:I
 
     sput v1, Lcom/iMe/common/IdFabric$CustomType;->TRANSFORMABLE_LOGIN_BUTTON_SEARCH:I
 
     add-int/lit8 v1, v0, 0x1
 
-    .line 233
+    .line 232
     sput v1, Lcom/iMe/common/IdFabric$CustomType;->id:I
 
     sput v0, Lcom/iMe/common/IdFabric$CustomType;->CONTENT_TYPE_KIKLIKO:I
 
     add-int/lit8 v0, v1, 0x1
 
-    .line 234
+    .line 233
     sput v0, Lcom/iMe/common/IdFabric$CustomType;->id:I
 
     sput v1, Lcom/iMe/common/IdFabric$CustomType;->CONTENT_TYPE_NFT:I
 
     add-int/lit8 v1, v0, 0x1
 
-    .line 235
+    .line 234
     sput v1, Lcom/iMe/common/IdFabric$CustomType;->id:I
 
     sput v0, Lcom/iMe/common/IdFabric$CustomType;->LANGUAGE_SELECT_CATALOG:I
 
     add-int/lit8 v0, v1, 0x1
 
-    .line 236
+    .line 235
     sput v0, Lcom/iMe/common/IdFabric$CustomType;->id:I
 
     sput v1, Lcom/iMe/common/IdFabric$CustomType;->CONTACTS_PRIVACY_SETTINGS:I
 
     add-int/lit8 v1, v0, 0x1
 
-    .line 237
+    .line 236
     sput v1, Lcom/iMe/common/IdFabric$CustomType;->id:I
 
     sput v0, Lcom/iMe/common/IdFabric$CustomType;->CHAT_FORWARDING_EDITOR:I
 
     add-int/lit8 v0, v1, 0x1
 
-    .line 238
+    .line 237
     sput v0, Lcom/iMe/common/IdFabric$CustomType;->id:I
 
     sput v1, Lcom/iMe/common/IdFabric$CustomType;->UNDO_MOVE_TO_FOLDER:I
 
     add-int/lit8 v1, v0, 0x1
 
-    .line 239
+    .line 238
     sput v1, Lcom/iMe/common/IdFabric$CustomType;->id:I
 
     sput v0, Lcom/iMe/common/IdFabric$CustomType;->UNDO_IMAGE_COPIED:I
 
     add-int/lit8 v0, v1, 0x1
 
-    .line 240
+    .line 239
     sput v0, Lcom/iMe/common/IdFabric$CustomType;->id:I
 
     sput v1, Lcom/iMe/common/IdFabric$CustomType;->UNDO_ACTION_CHAT_UNARCHIVED_FEW:I
 
     add-int/lit8 v1, v0, 0x1
 
-    .line 241
+    .line 240
     sput v1, Lcom/iMe/common/IdFabric$CustomType;->id:I
 
     sput v0, Lcom/iMe/common/IdFabric$CustomType;->QR_CODE_SCANNER_CHAT_LINK:I
 
     add-int/lit8 v0, v1, 0x1
 
-    .line 242
+    .line 241
     sput v0, Lcom/iMe/common/IdFabric$CustomType;->id:I
 
     sput v1, Lcom/iMe/common/IdFabric$CustomType;->CHAT_ATTACH_ALERT_WALLET:I
 
     add-int/lit8 v1, v0, 0x1
 
-    .line 243
+    .line 242
     sput v1, Lcom/iMe/common/IdFabric$CustomType;->id:I
 
     sput v0, Lcom/iMe/common/IdFabric$CustomType;->CHAT_ATTACH_ALERT_WALLET_BINANCE:I
 
     add-int/lit8 v0, v1, 0x1
 
-    .line 244
+    .line 243
     sput v0, Lcom/iMe/common/IdFabric$CustomType;->id:I
 
     sput v1, Lcom/iMe/common/IdFabric$CustomType;->CHAT_ATTACH_ALERT_WALLET_TEMPLATES:I
 
     add-int/lit8 v1, v0, 0x1
 
-    .line 245
+    .line 244
     sput v1, Lcom/iMe/common/IdFabric$CustomType;->id:I
 
     sput v0, Lcom/iMe/common/IdFabric$CustomType;->DRAWER_USER_CELL_ACTION_BAR_ACCOUNT_SWITCH:I
 
     add-int/lit8 v0, v1, 0x1
 
-    .line 246
+    .line 245
     sput v0, Lcom/iMe/common/IdFabric$CustomType;->id:I
 
     sput v1, Lcom/iMe/common/IdFabric$CustomType;->SHARED_AUDIO_CELL_MUSIC:I
 
     add-int/lit8 v1, v0, 0x1
 
-    .line 247
+    .line 246
     sput v1, Lcom/iMe/common/IdFabric$CustomType;->id:I
 
     sput v0, Lcom/iMe/common/IdFabric$CustomType;->QR_BOTTOM_SHEET_WALLET_RECEIVE:I
 
     add-int/lit8 v0, v1, 0x1
 
-    .line 248
+    .line 247
     sput v0, Lcom/iMe/common/IdFabric$CustomType;->id:I
 
     sput v1, Lcom/iMe/common/IdFabric$CustomType;->QR_BOTTOM_SHEET_WALLET_BACKUP:I
 
     add-int/lit8 v1, v0, 0x1
 
-    .line 249
+    .line 248
     sput v1, Lcom/iMe/common/IdFabric$CustomType;->id:I
 
     sput v0, Lcom/iMe/common/IdFabric$CustomType;->QR_BOTTOM_SHEET_LOGIN_TOKEN:I

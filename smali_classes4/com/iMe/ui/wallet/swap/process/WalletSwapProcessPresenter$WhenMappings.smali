@@ -71,7 +71,7 @@
     new-array v0, v0, [I
 
     :try_start_2
-    sget-object v3, Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocol;->SYMBIOSIS:Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocol;
+    sget-object v3, Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocol;->UNISWAP:Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocol;
 
     invoke-virtual {v3}, Ljava/lang/Enum;->ordinal()I
 
@@ -83,7 +83,7 @@
 
     :catch_2
     :try_start_3
-    sget-object v1, Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocol;->UNISWAP:Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocol;
+    sget-object v1, Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocol;->UNISWAP_V3:Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocol;
 
     invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
@@ -95,7 +95,7 @@
 
     :catch_3
     :try_start_4
-    sget-object v1, Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocol;->UNISWAP_V3:Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocol;
+    sget-object v1, Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocol;->ONEINCH:Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocol;
 
     invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
@@ -109,7 +109,7 @@
 
     :catch_4
     :try_start_5
-    sget-object v1, Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocol;->ONEINCH:Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocol;
+    sget-object v1, Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocol;->SYMBIOSIS:Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocol;
 
     invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 

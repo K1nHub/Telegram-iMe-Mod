@@ -2,9 +2,9 @@ package com.iMe.p031ui.wallet.swap.process;
 
 import com.iMe.storage.domain.interactor.crypto.swap.SwapInteractor;
 import com.iMe.storage.domain.model.Result;
-import com.iMe.storage.domain.model.crypto.NetworkType;
 import com.iMe.storage.domain.model.crypto.swap.CryptoTokenApproveMetadata;
 import com.iMe.storage.domain.model.wallet.swap.SwapProtocol;
+import com.iMe.storage.domain.model.wallet.token.Token;
 import io.reactivex.ObservableSource;
 import java.util.List;
 import kotlin.jvm.functions.Function1;
@@ -14,15 +14,17 @@ import kotlin.jvm.internal.Lambda;
 /* renamed from: com.iMe.ui.wallet.swap.process.WalletSwapProcessPresenter$loadApproveTokensInfo$1 */
 /* loaded from: classes4.dex */
 public final class WalletSwapProcessPresenter$loadApproveTokensInfo$1 extends Lambda implements Function1<?, ObservableSource<? extends Result<? extends List<? extends CryptoTokenApproveMetadata>>>> {
-    final /* synthetic */ NetworkType $selectedNetwork;
+    final /* synthetic */ String $selectedNetworkId;
+    final /* synthetic */ List<Token> $tokens;
     final /* synthetic */ WalletSwapProcessPresenter this$0;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public WalletSwapProcessPresenter$loadApproveTokensInfo$1(WalletSwapProcessPresenter walletSwapProcessPresenter, NetworkType networkType) {
+    public WalletSwapProcessPresenter$loadApproveTokensInfo$1(WalletSwapProcessPresenter walletSwapProcessPresenter, String str, List<Token> list) {
         super(1);
         this.this$0 = walletSwapProcessPresenter;
-        this.$selectedNetwork = networkType;
+        this.$selectedNetworkId = str;
+        this.$tokens = list;
     }
 
     @Override // kotlin.jvm.functions.Function1
@@ -31,8 +33,8 @@ public final class WalletSwapProcessPresenter$loadApproveTokensInfo$1 extends La
         SwapInteractor swapInteractor;
         SwapProtocol swapProtocol;
         swapInteractor = this.this$0.swapInteractor;
-        NetworkType networkType = this.$selectedNetwork;
+        String str = this.$selectedNetworkId;
         swapProtocol = this.this$0.swapProtocol;
-        return swapInteractor.getApproveTokensInfo(networkType, swapProtocol);
+        return swapInteractor.getApproveTokensInfo(str, swapProtocol, this.$tokens);
     }
 }

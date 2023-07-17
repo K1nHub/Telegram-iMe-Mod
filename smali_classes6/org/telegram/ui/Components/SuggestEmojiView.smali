@@ -54,6 +54,8 @@
 
 .field private lastLang:[Ljava/lang/String;
 
+.field private lastLangChangedTime:J
+
 .field private lastQuery:Ljava/lang/String;
 
 .field private lastQueryId:I
@@ -157,10 +159,15 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;ILorg/telegram/ui/Components/ChatActivityEnterView;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
-    .locals 0
+    .locals 2
 
     .line 199
     invoke-direct {p0, p1}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
+
+    const-wide/16 v0, 0x0
+
+    .line 415
+    iput-wide v0, p0, Lorg/telegram/ui/Components/SuggestEmojiView;->lastLangChangedTime:J
 
     .line 200
     iput p2, p0, Lorg/telegram/ui/Components/SuggestEmojiView;->currentAccount:I
@@ -515,6 +522,59 @@
     return-void
 .end method
 
+.method private detectKeyboardLangThrottleFirstWithDelay()[Ljava/lang/String;
+    .locals 6
+
+    .line 421
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+
+    move-result-wide v0
+
+    .line 423
+    iget-object v2, p0, Lorg/telegram/ui/Components/SuggestEmojiView;->lastLang:[Ljava/lang/String;
+
+    if-eqz v2, :cond_1
+
+    iget-wide v2, p0, Lorg/telegram/ui/Components/SuggestEmojiView;->lastLangChangedTime:J
+
+    sub-long v2, v0, v2
+
+    invoke-static {v2, v3}, Ljava/lang/Math;->abs(J)J
+
+    move-result-wide v2
+
+    const/16 v4, 0x168
+
+    int-to-long v4, v4
+
+    cmp-long v2, v2, v4
+
+    if-lez v2, :cond_0
+
+    goto :goto_0
+
+    .line 427
+    :cond_0
+    iput-wide v0, p0, Lorg/telegram/ui/Components/SuggestEmojiView;->lastLangChangedTime:J
+
+    .line 429
+    iget-object v0, p0, Lorg/telegram/ui/Components/SuggestEmojiView;->lastLang:[Ljava/lang/String;
+
+    return-object v0
+
+    .line 424
+    :cond_1
+    :goto_0
+    iput-wide v0, p0, Lorg/telegram/ui/Components/SuggestEmojiView;->lastLangChangedTime:J
+
+    .line 425
+    invoke-static {}, Lorg/telegram/messenger/AndroidUtilities;->getCurrentKeyboardLanguage()[Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
 .method private drawContainerBegin(Landroid/graphics/Canvas;)V
     .locals 19
 
@@ -522,7 +582,7 @@
 
     move-object/from16 v8, p1
 
-    .line 642
+    .line 660
     iget-object v1, v0, Lorg/telegram/ui/Components/SuggestEmojiView;->enterView:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
     if-eqz v1, :cond_1
@@ -533,7 +593,7 @@
 
     if-eqz v1, :cond_1
 
-    .line 643
+    .line 661
     iget-object v1, v0, Lorg/telegram/ui/Components/SuggestEmojiView;->arrowToSpan:Lorg/telegram/messenger/Emoji$EmojiSpan;
 
     if-eqz v1, :cond_0
@@ -542,7 +602,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 644
+    .line 662
     iget-object v1, v0, Lorg/telegram/ui/Components/SuggestEmojiView;->enterView:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
     invoke-virtual {v1}, Lorg/telegram/ui/Components/ChatActivityEnterView;->getEditField()Lorg/telegram/ui/Components/EditTextCaption;
@@ -575,14 +635,14 @@
 
     iput v1, v0, Lorg/telegram/ui/Components/SuggestEmojiView;->arrowX:F
 
-    .line 645
+    .line 663
     iget v1, v2, Lorg/telegram/messenger/Emoji$EmojiSpan;->lastDrawY:F
 
     iput v1, v0, Lorg/telegram/ui/Components/SuggestEmojiView;->lastSpanY:F
 
     goto :goto_0
 
-    .line 646
+    .line 664
     :cond_0
     iget-object v1, v0, Lorg/telegram/ui/Components/SuggestEmojiView;->arrowToStart:Ljava/lang/Integer;
 
@@ -592,7 +652,7 @@
 
     if-eqz v1, :cond_1
 
-    .line 647
+    .line 665
     iget-object v1, v0, Lorg/telegram/ui/Components/SuggestEmojiView;->enterView:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
     invoke-virtual {v1}, Lorg/telegram/ui/Components/ChatActivityEnterView;->getEditField()Lorg/telegram/ui/Components/EditTextCaption;
@@ -629,7 +689,7 @@
 
     iput v1, v0, Lorg/telegram/ui/Components/SuggestEmojiView;->arrowX:F
 
-    .line 651
+    .line 669
     :cond_1
     :goto_0
     iget-boolean v1, v0, Lorg/telegram/ui/Components/SuggestEmojiView;->show:Z
@@ -663,7 +723,7 @@
     :cond_2
     move v1, v3
 
-    .line 652
+    .line 670
     :goto_1
     iget-object v4, v0, Lorg/telegram/ui/Components/SuggestEmojiView;->showFloat1:Lorg/telegram/ui/Components/AnimatedFloat;
 
@@ -683,7 +743,7 @@
 
     move-result v4
 
-    .line 653
+    .line 671
     iget-object v7, v0, Lorg/telegram/ui/Components/SuggestEmojiView;->showFloat2:Lorg/telegram/ui/Components/AnimatedFloat;
 
     if-eqz v1, :cond_4
@@ -700,7 +760,7 @@
 
     move-result v7
 
-    .line 654
+    .line 672
     iget-object v9, v0, Lorg/telegram/ui/Components/SuggestEmojiView;->arrowXAnimated:Lorg/telegram/ui/Components/AnimatedFloat;
 
     iget v10, v0, Lorg/telegram/ui/Components/SuggestEmojiView;->arrowX:F
@@ -719,20 +779,20 @@
 
     if-nez v1, :cond_5
 
-    .line 657
+    .line 675
     iget-object v1, v0, Lorg/telegram/ui/Components/SuggestEmojiView;->containerView:Landroid/widget/FrameLayout;
 
     const/16 v7, 0x8
 
     invoke-virtual {v1, v7}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 660
+    .line 678
     :cond_5
     iget-object v1, v0, Lorg/telegram/ui/Components/SuggestEmojiView;->path:Landroid/graphics/Path;
 
     invoke-virtual {v1}, Landroid/graphics/Path;->rewind()V
 
-    .line 662
+    .line 680
     iget-object v1, v0, Lorg/telegram/ui/Components/SuggestEmojiView;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v1}, Landroid/view/ViewGroup;->getLeft()I
@@ -741,7 +801,7 @@
 
     int-to-float v1, v1
 
-    .line 663
+    .line 681
     iget-object v7, v0, Lorg/telegram/ui/Components/SuggestEmojiView;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v7}, Landroid/view/ViewGroup;->getLeft()I
@@ -774,7 +834,7 @@
 
     int-to-float v7, v7
 
-    .line 665
+    .line 683
     iget-object v10, v0, Lorg/telegram/ui/Components/SuggestEmojiView;->listViewWidthAnimated:Lorg/telegram/ui/Components/AnimatedFloat;
 
     invoke-virtual {v10}, Lorg/telegram/ui/Components/AnimatedFloat;->get()F
@@ -799,7 +859,7 @@
 
     if-gtz v12, :cond_8
 
-    .line 666
+    .line 684
     iget-object v11, v0, Lorg/telegram/ui/Components/SuggestEmojiView;->listViewWidthAnimated:Lorg/telegram/ui/Components/AnimatedFloat;
 
     invoke-virtual {v11}, Lorg/telegram/ui/Components/AnimatedFloat;->get()F
@@ -815,7 +875,7 @@
 
     move-result v11
 
-    .line 667
+    .line 685
     :goto_6
     iget-object v12, v0, Lorg/telegram/ui/Components/SuggestEmojiView;->listViewCenterAnimated:Lorg/telegram/ui/Components/AnimatedFloat;
 
@@ -829,7 +889,7 @@
 
     move-result v1
 
-    .line 669
+    .line 687
     iget-object v10, v0, Lorg/telegram/ui/Components/SuggestEmojiView;->enterView:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
     if-eqz v10, :cond_9
@@ -840,7 +900,7 @@
 
     if-eqz v10, :cond_9
 
-    .line 670
+    .line 688
     iget-object v10, v0, Lorg/telegram/ui/Components/SuggestEmojiView;->containerView:Landroid/widget/FrameLayout;
 
     iget-object v12, v0, Lorg/telegram/ui/Components/SuggestEmojiView;->enterView:Lorg/telegram/ui/Components/ChatActivityEnterView;
@@ -885,7 +945,7 @@
 
     invoke-virtual {v10, v12}, Landroid/widget/FrameLayout;->setTranslationY(F)V
 
-    .line 672
+    .line 690
     :cond_9
     iget v10, v0, Lorg/telegram/ui/Components/SuggestEmojiView;->arrowX:F
 
@@ -929,7 +989,7 @@
 
     float-to-int v10, v10
 
-    .line 673
+    .line 691
     iget-object v14, v0, Lorg/telegram/ui/Components/SuggestEmojiView;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v14}, Landroid/view/ViewGroup;->getPaddingLeft()I
@@ -938,7 +998,7 @@
 
     if-eq v14, v10, :cond_a
 
-    .line 674
+    .line 692
     iget-object v14, v0, Lorg/telegram/ui/Components/SuggestEmojiView;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v14}, Landroid/view/ViewGroup;->getPaddingLeft()I
@@ -947,17 +1007,17 @@
 
     sub-int/2addr v14, v10
 
-    .line 675
+    .line 693
     iget-object v15, v0, Lorg/telegram/ui/Components/SuggestEmojiView;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v15, v10, v3, v3, v3}, Landroid/view/ViewGroup;->setPadding(IIII)V
 
-    .line 676
+    .line 694
     iget-object v15, v0, Lorg/telegram/ui/Components/SuggestEmojiView;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v15, v14, v3}, Landroidx/recyclerview/widget/RecyclerView;->scrollBy(II)V
 
-    .line 678
+    .line 696
     :cond_a
     invoke-static {v13}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
@@ -991,7 +1051,7 @@
 
     float-to-int v3, v3
 
-    .line 679
+    .line 697
     iget-object v12, v0, Lorg/telegram/ui/Components/SuggestEmojiView;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     sub-int/2addr v3, v10
@@ -1002,7 +1062,7 @@
 
     sub-float v3, v1, v11
 
-    .line 681
+    .line 699
     iget-object v10, v0, Lorg/telegram/ui/Components/SuggestEmojiView;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v10}, Landroid/view/ViewGroup;->getPaddingLeft()I
@@ -1021,7 +1081,7 @@
 
     add-float/2addr v3, v10
 
-    .line 682
+    .line 700
     iget-object v10, v0, Lorg/telegram/ui/Components/SuggestEmojiView;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v10}, Landroid/view/ViewGroup;->getTop()I
@@ -1050,7 +1110,7 @@
 
     add-float/2addr v1, v11
 
-    .line 683
+    .line 701
     iget-object v12, v0, Lorg/telegram/ui/Components/SuggestEmojiView;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v12}, Landroid/view/ViewGroup;->getPaddingLeft()I
@@ -1087,7 +1147,7 @@
 
     move-result v1
 
-    .line 684
+    .line 702
     iget-object v12, v0, Lorg/telegram/ui/Components/SuggestEmojiView;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v12}, Landroid/view/ViewGroup;->getBottom()I
@@ -1116,7 +1176,7 @@
 
     const/16 v14, 0x9
 
-    .line 686
+    .line 704
     invoke-static {v14}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v14
@@ -1129,7 +1189,7 @@
 
     mul-float/2addr v11, v7
 
-    .line 688
+    .line 706
     sget-object v7, Lorg/telegram/messenger/AndroidUtilities;->rectTmp:Landroid/graphics/RectF;
 
     sub-float v14, v12, v11
@@ -1138,7 +1198,7 @@
 
     invoke-virtual {v7, v3, v14, v15, v12}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 689
+    .line 707
     iget-object v5, v0, Lorg/telegram/ui/Components/SuggestEmojiView;->path:Landroid/graphics/Path;
 
     const/high16 v2, 0x42b40000    # 90.0f
@@ -1147,10 +1207,10 @@
 
     add-float v5, v10, v11
 
-    .line 691
+    .line 709
     invoke-virtual {v7, v3, v10, v15, v5}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 692
+    .line 710
     iget-object v15, v0, Lorg/telegram/ui/Components/SuggestEmojiView;->path:Landroid/graphics/Path;
 
     const/high16 v13, -0x3ccc0000    # -180.0f
@@ -1159,25 +1219,25 @@
 
     sub-float v11, v1, v11
 
-    .line 694
+    .line 712
     invoke-virtual {v7, v11, v10, v1, v5}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 695
+    .line 713
     iget-object v5, v0, Lorg/telegram/ui/Components/SuggestEmojiView;->path:Landroid/graphics/Path;
 
     const/high16 v13, -0x3d4c0000    # -90.0f
 
     invoke-virtual {v5, v7, v13, v2}, Landroid/graphics/Path;->arcTo(Landroid/graphics/RectF;FF)V
 
-    .line 697
+    .line 715
     invoke-virtual {v7, v11, v14, v1, v12}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 698
+    .line 716
     iget-object v5, v0, Lorg/telegram/ui/Components/SuggestEmojiView;->path:Landroid/graphics/Path;
 
     invoke-virtual {v5, v7, v6, v2}, Landroid/graphics/Path;->arcTo(Landroid/graphics/RectF;FF)V
 
-    .line 700
+    .line 718
     iget-object v2, v0, Lorg/telegram/ui/Components/SuggestEmojiView;->path:Landroid/graphics/Path;
 
     const v5, 0x410a8f5c    # 8.66f
@@ -1192,7 +1252,7 @@
 
     invoke-virtual {v2, v7, v12}, Landroid/graphics/Path;->lineTo(FF)V
 
-    .line 701
+    .line 719
     iget-object v2, v0, Lorg/telegram/ui/Components/SuggestEmojiView;->path:Landroid/graphics/Path;
 
     const v7, 0x40d51eb8    # 6.66f
@@ -1207,7 +1267,7 @@
 
     invoke-virtual {v2, v9, v7}, Landroid/graphics/Path;->lineTo(FF)V
 
-    .line 702
+    .line 720
     iget-object v2, v0, Lorg/telegram/ui/Components/SuggestEmojiView;->path:Landroid/graphics/Path;
 
     invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
@@ -1220,17 +1280,17 @@
 
     invoke-virtual {v2, v5, v12}, Landroid/graphics/Path;->lineTo(FF)V
 
-    .line 704
+    .line 722
     iget-object v2, v0, Lorg/telegram/ui/Components/SuggestEmojiView;->path:Landroid/graphics/Path;
 
     invoke-virtual {v2}, Landroid/graphics/Path;->close()V
 
-    .line 706
+    .line 724
     iget-object v2, v0, Lorg/telegram/ui/Components/SuggestEmojiView;->backgroundPaint:Landroid/graphics/Paint;
 
     if-nez v2, :cond_b
 
-    .line 707
+    .line 725
     new-instance v2, Landroid/graphics/Paint;
 
     const/4 v5, 0x1
@@ -1239,7 +1299,7 @@
 
     iput-object v2, v0, Lorg/telegram/ui/Components/SuggestEmojiView;->backgroundPaint:Landroid/graphics/Paint;
 
-    .line 708
+    .line 726
     new-instance v5, Landroid/graphics/CornerPathEffect;
 
     const/4 v7, 0x2
@@ -1254,7 +1314,7 @@
 
     invoke-virtual {v2, v5}, Landroid/graphics/Paint;->setPathEffect(Landroid/graphics/PathEffect;)Landroid/graphics/PathEffect;
 
-    .line 709
+    .line 727
     iget-object v2, v0, Lorg/telegram/ui/Components/SuggestEmojiView;->backgroundPaint:Landroid/graphics/Paint;
 
     const v5, 0x408a8f5c    # 4.33f
@@ -1277,7 +1337,7 @@
 
     invoke-virtual {v2, v5, v6, v7, v11}, Landroid/graphics/Paint;->setShadowLayer(FFFI)V
 
-    .line 710
+    .line 728
     iget-object v2, v0, Lorg/telegram/ui/Components/SuggestEmojiView;->backgroundPaint:Landroid/graphics/Paint;
 
     sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_chat_stickersHintPanel:I
@@ -1297,14 +1357,14 @@
 
     if-gez v2, :cond_c
 
-    .line 714
+    .line 732
     iget-object v2, v0, Lorg/telegram/ui/Components/SuggestEmojiView;->circlePath:Landroid/graphics/Path;
 
     invoke-virtual {v2}, Landroid/graphics/Path;->rewind()V
 
     const v2, 0x40d51eb8    # 6.66f
 
-    .line 715
+    .line 733
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
 
     move-result v2
@@ -1319,7 +1379,7 @@
 
     const-wide/high16 v13, 0x4000000000000000L    # 2.0
 
-    .line 718
+    .line 736
     invoke-static {v5, v6, v13, v14}, Ljava/lang/Math;->pow(DD)D
 
     move-result-wide v15
@@ -1342,7 +1402,7 @@
 
     const-wide/high16 v3, 0x4000000000000000L    # 2.0
 
-    .line 719
+    .line 737
     invoke-static {v7, v8, v3, v4}, Ljava/lang/Math;->pow(DD)D
 
     move-result-wide v15
@@ -1353,12 +1413,12 @@
 
     add-double/2addr v10, v15
 
-    .line 717
+    .line 735
     invoke-static {v13, v14, v10, v11}, Ljava/lang/Math;->max(DD)D
 
     move-result-wide v10
 
-    .line 722
+    .line 740
     invoke-static {v5, v6, v3, v4}, Ljava/lang/Math;->pow(DD)D
 
     move-result-wide v5
@@ -1373,7 +1433,7 @@
 
     add-double/2addr v5, v14
 
-    .line 723
+    .line 741
     invoke-static {v7, v8, v3, v4}, Ljava/lang/Math;->pow(DD)D
 
     move-result-wide v7
@@ -1384,12 +1444,12 @@
 
     add-double/2addr v7, v3
 
-    .line 721
+    .line 739
     invoke-static {v5, v6, v7, v8}, Ljava/lang/Math;->max(DD)D
 
     move-result-wide v3
 
-    .line 716
+    .line 734
     invoke-static {v10, v11, v3, v4}, Ljava/lang/Math;->max(DD)D
 
     move-result-wide v3
@@ -1400,7 +1460,7 @@
 
     double-to-float v3, v3
 
-    .line 726
+    .line 744
     iget-object v4, v0, Lorg/telegram/ui/Components/SuggestEmojiView;->circlePath:Landroid/graphics/Path;
 
     mul-float/2addr v3, v1
@@ -1409,10 +1469,10 @@
 
     invoke-virtual {v4, v9, v2, v3, v5}, Landroid/graphics/Path;->addCircle(FFFLandroid/graphics/Path$Direction;)V
 
-    .line 727
+    .line 745
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 728
+    .line 746
     iget-object v2, v0, Lorg/telegram/ui/Components/SuggestEmojiView;->circlePath:Landroid/graphics/Path;
 
     move-object/from16 v8, p1
@@ -1423,7 +1483,7 @@
 
     const/4 v3, 0x0
 
-    .line 729
+    .line 747
     invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->getWidth()I
 
     move-result v4
@@ -1448,7 +1508,7 @@
 
     invoke-virtual/range {v1 .. v7}, Landroid/graphics/Canvas;->saveLayerAlpha(FFFFII)I
 
-    .line 732
+    .line 750
     :cond_c
     iget-object v1, v0, Lorg/telegram/ui/Components/SuggestEmojiView;->path:Landroid/graphics/Path;
 
@@ -1456,10 +1516,10 @@
 
     invoke-virtual {v8, v1, v2}, Landroid/graphics/Canvas;->drawPath(Landroid/graphics/Path;Landroid/graphics/Paint;)V
 
-    .line 733
+    .line 751
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 734
+    .line 752
     iget-object v1, v0, Lorg/telegram/ui/Components/SuggestEmojiView;->path:Landroid/graphics/Path;
 
     invoke-virtual {v8, v1}, Landroid/graphics/Canvas;->clipPath(Landroid/graphics/Path;)Z
@@ -1551,20 +1611,20 @@
 .method private synthetic lambda$searchAnimated$5(ILjava/lang/String;Ljava/util/ArrayList;)V
     .locals 1
 
-    .line 498
+    .line 516
     iget v0, p0, Lorg/telegram/ui/Components/SuggestEmojiView;->lastQueryId:I
 
     if-ne p1, v0, :cond_2
 
-    .line 499
+    .line 517
     iput-object p2, p0, Lorg/telegram/ui/Components/SuggestEmojiView;->lastQuery:Ljava/lang/String;
 
     const/4 p1, 0x2
 
-    .line 500
+    .line 518
     iput p1, p0, Lorg/telegram/ui/Components/SuggestEmojiView;->lastQueryType:I
 
-    .line 501
+    .line 519
     invoke-virtual {p3}, Ljava/util/ArrayList;->size()I
 
     move-result p1
@@ -1575,7 +1635,7 @@
 
     invoke-virtual {p3, p1}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
 
-    .line 502
+    .line 520
     invoke-virtual {p3}, Ljava/util/ArrayList;->isEmpty()Z
 
     move-result p1
@@ -1584,47 +1644,47 @@
 
     const/4 p1, 0x0
 
-    .line 503
+    .line 521
     iput-boolean p1, p0, Lorg/telegram/ui/Components/SuggestEmojiView;->clear:Z
 
-    .line 504
+    .line 522
     iput-boolean p1, p0, Lorg/telegram/ui/Components/SuggestEmojiView;->forceClose:Z
 
-    .line 505
+    .line 523
     invoke-direct {p0}, Lorg/telegram/ui/Components/SuggestEmojiView;->createListView()V
 
-    .line 506
+    .line 524
     iget-object p2, p0, Lorg/telegram/ui/Components/SuggestEmojiView;->containerView:Landroid/widget/FrameLayout;
 
     if-eqz p2, :cond_0
 
-    .line 507
+    .line 525
     invoke-virtual {p2, p1}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 508
+    .line 526
     iget-object p1, p0, Lorg/telegram/ui/Components/SuggestEmojiView;->containerView:Landroid/widget/FrameLayout;
 
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->invalidate()V
 
-    .line 510
+    .line 528
     :cond_0
     iput-object p3, p0, Lorg/telegram/ui/Components/SuggestEmojiView;->keywordResults:Ljava/util/ArrayList;
 
-    .line 511
+    .line 529
     iget-object p1, p0, Lorg/telegram/ui/Components/SuggestEmojiView;->adapter:Lorg/telegram/ui/Components/SuggestEmojiView$Adapter;
 
     if-eqz p1, :cond_2
 
-    .line 512
+    .line 530
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyDataSetChanged()V
 
     goto :goto_0
 
-    .line 515
+    .line 533
     :cond_1
     iput-boolean p2, p0, Lorg/telegram/ui/Components/SuggestEmojiView;->clear:Z
 
-    .line 516
+    .line 534
     invoke-virtual {p0}, Lorg/telegram/ui/Components/SuggestEmojiView;->forceClose()V
 
     :cond_2
@@ -1635,14 +1695,14 @@
 .method private synthetic lambda$searchAnimated$6(Ljava/lang/String;I)V
     .locals 4
 
-    .line 495
+    .line 513
     new-instance v0, Ljava/util/ArrayList;
 
     const/4 v1, 0x1
 
     invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 496
+    .line 514
     new-instance v1, Lorg/telegram/messenger/MediaDataController$KeywordResult;
 
     const/4 v2, 0x0
@@ -1651,7 +1711,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 497
+    .line 515
     iget v1, p0, Lorg/telegram/ui/Components/SuggestEmojiView;->currentAccount:I
 
     invoke-static {v1}, Lorg/telegram/messenger/MediaDataController;->getInstance(I)Lorg/telegram/messenger/MediaDataController;
@@ -1678,22 +1738,22 @@
 .method private synthetic lambda$searchKeywords$3(ILjava/lang/String;Ljava/util/ArrayList;Ljava/lang/String;)V
     .locals 0
 
-    .line 441
+    .line 458
     iget p4, p0, Lorg/telegram/ui/Components/SuggestEmojiView;->lastQueryId:I
 
     if-ne p1, p4, :cond_3
 
     const/4 p1, 0x1
 
-    .line 442
+    .line 459
     iput p1, p0, Lorg/telegram/ui/Components/SuggestEmojiView;->lastQueryType:I
 
-    .line 443
+    .line 460
     iput-object p2, p0, Lorg/telegram/ui/Components/SuggestEmojiView;->lastQuery:Ljava/lang/String;
 
     if-eqz p3, :cond_2
 
-    .line 444
+    .line 461
     invoke-virtual {p3}, Ljava/util/ArrayList;->isEmpty()Z
 
     move-result p4
@@ -1702,27 +1762,27 @@
 
     const/4 p1, 0x0
 
-    .line 445
+    .line 462
     iput-boolean p1, p0, Lorg/telegram/ui/Components/SuggestEmojiView;->clear:Z
 
-    .line 446
+    .line 463
     iput-boolean p1, p0, Lorg/telegram/ui/Components/SuggestEmojiView;->forceClose:Z
 
-    .line 447
+    .line 464
     invoke-direct {p0}, Lorg/telegram/ui/Components/SuggestEmojiView;->createListView()V
 
-    .line 448
+    .line 465
     iget-object p4, p0, Lorg/telegram/ui/Components/SuggestEmojiView;->containerView:Landroid/widget/FrameLayout;
 
     if-eqz p4, :cond_0
 
-    .line 449
+    .line 466
     invoke-virtual {p4, p1}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
     :cond_0
     const/16 p4, 0xa
 
-    .line 451
+    .line 468
     invoke-static {p4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p4
@@ -1731,17 +1791,17 @@
 
     iput p4, p0, Lorg/telegram/ui/Components/SuggestEmojiView;->lastSpanY:F
 
-    .line 452
+    .line 469
     iput-object p3, p0, Lorg/telegram/ui/Components/SuggestEmojiView;->keywordResults:Ljava/util/ArrayList;
 
-    .line 453
+    .line 470
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object p1
 
     iput-object p1, p0, Lorg/telegram/ui/Components/SuggestEmojiView;->arrowToStart:Ljava/lang/Integer;
 
-    .line 454
+    .line 471
     invoke-virtual {p2}, Ljava/lang/String;->length()I
 
     move-result p1
@@ -1752,30 +1812,35 @@
 
     iput-object p1, p0, Lorg/telegram/ui/Components/SuggestEmojiView;->arrowToEnd:Ljava/lang/Integer;
 
-    .line 455
+    .line 472
     iget-object p1, p0, Lorg/telegram/ui/Components/SuggestEmojiView;->containerView:Landroid/widget/FrameLayout;
 
     if-eqz p1, :cond_1
 
-    .line 456
+    .line 473
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->invalidate()V
 
-    .line 458
+    .line 475
     :cond_1
     iget-object p1, p0, Lorg/telegram/ui/Components/SuggestEmojiView;->adapter:Lorg/telegram/ui/Components/SuggestEmojiView$Adapter;
 
     if-eqz p1, :cond_3
 
-    .line 459
+    .line 476
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyDataSetChanged()V
 
     goto :goto_0
 
-    .line 462
     :cond_2
+    const/4 p2, 0x0
+
+    .line 479
+    iput-object p2, p0, Lorg/telegram/ui/Components/SuggestEmojiView;->keywordResults:Ljava/util/ArrayList;
+
+    .line 480
     iput-boolean p1, p0, Lorg/telegram/ui/Components/SuggestEmojiView;->clear:Z
 
-    .line 463
+    .line 481
     invoke-virtual {p0}, Lorg/telegram/ui/Components/SuggestEmojiView;->forceClose()V
 
     :cond_3
@@ -1786,7 +1851,7 @@
 .method private synthetic lambda$searchKeywords$4([Ljava/lang/String;Ljava/lang/String;I)V
     .locals 7
 
-    .line 440
+    .line 457
     iget v0, p0, Lorg/telegram/ui/Components/SuggestEmojiView;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/MediaDataController;->getInstance(I)Lorg/telegram/messenger/MediaDataController;
@@ -1813,7 +1878,7 @@
 .method private makeEmoji(Ljava/lang/String;)Ljava/lang/CharSequence;
     .locals 6
 
-    .line 530
+    .line 548
     iget-object v0, p0, Lorg/telegram/ui/Components/SuggestEmojiView;->enterView:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/ChatActivityEnterView;->getEditField()Lorg/telegram/ui/Components/EditTextCaption;
@@ -1824,7 +1889,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 531
+    .line 549
     iget-object v0, p0, Lorg/telegram/ui/Components/SuggestEmojiView;->enterView:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/ChatActivityEnterView;->getEditField()Lorg/telegram/ui/Components/EditTextCaption;
@@ -1847,14 +1912,14 @@
     :goto_0
     if-nez v0, :cond_1
 
-    .line 534
+    .line 552
     new-instance v0, Landroid/graphics/Paint;
 
     invoke-direct {v0}, Landroid/graphics/Paint;-><init>()V
 
     const/16 v2, 0x12
 
-    .line 535
+    .line 553
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
@@ -1863,7 +1928,7 @@
 
     invoke-virtual {v0, v2}, Landroid/graphics/Paint;->setTextSize(F)V
 
-    .line 536
+    .line 554
     invoke-virtual {v0}, Landroid/graphics/Paint;->getFontMetricsInt()Landroid/graphics/Paint$FontMetricsInt;
 
     move-result-object v0
@@ -1873,7 +1938,7 @@
 
     const-string v2, "animated_"
 
-    .line 539
+    .line 557
     invoke-virtual {p1, v2}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v2
@@ -1882,7 +1947,7 @@
 
     const/16 v2, 0x9
 
-    .line 541
+    .line 559
     :try_start_0
     invoke-virtual {p1, v2}, Ljava/lang/String;->substring(I)Ljava/lang/String;
 
@@ -1892,14 +1957,14 @@
 
     move-result-wide v2
 
-    .line 542
+    .line 560
     iget p1, p0, Lorg/telegram/ui/Components/SuggestEmojiView;->currentAccount:I
 
     invoke-static {p1, v2, v3}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable;->findDocument(IJ)Lorg/telegram/tgnet/TLRPC$Document;
 
     move-result-object p1
 
-    .line 543
+    .line 561
     new-instance v4, Landroid/text/SpannableString;
 
     invoke-static {p1}, Lorg/telegram/messenger/MessageObject;->findAnimatedEmojiEmoticon(Lorg/telegram/tgnet/TLRPC$Document;)Ljava/lang/String;
@@ -1910,14 +1975,14 @@
 
     if-nez p1, :cond_2
 
-    .line 546
+    .line 564
     new-instance p1, Lorg/telegram/ui/Components/AnimatedEmojiSpan;
 
     invoke-direct {p1, v2, v3, v0}, Lorg/telegram/ui/Components/AnimatedEmojiSpan;-><init>(JLandroid/graphics/Paint$FontMetricsInt;)V
 
     goto :goto_1
 
-    .line 548
+    .line 566
     :cond_2
     new-instance v2, Lorg/telegram/ui/Components/AnimatedEmojiSpan;
 
@@ -1928,7 +1993,7 @@
     :goto_1
     const/4 v0, 0x0
 
-    .line 550
+    .line 568
     invoke-interface {v4}, Ljava/lang/CharSequence;->length()I
 
     move-result v2
@@ -1947,7 +2012,7 @@
     :cond_3
     const/16 v1, 0x14
 
-    .line 556
+    .line 574
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
@@ -1965,7 +2030,7 @@
 .method private onClick(Ljava/lang/String;)V
     .locals 10
 
-    .line 562
+    .line 580
     iget-boolean v0, p0, Lorg/telegram/ui/Components/SuggestEmojiView;->show:Z
 
     if-eqz v0, :cond_8
@@ -1984,7 +2049,7 @@
 
     goto/16 :goto_4
 
-    .line 566
+    .line 584
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/SuggestEmojiView;->arrowToSpan:Lorg/telegram/messenger/Emoji$EmojiSpan;
 
@@ -1992,7 +2057,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 567
+    .line 585
     iget-object v0, p0, Lorg/telegram/ui/Components/SuggestEmojiView;->enterView:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/ChatActivityEnterView;->getFieldText()Ljava/lang/CharSequence;
@@ -2007,7 +2072,7 @@
 
     move-result v0
 
-    .line 568
+    .line 586
     iget-object v2, p0, Lorg/telegram/ui/Components/SuggestEmojiView;->enterView:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
     invoke-virtual {v2}, Lorg/telegram/ui/Components/ChatActivityEnterView;->getFieldText()Ljava/lang/CharSequence;
@@ -2024,7 +2089,7 @@
 
     goto :goto_0
 
-    .line 569
+    .line 587
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/Components/SuggestEmojiView;->arrowToStart:Ljava/lang/Integer;
 
@@ -2034,24 +2099,24 @@
 
     if-eqz v2, :cond_8
 
-    .line 570
+    .line 588
     invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
 
     move-result v0
 
-    .line 571
+    .line 589
     iget-object v2, p0, Lorg/telegram/ui/Components/SuggestEmojiView;->arrowToEnd:Ljava/lang/Integer;
 
     invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
 
     move-result v2
 
-    .line 572
+    .line 590
     iput-object v1, p0, Lorg/telegram/ui/Components/SuggestEmojiView;->arrowToEnd:Ljava/lang/Integer;
 
     iput-object v1, p0, Lorg/telegram/ui/Components/SuggestEmojiView;->arrowToStart:Ljava/lang/Integer;
 
-    .line 576
+    .line 594
     :goto_0
     iget-object v3, p0, Lorg/telegram/ui/Components/SuggestEmojiView;->enterView:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
@@ -2065,7 +2130,7 @@
 
     if-ltz v2, :cond_8
 
-    .line 577
+    .line 595
     invoke-interface {v3}, Landroid/text/Editable;->length()I
 
     move-result v4
@@ -2080,13 +2145,13 @@
 
     goto/16 :goto_4
 
-    .line 580
+    .line 598
     :cond_2
     iget-object v4, p0, Lorg/telegram/ui/Components/SuggestEmojiView;->arrowToSpan:Lorg/telegram/messenger/Emoji$EmojiSpan;
 
     if-eqz v4, :cond_4
 
-    .line 581
+    .line 599
     iget-object v4, p0, Lorg/telegram/ui/Components/SuggestEmojiView;->enterView:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
     invoke-virtual {v4}, Lorg/telegram/ui/Components/ChatActivityEnterView;->getFieldText()Ljava/lang/CharSequence;
@@ -2097,7 +2162,7 @@
 
     if-eqz v4, :cond_3
 
-    .line 582
+    .line 600
     iget-object v4, p0, Lorg/telegram/ui/Components/SuggestEmojiView;->enterView:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
     invoke-virtual {v4}, Lorg/telegram/ui/Components/ChatActivityEnterView;->getFieldText()Ljava/lang/CharSequence;
@@ -2110,22 +2175,22 @@
 
     invoke-interface {v4, v5}, Landroid/text/Spannable;->removeSpan(Ljava/lang/Object;)V
 
-    .line 584
+    .line 602
     :cond_3
     iput-object v1, p0, Lorg/telegram/ui/Components/SuggestEmojiView;->arrowToSpan:Lorg/telegram/messenger/Emoji$EmojiSpan;
 
-    .line 586
+    .line 604
     :cond_4
     invoke-virtual {v3}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
     move-result-object v1
 
-    .line 587
+    .line 605
     invoke-virtual {v1, v0, v2}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 588
+    .line 606
     invoke-virtual {v0}, Ljava/lang/String;->length()I
 
     move-result v4
@@ -2139,7 +2204,7 @@
 
     add-int v6, v2, v4
 
-    .line 590
+    .line 608
     invoke-virtual {v1, v2, v6}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
     move-result-object v7
@@ -2150,14 +2215,14 @@
 
     if-eqz v7, :cond_7
 
-    .line 591
+    .line 609
     invoke-direct {p0, p1}, Lorg/telegram/ui/Components/SuggestEmojiView;->makeEmoji(Ljava/lang/String;)Ljava/lang/CharSequence;
 
     move-result-object v7
 
     if-eqz v7, :cond_7
 
-    .line 593
+    .line 611
     const-class v8, Lorg/telegram/ui/Components/AnimatedEmojiSpan;
 
     invoke-interface {v3, v2, v6, v8}, Landroid/text/Editable;->getSpans(IILjava/lang/Class;)[Ljava/lang/Object;
@@ -2168,14 +2233,14 @@
 
     if-eqz v8, :cond_5
 
-    .line 594
+    .line 612
     array-length v8, v8
 
     if-lez v8, :cond_5
 
     goto :goto_3
 
-    .line 597
+    .line 615
     :cond_5
     const-class v8, Lorg/telegram/messenger/Emoji$EmojiSpan;
 
@@ -2187,13 +2252,13 @@
 
     if-eqz v8, :cond_6
 
-    .line 599
+    .line 617
     :goto_2
     array-length v9, v8
 
     if-ge v5, v9, :cond_6
 
-    .line 600
+    .line 618
     aget-object v9, v8, v5
 
     invoke-interface {v3, v9}, Landroid/text/Editable;->removeSpan(Ljava/lang/Object;)V
@@ -2202,7 +2267,7 @@
 
     goto :goto_2
 
-    .line 603
+    .line 621
     :cond_6
     invoke-interface {v3, v2, v6, v7}, Landroid/text/Editable;->replace(IILjava/lang/CharSequence;)Landroid/text/Editable;
 
@@ -2214,31 +2279,31 @@
 
     const/4 v1, 0x1
 
-    .line 612
+    .line 630
     :try_start_0
     invoke-virtual {p0, v0, v1}, Landroid/widget/FrameLayout;->performHapticFeedback(II)Z
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 614
+    .line 632
     :catch_0
     invoke-static {p1}, Lorg/telegram/messenger/Emoji;->addRecentEmoji(Ljava/lang/String;)V
 
-    .line 615
+    .line 633
     iput-boolean v5, p0, Lorg/telegram/ui/Components/SuggestEmojiView;->show:Z
 
-    .line 616
+    .line 634
     iput-boolean v1, p0, Lorg/telegram/ui/Components/SuggestEmojiView;->forceClose:Z
 
-    .line 617
+    .line 635
     iput v5, p0, Lorg/telegram/ui/Components/SuggestEmojiView;->lastQueryType:I
 
-    .line 618
+    .line 636
     iget-object p1, p0, Lorg/telegram/ui/Components/SuggestEmojiView;->containerView:Landroid/widget/FrameLayout;
 
     if-eqz p1, :cond_8
 
-    .line 619
+    .line 637
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->invalidate()V
 
     :cond_8
@@ -2253,7 +2318,7 @@
 
     return-void
 
-    .line 479
+    .line 497
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/SuggestEmojiView;->lastQuery:Ljava/lang/String;
 
@@ -2287,21 +2352,21 @@
 
     const/4 p1, 0x0
 
-    .line 480
+    .line 498
     iput-boolean p1, p0, Lorg/telegram/ui/Components/SuggestEmojiView;->forceClose:Z
 
-    .line 481
+    .line 499
     invoke-direct {p0}, Lorg/telegram/ui/Components/SuggestEmojiView;->createListView()V
 
-    .line 482
+    .line 500
     iget-object v0, p0, Lorg/telegram/ui/Components/SuggestEmojiView;->containerView:Landroid/widget/FrameLayout;
 
     if-eqz v0, :cond_1
 
-    .line 483
+    .line 501
     invoke-virtual {v0, p1}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 484
+    .line 502
     iget-object p1, p0, Lorg/telegram/ui/Components/SuggestEmojiView;->containerView:Landroid/widget/FrameLayout;
 
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->invalidate()V
@@ -2309,7 +2374,7 @@
     :cond_1
     return-void
 
-    .line 488
+    .line 506
     :cond_2
     iget v0, p0, Lorg/telegram/ui/Components/SuggestEmojiView;->lastQueryId:I
 
@@ -2317,15 +2382,15 @@
 
     iput v0, p0, Lorg/telegram/ui/Components/SuggestEmojiView;->lastQueryId:I
 
-    .line 490
+    .line 508
     iget-object v1, p0, Lorg/telegram/ui/Components/SuggestEmojiView;->searchRunnable:Ljava/lang/Runnable;
 
     if-eqz v1, :cond_3
 
-    .line 491
+    .line 509
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->cancelRunOnUIThread(Ljava/lang/Runnable;)V
 
-    .line 494
+    .line 512
     :cond_3
     new-instance v1, Lorg/telegram/ui/Components/SuggestEmojiView$$ExternalSyntheticLambda4;
 
@@ -2333,7 +2398,7 @@
 
     iput-object v1, p0, Lorg/telegram/ui/Components/SuggestEmojiView;->searchRunnable:Ljava/lang/Runnable;
 
-    .line 521
+    .line 539
     iget-object p1, p0, Lorg/telegram/ui/Components/SuggestEmojiView;->keywordResults:Ljava/util/ArrayList;
 
     if-eqz p1, :cond_5
@@ -2346,7 +2411,7 @@
 
     goto :goto_0
 
-    .line 524
+    .line 542
     :cond_4
     iget-object p1, p0, Lorg/telegram/ui/Components/SuggestEmojiView;->searchRunnable:Ljava/lang/Runnable;
 
@@ -2354,7 +2419,7 @@
 
     goto :goto_1
 
-    .line 522
+    .line 540
     :cond_5
     :goto_0
     iget-object p1, p0, Lorg/telegram/ui/Components/SuggestEmojiView;->searchRunnable:Ljava/lang/Runnable;
@@ -2374,7 +2439,7 @@
 
     return-void
 
-    .line 419
+    .line 436
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/SuggestEmojiView;->lastQuery:Ljava/lang/String;
 
@@ -2408,20 +2473,20 @@
 
     const/4 p1, 0x0
 
-    .line 420
+    .line 437
     iput-boolean p1, p0, Lorg/telegram/ui/Components/SuggestEmojiView;->forceClose:Z
 
-    .line 421
+    .line 438
     invoke-direct {p0}, Lorg/telegram/ui/Components/SuggestEmojiView;->createListView()V
 
-    .line 422
+    .line 439
     iget-object v0, p0, Lorg/telegram/ui/Components/SuggestEmojiView;->containerView:Landroid/widget/FrameLayout;
 
     invoke-virtual {v0, p1}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
     const/16 p1, 0xa
 
-    .line 423
+    .line 440
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p1
@@ -2430,14 +2495,14 @@
 
     iput p1, p0, Lorg/telegram/ui/Components/SuggestEmojiView;->lastSpanY:F
 
-    .line 424
+    .line 441
     iget-object p1, p0, Lorg/telegram/ui/Components/SuggestEmojiView;->containerView:Landroid/widget/FrameLayout;
 
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->invalidate()V
 
     return-void
 
-    .line 427
+    .line 444
     :cond_1
     iget v0, p0, Lorg/telegram/ui/Components/SuggestEmojiView;->lastQueryId:I
 
@@ -2445,12 +2510,12 @@
 
     iput v0, p0, Lorg/telegram/ui/Components/SuggestEmojiView;->lastQueryId:I
 
-    .line 429
-    invoke-static {}, Lorg/telegram/messenger/AndroidUtilities;->getCurrentKeyboardLanguage()[Ljava/lang/String;
+    .line 446
+    invoke-direct {p0}, Lorg/telegram/ui/Components/SuggestEmojiView;->detectKeyboardLangThrottleFirstWithDelay()[Ljava/lang/String;
 
     move-result-object v1
 
-    .line 430
+    .line 447
     iget-object v2, p0, Lorg/telegram/ui/Components/SuggestEmojiView;->lastLang:[Ljava/lang/String;
 
     if-eqz v2, :cond_2
@@ -2461,7 +2526,7 @@
 
     if-nez v2, :cond_3
 
-    .line 431
+    .line 448
     :cond_2
     iget v2, p0, Lorg/telegram/ui/Components/SuggestEmojiView;->currentAccount:I
 
@@ -2471,24 +2536,24 @@
 
     invoke-virtual {v2, v1}, Lorg/telegram/messenger/MediaDataController;->fetchNewEmojiKeywords([Ljava/lang/String;)V
 
-    .line 433
+    .line 450
     :cond_3
     iput-object v1, p0, Lorg/telegram/ui/Components/SuggestEmojiView;->lastLang:[Ljava/lang/String;
 
-    .line 435
+    .line 452
     iget-object v2, p0, Lorg/telegram/ui/Components/SuggestEmojiView;->searchRunnable:Ljava/lang/Runnable;
 
     if-eqz v2, :cond_4
 
-    .line 436
+    .line 453
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->cancelRunOnUIThread(Ljava/lang/Runnable;)V
 
     const/4 v2, 0x0
 
-    .line 437
+    .line 454
     iput-object v2, p0, Lorg/telegram/ui/Components/SuggestEmojiView;->searchRunnable:Ljava/lang/Runnable;
 
-    .line 439
+    .line 456
     :cond_4
     new-instance v2, Lorg/telegram/ui/Components/SuggestEmojiView$$ExternalSyntheticLambda5;
 
@@ -2496,7 +2561,7 @@
 
     iput-object v2, p0, Lorg/telegram/ui/Components/SuggestEmojiView;->searchRunnable:Ljava/lang/Runnable;
 
-    .line 468
+    .line 486
     iget-object p1, p0, Lorg/telegram/ui/Components/SuggestEmojiView;->keywordResults:Ljava/util/ArrayList;
 
     if-eqz p1, :cond_6
@@ -2509,7 +2574,7 @@
 
     goto :goto_0
 
-    .line 471
+    .line 489
     :cond_5
     iget-object p1, p0, Lorg/telegram/ui/Components/SuggestEmojiView;->searchRunnable:Ljava/lang/Runnable;
 
@@ -2517,7 +2582,7 @@
 
     goto :goto_1
 
-    .line 469
+    .line 487
     :cond_6
     :goto_0
     iget-object p1, p0, Lorg/telegram/ui/Components/SuggestEmojiView;->searchRunnable:Ljava/lang/Runnable;
@@ -2845,12 +2910,12 @@
 .method public varargs didReceivedNotification(II[Ljava/lang/Object;)V
     .locals 0
 
-    .line 814
+    .line 832
     sget p2, Lorg/telegram/messenger/NotificationCenter;->newEmojiSuggestionsAvailable:I
 
     if-ne p1, p2, :cond_0
 
-    .line 815
+    .line 833
     iget-object p1, p0, Lorg/telegram/ui/Components/SuggestEmojiView;->keywordResults:Ljava/util/ArrayList;
 
     if-eqz p1, :cond_1
@@ -2861,25 +2926,25 @@
 
     if-nez p1, :cond_1
 
-    .line 816
+    .line 834
     invoke-virtual {p0}, Lorg/telegram/ui/Components/SuggestEmojiView;->fireUpdate()V
 
     goto :goto_1
 
-    .line 818
+    .line 836
     :cond_0
     sget p2, Lorg/telegram/messenger/NotificationCenter;->emojiLoaded:I
 
     if-ne p1, p2, :cond_1
 
-    .line 819
+    .line 837
     iget-object p1, p0, Lorg/telegram/ui/Components/SuggestEmojiView;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     if-eqz p1, :cond_1
 
     const/4 p1, 0x0
 
-    .line 820
+    .line 838
     :goto_0
     iget-object p2, p0, Lorg/telegram/ui/Components/SuggestEmojiView;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
@@ -2889,7 +2954,7 @@
 
     if-ge p1, p2, :cond_1
 
-    .line 821
+    .line 839
     iget-object p2, p0, Lorg/telegram/ui/Components/SuggestEmojiView;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {p2, p1}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
@@ -2910,19 +2975,19 @@
 .method public dispatchTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 6
 
-    .line 769
+    .line 787
     iget-object v0, p0, Lorg/telegram/ui/Components/SuggestEmojiView;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     if-nez v0, :cond_0
 
-    .line 770
+    .line 788
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->dispatchTouchEvent(Landroid/view/MotionEvent;)Z
 
     move-result p1
 
     return p1
 
-    .line 773
+    .line 791
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/SuggestEmojiView;->listViewWidthAnimated:Lorg/telegram/ui/Components/AnimatedFloat;
 
@@ -2930,14 +2995,14 @@
 
     move-result v0
 
-    .line 774
+    .line 792
     iget-object v1, p0, Lorg/telegram/ui/Components/SuggestEmojiView;->listViewCenterAnimated:Lorg/telegram/ui/Components/AnimatedFloat;
 
     invoke-virtual {v1}, Lorg/telegram/ui/Components/AnimatedFloat;->get()F
 
     move-result v1
 
-    .line 776
+    .line 794
     sget-object v2, Lorg/telegram/messenger/AndroidUtilities;->rectTmp:Landroid/graphics/RectF;
 
     const/high16 v3, 0x40000000    # 2.0f
@@ -2948,7 +3013,7 @@
 
     iget-object v4, p0, Lorg/telegram/ui/Components/SuggestEmojiView;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
-    .line 777
+    .line 795
     invoke-virtual {v4}, Landroid/view/ViewGroup;->getPaddingLeft()I
 
     move-result v4
@@ -2967,7 +3032,7 @@
 
     iget-object v4, p0, Lorg/telegram/ui/Components/SuggestEmojiView;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
-    .line 778
+    .line 796
     invoke-virtual {v4}, Landroid/view/ViewGroup;->getTop()I
 
     move-result v4
@@ -2986,7 +3051,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/Components/SuggestEmojiView;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
-    .line 779
+    .line 797
     invoke-virtual {v0}, Landroid/view/ViewGroup;->getPaddingLeft()I
 
     move-result v0
@@ -3023,17 +3088,17 @@
 
     iget-object v1, p0, Lorg/telegram/ui/Components/SuggestEmojiView;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
-    .line 780
+    .line 798
     invoke-virtual {v1}, Landroid/view/ViewGroup;->getBottom()I
 
     move-result v1
 
     int-to-float v1, v1
 
-    .line 776
+    .line 794
     invoke-virtual {v2, v3, v4, v0, v1}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 782
+    .line 800
     iget-object v0, p0, Lorg/telegram/ui/Components/SuggestEmojiView;->containerView:Landroid/widget/FrameLayout;
 
     invoke-virtual {v0}, Landroid/widget/FrameLayout;->getX()F
@@ -3048,7 +3113,7 @@
 
     invoke-virtual {v2, v0, v1}, Landroid/graphics/RectF;->offset(FF)V
 
-    .line 784
+    .line 802
     iget-boolean v0, p0, Lorg/telegram/ui/Components/SuggestEmojiView;->show:Z
 
     if-eqz v0, :cond_1
@@ -3067,14 +3132,14 @@
 
     if-eqz v0, :cond_1
 
-    .line 785
+    .line 803
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->dispatchTouchEvent(Landroid/view/MotionEvent;)Z
 
     move-result p1
 
     return p1
 
-    .line 787
+    .line 805
     :cond_1
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
@@ -3086,7 +3151,7 @@
 
     return p1
 
-    .line 790
+    .line 808
     :cond_2
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
@@ -3096,10 +3161,10 @@
 
     const/4 v0, 0x3
 
-    .line 791
+    .line 809
     invoke-virtual {p1, v0}, Landroid/view/MotionEvent;->setAction(I)V
 
-    .line 793
+    .line 811
     :cond_3
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->dispatchTouchEvent(Landroid/view/MotionEvent;)Z
 
@@ -3111,14 +3176,14 @@
 .method public drawContainerEnd(Landroid/graphics/Canvas;)V
     .locals 13
 
-    .line 738
+    .line 756
     iget-object v0, p0, Lorg/telegram/ui/Components/SuggestEmojiView;->listViewWidthAnimated:Lorg/telegram/ui/Components/AnimatedFloat;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/AnimatedFloat;->get()F
 
     move-result v0
 
-    .line 739
+    .line 757
     iget-object v1, p0, Lorg/telegram/ui/Components/SuggestEmojiView;->listViewCenterAnimated:Lorg/telegram/ui/Components/AnimatedFloat;
 
     invoke-virtual {v1}, Lorg/telegram/ui/Components/AnimatedFloat;->get()F
@@ -3131,7 +3196,7 @@
 
     sub-float v2, v1, v0
 
-    .line 741
+    .line 759
     iget-object v3, p0, Lorg/telegram/ui/Components/SuggestEmojiView;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v3}, Landroid/view/ViewGroup;->getPaddingLeft()I
@@ -3150,7 +3215,7 @@
 
     add-float/2addr v2, v3
 
-    .line 742
+    .line 760
     iget-object v3, p0, Lorg/telegram/ui/Components/SuggestEmojiView;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v3}, Landroid/view/ViewGroup;->getTop()I
@@ -3169,7 +3234,7 @@
 
     add-float/2addr v1, v0
 
-    .line 743
+    .line 761
     iget-object v0, p0, Lorg/telegram/ui/Components/SuggestEmojiView;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v0}, Landroid/view/ViewGroup;->getPaddingLeft()I
@@ -3206,7 +3271,7 @@
 
     move-result v0
 
-    .line 744
+    .line 762
     iget-object v1, p0, Lorg/telegram/ui/Components/SuggestEmojiView;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v1}, Landroid/view/ViewGroup;->getBottom()I
@@ -3215,7 +3280,7 @@
 
     int-to-float v1, v1
 
-    .line 746
+    .line 764
     iget-object v4, p0, Lorg/telegram/ui/Components/SuggestEmojiView;->leftGradientAlpha:Lorg/telegram/ui/Components/AnimatedFloat;
 
     iget-object v5, p0, Lorg/telegram/ui/Components/SuggestEmojiView;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -3252,7 +3317,7 @@
 
     if-lez v5, :cond_1
 
-    .line 748
+    .line 766
     sget-object v5, Lorg/telegram/ui/ActionBar/Theme;->chat_gradientRightDrawable:Landroid/graphics/drawable/Drawable;
 
     float-to-int v2, v2
@@ -3269,7 +3334,7 @@
 
     invoke-virtual {v5, v2, v10, v11, v12}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 749
+    .line 767
     sget-object v2, Lorg/telegram/ui/ActionBar/Theme;->chat_gradientRightDrawable:Landroid/graphics/drawable/Drawable;
 
     mul-float/2addr v4, v8
@@ -3278,12 +3343,12 @@
 
     invoke-virtual {v2, v4}, Landroid/graphics/drawable/Drawable;->setAlpha(I)V
 
-    .line 750
+    .line 768
     sget-object v2, Lorg/telegram/ui/ActionBar/Theme;->chat_gradientRightDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v2, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 753
+    .line 771
     :cond_1
     iget-object v2, p0, Lorg/telegram/ui/Components/SuggestEmojiView;->rightGradientAlpha:Lorg/telegram/ui/Components/AnimatedFloat;
 
@@ -3313,7 +3378,7 @@
 
     if-lez v4, :cond_3
 
-    .line 755
+    .line 773
     sget-object v4, Lorg/telegram/ui/ActionBar/Theme;->chat_gradientLeftDrawable:Landroid/graphics/drawable/Drawable;
 
     float-to-int v0, v0
@@ -3330,7 +3395,7 @@
 
     invoke-virtual {v4, v5, v3, v0, v1}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 756
+    .line 774
     sget-object v0, Lorg/telegram/ui/ActionBar/Theme;->chat_gradientLeftDrawable:Landroid/graphics/drawable/Drawable;
 
     mul-float/2addr v2, v8
@@ -3339,16 +3404,16 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/drawable/Drawable;->setAlpha(I)V
 
-    .line 757
+    .line 775
     sget-object v0, Lorg/telegram/ui/ActionBar/Theme;->chat_gradientLeftDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 760
+    .line 778
     :cond_3
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 761
+    .line 779
     iget-object v0, p0, Lorg/telegram/ui/Components/SuggestEmojiView;->showFloat1:Lorg/telegram/ui/Components/AnimatedFloat;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/AnimatedFloat;->get()F
@@ -3359,10 +3424,10 @@
 
     if-gez v0, :cond_4
 
-    .line 762
+    .line 780
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 763
+    .line 781
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
     :cond_4
@@ -3446,10 +3511,10 @@
 .method protected onAttachedToWindow()V
     .locals 2
 
-    .line 800
+    .line 818
     invoke-super {p0}, Landroid/widget/FrameLayout;->onAttachedToWindow()V
 
-    .line 801
+    .line 819
     invoke-static {}, Lorg/telegram/messenger/NotificationCenter;->getGlobalInstance()Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object v0
@@ -3458,7 +3523,7 @@
 
     invoke-virtual {v0, p0, v1}, Lorg/telegram/messenger/NotificationCenter;->addObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
 
-    .line 802
+    .line 820
     iget v0, p0, Lorg/telegram/ui/Components/SuggestEmojiView;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
@@ -3475,10 +3540,10 @@
 .method protected onDetachedFromWindow()V
     .locals 2
 
-    .line 807
+    .line 825
     invoke-super {p0}, Landroid/widget/FrameLayout;->onDetachedFromWindow()V
 
-    .line 808
+    .line 826
     invoke-static {}, Lorg/telegram/messenger/NotificationCenter;->getGlobalInstance()Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object v0
@@ -3487,7 +3552,7 @@
 
     invoke-virtual {v0, p0, v1}, Lorg/telegram/messenger/NotificationCenter;->removeObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
 
-    .line 809
+    .line 827
     iget v0, p0, Lorg/telegram/ui/Components/SuggestEmojiView;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;

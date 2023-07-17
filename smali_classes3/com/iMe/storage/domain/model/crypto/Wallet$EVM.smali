@@ -1,5 +1,5 @@
 .class public final Lcom/iMe/storage/domain/model/crypto/Wallet$EVM;
-.super Lcom/iMe/storage/domain/model/crypto/Wallet;
+.super Lcom/iMe/storage/domain/model/crypto/Wallet$MultiCoinWallet;
 .source "Wallet.kt"
 
 
@@ -15,18 +15,16 @@
 
 
 # instance fields
-.field private final address:Ljava/lang/String;
-
 .field private final guid:Ljava/lang/String;
 
 .field private final hdWallet:Lwallet/core/jni/HDWallet;
 
-.field private final privateKeyBytes:[B
+.field private final publicKey:Ljava/lang/String;
 
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;Lwallet/core/jni/HDWallet;)V
-    .locals 3
+    .locals 7
 
     const-string v0, "guid"
 
@@ -36,48 +34,64 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 27
-    invoke-virtual {p2}, Lwallet/core/jni/HDWallet;->mnemonic()Ljava/lang/String;
+    .line 48
+    sget-object v4, Lcom/iMe/storage/domain/model/crypto/BlockchainType;->EVM:Lcom/iMe/storage/domain/model/crypto/BlockchainType;
 
-    move-result-object v0
+    .line 49
+    sget-object v5, Lwallet/core/jni/CoinType;->ETHEREUM:Lwallet/core/jni/CoinType;
 
-    const-string v1, "hdWallet.mnemonic()"
+    const/4 v6, 0x0
 
-    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    move-object v1, p0
 
-    .line 28
-    sget-object v1, Lcom/iMe/storage/domain/model/crypto/BlockchainType;->EVM:Lcom/iMe/storage/domain/model/crypto/BlockchainType;
+    move-object v2, p2
 
-    const/4 v2, 0x0
+    move-object v3, p1
 
-    .line 25
-    invoke-direct {p0, p1, v0, v1, v2}, Lcom/iMe/storage/domain/model/crypto/Wallet;-><init>(Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/domain/model/crypto/BlockchainType;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
+    .line 45
+    invoke-direct/range {v1 .. v6}, Lcom/iMe/storage/domain/model/crypto/Wallet$MultiCoinWallet;-><init>(Lwallet/core/jni/HDWallet;Ljava/lang/String;Lcom/iMe/storage/domain/model/crypto/BlockchainType;Lwallet/core/jni/CoinType;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
 
-    .line 23
+    .line 43
     iput-object p1, p0, Lcom/iMe/storage/domain/model/crypto/Wallet$EVM;->guid:Ljava/lang/String;
 
-    .line 24
+    .line 44
     iput-object p2, p0, Lcom/iMe/storage/domain/model/crypto/Wallet$EVM;->hdWallet:Lwallet/core/jni/HDWallet;
 
-    .line 31
-    sget-object p1, Lwallet/core/jni/CoinType;->ETHEREUM:Lwallet/core/jni/CoinType;
-
-    invoke-virtual {p2, p1}, Lwallet/core/jni/HDWallet;->getAddressForCoin(Lwallet/core/jni/CoinType;)Ljava/lang/String;
-
-    move-result-object v0
-
-    const-string v1, "hdWallet.getAddressForCoin(CoinType.ETHEREUM)"
-
-    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    iput-object v0, p0, Lcom/iMe/storage/domain/model/crypto/Wallet$EVM;->address:Ljava/lang/String;
-
-    .line 33
-    invoke-static {p2, p1}, Lcom/iMe/storage/domain/utils/extentions/CryptoExtKt;->getPrivateKeyBytes(Lwallet/core/jni/HDWallet;Lwallet/core/jni/CoinType;)[B
+    .line 54
+    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/crypto/Wallet$MultiCoinWallet;->getCoinType()Lwallet/core/jni/CoinType;
 
     move-result-object p1
 
-    iput-object p1, p0, Lcom/iMe/storage/domain/model/crypto/Wallet$EVM;->privateKeyBytes:[B
+    invoke-virtual {p2, p1}, Lwallet/core/jni/HDWallet;->getKeyForCoin(Lwallet/core/jni/CoinType;)Lwallet/core/jni/PrivateKey;
+
+    move-result-object p1
+
+    const/4 p2, 0x1
+
+    .line 55
+    invoke-virtual {p1, p2}, Lwallet/core/jni/PrivateKey;->getPublicKeySecp256k1(Z)Lwallet/core/jni/PublicKey;
+
+    move-result-object p1
+
+    .line 56
+    invoke-virtual {p1}, Lwallet/core/jni/PublicKey;->data()[B
+
+    move-result-object p1
+
+    const-string v0, "hdWallet\n               \u2026                  .data()"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const/4 v0, 0x0
+
+    const/4 v1, 0x0
+
+    .line 57
+    invoke-static {p1, v0, p2, v1}, Lcom/iMe/storage/domain/utils/extentions/CryptoExtKt;->toHexString$default([BZILjava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lcom/iMe/storage/domain/model/crypto/Wallet$EVM;->publicKey:Ljava/lang/String;
 
     return-void
 .end method
@@ -200,19 +214,10 @@
     return v0
 .end method
 
-.method public getAddress()Ljava/lang/String;
-    .locals 1
-
-    .line 31
-    iget-object v0, p0, Lcom/iMe/storage/domain/model/crypto/Wallet$EVM;->address:Ljava/lang/String;
-
-    return-object v0
-.end method
-
 .method public getGuid()Ljava/lang/String;
     .locals 1
 
-    .line 23
+    .line 43
     iget-object v0, p0, Lcom/iMe/storage/domain/model/crypto/Wallet$EVM;->guid:Ljava/lang/String;
 
     return-object v0
@@ -221,17 +226,17 @@
 .method public final getHdWallet()Lwallet/core/jni/HDWallet;
     .locals 1
 
-    .line 24
+    .line 44
     iget-object v0, p0, Lcom/iMe/storage/domain/model/crypto/Wallet$EVM;->hdWallet:Lwallet/core/jni/HDWallet;
 
     return-object v0
 .end method
 
-.method public getPrivateKeyBytes()[B
+.method public getPublicKey()Ljava/lang/String;
     .locals 1
 
-    .line 33
-    iget-object v0, p0, Lcom/iMe/storage/domain/model/crypto/Wallet$EVM;->privateKeyBytes:[B
+    .line 52
+    iget-object v0, p0, Lcom/iMe/storage/domain/model/crypto/Wallet$EVM;->publicKey:Ljava/lang/String;
 
     return-object v0
 .end method

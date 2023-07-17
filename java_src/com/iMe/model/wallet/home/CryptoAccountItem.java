@@ -1,7 +1,7 @@
 package com.iMe.model.wallet.home;
 
 import com.iMe.model.common.NoChildNode;
-import com.iMe.storage.domain.model.crypto.NetworkType;
+import com.iMe.storage.domain.model.crypto.Network;
 import java.util.List;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.tgnet.TLRPC$User;
@@ -10,11 +10,11 @@ import org.telegram.tgnet.TLRPC$User;
 public final class CryptoAccountItem extends NoChildNode {
     private final List<HorizontalActionButtonItem> actions;
     private final String address;
-    private final NetworkType networkType;
+    private final Network networkType;
     private final TLRPC$User user;
 
     /* JADX WARN: Multi-variable type inference failed */
-    public static /* synthetic */ CryptoAccountItem copy$default(CryptoAccountItem cryptoAccountItem, TLRPC$User tLRPC$User, String str, NetworkType networkType, List list, int i, Object obj) {
+    public static /* synthetic */ CryptoAccountItem copy$default(CryptoAccountItem cryptoAccountItem, TLRPC$User tLRPC$User, String str, Network network, List list, int i, Object obj) {
         if ((i & 1) != 0) {
             tLRPC$User = cryptoAccountItem.user;
         }
@@ -22,12 +22,12 @@ public final class CryptoAccountItem extends NoChildNode {
             str = cryptoAccountItem.address;
         }
         if ((i & 4) != 0) {
-            networkType = cryptoAccountItem.networkType;
+            network = cryptoAccountItem.networkType;
         }
         if ((i & 8) != 0) {
             list = cryptoAccountItem.actions;
         }
-        return cryptoAccountItem.copy(tLRPC$User, str, networkType, list);
+        return cryptoAccountItem.copy(tLRPC$User, str, network, list);
     }
 
     public final TLRPC$User component1() {
@@ -38,7 +38,7 @@ public final class CryptoAccountItem extends NoChildNode {
         return this.address;
     }
 
-    public final NetworkType component3() {
+    public final Network component3() {
         return this.networkType;
     }
 
@@ -46,7 +46,7 @@ public final class CryptoAccountItem extends NoChildNode {
         return this.actions;
     }
 
-    public final CryptoAccountItem copy(TLRPC$User user, String address, NetworkType networkType, List<HorizontalActionButtonItem> actions) {
+    public final CryptoAccountItem copy(TLRPC$User user, String address, Network networkType, List<HorizontalActionButtonItem> actions) {
         Intrinsics.checkNotNullParameter(user, "user");
         Intrinsics.checkNotNullParameter(address, "address");
         Intrinsics.checkNotNullParameter(networkType, "networkType");
@@ -60,7 +60,7 @@ public final class CryptoAccountItem extends NoChildNode {
         }
         if (obj instanceof CryptoAccountItem) {
             CryptoAccountItem cryptoAccountItem = (CryptoAccountItem) obj;
-            return Intrinsics.areEqual(this.user, cryptoAccountItem.user) && Intrinsics.areEqual(this.address, cryptoAccountItem.address) && this.networkType == cryptoAccountItem.networkType && Intrinsics.areEqual(this.actions, cryptoAccountItem.actions);
+            return Intrinsics.areEqual(this.user, cryptoAccountItem.user) && Intrinsics.areEqual(this.address, cryptoAccountItem.address) && Intrinsics.areEqual(this.networkType, cryptoAccountItem.networkType) && Intrinsics.areEqual(this.actions, cryptoAccountItem.actions);
         }
         return false;
     }
@@ -81,7 +81,7 @@ public final class CryptoAccountItem extends NoChildNode {
         return this.address;
     }
 
-    public final NetworkType getNetworkType() {
+    public final Network getNetworkType() {
         return this.networkType;
     }
 
@@ -89,7 +89,7 @@ public final class CryptoAccountItem extends NoChildNode {
         return this.actions;
     }
 
-    public CryptoAccountItem(TLRPC$User user, String address, NetworkType networkType, List<HorizontalActionButtonItem> actions) {
+    public CryptoAccountItem(TLRPC$User user, String address, Network networkType, List<HorizontalActionButtonItem> actions) {
         Intrinsics.checkNotNullParameter(user, "user");
         Intrinsics.checkNotNullParameter(address, "address");
         Intrinsics.checkNotNullParameter(networkType, "networkType");

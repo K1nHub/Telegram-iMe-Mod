@@ -21,7 +21,7 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt__StringsJVMKt;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.C3295R;
+import org.telegram.messenger.C3417R;
 import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.ImageLoader;
 import org.telegram.messenger.LocaleController;
@@ -31,12 +31,12 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.UserConfig;
-import org.telegram.p044ui.ActionBar.AlertDialog;
-import org.telegram.p044ui.ActionBar.BaseFragment;
-import org.telegram.p044ui.Components.ChatActivityEnterView;
-import org.telegram.p044ui.Components.ImageUpdater;
-import org.telegram.p044ui.Components.RLottieDrawable;
-import org.telegram.p044ui.PhotoViewer;
+import org.telegram.p043ui.ActionBar.AlertDialog;
+import org.telegram.p043ui.ActionBar.BaseFragment;
+import org.telegram.p043ui.Components.ChatActivityEnterView;
+import org.telegram.p043ui.Components.ImageUpdater;
+import org.telegram.p043ui.Components.RLottieDrawable;
+import org.telegram.p043ui.PhotoViewer;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC$Document;
@@ -112,7 +112,7 @@ public final class MediaEditManager implements NotificationCenter.NotificationCe
         if (rLottieDrawable == null) {
             return;
         }
-        showLoading$default(this, C3295R.string.custom_avatar_processing, null, 2, null);
+        showLoading$default(this, C3417R.string.custom_avatar_processing, null, 2, null);
         if (z) {
             prepareAvatarEditing();
         }
@@ -150,7 +150,7 @@ public final class MediaEditManager implements NotificationCenter.NotificationCe
             this.notificationCenter.addObserver(this, this.fileLoadingObserver);
             this.loadingFileUrl = nftTokenUrl;
             getImageLoader().loadHttpFile(nftTokenUrl, ext, this.currentAccount);
-            showLoading(C3295R.string.custom_avatar_downloading, new MediaEditManager$setNftAvatar$1(this, nftTokenUrl));
+            showLoading(C3417R.string.custom_avatar_downloading, new MediaEditManager$setNftAvatar$1(this, nftTokenUrl));
             return;
         }
         onCommonError();
@@ -258,7 +258,7 @@ public final class MediaEditManager implements NotificationCenter.NotificationCe
             r4 = this;
             java.io.File r0 = new java.io.File
             r0.<init>(r5)
-            java.lang.String r0 = kotlin.p035io.FilesKt.getExtension(r0)
+            java.lang.String r0 = kotlin.p034io.FilesKt.getExtension(r0)
             int r1 = r0.hashCode()
             r2 = 0
             r3 = 0
@@ -322,7 +322,7 @@ public final class MediaEditManager implements NotificationCenter.NotificationCe
             r4.convertGifNft(r5)
             goto L77
         L67:
-            int r5 = org.telegram.messenger.C3295R.string.ImportErrorFileFormatInvalid
+            int r5 = org.telegram.messenger.C3417R.string.ImportErrorFileFormatInvalid
             java.lang.String r0 = "ImportErrorFileFormatInvalid"
             java.lang.String r5 = org.telegram.messenger.LocaleController.getString(r0, r5)
             java.lang.String r0 = "getString(\"ImportErrorFi…rtErrorFileFormatInvalid)"
@@ -362,39 +362,39 @@ public final class MediaEditManager implements NotificationCenter.NotificationCe
             }
         }).compress();
         Intrinsics.checkNotNullExpressionValue(compress, "private fun convertGifNf…cel(true)\n        }\n    }");
-        showLoading(C3295R.string.custom_avatar_processing, new MediaEditManager$convertGifNft$1(compress));
+        showLoading(C3417R.string.custom_avatar_processing, new MediaEditManager$convertGifNft$1(compress));
     }
 
     private final void prepareAvatarEditing() {
         ImageUpdater imageUpdater = getImageUpdater();
         imageUpdater.parentFragment = this.parentFragment;
         imageUpdater.setDelegate(new ImageUpdater.ImageUpdaterDelegate() { // from class: com.iMe.manager.common.MediaEditManager$$ExternalSyntheticLambda4
-            @Override // org.telegram.p044ui.Components.ImageUpdater.ImageUpdaterDelegate
+            @Override // org.telegram.p043ui.Components.ImageUpdater.ImageUpdaterDelegate
             public /* synthetic */ boolean canFinishFragment() {
                 return ImageUpdater.ImageUpdaterDelegate.CC.$default$canFinishFragment(this);
             }
 
-            @Override // org.telegram.p044ui.Components.ImageUpdater.ImageUpdaterDelegate
+            @Override // org.telegram.p043ui.Components.ImageUpdater.ImageUpdaterDelegate
             public /* synthetic */ void didStartUpload(boolean z) {
                 ImageUpdater.ImageUpdaterDelegate.CC.$default$didStartUpload(this, z);
             }
 
-            @Override // org.telegram.p044ui.Components.ImageUpdater.ImageUpdaterDelegate
+            @Override // org.telegram.p043ui.Components.ImageUpdater.ImageUpdaterDelegate
             public /* synthetic */ void didUploadFailed() {
                 ImageUpdater.ImageUpdaterDelegate.CC.$default$didUploadFailed(this);
             }
 
-            @Override // org.telegram.p044ui.Components.ImageUpdater.ImageUpdaterDelegate
+            @Override // org.telegram.p043ui.Components.ImageUpdater.ImageUpdaterDelegate
             public final void didUploadPhoto(TLRPC$InputFile tLRPC$InputFile, TLRPC$InputFile tLRPC$InputFile2, double d, String str, TLRPC$PhotoSize tLRPC$PhotoSize, TLRPC$PhotoSize tLRPC$PhotoSize2, boolean z, TLRPC$VideoSize tLRPC$VideoSize) {
                 MediaEditManager.prepareAvatarEditing$lambda$3$lambda$2(MediaEditManager.this, tLRPC$InputFile, tLRPC$InputFile2, d, str, tLRPC$PhotoSize, tLRPC$PhotoSize2, z, tLRPC$VideoSize);
             }
 
-            @Override // org.telegram.p044ui.Components.ImageUpdater.ImageUpdaterDelegate
+            @Override // org.telegram.p043ui.Components.ImageUpdater.ImageUpdaterDelegate
             public /* synthetic */ String getInitialSearchString() {
                 return ImageUpdater.ImageUpdaterDelegate.CC.$default$getInitialSearchString(this);
             }
 
-            @Override // org.telegram.p044ui.Components.ImageUpdater.ImageUpdaterDelegate
+            @Override // org.telegram.p043ui.Components.ImageUpdater.ImageUpdaterDelegate
             public /* synthetic */ void onUploadProgressChanged(float f) {
                 ImageUpdater.ImageUpdaterDelegate.CC.$default$onUploadProgressChanged(this, f);
             }
@@ -431,7 +431,7 @@ public final class MediaEditManager implements NotificationCenter.NotificationCe
             tLRPC$TL_photos_uploadProfilePhoto.video_start_ts = d;
             tLRPC$TL_photos_uploadProfilePhoto.flags = i | 4;
         }
-        showLoading(C3295R.string.custom_avatar_upload, new MediaEditManager$changeAvatar$1(this, this.parentFragment.getConnectionsManager().sendRequest(tLRPC$TL_photos_uploadProfilePhoto, new RequestDelegate() { // from class: com.iMe.manager.common.MediaEditManager$$ExternalSyntheticLambda3
+        showLoading(C3417R.string.custom_avatar_upload, new MediaEditManager$changeAvatar$1(this, this.parentFragment.getConnectionsManager().sendRequest(tLRPC$TL_photos_uploadProfilePhoto, new RequestDelegate() { // from class: com.iMe.manager.common.MediaEditManager$$ExternalSyntheticLambda3
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC$TL_error tLRPC$TL_error) {
                 MediaEditManager.changeAvatar$lambda$9(MediaEditManager.this, str, tLRPC$PhotoSize2, tLRPC$PhotoSize, tLObject, tLRPC$TL_error);
@@ -469,7 +469,7 @@ public final class MediaEditManager implements NotificationCenter.NotificationCe
             Intrinsics.checkNotNull(tLObject, "null cannot be cast to non-null type org.telegram.tgnet.TLRPC.TL_photos_photo");
             TLRPC$TL_userProfilePhoto tLRPC$TL_userProfilePhoto = new TLRPC$TL_userProfilePhoto();
             TLRPC$Photo tLRPC$Photo = ((TLRPC$TL_photos_photo) tLObject).photo;
-            tLRPC$TL_userProfilePhoto.photo_id = tLRPC$Photo.f1462id;
+            tLRPC$TL_userProfilePhoto.photo_id = tLRPC$Photo.f1544id;
             tLRPC$TL_userProfilePhoto.photo_small = tLRPC$PhotoSize != null ? tLRPC$PhotoSize.location : null;
             tLRPC$TL_userProfilePhoto.photo_big = tLRPC$PhotoSize2 != null ? tLRPC$PhotoSize2.location : null;
             user.photo = tLRPC$TL_userProfilePhoto;
@@ -480,10 +480,10 @@ public final class MediaEditManager implements NotificationCenter.NotificationCe
                 new File(str).renameTo(FileLoader.getInstance(this$0.currentAccount).getPathToAttach(tLRPC$VideoSize, "mp4", true));
             }
             MessagesStorage messagesStorage = this$0.parentFragment.getMessagesStorage();
-            messagesStorage.clearUserPhotos(user.f1574id);
+            messagesStorage.clearUserPhotos(user.f1656id);
             arrayListOf = CollectionsKt__CollectionsKt.arrayListOf(user);
             messagesStorage.putUsersAndChats(arrayListOf, null, false, true);
-            String internalString = LocaleController.getInternalString(C3295R.string.custom_avatar_success);
+            String internalString = LocaleController.getInternalString(C3417R.string.custom_avatar_success);
             Intrinsics.checkNotNullExpressionValue(internalString, "getInternalString(R.string.custom_avatar_success)");
             ContextExtKt.toast(internalString);
         }
@@ -528,7 +528,7 @@ public final class MediaEditManager implements NotificationCenter.NotificationCe
     }
 
     private final void onCommonError() {
-        String string = LocaleController.getString("ErrorOccurred", C3295R.string.ErrorOccurred);
+        String string = LocaleController.getString("ErrorOccurred", C3417R.string.ErrorOccurred);
         Intrinsics.checkNotNullExpressionValue(string, "getString(\"ErrorOccurred\", R.string.ErrorOccurred)");
         ContextExtKt.toast(string);
     }

@@ -26,7 +26,7 @@
 .method public constructor <init>(Lcom/iMe/model/wallet/crypto/wallet_connect/WalletConnectSessionItem;Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;)V
     .locals 1
 
-    const-string v0, "sessionItem"
+    const-string/jumbo v0, "sessionItem"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -142,7 +142,7 @@
 
     if-eqz v1, :cond_0
 
-    invoke-virtual {v1}, Lcom/iMe/storage/domain/model/crypto/Wallet$EVM;->getAddress()Ljava/lang/String;
+    invoke-virtual {v1}, Lcom/iMe/storage/domain/model/crypto/Wallet$MultiCoinWallet;->getAddress()Ljava/lang/String;
 
     move-result-object v1
 

@@ -4,7 +4,7 @@ import android.view.LayoutInflater;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Lambda;
 import org.telegram.messenger.databinding.ForkContentWalletConnectSwitchNetworkBinding;
-import org.telegram.p044ui.ActionBar.BaseFragment;
+import org.telegram.p043ui.ActionBar.BaseFragment;
 /* compiled from: WalletConnectSwitchNetworkBottomSheetDialog.kt */
 /* renamed from: com.iMe.ui.wallet.crypto.wallet_connect.network_change.WalletConnectSwitchNetworkBottomSheetDialog$binding$2 */
 /* loaded from: classes4.dex */

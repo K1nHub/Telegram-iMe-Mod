@@ -4,7 +4,7 @@
 
 
 # direct methods
-.method public static final mapToUI(Lcom/iMe/storage/domain/model/crypto/AccountInfo$Address;)Lcom/iMe/model/wallet/crypto/send/AddressAccessState;
+.method public static final mapToUI(Lcom/iMe/storage/domain/model/crypto/AccountInfo$Address;Z)Lcom/iMe/model/wallet/crypto/send/AddressAccessState;
     .locals 1
 
     const-string v0, "<this>"
@@ -18,19 +18,15 @@
 
     if-eqz v0, :cond_0
 
-    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/crypto/AccountInfo$Address;->getHasAccess()Z
+    if-eqz p1, :cond_0
 
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    new-instance v0, Lcom/iMe/model/wallet/crypto/send/AddressAccessState$Granted;
+    new-instance p1, Lcom/iMe/model/wallet/crypto/send/AddressAccessState$Granted;
 
     invoke-virtual {p0}, Lcom/iMe/storage/domain/model/crypto/AccountInfo$Address;->getAddressValue()Ljava/lang/String;
 
     move-result-object p0
 
-    invoke-direct {v0, p0}, Lcom/iMe/model/wallet/crypto/send/AddressAccessState$Granted;-><init>(Ljava/lang/String;)V
+    invoke-direct {p1, p0}, Lcom/iMe/model/wallet/crypto/send/AddressAccessState$Granted;-><init>(Ljava/lang/String;)V
 
     goto :goto_0
 
@@ -42,14 +38,14 @@
 
     if-eqz p0, :cond_1
 
-    sget-object v0, Lcom/iMe/model/wallet/crypto/send/AddressAccessState$Denied;->INSTANCE:Lcom/iMe/model/wallet/crypto/send/AddressAccessState$Denied;
+    sget-object p1, Lcom/iMe/model/wallet/crypto/send/AddressAccessState$Denied;->INSTANCE:Lcom/iMe/model/wallet/crypto/send/AddressAccessState$Denied;
 
     goto :goto_0
 
     .line 9
     :cond_1
-    sget-object v0, Lcom/iMe/model/wallet/crypto/send/AddressAccessState$NotAvailable;->INSTANCE:Lcom/iMe/model/wallet/crypto/send/AddressAccessState$NotAvailable;
+    sget-object p1, Lcom/iMe/model/wallet/crypto/send/AddressAccessState$NotAvailable;->INSTANCE:Lcom/iMe/model/wallet/crypto/send/AddressAccessState$NotAvailable;
 
     :goto_0
-    return-object v0
+    return-object p1
 .end method

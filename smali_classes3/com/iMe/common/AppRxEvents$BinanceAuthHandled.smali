@@ -24,7 +24,7 @@
 
     const/4 v0, 0x0
 
-    .line 24
+    .line 23
     invoke-direct {p0, v0}, Lcom/iMe/common/AppRxEvents;-><init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
 
     iput-object p1, p0, Lcom/iMe/common/AppRxEvents$BinanceAuthHandled;->intent:Landroid/content/Intent;
@@ -37,7 +37,7 @@
 .method public final getIntent()Landroid/content/Intent;
     .locals 1
 
-    .line 24
+    .line 23
     iget-object v0, p0, Lcom/iMe/common/AppRxEvents$BinanceAuthHandled;->intent:Landroid/content/Intent;
 
     return-object v0

@@ -27,10 +27,6 @@
     }
 .end annotation
 
-.annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nItemProviderModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ItemProviderModule.kt\ncom/iMe/di/module/ItemProviderModuleKt$presentationItemProviderModule$1$17\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,44:1\n129#2,5:45\n*S KotlinDebug\n*F\n+ 1 ItemProviderModule.kt\ncom/iMe/di/module/ItemProviderModuleKt$presentationItemProviderModule$1$17\n*L\n23#1:45,5\n*E\n"
-.end annotation
-
 
 # static fields
 .field public static final INSTANCE:Lcom/iMe/di/module/ItemProviderModuleKt$presentationItemProviderModule$1$17;
@@ -62,56 +58,28 @@
 
 # virtual methods
 .method public final invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/iMe/ui/adapter/provider/BinanceTokenBalanceProvider;
-    .locals 3
+    .locals 1
 
     const-string v0, "$this$factory"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "it"
+    const-string p1, "it"
 
-    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p2, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 23
-    new-instance p2, Lcom/iMe/ui/adapter/provider/BinanceTokenBalanceProvider;
+    .line 59
+    new-instance p1, Lcom/iMe/ui/adapter/provider/BinanceTokenBalanceProvider;
 
-    .line 133
-    const-class v0, Lcom/iMe/storage/domain/utils/system/ResourceManager;
+    invoke-direct {p1}, Lcom/iMe/ui/adapter/provider/BinanceTokenBalanceProvider;-><init>()V
 
-    invoke-static {v0}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
-
-    move-result-object v0
-
-    const/4 v1, 0x0
-
-    invoke-virtual {p1, v0, v1, v1}, Lorg/koin/core/scope/Scope;->get(Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/iMe/storage/domain/utils/system/ResourceManager;
-
-    const-class v2, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
-
-    invoke-static {v2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
-
-    move-result-object v2
-
-    invoke-virtual {p1, v2, v1, v1}, Lorg/koin/core/scope/Scope;->get(Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
-
-    .line 23
-    invoke-direct {p2, v0, p1}, Lcom/iMe/ui/adapter/provider/BinanceTokenBalanceProvider;-><init>(Lcom/iMe/storage/domain/utils/system/ResourceManager;Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;)V
-
-    return-object p2
+    return-object p1
 .end method
 
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 23
+    .line 59
     check-cast p1, Lorg/koin/core/scope/Scope;
 
     check-cast p2, Lorg/koin/core/parameter/ParametersHolder;

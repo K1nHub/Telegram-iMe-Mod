@@ -51,7 +51,7 @@
 
     iget-object v5, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda133;->f$4:Ljava/lang/Integer;
 
-    invoke-static/range {v0 .. v5}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$_iyFIlIDCXt7GQ894qFsuaug11c(Lorg/telegram/messenger/MessagesController;Ljava/util/ArrayList;JLorg/telegram/messenger/MessagesController$SponsoredMessagesInfo;Ljava/lang/Integer;)V
+    invoke-static/range {v0 .. v5}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$3ORdkhXqWNb3w9tkYFFQ-eLZccA(Lorg/telegram/messenger/MessagesController;Ljava/util/ArrayList;JLorg/telegram/messenger/MessagesController$SponsoredMessagesInfo;Ljava/lang/Integer;)V
 
     return-void
 .end method

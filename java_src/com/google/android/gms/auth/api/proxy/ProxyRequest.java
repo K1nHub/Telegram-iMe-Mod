@@ -4,7 +4,7 @@ import android.os.Bundle;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.util.Patterns;
-import com.google.android.exoplayer2.C0475C;
+import com.google.android.exoplayer2.C0480C;
 import com.google.android.gms.common.annotation.KeepForSdkWithMembers;
 import com.google.android.gms.common.internal.Preconditions;
 import com.google.android.gms.common.internal.ShowFirstParty;
@@ -51,7 +51,7 @@ public class ProxyRequest extends AbstractSafeParcelable {
     public static class Builder {
         private final String zza;
         private int zzb = ProxyRequest.HTTP_METHOD_GET;
-        private long zzc = C0475C.DEFAULT_MAX_SEEK_TO_PREVIOUS_POSITION_MS;
+        private long zzc = C0480C.DEFAULT_MAX_SEEK_TO_PREVIOUS_POSITION_MS;
         private byte[] zzd = new byte[0];
         private final Bundle zze = new Bundle();
 

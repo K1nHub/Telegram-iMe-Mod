@@ -3,11 +3,12 @@ package com.iMe.p031ui.wallet.transaction.details.adapter;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.viewholder.BaseViewHolder;
 import com.iMe.model.wallet.ActionItem;
+import com.iMe.model.wallet.transaction.TransactionActionItem;
 import com.iMe.storage.domain.utils.system.ResourceManager;
 import com.iMe.utils.extentions.common.BaseQuickAdapterExtKt;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3295R;
-import org.telegram.p044ui.ActionBar.Theme;
+import org.telegram.messenger.C3417R;
+import org.telegram.p043ui.ActionBar.Theme;
 /* compiled from: WalletActionAdapter.kt */
 /* renamed from: com.iMe.ui.wallet.transaction.details.adapter.WalletActionAdapter */
 /* loaded from: classes4.dex */
@@ -16,7 +17,7 @@ public final class WalletActionAdapter extends BaseQuickAdapter<ActionItem, Base
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public WalletActionAdapter(ResourceManager resourceManager) {
-        super(C3295R.layout.fork_recycle_item_wallet_action, null, 2, null);
+        super(C3417R.layout.fork_recycle_item_wallet_action, null, 2, null);
         Intrinsics.checkNotNullParameter(resourceManager, "resourceManager");
         this.resourceManager = resourceManager;
     }
@@ -26,11 +27,15 @@ public final class WalletActionAdapter extends BaseQuickAdapter<ActionItem, Base
     public void convert(BaseViewHolder holder, ActionItem item) {
         Intrinsics.checkNotNullParameter(holder, "holder");
         Intrinsics.checkNotNullParameter(item, "item");
-        int i = C3295R.C3298id.linear_root;
+        int i = C3417R.C3420id.linear_root;
         BaseViewHolder themedBackgroundColor = BaseQuickAdapterExtKt.setThemedBackgroundColor(BaseQuickAdapterExtKt.setRippleForeground(holder, i, false), i, Theme.key_windowBackgroundWhite);
-        int i2 = C3295R.C3298id.image_action;
-        BaseViewHolder themedImageColor = BaseQuickAdapterExtKt.setThemedImageColor(themedBackgroundColor, i2, Theme.key_dialogIcon);
-        int i3 = C3295R.C3298id.text_action;
-        BaseQuickAdapterExtKt.setThemedTextColor(themedImageColor, i3, Theme.key_dialogTextBlack).setImageResource(i2, item.getIcon()).setText(i3, item.getTitle(this.resourceManager));
+        int i2 = C3417R.C3420id.text_action;
+        BaseViewHolder text = BaseQuickAdapterExtKt.setThemedTextColor(themedBackgroundColor, i2, Theme.key_dialogTextBlack).setText(i2, item.getTitle(this.resourceManager));
+        if (item instanceof TransactionActionItem.OpenScan) {
+            BaseQuickAdapterExtKt.loadImage(text, C3417R.C3420id.image_action, ((TransactionActionItem.OpenScan) item).getIconUrl(), null, false);
+            return;
+        }
+        int i3 = C3417R.C3420id.image_action;
+        BaseQuickAdapterExtKt.setThemedImageColor(text.setImageResource(i3, item.getIcon()), i3, Theme.key_dialogIcon);
     }
 }

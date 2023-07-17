@@ -2,13 +2,10 @@ package com.iMe.storage.domain.model.crypto.swap;
 
 import com.iMe.bots.data.model.database.BotsDbModel$$ExternalSyntheticBackport0;
 import com.iMe.storage.data.utils.extentions.DateExtKt;
-import com.iMe.storage.data.utils.extentions.NumberExtKt;
-import com.iMe.storage.domain.model.crypto.NetworkType;
 import com.iMe.storage.domain.model.crypto.send.TransactionArgs;
 import com.iMe.storage.domain.model.wallet.swap.SwapMethod;
 import com.iMe.storage.domain.model.wallet.swap.SwapProtocol;
-import com.iMe.storage.domain.model.wallet.token.TokenInfo;
-import com.iMe.storage.domain.utils.extentions.model.TokenInfoExtKt;
+import com.iMe.storage.domain.model.wallet.token.TokenDetailed;
 import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.util.List;
@@ -22,20 +19,18 @@ public abstract class SwapArgs implements TransactionArgs {
     private final long chainId;
     private final BigInteger gasLimit;
     private final BigInteger gasPrice;
-    private final TokenInfo.Crypto inputToken;
+    private final TokenDetailed inputToken;
     private final BigInteger nonce;
-    private final TokenInfo.Crypto outputToken;
     private final SwapProtocol swapProtocol;
 
-    public /* synthetic */ SwapArgs(SwapProtocol swapProtocol, BigDecimal bigDecimal, TokenInfo.Crypto crypto, TokenInfo.Crypto crypto2, long j, BigInteger bigInteger, BigInteger bigInteger2, BigInteger bigInteger3, DefaultConstructorMarker defaultConstructorMarker) {
-        this(swapProtocol, bigDecimal, crypto, crypto2, j, bigInteger, bigInteger2, bigInteger3);
+    public /* synthetic */ SwapArgs(SwapProtocol swapProtocol, BigDecimal bigDecimal, TokenDetailed tokenDetailed, long j, BigInteger bigInteger, BigInteger bigInteger2, BigInteger bigInteger3, DefaultConstructorMarker defaultConstructorMarker) {
+        this(swapProtocol, bigDecimal, tokenDetailed, j, bigInteger, bigInteger2, bigInteger3);
     }
 
-    private SwapArgs(SwapProtocol swapProtocol, BigDecimal bigDecimal, TokenInfo.Crypto crypto, TokenInfo.Crypto crypto2, long j, BigInteger bigInteger, BigInteger bigInteger2, BigInteger bigInteger3) {
+    private SwapArgs(SwapProtocol swapProtocol, BigDecimal bigDecimal, TokenDetailed tokenDetailed, long j, BigInteger bigInteger, BigInteger bigInteger2, BigInteger bigInteger3) {
         this.swapProtocol = swapProtocol;
         this.amount = bigDecimal;
-        this.inputToken = crypto;
-        this.outputToken = crypto2;
+        this.inputToken = tokenDetailed;
         this.chainId = j;
         this.nonce = bigInteger;
         this.gasPrice = bigInteger2;
@@ -50,12 +45,8 @@ public abstract class SwapArgs implements TransactionArgs {
         return this.amount;
     }
 
-    public TokenInfo.Crypto getInputToken() {
+    public TokenDetailed getInputToken() {
         return this.inputToken;
-    }
-
-    public TokenInfo.Crypto getOutputToken() {
-        return this.outputToken;
     }
 
     public long getChainId() {
@@ -85,11 +76,10 @@ public abstract class SwapArgs implements TransactionArgs {
         private final int deadlineMinutes;
         private final BigInteger gasLimit;
         private final BigInteger gasPrice;
-        private final TokenInfo.Crypto.Ethereum inputToken;
-        private final NetworkType networkType;
+        private final TokenDetailed inputToken;
+        private final String networkId;
         private final BigInteger nonce;
-        private final NetworkType outputNetworkType;
-        private final TokenInfo.Crypto.Ethereum outputToken;
+        private final String outputNetworkId;
         private final List<String> path;
         private final String quoteId;
         private final SwapMethod swapMethod;
@@ -100,79 +90,74 @@ public abstract class SwapArgs implements TransactionArgs {
             return getSwapProtocol();
         }
 
-        public final String component10() {
-            return this.contractAddress;
-        }
-
-        public final SwapMethod component11() {
+        public final SwapMethod component10() {
             return this.swapMethod;
         }
 
-        public final List<String> component12() {
+        public final List<String> component11() {
             return this.path;
         }
 
-        public final int component13() {
+        public final int component12() {
             return this.deadlineMinutes;
         }
 
-        public final BigInteger component14() {
+        public final BigInteger component13() {
             return this.value;
         }
 
-        public final String component15() {
+        public final String component14() {
             return this.data;
         }
 
-        public final String component16() {
+        public final String component15() {
             return this.quoteId;
         }
 
-        public final NetworkType component17() {
-            return this.networkType;
+        public final String component16() {
+            return this.networkId;
         }
 
-        public final NetworkType component18() {
-            return this.outputNetworkType;
+        public final String component17() {
+            return this.outputNetworkId;
         }
 
         public final BigDecimal component2() {
             return getAmount();
         }
 
-        public final TokenInfo.Crypto.Ethereum component3() {
+        public final TokenDetailed component3() {
             return getInputToken();
         }
 
-        public final TokenInfo.Crypto.Ethereum component4() {
-            return getOutputToken();
-        }
-
-        public final long component5() {
+        public final long component4() {
             return getChainId();
         }
 
-        public final BigInteger component6() {
+        public final BigInteger component5() {
             return getNonce();
         }
 
-        public final BigInteger component7() {
+        public final BigInteger component6() {
             return getGasPrice();
         }
 
-        public final BigInteger component8() {
+        public final BigInteger component7() {
             return getGasLimit();
         }
 
-        public final BigInteger component9() {
+        public final BigInteger component8() {
             return this.amountOutBound;
         }
 
-        public final Dex copy(SwapProtocol swapProtocol, BigDecimal amount, TokenInfo.Crypto.Ethereum inputToken, TokenInfo.Crypto.Ethereum outputToken, long j, BigInteger nonce, BigInteger gasPrice, BigInteger gasLimit, BigInteger amountOutBound, String contractAddress, SwapMethod swapMethod, List<String> path, int i, BigInteger value, String data, String quoteId, NetworkType networkType, NetworkType networkType2) {
+        public final String component9() {
+            return this.contractAddress;
+        }
+
+        public final Dex copy(SwapProtocol swapProtocol, BigDecimal amount, TokenDetailed inputToken, long j, BigInteger nonce, BigInteger gasPrice, BigInteger gasLimit, BigInteger amountOutBound, String contractAddress, SwapMethod swapMethod, List<String> path, int i, BigInteger value, String data, String quoteId, String networkId, String str) {
             Intrinsics.checkNotNullParameter(swapProtocol, "swapProtocol");
             Intrinsics.checkNotNullParameter(amount, "amount");
             Intrinsics.checkNotNullParameter(inputToken, "inputToken");
-            Intrinsics.checkNotNullParameter(outputToken, "outputToken");
             Intrinsics.checkNotNullParameter(nonce, "nonce");
             Intrinsics.checkNotNullParameter(gasPrice, "gasPrice");
             Intrinsics.checkNotNullParameter(gasLimit, "gasLimit");
@@ -183,8 +168,8 @@ public abstract class SwapArgs implements TransactionArgs {
             Intrinsics.checkNotNullParameter(value, "value");
             Intrinsics.checkNotNullParameter(data, "data");
             Intrinsics.checkNotNullParameter(quoteId, "quoteId");
-            Intrinsics.checkNotNullParameter(networkType, "networkType");
-            return new Dex(swapProtocol, amount, inputToken, outputToken, j, nonce, gasPrice, gasLimit, amountOutBound, contractAddress, swapMethod, path, i, value, data, quoteId, networkType, networkType2);
+            Intrinsics.checkNotNullParameter(networkId, "networkId");
+            return new Dex(swapProtocol, amount, inputToken, j, nonce, gasPrice, gasLimit, amountOutBound, contractAddress, swapMethod, path, i, value, data, quoteId, networkId, str);
         }
 
         public boolean equals(Object obj) {
@@ -193,19 +178,19 @@ public abstract class SwapArgs implements TransactionArgs {
             }
             if (obj instanceof Dex) {
                 Dex dex = (Dex) obj;
-                return getSwapProtocol() == dex.getSwapProtocol() && Intrinsics.areEqual(getAmount(), dex.getAmount()) && Intrinsics.areEqual(getInputToken(), dex.getInputToken()) && Intrinsics.areEqual(getOutputToken(), dex.getOutputToken()) && getChainId() == dex.getChainId() && Intrinsics.areEqual(getNonce(), dex.getNonce()) && Intrinsics.areEqual(getGasPrice(), dex.getGasPrice()) && Intrinsics.areEqual(getGasLimit(), dex.getGasLimit()) && Intrinsics.areEqual(this.amountOutBound, dex.amountOutBound) && Intrinsics.areEqual(this.contractAddress, dex.contractAddress) && this.swapMethod == dex.swapMethod && Intrinsics.areEqual(this.path, dex.path) && this.deadlineMinutes == dex.deadlineMinutes && Intrinsics.areEqual(this.value, dex.value) && Intrinsics.areEqual(this.data, dex.data) && Intrinsics.areEqual(this.quoteId, dex.quoteId) && this.networkType == dex.networkType && this.outputNetworkType == dex.outputNetworkType;
+                return getSwapProtocol() == dex.getSwapProtocol() && Intrinsics.areEqual(getAmount(), dex.getAmount()) && Intrinsics.areEqual(getInputToken(), dex.getInputToken()) && getChainId() == dex.getChainId() && Intrinsics.areEqual(getNonce(), dex.getNonce()) && Intrinsics.areEqual(getGasPrice(), dex.getGasPrice()) && Intrinsics.areEqual(getGasLimit(), dex.getGasLimit()) && Intrinsics.areEqual(this.amountOutBound, dex.amountOutBound) && Intrinsics.areEqual(this.contractAddress, dex.contractAddress) && this.swapMethod == dex.swapMethod && Intrinsics.areEqual(this.path, dex.path) && this.deadlineMinutes == dex.deadlineMinutes && Intrinsics.areEqual(this.value, dex.value) && Intrinsics.areEqual(this.data, dex.data) && Intrinsics.areEqual(this.quoteId, dex.quoteId) && Intrinsics.areEqual(this.networkId, dex.networkId) && Intrinsics.areEqual(this.outputNetworkId, dex.outputNetworkId);
             }
             return false;
         }
 
         public int hashCode() {
-            int hashCode = ((((((((((((((((((((((((((((((((getSwapProtocol().hashCode() * 31) + getAmount().hashCode()) * 31) + getInputToken().hashCode()) * 31) + getOutputToken().hashCode()) * 31) + BotsDbModel$$ExternalSyntheticBackport0.m706m(getChainId())) * 31) + getNonce().hashCode()) * 31) + getGasPrice().hashCode()) * 31) + getGasLimit().hashCode()) * 31) + this.amountOutBound.hashCode()) * 31) + this.contractAddress.hashCode()) * 31) + this.swapMethod.hashCode()) * 31) + this.path.hashCode()) * 31) + this.deadlineMinutes) * 31) + this.value.hashCode()) * 31) + this.data.hashCode()) * 31) + this.quoteId.hashCode()) * 31) + this.networkType.hashCode()) * 31;
-            NetworkType networkType = this.outputNetworkType;
-            return hashCode + (networkType == null ? 0 : networkType.hashCode());
+            int hashCode = ((((((((((((((((((((((((((((((getSwapProtocol().hashCode() * 31) + getAmount().hashCode()) * 31) + getInputToken().hashCode()) * 31) + BotsDbModel$$ExternalSyntheticBackport0.m706m(getChainId())) * 31) + getNonce().hashCode()) * 31) + getGasPrice().hashCode()) * 31) + getGasLimit().hashCode()) * 31) + this.amountOutBound.hashCode()) * 31) + this.contractAddress.hashCode()) * 31) + this.swapMethod.hashCode()) * 31) + this.path.hashCode()) * 31) + this.deadlineMinutes) * 31) + this.value.hashCode()) * 31) + this.data.hashCode()) * 31) + this.quoteId.hashCode()) * 31) + this.networkId.hashCode()) * 31;
+            String str = this.outputNetworkId;
+            return hashCode + (str == null ? 0 : str.hashCode());
         }
 
         public String toString() {
-            return "Dex(swapProtocol=" + getSwapProtocol() + ", amount=" + getAmount() + ", inputToken=" + getInputToken() + ", outputToken=" + getOutputToken() + ", chainId=" + getChainId() + ", nonce=" + getNonce() + ", gasPrice=" + getGasPrice() + ", gasLimit=" + getGasLimit() + ", amountOutBound=" + this.amountOutBound + ", contractAddress=" + this.contractAddress + ", swapMethod=" + this.swapMethod + ", path=" + this.path + ", deadlineMinutes=" + this.deadlineMinutes + ", value=" + this.value + ", data=" + this.data + ", quoteId=" + this.quoteId + ", networkType=" + this.networkType + ", outputNetworkType=" + this.outputNetworkType + ')';
+            return "Dex(swapProtocol=" + getSwapProtocol() + ", amount=" + getAmount() + ", inputToken=" + getInputToken() + ", chainId=" + getChainId() + ", nonce=" + getNonce() + ", gasPrice=" + getGasPrice() + ", gasLimit=" + getGasLimit() + ", amountOutBound=" + this.amountOutBound + ", contractAddress=" + this.contractAddress + ", swapMethod=" + this.swapMethod + ", path=" + this.path + ", deadlineMinutes=" + this.deadlineMinutes + ", value=" + this.value + ", data=" + this.data + ", quoteId=" + this.quoteId + ", networkId=" + this.networkId + ", outputNetworkId=" + this.outputNetworkId + ')';
         }
 
         @Override // com.iMe.storage.domain.model.crypto.swap.SwapArgs
@@ -219,13 +204,8 @@ public abstract class SwapArgs implements TransactionArgs {
         }
 
         @Override // com.iMe.storage.domain.model.crypto.swap.SwapArgs
-        public TokenInfo.Crypto.Ethereum getInputToken() {
+        public TokenDetailed getInputToken() {
             return this.inputToken;
-        }
-
-        @Override // com.iMe.storage.domain.model.crypto.swap.SwapArgs
-        public TokenInfo.Crypto.Ethereum getOutputToken() {
-            return this.outputToken;
         }
 
         @Override // com.iMe.storage.domain.model.crypto.swap.SwapArgs
@@ -280,21 +260,20 @@ public abstract class SwapArgs implements TransactionArgs {
             return this.quoteId;
         }
 
-        public final NetworkType getNetworkType() {
-            return this.networkType;
+        public final String getNetworkId() {
+            return this.networkId;
         }
 
-        public final NetworkType getOutputNetworkType() {
-            return this.outputNetworkType;
+        public final String getOutputNetworkId() {
+            return this.outputNetworkId;
         }
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public Dex(SwapProtocol swapProtocol, BigDecimal amount, TokenInfo.Crypto.Ethereum inputToken, TokenInfo.Crypto.Ethereum outputToken, long j, BigInteger nonce, BigInteger gasPrice, BigInteger gasLimit, BigInteger amountOutBound, String contractAddress, SwapMethod swapMethod, List<String> path, int i, BigInteger value, String data, String quoteId, NetworkType networkType, NetworkType networkType2) {
-            super(swapProtocol, amount, inputToken, outputToken, j, nonce, gasPrice, gasLimit, null);
+        public Dex(SwapProtocol swapProtocol, BigDecimal amount, TokenDetailed inputToken, long j, BigInteger nonce, BigInteger gasPrice, BigInteger gasLimit, BigInteger amountOutBound, String contractAddress, SwapMethod swapMethod, List<String> path, int i, BigInteger value, String data, String quoteId, String networkId, String str) {
+            super(swapProtocol, amount, inputToken, j, nonce, gasPrice, gasLimit, null);
             Intrinsics.checkNotNullParameter(swapProtocol, "swapProtocol");
             Intrinsics.checkNotNullParameter(amount, "amount");
             Intrinsics.checkNotNullParameter(inputToken, "inputToken");
-            Intrinsics.checkNotNullParameter(outputToken, "outputToken");
             Intrinsics.checkNotNullParameter(nonce, "nonce");
             Intrinsics.checkNotNullParameter(gasPrice, "gasPrice");
             Intrinsics.checkNotNullParameter(gasLimit, "gasLimit");
@@ -305,11 +284,10 @@ public abstract class SwapArgs implements TransactionArgs {
             Intrinsics.checkNotNullParameter(value, "value");
             Intrinsics.checkNotNullParameter(data, "data");
             Intrinsics.checkNotNullParameter(quoteId, "quoteId");
-            Intrinsics.checkNotNullParameter(networkType, "networkType");
+            Intrinsics.checkNotNullParameter(networkId, "networkId");
             this.swapProtocol = swapProtocol;
             this.amount = amount;
             this.inputToken = inputToken;
-            this.outputToken = outputToken;
             this.chainId = j;
             this.nonce = nonce;
             this.gasPrice = gasPrice;
@@ -322,12 +300,12 @@ public abstract class SwapArgs implements TransactionArgs {
             this.value = value;
             this.data = data;
             this.quoteId = quoteId;
-            this.networkType = networkType;
-            this.outputNetworkType = networkType2;
+            this.networkId = networkId;
+            this.outputNetworkId = str;
         }
 
         public final BigInteger getConvertedAmount() {
-            return NumberExtKt.convertToWei(getAmount(), TokenInfoExtKt.getWeiConvertUnit(getInputToken(), this.networkType));
+            return getInputToken().getConvertedAmount(getAmount());
         }
 
         public final BigInteger getDeadline() {

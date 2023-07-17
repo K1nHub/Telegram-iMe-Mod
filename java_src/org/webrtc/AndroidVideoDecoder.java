@@ -4,6 +4,7 @@ import android.media.MediaCodec;
 import android.media.MediaFormat;
 import android.os.SystemClock;
 import android.view.Surface;
+import com.stripe.android.BuildConfig;
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.util.concurrent.BlockingDeque;
@@ -237,7 +238,7 @@ class AndroidVideoDecoder implements VideoDecoder, VideoSink {
 
     @Override // org.webrtc.VideoDecoder
     public VideoCodecStatus release() {
-        Logging.m20d(TAG, "release");
+        Logging.m20d(TAG, BuildConfig.BUILD_TYPE);
         VideoCodecStatus releaseInternal = releaseInternal();
         if (this.surface != null) {
             releaseSurface();

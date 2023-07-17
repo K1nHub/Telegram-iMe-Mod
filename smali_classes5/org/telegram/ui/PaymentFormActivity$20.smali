@@ -1,6 +1,9 @@
 .class Lorg/telegram/ui/PaymentFormActivity$20;
-.super Landroid/view/View;
+.super Ljava/lang/Object;
 .source "PaymentFormActivity.java"
+
+# interfaces
+.implements Landroid/text/TextWatcher;
 
 
 # annotations
@@ -14,85 +17,67 @@
 .end annotation
 
 
+# instance fields
+.field final synthetic this$0:Lorg/telegram/ui/PaymentFormActivity;
+
+
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/PaymentFormActivity;Landroid/content/Context;)V
+.method constructor <init>(Lorg/telegram/ui/PaymentFormActivity;)V
     .locals 0
 
-    .line 2544
-    invoke-direct {p0, p2}, Landroid/view/View;-><init>(Landroid/content/Context;)V
+    .line 2475
+    iput-object p1, p0, Lorg/telegram/ui/PaymentFormActivity$20;->this$0:Lorg/telegram/ui/PaymentFormActivity;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected onDraw(Landroid/graphics/Canvas;)V
-    .locals 8
+.method public afterTextChanged(Landroid/text/Editable;)V
+    .locals 1
 
-    .line 2547
-    sget-boolean v0, Lorg/telegram/messenger/LocaleController;->isRTL:Z
+    .line 2488
+    iget-object v0, p0, Lorg/telegram/ui/PaymentFormActivity$20;->this$0:Lorg/telegram/ui/PaymentFormActivity;
 
-    const/16 v1, 0x14
+    invoke-static {v0}, Lorg/telegram/ui/PaymentFormActivity;->access$3700(Lorg/telegram/ui/PaymentFormActivity;)I
+
+    move-result v0
 
     if-eqz v0, :cond_0
 
+    invoke-interface {p1}, Landroid/text/Editable;->length()I
+
+    move-result p1
+
+    iget-object v0, p0, Lorg/telegram/ui/PaymentFormActivity$20;->this$0:Lorg/telegram/ui/PaymentFormActivity;
+
+    invoke-static {v0}, Lorg/telegram/ui/PaymentFormActivity;->access$3700(Lorg/telegram/ui/PaymentFormActivity;)I
+
+    move-result v0
+
+    if-ne p1, v0, :cond_0
+
+    .line 2489
+    iget-object p1, p0, Lorg/telegram/ui/PaymentFormActivity$20;->this$0:Lorg/telegram/ui/PaymentFormActivity;
+
     const/4 v0, 0x0
 
-    goto :goto_0
+    invoke-static {p1, v0}, Lorg/telegram/ui/PaymentFormActivity;->access$1300(Lorg/telegram/ui/PaymentFormActivity;Z)V
 
     :cond_0
-    invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    return-void
+.end method
 
-    move-result v0
+.method public beforeTextChanged(Ljava/lang/CharSequence;III)V
+    .locals 0
 
-    int-to-float v0, v0
+    return-void
+.end method
 
-    :goto_0
-    move v3, v0
-
-    invoke-virtual {p0}, Landroid/view/View;->getMeasuredHeight()I
-
-    move-result v0
-
-    add-int/lit8 v0, v0, -0x1
-
-    int-to-float v4, v0
-
-    invoke-virtual {p0}, Landroid/view/View;->getMeasuredWidth()I
-
-    move-result v0
-
-    sget-boolean v2, Lorg/telegram/messenger/LocaleController;->isRTL:Z
-
-    if-eqz v2, :cond_1
-
-    invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result v1
-
-    goto :goto_1
-
-    :cond_1
-    const/4 v1, 0x0
-
-    :goto_1
-    sub-int/2addr v0, v1
-
-    int-to-float v5, v0
-
-    invoke-virtual {p0}, Landroid/view/View;->getMeasuredHeight()I
-
-    move-result v0
-
-    add-int/lit8 v0, v0, -0x1
-
-    int-to-float v6, v0
-
-    sget-object v7, Lorg/telegram/ui/ActionBar/Theme;->dividerPaint:Landroid/graphics/Paint;
-
-    move-object v2, p1
-
-    invoke-virtual/range {v2 .. v7}, Landroid/graphics/Canvas;->drawLine(FFFFLandroid/graphics/Paint;)V
+.method public onTextChanged(Ljava/lang/CharSequence;III)V
+    .locals 0
 
     return-void
 .end method

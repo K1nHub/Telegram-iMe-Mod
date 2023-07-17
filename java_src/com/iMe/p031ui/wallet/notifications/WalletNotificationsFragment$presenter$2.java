@@ -4,7 +4,7 @@ import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Lambda;
-import org.koin.p043mp.KoinPlatformTools;
+import org.koin.p042mp.KoinPlatformTools;
 /* compiled from: WalletNotificationsFragment.kt */
 /* renamed from: com.iMe.ui.wallet.notifications.WalletNotificationsFragment$presenter$2 */
 /* loaded from: classes4.dex */
@@ -22,7 +22,7 @@ final class WalletNotificationsFragment$presenter$2 extends Lambda implements Fu
     @Override // kotlin.jvm.functions.Function0
     public final WalletNotificationsPresenter invoke() {
         Lazy lazy;
-        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new C2312x242f963f(this.this$0, null, null));
+        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new C2359x242f963f(this.this$0, null, null));
         return (WalletNotificationsPresenter) lazy.getValue();
     }
 }

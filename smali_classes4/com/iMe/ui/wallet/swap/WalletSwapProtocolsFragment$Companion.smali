@@ -18,7 +18,7 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 158
+    .line 157
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -32,7 +32,7 @@
     return-void
 .end method
 
-.method public static synthetic newInstance$default(Lcom/iMe/ui/wallet/swap/WalletSwapProtocolsFragment$Companion;Lcom/iMe/model/common/ScreenType;Lcom/iMe/storage/domain/model/wallet/token/TokenCode;ILjava/lang/Object;)Lcom/iMe/ui/wallet/swap/WalletSwapProtocolsFragment;
+.method public static synthetic newInstance$default(Lcom/iMe/ui/wallet/swap/WalletSwapProtocolsFragment$Companion;Lcom/iMe/model/common/ScreenType;Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;ILjava/lang/Object;)Lcom/iMe/ui/wallet/swap/WalletSwapProtocolsFragment;
     .locals 0
 
     and-int/lit8 p3, p3, 0x2
@@ -41,9 +41,9 @@
 
     const/4 p2, 0x0
 
-    .line 160
+    .line 159
     :cond_0
-    invoke-virtual {p0, p1, p2}, Lcom/iMe/ui/wallet/swap/WalletSwapProtocolsFragment$Companion;->newInstance(Lcom/iMe/model/common/ScreenType;Lcom/iMe/storage/domain/model/wallet/token/TokenCode;)Lcom/iMe/ui/wallet/swap/WalletSwapProtocolsFragment;
+    invoke-virtual {p0, p1, p2}, Lcom/iMe/ui/wallet/swap/WalletSwapProtocolsFragment$Companion;->newInstance(Lcom/iMe/model/common/ScreenType;Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;)Lcom/iMe/ui/wallet/swap/WalletSwapProtocolsFragment;
 
     move-result-object p0
 
@@ -52,17 +52,17 @@
 
 
 # virtual methods
-.method public final newInstance(Lcom/iMe/model/common/ScreenType;Lcom/iMe/storage/domain/model/wallet/token/TokenCode;)Lcom/iMe/ui/wallet/swap/WalletSwapProtocolsFragment;
+.method public final newInstance(Lcom/iMe/model/common/ScreenType;Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;)Lcom/iMe/ui/wallet/swap/WalletSwapProtocolsFragment;
     .locals 1
 
-    const-string v0, "screenType"
+    const-string/jumbo v0, "screenType"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 163
+    .line 162
     new-instance v0, Lcom/iMe/ui/wallet/swap/WalletSwapProtocolsFragment;
 
-    invoke-direct {v0, p1, p2}, Lcom/iMe/ui/wallet/swap/WalletSwapProtocolsFragment;-><init>(Lcom/iMe/model/common/ScreenType;Lcom/iMe/storage/domain/model/wallet/token/TokenCode;)V
+    invoke-direct {v0, p1, p2}, Lcom/iMe/ui/wallet/swap/WalletSwapProtocolsFragment;-><init>(Lcom/iMe/model/common/ScreenType;Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;)V
 
     return-object v0
 .end method

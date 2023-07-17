@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Cells/AppIconsSelectorCell;)V
     .locals 0
 
-    .line 91
+    .line 95
     iput-object p1, p0, Lorg/telegram/ui/Cells/AppIconsSelectorCell$2;->this$0:Lorg/telegram/ui/Cells/AppIconsSelectorCell;
 
     invoke-direct {p0}, Landroidx/recyclerview/widget/RecyclerView$ItemDecoration;-><init>()V
@@ -35,7 +35,7 @@
 .method public getItemOffsets(Landroid/graphics/Rect;Landroid/view/View;Landroidx/recyclerview/widget/RecyclerView;Landroidx/recyclerview/widget/RecyclerView$State;)V
     .locals 0
 
-    .line 94
+    .line 98
     invoke-virtual {p3, p2}, Landroidx/recyclerview/widget/RecyclerView;->getChildViewHolder(Landroid/view/View;)Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
 
     move-result-object p2
@@ -48,14 +48,14 @@
 
     if-nez p2, :cond_0
 
-    .line 96
+    .line 100
     invoke-static {p3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p4
 
     iput p4, p1, Landroid/graphics/Rect;->left:I
 
-    .line 98
+    .line 102
     :cond_0
     iget-object p4, p0, Lorg/telegram/ui/Cells/AppIconsSelectorCell$2;->this$0:Lorg/telegram/ui/Cells/AppIconsSelectorCell;
 
@@ -71,7 +71,7 @@
 
     if-ne p2, p4, :cond_1
 
-    .line 99
+    .line 103
     invoke-static {p3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p2
@@ -80,7 +80,7 @@
 
     goto :goto_0
 
-    .line 101
+    .line 105
     :cond_1
     iget-object p2, p0, Lorg/telegram/ui/Cells/AppIconsSelectorCell$2;->this$0:Lorg/telegram/ui/Cells/AppIconsSelectorCell;
 
@@ -96,7 +96,7 @@
 
     if-ne p2, p3, :cond_2
 
-    .line 103
+    .line 107
     iget-object p3, p0, Lorg/telegram/ui/Cells/AppIconsSelectorCell$2;->this$0:Lorg/telegram/ui/Cells/AppIconsSelectorCell;
 
     invoke-virtual {p3}, Landroid/view/ViewGroup;->getWidth()I
@@ -132,7 +132,7 @@
     :cond_2
     const/16 p2, 0x18
 
-    .line 105
+    .line 109
     invoke-static {p2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p2

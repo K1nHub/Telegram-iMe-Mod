@@ -1,8 +1,8 @@
 package com.google.android.gms.internal.icing;
 
 import java.util.ListIterator;
-import p034j$.util.Iterator;
-import p034j$.util.function.Consumer;
+import p033j$.util.Iterator;
+import p033j$.util.function.Consumer;
 /* compiled from: com.google.firebase:firebase-appindexing@@20.0.0 */
 /* loaded from: classes.dex */
 final class zzfg implements ListIterator<String>, Iterator {
@@ -24,12 +24,12 @@ final class zzfg implements ListIterator<String>, Iterator {
         throw new UnsupportedOperationException();
     }
 
-    @Override // p034j$.util.Iterator
+    @Override // p033j$.util.Iterator
     public /* synthetic */ void forEachRemaining(Consumer consumer) {
         Iterator.CC.$default$forEachRemaining(this, consumer);
     }
 
-    @Override // java.util.ListIterator, java.util.Iterator, p034j$.util.Iterator
+    @Override // java.util.ListIterator, java.util.Iterator, p033j$.util.Iterator
     public final boolean hasNext() {
         return this.zza.hasNext();
     }
@@ -39,7 +39,7 @@ final class zzfg implements ListIterator<String>, Iterator {
         return this.zza.hasPrevious();
     }
 
-    @Override // java.util.ListIterator, java.util.Iterator, p034j$.util.Iterator
+    @Override // java.util.ListIterator, java.util.Iterator, p033j$.util.Iterator
     public final /* bridge */ /* synthetic */ Object next() {
         return this.zza.next();
     }
@@ -59,7 +59,7 @@ final class zzfg implements ListIterator<String>, Iterator {
         return this.zza.previousIndex();
     }
 
-    @Override // java.util.ListIterator, java.util.Iterator, p034j$.util.Iterator
+    @Override // java.util.ListIterator, java.util.Iterator, p033j$.util.Iterator
     public final void remove() {
         throw new UnsupportedOperationException();
     }

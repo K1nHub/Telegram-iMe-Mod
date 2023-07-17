@@ -26,10 +26,10 @@
 .method public constructor <init>(FF)V
     .locals 3
 
-    .line 5880
+    .line 5888
     invoke-direct {p0}, Landroid/graphics/drawable/Drawable;-><init>()V
 
-    .line 5876
+    .line 5884
     new-instance v0, Landroid/graphics/Path;
 
     invoke-direct {v0}, Landroid/graphics/Path;-><init>()V
@@ -40,15 +40,15 @@
 
     new-array v0, v0, [F
 
-    .line 5877
+    .line 5885
     iput-object v0, p0, Lorg/telegram/ui/ActionBar/Theme$RippleRadMaskDrawable;->radii:[F
 
     const/4 v1, 0x1
 
-    .line 5878
+    .line 5886
     iput-boolean v1, p0, Lorg/telegram/ui/ActionBar/Theme$RippleRadMaskDrawable;->invalidatePath:Z
 
-    .line 5881
+    .line 5889
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
 
     move-result p1
@@ -69,7 +69,7 @@
 
     aput p1, v0, v1
 
-    .line 5882
+    .line 5890
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/Theme$RippleRadMaskDrawable;->radii:[F
 
     invoke-static {p2}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
@@ -100,10 +100,10 @@
 .method public constructor <init>(FFFF)V
     .locals 2
 
-    .line 5884
+    .line 5892
     invoke-direct {p0}, Landroid/graphics/drawable/Drawable;-><init>()V
 
-    .line 5876
+    .line 5884
     new-instance v0, Landroid/graphics/Path;
 
     invoke-direct {v0}, Landroid/graphics/Path;-><init>()V
@@ -114,15 +114,15 @@
 
     new-array v0, v0, [F
 
-    .line 5877
+    .line 5885
     iput-object v0, p0, Lorg/telegram/ui/ActionBar/Theme$RippleRadMaskDrawable;->radii:[F
 
     const/4 v1, 0x1
 
-    .line 5878
+    .line 5886
     iput-boolean v1, p0, Lorg/telegram/ui/ActionBar/Theme$RippleRadMaskDrawable;->invalidatePath:Z
 
-    .line 5885
+    .line 5893
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
 
     move-result p1
@@ -135,7 +135,7 @@
 
     aput p1, v0, v1
 
-    .line 5886
+    .line 5894
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/Theme$RippleRadMaskDrawable;->radii:[F
 
     invoke-static {p2}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
@@ -152,7 +152,7 @@
 
     aput p2, p1, v0
 
-    .line 5887
+    .line 5895
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/Theme$RippleRadMaskDrawable;->radii:[F
 
     invoke-static {p3}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
@@ -169,7 +169,7 @@
 
     aput p2, p1, p3
 
-    .line 5888
+    .line 5896
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/Theme$RippleRadMaskDrawable;->radii:[F
 
     invoke-static {p4}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
@@ -194,22 +194,22 @@
 .method public draw(Landroid/graphics/Canvas;)V
     .locals 4
 
-    .line 5913
+    .line 5921
     iget-boolean v0, p0, Lorg/telegram/ui/ActionBar/Theme$RippleRadMaskDrawable;->invalidatePath:Z
 
     if-eqz v0, :cond_0
 
     const/4 v0, 0x0
 
-    .line 5914
+    .line 5922
     iput-boolean v0, p0, Lorg/telegram/ui/ActionBar/Theme$RippleRadMaskDrawable;->invalidatePath:Z
 
-    .line 5915
+    .line 5923
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/Theme$RippleRadMaskDrawable;->path:Landroid/graphics/Path;
 
     invoke-virtual {v0}, Landroid/graphics/Path;->reset()V
 
-    .line 5916
+    .line 5924
     sget-object v0, Lorg/telegram/messenger/AndroidUtilities;->rectTmp:Landroid/graphics/RectF;
 
     invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
@@ -218,7 +218,7 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/RectF;->set(Landroid/graphics/Rect;)V
 
-    .line 5917
+    .line 5925
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/Theme$RippleRadMaskDrawable;->path:Landroid/graphics/Path;
 
     iget-object v2, p0, Lorg/telegram/ui/ActionBar/Theme$RippleRadMaskDrawable;->radii:[F
@@ -227,7 +227,7 @@
 
     invoke-virtual {v1, v0, v2, v3}, Landroid/graphics/Path;->addRoundRect(Landroid/graphics/RectF;[FLandroid/graphics/Path$Direction;)V
 
-    .line 5919
+    .line 5927
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/Theme$RippleRadMaskDrawable;->path:Landroid/graphics/Path;
 
@@ -253,7 +253,7 @@
 
     const/4 p1, 0x1
 
-    .line 5908
+    .line 5916
     iput-boolean p1, p0, Lorg/telegram/ui/ActionBar/Theme$RippleRadMaskDrawable;->invalidatePath:Z
 
     return-void
@@ -274,7 +274,7 @@
 .method public setRadius(FF)V
     .locals 3
 
-    .line 5892
+    .line 5900
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/Theme$RippleRadMaskDrawable;->radii:[F
 
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
@@ -299,7 +299,7 @@
 
     aput p1, v0, v2
 
-    .line 5893
+    .line 5901
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/Theme$RippleRadMaskDrawable;->radii:[F
 
     invoke-static {p2}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
@@ -324,10 +324,10 @@
 
     aput p2, p1, v0
 
-    .line 5894
+    .line 5902
     iput-boolean v1, p0, Lorg/telegram/ui/ActionBar/Theme$RippleRadMaskDrawable;->invalidatePath:Z
 
-    .line 5895
+    .line 5903
     invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->invalidateSelf()V
 
     return-void
@@ -336,7 +336,7 @@
 .method public setRadius(FFFF)V
     .locals 3
 
-    .line 5898
+    .line 5906
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/Theme$RippleRadMaskDrawable;->radii:[F
 
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
@@ -353,7 +353,7 @@
 
     aput p1, v0, v2
 
-    .line 5899
+    .line 5907
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/Theme$RippleRadMaskDrawable;->radii:[F
 
     invoke-static {p2}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
@@ -370,7 +370,7 @@
 
     aput p2, p1, v0
 
-    .line 5900
+    .line 5908
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/Theme$RippleRadMaskDrawable;->radii:[F
 
     invoke-static {p3}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
@@ -387,7 +387,7 @@
 
     aput p2, p1, p3
 
-    .line 5901
+    .line 5909
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/Theme$RippleRadMaskDrawable;->radii:[F
 
     invoke-static {p4}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
@@ -404,10 +404,10 @@
 
     aput p2, p1, p3
 
-    .line 5902
+    .line 5910
     iput-boolean v1, p0, Lorg/telegram/ui/ActionBar/Theme$RippleRadMaskDrawable;->invalidatePath:Z
 
-    .line 5903
+    .line 5911
     invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->invalidateSelf()V
 
     return-void

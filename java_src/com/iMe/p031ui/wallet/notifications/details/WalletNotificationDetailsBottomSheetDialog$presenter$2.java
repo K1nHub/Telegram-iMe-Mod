@@ -7,7 +7,7 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Lambda;
 import org.koin.core.parameter.ParametersHolder;
 import org.koin.core.parameter.ParametersHolderKt;
-import org.koin.p043mp.KoinPlatformTools;
+import org.koin.p042mp.KoinPlatformTools;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: WalletNotificationDetailsBottomSheetDialog.kt */
 /* renamed from: com.iMe.ui.wallet.notifications.details.WalletNotificationDetailsBottomSheetDialog$presenter$2 */
@@ -26,11 +26,11 @@ public final class WalletNotificationDetailsBottomSheetDialog$presenter$2 extend
     /* compiled from: WalletNotificationDetailsBottomSheetDialog.kt */
     /* renamed from: com.iMe.ui.wallet.notifications.details.WalletNotificationDetailsBottomSheetDialog$presenter$2$1 */
     /* loaded from: classes4.dex */
-    public static final class C23261 extends Lambda implements Function0<ParametersHolder> {
+    public static final class C23721 extends Lambda implements Function0<ParametersHolder> {
         final /* synthetic */ WalletNotificationDetailsBottomSheetDialog this$0;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C23261(WalletNotificationDetailsBottomSheetDialog walletNotificationDetailsBottomSheetDialog) {
+        C23721(WalletNotificationDetailsBottomSheetDialog walletNotificationDetailsBottomSheetDialog) {
             super(0);
             this.this$0 = walletNotificationDetailsBottomSheetDialog;
         }
@@ -48,7 +48,7 @@ public final class WalletNotificationDetailsBottomSheetDialog$presenter$2 extend
     public final WalletNotificationDetailsPresenter invoke() {
         Lazy lazy;
         WalletNotificationDetailsBottomSheetDialog walletNotificationDetailsBottomSheetDialog = this.this$0;
-        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new C2324xccf02360(walletNotificationDetailsBottomSheetDialog, null, new C23261(walletNotificationDetailsBottomSheetDialog)));
+        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new C2370xccf02360(walletNotificationDetailsBottomSheetDialog, null, new C23721(walletNotificationDetailsBottomSheetDialog)));
         return (WalletNotificationDetailsPresenter) lazy.getValue();
     }
 }

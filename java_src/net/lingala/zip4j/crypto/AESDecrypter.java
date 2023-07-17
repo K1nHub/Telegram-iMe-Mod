@@ -1,6 +1,6 @@
 package net.lingala.zip4j.crypto;
 
-import com.google.android.exoplayer2.C0475C;
+import com.google.android.exoplayer2.C0480C;
 import java.util.Arrays;
 import net.lingala.zip4j.crypto.PBKDF2.MacBasedPRF;
 import net.lingala.zip4j.crypto.PBKDF2.PBKDF2Engine;
@@ -21,7 +21,7 @@ public class AESDecrypter implements IDecrypter {
     private byte[] derivedPasswordVerifier;
 
     /* renamed from: iv */
-    private byte[] f1227iv;
+    private byte[] f1309iv;
     private LocalFileHeader localFileHeader;
     private MacBasedPRF mac;
     private byte[] macKey;
@@ -39,7 +39,7 @@ public class AESDecrypter implements IDecrypter {
         }
         this.localFileHeader = localFileHeader;
         this.storedMac = null;
-        this.f1227iv = new byte[16];
+        this.f1309iv = new byte[16];
         this.counterBlock = new byte[16];
         init(bArr, bArr2);
     }
@@ -118,8 +118,8 @@ public class AESDecrypter implements IDecrypter {
             try {
                 this.loopCount = i6;
                 this.mac.update(bArr, i3, i6);
-                Raw.prepareBuffAESIVBytes(this.f1227iv, this.nonce, 16);
-                this.aesEngine.processBlock(this.f1227iv, this.counterBlock);
+                Raw.prepareBuffAESIVBytes(this.f1309iv, this.nonce, 16);
+                this.aesEngine.processBlock(this.f1309iv, this.counterBlock);
                 for (int i7 = 0; i7 < this.loopCount; i7++) {
                     int i8 = i3 + i7;
                     bArr[i8] = (byte) (bArr[i8] ^ this.counterBlock[i7]);
@@ -136,7 +136,7 @@ public class AESDecrypter implements IDecrypter {
 
     private byte[] deriveKey(byte[] bArr, char[] cArr) throws ZipException {
         try {
-            return new PBKDF2Engine(new PBKDF2Parameters("HmacSHA1", C0475C.ISO88591_NAME, bArr, 1000)).deriveKey(cArr, this.KEY_LENGTH + this.MAC_LENGTH + 2);
+            return new PBKDF2Engine(new PBKDF2Parameters("HmacSHA1", C0480C.ISO88591_NAME, bArr, 1000)).deriveKey(cArr, this.KEY_LENGTH + this.MAC_LENGTH + 2);
         } catch (Exception e) {
             throw new ZipException(e);
         }

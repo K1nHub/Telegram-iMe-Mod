@@ -1,6 +1,6 @@
 package androidx.core;
 /* loaded from: classes.dex */
 public final class R$dimen {
-    public static final int compat_notification_large_icon_max_height = 2131165295;
-    public static final int compat_notification_large_icon_max_width = 2131165296;
+    public static final int compat_notification_large_icon_max_height = 2131165293;
+    public static final int compat_notification_large_icon_max_width = 2131165294;
 }

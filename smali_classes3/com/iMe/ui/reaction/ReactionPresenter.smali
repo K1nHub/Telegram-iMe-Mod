@@ -13,7 +13,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nReactionPresenter.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ReactionPresenter.kt\ncom/iMe/ui/reaction/ReactionPresenter\n+ 2 ObservableExt.kt\ncom/iMe/storage/domain/utils/extentions/ObservableExtKt\n+ 3 RxExt.kt\ncom/iMe/utils/extentions/rx/RxExtKt\n*L\n1#1,110:1\n14#2:111\n39#3,8:112\n*S KotlinDebug\n*F\n+ 1 ReactionPresenter.kt\ncom/iMe/ui/reaction/ReactionPresenter\n*L\n55#1:111\n63#1:112,8\n*E\n"
+    value = "SMAP\nReactionPresenter.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ReactionPresenter.kt\ncom/iMe/ui/reaction/ReactionPresenter\n+ 2 ObservableExt.kt\ncom/iMe/storage/domain/utils/extentions/ObservableExtKt\n+ 3 RxExt.kt\ncom/iMe/utils/extentions/rx/RxExtKt\n*L\n1#1,110:1\n14#2:111\n42#3,12:112\n*S KotlinDebug\n*F\n+ 1 ReactionPresenter.kt\ncom/iMe/ui/reaction/ReactionPresenter\n*L\n55#1:111\n63#1:112,12\n*E\n"
 .end annotation
 
 .annotation runtime Lmoxy/InjectViewState;
@@ -448,7 +448,7 @@
 
     check-cast v2, Lcom/iMe/ui/base/mvp/base/BaseView;
 
-    .line 44
+    .line 47
     new-instance v3, Lcom/iMe/ui/reaction/ReactionPresenter$prepareTextMessage$$inlined$subscribeWithErrorHandle$default$1;
 
     move-object/from16 v4, p6
@@ -463,19 +463,19 @@
 
     invoke-direct {v3, v2}, Lcom/iMe/ui/reaction/ReactionPresenter$prepareTextMessage$$inlined$subscribeWithErrorHandle$default$2;-><init>(Lcom/iMe/ui/base/mvp/base/BaseView;)V
 
-    .line 46
+    .line 49
     new-instance v2, Lcom/iMe/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
 
     invoke-direct {v2, v3}, Lcom/iMe/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;-><init>(Lkotlin/jvm/functions/Function1;)V
 
-    .line 44
+    .line 47
     invoke-virtual {v1, v4, v2}, Lio/reactivex/Observable;->subscribe(Lio/reactivex/functions/Consumer;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
 
     move-result-object v1
 
-    const-string v2, "viewState: BaseView? = n\u2026  onError.invoke()\n    })"
+    const-string v2, "viewState: BaseView? = n\u2026Error.invoke()\n        })"
 
-    .line 46
+    .line 49
     invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     const/4 v2, 0x1

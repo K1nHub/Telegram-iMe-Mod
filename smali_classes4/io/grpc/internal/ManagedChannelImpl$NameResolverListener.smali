@@ -42,7 +42,7 @@
 
     iput-object p1, p0, Lio/grpc/internal/ManagedChannelImpl$NameResolverListener;->helper:Lio/grpc/internal/ManagedChannelImpl$LbHelperImpl;
 
-    const-string p1, "resolver"
+    const-string/jumbo p1, "resolver"
 
     .line 1318
     invoke-static {p3, p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;

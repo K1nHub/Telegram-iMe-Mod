@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.iMe.p031ui.custom.state.GlobalStateLayout;
-import org.telegram.messenger.C3295R;
+import org.telegram.messenger.C3417R;
 /* loaded from: classes4.dex */
 public final class ForkFragmentWalletSelectTokenBinding implements ViewBinding {
     public final GlobalStateLayout globalStateLayout;
@@ -30,7 +30,7 @@ public final class ForkFragmentWalletSelectTokenBinding implements ViewBinding {
     }
 
     public static ForkFragmentWalletSelectTokenBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3295R.layout.fork_fragment_wallet_select_token, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3417R.layout.fork_fragment_wallet_select_token, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -39,7 +39,7 @@ public final class ForkFragmentWalletSelectTokenBinding implements ViewBinding {
 
     public static ForkFragmentWalletSelectTokenBinding bind(View view) {
         GlobalStateLayout globalStateLayout = (GlobalStateLayout) view;
-        int i = C3295R.C3298id.recycle_tokens;
+        int i = C3417R.C3420id.recycle_tokens;
         RecyclerView recyclerView = (RecyclerView) ViewBindings.findChildViewById(view, i);
         if (recyclerView != null) {
             return new ForkFragmentWalletSelectTokenBinding(globalStateLayout, globalStateLayout, recyclerView);

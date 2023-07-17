@@ -4,13 +4,11 @@
 
 
 # static fields
-.field public static final CHAT_ADD_TO_BOOKMARKS:I
+.field public static final ADD_TOKEN:I
 
 .field public static final CHAT_ADD_TO_FOLDER:I
 
 .field public static final CHAT_ALBUMS:I
-
-.field public static final CHAT_BOOKMARKS:I
 
 .field public static final CHAT_CLEAR_CACHE:I
 
@@ -21,8 +19,6 @@
 .field public static final CHAT_DONATE:I
 
 .field public static final CHAT_JUMP_TO_START:I
-
-.field public static final CHAT_REMOVE_FROM_BOOKMARKS:I
 
 .field public static final CHAT_SELECT_TOPIC:I
 
@@ -45,8 +41,6 @@
 .field public static final DIALOGS_CHAT_SETTINGS:I
 
 .field public static final DIALOGS_CLEAR_CACHE:I
-
-.field public static final DIALOGS_MANAGEMENT_DELETE_ALL:I
 
 .field public static final DIALOGS_MOVE_TO_FOLDER:I
 
@@ -138,11 +132,11 @@
 
 .field public static final SCAN_ADDRESS:I
 
+.field public static final SEARCH:I
+
 .field public static final SEARCH_QR:I
 
 .field public static final SEARCH_TEL:I
-
-.field public static final SEARCH_TWITTER:I
 
 .field public static final SEND_AS_GIF:I
 
@@ -172,9 +166,9 @@
 
 .field public static final TOGGLE_MUSIC_PLAYLIST:I
 
-.field public static final TOKEN_SITE:I
+.field public static final TOKEN_INFORMATION:I
 
-.field public static final TOKEN_SMART_CONTRACT_ADDRESS:I
+.field public static final TOKEN_SITE:I
 
 .field public static final TOKEN_STATISTICS:I
 
@@ -199,645 +193,624 @@
 
     add-int/lit8 v0, v0, 0x1
 
-    .line 130
-    sput v0, Lcom/iMe/common/IdFabric$Menu;->id:I
-
-    add-int/lit8 v1, v0, 0x1
-
-    .line 131
-    sput v1, Lcom/iMe/common/IdFabric$Menu;->id:I
-
-    sput v0, Lcom/iMe/common/IdFabric$Menu;->LOGOUT:I
-
-    add-int/lit8 v0, v1, 0x1
-
     .line 132
     sput v0, Lcom/iMe/common/IdFabric$Menu;->id:I
-
-    sput v1, Lcom/iMe/common/IdFabric$Menu;->NOTIFICATIONS:I
 
     add-int/lit8 v1, v0, 0x1
 
     .line 133
     sput v1, Lcom/iMe/common/IdFabric$Menu;->id:I
 
-    sput v0, Lcom/iMe/common/IdFabric$Menu;->NETWORK_SWITCH:I
+    sput v0, Lcom/iMe/common/IdFabric$Menu;->LOGOUT:I
 
     add-int/lit8 v0, v1, 0x1
 
     .line 134
     sput v0, Lcom/iMe/common/IdFabric$Menu;->id:I
 
-    sput v1, Lcom/iMe/common/IdFabric$Menu;->SHARE:I
+    sput v1, Lcom/iMe/common/IdFabric$Menu;->NOTIFICATIONS:I
 
     add-int/lit8 v1, v0, 0x1
 
     .line 135
     sput v1, Lcom/iMe/common/IdFabric$Menu;->id:I
 
-    sput v0, Lcom/iMe/common/IdFabric$Menu;->COPY:I
+    sput v0, Lcom/iMe/common/IdFabric$Menu;->NETWORK_SWITCH:I
 
     add-int/lit8 v0, v1, 0x1
 
     .line 136
     sput v0, Lcom/iMe/common/IdFabric$Menu;->id:I
 
-    sput v1, Lcom/iMe/common/IdFabric$Menu;->OPTIONS:I
+    sput v1, Lcom/iMe/common/IdFabric$Menu;->SHARE:I
 
     add-int/lit8 v1, v0, 0x1
 
     .line 137
     sput v1, Lcom/iMe/common/IdFabric$Menu;->id:I
 
-    sput v0, Lcom/iMe/common/IdFabric$Menu;->PDF:I
+    sput v0, Lcom/iMe/common/IdFabric$Menu;->COPY:I
 
     add-int/lit8 v0, v1, 0x1
 
     .line 138
     sput v0, Lcom/iMe/common/IdFabric$Menu;->id:I
 
-    sput v1, Lcom/iMe/common/IdFabric$Menu;->REPORT:I
+    sput v1, Lcom/iMe/common/IdFabric$Menu;->OPTIONS:I
 
     add-int/lit8 v1, v0, 0x1
 
     .line 139
     sput v1, Lcom/iMe/common/IdFabric$Menu;->id:I
 
-    sput v0, Lcom/iMe/common/IdFabric$Menu;->TOKEN_SMART_CONTRACT_ADDRESS:I
+    sput v0, Lcom/iMe/common/IdFabric$Menu;->PDF:I
 
     add-int/lit8 v0, v1, 0x1
 
     .line 140
     sput v0, Lcom/iMe/common/IdFabric$Menu;->id:I
 
-    sput v1, Lcom/iMe/common/IdFabric$Menu;->TOKEN_STATISTICS:I
+    sput v1, Lcom/iMe/common/IdFabric$Menu;->REPORT:I
 
     add-int/lit8 v1, v0, 0x1
 
     .line 141
     sput v1, Lcom/iMe/common/IdFabric$Menu;->id:I
 
-    sput v0, Lcom/iMe/common/IdFabric$Menu;->TOKEN_SITE:I
+    sput v0, Lcom/iMe/common/IdFabric$Menu;->TOKEN_INFORMATION:I
 
     add-int/lit8 v0, v1, 0x1
 
     .line 142
     sput v0, Lcom/iMe/common/IdFabric$Menu;->id:I
 
-    sput v1, Lcom/iMe/common/IdFabric$Menu;->SCAN_ADDRESS:I
+    sput v1, Lcom/iMe/common/IdFabric$Menu;->TOKEN_STATISTICS:I
 
     add-int/lit8 v1, v0, 0x1
 
     .line 143
     sput v1, Lcom/iMe/common/IdFabric$Menu;->id:I
 
-    sput v0, Lcom/iMe/common/IdFabric$Menu;->RESET:I
+    sput v0, Lcom/iMe/common/IdFabric$Menu;->TOKEN_SITE:I
 
     add-int/lit8 v0, v1, 0x1
 
     .line 144
     sput v0, Lcom/iMe/common/IdFabric$Menu;->id:I
 
-    sput v1, Lcom/iMe/common/IdFabric$Menu;->REJECT:I
+    sput v1, Lcom/iMe/common/IdFabric$Menu;->SCAN_ADDRESS:I
 
     add-int/lit8 v1, v0, 0x1
 
     .line 145
     sput v1, Lcom/iMe/common/IdFabric$Menu;->id:I
 
-    sput v0, Lcom/iMe/common/IdFabric$Menu;->RECEIVE:I
+    sput v0, Lcom/iMe/common/IdFabric$Menu;->RESET:I
 
     add-int/lit8 v0, v1, 0x1
 
     .line 146
     sput v0, Lcom/iMe/common/IdFabric$Menu;->id:I
 
-    sput v1, Lcom/iMe/common/IdFabric$Menu;->WALLET_CONNECT:I
+    sput v1, Lcom/iMe/common/IdFabric$Menu;->REJECT:I
 
     add-int/lit8 v1, v0, 0x1
 
     .line 147
     sput v1, Lcom/iMe/common/IdFabric$Menu;->id:I
 
-    sput v0, Lcom/iMe/common/IdFabric$Menu;->SORT:I
+    sput v0, Lcom/iMe/common/IdFabric$Menu;->RECEIVE:I
 
     add-int/lit8 v0, v1, 0x1
 
     .line 148
     sput v0, Lcom/iMe/common/IdFabric$Menu;->id:I
 
-    sput v1, Lcom/iMe/common/IdFabric$Menu;->DELETE:I
+    sput v1, Lcom/iMe/common/IdFabric$Menu;->WALLET_CONNECT:I
 
     add-int/lit8 v1, v0, 0x1
 
     .line 149
     sput v1, Lcom/iMe/common/IdFabric$Menu;->id:I
 
-    sput v0, Lcom/iMe/common/IdFabric$Menu;->TOGGLE_AUTO_PREVIEW:I
+    sput v0, Lcom/iMe/common/IdFabric$Menu;->SORT:I
 
     add-int/lit8 v0, v1, 0x1
 
     .line 150
     sput v0, Lcom/iMe/common/IdFabric$Menu;->id:I
 
-    sput v1, Lcom/iMe/common/IdFabric$Menu;->TOGGLE_MUSIC_PLAYLIST:I
+    sput v1, Lcom/iMe/common/IdFabric$Menu;->DELETE:I
 
     add-int/lit8 v1, v0, 0x1
 
     .line 151
     sput v1, Lcom/iMe/common/IdFabric$Menu;->id:I
 
-    sput v0, Lcom/iMe/common/IdFabric$Menu;->UNPIN_PLAYER:I
+    sput v0, Lcom/iMe/common/IdFabric$Menu;->TOGGLE_AUTO_PREVIEW:I
 
     add-int/lit8 v0, v1, 0x1
 
     .line 152
     sput v0, Lcom/iMe/common/IdFabric$Menu;->id:I
 
-    sput v1, Lcom/iMe/common/IdFabric$Menu;->PINNED_PLAYER_TOGGLE_COMPACT:I
+    sput v1, Lcom/iMe/common/IdFabric$Menu;->TOGGLE_MUSIC_PLAYLIST:I
 
     add-int/lit8 v1, v0, 0x1
 
     .line 153
     sput v1, Lcom/iMe/common/IdFabric$Menu;->id:I
 
-    sput v0, Lcom/iMe/common/IdFabric$Menu;->PINNED_PLAYER_TOGGLE_THEME:I
+    sput v0, Lcom/iMe/common/IdFabric$Menu;->UNPIN_PLAYER:I
 
     add-int/lit8 v0, v1, 0x1
 
     .line 154
     sput v0, Lcom/iMe/common/IdFabric$Menu;->id:I
 
-    sput v1, Lcom/iMe/common/IdFabric$Menu;->SEARCH_QR:I
+    sput v1, Lcom/iMe/common/IdFabric$Menu;->PINNED_PLAYER_TOGGLE_COMPACT:I
 
     add-int/lit8 v1, v0, 0x1
 
     .line 155
     sput v1, Lcom/iMe/common/IdFabric$Menu;->id:I
 
-    sput v0, Lcom/iMe/common/IdFabric$Menu;->SEARCH_TEL:I
+    sput v0, Lcom/iMe/common/IdFabric$Menu;->PINNED_PLAYER_TOGGLE_THEME:I
 
     add-int/lit8 v0, v1, 0x1
 
     .line 156
     sput v0, Lcom/iMe/common/IdFabric$Menu;->id:I
 
-    sput v1, Lcom/iMe/common/IdFabric$Menu;->SEARCH_TWITTER:I
+    sput v1, Lcom/iMe/common/IdFabric$Menu;->SEARCH_QR:I
 
     add-int/lit8 v1, v0, 0x1
 
     .line 157
     sput v1, Lcom/iMe/common/IdFabric$Menu;->id:I
 
-    sput v0, Lcom/iMe/common/IdFabric$Menu;->QR:I
+    sput v0, Lcom/iMe/common/IdFabric$Menu;->SEARCH_TEL:I
 
     add-int/lit8 v0, v1, 0x1
 
     .line 158
     sput v0, Lcom/iMe/common/IdFabric$Menu;->id:I
 
-    sput v1, Lcom/iMe/common/IdFabric$Menu;->LANGUAGE:I
+    sput v1, Lcom/iMe/common/IdFabric$Menu;->SEARCH:I
 
     add-int/lit8 v1, v0, 0x1
 
     .line 159
     sput v1, Lcom/iMe/common/IdFabric$Menu;->id:I
 
-    sput v0, Lcom/iMe/common/IdFabric$Menu;->SEND_AS_GIF:I
+    sput v0, Lcom/iMe/common/IdFabric$Menu;->QR:I
 
     add-int/lit8 v0, v1, 0x1
 
     .line 160
     sput v0, Lcom/iMe/common/IdFabric$Menu;->id:I
 
-    sput v1, Lcom/iMe/common/IdFabric$Menu;->EDIT_AND_SEND:I
+    sput v1, Lcom/iMe/common/IdFabric$Menu;->LANGUAGE:I
 
     add-int/lit8 v1, v0, 0x1
 
     .line 161
     sput v1, Lcom/iMe/common/IdFabric$Menu;->id:I
 
-    sput v0, Lcom/iMe/common/IdFabric$Menu;->NFT_COPY_ID:I
+    sput v0, Lcom/iMe/common/IdFabric$Menu;->SEND_AS_GIF:I
 
     add-int/lit8 v0, v1, 0x1
 
     .line 162
     sput v0, Lcom/iMe/common/IdFabric$Menu;->id:I
 
-    sput v1, Lcom/iMe/common/IdFabric$Menu;->NFT_OPEN_CONTRACT:I
+    sput v1, Lcom/iMe/common/IdFabric$Menu;->EDIT_AND_SEND:I
 
     add-int/lit8 v1, v0, 0x1
 
     .line 163
     sput v1, Lcom/iMe/common/IdFabric$Menu;->id:I
 
-    sput v0, Lcom/iMe/common/IdFabric$Menu;->NFT_OPEN_SOURCE:I
+    sput v0, Lcom/iMe/common/IdFabric$Menu;->NFT_COPY_ID:I
 
     add-int/lit8 v0, v1, 0x1
 
     .line 164
     sput v0, Lcom/iMe/common/IdFabric$Menu;->id:I
 
-    sput v1, Lcom/iMe/common/IdFabric$Menu;->SET_AS_AVATAR:I
+    sput v1, Lcom/iMe/common/IdFabric$Menu;->NFT_OPEN_CONTRACT:I
 
     add-int/lit8 v1, v0, 0x1
 
     .line 165
     sput v1, Lcom/iMe/common/IdFabric$Menu;->id:I
 
-    sput v0, Lcom/iMe/common/IdFabric$Menu;->SETTINGS:I
+    sput v0, Lcom/iMe/common/IdFabric$Menu;->NFT_OPEN_SOURCE:I
 
     add-int/lit8 v0, v1, 0x1
 
     .line 166
     sput v0, Lcom/iMe/common/IdFabric$Menu;->id:I
 
-    sput v1, Lcom/iMe/common/IdFabric$Menu;->REACTIONS:I
+    sput v1, Lcom/iMe/common/IdFabric$Menu;->SET_AS_AVATAR:I
 
     add-int/lit8 v1, v0, 0x1
 
     .line 167
     sput v1, Lcom/iMe/common/IdFabric$Menu;->id:I
 
-    sput v0, Lcom/iMe/common/IdFabric$Menu;->TRANSLATE:I
+    sput v0, Lcom/iMe/common/IdFabric$Menu;->SETTINGS:I
 
     add-int/lit8 v0, v1, 0x1
 
     .line 168
     sput v0, Lcom/iMe/common/IdFabric$Menu;->id:I
 
-    sput v1, Lcom/iMe/common/IdFabric$Menu;->SWITCH_ACCOUNT:I
+    sput v1, Lcom/iMe/common/IdFabric$Menu;->REACTIONS:I
 
     add-int/lit8 v1, v0, 0x1
 
     .line 169
     sput v1, Lcom/iMe/common/IdFabric$Menu;->id:I
 
-    sput v0, Lcom/iMe/common/IdFabric$Menu;->TOGGLE_ARCHIVE:I
+    sput v0, Lcom/iMe/common/IdFabric$Menu;->TRANSLATE:I
 
     add-int/lit8 v0, v1, 0x1
 
     .line 170
     sput v0, Lcom/iMe/common/IdFabric$Menu;->id:I
 
-    sput v1, Lcom/iMe/common/IdFabric$Menu;->CONTACTS_PRIVACY_SETTINGS:I
+    sput v1, Lcom/iMe/common/IdFabric$Menu;->SWITCH_ACCOUNT:I
 
     add-int/lit8 v1, v0, 0x1
 
     .line 171
     sput v1, Lcom/iMe/common/IdFabric$Menu;->id:I
 
-    sput v0, Lcom/iMe/common/IdFabric$Menu;->PROFILE_SERVICE_MESSAGES:I
+    sput v0, Lcom/iMe/common/IdFabric$Menu;->TOGGLE_ARCHIVE:I
 
     add-int/lit8 v0, v1, 0x1
 
     .line 172
     sput v0, Lcom/iMe/common/IdFabric$Menu;->id:I
 
-    sput v1, Lcom/iMe/common/IdFabric$Menu;->MESSAGE_COPY_PART:I
+    sput v1, Lcom/iMe/common/IdFabric$Menu;->CONTACTS_PRIVACY_SETTINGS:I
 
     add-int/lit8 v1, v0, 0x1
 
     .line 173
     sput v1, Lcom/iMe/common/IdFabric$Menu;->id:I
 
-    sput v0, Lcom/iMe/common/IdFabric$Menu;->MESSAGE_COPY_IMAGE:I
+    sput v0, Lcom/iMe/common/IdFabric$Menu;->PROFILE_SERVICE_MESSAGES:I
 
     add-int/lit8 v0, v1, 0x1
 
     .line 174
     sput v0, Lcom/iMe/common/IdFabric$Menu;->id:I
 
-    sput v1, Lcom/iMe/common/IdFabric$Menu;->MESSAGE_RESTORE_BACKUP:I
+    sput v1, Lcom/iMe/common/IdFabric$Menu;->MESSAGE_COPY_PART:I
 
     add-int/lit8 v1, v0, 0x1
 
     .line 175
     sput v1, Lcom/iMe/common/IdFabric$Menu;->id:I
 
-    sput v0, Lcom/iMe/common/IdFabric$Menu;->MESSAGE_SAVE_AS:I
+    sput v0, Lcom/iMe/common/IdFabric$Menu;->MESSAGE_COPY_IMAGE:I
 
     add-int/lit8 v0, v1, 0x1
 
     .line 176
     sput v0, Lcom/iMe/common/IdFabric$Menu;->id:I
 
-    sput v1, Lcom/iMe/common/IdFabric$Menu;->MESSAGE_EDIT_TEMPLATE:I
+    sput v1, Lcom/iMe/common/IdFabric$Menu;->MESSAGE_RESTORE_BACKUP:I
 
     add-int/lit8 v1, v0, 0x1
 
     .line 177
     sput v1, Lcom/iMe/common/IdFabric$Menu;->id:I
 
-    sput v0, Lcom/iMe/common/IdFabric$Menu;->MESSAGE_FORWARD_CLOUD:I
+    sput v0, Lcom/iMe/common/IdFabric$Menu;->MESSAGE_SAVE_AS:I
 
     add-int/lit8 v0, v1, 0x1
 
     .line 178
     sput v0, Lcom/iMe/common/IdFabric$Menu;->id:I
 
-    sput v1, Lcom/iMe/common/IdFabric$Menu;->MESSAGE_FORWARD_WHATSAPP:I
+    sput v1, Lcom/iMe/common/IdFabric$Menu;->MESSAGE_EDIT_TEMPLATE:I
 
     add-int/lit8 v1, v0, 0x1
 
     .line 179
     sput v1, Lcom/iMe/common/IdFabric$Menu;->id:I
 
-    sput v0, Lcom/iMe/common/IdFabric$Menu;->MESSAGE_FORWARD_WHATSAPP_BUSINESS:I
+    sput v0, Lcom/iMe/common/IdFabric$Menu;->MESSAGE_FORWARD_CLOUD:I
 
     add-int/lit8 v0, v1, 0x1
 
     .line 180
     sput v0, Lcom/iMe/common/IdFabric$Menu;->id:I
 
-    sput v1, Lcom/iMe/common/IdFabric$Menu;->MESSAGE_FORWARD_VIBER:I
+    sput v1, Lcom/iMe/common/IdFabric$Menu;->MESSAGE_FORWARD_WHATSAPP:I
 
     add-int/lit8 v1, v0, 0x1
 
     .line 181
     sput v1, Lcom/iMe/common/IdFabric$Menu;->id:I
 
-    sput v0, Lcom/iMe/common/IdFabric$Menu;->MESSAGE_DELETE_FROM_CACHE:I
+    sput v0, Lcom/iMe/common/IdFabric$Menu;->MESSAGE_FORWARD_WHATSAPP_BUSINESS:I
 
     add-int/lit8 v0, v1, 0x1
 
     .line 182
     sput v0, Lcom/iMe/common/IdFabric$Menu;->id:I
 
-    sput v1, Lcom/iMe/common/IdFabric$Menu;->CHAT_TRANSLATE_SETTINGS:I
+    sput v1, Lcom/iMe/common/IdFabric$Menu;->MESSAGE_FORWARD_VIBER:I
 
     add-int/lit8 v1, v0, 0x1
 
     .line 183
     sput v1, Lcom/iMe/common/IdFabric$Menu;->id:I
 
-    sput v0, Lcom/iMe/common/IdFabric$Menu;->CHAT_JUMP_TO_START:I
+    sput v0, Lcom/iMe/common/IdFabric$Menu;->MESSAGE_DELETE_FROM_CACHE:I
 
     add-int/lit8 v0, v1, 0x1
 
     .line 184
     sput v0, Lcom/iMe/common/IdFabric$Menu;->id:I
 
-    sput v1, Lcom/iMe/common/IdFabric$Menu;->CHAT_CLEAR_CACHE:I
+    sput v1, Lcom/iMe/common/IdFabric$Menu;->CHAT_TRANSLATE_SETTINGS:I
 
     add-int/lit8 v1, v0, 0x1
 
     .line 185
     sput v1, Lcom/iMe/common/IdFabric$Menu;->id:I
 
-    sput v0, Lcom/iMe/common/IdFabric$Menu;->CHAT_ALBUMS:I
+    sput v0, Lcom/iMe/common/IdFabric$Menu;->CHAT_JUMP_TO_START:I
 
     add-int/lit8 v0, v1, 0x1
 
     .line 186
     sput v0, Lcom/iMe/common/IdFabric$Menu;->id:I
 
-    sput v1, Lcom/iMe/common/IdFabric$Menu;->CHAT_ADD_TO_FOLDER:I
+    sput v1, Lcom/iMe/common/IdFabric$Menu;->CHAT_CLEAR_CACHE:I
 
     add-int/lit8 v1, v0, 0x1
 
     .line 187
     sput v1, Lcom/iMe/common/IdFabric$Menu;->id:I
 
-    sput v0, Lcom/iMe/common/IdFabric$Menu;->CHAT_TOGGLE_ALBUM:I
+    sput v0, Lcom/iMe/common/IdFabric$Menu;->CHAT_ALBUMS:I
 
     add-int/lit8 v0, v1, 0x1
 
     .line 188
     sput v0, Lcom/iMe/common/IdFabric$Menu;->id:I
 
-    sput v1, Lcom/iMe/common/IdFabric$Menu;->CHAT_SELECT_TOPIC:I
+    sput v1, Lcom/iMe/common/IdFabric$Menu;->CHAT_ADD_TO_FOLDER:I
 
     add-int/lit8 v1, v0, 0x1
 
     .line 189
     sput v1, Lcom/iMe/common/IdFabric$Menu;->id:I
 
-    sput v0, Lcom/iMe/common/IdFabric$Menu;->CHAT_CLOUD_OPEN_BY_DEFAULT:I
+    sput v0, Lcom/iMe/common/IdFabric$Menu;->CHAT_TOGGLE_ALBUM:I
 
     add-int/lit8 v0, v1, 0x1
 
     .line 190
     sput v0, Lcom/iMe/common/IdFabric$Menu;->id:I
 
-    sput v1, Lcom/iMe/common/IdFabric$Menu;->CHAT_CLOUD_LOCK:I
+    sput v1, Lcom/iMe/common/IdFabric$Menu;->CHAT_SELECT_TOPIC:I
 
     add-int/lit8 v1, v0, 0x1
 
     .line 191
     sput v1, Lcom/iMe/common/IdFabric$Menu;->id:I
 
-    sput v0, Lcom/iMe/common/IdFabric$Menu;->CHAT_BOOKMARKS:I
+    sput v0, Lcom/iMe/common/IdFabric$Menu;->CHAT_CLOUD_OPEN_BY_DEFAULT:I
 
     add-int/lit8 v0, v1, 0x1
 
     .line 192
     sput v0, Lcom/iMe/common/IdFabric$Menu;->id:I
 
-    sput v1, Lcom/iMe/common/IdFabric$Menu;->CHAT_ADD_TO_BOOKMARKS:I
+    sput v1, Lcom/iMe/common/IdFabric$Menu;->CHAT_CLOUD_LOCK:I
 
     add-int/lit8 v1, v0, 0x1
 
     .line 193
     sput v1, Lcom/iMe/common/IdFabric$Menu;->id:I
 
-    sput v0, Lcom/iMe/common/IdFabric$Menu;->CHAT_REMOVE_FROM_BOOKMARKS:I
+    sput v0, Lcom/iMe/common/IdFabric$Menu;->CHAT_DONATE:I
 
     add-int/lit8 v0, v1, 0x1
 
     .line 194
     sput v0, Lcom/iMe/common/IdFabric$Menu;->id:I
 
-    sput v1, Lcom/iMe/common/IdFabric$Menu;->CHAT_DONATE:I
+    sput v1, Lcom/iMe/common/IdFabric$Menu;->DIALOGS_SORT_ALBUMS:I
 
     add-int/lit8 v1, v0, 0x1
 
     .line 195
     sput v1, Lcom/iMe/common/IdFabric$Menu;->id:I
 
-    sput v0, Lcom/iMe/common/IdFabric$Menu;->DIALOGS_SORT_ALBUMS:I
+    sput v0, Lcom/iMe/common/IdFabric$Menu;->DIALOGS_ALBUMS_CLOUD:I
 
     add-int/lit8 v0, v1, 0x1
 
     .line 196
     sput v0, Lcom/iMe/common/IdFabric$Menu;->id:I
 
-    sput v1, Lcom/iMe/common/IdFabric$Menu;->DIALOGS_ALBUMS_CLOUD:I
+    sput v1, Lcom/iMe/common/IdFabric$Menu;->DIALOGS_ALBUMS_OPEN_BY_DEFAULT:I
 
     add-int/lit8 v1, v0, 0x1
 
     .line 197
     sput v1, Lcom/iMe/common/IdFabric$Menu;->id:I
 
-    sput v0, Lcom/iMe/common/IdFabric$Menu;->DIALOGS_ALBUMS_OPEN_BY_DEFAULT:I
+    sput v0, Lcom/iMe/common/IdFabric$Menu;->DIALOGS_SCAN_LOGIN_QR_CODE:I
 
     add-int/lit8 v0, v1, 0x1
 
     .line 198
     sput v0, Lcom/iMe/common/IdFabric$Menu;->id:I
 
-    sput v1, Lcom/iMe/common/IdFabric$Menu;->DIALOGS_SCAN_LOGIN_QR_CODE:I
+    sput v1, Lcom/iMe/common/IdFabric$Menu;->DIALOGS_TOOLS_SETTINGS:I
 
     add-int/lit8 v1, v0, 0x1
 
     .line 199
     sput v1, Lcom/iMe/common/IdFabric$Menu;->id:I
 
-    sput v0, Lcom/iMe/common/IdFabric$Menu;->DIALOGS_TOOLS_SETTINGS:I
+    sput v0, Lcom/iMe/common/IdFabric$Menu;->DIALOGS_CHAT_SETTINGS:I
 
     add-int/lit8 v0, v1, 0x1
 
     .line 200
     sput v0, Lcom/iMe/common/IdFabric$Menu;->id:I
 
-    sput v1, Lcom/iMe/common/IdFabric$Menu;->DIALOGS_CHAT_SETTINGS:I
+    sput v1, Lcom/iMe/common/IdFabric$Menu;->DIALOGS_CLEAR_CACHE:I
 
     add-int/lit8 v1, v0, 0x1
 
     .line 201
     sput v1, Lcom/iMe/common/IdFabric$Menu;->id:I
 
-    sput v0, Lcom/iMe/common/IdFabric$Menu;->DIALOGS_CLEAR_CACHE:I
+    sput v0, Lcom/iMe/common/IdFabric$Menu;->DIALOGS_SCROLL_TO_END:I
 
     add-int/lit8 v0, v1, 0x1
 
     .line 202
     sput v0, Lcom/iMe/common/IdFabric$Menu;->id:I
 
-    sput v1, Lcom/iMe/common/IdFabric$Menu;->DIALOGS_SCROLL_TO_END:I
+    sput v1, Lcom/iMe/common/IdFabric$Menu;->DIALOGS_SCROLL_TO_START:I
 
     add-int/lit8 v1, v0, 0x1
 
     .line 203
     sput v1, Lcom/iMe/common/IdFabric$Menu;->id:I
 
-    sput v0, Lcom/iMe/common/IdFabric$Menu;->DIALOGS_SCROLL_TO_START:I
+    sput v0, Lcom/iMe/common/IdFabric$Menu;->DIALOGS_MOVE_TO_FOLDER:I
 
     add-int/lit8 v0, v1, 0x1
 
     .line 204
     sput v0, Lcom/iMe/common/IdFabric$Menu;->id:I
 
-    sput v1, Lcom/iMe/common/IdFabric$Menu;->DIALOGS_MOVE_TO_FOLDER:I
+    sput v1, Lcom/iMe/common/IdFabric$Menu;->DIALOGS_SELECT_TOPIC:I
 
     add-int/lit8 v1, v0, 0x1
 
     .line 205
     sput v1, Lcom/iMe/common/IdFabric$Menu;->id:I
 
-    sput v0, Lcom/iMe/common/IdFabric$Menu;->DIALOGS_SELECT_TOPIC:I
+    sput v0, Lcom/iMe/common/IdFabric$Menu;->DIALOGS_ARCHIVE_LOCK:I
 
     add-int/lit8 v0, v1, 0x1
 
     .line 206
     sput v0, Lcom/iMe/common/IdFabric$Menu;->id:I
 
-    sput v1, Lcom/iMe/common/IdFabric$Menu;->DIALOGS_ARCHIVE_LOCK:I
+    sput v1, Lcom/iMe/common/IdFabric$Menu;->PHOTO_COPY:I
 
     add-int/lit8 v1, v0, 0x1
 
     .line 207
     sput v1, Lcom/iMe/common/IdFabric$Menu;->id:I
 
-    sput v0, Lcom/iMe/common/IdFabric$Menu;->DIALOGS_MANAGEMENT_DELETE_ALL:I
+    sput v0, Lcom/iMe/common/IdFabric$Menu;->PHOTO_TEXT:I
 
     add-int/lit8 v0, v1, 0x1
 
     .line 208
     sput v0, Lcom/iMe/common/IdFabric$Menu;->id:I
 
-    sput v1, Lcom/iMe/common/IdFabric$Menu;->PHOTO_COPY:I
+    sput v1, Lcom/iMe/common/IdFabric$Menu;->PHOTO_OBJECTS:I
 
     add-int/lit8 v1, v0, 0x1
 
     .line 209
     sput v1, Lcom/iMe/common/IdFabric$Menu;->id:I
 
-    sput v0, Lcom/iMe/common/IdFabric$Menu;->PHOTO_TEXT:I
+    sput v0, Lcom/iMe/common/IdFabric$Menu;->GROUP_MESSAGES:I
 
     add-int/lit8 v0, v1, 0x1
 
     .line 210
     sput v0, Lcom/iMe/common/IdFabric$Menu;->id:I
 
-    sput v1, Lcom/iMe/common/IdFabric$Menu;->PHOTO_OBJECTS:I
+    sput v1, Lcom/iMe/common/IdFabric$Menu;->UNGROUP_MESSAGES:I
 
     add-int/lit8 v1, v0, 0x1
 
     .line 211
     sput v1, Lcom/iMe/common/IdFabric$Menu;->id:I
 
-    sput v0, Lcom/iMe/common/IdFabric$Menu;->GROUP_MESSAGES:I
+    sput v0, Lcom/iMe/common/IdFabric$Menu;->STAKING_CONTRACT:I
 
     add-int/lit8 v0, v1, 0x1
 
     .line 212
     sput v0, Lcom/iMe/common/IdFabric$Menu;->id:I
 
-    sput v1, Lcom/iMe/common/IdFabric$Menu;->UNGROUP_MESSAGES:I
+    sput v1, Lcom/iMe/common/IdFabric$Menu;->STAKING_WEBSITE:I
 
     add-int/lit8 v1, v0, 0x1
 
     .line 213
     sput v1, Lcom/iMe/common/IdFabric$Menu;->id:I
 
-    sput v0, Lcom/iMe/common/IdFabric$Menu;->STAKING_CONTRACT:I
+    sput v0, Lcom/iMe/common/IdFabric$Menu;->STAKING_CONDITIONS:I
 
     add-int/lit8 v0, v1, 0x1
 
     .line 214
     sput v0, Lcom/iMe/common/IdFabric$Menu;->id:I
 
-    sput v1, Lcom/iMe/common/IdFabric$Menu;->STAKING_WEBSITE:I
+    sput v1, Lcom/iMe/common/IdFabric$Menu;->STAKING_HELP:I
 
     add-int/lit8 v1, v0, 0x1
 
     .line 215
     sput v1, Lcom/iMe/common/IdFabric$Menu;->id:I
 
-    sput v0, Lcom/iMe/common/IdFabric$Menu;->STAKING_CONDITIONS:I
+    sput v0, Lcom/iMe/common/IdFabric$Menu;->TON_ADDRESS_V3R2:I
 
     add-int/lit8 v0, v1, 0x1
 
     .line 216
     sput v0, Lcom/iMe/common/IdFabric$Menu;->id:I
 
-    sput v1, Lcom/iMe/common/IdFabric$Menu;->STAKING_HELP:I
+    sput v1, Lcom/iMe/common/IdFabric$Menu;->INFO:I
 
     add-int/lit8 v1, v0, 0x1
 
     .line 217
     sput v1, Lcom/iMe/common/IdFabric$Menu;->id:I
 
-    sput v0, Lcom/iMe/common/IdFabric$Menu;->TON_ADDRESS_V3R2:I
+    sput v0, Lcom/iMe/common/IdFabric$Menu;->OPEN_IN_TWITTER:I
 
     add-int/lit8 v0, v1, 0x1
 
     .line 218
     sput v0, Lcom/iMe/common/IdFabric$Menu;->id:I
 
-    sput v1, Lcom/iMe/common/IdFabric$Menu;->INFO:I
+    sput v1, Lcom/iMe/common/IdFabric$Menu;->RESET_TWITTER:I
 
     add-int/lit8 v1, v0, 0x1
 
     .line 219
     sput v1, Lcom/iMe/common/IdFabric$Menu;->id:I
 
-    sput v0, Lcom/iMe/common/IdFabric$Menu;->OPEN_IN_TWITTER:I
+    sput v0, Lcom/iMe/common/IdFabric$Menu;->TOGGLE_HIDDEN_CHATS:I
 
     add-int/lit8 v0, v1, 0x1
 
     .line 220
     sput v0, Lcom/iMe/common/IdFabric$Menu;->id:I
 
-    sput v1, Lcom/iMe/common/IdFabric$Menu;->RESET_TWITTER:I
-
-    add-int/lit8 v1, v0, 0x1
-
-    .line 221
-    sput v1, Lcom/iMe/common/IdFabric$Menu;->id:I
-
-    sput v0, Lcom/iMe/common/IdFabric$Menu;->TOGGLE_HIDDEN_CHATS:I
+    sput v1, Lcom/iMe/common/IdFabric$Menu;->ADD_TOKEN:I
 
     return-void
 .end method

@@ -65,7 +65,7 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "request"
+    const-string/jumbo v0, "request"
 
     invoke-static {p5, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -210,7 +210,7 @@
 
     move-object v0, p0
 
-    const-string v1, "request"
+    const-string/jumbo v1, "request"
 
     move-object v7, p3
 
@@ -302,7 +302,7 @@
         }
     .end annotation
 
-    const-string v0, "request"
+    const-string/jumbo v0, "request"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 

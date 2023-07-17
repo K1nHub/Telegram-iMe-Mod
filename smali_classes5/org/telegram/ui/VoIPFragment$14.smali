@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/VoIPFragment;)V
     .locals 0
 
-    .line 1362
+    .line 1386
     iput-object p1, p0, Lorg/telegram/ui/VoIPFragment$14;->this$0:Lorg/telegram/ui/VoIPFragment;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,15 +35,15 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 2
 
-    .line 1365
+    .line 1389
     invoke-static {}, Lorg/telegram/messenger/voip/VoIPService;->getSharedInstance()Lorg/telegram/messenger/voip/VoIPService;
 
     move-result-object p1
 
-    .line 1366
+    .line 1390
     iget-object v0, p0, Lorg/telegram/ui/VoIPFragment$14;->this$0:Lorg/telegram/ui/VoIPFragment;
 
-    invoke-static {v0}, Lorg/telegram/ui/VoIPFragment;->access$2400(Lorg/telegram/ui/VoIPFragment;)Z
+    invoke-static {v0}, Lorg/telegram/ui/VoIPFragment;->access$2500(Lorg/telegram/ui/VoIPFragment;)Z
 
     move-result v0
 
@@ -63,7 +63,7 @@
 
     if-nez p1, :cond_0
 
-    .line 1367
+    .line 1391
     iget-object p1, p0, Lorg/telegram/ui/VoIPFragment$14;->this$0:Lorg/telegram/ui/VoIPFragment;
 
     iget-object p1, p1, Lorg/telegram/ui/VoIPFragment;->hideUIRunnable:Ljava/lang/Runnable;
@@ -72,14 +72,14 @@
 
     invoke-static {p1, v0, v1}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;J)V
 
-    .line 1368
+    .line 1392
     iget-object p1, p0, Lorg/telegram/ui/VoIPFragment$14;->this$0:Lorg/telegram/ui/VoIPFragment;
 
     const/4 v0, 0x1
 
     iput-boolean v0, p1, Lorg/telegram/ui/VoIPFragment;->hideUiRunnableWaiting:Z
 
-    .line 1370
+    .line 1394
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/VoIPFragment$14;->this$0:Lorg/telegram/ui/VoIPFragment;
 

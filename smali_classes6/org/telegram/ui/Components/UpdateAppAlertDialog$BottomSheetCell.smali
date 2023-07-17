@@ -28,37 +28,37 @@
 .method public constructor <init>(Lorg/telegram/ui/Components/UpdateAppAlertDialog;Landroid/content/Context;Z)V
     .locals 11
 
-    .line 69
+    .line 110
     iput-object p1, p0, Lorg/telegram/ui/Components/UpdateAppAlertDialog$BottomSheetCell;->this$0:Lorg/telegram/ui/Components/UpdateAppAlertDialog;
 
-    .line 70
+    .line 111
     invoke-direct {p0, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
     const/4 p1, 0x2
 
     new-array v0, p1, [Landroid/widget/TextView;
 
-    .line 66
+    .line 107
     iput-object v0, p0, Lorg/telegram/ui/Components/UpdateAppAlertDialog$BottomSheetCell;->textView:[Landroid/widget/TextView;
 
     xor-int/lit8 v0, p3, 0x1
 
-    .line 72
+    .line 113
     iput-boolean v0, p0, Lorg/telegram/ui/Components/UpdateAppAlertDialog$BottomSheetCell;->hasBackground:Z
 
     const/4 v0, 0x0
 
-    .line 73
+    .line 114
     invoke-virtual {p0, v0}, Landroid/widget/FrameLayout;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 75
+    .line 116
     new-instance v0, Landroid/view/View;
 
     invoke-direct {v0, p2}, Landroid/view/View;-><init>(Landroid/content/Context;)V
 
     iput-object v0, p0, Lorg/telegram/ui/Components/UpdateAppAlertDialog$BottomSheetCell;->background:Landroid/view/View;
 
-    .line 76
+    .line 117
     iget-boolean v1, p0, Lorg/telegram/ui/Components/UpdateAppAlertDialog$BottomSheetCell;->hasBackground:Z
 
     const/4 v2, 0x0
@@ -67,7 +67,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 77
+    .line 118
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_featuredStickers_addButton:I
 
     new-array v4, v3, [F
@@ -82,7 +82,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 79
+    .line 120
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/UpdateAppAlertDialog$BottomSheetCell;->background:Landroid/view/View;
 
@@ -121,7 +121,7 @@
     :goto_1
     if-ge p3, p1, :cond_5
 
-    .line 82
+    .line 123
     iget-object v0, p0, Lorg/telegram/ui/Components/UpdateAppAlertDialog$BottomSheetCell;->textView:[Landroid/widget/TextView;
 
     new-instance v1, Landroid/widget/TextView;
@@ -130,28 +130,28 @@
 
     aput-object v1, v0, p3
 
-    .line 83
+    .line 124
     iget-object v0, p0, Lorg/telegram/ui/Components/UpdateAppAlertDialog$BottomSheetCell;->textView:[Landroid/widget/TextView;
 
     aget-object v0, v0, p3
 
     invoke-virtual {v0, v3}, Landroid/widget/TextView;->setLines(I)V
 
-    .line 84
+    .line 125
     iget-object v0, p0, Lorg/telegram/ui/Components/UpdateAppAlertDialog$BottomSheetCell;->textView:[Landroid/widget/TextView;
 
     aget-object v0, v0, p3
 
     invoke-virtual {v0, v3}, Landroid/widget/TextView;->setSingleLine(Z)V
 
-    .line 85
+    .line 126
     iget-object v0, p0, Lorg/telegram/ui/Components/UpdateAppAlertDialog$BottomSheetCell;->textView:[Landroid/widget/TextView;
 
     aget-object v0, v0, p3
 
     invoke-virtual {v0, v3}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 86
+    .line 127
     iget-object v0, p0, Lorg/telegram/ui/Components/UpdateAppAlertDialog$BottomSheetCell;->textView:[Landroid/widget/TextView;
 
     aget-object v0, v0, p3
@@ -160,7 +160,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setEllipsize(Landroid/text/TextUtils$TruncateAt;)V
 
-    .line 87
+    .line 128
     iget-object v0, p0, Lorg/telegram/ui/Components/UpdateAppAlertDialog$BottomSheetCell;->textView:[Landroid/widget/TextView;
 
     aget-object v0, v0, p3
@@ -169,12 +169,12 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 88
+    .line 129
     iget-boolean v0, p0, Lorg/telegram/ui/Components/UpdateAppAlertDialog$BottomSheetCell;->hasBackground:Z
 
     if-eqz v0, :cond_2
 
-    .line 89
+    .line 130
     iget-object v0, p0, Lorg/telegram/ui/Components/UpdateAppAlertDialog$BottomSheetCell;->textView:[Landroid/widget/TextView;
 
     aget-object v0, v0, p3
@@ -187,7 +187,7 @@
 
     invoke-virtual {v0, v4}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 90
+    .line 131
     iget-object v0, p0, Lorg/telegram/ui/Components/UpdateAppAlertDialog$BottomSheetCell;->textView:[Landroid/widget/TextView;
 
     aget-object v0, v0, p3
@@ -202,7 +202,7 @@
 
     goto :goto_2
 
-    .line 92
+    .line 133
     :cond_2
     iget-object v0, p0, Lorg/telegram/ui/Components/UpdateAppAlertDialog$BottomSheetCell;->textView:[Landroid/widget/TextView;
 
@@ -216,7 +216,7 @@
 
     invoke-virtual {v0, v4}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 94
+    .line 135
     :goto_2
     iget-object v0, p0, Lorg/telegram/ui/Components/UpdateAppAlertDialog$BottomSheetCell;->textView:[Landroid/widget/TextView;
 
@@ -226,7 +226,7 @@
 
     invoke-virtual {v0, v3, v4}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 95
+    .line 136
     iget-object v0, p0, Lorg/telegram/ui/Components/UpdateAppAlertDialog$BottomSheetCell;->textView:[Landroid/widget/TextView;
 
     aget-object v0, v0, p3
@@ -249,7 +249,7 @@
     :goto_3
     invoke-virtual {v0, v2, v2, v2, v4}, Landroid/widget/TextView;->setPadding(IIII)V
 
-    .line 96
+    .line 137
     iget-object v0, p0, Lorg/telegram/ui/Components/UpdateAppAlertDialog$BottomSheetCell;->textView:[Landroid/widget/TextView;
 
     aget-object v0, v0, p3
@@ -264,7 +264,7 @@
 
     if-ne p3, v3, :cond_4
 
-    .line 98
+    .line 139
     iget-object v0, p0, Lorg/telegram/ui/Components/UpdateAppAlertDialog$BottomSheetCell;->textView:[Landroid/widget/TextView;
 
     aget-object v0, v0, p3
@@ -285,7 +285,7 @@
 .method static synthetic access$100(Lorg/telegram/ui/Components/UpdateAppAlertDialog$BottomSheetCell;)[Landroid/widget/TextView;
     .locals 0
 
-    .line 63
+    .line 104
     iget-object p0, p0, Lorg/telegram/ui/Components/UpdateAppAlertDialog$BottomSheetCell;->textView:[Landroid/widget/TextView;
 
     return-object p0
@@ -294,7 +294,7 @@
 .method static synthetic access$700(Lorg/telegram/ui/Components/UpdateAppAlertDialog$BottomSheetCell;)Landroid/view/View;
     .locals 0
 
-    .line 63
+    .line 104
     iget-object p0, p0, Lorg/telegram/ui/Components/UpdateAppAlertDialog$BottomSheetCell;->background:Landroid/view/View;
 
     return-object p0
@@ -305,7 +305,7 @@
 .method protected onMeasure(II)V
     .locals 1
 
-    .line 105
+    .line 146
     iget-boolean p2, p0, Lorg/telegram/ui/Components/UpdateAppAlertDialog$BottomSheetCell;->hasBackground:Z
 
     if-eqz p2, :cond_0
@@ -340,7 +340,7 @@
 
     if-nez p2, :cond_0
 
-    .line 110
+    .line 151
     iget-object p2, p0, Lorg/telegram/ui/Components/UpdateAppAlertDialog$BottomSheetCell;->textView:[Landroid/widget/TextView;
 
     aget-object p2, p2, v0
@@ -349,7 +349,7 @@
 
     goto/16 :goto_0
 
-    .line 112
+    .line 153
     :cond_0
     iget-object p2, p0, Lorg/telegram/ui/Components/UpdateAppAlertDialog$BottomSheetCell;->textView:[Landroid/widget/TextView;
 
@@ -359,22 +359,22 @@
 
     invoke-virtual {p2, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 113
+    .line 154
     iget-object p1, p0, Lorg/telegram/ui/Components/UpdateAppAlertDialog$BottomSheetCell;->this$0:Lorg/telegram/ui/Components/UpdateAppAlertDialog;
 
     invoke-static {p1, v1}, Lorg/telegram/ui/Components/UpdateAppAlertDialog;->access$002(Lorg/telegram/ui/Components/UpdateAppAlertDialog;Z)Z
 
-    .line 114
+    .line 155
     new-instance p1, Landroid/animation/AnimatorSet;
 
     invoke-direct {p1}, Landroid/animation/AnimatorSet;-><init>()V
 
     const-wide/16 v2, 0xb4
 
-    .line 115
+    .line 156
     invoke-virtual {p1, v2, v3}, Landroid/animation/AnimatorSet;->setDuration(J)Landroid/animation/AnimatorSet;
 
-    .line 116
+    .line 157
     sget-object p2, Lorg/telegram/ui/Components/CubicBezierInterpolator;->EASE_OUT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
 
     invoke-virtual {p1, p2}, Landroid/animation/AnimatorSet;->setInterpolator(Landroid/animation/TimeInterpolator;)V
@@ -383,7 +383,7 @@
 
     new-array p2, p2, [Landroid/animation/Animator;
 
-    .line 117
+    .line 158
     iget-object v2, p0, Lorg/telegram/ui/Components/UpdateAppAlertDialog$BottomSheetCell;->textView:[Landroid/widget/TextView;
 
     aget-object v2, v2, v0
@@ -396,7 +396,7 @@
 
     fill-array-data v5, :array_0
 
-    .line 118
+    .line 159
     invoke-static {v2, v3, v5}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v2
@@ -417,7 +417,7 @@
 
     const/16 v7, 0xa
 
-    .line 119
+    .line 160
     invoke-static {v7}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v8
@@ -444,7 +444,7 @@
 
     fill-array-data v5, :array_1
 
-    .line 120
+    .line 161
     invoke-static {v2, v3, v5}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v2
@@ -461,7 +461,7 @@
 
     new-array v4, v4, [F
 
-    .line 121
+    .line 162
     invoke-static {v7}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v7
@@ -478,17 +478,17 @@
 
     aput-object v0, p2, v2
 
-    .line 117
+    .line 158
     invoke-virtual {p1, p2}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
 
-    .line 123
+    .line 164
     new-instance p2, Lorg/telegram/ui/Components/UpdateAppAlertDialog$BottomSheetCell$1;
 
     invoke-direct {p2, p0}, Lorg/telegram/ui/Components/UpdateAppAlertDialog$BottomSheetCell$1;-><init>(Lorg/telegram/ui/Components/UpdateAppAlertDialog$BottomSheetCell;)V
 
     invoke-virtual {p1, p2}, Landroid/animation/AnimatorSet;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 132
+    .line 173
     invoke-virtual {p1}, Landroid/animation/AnimatorSet;->start()V
 
     :goto_0

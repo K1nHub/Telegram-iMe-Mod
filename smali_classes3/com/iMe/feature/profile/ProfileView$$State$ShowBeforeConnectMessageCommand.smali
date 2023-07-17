@@ -32,17 +32,17 @@
 .method constructor <init>(Lcom/iMe/feature/profile/ProfileView$$State;Lcom/iMe/feature/socialMedias/SocialNetwork;Lcom/iMe/model/dialog/DialogModel;)V
     .locals 1
 
-    .line 372
+    .line 388
     const-class p1, Lmoxy/viewstate/strategy/OneExecutionStateStrategy;
 
     const-string v0, "showBeforeConnectMessage"
 
     invoke-direct {p0, v0, p1}, Lmoxy/viewstate/ViewCommand;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
-    .line 374
+    .line 390
     iput-object p2, p0, Lcom/iMe/feature/profile/ProfileView$$State$ShowBeforeConnectMessageCommand;->socialNetwork:Lcom/iMe/feature/socialMedias/SocialNetwork;
 
-    .line 375
+    .line 391
     iput-object p3, p0, Lcom/iMe/feature/profile/ProfileView$$State$ShowBeforeConnectMessageCommand;->prepareBeforeDialogModel:Lcom/iMe/model/dialog/DialogModel;
 
     return-void
@@ -53,7 +53,7 @@
 .method public apply(Lcom/iMe/feature/profile/ProfileView;)V
     .locals 2
 
-    .line 380
+    .line 396
     iget-object v0, p0, Lcom/iMe/feature/profile/ProfileView$$State$ShowBeforeConnectMessageCommand;->socialNetwork:Lcom/iMe/feature/socialMedias/SocialNetwork;
 
     iget-object v1, p0, Lcom/iMe/feature/profile/ProfileView$$State$ShowBeforeConnectMessageCommand;->prepareBeforeDialogModel:Lcom/iMe/model/dialog/DialogModel;
@@ -66,7 +66,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 365
+    .line 381
     check-cast p1, Lcom/iMe/feature/profile/ProfileView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/feature/profile/ProfileView$$State$ShowBeforeConnectMessageCommand;->apply(Lcom/iMe/feature/profile/ProfileView;)V

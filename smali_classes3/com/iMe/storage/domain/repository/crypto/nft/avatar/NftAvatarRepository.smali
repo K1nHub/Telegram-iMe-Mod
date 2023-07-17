@@ -4,11 +4,11 @@
 
 
 # virtual methods
-.method public abstract getNftAvatars(Lcom/iMe/storage/domain/model/crypto/NetworkType;)Lio/reactivex/Observable;
+.method public abstract getNftAvatars(Ljava/lang/String;)Lio/reactivex/Observable;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lcom/iMe/storage/domain/model/crypto/NetworkType;",
+            "Ljava/lang/String;",
             ")",
             "Lio/reactivex/Observable<",
             "Lcom/iMe/storage/domain/model/Result<",

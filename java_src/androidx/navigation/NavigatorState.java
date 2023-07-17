@@ -97,7 +97,7 @@ public abstract class NavigatorState {
         List<NavBackStackEntry> plus;
         Intrinsics.checkNotNullParameter(backStackEntry, "backStackEntry");
         MutableStateFlow<List<NavBackStackEntry>> mutableStateFlow = this._backStack;
-        minus = CollectionsKt___CollectionsKt.minus(mutableStateFlow.getValue(), CollectionsKt.last((List<? extends Object>) this._backStack.getValue()));
+        minus = CollectionsKt___CollectionsKt.minus(mutableStateFlow.getValue(), CollectionsKt.last(this._backStack.getValue()));
         plus = CollectionsKt___CollectionsKt.plus(minus, backStackEntry);
         mutableStateFlow.setValue(plus);
     }

@@ -24,10 +24,10 @@ public final class FilteredContactsByNameDelegate$mutualContacts$2 extends Lambd
     /* compiled from: FilteredContactsByNameDelegate.kt */
     /* renamed from: com.iMe.domain.contacts.FilteredContactsByNameDelegate$mutualContacts$2$1 */
     /* loaded from: classes3.dex */
-    public static final class C14261 extends Lambda implements Function1<TLRPC$TL_contact, Boolean> {
-        public static final C14261 INSTANCE = new C14261();
+    public static final class C14371 extends Lambda implements Function1<TLRPC$TL_contact, Boolean> {
+        public static final C14371 INSTANCE = new C14371();
 
-        C14261() {
+        C14371() {
             super(1);
         }
 
@@ -41,7 +41,7 @@ public final class FilteredContactsByNameDelegate$mutualContacts$2 extends Lambd
     @Override // kotlin.jvm.functions.Function0
     public final HashMap<String, ArrayList<TLRPC$TL_contact>> invoke() {
         HashMap<String, ArrayList<TLRPC$TL_contact>> usersByPredicate;
-        usersByPredicate = this.this$0.getUsersByPredicate(C14261.INSTANCE);
+        usersByPredicate = this.this$0.getUsersByPredicate(C14371.INSTANCE);
         return usersByPredicate;
     }
 }

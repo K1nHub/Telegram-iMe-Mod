@@ -10,5 +10,5 @@ public interface ReceiveChannel<E> {
     ChannelIterator<E> iterator();
 
     /* renamed from: receiveCatching-JP2dKIU */
-    Object mo1588receiveCatchingJP2dKIU(Continuation<? super ChannelResult<? extends E>> continuation);
+    Object mo1613receiveCatchingJP2dKIU(Continuation<? super ChannelResult<? extends E>> continuation);
 }

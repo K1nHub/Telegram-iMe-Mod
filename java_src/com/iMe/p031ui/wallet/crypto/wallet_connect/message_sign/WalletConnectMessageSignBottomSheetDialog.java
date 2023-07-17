@@ -23,12 +23,12 @@ import kotlin.jvm.internal.PropertyReference1Impl;
 import kotlin.jvm.internal.Reflection;
 import kotlin.reflect.KProperty;
 import moxy.ktx.MoxyKtxDelegate;
-import org.telegram.messenger.C3295R;
+import org.telegram.messenger.C3417R;
 import org.telegram.messenger.databinding.ForkContentWalletConnectMessageSignBinding;
-import org.telegram.p044ui.ActionBar.ActionBarMenuItem;
-import org.telegram.p044ui.ActionBar.BaseFragment;
-import org.telegram.p044ui.ActionBar.INavigationLayout;
-import org.telegram.p044ui.ActionBar.Theme;
+import org.telegram.p043ui.ActionBar.ActionBarMenuItem;
+import org.telegram.p043ui.ActionBar.BaseFragment;
+import org.telegram.p043ui.ActionBar.INavigationLayout;
+import org.telegram.p043ui.ActionBar.Theme;
 /* compiled from: WalletConnectMessageSignBottomSheetDialog.kt */
 /* renamed from: com.iMe.ui.wallet.crypto.wallet_connect.message_sign.WalletConnectMessageSignBottomSheetDialog */
 /* loaded from: classes4.dex */
@@ -45,12 +45,12 @@ public final class WalletConnectMessageSignBottomSheetDialog extends MvpBottomSh
         return Companion.newInstance(j, walletConnectSessionItem, wCEthereumSignMessage, walletConnectManager, baseFragment);
     }
 
-    @Override // org.telegram.p044ui.ActionBar.BottomSheet
+    @Override // org.telegram.p043ui.ActionBar.BottomSheet
     protected boolean canDismissWithSwipe() {
         return false;
     }
 
-    @Override // org.telegram.p044ui.ActionBar.BottomSheet
+    @Override // org.telegram.p043ui.ActionBar.BottomSheet
     protected boolean canDismissWithTouchOutside() {
         return false;
     }
@@ -60,7 +60,7 @@ public final class WalletConnectMessageSignBottomSheetDialog extends MvpBottomSh
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
-    public WalletConnectMessageSignBottomSheetDialog(long r10, com.iMe.model.wallet.crypto.wallet_connect.WalletConnectSessionItem r12, com.trustwallet.walletconnect.models.ethereum.WCEthereumSignMessage r13, com.iMe.storage.domain.manager.wallet_connect.WalletConnectManager r14, org.telegram.p044ui.ActionBar.BaseFragment r15) {
+    public WalletConnectMessageSignBottomSheetDialog(long r10, com.iMe.model.wallet.crypto.wallet_connect.WalletConnectSessionItem r12, com.trustwallet.walletconnect.models.ethereum.WCEthereumSignMessage r13, com.iMe.storage.domain.manager.wallet_connect.WalletConnectManager r14, org.telegram.p043ui.ActionBar.BaseFragment r15) {
         /*
             r9 = this;
             java.lang.String r0 = "sessionItem"
@@ -101,7 +101,7 @@ public final class WalletConnectMessageSignBottomSheetDialog extends MvpBottomSh
             java.lang.String r12 = r12.toString()
             r10.<init>(r11, r12, r15)
             r9.presenter$delegate = r10
-            org.koin.mp.KoinPlatformTools r10 = org.koin.p043mp.KoinPlatformTools.INSTANCE
+            org.koin.mp.KoinPlatformTools r10 = org.koin.p042mp.KoinPlatformTools.INSTANCE
             kotlin.LazyThreadSafetyMode r11 = r10.defaultLazyMode()
             com.iMe.ui.wallet.crypto.wallet_connect.message_sign.WalletConnectMessageSignBottomSheetDialog$special$$inlined$inject$default$1 r12 = new com.iMe.ui.wallet.crypto.wallet_connect.message_sign.WalletConnectMessageSignBottomSheetDialog$special$$inlined$inject$default$1
             r13 = 0
@@ -157,11 +157,11 @@ public final class WalletConnectMessageSignBottomSheetDialog extends MvpBottomSh
         Intrinsics.checkNotNullParameter(peerUrl, "peerUrl");
         ForkContentWalletConnectMessageSignBinding binding = getBinding();
         binding.textMessage.setText(message);
-        binding.textFrom.setTextAndValue(from, getResourceManager().getString(C3295R.string.wallet_connect_transaction_from), true);
-        binding.textPeerUrl.setTextAndValue(peerUrl, getResourceManager().getString(C3295R.string.wallet_connect_transaction_dapp), false);
+        binding.textFrom.setTextAndValue(from, getResourceManager().getString(C3417R.string.wallet_connect_transaction_from), true);
+        binding.textPeerUrl.setTextAndValue(peerUrl, getResourceManager().getString(C3417R.string.wallet_connect_transaction_dapp), false);
     }
 
-    @Override // org.telegram.p044ui.ActionBar.BottomSheet, android.app.Dialog, android.content.DialogInterface
+    @Override // org.telegram.p043ui.ActionBar.BottomSheet, android.app.Dialog, android.content.DialogInterface
     public void dismiss() {
         getPresenter().rejectSign();
         super.dismiss();
@@ -186,11 +186,11 @@ public final class WalletConnectMessageSignBottomSheetDialog extends MvpBottomSh
 
     private final void setupViews() {
         ForkContentWalletConnectMessageSignBinding binding = getBinding();
-        binding.textTitle.setText(getResourceManager().getString(C3295R.string.wallet_connect_transaction_title));
-        binding.buttonProcess.setText(getResourceManager().getString(C3295R.string.wallet_connect_transaction_button_sign));
+        binding.textTitle.setText(getResourceManager().getString(C3417R.string.wallet_connect_transaction_title));
+        binding.buttonProcess.setText(getResourceManager().getString(C3417R.string.wallet_connect_transaction_button_sign));
         ActionBarMenuItem actionBarMenuItem = binding.buttonClose;
         actionBarMenuItem.setLongClickEnabled(false);
-        actionBarMenuItem.setIcon(C3295R.C3297drawable.ic_close_white);
+        actionBarMenuItem.setIcon(C3417R.C3419drawable.ic_close_white);
     }
 
     private final void setupListeners() {

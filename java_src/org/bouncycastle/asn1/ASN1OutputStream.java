@@ -7,10 +7,10 @@ import java.util.Enumeration;
 public class ASN1OutputStream {
 
     /* renamed from: os */
-    private OutputStream f1236os;
+    private OutputStream f1318os;
 
     public ASN1OutputStream(OutputStream outputStream) {
-        this.f1236os = outputStream;
+        this.f1318os = outputStream;
     }
 
     public static ASN1OutputStream create(OutputStream outputStream) {
@@ -26,22 +26,22 @@ public class ASN1OutputStream {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public DEROutputStream getDERSubStream() {
-        return new DEROutputStream(this.f1236os);
+        return new DEROutputStream(this.f1318os);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public ASN1OutputStream getDLSubStream() {
-        return new DLOutputStream(this.f1236os);
+        return new DLOutputStream(this.f1318os);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public final void write(int i) throws IOException {
-        this.f1236os.write(i);
+        this.f1318os.write(i);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public final void write(byte[] bArr, int i, int i2) throws IOException {
-        this.f1236os.write(bArr, i, i2);
+        this.f1318os.write(bArr, i, i2);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */

@@ -118,7 +118,7 @@
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v4, "received disabled notification channel event for "
+    const-string/jumbo v4, "received disabled notification channel event for "
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -165,7 +165,7 @@
 
     if-eqz p1, :cond_5
 
-    const-string p1, "received disable notification event right after creating notification channel, ignoring"
+    const-string/jumbo p1, "received disable notification event right after creating notification channel, ignoring"
 
     .line 49
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V

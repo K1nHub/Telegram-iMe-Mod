@@ -1,13 +1,15 @@
 package com.iMe.storage.data.mapper.crypto;
 
+import com.iMe.storage.data.mapper.wallet.TokenMappingKt;
 import com.iMe.storage.data.network.model.response.crypto.swap.AvailableSwapTokensResponse;
-import com.iMe.storage.data.network.model.response.crypto.swap.GetApproveTokensInfoResponse;
+import com.iMe.storage.data.network.model.response.crypto.swap.TokensApprovalInfoResponse;
 import com.iMe.storage.data.network.model.response.crypto.wallet.TransactionParamsResponse;
+import com.iMe.storage.data.network.model.response.wallet.TokenDetailedResponse;
+import com.iMe.storage.domain.model.common.CursoredData;
 import com.iMe.storage.domain.model.crypto.TransactionParams;
 import com.iMe.storage.domain.model.crypto.swap.CryptoTokenApproveMetadata;
 import com.iMe.storage.domain.model.wallet.swap.TokenApproveStatus;
-import com.iMe.storage.domain.model.wallet.token.TokenCode;
-import com.iMe.storage.domain.model.wallet.token.TokenInfo;
+import com.iMe.storage.domain.model.wallet.token.TokenDetailed;
 import java.util.ArrayList;
 import java.util.List;
 import kotlin.NoWhenBranchMatchedException;
@@ -44,59 +46,55 @@ public final class SwapMappingKt {
         }
     }
 
-    public static final List<TokenInfo> mapToDomain(AvailableSwapTokensResponse availableSwapTokensResponse) {
+    public static final CursoredData<TokenDetailed> mapToDomain(AvailableSwapTokensResponse availableSwapTokensResponse) {
         int collectionSizeOrDefault;
         Intrinsics.checkNotNullParameter(availableSwapTokensResponse, "<this>");
-        List<String> cryptoTokenCodes = availableSwapTokensResponse.getCryptoTokenCodes();
-        collectionSizeOrDefault = CollectionsKt__IterablesKt.collectionSizeOrDefault(cryptoTokenCodes, 10);
+        List<TokenDetailedResponse> tokens = availableSwapTokensResponse.getTokens();
+        collectionSizeOrDefault = CollectionsKt__IterablesKt.collectionSizeOrDefault(tokens, 10);
         ArrayList arrayList = new ArrayList(collectionSizeOrDefault);
-        for (String str : cryptoTokenCodes) {
-            arrayList.add(TokenInfo.Companion.map(str));
+        for (TokenDetailedResponse tokenDetailedResponse : tokens) {
+            arrayList.add(TokenMappingKt.mapToDomain(tokenDetailedResponse));
         }
-        return arrayList;
+        return new CursoredData<>(arrayList, availableSwapTokensResponse.getCursor());
     }
 
-    public static final List<CryptoTokenApproveMetadata> mapToDomain(GetApproveTokensInfoResponse getApproveTokensInfoResponse) {
+    public static final List<CryptoTokenApproveMetadata> mapToDomain(TokensApprovalInfoResponse tokensApprovalInfoResponse) {
         int collectionSizeOrDefault;
         Object allowed;
         Object obj;
-        Intrinsics.checkNotNullParameter(getApproveTokensInfoResponse, "<this>");
-        List<GetApproveTokensInfoResponse.CryptoTokenApprovalQuote> cryptoTokens = getApproveTokensInfoResponse.getCryptoTokens();
-        collectionSizeOrDefault = CollectionsKt__IterablesKt.collectionSizeOrDefault(cryptoTokens, 10);
+        Intrinsics.checkNotNullParameter(tokensApprovalInfoResponse, "<this>");
+        List<TokensApprovalInfoResponse.ApprovalInfoResponse> approvalInfo = tokensApprovalInfoResponse.getApprovalInfo();
+        collectionSizeOrDefault = CollectionsKt__IterablesKt.collectionSizeOrDefault(approvalInfo, 10);
         ArrayList arrayList = new ArrayList(collectionSizeOrDefault);
-        for (GetApproveTokensInfoResponse.CryptoTokenApprovalQuote cryptoTokenApprovalQuote : cryptoTokens) {
-            TokenApproveStatus map = TokenApproveStatus.Companion.map(cryptoTokenApprovalQuote.getStatus());
+        for (TokensApprovalInfoResponse.ApprovalInfoResponse approvalInfoResponse : approvalInfo) {
+            TokenApproveStatus map = TokenApproveStatus.Companion.map(approvalInfoResponse.getStatus());
             int i = WhenMappings.$EnumSwitchMapping$0[map.ordinal()];
             if (i == 1) {
-                allowed = new CryptoTokenApproveMetadata.Allowed(TokenCode.Companion.map(cryptoTokenApprovalQuote.getCryptoTokenCode()), map, cryptoTokenApprovalQuote.getValue());
+                allowed = new CryptoTokenApproveMetadata.Allowed(TokenMappingKt.mapToDomain(approvalInfoResponse.getToken()), map, approvalInfoResponse.getValue());
             } else {
                 if (i == 2) {
-                    TokenCode.Companion companion = TokenCode.Companion;
-                    TokenCode map2 = companion.map(cryptoTokenApprovalQuote.getCryptoTokenCode());
-                    String value = cryptoTokenApprovalQuote.getValue();
-                    String contractAddress = cryptoTokenApprovalQuote.getContractAddress();
-                    String spenderContractAddress = cryptoTokenApprovalQuote.getSpenderContractAddress();
-                    TransactionParamsResponse.EVM transactionParams = cryptoTokenApprovalQuote.getTransactionParams();
+                    TokenDetailed mapToDomain = TokenMappingKt.mapToDomain(approvalInfoResponse.getToken());
+                    String value = approvalInfoResponse.getValue();
+                    String spenderContractAddress = tokensApprovalInfoResponse.getSpenderContractAddress();
+                    TransactionParamsResponse.EVM transactionParams = approvalInfoResponse.getTransactionParams();
                     Intrinsics.checkNotNull(transactionParams);
-                    TransactionParams.Ether mapToDomain = CryptoWalletMappingKt.mapToDomain(transactionParams);
-                    String lastErrorMessage = cryptoTokenApprovalQuote.getLastErrorMessage();
+                    TransactionParams.Ether mapToDomain2 = CryptoWalletMappingKt.mapToDomain(transactionParams);
+                    String lastErrorMessage = approvalInfoResponse.getLastErrorMessage();
                     if (lastErrorMessage == null) {
                         lastErrorMessage = "";
                     }
-                    obj = new CryptoTokenApproveMetadata.NeedApprove.Error(map2, map, value, mapToDomain, contractAddress, spenderContractAddress, companion.map(cryptoTokenApprovalQuote.getFeeTokenCode()), lastErrorMessage);
+                    obj = new CryptoTokenApproveMetadata.NeedApprove.Error(mapToDomain, map, value, mapToDomain2, spenderContractAddress, TokenMappingKt.mapToDomain(tokensApprovalInfoResponse.getFeeToken()), lastErrorMessage);
                 } else if (i == 3) {
-                    allowed = new CryptoTokenApproveMetadata.InProgress(TokenCode.Companion.map(cryptoTokenApprovalQuote.getCryptoTokenCode()), map, cryptoTokenApprovalQuote.getValue());
+                    allowed = new CryptoTokenApproveMetadata.InProgress(TokenMappingKt.mapToDomain(approvalInfoResponse.getToken()), map, approvalInfoResponse.getValue());
                 } else if (i != 4) {
                     throw new NoWhenBranchMatchedException();
                 } else {
-                    TokenCode.Companion companion2 = TokenCode.Companion;
-                    TokenCode map3 = companion2.map(cryptoTokenApprovalQuote.getCryptoTokenCode());
-                    String value2 = cryptoTokenApprovalQuote.getValue();
-                    String contractAddress2 = cryptoTokenApprovalQuote.getContractAddress();
-                    String spenderContractAddress2 = cryptoTokenApprovalQuote.getSpenderContractAddress();
-                    TransactionParamsResponse.EVM transactionParams2 = cryptoTokenApprovalQuote.getTransactionParams();
+                    TokenDetailed mapToDomain3 = TokenMappingKt.mapToDomain(approvalInfoResponse.getToken());
+                    String value2 = approvalInfoResponse.getValue();
+                    String spenderContractAddress2 = tokensApprovalInfoResponse.getSpenderContractAddress();
+                    TransactionParamsResponse.EVM transactionParams2 = approvalInfoResponse.getTransactionParams();
                     Intrinsics.checkNotNull(transactionParams2);
-                    obj = new CryptoTokenApproveMetadata.NeedApprove.NotAllowed(map3, map, value2, CryptoWalletMappingKt.mapToDomain(transactionParams2), contractAddress2, spenderContractAddress2, companion2.map(cryptoTokenApprovalQuote.getFeeTokenCode()));
+                    obj = new CryptoTokenApproveMetadata.NeedApprove.NotAllowed(mapToDomain3, map, value2, CryptoWalletMappingKt.mapToDomain(transactionParams2), spenderContractAddress2, TokenMappingKt.mapToDomain(tokensApprovalInfoResponse.getFeeToken()));
                 }
                 arrayList.add(obj);
             }
@@ -106,78 +104,68 @@ public final class SwapMappingKt {
         return arrayList;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:8:0x006b, code lost:
-        r14 = kotlin.text.StringsKt__StringNumberConversionsJVMKt.toBigIntegerOrNull(r14);
+    /* JADX WARN: Code restructure failed: missing block: B:7:0x0073, code lost:
+        r0 = kotlin.text.StringsKt__StringNumberConversionsJVMKt.toBigIntegerOrNull(r0);
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
-    public static final com.iMe.storage.domain.model.crypto.swap.CryptoSwapMetadata mapToDomain(com.iMe.storage.data.network.model.response.crypto.swap.GetQuoteToSwapResponse r17) {
+    public static final com.iMe.storage.domain.model.crypto.swap.CryptoSwapMetadata mapToDomain(com.iMe.storage.data.network.model.response.crypto.swap.GetQuoteToSwapResponse r18) {
         /*
             java.lang.String r0 = "<this>"
-            r1 = r17
+            r1 = r18
             kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r1, r0)
-            java.lang.String r2 = r17.getQuoteId()
-            com.iMe.storage.data.network.model.response.crypto.wallet.TransactionParamsResponse$EVM r0 = r17.getTransactionParams()
-            com.iMe.storage.domain.model.crypto.TransactionParams$Ether r3 = com.iMe.storage.data.mapper.crypto.CryptoWalletMappingKt.mapToDomain(r0)
-            java.lang.String r0 = r17.getSpenderContractAddress()
-            java.lang.String r4 = ""
-            if (r0 != 0) goto L1d
-            r6 = r4
-            goto L1e
-        L1d:
-            r6 = r0
-        L1e:
-            com.iMe.storage.domain.model.wallet.token.TokenCode$Companion r0 = com.iMe.storage.domain.model.wallet.token.TokenCode.Companion
-            java.lang.String r5 = r17.getInputCryptoTokenCode()
-            com.iMe.storage.domain.model.wallet.token.TokenCode r5 = r0.map(r5)
-            java.lang.String r7 = r17.getOutputCryptoTokenCode()
-            com.iMe.storage.domain.model.wallet.token.TokenCode r7 = r0.map(r7)
-            com.iMe.storage.domain.model.wallet.swap.SwapMethod$Companion r8 = com.iMe.storage.domain.model.wallet.swap.SwapMethod.Companion
-            java.lang.String r9 = r17.getSwapMethod()
-            com.iMe.storage.domain.model.wallet.swap.SwapMethod r8 = r8.map(r9)
-            java.util.List r11 = r17.getPath()
+            com.iMe.storage.data.network.model.response.crypto.wallet.TransactionParamsResponse$EVM r0 = r18.getTransactionParams()
+            com.iMe.storage.domain.model.crypto.TransactionParams$Ether r2 = com.iMe.storage.data.mapper.crypto.CryptoWalletMappingKt.mapToDomain(r0)
+            java.lang.String r3 = r18.getQuoteId()
+            java.lang.String r6 = r18.getSpenderContractAddress()
+            com.iMe.storage.data.network.model.response.wallet.TokenDetailedResponse r0 = r18.getInputToken()
+            com.iMe.storage.domain.model.wallet.token.TokenDetailed r4 = com.iMe.storage.data.mapper.wallet.TokenMappingKt.mapToDomain(r0)
+            com.iMe.storage.data.network.model.response.wallet.TokenDetailedResponse r0 = r18.getOutputToken()
+            com.iMe.storage.domain.model.wallet.token.TokenDetailed r5 = com.iMe.storage.data.mapper.wallet.TokenMappingKt.mapToDomain(r0)
+            com.iMe.storage.domain.model.wallet.swap.SwapMethod$Companion r0 = com.iMe.storage.domain.model.wallet.swap.SwapMethod.Companion
+            java.lang.String r7 = r18.getSwapMethod()
+            com.iMe.storage.domain.model.wallet.swap.SwapMethod r7 = r0.map(r7)
+            java.util.List r0 = r18.getPath()
+            if (r0 != 0) goto L3b
+            java.util.List r0 = kotlin.collections.CollectionsKt.emptyList()
+        L3b:
+            r11 = r0
+            java.math.BigDecimal r8 = new java.math.BigDecimal
+            java.lang.String r0 = r18.getAmountIn()
+            r8.<init>(r0)
             java.math.BigDecimal r9 = new java.math.BigDecimal
-            java.lang.String r10 = r17.getAmountIn()
-            r9.<init>(r10)
-            java.math.BigDecimal r10 = new java.math.BigDecimal
-            java.lang.String r12 = r17.getAmountOut()
-            r10.<init>(r12)
-            java.math.BigInteger r12 = new java.math.BigInteger
-            java.lang.String r13 = r17.getAmountBound()
-            r12.<init>(r13)
-            java.math.BigDecimal r13 = r17.getExecutionPrice()
-            java.lang.String r14 = r17.getFeeTokenCode()
-            com.iMe.storage.domain.model.wallet.token.TokenCode r0 = r0.map(r14)
-            java.lang.String r14 = r17.getValue()
-            if (r14 == 0) goto L71
-            java.math.BigInteger r14 = kotlin.text.StringsKt.toBigIntegerOrNull(r14)
-            if (r14 != 0) goto L73
-        L71:
-            java.math.BigInteger r14 = java.math.BigInteger.ZERO
-        L73:
-            java.lang.String r1 = r17.getCallData()
-            if (r1 != 0) goto L7b
-            r15 = r4
-            goto L7c
+            java.lang.String r0 = r18.getAmountOut()
+            r9.<init>(r0)
+            java.math.BigInteger r10 = new java.math.BigInteger
+            java.lang.String r0 = r18.getAmountBound()
+            r10.<init>(r0)
+            java.math.BigDecimal r12 = r18.getExecutionPrice()
+            com.iMe.storage.domain.model.wallet.swap.SwapProtocol$Companion r0 = com.iMe.storage.domain.model.wallet.swap.SwapProtocol.Companion
+            java.lang.String r13 = r18.getDefiProtocol()
+            com.iMe.storage.domain.model.wallet.swap.SwapProtocol r13 = r0.map(r13)
+            com.iMe.storage.data.network.model.response.wallet.TokenDetailedResponse r0 = r18.getFeeToken()
+            com.iMe.storage.domain.model.wallet.token.TokenDetailed r14 = com.iMe.storage.data.mapper.wallet.TokenMappingKt.mapToDomain(r0)
+            java.lang.String r0 = r18.getValue()
+            if (r0 == 0) goto L79
+            java.math.BigInteger r0 = kotlin.text.StringsKt.toBigIntegerOrNull(r0)
+            if (r0 != 0) goto L7b
+        L79:
+            java.math.BigInteger r0 = java.math.BigInteger.ZERO
         L7b:
+            java.lang.String r1 = r18.getCallData()
+            if (r1 != 0) goto L83
+            java.lang.String r1 = ""
+        L83:
             r15 = r1
-        L7c:
-            com.iMe.storage.domain.model.crypto.swap.CryptoSwapMetadata r16 = new com.iMe.storage.domain.model.crypto.swap.CryptoSwapMetadata
+            com.iMe.storage.domain.model.crypto.swap.CryptoSwapMetadata r17 = new com.iMe.storage.domain.model.crypto.swap.CryptoSwapMetadata
             java.lang.String r1 = "value?.toBigIntegerOrNull() ?: BigInteger.ZERO"
-            kotlin.jvm.internal.Intrinsics.checkNotNullExpressionValue(r14, r1)
-            r1 = r16
-            r4 = r5
-            r5 = r7
-            r7 = r8
-            r8 = r9
-            r9 = r10
-            r10 = r12
-            r12 = r13
-            r13 = r0
-            r1.<init>(r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, r13, r14, r15)
-            return r16
+            kotlin.jvm.internal.Intrinsics.checkNotNullExpressionValue(r0, r1)
+            r1 = r17
+            r16 = r0
+            r1.<init>(r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, r13, r14, r15, r16)
+            return r17
         */
         throw new UnsupportedOperationException("Method not decompiled: com.iMe.storage.data.mapper.crypto.SwapMappingKt.mapToDomain(com.iMe.storage.data.network.model.response.crypto.swap.GetQuoteToSwapResponse):com.iMe.storage.domain.model.crypto.swap.CryptoSwapMetadata");
     }

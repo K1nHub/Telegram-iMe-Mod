@@ -50,19 +50,19 @@
 
     invoke-static {p4, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 180
+    .line 179
     invoke-direct {p0, p1, p2}, Lcom/iMe/model/wallet/notification/PushNotificationModel$CryptoTransfer;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 176
+    .line 175
     iput-object p1, p0, Lcom/iMe/model/wallet/notification/PushNotificationModel$Cancel;->userId:Ljava/lang/String;
 
-    .line 177
+    .line 176
     iput-object p2, p0, Lcom/iMe/model/wallet/notification/PushNotificationModel$Cancel;->type:Ljava/lang/String;
 
-    .line 178
+    .line 177
     iput-object p3, p0, Lcom/iMe/model/wallet/notification/PushNotificationModel$Cancel;->status:Ljava/lang/String;
 
-    .line 179
+    .line 178
     iput-object p4, p0, Lcom/iMe/model/wallet/notification/PushNotificationModel$Cancel;->txHash:Ljava/lang/String;
 
     return-void
@@ -261,7 +261,7 @@
 .method public getMessage()Ljava/lang/String;
     .locals 4
 
-    .line 182
+    .line 181
     sget-object v0, Lcom/iMe/storage/data/network/model/response/base/Status;->Companion:Lcom/iMe/storage/data/network/model/response/base/Status$Companion;
 
     iget-object v1, p0, Lcom/iMe/model/wallet/notification/PushNotificationModel$Cancel;->status:Ljava/lang/String;
@@ -292,7 +292,7 @@
 
     goto :goto_0
 
-    .line 184
+    .line 183
     :cond_0
     sget v0, Lorg/telegram/messenger/R$string;->push_notification_wallet_cancelled_failed_description:I
 
@@ -302,13 +302,13 @@
 
     aput-object v3, v2, v1
 
-    invoke-virtual {p0, v0, v2}, Lcom/iMe/model/wallet/notification/PushNotificationModel;->getString$TMessagesProj_release(I[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual {p0, v0, v2}, Lcom/iMe/model/wallet/notification/PushNotificationModel;->getString$TMessagesProj_HA_public(I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
     goto :goto_0
 
-    .line 183
+    .line 182
     :cond_1
     sget v0, Lorg/telegram/messenger/R$string;->push_notification_wallet_cancelled_success_description:I
 
@@ -318,7 +318,7 @@
 
     aput-object v3, v2, v1
 
-    invoke-virtual {p0, v0, v2}, Lcom/iMe/model/wallet/notification/PushNotificationModel;->getString$TMessagesProj_release(I[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual {p0, v0, v2}, Lcom/iMe/model/wallet/notification/PushNotificationModel;->getString$TMessagesProj_HA_public(I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -329,7 +329,7 @@
 .method public final getStatus()Ljava/lang/String;
     .locals 1
 
-    .line 178
+    .line 177
     iget-object v0, p0, Lcom/iMe/model/wallet/notification/PushNotificationModel$Cancel;->status:Ljava/lang/String;
 
     return-object v0
@@ -338,7 +338,7 @@
 .method public final getTxHash()Ljava/lang/String;
     .locals 1
 
-    .line 179
+    .line 178
     iget-object v0, p0, Lcom/iMe/model/wallet/notification/PushNotificationModel$Cancel;->txHash:Ljava/lang/String;
 
     return-object v0
@@ -347,7 +347,7 @@
 .method public getType()Ljava/lang/String;
     .locals 1
 
-    .line 177
+    .line 176
     iget-object v0, p0, Lcom/iMe/model/wallet/notification/PushNotificationModel$Cancel;->type:Ljava/lang/String;
 
     return-object v0
@@ -356,7 +356,7 @@
 .method public getUserId()Ljava/lang/String;
     .locals 1
 
-    .line 176
+    .line 175
     iget-object v0, p0, Lcom/iMe/model/wallet/notification/PushNotificationModel$Cancel;->userId:Ljava/lang/String;
 
     return-object v0

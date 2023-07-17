@@ -2,7 +2,7 @@ package com.iMe.fork.p024ui.view;
 
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Lambda;
-import org.telegram.p044ui.ActionBar.ActionBarMenuSubItem;
+import org.telegram.p043ui.ActionBar.ActionBarMenuSubItem;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: FragmentPreviewMenu.kt */
 /* renamed from: com.iMe.fork.ui.view.FragmentPreviewMenu$closeItem$2 */

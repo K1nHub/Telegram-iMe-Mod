@@ -2,26 +2,26 @@ package com.iMe.navigation.wallet.coordinator;
 
 import android.app.Activity;
 import com.iMe.model.wallet.crypto.pin.EnterPinCodeResult;
-import com.iMe.p031ui.base.WalletAuthFragment;
 import com.iMe.p031ui.base.mvp.MvpFragment;
+import com.iMe.p031ui.base.wallet_auth.WalletAuthBaseFragment;
 import com.iMe.storage.domain.manager.wallet_connect.WalletConnectManager;
 import kotlin.Lazy;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Lambda;
-import org.telegram.p044ui.LaunchActivity;
+import org.telegram.p043ui.LaunchActivity;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: PinCodeCoordinator.kt */
 /* loaded from: classes3.dex */
 public final class PinCodeCoordinator$start$1 extends Lambda implements Function2<EnterPinCodeResult, MvpFragment, Unit> {
-    final /* synthetic */ WalletAuthFragment $nextFragment;
+    final /* synthetic */ WalletAuthBaseFragment $nextFragment;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public PinCodeCoordinator$start$1(WalletAuthFragment walletAuthFragment) {
+    public PinCodeCoordinator$start$1(WalletAuthBaseFragment walletAuthBaseFragment) {
         super(2);
-        this.$nextFragment = walletAuthFragment;
+        this.$nextFragment = walletAuthBaseFragment;
     }
 
     @Override // kotlin.jvm.functions.Function2

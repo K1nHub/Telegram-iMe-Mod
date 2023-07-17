@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/SharedMediaLayout$28;I)V
     .locals 0
 
-    .line 4587
+    .line 4585
     iput-object p1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$28$1;->this$1:Lorg/telegram/ui/Components/SharedMediaLayout$28;
 
     iput p2, p0, Lorg/telegram/ui/Components/SharedMediaLayout$28$1;->val$messageId:I
@@ -39,7 +39,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 4590
+    .line 4588
     iget-object p1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$28$1;->this$1:Lorg/telegram/ui/Components/SharedMediaLayout$28;
 
     iget-object p1, p1, Lorg/telegram/ui/Components/SharedMediaLayout$28;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
@@ -50,7 +50,7 @@
 
     invoke-virtual {p1, v0}, Landroid/util/SparseArray;->remove(I)V
 
-    .line 4591
+    .line 4589
     iget-object p1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$28$1;->this$1:Lorg/telegram/ui/Components/SharedMediaLayout$28;
 
     iget-object p1, p1, Lorg/telegram/ui/Components/SharedMediaLayout$28;->val$finalListView:Lorg/telegram/ui/Components/RecyclerListView;

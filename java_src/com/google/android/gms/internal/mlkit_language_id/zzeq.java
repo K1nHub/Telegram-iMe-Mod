@@ -1,6 +1,6 @@
 package com.google.android.gms.internal.mlkit_language_id;
 
-import com.google.android.exoplayer2.C0475C;
+import com.google.android.exoplayer2.C0480C;
 import java.nio.ByteBuffer;
 import java.nio.charset.Charset;
 import java.util.Objects;
@@ -11,7 +11,7 @@ public final class zzeq {
     private static final ByteBuffer zzd;
     private static final zzdz zze;
     static final Charset zza = Charset.forName("UTF-8");
-    private static final Charset zzc = Charset.forName(C0475C.ISO88591_NAME);
+    private static final Charset zzc = Charset.forName(C0480C.ISO88591_NAME);
 
     public static int zza(long j) {
         return (int) (j ^ (j >>> 32));

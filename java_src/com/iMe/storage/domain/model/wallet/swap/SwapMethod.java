@@ -121,9 +121,8 @@ public enum SwapMethod {
         private Companion() {
         }
 
-        public final SwapMethod map(String method) {
+        public final SwapMethod map(String str) {
             SwapMethod swapMethod;
-            Intrinsics.checkNotNullParameter(method, "method");
             SwapMethod[] values = SwapMethod.values();
             int length = values.length;
             int i = 0;
@@ -133,7 +132,7 @@ public enum SwapMethod {
                     break;
                 }
                 swapMethod = values[i];
-                if (Intrinsics.areEqual(swapMethod.getMethodName(), method)) {
+                if (Intrinsics.areEqual(swapMethod.getMethodName(), str)) {
                     break;
                 }
                 i++;

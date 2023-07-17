@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/TopicsFragment;Landroid/content/Context;)V
     .locals 0
 
-    .line 1304
+    .line 1307
     iput-object p1, p0, Lorg/telegram/ui/TopicsFragment$19;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     invoke-direct {p0, p2}, Landroid/view/View;-><init>(Landroid/content/Context;)V
@@ -35,10 +35,10 @@
 .method public setAlpha(F)V
     .locals 0
 
-    .line 1307
+    .line 1310
     invoke-super {p0, p1}, Landroid/view/View;->setAlpha(F)V
 
-    .line 1308
+    .line 1311
     iget-object p1, p0, Lorg/telegram/ui/TopicsFragment$19;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     invoke-static {p1}, Lorg/telegram/ui/TopicsFragment;->access$4000(Lorg/telegram/ui/TopicsFragment;)Landroid/view/View;
@@ -47,7 +47,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 1309
+    .line 1312
     iget-object p1, p0, Lorg/telegram/ui/TopicsFragment$19;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     invoke-static {p1}, Lorg/telegram/ui/TopicsFragment;->access$4100(Lorg/telegram/ui/TopicsFragment;)Landroid/view/View;

@@ -39,6 +39,17 @@ public class CollectionsKt__CollectionsKt extends CollectionsKt__CollectionsJVMK
         return elements.length == 0 ? new ArrayList<>() : new ArrayList<>(new ArrayAsCollection(elements, true));
     }
 
+    public static <T> List<T> listOfNotNull(T t) {
+        List<T> emptyList;
+        List<T> listOf;
+        if (t != null) {
+            listOf = CollectionsKt__CollectionsJVMKt.listOf(t);
+            return listOf;
+        }
+        emptyList = emptyList();
+        return emptyList;
+    }
+
     public static <T> List<T> listOfNotNull(T... elements) {
         List<T> filterNotNull;
         Intrinsics.checkNotNullParameter(elements, "elements");

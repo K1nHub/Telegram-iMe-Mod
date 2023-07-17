@@ -29,7 +29,7 @@
 .method constructor <init>(Lorg/telegram/ui/GroupCallActivity;Landroid/graphics/Rect;)V
     .locals 0
 
-    .line 7233
+    .line 7244
     iput-object p1, p0, Lorg/telegram/ui/GroupCallActivity$53;->this$0:Lorg/telegram/ui/GroupCallActivity;
 
     iput-object p2, p0, Lorg/telegram/ui/GroupCallActivity$53;->val$rect:Landroid/graphics/Rect;
@@ -40,7 +40,7 @@
 
     new-array p1, p1, [I
 
-    .line 7235
+    .line 7246
     iput-object p1, p0, Lorg/telegram/ui/GroupCallActivity$53;->pos:[I
 
     return-void
@@ -51,7 +51,7 @@
 .method public onTouch(Landroid/view/View;Landroid/view/MotionEvent;)Z
     .locals 7
 
-    .line 7239
+    .line 7250
     invoke-virtual {p2}, Landroid/view/MotionEvent;->getActionMasked()I
 
     move-result p1
@@ -60,7 +60,7 @@
 
     if-nez p1, :cond_0
 
-    .line 7240
+    .line 7251
     iget-object p1, p0, Lorg/telegram/ui/GroupCallActivity$53;->this$0:Lorg/telegram/ui/GroupCallActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/GroupCallActivity;->access$800(Lorg/telegram/ui/GroupCallActivity;)Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
@@ -81,7 +81,7 @@
 
     if-eqz p1, :cond_1
 
-    .line 7241
+    .line 7252
     iget-object p1, p0, Lorg/telegram/ui/GroupCallActivity$53;->this$0:Lorg/telegram/ui/GroupCallActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/GroupCallActivity;->access$800(Lorg/telegram/ui/GroupCallActivity;)Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
@@ -92,12 +92,12 @@
 
     move-result-object p1
 
-    .line 7242
+    .line 7253
     iget-object v1, p0, Lorg/telegram/ui/GroupCallActivity$53;->pos:[I
 
     invoke-virtual {p1, v1}, Landroid/view/View;->getLocationInWindow([I)V
 
-    .line 7243
+    .line 7254
     iget-object v1, p0, Lorg/telegram/ui/GroupCallActivity$53;->val$rect:Landroid/graphics/Rect;
 
     iget-object v2, p0, Lorg/telegram/ui/GroupCallActivity$53;->pos:[I
@@ -128,7 +128,7 @@
 
     invoke-virtual {v1, v3, v5, v2, v4}, Landroid/graphics/Rect;->set(IIII)V
 
-    .line 7244
+    .line 7255
     iget-object p1, p0, Lorg/telegram/ui/GroupCallActivity$53;->val$rect:Landroid/graphics/Rect;
 
     invoke-virtual {p2}, Landroid/view/MotionEvent;->getX()F
@@ -149,7 +149,7 @@
 
     if-nez p1, :cond_1
 
-    .line 7245
+    .line 7256
     iget-object p1, p0, Lorg/telegram/ui/GroupCallActivity$53;->this$0:Lorg/telegram/ui/GroupCallActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/GroupCallActivity;->access$800(Lorg/telegram/ui/GroupCallActivity;)Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
@@ -160,7 +160,7 @@
 
     goto :goto_0
 
-    .line 7248
+    .line 7259
     :cond_0
     invoke-virtual {p2}, Landroid/view/MotionEvent;->getActionMasked()I
 
@@ -170,7 +170,7 @@
 
     if-ne p1, p2, :cond_1
 
-    .line 7249
+    .line 7260
     iget-object p1, p0, Lorg/telegram/ui/GroupCallActivity$53;->this$0:Lorg/telegram/ui/GroupCallActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/GroupCallActivity;->access$800(Lorg/telegram/ui/GroupCallActivity;)Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
@@ -191,7 +191,7 @@
 
     if-eqz p1, :cond_1
 
-    .line 7250
+    .line 7261
     iget-object p1, p0, Lorg/telegram/ui/GroupCallActivity$53;->this$0:Lorg/telegram/ui/GroupCallActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/GroupCallActivity;->access$800(Lorg/telegram/ui/GroupCallActivity;)Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;

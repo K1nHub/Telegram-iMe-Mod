@@ -26,7 +26,7 @@
 .method constructor <init>(Lcom/iMe/ui/wallet/swap/WalletSwapProtocolsView$$State;)V
     .locals 1
 
-    .line 193
+    .line 208
     const-class p1, Lmoxy/viewstate/strategy/OneExecutionStateStrategy;
 
     const-string v0, "openBinanceConvertScreen"
@@ -41,7 +41,7 @@
 .method public apply(Lcom/iMe/ui/wallet/swap/WalletSwapProtocolsView;)V
     .locals 0
 
-    .line 198
+    .line 213
     invoke-interface {p1}, Lcom/iMe/ui/wallet/swap/WalletSwapProtocolsView;->openBinanceConvertScreen()V
 
     return-void
@@ -50,7 +50,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 191
+    .line 206
     check-cast p1, Lcom/iMe/ui/wallet/swap/WalletSwapProtocolsView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/wallet/swap/WalletSwapProtocolsView$$State$OpenBinanceConvertScreenCommand;->apply(Lcom/iMe/ui/wallet/swap/WalletSwapProtocolsView;)V

@@ -5,7 +5,7 @@ import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Lambda;
-import org.koin.p043mp.KoinPlatformTools;
+import org.koin.p042mp.KoinPlatformTools;
 /* compiled from: StakingCalculatorProgrammesFragment.kt */
 /* renamed from: com.iMe.ui.wallet.staking.calculator.programmes.adapter.StakingCalculatorProgrammesFragment$presenter$2 */
 /* loaded from: classes4.dex */
@@ -23,7 +23,7 @@ final class StakingCalculatorProgrammesFragment$presenter$2 extends Lambda imple
     @Override // kotlin.jvm.functions.Function0
     public final StakingCalculatorProgrammesPresenter invoke() {
         Lazy lazy;
-        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new C2342xaf318c7e(this.this$0, null, null));
+        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new C2388xaf318c7e(this.this$0, null, null));
         return (StakingCalculatorProgrammesPresenter) lazy.getValue();
     }
 }

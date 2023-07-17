@@ -25,25 +25,25 @@
 # instance fields
 .field public final item:Lcom/iMe/model/wallet/transaction/StakingOperationItem;
 
-.field public final networkType:Lcom/iMe/storage/domain/model/crypto/NetworkType;
+.field public final network:Lcom/iMe/storage/domain/model/crypto/Network;
 
 
 # direct methods
-.method constructor <init>(Lcom/iMe/ui/wallet/transaction/WalletTransactionsView$$State;Lcom/iMe/model/wallet/transaction/StakingOperationItem;Lcom/iMe/storage/domain/model/crypto/NetworkType;)V
+.method constructor <init>(Lcom/iMe/ui/wallet/transaction/WalletTransactionsView$$State;Lcom/iMe/model/wallet/transaction/StakingOperationItem;Lcom/iMe/storage/domain/model/crypto/Network;)V
     .locals 1
 
-    .line 327
+    .line 343
     const-class p1, Lmoxy/viewstate/strategy/OneExecutionStateStrategy;
 
     const-string v0, "openStakingOperationDetails"
 
     invoke-direct {p0, v0, p1}, Lmoxy/viewstate/ViewCommand;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
-    .line 329
+    .line 345
     iput-object p2, p0, Lcom/iMe/ui/wallet/transaction/WalletTransactionsView$$State$OpenStakingOperationDetailsCommand;->item:Lcom/iMe/model/wallet/transaction/StakingOperationItem;
 
-    .line 330
-    iput-object p3, p0, Lcom/iMe/ui/wallet/transaction/WalletTransactionsView$$State$OpenStakingOperationDetailsCommand;->networkType:Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    .line 346
+    iput-object p3, p0, Lcom/iMe/ui/wallet/transaction/WalletTransactionsView$$State$OpenStakingOperationDetailsCommand;->network:Lcom/iMe/storage/domain/model/crypto/Network;
 
     return-void
 .end method
@@ -53,12 +53,12 @@
 .method public apply(Lcom/iMe/ui/wallet/transaction/WalletTransactionsView;)V
     .locals 2
 
-    .line 335
+    .line 351
     iget-object v0, p0, Lcom/iMe/ui/wallet/transaction/WalletTransactionsView$$State$OpenStakingOperationDetailsCommand;->item:Lcom/iMe/model/wallet/transaction/StakingOperationItem;
 
-    iget-object v1, p0, Lcom/iMe/ui/wallet/transaction/WalletTransactionsView$$State$OpenStakingOperationDetailsCommand;->networkType:Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    iget-object v1, p0, Lcom/iMe/ui/wallet/transaction/WalletTransactionsView$$State$OpenStakingOperationDetailsCommand;->network:Lcom/iMe/storage/domain/model/crypto/Network;
 
-    invoke-interface {p1, v0, v1}, Lcom/iMe/ui/wallet/transaction/WalletTransactionsView;->openStakingOperationDetails(Lcom/iMe/model/wallet/transaction/StakingOperationItem;Lcom/iMe/storage/domain/model/crypto/NetworkType;)V
+    invoke-interface {p1, v0, v1}, Lcom/iMe/ui/wallet/transaction/WalletTransactionsView;->openStakingOperationDetails(Lcom/iMe/model/wallet/transaction/StakingOperationItem;Lcom/iMe/storage/domain/model/crypto/Network;)V
 
     return-void
 .end method
@@ -66,7 +66,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 321
+    .line 337
     check-cast p1, Lcom/iMe/ui/wallet/transaction/WalletTransactionsView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/wallet/transaction/WalletTransactionsView$$State$OpenStakingOperationDetailsCommand;->apply(Lcom/iMe/ui/wallet/transaction/WalletTransactionsView;)V

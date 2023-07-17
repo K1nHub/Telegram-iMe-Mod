@@ -788,7 +788,7 @@
     :cond_0
     iput-wide p1, p0, Lorg/telegram/messenger/voip/VideoCapturerDevice;->nativePtr:J
 
-    const-string p1, "screen"
+    const-string/jumbo p1, "screen"
 
     .line 141
     invoke-virtual {p1, p3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z

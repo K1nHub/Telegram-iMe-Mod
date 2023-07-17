@@ -30,14 +30,6 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$VJ4zZ4Bo_pLqtx2FJIDzabtP6Sg(Lkotlin/jvm/functions/Function0;)V
-    .locals 0
-
-    invoke-static {p0}, Lcom/iMe/ui/base/mvp/MvpFragment;->postViewAction$lambda$0(Lkotlin/jvm/functions/Function0;)V
-
-    return-void
-.end method
-
 .method static constructor <clinit>()V
     .locals 6
 
@@ -107,46 +99,6 @@
     iput-object v0, p0, Lcom/iMe/ui/base/mvp/MvpFragment;->subscriptions:Lio/reactivex/disposables/CompositeDisposable;
 
     return-void
-.end method
-
-.method private static final postViewAction$lambda$0(Lkotlin/jvm/functions/Function0;)V
-    .locals 1
-
-    const-string v0, "$tmp0"
-
-    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    .line 44
-    invoke-interface {p0}, Lkotlin/jvm/functions/Function0;->invoke()Ljava/lang/Object;
-
-    return-void
-.end method
-
-.method public static synthetic postViewActionDelayed$default(Lcom/iMe/ui/base/mvp/MvpFragment;JLcom/iMe/fork/utils/Callbacks$Callback;ILjava/lang/Object;)V
-    .locals 0
-
-    if-nez p5, :cond_1
-
-    and-int/lit8 p4, p4, 0x1
-
-    if-eqz p4, :cond_0
-
-    const-wide/16 p1, 0x96
-
-    .line 47
-    :cond_0
-    invoke-virtual {p0, p1, p2, p3}, Lcom/iMe/ui/base/mvp/MvpFragment;->postViewActionDelayed(JLcom/iMe/fork/utils/Callbacks$Callback;)V
-
-    return-void
-
-    :cond_1
-    new-instance p0, Ljava/lang/UnsupportedOperationException;
-
-    const-string p1, "Super calls with default arguments not supported in this target, function: postViewActionDelayed"
-
-    invoke-direct {p0, p1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
-
-    throw p0
 .end method
 
 
@@ -417,39 +369,6 @@
 .method public abstract onViewReady()V
 .end method
 
-.method public final postViewAction(Lkotlin/jvm/functions/Function0;)V
-    .locals 2
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lkotlin/jvm/functions/Function0<",
-            "Lkotlin/Unit;",
-            ">;)V"
-        }
-    .end annotation
-
-    const-string v0, "action"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    .line 44
-    invoke-virtual {p0}, Lcom/iMe/ui/base/mvp/MvpFragment;->getMvpBaseDelegate()Lcom/iMe/ui/base/mvp/base/MvpBaseDelegate;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/iMe/ui/base/mvp/base/MvpBaseDelegate;->getViewHandler()Landroid/os/Handler;
-
-    move-result-object v0
-
-    new-instance v1, Lcom/iMe/ui/base/mvp/MvpFragment$$ExternalSyntheticLambda1;
-
-    invoke-direct {v1, p1}, Lcom/iMe/ui/base/mvp/MvpFragment$$ExternalSyntheticLambda1;-><init>(Lkotlin/jvm/functions/Function0;)V
-
-    invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
-
-    return-void
-.end method
-
 .method public final postViewActionDelayed(JLcom/iMe/fork/utils/Callbacks$Callback;)V
     .locals 2
 
@@ -475,13 +394,24 @@
     return-void
 .end method
 
+.method public removeSelfFromStackImmediately()V
+    .locals 1
+
+    const/4 v0, 0x1
+
+    .line 121
+    invoke-virtual {p0, v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->removeSelfFromStack(Z)V
+
+    return-void
+.end method
+
 .method public saveSelfArgs(Landroid/os/Bundle;)V
     .locals 1
 
-    .line 121
+    .line 125
     invoke-super {p0, p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->saveSelfArgs(Landroid/os/Bundle;)V
 
-    .line 122
+    .line 126
     invoke-virtual {p0}, Lcom/iMe/ui/base/mvp/MvpFragment;->getMvpBaseDelegate()Lcom/iMe/ui/base/mvp/base/MvpBaseDelegate;
 
     move-result-object v0
@@ -513,12 +443,12 @@
 
     invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 126
+    .line 130
     invoke-virtual {p0}, Lcom/iMe/ui/base/mvp/MvpFragment;->getMvpBaseDelegate()Lcom/iMe/ui/base/mvp/base/MvpBaseDelegate;
 
     move-result-object v0
 
-    .line 127
+    .line 131
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object v1
@@ -531,13 +461,13 @@
 
     move-result-object p1
 
-    .line 128
+    .line 132
     invoke-virtual {p1, p4}, Lorg/telegram/ui/ActionBar/AlertDialog;->setCanceledOnTouchOutside(Z)V
 
-    .line 129
+    .line 133
     invoke-virtual {p1, p4}, Landroid/app/Dialog;->setCancelable(Z)V
 
-    .line 126
+    .line 130
     invoke-virtual {v0, p1}, Lcom/iMe/ui/base/mvp/base/MvpBaseDelegate;->showDialog(Landroid/app/Dialog;)Landroid/app/Dialog;
 
     return-void
@@ -554,7 +484,7 @@
 .method public showLoadingDialog(ZZLio/reactivex/disposables/Disposable;)V
     .locals 1
 
-    .line 135
+    .line 139
     invoke-virtual {p0}, Lcom/iMe/ui/base/mvp/MvpFragment;->getMvpBaseDelegate()Lcom/iMe/ui/base/mvp/base/MvpBaseDelegate;
 
     move-result-object v0

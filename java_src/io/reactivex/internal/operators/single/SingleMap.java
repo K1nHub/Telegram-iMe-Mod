@@ -27,22 +27,22 @@ public final class SingleMap<T, R> extends Single<R> {
         final Function<? super T, ? extends R> mapper;
 
         /* renamed from: t */
-        final SingleObserver<? super R> f473t;
+        final SingleObserver<? super R> f555t;
 
         MapSingleObserver(SingleObserver<? super R> singleObserver, Function<? super T, ? extends R> function) {
-            this.f473t = singleObserver;
+            this.f555t = singleObserver;
             this.mapper = function;
         }
 
         @Override // io.reactivex.SingleObserver, io.reactivex.CompletableObserver, io.reactivex.MaybeObserver
         public void onSubscribe(Disposable disposable) {
-            this.f473t.onSubscribe(disposable);
+            this.f555t.onSubscribe(disposable);
         }
 
         @Override // io.reactivex.SingleObserver, io.reactivex.MaybeObserver
         public void onSuccess(T t) {
             try {
-                this.f473t.onSuccess(ObjectHelper.requireNonNull(this.mapper.apply(t), "The mapper function returned a null value."));
+                this.f555t.onSuccess(ObjectHelper.requireNonNull(this.mapper.apply(t), "The mapper function returned a null value."));
             } catch (Throwable th) {
                 Exceptions.throwIfFatal(th);
                 onError(th);
@@ -51,7 +51,7 @@ public final class SingleMap<T, R> extends Single<R> {
 
         @Override // io.reactivex.SingleObserver, io.reactivex.CompletableObserver, io.reactivex.MaybeObserver
         public void onError(Throwable th) {
-            this.f473t.onError(th);
+            this.f555t.onError(th);
         }
     }
 }

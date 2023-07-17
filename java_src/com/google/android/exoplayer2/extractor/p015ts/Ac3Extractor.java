@@ -1,6 +1,6 @@
 package com.google.android.exoplayer2.extractor.p015ts;
 
-import com.google.android.exoplayer2.C0475C;
+import com.google.android.exoplayer2.C0480C;
 import com.google.android.exoplayer2.audio.Ac3Util;
 import com.google.android.exoplayer2.extractor.Extractor;
 import com.google.android.exoplayer2.extractor.ExtractorInput;
@@ -79,7 +79,7 @@ public final class Ac3Extractor implements Extractor {
     public void init(ExtractorOutput extractorOutput) {
         this.reader.createTracks(extractorOutput, new TsPayloadReader.TrackIdGenerator(0, 1));
         extractorOutput.endTracks();
-        extractorOutput.seekMap(new SeekMap.Unseekable(C0475C.TIME_UNSET));
+        extractorOutput.seekMap(new SeekMap.Unseekable(C0480C.TIME_UNSET));
     }
 
     @Override // com.google.android.exoplayer2.extractor.Extractor

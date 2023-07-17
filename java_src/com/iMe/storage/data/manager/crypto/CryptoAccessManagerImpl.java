@@ -1,9 +1,9 @@
 package com.iMe.storage.data.manager.crypto;
 
+import com.iMe.storage.data.utils.crypto.NetworksHelper;
 import com.iMe.storage.domain.manager.crypto.CryptoAccessManager;
 import com.iMe.storage.domain.manager.crypto.CryptoWalletsManager;
 import com.iMe.storage.domain.model.crypto.BlockchainType;
-import com.iMe.storage.domain.model.crypto.NetworkType;
 import com.iMe.storage.domain.model.crypto.Wallet;
 import com.iMe.storage.domain.storage.CryptoPreferenceHelper;
 import java.util.ArrayList;
@@ -12,7 +12,9 @@ import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import kotlin.collections.CollectionsKt;
+import kotlin.collections.CollectionsKt__IterablesKt;
 import kotlin.collections.CollectionsKt___CollectionsKt;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: CryptoAccessManagerImpl.kt */
@@ -29,12 +31,6 @@ public final class CryptoAccessManagerImpl implements CryptoAccessManager {
         this.cryptoPreferenceHelper = cryptoPreferenceHelper;
         this.walletManager = walletManager;
         this.wallets = new LinkedHashMap();
-        this.walletPassword = "";
-    }
-
-    @Override // com.iMe.storage.domain.manager.crypto.CryptoAccessManager
-    public void onUserChanged() {
-        this.wallets.clear();
         this.walletPassword = "";
     }
 
@@ -131,7 +127,7 @@ public final class CryptoAccessManagerImpl implements CryptoAccessManager {
 
     @Override // com.iMe.storage.domain.manager.crypto.CryptoAccessManager
     public void deleteAllWallets() {
-        this.cryptoPreferenceHelper.setNetworkType(NetworkType.BINANCE_SMART_CHAIN);
+        this.cryptoPreferenceHelper.setNetworkId(NetworksHelper.INSTANCE.getDefault().getId());
         for (BlockchainType blockchainType : BlockchainType.values()) {
             deleteWallet(blockchainType);
         }
@@ -147,9 +143,8 @@ public final class CryptoAccessManagerImpl implements CryptoAccessManager {
 
     @Override // com.iMe.storage.domain.manager.crypto.CryptoAccessManager
     public void logoutAllWallets() {
-        for (BlockchainType blockchainType : BlockchainType.values()) {
-            logoutWallet(blockchainType);
-        }
+        this.wallets.clear();
+        this.walletPassword = "";
     }
 
     @Override // com.iMe.storage.domain.manager.crypto.CryptoAccessManager
@@ -168,9 +163,12 @@ public final class CryptoAccessManagerImpl implements CryptoAccessManager {
     public boolean isAuthorized(BlockchainType blockchainType) {
         Intrinsics.checkNotNullParameter(blockchainType, "blockchainType");
         if (!this.wallets.isEmpty()) {
-            if ((getLastLoggedInGuid().length() > 0) && Intrinsics.areEqual(((Wallet) CollectionsKt.last(this.wallets.values())).getGuid(), getLastLoggedInGuid())) {
-                if (this.walletPassword.length() > 0) {
-                    return true;
+            if (getLastLoggedInGuid().length() > 0) {
+                Wallet wallet2 = (Wallet) CollectionsKt.lastOrNull(this.wallets.values());
+                if (Intrinsics.areEqual(wallet2 != null ? wallet2.getGuid() : null, getLastLoggedInGuid())) {
+                    if (this.walletPassword.length() > 0) {
+                        return true;
+                    }
                 }
             }
         }
@@ -228,9 +226,21 @@ public final class CryptoAccessManagerImpl implements CryptoAccessManager {
     }
 
     @Override // com.iMe.storage.domain.manager.crypto.CryptoAccessManager
-    public List<BlockchainType> getCreatedWalletsBlockchains() {
+    public List<BlockchainType> getLoggedIndWalletsBlockchains() {
         List<BlockchainType> list;
         list = CollectionsKt___CollectionsKt.toList(this.wallets.keySet());
         return list;
+    }
+
+    @Override // com.iMe.storage.domain.manager.crypto.CryptoAccessManager
+    public List<BlockchainType> getCreatedWalletsBlockchains() {
+        int collectionSizeOrDefault;
+        Set<String> keySet = this.cryptoPreferenceHelper.getWalletPublicAddresses().getData().keySet();
+        collectionSizeOrDefault = CollectionsKt__IterablesKt.collectionSizeOrDefault(keySet, 10);
+        ArrayList arrayList = new ArrayList(collectionSizeOrDefault);
+        for (String str : keySet) {
+            arrayList.add(BlockchainType.Companion.map(str));
+        }
+        return arrayList;
     }
 }

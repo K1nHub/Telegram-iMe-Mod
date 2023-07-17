@@ -3,7 +3,7 @@ package com.iMe.p031ui.pager;
 import com.iMe.p031ui.pager.TelegramViewPagerFragment;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Lambda;
-import org.telegram.p044ui.Components.RecyclerListView;
+import org.telegram.p043ui.Components.RecyclerListView;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: TelegramViewPagerFragment.kt */
 /* renamed from: com.iMe.ui.pager.TelegramViewPagerFragment$ViewPage$listView$2 */

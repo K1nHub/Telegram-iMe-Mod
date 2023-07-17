@@ -1,6 +1,6 @@
 package androidx.coordinatorlayout;
 
-import com.iMe.android.R;
+import com.iMe.android.web.R;
 /* loaded from: classes.dex */
 public final class R$styleable {
     public static final int[] CoordinatorLayout = {R.attr.keylines, R.attr.statusBarBackground};

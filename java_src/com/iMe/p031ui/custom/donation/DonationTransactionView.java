@@ -8,7 +8,6 @@ import androidx.appcompat.widget.AppCompatTextView;
 import com.iMe.gateway.TelegramControllersGateway;
 import com.iMe.model.wallet.transaction.TransactionItem;
 import com.iMe.p031ui.custom.DividerView;
-import com.iMe.storage.domain.model.wallet.token.TokenInfo;
 import com.iMe.storage.domain.model.wallet.transaction.Transaction;
 import com.iMe.storage.domain.utils.system.ResourceManager;
 import com.iMe.utils.extentions.common.ViewExtKt;
@@ -22,12 +21,12 @@ import kotlin.ranges.IntRange;
 import kotlin.text.StringsKt__StringsKt;
 import org.koin.core.Koin;
 import org.koin.core.component.KoinComponent;
-import org.koin.p043mp.KoinPlatformTools;
-import org.telegram.messenger.C3295R;
+import org.koin.p042mp.KoinPlatformTools;
+import org.telegram.messenger.C3417R;
 import org.telegram.messenger.UserObject;
 import org.telegram.messenger.databinding.ForkRecycleItemWalletDonationTransactionBinding;
-import org.telegram.p044ui.ActionBar.Theme;
-import org.telegram.p044ui.Components.AvatarDrawable;
+import org.telegram.p043ui.ActionBar.Theme;
+import org.telegram.p043ui.Components.AvatarDrawable;
 import org.telegram.tgnet.TLRPC$User;
 /* compiled from: DonationTransactionView.kt */
 /* renamed from: com.iMe.ui.custom.donation.DonationTransactionView */
@@ -90,7 +89,7 @@ public final class DonationTransactionView extends FrameLayout implements KoinCo
             ForkRecycleItemWalletDonationTransactionBinding forkRecycleItemWalletDonationTransactionBinding = this.binding;
             TLRPC$User user = TelegramControllersGateway.CC.getMessagesController$default(getTelegramControllersGateway(), 0, 1, null).getUser(Long.valueOf(Long.parseLong(((Transaction.Crypto.Donation) item.getTransaction()).getSenderAccountId())));
             AvatarDrawable avatarDrawable = new AvatarDrawable();
-            forkRecycleItemWalletDonationTransactionBinding.imageUserAvatar.getImageReceiver().setRoundRadius(getResources().getDimensionPixelSize(C3295R.dimen.telegram_avatar_size_medium) / 2);
+            forkRecycleItemWalletDonationTransactionBinding.imageUserAvatar.getImageReceiver().setRoundRadius(getResources().getDimensionPixelSize(C3417R.dimen.telegram_avatar_size_medium) / 2);
             if (user != null) {
                 avatarDrawable.setInfo(user);
                 forkRecycleItemWalletDonationTransactionBinding.imageUserAvatar.setForUserOrChat(user, avatarDrawable);
@@ -100,10 +99,10 @@ public final class DonationTransactionView extends FrameLayout implements KoinCo
                 substring = StringsKt__StringsKt.substring(((Transaction.Crypto.Donation) item.getTransaction()).getSenderAccountId(), new IntRange(0, 1));
                 avatarDrawable.setInfo(parseLong, null, null, substring);
                 forkRecycleItemWalletDonationTransactionBinding.imageUserAvatar.setImageDrawable(avatarDrawable);
-                forkRecycleItemWalletDonationTransactionBinding.textUserFullName.setText(getResourceManager().getString(C3295R.string.common_id, Long.valueOf(Long.parseLong(((Transaction.Crypto.Donation) item.getTransaction()).getSenderAccountId()))));
+                forkRecycleItemWalletDonationTransactionBinding.textUserFullName.setText(getResourceManager().getString(C3417R.string.common_id, Long.valueOf(Long.parseLong(((Transaction.Crypto.Donation) item.getTransaction()).getSenderAccountId()))));
             }
             forkRecycleItemWalletDonationTransactionBinding.textDate.setText(item.getTransactionDate());
-            forkRecycleItemWalletDonationTransactionBinding.textCoinTicker.setTicker(TokenInfo.Companion.map(item.getTransaction().getTokenCode()), getResourceManager());
+            forkRecycleItemWalletDonationTransactionBinding.textCoinTicker.setText(item.getTransaction().getToken().getTicker());
             forkRecycleItemWalletDonationTransactionBinding.textAmount.setText(item.getAmountWithSymbol(false));
             AppCompatTextView textUserFullName = forkRecycleItemWalletDonationTransactionBinding.textUserFullName;
             Intrinsics.checkNotNullExpressionValue(textUserFullName, "textUserFullName");

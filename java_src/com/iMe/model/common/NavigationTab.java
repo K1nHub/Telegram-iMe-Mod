@@ -8,16 +8,16 @@ public class NavigationTab<T extends MvpFragment> {
     private final T fragment;
 
     /* renamed from: id */
-    private final int f267id;
+    private final int f349id;
 
     public NavigationTab(int i, T fragment) {
         Intrinsics.checkNotNullParameter(fragment, "fragment");
-        this.f267id = i;
+        this.f349id = i;
         this.fragment = fragment;
     }
 
     public int getId() {
-        return this.f267id;
+        return this.f349id;
     }
 
     public T getFragment() {

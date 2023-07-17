@@ -21,6 +21,11 @@ public class ProfileView$$State extends MvpViewState<ProfileView> implements Pro
         BaseView.CC.$default$finishScreen(this);
     }
 
+    @Override // com.iMe.p031ui.base.mvp.base.BaseView
+    public /* synthetic */ void removeSelfFromStackImmediately() {
+        BaseView.CC.$default$removeSelfFromStackImmediately(this);
+    }
+
     @Override // com.iMe.feature.profile.ProfileView
     public void onFilteredMembers(ArrayList<TLRPC$ChatParticipant> arrayList) {
         OnFilteredMembersCommand onFilteredMembersCommand = new OnFilteredMembersCommand(this, arrayList);

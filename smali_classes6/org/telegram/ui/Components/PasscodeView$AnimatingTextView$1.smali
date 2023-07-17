@@ -27,7 +27,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/PasscodeView$AnimatingTextView;I)V
     .locals 0
 
-    .line 279
+    .line 411
     iput-object p1, p0, Lorg/telegram/ui/Components/PasscodeView$AnimatingTextView$1;->this$0:Lorg/telegram/ui/Components/PasscodeView$AnimatingTextView;
 
     iput p2, p0, Lorg/telegram/ui/Components/PasscodeView$AnimatingTextView$1;->val$newPos:I
@@ -42,10 +42,10 @@
 .method public run()V
     .locals 7
 
-    .line 282
+    .line 414
     iget-object v0, p0, Lorg/telegram/ui/Components/PasscodeView$AnimatingTextView$1;->this$0:Lorg/telegram/ui/Components/PasscodeView$AnimatingTextView;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/PasscodeView$AnimatingTextView;->access$100(Lorg/telegram/ui/Components/PasscodeView$AnimatingTextView;)Ljava/lang/Runnable;
+    invoke-static {v0}, Lorg/telegram/ui/Components/PasscodeView$AnimatingTextView;->access$800(Lorg/telegram/ui/Components/PasscodeView$AnimatingTextView;)Ljava/lang/Runnable;
 
     move-result-object v0
 
@@ -53,16 +53,16 @@
 
     return-void
 
-    .line 285
+    .line 417
     :cond_0
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 287
+    .line 419
     iget-object v1, p0, Lorg/telegram/ui/Components/PasscodeView$AnimatingTextView$1;->this$0:Lorg/telegram/ui/Components/PasscodeView$AnimatingTextView;
 
-    invoke-static {v1}, Lorg/telegram/ui/Components/PasscodeView$AnimatingTextView;->access$200(Lorg/telegram/ui/Components/PasscodeView$AnimatingTextView;)Ljava/util/ArrayList;
+    invoke-static {v1}, Lorg/telegram/ui/Components/PasscodeView$AnimatingTextView;->access$400(Lorg/telegram/ui/Components/PasscodeView$AnimatingTextView;)Ljava/util/ArrayList;
 
     move-result-object v1
 
@@ -74,7 +74,7 @@
 
     check-cast v1, Landroid/widget/TextView;
 
-    .line 288
+    .line 420
     sget-object v2, Landroid/view/View;->SCALE_X:Landroid/util/Property;
 
     const/4 v3, 0x1
@@ -93,7 +93,7 @@
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 289
+    .line 421
     sget-object v2, Landroid/view/View;->SCALE_Y:Landroid/util/Property;
 
     new-array v4, v3, [F
@@ -106,7 +106,7 @@
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 290
+    .line 422
     sget-object v2, Landroid/view/View;->ALPHA:Landroid/util/Property;
 
     new-array v4, v3, [F
@@ -119,10 +119,10 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 291
+    .line 423
     iget-object v1, p0, Lorg/telegram/ui/Components/PasscodeView$AnimatingTextView$1;->this$0:Lorg/telegram/ui/Components/PasscodeView$AnimatingTextView;
 
-    invoke-static {v1}, Lorg/telegram/ui/Components/PasscodeView$AnimatingTextView;->access$300(Lorg/telegram/ui/Components/PasscodeView$AnimatingTextView;)Ljava/util/ArrayList;
+    invoke-static {v1}, Lorg/telegram/ui/Components/PasscodeView$AnimatingTextView;->access$500(Lorg/telegram/ui/Components/PasscodeView$AnimatingTextView;)Ljava/util/ArrayList;
 
     move-result-object v1
 
@@ -134,7 +134,7 @@
 
     check-cast v1, Landroid/widget/TextView;
 
-    .line 292
+    .line 424
     sget-object v2, Landroid/view/View;->SCALE_X:Landroid/util/Property;
 
     new-array v4, v3, [F
@@ -149,7 +149,7 @@
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 293
+    .line 425
     sget-object v2, Landroid/view/View;->SCALE_Y:Landroid/util/Property;
 
     new-array v4, v3, [F
@@ -162,7 +162,7 @@
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 294
+    .line 426
     sget-object v2, Landroid/view/View;->ALPHA:Landroid/util/Property;
 
     new-array v3, v3, [F
@@ -175,19 +175,19 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 296
+    .line 428
     iget-object v1, p0, Lorg/telegram/ui/Components/PasscodeView$AnimatingTextView$1;->this$0:Lorg/telegram/ui/Components/PasscodeView$AnimatingTextView;
 
     new-instance v2, Landroid/animation/AnimatorSet;
 
     invoke-direct {v2}, Landroid/animation/AnimatorSet;-><init>()V
 
-    invoke-static {v1, v2}, Lorg/telegram/ui/Components/PasscodeView$AnimatingTextView;->access$402(Lorg/telegram/ui/Components/PasscodeView$AnimatingTextView;Landroid/animation/AnimatorSet;)Landroid/animation/AnimatorSet;
+    invoke-static {v1, v2}, Lorg/telegram/ui/Components/PasscodeView$AnimatingTextView;->access$902(Lorg/telegram/ui/Components/PasscodeView$AnimatingTextView;Landroid/animation/AnimatorSet;)Landroid/animation/AnimatorSet;
 
-    .line 297
+    .line 429
     iget-object v1, p0, Lorg/telegram/ui/Components/PasscodeView$AnimatingTextView$1;->this$0:Lorg/telegram/ui/Components/PasscodeView$AnimatingTextView;
 
-    invoke-static {v1}, Lorg/telegram/ui/Components/PasscodeView$AnimatingTextView;->access$400(Lorg/telegram/ui/Components/PasscodeView$AnimatingTextView;)Landroid/animation/AnimatorSet;
+    invoke-static {v1}, Lorg/telegram/ui/Components/PasscodeView$AnimatingTextView;->access$900(Lorg/telegram/ui/Components/PasscodeView$AnimatingTextView;)Landroid/animation/AnimatorSet;
 
     move-result-object v1
 
@@ -195,19 +195,19 @@
 
     invoke-virtual {v1, v2, v3}, Landroid/animation/AnimatorSet;->setDuration(J)Landroid/animation/AnimatorSet;
 
-    .line 298
+    .line 430
     iget-object v1, p0, Lorg/telegram/ui/Components/PasscodeView$AnimatingTextView$1;->this$0:Lorg/telegram/ui/Components/PasscodeView$AnimatingTextView;
 
-    invoke-static {v1}, Lorg/telegram/ui/Components/PasscodeView$AnimatingTextView;->access$400(Lorg/telegram/ui/Components/PasscodeView$AnimatingTextView;)Landroid/animation/AnimatorSet;
+    invoke-static {v1}, Lorg/telegram/ui/Components/PasscodeView$AnimatingTextView;->access$900(Lorg/telegram/ui/Components/PasscodeView$AnimatingTextView;)Landroid/animation/AnimatorSet;
 
     move-result-object v1
 
     invoke-virtual {v1, v0}, Landroid/animation/AnimatorSet;->playTogether(Ljava/util/Collection;)V
 
-    .line 299
+    .line 431
     iget-object v0, p0, Lorg/telegram/ui/Components/PasscodeView$AnimatingTextView$1;->this$0:Lorg/telegram/ui/Components/PasscodeView$AnimatingTextView;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/PasscodeView$AnimatingTextView;->access$400(Lorg/telegram/ui/Components/PasscodeView$AnimatingTextView;)Landroid/animation/AnimatorSet;
+    invoke-static {v0}, Lorg/telegram/ui/Components/PasscodeView$AnimatingTextView;->access$900(Lorg/telegram/ui/Components/PasscodeView$AnimatingTextView;)Landroid/animation/AnimatorSet;
 
     move-result-object v0
 
@@ -217,10 +217,10 @@
 
     invoke-virtual {v0, v1}, Landroid/animation/AnimatorSet;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 307
+    .line 439
     iget-object v0, p0, Lorg/telegram/ui/Components/PasscodeView$AnimatingTextView$1;->this$0:Lorg/telegram/ui/Components/PasscodeView$AnimatingTextView;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/PasscodeView$AnimatingTextView;->access$400(Lorg/telegram/ui/Components/PasscodeView$AnimatingTextView;)Landroid/animation/AnimatorSet;
+    invoke-static {v0}, Lorg/telegram/ui/Components/PasscodeView$AnimatingTextView;->access$900(Lorg/telegram/ui/Components/PasscodeView$AnimatingTextView;)Landroid/animation/AnimatorSet;
 
     move-result-object v0
 

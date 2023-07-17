@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/GroupCallActivity;)V
     .locals 0
 
-    .line 3448
+    .line 3459
     iput-object p1, p0, Lorg/telegram/ui/GroupCallActivity$15;->this$0:Lorg/telegram/ui/GroupCallActivity;
 
     invoke-direct {p0}, Landroidx/recyclerview/widget/DefaultItemAnimator;-><init>()V
@@ -35,7 +35,7 @@
 .method protected onMoveAnimationUpdate(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;)V
     .locals 1
 
-    .line 3452
+    .line 3463
     iget-object p1, p0, Lorg/telegram/ui/GroupCallActivity$15;->this$0:Lorg/telegram/ui/GroupCallActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/GroupCallActivity;->access$5700(Lorg/telegram/ui/GroupCallActivity;)Lorg/telegram/ui/Components/RecyclerListView;
@@ -44,7 +44,7 @@
 
     invoke-virtual {p1}, Landroid/view/ViewGroup;->invalidate()V
 
-    .line 3453
+    .line 3464
     iget-object p1, p0, Lorg/telegram/ui/GroupCallActivity$15;->this$0:Lorg/telegram/ui/GroupCallActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/GroupCallActivity;->access$5000(Lorg/telegram/ui/GroupCallActivity;)Lorg/telegram/ui/Components/voip/GroupCallRenderersContainer;
@@ -53,7 +53,7 @@
 
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->invalidate()V
 
-    .line 3454
+    .line 3465
     iget-object p1, p0, Lorg/telegram/ui/GroupCallActivity$15;->this$0:Lorg/telegram/ui/GroupCallActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/GroupCallActivity;->access$11500(Lorg/telegram/ui/GroupCallActivity;)Landroid/view/ViewGroup;
@@ -62,7 +62,7 @@
 
     invoke-virtual {p1}, Landroid/view/ViewGroup;->invalidate()V
 
-    .line 3455
+    .line 3466
     iget-object p1, p0, Lorg/telegram/ui/GroupCallActivity$15;->this$0:Lorg/telegram/ui/GroupCallActivity;
 
     const/4 v0, 0x1

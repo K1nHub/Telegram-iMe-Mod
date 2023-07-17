@@ -17,12 +17,7 @@
     value = {
         "Ljava/lang/Object;",
         "Lcom/iMe/storage/data/datasource/base/DataSourceFactory<",
-        "Lkotlin/Pair<",
-        "+",
-        "Lcom/iMe/storage/domain/model/wallet/token/TokenCode;",
-        "+",
         "Lcom/iMe/storage/domain/model/crypto/BlockchainType;",
-        ">;",
         "Lcom/iMe/storage/data/datasource/transfer/WalletTransferDataSource;",
         ">;"
     }
@@ -59,19 +54,19 @@
 
     invoke-static {p4, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 7
+    .line 6
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 8
+    .line 7
     iput-object p1, p0, Lcom/iMe/storage/data/datasource/transfer/WalletTransferDataSourceFactory;->evmWalletTransferDataSource:Lcom/iMe/storage/data/datasource/transfer/WalletTransferDataSource;
 
-    .line 9
+    .line 8
     iput-object p2, p0, Lcom/iMe/storage/data/datasource/transfer/WalletTransferDataSourceFactory;->tonWalletTransferDataSource:Lcom/iMe/storage/data/datasource/transfer/WalletTransferDataSource;
 
-    .line 10
+    .line 9
     iput-object p3, p0, Lcom/iMe/storage/data/datasource/transfer/WalletTransferDataSourceFactory;->tronWalletTransferDataSource:Lcom/iMe/storage/data/datasource/transfer/WalletTransferDataSource;
 
-    .line 11
+    .line 10
     iput-object p4, p0, Lcom/iMe/storage/data/datasource/transfer/WalletTransferDataSourceFactory;->btcWalletTransferDataSource:Lcom/iMe/storage/data/datasource/transfer/WalletTransferDataSource;
 
     return-void
@@ -79,45 +74,14 @@
 
 
 # virtual methods
-.method public getDataSource(Lkotlin/Pair;)Lcom/iMe/storage/data/datasource/transfer/WalletTransferDataSource;
-    .locals 2
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lkotlin/Pair<",
-            "+",
-            "Lcom/iMe/storage/domain/model/wallet/token/TokenCode;",
-            "+",
-            "Lcom/iMe/storage/domain/model/crypto/BlockchainType;",
-            ">;)",
-            "Lcom/iMe/storage/data/datasource/transfer/WalletTransferDataSource;"
-        }
-    .end annotation
+.method public getDataSource(Lcom/iMe/storage/domain/model/crypto/BlockchainType;)Lcom/iMe/storage/data/datasource/transfer/WalletTransferDataSource;
+    .locals 1
 
     const-string v0, "arg"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 17
-    invoke-virtual {p1}, Lkotlin/Pair;->getFirst()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
-
-    .line 19
-    invoke-virtual {v0}, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;->isCryptoTokens()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_4
-
-    invoke-virtual {p1}, Lkotlin/Pair;->getSecond()Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Lcom/iMe/storage/domain/model/crypto/BlockchainType;
-
+    .line 16
     sget-object v0, Lcom/iMe/storage/data/datasource/transfer/WalletTransferDataSourceFactory$WhenMappings;->$EnumSwitchMapping$0:[I
 
     invoke-virtual {p1}, Ljava/lang/Enum;->ordinal()I
@@ -142,7 +106,7 @@
 
     if-ne p1, v0, :cond_0
 
-    .line 23
+    .line 20
     iget-object p1, p0, Lcom/iMe/storage/data/datasource/transfer/WalletTransferDataSourceFactory;->btcWalletTransferDataSource:Lcom/iMe/storage/data/datasource/transfer/WalletTransferDataSource;
 
     goto :goto_0
@@ -154,45 +118,22 @@
 
     throw p1
 
-    .line 22
+    .line 19
     :cond_1
     iget-object p1, p0, Lcom/iMe/storage/data/datasource/transfer/WalletTransferDataSourceFactory;->tronWalletTransferDataSource:Lcom/iMe/storage/data/datasource/transfer/WalletTransferDataSource;
 
     goto :goto_0
 
-    .line 21
+    .line 18
     :cond_2
     iget-object p1, p0, Lcom/iMe/storage/data/datasource/transfer/WalletTransferDataSourceFactory;->tonWalletTransferDataSource:Lcom/iMe/storage/data/datasource/transfer/WalletTransferDataSource;
 
     goto :goto_0
 
-    .line 20
+    .line 17
     :cond_3
     iget-object p1, p0, Lcom/iMe/storage/data/datasource/transfer/WalletTransferDataSourceFactory;->evmWalletTransferDataSource:Lcom/iMe/storage/data/datasource/transfer/WalletTransferDataSource;
 
     :goto_0
     return-object p1
-
-    .line 23
-    :cond_4
-    new-instance p1, Ljava/lang/IllegalStateException;
-
-    .line 25
-    sget-object v1, Lcom/iMe/storage/data/datasource/base/DataSourceFactory;->Companion:Lcom/iMe/storage/data/datasource/base/DataSourceFactory$Companion;
-
-    invoke-virtual {v0}, Ljava/lang/Enum;->name()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {v1, v0}, Lcom/iMe/storage/data/datasource/base/DataSourceFactory$Companion;->unsupportedDataSource(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-direct {p1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw p1
 .end method

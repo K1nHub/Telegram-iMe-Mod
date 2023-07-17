@@ -49,7 +49,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 292
+    .line 300
     check-cast p1, Landroid/view/View;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$setupListeners$1$1;->invoke(Landroid/view/View;)V
@@ -66,7 +66,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 292
+    .line 300
     iget-object p1, p0, Lcom/iMe/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$setupListeners$1$1;->this$0:Lcom/iMe/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog;
 
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BottomSheet;->dismiss()V

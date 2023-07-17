@@ -14,7 +14,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nSortingFilter.kt\nKotlin\n*S Kotlin\n*F\n+ 1 SortingFilter.kt\ncom/iMe/fork/enums/SortingFilter$Companion\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 3 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n*L\n1#1,313:1\n1#2:314\n3792#3:315\n4307#3,2:316\n*S KotlinDebug\n*F\n+ 1 SortingFilter.kt\ncom/iMe/fork/enums/SortingFilter$Companion\n*L\n298#1:315\n298#1:316,2\n*E\n"
+    value = "SMAP\nSortingFilter.kt\nKotlin\n*S Kotlin\n*F\n+ 1 SortingFilter.kt\ncom/iMe/fork/enums/SortingFilter$Companion\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 3 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n*L\n1#1,351:1\n1#2:352\n3792#3:353\n4307#3,2:354\n*S KotlinDebug\n*F\n+ 1 SortingFilter.kt\ncom/iMe/fork/enums/SortingFilter$Companion\n*L\n336#1:353\n336#1:354,2\n*E\n"
 .end annotation
 
 
@@ -22,7 +22,7 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 288
+    .line 326
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -57,7 +57,7 @@
 .method public final getFilterByIdWithExtra(ZI)Lcom/iMe/fork/enums/SortingFilter;
     .locals 4
 
-    .line 304
+    .line 342
     invoke-virtual {p0, p1}, Lcom/iMe/fork/enums/SortingFilter$Companion;->getSortingFilters(Z)Ljava/util/List;
 
     move-result-object v0
@@ -127,7 +127,7 @@
         }
     .end annotation
 
-    .line 298
+    .line 336
     invoke-static {}, Lcom/iMe/fork/enums/SortingFilter;->values()[Lcom/iMe/fork/enums/SortingFilter;
 
     move-result-object v0
@@ -149,7 +149,7 @@
 
     aget-object v5, v0, v4
 
-    .line 298
+    .line 336
     invoke-virtual {v5}, Lcom/iMe/fork/enums/SortingFilter;->isArchive()Z
 
     move-result v6
@@ -181,7 +181,7 @@
 .method public final isSortingFilter(ZI)Z
     .locals 2
 
-    .line 301
+    .line 339
     invoke-virtual {p0, p1}, Lcom/iMe/fork/enums/SortingFilter$Companion;->getExtraId(Z)I
 
     move-result v0
@@ -215,7 +215,7 @@
 .method public final mapNameToEnum(Ljava/lang/String;)Lcom/iMe/fork/enums/SortingFilter;
     .locals 5
 
-    .line 295
+    .line 333
     invoke-static {}, Lcom/iMe/fork/enums/SortingFilter;->values()[Lcom/iMe/fork/enums/SortingFilter;
 
     move-result-object v0
@@ -256,7 +256,7 @@
 .method public final removeExtraFromId(ZI)I
     .locals 0
 
-    .line 307
+    .line 345
     invoke-virtual {p0, p1}, Lcom/iMe/fork/enums/SortingFilter$Companion;->getExtraId(Z)I
 
     move-result p1

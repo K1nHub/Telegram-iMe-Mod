@@ -6,7 +6,7 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Lambda;
-import org.telegram.p044ui.ActionBar.BaseFragment;
+import org.telegram.p043ui.ActionBar.BaseFragment;
 /* compiled from: WalletAirdropDialog.kt */
 /* renamed from: com.iMe.ui.wallet.airdrop.dialog.WalletAirdropDialog$configureDialogState$1$3$1 */
 /* loaded from: classes3.dex */

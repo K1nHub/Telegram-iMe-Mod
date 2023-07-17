@@ -162,6 +162,14 @@
     return-object v0
 .end method
 
+.method public synthetic removeSelfFromStackImmediately()V
+    .locals 0
+
+    invoke-static {p0}, Lcom/iMe/ui/base/mvp/base/BaseView$-CC;->$default$removeSelfFromStackImmediately(Lcom/iMe/ui/base/mvp/base/BaseView;)V
+
+    return-void
+.end method
+
 .method public final showDialog(Landroid/app/Dialog;)Landroid/app/Dialog;
     .locals 1
 

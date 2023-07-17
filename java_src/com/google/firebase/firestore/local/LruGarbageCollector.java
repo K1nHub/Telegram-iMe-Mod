@@ -101,7 +101,7 @@ public class LruGarbageCollector {
     /* JADX INFO: Access modifiers changed from: private */
     /* loaded from: classes3.dex */
     public static class RollingSequenceNumberBuffer {
-        private static final Comparator<Long> COMPARATOR = C1013xc382edc1.INSTANCE;
+        private static final Comparator<Long> COMPARATOR = C1018xc382edc1.INSTANCE;
         private final int maxElements;
         private final PriorityQueue<Long> queue;
 

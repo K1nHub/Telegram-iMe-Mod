@@ -3,15 +3,15 @@ package com.google.android.gms.internal.firebase_ml;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 import org.checkerframework.checker.nullness.compatqual.NullableDecl;
-import p034j$.util.Iterator;
-import p034j$.util.function.Consumer;
+import p033j$.util.Iterator;
+import p033j$.util.function.Consumer;
 /* loaded from: classes.dex */
-abstract class zzkb<T> implements Iterator<T>, p034j$.util.Iterator {
+abstract class zzkb<T> implements Iterator<T>, p033j$.util.Iterator {
     private int zzaal = zzkd.zzaap;
     @NullableDecl
     private T zzaam;
 
-    @Override // p034j$.util.Iterator
+    @Override // p033j$.util.Iterator
     public /* synthetic */ void forEachRemaining(Consumer consumer) {
         Iterator.CC.$default$forEachRemaining(this, consumer);
     }
@@ -25,7 +25,7 @@ abstract class zzkb<T> implements Iterator<T>, p034j$.util.Iterator {
         return null;
     }
 
-    @Override // java.util.Iterator, p034j$.util.Iterator
+    @Override // java.util.Iterator, p033j$.util.Iterator
     public final boolean hasNext() {
         int i = this.zzaal;
         int i2 = zzkd.zzaar;
@@ -45,7 +45,7 @@ abstract class zzkb<T> implements Iterator<T>, p034j$.util.Iterator {
         return true;
     }
 
-    @Override // java.util.Iterator, p034j$.util.Iterator
+    @Override // java.util.Iterator, p033j$.util.Iterator
     public final T next() {
         if (!hasNext()) {
             throw new NoSuchElementException();
@@ -56,7 +56,7 @@ abstract class zzkb<T> implements Iterator<T>, p034j$.util.Iterator {
         return t;
     }
 
-    @Override // java.util.Iterator, p034j$.util.Iterator
+    @Override // java.util.Iterator, p033j$.util.Iterator
     public final void remove() {
         throw new UnsupportedOperationException();
     }

@@ -4,7 +4,7 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.p044ui.ActionBar.Theme;
+import org.telegram.p043ui.ActionBar.Theme;
 /* compiled from: MenuItem.kt */
 /* renamed from: com.iMe.ui.popupMenu.MenuItem */
 /* loaded from: classes3.dex */

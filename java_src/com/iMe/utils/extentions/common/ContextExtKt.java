@@ -8,7 +8,7 @@ import android.widget.Toast;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.C3295R;
+import org.telegram.messenger.C3417R;
 import org.telegram.messenger.LocaleController;
 import timber.log.Timber;
 /* compiled from: ContextExt.kt */
@@ -46,7 +46,7 @@ public final class ContextExtKt {
             Intent intent = new Intent("android.intent.action.SEND");
             intent.setType("text/plain");
             intent.putExtra("android.intent.extra.TEXT", text);
-            activity.startActivityForResult(Intent.createChooser(intent, LocaleController.getString("ShareTelegram", C3295R.string.ShareTelegram)), 500);
+            activity.startActivityForResult(Intent.createChooser(intent, LocaleController.getString("ShareTelegram", C3417R.string.ShareTelegram)), 500);
         } catch (Exception e) {
             Timber.m6e(e);
         }
@@ -54,7 +54,7 @@ public final class ContextExtKt {
 
     public static /* synthetic */ void copyToClipboard$default(String str, String str2, int i, Object obj) {
         if ((i & 2) != 0) {
-            str2 = LocaleController.getString("TextCopied", C3295R.string.TextCopied);
+            str2 = LocaleController.getString("TextCopied", C3417R.string.TextCopied);
             Intrinsics.checkNotNullExpressionValue(str2, "getString(\"TextCopied\", R.string.TextCopied)");
         }
         copyToClipboard(str, str2);

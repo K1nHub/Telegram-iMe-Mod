@@ -22,13 +22,13 @@
         "Lkotlin/jvm/functions/Function2<",
         "Lorg/koin/core/scope/Scope;",
         "Lorg/koin/core/parameter/ParametersHolder;",
-        "Lcom/iMe/storage/data/locale/db/dao/main/BookmarksDao;",
+        "Lcom/iMe/storage/data/locale/db/dao/main/PlaylistsDao;",
         ">;"
     }
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nDatabaseModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DatabaseModule.kt\ncom/iMe/storage/data/di/module/DatabaseModuleKt$databaseModule$1$10\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,44:1\n129#2,5:45\n*S KotlinDebug\n*F\n+ 1 DatabaseModule.kt\ncom/iMe/storage/data/di/module/DatabaseModuleKt$databaseModule$1$10\n*L\n28#1:45,5\n*E\n"
+    value = "SMAP\nDatabaseModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DatabaseModule.kt\ncom/iMe/storage/data/di/module/DatabaseModuleKt$databaseModule$1$10\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,40:1\n129#2,5:41\n*S KotlinDebug\n*F\n+ 1 DatabaseModule.kt\ncom/iMe/storage/data/di/module/DatabaseModuleKt$databaseModule$1$10\n*L\n28#1:41,5\n*E\n"
 .end annotation
 
 
@@ -61,7 +61,7 @@
 
 
 # virtual methods
-.method public final invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/iMe/storage/data/locale/db/dao/main/BookmarksDao;
+.method public final invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/iMe/storage/data/locale/db/dao/main/PlaylistsDao;
     .locals 1
 
     const-string v0, "$this$single"
@@ -88,7 +88,7 @@
     check-cast p1, Lcom/iMe/storage/data/locale/db/database/AppMainDatabase;
 
     .line 28
-    invoke-virtual {p1}, Lcom/iMe/storage/data/locale/db/database/AppMainDatabase;->bookmarksDao()Lcom/iMe/storage/data/locale/db/dao/main/BookmarksDao;
+    invoke-virtual {p1}, Lcom/iMe/storage/data/locale/db/database/AppMainDatabase;->playlistsDao()Lcom/iMe/storage/data/locale/db/dao/main/PlaylistsDao;
 
     move-result-object p1
 
@@ -103,7 +103,7 @@
 
     check-cast p2, Lorg/koin/core/parameter/ParametersHolder;
 
-    invoke-virtual {p0, p1, p2}, Lcom/iMe/storage/data/di/module/DatabaseModuleKt$databaseModule$1$10;->invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/iMe/storage/data/locale/db/dao/main/BookmarksDao;
+    invoke-virtual {p0, p1, p2}, Lcom/iMe/storage/data/di/module/DatabaseModuleKt$databaseModule$1$10;->invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/iMe/storage/data/locale/db/dao/main/PlaylistsDao;
 
     move-result-object p1
 

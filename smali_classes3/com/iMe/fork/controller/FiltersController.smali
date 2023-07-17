@@ -14,7 +14,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nFiltersController.kt\nKotlin\n*S Kotlin\n*F\n+ 1 FiltersController.kt\ncom/iMe/fork/controller/FiltersController\n+ 2 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 4 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,292:1\n56#2,6:293\n766#3:299\n857#3,2:300\n1603#3,9:302\n1855#3:311\n1856#3:313\n1612#3:314\n1002#3,2:315\n1855#3:317\n1864#3,3:318\n1856#3:321\n1549#3:322\n1620#3,3:323\n1549#3:326\n1620#3,3:327\n1549#3:331\n1620#3,3:332\n1179#3,2:335\n1253#3,4:337\n766#3:341\n857#3,2:342\n1855#3,2:344\n1002#3,2:346\n1855#3,2:348\n766#3:350\n857#3,2:351\n1#4:312\n1#4:330\n*S KotlinDebug\n*F\n+ 1 FiltersController.kt\ncom/iMe/fork/controller/FiltersController\n*L\n27#1:293,6\n92#1:299\n92#1:300,2\n124#1:302,9\n124#1:311\n124#1:313\n124#1:314\n125#1:315,2\n132#1:317\n137#1:318,3\n132#1:321\n146#1:322\n146#1:323,3\n149#1:326\n149#1:327,3\n204#1:331\n204#1:332,3\n228#1:335,2\n228#1:337,4\n239#1:341\n239#1:342,2\n249#1:344,2\n262#1:346,2\n269#1:348,2\n280#1:350\n280#1:351,2\n124#1:312\n*E\n"
+    value = "SMAP\nFiltersController.kt\nKotlin\n*S Kotlin\n*F\n+ 1 FiltersController.kt\ncom/iMe/fork/controller/FiltersController\n+ 2 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 4 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,286:1\n56#2,6:287\n766#3:293\n857#3,2:294\n1603#3,9:296\n1855#3:305\n1856#3:307\n1612#3:308\n1002#3,2:309\n1855#3:311\n1864#3,3:312\n1856#3:315\n1549#3:316\n1620#3,3:317\n1549#3:321\n1620#3,3:322\n1179#3,2:325\n1253#3,4:327\n766#3:331\n857#3,2:332\n1855#3,2:334\n1002#3,2:336\n1855#3,2:338\n766#3:340\n857#3,2:341\n1#4:306\n1#4:320\n*S KotlinDebug\n*F\n+ 1 FiltersController.kt\ncom/iMe/fork/controller/FiltersController\n*L\n27#1:287,6\n92#1:293\n92#1:294,2\n124#1:296,9\n124#1:305\n124#1:307\n124#1:308\n125#1:309,2\n132#1:311\n137#1:312,3\n132#1:315\n146#1:316\n146#1:317,3\n198#1:321\n198#1:322,3\n222#1:325,2\n222#1:327,4\n233#1:331\n233#1:332,2\n243#1:334,2\n256#1:336,2\n263#1:338,2\n274#1:340\n274#1:341,2\n124#1:306\n*E\n"
 .end annotation
 
 
@@ -111,10 +111,10 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$GnbYYgY-mT72xoSbFX2Xs_YgnHQ(Lcom/iMe/fork/controller/FiltersController;Lcom/iMe/storage/domain/model/filters/FilterSettingsModel;)V
+.method public static synthetic $r8$lambda$ADng7O9YfCVfmbIsFXrB5ZyOlP4(Lcom/iMe/fork/controller/FiltersController;Lcom/iMe/storage/domain/model/filters/FilterSettingsModel;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lcom/iMe/fork/controller/FiltersController;->addOrEditFilterSettings$lambda$14(Lcom/iMe/fork/controller/FiltersController;Lcom/iMe/storage/domain/model/filters/FilterSettingsModel;)V
+    invoke-static {p0, p1}, Lcom/iMe/fork/controller/FiltersController;->addOrEditFilterSettings$lambda$13(Lcom/iMe/fork/controller/FiltersController;Lcom/iMe/storage/domain/model/filters/FilterSettingsModel;)V
 
     return-void
 .end method
@@ -130,7 +130,7 @@
 
     sput-object v0, Lcom/iMe/fork/controller/FiltersController;->Companion:Lcom/iMe/fork/controller/FiltersController$Companion;
 
-    .line 287
+    .line 281
     new-instance v0, Lj$/util/concurrent/ConcurrentHashMap;
 
     const/4 v1, 0x5
@@ -265,7 +265,7 @@
     return-object v0
 .end method
 
-.method private static final addOrEditFilterSettings$lambda$14(Lcom/iMe/fork/controller/FiltersController;Lcom/iMe/storage/domain/model/filters/FilterSettingsModel;)V
+.method private static final addOrEditFilterSettings$lambda$13(Lcom/iMe/fork/controller/FiltersController;Lcom/iMe/storage/domain/model/filters/FilterSettingsModel;)V
     .locals 3
 
     const-string v0, "this$0"
@@ -276,7 +276,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 210
+    .line 204
     iget-object v0, p0, Lcom/iMe/fork/controller/FiltersController;->filterSettings:Ljava/util/Map;
 
     invoke-virtual {p1}, Lcom/iMe/storage/domain/model/filters/FilterSettingsModel;->getFilterId()I
@@ -289,7 +289,7 @@
 
     invoke-interface {v0, v1, p1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 211
+    .line 205
     invoke-direct {p0}, Lcom/iMe/fork/controller/FiltersController;->getFiltersDao()Lcom/iMe/storage/data/locale/db/dao/main/FiltersDao;
 
     move-result-object v0
@@ -339,15 +339,15 @@
 .method private final loadSortingTabsConfig(ZLandroid/content/SharedPreferences;)V
     .locals 6
 
-    .line 247
+    .line 241
     invoke-virtual {p0, p1}, Lcom/iMe/fork/controller/FiltersController;->getSortingTabs(Z)Ljava/util/List;
 
     move-result-object v0
 
-    .line 248
+    .line 242
     invoke-interface {v0}, Ljava/util/List;->clear()V
 
-    .line 249
+    .line 243
     sget-object v1, Lcom/iMe/fork/enums/SortingFilter;->Companion:Lcom/iMe/fork/enums/SortingFilter$Companion;
 
     invoke-virtual {v1, p1}, Lcom/iMe/fork/enums/SortingFilter$Companion;->getSortingFilters(Z)Ljava/util/List;
@@ -372,10 +372,10 @@
 
     check-cast v1, Lcom/iMe/fork/enums/SortingFilter;
 
-    .line 252
+    .line 246
     sget-object v2, Lcom/iMe/storage/domain/model/filters/FilterFab;->Companion:Lcom/iMe/storage/domain/model/filters/FilterFab$Companion;
 
-    .line 253
+    .line 247
     :try_start_0
     invoke-static {v1}, Lcom/iMe/common/TelegramPreferenceKeys$User;->buildSortingTabSelectedFabsKey(Lcom/iMe/fork/enums/SortingFilter;)Ljava/lang/String;
 
@@ -401,7 +401,7 @@
 
     goto :goto_1
 
-    .line 255
+    .line 249
     :catch_0
     invoke-interface {p2}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
@@ -417,7 +417,7 @@
 
     invoke-interface {v3}, Landroid/content/SharedPreferences$Editor;->apply()V
 
-    .line 256
+    .line 250
     invoke-virtual {v1}, Lcom/iMe/fork/enums/SortingFilter;->getFabByDefault()Lcom/iMe/storage/domain/model/filters/FilterFab;
 
     move-result-object v3
@@ -430,13 +430,13 @@
 
     move-result-object v3
 
-    .line 252
+    .line 246
     :goto_1
     invoke-virtual {v2, v3}, Lcom/iMe/storage/domain/model/filters/FilterFab$Companion;->mapNamesToEnums(Ljava/util/Set;)Ljava/util/Set;
 
     move-result-object v2
 
-    .line 258
+    .line 252
     invoke-static {v1}, Lcom/iMe/common/TelegramPreferenceKeys$User;->buildSortingTabPositionKey(Lcom/iMe/fork/enums/SortingFilter;)Ljava/lang/String;
 
     move-result-object v3
@@ -449,7 +449,7 @@
 
     move-result v3
 
-    .line 259
+    .line 253
     invoke-static {v1}, Lcom/iMe/common/TelegramPreferenceKeys$User;->buildSortingTabEnabledKey(Lcom/iMe/fork/enums/SortingFilter;)Ljava/lang/String;
 
     move-result-object v4
@@ -462,7 +462,7 @@
 
     move-result v4
 
-    .line 250
+    .line 244
     new-instance v5, Lcom/iMe/fork/models/SortingTabState;
 
     invoke-direct {v5, v1, v2, v3, v4}, Lcom/iMe/fork/models/SortingTabState;-><init>(Lcom/iMe/fork/enums/SortingFilter;Ljava/util/Set;IZ)V
@@ -481,9 +481,9 @@
 
     if-le p1, p2, :cond_1
 
-    new-instance p1, Lcom/iMe/fork/controller/FiltersController$loadSortingTabsConfig$lambda$20$lambda$19$$inlined$sortBy$1;
+    new-instance p1, Lcom/iMe/fork/controller/FiltersController$loadSortingTabsConfig$lambda$19$lambda$18$$inlined$sortBy$1;
 
-    invoke-direct {p1}, Lcom/iMe/fork/controller/FiltersController$loadSortingTabsConfig$lambda$20$lambda$19$$inlined$sortBy$1;-><init>()V
+    invoke-direct {p1}, Lcom/iMe/fork/controller/FiltersController$loadSortingTabsConfig$lambda$19$lambda$18$$inlined$sortBy$1;-><init>()V
 
     invoke-static {v0, p1}, Lkotlin/collections/CollectionsKt;->sortWith(Ljava/util/List;Ljava/util/Comparator;)V
 
@@ -494,15 +494,15 @@
 .method private final refreshActiveSortingTabs(Z)V
     .locals 4
 
-    .line 278
+    .line 272
     invoke-virtual {p0, p1}, Lcom/iMe/fork/controller/FiltersController;->getActiveSortingTabs(Z)Ljava/util/List;
 
     move-result-object v0
 
-    .line 279
+    .line 273
     invoke-interface {v0}, Ljava/util/List;->clear()V
 
-    .line 280
+    .line 274
     invoke-virtual {p0, p1}, Lcom/iMe/fork/controller/FiltersController;->getSortingTabs(Z)Ljava/util/List;
 
     move-result-object p1
@@ -533,7 +533,7 @@
 
     check-cast v3, Lcom/iMe/fork/models/SortingTabState;
 
-    .line 280
+    .line 274
     invoke-virtual {v3}, Lcom/iMe/fork/models/SortingTabState;->isEnabled()Z
 
     move-result v3
@@ -545,7 +545,7 @@
 
     goto :goto_0
 
-    .line 280
+    .line 274
     :cond_1
     invoke-interface {v0, v1}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
 
@@ -555,7 +555,7 @@
 .method private final saveSortingTabsConfig(ZLandroid/content/SharedPreferences$Editor;)V
     .locals 3
 
-    .line 269
+    .line 263
     invoke-virtual {p0, p1}, Lcom/iMe/fork/controller/FiltersController;->getSortingTabs(Z)Ljava/util/List;
 
     move-result-object p1
@@ -578,7 +578,7 @@
 
     check-cast v0, Lcom/iMe/fork/models/SortingTabState;
 
-    .line 270
+    .line 264
     invoke-virtual {v0}, Lcom/iMe/fork/models/SortingTabState;->getType()Lcom/iMe/fork/enums/SortingFilter;
 
     move-result-object v1
@@ -593,7 +593,7 @@
 
     invoke-interface {p2, v1, v2}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
 
-    .line 271
+    .line 265
     invoke-virtual {v0}, Lcom/iMe/fork/models/SortingTabState;->getType()Lcom/iMe/fork/enums/SortingFilter;
 
     move-result-object v1
@@ -608,7 +608,7 @@
 
     invoke-interface {p2, v1, v2}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
 
-    .line 272
+    .line 266
     invoke-virtual {v0}, Lcom/iMe/fork/models/SortingTabState;->getType()Lcom/iMe/fork/enums/SortingFilter;
 
     move-result-object v1
@@ -644,7 +644,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 209
+    .line 203
     sget-object v0, Lorg/telegram/messenger/Utilities;->stageQueue:Lorg/telegram/messenger/DispatchQueue;
 
     new-instance v1, Lcom/iMe/fork/controller/FiltersController$$ExternalSyntheticLambda0;
@@ -663,7 +663,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 179
+    .line 173
     invoke-virtual {p0, p1}, Lcom/iMe/fork/controller/FiltersController;->getSortingFilterState(Lcom/iMe/fork/enums/SortingFilter;)Lcom/iMe/fork/models/SortingTabState;
 
     move-result-object v0
@@ -672,7 +672,7 @@
 
     invoke-virtual {v0, v1}, Lcom/iMe/fork/models/SortingTabState;->setEnabled(Z)V
 
-    .line 180
+    .line 174
     invoke-virtual {p1}, Lcom/iMe/fork/enums/SortingFilter;->isArchive()Z
 
     move-result p1
@@ -695,7 +695,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 154
+    .line 150
     iget-object p1, p0, Lcom/iMe/fork/controller/FiltersController;->activeArchiveSortingTabs:Ljava/util/List;
 
     goto :goto_0
@@ -710,7 +710,7 @@
 .method public final getActiveSortingTabsCount(Z)I
     .locals 1
 
-    .line 199
+    .line 193
     invoke-virtual {p0, p1}, Lcom/iMe/fork/controller/FiltersController;->isSortingEnabled(Z)Z
 
     move-result v0
@@ -827,7 +827,7 @@
         }
     .end annotation
 
-    .line 239
+    .line 233
     invoke-virtual {p0, p1}, Lcom/iMe/fork/controller/FiltersController;->getSortingTabs(Z)Ljava/util/List;
 
     move-result-object p1
@@ -858,7 +858,7 @@
 
     check-cast v2, Lcom/iMe/fork/models/SortingTabState;
 
-    .line 239
+    .line 233
     invoke-virtual {v2}, Lcom/iMe/fork/models/SortingTabState;->getType()Lcom/iMe/fork/enums/SortingFilter;
 
     move-result-object v2
@@ -931,7 +931,7 @@
         }
     .end annotation
 
-    .line 227
+    .line 221
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getMessagesController()Lorg/telegram/messenger/MessagesController;
 
     move-result-object v0
@@ -948,7 +948,7 @@
     :goto_0
     const-string v1, "filters"
 
-    .line 228
+    .line 222
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     const/16 v1, 0xa
@@ -992,19 +992,19 @@
     .line 1254
     check-cast v1, Lorg/telegram/messenger/MessagesController$DialogFilter;
 
-    .line 229
+    .line 223
     new-instance v3, Ljava/util/ArrayList;
 
     invoke-direct {v3}, Ljava/util/ArrayList;-><init>()V
 
-    .line 230
+    .line 224
     new-instance v4, Ljava/util/ArrayList;
 
     invoke-direct {v4}, Ljava/util/ArrayList;-><init>()V
 
     const/4 v5, 0x0
 
-    .line 231
+    .line 225
     iget-object v6, v1, Lorg/telegram/messenger/MessagesController$DialogFilter;->pinnedDialogs:Lorg/telegram/messenger/support/LongSparseIntArray;
 
     invoke-virtual {v6}, Lorg/telegram/messenger/support/LongSparseIntArray;->size()I
@@ -1014,7 +1014,7 @@
     :goto_2
     if-ge v5, v6, :cond_1
 
-    .line 232
+    .line 226
     iget-object v7, v1, Lorg/telegram/messenger/MessagesController$DialogFilter;->pinnedDialogs:Lorg/telegram/messenger/support/LongSparseIntArray;
 
     invoke-virtual {v7, v5}, Lorg/telegram/messenger/support/LongSparseIntArray;->keyAt(I)J
@@ -1027,7 +1027,7 @@
 
     invoke-interface {v3, v7}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 233
+    .line 227
     iget-object v7, v1, Lorg/telegram/messenger/MessagesController$DialogFilter;->pinnedDialogs:Lorg/telegram/messenger/support/LongSparseIntArray;
 
     invoke-virtual {v7, v5}, Lorg/telegram/messenger/support/LongSparseIntArray;->valueAt(I)I
@@ -1044,7 +1044,7 @@
 
     goto :goto_2
 
-    .line 235
+    .line 229
     :cond_1
     sget-object v5, Lcom/iMe/fork/enums/SortingFilter;->Companion:Lcom/iMe/fork/enums/SortingFilter$Companion;
 
@@ -1079,7 +1079,7 @@
 
     goto :goto_1
 
-    .line 236
+    .line 230
     :cond_2
     invoke-static {v2}, Lkotlin/collections/MapsKt;->toMutableMap(Ljava/util/Map;)Ljava/util/Map;
 
@@ -1108,7 +1108,7 @@
 .method public final getSettings(I)Lcom/iMe/storage/domain/model/filters/FilterSettingsModel;
     .locals 4
 
-    .line 220
+    .line 214
     iget-object v0, p0, Lcom/iMe/fork/controller/FiltersController;->filterSettings:Ljava/util/Map;
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -1131,7 +1131,7 @@
 
     const/4 v2, 0x0
 
-    .line 222
+    .line 216
     sget-object v3, Lcom/iMe/storage/domain/model/filters/FilterFab;->CREATE_CHAT:Lcom/iMe/storage/domain/model/filters/FilterFab;
 
     aput-object v3, v1, v2
@@ -1142,7 +1142,7 @@
 
     const/4 v2, 0x0
 
-    .line 220
+    .line 214
     invoke-direct {v0, p1, v1, v2}, Lcom/iMe/storage/domain/model/filters/FilterSettingsModel;-><init>(ILjava/util/Set;Lcom/iMe/storage/domain/model/filters/FilterIcon;)V
 
     :cond_0
@@ -1156,7 +1156,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 176
+    .line 170
     invoke-virtual {p1}, Lcom/iMe/fork/enums/SortingFilter;->isArchive()Z
 
     move-result v0
@@ -1243,7 +1243,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 152
+    .line 148
     iget-object p1, p0, Lcom/iMe/fork/controller/FiltersController;->archiveSortingTabs:Ljava/util/List;
 
     goto :goto_0
@@ -1296,7 +1296,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 156
+    .line 152
     iget-boolean p1, p0, Lcom/iMe/fork/controller/FiltersController;->isArchiveSortingChatsEnabled:Z
 
     goto :goto_0
@@ -1477,13 +1477,13 @@
 .method public final loadFilterSettings()V
     .locals 5
 
-    .line 202
+    .line 196
     iget-object v0, p0, Lcom/iMe/fork/controller/FiltersController;->filterSettings:Ljava/util/Map;
 
-    .line 203
+    .line 197
     invoke-interface {v0}, Ljava/util/Map;->clear()V
 
-    .line 204
+    .line 198
     invoke-direct {p0}, Lcom/iMe/fork/controller/FiltersController;->getFiltersDao()Lcom/iMe/storage/data/locale/db/dao/main/FiltersDao;
 
     move-result-object v1
@@ -1528,7 +1528,7 @@
     .line 1621
     check-cast v3, Lcom/iMe/storage/data/locale/db/model/filter/FilterSettingsDb;
 
-    .line 204
+    .line 198
     invoke-virtual {v3}, Lcom/iMe/storage/data/locale/db/model/filter/FilterSettingsDb;->getFilterId()I
 
     move-result v4
@@ -1550,7 +1550,7 @@
 
     goto :goto_0
 
-    .line 204
+    .line 198
     :cond_0
     invoke-static {v0, v2}, Lkotlin/collections/MapsKt;->putAll(Ljava/util/Map;Ljava/lang/Iterable;)V
 
@@ -1560,7 +1560,7 @@
 .method public final removeFilterSettings(I)V
     .locals 3
 
-    .line 216
+    .line 210
     iget-object v0, p0, Lcom/iMe/fork/controller/FiltersController;->filterSettings:Ljava/util/Map;
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -1569,7 +1569,7 @@
 
     invoke-interface {v0, v1}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 217
+    .line 211
     invoke-direct {p0}, Lcom/iMe/fork/controller/FiltersController;->getFiltersDao()Lcom/iMe/storage/data/locale/db/dao/main/FiltersDao;
 
     move-result-object v0
@@ -2321,12 +2321,12 @@
 
     if-eqz p1, :cond_0
 
-    .line 168
+    .line 164
     iput-boolean p2, p0, Lcom/iMe/fork/controller/FiltersController;->isArchiveSortingChatsEnabled:Z
 
     goto :goto_0
 
-    .line 170
+    .line 166
     :cond_0
     iput-boolean p2, p0, Lcom/iMe/fork/controller/FiltersController;->isSortingChatsEnabled:Z
 
@@ -2358,38 +2358,38 @@
 .method public final swapSortingFilters(ZII)V
     .locals 3
 
-    .line 189
+    .line 183
     invoke-virtual {p0, p1}, Lcom/iMe/fork/controller/FiltersController;->getSortingTabs(Z)Ljava/util/List;
 
     move-result-object v0
 
-    .line 190
+    .line 184
     invoke-interface {v0, p2}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v1
 
     check-cast v1, Lcom/iMe/fork/models/SortingTabState;
 
-    .line 191
+    .line 185
     invoke-interface {v0, p3}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v2
 
     check-cast v2, Lcom/iMe/fork/models/SortingTabState;
 
-    .line 192
+    .line 186
     invoke-virtual {v1, p3}, Lcom/iMe/fork/models/SortingTabState;->setPosition(I)V
 
-    .line 193
+    .line 187
     invoke-virtual {v2, p2}, Lcom/iMe/fork/models/SortingTabState;->setPosition(I)V
 
-    .line 194
+    .line 188
     invoke-interface {v0, p2, v2}, Ljava/util/List;->set(ILjava/lang/Object;)Ljava/lang/Object;
 
-    .line 195
+    .line 189
     invoke-interface {v0, p3, v1}, Ljava/util/List;->set(ILjava/lang/Object;)Ljava/lang/Object;
 
-    .line 196
+    .line 190
     invoke-direct {p0, p1}, Lcom/iMe/fork/controller/FiltersController;->refreshActiveSortingTabs(Z)V
 
     return-void
@@ -2398,7 +2398,7 @@
 .method public final switchSortingFilterEnabled(ZI)V
     .locals 1
 
-    .line 184
+    .line 178
     invoke-virtual {p0, p1}, Lcom/iMe/fork/controller/FiltersController;->getSortingTabs(Z)Ljava/util/List;
 
     move-result-object v0
@@ -2417,7 +2417,7 @@
 
     invoke-virtual {p2, v0}, Lcom/iMe/fork/models/SortingTabState;->setEnabled(Z)V
 
-    .line 185
+    .line 179
     invoke-direct {p0, p1}, Lcom/iMe/fork/controller/FiltersController;->refreshActiveSortingTabs(Z)V
 
     return-void
@@ -2428,7 +2428,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 160
+    .line 156
     iget-boolean p1, p0, Lcom/iMe/fork/controller/FiltersController;->isArchiveSortingChatsEnabled:Z
 
     xor-int/lit8 p1, p1, 0x1
@@ -2437,7 +2437,7 @@
 
     goto :goto_0
 
-    .line 162
+    .line 158
     :cond_0
     iget-boolean p1, p0, Lcom/iMe/fork/controller/FiltersController;->isSortingChatsEnabled:Z
 

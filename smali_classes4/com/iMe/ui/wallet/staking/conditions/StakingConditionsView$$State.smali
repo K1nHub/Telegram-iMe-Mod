@@ -46,7 +46,15 @@
     return-void
 .end method
 
-.method public setupScreenWithData(IILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+.method public synthetic removeSelfFromStackImmediately()V
+    .locals 0
+
+    invoke-static {p0}, Lcom/iMe/ui/base/mvp/base/BaseView$-CC;->$default$removeSelfFromStackImmediately(Lcom/iMe/ui/base/mvp/base/BaseView;)V
+
+    return-void
+.end method
+
+.method public setupScreenWithData(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
     .locals 27
 
     move-object/from16 v13, p0
@@ -58,9 +66,9 @@
 
     move-object/from16 v1, p0
 
-    move/from16 v2, p1
+    move-object/from16 v2, p1
 
-    move/from16 v3, p2
+    move-object/from16 v3, p2
 
     move-object/from16 v4, p3
 
@@ -80,7 +88,7 @@
 
     move-object/from16 v12, p11
 
-    invoke-direct/range {v0 .. v12}, Lcom/iMe/ui/wallet/staking/conditions/StakingConditionsView$$State$SetupScreenWithDataCommand;-><init>(Lcom/iMe/ui/wallet/staking/conditions/StakingConditionsView$$State;IILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct/range {v0 .. v12}, Lcom/iMe/ui/wallet/staking/conditions/StakingConditionsView$$State$SetupScreenWithDataCommand;-><init>(Lcom/iMe/ui/wallet/staking/conditions/StakingConditionsView$$State;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
     .line 21
     iget-object v0, v13, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
@@ -123,9 +131,9 @@
 
     check-cast v15, Lcom/iMe/ui/wallet/staking/conditions/StakingConditionsView;
 
-    move/from16 v16, p1
+    move-object/from16 v16, p1
 
-    move/from16 v17, p2
+    move-object/from16 v17, p2
 
     move-object/from16 v18, p3
 
@@ -146,7 +154,7 @@
     move-object/from16 v26, p11
 
     .line 28
-    invoke-interface/range {v15 .. v26}, Lcom/iMe/ui/wallet/staking/conditions/StakingConditionsView;->setupScreenWithData(IILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-interface/range {v15 .. v26}, Lcom/iMe/ui/wallet/staking/conditions/StakingConditionsView;->setupScreenWithData(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
     goto :goto_0
 

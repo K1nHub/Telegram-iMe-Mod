@@ -13,7 +13,7 @@ public class SingleRefDataBufferIterator<T> extends DataBufferIterator<T> {
         super(dataBuffer);
     }
 
-    @Override // com.google.android.gms.common.data.DataBufferIterator, java.util.Iterator, p034j$.util.Iterator
+    @Override // com.google.android.gms.common.data.DataBufferIterator, java.util.Iterator, p033j$.util.Iterator
     public final Object next() {
         if (hasNext()) {
             int i = this.zab + 1;

@@ -76,7 +76,7 @@
 
     iget-object v1, p0, Lcom/iMe/ui/wallet/transaction/WalletTransactionsFragment$presenter$2$1;->this$0:Lcom/iMe/ui/wallet/transaction/WalletTransactionsFragment;
 
-    invoke-static {v1}, Lcom/iMe/ui/wallet/transaction/WalletTransactionsFragment;->access$getTokenCode$p(Lcom/iMe/ui/wallet/transaction/WalletTransactionsFragment;)Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
+    invoke-static {v1}, Lcom/iMe/ui/wallet/transaction/WalletTransactionsFragment;->access$getToken$p(Lcom/iMe/ui/wallet/transaction/WalletTransactionsFragment;)Lcom/iMe/storage/domain/model/wallet/token/Token;
 
     move-result-object v1
 

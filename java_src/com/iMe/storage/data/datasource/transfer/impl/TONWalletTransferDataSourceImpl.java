@@ -1,29 +1,30 @@
 package com.iMe.storage.data.datasource.transfer.impl;
 
 import com.iMe.storage.data.datasource.transfer.WalletTransferDataSource;
-import com.iMe.storage.data.network.api.own.TonApi;
+import com.iMe.storage.data.mapper.wallet.TokenMappingKt;
+import com.iMe.storage.data.network.api.own.CryptoWalletApi;
 import com.iMe.storage.data.network.handlers.impl.FirebaseFunctionsErrorHandler;
-import com.iMe.storage.data.network.model.request.crypto.ton.GetParamsForTonCryptoTransferRequest;
+import com.iMe.storage.data.network.model.request.crypto.wallet.PrepareTransferRequest;
+import com.iMe.storage.data.network.model.request.wallet.TokenRequest;
 import com.iMe.storage.data.utils.extentions.FirebaseExtKt$sam$i$io_reactivex_functions_Function$0;
 import com.iMe.storage.data.utils.extentions.StringExtKt;
 import com.iMe.storage.domain.manager.crypto.CryptoAccessManager;
 import com.iMe.storage.domain.manager.ton.TonController;
 import com.iMe.storage.domain.model.Result;
 import com.iMe.storage.domain.model.crypto.BlockchainType;
-import com.iMe.storage.domain.model.crypto.NetworkType;
 import com.iMe.storage.domain.model.crypto.Wallet;
 import com.iMe.storage.domain.model.crypto.send.CryptoTransferMetadata;
 import com.iMe.storage.domain.model.crypto.send.TransactionArgs;
 import com.iMe.storage.domain.model.crypto.send.TransferArgs;
-import com.iMe.storage.domain.model.wallet.token.TokenCode;
+import com.iMe.storage.domain.model.wallet.token.Token;
 import io.reactivex.Observable;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: TONWalletTransferDataSourceImpl.kt */
 /* loaded from: classes3.dex */
 public final class TONWalletTransferDataSourceImpl implements WalletTransferDataSource {
     private final CryptoAccessManager cryptoAccessManager;
+    private final CryptoWalletApi cryptoWalletApi;
     private final FirebaseFunctionsErrorHandler firebaseErrorHandler;
-    private final TonApi tonApi;
     private final TonController tonController;
 
     @Override // com.iMe.storage.data.datasource.base.SignTransactionDatasource
@@ -34,27 +35,26 @@ public final class TONWalletTransferDataSourceImpl implements WalletTransferData
         return just;
     }
 
-    public TONWalletTransferDataSourceImpl(CryptoAccessManager cryptoAccessManager, FirebaseFunctionsErrorHandler firebaseErrorHandler, TonApi tonApi, TonController tonController) {
+    public TONWalletTransferDataSourceImpl(CryptoAccessManager cryptoAccessManager, FirebaseFunctionsErrorHandler firebaseErrorHandler, CryptoWalletApi cryptoWalletApi, TonController tonController) {
         Intrinsics.checkNotNullParameter(cryptoAccessManager, "cryptoAccessManager");
         Intrinsics.checkNotNullParameter(firebaseErrorHandler, "firebaseErrorHandler");
-        Intrinsics.checkNotNullParameter(tonApi, "tonApi");
+        Intrinsics.checkNotNullParameter(cryptoWalletApi, "cryptoWalletApi");
         Intrinsics.checkNotNullParameter(tonController, "tonController");
         this.cryptoAccessManager = cryptoAccessManager;
         this.firebaseErrorHandler = firebaseErrorHandler;
-        this.tonApi = tonApi;
+        this.cryptoWalletApi = cryptoWalletApi;
         this.tonController = tonController;
     }
 
     @Override // com.iMe.storage.data.datasource.transfer.WalletTransferDataSource
-    public Observable<Result<CryptoTransferMetadata>> getTransferMetadata(TokenCode tokenCode, String str, String str2, NetworkType networkType) {
-        Intrinsics.checkNotNullParameter(tokenCode, "tokenCode");
-        Intrinsics.checkNotNullParameter(networkType, "networkType");
-        TonApi tonApi = this.tonApi;
-        String name = tokenCode.name();
+    public Observable<Result<CryptoTransferMetadata>> getTransferMetadata(Token token, String str, String str2) {
+        Intrinsics.checkNotNullParameter(token, "token");
+        CryptoWalletApi cryptoWalletApi = this.cryptoWalletApi;
+        TokenRequest mapToRequest = TokenMappingKt.mapToRequest(token);
         if (str == null) {
             str = "";
         }
-        Observable map = tonApi.getParamsForCryptoTransfer(new GetParamsForTonCryptoTransferRequest(name, str, StringExtKt.orZero(str2))).map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new C1618xf1226d95(this.firebaseErrorHandler)));
+        Observable map = cryptoWalletApi.getTONCryptoTransferData(new PrepareTransferRequest(mapToRequest, str, StringExtKt.orZero(str2))).map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new C1629xf1226d95(this.firebaseErrorHandler)));
         Intrinsics.checkNotNullExpressionValue(map, "errorHandler: FirebaseFu…response).toError()\n    }");
         return map;
     }

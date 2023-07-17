@@ -17,16 +17,16 @@
 # instance fields
 .field private final status:Lcom/iMe/storage/domain/model/wallet/swap/TokenApproveStatus;
 
-.field private final tokenCode:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
+.field private final token:Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
 
 .field private final value:Ljava/lang/String;
 
 
 # direct methods
-.method public constructor <init>(Lcom/iMe/storage/domain/model/wallet/token/TokenCode;Lcom/iMe/storage/domain/model/wallet/swap/TokenApproveStatus;Ljava/lang/String;)V
+.method public constructor <init>(Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;Lcom/iMe/storage/domain/model/wallet/swap/TokenApproveStatus;Ljava/lang/String;)V
     .locals 1
 
-    const-string v0, "tokenCode"
+    const-string v0, "token"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -41,10 +41,10 @@
     const/4 v0, 0x0
 
     .line 16
-    invoke-direct {p0, p1, p2, p3, v0}, Lcom/iMe/storage/domain/model/crypto/swap/CryptoTokenApproveMetadata;-><init>(Lcom/iMe/storage/domain/model/wallet/token/TokenCode;Lcom/iMe/storage/domain/model/wallet/swap/TokenApproveStatus;Ljava/lang/String;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
+    invoke-direct {p0, p1, p2, p3, v0}, Lcom/iMe/storage/domain/model/crypto/swap/CryptoTokenApproveMetadata;-><init>(Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;Lcom/iMe/storage/domain/model/wallet/swap/TokenApproveStatus;Ljava/lang/String;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
 
     .line 13
-    iput-object p1, p0, Lcom/iMe/storage/domain/model/crypto/swap/CryptoTokenApproveMetadata$Allowed;->tokenCode:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
+    iput-object p1, p0, Lcom/iMe/storage/domain/model/crypto/swap/CryptoTokenApproveMetadata$Allowed;->token:Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
 
     .line 14
     iput-object p2, p0, Lcom/iMe/storage/domain/model/crypto/swap/CryptoTokenApproveMetadata$Allowed;->status:Lcom/iMe/storage/domain/model/wallet/swap/TokenApproveStatus;
@@ -55,14 +55,14 @@
     return-void
 .end method
 
-.method public static synthetic copy$default(Lcom/iMe/storage/domain/model/crypto/swap/CryptoTokenApproveMetadata$Allowed;Lcom/iMe/storage/domain/model/wallet/token/TokenCode;Lcom/iMe/storage/domain/model/wallet/swap/TokenApproveStatus;Ljava/lang/String;ILjava/lang/Object;)Lcom/iMe/storage/domain/model/crypto/swap/CryptoTokenApproveMetadata$Allowed;
+.method public static synthetic copy$default(Lcom/iMe/storage/domain/model/crypto/swap/CryptoTokenApproveMetadata$Allowed;Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;Lcom/iMe/storage/domain/model/wallet/swap/TokenApproveStatus;Ljava/lang/String;ILjava/lang/Object;)Lcom/iMe/storage/domain/model/crypto/swap/CryptoTokenApproveMetadata$Allowed;
     .locals 0
 
     and-int/lit8 p5, p4, 0x1
 
     if-eqz p5, :cond_0
 
-    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/crypto/swap/CryptoTokenApproveMetadata$Allowed;->getTokenCode()Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
+    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/crypto/swap/CryptoTokenApproveMetadata$Allowed;->getToken()Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
 
     move-result-object p1
 
@@ -85,7 +85,7 @@
     move-result-object p3
 
     :cond_2
-    invoke-virtual {p0, p1, p2, p3}, Lcom/iMe/storage/domain/model/crypto/swap/CryptoTokenApproveMetadata$Allowed;->copy(Lcom/iMe/storage/domain/model/wallet/token/TokenCode;Lcom/iMe/storage/domain/model/wallet/swap/TokenApproveStatus;Ljava/lang/String;)Lcom/iMe/storage/domain/model/crypto/swap/CryptoTokenApproveMetadata$Allowed;
+    invoke-virtual {p0, p1, p2, p3}, Lcom/iMe/storage/domain/model/crypto/swap/CryptoTokenApproveMetadata$Allowed;->copy(Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;Lcom/iMe/storage/domain/model/wallet/swap/TokenApproveStatus;Ljava/lang/String;)Lcom/iMe/storage/domain/model/crypto/swap/CryptoTokenApproveMetadata$Allowed;
 
     move-result-object p0
 
@@ -94,10 +94,10 @@
 
 
 # virtual methods
-.method public final component1()Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
+.method public final component1()Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
     .locals 1
 
-    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/crypto/swap/CryptoTokenApproveMetadata$Allowed;->getTokenCode()Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
+    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/crypto/swap/CryptoTokenApproveMetadata$Allowed;->getToken()Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
 
     move-result-object v0
 
@@ -124,10 +124,10 @@
     return-object v0
 .end method
 
-.method public final copy(Lcom/iMe/storage/domain/model/wallet/token/TokenCode;Lcom/iMe/storage/domain/model/wallet/swap/TokenApproveStatus;Ljava/lang/String;)Lcom/iMe/storage/domain/model/crypto/swap/CryptoTokenApproveMetadata$Allowed;
+.method public final copy(Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;Lcom/iMe/storage/domain/model/wallet/swap/TokenApproveStatus;Ljava/lang/String;)Lcom/iMe/storage/domain/model/crypto/swap/CryptoTokenApproveMetadata$Allowed;
     .locals 1
 
-    const-string v0, "tokenCode"
+    const-string v0, "token"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -141,7 +141,7 @@
 
     new-instance v0, Lcom/iMe/storage/domain/model/crypto/swap/CryptoTokenApproveMetadata$Allowed;
 
-    invoke-direct {v0, p1, p2, p3}, Lcom/iMe/storage/domain/model/crypto/swap/CryptoTokenApproveMetadata$Allowed;-><init>(Lcom/iMe/storage/domain/model/wallet/token/TokenCode;Lcom/iMe/storage/domain/model/wallet/swap/TokenApproveStatus;Ljava/lang/String;)V
+    invoke-direct {v0, p1, p2, p3}, Lcom/iMe/storage/domain/model/crypto/swap/CryptoTokenApproveMetadata$Allowed;-><init>(Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;Lcom/iMe/storage/domain/model/wallet/swap/TokenApproveStatus;Ljava/lang/String;)V
 
     return-object v0
 .end method
@@ -167,15 +167,19 @@
     :cond_1
     check-cast p1, Lcom/iMe/storage/domain/model/crypto/swap/CryptoTokenApproveMetadata$Allowed;
 
-    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/crypto/swap/CryptoTokenApproveMetadata$Allowed;->getTokenCode()Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
+    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/crypto/swap/CryptoTokenApproveMetadata$Allowed;->getToken()Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
 
     move-result-object v1
 
-    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/crypto/swap/CryptoTokenApproveMetadata$Allowed;->getTokenCode()Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
+    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/crypto/swap/CryptoTokenApproveMetadata$Allowed;->getToken()Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
 
     move-result-object v3
 
-    if-eq v1, v3, :cond_2
+    invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_2
 
     return v2
 
@@ -222,11 +226,11 @@
     return-object v0
 .end method
 
-.method public getTokenCode()Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
+.method public getToken()Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
     .locals 1
 
     .line 13
-    iget-object v0, p0, Lcom/iMe/storage/domain/model/crypto/swap/CryptoTokenApproveMetadata$Allowed;->tokenCode:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
+    iget-object v0, p0, Lcom/iMe/storage/domain/model/crypto/swap/CryptoTokenApproveMetadata$Allowed;->token:Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
 
     return-object v0
 .end method
@@ -243,11 +247,11 @@
 .method public hashCode()I
     .locals 2
 
-    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/crypto/swap/CryptoTokenApproveMetadata$Allowed;->getTokenCode()Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
+    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/crypto/swap/CryptoTokenApproveMetadata$Allowed;->getToken()Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Ljava/lang/Enum;->hashCode()I
+    invoke-virtual {v0}, Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;->hashCode()I
 
     move-result v0
 
@@ -285,11 +289,11 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v1, "Allowed(tokenCode="
+    const-string v1, "Allowed(token="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/crypto/swap/CryptoTokenApproveMetadata$Allowed;->getTokenCode()Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
+    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/crypto/swap/CryptoTokenApproveMetadata$Allowed;->getToken()Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
 
     move-result-object v1
 

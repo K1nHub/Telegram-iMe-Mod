@@ -132,7 +132,7 @@
 
     iput-object v1, p0, Lorg/telegram/messenger/video/AudioRecoder;->encoder:Landroid/media/MediaCodec;
 
-    const-string v2, "sample-rate"
+    const-string/jumbo v2, "sample-rate"
 
     .line 52
     invoke-virtual {p1, v2}, Landroid/media/MediaFormat;->getInteger(Ljava/lang/String;)I

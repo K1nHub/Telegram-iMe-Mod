@@ -53,7 +53,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 18
+    .line 19
     check-cast p1, Lio/reactivex/disposables/Disposable;
 
     invoke-virtual {p0, p1}, Lcom/iMe/utils/extentions/rx/RxExtKt$withLoadingDialog$1;->invoke(Lio/reactivex/disposables/Disposable;)V
@@ -66,7 +66,7 @@
 .method public final invoke(Lio/reactivex/disposables/Disposable;)V
     .locals 3
 
-    .line 18
+    .line 19
     iget-object v0, p0, Lcom/iMe/utils/extentions/rx/RxExtKt$withLoadingDialog$1;->$viewState:Lcom/iMe/ui/base/mvp/base/BaseView;
 
     iget-boolean v1, p0, Lcom/iMe/utils/extentions/rx/RxExtKt$withLoadingDialog$1;->$cancellable:Z

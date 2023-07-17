@@ -66,7 +66,7 @@ public class NavGraph extends NavDestination implements Iterable<NavDestination>
                 arrayList.add(matchDeepLink2);
             }
         }
-        listOfNotNull = CollectionsKt__CollectionsKt.listOfNotNull(matchDeepLink, (NavDestination.DeepLinkMatch) CollectionsKt.maxOrNull(arrayList));
+        listOfNotNull = CollectionsKt__CollectionsKt.listOfNotNull((Object[]) new NavDestination.DeepLinkMatch[]{matchDeepLink, (NavDestination.DeepLinkMatch) CollectionsKt.maxOrNull(arrayList)});
         return (NavDestination.DeepLinkMatch) CollectionsKt.maxOrNull(listOfNotNull);
     }
 

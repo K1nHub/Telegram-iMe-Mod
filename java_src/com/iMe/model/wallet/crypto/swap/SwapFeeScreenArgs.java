@@ -1,7 +1,6 @@
 package com.iMe.model.wallet.crypto.swap;
 
 import com.iMe.model.wallet.crypto.send.fee.GasPriceItem;
-import com.iMe.storage.domain.model.crypto.NetworkType;
 import com.iMe.storage.domain.model.crypto.swap.CryptoSwapMetadata;
 import com.iMe.storage.domain.model.wallet.swap.SwapDeadline;
 import com.iMe.storage.domain.model.wallet.swap.SwapProtocol;
@@ -11,14 +10,12 @@ import kotlin.jvm.internal.Intrinsics;
 /* loaded from: classes3.dex */
 public final class SwapFeeScreenArgs {
     private final CryptoSwapMetadata metadata;
-    private final NetworkType networkType;
-    private final NetworkType outputNetworkType;
     private final SwapProtocol protocol;
     private final SwapDeadline selectedDeadline;
     private final GasPriceItem selectedFee;
     private final SwapSlippage selectedSlippage;
 
-    public static /* synthetic */ SwapFeeScreenArgs copy$default(SwapFeeScreenArgs swapFeeScreenArgs, CryptoSwapMetadata cryptoSwapMetadata, SwapDeadline swapDeadline, SwapSlippage swapSlippage, GasPriceItem gasPriceItem, NetworkType networkType, NetworkType networkType2, SwapProtocol swapProtocol, int i, Object obj) {
+    public static /* synthetic */ SwapFeeScreenArgs copy$default(SwapFeeScreenArgs swapFeeScreenArgs, CryptoSwapMetadata cryptoSwapMetadata, SwapDeadline swapDeadline, SwapSlippage swapSlippage, GasPriceItem gasPriceItem, SwapProtocol swapProtocol, int i, Object obj) {
         if ((i & 1) != 0) {
             cryptoSwapMetadata = swapFeeScreenArgs.metadata;
         }
@@ -35,17 +32,9 @@ public final class SwapFeeScreenArgs {
         }
         GasPriceItem gasPriceItem2 = gasPriceItem;
         if ((i & 16) != 0) {
-            networkType = swapFeeScreenArgs.networkType;
-        }
-        NetworkType networkType3 = networkType;
-        if ((i & 32) != 0) {
-            networkType2 = swapFeeScreenArgs.outputNetworkType;
-        }
-        NetworkType networkType4 = networkType2;
-        if ((i & 64) != 0) {
             swapProtocol = swapFeeScreenArgs.protocol;
         }
-        return swapFeeScreenArgs.copy(cryptoSwapMetadata, swapDeadline2, swapSlippage2, gasPriceItem2, networkType3, networkType4, swapProtocol);
+        return swapFeeScreenArgs.copy(cryptoSwapMetadata, swapDeadline2, swapSlippage2, gasPriceItem2, swapProtocol);
     }
 
     public final CryptoSwapMetadata component1() {
@@ -64,26 +53,17 @@ public final class SwapFeeScreenArgs {
         return this.selectedFee;
     }
 
-    public final NetworkType component5() {
-        return this.networkType;
-    }
-
-    public final NetworkType component6() {
-        return this.outputNetworkType;
-    }
-
-    public final SwapProtocol component7() {
+    public final SwapProtocol component5() {
         return this.protocol;
     }
 
-    public final SwapFeeScreenArgs copy(CryptoSwapMetadata metadata, SwapDeadline selectedDeadline, SwapSlippage selectedSlippage, GasPriceItem selectedFee, NetworkType networkType, NetworkType networkType2, SwapProtocol protocol) {
+    public final SwapFeeScreenArgs copy(CryptoSwapMetadata metadata, SwapDeadline selectedDeadline, SwapSlippage selectedSlippage, GasPriceItem selectedFee, SwapProtocol protocol) {
         Intrinsics.checkNotNullParameter(metadata, "metadata");
         Intrinsics.checkNotNullParameter(selectedDeadline, "selectedDeadline");
         Intrinsics.checkNotNullParameter(selectedSlippage, "selectedSlippage");
         Intrinsics.checkNotNullParameter(selectedFee, "selectedFee");
-        Intrinsics.checkNotNullParameter(networkType, "networkType");
         Intrinsics.checkNotNullParameter(protocol, "protocol");
-        return new SwapFeeScreenArgs(metadata, selectedDeadline, selectedSlippage, selectedFee, networkType, networkType2, protocol);
+        return new SwapFeeScreenArgs(metadata, selectedDeadline, selectedSlippage, selectedFee, protocol);
     }
 
     public boolean equals(Object obj) {
@@ -92,34 +72,29 @@ public final class SwapFeeScreenArgs {
         }
         if (obj instanceof SwapFeeScreenArgs) {
             SwapFeeScreenArgs swapFeeScreenArgs = (SwapFeeScreenArgs) obj;
-            return Intrinsics.areEqual(this.metadata, swapFeeScreenArgs.metadata) && this.selectedDeadline == swapFeeScreenArgs.selectedDeadline && this.selectedSlippage == swapFeeScreenArgs.selectedSlippage && Intrinsics.areEqual(this.selectedFee, swapFeeScreenArgs.selectedFee) && this.networkType == swapFeeScreenArgs.networkType && this.outputNetworkType == swapFeeScreenArgs.outputNetworkType && this.protocol == swapFeeScreenArgs.protocol;
+            return Intrinsics.areEqual(this.metadata, swapFeeScreenArgs.metadata) && this.selectedDeadline == swapFeeScreenArgs.selectedDeadline && this.selectedSlippage == swapFeeScreenArgs.selectedSlippage && Intrinsics.areEqual(this.selectedFee, swapFeeScreenArgs.selectedFee) && this.protocol == swapFeeScreenArgs.protocol;
         }
         return false;
     }
 
     public int hashCode() {
-        int hashCode = ((((((((this.metadata.hashCode() * 31) + this.selectedDeadline.hashCode()) * 31) + this.selectedSlippage.hashCode()) * 31) + this.selectedFee.hashCode()) * 31) + this.networkType.hashCode()) * 31;
-        NetworkType networkType = this.outputNetworkType;
-        return ((hashCode + (networkType == null ? 0 : networkType.hashCode())) * 31) + this.protocol.hashCode();
+        return (((((((this.metadata.hashCode() * 31) + this.selectedDeadline.hashCode()) * 31) + this.selectedSlippage.hashCode()) * 31) + this.selectedFee.hashCode()) * 31) + this.protocol.hashCode();
     }
 
     public String toString() {
-        return "SwapFeeScreenArgs(metadata=" + this.metadata + ", selectedDeadline=" + this.selectedDeadline + ", selectedSlippage=" + this.selectedSlippage + ", selectedFee=" + this.selectedFee + ", networkType=" + this.networkType + ", outputNetworkType=" + this.outputNetworkType + ", protocol=" + this.protocol + ')';
+        return "SwapFeeScreenArgs(metadata=" + this.metadata + ", selectedDeadline=" + this.selectedDeadline + ", selectedSlippage=" + this.selectedSlippage + ", selectedFee=" + this.selectedFee + ", protocol=" + this.protocol + ')';
     }
 
-    public SwapFeeScreenArgs(CryptoSwapMetadata metadata, SwapDeadline selectedDeadline, SwapSlippage selectedSlippage, GasPriceItem selectedFee, NetworkType networkType, NetworkType networkType2, SwapProtocol protocol) {
+    public SwapFeeScreenArgs(CryptoSwapMetadata metadata, SwapDeadline selectedDeadline, SwapSlippage selectedSlippage, GasPriceItem selectedFee, SwapProtocol protocol) {
         Intrinsics.checkNotNullParameter(metadata, "metadata");
         Intrinsics.checkNotNullParameter(selectedDeadline, "selectedDeadline");
         Intrinsics.checkNotNullParameter(selectedSlippage, "selectedSlippage");
         Intrinsics.checkNotNullParameter(selectedFee, "selectedFee");
-        Intrinsics.checkNotNullParameter(networkType, "networkType");
         Intrinsics.checkNotNullParameter(protocol, "protocol");
         this.metadata = metadata;
         this.selectedDeadline = selectedDeadline;
         this.selectedSlippage = selectedSlippage;
         this.selectedFee = selectedFee;
-        this.networkType = networkType;
-        this.outputNetworkType = networkType2;
         this.protocol = protocol;
     }
 
@@ -137,14 +112,6 @@ public final class SwapFeeScreenArgs {
 
     public final GasPriceItem getSelectedFee() {
         return this.selectedFee;
-    }
-
-    public final NetworkType getNetworkType() {
-        return this.networkType;
-    }
-
-    public final NetworkType getOutputNetworkType() {
-        return this.outputNetworkType;
     }
 
     public final SwapProtocol getProtocol() {

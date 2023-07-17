@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/LaunchActivity;->lambda$runLinkRequest$69(Lorg/telegram/tgnet/TLRPC$TL_error;Lorg/telegram/tgnet/TLObject;ILorg/telegram/ui/ActionBar/AlertDialog;Ljava/lang/Runnable;Ljava/lang/String;)V
+    value = Lorg/telegram/ui/LaunchActivity;->lambda$runLinkRequest$71(Lorg/telegram/tgnet/TLRPC$TL_error;Lorg/telegram/tgnet/TLObject;ILorg/telegram/ui/ActionBar/AlertDialog;Ljava/lang/Runnable;Ljava/lang/String;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -33,7 +33,7 @@
 .method constructor <init>(Lorg/telegram/ui/LaunchActivity;Ljava/lang/Runnable;[ZLandroid/os/Bundle;Lorg/telegram/tgnet/TLRPC$ChatInvite;)V
     .locals 0
 
-    .line 4730
+    .line 4777
     iput-object p1, p0, Lorg/telegram/ui/LaunchActivity$21;->this$0:Lorg/telegram/ui/LaunchActivity;
 
     iput-object p2, p0, Lorg/telegram/ui/LaunchActivity$21;->val$dismissLoading:Ljava/lang/Runnable;
@@ -54,7 +54,7 @@
 .method public onError()V
     .locals 3
 
-    .line 4750
+    .line 4797
     iget-object v0, p0, Lorg/telegram/ui/LaunchActivity$21;->this$0:Lorg/telegram/ui/LaunchActivity;
 
     invoke-virtual {v0}, Landroid/app/Activity;->isFinishing()Z
@@ -63,7 +63,7 @@
 
     if-nez v0, :cond_0
 
-    .line 4751
+    .line 4798
     invoke-static {}, Lorg/telegram/ui/LaunchActivity;->access$1800()Ljava/util/ArrayList;
 
     move-result-object v0
@@ -84,7 +84,7 @@
 
     check-cast v0, Lorg/telegram/ui/ActionBar/BaseFragment;
 
-    .line 4752
+    .line 4799
     sget v1, Lorg/telegram/messenger/R$string;->JoinToGroupErrorNotExist:I
 
     const-string v2, "JoinToGroupErrorNotExist"
@@ -95,7 +95,7 @@
 
     invoke-static {v0, v1}, Lorg/telegram/ui/Components/AlertsCreator;->showSimpleAlert(Lorg/telegram/ui/ActionBar/BaseFragment;Ljava/lang/String;)Landroid/app/Dialog;
 
-    .line 4755
+    .line 4802
     :cond_0
     :try_start_0
     iget-object v0, p0, Lorg/telegram/ui/LaunchActivity$21;->val$dismissLoading:Ljava/lang/Runnable;
@@ -109,7 +109,7 @@
     :catch_0
     move-exception v0
 
-    .line 4757
+    .line 4804
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :goto_0
@@ -119,7 +119,7 @@
 .method public onMessagesLoaded(Z)V
     .locals 2
 
-    .line 4734
+    .line 4781
     :try_start_0
     iget-object p1, p0, Lorg/telegram/ui/LaunchActivity$21;->val$dismissLoading:Ljava/lang/Runnable;
 
@@ -132,10 +132,10 @@
     :catch_0
     move-exception p1
 
-    .line 4736
+    .line 4783
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 4738
+    .line 4785
     :goto_0
     iget-object p1, p0, Lorg/telegram/ui/LaunchActivity$21;->val$canceled:[Z
 
@@ -147,7 +147,7 @@
 
     return-void
 
-    .line 4741
+    .line 4788
     :cond_0
     new-instance p1, Lorg/telegram/ui/ChatActivity;
 
@@ -155,21 +155,21 @@
 
     invoke-direct {p1, v0}, Lorg/telegram/ui/ChatActivity;-><init>(Landroid/os/Bundle;)V
 
-    .line 4742
+    .line 4789
     iget-object v0, p0, Lorg/telegram/ui/LaunchActivity$21;->val$invite:Lorg/telegram/tgnet/TLRPC$ChatInvite;
 
     instance-of v1, v0, Lorg/telegram/tgnet/TLRPC$TL_chatInvitePeek;
 
     if-eqz v1, :cond_1
 
-    .line 4743
+    .line 4790
     invoke-virtual {p1, v0}, Lorg/telegram/ui/ChatActivity;->setChatInvite(Lorg/telegram/tgnet/TLRPC$ChatInvite;)V
 
-    .line 4745
+    .line 4792
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/LaunchActivity$21;->this$0:Lorg/telegram/ui/LaunchActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/LaunchActivity;->access$300(Lorg/telegram/ui/LaunchActivity;)Lorg/telegram/ui/ActionBar/INavigationLayout;
+    invoke-static {v0}, Lorg/telegram/ui/LaunchActivity;->access$200(Lorg/telegram/ui/LaunchActivity;)Lorg/telegram/ui/ActionBar/INavigationLayout;
 
     move-result-object v0
 

@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/GroupCallActivity;Landroid/content/Context;)V
     .locals 0
 
-    .line 4601
+    .line 4612
     iput-object p1, p0, Lorg/telegram/ui/GroupCallActivity$23;->this$0:Lorg/telegram/ui/GroupCallActivity;
 
     invoke-direct {p0, p2}, Lorg/telegram/ui/Components/RecyclerListView;-><init>(Landroid/content/Context;)V
@@ -35,12 +35,12 @@
 .method public drawChild(Landroid/graphics/Canvas;Landroid/view/View;J)Z
     .locals 6
 
-    .line 4604
+    .line 4615
     move-object v0, p2
 
     check-cast v0, Lorg/telegram/ui/Components/GroupCallFullscreenAdapter$GroupCallUserCell;
 
-    .line 4605
+    .line 4616
     iget-object v1, p0, Lorg/telegram/ui/GroupCallActivity$23;->this$0:Lorg/telegram/ui/GroupCallActivity;
 
     invoke-static {v1}, Lorg/telegram/ui/GroupCallActivity;->access$5000(Lorg/telegram/ui/GroupCallActivity;)Lorg/telegram/ui/Components/voip/GroupCallRenderersContainer;
@@ -69,16 +69,16 @@
 
     if-nez v1, :cond_0
 
-    .line 4606
+    .line 4617
     invoke-virtual {v0, v2}, Lorg/telegram/ui/Components/GroupCallFullscreenAdapter$GroupCallUserCell;->setAlpha(F)V
 
-    .line 4607
+    .line 4618
     invoke-virtual {v0, v3}, Landroid/widget/FrameLayout;->setTranslationX(F)V
 
-    .line 4608
+    .line 4619
     invoke-virtual {v0, v3}, Landroid/widget/FrameLayout;->setTranslationY(F)V
 
-    .line 4610
+    .line 4621
     :cond_0
     iget-object v1, p0, Lorg/telegram/ui/GroupCallActivity$23;->this$0:Lorg/telegram/ui/GroupCallActivity;
 
@@ -100,7 +100,7 @@
 
     return p1
 
-    .line 4612
+    .line 4623
     :cond_1
     invoke-virtual {v0}, Landroid/widget/FrameLayout;->getTranslationY()F
 
@@ -124,7 +124,7 @@
 
     if-eqz v0, :cond_2
 
-    .line 4613
+    .line 4624
     iget-object v0, p0, Lorg/telegram/ui/GroupCallActivity$23;->this$0:Lorg/telegram/ui/GroupCallActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/GroupCallActivity;->access$5700(Lorg/telegram/ui/GroupCallActivity;)Lorg/telegram/ui/Components/RecyclerListView;
@@ -143,7 +143,7 @@
 
     int-to-float v0, v0
 
-    .line 4614
+    .line 4625
     iget-object v1, p0, Lorg/telegram/ui/GroupCallActivity$23;->this$0:Lorg/telegram/ui/GroupCallActivity;
 
     invoke-static {v1}, Lorg/telegram/ui/GroupCallActivity;->access$5700(Lorg/telegram/ui/GroupCallActivity;)Lorg/telegram/ui/Components/RecyclerListView;
@@ -158,7 +158,7 @@
 
     add-float/2addr v1, v0
 
-    .line 4615
+    .line 4626
     iget-object v4, p0, Lorg/telegram/ui/GroupCallActivity$23;->this$0:Lorg/telegram/ui/GroupCallActivity;
 
     invoke-static {v4}, Lorg/telegram/ui/GroupCallActivity;->access$5000(Lorg/telegram/ui/GroupCallActivity;)Lorg/telegram/ui/Components/voip/GroupCallRenderersContainer;
@@ -167,14 +167,14 @@
 
     iget v4, v4, Lorg/telegram/ui/Components/voip/GroupCallRenderersContainer;->progressToFullscreenMode:F
 
-    .line 4616
+    .line 4627
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
     sub-float/2addr v2, v4
 
     mul-float/2addr v0, v2
 
-    .line 4617
+    .line 4628
     invoke-virtual {p0}, Landroid/view/ViewGroup;->getMeasuredWidth()I
 
     move-result v5
@@ -195,17 +195,17 @@
 
     invoke-virtual {p1, v3, v0, v5, v1}, Landroid/graphics/Canvas;->clipRect(FFFF)Z
 
-    .line 4618
+    .line 4629
     invoke-super {p0, p1, p2, p3, p4}, Landroidx/recyclerview/widget/RecyclerView;->drawChild(Landroid/graphics/Canvas;Landroid/view/View;J)Z
 
     move-result p2
 
-    .line 4619
+    .line 4630
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
     return p2
 
-    .line 4622
+    .line 4633
     :cond_2
     invoke-super {p0, p1, p2, p3, p4}, Landroidx/recyclerview/widget/RecyclerView;->drawChild(Landroid/graphics/Canvas;Landroid/view/View;J)Z
 

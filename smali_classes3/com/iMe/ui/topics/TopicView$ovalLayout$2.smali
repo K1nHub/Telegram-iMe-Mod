@@ -48,7 +48,7 @@
 .method public final invoke()Landroid/widget/LinearLayout;
     .locals 1
 
-    .line 40
+    .line 41
     iget-object v0, p0, Lcom/iMe/ui/topics/TopicView$ovalLayout$2;->this$0:Lcom/iMe/ui/topics/TopicView;
 
     invoke-static {v0}, Lcom/iMe/ui/topics/TopicView;->access$initOvalLayout(Lcom/iMe/ui/topics/TopicView;)Landroid/widget/LinearLayout;
@@ -61,7 +61,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 40
+    .line 41
     invoke-virtual {p0}, Lcom/iMe/ui/topics/TopicView$ovalLayout$2;->invoke()Landroid/widget/LinearLayout;
 
     move-result-object v0

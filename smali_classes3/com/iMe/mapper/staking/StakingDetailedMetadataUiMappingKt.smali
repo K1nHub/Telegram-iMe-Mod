@@ -41,7 +41,7 @@
 .end method
 
 .method public static final mapToUi(Lcom/iMe/storage/domain/model/staking/StakingDetailedMetadata;)Lcom/iMe/model/staking/StakingDetailsItem;
-    .locals 41
+    .locals 39
 
     const-string v0, "<this>"
 
@@ -49,106 +49,90 @@
 
     invoke-static {v1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 14
-    new-instance v0, Lcom/iMe/model/staking/StakingDetailsItem;
-
-    move-object v2, v0
-
-    .line 15
+    .line 17
     invoke-virtual/range {p0 .. p0}, Lcom/iMe/storage/domain/model/staking/StakingDetailedMetadata;->getId()J
 
     move-result-wide v3
 
-    .line 16
+    .line 18
     invoke-virtual/range {p0 .. p0}, Lcom/iMe/storage/domain/model/staking/StakingDetailedMetadata;->getName()Ljava/lang/String;
 
     move-result-object v5
 
-    .line 17
+    .line 19
     invoke-virtual/range {p0 .. p0}, Lcom/iMe/storage/domain/model/staking/StakingDetailedMetadata;->getAuthor()Ljava/lang/String;
 
     move-result-object v6
 
-    .line 18
-    invoke-virtual/range {p0 .. p0}, Lcom/iMe/storage/domain/model/staking/StakingDetailedMetadata;->getNetworkType()Lcom/iMe/storage/domain/model/crypto/NetworkType;
-
-    move-result-object v7
-
-    .line 19
+    .line 20
     invoke-virtual/range {p0 .. p0}, Lcom/iMe/storage/domain/model/staking/StakingDetailedMetadata;->getContract()Ljava/lang/String;
 
     move-result-object v8
 
-    .line 20
-    invoke-virtual/range {p0 .. p0}, Lcom/iMe/storage/domain/model/staking/StakingDetailedMetadata;->getToken()Lcom/iMe/storage/domain/model/staking/StakingToken;
-
-    move-result-object v9
-
-    invoke-virtual {v9}, Lcom/iMe/storage/domain/model/staking/StakingToken;->getTicker()Ljava/lang/String;
-
-    move-result-object v9
-
     .line 21
-    invoke-virtual/range {p0 .. p0}, Lcom/iMe/storage/domain/model/staking/StakingDetailedMetadata;->getFeeToken()Lcom/iMe/storage/domain/model/staking/StakingToken;
+    invoke-virtual/range {p0 .. p0}, Lcom/iMe/storage/domain/model/staking/StakingDetailedMetadata;->getToken()Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
 
-    move-result-object v10
+    move-result-object v0
 
-    invoke-virtual {v10}, Lcom/iMe/storage/domain/model/staking/StakingToken;->getTicker()Ljava/lang/String;
+    invoke-static {v0}, Lcom/iMe/mapper/wallet/TokenUiMappingKt;->mapToUI(Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;)Lcom/iMe/model/wallet/crypto/TokenItem;
 
-    move-result-object v10
+    move-result-object v7
 
     .line 22
+    invoke-virtual/range {p0 .. p0}, Lcom/iMe/storage/domain/model/staking/StakingDetailedMetadata;->getFeeToken()Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcom/iMe/mapper/wallet/TokenUiMappingKt;->mapToUI(Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;)Lcom/iMe/model/wallet/crypto/TokenItem;
+
+    move-result-object v9
+
+    .line 23
     invoke-static/range {p0 .. p0}, Lcom/iMe/utils/extentions/model/wallet/StakingMetadataExtKt;->getFormattedAPR(Lcom/iMe/storage/domain/model/staking/StakingDetailedMetadata;)Ljava/lang/String;
+
+    move-result-object v10
+
+    .line 24
+    invoke-static/range {p0 .. p0}, Lcom/iMe/utils/extentions/model/wallet/StakingMetadataExtKt;->getFormattedAPY(Lcom/iMe/storage/domain/model/staking/StakingDetailedMetadata;)Ljava/lang/String;
 
     move-result-object v11
 
-    .line 23
-    invoke-static/range {p0 .. p0}, Lcom/iMe/utils/extentions/model/wallet/StakingMetadataExtKt;->getFormattedAPY(Lcom/iMe/storage/domain/model/staking/StakingDetailedMetadata;)Ljava/lang/String;
-
-    move-result-object v12
-
-    .line 24
+    .line 25
     invoke-virtual/range {p0 .. p0}, Lcom/iMe/storage/domain/model/staking/StakingDetailedMetadata;->getCompoundAccrualThreshold()Ljava/math/BigDecimal;
 
-    move-result-object v13
-
-    .line 25
-    invoke-virtual/range {p0 .. p0}, Lcom/iMe/storage/domain/model/staking/StakingDetailedMetadata;->getStartsAt()Ljava/lang/String;
-
-    move-result-object v14
-
-    sget-object v15, Lcom/iMe/utils/formatter/DateFormatter$DateType;->ONLY_DATE:Lcom/iMe/utils/formatter/DateFormatter$DateType;
-
-    invoke-static {v14, v15}, Lcom/iMe/utils/extentions/common/StringExtKt;->formatISODate(Ljava/lang/String;Lcom/iMe/utils/formatter/DateFormatter$DateType;)Ljava/lang/String;
-
-    move-result-object v14
+    move-result-object v12
 
     .line 26
     invoke-virtual/range {p0 .. p0}, Lcom/iMe/storage/domain/model/staking/StakingDetailedMetadata;->getStartsAt()Ljava/lang/String;
 
-    move-result-object v16
-
-    move-object v1, v15
-
-    move-object/from16 v15, v16
-
-    move-object/from16 v40, v0
-
-    .line 27
-    invoke-virtual/range {p0 .. p0}, Lcom/iMe/storage/domain/model/staking/StakingDetailedMetadata;->getEndsAt()Ljava/lang/String;
-
     move-result-object v0
 
-    invoke-static {v0, v1}, Lcom/iMe/utils/extentions/common/StringExtKt;->formatISODate(Ljava/lang/String;Lcom/iMe/utils/formatter/DateFormatter$DateType;)Ljava/lang/String;
+    sget-object v2, Lcom/iMe/utils/formatter/DateFormatter$DateType;->ONLY_DATE:Lcom/iMe/utils/formatter/DateFormatter$DateType;
 
-    move-result-object v16
+    invoke-static {v0, v2}, Lcom/iMe/utils/extentions/common/StringExtKt;->formatISODate(Ljava/lang/String;Lcom/iMe/utils/formatter/DateFormatter$DateType;)Ljava/lang/String;
+
+    move-result-object v13
+
+    .line 27
+    invoke-virtual/range {p0 .. p0}, Lcom/iMe/storage/domain/model/staking/StakingDetailedMetadata;->getStartsAt()Ljava/lang/String;
+
+    move-result-object v14
 
     .line 28
     invoke-virtual/range {p0 .. p0}, Lcom/iMe/storage/domain/model/staking/StakingDetailedMetadata;->getEndsAt()Ljava/lang/String;
 
-    move-result-object v17
+    move-result-object v0
+
+    invoke-static {v0, v2}, Lcom/iMe/utils/extentions/common/StringExtKt;->formatISODate(Ljava/lang/String;Lcom/iMe/utils/formatter/DateFormatter$DateType;)Ljava/lang/String;
+
+    move-result-object v15
 
     .line 29
+    invoke-virtual/range {p0 .. p0}, Lcom/iMe/storage/domain/model/staking/StakingDetailedMetadata;->getEndsAt()Ljava/lang/String;
+
+    move-result-object v16
+
+    .line 30
     invoke-virtual/range {p0 .. p0}, Lcom/iMe/storage/domain/model/staking/StakingDetailedMetadata;->getStats()Lcom/iMe/storage/domain/model/staking/StakingDetailedStats;
 
     move-result-object v0
@@ -159,9 +143,9 @@
 
     invoke-virtual {v0}, Lcom/iMe/storage/domain/model/staking/StakingValues;->getAsToken()Ljava/math/BigDecimal;
 
-    move-result-object v18
+    move-result-object v17
 
-    .line 30
+    .line 31
     invoke-virtual/range {p0 .. p0}, Lcom/iMe/storage/domain/model/staking/StakingDetailedMetadata;->getStats()Lcom/iMe/storage/domain/model/staking/StakingDetailedStats;
 
     move-result-object v0
@@ -172,9 +156,9 @@
 
     invoke-virtual {v0}, Lcom/iMe/storage/domain/model/staking/StakingValues;->getAsToken()Ljava/math/BigDecimal;
 
-    move-result-object v19
+    move-result-object v18
 
-    .line 31
+    .line 32
     invoke-virtual/range {p0 .. p0}, Lcom/iMe/storage/domain/model/staking/StakingDetailedMetadata;->getStats()Lcom/iMe/storage/domain/model/staking/StakingDetailedStats;
 
     move-result-object v0
@@ -189,47 +173,47 @@
 
     invoke-virtual {v0}, Ljava/math/BigDecimal;->doubleValue()D
 
-    move-result-wide v20
-
-    .line 32
-    invoke-virtual/range {p0 .. p0}, Lcom/iMe/storage/domain/model/staking/StakingDetailedMetadata;->getRules()Lcom/iMe/storage/domain/model/staking/StakingRules;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/iMe/storage/domain/model/staking/StakingRules;->getCanWithdrawSafely()Z
-
-    move-result v22
+    move-result-wide v19
 
     .line 33
     invoke-virtual/range {p0 .. p0}, Lcom/iMe/storage/domain/model/staking/StakingDetailedMetadata;->getRules()Lcom/iMe/storage/domain/model/staking/StakingRules;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lcom/iMe/storage/domain/model/staking/StakingRules;->getCanWithdrawImmediately()Z
+    invoke-virtual {v0}, Lcom/iMe/storage/domain/model/staking/StakingRules;->getCanWithdrawSafely()Z
 
-    move-result v23
+    move-result v21
 
     .line 34
-    invoke-virtual/range {p0 .. p0}, Lcom/iMe/storage/domain/model/staking/StakingDetailedMetadata;->getPrematureWithdrawalFee()D
+    invoke-virtual/range {p0 .. p0}, Lcom/iMe/storage/domain/model/staking/StakingDetailedMetadata;->getRules()Lcom/iMe/storage/domain/model/staking/StakingRules;
 
-    move-result-wide v24
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/iMe/storage/domain/model/staking/StakingRules;->getCanWithdrawImmediately()Z
+
+    move-result v22
 
     .line 35
-    invoke-virtual/range {p0 .. p0}, Lcom/iMe/storage/domain/model/staking/StakingDetailedMetadata;->getImmediateWithdrawalFee()D
+    invoke-virtual/range {p0 .. p0}, Lcom/iMe/storage/domain/model/staking/StakingDetailedMetadata;->getPrematureWithdrawalFee()D
 
-    move-result-wide v26
+    move-result-wide v23
 
     .line 36
-    invoke-virtual/range {p0 .. p0}, Lcom/iMe/storage/domain/model/staking/StakingDetailedMetadata;->getSafeWithdrawalFee()D
+    invoke-virtual/range {p0 .. p0}, Lcom/iMe/storage/domain/model/staking/StakingDetailedMetadata;->getImmediateWithdrawalFee()D
 
-    move-result-wide v28
+    move-result-wide v25
 
     .line 37
-    invoke-virtual/range {p0 .. p0}, Lcom/iMe/storage/domain/model/staking/StakingDetailedMetadata;->getSafeWithdrawalDuration()J
+    invoke-virtual/range {p0 .. p0}, Lcom/iMe/storage/domain/model/staking/StakingDetailedMetadata;->getSafeWithdrawalFee()D
 
-    move-result-wide v30
+    move-result-wide v27
 
     .line 38
+    invoke-virtual/range {p0 .. p0}, Lcom/iMe/storage/domain/model/staking/StakingDetailedMetadata;->getSafeWithdrawalDuration()J
+
+    move-result-wide v29
+
+    .line 39
     invoke-virtual/range {p0 .. p0}, Lcom/iMe/storage/domain/model/staking/StakingDetailedMetadata;->getStats()Lcom/iMe/storage/domain/model/staking/StakingDetailedStats;
 
     move-result-object v0
@@ -244,45 +228,49 @@
 
     invoke-virtual/range {p0 .. p0}, Lcom/iMe/storage/domain/model/staking/StakingDetailedMetadata;->getCompoundAccrualThreshold()Ljava/math/BigDecimal;
 
-    move-result-object v1
+    move-result-object v2
 
-    invoke-static {v0, v1}, Lcom/iMe/mapper/staking/StakingDetailedMetadataUiMappingKt;->getAnnualPercentageMode(Ljava/math/BigDecimal;Ljava/math/BigDecimal;)Lcom/iMe/model/staking/StakingAnnualPercentageMode;
+    invoke-static {v0, v2}, Lcom/iMe/mapper/staking/StakingDetailedMetadataUiMappingKt;->getAnnualPercentageMode(Ljava/math/BigDecimal;Ljava/math/BigDecimal;)Lcom/iMe/model/staking/StakingAnnualPercentageMode;
 
-    move-result-object v32
-
-    .line 39
-    invoke-virtual/range {p0 .. p0}, Lcom/iMe/storage/domain/model/staking/StakingDetailedMetadata;->getHasEnoughFunds()Z
-
-    move-result v33
+    move-result-object v31
 
     .line 40
+    invoke-virtual/range {p0 .. p0}, Lcom/iMe/storage/domain/model/staking/StakingDetailedMetadata;->getHasEnoughFunds()Z
+
+    move-result v32
+
+    .line 41
     invoke-virtual/range {p0 .. p0}, Lcom/iMe/storage/domain/model/staking/StakingDetailedMetadata;->getMinimalRank()Lcom/iMe/storage/domain/model/crypto/level/AccountLevel;
+
+    move-result-object v33
+
+    .line 42
+    invoke-virtual/range {p0 .. p0}, Lcom/iMe/storage/domain/model/staking/StakingDetailedMetadata;->getWebsite()Ljava/lang/String;
 
     move-result-object v34
 
-    .line 41
-    invoke-virtual/range {p0 .. p0}, Lcom/iMe/storage/domain/model/staking/StakingDetailedMetadata;->getWebsite()Ljava/lang/String;
-
-    move-result-object v35
-
-    .line 42
+    .line 43
     invoke-virtual/range {p0 .. p0}, Lcom/iMe/storage/domain/model/staking/StakingDetailedMetadata;->getIncomePeriod()J
 
-    move-result-wide v36
+    move-result-wide v35
 
-    .line 43
+    .line 44
     invoke-virtual/range {p0 .. p0}, Lcom/iMe/storage/domain/model/staking/StakingDetailedMetadata;->getIncomePercent()D
 
-    move-result-wide v38
+    move-result-wide v37
 
-    .line 14
-    invoke-direct/range {v2 .. v39}, Lcom/iMe/model/staking/StakingDetailsItem;-><init>(JLjava/lang/String;Ljava/lang/String;Lcom/iMe/storage/domain/model/crypto/NetworkType;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/math/BigDecimal;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/math/BigDecimal;Ljava/math/BigDecimal;DZZDDDJLcom/iMe/model/staking/StakingAnnualPercentageMode;ZLcom/iMe/storage/domain/model/crypto/level/AccountLevel;Ljava/lang/String;JD)V
+    .line 16
+    new-instance v0, Lcom/iMe/model/staking/StakingDetailsItem;
 
-    return-object v40
+    move-object v2, v0
+
+    invoke-direct/range {v2 .. v38}, Lcom/iMe/model/staking/StakingDetailsItem;-><init>(JLjava/lang/String;Ljava/lang/String;Lcom/iMe/model/wallet/crypto/TokenItem;Ljava/lang/String;Lcom/iMe/model/wallet/crypto/TokenItem;Ljava/lang/String;Ljava/lang/String;Ljava/math/BigDecimal;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/math/BigDecimal;Ljava/math/BigDecimal;DZZDDDJLcom/iMe/model/staking/StakingAnnualPercentageMode;ZLcom/iMe/storage/domain/model/crypto/level/AccountLevel;Ljava/lang/String;JD)V
+
+    return-object v0
 .end method
 
 .method public static final mapToUi(Lcom/iMe/storage/domain/model/staking/StakingMetadata;)Lcom/iMe/model/staking/StakingDetailsItem;
-    .locals 41
+    .locals 39
 
     const-string v0, "<this>"
 
@@ -290,30 +278,20 @@
 
     invoke-static {v1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 46
-    new-instance v0, Lcom/iMe/model/staking/StakingDetailsItem;
-
-    move-object v2, v0
-
-    .line 47
+    .line 48
     invoke-virtual/range {p0 .. p0}, Lcom/iMe/storage/domain/model/staking/StakingMetadata;->getId()J
 
     move-result-wide v3
 
-    .line 48
+    .line 49
     invoke-virtual/range {p0 .. p0}, Lcom/iMe/storage/domain/model/staking/StakingMetadata;->getName()Ljava/lang/String;
 
     move-result-object v5
 
-    .line 49
+    .line 50
     invoke-virtual/range {p0 .. p0}, Lcom/iMe/storage/domain/model/staking/StakingMetadata;->getAuthor()Ljava/lang/String;
 
     move-result-object v6
-
-    .line 50
-    invoke-virtual/range {p0 .. p0}, Lcom/iMe/storage/domain/model/staking/StakingMetadata;->getNetworkType()Lcom/iMe/storage/domain/model/crypto/NetworkType;
-
-    move-result-object v7
 
     .line 51
     invoke-virtual/range {p0 .. p0}, Lcom/iMe/storage/domain/model/staking/StakingMetadata;->getContract()Ljava/lang/String;
@@ -321,167 +299,190 @@
     move-result-object v8
 
     .line 52
-    invoke-virtual/range {p0 .. p0}, Lcom/iMe/storage/domain/model/staking/StakingMetadata;->getToken()Lcom/iMe/storage/domain/model/staking/StakingToken;
+    invoke-virtual/range {p0 .. p0}, Lcom/iMe/storage/domain/model/staking/StakingMetadata;->getToken()Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
 
-    move-result-object v9
+    move-result-object v0
 
-    invoke-virtual {v9}, Lcom/iMe/storage/domain/model/staking/StakingToken;->getTicker()Ljava/lang/String;
+    invoke-static {v0}, Lcom/iMe/mapper/wallet/TokenUiMappingKt;->mapToUI(Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;)Lcom/iMe/model/wallet/crypto/TokenItem;
 
-    move-result-object v9
+    move-result-object v7
 
     .line 53
-    invoke-virtual/range {p0 .. p0}, Lcom/iMe/storage/domain/model/staking/StakingMetadata;->getFeeToken()Lcom/iMe/storage/domain/model/staking/StakingToken;
+    invoke-virtual/range {p0 .. p0}, Lcom/iMe/storage/domain/model/staking/StakingMetadata;->getFeeToken()Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
 
-    move-result-object v10
+    move-result-object v0
 
-    invoke-virtual {v10}, Lcom/iMe/storage/domain/model/staking/StakingToken;->getTicker()Ljava/lang/String;
+    invoke-static {v0}, Lcom/iMe/mapper/wallet/TokenUiMappingKt;->mapToUI(Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;)Lcom/iMe/model/wallet/crypto/TokenItem;
 
-    move-result-object v10
+    move-result-object v9
 
     .line 54
     invoke-static/range {p0 .. p0}, Lcom/iMe/utils/extentions/model/wallet/StakingMetadataExtKt;->getFormattedAPR(Lcom/iMe/storage/domain/model/staking/StakingMetadata;)Ljava/lang/String;
 
-    move-result-object v11
+    move-result-object v10
 
     .line 55
     invoke-static/range {p0 .. p0}, Lcom/iMe/utils/extentions/model/wallet/StakingMetadataExtKt;->getFormattedAPY(Lcom/iMe/storage/domain/model/staking/StakingMetadata;)Ljava/lang/String;
 
-    move-result-object v12
+    move-result-object v11
 
     .line 56
     invoke-virtual/range {p0 .. p0}, Lcom/iMe/storage/domain/model/staking/StakingMetadata;->getCompoundAccrualThreshold()Ljava/math/BigDecimal;
 
-    move-result-object v13
+    move-result-object v12
 
     .line 57
     invoke-virtual/range {p0 .. p0}, Lcom/iMe/storage/domain/model/staking/StakingMetadata;->getStartsAt()Ljava/lang/String;
 
-    move-result-object v14
+    move-result-object v0
 
-    sget-object v15, Lcom/iMe/utils/formatter/DateFormatter$DateType;->ONLY_DATE:Lcom/iMe/utils/formatter/DateFormatter$DateType;
+    sget-object v2, Lcom/iMe/utils/formatter/DateFormatter$DateType;->ONLY_DATE:Lcom/iMe/utils/formatter/DateFormatter$DateType;
 
-    invoke-static {v14, v15}, Lcom/iMe/utils/extentions/common/StringExtKt;->formatISODate(Ljava/lang/String;Lcom/iMe/utils/formatter/DateFormatter$DateType;)Ljava/lang/String;
+    invoke-static {v0, v2}, Lcom/iMe/utils/extentions/common/StringExtKt;->formatISODate(Ljava/lang/String;Lcom/iMe/utils/formatter/DateFormatter$DateType;)Ljava/lang/String;
 
-    move-result-object v14
+    move-result-object v13
 
     .line 58
     invoke-virtual/range {p0 .. p0}, Lcom/iMe/storage/domain/model/staking/StakingMetadata;->getStartsAt()Ljava/lang/String;
 
-    move-result-object v16
-
-    move-object v1, v15
-
-    move-object/from16 v15, v16
-
-    move-object/from16 v40, v0
+    move-result-object v14
 
     .line 59
     invoke-virtual/range {p0 .. p0}, Lcom/iMe/storage/domain/model/staking/StakingMetadata;->getEndsAt()Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-static {v0, v1}, Lcom/iMe/utils/extentions/common/StringExtKt;->formatISODate(Ljava/lang/String;Lcom/iMe/utils/formatter/DateFormatter$DateType;)Ljava/lang/String;
+    invoke-static {v0, v2}, Lcom/iMe/utils/extentions/common/StringExtKt;->formatISODate(Ljava/lang/String;Lcom/iMe/utils/formatter/DateFormatter$DateType;)Ljava/lang/String;
 
-    move-result-object v16
+    move-result-object v15
 
     .line 60
     invoke-virtual/range {p0 .. p0}, Lcom/iMe/storage/domain/model/staking/StakingMetadata;->getEndsAt()Ljava/lang/String;
 
-    move-result-object v17
+    move-result-object v16
 
     .line 61
     sget-object v0, Ljava/math/BigDecimal;->ZERO:Ljava/math/BigDecimal;
 
-    move-object/from16 v18, v0
-
-    const-string v1, "ZERO"
-
-    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
     .line 62
     invoke-virtual/range {p0 .. p0}, Lcom/iMe/storage/domain/model/staking/StakingMetadata;->getStats()Lcom/iMe/storage/domain/model/staking/StakingStats;
 
-    move-result-object v0
+    move-result-object v2
 
-    invoke-virtual {v0}, Lcom/iMe/storage/domain/model/staking/StakingStats;->getDebt()Lcom/iMe/storage/domain/model/staking/StakingValues;
+    invoke-virtual {v2}, Lcom/iMe/storage/domain/model/staking/StakingStats;->getDebt()Lcom/iMe/storage/domain/model/staking/StakingValues;
 
-    move-result-object v0
+    move-result-object v2
 
-    invoke-virtual {v0}, Lcom/iMe/storage/domain/model/staking/StakingValues;->getAsToken()Ljava/math/BigDecimal;
+    const/16 v17, 0x0
 
-    move-result-object v19
+    if-eqz v2, :cond_0
+
+    invoke-virtual {v2}, Lcom/iMe/storage/domain/model/staking/StakingValues;->getAsToken()Ljava/math/BigDecimal;
+
+    move-result-object v2
+
+    goto :goto_0
+
+    :cond_0
+    move-object/from16 v2, v17
+
+    :goto_0
+    invoke-static {v2}, Lcom/iMe/storage/data/utils/extentions/NumberExtKt;->orZero(Ljava/math/BigDecimal;)Ljava/math/BigDecimal;
+
+    move-result-object v18
 
     .line 66
     invoke-virtual/range {p0 .. p0}, Lcom/iMe/storage/domain/model/staking/StakingMetadata;->getPrematureWithdrawalFee()D
 
-    move-result-wide v24
+    move-result-wide v23
 
     .line 67
     invoke-virtual/range {p0 .. p0}, Lcom/iMe/storage/domain/model/staking/StakingMetadata;->getImmediateWithdrawalFee()D
 
-    move-result-wide v26
+    move-result-wide v25
 
     .line 68
     invoke-virtual/range {p0 .. p0}, Lcom/iMe/storage/domain/model/staking/StakingMetadata;->getSafeWithdrawalFee()D
 
-    move-result-wide v28
+    move-result-wide v27
 
     .line 69
     invoke-virtual/range {p0 .. p0}, Lcom/iMe/storage/domain/model/staking/StakingMetadata;->getSafeWithdrawalDuration()J
 
-    move-result-wide v30
+    move-result-wide v29
 
     .line 70
     invoke-virtual/range {p0 .. p0}, Lcom/iMe/storage/domain/model/staking/StakingMetadata;->getStats()Lcom/iMe/storage/domain/model/staking/StakingStats;
 
-    move-result-object v0
+    move-result-object v2
 
-    invoke-virtual {v0}, Lcom/iMe/storage/domain/model/staking/StakingStats;->getDebt()Lcom/iMe/storage/domain/model/staking/StakingValues;
+    invoke-virtual {v2}, Lcom/iMe/storage/domain/model/staking/StakingStats;->getDebt()Lcom/iMe/storage/domain/model/staking/StakingValues;
 
-    move-result-object v0
+    move-result-object v2
 
-    invoke-virtual {v0}, Lcom/iMe/storage/domain/model/staking/StakingValues;->getAsToken()Ljava/math/BigDecimal;
+    if-eqz v2, :cond_1
 
-    move-result-object v0
+    invoke-virtual {v2}, Lcom/iMe/storage/domain/model/staking/StakingValues;->getAsToken()Ljava/math/BigDecimal;
+
+    move-result-object v17
+
+    :cond_1
+    invoke-static/range {v17 .. v17}, Lcom/iMe/storage/data/utils/extentions/NumberExtKt;->orZero(Ljava/math/BigDecimal;)Ljava/math/BigDecimal;
+
+    move-result-object v2
 
     invoke-virtual/range {p0 .. p0}, Lcom/iMe/storage/domain/model/staking/StakingMetadata;->getCompoundAccrualThreshold()Ljava/math/BigDecimal;
 
     move-result-object v1
 
-    invoke-static {v0, v1}, Lcom/iMe/mapper/staking/StakingDetailedMetadataUiMappingKt;->getAnnualPercentageMode(Ljava/math/BigDecimal;Ljava/math/BigDecimal;)Lcom/iMe/model/staking/StakingAnnualPercentageMode;
+    invoke-static {v2, v1}, Lcom/iMe/mapper/staking/StakingDetailedMetadataUiMappingKt;->getAnnualPercentageMode(Ljava/math/BigDecimal;Ljava/math/BigDecimal;)Lcom/iMe/model/staking/StakingAnnualPercentageMode;
 
-    move-result-object v32
+    move-result-object v31
 
     .line 72
     invoke-virtual/range {p0 .. p0}, Lcom/iMe/storage/domain/model/staking/StakingMetadata;->getMinimalRank()Lcom/iMe/storage/domain/model/crypto/level/AccountLevel;
 
-    move-result-object v34
+    move-result-object v33
 
     .line 73
     invoke-virtual/range {p0 .. p0}, Lcom/iMe/storage/domain/model/staking/StakingMetadata;->getWebsite()Ljava/lang/String;
 
-    move-result-object v35
+    move-result-object v34
 
     .line 74
     invoke-virtual/range {p0 .. p0}, Lcom/iMe/storage/domain/model/staking/StakingMetadata;->getIncomePeriod()J
 
-    move-result-wide v36
+    move-result-wide v35
 
     .line 75
     invoke-virtual/range {p0 .. p0}, Lcom/iMe/storage/domain/model/staking/StakingMetadata;->getIncomePercent()D
 
-    move-result-wide v38
+    move-result-wide v37
 
-    const-wide/16 v20, 0x0
+    .line 47
+    new-instance v1, Lcom/iMe/model/staking/StakingDetailsItem;
+
+    move-object v2, v1
+
+    move-object/from16 p0, v1
+
+    const-string v1, "ZERO"
+
+    .line 61
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-wide/16 v19, 0x0
+
+    const/16 v21, 0x0
 
     const/16 v22, 0x0
 
-    const/16 v23, 0x0
+    const/16 v32, 0x1
 
-    const/16 v33, 0x1
+    move-object/from16 v17, v0
 
-    .line 46
-    invoke-direct/range {v2 .. v39}, Lcom/iMe/model/staking/StakingDetailsItem;-><init>(JLjava/lang/String;Ljava/lang/String;Lcom/iMe/storage/domain/model/crypto/NetworkType;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/math/BigDecimal;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/math/BigDecimal;Ljava/math/BigDecimal;DZZDDDJLcom/iMe/model/staking/StakingAnnualPercentageMode;ZLcom/iMe/storage/domain/model/crypto/level/AccountLevel;Ljava/lang/String;JD)V
+    .line 47
+    invoke-direct/range {v2 .. v38}, Lcom/iMe/model/staking/StakingDetailsItem;-><init>(JLjava/lang/String;Ljava/lang/String;Lcom/iMe/model/wallet/crypto/TokenItem;Ljava/lang/String;Lcom/iMe/model/wallet/crypto/TokenItem;Ljava/lang/String;Ljava/lang/String;Ljava/math/BigDecimal;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/math/BigDecimal;Ljava/math/BigDecimal;DZZDDDJLcom/iMe/model/staking/StakingAnnualPercentageMode;ZLcom/iMe/storage/domain/model/crypto/level/AccountLevel;Ljava/lang/String;JD)V
 
-    return-object v40
+    return-object p0
 .end method

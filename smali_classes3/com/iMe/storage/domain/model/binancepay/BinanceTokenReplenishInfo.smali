@@ -6,14 +6,14 @@
 # instance fields
 .field private final address:Ljava/lang/String;
 
-.field private final networkType:Lcom/iMe/storage/domain/model/crypto/NetworkType;
+.field private final networkId:Ljava/lang/String;
 
 
 # direct methods
-.method public constructor <init>(Lcom/iMe/storage/domain/model/crypto/NetworkType;Ljava/lang/String;)V
+.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;)V
     .locals 1
 
-    const-string v0, "networkType"
+    const-string v0, "networkId"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -21,26 +21,26 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 5
+    .line 3
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 6
-    iput-object p1, p0, Lcom/iMe/storage/domain/model/binancepay/BinanceTokenReplenishInfo;->networkType:Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    .line 4
+    iput-object p1, p0, Lcom/iMe/storage/domain/model/binancepay/BinanceTokenReplenishInfo;->networkId:Ljava/lang/String;
 
-    .line 7
+    .line 5
     iput-object p2, p0, Lcom/iMe/storage/domain/model/binancepay/BinanceTokenReplenishInfo;->address:Ljava/lang/String;
 
     return-void
 .end method
 
-.method public static synthetic copy$default(Lcom/iMe/storage/domain/model/binancepay/BinanceTokenReplenishInfo;Lcom/iMe/storage/domain/model/crypto/NetworkType;Ljava/lang/String;ILjava/lang/Object;)Lcom/iMe/storage/domain/model/binancepay/BinanceTokenReplenishInfo;
+.method public static synthetic copy$default(Lcom/iMe/storage/domain/model/binancepay/BinanceTokenReplenishInfo;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Object;)Lcom/iMe/storage/domain/model/binancepay/BinanceTokenReplenishInfo;
     .locals 0
 
     and-int/lit8 p4, p3, 0x1
 
     if-eqz p4, :cond_0
 
-    iget-object p1, p0, Lcom/iMe/storage/domain/model/binancepay/BinanceTokenReplenishInfo;->networkType:Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    iget-object p1, p0, Lcom/iMe/storage/domain/model/binancepay/BinanceTokenReplenishInfo;->networkId:Ljava/lang/String;
 
     :cond_0
     and-int/lit8 p3, p3, 0x2
@@ -50,7 +50,7 @@
     iget-object p2, p0, Lcom/iMe/storage/domain/model/binancepay/BinanceTokenReplenishInfo;->address:Ljava/lang/String;
 
     :cond_1
-    invoke-virtual {p0, p1, p2}, Lcom/iMe/storage/domain/model/binancepay/BinanceTokenReplenishInfo;->copy(Lcom/iMe/storage/domain/model/crypto/NetworkType;Ljava/lang/String;)Lcom/iMe/storage/domain/model/binancepay/BinanceTokenReplenishInfo;
+    invoke-virtual {p0, p1, p2}, Lcom/iMe/storage/domain/model/binancepay/BinanceTokenReplenishInfo;->copy(Ljava/lang/String;Ljava/lang/String;)Lcom/iMe/storage/domain/model/binancepay/BinanceTokenReplenishInfo;
 
     move-result-object p0
 
@@ -59,10 +59,10 @@
 
 
 # virtual methods
-.method public final component1()Lcom/iMe/storage/domain/model/crypto/NetworkType;
+.method public final component1()Ljava/lang/String;
     .locals 1
 
-    iget-object v0, p0, Lcom/iMe/storage/domain/model/binancepay/BinanceTokenReplenishInfo;->networkType:Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    iget-object v0, p0, Lcom/iMe/storage/domain/model/binancepay/BinanceTokenReplenishInfo;->networkId:Ljava/lang/String;
 
     return-object v0
 .end method
@@ -75,10 +75,10 @@
     return-object v0
 .end method
 
-.method public final copy(Lcom/iMe/storage/domain/model/crypto/NetworkType;Ljava/lang/String;)Lcom/iMe/storage/domain/model/binancepay/BinanceTokenReplenishInfo;
+.method public final copy(Ljava/lang/String;Ljava/lang/String;)Lcom/iMe/storage/domain/model/binancepay/BinanceTokenReplenishInfo;
     .locals 1
 
-    const-string v0, "networkType"
+    const-string v0, "networkId"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -88,7 +88,7 @@
 
     new-instance v0, Lcom/iMe/storage/domain/model/binancepay/BinanceTokenReplenishInfo;
 
-    invoke-direct {v0, p1, p2}, Lcom/iMe/storage/domain/model/binancepay/BinanceTokenReplenishInfo;-><init>(Lcom/iMe/storage/domain/model/crypto/NetworkType;Ljava/lang/String;)V
+    invoke-direct {v0, p1, p2}, Lcom/iMe/storage/domain/model/binancepay/BinanceTokenReplenishInfo;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
     return-object v0
 .end method
@@ -114,11 +114,15 @@
     :cond_1
     check-cast p1, Lcom/iMe/storage/domain/model/binancepay/BinanceTokenReplenishInfo;
 
-    iget-object v1, p0, Lcom/iMe/storage/domain/model/binancepay/BinanceTokenReplenishInfo;->networkType:Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    iget-object v1, p0, Lcom/iMe/storage/domain/model/binancepay/BinanceTokenReplenishInfo;->networkId:Ljava/lang/String;
 
-    iget-object v3, p1, Lcom/iMe/storage/domain/model/binancepay/BinanceTokenReplenishInfo;->networkType:Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    iget-object v3, p1, Lcom/iMe/storage/domain/model/binancepay/BinanceTokenReplenishInfo;->networkId:Ljava/lang/String;
 
-    if-eq v1, v3, :cond_2
+    invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_2
 
     return v2
 
@@ -142,17 +146,17 @@
 .method public final getAddress()Ljava/lang/String;
     .locals 1
 
-    .line 7
+    .line 5
     iget-object v0, p0, Lcom/iMe/storage/domain/model/binancepay/BinanceTokenReplenishInfo;->address:Ljava/lang/String;
 
     return-object v0
 .end method
 
-.method public final getNetworkType()Lcom/iMe/storage/domain/model/crypto/NetworkType;
+.method public final getNetworkId()Ljava/lang/String;
     .locals 1
 
-    .line 6
-    iget-object v0, p0, Lcom/iMe/storage/domain/model/binancepay/BinanceTokenReplenishInfo;->networkType:Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    .line 4
+    iget-object v0, p0, Lcom/iMe/storage/domain/model/binancepay/BinanceTokenReplenishInfo;->networkId:Ljava/lang/String;
 
     return-object v0
 .end method
@@ -160,9 +164,9 @@
 .method public hashCode()I
     .locals 2
 
-    iget-object v0, p0, Lcom/iMe/storage/domain/model/binancepay/BinanceTokenReplenishInfo;->networkType:Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    iget-object v0, p0, Lcom/iMe/storage/domain/model/binancepay/BinanceTokenReplenishInfo;->networkId:Ljava/lang/String;
 
-    invoke-virtual {v0}, Ljava/lang/Enum;->hashCode()I
+    invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
 
     move-result v0
 
@@ -186,13 +190,13 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v1, "BinanceTokenReplenishInfo(networkType="
+    const-string v1, "BinanceTokenReplenishInfo(networkId="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v1, p0, Lcom/iMe/storage/domain/model/binancepay/BinanceTokenReplenishInfo;->networkType:Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    iget-object v1, p0, Lcom/iMe/storage/domain/model/binancepay/BinanceTokenReplenishInfo;->networkId:Ljava/lang/String;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     const-string v1, ", address="
 

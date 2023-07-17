@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/IntroActivity$EGLThread;)V
     .locals 0
 
-    .line 824
+    .line 823
     iput-object p1, p0, Lorg/telegram/ui/IntroActivity$EGLThread$1;->this$1:Lorg/telegram/ui/IntroActivity$EGLThread;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public run()V
     .locals 9
 
-    .line 827
+    .line 826
     iget-object v0, p0, Lorg/telegram/ui/IntroActivity$EGLThread$1;->this$1:Lorg/telegram/ui/IntroActivity$EGLThread;
 
     invoke-static {v0}, Lorg/telegram/ui/IntroActivity$EGLThread;->access$2100(Lorg/telegram/ui/IntroActivity$EGLThread;)Z
@@ -49,13 +49,13 @@
 
     return-void
 
-    .line 831
+    .line 830
     :cond_0
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
 
-    .line 832
+    .line 831
     iget-object v2, p0, Lorg/telegram/ui/IntroActivity$EGLThread$1;->this$1:Lorg/telegram/ui/IntroActivity$EGLThread;
 
     invoke-static {v2}, Lorg/telegram/ui/IntroActivity$EGLThread;->access$2200(Lorg/telegram/ui/IntroActivity$EGLThread;)Ljavax/microedition/khronos/egl/EGLContext;
@@ -102,7 +102,7 @@
 
     if-nez v2, :cond_3
 
-    .line 833
+    .line 832
     :cond_1
     iget-object v2, p0, Lorg/telegram/ui/IntroActivity$EGLThread$1;->this$1:Lorg/telegram/ui/IntroActivity$EGLThread;
 
@@ -140,12 +140,12 @@
 
     if-nez v2, :cond_3
 
-    .line 834
+    .line 833
     sget-boolean v0, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz v0, :cond_2
 
-    .line 835
+    .line 834
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -179,7 +179,7 @@
     :cond_2
     return-void
 
-    .line 840
+    .line 839
     :cond_3
     iget-object v2, p0, Lorg/telegram/ui/IntroActivity$EGLThread$1;->this$1:Lorg/telegram/ui/IntroActivity$EGLThread;
 
@@ -197,7 +197,7 @@
 
     long-to-int v2, v2
 
-    .line 841
+    .line 840
     iget-object v3, p0, Lorg/telegram/ui/IntroActivity$EGLThread$1;->this$1:Lorg/telegram/ui/IntroActivity$EGLThread;
 
     iget-object v3, v3, Lorg/telegram/ui/IntroActivity$EGLThread;->this$0:Lorg/telegram/ui/IntroActivity;
@@ -214,7 +214,7 @@
 
     div-float/2addr v3, v4
 
-    .line 842
+    .line 841
     iget-object v5, p0, Lorg/telegram/ui/IntroActivity$EGLThread$1;->this$1:Lorg/telegram/ui/IntroActivity$EGLThread;
 
     iget-object v5, v5, Lorg/telegram/ui/IntroActivity$EGLThread;->this$0:Lorg/telegram/ui/IntroActivity;
@@ -225,13 +225,13 @@
 
     invoke-static {v5}, Lorg/telegram/messenger/Intro;->setPage(I)V
 
-    .line 843
+    .line 842
     invoke-static {v3}, Lorg/telegram/messenger/Intro;->setDate(F)V
 
-    .line 844
+    .line 843
     invoke-static {v2}, Lorg/telegram/messenger/Intro;->onDrawFrame(I)V
 
-    .line 845
+    .line 844
     iget-object v2, p0, Lorg/telegram/ui/IntroActivity$EGLThread$1;->this$1:Lorg/telegram/ui/IntroActivity$EGLThread;
 
     invoke-static {v2}, Lorg/telegram/ui/IntroActivity$EGLThread;->access$1100(Lorg/telegram/ui/IntroActivity$EGLThread;)Ljavax/microedition/khronos/egl/EGL10;
@@ -252,12 +252,12 @@
 
     invoke-interface {v2, v3, v5}, Ljavax/microedition/khronos/egl/EGL10;->eglSwapBuffers(Ljavax/microedition/khronos/egl/EGLDisplay;Ljavax/microedition/khronos/egl/EGLSurface;)Z
 
-    .line 846
+    .line 845
     iget-object v2, p0, Lorg/telegram/ui/IntroActivity$EGLThread$1;->this$1:Lorg/telegram/ui/IntroActivity$EGLThread;
 
     invoke-static {v2, v0, v1}, Lorg/telegram/ui/IntroActivity$EGLThread;->access$2302(Lorg/telegram/ui/IntroActivity$EGLThread;J)J
 
-    .line 848
+    .line 847
     iget-object v2, p0, Lorg/telegram/ui/IntroActivity$EGLThread$1;->this$1:Lorg/telegram/ui/IntroActivity$EGLThread;
 
     invoke-static {v2}, Lorg/telegram/ui/IntroActivity$EGLThread;->access$2400(Lorg/telegram/ui/IntroActivity$EGLThread;)F
@@ -270,14 +270,14 @@
 
     if-nez v2, :cond_7
 
-    .line 849
+    .line 848
     sget v2, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v5, 0x15
 
     if-lt v2, v5, :cond_6
 
-    .line 850
+    .line 849
     sget-object v2, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
     const-string v5, "window"
@@ -288,17 +288,17 @@
 
     check-cast v2, Landroid/view/WindowManager;
 
-    .line 851
+    .line 850
     invoke-interface {v2}, Landroid/view/WindowManager;->getDefaultDisplay()Landroid/view/Display;
 
     move-result-object v2
 
-    .line 852
+    .line 851
     invoke-virtual {v2}, Landroid/view/Display;->getSupportedRefreshRates()[F
 
     move-result-object v2
 
-    .line 854
+    .line 853
     array-length v5, v2
 
     const/4 v6, 0x0
@@ -319,7 +319,7 @@
 
     goto :goto_0
 
-    .line 859
+    .line 858
     :cond_5
     iget-object v2, p0, Lorg/telegram/ui/IntroActivity$EGLThread$1;->this$1:Lorg/telegram/ui/IntroActivity$EGLThread;
 
@@ -327,7 +327,7 @@
 
     goto :goto_1
 
-    .line 860
+    .line 859
     :cond_6
     iget-object v2, p0, Lorg/telegram/ui/IntroActivity$EGLThread$1;->this$1:Lorg/telegram/ui/IntroActivity$EGLThread;
 
@@ -335,7 +335,7 @@
 
     invoke-static {v2, v3}, Lorg/telegram/ui/IntroActivity$EGLThread;->access$2402(Lorg/telegram/ui/IntroActivity$EGLThread;F)F
 
-    .line 863
+    .line 862
     :cond_7
     :goto_1
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
@@ -344,7 +344,7 @@
 
     sub-long/2addr v2, v0
 
-    .line 864
+    .line 863
     iget-object v0, p0, Lorg/telegram/ui/IntroActivity$EGLThread$1;->this$1:Lorg/telegram/ui/IntroActivity$EGLThread;
 
     invoke-static {v0}, Lorg/telegram/ui/IntroActivity$EGLThread;->access$600(Lorg/telegram/ui/IntroActivity$EGLThread;)Ljava/lang/Runnable;

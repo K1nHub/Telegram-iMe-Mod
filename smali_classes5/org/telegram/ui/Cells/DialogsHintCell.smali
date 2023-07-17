@@ -205,19 +205,6 @@
     .line 56
     iget-object p1, p0, Lorg/telegram/ui/Cells/DialogsHintCell;->chevronView:Landroid/widget/ImageView;
 
-    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayText:I
-
-    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
-
-    move-result v0
-
-    sget-object v2, Landroid/graphics/PorterDuff$Mode;->SRC_IN:Landroid/graphics/PorterDuff$Mode;
-
-    invoke-virtual {p1, v0, v2}, Landroid/widget/ImageView;->setColorFilter(ILandroid/graphics/PorterDuff$Mode;)V
-
-    .line 57
-    iget-object p1, p0, Lorg/telegram/ui/Cells/DialogsHintCell;->chevronView:Landroid/widget/ImageView;
-
     sget-boolean v0, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     if-eqz v0, :cond_2
@@ -238,7 +225,7 @@
 
     invoke-virtual {p0, p1, v0}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 59
+    .line 58
     invoke-virtual {p0}, Lorg/telegram/ui/Cells/DialogsHintCell;->updateColors()V
 
     return-void
@@ -249,7 +236,7 @@
 .method public height()I
     .locals 1
 
-    .line 95
+    .line 96
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getVisibility()I
 
     move-result v0
@@ -260,7 +247,7 @@
 
     return v0
 
-    .line 98
+    .line 99
     :cond_0
     iget v0, p0, Lorg/telegram/ui/Cells/DialogsHintCell;->height:I
 
@@ -268,7 +255,7 @@
 
     const/16 v0, 0x48
 
-    .line 99
+    .line 100
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
@@ -277,7 +264,7 @@
 
     iput v0, p0, Lorg/telegram/ui/Cells/DialogsHintCell;->height:I
 
-    .line 101
+    .line 102
     :cond_1
     iget v0, p0, Lorg/telegram/ui/Cells/DialogsHintCell;->height:I
 
@@ -287,10 +274,10 @@
 .method protected onDraw(Landroid/graphics/Canvas;)V
     .locals 7
 
-    .line 74
+    .line 75
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->onDraw(Landroid/graphics/Canvas;)V
 
-    .line 75
+    .line 76
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getHeight()I
 
     move-result v0
@@ -327,23 +314,23 @@
 .method protected onMeasure(II)V
     .locals 4
 
-    .line 82
+    .line 83
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result p2
 
     if-gtz p2, :cond_0
 
-    .line 84
+    .line 85
     sget-object p2, Lorg/telegram/messenger/AndroidUtilities;->displaySize:Landroid/graphics/Point;
 
     iget p2, p2, Landroid/graphics/Point;->x:I
 
-    .line 86
+    .line 87
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Cells/DialogsHintCell;->contentView:Landroid/widget/LinearLayout;
 
-    .line 87
+    .line 88
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getPaddingLeft()I
 
     move-result v1
@@ -368,15 +355,15 @@
 
     const/high16 v3, -0x80000000
 
-    .line 88
+    .line 89
     invoke-static {v2, v3}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
     move-result v2
 
-    .line 86
+    .line 87
     invoke-virtual {v0, p2, v2}, Landroid/widget/LinearLayout;->measure(II)V
 
-    .line 90
+    .line 91
     iget-object p2, p0, Lorg/telegram/ui/Cells/DialogsHintCell;->contentView:Landroid/widget/LinearLayout;
 
     invoke-virtual {p2}, Landroid/widget/LinearLayout;->getMeasuredHeight()I
@@ -399,7 +386,7 @@
 
     iput p2, p0, Lorg/telegram/ui/Cells/DialogsHintCell;->height:I
 
-    .line 91
+    .line 92
     invoke-static {p2, v1}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
     move-result p2
@@ -412,12 +399,12 @@
 .method public setText(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)V
     .locals 1
 
-    .line 68
+    .line 69
     iget-object v0, p0, Lorg/telegram/ui/Cells/DialogsHintCell;->titleView:Landroid/widget/TextView;
 
     invoke-virtual {v0, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 69
+    .line 70
     iget-object p1, p0, Lorg/telegram/ui/Cells/DialogsHintCell;->messageView:Landroid/widget/TextView;
 
     invoke-virtual {p1, p2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
@@ -426,9 +413,9 @@
 .end method
 
 .method public updateColors()V
-    .locals 2
+    .locals 3
 
-    .line 63
+    .line 62
     iget-object v0, p0, Lorg/telegram/ui/Cells/DialogsHintCell;->titleView:Landroid/widget/TextView;
 
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
@@ -439,16 +426,34 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 64
+    .line 63
     iget-object v0, p0, Lorg/telegram/ui/Cells/DialogsHintCell;->messageView:Landroid/widget/TextView;
 
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayText:I
 
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
+    move-result v2
+
+    invoke-virtual {v0, v2}, Landroid/widget/TextView;->setTextColor(I)V
+
+    .line 64
+    iget-object v0, p0, Lorg/telegram/ui/Cells/DialogsHintCell;->chevronView:Landroid/widget/ImageView;
+
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
+
     move-result v1
 
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTextColor(I)V
+    sget-object v2, Landroid/graphics/PorterDuff$Mode;->SRC_IN:Landroid/graphics/PorterDuff$Mode;
+
+    invoke-virtual {v0, v1, v2}, Landroid/widget/ImageView;->setColorFilter(ILandroid/graphics/PorterDuff$Mode;)V
+
+    .line 65
+    invoke-static {}, Lorg/telegram/ui/ActionBar/Theme$AdaptiveRipple;->filledRect()Landroid/graphics/drawable/Drawable;
+
+    move-result-object v0
+
+    invoke-virtual {p0, v0}, Landroid/widget/FrameLayout;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
     return-void
 .end method

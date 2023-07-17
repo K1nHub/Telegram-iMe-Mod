@@ -35,7 +35,7 @@
 .method constructor <init>(Lorg/telegram/ui/ChatActivity;Lorg/telegram/ui/MessageSeenView;Lorg/telegram/ui/Components/RecyclerListView;Landroid/widget/LinearLayout;Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;[I)V
     .locals 0
 
-    .line 27426
+    .line 27247
     iput-object p1, p0, Lorg/telegram/ui/ChatActivity$122;->this$0:Lorg/telegram/ui/ChatActivity;
 
     iput-object p2, p0, Lorg/telegram/ui/ChatActivity$122;->val$finalMessageSeenView:Lorg/telegram/ui/MessageSeenView;
@@ -58,7 +58,7 @@
 .method public onClick(Landroid/view/View;)V
     .locals 5
 
-    .line 27429
+    .line 27250
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$122;->this$0:Lorg/telegram/ui/ChatActivity;
 
     iget-object p1, p1, Lorg/telegram/ui/ChatActivity;->scrimPopupWindow:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
@@ -77,7 +77,7 @@
 
     goto/16 :goto_0
 
-    .line 27432
+    .line 27253
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$122;->val$finalMessageSeenView:Lorg/telegram/ui/MessageSeenView;
 
@@ -119,7 +119,7 @@
 
     if-gtz p1, :cond_3
 
-    .line 27433
+    .line 27254
     :cond_1
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$122;->val$finalMessageSeenView:Lorg/telegram/ui/MessageSeenView;
 
@@ -135,37 +135,37 @@
 
     return-void
 
-    .line 27437
+    .line 27258
     :cond_2
     new-instance v0, Landroid/os/Bundle;
 
     invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
 
-    .line 27438
+    .line 27259
     iget-wide v1, p1, Lorg/telegram/tgnet/TLRPC$User;->id:J
 
     const-string p1, "user_id"
 
     invoke-virtual {v0, p1, v1, v2}, Landroid/os/Bundle;->putLong(Ljava/lang/String;J)V
 
-    .line 27439
+    .line 27260
     new-instance p1, Lorg/telegram/ui/ProfileActivity;
 
     invoke-direct {p1, v0}, Lorg/telegram/ui/ProfileActivity;-><init>(Landroid/os/Bundle;)V
 
-    .line 27440
+    .line 27261
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$122;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
 
-    .line 27441
+    .line 27262
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$122;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-virtual {p1}, Lorg/telegram/ui/ChatActivity;->closeMenu()V
 
     return-void
 
-    .line 27445
+    .line 27266
     :cond_3
     sget p1, Lorg/telegram/messenger/SharedConfig;->messageSeenHintCount:I
 
@@ -187,7 +187,7 @@
 
     if-ge p1, v2, :cond_4
 
-    .line 27446
+    .line 27267
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$122;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getContext()Landroid/content/Context;
@@ -222,12 +222,12 @@
 
     move-result-object v2
 
-    invoke-static {p1, v2}, Lorg/telegram/ui/ChatActivity;->access$47702(Lorg/telegram/ui/ChatActivity;Lorg/telegram/ui/Components/Bulletin;)Lorg/telegram/ui/Components/Bulletin;
+    invoke-static {p1, v2}, Lorg/telegram/ui/ChatActivity;->access$47502(Lorg/telegram/ui/ChatActivity;Lorg/telegram/ui/Components/Bulletin;)Lorg/telegram/ui/Components/Bulletin;
 
-    .line 27447
+    .line 27268
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$122;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    invoke-static {p1}, Lorg/telegram/ui/ChatActivity;->access$47700(Lorg/telegram/ui/ChatActivity;)Lorg/telegram/ui/Components/Bulletin;
+    invoke-static {p1}, Lorg/telegram/ui/ChatActivity;->access$47500(Lorg/telegram/ui/ChatActivity;)Lorg/telegram/ui/Components/Bulletin;
 
     move-result-object p1
 
@@ -235,34 +235,34 @@
 
     invoke-virtual {p1, v2}, Lorg/telegram/ui/Components/Bulletin;->setDuration(I)Lorg/telegram/ui/Components/Bulletin;
 
-    .line 27448
+    .line 27269
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$122;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    invoke-static {p1}, Lorg/telegram/ui/ChatActivity;->access$47700(Lorg/telegram/ui/ChatActivity;)Lorg/telegram/ui/Components/Bulletin;
+    invoke-static {p1}, Lorg/telegram/ui/ChatActivity;->access$47500(Lorg/telegram/ui/ChatActivity;)Lorg/telegram/ui/Components/Bulletin;
 
     move-result-object p1
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/Bulletin;->show()Lorg/telegram/ui/Components/Bulletin;
 
-    .line 27449
+    .line 27270
     sget p1, Lorg/telegram/messenger/SharedConfig;->messageSeenHintCount:I
 
     sub-int/2addr p1, v0
 
     invoke-static {p1}, Lorg/telegram/messenger/SharedConfig;->updateMessageSeenHintCount(I)V
 
-    .line 27452
+    .line 27273
     :cond_4
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$122;->val$listView2:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/RecyclerListView;->requestLayout()V
 
-    .line 27453
+    .line 27274
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$122;->val$linearLayout:Landroid/widget/LinearLayout;
 
     invoke-virtual {p1}, Landroid/widget/LinearLayout;->requestLayout()V
 
-    .line 27454
+    .line 27275
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$122;->val$listView2:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView;->getAdapter()Landroidx/recyclerview/widget/RecyclerView$Adapter;
@@ -271,7 +271,7 @@
 
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyDataSetChanged()V
 
-    .line 27455
+    .line 27276
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$122;->val$popupLayout:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;->getSwipeBack()Lorg/telegram/ui/Components/PopupSwipeBackLayout;

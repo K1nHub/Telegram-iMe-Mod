@@ -68,7 +68,7 @@
 .method public schedule(Ljava/lang/Runnable;JLjava/util/concurrent/TimeUnit;)Lio/reactivex/disposables/Disposable;
     .locals 2
 
-    const-string v0, "run == null"
+    const-string/jumbo v0, "run == null"
 
     .line 69
     invoke-static {p1, v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;

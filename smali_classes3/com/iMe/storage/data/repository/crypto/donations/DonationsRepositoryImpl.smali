@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nDonationsRepositoryImpl.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DonationsRepositoryImpl.kt\ncom/iMe/storage/data/repository/crypto/donations/DonationsRepositoryImpl\n+ 2 FirebaseExt.kt\ncom/iMe/storage/data/utils/extentions/FirebaseExtKt\n+ 3 RxExt.kt\ncom/iMe/storage/data/utils/extentions/RxExtKt\n*L\n1#1,136:1\n70#2:137\n70#2:139\n70#2:141\n70#2:143\n70#2:145\n70#2:147\n70#2:150\n26#3:138\n26#3:140\n26#3:142\n26#3:144\n26#3:146\n26#3:148\n26#3:149\n26#3:151\n*S KotlinDebug\n*F\n+ 1 DonationsRepositoryImpl.kt\ncom/iMe/storage/data/repository/crypto/donations/DonationsRepositoryImpl\n*L\n42#1:137\n51#1:139\n60#1:141\n69#1:143\n81#1:145\n101#1:147\n130#1:150\n43#1:138\n52#1:140\n61#1:142\n70#1:144\n88#1:146\n102#1:148\n119#1:149\n131#1:151\n*E\n"
+    value = "SMAP\nDonationsRepositoryImpl.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DonationsRepositoryImpl.kt\ncom/iMe/storage/data/repository/crypto/donations/DonationsRepositoryImpl\n+ 2 FirebaseExt.kt\ncom/iMe/storage/data/utils/extentions/FirebaseExtKt\n+ 3 RxExt.kt\ncom/iMe/storage/data/utils/extentions/RxExtKt\n*L\n1#1,131:1\n70#2:132\n70#2:134\n70#2:136\n70#2:138\n70#2:140\n70#2:142\n70#2:145\n26#3:133\n26#3:135\n26#3:137\n26#3:139\n26#3:141\n26#3:143\n26#3:144\n26#3:146\n*S KotlinDebug\n*F\n+ 1 DonationsRepositoryImpl.kt\ncom/iMe/storage/data/repository/crypto/donations/DonationsRepositoryImpl\n*L\n47#1:132\n53#1:134\n59#1:136\n65#1:138\n81#1:140\n98#1:142\n126#1:145\n48#1:133\n54#1:135\n60#1:137\n71#1:139\n86#1:141\n99#1:143\n115#1:144\n127#1:146\n*E\n"
 .end annotation
 
 
@@ -23,10 +23,10 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$poZ2-M7CqYlMZaARCNu7hUDif7A(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lio/reactivex/ObservableSource;
+.method public static synthetic $r8$lambda$xrndl6XDjV7ZYmxWSd81jiL8sBk(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lio/reactivex/ObservableSource;
     .locals 0
 
-    invoke-static {p0, p1}, Lcom/iMe/storage/data/repository/crypto/donations/DonationsRepositoryImpl;->sendDonation$lambda$9(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lio/reactivex/ObservableSource;
+    invoke-static {p0, p1}, Lcom/iMe/storage/data/repository/crypto/donations/DonationsRepositoryImpl;->sendDonation$lambda$8(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lio/reactivex/ObservableSource;
 
     move-result-object p0
 
@@ -52,19 +52,19 @@
 
     invoke-static {p4, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 24
+    .line 29
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 25
+    .line 30
     iput-object p1, p0, Lcom/iMe/storage/data/repository/crypto/donations/DonationsRepositoryImpl;->donationsApi:Lcom/iMe/storage/data/network/api/own/DonationsApi;
 
-    .line 26
+    .line 31
     iput-object p2, p0, Lcom/iMe/storage/data/repository/crypto/donations/DonationsRepositoryImpl;->transferDataSourceFactory:Lcom/iMe/storage/data/datasource/transfer/WalletTransferDataSourceFactory;
 
-    .line 27
+    .line 32
     iput-object p3, p0, Lcom/iMe/storage/data/repository/crypto/donations/DonationsRepositoryImpl;->firebaseErrorHandler:Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;
 
-    .line 28
+    .line 33
     iput-object p4, p0, Lcom/iMe/storage/data/repository/crypto/donations/DonationsRepositoryImpl;->errorHandler:Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler;
 
     return-void
@@ -73,7 +73,7 @@
 .method public static final synthetic access$getDonationsApi$p(Lcom/iMe/storage/data/repository/crypto/donations/DonationsRepositoryImpl;)Lcom/iMe/storage/data/network/api/own/DonationsApi;
     .locals 0
 
-    .line 24
+    .line 29
     iget-object p0, p0, Lcom/iMe/storage/data/repository/crypto/donations/DonationsRepositoryImpl;->donationsApi:Lcom/iMe/storage/data/network/api/own/DonationsApi;
 
     return-object p0
@@ -82,20 +82,20 @@
 .method public static final synthetic access$getFirebaseErrorHandler$p(Lcom/iMe/storage/data/repository/crypto/donations/DonationsRepositoryImpl;)Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;
     .locals 0
 
-    .line 24
+    .line 29
     iget-object p0, p0, Lcom/iMe/storage/data/repository/crypto/donations/DonationsRepositoryImpl;->firebaseErrorHandler:Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;
 
     return-object p0
 .end method
 
-.method private static final sendDonation$lambda$9(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lio/reactivex/ObservableSource;
+.method private static final sendDonation$lambda$8(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lio/reactivex/ObservableSource;
     .locals 1
 
     const-string v0, "$tmp0"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 109
+    .line 105
     invoke-interface {p0, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
@@ -108,7 +108,7 @@
 
 # virtual methods
 .method public disableDonation(J)Lio/reactivex/Observable;
-    .locals 1
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(J)",
@@ -119,24 +119,27 @@
         }
     .end annotation
 
-    .line 47
-    new-instance v0, Lcom/iMe/storage/data/network/model/request/crypto/donations/UnlinkDonationWalletRequest;
+    .line 51
+    iget-object v0, p0, Lcom/iMe/storage/data/repository/crypto/donations/DonationsRepositoryImpl;->donationsApi:Lcom/iMe/storage/data/network/api/own/DonationsApi;
+
+    .line 52
+    new-instance v1, Lcom/iMe/storage/data/network/model/request/crypto/donations/UnlinkDonationWalletRequest;
 
     invoke-static {p1, p2}, Ljava/lang/String;->valueOf(J)Ljava/lang/String;
 
     move-result-object p1
 
-    invoke-direct {v0, p1}, Lcom/iMe/storage/data/network/model/request/crypto/donations/UnlinkDonationWalletRequest;-><init>(Ljava/lang/String;)V
+    const/4 p2, 0x0
 
-    .line 49
-    iget-object p1, p0, Lcom/iMe/storage/data/repository/crypto/donations/DonationsRepositoryImpl;->donationsApi:Lcom/iMe/storage/data/network/api/own/DonationsApi;
+    const/4 v2, 0x2
 
-    .line 50
-    invoke-interface {p1, v0}, Lcom/iMe/storage/data/network/api/own/DonationsApi;->unlinkEtherWallet(Lcom/iMe/storage/data/network/model/request/crypto/donations/UnlinkDonationWalletRequest;)Lio/reactivex/Observable;
+    invoke-direct {v1, p1, p2, v2, p2}, Lcom/iMe/storage/data/network/model/request/crypto/donations/UnlinkDonationWalletRequest;-><init>(Ljava/lang/String;Ljava/lang/String;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+
+    invoke-interface {v0, v1}, Lcom/iMe/storage/data/network/api/own/DonationsApi;->unlinkEtherWallet(Lcom/iMe/storage/data/network/model/request/crypto/donations/UnlinkDonationWalletRequest;)Lio/reactivex/Observable;
 
     move-result-object p1
 
-    .line 51
+    .line 53
     iget-object p2, p0, Lcom/iMe/storage/data/repository/crypto/donations/DonationsRepositoryImpl;->firebaseErrorHandler:Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;
 
     .line 70
@@ -156,7 +159,7 @@
 
     invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 52
+    .line 54
     iget-object p2, p0, Lcom/iMe/storage/data/repository/crypto/donations/DonationsRepositoryImpl;->errorHandler:Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler;
 
     .line 26
@@ -180,7 +183,7 @@
 .end method
 
 .method public enableDonationFor(JLjava/lang/String;Z)Lio/reactivex/Observable;
-    .locals 1
+    .locals 8
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(J",
@@ -197,25 +200,37 @@
 
     invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 37
+    .line 39
+    iget-object v0, p0, Lcom/iMe/storage/data/repository/crypto/donations/DonationsRepositoryImpl;->donationsApi:Lcom/iMe/storage/data/network/api/own/DonationsApi;
+
+    .line 44
     invoke-static {p1, p2}, Ljava/lang/String;->valueOf(J)Ljava/lang/String;
 
-    move-result-object p1
-
-    .line 34
-    new-instance p2, Lcom/iMe/storage/data/network/model/request/crypto/donations/LinkDonationWalletRequest;
-
-    invoke-direct {p2, p1, p4, p3}, Lcom/iMe/storage/data/network/model/request/crypto/donations/LinkDonationWalletRequest;-><init>(Ljava/lang/String;ZLjava/lang/String;)V
-
-    .line 40
-    iget-object p1, p0, Lcom/iMe/storage/data/repository/crypto/donations/DonationsRepositoryImpl;->donationsApi:Lcom/iMe/storage/data/network/api/own/DonationsApi;
+    move-result-object v2
 
     .line 41
-    invoke-interface {p1, p2}, Lcom/iMe/storage/data/network/api/own/DonationsApi;->linkEtherWallet(Lcom/iMe/storage/data/network/model/request/crypto/donations/LinkDonationWalletRequest;)Lio/reactivex/Observable;
+    new-instance p1, Lcom/iMe/storage/data/network/model/request/crypto/donations/LinkDonationWalletRequest;
+
+    const/4 v5, 0x0
+
+    const/16 v6, 0x8
+
+    const/4 v7, 0x0
+
+    move-object v1, p1
+
+    move v3, p4
+
+    move-object v4, p3
+
+    invoke-direct/range {v1 .. v7}, Lcom/iMe/storage/data/network/model/request/crypto/donations/LinkDonationWalletRequest;-><init>(Ljava/lang/String;ZLjava/lang/String;Ljava/lang/String;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+
+    .line 40
+    invoke-interface {v0, p1}, Lcom/iMe/storage/data/network/api/own/DonationsApi;->linkEtherWallet(Lcom/iMe/storage/data/network/model/request/crypto/donations/LinkDonationWalletRequest;)Lio/reactivex/Observable;
 
     move-result-object p1
 
-    .line 42
+    .line 47
     iget-object p2, p0, Lcom/iMe/storage/data/repository/crypto/donations/DonationsRepositoryImpl;->firebaseErrorHandler:Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;
 
     .line 70
@@ -235,7 +250,7 @@
 
     invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 43
+    .line 48
     iget-object p2, p0, Lcom/iMe/storage/data/repository/crypto/donations/DonationsRepositoryImpl;->errorHandler:Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler;
 
     .line 26
@@ -258,13 +273,13 @@
     return-object p1
 .end method
 
-.method public getDataForDonation(JLjava/lang/String;Lcom/iMe/storage/domain/model/crypto/NetworkType;)Lio/reactivex/Observable;
-    .locals 1
+.method public getDataForDonation(JLjava/lang/String;Lcom/iMe/storage/domain/model/wallet/token/Token;)Lio/reactivex/Observable;
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(J",
             "Ljava/lang/String;",
-            "Lcom/iMe/storage/domain/model/crypto/NetworkType;",
+            "Lcom/iMe/storage/domain/model/wallet/token/Token;",
             ")",
             "Lio/reactivex/Observable<",
             "Lcom/iMe/storage/domain/model/Result<",
@@ -277,34 +292,35 @@
 
     invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "networkType"
+    const-string v0, "token"
 
     invoke-static {p4, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 123
+    .line 118
+    iget-object v0, p0, Lcom/iMe/storage/data/repository/crypto/donations/DonationsRepositoryImpl;->donationsApi:Lcom/iMe/storage/data/network/api/own/DonationsApi;
+
+    .line 120
+    new-instance v1, Lcom/iMe/storage/data/network/model/request/crypto/donations/PrepareDonationTransactionRequest;
+
+    .line 121
     invoke-static {p1, p2}, Ljava/lang/String;->valueOf(J)Ljava/lang/String;
 
     move-result-object p1
 
-    .line 125
-    invoke-virtual {p4}, Ljava/lang/Enum;->name()Ljava/lang/String;
+    .line 123
+    invoke-static {p4}, Lcom/iMe/storage/data/mapper/wallet/TokenMappingKt;->mapToRequest(Lcom/iMe/storage/domain/model/wallet/token/Token;)Lcom/iMe/storage/data/network/model/request/wallet/TokenRequest;
 
     move-result-object p2
 
-    .line 122
-    new-instance p4, Lcom/iMe/storage/data/network/model/request/crypto/donations/GetDataForDonationTransactionRequest;
+    .line 120
+    invoke-direct {v1, p1, p3, p2}, Lcom/iMe/storage/data/network/model/request/crypto/donations/PrepareDonationTransactionRequest;-><init>(Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/data/network/model/request/wallet/TokenRequest;)V
 
-    invoke-direct {p4, p3, p1, p2}, Lcom/iMe/storage/data/network/model/request/crypto/donations/GetDataForDonationTransactionRequest;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 128
-    iget-object p1, p0, Lcom/iMe/storage/data/repository/crypto/donations/DonationsRepositoryImpl;->donationsApi:Lcom/iMe/storage/data/network/api/own/DonationsApi;
-
-    .line 129
-    invoke-interface {p1, p4}, Lcom/iMe/storage/data/network/api/own/DonationsApi;->getDataForDonationTransaction(Lcom/iMe/storage/data/network/model/request/crypto/donations/GetDataForDonationTransactionRequest;)Lio/reactivex/Observable;
+    .line 119
+    invoke-interface {v0, v1}, Lcom/iMe/storage/data/network/api/own/DonationsApi;->getDataForDonationTransaction(Lcom/iMe/storage/data/network/model/request/crypto/donations/PrepareDonationTransactionRequest;)Lio/reactivex/Observable;
 
     move-result-object p1
 
-    .line 130
+    .line 126
     iget-object p2, p0, Lcom/iMe/storage/data/repository/crypto/donations/DonationsRepositoryImpl;->firebaseErrorHandler:Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;
 
     .line 70
@@ -324,7 +340,7 @@
 
     invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 131
+    .line 127
     iget-object p2, p0, Lcom/iMe/storage/data/repository/crypto/donations/DonationsRepositoryImpl;->errorHandler:Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler;
 
     .line 26
@@ -348,7 +364,7 @@
 .end method
 
 .method public getDonationAddress(J)Lio/reactivex/Observable;
-    .locals 1
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(J)",
@@ -359,24 +375,23 @@
         }
     .end annotation
 
-    .line 65
-    new-instance v0, Lcom/iMe/storage/data/network/model/request/crypto/donations/GetDonationInfoRequest;
+    .line 63
+    iget-object v0, p0, Lcom/iMe/storage/data/repository/crypto/donations/DonationsRepositoryImpl;->donationsApi:Lcom/iMe/storage/data/network/api/own/DonationsApi;
+
+    .line 64
+    new-instance v1, Lcom/iMe/storage/data/network/model/request/crypto/donations/GetDonationInfoRequest;
 
     invoke-static {p1, p2}, Ljava/lang/String;->valueOf(J)Ljava/lang/String;
 
     move-result-object p1
 
-    invoke-direct {v0, p1}, Lcom/iMe/storage/data/network/model/request/crypto/donations/GetDonationInfoRequest;-><init>(Ljava/lang/String;)V
+    invoke-direct {v1, p1}, Lcom/iMe/storage/data/network/model/request/crypto/donations/GetDonationInfoRequest;-><init>(Ljava/lang/String;)V
 
-    .line 67
-    iget-object p1, p0, Lcom/iMe/storage/data/repository/crypto/donations/DonationsRepositoryImpl;->donationsApi:Lcom/iMe/storage/data/network/api/own/DonationsApi;
-
-    .line 68
-    invoke-interface {p1, v0}, Lcom/iMe/storage/data/network/api/own/DonationsApi;->getChatInfo(Lcom/iMe/storage/data/network/model/request/crypto/donations/GetDonationInfoRequest;)Lio/reactivex/Observable;
+    invoke-interface {v0, v1}, Lcom/iMe/storage/data/network/api/own/DonationsApi;->getChatInfo(Lcom/iMe/storage/data/network/model/request/crypto/donations/GetDonationInfoRequest;)Lio/reactivex/Observable;
 
     move-result-object p1
 
-    .line 69
+    .line 65
     iget-object p2, p0, Lcom/iMe/storage/data/repository/crypto/donations/DonationsRepositoryImpl;->firebaseErrorHandler:Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;
 
     .line 70
@@ -396,7 +411,7 @@
 
     invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 70
+    .line 71
     iget-object p2, p0, Lcom/iMe/storage/data/repository/crypto/donations/DonationsRepositoryImpl;->errorHandler:Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler;
 
     .line 26
@@ -419,14 +434,14 @@
     return-object p1
 .end method
 
-.method public getDonationTransactionHistory(JLjava/lang/String;ILcom/iMe/storage/domain/model/crypto/NetworkType;)Lio/reactivex/Observable;
+.method public getDonationTransactionHistory(JLjava/lang/String;ILjava/lang/String;)Lio/reactivex/Observable;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(J",
             "Ljava/lang/String;",
             "I",
-            "Lcom/iMe/storage/domain/model/crypto/NetworkType;",
+            "Ljava/lang/String;",
             ")",
             "Lio/reactivex/Observable<",
             "Lcom/iMe/storage/domain/model/Result<",
@@ -436,34 +451,29 @@
         }
     .end annotation
 
-    const-string v0, "networkType"
+    const-string v0, "networkId"
 
     invoke-static {p5, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 95
+    .line 89
+    iget-object v0, p0, Lcom/iMe/storage/data/repository/crypto/donations/DonationsRepositoryImpl;->donationsApi:Lcom/iMe/storage/data/network/api/own/DonationsApi;
+
+    .line 94
     invoke-static {p1, p2}, Ljava/lang/String;->valueOf(J)Ljava/lang/String;
 
     move-result-object p1
 
-    .line 96
-    invoke-virtual {p5}, Ljava/lang/Enum;->name()Ljava/lang/String;
+    .line 91
+    new-instance p2, Lcom/iMe/storage/data/network/model/request/crypto/donations/GetDonationTransactionsRequest;
 
-    move-result-object p2
+    invoke-direct {p2, p3, p4, p5, p1}, Lcom/iMe/storage/data/network/model/request/crypto/donations/GetDonationTransactionsRequest;-><init>(Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;)V
 
-    .line 92
-    new-instance p5, Lcom/iMe/storage/data/network/model/request/crypto/donations/GetDonationTransactionsRequest;
-
-    invoke-direct {p5, p3, p4, p2, p1}, Lcom/iMe/storage/data/network/model/request/crypto/donations/GetDonationTransactionsRequest;-><init>(Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;)V
-
-    .line 99
-    iget-object p1, p0, Lcom/iMe/storage/data/repository/crypto/donations/DonationsRepositoryImpl;->donationsApi:Lcom/iMe/storage/data/network/api/own/DonationsApi;
-
-    .line 100
-    invoke-interface {p1, p5}, Lcom/iMe/storage/data/network/api/own/DonationsApi;->getDonationTransactions(Lcom/iMe/storage/data/network/model/request/crypto/donations/GetDonationTransactionsRequest;)Lio/reactivex/Observable;
+    .line 90
+    invoke-interface {v0, p2}, Lcom/iMe/storage/data/network/api/own/DonationsApi;->getDonationTransactions(Lcom/iMe/storage/data/network/model/request/crypto/donations/GetDonationTransactionsRequest;)Lio/reactivex/Observable;
 
     move-result-object p1
 
-    .line 101
+    .line 98
     iget-object p2, p0, Lcom/iMe/storage/data/repository/crypto/donations/DonationsRepositoryImpl;->firebaseErrorHandler:Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;
 
     .line 70
@@ -483,7 +493,7 @@
 
     invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 102
+    .line 99
     iget-object p2, p0, Lcom/iMe/storage/data/repository/crypto/donations/DonationsRepositoryImpl;->errorHandler:Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler;
 
     .line 26
@@ -506,12 +516,12 @@
     return-object p1
 .end method
 
-.method public getDonationWalletBalance(JLcom/iMe/storage/domain/model/crypto/NetworkType;)Lio/reactivex/Observable;
-    .locals 1
+.method public getDonationWalletBalance(JLjava/lang/String;)Lio/reactivex/Observable;
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(J",
-            "Lcom/iMe/storage/domain/model/crypto/NetworkType;",
+            "Ljava/lang/String;",
             ")",
             "Lio/reactivex/Observable<",
             "Lcom/iMe/storage/domain/model/Result<",
@@ -520,31 +530,26 @@
         }
     .end annotation
 
-    const-string v0, "networkType"
+    const-string v0, "networkId"
 
     invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 74
-    new-instance v0, Lcom/iMe/storage/data/network/model/request/crypto/donations/GetDonationWalletBalanceRequest;
+    iget-object v0, p0, Lcom/iMe/storage/data/repository/crypto/donations/DonationsRepositoryImpl;->donationsApi:Lcom/iMe/storage/data/network/api/own/DonationsApi;
 
-    .line 75
+    .line 76
+    new-instance v1, Lcom/iMe/storage/data/network/model/request/crypto/donations/GetDonationWalletBalanceRequest;
+
+    .line 77
     invoke-static {p1, p2}, Ljava/lang/String;->valueOf(J)Ljava/lang/String;
 
     move-result-object p1
 
     .line 76
-    invoke-virtual {p3}, Ljava/lang/Enum;->name()Ljava/lang/String;
+    invoke-direct {v1, p1, p3}, Lcom/iMe/storage/data/network/model/request/crypto/donations/GetDonationWalletBalanceRequest;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
-    move-result-object p2
-
-    .line 74
-    invoke-direct {v0, p1, p2}, Lcom/iMe/storage/data/network/model/request/crypto/donations/GetDonationWalletBalanceRequest;-><init>(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 79
-    iget-object p1, p0, Lcom/iMe/storage/data/repository/crypto/donations/DonationsRepositoryImpl;->donationsApi:Lcom/iMe/storage/data/network/api/own/DonationsApi;
-
-    .line 80
-    invoke-interface {p1, v0}, Lcom/iMe/storage/data/network/api/own/DonationsApi;->getDonationWalletBalance(Lcom/iMe/storage/data/network/model/request/crypto/donations/GetDonationWalletBalanceRequest;)Lio/reactivex/Observable;
+    .line 75
+    invoke-interface {v0, v1}, Lcom/iMe/storage/data/network/api/own/DonationsApi;->getDonationWalletBalance(Lcom/iMe/storage/data/network/model/request/crypto/donations/GetDonationWalletBalanceRequest;)Lio/reactivex/Observable;
 
     move-result-object p1
 
@@ -568,7 +573,7 @@
 
     invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 88
+    .line 86
     iget-object p2, p0, Lcom/iMe/storage/data/repository/crypto/donations/DonationsRepositoryImpl;->errorHandler:Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler;
 
     .line 26
@@ -592,7 +597,7 @@
 .end method
 
 .method public isDonationsEnabled(J)Lio/reactivex/Observable;
-    .locals 1
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(J)",
@@ -603,24 +608,23 @@
         }
     .end annotation
 
-    .line 56
-    new-instance v0, Lcom/iMe/storage/data/network/model/request/crypto/donations/GetDonationInfoRequest;
+    .line 57
+    iget-object v0, p0, Lcom/iMe/storage/data/repository/crypto/donations/DonationsRepositoryImpl;->donationsApi:Lcom/iMe/storage/data/network/api/own/DonationsApi;
+
+    .line 58
+    new-instance v1, Lcom/iMe/storage/data/network/model/request/crypto/donations/GetDonationInfoRequest;
 
     invoke-static {p1, p2}, Ljava/lang/String;->valueOf(J)Ljava/lang/String;
 
     move-result-object p1
 
-    invoke-direct {v0, p1}, Lcom/iMe/storage/data/network/model/request/crypto/donations/GetDonationInfoRequest;-><init>(Ljava/lang/String;)V
+    invoke-direct {v1, p1}, Lcom/iMe/storage/data/network/model/request/crypto/donations/GetDonationInfoRequest;-><init>(Ljava/lang/String;)V
 
-    .line 58
-    iget-object p1, p0, Lcom/iMe/storage/data/repository/crypto/donations/DonationsRepositoryImpl;->donationsApi:Lcom/iMe/storage/data/network/api/own/DonationsApi;
-
-    .line 59
-    invoke-interface {p1, v0}, Lcom/iMe/storage/data/network/api/own/DonationsApi;->isDonationsEnable(Lcom/iMe/storage/data/network/model/request/crypto/donations/GetDonationInfoRequest;)Lio/reactivex/Observable;
+    invoke-interface {v0, v1}, Lcom/iMe/storage/data/network/api/own/DonationsApi;->isDonationsEnable(Lcom/iMe/storage/data/network/model/request/crypto/donations/GetDonationInfoRequest;)Lio/reactivex/Observable;
 
     move-result-object p1
 
-    .line 60
+    .line 59
     iget-object p2, p0, Lcom/iMe/storage/data/repository/crypto/donations/DonationsRepositoryImpl;->firebaseErrorHandler:Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;
 
     .line 70
@@ -640,7 +644,7 @@
 
     invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 61
+    .line 60
     iget-object p2, p0, Lcom/iMe/storage/data/repository/crypto/donations/DonationsRepositoryImpl;->errorHandler:Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler;
 
     .line 26
@@ -664,7 +668,7 @@
 .end method
 
 .method public sendDonation(JLcom/iMe/storage/domain/model/crypto/send/TransferArgs;)Lio/reactivex/Observable;
-    .locals 3
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(J",
@@ -681,28 +685,22 @@
 
     invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 106
+    .line 102
     iget-object v0, p0, Lcom/iMe/storage/data/repository/crypto/donations/DonationsRepositoryImpl;->transferDataSourceFactory:Lcom/iMe/storage/data/datasource/transfer/WalletTransferDataSourceFactory;
 
-    .line 107
-    sget-object v1, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;->LIME:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
+    .line 103
+    sget-object v1, Lcom/iMe/storage/domain/model/crypto/BlockchainType;->EVM:Lcom/iMe/storage/domain/model/crypto/BlockchainType;
 
-    sget-object v2, Lcom/iMe/storage/domain/model/crypto/BlockchainType;->EVM:Lcom/iMe/storage/domain/model/crypto/BlockchainType;
-
-    invoke-static {v1, v2}, Lkotlin/TuplesKt;->to(Ljava/lang/Object;Ljava/lang/Object;)Lkotlin/Pair;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Lcom/iMe/storage/data/datasource/transfer/WalletTransferDataSourceFactory;->getDataSource(Lkotlin/Pair;)Lcom/iMe/storage/data/datasource/transfer/WalletTransferDataSource;
+    invoke-virtual {v0, v1}, Lcom/iMe/storage/data/datasource/transfer/WalletTransferDataSourceFactory;->getDataSource(Lcom/iMe/storage/domain/model/crypto/BlockchainType;)Lcom/iMe/storage/data/datasource/transfer/WalletTransferDataSource;
 
     move-result-object v0
 
-    .line 108
+    .line 104
     invoke-interface {v0, p3}, Lcom/iMe/storage/data/datasource/base/SignTransactionDatasource;->sign(Ljava/lang/Object;)Lio/reactivex/Observable;
 
     move-result-object p3
 
-    .line 109
+    .line 105
     new-instance v0, Lcom/iMe/storage/data/repository/crypto/donations/DonationsRepositoryImpl$sendDonation$1;
 
     invoke-direct {v0, p0, p1, p2}, Lcom/iMe/storage/data/repository/crypto/donations/DonationsRepositoryImpl$sendDonation$1;-><init>(Lcom/iMe/storage/data/repository/crypto/donations/DonationsRepositoryImpl;J)V
@@ -719,7 +717,7 @@
 
     invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 119
+    .line 115
     iget-object p2, p0, Lcom/iMe/storage/data/repository/crypto/donations/DonationsRepositoryImpl;->errorHandler:Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler;
 
     .line 26

@@ -42,7 +42,7 @@ public final class NumberTypeAdapter extends TypeAdapter<Number> {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.google.gson.internal.bind.NumberTypeAdapter$2 */
     /* loaded from: classes3.dex */
-    public static /* synthetic */ class C11372 {
+    public static /* synthetic */ class C11422 {
         static final /* synthetic */ int[] $SwitchMap$com$google$gson$stream$JsonToken;
 
         static {
@@ -67,7 +67,7 @@ public final class NumberTypeAdapter extends TypeAdapter<Number> {
     @Override // com.google.gson.TypeAdapter
     public Number read(JsonReader jsonReader) throws IOException {
         JsonToken peek = jsonReader.peek();
-        int i = C11372.$SwitchMap$com$google$gson$stream$JsonToken[peek.ordinal()];
+        int i = C11422.$SwitchMap$com$google$gson$stream$JsonToken[peek.ordinal()];
         if (i == 1) {
             jsonReader.nextNull();
             return null;

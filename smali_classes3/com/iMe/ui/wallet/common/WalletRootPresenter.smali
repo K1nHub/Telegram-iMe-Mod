@@ -13,7 +13,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nWalletRootPresenter.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WalletRootPresenter.kt\ncom/iMe/ui/wallet/common/WalletRootPresenter\n+ 2 RxEventBus.kt\ncom/iMe/storage/domain/utils/rx/RxEventBus\n+ 3 RxExt.kt\ncom/iMe/utils/extentions/rx/RxExtKt\n*L\n1#1,86:1\n16#2,3:87\n39#3,8:90\n*S KotlinDebug\n*F\n+ 1 WalletRootPresenter.kt\ncom/iMe/ui/wallet/common/WalletRootPresenter\n*L\n53#1:87,3\n54#1:90,8\n*E\n"
+    value = "SMAP\nWalletRootPresenter.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WalletRootPresenter.kt\ncom/iMe/ui/wallet/common/WalletRootPresenter\n+ 2 RxEventBus.kt\ncom/iMe/storage/domain/utils/rx/RxEventBus\n+ 3 RxExt.kt\ncom/iMe/utils/extentions/rx/RxExtKt\n*L\n1#1,96:1\n16#2,3:97\n42#3,12:100\n*S KotlinDebug\n*F\n+ 1 WalletRootPresenter.kt\ncom/iMe/ui/wallet/common/WalletRootPresenter\n*L\n55#1:97,3\n56#1:100,12\n*E\n"
 .end annotation
 
 .annotation runtime Lmoxy/InjectViewState;
@@ -58,7 +58,7 @@
     .line 20
     iput-object p3, p0, Lcom/iMe/ui/wallet/common/WalletRootPresenter;->rxEventBus:Lcom/iMe/storage/domain/utils/rx/RxEventBus;
 
-    .line 24
+    .line 25
     sget p1, Lorg/telegram/messenger/R$id;->wallet_root_bottom_navigation_home:I
 
     iput p1, p0, Lcom/iMe/ui/wallet/common/WalletRootPresenter;->selectedTabId:I
@@ -87,7 +87,7 @@
 .method private final isDefaultTabSelected()Z
     .locals 2
 
-    .line 49
+    .line 51
     iget v0, p0, Lcom/iMe/ui/wallet/common/WalletRootPresenter;->selectedTabId:I
 
     sget v1, Lorg/telegram/messenger/R$id;->wallet_root_bottom_navigation_home:I
@@ -108,7 +108,7 @@
 .method private final listenEvents()V
     .locals 4
 
-    .line 52
+    .line 54
     iget-object v0, p0, Lcom/iMe/ui/wallet/common/WalletRootPresenter;->rxEventBus:Lcom/iMe/storage/domain/utils/rx/RxEventBus;
 
     .line 16
@@ -140,7 +140,7 @@
 
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 44
+    .line 47
     new-instance v1, Lcom/iMe/ui/wallet/common/WalletRootPresenter$listenEvents$$inlined$subscribeWithErrorHandle$default$1;
 
     invoke-direct {v1, p0}, Lcom/iMe/ui/wallet/common/WalletRootPresenter$listenEvents$$inlined$subscribeWithErrorHandle$default$1;-><init>(Lcom/iMe/ui/wallet/common/WalletRootPresenter;)V
@@ -155,19 +155,19 @@
 
     invoke-direct {v1, v3}, Lcom/iMe/ui/wallet/common/WalletRootPresenter$listenEvents$$inlined$subscribeWithErrorHandle$default$2;-><init>(Lcom/iMe/ui/base/mvp/base/BaseView;)V
 
-    .line 46
+    .line 49
     new-instance v3, Lcom/iMe/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
 
     invoke-direct {v3, v1}, Lcom/iMe/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;-><init>(Lkotlin/jvm/functions/Function1;)V
 
-    .line 44
+    .line 47
     invoke-virtual {v0, v2, v3}, Lio/reactivex/Observable;->subscribe(Lio/reactivex/functions/Consumer;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
 
     move-result-object v0
 
-    const-string v1, "viewState: BaseView? = n\u2026  onError.invoke()\n    })"
+    const-string v1, "viewState: BaseView? = n\u2026Error.invoke()\n        })"
 
-    .line 46
+    .line 49
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     return-void
@@ -176,7 +176,7 @@
 .method private final setupNavigation()V
     .locals 5
 
-    .line 76
+    .line 86
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
     move-result-object v0
@@ -187,7 +187,7 @@
 
     new-array v1, v1, [Lkotlin/Pair;
 
-    .line 78
+    .line 88
     sget v2, Lorg/telegram/messenger/R$id;->wallet_root_bottom_navigation_home:I
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -204,7 +204,7 @@
 
     aput-object v2, v1, v4
 
-    .line 79
+    .line 89
     sget v2, Lorg/telegram/messenger/R$id;->wallet_root_bottom_navigation_exchange:I
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -229,7 +229,7 @@
 
     aput-object v2, v1, v4
 
-    .line 80
+    .line 90
     sget v2, Lorg/telegram/messenger/R$id;->wallet_root_bottom_navigation_settings:I
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -244,12 +244,12 @@
 
     aput-object v2, v1, v3
 
-    .line 77
+    .line 87
     invoke-static {v1}, Lkotlin/collections/MapsKt;->hashMapOf([Lkotlin/Pair;)Ljava/util/HashMap;
 
     move-result-object v1
 
-    .line 76
+    .line 86
     invoke-interface {v0, v1}, Lcom/iMe/ui/wallet/common/WalletRootView;->setupNavigationTabsEnabled(Ljava/util/HashMap;)V
 
     return-void
@@ -258,21 +258,21 @@
 .method private final updateWalletConnectItemVisibility()V
     .locals 3
 
-    .line 68
+    .line 78
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
     move-result-object v0
 
     check-cast v0, Lcom/iMe/ui/wallet/common/WalletRootView;
 
-    .line 69
+    .line 79
     invoke-direct {p0}, Lcom/iMe/ui/wallet/common/WalletRootPresenter;->isDefaultTabSelected()Z
 
     move-result v1
 
     if-eqz v1, :cond_0
 
-    .line 70
+    .line 80
     iget-object v1, p0, Lcom/iMe/ui/wallet/common/WalletRootPresenter;->cryptoPreferenceHelper:Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
 
     invoke-interface {v1}, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;->getCurrentBlockchainType()Lcom/iMe/storage/domain/model/crypto/BlockchainType;
@@ -283,7 +283,7 @@
 
     if-ne v1, v2, :cond_0
 
-    .line 71
+    .line 81
     iget-object v1, p0, Lcom/iMe/ui/wallet/common/WalletRootPresenter;->cryptoAccessManager:Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;
 
     invoke-interface {v1}, Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;->isCurrentBlockchainWalletCreated()Z
@@ -299,7 +299,7 @@
     :cond_0
     const/4 v1, 0x0
 
-    .line 68
+    .line 78
     :goto_0
     invoke-interface {v0, v1}, Lcom/iMe/ui/wallet/common/WalletRootView;->showWalletConnectItem(Z)V
 
@@ -311,13 +311,13 @@
 .method protected onFirstViewAttach()V
     .locals 1
 
-    .line 40
+    .line 41
     invoke-direct {p0}, Lcom/iMe/ui/wallet/common/WalletRootPresenter;->listenEvents()V
 
-    .line 41
+    .line 42
     invoke-direct {p0}, Lcom/iMe/ui/wallet/common/WalletRootPresenter;->setupNavigation()V
 
-    .line 42
+    .line 43
     sget v0, Lorg/telegram/messenger/R$id;->wallet_root_bottom_navigation_home:I
 
     invoke-virtual {p0, v0}, Lcom/iMe/ui/wallet/common/WalletRootPresenter;->selectTab(I)V
@@ -328,10 +328,10 @@
 .method public final selectTab(I)V
     .locals 1
 
-    .line 29
+    .line 30
     iput p1, p0, Lcom/iMe/ui/wallet/common/WalletRootPresenter;->selectedTabId:I
 
-    .line 30
+    .line 31
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
     move-result-object p1
@@ -342,7 +342,7 @@
 
     invoke-interface {p1, v0}, Lcom/iMe/ui/wallet/common/WalletRootView;->onTabSelected(I)V
 
-    .line 31
+    .line 32
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
     move-result-object p1
@@ -355,7 +355,7 @@
 
     invoke-interface {p1, v0}, Lcom/iMe/ui/wallet/common/WalletRootView;->showNotificationItem(Z)V
 
-    .line 32
+    .line 33
     invoke-direct {p0}, Lcom/iMe/ui/wallet/common/WalletRootPresenter;->updateWalletConnectItemVisibility()V
 
     return-void

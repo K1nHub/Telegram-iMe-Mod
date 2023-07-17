@@ -25,7 +25,7 @@
 
 .field private isRead:Z
 
-.field private final networkType:Lcom/iMe/storage/domain/model/crypto/NetworkType;
+.field private final networkId:Ljava/lang/String;
 
 .field private final profitAsToken:Ljava/lang/String;
 
@@ -43,7 +43,7 @@
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;ZLcom/iMe/storage/domain/model/notification/NotificationType;Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/domain/model/crypto/NetworkType;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+.method public constructor <init>(Ljava/lang/String;ZLcom/iMe/storage/domain/model/notification/NotificationType;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
     .locals 17
 
     move-object/from16 v8, p0
@@ -88,7 +88,7 @@
 
     invoke-static {v12, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "networkType"
+    const-string v0, "networkId"
 
     invoke-static {v13, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -138,64 +138,64 @@
 
     move-object/from16 v7, v16
 
-    .line 146
-    invoke-direct/range {v0 .. v7}, Lcom/iMe/storage/domain/model/notification/Notification;-><init>(Ljava/lang/String;ZLcom/iMe/storage/domain/model/notification/NotificationType;Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/domain/model/crypto/NetworkType;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
+    .line 144
+    invoke-direct/range {v0 .. v7}, Lcom/iMe/storage/domain/model/notification/Notification;-><init>(Ljava/lang/String;ZLcom/iMe/storage/domain/model/notification/NotificationType;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
 
-    .line 133
+    .line 131
     iput-object v9, v8, Lcom/iMe/storage/domain/model/notification/Notification$StakingFinished;->id:Ljava/lang/String;
 
     move/from16 v0, p2
 
-    .line 134
+    .line 132
     iput-boolean v0, v8, Lcom/iMe/storage/domain/model/notification/Notification$StakingFinished;->isRead:Z
 
-    .line 135
+    .line 133
     iput-object v10, v8, Lcom/iMe/storage/domain/model/notification/Notification$StakingFinished;->type:Lcom/iMe/storage/domain/model/notification/NotificationType;
 
-    .line 136
+    .line 134
     iput-object v11, v8, Lcom/iMe/storage/domain/model/notification/Notification$StakingFinished;->date:Ljava/lang/String;
 
-    .line 137
+    .line 135
     iput-object v12, v8, Lcom/iMe/storage/domain/model/notification/Notification$StakingFinished;->userId:Ljava/lang/String;
 
-    .line 138
-    iput-object v13, v8, Lcom/iMe/storage/domain/model/notification/Notification$StakingFinished;->networkType:Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    .line 136
+    iput-object v13, v8, Lcom/iMe/storage/domain/model/notification/Notification$StakingFinished;->networkId:Ljava/lang/String;
 
-    .line 139
+    .line 137
     iput-object v14, v8, Lcom/iMe/storage/domain/model/notification/Notification$StakingFinished;->stakingId:Ljava/lang/String;
 
-    .line 140
+    .line 138
     iput-object v15, v8, Lcom/iMe/storage/domain/model/notification/Notification$StakingFinished;->stakingName:Ljava/lang/String;
 
     move-object/from16 v0, p9
 
-    .line 141
+    .line 139
     iput-object v0, v8, Lcom/iMe/storage/domain/model/notification/Notification$StakingFinished;->stakingToken:Ljava/lang/String;
 
     move-object/from16 v0, p10
 
-    .line 142
+    .line 140
     iput-object v0, v8, Lcom/iMe/storage/domain/model/notification/Notification$StakingFinished;->debtAsToken:Ljava/lang/String;
 
     move-object/from16 v0, p11
 
-    .line 143
+    .line 141
     iput-object v0, v8, Lcom/iMe/storage/domain/model/notification/Notification$StakingFinished;->debtAsUsd:Ljava/lang/String;
 
     move-object/from16 v0, p12
 
-    .line 144
+    .line 142
     iput-object v0, v8, Lcom/iMe/storage/domain/model/notification/Notification$StakingFinished;->profitAsToken:Ljava/lang/String;
 
     move-object/from16 v0, p13
 
-    .line 145
+    .line 143
     iput-object v0, v8, Lcom/iMe/storage/domain/model/notification/Notification$StakingFinished;->profitAsUsd:Ljava/lang/String;
 
     return-void
 .end method
 
-.method public static synthetic copy$default(Lcom/iMe/storage/domain/model/notification/Notification$StakingFinished;Ljava/lang/String;ZLcom/iMe/storage/domain/model/notification/NotificationType;Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/domain/model/crypto/NetworkType;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Object;)Lcom/iMe/storage/domain/model/notification/Notification$StakingFinished;
+.method public static synthetic copy$default(Lcom/iMe/storage/domain/model/notification/Notification$StakingFinished;Ljava/lang/String;ZLcom/iMe/storage/domain/model/notification/NotificationType;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Object;)Lcom/iMe/storage/domain/model/notification/Notification$StakingFinished;
     .locals 14
 
     move-object v0, p0
@@ -276,7 +276,7 @@
 
     if-eqz v7, :cond_5
 
-    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/notification/Notification$StakingFinished;->getNetworkType()Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/notification/Notification$StakingFinished;->getNetworkId()Ljava/lang/String;
 
     move-result-object v7
 
@@ -396,7 +396,7 @@
 
     move-object/from16 p13, v1
 
-    invoke-virtual/range {p0 .. p13}, Lcom/iMe/storage/domain/model/notification/Notification$StakingFinished;->copy(Ljava/lang/String;ZLcom/iMe/storage/domain/model/notification/NotificationType;Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/domain/model/crypto/NetworkType;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lcom/iMe/storage/domain/model/notification/Notification$StakingFinished;
+    invoke-virtual/range {p0 .. p13}, Lcom/iMe/storage/domain/model/notification/Notification$StakingFinished;->copy(Ljava/lang/String;ZLcom/iMe/storage/domain/model/notification/NotificationType;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lcom/iMe/storage/domain/model/notification/Notification$StakingFinished;
 
     move-result-object v0
 
@@ -487,10 +487,10 @@
     return-object v0
 .end method
 
-.method public final component6()Lcom/iMe/storage/domain/model/crypto/NetworkType;
+.method public final component6()Ljava/lang/String;
     .locals 1
 
-    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/notification/Notification$StakingFinished;->getNetworkType()Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/notification/Notification$StakingFinished;->getNetworkId()Ljava/lang/String;
 
     move-result-object v0
 
@@ -521,7 +521,7 @@
     return-object v0
 .end method
 
-.method public final copy(Ljava/lang/String;ZLcom/iMe/storage/domain/model/notification/NotificationType;Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/domain/model/crypto/NetworkType;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lcom/iMe/storage/domain/model/notification/Notification$StakingFinished;
+.method public final copy(Ljava/lang/String;ZLcom/iMe/storage/domain/model/notification/NotificationType;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lcom/iMe/storage/domain/model/notification/Notification$StakingFinished;
     .locals 15
 
     const-string v0, "id"
@@ -548,7 +548,7 @@
 
     invoke-static {v6, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "networkType"
+    const-string v0, "networkId"
 
     move-object/from16 v7, p6
 
@@ -602,7 +602,7 @@
 
     move/from16 v3, p2
 
-    invoke-direct/range {v1 .. v14}, Lcom/iMe/storage/domain/model/notification/Notification$StakingFinished;-><init>(Ljava/lang/String;ZLcom/iMe/storage/domain/model/notification/NotificationType;Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/domain/model/crypto/NetworkType;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct/range {v1 .. v14}, Lcom/iMe/storage/domain/model/notification/Notification$StakingFinished;-><init>(Ljava/lang/String;ZLcom/iMe/storage/domain/model/notification/NotificationType;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
     return-object v0
 .end method
@@ -705,15 +705,19 @@
     return v2
 
     :cond_6
-    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/notification/Notification$StakingFinished;->getNetworkType()Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/notification/Notification$StakingFinished;->getNetworkId()Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/notification/Notification$StakingFinished;->getNetworkType()Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/notification/Notification$StakingFinished;->getNetworkId()Ljava/lang/String;
 
     move-result-object v3
 
-    if-eq v1, v3, :cond_7
+    invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_7
 
     return v2
 
@@ -815,7 +819,7 @@
 .method public getDate()Ljava/lang/String;
     .locals 1
 
-    .line 136
+    .line 134
     iget-object v0, p0, Lcom/iMe/storage/domain/model/notification/Notification$StakingFinished;->date:Ljava/lang/String;
 
     return-object v0
@@ -824,7 +828,7 @@
 .method public final getDebtAsToken()Ljava/lang/String;
     .locals 1
 
-    .line 142
+    .line 140
     iget-object v0, p0, Lcom/iMe/storage/domain/model/notification/Notification$StakingFinished;->debtAsToken:Ljava/lang/String;
 
     return-object v0
@@ -833,7 +837,7 @@
 .method public final getDebtAsUsd()Ljava/lang/String;
     .locals 1
 
-    .line 143
+    .line 141
     iget-object v0, p0, Lcom/iMe/storage/domain/model/notification/Notification$StakingFinished;->debtAsUsd:Ljava/lang/String;
 
     return-object v0
@@ -842,17 +846,17 @@
 .method public getId()Ljava/lang/String;
     .locals 1
 
-    .line 133
+    .line 131
     iget-object v0, p0, Lcom/iMe/storage/domain/model/notification/Notification$StakingFinished;->id:Ljava/lang/String;
 
     return-object v0
 .end method
 
-.method public getNetworkType()Lcom/iMe/storage/domain/model/crypto/NetworkType;
+.method public getNetworkId()Ljava/lang/String;
     .locals 1
 
-    .line 138
-    iget-object v0, p0, Lcom/iMe/storage/domain/model/notification/Notification$StakingFinished;->networkType:Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    .line 136
+    iget-object v0, p0, Lcom/iMe/storage/domain/model/notification/Notification$StakingFinished;->networkId:Ljava/lang/String;
 
     return-object v0
 .end method
@@ -860,7 +864,7 @@
 .method public final getProfitAsToken()Ljava/lang/String;
     .locals 1
 
-    .line 144
+    .line 142
     iget-object v0, p0, Lcom/iMe/storage/domain/model/notification/Notification$StakingFinished;->profitAsToken:Ljava/lang/String;
 
     return-object v0
@@ -869,7 +873,7 @@
 .method public final getProfitAsUsd()Ljava/lang/String;
     .locals 1
 
-    .line 145
+    .line 143
     iget-object v0, p0, Lcom/iMe/storage/domain/model/notification/Notification$StakingFinished;->profitAsUsd:Ljava/lang/String;
 
     return-object v0
@@ -878,7 +882,7 @@
 .method public final getStakingId()Ljava/lang/String;
     .locals 1
 
-    .line 139
+    .line 137
     iget-object v0, p0, Lcom/iMe/storage/domain/model/notification/Notification$StakingFinished;->stakingId:Ljava/lang/String;
 
     return-object v0
@@ -887,7 +891,7 @@
 .method public final getStakingName()Ljava/lang/String;
     .locals 1
 
-    .line 140
+    .line 138
     iget-object v0, p0, Lcom/iMe/storage/domain/model/notification/Notification$StakingFinished;->stakingName:Ljava/lang/String;
 
     return-object v0
@@ -896,7 +900,7 @@
 .method public final getStakingToken()Ljava/lang/String;
     .locals 1
 
-    .line 141
+    .line 139
     iget-object v0, p0, Lcom/iMe/storage/domain/model/notification/Notification$StakingFinished;->stakingToken:Ljava/lang/String;
 
     return-object v0
@@ -905,7 +909,7 @@
 .method public getType()Lcom/iMe/storage/domain/model/notification/NotificationType;
     .locals 1
 
-    .line 135
+    .line 133
     iget-object v0, p0, Lcom/iMe/storage/domain/model/notification/Notification$StakingFinished;->type:Lcom/iMe/storage/domain/model/notification/NotificationType;
 
     return-object v0
@@ -914,7 +918,7 @@
 .method public getUserId()Ljava/lang/String;
     .locals 1
 
-    .line 137
+    .line 135
     iget-object v0, p0, Lcom/iMe/storage/domain/model/notification/Notification$StakingFinished;->userId:Ljava/lang/String;
 
     return-object v0
@@ -982,11 +986,11 @@
 
     mul-int/lit8 v0, v0, 0x1f
 
-    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/notification/Notification$StakingFinished;->getNetworkType()Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/notification/Notification$StakingFinished;->getNetworkId()Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-virtual {v1}, Ljava/lang/Enum;->hashCode()I
+    invoke-virtual {v1}, Ljava/lang/String;->hashCode()I
 
     move-result v1
 
@@ -1068,7 +1072,7 @@
 .method public isRead()Z
     .locals 1
 
-    .line 134
+    .line 132
     iget-boolean v0, p0, Lcom/iMe/storage/domain/model/notification/Notification$StakingFinished;->isRead:Z
 
     return v0
@@ -1077,7 +1081,7 @@
 .method public setRead(Z)V
     .locals 0
 
-    .line 134
+    .line 132
     iput-boolean p1, p0, Lcom/iMe/storage/domain/model/notification/Notification$StakingFinished;->isRead:Z
 
     return-void
@@ -1140,15 +1144,15 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v1, ", networkType="
+    const-string v1, ", networkId="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/notification/Notification$StakingFinished;->getNetworkType()Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/notification/Notification$StakingFinished;->getNetworkId()Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     const-string v1, ", stakingId="
 

@@ -192,13 +192,13 @@ class SampleDataQueue {
         boolean z = (b & 128) != 0;
         int i2 = b & Byte.MAX_VALUE;
         CryptoInfo cryptoInfo = decoderInputBuffer.cryptoInfo;
-        byte[] bArr = cryptoInfo.f107iv;
+        byte[] bArr = cryptoInfo.f189iv;
         if (bArr == null) {
-            cryptoInfo.f107iv = new byte[16];
+            cryptoInfo.f189iv = new byte[16];
         } else {
             Arrays.fill(bArr, (byte) 0);
         }
-        AllocationNode readData2 = readData(readData, j2, cryptoInfo.f107iv, i2);
+        AllocationNode readData2 = readData(readData, j2, cryptoInfo.f189iv, i2);
         long j3 = j2 + i2;
         if (z) {
             parsableByteArray.reset(2);
@@ -232,7 +232,7 @@ class SampleDataQueue {
             iArr4[0] = sampleExtrasHolder.size - ((int) (j3 - sampleExtrasHolder.offset));
         }
         TrackOutput.CryptoData cryptoData = (TrackOutput.CryptoData) Util.castNonNull(sampleExtrasHolder.cryptoData);
-        cryptoInfo.set(i3, iArr2, iArr4, cryptoData.encryptionKey, cryptoInfo.f107iv, cryptoData.cryptoMode, cryptoData.encryptedBlocks, cryptoData.clearBlocks);
+        cryptoInfo.set(i3, iArr2, iArr4, cryptoData.encryptionKey, cryptoInfo.f189iv, cryptoData.cryptoMode, cryptoData.encryptedBlocks, cryptoData.clearBlocks);
         long j4 = sampleExtrasHolder.offset;
         int i6 = (int) (j3 - j4);
         sampleExtrasHolder.offset = j4 + i6;

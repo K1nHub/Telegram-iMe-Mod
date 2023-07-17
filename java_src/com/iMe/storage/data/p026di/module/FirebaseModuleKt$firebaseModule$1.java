@@ -47,39 +47,39 @@ final class FirebaseModuleKt$firebaseModule$1 extends Lambda implements Function
         List emptyList3;
         List emptyList4;
         Intrinsics.checkNotNullParameter(module, "$this$module");
-        C16531 c16531 = C16531.INSTANCE;
+        C16631 c16631 = C16631.INSTANCE;
         ScopeRegistry.Companion companion = ScopeRegistry.Companion;
         StringQualifier rootScopeQualifier = companion.getRootScopeQualifier();
         Kind kind = Kind.Singleton;
         emptyList = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier, Reflection.getOrCreateKotlinClass(FirebaseDynamicLinks.class), null, c16531, kind, emptyList));
+        SingleInstanceFactory<?> singleInstanceFactory = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier, Reflection.getOrCreateKotlinClass(FirebaseDynamicLinks.class), null, c16631, kind, emptyList));
         module.indexPrimaryType(singleInstanceFactory);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory);
         }
         new KoinDefinition(module, singleInstanceFactory);
-        C16542 c16542 = C16542.INSTANCE;
+        C16642 c16642 = C16642.INSTANCE;
         StringQualifier rootScopeQualifier2 = companion.getRootScopeQualifier();
         emptyList2 = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory2 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier2, Reflection.getOrCreateKotlinClass(FirebaseRemoteConfig.class), null, c16542, kind, emptyList2));
+        SingleInstanceFactory<?> singleInstanceFactory2 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier2, Reflection.getOrCreateKotlinClass(FirebaseRemoteConfig.class), null, c16642, kind, emptyList2));
         module.indexPrimaryType(singleInstanceFactory2);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory2);
         }
         new KoinDefinition(module, singleInstanceFactory2);
-        C16553 c16553 = C16553.INSTANCE;
+        C16653 c16653 = C16653.INSTANCE;
         StringQualifier rootScopeQualifier3 = companion.getRootScopeQualifier();
         emptyList3 = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory3 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier3, Reflection.getOrCreateKotlinClass(FirebaseAnalytics.class), null, c16553, kind, emptyList3));
+        SingleInstanceFactory<?> singleInstanceFactory3 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier3, Reflection.getOrCreateKotlinClass(FirebaseAnalytics.class), null, c16653, kind, emptyList3));
         module.indexPrimaryType(singleInstanceFactory3);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory3);
         }
         new KoinDefinition(module, singleInstanceFactory3);
-        C16564 c16564 = C16564.INSTANCE;
+        C16664 c16664 = C16664.INSTANCE;
         StringQualifier rootScopeQualifier4 = companion.getRootScopeQualifier();
         emptyList4 = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory4 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier4, Reflection.getOrCreateKotlinClass(FirebaseApp.class), null, c16564, kind, emptyList4));
+        SingleInstanceFactory<?> singleInstanceFactory4 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier4, Reflection.getOrCreateKotlinClass(FirebaseApp.class), null, c16664, kind, emptyList4));
         module.indexPrimaryType(singleInstanceFactory4);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory4);
@@ -91,10 +91,10 @@ final class FirebaseModuleKt$firebaseModule$1 extends Lambda implements Function
     /* compiled from: FirebaseModule.kt */
     /* renamed from: com.iMe.storage.data.di.module.FirebaseModuleKt$firebaseModule$1$3 */
     /* loaded from: classes3.dex */
-    public static final class C16553 extends Lambda implements Function2<Scope, ParametersHolder, FirebaseAnalytics> {
-        public static final C16553 INSTANCE = new C16553();
+    public static final class C16653 extends Lambda implements Function2<Scope, ParametersHolder, FirebaseAnalytics> {
+        public static final C16653 INSTANCE = new C16653();
 
-        C16553() {
+        C16653() {
             super(2);
         }
 
@@ -110,10 +110,10 @@ final class FirebaseModuleKt$firebaseModule$1 extends Lambda implements Function
     /* compiled from: FirebaseModule.kt */
     /* renamed from: com.iMe.storage.data.di.module.FirebaseModuleKt$firebaseModule$1$4 */
     /* loaded from: classes3.dex */
-    public static final class C16564 extends Lambda implements Function2<Scope, ParametersHolder, FirebaseApp> {
-        public static final C16564 INSTANCE = new C16564();
+    public static final class C16664 extends Lambda implements Function2<Scope, ParametersHolder, FirebaseApp> {
+        public static final C16664 INSTANCE = new C16664();
 
-        C16564() {
+        C16664() {
             super(2);
         }
 
@@ -129,10 +129,10 @@ final class FirebaseModuleKt$firebaseModule$1 extends Lambda implements Function
     /* compiled from: FirebaseModule.kt */
     /* renamed from: com.iMe.storage.data.di.module.FirebaseModuleKt$firebaseModule$1$1 */
     /* loaded from: classes3.dex */
-    public static final class C16531 extends Lambda implements Function2<Scope, ParametersHolder, FirebaseDynamicLinks> {
-        public static final C16531 INSTANCE = new C16531();
+    public static final class C16631 extends Lambda implements Function2<Scope, ParametersHolder, FirebaseDynamicLinks> {
+        public static final C16631 INSTANCE = new C16631();
 
-        C16531() {
+        C16631() {
             super(2);
         }
 
@@ -148,10 +148,10 @@ final class FirebaseModuleKt$firebaseModule$1 extends Lambda implements Function
     /* compiled from: FirebaseModule.kt */
     /* renamed from: com.iMe.storage.data.di.module.FirebaseModuleKt$firebaseModule$1$2 */
     /* loaded from: classes3.dex */
-    public static final class C16542 extends Lambda implements Function2<Scope, ParametersHolder, FirebaseRemoteConfig> {
-        public static final C16542 INSTANCE = new C16542();
+    public static final class C16642 extends Lambda implements Function2<Scope, ParametersHolder, FirebaseRemoteConfig> {
+        public static final C16642 INSTANCE = new C16642();
 
-        C16542() {
+        C16642() {
             super(2);
         }
 

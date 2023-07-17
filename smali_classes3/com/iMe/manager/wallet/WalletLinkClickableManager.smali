@@ -11,7 +11,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nWalletLinkClickableManager.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WalletLinkClickableManager.kt\ncom/iMe/manager/wallet/WalletLinkClickableManager\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 ArraysJVM.kt\nkotlin/collections/ArraysKt__ArraysJVMKt\n*L\n1#1,97:1\n1549#2:98\n1620#2,3:99\n1549#2:104\n1620#2,3:105\n37#3,2:102\n37#3,2:108\n*S KotlinDebug\n*F\n+ 1 WalletLinkClickableManager.kt\ncom/iMe/manager/wallet/WalletLinkClickableManager\n*L\n72#1:98\n72#1:99,3\n87#1:104\n87#1:105,3\n72#1:102,2\n87#1:108,2\n*E\n"
+    value = "SMAP\nWalletLinkClickableManager.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WalletLinkClickableManager.kt\ncom/iMe/manager/wallet/WalletLinkClickableManager\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 ArraysJVM.kt\nkotlin/collections/ArraysKt__ArraysJVMKt\n*L\n1#1,92:1\n1549#2:93\n1620#2,3:94\n1549#2:99\n1620#2,3:100\n37#3,2:97\n37#3,2:103\n*S KotlinDebug\n*F\n+ 1 WalletLinkClickableManager.kt\ncom/iMe/manager/wallet/WalletLinkClickableManager\n*L\n72#1:93\n72#1:94,3\n89#1:99\n89#1:100,3\n72#1:97,2\n89#1:103,2\n*E\n"
 .end annotation
 
 
@@ -105,15 +105,6 @@
     return-object p0
 .end method
 
-.method public static final synthetic access$getTelegramGateway$p(Lcom/iMe/manager/wallet/WalletLinkClickableManager;)Lcom/iMe/storage/domain/gateway/TelegramGateway;
-    .locals 0
-
-    .line 12
-    iget-object p0, p0, Lcom/iMe/manager/wallet/WalletLinkClickableManager;->telegramGateway:Lcom/iMe/storage/domain/gateway/TelegramGateway;
-
-    return-object p0
-.end method
-
 .method public static final synthetic access$getViewState$p(Lcom/iMe/manager/wallet/WalletLinkClickableManager;)Lcom/iMe/manager/wallet/WalletLinkClickableView;
     .locals 0
 
@@ -135,7 +126,7 @@
 .method private final getAddressAlertOptions(Ljava/lang/String;)[Ljava/lang/String;
     .locals 3
 
-    const/4 v0, 0x2
+    const/4 v0, 0x1
 
     new-array v0, v0, [Lkotlin/Pair;
 
@@ -160,51 +151,12 @@
 
     aput-object p1, v0, v1
 
-    .line 78
-    iget-object p1, p0, Lcom/iMe/manager/wallet/WalletLinkClickableManager;->clickableItem:Lcom/iMe/model/wallet/transaction/ClickableItem;
-
-    invoke-interface {p1}, Lcom/iMe/model/wallet/transaction/ClickableItem;->getTokenCode()Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
-
-    move-result-object p1
-
-    invoke-direct {p0, p1}, Lcom/iMe/manager/wallet/WalletLinkClickableManager;->isTransferAvailable(Lcom/iMe/storage/domain/model/wallet/token/TokenCode;)Z
-
-    move-result p1
-
-    if-eqz p1, :cond_0
-
-    iget-object p1, p0, Lcom/iMe/manager/wallet/WalletLinkClickableManager;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
-
-    sget v2, Lorg/telegram/messenger/R$string;->wallet_user_id_dialog_transfer_action:I
-
-    invoke-interface {p1, v2}, Lcom/iMe/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
-
-    move-result-object p1
-
-    new-instance v2, Lcom/iMe/manager/wallet/WalletLinkClickableManager$getAddressAlertOptions$2;
-
-    invoke-direct {v2, p0}, Lcom/iMe/manager/wallet/WalletLinkClickableManager$getAddressAlertOptions$2;-><init>(Lcom/iMe/manager/wallet/WalletLinkClickableManager;)V
-
-    invoke-static {p1, v2}, Lkotlin/TuplesKt;->to(Ljava/lang/Object;Ljava/lang/Object;)Lkotlin/Pair;
-
-    move-result-object p1
-
-    goto :goto_0
-
-    :cond_0
-    const/4 p1, 0x0
-
-    :goto_0
-    const/4 v2, 0x1
-
-    aput-object p1, v0, v2
-
     .line 76
     invoke-static {v0}, Lkotlin/collections/CollectionsKt;->mutableListOf([Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object p1
 
-    .line 85
+    .line 87
     invoke-static {p1}, Lkotlin/collections/CollectionsKt;->filterNotNull(Ljava/lang/Iterable;)Ljava/util/List;
 
     move-result-object p1
@@ -232,12 +184,12 @@
 
     move-result-object p1
 
-    :goto_1
+    :goto_0
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v2
 
-    if-eqz v2, :cond_1
+    if-eqz v2, :cond_0
 
     invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -246,7 +198,7 @@
     .line 1621
     check-cast v2, Lkotlin/Pair;
 
-    .line 87
+    .line 89
     invoke-virtual {v2}, Lkotlin/Pair;->component1()Ljava/lang/Object;
 
     move-result-object v2
@@ -256,9 +208,9 @@
     .line 1621
     invoke-interface {v0, v2}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
-    goto :goto_1
+    goto :goto_0
 
-    :cond_1
+    :cond_0
     new-array p1, v1, [Ljava/lang/String;
 
     .line 38
@@ -333,7 +285,7 @@
 .method private final getUserIdAlertOptions(J)[Ljava/lang/String;
     .locals 5
 
-    const/4 v0, 0x3
+    const/4 v0, 0x2
 
     new-array v0, v0, [Lkotlin/Pair;
 
@@ -386,27 +338,6 @@
     new-instance v4, Lcom/iMe/manager/wallet/WalletLinkClickableManager$getUserIdAlertOptions$2;
 
     invoke-direct {v4, p0, p1, p2}, Lcom/iMe/manager/wallet/WalletLinkClickableManager$getUserIdAlertOptions$2;-><init>(Lcom/iMe/manager/wallet/WalletLinkClickableManager;J)V
-
-    invoke-static {v3, v4}, Lkotlin/TuplesKt;->to(Ljava/lang/Object;Ljava/lang/Object;)Lkotlin/Pair;
-
-    move-result-object v3
-
-    aput-object v3, v0, v1
-
-    const/4 v1, 0x2
-
-    .line 63
-    iget-object v3, p0, Lcom/iMe/manager/wallet/WalletLinkClickableManager;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
-
-    sget v4, Lorg/telegram/messenger/R$string;->wallet_user_id_dialog_transfer_action:I
-
-    invoke-interface {v3, v4}, Lcom/iMe/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
-
-    move-result-object v3
-
-    new-instance v4, Lcom/iMe/manager/wallet/WalletLinkClickableManager$getUserIdAlertOptions$3;
-
-    invoke-direct {v4, p0, p1, p2}, Lcom/iMe/manager/wallet/WalletLinkClickableManager$getUserIdAlertOptions$3;-><init>(Lcom/iMe/manager/wallet/WalletLinkClickableManager;J)V
 
     invoke-static {v3, v4}, Lkotlin/TuplesKt;->to(Ljava/lang/Object;Ljava/lang/Object;)Lkotlin/Pair;
 
@@ -484,31 +415,6 @@
     check-cast p1, [Ljava/lang/String;
 
     return-object p1
-.end method
-
-.method private final isTransferAvailable(Lcom/iMe/storage/domain/model/wallet/token/TokenCode;)Z
-    .locals 0
-
-    .line 92
-    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;->isCryptoTokens()Z
-
-    move-result p1
-
-    if-eqz p1, :cond_0
-
-    iget-object p1, p0, Lcom/iMe/manager/wallet/WalletLinkClickableManager;->accessManager:Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;
-
-    invoke-interface {p1}, Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;->isCurrentBlockchainWalletCreated()Z
-
-    move-result p1
-
-    goto :goto_0
-
-    :cond_0
-    const/4 p1, 0x0
-
-    :goto_0
-    return p1
 .end method
 
 .method private final resolveIndexOfAlertAction(I)V

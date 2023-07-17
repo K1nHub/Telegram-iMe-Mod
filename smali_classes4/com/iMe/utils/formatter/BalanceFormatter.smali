@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nBalanceFormatter.kt\nKotlin\n*S Kotlin\n*F\n+ 1 BalanceFormatter.kt\ncom/iMe/utils/formatter/BalanceFormatter\n+ 2 Maps.kt\nkotlin/collections/MapsKt__MapsKt\n*L\n1#1,75:1\n361#2,7:76\n*S KotlinDebug\n*F\n+ 1 BalanceFormatter.kt\ncom/iMe/utils/formatter/BalanceFormatter\n*L\n65#1:76,7\n*E\n"
+    value = "SMAP\nBalanceFormatter.kt\nKotlin\n*S Kotlin\n*F\n+ 1 BalanceFormatter.kt\ncom/iMe/utils/formatter/BalanceFormatter\n+ 2 Maps.kt\nkotlin/collections/MapsKt__MapsKt\n*L\n1#1,73:1\n361#2,7:74\n*S KotlinDebug\n*F\n+ 1 BalanceFormatter.kt\ncom/iMe/utils/formatter/BalanceFormatter\n*L\n63#1:74,7\n*E\n"
 .end annotation
 
 
@@ -34,7 +34,7 @@
 
     sput-object v0, Lcom/iMe/utils/formatter/BalanceFormatter;->INSTANCE:Lcom/iMe/utils/formatter/BalanceFormatter;
 
-    .line 19
+    .line 18
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
@@ -47,38 +47,49 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 16
+    .line 15
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method public static final formatBalance(Ljava/lang/Number;I)Ljava/lang/String;
-    .locals 2
+.method public static final formatBalance(Ljava/lang/Number;Ljava/lang/Integer;)Ljava/lang/String;
+    .locals 3
 
     const-string v0, "balance"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 48
+    .line 44
     sget-object v0, Lcom/iMe/utils/formatter/BalanceFormatter;->INSTANCE:Lcom/iMe/utils/formatter/BalanceFormatter;
 
     invoke-direct {v0}, Lcom/iMe/utils/formatter/BalanceFormatter;->getCurrentLocaleFormatter()Lcom/iMe/model/wallet/BalanceFormatterInfo;
 
     move-result-object v0
 
-    .line 50
+    .line 46
     invoke-virtual {v0}, Lcom/iMe/model/wallet/BalanceFormatterInfo;->getNumberFormat()Ljava/text/NumberFormat;
 
     move-result-object v1
 
-    .line 52
-    invoke-virtual {v1, p1}, Ljava/text/NumberFormat;->setMinimumFractionDigits(I)V
+    if-eqz p1, :cond_0
 
-    .line 53
+    .line 49
+    invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
+
+    move-result v2
+
+    invoke-virtual {v1, v2}, Ljava/text/NumberFormat;->setMinimumFractionDigits(I)V
+
+    .line 50
+    invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
+
+    move-result p1
+
     invoke-virtual {v1, p1}, Ljava/text/NumberFormat;->setMaximumFractionDigits(I)V
 
-    .line 55
+    .line 53
+    :cond_0
     invoke-virtual {v1, p0}, Ljava/text/NumberFormat;->format(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p0
@@ -87,7 +98,7 @@
 
     invoke-static {p0, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 56
+    .line 54
     invoke-virtual {v0}, Lcom/iMe/model/wallet/BalanceFormatterInfo;->getDecimalSeparator()C
 
     move-result p1
@@ -99,18 +110,18 @@
     return-object p0
 .end method
 
-.method public static synthetic formatFiatBalance$default(Lcom/iMe/utils/formatter/BalanceFormatter;Ljava/lang/Number;Lcom/iMe/storage/domain/utils/system/ResourceManager;Ljava/lang/Integer;ILjava/lang/Object;)Ljava/lang/String;
+.method public static synthetic formatFiatBalance$default(Lcom/iMe/utils/formatter/BalanceFormatter;Ljava/lang/Number;Ljava/lang/Integer;ILjava/lang/Object;)Ljava/lang/String;
     .locals 0
 
-    and-int/lit8 p4, p4, 0x4
+    and-int/lit8 p3, p3, 0x2
 
-    if-eqz p4, :cond_0
+    if-eqz p3, :cond_0
 
-    const/4 p3, 0x0
+    const/4 p2, 0x0
 
-    .line 34
+    .line 33
     :cond_0
-    invoke-virtual {p0, p1, p2, p3}, Lcom/iMe/utils/formatter/BalanceFormatter;->formatFiatBalance(Ljava/lang/Number;Lcom/iMe/storage/domain/utils/system/ResourceManager;Ljava/lang/Integer;)Ljava/lang/String;
+    invoke-virtual {p0, p1, p2}, Lcom/iMe/utils/formatter/BalanceFormatter;->formatFiatBalance(Ljava/lang/Number;Ljava/lang/Integer;)Ljava/lang/String;
 
     move-result-object p0
 
@@ -128,7 +139,7 @@
 
     move p2, p4
 
-    .line 31
+    .line 30
     :cond_0
     invoke-virtual {p0, p1, p2}, Lcom/iMe/utils/formatter/BalanceFormatter;->formatPercents(Ljava/lang/Number;I)Ljava/lang/String;
 
@@ -140,7 +151,7 @@
 .method private final getCurrentLocaleFormatter()Lcom/iMe/model/wallet/BalanceFormatterInfo;
     .locals 6
 
-    .line 64
+    .line 62
     invoke-static {}, Lorg/telegram/messenger/LocaleController;->getInstance()Lorg/telegram/messenger/LocaleController;
 
     move-result-object v0
@@ -149,7 +160,7 @@
 
     move-result-object v0
 
-    .line 65
+    .line 63
     sget-object v1, Lcom/iMe/utils/formatter/BalanceFormatter;->availableLocalesFormatter:Ljava/util/HashMap;
 
     const-string v2, "currentLocale"
@@ -163,10 +174,10 @@
 
     if-nez v2, :cond_0
 
-    .line 66
+    .line 64
     new-instance v2, Lcom/iMe/model/wallet/BalanceFormatterInfo;
 
-    .line 67
+    .line 65
     new-instance v3, Ljava/util/Locale;
 
     invoke-direct {v3, v0}, Ljava/util/Locale;-><init>(Ljava/lang/String;)V
@@ -179,7 +190,7 @@
 
     invoke-static {v3, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 68
+    .line 66
     new-instance v4, Ljava/text/DecimalFormatSymbols;
 
     new-instance v5, Ljava/util/Locale;
@@ -192,7 +203,7 @@
 
     move-result v4
 
-    .line 66
+    .line 64
     invoke-direct {v2, v3, v4}, Lcom/iMe/model/wallet/BalanceFormatterInfo;-><init>(Ljava/text/NumberFormat;C)V
 
     .line 364
@@ -207,39 +218,19 @@
 
 
 # virtual methods
-.method public final formatFiatBalance(Ljava/lang/Number;Lcom/iMe/storage/domain/utils/system/ResourceManager;Ljava/lang/Integer;)Ljava/lang/String;
+.method public final formatFiatBalance(Ljava/lang/Number;Ljava/lang/Integer;)Ljava/lang/String;
     .locals 1
 
     const-string v0, "balance"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "resourceManager"
-
-    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    .line 35
+    .line 34
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    if-eqz p3, :cond_0
-
-    invoke-virtual {p3}, Ljava/lang/Integer;->intValue()I
-
-    move-result p3
-
-    goto :goto_0
-
-    :cond_0
-    sget-object p3, Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Fiat$USD;->INSTANCE:Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Fiat$USD;
-
-    invoke-virtual {p3}, Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Fiat;->getDecimals()I
-
-    move-result p3
-
-    :goto_0
-    invoke-static {p1, p3}, Lcom/iMe/utils/formatter/BalanceFormatter;->formatBalance(Ljava/lang/Number;I)Ljava/lang/String;
+    invoke-static {p1, p2}, Lcom/iMe/utils/formatter/BalanceFormatter;->formatBalance(Ljava/lang/Number;Ljava/lang/Integer;)Ljava/lang/String;
 
     move-result-object p1
 
@@ -249,13 +240,13 @@
 
     invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    sget-object p1, Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Fiat$USD;->INSTANCE:Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Fiat$USD;
+    sget-object p1, Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;->Companion:Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed$Companion;
 
-    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Fiat;->getShortName()I
+    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed$Companion;->getUSD()Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
 
-    move-result p1
+    move-result-object p1
 
-    invoke-interface {p2, p1}, Lcom/iMe/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
+    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;->getTicker()Ljava/lang/String;
 
     move-result-object p1
 
@@ -275,26 +266,26 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 32
-    invoke-static {p1, p2}, Lcom/iMe/utils/formatter/BalanceFormatter;->formatBalance(Ljava/lang/Number;I)Ljava/lang/String;
+    .line 31
+    invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p2
+
+    invoke-static {p1, p2}, Lcom/iMe/utils/formatter/BalanceFormatter;->formatBalance(Ljava/lang/Number;Ljava/lang/Integer;)Ljava/lang/String;
 
     move-result-object p1
 
     return-object p1
 .end method
 
-.method public final formatShortFiatBalance(Ljava/lang/Number;Lcom/iMe/storage/domain/utils/system/ResourceManager;)Ljava/lang/String;
+.method public final formatShortFiatBalance(Ljava/lang/Number;)Ljava/lang/String;
     .locals 1
 
     const-string v0, "balance"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "resourceManager"
-
-    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    .line 38
+    .line 37
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -313,13 +304,13 @@
 
     invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    sget-object p1, Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Fiat$USD;->INSTANCE:Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Fiat$USD;
+    sget-object p1, Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;->Companion:Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed$Companion;
 
-    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Fiat;->getShortName()I
+    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed$Companion;->getUSD()Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
 
-    move-result p1
+    move-result-object p1
 
-    invoke-interface {p2, p1}, Lcom/iMe/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
+    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;->getTicker()Ljava/lang/String;
 
     move-result-object p1
 
@@ -332,31 +323,31 @@
     return-object p1
 .end method
 
-.method public final formatTokenBalance(Ljava/lang/Number;Lcom/iMe/storage/domain/model/wallet/token/TokenInfo;Lcom/iMe/storage/domain/utils/system/ResourceManager;)Ljava/lang/String;
+.method public final formatTokenBalance(Ljava/lang/Number;Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;)Ljava/lang/String;
     .locals 2
 
     const-string v0, "balance"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string/jumbo v0, "tokenInfo"
+    const-string/jumbo v0, "token"
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "resourceManager"
-
-    invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    .line 44
+    .line 40
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {p2}, Lcom/iMe/storage/domain/model/wallet/token/TokenInfo;->getDecimals()I
+    invoke-virtual {p2}, Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;->getDecimals()I
 
     move-result v1
 
-    invoke-static {p1, v1}, Lcom/iMe/utils/formatter/BalanceFormatter;->formatBalance(Ljava/lang/Number;I)Ljava/lang/String;
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    invoke-static {p1, v1}, Lcom/iMe/utils/formatter/BalanceFormatter;->formatBalance(Ljava/lang/Number;Ljava/lang/Integer;)Ljava/lang/String;
 
     move-result-object p1
 
@@ -366,46 +357,13 @@
 
     invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    invoke-virtual {p2}, Lcom/iMe/storage/domain/model/wallet/token/TokenInfo;->getShortName()I
-
-    move-result p1
-
-    invoke-interface {p3, p1}, Lcom/iMe/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
+    invoke-virtual {p2}, Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;->getTicker()Ljava/lang/String;
 
     move-result-object p1
 
     invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p1
-
-    return-object p1
-.end method
-
-.method public final formatTokenBalance(Ljava/lang/Number;Ljava/lang/String;Lcom/iMe/storage/domain/utils/system/ResourceManager;)Ljava/lang/String;
-    .locals 1
-
-    const-string v0, "balance"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string/jumbo v0, "tokenTicker"
-
-    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string v0, "resourceManager"
-
-    invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    .line 41
-    sget-object v0, Lcom/iMe/storage/domain/model/wallet/token/TokenInfo;->Companion:Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Companion;
-
-    invoke-virtual {v0, p2}, Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Companion;->map(Ljava/lang/String;)Lcom/iMe/storage/domain/model/wallet/token/TokenInfo;
-
-    move-result-object p2
-
-    invoke-virtual {p0, p1, p2, p3}, Lcom/iMe/utils/formatter/BalanceFormatter;->formatTokenBalance(Ljava/lang/Number;Lcom/iMe/storage/domain/model/wallet/token/TokenInfo;Lcom/iMe/storage/domain/utils/system/ResourceManager;)Ljava/lang/String;
 
     move-result-object p1
 
@@ -419,7 +377,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 25
+    .line 24
     :try_start_0
     invoke-direct {p0}, Lcom/iMe/utils/formatter/BalanceFormatter;->getCurrentLocaleFormatter()Lcom/iMe/model/wallet/BalanceFormatterInfo;
 
@@ -445,7 +403,7 @@
 
     const/4 p1, 0x0
 
-    .line 28
+    .line 27
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object p1
