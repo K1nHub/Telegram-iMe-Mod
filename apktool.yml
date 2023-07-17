@@ -132,7 +132,7 @@ doNotCompress:
 isFrameworkApk: false
 packageInfo:
   forcedPackageId: '127'
-  renameManifestPackage: org.telegram.messenger
+  renameManifestPackage: null
 sdkInfo:
   minSdkVersion: '23'
   targetSdkVersion: '31'
