@@ -10,6 +10,8 @@ jobs:
       - name: Install dependences
         run: sudo apt install apktool && sudo apt install apksigner
       - name: Build apk file
-        run: apktool -b -o ./dist/moded-from-action.apk ./
+        run: apktool b -o ./dist/moded-from-action.apk ./
+      - name: Sign apk file
+        run: signapk testkey.x509.pem testkey.pk8 ./dist/moded-from-action.apk signed-moded-from-action.apk
       
   
