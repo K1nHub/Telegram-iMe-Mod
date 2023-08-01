@@ -1,12 +1,15 @@
 name: Build app using apktool
 on: workflow_dispatch
 jobs:
-  build:
+  build-apk:
     runs-on: ubuntu-latest
     steps:
       - name: Update repo
         run: sudo apt update
-      - name: Install ApkTool
-        run: sudo apt install apktool
-      - name: Check apktool version
-        run: apktool -version
+      - name: Install ApkTool and Apk-Signer
+        run: sudo apt install apktool && sudo apt install apksigner
+      - name: Build apk file
+      - uses: actions/checkout@v1
+      - run: ls -la ~ 
+      
+  
