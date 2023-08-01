@@ -4,12 +4,12 @@ jobs:
   build-apk:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v3
+      - run: ls -la
       - name: Update repo
         run: sudo apt update
       - name: Install ApkTool and Apk-Signer
         run: sudo apt install apktool && sudo apt install apksigner
       - name: Build apk file
-      - uses: actions/checkout@v1
-      - run: ls -la ~ 
       
   
