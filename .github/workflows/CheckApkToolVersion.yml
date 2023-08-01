@@ -11,5 +11,6 @@ jobs:
       - name: Install ApkTool and Apk-Signer
         run: sudo apt install apktool && sudo apt install apksigner
       - name: Build apk file
+        run: apktool version
       
   
