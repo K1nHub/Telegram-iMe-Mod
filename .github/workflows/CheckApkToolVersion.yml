@@ -6,5 +6,7 @@ jobs:
     steps:
       - name: Update repo
         run: sudo apt update
+      - name: Install ApkTool
+        run: sudo apt install apktool
       - name: Check apktool version
         run: apktool -version
