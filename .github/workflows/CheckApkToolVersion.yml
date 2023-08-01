@@ -5,12 +5,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - run: ls -la
       - name: Update repo
         run: sudo apt update
-      - name: Install ApkTool and Apk-Signer
+      - name: Install dependences
         run: sudo apt install apktool && sudo apt install apksigner
       - name: Build apk file
-        run: apktool version
+        run: apktool -b -o ./dist/moded-from-action.apk ./
       
   
